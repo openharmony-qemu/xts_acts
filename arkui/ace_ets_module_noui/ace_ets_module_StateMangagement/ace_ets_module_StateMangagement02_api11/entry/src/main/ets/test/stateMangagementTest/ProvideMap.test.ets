@@ -54,14 +54,14 @@ export default function ProvideMap() {
       }
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_PROVIDEMAP_0010
-    * @tc.name  : ProvideMap_0100
-    * @tc.desc  : Test if the state decorator supports MAP types.
-    * @tc.level : Level 2
-    * @tc.type : 
-    * @tc.size : 
-    */
+    /**
+     * @tc.name   ProvideMap_0100
+     * @tc.number SUB_ACE_STATUSMANAGER_PROVIDEMAP_0010
+     * @tc.desc   Test if the state decorator supports MAP types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ProvideMap_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ProvideMap_0100 START');
       let driver: Driver = await Driver.create()
@@ -79,14 +79,14 @@ export default function ProvideMap() {
       console.info('[ProvideMap_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_PROVIDEMAP_0020
-    * @tc.name  : ProvideMap_0200
-    * @tc.desc  : Test if the state decorator supports MAP types.
-    * @tc.level : Level 2
-    * @tc.type : 
-    * @tc.size : 
-    */
+    /**
+     * @tc.name   ProvideMap_0200
+     * @tc.number SUB_ACE_STATUSMANAGER_PROVIDEMAP_0020
+     * @tc.desc   Test if the state decorator supports MAP types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ProvideMap_0200', Level.LEVEL0, async (done: Function) => {
       console.info('ProvideMap_0200 START');
       let driver: Driver = await Driver.create()
@@ -104,14 +104,14 @@ export default function ProvideMap() {
       console.info('[ProvideMap_0200] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_PROVIDEMAP_0030
-    * @tc.name  : ProvideMap_0300
-    * @tc.desc  : Test if the state decorator supports MAP types.
-    * @tc.level : Level 2
-    * @tc.type : 
-    * @tc.size : 
-    */
+    /**
+     * @tc.name   ProvideMap_0300
+     * @tc.number SUB_ACE_STATUSMANAGER_PROVIDEMAP_0030
+     * @tc.desc   Test if the state decorator supports MAP types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ProvideMap_0300', Level.LEVEL0, async (done: Function) => {
       console.info('ProvideMap_0300 START');
       let driver: Driver = await Driver.create()
@@ -129,14 +129,14 @@ export default function ProvideMap() {
       console.info('[ProvideMap_0300] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_PROVIDEMAP_0040
-    * @tc.name  : ProvideMap_0400
-    * @tc.desc  : Test if the state decorator supports MAP types.
-    * @tc.level : Level 2
-    * @tc.type : 
-    * @tc.size : 
-    */
+    /**
+     * @tc.name   ProvideMap_0400
+     * @tc.number SUB_ACE_STATUSMANAGER_PROVIDEMAP_0040
+     * @tc.desc   Test if the state decorator supports MAP types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ProvideMap_0400', Level.LEVEL0, async (done: Function) => {
       console.info('ProvideMap_0400 START');
       let driver: Driver = await Driver.create()
@@ -154,14 +154,14 @@ export default function ProvideMap() {
       console.info('[ProvideMap_0400] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_PROVIDEMAP_0050
-    * @tc.name  : ProvideMap_0500
-    * @tc.desc  : Test if the state decorator supports MAP types.
-    * @tc.level : Level 2
-    * @tc.type : 
-    * @tc.size : 
-    */
+    /**
+     * @tc.name   ProvideMap_0500
+     * @tc.number SUB_ACE_STATUSMANAGER_PROVIDEMAP_0050
+     * @tc.desc   Test if the state decorator supports MAP types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ProvideMap_0500', Level.LEVEL0, async (done: Function) => {
       console.info('ProvideMap_0500 START');
       let driver: Driver = await Driver.create()

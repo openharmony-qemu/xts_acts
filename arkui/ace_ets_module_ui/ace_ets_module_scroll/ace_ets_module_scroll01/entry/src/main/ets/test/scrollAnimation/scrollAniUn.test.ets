@@ -46,12 +46,12 @@ export default function scrollAniUn() {
     });
 
     /**
-     * @tc.number    scrollAniUn_001
-     * @tc.name      scrollAniUn_0100
-     * @tc.desc      Set the animation parameter of ScrollPage to undefined.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   scrollAniUn_0100
+     * @tc.number scrollAniUn_001
+     * @tc.desc   Set the animation parameter of ScrollPage to undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('scrollAniUn_0100', Level.LEVEL3, async (done: Function) => {
       console.info('[scrollAniUn_0100] START');

@@ -45,6 +45,14 @@ export default function canvasActualBoundingBoxAscentJsunit() {
       console.info("canvasActualBoundingBoxAscent after each called");
     });
 
+    /**
+     * @tc.name   testcanvasAttributes0001
+     * @tc.number testcanvasAttributes0001
+     * @tc.desc   testcanvasAttributes0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testcanvasAttributes0001', Level.LEVEL0, async (done:Function) => {
       console.info('canvasAttributes0001 testcanvasAttributes0001 START');
       await Utils.sleep(2000);
@@ -56,6 +64,14 @@ export default function canvasActualBoundingBoxAscentJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testcanvasAttributes0002
+     * @tc.number testcanvasAttributes0002
+     * @tc.desc   testcanvasAttributes0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testcanvasAttributes0002', Level.LEVEL0, async (done:Function) => {
       console.info('canvasAttributes0002 testcanvasAttributes0002 START');
       await Utils.sleep(2000);
@@ -68,6 +84,14 @@ export default function canvasActualBoundingBoxAscentJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testcanvasAttributes0003
+     * @tc.number testcanvasAttributes0003
+     * @tc.desc   testcanvasAttributes0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testcanvasAttributes0003', Level.LEVEL0, async (done:Function) => {
       console.info('canvasAttributes0003 testcanvasAttributes0003 START');
       await Utils.sleep(2000);
@@ -80,6 +104,14 @@ export default function canvasActualBoundingBoxAscentJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testcanvasAttributes0004
+     * @tc.number testcanvasAttributes0004
+     * @tc.desc   testcanvasAttributes0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testcanvasAttributes0004', Level.LEVEL0, async (done:Function) => {
       console.info('canvasAttributes0003 testcanvasAttributes0004 START');
       await Utils.sleep(2000);
@@ -92,6 +124,14 @@ export default function canvasActualBoundingBoxAscentJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testcanvasAttributes0005
+     * @tc.number testcanvasAttributes0005
+     * @tc.desc   testcanvasAttributes0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testcanvasAttributes0005', Level.LEVEL0, async (done:Function) => {
       console.info('canvasAttributes0005 testcanvasAttributes0004 START');
       await Utils.sleep(2000);

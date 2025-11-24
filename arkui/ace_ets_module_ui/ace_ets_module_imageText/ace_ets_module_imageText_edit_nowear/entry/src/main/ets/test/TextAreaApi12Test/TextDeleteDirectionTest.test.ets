@@ -46,13 +46,13 @@ export default function TextDeleteDirectionTest() {
       console.info("TextDeleteDirectionTest after each called");
     });
 
-    /*
-    * @tc.number       TextDeleteDirectionTest0001
-    * @tc.name         TextDeleteDirectionTest0001
-    * @tc.desc         test TextArea
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   TextDeleteDirectionTest0001
+     * @tc.number TextDeleteDirectionTest0001
+     * @tc.desc   test TextArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TextDeleteDirectionTest0001', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
@@ -78,13 +78,13 @@ export default function TextDeleteDirectionTest() {
       done();
     });
 
-    /*
-    * @tc.number       TextDeleteDirectionTest0002
-    * @tc.name         TextDeleteDirectionTest0002
-    * @tc.desc         test TextArea
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   TextDeleteDirectionTest0002
+     * @tc.number TextDeleteDirectionTest0002
+     * @tc.desc   test TextArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TextDeleteDirectionTest0002', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();
@@ -110,14 +110,14 @@ export default function TextDeleteDirectionTest() {
       done();
     });
 
-    /*
-    * @tc.number       TextDeleteDirectionTest0003
-    * @tc.name         TextDeleteDirectionTest0003
-    * @tc.desc         test TextArea
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
-    */
+    /**
+     * @tc.name   TextDeleteDirectionTest0003
+     * @tc.number TextDeleteDirectionTest0003
+     * @tc.desc   test TextArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TextDeleteDirectionTest0003', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
       console.info(' TextDeleteDirectionTest0003 START');
@@ -142,14 +142,14 @@ export default function TextDeleteDirectionTest() {
       done();
     });
 
-    /*
-    * @tc.number       TextDeleteDirectionTest0004
-    * @tc.name         TextDeleteDirectionTest0004
-    * @tc.desc         test TextArea
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
-    */
+    /**
+     * @tc.name   TextDeleteDirectionTest0004
+     * @tc.number TextDeleteDirectionTest0004
+     * @tc.desc   test TextArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('TextDeleteDirectionTest0004', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();
       console.info(' TextDeleteDirectionTest0004 START');

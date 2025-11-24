@@ -46,12 +46,12 @@ export default function listScrollTo() {
     });
 
     /**
-     * @tc.number    listScrollTo_001
-     * @tc.name      listScrollTo_0100
-     * @tc.desc      List component binding scroller event sliding 100vp.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   listScrollTo_0100
+     * @tc.number listScrollTo_001
+     * @tc.desc   List component binding scroller event sliding 100vp.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('listScrollTo_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[listScrollTo_0100] START');

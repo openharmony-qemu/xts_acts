@@ -45,12 +45,12 @@ export default function pathNewJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testpathNe0001
-     * @tc.name: testpathNe0001
-     * @tc.desc: PathAPI 
-     * @tc.level: Level 0
-     * @tc.type : Path
-     * @tc.size : PathTest
+     * @tc.name   testpathNe0001
+     * @tc.number SUB_ARKUI_API_testpathNe0001
+     * @tc.desc   PathAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testpathNe0001', Level.LEVEL0, async () => {
       console.info('pathNe testpathNe0001 START');
@@ -65,12 +65,12 @@ export default function pathNewJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testpathNe0002
-     * @tc.name: testpathNe0002
-     * @tc.desc: PathAPI 
-     * @tc.level: Level 0
-     * @tc.type : Path
-     * @tc.size : PathTest
+     * @tc.name   testpathNe0002
+     * @tc.number SUB_ARKUI_API_testpathNe0002
+     * @tc.desc   PathAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testpathNe0002', Level.LEVEL0, async () => {
       console.info('pathNe testpathNe0002 START');
@@ -85,12 +85,12 @@ export default function pathNewJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testpathNe0003
-     * @tc.name: testpathNe0003
-     * @tc.desc: PathAPI 
-     * @tc.level: Level 0
-     * @tc.type : Path
-     * @tc.size : PathTest
+     * @tc.name   testpathNe0003
+     * @tc.number SUB_ARKUI_API_testpathNe0003
+     * @tc.desc   PathAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testpathNe0003', Level.LEVEL0, async () => {
       console.info('pathNe testpathNe0003 START');

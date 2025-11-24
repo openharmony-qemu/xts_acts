@@ -43,12 +43,12 @@ export default function ContentOffset() {
     });
 
     /**
-     * @tc.number    ContentOffset_001
-     * @tc.name      ContentOffset_0100
-     * @tc.desc      Set content area offset through Resource type.
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   ContentOffset_0100
+     * @tc.number ContentOffset_001
+     * @tc.desc   Set content area offset through Resource type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ContentOffset_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[ContentOffset_0100] START');

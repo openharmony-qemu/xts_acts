@@ -43,12 +43,12 @@ export default function gridNestedScrollJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_gridNestedScroll01
      * @tc.number ArkUI_Stage_gridNestedScroll01
-     * @tc.name Test the properties of components
-     * @tc.desc Set nestedScroll values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set nestedScroll values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_gridNestedScroll01', Level.LEVEL0, async (done: Function) => {
       console.info('[ArkUI_Stage_gridNestedScroll01] START');

@@ -46,10 +46,12 @@ export default function flex_Wrap_VisibilityTest() {
       console.info("Flex_Wrap_Visibility after each called");
     });
     /**
+     * @tc.name   testWrapWrapTextVisibilityNoneOverflow
      * @tc.number SUB_ACE_FLEXWRAP_WRAP_2200
-     * @tc.name testWrapWrapTextVisibilityNoneOverflow
-     * @tc.desc The size of the parent component in the main axis direction is not enough for the layout
-     *               of the child components when one of the child components set "Visibility.NOne"
+     * @tc.desc   The size of the parent component in the main axis direction is not enough for the layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapWrapTextVisibilityNoneOverflow',  Level.LEVEL0, async () => {
       console.info('[testWrapWrapTextVisibilityNoneOverflow] START');
@@ -97,10 +99,12 @@ export default function flex_Wrap_VisibilityTest() {
 
     });
     /**
+     * @tc.name   testWrapWrapTextVisibilityNoneMeet
      * @tc.number SUB_ACE_FLEXWRAP_WRAP_2300
-     * @tc.name testWrapWrapTextVisibilityNoneMeet
-     * @tc.desc The size of the parent component in the main axis direction meets the layout
-     *               of the child components when one of the child components set "Visibility.NOne"
+     * @tc.desc   The size of the parent component in the main axis direction meets the layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapWrapTextVisibilityNoneMeet',  Level.LEVEL0, async () => {
       console.info('[testWrapWrapTextVisibilityNoneMeet] START');
@@ -148,10 +152,12 @@ export default function flex_Wrap_VisibilityTest() {
 
     });
     /**
+     * @tc.name   testWrapWrapTextVisibilityHidden
      * @tc.number SUB_ACE_FLEXWRAP_WRAP_2400
-     * @tc.name testWrapWrapTextVisibilityHidden
-     * @tc.desc The size of the parent component in the main axis direction meets the layout
-     *               of the child components when one of the child components set "Visibility.Hidden"
+     * @tc.desc   The size of the parent component in the main axis direction meets the layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapWrapTextVisibilityHidden',  Level.LEVEL0, async () => {
       console.info('[testWrapWrapTextVisibilityHidden] START');

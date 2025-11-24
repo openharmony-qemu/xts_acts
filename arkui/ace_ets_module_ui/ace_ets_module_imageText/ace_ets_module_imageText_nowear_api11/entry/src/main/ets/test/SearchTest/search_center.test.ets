@@ -42,12 +42,14 @@ export default function search_center() {
       }
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_search_center_001
-    * @tc.name  : testSearch
-    * @tc.desc  : Click to trigger the keyboard when search is in the middle
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   search_center_001
+     * @tc.number SUB_ACE_TS_COMPONENT_search_center_001
+     * @tc.desc   Click to trigger the keyboard when search is in the middle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('search_center_001', Level.LEVEL2, async (done: Function) => {
 
       console.info('[search_center_001] START');

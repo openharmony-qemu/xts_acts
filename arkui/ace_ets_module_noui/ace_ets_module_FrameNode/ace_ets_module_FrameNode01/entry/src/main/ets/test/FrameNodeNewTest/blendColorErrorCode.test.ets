@@ -47,12 +47,12 @@ export default function blendColorErrorCodeTest() {
     });
 
     /**
-     * @tc.number    blendColorErrorCodeTest_0100
-     * @tc.name      blendColorErrorCodeTest_0100
-     * @tc.desc      frameNode: UINode isVisible is false
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   blendColorErrorCodeTest_0100
+     * @tc.number blendColorErrorCodeTest_0100
+     * @tc.desc   frameNode: UINode isVisible is false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('blendColorErrorCodeTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('blendColorErrorCodeTest_0100 START');

@@ -46,12 +46,12 @@ export default function waterFlowLayoutMode() {
     });
 
     /**
-     * @tc.number    waterFlowLayoutMode_001
-     * @tc.name      waterFlowLayoutMode_001
-     * @tc.desc      Describe the default layout mode.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   waterFlowLayoutMode_001
+     * @tc.number waterFlowLayoutMode_001
+     * @tc.desc   Describe the default layout mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('waterFlowLayoutMode_001', Level.LEVEL1, async (done: Function) => {
       console.info('[waterFlowLayoutMode_001] START');
@@ -71,12 +71,12 @@ export default function waterFlowLayoutMode() {
 
 
     /**
-     * @tc.number    waterFlowLayoutMode_002
-     * @tc.name      waterFlowLayoutMode_002
-     * @tc.desc      Mobile Window Layout.
-     * @tc.level     Level 1
-     * @tc.type
-    * @tc.size
+     * @tc.name   waterFlowLayoutMode_002
+     * @tc.number waterFlowLayoutMode_002
+     * @tc.desc   Mobile Window Layout.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('waterFlowLayoutMode_002', Level.LEVEL1, async (done: Function) => {
       console.info('[waterFlowLayoutMode_002] START');

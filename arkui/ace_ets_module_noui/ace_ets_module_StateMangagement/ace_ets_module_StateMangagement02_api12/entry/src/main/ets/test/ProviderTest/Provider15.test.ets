@@ -41,12 +41,12 @@ export default function Provider15Test() {
       done();
     });
     /**
-     * @tc.number    Provider15Test_0100
-     * @tc.name      Provider15Test_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   Provider15Test_0100
+     * @tc.number Provider15Test_0100
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Provider15Test_0100', Level.LEVEL0, async (done: Function) => {
       console.info('Provider15Test_0100 START');
@@ -67,12 +67,12 @@ export default function Provider15Test() {
       done();
     });
     /**
-     * @tc.number    Provider15Test_0200
-     * @tc.name      Provider15Test_0200
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   Provider15Test_0200
+     * @tc.number Provider15Test_0200
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Provider15Test_0200', Level.LEVEL0, async (done: Function) => {
       console.info('Provider15Test_0200 START');

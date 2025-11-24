@@ -59,12 +59,12 @@ export default function router_getStateByUrl5() {
     });
 
     /**
+     * @tc.name   router_getStateByUrl5_0100
      * @tc.number SUB_ACE_UI_ABILITY_ROUTER_0080
-     * @tc.name testGetStateByUrl
-     * @tc.desc Retrieve the status information of the current page through the URL
-     * @tc.level Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Retrieve the status information of the current page through the URL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('router_getStateByUrl5_0100', Level.LEVEL3, async (done: Function) => {
       console.info('[router_getStateByUrl5_0100] START');
@@ -85,12 +85,12 @@ export default function router_getStateByUrl5() {
     });
 
     /**
+     * @tc.name   router_getStateByUrl5_0200
      * @tc.number SUB_ACE_UI_ABILITY_ROUTER_0090
-     * @tc.name testGetStateByUrl
-     * @tc.desc Retrieve the status information of the current page through the URL
-     * @tc.level Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Retrieve the status information of the current page through the URL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('router_getStateByUrl5_0200', Level.LEVEL2, async (done: Function) => {
       console.info('[router_getStateByUrl5_0200] START');
@@ -112,12 +112,12 @@ export default function router_getStateByUrl5() {
 
 
     /**
+     * @tc.name   router_getStateByUrl5_0300
      * @tc.number SUB_ACE_UI_ABILITY_ROUTER_0100
-     * @tc.name testGetStateByUrl
-     * @tc.desc Retrieve the status information of the current page through the URL
-     * @tc.level Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Retrieve the status information of the current page through the URL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('router_getStateByUrl5_0300', Level.LEVEL2, async (done: Function) => {
       console.info('[router_getStateByUrl5_0300] START');

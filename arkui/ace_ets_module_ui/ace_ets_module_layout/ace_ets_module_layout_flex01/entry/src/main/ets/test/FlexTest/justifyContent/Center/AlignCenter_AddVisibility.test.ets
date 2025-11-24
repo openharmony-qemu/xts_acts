@@ -47,9 +47,12 @@ export default function AlignCenter_AddVisibility() {
     });
 
     /**
+     * @tc.name   testFlexAlignCenterVisibilityNone
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_CENTER_TEST_1000
-     * @tc.name testFlexAlignCenterVisibilityNone
-     * @tc.desc The subcomponent sets the visibility. None, the child components are hidden in the interface display
+     * @tc.desc   The subcomponent sets the visibility. None, the child components are hidden in the interface display
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignCenterVisibilityNone',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignCenterVisibilityNone] START');
@@ -91,10 +94,12 @@ export default function AlignCenter_AddVisibility() {
 
     });
     /**
+     * @tc.name   testFlexAlignCenterVisibilityHidden
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_CENTER_TEST_1100
-     * @tc.name testFlexAlignCenterVisibilityHidden
-     * @tc.desc When the subcomponent sets visibility.hidden, the interface of the subcomponent does not occupy the
-     * position
+     * @tc.desc   When the subcomponent sets visibility.hidden, the interface of the subcomponent does not occupy the
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignCenterVisibilityHidden',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignCenterVisibilityHidden] START');
@@ -143,10 +148,12 @@ export default function AlignCenter_AddVisibility() {
 
     });
     /**
+     * @tc.name   testFlexAlignCenterVisibilityVisible
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_CENTER_TEST_1700
-     * @tc.name testFlexAlignCenterVisibilityVisible
-     * @tc.desc The subcomponent sets the visibility. Visible, the subcomponent does not occupy a position in the
-     * interface display
+     * @tc.desc   The subcomponent sets the visibility. Visible, the subcomponent does not occupy a position in the
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignCenterVisibilityVisible',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignCenterVisibilityVisible] START');

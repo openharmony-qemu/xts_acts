@@ -44,13 +44,13 @@ export default function TextMinFontSizeJsunitTest() {
       console.info("TextMinFontSizeJsunitTest after each called");
     });
 
-    /*
-     * @tc.number       testtextMinFontSize0001
-     * @tc.name         testtextMinFontSize0001
-     * @tc.desc         acetextMinFontSizeEtsTest0001
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testtextMinFontSize0001
+     * @tc.number testtextMinFontSize0001
+     * @tc.desc   acetextMinFontSizeEtsTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testtextMinFontSize0001', Level.LEVEL0, async () => {
       console.info('textMinFontSize testtextMinFontSize0001 START');
@@ -64,13 +64,13 @@ export default function TextMinFontSizeJsunitTest() {
 
     });
 
-    /*
-     * @tc.number       testtextMinFontSize0002
-     * @tc.name         testtextMinFontSize0002
-     * @tc.desc         acetextMinFontSizeEtsTest0002
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testtextMinFontSize0002
+     * @tc.number testtextMinFontSize0002
+     * @tc.desc   acetextMinFontSizeEtsTest0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testtextMinFontSize0002', Level.LEVEL0, async () => {
       console.info('textMinFontSize testtextMinFontSize0002 START');
@@ -84,13 +84,13 @@ export default function TextMinFontSizeJsunitTest() {
 
     });
 
-    /*
-     * @tc.number       testtextMinFontSize0003
-     * @tc.name         testtextMinFontSize0003
-     * @tc.desc         acetextMinFontSizeEtsTest0003
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testtextMinFontSize0003
+     * @tc.number testtextMinFontSize0003
+     * @tc.desc   acetextMinFontSizeEtsTest0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testtextMinFontSize0003', Level.LEVEL0, async () => {
       console.info('textMinFontSize testtextMinFontSize0003 START');
@@ -105,13 +105,13 @@ export default function TextMinFontSizeJsunitTest() {
     });
 
 
-    /*
-     * @tc.number       testtextMinFontSize0004
-     * @tc.name         testtextMinFontSize0004
-     * @tc.desc         acetextMinFontSizeEtsTest0004
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testtextMinFontSize0004
+     * @tc.number testtextMinFontSize0004
+     * @tc.desc   acetextMinFontSizeEtsTest0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testtextMinFontSize0004', Level.LEVEL0, async () => {
       console.info('textMinFontSize testtextMinFontSize0004 START');
@@ -125,13 +125,13 @@ export default function TextMinFontSizeJsunitTest() {
 
     });
 
-    /*
-     * @tc.number       testtextMinFontSize0005
-     * @tc.name         testtextMinFontSize0005
-     * @tc.desc         acetextMinFontSizeEtsTest0005
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testtextMinFontSize0005
+     * @tc.number testtextMinFontSize0005
+     * @tc.desc   acetextMinFontSizeEtsTest0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testtextMinFontSize0005', Level.LEVEL0, async () => {
       console.info('textMinFontSize testtextMinFontSize0005 START');
@@ -145,13 +145,13 @@ export default function TextMinFontSizeJsunitTest() {
 
     });
 
-    /*
-     * @tc.number       testtextMinFontSize0006
-     * @tc.name         testtextMinFontSize0006
-     * @tc.desc         acetextMinFontSizeEtsTest0006
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testtextMinFontSize0006
+     * @tc.number testtextMinFontSize0006
+     * @tc.desc   acetextMinFontSizeEtsTest0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testtextMinFontSize0006', Level.LEVEL0, async () => {
       console.info('textMinFontSize testtextMinFontSize0006 START');
@@ -164,13 +164,13 @@ export default function TextMinFontSizeJsunitTest() {
       console.info("[testtextMinFontSize0006] fontColor value :" + JSON.parse(strJson).$attrs.fontColor);
     });
 
-    /*
-     * @tc.number       testtextMinFontSize0007
-     * @tc.name         testtextMinFontSize0007
-     * @tc.desc         acetextMinFontSizeEtsTest0007
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testtextMinFontSize0007
+     * @tc.number testtextMinFontSize0007
+     * @tc.desc   acetextMinFontSizeEtsTest0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testtextMinFontSize0007', Level.LEVEL0, async () => {
       console.info('textMinFontSize testtextMinFontSize0007 START');
@@ -183,13 +183,13 @@ export default function TextMinFontSizeJsunitTest() {
       console.info("[testtextMinFontSize0007] lineHeight value :" + JSON.parse(strJson).$attrs.lineHeight);
     });
 
-    /*
-     * @tc.number       testtextMinFontSize0009
-     * @tc.name         testtextMinFontSize0009
-     * @tc.desc         acetextMinFontSizeEtsTest0009
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testtextMinFontSize0009
+     * @tc.number testtextMinFontSize0009
+     * @tc.desc   acetextMinFontSizeEtsTest0009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testtextMinFontSize0009', Level.LEVEL0, async () => {
       console.info('textMinFontSize testtextMinFontSize009 START');
@@ -203,13 +203,13 @@ export default function TextMinFontSizeJsunitTest() {
 
     });
 
-    /*
-     * @tc.number       testtextMinFontSize0010
-     * @tc.name         testtextMinFontSize0010
-     * @tc.desc         acetextMinFontSizeEtsTest0010
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testtextMinFontSize0010
+     * @tc.number testtextMinFontSize0010
+     * @tc.desc   acetextMinFontSizeEtsTest0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testtextMinFontSize0010', Level.LEVEL0, async () => {
       console.info('textMinFontSize testtextMinFontSize0010 START');
@@ -222,13 +222,13 @@ export default function TextMinFontSizeJsunitTest() {
       console.info("[testtextMinFontSize0010] textAlign value :" + JSON.parse(strJson).$attrs.textAlign);
 
     });
-    /*
-     * @tc.number       testtextMinFontSize0011
-     * @tc.name         testtextMinFontSize0011
-     * @tc.desc         acetextMinFontSizeEtsTest0010
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testtextMinFontSize0011
+     * @tc.number testtextMinFontSize0011
+     * @tc.desc   acetextMinFontSizeEtsTest0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testtextMinFontSize0011', Level.LEVEL0, async () => {
       console.info('textMinFontSize testtextMinFontSize0011 START');
@@ -241,13 +241,13 @@ export default function TextMinFontSizeJsunitTest() {
       console.info("[testtextMinFontSize0011] minFontSize value :" + JSON.parse(strJson).$attrs.minFontSize);
 
     });
-    /*
-     * @tc.number       testtextCopyOptionText0001
-     * @tc.name         testtextCopyOptionText0001
-     * @tc.desc         acetextMinFontSizeEtsTest0010
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testtextCopyOptionText0001
+     * @tc.number testtextCopyOptionText0001
+     * @tc.desc   acetextMinFontSizeEtsTest0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testtextCopyOptionText0001', Level.LEVEL0, async () => {
       console.info('textMinFontSize testtextCopyOptionText0001 START');

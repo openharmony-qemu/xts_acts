@@ -47,9 +47,12 @@ export default function layoutWeight_Part() {
     });
 
     /**
+     * @tc.name   SUB_ACE_layoutWeight_Part_TEST_0100
      * @tc.number SUB_ACE_layoutWeight_Part_TEST_0100
-     * @tc.name testLayoutWeight
-     * @tc.desc colum1 and column2 set layoutWeight('2'),the cloumn3 placeholder remains unchanged
+     * @tc.desc   colum1 and column2 set layoutWeight('2'),the cloumn3 placeholder remains unchanged
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_layoutWeight_Part_TEST_0100',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_layoutWeight_Part_TEST_0100] START');
@@ -101,9 +104,12 @@ export default function layoutWeight_Part() {
       console.info('[SUB_ACE_layoutWeight_Part_TEST_0100] END');
     });
     /**
+     * @tc.name   SUB_ACE_layoutWeight_Part_TEST_0200
      * @tc.number SUB_ACE_layoutWeight_Part_TEST_0200
-     * @tc.name testLayoutWeight
-     * @tc.desc colum1 and column2 set layoutWeight('3'), the cloumn3 placeholder remains unchanged
+     * @tc.desc   colum1 and column2 set layoutWeight('3'), the cloumn3 placeholder remains unchanged
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_layoutWeight_Part_TEST_0200',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_layoutWeight_Part_TEST_0200] START');
@@ -155,9 +161,12 @@ export default function layoutWeight_Part() {
       console.info('[SUB_ACE_layoutWeight_Part_TEST_0200] END');
     });
     /**
+     * @tc.name   SUB_ACE_layoutWeight_Part_TEST_0300
      * @tc.number SUB_ACE_layoutWeight_Part_TEST_0300
-     * @tc.name testLayoutWeight
-     * @tc.desc colum1 set layoutWeight('3') and column2 set layoutWeight('2')
+     * @tc.desc   colum1 set layoutWeight('3') and column2 set layoutWeight('2')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_layoutWeight_Part_TEST_0300',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_layoutWeight_Part_TEST_0300] START');

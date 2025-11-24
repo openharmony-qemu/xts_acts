@@ -43,6 +43,14 @@ export default function PopupAJsunit() {
     });
 
 
+    /**
+     * @tc.name   PopupAJsunit_0100
+     * @tc.number PopupAJsunit_0100
+     * @tc.desc   PopupAJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('PopupAJsunit_0100', Level.LEVEL2, async (done: Function) => {
 
       console.info('PopupAJsunit_0100 START');

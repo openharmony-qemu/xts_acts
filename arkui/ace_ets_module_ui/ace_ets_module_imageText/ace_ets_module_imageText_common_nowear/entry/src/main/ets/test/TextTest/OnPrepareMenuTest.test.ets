@@ -46,13 +46,13 @@ export default function OnPrepareMenuTest() {
       console.info("OnPrepareMenuTest after each called");
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_TEXT_AREA_ON_PREPARE_MENU_API_0001
-    * @tc.name         OnPrepareMenuTest0001
-    * @tc.desc         test editMenuOptions onPrepareMenu callback
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   OnPrepareMenuTest0001
+     * @tc.number SUB_ACE_BASIC_ETS_TEXT_AREA_ON_PREPARE_MENU_API_0001
+     * @tc.desc   test editMenuOptions onPrepareMenu callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('OnPrepareMenuTest0001', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();

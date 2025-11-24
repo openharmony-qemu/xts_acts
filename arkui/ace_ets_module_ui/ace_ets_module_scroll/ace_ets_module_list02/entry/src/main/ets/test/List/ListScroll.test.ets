@@ -45,13 +45,13 @@ export default function ListScrollTest() {
       done()
     });
 
-    /*
-     * @tc.number ArkUI_List_Scroll_0100
+    /**
      * @tc.name   ArkUI_List_Scroll_0100
+     * @tc.number ArkUI_List_Scroll_0100
      * @tc.desc   Scroller.scrollToIndex(List) support animation
-     * @tc.level  Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_List_Scroll_0100', Level.LEVEL1, async (done: Function) => {
       let CASE: string = 'ArkUI_List_Scroll_0100'
@@ -71,13 +71,13 @@ export default function ListScrollTest() {
       console.info(`${SUITE} ${CASE} END`)
     });
 
-    /*
-     * @tc.number ArkUI_List_Scroll_0200
+    /**
      * @tc.name   ArkUI_List_Scroll_0200
+     * @tc.number ArkUI_List_Scroll_0200
      * @tc.desc   Scroller.scrollToIndex(List) support animation
-     * @tc.level  Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_List_Scroll_0200', Level.LEVEL1, async (done: Function) => {
       let CASE: string = 'ArkUI_List_Scroll_0200'
@@ -97,13 +97,13 @@ export default function ListScrollTest() {
       console.info(`${SUITE} ${CASE} END`)
     });
 
-    /*
-     * @tc.number ArkUI_List_Scroll_0300
+    /**
      * @tc.name   ArkUI_List_Scroll_0300
+     * @tc.number ArkUI_List_Scroll_0300
      * @tc.desc   Scroller.scrollToIndex(List) support animation
-     * @tc.level  Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_List_Scroll_0300', Level.LEVEL1, async (done: Function) => {
       let CASE: string = 'ArkUI_List_Scroll_0300'
@@ -123,13 +123,13 @@ export default function ListScrollTest() {
       console.info(`${SUITE} ${CASE} END`)
     });
 
-    /*
-     * @tc.number ArkUI_List_Scroll_0400
+    /**
      * @tc.name   ArkUI_List_Scroll_0400
+     * @tc.number ArkUI_List_Scroll_0400
      * @tc.desc   Scroller.scrollToIndex(List) support animation
-     * @tc.level  Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_List_Scroll_0400', Level.LEVEL1, async (done: Function) => {
       let CASE: string = 'ArkUI_List_Scroll_0400'

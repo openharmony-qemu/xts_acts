@@ -47,10 +47,13 @@ export default function waterFlowDemoJsunit() {
       console.info("waterflowDemo after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         waterflowTest0001
-     * @tc.desic        'waterflowTest0001
+    /**
+     * @tc.name   waterflowTest0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   waterflowTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('waterflowTest0001',  Level.LEVEL0, async (done: Function) => {
       console.info('waterflowDemo testalphabetIndexerWidth0001 START');

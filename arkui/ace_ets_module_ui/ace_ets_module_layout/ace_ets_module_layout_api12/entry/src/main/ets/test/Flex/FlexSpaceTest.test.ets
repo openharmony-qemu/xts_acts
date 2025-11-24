@@ -49,10 +49,12 @@ export default function FlexSpaceTest() {
 
 
     /**
-     * @tc.number    FlexSpaceTest_0100
-     * @tc.name      FlexSpaceTest_0100
-     * @tc.desc      Test Flex space
-     * @tc.level     Level 2
+     * @tc.name   FlexSpaceTest_0100
+     * @tc.number FlexSpaceTest_0100
+     * @tc.desc   Test Flex space
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FlexSpaceTest_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('FlexSpaceTest_0100 START');

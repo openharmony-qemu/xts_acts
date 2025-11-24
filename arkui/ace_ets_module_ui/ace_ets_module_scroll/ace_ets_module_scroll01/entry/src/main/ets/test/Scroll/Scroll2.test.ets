@@ -39,13 +39,13 @@ export default function ScrollTest2() {
       done()
     });
 
-    /*
+    /**
+     * @tc.name   ArkUX_Scroll_Visual_0010
      * @tc.number ArkUX_Scroll_Visual_0010
-     * @tc.name   Support modifying the scroll scrollPage hange of Scroll component
      * @tc.desc   Sets the scrollPage property parameter to true or false
-     * @tc.level  Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Scroll_Visual_0010', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Scroll_Visual_0010 START');

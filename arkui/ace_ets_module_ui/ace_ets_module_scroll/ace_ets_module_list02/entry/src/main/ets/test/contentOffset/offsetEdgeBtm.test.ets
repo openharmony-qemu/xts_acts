@@ -46,12 +46,12 @@ export default function offsetEdgeBtm() {
     });
 
     /**
-     * @tc.number    offsetEdgeBtm_001
-     * @tc.name      offsetEdgeBtm_001
-     * @tc.desc      Controller scrollEdge scrolls to the bottom of the list
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   offsetEdgeBtm_0100
+     * @tc.number offsetEdgeBtm_001
+     * @tc.desc   Controller scrollEdge scrolls to the bottom of the list
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('offsetEdgeBtm_0100', Level.LEVEL3, async (done: Function) => {
       console.info('[offsetEdgeBtm_0100] START');

@@ -48,12 +48,12 @@ export default function RadioIndicatorType() {
 
 
     /**
-     * @tc.number: SUB_ARKUI_API_RadioIndicatorType_001
-     * @tc.name: RadioIndicatorType_001
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   RadioIndicatorType_001
+     * @tc.number SUB_ARKUI_API_RadioIndicatorType_001
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RadioIndicatorType_001', Level.LEVEL1, async (done: Function) => {
       console.info('[RadioIndicatorType_001] START');
@@ -72,12 +72,12 @@ export default function RadioIndicatorType() {
 
 
     /**
-     * @tc.number: SUB_ARKUI_API_RadioIndicatorType_002
-     * @tc.name: RadioIndicatorType_002
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   RadioIndicatorType_002
+     * @tc.number SUB_ARKUI_API_RadioIndicatorType_002
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RadioIndicatorType_002', Level.LEVEL1, async (done: Function) => {
       console.info('[RadioIndicatorType_002] START');
@@ -94,12 +94,12 @@ export default function RadioIndicatorType() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_RadioIndicatorType_003
-     * @tc.name: RadioIndicatorType_003
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   RadioIndicatorType_003
+     * @tc.number SUB_ARKUI_API_RadioIndicatorType_003
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RadioIndicatorType_003', Level.LEVEL1, async (done: Function) => {
       console.info('[RadioIndicatorType_003] START');

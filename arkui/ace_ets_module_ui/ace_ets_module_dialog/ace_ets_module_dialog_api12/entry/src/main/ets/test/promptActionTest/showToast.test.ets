@@ -42,14 +42,14 @@ export default function showToastTest () {
       }
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_PROMPTACTION_BLURSTYLE_0010
-    * @tc.name  : showToast_0100
-    * @tc.desc  : Set whether the pop-up window is displayed on the app.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   showToast_0100
+     * @tc.number SUB_ACE_PROMPTACTION_BLURSTYLE_0010
+     * @tc.desc   Set whether the pop-up window is displayed on the app.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('showToast_0100', Level.LEVEL2, async (done: Function) => {
       console.info('showToast_0100 START');
       await CommonFunc.sleep(1000);
@@ -65,14 +65,14 @@ export default function showToastTest () {
       console.info('[showToast_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_PROMPTACTION_BLURSTYLE_0020
-    * @tc.name  : showToast_0200
-    * @tc.desc  : Set whether the pop-up window is displayed on the app.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   showToast_0200
+     * @tc.number SUB_ACE_PROMPTACTION_BLURSTYLE_0020
+     * @tc.desc   Set whether the pop-up window is displayed on the app.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('showToast_0200', Level.LEVEL2, async (done: Function) => {
       console.info('showToast_0200 START');
       await CommonFunc.sleep(1000);
@@ -89,14 +89,14 @@ export default function showToastTest () {
       console.info('[showToast_0200] END');
       done();
     });
-     /* *
-    * @tc.number: SUB_ACE_PROMPTACTION_BLURSTYLE_0020
-    * @tc.name  : showToast_0300
-    * @tc.desc  : Set whether the pop-up window is displayed on the app.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   showToast_0300
+     * @tc.number SUB_ACE_PROMPTACTION_BLURSTYLE_0020
+     * @tc.desc   Set whether the pop-up window is displayed on the app.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('showToast_0300', Level.LEVEL2, async (done: Function) => {
       console.info('showToast_0300 START');
       await CommonFunc.sleep(1000);
@@ -113,14 +113,14 @@ export default function showToastTest () {
       console.info('[showToast_0300] END');
       done();
     });
-     /* *
-    * @tc.number: SUB_ACE_PROMPTACTION_BLURSTYLE_0040
-    * @tc.name  : showToast_0400
-    * @tc.desc  : Set whether the pop-up window is displayed on the app.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   showToast_0400
+     * @tc.number SUB_ACE_PROMPTACTION_BLURSTYLE_0040
+     * @tc.desc   Set whether the pop-up window is displayed on the app.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('showToast_0400', Level.LEVEL2, async (done: Function) => {
       console.info('showToast_0400 START');
       await CommonFunc.sleep(1000);

@@ -43,12 +43,12 @@ export default function HasAxisTest() {
     });
 
     /**
-     * @tc.number    HasAxis_001
-     * @tc.name      HasAxis_001
-     * @tc.desc      ScrollEvent info axis.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   HasAxis_001
+     * @tc.number HasAxis_001
+     * @tc.desc   ScrollEvent info axis.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('HasAxis_001', Level.LEVEL0, async (done: Function) => {
       console.info('[HasAxis_001] START');
@@ -67,12 +67,12 @@ export default function HasAxisTest() {
     });
 
     /**
-     * @tc.number    HasAxis_002
-     * @tc.name      HasAxis_002
-     * @tc.desc      ScrollEvent info axis.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   HasAxis_002
+     * @tc.number HasAxis_002
+     * @tc.desc   ScrollEvent info axis.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('HasAxis_002', Level.LEVEL0, async (done: Function) => {
       console.info('[HasAxis_002] START');

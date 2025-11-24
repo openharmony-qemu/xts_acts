@@ -55,6 +55,14 @@ export default function StorageLinkJsunit2() {
       done();
     });
 
+    /**
+     * @tc.name   StorageLinkJsunit2_0100
+     * @tc.number StorageLinkJsunit2_0100
+     * @tc.desc   StorageLinkJsunit2_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StorageLinkJsunit2_0100', Level.LEVEL0, async (done: Function) => {
       // Get the init value of son1 and son2
       console.info('[StorageLinkJsunit2_0100] START');
@@ -72,6 +80,14 @@ export default function StorageLinkJsunit2() {
       done();
     });
 
+    /**
+     * @tc.name   StorageLinkJsunit2_0200
+     * @tc.number StorageLinkJsunit2_0200
+     * @tc.desc   StorageLinkJsunit2_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StorageLinkJsunit2_0200', Level.LEVEL0, async (done: Function) => {
       // Get the init value of son1 and son2
       console.info('[StorageLinkJsunit2_0200] START');
@@ -89,6 +105,14 @@ export default function StorageLinkJsunit2() {
       done();
     });
 
+    /**
+     * @tc.name   StorageLinkJsunit2_0300
+     * @tc.number StorageLinkJsunit2_0300
+     * @tc.desc   StorageLinkJsunit2_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StorageLinkJsunit2_0300', Level.LEVEL0, async (done: Function) => {
       // Get the init value of son1 and son2
       console.info('[StorageLinkJsunit2_0300] START');
@@ -106,6 +130,14 @@ export default function StorageLinkJsunit2() {
       done();
     });
 
+    /**
+     * @tc.name   StorageLinkJsunit2_0400
+     * @tc.number StorageLinkJsunit2_0400
+     * @tc.desc   StorageLinkJsunit2_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StorageLinkJsunit2_0400', Level.LEVEL0, async (done: Function) => {
       // Get the init value of son1 and son2
       console.info('[StorageLinkJsunit2_0400] START');
@@ -123,6 +155,14 @@ export default function StorageLinkJsunit2() {
       done();
     });
 
+    /**
+     * @tc.name   StorageLinkJsunit2_0500
+     * @tc.number StorageLinkJsunit2_0500
+     * @tc.desc   StorageLinkJsunit2_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StorageLinkJsunit2_0500', Level.LEVEL0, async (done: Function) => {
       // Click to change the value of Storage
       console.info('[StorageLinkJsunit2_0500] START');
@@ -140,6 +180,14 @@ export default function StorageLinkJsunit2() {
       done();
     });
 
+    /**
+     * @tc.name   StorageLinkJsunit2_0600
+     * @tc.number StorageLinkJsunit2_0600
+     * @tc.desc   StorageLinkJsunit2_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StorageLinkJsunit2_0600', Level.LEVEL0, async (done: Function) => {
       // Click to change the value of Storage
       console.info('[StorageLinkJsunit2_0600] START');

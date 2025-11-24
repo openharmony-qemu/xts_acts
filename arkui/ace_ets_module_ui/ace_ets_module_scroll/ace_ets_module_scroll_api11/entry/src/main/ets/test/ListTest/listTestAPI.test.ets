@@ -45,10 +45,13 @@ export default function listNewJsunit() {
       console.info("listNe after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testListNew0001
-     * @tc.desic        acelistNewEtsTest0001
+    /**
+     * @tc.name   testListNew0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testListNew0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListNew0001', Level.LEVEL1, async () => {
       console.info('listNe testListNew0001 START');
@@ -62,10 +65,13 @@ export default function listNewJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testListNe0002
-     * @tc.desic         acelistNeEtsTest0002
+    /**
+     * @tc.name   testListNe0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   testListNe0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListNe0002', Level.LEVEL1, async () => {
       console.info('listNe testListNe0002 START');
@@ -79,10 +85,13 @@ export default function listNewJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-     * @tc.name         testListNe0003
-     * @tc.desic         acelistNeEtsTest0003
+    /**
+     * @tc.name   testListNe0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   testListNe0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListNe0003', Level.LEVEL1, async () => {
       console.info('listNe testListNe0003 START');
@@ -96,10 +105,13 @@ export default function listNewJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0004
-     * @tc.name         testListNe0004
-     * @tc.desic         acelistNeEtsTest0004
+    /**
+     * @tc.name   testListNe0004
+     * @tc.number SUB_ACE_BASIC_ETS_API_0004
+     * @tc.desc   testListNe0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListNe0004', Level.LEVEL1, async () => {
       console.info('listNe testListNe0004 START');
@@ -113,10 +125,13 @@ export default function listNewJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0005
-     * @tc.name         testListNe0005
-     * @tc.desic         acelistNeEtsTest0005
+    /**
+     * @tc.name   testListNe0005
+     * @tc.number SUB_ACE_BASIC_ETS_API_0005
+     * @tc.desc   testListNe0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListNe0005', Level.LEVEL1, async () => {
       console.info('listNe testListNe0005 START');
@@ -130,10 +145,13 @@ export default function listNewJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0006
-     * @tc.name         testListNe0006
-     * @tc.desic         acelistNeEtsTest0006
+    /**
+     * @tc.name   testListNe0006
+     * @tc.number SUB_ACE_BASIC_ETS_API_0006
+     * @tc.desc   testListNe0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListNe0006', Level.LEVEL1, async () => {
       console.info('listNe testListNe0006 START');
@@ -147,10 +165,13 @@ export default function listNewJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0007
-     * @tc.name         testListNe0007
-     * @tc.desic        acelistNeEtsTest0007
+    /**
+     * @tc.name   testListNe0007
+     * @tc.number SUB_ACE_BASIC_ETS_API_0007
+     * @tc.desc   testListNe0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListNe0007', Level.LEVEL1, async () => {
       console.info('listNe testListNe0007 START');

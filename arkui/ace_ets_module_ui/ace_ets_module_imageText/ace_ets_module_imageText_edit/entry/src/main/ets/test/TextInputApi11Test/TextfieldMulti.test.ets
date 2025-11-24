@@ -40,10 +40,13 @@ export default function TextfieldMultiTest() {
       done();
     });
 
-    /*
-     *@tc.number ArkUX_Text_Visual_0110
-     *@tc.name   Support modifying the textfield cancelButton change of Textfield component
-     *@tc.desc   Sets the cancelButton property parameter to different value
+    /**
+     * @tc.name   ArkUX_Text_Visual_0110
+     * @tc.number ArkUX_Text_Visual_0110
+     * @tc.desc   Sets the cancelButton property parameter to different value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Text_Visual_0110', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Text_Visual_0110 START');
@@ -72,10 +75,13 @@ export default function TextfieldMultiTest() {
       }, 500);
     });
 
-    /*
-     *@tc.number ArkUX_Text_Visual_0120
-     *@tc.name   Support modifying the textfield cancelButton change of Textfield component
-     *@tc.desc   Sets the cancelButton property parameter to different value
+    /**
+     * @tc.name   ArkUX_Text_Visual_0120
+     * @tc.number ArkUX_Text_Visual_0120
+     * @tc.desc   Sets the cancelButton property parameter to different value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Text_Visual_0120', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Text_Visual_0120 START');
@@ -104,10 +110,13 @@ export default function TextfieldMultiTest() {
       }, 500)
     });
 
-    /*
-     *@tc.number ArkUX_Text_Visual_0130
-     *@tc.name   Support modifying the textfield cancelButton change of Textfield component
-     *@tc.desc   Sets the cancelButton property parameter to different value
+    /**
+     * @tc.name   ArkUX_Text_Visual_0130
+     * @tc.number ArkUX_Text_Visual_0130
+     * @tc.desc   Sets the cancelButton property parameter to different value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Text_Visual_0130', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Text_Visual_0130 START');
@@ -136,10 +145,13 @@ export default function TextfieldMultiTest() {
       }, 500)
     });
 
-    /*
-     *@tc.number ArkUX_Text_Visual_0140
-     *@tc.name   Support modifying the textfield cancelButton change of Textfield component
-     *@tc.desc   Sets the cancelButton property parameter to default value
+    /**
+     * @tc.name   ArkUX_Text_Visual_0140
+     * @tc.number ArkUX_Text_Visual_0140
+     * @tc.desc   Sets the cancelButton property parameter to default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Text_Visual_0140', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Text_Visual_0140 START');

@@ -46,12 +46,12 @@ export default function radioGroupJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testradioGroup001
-     * @tc.name: testradioGroup001
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   testradioGroup001
+     * @tc.number SUB_ARKUI_API_testradioGroup001
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testradioGroup001', Level.LEVEL1, async (done: Function) => {
       console.info('radioGroup testradioGroup001 START');

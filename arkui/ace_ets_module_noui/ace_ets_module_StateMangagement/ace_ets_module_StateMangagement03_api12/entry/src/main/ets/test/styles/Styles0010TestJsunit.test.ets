@@ -46,12 +46,12 @@ export default function Styles0010TestJsunit() {
     });
 
     /**
-     * @tc.number    Styles0010TestJsunit_001
-     * @tc.name      Styles0010TestJsunit_001
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   Styles0010TestJsunit_001
+     * @tc.number Styles0010TestJsunit_001
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Styles0010TestJsunit_001', Level.LEVEL0, async (done: Function) => {
       console.info('[Styles0010TestJsunit_001] START');

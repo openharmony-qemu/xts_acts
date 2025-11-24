@@ -26,13 +26,13 @@ export default function textInputGetTextContentRectTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_INPUT_GET_TEXT_CONTENT_RECT_0001
-     * @tc.name: testTextInputGetTextContentRect001
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputGetTextContentRect001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_INPUT_GET_TEXT_CONTENT_RECT_0001
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputGetTextContentRect001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputGetTextContentRect001()).assertEqual(0)

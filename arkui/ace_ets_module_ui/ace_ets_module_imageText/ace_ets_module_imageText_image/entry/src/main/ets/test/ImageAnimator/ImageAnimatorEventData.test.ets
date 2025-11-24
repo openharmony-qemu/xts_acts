@@ -45,13 +45,13 @@ export default function ImageAnimatorEventDataTest() {
       console.info('ImageAnimatorEventData after each called');
     })
 
-    /*
-     * @tc.number: ImageAnimatorEventDataTest_0100
-     * @tc.name  : ImageAnimatorEventDataTest_0100
-     * @tc.desc  : get the text imageAnimator component and test attribute
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ImageAnimatorEventDataTest_0100
+     * @tc.number ImageAnimatorEventDataTest_0100
+     * @tc.desc   get the text imageAnimator component and test attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAnimatorEventDataTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ImageAnimatorEventDataTest_0100 START');
@@ -75,13 +75,13 @@ export default function ImageAnimatorEventDataTest() {
       console.info('ImageAnimatorEventDataTest_0100 END');
     });
 
-    /*
-     * @tc.number: ImageAnimatorEventDataTest_0200
-     * @tc.name  : ImageAnimatorEventDataTest_0200
-     * @tc.desc  : get the text imageAnimator component and test attribute
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ImageAnimatorEventDataTest_0200
+     * @tc.number ImageAnimatorEventDataTest_0200
+     * @tc.desc   get the text imageAnimator component and test attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAnimatorEventDataTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('ImageAnimatorEventDataTest_0200 START');
@@ -106,13 +106,13 @@ export default function ImageAnimatorEventDataTest() {
       console.info('ImageAnimatorEventDataTest_0200 END');
     });
 
-    /*
-     * @tc.number: ImageAnimatorEventDataTest_0300
-     * @tc.name  : ImageAnimatorEventDataTest_0300
-     * @tc.desc  : get the text imageAnimator component and test attribute
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ImageAnimatorEventDataTest_0300
+     * @tc.number ImageAnimatorEventDataTest_0300
+     * @tc.desc   get the text imageAnimator component and test attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAnimatorEventDataTest_0300', Level.LEVEL1, async (done: Function) => {
       console.info('ImageAnimatorEventDataTest_0300 START');
@@ -137,13 +137,13 @@ export default function ImageAnimatorEventDataTest() {
       console.info('ImageAnimatorEventDataTest_0300 END');
     });
 
-    /*
-     * @tc.number: ImageAnimatorEventDataTest_0400
-     * @tc.name  : ImageAnimatorEventDataTest_0400
-     * @tc.desc  : get the text imageAnimator component and test attribute
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ImageAnimatorEventDataTest_0400
+     * @tc.number ImageAnimatorEventDataTest_0400
+     * @tc.desc   get the text imageAnimator component and test attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAnimatorEventDataTest_0400', Level.LEVEL1, async (done: Function) => {
       console.info('ImageAnimatorEventDataTest_0400 START');
@@ -167,13 +167,13 @@ export default function ImageAnimatorEventDataTest() {
       console.info('ImageAnimatorEventDataTest_0400 END');
     });
 
-    /*
-     * @tc.number: ImageAnimatorEventDataTest_0500
-     * @tc.name  : ImageAnimatorEventDataTest_0500
-     * @tc.desc  : get the text imageAnimator component and test attribute
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ImageAnimatorEventDataTest_0500
+     * @tc.number ImageAnimatorEventDataTest_0500
+     * @tc.desc   get the text imageAnimator component and test attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAnimatorEventDataTest_0500', Level.LEVEL1, async (done: Function) => {
       console.info('ImageAnimatorEventDataTest_0500 START');
@@ -197,13 +197,13 @@ export default function ImageAnimatorEventDataTest() {
       console.info('ImageAnimatorEventDataTest_0500 END');
     });
 
-    /*
-     * @tc.number: ImageAnimatorEventDataTest_0600
-     * @tc.name  : ImageAnimatorEventDataTest_0600
-     * @tc.desc  : get the text imageAnimator component and test attribute
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ImageAnimatorEventDataTest_0600
+     * @tc.number ImageAnimatorEventDataTest_0600
+     * @tc.desc   get the text imageAnimator component and test attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAnimatorEventDataTest_0600', Level.LEVEL1, async (done: Function) => {
       console.info('ImageAnimatorEventDataTest_0600 START');
@@ -227,13 +227,13 @@ export default function ImageAnimatorEventDataTest() {
       done();
     });
 
-    /*
-     * @tc.number: ImageAnimatorEventDataTest_0700
-     * @tc.name  : ImageAnimatorEventDataTest_0700
-     * @tc.desc  : get the text imageAnimator component and test attribute
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ImageAnimatorEventDataTest_0700
+     * @tc.number ImageAnimatorEventDataTest_0700
+     * @tc.desc   get the text imageAnimator component and test attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAnimatorEventDataTest_0700', Level.LEVEL1, async (done: Function) => {
       console.info('ImageAnimatorEventDataTest_0700 START');

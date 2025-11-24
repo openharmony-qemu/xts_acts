@@ -26,39 +26,39 @@ export default function lazyForEachSetTotalNodeCountTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_SETTOTALNODECOUNT_0100
-     * @tc.name       : testLazyForEachSetTotalNodeCount001
-     * @tc.desc       : testing setTotalNodeCount for lazyForEach with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachSetTotalNodeCount001
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_SETTOTALNODECOUNT_0100
+     * @tc.desc   testing setTotalNodeCount for lazyForEach with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachSetTotalNodeCount001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testLazyForEachSetTotalNodeCount001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_SETTOTALNODECOUNT_0200
-     * @tc.name       : testLazyForEachSetTotalNodeCount002
-     * @tc.desc       : testing setTotalNodeCount for lazyForEach with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachSetTotalNodeCount002
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_SETTOTALNODECOUNT_0200
+     * @tc.desc   testing setTotalNodeCount for lazyForEach with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachSetTotalNodeCount002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testLazyForEachSetTotalNodeCount002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_SETTOTALNODECOUNT_0300
-     * @tc.name       : testLazyForEachSetTotalNodeCount003
-     * @tc.desc       : testing setTotalNodeCount for lazyForEach with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachSetTotalNodeCount003
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_SETTOTALNODECOUNT_0300
+     * @tc.desc   testing setTotalNodeCount for lazyForEach with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachSetTotalNodeCount003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testLazyForEachSetTotalNodeCount003()).assertEqual(0)

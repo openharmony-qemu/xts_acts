@@ -45,13 +45,13 @@ export default function DrawChildrenTest() {
     });
 
     /**
-    * @tc.number: DrawChildrenTest_001
-    * @tc.name  : DrawChildrenTest_001
-    * @tc.desc  : Test the size changes of the monitoring sub components
-    * @tc.level : Level 1
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   DrawChildrenTest_001
+     * @tc.number DrawChildrenTest_001
+     * @tc.desc   Test the size changes of the monitoring sub components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('DrawChildrenTest_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('DrawChildrenTest_001 START');
       await Utils.sleep(SLEEP_TIME_1000);
@@ -72,13 +72,13 @@ export default function DrawChildrenTest() {
     });
 
     /**
-    * @tc.number: DrawChildrenTest_002
-    * @tc.name  : DrawChildrenTest_002
-    * @tc.desc  : Test the rotation changes of the monitoring sub component
-    * @tc.level : Level 1
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   DrawChildrenTest_002
+     * @tc.number DrawChildrenTest_002
+     * @tc.desc   Test the rotation changes of the monitoring sub component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('DrawChildrenTest_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('DrawChildrenTest_002 START');
       await Utils.sleep(SLEEP_TIME_1000);
@@ -100,13 +100,13 @@ export default function DrawChildrenTest() {
     });
 
     /**
-    * @tc.number: DrawChildrenTest_003
-    * @tc.name  : DrawChildrenTest_003
-    * @tc.desc  : Test to cancel monitoring of sub component size changes
-    * @tc.level : Level 1
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   DrawChildrenTest_003
+     * @tc.number DrawChildrenTest_003
+     * @tc.desc   Test to cancel monitoring of sub component size changes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('DrawChildrenTest_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('DrawChildrenTest_003 START');
       await Utils.sleep(SLEEP_TIME_1000);

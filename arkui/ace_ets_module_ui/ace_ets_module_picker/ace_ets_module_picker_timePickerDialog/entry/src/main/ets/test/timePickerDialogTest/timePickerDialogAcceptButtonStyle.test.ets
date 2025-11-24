@@ -46,12 +46,12 @@ export default function TimePickerDialogAcceptButtonStyleTest() {
     });
 
     /**
+     * @tc.name   TimePickerDialogAcceptButtonStyleTest_001
      * @tc.number TimePickerDialogAcceptButtonStyleTest
-     * @tc.name testBack
-     * @tc.desc Return specified page by index value
-     * @tc.level Level 3
-     * @tc.type
-    * @tc.size
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TimePickerDialogAcceptButtonStyleTest_001', Level.LEVEL3, async (done: Function) => {
       console.info('[TimePickerDialogAcceptButtonStyleTest_001] START');

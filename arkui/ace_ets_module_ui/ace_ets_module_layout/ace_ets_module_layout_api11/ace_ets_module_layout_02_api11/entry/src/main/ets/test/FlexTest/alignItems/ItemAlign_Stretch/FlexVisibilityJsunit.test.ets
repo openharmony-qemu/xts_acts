@@ -48,9 +48,12 @@ export default function flexVisibility_StretchJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignStretchSubSetVisibilityNone
      * @tc.number SUB_ACE_FLEXALIGNITEMS_STRETCH_1100
-     * @tc.name testFlexItemAlignStretchSubSetVisibilityNone
-     * @tc.desc The first subcomponent set Visibility.None attribute.
+     * @tc.desc   The first subcomponent set Visibility.None attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignStretchSubSetVisibilityNone',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignStretchSubSetVisibilityNone START');
@@ -91,9 +94,12 @@ export default function flexVisibility_StretchJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignStretchSubSetVisibilityHidden
      * @tc.number SUB_ACE_FLEXALIGNITEMS_STRETCH_1200
-     * @tc.name testFlexItemAlignStretchSubSetVisibilityHidden
-     * @tc.desc The first subcomponent set Visibility.Hidden attribute.
+     * @tc.desc   The first subcomponent set Visibility.Hidden attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignStretchSubSetVisibilityHidden',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignStretchSubSetVisibilityHidden START');

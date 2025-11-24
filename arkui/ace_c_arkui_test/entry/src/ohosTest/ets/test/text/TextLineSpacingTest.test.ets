@@ -26,52 +26,52 @@ export default function textLineSpacingTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_LINE_SPACING_0100
-     * @tc.name       : testTextLineSpacing001
-     * @tc.desc       : testing lineSpacing for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextLineSpacing001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_LINE_SPACING_0100
+     * @tc.desc   testing lineSpacing for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextLineSpacing001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextLineSpacing001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_LINE_SPACING_0200
-     * @tc.name       : testTextLineSpacing002
-     * @tc.desc       : testing lineSpacing for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextLineSpacing002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_LINE_SPACING_0200
+     * @tc.desc   testing lineSpacing for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextLineSpacing002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextLineSpacing002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_LINE_SPACING_0300
-     * @tc.name       : testTextLineSpacing003
-     * @tc.desc       : testing lineSpacing for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextLineSpacing003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_LINE_SPACING_0300
+     * @tc.desc   testing lineSpacing for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextLineSpacing003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextLineSpacing003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_LINE_SPACING_0400
-     * @tc.name       : testTextLineSpacing004
-     * @tc.desc       : testing lineSpacing for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextLineSpacing004
+     * @tc.number SUB_ARKUI_CAPI_TEXT_LINE_SPACING_0400
+     * @tc.desc   testing lineSpacing for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextLineSpacing004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextLineSpacing004()).assertEqual(0)

@@ -50,10 +50,12 @@ export default function EnableSwipeBackRouter() {
 
 
     /**
-     * @tc.number    EnableSwipeBackRouter_0100
-     * @tc.name      EnableSwipeBackRouter_0100
-     * @tc.desc      Test enableSwipeBack test true
-     * @tc.level     Level 0
+     * @tc.name   EnableSwipeBackRouter_0100
+     * @tc.number EnableSwipeBackRouter_0100
+     * @tc.desc   Test enableSwipeBack test true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EnableSwipeBackRouter_0100', Level.LEVEL0, async (done: Function) => {
       console.info('EnableSwipeBackRouter_0100 START');
@@ -82,10 +84,12 @@ export default function EnableSwipeBackRouter() {
     });
 
     /**
-     * @tc.number    EnableSwipeBackRouter_0200
-     * @tc.name      EnableSwipeBackRouter_0200
-     * @tc.desc      Test enableSwipeBack test false
-     * @tc.level     Level 0
+     * @tc.name   EnableSwipeBackRouter_0200
+     * @tc.number EnableSwipeBackRouter_0200
+     * @tc.desc   Test enableSwipeBack test false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EnableSwipeBackRouter_0200', Level.LEVEL0, async (done: Function) => {
       console.info('EnableSwipeBackRouter_0200 START');

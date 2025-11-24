@@ -44,12 +44,12 @@ export default function RowReverseTest() {
     });
 
     /**
-     * @tc.number    RowReverseTest_0100
-     * @tc.name      RowReverseTest_0100
-     * @tc.desc      test Row reverse is true
-     * @tc.level:    Level 0
-     * @tc.type :    Row
-     * @tc.size :
+     * @tc.name   RowReverseTest_0100
+     * @tc.number RowReverseTest_0100
+     * @tc.desc   test Row reverse is true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RowReverseTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[RowReverseTest_0100] START');
@@ -69,12 +69,12 @@ export default function RowReverseTest() {
     });
 
     /**
-     * @tc.number    RowReverseTest_0200
-     * @tc.name      RowReverseTest_0200
-     * @tc.desc      test Row reverse is false
-     * @tc.level:    Level 0
-     * @tc.type :    Row
-     * @tc.size :
+     * @tc.name   RowReverseTest_0200
+     * @tc.number RowReverseTest_0200
+     * @tc.desc   test Row reverse is false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RowReverseTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[RowReverseTest_0200] START');

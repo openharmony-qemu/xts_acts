@@ -62,9 +62,12 @@ export default function swiperLoopFalse() {
     });
 
     /**
+     * @tc.name   testSwiperSetLoopFalse
      * @tc.number SUB_ACE_SWIPER_LOOPCHANGED_0200
-     * @tc.name testSwiperSetLoopFalse
-     * @tc.desc Set swiper's  Loop  value ' false '.
+     * @tc.desc   Set swiper's  Loop  value ' false '.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperSetLoopFalse', Level.LEVEL1, async (done: Function) => {
       console.info('new testSwiperSetLoopFalse START');

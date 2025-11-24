@@ -43,12 +43,12 @@ export default function appStorageRefJsunit() {
       done();
     });
     /**
-     * @tc.number: appStorageRefJsunit_0100
-     * @tc.name: appStorageRefJsunit_0100
-     * @tc.desc: aceEtsTest_ref
-     * @tc.level: Level 2
-     * @tc.type:
-     * @tc.size:
+     * @tc.name   appStorageRefJsunit_0100
+     * @tc.number appStorageRefJsunit_0100
+     * @tc.desc   aceEtsTest_ref
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('appStorageRefJsunit_0100', Level.LEVEL0, async () => {
       console.info('appStorageRefJsunit001 START');

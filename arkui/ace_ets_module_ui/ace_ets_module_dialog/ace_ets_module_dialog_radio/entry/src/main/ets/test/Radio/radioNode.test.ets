@@ -48,12 +48,12 @@ export default function radioNodeTest() {
     })
    
     /**
-     * @tc.number: SUB_ARKUI_API_radioNode0100
-     * @tc.name: radioNode0100
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   radioNode0100
+     * @tc.number SUB_ARKUI_API_radioNode0100
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('radioNode0100', Level.LEVEL1, async (done: Function) => {
 

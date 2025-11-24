@@ -55,12 +55,12 @@ export default function blendMode1Jsunit() {
       done();
     });
     /**
+     * @tc.name   blendMode1Jsunit_0100
      * @tc.number blendMode1Jsunit_0100
-     * @tc.name blendMode1Jsunit_0100
-     * @tc.desc set api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('blendMode1Jsunit_0100', Level.LEVEL2, async (done: Function) => {
       // Get the information of the blendMode component
@@ -73,12 +73,12 @@ export default function blendMode1Jsunit() {
     });
 
     /**
+     * @tc.name   blendMode1Jsunit_0200
      * @tc.number blendMode1Jsunit_0200
-     * @tc.name blendMode1Jsunit_0200
-     * @tc.desc set api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('blendMode1Jsunit_0200', Level.LEVEL2, async (done: Function) => {
       // Get the information of the blendMode component
@@ -91,12 +91,12 @@ export default function blendMode1Jsunit() {
     });
 
     /**
+     * @tc.name   blendMode1Jsunit_0300
      * @tc.number blendMode1Jsunit_0300
-     * @tc.name blendMode1Jsunit_0300
-     * @tc.desc set api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('blendMode1Jsunit_0300', Level.LEVEL2, async (done: Function) => {
       // Get the information of the blendMode component

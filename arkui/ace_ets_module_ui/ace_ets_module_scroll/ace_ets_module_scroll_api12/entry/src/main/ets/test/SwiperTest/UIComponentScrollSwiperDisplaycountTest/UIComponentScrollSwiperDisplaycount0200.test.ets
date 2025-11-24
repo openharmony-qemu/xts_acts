@@ -57,12 +57,12 @@ export default function UIComponentScrollSwiperDisplaycount0200() {
     });
 
     /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DISPLAYCOUNT_0200
      * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DISPLAYCOUNT_0200
-     * @tc.name SWIPER_DISPLAYCOUNT_0200
-     * @tc.desc change page and success
-     * @tc.level Level 3
-     * @tc.type   Function
-     * @tc.size   MediumTest
+     * @tc.desc   change page and success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DISPLAYCOUNT_0200', Level.LEVEL1, async (done: Function) => {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DISPLAYCOUNT_0200 START");

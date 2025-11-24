@@ -39,10 +39,12 @@ export default function navigationTypeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Navigation_1600
-     * @tc.name      ArkUX_Navigation_1600
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   ArkUX_Navigation_1600
+     * @tc.number ArkUX_Navigation_1600
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Navigation_1600',  Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Navigation_1600 START');
@@ -65,10 +67,12 @@ export default function navigationTypeTest() {
     })
 
     /**
-     * @tc.number    ArkUX_Navigation_1700
-     * @tc.name      ArkUX_Navigation_1700
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   ArkUX_Navigation_1700
+     * @tc.number ArkUX_Navigation_1700
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Navigation_1700',  Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Navigation_1700 START');
@@ -91,10 +95,12 @@ export default function navigationTypeTest() {
     })
 
     /**
-     * @tc.number    ArkUX_Navigation_1800
-     * @tc.name      ArkUX_Navigation_1800
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   ArkUX_Navigation_1800
+     * @tc.number ArkUX_Navigation_1800
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Navigation_1800',  Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Navigation_1800 START');
@@ -117,10 +123,12 @@ export default function navigationTypeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Navigation_1900
-     * @tc.name      ArkUX_Navigation_1900
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   ArkUX_Navigation_1900
+     * @tc.number ArkUX_Navigation_1900
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Navigation_1900',  Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Navigation_1900 START');
@@ -143,10 +151,12 @@ export default function navigationTypeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Navigation_2000
-     * @tc.name      ArkUX_Navigation_2000
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   ArkUX_Navigation_2000
+     * @tc.number ArkUX_Navigation_2000
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Navigation_2000',  Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Navigation_2000 START');
@@ -169,10 +179,12 @@ export default function navigationTypeTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Navigation_2100
-     * @tc.name      ArkUX_Navigation_2100
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   ArkUX_Navigation_2100
+     * @tc.number ArkUX_Navigation_2100
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Navigation_2100',  Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Navigation_2100 START');

@@ -43,12 +43,12 @@ export default function keyEventDispatchTest5() {
     });
 
     /**
-     * @tc.number keyEventDispatchTest5_0100
      * @tc.name   keyEventDispatchTest5_0100
-     * @tc.desc   test the onKeyEvent api16 CallBack  child & parent component response when child component return false and  child component return false when trigger 'TAB' key 
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.number keyEventDispatchTest5_0100
+     * @tc.desc   test the onKeyEvent api16 CallBack  child & parent component response when child component return false and  child component return false when trigger 'TAB' key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('keyEventDispatchTest5_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[keyEventDispatchTest5_0100] START');

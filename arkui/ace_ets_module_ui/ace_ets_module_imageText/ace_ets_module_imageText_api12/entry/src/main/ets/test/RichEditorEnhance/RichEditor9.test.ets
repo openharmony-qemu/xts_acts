@@ -47,12 +47,12 @@ export default function RichEditor9() {
       console.info("RichEditor9 after each called");
     });
     /**
-     * @tc.number    RichEditor9_0100
-     * @tc.name      RichEditor9_0100
-     * @tc.desc      Test lineBreakStrategy attributes.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   RichEditor9_0100
+     * @tc.number RichEditor9_0100
+     * @tc.desc   Test lineBreakStrategy attributes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RichEditor9_0100',  Level.LEVEL0, async (done: Function) => {
       // Test stop

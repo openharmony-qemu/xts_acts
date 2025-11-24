@@ -46,12 +46,12 @@ export default function offsetAlignEnd() {
     });
 
     /**
-     * @tc.number    offsetAlignEnd_001
-     * @tc.name      offsetAlignEnd_0100
-     * @tc.desc      Limit scrolling, ScrollSnapAlign.END Testing.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   offsetAlignEnd_0100
+     * @tc.number offsetAlignEnd_001
+     * @tc.desc   Limit scrolling, ScrollSnapAlign.END Testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('offsetAlignEnd_0100', Level.LEVEL3, async (done: Function) => {
       console.info('[offsetAlignEnd_0100] START');

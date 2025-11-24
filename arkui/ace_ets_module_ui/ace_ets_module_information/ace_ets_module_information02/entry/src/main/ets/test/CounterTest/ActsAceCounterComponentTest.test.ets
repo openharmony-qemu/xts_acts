@@ -39,10 +39,13 @@ export default function ActsAceCounterComponentTest() {
       done();
     })
 
-    /*
-     * @tc.number       Advanced_ui__counterComponent_0100     
-     * @tc.name         listCounter Component UI test
-     * @tc.desc         Test listCounter Component UI
+    /**
+     * @tc.name   Advanced_ui_counterComponent_0100
+     * @tc.number Advanced_ui__counterComponent_0100
+     * @tc.desc   Test listCounter Component UI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Advanced_ui_counterComponent_0100', Level.LEVEL0, async (done: Function) => {
       let driver = Driver.create()
@@ -52,10 +55,13 @@ export default function ActsAceCounterComponentTest() {
       done();
     });
 
-    /*
-     * @tc.number       Advanced_ui__counterComponent_0200     
-     * @tc.name         compactCounter Component UI test
-     * @tc.desc         Test compactCounter Component UI
+    /**
+     * @tc.name   Advanced_ui_counterComponent_0200
+     * @tc.number Advanced_ui__counterComponent_0200
+     * @tc.desc   Test compactCounter Component UI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Advanced_ui_counterComponent_0200', Level.LEVEL0, async (done: Function) => {
       let driver = Driver.create()

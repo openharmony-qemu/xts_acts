@@ -40,12 +40,12 @@ export default function RatingJsunit() {
     });
 
     /**
+     * @tc.name   RatingJsunit_0100
      * @tc.number RatingJsunit_0100
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RatingJsunit_0100', Level.LEVEL0, async (done: Function) => {
       
@@ -59,12 +59,12 @@ export default function RatingJsunit() {
     });
 
     /**
+     * @tc.name   RatingJsunit_0200
      * @tc.number RatingJsunit_0200
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RatingJsunit_0200', Level.LEVEL0, async (done: Function) => {
       
@@ -80,12 +80,12 @@ export default function RatingJsunit() {
     });
 
     /**
+     * @tc.name   RatingJsunit_0300
      * @tc.number RatingJsunit_0300
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RatingJsunit_0300', Level.LEVEL0, async (done: Function) => {
       

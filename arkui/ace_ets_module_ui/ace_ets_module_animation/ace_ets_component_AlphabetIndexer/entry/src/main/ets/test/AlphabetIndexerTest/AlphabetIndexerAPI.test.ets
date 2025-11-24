@@ -45,10 +45,13 @@ export default function AlphabetIndexerOnSelectJsunit() {
       console.info('alphabetIndexerOnSelect after each called');
     });
 
-    /*
-     * @tc.number       testalphabetIndexerWidth0001
-     * @tc.name         testalphabetIndexerWidth0001
-     * @tc.desc        testalphabetIndexerWidth0001
+    /**
+     * @tc.name   testalphabetIndexerWidth0001
+     * @tc.number testalphabetIndexerWidth0001
+     * @tc.desc   testalphabetIndexerWidth0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testalphabetIndexerWidth0001', Level.LEVEL1, async () => {
       console.info('alphabetIndexerWidth testalphabetIndexerWidth0001 START');
@@ -62,10 +65,13 @@ export default function AlphabetIndexerOnSelectJsunit() {
 
     });
 
-    /*
-     * @tc.number       testalphabetIndexerHeight0002
-     * @tc.name         testalphabetIndexerHeight0002
-     * @tc.desc         testalphabetIndexerHeight0002
+    /**
+     * @tc.name   testalphabetIndexerHeight0002
+     * @tc.number testalphabetIndexerHeight0002
+     * @tc.desc   testalphabetIndexerHeight0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testalphabetIndexerHeight0002', Level.LEVEL1, async () => {
       console.info('alphabetIndexerHeight testalphabetIndexerHeight0002 START');
@@ -79,10 +85,13 @@ export default function AlphabetIndexerOnSelectJsunit() {
 
     });
 
-    /*
-     * @tc.number       testalphabetIndexerColor0003
-     * @tc.name         testalphabetIndexerColor0003
-     * @tc.desc         testalphabetIndexerColor0003
+    /**
+     * @tc.name   testalphabetIndexerColor0003
+     * @tc.number testalphabetIndexerColor0003
+     * @tc.desc   testalphabetIndexerColor0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testalphabetIndexerColor0003', Level.LEVEL1, async () => {
       console.info('alphabetIndexerColor testalphabetIndexerColor0003 START');
@@ -96,10 +105,13 @@ export default function AlphabetIndexerOnSelectJsunit() {
 
     });
 
-    /*
-     * @tc.number       testalphabetIndexerSelectedColor0004
-     * @tc.name         testalphabetIndexerSelectedColor0004
-     * @tc.desc         testalphabetIndexerSelectedColor0004
+    /**
+     * @tc.name   testalphabetIndexerSelectedColor0004
+     * @tc.number testalphabetIndexerSelectedColor0004
+     * @tc.desc   testalphabetIndexerSelectedColor0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testalphabetIndexerSelectedColor0004', Level.LEVEL1, async () => {
       console.info('alphabetIndexerSelectedColor testalphabetIndexerSelectedColor0004 START');
@@ -115,10 +127,13 @@ export default function AlphabetIndexerOnSelectJsunit() {
 
     });
 
-    /*
-     * @tc.number       testalphabetIndexerPopupColor0005
-     * @tc.name         testalphabetIndexerPopupColor0005
-     * @tc.desc         testalphabetIndexerPopupColor0005
+    /**
+     * @tc.name   testalphabetIndexerPopupColor0005
+     * @tc.number testalphabetIndexerPopupColor0005
+     * @tc.desc   testalphabetIndexerPopupColor0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testalphabetIndexerPopupColor0005', Level.LEVEL1, async () => {
       console.info('alphabetIndexerPopupColor testalphabetIndexerPopupColor0005 START');
@@ -132,10 +147,13 @@ export default function AlphabetIndexerOnSelectJsunit() {
 
     });
 
-    /*
-     * @tc.number       testalphabetIndexerSelectedBackgroundColor0006
-     * @tc.name         testalphabetIndexerSelectedBackgroundColor0006
-     * @tc.desc         testalphabetIndexerSelectedBackgroundColor0006
+    /**
+     * @tc.name   testalphabetIndexerSelectedBackgroundColor0006
+     * @tc.number testalphabetIndexerSelectedBackgroundColor0006
+     * @tc.desc   testalphabetIndexerSelectedBackgroundColor0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testalphabetIndexerSelectedBackgroundColor0006', Level.LEVEL1, async () => {
       console.info('alphabetIndexerSelectedBackgroundColor testalphabetIndexerSelectedBackgroundColor0006 START');
@@ -151,10 +169,13 @@ export default function AlphabetIndexerOnSelectJsunit() {
 
     });
 
-    /*
-     * @tc.number       testalphabetIndexerPopupBackground0007
-     * @tc.name         testalphabetIndexerPopupBackground0007
-     * @tc.desc         testalphabetIndexerPopupBackground0007
+    /**
+     * @tc.name   testalphabetIndexerPopupBackground0007
+     * @tc.number testalphabetIndexerPopupBackground0007
+     * @tc.desc   testalphabetIndexerPopupBackground0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testalphabetIndexerPopupBackground0007', Level.LEVEL1, async () => {
       console.info('alphabetIndexerPopupBackground testalphabetIndexerPopupBackground0007 START');
@@ -170,10 +191,13 @@ export default function AlphabetIndexerOnSelectJsunit() {
 
     });
 
-    /*
-     * @tc.number       testalphabetIndexerUsingPopup0009
-     * @tc.name         testalphabetIndexerUsingPopup0009
-     * @tc.desc         testalphabetIndexerUsingPopup0009
+    /**
+     * @tc.name   testalphabetIndexerUsingPopup0009
+     * @tc.number testalphabetIndexerUsingPopup0009
+     * @tc.desc   testalphabetIndexerUsingPopup0009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testalphabetIndexerUsingPopup0009', Level.LEVEL1, async () => {
       console.info('alphabetIndexerUsingPopup testalphabetIndexerUsingPopup009 START');
@@ -187,10 +211,13 @@ export default function AlphabetIndexerOnSelectJsunit() {
 
     });
 
-    /*
-     * @tc.number       testalphabetIndexerItemSize0010
-     * @tc.name         testalphabetIndexerItemSize0010
-     * @tc.desc         testalphabetIndexerItemSize0010
+    /**
+     * @tc.name   testalphabetIndexerItemSize0010
+     * @tc.number testalphabetIndexerItemSize0010
+     * @tc.desc   testalphabetIndexerItemSize0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testalphabetIndexerItemSize0010', Level.LEVEL1, async () => {
       console.info('alphabetIndexerItemSize testalphabetIndexerItemSize0010 START');
@@ -204,10 +231,13 @@ export default function AlphabetIndexerOnSelectJsunit() {
 
     });
 
-    /*
-     * @tc.number       testalphabetIndexerAlignStyle0011
-     * @tc.name         testalphabetIndexerAlignStyle0011
-     * @tc.desc         testalphabetIndexerAlignStyle0011
+    /**
+     * @tc.name   testalphabetIndexerAlignStyle0011
+     * @tc.number testalphabetIndexerAlignStyle0011
+     * @tc.desc   testalphabetIndexerAlignStyle0011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testalphabetIndexerAlignStyle0011', Level.LEVEL1, async () => {
       console.info('alphabetIndexerAlignStyle testalphabetIndexerAlignStyle0011 START');
@@ -221,10 +251,13 @@ export default function AlphabetIndexerOnSelectJsunit() {
 
     });
 
-    /*
-     * @tc.number       testalphabetIndexerOnSelect0012
-     * @tc.name         testalphabetIndexerOnSelect0012
-     * @tc.desc         testalphabetIndexerOnSelect0012
+    /**
+     * @tc.name   testalphabetIndexerOnSelect0012
+     * @tc.number testalphabetIndexerOnSelect0012
+     * @tc.desc   testalphabetIndexerOnSelect0012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testalphabetIndexerOnSelect0012', Level.LEVEL1, async () => {
       console.info('alphabetIndexerOnSelect testalphabetIndexerOnSelect0011 START');

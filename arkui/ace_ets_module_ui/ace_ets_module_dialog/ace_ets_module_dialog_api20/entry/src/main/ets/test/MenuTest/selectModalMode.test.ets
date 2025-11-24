@@ -40,12 +40,12 @@ export default function selectModalModeTest() {
     });
 
     /**
-     * @tc.number    selectModalModeTest_0010
-     * @tc.name      selectModalModeTest_0010
-     * @tc.desc      createMenuToWindow
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   selectModalModeTest_0010
+     * @tc.number selectModalModeTest_0010
+     * @tc.desc   createMenuToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('selectModalModeTest_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('selectModalModeTest_0010 START');
@@ -66,13 +66,13 @@ export default function selectModalModeTest() {
       done();
     });
 
-     /**
-     * @tc.number    selectModalModeTest_0020
-     * @tc.name      selectModalModeTest_0020
-     * @tc.desc      createMenuToWindow
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   selectModalModeTest_0020
+     * @tc.number selectModalModeTest_0020
+     * @tc.desc   createMenuToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('selectModalModeTest_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('selectModalModeTest_0020 START');
@@ -94,12 +94,12 @@ export default function selectModalModeTest() {
     });
 
     /**
-     * @tc.number    selectModalModeTest_0030
-     * @tc.name      selectModalModeTest_0030
-     * @tc.desc      createMenuToWindow
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   selectModalModeTest_0030
+     * @tc.number selectModalModeTest_0030
+     * @tc.desc   createMenuToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('selectModalModeTest_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('selectModalModeTest_0030 START');

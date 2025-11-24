@@ -26,39 +26,39 @@ export default function toggleBackgroundColorTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TOGGLE_BACKGROUNDCOLOR_0100
-     * @tc.name       : testToggleBackgroundColor001
-     * @tc.desc       : testing backgroundColor for toggle with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testToggleBackgroundColor001
+     * @tc.number SUB_ARKUI_CAPI_TOGGLE_BACKGROUNDCOLOR_0100
+     * @tc.desc   testing backgroundColor for toggle with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggleBackgroundColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testToggleBackgroundColor001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TOGGLE_BACKGROUNDCOLOR_0200
-     * @tc.name       : testToggleBackgroundColor002
-     * @tc.desc       : testing backgroundColor for toggle with small value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testToggleBackgroundColor002
+     * @tc.number SUB_ARKUI_CAPI_TOGGLE_BACKGROUNDCOLOR_0200
+     * @tc.desc   testing backgroundColor for toggle with small value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggleBackgroundColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testToggleBackgroundColor002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TOGGLE_BACKGROUNDCOLOR_0300
-     * @tc.name       : testToggleBackgroundColor003
-     * @tc.desc       : testing backgroundColor for toggle with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testToggleBackgroundColor003
+     * @tc.number SUB_ARKUI_CAPI_TOGGLE_BACKGROUNDCOLOR_0300
+     * @tc.desc   testing backgroundColor for toggle with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggleBackgroundColor003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testToggleBackgroundColor003()).assertEqual(0)

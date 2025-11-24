@@ -87,10 +87,13 @@ export default function textpicker() {
       done();
     })
 
-    /*
-     * @tc.number       ArkUI_Stage_textpicker_disappearTextStyle_0100
-     * @tc.name         Tests the disappearTextStyle property of the picker component
-     * @tc.desc         get the default value
+    /**
+     * @tc.name   ArkUI_Stage_textpicker_disappearTextStyle_0100
+     * @tc.number ArkUI_Stage_textpicker_disappearTextStyle_0100
+     * @tc.desc   get the default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_textpicker_disappearTextStyle_0100', Level.LEVEL1, async (done: Function) => {
       let strJson = getInspectorByKey('textPicker');
@@ -102,10 +105,13 @@ export default function textpicker() {
       done();
     });
 
-    /*
-     * @tc.number       ArkUI_Stage_textpicker_disappearTextStyle_0200
-     * @tc.name         Tests the disappearTextStyle property of the picker component
-     * @tc.desc         set disappearTextStyle then get the value
+    /**
+     * @tc.name   ArkUI_Stage_textpicker_disappearTextStyle_0200
+     * @tc.number ArkUI_Stage_textpicker_disappearTextStyle_0200
+     * @tc.desc   set disappearTextStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_textpicker_disappearTextStyle_0200', Level.LEVEL1, async (done: Function) => {
       let value: TextStyleCls = {
@@ -138,10 +144,13 @@ export default function textpicker() {
       done();
     });
 
-    /*
-     * @tc.number       ArkUI_Stage_textpicker_disappearTextStyle_0300
-     * @tc.name         Tests the disappearTextStyle property of the picker component
-     * @tc.desc         set disappearTextStyle then get the value
+    /**
+     * @tc.name   ArkUI_Stage_textpicker_disappearTextStyle_0300
+     * @tc.number ArkUI_Stage_textpicker_disappearTextStyle_0300
+     * @tc.desc   set disappearTextStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_textpicker_disappearTextStyle_0300', Level.LEVEL1, async (done: Function) => {
       let value: TextStyleCls = {
@@ -174,10 +183,13 @@ export default function textpicker() {
       done();
     });
 
-    /*
-     * @tc.number       ArkUI_Stage_textpicker_disappearTextStyle_0400
-     * @tc.name         Tests the disappearTextStyle property of the picker component
-     * @tc.desc         set disappearTextStyle then get the value
+    /**
+     * @tc.name   ArkUI_Stage_textpicker_disappearTextStyle_0400
+     * @tc.number ArkUI_Stage_textpicker_disappearTextStyle_0400
+     * @tc.desc   set disappearTextStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_textpicker_disappearTextStyle_0400', Level.LEVEL1, async (done: Function) => {
       let value: TextStyleCls = {
@@ -210,10 +222,13 @@ export default function textpicker() {
       done();
     });
 
-    /*
-     * @tc.number       ArkUI_Stage_textpicker_disappearTextStyle_0500
-     * @tc.name         Tests the disappearTextStyle property of the picker component
-     * @tc.desc         set disappearTextStyle then get the value
+    /**
+     * @tc.name   ArkUI_Stage_textpicker_disappearTextStyle_0500
+     * @tc.number ArkUI_Stage_textpicker_disappearTextStyle_0500
+     * @tc.desc   set disappearTextStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_textpicker_disappearTextStyle_0500', Level.LEVEL1, async (done: Function) => {
       let value: TextStyleCls = {
@@ -246,10 +261,13 @@ export default function textpicker() {
       done();
     });
 
-    /*
-     * @tc.number       ArkUI_Stage_textpicker_disappearTextStyle_0600
-     * @tc.name         Tests the disappearTextStyle property of the picker component
-     * @tc.desc         set disappearTextStyle then get the value
+    /**
+     * @tc.name   ArkUI_Stage_textpicker_disappearTextStyle_0600
+     * @tc.number ArkUI_Stage_textpicker_disappearTextStyle_0600
+     * @tc.desc   set disappearTextStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_textpicker_disappearTextStyle_0600', Level.LEVEL1, async (done: Function) => {
       let value: TextStyleCls = {
@@ -288,10 +306,13 @@ export default function textpicker() {
       done();
     });
 
-    /*
-     * @tc.number       ArkUI_Stage_textpicker_disappearTextStyle_0700
-     * @tc.name         Tests the disappearTextStyle property of the picker component
-     * @tc.desc         set disappearTextStyle then get the value
+    /**
+     * @tc.name   ArkUI_Stage_textpicker_disappearTextStyle_0700
+     * @tc.number ArkUI_Stage_textpicker_disappearTextStyle_0700
+     * @tc.desc   set disappearTextStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_textpicker_disappearTextStyle_0700', Level.LEVEL1, async (done: Function) => {
       let value: TextStyleCls = {
@@ -330,11 +351,14 @@ export default function textpicker() {
       done();
     });
 
-    /*
-      * @tc.number       ArkUI_Stage_textpicker_disappearTextStyle_0800
-      * @tc.name         Tests the disappearTextStyle property of the picker component
-      * @tc.desc         set disappearTextStyle then get the value
-      */
+    /**
+     * @tc.name   ArkUI_Stage_textpicker_disappearTextStyle_0800
+     * @tc.number ArkUI_Stage_textpicker_disappearTextStyle_0800
+     * @tc.desc   set disappearTextStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_Stage_textpicker_disappearTextStyle_0800', Level.LEVEL1, async (done: Function) => {
       let value: TextStyleCls = {
         color: 'rgb(138,43,226)', font: {
@@ -365,11 +389,14 @@ export default function textpicker() {
       done();
     });
 
-    /*
-      * @tc.number       ArkUI_Stage_textpicker_disappearTextStyle_0900
-      * @tc.name         Tests the disappearTextStyle property of the picker component
-      * @tc.desc         set disappearTextStyle then get the value
-      */
+    /**
+     * @tc.name   ArkUI_Stage_textpicker_disappearTextStyle_0900
+     * @tc.number ArkUI_Stage_textpicker_disappearTextStyle_0900
+     * @tc.desc   set disappearTextStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_Stage_textpicker_disappearTextStyle_0900', Level.LEVEL1, async (done: Function) => {
       let value: TextStyleCls = {
         color: 'rgb(138,43,226)', font: {
@@ -400,10 +427,13 @@ export default function textpicker() {
       done();
     });
 
-    /*
-     * @tc.number       ArkUI_Stage_textpicker_textStyle_0100
-     * @tc.name         Tests the textStyle property of the picker component
-     * @tc.desc         get the default value
+    /**
+     * @tc.name   ArkUI_Stage_textpicker_textStyle_0100
+     * @tc.number ArkUI_Stage_textpicker_textStyle_0100
+     * @tc.desc   get the default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_textpicker_textStyle_0100', Level.LEVEL1, async (done: Function) => {
       let strJson = getInspectorByKey('textPicker');
@@ -415,10 +445,13 @@ export default function textpicker() {
       done();
     });
 
-    /*
-     * @tc.number       ArkUI_Stage_textpicker_textStyle_0200
-     * @tc.name         Tests the textStyle property of the picker component
-     * @tc.desc         set textStyle then get the value
+    /**
+     * @tc.name   ArkUI_Stage_textpicker_textStyle_0200
+     * @tc.number ArkUI_Stage_textpicker_textStyle_0200
+     * @tc.desc   set textStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_textpicker_textStyle_0200', Level.LEVEL1, async (done: Function) => {
       let value: TextStyleCls = {
@@ -451,10 +484,13 @@ export default function textpicker() {
       done();
     });
 
-    /*
-     * @tc.number       ArkUI_Stage_textpicker_textStyle_0300
-     * @tc.name         Tests the textStyle property of the picker component
-     * @tc.desc         set textStyle then get the value
+    /**
+     * @tc.name   ArkUI_Stage_textpicker_textStyle_0300
+     * @tc.number ArkUI_Stage_textpicker_textStyle_0300
+     * @tc.desc   set textStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_textpicker_textStyle_0300', Level.LEVEL1, async (done: Function) => {
       let value: TextStyleCls = {
@@ -487,10 +523,13 @@ export default function textpicker() {
       done();
     });
 
-    /*
-     * @tc.number       ArkUI_Stage_textpicker_textStyle_0400
-     * @tc.name         Tests the textStyle property of the picker component
-     * @tc.desc         set textStyle then get the value
+    /**
+     * @tc.name   ArkUI_Stage_textpicker_textStyle_0400
+     * @tc.number ArkUI_Stage_textpicker_textStyle_0400
+     * @tc.desc   set textStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_textpicker_textStyle_0400', Level.LEVEL1, async (done: Function) => {
       let value: TextStyleCls = {
@@ -523,10 +562,13 @@ export default function textpicker() {
       done();
     });
 
-    /*
-     * @tc.number       ArkUI_Stage_textpicker_textStyle_0500
-     * @tc.name         Tests the textStyle property of the picker component
-     * @tc.desc         set textStyle then get the value
+    /**
+     * @tc.name   ArkUI_Stage_textpicker_textStyle_0500
+     * @tc.number ArkUI_Stage_textpicker_textStyle_0500
+     * @tc.desc   set textStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_textpicker_textStyle_0500', Level.LEVEL1, async (done: Function) => {
       let value: TextStyleCls = {
@@ -559,10 +601,13 @@ export default function textpicker() {
       done();
     });
 
-    /*
-     * @tc.number       ArkUI_Stage_textpicker_textStyle_0600
-     * @tc.name         Tests the textStyle property of the picker component
-     * @tc.desc         set textStyle then get the value
+    /**
+     * @tc.name   ArkUI_Stage_textpicker_textStyle_0600
+     * @tc.number ArkUI_Stage_textpicker_textStyle_0600
+     * @tc.desc   set textStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_textpicker_textStyle_0600', Level.LEVEL1, async (done: Function) => {
       let value: TextStyleCls = {
@@ -601,10 +646,13 @@ export default function textpicker() {
       done();
     });
 
-    /*
-     * @tc.number       ArkUI_Stage_textpicker_textStyle_0700
-     * @tc.name         Tests the textStyle property of the picker component
-     * @tc.desc         set textStyle then get the value
+    /**
+     * @tc.name   ArkUI_Stage_textpicker_textStyle_0700
+     * @tc.number ArkUI_Stage_textpicker_textStyle_0700
+     * @tc.desc   set textStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_textpicker_textStyle_0700', Level.LEVEL1, async (done: Function) => {
       let value: TextStyleCls = {
@@ -643,11 +691,14 @@ export default function textpicker() {
       done();
     });
 
-    /*
-      * @tc.number       ArkUI_Stage_textpicker_textStyle_0800
-      * @tc.name         Tests the textStyle property of the picker component
-      * @tc.desc         set textStyle then get the value
-      */
+    /**
+     * @tc.name   ArkUI_Stage_textpicker_textStyle_0800
+     * @tc.number ArkUI_Stage_textpicker_textStyle_0800
+     * @tc.desc   set textStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_Stage_textpicker_textStyle_0800', Level.LEVEL1, async (done: Function) => {
       let value: TextStyleCls = {
         color: 'rgb(138,43,226)', font: {
@@ -678,11 +729,14 @@ export default function textpicker() {
       done();
     });
 
-    /*
-      * @tc.number       ArkUI_Stage_textpicker_textStyle_0900
-      * @tc.name         Tests the textStyle property of the picker component
-      * @tc.desc         set textStyle then get the value
-      */
+    /**
+     * @tc.name   ArkUI_Stage_textpicker_textStyle_0900
+     * @tc.number ArkUI_Stage_textpicker_textStyle_0900
+     * @tc.desc   set textStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_Stage_textpicker_textStyle_0900', Level.LEVEL1, async (done: Function) => {
       let value: TextStyleCls = {
         color: 'rgb(138,43,226)', font: {
@@ -713,10 +767,13 @@ export default function textpicker() {
       done();
     });
 
-    /*
-     * @tc.number       ArkUI_Stage_textpicker_selectedTextStyle_0100
-     * @tc.name         Tests the selectedTextStyle property of the picker component
-     * @tc.desc         get the default value
+    /**
+     * @tc.name   ArkUI_Stage_textpicker_selectedTextStyle_0100
+     * @tc.number ArkUI_Stage_textpicker_selectedTextStyle_0100
+     * @tc.desc   get the default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_textpicker_selectedTextStyle_0100', Level.LEVEL1, async (done: Function) => {
       let strJson = getInspectorByKey('textPicker');
@@ -728,10 +785,13 @@ export default function textpicker() {
       done();
     });
 
-    /*
-     * @tc.number       ArkUI_Stage_textpicker_selectedTextStyle_0200
-     * @tc.name         Tests the selectedTextStyle property of the picker component
-     * @tc.desc         set selectedTextStyle then get the value
+    /**
+     * @tc.name   ArkUI_Stage_textpicker_selectedTextStyle_0200
+     * @tc.number ArkUI_Stage_textpicker_selectedTextStyle_0200
+     * @tc.desc   set selectedTextStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_textpicker_selectedTextStyle_0200', Level.LEVEL1, async (done: Function) => {
       let value: TextStyleCls = {
@@ -764,10 +824,13 @@ export default function textpicker() {
       done();
     });
 
-    /*
-     * @tc.number       ArkUI_Stage_textpicker_selectedTextStyle_0300
-     * @tc.name         Tests the selectedTextStyle property of the picker component
-     * @tc.desc         set selectedTextStyle then get the value
+    /**
+     * @tc.name   ArkUI_Stage_textpicker_selectedTextStyle_0300
+     * @tc.number ArkUI_Stage_textpicker_selectedTextStyle_0300
+     * @tc.desc   set selectedTextStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_textpicker_selectedTextStyle_0300', Level.LEVEL1, async (done: Function) => {
       let value: TextStyleCls = {
@@ -800,10 +863,13 @@ export default function textpicker() {
       done();
     });
 
-    /*
-     * @tc.number       ArkUI_Stage_textpicker_selectedTextStyle_0400
-     * @tc.name         Tests the selectedTextStyle property of the picker component
-     * @tc.desc         set selectedTextStyle then get the value
+    /**
+     * @tc.name   ArkUI_Stage_textpicker_selectedTextStyle_0400
+     * @tc.number ArkUI_Stage_textpicker_selectedTextStyle_0400
+     * @tc.desc   set selectedTextStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_textpicker_selectedTextStyle_0400', Level.LEVEL1, async (done: Function) => {
       let value: TextStyleCls = {
@@ -836,10 +902,13 @@ export default function textpicker() {
       done();
     });
 
-    /*
-     * @tc.number       ArkUI_Stage_textpicker_selectedTextStyle_0500
-     * @tc.name         Tests the selectedTextStyle property of the picker component
-     * @tc.desc         set selectedTextStyle then get the value
+    /**
+     * @tc.name   ArkUI_Stage_textpicker_selectedTextStyle_0500
+     * @tc.number ArkUI_Stage_textpicker_selectedTextStyle_0500
+     * @tc.desc   set selectedTextStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_textpicker_selectedTextStyle_0500', Level.LEVEL1, async (done: Function) => {
       let value: TextStyleCls = {
@@ -872,10 +941,13 @@ export default function textpicker() {
       done();
     });
 
-    /*
-     * @tc.number       ArkUI_Stage_textpicker_selectedTextStyle_0600
-     * @tc.name         Tests the selectedTextStyle property of the picker component
-     * @tc.desc         set selectedTextStyle then get the value
+    /**
+     * @tc.name   ArkUI_Stage_textpicker_selectedTextStyle_0600
+     * @tc.number ArkUI_Stage_textpicker_selectedTextStyle_0600
+     * @tc.desc   set selectedTextStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_textpicker_selectedTextStyle_0600', Level.LEVEL1, async (done: Function) => {
       let value: TextStyleCls = {
@@ -914,10 +986,13 @@ export default function textpicker() {
       done();
     });
 
-    /*
-     * @tc.number       ArkUI_Stage_textpicker_selectedTextStyle_0700
-     * @tc.name         Tests the selectedTextStyle property of the picker component
-     * @tc.desc         set selectedTextStyle then get the value
+    /**
+     * @tc.name   ArkUI_Stage_textpicker_selectedTextStyle_0700
+     * @tc.number ArkUI_Stage_textpicker_selectedTextStyle_0700
+     * @tc.desc   set selectedTextStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_textpicker_selectedTextStyle_0700', Level.LEVEL1, async (done: Function) => {
       let value: TextStyleCls = {
@@ -956,11 +1031,14 @@ export default function textpicker() {
       done();
     });
 
-    /*
-      * @tc.number       ArkUI_Stage_textpicker_selectedTextStyle_0800
-      * @tc.name         Tests the selectedTextStyle property of the picker component
-      * @tc.desc         set selectedTextStyle then get the value
-      */
+    /**
+     * @tc.name   ArkUI_Stage_textpicker_selectedTextStyle_0800
+     * @tc.number ArkUI_Stage_textpicker_selectedTextStyle_0800
+     * @tc.desc   set selectedTextStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_Stage_textpicker_selectedTextStyle_0800', Level.LEVEL1, async (done: Function) => {
       let value: TextStyleCls = {
         color: 'rgb(138,43,226)', font: {
@@ -991,11 +1069,14 @@ export default function textpicker() {
       done();
     });
 
-    /*
-      * @tc.number       ArkUI_Stage_textpicker_selectedTextStyle_0900
-      * @tc.name         Tests the selectedTextStyle property of the picker component
-      * @tc.desc         set selectedTextStyle then get the value
-      */
+    /**
+     * @tc.name   ArkUI_Stage_textpicker_selectedTextStyle_0900
+     * @tc.number ArkUI_Stage_textpicker_selectedTextStyle_0900
+     * @tc.desc   set selectedTextStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_Stage_textpicker_selectedTextStyle_0900', Level.LEVEL1, async (done: Function) => {
       let value: TextStyleCls = {
         color: 'rgb(138,43,226)', font: {

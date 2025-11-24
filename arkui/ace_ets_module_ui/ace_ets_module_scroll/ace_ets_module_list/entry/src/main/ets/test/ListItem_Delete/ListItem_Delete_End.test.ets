@@ -66,12 +66,12 @@ export default function ListItem_Delete_End() {
     });
 
     /**
+     * @tc.name   SUB_ACE_ListItem_Delete_End_0200
      * @tc.number SUB_ACE_ListItem_Delete_End_0200
-     * @tc.name testListItem
-     * @tc.desc Set actionAreaDistance to 100 and slide 200
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Set actionAreaDistance to 100 and slide 200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_ListItem_Delete_End_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_ListItem_Delete_End_0200] START');
@@ -119,12 +119,12 @@ export default function ListItem_Delete_End() {
     });
 
     /**
+     * @tc.name   SUB_ACE_ListItem_Delete_End_0300
      * @tc.number SUB_ACE_ListItem_Delete_End_0300
-     * @tc.name testListItem
-     * @tc.desc Set actionAreaDistance to 100 and slide 80
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Set actionAreaDistance to 100 and slide 80
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_ListItem_Delete_End_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_ListItem_Delete_End_0300] START');
@@ -169,12 +169,12 @@ export default function ListItem_Delete_End() {
     });
 
     /**
+     * @tc.name   SUB_ACE_ListItem_Delete_End_0400
      * @tc.number SUB_ACE_ListItem_Delete_End_0400
-     * @tc.name testListItem
-     * @tc.desc Set actionAreaDistance to 0 and slide 50
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Set actionAreaDistance to 0 and slide 50
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_ListItem_Delete_End_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_ListItem_Delete_End_0400] START');
@@ -221,12 +221,12 @@ export default function ListItem_Delete_End() {
     });
 
     /**
+     * @tc.name   SUB_ACE_ListItem_Delete_End_0500
      * @tc.number SUB_ACE_ListItem_Delete_End_0500
-     * @tc.name testListItem
-     * @tc.desc Set actionAreaDistance to -100 and slide 50
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Set actionAreaDistance to -100 and slide 50
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_ListItem_Delete_End_0500',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_ListItem_Delete_End_0500] START');
@@ -273,12 +273,12 @@ export default function ListItem_Delete_End() {
       done();
     });
     /**
+     * @tc.name   SUB_ACE_ListItem_Delete_End_0600
      * @tc.number SUB_ACE_ListItem_Delete_End_0600
-     * @tc.name testListItem
-     * @tc.desc Set actionAreaDistance to 400 and slide 50
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Set actionAreaDistance to 400 and slide 50
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_ListItem_Delete_End_0600',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_ListItem_Delete_End_0600] START');

@@ -26,39 +26,39 @@ export default function customComponentWidthTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_WIDTH_0100
-     * @tc.name       : testCustomComponentWidth001
-     * @tc.desc       : testing width for customComponent with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentWidth001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_WIDTH_0100
+     * @tc.desc   testing width for customComponent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentWidth001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentWidth001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_WIDTH_0200
-     * @tc.name       : testCustomComponentWidth002
-     * @tc.desc       : testing width for customComponent with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentWidth002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_WIDTH_0200
+     * @tc.desc   testing width for customComponent with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentWidth002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentWidth002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_WIDTH_0300
-     * @tc.name       : testCustomComponentWidth003
-     * @tc.desc       : testing width for customComponent with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level2
+    /**
+     * @tc.name   testCustomComponentWidth003
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_WIDTH_0300
+     * @tc.desc   testing width for customComponent with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentWidth003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentWidth003()).assertEqual(0)

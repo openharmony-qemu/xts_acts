@@ -26,26 +26,26 @@ export default function textPickerCanLoopTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTPICKER_CANLOOP_0100
-     * @tc.name       : testTextPickerCanLoop001
-     * @tc.desc       : testing canLoop for textPicker with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextPickerCanLoop001
+     * @tc.number SUB_ARKUI_CAPI_TEXTPICKER_CANLOOP_0100
+     * @tc.desc   testing canLoop for textPicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextPickerCanLoop001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextPickerCanLoop001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTPICKER_CANLOOP_0200
-     * @tc.name       : testTextPickerCanLoop002
-     * @tc.desc       : testing canLoop for textPicker with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextPickerCanLoop002
+     * @tc.number SUB_ARKUI_CAPI_TEXTPICKER_CANLOOP_0200
+     * @tc.desc   testing canLoop for textPicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextPickerCanLoop002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextPickerCanLoop002()).assertEqual(0)

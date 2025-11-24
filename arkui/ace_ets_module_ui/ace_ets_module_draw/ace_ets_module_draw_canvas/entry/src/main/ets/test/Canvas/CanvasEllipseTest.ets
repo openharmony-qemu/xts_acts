@@ -42,12 +42,12 @@ export default function CanvasEllipseTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_CanvasEllipseTest_0100
-     * @tc.name: CanvasEllipseTest_0100
-     * @tc.desc: CanvasAPI 
-     * @tc.level: Level 2
-     * @tc.type : Canvas
-     * @tc.size : CanvasTest
+     * @tc.name   CanvasEllipseTest_0100
+     * @tc.number SUB_ARKUI_API_CanvasEllipseTest_0100
+     * @tc.desc   CanvasAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('CanvasEllipseTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[CanvasEllipseTest_0100] START');

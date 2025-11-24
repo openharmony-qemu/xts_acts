@@ -46,6 +46,14 @@ export default function StackWrapContentTest() {
     });
 
     
+     /**
+      * @tc.name   StackWrapContentTest_0100
+      * @tc.number StackWrapContentTest_0100
+      * @tc.desc   StackWrapContentTest_0100
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
+      */
      it('StackWrapContentTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[StackWrapContentTest_0100] START');
       let driver = await Driver.create()

@@ -42,12 +42,12 @@ export default function SectionsTrue() {
     });
 
     /**
-     * @tc.number    SectionsTrue_001
-     * @tc.name      SectionsTrue_0100
-     * @tc.desc      Waterfall grouping splice returns true.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   SectionsTrue_0100
+     * @tc.number SectionsTrue_001
+     * @tc.desc   Waterfall grouping splice returns true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SectionsTrue_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[SectionsTrue_0100] START');
@@ -60,12 +60,12 @@ export default function SectionsTrue() {
     });
 
     /**
-     * @tc.number    SectionsTrue_002
-     * @tc.name      SectionsTrue_0200
-     * @tc.desc      Waterfall grouping returns true.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   SectionsTrue_0200
+     * @tc.number SectionsTrue_002
+     * @tc.desc   Waterfall grouping returns true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SectionsTrue_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[SectionsTrue_0200] START');

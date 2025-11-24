@@ -61,9 +61,12 @@ export default function swiperPadding() {
     });
 
     /**
+     * @tc.name   testSwiperSetPadding
      * @tc.number SUB_ACE_SWIPER_MARPAD_0100
-     * @tc.name testSwiperSetPadding.
-     * @tc.desc Set swiper's padding values '20'.
+     * @tc.desc   Set swiper's padding values '20'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperSetPadding', Level.LEVEL1, async (done: Function) => {
       console.info('new testSwiperSetPadding START');

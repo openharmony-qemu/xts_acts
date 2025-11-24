@@ -43,12 +43,14 @@ export default function navigationNavbar01() {
       done();
     });
 
-    /* *
-      * @tc.number: navigationNavbar01_001
-      * @tc.name  : navigationNavbar01_001
-      * @tc.desc  : Set NavigationWidth to 300
-      * @tc.level : Level 2
-      */
+    /**
+     * @tc.name   navigationNavbar01_001
+     * @tc.number navigationNavbar01_001
+     * @tc.desc   Set NavigationWidth to 300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('navigationNavbar01_001',  Level.LEVEL0, async  (done:Function) =>{
       console.info('[navigationNavbar01_001] START');
       globalThis.value.message.notify({name:'NavigationWidth', value: 300 });
@@ -64,12 +66,14 @@ export default function navigationNavbar01() {
       done();
     });
 
-    /* *
-      * @tc.number: navigationNavbar01_002
-      * @tc.name  : navigationNavbar01_002
-      * @tc.desc  : Set NavigationWidth to 200
-      * @tc.level : Level 2
-      */
+    /**
+     * @tc.name   navigationNavbar01_002
+     * @tc.number navigationNavbar01_002
+     * @tc.desc   Set NavigationWidth to 200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('navigationNavbar01_002',  Level.LEVEL0, async  (done:Function) =>{
       console.info('[navigationNavbar01_002] START');
       globalThis.value.message.notify({name:'NavigationWidth', value: 200 });

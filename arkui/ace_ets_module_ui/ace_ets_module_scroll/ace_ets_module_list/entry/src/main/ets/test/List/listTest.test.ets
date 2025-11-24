@@ -44,13 +44,13 @@ export default function ListTestJsunit() {
       console.info("listNe after each called");
     });
 
-    /*
-     * @tc.number    testListNew0001
-     * @tc.name      testListNew0001
-     * @tc.desc      acelistNewEtsTest0001
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   testListNew0001
+     * @tc.number testListNew0001
+     * @tc.desc   acelistNewEtsTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListNew0001', Level.LEVEL0, async () => {
       console.info('listNe testListNew0001 START');
@@ -64,13 +64,13 @@ export default function ListTestJsunit() {
 
     });
 
-    /*
-     * @tc.number    testListNe0002
-     * @tc.name      testListNe0002
-     * @tc.desc      acelistNeEtsTest0002
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   testListNe0002
+     * @tc.number testListNe0002
+     * @tc.desc   acelistNeEtsTest0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListNe0002', Level.LEVEL0, async () => {
       console.info('listNe testListNe0002 START');
@@ -84,13 +84,13 @@ export default function ListTestJsunit() {
 
     });
 
-    /*
-     * @tc.number    testListNe0003
-     * @tc.name      testListNe0003
-     * @tc.desc      acelistNeEtsTest0003
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   testListNe0003
+     * @tc.number testListNe0003
+     * @tc.desc   acelistNeEtsTest0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListNe0003', Level.LEVEL0, async () => {
       console.info('listNe testListNe0003 START');
@@ -104,13 +104,13 @@ export default function ListTestJsunit() {
 
     });
 
-    /*
-     * @tc.number    testListNe0004
-     * @tc.name      testListNe0004
-     * @tc.desc      acelistNeEtsTest0004
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   testListNe0004
+     * @tc.number testListNe0004
+     * @tc.desc   acelistNeEtsTest0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListNe0004', Level.LEVEL0, async () => {
       console.info('listNe testListNe0004 START');
@@ -124,13 +124,13 @@ export default function ListTestJsunit() {
 
     });
 
-    /*
-     * @tc.number    testListNe0005
-     * @tc.name      testListNe0005
-     * @tc.desc      acelistNeEtsTest0005
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   testListNe0005
+     * @tc.number testListNe0005
+     * @tc.desc   acelistNeEtsTest0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListNe0005', Level.LEVEL0, async () => {
       console.info('listNe testListNe0005 START');
@@ -144,13 +144,13 @@ export default function ListTestJsunit() {
 
     });
 
-    /*
-     * @tc.number    testListNe0006
-     * @tc.name      testListNe0006
-     * @tc.desc      acelistNeEtsTest0006
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   testListNe0006
+     * @tc.number testListNe0006
+     * @tc.desc   acelistNeEtsTest0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListNe0006', Level.LEVEL0, async () => {
       console.info('listNe testListNe0006 START');
@@ -164,13 +164,13 @@ export default function ListTestJsunit() {
 
     });
 
-    /*
-     * @tc.number    testListNe0007
-     * @tc.name      testListNe0007
-     * @tc.desc      acelistNeEtsTest0007
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   testListNe0007
+     * @tc.number testListNe0007
+     * @tc.desc   acelistNeEtsTest0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListNe0007', Level.LEVEL0, async () => {
       console.info('listNe testListNe0007 START');

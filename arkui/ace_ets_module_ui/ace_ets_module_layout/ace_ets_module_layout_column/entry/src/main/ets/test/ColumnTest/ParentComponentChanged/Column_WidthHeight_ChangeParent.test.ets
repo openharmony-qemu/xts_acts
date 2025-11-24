@@ -50,9 +50,12 @@ export default function column_WidthHeight_ChangeParent() {
     });
 
     /**
-     * @tc.number    SUB_ACE_COLUMN_WIDTHHEIGHT_CHANGEPARENT_TEST_0100
-     * @tc.name      testColumnWidthHeightChangeParentHeightInRange
-     * @tc.desc      The parent component changes the width 350 and height 400 attributes, Other parameters default
+     * @tc.name   testColumnWidthHeightChangeParentHeightInRange
+     * @tc.number SUB_ACE_COLUMN_WIDTHHEIGHT_CHANGEPARENT_TEST_0100
+     * @tc.desc   The parent component changes the width 350 and height 400 attributes, Other parameters default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnWidthHeightChangeParentHeightInRange',  Level.LEVEL0, async () => {
       console.info('new testColumnWidthHeightChangeParentHeightInRange START');
@@ -85,9 +88,12 @@ export default function column_WidthHeight_ChangeParent() {
     });
 
     /**
-     * @tc.number    SUB_ACE_COLUMN_WIDTHHEIGHT_CHANGEPARENT_TEST_0200
-     * @tc.name      testColumnWidthHeightChangeParentHeightOutRange
-     * @tc.desc      The parent component changes the width 350 and height 300 attributes,Other parameters default
+     * @tc.name   testColumnWidthHeightChangeParentHeightOutRange
+     * @tc.number SUB_ACE_COLUMN_WIDTHHEIGHT_CHANGEPARENT_TEST_0200
+     * @tc.desc   The parent component changes the width 350 and height 300 attributes,Other parameters default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnWidthHeightChangeParentHeightOutRange',  Level.LEVEL0, async () => {
       console.info('new testColumnWidthHeightChangeParentHeightOutRange START');
@@ -120,9 +126,12 @@ export default function column_WidthHeight_ChangeParent() {
     });
 
     /**
-     * @tc.number    SUB_ACE_COLUMN_WIDTHHEIGHT_CHANGEPARENT_TEST_0300
-     * @tc.name      testColumnWidthHeightChangeParentWidthOutRange
-     * @tc.desc      The parent component changes the width 200 and height 400 attributes,Other parameters default
+     * @tc.name   testColumnWidthHeightChangeParentWidthOutRange
+     * @tc.number SUB_ACE_COLUMN_WIDTHHEIGHT_CHANGEPARENT_TEST_0300
+     * @tc.desc   The parent component changes the width 200 and height 400 attributes,Other parameters default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnWidthHeightChangeParentWidthOutRange',  Level.LEVEL0, async () => {
       console.info('new testColumnWidthHeightChangeParentWidthOutRange START');

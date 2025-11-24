@@ -47,9 +47,12 @@ export default function AlignEnd_AddAlign() {
     });
 
     /**
+     * @tc.name   testFlexAlignEndAlignBottomEnd
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_END_TEST_0800
-     * @tc.name testFlexAlignEndAlignBottomEnd
-     * @tc.desc Setting generic properties does not take effect, and owned properties take precedence
+     * @tc.desc   Setting generic properties does not take effect, and owned properties take precedence
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignEndAlignBottomEnd',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignEndAlignBottomEnd] START');

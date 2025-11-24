@@ -37,12 +37,12 @@ export default function calendarPickerDialogBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    calendarPickerDialogBlurStyleOptions_0100
-     * @tc.name      calendarPickerDialogBlurStyleOptions_0100
-     * @tc.desc      createCalendarPickerDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   calendarPickerDialogBlurStyleOptions_0100
+     * @tc.number calendarPickerDialogBlurStyleOptions_0100
+     * @tc.desc   createCalendarPickerDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('calendarPickerDialogBlurStyleOptions_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'calendarPickerDialogBlurStyleOptions';
@@ -79,12 +79,12 @@ export default function calendarPickerDialogBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    calendarPickerDialogBlurStyleOptions_0200
-     * @tc.name      calendarPickerDialogBlurStyleOptions_0200
-     * @tc.desc      createCalendarPickerDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   calendarPickerDialogBlurStyleOptions_0200
+     * @tc.number calendarPickerDialogBlurStyleOptions_0200
+     * @tc.desc   createCalendarPickerDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('calendarPickerDialogBlurStyleOptions_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'calendarPickerDialogBlurStyleOptions_0200';
@@ -111,12 +111,12 @@ export default function calendarPickerDialogBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    calendarPickerDialogBlurStyleOptions_0300
-     * @tc.name      calendarPickerDialogBlurStyleOptions_0300
-     * @tc.desc      createCalendarPickerDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   calendarPickerDialogBlurStyleOptions_0300
+     * @tc.number calendarPickerDialogBlurStyleOptions_0300
+     * @tc.desc   createCalendarPickerDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('calendarPickerDialogBlurStyleOptions_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'calendarPickerDialogBlurStyleOptions_0300';

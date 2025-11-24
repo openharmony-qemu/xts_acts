@@ -63,12 +63,12 @@ export default function outliersAlphabet() {
     });
 
     /**
-     * @tc.number    outliersAlphabet_0100
-     * @tc.name      outliersAlphabet_0100
-     * @tc.desc      Set the outlier of the AlphabetIndexer for selectedFont.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   outliersAlphabet_0100
+     * @tc.number outliersAlphabet_0100
+     * @tc.desc   Set the outlier of the AlphabetIndexer for selectedFont.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('outliersAlphabet_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[outliersAlphabet_0100] START');
@@ -88,12 +88,12 @@ export default function outliersAlphabet() {
     });
 
     /**
-     * @tc.number    outliersAlphabet_0200
-     * @tc.name      outliersAlphabet_0200
-     * @tc.desc      Set the outlier of the AlphabetIndexer for popupFont.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   outliersAlphabet_0200
+     * @tc.number outliersAlphabet_0200
+     * @tc.desc   Set the outlier of the AlphabetIndexer for popupFont.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('outliersAlphabet_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[outliersAlphabet_0200] START');
@@ -114,12 +114,12 @@ export default function outliersAlphabet() {
     });
 
     /**
-     * @tc.number    outliersAlphabet_0300
-     * @tc.name      outliersAlphabet_0300
-     * @tc.desc      Set the outlier of the AlphabetIndexer for popupPosition.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   outliersAlphabet_0300
+     * @tc.number outliersAlphabet_0300
+     * @tc.desc   Set the outlier of the AlphabetIndexer for popupPosition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('outliersAlphabet_0300', Level.LEVEL1, async (done: Function) => {
       console.info('[outliersAlphabet_0300] START');
@@ -140,12 +140,12 @@ export default function outliersAlphabet() {
     });
 
     /**
-     * @tc.number    outliersAlphabet_0400
-     * @tc.name      outliersAlphabet_0400
-     * @tc.desc      Set the outlier of the AlphabetIndexer for selected.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   outliersAlphabet_0400
+     * @tc.number outliersAlphabet_0400
+     * @tc.desc   Set the outlier of the AlphabetIndexer for selected.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('outliersAlphabet_0400', Level.LEVEL1, async (done: Function) => {
       console.info('[outliersAlphabet_0400] START');
@@ -160,12 +160,12 @@ export default function outliersAlphabet() {
     });
 
     /**
-     * @tc.number    outliersAlphabet_0500
-     * @tc.name      outliersAlphabet_0500
-     * @tc.desc      Set the outlier of the AlphabetIndexer for selectedColor and selectedBackgroundColor.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   outliersAlphabet_0500
+     * @tc.number outliersAlphabet_0500
+     * @tc.desc   Set the outlier of the AlphabetIndexer for selectedColor and selectedBackgroundColor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('outliersAlphabet_0500', Level.LEVEL1, async (done: Function) => {
       console.info('[outliersAlphabet_0500] START');

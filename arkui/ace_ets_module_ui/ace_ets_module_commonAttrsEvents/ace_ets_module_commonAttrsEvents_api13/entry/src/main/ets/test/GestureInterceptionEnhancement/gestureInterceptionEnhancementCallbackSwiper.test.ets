@@ -48,12 +48,12 @@ export default function gestureInterceptionEnhancementCallbackSwiperTest() {
     });
 
     /**
-     * @tc.number    gestureInterceptionEnhancementCallbackSwiperTest_0010
-     * @tc.name      gestureInterceptionEnhancementTest
-     * @tc.desc      test  GestureRecognizerJudgeBegin trigger when invoke gesture Interception Enhancement interface (exposeInnerGesture value true)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   gestureInterceptionEnhancementCallbackSwiperTest_0010
+     * @tc.number gestureInterceptionEnhancementCallbackSwiperTest_0010
+     * @tc.desc   test  GestureRecognizerJudgeBegin trigger when invoke gesture Interception Enhancement interface (exposeInnerGesture value true)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('gestureInterceptionEnhancementCallbackSwiperTest_0010', Level.LEVEL0, async (done: Function) => {
         console.info('gestureInterceptionEnhancementCallbackSwiperTest_0010 START');
@@ -83,13 +83,13 @@ export default function gestureInterceptionEnhancementCallbackSwiperTest() {
          done();
     });
 
-     /**
-     * @tc.number    gestureInterceptionEnhancementCallbackSwiperTest_0020
-     * @tc.name      gestureInterceptionEnhancementTest
-     * @tc.desc      test  GestureRecognizerJudgeBegin trigger when invoke gesture Interception Enhancement interface (exposeInnerGesture value false)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   gestureInterceptionEnhancementCallbackSwiperTest_0020
+     * @tc.number gestureInterceptionEnhancementCallbackSwiperTest_0020
+     * @tc.desc   test  GestureRecognizerJudgeBegin trigger when invoke gesture Interception Enhancement interface (exposeInnerGesture value false)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('gestureInterceptionEnhancementCallbackSwiperTest_0020', Level.LEVEL0, async (done: Function) => {
         console.info('gestureInterceptionEnhancementCallbackSwiperTest_0020 START');

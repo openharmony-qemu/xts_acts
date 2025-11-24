@@ -51,15 +51,15 @@ export default function gridObjectSortComponentSymbolTest() {
       console.info('GridObjectSortComponentSymbolTest after each called');
     })
 
-    /**
-     * @tc.number GridObjectSortComponentSymbolTest
-     * @tc.name   GridObjectSortComponentSymbolTest_0200 item
-     * @tc.desc   Click GridObjectSortComponentSymbolTest
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
-     */
 
+    /**
+     * @tc.name   GridObjectSortComponentSymbolTest_0200
+     * @tc.number GridObjectSortComponentSymbolTest_0200
+     * @tc.desc   GridObjectSortComponentSymbolTest_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GridObjectSortComponentSymbolTest_0200',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[GridObjectSortComponentSymbolTest_0200] START');
       let driver = await Driver.create();

@@ -46,12 +46,12 @@ export default function scrollBarJsunitt() {
     });
 
     /**
-     * @tc.number    testScrollBar001
-     * @tc.name      testScrollBar001
-     * @tc.desc      Testing for the ScrollBar component.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testScrollBar001
+     * @tc.number testScrollBar001
+     * @tc.desc   Testing for the ScrollBar component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollBar001', Level.LEVEL1, async (done: Function) => {
       console.info('[testScrollBar001] START');
@@ -65,12 +65,12 @@ export default function scrollBarJsunitt() {
     });
 
     /**
-     * @tc.number    testScrollBar002
-     * @tc.name      testScrollBar002
-     * @tc.desc      Testing for the ScrollBar component.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testScrollBar002
+     * @tc.number testScrollBar002
+     * @tc.desc   Testing for the ScrollBar component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollBar002', Level.LEVEL1, async (done: Function) => {
       console.info('[testScrollBar002] START');
@@ -102,12 +102,12 @@ export default function scrollBarJsunitt() {
     });
 
     /**
-     * @tc.number    testScrollBar003
-     * @tc.name      testScrollBar003
-     * @tc.desc      Testing for the ScrollBar component.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testScrollBar003
+     * @tc.number testScrollBar003
+     * @tc.desc   Testing for the ScrollBar component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollBar003', Level.LEVEL1, async (done: Function) => {
       console.info('[testScrollBar003] START');
@@ -121,12 +121,12 @@ export default function scrollBarJsunitt() {
     });
 
     /**
-     * @tc.number    testScrollBar004
-     * @tc.name      testScrollBar004
-     * @tc.desc      Testing for the ScrollBar component.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testScrollBar004
+     * @tc.number testScrollBar004
+     * @tc.desc   Testing for the ScrollBar component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollBar004', Level.LEVEL1, async (done: Function) => {
       console.info('[testScrollBar004] START');
@@ -155,12 +155,12 @@ export default function scrollBarJsunitt() {
     });
 
     /**
-     * @tc.number    testScrollBar005
-     * @tc.name      testScrollBar005
-     * @tc.desc      Testing for the ScrollBar component.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testScrollBar005
+     * @tc.number testScrollBar005
+     * @tc.desc   Testing for the ScrollBar component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollBar005', Level.LEVEL1, async (done: Function) => {
       console.info('[testScrollBar005] START');

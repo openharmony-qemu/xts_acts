@@ -42,13 +42,13 @@ export default function StartAndEnd() {
       done();
     });
 
-    /* *
-     * @tc.number: StartAndEnd_0001
-     * @tc.name  : StartAndEnd_0001
-     * @tc.desc  : Component sliding triggers onReachEnd and onReachStart
-     * @tc.level : Level 2
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   StartAndEnd_0001
+     * @tc.number StartAndEnd_0001
+     * @tc.desc   Component sliding triggers onReachEnd and onReachStart
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('StartAndEnd_0001',  Level.LEVEL2, async (done: Function) => {
       console.info('[StartAndEnd_0001] START');

@@ -46,12 +46,12 @@ export default function focusedCardList() {
     });
 
     /**
-     * @tc.number    focusedCardList_001
-     * @tc.name      focusedCardList_0100
-     * @tc.desc      Test the card style of the List component in focus state.
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   focusedCardList_0100
+     * @tc.number focusedCardList_001
+     * @tc.desc   Test the card style of the List component in focus state.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('focusedCardList_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[focusedCardList_0100] START');

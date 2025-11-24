@@ -26,91 +26,91 @@ export default function stackShadowTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_SHADOW_0100
-     * @tc.name       : testStackShadow001
-     * @tc.desc       : testing shadow for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackShadow001
+     * @tc.number SUB_ARKUI_CAPI_STACK_SHADOW_0100
+     * @tc.desc   testing shadow for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackShadow001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackShadow001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_SHADOW_0200
-     * @tc.name       : testStackShadow002
-     * @tc.desc       : testing shadow for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackShadow002
+     * @tc.number SUB_ARKUI_CAPI_STACK_SHADOW_0200
+     * @tc.desc   testing shadow for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackShadow002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackShadow002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_SHADOW_0300
-     * @tc.name       : testStackShadow003
-     * @tc.desc       : testing shadow for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackShadow003
+     * @tc.number SUB_ARKUI_CAPI_STACK_SHADOW_0300
+     * @tc.desc   testing shadow for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackShadow003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackShadow003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_SHADOW_0400
-     * @tc.name       : testStackShadow004
-     * @tc.desc       : testing shadow for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackShadow004
+     * @tc.number SUB_ARKUI_CAPI_STACK_SHADOW_0400
+     * @tc.desc   testing shadow for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackShadow004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackShadow004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_SHADOW_0500
-     * @tc.name       : testStackShadow005
-     * @tc.desc       : testing shadow for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackShadow005
+     * @tc.number SUB_ARKUI_CAPI_STACK_SHADOW_0500
+     * @tc.desc   testing shadow for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackShadow005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackShadow005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_SHADOW_0600
-     * @tc.name       : testStackShadow006
-     * @tc.desc       : testing shadow for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackShadow006
+     * @tc.number SUB_ARKUI_CAPI_STACK_SHADOW_0600
+     * @tc.desc   testing shadow for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackShadow006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackShadow006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_SHADOW_0700
-     * @tc.name       : testStackShadow007
-     * @tc.desc       : testing shadow for stack with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testStackShadow007
+     * @tc.number SUB_ARKUI_CAPI_STACK_SHADOW_0700
+     * @tc.desc   testing shadow for stack with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackShadow007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackShadow007()).assertEqual(0)

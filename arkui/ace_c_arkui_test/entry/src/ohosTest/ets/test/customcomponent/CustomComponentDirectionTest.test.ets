@@ -26,65 +26,65 @@ export default function customComponentDirectionTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_DIRECTION_0100
-     * @tc.name       : testCustomComponentDirection001
-     * @tc.desc       : testing direction for row with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentDirection001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_DIRECTION_0100
+     * @tc.desc   testing direction for row with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentDirection001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentDirection001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_DIRECTION_0200
-     * @tc.name       : testCustomComponentDirection002
-     * @tc.desc       : testing direction for row with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentDirection002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_DIRECTION_0200
+     * @tc.desc   testing direction for row with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentDirection002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentDirection002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_DIRECTION_0300
-     * @tc.name       : testCustomComponentDirection003
-     * @tc.desc       : testing direction for row with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentDirection003
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_DIRECTION_0300
+     * @tc.desc   testing direction for row with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentDirection003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentDirection003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_DIRECTION_0400
-     * @tc.name       : testCustomComponentDirection004
-     * @tc.desc       : testing direction for row with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentDirection004
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_DIRECTION_0400
+     * @tc.desc   testing direction for row with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentDirection004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentDirection004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_DIRECTION_0500
-     * @tc.name       : testCustomComponentDirection005
-     * @tc.desc       : testing direction for row with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCustomComponentDirection005
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_DIRECTION_0500
+     * @tc.desc   testing direction for row with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentDirection005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentDirection005()).assertEqual(0)

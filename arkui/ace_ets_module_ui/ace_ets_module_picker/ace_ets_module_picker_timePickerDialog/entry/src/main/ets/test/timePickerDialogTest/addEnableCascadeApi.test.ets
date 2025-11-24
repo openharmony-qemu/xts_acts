@@ -42,12 +42,12 @@ export default function TimePickerDialogApiEnableCascadeTest() {
     });
 
     /**
-     * @tc.number: TimePickerDialog_EnableCascade_001
-     * @tc.name  : TimePickerDialog_EnableCascade_001
-     * @tc.desc  : To test the enableCascade interface true
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   TimePickerDialog_EnableCascade_001
+     * @tc.number TimePickerDialog_EnableCascade_001
+     * @tc.desc   To test the enableCascade interface true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimePickerDialog_EnableCascade_001', Level.LEVEL1, async (done: Function) => {
       let tagName = 'TimePickerDialog_EnableCascade_001';
@@ -72,12 +72,12 @@ export default function TimePickerDialogApiEnableCascadeTest() {
     });
 
     /**
-     * @tc.number: TimePickerDialog_EnableCascade_002
-     * @tc.name  : TimePickerDialog_EnableCascade_002
-     * @tc.desc  : To test the enableCascade interface false
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   TimePickerDialog_EnableCascade_002
+     * @tc.number TimePickerDialog_EnableCascade_002
+     * @tc.desc   To test the enableCascade interface false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimePickerDialog_EnableCascade_002', Level.LEVEL1, async (done: Function) => {
       let tagName = 'TimePickerDialog_EnableCascade_002';
@@ -102,12 +102,12 @@ export default function TimePickerDialogApiEnableCascadeTest() {
     });
 
     /**
-     * @tc.number: TimePickerDialog_EnableCascade_003
-     * @tc.name  : TimePickerDialog_EnableCascade_003
-     * @tc.desc  : To test the enableCascade interface null
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   TimePickerDialog_EnableCascade_003
+     * @tc.number TimePickerDialog_EnableCascade_003
+     * @tc.desc   To test the enableCascade interface null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimePickerDialog_EnableCascade_003', Level.LEVEL1, async (done: Function) => {
       let tagName = 'TimePickerDialog_EnableCascade_003';
@@ -132,11 +132,12 @@ export default function TimePickerDialogApiEnableCascadeTest() {
     });
 
     /**
-     * @tc.number: TimePickerDialog_EnableCascade_004
-     * @tc.name  : TimePickerDialog_EnableCascade_004
-     * @tc.desc  : To test the enableCascade interface undefined
-     * @tc.type
-     * @tc.size
+     * @tc.name   TimePickerDialog_EnableCascade_004
+     * @tc.number TimePickerDialog_EnableCascade_004
+     * @tc.desc   To test the enableCascade interface undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimePickerDialog_EnableCascade_004', Level.LEVEL1, async (done: Function) => {
       let tagName = 'TimePickerDialog_EnableCascade_004';

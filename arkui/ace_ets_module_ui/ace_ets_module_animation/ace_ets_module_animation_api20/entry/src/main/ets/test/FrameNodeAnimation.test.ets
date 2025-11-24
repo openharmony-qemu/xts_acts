@@ -61,12 +61,12 @@ export default function FrameNodeAnimation() {
     });
 
     /**
+     * @tc.name   FrameNodeAnimation_001
      * @tc.number FrameNodeAnimation_001
-     * @tc.name FrameNodeAnimation_001
-     * @tc.desc test AnimationPropertyType
-     * @tc.level Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test AnimationPropertyType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FrameNodeAnimation_001', Level.LEVEL0, async (done: Function) => {
       console.info('[FrameNodeAnimation_001] START');
@@ -86,12 +86,12 @@ export default function FrameNodeAnimation() {
     });
 
     /**
+     * @tc.name   FrameNodeAnimation_002
      * @tc.number FrameNodeAnimation_002
-     * @tc.name FrameNodeAnimation_002
-     * @tc.desc test frameNode getNodePropertyValue
-     * @tc.level Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test frameNode getNodePropertyValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FrameNodeAnimation_002', Level.LEVEL0, async (done: Function) => {
       console.info('[FrameNodeAnimation_002] START');
@@ -111,12 +111,12 @@ export default function FrameNodeAnimation() {
     });
 
     /**
+     * @tc.name   FrameNodeAnimation_003
      * @tc.number FrameNodeAnimation_003
-     * @tc.name FrameNodeAnimation_003
-     * @tc.desc test frameNode cancelAnimations
-     * @tc.level Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test frameNode cancelAnimations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FrameNodeAnimation_003', Level.LEVEL0, async (done: Function) => {
       console.info('[FrameNodeAnimation_003] START');

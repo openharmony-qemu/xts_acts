@@ -45,14 +45,14 @@ export default function tabsJsunit() {
       console.info("tabs after each called");
     });
 
-	/**
-      * @tc.number: testTabs_0100
-      * @tc.name  : testTabs_0100
-      * @tc.desc  : Test Tab Case
-      * @tc.level : Level 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   testTabs_0100
+     * @tc.number testTabs_0100
+     * @tc.desc   Test Tab Case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTabs_0100', Level.LEVEL1, async (done: Function) => {
       console.info('testTabs_0100 START');
       let strJson = getInspectorByKey('tabs');
@@ -64,14 +64,14 @@ export default function tabsJsunit() {
       done();
     });
 
-	/**
-      * @tc.number: testTabs_0200
-      * @tc.name  : testTabs_0200
-      * @tc.desc  : Test Tab Case
-      * @tc.level : Level 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   testTabs_0200
+     * @tc.number testTabs_0200
+     * @tc.desc   Test Tab Case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTabs_0200', Level.LEVEL1, async (done: Function) => {
       console.info('testTabs_0200 START');
       let strJson = getInspectorByKey('tabs');
@@ -82,14 +82,14 @@ export default function tabsJsunit() {
       done();
     });
 
-	/**
-      * @tc.number: testTabs_0300
-      * @tc.name  : testTabs_0300
-      * @tc.desc  : Test Tab Case
-      * @tc.level : Level 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   testTabs_0300
+     * @tc.number testTabs_0300
+     * @tc.desc   Test Tab Case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTabs_0300', Level.LEVEL1, async (done: Function) => {
       console.info('testTabs_0300 START');
       let strJson = getInspectorByKey('tabs');
@@ -100,14 +100,14 @@ export default function tabsJsunit() {
       done();
     });
 
-	/**
-      * @tc.number: testTabs_0400
-      * @tc.name  : testTabs_0400
-      * @tc.desc  : Test Tab Case
-      * @tc.level : Level 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   testTabs_0400
+     * @tc.number testTabs_0400
+     * @tc.desc   Test Tab Case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTabs_0400', Level.LEVEL1, async (done: Function) => {
       console.info('testTabs_0400 START');
       let strJson = getInspectorByKey('tabs');
@@ -118,14 +118,14 @@ export default function tabsJsunit() {
       done();
     });
 
-	/**
-      * @tc.number: testTabs_0500
-      * @tc.name  : testTabs_0500
-      * @tc.desc  : Test Tab Case
-      * @tc.level : Level 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   testTabs_0500
+     * @tc.number testTabs_0500
+     * @tc.desc   Test Tab Case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTabs_0500', Level.LEVEL1, async (done: Function) => {
       console.info('testTabs_0500 START');
       let strJson = getInspectorByKey('tabs');
@@ -136,14 +136,14 @@ export default function tabsJsunit() {
       done();
     });
 
-	/**
-      * @tc.number: testTabs_0600
-      * @tc.name  : testTabs_0600
-      * @tc.desc  : Test Tab Case
-      * @tc.level : Level 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   testTabs_0600
+     * @tc.number testTabs_0600
+     * @tc.desc   Test Tab Case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTabs_0600', Level.LEVEL1, async (done: Function) => {
       console.info('testTabs_0600 START');
       let strJson = getInspectorByKey('tabs');
@@ -156,14 +156,14 @@ export default function tabsJsunit() {
       done();
     });
 
-	/**
-      * @tc.number: testTabs_0700
-      * @tc.name  : testTabs_0700
-      * @tc.desc  : Test Tab Case
-      * @tc.level : Level 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   testTabs_0700
+     * @tc.number testTabs_0700
+     * @tc.desc   Test Tab Case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTabs_0700', Level.LEVEL1, async (done: Function) => {
       console.info('testTabs_0700 START');
       let strJson = getInspectorByKey('tabs');
@@ -175,14 +175,14 @@ export default function tabsJsunit() {
       done();
     });
 
-	/**
-      * @tc.number: testTabs_0800
-      * @tc.name  : testTabs_0800
-      * @tc.desc  : Test Tab Case
-      * @tc.level : Level 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   testTabs_0800
+     * @tc.number testTabs_0800
+     * @tc.desc   Test Tab Case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTabs_0800', Level.LEVEL1, async (done: Function) => {
       console.info('testTabs_0800 START');
       try {
@@ -208,14 +208,14 @@ export default function tabsJsunit() {
       done();
     });
 
-	/**
-      * @tc.number: testTabs_0900
-      * @tc.name  : testTabs_0900
-      * @tc.desc  : Test Tab Case
-      * @tc.level : Level 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   testTabs_0900
+     * @tc.number testTabs_0900
+     * @tc.desc   Test Tab Case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTabs_0900', Level.LEVEL1, async (done: Function) => {
       console.info('testTabs_0900 START');
       try {
@@ -241,14 +241,14 @@ export default function tabsJsunit() {
       done();
     });
 
-	/**
-      * @tc.number: testTabs_1000
-      * @tc.name  : testTabs_1000
-      * @tc.desc  : Test Tab Case
-      * @tc.level : Level 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   testTabs_1000
+     * @tc.number testTabs_1000
+     * @tc.desc   Test Tab Case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTabs_1000', Level.LEVEL1, async (done: Function) => {
       console.info('testTabs_1000 START');
       try {
@@ -274,14 +274,14 @@ export default function tabsJsunit() {
       done();
     });
 
-	/**
-      * @tc.number: testTabs_1100
-      * @tc.name  : testTabs_1100
-      * @tc.desc  : Test Tab Case
-      * @tc.level : Level 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   testTabs_1100
+     * @tc.number testTabs_1100
+     * @tc.desc   Test Tab Case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTabs_1100', Level.LEVEL1, async (done: Function) => {
       console.info('testTabs_1100 START');
       try {
@@ -307,14 +307,14 @@ export default function tabsJsunit() {
       done();
     });
 
-	/**
-      * @tc.number: testTabs_1200
-      * @tc.name  : testTabs_1200
-      * @tc.desc  : Test Tab Case
-      * @tc.level : Level 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   testTabs_1200
+     * @tc.number testTabs_1200
+     * @tc.desc   Test Tab Case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTabs_1200', Level.LEVEL1, async (done: Function) => {
       console.info('testTabs_1200 START');
       try {
@@ -340,14 +340,14 @@ export default function tabsJsunit() {
       done();
     });
 
-	/**
-      * @tc.number: testTabs_1300
-      * @tc.name  : testTabs_1300
-      * @tc.desc  : Test Tab Case
-      * @tc.level : Level 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   testTabs_1300
+     * @tc.number testTabs_1300
+     * @tc.desc   Test Tab Case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTabs_1300', Level.LEVEL1, async (done: Function) => {
       console.info('testTabs_1300 START');
       try {
@@ -373,14 +373,14 @@ export default function tabsJsunit() {
       done();
     });
 
-	/**
-      * @tc.number: testTabs_1400
-      * @tc.name  : testTabs_1400
-      * @tc.desc  : Test Tab Case
-      * @tc.level : Level 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   testTabs_1400
+     * @tc.number testTabs_1400
+     * @tc.desc   Test Tab Case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTabs_1400', Level.LEVEL1, async (done: Function) => {
       console.info('testTabs_1400 START');
       await CommonFunc.sleep(1500);

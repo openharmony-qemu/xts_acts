@@ -46,11 +46,13 @@ export default function PinchRecognizerTest() {
     });
 
     /**
-    * @tc.number  :SUB_effective_PinchRecognizer_0100
-    * @tc.name  : PinchRecognizer_0100
-    * @tc.desc  : To test whether PinchRecognizer is effective.
-    * @tc.level : Level 0
-    */
+     * @tc.name   PinchRecognizer1_0100
+     * @tc.number SUB_effective_PinchRecognizer_0100
+     * @tc.desc   To test whether PinchRecognizer is effective.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PinchRecognizer1_0100', Level.LEVEL0, async (done: Function) => {
       console.info('PinchRecognizer1_0100 START');
       await CommonFunc.sleep(1000);

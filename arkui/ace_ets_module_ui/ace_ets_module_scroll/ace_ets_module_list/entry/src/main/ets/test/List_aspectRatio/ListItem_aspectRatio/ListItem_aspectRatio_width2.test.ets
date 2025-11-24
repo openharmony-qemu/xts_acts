@@ -64,12 +64,12 @@ export default function ListItem_aspectRatio_width2() {
     });
 
     /**
+     * @tc.name   SUB_ACE_ListItem_aspectRatio_width2_0100
      * @tc.number SUB_ACE_ListItem_aspectRatio_width2_0100
-     * @tc.name testListAspectRatio
-     * @tc.desc set the aspectRatio of ListItem to '0'
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   set the aspectRatio of ListItem to '0'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_ListItem_aspectRatio_width2_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_ListItem_aspectRatio_width2_0100] START');
@@ -90,12 +90,12 @@ export default function ListItem_aspectRatio_width2() {
     });
 
     /**
+     * @tc.name   SUB_ACE_ListItem_aspectRatio_width2_0200
      * @tc.number SUB_ACE_ListItem_aspectRatio_width2_0200
-     * @tc.name testListAspectRatio
-     * @tc.desc set the aspectRatio of ListItem to '0.5'
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   set the aspectRatio of ListItem to '0.5'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_ListItem_aspectRatio_width2_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_ListItem_aspectRatio_width2_0200] START');
@@ -117,12 +117,12 @@ export default function ListItem_aspectRatio_width2() {
     });
 
     /**
+     * @tc.name   SUB_ACE_ListItem_aspectRatio_width2_0300
      * @tc.number SUB_ACE_ListItem_aspectRatio_width2_0300
-     * @tc.name testListAspectRatio
-     * @tc.desc set the aspectRatio of ListItem to '2'
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   set the aspectRatio of ListItem to '2'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_ListItem_aspectRatio_width2_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_ListItem_aspectRatio_width2_0300] START');
@@ -143,12 +143,12 @@ export default function ListItem_aspectRatio_width2() {
     });
 
     /**
+     * @tc.name   SUB_ACE_ListItem_aspectRatio_width2_0400
      * @tc.number SUB_ACE_ListItem_aspectRatio_width2_0400
-     * @tc.name testListAspectRatio
-     * @tc.desc set the aspectRatio of ListItem to '-1'
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   set the aspectRatio of ListItem to '-1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_ListItem_aspectRatio_width2_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_ListItem_aspectRatio_width2_0400] START');

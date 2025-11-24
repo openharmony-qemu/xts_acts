@@ -47,12 +47,12 @@ export default function UIObserverWillDrawTest() {
     });
 
     /**
-     * @tc.number    UIObserverWillDrawTest_0100
-     * @tc.name      UIObserverWillDrawTest_0100
-     * @tc.desc      UIObserver CallBack Test
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   UIObserverWillDrawTest_0100
+     * @tc.number UIObserverWillDrawTest_0100
+     * @tc.desc   UIObserver CallBack Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('UIObserverWillDrawTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('UIObserverWillDrawTest_0100 START');

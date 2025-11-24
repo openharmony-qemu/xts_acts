@@ -44,10 +44,13 @@ export default function tabsBarPositionJsunit() {
       console.info("tabsBarPosition after each called");
     });
 
-    /*
-     * @tc.number       testtabsBarPosition00013
-     * @tc.name         testtabsBarPosition00013
-     * @tc.desc         acetabsBarPositionEtsTest0001
+    /**
+     * @tc.name   testtabsBarPosition0001
+     * @tc.number testtabsBarPosition00013
+     * @tc.desc   acetabsBarPositionEtsTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testtabsBarPosition0001', Level.LEVEL0, async () => {
       console.info('tabsBarPosition testtabsBarPosition0001 START');
@@ -61,10 +64,13 @@ export default function tabsBarPositionJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_00021
-     * @tc.name         testtabsBarPosition0002
-     * @tc.desc         acetabsBarPositionEtsTest0002
+    /**
+     * @tc.name   testtabsBarPosition0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_00021
+     * @tc.desc   acetabsBarPositionEtsTest0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testtabsBarPosition0002', Level.LEVEL0, async () => {
       console.info('tabsBarPosition testtabsBarPosition0002 START');
@@ -78,10 +84,13 @@ export default function tabsBarPositionJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_00031
-     * @tc.name         testtabsBarPosition0003
-     * @tc.desc         acetabsBarPositionEtsTest0003
+    /**
+     * @tc.name   testtabsBarPosition0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_00031
+     * @tc.desc   acetabsBarPositionEtsTest0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testtabsBarPosition0003', Level.LEVEL0, async () => {
       console.info('tabsBarPosition testtabsBarPosition0003 START');
@@ -95,10 +104,13 @@ export default function tabsBarPositionJsunit() {
 
     });
 
-    /*
-     * @tc.number       testtabsBarPosition00041
-     * @tc.name         testtabsBarPosition00041
-     * @tc.desc         acetabsBarPositionEtsTest0004
+    /**
+     * @tc.name   testtabsBarPosition0004
+     * @tc.number testtabsBarPosition00041
+     * @tc.desc   acetabsBarPositionEtsTest0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testtabsBarPosition0004', Level.LEVEL0, async () => {
       console.info('tabsBarPosition testtabsBarPosition0004 START');
@@ -112,10 +124,13 @@ export default function tabsBarPositionJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_00051
-     * @tc.name         testtabsBarPosition0005
-     * @tc.desc         acetabsBarPositionEtsTest0005
+    /**
+     * @tc.name   testtabsBarPosition0005
+     * @tc.number SUB_ACE_BASIC_ETS_API_00051
+     * @tc.desc   acetabsBarPositionEtsTest0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testtabsBarPosition0005', Level.LEVEL0, async () => {
       console.info('tabsBarPosition testtabsBarPosition0005 START');
@@ -129,10 +144,13 @@ export default function tabsBarPositionJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_00061
-     * @tc.name         testtabsBarPosition0006
-     * @tc.desc         acetabsBarPositionEtsTest0006
+    /**
+     * @tc.name   testtabsBarPosition0006
+     * @tc.number SUB_ACE_BASIC_ETS_API_00061
+     * @tc.desc   acetabsBarPositionEtsTest0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testtabsBarPosition0006', Level.LEVEL0, async () => {
       console.info('tabsBarPosition testtabsBarPosition0006 START');
@@ -146,10 +164,13 @@ export default function tabsBarPositionJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_00071
-     * @tc.name         testtabsBarPosition0007
-     * @tc.desc         acetabsBarPositionEtsTest0007
+    /**
+     * @tc.name   testtabsBarPosition0007
+     * @tc.number SUB_ACE_BASIC_ETS_API_00071
+     * @tc.desc   acetabsBarPositionEtsTest0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testtabsBarPosition0007', Level.LEVEL0, async () => {
       console.info('tabsBarPosition testtabsBarPosition0007 START');
@@ -163,10 +184,13 @@ export default function tabsBarPositionJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_00091
-     * @tc.name         testtabsBarPosition0009
-     * @tc.desc         acetabsBarPositionEtsTest0009
+    /**
+     * @tc.name   testtabsBarPosition0009
+     * @tc.number SUB_ACE_BASIC_ETS_API_00091
+     * @tc.desc   acetabsBarPositionEtsTest0009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testtabsBarPosition0009', Level.LEVEL0, async () => {
       console.info('tabsBarPosition testtabsBarPosition009 START');
@@ -180,10 +204,13 @@ export default function tabsBarPositionJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_00101
-     * @tc.name         testtabsBarPosition0010
-     * @tc.desc         acetabsBarPositionEtsTest0010
+    /**
+     * @tc.name   testtabsBarPosition0010
+     * @tc.number SUB_ACE_BASIC_ETS_API_00101
+     * @tc.desc   acetabsBarPositionEtsTest0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testtabsBarPosition0010', Level.LEVEL0, async () => {
       console.info('tabsBarPosition testtabsBarPosition0010 START');
@@ -197,10 +224,13 @@ export default function tabsBarPositionJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_00111
-     * @tc.name         testtabsBarPosition0011
-     * @tc.desc         acetabsBarPositionEtsTest0011
+    /**
+     * @tc.name   testtabsBarPosition0011
+     * @tc.number SUB_ACE_BASIC_ETS_API_00111
+     * @tc.desc   acetabsBarPositionEtsTest0011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testtabsBarPosition0011', Level.LEVEL0, async () => {
       console.info('tabsBarPosition testtabsBarPosition0011 START');

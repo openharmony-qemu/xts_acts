@@ -57,12 +57,12 @@ export default function rowSplitJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testRowSplitGetInspectorByKey010
-     * @tc.name: testRowSplitGetInspectorByKey010
-     * @tc.desc: ColumnSplitRowSplitAPI 
-     * @tc.level: Level 0
-     * @tc.type : ColumnSplitRowSplit
-     * @tc.size : ColumnSplitRowSplitTest
+     * @tc.name   testRowSplitGetInspectorByKey010
+     * @tc.number SUB_ARKUI_API_testRowSplitGetInspectorByKey010
+     * @tc.desc   ColumnSplitRowSplitAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRowSplitGetInspectorByKey010',  Level.LEVEL0, async (done: Function) => {
       console.info('testGetInspectorByKey START');
@@ -78,12 +78,12 @@ export default function rowSplitJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testRowSplitGetInspectorByKey020
-     * @tc.name: testRowSplitGetInspectorByKey020
-     * @tc.desc: ColumnSplitRowSplitAPI 
-     * @tc.level: Level 0
-     * @tc.type : ColumnSplitRowSplit
-     * @tc.size : ColumnSplitRowSplitTest
+     * @tc.name   testRowSplitGetInspectorByKey020
+     * @tc.number SUB_ARKUI_API_testRowSplitGetInspectorByKey020
+     * @tc.desc   ColumnSplitRowSplitAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRowSplitGetInspectorByKey020',  Level.LEVEL0, async (done: Function) => {
       let strJson = getInspectorByKey('rowSplit1');

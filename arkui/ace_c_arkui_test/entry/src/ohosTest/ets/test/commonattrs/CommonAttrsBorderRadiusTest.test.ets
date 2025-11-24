@@ -26,78 +26,78 @@ export default function commonAttrsBorderRadiusTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_BORDERRADIUS_0100
-     * @tc.name       : testCommonAttrsBorderRadius001
-     * @tc.desc       : testing borderRadius for commonAttrs with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBorderRadius001
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_BORDERRADIUS_0100
+     * @tc.desc   testing borderRadius for commonAttrs with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBorderRadius001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBorderRadius001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_BORDERRADIUS_0200
-     * @tc.name       : testCommonAttrsBorderRadius002
-     * @tc.desc       : testing borderRadius for commonAttrs with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBorderRadius002
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_BORDERRADIUS_0200
+     * @tc.desc   testing borderRadius for commonAttrs with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBorderRadius002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBorderRadius002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_BORDERRADIUS_0300
-     * @tc.name       : testCommonAttrsBorderRadius003
-     * @tc.desc       : testing borderRadius for commonAttrs with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBorderRadius003
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_BORDERRADIUS_0300
+     * @tc.desc   testing borderRadius for commonAttrs with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBorderRadius003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBorderRadius003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_BORDERRADIUS_0400
-     * @tc.name       : testCommonAttrsBorderRadius004
-     * @tc.desc       : testing borderRadius for commonAttrs with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBorderRadius004
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_BORDERRADIUS_0400
+     * @tc.desc   testing borderRadius for commonAttrs with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBorderRadius004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBorderRadius004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_BORDERRADIUS_0500
-     * @tc.name       : testCommonAttrsBorderRadius005
-     * @tc.desc       : testing borderRadius for commonAttrs with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level2
+    /**
+     * @tc.name   testCommonAttrsBorderRadius005
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_BORDERRADIUS_0500
+     * @tc.desc   testing borderRadius for commonAttrs with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBorderRadius005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBorderRadius005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_BORDERRADIUS_0600
-     * @tc.name       : testCommonAttrsBorderRadius006
-     * @tc.desc       : testing borderRadius for commonAttrs with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level2
+    /**
+     * @tc.name   testCommonAttrsBorderRadius006
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_BORDERRADIUS_0600
+     * @tc.desc   testing borderRadius for commonAttrs with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBorderRadius006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBorderRadius006()).assertEqual(0)

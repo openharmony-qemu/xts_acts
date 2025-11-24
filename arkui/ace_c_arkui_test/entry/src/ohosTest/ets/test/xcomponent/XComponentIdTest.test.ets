@@ -26,13 +26,13 @@ export default function xComponentIdTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_XCOMPONENT_ID_0100
-     * @tc.name       : testXComponentId001
-     * @tc.desc       : testing Id for XComponent with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testXComponentId001
+     * @tc.number SUB_ARKUI_CAPI_XCOMPONENT_ID_0100
+     * @tc.desc   testing Id for XComponent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXComponentId001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'XComponentId001Test';
@@ -41,13 +41,13 @@ export default function xComponentIdTest() {
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_XCOMPONENT_ID_0200
-     * @tc.name       : testXComponentId002
-     * @tc.desc       : testing Id for XComponent with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testXComponentId002
+     * @tc.number SUB_ARKUI_CAPI_XCOMPONENT_ID_0200
+     * @tc.desc   testing Id for XComponent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXComponentId002', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'XComponentId002Test';
@@ -56,13 +56,13 @@ export default function xComponentIdTest() {
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_XCOMPONENT_ID_0300
-     * @tc.name       : testXComponentId003
-     * @tc.desc       : testing Id for XComponent with null value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testXComponentId003
+     * @tc.number SUB_ARKUI_CAPI_XCOMPONENT_ID_0300
+     * @tc.desc   testing Id for XComponent with null value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXComponentId003', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'XComponentId003Test';
@@ -71,13 +71,13 @@ export default function xComponentIdTest() {
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_XCOMPONENT_ID_0400
-     * @tc.name       : testXComponentId004
-     * @tc.desc       : testing Id for XComponent with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testXComponentId004
+     * @tc.number SUB_ARKUI_CAPI_XCOMPONENT_ID_0400
+     * @tc.desc   testing Id for XComponent with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXComponentId004', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'XComponentId004Test';

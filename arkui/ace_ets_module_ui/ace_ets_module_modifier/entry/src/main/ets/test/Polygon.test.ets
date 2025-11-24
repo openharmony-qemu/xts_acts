@@ -42,12 +42,12 @@ export default function polygonJsunit() {
     });
 
     /**
+     * @tc.name   testpolygon_001
      * @tc.number testpolygon_001
-     * @tc.name Test the properties of components
-     * @tc.desc Change points values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change points values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testpolygon_001', Level.LEVEL0, async (done: Function) => {
       console.info('testpolygon_001 START');
@@ -63,12 +63,12 @@ export default function polygonJsunit() {
     });
 
     /**
+     * @tc.name   testpolygon_002
      * @tc.number testpolygon_002
-     * @tc.name Test the properties of components
-     * @tc.desc Change points values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change points values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testpolygon_002', Level.LEVEL0, async (done: Function) => {
       console.info('testpolygon_002 START');

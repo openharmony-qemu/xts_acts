@@ -59,10 +59,12 @@ export default function SwipeRecognizerTest() {
     });
 
     /**
-     * @tc.number : SwipeRecognizer_0100
-     * @tc.name  : SwipeRecognizer_0100
-     * @tc.desc  : To test whether SwipeRecognizer is effective and getDirection is All.
-     * @tc.level : Level 0
+     * @tc.name   SwipeRecognizer_0100
+     * @tc.number SwipeRecognizer_0100
+     * @tc.desc   To test whether SwipeRecognizer is effective and getDirection is All.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SwipeRecognizer_0100', Level.LEVEL0, async (done: Function) => {
       console.info('SwipeRecognizer_0100 START');
@@ -87,10 +89,12 @@ export default function SwipeRecognizerTest() {
     });
 
     /**
-     * @tc.number : SwipeRecognizer_0200
-     * @tc.name  : SwipeRecognizer_0200
-     * @tc.desc  : To test getDirection is Horizontal.
-     * @tc.level : Level 0
+     * @tc.name   SwipeRecognizer_0200
+     * @tc.number SwipeRecognizer_0200
+     * @tc.desc   To test getDirection is Horizontal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SwipeRecognizer_0200', Level.LEVEL0, async (done: Function) => {
       console.info('SwipeRecognizer_0200 START');
@@ -107,10 +111,12 @@ export default function SwipeRecognizerTest() {
     });
 
     /**
-     * @tc.number : SwipeRecognizer_0300
-     * @tc.name  : SwipeRecognizer_0300
-     * @tc.desc  : To test getDirection is Vertical.
-     * @tc.level : Level 0
+     * @tc.name   SwipeRecognizer_0300
+     * @tc.number SwipeRecognizer_0300
+     * @tc.desc   To test getDirection is Vertical.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SwipeRecognizer_0300', Level.LEVEL0, async (done: Function) => {
       console.info('SwipeRecognizer_0300 START');
@@ -127,10 +133,12 @@ export default function SwipeRecognizerTest() {
     });
 
     /**
-     * @tc.number : SwipeRecognizer_0400
-     * @tc.name  : SwipeRecognizer_0400
-     * @tc.desc  : To test getDirection is None.
-     * @tc.level : Level 0
+     * @tc.name   SwipeRecognizer_0400
+     * @tc.number SwipeRecognizer_0400
+     * @tc.desc   To test getDirection is None.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SwipeRecognizer_0400', Level.LEVEL0, async (done: Function) => {
       console.info('SwipeRecognizer_0400 START');

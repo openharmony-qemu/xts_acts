@@ -42,12 +42,12 @@ export default function TextGetParagraphsTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextGetParagraphsTest_0010
-     * @tc.name      TextGetParagraphsTest_0010
-     * @tc.desc      test getUIContext().getMeasureUtils().getParagraphs(): getMaxWidth
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextGetParagraphsTest_0010
+     * @tc.number SUB_ACE_TextGetParagraphsTest_0010
+     * @tc.desc   test getUIContext().getMeasureUtils().getParagraphs(): getMaxWidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextGetParagraphsTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('[TextGetParagraphsTest_0010] START');
@@ -59,12 +59,12 @@ export default function TextGetParagraphsTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextGetParagraphsTest_0020
-     * @tc.name      TextGetParagraphsTest_0020
-     * @tc.desc      test getUIContext().getMeasureUtils().getParagraphs(): didExceedMaxLines
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextGetParagraphsTest_0020
+     * @tc.number SUB_ACE_TextGetParagraphsTest_0020
+     * @tc.desc   test getUIContext().getMeasureUtils().getParagraphs(): didExceedMaxLines
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextGetParagraphsTest_0020', Level.LEVEL2, async (done: Function) => {
       console.info('[TextGetParagraphsTest_0020] START');
@@ -76,12 +76,12 @@ export default function TextGetParagraphsTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextGetParagraphsTest_0030
-     * @tc.name      TextGetParagraphsTest_0030
-     * @tc.desc      test getUIContext().getMeasureUtils().getParagraphs(): Length
-     * @tc.level:    Level 3
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextGetParagraphsTest_0030
+     * @tc.number SUB_ACE_TextGetParagraphsTest_0030
+     * @tc.desc   test getUIContext().getMeasureUtils().getParagraphs(): Length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TextGetParagraphsTest_0030', Level.LEVEL3, async (done: Function) => {
       console.info('[TextGetParagraphsTest_0030] START');

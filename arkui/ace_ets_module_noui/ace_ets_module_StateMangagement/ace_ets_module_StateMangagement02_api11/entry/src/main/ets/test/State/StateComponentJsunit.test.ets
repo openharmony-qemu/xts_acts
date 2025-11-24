@@ -62,6 +62,14 @@ export default function StateComponentJsunit() {
       });
     });
 
+    /**
+     * @tc.name   StateComponentJsunit_0100
+     * @tc.number StateComponentJsunit_0100
+     * @tc.desc   StateComponentJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StateComponentJsunit_0100', Level.LEVEL0, async (done: Function) => {
       // get the value of title1
       console.info('StateComponentJsunit_0100 START');
@@ -81,6 +89,14 @@ export default function StateComponentJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   StateComponentJsunit_0200
+     * @tc.number StateComponentJsunit_0200
+     * @tc.desc   StateComponentJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StateComponentJsunit_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('StateComponentJsunit_0200 START');
@@ -97,6 +113,14 @@ export default function StateComponentJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   StateComponentJsunit_0300
+     * @tc.number StateComponentJsunit_0300
+     * @tc.desc   StateComponentJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StateComponentJsunit_0300', Level.LEVEL0, async (done: Function) => {
 
       console.info('StateComponentJsunit_0300 START');
@@ -113,6 +137,14 @@ export default function StateComponentJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   StateComponentJsunit_0400
+     * @tc.number StateComponentJsunit_0400
+     * @tc.desc   StateComponentJsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StateComponentJsunit_0400', Level.LEVEL0, async (done: Function) => {
 
       console.info('StateComponentJsunit_0400 START');
@@ -129,6 +161,14 @@ export default function StateComponentJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   StateComponentJsunit_0500
+     * @tc.number StateComponentJsunit_0500
+     * @tc.desc   StateComponentJsunit_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StateComponentJsunit_0500', Level.LEVEL0, async (done: Function) => {
 
       console.info('StateComponentJsunit_0500 START');

@@ -46,10 +46,12 @@ export default function tabsDemo() {
     });
 
     /**
-     * @tc.number      tabsDemo_001
-     * @tc.name        tabsDemo_001
-     * @tc.desc        Tabs customContentTransition test
-     * @tc.level       Level 2
+     * @tc.name   tabsDemo_001
+     * @tc.number tabsDemo_001
+     * @tc.desc   Tabs customContentTransition test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('tabsDemo_001', Level.LEVEL2, async (done: Function) => {
       console.info('[tabsDemo_001] START');

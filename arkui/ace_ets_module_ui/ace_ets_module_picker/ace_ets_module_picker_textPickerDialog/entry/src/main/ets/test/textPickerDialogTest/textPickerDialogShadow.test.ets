@@ -42,11 +42,13 @@ export default function TextPickerDialogShadowTest() {
       await CommonFunc.sleep(1000);
       console.info('TextPickerDialogShadow after each called');
     });
-    /* *
-     * @tc.number: TextPickerDialogShadowTest_001
-     * @tc.name  : TextPickerDialogShadowTest_001
-     * @tc.desc  : To test the TextPickerDialog shadow color: Color.Red
-     * @tc.level : Level 0
+    /**
+     * @tc.name   TextPickerDialogShadowTest_001
+     * @tc.number TextPickerDialogShadowTest_001
+     * @tc.desc   To test the TextPickerDialog shadow color: Color.Red
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextPickerDialogShadowTest_001',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -62,11 +64,13 @@ export default function TextPickerDialogShadowTest() {
       await btn1?.click();
       done();
     })
-    /* *
-     * @tc.number: TextPickerDialogShadowTest_002
-     * @tc.name  : TextPickerDialogShadowTest_002
-     * @tc.desc  : To test the TextPickerDialog shadow OuterDefaultXS
-     * @tc.level : Level 0
+    /**
+     * @tc.name   TextPickerDialogShadowTest_002
+     * @tc.number TextPickerDialogShadowTest_002
+     * @tc.desc   To test the TextPickerDialog shadow OuterDefaultXS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextPickerDialogShadowTest_002',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -82,11 +86,13 @@ export default function TextPickerDialogShadowTest() {
       await btn1?.click();
       done();
     })
-    /* *
-     * @tc.number: TextPickerDialogShadowTest_003
-     * @tc.name  : TextPickerDialogShadowTest_003
-     * @tc.desc  : To test the TextPickerDialog shadow OuterDefaultSM
-     * @tc.level : Level 0
+    /**
+     * @tc.name   TextPickerDialogShadowTest_003
+     * @tc.number TextPickerDialogShadowTest_003
+     * @tc.desc   To test the TextPickerDialog shadow OuterDefaultSM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextPickerDialogShadowTest_003',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -102,11 +108,13 @@ export default function TextPickerDialogShadowTest() {
       await btn1?.click();
       done();
     })
-    /* *
-     * @tc.number: TextPickerDialogShadowTest_004
-     * @tc.name  : TextPickerDialogShadowTest_004
-     * @tc.desc  : To test the TextPickerDialog shadow OuterDefaultMD
-     * @tc.level : Level 0
+    /**
+     * @tc.name   TextPickerDialogShadowTest_004
+     * @tc.number TextPickerDialogShadowTest_004
+     * @tc.desc   To test the TextPickerDialog shadow OuterDefaultMD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextPickerDialogShadowTest_004',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -122,11 +130,13 @@ export default function TextPickerDialogShadowTest() {
       await btn1?.click();
       done();
     })
-    /* *
-     * @tc.number: TextPickerDialogShadowTest_005
-     * @tc.name  : TextPickerDialogShadowTest_005
-     * @tc.desc  : To test the TextPickerDialog shadow OuterDefaultLG
-     * @tc.level : Level 0
+    /**
+     * @tc.name   TextPickerDialogShadowTest_005
+     * @tc.number TextPickerDialogShadowTest_005
+     * @tc.desc   To test the TextPickerDialog shadow OuterDefaultLG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextPickerDialogShadowTest_005',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -142,11 +152,13 @@ export default function TextPickerDialogShadowTest() {
       await btn1?.click();
       done();
     })
-    /* *
-     * @tc.number: TextPickerDialogShadowTest_006
-     * @tc.name  : TextPickerDialogShadowTest_006
-     * @tc.desc  : To test the TextPickerDialog shadow OuterFloatingSM
-     * @tc.level : Level 0
+    /**
+     * @tc.name   TextPickerDialogShadowTest_006
+     * @tc.number TextPickerDialogShadowTest_006
+     * @tc.desc   To test the TextPickerDialog shadow OuterFloatingSM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextPickerDialogShadowTest_006',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -162,12 +174,14 @@ export default function TextPickerDialogShadowTest() {
       await btn1?.click();
       done();
     })
-    /* *
-     * @tc.number: TextPickerDialogShadowTest_007
-     * @tc.name  : TextPickerDialogShadowTest_007
-     * @tc.desc  : To test the TextPickerDialog shadow OuterFloatingMD
-     * @tc.level : Level 0
-      */
+    /**
+     * @tc.name   TextPickerDialogShadowTest_007
+     * @tc.number TextPickerDialogShadowTest_007
+     * @tc.desc   To test the TextPickerDialog shadow OuterFloatingMD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('TextPickerDialogShadowTest_007',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('OUTER_FLOATING_MD_ID'));

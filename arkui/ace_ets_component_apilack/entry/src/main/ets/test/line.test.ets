@@ -44,10 +44,13 @@ export default function lineNeJsunit() {
       console.info("lineNe after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testlineNe0001
-     * @tc.desic         acelineNeEtsTest0001
+    /**
+     * @tc.name   testlineNe0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testlineNe0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testlineNe0001', Level.LEVEL0, async () => {
       console.info('lineNe testlineNe0001 START');
@@ -61,10 +64,13 @@ export default function lineNeJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testlineNe0002
-     * @tc.desic         acelineNeEtsTest0002
+    /**
+     * @tc.name   testlineNe0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   testlineNe0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testlineNe0002', Level.LEVEL0, async () => {
       console.info('lineNe testlineNe0002 START');
@@ -78,10 +84,13 @@ export default function lineNeJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0005
-     * @tc.name         testlineNe0005
-     * @tc.desic         acelineNeEtsTest0005
+    /**
+     * @tc.name   testlineNe0005
+     * @tc.number SUB_ACE_BASIC_ETS_API_0005
+     * @tc.desc   testlineNe0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testlineNe0005', Level.LEVEL0, async () => {
       console.info('lineNe testlineNe0005 START');
@@ -95,10 +104,13 @@ export default function lineNeJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0006
-     * @tc.name         testlineNe0006
-     * @tc.desic         acelineNeEtsTest0006
+    /**
+     * @tc.name   testlineNe0006
+     * @tc.number SUB_ACE_BASIC_ETS_API_0006
+     * @tc.desc   testlineNe0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testlineNe0006', Level.LEVEL0, async () => {
       console.info('lineNe testlineNe0006 START');

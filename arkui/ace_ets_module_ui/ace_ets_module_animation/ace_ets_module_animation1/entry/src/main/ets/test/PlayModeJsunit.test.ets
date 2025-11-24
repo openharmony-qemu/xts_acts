@@ -46,12 +46,12 @@ export default function playModeTest() {
     });
 
     /**
+     * @tc.name   playModeTest_0100
      * @tc.number playModeTest_0100
-     * @tc.name playModeTest_0100
-     * @tc.desc test playModeTest_0100
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test playModeTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('playModeTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('playModeTest_0100 START');

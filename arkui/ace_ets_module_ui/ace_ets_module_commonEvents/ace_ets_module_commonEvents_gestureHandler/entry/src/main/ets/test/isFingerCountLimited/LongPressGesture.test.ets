@@ -47,11 +47,13 @@ export default function longpressGestureTest() {
     });
 
     /**
-    * @tc.number : SUB_isFingerCountLimited_LongPressGesture1_0100
-    * @tc.name  : LongPressGesture1_0100
-    * @tc.desc  : To test whether isFingerCountLimited is effective.
-    * @tc.level : Level 2
-    */
+     * @tc.name   LongPressGesture1_0100
+     * @tc.number SUB_isFingerCountLimited_LongPressGesture1_0100
+     * @tc.desc   To test whether isFingerCountLimited is effective.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LongPressGesture1_0100', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000);
       console.info('LongPressGesture1_0100 START');
@@ -70,11 +72,13 @@ export default function longpressGestureTest() {
     });
 
     /**
-    * @tc.number :SUB_isFingerCountLimited_LongPressGesture1_0200
-    * @tc.name  : LongPressGesture1_0200
-    * @tc.desc  : To test whether isFingerCountLimited is effective.
-    * @tc.level : Level 1
-    */
+     * @tc.name   LongPressGesture1_0200
+     * @tc.number SUB_isFingerCountLimited_LongPressGesture1_0200
+     * @tc.desc   To test whether isFingerCountLimited is effective.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LongPressGesture1_0200', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000);
       console.info('LongPressGesture1_0200 START');

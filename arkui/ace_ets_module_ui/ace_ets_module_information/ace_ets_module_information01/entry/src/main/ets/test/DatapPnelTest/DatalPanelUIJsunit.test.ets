@@ -41,12 +41,12 @@ export default function  DatalPanelUIJsunit() {
       done();
     });
     /**
-     * @tc.number:      datalPanelUIJsunit_0100
-     * @tc.name:        datalPanelUIJsunit_0100
-     * @tc.desc:        test datalPanel UI
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   datalPanelUIJsunit_0100
+     * @tc.number datalPanelUIJsunit_0100
+     * @tc.desc   test datalPanel UI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('datalPanelUIJsunit_0100', Level.LEVEL0, async (done: Function) => {
        console.info('datalPanelUIJsunit_0100 START');
@@ -62,14 +62,14 @@ export default function  DatalPanelUIJsunit() {
        expect(obj.$attrs.type).assertEqual('DataPanelType.Line');
        done();
     });
-    /**
-     * @tc.number:      datalPanelUIJsunit_0200
-     * @tc.name:        datalPanelUIJsunit_0200
-     * @tc.desc:        test datalPanel UI
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
-     */
+   /**
+    * @tc.name   datalPanelUIJsunit_0200
+    * @tc.number datalPanelUIJsunit_0200
+    * @tc.desc   test datalPanel UI
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('datalPanelUIJsunit_0200', Level.LEVEL0, async (done: Function) => {
       console.info('datalPanelUIJsunit_0200 START');
       await CommonFunc.sleep(1000);
@@ -84,12 +84,12 @@ export default function  DatalPanelUIJsunit() {
       done();
     });
     /**
-     * @tc.number:      datalPanelUIJsunit_0300
-     * @tc.name:        datalPanelUIJsunit_0300
-     * @tc.desc:        test datalPanel UI
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   datalPanelUIJsunit_0300
+     * @tc.number datalPanelUIJsunit_0300
+     * @tc.desc   test datalPanel UI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('datalPanelUIJsunit_0300', Level.LEVEL0, async (done: Function) => {
       console.info('datalPanelUIJsunit_0300 START');
@@ -106,12 +106,12 @@ export default function  DatalPanelUIJsunit() {
       done();
     });
     /**
-     * @tc.number:      datalPanelUIJsunit_0400
-     * @tc.name:        datalPanelUIJsunit_0400
-     * @tc.desc:        test datalPanel UI
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   datalPanelUIJsunit_0400
+     * @tc.number datalPanelUIJsunit_0400
+     * @tc.desc   test datalPanel UI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('datalPanelUIJsunit_0400', Level.LEVEL0, async (done: Function) => {
       console.info('datalPanelUIJsunit_0400 START');
@@ -129,12 +129,12 @@ export default function  DatalPanelUIJsunit() {
       done();
     });
     /**
-     * @tc.number:      datalPanelUIJsunit_0500
-     * @tc.name:        datalPanelUIJsunit_0500
-     * @tc.desc:        test datalPanel UI
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   datalPanelUIJsunit_0500
+     * @tc.number datalPanelUIJsunit_0500
+     * @tc.desc   test datalPanel UI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('datalPanelUIJsunit_0500', Level.LEVEL0, async (done: Function) => {
       console.info('datalPanelUIJsunit_0500 START');
@@ -153,12 +153,12 @@ export default function  DatalPanelUIJsunit() {
       done();
     });
     /**
-     * @tc.number:      datalPanelUIJsunit_0600
-     * @tc.name:        datalPanelUIJsunit_0600
-     * @tc.desc:        test datalPanel UI
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   datalPanelUIJsunit_0600
+     * @tc.number datalPanelUIJsunit_0600
+     * @tc.desc   test datalPanel UI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('datalPanelUIJsunit_0600', Level.LEVEL0, async (done: Function) => {
       console.info('datalPanelUIJsunit_0600 START');
@@ -174,12 +174,12 @@ export default function  DatalPanelUIJsunit() {
       done();
     });
     /**
-     * @tc.number:      datalPanelUIJsunit_0700
-     * @tc.name:        datalPanelUIJsunit_0700
-     * @tc.desc:        test datalPanel UI
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   datalPanelUIJsunit_0700
+     * @tc.number datalPanelUIJsunit_0700
+     * @tc.desc   test datalPanel UI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('datalPanelUIJsunit_0700', Level.LEVEL0, async (done: Function) => {
       console.info('datalPanelUIJsunit_0700 START');
@@ -197,14 +197,14 @@ export default function  DatalPanelUIJsunit() {
       expect(obj.$attrs.max).assertEqual('80.000000');
       done();
     });
-    /**
-     * @tc.number:      datalPanelUIJsunit_0800
-     * @tc.name:        datalPanelUIJsunit_0800
-     * @tc.desc:        test datalPanel UI
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
-     */
+     /**
+      * @tc.name   datalPanelUIJsunit_0800
+      * @tc.number datalPanelUIJsunit_0800
+      * @tc.desc   test datalPanel UI
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('datalPanelUIJsunit_0800', Level.LEVEL0, async (done: Function) => {
       console.info('datalPanelUIJsunit_0800 START');
       await CommonFunc.sleep(1000);

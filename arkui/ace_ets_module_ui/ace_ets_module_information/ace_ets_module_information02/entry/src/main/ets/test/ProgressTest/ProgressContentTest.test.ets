@@ -42,13 +42,13 @@ export default function ProgressContentTest() {
     });
 
     /**
-    * @tc.number: ProgressContentTest_001
-    * @tc.name  : ProgressContentTest_001
-    * @tc.desc  : To test the content: $r('app.string.module_desc')
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   ProgressContentTest_001
+     * @tc.number ProgressContentTest_001
+     * @tc.desc   To test the content: $r('app.string.module_desc')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ProgressContentTest_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('ProgressContentTest_001 START');
       await Utils.sleep(1000);
@@ -62,13 +62,13 @@ export default function ProgressContentTest() {
     });
 
     /**
-    * @tc.number: ProgressContentTest_002
-    * @tc.name  : ProgressContentTest_002
-    * @tc.desc  : To test the content: undefined
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   ProgressContentTest_002
+     * @tc.number ProgressContentTest_002
+     * @tc.desc   To test the content: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ProgressContentTest_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('ProgressContentTest_002 START');
       await Utils.sleep(1000);
@@ -82,13 +82,13 @@ export default function ProgressContentTest() {
     });
 
     /**
-    * @tc.number: ProgressContentTest_003
-    * @tc.name  : ProgressContentTest_003
-    * @tc.desc  : To test the content: null
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   ProgressContentTest_003
+     * @tc.number ProgressContentTest_003
+     * @tc.desc   To test the content: null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ProgressContentTest_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('ProgressContentTest_003 START');
       await Utils.sleep(1000);
@@ -102,13 +102,13 @@ export default function ProgressContentTest() {
     });
     
     /**
-    * @tc.number: ProgressContentTest_004
-    * @tc.name  : ProgressContentTest_004
-    * @tc.desc  : To test the content: Progress
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   ProgressContentTest_004
+     * @tc.number ProgressContentTest_004
+     * @tc.desc   To test the content: Progress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ProgressContentTest_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('ProgressContentTest_004 START');
       await Utils.sleep(1000);

@@ -46,10 +46,12 @@ export default function QRCodeApiTest() {
     });
 
     /**
-     * @tc.number      QRCode_Api_001
-     * @tc.name        QRCode_Api_001
-     * @tc.desc        QRCode test
-     * @tc.level       Level 2
+     * @tc.name   QRCode_Api_001
+     * @tc.number QRCode_Api_001
+     * @tc.desc   QRCode test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('QRCode_Api_001', Level.LEVEL2, async (done: Function) => {
       console.info('[QRCode_Api_001] START');

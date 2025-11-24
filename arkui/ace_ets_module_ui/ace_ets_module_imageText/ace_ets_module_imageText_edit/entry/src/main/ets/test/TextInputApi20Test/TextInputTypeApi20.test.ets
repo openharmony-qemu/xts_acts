@@ -42,12 +42,12 @@ export default function TextInputTypeApi20Test() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextInputTypeApi20Test_0010
-     * @tc.name      TextInputTypeApi20Test_0010
-     * @tc.desc      test TextInput type: InputType.ONE_TIME_CODE
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextInputTypeApi20Test_0010
+     * @tc.number SUB_ACE_TextInputTypeApi20Test_0010
+     * @tc.desc   test TextInput type: InputType.ONE_TIME_CODE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextInputTypeApi20Test_0010', Level.LEVEL0, async (done: Function) => {
       console.info('[TextInputTypeApi20Test_0010] START');
@@ -60,12 +60,12 @@ export default function TextInputTypeApi20Test() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextInputTypeApi20Test_0020
-     * @tc.name      TextInputTypeApi20Test_0020
-     * @tc.desc      test TextInput type: default
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextInputTypeApi20Test_0020
+     * @tc.number SUB_ACE_TextInputTypeApi20Test_0020
+     * @tc.desc   test TextInput type: default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextInputTypeApi20Test_0020', Level.LEVEL0, async (done: Function) => {
       console.info('[TextInputTypeApi20Test_0020] START');
@@ -78,12 +78,12 @@ export default function TextInputTypeApi20Test() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextInputTypeApi20Test_0030
-     * @tc.name      TextInputTypeApi20Test_0030
-     * @tc.desc      test TextInput type: undefined
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextInputTypeApi20Test_0030
+     * @tc.number SUB_ACE_TextInputTypeApi20Test_0030
+     * @tc.desc   test TextInput type: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextInputTypeApi20Test_0030', Level.LEVEL0, async (done: Function) => {
       console.info('[TextInputTypeApi20Test_0030] START');
@@ -96,12 +96,12 @@ export default function TextInputTypeApi20Test() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextInputTypeApi20Test_0040
-     * @tc.name      TextInputTypeApi20Test_0040
-     * @tc.desc      test TextInputModifier type: InputType.ONE_TIME_CODE
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextInputTypeApi20Test_0040
+     * @tc.number SUB_ACE_TextInputTypeApi20Test_0040
+     * @tc.desc   test TextInputModifier type: InputType.ONE_TIME_CODE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextInputTypeApi20Test_0040', Level.LEVEL0, async (done: Function) => {
       console.info('[TextInputTypeApi20Test_0040] START');

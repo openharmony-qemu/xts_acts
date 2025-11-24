@@ -38,13 +38,13 @@ export default function ListAddApi() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_List_0010
-     * @tc.name       : ListAddApi_001
-     * @tc.desc       : RichEditor Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   ListAddApi_001
+     * @tc.number SUB_ACE_UI_COMPONENT_List_0010
+     * @tc.desc   RichEditor Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ListAddApi_001', Level.LEVEL3, async (done: Function) => {
       console.info('[ListAddApi_001] START');

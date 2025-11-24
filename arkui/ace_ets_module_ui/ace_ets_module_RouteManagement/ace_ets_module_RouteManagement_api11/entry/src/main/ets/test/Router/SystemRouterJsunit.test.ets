@@ -19,6 +19,14 @@ import events_emitter from '@ohos.events.emitter';
 
 export default function systemRouterJsunit() {
   describe('systemRouterTest', () => {
+    /**
+     * @tc.name   systemRouterTest001
+     * @tc.number systemRouterTest001
+     * @tc.desc   systemRouterTest001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('systemRouterTest001', Level.LEVEL2, async (done: Function) => {
       console.info('[systemRouterTest001] START');
       let options: router.RouterOptions = {
@@ -38,6 +46,14 @@ export default function systemRouterJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   systemRouterTest002
+     * @tc.number systemRouterTest002
+     * @tc.desc   systemRouterTest002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('systemRouterTest002', Level.LEVEL2, async (done: Function) => {
       console.info('[systemRouterTest002] START');
       let options: router.RouterOptions = {
@@ -73,6 +89,14 @@ export default function systemRouterJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   systemRouterTest003
+     * @tc.number systemRouterTest003
+     * @tc.desc   systemRouterTest003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('systemRouterTest003', Level.LEVEL2, async (done: Function) => {
       console.info('[systemRouterTest003] START');
       await Utils.sleep(1000);
@@ -85,6 +109,14 @@ export default function systemRouterJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   systemRouterTest004
+     * @tc.number systemRouterTest004
+     * @tc.desc   systemRouterTest004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('systemRouterTest004', Level.LEVEL2, async (done: Function) => {
       console.info('[systemRouterTest004] START');
       router.clear();
@@ -115,6 +147,14 @@ export default function systemRouterJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   systemRouterTest005
+     * @tc.number systemRouterTest005
+     * @tc.desc   systemRouterTest005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('systemRouterTest005', Level.LEVEL2, async (done: Function) => {
       console.info('[systemRouterTest005] START');
       let options: router.RouterOptions = {

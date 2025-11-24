@@ -67,12 +67,14 @@ export default function SwipeGesture2() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0370
-    * @tc.name  : SwipeGesture2_0200
-    * @tc.desc  : To test that the Provide decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   SwipeGesture2_0300
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0370
+     * @tc.desc   To test that the Provide decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SwipeGesture2_0300', Level.LEVEL0, async (done: Function) => {
       console.info('SwipeGesture2_0300 START');
       let driver = Driver.create();

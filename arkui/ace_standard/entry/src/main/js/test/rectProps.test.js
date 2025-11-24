@@ -80,9 +80,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRectFillProp
-         * @tc.desc      ACE
+         * @tc.name   testRectFillProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRectFillProp', Level.LEVEL0, async function(done) {
             console.info('testRectFillProp START');
@@ -106,9 +109,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRectFillOpacityPropOne
-         * @tc.desc      ACE
+         * @tc.name   testRectFillOpacityPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRectFillOpacityPropOne', Level.LEVEL0, async function(done) {
             console.info('testRectFillOpacityPropOne START');
@@ -134,9 +140,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRectFillOpacityPropTwo
-         * @tc.desc      ACE
+         * @tc.name   testRectFillOpacityPropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRectFillOpacityPropTwo', Level.LEVEL0, async function(done) {
             console.info('testRectFillOpacityPropTwo START');
@@ -162,9 +171,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRectFillOpacityPropThree
-         * @tc.desc      ACE
+         * @tc.name   testRectFillOpacityPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRectFillOpacityPropThree', Level.LEVEL0, async function(done) {
             console.info('testRectFillOpacityPropThree START');
@@ -190,9 +202,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRectFillRulePropOne
-         * @tc.desc      ACE
+         * @tc.name   testRectFillRulePropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRectFillRulePropOne', Level.LEVEL0, async function(done) {
             console.info('testRectFillRulePropOne START');
@@ -218,9 +233,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRectFillRulePropTwo
-         * @tc.desc      ACE
+         * @tc.name   testRectFillRulePropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRectFillRulePropTwo', Level.LEVEL0, async function(done) {
             console.info('testRectFillRulePropTwo START');
@@ -246,9 +264,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRectOpacityPropOne
-         * @tc.desc      ACE
+         * @tc.name   testRectOpacityPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRectOpacityPropOne', Level.LEVEL0, async function(done) {
             console.info('testRectOpacityPropOne START');
@@ -274,9 +295,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRectOpacityPropTwo
-         * @tc.desc      ACE
+         * @tc.name   testRectOpacityPropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRectOpacityPropTwo', Level.LEVEL0, async function(done) {
             console.info('testRectOpacityPropTwo START');
@@ -302,9 +326,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRectOpacityPropThree
-         * @tc.desc      ACE
+         * @tc.name   testRectOpacityPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRectOpacityPropThree', Level.LEVEL0, async function(done) {
             console.info('testRectOpacityPropThree START');
@@ -330,9 +357,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRectStrokeProp
-         * @tc.desc      ACE
+         * @tc.name   testRectStrokeProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRectStrokeProp', Level.LEVEL0, async function(done) {
             console.info('testRectStrokeProp START');
@@ -356,9 +386,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRectStrokeDashArrayProp
-         * @tc.desc      ACE
+         * @tc.name   testRectStrokeDashArrayProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRectStrokeDashArrayProp', Level.LEVEL0, async function(done) {
             console.info('testRectStrokeDashArrayProp START');
@@ -384,9 +417,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRectStrokeDashOffsetProp
-         * @tc.desc      ACE
+         * @tc.name   testRectStrokeDashOffsetProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRectStrokeDashOffsetProp', Level.LEVEL0, async function(done) {
             console.info('testRectStrokeDashOffsetProp START');
@@ -413,9 +449,12 @@ export default function undo() {
 
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRectStrokeLineJoinPropOne
-         * @tc.desc      ACE
+         * @tc.name   testRectStrokeLineJoinPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRectStrokeLineJoinPropOne', Level.LEVEL0, async function(done) {
             console.info('testRectStrokeLineJoinPropOne START');
@@ -441,9 +480,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRectStrokeLineJoinPropTwo
-         * @tc.desc      ACE
+         * @tc.name   testRectStrokeLineJoinPropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRectStrokeLineJoinPropTwo', Level.LEVEL0, async function(done) {
             console.info('testRectStrokeLineJoinPropTwo START');
@@ -469,9 +511,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRectStrokeLineJoinPropThree
-         * @tc.desc      ACE
+         * @tc.name   testRectStrokeLineJoinPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRectStrokeLineJoinPropThree', Level.LEVEL0, async function(done) {
             console.info('testRectStrokeLineJoinPropThree START');
@@ -497,9 +542,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRectStrokeLineJoinPropOne
-         * @tc.desc      ACE
+         * @tc.name   testRectStrokeLineJoinPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRectStrokeLineJoinPropOne', Level.LEVEL0, async function(done) {
             console.info('testRectStrokeLineJoinPropOne START');
@@ -525,9 +573,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRectStrokeLineCapPropTwo
-         * @tc.desc      ACE
+         * @tc.name   testRectStrokeLineCapPropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRectStrokeLineCapPropTwo', Level.LEVEL0, async function(done) {
             console.info('testRectStrokeLineCapPropTwo START');
@@ -553,9 +604,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRectStrokeLineCapPropThree
-         * @tc.desc      ACE
+         * @tc.name   testRectStrokeLineCapPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRectStrokeLineCapPropThree', Level.LEVEL0, async function(done) {
             console.info('testRectStrokeLineCapPropThree START');
@@ -581,9 +635,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRectStrokeMiterLimitProp
-         * @tc.desc      ACE
+         * @tc.name   testRectStrokeMiterLimitProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRectStrokeMiterLimitProp', Level.LEVEL0, async function(done) {
             console.info('testRectStrokeMiterLimitProp START');
@@ -609,9 +666,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRectStrokeOpacityPropOne
-         * @tc.desc      ACE
+         * @tc.name   testRectStrokeOpacityPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRectStrokeOpacityPropOne', Level.LEVEL0, async function(done) {
             console.info('testRectStrokeOpacityPropOne START');
@@ -637,9 +697,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRectStrokeOpacityPropTwo
-         * @tc.desc      ACE
+         * @tc.name   testRectStrokeOpacityPropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRectStrokeOpacityPropTwo', Level.LEVEL0, async function(done) {
             console.info('testRectStrokeOpacityPropTwo START');
@@ -665,9 +728,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRectStrokeOpacityPropThree
-         * @tc.desc      ACE
+         * @tc.name   testRectStrokeOpacityPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRectStrokeOpacityPropThree', Level.LEVEL0, async function(done) {
             console.info('testRectStrokeOpacityPropThree START');
@@ -693,9 +759,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRectStrokeWidthProp
-         * @tc.desc      ACE
+         * @tc.name   testRectStrokeWidthProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRectStrokeWidthProp', Level.LEVEL0, async function(done) {
             console.info('testRectStrokeWidthProp START');
@@ -721,9 +790,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRectTransformProp
-         * @tc.desc      ACE
+         * @tc.name   testRectTransformProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRectTransformProp', Level.LEVEL0, async function(done) {
             console.info('testRectTransformProp START');
@@ -747,9 +819,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRectIdProp
-         * @tc.desc      ACE
+         * @tc.name   testRectIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRectIdProp', Level.LEVEL0, async function(done) {
             console.info('testRectIdProp START');
@@ -773,9 +848,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRectWidthPropOne
-         * @tc.desc      ACE
+         * @tc.name   testRectWidthPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRectWidthPropOne', Level.LEVEL0, async function(done) {
             console.info('testRectWidthPropOne START');
@@ -797,9 +875,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRectWidthPropTwo
-         * @tc.desc      ACE
+         * @tc.name   testRectWidthPropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRectWidthPropTwo', Level.LEVEL0, async function(done) {
             console.info('testRectWidthPropTwo START');
@@ -821,9 +902,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRectHeightPropOne
-         * @tc.desc      ACE
+         * @tc.name   testRectHeightPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRectHeightPropOne', Level.LEVEL0, async function(done) {
             console.info('testRectHeightPropOne START');
@@ -845,9 +929,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRectHeightPropTwo
-         * @tc.desc      ACE
+         * @tc.name   testRectHeightPropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRectHeightPropTwo', Level.LEVEL0, async function(done) {
             console.info('testRectHeightPropTwo START');
@@ -869,9 +956,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRectXProp
-         * @tc.desc      ACE
+         * @tc.name   testRectXProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRectXProp', Level.LEVEL0, async function(done) {
             console.info('testRectXProp START');
@@ -895,9 +985,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRectYProp
-         * @tc.desc      ACE
+         * @tc.name   testRectYProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRectYProp', Level.LEVEL0, async function(done) {
             console.info('testRectYProp START');
@@ -921,9 +1014,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRectRxProp
-         * @tc.desc      ACE
+         * @tc.name   testRectRxProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRectRxProp', Level.LEVEL0, async function(done) {
             console.info('testRectRxProp START');
@@ -947,9 +1043,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRectRyProp
-         * @tc.desc      ACE
+         * @tc.name   testRectRyProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRectRyProp', Level.LEVEL0, async function(done) {
             console.info('testRectRyProp START');

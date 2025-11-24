@@ -48,12 +48,12 @@ export default function TimePickerDialog() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TimePickerDialog_0100
-     * @tc.name      TimePickerDialog_0100
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TimePickerDialog_0100
+     * @tc.number SUB_ACE_TimePickerDialog_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TimePickerDialog_0100', Level.LEVEL2, async (done: Function) => {
       console.info('TimePickerDialog_0100 START');

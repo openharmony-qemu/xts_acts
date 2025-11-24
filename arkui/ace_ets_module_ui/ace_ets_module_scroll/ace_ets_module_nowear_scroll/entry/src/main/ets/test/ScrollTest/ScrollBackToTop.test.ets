@@ -22,13 +22,13 @@ export default function ScrollBackToTopTest() {
       }
       done()
     });
-    /*
-     * @tc.number :ArkUI_Scroll_BackToTop_0100
-     * @tc.name   :test scroll back to top
-     * @tc.desc   :test whether backToTop events are effective
-     * @tc.level  :Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ScrollTest1_0100
+     * @tc.number ArkUI_Scroll_BackToTop_0100
+     * @tc.desc   test whether backToTop events are effective
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ScrollTest1_0100', Level.LEVEL1, async () => {
       console.info('ScrollTest_0100 START');

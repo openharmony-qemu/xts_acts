@@ -28,12 +28,12 @@ export default function textMinLinesTest() {
     });
 
     /**
-     * @tc.number    textMinLinesTest_001
-     * @tc.name      textMinLinesTest_001
-     * @tc.desc      test 
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   textMinLinesTest_001
+     * @tc.number textMinLinesTest_001
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textMinLinesTest_001', Level.LEVEL1, async (done: Function) => {
       console.info('[textMinLinesTest_001] START');

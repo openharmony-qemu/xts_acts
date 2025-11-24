@@ -47,11 +47,13 @@ export default function WaterFlowTypeNodeTest() {
       console.info("WaterFlowTypeNode after each called");
     });
 
-    /*
-     * @tc.number    WaterFlowTypeNodeTest_0100
-     * @tc.name      WaterFlowTypeNodeTest_0100
-     * @tc.desc      Test WaterFlowTypeNode
-     * @tc.level     Level 1
+    /**
+     * @tc.name   WaterFlowTypeNodeTest_0100
+     * @tc.number WaterFlowTypeNodeTest_0100
+     * @tc.desc   Test WaterFlowTypeNode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('WaterFlowTypeNodeTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[WaterFlowTypeNodeTest_0100] START');
@@ -94,12 +96,12 @@ export default function WaterFlowTypeNodeTest() {
       done();
     });
     /**
-     * @tc.number    WaterFlowTypeNodeTest_0200
-     * @tc.name      WaterFlowTypeNodeTest_0200
-     * @tc.desc      Test WaterFlowTypeNodePage undefined.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   WaterFlowTypeNodeTest_0200
+     * @tc.number WaterFlowTypeNodeTest_0200
+     * @tc.desc   Test WaterFlowTypeNodePage undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('WaterFlowTypeNodeTest_0200', Level.LEVEL3, async (done: Function) => {
       console.info('[WaterFlowTypeNodeTest_0200] START');

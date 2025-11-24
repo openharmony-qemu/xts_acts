@@ -26,13 +26,13 @@ export default function textAreaOnBlurTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_ONBLUR_0100
-     * @tc.name: testTextAreaOnBlur001
-     * @tc.desc: testing onBlur for textArea
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaOnBlur001
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_ONBLUR_0100
+     * @tc.desc   testing onBlur for textArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaOnBlur001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'TextAreaOnBlurTest';

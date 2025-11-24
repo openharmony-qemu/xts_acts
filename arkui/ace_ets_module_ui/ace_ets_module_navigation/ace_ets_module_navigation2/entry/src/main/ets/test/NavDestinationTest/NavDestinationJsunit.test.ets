@@ -59,10 +59,12 @@ export default function NavDestinationJsunit() {
     });
 
     /**
-     * @tc.number    NavDestinationJsunit_0100
-     * @tc.name      NavDestinationJsunit_0100
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   NavDestinationJsunit_0100
+     * @tc.number NavDestinationJsunit_0100
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavDestinationJsunit_0100',  Level.LEVEL0, async (done: Function) => {
       // Get title name of NavDestination component
@@ -81,10 +83,12 @@ export default function NavDestinationJsunit() {
     });
 
     /**
-     * @tc.number    NavDestinationJsunit_0200
-     * @tc.name      NavDestinationJsunit_0200
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   NavDestinationJsunit_0200
+     * @tc.number NavDestinationJsunit_0200
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavDestinationJsunit_0200',  Level.LEVEL0, async (done: Function) => {
       // Get backgroundColor of NavDestination component
@@ -100,10 +104,12 @@ export default function NavDestinationJsunit() {
     });
 
     /**
-     * @tc.number    NavDestinationJsunit_0300
-     * @tc.name      NavDestinationJsunit_0300
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   NavDestinationJsunit_0300
+     * @tc.number NavDestinationJsunit_0300
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavDestinationJsunit_0300',  Level.LEVEL0, async (done: Function) => {
       // Modify title name of NavDestination component
@@ -123,10 +129,12 @@ export default function NavDestinationJsunit() {
     });
 
     /**
-     * @tc.number    NavDestinationJsunit_0400
-     * @tc.name      NavDestinationJsunit_0400
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   NavDestinationJsunit_0400
+     * @tc.number NavDestinationJsunit_0400
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavDestinationJsunit_0400',  Level.LEVEL0, async (done: Function) => {
       // Modify backgroundColor of NavDestination component
@@ -145,10 +153,12 @@ export default function NavDestinationJsunit() {
     });
 
     /**
-     * @tc.number    NavDestinationJsunit_0500
-     * @tc.name      NavDestinationJsunit_0500
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   NavDestinationJsunit_0500
+     * @tc.number NavDestinationJsunit_0500
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavDestinationJsunit_0500',  Level.LEVEL0, async (done: Function) => {
       // illegal modify title name of NavDestination component
@@ -168,10 +178,12 @@ export default function NavDestinationJsunit() {
     });
 
     /**
-     * @tc.number    NavDestinationJsunit_0600
-     * @tc.name      NavDestinationJsunit_0600
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   NavDestinationJsunit_0600
+     * @tc.number NavDestinationJsunit_0600
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavDestinationJsunit_0600',  Level.LEVEL0, async (done: Function) => {
       // illegal modify backgroundColor of NavDestination component
@@ -190,10 +202,12 @@ export default function NavDestinationJsunit() {
     });
 
     /**
-     * @tc.number    NavDestinationJsunit_0700
-     * @tc.name      NavDestinationJsunit_0700
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   NavDestinationJsunit_0700
+     * @tc.number NavDestinationJsunit_0700
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavDestinationJsunit_0700',  Level.LEVEL0, async (done: Function) => {
       // Get hideTitleBar value of NavDestination component
@@ -209,10 +223,12 @@ export default function NavDestinationJsunit() {
     });
 
     /**
-     * @tc.number    NavDestinationJsunit_0800
-     * @tc.name      NavDestinationJsunit_0800
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   NavDestinationJsunit_0800
+     * @tc.number NavDestinationJsunit_0800
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavDestinationJsunit_0800',  Level.LEVEL0, async (done: Function) => {
       // Modify hideTitleBar value of NavDestination component 
@@ -231,10 +247,12 @@ export default function NavDestinationJsunit() {
     });
 
     /**
-     * @tc.number    NavDestinationJsunit_0900
-     * @tc.name      NavDestinationJsunit_0900
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   NavDestinationJsunit_0900
+     * @tc.number NavDestinationJsunit_0900
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavDestinationJsunit_0900',  Level.LEVEL0, async (done: Function) => {
       // illegal modify hideTitleBar value of NavDestination component 

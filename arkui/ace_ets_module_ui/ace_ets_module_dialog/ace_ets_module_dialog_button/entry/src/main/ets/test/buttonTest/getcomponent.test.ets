@@ -54,12 +54,12 @@ export default function ActsgetcomponentTest() {
     })
 
     /**
-     * @tc.number ArkUX_Get_component_0010
      * @tc.name   ArkUX_Get_component_0010
+     * @tc.number ArkUX_Get_component_0010
      * @tc.desc   test
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Get_component_0010', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Get_component_0010 START');

@@ -47,13 +47,13 @@ export default function ThicknessScaleTest() {
       console.info("ThicknessScaleTest after each called");
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_THICKNESS_SCALE_ETS_API_0001
-    * @tc.name         ThicknessScaleTest0001
-    * @tc.desc         test ThicknessScale no set
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   ThicknessScaleTest0001
+     * @tc.number SUB_ACE_BASIC_THICKNESS_SCALE_ETS_API_0001
+     * @tc.desc   test ThicknessScale no set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ThicknessScaleTest0001', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();
@@ -68,13 +68,13 @@ export default function ThicknessScaleTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_THICKNESS_SCALE_ETS_API_0002
-    * @tc.name         ThicknessScaleTest0002
-    * @tc.desc         test ThicknessScale set 2
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   ThicknessScaleTest0002
+     * @tc.number SUB_ACE_BASIC_THICKNESS_SCALE_ETS_API_0002
+     * @tc.desc   test ThicknessScale set 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ThicknessScaleTest0002', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();
@@ -89,13 +89,13 @@ export default function ThicknessScaleTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_THICKNESS_SCALE_ETS_API_0003
-    * @tc.name         ThicknessScaleTest0003
-    * @tc.desc         test ThicknessScale set 0
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   ThicknessScaleTest0003
+     * @tc.number SUB_ACE_BASIC_THICKNESS_SCALE_ETS_API_0003
+     * @tc.desc   test ThicknessScale set 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ThicknessScaleTest0003', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();
@@ -110,13 +110,13 @@ export default function ThicknessScaleTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_THICKNESS_SCALE_ETS_API_0004
-    * @tc.name         ThicknessScaleTest0004
-    * @tc.desc         test ThicknessScale set undefined
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   ThicknessScaleTest0004
+     * @tc.number SUB_ACE_BASIC_THICKNESS_SCALE_ETS_API_0004
+     * @tc.desc   test ThicknessScale set undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ThicknessScaleTest0004', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();

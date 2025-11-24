@@ -64,14 +64,14 @@ export default function ObjectLinkSplJsunit() {
       await CommonFunc.sleep(1000);
     });
 
-		/**
-		 * @tc.number    ObjectLinkSplJsunit_0100
-		 * @tc.name      ObjectLinkSplJsunit_0100
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   ObjectLinkSplJsunit_0100
+     * @tc.number ObjectLinkSplJsunit_0100
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ObjectLinkSplJsunit_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('ObjectLinkSplJsunit_0100 START');
@@ -107,14 +107,14 @@ export default function ObjectLinkSplJsunit() {
       done();
     });
 
-		/**
-		 * @tc.number    ObjectLinkSplJsunit_0200
-		 * @tc.name      ObjectLinkSplJsunit_0200
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   ObjectLinkSplJsunit_0200
+     * @tc.number ObjectLinkSplJsunit_0200
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ObjectLinkSplJsunit_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('ObjectLinkSplJsunit_0200 START');
@@ -150,14 +150,14 @@ export default function ObjectLinkSplJsunit() {
       done();
     });
 
-		/**
-		 * @tc.number    ObjectLinkSplJsunit_0300
-		 * @tc.name      ObjectLinkSplJsunit_0300
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   ObjectLinkSplJsunit_0300
+     * @tc.number ObjectLinkSplJsunit_0300
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ObjectLinkSplJsunit_0300', Level.LEVEL0, async (done: Function) => {
 
       console.info('ObjectLinkSplJsunit_0300 START');
@@ -193,14 +193,14 @@ export default function ObjectLinkSplJsunit() {
       done();
     });
 
-		/**
-		 * @tc.number    ObjectLinkSplJsunit_0400
-		 * @tc.name      ObjectLinkSplJsunit_0400
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   ObjectLinkSplJsunit_0400
+     * @tc.number ObjectLinkSplJsunit_0400
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ObjectLinkSplJsunit_0400', Level.LEVEL0, async (done: Function) => {
 
       console.info('ObjectLinkSplJsunit_0400 START');

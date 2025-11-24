@@ -40,12 +40,12 @@ export default function typeNodeRelativeContainerTest() {
       done();
     });
     /**
-     * @tc.number    RelativeContainerTest_0100
-     * @tc.name      RelativeContainerTest_0100
-     * @tc.desc      TypedFrameNode: RelativeContainer
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RelativeContainerTest_0100
+     * @tc.number RelativeContainerTest_0100
+     * @tc.desc   TypedFrameNode: RelativeContainer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RelativeContainerTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('RelativeContainerTest_0100 START');

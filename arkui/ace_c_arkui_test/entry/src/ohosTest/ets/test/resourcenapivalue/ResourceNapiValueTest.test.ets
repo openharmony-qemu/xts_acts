@@ -23,6 +23,14 @@ export default function resourceNapiValueTest() {
 
     let PAGE_TAG = 'ResourceNapiValueTest';
 
+    /**
+     * @tc.name   testRequirementRouterPageState001
+     * @tc.number testRequirementRouterPageState001
+     * @tc.desc   testRequirementRouterPageState001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRequirementRouterPageState001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`resourcenapivalue/${PAGE_TAG}`, done);
       expect(Utils.getComponentInfoByKey('Column').$attrs.backgroundColor).assertEqual('#FF00FF00')

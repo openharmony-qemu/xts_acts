@@ -45,13 +45,13 @@ export default function SymbolGlyphFontScaleTest() {
       console.info("SymbolGlyphFontScaleTest after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         symbolGlyphFontScaleTest0001
-     * @tc.desc         Test symbolGlyphFontScaleTest abnormal value :undefined
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   symbolGlyphFontScaleTest0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   Test symbolGlyphFontScaleTest abnormal value :undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('symbolGlyphFontScaleTest0001', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -66,13 +66,13 @@ export default function SymbolGlyphFontScaleTest() {
         console.info("[symbolGlyphFontScaleTest0001] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         symbolGlyphFontScaleTest0002
-     * @tc.desc         Test symbolGlyphFontScaleTest reference value :$r('app.string')
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   symbolGlyphFontScaleTest0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   Test symbolGlyphFontScaleTest reference value :$r('app.string')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('symbolGlyphFontScaleTest0002', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -87,13 +87,13 @@ export default function SymbolGlyphFontScaleTest() {
         console.info("[symbolGlyphFontScaleTest0002] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-     * @tc.name         symbolGlyphFontScaleTest0003
-     * @tc.desc         Test symbolGlyphFontScaleTest Normal value 
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   symbolGlyphFontScaleTest0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   Test symbolGlyphFontScaleTest Normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('symbolGlyphFontScaleTest0003', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -108,13 +108,13 @@ export default function SymbolGlyphFontScaleTest() {
         console.info("[symbolGlyphFontScaleTest0003] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0004
-     * @tc.name         symbolGlyphFontScaleTest0004
-     * @tc.desc         Test symbolGlyphFontScaleTest abnormal value :less than minimum
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   symbolGlyphFontScaleTest0004
+     * @tc.number SUB_ACE_BASIC_ETS_API_0004
+     * @tc.desc   Test symbolGlyphFontScaleTest abnormal value :less than minimum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('symbolGlyphFontScaleTest0004', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -129,13 +129,13 @@ export default function SymbolGlyphFontScaleTest() {
         console.info("[symbolGlyphFontScaleTest0004] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0005
-     * @tc.name         symbolGlyphFontScaleTest0005
-     * @tc.desc         Test symbolGlyphFontScaleTest abnormal value :Greater than maximum
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   symbolGlyphFontScaleTest0005
+     * @tc.number SUB_ACE_BASIC_ETS_API_0005
+     * @tc.desc   Test symbolGlyphFontScaleTest abnormal value :Greater than maximum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('symbolGlyphFontScaleTest0005', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -150,13 +150,13 @@ export default function SymbolGlyphFontScaleTest() {
         console.info("[symbolGlyphFontScaleTest0005] end");
     });
 
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0006
-     * @tc.name         symbolGlyphFontScaleTest0006
-     * @tc.desc         Test symbolGlyphFontScaleTest reference value :$r('app.boolean')
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   symbolGlyphFontScaleTest0006
+     * @tc.number SUB_ACE_BASIC_ETS_API_0006
+     * @tc.desc   Test symbolGlyphFontScaleTest reference value :$r('app.boolean')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('symbolGlyphFontScaleTest0006', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -171,13 +171,13 @@ export default function SymbolGlyphFontScaleTest() {
         console.info("[symbolGlyphFontScaleTest0006] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0007
-     * @tc.name         symbolGlyphFontScaleTest0007
-     * @tc.desc         Test symbolGlyphFontScaleTest reference value :$r('app.color')
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   symbolGlyphFontScaleTest0007
+     * @tc.number SUB_ACE_BASIC_ETS_API_0007
+     * @tc.desc   Test symbolGlyphFontScaleTest reference value :$r('app.color')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('symbolGlyphFontScaleTest0007', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -192,13 +192,13 @@ export default function SymbolGlyphFontScaleTest() {
         console.info("[symbolGlyphFontScaleTest0007] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0008
-     * @tc.name         symbolGlyphFontScaleTest0008
-     * @tc.desc         Test symbolGlyphFontScaleTest reference value :$r('app.float')
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   symbolGlyphFontScaleTest0008
+     * @tc.number SUB_ACE_BASIC_ETS_API_0008
+     * @tc.desc   Test symbolGlyphFontScaleTest reference value :$r('app.float')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('symbolGlyphFontScaleTest0008', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -213,13 +213,13 @@ export default function SymbolGlyphFontScaleTest() {
         console.info("[symbolGlyphFontScaleTest0008] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0009
-     * @tc.name         symbolGlyphFontScaleTest0009
-     * @tc.desc         Test symbolGlyphFontScaleTest reference value :$r('app.integer')
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   symbolGlyphFontScaleTest0009
+     * @tc.number SUB_ACE_BASIC_ETS_API_0009
+     * @tc.desc   Test symbolGlyphFontScaleTest reference value :$r('app.integer')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('symbolGlyphFontScaleTest0009', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -234,13 +234,13 @@ export default function SymbolGlyphFontScaleTest() {
         console.info("[symbolGlyphFontScaleTest0009] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0010
-     * @tc.name         symbolGlyphFontScaleTest00010
-     * @tc.desc         Test symbolGlyphFontScaleTest reference value :$r('app.intarray')
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   symbolGlyphFontScaleTest0010
+     * @tc.number SUB_ACE_BASIC_ETS_API_0010
+     * @tc.desc   Test symbolGlyphFontScaleTest reference value :$r('app.intarray')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('symbolGlyphFontScaleTest0010', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -255,13 +255,13 @@ export default function SymbolGlyphFontScaleTest() {
         console.info("[symbolGlyphFontScaleTest0010] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0011
-     * @tc.name         symbolGlyphFontScaleTest0011
-     * @tc.desc         Test symbolGlyphFontScaleTest reference value :$r('app.pattern')
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   symbolGlyphFontScaleTest0011
+     * @tc.number SUB_ACE_BASIC_ETS_API_0011
+     * @tc.desc   Test symbolGlyphFontScaleTest reference value :$r('app.pattern')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('symbolGlyphFontScaleTest0011', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -276,13 +276,13 @@ export default function SymbolGlyphFontScaleTest() {
         console.info("[symbolGlyphFontScaleTest0011] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0012
-     * @tc.name         symbolGlyphFontScaleTest0012
-     * @tc.desc         Test symbolGlyphFontScaleTest reference value :$r('app.plural')
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   symbolGlyphFontScaleTest0012
+     * @tc.number SUB_ACE_BASIC_ETS_API_0012
+     * @tc.desc   Test symbolGlyphFontScaleTest reference value :$r('app.plural')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('symbolGlyphFontScaleTest0012', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -297,13 +297,13 @@ export default function SymbolGlyphFontScaleTest() {
         console.info("[symbolGlyphFontScaleTest0012] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0013
-     * @tc.name         symbolGlyphFontScaleTest0013
-     * @tc.desc         Test symbolGlyphFontScaleTest reference value :$r('app.strarray')
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   symbolGlyphFontScaleTest0013
+     * @tc.number SUB_ACE_BASIC_ETS_API_0013
+     * @tc.desc   Test symbolGlyphFontScaleTest reference value :$r('app.strarray')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('symbolGlyphFontScaleTest0013', Level.LEVEL1, async () => {
         let driver = Driver.create();

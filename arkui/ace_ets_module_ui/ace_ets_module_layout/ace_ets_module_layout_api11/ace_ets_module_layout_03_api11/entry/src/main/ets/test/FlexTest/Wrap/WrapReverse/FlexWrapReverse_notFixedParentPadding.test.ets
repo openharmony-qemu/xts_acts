@@ -49,10 +49,12 @@ export default function flexWrapReverse_notFixedParentPadding() {
     });
 
     /**
+     * @tc.name   testWrapReverseChildfixedParentPaddingInRange
      * @tc.number SUB_ACE_FLEX_WRAPREVERSE_CHILDFIXED_TEST_0400
-     * @tc.name testWrapReverseChildfixedParentPaddingInRange
-     * @tc.desc The parent component changes location and space of layout, affecting layout of child components,
-     *               parent component setting padding, the remaining layout space meets the requirements
+     * @tc.desc   The parent component changes location and space of layout, affecting layout of child components,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapReverseChildfixedParentPaddingInRange',  Level.LEVEL0, async () => {
       console.info('new testWrapReverseChildfixedParentPaddingInRange START');
@@ -97,10 +99,12 @@ export default function flexWrapReverse_notFixedParentPadding() {
     });
 
     /**
+     * @tc.name   testWrapReverseChildfixedParentPaddingOutRange
      * @tc.number SUB_ACE_FLEX_WRAPREVERSE_CHILDFIXED_TEST_0500
-     * @tc.name testWrapReverseChildfixedParentPaddingOutRange
-     * @tc.desc The parent component changes location and space of layout, affecting layout of child components,
-     *               parent component setting padding, the remaining layout space does not meet the requirements
+     * @tc.desc   The parent component changes location and space of layout, affecting layout of child components,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapReverseChildfixedParentPaddingOutRange',  Level.LEVEL0, async () => {
       console.info('new testWrapReverseChildfixedParentPaddingOutRange START');

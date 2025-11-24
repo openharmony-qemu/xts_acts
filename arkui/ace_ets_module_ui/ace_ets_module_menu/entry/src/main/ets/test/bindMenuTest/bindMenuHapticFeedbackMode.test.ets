@@ -44,13 +44,13 @@ export default function bindMenuHapticFeedbackMode() {
     });
 
     /**
-    * @tc.number    bindMenuHapticFeedbackModeTest_0100
-    * @tc.name      bindMenuHapticFeedbackModeTest_0100
-    * @tc.desc      set bindMenu HapticFeedbackMode:HapticFeedbackMode.DISABLED
-    * @tc.level:    Level 1
-    * @tc.type :
-    * @tc.size :
-    */
+     * @tc.name   bindMenuHapticFeedbackModeTest_0100
+     * @tc.number bindMenuHapticFeedbackModeTest_0100
+     * @tc.desc   set bindMenu HapticFeedbackMode:HapticFeedbackMode.DISABLED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('bindMenuHapticFeedbackModeTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let tagName = 'bindMenuHapticFeedbackModeTest_0100';
       console.info('[' + tagName + '] START============================');
@@ -71,13 +71,13 @@ export default function bindMenuHapticFeedbackMode() {
     });
 
     /**
-    * @tc.number    bindMenuHapticFeedbackModeTest_0200
-    * @tc.name      bindMenuHapticFeedbackModeTest_0200
-    * @tc.desc      set bindMenu HapticFeedbackMode:HapticFeedbackMode.ENABLED
-    * @tc.level:    Level 1
-    * @tc.type :
-    * @tc.size :
-    */
+     * @tc.name   bindMenuHapticFeedbackModeTest_0200
+     * @tc.number bindMenuHapticFeedbackModeTest_0200
+     * @tc.desc   set bindMenu HapticFeedbackMode:HapticFeedbackMode.ENABLED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('bindMenuHapticFeedbackModeTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let tagName = 'bindMenuHapticFeedbackModeTest_0200';
       console.info('[' + tagName + '] START============================');
@@ -95,13 +95,13 @@ export default function bindMenuHapticFeedbackMode() {
     });
 
     /**
-    * @tc.number    bindMenuHapticFeedbackModeTest_0300
-    * @tc.name      bindMenuHapticFeedbackModeTest_0300
-    * @tc.desc      set bindMenu HapticFeedbackMode:HapticFeedbackMode.AUTO
-    * @tc.level:    Level 1
-    * @tc.type :
-    * @tc.size :
-    */
+     * @tc.name   bindMenuHapticFeedbackModeTest_0300
+     * @tc.number bindMenuHapticFeedbackModeTest_0300
+     * @tc.desc   set bindMenu HapticFeedbackMode:HapticFeedbackMode.AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('bindMenuHapticFeedbackModeTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let tagName = 'bindMenuHapticFeedbackModeTest_0300';
       console.info('[' + tagName + '] START============================');
@@ -119,13 +119,13 @@ export default function bindMenuHapticFeedbackMode() {
     });
 
     /**
-    * @tc.number    bindMenuHapticFeedbackModeTest_0400
-    * @tc.name      bindMenuHapticFeedbackModeTest_0400
-    * @tc.desc      set bindMenu HapticFeedbackMode:undefined
-    * @tc.level:    Level 1
-    * @tc.type :
-    * @tc.size :
-    */
+     * @tc.name   bindMenuHapticFeedbackModeTest_0400
+     * @tc.number bindMenuHapticFeedbackModeTest_0400
+     * @tc.desc   set bindMenu HapticFeedbackMode:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('bindMenuHapticFeedbackModeTest_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let tagName = 'bindMenuHapticFeedbackModeTest_0400';
       console.info('[' + tagName + '] START============================');
@@ -143,13 +143,13 @@ export default function bindMenuHapticFeedbackMode() {
     });
 
     /**
-    * @tc.number    bindMenuHapticFeedbackModeTest_0500
-    * @tc.name      bindMenuHapticFeedbackModeTest_0500
-    * @tc.desc      set bindMenu HapticFeedbackMode:null
-    * @tc.level:    Level 1
-    * @tc.type :
-    * @tc.size :
-    */
+     * @tc.name   bindMenuHapticFeedbackModeTest_0500
+     * @tc.number bindMenuHapticFeedbackModeTest_0500
+     * @tc.desc   set bindMenu HapticFeedbackMode:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('bindMenuHapticFeedbackModeTest_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let tagName = 'bindMenuHapticFeedbackModeTest_0500';
       console.info('[' + tagName + '] START============================');

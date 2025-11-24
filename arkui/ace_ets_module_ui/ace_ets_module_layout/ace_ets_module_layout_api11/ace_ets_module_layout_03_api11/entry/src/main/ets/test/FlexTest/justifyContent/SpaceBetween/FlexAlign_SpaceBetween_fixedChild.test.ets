@@ -49,10 +49,12 @@ export default function flexAlign_SpaceBetween_fixedChild() {
     });
 
     /**
+     * @tc.name   testAlignSpaceBetweenRowNoWrapParentWidthAndHeightOutRange
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_SPACEBETWEEN_TEST_0100
-     * @tc.name testAlignSpaceBetweenRowNoWrapParentWidthAndHeightOutRange
-     * @tc.desc The child component is fixed, and parent component is bound with width and height attributes,
-     *               the layout space of parent is insufficient to meet the spindle layout requirements of child
+     * @tc.desc   The child component is fixed, and parent component is bound with width and height attributes,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAlignSpaceBetweenRowNoWrapParentWidthAndHeightOutRange',  Level.LEVEL0, async () => {
       console.info('new testAlignSpaceBetweenRowNoWrapParentWidthAndHeightOutRange START');
@@ -99,10 +101,12 @@ export default function flexAlign_SpaceBetween_fixedChild() {
     });
 
     /**
+     * @tc.name   testAlignSpaceBetweenRowNoWrapParentWidthAndHeightInRange
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_SPACEBETWEEN_TEST_0200
-     * @tc.name testAlignSpaceBetweenRowNoWrapParentWidthAndHeightInRange
-     * @tc.desc The child component is fixed, and parent component is bound with width and height attributes,
-     *               the layout space of parent meets the spindle layout requirements of child
+     * @tc.desc   The child component is fixed, and parent component is bound with width and height attributes,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAlignSpaceBetweenRowNoWrapParentWidthAndHeightInRange',  Level.LEVEL0, async () => {
       console.info('new testAlignSpaceBetweenRowNoWrapParentWidthAndHeightInRange START');

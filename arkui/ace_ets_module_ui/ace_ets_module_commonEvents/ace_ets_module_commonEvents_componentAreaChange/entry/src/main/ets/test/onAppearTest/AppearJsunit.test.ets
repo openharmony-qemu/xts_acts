@@ -56,14 +56,14 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       console.info("appear after each called");
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_testAppear01
-    * @tc.name       : testAppear01
-    * @tc.desc       : test
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testAppear01
+     * @tc.number SUB_ARKUI_testAppear01
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAppear01', Level.LEVEL0, async (done: Function) => {
       console.info('[testAppear01] START');
       await CommonFunc.sleep(1000);

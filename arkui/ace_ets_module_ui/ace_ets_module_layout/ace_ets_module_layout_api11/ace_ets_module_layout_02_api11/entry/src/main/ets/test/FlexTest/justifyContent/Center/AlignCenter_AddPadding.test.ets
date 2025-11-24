@@ -47,10 +47,12 @@ export default function AlignCenter_AddPadding() {
     });
 
     /**
+     * @tc.name   testFlexAlignCenterFlexPadOverflow
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_CENTER_TEST_0300
-     * @tc.name testFlexAlignCenterFlexPadOverflow
-     * @tc.desc After subtracting the padding from the parent component layout space, the interface
-     * display that does not meet the spindle layout of the child component
+     * @tc.desc   After subtracting the padding from the parent component layout space, the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignCenterFlexPadOverflow',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignCenterFlexPadOverflow] START');
@@ -93,10 +95,12 @@ export default function AlignCenter_AddPadding() {
 
     });
     /**
+     * @tc.name   testFlexAlignCenterFlexPadMeet
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_CENTER_TEST_0400
-     * @tc.name testFlexAlignCenterFlexPadMeet
-     * @tc.desc After subtracting the padding from the parent component layout space, the interface that
-     * satisfies the spindle layout of the child component is displayed
+     * @tc.desc   After subtracting the padding from the parent component layout space, the interface that
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignCenterFlexPadMeet',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignCenterFlexPadMeet] START');

@@ -40,14 +40,14 @@ export default function ImageOnErrorTest() {
       console.info('ImageOnErrorTest beforeEach end');
       done();
     });
-    /* *
-    * @tc.number: ImageOnErrorTest_001
-    * @tc.name  : ImageOnErrorTest_001
-    * @tc.desc  : To test the ImageOnError componentWidth componentHeight
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   ImageOnErrorTest_001
+     * @tc.number ImageOnErrorTest_001
+     * @tc.desc   To test the ImageOnError componentWidth componentHeight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ImageOnErrorTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('ImageOnErrorTest_001 START');
       await Utils.sleep(1000);

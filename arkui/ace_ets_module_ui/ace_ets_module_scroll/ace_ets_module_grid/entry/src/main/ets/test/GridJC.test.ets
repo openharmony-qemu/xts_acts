@@ -39,12 +39,12 @@ export default function GridJCTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Grid_List_Swiper_0200
      * @tc.number ArkUX_Grid_List_Swiper_0200
-     * @tc.name ArkUX_Grid_List_Swiper_0200
-     * @tc.desc set Grid columnsTemplate and rowsTemplate
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   set Grid columnsTemplate and rowsTemplate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Grid_List_Swiper_0200', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Grid_List_Swiper_0200 START');
@@ -66,12 +66,12 @@ export default function GridJCTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Grid_List_Swiper_0210
      * @tc.number ArkUX_Grid_List_Swiper_0210
-     * @tc.name ArkUX_Grid_List_Swiper_0210
-     * @tc.desc set Grid columnsTemplate and rowsTemplate
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   set Grid columnsTemplate and rowsTemplate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Grid_List_Swiper_0210', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Grid_List_Swiper_0210 START');
@@ -93,12 +93,12 @@ export default function GridJCTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Grid_List_Swiper_0220
      * @tc.number ArkUX_Grid_List_Swiper_0220
-     * @tc.name ArkUX_Grid_List_Swiper_0220
-     * @tc.desc set Grid columnsTemplate and rowsTemplate
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   set Grid columnsTemplate and rowsTemplate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Grid_List_Swiper_0220', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Grid_List_Swiper_0220 START');
@@ -119,12 +119,12 @@ export default function GridJCTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Grid_List_Swiper_0230
      * @tc.number ArkUX_Grid_List_Swiper_0230
-     * @tc.name ArkUX_Grid_List_Swiper_0230
-     * @tc.desc set Grid columnsTemplate and rowsTemplate
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   set Grid columnsTemplate and rowsTemplate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Grid_List_Swiper_0230', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Grid_List_Swiper_0230 START');
@@ -145,12 +145,12 @@ export default function GridJCTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Grid_List_Swiper_0240
      * @tc.number ArkUX_Grid_List_Swiper_0240
-     * @tc.name ArkUX_Grid_List_Swiper_0240
-     * @tc.desc set Grid columnsTemplate and rowsTemplate
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   set Grid columnsTemplate and rowsTemplate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Grid_List_Swiper_0240', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Grid_List_Swiper_0240 START');
@@ -171,12 +171,12 @@ export default function GridJCTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Grid_List_Swiper_0350
      * @tc.number ArkUX_Grid_List_Swiper_0350
-     * @tc.name ArkUX_Grid_List_Swiper_0350
-     * @tc.desc set Grid columnsTemplate and rowsTemplate
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   set Grid columnsTemplate and rowsTemplate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Grid_List_Swiper_0350', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Grid_List_Swiper_0350 START');
@@ -197,12 +197,12 @@ export default function GridJCTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Grid_List_Swiper_0360
      * @tc.number ArkUX_Grid_List_Swiper_0360
-     * @tc.name ArkUX_Grid_List_Swiper_0360
-     * @tc.desc set Grid columnsTemplate and rowsTemplate
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   set Grid columnsTemplate and rowsTemplate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Grid_List_Swiper_0360', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Grid_List_Swiper_0360 START');

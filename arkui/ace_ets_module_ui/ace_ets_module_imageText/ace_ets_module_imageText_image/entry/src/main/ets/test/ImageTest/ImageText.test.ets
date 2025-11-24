@@ -45,12 +45,12 @@ export default function ImageTextTest() {
     });
 
     /**
-     * @tc.number: ImageTextTest_0100
-     * @tc.name  : ImageTextTest_0100
-     * @tc.desc  : aceEtsTest
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ImageTextTest_0100
+     * @tc.number ImageTextTest_0100
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageTextTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ImageTextTest_0100 START');
@@ -65,12 +65,12 @@ export default function ImageTextTest() {
     });
 
     /**
-     * @tc.number: ImageTextTest_0200
-     * @tc.name  : ImageTextTest_0200
-     * @tc.desc  : aceEtsTest
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ImageTextTest_0200
+     * @tc.number ImageTextTest_0200
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageTextTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('ImageTextTest_0200 START');

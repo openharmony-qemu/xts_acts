@@ -47,9 +47,12 @@ export default function Grid_Row_Breakpoints_Default() {
     });
 
     /**
+     * @tc.name   SUB_ACE_GridRowBreakpoints_Default_0100
      * @tc.number SUB_ACE_GRIDROWBREAKPOTINS_Default_0100
-     * @tc.name testBreakpoints
-     * @tc.desc Set the Breakpoints of GridRow to '300vp'
+     * @tc.desc   Set the Breakpoints of GridRow to '300vp'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GridRowBreakpoints_Default_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_GridRowBreakpoints_Default_0100 START');
@@ -70,9 +73,12 @@ export default function Grid_Row_Breakpoints_Default() {
     });
 
     /**
+     * @tc.name   SUB_ACE_GridRowBreakpoints_Default_0200
      * @tc.number SUB_ACE_GRIDROWBREAKPOTINS_Default_0200
-     * @tc.name testBreakpoints
-     * @tc.desc Set the Breakpoints of GridRow to default
+     * @tc.desc   Set the Breakpoints of GridRow to default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GridRowBreakpoints_Default_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_GridRowBreakpoints_Default_0200 START');

@@ -43,12 +43,12 @@ export default function DrawModifier() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_DrawModifier_001
-     * @tc.name: DrawModifier_001
-     * @tc.desc: CanvasAPI 
-     * @tc.level: Level 0
-     * @tc.type : Canvas
-     * @tc.size : CanvasTest
+     * @tc.name   DrawModifier_001
+     * @tc.number SUB_ARKUI_API_DrawModifier_001
+     * @tc.desc   CanvasAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DrawModifier_001', Level.LEVEL0, async (done: Function) => {
       console.info('[DrawModifier_001] START');
@@ -70,12 +70,12 @@ export default function DrawModifier() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_DrawModifier_002
-     * @tc.name: DrawModifier_002
-     * @tc.desc: CanvasAPI 
-     * @tc.level: Level 0
-     * @tc.type : Canvas
-     * @tc.size : CanvasTest
+     * @tc.name   DrawModifier_002
+     * @tc.number SUB_ARKUI_API_DrawModifier_002
+     * @tc.desc   CanvasAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DrawModifier_002', Level.LEVEL0, async (done: Function) => {
       console.info('[DrawModifier_002] START');
@@ -97,12 +97,12 @@ export default function DrawModifier() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_DrawModifier_003
-     * @tc.name: DrawModifier_003
-     * @tc.desc: CanvasAPI 
-     * @tc.level: Level 0
-     * @tc.type : Canvas
-     * @tc.size : CanvasTest
+     * @tc.name   DrawModifier_003
+     * @tc.number SUB_ARKUI_API_DrawModifier_003
+     * @tc.desc   CanvasAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DrawModifier_003', Level.LEVEL0, async (done: Function) => {
       console.info('[DrawModifier_003] START');

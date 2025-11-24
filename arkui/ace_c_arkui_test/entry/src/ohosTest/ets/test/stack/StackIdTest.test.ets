@@ -26,13 +26,13 @@ export default function stackIdTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_ID_0100
-     * @tc.name       : testStackId001
-     * @tc.desc       : testing id for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackId001
+     * @tc.number SUB_ARKUI_CAPI_STACK_ID_0100
+     * @tc.desc   testing id for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackId001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackId001()).assertEqual(0)

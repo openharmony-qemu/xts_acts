@@ -51,12 +51,12 @@ export default function bindSheetRadius() {
     });
 
     /**
-     * @tc.number    bindSheetRadius_0100
-     * @tc.name      bindSheetRadius_0100
-     * @tc.desc      set bindSheetRadius: 20px
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   bindSheetRadius_0100
+     * @tc.number bindSheetRadius_0100
+     * @tc.desc   set bindSheetRadius: 20px
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('bindSheetRadius_0100', Level.LEVEL1, async (done: Function) => {
       console.info('bindSheetRadius_0100 START');
@@ -90,12 +90,12 @@ export default function bindSheetRadius() {
     });
 
     /**
-     * @tc.number    bindSheetRadius_0200
-     * @tc.name      bindSheetRadius_0200
-     * @tc.desc      set bindSheetRadius: 20vp
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   bindSheetRadius_0200
+     * @tc.number bindSheetRadius_0200
+     * @tc.desc   set bindSheetRadius: 20vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('bindSheetRadius_0200', Level.LEVEL1, async (done: Function) => {
       console.info('bindSheetRadius_0200 START');
@@ -128,12 +128,12 @@ export default function bindSheetRadius() {
     });
 
     /**
-     * @tc.number    bindSheetRadius_0300
-     * @tc.name      bindSheetRadius_0300
-     * @tc.desc      set bindSheetRadius: 20fp
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   bindSheetRadius_0300
+     * @tc.number bindSheetRadius_0300
+     * @tc.desc   set bindSheetRadius: 20fp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('bindSheetRadius_0300', Level.LEVEL1, async (done: Function) => {
       console.info('bindSheetRadius_0300 START');
@@ -166,12 +166,12 @@ export default function bindSheetRadius() {
     });
 
     /**
-     * @tc.number    bindSheetRadius_0400
-     * @tc.name      bindSheetRadius_0400
-     * @tc.desc      set bindSheetRadius: topLeft: '10px', topRight: '20vp',
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   bindSheetRadius_0400
+     * @tc.number bindSheetRadius_0400
+     * @tc.desc   set bindSheetRadius: topLeft: '10px', topRight: '20vp',
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('bindSheetRadius_0400', Level.LEVEL1, async (done: Function) => {
       console.info('bindSheetRadius_0400 START');
@@ -204,12 +204,12 @@ export default function bindSheetRadius() {
     });
 
     /**
-     * @tc.number    bindSheetRadius_0500
-     * @tc.name      bindSheetRadius_0500
-     * @tc.desc      set bindSheetRadius: topLeft: '100px', topRight: '0.00vp',
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   bindSheetRadius_0500
+     * @tc.number bindSheetRadius_0500
+     * @tc.desc   set bindSheetRadius: topLeft: '100px', topRight: '0.00vp',
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('bindSheetRadius_0500', Level.LEVEL1, async (done: Function) => {
       console.info('bindSheetRadius_0500 START');
@@ -242,12 +242,12 @@ export default function bindSheetRadius() {
     });
 
     /**
-     * @tc.number    bindSheetRadius_0600
-     * @tc.name      bindSheetRadius_0600
-     * @tc.desc      set bindSheetRadius: undefined
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   bindSheetRadius_0600
+     * @tc.number bindSheetRadius_0600
+     * @tc.desc   set bindSheetRadius: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('bindSheetRadius_0600', Level.LEVEL1, async (done: Function) => {
       console.info('bindSheetRadius_0600 START');
@@ -281,12 +281,12 @@ export default function bindSheetRadius() {
       done();
     });
     /**
-     * @tc.number    bindSheetRadius_0700
-     * @tc.name      bindSheetRadius_0700
-     * @tc.desc      set bindSheetRadius: null
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   bindSheetRadius_0700
+     * @tc.number bindSheetRadius_0700
+     * @tc.desc   set bindSheetRadius: null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('bindSheetRadius_0700', Level.LEVEL1, async (done: Function) => {
       console.info('bindSheetRadius_0700 START');

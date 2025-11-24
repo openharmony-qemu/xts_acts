@@ -46,12 +46,12 @@ export default function PersistentTest0040() {
     });
 
     /**
-     * @tc.number    SUB_ACE_STATUSMANAGER_PERSISTENSTORAGE_INTERFACE_0040
-     * @tc.name      PersistentTest0040_001
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   PersistentTest0040_001
+     * @tc.number SUB_ACE_STATUSMANAGER_PERSISTENSTORAGE_INTERFACE_0040
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PersistentTest0040_001', Level.LEVEL0, async (done: Function) => {
       console.info('[PersistentTest0040_001] START');

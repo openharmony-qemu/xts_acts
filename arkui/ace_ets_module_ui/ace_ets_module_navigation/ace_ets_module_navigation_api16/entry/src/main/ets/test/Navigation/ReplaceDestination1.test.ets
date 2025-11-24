@@ -49,10 +49,12 @@ export default function ReplaceDestination1Test() {
 
 
     /**
-     * @tc.number    ReplaceDestination1_0100
-     * @tc.name      ReplaceDestination1_0100
-     * @tc.desc      Test replaceDestination error code 100006
-     * @tc.level     Level 2
+     * @tc.name   ReplaceDestination1_0100
+     * @tc.number ReplaceDestination1_0100
+     * @tc.desc   Test replaceDestination error code 100006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ReplaceDestination1_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('ReplaceDestination1_0100 START');
@@ -77,10 +79,12 @@ export default function ReplaceDestination1Test() {
     });
 
     /**
-     * @tc.number    ReplaceDestination1_0200
-     * @tc.name      ReplaceDestination1_0200
-     * @tc.desc      Test replaceDestination undefined error code 401
-     * @tc.level     Level 2
+     * @tc.name   ReplaceDestination1_0200
+     * @tc.number ReplaceDestination1_0200
+     * @tc.desc   Test replaceDestination undefined error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ReplaceDestination1_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('ReplaceDestination1_0200 START');
@@ -105,10 +109,12 @@ export default function ReplaceDestination1Test() {
     });
 
     /**
-     * @tc.number    ReplaceDestination1_0300
-     * @tc.name      ReplaceDestination1_0300
-     * @tc.desc      Test replaceDestination undefined error code 401
-     * @tc.level     Level 2
+     * @tc.name   ReplaceDestination1_0300
+     * @tc.number ReplaceDestination1_0300
+     * @tc.desc   Test replaceDestination undefined error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ReplaceDestination1_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('ReplaceDestination1_0300 START');
@@ -133,10 +139,12 @@ export default function ReplaceDestination1Test() {
     });
 
     /**
-     * @tc.number    ReplaceDestination1_0400
-     * @tc.name      ReplaceDestination1_0400
-     * @tc.desc      Test replaceDestination normal
-     * @tc.level     Level 2
+     * @tc.name   ReplaceDestination1_0400
+     * @tc.number ReplaceDestination1_0400
+     * @tc.desc   Test replaceDestination normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ReplaceDestination1_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('ReplaceDestination1_0400 START');
@@ -161,10 +169,12 @@ export default function ReplaceDestination1Test() {
     });
 
     /**
-     * @tc.number    ReplaceDestination1_0500
-     * @tc.name      ReplaceDestination1_0500
-     * @tc.desc      Test replaceDestination and LaunchMode.MOVE_TO_TOP_SINGLETON
-     * @tc.level     Level 2
+     * @tc.name   ReplaceDestination1_0500
+     * @tc.number ReplaceDestination1_0500
+     * @tc.desc   Test replaceDestination and LaunchMode.MOVE_TO_TOP_SINGLETON
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ReplaceDestination1_0500',  Level.LEVEL0, async (done: Function) => {
       console.info('ReplaceDestination1_0500 START');
@@ -210,10 +220,12 @@ export default function ReplaceDestination1Test() {
 
 
     /**
-     * @tc.number    ReplaceDestination1_0600
-     * @tc.name      ReplaceDestination1_0600
-     * @tc.desc      Test replaceDestination and LaunchMode.POP_TO_SINGLETON
-     * @tc.level     Level 2
+     * @tc.name   ReplaceDestination1_0600
+     * @tc.number ReplaceDestination1_0600
+     * @tc.desc   Test replaceDestination and LaunchMode.POP_TO_SINGLETON
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ReplaceDestination1_0600',  Level.LEVEL0, async (done: Function) => {
       console.info('ReplaceDestination1_0600 START');

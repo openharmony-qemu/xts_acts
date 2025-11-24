@@ -45,12 +45,12 @@ export default function LineJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_lineTest_0100
-     * @tc.name: lineTest_0100
-     * @tc.desc: LineAPI 
-     * @tc.level: Level 0
-     * @tc.type : Line
-     * @tc.size : LineTest
+     * @tc.name   lineTest_0100
+     * @tc.number SUB_ARKUI_API_lineTest_0100
+     * @tc.desc   LineAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('lineTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('lineTest_0100 START');
@@ -62,13 +62,13 @@ export default function LineJsunit() {
       done();
     });
 
-     /**
-     * @tc.number: SUB_ARKUI_API_lineTest_0200
-     * @tc.name: lineTest_0200
-     * @tc.desc: LineAPI 
-     * @tc.level: Level 0
-     * @tc.type : Line
-     * @tc.size : LineTest
+    /**
+     * @tc.name   lineTest_0200
+     * @tc.number SUB_ARKUI_API_lineTest_0200
+     * @tc.desc   LineAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('lineTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('lineTest_0200 START');
@@ -79,13 +79,13 @@ export default function LineJsunit() {
       done();
     });
 
-     /**
-     * @tc.number: SUB_ARKUI_API_lineTest_0300
-     * @tc.name: lineTest_0300
-     * @tc.desc: LineAPI 
-     * @tc.level: Level 0
-     * @tc.type : Line
-     * @tc.size : LineTest
+    /**
+     * @tc.name   lineTest_0300
+     * @tc.number SUB_ARKUI_API_lineTest_0300
+     * @tc.desc   LineAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('lineTest_0300', Level.LEVEL0, async (done: Function) => {
       console.info('lineTest_0300 START');
@@ -97,12 +97,12 @@ export default function LineJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_lineTest_0400
-     * @tc.name: lineTest_0400
-     * @tc.desc: LineAPI 
-     * @tc.level: Level 0
-     * @tc.type : Line
-     * @tc.size : LineTest
+     * @tc.name   lineTest_0400
+     * @tc.number SUB_ARKUI_API_lineTest_0400
+     * @tc.desc   LineAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('lineTest_0400', Level.LEVEL0, async (done: Function) => {
       console.info('lineTest_0400 START');
@@ -114,12 +114,12 @@ export default function LineJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_lineTest_0500
-     * @tc.name: lineTest_0500
-     * @tc.desc: LineAPI 
-     * @tc.level: Level 0
-     * @tc.type : Line
-     * @tc.size : LineTest
+     * @tc.name   lineTest_0500
+     * @tc.number SUB_ARKUI_API_lineTest_0500
+     * @tc.desc   LineAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('lineTest_0500', Level.LEVEL0, async (done: Function) => {
       console.info('lineTest_0500 START');
@@ -152,12 +152,12 @@ export default function LineJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_lineTest_0600
-     * @tc.name: lineTest_0600
-     * @tc.desc: LineAPI 
-     * @tc.level: Level 0
-     * @tc.type : Line
-     * @tc.size : LineTest
+     * @tc.name   lineTest_0600
+     * @tc.number SUB_ARKUI_API_lineTest_0600
+     * @tc.desc   LineAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('lineTest_0600', Level.LEVEL0, async (done: Function) => {
       console.info('lineTest_0600 START');
@@ -190,12 +190,12 @@ export default function LineJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_lineTest_0700
-     * @tc.name: lineTest_0700
-     * @tc.desc: LineAPI 
-     * @tc.level: Level 0
-     * @tc.type : Line
-     * @tc.size : LineTest
+     * @tc.name   lineTest_0700
+     * @tc.number SUB_ARKUI_API_lineTest_0700
+     * @tc.desc   LineAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('lineTest_0700', Level.LEVEL0, async (done: Function) => {
       console.info('lineTest_0700 START');
@@ -228,12 +228,12 @@ export default function LineJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_lineTest_0800
-     * @tc.name: lineTest_0800
-     * @tc.desc: LineAPI 
-     * @tc.level: Level 0
-     * @tc.type : Line
-     * @tc.size : LineTest
+     * @tc.name   lineTest_0800
+     * @tc.number SUB_ARKUI_API_lineTest_0800
+     * @tc.desc   LineAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('lineTest_0800', Level.LEVEL0, async (done: Function) => {
       console.info('lineTest_0900 START');

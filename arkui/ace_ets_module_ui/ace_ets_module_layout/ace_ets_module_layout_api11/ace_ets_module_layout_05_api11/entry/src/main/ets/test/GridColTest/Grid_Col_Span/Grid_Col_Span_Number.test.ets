@@ -47,9 +47,12 @@ export default function Grid_Col_Span_Number() {
     });
 
     /**
+     * @tc.name   SUB_ACE_Grid_Col_Span_Number_TEST_0100
      * @tc.number SUB_ACE_Grid_Col_Span_Number_TEST_0100
-     * @tc.name testGridColSpan
-     * @tc.desc GridCol set span to -2
+     * @tc.desc   GridCol set span to -2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Grid_Col_Span_Number_TEST_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Grid_Col_Span_Number_TEST_0100] START');
@@ -85,9 +88,12 @@ export default function Grid_Col_Span_Number() {
 
 
     /**
+     * @tc.name   SUB_ACE_Grid_Col_Span_Number_TEST_0200
      * @tc.number SUB_ACE_Grid_Col_Span_Number_TEST_0200
-     * @tc.name testGridColSpan
-     * @tc.desc GridCol set span to 0
+     * @tc.desc   GridCol set span to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Grid_Col_Span_Number_TEST_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Grid_Col_Span_Number_TEST_0200] START');
@@ -112,9 +118,12 @@ export default function Grid_Col_Span_Number() {
     });
 
     /**
+     * @tc.name   SUB_ACE_Grid_Col_Span_Number_TEST_0300
      * @tc.number SUB_ACE_Grid_Col_Span_Number_TEST_0300
-     * @tc.name testGridColSpan
-     * @tc.desc GridCol set span to 2
+     * @tc.desc   GridCol set span to 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Grid_Col_Span_Number_TEST_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Grid_Col_Span_Number_TEST_0300] START');
@@ -155,9 +164,12 @@ export default function Grid_Col_Span_Number() {
     });
 
     /**
+     * @tc.name   SUB_ACE_Grid_Col_Span_Number_TEST_0400
      * @tc.number SUB_ACE_Grid_Col_Span_Number_TEST_0400
-     * @tc.name testGridColSpan
-     * @tc.desc GridCol set span to 8
+     * @tc.desc   GridCol set span to 8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Grid_Col_Span_Number_TEST_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Grid_Col_Span_Number_TEST_0400] START');

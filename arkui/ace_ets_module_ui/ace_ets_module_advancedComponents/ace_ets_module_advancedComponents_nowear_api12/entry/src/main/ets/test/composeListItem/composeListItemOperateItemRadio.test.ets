@@ -50,12 +50,12 @@ export default function composeListItemOperateItemRadio() {
     })
 
     /**
-     * @tc.number composeListItemOperateItemRadio
      * @tc.name   composeListItemOperateItemRadio_0100
+     * @tc.number composeListItemOperateItemRadio
      * @tc.desc   Test composeListItemOperateItemRadio
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('composeListItemOperateItemRadio_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {

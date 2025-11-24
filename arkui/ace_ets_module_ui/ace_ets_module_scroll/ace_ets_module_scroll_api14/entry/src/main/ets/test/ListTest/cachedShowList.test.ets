@@ -43,12 +43,12 @@ export default function cachedShowList() {
     });
 
     /**
-     * @tc.number    cachedShowList_001
-     * @tc.name      cachedShowList_0100
-     * @tc.desc      Set the preloading quantity of listItem in the list and display preloading nodes.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   cachedShowList_0100
+     * @tc.number cachedShowList_001
+     * @tc.desc   Set the preloading quantity of listItem in the list and display preloading nodes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('cachedShowList_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[cachedShowList_0100] START');
@@ -66,12 +66,12 @@ export default function cachedShowList() {
     });
 
     /**
-     * @tc.number    cachedShowList_002
-     * @tc.name      cachedShowList_0200
-     * @tc.desc      Do not crop sub components, and do not display preloaded nodes.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   cachedShowList_0200
+     * @tc.number cachedShowList_002
+     * @tc.desc   Do not crop sub components, and do not display preloaded nodes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('cachedShowList_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[cachedShowList_0200] START');
@@ -101,12 +101,12 @@ export default function cachedShowList() {
     });
 
     /**
-     * @tc.number    cachedShowList_003
-     * @tc.name      cachedShowList_0300
-     * @tc.desc      Crop sub components without displaying preloaded nodes.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   cachedShowList_0300
+     * @tc.number cachedShowList_003
+     * @tc.desc   Crop sub components without displaying preloaded nodes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('cachedShowList_0300', Level.LEVEL1, async (done: Function) => {
       console.info('[cachedShowList_0300] START');
@@ -136,12 +136,12 @@ export default function cachedShowList() {
     });
 
     /**
-     * @tc.number    cachedShowList_004
-     * @tc.name      cachedShowList_0400
-     * @tc.desc      Configure to display preloaded nodes and crop sub components.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   cachedShowList_0400
+     * @tc.number cachedShowList_004
+     * @tc.desc   Configure to display preloaded nodes and crop sub components.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('cachedShowList_0400', Level.LEVEL1, async (done: Function) => {
       console.info('[cachedShowList_0400] START');
@@ -172,12 +172,12 @@ export default function cachedShowList() {
     });
 
     /**
-     * @tc.number    cachedShowList_005
-     * @tc.name      cachedShowList_0500
-     * @tc.desc      Do not crop the sub components, configure the property parameter 'show' as null.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   cachedShowList_0500
+     * @tc.number cachedShowList_005
+     * @tc.desc   Do not crop the sub components, configure the property parameter 'show' as null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('cachedShowList_0500', Level.LEVEL1, async (done: Function) => {
       console.info('[cachedShowList_0500] START');
@@ -207,12 +207,12 @@ export default function cachedShowList() {
     });
 
     /**
-     * @tc.number    cachedShowList_006
-     * @tc.name      cachedShowList_0600
-     * @tc.desc      Do not crop the sub components, configure the property parameter 'show' as undefined.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   cachedShowList_0600
+     * @tc.number cachedShowList_006
+     * @tc.desc   Do not crop the sub components, configure the property parameter 'show' as undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('cachedShowList_0600', Level.LEVEL1, async (done: Function) => {
       console.info('[cachedShowList_0600] START');

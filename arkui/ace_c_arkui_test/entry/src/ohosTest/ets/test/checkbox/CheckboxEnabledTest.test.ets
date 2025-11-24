@@ -26,14 +26,14 @@ export default function checkboxEnabledTest() {
       await Utils.pushPage(`checkbox/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_CHECKBOX_ENABLED_0100
-    * @tc.name       : testCheckboxEnabled001
-    * @tc.desc       : testing enabled event callback for checkbox with normal value (true)
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCheckboxEnabled001
+     * @tc.number SUB_ARKUI_CAPI_CHECKBOX_ENABLED_0100
+     * @tc.desc   testing enabled event callback for checkbox with normal value (true)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCheckboxEnabled001', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnClickEnabledCheckbox')
       await Utils.sleep(1000)
@@ -49,14 +49,14 @@ export default function checkboxEnabledTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_CHECKBOX_ENABLED_0200
-    * @tc.name       : testCheckboxEnabled002
-    * @tc.desc       : testing enabled event callback for checkbox with normal value (false)
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCheckboxEnabled002
+     * @tc.number SUB_ARKUI_CAPI_CHECKBOX_ENABLED_0200
+     * @tc.desc   testing enabled event callback for checkbox with normal value (false)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCheckboxEnabled002', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnClickDisabledCheckbox')
       await Utils.sleep(1000)
@@ -72,14 +72,14 @@ export default function checkboxEnabledTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_CHECKBOX_ENABLED_0300
-    * @tc.name       : testCheckboxEnabled003
-    * @tc.desc       : testing enabled event callback for checkbox with abnormal value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testCheckboxEnabled003
+     * @tc.number SUB_ARKUI_CAPI_CHECKBOX_ENABLED_0300
+     * @tc.desc   testing enabled event callback for checkbox with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCheckboxEnabled003', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnClickAbnormalCheckbox')
       await Utils.sleep(1000)

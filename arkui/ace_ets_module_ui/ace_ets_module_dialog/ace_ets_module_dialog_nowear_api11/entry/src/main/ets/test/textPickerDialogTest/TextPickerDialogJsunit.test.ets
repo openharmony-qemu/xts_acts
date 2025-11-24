@@ -44,6 +44,14 @@ export default function TextPickerDialogJsunit() {
     });
 
 
+    /**
+     * @tc.name   TextPickerDialogJsunit_0100
+     * @tc.number TextPickerDialogJsunit_0100
+     * @tc.desc   TextPickerDialogJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('TextPickerDialogJsunit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('TextPickerDialogJsunit_0100 START');
 	    let driver = await UiDriver.create()

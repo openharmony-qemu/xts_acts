@@ -54,12 +54,14 @@ export default function objectLinkNumber() {
       }
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_1160
-    * @tc.name  : objectLinkNumber_0100
-    * @tc.desc  : To test that the objectLink decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   objectLinkNumber_0100
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_1160
+     * @tc.desc   To test that the objectLink decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('objectLinkNumber_0100', Level.LEVEL0, async (done: Function) => {
       console.info('objectLinkNumber_0100 START');
       let driver = await Driver.create()
@@ -75,12 +77,14 @@ export default function objectLinkNumber() {
       console.info('[objectLinkNumber_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_1170
-    * @tc.name  : objectLinkNumber_0200
-    * @tc.desc  : To test that the objectLink decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   objectLinkNumber_0200
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_1170
+     * @tc.desc   To test that the objectLink decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('objectLinkNumber_0200', Level.LEVEL0, async (done: Function) => {
       console.info('objectLinkNumber_0100 START');
       let driver = await Driver.create()
@@ -96,12 +100,14 @@ export default function objectLinkNumber() {
       console.info('[objectLinkNumber_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_1180
-    * @tc.name  : objectLinkNumber_0300
-    * @tc.desc  : To test that the objectLink decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   objectLinkNumber_0300
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_1180
+     * @tc.desc   To test that the objectLink decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('objectLinkNumber_0300', Level.LEVEL0, async (done: Function) => {
       console.info('objectLinkNumber_0100 START');
       let driver = await Driver.create()
@@ -117,12 +123,14 @@ export default function objectLinkNumber() {
       console.info('[objectLinkNumber_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_1190
-    * @tc.name  : objectLinkNumber_0400
-    * @tc.desc  : To test that the objectLink decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   objectLinkNumber_0400
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_1190
+     * @tc.desc   To test that the objectLink decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('objectLinkNumber_0400', Level.LEVEL0, async (done: Function) => {
       console.info('objectLinkNumber_0100 START');
       let driver = await Driver.create()

@@ -47,12 +47,12 @@ export default function TapGestureTemplateTest() {
     });
 
     /**
-     * @tc.number   TapGestureTemplateTest_0010
-    * @tc.name      TapGestureTemplateTest_0010
-     * @tc.desc      api test TapGesture
-     * @tc.level:    Level
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TapGestureTemplateTest_0010
+     * @tc.number TapGestureTemplateTest_0010
+     * @tc.desc   api test TapGesture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TapGestureTemplateTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('TapGestureTemplateTest_0010 START');

@@ -39,12 +39,14 @@ export default function NavigationMode13Jsunit() {
       }
       done();
     });
-   /* *
-    * @tc.number: NavigationMode13Jsunit_0100
-    * @tc.name  : NavigationMode13Jsunit_0100
-    * @tc.desc  : If NavigationMode is set to Auto, a single column is displayed for Auto. The mode is dynamically switched to split mode
-    * @tc.level : Level 3
-    */
+    /**
+     * @tc.name   NavigationMode13Jsunit_0100
+     * @tc.number NavigationMode13Jsunit_0100
+     * @tc.desc   If NavigationMode is set to Auto, a single column is displayed for Auto. The mode is dynamically switched to split mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NavigationMode13Jsunit_0100',  Level.LEVEL0, async  (done:Function) =>{
       console.info('NavigationMode13Jsunit_0100 START')
       await CommonFunc.sleep(1000);

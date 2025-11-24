@@ -42,12 +42,12 @@ export default function TextLineSpacingTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextLineSpacingTest_0010
-     * @tc.name      TextLineSpacingTest_0010
-     * @tc.desc      test the attr of Text: lineSpacing(LengthMetrics.lpx(20), { onlyBetweenLines: true })
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextLineSpacingTest_0010
+     * @tc.number SUB_ACE_TextLineSpacingTest_0010
+     * @tc.desc   test the attr of Text: lineSpacing(LengthMetrics.lpx(20), { onlyBetweenLines: true })
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextLineSpacingTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('[TextLineSpacingTest_0010] START');
@@ -62,12 +62,12 @@ export default function TextLineSpacingTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextLineSpacingTest_0020
-     * @tc.name      TextLineSpacingTest_0020
-     * @tc.desc      test the attr of Text: lineSpacing(LengthMetrics.percent(1), { onlyBetweenLines: false })
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextLineSpacingTest_0020
+     * @tc.number SUB_ACE_TextLineSpacingTest_0020
+     * @tc.desc   test the attr of Text: lineSpacing(LengthMetrics.percent(1), { onlyBetweenLines: false })
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextLineSpacingTest_0020', Level.LEVEL2, async (done: Function) => {
       console.info('[TextLineSpacingTest_0020] START');
@@ -82,12 +82,12 @@ export default function TextLineSpacingTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextLineSpacingTest_0030
-     * @tc.name      TextLineSpacingTest_0030
-     * @tc.desc      test the attr of Text: lineSpacing(default)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextLineSpacingTest_0030
+     * @tc.number SUB_ACE_TextLineSpacingTest_0030
+     * @tc.desc   test the attr of Text: lineSpacing(default)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextLineSpacingTest_0030', Level.LEVEL2, async (done: Function) => {
       console.info('[TextLineSpacingTest_0030] START');
@@ -102,12 +102,12 @@ export default function TextLineSpacingTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextLineSpacingTest_0040
-     * @tc.name      TextLineSpacingTest_0040
-     * @tc.desc      test the attr of Text: lineSpacing(undefined)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextLineSpacingTest_0040
+     * @tc.number SUB_ACE_TextLineSpacingTest_0040
+     * @tc.desc   test the attr of Text: lineSpacing(undefined)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextLineSpacingTest_0040', Level.LEVEL2, async (done: Function) => {
       console.info('[TextLineSpacingTest_0040] START');
@@ -122,12 +122,12 @@ export default function TextLineSpacingTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextLineSpacingTest_0050
-     * @tc.name      TextLineSpacingTest_0050
-     * @tc.desc      test the attr of TextModifier: lineSpacing(LengthMetrics.px(20), { onlyBetweenLines: true })
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextLineSpacingTest_0050
+     * @tc.number SUB_ACE_TextLineSpacingTest_0050
+     * @tc.desc   test the attr of TextModifier: lineSpacing(LengthMetrics.px(20), { onlyBetweenLines: true })
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextLineSpacingTest_0050', Level.LEVEL2, async (done: Function) => {
       console.info('[TextLineSpacingTest_0050] START');
@@ -142,12 +142,12 @@ export default function TextLineSpacingTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextLineSpacingTest_0060
-     * @tc.name      TextLineSpacingTest_0060
-     * @tc.desc      test the attr of TextModifier: lineSpacing(LengthMetrics.vp(20), { onlyBetweenLines: false })
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextLineSpacingTest_0060
+     * @tc.number SUB_ACE_TextLineSpacingTest_0060
+     * @tc.desc   test the attr of TextModifier: lineSpacing(LengthMetrics.vp(20), { onlyBetweenLines: false })
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextLineSpacingTest_0060', Level.LEVEL2, async (done: Function) => {
       console.info('[TextLineSpacingTest_0060] START');
@@ -162,12 +162,12 @@ export default function TextLineSpacingTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextLineSpacingTest_0070
-     * @tc.name      TextLineSpacingTest_0070
-     * @tc.desc      test the attr of TextModifier: lineSpacing(LengthMetrics.fp(20), undefined)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextLineSpacingTest_0070
+     * @tc.number SUB_ACE_TextLineSpacingTest_0070
+     * @tc.desc   test the attr of TextModifier: lineSpacing(LengthMetrics.fp(20), undefined)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextLineSpacingTest_0070', Level.LEVEL2, async (done: Function) => {
       console.info('[TextLineSpacingTest_0070] START');
@@ -182,12 +182,12 @@ export default function TextLineSpacingTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextLineSpacingTest_0080
-     * @tc.name      TextLineSpacingTest_0080
-     * @tc.desc      test the attr of TextModifier: lineSpacing(undefined)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextLineSpacingTest_0080
+     * @tc.number SUB_ACE_TextLineSpacingTest_0080
+     * @tc.desc   test the attr of TextModifier: lineSpacing(undefined)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextLineSpacingTest_0080', Level.LEVEL2, async (done: Function) => {
       console.info('[TextLineSpacingTest_0080] START');
@@ -202,12 +202,12 @@ export default function TextLineSpacingTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextLineSpacingTest_0090
-     * @tc.name      TextLineSpacingTest_0090
-     * @tc.desc      test the attr of Text: lineSpacing(LengthMetrics.vp(20), undefined)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextLineSpacingTest_0090
+     * @tc.number SUB_ACE_TextLineSpacingTest_0090
+     * @tc.desc   test the attr of Text: lineSpacing(LengthMetrics.vp(20), undefined)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextLineSpacingTest_0090', Level.LEVEL2, async (done: Function) => {
       console.info('[TextLineSpacingTest_0090] START');

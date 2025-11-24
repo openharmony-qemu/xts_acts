@@ -37,16 +37,16 @@ export default function SelectTest() {
       done();
     });
 
-    /*
-     *@tc.number ArkUX_Select_Visual_0030
-     *@tc.name   Support modifying the select optionWidth and optionHeight change of Select component
-     *@tc.desc   Sets the optionWidth and optionHeight property parameter to 200
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 0   
+
+
+    /**
+     * @tc.name   ArkUX_Select_Visual_0030
+     * @tc.number ArkUX_Select_Visual_0030
+     * @tc.desc   ArkUX_Select_Visual_0030
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('ArkUX_Select_Visual_0030', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Select_Visual_0030 START');
       setTimeout(() => {
@@ -68,16 +68,16 @@ export default function SelectTest() {
       }, 500);
     });
 
-    /*
-     *@tc.number ArkUX_Select_Visual_0040
-     *@tc.name   Support modifying the select optionWidth and optionHeight change of Select component
-     *@tc.desc   Sets the optionWidth and optionHeight property parameter to 400
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 0  
+
+
+    /**
+     * @tc.name   ArkUX_Select_Visual_0040
+     * @tc.number ArkUX_Select_Visual_0040
+     * @tc.desc   ArkUX_Select_Visual_0040
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('ArkUX_Select_Visual_0040', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Select_Visual_0040 START');
       setTimeout(() => {
@@ -99,16 +99,16 @@ export default function SelectTest() {
       }, 500);
     });
 
-    /*
-     *@tc.number ArkUX_Select_Visual_0050
-     *@tc.name   Support modifying the select optionWidth and optionHeight change of Select component
-     *@tc.desc   Sets the optionWidth and optionHeight property parameter to FIT_TRIGGER and 600
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 0  
+
+
+    /**
+     * @tc.name   ArkUX_Select_Visual_0050
+     * @tc.number ArkUX_Select_Visual_0050
+     * @tc.desc   ArkUX_Select_Visual_0050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('ArkUX_Select_Visual_0050', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Select_Visual_0050 START');
       setTimeout(() => {
@@ -130,16 +130,16 @@ export default function SelectTest() {
       }, 500);
     });
 
-    /*
-     *@tc.number ArkUX_Select_Visual_0060
-     *@tc.name   Support modifying the select optionWidth and optionHeight change of Select component
-     *@tc.desc   Sets the optionWidth and optionHeight property parameter to FIT_CONTENT and 600
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 0  
+
+
+    /**
+     * @tc.name   ArkUX_Select_Visual_0060
+     * @tc.number ArkUX_Select_Visual_0060
+     * @tc.desc   ArkUX_Select_Visual_0060
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('ArkUX_Select_Visual_0060', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Select_Visual_0060 START');
       setTimeout(() => {
@@ -161,16 +161,16 @@ export default function SelectTest() {
       }, 500);
     });
 
-    /*
-     *@tc.number ArkUX_Select_Visual_0070
-     *@tc.name   Support modifying the select optionWidth and optionHeight change of Select component
-     *@tc.desc   Sets the optionWidth and optionHeight property parameter to default value
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 0  
+
+
+    /**
+     * @tc.name   ArkUX_Select_Visual_0070
+     * @tc.number ArkUX_Select_Visual_0070
+     * @tc.desc   ArkUX_Select_Visual_0070
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('ArkUX_Select_Visual_0070', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Select_Visual_0070 START');
       setTimeout(() => {

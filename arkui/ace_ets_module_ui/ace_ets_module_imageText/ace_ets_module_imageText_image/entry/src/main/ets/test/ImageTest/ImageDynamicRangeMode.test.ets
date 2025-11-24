@@ -45,12 +45,12 @@ export default function ImageAddApiTest() {
     });
 
     /**
-     * @tc.number: ImageAddApiTest_001
-     * @tc.name  : ImageAddApiTest_001
-     * @tc.desc  : dynamicRangeMode test of image
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ImageAddApiTest_001
+     * @tc.number ImageAddApiTest_001
+     * @tc.desc   dynamicRangeMode test of image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageAddApiTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('[ImageAddApiTest_001] START');
@@ -67,12 +67,12 @@ export default function ImageAddApiTest() {
     });
 
     /**
-     * @tc.number: ImageAddApiTest_002
-     * @tc.name  : ImageAddApiTest_002
-     * @tc.desc  : dynamicRangeMode test of image
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ImageAddApiTest_002
+     * @tc.number ImageAddApiTest_002
+     * @tc.desc   dynamicRangeMode test of image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageAddApiTest_002', Level.LEVEL0, async (done: Function) => {
       console.info('[ImageAddApiTest_002] START');
@@ -89,12 +89,12 @@ export default function ImageAddApiTest() {
     });
 
     /**
-     * @tc.number: ImageAddApiTest_003
-     * @tc.name  : ImageAddApiTest_003
-     * @tc.desc  : dynamicRangeMode test of image
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ImageAddApiTest_003
+     * @tc.number ImageAddApiTest_003
+     * @tc.desc   dynamicRangeMode test of image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageAddApiTest_003', Level.LEVEL0, async (done: Function) => {
       console.info('[ImageAddApiTest_003] START');

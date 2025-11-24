@@ -26,39 +26,39 @@ export default function listItemWidthTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_WIDTH_0100
-     * @tc.name       : testListItemWidth001
-     * @tc.desc       : testing width for listItem with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemWidth001
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_WIDTH_0100
+     * @tc.desc   testing width for listItem with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemWidth001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemWidth001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_WIDTH_0200
-     * @tc.name       : testListItemWidth002
-     * @tc.desc       : testing width for listItem with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemWidth002
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_WIDTH_0200
+     * @tc.desc   testing width for listItem with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemWidth002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemWidth002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_WIDTH_0300
-     * @tc.name       : testListItemWidth003
-     * @tc.desc       : testing width for listItem with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testListItemWidth003
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_WIDTH_0300
+     * @tc.desc   testing width for listItem with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemWidth003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemWidth003()).assertEqual(0)

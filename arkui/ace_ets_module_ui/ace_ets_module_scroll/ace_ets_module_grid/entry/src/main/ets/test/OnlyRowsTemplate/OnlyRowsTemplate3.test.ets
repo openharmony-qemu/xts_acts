@@ -47,12 +47,12 @@ export default function OnlyRowsTemplate3() {
     });
 
     /**
+     * @tc.name   SUB_ACE_GRID_OnlyRowsTemplate3_0300
      * @tc.number SUB_ACE_GRID_OnlyRowsTemplate3_0300
-     * @tc.name testGrid
-     * @tc.desc GridItem sets rowStart to be greater than the total number of row
-     * @tc.level Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   GridItem sets rowStart to be greater than the total number of row
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GRID_OnlyRowsTemplate3_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_GRID_OnlyRowsTemplate3_0300] START');

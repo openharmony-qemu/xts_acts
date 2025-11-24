@@ -43,12 +43,12 @@ export default function setTextSelectionTest() {
     });
 
     /**
-     * @tc.number    setTextSelection_0100
-     * @tc.name      setTextSelection_0100
-     * @tc.desc      TextArea,TextInput: setTextSelection
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   setTextSelection_0100
+     * @tc.number setTextSelection_0100
+     * @tc.desc   TextArea,TextInput: setTextSelection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('setTextSelection_0100', Level.LEVEL1, async (done: Function) => {
       console.info('setTextSelection_0100 START');
@@ -81,12 +81,12 @@ export default function setTextSelectionTest() {
     });
 
     /**
-     * @tc.number    setTextSelection_0200
-     * @tc.name      setTextSelection_0200
-     * @tc.desc      TextArea,TextInput: setTextSelection
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   setTextSelection_0200
+     * @tc.number setTextSelection_0200
+     * @tc.desc   TextArea,TextInput: setTextSelection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('setTextSelection_0200', Level.LEVEL1, async (done: Function) => {
       console.info('setTextSelection_0200 START');
@@ -119,12 +119,12 @@ export default function setTextSelectionTest() {
     });
 
     /**
-     * @tc.number    setTextSelection_0300
-     * @tc.name      setTextSelection_0300
-     * @tc.desc      TextArea,TextInput: setTextSelection
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   setTextSelection_0300
+     * @tc.number setTextSelection_0300
+     * @tc.desc   TextArea,TextInput: setTextSelection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('setTextSelection_0300', Level.LEVEL1, async (done: Function) => {
       console.info('setTextSelection_0300 START');
@@ -168,12 +168,12 @@ export default function setTextSelectionTest() {
 
 
     /**
-     * @tc.number    setTextSelection_0400
-     * @tc.name      setTextSelection_0400
-     * @tc.desc      TextArea,TextInput: setTextSelection
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   setTextSelection_0400
+     * @tc.number setTextSelection_0400
+     * @tc.desc   TextArea,TextInput: setTextSelection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('setTextSelection_0400', Level.LEVEL1, async (done: Function) => {
       console.info('setTextSelection_0400 START');
@@ -206,12 +206,12 @@ export default function setTextSelectionTest() {
     });
 
     /**
-     * @tc.number    setTextSelection_0500
-     * @tc.name      setTextSelection_0500
-     * @tc.desc      TextArea,TextInput: setTextSelection
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   setTextSelection_0500
+     * @tc.number setTextSelection_0500
+     * @tc.desc   TextArea,TextInput: setTextSelection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('setTextSelection_0500', Level.LEVEL1, async (done: Function) => {
       console.info('setTextSelection_0500 START');

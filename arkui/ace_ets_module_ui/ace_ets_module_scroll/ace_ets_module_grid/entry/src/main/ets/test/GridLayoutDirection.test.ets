@@ -44,14 +44,14 @@ export default function GridLayoutDirection() {
       done();
     });
 
-    /* *
-      * @tc.number: GridLayoutDirection_001
-      * @tc.name  : GridLayoutDirection_001
-      * @tc.desc  : Set layoutDirection to GridDirection.ColumnReverse
-      * @tc.level : Level 2
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   GridLayoutDirection_001
+     * @tc.number GridLayoutDirection_001
+     * @tc.desc   Set layoutDirection to GridDirection.ColumnReverse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('GridLayoutDirection_001',  Level.LEVEL2, async (done: Function) => {
 
       console.info('[GridLayoutDirection_001] START');
@@ -67,14 +67,14 @@ export default function GridLayoutDirection() {
       done();
     });
 
-    /* *
-      * @tc.number: GridLayoutDirection_002
-      * @tc.name  : GridLayoutDirection_002
-      * @tc.desc  : Set layoutDirection to GridDirection.Column
-      * @tc.level : Level 2
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   GridLayoutDirection_002
+     * @tc.number GridLayoutDirection_002
+     * @tc.desc   Set layoutDirection to GridDirection.Column
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('GridLayoutDirection_002',  Level.LEVEL2, async (done: Function) => {
 
       console.info('[GridLayoutDirection_002] START');
@@ -90,14 +90,14 @@ export default function GridLayoutDirection() {
       done();
     });
 
-    /* *
-      * @tc.number: GridLayoutDirection_003
-      * @tc.name  : GridLayoutDirection_003
-      * @tc.desc  : Set layoutDirection to GridDirection.RowReverse
-      * @tc.level : Level 2
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   GridLayoutDirection_003
+     * @tc.number GridLayoutDirection_003
+     * @tc.desc   Set layoutDirection to GridDirection.RowReverse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('GridLayoutDirection_003',  Level.LEVEL2, async (done: Function) => {
 
       console.info('[GridLayoutDirection_003] START');
@@ -113,14 +113,14 @@ export default function GridLayoutDirection() {
       done();
     });
 
-    /* *
-      * @tc.number: GridLayoutDirection_004
-      * @tc.name  : GridLayoutDirection_004
-      * @tc.desc  : Set layoutDirection to GridDirection.Row
-      * @tc.level : Level 2
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   GridLayoutDirection_004
+     * @tc.number GridLayoutDirection_004
+     * @tc.desc   Set layoutDirection to GridDirection.Row
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('GridLayoutDirection_004',  Level.LEVEL2, async (done: Function) => {
 
       console.info('[GridLayoutDirection_004] START');
@@ -136,14 +136,14 @@ export default function GridLayoutDirection() {
       done();
     });
 
-    /* *
-      * @tc.number: GridLayoutDirection_005
-      * @tc.name  : GridLayoutDirection_005
-      * @tc.desc  : Set layoutDirection to GridDirection.ColumnReverse
-      * @tc.level : Level 2
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   GridLayoutDirection_005
+     * @tc.number GridLayoutDirection_005
+     * @tc.desc   Set layoutDirection to GridDirection.ColumnReverse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('GridLayoutDirection_005',  Level.LEVEL2, async (done: Function) => {
 
       console.info('[GridLayoutDirection_005] START');
@@ -159,14 +159,14 @@ export default function GridLayoutDirection() {
       done();
     });
 
-    /* *
-      * @tc.number: GridLayoutDirection_006
-      * @tc.name  : GridLayoutDirection_006
-      * @tc.desc  : Set layoutDirection to GridDirection.ColumnReverse
-      * @tc.level : Level 2
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   GridLayoutDirection_006
+     * @tc.number GridLayoutDirection_006
+     * @tc.desc   Set layoutDirection to GridDirection.ColumnReverse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('GridLayoutDirection_006',  Level.LEVEL2, async (done: Function) => {
 
       console.info('[GridLayoutDirection_006] START');

@@ -56,12 +56,14 @@ export default function ChipAction() {
       done();
     });
 
-    /* *
-      * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_CHIP_INTERFACE_0940
-      * @tc.name  : ChipAction_001
-      * @tc.desc  : action event test
-      * @tc.level : Level 3
-      */
+    /**
+     * @tc.name   ChipAction_001
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_CHIP_INTERFACE_0940
+     * @tc.desc   action event test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ChipAction_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
 
       console.info('ChipAction_001 START');

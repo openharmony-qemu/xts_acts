@@ -48,12 +48,12 @@ export default function UpdateConfigurationNodeTest() {
     });
 
     /**
-     * @tc.number    UpdateConfigurationNodeTest_0100
-     * @tc.name      UpdateConfigurationNodeTest_0100
-     * @tc.desc      ReactiveBuilderNode UpdateConfigurationNodeTest
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   UpdateConfigurationNodeTest_0100
+     * @tc.number UpdateConfigurationNodeTest_0100
+     * @tc.desc   ReactiveBuilderNode UpdateConfigurationNodeTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('UpdateConfigurationNodeTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('UpdateConfigurationNodeTest_0100 START');

@@ -45,9 +45,12 @@ export default function ChipApi1() {
     });
 
     /**
+     * @tc.name   ChipApi1_0100
      * @tc.number ChipApi1_0100
-     * @tc.name   testFocus
-     * @tc.desc
+     * @tc.desc   ChipApi1_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ChipApi1_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('ChipApi1_0100 START');

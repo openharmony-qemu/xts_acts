@@ -46,12 +46,12 @@ export default function TextPickerDialogWindowPropertiesTest() {
     });
 
     /**
+     * @tc.name   TextPickerDialogWindowPropertiesTest_0100
      * @tc.number TextPickerDialogWindowPropertiesTest_0100
-     * @tc.name TextPickerDialogWindowPropertiesTest_0100
-     * @tc.desc set api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextPickerDialogWindowPropertiesTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('TextPickerDialogWindowPropertiesTest_0100 START');

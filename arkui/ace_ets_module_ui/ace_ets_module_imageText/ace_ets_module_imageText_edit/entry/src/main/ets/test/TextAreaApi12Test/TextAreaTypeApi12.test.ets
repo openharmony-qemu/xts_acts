@@ -43,12 +43,12 @@ export default function TextAreaTypeApi12Test() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextAreaTypeApi12Test_0010
-     * @tc.name      TextAreaTypeApi12Test_0010
-     * @tc.desc      test TextArea: TextAreaType.NUMBER_DECIMAL
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextAreaTypeApi12Test_0010
+     * @tc.number SUB_ACE_TextAreaTypeApi12Test_0010
+     * @tc.desc   test TextArea: TextAreaType.NUMBER_DECIMAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextAreaTypeApi12Test_0010', Level.LEVEL0, async (done: Function) => {
       console.info('[TextAreaTypeApi12Test_0010] START');
@@ -61,12 +61,12 @@ export default function TextAreaTypeApi12Test() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextAreaTypeApi12Test_0020
-     * @tc.name      TextAreaTypeApi12Test_0020
-     * @tc.desc      test TextArea: TextAreaType.URL
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextAreaTypeApi12Test_0020
+     * @tc.number SUB_ACE_TextAreaTypeApi12Test_0020
+     * @tc.desc   test TextArea: TextAreaType.URL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextAreaTypeApi12Test_0020', Level.LEVEL0, async (done: Function) => {
       console.info('[TextAreaTypeApi12Test_0020] START');
@@ -79,12 +79,12 @@ export default function TextAreaTypeApi12Test() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextAreaTypeApi12Test_0030
-     * @tc.name      TextAreaTypeApi12Test_0030
-     * @tc.desc      test TextArea: default
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextAreaTypeApi12Test_0030
+     * @tc.number SUB_ACE_TextAreaTypeApi12Test_0030
+     * @tc.desc   test TextArea: default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextAreaTypeApi12Test_0030', Level.LEVEL0, async (done: Function) => {
       console.info('[TextAreaTypeApi12Test_0030] START');
@@ -97,12 +97,12 @@ export default function TextAreaTypeApi12Test() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextAreaTypeApi12Test_0040
-     * @tc.name      TextAreaTypeApi12Test_0040
-     * @tc.desc      test TextArea: undefined
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextAreaTypeApi12Test_0040
+     * @tc.number SUB_ACE_TextAreaTypeApi12Test_0040
+     * @tc.desc   test TextArea: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextAreaTypeApi12Test_0040', Level.LEVEL0, async (done: Function) => {
       console.info('[TextAreaTypeApi12Test_0040] START');

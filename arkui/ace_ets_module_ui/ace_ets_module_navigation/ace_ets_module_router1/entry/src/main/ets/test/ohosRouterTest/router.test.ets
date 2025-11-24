@@ -47,12 +47,12 @@ export default function routerStandardJsunit() {
     });
 
     /**
-     * @tc.number    testrouterStandard0011
-     * @tc.name      testrouterStandard0011
-     * @tc.desc      testrouterStandard0011
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   testrouterStandard0011
+     * @tc.number testrouterStandard0011
+     * @tc.desc   testrouterStandard0011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testrouterStandard0011', Level.LEVEL2, async (done: Function) => {
       console.info('routerStandard testrouterStandard0011 START');
@@ -80,12 +80,12 @@ export default function routerStandardJsunit() {
     });
 
     /**
-     * @tc.number    testrouterSingle0001
-     * @tc.name      testrouterSingle0001
-     * @tc.desc      testrouterSingle0001
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   testrouterSingle0001
+     * @tc.number testrouterSingle0001
+     * @tc.desc   testrouterSingle0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testrouterSingle0001', Level.LEVEL2, async (done: Function) => {
       console.info('routerSingle testrouterSingle0001 START');

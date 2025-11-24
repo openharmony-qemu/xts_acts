@@ -45,14 +45,14 @@ export default function textAreaEllipsisModeTest() {
       console.info("textAreaEllipsisModeTest after each called");
     });
 
-    /*
-    * @tc.number       textAreaEllipsisModeTest0001
-    * @tc.name         textAreaEllipsisModeTest0001
-    * @tc.desc        Test textAreaEllipsisModeTest Normal value :EllipsisMode.END
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
-    */
+    /**
+     * @tc.name   textAreaEllipsisModeTest0001
+     * @tc.number textAreaEllipsisModeTest0001
+     * @tc.desc   Test textAreaEllipsisModeTest Normal value :EllipsisMode.END
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textAreaEllipsisModeTest0001', Level.LEVEL1, async () => {
       let driver = Driver.create();
       console.info('textAreaEllipsisModeTest textAreaEllipsisModeTest0001 START');
@@ -64,14 +64,14 @@ export default function textAreaEllipsisModeTest() {
       console.info("[textAreaEllipsisModeTest0001] end");
     });
 	
-	 /*
-    * @tc.number       textAreaEllipsisModeTest0002
-    * @tc.name         textAreaEllipsisModeTest0002
-    * @tc.desc        Test textAreaEllipsisModeTest Normal value :EllipsisMode.START
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
-    */
+    /**
+     * @tc.name   textAreaEllipsisModeTest0002
+     * @tc.number textAreaEllipsisModeTest0002
+     * @tc.desc   Test textAreaEllipsisModeTest Normal value :EllipsisMode.START
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textAreaEllipsisModeTest0002', Level.LEVEL1, async () => {
       let driver = Driver.create();
       console.info('textAreaEllipsisModeTest textAreaEllipsisModeTest0002 START');
@@ -83,14 +83,14 @@ export default function textAreaEllipsisModeTest() {
       console.info("[textAreaEllipsisModeTest0002] end");
     });
 	
-	 /*
-    * @tc.number       textAreaEllipsisModeTest0003
-    * @tc.name         textAreaEllipsisModeTest0003
-    * @tc.desc        Test textAreaEllipsisModeTest Normal value :EllipsisMode.CENTER
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
-    */
+    /**
+     * @tc.name   textAreaEllipsisModeTest0003
+     * @tc.number textAreaEllipsisModeTest0003
+     * @tc.desc   Test textAreaEllipsisModeTest Normal value :EllipsisMode.CENTER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textAreaEllipsisModeTest0003', Level.LEVEL1, async () => {
       let driver = Driver.create();
       console.info('textAreaEllipsisModeTest textAreaEllipsisModeTest0003 START');
@@ -102,14 +102,14 @@ export default function textAreaEllipsisModeTest() {
       console.info("[textAreaEllipsisModeTest0003] end");
     });
 	
-	 /*
-    * @tc.number       textAreaEllipsisModeTest0004
-    * @tc.name         textAreaEllipsisModeTest0004
-    * @tc.desc        Test textAreaEllipsisModeTest abnormal value :undefined
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
-    */
+    /**
+     * @tc.name   textAreaEllipsisModeTest0004
+     * @tc.number textAreaEllipsisModeTest0004
+     * @tc.desc   Test textAreaEllipsisModeTest abnormal value :undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textAreaEllipsisModeTest0004', Level.LEVEL1, async () => {
       let driver = Driver.create();
       console.info('textAreaEllipsisModeTest textAreaEllipsisModeTest0004 START');
@@ -121,13 +121,13 @@ export default function textAreaEllipsisModeTest() {
       console.info("[textAreaEllipsisModeTest0004] end");
     });
 	
-	 /*
-    * @tc.number       textAreaEllipsisModeTest0005
-    * @tc.name         textAreaEllipsisModeTest0005
-    * @tc.desc        Test textAreaEllipsisModeTest abnormal value :null
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   textAreaEllipsisModeTest0005
+     * @tc.number textAreaEllipsisModeTest0005
+     * @tc.desc   Test textAreaEllipsisModeTest abnormal value :null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaEllipsisModeTest0005', Level.LEVEL1, async () => {
       let driver = Driver.create();

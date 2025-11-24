@@ -43,13 +43,13 @@ export default function onDidIMEInputTest() {
     });
 
     /**
-    * @tc.number: onDidIMEInputTest_0010
-    * @tc.name  : onDidIMEInputTest_0010
-    * @tc.desc  : set RichEditor: onDidIMEInput
-    * @tc.level : Level 0
-    * @tc.type :
-    * @tc.size :
-    */
+     * @tc.name   onDidIMEInputTest_0010
+     * @tc.number onDidIMEInputTest_0010
+     * @tc.desc   set RichEditor: onDidIMEInput
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('onDidIMEInputTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('onDidIMEInputTest_0010 START');
       let driver: Driver = Driver.create();

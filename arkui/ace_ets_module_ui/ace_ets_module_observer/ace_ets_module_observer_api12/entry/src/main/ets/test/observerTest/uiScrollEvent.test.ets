@@ -46,12 +46,12 @@ export default function uiScrollEvent() {
     });
 
     /**
-     * @tc.number    uiScrollEvent_001
-     * @tc.name      uiScrollEvent_001
-     * @tc.desc      Monitor the start and end of scrolling events.
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   uiScrollEvent_0100
+     * @tc.number uiScrollEvent_001
+     * @tc.desc   Monitor the start and end of scrolling events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('uiScrollEvent_0100', Level.LEVEL0, async (done: Function) => {
       console.info('uiScrollEvent_0100 START');

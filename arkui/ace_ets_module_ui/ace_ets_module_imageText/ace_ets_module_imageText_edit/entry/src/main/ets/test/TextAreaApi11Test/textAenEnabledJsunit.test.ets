@@ -44,11 +44,13 @@ export default function textAenEnabledJsunit() {
     });
 
     /**
-    * @tc.number: textAenEnabledJsunit_0100
-    * @tc.name  : textAenEnabledJsunit_0100
-    * @tc.desc  : test TextArea
-    * @tc.level : Level 1
-    */
+     * @tc.name   textAenEnabledJsunit_0100
+     * @tc.number textAenEnabledJsunit_0100
+     * @tc.desc   test TextArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textAenEnabledJsunit_0100', Level.LEVEL1, async (done: Function) => {
 
       console.info('textAenEnabledJsunit_0100 START');
@@ -66,11 +68,13 @@ export default function textAenEnabledJsunit() {
     });
 
     /**
-    * @tc.number: textAenEnabledJsunit_0200
-    * @tc.name  : textAenEnabledJsunit_0200
-    * @tc.desc  : test TextArea
-    * @tc.level : Level 1
-    */
+     * @tc.name   textAenEnabledJsunit_0200
+     * @tc.number textAenEnabledJsunit_0200
+     * @tc.desc   test TextArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textAenEnabledJsunit_0200', Level.LEVEL1, async (done: Function) => {
       console.info('textAenEnabledJsunit_0200 START');
       let driver = await UiDriver.create()

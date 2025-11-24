@@ -38,9 +38,12 @@ export default function TextStateJsunit() {
 
     });
     /**
+     * @tc.name   ArkUX_Stage_Text_TextShadow_0100
      * @tc.number ArkUX_Stage_Text_TextShadow_0100
-     * @tc.name Test the textShadow property of the text component
-     * @tc.desc Do not set textShadow property
+     * @tc.desc   Do not set textShadow property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextShadow_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextShadow_0100] START');
@@ -63,9 +66,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextShadow_0200
      * @tc.number ArkUX_Stage_Text_TextShadow_0200
-     * @tc.name Test the textShadow property of the text component
-     * @tc.desc Set the radius value int the textShadow attribute to 1.0
+     * @tc.desc   Set the radius value int the textShadow attribute to 1.0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextShadow_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextShadow_0200] START');
@@ -88,9 +94,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextShadow_0300
      * @tc.number ArkUX_Stage_Text_TextShadow_0300
-     * @tc.name Test the textShadow property of the text component
-     * @tc.desc Set the radius value int the textShadow attribute to 0
+     * @tc.desc   Set the radius value int the textShadow attribute to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextShadow_0300', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextShadow_0300] START');
@@ -113,9 +122,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextShadow_0400
      * @tc.number ArkUX_Stage_Text_TextShadow_0400
-     * @tc.name Test the textShadow property of the text component
-     * @tc.desc Set the radius value int the textShadow attribute to 20.0
+     * @tc.desc   Set the radius value int the textShadow attribute to 20.0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextShadow_0400', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextShadow_0400] START');
@@ -138,10 +150,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextShadow_0500
      * @tc.number ArkUX_Stage_Text_TextShadow_0500
-     * @tc.name Test the textShadow property of the text component
-     * @tc.desc Set the radius value int the textShadow attribute to
-     *           $r("app.float.textShadowRadius")
+     * @tc.desc   Set the radius value int the textShadow attribute to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextShadow_0500', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextShadow_0500] START');
@@ -164,9 +178,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextShadow_0600
      * @tc.number ArkUX_Stage_Text_TextShadow_0600
-     * @tc.name Test the textShadow property of the text component
-     * @tc.desc Set the radius value int the textShadow attribute to -1
+     * @tc.desc   Set the radius value int the textShadow attribute to -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextShadow_0600', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextShadow_0600] START');
@@ -189,10 +206,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextShadow_0700
      * @tc.number ArkUX_Stage_Text_TextShadow_0700
-     * @tc.name Test the textShadow property of the text component
-     * @tc.desc Set the radius value to 1.0 and the color value to "#0000FF"
-     *           in the textShadow
+     * @tc.desc   Set the radius value to 1.0 and the color value to "#0000FF"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextShadow_0700', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextShadow_0700] START');
@@ -215,9 +234,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextShadow_0800
      * @tc.number ArkUX_Stage_Text_TextShadow_0800
-     * @tc.name Test the textShadow property of the text component
-     * @tc.desc Set the radius value to 1.0 and the color value to 0xff0000 in the textShadow
+     * @tc.desc   Set the radius value to 1.0 and the color value to 0xff0000 in the textShadow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextShadow_0800', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextShadow_0800] START');
@@ -240,9 +262,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextShadow_0900
      * @tc.number ArkUX_Stage_Text_TextShadow_0900
-     * @tc.name Test the textShadow property of the text component
-     * @tc.desc Set the radius value to 1.0 and the color value to Color.Red in the textShadow
+     * @tc.desc   Set the radius value to 1.0 and the color value to Color.Red in the textShadow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextShadow_0900', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextShadow_0900] START');
@@ -265,10 +290,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextShadow_1000
      * @tc.number ArkUX_Stage_Text_TextShadow_1000
-     * @tc.name Test the textShadow property of the text component
-     * @tc.desc Set the radius value to 1.0 and the color value to $r("app.color.textShadow_Color")
-     *           in the textShadow
+     * @tc.desc   Set the radius value to 1.0 and the color value to $r("app.color.textShadow_Color")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextShadow_1000', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextShadow_1000] START');
@@ -291,9 +318,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextShadow_1100
      * @tc.number ArkUX_Stage_Text_TextShadow_1100
-     * @tc.name Test the textShadow property of the text component
-     * @tc.desc Set the radius value to 1.0 and the color value to null in the textShadow
+     * @tc.desc   Set the radius value to 1.0 and the color value to null in the textShadow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextShadow_1100', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextShadow_1100] START');
@@ -316,9 +346,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextShadow_1200
      * @tc.number ArkUX_Stage_Text_TextShadow_1200
-     * @tc.name Test the textShadow property of the text component
-     * @tc.desc Set the radius value to 1.0 and the offsetX value to 5.0 in the textShadow
+     * @tc.desc   Set the radius value to 1.0 and the offsetX value to 5.0 in the textShadow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextShadow_1200', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextShadow_1200] START');
@@ -341,9 +374,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextShadow_1300
      * @tc.number ArkUX_Stage_Text_TextShadow_1300
-     * @tc.name Test the textShadow property of the text component
-     * @tc.desc Set the radius value to 1.0 and the offsetX value to -5.0 in the textShadow
+     * @tc.desc   Set the radius value to 1.0 and the offsetX value to -5.0 in the textShadow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextShadow_1300', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextShadow_1300] START');
@@ -366,9 +402,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextShadow_1400
      * @tc.number ArkUX_Stage_Text_TextShadow_1400
-     * @tc.name Test the textShadow property of the text component
-     * @tc.desc Set the radius value to 1.0 and the offsetY value to 5.0 in the textShadow
+     * @tc.desc   Set the radius value to 1.0 and the offsetY value to 5.0 in the textShadow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextShadow_1400', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextShadow_1400] START');
@@ -391,9 +430,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextShadow_1500
      * @tc.number ArkUX_Stage_Text_TextShadow_1500
-     * @tc.name Test the textShadow property of the text component
-     * @tc.desc Set the radius value to 1.0 and the offsetY value to -5.0 in the textShadow
+     * @tc.desc   Set the radius value to 1.0 and the offsetY value to -5.0 in the textShadow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextShadow_1500', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextShadow_0100] START');
@@ -416,10 +458,13 @@ export default function TextStateJsunit() {
     })
 
     /**
-    * @tc.number ArkUX_Stage_Text_TextShadow_1600
-    * @tc.name Test the textShadow property of the text component
-    * @tc.desc Set the radius value to 1.0 and the offsetX value to 5.0 and the offsetY  value to 5.0 in the textShadow
-    */
+     * @tc.name   ArkUX_Stage_Text_TextShadow_1600
+     * @tc.number ArkUX_Stage_Text_TextShadow_1600
+     * @tc.desc   Set the radius value to 1.0 and the offsetX value to 5.0 and the offsetY  value to 5.0 in the textShadow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUX_Stage_Text_TextShadow_1600', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextShadow_1600] START');
       setTimeout(() => {
@@ -441,9 +486,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextShadow_1700
      * @tc.number ArkUX_Stage_Text_TextShadow_1700
-     * @tc.name Test the textShadow property of the text component
-     * @tc.desc Set the radius value to 1.0 and the offsetX value to 5.0 and the offsetY value to -5.0 in the textShadow
+     * @tc.desc   Set the radius value to 1.0 and the offsetX value to 5.0 and the offsetY value to -5.0 in the textShadow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextShadow_1700', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextShadow_1700] START');
@@ -466,9 +514,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextShadow_1800
      * @tc.number ArkUX_Stage_Text_TextShadow_1800
-     * @tc.name Test the textShadow property of the text component
-     * @tc.desc Set the radius value to 1.0 and the offsetX value to -5.0 and the offsetY value to 5.0 in the textShadow
+     * @tc.desc   Set the radius value to 1.0 and the offsetX value to -5.0 and the offsetY value to 5.0 in the textShadow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextShadow_1800', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextShadow_1800] START');
@@ -491,9 +542,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextShadow_1900
      * @tc.number ArkUX_Stage_Text_TextShadow_1900
-     * @tc.name Test the textShadow property of the text component
-     * @tc.desc Set the radius value to 1.0 and the offsetX value to -5.0 and the offsetY value to -5.0 in the textShadow
+     * @tc.desc   Set the radius value to 1.0 and the offsetX value to -5.0 and the offsetY value to -5.0 in the textShadow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextShadow_1900', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextShadow_1900] START');
@@ -516,10 +570,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextShadow_2000
      * @tc.number ArkUX_Stage_Text_TextShadow_2000
-     * @tc.name Test the textShadow property of the text component
-     * @tc.desc Set the radius value to 1.0 and the color value to "#0000FF" and the offsetX value to 5.0 and the offsetY value to
-     *           -5.0 in the textShadow
+     * @tc.desc   Set the radius value to 1.0 and the color value to "#0000FF" and the offsetX value to 5.0 and the offsetY value to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextShadow_2000', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextShadow_0100] START');
@@ -542,9 +598,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextShadow_2100
      * @tc.number ArkUX_Stage_Text_TextShadow_2100
-     * @tc.name Test the textShadow property of the text component
-     * @tc.desc Set the textShadow value to null
+     * @tc.desc   Set the textShadow value to null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextShadow_2100', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextShadow_0100] START');
@@ -564,10 +623,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextShadow_2200
      * @tc.number ArkUX_Stage_Text_TextShadow_2200
-     * @tc.name Test the textShadow property of the text component
-     * @tc.desc Set the radius value to 1.0 and the color value to Color.Red and the offsetX value to $r("app.float.textShadowOffset") and the offsetY
-     *            value to $r("app.float.textShadowOffset") in the textShadow
+     * @tc.desc   Set the radius value to 1.0 and the color value to Color.Red and the offsetX value to $r("app.float.textShadowOffset") and the offsetY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextShadow_2200', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextShadow_2200] START');
@@ -590,10 +651,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextShadow_2300
      * @tc.number ArkUX_Stage_Text_TextShadow_2300
-     * @tc.name Test the textShadow property of the text component
-     * @tc.desc Set the radius value to 1.0 and the color value to Color.Red and the offsetX value to null and the offsetY value to
-     *            null in the textShadow
+     * @tc.desc   Set the radius value to 1.0 and the color value to Color.Red and the offsetX value to null and the offsetY value to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextShadow_2300', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextShadow_2300] START');
@@ -616,10 +679,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextShadow_2400
      * @tc.number ArkUX_Stage_Text_TextShadow_2400
-     * @tc.name Test the textShadow property of the text component
-     * @tc.desc Set the radius value to 1.0 and the color value to Color.Red and the offsetX value to 1.0 and the offsetY value to 1.0
-     *            in the textShadow and then set the radius value to 1.0 and others to null
+     * @tc.desc   Set the radius value to 1.0 and the color value to Color.Red and the offsetX value to 1.0 and the offsetY value to 1.0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextShadow_2400', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextShadow_2400] START');
@@ -642,11 +707,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextShadow_2500
      * @tc.number ArkUX_Stage_Text_TextShadow_2500
-     * @tc.name Test the textShadow property of the text component
-     * @tc.desc Set the radius value to 10.0 and the color value to Color.Black and the offsetX value to -10.0 and the offsetY value to -10.0
-     *            in the textShadow as well as set the radius value to 10.0 and the color value to Color.Red and the offsetX value to 10.0 and
-     *            the offsetY value to 10.0 in the textShadow
+     * @tc.desc   Set the radius value to 10.0 and the color value to Color.Black and the offsetX value to -10.0 and the offsetY value to -10.0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextShadow_2500', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextShadow_2500] START');
@@ -674,9 +740,12 @@ export default function TextStateJsunit() {
 
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextOverflow_0100
      * @tc.number ArkUX_Stage_Text_TextOverflow_0100
-     * @tc.name Test the textOverflow property of the text component
-     * @tc.desc Do not set the textOverflow property value
+     * @tc.desc   Do not set the textOverflow property value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextOverflow_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextOverflow_0100] START');
@@ -696,9 +765,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextOverflow_0200
      * @tc.number ArkUX_Stage_Text_TextOverflow_0200
-     * @tc.name Test the textOverflow property of the text component
-     * @tc.desc Set the textOverflow property value to TextOverflow.Clip
+     * @tc.desc   Set the textOverflow property value to TextOverflow.Clip
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextOverflow_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextOverflow_0200] START');
@@ -718,9 +790,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextOverflow_0300
      * @tc.number ArkUX_Stage_Text_TextOverflow_0300
-     * @tc.name Test the textOverflow property of the text component
-     * @tc.desc Set the textOverflow property value to TextOverflow.Clip
+     * @tc.desc   Set the textOverflow property value to TextOverflow.Clip
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextOverflow_0300', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextOverflow_0300] START');
@@ -740,9 +815,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextOverflow_0400
      * @tc.number ArkUX_Stage_Text_TextOverflow_0400
-     * @tc.name Test the textOverflow property of the text component
-     * @tc.desc Set the textOverflow property value to TextOverflow.Ellipsis
+     * @tc.desc   Set the textOverflow property value to TextOverflow.Ellipsis
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextOverflow_0400', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextOverflow_0400] START');
@@ -762,9 +840,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextOverflow_0500
      * @tc.number ArkUX_Stage_Text_TextOverflow_0500
-     * @tc.name Test the textOverflow property of the text component
-     * @tc.desc Set the textOverflow property value to TextOverflow.Ellipsis
+     * @tc.desc   Set the textOverflow property value to TextOverflow.Ellipsis
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextOverflow_0500', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextOverflow_0500] START');
@@ -784,9 +865,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextOverflow_0600
      * @tc.number ArkUX_Stage_Text_TextOverflow_0600
-     * @tc.name Test the textOverflow property of the text component
-     * @tc.desc Set the textOverflow property value to TextOverflow.None
+     * @tc.desc   Set the textOverflow property value to TextOverflow.None
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextOverflow_0600', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextOverflow_0600] START');
@@ -806,9 +890,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextOverflow_0700
      * @tc.number ArkUX_Stage_Text_TextOverflow_0700
-     * @tc.name Test the textOverflow property of the text component
-     * @tc.desc Set the textOverflow property value to TextOverflow.Marquee
+     * @tc.desc   Set the textOverflow property value to TextOverflow.Marquee
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextOverflow_0700', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextOverflow_0700] START');
@@ -828,9 +915,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextOverflow_0800
      * @tc.number ArkUX_Stage_Text_TextOverflow_0800
-     * @tc.name Test the textOverflow property of the text component
-     * @tc.desc Set the textOverflow property value to null
+     * @tc.desc   Set the textOverflow property value to null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextOverflow_0800', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextOverflow_0800] START');
@@ -850,9 +940,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextOverflow_0900
      * @tc.number ArkUX_Stage_Text_TextOverflow_0900
-     * @tc.name Test the textOverflow property of the text component
-     * @tc.desc Set the textOverflow property value to TextOverflow.Clip and the fontSize value to 15.00fp
+     * @tc.desc   Set the textOverflow property value to TextOverflow.Clip and the fontSize value to 15.00fp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextOverflow_0900', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextOverflow_0900] START');
@@ -874,9 +967,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextAlign_0100
      * @tc.number ArkUX_Stage_Text_TextAlign_0100
-     * @tc.name Test the textAlign property of the text component
-     * @tc.desc Do not set the textAlign property value to null
+     * @tc.desc   Do not set the textAlign property value to null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextAlign_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextAlign_0100] START');
@@ -896,9 +992,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextAlign_0200
      * @tc.number ArkUX_Stage_Text_TextAlign_0200
-     * @tc.name Test the textAlign property of the text component
-     * @tc.desc Set the textAlign property value to TextAlign.Start
+     * @tc.desc   Set the textAlign property value to TextAlign.Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextAlign_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextAlign_0100] START');
@@ -918,9 +1017,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextAlign_0300
      * @tc.number ArkUX_Stage_Text_TextAlign_0300
-     * @tc.name Test the textAlign property of the text component
-     * @tc.desc Set the textAlign property value to TextAlign.Center
+     * @tc.desc   Set the textAlign property value to TextAlign.Center
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextAlign_0300', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextAlign_0300] START');
@@ -941,9 +1043,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextAlign_0400
      * @tc.number ArkUX_Stage_Text_TextAlign_0400
-     * @tc.name Test the textAlign property of the text component
-     * @tc.desc Set the textAlign property value to End
+     * @tc.desc   Set the textAlign property value to End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextAlign_0400', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextAlign_0400] START');
@@ -963,9 +1068,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextAlign_0500
      * @tc.number ArkUX_Stage_Text_TextAlign_0500
-     * @tc.name Test the textAlign property of the text component
-     * @tc.desc Set the textAlign property value to Justify
+     * @tc.desc   Set the textAlign property value to Justify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextAlign_0500', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextAlign_0500] START');
@@ -985,9 +1093,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextAlign_0600
      * @tc.number ArkUX_Stage_Text_TextAlign_0600
-     * @tc.name Test the textAlign property of the text component
-     * @tc.desc Set the textAlign property value to null
+     * @tc.desc   Set the textAlign property value to null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextAlign_0600', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextAlign_0600] START');
@@ -1007,9 +1118,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_TextAlign_0700
      * @tc.number ArkUX_Stage_Text_TextAlign_0700
-     * @tc.name Test the textAlign property of the text component
-     * @tc.desc Set the textAlign property value to Justify and the textOverflow value to TextOverflow.Clip
+     * @tc.desc   Set the textAlign property value to Justify and the textOverflow value to TextOverflow.Clip
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_TextAlign_0700', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_TextAlign_0700] START');
@@ -1031,9 +1145,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_heightAdaptivePolicy_0100
      * @tc.number ArkUX_Stage_Text_heightAdaptivePolicy_0100
-     * @tc.name Test the heightAdaptivePolicy property of the text component
-     * @tc.desc Set the heightAdaptivePolicy property value to TextHeightAdaptivePolicy.MIN_FONT_SIZE_FIRST
+     * @tc.desc   Set the heightAdaptivePolicy property value to TextHeightAdaptivePolicy.MIN_FONT_SIZE_FIRST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_heightAdaptivePolicy_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_heightAdaptivePolicy_0100] START');
@@ -1055,9 +1172,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_heightAdaptivePolicy_0200
      * @tc.number ArkUX_Stage_Text_heightAdaptivePolicy_0200
-     * @tc.name Test the heightAdaptivePolicy property of the text component
-     * @tc.desc Set the heightAdaptivePolicy property value to TextHeightAdaptivePolicy.MAX_LINES_FIRST
+     * @tc.desc   Set the heightAdaptivePolicy property value to TextHeightAdaptivePolicy.MAX_LINES_FIRST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_heightAdaptivePolicy_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_heightAdaptivePolicy_0200] START');
@@ -1081,9 +1201,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_heightAdaptivePolicy_0300
      * @tc.number ArkUX_Stage_Text_heightAdaptivePolicy_0300
-     * @tc.name Test the heightAdaptivePolicy property of the text component
-     * @tc.desc Set the heightAdaptivePolicy property value to TextHeightAdaptivePolicy.LAYOUT_CONSTRAINT_FIRST
+     * @tc.desc   Set the heightAdaptivePolicy property value to TextHeightAdaptivePolicy.LAYOUT_CONSTRAINT_FIRST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_heightAdaptivePolicy_0300', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_heightAdaptivePolicy_0300] START');
@@ -1105,10 +1228,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_heightAdaptivePolicy_0400
      * @tc.number ArkUX_Stage_Text_heightAdaptivePolicy_0400
-     * @tc.name Test the heightAdaptivePolicy property of the text component
-     * @tc.desc Set the heightAdaptivePolicy property value to TextHeightAdaptivePolicy.LAYOUT_CONSTRAINT_FIRST and then Set the
-     *            heightAdaptivePolicy property value to null
+     * @tc.desc   Set the heightAdaptivePolicy property value to TextHeightAdaptivePolicy.LAYOUT_CONSTRAINT_FIRST and then Set the
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_heightAdaptivePolicy_0400', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_heightAdaptivePolicy_0400] START');
@@ -1130,10 +1255,12 @@ export default function TextStateJsunit() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Text_heightAdaptivePolicy_0500
      * @tc.number ArkUX_Stage_Text_heightAdaptivePolicy_0500
-     * @tc.name Test the heightAdaptivePolicy property of the text component
-     * @tc.desc Set the heightAdaptivePolicy property value to TextHeightAdaptivePolicy.LAYOUT_CONSTRAINT_FIRST and then Set the
-     *           heightAdaptivePolicy property value to MIN_FONT_SIZE_FIRST
+     * @tc.desc   Set the heightAdaptivePolicy property value to TextHeightAdaptivePolicy.LAYOUT_CONSTRAINT_FIRST and then Set the
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Text_heightAdaptivePolicy_0500', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_Text_heightAdaptivePolicy_0500] START');

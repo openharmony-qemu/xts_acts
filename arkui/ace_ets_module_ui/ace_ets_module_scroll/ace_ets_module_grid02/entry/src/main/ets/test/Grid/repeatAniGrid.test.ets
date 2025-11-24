@@ -46,12 +46,12 @@ export default function repeatAniGrid() {
     });
 
     /**
-     * @tc.number    repeatAniGrid_001
-     * @tc.name      repeatAniGrid_0100
-     * @tc.desc      Grid component is loaded using Repeat and set the animation parameter of ScrollPage to true.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   repeatAniGrid_0100
+     * @tc.number repeatAniGrid_001
+     * @tc.desc   Grid component is loaded using Repeat and set the animation parameter of ScrollPage to true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('repeatAniGrid_0100', Level.LEVEL3, async (done: Function) => {
       console.info('[repeatAniGrid_0100] START');

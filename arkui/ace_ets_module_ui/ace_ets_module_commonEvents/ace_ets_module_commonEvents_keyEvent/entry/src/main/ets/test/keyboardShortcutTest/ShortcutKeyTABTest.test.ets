@@ -44,14 +44,14 @@ export default function ShortcutKeyTABTest() {
       await CommonFunc.sleep(2000);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_ShortcutKeyTABTest_0100
-    * @tc.name       : ShortcutKeyTABTest_0100
-    * @tc.desc       : test
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   ShortcutKeyTABTest_0100
+     * @tc.number SUB_ARKUI_ShortcutKeyTABTest_0100
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ShortcutKeyTABTest_0100', Level.LEVEL0, async () => {
       let CASE = 'ShortcutKeyTABTest_0100'
       console.info(`ShortcutKeyTABTest_0100 START`);

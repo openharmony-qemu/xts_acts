@@ -44,6 +44,14 @@ export default function placementJsunit(){
       console.info("placement after each called");
     });
 
+    /**
+     * @tc.name   placementTest_0100
+     * @tc.number placementTest_0100
+     * @tc.desc   placementTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('placementTest_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('placementTest_0100 START');
       await Utils.sleep(1500);
@@ -67,6 +75,14 @@ export default function placementJsunit(){
       console.info('placementTest_0100 END');
     });
 
+    /**
+     * @tc.name   placementTest_0200
+     * @tc.number placementTest_0200
+     * @tc.desc   placementTest_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('placementTest_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('placementTest_0200 START');
       await Utils.sleep(1500);
@@ -90,6 +106,14 @@ export default function placementJsunit(){
       done();
     });
 
+    /**
+     * @tc.name   placementTest_0300
+     * @tc.number placementTest_0300
+     * @tc.desc   placementTest_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('placementTest_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('placementTest_0300 START');
       await Utils.sleep(1500);
@@ -113,6 +137,14 @@ export default function placementJsunit(){
       done();
     });
 
+    /**
+     * @tc.name   placementTest_0400
+     * @tc.number placementTest_0400
+     * @tc.desc   placementTest_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('placementTest_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('placementTest_0400 START');
       await Utils.sleep(1500);

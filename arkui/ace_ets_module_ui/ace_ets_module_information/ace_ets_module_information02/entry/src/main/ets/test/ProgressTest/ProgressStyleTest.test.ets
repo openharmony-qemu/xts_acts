@@ -44,10 +44,13 @@ export default function ProgressStyleTest() {
       console.info("ProgressStyleTest after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_testprogressStyle0001
-     * @tc.name         testprogressStyle0001
-     * @tc.desc         aceprogressStyleEtsTest0001
+    /**
+     * @tc.name   testprogressStyle0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_testprogressStyle0001
+     * @tc.desc   aceprogressStyleEtsTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testprogressStyle0001', Level.LEVEL0, async () => {
       console.info('progressStyle testprogressStyle0001 START');
@@ -61,10 +64,13 @@ export default function ProgressStyleTest() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_testprogressStyle0002
-     * @tc.name         testprogressStyle0002
-     * @tc.desc         aceprogressStyleEtsTest0002
+    /**
+     * @tc.name   testprogressStyle0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_testprogressStyle0002
+     * @tc.desc   aceprogressStyleEtsTest0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testprogressStyle0002', Level.LEVEL0, async () => {
       console.info('progressStyle testprogressStyle0002 START');
@@ -78,10 +84,13 @@ export default function ProgressStyleTest() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_testprogressStyle0003
-     * @tc.name         testprogressStyle0003
-     * @tc.desc         aceprogressStyleEtsTest0003
+    /**
+     * @tc.name   testprogressStyle0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_testprogressStyle0003
+     * @tc.desc   aceprogressStyleEtsTest0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testprogressStyle0003', Level.LEVEL0, async () => {
       console.info('progressStyle testprogressStyle0003 START');
@@ -95,10 +104,13 @@ export default function ProgressStyleTest() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_testprogressStyle0004
-     * @tc.name         testprogressStyle0004
-     * @tc.desc         aceprogressStyleEtsTest0004
+    /**
+     * @tc.name   testprogressStyle0004
+     * @tc.number SUB_ACE_BASIC_ETS_API_testprogressStyle0004
+     * @tc.desc   aceprogressStyleEtsTest0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testprogressStyle0004', Level.LEVEL0, async () => {
       console.info('progressStyle testprogressStyle0004 START');
@@ -113,10 +125,13 @@ export default function ProgressStyleTest() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_testprogressStyle0005
-     * @tc.name         testprogressStyle0005
-     * @tc.desc         aceprogressStyleEtsTest0005
+    /**
+     * @tc.name   testprogressStyle0005
+     * @tc.number SUB_ACE_BASIC_ETS_API_testprogressStyle0005
+     * @tc.desc   aceprogressStyleEtsTest0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testprogressStyle0005', Level.LEVEL0, async () => {
       console.info('progressStyle testprogressStyle0005 START');
@@ -130,10 +145,13 @@ export default function ProgressStyleTest() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_testprogressStyle0006
-     * @tc.name         testprogressStyle0006
-     * @tc.desc         aceprogressStyleEtsTest0006
+    /**
+     * @tc.name   testprogressStyle0006
+     * @tc.number SUB_ACE_BASIC_ETS_API_testprogressStyle0006
+     * @tc.desc   aceprogressStyleEtsTest0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testprogressStyle0006', Level.LEVEL0, async () => {
       console.info('progressStyle testprogressStyle0006 START');

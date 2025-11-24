@@ -48,10 +48,12 @@ export default function navigatorCodeJsunit() {
     });
 
     /**
-     * @tc.number    test_NavigatorClick_001
-     * @tc.name      test_NavigatorClick_001
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   test_NavigatorClick_001
+     * @tc.number test_NavigatorClick_001
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_NavigatorClick_001',  Level.LEVEL0, async (done: Function) => {
       console.info('[test_NavigatorClick_001] START');
@@ -64,10 +66,12 @@ export default function navigatorCodeJsunit() {
     });
 
     /**
-     * @tc.number    test_NavigatorClick_002
-     * @tc.name      test_NavigatorClick_002
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   test_NavigatorClick_002
+     * @tc.number test_NavigatorClick_002
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_NavigatorClick_002',  Level.LEVEL0, async (done: Function) => {
       console.info('[test_NavigatorClick_002] START');
@@ -95,10 +99,12 @@ export default function navigatorCodeJsunit() {
     });
 
     /**
-     * @tc.number    test_NavigatorClick_003
-     * @tc.name      test_NavigatorClick_003
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   test_NavigatorClick_003
+     * @tc.number test_NavigatorClick_003
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_NavigatorClick_003',  Level.LEVEL0, async (done: Function) => {
       await Utils.sleep(1000)

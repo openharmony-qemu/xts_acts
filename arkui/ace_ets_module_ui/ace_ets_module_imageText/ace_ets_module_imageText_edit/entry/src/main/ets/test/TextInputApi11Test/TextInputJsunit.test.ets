@@ -63,9 +63,12 @@ export default function textInputJsunit() {
     });
 
     /**
+     * @tc.name   testTextInput010
      * @tc.number SUB_ACE_BASIC_ETS_API_1440
-     * @tc.name testTextInput010
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInput010', Level.LEVEL1, async (done: Function) => {
       console.info('testTextInput010 START');
@@ -95,9 +98,12 @@ export default function textInputJsunit() {
     });
 
     /**
+     * @tc.name   testTextInput020
      * @tc.number SUB_ACE_BASIC_ETS_API_1450
-     * @tc.name testTextInput020
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInput020', Level.LEVEL1, async (done: Function) => {
       console.info('testTextInput020 START');
@@ -111,9 +117,12 @@ export default function textInputJsunit() {
     });
 
     /**
+     * @tc.name   testTextInput030
      * @tc.number SUB_ACE_BASIC_ETS_API_1460
-     * @tc.name testTextInput030
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInput030', Level.LEVEL1, async (done: Function) => {
       console.info('testTextInput030 START');
@@ -127,9 +136,12 @@ export default function textInputJsunit() {
     });
 
     /**
+     * @tc.name   testTextInput040
      * @tc.number SUB_ACE_BASIC_ETS_API_1470
-     * @tc.name testTextInput040
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInput040', Level.LEVEL1, async (done: Function) => {
       console.info('testTextInput040 START');
@@ -143,9 +155,12 @@ export default function textInputJsunit() {
     });
 
     /**
+     * @tc.name   testTextInput050
      * @tc.number SUB_ACE_BASIC_ETS_API_1480
-     * @tc.name testTextInput050
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInput050', Level.LEVEL1, async (done: Function) => {
       console.info('testTextInput050 START');
@@ -159,9 +174,12 @@ export default function textInputJsunit() {
     });
 
     /**
+     * @tc.name   testTextInput060
      * @tc.number SUB_ACE_BASIC_ETS_API_1490
-     * @tc.name testTextInput060
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInput060', Level.LEVEL1, async (done: Function) => {
       console.info('testTextInput060 START');
@@ -175,9 +193,12 @@ export default function textInputJsunit() {
     });
 
     /**
+     * @tc.name   testTextInput070
      * @tc.number SUB_ACE_BASIC_ETS_API_1500
-     * @tc.name testTextInput070
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInput070', Level.LEVEL1, async (done: Function) => {
       console.info('testTextInput070 START');
@@ -191,9 +212,12 @@ export default function textInputJsunit() {
     });
 
     /**
+     * @tc.name   testTextInput080
      * @tc.number SUB_ACE_BASIC_ETS_API_1510
-     * @tc.name testTextInput080
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInput080', Level.LEVEL1, async (done: Function) => {
       console.info('testTextInput080 START');
@@ -207,9 +231,12 @@ export default function textInputJsunit() {
     });
 
     /**
+     * @tc.name   testTextInput090
      * @tc.number SUB_ACE_BASIC_ETS_API_1520
-     * @tc.name testTextInput090
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInput090', Level.LEVEL1, async (done: Function) => {
       console.info('testTextInput090 START');
@@ -223,9 +250,12 @@ export default function textInputJsunit() {
     });
 
     /**
+     * @tc.name   testTextInput100
      * @tc.number SUB_ACE_BASIC_ETS_API_1530
-     * @tc.name testTextInput100
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInput100', Level.LEVEL1, async (done: Function) => {
       console.info('testTextInput100 START');
@@ -239,9 +269,12 @@ export default function textInputJsunit() {
     });
 
     /**
+     * @tc.name   testTextInput110
      * @tc.number SUB_ACE_BASIC_ETS_API_1540
-     * @tc.name testTextInput110
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInput110', Level.LEVEL1, async (done: Function) => {
       console.info('testTextInput110 START');
@@ -255,9 +288,12 @@ export default function textInputJsunit() {
     });
 
     /**
+     * @tc.name   testTextInput120
      * @tc.number SUB_ACE_BASIC_ETS_API_1550
-     * @tc.name testTextInput120
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInput120', Level.LEVEL1, async (done: Function) => {
       console.info('testTextInput120 START');
@@ -271,9 +307,12 @@ export default function textInputJsunit() {
     });
 
     /**
+     * @tc.name   testTextInput130
      * @tc.number SUB_ACE_BASIC_ETS_API_1560
-     * @tc.name testTextInput130
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInput130', Level.LEVEL1, async (done: Function) => {
       console.info('testTextInput130 START');
@@ -287,9 +326,12 @@ export default function textInputJsunit() {
     });
 
     /**
+     * @tc.name   testTextInput140
      * @tc.number SUB_ACE_BASIC_ETS_API_1570
-     * @tc.name testTextInput140
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInput140', Level.LEVEL1, async (done: Function) => {
       console.info('testTextInput140 START');
@@ -303,9 +345,12 @@ export default function textInputJsunit() {
     });
 
     /**
+     * @tc.name   testTextInput150
      * @tc.number SUB_ACE_BASIC_ETS_API_1580
-     * @tc.name testTextInput150
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInput150', Level.LEVEL1, async (done: Function) => {
       console.info('testTextInput150 START');
@@ -319,9 +364,12 @@ export default function textInputJsunit() {
     });
 
     /**
+     * @tc.name   testTextInput160
      * @tc.number SUB_ACE_BASIC_ETS_API_1590
-     * @tc.name testTextInput160
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInput160', Level.LEVEL1, async (done: Function) => {
       console.info('testTextInput160 START');
@@ -335,9 +383,12 @@ export default function textInputJsunit() {
     });
 
     /**
+     * @tc.name   testTextInput170
      * @tc.number SUB_ACE_BASIC_ETS_API_1600
-     * @tc.name testTextInput170
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInput170', Level.LEVEL1, async (done: Function) => {
       console.info('testTextInput170 START');
@@ -351,9 +402,12 @@ export default function textInputJsunit() {
     });
 
     /**
+     * @tc.name   testTextInput180
      * @tc.number SUB_ACE_BASIC_ETS_API_1610
-     * @tc.name testTextInput180
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInput180', Level.LEVEL1, async (done: Function) => {
       console.info('testTextInput180 START');
@@ -367,9 +421,12 @@ export default function textInputJsunit() {
     });
 
     /**
+     * @tc.name   testTextInput190
      * @tc.number SUB_ACE_BASIC_ETS_API_1620
-     * @tc.name testTextInput190
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInput190', Level.LEVEL1, async (done: Function) => {
       console.info('testTextInput190 START');
@@ -383,9 +440,12 @@ export default function textInputJsunit() {
     });
 
     /**
+     * @tc.name   testTextInput200
      * @tc.number SUB_ACE_BASIC_ETS_API_1630
-     * @tc.name testTextInput190
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInput200', Level.LEVEL1, async (done: Function) => {
       console.info('testTextInput200 START');

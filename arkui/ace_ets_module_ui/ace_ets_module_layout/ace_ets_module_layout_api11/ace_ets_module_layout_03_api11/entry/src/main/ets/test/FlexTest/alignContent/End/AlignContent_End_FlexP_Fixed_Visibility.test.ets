@@ -49,13 +49,15 @@ export default function AlignContent_End_FlexP_Fixed_Visibility() {
       console.info("AlignContent_End_FlexP_Fixed_Visibility after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_END_1300
-     * @tc.name testAlignContentEndFlexfixedVisibilityHidden
-     * @tc.desc Set the AlignContent property of the Flex component to FlexAlign.End, and set the Visibility
-     *               property of the subcomponent to Hidden.
-     */
 
+    /**
+     * @tc.name   testAlignContentEndFlexfixedVisibilityHidden
+     * @tc.number testAlignContentEndFlexfixedVisibilityHidden
+     * @tc.desc   testAlignContentEndFlexfixedVisibilityHidden
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentEndFlexfixedVisibilityHidden',  Level.LEVEL0, async () => {
       console.info('testAlignContentEndFlexfixedVisibilityHidden START');
       GlobalContext.getContext().getObject<number>('value').message.notify({
@@ -116,13 +118,15 @@ export default function AlignContent_End_FlexP_Fixed_Visibility() {
 
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_END_1400
-     * @tc.name testAlignContentEndFlexfixedVisibilityNone
-     * @tc.desc Set the AlignContent property of the Flex component to FlexAlign.End, and set the Visibility
-     *               property of the subcomponent to None.
-     */
 
+    /**
+     * @tc.name   testAlignContentEndFlexfixedVisibilityNone
+     * @tc.number testAlignContentEndFlexfixedVisibilityNone
+     * @tc.desc   testAlignContentEndFlexfixedVisibilityNone
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentEndFlexfixedVisibilityNone',  Level.LEVEL0, async () => {
       console.info('testAlignContentEndFlexfixedVisibilityNone START');
       GlobalContext.getContext().getObject<number>('value').message.notify({

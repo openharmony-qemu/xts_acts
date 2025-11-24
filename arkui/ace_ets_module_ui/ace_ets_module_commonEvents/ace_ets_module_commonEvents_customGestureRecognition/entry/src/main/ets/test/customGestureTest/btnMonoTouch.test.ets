@@ -58,13 +58,15 @@ export default function btnMonoTouch() {
       console.info("btnMonoTouch after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_ACTION_GESTURE_MONOPOLIZE_0020_btnMonoTouch_001
-     * @tc.desc button monopolize touch and button touch test
-     * @tc.level Level 0
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   btnMonoTouch_001
+     * @tc.number btnMonoTouch_001
+     * @tc.desc   btnMonoTouch_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('btnMonoTouch_001', Level.LEVEL0, async (done: Function) => {
       console.info('[btnMonoTouch_001] START');
       await CommonFunc.sleep(1000);

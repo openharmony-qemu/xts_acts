@@ -43,11 +43,12 @@ export default function FontJsunit() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_fontJsunit_0100
-     * @tc.name      fontJsunit_0100
-     * @tc.desc      Font test
-     * @tc.level     Level 0
-     * @tc.type
+     * @tc.name   fontJsunit_0100
+     * @tc.number SUB_ACE_UI_COMPONENT_fontJsunit_0100
+     * @tc.desc   Font test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fontJsunit_0100', Level.LEVEL0, async (done: Function) => {
       // Get the information of the font
@@ -72,12 +73,13 @@ export default function FontJsunit() {
       }
       done();
     });
-     /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_fontJsunit_0200
-     * @tc.name      fontJsunit_0200
-     * @tc.desc      Font test
-     * @tc.level     Level 0
-     * @tc.type
+    /**
+     * @tc.name   fontJsunit_0200
+     * @tc.number SUB_ACE_UI_COMPONENT_fontJsunit_0200
+     * @tc.desc   Font test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fontJsunit_0200', Level.LEVEL0, async (done: Function) => {
       // Get the information of the font
@@ -93,12 +95,13 @@ export default function FontJsunit() {
       done();
     });
      /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_fontJsunit_0300
-     * @tc.name      fontJsunit_0300
-     * @tc.desc      Font test
-     * @tc.level     Level 0
-     * @tc.type
-     */
+      * @tc.name   fontJsunit_0300
+      * @tc.number SUB_ACE_UI_COMPONENT_fontJsunit_0300
+      * @tc.desc   Font test
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('fontJsunit_0300', Level.LEVEL0, async (done: Function) => {
       // Get the information of the font
       console.info('fontJsunit_0300 START');
@@ -116,12 +119,13 @@ export default function FontJsunit() {
       done();
     });
      /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_fontJsunit_0400
-     * @tc.name      fontJsunit_0400
-     * @tc.desc      Font test
-     * @tc.level     Level 0
-     * @tc.type
-     */
+      * @tc.name   fontJsunit_0400
+      * @tc.number SUB_ACE_UI_COMPONENT_fontJsunit_0400
+      * @tc.desc   Font test
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('fontJsunit_0400', Level.LEVEL0, async (done: Function) => {
       // Get the information of the font
       console.info('fontJsunit_0400 START');
@@ -134,12 +138,13 @@ export default function FontJsunit() {
       done();
     });
      /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_fontJsunit_0500
-     * @tc.name      fontJsunit_0500
-     * @tc.desc      Font test
-     * @tc.level     Level 0
-     * @tc.type
-     */
+      * @tc.name   fontJsunit_0500
+      * @tc.number SUB_ACE_UI_COMPONENT_fontJsunit_0500
+      * @tc.desc   Font test
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('fontJsunit_0500', Level.LEVEL0, async (done: Function) => {
       // Get the information of the font
       console.info('fontJsunit_0500 START');
@@ -151,12 +156,13 @@ export default function FontJsunit() {
       }
       done();
     });
-     /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_fontJsunit_0600
-     * @tc.name      fontJsunit_0600
-     * @tc.desc      Font test
-     * @tc.level     Level 0
-     * @tc.type
+    /**
+     * @tc.name   fontJsunit_0600
+     * @tc.number SUB_ACE_UI_COMPONENT_fontJsunit_0600
+     * @tc.desc   Font test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fontJsunit_0600', Level.LEVEL0, async (done: Function) => {
       // Get the information of the font

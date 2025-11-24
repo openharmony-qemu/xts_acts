@@ -26,14 +26,14 @@ export default function textInputOnChangeTest() {
       await Utils.pushPage(`textinput/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_ONCHANGE_0100
-    * @tc.name       : testTextInputOnChange001
-    * @tc.desc       : testing onChange event callback for textInput
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testTextInputOnChange001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_ONCHANGE_0100
+     * @tc.desc   testing onChange event callback for textInput
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextInputOnChange001', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnChangeTextInput')
       await Utils.sleep(1000)
@@ -41,14 +41,14 @@ export default function textInputOnChangeTest() {
       done();
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_ONCHANGE_0200
-    * @tc.name       : testTextInputOnChange002
-    * @tc.desc       : testing onChange event not callback for textInput
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testTextInputOnChange002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_ONCHANGE_0200
+     * @tc.desc   testing onChange event not callback for textInput
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextInputOnChange002', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnChangeTextInputDisabled');
       await Utils.sleep(1000);

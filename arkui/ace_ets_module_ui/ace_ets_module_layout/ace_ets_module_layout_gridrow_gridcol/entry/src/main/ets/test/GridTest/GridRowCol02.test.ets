@@ -44,12 +44,14 @@ export default function GridRowCol02() {
       done();
     });
 
-    /* *
-      * @tc.number: SUB_ACE_FUNCTION_JICHU_SR000HQ76H_017
-      * @tc.name  : GridRowCol02_001
-      * @tc.desc  : set rowsTemplate to repeat(auto-fit,10%)
-      * @tc.level : Level 3
-      */
+    /**
+     * @tc.name   GridRowCol02_001
+     * @tc.number SUB_ACE_FUNCTION_JICHU_SR000HQ76H_017
+     * @tc.desc   set rowsTemplate to repeat(auto-fit,10%)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GridRowCol02_001',  Level.LEVEL0, async (done: Function) => {
 
       console.info('[GridRowCol02_001] START');
@@ -66,12 +68,14 @@ export default function GridRowCol02() {
       done();
     });
 
-    /* *
-      * @tc.number: SUB_ACE_FUNCTION_JICHU_SR000HQ76H_027 016
-      * @tc.name  : GridRowCol02_002
-      * @tc.desc  : set rowsTemplate to repeat(auto-fit,10%)
-      * @tc.level : Level 3
-      */
+    /**
+     * @tc.name   GridRowCol02_002
+     * @tc.number SUB_ACE_FUNCTION_JICHU_SR000HQ76H_027 016
+     * @tc.desc   set rowsTemplate to repeat(auto-fit,10%)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GridRowCol02_002',  Level.LEVEL0, async (done: Function) => {
 
       console.info('[GridRowCol02_002] START');
@@ -88,12 +92,14 @@ export default function GridRowCol02() {
       done();
     });
 
-    /* *
-      * @tc.number: SUB_ACE_FUNCTION_JICHU_SR000HQ76H_026
-      * @tc.name  : GridRowCol02_003
-      * @tc.desc  : set rowsTemplate to repeat(auto-fit,10%)
-      * @tc.level : Level 3
-      */
+    /**
+     * @tc.name   GridRowCol02_003
+     * @tc.number SUB_ACE_FUNCTION_JICHU_SR000HQ76H_026
+     * @tc.desc   set rowsTemplate to repeat(auto-fit,10%)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GridRowCol02_003',  Level.LEVEL0, async (done: Function) => {
 
       console.info('[GridRowCol02_003] START');
@@ -110,12 +116,14 @@ export default function GridRowCol02() {
       done();
     });
 
-    /* *
-      * @tc.number: SUB_ACE_FUNCTION_JICHU_SR000HQ76H_025
-      * @tc.name  : GridRowCol02_004
-      * @tc.desc  : set rowsTemplate to repeat(auto-fit,10%)
-      * @tc.level : Level 3
-      */
+    /**
+     * @tc.name   GridRowCol02_004
+     * @tc.number SUB_ACE_FUNCTION_JICHU_SR000HQ76H_025
+     * @tc.desc   set rowsTemplate to repeat(auto-fit,10%)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GridRowCol02_004',  Level.LEVEL0, async (done: Function) => {
 
       console.info('[GridRowCol02_004] START');
@@ -136,12 +144,14 @@ export default function GridRowCol02() {
       done();
     });
 
-    /* *
-      * @tc.number: SUB_ACE_FUNCTION_JICHU_SR000HQ76H_024
-      * @tc.name  : GridRowCol02_005
-      * @tc.desc  : set rowsTemplate to repeat(auto-fit,10%)
-      * @tc.level : Level 3
-      */
+    /**
+     * @tc.name   GridRowCol02_005
+     * @tc.number SUB_ACE_FUNCTION_JICHU_SR000HQ76H_024
+     * @tc.desc   set rowsTemplate to repeat(auto-fit,10%)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GridRowCol02_005',  Level.LEVEL0, async (done: Function) => {
 
       console.info('[GridRowCol02_005] START');
@@ -162,12 +172,14 @@ export default function GridRowCol02() {
       done();
     });
 
-    /* *
-      * @tc.number: SUB_ACE_FUNCTION_JICHU_SR000HQ76H_019
-      * @tc.name  : GridRowCol02_006
-      * @tc.desc  : set rowsTemplate to repeat(auto-fit,10%)
-      * @tc.level : Level 3
-      */
+    /**
+     * @tc.name   GridRowCol02_006
+     * @tc.number SUB_ACE_FUNCTION_JICHU_SR000HQ76H_019
+     * @tc.desc   set rowsTemplate to repeat(auto-fit,10%)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GridRowCol02_006',  Level.LEVEL0, async (done: Function) => {
 
       console.info('[GridRowCol02_006] START');

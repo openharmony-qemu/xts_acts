@@ -26,78 +26,78 @@ export default function  () {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_BACKGROUNDIMAGE_0100
-     * @tc.name       : testTextInputBackgroundImage001
-     * @tc.desc       : testing backgroundImage for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputBackgroundImage001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_BACKGROUNDIMAGE_0100
+     * @tc.desc   testing backgroundImage for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputBackgroundImage001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputBackgroundImage001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_BACKGROUNDIMAGE_0200
-     * @tc.name       : testTextInputBackgroundImage002
-     * @tc.desc       : testing backgroundImage for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputBackgroundImage002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_BACKGROUNDIMAGE_0200
+     * @tc.desc   testing backgroundImage for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputBackgroundImage002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputBackgroundImage002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_BACKGROUNDIMAGE_0300
-     * @tc.name       : testTextInputBackgroundImage003
-     * @tc.desc       : testing backgroundImage for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputBackgroundImage003
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_BACKGROUNDIMAGE_0300
+     * @tc.desc   testing backgroundImage for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputBackgroundImage003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputBackgroundImage003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_BACKGROUNDIMAGE_0400
-     * @tc.name       : testTextInputBackgroundImage004
-     * @tc.desc       : testing backgroundImage for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputBackgroundImage004
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_BACKGROUNDIMAGE_0400
+     * @tc.desc   testing backgroundImage for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputBackgroundImage004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputBackgroundImage004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_BACKGROUNDIMAGE_0500
-     * @tc.name       : testTextInputBackgroundImage005
-     * @tc.desc       : testing backgroundImage for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputBackgroundImage005
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_BACKGROUNDIMAGE_0500
+     * @tc.desc   testing backgroundImage for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputBackgroundImage005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputBackgroundImage005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_BACKGROUNDIMAGE_0600
-     * @tc.name       : testTextInputBackgroundImage006
-     * @tc.desc       : testing backgroundImage for textInput with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testTextInputBackgroundImage006
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_BACKGROUNDIMAGE_0600
+     * @tc.desc   testing backgroundImage for textInput with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputBackgroundImage006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputBackgroundImage006()).assertEqual(0)

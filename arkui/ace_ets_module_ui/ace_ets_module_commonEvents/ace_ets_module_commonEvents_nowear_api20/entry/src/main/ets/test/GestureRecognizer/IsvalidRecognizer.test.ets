@@ -60,10 +60,12 @@ export default function IsvalidRecognizerTest() {
     });
 
     /**
-     * @tc.number : IsvalidRecognizer_0100
-     * @tc.name  : IsvalidRecognizer_0100
-     * @tc.desc  : To test whether IsvalidRecognizer is effective.
-     * @tc.level : Level 0
+     * @tc.name   IsvalidRecognizer_0100
+     * @tc.number IsvalidRecognizer_0100
+     * @tc.desc   To test whether IsvalidRecognizer is effective.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IsvalidRecognizer_0100', Level.LEVEL0, async (done: Function) => {
       console.info('IsvalidRecognizer_0100 START');

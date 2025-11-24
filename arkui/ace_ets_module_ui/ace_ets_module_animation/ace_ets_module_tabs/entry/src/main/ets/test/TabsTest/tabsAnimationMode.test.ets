@@ -42,14 +42,14 @@ export default function tabsAnimationMode() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_Tabs_ANIMATIONMODE_0100
-    * @tc.name  : tabsAnimationMode_0100
-    * @tc.desc  : Set animation mode for tabs switch animation
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   tabsAnimationMode_0100
+     * @tc.number SUB_ACE_Tabs_ANIMATIONMODE_0100
+     * @tc.desc   Set animation mode for tabs switch animation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('tabsAnimationMode_0100', Level.LEVEL1, async (done: Function) => {
       console.info('tabsAnimationMode_0100 START');
       await CommonFunc.sleep(1000);

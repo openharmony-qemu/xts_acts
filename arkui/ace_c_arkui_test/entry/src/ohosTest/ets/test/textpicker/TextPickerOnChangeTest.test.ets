@@ -26,14 +26,14 @@ export default function textPickerOnChangeTest() {
       await Utils.pushPage(`textpicker/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_TEXTPICKER_ONCHANGE_0100
-    * @tc.name       : testTextPickerOnChange001
-    * @tc.desc       : test OnAccept event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testTextPickerOnChange001
+     * @tc.number SUB_ARKUI_CAPI_TEXTPICKER_ONCHANGE_0100
+     * @tc.desc   test OnAccept event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextPickerOnChange001', Level.LEVEL1, async (done: Function) => {
       await Utils.pickerFlingComponent('textPickerOnChangeTest', false, true);
       await Utils.sleep(2000)

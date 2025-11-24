@@ -45,9 +45,12 @@ export default function RichEditorApi3() {
     });
 
     /**
+     * @tc.name   RichEditorApi3_0100
      * @tc.number RichEditorApi3_0100
-     * @tc.name testButton
-     * @tc.desc
+     * @tc.desc   RichEditorApi3_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RichEditorApi3_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('RichEditorApi3_0100 START');

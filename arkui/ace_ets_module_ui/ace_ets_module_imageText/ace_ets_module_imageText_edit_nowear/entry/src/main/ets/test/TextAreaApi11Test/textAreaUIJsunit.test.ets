@@ -42,12 +42,14 @@ export default function textAreaUIJsunit() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_textAreaUIJsunit_0100
-    * @tc.name  : textAreaUIJsunit_0100
-    * @tc.desc  : test TextArea
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   textAreaUIJsunit_0100
+     * @tc.number SUB_ACE_TS_COMPONENT_textAreaUIJsunit_0100
+     * @tc.desc   test TextArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('textAreaUIJsunit_0100', Level.LEVEL0, async (done: Function) => {
        console.info('textAreaUIJsunit_0100');
        await CommonFunc.sleep(1000);
@@ -67,11 +69,13 @@ export default function textAreaUIJsunit() {
        done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_textAreaUIJsunit_0200
-    * @tc.name  : textAreaUIJsunit_0200
-    * @tc.desc  : test TextArea
-    * @tc.level : Level 0
+   /**
+    * @tc.name   textAreaUIJsunit_0200
+    * @tc.number SUB_ACE_TS_COMPONENT_textAreaUIJsunit_0200
+    * @tc.desc   test TextArea
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
     */
    it('textAreaUIJsunit_0200', Level.LEVEL0, async (done: Function) => {
       console.info('textAreaUIJsunit_0200 START');
@@ -88,12 +92,14 @@ export default function textAreaUIJsunit() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_textAreaUIJsunit_0300
-    * @tc.name  : textAreaUIJsunit_0300
-    * @tc.desc  : test TextArea
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   textAreaUIJsunit_0300
+     * @tc.number SUB_ACE_TS_COMPONENT_textAreaUIJsunit_0300
+     * @tc.desc   test TextArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('textAreaUIJsunit_0300', Level.LEVEL0, async (done: Function) => {
       console.info('marqueeJsunit_0300 START');
       await CommonFunc.sleep(1000);
@@ -110,12 +116,14 @@ export default function textAreaUIJsunit() {
       done();   
    });
   
-   /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_textAreaUIJsunit_0400
-    * @tc.name  : textAreaUIJsunit_0400
-    * @tc.desc  : test TextArea
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   textAreaUIJsunit_0400
+     * @tc.number SUB_ACE_TS_COMPONENT_textAreaUIJsunit_0400
+     * @tc.desc   test TextArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('textAreaUIJsunit_0400', Level.LEVEL0, async (done: Function) => {
       console.info('textAreaUIJsunit_0400 START');
       // modify the Color attribute normal value of textArea dynamically
@@ -132,12 +140,14 @@ export default function textAreaUIJsunit() {
       done();   
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_textAreaUIJsunit_0500
-    * @tc.name  : textAreaUIJsunit_0500
-    * @tc.desc  : test TextArea
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   textAreaUIJsunit_0500
+     * @tc.number SUB_ACE_TS_COMPONENT_textAreaUIJsunit_0500
+     * @tc.desc   test TextArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('textAreaUIJsunit_0500', Level.LEVEL0, async (done: Function) => {
       console.info('textAreaUIJsunit_0500 START');
       // modify the Color attribute normal value of textArea dynamically
@@ -154,12 +164,14 @@ export default function textAreaUIJsunit() {
       done(); 
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_textAreaUIJsunit_0600
-    * @tc.name  : textAreaUIJsunit_0600
-    * @tc.desc  : test TextArea
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   textAreaUIJsunit_0600
+     * @tc.number SUB_ACE_TS_COMPONENT_textAreaUIJsunit_0600
+     * @tc.desc   test TextArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('textAreaUIJsunit_0600', Level.LEVEL0, async (done: Function) => {
       console.info('textAreaUIJsunit_0600 START');
       // modify the Color attribute normal value of textArea dynamically
@@ -176,11 +188,13 @@ export default function textAreaUIJsunit() {
       done(); 
     });
   
-  /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_textAreaUIJsunit_0700
-    * @tc.name  : textAreaUIJsunit_0700
-    * @tc.desc  : test TextArea
-    * @tc.level : Level 0
+   /**
+    * @tc.name   textAreaUIJsunit_0700
+    * @tc.number SUB_ACE_TS_COMPONENT_textAreaUIJsunit_0700
+    * @tc.desc   test TextArea
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
     */
    it('textAreaUIJsunit_0700', Level.LEVEL0, async (done: Function) => {
       console.info('textAreaUIJsunit_0700 START');
@@ -198,11 +212,13 @@ export default function textAreaUIJsunit() {
       done();   
    });
   
-  /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_textAreaUIJsunit_0800
-    * @tc.name  : textAreaUIJsunit_0800
-    * @tc.desc  : test TextArea
-    * @tc.level : Level 0
+   /**
+    * @tc.name   textAreaUIJsunit_0800
+    * @tc.number SUB_ACE_TS_COMPONENT_textAreaUIJsunit_0800
+    * @tc.desc   test TextArea
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
     */
    it('textAreaUIJsunit_0800', Level.LEVEL0, async (done: Function) => {
       console.info('textAreaUIJsunit_0800 START');
@@ -221,12 +237,14 @@ export default function textAreaUIJsunit() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_textAreaUIJsunit_0900
-    * @tc.name  : textAreaUIJsunit_0900
-    * @tc.desc  : test TextArea
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   textAreaUIJsunit_0900
+     * @tc.number SUB_ACE_TS_COMPONENT_textAreaUIJsunit_0900
+     * @tc.desc   test TextArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('textAreaUIJsunit_0900', Level.LEVEL0, async (done: Function) => {
       console.info('marqueeJsunit_0900 START');
       await CommonFunc.sleep(1000);
@@ -272,12 +290,14 @@ export default function textAreaUIJsunit() {
       done();     
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_textAreaUIJsunit_1000
-    * @tc.name  : textAreaUIJsunit_1000
-    * @tc.desc  : test TextArea
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   textAreaUIJsunit_1000
+     * @tc.number SUB_ACE_TS_COMPONENT_textAreaUIJsunit_1000
+     * @tc.desc   test TextArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('textAreaUIJsunit_1000', Level.LEVEL0, async (done: Function) => {
       console.info('textAreaUIJsunit_1000 START');
       await CommonFunc.sleep(1000);
@@ -312,12 +332,14 @@ export default function textAreaUIJsunit() {
       done();     
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_textAreaUIJsunit_1100
-    * @tc.name  : textAreaUIJsunit_1100
-    * @tc.desc  : test TextArea
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   textAreaUIJsunit_1100
+     * @tc.number SUB_ACE_TS_COMPONENT_textAreaUIJsunit_1100
+     * @tc.desc   test TextArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('textAreaUIJsunit_1100', Level.LEVEL0, async (done: Function) => {
       console.info('textAreaUIJsunit_1100 START');
       // modify the Color attribute normal value of textArea dynamically
@@ -331,12 +353,14 @@ export default function textAreaUIJsunit() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_textAreaUIJsunit_1200
-    * @tc.name  : textAreaUIJsunit_1200
-    * @tc.desc  : test TextArea
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   textAreaUIJsunit_1200
+     * @tc.number SUB_ACE_TS_COMPONENT_textAreaUIJsunit_1200
+     * @tc.desc   test TextArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('textAreaUIJsunit_1200', Level.LEVEL0, async (done: Function) => {
       console.info('textAreaUIJsunit_1200 START');
       // modify the Color attribute normal value of textArea dynamically
@@ -350,12 +374,14 @@ export default function textAreaUIJsunit() {
       done(); 
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_textAreaUIJsunit_1300
-    * @tc.name  : textAreaUIJsunit_1300
-    * @tc.desc  : test TextArea
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   textAreaUIJsunit_1300
+     * @tc.number SUB_ACE_TS_COMPONENT_textAreaUIJsunit_1300
+     * @tc.desc   test TextArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('textAreaUIJsunit_1300', Level.LEVEL0, async (done: Function) => {
       console.info("[textAreaUIJsunit_1300] start");
       let newJson = getInspectorByKey('textArea_test');

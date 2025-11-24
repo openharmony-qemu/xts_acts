@@ -45,12 +45,12 @@ export default function SymbolGlyphApi4() {
       console.info("SymbolGlyphApi4 after each called");
     });
     /**
-     * @tc.number    SUB_ACE_RICHEDITOR_symbolGlyphApi4_0100
-     * @tc.name      symbolGlyphApi4_0100
-     * @tc.desc      set api
-     * @tc.level     Level 2
-     * @tc.type
-    * @tc.size
+     * @tc.name   symbolGlyphApi4_0100
+     * @tc.number SUB_ACE_RICHEDITOR_symbolGlyphApi4_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('symbolGlyphApi4_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[symbolGlyphApi4_0100] START');

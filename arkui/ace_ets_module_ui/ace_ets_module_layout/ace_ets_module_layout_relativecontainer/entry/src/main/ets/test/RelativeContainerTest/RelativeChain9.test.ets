@@ -42,14 +42,15 @@ export default function RelativeChain9() {
       console.info("RelativeChain9 after each called");
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0550
-     * @tc.desc      chainMode test
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
-     */
 
+    /**
+     * @tc.name   RelativeChain9_001
+     * @tc.number RelativeChain9_001
+     * @tc.desc   RelativeChain9_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('RelativeChain9_001', Level.LEVEL3, async (done: Function) => {
       console.info('[RelativeChain9_001] START');
 
@@ -70,14 +71,15 @@ export default function RelativeChain9() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0560
-     * @tc.desc      chainMode test
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
-     */
 
+    /**
+     * @tc.name   RelativeChain9_002
+     * @tc.number RelativeChain9_002
+     * @tc.desc   RelativeChain9_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('RelativeChain9_002', Level.LEVEL3, async (done: Function) => {
       console.info('[RelativeChain9_002] START');
 

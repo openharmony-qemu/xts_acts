@@ -40,12 +40,12 @@ export default function createNodeColumn() {
       done();
     });
     /**
-     * @tc.number    createNodeColumn_0100
-     * @tc.name      createNodeColumn_0100
-     * @tc.desc      frameNode: createNodeColumnToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   createNodeColumn_0100
+     * @tc.number createNodeColumn_0100
+     * @tc.desc   frameNode: createNodeColumnToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createNodeColumn_0100', Level.LEVEL0, async (done: Function) => {
       console.info('createNodeColumn_0100 START');

@@ -54,12 +54,12 @@ done();
     });
 
     /**
-     * @tc.number    SUB_ACE_previewOptions_0100
-     * @tc.name      previewOptions_0100
-     * @tc.desc       previewOptions:{mode:	DragPreviewMode.DISABLE_SCALE} api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   previewOptions_0100
+     * @tc.number SUB_ACE_previewOptions_0100
+     * @tc.desc   previewOptions:{mode:	DragPreviewMode.DISABLE_SCALE} api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('previewOptions_0100', Level.LEVEL0, async (done: Function) => {
       console.info('previewOptions_0100 START');

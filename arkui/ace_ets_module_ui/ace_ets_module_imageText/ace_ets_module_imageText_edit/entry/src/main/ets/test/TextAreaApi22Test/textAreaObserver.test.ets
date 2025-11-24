@@ -47,12 +47,12 @@ export default function textAreaObserverTest() {
     });
 
     /**
-     * @tc.number    textAreaObserverTest_0010
-     * @tc.name      textAreaObserverTest_0010
-     * @tc.desc      Global observer enabled or disabled, text change of the textArea component, Expected: observed text is 'global:textAreaObserverTest_0010'
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   textAreaObserverTest_0010
+     * @tc.number textAreaObserverTest_0010
+     * @tc.desc   Global observer enabled or disabled, text change of the textArea component, Expected: observed text is 'global:textAreaObserverTest_0010'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaObserverTest_0010', Level.LEVEL1, async (done: Function) => {
       console.info('[textAreaObserverTest_0010] START');
@@ -95,12 +95,12 @@ export default function textAreaObserverTest() {
     });
 
     /**
-     * @tc.number    textAreaObserverTest_0011
-     * @tc.name      textAreaObserverTest_0011
-     * @tc.desc      Local observer enabled or disabled, text change of the textArea component, Expected: observed text is 'local:textAreaObserverTest_0011'
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   textAreaObserverTest_0011
+     * @tc.number textAreaObserverTest_0011
+     * @tc.desc   Local observer enabled or disabled, text change of the textArea component, Expected: observed text is 'local:textAreaObserverTest_0011'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaObserverTest_0011', Level.LEVEL1, async (done: Function) => {
       console.info('[textAreaObserverTest_0011] START');

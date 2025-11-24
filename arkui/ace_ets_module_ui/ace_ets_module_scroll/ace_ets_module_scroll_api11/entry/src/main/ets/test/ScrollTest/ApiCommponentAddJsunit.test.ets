@@ -54,6 +54,14 @@ export default function ApiCommponentAddJsunit() {
 
     });
 
+    /**
+     * @tc.name   apiCommponentAddJsunit_0100
+     * @tc.number apiCommponentAddJsunit_0100
+     * @tc.desc   apiCommponentAddJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('apiCommponentAddJsunit_0100', Level.LEVEL1, async (done: Function) => {
       console.info('apiCommponentAddJsunit_0100 START');
       ohosrouter.pushUrl({
@@ -78,6 +86,14 @@ export default function ApiCommponentAddJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   apiCommponentAddJsunit_0200
+     * @tc.number apiCommponentAddJsunit_0200
+     * @tc.desc   apiCommponentAddJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('apiCommponentAddJsunit_0200', Level.LEVEL1, async (done: Function) => {
       console.info('apiCommponentAddJsunit_0200 START');
       ohosrouter.clear();
@@ -113,6 +129,14 @@ export default function ApiCommponentAddJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   apiCommponentAddJsunit_0300
+     * @tc.number apiCommponentAddJsunit_0300
+     * @tc.desc   apiCommponentAddJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('apiCommponentAddJsunit_0300', Level.LEVEL1, async (done: Function) => {
       console.info('apiCommponentAddJsunit_0300 START');
       ohosrouter.clear();
@@ -142,6 +166,14 @@ export default function ApiCommponentAddJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   apiCommponentAddJsunit_0400
+     * @tc.number apiCommponentAddJsunit_0400
+     * @tc.desc   apiCommponentAddJsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('apiCommponentAddJsunit_0400', Level.LEVEL1, async (done: Function) => {
       console.info('apiCommponentAddJsunit_0400 START');
       ohosrouter.clear();
@@ -171,6 +203,14 @@ export default function ApiCommponentAddJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   apiCommponentAddJsunit_0500
+     * @tc.number apiCommponentAddJsunit_0500
+     * @tc.desc   apiCommponentAddJsunit_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('apiCommponentAddJsunit_0500', Level.LEVEL1, async (done: Function) => {
       console.info('apiCommponentAddJsunit_0500 START');
       ohosrouter.clear();
@@ -195,6 +235,14 @@ export default function ApiCommponentAddJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   apiCommponentAddJsunit_0600
+     * @tc.number apiCommponentAddJsunit_0600
+     * @tc.desc   apiCommponentAddJsunit_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('apiCommponentAddJsunit_0600', Level.LEVEL1, async (done: Function) => {
       console.info('apiCommponentAddJsunit_0600 START');
       ohosrouter.clear();
@@ -220,6 +268,14 @@ export default function ApiCommponentAddJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   apiCommponentAddJsunit_0700
+     * @tc.number apiCommponentAddJsunit_0700
+     * @tc.desc   apiCommponentAddJsunit_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('apiCommponentAddJsunit_0700', Level.LEVEL1, async (done: Function) => {
       console.info('apiCommponentAddJsunit_0700 START');
       ohosrouter.clear();
@@ -244,6 +300,14 @@ export default function ApiCommponentAddJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   apiCommponentAddJsunit_0800
+     * @tc.number apiCommponentAddJsunit_0800
+     * @tc.desc   apiCommponentAddJsunit_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('apiCommponentAddJsunit_0800', Level.LEVEL1, async (done: Function) => {
       console.info('apiCommponentAddJsunit_0800 START');
       ohosrouter.clear();
@@ -268,6 +332,14 @@ export default function ApiCommponentAddJsunit() {
     
     });
 
+    /**
+     * @tc.name   apiCommponentAddJsunit_1000
+     * @tc.number apiCommponentAddJsunit_1000
+     * @tc.desc   apiCommponentAddJsunit_1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('apiCommponentAddJsunit_1000', Level.LEVEL1, async (done: Function) => {
       console.info('apiCommponentAddJsunit_1000 START');
       ohosrouter.clear();
@@ -291,6 +363,14 @@ export default function ApiCommponentAddJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   apiCommponentAddJsunit_1100
+     * @tc.number apiCommponentAddJsunit_1100
+     * @tc.desc   apiCommponentAddJsunit_1100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('apiCommponentAddJsunit_1100', Level.LEVEL1, async (done: Function) => {
       console.info('apiCommponentAddJsunit_1100 START');
       ohosrouter.clear();
@@ -315,6 +395,14 @@ export default function ApiCommponentAddJsunit() {
       done();
     });
 
+   /**
+    * @tc.name   apiCommponentAddJsunit_1200
+    * @tc.number apiCommponentAddJsunit_1200
+    * @tc.desc   apiCommponentAddJsunit_1200
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
    it('apiCommponentAddJsunit_1200', Level.LEVEL1, async (done: Function) => {
       console.info('apiCommponentAddJsunit_1200 START');
       try {
@@ -327,6 +415,14 @@ export default function ApiCommponentAddJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   apiCommponentAddJsunit_1300
+     * @tc.number apiCommponentAddJsunit_1300
+     * @tc.desc   apiCommponentAddJsunit_1300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('apiCommponentAddJsunit_1300', Level.LEVEL1, async (done: Function) => {
        console.info("[apiCommponentAddJsunit_1300] START" );
        ohosrouter.clear();
@@ -357,6 +453,14 @@ export default function ApiCommponentAddJsunit() {
       
     });
 
+     /**
+      * @tc.name   apiCommponentAddJsunit_1400
+      * @tc.number apiCommponentAddJsunit_1400
+      * @tc.desc   apiCommponentAddJsunit_1400
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
+      */
      it('apiCommponentAddJsunit_1400', Level.LEVEL1, async (done: Function) => {
        console.info("[apiCommponentAddJsunit_1400] START" );
        ohosrouter.clear();
@@ -381,6 +485,14 @@ export default function ApiCommponentAddJsunit() {
       done();   
     });
 
+     /**
+      * @tc.name   apiCommponentAddJsunit_1500
+      * @tc.number apiCommponentAddJsunit_1500
+      * @tc.desc   apiCommponentAddJsunit_1500
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
+      */
      it('apiCommponentAddJsunit_1500', Level.LEVEL1, async (done: Function) => {
        console.info("[apiCommponentAddJsunit_1500] START" );
        ohosrouter.clear();
@@ -405,6 +517,14 @@ export default function ApiCommponentAddJsunit() {
       done();   
     });
 
+    /**
+     * @tc.name   apiCommponentAddJsunit_1600
+     * @tc.number apiCommponentAddJsunit_1600
+     * @tc.desc   apiCommponentAddJsunit_1600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('apiCommponentAddJsunit_1600', Level.LEVEL1, async (done: Function) => {
       console.info("[apiCommponentAddJsunit_1600] START" );
       ohosrouter.clear();
@@ -429,6 +549,14 @@ export default function ApiCommponentAddJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   apiCommponentAddJsunit_1700
+     * @tc.number apiCommponentAddJsunit_1700
+     * @tc.desc   apiCommponentAddJsunit_1700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('apiCommponentAddJsunit_1700', Level.LEVEL1, async (done: Function) => {
       console.info("[apiCommponentAddJsunit_1700] START" );
       ohosrouter.clear();
@@ -453,6 +581,14 @@ export default function ApiCommponentAddJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   apiCommponentAddJsunit_1800
+     * @tc.number apiCommponentAddJsunit_1800
+     * @tc.desc   apiCommponentAddJsunit_1800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('apiCommponentAddJsunit_1800', Level.LEVEL1, async (done: Function) => {
       console.info("[apiCommponentAddJsunit_1800] START" );
       ohosrouter.clear();
@@ -478,6 +614,14 @@ export default function ApiCommponentAddJsunit() {
     });
 
 
+    /**
+     * @tc.name   apiCommponentAddJsunit_1900
+     * @tc.number apiCommponentAddJsunit_1900
+     * @tc.desc   apiCommponentAddJsunit_1900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('apiCommponentAddJsunit_1900', Level.LEVEL1, async (done: Function) => {
       console.info("[apiCommponentAddJsunit_1900] START" );
       ohosrouter.clear();
@@ -502,6 +646,14 @@ export default function ApiCommponentAddJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   apiCommponentAddJsunit_2000
+     * @tc.number apiCommponentAddJsunit_2000
+     * @tc.desc   apiCommponentAddJsunit_2000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('apiCommponentAddJsunit_2000', Level.LEVEL1, async (done: Function) => {
       console.info("[apiCommponentAddJsunit_2000] START" );
       ohosrouter.clear();
@@ -525,6 +677,14 @@ export default function ApiCommponentAddJsunit() {
       expect(obj.$attrs.borderWidth).assertEqual('0.00vp');
       done();
     });
+    /**
+     * @tc.name   apiCommponentAddJsunit_2100
+     * @tc.number apiCommponentAddJsunit_2100
+     * @tc.desc   apiCommponentAddJsunit_2100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('apiCommponentAddJsunit_2100', Level.LEVEL1, async (done: Function) => {
       console.info("[apiCommponentAddJsunit_2100] START" );
       ohosrouter.clear();
@@ -549,6 +709,14 @@ export default function ApiCommponentAddJsunit() {
       done();
     });
    
+    /**
+     * @tc.name   apiCommponentAddJsunit_2200
+     * @tc.number apiCommponentAddJsunit_2200
+     * @tc.desc   apiCommponentAddJsunit_2200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('apiCommponentAddJsunit_2200', Level.LEVEL1, async (done: Function) => {
       console.info("[apiCommponentAddJsunit_2200] START" );
       ohosrouter.clear();
@@ -573,6 +741,14 @@ export default function ApiCommponentAddJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   apiCommponentAddJsunit_2300
+     * @tc.number apiCommponentAddJsunit_2300
+     * @tc.desc   apiCommponentAddJsunit_2300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('apiCommponentAddJsunit_2300', Level.LEVEL1, async (done: Function) => {
       console.info("[apiCommponentAddJsunit_2300] START" );
       ohosrouter.clear();
@@ -606,6 +782,14 @@ export default function ApiCommponentAddJsunit() {
       done();
     });
 
+     /**
+      * @tc.name   apiCommponentAddJsunit_2400
+      * @tc.number apiCommponentAddJsunit_2400
+      * @tc.desc   apiCommponentAddJsunit_2400
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
+      */
      it('apiCommponentAddJsunit_2400', Level.LEVEL1, async (done: Function) => {
       console.info("[apiCommponentAddJsunit_2400] START" );
       ohosrouter.clear();
@@ -630,6 +814,14 @@ export default function ApiCommponentAddJsunit() {
       done();
     });
 
+     /**
+      * @tc.name   apiCommponentAddJsunit_2500
+      * @tc.number apiCommponentAddJsunit_2500
+      * @tc.desc   apiCommponentAddJsunit_2500
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
+      */
      it('apiCommponentAddJsunit_2500', Level.LEVEL1, async (done: Function) => {
       console.info("[apiCommponentAddJsunit_2500] START" );
       ohosrouter.clear();
@@ -654,6 +846,14 @@ export default function ApiCommponentAddJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   apiCommponentAddJsunit_2600
+     * @tc.number apiCommponentAddJsunit_2600
+     * @tc.desc   apiCommponentAddJsunit_2600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('apiCommponentAddJsunit_2600', Level.LEVEL1, async (done: Function) => {
       console.info('apiCommponentAddJsunit_2600 START');
       try {
@@ -664,6 +864,14 @@ export default function ApiCommponentAddJsunit() {
       done();
     });
     
+    /**
+     * @tc.name   apiCommponentAddJsunit_2700
+     * @tc.number apiCommponentAddJsunit_2700
+     * @tc.desc   apiCommponentAddJsunit_2700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('apiCommponentAddJsunit_2700', Level.LEVEL1, async (done: Function) => {
       console.info("[apiCommponentAddJsunit_2700] START" );
       ohosrouter.clear();

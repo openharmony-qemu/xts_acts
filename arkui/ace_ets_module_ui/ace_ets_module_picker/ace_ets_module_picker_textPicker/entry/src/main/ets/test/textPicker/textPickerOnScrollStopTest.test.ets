@@ -40,14 +40,14 @@ export default function textPickerOnScrollStopTest(){
       }
       done();
     });
-    /* *
-    * @tc.number: textPickerOnScrollStopTest_0100
-    * @tc.name  : textPickerOnScrollStopTest_0100
-    * @tc.desc  : To test the onScollStop interface
-    * @tc.level : Level 3
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   textPickerOnScrollStopTest_0100
+     * @tc.number textPickerOnScrollStopTest_0100
+     * @tc.desc   To test the onScollStop interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('textPickerOnScrollStopTest_0100', Level.LEVEL3, async (done:Function) =>{
       console.info('textPickerOnScrollStopTest_0100 START');
       let driver = await Driver.create()

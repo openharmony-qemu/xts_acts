@@ -45,9 +45,12 @@ export default function GaugeColorsTest() {
     });
 
     /**
-     * @tc.number       SUB_ACE_BASIC_ETS_API_testgaugeColors0001
-     * @tc.name         testgaugeColors0001
-     * @tc.desc         acegaugeColorsEtsTest0001
+     * @tc.name   testgaugeColors0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_testgaugeColors0001
+     * @tc.desc   acegaugeColorsEtsTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testgaugeColors0001', Level.LEVEL0, async () => {
       console.info('gaugeColors testgaugeColors0001 START');
@@ -62,9 +65,12 @@ export default function GaugeColorsTest() {
     });
 
     /**
-     * @tc.number       SUB_ACE_BASIC_ETS_API_testgaugeColors0002
-     * @tc.name         testgaugeColors0002
-     * @tc.desc         acegaugeColorsEtsTest0002
+     * @tc.name   testgaugeColors0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_testgaugeColors0002
+     * @tc.desc   acegaugeColorsEtsTest0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testgaugeColors0002', Level.LEVEL0, async () => {
       console.info('gaugeColors testgaugeColors0002 START');
@@ -79,9 +85,12 @@ export default function GaugeColorsTest() {
     });
 
     /**
-     * @tc.number       SUB_ACE_BASIC_ETS_API_testgaugeColors0003
-     * @tc.name         testgaugeColors0003
-     * @tc.desc         acegaugeColorsEtsTest0003
+     * @tc.name   testgaugeColors0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_testgaugeColors0003
+     * @tc.desc   acegaugeColorsEtsTest0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testgaugeColors0003', Level.LEVEL0, async () => {
       console.info('gaugeColors testgaugeColors0003 START');
@@ -96,9 +105,12 @@ export default function GaugeColorsTest() {
     });
 
     /**
-     * @tc.number       SUB_ACE_BASIC_ETS_API_testgaugeColors0004
-     * @tc.name         testgaugeColors0004
-     * @tc.desc         acegaugeColorsEtsTest0004
+     * @tc.name   testgaugeColors0004
+     * @tc.number SUB_ACE_BASIC_ETS_API_testgaugeColors0004
+     * @tc.desc   acegaugeColorsEtsTest0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testgaugeColors0004', Level.LEVEL0, async () => {
       console.info('gaugeColors testgaugeColors0004 START');
@@ -113,9 +125,12 @@ export default function GaugeColorsTest() {
     });
 
     /**
-     * @tc.number       SUB_ACE_BASIC_ETS_API_testgaugeColors0005
-     * @tc.name         testgaugeColors0005
-     * @tc.desc         acegaugeColorsEtsTest0005
+     * @tc.name   testgaugeColors0005
+     * @tc.number SUB_ACE_BASIC_ETS_API_testgaugeColors0005
+     * @tc.desc   acegaugeColorsEtsTest0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testgaugeColors0005', Level.LEVEL0, async () => {
       console.info('gaugeColors testgaugeColors0005 START');
@@ -130,9 +145,12 @@ export default function GaugeColorsTest() {
     });
 
     /**
-     * @tc.number       SUB_ACE_BASIC_ETS_API_testgaugeColors0006
-     * @tc.name         testgaugeColors0006
-     * @tc.desc         acegaugeColorsEtsTest0006
+     * @tc.name   testgaugeColors0006
+     * @tc.number SUB_ACE_BASIC_ETS_API_testgaugeColors0006
+     * @tc.desc   acegaugeColorsEtsTest0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testgaugeColors0006', Level.LEVEL0, async () => {
       console.info('gaugeColors testgaugeColors0006 START');

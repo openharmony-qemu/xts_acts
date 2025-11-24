@@ -48,12 +48,12 @@ export default function List_scrollToIndex2() {
     });
 
     /**
+     * @tc.name   List_scrollToIndex2_0100
      * @tc.number SUB_ACE_TS_COMPONENT_SR000I6TL2_001
-     * @tc.name List_scrollToIndex2_0100
-     * @tc.desc The value of scrollToIndex is greater than the number of items
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   The value of scrollToIndex is greater than the number of items
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('List_scrollToIndex2_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[List_scrollToIndex2_0100] START');
@@ -70,12 +70,12 @@ export default function List_scrollToIndex2() {
     });
 
     /**
+     * @tc.name   List_scrollToIndex2_0200
      * @tc.number SUB_ACE_TS_COMPONENT_SR000I6TL2_004
-     * @tc.name List_scrollToIndex2_0200
-     * @tc.desc The value of scrollToIndex is smaller than the number of items, the value value is set to -3
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   The value of scrollToIndex is smaller than the number of items, the value value is set to -3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('List_scrollToIndex2_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[List_scrollToIndex2_0200] START');
@@ -92,12 +92,12 @@ export default function List_scrollToIndex2() {
     });
 
     /**
+     * @tc.name   List_scrollToIndex2_0300
      * @tc.number SUB_ACE_TS_COMPONENT_SR000I6TL2_002
-     * @tc.name List_scrollToIndex2_0300
-     * @tc.desc The value of scrollToIndex is smaller than the number of items, the value value is set to 0
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   The value of scrollToIndex is smaller than the number of items, the value value is set to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('List_scrollToIndex2_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('[List_scrollToIndex2_0300] START');
@@ -114,12 +114,12 @@ export default function List_scrollToIndex2() {
     });
 
     /**
+     * @tc.name   List_scrollToIndex2_0400
      * @tc.number SUB_ACE_TS_COMPONENT_SR000I6TL2_003
-     * @tc.name List_scrollToIndex2_0400
-     * @tc.desc The value of scrollToIndex is smaller than the number of items, the value value is set to 9
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   The value of scrollToIndex is smaller than the number of items, the value value is set to 9
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('List_scrollToIndex2_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('[List_scrollToIndex2_0400] START');
@@ -137,12 +137,12 @@ export default function List_scrollToIndex2() {
     });
 
     /**
+     * @tc.name   List_scrollToIndex2_0500
      * @tc.number SUB_ACE_TS_COMPONENT_SR000I6TL2_011
-     * @tc.name List_scrollToIndex2_0500
-     * @tc.desc scrollToIndex sets ScrollAlign.AUTO
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   scrollToIndex sets ScrollAlign.AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('List_scrollToIndex2_0500',  Level.LEVEL0, async (done: Function) => {
       console.info('[List_scrollToIndex2_0500] START');
@@ -160,12 +160,12 @@ export default function List_scrollToIndex2() {
     });
 
     /**
+     * @tc.name   List_scrollToIndex2_0600
      * @tc.number SUB_ACE_TS_COMPONENT_SR000I6TL2_013
-     * @tc.name List_scrollToIndex2_0600
-     * @tc.desc scrollToIndex is set to ScrollAlign.AUTO, and the list item is not completely in the display area
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   scrollToIndex is set to ScrollAlign.AUTO, and the list item is not completely in the display area
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('List_scrollToIndex2_0600',  Level.LEVEL0, async (done: Function) => {
       console.info('[List_scrollToIndex2_0600] START');
@@ -183,12 +183,12 @@ export default function List_scrollToIndex2() {
     });
 
     /**
+     * @tc.name   List_scrollToIndex2_0700
      * @tc.number SUB_ACE_TS_COMPONENT_SR000I6TL2_012
-     * @tc.name List_scrollToIndex2_0700
-     * @tc.desc scrollToIndex sets ScrollAlign.AUTO, and the list item is completely in the display area
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   scrollToIndex sets ScrollAlign.AUTO, and the list item is completely in the display area
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('List_scrollToIndex2_0700',  Level.LEVEL0, async (done: Function) => {
       console.info('[List_scrollToIndex2_0700] START');
@@ -205,12 +205,12 @@ export default function List_scrollToIndex2() {
     });
 
     /**
+     * @tc.name   List_scrollToIndex2_0800
      * @tc.number SUB_ACE_TS_COMPONENT_SR000I6TL2_009
-     * @tc.name List_scrollToIndex2_0800
-     * @tc.desc scrollToIndex sets ScrollAlign.CENTER
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   scrollToIndex sets ScrollAlign.CENTER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('List_scrollToIndex2_0800',  Level.LEVEL0, async (done: Function) => {
       console.info('[List_scrollToIndex2_0800] START');
@@ -228,12 +228,12 @@ export default function List_scrollToIndex2() {
     });
 
     /**
+     * @tc.name   List_scrollToIndex2_0900
      * @tc.number SUB_ACE_TS_COMPONENT_SR000I6TL2_010
-     * @tc.name List_scrollToIndex2_0900
-     * @tc.desc scrollToIndex sets ScrollAlign.END
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   scrollToIndex sets ScrollAlign.END
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('List_scrollToIndex2_0900',  Level.LEVEL0, async (done: Function) => {
       console.info('[List_scrollToIndex2_0900] START');
@@ -251,12 +251,12 @@ export default function List_scrollToIndex2() {
     });
 
     /**
+     * @tc.name   List_scrollToIndex2_1000
      * @tc.number SUB_ACE_TS_COMPONENT_SR000I6TL2_008
-     * @tc.name List_scrollToIndex2_1000
-     * @tc.desc scrollToIndex sets ScrollAlign.START
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   scrollToIndex sets ScrollAlign.START
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('List_scrollToIndex2_1000',  Level.LEVEL0, async (done: Function) => {
       console.info('[List_scrollToIndex2_1000] START');

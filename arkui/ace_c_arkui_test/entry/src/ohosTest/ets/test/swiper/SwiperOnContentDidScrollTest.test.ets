@@ -27,13 +27,13 @@ export default function swiperOnContentDidScrollTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SWIPER_EVENT_ON_CONTENT_DID_SCROLL_0100
-     * @tc.name: testSwiperOnContentDidScroll001
-     * @tc.desc: testing onContentDidScroll for swiper
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSwiperOnContentDidScroll001
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_EVENT_ON_CONTENT_DID_SCROLL_0100
+     * @tc.desc   testing onContentDidScroll for swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperOnContentDidScroll001', Level.LEVEL1, async (done: Function) => {
         let PAGE_TAG = 'SwiperOnContentDidScrollTest';

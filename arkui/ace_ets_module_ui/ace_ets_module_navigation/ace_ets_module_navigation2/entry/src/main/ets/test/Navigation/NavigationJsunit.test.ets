@@ -44,10 +44,12 @@ export default function NavigationJsunit() {
     });
 
     /**
-     * @tc.number    NavigationJsunit_0100
-     * @tc.name      NavigationJsunit_0100
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   NavigationJsunit_0100
+     * @tc.number NavigationJsunit_0100
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationJsunit_0100',  Level.LEVEL0, async (done: Function) => {
       // Get the information of the Navigation component
@@ -81,10 +83,12 @@ export default function NavigationJsunit() {
     });
 
     /**
-     * @tc.number    NavigationJsunit_0300
-     * @tc.name      NavigationJsunit_0300
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   NavigationJsunit_0300
+     * @tc.number NavigationJsunit_0300
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationJsunit_0300',  Level.LEVEL0, async (done: Function) => {
       // Verify onTitleModeChange event of Navigation component
@@ -99,10 +103,12 @@ export default function NavigationJsunit() {
     });
 
     /**
-     * @tc.number    NavigationJsunit_0400
-     * @tc.name      NavigationJsunit_0400
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   NavigationJsunit_0400
+     * @tc.number NavigationJsunit_0400
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationJsunit_0400',  Level.LEVEL0, async (done: Function) => {
       // Verify onNavBarStateChange event of Navigation component
@@ -119,10 +125,12 @@ export default function NavigationJsunit() {
     });
 
     /**
-     * @tc.number    NavigationJsunit_0600
-     * @tc.name      NavigationJsunit_0600
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   NavigationJsunit_0600
+     * @tc.number NavigationJsunit_0600
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationJsunit_0600',  Level.LEVEL0, async (done: Function) => {
       // Modify atrributes of Navigation component 
@@ -165,10 +173,12 @@ export default function NavigationJsunit() {
     });
 
     /**
-     * @tc.number    NavigationJsunit_0700
-     * @tc.name      NavigationJsunit_0700
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   NavigationJsunit_0700
+     * @tc.number NavigationJsunit_0700
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationJsunit_0700',  Level.LEVEL0, async (done: Function) => {
       // Modify the titleMode of Navigation component 
@@ -191,10 +201,12 @@ export default function NavigationJsunit() {
     });
 
     /**
-     * @tc.number    NavigationJsunit_0800
-     * @tc.name      NavigationJsunit_0800
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   NavigationJsunit_0800
+     * @tc.number NavigationJsunit_0800
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationJsunit_0800',  Level.LEVEL0, async (done: Function) => {
       // Modify the mode of Navigation component 
@@ -217,10 +229,12 @@ export default function NavigationJsunit() {
     });
 
     /**
-     * @tc.number    NavigationJsunit_0900
-     * @tc.name      NavigationJsunit_0900
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   NavigationJsunit_0900
+     * @tc.number NavigationJsunit_0900
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationJsunit_0900',  Level.LEVEL0, async (done: Function) => {
       // Illegal modification of properties of Navigation component

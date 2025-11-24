@@ -45,11 +45,13 @@ export default function NavigationAdd() {
       console.info("NavigationAdd after each called");
     });
 
-    /*
-     * @tc.number      apiCommponentAddJsunit_1000
-     * @tc.name        apiCommponentAddJsunit_1000
-     * @tc.desc        apiCommponentAddJsunit_1000
-     * @tc.level       Level 1
+    /**
+     * @tc.name   apiCommponentAddJsunit_1000
+     * @tc.number apiCommponentAddJsunit_1000
+     * @tc.desc   apiCommponentAddJsunit_1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('apiCommponentAddJsunit_1000', Level.LEVEL1, async (done: Function) => {
       console.info('apiCommponentAddJsunit_1000 START');
@@ -74,11 +76,13 @@ export default function NavigationAdd() {
       done();
     });
 
-    /*
-     * @tc.number      apiCommponentAddJsunit_2300
-     * @tc.name        apiCommponentAddJsunit_2300
-     * @tc.desc        apiCommponentAddJsunit_2300
-     * @tc.level       Level 1
+    /**
+     * @tc.name   apiCommponentAddJsunit_2300
+     * @tc.number apiCommponentAddJsunit_2300
+     * @tc.desc   apiCommponentAddJsunit_2300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('apiCommponentAddJsunit_2300', Level.LEVEL1, async (done: Function) => {
       console.info("[apiCommponentAddJsunit_2300] START" );
@@ -113,11 +117,13 @@ export default function NavigationAdd() {
       done();
     });
 
-    /*
-     * @tc.number      apiCommponentAddJsunit_1500
-     * @tc.name        apiCommponentAddJsunit_1500
-     * @tc.desc        apiCommponentAddJsunit_1500
-     * @tc.level       Level 1
+    /**
+     * @tc.name   apiCommponentAddJsunit_1500
+     * @tc.number apiCommponentAddJsunit_1500
+     * @tc.desc   apiCommponentAddJsunit_1500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('apiCommponentAddJsunit_1500', Level.LEVEL1, async (done: Function) => {
        console.info("[apiCommponentAddJsunit_1500] START" );

@@ -44,12 +44,12 @@ export default function syncLoadList() {
     });
 
     /**
-     * @tc.number    syncLoadList_001
-     * @tc.name      syncLoadList_0100
-     * @tc.desc      Asynchronous loading of List sub components.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   syncLoadList_0100
+     * @tc.number syncLoadList_001
+     * @tc.desc   Asynchronous loading of List sub components.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('syncLoadList_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[syncLoadList_0100] START');
@@ -68,12 +68,12 @@ export default function syncLoadList() {
     });
 
     /**
-     * @tc.number    syncLoadList_002
-     * @tc.name      syncLoadList_0200
-     * @tc.desc      Synchronize loading of List sub components.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   syncLoadList_0200
+     * @tc.number syncLoadList_002
+     * @tc.desc   Synchronize loading of List sub components.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('syncLoadList_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[syncLoadList_0200] START');

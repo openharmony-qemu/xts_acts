@@ -54,6 +54,14 @@ export default function NavDestinationInfoStateJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   NavDestinationInfoStateJsunit_0100
+     * @tc.number NavDestinationInfoStateJsunit_0100
+     * @tc.desc   NavDestinationInfoStateJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NavDestinationInfoStateJsunit_0100',  Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000);
       console.info('NavDestinationInfoStateJsunit_0100 START');
@@ -71,6 +79,14 @@ export default function NavDestinationInfoStateJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   NavDestinationInfoStateJsunit_0200
+     * @tc.number NavDestinationInfoStateJsunit_0200
+     * @tc.desc   NavDestinationInfoStateJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NavDestinationInfoStateJsunit_0200',  Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000);
       console.info('NavDestinationInfoStateJsunit_0200 START');

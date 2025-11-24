@@ -45,12 +45,14 @@ export default function textInputApiTest() {
       console.info("textInputApiTest after each called");
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TextInputApiTest_001
-    * @tc.name  : textInputApiTest_001
-    * @tc.desc  : test the enterKeyType enum
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   textInputApiTest_001
+     * @tc.number SUB_ACE_TextInputApiTest_001
+     * @tc.desc   test the enterKeyType enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('textInputApiTest_001', Level.LEVEL2, async (done: Function) => {
       // default
       let strJson = getInspectorByKey('textInputkeyN');

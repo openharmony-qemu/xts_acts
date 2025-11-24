@@ -26,52 +26,52 @@ export default function imageFillColorTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_FILL_COLOR_0100
-     * @tc.name       : testImageFillColor001
-     * @tc.desc       : testing fillColor for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageFillColor001
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_FILL_COLOR_0100
+     * @tc.desc   testing fillColor for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageFillColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageFillColor001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_FILL_COLOR_0200
-     * @tc.name       : testImageFillColor002
-     * @tc.desc       : testing fillColor for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageFillColor002
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_FILL_COLOR_0200
+     * @tc.desc   testing fillColor for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageFillColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageFillColor002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_FILL_COLOR_0300
-     * @tc.name       : testImageFillColor003
-     * @tc.desc       : testing fillColor for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageFillColor003
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_FILL_COLOR_0300
+     * @tc.desc   testing fillColor for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageFillColor003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageFillColor003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_FILL_COLOR_0400
-     * @tc.name       : testImageFillColor004
-     * @tc.desc       : testing fillColor for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageFillColor004
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_FILL_COLOR_0400
+     * @tc.desc   testing fillColor for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageFillColor004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageFillColor004()).assertEqual(0)

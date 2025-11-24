@@ -41,13 +41,13 @@ export default function TextDecorationStyleTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-    * @tc.name         TextDecorationStyleTest0001
-    * @tc.desic        test Text TextDecorationStyle DOTTED
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        0
+    /**
+     * @tc.name   TextDecorationStyleTest0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   TextDecorationStyleTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextDecorationStyleTest0001', Level.LEVEL0, async (done: Function) => {
       console.info('TextDecorationStyleTest0001 START');
@@ -60,13 +60,13 @@ export default function TextDecorationStyleTest() {
       console.info("[TextDecorationStyleTest0001] end");
       done();
     });
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-    * @tc.name         TextDecorationStyleTest0002
-    * @tc.desic        test Text TextDecorationStyle DASHED
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        0
+    /**
+     * @tc.name   TextDecorationStyleTest0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   TextDecorationStyleTest0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextDecorationStyleTest0002', Level.LEVEL0, async (done: Function) => {
       console.info('TextDecorationStyleTest0002 START');
@@ -80,13 +80,13 @@ export default function TextDecorationStyleTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-    * @tc.name         TextDecorationStyleTest0003
-    * @tc.desic        test Search TextDecorationStyle DOTTED
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        0
+    /**
+     * @tc.name   TextDecorationStyleTest0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   TextDecorationStyleTest0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextDecorationStyleTest0003', Level.LEVEL0, async (done: Function) => {
       console.info('TextDecorationStyleTest0003 START');
@@ -100,13 +100,13 @@ export default function TextDecorationStyleTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0004
-    * @tc.name         TextDecorationStyleTest0004
-    * @tc.desic        test Search TextDecorationStyle DASHED
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        0
+    /**
+     * @tc.name   TextDecorationStyleTest0004
+     * @tc.number SUB_ACE_BASIC_ETS_API_0004
+     * @tc.desc   TextDecorationStyleTest0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextDecorationStyleTest0004', Level.LEVEL0, async (done: Function) => {
       console.info('TextDecorationStyleTest0004 START');
@@ -120,13 +120,13 @@ export default function TextDecorationStyleTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0005
-    * @tc.name         TextDecorationStyleTest0005
-    * @tc.desic        test TextArea TextDecorationStyle DOTTED
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        0
+    /**
+     * @tc.name   TextDecorationStyleTest0005
+     * @tc.number SUB_ACE_BASIC_ETS_API_0005
+     * @tc.desc   TextDecorationStyleTest0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextDecorationStyleTest0005', Level.LEVEL0, async (done: Function) => {
       console.info('TextDecorationStyleTest0005 START');
@@ -140,13 +140,13 @@ export default function TextDecorationStyleTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0006
-    * @tc.name         TextDecorationStyleTest0006
-    * @tc.desic        test TextArea TextDecorationStyle DASHED
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        0
+    /**
+     * @tc.name   TextDecorationStyleTest0006
+     * @tc.number SUB_ACE_BASIC_ETS_API_0006
+     * @tc.desc   TextDecorationStyleTest0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextDecorationStyleTest0006', Level.LEVEL0, async (done: Function) => {
       console.info('TextDecorationStyleTest0006 START');
@@ -160,13 +160,13 @@ export default function TextDecorationStyleTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0007
-    * @tc.name         TextDecorationStyleTest0007
-    * @tc.desic        test TextInput TextDecorationStyle DOTTED
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        0
+    /**
+     * @tc.name   TextDecorationStyleTest0007
+     * @tc.number SUB_ACE_BASIC_ETS_API_0007
+     * @tc.desc   TextDecorationStyleTest0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextDecorationStyleTest0007', Level.LEVEL0, async (done: Function) => {
       console.info('TextDecorationStyleTest0007 START');
@@ -180,13 +180,13 @@ export default function TextDecorationStyleTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0008
-    * @tc.name         TextDecorationStyleTest0008
-    * @tc.desic        test TextInput TextDecorationStyle DASHED
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        0
+    /**
+     * @tc.name   TextDecorationStyleTest0008
+     * @tc.number SUB_ACE_BASIC_ETS_API_0008
+     * @tc.desc   TextDecorationStyleTest0008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextDecorationStyleTest0008', Level.LEVEL0, async (done: Function) => {
       console.info('TextDecorationStyleTest0008 START');

@@ -46,12 +46,12 @@ export default function enableJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testPath01
-     * @tc.name: testPath01
-     * @tc.desc: PathAPI 
-     * @tc.level: Level 0
-     * @tc.type : Path
-     * @tc.size : PathTest
+     * @tc.name   testPath01
+     * @tc.number SUB_ARKUI_API_testPath01
+     * @tc.desc   PathAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPath01', Level.LEVEL0, async (done: Function) => {
       console.info('[testPath01] START');
@@ -65,12 +65,12 @@ export default function enableJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testPath02
-     * @tc.name: testPath02
-     * @tc.desc: PathAPI 
-     * @tc.level: Level 0
-     * @tc.type : Path
-     * @tc.size : PathTest
+     * @tc.name   testPath02
+     * @tc.number SUB_ARKUI_API_testPath02
+     * @tc.desc   PathAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPath02', Level.LEVEL0, async (done: Function) => {
       console.info('[testPath02] START');

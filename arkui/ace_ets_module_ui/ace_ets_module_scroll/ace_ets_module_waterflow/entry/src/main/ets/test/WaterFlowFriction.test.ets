@@ -45,12 +45,12 @@ export default function WaterFlowFriction() {
       console.info("WaterFlow_WaterFlowFrictionTest after each called");
     });
     /**
-     * @tc.number    SUB_ACE_WATERFLOW_WATERFLOWFRICTION_001
-     * @tc.name      testWaterFlowFriction
-     * @tc.desc      set friction to -1
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testWaterFlowFriction_0100
+     * @tc.number SUB_ACE_WATERFLOW_WATERFLOWFRICTION_001
+     * @tc.desc   set friction to -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWaterFlowFriction_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[testWaterFlowFriction_0100] START');
@@ -70,12 +70,12 @@ export default function WaterFlowFriction() {
     });
 
     /**
-     * @tc.number    SUB_ACE_WATERFLOW_WATERFLOWFRICTION_002
-     * @tc.name      testWaterFlowFriction
-     * @tc.desc      set friction to 10
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testWaterFlowFriction_0200
+     * @tc.number SUB_ACE_WATERFLOW_WATERFLOWFRICTION_002
+     * @tc.desc   set friction to 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWaterFlowFriction_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[testWaterFlowFriction_0200] START');

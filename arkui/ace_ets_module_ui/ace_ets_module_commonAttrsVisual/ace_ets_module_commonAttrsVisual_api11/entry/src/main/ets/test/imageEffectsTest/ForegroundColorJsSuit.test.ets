@@ -59,13 +59,15 @@ export default function ForegroundColorJsSuit() {
       console.info("overlay after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_TS_COMPONENTForegroundColor_01
-     * @tc.name ForegroundColorJsSuit_0100
-     * @tc.desc Confirm if there is a callback
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   ForegroundColorJsSuit_0100
+     * @tc.number ForegroundColorJsSuit_0100
+     * @tc.desc   ForegroundColorJsSuit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ForegroundColorJsSuit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[ForegroundColorJsSuit_0100] START');
       let driver = await Driver.create()

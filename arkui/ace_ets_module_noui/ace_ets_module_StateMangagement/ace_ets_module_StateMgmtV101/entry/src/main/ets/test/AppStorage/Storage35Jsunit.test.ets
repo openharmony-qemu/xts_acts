@@ -62,14 +62,14 @@ export default function Storage35Jsunit() {
       });
     });
     
-		/**
-		 * @tc.number    Storage35Jsunit_0100
-		 * @tc.name      Storage35Jsunit_0100
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   Storage35Jsunit_0100
+     * @tc.number Storage35Jsunit_0100
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Storage35Jsunit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('Storage35Jsunit_0100 START');
       let strJson = getInspectorByKey('text35_link');
@@ -81,14 +81,14 @@ export default function Storage35Jsunit() {
       done();
     });
     
-		/**
-		 * @tc.number    Storage35Jsunit_0200
-		 * @tc.name      Storage35Jsunit_0200
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   Storage35Jsunit_0200
+     * @tc.number Storage35Jsunit_0200
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Storage35Jsunit_0200', Level.LEVEL0, async (done: Function) => {
       console.info('Storage35Jsunit_0200 START');
       let strJson = getInspectorByKey('text35_link2');
@@ -100,14 +100,14 @@ export default function Storage35Jsunit() {
       done();
     });
     
-		/**
-		 * @tc.number    Storage35Jsunit_0300
-		 * @tc.name      Storage35Jsunit_0300
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   Storage35Jsunit_0300
+     * @tc.number Storage35Jsunit_0300
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Storage35Jsunit_0300', Level.LEVEL0, async (done: Function) => {
       console.info('Storage35Jsunit_0300 START');
       let strJson = getInspectorByKey('text35_link1Date2');
@@ -119,14 +119,14 @@ export default function Storage35Jsunit() {
       done();
     });
     
-		/**
-		 * @tc.number    Storage35Jsunit_0400
-		 * @tc.name      Storage35Jsunit_0400
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   Storage35Jsunit_0400
+     * @tc.number Storage35Jsunit_0400
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Storage35Jsunit_0400', Level.LEVEL0, async (done: Function) => {
       console.info('Storage35Jsunit_0400 START');
       let driver = await UiDriver.create()

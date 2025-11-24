@@ -46,6 +46,14 @@ export default function appVersionCodeJsunit() {
       console.info("appVersionCode after each called");
     });
 
+    /**
+     * @tc.name   testappVersionCode0011
+     * @tc.number testappVersionCode0011
+     * @tc.desc   testappVersionCode0011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testappVersionCode0011', Level.LEVEL1, async (done: Function) => {
       console.info('appVersionCode testappVersionCode0011 START');
       await CommonFunc.sleep(1000);

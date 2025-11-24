@@ -56,12 +56,14 @@ export default function ChipOnClose() {
       done();
     });
 
-    /* *
-      * @tc.number: ChipOnClose_001
-      * @tc.name  : ChipOnClose_001
-      * @tc.desc  : onClose event test
-      * @tc.level : Level 3
-      */
+    /**
+     * @tc.name   ChipOnClose_001
+     * @tc.number ChipOnClose_001
+     * @tc.desc   onClose event test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ChipOnClose_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
 
       console.info('ChipOnClose_001 START');

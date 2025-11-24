@@ -43,12 +43,12 @@ export default function Navigation2() {
 
 
     /**
-     * @tc.number    Navigation2_0100
-     * @tc.name      Navigation2_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   Navigation2_0100
+     * @tc.number Navigation2_0100
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Navigation2_0100', Level.LEVEL2, async (done: Function) => {
       console.info('Navigation2_0100 START');

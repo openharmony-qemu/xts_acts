@@ -53,12 +53,14 @@ export default function NavigationStack01Jsunit() {
       }
       done();
     });
-    /* *
-    * @tc.number: NavigationStack01Jsunit_0100
-    * @tc.name  : NavigationStack01Jsunit_0100
-    * @tc.desc  : The NavPathStack is set. The content is not empty and the content in the content area can be focused.
-    * @tc.level : Level 3
-    */
+    /**
+     * @tc.name   NavigationStack01Jsunit_0100
+     * @tc.number NavigationStack01Jsunit_0100
+     * @tc.desc   The NavPathStack is set. The content is not empty and the content in the content area can be focused.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NavigationStack01Jsunit_0100',  Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000);
       let driver = await UiDriver.create()

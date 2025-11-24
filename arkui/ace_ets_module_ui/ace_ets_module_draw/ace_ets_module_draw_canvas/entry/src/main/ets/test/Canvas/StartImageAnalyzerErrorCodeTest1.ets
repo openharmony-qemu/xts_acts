@@ -42,12 +42,12 @@ export default function StartImageAnalyzerErrorCodeTest1() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_StartImageAnalyzerErrorCodeTest1_0100
-     * @tc.name: StartImageAnalyzerErrorCodeTest1_0100
-     * @tc.desc: CanvasAPI 
-     * @tc.level: Level 2
-     * @tc.type : Canvas
-     * @tc.size : CanvasTest
+     * @tc.name   StartImageAnalyzerErrorCodeTest1_0100
+     * @tc.number SUB_ARKUI_API_StartImageAnalyzerErrorCodeTest1_0100
+     * @tc.desc   CanvasAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('StartImageAnalyzerErrorCodeTest1_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[StartImageAnalyzerErrorCodeTest1_0100] START');

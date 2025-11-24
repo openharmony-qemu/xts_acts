@@ -26,52 +26,52 @@ export default function lazyForEachRegisterEventReceiverTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_REGISTEREVENTRECEIVER_0100
-     * @tc.name       : testLazyForEachRegisterEventReceiver001
-     * @tc.desc       : testing registerEventReceiver for lazyForEach with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachRegisterEventReceiver001
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_REGISTEREVENTRECEIVER_0100
+     * @tc.desc   testing registerEventReceiver for lazyForEach with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachRegisterEventReceiver001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testLazyForEachRegisterEventReceiver001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_REGISTEREVENTRECEIVER_0200
-     * @tc.name       : testLazyForEachRegisterEventReceiver002
-     * @tc.desc       : testing registerEventReceiver for lazyForEach with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachRegisterEventReceiver002
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_REGISTEREVENTRECEIVER_0200
+     * @tc.desc   testing registerEventReceiver for lazyForEach with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachRegisterEventReceiver002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testLazyForEachRegisterEventReceiver002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_REGISTEREVENTRECEIVER_0300
-     * @tc.name       : testLazyForEachRegisterEventReceiver003
-     * @tc.desc       : testing registerEventReceiver for lazyForEach with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachRegisterEventReceiver003
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_REGISTEREVENTRECEIVER_0300
+     * @tc.desc   testing registerEventReceiver for lazyForEach with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachRegisterEventReceiver003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testLazyForEachRegisterEventReceiver003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_REGISTEREVENTRECEIVER_0400
-     * @tc.name       : testLazyForEachRegisterEventReceiver004
-     * @tc.desc       : testing registerEventReceiver for lazyForEach with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachRegisterEventReceiver004
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_REGISTEREVENTRECEIVER_0400
+     * @tc.desc   testing registerEventReceiver for lazyForEach with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachRegisterEventReceiver004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testLazyForEachRegisterEventReceiver004()).assertEqual(0)

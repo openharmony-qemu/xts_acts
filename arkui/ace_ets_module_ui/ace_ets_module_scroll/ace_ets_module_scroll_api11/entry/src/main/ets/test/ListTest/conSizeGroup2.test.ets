@@ -46,12 +46,12 @@ export default function conSizeGroup2() {
     });
 
     /**
-     * @tc.number    conSizeGroup2_001
-     * @tc.name      conSizeGroup2_0100
-     * @tc.desc      Set minHeight, maxHeight, and height for ListItemGroup.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   conSizeGroup2_0100
+     * @tc.number conSizeGroup2_001
+     * @tc.desc   Set minHeight, maxHeight, and height for ListItemGroup.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('conSizeGroup2_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[conSizeGroup2_0100] START');

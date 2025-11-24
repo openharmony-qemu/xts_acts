@@ -42,12 +42,14 @@ export default function longPressEventTest() {
       done();
     });
     
-    /* *
-    * @tc.number : LongPressGesture1_0100
-    * @tc.name  : LongPressGesture1_0100
-    * @tc.desc  : To test the new item of GestureEvent.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   LongPressGesture1_0100
+     * @tc.number LongPressGesture1_0100
+     * @tc.desc   To test the new item of GestureEvent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LongPressGesture1_0100', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000);
       console.info('LongPressGesture1_0100 START');

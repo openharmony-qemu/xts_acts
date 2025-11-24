@@ -45,11 +45,13 @@ export default function NavigationApi() {
       console.info("NavigationApi after each called");
     });
 
-    /*
-     * @tc.number      NavigationApi_009
-     * @tc.name        NavigationApi_009
-     * @tc.desc        Navigation replacePathByName test
-     * @tc.level       Level 2
+    /**
+     * @tc.name   NavigationApi_009
+     * @tc.number NavigationApi_009
+     * @tc.desc   Navigation replacePathByName test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationApi_009',  Level.LEVEL0, async  (done:Function) =>{
       console.info('[NavigationApi_009] START');

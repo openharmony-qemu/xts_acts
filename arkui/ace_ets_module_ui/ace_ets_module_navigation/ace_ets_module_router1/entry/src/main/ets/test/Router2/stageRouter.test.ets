@@ -55,9 +55,12 @@ export default function stageRouterTest() {
     })
 
     /**
+     * @tc.name   testrouterstage0001
      * @tc.number testrouterstage0001
-     * @tc.name testrouterstage0001
-     * @tc.desc testrouterstage0001
+     * @tc.desc   testrouterstage0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testrouterstage0001', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
@@ -84,9 +87,12 @@ export default function stageRouterTest() {
     });
 
     /**
+     * @tc.name   testrouterstage0002
      * @tc.number testrouterstage0002
-     * @tc.name testrouterstage0002
-     * @tc.desc testrouterstage0002
+     * @tc.desc   testrouterstage0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testrouterstage0002', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
@@ -118,9 +124,12 @@ export default function stageRouterTest() {
     });
 
     /**
+     * @tc.name   testrouterstage0003
      * @tc.number testrouterstage0003
-     * @tc.name testrouterstage0003
-     * @tc.desc testrouterstage0003
+     * @tc.desc   testrouterstage0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testrouterstage0003', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
@@ -151,9 +160,12 @@ export default function stageRouterTest() {
     });
 
     /**
+     * @tc.name   testrouterstage0004
      * @tc.number testrouterstage0004
-     * @tc.name testrouterstage0004
-     * @tc.desc testrouterstage0004
+     * @tc.desc   testrouterstage0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testrouterstage0004', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
@@ -179,9 +191,12 @@ export default function stageRouterTest() {
     });
 
     /**
+     * @tc.name   testrouterstage0005
      * @tc.number testrouterstage0005
-     * @tc.name testrouterstage0005
-     * @tc.desc testrouterstage0005
+     * @tc.desc   testrouterstage0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testrouterstage0005', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
@@ -209,9 +224,12 @@ export default function stageRouterTest() {
     });
 
     /**
+     * @tc.name   testrouterstage0006
      * @tc.number testrouterstage0006
-     * @tc.name testrouterstage0006
-     * @tc.desc testrouterstage0006
+     * @tc.desc   testrouterstage0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testrouterstage0006', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
@@ -240,9 +258,12 @@ export default function stageRouterTest() {
     });
 
     /**
+     * @tc.name   testrouterstage0007
      * @tc.number testrouterstage0007
-     * @tc.name testrouterstage0007
-     * @tc.desc testrouterstage0007
+     * @tc.desc   testrouterstage0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testrouterstage0007', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
@@ -270,9 +291,12 @@ export default function stageRouterTest() {
     });
 
     /**
+     * @tc.name   testrouterstage0008
      * @tc.number testrouterstage0008
-     * @tc.name testrouterstage0008
-     * @tc.desc testrouterstage0008
+     * @tc.desc   testrouterstage0008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testrouterstage0008', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
@@ -301,9 +325,12 @@ export default function stageRouterTest() {
     });
 
     /**
+     * @tc.name   testrouterstage0009
      * @tc.number testrouterstage0009
-     * @tc.name testrouterstage0009
-     * @tc.desc testrouterstage0009
+     * @tc.desc   testrouterstage0009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testrouterstage0009', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
@@ -323,9 +350,12 @@ export default function stageRouterTest() {
     });
 
     /**
+     * @tc.name   testrouterstage0010
      * @tc.number testrouterstage0010
-     * @tc.name testrouterstage0010
-     * @tc.desc testrouterstage0010
+     * @tc.desc   testrouterstage0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testrouterstage0010', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
@@ -343,9 +373,12 @@ export default function stageRouterTest() {
     });
 
     /**
+     * @tc.name   testrouterstage0011
      * @tc.number testrouterstage0011
-     * @tc.name testrouterstage0011
-     * @tc.desc testrouterstage0011
+     * @tc.desc   testrouterstage0011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testrouterstage0011', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
@@ -363,9 +396,12 @@ export default function stageRouterTest() {
     });
 
     /**
+     * @tc.name   testrouterstage0012
      * @tc.number testrouterstage0012
-     * @tc.name testrouterstage0012
-     * @tc.desc testrouterstage0012
+     * @tc.desc   testrouterstage0012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testrouterstage0012', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
@@ -383,9 +419,12 @@ export default function stageRouterTest() {
     });
 
     /**
+     * @tc.name   testrouterstage0013
      * @tc.number testrouterstage0013
-     * @tc.name testrouterstage0013
-     * @tc.desc testrouterstage0013
+     * @tc.desc   testrouterstage0013
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testrouterstage0013', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
@@ -405,9 +444,12 @@ export default function stageRouterTest() {
     });
 
     /**
+     * @tc.name   testrouterstage0014
      * @tc.number testrouterstage0014
-     * @tc.name testrouterstage0014
-     * @tc.desc testrouterstage0014
+     * @tc.desc   testrouterstage0014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testrouterstage0014', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
@@ -425,9 +467,12 @@ export default function stageRouterTest() {
     });
 
     /**
+     * @tc.name   testrouterstage0015
      * @tc.number testrouterstage0015
-     * @tc.name testrouterstage0015
-     * @tc.desc testrouterstage0015
+     * @tc.desc   testrouterstage0015
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testrouterstage0015', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
@@ -445,9 +490,12 @@ export default function stageRouterTest() {
     });
 
     /**
+     * @tc.name   testrouterstage0016
      * @tc.number testrouterstage0016
-     * @tc.name testrouterstage0016
-     * @tc.desc testrouterstage0016
+     * @tc.desc   testrouterstage0016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testrouterstage0016', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
@@ -478,9 +526,12 @@ export default function stageRouterTest() {
     });
 
     /**
+     * @tc.name   testrouterstage0017
      * @tc.number testrouterstage0017
-     * @tc.name testrouterstage0017
-     * @tc.desc testrouterstage0017
+     * @tc.desc   testrouterstage0017
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testrouterstage0017', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
@@ -512,9 +563,12 @@ export default function stageRouterTest() {
     });
 
     /**
+     * @tc.name   testrouterstage0018
      * @tc.number testrouterstage0018
-     * @tc.name testrouterstage0018
-     * @tc.desc testrouterstage0018
+     * @tc.desc   testrouterstage0018
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testrouterstage0018', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
@@ -545,9 +599,12 @@ export default function stageRouterTest() {
     });
 
     /**
+     * @tc.name   testrouterstage0019
      * @tc.number testrouterstage0019
-     * @tc.name testrouterstage0019
-     * @tc.desc testrouterstage0019
+     * @tc.desc   testrouterstage0019
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testrouterstage0019', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
@@ -579,9 +636,12 @@ export default function stageRouterTest() {
     });
 
     /**
+     * @tc.name   testrouterstage0020
      * @tc.number testrouterstage0020
-     * @tc.name testrouterstage0020
-     * @tc.desc testrouterstage0020
+     * @tc.desc   testrouterstage0020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testrouterstage0020', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
@@ -609,9 +669,12 @@ export default function stageRouterTest() {
     });
 
     /**
+     * @tc.name   testrouterstage0021
      * @tc.number testrouterstage0021
-     * @tc.name testrouterstage0021
-     * @tc.desc testrouterstage0021
+     * @tc.desc   testrouterstage0021
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testrouterstage0021', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
@@ -640,9 +703,12 @@ export default function stageRouterTest() {
     });
 
     /**
+     * @tc.name   testrouterstage0022
      * @tc.number testrouterstage0022
-     * @tc.name testrouterstage0022
-     * @tc.desc testrouterstage0022
+     * @tc.desc   testrouterstage0022
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testrouterstage0022', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();
@@ -670,9 +736,12 @@ export default function stageRouterTest() {
     });
 
     /**
+     * @tc.name   testrouterstage0023
      * @tc.number testrouterstage0023
-     * @tc.name testrouterstage0023
-     * @tc.desc testrouterstage0023
+     * @tc.desc   testrouterstage0023
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testrouterstage0023', Level.LEVEL2, async (done: Function) => {
       let router: ESObject = globalThis.uiContent.getRouter();

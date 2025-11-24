@@ -53,12 +53,12 @@ export default function ScrollAndScrollIndex() {
     });
 
     /**
+     * @tc.name   Grid_ScrollAndScrollIndex_0100
      * @tc.number SUB_ACE_Grid_ScrollAndScrollIndex_0100
-     * @tc.name testGrid
-     * @tc.desc An onScrollIndex event will be triggered during grid initialization
-     * @tc.level Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   An onScrollIndex event will be triggered during grid initialization
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Grid_ScrollAndScrollIndex_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[Grid_ScrollAndScrollIndex_0100] START');
@@ -72,12 +72,12 @@ export default function ScrollAndScrollIndex() {
     });
 
     /**
+     * @tc.name   Grid_ScrollAndScrollIndex_0200
      * @tc.number SUB_ACE_Grid_ScrollAndScrollIndex_0200
-     * @tc.name testGrid
-     * @tc.desc Trigger onScroll event when grid slides
-     * @tc.level Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Trigger onScroll event when grid slides
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Grid_ScrollAndScrollIndex_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[Grid_ScrollAndScrollIndex_0200] START');
@@ -101,12 +101,12 @@ export default function ScrollAndScrollIndex() {
     });
 
     /**
+     * @tc.name   Grid_ScrollAndScrollIndex_0300
      * @tc.number SUB_ACE_Grid_ScrollAndScrollIndex_0300
-     * @tc.name testGrid
-     * @tc.desc Grid sliding triggers the onScrollIndex event when the index value of the first/last component in the display area changes
-     * @tc.level Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Grid sliding triggers the onScrollIndex event when the index value of the first/last component in the display area changes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Grid_ScrollAndScrollIndex_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('[Grid_ScrollAndScrollIndex_0300] START');
@@ -130,12 +130,12 @@ export default function ScrollAndScrollIndex() {
     });
 
     /**
+     * @tc.name   Grid_ScrollAndScrollIndex_0400
      * @tc.number SUB_ACE_Grid_ScrollAndScrollIndex_0400
-     * @tc.name testGrid
-     * @tc.desc ScrollBar sliding triggers the onScrollIndex event when the index value of the first/last component on the grid display area changes
-     * @tc.level Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   ScrollBar sliding triggers the onScrollIndex event when the index value of the first/last component on the grid display area changes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Grid_ScrollAndScrollIndex_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('[Grid_ScrollAndScrollIndex_0400] START');

@@ -49,10 +49,12 @@ export default function RichEditorChangeValueTest1() {
 
 
     /**
-     * @tc.number    RichEditorChangeValueTest1_0100
-     * @tc.name      RichEditorChangeValueTest1_0100
-     * @tc.desc      Test RichEditorChangeValue
-     * @tc.level     Level 2
+     * @tc.name   RichEditorChangeValueTest1_0100
+     * @tc.number RichEditorChangeValueTest1_0100
+     * @tc.desc   Test RichEditorChangeValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RichEditorChangeValueTest1_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('RichEditorChangeValueTest1_0100 START');

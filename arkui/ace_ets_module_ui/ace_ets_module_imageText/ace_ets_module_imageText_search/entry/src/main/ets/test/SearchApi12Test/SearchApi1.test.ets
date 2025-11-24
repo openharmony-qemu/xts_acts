@@ -46,9 +46,12 @@ export default function SearchApi1() {
     });
 
     /**
+     * @tc.name   SearchApi1_0100
      * @tc.number SearchApi1_0100
-     * @tc.name   testFocus
-     * @tc.desc
+     * @tc.desc   SearchApi1_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SearchApi1_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('SearchApi1_0100 START');

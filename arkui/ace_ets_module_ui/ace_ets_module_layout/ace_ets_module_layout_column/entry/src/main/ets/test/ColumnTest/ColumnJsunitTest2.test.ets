@@ -47,12 +47,12 @@ export default function ColumnJsunitTest2() {
     });
 
     /**
-     * @tc.number testColumn01
      * @tc.name   testColumn01
+     * @tc.number testColumn01
      * @tc.desc   test Column alignItems is Start
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumn01', Level.LEVEL0, async (done: Function) => {
       console.info('[testColumn01] START');
@@ -65,12 +65,12 @@ export default function ColumnJsunitTest2() {
     });
 
     /**
-     * @tc.number testColumn02
      * @tc.name   testColumn02
+     * @tc.number testColumn02
      * @tc.desc   test Column alignItems is Center
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumn02', Level.LEVEL0, async (done: Function) => {
       console.info('[testColumn02] START');

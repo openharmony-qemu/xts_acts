@@ -59,10 +59,12 @@ export default function LazyForEachAboutToReuseNull() {
     });
 
     /**
+     * @tc.name   LazyForEachAboutToReuseNull_003
      * @tc.number LazyForEachAboutToReuseNull_003
-     * @tc.name LazyForEachAboutToReuseNull_003
-     * @tc.desc Test LazyForEachAboutToReuseNull
-     * @tc.level: Level 1
+     * @tc.desc   Test LazyForEachAboutToReuseNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('LazyForEachAboutToReuseNull_003', Level.LEVEL1, async (done: Function) => {
       console.info('[LazyForEachAboutToReuseNull_003] START');      

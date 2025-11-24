@@ -44,10 +44,13 @@ export default function textAreaOnCutJsunit() {
       console.info("textAreaOnCut after each called");
     });
 
-    /*
-     * @tc.number       testtextAreaOnCut0001
-     * @tc.name         testtextAreaOnCut0001
-     * @tc.desc         acetextAreaOnCutEtsTest0001
+    /**
+     * @tc.name   testtextAreaOnCut0001
+     * @tc.number testtextAreaOnCut0001
+     * @tc.desc   acetextAreaOnCutEtsTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testtextAreaOnCut0001', Level.LEVEL1, async () => {
       console.info('textAreaOnCut testtextAreaOnCut0001 START');
@@ -61,10 +64,13 @@ export default function textAreaOnCutJsunit() {
 
     });
 
-    /*
-     * @tc.number       testtextAreaOnCut0002
-     * @tc.name         testtextAreaOnCut0002
-     * @tc.desc         acetextAreaOnCutEtsTest0002
+    /**
+     * @tc.name   testtextAreaOnCut0002
+     * @tc.number testtextAreaOnCut0002
+     * @tc.desc   acetextAreaOnCutEtsTest0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testtextAreaOnCut0002', Level.LEVEL1, async () => {
       console.info('textAreaOnCut testtextAreaOnCut0002 START');
@@ -78,10 +84,13 @@ export default function textAreaOnCutJsunit() {
 
     });
 
-    /*
-     * @tc.number       testtextAreaOnCut0003
-     * @tc.name         testtextAreaOnCut0003
-     * @tc.desc         acetextAreaOnCutEtsTest0003
+    /**
+     * @tc.name   testtextAreaOnCut0003
+     * @tc.number testtextAreaOnCut0003
+     * @tc.desc   acetextAreaOnCutEtsTest0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testtextAreaOnCut0003', Level.LEVEL1, async () => {
       console.info('textAreaOnCut testtextAreaOnCut0003 START');
@@ -95,10 +104,13 @@ export default function textAreaOnCutJsunit() {
 
     });
 
-    /*
-     * @tc.number       testtextAreaOnCut0004
-     * @tc.name         testtextAreaOnCut0004
-     * @tc.desc         acetextAreaOnCutEtsTest0004
+    /**
+     * @tc.name   testtextAreaOnCut0004
+     * @tc.number testtextAreaOnCut0004
+     * @tc.desc   acetextAreaOnCutEtsTest0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testtextAreaOnCut0004', Level.LEVEL1, async () => {
       console.info('textAreaOnCut testtextAreaOnCut0004 START');
@@ -112,10 +124,13 @@ export default function textAreaOnCutJsunit() {
 
     });
 
-    /*
-     * @tc.number       testtextAreaOnCut0005
-     * @tc.name         testtextAreaOnCut0005
-     * @tc.desc         acetextAreaOnCutEtsTest0005
+    /**
+     * @tc.name   testtextAreaOnCut0005
+     * @tc.number testtextAreaOnCut0005
+     * @tc.desc   acetextAreaOnCutEtsTest0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testtextAreaOnCut0005', Level.LEVEL1, async () => {
       console.info('textAreaOnCut testtextAreaOnCut0005 START');
@@ -129,10 +144,13 @@ export default function textAreaOnCutJsunit() {
 
     });
 
-    /*
-     * @tc.number       testtextAreaOnCut0006
-     * @tc.name         testtextAreaOnCut0006
-     * @tc.desc         acetextAreaOnCutEtsTest0006
+    /**
+     * @tc.name   testtextAreaOnCut0006
+     * @tc.number testtextAreaOnCut0006
+     * @tc.desc   acetextAreaOnCutEtsTest0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testtextAreaOnCut0006', Level.LEVEL1, async () => {
       console.info('textAreaOnCut testtextAreaOnCut0006 START');
@@ -146,10 +164,13 @@ export default function textAreaOnCutJsunit() {
 
     });
 
-    /*
-     * @tc.number       testtextAreaOnCut0009
-     * @tc.name         testtextAreaOnCut0009
-     * @tc.desc         acetextAreaOnCutEtsTest0009
+    /**
+     * @tc.name   testtextAreaOnCut0009
+     * @tc.number testtextAreaOnCut0009
+     * @tc.desc   acetextAreaOnCutEtsTest0009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testtextAreaOnCut0009', Level.LEVEL1, async () => {
       console.info('textAreaOnCut testtextAreaOnCut009 START');
@@ -163,10 +184,13 @@ export default function textAreaOnCutJsunit() {
 
     });
 
-    /*
-     * @tc.number       testtextAreaOnCut0010
-     * @tc.name         testtextAreaOnCut0010
-     * @tc.desc         acetextAreaOnCutEtsTest0010
+    /**
+     * @tc.name   testtextAreaOnCut0010
+     * @tc.number testtextAreaOnCut0010
+     * @tc.desc   acetextAreaOnCutEtsTest0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testtextAreaOnCut0010', Level.LEVEL1, async () => {
       console.info('textAreaOnCut testtextAreaOnCut0010 START');
@@ -180,10 +204,13 @@ export default function textAreaOnCutJsunit() {
 
     });
 
-    /*
-     * @tc.number       testtextAreaOnCut0011
-     * @tc.name         testtextAreaOnCut0011
-     * @tc.desc         acetextAreaOnCutEtsTest0011
+    /**
+     * @tc.name   testtextAreaCopyOption0011
+     * @tc.number testtextAreaOnCut0011
+     * @tc.desc   acetextAreaOnCutEtsTest0011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testtextAreaCopyOption0011', Level.LEVEL1, async () => {
       console.info('textAreaCopyOption testtextAreaCopyOption0011 START');

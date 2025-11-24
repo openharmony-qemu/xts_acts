@@ -45,13 +45,13 @@ export default function ImageAnimatorFillModeJsunit() {
       console.info('ImageAnimatorFillModeTest test after each called');
     });
 
-    /*
-     * @tc.number: ImageAnimatorFillModeTest_0100
-     * @tc.name  : ImageAnimatorFillModeTest_0100
-     * @tc.desc  : Test the fillMode interface
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ImageAnimatorFillModeTest_0100
+     * @tc.number ImageAnimatorFillModeTest_0100
+     * @tc.desc   Test the fillMode interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAnimatorFillModeTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ImageAnimatorFillModeTest_0100 START');
@@ -75,13 +75,13 @@ export default function ImageAnimatorFillModeJsunit() {
       done();
     });
 
-    /*
-     * @tc.number: ImageAnimatorFillModeTest_0200
-     * @tc.name  : ImageAnimatorFillModeTest_0200
-     * @tc.desc  : Test the fillMode interface
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ImageAnimatorFillModeTest_0200
+     * @tc.number ImageAnimatorFillModeTest_0200
+     * @tc.desc   Test the fillMode interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAnimatorFillModeTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('ImageAnimatorFillModeTest_0200 START');
@@ -105,13 +105,13 @@ export default function ImageAnimatorFillModeJsunit() {
       done();
     });
 
-    /*
-     * @tc.number: ImageAnimatorFillModeTest_0300
-     * @tc.name  : ImageAnimatorFillModeTest_0300
-     * @tc.desc  : Test the fillMode interface
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ImageAnimatorFillModeTest_0300
+     * @tc.number ImageAnimatorFillModeTest_0300
+     * @tc.desc   Test the fillMode interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAnimatorFillModeTest_0300', Level.LEVEL1, async (done: Function) => {
       console.info('ImageAnimatorFillModeTest_0300 START');

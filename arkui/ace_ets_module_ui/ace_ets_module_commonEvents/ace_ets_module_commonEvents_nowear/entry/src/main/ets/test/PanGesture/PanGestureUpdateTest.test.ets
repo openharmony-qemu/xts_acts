@@ -47,12 +47,12 @@ export default function PanGestureUpdateTest() {
     });
 
     /**
-     * @tc.number
-    * @tc.name      PanGestureUpdateTest_0010
-     * @tc.desc      api test TapGesture
-     * @tc.level:    Level
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   PanGestureUpdateTest_0010
+     * @tc.number PanGestureUpdateTest_0010
+     * @tc.desc   api test TapGesture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PanGestureUpdateTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('PanGestureUpdateTest_0010 START');

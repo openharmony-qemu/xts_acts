@@ -46,12 +46,12 @@ export default function waterFlowAniTrue() {
     });
 
     /**
-     * @tc.number    waterFlowAniTrue_001
-     * @tc.name      waterFlowAniTrue_0100
-     * @tc.desc      Set the animation parameter of ScrollPage to true.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   waterFlowAniTrue_0100
+     * @tc.number waterFlowAniTrue_001
+     * @tc.desc   Set the animation parameter of ScrollPage to true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('waterFlowAniTrue_0100', Level.LEVEL3, async (done: Function) => {
       console.info('[waterFlowAniTrue_0100] START');

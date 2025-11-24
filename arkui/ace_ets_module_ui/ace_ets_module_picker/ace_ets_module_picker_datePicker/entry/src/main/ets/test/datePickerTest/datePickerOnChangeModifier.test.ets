@@ -63,14 +63,14 @@ export default function datePickerOnChangeModifierTest() {
       done();
     });
 
-    /* *
-    * @tc.number: DatePicker_OnChange_Modifier_001
-    * @tc.name  : DatePicker_OnChange_Modifier_001
-    * @tc.desc  : To test the OnChange
-    * @tc.level : Level 3
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   DatePicker_OnChange_Modifier_001
+     * @tc.number DatePicker_OnChange_Modifier_001
+     * @tc.desc   To test the OnChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('DatePicker_OnChange_Modifier_001', Level.LEVEL1, async (done: Function) => {
       console.info('DatePicker_OnChange_Modifier_001 START');
       let driver = Driver.create();
@@ -98,14 +98,14 @@ export default function datePickerOnChangeModifierTest() {
       done();
     });
 
-    /* *
-    * @tc.number: DatePicker_OnChange_Modifier_002
-    * @tc.name  : DatePicker_OnChange_Modifier_002
-    * @tc.desc  : To test the OnChange
-    * @tc.level : Level 3
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   DatePicker_OnChange_Modifier_002
+     * @tc.number DatePicker_OnChange_Modifier_002
+     * @tc.desc   To test the OnChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('DatePicker_OnChange_Modifier_002', Level.LEVEL1, async (done: Function) => {
       console.info('DatePicker_OnChange_Modifier_002 START');
       let driver = Driver.create();

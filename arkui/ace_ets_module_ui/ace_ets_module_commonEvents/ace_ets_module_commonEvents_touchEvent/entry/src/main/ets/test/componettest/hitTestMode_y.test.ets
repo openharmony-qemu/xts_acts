@@ -44,14 +44,14 @@ export default function hitTestModeJsunit() {
       console.info("hitTestModeTest after each called");
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_testhitTestMode0002
-    * @tc.name       : testhitTestMode0002
-    * @tc.desc       : test
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testhitTestMode0002
+     * @tc.number SUB_ARKUI_testhitTestMode0002
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testhitTestMode0002', Level.LEVEL0, async () => {
       console.info('hitTestMode testhitTestMode0002 START');
       await CommonFunc.sleep(2000);

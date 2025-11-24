@@ -42,12 +42,12 @@ export default function ScrollSourceBar() {
     });
 
     /**
-     * @tc.number    ScrollSourceBar_0100
-     * @tc.name      ScrollSourceBar_0100
-     * @tc.desc      frameNode: The sliding speed after the scroll bar drag ends
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ScrollSourceBar_0100
+     * @tc.number ScrollSourceBar_0100
+     * @tc.desc   frameNode: The sliding speed after the scroll bar drag ends
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ScrollSourceBar_0100', Level.LEVEL2, async (done: Function) => {
       console.info('ScrollSourceBar_0100 START');

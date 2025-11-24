@@ -42,14 +42,14 @@ export default function tabIconJsunit() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_SCROLL_tabIconJsunit_0100
-    * @tc.name: tabIconJsunit_0100
-    * @tc.desc: Set the color of the Label icon when not selected and when selected.
-    * @tc.level: Level 2
-    * @tc.type:
-    * @tc.size:
-    */
+    /**
+     * @tc.name   tabIconJsunit_0100
+     * @tc.number SUB_ACE_SCROLL_tabIconJsunit_0100
+     * @tc.desc   Set the color of the Label icon when not selected and when selected.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('tabIconJsunit_0100', Level.LEVEL1, async (done: Function) => {
       console.info('tabIconJsunit_0100 START');
 
@@ -63,12 +63,12 @@ export default function tabIconJsunit() {
       done();
     });
     /**
-     * @tc.number: SUB_ACE_SCROLL_tabIconJsunit_0200
-     * @tc.name: tabIconJsunit_0200
-     * @tc.desc: Trigger onWillShow and onWillHide callbacks
-     * @tc.level: Level 2
-     * @tc.type:
-     * @tc.size:
+     * @tc.name   tabIconJsunit_0200
+     * @tc.number SUB_ACE_SCROLL_tabIconJsunit_0200
+     * @tc.desc   Trigger onWillShow and onWillHide callbacks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('tabIconJsunit_0200', Level.LEVEL1, async (done: Function) => {
       console.info('tabIconJsunit_0200 START');

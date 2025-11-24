@@ -45,14 +45,14 @@ export default function searchHalfLeadingTest() {
       console.info("searchHalfLeadingTest after each called");
     });
 
-    /*
-    * @tc.number       searchHalfLeadingTest0001
-    * @tc.name         searchHalfLeadingTest0001
-    * @tc.desc         Test searchHalfLeadingTest Normal value :true
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
-    */
+    /**
+     * @tc.name   searchHalfLeadingTest0001
+     * @tc.number searchHalfLeadingTest0001
+     * @tc.desc   Test searchHalfLeadingTest Normal value :true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('searchHalfLeadingTest0001',  Level.LEVEL0, async () => {
       let driver = Driver.create();
       console.info('searchHalfLeadingTest searchHalfLeadingTest0001 START');
@@ -64,14 +64,14 @@ export default function searchHalfLeadingTest() {
       console.info("[searchHalfLeadingTest0001] end");
     });
 	
-	 /*
-    * @tc.number       searchHalfLeadingTest0002
-    * @tc.name         searchHalfLeadingTest0002
-    * @tc.desc         Test searchHalfLeadingTest Normal value :false
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
-    */
+    /**
+     * @tc.name   searchHalfLeadingTest0002
+     * @tc.number searchHalfLeadingTest0002
+     * @tc.desc   Test searchHalfLeadingTest Normal value :false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('searchHalfLeadingTest0002',  Level.LEVEL0, async () => {
       let driver = Driver.create();
       console.info('searchHalfLeadingTest searchHalfLeadingTest0002 START');
@@ -83,14 +83,14 @@ export default function searchHalfLeadingTest() {
       console.info("[searchHalfLeadingTest0002] end");
     });
 	
-	  /*
-    * @tc.number       searchHalfLeadingTest0003
-    * @tc.name         searchHalfLeadingTest0003
-    * @tc.desc         Test searchHalfLeadingTest abnormal value :undefined
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
-    */
+    /**
+     * @tc.name   searchHalfLeadingTest0003
+     * @tc.number searchHalfLeadingTest0003
+     * @tc.desc   Test searchHalfLeadingTest abnormal value :undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('searchHalfLeadingTest0003',  Level.LEVEL0, async () => {
       let driver = Driver.create();
       console.info('searchHalfLeadingTest searchHalfLeadingTest0003 START');
@@ -102,14 +102,14 @@ export default function searchHalfLeadingTest() {
       console.info("[searchHalfLeadingTest0003] end");
     });
 	
-	 /*
-    * @tc.number       searchHalfLeadingTest0004
-    * @tc.name         searchHalfLeadingTest0004
-    * @tc.desc         Test searchHalfLeadingTest abnormal value :null
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
-    */
+    /**
+     * @tc.name   searchHalfLeadingTest0004
+     * @tc.number searchHalfLeadingTest0004
+     * @tc.desc   Test searchHalfLeadingTest abnormal value :null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('searchHalfLeadingTest0004',  Level.LEVEL0, async () => {
       let driver = Driver.create();
       console.info('searchHalfLeadingTest searchHalfLeadingTest0004 START');

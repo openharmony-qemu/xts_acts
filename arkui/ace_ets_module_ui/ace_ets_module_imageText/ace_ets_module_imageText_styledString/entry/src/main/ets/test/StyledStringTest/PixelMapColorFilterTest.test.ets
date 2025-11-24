@@ -43,12 +43,12 @@ export default function PixelMapColorFilterTest() {
     });
     
     /**
-     * @tc.number    PixelMapColorFilterTest_0010
-     * @tc.name      PixelMapColorFilterTest_0010
-     * @tc.desc      set resource ColorFilter: number[]
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+     * @tc.name   PixelMapColorFilterTest_0010
+     * @tc.number PixelMapColorFilterTest_0010
+     * @tc.desc   set resource ColorFilter: number[]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PixelMapColorFilterTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('[PixelMapColorFilterTest_0010] START');
@@ -69,12 +69,12 @@ export default function PixelMapColorFilterTest() {
     });
 
     /**
-     * @tc.number    PixelMapColorFilterTest_0020
-     * @tc.name      PixelMapColorFilterTest_0020
-     * @tc.desc      set string ColorFilter: number[]
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   PixelMapColorFilterTest_0020
+     * @tc.number PixelMapColorFilterTest_0020
+     * @tc.desc   set string ColorFilter: number[]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PixelMapColorFilterTest_0020', Level.LEVEL2, async (done: Function) => {
       console.info('[PixelMapColorFilterTest_0020] START');

@@ -42,12 +42,12 @@ export default function setGridEvent() {
     });
 
     /**
-     * @tc.number    setGridEvent_001
-     * @tc.name      setGridEvent_0100
-     * @tc.desc      Set scrolling events for the Grid component.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   setGridEvent_0100
+     * @tc.number setGridEvent_001
+     * @tc.desc   Set scrolling events for the Grid component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setGridEvent_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[setGridEvent_0100] START');

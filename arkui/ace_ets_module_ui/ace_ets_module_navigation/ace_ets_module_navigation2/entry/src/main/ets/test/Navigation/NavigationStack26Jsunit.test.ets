@@ -39,12 +39,14 @@ export default function NavigationStack26Jsunit() {
       }
       done();
     });
-    /* *
-    * @tc.number: NavigationStack26Jsunit_0100
-    * @tc.name  : NavigationStack26Jsunit_0100
-    * @tc.desc  : In auto mode, the value of hideNavBar is changed from true to false.
-    * @tc.level : Level 3
-    */
+    /**
+     * @tc.name   NavigationStack26Jsunit_0100
+     * @tc.number NavigationStack26Jsunit_0100
+     * @tc.desc   In auto mode, the value of hideNavBar is changed from true to false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NavigationStack26Jsunit_0100',  Level.LEVEL0, async  (done:Function) =>{
       await CommonFunc.sleep(1000);
       let driver = await UiDriver.create()

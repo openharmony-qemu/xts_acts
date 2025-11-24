@@ -47,15 +47,15 @@ export default function Router2() {
       router.back()
       console.info("Router2 after each called");
     });
-    /**
-     * @tc.number Router2_0100
-     * @tc.name Router2_0100
-     * @tc.desc Page carrying parameter redirection
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
-     */
 
+    /**
+     * @tc.name   Router2_0100
+     * @tc.number Router2_0100
+     * @tc.desc   Router2_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Router2_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[Router2_0100] START');
       await CommonFunc.sleep(1000);

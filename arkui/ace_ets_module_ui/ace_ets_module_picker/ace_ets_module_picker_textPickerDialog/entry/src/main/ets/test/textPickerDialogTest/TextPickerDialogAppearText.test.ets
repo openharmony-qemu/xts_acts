@@ -58,13 +58,13 @@ export default function TextPickerDialogAppearTextTest() {
       console.info("TextPickerDialogAppearTextTest after each called");
     });
 
-    /*
+    /**
+     * @tc.name   TextPickerDialogAppearTextTest_001
      * @tc.number TextPickerDialogAppearTextTest_001
-     * @tc.name testBack
-     * @tc.desc Return specified page by index value
-     * @tc.level Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TextPickerDialogAppearTextTest_001', Level.LEVEL3, async (done: Function) => {
       console.info('[TextPickerDialogAppearTextTest_001] START');

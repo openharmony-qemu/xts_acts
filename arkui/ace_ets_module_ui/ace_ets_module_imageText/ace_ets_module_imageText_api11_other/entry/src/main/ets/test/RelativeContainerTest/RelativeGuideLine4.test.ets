@@ -42,14 +42,15 @@ export default function RelativeGuideLine4() {
       console.info("RelativeGuideLine4 after each called");
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0090
-     * @tc.desc      direction and position test
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
-     */
 
+    /**
+     * @tc.name   RelativeGuideLine4_001
+     * @tc.number RelativeGuideLine4_001
+     * @tc.desc   RelativeGuideLine4_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('RelativeGuideLine4_001', Level.LEVEL3, async (done: Function) => {
       console.info('[RelativeGuideLine4_001] START');
 
@@ -67,14 +68,15 @@ export default function RelativeGuideLine4() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0120
-     * @tc.desc      direction and position test
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   RelativeGuideLine4_002
+     * @tc.number RelativeGuideLine4_002
+     * @tc.desc   RelativeGuideLine4_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('RelativeGuideLine4_002', Level.LEVEL3, async (done: Function) => {
       console.info('[RelativeGuideLine4_002] START');
       await CommonFunc.sleep(1000);
@@ -96,14 +98,15 @@ export default function RelativeGuideLine4() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0130
-     * @tc.desc      direction and position test
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   RelativeGuideLine4_003
+     * @tc.number RelativeGuideLine4_003
+     * @tc.desc   RelativeGuideLine4_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('RelativeGuideLine4_003', Level.LEVEL3, async (done: Function) => {
       console.info('[RelativeGuideLine4_003] START');
       await CommonFunc.sleep(1000);

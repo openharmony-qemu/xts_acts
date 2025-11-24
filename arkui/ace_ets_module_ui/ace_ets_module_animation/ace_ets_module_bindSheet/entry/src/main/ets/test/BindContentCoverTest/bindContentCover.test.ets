@@ -48,12 +48,14 @@ export default function bindContentCoverTest() {
       console.info('bindContentCoverTest after each called');
     })
 
-    /* *
-    * @tc.number: bindContentCoverTest_001
-    * @tc.name  : bindContentCoverTest_001
-    * @tc.desc  : Test the bindContentCoverTest not null
-    * @tc.level : Level 1
-    */
+    /**
+     * @tc.name   bindContentCoverTest_001
+     * @tc.number bindContentCoverTest_001
+     * @tc.desc   Test the bindContentCoverTest not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('bindContentCoverTest_001', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();

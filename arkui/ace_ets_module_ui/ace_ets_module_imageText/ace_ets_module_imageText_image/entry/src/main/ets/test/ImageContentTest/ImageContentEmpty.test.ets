@@ -40,14 +40,14 @@ export default function ImageContentEmptyTest() {
       console.info('ImageContentEmptyTest beforeEach end');
       done();
     });
-    /* *
-    * @tc.number: ImageContentEmptyTest_001
-    * @tc.name  : ImageContentEmptyTest_001
-    * @tc.desc  : To test the ImageContentEmpty
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   ImageContentEmptyTest_001
+     * @tc.number ImageContentEmptyTest_001
+     * @tc.desc   To test the ImageContentEmpty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ImageContentEmptyTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('ImageContentEmptyTest_001 START');
       await Utils.sleep(1000);

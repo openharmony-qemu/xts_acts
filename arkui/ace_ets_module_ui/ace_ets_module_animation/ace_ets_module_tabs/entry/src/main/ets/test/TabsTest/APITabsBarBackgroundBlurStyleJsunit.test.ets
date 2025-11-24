@@ -40,14 +40,14 @@ export default function APITabsBarBackgroundBlurStyleJsunit() {
       }
       done();
     });
-	/**
-      * @tc.number: APITabsBarBackgroundBlurStyleJsunit_0100
-      * @tc.name  : APITabsBarBackgroundBlurStyleJsunit_0100
-      * @tc.desc  : To test the avoidance interface barBackgroundBlurStyle
-      * @tc.level : Level 3
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   APITabsBarBackgroundBlurStyleJsunit_0100
+     * @tc.number APITabsBarBackgroundBlurStyleJsunit_0100
+     * @tc.desc   To test the avoidance interface barBackgroundBlurStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('APITabsBarBackgroundBlurStyleJsunit_0100', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(1000);
       console.info('APITabsBarBackgroundBlurStyleJsunit_0100 START');

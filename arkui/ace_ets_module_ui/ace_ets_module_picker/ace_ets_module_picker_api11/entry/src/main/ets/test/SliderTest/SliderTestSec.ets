@@ -62,10 +62,12 @@ export default function SliderTestSec() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Slider_showTips_0100
-     * @tc.name      Set the Slider component showTips property with the parameter (value: true)
-     * @tc.desc      Verify that the Slider component only sets the showTips attribute value parameter 
-     *               to a bubble type and no custom text
+     * @tc.name   ArkUX_Stage_Slider_showTips_0100
+     * @tc.number ArkUX_Stage_Slider_showTips_0100
+     * @tc.desc   Verify that the Slider component only sets the showTips attribute value parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Slider_showTips_0100', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000)
@@ -90,10 +92,12 @@ export default function SliderTestSec() {
     })
 
     /**
-     * @tc.number    ArkUX_Stage_Slider_showTips_0200
-     * @tc.name      Set the Slider component showTips property with the parameter (value:false)
-     * @tc.desc      Verify that the Slider component only sets the showTips attribute value parameter 
-     *               to a bubble free type and no custom text
+     * @tc.name   ArkUX_Stage_Slider_showTips_0200
+     * @tc.number ArkUX_Stage_Slider_showTips_0200
+     * @tc.desc   Verify that the Slider component only sets the showTips attribute value parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Slider_showTips_0200', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000)
@@ -118,10 +122,12 @@ export default function SliderTestSec() {
     })
 
     /**
-     * @tc.number    ArkUX_Stage_Slider_showTips_0300
-     * @tc.name      Set the Slider component showTips attribute with parameters (value: false, content: "test").
-     * @tc.desc      Verify that the Slider component sets the showTips attribute value parameter to a bubble free 
-     *               type, and also sets the custom text 'test'. The custom text setting is successful
+     * @tc.name   ArkUX_Stage_Slider_showTips_0300
+     * @tc.number ArkUX_Stage_Slider_showTips_0300
+     * @tc.desc   Verify that the Slider component sets the showTips attribute value parameter to a bubble free
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Slider_showTips_0300', Level.LEVEL0, async (done: Function) => {
       await forKey("falseStr","test");
@@ -144,10 +150,12 @@ export default function SliderTestSec() {
     })
 
     /**
-     * @tc.number    ArkUX_Stage_Slider_showTips_0400
-     * @tc.name      Set the showTips property of Slider to (value:false, content:"ab$12@").
-     * @tc.desc      Verify that the Slider component has set the showTips attribute value parameter to a bubble free 
-     *               type, and set the custom text 'ab $12 @'. The custom text setting was successful
+     * @tc.name   ArkUX_Stage_Slider_showTips_0400
+     * @tc.number ArkUX_Stage_Slider_showTips_0400
+     * @tc.desc   Verify that the Slider component has set the showTips attribute value parameter to a bubble free
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Slider_showTips_0400', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000)
@@ -171,10 +179,12 @@ export default function SliderTestSec() {
     })
 
     /**
-     * @tc.number    ArkUX_Stage_Slider_showTips_0500
-     * @tc.name      Set the showTips property of the Slider component to (value:false, content:Resources).
-     * @tc.desc      Verify that the Slider component has set the showTips attribute value parameter to a bubble free 
-     *               type, and set the resource reference type. The custom text has been successfully set
+     * @tc.name   ArkUX_Stage_Slider_showTips_0500
+     * @tc.number ArkUX_Stage_Slider_showTips_0500
+     * @tc.desc   Verify that the Slider component has set the showTips attribute value parameter to a bubble free
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Slider_showTips_0500', Level.LEVEL0, async (done: Function) => {
       await forKey("false","ResourceTest");
@@ -197,10 +207,12 @@ export default function SliderTestSec() {
     })
 
     /**
-     * @tc.number    ArkUX_Stage_Slider_showTips_0600
-     * @tc.name      Set the showTips property of the Slider to (value:false, content:"").
-     * @tc.desc      Verify that the Slider component showTips property parameter value is set to a bubble free type,
-     *               while also setting the text to ''
+     * @tc.name   ArkUX_Stage_Slider_showTips_0600
+     * @tc.number ArkUX_Stage_Slider_showTips_0600
+     * @tc.desc   Verify that the Slider component showTips property parameter value is set to a bubble free type,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Slider_showTips_0600', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000)
@@ -223,12 +235,14 @@ export default function SliderTestSec() {
       }
     })
 
-    /**
-     * @tc.number    ArkUX_Stage_Slider_showTips_0700
-     * @tc.name      Set the showTips property of the Slider to (value:true,content:"test").
-     * @tc.desc      Verify that the Slider component showTips property parameter value is set to true with bubble
-     *               type, and the text is custom text
-     */
+     /**
+      * @tc.name   ArkUX_Stage_Slider_showTips_0700
+      * @tc.number ArkUX_Stage_Slider_showTips_0700
+      * @tc.desc   Verify that the Slider component showTips property parameter value is set to true with bubble
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('ArkUX_Stage_Slider_showTips_0700', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000)
       await forKey("trueStr","test");
@@ -251,10 +265,12 @@ export default function SliderTestSec() {
     })
 
     /**
-     * @tc.number    ArkUX_Stage_Slider_showTips_0800
-     * @tc.name      Set the showTips property of the Slider to (value:true,content:"ab$12@").
-     * @tc.desc      Verify that the Slider component showTips property parameter value is of bubble 
-     *               type, and the text is custom text with special symbols
+     * @tc.name   ArkUX_Stage_Slider_showTips_0800
+     * @tc.number ArkUX_Stage_Slider_showTips_0800
+     * @tc.desc   Verify that the Slider component showTips property parameter value is of bubble
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Slider_showTips_0800', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000)
@@ -278,10 +294,12 @@ export default function SliderTestSec() {
     })
 
     /**
-     * @tc.number    ArkUX_Stage_Slider_showTips_0900
-     * @tc.name      Set the showTips property of the Slider component (value:true,content:resources)
-     * @tc.desc      Verify that the Slider component showTips attribute parameter value is of bubble 
-     *               type and content is of reference type $r ("app. string. sliderTest")
+     * @tc.name   ArkUX_Stage_Slider_showTips_0900
+     * @tc.number ArkUX_Stage_Slider_showTips_0900
+     * @tc.desc   Verify that the Slider component showTips attribute parameter value is of bubble
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Slider_showTips_0900', Level.LEVEL0, async (done: Function) => {
       await forKey("true","ResourceTest");
@@ -304,10 +322,12 @@ export default function SliderTestSec() {
     })
 
     /**
-     * @tc.number    ArkUX_Stage_Slider_showTips_1000
-     * @tc.name      Set the showTips property of the Slider component (value:true,content:"")
-     * @tc.desc      Verify that the Slider component showTips attribute parameter value is of 
-     *               bubble type, and the content is' '
+     * @tc.name   ArkUX_Stage_Slider_showTips_1000
+     * @tc.number ArkUX_Stage_Slider_showTips_1000
+     * @tc.desc   Verify that the Slider component showTips attribute parameter value is of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Slider_showTips_1000', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000)
@@ -331,10 +351,12 @@ export default function SliderTestSec() {
     })
 
     /**
-     * @tc.number    ArkUX_Stage_Slider_showTips_1100
-     * @tc.name      Continuously set the Slider component showTips property, passing in normal values multiple times
-     * @tc.desc      Verify that the Slider component showTips attribute has been passed in multiple times with normal
-     *               values, and the content text is the last setting
+     * @tc.name   ArkUX_Stage_Slider_showTips_1100
+     * @tc.number ArkUX_Stage_Slider_showTips_1100
+     * @tc.desc   Verify that the Slider component showTips attribute has been passed in multiple times with normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Slider_showTips_1100', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000)
@@ -359,10 +381,12 @@ export default function SliderTestSec() {
     })
 
     /**
-     * @tc.number    ArkUX_Stage_Slider_showTips_1200
-     * @tc.name      Set the showTips property of the Slider to (value:false, content:null).
-     * @tc.desc      Verify that the parameter value of the Slider component showTips attribute is of bubble free type,
-     *               content is of outlier, and the result is no user-defined text
+     * @tc.name   ArkUX_Stage_Slider_showTips_1200
+     * @tc.number ArkUX_Stage_Slider_showTips_1200
+     * @tc.desc   Verify that the parameter value of the Slider component showTips attribute is of bubble free type,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Slider_showTips_1200', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000)
@@ -386,10 +410,12 @@ export default function SliderTestSec() {
     })
 
     /**
-     * @tc.number    ArkUX_Stage_Slider_showTips_1300
-     * @tc.name      Set the Slider component showTips attribute parameter for (value: false, content: undefined)
-     * @tc.desc      Verify that the parameter value of the Slider component showTips attribute is of bubble free type,
-     *               content is of outlier, and the result is no user-defined text
+     * @tc.name   ArkUX_Stage_Slider_showTips_1300
+     * @tc.number ArkUX_Stage_Slider_showTips_1300
+     * @tc.desc   Verify that the parameter value of the Slider component showTips attribute is of bubble free type,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Slider_showTips_1300', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000)
@@ -413,10 +439,12 @@ export default function SliderTestSec() {
     })
 
     /**
-     * @tc.number    ArkUX_Stage_Slider_showTips_1400
-     * @tc.name      Set the showTips property of the Slider to (value:false,content:1234).
-     * @tc.desc      Verify that the parameter value of the Slider component showTips attribute is of bubble free type,
-     *               content is of outlier, and the result is no user-defined text
+     * @tc.name   ArkUX_Stage_Slider_showTips_1400
+     * @tc.number ArkUX_Stage_Slider_showTips_1400
+     * @tc.desc   Verify that the parameter value of the Slider component showTips attribute is of bubble free type,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Slider_showTips_1400', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000)
@@ -442,10 +470,12 @@ export default function SliderTestSec() {
     
 
     /**
-     * @tc.number    ArkUX_Stage_Slider_showTips_1500
-     * @tc.name      Set the showTips property of the Slider component (value:true,content:null).
-     * @tc.desc      Verify and set the Slider component showTips attribute parameter value as the type with bubbles,
-     *               content as the outlier, and obtain the result as no user-defined text
+     * @tc.name   ArkUX_Stage_Slider_showTips_1500
+     * @tc.number ArkUX_Stage_Slider_showTips_1500
+     * @tc.desc   Verify and set the Slider component showTips attribute parameter value as the type with bubbles,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Slider_showTips_1500', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000)
@@ -469,10 +499,12 @@ export default function SliderTestSec() {
     })
 
     /**
-     * @tc.number    ArkUX_Stage_Slider_showTips_1600
-     * @tc.name      Set the Slider component showTips attributes (value: true, content: undefined)
-     * @tc.desc      Verify and set the Slider component showTips attribute parameter value as the type with bubbles,
-     *               content as the outlier, and obtain the result as no user-defined text
+     * @tc.name   ArkUX_Stage_Slider_showTips_1600
+     * @tc.number ArkUX_Stage_Slider_showTips_1600
+     * @tc.desc   Verify and set the Slider component showTips attribute parameter value as the type with bubbles,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Slider_showTips_1600', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000)
@@ -496,10 +528,12 @@ export default function SliderTestSec() {
     })
 
     /**
-     * @tc.number    ArkUX_Stage_Slider_showTips_1700
-     * @tc.name     Set the showTips property of the Slider component (value:true,content:1234)
-     * @tc.desc      Verify and set the Slider component showTips attribute parameter value as the type with bubbles,
-     *               content as the outlier, and obtain the result as no user-defined text
+     * @tc.name   ArkUX_Stage_Slider_showTips_1700
+     * @tc.number ArkUX_Stage_Slider_showTips_1700
+     * @tc.desc   Verify and set the Slider component showTips attribute parameter value as the type with bubbles,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Slider_showTips_1700', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000)
@@ -523,11 +557,12 @@ export default function SliderTestSec() {
     })
 
     /**
-     * @tc.number    ArkUX_Stage_Slider_showTips_1800
-     * @tc.name      Continuously set the Slider component showTips attribute,
-     *               and set the content to an invalid value the last time
-     * @tc.desc      Verify that the Slider component showTips property is set continuously, and the last time it is
-     *               set to an invalid value, the result obtained is no custom text.
+     * @tc.name   ArkUX_Stage_Slider_showTips_1800
+     * @tc.number ArkUX_Stage_Slider_showTips_1800
+     * @tc.desc   Verify that the Slider component showTips property is set continuously, and the last time it is
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Slider_showTips_1800', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000)
@@ -553,11 +588,12 @@ export default function SliderTestSec() {
     })
 
     /**
-     * @tc.number    ArkUX_Stage_Slider_showTips_1900
-     * @tc.name      Set the showTips attribute of the Slider component continuously,
-     *               and pass in the outlier and then the normal value
-     * @tc.desc      Verify that the Slider component showTips attribute is set continuously. After passing in the
-                     outlier,the normal value is passed in. The result is the last set normal value
+     * @tc.name   ArkUX_Stage_Slider_showTips_1900
+     * @tc.number ArkUX_Stage_Slider_showTips_1900
+     * @tc.desc   Verify that the Slider component showTips attribute is set continuously. After passing in the
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Slider_showTips_1900', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000)
@@ -583,10 +619,12 @@ export default function SliderTestSec() {
     })
 
     /**
-     * @tc.number    ArkUX_Stage_Slider_showTips_2000
-     * @tc.name      Do not set the Slider component showTips property
-     * @tc.desc      Verify that the Slider component showTips property is not set and the
-     *               result is no bubbles or text appearing
+     * @tc.name   ArkUX_Stage_Slider_showTips_2000
+     * @tc.number ArkUX_Stage_Slider_showTips_2000
+     * @tc.desc   Verify that the Slider component showTips property is not set and the
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Slider_showTips_2000', Level.LEVEL0, async (done: Function) => {
       try{
@@ -607,9 +645,12 @@ export default function SliderTestSec() {
     })
 
     /**
-     * @tc.number    ArkUX_Stage_Slider_showTips_2100
-     * @tc.name      Slider custom text display
-     * @tc.desc      Set the parameter to an overly long string
+     * @tc.name   ArkUX_Stage_Slider_showTips_2100
+     * @tc.number ArkUX_Stage_Slider_showTips_2100
+     * @tc.desc   Set the parameter to an overly long string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Slider_showTips_2100', Level.LEVEL0, async (done: Function) => {
       await forKey("trueStr","aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
@@ -632,9 +673,12 @@ export default function SliderTestSec() {
     })
 
     /**
-     * @tc.number    ArkUX_Stage_Slider_showTips_2200
-     * @tc.name      Slider custom text display
-     * @tc.desc      Set the parameter to a string with line breaks
+     * @tc.name   ArkUX_Stage_Slider_showTips_2200
+     * @tc.number ArkUX_Stage_Slider_showTips_2200
+     * @tc.desc   Set the parameter to a string with line breaks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Slider_showTips_2200', Level.LEVEL0, async (done: Function) => {
       await forKey("trueStr","aaa\nbbb");

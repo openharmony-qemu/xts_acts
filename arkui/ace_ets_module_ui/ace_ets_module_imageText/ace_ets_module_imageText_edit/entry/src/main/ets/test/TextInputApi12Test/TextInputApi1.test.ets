@@ -45,9 +45,12 @@ export default function TextInputApi1() {
     });
 
     /**
+     * @tc.name   TextInputApi1_0100
      * @tc.number TextInputApi1_testFocus_0100
-     * @tc.name   testFocus
      * @tc.desc   testFocus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextInputApi1_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('TextInputApi1_0100 START');

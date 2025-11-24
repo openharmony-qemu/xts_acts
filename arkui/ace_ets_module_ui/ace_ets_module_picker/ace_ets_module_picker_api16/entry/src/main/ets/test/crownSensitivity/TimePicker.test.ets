@@ -56,12 +56,12 @@ export default function TimePicker() {
         });
 
         /**
-         * @tc.number: ArkUX_Stage_TimePicker_ComponentTest_0100
-         * @tc.name  : testArcAlphabetIndexerComponent.
-         * @tc.desc  : verifyBaseFunction.
-         * @tc.size  : MediumTest
-         * @tc.type  : Function
-         * @tc.level : Level 0
+         * @tc.name   ArkUX_Stage_TimePicker_ComponentTest_0100
+         * @tc.number ArkUX_Stage_TimePicker_ComponentTest_0100
+         * @tc.desc   verifyBaseFunction.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('ArkUX_Stage_TimePicker_ComponentTest_0100', Level.LEVEL1, async (done: Function) => {
           // Verify the functions of the ArcAlphabetIndexer component
@@ -78,12 +78,12 @@ export default function TimePicker() {
 
 
         /**
-         * @tc.number: ArkUX_Stage_TimePicker_ComponentTest_0200
-         * @tc.name  : testArcAlphabetIndexerComponent.
-         * @tc.desc  : verifyBaseFunction.
-         * @tc.size  : MediumTest
-         * @tc.type  : Function
-         * @tc.level : Level 0
+         * @tc.name   ArkUX_Stage_TimePicker_ComponentTest_0200
+         * @tc.number ArkUX_Stage_TimePicker_ComponentTest_0200
+         * @tc.desc   verifyBaseFunction.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('ArkUX_Stage_TimePicker_ComponentTest_0200', Level.LEVEL1, async (done: Function) => {
           // Verify the functions of the ArcAlphabetIndexer component
@@ -101,12 +101,12 @@ export default function TimePicker() {
         });
 
         /**
-         * @tc.number: ArkUX_Stage_TimePicker_ComponentTest_0300
-         * @tc.name  : testArcAlphabetIndexerComponent.
-         * @tc.desc  : verifyBaseFunction.
-         * @tc.size  : MediumTest
-         * @tc.type  : Function
-         * @tc.level : Level 0
+         * @tc.name   ArkUX_Stage_TimePicker_ComponentTest_0300
+         * @tc.number ArkUX_Stage_TimePicker_ComponentTest_0300
+         * @tc.desc   verifyBaseFunction.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('ArkUX_Stage_TimePicker_ComponentTest_0300', Level.LEVEL1, async (done: Function) => {
           // Verify the functions of the ArcAlphabetIndexer component
@@ -122,12 +122,12 @@ export default function TimePicker() {
         });
 
         /**
-         * @tc.number: ArkUX_Stage_TimePicker_ComponentTest_0400
-         * @tc.name  : testArcAlphabetIndexerComponent.
-         * @tc.desc  : verifyBaseFunction.
-         * @tc.size  : MediumTest
-         * @tc.type  : Function
-         * @tc.level : Level 0
+         * @tc.name   ArkUX_Stage_TimePicker_ComponentTest_0400
+         * @tc.number ArkUX_Stage_TimePicker_ComponentTest_0400
+         * @tc.desc   verifyBaseFunction.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('ArkUX_Stage_TimePicker_ComponentTest_0400', Level.LEVEL1, async (done: Function) => {
           // Verify the functions of the ArcAlphabetIndexer component
@@ -143,12 +143,12 @@ export default function TimePicker() {
         });
 
         /**
-         * @tc.number: ArkUX_Stage_TimePicker_ComponentTest_0500
-         * @tc.name  : testArcAlphabetIndexerComponent.
-         * @tc.desc  : verifyBaseFunction.
-         * @tc.size  : MediumTest
-         * @tc.type  : Function
-         * @tc.level : Level 0
+         * @tc.name   ArkUX_Stage_TimePicker_ComponentTest_0500
+         * @tc.number ArkUX_Stage_TimePicker_ComponentTest_0500
+         * @tc.desc   verifyBaseFunction.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('ArkUX_Stage_TimePicker_ComponentTest_0500', Level.LEVEL1, async (done: Function) => {
           // Verify the functions of the ArcAlphabetIndexer component
@@ -164,12 +164,12 @@ export default function TimePicker() {
         });
 
       /**
-       * @tc.number: ArkUX_Stage_TimePicker_ComponentTest_0600
-       * @tc.name  : testArcAlphabetIndexerComponent.
-       * @tc.desc  : verifyBaseFunction.
-       * @tc.size  : MediumTest
-       * @tc.type  : Function
-       * @tc.level : Level 0
+       * @tc.name   ArkUX_Stage_TimePicker_ComponentTest_0600
+       * @tc.number ArkUX_Stage_TimePicker_ComponentTest_0600
+       * @tc.desc   verifyBaseFunction.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
        */
       it('ArkUX_Stage_TimePicker_ComponentTest_0600', Level.LEVEL1, async (done: Function) => {
         // Verify the functions of the ArcAlphabetIndexer component
@@ -185,12 +185,12 @@ export default function TimePicker() {
       });
 
       /**
-       * @tc.number: ArkUX_Stage_TimePicker_ComponentTest_0700
-       * @tc.name  : testArcAlphabetIndexerComponent.
-       * @tc.desc  : verifyBaseFunction.
-       * @tc.size  : MediumTest
-       * @tc.type  : Function
-       * @tc.level : Level 0
+       * @tc.name   ArkUX_Stage_TimePicker_ComponentTest_0700
+       * @tc.number ArkUX_Stage_TimePicker_ComponentTest_0700
+       * @tc.desc   verifyBaseFunction.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
        */
       it('ArkUX_Stage_TimePicker_ComponentTest_0700', Level.LEVEL1, async (done: Function) => {
         // Verify the functions of the ArcAlphabetIndexer component

@@ -47,12 +47,12 @@ export default function APIPreDragStatusTest() {
     });
 
     /**
-     * @tc.number    SUB_APIPreDragStatusTest_0010
-     * @tc.name      APIPreDragStatusTest_0010
-     * @tc.desc      api test ACTION_DETECTING_STATUS
-     * @tc.level:    Level
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   APIPreDragStatusTest_0010
+     * @tc.number SUB_APIPreDragStatusTest_0010
+     * @tc.desc   api test ACTION_DETECTING_STATUS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APIPreDragStatusTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('APIPreDragStatusTest_0010 START');
@@ -72,12 +72,12 @@ export default function APIPreDragStatusTest() {
     });
 
     /**
-     * @tc.number   SUB_APIPreDragStatusTest_0020
-    * @tc.name      APIPreDragStatusTest_0020
-     * @tc.desc      api test READY_TO_TRIGGER_DRAG_ACTION
-     * @tc.level:    Level
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   APIPreDragStatusTest_0020
+     * @tc.number SUB_APIPreDragStatusTest_0020
+     * @tc.desc   api test READY_TO_TRIGGER_DRAG_ACTION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APIPreDragStatusTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('APIPreDragStatusTest_0020 START');
@@ -101,12 +101,12 @@ export default function APIPreDragStatusTest() {
     });
 
     /**
-     * @tc.number   SUB_APIPreDragStatusTest_0030
-    * @tc.name      APIPreDragStatusTest_0030
-     * @tc.desc      api test PREVIEW_LIFT_STARTED
-     * @tc.level:    Level
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   APIPreDragStatusTest_0030
+     * @tc.number SUB_APIPreDragStatusTest_0030
+     * @tc.desc   api test PREVIEW_LIFT_STARTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APIPreDragStatusTest_0030', Level.LEVEL0, async (done: Function) => {
       console.info('APIPreDragStatusTest_0030 START');
@@ -129,12 +129,12 @@ export default function APIPreDragStatusTest() {
       done();
     });
     /**
-     * @tc.number   SUB_APIPreDragStatusTest_0040
-    * @tc.name      APIPreDragStatusTest_0040
-     * @tc.desc      api test PREVIEW_LIFT_FINISHED
-     * @tc.level:    Level
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   APIPreDragStatusTest_0040
+     * @tc.number SUB_APIPreDragStatusTest_0040
+     * @tc.desc   api test PREVIEW_LIFT_FINISHED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APIPreDragStatusTest_0040', Level.LEVEL0, async (done: Function) => {
       console.info('APIPreDragStatusTest_0040 START');
@@ -158,12 +158,12 @@ export default function APIPreDragStatusTest() {
       done();
     });
     /**
-     * @tc.number   SUB_APIPreDragStatusTest_0050
-    * @tc.name      APIPreDragStatusTest_0050
-     * @tc.desc      api test PREVIEW_LANDING_STARTED
-     * @tc.level:    Level
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   APIPreDragStatusTest_0050
+     * @tc.number SUB_APIPreDragStatusTest_0050
+     * @tc.desc   api test PREVIEW_LANDING_STARTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APIPreDragStatusTest_0050', Level.LEVEL0, async (done: Function) => {
       console.info('APIPreDragStatusTest_0050 START');
@@ -187,12 +187,12 @@ export default function APIPreDragStatusTest() {
     });
 
     /**
-     * @tc.number   SUB_APIPreDragStatusTest_0060
-    * @tc.name      APIPreDragStatusTest_0060
-     * @tc.desc      api test PREVIEW_LANDING_FINISHED
-     * @tc.level:    Level
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   APIPreDragStatusTest_0060
+     * @tc.number SUB_APIPreDragStatusTest_0060
+     * @tc.desc   api test PREVIEW_LANDING_FINISHED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APIPreDragStatusTest_0060', Level.LEVEL0, async (done: Function) => {
       console.info('APIPreDragStatusTest_0060 START');

@@ -46,12 +46,12 @@ export default function groupHeight() {
     });
 
     /**
-     * @tc.number    groupHeight_001
-     * @tc.name      groupHeight_0100
-     * @tc.desc      Set integer multiples of 2 in ListItem is 0 and call the ScrollPage interface.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   groupHeight_0100
+     * @tc.number groupHeight_001
+     * @tc.desc   Set integer multiples of 2 in ListItem is 0 and call the ScrollPage interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('groupHeight_0100', Level.LEVEL3, async (done: Function) => {
       console.info('[groupHeight_0100] START');

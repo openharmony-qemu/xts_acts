@@ -41,12 +41,12 @@ export default function localizedButtonPaddingTest() {
     });
 
     /**
-     * @tc.number    localizedButtonPaddingTest_0100
-     * @tc.name      localizedButtonPaddingTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   localizedButtonPaddingTest_0100
+     * @tc.number localizedButtonPaddingTest_0100
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('localizedButtonPaddingTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -63,12 +63,12 @@ export default function localizedButtonPaddingTest() {
       done();
     });
     /**
-     * @tc.number    localizedButtonPaddingTest_0200
-     * @tc.name      localizedButtonPaddingTest_0200
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   localizedButtonPaddingTest_0200
+     * @tc.number localizedButtonPaddingTest_0200
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('localizedButtonPaddingTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {

@@ -41,13 +41,13 @@ export default function closePopupTest() {
         done();
       });
       /**
-     * @tc.number    closePopup
-     * @tc.name      closePopupTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
-     */
+       * @tc.name   closePopupTest_0100
+       * @tc.number closePopup
+       * @tc.desc   api
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
       it('closePopupTest_0100', Level.LEVEL2, async (done: Function) => {
         let tagName = 'closePopupTest_0100';
         console.info('[' + tagName + '] START============================');

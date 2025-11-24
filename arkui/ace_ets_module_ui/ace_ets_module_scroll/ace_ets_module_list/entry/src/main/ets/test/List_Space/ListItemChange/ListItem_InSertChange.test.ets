@@ -65,12 +65,12 @@ export default function listItem_InSertChange() {
     });
 
     /**
+     * @tc.name   testListItemInSertChangeFiftyPercent
      * @tc.number SUB_ACE_LIST_LISTITEM_INSERTCHANGE_TEST_0100
-     * @tc.name testListItemInSertChangeFiftyPercent
-     * @tc.desc The size of the text component in the ListItem subcomponent changes 50%
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   The size of the text component in the ListItem subcomponent changes 50%
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListItemInSertChangeFiftyPercent',  Level.LEVEL0, async (done: Function) => {
       console.info('new testListItemInSertChangeFiftyPercent START');
@@ -131,12 +131,12 @@ export default function listItem_InSertChange() {
     });
 
     /**
+     * @tc.name   testListItemInSertChangeOneHundredAndTenPercent
      * @tc.number SUB_ACE_LIST_LISTITEM_INSERTCHANGE_TEST_0200
-     * @tc.name testListItemInSertChangeOneHundredAndTenPercent
-     * @tc.desc The size of the text component in the ListItem subcomponent changes 110%
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   The size of the text component in the ListItem subcomponent changes 110%
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListItemInSertChangeOneHundredAndTenPercent',  Level.LEVEL0, async (done: Function) => {
       console.info('new testListItemInSertChangeOneHundredAndTenPercent START');

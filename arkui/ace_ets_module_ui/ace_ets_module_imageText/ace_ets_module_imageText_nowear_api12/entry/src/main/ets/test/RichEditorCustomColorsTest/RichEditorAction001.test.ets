@@ -56,12 +56,12 @@ export default function RichEditorAction001() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ACTION_0070_773
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ACTION_0070_773
-     * @tc.desc  : Enter a single/text content and view the content of the onIMEInputComplete recovery content, verify the returned RichEditorTextSpanResult content results
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ACTION_0070_773
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ACTION_0070_773
+     * @tc.desc   Enter a single/text content and view the content of the onIMEInputComplete recovery content, verify the returned RichEditorTextSpanResult content results
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ACTION_0070_773',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ACTION_0070_773 START');

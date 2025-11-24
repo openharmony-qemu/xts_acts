@@ -42,14 +42,14 @@ export default function ListLanes05() {
       done();
     });
 
-     /* *
-      * @tc.number: ListLanes05_001
-      * @tc.name  : ListLanes05_001
-      * @tc.desc  : set gutter to 10lpx and listDirection to Axis.Horizontal
-      * @tc.level : Level 3
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   ListLanes05_001
+     * @tc.number ListLanes05_001
+     * @tc.desc   set gutter to 10lpx and listDirection to Axis.Horizontal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ListLanes05_001',  Level.LEVEL3, async (done: Function) => {
 
       console.info('[ListLanes05_001] START');
@@ -64,14 +64,14 @@ export default function ListLanes05() {
       done();
     });
 
-     /* *
-      * @tc.number: ListLanes05_002
-      * @tc.name  : ListLanes05_002
-      * @tc.desc  : set gutter to 10px and listDirection to Axis.Horizontal
-      * @tc.level : Level 3
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   ListLanes05_002
+     * @tc.number ListLanes05_002
+     * @tc.desc   set gutter to 10px and listDirection to Axis.Horizontal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ListLanes05_002',  Level.LEVEL3, async (done: Function) => {
 
       console.info('[ListLanes05_002] START');
@@ -86,14 +86,14 @@ export default function ListLanes05() {
       done();
     });
 
-     /* *
-      * @tc.number: ListLanes05_003
-      * @tc.name  : ListLanes05_003
-      * @tc.desc  : set gutter to 10vp and listDirection to Axis.Horizontal
-      * @tc.level : Level 3
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   ListLanes05_003
+     * @tc.number ListLanes05_003
+     * @tc.desc   set gutter to 10vp and listDirection to Axis.Horizontal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ListLanes05_003',  Level.LEVEL3, async (done: Function) => {
 
       console.info('[ListLanes05_003] START');
@@ -108,14 +108,14 @@ export default function ListLanes05() {
       done();
     });
 
-     /* *
-      * @tc.number: ListLanes05_004
-      * @tc.name  : ListLanes05_004
-      * @tc.desc  : set gutter to Resource and listDirection to Axis.Horizontal
-      * @tc.level : Level 3
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   ListLanes05_004
+     * @tc.number ListLanes05_004
+     * @tc.desc   set gutter to Resource and listDirection to Axis.Horizontal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ListLanes05_004',  Level.LEVEL3, async (done: Function) => {
 
       console.info('[ListLanes05_004] START');

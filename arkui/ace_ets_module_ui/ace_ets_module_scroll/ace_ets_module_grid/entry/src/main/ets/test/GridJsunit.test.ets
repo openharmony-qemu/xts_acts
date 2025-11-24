@@ -45,12 +45,12 @@ export default function GridJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0100
      * @tc.number GridJsunit_0100
-     * @tc.name testGridProperties
-     * @tc.desc testGridProperties
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   testGridProperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0100',  Level.LEVEL0, async (done: Function) => {
       // Get the information of the Grid component
@@ -76,12 +76,12 @@ export default function GridJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0200
      * @tc.number GridJsunit_0200
-     * @tc.name testGridProperties
-     * @tc.desc testGridProperties
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   testGridProperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0200',  Level.LEVEL0, async (done: Function) => {
       // Modify the properties of component Grid
@@ -130,12 +130,12 @@ export default function GridJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0300
      * @tc.number GridJsunit_0300
-     * @tc.name testGridProperties
-     * @tc.desc testGridProperties
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   testGridProperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0300',  Level.LEVEL0, async (done: Function) => {
       // Illegal modification of properties of component grid
@@ -185,12 +185,12 @@ export default function GridJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0400
      * @tc.number GridJsunit_0400
-     * @tc.name testGridProperties
-     * @tc.desc testGridProperties
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   testGridProperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0400',  Level.LEVEL0, async (done: Function) => {
       // Verify the event of the Grid component
@@ -230,12 +230,12 @@ export default function GridJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0500
      * @tc.number GridJsunit_0500
-     * @tc.name testGridProperties
-     * @tc.desc testGridProperties
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   testGridProperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0500',  Level.LEVEL0, async (done: Function) => {
       // Get the default attribute value of the Grid component
@@ -259,12 +259,12 @@ export default function GridJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0600
      * @tc.number GridJsunit_0600
-     * @tc.name testGridProperties
-     * @tc.desc testGridProperties
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   testGridProperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0600',  Level.LEVEL0, async (done: Function) => {
       // Verify that rowsTemplate and columnsTemplate are set at the same time
@@ -293,12 +293,12 @@ export default function GridJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0700
      * @tc.number GridJsunit_0700
-     * @tc.name testGridProperties
-     * @tc.desc testGridProperties
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   testGridProperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0700',  Level.LEVEL0, async (done: Function) => {
       // Verify only setting columnsTemplate of Grid component
@@ -321,12 +321,12 @@ export default function GridJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0800
      * @tc.number GridJsunit_0800
-     * @tc.name testGridProperties
-     * @tc.desc testGridProperties
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   testGridProperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0800',  Level.LEVEL0, async (done: Function) => {
       // Verify only setting rowsTemplate of grid component
@@ -350,12 +350,12 @@ export default function GridJsunit() {
     });
 
     /**
+     * @tc.name   GridJsunit_0900
      * @tc.number GridJsunit_0900
-     * @tc.name testGridProperties
-     * @tc.desc testGridProperties
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   testGridProperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridJsunit_0900',  Level.LEVEL0, async (done: Function) => {
       // Verify Neither rowsTemplate nor columnsTemplate is set

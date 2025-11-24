@@ -42,14 +42,15 @@ export default function UIFontAliasInfo() {
       console.info("UIFontAliasInfo after each called");
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_UIFontAliasInfo_001
-     * @tc.name      UIFontAliasInfo_001
-     * @tc.desc      styled_string test
-     * @tc.level     Level 1
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   UIFontAliasInfo_001
+     * @tc.number UIFontAliasInfo_001
+     * @tc.desc   UIFontAliasInfo_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('UIFontAliasInfo_001', Level.LEVEL1, async (done: Function) => {
       console.info('[UIFontAliasInfo_001] START');
       let driver = Driver.create();

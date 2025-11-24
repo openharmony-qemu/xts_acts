@@ -42,12 +42,12 @@ export default function shadowAlphaJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ACE_RENDERNODE_SHADOWALPHA_0100
-     * @tc.name  : shadowAlphaJsunit_0100
-     * @tc.desc  : set api
-     * @tc.level : Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   shadowAlphaJsunit_0100
+     * @tc.number SUB_ACE_RENDERNODE_SHADOWALPHA_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('shadowAlphaJsunit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[shadowAlphaJsunit_0100] START');

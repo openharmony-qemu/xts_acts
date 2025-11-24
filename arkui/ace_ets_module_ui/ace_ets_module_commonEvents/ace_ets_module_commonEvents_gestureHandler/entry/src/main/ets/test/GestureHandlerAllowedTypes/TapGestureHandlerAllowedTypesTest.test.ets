@@ -47,16 +47,12 @@ export default function TapGestureHandlerAllowedTypesTest() {
     });
 
     /**
-     * @tc.number     TapGestureHandlerAllowedTypesTest_0010
-     * @tc.name      TapGestureHandlerAllowedTypesTest_0010
-     * @tc.desc      allowedTypes api test for TapGesture, will do the following test scenarios:
-     *               1、try to trigger LongPressGesture with Mouse and Finger with allowedTypes setting to [], which is default setting.
-     *               2、press button to change allowedTypes to [SourceTool.Mouse] and try to trigger the gesture again with Mouse and Finger
-     *               3、press button to change allowedTypes to [SourceTool.Finger] and try to trigger the gesture again with Mouse and Finger
-     *               4、press button to change allowedTypes to invalid values, [null, undefined], and try to trigger the gesture again
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TapGestureHandlerAllowedTypesTest_0010
+     * @tc.number TapGestureHandlerAllowedTypesTest_0010
+     * @tc.desc   allowedTypes api test for TapGesture, will do the following test scenarios:
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TapGestureHandlerAllowedTypesTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('TapGestureHandlerAllowedTypesTest_0010 START');

@@ -47,12 +47,12 @@ export default function touchEventTest() {
     });
 
     /**
-     * @tc.number    touchEventTest_0010
-     * @tc.name      touchEventTest_0010
-     * @tc.desc      touchEvent get globalDisplay coordinates
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   touchEventTest_0010
+     * @tc.number touchEventTest_0010
+     * @tc.desc   touchEvent get globalDisplay coordinates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('touchEventTest_0010', Level.LEVEL1, async (done: Function) => {
       console.info('[touchEventTest_0010] START');

@@ -40,14 +40,14 @@ export default function popoverDialogTest(){
       }
       done();
     });
-    /* *
-    * @tc.number: popoverDialogTest_0100
-    * @tc.name  : popoverDialogTest_0100
-    * @tc.desc  : To to test the use of PopoverDialog Interface
-    * @tc.level : Level 3
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   popoverDialogTest_0100
+     * @tc.number popoverDialogTest_0100
+     * @tc.desc   To to test the use of PopoverDialog Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('popoverDialogTest_0100', Level.LEVEL0, async (done:Function) =>{
       console.info('popoverDialogTest_0100 START');
       let driver = await Driver.create()

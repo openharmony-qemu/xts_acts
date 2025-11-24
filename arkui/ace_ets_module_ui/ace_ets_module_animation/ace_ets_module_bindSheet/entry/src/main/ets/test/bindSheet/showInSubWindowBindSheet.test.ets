@@ -59,13 +59,13 @@ export default function showInSubWindowBindSheet() {
     ;
 
     /**
+     * @tc.name   showInSubWindowBindSheet_0100
      * @tc.number SUB_ACE_showInSubWindowBindSheet_0100
-     * @tc.name showInSubWindowBindSheet_0100
-     * @tc.desc set preferType:SheetType.CENTER;showInSubWindow:false
-     * @tc.level: Level 1
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   set preferType:SheetType.CENTER;showInSubWindow:false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('showInSubWindowBindSheet_0100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('showInSubWindowBindSheet_0100 START');
       if (globalThis.winLeft > 0) {
@@ -87,13 +87,13 @@ export default function showInSubWindowBindSheet() {
     });
 
     /**
+     * @tc.name   showInSubWindowBindSheet_0200
      * @tc.number SUB_ACE_showInSubWindowBindSheet_0200
-     * @tc.name showInSubWindowBindSheet_0200
-     * @tc.desc set preferType:SheetType.CENTER;showInSubWindow:true
-     * @tc.level: Level 1
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   set preferType:SheetType.CENTER;showInSubWindow:true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('showInSubWindowBindSheet_0200',TestType.Function | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('showInSubWindowBindSheet_0200 START');
       if (globalThis.winLeft > 0) {
@@ -118,13 +118,13 @@ export default function showInSubWindowBindSheet() {
     });
 
     /**
+     * @tc.name   showInSubWindowBindSheet_0300
      * @tc.number SUB_ACE_showInSubWindowBindSheet_0300
-     * @tc.name showInSubWindowBindSheet_0300
-     * @tc.desc set preferType:SheetType.CENTER;showInSubWindow:null
-     * @tc.level: Level 1
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   set preferType:SheetType.CENTER;showInSubWindow:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('showInSubWindowBindSheet_0300',TestType.Function | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('showInSubWindowBindSheet_0300 START');
       if (globalThis.winLeft > 0) {
@@ -148,13 +148,13 @@ export default function showInSubWindowBindSheet() {
       done();
     });
     /**
+     * @tc.name   showInSubWindowBindSheet_0400
      * @tc.number SUB_ACE_showInSubWindowBindSheet_0400
-     * @tc.name showInSubWindowBindSheet_0400
-     * @tc.desc set preferType:SheetType.CENTER;showInSubWindow:undefined
-     * @tc.level: Level 1
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   set preferType:SheetType.CENTER;showInSubWindow:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('showInSubWindowBindSheet_0400', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('showInSubWindowBindSheet_0400 START');
       if (globalThis.winLeft > 0) {
@@ -179,13 +179,13 @@ export default function showInSubWindowBindSheet() {
     });
 
     /**
+     * @tc.name   showInSubWindowBindSheet_0500
      * @tc.number SUB_ACE_showInSubWindowBindSheet_0500
-     * @tc.name showInSubWindowBindSheet_0500
-     * @tc.desc set preferType:SheetType.POPUP;showInSubWindow:false
-     * @tc.level: Level 1
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   set preferType:SheetType.POPUP;showInSubWindow:false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('showInSubWindowBindSheet_0500',TestType.Function | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('showInSubWindowBindSheet_0500 START');
       if (globalThis.winLeft > 0) {
@@ -213,13 +213,13 @@ export default function showInSubWindowBindSheet() {
     });
 
     /**
+     * @tc.name   showInSubWindowBindSheet_0600
      * @tc.number SUB_ACE_showInSubWindowBindSheet_0600
-     * @tc.name showInSubWindowBindSheet_0600
-     * @tc.desc set preferType:SheetType.POPUP;showInSubWindow:true
-     * @tc.level: Level 1
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   set preferType:SheetType.POPUP;showInSubWindow:true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('showInSubWindowBindSheet_0600', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('showInSubWindowBindSheet_0600 START');
       if (globalThis.winLeft > 0) {
@@ -247,13 +247,13 @@ export default function showInSubWindowBindSheet() {
     });
 
     /**
+     * @tc.name   showInSubWindowBindSheet_0700
      * @tc.number SUB_ACE_showInSubWindowBindSheet_0700
-     * @tc.name showInSubWindowBindSheet_0700
-     * @tc.desc set preferType:SheetType.POPUP;showInSubWindow:null
-     * @tc.level: Level 1
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   set preferType:SheetType.POPUP;showInSubWindow:null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('showInSubWindowBindSheet_0700', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('showInSubWindowBindSheet_0700 START');
       if (globalThis.winLeft > 0) {
@@ -281,13 +281,13 @@ export default function showInSubWindowBindSheet() {
     });
 
     /**
+     * @tc.name   showInSubWindowBindSheet_0800
      * @tc.number SUB_ACE_showInSubWindowBindSheet_0800
-     * @tc.name showInSubWindowBindSheet_0800
-     * @tc.desc set preferType:SheetType.POPUP;showInSubWindow:undefined
-     * @tc.level: Level 1
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   set preferType:SheetType.POPUP;showInSubWindow:undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('showInSubWindowBindSheet_0800', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('showInSubWindowBindSheet_0800 START');
       if (globalThis.winLeft > 0) {

@@ -53,12 +53,14 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       }
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_OnClick2_0100
-    * @tc.name  : OnClick2_0100
-    * @tc.desc  : To test that the Provide decorator supports union types.
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   OnClick2_0100
+     * @tc.number SUB_ACE_OnClick2_0100
+     * @tc.desc   To test that the Provide decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('OnClick2_0100', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000);
       console.info('OnClick2_0100 START');
@@ -72,12 +74,14 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       console.info('[OnClick2_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_OnClick2_0200
-    * @tc.name  : OnClick2_0200
-    * @tc.desc  : To test that the Provide decorator supports union types.
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   OnClick2_0200
+     * @tc.number SUB_ACE_OnClick2_0200
+     * @tc.desc   To test that the Provide decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('OnClick2_0200', Level.LEVEL0, async (done: Function) => {
       console.info('OnClick2_0200 START');
       let driver = await Driver.create()

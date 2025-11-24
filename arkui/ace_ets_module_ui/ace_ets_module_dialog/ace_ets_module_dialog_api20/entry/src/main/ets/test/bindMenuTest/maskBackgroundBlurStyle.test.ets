@@ -45,13 +45,12 @@ export default function maskBackgroundBlurStyleTest() {
     });
 
     /**
-     * @tc.number    bindMenu_maskBackgroundBlurStyle_0001
-     * @tc.name      bindMenu_maskBackgroundBlurStyle_0001
-     * @tc.desc      set mask backgroundBlurStyle is BlurStyle.Thin,
-     *               this use case has device differentiation, and some devices do not support this feature
-     * @tc.level:    Level 2
-     * @tc.type :    TestType.FUNCTION
-     * @tc.size :    Size.MEDIUMTEST
+     * @tc.name   bindMenu_maskBackgroundBlurStyle_0001
+     * @tc.number bindMenu_maskBackgroundBlurStyle_0001
+     * @tc.desc   set mask backgroundBlurStyle is BlurStyle.Thin,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindMenu_maskBackgroundBlurStyle_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("bindMenu_maskBackgroundBlurStyle_0001 START============================");
@@ -81,13 +80,12 @@ export default function maskBackgroundBlurStyleTest() {
     });
 
     /**
-     * @tc.number    bindMenu_maskBackgroundBlurStyle_0002
-     * @tc.name      bindMenu_maskBackgroundBlurStyle_0002
-     * @tc.desc      set mask backgroundBlurStyle is BlurStyle.Regular,
-     *               this use case has device differentiation, and some devices do not support this feature
-     * @tc.level:    Level 2
-     * @tc.type :    TestType.FUNCTION
-     * @tc.size :    Size.MEDIUMTEST
+     * @tc.name   bindMenu_maskBackgroundBlurStyle_0002
+     * @tc.number bindMenu_maskBackgroundBlurStyle_0002
+     * @tc.desc   set mask backgroundBlurStyle is BlurStyle.Regular,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindMenu_maskBackgroundBlurStyle_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("bindMenu_maskBackgroundBlurStyle_0002 START============================");
@@ -118,13 +116,12 @@ export default function maskBackgroundBlurStyleTest() {
     });
 
     /**
-     * @tc.number    bindMenu_maskBackgroundBlurStyle_0003
-     * @tc.name      bindMenu_maskBackgroundBlurStyle_0003
-     * @tc.desc      set mask backgroundBlurStyle is BlurStyle.Thick,
-     *               this use case has device differentiation, and some devices do not support this feature
-     * @tc.level:    Level 2
-     * @tc.type :    TestType.FUNCTION
-     * @tc.size :    Size.MEDIUMTEST
+     * @tc.name   bindMenu_maskBackgroundBlurStyle_0003
+     * @tc.number bindMenu_maskBackgroundBlurStyle_0003
+     * @tc.desc   set mask backgroundBlurStyle is BlurStyle.Thick,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindMenu_maskBackgroundBlurStyle_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('bindMenu_maskBackgroundBlurStyle_0003 START============================');
@@ -154,13 +151,12 @@ export default function maskBackgroundBlurStyleTest() {
     });
 
     /**
-     * @tc.number    bindMenu_maskBackgroundBlurStyle_0004
-     * @tc.name      bindMenu_maskBackgroundBlurStyle_0004
-     * @tc.desc      set mask backgroundBlurStyle is BlurStyle.BACKGROUND_THIN,
-     *               this use case has device differentiation, and some devices do not support this feature
-     * @tc.level:    Level 2
-     * @tc.type :    TestType.FUNCTION
-     * @tc.size :    Size.MEDIUMTEST
+     * @tc.name   bindMenu_maskBackgroundBlurStyle_0004
+     * @tc.number bindMenu_maskBackgroundBlurStyle_0004
+     * @tc.desc   set mask backgroundBlurStyle is BlurStyle.BACKGROUND_THIN,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindMenu_maskBackgroundBlurStyle_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('bindMenu_maskBackgroundBlurStyle_0004 START============================');
@@ -190,13 +186,12 @@ export default function maskBackgroundBlurStyleTest() {
     });
 
     /**
-     * @tc.number    bindMenu_maskBackgroundBlurStyle_0005
-     * @tc.name      bindMenu_maskBackgroundBlurStyle_0005
-     * @tc.desc      set mask backgroundBlurStyle is BlurStyle.BACKGROUND_REGULAR,
-     *               this use case has device differentiation, and some devices do not support this feature
-     * @tc.level:    Level 2
-     * @tc.type :    TestType.FUNCTION
-     * @tc.size :    Size.MEDIUMTEST
+     * @tc.name   bindMenu_maskBackgroundBlurStyle_0005
+     * @tc.number bindMenu_maskBackgroundBlurStyle_0005
+     * @tc.desc   set mask backgroundBlurStyle is BlurStyle.BACKGROUND_REGULAR,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindMenu_maskBackgroundBlurStyle_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('bindMenu_maskBackgroundBlurStyle_0005 START============================');
@@ -226,13 +221,12 @@ export default function maskBackgroundBlurStyleTest() {
     });
 
     /**
-     * @tc.number    bindMenu_maskBackgroundBlurStyle_0006
-     * @tc.name      bindMenu_maskBackgroundBlurStyle_0006
-     * @tc.desc      set mask backgroundBlurStyle is BlurStyle.BACKGROUND_THICK,
-     *               this use case has device differentiation, and some devices do not support this feature
-     * @tc.level:    Level 2
-     * @tc.type :    TestType.FUNCTION
-     * @tc.size :    Size.MEDIUMTEST
+     * @tc.name   bindMenu_maskBackgroundBlurStyle_0006
+     * @tc.number bindMenu_maskBackgroundBlurStyle_0006
+     * @tc.desc   set mask backgroundBlurStyle is BlurStyle.BACKGROUND_THICK,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindMenu_maskBackgroundBlurStyle_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('bindMenu_maskBackgroundBlurStyle_0006 START============================');
@@ -262,13 +256,12 @@ export default function maskBackgroundBlurStyleTest() {
     });
 
     /**
-     * @tc.number    bindMenu_maskBackgroundBlurStyle_0007
-     * @tc.name      bindMenu_maskBackgroundBlurStyle_0007
-     * @tc.desc      set mask backgroundBlurStyle is BlurStyle.BACKGROUND_ULTRA_THICK,
-     *               this use case has device differentiation, and some devices do not support this feature
-     * @tc.level:    Level 2
-     * @tc.type :    TestType.FUNCTION
-     * @tc.size :    Size.MEDIUMTEST
+     * @tc.name   bindMenu_maskBackgroundBlurStyle_0007
+     * @tc.number bindMenu_maskBackgroundBlurStyle_0007
+     * @tc.desc   set mask backgroundBlurStyle is BlurStyle.BACKGROUND_ULTRA_THICK,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindMenu_maskBackgroundBlurStyle_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('bindMenu_maskBackgroundBlurStyle_0007 START============================');
@@ -298,13 +291,12 @@ export default function maskBackgroundBlurStyleTest() {
     });
 
     /**
-     * @tc.number    bindMenu_maskBackgroundBlurStyle_0008
-     * @tc.name      bindMenu_maskBackgroundBlurStyle_0008
-     * @tc.desc      set mask backgroundBlurStyle is BlurStyle.NONE,
-     *               this use case has device differentiation, and some devices do not support this feature
-     * @tc.level:    Level 2
-     * @tc.type :    TestType.FUNCTION
-     * @tc.size :    Size.MEDIUMTEST
+     * @tc.name   bindMenu_maskBackgroundBlurStyle_0008
+     * @tc.number bindMenu_maskBackgroundBlurStyle_0008
+     * @tc.desc   set mask backgroundBlurStyle is BlurStyle.NONE,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindMenu_maskBackgroundBlurStyle_0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('bindMenu_maskBackgroundBlurStyle_0008 START============================');
@@ -334,13 +326,12 @@ export default function maskBackgroundBlurStyleTest() {
     });
     
     /**
-     * @tc.number    bindMenu_maskBackgroundBlurStyle_0009
-     * @tc.name      bindMenu_maskBackgroundBlurStyle_0009
-     * @tc.desc      set mask backgroundBlurStyle is BlurStyle.COMPONENT_ULTRA_THIN,
-     *               this use case has device differentiation, and some devices do not support this feature
-     * @tc.level:    Level 2
-     * @tc.type :    TestType.FUNCTION
-     * @tc.size :    Size.MEDIUMTEST
+     * @tc.name   bindMenu_maskBackgroundBlurStyle_0009
+     * @tc.number bindMenu_maskBackgroundBlurStyle_0009
+     * @tc.desc   set mask backgroundBlurStyle is BlurStyle.COMPONENT_ULTRA_THIN,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindMenu_maskBackgroundBlurStyle_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('bindMenu_maskBackgroundBlurStyle_0009 START============================');
@@ -370,13 +361,12 @@ export default function maskBackgroundBlurStyleTest() {
     });
 
     /**
-     * @tc.number    bindMenu_maskBackgroundBlurStyle_0010
-     * @tc.name      bindMenu_maskBackgroundBlurStyle_0010
-     * @tc.desc      set mask backgroundBlurStyle is BlurStyle.COMPONENT_THIN,
-     *               this use case has device differentiation, and some devices do not support this feature
-     * @tc.level:    Level 2
-     * @tc.type :    TestType.FUNCTION
-     * @tc.size :    Size.MEDIUMTEST
+     * @tc.name   bindMenu_maskBackgroundBlurStyle_0010
+     * @tc.number bindMenu_maskBackgroundBlurStyle_0010
+     * @tc.desc   set mask backgroundBlurStyle is BlurStyle.COMPONENT_THIN,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindMenu_maskBackgroundBlurStyle_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('bindMenu_maskBackgroundBlurStyle_0010 START============================');
@@ -406,13 +396,12 @@ export default function maskBackgroundBlurStyleTest() {
     });
 
     /**
-     * @tc.number    bindMenu_maskBackgroundBlurStyle_0011
-     * @tc.name      bindMenu_maskBackgroundBlurStyle_0011
-     * @tc.desc      set mask backgroundBlurStyle is BlurStyle.COMPONENT_REGULAR,
-     *               this use case has device differentiation, and some devices do not support this feature
-     * @tc.level:    Level 2
-     * @tc.type :    TestType.FUNCTION
-     * @tc.size :    Size.MEDIUMTEST
+     * @tc.name   bindMenu_maskBackgroundBlurStyle_0011
+     * @tc.number bindMenu_maskBackgroundBlurStyle_0011
+     * @tc.desc   set mask backgroundBlurStyle is BlurStyle.COMPONENT_REGULAR,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindMenu_maskBackgroundBlurStyle_0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('bindMenu_maskBackgroundBlurStyle_0011 START============================');
@@ -442,13 +431,12 @@ export default function maskBackgroundBlurStyleTest() {
     });
 
     /**
-     * @tc.number    bindMenu_maskBackgroundBlurStyle_0012
-     * @tc.name      bindMenu_maskBackgroundBlurStyle_0012
-     * @tc.desc      set mask backgroundBlurStyle is BlurStyle.COMPONENT_THICK,
-     *               this use case has device differentiation, and some devices do not support this feature
-     * @tc.level:    Level 2
-     * @tc.type :    TestType.FUNCTION
-     * @tc.size :    Size.MEDIUMTEST
+     * @tc.name   bindMenu_maskBackgroundBlurStyle_0012
+     * @tc.number bindMenu_maskBackgroundBlurStyle_0012
+     * @tc.desc   set mask backgroundBlurStyle is BlurStyle.COMPONENT_THICK,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindMenu_maskBackgroundBlurStyle_0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('bindMenu_maskBackgroundBlurStyle_0012 START============================');
@@ -478,13 +466,12 @@ export default function maskBackgroundBlurStyleTest() {
     });
 
     /**
-     * @tc.number    bindMenu_maskBackgroundBlurStyle_0013
-     * @tc.name      bindMenu_maskBackgroundBlurStyle_0013
-     * @tc.desc      set mask backgroundBlurStyle is BlurStyle.COMPONENT_ULTRA_THICK,
-     *               this use case has device differentiation, and some devices do not support this feature
-     * @tc.level:    Level 2
-     * @tc.type :    TestType.FUNCTION
-     * @tc.size :    Size.MEDIUMTEST
+     * @tc.name   bindMenu_maskBackgroundBlurStyle_0013
+     * @tc.number bindMenu_maskBackgroundBlurStyle_0013
+     * @tc.desc   set mask backgroundBlurStyle is BlurStyle.COMPONENT_ULTRA_THICK,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindMenu_maskBackgroundBlurStyle_0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('bindMenu_maskBackgroundBlurStyle_0013 START============================');
@@ -514,13 +501,12 @@ export default function maskBackgroundBlurStyleTest() {
     });
 
     /**
-     * @tc.number    bindMenu_maskBackgroundBlurStyle_0014
-     * @tc.name      bindMenu_maskBackgroundBlurStyle_0014
-     * @tc.desc      set mask backgroundBlurStyle is undefined,
-     *               this use case has device differentiation, and some devices do not support this feature
-     * @tc.level:    Level 2
-     * @tc.type :    TestType.FUNCTION
-     * @tc.size :    Size.MEDIUMTEST
+     * @tc.name   bindMenu_maskBackgroundBlurStyle_0014
+     * @tc.number bindMenu_maskBackgroundBlurStyle_0014
+     * @tc.desc   set mask backgroundBlurStyle is undefined,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindMenu_maskBackgroundBlurStyle_0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('bindMenu_maskBackgroundBlurStyle_0014 START============================');
@@ -549,13 +535,12 @@ export default function maskBackgroundBlurStyleTest() {
       done();
     });
     /**
-     * @tc.number    bindMenu_maskBackgroundBlurStyle_0015
-     * @tc.name      bindMenu_maskBackgroundBlurStyle_0015
-     * @tc.desc      set mask backgroundBlurStyle is null,
-     *               this use case has device differentiation, and some devices do not support this feature
-     * @tc.level:    Level 2
-     * @tc.type :    TestType.FUNCTION
-     * @tc.size :    Size.MEDIUMTEST
+     * @tc.name   bindMenu_maskBackgroundBlurStyle_0015
+     * @tc.number bindMenu_maskBackgroundBlurStyle_0015
+     * @tc.desc   set mask backgroundBlurStyle is null,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindMenu_maskBackgroundBlurStyle_0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('bindMenu_maskBackgroundBlurStyle_0015 START============================');

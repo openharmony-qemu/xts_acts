@@ -53,12 +53,14 @@ export default function NavigationStack12Jsunit() {
       }
       done();
     });
-    /* *
-    * @tc.number: NavigationStack12Jsunit_0100
-    * @tc.name  : NavigationStack12Jsunit_0100
-    * @tc.desc  : NavigationMode is auto single-column mode.
-    * @tc.level : Level 3
-    */
+    /**
+     * @tc.name   NavigationStack12Jsunit_0100
+     * @tc.number NavigationStack12Jsunit_0100
+     * @tc.desc   NavigationMode is auto single-column mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NavigationStack12Jsunit_0100',  Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000);
       let driver = await UiDriver.create()

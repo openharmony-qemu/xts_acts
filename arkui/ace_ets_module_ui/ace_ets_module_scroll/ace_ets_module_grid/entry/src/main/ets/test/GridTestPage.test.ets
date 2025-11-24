@@ -39,13 +39,13 @@ export default function GridTestPage() {
       done()
     });
 
-    /*
-     * @tc.number ArkUX_Grid_api_0001
+    /**
      * @tc.name   ArkUX_Grid_api_0001
+     * @tc.number ArkUX_Grid_api_0001
      * @tc.desc   Test Grid with GridItemStyle.NONE
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Grid_api_0001', Level.LEVEL1, async (done: Function) => {
       let CASE = 'ArkUX_Grid_api_0001'
@@ -61,13 +61,13 @@ export default function GridTestPage() {
       done()
     });
 
-    /*
-     * @tc.number ArkUX_Grid_api_0002
+    /**
      * @tc.name   ArkUX_Grid_api_0002
+     * @tc.number ArkUX_Grid_api_0002
      * @tc.desc   Test Grid with GridItemStyle.PLAIN
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Grid_api_0002', Level.LEVEL1, async (done: Function) => {
       let CASE = 'ArkUX_Grid_api_0002'
@@ -83,13 +83,13 @@ export default function GridTestPage() {
       done()
     });
 
-    /*
-     * @tc.number ArkUX_Grid_api_0003
+    /**
      * @tc.name   ArkUX_Grid_api_0003
+     * @tc.number ArkUX_Grid_api_0003
      * @tc.desc   Test Grid with exceptional value
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Grid_api_0003', Level.LEVEL1, async (done: Function) => {
       let CASE = 'ArkUX_Grid_api_0003'
@@ -114,13 +114,13 @@ export default function GridTestPage() {
       done()
     });
 
-    /*
-     * @tc.number ArkUX_Grid_api_0004
+    /**
      * @tc.name   ArkUX_Grid_api_0004
+     * @tc.number ArkUX_Grid_api_0004
      * @tc.desc   Test Grid with value not set
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Grid_api_0004', Level.LEVEL1, async (done: Function) => {
       let CASE = 'ArkUX_Grid_api_0004'
@@ -136,13 +136,13 @@ export default function GridTestPage() {
       done()
     });
 
-    /*
-     * @tc.number ArkUX_Grid_api_0005
+    /**
      * @tc.name   ArkUX_Grid_api_0005
+     * @tc.number ArkUX_Grid_api_0005
      * @tc.desc   Test Grid with exceptional value
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Grid_api_0005', Level.LEVEL1, async (done: Function) => {
       let CASE = 'ArkUX_Grid_api_0005'

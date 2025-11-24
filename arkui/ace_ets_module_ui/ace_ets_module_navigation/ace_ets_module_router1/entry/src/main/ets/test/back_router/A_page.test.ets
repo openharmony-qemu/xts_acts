@@ -62,12 +62,12 @@ export default function Params() {
       console.info("Params after each called");
     });
     /**
+     * @tc.name   Params_0100
      * @tc.number SUB_ACE_RICHEDITOR_Params_0100
-     * @tc.name Params
-     * @tc.desc set api
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Params_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[Params_0100] START');

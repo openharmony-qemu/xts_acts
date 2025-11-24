@@ -42,12 +42,12 @@ export default function RichEditorEnableAutoSpacingTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RichEditorEnableAutoSpacingTest_0010
-     * @tc.name      RichEditorEnableAutoSpacingTest_0010
-     * @tc.desc      test the attr of RichEditor: enableAutoSpacing(true)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RichEditorEnableAutoSpacingTest_0010
+     * @tc.number SUB_ACE_RichEditorEnableAutoSpacingTest_0010
+     * @tc.desc   test the attr of RichEditor: enableAutoSpacing(true)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditorEnableAutoSpacingTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('[RichEditorEnableAutoSpacingTest_0010] START');
@@ -60,12 +60,12 @@ export default function RichEditorEnableAutoSpacingTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RichEditorEnableAutoSpacingTest_0020
-     * @tc.name      RichEditorEnableAutoSpacingTest_0020
-     * @tc.desc      test the attr of RichEditor: enableAutoSpacing(false)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RichEditorEnableAutoSpacingTest_0020
+     * @tc.number SUB_ACE_RichEditorEnableAutoSpacingTest_0020
+     * @tc.desc   test the attr of RichEditor: enableAutoSpacing(false)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditorEnableAutoSpacingTest_0020', Level.LEVEL2, async (done: Function) => {
       console.info('[RichEditorEnableAutoSpacingTest_0020] START');
@@ -78,12 +78,12 @@ export default function RichEditorEnableAutoSpacingTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RichEditorEnableAutoSpacingTest_0030
-     * @tc.name      RichEditorEnableAutoSpacingTest_0030
-     * @tc.desc      test the attr of RichEditor: enableAutoSpacing(default)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RichEditorEnableAutoSpacingTest_0030
+     * @tc.number SUB_ACE_RichEditorEnableAutoSpacingTest_0030
+     * @tc.desc   test the attr of RichEditor: enableAutoSpacing(default)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditorEnableAutoSpacingTest_0030', Level.LEVEL2, async (done: Function) => {
       console.info('[RichEditorEnableAutoSpacingTest_0030] START');
@@ -96,12 +96,12 @@ export default function RichEditorEnableAutoSpacingTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RichEditorEnableAutoSpacingTest_0040
-     * @tc.name      RichEditorEnableAutoSpacingTest_0040
-     * @tc.desc      test the attr of RichEditor: enableAutoSpacing(undefined)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RichEditorEnableAutoSpacingTest_0040
+     * @tc.number SUB_ACE_RichEditorEnableAutoSpacingTest_0040
+     * @tc.desc   test the attr of RichEditor: enableAutoSpacing(undefined)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditorEnableAutoSpacingTest_0040', Level.LEVEL2, async (done: Function) => {
       console.info('[RichEditorEnableAutoSpacingTest_0040] START');

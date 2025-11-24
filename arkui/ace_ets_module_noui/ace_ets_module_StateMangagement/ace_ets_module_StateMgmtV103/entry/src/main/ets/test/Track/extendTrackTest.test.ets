@@ -63,12 +63,12 @@ export default function extendTrackTest() {
       await CommonFunc.sleep(2000);
     });
     /**
+     * @tc.name   extendTrackTest_0100
      * @tc.number SUB_ACE_extendTrackTest_0100
-     * @tc.name extendTrackTest_0100
-     * @tc.desc extendTrack
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   extendTrack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('extendTrackTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('extendTrackTest_0100 START');
@@ -86,12 +86,12 @@ export default function extendTrackTest() {
       done();
     });
     /**
+     * @tc.name   extendTrackTest_0200
      * @tc.number SUB_ACE_extendTrackTest_0200
-     * @tc.name extendTrackTest_0200
-     * @tc.desc extendTrack
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   extendTrack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('extendTrackTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('extendTrackTest_0200 START');
@@ -109,12 +109,12 @@ export default function extendTrackTest() {
       done();
     });
     /**
+     * @tc.name   extendTrackTest_0300
      * @tc.number SUB_ACE_extendTrackTest_0300
-     * @tc.name extendTrackTest_0300
-     * @tc.desc extendTrack
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   extendTrack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('extendTrackTest_0300', Level.LEVEL0, async (done: Function) => {
       console.info('extendTrackTest_0300 START');
@@ -132,12 +132,12 @@ export default function extendTrackTest() {
       done();
     });
     /**
+     * @tc.name   extendTrackTest_0400
      * @tc.number SUB_ACE_extendTrackTest_0400
-     * @tc.name extendTrackTest_0400
-     * @tc.desc extendTrack
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   extendTrack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('extendTrackTest_0400', Level.LEVEL0, async (done: Function) => {
       console.info('extendTrackTest_0400 START');

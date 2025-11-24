@@ -47,12 +47,12 @@ export default function ToggleContentEnabled() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUI_Stage_Toggle_Content_0200
-     * @tc.name: ArkUI_Stage_Toggle_Content_0200
-     * @tc.desc: ToggleAPI 
-     * @tc.level: Level 1
-     * @tc.type : Toggle
-     * @tc.size : ToggleTest
+     * @tc.name   ArkUI_Stage_Toggle_Content_0200
+     * @tc.number SUB_ARKUI_API_ArkUI_Stage_Toggle_Content_0200
+     * @tc.desc   ToggleAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_Toggle_Content_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUI_Stage_Toggle_Content_0200] START');

@@ -45,9 +45,12 @@ export default function Navigation_L0_18() {
     });
 
     /**
+     * @tc.name   Navigation_L0_18_0100
      * @tc.number Navigation_L0_18_0100
-     * @tc.name testNavigation
-     * @tc.desc
+     * @tc.desc   Navigation_L0_18_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Navigation_L0_18_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('Navigation_L0_18_0100 START');
@@ -68,9 +71,12 @@ export default function Navigation_L0_18() {
     });
 
     /**
+     * @tc.name   Navigation_L0_18_0200
      * @tc.number Navigation_L0_18_0200
-     * @tc.name removeByNavDestinationId return false
-     * @tc.desc
+     * @tc.desc   Navigation_L0_18_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Navigation_L0_18_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('Navigation_L0_18_0200 START');

@@ -42,12 +42,12 @@ export default function listItemJsunit() {
     });
 
     /**
+     * @tc.name   testList_item00051
      * @tc.number testList_item00051
-     * @tc.name Test the properties of components
-     * @tc.desc Set selected values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set selected values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testList_item00051', Level.LEVEL0, async (done: Function) => {
       console.info('select testList_item00051 START');
@@ -60,12 +60,12 @@ export default function listItemJsunit() {
     });
 
     /**
+     * @tc.name   testList_item00052
      * @tc.number testList_item00052
-     * @tc.name Test the properties of components
-     * @tc.desc Set selectable values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set selectable values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testList_item00052', Level.LEVEL0, async (done: Function) => {
       console.info('select testList_item00052 START');
@@ -78,12 +78,12 @@ export default function listItemJsunit() {
     });
 
     /**
+     * @tc.name   testList_item00053
      * @tc.number testList_item00053
-     * @tc.name Test the properties of components
-     * @tc.desc Change selectable values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change selectable values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testList_item00053', Level.LEVEL0, async (done: Function) => {
       console.info('testList_item00053 START');

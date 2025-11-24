@@ -47,13 +47,13 @@ export default function ResourceModifierTest() {
       console.info("ResourceModifierTest after each called");
     });
 
-    /*
-    * @tc.number       ResourceModifierTest_0010
-    * @tc.name         ResourceModifierTest_0010
-    * @tc.desc        set Resource
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   ResourceModifierTest_0010
+     * @tc.number ResourceModifierTest_0010
+     * @tc.desc   set Resource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ResourceModifierTest_0010', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();
@@ -82,13 +82,13 @@ export default function ResourceModifierTest() {
       done();
     });
 
-    /*
-    * @tc.number       ResourceModifierTest_0020
-    * @tc.name         ResourceModifierTest_0020
-    * @tc.desc        set Resource
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   ResourceModifierTest_0020
+     * @tc.number ResourceModifierTest_0020
+     * @tc.desc   set Resource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ResourceModifierTest_0020', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();
@@ -121,13 +121,13 @@ export default function ResourceModifierTest() {
       done();
     });
 
-    /*
-    * @tc.number       ResourceModifierTest_0030
-    * @tc.name         ResourceModifierTest_0030
-    * @tc.desc        set Resource
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   ResourceModifierTest_0030
+     * @tc.number ResourceModifierTest_0030
+     * @tc.desc   set Resource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ResourceModifierTest_0030', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();

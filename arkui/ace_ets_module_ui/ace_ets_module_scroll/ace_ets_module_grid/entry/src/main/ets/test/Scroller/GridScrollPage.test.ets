@@ -55,13 +55,13 @@ export default function GridScrollPage() {
       console.info("List_scrollToIndex1 after each called");
     });
 
-    /* *
-     * @tc.number: GridScrollPage_0001
-     * @tc.name  : GridScrollPage_0001
-     * @tc.desc  : Set the scroll direction to portrait
-     * @tc.level : Level 2
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   GridScrollPage_0001
+     * @tc.number GridScrollPage_0001
+     * @tc.desc   Set the scroll direction to portrait
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('GridScrollPage_0001',  Level.LEVEL2, async (done: Function) => {
       console.info('[GridScrollPage_0010] START');
@@ -83,13 +83,13 @@ export default function GridScrollPage() {
       done();
     });
 
-    /* *
-     * @tc.number: GridScrollPage_0002
-     * @tc.name  : GridScrollPage_0002
-     * @tc.desc  : lide to previous page
-     * @tc.level : Level 2
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   GridScrollPage_0002
+     * @tc.number GridScrollPage_0002
+     * @tc.desc   lide to previous page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('GridScrollPage_0002',  Level.LEVEL2, async (done: Function) => {
       console.info('[GridScrollPage_0020] START');

@@ -41,12 +41,12 @@ export default function richEditorJsunit() {
     });
 
     /**
+     * @tc.name   richEditorTest_002
      * @tc.number richEditorTest_002
-     * @tc.name Test the properties of components
-     * @tc.desc Set copyOption values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set copyOption values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('richEditorTest_002', Level.LEVEL0, async (done: Function) => {
       console.info('richEditorTest_002 START');
@@ -59,12 +59,12 @@ export default function richEditorJsunit() {
     });
 
     /**
+     * @tc.name   richEditorTest_001
      * @tc.number richEditorTest_001
-     * @tc.name Test the properties of components
-     * @tc.desc Change copyOption values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change copyOption values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('richEditorTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('richEditorTest_001 START');

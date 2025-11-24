@@ -49,10 +49,12 @@ export default function NavigationTitleTest1() {
 
 
     /**
-     * @tc.number    NavigationTitleTest1_0100
-     * @tc.name      NavigationTitleTest1_0100
-     * @tc.desc      Test NavigationTitleOptions
-     * @tc.level     Level 2
+     * @tc.name   NavigationTitleTest1_0100
+     * @tc.number NavigationTitleTest1_0100
+     * @tc.desc   Test NavigationTitleOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationTitleTest1_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('NavigationTitleTest1_0100 START');

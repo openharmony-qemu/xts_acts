@@ -47,12 +47,12 @@ export default function underlineColor() {
     });
 
     /**
-     * @tc.number    underlineColor_0100
-     * @tc.name      underlineColor_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   underlineColor_0100
+     * @tc.number underlineColor_0100
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('underlineColor_0100',  Level.LEVEL2, async (done: Function) => {
       console.info('underlineColor_0100 START');

@@ -41,13 +41,13 @@ export default function EnableHapticFeedbackTest() {
       done();
     });
 
-    /* *
-     * @tc.number: DatePickerEnableHapticFeedback_001
-     * @tc.name  : DatePickerEnableHapticFeedback_001
-     * @tc.desc  : To test the enableHapticFeedback interface true
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   DatePickerEnableHapticFeedback_001
+     * @tc.number DatePickerEnableHapticFeedback_001
+     * @tc.desc   To test the enableHapticFeedback interface true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DatePickerEnableHapticFeedback_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let strJson = getInspectorByKey('datePicker1');
@@ -59,13 +59,13 @@ export default function EnableHapticFeedbackTest() {
       done();
     });
 
-    /* *
-     * @tc.number: DatePickerEnableHapticFeedback_002
-     * @tc.name  : DatePickerEnableHapticFeedback_002
-     * @tc.desc  : To test the enableHapticFeedback interface false
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   DatePickerEnableHapticFeedback_002
+     * @tc.number DatePickerEnableHapticFeedback_002
+     * @tc.desc   To test the enableHapticFeedback interface false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DatePickerEnableHapticFeedback_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let strJson = getInspectorByKey('datePicker2');
@@ -77,13 +77,13 @@ export default function EnableHapticFeedbackTest() {
       done();
     });
 
-    /* *
-     * @tc.number: DatePickerEnableHapticFeedback_003
-     * @tc.name  : DatePickerEnableHapticFeedback_003
-     * @tc.desc  : To test the enableHapticFeedback interface undefined
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   DatePickerEnableHapticFeedback_003
+     * @tc.number DatePickerEnableHapticFeedback_003
+     * @tc.desc   To test the enableHapticFeedback interface undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DatePickerEnableHapticFeedback_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let strJson = getInspectorByKey('datePicker3');
@@ -95,13 +95,13 @@ export default function EnableHapticFeedbackTest() {
       done();
     });
     
-    /* *
-     * @tc.number: DatePickerEnableHapticFeedback_004
-     * @tc.name  : DatePickerEnableHapticFeedback_004
-     * @tc.desc  : To test the enableHapticFeedback interface null
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   DatePickerEnableHapticFeedback_004
+     * @tc.number DatePickerEnableHapticFeedback_004
+     * @tc.desc   To test the enableHapticFeedback interface null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DatePickerEnableHapticFeedback_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let strJson = getInspectorByKey('datePicker4');

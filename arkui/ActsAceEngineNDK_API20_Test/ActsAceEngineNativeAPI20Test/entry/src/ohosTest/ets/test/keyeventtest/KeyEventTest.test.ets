@@ -27,15 +27,15 @@ export default function KeyEventTest() {
       await Utils.pushPage(`KeyEventTest/KeyEventTest`, done);
     });
 
-    /*
-     * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUIKeyEventIsNumLockOn_0100
-     * @tc.name       : testOHArkUIKeyEventIsNumLockOn0100
-     * @tc.desc       : testing OH_ArkUI_KeyEvent_IsNumLockOn interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
 
+    /**
+     * @tc.name   testOHArkUIKeyEventIsNumLockOn0100
+     * @tc.number testOHArkUIKeyEventIsNumLockOn0100
+     * @tc.desc   testOHArkUIKeyEventIsNumLockOn0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIKeyEventIsNumLockOn0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -51,13 +51,13 @@ export default function KeyEventTest() {
         }
       })
 
-    /*
-     * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUIKeyEventIsNumLockOn_0200
-     * @tc.name       : testOHArkUIKeyEventIsNumLockOn0200
-     * @tc.desc       : testing OH_ArkUI_KeyEvent_IsNumLockOn interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testOHArkUIKeyEventIsNumLockOn0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUIKeyEventIsNumLockOn_0200
+     * @tc.desc   testing OH_ArkUI_KeyEvent_IsNumLockOn interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIKeyEventIsNumLockOn0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -74,14 +74,14 @@ export default function KeyEventTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUIKeyEventIsCapsLockOn_0100
-       * @tc.name       : testOHArkUIKeyEventIsCapsLockOn0100
-       * @tc.desc       : testing OH_ArkUI_KeyEvent_IsCapsLockOn interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIKeyEventIsCapsLockOn0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUIKeyEventIsCapsLockOn_0100
+     * @tc.desc   testing OH_ArkUI_KeyEvent_IsCapsLockOn interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIKeyEventIsCapsLockOn0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -97,14 +97,14 @@ export default function KeyEventTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUIKeyEventIsCapsLockOn_0200
-       * @tc.name       : testOHArkUIKeyEventIsCapsLockOn0200
-       * @tc.desc       : testing OH_ArkUI_KeyEvent_IsCapsLockOn interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIKeyEventIsCapsLockOn0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUIKeyEventIsCapsLockOn_0200
+     * @tc.desc   testing OH_ArkUI_KeyEvent_IsCapsLockOn interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIKeyEventIsCapsLockOn0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -120,14 +120,14 @@ export default function KeyEventTest() {
         }
       })
 
-    /*
-    * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUIKeyEventIsScrollLockOn_0100
-    * @tc.name       : testOHArkUIKeyEventIsScrollLockOn0100
-    * @tc.desc       : testing OH_ArkUI_KeyEvent_IsScrollLockOn interface
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testOHArkUIKeyEventIsScrollLockOn0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUIKeyEventIsScrollLockOn_0100
+     * @tc.desc   testing OH_ArkUI_KeyEvent_IsScrollLockOn interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIKeyEventIsScrollLockOn0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -144,14 +144,14 @@ export default function KeyEventTest() {
         }
       })
 
-    /*
-    * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUIKeyEventIsScrollLockOn_0200
-    * @tc.name       : testOHArkUIKeyEventIsScrollLockOn0200
-    * @tc.desc       : testing OH_ArkUI_KeyEvent_IsScrollLockOn interface
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testOHArkUIKeyEventIsScrollLockOn0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUIKeyEventIsScrollLockOn_0200
+     * @tc.desc   testing OH_ArkUI_KeyEvent_IsScrollLockOn interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIKeyEventIsScrollLockOn0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {

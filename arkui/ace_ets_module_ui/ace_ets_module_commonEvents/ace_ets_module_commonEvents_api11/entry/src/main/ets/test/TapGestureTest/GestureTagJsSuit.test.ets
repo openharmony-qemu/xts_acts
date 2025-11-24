@@ -57,13 +57,15 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       console.info("overlay after each called");
     });
 
-    /**
-     * @tc.number	 SUB_ACE_TS_COMPONENTGestureTag_01
-     * @tc.name 	 GestureTagJsSuit_0100
-     * @tc.desc 	 Confirm if there is a callback
-	 * @tc.level     Level 2
-     */
 
+    /**
+     * @tc.name   GestureTagJsSuit_0100
+     * @tc.number GestureTagJsSuit_0100
+     * @tc.desc   GestureTagJsSuit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GestureTagJsSuit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[GestureTagJsSuit_0100] START');
       let driver = await Driver.create()

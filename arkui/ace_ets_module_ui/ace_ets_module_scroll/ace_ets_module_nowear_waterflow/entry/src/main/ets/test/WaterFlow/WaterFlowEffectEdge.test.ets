@@ -40,13 +40,13 @@ export default function WaterFlowEffectEdge() {
       done()
     });
 
-    /*
-     * @tc.number :ArkUI_WaterFlow_EffectEdge_0500
-     * @tc.name   :test effect edge callback
-     * @tc.desc   :test whether edgeEffectiveness Options are effective
-     * @tc.level  :Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ArkUI_WaterFlow_EffectEdge_0500
+     * @tc.number ArkUI_WaterFlow_EffectEdge_0500
+     * @tc.desc   test whether edgeEffectiveness Options are effective
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_WaterFlow_EffectEdge_0500', Level.LEVEL1, async (done: Function) => {
       let json1 = getInspectorByKey('waterFlow4')

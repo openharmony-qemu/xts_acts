@@ -56,12 +56,12 @@ export default function setXComponentSurfaceRotationJsunit() {
     });
 
     /**
+     * @tc.name   setXComponentSurfaceRotationTest_0010
      * @tc.number setXComponentSurfaceRotationTest_0010
-     * @tc.name setXComponentSurfaceRotationTest_0010
-     * @tc.desc Xcomponent: get the api of setXComponentSurfaceRotation
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   Xcomponent: get the api of setXComponentSurfaceRotation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('setXComponentSurfaceRotationTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('setXComponentSurfaceRotationTest_0010 START');

@@ -60,12 +60,12 @@ export default function APIshouldBuiltInRecognizerParallelWith() {
     });
 
     /**
-     * @tc.number    APIshouldBuiltInRecognizerParallelWith_0100
-     * @tc.name      APIshouldBuiltInRecognizerParallelWith_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   APIshouldBuiltInRecognizerParallelWith_0100
+     * @tc.number APIshouldBuiltInRecognizerParallelWith_0100
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APIshouldBuiltInRecognizerParallelWith_0100', Level.LEVEL0, async (done: Function) => {
       console.info('APIshouldBuiltInRecognizerParallelWith_0100 START');
@@ -79,12 +79,12 @@ export default function APIshouldBuiltInRecognizerParallelWith() {
       done();
     });
     /**
-     * @tc.number    APIshouldBuiltInRecognizerParallelWith_0200
-     * @tc.name      APIshouldBuiltInRecognizerParallelWith_0200
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   APIshouldBuiltInRecognizerParallelWith_0200
+     * @tc.number APIshouldBuiltInRecognizerParallelWith_0200
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APIshouldBuiltInRecognizerParallelWith_0200', Level.LEVEL0, async (done: Function) => {
       console.info('APIshouldBuiltInRecognizerParallelWith_0200 START');
@@ -98,12 +98,12 @@ export default function APIshouldBuiltInRecognizerParallelWith() {
       done();
     });
     /**
-     * @tc.number    APIshouldBuiltInRecognizerParallelWith_0300
-     * @tc.name      APIshouldBuiltInRecognizerParallelWith_0300
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   APIshouldBuiltInRecognizerParallelWith_0300
+     * @tc.number APIshouldBuiltInRecognizerParallelWith_0300
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APIshouldBuiltInRecognizerParallelWith_0300', Level.LEVEL0, async (done: Function) => {
       console.info('APIshouldBuiltInRecognizerParallelWith_0300 START');
@@ -117,12 +117,12 @@ export default function APIshouldBuiltInRecognizerParallelWith() {
       done();
     });
     /**
-     * @tc.number    APIshouldBuiltInRecognizerParallelWith_0400
-     * @tc.name      APIshouldBuiltInRecognizerParallelWith_0400
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   APIshouldBuiltInRecognizerParallelWith_0400
+     * @tc.number APIshouldBuiltInRecognizerParallelWith_0400
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APIshouldBuiltInRecognizerParallelWith_0400', Level.LEVEL0, async (done: Function) => {
       console.info('APIshouldBuiltInRecognizerParallelWith_0400 START');
@@ -137,12 +137,12 @@ export default function APIshouldBuiltInRecognizerParallelWith() {
     });
 
     /**
-     * @tc.number    APIshouldBuiltInRecognizerParallelWith_0500
-     * @tc.name      APIshouldBuiltInRecognizerParallelWith_0500
-     * @tc.desc      api for test isBegin and isEnd
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   APIshouldBuiltInRecognizerParallelWith_0500
+     * @tc.number APIshouldBuiltInRecognizerParallelWith_0500
+     * @tc.desc   api for test isBegin and isEnd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APIshouldBuiltInRecognizerParallelWith_0500', Level.LEVEL0, async (done: Function) => {
       console.info('APIshouldBuiltInRecognizerParallelWith_0500 START');

@@ -42,12 +42,12 @@ export default function RichEditorUndoStyleTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RichEditorUndoStyleTest_0010
-     * @tc.name      RichEditorUndoStyleTest_0010
-     * @tc.desc      test the attr of RichEditor: undoStyle(UndoStyle.CLEAR_STYLE)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RichEditorUndoStyleTest_0010
+     * @tc.number SUB_ACE_RichEditorUndoStyleTest_0010
+     * @tc.desc   test the attr of RichEditor: undoStyle(UndoStyle.CLEAR_STYLE)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditorUndoStyleTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('[RichEditorUndoStyleTest_0010] START');
@@ -60,12 +60,12 @@ export default function RichEditorUndoStyleTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RichEditorUndoStyleTest_0020
-     * @tc.name      RichEditorUndoStyleTest_0020
-     * @tc.desc      test the attr of RichEditor: undoStyle(UndoStyle.KEEP_STYLE)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RichEditorUndoStyleTest_0020
+     * @tc.number SUB_ACE_RichEditorUndoStyleTest_0020
+     * @tc.desc   test the attr of RichEditor: undoStyle(UndoStyle.KEEP_STYLE)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditorUndoStyleTest_0020', Level.LEVEL2, async (done: Function) => {
       console.info('[RichEditorUndoStyleTest_0020] START');
@@ -78,12 +78,12 @@ export default function RichEditorUndoStyleTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RichEditorUndoStyleTest_0030
-     * @tc.name      RichEditorUndoStyleTest_0030
-     * @tc.desc      test the attr of RichEditor: undoStyle(default)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RichEditorUndoStyleTest_0030
+     * @tc.number SUB_ACE_RichEditorUndoStyleTest_0030
+     * @tc.desc   test the attr of RichEditor: undoStyle(default)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditorUndoStyleTest_0030', Level.LEVEL2, async (done: Function) => {
       console.info('[RichEditorUndoStyleTest_0030] START');
@@ -96,12 +96,12 @@ export default function RichEditorUndoStyleTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RichEditorUndoStyleTest_0040
-     * @tc.name      RichEditorUndoStyleTest_0040
-     * @tc.desc      test the attr of RichEditor: undoStyle(undefined)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RichEditorUndoStyleTest_0040
+     * @tc.number SUB_ACE_RichEditorUndoStyleTest_0040
+     * @tc.desc   test the attr of RichEditor: undoStyle(undefined)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditorUndoStyleTest_0040', Level.LEVEL2, async (done: Function) => {
       console.info('[RichEditorUndoStyleTest_0040] START');

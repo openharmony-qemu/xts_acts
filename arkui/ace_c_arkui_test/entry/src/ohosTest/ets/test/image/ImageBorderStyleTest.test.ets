@@ -26,65 +26,65 @@ export default function imageBorderStyleTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_BORDERSTYLE_0100
-     * @tc.name       : testImageBorderStyle001
-     * @tc.desc       : testing borderstyle for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageBorderStyle001
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_BORDERSTYLE_0100
+     * @tc.desc   testing borderstyle for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageBorderStyle001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageBorderStyle001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_BORDERSTYLE_0200
-     * @tc.name       : testImageBorderStyle002
-     * @tc.desc       : testing borderstyle for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageBorderStyle002
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_BORDERSTYLE_0200
+     * @tc.desc   testing borderstyle for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageBorderStyle002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageBorderStyle002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_BORDERSTYLE_0300
-     * @tc.name       : testImageBorderStyle003
-     * @tc.desc       : testing borderstyle for image with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageBorderStyle003
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_BORDERSTYLE_0300
+     * @tc.desc   testing borderstyle for image with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageBorderStyle003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageBorderStyle003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_BORDERSTYLE_0400
-     * @tc.name       : testImageBorderStyle004
-     * @tc.desc       : testing borderstyle for image with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageBorderStyle004
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_BORDERSTYLE_0400
+     * @tc.desc   testing borderstyle for image with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageBorderStyle004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageBorderStyle004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_BORDERSTYLE_0500
-     * @tc.name       : testImageBorderStyle005
-     * @tc.desc       : testing borderstyle for image with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageBorderStyle005
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_BORDERSTYLE_0500
+     * @tc.desc   testing borderstyle for image with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageBorderStyle005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageBorderStyle005()).assertEqual(0)

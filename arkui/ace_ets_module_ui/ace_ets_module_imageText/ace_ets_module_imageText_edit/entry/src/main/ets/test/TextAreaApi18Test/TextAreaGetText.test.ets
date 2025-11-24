@@ -43,12 +43,12 @@ export default function TextAreaGetTextTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextAreaGetTextTest_0010
-     * @tc.name      TextAreaGetTextTest_0010
-     * @tc.desc      test TextArea getText: set start and end
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextAreaGetTextTest_0010
+     * @tc.number SUB_ACE_TextAreaGetTextTest_0010
+     * @tc.desc   test TextArea getText: set start and end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextAreaGetTextTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('TextAreaGetTextTest_0010 START');
@@ -65,12 +65,12 @@ export default function TextAreaGetTextTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextAreaGetTextTest_0020
-     * @tc.name      TextAreaGetTextTest_0020
-     * @tc.desc      test TextArea getText: only set start
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextAreaGetTextTest_0020
+     * @tc.number SUB_ACE_TextAreaGetTextTest_0020
+     * @tc.desc   test TextArea getText: only set start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextAreaGetTextTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('[TextAreaGetTextTest_0020] START');
@@ -87,12 +87,12 @@ export default function TextAreaGetTextTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextAreaGetTextTest_0030
-     * @tc.name      TextAreaGetTextTest_0030
-     * @tc.desc      test TextArea getText: only set end
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextAreaGetTextTest_0030
+     * @tc.number SUB_ACE_TextAreaGetTextTest_0030
+     * @tc.desc   test TextArea getText: only set end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextAreaGetTextTest_0030', Level.LEVEL0, async (done: Function) => {
       console.info('[TextAreaGetTextTest_0030] START');
@@ -109,12 +109,12 @@ export default function TextAreaGetTextTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextAreaGetTextTest_0040
-     * @tc.name      TextAreaGetTextTest_0040
-     * @tc.desc      test TextArea getText: set start undefined
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextAreaGetTextTest_0040
+     * @tc.number SUB_ACE_TextAreaGetTextTest_0040
+     * @tc.desc   test TextArea getText: set start undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextAreaGetTextTest_0040', Level.LEVEL0, async (done: Function) => {
       console.info('[TextAreaGetTextTest_0040] START');
@@ -131,12 +131,12 @@ export default function TextAreaGetTextTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextAreaGetTextTest_0050
-     * @tc.name      TextAreaGetTextTest_0050
-     * @tc.desc      test TextArea getText: set end undefined
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextAreaGetTextTest_0050
+     * @tc.number SUB_ACE_TextAreaGetTextTest_0050
+     * @tc.desc   test TextArea getText: set end undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextAreaGetTextTest_0050', Level.LEVEL0, async (done: Function) => {
       console.info('[TextAreaGetTextTest_0050] START');
@@ -153,12 +153,12 @@ export default function TextAreaGetTextTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextAreaGetTextTest_0060
-     * @tc.name      TextAreaGetTextTest_0060
-     * @tc.desc      test TextArea getText: set start and end: undefined
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextAreaGetTextTest_0060
+     * @tc.number SUB_ACE_TextAreaGetTextTest_0060
+     * @tc.desc   test TextArea getText: set start and end: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextAreaGetTextTest_0060', Level.LEVEL0, async (done: Function) => {
       console.info('[TextAreaGetTextTest_0060] START');
@@ -175,12 +175,12 @@ export default function TextAreaGetTextTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextAreaGetTextTest_0070
-     * @tc.name      TextAreaGetTextTest_0070
-     * @tc.desc      test TextArea getText: not set TextRange
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextAreaGetTextTest_0070
+     * @tc.number SUB_ACE_TextAreaGetTextTest_0070
+     * @tc.desc   test TextArea getText: not set TextRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextAreaGetTextTest_0070', Level.LEVEL0, async (done: Function) => {
       console.info('[TextAreaGetTextTest_0070] START');
@@ -197,12 +197,12 @@ export default function TextAreaGetTextTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextAreaGetTextTest_0080
-     * @tc.name      TextAreaGetTextTest_0080
-     * @tc.desc      test TextArea: clearPreviewText
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextAreaGetTextTest_0080
+     * @tc.number SUB_ACE_TextAreaGetTextTest_0080
+     * @tc.desc   test TextArea: clearPreviewText
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextAreaGetTextTest_0080', Level.LEVEL0, async (done: Function) => {
       console.info('[TextAreaGetTextTest_0080] START');

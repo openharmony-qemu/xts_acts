@@ -26,14 +26,14 @@ export default function scrollOnAppearTest() {
       await Utils.pushPage(`scroll/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_SCROLL_ONAPPEAR_0100
-    * @tc.name       : testScrollOnAppear001
-    * @tc.desc       : test OnAppear event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScrollOnAppear001
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_ONAPPEAR_0100
+     * @tc.desc   test OnAppear event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollOnAppear001', Level.LEVEL1, async (done: Function) => {
       expect(Utils.getComponentInfoByKey('OnAppear').$attrs.backgroundColor).assertEqual('#FF00FF00')
       done()

@@ -54,12 +54,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
     });
 
     /**
-     * @tc.number: SwiperNextPrevMarginAddJsunit_0100
-     * @tc.name  : SwiperNextPrevMarginAddJsunit_0100
-     * @tc.desc  : To test the avoidance interface swiper
-     * @tc.level : LEVEL 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   SwiperNextPrevMarginAddJsunit_0100
+     * @tc.number SwiperNextPrevMarginAddJsunit_0100
+     * @tc.desc   To test the avoidance interface swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SwiperNextPrevMarginAddJsunit_0100', Level.LEVEL1, async (done: Function) => {
       console.info('SwiperNextPrevMarginAddJsunit_0100 START');
@@ -73,10 +73,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_036
-     * @tc.name  : SwiperNextPrevMarginAddJsunit_0036
-     * @tc.desc  : test swiper width = padding + subcomponentwidth
-     * @tc.level : Level 2
+     * @tc.name   SwiperNextPrevMarginAddJsunit_0036
+     * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_036
+     * @tc.desc   test swiper width = padding + subcomponentwidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SwiperNextPrevMarginAddJsunit_0036', Level.LEVEL1, async (done: Function) => {
       console.info('SwiperNextPrevMarginAddJsunit_0036 START');
@@ -92,10 +94,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_023
-     * @tc.name  : SwiperNextPrevMarginAddJsunit_0300
-     * @tc.desc  : test swiper width = padding + subcomponentwidth
-     * @tc.level : Level 2
+     * @tc.name   SwiperNextPrevMarginAddJsunit_0300
+     * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_023
+     * @tc.desc   test swiper width = padding + subcomponentwidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SwiperNextPrevMarginAddJsunit_0300', Level.LEVEL1, async (done: Function) => {
       console.info('SwiperNextPrevMarginAddJsunit_0300 START');
@@ -121,10 +125,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_021
-     * @tc.name  : SwiperNextPrevMarginAddJsunit_0400
-     * @tc.desc  : test swiper width = padding + subcomponentwidth
-     * @tc.level : Level 1
+     * @tc.name   SwiperNextPrevMarginAddJsunit_0400
+     * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_021
+     * @tc.desc   test swiper width = padding + subcomponentwidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SwiperNextPrevMarginAddJsunit_0400', Level.LEVEL1, async (done: Function) => {
       console.info('SwiperNextPrevMarginAddJsunit_0400 START');
@@ -151,10 +157,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_022
-     * @tc.name  : SwiperNextPrevMarginAddJsunit_022
-     * @tc.desc  : test swiper width = padding + subcomponentwidth
-     * @tc.level : Level 2
+     * @tc.name   SwiperNextPrevMarginAddJsunit_022
+     * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_022
+     * @tc.desc   test swiper width = padding + subcomponentwidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SwiperNextPrevMarginAddJsunit_022', Level.LEVEL1, async (done: Function) => {
       console.info('SwiperNextPrevMarginAddJsunit_022 START');
@@ -181,12 +189,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
     });
 
     /**
-     * @tc.number: SwiperNextPrevMarginAddJsunit_0500
-     * @tc.name  : SwiperNextPrevMarginAddJsunit_0500
-     * @tc.desc  : To test the avoidance interface swiper
-     * @tc.level : LEVEL 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   SwiperNextPrevMarginAddJsunit_0500
+     * @tc.number SwiperNextPrevMarginAddJsunit_0500
+     * @tc.desc   To test the avoidance interface swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SwiperNextPrevMarginAddJsunit_0500', Level.LEVEL1, async (done: Function) => {
       console.info('SwiperNextPrevMarginAddJsunit_0500 START');
@@ -213,12 +221,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
     });
 
     /**
-     * @tc.number: SwiperNextPrevMarginAddJsunit_0600
-     * @tc.name  : SwiperNextPrevMarginAddJsunit_0600
-     * @tc.desc  : To test the avoidance interface swiper
-     * @tc.level : LEVEL 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   SwiperNextPrevMarginAddJsunit_0600
+     * @tc.number SwiperNextPrevMarginAddJsunit_0600
+     * @tc.desc   To test the avoidance interface swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SwiperNextPrevMarginAddJsunit_0600', Level.LEVEL1, async (done: Function) => {
       console.info('SwiperNextPrevMarginAddJsunit_0600 START');
@@ -245,12 +253,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
     });
 
   /**
-   * @tc.number: SwiperNextPrevMarginAddJsunit_0700
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0700
-   * @tc.desc  : To test the avoidance interface swiper
-   * @tc.level : LEVEL 1
-   * @tc.type
-   * @tc.size
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0700
+   * @tc.number SwiperNextPrevMarginAddJsunit_0700
+   * @tc.desc   To test the avoidance interface swiper
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0700', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0700 START');
@@ -269,12 +277,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SwiperNextPrevMarginAddJsunit_0800
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0800
-   * @tc.desc  : To test the avoidance interface swiper
-   * @tc.level : LEVEL 1
-   * @tc.type
-   * @tc.size
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0800
+   * @tc.number SwiperNextPrevMarginAddJsunit_0800
+   * @tc.desc   To test the avoidance interface swiper
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0800', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0800 START');
@@ -301,12 +309,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SwiperNextPrevMarginAddJsunit_0900
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0900
-   * @tc.desc  : To test the avoidance interface swiper
-   * @tc.level : LEVEL 1
-   * @tc.type
-   * @tc.size
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0900
+   * @tc.number SwiperNextPrevMarginAddJsunit_0900
+   * @tc.desc   To test the avoidance interface swiper
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0900', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0900 START');
@@ -333,12 +341,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SwiperNextPrevMarginAddJsunit_1000
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_1000
-   * @tc.desc  : To test the avoidance interface swiper
-   * @tc.level : LEVEL 1
-   * @tc.type
-   * @tc.size
+   * @tc.name   SwiperNextPrevMarginAddJsunit_1000
+   * @tc.number SwiperNextPrevMarginAddJsunit_1000
+   * @tc.desc   To test the avoidance interface swiper
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_1000', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_1000 START');
@@ -365,12 +373,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SwiperNextPrevMarginAddJsunit_1100
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_1100
-   * @tc.desc  : To test the avoidance interface swiper
-   * @tc.level : LEVEL 1
-   * @tc.type
-   * @tc.size
+   * @tc.name   SwiperNextPrevMarginAddJsunit_1100
+   * @tc.number SwiperNextPrevMarginAddJsunit_1100
+   * @tc.desc   To test the avoidance interface swiper
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_1100', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_1100 START');
@@ -399,12 +407,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SwiperNextPrevMarginAddJsunit_1200
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_1200
-   * @tc.desc  : To test the avoidance interface swiper
-   * @tc.level : LEVEL 1
-   * @tc.type
-   * @tc.size
+   * @tc.name   SwiperNextPrevMarginAddJsunit_1200
+   * @tc.number SwiperNextPrevMarginAddJsunit_1200
+   * @tc.desc   To test the avoidance interface swiper
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_1200', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_1100 START');
@@ -433,12 +441,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SwiperNextPrevMarginAddJsunit_1300
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_1300
-   * @tc.desc  : To test the avoidance interface swiper
-   * @tc.level : LEVEL 1
-   * @tc.type
-   * @tc.size
+   * @tc.name   SwiperNextPrevMarginAddJsunit_1300
+   * @tc.number SwiperNextPrevMarginAddJsunit_1300
+   * @tc.desc   To test the avoidance interface swiper
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_1300', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_1300 START');
@@ -467,12 +475,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SwiperNextPrevMarginAddJsunit_1400
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_1400
-   * @tc.desc  : To test the avoidance interface swiper
-   * @tc.level : LEVEL 1
-   * @tc.type
-   * @tc.size
+   * @tc.name   SwiperNextPrevMarginAddJsunit_1400
+   * @tc.number SwiperNextPrevMarginAddJsunit_1400
+   * @tc.desc   To test the avoidance interface swiper
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_1400', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_1400 START');
@@ -501,12 +509,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SwiperNextPrevMarginAddJsunit_1500
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_1500
-   * @tc.desc  : To test the avoidance interface swiper
-   * @tc.level : LEVEL 1
-   * @tc.type
-   * @tc.size
+   * @tc.name   SwiperNextPrevMarginAddJsunit_1500
+   * @tc.number SwiperNextPrevMarginAddJsunit_1500
+   * @tc.desc   To test the avoidance interface swiper
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_1500', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_1500 START');
@@ -547,12 +555,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SwiperNextPrevMarginAddJsunit_1600
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_1600
-   * @tc.desc  : To test the avoidance interface swiper
-   * @tc.level : LEVEL 1
-   * @tc.type
-   * @tc.size
+   * @tc.name   SwiperNextPrevMarginAddJsunit_1600
+   * @tc.number SwiperNextPrevMarginAddJsunit_1600
+   * @tc.desc   To test the avoidance interface swiper
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_1600', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_1600 START');
@@ -593,12 +601,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SwiperNextPrevMarginAddJsunit_1700
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_1700
-   * @tc.desc  : To test the avoidance interface swiper
-   * @tc.level : LEVEL 1
-   * @tc.type
-   * @tc.size
+   * @tc.name   SwiperNextPrevMarginAddJsunit_1700
+   * @tc.number SwiperNextPrevMarginAddJsunit_1700
+   * @tc.desc   To test the avoidance interface swiper
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_1700', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_1700 START');
@@ -643,12 +651,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SwiperNextPrevMarginAddJsunit_1800
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_1800
-   * @tc.desc  : To test the avoidance interface swiper
-   * @tc.level : LEVEL 1
-   * @tc.type
-   * @tc.size
+   * @tc.name   SwiperNextPrevMarginAddJsunit_1800
+   * @tc.number SwiperNextPrevMarginAddJsunit_1800
+   * @tc.desc   To test the avoidance interface swiper
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_1800', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_1800 START');
@@ -694,12 +702,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SwiperNextPrevMarginAddJsunit_1900
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_1900
-   * @tc.desc  : To test the avoidance interface swiper
-   * @tc.level : LEVEL 1
-   * @tc.type
-   * @tc.size
+   * @tc.name   SwiperNextPrevMarginAddJsunit_1900
+   * @tc.number SwiperNextPrevMarginAddJsunit_1900
+   * @tc.desc   To test the avoidance interface swiper
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_1900', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_1900 START');
@@ -745,12 +753,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SwiperNextPrevMarginAddJsunit_2000
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_2000
-   * @tc.desc  : To test the avoidance interface swiper
-   * @tc.level : LEVEL 1
-   * @tc.type
-   * @tc.size
+   * @tc.name   SwiperNextPrevMarginAddJsunit_2000
+   * @tc.number SwiperNextPrevMarginAddJsunit_2000
+   * @tc.desc   To test the avoidance interface swiper
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_2000', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_2000 START');
@@ -796,12 +804,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SwiperNextPrevMarginAddJsunit_2100
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_2100
-   * @tc.desc  : To test the avoidance interface swiper
-   * @tc.level : LEVEL 1
-   * @tc.type
-   * @tc.size
+   * @tc.name   SwiperNextPrevMarginAddJsunit_2100
+   * @tc.number SwiperNextPrevMarginAddJsunit_2100
+   * @tc.desc   To test the avoidance interface swiper
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_2100', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_2100 START');
@@ -847,12 +855,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SwiperNextPrevMarginAddJsunit_2200
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_2200
-   * @tc.desc  : To test the avoidance interface swiper
-   * @tc.level : LEVEL 1
-   * @tc.type
-   * @tc.size
+   * @tc.name   SwiperNextPrevMarginAddJsunit_2200
+   * @tc.number SwiperNextPrevMarginAddJsunit_2200
+   * @tc.desc   To test the avoidance interface swiper
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_2200', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_2200 START');
@@ -898,12 +906,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SwiperNextPrevMarginAddJsunit_2300
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_2300
-   * @tc.desc  : To test the avoidance interface swiper
-   * @tc.level : LEVEL 1
-   * @tc.type
-   * @tc.size
+   * @tc.name   SwiperNextPrevMarginAddJsunit_2300
+   * @tc.number SwiperNextPrevMarginAddJsunit_2300
+   * @tc.desc   To test the avoidance interface swiper
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_2300', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_2300 START');
@@ -949,10 +957,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_020
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_020
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_020
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_020
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_020', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_2400 START');
@@ -994,12 +1004,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SwiperNextPrevMarginAddJsunit_2500
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_2500
-   * @tc.desc  : To test the avoidance interface swiper
-   * @tc.level : LEVEL 1
-   * @tc.type
-   * @tc.size
+   * @tc.name   SwiperNextPrevMarginAddJsunit_2500
+   * @tc.number SwiperNextPrevMarginAddJsunit_2500
+   * @tc.desc   To test the avoidance interface swiper
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_2500', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_2500 START');
@@ -1044,11 +1054,13 @@ export default function SwiperNextPrevMarginAddJsunit() {
     done();
   });
 
-  /* *
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_076
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0076
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+  /**
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0076
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_076
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0076', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0076 START');
@@ -1091,12 +1103,14 @@ export default function SwiperNextPrevMarginAddJsunit() {
     done();
   });
 
-  /* *
-  * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_078
-  * @tc.name  : SwiperNextPrevMarginAddJsunit_0078
-  * @tc.desc  : test swiper width = padding + subcomponentwidth
-  * @tc.level : Level 2
-  */
+  /**
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0078
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_078
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
   it('SwiperNextPrevMarginAddJsunit_0078', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0078 START');
     await CommonFunc.sleep(1000);
@@ -1139,12 +1153,14 @@ export default function SwiperNextPrevMarginAddJsunit() {
     done();
   });
 
-  /* *
-  * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_077
-  * @tc.name  : SwiperNextPrevMarginAddJsunit_0077
-  * @tc.desc  : test swiper width = padding + subcomponentwidth
-  * @tc.level : Level 2
-  */
+  /**
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0077
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_077
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
   it('SwiperNextPrevMarginAddJsunit_0077', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0077 START');
     await CommonFunc.sleep(1000);
@@ -1190,12 +1206,14 @@ export default function SwiperNextPrevMarginAddJsunit() {
     done();
   });
 
-  /* *
-  * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_081
-  * @tc.name  : SwiperNextPrevMarginAddJsunit_0081
-  * @tc.desc  : test swiper width = padding + subcomponentwidth
-  * @tc.level : Level 2
-  */
+  /**
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0081
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_081
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
   it('SwiperNextPrevMarginAddJsunit_0081', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0081 START');
     await CommonFunc.sleep(1000);
@@ -1238,11 +1256,13 @@ export default function SwiperNextPrevMarginAddJsunit() {
     done();
   });
 
-  /* *
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_080
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0080
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+  /**
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0080
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_080
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0080', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0080 START');
@@ -1289,11 +1309,13 @@ export default function SwiperNextPrevMarginAddJsunit() {
     done();
   });
 
-  /* *
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_079
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0079
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+  /**
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0079
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_079
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0079', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0079 START');
@@ -1339,12 +1361,14 @@ export default function SwiperNextPrevMarginAddJsunit() {
     done();
   });
 
-  /* *
- * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_082
- * @tc.name  : SwiperNextPrevMarginAddJsunit_0082
- * @tc.desc  : test swiper width = padding + subcomponentwidth
- * @tc.level : Level 2
- */
+  /**
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0082
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_082
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
   it('SwiperNextPrevMarginAddJsunit_0082', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0082 START');
     await CommonFunc.sleep(1000);
@@ -1389,12 +1413,14 @@ export default function SwiperNextPrevMarginAddJsunit() {
     done();
   });
 
-  /* *
-  * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_083
-  * @tc.name  : SwiperNextPrevMarginAddJsunit_0083
-  * @tc.desc  : test swiper width = padding + subcomponentwidth
-  * @tc.level : Level 2
-  */
+  /**
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0083
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_083
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
   it('SwiperNextPrevMarginAddJsunit_0083', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0083 START');
     await CommonFunc.sleep(1000);
@@ -1439,12 +1465,14 @@ export default function SwiperNextPrevMarginAddJsunit() {
     done();
   });
 
-  /* *
- * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_084
- * @tc.name  : SwiperNextPrevMarginAddJsunit_0084
- * @tc.desc  : test swiper width = padding + subcomponentwidth
- * @tc.level : Level 2
- */
+  /**
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0084
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_084
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
   it('SwiperNextPrevMarginAddJsunit_0084', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0084 START');
     await CommonFunc.sleep(1000);
@@ -1486,12 +1514,14 @@ export default function SwiperNextPrevMarginAddJsunit() {
     done();
   });
 
-  /* *
-  * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_085
-  * @tc.name  : SwiperNextPrevMarginAddJsunit_0085
-  * @tc.desc  : test swiper width = padding + subcomponentwidth
-  * @tc.level : Level 2
-  */
+  /**
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0085
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_085
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
   it('SwiperNextPrevMarginAddJsunit_0085', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0085 START');
     await CommonFunc.sleep(1000);
@@ -1534,10 +1564,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_063
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0063
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0063
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_063
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0063', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0063 START');
@@ -1583,10 +1615,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_062
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0062
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0062
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_062
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0062', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0062 START');
@@ -1632,10 +1666,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_061
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0061
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0061
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_061
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0061', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0061 START');
@@ -1680,10 +1716,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_060
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0060
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0060
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_060
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0060', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0060 START');
@@ -1736,10 +1774,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_067
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0067
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0067
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_067
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0067', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0061 START');
@@ -1790,10 +1830,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_066
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0066
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0066
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_066
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0066', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0066 START');
@@ -1843,10 +1885,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_065
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0065
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0065
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_065
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0065', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0065 START');
@@ -1901,10 +1945,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_064
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0064
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0064
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_064
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0064', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0064 START');
@@ -1954,10 +2000,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_055
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0055
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0055
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_055
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0055', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0055 START');
@@ -2007,10 +2055,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_054
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0054
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0054
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_054
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0054', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0054 START');
@@ -2058,10 +2108,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_053
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0053
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0053
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_053
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0053', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0053 START');
@@ -2109,10 +2161,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_052
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0052
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0052
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_052
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0052', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0052 START');
@@ -2169,10 +2223,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_059
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0059
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0059
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_059
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0059', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0059 START');
@@ -2223,10 +2279,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_058
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0058
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0058
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_058
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0058', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0058 START');
@@ -2276,10 +2334,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_057
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0057
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0057
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_057
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0057', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0057 START');
@@ -2334,10 +2394,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_056
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0056
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0056
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_056
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0056', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0058 START');
@@ -2387,10 +2449,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_050
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0050
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0050
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_050
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0050', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0050 START');
@@ -2437,10 +2501,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_051
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0051
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0051
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_051
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0051', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0051 START');
@@ -2488,10 +2554,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_042
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_042
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0042
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_042
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0042', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0051 START');
@@ -2543,10 +2611,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_043
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0043
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0043
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_043
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0043', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0043 START');
@@ -2598,10 +2668,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_044
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_044
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0044
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_044
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0044', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0051 START');
@@ -2653,10 +2725,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_045
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0045
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0045
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_045
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0045', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0045 START');
@@ -2708,10 +2782,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_046
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_046
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0046
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_046
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0046', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0046 START');
@@ -2774,10 +2850,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_047
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0047
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0047
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_047
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0047', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0047 START');
@@ -2831,10 +2909,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_048
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_048
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0048
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_048
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0048', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0048 START');
@@ -2888,10 +2968,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_049
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0049
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0049
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_049
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0049', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0049 START');
@@ -2945,10 +3027,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_072
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0072
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0072
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_072
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0072', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0072 START');
@@ -3004,10 +3088,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_073
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0073
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0073
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_073
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0073', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0073 START');
@@ -3062,10 +3148,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_074
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0074
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0074
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_074
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0074', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0074 START');
@@ -3120,10 +3208,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_075
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0075
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0075
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_075
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0075', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0075 START');
@@ -3179,10 +3269,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_068
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0068
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0068
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_068
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0068', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0068 START');
@@ -3238,10 +3330,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_069
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0069
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0069
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_069
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0069', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0069 START');
@@ -3297,10 +3391,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_070
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0070
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0070
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_070
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0070', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0070 START');
@@ -3356,10 +3452,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_071
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0071
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0071
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_071
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0071', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0071 START');
@@ -3415,10 +3513,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_041
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0041
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0041
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_041
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0041', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0041 START');
@@ -3478,10 +3578,12 @@ export default function SwiperNextPrevMarginAddJsunit() {
   });
 
   /**
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000HTP2I_040
-   * @tc.name  : SwiperNextPrevMarginAddJsunit_0040
-   * @tc.desc  : test swiper width = padding + subcomponentwidth
-   * @tc.level : Level 2
+   * @tc.name   SwiperNextPrevMarginAddJsunit_0040
+   * @tc.number SUB_ACE_TS_COMPONENT_SR000HTP2I_040
+   * @tc.desc   test swiper width = padding + subcomponentwidth
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('SwiperNextPrevMarginAddJsunit_0040', Level.LEVEL1, async (done: Function) => {
     console.info('SwiperNextPrevMarginAddJsunit_0040 START');

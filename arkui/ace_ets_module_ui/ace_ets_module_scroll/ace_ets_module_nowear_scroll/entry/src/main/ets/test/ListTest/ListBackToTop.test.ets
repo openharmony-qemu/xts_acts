@@ -36,13 +36,13 @@ export default function ListBackToTopTest() {
       }
       done()
     });
-    /*
-     * @tc.number :ArkUI_List_BackToTop_0100
-     * @tc.name   :test list back to top
-     * @tc.desc   :test whether backToTop events are effective
-     * @tc.level  :Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ListBackToTop_0100
+     * @tc.number ArkUI_List_BackToTop_0100
+     * @tc.desc   test whether backToTop events are effective
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ListBackToTop_0100', Level.LEVEL1, async () => {
       console.info('ListBackToTop_0100 START');
