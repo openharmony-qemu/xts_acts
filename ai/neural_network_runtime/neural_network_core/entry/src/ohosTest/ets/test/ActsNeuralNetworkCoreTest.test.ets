@@ -23,13 +23,13 @@ const OH_NN_DYNAMIC_SHAPE = 13;
 export default function ActsNeuralNetworkCoreTest() {
   describe('ActsNeuralNetworkCoreTest', () => {
 
-     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_TENSORDESCDESTROY_0100
-     * @tc.name    : NnrtTensorDescDestroy001
-     * @tc.desc    : destroy a NN_TensorDesc implement return success code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   NnrtTensorDescDestroy001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_TENSORDESCDESTROY_0100
+     * @tc.desc   destroy a NN_TensorDesc implement return success code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorDescDestroy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -44,12 +44,12 @@ export default function ActsNeuralNetworkCoreTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_TENSORDESCDESTROY_0200
-     * @tc.name    : NnrtTensorDescDestroy002
-     * @tc.desc    : relase a NN_TensorDesc implement return invalid parameter code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorDescDestroy002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_TENSORDESCDESTROY_0200
+     * @tc.desc   relase a NN_TensorDesc implement return invalid parameter code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorDescDestroy002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -64,12 +64,12 @@ export default function ActsNeuralNetworkCoreTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_TENSORDESCSETNAME_0100
-     * @tc.name    : NnrtTensorDescSetName001
-     * @tc.desc    : set name for NN_TensorDesc implement return success code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorDescSetName001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_TENSORDESCSETNAME_0100
+     * @tc.desc   set name for NN_TensorDesc implement return success code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorDescSetName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -84,12 +84,12 @@ export default function ActsNeuralNetworkCoreTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_TENSORDESCSETNAME_0200
-     * @tc.name    : NnrtTensorDescSetName002
-     * @tc.desc    : set name for NN_TensorDesc implement return invalid parameter code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorDescSetName002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_TENSORDESCSETNAME_0200
+     * @tc.desc   set name for NN_TensorDesc implement return invalid parameter code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorDescSetName002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -104,12 +104,12 @@ export default function ActsNeuralNetworkCoreTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_TENSORDESCSETNAME_0300
-     * @tc.name    : NnrtTensorDescSetName003
-     * @tc.desc    : set name for NN_TensorDesc implement return invalid parameter code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorDescSetName003
+     * @tc.number SUB_NEURALNETWORKRUNTIME_TENSORDESCSETNAME_0300
+     * @tc.desc   set name for NN_TensorDesc implement return invalid parameter code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorDescSetName003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -124,12 +124,12 @@ export default function ActsNeuralNetworkCoreTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_TENSORDESCGETNAME_0100
-     * @tc.name    : NnrtTensorDescGetName001
-     * @tc.desc    : get name from NN_TensorDesc implement return success code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorDescGetName001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_TENSORDESCGETNAME_0100
+     * @tc.desc   get name from NN_TensorDesc implement return success code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorDescGetName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -144,12 +144,12 @@ export default function ActsNeuralNetworkCoreTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_TENSORDESCGETNAME_0200
-     * @tc.name    : NnrtTensorDescGetName002
-     * @tc.desc    : get name from NN_TensorDesc implement return invalid parameter code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorDescGetName002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_TENSORDESCGETNAME_0200
+     * @tc.desc   get name from NN_TensorDesc implement return invalid parameter code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorDescGetName002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -164,12 +164,12 @@ export default function ActsNeuralNetworkCoreTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_TENSORDESCGETNAME_0300
-     * @tc.name    : NnrtTensorDescGetName003
-     * @tc.desc    : get name from NN_TensorDesc implement return invalid parameter code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorDescGetName003
+     * @tc.number SUB_NEURALNETWORKRUNTIME_TENSORDESCGETNAME_0300
+     * @tc.desc   get name from NN_TensorDesc implement return invalid parameter code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorDescGetName003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -184,12 +184,12 @@ export default function ActsNeuralNetworkCoreTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_TENSORDESCSETDATATYPE_0100
-     * @tc.name    : NnrtTensorDescSetDataType001
-     * @tc.desc    : set datatype for NN_TensorDesc implement return success code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorDescSetDataType001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_TENSORDESCSETDATATYPE_0100
+     * @tc.desc   set datatype for NN_TensorDesc implement return success code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorDescSetDataType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -204,12 +204,12 @@ export default function ActsNeuralNetworkCoreTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_TENSORDESCSETDATATYPE_0200
-     * @tc.name    : NnrtTensorDescSetDataType002
-     * @tc.desc    : set datatype for NN_TensorDesc implement return invalid parameter code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorDescSetDataType002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_TENSORDESCSETDATATYPE_0200
+     * @tc.desc   set datatype for NN_TensorDesc implement return invalid parameter code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorDescSetDataType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -224,12 +224,12 @@ export default function ActsNeuralNetworkCoreTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_TENSORDESCGETDATATYPE_0100
-     * @tc.name    : NnrtTensorDescGetDataType001
-     * @tc.desc    : set datatype for NN_TensorDesc implement return invalid parameter code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorDescGetDataType001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_TENSORDESCGETDATATYPE_0100
+     * @tc.desc   set datatype for NN_TensorDesc implement return invalid parameter code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorDescGetDataType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -244,12 +244,12 @@ export default function ActsNeuralNetworkCoreTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_TENSORDESCGETDATATYPE_0200
-     * @tc.name    : NnrtTensorDescGetDataType002
-     * @tc.desc    : set datatype for NN_TensorDesc implement return invalid parameter code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorDescGetDataType002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_TENSORDESCGETDATATYPE_0200
+     * @tc.desc   set datatype for NN_TensorDesc implement return invalid parameter code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorDescGetDataType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -264,12 +264,12 @@ export default function ActsNeuralNetworkCoreTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_TENSORDESCGETDATATYPE_0300
-     * @tc.name    : NnrtTensorDescGetDataType003
-     * @tc.desc    : set datatype for NN_TensorDesc implement return invalid parameter code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorDescGetDataType003
+     * @tc.number SUB_NEURALNETWORKRUNTIME_TENSORDESCGETDATATYPE_0300
+     * @tc.desc   set datatype for NN_TensorDesc implement return invalid parameter code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorDescGetDataType003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -284,12 +284,12 @@ export default function ActsNeuralNetworkCoreTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_TENSORDESCSETSHAPE_0100
-     * @tc.name    : NnrtTensorDescSetShape001
-     * @tc.desc    : set shape for NN_TensorDesc implement return success code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorDescSetShape001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_TENSORDESCSETSHAPE_0100
+     * @tc.desc   set shape for NN_TensorDesc implement return success code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorDescSetShape001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -304,12 +304,12 @@ export default function ActsNeuralNetworkCoreTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_TENSORDESCSETSHAPE_0200
-     * @tc.name    : NnrtTensorDescSetShape002
-     * @tc.desc    : set shape for NN_TensorDesc implement return invalid parameter code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorDescSetShape002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_TENSORDESCSETSHAPE_0200
+     * @tc.desc   set shape for NN_TensorDesc implement return invalid parameter code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorDescSetShape002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -324,12 +324,12 @@ export default function ActsNeuralNetworkCoreTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_TENSORDESCSETSHAPE_0300
-     * @tc.name    : NnrtTensorDescSetShape003
-     * @tc.desc    : set shape for NN_TensorDesc implement return invalid parameter code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorDescSetShape003
+     * @tc.number SUB_NEURALNETWORKRUNTIME_TENSORDESCSETSHAPE_0300
+     * @tc.desc   set shape for NN_TensorDesc implement return invalid parameter code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorDescSetShape003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -344,12 +344,12 @@ export default function ActsNeuralNetworkCoreTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_TENSORDESCSETSHAPE_0400
-     * @tc.name    : NnrtTensorDescSetShape004
-     * @tc.desc    : set shape for NN_TensorDesc implement return invalid parameter code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorDescSetShape004
+     * @tc.number SUB_NEURALNETWORKRUNTIME_TENSORDESCSETSHAPE_0400
+     * @tc.desc   set shape for NN_TensorDesc implement return invalid parameter code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorDescSetShape004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -364,12 +364,12 @@ export default function ActsNeuralNetworkCoreTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_TENSORDESCGETSHAPE_0100
-     * @tc.name    : NnrtTensorDescGetShape001
-     * @tc.desc    : get shape from NN_TensorDesc implement return success code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorDescGetShape001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_TENSORDESCGETSHAPE_0100
+     * @tc.desc   get shape from NN_TensorDesc implement return success code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorDescGetShape001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -384,12 +384,12 @@ export default function ActsNeuralNetworkCoreTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_TENSORDESCGETSHAPE_0200
-     * @tc.name    : NnrtTensorDescGetShape002
-     * @tc.desc    : get shape from NN_TensorDesc implement return invalid parameter code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorDescGetShape002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_TENSORDESCGETSHAPE_0200
+     * @tc.desc   get shape from NN_TensorDesc implement return invalid parameter code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorDescGetShape002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -404,12 +404,12 @@ export default function ActsNeuralNetworkCoreTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_TENSORDESCGETSHAPE_0300
-     * @tc.name    : NnrtTensorDescGetShape003
-     * @tc.desc    : get shape from NN_TensorDesc implement return invalid parameter code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorDescGetShape003
+     * @tc.number SUB_NEURALNETWORKRUNTIME_TENSORDESCGETSHAPE_0300
+     * @tc.desc   get shape from NN_TensorDesc implement return invalid parameter code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorDescGetShape003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -424,12 +424,12 @@ export default function ActsNeuralNetworkCoreTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_TENSORDESCGETSHAPE_0400
-     * @tc.name    : NnrtTensorDescGetShape004
-     * @tc.desc    : get shape from NN_TensorDesc implement return invalid parameter code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorDescGetShape004
+     * @tc.number SUB_NEURALNETWORKRUNTIME_TENSORDESCGETSHAPE_0400
+     * @tc.desc   get shape from NN_TensorDesc implement return invalid parameter code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorDescGetShape004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -444,12 +444,12 @@ export default function ActsNeuralNetworkCoreTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_TENSORDESCSETFORMAT_0100
-     * @tc.name    : NnrtTensorDescSetFormat001
-     * @tc.desc    : set format for NN_TensorDesc implement return success code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorDescSetFormat001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_TENSORDESCSETFORMAT_0100
+     * @tc.desc   set format for NN_TensorDesc implement return success code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorDescSetFormat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -464,12 +464,12 @@ export default function ActsNeuralNetworkCoreTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_TENSORDESCSETFORMAT_0200
-     * @tc.name    : NnrtTensorDescSetFormat002
-     * @tc.desc    : set format for NN_TensorDesc implement return invalid parameter code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorDescSetFormat002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_TENSORDESCSETFORMAT_0200
+     * @tc.desc   set format for NN_TensorDesc implement return invalid parameter code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorDescSetFormat002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -484,12 +484,12 @@ export default function ActsNeuralNetworkCoreTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_TENSORDESCGETFORMAT_0100
-     * @tc.name    : NnrtTensorDescGetFormat001
-     * @tc.desc    : get format from NN_TensorDesc implement success code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorDescGetFormat001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_TENSORDESCGETFORMAT_0100
+     * @tc.desc   get format from NN_TensorDesc implement success code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorDescGetFormat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -504,12 +504,12 @@ export default function ActsNeuralNetworkCoreTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_TENSORDESCGETFORMAT_0200
-     * @tc.name    : NnrtTensorDescGetFormat002
-     * @tc.desc    : get format from NN_TensorDesc implement invalid parameter code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorDescGetFormat002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_TENSORDESCGETFORMAT_0200
+     * @tc.desc   get format from NN_TensorDesc implement invalid parameter code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorDescGetFormat002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -524,12 +524,12 @@ export default function ActsNeuralNetworkCoreTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_TENSORDESCGETFORMAT_0300
-     * @tc.name    : NnrtTensorDescGetFormat003
-     * @tc.desc    : get format from NN_TensorDesc implement invalid parameter code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorDescGetFormat003
+     * @tc.number SUB_NEURALNETWORKRUNTIME_TENSORDESCGETFORMAT_0300
+     * @tc.desc   get format from NN_TensorDesc implement invalid parameter code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorDescGetFormat003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -544,12 +544,12 @@ export default function ActsNeuralNetworkCoreTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_TENSORDESCGETELEMENTCOUNT_0100
-     * @tc.name    : NnrtTensorDescGetElementCount001
-     * @tc.desc    : get element count from NN_TensorDesc implement success code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorDescGetElementCount001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_TENSORDESCGETELEMENTCOUNT_0100
+     * @tc.desc   get element count from NN_TensorDesc implement success code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorDescGetElementCount001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -564,12 +564,12 @@ export default function ActsNeuralNetworkCoreTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_TENSORDESCGETELEMENTCOUNT_0200
-     * @tc.name    : NnrtTensorDescGetElementCount002
-     * @tc.desc    : get element count from NN_TensorDesc implement invalid parameter code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorDescGetElementCount002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_TENSORDESCGETELEMENTCOUNT_0200
+     * @tc.desc   get element count from NN_TensorDesc implement invalid parameter code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorDescGetElementCount002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -584,12 +584,12 @@ export default function ActsNeuralNetworkCoreTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_TENSORDESCGETELEMENTCOUNT_0300
-     * @tc.name    : NnrtTensorDescGetElementCount003
-     * @tc.desc    : get element count from NN_TensorDesc implement invalid parameter code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorDescGetElementCount003
+     * @tc.number SUB_NEURALNETWORKRUNTIME_TENSORDESCGETELEMENTCOUNT_0300
+     * @tc.desc   get element count from NN_TensorDesc implement invalid parameter code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorDescGetElementCount003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -604,12 +604,12 @@ export default function ActsNeuralNetworkCoreTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_TENSORDESCGETELEMENTCOUNT_0400
-     * @tc.name    : NnrtTensorDescGetElementCount004
-     * @tc.desc    : get element count from NN_TensorDesc implement invalid parameter code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorDescGetElementCount004
+     * @tc.number SUB_NEURALNETWORKRUNTIME_TENSORDESCGETELEMENTCOUNT_0400
+     * @tc.desc   get element count from NN_TensorDesc implement invalid parameter code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorDescGetElementCount004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -624,12 +624,12 @@ export default function ActsNeuralNetworkCoreTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_TENSORDESCGETBYTESIZE_0100
-     * @tc.name    : NnrtTensorDescGetByteSize001
-     * @tc.desc    : get byte size count from NN_TensorDesc implement success code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorDescGetByteSize001
+     * @tc.number SUB_NEURALNETWORKRUNTIME_TENSORDESCGETBYTESIZE_0100
+     * @tc.desc   get byte size count from NN_TensorDesc implement success code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorDescGetByteSize001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -644,12 +644,12 @@ export default function ActsNeuralNetworkCoreTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_TENSORDESCGETBYTESIZE_0200
-     * @tc.name    : NnrtTensorDescGetByteSize002
-     * @tc.desc    : get byte size count from NN_TensorDesc implement invalid parameter code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorDescGetByteSize002
+     * @tc.number SUB_NEURALNETWORKRUNTIME_TENSORDESCGETBYTESIZE_0200
+     * @tc.desc   get byte size count from NN_TensorDesc implement invalid parameter code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorDescGetByteSize002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -664,12 +664,12 @@ export default function ActsNeuralNetworkCoreTest() {
     })
 
     /**
-     * @tc.number  : SUB_NEURALNETWORKRUNTIME_TENSORDESCGETBYTESIZE_0300
-     * @tc.name    : NnrtTensorDescGetByteSize003
-     * @tc.desc    : get byte size count from NN_TensorDesc implement invalid parameter code
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   NnrtTensorDescGetByteSize003
+     * @tc.number SUB_NEURALNETWORKRUNTIME_TENSORDESCGETBYTESIZE_0300
+     * @tc.desc   get byte size count from NN_TensorDesc implement invalid parameter code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('NnrtTensorDescGetByteSize003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {

@@ -71,9 +71,12 @@ struct ModModel3 {
 };
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Mod_Build_01
- * @tc.desc: ModModel1模型build测试
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Mod_Build_01
+ * @tc.number SUB_AI_NNRt_Func_North_Mod_Build_01
+ * @tc.desc   ModModel1模型build测试
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Build_01, Function | MediumTest | Level1)
 {
@@ -100,9 +103,12 @@ HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Build_01, Function | MediumTest | L
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Mod_Build_02
- * @tc.desc: ModModel2模型build测试
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Mod_Build_02
+ * @tc.number SUB_AI_NNRt_Func_North_Mod_Build_02
+ * @tc.desc   ModModel2模型build测试
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Build_02, Function | MediumTest | Level1)
 {
@@ -129,9 +135,12 @@ HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Build_02, Function | MediumTest | L
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Mod_Build_03
- * @tc.desc: ModModel3模型build测试
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Mod_Build_03
+ * @tc.number SUB_AI_NNRt_Func_North_Mod_Build_03
+ * @tc.desc   ModModel3模型build测试
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Build_03, Function | MediumTest | Level1)
 {
@@ -158,9 +167,12 @@ HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Build_03, Function | MediumTest | L
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Mod_Build_04
- * @tc.desc: ModModel1模型输入Tensor+1进行build测试
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Mod_Build_04
+ * @tc.number SUB_AI_NNRt_Func_North_Mod_Build_04
+ * @tc.desc   ModModel1模型输入Tensor+1进行build测试
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Build_04, Function | MediumTest | Level2)
 {
@@ -178,9 +190,12 @@ HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Build_04, Function | MediumTest | L
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Mod_Build_05
- * @tc.desc: ModModel1模型输出Tensor+1进行build测试
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Mod_Build_05
+ * @tc.number SUB_AI_NNRt_Func_North_Mod_Build_05
+ * @tc.desc   ModModel1模型输出Tensor+1进行build测试
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Build_05, Function | MediumTest | Level2)
 {
@@ -198,9 +213,12 @@ HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Build_05, Function | MediumTest | L
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Mod_Build_06
- * @tc.desc: ModModel1模型传入非法参数进行build测试
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Mod_Build_06
+ * @tc.number SUB_AI_NNRt_Func_North_Mod_Build_06
+ * @tc.desc   ModModel1模型传入非法参数进行build测试
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Build_06, Function | MediumTest | Level2)
 {
@@ -220,9 +238,12 @@ HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Build_06, Function | MediumTest | L
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Mod_Model_Finish_01
- * @tc.desc: 模型构图，未添加操作数
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Mod_Model_Finish_01
+ * @tc.number SUB_AI_NNRt_Func_North_Mod_Model_Finish_01
+ * @tc.desc   模型构图，未添加操作数
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_Finish_01, Function | MediumTest | Level2)
 {
@@ -236,9 +257,12 @@ HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_Finish_01, Function | MediumT
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Mod_Model_Finish_02
- * @tc.desc: 模型构图，未设置输入输出
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Mod_Model_Finish_02
+ * @tc.number SUB_AI_NNRt_Func_North_Mod_Model_Finish_02
+ * @tc.desc   模型构图，未设置输入输出
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_Finish_02, Function | MediumTest | Level2)
 {
@@ -254,9 +278,12 @@ HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_Finish_02, Function | MediumT
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Mod_Model_Finish_03
- * @tc.desc: 模型构图，设置输入输出，构图成功
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Mod_Model_Finish_03
+ * @tc.number SUB_AI_NNRt_Func_North_Mod_Model_Finish_03
+ * @tc.desc   模型构图，设置输入输出，构图成功
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_Finish_03, Function | MediumTest | Level1)
 {
@@ -271,9 +298,12 @@ HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_Finish_03, Function | MediumT
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Mod_Model_SetOperandValue_01
- * @tc.desc: 设置操作数值，操作数不存在
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Mod_Model_SetOperandValue_01
+ * @tc.number SUB_AI_NNRt_Func_North_Mod_Model_SetOperandValue_01
+ * @tc.desc   设置操作数值，操作数不存在
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_SetOperandValue_01, Function | MediumTest | Level2)
 {
@@ -307,9 +337,12 @@ HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_SetOperandValue_01, Function 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Mod_Model_SetOperandValue_02
- * @tc.desc: 设置操作数值，buufer为nullptr
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Mod_Model_SetOperandValue_02
+ * @tc.number SUB_AI_NNRt_Func_North_Mod_Model_SetOperandValue_02
+ * @tc.desc   设置操作数值，buufer为nullptr
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_SetOperandValue_02, Function | MediumTest | Level2)
 {
@@ -342,9 +375,12 @@ HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_SetOperandValue_02, Function 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Mod_Model_SetOperandValue_03
- * @tc.desc: 设置操作数值，length为0
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Mod_Model_SetOperandValue_03
+ * @tc.number SUB_AI_NNRt_Func_North_Mod_Model_SetOperandValue_03
+ * @tc.desc   设置操作数值，length为0
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_SetOperandValue_03, Function | MediumTest | Level2)
 {
@@ -377,9 +413,12 @@ HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_SetOperandValue_03, Function 
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_01
- * @tc.desc: 设置输入输出，inputIndices为nullptr
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_01
+ * @tc.number SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_01
+ * @tc.desc   设置输入输出，inputIndices为nullptr
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_01, Function | MediumTest | Level2)
 {
@@ -400,9 +439,12 @@ HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_01, F
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_02
- * @tc.desc: 设置输入输出，inputindices中data为nullptr
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_02
+ * @tc.number SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_02
+ * @tc.desc   设置输入输出，inputindices中data为nullptr
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_02, Function | MediumTest | Level2)
 {
@@ -424,9 +466,12 @@ HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_02, F
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_03
- * @tc.desc: 设置输入输出，inputindices中data对应序号不存在
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_03
+ * @tc.number SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_03
+ * @tc.desc   设置输入输出，inputindices中data对应序号不存在
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_03, Function | MediumTest | Level2)
 {
@@ -448,9 +493,12 @@ HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_03, F
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_04
- * @tc.desc: 设置输入输出，inputindices中size为0
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_04
+ * @tc.number SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_04
+ * @tc.desc   设置输入输出，inputindices中size为0
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_04, Function | MediumTest | Level2)
 {
@@ -472,9 +520,12 @@ HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_04, F
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_05
- * @tc.desc: 设置输入输出，outputindices为nullptr
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_05
+ * @tc.number SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_05
+ * @tc.desc   设置输入输出，outputindices为nullptr
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_05, Function | MediumTest | Level2)
 {
@@ -495,9 +546,12 @@ HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_05, F
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_06
- * @tc.desc: 设置输入输出，outputindices中data为nullptr
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_06
+ * @tc.number SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_06
+ * @tc.desc   设置输入输出，outputindices中data为nullptr
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_06, Function | MediumTest | Level2)
 {
@@ -519,9 +573,12 @@ HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_06, F
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_07
- * @tc.desc: 设置输入输出，outputindices中data对应序号不存在
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_07
+ * @tc.number SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_07
+ * @tc.desc   设置输入输出，outputindices中data对应序号不存在
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_07, Function | MediumTest | Level2)
 {
@@ -543,9 +600,12 @@ HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_07, F
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_08
- * @tc.desc: 设置输入输出，outputindices中size为0
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_08
+ * @tc.number SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_08
+ * @tc.desc   设置输入输出，outputindices中size为0
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_08, Function | MediumTest | Level2)
 {
@@ -567,9 +627,12 @@ HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_SpecifyInputsAndOutputs_08, F
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_01
- * @tc.desc: 添加算子，paramindices为nullptr
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_01
+ * @tc.number SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_01
+ * @tc.desc   添加算子，paramindices为nullptr
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_01, Function | MediumTest | Level2)
 {
@@ -592,9 +655,12 @@ HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_01, Function | M
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_02
- * @tc.desc: 添加算子，paramindices中data为nullptr
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_02
+ * @tc.number SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_02
+ * @tc.desc   添加算子，paramindices中data为nullptr
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_02, Function | MediumTest | Level2)
 {
@@ -619,9 +685,12 @@ HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_02, Function | M
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_03
- * @tc.desc: 添加算子，paramindices中data对应序号不存在
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_03
+ * @tc.number SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_03
+ * @tc.desc   添加算子，paramindices中data对应序号不存在
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_03, Function | MediumTest | Level2)
 {
@@ -646,9 +715,12 @@ HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_03, Function | M
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_04
- * @tc.desc: 添加算子，paramindices中size为0
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_04
+ * @tc.number SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_04
+ * @tc.desc   添加算子，paramindices中size为0
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_04, Function | MediumTest | Level2)
 {
@@ -673,9 +745,12 @@ HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_04, Function | M
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_05
- * @tc.desc: 添加算子，inputindices为nullptr
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_05
+ * @tc.number SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_05
+ * @tc.desc   添加算子，inputindices为nullptr
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_05, Function | MediumTest | Level2)
 {
@@ -698,9 +773,12 @@ HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_05, Function | M
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_06
- * @tc.desc: 添加算子，inputindices中data为nullptr
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_06
+ * @tc.number SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_06
+ * @tc.desc   添加算子，inputindices中data为nullptr
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_06, Function | MediumTest | Level2)
 {
@@ -725,9 +803,12 @@ HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_06, Function | M
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_07
- * @tc.desc: 添加算子，inputindices中data对应序号不存在
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_07
+ * @tc.number SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_07
+ * @tc.desc   添加算子，inputindices中data对应序号不存在
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_07, Function | MediumTest | Level2)
 {
@@ -752,9 +833,12 @@ HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_07, Function | M
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_08
- * @tc.desc: 添加算子，inputindices中size为0
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_08
+ * @tc.number SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_08
+ * @tc.desc   添加算子，inputindices中size为0
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_08, Function | MediumTest | Level2)
 {
@@ -779,9 +863,12 @@ HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_08, Function | M
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_09
- * @tc.desc: 添加算子，outputindices为nullptr
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_09
+ * @tc.number SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_09
+ * @tc.desc   添加算子，outputindices为nullptr
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ModTest, SUB_AI_NNRt_Func_North_Mod_Model_AddOperation_09, Function | MediumTest | Level2)
 {
