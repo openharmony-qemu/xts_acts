@@ -21,12 +21,10 @@ import {
 import {
   State,
   Link,
-  PropRef,Provide
+  Prop,Provide
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
-import { RecordData } from '@ohos.base';
-
 interface EventMessage {
   titleMode: NavigationTitleMode
   hideToolBar: boolean|number
@@ -55,32 +53,32 @@ struct NavigationExample {
     main: "main_nav",
     sub: "sub_nav"
   } as NavDestinationCommonTitle
-  // private stateChangCallBack = (eventData: events_emitter.EventData) => {
-  //   if (eventData != null&&eventData != undefined) {
-  //     console.info("tabs page state change called:" + JSON.stringify(eventData));
-  //     if ((eventData.data as EventMessage)?.vertical != null) {
-  //       this.titleMode = (eventData.data as EventMessage).titleMode;
-  //     }
-  //     if ((eventData.data as EventMessage)?.hideToolBar != null) {
-  //       this.hideToolBar = parseInt((eventData.data as EventMessage).hideToolBar);
-  //     }
-  //     if ((eventData.data as EventMessage)?.hideTitleBar != null) {
-  //       this.hideTitleBar = parseInt((eventData.data as EventMessage).hideTitleBar);
-  //     }
-  //     if ((eventData.data as EventMessage)?.hideBackButton != null) {
-  //       this.hideBackButton = parseInt((eventData.data as EventMessage).hideBackButton);
-  //     }
-  //   }
-  // }
-  //
-  // onPageShow() {
-  //   console.info('progress page show called');
-  //   let stateChangeEvent: events_emitter.InnerEvent = {
-  //     eventId: 135,
-  //     priority: events_emitter.EventPriority.LOW
-  //   }
-  //   events_emitter.on(stateChangeEvent, this.stateChangCallBack)
-  // }
+  private stateChangCallBack:(eventData: events_emitter.EventData)=>void = (eventData: events_emitter.EventData) => {
+    if (eventData != null&&eventData != undefined) {
+      console.info("tabs page state change called:" + JSON.stringify(eventData));
+      if ((eventData.data as EventMessage)?.vertical != null) {
+        this.titleMode = (eventData.data as EventMessage).titleMode;
+      }
+      if ((eventData.data as EventMessage)?.hideToolBar != null) {
+        this.hideToolBar = (eventData.data as EventMessage).hideToolBar;
+      }
+      if ((eventData.data as EventMessage)?.hideTitleBar != null) {
+        this.hideTitleBar = (eventData.data as EventMessage).hideTitleBar
+      }
+      if ((eventData.data as EventMessage)?.hideBackButton != null) {
+        this.hideBackButton = (eventData.data as EventMessage).hideBackButton;
+      }
+    }
+  }
+
+  onPageShow() {
+    console.info('progress page show called');
+    let stateChangeEvent: events_emitter.InnerEvent = {
+      eventId: 135,
+      priority: events_emitter.EventPriority.LOW
+    } as events_emitter.InnerEvent
+    events_emitter.on(stateChangeEvent, this.stateChangCallBack)
+  }
 
   @Builder
   NavigationTitle() {
@@ -124,7 +122,6 @@ struct NavigationExample {
                 .fontSize(16)
                 .textAlign(TextAlign.Center)
             }
-            // .editable(true)
           }, (item: number) => String(item))
         }
         .listDirection(Axis.Vertical)
@@ -146,7 +143,7 @@ struct NavigationExample {
               let backData: events_emitter.EventData = {
                 data: {
                   "ACTION": this.hideBar,
-                } as Record<String, RecordData>
+                } as Record<String,undefined|null|Object>
               }
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 1366,
@@ -154,15 +151,13 @@ struct NavigationExample {
               }
               console.info("navigationContent1 start to emit action state")
               events_emitter.emit(backEvent, backData)
-            } catch (err) {
-              err = err as Error;
+            } catch (err: Error) {
               console.info("navigationContent1 emit action state err: " + JSON.stringify(err.message))
             }
           })
           .margin({ left: 135, top: 60 } as Margin)
       }
       .title(this.NavigationTitle)
-      // .subTitle('subtitle')
       .menus(this.NavigationMenus)
       .titleMode(NavigationTitleMode.Free)
       .hideTitleBar(false)
@@ -177,24 +172,6 @@ struct NavigationExample {
       .onTitleModeChange((titleModel: NavigationTitleMode): void => {
         console.log('titleMode')
       })
-      // .toolBar({
-      //   items: [
-      //     {
-      //       value: 'app', icon: 'images/grid.svg', action: () => {
-      //       console.log("app")
-      //     }
-      //     },
-      //     {
-      //       value: 'add', icon: 'images/add.svg', action: () => {
-      //       console.log("add")
-      //     }
-      //     },
-      //     {
-      //       value: 'collect', icon: 'images/collect.svg', action: () => {
-      //       console.log("collect")
-      //     }
-      //     }]
-      // })
       .hideToolBar(this.hideBar)
     }
   }

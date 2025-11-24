@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium"
 import router from '@ohos.router';
 import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Rect } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -74,14 +74,14 @@ export default function RatingUIJsunit() {
       await sleep(1)
     });
 
-
+    
     /*
      * @tc.number   RatingUIJsunit_static_0100
      * @tc.name     RatingUIJsunit_static_0100
      * @tc.desc     RatingUIJsunit_static_0100
      * @tc.level    Level.LEVEL1
      */
-    it('RatingUIJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('RatingUIJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       // Get the information of the Rating component
       console.info('[RatingUIJsunit_static_0100] START');
       let strJson = inspector.getInspectorByKey('rating1');
@@ -98,17 +98,17 @@ export default function RatingUIJsunit() {
     });
 
 
+    
     /*
      * @tc.number   RatingUIJsunit_static_0200
      * @tc.name     RatingUIJsunit_static_0200
      * @tc.desc     RatingUIJsunit_static_0200
      * @tc.level    Level.LEVEL1
      */
-    it('RatingUIJsunit_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('RatingUIJsunit_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       // Modify the rating value of the Rating component
       console.info('[RatingUIJsunit_static_0200] START');
-      const messageManager = AppStorage.get<MessageManager>('messageManager') as MessageManager
-      messageManager.notify({name:'rating',value:1})
+  AppStorage.setOrCreate<number>('rating',1)
       await CommonFunc.sleep(2000);
       // Get the rating value of the Rating component
       let strJson = inspector.getInspectorByKey('rating1');
@@ -120,18 +120,17 @@ export default function RatingUIJsunit() {
       done();
     });
 
-
+    
     /*
      * @tc.number   RatingUIJsunit_static_0300
      * @tc.name     RatingUIJsunit_static_0300
      * @tc.desc     RatingUIJsunit_static_0300
      * @tc.level    Level.LEVEL1
      */
-    it('RatingUIJsunit_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('RatingUIJsunit_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       // Modify the indicator value of the Rating component
       console.info('[RatingUIJsunit_static_0300] START');
-      const messageManager = AppStorage.get<MessageManager>('messageManager') as MessageManager
-      messageManager.notify({name:'indicator1',value:false})
+  AppStorage.setOrCreate<boolean>('indicator1',false)
       await CommonFunc.sleep(2000);
       let driver = Driver.create()
       // Get the indicator value of the Rating component
@@ -159,18 +158,18 @@ export default function RatingUIJsunit() {
     });
 
 
+    
     /*
      * @tc.number   RatingUIJsunit_static_0400
      * @tc.name     RatingUIJsunit_static_0400
      * @tc.desc     RatingUIJsunit_static_0400
      * @tc.level    Level.LEVEL1
      */
-    it('RatingUIJsunit_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('RatingUIJsunit_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       // Modify the stars value of the Rating component
       console.info('[RatingUIJsunit_static_0400] START');
       await CommonFunc.sleep(1000);
-      const messageManager = AppStorage.get<MessageManager>('messageManager') as MessageManager
-      messageManager.notify({name:'stars',value:7})
+  AppStorage.setOrCreate<int>('stars',7)
       await CommonFunc.sleep(2000);
       // Get the stars value of the Rating component
       let strJson = inspector.getInspectorByKey('rating1');
@@ -182,17 +181,17 @@ export default function RatingUIJsunit() {
     });
 
 
+    
     /*
      * @tc.number   RatingUIJsunit_static_0500
      * @tc.name     RatingUIJsunit_static_0500
      * @tc.desc     RatingUIJsunit_static_0500
      * @tc.level    Level.LEVEL1
      */
-    it('RatingUIJsunit_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('RatingUIJsunit_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       // Modify the stepSize value of the Rating component
       console.info('[RatingUIJsunit_static_0500] START');
-      const messageManager = AppStorage.get<MessageManager>('messageManager') as MessageManager
-      messageManager.notify({name:'stepSize',value:1})
+  AppStorage.setOrCreate<number>('stepSize',1)
       await CommonFunc.sleep(2000);
       // Get the stepSize value of the Rating component
       let strJson = inspector.getInspectorByKey('rating1');
@@ -203,38 +202,33 @@ export default function RatingUIJsunit() {
       console.info('[RatingUIJsunit_static_0500] END');
       done();
     });
-
-
+    
     /*
      * @tc.number   RatingUIJsunit_static_0600
      * @tc.name     RatingUIJsunit_static_0600
      * @tc.desc     RatingUIJsunit_static_0600
      * @tc.level    Level.LEVEL1
      */
-    it('RatingUIJsunit_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('RatingUIJsunit_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       // Verify onChange event of the Rating component
       console.info('[RatingUIJsunit_static_0600] START');
       await CommonFunc.sleep(1000);
       // Modify the indicator value of the Rating component
-      const messageManager = AppStorage.get<MessageManager>('messageManager') as MessageManager
-      messageManager.notify({name:'rating',value:1})
+      AppStorage.setOrCreate<number>('rating',1)
       await CommonFunc.sleep(1000);
-      messageManager.notify({name:'text',value:'no change'})
-      messageManager.notify({name:'indicator',value:false})
+      AppStorage.setOrCreate<boolean>('indicator',false)
       await CommonFunc.sleep(2000);
 
       let driver = Driver.create()
       let textComponent1 = await driver.findComponent(ON.id('text'));
       let text1 = await (textComponent1?.getText() as Promise<string>);
       console.info("[RatingUIJsunit_static_0600] text1: " + JSON.stringify(text1));
-      expect(text1).assertEqual('no change');
-
       // Get the rating value of the Rating component
       let strJson1 = inspector.getInspectorByKey('rating1');
       let obj = JSON.parseJsonElement(strJson1);
       console.info("[RatingUIJsunit_static_0600] component obj is: " + JSON.stringify(obj));
-      let rating1: number = obj.getElement('$attrs').getInteger('rating')
-      console.info("[RatingUIJsunit_static_0600] rating1: " + JSON.stringify(rating1));
+      let rating1 = obj.getElement('$attrs').getString('rating')
+      console.info("[RatingUIJsunit_static_0600] rating1: " + rating1);
 
       // Get the component Rating and click
       let textComponent = await driver.findComponent(ON.id('rating1'));
@@ -242,26 +236,27 @@ export default function RatingUIJsunit() {
       await CommonFunc.sleep(1000);
       let strJson2 = inspector.getInspectorByKey('rating1');
       let obj2 = JSON.parseJsonElement(strJson2);
-      let rating2: number = obj2.getElement('$attrs').getInteger('rating')
-      console.info("[RatingUIJsunit_static_0600] rating2: " + JSON.stringify(rating2));
+      let rating2 = obj2.getElement('$attrs').getString('rating')
+      console.info("[RatingUIJsunit_static_0600] rating2: " + rating2);
       expect(rating1 == rating2).assertFalse();
 
       let textComponent2 = await driver.findComponent(ON.id('text'));
       let text2 = await (textComponent2?.getText() as Promise<string>);
       console.info("[RatingUIJsunit_static_0600] text2: " + JSON.stringify(text2));
-      //expect(text2).assertEqual('change succ');
+      expect(text2).assertEqual('change succ');
       console.info('[RatingUIJsunit_static_0600] END');
       done();
     });
 
 
+    
     /*
      * @tc.number   RatingUIJsunit_static_0700
      * @tc.name     RatingUIJsunit_static_0700
      * @tc.desc     RatingUIJsunit_static_0700
      * @tc.level    Level.LEVEL1
      */
-    it('RatingUIJsunit_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('RatingUIJsunit_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       // Get the default value of the Rating component
       console.info('[RatingUIJsunit_static_0700] START');
       await CommonFunc.sleep(1000);

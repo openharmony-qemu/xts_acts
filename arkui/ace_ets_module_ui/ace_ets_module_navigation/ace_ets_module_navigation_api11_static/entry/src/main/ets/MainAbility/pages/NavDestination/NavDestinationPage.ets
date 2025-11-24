@@ -12,14 +12,102 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,NavPathStack,Component,$r,ResourceStr,Builder,List,ListItem,Resource,NavigationTitleMode,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
+import { Entry,NavPathStack,Component,$r,Image,ResourceStr,Padding,
+  Builder,List,ListItem,Resource,NavigationTitleMode,NavigationMode,Column,
+  Navigation,ButtonType,NavDestination,Stack,ColumnOptions,Position,
+  EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,
+  Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,ResourceColor,
+  PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,
+  SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,
+  TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
   State,
   Link,
-  PropRef,Provide
+  Prop,Provide,StoragePropRef
 } from '@ohos.arkui.stateManagement';
- import {MessageManager,Callback,Message} from '../../common/MessageManager';
 import { AppStorage } from '@ohos.arkui.stateManagement';
+
+@Component
+struct PageOne {
+  @StoragePropRef('navTitle') navTitle: string = 'NavDestination'
+  @StoragePropRef('hideTitleBar') hideTitleBar: boolean = false
+  @StoragePropRef('backColor') backColor: ResourceColor = Color.Grey
+  build(){
+    NavDestination() {
+      Text(`我是NavDestination第1页内容`).fontSize(50)
+      Flex({ direction: FlexDirection.Row }) {
+        Row() {
+          Image($r('app.media.icon')).width(40).height(40).borderRadius(40).margin({ right: 15 } as Margin)
+          Text('Hello').fontSize(30).key('textContent1')
+        }.padding({ left: 15 } as Padding)
+      }
+    }.backgroundColor(this.backColor)
+    .key('NavDestination1')
+    .title(this.navTitle + String(1))
+    .hideTitleBar(this.hideTitleBar)
+  }
+}
+@Component
+struct PageTwo {
+  @StoragePropRef('navTitle') navTitle: string = 'NavDestination'
+  @StoragePropRef('hideTitleBar') hideTitleBar: boolean = false
+  @StoragePropRef('backColor') backColor: ResourceColor = Color.Grey
+  build(){
+    NavDestination() {
+      Text(`我是NavDestination第2页内容`).fontSize(50)
+      Flex({ direction: FlexDirection.Row }) {
+        Row() {
+          Image($r('app.media.icon')).width(40).height(40).borderRadius(40).margin({ right: 15 } as Margin)
+          Text('Hello').fontSize(30).key('textContent2')
+        }.padding({ left: 15 } as Padding)
+      }
+    }.backgroundColor(this.backColor)
+    .key('NavDestination2')
+    .title(this.navTitle + String(2))
+    .hideTitleBar(this.hideTitleBar)
+  }
+}
+@Component
+struct PageThree {
+  @StoragePropRef('navTitle') navTitle: string = 'NavDestination'
+  @StoragePropRef('hideTitleBar') hideTitleBar: boolean = false
+  @StoragePropRef('backColor') backColor: ResourceColor = Color.Grey
+  build(){
+    NavDestination() {
+      Text(`我是NavDestination第3页内容`).fontSize(50)
+      Flex({ direction: FlexDirection.Row }) {
+        Row() {
+          Image($r('app.media.icon')).width(40).height(40).borderRadius(40).margin({ right: 15 } as Margin)
+          Text('Hello').fontSize(30).key('textContent3')
+        }.padding({ left: 15 } as Padding)
+      }
+    }.backgroundColor(this.backColor)
+    .key('NavDestination3')
+    .title(this.navTitle + String(3))
+    .hideTitleBar(this.hideTitleBar)
+  }
+}
+@Component
+struct PageFour {
+  @StoragePropRef('navTitle') navTitle: string = 'NavDestination'
+  @StoragePropRef('hideTitleBar') hideTitleBar: boolean = false
+  @StoragePropRef('backColor') backColor: ResourceColor = Color.Grey
+  build(){
+    NavDestination() {
+      Text(`我是NavDestination第4页内容`).fontSize(50)
+      Flex({ direction: FlexDirection.Row }) {
+        Row() {
+          Image($r('app.media.icon')).width(40).height(40).borderRadius(40).margin({ right: 15 } as Margin)
+          Text('Hello').fontSize(30).key('textContent4')
+        }.padding({ left: 15 } as Padding)
+      }
+    }.backgroundColor(this.backColor)
+    .key('NavDestination4')
+    .title(this.navTitle + String(4))
+    .hideTitleBar(this.hideTitleBar)
+  }
+}
+
 @Entry
 @Component
 struct NavDestinationPage {
@@ -27,81 +115,53 @@ struct NavDestinationPage {
   @State isActive: boolean = false
   @State dex: number = 0
   @State stateChange: string = ''
-  @State hideTitleBar: boolean = false
-  @State backColor: Color = Color.Grey
-  @State title: string = 'NavDestination'
-  messageManager: MessageManager<string> = new MessageManager<string>()
+  pageInfos: NavPathStack = new NavPathStack();
+  @Builder
+  PageBuilder(name: string, param: Object|null|undefined) {
+    if (name == "page0") {
+      PageOne()
 
-  onPageShow() {
-    console.info('NavRouter onPageShow')
-
-    AppStorage.setOrCreate<MessageManager<string>>("messageManager",  this.messageManager );
-    let callback: Callback<string> = (message: Message<string>) => {
-      console.error('message = ' + message.name + "--" + message.value)
-      if (message.name == 'arr') {
-        this.arr = (message as Message<number[]>).value
-      }
-      if (message.name == 'hideTitleBar') {
-        this.hideTitleBar = (message as Message<boolean>).value
-      }
-      if (message.name == 'backColor') {
-        this.backColor = (message as Message<Color>).value
-      }
-      if (message.name == 'title') {
-        this.title = (message as Message<string>).value
-      }
-      if (message.name == 'dex') {
-        this.dex = (message as Message<number>).value
-      }
-      if (message.name == 'stateChange') {
-        this.stateChange = (message as Message<string>).value
-      }
+    } else if (name == "page1") {
+      PageTwo()
+    } else if (name == "page2") {
+      PageThree()
+    }else if (name == "page3") {
+      PageFour()
     }
-    this.messageManager.registerCallback(callback)
   }
-
   build() {
     Column() {
-      Navigation({}) {
+      Navigation(this.pageInfos) {
         List({ space: 12, initialIndex: 0 }) {
           ForEach(this.arr, (item: number, index: int) => {
             ListItem() {
-              // NavRouter() {
-              //   Row() {
-              //     Image($r('app.media.icon')).width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 } as Margin)
-              //     Text(`NavRouter${item + 1}`)
-              //       .fontSize(22)
-              //       .fontWeight(500)
-              //       .textAlign(TextAlign.Center)
-              //   }
-              //   .width(180)
-              //   .height(72)
-              //   .backgroundColor(this.dex === index ? '#ccc' : '#fff')
-              //   .borderRadius(24)
-              //
-              //   NavDestination() {
-              //     Text(`我是NavDestination第${item + 1}页内容`).fontSize(50)
-              //     Flex({ direction: FlexDirection.Row }) {
-              //       Row() {
-              //         Image($r('app.media.icon')).width(40).height(40).borderRadius(40).margin({ right: 15 } as Margin)
-              //         Text('Hello').fontSize(30).key('textContent' + (item + 1).toString())
-              //       }.padding({ left: 15 })
-              //     }
-              //   }.backgroundColor(this.backColor)
-              //   .key('NavDestination' + (item + 1).toString())
-              //   .title(this.title + (item + 1).toString())
-              //   .hideTitleBar(this.hideTitleBar)
-              // }.key('NavRouter' + (item + 1).toString())
-              // .onStateChange((isActivated: boolean) => {
-              //   this.stateChange = "stateChange " + isActivated.toString()
-              //   this.dex = index
-              // })
+              Column() {
+                Row() {
+                  Image($r('app.media.icon')).width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 } as Margin)
+                  Text(`NavRouter${item + 1}`)
+                    .fontSize(22)
+                    .fontWeight(500)
+                    .textAlign(TextAlign.Center)
+                }
+                .width(180)
+                .height(72)
+                .backgroundColor(this.dex === index ? '#ccc' : '#fff')
+                .borderRadius(24)
+
+
+              }.key('NavRouter' + String(item + 1)).width('100%')
+              .onClick((e: ClickEvent)=>{
+                let pageName = "page" + String(item);
+                this.pageInfos.pushPathByName(pageName, null);
+              })
+              
             }
           }, (item: number) => String(item))
         }
         .height('100%')
         .margin({ top: 12, left: 12 } as Margin)
       }
+      .navDestination(this.PageBuilder)
       .navBarWidth('30%')
       .mode(NavigationMode.Split)
       .hideTitleBar(true)

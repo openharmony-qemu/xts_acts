@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
 import router from '@ohos.router';
-import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -42,7 +42,7 @@ export default function blankJsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        // routerInstance.clear();
+        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get blank state success " + JSON.stringify(pages));
         if (!("blank" == pages.name)) {
@@ -55,12 +55,13 @@ export default function blankJsunit() {
       }
     });
 
-    
-    /*
-     * @tc.number   blankTest_static_0001
-     * @tc.name     blankTest_static_0001
-     * @tc.desc     blankTest_static_0001
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number blankTest_static_0001
+     * @tc.name blankTest_static_0001
+     * @tc.desc Set color values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('blankTest_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('blankTest_static_0001 START');
@@ -72,12 +73,13 @@ export default function blankJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   blankTest_static_0002
-     * @tc.name     blankTest_static_0002
-     * @tc.desc     blankTest_static_0002
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number blankTest_static_0002
+     * @tc.name blankTest_static_0002
+     * @tc.desc Change color values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('blankTest_static_0002', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -85,7 +87,7 @@ export default function blankJsunit() {
       let driver = Driver.create();
       let button = await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
       await button.click();
-      await UtilsTest.msSleep(2000)
+     await UtilsTest.msSleep(2000)
 
       let strJsonNew = inspector.getInspectorByKey('blank');
       console.info("blankTest_static_0002 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$attrs')));

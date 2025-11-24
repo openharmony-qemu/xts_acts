@@ -48,7 +48,26 @@ struct DatePickerExample01 {
         selected: this.selectedDate
       })
         .key('datePicker')
+        .id('datePicker')
         .lunar(true)
+        .onDateChange((date: Date) => {
+          console.info('select current date is: ' + JSON.stringify(date));
+          try {
+            let backData: events_emitter.EventData = {
+              data: {
+                "useMilitaryTime" : this.useMilitaryTime,
+              } as Record<string,Object | null | undefined>
+            }
+            let backEvent: events_emitter.InnerEvent = {
+              eventId: 80,
+              priority: events_emitter.EventPriority.LOW
+            }
+            console.info("DatePicker start to emit action state")
+            events_emitter.emit(backEvent, backData)
+          } catch (err) {
+            console.info("DatePicker emit action state err: " + JSON.stringify((err as Error).message))
+          }
+        })
     }.width('100%')
   }
 

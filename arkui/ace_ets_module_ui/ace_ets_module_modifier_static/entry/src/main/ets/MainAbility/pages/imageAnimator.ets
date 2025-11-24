@@ -12,61 +12,61 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Component,$r, Padding,Column,ImageAnimator,Alignment,FillMode,AnimationStatus,ImageAnimatorAttribute,Hyperlink,BreakpointsReference,GridRowDirection,TextOverflow,GridCol,ColumnOptions,Grid,GridItem,Gauge,animateTo,FormComponent,Visibility,FormDimension,Divider,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,GridRow,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
+import { Entry,Component,$r, Padding,Column,ImageAnimator,Alignment,Hyperlink,BreakpointsReference,GridRowDirection,TextOverflow,GridCol,ColumnOptions,Grid,GridItem,Gauge,animateTo,FormComponent,Visibility,FormDimension,Divider,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,GridRow,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
   State,
   Link,
   Prop,
 } from '@ohos.arkui.stateManagement';
-import { ImageAnimatorModifier } from "@ohos.arkui.modifier";
-
-class CustomModifier extends ImageAnimatorModifier {
-  applyImageAnimatorAttribute(instance: ImageAnimatorAttribute): void {
-    // super.applyNormalAttribute?.(instance);
-  }
-
-  onChange1() {
-    this.iterations(1)
-  }
-}
+// import { ImageAnimatorModifier } from "@ohos.arkui.modifier";
+//
+// class CustomModifier extends ImageAnimatorModifier {
+//   applyImageAnimatorAttribute(instance: ImageAnimatorAttribute): void {
+//     super.applyNormalAttribute?.(instance);
+//   }
+//
+//   onChange1() {
+//     this.iterations(1)
+//   }
+// }
 
 @Entry
 @Component
 struct ImageAnimatorExample {
-  @State customModifier: ImageAnimatorModifier = new CustomModifier()
-    .iterations(1)
-    .fillMode(FillMode.None)
-    .fixedSize(true)
-    .reverse(true)
-    .duration(2000)
-    .state(AnimationStatus.Initial)
-    .images([
-      {
-        src: $r('app.media.blr_1')
-      },
-      {
-        src: $r('app.media.blr_2')
-      },
-      {
-        src: $r('app.media.blr_3')
-      },
-      {
-        src: $r('app.media.blr_4')
-      }
-    ])
+//   @State customModifier: ImageAnimatorModifier = new CustomModifier()
+//     .iterations(1)
+//     .fillMode(FillMode.None)
+//     .fixedSize(true)
+//     .reverse(true)
+//     .duration(2000)
+//     .state(AnimationStatus.Initial)
+//     .images([
+//       {
+//         src: $r('app.media.blr_1')
+//       },
+//       {
+//         src: $r('app.media.blr_2')
+//       },
+//       {
+//         src: $r('app.media.blr_3')
+//       },
+//       {
+//         src: $r('app.media.blr_4')
+//       }
+//     ])
 
 
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Button("change value").onClick((e: ClickEvent) => {
-        (this.customModifier as CustomModifier).onChange1();
+//         (this.customModifier as CustomModifier).onChange1();
       }).key("changeButton")
 
       Column({ space: 10 } as ColumnOptions) {
         ImageAnimator()
           .width(200)
           .height(150)
-          .attributeModifier(this.customModifier as CustomModifier)
+//           .attributeModifier(this.customModifier as CustomModifier)
           .key('imageAnimator')
       }
     }

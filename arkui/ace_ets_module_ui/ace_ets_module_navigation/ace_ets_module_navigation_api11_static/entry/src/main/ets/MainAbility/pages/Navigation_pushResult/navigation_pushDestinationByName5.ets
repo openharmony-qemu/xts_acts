@@ -21,7 +21,7 @@ import {
 import {
   State,
   Link,
-  PropRef,Provide
+  Prop,Provide
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
@@ -29,7 +29,7 @@ import { BusinessError } from '@ohos.base';
 @Entry
 @Component
 struct navigation_pushDestinationByName5 {
-  // @Provide('pageInfos') pageInfos: NavPathStack = new NavPathStack()
+  @Provide pageInfos: NavPathStack = new NavPathStack()
   @State str:string = '1'
   @State code:string = '2'
 
@@ -48,20 +48,20 @@ struct navigation_pushDestinationByName5 {
   }
 
   build() {
-    // Navigation(this.pageInfos) {
+    Navigation(this.pageInfos) {
       Column({space:5} as ColumnOptions) {
 
         Button('pushDestinationByName')
           .fontSize(14)
           .onClick((e: ClickEvent) => {
-            // this.pageInfos.pushDestinationByName('pageThree',null)
-            //   .then(()=>{
-            //     this.str = 'success'
-            //   })
-            //   .catch((error: BusinessError)=>{
-            //     console.log('Test:'+JSON.stringify(error))
-            //     this.code = (error.code).toString() + error.message
-            //   })
+            this.pageInfos.pushDestinationByName('pageThree',{})
+              .then(()=>{
+                this.str = 'success'
+              })
+              .catch((error: BusinessError): void =>{
+                console.log('Test:'+JSON.stringify(error))
+                this.code = (error.code).toString() + error.message
+              })
           })
           .id('navigation_pushDestinationByName5_pushDestination')
 
@@ -69,6 +69,6 @@ struct navigation_pushDestinationByName5 {
         Text(this.code).id('navigation_pushDestinationByName5_text_code')
 
       }
-    // }.title('Navigation').navDestination(this.PageMap)
+    }.title('Navigation').navDestination(this.PageMap)
   }
 }

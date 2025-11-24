@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium"
 import router from '@ohos.router';
 import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -60,8 +60,6 @@ export default function  datePickerUIJsunit() {
         console.info("get datePickerUIJsunit state pages:" + JSON.stringify(pages));
         if (!("datePickerUI" == pages.name)) {
           console.info("get datePickerUIJsunit pages.name:" + JSON.stringify(pages.name));
-
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -72,33 +70,32 @@ export default function  datePickerUIJsunit() {
     });
 
 
+    
     /*
      * @tc.number   datePickerUIJsunit_static_0100
      * @tc.name     datePickerUIJsunit_static_0100
      * @tc.desc     datePickerUIJsunit_static_0100
      * @tc.level    Level.LEVEL1
      */
-    it('datePickerUIJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('datePickerUIJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
        console.info('datePickerUIJsunit_0100 START');
        await CommonFunc.sleep(1000);
        // get the datePicker component and test attribute to confirm
        let strJson = inspector.getInspectorByKey('datePickerUI');
        let obj = JSON.parseJsonElement(strJson);
         console.info("obj is: " + JSON.stringify(obj));
-       console.info("datePickerUIJsunit_0100 component obj is: " + obj.getElement('$attrs').getString('options') + "---" + obj.getElement('$attrs').getString('startDate'));
-       console.info("datePickerUIJsunit_0100 component obj is: " + obj.getElement('$attrs').getString('start') + "--" + obj.getElement('$attrs').getString('end') + "--" + obj.getElement('$attrs').getString('selected'));
        expect(obj.getElement('$attrs').getString('lunar')).assertEqual('false');
        done();
     });
 
-
-   /*
+   
+    /*
      * @tc.number   datePickerUIJsunit_static_0200
      * @tc.name     datePickerUIJsunit_static_0200
      * @tc.desc     datePickerUIJsunit_static_0200
      * @tc.level    Level.LEVEL1
      */
-    it('datePickerUIJsunit_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('datePickerUIJsunit_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('datePickerUIJsunit_0200 START');
       // modify the type attribute normal value of datePicker dynamically
       const messageManager = AppStorage.get<MessageManager>('messageManager') as MessageManager

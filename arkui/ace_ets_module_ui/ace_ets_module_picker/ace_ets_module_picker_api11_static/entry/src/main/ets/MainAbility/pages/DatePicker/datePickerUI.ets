@@ -50,9 +50,18 @@ struct DatePickerUIExample {
   messageManager:MessageManager = new MessageManager()
    onPageShow() {
     console.info('Checkbox onPageShow')
-
     AppStorage.setOrCreate('messageManager', this.messageManager)
+    let callback:Callback = (message: Message) => {
+      console.error('message = ' + message.name + "--" + message.value)
+      if (message.name == 'isLunar') {
+          this.isLunar = message.value as boolean
+      }
+      if (message.name == 'options') {
+          this.options = message.value as DatePickerOptions
+      }
 
+    }
+    this.messageManager.registerCallback(callback)
 
   }
 
@@ -63,10 +72,23 @@ struct DatePickerUIExample {
         .onClick((e:ClickEvent) => {
           this.isLunar = !this.isLunar
         })
-      Text(this.message).fontSize(14).lineHeight(20).fontColor('#182431').fontWeight(500).margin({top:20} as Margin).key('dptouch')
+      Text(this.message)
+        .fontSize(14)
+        .lineHeight(20)
+        .fontColor('#182431')
+        .fontWeight(500)
+        .margin({ top: 20 } as Margin)
+        .key('dptouch')
+        .id('dptouch')
       DatePicker(this.options)
         .lunar(this.isLunar)
-
+        .onDateChange((value: Date) => {
+          this.selectedDate.setFullYear(value.getYear() ?? 0, value.getMonth(), value.getDate())
+          console.info('select current date is: ' + JSON.stringify(value))
+          this.message = JSON.stringify(value.getYear())
+        })
+        .key('datePickerUI')
+        .id('datePickerUI')
 
     }.width('100%')
   }

@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
 import router from '@ohos.router';
-import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -57,12 +57,13 @@ export default function list() {
       }
     })
 
-    
-    /*
-     * @tc.number   ListJsunit_static_0100
-     * @tc.name     ListJsunit_static_0100
-     * @tc.desc     ListJsunit_static_0100
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ListJsunit_static_0100
+     * @tc.name  ListJsunit_static_0100
+     * @tc.desc Set scrollSnapAlign values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ListJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ListJsunit_static_0100] START');
@@ -75,12 +76,13 @@ export default function list() {
       done();
     });
 
-    
-    /*
-     * @tc.number   ListJsunit_static_0101
-     * @tc.name     ListJsunit_static_0101
-     * @tc.desc     ListJsunit_static_0101
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ListJsunit_static_0101
+     * @tc.name ListJsunit_static_0101
+     * @tc.desc Set lanes values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ListJsunit_static_0101', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ListJsunit_static_0101] START');
@@ -93,12 +95,13 @@ export default function list() {
       done();
     });
 
-    
-    /*
-     * @tc.number   ListJsunit_static_0102
-     * @tc.name     ListJsunit_static_0102
-     * @tc.desc     ListJsunit_static_0102
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ListJsunit_static_0102
+     * @tc.name ListJsunit_static_0102
+     * @tc.desc Set friction values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ListJsunit_static_0102', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ListJsunit_static_0102] START');
@@ -111,12 +114,13 @@ export default function list() {
       done();
     });
 
-    
-    /*
-     * @tc.number   ListJsunit_static_0103
-     * @tc.name     ListJsunit_static_0103
-     * @tc.desc     ListJsunit_static_0103
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ListJsunit_static_0103
+     * @tc.name ListJsunit_static_0103
+     * @tc.desc Set enableScrollInteraction values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ListJsunit_static_0103', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ListJsunit_static_0103] START');
@@ -129,12 +133,13 @@ export default function list() {
       done();
     });
 
-    
-    /*
-     * @tc.number   ListJsunit_static_0105
-     * @tc.name     ListJsunit_static_0105
-     * @tc.desc     ListJsunit_static_0105
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ListJsunit_static_0105
+     * @tc.name ListJsunit_static_0105
+     * @tc.desc Set chainAnimationOptions values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ListJsunit_static_0105', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ListJsunit_static_0105] START');
@@ -142,17 +147,18 @@ export default function list() {
 
       console.info("[ListJsunit_static_0105] JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
 
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('chainAnimationOptions')).assertEqual(undefined);
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('chainAnimationOptions')).assertEqual(undefined);
       console.info('[ListJsunit_static_0105] END');
       done();
     });
 
-    
-    /*
-     * @tc.number   ListJsunit_static_0106
-     * @tc.name     ListJsunit_static_0106
-     * @tc.desc     ListJsunit_static_0106
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ListJsunit_static_0106
+     * @tc.name ListJsunit_static_0106
+     * @tc.desc Set alignListItem values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ListJsunit_static_0106', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ListJsunit_static_0106] START');
@@ -165,12 +171,13 @@ export default function list() {
       done();
     });
 
-    
-    /*
-     * @tc.number   ListJsunit_static_0107
-     * @tc.name     ListJsunit_static_0107
-     * @tc.desc     ListJsunit_static_0107
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ListJsunit_static_0107
+     * @tc.name ListJsunit_static_0107
+     * @tc.desc Set listDirection values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ListJsunit_static_0107', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ListJsunit_static_0107] START');
@@ -183,12 +190,13 @@ export default function list() {
       done();
     });
 
-    
-    /*
-     * @tc.number   ListJsunit_static_0108
-     * @tc.name     ListJsunit_static_0108
-     * @tc.desc     ListJsunit_static_0108
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ListJsunit_static_0108
+     * @tc.name ListJsunit_static_0108
+     * @tc.desc Set scrollBar values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ListJsunit_static_0108', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ListJsunit_static_0108] START');
@@ -201,12 +209,13 @@ export default function list() {
       done();
     });
 
-    
-    /*
-     * @tc.number   ListJsunit_static_0109
-     * @tc.name     ListJsunit_static_0109
-     * @tc.desc     ListJsunit_static_0109
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ListJsunit_static_0109
+     * @tc.name ListJsunit_static_0109
+     * @tc.desc Set edgeEffect values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ListJsunit_static_0109', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ListJsunit_static_0109] START');
@@ -219,12 +228,13 @@ export default function list() {
       done();
     });
 
-    
-    /*
-     * @tc.number   ListJsunit_static_0110
-     * @tc.name     ListJsunit_static_0110
-     * @tc.desc     ListJsunit_static_0110
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ListJsunit_static_0110
+     * @tc.name ListJsunit_static_0110
+     * @tc.desc Set divider values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ListJsunit_static_0110', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ListJsunit_static_0110] START');
@@ -240,30 +250,32 @@ export default function list() {
       done();
     });
 
-    //  废弃
-    // /*
-    //  * @tc.number   ListJsunit_static_0111
-    //  * @tc.name     ListJsunit_static_0111
-    //  * @tc.desc     ListJsunit_static_0111
-    //  * @tc.level    Level.LEVEL0
-    //  */
-    // it('ListJsunit_static_0111', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('[ListJsunit_static_0111] START');
-    //   let strJson = inspector.getInspectorByKey('ListKey1');
-    //
-    //   console.info("[ListJsunit_static_0111] JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
-    //
-    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('editMode')).assertEqual(true);
-    //   console.info('[ListJsunit_static_0111] END');
-    //   done();
-    // });
+    /**
+     * @tc.number ListJsunit_static_0111
+     * @tc.name ListJsunit_static_0111
+     * @tc.desc Set editMode values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
+     */
+    it('ListJsunit_static_0111', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[ListJsunit_static_0111] START');
+      let strJson = inspector.getInspectorByKey('ListKey1');
 
-    
-    /*
-     * @tc.number   ListJsunit_static_0112
-     * @tc.name     ListJsunit_static_0112
-     * @tc.desc     ListJsunit_static_0112
-     * @tc.level    Level.LEVEL0
+      console.info("[ListJsunit_static_0111] JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
+
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('editMode')).assertEqual(true);
+      console.info('[ListJsunit_static_0111] END');
+      done();
+    });
+
+    /**
+     * @tc.number ListJsunit_static_0112
+     * @tc.name ListJsunit_static_0112
+     * @tc.desc Set multiSelectable values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ListJsunit_static_0112', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ListJsunit_static_0112] START');
@@ -276,12 +288,13 @@ export default function list() {
       done();
     });
 
-    
-    /*
-     * @tc.number   ListJsunit_static_0113
-     * @tc.name     ListJsunit_static_0113
-     * @tc.desc     ListJsunit_static_0113
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ListJsunit_static_0113
+     * @tc.name ListJsunit_static_0113
+     * @tc.desc Set cachedCount values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ListJsunit_static_0113', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ListJsunit_static_0113] START');
@@ -294,12 +307,13 @@ export default function list() {
       done();
     });
 
-    
-    /*
-     * @tc.number   ListJsunit_static_0114
-     * @tc.name     ListJsunit_static_0114
-     * @tc.desc     ListJsunit_static_0114
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ListJsunit_static_0114
+     * @tc.name ListJsunit_static_0114
+     * @tc.desc Set chainAnimation values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ListJsunit_static_0114', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ListJsunit_static_0114] START');
@@ -307,17 +321,18 @@ export default function list() {
 
       console.info("[ListJsunit_static_0114] JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
 
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('chainAnimation')).assertEqual(true);
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('chainAnimation')).assertEqual(true);
       console.info('[ListJsunit_static_0114] END');
       done();
     });
 
-    
-    /*
-     * @tc.number   ListJsunit_static_0115
-     * @tc.name     ListJsunit_static_0115
-     * @tc.desc     ListJsunit_static_0115
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ListJsunit_static_0115
+     * @tc.name ListJsunit_static_0115
+     * @tc.desc Set sticky values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ListJsunit_static_0115', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ListJsunit_static_0115] START');
@@ -330,12 +345,13 @@ export default function list() {
       done();
     });
 
-    
-    /*
-     * @tc.number   ListJsunit_static_0116
-     * @tc.name     ListJsunit_static_0116
-     * @tc.desc     ListJsunit_static_0116
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ListJsunit_static_0116
+     * @tc.name ListJsunit_static_0116
+     * @tc.desc Set contentEndOffset values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ListJsunit_static_0116', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ListJsunit_static_0116] START');
@@ -348,12 +364,13 @@ export default function list() {
       done();
     });
 
-    
-    /*
-     * @tc.number   ListJsunit_static_0117
-     * @tc.name     ListJsunit_static_0117
-     * @tc.desc     ListJsunit_static_0117
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ListJsunit_static_0117
+     * @tc.name ListJsunit_static_0117
+     * @tc.desc Set contentStartOffset values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ListJsunit_static_0117', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ListJsunit_static_0117] START');
@@ -366,12 +383,13 @@ export default function list() {
       done();
     });
 
-    
-    /*
-     * @tc.number   ListJsunit_static_0118
-     * @tc.name     ListJsunit_static_0118
-     * @tc.desc     ListJsunit_static_0118
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ListJsunit_static_0118
+     * @tc.name ListJsunit_static_0118
+     * @tc.desc Change lanes values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ListJsunit_static_0118', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ListJsunit_static_0118 START');

@@ -13,40 +13,40 @@
  * limitations under the License.
  */
 
-import { Entry, Column, Component, ForEach, Scroll, Scroller, Flex, FlexDirection, TextAlign,BarState,EdgeEffect,Margin,
-  ItemAlign, FlexAlign, Text, Button, ClickEvent, ScrollAttribute, ScrollSnapAlign, NestedScrollMode, ScrollDirection} from '@ohos.arkui.component'
-import { AppStorage, State } from '@ohos.arkui.stateManagement';
+import { Entry, Column, Component, ForEach, Scroll, Scroller, Flex, FlexDirection, TextAlign,
+  ItemAlign, FlexAlign, Text, Button, ClickEvent} from '@ohos.arkui.component'
+import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { ScrollModifier } from "@ohos.arkui.modifier";
-class CustomModifier extends ScrollModifier {
-  applyNormalAttribute(instance: ScrollAttribute): void {
-    // super.applyNormalAttribute?.(instance);
-  }
-  onChange1() {
-    this.scrollBarColor('#FF222222')
-  }
-}
+// import { ScrollModifier } from "@ohos.arkui.modifier";
+// class CustomModifier extends ScrollModifier {
+//   applyNormalAttribute(instance: ScrollAttribute): void {
+//     super.applyNormalAttribute?.(instance);
+//   }
+//   onChange1() {
+//     this.scrollBarColor('#FF222222')
+//   }
+// }
 
 @Entry
 @Component
 struct ScrollOnScrollBegin {
   scroller: Scroller = new Scroller()
   private arr: Array<number> = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
-  @State customModifier: ScrollModifier = new CustomModifier()
-    .scrollSnap({ snapAlign: ScrollSnapAlign.NONE, enableSnapToStart: true, enableSnapToEnd: true })
-    .friction(1)
-    .enableScrollInteraction(true)
-    .nestedScroll({ scrollForward: NestedScrollMode.SELF_FIRST, scrollBackward: NestedScrollMode.PARENT_FIRST })
-    .scrollable(ScrollDirection.Vertical)
-    .scrollBar(BarState.Auto)
-    .scrollBarWidth(5)
-    .edgeEffect(EdgeEffect.None)
-    .scrollBarColor('#FF123456')
+  // @State customModifier: ScrollModifier = new CustomModifier()
+  //   .scrollSnap({ snapAlign: ScrollSnapAlign.NONE, enableSnapToStart: true, enableSnapToEnd: true })
+  //   .friction(1)
+  //   .enableScrollInteraction(true)
+  //   .nestedScroll({ scrollForward: NestedScrollMode.SELF_FIRST, scrollBackward: NestedScrollMode.PARENT_FIRST })
+  //   .scrollable(ScrollDirection.Vertical)
+  //   .scrollBar(BarState.Auto)
+  //   .scrollBarWidth(5)
+  //   .edgeEffect(EdgeEffect.None)
+  //   .scrollBarColor('#FF123456')
 
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
       Button("change value").onClick((e:ClickEvent) => {
-        (this.customModifier as CustomModifier).onChange1();
+        // (this.customModifier as CustomModifier).onChange1();
       }).key("changeButton")
 
       Scroll(this.scroller) {
@@ -59,12 +59,12 @@ struct ScrollOnScrollBegin {
               .borderRadius(15)
               .fontSize(16)
               .textAlign(TextAlign.Center)
-              .margin({ top: 10 } as Margin)
+              // .margin({ top: 10 })
           })
         }.width('100%')
       }
         .key("ScrollKey1")
-        .attributeModifier(this.customModifier as CustomModifier)
+        // .attributeModifier(this.customModifier as CustomModifier)
         .width("100%")
         .height("100%")
 

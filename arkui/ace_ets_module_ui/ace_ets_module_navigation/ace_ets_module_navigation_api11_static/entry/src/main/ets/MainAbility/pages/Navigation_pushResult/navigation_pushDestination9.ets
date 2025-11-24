@@ -14,14 +14,14 @@
  */
 import {
   Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,animateTo,AnimateParam,Search,TextAlign,Axis,NavBarPosition,
-  NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,
+  NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,NavPathInfo,
   Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,
   FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date,NavigationCommonTitle,NavDestinationCommonTitle
 ,NavPathStack} from '@ohos.arkui.component';
 import {
   State,
   Link,
-  PropRef,Provide
+  Prop,Provide
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
@@ -30,7 +30,7 @@ import { BusinessError } from '@ohos.base';
 @Component
 struct navigation_pushDestination9 {
   @State flag : boolean= true
-  // @Provide('pageInfos') pageInfos: NavPathStack = new NavPathStack()
+  @Provide pageInfos: NavPathStack = new NavPathStack()
   @State result1:string = '1'
   @State result2:string = '2'
   @State result3:string = '3'
@@ -42,7 +42,7 @@ struct navigation_pushDestination9 {
         Button('pop')
           .fontSize(14)
           .onClick((e: ClickEvent) => {
-            // this.pageInfos.pop()
+            this.pageInfos.pop()
           })
           .id('navigation_pushDestination9_pop')
 
@@ -80,19 +80,19 @@ struct navigation_pushDestination9 {
         .id('navigation_pushDestination9_btn')
 
       if(this.flag){
-        // Navigation(this.pageInfos) {
+        Navigation(this.pageInfos) {
           Column({space:5} as ColumnOptions) {
 
             Button('pushPageOne')
               .fontSize(14)
               .onClick((e: ClickEvent) => {
-                // this.pageInfos.pushDestination({ name: 'pageOne',param:null })
-                //   .then(()=>{
-                //     this.result1 = 'success'
-                //   })
-                //   .catch((error: BusinessError)=>{
-                //     this.result1 = (error.code).toString() + error.message
-                //   })
+                this.pageInfos.pushDestination(new NavPathInfo('pageOne',null))
+                  .then(()=>{
+                    this.result1 = 'success'
+                  })
+                  .catch((error: BusinessError): void =>{
+                    this.result1 = (error.code).toString() + error.message
+                  })
               })
               .id('navigation_pushDestination9_pushDestinationOne')
 
@@ -100,74 +100,74 @@ struct navigation_pushDestination9 {
             Button('pushPageTwo')
               .fontSize(14)
               .onClick((e: ClickEvent) => {
-                // this.pageInfos.pushDestination({ name: 'pageTwo',param:null })
-                //   .then(()=>{
-                //     this.result2 = 'success'
-                //   })
-                //   .catch((error: BusinessError)=>{
-                //     this.result2 = (error.code).toString() + error.message
-                //   })
+                this.pageInfos.pushDestination(new NavPathInfo('pageTwo',null))
+                  .then(()=>{
+                    this.result2 = 'success'
+                  })
+                  .catch((error: BusinessError): void => {
+                    this.result2 = (error.code).toString() + error.message
+                  })
               })
               .id('navigation_pushDestination9_pushDestinationTwo')
 
             Button('pushPageThree')
               .fontSize(14)
               .onClick((e: ClickEvent) => {
-                // this.pageInfos.pushDestination({ name: 'pageThree',param:null })
-                //   .then(()=>{
-                //     this.result3 = 'success'
-                //   })
-                //   .catch((error: BusinessError)=>{
-                //     this.result3 = (error.code).toString() + error.message
-                //   })
+                this.pageInfos.pushDestination(new NavPathInfo('pageThree',null))
+                  .then(()=>{
+                    this.result3 = 'success'
+                  })
+                  .catch((error: BusinessError): void =>{
+                    this.result3 = (error.code).toString() + error.message
+                  })
               })
 
             Text(this.result2).id('navigation_pushDestination9_text_result2')
 
           }
-        // }.title('Navigation').navDestination(this.PageMap)
+        }.title('Navigation').navDestination(this.PageMap)
 
       } else {
 
-        // Navigation(this.pageInfos) {
+        Navigation(this.pageInfos) {
           Column({space:5} as ColumnOptions) {
 
             Button('pushPageOne')
               .fontSize(14)
               .onClick((e: ClickEvent) => {
-                // this.pageInfos.pushDestination({ name: 'pageOne',param:null })
-                //   .then(()=>{
-                //     this.result1 = 'success'
-                //   })
-                //   .catch((error: BusinessError)=>{
-                //     this.result1 = (error.code).toString() + error.message
-                //   })
+                this.pageInfos.pushDestination(new NavPathInfo('pageOne',null))
+                  .then(()=>{
+                    this.result1 = 'success'
+                  })
+                  .catch((error: BusinessError): void =>{
+                    this.result1 = (error.code).toString() + error.message
+                  })
               })
 
 
             Button('pushPageTwo')
               .fontSize(14)
               .onClick((e: ClickEvent) => {
-                // this.pageInfos.pushDestination({ name: 'pageTwo',param:null })
-                //   .then(()=>{
-                //     this.result2 = 'success'
-                //   })
-                //   .catch((error: BusinessError)=>{
-                //     this.result2 = (error.code).toString() + error.message
-                //   })
+                this.pageInfos.pushDestination(new NavPathInfo('pageTwo',null))
+                  .then(()=>{
+                    this.result2 = 'success'
+                  })
+                  .catch((error: BusinessError): void =>{
+                    this.result2 = (error.code).toString() + error.message
+                  })
               })
 
 
             Button('pushPageThree')
               .fontSize(14)
               .onClick((e: ClickEvent) => {
-                // this.pageInfos.pushDestination({ name: 'pageThree',param:null })
-                //   .then(()=>{
-                //     this.result3 = 'success'
-                //   })
-                //   .catch((error: BusinessError)=>{
-                //     this.result3 = (error.code).toString() + error.message
-                //   })
+                this.pageInfos.pushDestination(new NavPathInfo('pageThree',null))
+                  .then(()=>{
+                    this.result3 = 'success'
+                  })
+                  .catch((error: BusinessError): void =>{
+                    this.result3 = (error.code).toString() + error.message
+                  })
               })
               .id('navigation_pushDestination9_pushDestinationThree')
 
@@ -175,7 +175,7 @@ struct navigation_pushDestination9 {
             Text(this.result3).id('navigation_pushDestination9_text_result3')
 
           }
-        // }.title('Navigation')
+        }.title('Navigation')
       }
 
     }

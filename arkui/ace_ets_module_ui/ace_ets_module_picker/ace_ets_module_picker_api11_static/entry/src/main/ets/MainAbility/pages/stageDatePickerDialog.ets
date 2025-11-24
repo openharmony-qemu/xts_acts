@@ -13,9 +13,10 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
+import { UIContext } from '@ohos.arkui.UIContext';
 import { Entry, Component, Column, Text, Rating, Margin, Row, DatePickerResult, Alignment, TextAlign, TextOverflow, ClickEvent } from '@ohos.arkui.component';
-import { State } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct stageDatePickerDialog {
@@ -39,11 +40,25 @@ struct stageDatePickerDialog {
           .key("DatePickerDialog1")
           .onClick((e:ClickEvent) => {
             try {
-
+              AppStorage.get<UIContext>('uiContent')?.showDatePickerDialog({
+                start: new Date("2000-1-1"),
+                end: new Date("2100-12-31"),
+                selected: this.selectedDate,
+                onDateAccept: (value: Date) => {
+                  this.selectedDate.setFullYear(value.getYear() ?? 0, value.getMonth(), value.getDate())
+                  console.info("DatePickerDialog:onAccept()" + JSON.stringify(value))
+                },
+                onCancel: () => {
+                  console.info("DatePickerDialog:onCancel()")
+                },
+                onDateChange: (value: Date) => {
+                  console.info("DatePickerDialog:onChange()" + JSON.stringify(value))
+                }
+              })
               let backData: events_emitter.EventData = {
                 data: {
                   "STATUS": true
-                } as Record<string, RecordData>
+                } as Record<string, Object | null | undefined>
               }
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 60220,
@@ -72,11 +87,25 @@ struct stageDatePickerDialog {
           .key("DatePickerDialog2")
           .onClick((e:ClickEvent) => {
             try {
-
+              AppStorage.get<UIContext>('uiContent')?.showDatePickerDialog({
+                start: new Date("2000-1-1"),
+                end: new Date("2100-12-31"),
+                selected: this.selectedDate,
+                onDateAccept: (value: Date) => {
+                  this.selectedDate.setFullYear(value.getYear() ?? 0, value.getMonth(), value.getDate())
+                  console.info("DatePickerDialog:onAccept()" + JSON.stringify(value))
+                },
+                onCancel: () => {
+                  console.info("DatePickerDialog:onCancel()")
+                },
+                onDateChange: (value: Date) => {
+                  console.info("DatePickerDialog:onChange()" + JSON.stringify(value))
+                }
+              })
               let backData1: events_emitter.EventData = {
                 data: {
                   "STATUS": 10
-                } as Record<String, RecordData>
+                } as Record<string, Object | null | undefined>
               }
               let backEvent1: events_emitter.InnerEvent = {
                 eventId: 60221,
@@ -105,11 +134,25 @@ struct stageDatePickerDialog {
           .key("DatePickerDialog3")
           .onClick((e:ClickEvent) => {
             try {
-
+              AppStorage.get<UIContext>('uiContent')?.showDatePickerDialog({
+                start: new Date("2000-1-1"),
+                end: new Date("2100-12-31"),
+                selected: this.selectedDate,
+                onDateAccept: (value: Date) => {
+                  this.selectedDate.setFullYear(value.getYear() ?? 0, value.getMonth(), value.getDate())
+                  console.info("DatePickerDialog:onAccept()" + JSON.stringify(value))
+                },
+                onCancel: () => {
+                  console.info("DatePickerDialog:onCancel()")
+                },
+                onDateChange: (value: Date) => {
+                  console.info("DatePickerDialog:onChange()" + JSON.stringify(value))
+                }
+              })
               let backData2: events_emitter.EventData = {
                 data: {
                   "STATUS": "STATUS"
-                } as Record<String, RecordData>
+                } as Record<string, Object | null | undefined>
               }
               let backEvent2: events_emitter.InnerEvent = {
                 eventId: 60222,

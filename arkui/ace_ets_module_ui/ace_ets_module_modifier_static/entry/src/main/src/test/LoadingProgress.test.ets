@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
 import router from '@ohos.router';
-import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -57,12 +57,13 @@ export default function loadingProgressJsunit() {
       }
     })
 
-    
-    /*
-     * @tc.number   ArkUX_Stage_loadingProgress_attrs_static_0100
-     * @tc.name     ArkUX_Stage_loadingProgress_attrs_static_0100
-     * @tc.desc     ArkUX_Stage_loadingProgress_attrs_static_0100
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ArkUX_Stage_loadingProgress_attrs_static_0100
+     * @tc.name ArkUX_Stage_loadingProgress_attrs_static_0100
+     * @tc.desc Set color values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ArkUX_Stage_loadingProgress_attrs_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_loadingProgress_attrs_static_0100 START');
@@ -80,12 +81,13 @@ export default function loadingProgressJsunit() {
       }, 500)
     });
 
-    
-    /*
-     * @tc.number   ArkUX_Stage_loadingProgress_attrs_static_0101
-     * @tc.name     ArkUX_Stage_loadingProgress_attrs_static_0101
-     * @tc.desc     ArkUX_Stage_loadingProgress_attrs_static_0101
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ArkUX_Stage_loadingProgress_attrs_static_0101
+     * @tc.name ArkUX_Stage_loadingProgress_attrs_static_0101
+     * @tc.desc Set enableLoading values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ArkUX_Stage_loadingProgress_attrs_static_0101', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_loadingProgress_attrs_static_0101 START');
@@ -102,12 +104,13 @@ export default function loadingProgressJsunit() {
         done();
       }, 500)
     });
-    
-    /*
-     * @tc.number   ArkUX_Stage_loadingProgress_attrs_static_0102
-     * @tc.name     ArkUX_Stage_loadingProgress_attrs_static_0102
-     * @tc.desc     ArkUX_Stage_loadingProgress_attrs_static_0102
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ArkUX_Stage_loadingProgress_attrs_static_0102
+     * @tc.name ArkUX_Stage_loadingProgress_attrs_static_0102
+     * @tc.desc Change enableLoading values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ArkUX_Stage_loadingProgress_attrs_static_0102', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_loadingProgress_attrs_static_0102 START');

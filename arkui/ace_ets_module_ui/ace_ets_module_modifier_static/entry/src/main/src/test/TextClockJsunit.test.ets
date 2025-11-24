@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
 import router from '@ohos.router';
-import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -57,12 +57,13 @@ export default function TextClockJsunit() {
       }
     });
 
-    
-    /*
-     * @tc.number   TextClock_static_0100
-     * @tc.name     TextClock_static_0100
-     * @tc.desc     TextClock_static_0100
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number TextClock_static_0100
+     * @tc.name TextClock_static_0100
+     * @tc.desc Set format values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('TextClock_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextClock_static_0100] START');
@@ -74,12 +75,13 @@ export default function TextClockJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   TextClock_static_0200
-     * @tc.name     TextClock_static_0200
-     * @tc.desc     TextClock_static_0200
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number TextClock_static_0200
+     * @tc.name TextClock_static_0200
+     * @tc.desc Set fontColor values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('TextClock_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextClock_static_0200] START');
@@ -91,12 +93,13 @@ export default function TextClockJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   TextClock_static_0300
-     * @tc.name     TextClock_static_0300
-     * @tc.desc     TextClock_static_0300
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number TextClock_static_0300
+     * @tc.name TextClock_static_0300
+     * @tc.desc Set fontSize values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('TextClock_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextClock_static_0300] START');
@@ -108,12 +111,13 @@ export default function TextClockJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   TextClock_static_0400
-     * @tc.name     TextClock_static_0400
-     * @tc.desc     TextClock_static_0400
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number TextClock_static_0400
+     * @tc.name TextClock_static_0400
+     * @tc.desc Set fontWeight values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('TextClock_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextClock_static_0400] START');
@@ -125,12 +129,13 @@ export default function TextClockJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   TextClock_static_0500
-     * @tc.name     TextClock_static_0500
-     * @tc.desc     TextClock_static_0500
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number TextClock_static_0500
+     * @tc.name TextClock_static_0500
+     * @tc.desc Set fontStyle values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('TextClock_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextClock_static_0500] START');
@@ -142,12 +147,13 @@ export default function TextClockJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   TextClock_static_0600
-     * @tc.name     TextClock_static_0600
-     * @tc.desc     TextClock_static_0600
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number TextClock_static_0600
+     * @tc.name TextClock_static_0600
+     * @tc.desc Set fontFamily values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('TextClock_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextClock_static_0600] START');
@@ -158,12 +164,13 @@ export default function TextClockJsunit() {
       console.info('[TextClock_static_0600] END');
       done();
     });
-    
-    /*
-     * @tc.number   TextClock_static_0601
-     * @tc.name     TextClock_static_0601
-     * @tc.desc     TextClock_static_0601
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number TextClock_static_0601
+     * @tc.name TextClock_static_0601
+     * @tc.desc Change fontSize values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('TextClock_static_0601', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TextClock_static_0601 START');

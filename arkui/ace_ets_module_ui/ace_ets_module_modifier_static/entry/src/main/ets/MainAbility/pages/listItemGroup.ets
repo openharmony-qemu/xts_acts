@@ -12,38 +12,36 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Component,$r,Builder,List, ListItem,ListItemGroup,ListItemGroupAttribute,Padding,Column,StickyStyle,ImageAnimator,ImageSpan,Alignment,Hyperlink,BreakpointsReference,GridRowDirection,TextOverflow,GridCol,ColumnOptions,Grid,GridItem,Gauge,animateTo,FormComponent,Visibility,FormDimension,Divider,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,GridRow,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
+import { Entry,Component,$r,Builder,List, ListItem,ListItemGroup,Padding,Column,StickyStyle,ImageAnimator,ImageSpan,Alignment,Hyperlink,BreakpointsReference,GridRowDirection,TextOverflow,GridCol,ColumnOptions,Grid,GridItem,Gauge,animateTo,FormComponent,Visibility,FormDimension,Divider,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,GridRow,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
   State,
   Link,
   Prop,
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { ListItemGroupModifier } from "@ohos.arkui.modifier";
-
-class CustomModifier extends ListItemGroupModifier {
-
-  applyNormalAttribute(instance: ListItemGroupAttribute): void {
-    // super.applyNormalAttribute?.(instance);
-  }
-
-  onChange() {
-    console.log("====================== onChange 1")
-    this.divider({ strokeWidth: 13, color: '#FF123456', startMargin: 2, endMargin: 2 })
-    console.log("====================== onChange 2")
-  }
-}
+// import { ListItemGroupModifier } from "@ohos.arkui.modifier";
+//
+// class CustomModifier extends ListItemGroupModifier {
+//
+//   applyNormalAttribute(instance: ListItemGroupAttribute): void {
+//     super.applyNormalAttribute?.(instance);
+//   }
+//
+//   onChange() {
+//     this.divider({ strokeWidth: 13, color: '#FF123456', startMargin: 2, endMargin: 2 })
+//   }
+// }
 
 @Entry
 @Component
 struct ListItemGroupExample {
-  @State customModifier: ListItemGroupModifier = new CustomModifier()
-    .divider({ strokeWidth: 12, color: '#FF123456', startMargin: 2, endMargin: 2 })
+//   @State customModifier: ListItemGroupModifier = new CustomModifier()
+//     .divider({ strokeWidth: 12, color: '#FF123456', startMargin: 2, endMargin: 2 })
 
   build() {
     Column() {
       Button("change value").onClick((e: ClickEvent) => {
-        (this.customModifier as CustomModifier).onChange();
+//         (this.customModifier as CustomModifier).onChange();
       }).key("changeButton")
 
       List({ space: 20 }) {
@@ -58,7 +56,7 @@ struct ListItemGroupExample {
           }
         }
         .key('ListItemGroupKey1')
-        .attributeModifier(this.customModifier as CustomModifier)
+//         .attributeModifier(this.customModifier as CustomModifier)
         .borderRadius(20)
       }
       .width('90%')

@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
 import router from '@ohos.router';
-import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -60,12 +60,13 @@ export default function textpickerJsunit() {
       }
     });
 
-    
-    /*
-     * @tc.number   ArkUI_textpicker_static_002
-     * @tc.name     ArkUI_textpicker_static_002
-     * @tc.desc     ArkUI_textpicker_static_002
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ArkUI_textpicker_static_002
+     * @tc.name ArkUI_textpicker_static_002
+     * @tc.desc Set textStyle values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ArkUI_textpicker_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ArkUI_textpicker_static_002] START');
@@ -78,12 +79,13 @@ export default function textpickerJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   ArkUI_textpicker_static_003
-     * @tc.name     ArkUI_textpicker_static_003
-     * @tc.desc     ArkUI_textpicker_static_003
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ArkUI_textpicker_static_003
+     * @tc.name ArkUI_textpicker_static_003
+     * @tc.desc Set selectedTextStyle values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ArkUI_textpicker_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ArkUI_textpicker_static_003] START');
@@ -97,12 +99,13 @@ export default function textpickerJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   ArkUI_textpicker_static_004
-     * @tc.name     ArkUI_textpicker_static_004
-     * @tc.desc     ArkUI_textpicker_static_004
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ArkUI_textpicker_static_004
+     * @tc.name ArkUI_textpicker_static_004
+     * @tc.desc Set disappearTextStyle values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ArkUI_textpicker_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ArkUI_textpicker_static_004] START');
@@ -116,12 +119,13 @@ export default function textpickerJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   ArkUI_textpicker_static_005
-     * @tc.name     ArkUI_textpicker_static_005
-     * @tc.desc     ArkUI_textpicker_static_005
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ArkUI_textpicker_static_005
+     * @tc.name ArkUI_textpicker_static_005
+     * @tc.desc Set canLoop values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ArkUI_textpicker_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ArkUI_textpicker_static_005] START');
@@ -132,12 +136,13 @@ export default function textpickerJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   ArkUI_textpicker_static_006
-     * @tc.name     ArkUI_textpicker_static_006
-     * @tc.desc     ArkUI_textpicker_static_006
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ArkUI_textpicker_static_006
+     * @tc.name ArkUI_textpicker_static_006
+     * @tc.desc Set defaultPickerItemHeight values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ArkUI_textpicker_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ArkUI_textpicker_static_006] START');
@@ -148,12 +153,13 @@ export default function textpickerJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   ArkUI_textpicker_static_001
-     * @tc.name     ArkUI_textpicker_static_001
-     * @tc.desc     ArkUI_textpicker_static_001
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ArkUI_textpicker_static_001
+     * @tc.name ArkUI_textpicker_static_001
+     * @tc.desc Set selectedIndex values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ArkUI_textpicker_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ArkUI_textpicker_static_001] START');
@@ -164,16 +170,17 @@ export default function textpickerJsunit() {
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[ArkUI_textpicker_static_001] obj1:" + JSON.stringify(obj1.getElement('$attrs')));
       //得到json值与 设置不一致，与原生json返回做对比验证
-      expect(JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('selectedIndex'))).assertEqual(JSON.stringifyJsonElement(obj1.getElement('$attrs').getElement('selectedIndex')));
+      expect(JSON.stringify(obj.getElement('$attrs').getString('selectedIndex'))).assertEqual(JSON.stringify(obj1.getElement('$attrs').getString('selectedIndex')));
       done();
     });
 
-    
-    /*
-     * @tc.number   ArkUI_textpicker_static_011
-     * @tc.name     ArkUI_textpicker_static_011
-     * @tc.desc     ArkUI_textpicker_static_011
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ArkUI_textpicker_static_011
+     * @tc.name ArkUI_textpicker_static_011
+     * @tc.desc change canLoop values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ArkUI_textpicker_static_011', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ArkUI_textpicker_static_011] START');

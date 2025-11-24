@@ -12,103 +12,38 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { Entry,Component,$r, Padding,Column,ColumnOptions,Gauge,animateTo,FormComponent,Visibility,FormDimension,Divider,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
-  Entry,
-  Component,
-  $r,
-  Padding,
-  Column,
-  ColumnOptions,
-  Gauge,
-  animateTo,
-  FormComponent,
-  Visibility,
-  FormDimension,
-  Divider,
-  Counter,
-  DataPanel,
-  DatePicker,
-  BorderImageOption,
-  BorderOptions,
-  AdaptiveColor,
-  BackgroundEffectOptions,
-  BorderStyle,
-  RepeatMode,
-  GradientDirection,
-  Image,
-  Checkbox,
-  Blank,
-  MarkStyle,
-  ResourceColor,
-  CheckboxGroup,
-  Text,
-  Toggle,
-  ToggleType,
-  FlexAlign,
-  Color,
-  Flex,
-  ButtonType,
-  FlexDirection,
-  ItemAlign,
-  Row,
-  Button,
-  ClickEvent,
-  Week,
-  FontWeight,
-  Axis,
-  Margin,
-  Swiper,
-  ForEach,
-  PickerTextStyle,
-  CalendarAlign,
-  Date,
-  CalendarPicker,
-  EdgeEffect,
-  Curve,
-  SwiperDisplayMode,
-  ArrowPosition,
-  Select,
-  BlurStyle,
-  MenuAlignType,
-  TextInputController,
-  TextAlign,
-  AlphabetIndexer,
-  ButtonAttribute
-} from '@ohos.arkui.component';
-import { State, Link, Prop, } from '@ohos.arkui.stateManagement';
+  State,
+  Link,
+  Prop,
+} from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
-import { ButtonModifier } from "@ohos.arkui.modifier";
-
-
-class CustomModifier extends ButtonModifier {
-  applyNormalAttribute(instance: ButtonAttribute): void {
-    // super.applyNormalAttribute?.(instance);
-  }
-}
+// import {ButtonModifier} from "@ohos.arkui.modifier";
+//
+// class CustomModifier extends ButtonModifier {
+//   applyNormalAttribute(instance: ButtonAttribute): void {
+//     super.applyNormalAttribute?.(instance);
+//   }
+// }
 
 @Entry
 @Component
 struct geometryTransition7Example {
   @State btn1: boolean = false
   @State show: string = "show"
-
-    @State geometryTransitionModifier1: ButtonAttribute = new CustomModifier()
-            .geometryTransition("picture")
+//   @State geometryTransitionModifier1: ButtonAttribute = new CustomModifier()
+//           .geometryTransition("picture")
 
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, }) {
-      Button(this.show)
-        .width(80)
-        .height(30)
-        .backgroundColor(0x317aff)
-        .margin({ bottom: 50 } as Margin)
-        .key('button')
+      Button(this.show).width(80).height(30).backgroundColor(0x317aff).margin({ bottom: 50 } as Margin).key('button')
         .onClick((e: ClickEvent) => {
           try {
             let backData: events_emitter.EventData = {
               data: {
                 "btn1": this.btn1,
-              } as Record<String, undefined | null | Object>
+              } as Record<String,undefined|null|Object>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 104,
@@ -117,8 +52,7 @@ struct geometryTransition7Example {
             console.info("geometryTransitionTest_0100 start to emit action state")
             events_emitter.emit(backEvent, backData)
           } catch (err) {
-            console.info("geometryTransitionTest_0100 emit action state err: " +
-            JSON.stringify((err as Error)?.message))
+            console.info("geometryTransitionTest_0100 emit action state err: " + JSON.stringify((err as Error)?.message))
           }
           animateTo({ duration: 1000 }, () => {
             this.btn1 = !this.btn1
@@ -133,8 +67,7 @@ struct geometryTransition7Example {
         Button('') {
           Image($r('app.media.icon')).width("80%").height(300)
         }
-
-                .attributeModifier(this.geometryTransitionModifier1 as ButtonModifier)
+  //         .attributeModifier(this.geometryTransitionModifier1 as ButtonModifier)
       }
     }.height(400).width("100%").padding({ top: 100 } as Padding)
   }

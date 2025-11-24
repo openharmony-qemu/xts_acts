@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
 import router from '@ohos.router';
-import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -58,12 +58,13 @@ export default function textAreaJsunit() {
       }
     });
 
-    
-    /*
-     * @tc.number   textAreaTest_static_002
-     * @tc.name     textAreaTest_static_002
-     * @tc.desc     textAreaTest_static_002
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textAreaTest_static_002
+     * @tc.name textAreaTest_static_002
+     * @tc.desc Set copyOption values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textAreaTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textAreaTest_static_002 START');
@@ -75,12 +76,13 @@ export default function textAreaJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   textAreaTest_static_003
-     * @tc.name     textAreaTest_static_003
-     * @tc.desc     textAreaTest_static_003
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textAreaTest_static_003
+     * @tc.name textAreaTest_static_003
+     * @tc.desc Set fontColor values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textAreaTest_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textAreaTest_static_003 START');
@@ -93,12 +95,13 @@ export default function textAreaJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   textAreaTest_static_004
-     * @tc.name     textAreaTest_static_004
-     * @tc.desc     textAreaTest_static_004
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textAreaTest_static_004
+     * @tc.name textAreaTest_static_004
+     * @tc.desc Set placeholderColor values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textAreaTest_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textAreaTest_static_004 START');
@@ -110,12 +113,13 @@ export default function textAreaJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   textAreaTest_static_005
-     * @tc.name     textAreaTest_static_005
-     * @tc.desc     textAreaTest_static_005
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textAreaTest_static_005
+     * @tc.name textAreaTest_static_005
+     * @tc.desc Set placeholderFont values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textAreaTest_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textAreaTest_static_005 START');
@@ -128,12 +132,13 @@ export default function textAreaJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   textAreaTest_static_006
-     * @tc.name     textAreaTest_static_006
-     * @tc.desc     textAreaTest_static_006
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textAreaTest_static_006
+     * @tc.name textAreaTest_static_006
+     * @tc.desc Set fontWeight values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textAreaTest_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textAreaTest_static_006 START');
@@ -145,12 +150,13 @@ export default function textAreaJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   textAreaTest_static_007
-     * @tc.name     textAreaTest_static_007
-     * @tc.desc     textAreaTest_static_007
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textAreaTest_static_007
+     * @tc.name textAreaTest_static_007
+     * @tc.desc Set textAlign values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textAreaTest_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textAreaTest_static_007 START');
@@ -162,46 +168,49 @@ export default function textAreaJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   textAreaTest_static_008
-     * @tc.name     textAreaTest_static_008
-     * @tc.desc     textAreaTest_static_008
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textAreaTest_static_008
+     * @tc.name textAreaTest_static_008
+     * @tc.desc Set selectionMenuHidden values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textAreaTest_static_008', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textAreaTest_static_008 START');
       let strJsonNew = inspector.getInspectorByKey('textArea');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("textAreaTest_static_008 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
-      expect(objNew.getElement('$attrs').tryGetElement('selectionMenuHidden')).assertEqual(undefined);
+      expect(objNew.getElement('$attrs').getString('selectionMenuHidden')).assertEqual(undefined);
       console.info('textAreaTest_static_008 END');
       done();
     });
 
-    
-    /*
-     * @tc.number   textAreaTest_static_009
-     * @tc.name     textAreaTest_static_009
-     * @tc.desc     textAreaTest_static_009
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textAreaTest_static_009
+     * @tc.name textAreaTest_static_009
+     * @tc.desc Set enableKeyboardOnFocus values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textAreaTest_static_009', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textAreaTest_static_009 START');
       let strJsonNew = inspector.getInspectorByKey('textArea');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("textAreaTest_static_009 component  is: " + JSON.stringify(objNew.getElement('$attrs')));
-      expect(objNew.getElement('$attrs').tryGetElement('enableKeyboardOnFocus')).assertEqual(undefined);
+      expect(objNew.getElement('$attrs').getString('enableKeyboardOnFocus')).assertEqual(undefined);
       console.info('textAreaTest_static_009 END');
       done();
     });
 
-    
-    /*
-     * @tc.number   textAreaTest_static_010
-     * @tc.name     textAreaTest_static_010
-     * @tc.desc     textAreaTest_static_010
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textAreaTest_static_010
+     * @tc.name textAreaTest_static_010
+     * @tc.desc Set caretColor values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textAreaTest_static_010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textAreaTest_static_010 START');
@@ -213,12 +222,13 @@ export default function textAreaJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   textAreaTest_static_011
-     * @tc.name     textAreaTest_static_011
-     * @tc.desc     textAreaTest_static_011
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textAreaTest_static_011
+     * @tc.name textAreaTest_static_011
+     * @tc.desc Set maxLength values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textAreaTest_static_011', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textAreaTest_static_011 START');
@@ -230,12 +240,13 @@ export default function textAreaJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   textAreaTest_static_012
-     * @tc.name     textAreaTest_static_012
-     * @tc.desc     textAreaTest_static_012
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textAreaTest_static_012
+     * @tc.name textAreaTest_static_012
+     * @tc.desc Set maxLines values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textAreaTest_static_012', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textAreaTest_static_012 START');
@@ -247,12 +258,13 @@ export default function textAreaJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   textAreaTest_static_013
-     * @tc.name     textAreaTest_static_013
-     * @tc.desc     textAreaTest_static_013
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textAreaTest_static_013
+     * @tc.name textAreaTest_static_013
+     * @tc.desc Set style values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textAreaTest_static_013', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textAreaTest_static_013 START');
@@ -264,12 +276,13 @@ export default function textAreaJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   textAreaTest_static_014
-     * @tc.name     textAreaTest_static_014
-     * @tc.desc     textAreaTest_static_014
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textAreaTest_static_014
+     * @tc.name textAreaTest_static_014
+     * @tc.desc Set fontStyle values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textAreaTest_static_014', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textAreaTest_static_014 START');
@@ -281,12 +294,13 @@ export default function textAreaJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   textAreaTest_static_018
-     * @tc.name     textAreaTest_static_018
-     * @tc.desc     textAreaTest_static_018
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textAreaTest_static_018
+     * @tc.name textAreaTest_static_018
+     * @tc.desc Set fontSize values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textAreaTest_static_018', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textAreaTest_static_018 START');
@@ -298,12 +312,13 @@ export default function textAreaJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   textAreaTest_static_015
-     * @tc.name     textAreaTest_static_015
-     * @tc.desc     textAreaTest_static_015
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textAreaTest_static_015
+     * @tc.name textAreaTest_static_015
+     * @tc.desc Set fontFamily values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textAreaTest_static_015', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textAreaTest_static_015 START');
@@ -315,12 +330,13 @@ export default function textAreaJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   textAreaTest_static_016
-     * @tc.name     textAreaTest_static_016
-     * @tc.desc     textAreaTest_static_016
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textAreaTest_static_016
+     * @tc.name textAreaTest_static_016
+     * @tc.desc Set barState values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textAreaTest_static_016', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textAreaTest_static_016 START');
@@ -332,12 +348,13 @@ export default function textAreaJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   textAreaTest_static_017
-     * @tc.name     textAreaTest_static_017
-     * @tc.desc     textAreaTest_static_017
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textAreaTest_static_017
+     * @tc.name textAreaTest_static_017
+     * @tc.desc Set showCounter values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textAreaTest_static_017', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textAreaTest_static_017 START');
@@ -349,12 +366,13 @@ export default function textAreaJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   textAreaTest_static_001
-     * @tc.name     textAreaTest_static_001
-     * @tc.desc     textAreaTest_static_001
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textAreaTest_static_001
+     * @tc.name textAreaTest_static_001
+     * @tc.desc Change fontColor values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textAreaTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textAreaTest_static_001 START');

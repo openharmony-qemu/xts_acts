@@ -12,12 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Component,Image,Resource,$r,TextArea,TextClockController,ButtonAttribute,TransitionType,Padding,
-  animateTo,TextTimerController,TextTimer,FlexAlign,TextClock,TextPicker,TextAreaController,PlaybackSpeed,$rawfile,
-  Column,Margin,ColumnOptions,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,
-  Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,
-  ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer,TransitionEffect
-} from '@ohos.arkui.component';
+import { Entry,Component,Image,Resource,$r,TextArea,TextClockController,ButtonAttribute,TransitionType,Padding,animateTo,TextTimerController,TextTimer,FlexAlign,TextClock,TextPicker,TextAreaController,PlaybackSpeed,$rawfile,Column,Margin,ColumnOptions,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
   State,
   Link,
@@ -27,11 +22,11 @@ import inspector from '@ohos.arkui.inspector';
 import events_emitter from '@ohos.events.emitter'
 import {ButtonModifier} from "@ohos.arkui.modifier";
 
-class CustomModifier extends ButtonModifier {
-  applyNormalAttribute(instance: ButtonAttribute): void {
-    // super.applyNormalAttribute?.(instance);
-  }
-}
+// class CustomModifier extends ButtonModifier {
+//   applyNormalAttribute(instance: ButtonAttribute): void {
+//     super.applyNormalAttribute?.(instance);
+//   }
+// }
 
 @Entry
 @Component
@@ -42,10 +37,8 @@ struct TransitionTest7Example {
   @State transitionTypeOne: TransitionType = TransitionType.Insert
   @State transitionTypeTwo: TransitionType = TransitionType.Delete
   @State transitionTypeThree: TransitionType = TransitionType.All
-  @State transitionMod: ButtonAttribute = new CustomModifier()
+  // @State transitionMod: ButtonAttribute = new CustomModifier()
         // .transition({ type: TransitionType.Insert, scale: { x: 0, y: 1.0, z: 1.0 }, opacity: 1 });
-    .transition(TransitionEffect.scale({ x: 0, y: 1.0, z: 1.0 }).combine(TransitionEffect.opacity(1)))
-
 
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, }) {
@@ -85,7 +78,7 @@ struct TransitionTest7Example {
         Button('') {
           Image($r('app.media.icon')).width("80%").height(300).key('image')
         }
-        .attributeModifier(this.transitionMod as ButtonModifier)
+        // .attributeModifier(this.transitionMod as ButtonModifier)
           .key('button1')
       }
     }.height(400).width("100%").padding({ top: 100 } as Padding)

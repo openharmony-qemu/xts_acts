@@ -14,14 +14,14 @@
  */
 import {
   Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,animateTo,AnimateParam,Search,TextAlign,Axis,NavBarPosition,
-  NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,
+  NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,NavPathInfo,
   Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,
   FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle
 ,NavPathStack} from '@ohos.arkui.component';
 import {
   State,
   Link,
-  PropRef,Provide
+  Prop,Provide
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
@@ -29,7 +29,7 @@ import { BusinessError } from '@ohos.base';
 @Entry
 @Component
 struct navigation_pushDestinationByName3 {
-  // @Provide('pageInfos') pageInfos: NavPathStack = new NavPathStack()
+  @Provide pageInfos: NavPathStack = new NavPathStack()
   @State str:string = '1'
   @State code:string = '2'
 
@@ -50,24 +50,24 @@ struct navigation_pushDestinationByName3 {
   }
 
   build() {
-    // Navigation(this.pageInfos) {
+    Navigation(this.pageInfos) {
       Column({space:5} as ColumnOptions) {
 
         Button('pushDestinationByName')
           .fontSize(14)
           .onClick((e: ClickEvent) => {
-            // this.pageInfos.pushDestinationByName('pageOne',null)
-            //   .then(()=>{
-            //     this.str = 'success'
-            //   })
-            //   .catch((error: BusinessError)=>{
-            //     console.log('Test:'+JSON.stringify(error))
-            //     this.code = (error.code).toString() + error.message
-            //   })
+            this.pageInfos.pushDestinationByName('pageOne',{})
+              .then(()=>{
+                this.str = 'success'
+              })
+              .catch((error: BusinessError): void =>{
+                console.log('Test:'+JSON.stringify(error))
+                this.code = (error.code).toString() + error.message
+              })
           })
           .id('navigation_pushDestinationByName3_pushDestination')
 
       }
-    // }.title('Navigation').navDestination(this.PageMap)
+    }.title('Navigation').navDestination(this.PageMap)
   }
 }

@@ -12,13 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Builder,Component,Scroller,Scroll,GridItem,Grid,List,Video,Image,BarPosition,
-  ButtonAttribute,Resource,$r,FlexAlign,Divider,Tabs,TabContent,TabsController,TextPicker,TextAreaController,
-  PlaybackSpeed,$rawfile,Column,Margin,ColumnOptions,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,
-  Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,
-  EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,
-  GridAttribute,NestedScrollMode,ScrollSource,ScrollState,
-  TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
+import { Entry,Builder,Component,Scroller,Scroll,GridItem,Grid,List,Video,Image,BarPosition,ButtonAttribute,Resource,$r,FlexAlign,Divider,Tabs,TabContent,TabsController,TextPicker,TextAreaController,PlaybackSpeed,$rawfile,Column,Margin,ColumnOptions,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
   State,
   Link,
@@ -26,25 +20,25 @@ import {
 } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../common/Utils';
-import { GridModifier } from "@ohos.arkui.modifier";
+// import { GridModifier } from "@ohos.arkui.modifier";
 import { BusinessError } from '@ohos.base';
 
-class CustomModifier extends GridModifier {
-  applyNormalAttribute(instance: GridAttribute): void {
-    // super.applyNormalAttribute?.(instance);
-  }
-}
+// class CustomModifier extends GridModifier {
+//   applyNormalAttribute(instance: GridAttribute): void {
+//     super.applyNormalAttribute?.(instance);
+//   }
+// }
 
 @Entry
 @Component
 struct GridNestedScroll {
   scroller: Scroller = new Scroller()
   private numbers: String[] = new Array<string>('0', '1', '2', '3', '4', '5', '7', '8')
-  @State customModifier: GridModifier = new CustomModifier()
-    .nestedScroll({
-      scrollForward: NestedScrollMode.PARALLEL,
-      scrollBackward: NestedScrollMode.PARALLEL,
-    })
+  // @State customModifier: GridModifier = new CustomModifier()
+  //   .nestedScroll({
+  //     scrollForward: NestedScrollMode.PARALLEL,
+  //     scrollBackward: NestedScrollMode.PARALLEL,
+  //   })
   @State selfScrollTime: number = 0
   @State parentScrollTime: number = 0
 
@@ -104,24 +98,26 @@ struct GridNestedScroll {
             }, (day: string) => day)
           }
           .columnsTemplate('1fr 1fr 1fr 1fr')
-          .attributeModifier(this.customModifier as CustomModifier)
+          // .attributeModifier(this.customModifier as CustomModifier)
           .height('90%')
-          .onDidScroll((scrollOffset: double, scrollState: ScrollState) => {
-            if ((scrollOffset != 0 || scrollOffset != 0) && this.selfScrollTime == 0) {
-              this.selfScrollTime = Utils.getSystemTime()
-            }
-          })
+          // .onScroll((xOffset: number, yOffset: number) => {
+          //   console.info("WebView onScroll x = " + xOffset)
+          //   console.info("WebView onScroll y = " + yOffset)
+          //   if ((xOffset != 0 || yOffset != 0) && this.selfScrollTime == 0) {
+          //     this.selfScrollTime = Utils.getSystemTime()
+          //   }
+          // })
 
           Column().width('100%').height('20%').backgroundColor(Color.Red)
 
         }.width('100%')
       }
-      .onWillScroll((xOffset: double, yOffset: double, scrollState: ScrollState, ScrollSource:ScrollSource) => {
-        console.info('ParentScroll:' + xOffset + ' ' + yOffset)
-        if ((xOffset != 0 || yOffset != 0) && this.parentScrollTime == 0) {
-          this.parentScrollTime = Utils.getSystemTime()
-        }
-      })
+      // .onScroll((xOffset: number, yOffset: number) => {
+      //   console.info('ParentScroll:' + xOffset + ' ' + yOffset)
+      //   if ((xOffset != 0 || yOffset != 0) && this.parentScrollTime == 0) {
+      //     this.parentScrollTime = Utils.getSystemTime()
+      //   }
+      // })
       .width('100%')
       .height('70%')
     }.key('ColumnSize')

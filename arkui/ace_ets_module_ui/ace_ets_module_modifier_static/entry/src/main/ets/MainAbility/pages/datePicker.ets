@@ -12,39 +12,39 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Component,$r,Column,ColumnOptions,DatePickerAttribute,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
+import { Entry,Component,$r,Column,ColumnOptions,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
   State,
   Link,
   Prop,
 } from '@ohos.arkui.stateManagement';
-import { DatePickerModifier } from "@ohos.arkui.modifier";
+// import { DatePickerModifier } from "@ohos.arkui.modifier";
 //
-class CustomModifier extends DatePickerModifier {
-
-  applyNormalAttribute(instance: DatePickerAttribute): void {
-    // super.applyNormalAttribute?.(instance);
-  }
-
-  onChange1() {
-    this.textStyle({ color: '#ff0000FF', font: { size: '27fp', weight: FontWeight.Normal } })
-  }
-}
+// class CustomModifier extends DatePickerModifier {
+//
+//   applyNormalAttribute(instance: DatePickerAttribute): void {
+//     super.applyNormalAttribute?.(instance);
+//   }
+//
+//   onChange1() {
+//     this.textStyle({ color: '#ff0000FF', font: { size: '27fp', weight: FontWeight.Normal } })
+//   }
+// }
 
 @Entry
 @Component
 struct DatePickerExample {
-  @State customModifier: DatePickerModifier = new CustomModifier()
-    .selectedTextStyle({ color: '#ff182431', font: { size: '18fp', weight: FontWeight.Normal } })
-    .disappearTextStyle({ color: '#FF000000', font: { size: '8fp', weight: FontWeight.Lighter } })
-    .textStyle({ color: '#ff0000FF', font: { size: '26fp', weight: FontWeight.Normal } })
-    .lunar(true);
+//   @State customModifier: DatePickerModifier = new CustomModifier()
+//     .selectedTextStyle({ color: '#ff182431', font: { size: '18fp', weight: FontWeight.Normal } })
+//     .disappearTextStyle({ color: '#FF000000', font: { size: '8fp', weight: FontWeight.Lighter } })
+//     .textStyle({ color: '#ff0000FF', font: { size: '26fp', weight: FontWeight.Normal } })
+//     .lunar(true);
   private selectedDate: Date = new Date('2021-08-08')
 
   build() {
     Column() {
       Button("change value").onClick((e: ClickEvent) => {
-        (this.customModifier as CustomModifier).onChange1();
+//         (this.customModifier as CustomModifier).onChange1();
       }).key("changeButton")
 
       DatePicker({
@@ -53,7 +53,7 @@ struct DatePickerExample {
         selected: this.selectedDate
       })
       .key('DatePicker')
-      .attributeModifier(this.customModifier as CustomModifier)
+//       .attributeModifier(this.customModifier as CustomModifier)
     }
     .width('100%')
     .height('100%')

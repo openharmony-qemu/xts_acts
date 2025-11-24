@@ -27,9 +27,23 @@ struct TimePickerPage {
 
   onPageShow() {
     console.info('TimePicker onPageShow')
-
     AppStorage.setOrCreate('messageManager', this.messageManager)
-
+    // let callback:Callback = (message: Message) => {
+    //   console.error('message = ' + message.name + "--" + message.value)
+    //   if (message.name == 'isMilitaryTime') {
+    //     this.isMilitaryTime = message.value
+    //   }
+    //   if (message.name == 'selectedTime') {
+    //     this.selectedTime = message.value
+    //   }
+    //   if (message.name == 'hour') {
+    //     this.hour = message.value
+    //   }
+    //   if (message.name == 'minute') {
+    //     this.minute = message.value
+    //   }
+    // }
+    // this.messageManager.registerCallback(callback)
   }
 
   build() {
@@ -37,6 +51,7 @@ struct TimePickerPage {
       Button('切换12小时制/24小时制')
         .fontSize(14)
         .key('button')
+        .id('button')
         .onClick((e:ClickEvent) => {
           this.mode = !this.mode
           this.isMilitaryTime = !this.isMilitaryTime
@@ -45,18 +60,19 @@ struct TimePickerPage {
         selected: this.selectedTime,
       })
         .key('timePicker')
+        .id('timePicker')
         .width('60%')
         .height("50%")
         .useMilitaryTime(this.isMilitaryTime)
         .onChange((value: TimePickerResult):void => {
           this.hour = value.hour
           this.minute = value.minute
-          this.selectedTime.setHours(value.hour.toInt(), value.minute.toInt())
+          this.selectedTime.setHours(value.hour, value.minute)
           console.info('select current date is: ' + JSON.stringify(value))
         })
-      Text('hour:' + this.hour).fontSize(14).key('hour')
-      Text('minute:' + this.minute).fontSize(14).key('minute')
-      Text('24hour:' + this.mode).fontSize(14).key('mode')
+      Text('hour:' + this.hour).fontSize(14).key('hour').id('hour')
+      Text('minute:' + this.minute).fontSize(14).key('minute').id('minute')
+      Text('24hour:' + this.mode).fontSize(14).key('mode').id('mode')
     }.alignItems(HorizontalAlign.Center).width('100%').height('90%').margin({ top: 20 } as Margin)
   }
 }

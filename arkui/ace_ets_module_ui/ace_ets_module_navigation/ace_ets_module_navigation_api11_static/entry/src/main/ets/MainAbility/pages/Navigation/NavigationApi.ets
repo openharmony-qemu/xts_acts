@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import {
-  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,animateTo,AnimateParam,Search,TextAlign,Axis,NavBarPosition,
+  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,animateTo,AnimateParam,Search,TextAlign,Axis,NavBarPosition,NavPathInfo,
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,
   Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,
   FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date,NavigationCommonTitle,NavDestinationCommonTitle
@@ -21,13 +21,13 @@ import {
 import {
   State,
   Link,
-  PropRef,Provide
+  Prop,Provide
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct NavigationApi {
-  // @Provide('pageInfos') pageInfos: NavPathStack = new NavPathStack()
+  @Provide pageInfos: NavPathStack = new NavPathStack()
 
   @Builder pageOneTmp() {
     NavDestination() {
@@ -38,7 +38,7 @@ struct NavigationApi {
           .width('80%')
           .height(40)
           .onClick((e: ClickEvent) => {
-            // this.pageInfos.replacePathByName('pageTwo',null )
+            this.pageInfos.replacePathByName('pageTwo',{})
           })
           .id('NavigationApi_replacePathByName')
 
@@ -46,7 +46,7 @@ struct NavigationApi {
       }.width('100%').height('100%')
     }.title('pageOne')
     .onBackPressed((): boolean => {
-      // this.pageInfos.pop()
+      this.pageInfos.pop()
       return true
     })
   }
@@ -61,14 +61,14 @@ struct NavigationApi {
         .width('80%')
         .height(40)
         .onClick((e: ClickEvent) => {
-          // this.pageInfos.pop()
+          this.pageInfos.pop()
         })
         .id('NavigationApi_pop2')
 
     }.width('100%').height('100%')
   }.title('pageTwo')
   .onBackPressed((): boolean => {
-    // this.pageInfos.pop()
+    this.pageInfos.pop()
     return true
   })
 }
@@ -84,7 +84,7 @@ struct NavigationApi {
   }
 
   build() {
-    // Navigation(this.pageInfos) {
+    Navigation(this.pageInfos) {
       Column() {
 
         Text('Navigation').id('NavigationApi_text_Navigation')
@@ -93,7 +93,7 @@ struct NavigationApi {
           .width('80%')
           .height(40)
           .onClick((e: ClickEvent) => {
-            // this.pageInfos.pushPath({ name: 'pageOne' })
+            this.pageInfos.pushPath(new NavPathInfo('pageOne',null))
           })
           .id('NavigationApi_pushPath')
 
@@ -101,11 +101,11 @@ struct NavigationApi {
           .width('80%')
           .height(40)
           .onClick((e: ClickEvent) => {
-            // this.pageInfos.disableAnimation(false)
+            this.pageInfos.disableAnimation(false)
           })
           .margin({top:10} as Margin)
 
       }
-    // }.title('NavIndex').navDestination(this.PageMap).id('NavigationApi_Navigation')
+    }.title('NavIndex').navDestination(this.PageMap).id('NavigationApi_Navigation')
   }
 }

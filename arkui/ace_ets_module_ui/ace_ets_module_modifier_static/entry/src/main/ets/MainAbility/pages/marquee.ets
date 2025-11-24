@@ -12,24 +12,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Component,$r,Builder,List, ListItem,Marquee,ListItemGroup,MarqueeAttribute,LoadingProgress,Padding,Column,StickyStyle,ImageAnimator,ImageSpan,Alignment,Hyperlink,BreakpointsReference,GridRowDirection,TextOverflow,GridCol,ColumnOptions,Grid,GridItem,Gauge,animateTo,FormComponent,Visibility,FormDimension,Divider,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,GridRow,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
+import { Entry,Component,$r,Builder,List, ListItem,Marquee,ListItemGroup,LoadingProgress,Padding,Column,StickyStyle,ImageAnimator,ImageSpan,Alignment,Hyperlink,BreakpointsReference,GridRowDirection,TextOverflow,GridCol,ColumnOptions,Grid,GridItem,Gauge,animateTo,FormComponent,Visibility,FormDimension,Divider,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,GridRow,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
   State,
   Link,
   Prop,
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { MarqueeModifier } from "@ohos.arkui.modifier";
-
-class CustomModifier extends MarqueeModifier {
-  applyNormalAttribute(instance: MarqueeAttribute): void {
-    // super.applyNormalAttribute?.(instance);
-  }
-
-  onChange1() {
-    this.fontSize(5)
-  }
-}
+// import { MarqueeModifier } from "@ohos.arkui.modifier";
+//
+// class CustomModifier extends MarqueeModifier {
+//   applyNormalAttribute(instance: MarqueeAttribute): void {
+//     super.applyNormalAttribute?.(instance);
+//   }
+//
+//   onChange1() {
+//     this.fontSize(5)
+//   }
+// }
 
 @Entry
 @Component
@@ -37,33 +37,33 @@ struct MarqueeExample {
   @State start: boolean = false
   @State fromStart: boolean = true
   @State step: number = 50
-  @State loop: int = 3
+  @State loop: number = 3
   @State src: string = "Running Marquee starts rolling"
   @State fontColor: Color = Color.Blue;
   @State fontSize: number = 50;
   @State onActionCalledThree: boolean = false;
-  @State customModifier: MarqueeModifier = new CustomModifier()
-    .fontColor('#FF00FFFF')
-    .fontSize(35)
-    .allowScale(true)
-    .fontWeight(500)
-    .fontFamily('medium')
+//   @State customModifier: MarqueeModifier = new CustomModifier()
+//     .fontColor('#FF00FFFF')
+//     .fontSize(35)
+//     .allowScale(true)
+//     .fontWeight(500)
+//     .fontFamily('medium')
 
   build() {
     Column({ space: 5 } as ColumnOptions) {
     Button("change value").onClick((e: ClickEvent) => {
-      (this.customModifier as CustomModifier).onChange1();
+//       (this.customModifier as CustomModifier).onChange1();
     }).key("changeButton")
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
       Marquee({
         start: this.start,
         step: this.step,
-        loop: this.loop,
+        loop: this.loop.toInt(),
         fromStart: this.fromStart,
         src: this.src
       })
         .key('MarqueeKey1')
-        .attributeModifier(this.customModifier as CustomModifier)
+//         .attributeModifier(this.customModifier as CustomModifier)
     }
     .width('100%')
       .height('100%')

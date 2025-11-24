@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
 import router from '@ohos.router';
-import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -55,12 +55,13 @@ export default function richEditorJsunit() {
       }
     });
 
-    
-    /*
-     * @tc.number   richEditorTest_static_002
-     * @tc.name     richEditorTest_static_002
-     * @tc.desc     richEditorTest_static_002
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number richEditorTest_static_002
+     * @tc.name richEditorTest_static_002
+     * @tc.desc Set copyOption values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('richEditorTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('richEditorTest_static_002 START');
@@ -72,12 +73,13 @@ export default function richEditorJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   richEditorTest_static_001
-     * @tc.name     richEditorTest_static_001
-     * @tc.desc     richEditorTest_static_001
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number richEditorTest_static_001
+     * @tc.name richEditorTest_static_001
+     * @tc.desc Change copyOption values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('richEditorTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('richEditorTest_static_001 START');

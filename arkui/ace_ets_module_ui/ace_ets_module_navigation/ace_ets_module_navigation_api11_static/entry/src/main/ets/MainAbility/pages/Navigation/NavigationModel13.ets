@@ -21,7 +21,7 @@ import {
 import {
   State,
   Link,
-  PropRef,Provide
+  Prop,Provide
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
@@ -44,19 +44,19 @@ struct NavigationModel13 {
           List({space:12}){
             ForEach(this.arr, (item: number) => {
               ListItem() {
-                // NavRouter(){
-                //   Text("NavRouter" + item)
-                //     .width('100%')
-                //     .height(60)
-                //     .backgroundColor('#FFFFFF')
-                //     .borderRadius(24)
-                //     .fontSize(16)
-                //     .fontWeight(1000)
-                //     .textAlign(TextAlign.Center)
-                //   NavDestination()
-                //     .backgroundColor(Color.Orange)
-                //     .title("NavDestinationTitle"+ item)
-                // }
+                Column(){
+                  Text("NavRouter" + item)
+                    .width('100%')
+                    .height(60)
+                    .backgroundColor('#FFFFFF')
+                    .borderRadius(24)
+                    .fontSize(16)
+                    .fontWeight(1000)
+                    .textAlign(TextAlign.Center)
+                  NavDestination()
+                    .backgroundColor(Color.Orange)
+                    .title("NavDestinationTitle"+ item)
+                }
               }
             },(item: number) => String(item))
           }

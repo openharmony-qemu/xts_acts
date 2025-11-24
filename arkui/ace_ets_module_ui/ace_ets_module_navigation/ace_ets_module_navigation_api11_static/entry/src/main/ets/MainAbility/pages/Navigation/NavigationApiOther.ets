@@ -14,14 +14,14 @@
  */
 import {
   Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,animateTo,AnimateParam,Search,TextAlign,Axis,NavBarPosition,
-  NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,
+  NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,NavPathInfo,
   Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,
   FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date,NavigationCommonTitle,NavDestinationCommonTitle
 ,NavPathStack} from '@ohos.arkui.component';
 import {
   State,
   Link,
-  PropRef,Provide
+  Prop,Provide
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 interface Age {
@@ -30,7 +30,7 @@ interface Age {
 @Entry
 @Component
 struct NavigationApiOther {
-  // @Provide('pageInfos') pageInfos: NavPathStack = new NavPathStack()
+  @Provide pageInfos: NavPathStack = new NavPathStack()
   @State peo: Age = { age: 18 } as Age
 
   @Builder
@@ -41,31 +41,31 @@ struct NavigationApiOther {
           .width('80%')
           .height(40)
           .onClick((e: ClickEvent) => {
-            // this.pageInfos.replacePath(new NavPathInfo('pageTwo', this.peo))
+            this.pageInfos.replacePath(new NavPathInfo('pageTwo', this.peo))
           })
 
         Button('replacePathByName')
           .width('80%')
           .height(40)
           .onClick((e: ClickEvent) => {
-            // this.pageInfos.replacePathByName('pageTwo', this.peo)
+            this.pageInfos.replacePathByName('pageTwo', this.peo)
           })
 
         Button('disableAnimation')
           .width('80%')
           .height(40)
           .onClick((e: ClickEvent) => {
-            // this.pageInfos.disableAnimation(false)
+            this.pageInfos.disableAnimation(false)
           })
 
       }.width('100%').height('100%')
     }.title('pageOne')
     .onBackPressed((): boolean => {
-      // this.pageInfos.pop()
+      this.pageInfos.pop()
       return true
     })
 
-    // .mode(NavDestinationMode.STANDARD)
+    .mode(NavDestinationMode.STANDARD)
   }
 
   @Builder
@@ -76,12 +76,12 @@ struct NavigationApiOther {
           .width('80%')
           .height(40)
           .onClick((e: ClickEvent) => {
-            // this.pageInfos.pushPath({ name: 'pageThree' })
+            this.pageInfos.pushPath(new NavPathInfo('pageThree',null))
           })
       }.width('100%').height('100%')
     }.title('pageTwo')
     .onBackPressed((): boolean => {
-      // this.pageInfos.pop()
+      this.pageInfos.pop()
       return true
     })
   }
@@ -94,7 +94,7 @@ struct NavigationApiOther {
       }.width('100%').height('100%')
     }.title('pageThree')
     .onBackPressed((): boolean => {
-      // this.pageInfos.pop()
+      this.pageInfos.pop()
       return true
     })
   }
@@ -109,18 +109,18 @@ struct NavigationApiOther {
   }
 
   build() {
-    // Navigation(this.pageInfos) {
+    Navigation(this.pageInfos) {
       Column() {
         Button('pushPath', { stateEffect: true, type: ButtonType.Capsule })
           .width('80%')
           .height(40)
           .onClick((e: ClickEvent) => {
-            // this.pageInfos.pushPath({ name: 'pageOne' })
+            this.pageInfos.pushPath(new NavPathInfo('pageOne',null))
           })
       }
-    // }
-    // .title('NavIndex')
-    // .navDestination(this.PageMap)
-    // .id('NavigationApi_Navigation')
+    }
+    .title('NavIndex')
+    .navDestination(this.PageMap)
+    .id('NavigationApi_Navigation')
   }
 }
