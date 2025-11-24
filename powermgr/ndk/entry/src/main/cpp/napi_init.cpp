@@ -122,17 +122,20 @@ static napi_value CreateEnumPluggedType(napi_env env, napi_value exports)
     napi_value ac = nullptr;
     napi_value usb = nullptr;
     napi_value wireless = nullptr;
+    napi_value butt = nullptr;
 
     napi_create_int32(env, (int32_t)BatteryInfo_BatteryPluggedType::PLUGGED_TYPE_NONE, &none);
     napi_create_int32(env, (int32_t)BatteryInfo_BatteryPluggedType::PLUGGED_TYPE_AC, &ac);
     napi_create_int32(env, (int32_t)BatteryInfo_BatteryPluggedType::PLUGGED_TYPE_USB, &usb);
     napi_create_int32(env, (int32_t)BatteryInfo_BatteryPluggedType::PLUGGED_TYPE_WIRELESS, &wireless);
+    napi_create_int32(env, (int32_t)BatteryInfo_BatteryPluggedType::PLUGGED_TYPE_BUTT, &butt);
 
     napi_property_descriptor desc[] = {
         DECLARE_NAPI_STATIC_PROPERTY("NONE", none),
         DECLARE_NAPI_STATIC_PROPERTY("AC", ac),
         DECLARE_NAPI_STATIC_PROPERTY("USB", usb),
         DECLARE_NAPI_STATIC_PROPERTY("WIRELESS", wireless),
+        DECLARE_NAPI_STATIC_PROPERTY("BUTT", butt),
     };
 
     napi_value result = nullptr;
