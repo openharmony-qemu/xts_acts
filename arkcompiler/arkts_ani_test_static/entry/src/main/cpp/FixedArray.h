@@ -1577,29 +1577,37 @@ ani_int test_FixedArray_New_Ref_05([[maybe_unused]] ani_env *env_, [[maybe_unuse
 ani_int test_FixedArray_New_Ref_06([[maybe_unused]] ani_env *env_, [[maybe_unused]] ani_object object)
 {
     ani_fixedarray_boolean array = nullptr;
+    ani_fixedarray_boolean array1 = nullptr;
     ASSERT_EQ(env_->FixedArray_New_Boolean(ARRAYSIZE_10K, &array), ANI_OK);
-    ASSERT_EQ(env_->FixedArray_New_Boolean(ARRAYSIZE_100K, &array), ANI_OK);
+    ASSERT_EQ(env_->FixedArray_New_Boolean(ARRAYSIZE_100K, &array1), ANI_OK);
     ani_fixedarray_char array2 = nullptr;
+    ani_fixedarray_char array22 = nullptr;
     ASSERT_EQ(env_->FixedArray_New_Char(ARRAYSIZE_10K, &array2), ANI_OK);
-    ASSERT_EQ(env_->FixedArray_New_Char(ARRAYSIZE_100K, &array2), ANI_OK);
+    ASSERT_EQ(env_->FixedArray_New_Char(ARRAYSIZE_100K, &array22), ANI_OK);
     ani_fixedarray_byte array3 = nullptr;
+    ani_fixedarray_byte array33 = nullptr;
     ASSERT_EQ(env_->FixedArray_New_Byte(ARRAYSIZE_10K, &array3), ANI_OK);
-    ASSERT_EQ(env_->FixedArray_New_Byte(ARRAYSIZE_100K, &array3), ANI_OK);
+    ASSERT_EQ(env_->FixedArray_New_Byte(ARRAYSIZE_100K, &array33), ANI_OK);
     ani_fixedarray_short array4 = nullptr;
+    ani_fixedarray_short array44 = nullptr;
     ASSERT_EQ(env_->FixedArray_New_Short(ARRAYSIZE_10K, &array4), ANI_OK);
-    ASSERT_EQ(env_->FixedArray_New_Short(ARRAYSIZE_100K, &array4), ANI_OK);
+    ASSERT_EQ(env_->FixedArray_New_Short(ARRAYSIZE_100K, &array44), ANI_OK);
     ani_fixedarray_int array5 = nullptr;
+    ani_fixedarray_int array55 = nullptr;
     ASSERT_EQ(env_->FixedArray_New_Int(ARRAYSIZE_10K, &array5), ANI_OK);
-    ASSERT_EQ(env_->FixedArray_New_Int(ARRAYSIZE_100K, &array5), ANI_OK);
+    ASSERT_EQ(env_->FixedArray_New_Int(ARRAYSIZE_100K, &array55), ANI_OK);
     ani_fixedarray_long array6 = nullptr;
+    ani_fixedarray_long array66 = nullptr;
     ASSERT_EQ(env_->FixedArray_New_Long(ARRAYSIZE_10K, &array6), ANI_OK);
-    ASSERT_EQ(env_->FixedArray_New_Long(ARRAYSIZE_100K, &array6), ANI_OK);
+    ASSERT_EQ(env_->FixedArray_New_Long(ARRAYSIZE_100K, &array66), ANI_OK);
     ani_fixedarray_float array7 = nullptr;
+    ani_fixedarray_float array77 = nullptr;
     ASSERT_EQ(env_->FixedArray_New_Float(ARRAYSIZE_10K, &array7), ANI_OK);
-    ASSERT_EQ(env_->FixedArray_New_Float(ARRAYSIZE_100K, &array7), ANI_OK);
+    ASSERT_EQ(env_->FixedArray_New_Float(ARRAYSIZE_100K, &array77), ANI_OK);
     ani_fixedarray_double array8 = nullptr;
+    ani_fixedarray_double array88 = nullptr;
     ASSERT_EQ(env_->FixedArray_New_Double(ARRAYSIZE_10K, &array8), ANI_OK);
-    ASSERT_EQ(env_->FixedArray_New_Double(ARRAYSIZE_100K, &array8), ANI_OK);
+    ASSERT_EQ(env_->FixedArray_New_Double(ARRAYSIZE_100K, &array88), ANI_OK);
     return ANI_TRUE;
 }
 
