@@ -14,18 +14,18 @@
  */
 import { beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { huks } from '@kit.UniversalKeystoreKit';
-import * as huksCallback from './utils/huks/HuksCallbackUtils';
-import { AddParam, CheckSoftware, DeleteParam, MergeOptions, SetInData, SetMultiParam, SetParam } from './utils/huks/HuksOptionsUtils';
-import { StringToUint8Array } from './utils/common/CommonUtils';
-import { GetAttestKeyOptions } from './utils/huks/AttestKeyUtils';
-import { Get3DesGenerateOptions, GetAesGenerateOptions, GetEccGenerateOptions, GetSm2GenerateOptions } from './utils/huks/GenerateKeyUtils';
-import { GetAesImportData } from './utils/huks/ImportKeyUtils';
-import { GetAccessControlOptions } from './utils/huks/AccessControlUtils';
-import { BuildWrappedKeyData } from './utils/huks/ImportWrappedKeyUtils';
-import { GetGenWrapKeyOptions, GetWrapKeyOptions } from './utils/huks/WrapKeyUtils';
-import { GetCbcNoPaddingOptions, GetCbcPkcs7Options, GetCtrNoPaddingOptions, GetSm3NoPaddingOptions } from './utils/huks/CipherUtils';
-import { GetDeriveAgreeFinishOptions, GetHkdfDeriveOptions, GetSha256Options } from './utils/huks/DeriveAgreeUtils';
-import { Logger } from './utils/common/Logger';
+import * as huksCallback from './utils/huks/HuksCallbackUtils.ets';
+import { AddParam, CheckSoftware, DeleteParam, MergeOptions, SetInData, SetMultiParam, SetParam } from './utils/huks/HuksOptionsUtils.ets';
+import { StringToUint8Array } from './utils/common/CommonUtils.ets';
+import { GetAttestKeyOptions } from './utils/huks/AttestKeyUtils.ets';
+import { Get3DesGenerateOptions, GetAesGenerateOptions, GetEccGenerateOptions, GetSm2GenerateOptions } from './utils/huks/GenerateKeyUtils.ets';
+import { GetAesImportData } from './utils/huks/ImportKeyUtils.ets';
+import { GetAccessControlOptions } from './utils/huks/AccessControlUtils.ets';
+import { BuildWrappedKeyData } from './utils/huks/ImportWrappedKeyUtils.ets';
+import { GetGenWrapKeyOptions, GetWrapKeyOptions } from './utils/huks/WrapKeyUtils.ets';
+import { GetCbcNoPaddingOptions, GetCbcPkcs7Options, GetCtrNoPaddingOptions, GetSm3NoPaddingOptions } from './utils/huks/CipherUtils.ets';
+import { GetDeriveAgreeFinishOptions, GetHkdfDeriveOptions, GetSha256Options } from './utils/huks/DeriveAgreeUtils.ets';
+import { Logger } from './utils/common/Logger.ets';
 import huksExternalCrypto from '@ohos.security.huksExternalCrypto';
 
 
