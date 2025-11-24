@@ -8312,6 +8312,16 @@ export default function ConnectionPublicTest() {
       console.info(`${caseName} test start`);
       try {
         let netCon: connection.NetConnection = connection.createNetConnection();
+        netCon.on('netConnectionPropertiesChange', (data: connection.NetConnectionPropertyInfo) => {
+          console.info(`${caseName} Succeeded to get data:  + ${JSON.stringify(data)}}`);
+          let netHandle = data.netHandle;
+          let connectionProperties = data.connectionProperties;
+          console.info("netConnectionPropertiesChange netHandle: " + JSON.stringify(netHandle) + " ,netConnectionPropertiesChange connectionProperties: " + JSON.stringify(connectionProperties));
+          ExpectTrue(data.netHandle.netId >= 100);
+          ExpectTrue(data.connectionProperties.linkAddresses.length > 0);
+          console.info(`${caseName}---End`);
+          done();
+        });
         netCon.register((error: BusinessError) => {
           console.log(`${caseName} register error ${JSON.stringify(error)}`);
           if (error) {
@@ -8322,12 +8332,6 @@ export default function ConnectionPublicTest() {
             console.info(`${caseName}register success`);
           }
         });
-        netCon.on('netConnectionPropertiesChange', (data: connection.NetConnectionPropertyInfo) => {
-          console.info(`${caseName} Succeeded to get data:  + ${JSON.stringify(data)}}`);
-        });
-        ExpectTrue(true);
-        console.info(`${caseName}---End`);
-        done();
       } catch (err) {
         console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
         ExpectFail();
