@@ -37,10 +37,13 @@ const SYSTEM_ONE_HAP_NAME = 'com.example.system1.BmsSystemBundle1';
 export default function ActsBmsHapModuleTest() {
 describe('ActsBmsHapModuleTest', function () {
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_8500
-     * @tc.name: get hapModuleInfo from one app by getBundleInfo
-     * @tc.desc: get the module information of the hap with type of entry
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AppInfo_8500
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_8500
+     * @tc.desc   get the module information of the hap with type of entry
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Bms_Framework_Query_AppInfo_8500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
         let dataInfo = await bundle.getBundleInfo(BUNDLE_NAME1, bundle.BundleFlag.GET_BUNDLE_WITH_ABILITIES);
@@ -70,10 +73,13 @@ describe('ActsBmsHapModuleTest', function () {
         }
     });
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_8520
-     * @tc.name: get hapModuleInfo from two modules by getBundleInfo
-     * @tc.desc: get the module information of the hap with type of feature
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AppInfo_8520
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_8520
+     * @tc.desc   get the module information of the hap with type of feature
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Bms_Framework_Query_AppInfo_8520', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
         let dataInfo = await bundle.getBundleInfo(BUNDLE_NAME1, bundle.BundleFlag.GET_BUNDLE_WITH_ABILITIES);
@@ -98,10 +104,13 @@ describe('ActsBmsHapModuleTest', function () {
         });
     });
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_8540
-     * @tc.name: get hapModuleInfo one app without mainAbility by getBundleInfo
-     * @tc.desc: get the module information of the hap without mainAbility
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AppInfo_8540
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_8540
+     * @tc.desc   get the module information of the hap without mainAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Bms_Framework_Query_AppInfo_8540', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async function (done) {
         let result = await bundle.getBundleInfo(BUNDLE_NAME2, bundle.BundleFlag.GET_BUNDLE_WITH_ABILITIES);
@@ -130,10 +139,13 @@ describe('ActsBmsHapModuleTest', function () {
         });
     });
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_8560
-     * @tc.name: get hapModuleInfo through getBundleInfo, an application that adds mainAbility
-     * @tc.desc: get the module information of the hap with the added field mainAbility
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AppInfo_8560
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_8560
+     * @tc.desc   get the module information of the hap with the added field mainAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Bms_Framework_Query_AppInfo_8560', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         let dataInfo = await bundle.getBundleInfo(BUNDLE_NAME3, bundle.BundleFlag.GET_BUNDLE_WITH_ABILITIES);
@@ -162,10 +174,13 @@ describe('ActsBmsHapModuleTest', function () {
         });
     });
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_0120
-     * @tc.name: get hapModuleInfo from the system through getBundleInfo 
-     * @tc.desc: get module information of mainAbility system application 
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AppInfo_0120
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_0120
+     * @tc.desc   get module information of mainAbility system application
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Bms_Framework_Query_AppInfo_0120', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         let dataInfo = await bundle.getBundleInfo(BUNDLE_NAME5, bundle.BundleFlag.GET_BUNDLE_WITH_ABILITIES);

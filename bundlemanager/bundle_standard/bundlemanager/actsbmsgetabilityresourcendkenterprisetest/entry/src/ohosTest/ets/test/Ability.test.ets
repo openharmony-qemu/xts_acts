@@ -22,10 +22,13 @@ const ERROR201: number = 201;
 
 export default function actsGetAbilityInfoTest() {
   describe('ActsGetAbilityInfoTest', () => {
-    /*
-     * @tc.number: Sub_Bms_Framework_GetAbilityResourceInfo_0100
-     * @tc.name: Sub_Bms_Framework_GetAbilityResourceInfo_0100
-     * @tc.desc: Test getAbilityResourceInfo with valid value.
+    /**
+     * @tc.name   Sub_Bms_Framework_GetAbilityInfo_0100
+     * @tc.number Sub_Bms_Framework_GetAbilityResourceInfo_0100
+     * @tc.desc   Test getAbilityResourceInfo with valid value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Bms_Framework_GetAbilityInfo_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -52,10 +55,13 @@ export default function actsGetAbilityInfoTest() {
         }
       })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_getBundleNameTest_0100
-     * @tc.name: Sub_Bms_Framework_getBundleNameTest_0100
-     * @tc.desc: Test getBundleNameTest with nullptr.
+    /**
+     * @tc.name   Sub_Bms_Framework_getBundleNameTest_0100
+     * @tc.number Sub_Bms_Framework_getBundleNameTest_0100
+     * @tc.desc   Test getBundleNameTest with nullptr.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Bms_Framework_getBundleNameTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -75,10 +81,13 @@ export default function actsGetAbilityInfoTest() {
         }
       })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_getModuleNameTest_0100
-     * @tc.name: Sub_Bms_Framework_getModuleNameTest_0100
-     * @tc.desc: Test getModuleNameTest with nullptr.
+    /**
+     * @tc.name   Sub_Bms_Framework_getModuleNameTest_0100
+     * @tc.number Sub_Bms_Framework_getModuleNameTest_0100
+     * @tc.desc   Test getModuleNameTest with nullptr.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Bms_Framework_getModuleNameTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -98,10 +107,13 @@ export default function actsGetAbilityInfoTest() {
         }
       })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_getAbilityNameTest_0100
-     * @tc.name: Sub_Bms_Framework_getAbilityNameTest_0100
-     * @tc.desc: Test getAbilityNameTest with nullptr.
+    /**
+     * @tc.name   Sub_Bms_Framework_getAbilityNameTest_0100
+     * @tc.number Sub_Bms_Framework_getAbilityNameTest_0100
+     * @tc.desc   Test getAbilityNameTest with nullptr.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Bms_Framework_getAbilityNameTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -121,10 +133,13 @@ export default function actsGetAbilityInfoTest() {
         }
       })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_getLabelTest_0100
-     * @tc.name: Sub_Bms_Framework_getLabelTest_0100
-     * @tc.desc: Test getLabelTest with nullptr.
+    /**
+     * @tc.name   Sub_Bms_Framework_getLabelTest_0100
+     * @tc.number Sub_Bms_Framework_getLabelTest_0100
+     * @tc.desc   Test getLabelTest with nullptr.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Bms_Framework_getLabelTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -144,10 +159,13 @@ export default function actsGetAbilityInfoTest() {
         }
       })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_getAppIndexTest_0100
-     * @tc.name: Sub_Bms_Framework_getAppIndexTest_0100
-     * @tc.desc: Test getAppIndexTest with nullptr.
+    /**
+     * @tc.name   Sub_Bms_Framework_getAppIndexTest_0100
+     * @tc.number Sub_Bms_Framework_getAppIndexTest_0100
+     * @tc.desc   Test getAppIndexTest with nullptr.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Bms_Framework_getAppIndexTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -167,10 +185,13 @@ export default function actsGetAbilityInfoTest() {
         }
       })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_checkDefaultAppTest_0100
-     * @tc.name: Sub_Bms_Framework_checkDefaultAppTest_0100
-     * @tc.desc: Test checkDefaultAppTest with nullptr.
+    /**
+     * @tc.name   Sub_Bms_Framework_checkDefaultAppTest_0100
+     * @tc.number Sub_Bms_Framework_checkDefaultAppTest_0100
+     * @tc.desc   Test checkDefaultAppTest with nullptr.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Bms_Framework_checkDefaultAppTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -190,10 +211,13 @@ export default function actsGetAbilityInfoTest() {
         }
       })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_getDrawableDescriptorTest_0100
-     * @tc.name: Sub_Bms_Framework_getDrawableDescriptorTest_0100
-     * @tc.desc: Test getDrawableDescriptorTest with nullptr.
+    /**
+     * @tc.name   Sub_Bms_Framework_getDrawableDescriptorTest_0100
+     * @tc.number Sub_Bms_Framework_getDrawableDescriptorTest_0100
+     * @tc.desc   Test getDrawableDescriptorTest with nullptr.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Bms_Framework_getDrawableDescriptorTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -213,10 +237,13 @@ export default function actsGetAbilityInfoTest() {
         }
       })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_abilityResourceInfoDestroyTest_0100
-     * @tc.name: Sub_Bms_Framework_abilityResourceInfoDestroyTest_0100
-     * @tc.desc: Test abilityResourceInfoDestroyTest with nullptr.
+    /**
+     * @tc.name   Sub_Bms_Framework_abilityResourceInfoDestroyTest_0100
+     * @tc.number Sub_Bms_Framework_abilityResourceInfoDestroyTest_0100
+     * @tc.desc   Test abilityResourceInfoDestroyTest with nullptr.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Bms_Framework_abilityResourceInfoDestroyTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {

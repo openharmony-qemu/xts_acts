@@ -25,10 +25,13 @@ export default function budnleNdkNativeTest() {
     describe('BundleNdkTest', () => {
 
       /**
-      * @tc.number    SUB_BMS_BASIC_ETS_NATIVE_0200
-      * @tc.name      budnleNdkNativeTest002
-      * @tc.desc      budnleNdkNativeTest
-      */
+       * @tc.name   BundleNdkTest002
+       * @tc.number SUB_BMS_BASIC_ETS_NATIVE_0200
+       * @tc.desc   budnleNdkNativeTest
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('BundleNdkTest002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () =>  {
           console.info("Test NAPI data= " + JSON.stringify(bundlendk.getCurrentApplicationInfo()));
           expect(bundlendk.getCurrentApplicationInfo().bundleName).assertEqual(BUNDLE_NAME);

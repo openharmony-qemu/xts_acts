@@ -32,9 +32,12 @@ export default function getBundleArchiveInfo() {
   describe('getBundleArchiveInfo', function () {
 
     /**
+     * @tc.name   Sub_Bms_Framework_Query_AppInfo_1280
      * @tc.number Sub_Bms_Framework_Query_AppInfo_1280
-     * @tc.name BUNDLE::getBundleArchiveInfo
-     * @tc.desc Test getBundleArchiveInfo interfaces with one hap.
+     * @tc.desc   Test getBundleArchiveInfo interfaces with one hap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Bms_Framework_Query_AppInfo_1280', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let datainfo = await bundle.getBundleArchiveInfo(BMSJSTEST1, bundle.BundleFlag.GET_BUNDLE_WITH_ABILITIES)
@@ -54,9 +57,12 @@ export default function getBundleArchiveInfo() {
     })
 
     /**
+     * @tc.name   Sub_Bms_Framework_Query_AppInfo_1300
      * @tc.number Sub_Bms_Framework_Query_AppInfo_1300
-     * @tc.name BUNDLE::getBundleArchiveInfo
-     * @tc.desc Test getBundleArchiveInfo interfaces with two haps.
+     * @tc.desc   Test getBundleArchiveInfo interfaces with two haps.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Bms_Framework_Query_AppInfo_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       let datainfo = await bundle.getBundleArchiveInfo(BMSJSTEST2, bundle.BundleFlag.GET_BUNDLE_WITH_ABILITIES)
@@ -76,9 +82,12 @@ export default function getBundleArchiveInfo() {
     })
 
     /**
+     * @tc.name   Sub_Bms_Framework_Query_AppInfo_1320
      * @tc.number Sub_Bms_Framework_Query_AppInfo_1320
-     * @tc.name BUNDLE::getBundleArchiveInfo
-     * @tc.desc Test getBundleArchiveInfo interfaces with three haps.
+     * @tc.desc   Test getBundleArchiveInfo interfaces with three haps.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Bms_Framework_Query_AppInfo_1320', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       let datainfo = await bundle.getBundleArchiveInfo(BMSJSTEST4, bundle.BundleFlag.GET_BUNDLE_WITH_ABILITIES)
@@ -98,9 +107,12 @@ export default function getBundleArchiveInfo() {
     })
 
     /**
+     * @tc.name   Sub_Bms_Framework_Query_AppInfo_1340
      * @tc.number Sub_Bms_Framework_Query_AppInfo_1340
-     * @tc.name BUNDLE::getBundleArchiveInfo
-     * @tc.desc Test getBundleArchiveInfo interfaces with error hap.
+     * @tc.desc   Test getBundleArchiveInfo interfaces with error hap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Bms_Framework_Query_AppInfo_1340', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       await bundle.getBundleArchiveInfo(PATH + ERROR, bundle.BundleFlag.GET_BUNDLE_WITH_ABILITIES).then(datainfo => {
@@ -115,9 +127,12 @@ export default function getBundleArchiveInfo() {
     })
 
     /**
+     * @tc.name   Sub_Bms_Framework_Query_AppInfo_1360
      * @tc.number Sub_Bms_Framework_Query_AppInfo_1360
-     * @tc.name BUNDLE::getBundleArchiveInfo
-     * @tc.desc Test getBundleArchiveInfo interfaces with none hap.
+     * @tc.desc   Test getBundleArchiveInfo interfaces with none hap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Bms_Framework_Query_AppInfo_1360', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       let datainfo = await bundle.getBundleArchiveInfo(' ', bundle.BundleFlag.GET_BUNDLE_WITH_ABILITIES).then(datainfo => {
@@ -132,9 +147,12 @@ export default function getBundleArchiveInfo() {
     })
 
     /**
+     * @tc.name   Sub_Bms_Framework_Query_AppInfo_1380
      * @tc.number Sub_Bms_Framework_Query_AppInfo_1380
-     * @tc.name BUNDLE::getBundleArchiveInfo
-     * @tc.desc Test getBundleArchiveInfo interfaces with none hap.
+     * @tc.desc   Test getBundleArchiveInfo interfaces with none hap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Bms_Framework_Query_AppInfo_1380', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       await bundle.getBundleArchiveInfo(BMSJSTEST1, bundle.BundleFlag.GET_BUNDLE_WITH_ABILITIES, OnReceiveEvent)
@@ -170,9 +188,12 @@ export default function getBundleArchiveInfo() {
     })
 
     /**
+     * @tc.name   Sub_Bms_Framework_Query_AppInfo_1400
      * @tc.number Sub_Bms_Framework_Query_AppInfo_1400
-     * @tc.name BUNDLE::getBundleArchiveInfo
-     * @tc.desc Test getBundleArchiveInfo interfaces with two hap.
+     * @tc.desc   Test getBundleArchiveInfo interfaces with two hap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Bms_Framework_Query_AppInfo_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       await bundle.getBundleArchiveInfo(BMSJSTEST2, bundle.BundleFlag.GET_BUNDLE_WITH_ABILITIES, OnReceiveEvent)
@@ -194,9 +215,12 @@ export default function getBundleArchiveInfo() {
     })
 
     /**
+     * @tc.name   Sub_Bms_Framework_Query_AppInfo_1420
      * @tc.number Sub_Bms_Framework_Query_AppInfo_1420
-     * @tc.name BUNDLE::getBundleArchiveInfo
-     * @tc.desc Test getBundleArchiveInfo interfaces with one hap.
+     * @tc.desc   Test getBundleArchiveInfo interfaces with one hap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Bms_Framework_Query_AppInfo_1420', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       await bundle.getBundleArchiveInfo(BMSJSTEST4, bundle.BundleFlag.GET_BUNDLE_WITH_ABILITIES, OnReceiveEvent)
@@ -218,9 +242,12 @@ export default function getBundleArchiveInfo() {
     })
 
     /**
+     * @tc.name   Sub_Bms_Framework_Query_AppInfo_1440
      * @tc.number Sub_Bms_Framework_Query_AppInfo_1440
-     * @tc.name BUNDLE::getBundleArchiveInfo
-     * @tc.desc Test getBundleArchiveInfo interfaces with error hap.
+     * @tc.desc   Test getBundleArchiveInfo interfaces with error hap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Bms_Framework_Query_AppInfo_1440', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       await bundle.getBundleArchiveInfo(PATH + ERROR, bundle.BundleFlag.GET_BUNDLE_WITH_ABILITIES, OnReceiveEvent)
@@ -238,9 +265,12 @@ export default function getBundleArchiveInfo() {
     })
 
     /**
+     * @tc.name   Sub_Bms_Framework_Query_AppInfo_1460
      * @tc.number Sub_Bms_Framework_Query_AppInfo_1460
-     * @tc.name BUNDLE::getBundleArchiveInfo
-     * @tc.desc Test getBundleArchiveInfo interfaces with none hap.
+     * @tc.desc   Test getBundleArchiveInfo interfaces with none hap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Bms_Framework_Query_AppInfo_1460', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       await bundle.getBundleArchiveInfo(' ', bundle.BundleFlag.GET_BUNDLE_WITH_ABILITIES, OnReceiveEvent)
@@ -258,9 +288,12 @@ export default function getBundleArchiveInfo() {
     })
 
     /**
+     * @tc.name   Sub_Bms_Framework_Query_AppInfo_1480
      * @tc.number Sub_Bms_Framework_Query_AppInfo_1480
-     * @tc.name BUNDLE::getBundleArchiveInfo
-     * @tc.desc Test getBundleArchiveInfo interfaces with none hap.
+     * @tc.desc   Test getBundleArchiveInfo interfaces with none hap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Bms_Framework_Query_AppInfo_1480', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       await bundle.getBundleArchiveInfo(BMSJSTEST1, bundle.BundleFlag.GET_BUNDLE_DEFAULT, OnReceiveEvent)
@@ -296,9 +329,12 @@ export default function getBundleArchiveInfo() {
     })
 
     /**
+     * @tc.name   Sub_Bms_Framework_Query_AppInfo_1500
      * @tc.number Sub_Bms_Framework_Query_AppInfo_1500
-     * @tc.name BUNDLE::getBundleArchiveInfo
-     * @tc.desc Test getBundleArchiveInfo interfaces with none hap.
+     * @tc.desc   Test getBundleArchiveInfo interfaces with none hap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Bms_Framework_Query_AppInfo_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       await bundle.getBundleArchiveInfo(BMSJSTEST1, bundle.BundleFlag.GET_BUNDLE_DEFAULT, OnReceiveEvent)
