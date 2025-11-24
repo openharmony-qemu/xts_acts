@@ -184,6 +184,7 @@ export default function NodeEventTypeTest() {
       async (done: Function) => {
         try {
           console.info("====>testNODE_TEXT_PICKER_EVENT_ON_SCROLL_STOP0100 start====");
+          await Utils.sleep(2000);
           let textpicker = await Utils.driver.findComponent(ON.id('textpicker11'));
           await textpicker.scrollToBottom();
           let result: number = nativerenderndk.NodeEventTypeTest_010();
