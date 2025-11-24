@@ -33,34 +33,6 @@ struct onScrollStopTest {
         })
         .height('50%')
       Divider()
-      Text(this.message1).id('text1')
-      Button('TextPickerDialog:' + this.v)
-        .id('myTextPicker1')
-        .margin(20)
-        .onClick(() => {
-          TextPickerDialog.show({
-            range: this.fruits,
-            selected: this.select,
-            disappearTextStyle: { color: Color.Red, font: { size: 15, weight: FontWeight.Lighter } },
-            textStyle: { color: Color.Black, font: { size: 20, weight: FontWeight.Normal } },
-            selectedTextStyle: { color: Color.Blue, font: { size: 30, weight: FontWeight.Bolder } },
-            onAccept: (value: TextPickerResult) => {
-              this.select = value.index
-              console.log(this.select + '')
-              this.v = value.value as string
-              console.info('TextPickerDialog:onAccept()' + JSON.stringify(value))
-            },
-            onScrollStop: () => {
-              this.message1 = 'stop'
-            },
-            onDidAppear: () => {
-             this.message1 = 'stop'
-            },
-            onDidDisappear: () => {
-              console.info('DatePickerDialog:onDidDisappear()')
-            },
-          })
-        })
     }
     .height('100%')
     .width('100%')

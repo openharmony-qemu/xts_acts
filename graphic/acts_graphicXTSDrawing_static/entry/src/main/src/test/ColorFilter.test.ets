@@ -17,7 +17,6 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestT
 import image from '@ohos.multimedia.image';
 import drawing from '@ohos.graphics.drawing';
 import common2D from '@ohos.graphics.common2D';
-import { getEnumCount } from './Util.test';
 import { BusinessError } from '@ohos.base';
 
 export default function colorFilterTest() {
@@ -54,12 +53,12 @@ export default function colorFilterTest() {
     /**
      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0100
      * @tc.name      : testColorFilterCreateBlendModeColorFilterNormalStatic
-     * @tc.desc      : Test for testColorFilterCreateBlendModeColorFilterNormal.
+     * @tc.desc      : Test for testColorFilterCreateBlendModeColorFilterNormalStatic.
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('testColorFilterCreateBlendModeColorFilterNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, (): void => {
+    it('testColorFilterCreateBlendModeColorFilterNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testColorFilterCreateBlendModeColorFilterNormalStatic';
       try {
         drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.CLEAR);
@@ -92,7 +91,8 @@ export default function colorFilterTest() {
         drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.COLOR);
         drawing.ColorFilter.createBlendModeColorFilter({alpha: 255, red: 255, green: 0, blue: 0}, drawing.BlendMode.LUMINOSITY);
         console.info(msg + ' createBlendModeColorFilter successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createBlendModeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -105,20 +105,51 @@ export default function colorFilterTest() {
      * @tc.type      : Function
      * @tc.level     : Level 3
      */
-    it('testColorFilterCreateBlendModeColorFilterMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, (): void => {
+    it('testColorFilterCreateBlendModeColorFilterMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testColorFilterCreateBlendModeColorFilterMultipleCallsStatic';
-
+      let itemList: drawing.BlendMode[]= [
+        drawing.BlendMode.CLEAR,
+        drawing.BlendMode.SRC,
+        drawing.BlendMode.DST,
+        drawing.BlendMode.SRC_OVER,
+        drawing.BlendMode.DST_OVER,
+        drawing.BlendMode.SRC_IN,
+        drawing.BlendMode.DST_IN,
+        drawing.BlendMode.SRC_OUT,
+        drawing.BlendMode.DST_OUT,
+        drawing.BlendMode.SRC_ATOP,
+        drawing.BlendMode.DST_ATOP,
+        drawing.BlendMode.XOR,
+        drawing.BlendMode.PLUS,
+        drawing.BlendMode.MODULATE,
+        drawing.BlendMode.SCREEN,
+        drawing.BlendMode.OVERLAY,
+        drawing.BlendMode.DARKEN,
+        drawing.BlendMode.LIGHTEN,
+        drawing.BlendMode.COLOR_DODGE,
+        drawing.BlendMode.COLOR_BURN,
+        drawing.BlendMode.HARD_LIGHT,
+        drawing.BlendMode.SOFT_LIGHT,
+        drawing.BlendMode.DIFFERENCE,
+        drawing.BlendMode.EXCLUSION,
+        drawing.BlendMode.MULTIPLY,
+        drawing.BlendMode.HUE,
+        drawing.BlendMode.SATURATION,
+        drawing.BlendMode.COLOR,
+        drawing.BlendMode.LUMINOSITY
+      ];
       for (let i = 0; i < 20; i++) {
         const randomColor: common2D.Color = {
-          alpha: 100 + i,
-          red: 50 + i,
-          green: 100 + i,
-          blue: 50 + i
+          alpha: Math.floor(Math.random() * 256).toInt(),
+          red: Math.floor(Math.random() * 256).toInt(),
+          green: Math.floor(Math.random() * 256).toInt(),
+          blue: Math.floor(Math.random() * 256).toInt()
         };
         try {
-          drawing.ColorFilter.createBlendModeColorFilter(randomColor, drawing.BlendMode.SRC);
+          drawing.ColorFilter.createBlendModeColorFilter(randomColor, itemList[i]);
           console.info(msg + ' createBlendModeColorFilter succeeded');
-        } catch (e: BusinessError) {
+        } catch (e) {
+          e = e as BusinessError;
           console.info(msg + ` createBlendModeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail();
         }
@@ -133,14 +164,15 @@ export default function colorFilterTest() {
      * @tc.type      : Function
      * @tc.level     : Level 3
      */
-    it('testColorFilterCreateBlendModeColorFilterBoundaryValueStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, (): void => {
+    it('testColorFilterCreateBlendModeColorFilterBoundaryValueStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testColorFilterCreateBlendModeColorFilterBoundaryValueStatic';
       try {
         drawing.ColorFilter.createBlendModeColorFilter({
           alpha: -1, red: 255, green: 0, blue: 255
         }, drawing.BlendMode.SRC);
         console.info(msg + ' createBlendModeColorFilter succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createBlendModeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -150,7 +182,8 @@ export default function colorFilterTest() {
           alpha: 255, red: 256, green: 0, blue: 255
         }, drawing.BlendMode.SRC);
         console.info(msg + ' createBlendModeColorFilter succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createBlendModeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -160,7 +193,8 @@ export default function colorFilterTest() {
           alpha: 255, red: -1, green: 0, blue: 255
         }, drawing.BlendMode.SRC);
         console.info(msg + ' createBlendModeColorFilter succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createBlendModeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -170,7 +204,8 @@ export default function colorFilterTest() {
           alpha: 255, red: 255, green: 256, blue: 255
         }, drawing.BlendMode.SRC);
         console.info(msg + ' createBlendModeColorFilter succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createBlendModeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -180,7 +215,8 @@ export default function colorFilterTest() {
           alpha: 255, red: 255, green: -1, blue: 255
         }, drawing.BlendMode.SRC);
         console.info(msg + ' createBlendModeColorFilter succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createBlendModeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -190,7 +226,8 @@ export default function colorFilterTest() {
           alpha: 255, red: 255, green: 0, blue: 256
         }, drawing.BlendMode.SRC);
         console.info(msg + ' createBlendModeColorFilter succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createBlendModeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
@@ -200,8 +237,324 @@ export default function colorFilterTest() {
           alpha: 255, red: 255, green: 0, blue: -1
         }, drawing.BlendMode.SRC);
         console.info(msg + ' createBlendModeColorFilter succeeded');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + ` createBlendModeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+    });
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0200
+     * @tc.name      : testColorFilterCreateComposeColorFilterNormalStatic
+     * @tc.desc      : Test for testColorFilterCreateComposeColorFilterNormalStatic.
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testColorFilterCreateComposeColorFilterNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
+      const msg = 'testColorFilterCreateComposeColorFilterNormalStatic';
+
+      let colorFilter1: drawing.ColorFilter | null = null;
+      try {
+        colorFilter1 = drawing.ColorFilter.createBlendModeColorFilter({
+          alpha: 255, red: 255, green: 0, blue: 0
+        }, drawing.BlendMode.SRC) as drawing.ColorFilter;
+        console.info(msg + ' createBlendModeColorFilter successed');
+      } catch(e) {
+        e = e as BusinessError ;
+        console.info(msg + ` createBlendModeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+
+      let colorFilter2: drawing.ColorFilter | null = null;
+      try {
+        colorFilter2  = drawing.ColorFilter.createBlendModeColorFilter({
+          alpha: 255, red: 255, green: 0, blue: 0
+        }, drawing.BlendMode.DST) as drawing.ColorFilter;
+        console.info(msg + ' createBlendModeColorFilter successed');
+      } catch(e) {
+        e = e as BusinessError ;
+        console.info(msg + ` createBlendModeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+
+      try {
+        if(colorFilter1 && colorFilter2){
+          drawing.ColorFilter.createComposeColorFilter(colorFilter1, colorFilter2);
+          console.info(msg + ' createComposeColorFilter successed');
+        }
+      } catch(e) {
+        e = e as BusinessError ;
+        console.info(msg + ` createComposeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+
+      try {
+        let colorFilter2 = drawing.ColorFilter.createSRGBGammaToLinear();
+        if(colorFilter1 && colorFilter2){
+          drawing.ColorFilter.createComposeColorFilter(colorFilter1, colorFilter2);
+          console.info(msg + ' createComposeColorFilter successed');
+        }
+      } catch(e) {
+        e = e as BusinessError ;
+        console.info(msg + ` createComposeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+
+      try {
+        let colorFilter1 = drawing.ColorFilter.createSRGBGammaToLinear();
+        if(colorFilter1 && colorFilter2){
+          drawing.ColorFilter.createComposeColorFilter(colorFilter1, colorFilter2);
+          console.info(msg + ' createComposeColorFilter successed');
+        }
+      } catch(e) {
+        e = e as BusinessError ;
+        console.info(msg + ` createComposeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+
+      try {
+        let colorFilter1 = drawing.ColorFilter.createSRGBGammaToLinear();
+        let colorFilter2 = drawing.ColorFilter.createLumaColorFilter();
+        if(colorFilter1 && colorFilter2){
+          drawing.ColorFilter.createComposeColorFilter(colorFilter1,colorFilter2 );
+          console.info(msg + ' createComposeColorFilter successed');
+        }
+      } catch(e) {
+        e = e as BusinessError ;
+        console.info(msg + ` createComposeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0203
+     * @tc.name      : testColorFilterCreateComposeColorFilterMultipleCallsStatic
+     * @tc.desc      : Test for testColorFilterCreateComposeColorFilterMultipleCallsStatic.
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('testColorFilterCreateComposeColorFilterMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testColorFilterCreateComposeColorFilterMultipleCallsStatic';
+      const filters = [
+        drawing.ColorFilter.createSRGBGammaToLinear(),
+        drawing.ColorFilter.createLumaColorFilter(),
+        drawing.ColorFilter.createLinearToSRGBGamma(),
+      ];
+      for (let i = 0; i < 20; i++) {
+        const randomFilter1 = filters[Math.floor(Math.random() * 3).toInt()];
+        const randomFilter2 = filters[Math.floor(Math.random() * 3).toInt()];
+        if(randomFilter1 && randomFilter2){
+          try {
+            drawing.ColorFilter.createComposeColorFilter(randomFilter1, randomFilter2);
+            console.info(msg + ' createComposeColorFilter succeeded');
+          } catch(e) {
+            e = e as BusinessError ;
+            console.info(msg + ` createComposeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+            expect().assertFail();
+          }
+        }
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0300
+     * @tc.name      : testColorFilterCreateLinearToSRGBGammaNormalStatic
+     * @tc.desc      : Test for testColorFilterCreateLinearToSRGBGammaNormalStatic.
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testColorFilterCreateLinearToSRGBGammaNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
+      const msg = 'testColorFilterCreateLinearToSRGBGammaNormalStatic';
+      try {
+        drawing.ColorFilter.createLinearToSRGBGamma();
+        console.info(msg + ' createLinearToSRGBGamma successed');
+      } catch(e) {
+        e = e as BusinessError ;
+        console.info(msg + ` createLinearToSRGBGamma errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0302
+     * @tc.name      : testColorFilterCreateLinearToSRGBGammaMultipleCallsStatic
+     * @tc.desc      : Test for testColorFilterCreateLinearToSRGBGammaMultipleCallsStatic.
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('testColorFilterCreateLinearToSRGBGammaMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testColorFilterCreateLinearToSRGBGammaMultipleCallsStatic';
+      try {
+        for (let i = 0; i < 20; i++) {
+          drawing.ColorFilter.createLinearToSRGBGamma();
+          console.info(msg + ' createLinearToSRGBGamma successed');
+        }
+      } catch(e) {
+        e = e as BusinessError ;
+        console.info(msg + ` createLinearToSRGBGamma errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0400
+     * @tc.name      : testColorFilterCreateSRGBGammaToLinearNormalStatic
+     * @tc.desc      : Test for testColorFilterCreateSRGBGammaToLinearNormalStatic.
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testColorFilterCreateSRGBGammaToLinearNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
+      const msg = 'testColorFilterCreateSRGBGammaToLinearNormalStatic';
+      try {
+        drawing.ColorFilter.createSRGBGammaToLinear();
+        console.info(msg + ' createSRGBGammaToLinear successed');
+      } catch(e) {
+        e = e as BusinessError ;
+        console.info(msg + ` createSRGBGammaToLinear errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0402
+     * @tc.name      : testColorFilterCreateSRGBGammaToLinearMultipleCallsStatic
+     * @tc.desc      : Test for testColorFilterCreateSRGBGammaToLinearMultipleCallsStatic.
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('testColorFilterCreateSRGBGammaToLinearMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testColorFilterCreateSRGBGammaToLinearMultipleCallsStatic';
+      try {
+        for (let i = 0; i < 20; i++) {
+          drawing.ColorFilter.createSRGBGammaToLinear();
+          console.info(msg + ' createSRGBGammaToLinear successed');
+        }
+      } catch(e) {
+        e = e as BusinessError ;
+        console.info(msg + ` createSRGBGammaToLinear errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0500
+     * @tc.name      : testColorFilterCreateLumaColorFilterNormalStatic
+     * @tc.desc      : Test for testColorFilterCreateLumaColorFilterNormalStatic.
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testColorFilterCreateLumaColorFilterNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
+      const msg = 'testColorFilterCreateLumaColorFilterNormalStatic';
+      try {
+        drawing.ColorFilter.createLumaColorFilter();
+        console.info(msg + ' createLumaColorFilter successed');
+      } catch(e) {
+        e = e as BusinessError ;
+        console.info(msg + ` createLumaColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0502
+     * @tc.name      : testColorFilterCreateLumaColorFilterMultipleCallsStatic
+     * @tc.desc      : Test for testColorFilterCreateLumaColorFilterMultipleCallsStatic.
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('testColorFilterCreateLumaColorFilterMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testColorFilterCreateLumaColorFilterMultipleCallsStatic';
+      try {
+        for (let i = 0; i < 20; i++) {
+          drawing.ColorFilter.createLumaColorFilter();
+          console.info(msg + ' createLumaColorFilter successed');
+        }
+      } catch(e) {
+        e = e as BusinessError ;
+        console.info(msg + ` createLumaColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0600
+     * @tc.name      : testColorFilterCreateMatrixColorFilterNormalStatic
+     * @tc.desc      : Test for testColorFilterCreateMatrixColorFilterNormalStatic.
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testColorFilterCreateMatrixColorFilterNormalStatic' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
+      const msg = 'testColorFilterCreateMatrixColorFilterNormalStatic';
+      const matrix_ = [
+        1, 0, 0, 0, 0, // 红色通道
+        0, 1, 0, 0, 0, // 绿色通道
+        0, 0, 1, 0, 0, // 蓝色通道
+        0, 0, 0, 1, 0// 透明度通道
+      ];
+      try {
+        let colorFilter = drawing.ColorFilter.createMatrixColorFilter(matrix_);
+        expect(colorFilter != null || colorFilter != undefined).assertTrue()
+        console.info(msg + ' createMatrixColorFilter successed,colorFilter:' + colorFilter);
+      } catch(e) {
+        e = e as BusinessError ;
+        console.info(msg + ` createMatrixColorFilter errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0603
+     * @tc.name      : testColorFilterCreateMatrixColorFilterMultipleCallsStatic
+     * @tc.desc      : Test for testColorFilterCreateMatrixColorFilterMultipleCallsStatic.
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('testColorFilterCreateMatrixColorFilterMultipleCallsStatic' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
+      const msg = 'testColorFilterCreateMatrixColorFilterMultipleCallsStatic';
+      for ( let i = 0 ; i < 20 ; i ++ ) {
+        let matrix: Array<number> = [
+          1, 0, 0, 0, 0,
+          0, 1, 0, 0, 0,
+          0, 0, 100, 0, 0,
+          0, 0, 0, 1, 0
+        ];
+        try {
+          let colorFilter = drawing.ColorFilter.createMatrixColorFilter(matrix);
+          expect(colorFilter != null || colorFilter != undefined).assertTrue()
+          console.info(msg + ' createMatrixColorFilter successed,colorFilter:' + colorFilter);
+        } catch(e) {
+          e = e as BusinessError ;
+          console.info(msg + ` createMatrixColorFilter errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
+          expect().assertFail();
+        }
+      }
+
+    });
+
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_COLORFILTER_STATIC_0604
+     * @tc.name      : testColorFilterCreateMatrixColorFilterAbNormalStatic
+     * @tc.desc      : Test for testColorFilterCreateMatrixColorFilterAbnormalStatic.
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('testColorFilterCreateMatrixColorFilterAbnormalStatic' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3 , () => {
+      const msg = 'testColorFilterCreateMatrixColorFilterAbnormalStatic';
+      try {
+        drawing.ColorFilter.createMatrixColorFilter([]);
+        console.info(msg + ' createMatrixColorFilter successed');
+      } catch(e) {
+        e = e as BusinessError ;
+        console.info(msg + ` createMatrixColorFilter errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
         expect(e.code).assertEqual(401);
       }
     });
