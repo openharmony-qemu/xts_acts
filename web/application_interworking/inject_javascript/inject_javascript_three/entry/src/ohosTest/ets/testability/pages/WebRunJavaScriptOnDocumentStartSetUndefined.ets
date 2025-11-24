@@ -55,8 +55,8 @@ struct WebRunJavaScriptOnDocumentStartSetUndefinedTest {
         Button('RunJavaScriptOnDocumentStartSetUndefined')
           .key('RunJavaScriptOnDocumentStartSetUndefined')
           .onClick(async () => {
-            await waitForExist(() => this.isReceive, "RunJavaScriptOnDocumentStartSetUndefined_isReceive", 0);
-            await waitForExist(() => this.isPageEnd, "RunJavaScriptOnDocumentStartSetUndefined_isPageEnd", 0);
+            await waitForExist(() => this.isReceive, 'RunJavaScriptOnDocumentStartSetUndefined_isReceive', 0);
+            await waitForExist(() => this.isPageEnd, 'RunJavaScriptOnDocumentStartSetUndefined_isPageEnd', 0);
             console.info('key==>' + this.emitKey)
             this.isReceive = -1;
             switch (this.emitKey) {
