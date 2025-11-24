@@ -27,23 +27,24 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 import accessibility from '@ohos.accessibility';
-import { Resource,  $r, ResourceStr} from '@ohos.arkui.component'
-
+import { Resource, $r, ResourceStr} from '@ohos.arkui.component'
+import common from '@ohos.app.ability.common';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
 let emitKey = "emitUserAgent";
 
-let context = AppStorage.get<Context>('context')!
 function spliceColor(sysColor: Resource) {
-  let resourceColor = context.resourceManager.getColorSync(sysColor.id)
+  let resourceColor =  AppStorage.get<common.Context>('applicationContext')?.resourceManager.getColorSync(sysColor.id)!
   let newArgb: string = '#' + resourceColor.toString(16).toUpperCase()
   return newArgb;
 }
 
 function dataPanelDefaultStrokeWidth(sysWidth: Resource) {
-
+  // let resourceStrokeWidth = AppStorage.get<common.Context>('applicationContext')?.resourceManager.getNumber(sysWidth.id)
+  // let newStrokeWidth: string = Math.round(px2vp(resourceStrokeWidth)) + '.00vp'
+  // return newStrokeWidth;
 }
 
 export default function datapanelTest() {
@@ -65,7 +66,6 @@ export default function datapanelTest() {
         console.info("get DataPanel state success " + JSON.stringify(pages));
         if (!("DataPanel" == pages.name)) {
           console.info("get DataPanel state success " + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
         }
       } catch (err) {
@@ -93,7 +93,6 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_0100', Level.LEVEL0, async (done: (
           console.info("ArkUX_Stage_DataPanel_ValueColors_0100 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_ValueColors_0100 component obj.$attrs.valueColors is: " +
           JSON.stringify(obj.getElement('$attrs').getArray('valueColors')));
-          
           expect(obj.getElement('$attrs').getArray('valueColors')[0][0].getString('color')).assertEqual("#FFFF0000");
           expect(obj.getElement('$attrs').getArray('valueColors')[0][0].getString('offset')).assertEqual("0.000000");
           expect(obj.getElement('$attrs').getArray('valueColors')[0][1].getString('color')).assertEqual("#FFFF0000");
@@ -120,7 +119,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_0100', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_ValueColors_static_0200
      * @tc.name     ArkUX_Stage_DataPanel_ValueColors_static_0200
@@ -164,7 +163,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_0200', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_ValueColors_static_0300
      * @tc.name     ArkUX_Stage_DataPanel_ValueColors_static_0300
@@ -208,7 +207,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_0300', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_ValueColors_static_0400
      * @tc.name     ArkUX_Stage_DataPanel_ValueColors_static_0400
@@ -253,7 +252,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_0400', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_ValueColors_static_0500
      * @tc.name     ArkUX_Stage_DataPanel_ValueColors_static_0500
@@ -289,7 +288,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_0500', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_ValueColors_static_0600
      * @tc.name     ArkUX_Stage_DataPanel_ValueColors_static_0600
@@ -329,7 +328,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_0600', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_ValueColors_static_0700
      * @tc.name     ArkUX_Stage_DataPanel_ValueColors_static_0700
@@ -373,7 +372,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_0700', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_ValueColors_static_0800
      * @tc.name     ArkUX_Stage_DataPanel_ValueColors_static_0800
@@ -417,7 +416,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_0800', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_ValueColors_static_0900
      * @tc.name     ArkUX_Stage_DataPanel_ValueColors_static_0900
@@ -473,7 +472,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_0900', Level.LEVEL0, async (done: (
       done();
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_ValueColors_static_1000
      * @tc.name     ArkUX_Stage_DataPanel_ValueColors_static_1000
@@ -513,7 +512,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_1000', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_ValueColors_static_1100
      * @tc.name     ArkUX_Stage_DataPanel_ValueColors_static_1100
@@ -553,7 +552,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_1100', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_ValueColors_static_1200
      * @tc.name     ArkUX_Stage_DataPanel_ValueColors_static_1200
@@ -593,7 +592,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_1200', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_ValueColors_static_1300
      * @tc.name     ArkUX_Stage_DataPanel_ValueColors_static_1300
@@ -646,7 +645,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_1300', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_ValueColors_static_1400
      * @tc.name     ArkUX_Stage_DataPanel_ValueColors_static_1400
@@ -686,7 +685,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_1400', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_ValueColors_static_1500
      * @tc.name     ArkUX_Stage_DataPanel_ValueColors_static_1500
@@ -726,7 +725,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_1500', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_ValueColors_static_1600
      * @tc.name     ArkUX_Stage_DataPanel_ValueColors_static_1600
@@ -782,7 +781,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_1600', Level.LEVEL0, async (done: (
       done();
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_ValueColors_static_1700
      * @tc.name     ArkUX_Stage_DataPanel_ValueColors_static_1700
@@ -826,7 +825,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_1700', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_ValueColors_static_1800
      * @tc.name     ArkUX_Stage_DataPanel_ValueColors_static_1800
@@ -870,7 +869,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_1800', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_ValueColors_static_1900
      * @tc.name     ArkUX_Stage_DataPanel_ValueColors_static_1900
@@ -914,7 +913,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_1900', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_ValueColors_static_2000
      * @tc.name     ArkUX_Stage_DataPanel_ValueColors_static_2000
@@ -959,7 +958,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_2000', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_ValueColors_static_2100
      * @tc.name     ArkUX_Stage_DataPanel_ValueColors_static_2100
@@ -1003,7 +1002,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_2100', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_ValueColors_static_2200
      * @tc.name     ArkUX_Stage_DataPanel_ValueColors_static_2200
@@ -1047,7 +1046,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_2200', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_ValueColors_static_2300
      * @tc.name     ArkUX_Stage_DataPanel_ValueColors_static_2300
@@ -1103,7 +1102,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_2300', Level.LEVEL0, async (done: (
       done();
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_ValueColors_static_2400
      * @tc.name     ArkUX_Stage_DataPanel_ValueColors_static_2400
@@ -1159,7 +1158,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_2400', Level.LEVEL0, async (done: (
       done();
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_ValueColors_static_2500
      * @tc.name     ArkUX_Stage_DataPanel_ValueColors_static_2500
@@ -1215,7 +1214,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_2500', Level.LEVEL0, async (done: (
       done();
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_ValueColors_static_2600
      * @tc.name     ArkUX_Stage_DataPanel_ValueColors_static_2600
@@ -1271,7 +1270,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_2600', Level.LEVEL0, async (done: (
       done();
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_ValueColors_static_2700
      * @tc.name     ArkUX_Stage_DataPanel_ValueColors_static_2700
@@ -1328,7 +1327,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_2700', Level.LEVEL0, async (done: (
       done();
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_ValueColors_static_2800
      * @tc.name     ArkUX_Stage_DataPanel_ValueColors_static_2800
@@ -1372,7 +1371,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_2800', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_ValueColors_static_2900
      * @tc.name     ArkUX_Stage_DataPanel_ValueColors_static_2900
@@ -1408,7 +1407,7 @@ it('ArkUX_Stage_DataPanel_ValueColors_static_2900', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0100
      * @tc.name     ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0100
@@ -1438,7 +1437,7 @@ it('ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0100', Level.LEVEL0, async
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0200
      * @tc.name     ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0200
@@ -1468,7 +1467,7 @@ it('ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0200', Level.LEVEL0, async
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0300
      * @tc.name     ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0300
@@ -1498,7 +1497,7 @@ it('ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0300', Level.LEVEL0, async
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0400
      * @tc.name     ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0400
@@ -1528,7 +1527,7 @@ it('ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0400', Level.LEVEL0, async
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0500
      * @tc.name     ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0500
@@ -1558,7 +1557,7 @@ it('ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0500', Level.LEVEL0, async
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0600
      * @tc.name     ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0600
@@ -1588,7 +1587,7 @@ it('ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0600', Level.LEVEL0, async
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0700
      * @tc.name     ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0700
@@ -1618,7 +1617,7 @@ it('ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0700', Level.LEVEL0, async
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0800
      * @tc.name     ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0800
@@ -1648,7 +1647,7 @@ it('ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0800', Level.LEVEL0, async
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0900
      * @tc.name     ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0900
@@ -1664,7 +1663,7 @@ it('ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0900', Level.LEVEL0, async
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_DataPanel_TrackBackgroundColor_0900 component obj is: " + JSON.stringify(obj));
           console.info("ArkUX_Stage_DataPanel_TrackBackgroundColor_0900 component obj.$attrs is: " +
-          JSON.stringify(obj.getElement('$attr')));
+          JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_TrackBackgroundColor_0900 component obj.$attrs.trackBackgroundColor is:" +
           JSON.stringify(obj.getElement('$attrs').getString('trackBackgroundColor')));
           expect(obj.getElement('$attrs').getString('trackBackgroundColor')).assertEqual(obj.getElement('$attrs').getString('borderColor'));
@@ -1678,7 +1677,7 @@ it('ArkUX_Stage_DataPanel_TrackBackgroundColor_static_0900', Level.LEVEL0, async
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_TrackBackgroundColor_static_1000
      * @tc.name     ArkUX_Stage_DataPanel_TrackBackgroundColor_static_1000
@@ -1694,7 +1693,7 @@ it('ArkUX_Stage_DataPanel_TrackBackgroundColor_static_1000', Level.LEVEL0, async
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_DataPanel_TrackBackgroundColor_1000 component obj is: " + JSON.stringify(obj));
           console.info("ArkUX_Stage_DataPanel_TrackBackgroundColor_1000 component obj.$attrs is: " +
-          JSON.stringify(obj.getElement('$attr')));
+          JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_TrackBackgroundColor_1000 component obj.$attrs.trackBackgroundColor is:" +
           JSON.stringify(obj.getElement('$attrs').getString('trackBackgroundColor')));
           expect(obj.getElement('$attrs').getString('trackBackgroundColor')).assertEqual(obj.getElement('$attrs').getString('borderColor'));
@@ -1708,7 +1707,7 @@ it('ArkUX_Stage_DataPanel_TrackBackgroundColor_static_1000', Level.LEVEL0, async
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_TrackBackgroundColor_static_1100
      * @tc.name     ArkUX_Stage_DataPanel_TrackBackgroundColor_static_1100
@@ -1724,7 +1723,7 @@ it('ArkUX_Stage_DataPanel_TrackBackgroundColor_static_1100', Level.LEVEL0, async
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_DataPanel_TrackBackgroundColor_1100 component obj is: " + JSON.stringify(obj));
           console.info("ArkUX_Stage_DataPanel_TrackBackgroundColor_1100 component obj.$attrs is: " +
-          JSON.stringify(obj.getElement('$attr')));
+          JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_TrackBackgroundColor_1100 component obj.$attrs.trackBackgroundColor is:" +
           JSON.stringify(obj.getElement('$attrs').getString('trackBackgroundColor')));
           expect(obj.getElement('$attrs').getString('trackBackgroundColor')).assertEqual(obj.getElement('$attrs').getString('borderColor'));
@@ -1738,7 +1737,7 @@ it('ArkUX_Stage_DataPanel_TrackBackgroundColor_static_1100', Level.LEVEL0, async
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_StrokeWidth_static_0100
      * @tc.name     ArkUX_Stage_DataPanel_StrokeWidth_static_0100
@@ -1753,7 +1752,7 @@ it('ArkUX_Stage_DataPanel_StrokeWidth_static_0100', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_StrokeWidth_0100 strJson  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_DataPanel_StrokeWidth_0100 component obj is: " + JSON.stringify(obj));
-          console.info("ArkUX_Stage_DataPanel_StrokeWidth_0100 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attr')));
+          console.info("ArkUX_Stage_DataPanel_StrokeWidth_0100 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_StrokeWidth_0100 component obj.$attrs.strokeWidth is: " +
           JSON.stringify(obj.getElement('$attrs').getString('strokeWidth')));
           expect(obj.getElement('$attrs').getString('strokeWidth')).assertEqual("30.00vp");
@@ -1767,7 +1766,7 @@ it('ArkUX_Stage_DataPanel_StrokeWidth_static_0100', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_StrokeWidth_static_0200
      * @tc.name     ArkUX_Stage_DataPanel_StrokeWidth_static_0200
@@ -1782,7 +1781,7 @@ it('ArkUX_Stage_DataPanel_StrokeWidth_static_0200', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_StrokeWidth_0200 strJson  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_DataPanel_StrokeWidth_0200 component obj is: " + JSON.stringify(obj));
-          console.info("ArkUX_Stage_DataPanel_StrokeWidth_0200 component obj.getElement('$attrs') is: " + JSON.stringify(obj.getElement('$attr')));
+          console.info("ArkUX_Stage_DataPanel_StrokeWidth_0200 component obj.getElement('$attrs') is: " + JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_StrokeWidth_0200 component obj.$attrs.strokeWidth is: " +
           JSON.stringify(obj.getElement('$attrs').getString('strokeWidth')));
           expect(obj.getElement('$attrs').getString('strokeWidth')).assertEqual("30.00vp");
@@ -1796,7 +1795,7 @@ it('ArkUX_Stage_DataPanel_StrokeWidth_static_0200', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_StrokeWidth_static_0300
      * @tc.name     ArkUX_Stage_DataPanel_StrokeWidth_static_0300
@@ -1825,7 +1824,7 @@ it('ArkUX_Stage_DataPanel_StrokeWidth_static_0300', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_StrokeWidth_static_0400
      * @tc.name     ArkUX_Stage_DataPanel_StrokeWidth_static_0400
@@ -1843,7 +1842,7 @@ it('ArkUX_Stage_DataPanel_StrokeWidth_static_0400', Level.LEVEL0, async (done: (
           console.info("ArkUX_Stage_DataPanel_StrokeWidth_0400 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_StrokeWidth_0400 component obj.$attrs.strokeWidth is: " +
           JSON.stringify(obj.getElement('$attrs').getString('strokeWidth')));
-          
+          // expect(obj.getElement('$attrs').getString('strokeWidth')).assertEqual(dataPanelDefaultStrokeWidth($r('sys.float.ohos_id_datapanel_thickness')));
           console.info('ArkUX_Stage_DataPanel_StrokeWidth_0400 END ');
           done();
         } catch (err) {
@@ -1854,7 +1853,7 @@ it('ArkUX_Stage_DataPanel_StrokeWidth_static_0400', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_StrokeWidth_static_0500
      * @tc.name     ArkUX_Stage_DataPanel_StrokeWidth_static_0500
@@ -1872,7 +1871,7 @@ it('ArkUX_Stage_DataPanel_StrokeWidth_static_0500', Level.LEVEL0, async (done: (
           console.info("ArkUX_Stage_DataPanel_StrokeWidth_0500 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_StrokeWidth_0500 component obj.$attrs.strokeWidth is: " +
           JSON.stringify(obj.getElement('$attrs').getString('strokeWidth')));
-          
+          // expect(obj.getElement('$attrs').getString('strokeWidth')).assertEqual(dataPanelDefaultStrokeWidth($r('sys.float.ohos_id_datapanel_thickness')));
           console.info('ArkUX_Stage_DataPanel_StrokeWidth_0500 END ');
           done();
         } catch (err) {
@@ -1883,7 +1882,7 @@ it('ArkUX_Stage_DataPanel_StrokeWidth_static_0500', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_StrokeWidth_static_0600
      * @tc.name     ArkUX_Stage_DataPanel_StrokeWidth_static_0600
@@ -1901,7 +1900,7 @@ it('ArkUX_Stage_DataPanel_StrokeWidth_static_0600', Level.LEVEL0, async (done: (
           console.info("ArkUX_Stage_DataPanel_StrokeWidth_0600 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_StrokeWidth_0600 component obj.$attrs.strokeWidth is: " +
           JSON.stringify(obj.getElement('$attrs').getString('strokeWidth')));
-          
+          // expect(obj.getElement('$attrs').getString('strokeWidth')).assertEqual(dataPanelDefaultStrokeWidth($r('sys.float.ohos_id_datapanel_thickness')));
           console.info('ArkUX_Stage_DataPanel_StrokeWidth_0600 END ');
           done();
         } catch (err) {
@@ -1912,7 +1911,7 @@ it('ArkUX_Stage_DataPanel_StrokeWidth_static_0600', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_TrackShadow_static_0100
      * @tc.name     ArkUX_Stage_DataPanel_TrackShadow_static_0100
@@ -1943,7 +1942,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_0100', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_TrackShadow_static_0200
      * @tc.name     ArkUX_Stage_DataPanel_TrackShadow_static_0200
@@ -1958,7 +1957,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_0200', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0200 strJson  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_DataPanel_TrackShadow_0200 component obj is: " + JSON.stringify(obj));
-          console.info("ArkUX_Stage_DataPanel_TrackShadow_0200 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attr')));
+          console.info("ArkUX_Stage_DataPanel_TrackShadow_0200 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_0200 component obj.getElement('$attrs').getString('trackShadow') is: " +
           JSON.stringify(obj.getElement('$attrs').getElement('trackShadow')));
           expect(obj.getElement('$attrs').getElement('trackShadow').getString('radius')).assertEqual("20.000000");
@@ -1972,7 +1971,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_0200', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_TrackShadow_static_0300
      * @tc.name     ArkUX_Stage_DataPanel_TrackShadow_static_0300
@@ -1987,7 +1986,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_0300', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0300 strJson  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_DataPanel_TrackShadow_0300 component obj is: " + JSON.stringify(obj));
-          console.info("ArkUX_Stage_DataPanel_TrackShadow_0300 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attr')));
+          console.info("ArkUX_Stage_DataPanel_TrackShadow_0300 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_0300 component obj.getElement('$attrs').getString('trackShadow') is: " +
           JSON.stringify(obj.getElement('$attrs').getElement('trackShadow')));
           expect(obj.getElement('$attrs').getElement('trackShadow').getString('radius')).assertEqual("20.000000");
@@ -2001,7 +2000,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_0300', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_TrackShadow_static_0400
      * @tc.name     ArkUX_Stage_DataPanel_TrackShadow_static_0400
@@ -2016,7 +2015,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_0400', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0400 strJson  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_DataPanel_TrackShadow_0400 component obj is: " + JSON.stringify(obj));
-          console.info("ArkUX_Stage_DataPanel_TrackShadow_0400 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attr')));
+          console.info("ArkUX_Stage_DataPanel_TrackShadow_0400 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_0400 component obj.getElement('$attrs').getString('trackShadow') is: " +
           JSON.stringify(obj.getElement('$attrs').getElement('trackShadow')));
           expect(obj.getElement('$attrs').getElement('trackShadow').getString('radius')).assertEqual("20.000000");
@@ -2030,7 +2029,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_0400', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_TrackShadow_static_0500
      * @tc.name     ArkUX_Stage_DataPanel_TrackShadow_static_0500
@@ -2042,10 +2041,10 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_0500', Level.LEVEL0, async (done: (
       setTimeout(() => {
         try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_DataPanel_TrackShadow_0500');
-          console.info('ArkUX_Stage_DataPanel_TrackShadow_0500 strJson  :' + JSON.stringify(strJson));
+          console.info('ArkUX_Stage_DataPanel_TrackShadow_0500 strJson  :' + strJson);
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_DataPanel_TrackShadow_0500 component obj is: " + JSON.stringify(obj));
-          console.info("ArkUX_Stage_DataPanel_TrackShadow_0500 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attr')));
+          console.info("ArkUX_Stage_DataPanel_TrackShadow_0500 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_0500 component obj.getElement('$attrs').getString('trackShadow') is: " +
           JSON.stringify(obj.getElement('$attrs').getElement('trackShadow')));
           expect(obj.getElement('$attrs').getElement('trackShadow').getString('radius')).assertEqual("20.000000");
@@ -2059,7 +2058,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_0500', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_TrackShadow_static_0600
      * @tc.name     ArkUX_Stage_DataPanel_TrackShadow_static_0600
@@ -2074,7 +2073,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_0600', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0600 strJson  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_DataPanel_TrackShadow_0600 component obj is: " + JSON.stringify(obj));
-          console.info("ArkUX_Stage_DataPanel_TrackShadow_0600 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attr')));
+          console.info("ArkUX_Stage_DataPanel_TrackShadow_0600 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_0600 component obj.getElement('$attrs').getString('trackShadow') is: " +
           JSON.stringify(obj.getElement('$attrs').getElement('trackShadow')));
           expect(obj.getElement('$attrs').getElement('trackShadow').getString('offsetX')).assertEqual("15.000000");
@@ -2088,7 +2087,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_0600', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_TrackShadow_static_0700
      * @tc.name     ArkUX_Stage_DataPanel_TrackShadow_static_0700
@@ -2103,7 +2102,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_0700', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0700 strJson  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_DataPanel_TrackShadow_0700 component obj is: " + JSON.stringify(obj));
-          console.info("ArkUX_Stage_DataPanel_TrackShadow_0700 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attr')));
+          console.info("ArkUX_Stage_DataPanel_TrackShadow_0700 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_0700 component obj.getElement('$attrs').getString('trackShadow') is: " +
           JSON.stringify(obj.getElement('$attrs').getElement('trackShadow')));
           expect(obj.getElement('$attrs').getElement('trackShadow').getString('offsetX')).assertEqual("-10.000000");
@@ -2117,7 +2116,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_0700', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_TrackShadow_static_0800
      * @tc.name     ArkUX_Stage_DataPanel_TrackShadow_static_0800
@@ -2132,7 +2131,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_0800', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0800 strJson  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_DataPanel_TrackShadow_0800 component obj is: " + JSON.stringify(obj));
-          console.info("ArkUX_Stage_DataPanel_TrackShadow_0800 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attr')));
+          console.info("ArkUX_Stage_DataPanel_TrackShadow_0800 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_0800 component obj.getElement('$attrs').getString('trackShadow') is: " +
           JSON.stringify(obj.getElement('$attrs').getElement('trackShadow')));
           expect(obj.getElement('$attrs').getElement('trackShadow').getString('offsetX')).assertEqual("5.000000");
@@ -2146,7 +2145,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_0800', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_TrackShadow_static_0900
      * @tc.name     ArkUX_Stage_DataPanel_TrackShadow_static_0900
@@ -2161,7 +2160,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_0900', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_0900 strJson  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_DataPanel_TrackShadow_0900 component obj is: " + JSON.stringify(obj));
-          console.info("ArkUX_Stage_DataPanel_TrackShadow_0900 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attr')));
+          console.info("ArkUX_Stage_DataPanel_TrackShadow_0900 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_0900 component obj.getElement('$attrs').getString('trackShadow') is: " +
           JSON.stringify(obj.getElement('$attrs').getElement('trackShadow')));
           expect(obj.getElement('$attrs').getElement('trackShadow').getString('offsetX')).assertEqual("5.000000");
@@ -2175,7 +2174,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_0900', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_TrackShadow_static_1000
      * @tc.name     ArkUX_Stage_DataPanel_TrackShadow_static_1000
@@ -2190,7 +2189,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_1000', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1000 strJson  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_DataPanel_TrackShadow_1000 component obj is: " + JSON.stringify(obj));
-          console.info("ArkUX_Stage_DataPanel_TrackShadow_1000 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attr')));
+          console.info("ArkUX_Stage_DataPanel_TrackShadow_1000 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_1000 component obj.getElement('$attrs').getString('trackShadow') is: " +
           JSON.stringify(obj.getElement('$attrs').getElement('trackShadow')));
           expect(obj.getElement('$attrs').getElement('trackShadow').getString('offsetX')).assertEqual("5.000000");
@@ -2204,7 +2203,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_1000', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_TrackShadow_static_1100
      * @tc.name     ArkUX_Stage_DataPanel_TrackShadow_static_1100
@@ -2219,7 +2218,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_1100', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1100 strJson  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_DataPanel_TrackShadow_1100 component obj is: " + JSON.stringify(obj));
-          console.info("ArkUX_Stage_DataPanel_TrackShadow_1100 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attr')));
+          console.info("ArkUX_Stage_DataPanel_TrackShadow_1100 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_1100 component obj.getElement('$attrs').getString('trackShadow') is: " +
           JSON.stringify(obj.getElement('$attrs').getElement('trackShadow')));
           expect(obj.getElement('$attrs').getElement('trackShadow').getString('offsetY')).assertEqual("15.000000");
@@ -2233,7 +2232,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_1100', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_TrackShadow_static_1200
      * @tc.name     ArkUX_Stage_DataPanel_TrackShadow_static_1200
@@ -2248,7 +2247,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_1200', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1200 strJson  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_DataPanel_TrackShadow_1200 component obj is: " + JSON.stringify(obj));
-          console.info("ArkUX_Stage_DataPanel_TrackShadow_1200 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attr')));
+          console.info("ArkUX_Stage_DataPanel_TrackShadow_1200 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_1200 component obj.getElement('$attrs').getString('trackShadow') is: " +
           JSON.stringify(obj.getElement('$attrs').getElement('trackShadow')));
           expect(obj.getElement('$attrs').getElement('trackShadow').getString('offsetY')).assertEqual("-10.000000");
@@ -2262,7 +2261,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_1200', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_TrackShadow_static_1300
      * @tc.name     ArkUX_Stage_DataPanel_TrackShadow_static_1300
@@ -2277,7 +2276,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_1300', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1300 strJson  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_DataPanel_TrackShadow_1300 component obj is: " + JSON.stringify(obj));
-          console.info("ArkUX_Stage_DataPanel_TrackShadow_1300 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attr')));
+          console.info("ArkUX_Stage_DataPanel_TrackShadow_1300 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_1300 component obj.getElement('$attrs').getString('trackShadow') is: " +
           JSON.stringify(obj.getElement('$attrs').getElement('trackShadow')));
           expect(obj.getElement('$attrs').getElement('trackShadow').getString('offsetY')).assertEqual("5.000000");
@@ -2291,7 +2290,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_1300', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_TrackShadow_static_1400
      * @tc.name     ArkUX_Stage_DataPanel_TrackShadow_static_1400
@@ -2306,7 +2305,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_1400', Level.LEVEL0, async (done: (
           console.info('ArkUX_Stage_DataPanel_TrackShadow_1400 strJson  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_DataPanel_TrackShadow_1400 component obj is: " + JSON.stringify(obj));
-          console.info("ArkUX_Stage_DataPanel_TrackShadow_1400 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attr')));
+          console.info("ArkUX_Stage_DataPanel_TrackShadow_1400 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_1400 component obj.getElement('$attrs').getString('trackShadow') is: " +
           JSON.stringify(obj.getElement('$attrs').getElement('trackShadow')));
           expect(obj.getElement('$attrs').getElement('trackShadow').getString('offsetY')).assertEqual("5.000000");
@@ -2320,7 +2319,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_1400', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_TrackShadow_static_1500
      * @tc.name     ArkUX_Stage_DataPanel_TrackShadow_static_1500
@@ -2336,7 +2335,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_1500', Level.LEVEL0, async (done: (
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_DataPanel_TrackShadow_1500 component obj is: " + JSON.stringify(obj));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_1500 component obj.$attrs is: " +
-          JSON.stringify(obj.getElement('$attr')));
+          JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_1500 component obj.getElement('$attrs').getString('trackShadow') is: " +
           JSON.stringify(obj.getElement('$attrs').getElement('trackShadow')));
           expect(obj.getElement('$attrs').getElement('trackShadow').getString('offsetY')).assertEqual("5.000000");
@@ -2350,7 +2349,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_1500', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_TrackShadow_static_1600
      * @tc.name     ArkUX_Stage_DataPanel_TrackShadow_static_1600
@@ -2366,7 +2365,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_1600', Level.LEVEL0, async (done: (
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_DataPanel_TrackShadow_1600 component obj is: " + JSON.stringify(obj));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_1600 component obj.$attrs is: " +
-          JSON.stringify(obj.getElement('$attr')));
+          JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_1600 component obj.getElement('$attrs').getString('trackShadow') is: " +
           JSON.stringify(obj.getElement('$attrs').getElement('trackShadow')));
           expect(obj.getElement('$attrs').getElement('trackShadow').getArray('colors')[0][0].getString('color')).assertEqual("#FFFF0000");
@@ -2391,7 +2390,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_1600', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_TrackShadow_static_1700
      * @tc.name     ArkUX_Stage_DataPanel_TrackShadow_static_1700
@@ -2407,7 +2406,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_1700', Level.LEVEL0, async (done: (
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_DataPanel_TrackShadow_1700 component obj is: " + JSON.stringify(obj));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_1700 component obj.$attrs is: " +
-          JSON.stringify(obj.getElement('$attr')));
+          JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_1700 component obj.getElement('$attrs').getString('trackShadow') is: " +
           JSON.stringify(obj.getElement('$attrs').getElement('trackShadow')));
           expect(obj.getElement('$attrs').getElement('trackShadow').getArray('colors')[0][0].getString('color')).assertEqual("#FFFF0000");
@@ -2432,7 +2431,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_1700', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_TrackShadow_static_1800
      * @tc.name     ArkUX_Stage_DataPanel_TrackShadow_static_1800
@@ -2448,7 +2447,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_1800', Level.LEVEL0, async (done: (
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_DataPanel_TrackShadow_1800 component obj is: " + JSON.stringify(obj));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_1800 component obj.$attrs is: " +
-          JSON.stringify(obj.getElement('$attr')));
+          JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_1800 component obj.getElement('$attrs').getString('trackShadow') is: " +
           JSON.stringify(obj.getElement('$attrs').getElement('trackShadow')));
           expect(obj.getElement('$attrs').getElement('trackShadow').getArray('colors')[0][0].getString('color')).assertEqual("#FFFF0000");
@@ -2485,14 +2484,14 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_1900', Level.LEVEL0, async (done: (
       setTimeout(() => {
         try {
           let strJson = inspector.getInspectorByKey('ArkUX_Stage_DataPanel_TrackShadow_1900');
-          console.info('ArkUX_Stage_DataPanel_TrackShadow_1900 strJson  :' + JSON.stringify(strJson));
+          console.info('ArkUX_Stage_DataPanel_TrackShadow_1900 strJson  :' + strJson);
           let obj = JSON.parseJsonElement(strJson);
-          console.info("ArkUX_Stage_DataPanel_TrackShadow_1900 component obj is: " + JSON.stringify(obj));
+          console.info(" component obj is: " + JSON.stringify(obj));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_1900 component obj.$attrs is: " +
-          JSON.stringify(obj.getElement('$attr')));
+          JSON.stringifyJsonElement(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_1900 component obj.$attrs.trackShadow is: " +
-          JSON.stringify(obj.getElement('$attrs').getElement('trackShadow')));
-          hilog.info(0x0000, 'testTag', '%{public}s', JSON.stringify(obj.getElement('$attrs').getElement('trackShadow').getString('colors')));
+          JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('trackShadow')));
+          hilog.info(0x0000, 'testTag', '%{public}s', JSON.stringify(obj.getElement('$attrs').getElement('trackShadow')));
           expect(obj.getElement('$attrs').getElement('trackShadow').getArray('colors')[0][0].getString('color')).assertEqual("#FFFFFF00");
           expect(obj.getElement('$attrs').getElement('trackShadow').getArray('colors')[0][0].getString('offset')).assertEqual("0.000000");
           expect(obj.getElement('$attrs').getElement('trackShadow').getArray('colors')[0][1].getString('color')).assertEqual("#FFFFFF00");
@@ -2531,7 +2530,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_2300', Level.LEVEL0, async (done: (
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_DataPanel_TrackShadow_2300 component obj is: " + JSON.stringify(obj));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_2300 component obj.$attrs is: " +
-          JSON.stringify(obj.getElement('$attr')));
+          JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_2300 component obj.getElement('$attrs').getElement('trackShadow') is: " +
           JSON.stringify(obj.getElement('$attrs').getElement('trackShadow')));
           expect(obj.getElement('$attrs').getElement('trackShadow').getArray('colors')[0][0].getString('color')).assertEqual("#FFFFA500");
@@ -2556,7 +2555,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_2300', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_TrackShadow_static_2400
      * @tc.name     ArkUX_Stage_DataPanel_TrackShadow_static_2400
@@ -2572,7 +2571,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_2400', Level.LEVEL0, async (done: (
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_DataPanel_TrackShadow_2400 component obj is: " + JSON.stringify(obj));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_2400 component obj.$attrs is: " +
-          JSON.stringify(obj.getElement('$attr')));
+          JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_2400 component obj.getElement('$attrs').getString('trackShadow') is: " +
           JSON.stringify(obj.getElement('$attrs').getElement('trackShadow')));
           expect(obj.getElement('$attrs').getElement('trackShadow').getArray('colors')[0][0].getString('color')).assertEqual("#FFFFA500");
@@ -2597,7 +2596,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_2400', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_TrackShadow_static_2500
      * @tc.name     ArkUX_Stage_DataPanel_TrackShadow_static_2500
@@ -2613,7 +2612,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_2500', Level.LEVEL0, async (done: (
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_DataPanel_TrackShadow_2500 component obj is: " + JSON.stringify(obj));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_2500 component obj.$attrs is: " +
-          JSON.stringify(obj.getElement('$attr')));
+          JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_2500 component obj.getElement('$attrs').getElement('trackShadow') is: " +
           JSON.stringify(obj.getElement('$attrs').getElement('trackShadow')));
           expect(obj.getElement('$attrs').getElement('trackShadow').getArray('colors')[0][0].getString('color')).assertEqual("#FFFFA500");
@@ -2638,7 +2637,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_2500', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_TrackShadow_static_2600
      * @tc.name     ArkUX_Stage_DataPanel_TrackShadow_static_2600
@@ -2654,7 +2653,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_2600', Level.LEVEL0, async (done: (
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_DataPanel_TrackShadow_2600 component obj is: " + JSON.stringify(obj));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_2600 component obj.$attrs is: " +
-          JSON.stringify(obj.getElement('$attr')));
+          JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_2600 component obj.getElement('$attrs').getElement('trackShadow') is: " +
           JSON.stringify(obj.getElement('$attrs').getElement('trackShadow')));
           expect(obj.getElement('$attrs').getElement('trackShadow').getArray('colors')[0][0].getString('color')).assertEqual("#FFFFA500");
@@ -2691,7 +2690,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_2600', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_TrackShadow_static_3000
      * @tc.name     ArkUX_Stage_DataPanel_TrackShadow_static_3000
@@ -2707,7 +2706,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_3000', Level.LEVEL0, async (done: (
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_DataPanel_TrackShadow_3000 component obj is: " + JSON.stringify(obj));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_3000 component obj.$attrs is: " +
-          JSON.stringify(obj.getElement('$attr')));
+          JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_3000 component obj.getElement('$attrs').getElement('trackShadow') is: " +
           JSON.stringify(obj.getElement('$attrs').getElement('trackShadow')));
           expect(obj.getElement('$attrs').getElement('trackShadow').getArray('colors')[0][0].getString('color')).assertEqual("#FF0000FF");
@@ -2728,7 +2727,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_3000', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_TrackShadow_static_3100
      * @tc.name     ArkUX_Stage_DataPanel_TrackShadow_static_3100
@@ -2744,7 +2743,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_3100', Level.LEVEL0, async (done: (
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_DataPanel_TrackShadow_3100 component obj is: " + JSON.stringify(obj));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_3100 component obj.$attrs is: " +
-          JSON.stringify(obj.getElement('$attr')));
+          JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_3100 component obj.getElement('$attrs').getElement('trackShadow') is: " +
           JSON.stringify(obj.getElement('$attrs').getElement('trackShadow')));
           expect(obj.getElement('$attrs').getElement('trackShadow').getArray('colors')[0][0].getString('color')).assertEqual("#FFFF0000");
@@ -2765,7 +2764,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_3100', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_TrackShadow_static_3200
      * @tc.name     ArkUX_Stage_DataPanel_TrackShadow_static_3200
@@ -2781,7 +2780,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_3200', Level.LEVEL0, async (done: (
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_DataPanel_TrackShadow_3200 component obj is: " + JSON.stringify(obj));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_3200 component obj.$attrs is: " +
-          JSON.stringify(obj.getElement('$attr')));
+          JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_3200 component obj.getElement('$attrs').getElement('trackShadow') is: " +
           JSON.stringify(obj.getElement('$attrs').getElement('trackShadow')));
           expect(obj.getElement('$attrs').getElement('trackShadow').getArray('colors')[0][0].getString('color')).assertEqual("#FFFF0000");
@@ -2802,7 +2801,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_3200', Level.LEVEL0, async (done: (
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_DataPanel_TrackShadow_static_3300
      * @tc.name     ArkUX_Stage_DataPanel_TrackShadow_static_3300
@@ -2818,7 +2817,7 @@ it('ArkUX_Stage_DataPanel_TrackShadow_static_3300', Level.LEVEL0, async (done: (
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_DataPanel_TrackShadow_3300 component obj is: " + JSON.stringify(obj));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_3300 component obj.$attrs is: " +
-          JSON.stringify(obj.getElement('$attr')));
+          JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_DataPanel_TrackShadow_3300 component obj.getElement('$attrs').getElement('trackShadow') is: " +
           JSON.stringify(obj.getElement('$attrs').getElement('trackShadow')));
           expect(obj.getElement('$attrs').getElement('trackShadow').getArray('colors')[0][0].getString('color')).assertEqual("#FFFFC0CB");

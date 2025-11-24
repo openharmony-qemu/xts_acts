@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import {Entry, Component, Column, ColumnOptions, Row, RowOptions, Progress, Text, Color, ProgressMask, Padding, Image, $r} from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { State,  AppStorage } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component

@@ -26,25 +26,30 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
-
+// import config from '@ohos.accessibility.config';
 import accessibility from '@ohos.accessibility';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+// const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.arkui.ace.information/MainAbility';
 
 export default function abilityTest() {
   const SUITE = 'CounterComponent'
   describe('ActsAceCounterComponentTest', () => {
     beforeAll(() => {
-      console.info("ActsAceCounterComponentTest beforeEach start");
+      console.info("ActsBadgeTest beforeEach start");
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.information.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
-      
+      // config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
+      //   console.info(`enable success`);
+      // }).catch((err: object) => {
+      //   console.error(`failed to enable, ${err}`);
+      // })
       let options: router.RouterOptions = {
         url: "MainAbility/pages/advancedCounter/advancedCounterIndex",
       }
@@ -72,9 +77,9 @@ export default function abilityTest() {
      */
 it('Advanced_ui_counterComponent_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let driver = Driver.create()
-      let listCounterComponent = await driver.findComponent(ON.text('Number'))
+      let listCounterComponent = await (driver.findComponent(ON.text('Number')) as Promise<Component>)
       await CommonFunc.sleep(500);
-      let type = await (listCounterComponent?.getType() as Promise<string>);
+      let type = await listCounterComponent.getType();
       await CommonFunc.sleep(500);
       expect(type).assertEqual('Text');
       done();
@@ -89,9 +94,9 @@ it('Advanced_ui_counterComponent_static_0100', Level.LEVEL0, async (done: () => 
      */
 it('Advanced_ui_counterComponent_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let driver = Driver.create()
-      let compactCounter = await driver.findComponent(ON.text('Total'))
+      let compactCounter = await (driver.findComponent(ON.text('Total')) as Promise<Component>)
       await CommonFunc.sleep(500);
-      let type = await (compactCounter?.getType() as Promise<string>);
+      let type = await compactCounter.getType();
       await CommonFunc.sleep(500);
       expect(type).assertEqual('Text');
       done();

@@ -27,8 +27,9 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 import events_emitter from '@ohos.events.emitter';
-
+// import config from '@ohos.accessibility.config';
 import accessibility from '@ohos.accessibility';
+// const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.arkui.ace.information/MainAbility';
 
 export default function patternLockJsunit() {
@@ -40,7 +41,11 @@ export default function patternLockJsunit() {
       await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
-   
+      // config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
+      //   console.info(`enable success`);
+      // }).catch((err: object) => {
+      //   console.error(`failed to enable, ${err}`);
+      // })
       console.info("patternLock beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/patternLock/patternLock',

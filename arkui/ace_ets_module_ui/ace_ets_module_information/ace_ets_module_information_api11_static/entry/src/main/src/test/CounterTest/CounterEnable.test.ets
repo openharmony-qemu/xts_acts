@@ -35,7 +35,7 @@ let testAbilityContext:common.UIAbilityContext;
 export default function CounterEnableTest() {
 
   const SUITE: string = 'CounterEnable'
-  const waitUiReadyMs = 500;
+  const waitUiReadyMs: number = 500;
 
   describe('CounterEnableTest', () => {
     beforeAll(() => {
@@ -53,7 +53,6 @@ export default function CounterEnableTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         if (pages == null || !("CounterEnable" == pages.name)) {
-       
           routerInstance.pushUrl(options);
         }
       } catch (err) {
@@ -74,7 +73,7 @@ it('ArkUI_Counter_static_0100', Level.LEVEL0, async (done: () => void): Promise<
 
       inspector.sendEventByKey('CounterEnable_Button_1', 10, "")
       let strJson: string = inspector.getInspectorByKey('CounterEnable_Counter_1');
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual("Counter");
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Counter");
 
       console.info(`${SUITE} ${CASE} END`);
       done()
@@ -91,7 +90,7 @@ it('ArkUI_Counter_static_0200', Level.LEVEL0, async (done: () => void): Promise<
       console.info(`${SUITE} ${CASE} START`);
       inspector.sendEventByKey('CounterEnable_Button_2', 10, "")
       let strJson = inspector.getInspectorByKey('CounterEnable_Counter_1');
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual("Counter");
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual("Counter");
       console.info(`${SUITE} ${CASE} END`);
       done()
     });

@@ -67,10 +67,10 @@ it('CONTENT_FIRST_APITest_static_0100', Level.LEVEL2, async (done: () => void): 
       await CommonFunc.sleep(1000);
       let CONTENT_FIRST = inspector.getInspectorByKey('CONTENT_FIRST');
       console.info("[CONTENT_FIRST_APITest_0100] Tabs animationMode attrs is: " +
-      JSON.stringify(JSON.parseJsonElement(CONTENT_FIRST).getElement('$attr')));
+      JSON.stringify(JSON.parseJsonElement(CONTENT_FIRST).getElement('$attrs')));
       console.info("[CONTENT_FIRST_APITest_0100] Tabs animationMode attrs2 is: " +
       JSON.stringify(JSON.parseJsonElement(CONTENT_FIRST)));
-      expect(JSON.parseJsonElement(CONTENT_FIRST).getElement('$attr').getString('animationMode')).assertEqual('AnimationMode.CONTENT_FIRST');
+      expect(JSON.parseJsonElement(CONTENT_FIRST).getElement('$attrs').getString('animationMode')).assertEqual('AnimationMode.CONTENT_FIRST');
       console.info('[CONTENT_FIRST_APITest_0100] END');
       done();
     });

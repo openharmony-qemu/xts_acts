@@ -28,7 +28,6 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
-
 import accessibility from '@ohos.accessibility';
 
 let domain: Int = 0x0000;
@@ -55,7 +54,6 @@ export default function GaugeUxTest() {
         console.info("get gaugeUx state success " + JSON.stringify(pages));
         if (!("gaugeUx" == pages.name)) {
           console.info("get gaugeUx state success " + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -78,7 +76,6 @@ export default function GaugeUxTest() {
 it('ArkUX_Gauge_Colors_InterfaceName_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_Colors_InterfaceName_0100 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Colors_InterfaceName_0100');
           console.info('ArkUX_Gauge_Colors_InterfaceName_0100 START  :' + JSON.stringify(strJson));
           console.info("ArkUX_Gauge_Colors_InterfaceName_0100 component JSON.parseJsonElement(strJson).getElement('$attrs').getString('colors') is: " +
@@ -90,10 +87,7 @@ it('ArkUX_Gauge_Colors_InterfaceName_static_0100', Level.LEVEL0, async (done: ()
             expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('colors')).assertEqual("#FF0000FF");
           }
           console.info('ArkUX_Gauge_Colors_InterfaceName_0100 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_Colors_InterfaceName_0100 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -108,7 +102,6 @@ it('ArkUX_Gauge_Colors_InterfaceName_static_0100', Level.LEVEL0, async (done: ()
 it('ArkUX_Gauge_Colors_InterfaceName_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_Colors_InterfaceName_0200 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Colors_InterfaceName_0200');
           console.info('ArkUX_Gauge_Colors_InterfaceName_0200 START  :' + JSON.stringify(strJson));
 
@@ -121,10 +114,7 @@ it('ArkUX_Gauge_Colors_InterfaceName_static_0200', Level.LEVEL0, async (done: ()
             expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('colors')).assertEqual("#FFFFFFFF");
           }
           console.info('ArkUX_Gauge_Colors_InterfaceName_0200 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_Colors_InterfaceName_0200 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -137,7 +127,6 @@ it('ArkUX_Gauge_Colors_InterfaceName_static_0200', Level.LEVEL0, async (done: ()
 it('ArkUX_Gauge_Colors_InterfaceName_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_Colors_InterfaceName_0300 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Colors_InterfaceName_0300');
           console.info('ArkUX_Gauge_Colors_InterfaceName_0300 START  :' + JSON.stringify(strJson));
 
@@ -150,10 +139,7 @@ it('ArkUX_Gauge_Colors_InterfaceName_static_0300', Level.LEVEL0, async (done: ()
             expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('colors')).assertEqual("#FFFF7676");
           }
           console.info('ArkUX_Gauge_Colors_InterfaceName_0300 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_Colors_InterfaceName_0300 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -168,7 +154,6 @@ it('ArkUX_Gauge_Colors_InterfaceName_static_0300', Level.LEVEL0, async (done: ()
 it('ArkUX_Gauge_Colors_InterfaceName_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_Colors_InterfaceName_0400 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Colors_InterfaceName_0400');
           console.info('ArkUX_Gauge_Colors_InterfaceName_0400 START  :' + JSON.stringify(strJson));
 
@@ -181,10 +166,7 @@ it('ArkUX_Gauge_Colors_InterfaceName_static_0400', Level.LEVEL0, async (done: ()
             expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('colors')).assertEqual("#FFFFC0CB");
           }
           console.info('ArkUX_Gauge_Colors_InterfaceName_0400 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_Colors_InterfaceName_0400 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -199,7 +181,6 @@ it('ArkUX_Gauge_Colors_InterfaceName_static_0400', Level.LEVEL0, async (done: ()
 it('ArkUX_Gauge_Colors_InterfaceName_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_Colors_InterfaceName_0500 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Colors_InterfaceName_0500');
           console.info('ArkUX_Gauge_Colors_InterfaceName_0500 START  :' + JSON.stringify(strJson));
 
@@ -212,10 +193,7 @@ it('ArkUX_Gauge_Colors_InterfaceName_static_0500', Level.LEVEL0, async (done: ()
             expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('colors')).assertEqual("#FF7FFFAA");
           }
           console.info('ArkUX_Gauge_Colors_InterfaceName_0500 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_Colors_InterfaceName_0500 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -230,7 +208,6 @@ it('ArkUX_Gauge_Colors_InterfaceName_static_0500', Level.LEVEL0, async (done: ()
 it('ArkUX_Gauge_Colors_InterfaceName_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_Colors_InterfaceName_0600 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Colors_InterfaceName_0600');
           console.info('ArkUX_Gauge_Colors_InterfaceName_0600 START  :' + JSON.stringify(strJson));
 
@@ -243,10 +220,7 @@ it('ArkUX_Gauge_Colors_InterfaceName_static_0600', Level.LEVEL0, async (done: ()
             expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('colors')).assertEqual("#FF00FFFF");
           }
           console.info('ArkUX_Gauge_Colors_InterfaceName_0600 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_Colors_InterfaceName_0600 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -261,7 +235,6 @@ it('ArkUX_Gauge_Colors_InterfaceName_static_0600', Level.LEVEL0, async (done: ()
 it('ArkUX_Gauge_Colors_InterfaceName_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_Colors_InterfaceName_0700 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Colors_InterfaceName_0700');
           console.info('ArkUX_Gauge_Colors_InterfaceName_0700 START  :' + JSON.stringify(strJson));
 
@@ -274,10 +247,7 @@ it('ArkUX_Gauge_Colors_InterfaceName_static_0700', Level.LEVEL0, async (done: ()
             expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('colors')).assertEqual("#FF0000FF");
           }
           console.info('ArkUX_Gauge_Colors_InterfaceName_0700 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_Colors_InterfaceName_0700 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -292,32 +262,29 @@ it('ArkUX_Gauge_Colors_InterfaceName_static_0700', Level.LEVEL0, async (done: ()
 it('ArkUX_Gauge_Colors_InterfaceName_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_Colors_InterfaceName_0800 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Colors_InterfaceName_0800');
           console.info('ArkUX_Gauge_Colors_InterfaceName_0800 START  :' + JSON.stringify(strJson));
 
           console.info("ArkUX_Gauge_Colors_InterfaceName_0800 component JSON.parseJsonElement(strJson).getElement('$attrs').getString('colors') is: " +
           JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('colors')));
-
+          let attrs = JSON.parseJsonElement(strJson).getElement('$attrs')
+        let colorsAry = JSON.parseJsonElement(attrs.getString('colors'))
           let targetVersion = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT).targetVersion;
           if (targetVersion < 11) {
             console.info("ArkUX_Gauge_Colors_InterfaceName_0800 API is not 11")
           } else {
-
-            expect(((((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[0].asArray())[0].asArray())[0].asArray())[0]).asString()).assertEqual("#FFC0ECE5");
-            expect(((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[0].asArray())[1]).asDouble()).assertEqual(1);
-            expect(((((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[1].asArray())[0].asArray())[0].asArray())[0]).asString()).assertEqual("#FF61CFBE");
-            expect(((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[1].asArray())[1]).asDouble()).assertEqual(2);
-            expect(((((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[2].asArray())[0].asArray())[0].asArray())[0]).asString()).assertEqual("#FF64BB5C");
-            expect(((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[2].asArray())[1]).asDouble()).assertEqual(3);
-            expect(((((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[3].asArray())[0].asArray())[0].asArray())[0]).asString()).assertEqual("#FFDBEFA5");
-            expect(((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[3].asArray())[1]).asDouble()).assertEqual(4);
+            console.log('ArkUX_Gauge_Colors_InterfaceName_0800 array',colorsAry.asArray()[0].asArray()[0].asArray()[0].asArray()[0].asString())
+            expect(colorsAry.asArray()[0].asArray()[0].asArray()[0].asArray()[0].asString()).assertEqual("#FFC0ECE5");
+            expect(colorsAry.asArray()[0].asArray()[1].asDouble()).assertEqual(1);
+            expect(colorsAry.asArray()[1].asArray()[0].asArray()[0].asArray()[0].asString()).assertEqual("#FF61CFBE");
+            expect(colorsAry.asArray()[1].asArray()[1].asDouble()).assertEqual(2);
+            expect(colorsAry.asArray()[2].asArray()[0].asArray()[0].asArray()[0].asString()).assertEqual("#FF64BB5C");
+            expect(colorsAry.asArray()[2].asArray()[1].asDouble()).assertEqual(3);
+            expect(colorsAry.asArray()[3].asArray()[0].asArray()[0].asArray()[0].asString()).assertEqual("#FFDBEFA5");
+            expect(colorsAry.asArray()[3].asArray()[1].asDouble()).assertEqual(4);
           }
           console.info('ArkUX_Gauge_Colors_InterfaceName_0800 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_Colors_InterfaceName_0800 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -332,33 +299,32 @@ it('ArkUX_Gauge_Colors_InterfaceName_static_0800', Level.LEVEL0, async (done: ()
 it('ArkUX_Gauge_Colors_InterfaceName_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_Colors_InterfaceName_0900 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Colors_InterfaceName_0900');
           console.info('ArkUX_Gauge_Colors_InterfaceName_0900 START  :' + JSON.stringify(strJson));
 
           console.info("ArkUX_Gauge_Colors_InterfaceName_0900 component JSON.parseJsonElement(strJson).getElement('$attrs').getString('colors') is: " +
           JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('colors')));
-
+        let attrs = JSON.parseJsonElement(strJson).getElement('$attrs')
+        let colorsAry = JSON.parseJsonElement(attrs.getString('colors'))
           let targetVersion = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT).targetVersion;
           if (targetVersion < 11) {
             console.info("ArkUX_Gauge_Colors_InterfaceName_0900 API is not 11")
           } else {
-            expect(((((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[0].asArray())[0].asArray())[0].asArray())[0]).asString()).assertEqual("#66564AF7");
-            expect(((((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[0].asArray())[0].asArray())[0].asArray())[1]).asString().substr(0, 3)).assertEqual("0.0");
-            expect(((((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[0].asArray())[0].asArray())[1].asArray())[0]).asString()).assertEqual("#FF564AF7");
-            expect(((((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[0].asArray())[0].asArray())[1].asArray())[1]).asString().substr(0, 3)).assertEqual("1.0");
-            expect(((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[0].asArray())[1]).asDouble()).assertEqual(2);
-            expect(((((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[1].asArray())[0].asArray())[0].asArray())[0]).asString()).assertEqual("#6646B1E3");
-            expect(((((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[1].asArray())[0].asArray())[0].asArray())[1]).asString().substr(0, 3)).assertEqual("0.0");
-            expect(((((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[1].asArray())[0].asArray())[1].asArray())[0]).asString()).assertEqual("#FF46B1E3");
-            expect(((((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[1].asArray())[0].asArray())[1].asArray())[1]).asString().substr(0, 3)).assertEqual("1.0");
-            expect(((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[1].asArray())[1]).asDouble()).assertEqual(1);
+            console.info("ArkUX_Gauge_Colors_InterfaceName_0900 API is not 11",colorsAry.asArray()[0].asArray()[0].asArray()[0].asArray()[1].asString().substr(0, 3))
+           expect(colorsAry.asArray()[0].asArray()[0].asArray()[0].asArray()[0].asString()).assertEqual("#66564AF7");
+            expect(colorsAry.asArray()[0].asArray()[0].asArray()[0].asArray()[1].asString().substr(0, 3)).assertEqual("0.0");
+            expect(colorsAry.asArray()[0].asArray()[0].asArray()[1].asArray()[0].asString()).assertEqual("#FF564AF7");
+            expect(colorsAry.asArray()[0].asArray()[0].asArray()[1].asArray()[1].asString().substr(0, 3)).assertEqual("1.0");
+            expect(colorsAry.asArray()[0].asArray()[1].asDouble()).assertEqual(2);
+            expect(colorsAry.asArray()[1].asArray()[0].asArray()[0].asArray()[0].asString()).assertEqual("#6646B1E3");
+            expect(colorsAry.asArray()[1].asArray()[0].asArray()[0].asArray()[1].asString().substr(0, 3)).assertEqual("0.0");
+            expect(colorsAry.asArray()[1].asArray()[0].asArray()[1].asArray()[0].asString()).assertEqual("#FF46B1E3");
+            expect(colorsAry.asArray()[1].asArray()[0].asArray()[1].asArray()[1].asString().substr(0, 3)).assertEqual("1.0");
+            expect(colorsAry.asArray()[1].asArray()[1].asDouble()).assertEqual(1);
+
           }
           console.info('ArkUX_Gauge_Colors_InterfaceName_0900 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_Colors_InterfaceName_0900 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -373,26 +339,24 @@ it('ArkUX_Gauge_Colors_InterfaceName_static_0900', Level.LEVEL0, async (done: ()
 it('ArkUX_Gauge_Colors_InterfaceName_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_Colors_InterfaceName_1000 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Colors_InterfaceName_1000');
           console.info('ArkUX_Gauge_Colors_InterfaceName_1000 START  :' + JSON.stringify(strJson));
 
           console.info("ArkUX_Gauge_Colors_InterfaceName_1000 component JSON.parseJsonElement(strJson).getElement('$attrs').getString('colors') is: " +
           JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('colors')));
           let targetVersion = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT).targetVersion;
+        let attrs = JSON.parseJsonElement(strJson).getElement('$attrs')
+        let colorsAry = JSON.parseJsonElement(attrs.getString('colors'))
           if (targetVersion < 11) {
             console.info("ArkUX_Gauge_Colors_InterfaceName_1000 API is not 11")
           } else {
-            expect((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[0]).asString()).assertEqual("#FF64BB5C");
-            expect((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[1]).asString()).assertEqual("#FFF7CE00");
-            expect((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[2]).asString()).assertEqual("#FFE84026");
+            expect(colorsAry.asArray()[0].asString()).assertEqual("#FF64BB5C");
+            expect(colorsAry.asArray()[1].asString()).assertEqual("#FFF7CE00");
+            expect(colorsAry.asArray()[2].asString()).assertEqual("#FFE84026");
 
           }
           console.info('ArkUX_Gauge_Colors_InterfaceName_1000 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_Colors_InterfaceName_1000 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -407,7 +371,6 @@ it('ArkUX_Gauge_Colors_InterfaceName_static_1000', Level.LEVEL0, async (done: ()
 it('ArkUX_Gauge_Colors_InterfaceName_static_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_Colors_InterfaceName_1100 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Colors_InterfaceName_1100');
           console.info('ArkUX_Gauge_Colors_InterfaceName_1100 START  :' + JSON.stringify(strJson));
 
@@ -420,10 +383,7 @@ it('ArkUX_Gauge_Colors_InterfaceName_static_1100', Level.LEVEL0, async (done: ()
             expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('colors')).assertEqual("#FF000001");
           }
           console.info('ArkUX_Gauge_Colors_InterfaceName_1100 END ');
-        } catch (err) {
-          expect().assertFail();
-          console.info('ArkUX_Gauge_Colors_InterfaceName_1100 ERR  ' + JSON.stringify(err));
-        }
+
         done();
       }, 1000)
     });
@@ -438,7 +398,6 @@ it('ArkUX_Gauge_Colors_InterfaceName_static_1100', Level.LEVEL0, async (done: ()
 it('ArkUX_Gauge_Colors_InterfaceName_static_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_Colors_InterfaceName_1200 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Colors_InterfaceName_1200');
           console.info('ArkUX_Gauge_Colors_InterfaceName_1200 START  :' + JSON.stringify(strJson));
 
@@ -451,10 +410,7 @@ it('ArkUX_Gauge_Colors_InterfaceName_static_1200', Level.LEVEL0, async (done: ()
             expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('colors')).assertEqual("#FFFFFFFF");
           }
           console.info('ArkUX_Gauge_Colors_InterfaceName_1200 END ');
-        } catch (err) {
-          expect().assertFail();
-          console.info('ArkUX_Gauge_Colors_InterfaceName_1200 ERR  ' + JSON.stringify(err));
-        }
+
         done();
       }, 1000)
     });
@@ -469,7 +425,6 @@ it('ArkUX_Gauge_Colors_InterfaceName_static_1200', Level.LEVEL0, async (done: ()
 it('ArkUX_Gauge_Colors_InterfaceName_static_1300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_Colors_InterfaceName_1300 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Colors_InterfaceName_1300');
           console.info('ArkUX_Gauge_Colors_InterfaceName_1300 START  :' + JSON.stringify(strJson));
 
@@ -482,10 +437,7 @@ it('ArkUX_Gauge_Colors_InterfaceName_static_1300', Level.LEVEL0, async (done: ()
             expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('colors')).assertEqual("#FF000000");
           }
           console.info('ArkUX_Gauge_Colors_InterfaceName_1300 END ');
-        } catch (err) {
-          expect().assertFail();
-          console.info('ArkUX_Gauge_Colors_InterfaceName_1300 ERR  ' + JSON.stringify(err));
-        }
+
         done();
       }, 1000)
     });
@@ -500,7 +452,6 @@ it('ArkUX_Gauge_Colors_InterfaceName_static_1300', Level.LEVEL0, async (done: ()
 it('ArkUX_Gauge_Colors_InterfaceName_static_1400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_Colors_InterfaceName_1400 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Colors_InterfaceName_1400');
           console.info('ArkUX_Gauge_Colors_InterfaceName_1400 START  :' + JSON.stringify(strJson));
 
@@ -513,10 +464,7 @@ it('ArkUX_Gauge_Colors_InterfaceName_static_1400', Level.LEVEL0, async (done: ()
             expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('colors')).assertEqual("#FFE84026");
           }
           console.info('ArkUX_Gauge_Colors_InterfaceName_1400 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_Colors_InterfaceName_1400 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -531,26 +479,25 @@ it('ArkUX_Gauge_Colors_InterfaceName_static_1400', Level.LEVEL0, async (done: ()
 it('ArkUX_Gauge_Colors_InterfaceName_static_1500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_Colors_InterfaceName_1500 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Colors_InterfaceName_1500');
           console.info('ArkUX_Gauge_Colors_InterfaceName_1500 START  :' + JSON.stringify(strJson));
 
           console.info("ArkUX_Gauge_Colors_InterfaceName_1500 component JSON.parseJsonElement(strJson).getElement('$attrs').getString('colors') is: " +
           JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('colors')));
           let targetVersion = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT).targetVersion;
+        let attrs = JSON.parseJsonElement(strJson).getElement('$attrs')
+        let colorsAry = JSON.parseJsonElement(attrs.getString('colors'))
           if (targetVersion < 11) {
             console.info("ArkUX_Gauge_Colors_InterfaceName_1500 API is not 11")
           } else {
-            expect((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[0]).asString()).assertEqual("#FF64BB5C");
-            expect((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[1]).asString()).assertEqual("#FFF7CE00");
-            expect((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[2]).asString()).assertEqual("#FFE84026");
+
+            expect(colorsAry.asArray()[0].asString()).assertEqual("#FF64BB5C");
+            expect(colorsAry.asArray()[1].asString()).assertEqual("#FFF7CE00");
+            expect(colorsAry.asArray()[2].asString()).assertEqual("#FFE84026");
 
           }
           console.info('ArkUX_Gauge_Colors_InterfaceName_1500 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_Colors_InterfaceName_1500 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -565,26 +512,24 @@ it('ArkUX_Gauge_Colors_InterfaceName_static_1500', Level.LEVEL0, async (done: ()
 it('ArkUX_Gauge_Colors_InterfaceName_static_1600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_Colors_InterfaceName_1600 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Colors_InterfaceName_1600');
           console.info('ArkUX_Gauge_Colors_InterfaceName_1600 START  :' + JSON.stringify(strJson));
 
           console.info("ArkUX_Gauge_Colors_InterfaceName_1600 component JSON.parseJsonElement(strJson).getElement('$attrs').getString('colors') is: " +
           JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('colors')));
           let targetVersion = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT).targetVersion;
+        let attrs = JSON.parseJsonElement(strJson).getElement('$attrs')
+        let colorsAry = JSON.parseJsonElement(attrs.getString('colors'))
           if (targetVersion < 11) {
             console.info("ArkUX_Gauge_Colors_InterfaceName_1600 API is not 11")
           } else {
-            expect((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[0]).asString()).assertEqual("#FF64BB5C");
-            expect((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[1]).asString()).assertEqual("#FFF7CE00");
-            expect((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[2]).asString()).assertEqual("#FFE84026");
+            expect(colorsAry.asArray()[0].asString()).assertEqual("#FF64BB5C");
+            expect(colorsAry.asArray()[1].asString()).assertEqual("#FFF7CE00");
+            expect(colorsAry.asArray()[2].asString()).assertEqual("#FFE84026");
 
           }
           console.info('ArkUX_Gauge_Colors_InterfaceName_1600 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_Colors_InterfaceName_1600 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -598,26 +543,24 @@ it('ArkUX_Gauge_Colors_InterfaceName_static_1600', Level.LEVEL0, async (done: ()
 it('ArkUX_Gauge_Colors_InterfaceName_static_1700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_Colors_InterfaceName_1700 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Colors_InterfaceName_1700');
           console.info('ArkUX_Gauge_Colors_InterfaceName_1700 START  :' + JSON.stringify(strJson));
 
           console.info("ArkUX_Gauge_Colors_InterfaceName_1700 component JSON.parseJsonElement(strJson).getElement('$attrs').getString('colors') is: " +
           JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('colors')));
           let targetVersion = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT).targetVersion;
+        let attrs = JSON.parseJsonElement(strJson).getElement('$attrs')
+        let colorsAry = JSON.parseJsonElement(attrs.getString('colors'))
           if (targetVersion < 11) {
             console.info("ArkUX_Gauge_Colors_InterfaceName_1700 API is not 11")
           } else {
-            expect((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[0]).asString()).assertEqual("#FF64BB5C");
-            expect((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[1]).asString()).assertEqual("#FFF7CE00");
-            expect((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[2]).asString()).assertEqual("#FFE84026");
+            expect(colorsAry.asArray()[0].asString()).assertEqual("#FF64BB5C");
+            expect(colorsAry.asArray()[1].asString()).assertEqual("#FFF7CE00");
+            expect(colorsAry.asArray()[2].asString()).assertEqual("#FFE84026");
 
           }
           console.info('ArkUX_Gauge_Colors_InterfaceName_1700 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_Colors_InterfaceName_1700 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -632,28 +575,25 @@ it('ArkUX_Gauge_Colors_InterfaceName_static_1700', Level.LEVEL0, async (done: ()
 it('ArkUX_Gauge_Colors_InterfaceName_static_1800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_Colors_InterfaceName_1800 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Colors_InterfaceName_1800');
           console.info('ArkUX_Gauge_Colors_InterfaceName_1800 START  :' + JSON.stringify(strJson));
 
           console.info("ArkUX_Gauge_Colors_InterfaceName_1800 component JSON.parseJsonElement(strJson).getElement('$attrs').getString('colors') is: " +
           JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('colors')));
           let targetVersion = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT).targetVersion;
+        let attrs = JSON.parseJsonElement(strJson).getElement('$attrs')
+        let colorsAry = JSON.parseJsonElement(attrs.getString('colors'))
           if (targetVersion < 11) {
             console.info("ArkUX_Gauge_Colors_InterfaceName_1800 API is not 11")
           } else {
-            expect(((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[0].asArray())[0]).asString()).assertEqual("#FFFFC0CB");
-            expect(((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[0].asArray())[1]).asString().substr(0, 3)).assertEqual("0.0");
-            expect(((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[1].asArray())[0]).asString()).assertEqual("#FF008000");
-            expect(((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[1].asArray())[1]).asString().substr(0, 3)).assertEqual("0.5");
-
+            expect(colorsAry.asArray()[0].asArray()[0].asString()).assertEqual("#FFFFC0CB");
+            expect(colorsAry.asArray()[0].asArray()[1].asString().substr(0, 3)).assertEqual("0.0");
+            expect(colorsAry.asArray()[1].asArray()[0].asString()).assertEqual("#FF008000");
+            expect(colorsAry.asArray()[1].asArray()[1].asString().substr(0, 3)).assertEqual("0.5");
 
           }
           console.info('ArkUX_Gauge_Colors_InterfaceName_1800 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_Colors_InterfaceName_1800 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -668,28 +608,25 @@ it('ArkUX_Gauge_Colors_InterfaceName_static_1800', Level.LEVEL0, async (done: ()
 it('ArkUX_Gauge_Colors_InterfaceName_static_1900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_Colors_InterfaceName_1900 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Colors_InterfaceName_1900');
           console.info('ArkUX_Gauge_Colors_InterfaceName_1900 START  :' + JSON.stringify(strJson));
 
           console.info("ArkUX_Gauge_Colors_InterfaceName_1900 component JSON.parseJsonElement(strJson).getElement('$attrs').getString('colors') is: " +
           JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('colors')));
           let targetVersion = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT).targetVersion;
+        let attrs = JSON.parseJsonElement(strJson).getElement('$attrs')
+        let colorsAry = JSON.parseJsonElement(attrs.getString('colors'))
           if (targetVersion < 11) {
             console.info("ArkUX_Gauge_Colors_InterfaceName_1900 API is not 11")
           } else {
-            expect(((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[0].asArray())[0]).asString()).assertEqual("#FFFF0000");
-            expect(((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[0].asArray())[1]).asString().substr(0, 3)).assertEqual("0.1");
-            expect(((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[1].asArray())[0]).asString()).assertEqual("#FFFFC0CB");
-            expect(((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[1].asArray())[1]).asString().substr(0, 3)).assertEqual("1.0");
+            expect(colorsAry.asArray()[0].asArray()[0].asString()).assertEqual("#FFFF0000");
+            expect(colorsAry.asArray()[0].asArray()[1].asString().substr(0, 3)).assertEqual("0.1");
+            expect(colorsAry.asArray()[1].asArray()[0].asString()).assertEqual("#FFFFC0CB");
+            expect(colorsAry.asArray()[1].asArray()[1].asString().substr(0, 3)).assertEqual("1.0");
 
-            
           }
           console.info('ArkUX_Gauge_Colors_InterfaceName_1900 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_Colors_InterfaceName_1900 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -704,25 +641,23 @@ it('ArkUX_Gauge_Colors_InterfaceName_static_1900', Level.LEVEL0, async (done: ()
 it('ArkUX_Gauge_Colors_InterfaceName_static_2000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_Colors_InterfaceName_2000 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Colors_InterfaceName_2000');
           console.info('ArkUX_Gauge_Colors_InterfaceName_2000 START  :' + JSON.stringify(strJson));
 
           console.info("ArkUX_Gauge_Colors_InterfaceName_2000 component JSON.parseJsonElement(strJson).getElement('$attrs').getString('colors') is: " +
           JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('colors')));
           let targetVersion = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT).targetVersion;
+        let attrs = JSON.parseJsonElement(strJson).getElement('$attrs')
+        let colorsAry = JSON.parseJsonElement(attrs.getString('colors'))
           if (targetVersion < 11) {
             console.info("ArkUX_Gauge_Colors_InterfaceName_2000 API is not 11")
           } else {
-            expect(((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[0].asArray())[0]).asString()).assertEqual("#FFFFC0CB");
-            expect(((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[0].asArray())[1]).asString().substr(0, 3)).assertEqual("0.0");
+            expect(colorsAry.asArray()[0].asArray()[0].asString()).assertEqual("#FFFFC0CB");
+            expect(colorsAry.asArray()[0].asArray()[1].asString().substr(0, 3)).assertEqual("0.0");
 
           }
           console.info('ArkUX_Gauge_Colors_InterfaceName_2000 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_Colors_InterfaceName_2000 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -737,30 +672,27 @@ it('ArkUX_Gauge_Colors_InterfaceName_static_2000', Level.LEVEL0, async (done: ()
 it('ArkUX_Gauge_Colors_InterfaceName_static_2100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_Colors_InterfaceName_2000 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Colors_InterfaceName_2100');
           console.info('ArkUX_Gauge_Colors_InterfaceName_2100 START  :' + JSON.stringify(strJson));
 
           console.info("ArkUX_Gauge_Colors_InterfaceName_2100 component JSON.parseJsonElement(strJson).getElement('$attrs').getString('colors') is: " +
           JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('colors')));
           let targetVersion = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT).targetVersion;
+        let attrs = JSON.parseJsonElement(strJson).getElement('$attrs')
+        let colorsAry = JSON.parseJsonElement(attrs.getString('colors'))
           if (targetVersion < 11) {
             console.info("ArkUX_Gauge_Colors_InterfaceName_2100 API is not 11")
           } else {
-            expect(((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[0].asArray())[0]).asString()).assertEqual("#FFFF0000");
-            expect(((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[0].asArray())[1]).asString().substr(0, 3)).assertEqual("0.2");
-            expect(((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[1].asArray())[0]).asString()).assertEqual("#FF008000");
-            expect(((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[1].asArray())[1]).asString().substr(0, 3)).assertEqual("0.6");
-            expect(((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[2].asArray())[0]).asString()).assertEqual("#FFFFC0CB");
-            expect(((JSON.parseJsonElement(strJson).getElement('$attrs').getArray('colors')[2].asArray())[1]).asString().substr(0, 3)).assertEqual("0.9");
-
+            expect(colorsAry.asArray()[0].asArray()[0].asString()).assertEqual("#FFFF0000");
+            expect(colorsAry.asArray()[0].asArray()[1].asString().substr(0, 3)).assertEqual("0.2");
+            expect(colorsAry.asArray()[1].asArray()[0].asString()).assertEqual("#FF008000");
+            expect(colorsAry.asArray()[1].asArray()[1].asString().substr(0, 3)).assertEqual("0.6");
+            expect(colorsAry.asArray()[2].asArray()[0].asString()).assertEqual("#FFFFC0CB");
+            expect(colorsAry.asArray()[2].asArray()[1].asString().substr(0, 3)).assertEqual("0.9");
 
           }
           console.info('ArkUX_Gauge_Colors_InterfaceName_2100 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_Colors_InterfaceName_2100 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -775,24 +707,20 @@ it('ArkUX_Gauge_Colors_InterfaceName_static_2100', Level.LEVEL0, async (done: ()
 it('ArkUX_Gauge_Indicator_InterfaceName_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_Indicator_InterfaceName_0100 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Indicator_InterfaceName_0100');
           console.info('ArkUX_Gauge_Indicator_InterfaceName_0100 START  :' + JSON.stringify(strJson));
 
           console.info("ArkUX_Gauge_Indicator_InterfaceName_0100 component JSON.parseJsonElement(strJson).$attrs.indicator is: " +
-          JSON.stringify(JSON.parseJsonElement(strJson).getElement('attrs').getElement('indicator')));
+          JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('indicator')));
           let targetVersion = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT).targetVersion;
           if (targetVersion < 11) {
             console.info("ArkUX_Gauge_Indicator_InterfaceName_0100 API is not 11")
           } else {
-            expect(JSON.parseJsonElement(strJson).getElement('attrs').getElement('indicator').getString('icon')).assertEqual("resources/base/media/icon1.svg");
-            expect(JSON.parseJsonElement(strJson).getElement('attrs').getElement('indicator').getString('space')).assertEqual("10.00vp");
+            expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('indicator').getString('icon')).assertEqual("resources/base/media/icon1.svg");
+            expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('indicator').getString('space')).assertEqual("10.00vp");
           }
           console.info('ArkUX_Gauge_Indicator_InterfaceName_0100 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_Indicator_InterfaceName_0100 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -807,23 +735,19 @@ it('ArkUX_Gauge_Indicator_InterfaceName_static_0100', Level.LEVEL0, async (done:
 it('ArkUX_Gauge_Indicator_InterfaceName_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_Indicator_InterfaceName_0200 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Indicator_InterfaceName_0200');
           console.info('ArkUX_Gauge_Indicator_InterfaceName_0200 START  :' + JSON.stringify(strJson));
 
           console.info("ArkUX_Gauge_Indicator_InterfaceName_0200 component JSON.parseJsonElement(strJson).$attrs.indicator is: " +
-          JSON.stringify(JSON.parseJsonElement(strJson).getElement('attrs').getElement('indicator')));
+          JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('indicator')));
           let targetVersion = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT).targetVersion;
           if (targetVersion < 11) {
             console.info("ArkUX_Gauge_Indicator_InterfaceName_0200 API is not 11")
           } else {
-             expect(JSON.parseJsonElement(strJson).getElement('attrs').getElement('indicator').getString('space')).assertEqual("5.00vp");
+             expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('indicator').getString('space')).assertEqual("5.00vp");
           }
           console.info('ArkUX_Gauge_Indicator_InterfaceName_0200 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_Indicator_InterfaceName_0200 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -838,23 +762,19 @@ it('ArkUX_Gauge_Indicator_InterfaceName_static_0200', Level.LEVEL0, async (done:
 it('ArkUX_Gauge_Indicator_InterfaceName_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_Indicator_InterfaceName_0300 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Indicator_InterfaceName_0300');
           console.info('ArkUX_Gauge_Indicator_InterfaceName_0300 START  :' + JSON.stringify(strJson));
 
           console.info("ArkUX_Gauge_Indicator_InterfaceName_0300 component JSON.parseJsonElement(strJson).$attrs.indicator is: " +
-          JSON.stringify(JSON.parseJsonElement(strJson).getElement('attrs').getElement('indicator')));
+          JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('indicator')));
           let targetVersion = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT).targetVersion;
           if (targetVersion < 11) {
             console.info("ArkUX_Gauge_Indicator_InterfaceName_0300 API is not 11")
           } else {
-              expect(JSON.parseJsonElement(strJson).getElement('attrs').getElement('indicator').getString('space')).assertEqual("8.00vp");
+              expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('indicator').getString('space')).assertEqual("8.00vp");
           }
           console.info('ArkUX_Gauge_Indicator_InterfaceName_0300 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_Indicator_InterfaceName_0300 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -869,22 +789,18 @@ it('ArkUX_Gauge_Indicator_InterfaceName_static_0300', Level.LEVEL0, async (done:
 it('ArkUX_Gauge_Indicator_InterfaceName_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_Indicator_InterfaceName_0400 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Indicator_InterfaceName_0400');
           console.info('ArkUX_Gauge_Indicator_InterfaceName_0400 START  :' + JSON.stringify(strJson));
           console.info("ArkUX_Gauge_Indicator_InterfaceName_0400 component JSON.parseJsonElement(strJson).$attrs.indicator is: " +
-          JSON.stringify(JSON.parseJsonElement(strJson).getElement('attrs').getElement('indicator')));
+          JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('indicator')));
           let targetVersion = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT).targetVersion;
           if (targetVersion < 11) {
             console.info("ArkUX_Gauge_Indicator_InterfaceName_0400 API is not 11")
           } else {
-            expect(JSON.parseJsonElement(strJson).getElement('attrs').getElement('indicator').getString('space')).assertEqual("0.00vp");
+            expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('indicator').getString('space')).assertEqual("0.00vp");
           }
           console.info('ArkUX_Gauge_Indicator_InterfaceName_0400 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_Indicator_InterfaceName_0400 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -899,23 +815,19 @@ it('ArkUX_Gauge_Indicator_InterfaceName_static_0400', Level.LEVEL0, async (done:
 it('ArkUX_Gauge_Indicator_InterfaceName_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_Indicator_InterfaceName_0500 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Indicator_InterfaceName_0500');
           console.info('ArkUX_Gauge_Indicator_InterfaceName_0500 START  :' + JSON.stringify(strJson));
 
           console.info("ArkUX_Gauge_Indicator_InterfaceName_0500 component JSON.parseJsonElement(strJson).$attrs.indicator is: " +
-          JSON.stringify(JSON.parseJsonElement(strJson).getElement('attrs').getElement('indicator')));
+          JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('indicator')));
           let targetVersion = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT).targetVersion;
           if (targetVersion < 11) {
             console.info("ArkUX_Gauge_Indicator_InterfaceName_0500 API is not 11")
           } else {
-            expect(JSON.parseJsonElement(strJson).getElement('attrs').getElement('indicator').getString('space')).assertEqual("5.00vp");
+            expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('indicator').getString('space')).assertEqual("5.00vp");
           }
           console.info('ArkUX_Gauge_Indicator_InterfaceName_0500 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_Indicator_InterfaceName_0500 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -930,22 +842,18 @@ it('ArkUX_Gauge_Indicator_InterfaceName_static_0500', Level.LEVEL0, async (done:
 it('ArkUX_Gauge_Indicator_InterfaceName_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_Indicator_InterfaceName_0600 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Indicator_InterfaceName_0600');
           console.info('ArkUX_Gauge_Indicator_InterfaceName_0600 START  :' + JSON.stringify(strJson));
 
           console.info("ArkUX_Gauge_Indicator_InterfaceName_0600 component JSON.parseJsonElement(strJson).$attrs.indicator is: " +
-          JSON.stringify(JSON.parseJsonElement(strJson).getElement('attrs').getElement('indicator')));
+          JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('indicator')));
           let targetVersion = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT).targetVersion;
           if (targetVersion < 11) {
             console.info("ArkUX_Gauge_Indicator_InterfaceName_0600 API is not 11")
           } else {
-            expect(JSON.parseJsonElement(strJson).getElement('attrs').getElement('indicator').getString('space')).assertEqual("5.00vp");
+            expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('indicator').getString('space')).assertEqual("5.00vp");
           }
-        } catch (err) {
-          console.info('ArkUX_Gauge_Indicator_InterfaceName_0600 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -960,23 +868,19 @@ it('ArkUX_Gauge_Indicator_InterfaceName_static_0600', Level.LEVEL0, async (done:
 it('ArkUX_Gauge_Indicator_InterfaceName_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_Indicator_InterfaceName_0700 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Indicator_InterfaceName_0700');
           console.info('ArkUX_Gauge_Indicator_InterfaceName_0700 START  :' + JSON.stringify(strJson));
 
           console.info("ArkUX_Gauge_Indicator_InterfaceName_0700 component JSON.parseJsonElement(strJson).$attrs.indicator is: " +
-          JSON.stringify(JSON.parseJsonElement(strJson).getElement('attrs').getElement('indicator')));
+          JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('indicator')));
           let targetVersion = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT).targetVersion;
           if (targetVersion < 11) {
             console.info("ArkUX_Gauge_Indicator_InterfaceName_0700 API is not 11")
           } else {
-            expect(JSON.parseJsonElement(strJson).getElement('attrs').getElement('indicator').getString('space')).assertEqual("8.00vp");
+            expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('indicator').getString('space')).assertEqual("8.00vp");
           }
           console.info('ArkUX_Gauge_Indicator_InterfaceName_0700 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_Indicator_InterfaceName_0700 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -991,25 +895,21 @@ it('ArkUX_Gauge_Indicator_InterfaceName_static_0700', Level.LEVEL0, async (done:
 it('ArkUX_Gauge_Indicator_InterfaceName_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_Indicator_InterfaceName_0800 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Indicator_InterfaceName_0800');
           console.info('ArkUX_Gauge_Indicator_InterfaceName_0800 START  :' + JSON.stringify(strJson));
 
           console.info("ArkUX_Gauge_Indicator_InterfaceName_0800 component JSON.parseJsonElement(strJson).$attrs.indicator is: " +
-          JSON.stringify(JSON.parseJsonElement(strJson).getElement('attrs').getElement('indicator')));
+          JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('indicator')));
           let targetVersion = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT).targetVersion;
           if (targetVersion < 11) {
             console.info("ArkUX_Gauge_Indicator_InterfaceName_0800 API is not 11")
           } else {
 
-            expect(JSON.parseJsonElement(strJson).getElement('attrs').getElement('indicator').getString('space')).assertEqual("8.00vp");
+            expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('indicator').getString('space')).assertEqual("8.00vp");
 
           }
           console.info('ArkUX_Gauge_Indicator_InterfaceName_0800 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_Indicator_InterfaceName_0800 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -1024,23 +924,19 @@ it('ArkUX_Gauge_Indicator_InterfaceName_static_0800', Level.LEVEL0, async (done:
 it('ArkUX_Gauge_Indicator_InterfaceName_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_Indicator_InterfaceName_0900 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Indicator_InterfaceName_0900');
           console.info('ArkUX_Gauge_Indicator_InterfaceName_0900 START  :' + JSON.stringify(strJson));
 
           console.info("ArkUX_Gauge_Indicator_InterfaceName_0900 component JSON.parseJsonElement(strJson).$attrs.indicator is: " +
-          JSON.stringify(JSON.parseJsonElement(strJson).getElement('attrs').getElement('indicator')));
+          JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('indicator')));
           let targetVersion = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT).targetVersion;
           if (targetVersion < 11) {
             console.info("ArkUX_Gauge_Indicator_InterfaceName_0900 API is not 11")
           } else {
-            expect(JSON.parseJsonElement(strJson).getElement('attrs').getElement('indicator').getString('space')).assertEqual("8.00vp");
+            expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('indicator').getString('space')).assertEqual("8.00vp");
           }
           console.info('ArkUX_Gauge_Indicator_InterfaceName_0900 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_Indicator_InterfaceName_0900 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -1054,25 +950,21 @@ it('ArkUX_Gauge_Indicator_InterfaceName_static_0900', Level.LEVEL0, async (done:
 it('ArkUX_Gauge_Indicator_InterfaceName_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_Indicator_InterfaceName_1000 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Indicator_InterfaceName_1000');
           console.info('ArkUX_Gauge_Indicator_InterfaceName_1000 START  :' + JSON.stringify(strJson));
 
           console.info("ArkUX_Gauge_Indicator_InterfaceName_1000 component JSON.parseJsonElement(strJson).$attrs.indicator is: " +
-          JSON.stringify(JSON.parseJsonElement(strJson).getElement('attrs').getElement('indicator')));
+          JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('indicator')));
           let targetVersion = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT).targetVersion;
           if (targetVersion < 11) {
             console.info("ArkUX_Gauge_Indicator_InterfaceName_1000 API is not 11")
           } else {
 
-            expect(JSON.parseJsonElement(strJson).getElement('attrs').getElement('indicator').getString('space')).assertEqual("8.00vp");
+            expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('indicator').getString('space')).assertEqual("8.00vp");
 
           }
           console.info('ArkUX_Gauge_Indicator_InterfaceName_1000 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_Indicator_InterfaceName_1000 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -1087,23 +979,19 @@ it('ArkUX_Gauge_Indicator_InterfaceName_static_1000', Level.LEVEL0, async (done:
 it('ArkUX_Gauge_Indicator_InterfaceName_static_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_Indicator_InterfaceName_1100 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Indicator_InterfaceName_1100');
           console.info('ArkUX_Gauge_Indicator_InterfaceName_1100 START  :' + JSON.stringify(strJson));
 
           console.info("ArkUX_Gauge_Indicator_InterfaceName_1100 component JSON.parseJsonElement(strJson).$attrs.indicator is: " +
-          JSON.stringify(JSON.parseJsonElement(strJson).getElement('attrs').getElement('indicator')));
+          JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('indicator')));
           let targetVersion = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT).targetVersion;
           if (targetVersion < 11) {
             console.info("ArkUX_Gauge_Indicator_InterfaceName_1100 API is not 11")
           } else {
-            expect(JSON.parseJsonElement(strJson).getElement('attrs').getElement('indicator').getString('space')).assertEqual("8.00vp");
+            expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('indicator').getString('space')).assertEqual("8.00vp");
           }
           console.info('ArkUX_Gauge_Indicator_InterfaceName_1100 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_Indicator_InterfaceName_1100 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -1118,23 +1006,19 @@ it('ArkUX_Gauge_Indicator_InterfaceName_static_1100', Level.LEVEL0, async (done:
 it('ArkUX_Gauge_Indicator_InterfaceName_static_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_Indicator_InterfaceName_1200 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Indicator_InterfaceName_1200');
           console.info('ArkUX_Gauge_Indicator_InterfaceName_1200 START  :' + JSON.stringify(strJson));
 
           console.info("ArkUX_Gauge_Indicator_InterfaceName_1200 component JSON.parseJsonElement(strJson).$attrs.indicator is: " +
-          JSON.stringify(JSON.parseJsonElement(strJson).getElement('attrs').getElement('indicator')));
+          JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('indicator')));
           let targetVersion = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT).targetVersion;
           if (targetVersion < 11) {
             console.info("ArkUX_Gauge_Indicator_InterfaceName_1200 API is not 11")
           } else {
-            expect(JSON.parseJsonElement(strJson).getElement('attrs').getElement('indicator').getString('space')).assertEqual("8.00vp");
+            expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('indicator').getString('space')).assertEqual("8.00vp");
           }
           console.info('ArkUX_Gauge_Indicator_InterfaceName_1200 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_Indicator_InterfaceName_1200 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -1149,23 +1033,18 @@ it('ArkUX_Gauge_Indicator_InterfaceName_static_1200', Level.LEVEL0, async (done:
 it('ArkUX_Gauge_Indicator_InterfaceName_static_1300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_Indicator_InterfaceName_1300 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Indicator_InterfaceName_1300');
           console.info('ArkUX_Gauge_Indicator_InterfaceName_1300 START  :' + JSON.stringify(strJson));
 
           console.info("ArkUX_Gauge_Indicator_InterfaceName_1300 component JSON.parseJsonElement(strJson).$attrs.indicator is: " +
-          JSON.stringify(JSON.parseJsonElement(strJson).getElement('attrs').getElement('indicator')));
+          JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('indicator')));
           let targetVersion = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT).targetVersion;
           if (targetVersion < 11) {
             console.info("ArkUX_Gauge_Indicator_InterfaceName_1300 API is not 11")
           } else {
-            expect(JSON.parseJsonElement(strJson).getElement('attrs').getElement('indicator')).assertEqual("null");
+            expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('indicator')).assertEqual("null");
           }
           console.info('ArkUX_Gauge_Indicator_InterfaceName_1300 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_Indicator_InterfaceName_1300 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
         done();
       }, 1000)
     });
@@ -1180,23 +1059,19 @@ it('ArkUX_Gauge_Indicator_InterfaceName_static_1300', Level.LEVEL0, async (done:
 it('ArkUX_Gauge_Indicator_InterfaceName_static_1400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_Indicator_InterfaceName_1400 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_Indicator_InterfaceName_1400');
           console.info('ArkUX_Gauge_Indicator_InterfaceName_1400 START  :' + JSON.stringify(strJson));
 
           console.info("ArkUX_Gauge_Indicator_InterfaceName_1400 component JSON.parseJsonElement(strJson).$attrs.indicator is: " +
-          JSON.stringify(JSON.parseJsonElement(strJson).getElement('attrs').getElement('indicator')));
+          JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('indicator')));
           let targetVersion = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT).targetVersion;
           if (targetVersion < 11) {
             console.info("ArkUX_Gauge_Indicator_InterfaceName_1400 API is not 11")
           } else {
-            expect(JSON.parseJsonElement(strJson).getElement('attrs').getElement('indicator').getString('space')).assertEqual("8.00vp");
+            expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('indicator').getString('space')).assertEqual("8.00vp");
           }
           console.info('ArkUX_Gauge_Indicator_InterfaceName_1400 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_Indicator_InterfaceName_1400 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -1211,7 +1086,6 @@ it('ArkUX_Gauge_Indicator_InterfaceName_static_1400', Level.LEVEL0, async (done:
 it('ArkUX_Gauge_TrackShadow_InterfaceName_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_TrackShadow_InterfaceName_0100 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_TrackShadow_InterfaceName_0100');
           console.info('ArkUX_Gauge_TrackShadow_InterfaceName_0100 START  :' + JSON.stringify(strJson));
 
@@ -1226,10 +1100,7 @@ it('ArkUX_Gauge_TrackShadow_InterfaceName_static_0100', Level.LEVEL0, async (don
             expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('trackShadow').getString('offsetY')).assertEqual("10.000000");
           }
           console.info('ArkUX_Gauge_TrackShadow_InterfaceName_0100 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_TrackShadow_InterfaceName_0100 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -1244,7 +1115,6 @@ it('ArkUX_Gauge_TrackShadow_InterfaceName_static_0100', Level.LEVEL0, async (don
 it('ArkUX_Gauge_TrackShadow_InterfaceName_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_TrackShadow_InterfaceName_0200 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_TrackShadow_InterfaceName_0200');
           console.info('ArkUX_Gauge_TrackShadow_InterfaceName_0200 START  :' + JSON.stringify(strJson));
 
@@ -1259,10 +1129,7 @@ it('ArkUX_Gauge_TrackShadow_InterfaceName_static_0200', Level.LEVEL0, async (don
             expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('trackShadow').getString('offsetY')).assertEqual("-10.000000");
           }
           console.info('ArkUX_Gauge_TrackShadow_InterfaceName_0200 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_TrackShadow_InterfaceName_0200 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -1277,7 +1144,6 @@ it('ArkUX_Gauge_TrackShadow_InterfaceName_static_0200', Level.LEVEL0, async (don
 it('ArkUX_Gauge_TrackShadow_InterfaceName_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_TrackShadow_InterfaceName_0300 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_TrackShadow_InterfaceName_0300');
           console.info('ArkUX_Gauge_TrackShadow_InterfaceName_0300 START  :' + JSON.stringify(strJson));
 
@@ -1292,10 +1158,7 @@ it('ArkUX_Gauge_TrackShadow_InterfaceName_static_0300', Level.LEVEL0, async (don
             expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('trackShadow').getString('offsetY')).assertEqual("0.000000");
           }
           console.info('ArkUX_Gauge_TrackShadow_InterfaceName_0300 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_TrackShadow_InterfaceName_0300 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -1310,7 +1173,6 @@ it('ArkUX_Gauge_TrackShadow_InterfaceName_static_0300', Level.LEVEL0, async (don
 it('ArkUX_Gauge_TrackShadow_InterfaceName_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_TrackShadow_InterfaceName_0400 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_TrackShadow_InterfaceName_0400');
           console.info('ArkUX_Gauge_TrackShadow_InterfaceName_0400 START  :' + JSON.stringify(strJson));
 
@@ -1325,10 +1187,7 @@ it('ArkUX_Gauge_TrackShadow_InterfaceName_static_0400', Level.LEVEL0, async (don
             expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('trackShadow').getString('offsetY')).assertEqual("10.000000");
           }
           console.info('ArkUX_Gauge_TrackShadow_InterfaceName_0400 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_TrackShadow_InterfaceName_0400 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -1343,7 +1202,6 @@ it('ArkUX_Gauge_TrackShadow_InterfaceName_static_0400', Level.LEVEL0, async (don
 it('ArkUX_Gauge_TrackShadow_InterfaceName_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_TrackShadow_InterfaceName_0500 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_TrackShadow_InterfaceName_0500');
           console.info('ArkUX_Gauge_TrackShadow_InterfaceName_0500 START  :' + JSON.stringify(strJson));
 
@@ -1358,10 +1216,7 @@ it('ArkUX_Gauge_TrackShadow_InterfaceName_static_0500', Level.LEVEL0, async (don
             expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('trackShadow').getString('offsetY')).assertEqual("-10.000000");
           }
           console.info('ArkUX_Gauge_TrackShadow_InterfaceName_0500 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_TrackShadow_InterfaceName_0500 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -1376,7 +1231,6 @@ it('ArkUX_Gauge_TrackShadow_InterfaceName_static_0500', Level.LEVEL0, async (don
 it('ArkUX_Gauge_TrackShadow_InterfaceName_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_TrackShadow_InterfaceName_0600 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_TrackShadow_InterfaceName_0600');
           console.info('ArkUX_Gauge_TrackShadow_InterfaceName_0600 START  :' + JSON.stringify(strJson));
 
@@ -1391,10 +1245,7 @@ it('ArkUX_Gauge_TrackShadow_InterfaceName_static_0600', Level.LEVEL0, async (don
             expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('trackShadow').getString('offsetY')).assertEqual("-10.000000");
           }
           console.info('ArkUX_Gauge_TrackShadow_InterfaceName_0600 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_TrackShadow_InterfaceName_0600 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -1409,7 +1260,6 @@ it('ArkUX_Gauge_TrackShadow_InterfaceName_static_0600', Level.LEVEL0, async (don
 it('ArkUX_Gauge_TrackShadow_InterfaceName_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_TrackShadow_InterfaceName_0700 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_TrackShadow_InterfaceName_0700');
           console.info('ArkUX_Gauge_TrackShadow_InterfaceName_0700 START  :' + JSON.stringify(strJson));
 
@@ -1424,10 +1274,7 @@ it('ArkUX_Gauge_TrackShadow_InterfaceName_static_0700', Level.LEVEL0, async (don
             expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('trackShadow').getString('offsetY')).assertEqual("5.000000");
           }
           console.info('ArkUX_Gauge_TrackShadow_InterfaceName_0700 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_TrackShadow_InterfaceName_0700 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -1442,7 +1289,6 @@ it('ArkUX_Gauge_TrackShadow_InterfaceName_static_0700', Level.LEVEL0, async (don
 it('ArkUX_Gauge_TrackShadow_InterfaceName_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_TrackShadow_InterfaceName_0800 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_TrackShadow_InterfaceName_0800');
           console.info('ArkUX_Gauge_TrackShadow_InterfaceName_0800 START  :' + JSON.stringify(strJson));
 
@@ -1457,10 +1303,7 @@ it('ArkUX_Gauge_TrackShadow_InterfaceName_static_0800', Level.LEVEL0, async (don
             expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('trackShadow').getString('offsetY')).assertEqual("5.000000");
           }
           console.info('ArkUX_Gauge_TrackShadow_InterfaceName_0800 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_TrackShadow_InterfaceName_0800 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -1475,7 +1318,6 @@ it('ArkUX_Gauge_TrackShadow_InterfaceName_static_0800', Level.LEVEL0, async (don
 it('ArkUX_Gauge_TrackShadow_InterfaceName_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_TrackShadow_InterfaceName_0900 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_TrackShadow_InterfaceName_0900');
           console.info('ArkUX_Gauge_TrackShadow_InterfaceName_0900 START  :' + JSON.stringify(strJson));
 
@@ -1490,10 +1332,7 @@ it('ArkUX_Gauge_TrackShadow_InterfaceName_static_0900', Level.LEVEL0, async (don
             expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('trackShadow').getString('offsetY')).assertEqual("5.000000");
           }
           console.info('ArkUX_Gauge_TrackShadow_InterfaceName_0900 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_TrackShadow_InterfaceName_0900 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -1508,7 +1347,6 @@ it('ArkUX_Gauge_TrackShadow_InterfaceName_static_0900', Level.LEVEL0, async (don
 it('ArkUX_Gauge_TrackShadow_InterfaceName_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_TrackShadow_InterfaceName_1000 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_TrackShadow_InterfaceName_1000');
           console.info('ArkUX_Gauge_TrackShadow_InterfaceName_1000 START  :' + JSON.stringify(strJson));
 
@@ -1523,10 +1361,7 @@ it('ArkUX_Gauge_TrackShadow_InterfaceName_static_1000', Level.LEVEL0, async (don
             expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('trackShadow').getString('offsetY')).assertEqual("5.000000");
           }
           console.info('ArkUX_Gauge_TrackShadow_InterfaceName_1000 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_TrackShadow_InterfaceName_1000 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -1541,7 +1376,6 @@ it('ArkUX_Gauge_TrackShadow_InterfaceName_static_1000', Level.LEVEL0, async (don
 it('ArkUX_Gauge_TrackShadow_InterfaceName_static_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_TrackShadow_InterfaceName_1100 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_TrackShadow_InterfaceName_1100');
           console.info('ArkUX_Gauge_TrackShadow_InterfaceName_1100 START  :' + JSON.stringify(strJson));
 
@@ -1556,10 +1390,7 @@ it('ArkUX_Gauge_TrackShadow_InterfaceName_static_1100', Level.LEVEL0, async (don
             expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('trackShadow').getString('offsetY')).assertEqual("5.000000");
           }
           console.info('ArkUX_Gauge_TrackShadow_InterfaceName_1100 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_TrackShadow_InterfaceName_1100 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -1574,7 +1405,6 @@ it('ArkUX_Gauge_TrackShadow_InterfaceName_static_1100', Level.LEVEL0, async (don
 it('ArkUX_Gauge_TrackShadow_InterfaceName_static_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_TrackShadow_InterfaceName_1200 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_TrackShadow_InterfaceName_1200');
           console.info('ArkUX_Gauge_TrackShadow_InterfaceName_1200 START  :' + JSON.stringify(strJson));
 
@@ -1589,10 +1419,7 @@ it('ArkUX_Gauge_TrackShadow_InterfaceName_static_1200', Level.LEVEL0, async (don
             expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('trackShadow').getString('offsetY')).assertEqual("5.000000");
           }
           console.info('ArkUX_Gauge_TrackShadow_InterfaceName_1200 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_TrackShadow_InterfaceName_1200 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -1607,23 +1434,19 @@ it('ArkUX_Gauge_TrackShadow_InterfaceName_static_1200', Level.LEVEL0, async (don
 it('ArkUX_Gauge_TrackShadow_InterfaceName_static_1300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_TrackShadow_InterfaceName_1300 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_TrackShadow_InterfaceName_1300');
           console.info('ArkUX_Gauge_TrackShadow_InterfaceName_1300 START  :' + JSON.stringify(strJson));
 
           console.info("ArkUX_Gauge_TrackShadow_InterfaceName_1300 component JSON.parseJsonElement(strJson).$attrs.trackShadow is: " +
-          JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('trackShadow')));
+          JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('trackShadow')));
           let targetVersion = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT).targetVersion;
           if (targetVersion < 11) {
             console.info("ArkUX_Gauge_TrackShadow_InterfaceName_1300 API is not 11")
           } else {
-            expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('trackShadow')).assertEqual("null");
+            expect(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetString('trackShadow')).assertEqual(undefined);
           }
           console.info('ArkUX_Gauge_TrackShadow_InterfaceName_1300 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_TrackShadow_InterfaceName_1300 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -1638,7 +1461,6 @@ it('ArkUX_Gauge_TrackShadow_InterfaceName_static_1300', Level.LEVEL0, async (don
 it('ArkUX_Gauge_TrackShadow_InterfaceName_static_1400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_TrackShadow_InterfaceName_1400 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_TrackShadow_InterfaceName_1400');
           console.info('ArkUX_Gauge_TrackShadow_InterfaceName_1400 START  :' + JSON.stringify(strJson));
 
@@ -1653,10 +1475,7 @@ it('ArkUX_Gauge_TrackShadow_InterfaceName_static_1400', Level.LEVEL0, async (don
             expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('trackShadow').getString('offsetY')).assertEqual("5.000000");
           }
           console.info('ArkUX_Gauge_TrackShadow_InterfaceName_1400 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_TrackShadow_InterfaceName_1400 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });
@@ -1672,7 +1491,6 @@ it('ArkUX_Gauge_TrackShadow_InterfaceName_static_1400', Level.LEVEL0, async (don
 it('ArkUX_Gauge_TrackShadow_InterfaceName_static_1500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Gauge_TrackShadow_InterfaceName_1400 START');
       setTimeout(() => {
-        try {
           let strJson = inspector.getInspectorByKey('ArkUX_Gauge_TrackShadow_InterfaceName_1500');
           console.info('ArkUX_Gauge_TrackShadow_InterfaceName_1500 START  :' + JSON.stringify(strJson));
 
@@ -1687,10 +1505,7 @@ it('ArkUX_Gauge_TrackShadow_InterfaceName_static_1500', Level.LEVEL0, async (don
             expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('trackShadow').getString('offsetY')).assertEqual("5.000000");
           }
           console.info('ArkUX_Gauge_TrackShadow_InterfaceName_1500 END ');
-        } catch (err) {
-          console.info('ArkUX_Gauge_TrackShadow_InterfaceName_1500 ERR  ' + JSON.stringify(err));
-          expect().assertFail();
-        }
+
         done();
       }, 1000)
     });

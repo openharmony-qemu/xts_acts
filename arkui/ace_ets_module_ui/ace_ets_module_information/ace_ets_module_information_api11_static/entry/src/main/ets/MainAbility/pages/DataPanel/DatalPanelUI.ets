@@ -15,7 +15,7 @@
  */
 import {MessageManager,Callback, Message, } from '../../common/MessageManager';
 import { Entry, Component, DataPanelType, Position, Column, ColumnOptions, Row, Stack, DataPanel, Text, Margin, } from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, StoragePropRef, AppStorage } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
@@ -23,30 +23,9 @@ struct DataPanelExample {
   public valueArr: Array<Double> = new Array<Double>(10, 10, 10, 10, 10, 10, 10, 10, 10)
   messageManager:MessageManager<Object> = new MessageManager<Object>()
 
-  @State maxValue:double = 0
-  @State dataPanelType:DataPanelType = 0 as DataPanelType
-  @State values: Array<Double> = new Array<Double>(25,1);
-
-
-  onPageShow() {
-    console.info('Checkbox onPageShow')
-  
-    AppStorage.setOrCreate<Object>('messageManager', this.messageManager)
-    let callback:Callback<Object> = (message: Message<Object>): void => {
-      console.error('message = ' + message.name + "--" + message.value)
-      if (message.name == 'maxValue') {
-          this.maxValue = message.value as double
-      }
-      if (message.name == 'dataPanelType') {
-          this.dataPanelType = message.value as DataPanelType
-      }
-      if (message.name == 'values') {
-          this.values = message.value as Array<Double>
-      }
-      
-    }
-    this.messageManager.registerCallback(callback)
-  }
+  @StoragePropRef('maxValue') maxValue:number = 0
+  @StoragePropRef('dataPanelType') dataPanelType: DataPanelType = 0 as DataPanelType
+  @StoragePropRef('values') values: Array<number> = new Array<number>(25,1);
 
 
   build() {

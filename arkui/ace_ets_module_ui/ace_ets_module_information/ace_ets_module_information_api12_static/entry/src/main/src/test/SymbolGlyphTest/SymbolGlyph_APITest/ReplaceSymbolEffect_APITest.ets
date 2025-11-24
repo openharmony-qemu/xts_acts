@@ -47,7 +47,6 @@ export default function ReplaceSymbolEffect_APITest() {
         console.info("get ReplaceSymbolEffect_APITest state pages: " + JSON.stringify(pages));
         if (!("ListMainChildren" == pages.name)) {
           console.info("get ReplaceSymbolEffect_APITest state pages.name: " + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }

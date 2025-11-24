@@ -58,7 +58,6 @@ export default function progressJsunit() {
         console.info("get Progress state success " + JSON.stringify(pages));
         if (!("Progress" == pages.name)) {
           console.info("get Progress state success " + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
         }
       } catch (err) {
@@ -86,7 +85,7 @@ it('testGetProgressAttr_static_010', Level.LEVEL0, async (done: () => void): Pro
       let objConstructor = JSON.parseJsonElement(obj.getElement('$attrs').getString('constructor'));
       console.log("progress constructor is " + objConstructor);
       expect(obj.getElement('$attrs').getString('value')).assertEqual(3.000000.toFixed(6));
-      expect(obj.getElement('$type')).assertEqual('Progress');
+      expect(obj.getString('$type')).assertEqual('Progress');
       expect(obj.getElement('$attrs').getString('color')).assertEqual("#FF0000FF");
       expect(obj.getElement('$attrs').getString('width')).assertEqual("50.00vp");
       expect(obj.getElement('$attrs').getString('height')).assertEqual("70.00vp");

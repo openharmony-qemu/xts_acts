@@ -26,12 +26,13 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../../Util.test';
 import inspector from '@ohos.arkui.inspector';
-
+// import config from '@ohos.accessibility.config';
 import accessibility from '@ohos.accessibility';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+// const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.arkui.ace.information/MainAbility';
 
 export default function CounterComponentTest() {
@@ -43,7 +44,11 @@ export default function CounterComponentTest() {
       await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
-   
+      // config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
+      //   console.info(`enable success`);
+      // }).catch((err: object) => {
+      //   console.error(`failed to enable, ${err}`);
+      // })
       console.info("CounterComponentTest beforeEach start");
       let options: router.RouterOptions = {
         url: "MainAbility/pages/Counter/CounterApi/CounterApi",

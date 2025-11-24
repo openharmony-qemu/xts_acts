@@ -14,7 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
-import { Component, Driver, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import hilog from '@ohos.hilog'
@@ -26,13 +26,14 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
-
+// import config from '@ohos.accessibility.config';
 import accessibility from '@ohos.accessibility';
 import { DataPanelType } from '@ohos.arkui.component'
 
-let domain: Int = 0x0000;
+let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+// const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.arkui.ace.information/MainAbility';
 const waitUiReadyMs = 1000;
 
@@ -45,7 +46,11 @@ export default function  datalPanelUIJsunit() {
       await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
-  
+      // config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
+      //   console.info(`enable success`);
+      // }).catch((err: object) => {
+      //   console.error(`failed to enable, ${err}`);
+      // })
       console.info("datalPanelUIJsunit beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/DataPanel/DatalPanelUI',
@@ -74,12 +79,14 @@ export default function  datalPanelUIJsunit() {
 it('datalPanelUIJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
        console.info('datalPanelUIJsunit_0100 START');
        await CommonFunc.sleep(1000);
+       // get the datelPanel component and test attribute
        let strJson = inspector.getInspectorByKey('dp1');
        let obj = JSON.parseJsonElement(strJson);
-       console.info("datalPanelUIJsunit_0100'] component obj is: " + JSON.stringify(obj.getElement('$attrs').getString('values')));
-       let valus = obj.getElement('$attrs').getString('values');
-       let expectV = [25,1].toString();
-       expect(valus == expectV).assertTrue();
+       console.info("datalPanelUIJsunit_0100'] component obj is: " + strJson);
+       let valus = obj.getElement('$attrs').getElement('values');
+       let expectV = '[25,1]';
+  console.info("datalPanelUIJsunit_0100'] String(valus) is: " , JSON.stringifyJsonElement(valus),expectV);
+       expect(JSON.stringifyJsonElement(valus) == expectV).assertTrue();
        expect(obj.getElement('$attrs').getString('max')).assertEqual('26.000000');
        expect(obj.getElement('$attrs').getString('type')).assertEqual('DataPanelType.Line');
        done();
@@ -94,12 +101,11 @@ it('datalPanelUIJsunit_static_0100', Level.LEVEL0, async (done: () => void): Pro
 it('datalPanelUIJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('datalPanelUIJsunit_0200 START');
       await CommonFunc.sleep(1000);
-
-
-     const message:MessageManager<DataPanelType> = AppStorage.get<MessageManager<DataPanelType>>("messageManager")!
-     message.notify({name:'dataPanelType', value:DataPanelType.Line})
+      // modify the type attribute normal value of DataPanel dynamically
+  AppStorage.setOrCreate<DataPanelType>('dataPanelType',DataPanelType.Line)
 
      await CommonFunc.sleep(2000);
+      // check the value of changed attribute
       let strJson = inspector.getInspectorByKey('dp1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[datalPanelUIJsunit_0200'] component obj is: " + JSON.stringify(obj));
@@ -116,12 +122,16 @@ it('datalPanelUIJsunit_static_0200', Level.LEVEL0, async (done: () => void): Pro
 it('datalPanelUIJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('datalPanelUIJsunit_0300 START');
       await CommonFunc.sleep(1000);
-      const message:MessageManager<int> = AppStorage.get<MessageManager<int>>("messageManager")!
-      message.notify({name:'dataPanelType', value:3})
+      // modify the attribute illegal value of DataPanel dynamically
+      // const message:MessageManager<number> = AppStorage.get<MessageManager<number>>("messageManager")!
+      // message.notify({name:'dataPanelType', value:3})
+  AppStorage.setOrCreate<DataPanelType>('dataPanelType',DataPanelType.Circle)
       await CommonFunc.sleep(2000);
+      // check the value of changed attribute
       let strJson = inspector.getInspectorByKey('dp1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[datalPanelUIJsunit_0300'] component obj is: " + JSON.stringify(obj));
+      // check the default value
       expect(obj.getElement('$attrs').getString('type')).assertEqual('DataPanelType.Circle');
       done();
     });
@@ -135,15 +145,15 @@ it('datalPanelUIJsunit_static_0300', Level.LEVEL0, async (done: () => void): Pro
 it('datalPanelUIJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('datalPanelUIJsunit_0400 START');
       await CommonFunc.sleep(1000);
-      const message:MessageManager<Array<Int>> = AppStorage.get<MessageManager<Array<Int>>>("messageManager")!
-      message.notify({name:'values', value:[10,10,10,10,10,10,10,10,10]})
+  AppStorage.setOrCreate<Array<number>>('values',[10,10,10,10,10,10,10,10,10])
       await CommonFunc.sleep(200);
+      // check the value of changed attribute
       let strJson = inspector.getInspectorByKey('dp1');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[datalPanelUIJsunit_0400'] component obj is: " + JSON.stringify(obj.getElement('$attrs').getString('values')));
-      let valus = obj.getElement('$attrs').getString('values');
-      let expectV = [10,10,10,10,10,10,10,10,10].toString();
-      expect(valus == expectV).assertTrue();
+      console.info("[datalPanelUIJsunit_0400'] component obj is: " + JSON.stringify(obj.getElement('$attrs').getElement('values')));
+      let valus = obj.getElement('$attrs').getElement('values');
+      let expectV = '[10,10,10,10,10,10,10,10,10]';
+      expect(JSON.stringifyJsonElement(valus) == expectV).assertTrue();
       done();
     });
 
@@ -156,15 +166,16 @@ it('datalPanelUIJsunit_static_0400', Level.LEVEL0, async (done: () => void): Pro
 it('datalPanelUIJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('datalPanelUIJsunit_0500 START');
       await CommonFunc.sleep(1000);
-      const message:MessageManager<Array<Int>> = AppStorage.get<MessageManager<Array<Int>>>("messageManager")!
-      message.notify({name:'values', value:[-50,33,1,22,33,33,333,21,31,10]})
+      // modify the values ten attribute value of DataPanel dynamically
+  AppStorage.setOrCreate<Array<number>>('values',[-50,33,1,22,33,33,333,21,31,10])
       await CommonFunc.sleep(2000);
+      // check the value of changed attribute
       let strJson = inspector.getInspectorByKey('dp1');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[datalPanelUIJsunit_0500'] component obj is: " + JSON.stringify(obj.getElement('$attrs').getString('values')));
-      let valus= obj.getElement('$attrs').getString('values');
-      let expectV = [0,33,1,22,33,33,333,21,31].toString();
-      expect(valus == expectV).assertTrue();
+      console.info("[datalPanelUIJsunit_0500'] component obj is: " + JSON.stringify(obj.getElement('$attrs').getElement('values')));
+      let valus= obj.getElement('$attrs').getElement('values');
+      let expectV = '[0,33,1,22,33,33,333,21,31]';
+      expect(JSON.stringifyJsonElement(valus) == expectV).assertTrue();
       expect(obj.getElement('$attrs').getString('max')).assertEqual('507.000000');
       done();
     });
@@ -178,9 +189,11 @@ it('datalPanelUIJsunit_static_0500', Level.LEVEL0, async (done: () => void): Pro
 it('datalPanelUIJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('datalPanelUIJsunit_0600 START');
       await CommonFunc.sleep(1000);
-      const message:MessageManager<int> = AppStorage.get<MessageManager<int>>("messageManager")!
-      message.notify({name:'maxValue', value:27})
+      // modify the max attribute value of DataPanel dynamically
+  AppStorage.setOrCreate<number>('maxValue',27)
+
       await CommonFunc.sleep(2000);
+      // check the max value of changed attribute
       let strJson = inspector.getInspectorByKey('dp1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[datalPanelUIJsunit_0600'] component obj is: " + JSON.stringify(obj));
@@ -197,15 +210,15 @@ it('datalPanelUIJsunit_static_0600', Level.LEVEL0, async (done: () => void): Pro
 it('datalPanelUIJsunit_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('datalPanelUIJsunit_0700 START');
       await CommonFunc.sleep(1000);
-      const message:MessageManager<Array<Int>> = AppStorage.get<MessageManager<Array<Int>>>("messageManager")!
-      message.notify({name:'values', value:[-3,10,10,10,10,10,10,10,10,90]})
+      // fix value num
+  AppStorage.setOrCreate<Array<number>>('values',[-3,10,10,10,10,10,10,10,10,90])
       await CommonFunc.sleep(2000);
-      const message1:MessageManager<int> = AppStorage.get<MessageManager<int>>("messageManager")!
-      message1.notify({name:'values', value:-30})
+      // modify the max attribute value of DataPanel dynamically
+  AppStorage.setOrCreate<number>('maxValue',-30)
       await CommonFunc.sleep(2000);
+      // check the max value of changed attribute
       let strJson = inspector.getInspectorByKey('dp1');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[datalPanelUIJsunit_0700'] component obj is: " + JSON.stringify(obj.getElement('$attrs').getString('options')));
       expect(obj.getElement('$attrs').getString('max')).assertEqual('80.000000');
       done();
     });
@@ -219,12 +232,11 @@ it('datalPanelUIJsunit_static_0700', Level.LEVEL0, async (done: () => void): Pro
 it('datalPanelUIJsunit_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('datalPanelUIJsunit_0800 START');
       await CommonFunc.sleep(1000);
-       const message:MessageManager<Array<Int>> = AppStorage.get<MessageManager<Array<Int>>>("messageManager")!
-       message.notify({name:'values', value:[10,10,10,10,10,10,10,10,10]})
+  AppStorage.setOrCreate<Array<number>>('values',[10,10,10,10,10,10,10,10,10])
       await CommonFunc.sleep(2000);
-       const message1:MessageManager<int> = AppStorage.get<MessageManager<int>>("messageManager")!
-       message1.notify({name:'values', value:0})
+  AppStorage.setOrCreate<number>('maxValue',0)
       await CommonFunc.sleep(2000);
+      // check the max value of changed attribute
       let strJson = inspector.getInspectorByKey('dp1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[datalPanelUIJsunit_0800'] component obj is: " + JSON.stringify(obj.getElement('$attrs').getString('max')));

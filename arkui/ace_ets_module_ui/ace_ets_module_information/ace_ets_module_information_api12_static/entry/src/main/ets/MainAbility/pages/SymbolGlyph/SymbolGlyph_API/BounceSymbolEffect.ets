@@ -14,7 +14,7 @@
  */
 import {Entry, Component, Column, ColumnOptions, Row, Text, RowOptions, Progress, EffectScope, Color, ProgressMask, Padding, Image, $r, SymbolGlyph, EffectDirection,
  Button, ClickEvent, Margin, BounceSymbolEffect, ReplaceSymbolEffect, } from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { State,  AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct BounceSymbolEffect_Scope {

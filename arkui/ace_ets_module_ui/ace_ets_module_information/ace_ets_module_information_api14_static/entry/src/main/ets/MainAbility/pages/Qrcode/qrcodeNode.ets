@@ -21,9 +21,17 @@ let data:(string) =  '123'
 class MyNodeController extends NodeController {
   makeNode(uiContext: UIContext): FrameNode | null {
     let node = new FrameNode(uiContext)
+    let scroll = typeNode.createScrollNode(uiContext)
     let col = typeNode.createColumnNode(uiContext)
     col.initialize({ space: 10 } as ColumnOptions).borderColor(Color.Black).alignItems(HorizontalAlign.Center).width('50%')
-   
+    let text = typeNode.createTextNode(uiContext)
+    text.initialize('command')
+    let qrcode = typeNode.createQRCodeNode(uiContext)
+    qrcode.initialize(data).width(100).color(Color.Blue).contentOpacity(undefined).key('key_QRCode_001')
+    
+    col.appendChild(qrcode)
+    scroll.appendChild(col)
+    node.appendChild(scroll)
     return node
   }
 }

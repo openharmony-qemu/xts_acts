@@ -76,8 +76,8 @@ it('TextTimerNode_static_0100', Level.LEVEL2, async (done: () => void): Promise<
         let tagName = 'TextTimerNode0100';
         console.info('[' + tagName + '] START============================');
         let strJsonNew = inspector.getInspectorByKey('key_ TextTimer_001');
-        console.info('[' + tagName + '] Search is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$type')));
-        expect(JSON.parseJsonElement(strJsonNew).getElement('$type')).assertEqual('TextTimer');
+        console.info('[' + tagName + '] Search is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew).getString('$type')));
+        expect(JSON.parseJsonElement(strJsonNew).getString('$type')).assertEqual('TextTimer');
         console.info('[' + tagName + '] END ===========================');
         done();
       });

@@ -26,7 +26,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
-
+import { ResourceColor , LinearGradient, Color, Resource,Length } from '@ohos.arkui.component'
 import accessibility from '@ohos.accessibility';
 
 let domain: Int = 0x0000;
@@ -44,7 +44,7 @@ export default function gauge3Jsunit() {
       await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
-  
+
       console.info("gauge3Jsunit beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/gauge/gauge3',
@@ -73,16 +73,17 @@ export default function gauge3Jsunit() {
 it('gauge3Jsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
        console.info('gauge3Jsunit_0100 START');
        await CommonFunc.sleep(1000);
+       // get the gauge component and test attribute
        let strJson = inspector.getInspectorByKey('guage');
        let obj = JSON.parseJsonElement(strJson);
        console.info('gauge3Jsunit_0100 component obj is:' + JSON.stringify(obj));
        console.info('gauge3Jsunit_0100 component obj startAngle is:' + obj.getElement('$attrs').getString('startAngle'));
        console.info('gauge3Jsunit_0100 component obj startAngle is:' + obj.getElement('$attrs').getString('endAngle'));
-       console.info('gauge3Jsunit_0100 component obj startAngle is:' + obj.getElement('$attrs').getString('strokeWidthAngle'));
+       console.info('gauge3Jsunit_0100 component obj startAngle is:' + obj.getElement('$attrs').getString('strokeWidth'));
        console.info('gauge3Jsunit_0100 component obj startAngle is:' + obj.getElement('$attrs').getString('colors'));
        expect(obj.getElement('$attrs').getString('startAngle')).assertEqual('0.00');
        expect(obj.getElement('$attrs').getString('endAngle')).assertEqual('0.00');
-       expect(obj.getElement('$attrs').getString('strokeWidthAngle')).assertEqual('0.00vp');
+       expect(obj.getElement('$attrs').getString('strokeWidth')).assertEqual('0.00vp');
        expect(obj.getElement('$attrs').getString('value')).assertEqual('30.00');
        expect(obj.getElement('$attrs').getString('min')).assertEqual('0.00');
        expect(obj.getElement('$attrs').getString('max')).assertEqual('100.00');
@@ -101,22 +102,22 @@ it('gauge3Jsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<v
 it('gauge3Jsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('gauge3Jsunit_0200 START');
       await CommonFunc.sleep(1000);
-      const message:MessageManager<int> = AppStorage.get<MessageManager<int>>("messageManager")!
-      message.notify({name:'startAngle', value:20})
+      // modify the type attribute normal value of guage dynamically
+  AppStorage.setOrCreate<number>("startAngle",20)
       await CommonFunc.sleep(2000);
-      message.notify({name:'strokeWidth', value:30})
+  AppStorage.setOrCreate<number>("strokeWidth",30)
       await CommonFunc.sleep(2000);
-      message.notify({name:'endAngle', value:270})
+  AppStorage.setOrCreate<number>("endAngle",270)
       await CommonFunc.sleep(2000);
-      const message2:MessageManager<Array<Array<number>>> = AppStorage.get<MessageManager<Array<Array<number>>>>("messageManager")!
-      message2.notify({name:'colors', value:[[0x317AF6, 0.3], [0x5BA854, 0.3], [0xE08C3A, 0.4], [0x9A554B, 0.4]]})
+  AppStorage.setOrCreate<Array<[ResourceColor | LinearGradient , number]>>("colors",[[0x317AF6, 0.3], [0x5BA854, 0.3], [0xE08C3A, 0.4], [0x9A554B, 0.4]])
       await CommonFunc.sleep(2000);
+      // check the value of changed attribute
       let strJson = inspector.getInspectorByKey('guage');
       let obj = JSON.parseJsonElement(strJson);
       console.info('gauge3Jsunit_0200 component obj is: ' + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('startAngle')).assertEqual('20.00');
       expect(obj.getElement('$attrs').getString('endAngle')).assertEqual('270.00');
-      expect(obj.getElement('$attrs').getString('strokeWidthAngle')).assertEqual('30.00vp');
+      expect(obj.getElement('$attrs').getString('strokeWidth')).assertEqual('30.00vp');
       let colors: string = obj.getElement('$attrs').getString('colors');
       console.info('gauge3Jsunit_0200 component obj is: ' + colors);
       expect(colors).assertEqual('[[[["#FF317AF6","0.000000"]],0.300000011920929],[[["#FF5BA854","0.000000"]],0.300000011920929],[[["#FFE08C3A","0.000000"]],0.40000000596046448],[[["#FF9A554B","0.000000"]],0.40000000596046448]]');
@@ -132,13 +133,13 @@ it('gauge3Jsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<v
 it('gauge3Jsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('gauge3Jsunit_0200 START');
       await CommonFunc.sleep(1000);
-      const message:MessageManager<string> = AppStorage.get<MessageManager<string>>("messageManager")!
-      message.notify({name:'value', value:'40'})
+  AppStorage.setOrCreate<number>("value",0)
       await CommonFunc.sleep(2000);
-      message.notify({name:'min', value:'20'})
+  AppStorage.setOrCreate<number>("min",0)
       await CommonFunc.sleep(2000);
-      message.notify({name:'max', value:'90'})
+  AppStorage.setOrCreate<number>("max",100)
       await CommonFunc.sleep(2000);
+      // check the value of changed parameter
       let strJson = inspector.getInspectorByKey('guage');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('value')).assertEqual('0.00');
@@ -157,22 +158,21 @@ it('gauge3Jsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<v
 it('gauge3Jsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('gauge3Jsunit_0400 START');
       await CommonFunc.sleep(1000);
-      const message:MessageManager<int> = AppStorage.get<MessageManager<int>>("messageManager")!
-      message.notify({name:'startAngle', value:-30})
+  AppStorage.setOrCreate<number>("startAngle",-30)
       await CommonFunc.sleep(2000);
-      message.notify({name:'strokeWidth', value:-30})
+  AppStorage.setOrCreate<string>("strokeWidth",'-30')
       await CommonFunc.sleep(2000);
-      message.notify({name:'endAngle', value:450})
+  AppStorage.setOrCreate<number>("endAngle",450)
       await CommonFunc.sleep(2000);
-      const message2:MessageManager<Array<Array<number>>> = AppStorage.get<MessageManager<Array<Array<number>>>>("messageManager")!
-      message2.notify({name:'colors', value:[[0x317AF6, 2], [0x5BA, 0.3], [0xE08C3A, 0.4], [0x9A554B, 0.4]]})
+  AppStorage.setOrCreate<Array<[ResourceColor | LinearGradient , number]>>("colors",[[0x317AF6, 2], [0x5BA, 0.3], [0xE08C3A, 0.4], [0x9A554B, 0.4]])
       await CommonFunc.sleep(2000);
+       // check the value of changed attribute
       let strJson = inspector.getInspectorByKey('guage');
       let obj = JSON.parseJsonElement(strJson);
       console.info('gauge3Jsunit_0400 component obj is: ' + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('startAngle')).assertEqual('-30.00');
       expect(obj.getElement('$attrs').getString('endAngle')).assertEqual('450.00');
-      expect(obj.getElement('$attrs').getString('strokeWidthAngle')).assertEqual('-30.00vp');
+      expect(obj.getElement('$attrs').getString('strokeWidth')).assertEqual('-30.00vp');
       let colors = obj.getElement('$attrs').getString('colors');
       console.info('gauge3Jsunit_0400 component obj is: ' + colors);
       expect(colors).assertEqual('[[[["#FF317AF6","0.000000"]],2],[[["#FF0005BA","0.000000"]],0.300000011920929],[[["#FFE08C3A","0.000000"]],0.40000000596046448],[[["#FF9A554B","0.000000"]],0.40000000596046448]]');
@@ -188,13 +188,14 @@ it('gauge3Jsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<v
 it('gauge3Jsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('gauge3Jsunit_0500 START');
       await CommonFunc.sleep(1000);
-     const message:MessageManager<string> = AppStorage.get<MessageManager<string>>("messageManager")!
-     message.notify({name:'value', value:'-40'})
+      // test the illegal parameter
+  AppStorage.setOrCreate<number>("value",0)
       await CommonFunc.sleep(2000);
-     message.notify({name:'min', value:'-6'})
+  AppStorage.setOrCreate<number>("min",0)
       await CommonFunc.sleep(2000);
-     message.notify({name:'max', value:'-7'})
+  AppStorage.setOrCreate<number>("max",100)
       await CommonFunc.sleep(2000);
+      // check the value of changed parameter
       let strJson = inspector.getInspectorByKey('guage');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('value')).assertEqual('0.00');
@@ -212,9 +213,10 @@ it('gauge3Jsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<v
 it('gauge3Jsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('gauge3Jsunit_0600 START');
       await CommonFunc.sleep(1000);
-      const message:MessageManager<string> = AppStorage.get<MessageManager<string>>("messageManager")!
-      message.notify({name:'wth', value:'20'})
+      // test the support common attribute
+  AppStorage.setOrCreate<Length>("wth",'20')
       await CommonFunc.sleep(2000);
+      // check the value of changed attribute
       let strJson = inspector.getInspectorByKey('guage');
       let obj = JSON.parseJsonElement(strJson);
       console.info('gauge3Jsunit_0600 component obj is: ' + JSON.stringify(obj));
@@ -231,9 +233,10 @@ it('gauge3Jsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<v
 it('gauge3Jsunit_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('gauge3Jsunit_0700 START');
       await CommonFunc.sleep(1000);
-      const message:MessageManager<string> = AppStorage.get<MessageManager<string>>("messageManager")!
-      message.notify({name:'wth', value:'-60'})
+      // test the support common attribute
+  AppStorage.setOrCreate<Length>("wth",'-60')
       await CommonFunc.sleep(2000);
+      // check the value of changed attribute
       let strJson = inspector.getInspectorByKey('guage');
       let obj = JSON.parseJsonElement(strJson);
       console.info('gauge3Jsunit_0700 component obj is: ' + JSON.stringify(obj));

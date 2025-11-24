@@ -47,7 +47,6 @@ export default function NO_ANIMATION_APITest() {
         console.info("get NO_ANIMATION_APITest state pages: " + JSON.stringify(pages));
         if (!("ListMainChildren" == pages.name)) {
           console.info("get NO_ANIMATION_APITest state pages.name: " + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -68,8 +67,8 @@ it('NO_ANIMATION_APITest_static_0100', Level.LEVEL2, async (done: () => void): P
       await CommonFunc.sleep(1000);
       let NO_ANIMATION = inspector.getInspectorByKey('NO_ANIMATION');
       console.info("[NO_ANIMATION_APITest_0100] Tabs animationMode attrs is: " +
-      JSON.stringify(JSON.parseJsonElement(NO_ANIMATION).getElement('$attr')));
-      expect(JSON.parseJsonElement(NO_ANIMATION).getElement('$attr').getString('animationMode')).assertEqual('AnimationMode.NO_ANIMATION');
+      JSON.stringify(JSON.parseJsonElement(NO_ANIMATION).getElement('$attrs')));
+      expect(JSON.parseJsonElement(NO_ANIMATION).getElement('$attrs').getString('animationMode')).assertEqual('AnimationMode.NO_ANIMATION');
       console.info('[NO_ANIMATION_APITest_0100] END');
       done();
     });

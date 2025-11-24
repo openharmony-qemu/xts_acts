@@ -16,7 +16,6 @@
 import events_emitter from '@ohos.events.emitter';
 import RectValue from './Rect'
 import inspector from '@ohos.arkui.inspector'
-import { RecordData } from '@ohos.base';
 
 export default class Utils {
   static rect_left: number;
@@ -34,20 +33,8 @@ export default class Utils {
     })
   }
 
-  static sendEvent(message: string, eventId: number) {
-    let eventData: events_emitter.EventData = {
-      data: {
-        "msg": message
-      } as Record<String, RecordData>
-    } as events_emitter.EventData
-    let event: events_emitter.InnerEvent = {
-      eventId: eventId as Long,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.emit(event, eventData)
-  }
 
-  
+  //获取组件所占矩形区域坐标
   static getComponentRect(key: string) {
     let strJson: string = inspector.getInspectorByKey(key);
     let obj: Record<string, Object> = JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;

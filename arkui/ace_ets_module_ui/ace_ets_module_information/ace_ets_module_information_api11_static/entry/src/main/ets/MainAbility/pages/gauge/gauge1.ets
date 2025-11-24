@@ -14,8 +14,8 @@
  */
 
 import Log from '../../common/Log';
-import { Entry, Component, Column, Gauge, Margin, Flex, Text, FlexOptions, FlexDirection, ItemAlign, FlexAlign, Alignment, TextAlign, TextOverflow, } from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { Entry, Component, Column,Color, Gauge, Margin, Flex, Text, FlexOptions, FlexDirection, ItemAlign, FlexAlign, Alignment, TextAlign, TextOverflow, } from '@ohos.arkui.component'
+import { State,  AppStorage } from '@ohos.arkui.stateManagement'
 const TAG = 'ets_apiLack_add';
 
 @Entry
@@ -38,7 +38,7 @@ struct GaugeColors {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor(Color.White)
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)

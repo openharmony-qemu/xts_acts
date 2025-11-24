@@ -14,69 +14,16 @@
  */
 
 import events_emitter from '@ohos.events.emitter';
-import { Entry, Component, Column, Gauge, Margin} from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { Entry, Component, Column, Gauge, Margin,Color} from '@ohos.arkui.component'
+import { State,  AppStorage,StoragePropRef } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct GaugeExample {
-  @State gaugeValue: double = 50;
-  @State strokeWidthValue: string = '20';
-  @State startAngleValue: double = 210;
-  @State endAngleValue: double = 150;
-  @State colorValues: string = JSON.stringify([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1], [0x9C554B, 1], [0xD94838, 1]]);
-  private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
-    if (eventData != null) {
-      console.info('gauge page state change called:' + JSON.stringify(eventData));
-      if (((eventData.data) as ESObject ).getProperty('gaugeValue') != null) {
-        this.gaugeValue = ((eventData.data) as ESObject ).getProperty('gaugeValue').toNumber();
-      }
-      if (((eventData.data) as ESObject ).getProperty('strokeWidthValue') != null) {
-        this.strokeWidthValue = ((eventData.data) as ESObject ).getProperty('strokeWidthValue').toString();
-      }
-      if (((eventData.data) as ESObject ).getProperty('startAngleValue') != null) {
-        this.startAngleValue = ((eventData.data) as ESObject ).getProperty('startAngleValue').toNumber();
-      }
-      if (((eventData.data) as ESObject ).getProperty('endAngleValue') != null) {
-        this.endAngleValue = ((eventData.data) as ESObject ).getProperty('endAngleValue').toNumber();
-      }
-      if (((eventData.data) as ESObject ).getProperty('colorValues') != null) {
-        this.colorValues = ((eventData.data) as ESObject ).getProperty('colorValues').toString();
-      }
-    }
-  }
-
-  onPageShow() {
-    console.info('gauge page show called');
-    let stateChangeEvent: events_emitter.InnerEvent = {
-      eventId: 102,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
-
-    let stateChangeEventTwo: events_emitter.InnerEvent = {
-      eventId: 103,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventTwo, this.stateChangCallBack);
-
-    let stateChangeEvent3: events_emitter.InnerEvent = {
-      eventId: 904,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent3, this.stateChangCallBack);
-
-    let stateChangeEvent4: events_emitter.InnerEvent = {
-      eventId: 905,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent4, this.stateChangCallBack);
-
-    let stateChangeEvent5: events_emitter.InnerEvent = {
-      eventId: 906,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent5, this.stateChangCallBack);
-  }
+  @StoragePropRef('gaugeValue') gaugeValue: number = 50;
+  @StoragePropRef('strokeWidthValue') strokeWidthValue: string = '20';
+  @StoragePropRef('startAngleValue') startAngleValue: number = 210;
+  @StoragePropRef('endAngleValue') endAngleValue: number = 150;
+  @StoragePropRef('colorValues') colorValues: string = JSON.stringify([[Color.Red, 1], [Color.Red, 1], [Color.Red, 1], [Color.Red, 1], [Color.Red, 1]]);
 
   build() {
     Column() {
