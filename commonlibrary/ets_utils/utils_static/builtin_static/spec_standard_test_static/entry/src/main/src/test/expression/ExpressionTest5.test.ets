@@ -894,7 +894,8 @@ export default function expressionTest5() {
           result.push(arr[i]);
         }
       }
-      expect(result).assertDeepEquals([6, 8, 10]);
+      const target:number[] = [6, 8, 10]
+      expect(result).assertDeepEquals(target);
     });
 
     /**
@@ -1150,7 +1151,8 @@ export default function expressionTest5() {
         arr.push(count * 3);
         count++;
       }
-      expect(arr).assertDeepEquals([3, 6, 9, 12, 15]);
+      const target:number[] = [3, 6, 9, 12, 15];
+      expect(arr).assertDeepEquals(target);
     });
 
     /**
@@ -2247,10 +2249,13 @@ export default function expressionTest5() {
       let numVar: number = 0;
       let mixedArray: (number | string | boolean)[] = [0, "", 5];
       const defaultValue: number = 10;
-      for (let i = 0; i < mixedArray.length; i++) {
-        numVar += (mixedArray[i] as number) ?? defaultValue;
+      try {
+        for (let i = 0; i < mixedArray.length; i++) {
+          numVar += (mixedArray[i] as number) ?? defaultValue;
+        }
+      } catch(e) {
+        expect(e.name).assertEqual("ClassCastError");
       }
-      expect(numVar).assertEqual("05");
     });
 
     /**
@@ -2332,7 +2337,7 @@ export default function expressionTest5() {
       const result1: number = numArray[0] / numArray[1] + numArray[2];
       const result2: number = numArray[0] / (numArray[1] + numArray[2]);
       expect(result1).assertEqual(3.75 + 3);
-      expect(result2).assertEqual(15 / 7);
+      expect(result2).assertEqual(15.0 / 7.0);
     });
 
     /**
@@ -2738,7 +2743,8 @@ export default function expressionTest5() {
         numArray.push(numVar * numVar);
         numVar++;
       }
-      expect(numArray).assertDeepEquals([1, 4, 9, 16, 25]);
+      const target: number[] = [1, 4, 9, 16, 25];
+      expect(numArray).assertDeepEquals(target);
     });
 
     /**

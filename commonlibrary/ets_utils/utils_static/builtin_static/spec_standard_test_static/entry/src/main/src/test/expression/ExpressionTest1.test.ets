@@ -611,9 +611,9 @@ export default function expressionTest1() {
      * @tc.level Level 1
      */
     it('ExpressionTest0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let a: number = -20;
-      let result: number = a >>> 2;
-      let expected: number = 1073741819;
+      let a: int = -20;
+      let result: int = a >>> 2;
+      let expected: int = 1073741819;
       expect(result).assertEqual(expected);
     });
 
@@ -1938,9 +1938,9 @@ export default function expressionTest1() {
      * @tc.level Level 1
      */
     it('ExpressionTest0133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let a: number = 1;
-      let result: number = a << 31;
-      let expected: number = -2147483648;
+      let a: int = 1;
+      let result: int = a << 31;
+      let expected: int = -2147483648;
       expect(result).assertEqual(expected);
     });
 
@@ -1968,9 +1968,9 @@ export default function expressionTest1() {
      * @tc.level Level 1
      */
     it('ExpressionTest0135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let a: number = 0xffffffff;
-      let result: number = a >>> 1;
-      let expected: number = 0x7fffffff;
+      let a: int = 0xffffffff;
+      let result: int = a >>> 1;
+      let expected: int = 0x7fffffff;
       expect(result).assertEqual(expected);
     });
 
@@ -2672,9 +2672,9 @@ export default function expressionTest1() {
      * @tc.level Level 1
      */
     it('ExpressionTest0183', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let a: number = 1;
-      let result: number = a << 32;
-      let expected: number = 1;
+      let a: int = 1;
+      let result: int = a << 32;
+      let expected: int = 1;
       expect(result).assertEqual(expected);
     });
 
@@ -2702,9 +2702,9 @@ export default function expressionTest1() {
      * @tc.level Level 1
      */
     it('ExpressionTest0185', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let a: number = -1;
-      let result: number = a >>> 0;
-      let expected: number = 4294967295;
+      let a: int = -1;
+      let result: int = a >>> 0;
+      let expected: int = -1;
       expect(result).assertEqual(expected);
     });
 

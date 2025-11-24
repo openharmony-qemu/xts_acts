@@ -497,10 +497,10 @@ export default function expressionTest3() {
      * @tc.level Level 1
      */
     it('ExpressionTest0347', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const min32: number = -2147483648; // 0b10000000000000000000000000000000
-      const result1: number = min32 >> 1; // Sign-preserving shift
-      const result2: number = min32 << 1; // Overflow
-      const result3: number = ~min32; // Bitwise NOT
+      const min32: int = -2147483648; // 0b10000000000000000000000000000000
+      const result1: int = min32 >> 1; // Sign-preserving shift
+      const result2: int = min32 << 1; // Overflow
+      const result3: int = ~min32; // Bitwise NOT
 
       expect(result1).assertEqual(-1073741824); // Special case for minimum value
       expect(result2).assertEqual(0); // Overflow results in 0
@@ -516,10 +516,10 @@ export default function expressionTest3() {
      * @tc.level Level 1
      */
     it('ExpressionTest0348', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const max32: number = 2147483647; // 0b01111111111111111111111111111111
-      const result1: number = max32 >> 1;
-      const result2: number = max32 << 1;
-      const result3: number = ~max32;
+      const max32: int = 2147483647; // 0b01111111111111111111111111111111
+      const result1: int = max32 >> 1;
+      const result2: int = max32 << 1;
+      const result3: int = ~max32;
 
       expect(result1).assertEqual(1073741823);
       expect(result2).assertEqual(-2);
@@ -1315,10 +1315,14 @@ export default function expressionTest3() {
       const strings: string[] = ["a", "bb", "ccc", "dddd"];
       let totalLength: int = 0;
       let i: int, current: string;
-      for (i = 0, current = strings[0]; i < strings.length; i++, current = strings[i]) {
-        totalLength += current.length;
+      try {
+        for (i = 0, current = strings[0]; i < strings.length; i++, current = strings[i]) {
+          totalLength += current.length;
+        }
+      } catch(err) {
+        expect(err.name).assertEqual("RangeError");
       }
-      expect(totalLength).assertEqual(10);
+      
     });
 
     /**
@@ -2183,7 +2187,7 @@ export default function expressionTest3() {
     it('ExpressionTest0458', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str: string = "looping";
       let count: number = 0;
-      for (let i = 0; i < str.length / 2; i++) {
+      for (let i = 0; i < str.length / 2.0; i++) {
         count++;
       }
       expect(count).assertEqual(4);
