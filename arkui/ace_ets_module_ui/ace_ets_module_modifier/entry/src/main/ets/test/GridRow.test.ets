@@ -40,12 +40,12 @@ export default function gridRowJsunit() {
     });
 
     /**
+     * @tc.name   gridRowTest_0001
      * @tc.number gridRowTest_0001
-     * @tc.name Test the properties of components
-     * @tc.desc Set alignItems values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set alignItems values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('gridRowTest_0001', Level.LEVEL0, async (done: Function) => {
       console.info('gridRowTest_0001 START');
@@ -58,12 +58,12 @@ export default function gridRowJsunit() {
     });
 
     /**
+     * @tc.name   gridRowTest_0002
      * @tc.number gridRowTest_0002
-     * @tc.name Test the properties of components
-     * @tc.desc Change alignItems values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change alignItems values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('gridRowTest_0002', Level.LEVEL0, async (done: Function) => {
 

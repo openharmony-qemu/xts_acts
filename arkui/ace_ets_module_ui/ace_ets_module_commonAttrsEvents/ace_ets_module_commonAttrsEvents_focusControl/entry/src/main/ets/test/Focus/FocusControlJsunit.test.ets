@@ -45,15 +45,15 @@ export default function focusControlJsunit() {
       console.info("focus after each called");
     })
 
-    /*
-     * @tc.number     : 01
-     * @tc.name       : testFocusOnTouch01
-     * @tc.desc       :
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     */
 
+    /**
+     * @tc.name   testFocusOnTouch01
+     * @tc.number testFocusOnTouch01
+     * @tc.desc   testFocusOnTouch01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testFocusOnTouch01', Level.LEVEL0, async () => {
       console.info('[testFocusOnTouch01] START');
       await CommonFunc.sleep(1000);
@@ -76,15 +76,15 @@ export default function focusControlJsunit() {
       console.info('[testFocusOnTouch01] testSendTouchEvent END');
     });
 
-    /*
-     * @tc.number     : 02
-     * @tc.name       : testFocusOnTouch02
-     * @tc.desc       :
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     */
 
+    /**
+     * @tc.name   testFocusOnTouch02
+     * @tc.number testFocusOnTouch02
+     * @tc.desc   testFocusOnTouch02
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testFocusOnTouch02', Level.LEVEL0, async () => {
       console.info('[testFocusOnTouch02] START');
       await CommonFunc.sleep(1000);
@@ -107,13 +107,13 @@ export default function focusControlJsunit() {
       console.info('[testFocusOnTouch02] testSendTouchEvent END');
     });
 
-    /*
-     * @tc.number     : 03
-     * @tc.name       : testFocusOnTouch03
-     * @tc.desc       :
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testFocusOnTouch03
+     * @tc.number 03
+     * @tc.desc   testFocusOnTouch03
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFocusOnTouch03', Level.LEVEL0, async () => {
       console.info('[testFocusOnTouch03] START');
@@ -137,15 +137,15 @@ export default function focusControlJsunit() {
       console.info('[testFocusOnTouch03] testSendTouchEvent END');
     });
 
-    /*
-     * @tc.number     : 04
-     * @tc.name       : testFocusOnTouch04
-     * @tc.desc       :
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     */
 
+    /**
+     * @tc.name   testFocusOnTouch04
+     * @tc.number testFocusOnTouch04
+     * @tc.desc   testFocusOnTouch04
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testFocusOnTouch04', Level.LEVEL0, async () => {
       console.info('[testFocusOnTouch04] START');
       await CommonFunc.sleep(1000);
@@ -168,15 +168,15 @@ export default function focusControlJsunit() {
       console.info('[testFocusOnTouch04] testSendTouchEvent END');
     });
 
-    /*
-     * @tc.number     : 05
-     * @tc.name       : testFocusOnTouch05
-     * @tc.desc       :
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     */
 
+    /**
+     * @tc.name   testFocusOnTouch05
+     * @tc.number testFocusOnTouch05
+     * @tc.desc   testFocusOnTouch05
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testFocusOnTouch05', Level.LEVEL0, async () => {
       console.info('[testFocusOnTouch05] START');
       await CommonFunc.sleep(1000);
@@ -199,13 +199,13 @@ export default function focusControlJsunit() {
       console.info('[testFocusOnTouch05] testSendTouchEvent END');
     });
 
-    /*
-     * @tc.number     : 06
-     * @tc.name       : testFocusOnTouch06
-     * @tc.desc       :
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testDefaultFocus06
+     * @tc.number 06
+     * @tc.desc   testDefaultFocus06
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDefaultFocus06', Level.LEVEL0, async () => {
       console.info('[testDefaultFocus06] START');

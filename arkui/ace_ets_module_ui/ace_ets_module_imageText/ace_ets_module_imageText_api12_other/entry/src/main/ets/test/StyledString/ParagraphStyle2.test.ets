@@ -46,13 +46,13 @@ export default function ParagraphStyle2() {
       console.info("ParagraphStyle2 after each called");
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-    * @tc.name         ParagraphStyle20001
-    * @tc.desic        The ParagraphStyle Attributes
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   ParagraphStyle20001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   ParagraphStyle20001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ParagraphStyle20001', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();

@@ -57,12 +57,12 @@ export default function ListScrollEdgeCallback() {
     });
 
     /**
+     * @tc.name   ListScrollEdgeCallbackTest_0100
      * @tc.number ListScrollEdgeCallbackTest_0100
-     * @tc.name Test the properties of components
-     * @tc.desc Set attribute values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Set attribute values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ListScrollEdgeCallbackTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ListScrollEdgeCallbackTest_0100 START');

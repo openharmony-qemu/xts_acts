@@ -46,10 +46,12 @@ export default function MotionPathExample() {
     });
 
     /**
-     * @tc.number    MotionPathExample_0100
-     * @tc.name      MotionPathExample_0100
-     * @tc.desc      Test motionPath
-     * @tc.level     Level 0
+     * @tc.name   MotionPathExample_0100
+     * @tc.number MotionPathExample_0100
+     * @tc.desc   Test motionPath
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MotionPathExample_0100', Level.LEVEL0, async (done: Function) => {
       console.info('MotionPathExample_0100 START');

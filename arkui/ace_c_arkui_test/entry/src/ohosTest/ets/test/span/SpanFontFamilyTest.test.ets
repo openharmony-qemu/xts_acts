@@ -26,39 +26,39 @@ export default function spanFontFamilyTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SPAN_FONT_FAMILY_0100
-     * @tc.name       : testSpanFontFamily001
-     * @tc.desc       : testing fontFamily for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSpanFontFamily001
+     * @tc.number SUB_ARKUI_CAPI_SPAN_FONT_FAMILY_0100
+     * @tc.desc   testing fontFamily for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanFontFamily001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanFontFamily001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SPAN_FONT_FAMILY_0200
-     * @tc.name       : testSpanFontFamily002
-     * @tc.desc       : testing fontFamily for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSpanFontFamily002
+     * @tc.number SUB_ARKUI_CAPI_SPAN_FONT_FAMILY_0200
+     * @tc.desc   testing fontFamily for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanFontFamily002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanFontFamily002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SPAN_FONT_FAMILY_0300
-     * @tc.name       : testSpanFontFamily003
-     * @tc.desc       : testing fontFamily for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSpanFontFamily003
+     * @tc.number SUB_ARKUI_CAPI_SPAN_FONT_FAMILY_0300
+     * @tc.desc   testing fontFamily for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanFontFamily003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanFontFamily003()).assertEqual(0)

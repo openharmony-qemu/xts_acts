@@ -26,39 +26,39 @@ export default function listEnableScrollInteractionTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ENABLESCROLLINTERACTION_0100
-     * @tc.name       : testListEnableScrollInteraction001
-     * @tc.desc       : testing enableScrollInteraction for list with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListEnableScrollInteraction001
+     * @tc.number SUB_ARKUI_CAPI_LIST_ENABLESCROLLINTERACTION_0100
+     * @tc.desc   testing enableScrollInteraction for list with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListEnableScrollInteraction001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListEnableScrollInteraction001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ENABLESCROLLINTERACTION_0200
-     * @tc.name       : testListEnableScrollInteraction002
-     * @tc.desc       : testing enableScrollInteraction for list with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListEnableScrollInteraction002
+     * @tc.number SUB_ARKUI_CAPI_LIST_ENABLESCROLLINTERACTION_0200
+     * @tc.desc   testing enableScrollInteraction for list with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListEnableScrollInteraction002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListEnableScrollInteraction002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ENABLESCROLLINTERACTION_0300
-     * @tc.name       : testListEnableScrollInteraction003
-     * @tc.desc       : testing enableScrollInteraction for list with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testListEnableScrollInteraction003
+     * @tc.number SUB_ARKUI_CAPI_LIST_ENABLESCROLLINTERACTION_0300
+     * @tc.desc   testing enableScrollInteraction for list with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListEnableScrollInteraction003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListEnableScrollInteraction003()).assertEqual(0)

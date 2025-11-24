@@ -45,10 +45,13 @@ export default function TextCaretColorTest() {
       console.info("TextCaretColor after each called");
     });
 
-    /*
-     * @tc.number       textCaretColor0001
-     * @tc.name         textCaretColor0001
-     * @tc.desc        textCaretColor0001
+    /**
+     * @tc.name   textCaretColor0001
+     * @tc.number textCaretColor0001
+     * @tc.desc   textCaretColor0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textCaretColor0001', Level.LEVEL1, async () => {
       console.info('textCaretColor0001 START');

@@ -44,10 +44,12 @@ export default function NavRouterJsunit() {
     });
 
     /**
-     * @tc.number    NavRouterJsunit_0100
-     * @tc.name      NavRouterJsunit_0100
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   NavRouterJsunit_0100
+     * @tc.number NavRouterJsunit_0100
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavRouterJsunit_0100',  Level.LEVEL0, async  (done:Function) =>{
       // Verify onStateChange function of the main title

@@ -43,12 +43,12 @@ export default function timePickerPropertiesModifierTest() {
     });
 
     /**
-     * @tc.number ArkUI_Stage_timepicker_1000
      * @tc.name   ArkUI_Stage_timepicker_1000
+     * @tc.number ArkUI_Stage_timepicker_1000
      * @tc.desc   Test the properties of components,Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_timepicker_1000', Level.LEVEL1, async (done: Function) => {
       let strJson = getInspectorByKey('timePickerDefault');
@@ -62,12 +62,12 @@ export default function timePickerPropertiesModifierTest() {
     });
 
     /**
-     * @tc.number ArkUI_Stage_timepicker_2000
      * @tc.name   ArkUI_Stage_timepicker_2000
+     * @tc.number ArkUI_Stage_timepicker_2000
      * @tc.desc   Test the properties of components,Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_timepicker_2000', Level.LEVEL1, async (done: Function) => {
       let strJson = getInspectorByKey('timePickerDefault');
@@ -81,12 +81,12 @@ export default function timePickerPropertiesModifierTest() {
     });
 
     /**
-     * @tc.number ArkUI_Stage_timepicker_3000
      * @tc.name   ArkUI_Stage_timepicker_3000
+     * @tc.number ArkUI_Stage_timepicker_3000
      * @tc.desc   Test the properties of components,Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_timepicker_3000', Level.LEVEL1, async (done: Function) => {
       let strJson = getInspectorByKey('timePickerDefault');

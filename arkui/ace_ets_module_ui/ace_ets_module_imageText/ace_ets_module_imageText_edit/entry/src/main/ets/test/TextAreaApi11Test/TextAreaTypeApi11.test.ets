@@ -43,12 +43,12 @@ export default function TextAreaTypeApi11Test() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextAreaTypeApi11Test_0010
-     * @tc.name      TextAreaTypeApi11Test_0010
-     * @tc.desc      test TextArea: TextAreaType.NORMAL
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextAreaTypeApi11Test_0010
+     * @tc.number SUB_ACE_TextAreaTypeApi11Test_0010
+     * @tc.desc   test TextArea: TextAreaType.NORMAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextAreaTypeApi11Test_0010', Level.LEVEL0, async (done: Function) => {
       console.info('[TextAreaTypeApi11Test_0010] START');
@@ -61,12 +61,12 @@ export default function TextAreaTypeApi11Test() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextAreaTypeApi11Test_0020
-     * @tc.name      TextAreaTypeApi11Test_0020
-     * @tc.desc      test TextArea: TextAreaType.NUMBER
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextAreaTypeApi11Test_0020
+     * @tc.number SUB_ACE_TextAreaTypeApi11Test_0020
+     * @tc.desc   test TextArea: TextAreaType.NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextAreaTypeApi11Test_0020', Level.LEVEL0, async (done: Function) => {
       console.info('[TextAreaTypeApi11Test_0020] START');

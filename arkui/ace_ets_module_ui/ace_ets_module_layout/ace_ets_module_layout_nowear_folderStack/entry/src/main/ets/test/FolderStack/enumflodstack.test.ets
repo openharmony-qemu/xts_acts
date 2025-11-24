@@ -43,12 +43,12 @@ export default function enumFolderTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_enumFolderTest_0100
-     * @tc.name: enumFolderTest_0100
-     * @tc.desc: FolderStackAPI 
-     * @tc.level: Level 0
-     * @tc.type : FolderStack
-     * @tc.size : FolderStackTest
+     * @tc.name   enumFolderTest_0100
+     * @tc.number SUB_ARKUI_API_enumFolderTest_0100
+     * @tc.desc   FolderStackAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('enumFolderTest_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[enumFolderTest_0100] START');

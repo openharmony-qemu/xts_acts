@@ -47,9 +47,12 @@ export default function RelativeContainer_Level() {
       console.info("RelativeContainer_Level after each called")
     });
     /**
+     * @tc.name   SUB_ACE_RelativeContainer_Level_TEST_0100
      * @tc.number SUB_ACE_RelativeContainer_Level_TEST_0100
-     * @tc.name testRelativeContainer
-     * @tc.desc text set align:HorizontalAlign.Start
+     * @tc.desc   text set align:HorizontalAlign.Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_RelativeContainer_Level_TEST_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_RelativeContainer_Level_TEST_0100] START');
@@ -72,9 +75,12 @@ export default function RelativeContainer_Level() {
     });
 
     /**
+     * @tc.name   SUB_ACE_RelativeContainer_Level_TEST_0200
      * @tc.number SUB_ACE_RelativeContainer_Level_TEST_0200
-     * @tc.name testRelativeContainer
-     * @tc.desc text set align:HorizontalAlign.Center
+     * @tc.desc   text set align:HorizontalAlign.Center
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_RelativeContainer_Level_TEST_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_RelativeContainer_Level_TEST_0200] START');
@@ -99,9 +105,12 @@ export default function RelativeContainer_Level() {
     });
 
     /**
+     * @tc.name   SUB_ACE_RelativeContainer_Level_TEST_0300
      * @tc.number SUB_ACE_RelativeContainer_Level_TEST_0300
-     * @tc.name testRelativeContainer
-     * @tc.desc text set align:HorizontalAlign.End
+     * @tc.desc   text set align:HorizontalAlign.End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_RelativeContainer_Level_TEST_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_RelativeContainer_Level_TEST_0300] START');

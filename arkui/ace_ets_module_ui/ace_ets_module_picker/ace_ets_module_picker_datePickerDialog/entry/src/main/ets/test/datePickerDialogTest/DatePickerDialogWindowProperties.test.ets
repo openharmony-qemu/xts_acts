@@ -46,12 +46,12 @@ export default function DatePickerDialogWindowPropertiesTest() {
     });
 
     /**
+     * @tc.name   DatePickerDialogWindowPropertiesTest0100
      * @tc.number SUB_ACE_DatePickerDialogWindowPropertiesTest0100
-     * @tc.name DatePickerDialogWindowPropertiesTest0100
-     * @tc.desc set api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('DatePickerDialogWindowPropertiesTest0100', Level.LEVEL2, async (done: Function) => {
       console.info('DatePickerDialogWindowPropertiesTest0100 START');

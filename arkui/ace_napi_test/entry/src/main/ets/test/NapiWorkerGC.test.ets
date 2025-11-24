@@ -59,12 +59,12 @@ export default function NapiWorkerGCTest() {
 
   describe('napiWorkerGCTest', () => {
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_0100
-     * @tc.name      : testNapiWorkerGC0001
-     * @tc.desc      : NapiWorkerTest getLastError
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0001
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_0100
+     * @tc.desc   NapiWorkerTest getLastError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0001';
@@ -85,12 +85,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_0200
-     * @tc.name      : testNapiWorkerGC0002
-     * @tc.desc      : NapiWorkerTest isError
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0002
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_0200
+     * @tc.desc   NapiWorkerTest isError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0002';
@@ -111,12 +111,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_0300
-     * @tc.name      : testNapiWorkerGC0003
-     * @tc.desc      : NapiWorkerTest createError
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0003
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_0300
+     * @tc.desc   NapiWorkerTest createError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0003';
@@ -137,12 +137,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_0400
-     * @tc.name      : testNapiWorkerGC0004
-     * @tc.desc      : NapiWorkerTest createRangeError
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0004
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_0400
+     * @tc.desc   NapiWorkerTest createRangeError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0004';
@@ -163,12 +163,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_0500
-     * @tc.name      : testNapiWorkerGC0005
-     * @tc.desc      : NapiWorkerTest isExceptionPending
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0005
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_0500
+     * @tc.desc   NapiWorkerTest isExceptionPending
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0005';
@@ -189,12 +189,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_0600
-     * @tc.name      : testNapiWorkerGC0006
-     * @tc.desc      : NapiWorkerTest createReference
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0006
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_0600
+     * @tc.desc   NapiWorkerTest createReference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0006';
@@ -215,12 +215,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_0700
-     * @tc.name      : testNapiWorkerGC0007
-     * @tc.desc      : NapiWorkerTest referenceRefAndUnref
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0007
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_0700
+     * @tc.desc   NapiWorkerTest referenceRefAndUnref
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0007';
@@ -241,12 +241,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_0800
-     * @tc.name      : testNapiWorkerGC0008
-     * @tc.desc      : NapiWorkerTest createArrayAndGetLength
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0008
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_0800
+     * @tc.desc   NapiWorkerTest createArrayAndGetLength
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0008';
@@ -268,12 +268,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_0900
-     * @tc.name      : testNapiWorkerGC0009
-     * @tc.desc      : NapiWorkerTest createExternal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0009
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_0900
+     * @tc.desc   NapiWorkerTest createExternal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0009';
@@ -294,12 +294,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_1000
-     * @tc.name      : testNapiWorkerGC0010
-     * @tc.desc      : NapiWorkerTest createExternalArraybuffer
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0010
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_1000
+     * @tc.desc   NapiWorkerTest createExternalArraybuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0010';
@@ -320,12 +320,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_1100
-     * @tc.name      : testNapiWorkerGC0011
-     * @tc.desc      : NapiWorkerTest createObject
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0011
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_1100
+     * @tc.desc   NapiWorkerTest createObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0011';
@@ -346,12 +346,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_1200
-     * @tc.name      : testNapiWorkerGC0012
-     * @tc.desc      : NapiWorkerTest createSymbol
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0012
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_1200
+     * @tc.desc   NapiWorkerTest createSymbol
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0012';
@@ -372,12 +372,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_1300
-     * @tc.name      : testNapiWorkerGC0013
-     * @tc.desc      : NapiWorkerTest createTypeArray
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0013
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_1300
+     * @tc.desc   NapiWorkerTest createTypeArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0013';
@@ -399,12 +399,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_1400
-     * @tc.name      : testNapiWorkerGC0014
-     * @tc.desc      : NapiWorkerTest getValueBool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0014
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_1400
+     * @tc.desc   NapiWorkerTest getValueBool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0014';
@@ -426,12 +426,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_1500
-     * @tc.name      : testNapiWorkerGC0015
-     * @tc.desc      : NapiWorkerTest createAndGetInt32
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0015
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_1500
+     * @tc.desc   NapiWorkerTest createAndGetInt32
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = 'testNapiWorkerGC0015';
@@ -453,12 +453,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_1600
-     * @tc.name      : testNapiWorkerGC0016
-     * @tc.desc      : NapiWorkerTest createAndGetUInt32
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0016
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_1600
+     * @tc.desc   NapiWorkerTest createAndGetUInt32
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0016';
@@ -480,12 +480,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_1700
-     * @tc.name      : testNapiWorkerGC0017
-     * @tc.desc      : NapiWorkerTest createAndGetInt64
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0017
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_1700
+     * @tc.desc   NapiWorkerTest createAndGetInt64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0017';
@@ -507,12 +507,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_1800
-     * @tc.name      : testNapiWorkerGC0018
-     * @tc.desc      : NapiWorkerTest createDouble
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0018
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_1800
+     * @tc.desc   NapiWorkerTest createDouble
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0018';
@@ -534,12 +534,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_1900
-     * @tc.name      : testNapiWorkerGC0019
-     * @tc.desc      : NapiWorkerTest createAndGetStringUtf16
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0019
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_1900
+     * @tc.desc   NapiWorkerTest createAndGetStringUtf16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0019';
@@ -561,12 +561,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_2000
-     * @tc.name      : testNapiWorkerGC0020
-     * @tc.desc      : NapiWorkerTest stringUtf16OfCase
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0020
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_2000
+     * @tc.desc   NapiWorkerTest stringUtf16OfCase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0020';
@@ -588,12 +588,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_2100
-     * @tc.name      : testNapiWorkerGC0021
-     * @tc.desc      : NapiWorkerTest stringUtf16OfCase
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0021
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_2100
+     * @tc.desc   NapiWorkerTest stringUtf16OfCase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0021';
@@ -615,12 +615,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_2200
-     * @tc.name      : testNapiWorkerGC0022
-     * @tc.desc      : NapiWorkerTest getValueExternal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0022
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_2200
+     * @tc.desc   NapiWorkerTest getValueExternal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0022';
@@ -642,12 +642,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_2300
-     * @tc.name      : testNapiWorkerGC0023
-     * @tc.desc      : NapiWorkerTest getNull
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0023
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_2300
+     * @tc.desc   NapiWorkerTest getNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0023';
@@ -669,12 +669,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_2400
-     * @tc.name      : testNapiWorkerGC0024
-     * @tc.desc      : NapiWorkerTest getUndefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0024
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_2400
+     * @tc.desc   NapiWorkerTest getUndefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0024';
@@ -696,12 +696,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_2500
-     * @tc.name      : testNapiWorkerGC0025
-     * @tc.desc      : NapiWorkerTest coerceToBool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0025
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_2500
+     * @tc.desc   NapiWorkerTest coerceToBool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0025';
@@ -723,12 +723,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_2600
-     * @tc.name      : testNapiWorkerGC0026
-     * @tc.desc      : NapiWorkerTest coerceToNumber
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0026
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_2600
+     * @tc.desc   NapiWorkerTest coerceToNumber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0026';
@@ -750,12 +750,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_2700
-     * @tc.name      : testNapiWorkerGC0027
-     * @tc.desc      : NapiWorkerTest coerceToObject
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0027
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_2700
+     * @tc.desc   NapiWorkerTest coerceToObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0027';
@@ -777,12 +777,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_2800
-     * @tc.name      : testNapiWorkerGC0028
-     * @tc.desc      : NapiWorkerTest coerceToString
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0028
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_2800
+     * @tc.desc   NapiWorkerTest coerceToString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0028';
@@ -804,12 +804,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_2900
-     * @tc.name      : testNapiWorkerGC0029
-     * @tc.desc      : NapiWorkerTest typeOf
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0029
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_2900
+     * @tc.desc   NapiWorkerTest typeOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0029';
@@ -831,12 +831,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_3000
-     * @tc.name      : testNapiWorkerGC0030
-     * @tc.desc      : NapiWorkerTest isArray
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0030
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_3000
+     * @tc.desc   NapiWorkerTest isArray
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0030';
@@ -858,12 +858,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_3100
-     * @tc.name      : testNapiWorkerGC0031
-     * @tc.desc      : NapiWorkerTest strictEquals
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0031
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_3100
+     * @tc.desc   NapiWorkerTest strictEquals
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0031';
@@ -885,12 +885,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_3200
-     * @tc.name      : testNapiWorkerGC0032
-     * @tc.desc      : NapiWorkerTest getPropertyNames
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0032
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_3200
+     * @tc.desc   NapiWorkerTest getPropertyNames
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0032';
@@ -912,12 +912,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_3300
-     * @tc.name      : testNapiWorkerGC0033
-     * @tc.desc      : NapiWorkerTest setProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0033
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_3300
+     * @tc.desc   NapiWorkerTest setProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0033';
@@ -939,12 +939,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_3400
-     * @tc.name      : testNapiWorkerGC0034
-     * @tc.desc      : NapiWorkerTest getProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0034
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_3400
+     * @tc.desc   NapiWorkerTest getProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0034';
@@ -966,12 +966,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_3500
-     * @tc.name      : testNapiWorkerGC0035
-     * @tc.desc      : NapiWorkerTest hasProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0035
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_3500
+     * @tc.desc   NapiWorkerTest hasProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0035';
@@ -993,12 +993,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_3600
-     * @tc.name      : testNapiWorkerGC0036
-     * @tc.desc      : NapiWorkerTest setAndDeleteProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0036
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_3600
+     * @tc.desc   NapiWorkerTest setAndDeleteProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0036';
@@ -1025,12 +1025,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_3700
-     * @tc.name      : testNapiWorkerGC0037
-     * @tc.desc      : NapiWorkerTest hasOwnProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0037
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_3700
+     * @tc.desc   NapiWorkerTest hasOwnProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0037';
@@ -1057,12 +1057,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_3800
-     * @tc.name      : testNapiWorkerGC0038
-     * @tc.desc      : NapiWorkerTest setNamedProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0038
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_3800
+     * @tc.desc   NapiWorkerTest setNamedProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0038';
@@ -1084,12 +1084,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_3900
-     * @tc.name      : testNapiWorkerGC0039
-     * @tc.desc      : NapiWorkerTest getNamedProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0039
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_3900
+     * @tc.desc   NapiWorkerTest getNamedProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0039';
@@ -1116,12 +1116,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_4000
-     * @tc.name      : testNapiWorkerGC0040
-     * @tc.desc      : NapiWorkerTest hasNamedProperty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0040
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_4000
+     * @tc.desc   NapiWorkerTest hasNamedProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0040';
@@ -1148,12 +1148,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_4100
-     * @tc.name      : testNapiWorkerGC0041
-     * @tc.desc      : NapiWorkerTest setElement
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0041
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_4100
+     * @tc.desc   NapiWorkerTest setElement
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0041';
@@ -1175,12 +1175,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_4200
-     * @tc.name      : testNapiWorkerGC0042
-     * @tc.desc      : NapiWorkerTest getElement
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0042
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_4200
+     * @tc.desc   NapiWorkerTest getElement
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0042';
@@ -1202,12 +1202,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_4300
-     * @tc.name      : testNapiWorkerGC0043
-     * @tc.desc      : NapiWorkerTest hasElement
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0043
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_4300
+     * @tc.desc   NapiWorkerTest hasElement
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0043';
@@ -1229,12 +1229,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_4400
-     * @tc.name      : testNapiWorkerGC0044
-     * @tc.desc      : NapiWorkerTest deleteElement
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0044
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_4400
+     * @tc.desc   NapiWorkerTest deleteElement
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0044';
@@ -1256,12 +1256,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_4500
-     * @tc.name      : testNapiWorkerGC0045
-     * @tc.desc      : NapiWorkerTest defineProperties
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0045
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_4500
+     * @tc.desc   NapiWorkerTest defineProperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0045';
@@ -1283,12 +1283,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_4600
-     * @tc.name      : testNapiWorkerGC0046
-     * @tc.desc      : NapiWorkerTest callFunctionNull
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0046
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_4600
+     * @tc.desc   NapiWorkerTest callFunctionNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0046';
@@ -1310,12 +1310,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_4700
-     * @tc.name      : testNapiWorkerGC0047
-     * @tc.desc      : NapiWorkerTest napiCreateFunctionFuncNull
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0047
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_4700
+     * @tc.desc   NapiWorkerTest napiCreateFunctionFuncNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0047';
@@ -1337,12 +1337,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_4800
-     * @tc.name      : testNapiWorkerGC0048
-     * @tc.desc      : NapiWorkerTest napiGetCbInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0048
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_4800
+     * @tc.desc   NapiWorkerTest napiGetCbInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0048';
@@ -1364,12 +1364,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_4900
-     * @tc.name      : testNapiWorkerGC0049
-     * @tc.desc      : NapiWorkerTest unwrap
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0049
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_4900
+     * @tc.desc   NapiWorkerTest unwrap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0049';
@@ -1391,12 +1391,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_5000
-     * @tc.name      : testNapiWorkerGC0050
-     * @tc.desc      : NapiWorkerTest removeWrap
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0050
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_5000
+     * @tc.desc   NapiWorkerTest removeWrap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0050';
@@ -1418,12 +1418,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_5100
-     * @tc.name      : testNapiWorkerGC0051
-     * @tc.desc      : NapiWorkerTest getVersion
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0051
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_5100
+     * @tc.desc   NapiWorkerTest getVersion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0051';
@@ -1445,12 +1445,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_5200
-     * @tc.name      : testNapiWorkerGC0052
-     * @tc.desc      : NapiWorkerTest createPromise
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0052
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_5200
+     * @tc.desc   NapiWorkerTest createPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0052';
@@ -1472,12 +1472,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_5300
-     * @tc.name      : testNapiWorkerGC0053
-     * @tc.desc      : NapiWorkerTest resolveAndRejectDeferred
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0053
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_5300
+     * @tc.desc   NapiWorkerTest resolveAndRejectDeferred
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0053';
@@ -1499,12 +1499,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_5400
-     * @tc.name      : testNapiWorkerGC0054
-     * @tc.desc      : NapiWorkerTest isPromise
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0054
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_5400
+     * @tc.desc   NapiWorkerTest isPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0054';
@@ -1526,12 +1526,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_5500
-     * @tc.name      : testNapiWorkerGC0055
-     * @tc.desc      : NapiWorkerTest napiCreateThreadsafeFunction
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0055
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_5500
+     * @tc.desc   NapiWorkerTest napiCreateThreadsafeFunction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0055';
@@ -1553,12 +1553,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_5600
-     * @tc.name      : testNapiWorkerGC0056
-     * @tc.desc      : NapiWorkerTest napiDeleteSerializationDataTest
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0056
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_5600
+     * @tc.desc   NapiWorkerTest napiDeleteSerializationDataTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0056';
@@ -1580,12 +1580,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_5700
-     * @tc.name      : testNapiWorkerGC0057
-     * @tc.desc      : NapiWorkerTest napiCallThreadsafeFunction
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0057
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_5700
+     * @tc.desc   NapiWorkerTest napiCallThreadsafeFunction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0057';
@@ -1607,12 +1607,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_5800
-     * @tc.name      : testNapiWorkerGC0058
-     * @tc.desc      : NapiWorkerTest napiAnotherThreadSafeTest
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0058
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_5800
+     * @tc.desc   NapiWorkerTest napiAnotherThreadSafeTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0058';
@@ -1634,12 +1634,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_5900
-     * @tc.name      : testNapiWorkerGC0059
-     * @tc.desc      : NapiWorkerTest napiRefThreadsafeFunction
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0059
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_5900
+     * @tc.desc   NapiWorkerTest napiRefThreadsafeFunction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0059';
@@ -1661,12 +1661,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_6000
-     * @tc.name      : testNapiWorkerGC0060
-     * @tc.desc      : NapiWorkerTest napiCreateDate
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0060
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_6000
+     * @tc.desc   NapiWorkerTest napiCreateDate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0060';
@@ -1688,12 +1688,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_6100
-     * @tc.name      : testNapiWorkerGC0061
-     * @tc.desc      : NapiWorkerTest napiCreateBigintInt64
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0061
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_6100
+     * @tc.desc   NapiWorkerTest napiCreateBigintInt64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0061';
@@ -1715,12 +1715,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_6200
-     * @tc.name      : testNapiWorkerGC0062
-     * @tc.desc      : NapiWorkerTest napiCreateBigintUint64
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0062
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_6200
+     * @tc.desc   NapiWorkerTest napiCreateBigintUint64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0062';
@@ -1742,12 +1742,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_6300
-     * @tc.name      : testNapiWorkerGC0063
-     * @tc.desc      : NapiWorkerTest napiCreateBigintWords
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0063
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_6300
+     * @tc.desc   NapiWorkerTest napiCreateBigintWords
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0063';
@@ -1769,12 +1769,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_6400
-     * @tc.name      : testNapiWorkerGC0064
-     * @tc.desc      : NapiWorkerTest GetAllPropertyNamesEnvNull
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0064
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_6400
+     * @tc.desc   NapiWorkerTest GetAllPropertyNamesEnvNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0064';
@@ -1796,12 +1796,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_6500
-     * @tc.name      : testNapiWorkerGC0065
-     * @tc.desc      : NapiWorkerTest napiSetInstanceData
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0065
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_6500
+     * @tc.desc   NapiWorkerTest napiSetInstanceData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0065';
@@ -1823,12 +1823,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_6600
-     * @tc.name      : testNapiWorkerGC0066
-     * @tc.desc      : NapiWorkerTest getModuleFileName
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0066
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_6600
+     * @tc.desc   NapiWorkerTest getModuleFileName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0066';
@@ -1850,12 +1850,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_6700
-     * @tc.name      : testNapiWorkerGC0067
-     * @tc.desc      : NapiWorkerTest createAsyncResource
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0067
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_6700
+     * @tc.desc   NapiWorkerTest createAsyncResource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0067';
@@ -1877,12 +1877,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_6800
-     * @tc.name      : testNapiWorkerGC0068
-     * @tc.desc      : NapiWorkerTest asyncWorkWithQos
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0068
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_6800
+     * @tc.desc   NapiWorkerTest asyncWorkWithQos
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0068';
@@ -1907,12 +1907,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_6900
-     * @tc.name      : testNapiWorkerGC0069
-     * @tc.desc      : NapiWorkerTest napiRunScriptPathEnvNull
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0069
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_6900
+     * @tc.desc   NapiWorkerTest napiRunScriptPathEnvNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0069';
@@ -1934,12 +1934,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_7000
-     * @tc.name      : testNapiWorkerGC0070
-     * @tc.desc      : NapiWorkerTest napiLoadModule
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0070
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_7000
+     * @tc.desc   NapiWorkerTest napiLoadModule
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0070';
@@ -1961,12 +1961,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_7100
-     * @tc.name      : testNapiWorkerGC0071
-     * @tc.desc      : NapiWorkerTest createObjectWithProperties
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0071
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_7100
+     * @tc.desc   NapiWorkerTest createObjectWithProperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0071';
@@ -1988,12 +1988,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_7200
-     * @tc.name      : testNapiWorkerGC0072
-     * @tc.desc      : NapiWorkerTest createObjectWithNamedProperties
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0072
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_7200
+     * @tc.desc   NapiWorkerTest createObjectWithNamedProperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0072';
@@ -2015,12 +2015,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_7300
-     * @tc.name      : testNapiWorkerGC0073
-     * @tc.desc      : NapiWorkerTest coerceToNativeBindingObjectEnvNull
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0073
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_7300
+     * @tc.desc   NapiWorkerTest coerceToNativeBindingObjectEnvNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0073';
@@ -2042,12 +2042,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_7400
-     * @tc.name      : testNapiWorkerGC0074
-     * @tc.desc      : NapiWorkerTest napiSerializeTest
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0074
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_7400
+     * @tc.desc   NapiWorkerTest napiSerializeTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0074';
@@ -2069,12 +2069,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_7500
-     * @tc.name      : testNapiWorkerGC0075
-     * @tc.desc      : NapiWorkerTest napiDeSerializeTest
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerGC0075
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_GC_7500
+     * @tc.desc   NapiWorkerTest napiDeSerializeTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerGC0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerGC0075';
@@ -2096,12 +2096,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_SENDABLE_GC_0100
-     * @tc.name      : testNapiWorkerSendableGC0001
-     * @tc.desc      : NapiWorkerTest napiDeSerializeTest
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerSendableGC0001
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_SENDABLE_GC_0100
+     * @tc.desc   NapiWorkerTest napiDeSerializeTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerSendableGC0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerSendableGC0001';
@@ -2123,12 +2123,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_SENDABLE_GC_0200
-     * @tc.name      : testNapiWorkerSendableGC0002
-     * @tc.desc      : NapiWorkerTest napiDeSerializeTest
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerSendableGC0002
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_SENDABLE_GC_0200
+     * @tc.desc   NapiWorkerTest napiDeSerializeTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerSendableGC0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerSendableGC0002';
@@ -2150,12 +2150,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_SENDABLE_GC_0300
-     * @tc.name      : testNapiWorkerSendableGC0003
-     * @tc.desc      : NapiWorkerTest napiDeSerializeTest
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerSendableGC0003
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_SENDABLE_GC_0300
+     * @tc.desc   NapiWorkerTest napiDeSerializeTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerSendableGC0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerSendableGC0003';
@@ -2177,12 +2177,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_SENDABLE_GC_0400
-     * @tc.name      : testNapiWorkerSendableGC0004
-     * @tc.desc      : NapiWorkerTest napiDeSerializeTest
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerSendableGC0004
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_SENDABLE_GC_0400
+     * @tc.desc   NapiWorkerTest napiDeSerializeTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerSendableGC0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerSendableGC0004';
@@ -2204,12 +2204,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_SENDABLE_GC_0500
-     * @tc.name      : testNapiWorkerSendableGC0005
-     * @tc.desc      : NapiWorkerTest napiDeSerializeTest
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerSendableGC0005
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_SENDABLE_GC_0500
+     * @tc.desc   NapiWorkerTest napiDeSerializeTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerSendableGC0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerSendableGC0005';
@@ -2231,12 +2231,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_SENDABLE_GC_0600
-     * @tc.name      : testNapiWorkerSendableGC0006
-     * @tc.desc      : NapiWorkerTest napiDeSerializeTest
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerSendableGC0006
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_SENDABLE_GC_0600
+     * @tc.desc   NapiWorkerTest napiDeSerializeTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerSendableGC0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerSendableGC0006';
@@ -2258,12 +2258,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_SENDABLE_GC_0700
-     * @tc.name      : testNapiWorkerSendableGC0007
-     * @tc.desc      : NapiWorkerTest napiDeSerializeTest
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerSendableGC0007
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_SENDABLE_GC_0700
+     * @tc.desc   NapiWorkerTest napiDeSerializeTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerSendableGC0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerSendableGC0007';
@@ -2286,12 +2286,12 @@ export default function NapiWorkerGCTest() {
       console.info(`${caseName} test end`);
     });
     /**
-     * @tc.number    : SUB_ACE_BASIC_ETS_NAPI_WORKER_SENDABLE_GC_0800
-     * @tc.name      : testNapiWorkerSendableGC0008
-     * @tc.desc      : NapiWorkerTest napiDeSerializeTest
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testNapiWorkerSendableGC0008
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_WORKER_SENDABLE_GC_0800
+     * @tc.desc   NapiWorkerTest napiDeSerializeTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNapiWorkerSendableGC0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName = 'testNapiWorkerSendableGC0008';

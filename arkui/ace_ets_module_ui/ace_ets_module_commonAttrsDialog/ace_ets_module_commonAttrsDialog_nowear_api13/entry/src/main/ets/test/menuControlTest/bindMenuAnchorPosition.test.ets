@@ -58,10 +58,12 @@ export default function bindMenuAnchorPosition() {
     });
 
     /**
+     * @tc.name   bindMenuAnchorPosition_0100
      * @tc.number SUB_ACE_bindMenuAnchorPosition_0100
-     * @tc.name bindMenuAnchorPosition_0100
-     * @tc.desc set api
-     * @tc.level: Level 2
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('bindMenuAnchorPosition_0100', Level.LEVEL0, async (done: Function) => {
       console.info('bindMenuAnchorPosition_0100 START');
@@ -94,10 +96,12 @@ export default function bindMenuAnchorPosition() {
     });
 
     /**
+     * @tc.name   bindMenuAnchorPosition_0200
      * @tc.number SUB_ACE_bindMenuAnchorPosition_0200
-     * @tc.name bindMenuAnchorPosition_0200
-     * @tc.desc set api
-     * @tc.level: Level 2
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('bindMenuAnchorPosition_0200', Level.LEVEL0, async (done: Function) => {
       console.info('bindMenuAnchorPosition_0200 START');
@@ -130,10 +134,12 @@ export default function bindMenuAnchorPosition() {
     });
 
     /**
+     * @tc.name   bindMenuAnchorPosition_0300
      * @tc.number SUB_ACE_bindMenuAnchorPosition_0300
-     * @tc.name bindMenuAnchorPosition_0300
-     * @tc.desc set api
-     * @tc.level: Level 2
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('bindMenuAnchorPosition_0300', Level.LEVEL0, async (done: Function) => {
       console.info('bindMenuAnchorPosition_0300 START');

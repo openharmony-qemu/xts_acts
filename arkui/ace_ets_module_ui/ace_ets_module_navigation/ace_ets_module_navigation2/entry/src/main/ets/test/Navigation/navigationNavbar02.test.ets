@@ -43,12 +43,14 @@ export default function navigationNavbar02() {
       done();
     });
 
-    /* *
-       * @tc.number: navigationNavbar02_001
-       * @tc.name  : navigationNavbar02_001
-       * @tc.desc  : Set navbarWidth to -2
-       * @tc.level : Level 2
-       */
+    /**
+     * @tc.name   navigationNavbar02_001
+     * @tc.number navigationNavbar02_001
+     * @tc.desc   Set navbarWidth to -2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('navigationNavbar02_001',  Level.LEVEL0, async  (done:Function) =>{
 
       console.info('[navigationNavbar02_001] START');
@@ -63,12 +65,14 @@ export default function navigationNavbar02() {
       done();
     });
 
-    /* *
-       * @tc.number: navigationNavbar02_002
-       * @tc.name  : navigationNavbar02_002
-       * @tc.desc  : Set navbarWidth to 0
-       * @tc.level : Level 2
-       */
+    /**
+     * @tc.name   navigationNavbar02_002
+     * @tc.number navigationNavbar02_002
+     * @tc.desc   Set navbarWidth to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('navigationNavbar02_002',  Level.LEVEL0, async  (done:Function) =>{
 
       console.info('[navigationNavbar02_002] START');
@@ -84,12 +88,14 @@ export default function navigationNavbar02() {
       done();
     });
 
-    /* *
-       * @tc.number: navigationNavbar02_003
-       * @tc.name  : navigationNavbar02_003
-       * @tc.desc  : Set navbarWidth to 260
-       * @tc.level : Level 2
-       */
+    /**
+     * @tc.name   navigationNavbar02_003
+     * @tc.number navigationNavbar02_003
+     * @tc.desc   Set navbarWidth to 260
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('navigationNavbar02_003',  Level.LEVEL0, async  (done:Function) =>{
 
       console.info('[navigationNavbar02_003] START');
@@ -105,12 +111,14 @@ export default function navigationNavbar02() {
       done();
     });
 
-    /* *
-       * @tc.number: navigationNavbar02_004
-       * @tc.name  : navigationNavbar02_004
-       * @tc.desc  : Set mode to NavigationMode.Stack
-       * @tc.level : Level 2
-       */
+    /**
+     * @tc.name   navigationNavbar02_004
+     * @tc.number navigationNavbar02_004
+     * @tc.desc   Set mode to NavigationMode.Stack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('navigationNavbar02_004',  Level.LEVEL0, async  (done:Function) =>{
 
       console.info('[navigationNavbar02_004] START');
@@ -126,12 +134,14 @@ export default function navigationNavbar02() {
       done();
     });
 
-    /* *
-       * @tc.number: navigationNavbar02_005
-       * @tc.name  : navigationNavbar02_005
-       * @tc.desc  : Set hideNavBar to true
-       * @tc.level : Level 2
-       */
+    /**
+     * @tc.name   navigationNavbar02_005
+     * @tc.number navigationNavbar02_005
+     * @tc.desc   Set hideNavBar to true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('navigationNavbar02_005',  Level.LEVEL0, async  (done:Function) =>{
 
       console.info('[navigationNavbar02_005] START');
@@ -147,12 +157,14 @@ export default function navigationNavbar02() {
       done();
     });
 
-    /* *
-       * @tc.number: navigationNavbar02_006
-       * @tc.name  : navigationNavbar02_006
-       * @tc.desc  : Set minContentWidth to -2
-       * @tc.level : Level 2
-       */
+    /**
+     * @tc.name   navigationNavbar02_006
+     * @tc.number navigationNavbar02_006
+     * @tc.desc   Set minContentWidth to -2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('navigationNavbar02_006',  Level.LEVEL0, async  (done:Function) =>{
 
       console.info('[navigationNavbar02_006] START');
@@ -168,12 +180,14 @@ export default function navigationNavbar02() {
       done();
     });
 
-    /* *
-       * @tc.number: SUB_ACE_COMPONENT_SR000I1RO8_010
-       * @tc.name  : navigationNavbar02_007
-       * @tc.desc  : Set minContentWidth to 0
-       * @tc.level : Level 2
-       */
+    /**
+     * @tc.name   navigationNavbar02_007
+     * @tc.number SUB_ACE_COMPONENT_SR000I1RO8_010
+     * @tc.desc   Set minContentWidth to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     // it('navigationNavbar02_007',  Level.LEVEL0, async  (done:Function) =>{
     //
     //   console.info('[navigationNavbar02_007] START');
@@ -189,12 +203,14 @@ export default function navigationNavbar02() {
     //   done();
     // });
 
-    /* *
-       * @tc.number: navigationNavbar02_008
-       * @tc.name  : navigationNavbar02_008
-       * @tc.desc  : Set minContentWidth to 360
-       * @tc.level : Level 2
-       */
+    /**
+     * @tc.name   navigationNavbar02_008
+     * @tc.number navigationNavbar02_008
+     * @tc.desc   Set minContentWidth to 360
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('navigationNavbar02_008',  Level.LEVEL0, async  (done:Function) =>{
 
       console.info('[navigationNavbar02_008] START');
@@ -210,12 +226,14 @@ export default function navigationNavbar02() {
       done();
     });
 
-    /* *
-       * @tc.number: navigationNavbar02_009
-       * @tc.name  : navigationNavbar02_009
-       * @tc.desc  : Set mode to NavigationMode.Split
-       * @tc.level : Level 2
-       */
+    /**
+     * @tc.name   navigationNavbar02_009
+     * @tc.number navigationNavbar02_009
+     * @tc.desc   Set mode to NavigationMode.Split
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('navigationNavbar02_009',  Level.LEVEL0, async  (done:Function) =>{
 
       console.info('[navigationNavbar02_011] START');
@@ -231,12 +249,14 @@ export default function navigationNavbar02() {
       done();
     });
 
-    /* *
-       * @tc.number: navigationNavbar02_010
-       * @tc.name  : navigationNavbar02_010
-       * @tc.desc  : Set mode to NavigationMode.Auto
-       * @tc.level : Level 2
-       */
+    /**
+     * @tc.name   navigationNavbar02_010
+     * @tc.number navigationNavbar02_010
+     * @tc.desc   Set mode to NavigationMode.Auto
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('navigationNavbar02_010',  Level.LEVEL0, async  (done:Function) =>{
 
       console.info('[navigationNavbar02_012] START');

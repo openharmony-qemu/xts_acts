@@ -45,10 +45,13 @@ export default function textAreaInputTest() {
       console.info("textAreaInputTest after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         textAreaInputTest0001
-     * @tc.desic        Adapt to Xiaoyi input method pop-up window
+    /**
+     * @tc.name   textAreaInputTest0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   textAreaInputTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textAreaInputTest0001', Level.LEVEL0, async () => {
       let driver = Driver.create();

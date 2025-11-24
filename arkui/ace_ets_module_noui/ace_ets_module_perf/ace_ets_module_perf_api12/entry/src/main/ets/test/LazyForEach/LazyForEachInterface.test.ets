@@ -59,10 +59,12 @@ export default function LazyForEachInterface() {
     });
 
     /**
+     * @tc.name   LazyForEachInterface_001
      * @tc.number LazyForEachInterface_001
-     * @tc.name LazyForEachInterface_001
-     * @tc.desc Test LazyForEachInterface
-     * @tc.level: Level 2
+     * @tc.desc   Test LazyForEachInterface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('LazyForEachInterface_001', Level.LEVEL1, async (done: Function) => {
       console.info('[LazyForEachInterface_001] START');      
@@ -77,10 +79,12 @@ export default function LazyForEachInterface() {
     });
 
     /**
+     * @tc.name   LazyForEachInterface_002
      * @tc.number LazyForEachInterface_002
-     * @tc.name LazyForEachInterface_002
-     * @tc.desc Test LazyForEachInterface
-     * @tc.level: Level 1
+     * @tc.desc   Test LazyForEachInterface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('LazyForEachInterface_002', Level.LEVEL1, async (done: Function) => {
       console.info('[LazyForEachInterface_002] START');      
@@ -95,10 +99,12 @@ export default function LazyForEachInterface() {
     });
 
     /**
+     * @tc.name   LazyForEachInterface_003
      * @tc.number LazyForEachInterface_003
-     * @tc.name LazyForEachInterface_003
-     * @tc.desc Test LazyForEachInterface
-     * @tc.level: Level 1
+     * @tc.desc   Test LazyForEachInterface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('LazyForEachInterface_003', Level.LEVEL1, async (done: Function) => {
       console.info('[LazyForEachInterface_003] START');      

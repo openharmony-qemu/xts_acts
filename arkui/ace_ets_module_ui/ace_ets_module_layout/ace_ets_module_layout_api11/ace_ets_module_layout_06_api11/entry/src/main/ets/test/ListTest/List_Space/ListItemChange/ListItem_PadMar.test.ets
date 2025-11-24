@@ -65,9 +65,12 @@ export default function listItem_PadMar() {
     });
 
     /**
+     * @tc.name   testListItemPadMar
      * @tc.number SUB_ACE_LIST_LISTITEM_PADMAR_TEST_0100
-     * @tc.name testListItemPadMar
-     * @tc.desc ListItem subcomponent binding padding and margin properties
+     * @tc.desc   ListItem subcomponent binding padding and margin properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListItemPadMar',  Level.LEVEL0, async (done: Function) => {
       console.info('new testListItemPadMar START');

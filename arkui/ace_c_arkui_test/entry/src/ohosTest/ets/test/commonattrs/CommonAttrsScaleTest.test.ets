@@ -26,130 +26,130 @@ export default function commonAttrsScaleTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_SCALE_0100
-     * @tc.name       : testCommonAttrsScale001
-     * @tc.desc       : testing scale for flex with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsScale001
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_SCALE_0100
+     * @tc.desc   testing scale for flex with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsScale001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsScale001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_SCALE_0200
-     * @tc.name       : testCommonAttrsScale002
-     * @tc.desc       : testing scale for flex with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsScale002
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_SCALE_0200
+     * @tc.desc   testing scale for flex with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsScale002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsScale002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_SCALE_0300
-     * @tc.name       : testCommonAttrsScale003
-     * @tc.desc       : testing scale for flex with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsScale003
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_SCALE_0300
+     * @tc.desc   testing scale for flex with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsScale003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsScale003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_SCALE_0400
-     * @tc.name       : testCommonAttrsScale004
-     * @tc.desc       : testing scale for flex with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsScale004
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_SCALE_0400
+     * @tc.desc   testing scale for flex with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsScale004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsScale004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_SCALE_0500
-     * @tc.name       : testCommonAttrsScale005
-     * @tc.desc       : testing scale for flex with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsScale005
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_SCALE_0500
+     * @tc.desc   testing scale for flex with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsScale005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsScale005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_SCALE_0600
-     * @tc.name       : testCommonAttrsScale006
-     * @tc.desc       : testing scale for flex with invalid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsScale006
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_SCALE_0600
+     * @tc.desc   testing scale for flex with invalid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsScale006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsScale006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_SCALE_0700
-     * @tc.name       : testCommonAttrsScale007
-     * @tc.desc       : testing scale for flex with invalid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsScale007
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_SCALE_0700
+     * @tc.desc   testing scale for flex with invalid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsScale007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsScale007()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_SCALE_0800
-     * @tc.name       : testCommonAttrsScale008
-     * @tc.desc       : testing scale for flex with invalid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsScale008
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_SCALE_0800
+     * @tc.desc   testing scale for flex with invalid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsScale008', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsScale008()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_SCALE_0500
-     * @tc.name       : testCommonAttrsScale009
-     * @tc.desc       : testing scale for flex with invalid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsScale009
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_SCALE_0500
+     * @tc.desc   testing scale for flex with invalid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsScale009', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsScale009()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_SCALE_0500
-     * @tc.name       : testCommonAttrsScale010
-     * @tc.desc       : testing scale for flex with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsScale010
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_SCALE_0500
+     * @tc.desc   testing scale for flex with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsScale010', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsScale010()).assertEqual(0)

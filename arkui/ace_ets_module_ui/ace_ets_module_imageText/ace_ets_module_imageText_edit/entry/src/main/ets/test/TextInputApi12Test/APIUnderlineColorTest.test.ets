@@ -43,10 +43,12 @@ export default function APIUnderlineColorTest() {
     });
 
     /**
-     * @tc.number    APIUnderlineColorTest_001
-     * @tc.desc      api
-     * @tc.level     Level 3
-     * @tc.type
+     * @tc.name   APIUnderlineColorTest_001
+     * @tc.number APIUnderlineColorTest_001
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('APIUnderlineColorTest_001',  Level.LEVEL3, async (done: Function) => {
       console.info('[APIUnderlineColorTest_001] START');

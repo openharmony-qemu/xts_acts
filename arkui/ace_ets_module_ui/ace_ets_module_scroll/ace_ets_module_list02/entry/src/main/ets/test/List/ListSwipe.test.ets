@@ -41,13 +41,13 @@ export default function ListSwipeTest() {
       done()
     });
 
-    /*
-     * @tc.number :ArkUI_List_Swipe_0100
-     * @tc.name   :test onStateChange callback when swipe left
-     * @tc.desc   :swipe left to EXPANDED state, end onStateChange will be called
-     * @tc.level  :Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ArkUI_List_Swipe_0100
+     * @tc.number ArkUI_List_Swipe_0100
+     * @tc.desc   swipe left to EXPANDED state, end onStateChange will be called
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_List_Swipe_0100', Level.LEVEL1, async (done: Function) => {
       let CASE: string = 'ArkUI_List_Swipe_0100'
@@ -73,13 +73,13 @@ export default function ListSwipeTest() {
       done()
     });
 
-    /*
-     * @tc.number :ArkUI_List_Swipe_0300
-     * @tc.name   :test onStateChange callback when swipe right
-     * @tc.desc   :swipe right to EXPANDED state, end onStateChange will be called
-     * @tc.level  :Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ArkUI_List_Swipe_0300
+     * @tc.number ArkUI_List_Swipe_0300
+     * @tc.desc   swipe right to EXPANDED state, end onStateChange will be called
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_List_Swipe_0300', Level.LEVEL1, async (done: Function) => {
       let CASE: string = 'ArkUI_List_Swipe_0300'
@@ -112,13 +112,13 @@ export default function ListSwipeTest() {
       done()
     });
 
-    /*
-     * @tc.number :ArkUI_List_Swipe_0400
-     * @tc.name   :test closeAllSwipeActions interface
-     * @tc.desc   :collapse expand item in ArkUI_List_Swipe_0200 by closeAllSwipeActions, onFinish will be called
-     * @tc.level  :Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ArkUI_List_Swipe_0400
+     * @tc.number ArkUI_List_Swipe_0400
+     * @tc.desc   collapse expand item in ArkUI_List_Swipe_0200 by closeAllSwipeActions, onFinish will be called
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_List_Swipe_0400', Level.LEVEL1, async (done: Function) => {
       let CASE: string = 'ArkUI_List_Swipe_0400'
@@ -138,13 +138,13 @@ export default function ListSwipeTest() {
       done()
     });
 
-    /*
-     * @tc.number :ArkUI_List_Swipe_0500
-     * @tc.name   :test onOffsetChange when swipe left
-     * @tc.desc   :swipe left to EXPANDED state, onOffsetChange will be less than 0.
-     * @tc.level  :Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ArkUI_List_Swipe_0500
+     * @tc.number ArkUI_List_Swipe_0500
+     * @tc.desc   swipe left to EXPANDED state, onOffsetChange will be less than 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_List_Swipe_0500', Level.LEVEL1, async (done: Function) => {
       let CASE: string = 'ArkUI_List_Swipe_0500'

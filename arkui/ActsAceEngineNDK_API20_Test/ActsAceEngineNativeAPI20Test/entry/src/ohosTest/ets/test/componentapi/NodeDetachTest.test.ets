@@ -24,12 +24,12 @@ export default function NodeDetachTest() {
       await Utils.pushPageNoClear("componentapi/NodeDetachTest", done)
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_NODE_CONTENT_EVENT_ON_DETACH_FROM_WINDOW_0100
-     * @tc.name    : testNodeContentEventType0100
-     * @tc.desc    : Test the NativeDisplayManager_SourceMode.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testNodeContentEventType0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_NODE_CONTENT_EVENT_ON_DETACH_FROM_WINDOW_0100
+     * @tc.desc   Test the NativeDisplayManager_SourceMode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNodeContentEventType0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       try{

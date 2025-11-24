@@ -41,12 +41,12 @@ export default function EllipseResourceTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_EllipseResourceTest_0100
-     * @tc.name: testellipseEllipseResourceTest_0100Ne0001
-     * @tc.desc: EllipseAPI 
-     * @tc.level: Level 0
-     * @tc.type : Ellipse
-     * @tc.size : EllipseTest
+     * @tc.name   EllipseResourceTest_0100
+     * @tc.number SUB_ARKUI_API_EllipseResourceTest_0100
+     * @tc.desc   EllipseAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('EllipseResourceTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[EllipseResourceTest_0100] START');

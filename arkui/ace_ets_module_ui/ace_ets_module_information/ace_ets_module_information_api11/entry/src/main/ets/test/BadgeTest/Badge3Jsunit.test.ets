@@ -54,6 +54,14 @@ export default function badge3Jsunit() {
       console.info("badge after each called");
     })
 
+    /**
+     * @tc.name   testBadge01
+     * @tc.number testBadge01
+     * @tc.desc   testBadge01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testBadge01', Level.LEVEL0, async (done: Function) => {
       console.info('[testBadge01] START');
       await CommonFunc.sleep(1000);
@@ -67,6 +75,14 @@ export default function badge3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testBadge03
+     * @tc.number testBadge03
+     * @tc.desc   testBadge03
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testBadge03', Level.LEVEL0, async (done: Function) => {
       console.info('[testBadge03] START');
       await CommonFunc.sleep(1000);
@@ -94,6 +110,14 @@ export default function badge3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testBadge02
+     * @tc.number testBadge02
+     * @tc.desc   testBadge02
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testBadge02', Level.LEVEL0, async (done: Function) => {
       console.info('[testBadge02] START');
       await CommonFunc.sleep(1000);
@@ -120,6 +144,14 @@ export default function badge3Jsunit() {
     });
 
 
+    /**
+     * @tc.name   testBadge04
+     * @tc.number testBadge04
+     * @tc.desc   testBadge04
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testBadge04', Level.LEVEL0, async (done: Function) => {
       console.info('[testBadge04] START');
       await CommonFunc.sleep(1000);
@@ -145,6 +177,14 @@ export default function badge3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testBadge05
+     * @tc.number testBadge05
+     * @tc.desc   testBadge05
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testBadge05', Level.LEVEL0, async (done: Function) => {
       console.info('[testBadge05] START');
       await CommonFunc.sleep(1000);
@@ -173,6 +213,14 @@ export default function badge3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testBadge06
+     * @tc.number testBadge06
+     * @tc.desc   testBadge06
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testBadge06', Level.LEVEL0, async (done: Function) => {
       console.info('[testBadge06] START');
       await CommonFunc.sleep(1000);
@@ -184,6 +232,14 @@ export default function badge3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testBadge07
+     * @tc.number testBadge07
+     * @tc.desc   testBadge07
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testBadge07', Level.LEVEL0, async (done: Function) => {
       console.info('[testBadge07] START');
       await CommonFunc.sleep(1000);
@@ -195,6 +251,14 @@ export default function badge3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testBadge08
+     * @tc.number testBadge08
+     * @tc.desc   testBadge08
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testBadge08', Level.LEVEL0, async (done: Function) => {
       console.info('[testBadge08] START');
       await CommonFunc.sleep(1000);
@@ -220,6 +284,14 @@ export default function badge3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testBadge09
+     * @tc.number testBadge09
+     * @tc.desc   testBadge09
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testBadge09', Level.LEVEL0, async (done: Function) => {
       console.info('[testBadge09] START');
       await CommonFunc.sleep(1000);
@@ -245,6 +317,14 @@ export default function badge3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testBadge10
+     * @tc.number testBadge10
+     * @tc.desc   testBadge10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testBadge10', Level.LEVEL0, async (done: Function) => {
       console.info('[testBadge10] START');
       await CommonFunc.sleep(1000);
@@ -270,6 +350,14 @@ export default function badge3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testBadge11
+     * @tc.number testBadge11
+     * @tc.desc   testBadge11
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testBadge11', Level.LEVEL0, async (done: Function) => {
       console.info('[testBadge11] START');
       await CommonFunc.sleep(1000);

@@ -47,12 +47,12 @@ export default function notifyDragStartRequestTest() {
     });
 
     /**
-     * @tc.number    notifyDragStartRequestTest_0010
-     * @tc.name      notifyDragStartRequestTest
-     * @tc.desc      api PreDrag
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   notifyDragStartRequestTest_0010
+     * @tc.number notifyDragStartRequestTest_0010
+     * @tc.desc   api PreDrag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('notifyDragStartRequestTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('notifyDragStartRequestTest_0010 START');

@@ -46,10 +46,12 @@ export default function bindMenuTesttt() {
     });
 
     /**
-     * @tc.number       bindMenuTest_0100
-     * @tc.name         bindMenuTest_0100
-     * @tc.desc        bindMenuTest_0100 test
-     * @tc.level       Level 2
+     * @tc.name   bindMenuTest_0100
+     * @tc.number bindMenuTest_0100
+     * @tc.desc   bindMenuTest_0100 test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindMenuTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('bindMenuTest_0100 START');

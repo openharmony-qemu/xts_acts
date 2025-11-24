@@ -46,10 +46,12 @@ export default function flexBase_AutoJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignAutoFlexWidHeiMeet
      * @tc.number SUB_ACE_FLEXALIGNITEMS_AUTO_0100
-     * @tc.name testFlexItemAlignAutoFlexWidHeiMeet
-     * @tc.desc The subcomponent is inside the parent component when the width of parent component set to 500,
-     *               the height of parent component set to 200.
+     * @tc.desc   The subcomponent is inside the parent component when the width of parent component set to 500,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignAutoFlexWidHeiMeet',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignAutoFlexWidHeiMeet START');
@@ -86,10 +88,12 @@ export default function flexBase_AutoJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignAutoFlexWidHeiOverflow
      * @tc.number SUB_ACE_FLEXALIGNITEMS_AUTO_0200
-     * @tc.name testFlexItemAlignAutoFlexWidHeiOverflow
-     * @tc.desc The subcomponent exceeds the parent component when the width of parent component set to 420,
-     *               the height of parent component set to 140.
+     * @tc.desc   The subcomponent exceeds the parent component when the width of parent component set to 420,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignAutoFlexWidHeiOverflow',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignAutoFlexWidHeiOverflow START');

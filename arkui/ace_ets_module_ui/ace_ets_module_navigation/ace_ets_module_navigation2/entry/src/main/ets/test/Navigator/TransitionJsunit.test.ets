@@ -47,10 +47,12 @@ export default function transitionJsunit() {
     });
 
     /**
-     * @tc.number    transitionTest_0100
-     * @tc.name      transitionTest_0100
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   transitionTest_0100
+     * @tc.number transitionTest_0100
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('transitionTest_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('transitionTest_0100 START');
@@ -65,10 +67,12 @@ export default function transitionJsunit() {
     });
 
     /**
-     * @tc.number    transitionTest_0200
-     * @tc.name      transitionTest_0200
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   transitionTest_0200
+     * @tc.number transitionTest_0200
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('transitionTest_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('transitionTest_0200 START');
@@ -93,10 +97,12 @@ export default function transitionJsunit() {
     });
 
     /**
-     * @tc.number    transitionTest_0300
-     * @tc.name      transitionTest_0300
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   transitionTest_0300
+     * @tc.number transitionTest_0300
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('transitionTest_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('transitionTest_0300 START');
@@ -125,10 +131,12 @@ export default function transitionJsunit() {
     });
 
     /**
-     * @tc.number    transitionTest_0400
-     * @tc.name      transitionTest_0400
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   transitionTest_0400
+     * @tc.number transitionTest_0400
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('transitionTest_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('transitionTest_0400 START');

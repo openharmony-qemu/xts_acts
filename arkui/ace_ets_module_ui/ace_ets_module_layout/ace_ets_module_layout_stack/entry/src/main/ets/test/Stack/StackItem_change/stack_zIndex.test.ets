@@ -122,10 +122,12 @@ export default function Stack_ZIndex() {
       console.info("Stack_ZIndex after each called");
     });
     /**
+     * @tc.name   testStackZIndexWithAlignmentStart
      * @tc.number SUB_ACE_STACK_ZINDEX_TEST_0400
-     * @tc.name testStackZIndexWithAlignmentStart
-     * @tc.desc The stack component sets alignContent to Alignment.Start and sets the zIndex of
-     *               the first subcomponent
+     * @tc.desc   The stack component sets alignContent to Alignment.Start and sets the zIndex of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackZIndexWithAlignmentStart',  Level.LEVEL0, async (done: Function) => {
       console.info('[testStackZIndexWithAlignmentStart] START');
@@ -174,10 +176,12 @@ export default function Stack_ZIndex() {
       done();
     });
     /**
+     * @tc.name   testStackZIndexWithAlignmentCenter
      * @tc.number SUB_ACE_STACK_ZINDEX_TEST_0500
-     * @tc.name testStackZIndexWithAlignmentCenter
-     * @tc.desc The stack component sets alignContent to Alignment.Center and sets the zIndex of
-     *               the first subcomponent
+     * @tc.desc   The stack component sets alignContent to Alignment.Center and sets the zIndex of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackZIndexWithAlignmentCenter',  Level.LEVEL0, async (done: Function) => {
       console.info('[testStackZIndexWithAlignmentCenter] START');
@@ -230,10 +234,12 @@ export default function Stack_ZIndex() {
       done();
     });
     /**
+     * @tc.name   testStackZIndexWithAlignmentEnd
      * @tc.number SUB_ACE_STACK_ZINDEX_TEST_0600
-     * @tc.name testStackZIndexWithAlignmentEnd
-     * @tc.desc The stack component sets alignContent to Alignment.End and sets the zIndex of
-     *               the first subcomponent
+     * @tc.desc   The stack component sets alignContent to Alignment.End and sets the zIndex of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackZIndexWithAlignmentEnd',  Level.LEVEL0, async (done: Function) => {
       console.info('[testStackZIndexWithAlignmentEnd] START');
@@ -283,10 +289,12 @@ export default function Stack_ZIndex() {
       done();
     });
     /**
+     * @tc.name   testStackZIndexWithAlignmentBottomStart
      * @tc.number SUB_ACE_STACK_ZINDEX_TEST_0700
-     * @tc.name testStackZIndexWithAlignmentBottomStart
-     * @tc.desc The stack component sets alignContent to Alignment.BottomStart and sets the zIndex of
-     *               the first subcomponent
+     * @tc.desc   The stack component sets alignContent to Alignment.BottomStart and sets the zIndex of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackZIndexWithAlignmentBottomStart',  Level.LEVEL0, async (done: Function) => {
       console.info('[testStackZIndexWithAlignmentBottomStart] START');
@@ -332,10 +340,12 @@ export default function Stack_ZIndex() {
       done();
     });
     /**
+     * @tc.name   testStackZIndexWithAlignmentBottom
      * @tc.number SUB_ACE_STACK_ZINDEX_TEST_0800
-     * @tc.name testStackZIndexWithAlignmentBottom
-     * @tc.desc The stack component sets alignContent to Alignment.Bottom and sets the zIndex of
-     *               the first subcomponent
+     * @tc.desc   The stack component sets alignContent to Alignment.Bottom and sets the zIndex of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackZIndexWithAlignmentBottom',  Level.LEVEL0, async (done: Function) => {
       console.info('[testStackZIndexWithAlignmentBottom] START');
@@ -385,10 +395,12 @@ export default function Stack_ZIndex() {
       done();
     });
     /**
+     * @tc.name   testStackZIndexWithAlignmentBottomEnd
      * @tc.number SUB_ACE_STACK_ZINDEX_TEST_0900
-     * @tc.name testStackZIndexWithAlignmentBottomEnd
-     * @tc.desc The stack component sets alignContent to Alignment.BottomEnd and sets the zIndex of
-     *               the first subcomponent
+     * @tc.desc   The stack component sets alignContent to Alignment.BottomEnd and sets the zIndex of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackZIndexWithAlignmentBottomEnd',  Level.LEVEL0, async (done: Function) => {
       console.info('[testStackZIndexWithAlignmentBottomEnd] START');

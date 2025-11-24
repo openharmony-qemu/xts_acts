@@ -43,12 +43,12 @@ export default function symbolTabs() {
     });
 
     /**
-     * @tc.number    symbolTabs_001
-     * @tc.name      symbolTabs_0100
-     * @tc.desc      The tab style of the tabs component
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   symbolTabs_0100
+     * @tc.number symbolTabs_001
+     * @tc.desc   The tab style of the tabs component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('symbolTabs_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[symbolTabs_0100] START');

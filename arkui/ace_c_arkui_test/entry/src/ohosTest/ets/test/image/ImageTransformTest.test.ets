@@ -26,65 +26,65 @@ export default function imageTransformTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_TRANSFORM_0100
-     * @tc.name       : testImageTransform001
-     * @tc.desc       : testing transform for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageTransform001
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_TRANSFORM_0100
+     * @tc.desc   testing transform for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageTransform001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageTransform001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_TRANSFORM_0200
-     * @tc.name       : testImageTransform002
-     * @tc.desc       : testing transform for image with exception value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageTransform002
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_TRANSFORM_0200
+     * @tc.desc   testing transform for image with exception value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageTransform002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageTransform002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_TRANSFORM_0300
-     * @tc.name       : testImageTransform003
-     * @tc.desc       : testing transform for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageTransform003
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_TRANSFORM_0300
+     * @tc.desc   testing transform for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageTransform003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageTransform003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_TRANSFORM_0400
-     * @tc.name       : testImageTransform004
-     * @tc.desc       : testing transform for image with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageTransform004
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_TRANSFORM_0400
+     * @tc.desc   testing transform for image with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageTransform004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageTransform004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_TRANSFORM_0500
-     * @tc.name       : testImageTransform005
-     * @tc.desc       : testing transform for image with boundary value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageTransform005
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_TRANSFORM_0500
+     * @tc.desc   testing transform for image with boundary value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageTransform005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageTransform005()).assertEqual(0)

@@ -49,12 +49,12 @@ export default function toolBarPageTest() {
     })
 
     /**
+     * @tc.name   toolBarPageTest_0100
      * @tc.number toolBarPageTest
-     * @tc.name toolBarPageTest_0100
-     * @tc.desc Test toolBarPage
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test toolBarPage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('toolBarPageTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[toolBarPageTest_0100] START');

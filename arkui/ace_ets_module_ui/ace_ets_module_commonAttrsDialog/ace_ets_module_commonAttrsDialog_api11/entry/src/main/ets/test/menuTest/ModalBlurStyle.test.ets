@@ -62,14 +62,14 @@ export default function ModalBlurStyle() {
       console.log('reset button click succ')
       await CommonFunc.sleep(1000);
     });
-    /* *
-    * @tc.number: SUB_ACE_MODALDEMO_BLUESTYLE_0010
-    * @tc.name  : ModalBlurStyle_0100
-    * @tc.desc  : API11 adds a blurred background for half-modal panels.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   ModalBlurStyle_0100
+     * @tc.number SUB_ACE_MODALDEMO_BLUESTYLE_0010
+     * @tc.desc   API11 adds a blurred background for half-modal panels.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ModalBlurStyle_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ModalBlurStyle_0100 START');
       await CommonFunc.sleep(1000);
@@ -86,14 +86,14 @@ export default function ModalBlurStyle() {
       console.info('[ModalBlurStyle_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_MODALDEMO_BLUESTYLE_0020
-    * @tc.name  : ModalBlurStyle_0200
-    * @tc.desc  : API11 adds a blurred background for half-modal panels.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   ModalBlurStyle_0200
+     * @tc.number SUB_ACE_MODALDEMO_BLUESTYLE_0020
+     * @tc.desc   API11 adds a blurred background for half-modal panels.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ModalBlurStyle_0200', Level.LEVEL0, async (done: Function) => {
       console.info('ModalBlurStyle_0200 START');
       await CommonFunc.sleep(1000);
@@ -109,14 +109,14 @@ export default function ModalBlurStyle() {
       console.info('[ModalBlurStyle_0200] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_MODALDEMO_BLUESTYLE_0030
-    * @tc.name  : ModalBlurStyle_0300
-    * @tc.desc  : API11 adds a blurred background for half-modal panels.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   ModalBlurStyle_0300
+     * @tc.number SUB_ACE_MODALDEMO_BLUESTYLE_0030
+     * @tc.desc   API11 adds a blurred background for half-modal panels.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ModalBlurStyle_0300', Level.LEVEL0, async (done: Function) => {
       console.info('ModalBlurStyle_0300 START');
       await CommonFunc.sleep(1000);
@@ -132,14 +132,14 @@ export default function ModalBlurStyle() {
       console.info('[ModalBlurStyle_0300] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_MODALDEMO_BLUESTYLE_0040
-    * @tc.name  : ModalBlurStyle_0400
-    * @tc.desc  : API11 adds a blurred background for half-modal panels.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   ModalBlurStyle_0400
+     * @tc.number SUB_ACE_MODALDEMO_BLUESTYLE_0040
+     * @tc.desc   API11 adds a blurred background for half-modal panels.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ModalBlurStyle_0400', Level.LEVEL0, async (done: Function) => {
       console.info('ModalBlurStyle_0400 START');
       await CommonFunc.sleep(1000);
@@ -156,14 +156,14 @@ export default function ModalBlurStyle() {
       console.info('[ModalBlurStyle_0400] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_MODALDEMO_BLUESTYLE_0050
-    * @tc.name  : ModalBlurStyle_0500
-    * @tc.desc  : API11 adds a blurred background for half-modal panels.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   ModalBlurStyle_0500
+     * @tc.number SUB_ACE_MODALDEMO_BLUESTYLE_0050
+     * @tc.desc   API11 adds a blurred background for half-modal panels.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ModalBlurStyle_0500', Level.LEVEL0, async (done: Function) => {
       console.info('ModalBlurStyle_0500 START');
       await CommonFunc.sleep(1000);

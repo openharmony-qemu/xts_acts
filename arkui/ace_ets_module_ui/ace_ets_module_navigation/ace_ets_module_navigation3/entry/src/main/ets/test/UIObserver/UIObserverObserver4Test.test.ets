@@ -45,9 +45,12 @@ export default function UIObserverObserver4Test() {
     });
 
     /**
+     * @tc.name   UIObserverObserver4Test_0100
      * @tc.number UIObserverObserver4Test_0100
-     * @tc.name UIObserverObserver4Test_0100
-     * @tc.desc testNavigation
+     * @tc.desc   testNavigation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('UIObserverObserver4Test_0100', Level.LEVEL2, async (done: Function) => {
       console.info('UIObserverObserver4Test_0100 START');

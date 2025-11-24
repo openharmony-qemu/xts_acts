@@ -29,13 +29,13 @@ export default function lazyForEachReloadItemTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_RELOADITEM_0100
-     * @tc.name       : testLazyForEachReloadItem001
-     * @tc.desc       : testing reloadItem for lazyForEach with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachReloadItem001
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_RELOADITEM_0100
+     * @tc.desc   testing reloadItem for lazyForEach with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachReloadItem001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`lazyforeach/LazyForEachReloadItemTest`)
@@ -45,13 +45,13 @@ export default function lazyForEachReloadItemTest() {
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_RELOADITEM_0200
-     * @tc.name       : testLazyForEachReloadItem002
-     * @tc.desc       : testing reloadItem for lazyForEach with invalid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachReloadItem002
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_RELOADITEM_0200
+     * @tc.desc   testing reloadItem for lazyForEach with invalid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachReloadItem002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testLazyForEachReloadItem002()).assertEqual(0)

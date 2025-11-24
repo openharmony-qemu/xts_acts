@@ -44,10 +44,12 @@ export default function menuEnabledJsunit() {
     });
 
     /**
-     * @tc.number       menuEnabledJsunit_0100
-     * @tc.name         menuEnabledJsunit_0100
-     * @tc.desc        menuEnabledJsunit_0100 test
-     * @tc.level       Level 2
+     * @tc.name   menuEnabledJsunit_0100
+     * @tc.number menuEnabledJsunit_0100
+     * @tc.desc   menuEnabledJsunit_0100 test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('menuEnabledJsunit_0100', Level.LEVEL2, async (done: Function) => {
 
@@ -64,10 +66,12 @@ export default function menuEnabledJsunit() {
     });
 
     /**
-     * @tc.number       menuEnabledJsunit_0200
-     * @tc.name         menuEnabledJsunit_0200
-     * @tc.desc        menuEnabledJsunit_0200 test
-     * @tc.level       Level 2
+     * @tc.name   menuEnabledJsunit_0200
+     * @tc.number menuEnabledJsunit_0200
+     * @tc.desc   menuEnabledJsunit_0200 test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('menuEnabledJsunit_0200', Level.LEVEL2, async (done: Function) => {
 

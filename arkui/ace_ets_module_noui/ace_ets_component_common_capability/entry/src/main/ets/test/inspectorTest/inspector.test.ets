@@ -45,13 +45,13 @@ export default function inspectorTestJsunit() {
       console.info("inspectorTest after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testlazyForEachOnDataAdd0001
-     * @tc.desc         acelazyForEachOnDataAddEtsTest0001
-     * tc.size    :MediumTest
-     * tc.type     :Function
-     * tc.level    :level 0
+    /**
+     * @tc.name   testInspectorTestAdd0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   acelazyForEachOnDataAddEtsTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testInspectorTestAdd0001', Level.LEVEL0, async () => {
       console.info('Inspector testInspectorTestAdd0001 START');
@@ -65,13 +65,13 @@ export default function inspectorTestJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testInspectorTestAdd0002
-     * @tc.desc         aceTestInspectorTestAdd0002
-     * tc.size    :MediumTest
-     * tc.type     :Function
-     * tc.level    :level 0
+    /**
+     * @tc.name   testInspectorTestAdd0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   aceTestInspectorTestAdd0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testInspectorTestAdd0002', Level.LEVEL0, async () => {
       console.info('Inspector testInspectorTestAdd0002 START');
@@ -85,13 +85,13 @@ export default function inspectorTestJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-     * @tc.name         testInspectorTestAdd0003
-     * @tc.desc         aceTestInspectorTestAdd0003
-     * tc.size    :MediumTest
-     * tc.type     :Function
-     * tc.level    :level 0
+    /**
+     * @tc.name   testInspectorTestAdd0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   aceTestInspectorTestAdd0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testInspectorTestAdd0003', Level.LEVEL0, async () => {
       console.info("testInspectorTestAdd0003 start test");
@@ -123,13 +123,13 @@ export default function inspectorTestJsunit() {
       }
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0004
-     * @tc.name         testInspectorTestAdd0004
-     * @tc.desc         aceTestInspectorTestAdd0004
-     * tc.size    :MediumTest
-     * tc.type     :Function
-     * tc.level    :level 0
+    /**
+     * @tc.name   testInspectorTestAdd0004
+     * @tc.number SUB_ACE_BASIC_ETS_API_0004
+     * @tc.desc   aceTestInspectorTestAdd0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testInspectorTestAdd0004', Level.LEVEL0, async () => {
       let innerEvent2: events_emitter.InnerEvent = {
@@ -158,13 +158,13 @@ export default function inspectorTestJsunit() {
       }
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0005
-     * @tc.name         testInspectorTestAdd0005
-     * @tc.desc         aceTestInspectorTestAdd0005
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testInspectorTestAdd0005
+     * @tc.number SUB_ACE_BASIC_ETS_API_0005
+     * @tc.desc   aceTestInspectorTestAdd0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testInspectorTestAdd0005', Level.LEVEL0, async () => {
       console.info('testInspectorTestAdd0005 START');
@@ -192,13 +192,13 @@ export default function inspectorTestJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0006
-     * @tc.name         testInspectorTestAdd0006
-     * @tc.desc         aceTestInspectorTestAdd0006
-     * tc.size    :MediumTest
-     * tc.type     :Function
-     * tc.level    :level 0
+    /**
+     * @tc.name   testInspectorTestAdd0006
+     * @tc.number SUB_ACE_BASIC_ETS_API_0006
+     * @tc.desc   aceTestInspectorTestAdd0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testInspectorTestAdd0006', Level.LEVEL0, async () => {
 
@@ -225,13 +225,13 @@ export default function inspectorTestJsunit() {
       }
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0007
-     * @tc.name         testInspectorTestAdd0007
-     * @tc.desc         aceTestInspectorTestAdd0007
-     * tc.size    :MediumTest
-     * tc.type     :Function
-     * tc.level    :level 0
+    /**
+     * @tc.name   testInspectorTestAdd007
+     * @tc.number SUB_ACE_BASIC_ETS_API_0007
+     * @tc.desc   aceTestInspectorTestAdd0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testInspectorTestAdd007', Level.LEVEL0, async (done: Function) => {
       console.info('testInspectorTestAdd007 START');
@@ -248,13 +248,13 @@ export default function inspectorTestJsunit() {
       done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0008
-     * @tc.name         testInspectorTestAdd0008
-     * @tc.desc         aceTestInspectorTestAdd0008
-     * tc.size    :MediumTest
-     * tc.type     :Function
-     * tc.level    :level 0
+    /**
+     * @tc.name   testInspectorTestAdd008
+     * @tc.number SUB_ACE_BASIC_ETS_API_0008
+     * @tc.desc   aceTestInspectorTestAdd0008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testInspectorTestAdd008', Level.LEVEL0, async (done: Function) => {
       console.info('testInspectorTestAdd008 START');

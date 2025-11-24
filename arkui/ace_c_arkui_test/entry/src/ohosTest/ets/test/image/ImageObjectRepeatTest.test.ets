@@ -26,78 +26,78 @@ export default function imageObjectRepeatTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_OBJECTREPEAT_0100
-     * @tc.name       : testImageObjectRepeat001
-     * @tc.desc       : testing objectrepeat for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageObjectRepeat001
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_OBJECTREPEAT_0100
+     * @tc.desc   testing objectrepeat for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageObjectRepeat001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageObjectRepeat001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_OBJECTREPEAT_0200
-     * @tc.name       : testImageObjectRepeat002
-     * @tc.desc       : testing objectrepeat for image with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageObjectRepeat002
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_OBJECTREPEAT_0200
+     * @tc.desc   testing objectrepeat for image with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageObjectRepeat002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageObjectRepeat002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_OBJECTREPEAT_0300
-     * @tc.name       : testImageObjectRepeat003
-     * @tc.desc       : testing objectrepeat for image with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageObjectRepeat003
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_OBJECTREPEAT_0300
+     * @tc.desc   testing objectrepeat for image with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageObjectRepeat003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageObjectRepeat003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_OBJECTREPEAT_0400
-     * @tc.name       : testImageObjectRepeat004
-     * @tc.desc       : testing objectrepeat for image with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageObjectRepeat004
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_OBJECTREPEAT_0400
+     * @tc.desc   testing objectrepeat for image with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageObjectRepeat004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageObjectRepeat004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_OBJECTREPEAT_0500
-     * @tc.name       : testImageObjectRepeat005
-     * @tc.desc       : testing objectrepeat for image with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testImageObjectRepeat005
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_OBJECTREPEAT_0500
+     * @tc.desc   testing objectrepeat for image with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageObjectRepeat005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageObjectRepeat005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_OBJECTREPEAT_0600
-     * @tc.name       : testImageObjectRepeat006
-     * @tc.desc       : testing objectrepeat for image with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testImageObjectRepeat006
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_OBJECTREPEAT_0600
+     * @tc.desc   testing objectrepeat for image with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageObjectRepeat006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageObjectRepeat006()).assertEqual(0)

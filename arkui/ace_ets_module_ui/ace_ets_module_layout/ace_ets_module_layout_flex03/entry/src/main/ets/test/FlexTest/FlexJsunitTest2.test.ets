@@ -47,12 +47,12 @@ export default function FlexJsunitTest2() {
     });
 
     /**
-     * @tc.number testFlex_0100
      * @tc.name   testFlex_0100
+     * @tc.number testFlex_0100
      * @tc.desc   test flex flexBasis
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlex_0100', Level.LEVEL0, async (done:Function) => {
       console.info("testFlex_0100 START");
@@ -66,12 +66,12 @@ export default function FlexJsunitTest2() {
     });
 
     /**
-     * @tc.number testFlex_0200
      * @tc.name   testFlex_0200
+     * @tc.number testFlex_0200
      * @tc.desc   test flex flexGrow
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlex_0200', Level.LEVEL0, async (done:Function) => {
       console.info('testFlex_0200 START');
@@ -85,12 +85,12 @@ export default function FlexJsunitTest2() {
     });
 
     /**
-     * @tc.number testFlex_0300
      * @tc.name   testFlex_0300
+     * @tc.number testFlex_0300
      * @tc.desc   test flex flexShrink
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlex_0300', Level.LEVEL0, async (done:Function) => {
       console.info('testFlex_0300 START');
@@ -104,12 +104,12 @@ export default function FlexJsunitTest2() {
     });
 
     /**
-     * @tc.number testFlex_0400
      * @tc.name   testFlex_0400
+     * @tc.number testFlex_0400
      * @tc.desc   test flex alignSelf
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlex_0400', Level.LEVEL0, async (done:Function) => {
       console.info('testFlex_0400 START');
@@ -123,12 +123,12 @@ export default function FlexJsunitTest2() {
     });
 
     /**
-     * @tc.number testFlex_0500
      * @tc.name   testFlex_0500
+     * @tc.number testFlex_0500
      * @tc.desc   test flex type
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlex_0500', Level.LEVEL0, async (done:Function) => {
       console.info('testFlex_0500 START');
@@ -140,12 +140,12 @@ export default function FlexJsunitTest2() {
     });
 
     /**
-     * @tc.number testFlex_0600
      * @tc.name   testFlex_0600
+     * @tc.number testFlex_0600
      * @tc.desc   test flex direction
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlex_0600', Level.LEVEL0, async (done:Function) => {
       console.info('testFlex_0600 START');

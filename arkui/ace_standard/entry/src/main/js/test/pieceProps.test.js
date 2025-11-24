@@ -80,9 +80,12 @@ export default function piecePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceIdProp
-         * @tc.desc      ACE
+         * @tc.name   testPieceIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceIdProp', Level.LEVEL0, async function(done) {
             console.info('testPieceIdProp START');
@@ -98,9 +101,12 @@ export default function piecePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceClassProp
-         * @tc.desc      ACE
+         * @tc.name   testPieceClassProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceClassProp', Level.LEVEL0, async function(done) {
             console.info('testPieceClassProp START');
@@ -117,9 +123,12 @@ export default function piecePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testPieceClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testPieceClassPropNone START');
@@ -137,9 +146,12 @@ export default function piecePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceRefProp
-         * @tc.desc      ACE
+         * @tc.name   testPieceRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceRefProp', Level.LEVEL0, async function(done) {
             console.info('testPieceRefProp START');
@@ -156,9 +168,12 @@ export default function piecePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testPieceRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testPieceRefPropNone START');
@@ -176,9 +191,12 @@ export default function piecePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceDisabledPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testPieceDisabledPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceDisabledPropTrue', Level.LEVEL0, async function(done) {
             console.info('testPieceDisabledPropTrue START');
@@ -195,9 +213,12 @@ export default function piecePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceDisabledPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testPieceDisabledPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceDisabledPropFalse', Level.LEVEL0, async function(done) {
             console.info('testPieceDisabledPropFalse START');
@@ -214,9 +235,12 @@ export default function piecePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceDisabledPropNone
-         * @tc.desc      ACE
+         * @tc.name   testPieceDisabledPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceDisabledPropNone', Level.LEVEL0, async function(done) {
             console.info('testPieceDisabledPropNone START');
@@ -233,9 +257,12 @@ export default function piecePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceFocusablePropTrue
-         * @tc.desc      ACE
+         * @tc.name   testPieceFocusablePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceFocusablePropTrue', Level.LEVEL0, async function(done) {
             console.info('testPieceFocusablePropTrue START');
@@ -252,9 +279,12 @@ export default function piecePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceFocusablePropFalse
-         * @tc.desc      ACE
+         * @tc.name   testPieceFocusablePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceFocusablePropFalse', Level.LEVEL0, async function(done) {
             console.info('testPieceFocusablePropFalse START');
@@ -271,9 +301,12 @@ export default function piecePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceFocusablePropNone
-         * @tc.desc      ACE
+         * @tc.name   testPieceFocusablePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceFocusablePropNone', Level.LEVEL0, async function(done) {
             console.info('testPieceFocusablePropNone START');
@@ -290,9 +323,12 @@ export default function piecePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceDataProp
-         * @tc.desc      ACE
+         * @tc.name   testPieceDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceDataProp', Level.LEVEL0, async function(done) {
             console.info('testPieceDataProp START');
@@ -310,9 +346,12 @@ export default function piecePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testPieceDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testPieceDataPropNone START');
@@ -330,9 +369,12 @@ export default function piecePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceClickEffectPropSmall
-         * @tc.desc      ACE
+         * @tc.name   testPieceClickEffectPropSmall
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceClickEffectPropSmall', Level.LEVEL0, async function(done) {
             console.info('testPieceClickEffectPropSmall START');
@@ -349,9 +391,12 @@ export default function piecePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceClickEffectPropMedium
-         * @tc.desc      ACE
+         * @tc.name   testPieceClickEffectPropMedium
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceClickEffectPropMedium', Level.LEVEL0, async function(done) {
             console.info('testPieceClickEffectPropMedium START');
@@ -368,9 +413,12 @@ export default function piecePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceClickEffectPropLarge
-         * @tc.desc      ACE
+         * @tc.name   testPieceClickEffectPropLarge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceClickEffectPropLarge', Level.LEVEL0, async function(done) {
             console.info('testPieceClickEffectPropLarge START');
@@ -387,9 +435,12 @@ export default function piecePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceClickEffectPropNone
-         * @tc.desc      ACE
+         * @tc.name   testPieceClickEffectPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceClickEffectPropNone', Level.LEVEL0, async function(done) {
             console.info('testPieceClickEffectPropNone START');
@@ -407,9 +458,12 @@ export default function piecePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testPieceDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testPieceDirPropRtl START');
@@ -426,9 +480,12 @@ export default function piecePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testPieceDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testPieceDirPropLtr START');
@@ -445,9 +502,12 @@ export default function piecePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testPieceDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testPieceDirPropAuto START');
@@ -464,9 +524,12 @@ export default function piecePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testPieceDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testPieceDirPropNone START');
@@ -483,9 +546,12 @@ export default function piecePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceForPropNull
-         * @tc.desc      ACE
+         * @tc.name   testPieceForPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceForPropNull', Level.LEVEL0, async function(done) {
             console.info('testPieceForPropNull START');
@@ -503,9 +569,12 @@ export default function piecePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceForPropOne
-         * @tc.desc      ACE
+         * @tc.name   testPieceForPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceForPropOne', Level.LEVEL0, async function(done) {
             console.info('testPieceForPropOne START');
@@ -523,9 +592,12 @@ export default function piecePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceForPropThree
-         * @tc.desc      ACE
+         * @tc.name   testPieceForPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceForPropThree', Level.LEVEL0, async function(done) {
             console.info('testPieceForPropThree START');
@@ -543,9 +615,12 @@ export default function piecePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceIfPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testPieceIfPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceIfPropTrue', Level.LEVEL0, async function(done) {
             console.info('testPieceIfPropTrue START');
@@ -563,9 +638,12 @@ export default function piecePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceShowPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testPieceShowPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceShowPropTrue', Level.LEVEL0, async function(done) {
             console.info('testPieceShowPropTrue START');
@@ -583,9 +661,12 @@ export default function piecePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceShowPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testPieceShowPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceShowPropFalse', Level.LEVEL0, async function(done) {
             console.info('testPieceShowPropFalse START');
@@ -603,9 +684,12 @@ export default function piecePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testPieceShowPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceShowPropNone', Level.LEVEL0, async function(done) {
             console.info('testPieceShowPropNone START');
@@ -623,9 +707,12 @@ export default function piecePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceContentProp
-         * @tc.desc      ACE
+         * @tc.name   testPieceContentProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceContentProp', Level.LEVEL0, async function(done) {
             console.info('testPieceContentProp START');
@@ -643,9 +730,12 @@ export default function piecePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceClosablePropTrue
-         * @tc.desc      ACE
+         * @tc.name   testPieceClosablePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceClosablePropTrue', Level.LEVEL0, async function(done) {
             console.info('testPieceClosablePropTrue START');
@@ -663,9 +753,12 @@ export default function piecePropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceClosablePropFalse
-         * @tc.desc      ACE
+         * @tc.name   testPieceClosablePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceClosablePropFalse', Level.LEVEL0, async function(done) {
             console.info('testPieceClosablePropFalse START');

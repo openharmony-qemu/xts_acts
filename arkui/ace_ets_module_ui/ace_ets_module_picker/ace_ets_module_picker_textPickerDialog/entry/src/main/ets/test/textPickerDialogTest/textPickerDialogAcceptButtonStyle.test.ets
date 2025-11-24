@@ -46,12 +46,12 @@ export default function TextPickerDialogAcceptButtonStyleTest() {
     });
 
     /**
+     * @tc.name   TextPickerDialogAcceptButtonStyleTest_001
      * @tc.number TextPickerDialogAcceptButtonStyleTest_001
-     * @tc.name testBack
-     * @tc.desc Return specified page by index value
-     * @tc.level Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TextPickerDialogAcceptButtonStyleTest_001', Level.LEVEL3, async (done: Function) => {
       console.info('[TextPickerDialogAcceptButtonStyleTest_001] START');

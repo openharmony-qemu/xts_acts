@@ -70,13 +70,13 @@ export default function patternLockThemeTest() {
     });
 
     /**
-      * @tc.number    : ActsPatternLockThemeColors_0100
-      * @tc.name      : ActsPatternLockThemeColors_0100
-      * @tc.desc      : Check system colors values of PatternLock component
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsPatternLockThemeColors_0100
+     * @tc.number ActsPatternLockThemeColors_0100
+     * @tc.desc   Check system colors values of PatternLock component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it(`ActsPatternLockThemeColors_0100`, Level.LEVEL2, () => {
       const CASE: string = `ActsPatternLockThemeColors_0100`;
       console.info(`${SUITE} ${CASE} START`);
@@ -100,13 +100,13 @@ export default function patternLockThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-      * @tc.number    : ActsPatternLockThemeColors_0200
-      * @tc.name      : ActsPatternLockThemeColors_0200
-      * @tc.desc      : Check custom colors values of PatternLock component
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsPatternLockThemeColors_0200
+     * @tc.number ActsPatternLockThemeColors_0200
+     * @tc.desc   Check custom colors values of PatternLock component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it(`ActsPatternLockThemeColors_0200`, Level.LEVEL0, async () => {
       const CASE: string = `ActsPatternLockThemeColors_0200`;
       console.info(`${SUITE} ${CASE} START`);
@@ -133,14 +133,13 @@ export default function patternLockThemeTest() {
     });
 
     /**
-      * @tc.number    : ActsPatternLockThemeColors_0300
-      * @tc.name      : ActsPatternLockThemeColors_0300
-      * @tc.desc      : Check custom colors values of PatternLock component
-      *                 after changing the theme
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsPatternLockThemeColors_0300
+     * @tc.number ActsPatternLockThemeColors_0300
+     * @tc.desc   Check custom colors values of PatternLock component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it(`ActsPatternLockThemeColors_0300`, Level.LEVEL0, async () => {
       const CASE: string = `ActsPatternLockThemeColors_0300`;
       console.info(`${SUITE} ${CASE} START`);

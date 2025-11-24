@@ -39,16 +39,16 @@ export default function RefreshTest() {
       done()
     });
 
-    /*
-      *@tc.number ArkUX_Refresh_Visual_0010
-      *@tc.name   Support modifying the refresh promptText change of refresh component
-      *@tc.desc   Sets the promptText property parameter to different text
-      *@tc.size       : MediumTest
-      *@tc.type       : Function
-      *@tc.level      : Level 0  
-      */
 
 
+    /**
+     * @tc.name   ArkUX_Refresh_Visual_0010
+     * @tc.number ArkUX_Refresh_Visual_0010
+     * @tc.desc   ArkUX_Refresh_Visual_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Refresh_Visual_0010', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Refresh_Visual_0010 START');
       setTimeout(() => {
@@ -69,16 +69,16 @@ export default function RefreshTest() {
       }, 5000)
     });
 
-    /*
-      *@tc.number ArkUX_Refresh_Visual_0020
-      *@tc.name   Support modifying the refresh promptText change of refresh component
-      *@tc.desc   Sets the promptText property parameter to different text
-      *@tc.size       : MediumTest
-      *@tc.type       : Function
-      *@tc.level      : Level 0  
-      */
 
 
+    /**
+     * @tc.name   ArkUX_Refresh_Visual_0020
+     * @tc.number ArkUX_Refresh_Visual_0020
+     * @tc.desc   ArkUX_Refresh_Visual_0020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Refresh_Visual_0020', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Refresh_Visual_0020 START');
       setTimeout(() => {
@@ -99,16 +99,16 @@ export default function RefreshTest() {
       }, 5000)
     });
 
-    /*
-      *@tc.number ArkUX_Refresh_Visual_0030
-      *@tc.name   Support modifying the refresh promptText change of refresh component
-      *@tc.desc   Sets the promptText property parameter to different text
-      *@tc.size       : MediumTest
-      *@tc.type       : Function
-      *@tc.level      : Level 0  
-      */
 
 
+    /**
+     * @tc.name   ArkUX_Refresh_Visual_0030
+     * @tc.number ArkUX_Refresh_Visual_0030
+     * @tc.desc   ArkUX_Refresh_Visual_0030
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Refresh_Visual_0030', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Refresh_Visual_0030 START');
       setTimeout(() => {
@@ -129,16 +129,16 @@ export default function RefreshTest() {
       }, 5000)
     });
 
-    /*
-      *@tc.number ArkUX_Refresh_Visual_0040
-      *@tc.name   Support modifying the refresh promptText change of refresh component
-      *@tc.desc   Sets the promptText property parameter to different text
-      *@tc.size       : MediumTest
-      *@tc.type       : Function
-      *@tc.level      : Level 0  
-      */
 
 
+    /**
+     * @tc.name   ArkUX_Refresh_Visual_0040
+     * @tc.number ArkUX_Refresh_Visual_0040
+     * @tc.desc   ArkUX_Refresh_Visual_0040
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Refresh_Visual_0040', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Refresh_Visual_0040 START');
       setTimeout(() => {
@@ -159,16 +159,16 @@ export default function RefreshTest() {
       }, 5000)
     });
 
-    /*
-     *@tc.number ArkUX_Refresh_Visual_0050
-     *@tc.name   Support modifying the refresh promptText change of refresh component
-     *@tc.desc   Sets the promptText property parameter to different text
-      *@tc.size       : MediumTest
-      *@tc.type       : Function
-      *@tc.level      : Level 0  
+
+
+    /**
+     * @tc.name   ArkUX_Refresh_Visual_0050
+     * @tc.number ArkUX_Refresh_Visual_0050
+     * @tc.desc   ArkUX_Refresh_Visual_0050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('ArkUX_Refresh_Visual_0050', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Refresh_Visual_0050 START');
       setTimeout(() => {

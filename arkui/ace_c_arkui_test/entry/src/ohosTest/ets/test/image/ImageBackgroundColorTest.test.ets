@@ -26,26 +26,26 @@ export default function imageBackgroundColorTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_BACKGROUNDCOLOR_0100
-     * @tc.name       : testImageBackgroundColor001
-     * @tc.desc       : testing backgroundColor for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageBackgroundColor001
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_BACKGROUNDCOLOR_0100
+     * @tc.desc   testing backgroundColor for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageBackgroundColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageBackgroundColor001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_BACKGROUNDCOLOR_0200
-     * @tc.name       : testImageBackgroundColor002
-     * @tc.desc       : testing backgroundColor for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageBackgroundColor002
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_BACKGROUNDCOLOR_0200
+     * @tc.desc   testing backgroundColor for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageBackgroundColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageBackgroundColor002()).assertEqual(0)

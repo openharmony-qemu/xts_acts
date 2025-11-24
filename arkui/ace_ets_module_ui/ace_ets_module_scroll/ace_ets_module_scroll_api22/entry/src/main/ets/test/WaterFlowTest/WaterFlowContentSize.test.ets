@@ -47,12 +47,12 @@ export default function WaterFlowContentSize() {
     });
 
     /**
+     * @tc.name   test_waterflow_getContentSize_001
      * @tc.number test_waterflow_getContentSize_001
-     * @tc.name   Test the properties of components
      * @tc.desc   the callback for getting content size, which determines that the value is 500
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_waterflow_getContentSize_001', Level.LEVEL0, async (done: Function) => {
       console.info('test_waterflow_getContentSize_001 START');
@@ -67,12 +67,12 @@ export default function WaterFlowContentSize() {
     });
 
     /**
+     * @tc.name   test_waterflow_getContentSize_002
      * @tc.number test_waterflow_getContentSize_002
-     * @tc.name   Test the properties of components
      * @tc.desc   the callback for getting width content size, which determines that the value is 200
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_waterflow_getContentSize_002', Level.LEVEL0, async (done: Function) => {
       console.info('test_waterflow_getContentSize_002 START');

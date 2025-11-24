@@ -66,12 +66,12 @@ export default function List_Padding() {
     });
 
     /**
+     * @tc.name   testListPaddingToTwenty
      * @tc.number SUB_ACE_LIST_LIST_PADDING_TEST_0100
-     * @tc.name testListPaddingToTwenty
-     * @tc.desc List parent component binding padding property and value set to 20
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   List parent component binding padding property and value set to 20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListPaddingToTwenty',  Level.LEVEL0, async (done: Function) => {
       console.info('testListPaddingToTwenty START');

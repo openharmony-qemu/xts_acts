@@ -42,13 +42,13 @@ export default function TextClockFormatTest() {
     });
 
     /**
-    * @tc.number: TextClockFormatTest_001
-    * @tc.name  : TextClockFormatTest_001
-    * @tc.desc  : To test the format：$r('app.string.textClock1')
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   TextClockFormatTest_001
+     * @tc.number TextClockFormatTest_001
+     * @tc.desc   To test the format：$r('app.string.textClock1')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TextClockFormatTest_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('TextClockFormatTest_001 START');
       await Utils.sleep(1000);
@@ -61,13 +61,13 @@ export default function TextClockFormatTest() {
     });
   
     /**
-    * @tc.number: TextClockFormatTest_002
-    * @tc.name  : TextClockFormatTest_002
-    * @tc.desc  : To test the format：undefined
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   TextClockFormatTest_002
+     * @tc.number TextClockFormatTest_002
+     * @tc.desc   To test the format：undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TextClockFormatTest_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('TextClockFormatTest_002 START');
       await Utils.sleep(1000);
@@ -80,13 +80,13 @@ export default function TextClockFormatTest() {
     });
     
     /**
-    * @tc.number: TextClockFormatTest_003
-    * @tc.name  : TextClockFormatTest_003
-    * @tc.desc  : To test the format：null
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   TextClockFormatTest_003
+     * @tc.number TextClockFormatTest_003
+     * @tc.desc   To test the format：null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TextClockFormatTest_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('TextClockFormatTest_003 START');
       await Utils.sleep(1000);
@@ -99,13 +99,13 @@ export default function TextClockFormatTest() {
     });
     
     /**
-    * @tc.number: TextClockFormatTest_004
-    * @tc.name  : TextClockFormatTest_004
-    * @tc.desc  : To test the format：yyyy年M月d日
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   TextClockFormatTest_004
+     * @tc.number TextClockFormatTest_004
+     * @tc.desc   To test the format：yyyy年M月d日
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TextClockFormatTest_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('TextClockFormatTest_004 START');
       await Utils.sleep(1000);

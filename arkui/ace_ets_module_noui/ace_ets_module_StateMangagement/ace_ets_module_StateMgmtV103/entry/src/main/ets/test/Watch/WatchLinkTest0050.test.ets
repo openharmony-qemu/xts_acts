@@ -46,12 +46,12 @@ export default function WatchLinkTest0050() {
     });
 
     /**
-     * @tc.number    SUB_ACE_STATUSMANAGER_WATCH_0050
-     * @tc.name      WatchLinkTest0050_001
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   WatchLinkTest0050_001
+     * @tc.number SUB_ACE_STATUSMANAGER_WATCH_0050
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('WatchLinkTest0050_001', Level.LEVEL0, async (done: Function) => {
       console.info('[WatchLinkTest0050_001] START');

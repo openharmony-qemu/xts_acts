@@ -48,11 +48,13 @@ export default function XComponentCNodeTest() {
       console.info("XComponentCNode after each called");
     });
 
-    /*
-     * @tc.number    XComponentCNodeTest_0100
-     * @tc.name      XComponentCNodeTest_0100
-     * @tc.desc      Test XComponentCNode
-     * @tc.level     Level 1
+    /**
+     * @tc.name   XComponentCNodeTest_0100
+     * @tc.number XComponentCNodeTest_0100
+     * @tc.desc   Test XComponentCNode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('XComponentCNodeTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[XComponentCNodeTest_0100] START');

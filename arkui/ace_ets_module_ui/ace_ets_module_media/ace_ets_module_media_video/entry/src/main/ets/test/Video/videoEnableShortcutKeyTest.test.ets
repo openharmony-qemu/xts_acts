@@ -59,12 +59,12 @@ export default function videoEnableShortcutKeyTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_videoEnableShortcutKeyTest_0100
-     * @tc.name: videoEnableShortcutKeyTest_0100
-     * @tc.desc: VideoAPI 
-     * @tc.level: Level 1
-     * @tc.type : Video
-     * @tc.size : VideoTest
+     * @tc.name   videoEnableShortcutKeyTest_0100
+     * @tc.number SUB_ARKUI_API_videoEnableShortcutKeyTest_0100
+     * @tc.desc   VideoAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('videoEnableShortcutKeyTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('videoEnableShortcutKeyTest_0100 START');

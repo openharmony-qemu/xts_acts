@@ -25,15 +25,15 @@ export default function swiperOnGestureSwipeTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SWIPER_EVENT_ON_GESTURE_SWIPE_0100
-     * @tc.name: testSwiperOnGestureSwipe001
-     * @tc.desc: testing onGestureSwipe for swiper
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
 
+    /**
+     * @tc.name   testSwiperOnGestureSwipe001
+     * @tc.number testSwiperOnGestureSwipe001
+     * @tc.desc   testSwiperOnGestureSwipe001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSwiperOnGestureSwipe001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'SwiperOnGestureSwipeTest';
       await Utils.pushPage(`swiper/${PAGE_TAG}`);

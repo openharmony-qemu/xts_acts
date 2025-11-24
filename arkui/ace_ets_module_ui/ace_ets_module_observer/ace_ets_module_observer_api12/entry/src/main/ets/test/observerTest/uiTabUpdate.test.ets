@@ -43,12 +43,12 @@ export default function uiTabUpdate() {
     });
 
     /**
-     * @tc.number    uiTabUpdate_001
-     * @tc.name      uiTabUpdate_0100
-     * @tc.desc      Monitor the switching events of TabContent pages.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   uiTabUpdate_0100
+     * @tc.number uiTabUpdate_001
+     * @tc.desc   Monitor the switching events of TabContent pages.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('uiTabUpdate_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[uiTabUpdate_0100] START');

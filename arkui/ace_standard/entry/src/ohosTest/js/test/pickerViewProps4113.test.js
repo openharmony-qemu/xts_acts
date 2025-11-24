@@ -78,11 +78,14 @@ export default function undo() {
                 await backToIndex()
                 await sleep(1000)
             })
-            /**
-             * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-             * @tc.name      testPickerViewPickerViewMultiText
-             * @tc.desc      ACE
-             */
+        /**
+         * @tc.name   testPickerViewPickerViewMultiText
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testPickerViewPickerViewMultiText', Level.LEVEL0, async function(done) {
             console.info('testPickerViewPickerViewMultiText START');
             console.info("[pickerViewProps] get globalThis.value is: " + JSON.stringify(globalThis.value));

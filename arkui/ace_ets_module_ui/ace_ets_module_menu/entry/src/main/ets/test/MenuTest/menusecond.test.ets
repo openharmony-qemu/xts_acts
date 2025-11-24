@@ -47,10 +47,13 @@ export default function menuSecondTest() {
       done()
     });
 
-   /**
+    /**
+     * @tc.name   ArkUX_Stage_Menu_Enabled_0100
      * @tc.number ArkUX_Stage_Menu_Enabled_0100
-     * @tc.name Tests whether the menu enabled is displayed
-     * @tc.desc Tests whether the menu enabled is displayed
+     * @tc.desc   Tests whether the menu enabled is displayed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUX_Stage_Menu_Enabled_0100', Level.LEVEL2, async () => {
       let obj: ESObject = JSON.parse(getInspectorByKey("Menu"))
@@ -59,9 +62,12 @@ export default function menuSecondTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Menu_Preview_0100
      * @tc.number ArkUX_Stage_Menu_Preview_0100
-     * @tc.name Test the hover menu preview display
-     * @tc.desc Test the hover menu preview display
+     * @tc.desc   Test the hover menu preview display
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUX_Stage_Menu_Preview_0100', Level.LEVEL2, async () => {
       let obj: ESObject = JSON.parse(getInspectorByKey("floatingMenuImage"))
@@ -69,10 +75,13 @@ export default function menuSecondTest() {
       console.info('ArkUX_Stage_Menu_Preview_0100 preview :' + JSON.stringify(obj.$attrs.preview));
     })
 
-      /**
+    /**
+     * @tc.name   ArkUX_Stage_Menu_Preview_0200
      * @tc.number ArkUX_Stage_Menu_Preview_0200
-     * @tc.name Test the hover menu preview display
-     * @tc.desc Test the hover menu preview display
+     * @tc.desc   Test the hover menu preview display
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUX_Stage_Menu_Preview_0200', Level.LEVEL2, async () => {
       let obj: ESObject = JSON.parse(getInspectorByKey("floatingMenuBuilder"))

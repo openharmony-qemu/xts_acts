@@ -46,10 +46,13 @@ export default function textAreaJsunit3() {
       console.info("textArea after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_textAreaTest01
-     * @tc.name         textAreaTest01
-     * @tc.desc         test TextArea
+    /**
+     * @tc.name   textAreaTest01
+     * @tc.number SUB_ACE_BASIC_ETS_API_textAreaTest01
+     * @tc.desc   test TextArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaTest01', Level.LEVEL1, async (done: Function) => {
       console.info('[textAreaTest01] START');
@@ -62,10 +65,13 @@ export default function textAreaJsunit3() {
       done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_textAreaTest02
-     * @tc.name         textAreaTest02
-     * @tc.desc         test TextArea
+    /**
+     * @tc.name   textAreaTest02
+     * @tc.number SUB_ACE_BASIC_ETS_API_textAreaTest02
+     * @tc.desc   test TextArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaTest02', Level.LEVEL1, async (done: Function) => {
       console.info('[textAreaTest02] START');
@@ -93,10 +99,13 @@ export default function textAreaJsunit3() {
       done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_textAreaTest03
-     * @tc.name         textAreaTest03
-     * @tc.desc         test TextArea
+    /**
+     * @tc.name   textAreaTest03
+     * @tc.number SUB_ACE_BASIC_ETS_API_textAreaTest03
+     * @tc.desc   test TextArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaTest03', Level.LEVEL1, async (done: Function) => {
       console.info('[textAreaTest03] START');
@@ -110,10 +119,13 @@ export default function textAreaJsunit3() {
       done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_textAreaTest04
-     * @tc.name         textAreaTest04
-     * @tc.desc         test TextArea
+    /**
+     * @tc.name   textAreaTest04
+     * @tc.number SUB_ACE_BASIC_ETS_API_textAreaTest04
+     * @tc.desc   test TextArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaTest04', Level.LEVEL1, async (done: Function) => {
       console.info('[textAreaTest04] START');
@@ -141,10 +153,13 @@ export default function textAreaJsunit3() {
       done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_textAreaTest05
-     * @tc.name         textAreaTest05
-     * @tc.desc         test TextArea
+    /**
+     * @tc.name   textAreaTest05
+     * @tc.number SUB_ACE_BASIC_ETS_API_textAreaTest05
+     * @tc.desc   test TextArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaTest05', Level.LEVEL1, async (done: Function) => {
       console.info('[testArea05] START');
@@ -157,10 +172,13 @@ export default function textAreaJsunit3() {
       done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_textAreaTest06
-     * @tc.name         textAreaTest06
-     * @tc.desc         test TextArea
+    /**
+     * @tc.name   textAreaTest06
+     * @tc.number SUB_ACE_BASIC_ETS_API_textAreaTest06
+     * @tc.desc   test TextArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaTest06', Level.LEVEL1, async (done: Function) => {
       console.info('[textAreaTest06] START');
@@ -188,10 +206,13 @@ export default function textAreaJsunit3() {
       done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_textAreaTest07
-     * @tc.name         textAreaTest07
-     * @tc.desc         test TextArea
+    /**
+     * @tc.name   textAreaTest07
+     * @tc.number SUB_ACE_BASIC_ETS_API_textAreaTest07
+     * @tc.desc   test TextArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaTest07', Level.LEVEL1, async (done: Function) => {
       console.info('[textAreaTest07] START');
@@ -206,10 +227,13 @@ export default function textAreaJsunit3() {
       done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_textAreaTest08
-     * @tc.name         textAreaTest08
-     * @tc.desc         test TextArea
+    /**
+     * @tc.name   textAreaTest08
+     * @tc.number SUB_ACE_BASIC_ETS_API_textAreaTest08
+     * @tc.desc   test TextArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaTest08', Level.LEVEL1, async (done: Function) => {
       console.info('[textAreaTest08] START');
@@ -239,10 +263,13 @@ export default function textAreaJsunit3() {
       done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_textAreaTest09
-     * @tc.name         textAreaTest09
-     * @tc.desc         test TextArea
+    /**
+     * @tc.name   textAreaTest09
+     * @tc.number SUB_ACE_BASIC_ETS_API_textAreaTest09
+     * @tc.desc   test TextArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaTest09', Level.LEVEL1, async (done: Function) => {
       console.info('[textAreaTest09] START');
@@ -255,10 +282,13 @@ export default function textAreaJsunit3() {
       done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_textAreaTest10
-     * @tc.name         textAreaTest10
-     * @tc.desc         test TextArea
+    /**
+     * @tc.name   textAreaTest10
+     * @tc.number SUB_ACE_BASIC_ETS_API_textAreaTest10
+     * @tc.desc   test TextArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaTest10', Level.LEVEL1, async (done: Function) => {
       console.info('[textAreaTest10] START');
@@ -286,10 +316,13 @@ export default function textAreaJsunit3() {
       done();
     });
 
-    /*
-     * @tc.number :SUB_ACE_BASIC_ETS_API_textAreaTest11
-     * @tc.name   :test getCaretOffset when iput text is null
-     * @tc.desc   :expect caretOffset index 0 when text is null
+    /**
+     * @tc.name   textAreaTest11
+     * @tc.number SUB_ACE_BASIC_ETS_API_textAreaTest11
+     * @tc.desc   expect caretOffset index 0 when text is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaTest11', Level.LEVEL1, async (done: Function) => {
       console.info('[textAreaTest11] START');
@@ -305,10 +338,13 @@ export default function textAreaJsunit3() {
       done();
     });
 
-    /*
-     * @tc.number :SUB_ACE_BASIC_ETS_API_textAreaTest12
-     * @tc.name   :test getCaretOffset when iput text length not exceed maxLength.
-     * @tc.desc   :expect caretOffset index equal text length
+    /**
+     * @tc.name   textAreaTest12
+     * @tc.number SUB_ACE_BASIC_ETS_API_textAreaTest12
+     * @tc.desc   expect caretOffset index equal text length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaTest12', Level.LEVEL1, async (done: Function) => {
       console.info('[textAreaTest12] START');
@@ -340,10 +376,13 @@ export default function textAreaJsunit3() {
       done();
     });
 
-    /*
-     * @tc.number :SUB_ACE_BASIC_ETS_API_textAreaTest13
-     * @tc.name   :test getCaretOffset when iput text length exceed maxLength.
-     * @tc.desc   :expect caretOffset index equal maxLength
+    /**
+     * @tc.name   textAreaTest13
+     * @tc.number SUB_ACE_BASIC_ETS_API_textAreaTest13
+     * @tc.desc   expect caretOffset index equal maxLength
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaTest13', Level.LEVEL1, async (done: Function) => {
       console.info('[textAreaTest13] START');

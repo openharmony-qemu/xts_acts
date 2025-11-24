@@ -39,12 +39,12 @@ export default function List07Test() {
     });
 
     /**
-     * @tc.number    ArkUX_Grid_List_Swiper_0250
-     * @tc.name      ArkUX_Grid_List_Swiper_0250
-     * @tc.desc      Testing for the List component.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Grid_List_Swiper_0250
+     * @tc.number ArkUX_Grid_List_Swiper_0250
+     * @tc.desc   Testing for the List component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Grid_List_Swiper_0250', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Grid_List_Swiper_0250 START');
@@ -66,12 +66,12 @@ export default function List07Test() {
     });
 
     /**
-     * @tc.number    ArkUX_Grid_List_Swiper_0260
-     * @tc.name      ArkUX_Grid_List_Swiper_0260
-     * @tc.desc      Testing for the List component.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Grid_List_Swiper_0260
+     * @tc.number ArkUX_Grid_List_Swiper_0260
+     * @tc.desc   Testing for the List component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Grid_List_Swiper_0260', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Grid_List_Swiper_0260 START');
@@ -91,12 +91,12 @@ export default function List07Test() {
     });
 
     /**
-     * @tc.number    ArkUX_Grid_List_Swiper_0270
-     * @tc.name      ArkUX_Grid_List_Swiper_0270
-     * @tc.desc      Testing for the List component.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Grid_List_Swiper_0270
+     * @tc.number ArkUX_Grid_List_Swiper_0270
+     * @tc.desc   Testing for the List component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Grid_List_Swiper_0270', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Grid_List_Swiper_0270 START');
@@ -116,12 +116,12 @@ export default function List07Test() {
     });
 
     /**
-     * @tc.number    ArkUX_Grid_List_Swiper_0280
-     * @tc.name      ArkUX_Grid_List_Swiper_0280
-     * @tc.desc      Testing for the List component.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Grid_List_Swiper_0280
+     * @tc.number ArkUX_Grid_List_Swiper_0280
+     * @tc.desc   Testing for the List component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Grid_List_Swiper_0280', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Grid_List_Swiper_0280 START');
@@ -141,12 +141,12 @@ export default function List07Test() {
     });
 
     /**
-     * @tc.number    ArkUX_Grid_List_Swiper_0290
-     * @tc.name      ArkUX_Grid_List_Swiper_0290
-     * @tc.desc      Testing for the List component.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Grid_List_Swiper_0290
+     * @tc.number ArkUX_Grid_List_Swiper_0290
+     * @tc.desc   Testing for the List component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Grid_List_Swiper_0290', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Grid_List_Swiper_0290 START');

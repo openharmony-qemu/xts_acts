@@ -57,6 +57,14 @@ export default function PersistentStoragePersistPropJsunit() {
     });
 
 
+    /**
+     * @tc.name   PersistentStoragePersistPropJsunit_0100
+     * @tc.number PersistentStoragePersistPropJsunit_0100
+     * @tc.desc   PersistentStoragePersistPropJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PersistentStoragePersistPropJsunit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[PersistentStoragePersistPropJsunit_0100] START');
       let driver = await UiDriver.create()
@@ -91,6 +99,14 @@ export default function PersistentStoragePersistPropJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PersistentStoragePersistPropJsunit_0200
+     * @tc.number PersistentStoragePersistPropJsunit_0200
+     * @tc.desc   PersistentStoragePersistPropJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PersistentStoragePersistPropJsunit_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('[PersistentStoragePersistPropJsunit_0200] START');
@@ -112,6 +128,14 @@ export default function PersistentStoragePersistPropJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PersistentStoragePersistPropJsunit_0300
+     * @tc.number PersistentStoragePersistPropJsunit_0300
+     * @tc.desc   PersistentStoragePersistPropJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PersistentStoragePersistPropJsunit_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[PersistentStoragePersistPropJsunit_0300] START');
       let driver = await UiDriver.create()

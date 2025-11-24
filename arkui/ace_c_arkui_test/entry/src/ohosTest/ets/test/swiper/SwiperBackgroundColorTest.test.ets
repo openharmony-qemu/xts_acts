@@ -26,39 +26,39 @@ export default function swiperBackgroundColorTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_BACKGROUNDCOLOR_0100
-     * @tc.name       : testSwiperBackgroundColor001
-     * @tc.desc       : testing backgroundColor for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperBackgroundColor001
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_BACKGROUNDCOLOR_0100
+     * @tc.desc   testing backgroundColor for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperBackgroundColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperBackgroundColor001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_BACKGROUNDCOLOR_0200
-     * @tc.name       : testSwiperBackgroundColor002
-     * @tc.desc       : testing backgroundColor for swiper with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperBackgroundColor002
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_BACKGROUNDCOLOR_0200
+     * @tc.desc   testing backgroundColor for swiper with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperBackgroundColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperBackgroundColor002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_BACKGROUNDCOLOR_0300
-     * @tc.name       : testSwiperBackgroundColor003
-     * @tc.desc       : testing backgroundColor for swiper with small value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperBackgroundColor003
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_BACKGROUNDCOLOR_0300
+     * @tc.desc   testing backgroundColor for swiper with small value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperBackgroundColor003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperBackgroundColor003()).assertEqual(0)

@@ -42,12 +42,12 @@ export default function TextInputEnableAutoSpacingTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextInputEnableAutoSpacingTest_0010
-     * @tc.name      TextInputEnableAutoSpacingTest_0010
-     * @tc.desc      test the attr of TextInput: enableAutoSpacing(true)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextInputEnableAutoSpacingTest_0010
+     * @tc.number SUB_ACE_TextInputEnableAutoSpacingTest_0010
+     * @tc.desc   test the attr of TextInput: enableAutoSpacing(true)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextInputEnableAutoSpacingTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('[TextInputEnableAutoSpacingTest_0010] START');
@@ -60,12 +60,12 @@ export default function TextInputEnableAutoSpacingTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextInputEnableAutoSpacingTest_0020
-     * @tc.name      TextInputEnableAutoSpacingTest_0020
-     * @tc.desc      test the attr of TextInput: enableAutoSpacing(false)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextInputEnableAutoSpacingTest_0020
+     * @tc.number SUB_ACE_TextInputEnableAutoSpacingTest_0020
+     * @tc.desc   test the attr of TextInput: enableAutoSpacing(false)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextInputEnableAutoSpacingTest_0020', Level.LEVEL2, async (done: Function) => {
       console.info('[TextInputEnableAutoSpacingTest_0020] START');
@@ -78,12 +78,12 @@ export default function TextInputEnableAutoSpacingTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextInputEnableAutoSpacingTest_0030
-     * @tc.name      TextInputEnableAutoSpacingTest_0030
-     * @tc.desc      test the attr of TextInput: enableAutoSpacing(default)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextInputEnableAutoSpacingTest_0030
+     * @tc.number SUB_ACE_TextInputEnableAutoSpacingTest_0030
+     * @tc.desc   test the attr of TextInput: enableAutoSpacing(default)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextInputEnableAutoSpacingTest_0030', Level.LEVEL2, async (done: Function) => {
       console.info('[TextInputEnableAutoSpacingTest_0030] START');
@@ -96,12 +96,12 @@ export default function TextInputEnableAutoSpacingTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextInputEnableAutoSpacingTest_0040
-     * @tc.name      TextInputEnableAutoSpacingTest_0040
-     * @tc.desc      test the attr of TextInput: enableAutoSpacing(undefined)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextInputEnableAutoSpacingTest_0040
+     * @tc.number SUB_ACE_TextInputEnableAutoSpacingTest_0040
+     * @tc.desc   test the attr of TextInput: enableAutoSpacing(undefined)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextInputEnableAutoSpacingTest_0040', Level.LEVEL2, async (done: Function) => {
       console.info('[TextInputEnableAutoSpacingTest_0040] START');
@@ -114,12 +114,12 @@ export default function TextInputEnableAutoSpacingTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextInputEnableAutoSpacingTest_0050
-     * @tc.name      TextInputEnableAutoSpacingTest_0050
-     * @tc.desc      test the attr of TextInputModifier: enableAutoSpacing(true)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextInputEnableAutoSpacingTest_0050
+     * @tc.number SUB_ACE_TextInputEnableAutoSpacingTest_0050
+     * @tc.desc   test the attr of TextInputModifier: enableAutoSpacing(true)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextInputEnableAutoSpacingTest_0050', Level.LEVEL2, async (done: Function) => {
       console.info('[TextInputEnableAutoSpacingTest_0050] START');
@@ -132,12 +132,12 @@ export default function TextInputEnableAutoSpacingTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextInputEnableAutoSpacingTest_0060
-     * @tc.name      TextInputEnableAutoSpacingTest_0060
-     * @tc.desc      test the attr of TextInputModifier: enableAutoSpacing(false)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextInputEnableAutoSpacingTest_0060
+     * @tc.number SUB_ACE_TextInputEnableAutoSpacingTest_0060
+     * @tc.desc   test the attr of TextInputModifier: enableAutoSpacing(false)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextInputEnableAutoSpacingTest_0060', Level.LEVEL2, async (done: Function) => {
       console.info('[TextInputEnableAutoSpacingTest_0060] START');
@@ -150,12 +150,12 @@ export default function TextInputEnableAutoSpacingTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextInputEnableAutoSpacingTest_0070
-     * @tc.name      TextInputEnableAutoSpacingTest_0070
-     * @tc.desc      test the attr of TextInputModifier: enableAutoSpacing(undefined)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextInputEnableAutoSpacingTest_0070
+     * @tc.number SUB_ACE_TextInputEnableAutoSpacingTest_0070
+     * @tc.desc   test the attr of TextInputModifier: enableAutoSpacing(undefined)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextInputEnableAutoSpacingTest_0070', Level.LEVEL2, async (done: Function) => {
       console.info('[TextInputEnableAutoSpacingTest_0070] START');

@@ -45,13 +45,13 @@ export default function textInputHalfLeadingTest() {
       console.info("textInputHalfLeadingTest after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         textInputHalfLeadingTest0001
-     * @tc.desic        Test textInputHalfLeadingTest Normal value :true
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textInputHalfLeadingTest0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   textInputHalfLeadingTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputHalfLeadingTest0001',  Level.LEVEL0, async () => {
         let driver = Driver.create();
@@ -64,13 +64,13 @@ export default function textInputHalfLeadingTest() {
         console.info("[textInputHalfLeadingTest0001] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         textInputHalfLeadingTest0002
-     * @tc.desic        Test textInputHalfLeadingTest Normal value :false
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textInputHalfLeadingTest0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   textInputHalfLeadingTest0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputHalfLeadingTest0002',  Level.LEVEL0, async () => {
         let driver = Driver.create();
@@ -83,13 +83,13 @@ export default function textInputHalfLeadingTest() {
         console.info("[textInputHalfLeadingTest0002] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-     * @tc.name         textInputHalfLeadingTest0003
-     * @tc.desic        Test textInputHalfLeadingTest abnormal value :undefined
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textInputHalfLeadingTest0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   textInputHalfLeadingTest0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputHalfLeadingTest0003',  Level.LEVEL0, async () => {
         let driver = Driver.create();
@@ -102,13 +102,13 @@ export default function textInputHalfLeadingTest() {
         console.info("[textInputHalfLeadingTest0003] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0004
-     * @tc.name         textInputHalfLeadingTest0004
-     * @tc.desic        Test textInputHalfLeadingTest abnormal value :null
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textInputHalfLeadingTest0004
+     * @tc.number SUB_ACE_BASIC_ETS_API_0004
+     * @tc.desc   textInputHalfLeadingTest0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputHalfLeadingTest0004',  Level.LEVEL0, async () => {
         let driver = Driver.create();

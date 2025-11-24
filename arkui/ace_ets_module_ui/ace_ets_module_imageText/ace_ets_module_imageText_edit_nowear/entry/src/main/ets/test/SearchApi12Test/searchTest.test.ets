@@ -42,13 +42,13 @@ export default function searchTest() {
       console.info("searchTest after each called");
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_searchTest_001
-     * @tc.name       : searchTest_001
-     * @tc.desc       : onEditChange Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   searchTest_001
+     * @tc.number SUB_ACE_UI_COMPONENT_searchTest_001
+     * @tc.desc   onEditChange Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('searchTest_001', Level.LEVEL3, async (done: Function) => {
       console.info('[searchTest_001] START');
@@ -74,15 +74,15 @@ export default function searchTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_searchTest_002
-     * @tc.name       : searchTest_002
-     * @tc.desc       : onEditChange Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   searchTest_002
+     * @tc.number searchTest_002
+     * @tc.desc   searchTest_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('searchTest_002', Level.LEVEL3, async (done: Function) => {
       console.info('[searchTest_002] START');
 
@@ -108,13 +108,13 @@ export default function searchTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_searchTest_003
-     * @tc.name       : searchTest_003
-     * @tc.desc       : onEditChange Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   searchTest_003
+     * @tc.number SUB_ACE_UI_COMPONENT_searchTest_003
+     * @tc.desc   onEditChange Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('searchTest_003', Level.LEVEL3, async (done: Function) => {
       console.info('[searchTest_003] START');

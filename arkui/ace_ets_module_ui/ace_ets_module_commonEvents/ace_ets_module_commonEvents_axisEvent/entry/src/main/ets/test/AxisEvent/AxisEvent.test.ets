@@ -47,12 +47,12 @@ export default function AxisEvent() {
     });
 
     /**
-     * @tc.number   AxisEvent_0100
-     * @tc.name      AxisEvent_0100
-     * @tc.desc      api test TapGesture
-     * @tc.level:    Level
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   AxisEvent_0100
+     * @tc.number AxisEvent_0100
+     * @tc.desc   api test TapGesture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AxisEvent_0100', Level.LEVEL0, async (done: Function) => {
       console.info('AxisEvent_0100 START');

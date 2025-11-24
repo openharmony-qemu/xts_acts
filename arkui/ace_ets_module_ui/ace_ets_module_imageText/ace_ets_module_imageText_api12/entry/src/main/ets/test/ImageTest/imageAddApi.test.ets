@@ -42,13 +42,15 @@ export default function imageAddApi() {
       console.info("imageAddApi after each called");
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_IMAGE_001
-     * @tc.desc      dynamicRangeMode test of image
-     * @tc.level     Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   imageAddApi_001
+     * @tc.number imageAddApi_001
+     * @tc.desc   imageAddApi_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('imageAddApi_001',  Level.LEVEL0, async (done: Function) => {
       console.info('[imageAddApi_001] START');
 
@@ -65,13 +67,15 @@ export default function imageAddApi() {
 
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_IMAGE_002
-     * @tc.desc      dynamicRangeMode test of image
-     * @tc.level     Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   imageAddApi_002
+     * @tc.number imageAddApi_002
+     * @tc.desc   imageAddApi_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('imageAddApi_002',  Level.LEVEL0, async (done: Function) => {
       console.info('[imageAddApi_002] START');
 
@@ -88,13 +92,15 @@ export default function imageAddApi() {
 
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_IMAGE_003
-     * @tc.desc      dynamicRangeMode test of image
-     * @tc.level     Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   imageAddApi_003
+     * @tc.number imageAddApi_003
+     * @tc.desc   imageAddApi_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('imageAddApi_003',  Level.LEVEL0, async (done: Function) => {
       console.info('[imageAddApi_003] START');
 

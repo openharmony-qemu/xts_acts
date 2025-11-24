@@ -43,12 +43,12 @@ export default function editMenuIdAIWriterTest() {
     });
 
     /**
-     * @tc.number    editMenuIdAIWriterTest_0100
-     * @tc.name      editMenuIdAIWriterTest_0100
-     * @tc.desc      Text: editMenuIdAIWriter
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   editMenuIdAIWriterTest_0100
+     * @tc.number editMenuIdAIWriterTest_0100
+     * @tc.desc   Text: editMenuIdAIWriter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('editMenuIdAIWriterTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('editMenuIdAIWriterTest_0100 START');
@@ -80,12 +80,12 @@ export default function editMenuIdAIWriterTest() {
     });
 
     /**
-     * @tc.number    editMenuIdAIWriterTest_0200
-     * @tc.name      editMenuIdAIWriterTest_0200
-     * @tc.desc      Text: editMenuIdAIWriter
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   editMenuIdAIWriterTest_0200
+     * @tc.number editMenuIdAIWriterTest_0200
+     * @tc.desc   Text: editMenuIdAIWriter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('editMenuIdAIWriterTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('editMenuIdAIWriterTest_0200 START');

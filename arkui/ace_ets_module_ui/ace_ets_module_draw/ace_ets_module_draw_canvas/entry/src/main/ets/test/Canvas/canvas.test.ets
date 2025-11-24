@@ -46,12 +46,12 @@ export default function canvasActualBoundingBoxAscentJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testcanvasAttributes0001
-     * @tc.name: testcanvasAttributes0001
-     * @tc.desc: CanvasAPI 
-     * @tc.level: Level 0
-     * @tc.type : Canvas
-     * @tc.size : CanvasTest
+     * @tc.name   testcanvasAttributes0001
+     * @tc.number SUB_ARKUI_API_testcanvasAttributes0001
+     * @tc.desc   CanvasAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testcanvasAttributes0001', Level.LEVEL0, async (done:Function) => {
       console.info('canvasAttributes0001 testcanvasAttributes0001 START');
@@ -64,13 +64,13 @@ export default function canvasActualBoundingBoxAscentJsunit() {
       done();
     });
 
-     /**
-     * @tc.number: SUB_ARKUI_API_testcanvasAttributes0002
-     * @tc.name: testcanvasAttributes0002
-     * @tc.desc: CanvasAPI 
-     * @tc.level: Level 0
-     * @tc.type : Canvas
-     * @tc.size : CanvasTest
+    /**
+     * @tc.name   testcanvasAttributes0002
+     * @tc.number SUB_ARKUI_API_testcanvasAttributes0002
+     * @tc.desc   CanvasAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testcanvasAttributes0002', Level.LEVEL0, async (done:Function) => {
       console.info('canvasAttributes0002 testcanvasAttributes0002 START');
@@ -84,13 +84,13 @@ export default function canvasActualBoundingBoxAscentJsunit() {
       done();
     });
 
-     /**
-     * @tc.number: SUB_ARKUI_API_testcanvasAttributes0003
-     * @tc.name: testcanvasAttributes0003
-     * @tc.desc: CanvasAPI 
-     * @tc.level: Level 0
-     * @tc.type : Canvas
-     * @tc.size : CanvasTest
+    /**
+     * @tc.name   testcanvasAttributes0003
+     * @tc.number SUB_ARKUI_API_testcanvasAttributes0003
+     * @tc.desc   CanvasAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testcanvasAttributes0003', Level.LEVEL0, async (done:Function) => {
       console.info('canvasAttributes0003 testcanvasAttributes0003 START');
@@ -104,13 +104,13 @@ export default function canvasActualBoundingBoxAscentJsunit() {
       done();
     });
 
-     /**
-     * @tc.number: SUB_ARKUI_API_testcanvasAttributes0004
-     * @tc.name: testcanvasAttributes0004
-     * @tc.desc: CanvasAPI 
-     * @tc.level: Level 0
-     * @tc.type : Canvas
-     * @tc.size : CanvasTest
+    /**
+     * @tc.name   testcanvasAttributes0004
+     * @tc.number SUB_ARKUI_API_testcanvasAttributes0004
+     * @tc.desc   CanvasAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testcanvasAttributes0004', Level.LEVEL0, async (done:Function) => {
       console.info('canvasAttributes0003 testcanvasAttributes0004 START');
@@ -124,13 +124,13 @@ export default function canvasActualBoundingBoxAscentJsunit() {
       done();
     });
 
-     /**
-     * @tc.number: SUB_ARKUI_API_testcanvasAttributes0005
-     * @tc.name: testcanvasAttributes0005
-     * @tc.desc: CanvasAPI 
-     * @tc.level: Level 0
-     * @tc.type : Canvas
-     * @tc.size : CanvasTest
+    /**
+     * @tc.name   testcanvasAttributes0005
+     * @tc.number SUB_ARKUI_API_testcanvasAttributes0005
+     * @tc.desc   CanvasAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testcanvasAttributes0005', Level.LEVEL0, async (done:Function) => {
       console.info('canvasAttributes0005 testcanvasAttributes0004 START');

@@ -46,12 +46,12 @@ export default function singleHozList() {
     });
 
     /**
-     * @tc.number    singleHozList_001
-     * @tc.name      singleHozList_0100
-     * @tc.desc      List component arranged horizontally in a single column, jumps to the specified index.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   singleHozList_0100
+     * @tc.number singleHozList_001
+     * @tc.desc   List component arranged horizontally in a single column, jumps to the specified index.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('singleHozList_0100', Level.LEVEL3, async (done: Function) => {
       console.info('[singleHozList_0100] START');

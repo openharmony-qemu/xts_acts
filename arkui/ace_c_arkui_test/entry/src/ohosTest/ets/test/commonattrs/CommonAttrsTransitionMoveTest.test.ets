@@ -26,86 +26,91 @@ export default function commonAttrsTransitionEffectMoveTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSITIONMOVE_0100
-     * @tc.name       : testCommonAttrsTransitionMove001
-     * @tc.desc       : testing TransitionEffect Move for commonAttrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTransitionMove001
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSITIONMOVE_0100
+     * @tc.desc   testing TransitionEffect Move for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTransitionMove001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTransitionMove001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSITIONMOVE_0200
-     * @tc.name       : testCommonAttrsTransitionMove002
-     * @tc.desc       : testing TransitionEffect Move for commonAttrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTransitionMove002
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSITIONMOVE_0200
+     * @tc.desc   testing TransitionEffect Move for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTransitionMove002', Level.LEVEL1, async (done: Function) => {
         expect(nativeFunc.testCommonAttrsTransitionMove002()).assertEqual(0)
         done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSITIONMOVE_0300
-     * @tc.name       : testCommonAttrsTransitionMove003
-     * @tc.desc       : testing TransitionEffect Move for commonAttrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
+    /**
+     * @tc.name   testCommonAttrsTransitionMove003
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSITIONMOVE_0300
+     * @tc.desc   testing TransitionEffect Move for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTransitionMove003', Level.LEVEL1, async (done: Function) => {
         expect(nativeFunc.testCommonAttrsTransitionMove003()).assertEqual(0)
         done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSITIONMOVE_0400
-     * @tc.name       : testCommonAttrsTransitionMove004
-     * @tc.desc       : testing TransitionEffect Move for commonAttrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
+    /**
+     * @tc.name   testCommonAttrsTransitionMove004
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSITIONMOVE_0400
+     * @tc.desc   testing TransitionEffect Move for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTransitionMove004', Level.LEVEL1, async (done: Function) => {
         expect(nativeFunc.testCommonAttrsTransitionMove004()).assertEqual(0)
         done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSITIONMOVE_0500
-     * @tc.name       : testCommonAttrsTransitionMove005
-     * @tc.desc       : testing TransitionEffect Move for commonAttrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
+    /**
+     * @tc.name   testCommonAttrsTransitionMove005
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSITIONMOVE_0500
+     * @tc.desc   testing TransitionEffect Move for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTransitionMove005', Level.LEVEL1, async (done: Function) => {
         expect(nativeFunc.testCommonAttrsTransitionMove005()).assertEqual(0)
         done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSITIONMOVE_0600
-     * @tc.name       : testCommonAttrsTransitionMove006
-     * @tc.desc       : testing TransitionEffect Move for commonAttrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
+    /**
+     * @tc.name   testCommonAttrsTransitionMove006
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSITIONMOVE_0600
+     * @tc.desc   testing TransitionEffect Move for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTransitionMove006', Level.LEVEL1, async (done: Function) => {
         expect(nativeFunc.testCommonAttrsTransitionMove006()).assertEqual(0)
         done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSITIONMOVE_0700
-     * @tc.name       : testCommonAttrsTransitionMove007
-     * @tc.desc       : testing resetAttribute TransitionEffect Move for commonAttrs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
+    /**
+     * @tc.name   testCommonAttrsTransitionMove007
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSITIONMOVE_0700
+     * @tc.desc   testing resetAttribute TransitionEffect Move for commonAttrs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTransitionMove007', Level.LEVEL1, async (done: Function) => {
         expect(nativeFunc.testCommonAttrsTransitionMove007()).assertEqual(0)

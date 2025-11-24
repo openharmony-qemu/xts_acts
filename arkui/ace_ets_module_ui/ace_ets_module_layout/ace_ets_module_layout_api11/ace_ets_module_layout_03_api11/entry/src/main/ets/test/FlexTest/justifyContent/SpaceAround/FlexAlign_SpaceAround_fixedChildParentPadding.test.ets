@@ -49,10 +49,12 @@ export default function flexAlign_SpaceAround_fixedChildParentPadding() {
     });
 
     /**
+     * @tc.name   testAlignSpaceAroundRowNoWrapPaddingOutRange
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_SPACEAROUND_TEST_0300
-     * @tc.name testAlignSpaceAroundRowNoWrapPaddingOutRange
-     * @tc.desc The child component is fixed, and parent component is bound with padding attributes, the layout
-     *               space of parent is insufficient to meet the spindle layout requirements of child component
+     * @tc.desc   The child component is fixed, and parent component is bound with padding attributes, the layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAlignSpaceAroundRowNoWrapPaddingOutRange',  Level.LEVEL0, async () => {
       console.info('new testAlignSpaceAroundRowNoWrapPaddingOutRange START');
@@ -91,10 +93,12 @@ export default function flexAlign_SpaceAround_fixedChildParentPadding() {
     });
 
     /**
+     * @tc.name   testAlignSpaceAroundRowNoWrapPaddingInRange
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_SPACEAROUND_TEST_0400
-     * @tc.name testAlignSpaceAroundRowNoWrapPaddingInRange
-     * @tc.desc The child component is fixed, and parent component is bound with padding attributes, the layout
-     *               space of parent component meets the spindle layout requirements of the child component
+     * @tc.desc   The child component is fixed, and parent component is bound with padding attributes, the layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAlignSpaceAroundRowNoWrapPaddingInRange',  Level.LEVEL0, async () => {
       console.info('new testAlignSpaceAroundRowNoWrapPaddingInRange START');

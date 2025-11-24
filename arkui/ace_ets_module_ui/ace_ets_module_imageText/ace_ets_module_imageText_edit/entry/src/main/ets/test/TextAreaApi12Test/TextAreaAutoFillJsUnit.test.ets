@@ -48,12 +48,12 @@ export default function textAreaAutoFillTest() {
     });
 
     /**
-     * @tc.number: AutoFillTextAreaTest_0100
-     * @tc.name: AutoFillTextAreaTest_0100
-     * @tc.desc: Verify that the contentType passed in is equal to the contentType in JSON.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level      : 0
+     * @tc.name   AutoFillTextAreaTest_0100
+     * @tc.number AutoFillTextAreaTest_0100
+     * @tc.desc   Verify that the contentType passed in is equal to the contentType in JSON.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AutoFillTextAreaTest_0100',  Level.LEVEL0, async (done: Function) => {
       const TAG = 'AutoFillTextAreaTest_0100_TAG';
@@ -72,12 +72,12 @@ export default function textAreaAutoFillTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_TextAreaAutoFill_0200
-     * @tc.name: AutoFillTextAreaTest_0200
-     * @tc.desc: Verify that the contentType passed in is equal to the contentType in JSON.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level      : 0
+     * @tc.name   AutoFillTextAreaTest_0200
+     * @tc.number SUB_Ability_AbilityRuntime_TextAreaAutoFill_0200
+     * @tc.desc   Verify that the contentType passed in is equal to the contentType in JSON.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AutoFillTextAreaTest_0200',  Level.LEVEL0, async (done: Function) => {
       const TAG = 'AutoFillTextAreaTest_0200_TAG';
@@ -96,12 +96,12 @@ export default function textAreaAutoFillTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_TextAreaAutoFill_0300
-     * @tc.name: AutoFillTextAreaTest_0300
-     * @tc.desc: Verify that the contentType passed in is equal to the contentType in JSON.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level      : 0
+     * @tc.name   AutoFillTextAreaTest_0300
+     * @tc.number SUB_Ability_AbilityRuntime_TextAreaAutoFill_0300
+     * @tc.desc   Verify that the contentType passed in is equal to the contentType in JSON.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AutoFillTextAreaTest_0300',  Level.LEVEL0, async (done: Function) => {
       const TAG = 'AutoFillTextAreaTest_0300_TAG';
@@ -120,12 +120,12 @@ export default function textAreaAutoFillTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_TextAreaAutoFill_0400
-     * @tc.name: AutoFillTextAreaTest_0400
-     * @tc.desc: Verify that the contentType passed in is equal to the contentType in JSON.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level      : 0
+     * @tc.name   AutoFillTextAreaTest_0400
+     * @tc.number SUB_Ability_AbilityRuntime_TextAreaAutoFill_0400
+     * @tc.desc   Verify that the contentType passed in is equal to the contentType in JSON.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AutoFillTextAreaTest_0400',  Level.LEVEL0, async (done: Function) => {
       const TAG = 'AutoFillTextAreaTest_0400_TAG';
@@ -144,12 +144,12 @@ export default function textAreaAutoFillTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_TextAreaAutoFill_0500
-     * @tc.name: AutoFillTextAreaTest_0500
-     * @tc.desc: Verify that the contentType passed in is equal to the contentType in JSON.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level      : 0
+     * @tc.name   AutoFillTextAreaTest_0500
+     * @tc.number SUB_Ability_AbilityRuntime_TextAreaAutoFill_0500
+     * @tc.desc   Verify that the contentType passed in is equal to the contentType in JSON.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AutoFillTextAreaTest_0500',  Level.LEVEL0, async (done: Function) => {
       const TAG = 'AutoFillTextAreaTest_0500_TAG';
@@ -168,12 +168,12 @@ export default function textAreaAutoFillTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_TextAreaAutoFill_0600
-     * @tc.name: AutoFillTextAreaTest_0600
-     * @tc.desc: Verify that the contentType passed in is equal to the contentType in JSON.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level      : 0
+     * @tc.name   AutoFillTextAreaTest_0600
+     * @tc.number SUB_Ability_AbilityRuntime_TextAreaAutoFill_0600
+     * @tc.desc   Verify that the contentType passed in is equal to the contentType in JSON.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AutoFillTextAreaTest_0600',  Level.LEVEL0, async (done: Function) => {
       const TAG = 'AutoFillTextAreaTest_0600_TAG';
@@ -192,12 +192,12 @@ export default function textAreaAutoFillTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_TextAreaAutoFill_0700
-     * @tc.name: AutoFillTextAreaTest_0700
-     * @tc.desc: Verify that the contentType passed in is equal to the contentType in JSON.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level      : 0
+     * @tc.name   AutoFillTextAreaTest_0700
+     * @tc.number SUB_Ability_AbilityRuntime_TextAreaAutoFill_0700
+     * @tc.desc   Verify that the contentType passed in is equal to the contentType in JSON.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AutoFillTextAreaTest_0700',  Level.LEVEL0, async (done: Function) => {
       const TAG = 'AutoFillTextAreaTest_0700_TAG';
@@ -216,12 +216,12 @@ export default function textAreaAutoFillTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_TextAreaAutoFill_0800
-     * @tc.name: AutoFillTextAreaTest_0800
-     * @tc.desc: Verify that the contentType passed in is equal to the contentType in JSON.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level      : 0
+     * @tc.name   AutoFillTextAreaTest_0800
+     * @tc.number SUB_Ability_AbilityRuntime_TextAreaAutoFill_0800
+     * @tc.desc   Verify that the contentType passed in is equal to the contentType in JSON.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AutoFillTextAreaTest_0800',  Level.LEVEL0, async (done: Function) => {
       const TAG = 'AutoFillTextAreaTest_0800_TAG';
@@ -240,12 +240,12 @@ export default function textAreaAutoFillTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_TextAreaAutoFill_0900
-     * @tc.name: AutoFillTextAreaTest_0900
-     * @tc.desc: Verify that the contentType passed in is equal to the contentType in JSON.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level      : 0
+     * @tc.name   AutoFillTextAreaTest_0900
+     * @tc.number SUB_Ability_AbilityRuntime_TextAreaAutoFill_0900
+     * @tc.desc   Verify that the contentType passed in is equal to the contentType in JSON.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AutoFillTextAreaTest_0900',  Level.LEVEL0, async (done: Function) => {
       const TAG = 'AutoFillTextAreaTest_0900_TAG';
@@ -264,12 +264,12 @@ export default function textAreaAutoFillTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_TextAreaAutoFill_1000
-     * @tc.name: AutoFillTextAreaTest_1000
-     * @tc.desc: Verify that the contentType passed in is equal to the contentType in JSON.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level      : 0
+     * @tc.name   AutoFillTextAreaTest_1000
+     * @tc.number SUB_Ability_AbilityRuntime_TextAreaAutoFill_1000
+     * @tc.desc   Verify that the contentType passed in is equal to the contentType in JSON.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AutoFillTextAreaTest_1000',  Level.LEVEL0, async (done: Function) => {
       const TAG = 'AutoFillTextAreaTest_1000_TAG';
@@ -288,12 +288,12 @@ export default function textAreaAutoFillTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_TextAreaAutoFill_1100
-     * @tc.name: AutoFillTextAreaTest_1100
-     * @tc.desc: Verify that the contentType passed in is equal to the contentType in JSON.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level      : 0
+     * @tc.name   AutoFillTextAreaTest_1100
+     * @tc.number SUB_Ability_AbilityRuntime_TextAreaAutoFill_1100
+     * @tc.desc   Verify that the contentType passed in is equal to the contentType in JSON.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AutoFillTextAreaTest_1100',  Level.LEVEL0, async (done: Function) => {
       const TAG = 'AutoFillTextAreaTest_1100_TAG';
@@ -312,12 +312,12 @@ export default function textAreaAutoFillTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_TextAreaAutoFill_1200
-     * @tc.name: AutoFillTextAreaTest_1200
-     * @tc.desc: Verify that the contentType passed in is equal to the contentType in JSON.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level      : 0
+     * @tc.name   AutoFillTextAreaTest_1200
+     * @tc.number SUB_Ability_AbilityRuntime_TextAreaAutoFill_1200
+     * @tc.desc   Verify that the contentType passed in is equal to the contentType in JSON.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AutoFillTextAreaTest_1200',  Level.LEVEL0, async (done: Function) => {
       const TAG = 'AutoFillTextAreaTest_1200_TAG';
@@ -336,12 +336,12 @@ export default function textAreaAutoFillTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_TextAreaAutoFill_1300
-     * @tc.name: AutoFillTextAreaTest_1300
-     * @tc.desc: Verify that the contentType passed in is equal to the contentType in JSON.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level      : 0
+     * @tc.name   AutoFillTextAreaTest_1300
+     * @tc.number SUB_Ability_AbilityRuntime_TextAreaAutoFill_1300
+     * @tc.desc   Verify that the contentType passed in is equal to the contentType in JSON.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AutoFillTextAreaTest_1300',  Level.LEVEL0, async (done: Function) => {
       const TAG = 'AutoFillTextAreaTest_1300_TAG';
@@ -360,12 +360,12 @@ export default function textAreaAutoFillTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_TextAreaAutoFill_1400
-     * @tc.name: AutoFillTextAreaTest_1400
-     * @tc.desc: Verify that the contentType passed in is equal to the contentType in JSON.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level      : 0
+     * @tc.name   AutoFillTextAreaTest_1400
+     * @tc.number SUB_Ability_AbilityRuntime_TextAreaAutoFill_1400
+     * @tc.desc   Verify that the contentType passed in is equal to the contentType in JSON.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AutoFillTextAreaTest_1400',  Level.LEVEL0, async (done: Function) => {
       const TAG = 'AutoFillTextAreaTest_1400_TAG';
@@ -384,12 +384,12 @@ export default function textAreaAutoFillTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_TextAreaAutoFill_1500
-     * @tc.name: AutoFillTextAreaTest_1500
-     * @tc.desc: Verify that the contentType passed in is equal to the contentType in JSON.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level      : 0
+     * @tc.name   AutoFillTextAreaTest_1500
+     * @tc.number SUB_Ability_AbilityRuntime_TextAreaAutoFill_1500
+     * @tc.desc   Verify that the contentType passed in is equal to the contentType in JSON.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AutoFillTextAreaTest_1500',  Level.LEVEL0, async (done: Function) => {
       const TAG = 'AutoFillTextAreaTest_1500_TAG';
@@ -408,12 +408,12 @@ export default function textAreaAutoFillTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_TextAreaAutoFill_1600
-     * @tc.name: AutoFillTextAreaTest_1600
-     * @tc.desc: Verify that the contentType passed in is equal to the contentType in JSON.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level      : 0
+     * @tc.name   AutoFillTextAreaTest_1600
+     * @tc.number SUB_Ability_AbilityRuntime_TextAreaAutoFill_1600
+     * @tc.desc   Verify that the contentType passed in is equal to the contentType in JSON.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AutoFillTextAreaTest_1600',  Level.LEVEL0, async (done: Function) => {
       const TAG = 'AutoFillTextAreaTest_1600_TAG';
@@ -432,12 +432,12 @@ export default function textAreaAutoFillTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_TextAreaAutoFill_1700
-     * @tc.name: AutoFillTextAreaTest_1700
-     * @tc.desc: Verify that the contentType passed in is equal to the contentType in JSON.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level      : 0
+     * @tc.name   AutoFillTextAreaTest_1700
+     * @tc.number SUB_Ability_AbilityRuntime_TextAreaAutoFill_1700
+     * @tc.desc   Verify that the contentType passed in is equal to the contentType in JSON.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AutoFillTextAreaTest_1700',  Level.LEVEL0, async (done: Function) => {
       const TAG = 'AutoFillTextAreaTest_1700_TAG';
@@ -456,12 +456,12 @@ export default function textAreaAutoFillTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_TextAreaAutoFill_1800
-     * @tc.name: AutoFillTextAreaTest_1800
-     * @tc.desc: Verify that the contentType passed in is equal to the contentType in JSON.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level      : 0
+     * @tc.name   AutoFillTextAreaTest_1800
+     * @tc.number SUB_Ability_AbilityRuntime_TextAreaAutoFill_1800
+     * @tc.desc   Verify that the contentType passed in is equal to the contentType in JSON.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AutoFillTextAreaTest_1800',  Level.LEVEL0, async (done: Function) => {
       const TAG = 'AutoFillTextAreaTest_1800_TAG';
@@ -480,12 +480,12 @@ export default function textAreaAutoFillTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_TextAreaAutoFill_1900
-     * @tc.name: AutoFillTextAreaTest_1900
-     * @tc.desc: Verify that the contentType passed in is equal to the contentType in JSON.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level      : 0
+     * @tc.name   AutoFillTextAreaTest_1900
+     * @tc.number SUB_Ability_AbilityRuntime_TextAreaAutoFill_1900
+     * @tc.desc   Verify that the contentType passed in is equal to the contentType in JSON.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AutoFillTextAreaTest_1900',  Level.LEVEL0, async (done: Function) => {
       const TAG = 'AutoFillTextAreaTest_1900_TAG';

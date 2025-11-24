@@ -47,13 +47,13 @@ export default function ResourceNormalTest() {
       console.info("ResourceNormalTest after each called");
     });
 
-    /*
-    * @tc.number       ResourceNormalTest_0010
-    * @tc.name         ResourceNormalTest_0010
-    * @tc.desc        set Resource
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   ResourceNormalTest_0010
+     * @tc.number ResourceNormalTest_0010
+     * @tc.desc   set Resource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ResourceNormalTest_0010', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();
@@ -86,13 +86,13 @@ export default function ResourceNormalTest() {
       done();
     });
 
-    /*
-    * @tc.number       ResourceNormalTest_0020
-    * @tc.name         ResourceNormalTest0002
-    * @tc.desc        set Resource
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   ResourceNormalTest_0020
+     * @tc.number ResourceNormalTest_0020
+     * @tc.desc   set Resource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ResourceNormalTest_0020', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();
@@ -129,13 +129,13 @@ export default function ResourceNormalTest() {
       done();
     });
 
-    /*
-    * @tc.number       ResourceNormalTest_0030
-    * @tc.name         ResourceNormalTest_0030
-    * @tc.desc        set Resource
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   ResourceNormalTest_0030
+     * @tc.number ResourceNormalTest_0030
+     * @tc.desc   set Resource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ResourceNormalTest_0030', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();

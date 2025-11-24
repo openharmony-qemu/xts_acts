@@ -41,12 +41,12 @@ export default function formComponentJsunitJsunit() {
     });
 
     /**
+     * @tc.name   test_formComponentJsunit001
      * @tc.number test_formComponentJsunit001
-     * @tc.name Test the properties of components
-     * @tc.desc Set allowUpdate values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set allowUpdate values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_formComponentJsunit001', Level.LEVEL0, async (done: Function) => {
       console.info('[test_formComponentJsunit001] START');
@@ -59,12 +59,12 @@ export default function formComponentJsunitJsunit() {
     });
 
     /**
+     * @tc.name   test_formComponentJsunit002
      * @tc.number test_formComponentJsunit002
-     * @tc.name Test the properties of components
-     * @tc.desc Set dimension values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set dimension values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_formComponentJsunit002', Level.LEVEL0, async (done: Function) => {
       console.info('[test_formComponentJsunit002] START');
@@ -78,12 +78,12 @@ export default function formComponentJsunitJsunit() {
     });
 
     /**
+     * @tc.name   test_formComponentJsunit003
      * @tc.number test_formComponentJsunit003
-     * @tc.name Test the properties of components
-     * @tc.desc Set moduleName values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set moduleName values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_formComponentJsunit003', Level.LEVEL0, async (done: Function) => {
       console.info('[test_formComponentJsunit003] START');
@@ -97,12 +97,12 @@ export default function formComponentJsunitJsunit() {
     });
 
     /**
+     * @tc.name   test_formComponentJsunit004
      * @tc.number test_formComponentJsunit004
-     * @tc.name Test the properties of components
-     * @tc.desc Set size values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set size values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_formComponentJsunit004', Level.LEVEL0, async (done: Function) => {
       console.info('[test_formComponentJsunit004] START');
@@ -117,12 +117,12 @@ export default function formComponentJsunitJsunit() {
     });
 
     /**
+     * @tc.name   test_formComponentJsunit005
      * @tc.number test_formComponentJsunit005
-     * @tc.name Test the properties of components
-     * @tc.desc Set visibility values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set visibility values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_formComponentJsunit005', Level.LEVEL0, async (done: Function) => {
       console.info('[test_formComponentJsunit005] START');
@@ -140,12 +140,12 @@ export default function formComponentJsunitJsunit() {
     });
 
     /**
+     * @tc.name   test_formComponentJsunit006
      * @tc.number test_formComponentJsunit006
-     * @tc.name Test the properties of components
-     * @tc.desc Change size values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change size values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_formComponentJsunit006', Level.LEVEL0, async (done: Function) => {
 

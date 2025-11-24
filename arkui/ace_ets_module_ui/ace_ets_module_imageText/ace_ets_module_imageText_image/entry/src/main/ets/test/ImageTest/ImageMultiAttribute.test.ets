@@ -43,13 +43,13 @@ export default function ImageMultiAttributeTest() {
       done();
     });
 
-    /*
+    /**
+     * @tc.name   ImageMultiAttributeTest_0100
      * @tc.number ImageMultiAttributeTest_0100
-     * @tc.name ImageMultiAttributeTest_0100
-     * @tc.desc Image test
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Image test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageMultiAttributeTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ImageMultiAttributeTest_0100 START');
@@ -72,13 +72,13 @@ export default function ImageMultiAttributeTest() {
       done();
     });
 
-    /*
+    /**
+     * @tc.name   ImageMultiAttributeTest_0200
      * @tc.number ImageMultiAttributeTest_0200
-     * @tc.name ImageMultiAttributeTest_0200
-     * @tc.desc Image test
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Image test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageMultiAttributeTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('imageOneJsunit_0200 START');
@@ -95,13 +95,13 @@ export default function ImageMultiAttributeTest() {
       done();
     });
 
-    /*
+    /**
+     * @tc.name   ImageMultiAttributeTest_0300
      * @tc.number ImageMultiAttributeTest_0300
-     * @tc.name ImageMultiAttributeTest_0300
-     * @tc.desc Image test
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Image test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageMultiAttributeTest_0300', Level.LEVEL1, async (done: Function) => {
       console.info('ImageMultiAttributeTest_0300 START');
@@ -118,13 +118,13 @@ export default function ImageMultiAttributeTest() {
       done();
     });
 
-    /*
+    /**
+     * @tc.name   ImageMultiAttributeTest_0400
      * @tc.number ImageMultiAttributeTest_0400
-     * @tc.name ImageMultiAttributeTest_0400
-     * @tc.desc Image test
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Image test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageMultiAttributeTest_0400', Level.LEVEL1, async (done: Function) => {
       console.info('ImageMultiAttributeTest_0400 START');
@@ -159,13 +159,13 @@ export default function ImageMultiAttributeTest() {
       done();
     });
 
-    /*
+    /**
+     * @tc.name   ImageMultiAttributeTest_0500
      * @tc.number ImageMultiAttributeTest_0500
-     * @tc.name ImageMultiAttributeTest_0500
-     * @tc.desc Image test
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Image test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageMultiAttributeTest_0500', Level.LEVEL1, async (done: Function) => {
       console.info('ImageMultiAttributeTest_0500 START');
@@ -182,13 +182,13 @@ export default function ImageMultiAttributeTest() {
       done();
     });
 
-    /*
+    /**
+     * @tc.name   ImageMultiAttributeTest_0600
      * @tc.number ImageMultiAttributeTest_0600
-     * @tc.name ImageMultiAttributeTest_0600
-     * @tc.desc Image test
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Image test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageMultiAttributeTest_0600', Level.LEVEL1, async (done: Function) => {
       console.info('imageOneJsunit_0600 START');

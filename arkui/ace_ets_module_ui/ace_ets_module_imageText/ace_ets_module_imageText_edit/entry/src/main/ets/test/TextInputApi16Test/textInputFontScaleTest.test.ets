@@ -45,13 +45,13 @@ export default function textInputFontScaleTest() {
       console.info("textInputFontScaleTest after each called");
     });
 
-    /*
-     * @tc.number       textInputFontScaleTest0001
-     * @tc.name         textInputFontScaleTest0001
-     * @tc.desc         Test textInputFontScaleTest abnormal value :undefined
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textInputFontScaleTest0001
+     * @tc.number textInputFontScaleTest0001
+     * @tc.desc   Test textInputFontScaleTest abnormal value :undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textInputFontScaleTest0001', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -66,13 +66,13 @@ export default function textInputFontScaleTest() {
         console.info("[textInputFontScaleTest0001] end");
     });
 	
-	/*
-     * @tc.number       textInputFontScaleTest0002
-     * @tc.name         textInputFontScaleTest0002
-     * @tc.desc         Test textInputFontScaleTest reference value :$r('app.string')
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textInputFontScaleTest0002
+     * @tc.number textInputFontScaleTest0002
+     * @tc.desc   Test textInputFontScaleTest reference value :$r('app.string')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textInputFontScaleTest0002', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -87,13 +87,13 @@ export default function textInputFontScaleTest() {
         console.info("[textInputFontScaleTest0002] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-     * @tc.name         textInputFontScaleTest0003
-     * @tc.desc        Test textInputFontScaleTest Normal value 
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textInputFontScaleTest0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   Test textInputFontScaleTest Normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textInputFontScaleTest0003', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -108,13 +108,13 @@ export default function textInputFontScaleTest() {
         console.info("[textInputFontScaleTest0003] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0004
-     * @tc.name         textInputFontScaleTest0004
-     * @tc.desc        Test textInputFontScaleTest abnormal value :less than minimum
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textInputFontScaleTest0004
+     * @tc.number SUB_ACE_BASIC_ETS_API_0004
+     * @tc.desc   Test textInputFontScaleTest abnormal value :less than minimum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textInputFontScaleTest0004', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -129,13 +129,13 @@ export default function textInputFontScaleTest() {
         console.info("[textInputFontScaleTest0004] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0005
-     * @tc.name         textInputFontScaleTest0005
-     * @tc.desc        Test textInputFontScaleTest abnormal value :Greater than maximum
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textInputFontScaleTest0005
+     * @tc.number SUB_ACE_BASIC_ETS_API_0005
+     * @tc.desc   Test textInputFontScaleTest abnormal value :Greater than maximum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textInputFontScaleTest0005', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -151,13 +151,13 @@ export default function textInputFontScaleTest() {
     });
 	
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0006
-     * @tc.name         textInputFontScaleTest0006
-     * @tc.desc        Test textInputFontScaleTest reference value :$r('app.boolean')
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textInputFontScaleTest0006
+     * @tc.number SUB_ACE_BASIC_ETS_API_0006
+     * @tc.desc   Test textInputFontScaleTest reference value :$r('app.boolean')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textInputFontScaleTest0006', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -172,13 +172,13 @@ export default function textInputFontScaleTest() {
         console.info("[textInputFontScaleTest0006] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0007
-     * @tc.name         textInputFontScaleTest0007
-     * @tc.desc        Test textInputFontScaleTest reference value :$r('app.color')
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textInputFontScaleTest0007
+     * @tc.number SUB_ACE_BASIC_ETS_API_0007
+     * @tc.desc   Test textInputFontScaleTest reference value :$r('app.color')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textInputFontScaleTest0007', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -193,13 +193,13 @@ export default function textInputFontScaleTest() {
         console.info("[textInputFontScaleTest0007] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0008
-     * @tc.name         textInputFontScaleTest0008
-     * @tc.desc        Test textInputFontScaleTest reference value :$r('app.float')
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textInputFontScaleTest0008
+     * @tc.number SUB_ACE_BASIC_ETS_API_0008
+     * @tc.desc   Test textInputFontScaleTest reference value :$r('app.float')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textInputFontScaleTest0008', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -214,13 +214,13 @@ export default function textInputFontScaleTest() {
         console.info("[textInputFontScaleTest0008] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0009
-     * @tc.name         textInputFontScaleTest0009
-     * @tc.desc        Test textInputFontScaleTest reference value :$r('app.integer')
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textInputFontScaleTest0009
+     * @tc.number SUB_ACE_BASIC_ETS_API_0009
+     * @tc.desc   Test textInputFontScaleTest reference value :$r('app.integer')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textInputFontScaleTest0009', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -236,13 +236,13 @@ export default function textInputFontScaleTest() {
     });
 	
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0010
-     * @tc.name         textInputFontScaleTest00010
-     * @tc.desc        Test textInputFontScaleTest reference value :$r('app.intarray')
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textInputFontScaleTest0010
+     * @tc.number SUB_ACE_BASIC_ETS_API_0010
+     * @tc.desc   Test textInputFontScaleTest reference value :$r('app.intarray')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textInputFontScaleTest0010', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -257,13 +257,13 @@ export default function textInputFontScaleTest() {
         console.info("[textInputFontScaleTest0010] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0011
-     * @tc.name         textInputFontScaleTest0011
-     * @tc.desc        Test textInputFontScaleTest reference value :$r('app.pattern')
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textInputFontScaleTest0011
+     * @tc.number SUB_ACE_BASIC_ETS_API_0011
+     * @tc.desc   Test textInputFontScaleTest reference value :$r('app.pattern')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textInputFontScaleTest0011', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -279,13 +279,13 @@ export default function textInputFontScaleTest() {
     });
 	
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0012
-     * @tc.name         textInputFontScaleTest0012
-     * @tc.desc        Test textInputFontScaleTest reference value :$r('app.plural')
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textInputFontScaleTest0012
+     * @tc.number SUB_ACE_BASIC_ETS_API_0012
+     * @tc.desc   Test textInputFontScaleTest reference value :$r('app.plural')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textInputFontScaleTest0012', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -301,13 +301,13 @@ export default function textInputFontScaleTest() {
     });
 	
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0013
-     * @tc.name         textInputFontScaleTest0013
-     * @tc.desc        Test textInputFontScaleTest reference value :$r('app.strarray')
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textInputFontScaleTest0013
+     * @tc.number SUB_ACE_BASIC_ETS_API_0013
+     * @tc.desc   Test textInputFontScaleTest reference value :$r('app.strarray')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textInputFontScaleTest0013', Level.LEVEL1, async () => {
         let driver = Driver.create();

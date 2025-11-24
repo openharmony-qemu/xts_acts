@@ -56,14 +56,14 @@ export default function onGetIrregularJsunit() {
       done();
     });
 
-    /* *
-    * @tc.number: onGetIrregularJsunit_0001
-    * @tc.name  : onGetIrregularJsunit_0001
-    * @tc.desc  : Set onGetIrregularSizeByIndex[-1,1], columns Template layout only supports rows to 1, one row and one column
-    * @tc.level : Level 2
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   onGetIrregularJsunit_0001
+     * @tc.number onGetIrregularJsunit_0001
+     * @tc.desc   Set onGetIrregularSizeByIndex[-1,1], columns Template layout only supports rows to 1, one row and one column
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('onGetIrregularJsunit_0001',  Level.LEVEL0, async (done: Function) => {
       console.info('[onGetIrregularJsunit_0000] START');
       let Grid = CommonFunc.getComponentRect('GridGetIrregular');

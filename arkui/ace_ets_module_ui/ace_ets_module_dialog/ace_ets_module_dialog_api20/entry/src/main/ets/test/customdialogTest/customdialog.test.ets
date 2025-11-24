@@ -36,14 +36,14 @@ export default function customDialogGetstateTest() {
       done();
     });
 
-    /**
-     * @tc.number    customDialogGetstateTest001
-     * @tc.name      customDialogGetstateTest001
-     * @tc.desc      get dialog state
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
-     */
+      /**
+       * @tc.name   customDialogGetstateTest001
+       * @tc.number customDialogGetstateTest001
+       * @tc.desc   get dialog state
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('customDialogGetstateTest001', Level.LEVEL0, async (done: Function) => {
       let driver: Driver = Driver.create();
       let btn1 = await driver.findComponent(ON.id('dialogController001'));

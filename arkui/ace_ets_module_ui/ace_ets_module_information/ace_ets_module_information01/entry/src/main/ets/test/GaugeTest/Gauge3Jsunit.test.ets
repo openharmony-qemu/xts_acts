@@ -41,12 +41,12 @@ export default function Gauge3Jsunit() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_gauge3Jsunit_0100
-     * @tc.name      gauge3Jsunit_0100
-     * @tc.desc      Test gauge
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   gauge3Jsunit_0100
+     * @tc.number SUB_ACE_gauge3Jsunit_0100
+     * @tc.desc   Test gauge
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('gauge3Jsunit_0100', Level.LEVEL0, async (done: Function) => {
        console.info('gauge3Jsunit_0100 START');
@@ -70,14 +70,14 @@ export default function Gauge3Jsunit() {
       expect(colors).assertEqual('[[[["#FF317AF7","0.000000"]],0.10000000149011612],[[["#FF5BA854","0.000000"]],0.20000000298023224],[[["#FFE08C3A","0.000000"]],0.300000011920929],[[["#FF9C554B","0.000000"]],0.40000000596046448]]');
        done();
     });
-    /**
-     * @tc.number    SUB_ACE_gauge3Jsunit_0200
-     * @tc.name      gauge3Jsunit_0200
-     * @tc.desc      Test gauge
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
-     */
+   /**
+    * @tc.name   gauge3Jsunit_0200
+    * @tc.number SUB_ACE_gauge3Jsunit_0200
+    * @tc.desc   Test gauge
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('gauge3Jsunit_0200', Level.LEVEL0, async (done: Function) => {
       console.info('gauge3Jsunit_0200 START');
       await CommonFunc.sleep(1000);
@@ -102,14 +102,14 @@ export default function Gauge3Jsunit() {
      expect(colors).assertEqual('[[[["#FF317AF6","0.000000"]],0.300000011920929],[[["#FF5BA854","0.000000"]],0.300000011920929],[[["#FFE08C3A","0.000000"]],0.40000000596046448],[[["#FF9A554B","0.000000"]],0.40000000596046448]]');
       done();
     });
-    /**
-     * @tc.number    SUB_ACE_gauge3Jsunit_0300
-     * @tc.name      gauge3Jsunit_0300
-     * @tc.desc      Test gauge
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
-     */
+  /**
+   * @tc.name   gauge3Jsunit_0300
+   * @tc.number SUB_ACE_gauge3Jsunit_0300
+   * @tc.desc   Test gauge
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
   it('gauge3Jsunit_0300', Level.LEVEL0, async (done: Function) => {
       console.info('gauge3Jsunit_0200 START');
       await CommonFunc.sleep(1000);
@@ -130,12 +130,12 @@ export default function Gauge3Jsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_gauge3Jsunit_0400
-     * @tc.name      gauge3Jsunit_0400
-     * @tc.desc      Test gauge
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   gauge3Jsunit_0400
+     * @tc.number SUB_ACE_gauge3Jsunit_0400
+     * @tc.desc   Test gauge
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('gauge3Jsunit_0400', Level.LEVEL0, async (done: Function) => {
       console.info('gauge3Jsunit_0400 START');
@@ -161,14 +161,14 @@ export default function Gauge3Jsunit() {
       expect(colors).assertEqual('[[[["#FF317AF6","0.000000"]],2],[[["#FF0005BA","0.000000"]],0.300000011920929],[[["#FFE08C3A","0.000000"]],0.40000000596046448],[[["#FF9A554B","0.000000"]],0.40000000596046448]]');
       done();
    });
-    /**
-     * @tc.number    SUB_ACE_gauge3Jsunit_0500
-     * @tc.name      gauge3Jsunit_0500
-     * @tc.desc      Test gauge
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
-     */
+   /**
+    * @tc.name   gauge3Jsunit_0500
+    * @tc.number SUB_ACE_gauge3Jsunit_0500
+    * @tc.desc   Test gauge
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('gauge3Jsunit_0500', Level.LEVEL0, async (done: Function) => {
       console.info('gauge3Jsunit_0500 START');
       await CommonFunc.sleep(1000);
@@ -188,12 +188,12 @@ export default function Gauge3Jsunit() {
       done();   
     });
     /**
-     * @tc.number    SUB_ACE_gauge3Jsunit_0600
-     * @tc.name      gauge3Jsunit_0600
-     * @tc.desc      Test gauge
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   gauge3Jsunit_0600
+     * @tc.number SUB_ACE_gauge3Jsunit_0600
+     * @tc.desc   Test gauge
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('gauge3Jsunit_0600', Level.LEVEL0, async (done: Function) => {
       console.info('gauge3Jsunit_0600 START');
@@ -209,12 +209,12 @@ export default function Gauge3Jsunit() {
       done();  
     });
     /**
-     * @tc.number    SUB_ACE_gauge3Jsunit_0700
-     * @tc.name      gauge3Jsunit_0700
-     * @tc.desc      Test gauge
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   gauge3Jsunit_0700
+     * @tc.number SUB_ACE_gauge3Jsunit_0700
+     * @tc.desc   Test gauge
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('gauge3Jsunit_0700', Level.LEVEL0, async (done: Function) => {
       console.info('gauge3Jsunit_0700 START');

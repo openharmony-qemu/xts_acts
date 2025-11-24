@@ -41,12 +41,14 @@ export default function ScrollTest() {
       done();
     });
 
-    /* *
-      * @tc.number: SUB_ACE_COMPONENT_Scroll_001
-      * @tc.name  : ScrollTest_001
-      * @tc.desc  : set enablePaging to true
-      * @tc.level : Level 2
-      */
+    /**
+     * @tc.name   ScrollTest_001
+     * @tc.number SUB_ACE_COMPONENT_Scroll_001
+     * @tc.desc   set enablePaging to true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ScrollTest_001', Level.LEVEL1, async (done: Function) => {
 
       console.info('[ScrollTest_001] START');

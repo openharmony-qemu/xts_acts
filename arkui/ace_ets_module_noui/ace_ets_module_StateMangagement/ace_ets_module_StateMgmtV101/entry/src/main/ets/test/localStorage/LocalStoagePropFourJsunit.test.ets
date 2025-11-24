@@ -56,14 +56,14 @@ export default function LocalStoagePropFourJsunit() {
       done();
     });
     
-		/**
-		 * @tc.number    LocalStoagePropFourJsunit_0100
-		 * @tc.name      LocalStoagePropFourJsunit_0100
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   LocalStoagePropFourJsunit_0100
+     * @tc.number LocalStoagePropFourJsunit_0100
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LocalStoagePropFourJsunit_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('[LocalStoagePropFourJsunit_0200] START');
@@ -77,14 +77,14 @@ export default function LocalStoagePropFourJsunit() {
 
     });
 
-		/**
-		 * @tc.number    LocalStoagePropFourJsunit_0200
-		 * @tc.name      LocalStoagePropFourJsunit_0200
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   LocalStoagePropFourJsunit_0200
+     * @tc.number LocalStoagePropFourJsunit_0200
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LocalStoagePropFourJsunit_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[LocalStoagePropFourJsunit_0200] START');
       let strJson1 = getInspectorByKey('text_getValue3');

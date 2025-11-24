@@ -102,10 +102,12 @@ export default function ActsAlphabetIndexerUxTest() {
     })
 
     /**
-     * @tc.number ArkUI_AlphabetIndexer_0100
      * @tc.name   ArkUI_AlphabetIndexer_0100
+     * @tc.number ArkUI_AlphabetIndexer_0100
      * @tc.desc   ArkUI_AlphabetIndexer_0100
-     * @tc.level  1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_AlphabetIndexer_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUI_AlphabetIndexer_0100 start');
@@ -121,10 +123,12 @@ export default function ActsAlphabetIndexerUxTest() {
     });
 
     /**
-     * @tc.number ArkUI_AlphabetIndexer_0600
      * @tc.name   ArkUI_AlphabetIndexer_0600
+     * @tc.number ArkUI_AlphabetIndexer_0600
      * @tc.desc   ArkUI_AlphabetIndexer_0600
-     * @tc.level  1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_AlphabetIndexer_0600', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUI_AlphabetIndexer_0600 start');
@@ -136,10 +140,12 @@ export default function ActsAlphabetIndexerUxTest() {
     });
 
     /**
-     * @tc.number ArkUI_AlphabetIndexer_0700
      * @tc.name   ArkUI_AlphabetIndexer_0700
+     * @tc.number ArkUI_AlphabetIndexer_0700
      * @tc.desc   ArkUI_AlphabetIndexer_0700
-     * @tc.level  1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_AlphabetIndexer_0700', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUI_AlphabetIndexer_0700 start');
@@ -150,10 +156,12 @@ export default function ActsAlphabetIndexerUxTest() {
     });
 
     /**
-     * @tc.number ArkUI_AlphabetIndexer_0800
      * @tc.name   ArkUI_AlphabetIndexer_0800
+     * @tc.number ArkUI_AlphabetIndexer_0800
      * @tc.desc   ArkUI_AlphabetIndexer_0800
-     * @tc.level  1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_AlphabetIndexer_0800', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUI_AlphabetIndexer_0800 start');
@@ -181,10 +189,12 @@ export default function ActsAlphabetIndexerUxTest() {
     });
 
     /**
-     * @tc.number ArkUI_AlphabetIndexer_0900
      * @tc.name   ArkUI_AlphabetIndexer_0900
+     * @tc.number ArkUI_AlphabetIndexer_0900
      * @tc.desc   ArkUI_AlphabetIndexer_0900
-     * @tc.level  1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_AlphabetIndexer_0900', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUI_AlphabetIndexer_0900 start');
@@ -212,10 +222,12 @@ export default function ActsAlphabetIndexerUxTest() {
     });
 
     /**
-     * @tc.number ArkUI_AlphabetIndexer_1000
      * @tc.name   ArkUI_AlphabetIndexer_1000
+     * @tc.number ArkUI_AlphabetIndexer_1000
      * @tc.desc   ArkUI_AlphabetIndexer_1000
-     * @tc.level  1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_AlphabetIndexer_1000', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUI_AlphabetIndexer_1000 start');
@@ -243,10 +255,12 @@ export default function ActsAlphabetIndexerUxTest() {
     });
 
     /**
-     * @tc.number ArkUI_AlphabetIndexer_1100
      * @tc.name   ArkUI_AlphabetIndexer_1100
+     * @tc.number ArkUI_AlphabetIndexer_1100
      * @tc.desc   ArkUI_AlphabetIndexer_1100
-     * @tc.level  1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_AlphabetIndexer_1100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUI_AlphabetIndexer_1100 start');
@@ -274,10 +288,12 @@ export default function ActsAlphabetIndexerUxTest() {
     });
 
     /**
-     * @tc.number ArkUI_AlphabetIndexer_1200
      * @tc.name   ArkUI_AlphabetIndexer_1200
+     * @tc.number ArkUI_AlphabetIndexer_1200
      * @tc.desc   ArkUI_AlphabetIndexer_1200
-     * @tc.level  1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_AlphabetIndexer_1200', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUI_AlphabetIndexer_1200 start');
@@ -305,10 +321,12 @@ export default function ActsAlphabetIndexerUxTest() {
     });
 
     /**
-     * @tc.number ArkUI_AlphabetIndexer_1300
      * @tc.name   ArkUI_AlphabetIndexer_1300
+     * @tc.number ArkUI_AlphabetIndexer_1300
      * @tc.desc   ArkUI_AlphabetIndexer_1300
-     * @tc.level  1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_AlphabetIndexer_1300', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUI_AlphabetIndexer_1300 start');
@@ -336,10 +354,12 @@ export default function ActsAlphabetIndexerUxTest() {
     });
 
     /**
-     * @tc.number ArkUI_AlphabetIndexer_1400
      * @tc.name   ArkUI_AlphabetIndexer_1400
+     * @tc.number ArkUI_AlphabetIndexer_1400
      * @tc.desc   ArkUI_AlphabetIndexer_1400
-     * @tc.level  1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_AlphabetIndexer_1400', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUI_AlphabetIndexer_1400 start');
@@ -367,10 +387,12 @@ export default function ActsAlphabetIndexerUxTest() {
     });
 
     /**
-     * @tc.number ArkUI_AlphabetIndexer_1500
      * @tc.name   ArkUI_AlphabetIndexer_1500
+     * @tc.number ArkUI_AlphabetIndexer_1500
      * @tc.desc   ArkUI_AlphabetIndexer_1500
-     * @tc.level  1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_AlphabetIndexer_1500', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUI_AlphabetIndexer_1500 start');
@@ -398,10 +420,12 @@ export default function ActsAlphabetIndexerUxTest() {
     });
 
     /**
-     * @tc.number ArkUI_AlphabetIndexer_1600
      * @tc.name   ArkUI_AlphabetIndexer_1600
+     * @tc.number ArkUI_AlphabetIndexer_1600
      * @tc.desc   ArkUI_AlphabetIndexer_1600
-     * @tc.level  1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_AlphabetIndexer_1600', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUI_AlphabetIndexer_1600 start');
@@ -429,10 +453,12 @@ export default function ActsAlphabetIndexerUxTest() {
     });
 
     /**
-     * @tc.number ArkUI_AlphabetIndexer_1700
      * @tc.name   ArkUI_AlphabetIndexer_1700
+     * @tc.number ArkUI_AlphabetIndexer_1700
      * @tc.desc   ArkUI_AlphabetIndexer_1700
-     * @tc.level  1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_AlphabetIndexer_1700', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUI_AlphabetIndexer_1700 start');
@@ -460,10 +486,12 @@ export default function ActsAlphabetIndexerUxTest() {
     });
 
     /**
-     * @tc.number ArkUI_AlphabetIndexer_1800
      * @tc.name   ArkUI_AlphabetIndexer_1800
+     * @tc.number ArkUI_AlphabetIndexer_1800
      * @tc.desc   ArkUI_AlphabetIndexer_1800
-     * @tc.level  1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_AlphabetIndexer_1800', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUI_AlphabetIndexer_1800 start');
@@ -491,10 +519,12 @@ export default function ActsAlphabetIndexerUxTest() {
     });
 
     /**
-     * @tc.number ArkUI_AlphabetIndexer_1900
      * @tc.name   ArkUI_AlphabetIndexer_1900
+     * @tc.number ArkUI_AlphabetIndexer_1900
      * @tc.desc   ArkUI_AlphabetIndexer_1900
-     * @tc.level  1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_AlphabetIndexer_1900', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUI_AlphabetIndexer_1900 start');
@@ -522,10 +552,12 @@ export default function ActsAlphabetIndexerUxTest() {
     })
 
     /**
-     * @tc.number ArkUI_AlphabetIndexer_2600
      * @tc.name   ArkUI_AlphabetIndexer_2600
+     * @tc.number ArkUI_AlphabetIndexer_2600
      * @tc.desc   ArkUI_AlphabetIndexer_2600
-     * @tc.level  1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_AlphabetIndexer_2600', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUI_AlphabetIndexer_2600 start');
@@ -553,10 +585,12 @@ export default function ActsAlphabetIndexerUxTest() {
     });
 
     /**
-     * @tc.number ArkUI_AlphabetIndexer_2700
      * @tc.name   ArkUI_AlphabetIndexer_2700
+     * @tc.number ArkUI_AlphabetIndexer_2700
      * @tc.desc   ArkUI_AlphabetIndexer_2700
-     * @tc.level  1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_AlphabetIndexer_2700', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUI_AlphabetIndexer_2700 start');
@@ -584,10 +618,12 @@ export default function ActsAlphabetIndexerUxTest() {
     });
 
     /**
-     * @tc.number ArkUI_AlphabetIndexer_2800
      * @tc.name   ArkUI_AlphabetIndexer_2800
+     * @tc.number ArkUI_AlphabetIndexer_2800
      * @tc.desc   ArkUI_AlphabetIndexer_2800
-     * @tc.level  1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_AlphabetIndexer_2800', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUI_AlphabetIndexer_2800 start');
@@ -615,10 +651,12 @@ export default function ActsAlphabetIndexerUxTest() {
     });
 
     /**
-     * @tc.number ArkUI_AlphabetIndexer_2900
      * @tc.name   ArkUI_AlphabetIndexer_2900
+     * @tc.number ArkUI_AlphabetIndexer_2900
      * @tc.desc   ArkUI_AlphabetIndexer_2900
-     * @tc.level  1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_AlphabetIndexer_2900', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUI_AlphabetIndexer_2900 start');
@@ -646,10 +684,12 @@ export default function ActsAlphabetIndexerUxTest() {
     });
 
     /**
-     * @tc.number ArkUI_AlphabetIndexer_3000
      * @tc.name   ArkUI_AlphabetIndexer_3000
+     * @tc.number ArkUI_AlphabetIndexer_3000
      * @tc.desc   ArkUI_AlphabetIndexer_3000
-     * @tc.level  1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_AlphabetIndexer_3000', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUI_AlphabetIndexer_3000 start');
@@ -677,10 +717,12 @@ export default function ActsAlphabetIndexerUxTest() {
     });
 
     /**
-     * @tc.number ArkUI_AlphabetIndexer_3100
      * @tc.name   ArkUI_AlphabetIndexer_3100
+     * @tc.number ArkUI_AlphabetIndexer_3100
      * @tc.desc   ArkUI_AlphabetIndexer_3100
-     * @tc.level  1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_AlphabetIndexer_3100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUI_AlphabetIndexer_3100 start');

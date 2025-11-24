@@ -42,12 +42,12 @@ export default function RenderNodeDrawJsSuit() {
     });
 
     /**
-     * @tc.number: SUB_ACE_TS_COMPONENTselectoptionwith_01
-     * @tc.name : RenderNodeDrawJsSuit_0100
-     * @tc.desc : Confirm if there is a callback
-     * @tc.level : Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RenderNodeDrawJsSuit_0100
+     * @tc.number SUB_ACE_TS_COMPONENTselectoptionwith_01
+     * @tc.desc   Confirm if there is a callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RenderNodeDrawJsSuit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[RenderNodeDrawJsSuit_0100] START');

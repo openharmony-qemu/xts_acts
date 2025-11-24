@@ -26,39 +26,39 @@ export default function lazyForEachUnregisterEventReceiverTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_UNREGISTEREVENTRECEIVER_0100
-     * @tc.name       : testLazyForEachUnregisterEventReceiver001
-     * @tc.desc       : testing unregisterEventReceiver for lazyForEach with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachUnregisterEventReceiver001
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_UNREGISTEREVENTRECEIVER_0100
+     * @tc.desc   testing unregisterEventReceiver for lazyForEach with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachUnregisterEventReceiver001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testLazyForEachUnregisterEventReceiver001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_UNREGISTEREVENTRECEIVER_0200
-     * @tc.name       : testLazyForEachUnregisterEventReceiver002
-     * @tc.desc       : testing unregisterEventReceiver for lazyForEach with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachUnregisterEventReceiver002
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_UNREGISTEREVENTRECEIVER_0200
+     * @tc.desc   testing unregisterEventReceiver for lazyForEach with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachUnregisterEventReceiver002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testLazyForEachUnregisterEventReceiver002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_UNREGISTEREVENTRECEIVER_0300
-     * @tc.name       : testLazyForEachUnregisterEventReceiver003
-     * @tc.desc       : testing unregisterEventReceiver for lazyForEach with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachUnregisterEventReceiver003
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_UNREGISTEREVENTRECEIVER_0300
+     * @tc.desc   testing unregisterEventReceiver for lazyForEach with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachUnregisterEventReceiver003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testLazyForEachUnregisterEventReceiver003()).assertEqual(0)

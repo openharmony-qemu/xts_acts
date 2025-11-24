@@ -57,13 +57,13 @@ export default function onGetIrregular9Jsunit() {
       done();
     });
 
-    /* *
-     * @tc.number: onGetIrregular9Jsunit_0001
-     * @tc.name  : onGetIrregular9Jsunit_0001
-     * @tc.desc  :  onGetIrregular[3,1], the custom size of the obtained index setting is laid out according to 3 rows and 1 column
-     * @tc.level : Level 2
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   onGetIrregular9Jsunit_0001
+     * @tc.number onGetIrregular9Jsunit_0001
+     * @tc.desc   onGetIrregular[3,1], the custom size of the obtained index setting is laid out according to 3 rows and 1 column
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onGetIrregular9Jsunit_0001',  Level.LEVEL0, async (done: Function) => {
 

@@ -84,9 +84,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSvgTextIdProp
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'IdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'IdProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'IdProp START');
@@ -102,9 +105,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSvgTextXPropLength
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'XPropLength
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'XPropLength', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'XPropLength START');
@@ -122,9 +128,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSvgTextXPropPercentage
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'XPropPercentage
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'XPropPercentage', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'XPropPercentage START');
@@ -142,9 +151,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSvgTextXPropNone
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'XPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'XPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'XPropNone START');
@@ -162,9 +174,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSvgTextYPropLength
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'YPropLength
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'YPropLength', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'YPropLength START');
@@ -182,9 +197,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSvgTextYPropPercentage
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'YPropPercentage
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'YPropPercentage', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'YPropPercentage START');
@@ -202,9 +220,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSvgTextYPropNone
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'YPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'YPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'YPropNone START');
@@ -222,9 +243,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSvgTextDxPropLength
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'DxPropLength
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'DxPropLength', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'DxPropLength START');
@@ -242,9 +266,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSvgTextDxPropPercentage
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'DxPropPercentage
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'DxPropPercentage', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'DxPropPercentage START');
@@ -262,9 +289,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSvgTextDxPropNone
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'DxPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'DxPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'DxPropNone START');
@@ -282,9 +312,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSvgTextDyPropLength
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'DyPropLength
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'DyPropLength', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'DyPropLength START');
@@ -302,9 +335,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSvgTextDyPropPercentage
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'DyPropPercentage
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'DyPropPercentage', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'DyPropPercentage START');
@@ -322,9 +358,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSvgTextDyPropNone
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'DyPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'DyPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'DyPropNone START');
@@ -342,9 +381,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSvgTextRotateProp
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'RotateProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'RotateProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'RotateProp START');
@@ -362,9 +404,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSvgTextRotatePropNone
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'RotatePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'RotatePropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'RotatePropNone START');
@@ -382,9 +427,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSvgTextFontSizeProp
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'FontSizeProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'FontSizeProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'FontSizeProp START');
@@ -402,9 +450,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSvgTextFontSizePropNone
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'FontSizePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'FontSizePropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'FontSizePropNone START');
@@ -422,9 +473,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSvgTextFillProp
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'FillProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'FillProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'FillProp START');
@@ -442,9 +496,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSvgTextFillPropNone
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'FillPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'FillPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'FillPropNone START');
@@ -462,9 +519,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSvgTextFillOpacityProp
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'FillOpacityProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'FillOpacityProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'FillOpacityProp START');
@@ -482,9 +542,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSvgTextFillOpacityPropNone
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'FillOpacityPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'FillOpacityPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'FillOpacityPropNone START');
@@ -502,9 +565,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSvgTextOpacityProp
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'OpacityProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'OpacityProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'OpacityProp START');
@@ -522,9 +588,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSvgTextOpacityPropNone
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'OpacityPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'OpacityPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'OpacityPropNone START');
@@ -542,9 +611,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSvgTextStrokeProp
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'StrokeProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'StrokeProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'StrokeProp START');
@@ -562,9 +634,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSvgTextStrokePropNone
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'StrokePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'StrokePropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'StrokePropNone START');
@@ -582,9 +657,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSvgTextStrokeWidthProp
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'StrokeWidthProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'StrokeWidthProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'StrokeWidthProp START');
@@ -602,9 +680,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSvgTextStrokeWidthPropNone
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'StrokeWidthPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'StrokeWidthPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'StrokeWidthPropNone START');
@@ -622,9 +703,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSvgTextStrokeOpacityProp
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'StrokeOpacityProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'StrokeOpacityProp', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'StrokeOpacityProp START');
@@ -642,9 +726,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSvgTextStrokeOpacityPropNone
-         * @tc.desc      ACE
+         * @tc.name   test' + nameA + 'StrokeOpacityPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('test' + nameA + 'StrokeOpacityPropNone', Level.LEVEL0, async function(done) {
             console.info('test' + nameA + 'StrokeOpacityPropNone START');

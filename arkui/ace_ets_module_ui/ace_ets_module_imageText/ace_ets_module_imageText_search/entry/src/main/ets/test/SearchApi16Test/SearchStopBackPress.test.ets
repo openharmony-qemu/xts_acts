@@ -42,12 +42,12 @@ export default function SearchStopBackPressTest() {
     });
     
     /**
-     * @tc.number    SUB_ACE_SearchStopBackPressTest_0010
-     * @tc.name      SearchStopBackPressTest_0010
-     * @tc.desc      test Search StopBackPress: true
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+     * @tc.name   SearchStopBackPressTest_0010
+     * @tc.number SUB_ACE_SearchStopBackPressTest_0010
+     * @tc.desc   test Search StopBackPress: true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SearchStopBackPressTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('[SearchStopBackPressTest_0010] START');
@@ -60,12 +60,12 @@ export default function SearchStopBackPressTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SearchStopBackPressTest_0020
-     * @tc.name      SearchStopBackPressTest_0020
-     * @tc.desc      test Search StopBackPress: false
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SearchStopBackPressTest_0020
+     * @tc.number SUB_ACE_SearchStopBackPressTest_0020
+     * @tc.desc   test Search StopBackPress: false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SearchStopBackPressTest_0020', Level.LEVEL2, async (done: Function) => {
       console.info('[SearchStopBackPressTest_0020] START');
@@ -78,12 +78,12 @@ export default function SearchStopBackPressTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SearchStopBackPressTest_0030
-     * @tc.name      SearchStopBackPressTest_0030
-     * @tc.desc      test Search StopBackPress: default
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SearchStopBackPressTest_0030
+     * @tc.number SUB_ACE_SearchStopBackPressTest_0030
+     * @tc.desc   test Search StopBackPress: default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SearchStopBackPressTest_0030', Level.LEVEL2, async (done: Function) => {
       console.info('[SearchStopBackPressTest_0030] START');
@@ -96,12 +96,12 @@ export default function SearchStopBackPressTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SearchStopBackPressTest_0040
-     * @tc.name      SearchStopBackPressTest_0040
-     * @tc.desc      test Search StopBackPress: undefined
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SearchStopBackPressTest_0040
+     * @tc.number SUB_ACE_SearchStopBackPressTest_0040
+     * @tc.desc   test Search StopBackPress: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SearchStopBackPressTest_0040', Level.LEVEL2, async (done: Function) => {
       console.info('[SearchStopBackPressTest_0040] START');

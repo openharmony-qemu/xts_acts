@@ -42,12 +42,12 @@ export default function dialogDialogDisableDateRangeAndMarkTodayTest() {
     });
 
     /**
-     * @tc.number: DialogDisableDateRangeAndMarkToday_001
-     * @tc.name  : DialogDisableDateRangeAndMarkToday_001
-     * @tc.desc  : Test the width of the disabledDateRange 2025-01-09-2025-01-10 and markToday true
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   DialogDisableDateRangeAndMarkToday_001
+     * @tc.number DialogDisableDateRangeAndMarkToday_001
+     * @tc.desc   Test the width of the disabledDateRange 2025-01-09-2025-01-10 and markToday true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DialogDisableDateRangeAndMarkToday_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -88,12 +88,12 @@ export default function dialogDialogDisableDateRangeAndMarkTodayTest() {
       });
 
     /**
-     * @tc.number: DialogDisableDateRangeAndMarkToday_002
-     * @tc.name  : DialogDisableDateRangeAndMarkToday_002
-     * @tc.desc  : Test the width of the disabledDateRange 2025-01-09 and markToday false
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   DialogDisableDateRangeAndMarkToday_002
+     * @tc.number DialogDisableDateRangeAndMarkToday_002
+     * @tc.desc   Test the width of the disabledDateRange 2025-01-09 and markToday false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DialogDisableDateRangeAndMarkToday_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -132,12 +132,12 @@ export default function dialogDialogDisableDateRangeAndMarkTodayTest() {
       });
 
     /**
-     * @tc.number: DialogDisableDateRangeAndMarkToday_003
-     * @tc.name  : DialogDisableDateRangeAndMarkToday_003
-     * @tc.desc  : Test the width of the disabledDateRange undefined and markToday null
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   DialogDisableDateRangeAndMarkToday_003
+     * @tc.number DialogDisableDateRangeAndMarkToday_003
+     * @tc.desc   Test the width of the disabledDateRange undefined and markToday null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DialogDisableDateRangeAndMarkToday_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -176,12 +176,12 @@ export default function dialogDialogDisableDateRangeAndMarkTodayTest() {
       });
 
     /**
-     * @tc.number: DialogDisableDateRangeAndMarkToday_004
-     * @tc.name  : DialogDisableDateRangeAndMarkToday_004
-     * @tc.desc  : Test the width of the disabledDateRange null and markToday undefined
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   DialogDisableDateRangeAndMarkToday_004
+     * @tc.number DialogDisableDateRangeAndMarkToday_004
+     * @tc.desc   Test the width of the disabledDateRange null and markToday undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DialogDisableDateRangeAndMarkToday_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {

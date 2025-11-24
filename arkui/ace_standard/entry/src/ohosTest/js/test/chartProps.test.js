@@ -79,9 +79,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartIdProp
-         * @tc.desc      ACE
+         * @tc.name   testChartIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartIdProp', Level.LEVEL0, async function(done) {
             console.info('testChartIdProp START');
@@ -96,6 +99,14 @@ export default function chartPropsJsTest() {
             done();
         });
 
+        /**
+         * @tc.name   testChartClassProp
+         * @tc.number testChartClassProp
+         * @tc.desc   testChartClassProp
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testChartClassProp', Level.LEVEL0, async function(done) {
             console.info('testChartClassProp START');
             console.info("[chartProps] get globalThis.value is: " + JSON.stringify(globalThis.value));
@@ -110,9 +121,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testChartClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testChartClassPropNone START');
@@ -130,9 +144,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartRefProp
-         * @tc.desc      ACE
+         * @tc.name   testChartRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartRefProp', Level.LEVEL0, async function(done) {
             console.info('testChartRefProp START');
@@ -149,9 +166,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testChartRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testChartRefPropNone START');
@@ -169,9 +189,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartDisabledPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testChartDisabledPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartDisabledPropTrue', Level.LEVEL0, async function(done) {
             console.info('testChartDisabledPropTrue START');
@@ -188,9 +211,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartDisabledPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testChartDisabledPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartDisabledPropFalse', Level.LEVEL0, async function(done) {
             console.info('testChartDisabledPropFalse START');
@@ -207,9 +233,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartDisabledPropNone
-         * @tc.desc      ACE
+         * @tc.name   testChartDisabledPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartDisabledPropNone', Level.LEVEL0, async function(done) {
             console.info('testChartDisabledPropNone START');
@@ -226,9 +255,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartFocusablePropTrue
-         * @tc.desc      ACE
+         * @tc.name   testChartFocusablePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartFocusablePropTrue', Level.LEVEL0, async function(done) {
             console.info('testChartFocusablePropTrue START');
@@ -245,9 +277,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartFocusablePropFalse
-         * @tc.desc      ACE
+         * @tc.name   testChartFocusablePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartFocusablePropFalse', Level.LEVEL0, async function(done) {
             console.info('testChartFocusablePropFalse START');
@@ -264,9 +299,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartFocusablePropNone
-         * @tc.desc      ACE
+         * @tc.name   testChartFocusablePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartFocusablePropNone', Level.LEVEL0, async function(done) {
             console.info('testChartFocusablePropNone START');
@@ -283,9 +321,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartDataProp
-         * @tc.desc      ACE
+         * @tc.name   testChartDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartDataProp', Level.LEVEL0, async function(done) {
             console.info('testChartDataProp START');
@@ -303,9 +344,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testChartDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testChartDataPropNone START');
@@ -323,9 +367,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartClickEffectPropSmall
-         * @tc.desc      ACE
+         * @tc.name   testChartClickEffectPropSmall
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartClickEffectPropSmall', Level.LEVEL0, async function(done) {
             console.info('testChartClickEffectPropSmall START');
@@ -342,9 +389,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartClickEffectPropMedium
-         * @tc.desc      ACE
+         * @tc.name   testChartClickEffectPropMedium
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartClickEffectPropMedium', Level.LEVEL0, async function(done) {
             console.info('testChartClickEffectPropMedium START');
@@ -361,9 +411,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartClickEffectPropLarge
-         * @tc.desc      ACE
+         * @tc.name   testChartClickEffectPropLarge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartClickEffectPropLarge', Level.LEVEL0, async function(done) {
             console.info('testChartClickEffectPropLarge START');
@@ -380,9 +433,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartClickEffectPropNone
-         * @tc.desc      ACE
+         * @tc.name   testChartClickEffectPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartClickEffectPropNone', Level.LEVEL0, async function(done) {
             console.info('testChartClickEffectPropNone START');
@@ -400,9 +456,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testChartDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testChartDirPropRtl START');
@@ -419,9 +478,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testChartDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testChartDirPropLtr START');
@@ -438,9 +500,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testChartDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testChartDirPropAuto START');
@@ -457,9 +522,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testChartDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testChartDirPropNone START');
@@ -476,9 +544,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartForPropNull
-         * @tc.desc      ACE
+         * @tc.name   testChartForPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartForPropNull', Level.LEVEL0, async function(done) {
             console.info('testChartForPropNull START');
@@ -496,9 +567,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartForPropOne
-         * @tc.desc      ACE
+         * @tc.name   testChartForPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartForPropOne', Level.LEVEL0, async function(done) {
             console.info('testChartForPropOne START');
@@ -516,9 +590,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartForPropThree
-         * @tc.desc      ACE
+         * @tc.name   testChartForPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartForPropThree', Level.LEVEL0, async function(done) {
             console.info('testChartForPropThree START');
@@ -536,9 +613,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartIfPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testChartIfPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartIfPropTrue', Level.LEVEL0, async function(done) {
             console.info('testChartIfPropTrue START');
@@ -556,9 +636,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartShowPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testChartShowPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartShowPropTrue', Level.LEVEL0, async function(done) {
             console.info('testChartShowPropTrue START');
@@ -576,9 +659,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartShowPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testChartShowPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartShowPropFalse', Level.LEVEL0, async function(done) {
             console.info('testChartShowPropFalse START');
@@ -596,9 +682,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testChartShowPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartShowPropNone', Level.LEVEL0, async function(done) {
             console.info('testChartShowPropNone START');
@@ -618,9 +707,12 @@ export default function chartPropsJsTest() {
         //  特有属性
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartTypeBar
-         * @tc.desc      ACE
+         * @tc.name   testChartTypeBar
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartTypeBar', Level.LEVEL0, async function(done) {
             console.info('testChartTypeBar START');
@@ -638,9 +730,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartTypeLine
-         * @tc.desc      ACE
+         * @tc.name   testChartTypeLine
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartTypeLine', Level.LEVEL0, async function(done) {
             console.info('testChartTypeLine START');
@@ -658,9 +753,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartTypeGauge
-         * @tc.desc      ACE
+         * @tc.name   testChartTypeGauge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartTypeGauge', Level.LEVEL0, async function(done) {
             console.info('testChartTypeGauge START');
@@ -678,9 +776,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartTypeProgress
-         * @tc.desc      ACE
+         * @tc.name   testChartTypeProgress
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartTypeProgress', Level.LEVEL0, async function(done) {
             console.info('testChartTypeProgress START');
@@ -698,9 +799,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartTypeLoading
-         * @tc.desc      ACE
+         * @tc.name   testChartTypeLoading
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartTypeLoading', Level.LEVEL0, async function(done) {
             console.info('testChartTypeLoading START');
@@ -718,9 +822,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartTypeRainbow
-         * @tc.desc      ACE
+         * @tc.name   testChartTypeRainbow
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartTypeRainbow', Level.LEVEL0, async function(done) {
             console.info('testChartTypeRainbow START');
@@ -738,9 +845,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartTypeNone
-         * @tc.desc      ACE
+         * @tc.name   testChartTypeNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartTypeNone', Level.LEVEL0, async function(done) {
             console.info('testChartTypeNone START');
@@ -758,9 +868,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartOptions
-         * @tc.desc      ACE
+         * @tc.name   testChartOptions
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartOptions', Level.LEVEL0, async function(done) {
             console.info('testChartOptions START');
@@ -778,9 +891,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartOptionsNone
-         * @tc.desc      ACE
+         * @tc.name   testChartOptionsNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartOptionsNone', Level.LEVEL0, async function(done) {
             console.info('testChartOptionsNone START');
@@ -798,9 +914,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartDatasets
-         * @tc.desc      ACE
+         * @tc.name   testChartDatasets
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartDatasets', Level.LEVEL0, async function(done) {
             console.info('testChartDatasets START');
@@ -818,9 +937,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartDatasetsNone
-         * @tc.desc      ACE
+         * @tc.name   testChartDatasetsNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartDatasetsNone', Level.LEVEL0, async function(done) {
             console.info('testChartDatasetsNone START');
@@ -838,9 +960,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartSegmentsSeg
-         * @tc.desc      ACE
+         * @tc.name   testChartSegmentsSeg
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartSegmentsSeg', Level.LEVEL0, async function(done) {
             console.info('testChartSegmentsSeg START');
@@ -858,9 +983,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartSegmentsRain
-         * @tc.desc      ACE
+         * @tc.name   testChartSegmentsRain
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartSegmentsRain', Level.LEVEL0, async function(done) {
             console.info('testChartSegmentsRain START');
@@ -878,9 +1006,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartSegmentsNone
-         * @tc.desc      ACE
+         * @tc.name   testChartSegmentsNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartSegmentsNone', Level.LEVEL0, async function(done) {
             console.info('testChartSegmentsNone START');
@@ -898,9 +1029,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartEffectsTrue
-         * @tc.desc      ACE
+         * @tc.name   testChartEffectsTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartEffectsTrue', Level.LEVEL0, async function(done) {
             console.info('testChartEffectsTrue START');
@@ -918,9 +1052,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartEffectsFalse
-         * @tc.desc      ACE
+         * @tc.name   testChartEffectsFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartEffectsFalse', Level.LEVEL0, async function(done) {
             console.info('testChartEffectsFalse START');
@@ -938,9 +1075,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartEffectsNone
-         * @tc.desc      ACE
+         * @tc.name   testChartEffectsNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartEffectsNone', Level.LEVEL0, async function(done) {
             console.info('testChartEffectsNone START');
@@ -958,9 +1098,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartAnimationduration
-         * @tc.desc      ACE
+         * @tc.name   testChartAnimationduration
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartAnimationduration', Level.LEVEL0, async function(done) {
             console.info('testChartAnimationduration START');
@@ -978,9 +1121,12 @@ export default function chartPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testChartAnimationdurationNone
-         * @tc.desc      ACE
+         * @tc.name   testChartAnimationdurationNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testChartAnimationdurationNone', Level.LEVEL0, async function(done) {
             console.info('testChartAnimationdurationNone START');

@@ -45,9 +45,12 @@ export default function MultiNavigation22() {
     });
 
     /**
+     * @tc.name   MultiNavigation22_0100
      * @tc.number MultiNavigation22_0100
-     * @tc.name testMultiNavigation
-     * @tc.desc
+     * @tc.desc   MultiNavigation22_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiNavigation22_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('MultiNavigation22_0100 START');

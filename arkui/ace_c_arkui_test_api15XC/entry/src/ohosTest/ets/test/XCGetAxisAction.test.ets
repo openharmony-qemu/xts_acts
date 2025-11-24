@@ -27,13 +27,13 @@ export default function XCGetAxisAction() {
       await Utils.sleep(100);
       done();
     });
-    /*
-     * @tc.number     : SUB_ACE_TOOLCHAIN_ARKUI_XCOMPONENT_AXISACTION_CAPI_0001
-     * @tc.name       : XCGetAxisAction001
-     * @tc.desc       : XComponent获取鼠标轴事件
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   XCGetAxisAction001
+     * @tc.number SUB_ACE_TOOLCHAIN_ARKUI_XCOMPONENT_AXISACTION_CAPI_0001
+     * @tc.desc   XComponent获取鼠标轴事件
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('XCGetAxisAction001', Level.LEVEL0, async (done: Function) => {
       await Utils.pushPage(`${PAGE_TAG}`, done);

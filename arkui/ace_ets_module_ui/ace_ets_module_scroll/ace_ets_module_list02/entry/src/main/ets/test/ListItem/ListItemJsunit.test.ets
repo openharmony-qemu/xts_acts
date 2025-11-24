@@ -56,12 +56,12 @@ export default function listItemJsunit() {
     });
 
     /**
+     * @tc.name   listItemTest001
      * @tc.number listItemTest001
-     * @tc.name listItemTest001
-     * @tc.desc aceEtsTest
-     * @tc.level  Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('listItemTest001', Level.LEVEL1, async () => {
       console.info('++++++++++++++++ ListItem TestCase 1 START ++++++++++++++++');
@@ -78,12 +78,12 @@ export default function listItemJsunit() {
     });
 
     /**
+     * @tc.name   listItemTest002
      * @tc.number listItemTest002
-     * @tc.name listItemTest002
-     * @tc.desc aceEtsTest
-     * @tc.level  Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('listItemTest002', Level.LEVEL1, async () => {
       console.info('++++++++++++++++ ListItem TestCase 2 START ++++++++++++++++');
@@ -101,12 +101,12 @@ export default function listItemJsunit() {
     });
 
     /**
+     * @tc.name   listItemTest003
      * @tc.number listItemTest003
-     * @tc.name listItemTest003
-     * @tc.desc aceEtsTest
-     * @tc.level  Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('listItemTest003', Level.LEVEL1, async () => {
       console.info('++++++++++++++++ ListItem TestCase 3 START ++++++++++++++++');
@@ -124,12 +124,12 @@ export default function listItemJsunit() {
     });
 
     /**
+     * @tc.name   listItemTest004
      * @tc.number listItemTest004
-     * @tc.name listItemTest004
-     * @tc.desc aceEtsTest
-     * @tc.level  Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('listItemTest004', Level.LEVEL1, async () => {
       console.info('++++++++++++++++ ListItem TestCase 4 START ++++++++++++++++');

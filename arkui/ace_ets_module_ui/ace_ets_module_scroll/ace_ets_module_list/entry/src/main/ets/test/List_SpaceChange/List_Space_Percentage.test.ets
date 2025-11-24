@@ -63,12 +63,12 @@ export default function List_Space_Percentage() {
     });
 
     /**
+     * @tc.name   SUB_ACE_List_Space_Percentage_0100
      * @tc.number SUB_ACE_List_Space_Percentage_0100
-     * @tc.name testListSpacePercentage
-     * @tc.desc set the space of list to '10%'
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   set the space of list to '10%'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_List_Space_Percentage_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_List_Space_Percentage_0100] START');
@@ -102,12 +102,12 @@ export default function List_Space_Percentage() {
     });
 
     /**
+     * @tc.name   SUB_ACE_List_Space_Percentage_0200
      * @tc.number SUB_ACE_List_Space_Percentage_0200
-     * @tc.name testListSpacePercentage
-     * @tc.desc set the space of list to '100%'
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   set the space of list to '100%'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_List_Space_Percentage_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_List_Space_Percentage_0200] START');
@@ -133,12 +133,12 @@ export default function List_Space_Percentage() {
     });
 
     /**
+     * @tc.name   SUB_ACE_List_Space_Percentage_0300
      * @tc.number SUB_ACE_List_Space_Percentage_0300
-     * @tc.name testListSpacePercentage
-     * @tc.desc set the space of list to '150%'
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   set the space of list to '150%'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_List_Space_Percentage_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_List_Space_Percentage_0300] START');

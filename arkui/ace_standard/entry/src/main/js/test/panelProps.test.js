@@ -79,9 +79,12 @@ export default function panelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPanelIdProp
-         * @tc.desc      ACE
+         * @tc.name   testPanelIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPanelIdProp', Level.LEVEL0, async function(done) {
             console.info('testPanelIdProp START');
@@ -97,9 +100,12 @@ export default function panelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPanelClassProp
-         * @tc.desc      ACE
+         * @tc.name   testPanelClassProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPanelClassProp', Level.LEVEL0, async function(done) {
             console.info('testPanelClassProp START');
@@ -116,9 +122,12 @@ export default function panelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPanelClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testPanelClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPanelClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testPanelClassPropNone START');
@@ -137,9 +146,12 @@ export default function panelPropsJsTest() {
 
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPanelPropsRefProp
-         * @tc.desc      ACE
+         * @tc.name   testPanelPropsRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPanelPropsRefProp', Level.LEVEL0, async function(done) {
             console.info('testPanelPropsRefProp START');
@@ -156,9 +168,12 @@ export default function panelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPanelRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testPanelRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPanelRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testPanelRefPropNone START');
@@ -176,9 +191,12 @@ export default function panelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPanelDataProp
-         * @tc.desc      ACE
+         * @tc.name   testPanelDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPanelDataProp', Level.LEVEL0, async function(done) {
             console.info('testPanelDataProp START');
@@ -196,9 +214,12 @@ export default function panelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPanelDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testPanelDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPanelDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testPanelDataPropNone START');
@@ -216,9 +237,12 @@ export default function panelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPanelClickEffectPropSmall
-         * @tc.desc      ACE
+         * @tc.name   testPanelClickEffectPropSmall
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPanelClickEffectPropSmall', Level.LEVEL0, async function(done) {
             console.info('testPanelClickEffectPropSmall START');
@@ -235,9 +259,12 @@ export default function panelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPanelClickEffectPropMedium
-         * @tc.desc      ACE
+         * @tc.name   testPanelClickEffectPropMedium
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPanelClickEffectPropMedium', Level.LEVEL0, async function(done) {
             console.info('testPanelClickEffectPropMedium START');
@@ -254,9 +281,12 @@ export default function panelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPanelClickEffectPropLarge
-         * @tc.desc      ACE
+         * @tc.name   testPanelClickEffectPropLarge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPanelClickEffectPropLarge', Level.LEVEL0, async function(done) {
             console.info('testPanelClickEffectPropLarge START');
@@ -273,9 +303,12 @@ export default function panelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPanelClickEffectPropNone
-         * @tc.desc      ACE
+         * @tc.name   testPanelClickEffectPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPanelClickEffectPropNone', Level.LEVEL0, async function(done) {
             console.info('testPanelClickEffectPropNone START');
@@ -293,9 +326,12 @@ export default function panelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPanelDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testPanelDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPanelDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testPanelDirPropRtl START');
@@ -312,9 +348,12 @@ export default function panelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPanelDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testPanelDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPanelDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testPanelDirPropLtr START');
@@ -331,9 +370,12 @@ export default function panelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPanelDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testPanelDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPanelDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testPanelDirPropAuto START');
@@ -350,9 +392,12 @@ export default function panelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPanelDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testPanelDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPanelDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testPanelDirPropNone START');
@@ -370,9 +415,12 @@ export default function panelPropsJsTest() {
 
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTypePropFoldAble
-         * @tc.desc      ACE
+         * @tc.name   testTypePropFoldAble
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTypePropFoldAble', Level.LEVEL0, async function(done) {
             console.info('testTypePropFoldAble START');
@@ -390,9 +438,12 @@ export default function panelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTypePropMinibar
-         * @tc.desc      ACE
+         * @tc.name   testTypePropMinibar
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTypePropMinibar', Level.LEVEL0, async function(done) {
             console.info('testTypePropMinibar START');
@@ -410,9 +461,12 @@ export default function panelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTypePropTemporary
-         * @tc.desc      ACE
+         * @tc.name   testTypePropTemporary
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTypePropTemporary', Level.LEVEL0, async function(done) {
             console.info('testTypePropTemporary START');
@@ -430,9 +484,12 @@ export default function panelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testModePropMini
-         * @tc.desc      ACE
+         * @tc.name   testModePropMini
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testModePropMini', Level.LEVEL0, async function(done) {
             console.info('testModePropMini START');
@@ -450,9 +507,12 @@ export default function panelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testModePropHalf
-         * @tc.desc      ACE
+         * @tc.name   testModePropHalf
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testModePropHalf', Level.LEVEL0, async function(done) {
             console.info('testModePropHalf START');
@@ -470,9 +530,12 @@ export default function panelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testModePropFull
-         * @tc.desc      ACE
+         * @tc.name   testModePropFull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testModePropFull', Level.LEVEL0, async function(done) {
             console.info('testModePropFull START');
@@ -490,9 +553,12 @@ export default function panelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testDragBarPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testDragBarPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testDragBarPropTrue', Level.LEVEL0, async function(done) {
             console.info('testDragBarPropTrue START');
@@ -510,9 +576,12 @@ export default function panelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testDragBarPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testDragBarPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testDragBarPropFalse', Level.LEVEL0, async function(done) {
             console.info('testDragBarPropFalse START');
@@ -530,9 +599,12 @@ export default function panelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testFullHeightPro
-         * @tc.desc      ACE
+         * @tc.name   testFullHeightPro
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testFullHeightPro', Level.LEVEL0, async function(done) {
             console.info('testFullHeightPro START');
@@ -550,9 +622,12 @@ export default function panelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testHalfHeightPro
-         * @tc.desc      ACE
+         * @tc.name   testHalfHeightPro
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testHalfHeightPro', Level.LEVEL0, async function(done) {
             console.info('testHalfHeightPro START');
@@ -570,9 +645,12 @@ export default function panelPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testMiniHeightPro
-         * @tc.desc      ACE
+         * @tc.name   testMiniHeightPro
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testMiniHeightPro', Level.LEVEL0, async function(done) {
             console.info('testMiniHeightPro START');

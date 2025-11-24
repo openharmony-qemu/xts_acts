@@ -40,12 +40,12 @@ export default function typeNodeGridColTest() {
       done();
     });
     /**
-     * @tc.number    GridColTest_0100
-     * @tc.name      GridColTest_0100
-     * @tc.desc      TypedFrameNode: GridCol
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   GridColTest_0100
+     * @tc.number GridColTest_0100
+     * @tc.desc   TypedFrameNode: GridCol
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GridColTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('GridColTest_0100 START');

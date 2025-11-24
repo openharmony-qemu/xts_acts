@@ -26,39 +26,39 @@ export default function textFontColorTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_FONTCOLOR_0100
-     * @tc.name       : testTextFontColor001
-     * @tc.desc       : testing fontColor for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextFontColor001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_FONTCOLOR_0100
+     * @tc.desc   testing fontColor for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextFontColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextFontColor001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_FONTCOLOR_0200
-     * @tc.name       : testTextFontColor002
-     * @tc.desc       : testing fontColor for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextFontColor002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_FONTCOLOR_0200
+     * @tc.desc   testing fontColor for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextFontColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextFontColor002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_FONTCOLOR_0300
-     * @tc.name       : testTextFontColor003
-     * @tc.desc       : testing fontColor for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextFontColor003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_FONTCOLOR_0300
+     * @tc.desc   testing fontColor for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextFontColor003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextFontColor003()).assertEqual(0)

@@ -45,9 +45,12 @@ export default function transformPointTest() {
     });
 
     /**
+     * @tc.name   transformPointTest_0100
      * @tc.number transformPointTest_0100
-     * @tc.name testNavigation
-     * @tc.desc
+     * @tc.desc   transformPointTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('transformPointTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('transformPointTest_0100 START');

@@ -41,12 +41,14 @@ export default function panGestureEventTest() {
       done();
     });
     
-    /* *
-    * @tc.number : PanGesture1_0100
-    * @tc.name  : PanGesture1_0100
-    * @tc.desc  : To test the new item of GestureEvent.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   PanGesture1_0100
+     * @tc.number PanGesture1_0100
+     * @tc.desc   To test the new item of GestureEvent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PanGesture1_0100', Level.LEVEL0, async (done: Function) => {
       console.info('PanGesture1_0100 START');
       await CommonFunc.sleep(1000);

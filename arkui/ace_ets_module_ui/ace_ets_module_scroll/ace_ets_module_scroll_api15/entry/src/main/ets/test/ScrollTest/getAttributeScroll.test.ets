@@ -46,12 +46,12 @@ export default function getAttributeScroll() {
     });
 
     /**
-     * @tc.number    getAttributeScroll_001
-     * @tc.name      getAttributeScroll_0100
-     * @tc.desc      Bind the controller Scroll to the Scroll node and obtain node properties.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   getAttributeScroll_0100
+     * @tc.number getAttributeScroll_001
+     * @tc.desc   Bind the controller Scroll to the Scroll node and obtain node properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getAttributeScroll_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[getAttributeScroll_0100] START');
@@ -69,12 +69,12 @@ export default function getAttributeScroll() {
     });
 
     /**
-     * @tc.number    getAttributeScroll_002
-     * @tc.name      getAttributeScroll_0200
-     * @tc.desc      Bind the controller Scroll to the Scroll node and obtain node properties.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   getAttributeScroll_0200
+     * @tc.number getAttributeScroll_002
+     * @tc.desc   Bind the controller Scroll to the Scroll node and obtain node properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getAttributeScroll_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[getAttributeScroll_0200] START');
@@ -94,12 +94,12 @@ export default function getAttributeScroll() {
       done();
     });
     /**
-     * @tc.number    getAttributeScroll_003
-     * @tc.name      getAttributeScroll_0300
-     * @tc.desc      Test ScrollTypeNodePage undefined.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   getAttributeScroll_0300
+     * @tc.number getAttributeScroll_003
+     * @tc.desc   Test ScrollTypeNodePage undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getAttributeScroll_0300', Level.LEVEL3, async (done: Function) => {
       console.info('[getAttributeScroll_0300] START');

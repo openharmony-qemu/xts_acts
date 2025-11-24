@@ -47,10 +47,12 @@ export default function FlexCNodeTest() {
     });
 
     /**
-     * @tc.number    FlexCNodeTest_0100
-     * @tc.name      FlexCNodeTest_0100
-     * @tc.desc      Test FlexCNode
-     * @tc.level     Level 1
+     * @tc.name   FlexCNodeTest_0100
+     * @tc.number FlexCNodeTest_0100
+     * @tc.desc   Test FlexCNode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FlexCNodeTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[FlexCNodeTest_0100] START');

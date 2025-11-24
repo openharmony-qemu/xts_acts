@@ -56,12 +56,12 @@ export default function typeNodeGestureTest() {
     });
 
     /**
-     * @tc.number    GestureTest_0100
-     * @tc.name      GestureTest_0100
-     * @tc.desc      TypedFrameNode: Gesture
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   GestureTest_0100
+     * @tc.number GestureTest_0100
+     * @tc.desc   TypedFrameNode: Gesture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GestureTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('GestureTest_0100 START');
@@ -79,12 +79,12 @@ export default function typeNodeGestureTest() {
     });
 
     /**
-     * @tc.number    GestureTest_0200
-     * @tc.name      GestureTest_0200
-     * @tc.desc      TypedFrameNode: Gesture
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   GestureTest_0200
+     * @tc.number GestureTest_0200
+     * @tc.desc   TypedFrameNode: Gesture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GestureTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('GestureTest_0200 START');

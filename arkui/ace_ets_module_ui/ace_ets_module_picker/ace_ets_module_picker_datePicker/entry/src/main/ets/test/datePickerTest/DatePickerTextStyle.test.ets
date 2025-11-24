@@ -76,12 +76,12 @@ export default function datepicker() {
     })
 
     /**
-     * @tc.number: ArkUI_Stage_datePicker_disappearTextStyle_0100
-     * @tc.name  : ArkUI_Stage_datePicker_disappearTextStyle_0100
-     * @tc.desc  : Tests the disappearTextStyle property of the picker component,get the default value
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUI_Stage_datePicker_disappearTextStyle_0100
+     * @tc.number ArkUI_Stage_datePicker_disappearTextStyle_0100
+     * @tc.desc   Tests the disappearTextStyle property of the picker component,get the default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_datePicker_disappearTextStyle_0100', Level.LEVEL1, async (done: Function) => {
       let strJson = getInspectorByKey('datePicker');
@@ -95,12 +95,12 @@ export default function datepicker() {
     });
 
     /**
-     * @tc.number: ArkUI_Stage_datePicker_disappearTextStyle_0200
-     * @tc.name  : ArkUI_Stage_datePicker_disappearTextStyle_0200
-     * @tc.desc  : Tests the disappearTextStyle property of the picker component, set disappearTextStyle then get the value
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUI_Stage_datePicker_disappearTextStyle_0200
+     * @tc.number ArkUI_Stage_datePicker_disappearTextStyle_0200
+     * @tc.desc   Tests the disappearTextStyle property of the picker component, set disappearTextStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_datePicker_disappearTextStyle_0200', Level.LEVEL1, async (done: Function) => {
       let value: DatePickerTextStyle = {
@@ -136,12 +136,12 @@ export default function datepicker() {
     });
 
     /**
-     * @tc.number: ArkUI_Stage_datePicker_disappearTextStyle_0300
-     * @tc.name  : ArkUI_Stage_datePicker_disappearTextStyle_0300
-     * @tc.desc  : Tests the disappearTextStyle property of the picker component, set disappearTextStyle then get the value
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUI_Stage_datePicker_disappearTextStyle_0300
+     * @tc.number ArkUI_Stage_datePicker_disappearTextStyle_0300
+     * @tc.desc   Tests the disappearTextStyle property of the picker component, set disappearTextStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_datePicker_disappearTextStyle_0300', Level.LEVEL1, async (done: Function) => {
       let value: DatePickerTextStyle = {
@@ -177,12 +177,12 @@ export default function datepicker() {
     });
 
     /**
-     * @tc.number: ArkUI_Stage_datePicker_disappearTextStyle_0400
-     * @tc.name  : ArkUI_Stage_datePicker_disappearTextStyle_0400
-     * @tc.desc  : Tests the disappearTextStyle property of the picker component, set disappearTextStyle then get the value
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUI_Stage_datePicker_disappearTextStyle_0400
+     * @tc.number ArkUI_Stage_datePicker_disappearTextStyle_0400
+     * @tc.desc   Tests the disappearTextStyle property of the picker component, set disappearTextStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_datePicker_disappearTextStyle_0400', Level.LEVEL1, async (done: Function) => {
       let value: DatePickerTextStyle = {
@@ -218,12 +218,12 @@ export default function datepicker() {
     });
 
     /**
-     * @tc.number: ArkUI_Stage_datePicker_disappearTextStyle_0500
-     * @tc.name  : ArkUI_Stage_datePicker_disappearTextStyle_0500
-     * @tc.desc  : Tests the disappearTextStyle property of the picker component, set disappearTextStyle then get the value
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUI_Stage_datePicker_disappearTextStyle_0500
+     * @tc.number ArkUI_Stage_datePicker_disappearTextStyle_0500
+     * @tc.desc   Tests the disappearTextStyle property of the picker component, set disappearTextStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_datePicker_disappearTextStyle_0500', Level.LEVEL1, async (done: Function) => {
       let value: DatePickerTextStyle = {
@@ -259,12 +259,12 @@ export default function datepicker() {
     });
 
     /**
-     * @tc.number: ArkUI_Stage_datePicker_disappearTextStyle_0600
-     * @tc.name  : ArkUI_Stage_datePicker_disappearTextStyle_0600
-     * @tc.desc  : Tests the disappearTextStyle property of the picker component, set disappearTextStyle then get the value
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUI_Stage_datePicker_disappearTextStyle_0600
+     * @tc.number ArkUI_Stage_datePicker_disappearTextStyle_0600
+     * @tc.desc   Tests the disappearTextStyle property of the picker component, set disappearTextStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_datePicker_disappearTextStyle_0600', Level.LEVEL1, async (done: Function) => {
       let value: DatePickerTextStyle = {
@@ -308,12 +308,12 @@ export default function datepicker() {
     });
 
     /**
-     * @tc.number: ArkUI_Stage_datePicker_disappearTextStyle_0700
-     * @tc.name  : ArkUI_Stage_datePicker_disappearTextStyle_0700
-     * @tc.desc  : Tests the disappearTextStyle property of the picker component, set disappearTextStyle then get the value
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUI_Stage_datePicker_disappearTextStyle_0700
+     * @tc.number ArkUI_Stage_datePicker_disappearTextStyle_0700
+     * @tc.desc   Tests the disappearTextStyle property of the picker component, set disappearTextStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_datePicker_disappearTextStyle_0700', Level.LEVEL1, async (done: Function) => {
       let value: DatePickerTextStyle = {
@@ -357,12 +357,12 @@ export default function datepicker() {
     });
 
     /**
-     * @tc.number: ArkUI_Stage_dataPicker_disappearTextStyle_0800
-     * @tc.name  : ArkUI_Stage_dataPicker_disappearTextStyle_0800
-     * @tc.desc  : Tests the disappearTextStyle property of the picker component, set disappearTextStyle then get the value
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUI_Stage_dataPicker_disappearTextStyle_0800
+     * @tc.number ArkUI_Stage_dataPicker_disappearTextStyle_0800
+     * @tc.desc   Tests the disappearTextStyle property of the picker component, set disappearTextStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_dataPicker_disappearTextStyle_0800', Level.LEVEL1, async (done: Function) => {
       let value: DatePickerTextStyle = {
@@ -396,12 +396,12 @@ export default function datepicker() {
     });
 
     /**
-     * @tc.number: ArkUI_Stage_dataPicker_disappearTextStyle_0900
-     * @tc.name  : ArkUI_Stage_dataPicker_disappearTextStyle_0900
-     * @tc.desc  : Tests the disappearTextStyle property of the picker component, set disappearTextStyle then get the value
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUI_Stage_dataPicker_disappearTextStyle_0900
+     * @tc.number ArkUI_Stage_dataPicker_disappearTextStyle_0900
+     * @tc.desc   Tests the disappearTextStyle property of the picker component, set disappearTextStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_dataPicker_disappearTextStyle_0900', Level.LEVEL1, async (done: Function) => {
       let value: DatePickerTextStyle = {
@@ -435,12 +435,12 @@ export default function datepicker() {
     });
 
     /**
-     * @tc.number: ArkUI_Stage_datePicker_textStyle_0100
-     * @tc.name  : ArkUI_Stage_datePicker_textStyle_0100
-     * @tc.desc  : Tests the textStyle property of the picker component,get the default value
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUI_Stage_datePicker_textStyle_0100
+     * @tc.number ArkUI_Stage_datePicker_textStyle_0100
+     * @tc.desc   Tests the textStyle property of the picker component,get the default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_datePicker_textStyle_0100', Level.LEVEL1, async (done: Function) => {
       let strJson = getInspectorByKey('datePicker');
@@ -453,12 +453,12 @@ export default function datepicker() {
     });
 
     /**
-     * @tc.number: ArkUI_Stage_datePicker_textStyle_0200
-     * @tc.name  : ArkUI_Stage_datePicker_textStyle_0200
-     * @tc.desc  : Tests the textStyle property of the picker component,set textStyle then get the value
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUI_Stage_datePicker_textStyle_0200
+     * @tc.number ArkUI_Stage_datePicker_textStyle_0200
+     * @tc.desc   Tests the textStyle property of the picker component,set textStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_datePicker_textStyle_0200', Level.LEVEL1, async (done: Function) => {
       let value: DatePickerTextStyle = {
@@ -492,12 +492,12 @@ export default function datepicker() {
     });
 
     /**
-     * @tc.number: ArkUI_Stage_datePicker_textStyle_0300
-     * @tc.name  : ArkUI_Stage_datePicker_textStyle_0300
-     * @tc.desc  : Tests the textStyle property of the picker component,set textStyle then get the value
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUI_Stage_datePicker_textStyle_0300
+     * @tc.number ArkUI_Stage_datePicker_textStyle_0300
+     * @tc.desc   Tests the textStyle property of the picker component,set textStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_datePicker_textStyle_0300', Level.LEVEL1, async (done: Function) => {
       let value: DatePickerTextStyle = {
@@ -531,12 +531,12 @@ export default function datepicker() {
     });
 
     /**
-     * @tc.number: ArkUI_Stage_datePicker_textStyle_0400
-     * @tc.name  : ArkUI_Stage_datePicker_textStyle_0400
-     * @tc.desc  : Tests the textStyle property of the picker component,set textStyle then get the value
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUI_Stage_datePicker_textStyle_0400
+     * @tc.number ArkUI_Stage_datePicker_textStyle_0400
+     * @tc.desc   Tests the textStyle property of the picker component,set textStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_datePicker_textStyle_0400', Level.LEVEL1, async (done: Function) => {
       let value: DatePickerTextStyle = {
@@ -570,12 +570,12 @@ export default function datepicker() {
     });
 
     /**
-     * @tc.number: ArkUI_Stage_datePicker_textStyle_0500
-     * @tc.name  : ArkUI_Stage_datePicker_textStyle_0500
-     * @tc.desc  : Tests the textStyle property of the picker component,set textStyle then get the value
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUI_Stage_datePicker_textStyle_0500
+     * @tc.number ArkUI_Stage_datePicker_textStyle_0500
+     * @tc.desc   Tests the textStyle property of the picker component,set textStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_datePicker_textStyle_0500', Level.LEVEL1, async (done: Function) => {
       let value: DatePickerTextStyle = {
@@ -609,12 +609,12 @@ export default function datepicker() {
     });
 
     /**
-     * @tc.number: ArkUI_Stage_datePicker_textStyle_0600
-     * @tc.name  : ArkUI_Stage_datePicker_textStyle_0600
-     * @tc.desc  : Tests the textStyle property of the picker component,set textStyle then get the value
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUI_Stage_datePicker_textStyle_0600
+     * @tc.number ArkUI_Stage_datePicker_textStyle_0600
+     * @tc.desc   Tests the textStyle property of the picker component,set textStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_datePicker_textStyle_0600', Level.LEVEL1, async (done: Function) => {
       let value: DatePickerTextStyle = {
@@ -654,12 +654,12 @@ export default function datepicker() {
     });
 
     /**
-     * @tc.number: ArkUI_Stage_datePicker_textStyle_0700
-     * @tc.name  : ArkUI_Stage_datePicker_textStyle_0700
-     * @tc.desc  : Tests the textStyle property of the picker component,set textStyle then get the value
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUI_Stage_datePicker_textStyle_0700
+     * @tc.number ArkUI_Stage_datePicker_textStyle_0700
+     * @tc.desc   Tests the textStyle property of the picker component,set textStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_datePicker_textStyle_0700', Level.LEVEL1, async (done: Function) => {
       let value: DatePickerTextStyle = {
@@ -699,12 +699,12 @@ export default function datepicker() {
     });
 
     /**
-     * @tc.number: ArkUI_Stage_datePicker_textStyle_0800
-     * @tc.name  : ArkUI_Stage_datePicker_textStyle_0800
-     * @tc.desc  : Tests the textStyle property of the picker component,set textStyle then get the value
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUI_Stage_datePicker_textStyle_0800
+     * @tc.number ArkUI_Stage_datePicker_textStyle_0800
+     * @tc.desc   Tests the textStyle property of the picker component,set textStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_datePicker_textStyle_0800', Level.LEVEL1, async (done: Function) => {
       let value: DatePickerTextStyle = {
@@ -737,12 +737,12 @@ export default function datepicker() {
     });
 
     /**
-     * @tc.number: ArkUI_Stage_datePicker_textStyle_0900
-     * @tc.name  : ArkUI_Stage_datePicker_textStyle_0900
-     * @tc.desc  : Tests the textStyle property of the picker component,set textStyle then get the value
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUI_Stage_datePicker_textStyle_0900
+     * @tc.number ArkUI_Stage_datePicker_textStyle_0900
+     * @tc.desc   Tests the textStyle property of the picker component,set textStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_datePicker_textStyle_0900', Level.LEVEL1, async (done: Function) => {
       let value: DatePickerTextStyle = {
@@ -775,12 +775,12 @@ export default function datepicker() {
     });
 
     /**
-     * @tc.number: ArkUI_Stage_datepicker_selectedTextStyle_0100
-     * @tc.name  : ArkUI_Stage_datepicker_selectedTextStyle_0100
-     * @tc.desc  : Tests the selectedTextStyle property of the picker component,get the default value
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUI_Stage_datepicker_selectedTextStyle_0100
+     * @tc.number ArkUI_Stage_datepicker_selectedTextStyle_0100
+     * @tc.desc   Tests the selectedTextStyle property of the picker component,get the default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_datepicker_selectedTextStyle_0100', Level.LEVEL1, async (done: Function) => {
       let strJson = getInspectorByKey('datePicker');
@@ -794,12 +794,12 @@ export default function datepicker() {
     });
 
     /**
-     * @tc.number: ArkUI_Stage_datepicker_selectedTextStyle_0200
-     * @tc.name  : ArkUI_Stage_datepicker_selectedTextStyle_0200
-     * @tc.desc  : Tests the selectedTextStyle property of the picker component,set selectedTextStyle then get the value
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUI_Stage_datepicker_selectedTextStyle_0200
+     * @tc.number ArkUI_Stage_datepicker_selectedTextStyle_0200
+     * @tc.desc   Tests the selectedTextStyle property of the picker component,set selectedTextStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_datepicker_selectedTextStyle_0200', Level.LEVEL1, async (done: Function) => {
       let value: DatePickerTextStyle = {
@@ -835,12 +835,12 @@ export default function datepicker() {
     });
 
     /**
-     * @tc.number: ArkUI_Stage_datepicker_selectedTextStyle_0300
-     * @tc.name  : ArkUI_Stage_datepicker_selectedTextStyle_0300
-     * @tc.desc  : Tests the selectedTextStyle property of the picker component,set selectedTextStyle then get the value
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUI_Stage_datepicker_selectedTextStyle_0300
+     * @tc.number ArkUI_Stage_datepicker_selectedTextStyle_0300
+     * @tc.desc   Tests the selectedTextStyle property of the picker component,set selectedTextStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_datepicker_selectedTextStyle_0300', Level.LEVEL1, async (done: Function) => {
       let value: DatePickerTextStyle = {
@@ -876,12 +876,12 @@ export default function datepicker() {
     });
 
     /**
-     * @tc.number: ArkUI_Stage_datepicker_selectedTextStyle_0400
-     * @tc.name  : ArkUI_Stage_datepicker_selectedTextStyle_0400
-     * @tc.desc  : Tests the selectedTextStyle property of the picker component,set selectedTextStyle then get the value
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUI_Stage_datepicker_selectedTextStyle_0400
+     * @tc.number ArkUI_Stage_datepicker_selectedTextStyle_0400
+     * @tc.desc   Tests the selectedTextStyle property of the picker component,set selectedTextStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_datepicker_selectedTextStyle_0400', Level.LEVEL1, async (done: Function) => {
       let value: DatePickerTextStyle = {
@@ -917,12 +917,12 @@ export default function datepicker() {
     });
 
     /**
-     * @tc.number: ArkUI_Stage_datepicker_selectedTextStyle_0500
-     * @tc.name  : ArkUI_Stage_datepicker_selectedTextStyle_0500
-     * @tc.desc  : Tests the selectedTextStyle property of the picker component,set selectedTextStyle then get the value
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUI_Stage_datepicker_selectedTextStyle_0500
+     * @tc.number ArkUI_Stage_datepicker_selectedTextStyle_0500
+     * @tc.desc   Tests the selectedTextStyle property of the picker component,set selectedTextStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_datepicker_selectedTextStyle_0500', Level.LEVEL1, async (done: Function) => {
       let value: DatePickerTextStyle = {
@@ -958,12 +958,12 @@ export default function datepicker() {
     });
 
     /**
-     * @tc.number: ArkUI_Stage_datepicker_selectedTextStyle_0600
-     * @tc.name  : ArkUI_Stage_datepicker_selectedTextStyle_0600
-     * @tc.desc  : Tests the selectedTextStyle property of the picker component,set selectedTextStyle then get the value
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUI_Stage_datepicker_selectedTextStyle_0600
+     * @tc.number ArkUI_Stage_datepicker_selectedTextStyle_0600
+     * @tc.desc   Tests the selectedTextStyle property of the picker component,set selectedTextStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_datepicker_selectedTextStyle_0600', Level.LEVEL1, async (done: Function) => {
       let value: DatePickerTextStyle = {
@@ -1007,12 +1007,12 @@ export default function datepicker() {
     });
 
     /**
-     * @tc.number: ArkUI_Stage_datepicker_selectedTextStyle_0700
-     * @tc.name  : ArkUI_Stage_datepicker_selectedTextStyle_0700
-     * @tc.desc  : Tests the selectedTextStyle property of the picker component,set selectedTextStyle then get the value
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUI_Stage_datepicker_selectedTextStyle_0700
+     * @tc.number ArkUI_Stage_datepicker_selectedTextStyle_0700
+     * @tc.desc   Tests the selectedTextStyle property of the picker component,set selectedTextStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_datepicker_selectedTextStyle_0700', Level.LEVEL1, async (done: Function) => {
       let value: DatePickerTextStyle = {
@@ -1056,12 +1056,12 @@ export default function datepicker() {
     });
 
     /**
-     * @tc.number: ArkUI_Stage_datepicker_selectedTextStyle_0800
-     * @tc.name  : ArkUI_Stage_datepicker_selectedTextStyle_0800
-     * @tc.desc  : Tests the selectedTextStyle property of the picker component,set selectedTextStyle then get the value
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUI_Stage_datepicker_selectedTextStyle_0800
+     * @tc.number ArkUI_Stage_datepicker_selectedTextStyle_0800
+     * @tc.desc   Tests the selectedTextStyle property of the picker component,set selectedTextStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_datepicker_selectedTextStyle_0800', Level.LEVEL1, async (done: Function) => {
       let value: DatePickerTextStyle = {
@@ -1095,12 +1095,12 @@ export default function datepicker() {
     });
 
     /**
-     * @tc.number: ArkUI_Stage_datepicker_selectedTextStyle_0900
-     * @tc.name  : ArkUI_Stage_datepicker_selectedTextStyle_0900
-     * @tc.desc  : Tests the selectedTextStyle property of the picker component,set selectedTextStyle then get the value
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUI_Stage_datepicker_selectedTextStyle_0900
+     * @tc.number ArkUI_Stage_datepicker_selectedTextStyle_0900
+     * @tc.desc   Tests the selectedTextStyle property of the picker component,set selectedTextStyle then get the value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Stage_datepicker_selectedTextStyle_0900', Level.LEVEL1, async (done: Function) => {
       let value: DatePickerTextStyle = {

@@ -56,15 +56,15 @@ export default function GridScrollEge() {
       console.info("List_scrollToIndex1 after each called");
     });
 
-    /* *
-      * @tc.number:  GridScrollEge_0001
-      * @tc.name  :  GridScrollEge_0001
-      * @tc.desc  :  Click scrollEdge(Edge.Bottom) and the component slides to the bottom
-      * @tc.level : Level 2
-      * @tc.type
-      * @tc.size
-      */
 
+    /**
+     * @tc.name   GridScrollEge_0001
+     * @tc.number GridScrollEge_0001
+     * @tc.desc   GridScrollEge_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('GridScrollEge_0001',  Level.LEVEL2, async (done: Function) => {
       console.info('[GridScrollEge_0001] START');
       await CommonFunc.sleep(1000);
@@ -85,13 +85,13 @@ export default function GridScrollEge() {
       done();
     });
 
-    /* *
-     * @tc.number: GridScrollEge_0002
-     * @tc.name  : GridScrollEge_0002
-     * @tc.desc  : Click scrollEdge(Edge.Edge) and the component slides to the bottom
-     * @tc.level : Level 2
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   GridScrollEge_0002
+     * @tc.number GridScrollEge_0002
+     * @tc.desc   Click scrollEdge(Edge.Edge) and the component slides to the bottom
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('GridScrollEge_0002',  Level.LEVEL2, async (done: Function) => {
       console.info('[GridScrollEge_0002] START');
@@ -114,14 +114,14 @@ export default function GridScrollEge() {
     });
 
 
-    /* *
-      * @tc.number: GridScrollEge_0003
-      * @tc.name  : GridScrollEge_0003
-      * @tc.desc  : Click scrollEdge(Edge.Start) and the component slides to the top
-      * @tc.level : Level 2
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   GridScrollEge_0003
+     * @tc.number GridScrollEge_0003
+     * @tc.desc   Click scrollEdge(Edge.Start) and the component slides to the top
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('GridScrollEge_0003',  Level.LEVEL2, async (done: Function) => {
       console.info('[GridScrollEge_0003] START');
       await CommonFunc.sleep(1000);
@@ -142,14 +142,14 @@ export default function GridScrollEge() {
       done();
     });
 
-    /* *
-      * @tc.number: GridScrollEge_0004
-      * @tc.name  : GridScrollEge_0004
-      * @tc.desc  : Click scrollEdge(Edge.Top) and the component slides to the top
-      * @tc.level : Level 2
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   GridScrollEge_0004
+     * @tc.number GridScrollEge_0004
+     * @tc.desc   Click scrollEdge(Edge.Top) and the component slides to the top
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('GridScrollEge_0004',  Level.LEVEL2, async (done: Function) => {
       console.info('[GridScrollEge_0004] START');
       await CommonFunc.sleep(1000);
@@ -170,13 +170,13 @@ export default function GridScrollEge() {
       done();
     });
 
-    /* *
-     * @tc.number: GridScrollEge_0005
-     * @tc.name  : GridScrollEge_0005
-     * @tc.desc  : Click scrollToIndex (-5) and the component does not slide
-     * @tc.level : Level 2
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   GridScrollEge_0005
+     * @tc.number GridScrollEge_0005
+     * @tc.desc   Click scrollToIndex (-5) and the component does not slide
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('GridScrollEge_0005',  Level.LEVEL2, async (done: Function) => {
       console.info('[GridScrollEge_0005] START');
@@ -198,13 +198,13 @@ export default function GridScrollEge() {
       done();
     });
 
-    /* *
-     * @tc.number: GridScrollEge_0006
-     * @tc.name  : GridScrollEge_0006
-     * @tc.desc  : Click scrollToIndex (25) and the component slides to index 25
-     * @tc.level : Level 2
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   GridScrollEge_0006
+     * @tc.number GridScrollEge_0006
+     * @tc.desc   Click scrollToIndex (25) and the component slides to index 25
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('GridScrollEge_0006',  Level.LEVEL2, async (done: Function) => {
       console.info('[GridScrollEge_0006] START');
@@ -227,13 +227,13 @@ export default function GridScrollEge() {
     });
 
 
-    /* *
-     * @tc.number: GridScrollEge_0007
-     * @tc.name  : GridScrollEge_0007
-     * @tc.desc  : Click scrollToIndex (5) and the component slides to index 5
-     * @tc.level : Level 2
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   GridScrollEge_0007
+     * @tc.number GridScrollEge_0007
+     * @tc.desc   Click scrollToIndex (5) and the component slides to index 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('GridScrollEge_0007',  Level.LEVEL2, async (done: Function) => {
       console.info('[GridScrollEge_0007] START');
@@ -252,13 +252,13 @@ export default function GridScrollEge() {
       console.info('[GridScrollEge_0007] END');
       done();
     });
-    /* *
-     * @tc.number: GridScrollEge_0008
-     * @tc.name  : GridScrollEge_0008
-     * @tc.desc  : Click scrollToIndex (undefined) and the component does not slide
-     * @tc.level : Level 2
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   GridScrollEge_0008
+     * @tc.number GridScrollEge_0008
+     * @tc.desc   Click scrollToIndex (undefined) and the component does not slide
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('GridScrollEge_0008',  Level.LEVEL2, async (done: Function) => {
       console.info('[GridScrollEge_0008] START');

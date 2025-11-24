@@ -40,14 +40,14 @@ export default function Stack_Text() {
       done();
     });
 
-    /* *
-      * @tc.number: Stack_Text_001
-      * @tc.name  : Stack_Text_001
-      * @tc.desc  : set api
-      * @tc.level : Level 2
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   Stack_Text_001
+     * @tc.number Stack_Text_001
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Stack_Text_001',  Level.LEVEL0, async (done: Function) => {
 
       console.info('[Stack_Text_001] START');
@@ -64,14 +64,14 @@ export default function Stack_Text() {
       done();
     });
 
-    /* *
-      * @tc.number: Stack_Text_002
-      * @tc.name  : Stack_Text_002
-      * @tc.desc  : set api
-      * @tc.level : Level 2
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   Stack_Text_002
+     * @tc.number Stack_Text_002
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Stack_Text_002',  Level.LEVEL0, async (done: Function) => {
 
       console.info('[Stack_Text_002] START');
@@ -89,14 +89,14 @@ export default function Stack_Text() {
       done();
     });
 
-    /* *
-      * @tc.number: Stack_Text_003
-      * @tc.name  : Stack_Text_003
-      * @tc.desc  : set api
-      * @tc.level : Level 2
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   Stack_Text_003
+     * @tc.number Stack_Text_003
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Stack_Text_003',  Level.LEVEL0, async (done: Function) => {
 
       console.info('[Stack_Text_003] START');
@@ -114,14 +114,14 @@ export default function Stack_Text() {
       done();
     });
 
-    /* *
-      * @tc.number: Stack_Text_004
-      * @tc.name  : Stack_Text_004
-      * @tc.desc  : set api
-      * @tc.level : Level 2
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   Stack_Text_004
+     * @tc.number Stack_Text_004
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Stack_Text_004',  Level.LEVEL0, async (done: Function) => {
 
       console.info('[Stack_Text_004] START');
@@ -138,14 +138,14 @@ export default function Stack_Text() {
       done();
     });
 
-    /* *
-      * @tc.number: Stack_Text_005
-      * @tc.name  : Stack_Text_005
-      * @tc.desc  : set api
-      * @tc.level : Level 2
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   Stack_Text_005
+     * @tc.number Stack_Text_005
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Stack_Text_005',  Level.LEVEL0, async (done: Function) => {
 
       console.info('[Stack_Text_005] START');
@@ -162,14 +162,14 @@ export default function Stack_Text() {
       done();
     });
 
-    /* *
-      * @tc.number: Stack_Text_006
-      * @tc.name  : Stack_Text_006
-      * @tc.desc  : set api
-      * @tc.level : Level 2
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   Stack_Text_006
+     * @tc.number Stack_Text_006
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     // it('Stack_Text_006',  Level.LEVEL0, async (done: Function) => {
     //
     //   console.info('[Stack_Text_006] START');

@@ -43,6 +43,14 @@ export default function ActionSheetLifeTest() {
     });
 
 
+    /**
+     * @tc.name   ActionSheetLife_0001
+     * @tc.number ActionSheetLife_0001
+     * @tc.desc   ActionSheetLife_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ActionSheetLife_0001', Level.LEVEL2, async (done: Function) => {
       console.info('ActionSheetLife_0001 START');
       await CommonFunc.sleep(1000);

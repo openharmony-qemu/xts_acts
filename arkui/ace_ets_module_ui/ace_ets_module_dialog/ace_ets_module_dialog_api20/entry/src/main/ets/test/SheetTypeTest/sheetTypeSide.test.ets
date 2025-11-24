@@ -41,12 +41,14 @@ export default function SheetTypeTest() {
       done()
     });
 
-    /* *
-    * @tc.number: SheetTypeTest_001
-    * @tc.name  : SheetTypeTest_001
-    * @tc.desc  : Test the SheetTypeTest not null
-    * @tc.level : Level 1
-    */
+     /**
+      * @tc.name   SheetTypeTest_001
+      * @tc.number SheetTypeTest_001
+      * @tc.desc   Test the SheetTypeTest not null
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
+      */
      it('SheetTypeTest_001', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('SheetTypeTest_001 START');
       let driver = await Driver.create()

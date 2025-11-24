@@ -59,6 +59,14 @@ export default function noBarrierComponentsTest() {
     })
     
     
+    /**
+     * @tc.name   noBarrierComponents025
+     * @tc.number noBarrierComponents025
+     * @tc.desc   noBarrierComponents025
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarrierComponents025', Level.LEVEL0, async (done: Function) => {
       console.info('noBarrierComponents025 START');
       setTimeout(() => {
@@ -75,6 +83,14 @@ export default function noBarrierComponentsTest() {
       }, 500)
     });
     
+    /**
+     * @tc.name   noBarrierComponents029
+     * @tc.number noBarrierComponents029
+     * @tc.desc   noBarrierComponents029
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('noBarrierComponents029', Level.LEVEL0, async (done: Function) => {
       console.info('noBarrierComponents029 START');
       setTimeout(() => {

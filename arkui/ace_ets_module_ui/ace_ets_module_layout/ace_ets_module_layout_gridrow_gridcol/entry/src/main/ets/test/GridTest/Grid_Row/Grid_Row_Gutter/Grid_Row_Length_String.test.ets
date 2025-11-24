@@ -47,9 +47,12 @@ export default function Grid_Row_Length_String() {
     });
 
     /**
+     * @tc.name   SUB_ACE_Grid_Row_GutterStr_TEST_0100
      * @tc.number SUB_ACE_Grid_Row_GutterStr_TEST_0100
-     * @tc.name testGridColOffset
-     * @tc.desc GridCol set offset to -2
+     * @tc.desc   GridCol set offset to -2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Grid_Row_GutterStr_TEST_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Grid_Row_GutterStr_TEST_0100] START');
@@ -93,9 +96,12 @@ export default function Grid_Row_Length_String() {
 
 
     /**
+     * @tc.name   SUB_ACE_Grid_Row_GutterStr_TEST_0200
      * @tc.number SUB_ACE_Grid_Row_GutterStr_TEST_0200
-     * @tc.name testGridColOffset
-     * @tc.desc GridCol set offset to 0
+     * @tc.desc   GridCol set offset to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Grid_Row_GutterStr_TEST_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Grid_Row_GutterStr_TEST_0200] START');

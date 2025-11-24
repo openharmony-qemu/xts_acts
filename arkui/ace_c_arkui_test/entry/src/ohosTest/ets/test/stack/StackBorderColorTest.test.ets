@@ -26,78 +26,78 @@ export default function stackBorderColorTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_BORDERCOLOR_0100
-     * @tc.name       : testStackBorderColor001
-     * @tc.desc       : testing borderColor for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackBorderColor001
+     * @tc.number SUB_ARKUI_CAPI_STACK_BORDERCOLOR_0100
+     * @tc.desc   testing borderColor for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackBorderColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackBorderColor001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_BORDERCOLOR_0200
-     * @tc.name       : testStackBorderColor002
-     * @tc.desc       : testing borderColor for stack with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testStackBorderColor002
+     * @tc.number SUB_ARKUI_CAPI_STACK_BORDERCOLOR_0200
+     * @tc.desc   testing borderColor for stack with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackBorderColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackBorderColor002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_BORDERCOLOR_0300
-     * @tc.name       : testStackBorderColor003
-     * @tc.desc       : testing borderColor for stack with small value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackBorderColor003
+     * @tc.number SUB_ARKUI_CAPI_STACK_BORDERCOLOR_0300
+     * @tc.desc   testing borderColor for stack with small value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackBorderColor003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackBorderColor003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_BORDERCOLOR_0400
-     * @tc.name       : testStackBorderColor004
-     * @tc.desc       : testing borderColor for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackBorderColor004
+     * @tc.number SUB_ARKUI_CAPI_STACK_BORDERCOLOR_0400
+     * @tc.desc   testing borderColor for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackBorderColor004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackBorderColor004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_BORDERCOLOR_0500
-     * @tc.name       : testStackBorderColor005
-     * @tc.desc       : testing borderColor for stack with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testStackBorderColor005
+     * @tc.number SUB_ARKUI_CAPI_STACK_BORDERCOLOR_0500
+     * @tc.desc   testing borderColor for stack with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackBorderColor005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackBorderColor005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_BORDERCOLOR_0600
-     * @tc.name       : testStackBorderColor006
-     * @tc.desc       : testing borderColor for stack with small value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackBorderColor006
+     * @tc.number SUB_ARKUI_CAPI_STACK_BORDERCOLOR_0600
+     * @tc.desc   testing borderColor for stack with small value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackBorderColor006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackBorderColor006()).assertEqual(0)

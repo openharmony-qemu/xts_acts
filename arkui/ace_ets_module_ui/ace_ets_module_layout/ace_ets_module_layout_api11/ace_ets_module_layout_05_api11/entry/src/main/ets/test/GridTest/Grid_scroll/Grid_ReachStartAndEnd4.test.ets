@@ -56,9 +56,12 @@ export default function Grid_ReachStartAndEnd4() {
     });
 
     /**
+     * @tc.name   Grid_ReachStartAndEnd4_0500
      * @tc.number SUB_ACE_Grid_ReachStartAndEnd4_0500
-     * @tc.name testGrid
-     * @tc.desc Dynamically changing the padding attribute value of the grid and sliding it to the starting position triggers the onReachStart event
+     * @tc.desc   Dynamically changing the padding attribute value of the grid and sliding it to the starting position triggers the onReachStart event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Grid_ReachStartAndEnd4_0500',  Level.LEVEL0, async (done: Function) => {
       console.info('[Grid_ReachStartAndEnd4_0500] START');

@@ -46,9 +46,12 @@ export default function checkBoxGroupSelectAllJsunit() {
     });
 
     /**
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testcheckBoxGroupSelectAll0001
-     * @tc.desc         acecheckBoxGroupSelectAllEtsTest0001
+     * @tc.name   testcheckBoxGroupSelectAll0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   acecheckBoxGroupSelectAllEtsTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testcheckBoxGroupSelectAll0001', Level.LEVEL1, async () => {
       console.info('checkBoxGroupSelectAll testcheckBoxGroupSelectAll0001 START');
@@ -63,9 +66,12 @@ export default function checkBoxGroupSelectAllJsunit() {
     });
 
     /**
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testcheckBoxGroupSelectAll0002
-     * @tc.desc         acecheckBoxGroupSelectAllEtsTest0002
+     * @tc.name   testcheckBoxGroupSelectAll0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   acecheckBoxGroupSelectAllEtsTest0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testcheckBoxGroupSelectAll0002', Level.LEVEL1, async () => {
       console.info('checkBoxGroupSelectAll testcheckBoxGroupSelectAll0002 START');

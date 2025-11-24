@@ -59,12 +59,12 @@ export default function NavRouter_onStateChange1() {
     });
 
     /**
+     * @tc.name   NavRouter_onStateChange1_0100
      * @tc.number NavRouter_onStateChange1_0100
-     * @tc.name NavRouter_onStateChange1_0100
-     * @tc.desc Determine whether the cursor change triggers onSelectionChange
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Determine whether the cursor change triggers onSelectionChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavRouter_onStateChange1_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[NavRouter_onStateChange1_0100] START');

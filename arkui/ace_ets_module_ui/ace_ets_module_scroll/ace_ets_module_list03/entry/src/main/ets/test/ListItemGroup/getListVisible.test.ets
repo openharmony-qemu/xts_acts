@@ -46,12 +46,12 @@ export default function getListVisible() {
     });
 
     /**
-     * @tc.number    getListVisible_001
-     * @tc.name      getListVisible_001
-     * @tc.desc      Retrieve index information of List subcomponents based on coordinates.
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   getListVisible_0100
+     * @tc.number getListVisible_001
+     * @tc.desc   Retrieve index information of List subcomponents based on coordinates.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getListVisible_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[getListVisible_0100] START');

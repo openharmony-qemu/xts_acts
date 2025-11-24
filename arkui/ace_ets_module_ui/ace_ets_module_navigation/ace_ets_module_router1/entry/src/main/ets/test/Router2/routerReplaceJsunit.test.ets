@@ -59,12 +59,12 @@ export default function routerReplaceJsunit() {
     });
 
     /**
+     * @tc.name   routerReplaceJsunit_0100
      * @tc.number routerReplaceJsunit_0100
-     * @tc.name routerReplaceJsunit_0100
-     * @tc.desc The replace interface does not set params
-     * @tc.level Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.desc   The replace interface does not set params
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('routerReplaceJsunit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[routerReplaceJsunit_0100] START');

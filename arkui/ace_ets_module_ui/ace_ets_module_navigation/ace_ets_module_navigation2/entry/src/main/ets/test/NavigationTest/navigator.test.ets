@@ -45,10 +45,12 @@ export default function navigatorTargetJsunit() {
     });
 
     /**
-     * @tc.number    testnavigatorTarget0001
-     * @tc.name      testnavigatorTarget0001
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   testnavigatorTarget0001
+     * @tc.number testnavigatorTarget0001
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testnavigatorTarget0001',  Level.LEVEL0, async () => {
       console.info('navigatorTarget testnavigatorTarget0001 START');

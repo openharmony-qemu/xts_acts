@@ -43,12 +43,12 @@ export default function scrollBarColor() {
     });
 
     /**
-     * @tc.number    scrollBarColor_001
-     * @tc.name      scrollBarColor_0100
-     * @tc.desc      Set the color of the scrollbar slider.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   scrollBarColor_0100
+     * @tc.number scrollBarColor_001
+     * @tc.desc   Set the color of the scrollbar slider.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('scrollBarColor_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[scrollBarColor_0100] START');

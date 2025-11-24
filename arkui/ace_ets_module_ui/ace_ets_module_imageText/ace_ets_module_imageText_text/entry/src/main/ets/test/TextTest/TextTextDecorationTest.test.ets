@@ -53,12 +53,12 @@ export default function TextTextDecorationTest() {
     })
 
     /**
+     * @tc.name   textTextDecoration0100
      * @tc.number textTextDecoration0100
-     * @tc.name   Test the decoration property of the text component
      * @tc.desc   Do not set decoration property
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTextDecoration0100', Level.LEVEL0, async (done: Function) => {
       let tagName = 'textTextDecoration0100';
@@ -95,12 +95,12 @@ export default function TextTextDecorationTest() {
     });
 
     /**
+     * @tc.name   textTextDecoration0200
      * @tc.number textTextDecoration0200
-     * @tc.name   Test the decoration property of the text component
      * @tc.desc   set decoration property type  TextDecorationType to TextDecorationType.Underline, color to Color.Black
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTextDecoration0200', Level.LEVEL0, async (done: Function) => {
       let tagName = 'textTextDecoration0200';
@@ -137,12 +137,12 @@ export default function TextTextDecorationTest() {
     }); 
 
     /**
+     * @tc.name   textTextDecoration0300
      * @tc.number textTextDecoration0300
-     * @tc.name   Test the decoration property of the text component
      * @tc.desc   set decoration property type  TextDecorationType to TextDecorationType.Overline, color to Color.Red
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTextDecoration0300', Level.LEVEL0, async (done: Function) => {
       let tagName = 'textTextDecoration0300';
@@ -180,13 +180,13 @@ export default function TextTextDecorationTest() {
       done();
     }); 
 
-     /**
+    /**
+     * @tc.name   textTextDecoration0400
      * @tc.number textTextDecoration0400
-     * @tc.name   Test the decoration property of the text component
      * @tc.desc   set decoration property type  TextDecorationType to TextDecorationType.Overline, color to Color.Blue
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTextDecoration0400', Level.LEVEL0, async (done: Function) => {
       let tagName = 'textTextDecoration0400';
@@ -225,14 +225,13 @@ export default function TextTextDecorationTest() {
     }); 
 
      /**
-     * @tc.number textTextDecoration0500
-     * @tc.name   Test the decoration property of the text component
-     * @tc.desc   set decoration property type  TextDecorationType to TextDecorationType.Overline, 
-     *                   color to  $r('app.color.color_D90013_red') 
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
-     */
+      * @tc.name   textTextDecoration0500
+      * @tc.number textTextDecoration0500
+      * @tc.desc   set decoration property type  TextDecorationType to TextDecorationType.Overline,
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('textTextDecoration0500', Level.LEVEL0, async (done: Function) => {
       let tagName = 'textTextDecoration0500';
       console.info('[' + tagName + '] START============================');

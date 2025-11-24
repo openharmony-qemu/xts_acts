@@ -49,12 +49,12 @@ export default function toggleOnChangeModifierTest() {
     })
    
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Modifier_Toggle_OnChange_1001
-     * @tc.name: ArkUX_Modifier_Toggle_OnChange_1001
-     * @tc.desc: ToggleAPI 
-     * @tc.level: Level 1
-     * @tc.type : Toggle
-     * @tc.size : ToggleTest
+     * @tc.name   ArkUX_Modifier_Toggle_OnChange_1001
+     * @tc.number SUB_ARKUI_API_ArkUX_Modifier_Toggle_OnChange_1001
+     * @tc.desc   ToggleAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Modifier_Toggle_OnChange_1001', Level.LEVEL1, async (done: Function) => {
         console.info('ArkUX_Modifier_Toggle_OnChange_1001 START');
@@ -71,14 +71,14 @@ export default function toggleOnChangeModifierTest() {
         done();
       });
   
-    /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Modifier_Toggle_OnChange_1002
-     * @tc.name: ArkUX_Modifier_Toggle_OnChange_1002
-     * @tc.desc: ToggleAPI 
-     * @tc.level: Level 1
-     * @tc.type : Toggle
-     * @tc.size : ToggleTest
-     */
+      /**
+       * @tc.name   ArkUX_Modifier_Toggle_OnChange_1002
+       * @tc.number SUB_ARKUI_API_ArkUX_Modifier_Toggle_OnChange_1002
+       * @tc.desc   ToggleAPI
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
       it('ArkUX_Modifier_Toggle_OnChange_1002', Level.LEVEL1, async (done: Function) => {
         console.info('ArkUX_Modifier_Toggle_OnChange_1002 START');
         let driver = Driver.create();
@@ -94,14 +94,14 @@ export default function toggleOnChangeModifierTest() {
         done();
       });
   
-    /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Modifier_Toggle_OnChange_1003
-     * @tc.name: ArkUX_Modifier_Toggle_OnChange_1003
-     * @tc.desc: ToggleAPI 
-     * @tc.level: Level 1
-     * @tc.type : Toggle
-     * @tc.size : ToggleTest
-     */
+      /**
+       * @tc.name   ArkUX_Modifier_Toggle_OnChange_1003
+       * @tc.number SUB_ARKUI_API_ArkUX_Modifier_Toggle_OnChange_1003
+       * @tc.desc   ToggleAPI
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
       it('ArkUX_Modifier_Toggle_OnChange_1003', Level.LEVEL1, async (done: Function) => {
         console.info('ArkUX_Modifier_Toggle_OnChange_1003 START');
         let driver = Driver.create();

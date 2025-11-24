@@ -46,12 +46,12 @@ export default function checkBoxGroupJsunit2() {
     });
 
     /**
-     * @tc.number testcheckBoxGroup001
      * @tc.name   testcheckBoxGroup001
+     * @tc.number testcheckBoxGroup001
      * @tc.desc   test checkBoxGroup
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testcheckBoxGroup001', Level.LEVEL1, async (done:Function) => {
       console.info('checkBoxGroup testcheckBoxGroup001 START');

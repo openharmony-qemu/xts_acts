@@ -46,12 +46,12 @@ export default function listAnVisible() {
     });
 
     /**
-     * @tc.number    listAnVisible_001
-     * @tc.name      listAnVisible_0100
-     * @tc.desc      Set explicit and implicit for elements that are multiples of 3, and call the ScrollPage interface.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   listAnVisible_0100
+     * @tc.number listAnVisible_001
+     * @tc.desc   Set explicit and implicit for elements that are multiples of 3, and call the ScrollPage interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('listAnVisible_0100', Level.LEVEL3, async (done: Function) => {
       console.info('[listAnVisible_0100] START');

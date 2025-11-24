@@ -47,10 +47,13 @@ export default function panelTest() {
       console.info(" panel after each called");
     });
 
-    /*
-     *tc.number ArkUX_Stage_Panel_showCloseIcon_0100
-     *tc.name   Support modifying  the close icon shown or not
-     *tc.desc   Sets the showCloseIcon property parameter to true
+    /**
+     * @tc.name   ArkUX_Stage_Panel_showCloseIcon_0100
+     * @tc.number ArkUX_Stage_Panel_showCloseIcon_0100
+     * @tc.desc   Sets the showCloseIcon property parameter to true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUX_Stage_Panel_showCloseIcon_0100', Level.LEVEL2, async (done: Function) => {
       console.info('ArkUX_Stage_Panel_showCloseIcon_0100 START');
@@ -69,10 +72,13 @@ export default function panelTest() {
       done();
     });
 
-    /*
-     *tc.number ArkUX_Stage_Panel_showCloseIcon_0200
-     *tc.name   Support modifying  the close icon shown or not
-     *tc.desc   Sets the showCloseIcon property parameter to false
+    /**
+     * @tc.name   ArkUX_Stage_Panel_showCloseIcon_0200
+     * @tc.number ArkUX_Stage_Panel_showCloseIcon_0200
+     * @tc.desc   Sets the showCloseIcon property parameter to false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUX_Stage_Panel_showCloseIcon_0200', Level.LEVEL2, async (done: Function) => {
       console.info('ArkUX_Stage_Panel_showCloseIcon_0200 START')
@@ -91,10 +97,13 @@ export default function panelTest() {
       done();
     });
 
-    /*
-     *tc.number ArkUX_Stage_Panel_showCloseIcon_0300
-     *tc.name   Support modifying  the close icon shown or not
-     *tc.desc   Sets the showCloseIcon property parameter from true to false
+    /**
+     * @tc.name   ArkUX_Stage_Panel_showCloseIcon_0300
+     * @tc.number ArkUX_Stage_Panel_showCloseIcon_0300
+     * @tc.desc   Sets the showCloseIcon property parameter from true to false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUX_Stage_Panel_showCloseIcon_0300', Level.LEVEL2, async (done: Function) => {
       console.info('ArkUX_Stage_Panel_showCloseIcon_0300 START');
@@ -113,10 +122,13 @@ export default function panelTest() {
       done();
     });
 
-    /*
-     *tc.number ArkUX_Stage_Panel_showCloseIcon_0400
-     *tc.name   Support modifying  the close icon shown or not
-     *tc.desc   Sets the showCloseIcon property parameter from false to true
+    /**
+     * @tc.name   ArkUX_Stage_Panel_showCloseIcon_0400
+     * @tc.number ArkUX_Stage_Panel_showCloseIcon_0400
+     * @tc.desc   Sets the showCloseIcon property parameter from false to true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUX_Stage_Panel_showCloseIcon_0400', Level.LEVEL2, async (done: Function) => {
       console.info('ArkUX_Stage_Panel_showCloseIcon_0400 START');
@@ -135,10 +147,13 @@ export default function panelTest() {
       done();
     });
 
-    /*
-     *tc.number ArkUX_Stage_Panel_showCloseIcon_0500
-     *tc.name   Support modifying  the close icon shown or not
-     *tc.desc   Sets the showCloseIcon property parameter to " "
+    /**
+     * @tc.name   ArkUX_Stage_Panel_showCloseIcon_0500
+     * @tc.number ArkUX_Stage_Panel_showCloseIcon_0500
+     * @tc.desc   Sets the showCloseIcon property parameter to " "
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUX_Stage_Panel_showCloseIcon_0500', Level.LEVEL2, async (done: Function) => {
       console.info('ArkUX_Stage_Panel_showCloseIcon_0500 START');
@@ -157,10 +172,13 @@ export default function panelTest() {
       done();
     });
 
-    /*
-     *tc.number ArkUX_Stage_Panel_showCloseIcon_0600
-     *tc.name   Support modifying  the close icon shown or not
-     *tc.desc   Sets the showCloseIcon property parameter to null
+    /**
+     * @tc.name   ArkUX_Stage_Panel_showCloseIcon_0600
+     * @tc.number ArkUX_Stage_Panel_showCloseIcon_0600
+     * @tc.desc   Sets the showCloseIcon property parameter to null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUX_Stage_Panel_showCloseIcon_0600', Level.LEVEL2, async (done: Function) => {
       console.info('ArkUX_Stage_Panel_showCloseIcon_0600 START');
@@ -179,10 +197,13 @@ export default function panelTest() {
       done();
     });
 
-    /*
-     *tc.number ArkUX_Stage_Panel_showCloseIcon_0700
-     *tc.name   Support modifying  the close icon shown or not
-     *tc.desc   Sets the showCloseIcon property parameter to number 0
+    /**
+     * @tc.name   ArkUX_Stage_Panel_showCloseIcon_0700
+     * @tc.number ArkUX_Stage_Panel_showCloseIcon_0700
+     * @tc.desc   Sets the showCloseIcon property parameter to number 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUX_Stage_Panel_showCloseIcon_0700', Level.LEVEL2, async (done: Function) => {
       console.info('ArkUX_Stage_Panel_showCloseIcon_0700 START');
@@ -201,10 +222,13 @@ export default function panelTest() {
       done();
     });
 
-    /*
-     *tc.number ArkUX_Stage_Panel_showCloseIcon_0800
-     *tc.name   Support modifying  the close icon shown or not
-     *tc.desc   Sets the showCloseIcon property parameter to number 1
+    /**
+     * @tc.name   ArkUX_Stage_Panel_showCloseIcon_0800
+     * @tc.number ArkUX_Stage_Panel_showCloseIcon_0800
+     * @tc.desc   Sets the showCloseIcon property parameter to number 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUX_Stage_Panel_showCloseIcon_0800', Level.LEVEL2, async (done: Function) => {
       console.info('ArkUX_Stage_Panel_showCloseIcon_0800 START');
@@ -223,10 +247,13 @@ export default function panelTest() {
       done();
     });
 
-    /*
-     *tc.number ArkUX_Stage_Panel_showCloseIcon_0900
-     *tc.name   Support modifying  the close icon shown or not
-     *tc.desc   Sets the showCloseIcon property parameter to number 100
+    /**
+     * @tc.name   ArkUX_Stage_Panel_showCloseIcon_0900
+     * @tc.number ArkUX_Stage_Panel_showCloseIcon_0900
+     * @tc.desc   Sets the showCloseIcon property parameter to number 100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUX_Stage_Panel_showCloseIcon_0900', Level.LEVEL2, async (done: Function) => {
       console.info('ArkUX_Stage_Panel_showCloseIcon_0900 START');
@@ -245,10 +272,13 @@ export default function panelTest() {
       done();
     });
 
-    /*
-     *tc.number ArkUX_Stage_Panel_showCloseIcon_1000
-     *tc.name   Support modifying  the close icon shown or not
-     *tc.desc   Sets the showCloseIcon property parameter to undefined
+    /**
+     * @tc.name   ArkUX_Stage_Panel_showCloseIcon_1000
+     * @tc.number ArkUX_Stage_Panel_showCloseIcon_1000
+     * @tc.desc   Sets the showCloseIcon property parameter to undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUX_Stage_Panel_showCloseIcon_1000', Level.LEVEL2, async (done: Function) => {
       console.info('ArkUX_Stage_Panel_showCloseIcon_1000 START');
@@ -267,10 +297,13 @@ export default function panelTest() {
       done();
     });
 
-    /*
-     *tc.number ArkUX_Stage_Panel_showCloseIcon_1100
-     *tc.name   Support modifying  the close icon shown or not
-     *tc.desc   Sets the showCloseIcon property parameter to string "true"
+    /**
+     * @tc.name   ArkUX_Stage_Panel_showCloseIcon_1100
+     * @tc.number ArkUX_Stage_Panel_showCloseIcon_1100
+     * @tc.desc   Sets the showCloseIcon property parameter to string "true"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUX_Stage_Panel_showCloseIcon_1100', Level.LEVEL2, async (done: Function) => {
       console.info('ArkUX_Stage_Panel_showCloseIcon_1100 START');
@@ -289,10 +322,13 @@ export default function panelTest() {
       done();
     });
 
-    /*
-     *tc.number ArkUX_Stage_Panel_showCloseIcon_1200
-     *tc.name   Support modifying  the close icon shown or not
-     *tc.desc   Not sets the showCloseIcon property parameter
+    /**
+     * @tc.name   ArkUX_Stage_Panel_showCloseIcon_1200
+     * @tc.number ArkUX_Stage_Panel_showCloseIcon_1200
+     * @tc.desc   Not sets the showCloseIcon property parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUX_Stage_Panel_showCloseIcon_1200', Level.LEVEL2, async (done: Function) => {
       console.info('ArkUX_Stage_Panel_showCloseIcon_1200 START');
@@ -311,10 +347,13 @@ export default function panelTest() {
       done();
     });
 
-    /*
-     *tc.number ArkUX_Stage_Panel_showCloseIcon_1300
-     *tc.name   Support modifying  the close icon shown or not
-     *tc.desc   Sets the showCloseIcon property parameter from true to undefined
+    /**
+     * @tc.name   ArkUX_Stage_Panel_showCloseIcon_1300
+     * @tc.number ArkUX_Stage_Panel_showCloseIcon_1300
+     * @tc.desc   Sets the showCloseIcon property parameter from true to undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUX_Stage_Panel_showCloseIcon_1300', Level.LEVEL2, async (done: Function) => {
       console.info('ArkUX_Stage_Panel_showCloseIcon_1300 START');
@@ -333,10 +372,13 @@ export default function panelTest() {
       done();
     });
 
-    /*
-     *tc.number ArkUX_Stage_Panel_showCloseIcon_1400
-     *tc.name   Support modifying  the close icon shown or not
-     *tc.desc   Sets the showCloseIcon property parameter from true to null
+    /**
+     * @tc.name   ArkUX_Stage_Panel_showCloseIcon_1400
+     * @tc.number ArkUX_Stage_Panel_showCloseIcon_1400
+     * @tc.desc   Sets the showCloseIcon property parameter from true to null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUX_Stage_Panel_showCloseIcon_1400', Level.LEVEL2, async (done: Function) => {
       console.info('ArkUX_Stage_Panel_showCloseIcon_1400 START');
@@ -355,10 +397,13 @@ export default function panelTest() {
       done();
     });
 
-    /*
-     *tc.number ArkUX_Stage_Panel_showCloseIcon_1500
-     *tc.name   Support modifying  the close icon shown or not
-     *tc.desc   Sets the showCloseIcon property parameter from true to " "
+    /**
+     * @tc.name   ArkUX_Stage_Panel_showCloseIcon_1500
+     * @tc.number ArkUX_Stage_Panel_showCloseIcon_1500
+     * @tc.desc   Sets the showCloseIcon property parameter from true to " "
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUX_Stage_Panel_showCloseIcon_1500', Level.LEVEL2, async (done: Function) => {
       console.info('ArkUX_Stage_Panel_showCloseIcon_1500 START');

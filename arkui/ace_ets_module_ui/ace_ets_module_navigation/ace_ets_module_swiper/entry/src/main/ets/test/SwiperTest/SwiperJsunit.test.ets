@@ -44,14 +44,14 @@ export default function swiperJsunit() {
       await CommonFunc.sleep(1000);
       console.info("swiper after each called");
     });
-	/**
-      * @tc.number: swiperTest_0100
-      * @tc.name  : swiperTest_0100
-      * @tc.desc  : To test the avoidance interface swiper
-      * @tc.level : LEVEL 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   swiperTest_0100
+     * @tc.number swiperTest_0100
+     * @tc.desc   To test the avoidance interface swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('swiperTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('swiperTest_0100 START');
       let strJson: string = getInspectorByKey('swiper');
@@ -66,14 +66,14 @@ export default function swiperJsunit() {
       expect(JSON.parse(strJson).$attrs.index).assertEqual('1');
       done()
     });
-	/**
-      * @tc.number: swiperTest_0200
-      * @tc.name  : swiperTest_0200
-      * @tc.desc  : To test the avoidance interface swiper
-      * @tc.level : LEVEL 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   swiperTest_0200
+     * @tc.number swiperTest_0200
+     * @tc.desc   To test the avoidance interface swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('swiperTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('swiperTest_0200 START');
       let strJson: string = getInspectorByKey('swiper');
@@ -84,14 +84,14 @@ export default function swiperJsunit() {
       console.info('swiperTest_0200 END');
       done()
     });
-	/**
-      * @tc.number: swiperTest_0300
-      * @tc.name  : swiperTest_0300
-      * @tc.desc  : To test the avoidance interface swiper
-      * @tc.level : LEVEL 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   swiperTest_0300
+     * @tc.number swiperTest_0300
+     * @tc.desc   To test the avoidance interface swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('swiperTest_0300', Level.LEVEL1, async (done: Function) => {
       console.info('swiperTest_0300 START');
       let strJson: string = getInspectorByKey('swiper');
@@ -103,14 +103,14 @@ export default function swiperJsunit() {
       console.info('swiperTest_0300 END');
       done()
     });
-	/**
-      * @tc.number: swiperTest_0400
-      * @tc.name  : swiperTest_0400
-      * @tc.desc  : To test the avoidance interface swiper
-      * @tc.level : LEVEL 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   swiperTest_0400
+     * @tc.number swiperTest_0400
+     * @tc.desc   To test the avoidance interface swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('swiperTest_0400', Level.LEVEL1, async (done: Function) => {
       console.info('swiperTest_0400 START');
       let strJson: string = getInspectorByKey('swiper');
@@ -122,14 +122,14 @@ export default function swiperJsunit() {
       console.info('swiperTest_0400 END');
       done()
     });
-	/**
-      * @tc.number: swiperTest_0500
-      * @tc.name  : swiperTest_0500
-      * @tc.desc  : To test the avoidance interface swiper
-      * @tc.level : LEVEL 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   swiperTest_0500
+     * @tc.number swiperTest_0500
+     * @tc.desc   To test the avoidance interface swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('swiperTest_0500', Level.LEVEL1, async (done: Function) => {
       console.info('swiperTest_0500 START');
       let strJson: string = getInspectorByKey('swiper');
@@ -141,14 +141,14 @@ export default function swiperJsunit() {
       console.info('swiperTest_0500 END');
       done()
     });
-	/**
-      * @tc.number: swiperTest_0600
-      * @tc.name  : swiperTest_0600
-      * @tc.desc  : To test the avoidance interface swiper
-      * @tc.level : LEVEL 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   swiperTest_0600
+     * @tc.number swiperTest_0600
+     * @tc.desc   To test the avoidance interface swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('swiperTest_0600', Level.LEVEL1, async (done: Function) => {
       console.info('swiperTest_0600 START');
       try {
@@ -174,14 +174,14 @@ export default function swiperJsunit() {
       console.info('swiperTest_0600 END');
       done()
     });
-	/**
-      * @tc.number: swiperTest_0700
-      * @tc.name  : swiperTest_0700
-      * @tc.desc  : To test the avoidance interface swiper
-      * @tc.level : LEVEL 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   swiperTest_0700
+     * @tc.number swiperTest_0700
+     * @tc.desc   To test the avoidance interface swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('swiperTest_0700', Level.LEVEL1, async (done: Function) => {
       console.info('swiperTest_0700 START');
       try {
@@ -207,14 +207,14 @@ export default function swiperJsunit() {
       console.info('swiperTest_0700 END');
       done()
     });
-	/**
-      * @tc.number: swiperTest_0800
-      * @tc.name  : swiperTest_0800
-      * @tc.desc  : To test the avoidance interface swiper
-      * @tc.level : LEVEL 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   swiperTest_0800
+     * @tc.number swiperTest_0800
+     * @tc.desc   To test the avoidance interface swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('swiperTest_0800', Level.LEVEL1, async (done: Function) => {
       console.info('swiperTest_0800 START');
       await CommonFunc.sleep(1500);
@@ -238,14 +238,14 @@ export default function swiperJsunit() {
       done()
     });
 
-	/**
-      * @tc.number: swiperTest_0900
-      * @tc.name  : swiperTest_0900
-      * @tc.desc  : To test the avoidance interface swiper
-      * @tc.level : LEVEL 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   swiperTest_0900
+     * @tc.number swiperTest_0900
+     * @tc.desc   To test the avoidance interface swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('swiperTest_0900', Level.LEVEL1, async (done: Function) => {
       console.info('swiperTest_0900 START');
       await CommonFunc.sleep(1500);
@@ -268,14 +268,14 @@ export default function swiperJsunit() {
       console.info('swiperTest_0900 END');
     });
 
-	/**
-      * @tc.number: swiperTest_1000
-      * @tc.name  : swiperTest_1000
-      * @tc.desc  : To test the avoidance interface swiper
-      * @tc.level : LEVEL 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   swiperTest_1000
+     * @tc.number swiperTest_1000
+     * @tc.desc   To test the avoidance interface swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('swiperTest_1000', Level.LEVEL1, async (done: Function) => {
       console.info('swiperTest_1000 START');
       await CommonFunc.sleep(1500);
@@ -312,14 +312,14 @@ export default function swiperJsunit() {
       console.info('swiperTest_1000 END');
     });
 
-	/**
-      * @tc.number: swiperTest_1100
-      * @tc.name  : swiperTest_1100
-      * @tc.desc  : To test the avoidance interface swiper
-      * @tc.level : LEVEL 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   swiperTest_1100
+     * @tc.number swiperTest_1100
+     * @tc.desc   To test the avoidance interface swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('swiperTest_1100', Level.LEVEL1, async (done: Function) => {
       console.info('swiperTest_1100 START');
       try {
@@ -346,14 +346,14 @@ export default function swiperJsunit() {
       done()
     });
 
-	/**
-      * @tc.number: swiperTest_1200
-      * @tc.name  : swiperTest_1200
-      * @tc.desc  : To test the avoidance interface swiper
-      * @tc.level : LEVEL 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   swiperTest_1200
+     * @tc.number swiperTest_1200
+     * @tc.desc   To test the avoidance interface swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('swiperTest_1200', Level.LEVEL1, async (done: Function) => {
       console.info('swiperTest_1200 START');
       try {
@@ -380,14 +380,14 @@ export default function swiperJsunit() {
       done()
     });
 
-	/**
-      * @tc.number: swiperTest_1300
-      * @tc.name  : swiperTest_1300
-      * @tc.desc  : To test the avoidance interface swiper
-      * @tc.level : LEVEL 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   swiperTest_1300
+     * @tc.number swiperTest_1300
+     * @tc.desc   To test the avoidance interface swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('swiperTest_1300', Level.LEVEL1, async (done: Function) => {
       console.info('swiperTest_1300 START');
       try {
@@ -414,14 +414,14 @@ export default function swiperJsunit() {
       done()
     });
 
-	/**
-      * @tc.number: swiperTest_1400
-      * @tc.name  : swiperTest_1400
-      * @tc.desc  : To test the avoidance interface swiper
-      * @tc.level : LEVEL 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   swiperTest_1400
+     * @tc.number swiperTest_1400
+     * @tc.desc   To test the avoidance interface swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('swiperTest_1400', Level.LEVEL1, async (done: Function) => {
       console.info('swiperTest_1400 START');
       try {
@@ -447,14 +447,14 @@ export default function swiperJsunit() {
       done()
     });
 
-	/**
-      * @tc.number: swiperTest_1500
-      * @tc.name  : swiperTest_1500
-      * @tc.desc  : To test the avoidance interface swiper
-      * @tc.level : LEVEL 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   swiperTest_1500
+     * @tc.number swiperTest_1500
+     * @tc.desc   To test the avoidance interface swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('swiperTest_1500', Level.LEVEL1, async (done: Function) => {
       console.info('swiperTest_1500 START');
       try {
@@ -481,14 +481,14 @@ export default function swiperJsunit() {
       done()
     });
 
-	/**
-      * @tc.number: swiperTest_1600
-      * @tc.name  : swiperTest_1600
-      * @tc.desc  : To test the avoidance interface swiper
-      * @tc.level : LEVEL 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   swiperTest_1600
+     * @tc.number swiperTest_1600
+     * @tc.desc   To test the avoidance interface swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('swiperTest_1600', Level.LEVEL1, async (done: Function) => {
       console.info('swiperTest_1600 START');
       try {
@@ -515,14 +515,14 @@ export default function swiperJsunit() {
       done()
     });
 
-	/**
-      * @tc.number: swiperTest_1700
-      * @tc.name  : swiperTest_1700
-      * @tc.desc  : To test the avoidance interface swiper
-      * @tc.level : LEVEL 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   swiperTest_1700
+     * @tc.number swiperTest_1700
+     * @tc.desc   To test the avoidance interface swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('swiperTest_1700', Level.LEVEL1, async (done: Function) => {
       console.info('swiperTest_1700 START');
       try {
@@ -549,14 +549,14 @@ export default function swiperJsunit() {
       done()
     });
 
-	/**
-      * @tc.number: swiperTest_1800
-      * @tc.name  : swiperTest_1800
-      * @tc.desc  : To test the avoidance interface swiper
-      * @tc.level : LEVEL 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   swiperTest_1800
+     * @tc.number swiperTest_1800
+     * @tc.desc   To test the avoidance interface swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('swiperTest_1800', Level.LEVEL1, async (done: Function) => {
       console.info('swiperTest_1800 START');
       try {
@@ -583,14 +583,14 @@ export default function swiperJsunit() {
       done()
     });
 
-	/**
-      * @tc.number: swiperTest_1900
-      * @tc.name  : swiperTest_1900
-      * @tc.desc  : To test the avoidance interface swiper
-      * @tc.level : LEVEL 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   swiperTest_1900
+     * @tc.number swiperTest_1900
+     * @tc.desc   To test the avoidance interface swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('swiperTest_1900', Level.LEVEL1, async (done: Function) => {
       console.info('swiperTest_1900 START');
       try {
@@ -617,14 +617,14 @@ export default function swiperJsunit() {
       done()
     });
 
-	/**
-      * @tc.number: swiperTest_2000
-      * @tc.name  : swiperTest_2000
-      * @tc.desc  : To test the avoidance interface swiper
-      * @tc.level : LEVEL 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   swiperTest_2000
+     * @tc.number swiperTest_2000
+     * @tc.desc   To test the avoidance interface swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('swiperTest_2000', Level.LEVEL1, async (done: Function) => {
       console.info('swiperTest_2000 START');
       try {

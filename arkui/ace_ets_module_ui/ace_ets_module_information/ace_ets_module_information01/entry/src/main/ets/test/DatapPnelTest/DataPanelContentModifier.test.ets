@@ -40,14 +40,14 @@ export default function DataPanelContentModifierTest() {
       console.info('DataPanelContentModifierTest beforeEach end');
       done();
     });
-    /* *
-    * @tc.number: DataPanelContentModifierTest_001
-    * @tc.name  : DataPanelContentModifierTest_001
-    * @tc.desc  : To test the contentModifier
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   DataPanelContentModifierTest_001
+     * @tc.number DataPanelContentModifierTest_001
+     * @tc.desc   To test the contentModifier
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('DataPanelContentModifierTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('DataPanelContentModifierTest_001 START');
       await Utils.sleep(1000);

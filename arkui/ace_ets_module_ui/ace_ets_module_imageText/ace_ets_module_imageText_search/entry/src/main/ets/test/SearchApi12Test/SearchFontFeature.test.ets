@@ -42,12 +42,12 @@ export default function SearchFontFeatureTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SearchFontFeatureTest_0010
-     * @tc.name      SearchFontFeatureTest_0010
-     * @tc.desc      test Search fontFeature: on
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SearchFontFeatureTest_0010
+     * @tc.number SUB_ACE_SearchFontFeatureTest_0010
+     * @tc.desc   test Search fontFeature: on
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SearchFontFeatureTest_0010', Level.LEVEL1, async (done: Function) => {
       console.info('[SearchFontFeatureTest_0010] START');
@@ -60,12 +60,12 @@ export default function SearchFontFeatureTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SearchFontFeatureTest_0020
-     * @tc.name      SearchFontFeatureTest_0020
-     * @tc.desc      set Search fontFeature: fontFeature.Off
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SearchFontFeatureTest_0020
+     * @tc.number SUB_ACE_SearchFontFeatureTest_0020
+     * @tc.desc   set Search fontFeature: fontFeature.Off
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SearchFontFeatureTest_0020', Level.LEVEL1, async (done: Function) => {
       console.info('[SearchFontFeatureTest_0020] START');
@@ -78,12 +78,12 @@ export default function SearchFontFeatureTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SearchFontFeatureTest_0030
-     * @tc.name      SearchFontFeatureTest_0030
-     * @tc.desc      set Search fontFeature: default
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SearchFontFeatureTest_0030
+     * @tc.number SUB_ACE_SearchFontFeatureTest_0030
+     * @tc.desc   set Search fontFeature: default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SearchFontFeatureTest_0030', Level.LEVEL1, async (done: Function) => {
       console.info('[SearchFontFeatureTest_0030] START');
@@ -96,12 +96,12 @@ export default function SearchFontFeatureTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SearchFontFeatureTest_0040
-     * @tc.name      SearchFontFeatureTest_0040
-     * @tc.desc      set Search fontFeature: undefined
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SearchFontFeatureTest_0040
+     * @tc.number SUB_ACE_SearchFontFeatureTest_0040
+     * @tc.desc   set Search fontFeature: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SearchFontFeatureTest_0040', Level.LEVEL1, async (done: Function) => {
       console.info('[SearchFontFeatureTest_0040] START');

@@ -55,11 +55,12 @@ export default function StageFontTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number    Stage_Font_0100
-     * @tc.name      Stage_Font_0100
-     * @tc.desc      Font test
-     * @tc.level     Level 2
-     * @tc.type
+     * @tc.name   Stage_Font_0100
+     * @tc.number Stage_Font_0100
+     * @tc.desc   Font test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Stage_Font_0100', Level.LEVEL2, async (done: Function) => {
       console.info('Stage_Font_0100 START');
@@ -82,11 +83,12 @@ export default function StageFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    Stage_Font_0200
-     * @tc.name      Stage_Font_0200
-     * @tc.desc      Font test
-     * @tc.level     Level 2
-     * @tc.type
+     * @tc.name   Stage_Font_0200
+     * @tc.number Stage_Font_0200
+     * @tc.desc   Font test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Stage_Font_0200', Level.LEVEL2, async (done: Function) => {
       console.info('Stage_Font_0200 START');
@@ -107,11 +109,12 @@ export default function StageFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    Stage_Font_0300
-     * @tc.name      Stage_Font_0300
-     * @tc.desc      Font test
-     * @tc.level     Level 2
-     * @tc.type
+     * @tc.name   Stage_Font_0300
+     * @tc.number Stage_Font_0300
+     * @tc.desc   Font test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Stage_Font_0300', Level.LEVEL2, async (done: Function) => {
       console.info('Stage_Font_0300 START');
@@ -132,11 +135,12 @@ export default function StageFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    Stage_Font_0400
-     * @tc.name      Stage_Font_0400
-     * @tc.desc      Font test
-     * @tc.level     Level 2
-     * @tc.type
+     * @tc.name   Stage_Font_0400
+     * @tc.number Stage_Font_0400
+     * @tc.desc   Font test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Stage_Font_0400', Level.LEVEL2, async (done: Function) => {
       console.info('Stage_Font_0400 START');
@@ -157,11 +161,12 @@ export default function StageFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    Stage_Font_0500
-     * @tc.name      Stage_Font_0500
-     * @tc.desc      Font test
-     * @tc.level     Level 2
-     * @tc.type
+     * @tc.name   Stage_Font_0500
+     * @tc.number Stage_Font_0500
+     * @tc.desc   Font test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Stage_Font_0500', Level.LEVEL2, async (done: Function) => {
       console.info('Stage_Font_0500 START');
@@ -182,11 +187,12 @@ export default function StageFontTest() {
       }, 500)
     });
     /**
-     * @tc.number    Stage_Font_0600
-     * @tc.name      Stage_Font_0600
-     * @tc.desc      Font test
-     * @tc.level     Level 2
-     * @tc.type
+     * @tc.name   Stage_Font_0600
+     * @tc.number Stage_Font_0600
+     * @tc.desc   Font test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Stage_Font_0600', Level.LEVEL2, async (done: Function) => {
       let fontRegister:ESObject = globalThis.uiContent.getFont();
@@ -201,11 +207,12 @@ export default function StageFontTest() {
       done();
     });
     /**
-     * @tc.number    Stage_Font_0700
-     * @tc.name      Stage_Font_0700
-     * @tc.desc      Font test
-     * @tc.level     Level 2
-     * @tc.type
+     * @tc.name   Stage_Font_0700
+     * @tc.number Stage_Font_0700
+     * @tc.desc   Font test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Stage_Font_0700', Level.LEVEL2, async (done: Function) => {
       let fontRegister:ESObject = globalThis.uiContent.getFont();
@@ -220,11 +227,12 @@ export default function StageFontTest() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_Stage_Font_0800
-     * @tc.name      Stage_Font_0800
-     * @tc.desc      Font test
-     * @tc.level     Level 2
-     * @tc.type
+     * @tc.name   Stage_Font_0800
+     * @tc.number SUB_ACE_UI_COMPONENT_Stage_Font_0800
+     * @tc.desc   Font test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Stage_Font_0800', Level.LEVEL2, async (done: Function) => {
       let fontRegister:ESObject = globalThis.uiContent.getFont();

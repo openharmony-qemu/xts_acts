@@ -45,6 +45,14 @@ export default function enableJsunit() {
       console.info("path after each called");
     });
 
+    /**
+     * @tc.name   testPath01
+     * @tc.number testPath01
+     * @tc.desc   testPath01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testPath01', Level.LEVEL0, async (done: Function) => {
       console.info('[testPath01] START');
       await Utils.sleep(1000);
@@ -56,6 +64,14 @@ export default function enableJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testPath02
+     * @tc.number testPath02
+     * @tc.desc   testPath02
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testPath02', Level.LEVEL0, async (done: Function) => {
       console.info('[testPath02] START');
       try {

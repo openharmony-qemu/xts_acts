@@ -47,12 +47,12 @@ export default function DrawModifierTwoTest() {
     });
 
     /**
-     * @tc.number    DrawModifierTwoTest_0100
-     * @tc.name      DrawModifierTwoTest_0100
-     * @tc.desc      DrawModifier Test
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   DrawModifierTwoTest_0100
+     * @tc.number DrawModifierTwoTest_0100
+     * @tc.desc   DrawModifier Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DrawModifierTwoTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('DrawModifierTwoTest_0100 START');

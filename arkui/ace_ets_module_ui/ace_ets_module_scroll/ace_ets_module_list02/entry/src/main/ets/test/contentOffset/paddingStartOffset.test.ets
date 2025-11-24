@@ -46,12 +46,12 @@ export default function paddingStartOffset() {
     });
 
     /**
-     * @tc.number    paddingStartOffset_001
-     * @tc.name      paddingStartOffset_0100
-     * @tc.desc      Set padding and contentStartOffset for the list component.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   paddingStartOffset_0100
+     * @tc.number paddingStartOffset_001
+     * @tc.desc   Set padding and contentStartOffset for the list component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('paddingStartOffset_0100', Level.LEVEL3, async (done: Function) => {
       console.info('[paddingStartOffset_0100] START');

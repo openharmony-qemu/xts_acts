@@ -54,12 +54,12 @@ export default function stageDatePickerDialog() {
     })
 
     /**
-     * @tc.number: testDatePickerDialog001
-     * @tc.name  : testDatePickerDialog001
-     * @tc.desc  : To test the eventData
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   testDatePickerDialog001
+     * @tc.number testDatePickerDialog001
+     * @tc.desc   To test the eventData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDatePickerDialog001', Level.LEVEL1, async (done: Function) => {
       console.info('testDatePickerDialog001 START');
@@ -90,12 +90,12 @@ export default function stageDatePickerDialog() {
     });
 
     /**
-     * @tc.number: testDatePickerDialog002
-     * @tc.name  : testDatePickerDialog002
-     * @tc.desc  : To test the eventData
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   testDatePickerDialog002
+     * @tc.number testDatePickerDialog002
+     * @tc.desc   To test the eventData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDatePickerDialog002', Level.LEVEL1, async (done: Function) => {
       console.info('testDatePickerDialog002 START');
@@ -126,12 +126,12 @@ export default function stageDatePickerDialog() {
     });
 
     /**
-     * @tc.number: testDatePickerDialog003
-     * @tc.name  : testDatePickerDialog003
-     * @tc.desc  : To test the eventData
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   testDatePickerDialog003
+     * @tc.number testDatePickerDialog003
+     * @tc.desc   To test the eventData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDatePickerDialog003', Level.LEVEL1, async (done: Function) => {
       console.info('testDatePickerDialog003 START');

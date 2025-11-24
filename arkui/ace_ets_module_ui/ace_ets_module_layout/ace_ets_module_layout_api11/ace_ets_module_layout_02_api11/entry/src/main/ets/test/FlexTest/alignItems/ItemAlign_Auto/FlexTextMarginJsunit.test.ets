@@ -47,9 +47,12 @@ export default function flexTextMargin_AutoJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignAutoTextMarginMeet
      * @tc.number SUB_ACE_FLEXALIGNITEMS_AUTO_1400
-     * @tc.name testFlexItemAlignAutoTextMarginMeet
-     * @tc.desc Subcomponents set margin within the scope of the parent component.
+     * @tc.desc   Subcomponents set margin within the scope of the parent component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignAutoTextMarginMeet',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignAutoTextMarginMeet START');
@@ -84,9 +87,12 @@ export default function flexTextMargin_AutoJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignAutoTextMarginOverflow
      * @tc.number SUB_ACE_FLEXALIGNITEMS_AUTO_1500
-     * @tc.name testFlexItemAlignAutoTextMarginOverflow
-     * @tc.desc Subcomponents set margin outside the scope of the parent component
+     * @tc.desc   Subcomponents set margin outside the scope of the parent component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignAutoTextMarginOverflow',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignAutoTextMarginOverflow START');

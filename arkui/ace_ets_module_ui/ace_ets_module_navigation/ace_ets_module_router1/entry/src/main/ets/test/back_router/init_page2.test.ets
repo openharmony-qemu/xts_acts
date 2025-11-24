@@ -62,12 +62,12 @@ export default function aboutToAppearRouterTest2() {
       console.info("aboutToAppearRouterTest2 after each called");
     });
     /**
+     * @tc.name   aboutToAppearRouterTest2_0100
      * @tc.number aboutToAppearRouterTest2_0100
-     * @tc.name aboutToAppearRouterTest2_0100
-     * @tc.desc set api
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('aboutToAppearRouterTest2_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[aboutToAppearRouterTest2_0100] START');

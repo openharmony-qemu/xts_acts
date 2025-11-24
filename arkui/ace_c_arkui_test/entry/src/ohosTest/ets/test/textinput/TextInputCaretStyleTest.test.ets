@@ -26,39 +26,39 @@ export default function textInputCaretStyleTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_CARETSTYLE_0100
-     * @tc.name: testTextInputCaretStyle001
-     * @tc.desc: testing caretStyle for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputCaretStyle001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_CARETSTYLE_0100
+     * @tc.desc   testing caretStyle for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputCaretStyle001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputCaretStyle001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_CARETSTYLE_0200
-     * @tc.name: testTextInputCaretStyle002
-     * @tc.desc: testing caretStyle for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputCaretStyle002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_CARETSTYLE_0200
+     * @tc.desc   testing caretStyle for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputCaretStyle002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputCaretStyle002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_CARETSTYLE_0300
-     * @tc.name: testTextInputCaretStyle003
-     * @tc.desc: testing caretStyle for textInput with abnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   testTextInputCaretStyle003
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_CARETSTYLE_0300
+     * @tc.desc   testing caretStyle for textInput with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputCaretStyle003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputCaretStyle003()).assertEqual(0)

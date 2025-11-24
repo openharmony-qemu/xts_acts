@@ -26,52 +26,52 @@ export default function commonAttrsRenderGroupTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_RENDERGROUP_0100
-     * @tc.name       : testCommonAttrsRenderGroup001
-     * @tc.desc       : testing render group for commonAttrs with invalid value 
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsRenderGroup001
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_RENDERGROUP_0100
+     * @tc.desc   testing render group for commonAttrs with invalid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsRenderGroup001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsRenderGroup001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_RENDERGROUP_0200
-     * @tc.name       : testCommonAttrsRenderGroup002
-     * @tc.desc       : testing render group for commonAttrs with valid value 
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsRenderGroup002
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_RENDERGROUP_0200
+     * @tc.desc   testing render group for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsRenderGroup002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsRenderGroup002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_RENDERGROUP_0300
-     * @tc.name       : testCommonAttrsRenderGroup003
-     * @tc.desc       : testing render group for commonAttrs with valid value 
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsRenderGroup003
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_RENDERGROUP_0300
+     * @tc.desc   testing render group for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsRenderGroup003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsRenderGroup003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_RENDERGROUP_0400
-     * @tc.name       : testCommonAttrsRenderGroup004
-     * @tc.desc       : testing resetAttribute render group for commonAttrs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsRenderGroup004
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_RENDERGROUP_0400
+     * @tc.desc   testing resetAttribute render group for commonAttrs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsRenderGroup004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsRenderGroup004()).assertEqual(0)

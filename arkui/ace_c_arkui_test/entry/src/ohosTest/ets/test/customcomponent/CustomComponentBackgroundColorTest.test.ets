@@ -26,39 +26,39 @@ export default function customComponentBackgroundColorTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_BACKGROUNDCOLOR_0100
-     * @tc.name       : testCustomComponentBackgroundColor001
-     * @tc.desc       : testing backgroundColor for customComponent with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentBackgroundColor001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_BACKGROUNDCOLOR_0100
+     * @tc.desc   testing backgroundColor for customComponent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentBackgroundColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentBackgroundColor001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_BACKGROUNDCOLOR_0200
-     * @tc.name       : testCustomComponentBackgroundColor002
-     * @tc.desc       : testing backgroundColor for customComponent with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentBackgroundColor002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_BACKGROUNDCOLOR_0200
+     * @tc.desc   testing backgroundColor for customComponent with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentBackgroundColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentBackgroundColor002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_BACKGROUNDCOLOR_0300
-     * @tc.name       : testCustomComponentBackgroundColor003
-     * @tc.desc       : testing backgroundColor for customComponent with small value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentBackgroundColor003
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_BACKGROUNDCOLOR_0300
+     * @tc.desc   testing backgroundColor for customComponent with small value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentBackgroundColor003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentBackgroundColor003()).assertEqual(0)

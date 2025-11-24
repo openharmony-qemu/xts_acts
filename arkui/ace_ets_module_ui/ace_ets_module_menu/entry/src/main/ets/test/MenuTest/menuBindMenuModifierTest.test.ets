@@ -40,14 +40,14 @@ export default function menuBindMenuModifierTest() {
       console.info('menuBindMenuModifier beforeEach end');
       done();
     });
-    /* *
-        * @tc.number: MenuBindMenu_0001
-        * @tc.name  : MenuBindMenu_0001
-        * @tc.desc  : To test the enableCascade interface true
-        * @tc.level : Level 3
-        * @tc.type
-        * @tc.size
-        */
+    /**
+     * @tc.name   MenuBindMenu_0001
+     * @tc.number MenuBindMenu_0001
+     * @tc.desc   To test the enableCascade interface true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('MenuBindMenu_0001', Level.LEVEL2, async (done: Function) => {
       console.info('MenuBindMenu_0001 START');
       let driver: Driver = Driver.create();

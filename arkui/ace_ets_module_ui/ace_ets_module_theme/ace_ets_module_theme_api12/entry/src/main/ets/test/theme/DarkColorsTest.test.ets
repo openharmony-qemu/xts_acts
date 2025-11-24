@@ -47,12 +47,12 @@ export default function DarkColorsTest() {
     });
 
     /**
-     * @tc.number    DarkColorsTest_0100
-     * @tc.name      DarkColorsTest_0100
-     * @tc.desc      DarkColors Test
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   DarkColorsTest_0100
+     * @tc.number DarkColorsTest_0100
+     * @tc.desc   DarkColors Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DarkColorsTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('DarkColorsTest_0100 START');

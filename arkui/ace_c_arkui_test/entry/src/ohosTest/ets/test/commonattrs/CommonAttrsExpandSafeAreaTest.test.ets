@@ -26,55 +26,52 @@ export default function commonAttrsExpandSafeAreaTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_EXPANDSAFEAREA_0100
-     * @tc.name       : testCommonAttrsExpandSafeArea001
-     * @tc.desc       : testing expandsafearea for commonAttrs with valid value
-                        {ARKUI_SAFE_AREA_TYPE_SYSTEM}{ARKUI_SAFE_AREA_EDGE_TOP} 
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsExpandSafeArea001
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_EXPANDSAFEAREA_0100
+     * @tc.desc   testing expandsafearea for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsExpandSafeArea001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsExpandSafeArea001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_EXPANDSAFEAREA_0200
-     * @tc.name       : testCommonAttrsExpandSafeArea002
-     * @tc.desc       : testing expandsafearea for commonAttrs with valid value
-                        0,0 
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsExpandSafeArea002
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_EXPANDSAFEAREA_0200
+     * @tc.desc   testing expandsafearea for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsExpandSafeArea002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsExpandSafeArea002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_EXPANDSAFEAREA_0300
-     * @tc.name       : testCommonAttrsExpandSafeArea003
-     * @tc.desc       : testing expandsafearea for commonAttrs with valid value
-                        5,9
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsExpandSafeArea003
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_EXPANDSAFEAREA_0300
+     * @tc.desc   testing expandsafearea for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsExpandSafeArea003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsExpandSafeArea003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_EXPANDSAFEAREA_0400
-     * @tc.name       : testCommonAttrsExpandSafeArea004
-     * @tc.desc       : testing resetAttribute expandsafearea for commonAttrs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsExpandSafeArea004
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_EXPANDSAFEAREA_0400
+     * @tc.desc   testing resetAttribute expandsafearea for commonAttrs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsExpandSafeArea004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsExpandSafeArea004()).assertEqual(0)

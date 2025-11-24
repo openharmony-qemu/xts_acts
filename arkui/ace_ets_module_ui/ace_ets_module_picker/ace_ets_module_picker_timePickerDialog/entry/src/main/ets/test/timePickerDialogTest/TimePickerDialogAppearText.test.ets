@@ -45,13 +45,13 @@ export default function TimePickerDialogAppearTextTest() {
       console.info("TimePickerDialogAppearText after each called");
     });
 
-    /*
+    /**
+     * @tc.name   TimePickerDialogAppearText_001
      * @tc.number TimePickerDialogAppearText_001
-     * @tc.name testBack
-     * @tc.desc Return specified page by index value
-     * @tc.level Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TimePickerDialogAppearText_001', Level.LEVEL3, async (done: Function) => {
       console.info('[TimePickerDialogAppearText_001] START');

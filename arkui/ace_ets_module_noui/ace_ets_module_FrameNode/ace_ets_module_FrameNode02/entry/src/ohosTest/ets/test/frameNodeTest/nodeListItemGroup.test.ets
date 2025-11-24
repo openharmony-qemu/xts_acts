@@ -45,14 +45,14 @@ export default function nodeListItemGroup() {
       console.info(" nodeListItemGroup after each called");
     });
 
-    /* *
-    * @tc.number: nodeListItemGroup_0100
-    * @tc.name  : nodeListItemGroup_0100
-    * @tc.desc  : ListItemGroup type FrameNode node
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   nodeListItemGroup_0100
+     * @tc.number nodeListItemGroup_0100
+     * @tc.desc   ListItemGroup type FrameNode node
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('nodeListItemGroup_0100', Level.LEVEL0, async (done: Function) => {
       console.info('nodeListItemGroup_0100 START');
       await CommonFunc.sleep(1000);

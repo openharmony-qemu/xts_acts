@@ -26,14 +26,14 @@ export default function NodeAdapterTest() {
     beforeAll(async (done: Function) => {
       await Utils.pushPage(`nodeadapter/nodeadapterTest`, done);
     });
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterSetTotalNodeCount_0100
-       * @tc.name       : testOHArkUINodeAdapterSetTotalNodeCount0100
-       * @tc.desc       : testing OH_ArkUI_NodeAdapter_SetTotalNodeCount  interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUINodeAdapterSetTotalNodeCount0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterSetTotalNodeCount_0100
+     * @tc.desc   testing OH_ArkUI_NodeAdapter_SetTotalNodeCount  interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeAdapterSetTotalNodeCount0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -50,14 +50,14 @@ export default function NodeAdapterTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterSetTotalNodeCount_0200
-       * @tc.name       : testOHArkUINodeAdapterSetTotalNodeCount0200
-       * @tc.desc       : testing OH_ArkUI_NodeAdapter_SetTotalNodeCount  interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUINodeAdapterSetTotalNodeCount0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterSetTotalNodeCount_0200
+     * @tc.desc   testing OH_ArkUI_NodeAdapter_SetTotalNodeCount  interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeAdapterSetTotalNodeCount0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -73,14 +73,14 @@ export default function NodeAdapterTest() {
         }
       })
 
-    /*
-        * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterRegisterEventReceiver_0100
-        * @tc.name       : testOHArkUINodeAdapterRegisterEventReceiver0100
-        * @tc.desc       : testing OH_ArkUI_NodeAdapter_RegisterEventReceiver  interface
-        * @tc.size       : MediumTest
-        * @tc.type       : Function
-        * @tc.level      : Level 1
-        */
+    /**
+     * @tc.name   testOHArkUINodeAdapterRegisterEventReceiver0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterRegisterEventReceiver_0100
+     * @tc.desc   testing OH_ArkUI_NodeAdapter_RegisterEventReceiver  interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeAdapterRegisterEventReceiver0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -96,14 +96,14 @@ export default function NodeAdapterTest() {
         }
       })
 
-    /*
-      * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterReloadAllItems_0100
-      * @tc.name       : testOHArkUINodeAdapterReloadAllItems0100
-      * @tc.desc       : testing OH_ArkUI_NodeAdapter_ReloadAllItems interface
-      * @tc.size       : MediumTest
-      * @tc.type       : Function
-      * @tc.level      : Level 1
-      */
+    /**
+     * @tc.name   testOHArkUINodeAdapterReloadAllItems0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterReloadAllItems_0100
+     * @tc.desc   testing OH_ArkUI_NodeAdapter_ReloadAllItems interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeAdapterReloadAllItems0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -118,14 +118,14 @@ export default function NodeAdapterTest() {
           done();
         }
       })
-    /*
-      * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterReloadAllItems_0200
-      * @tc.name       : testOHArkUINodeAdapterReloadAllItems0200
-      * @tc.desc       : testing OH_ArkUI_NodeAdapter_ReloadAllItems interface
-      * @tc.size       : MediumTest
-      * @tc.type       : Function
-      * @tc.level      : Level 1
-      */
+    /**
+     * @tc.name   testOHArkUINodeAdapterReloadAllItems0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterReloadAllItems_0200
+     * @tc.desc   testing OH_ArkUI_NodeAdapter_ReloadAllItems interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeAdapterReloadAllItems0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -141,14 +141,14 @@ export default function NodeAdapterTest() {
         }
       })
 
-    /*
-    * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterReloadItem_0100
-    * @tc.name       : testOHArkUINodeAdapterReloadItem0100
-    * @tc.desc       : testing OH_ArkUI_NodeAdapter_ReloadItem interface
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testOHArkUINodeAdapterReloadItem0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterReloadItem_0100
+     * @tc.desc   testing OH_ArkUI_NodeAdapter_ReloadItem interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeAdapterReloadItem0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -164,13 +164,13 @@ export default function NodeAdapterTest() {
         }
       })
 
-    /*
-     * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterReloadItem_0200
-     * @tc.name       : testOHArkUINodeAdapterReloadItem0200
-     * @tc.desc       : testing OH_ArkUI_NodeAdapter_ReloadItem interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testOHArkUINodeAdapterReloadItem0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterReloadItem_0200
+     * @tc.desc   testing OH_ArkUI_NodeAdapter_ReloadItem interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeAdapterReloadItem0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -187,14 +187,14 @@ export default function NodeAdapterTest() {
         }
       })
 
-    /*
-   * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterRemoveItem_0100
-   * @tc.name       : testOHArkUINodeAdapterRemoveItem0100
-   * @tc.desc       : testing OH_ArkUI_NodeAdapter_RemoveItem interface
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 1
-   */
+    /**
+     * @tc.name   testOHArkUINodeAdapterRemoveItem0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterRemoveItem_0100
+     * @tc.desc   testing OH_ArkUI_NodeAdapter_RemoveItem interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeAdapterRemoveItem0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -210,13 +210,13 @@ export default function NodeAdapterTest() {
         }
       })
 
-    /*
-     * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterRemoveItem_0200
-     * @tc.name       : testOHArkUINodeAdapterRemoveItem0200
-     * @tc.desc       : testing OH_ArkUI_NodeAdapter_RemoveItem interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testOHArkUINodeAdapterRemoveItem0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterRemoveItem_0200
+     * @tc.desc   testing OH_ArkUI_NodeAdapter_RemoveItem interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeAdapterRemoveItem0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -233,14 +233,14 @@ export default function NodeAdapterTest() {
         }
       })
 
-    /*
-  * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterInsertItem_0100
-  * @tc.name       : testOHArkUINodeAdapterInsertItem0100
-  * @tc.desc       : testing OH_ArkUI_NodeAdapter_InsertItem interface
-  * @tc.size       : MediumTest
-  * @tc.type       : Function
-  * @tc.level      : Level 1
-  */
+    /**
+     * @tc.name   testOHArkUINodeAdapterInsertItem0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterInsertItem_0100
+     * @tc.desc   testing OH_ArkUI_NodeAdapter_InsertItem interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeAdapterInsertItem0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -256,13 +256,13 @@ export default function NodeAdapterTest() {
         }
       })
 
-    /*
-     * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterInsertItem_0200
-     * @tc.name       : testOHArkUINodeAdapterInsertItem0200
-     * @tc.desc       : testing OH_ArkUI_NodeAdapter_InsertItem interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testOHArkUINodeAdapterInsertItem0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterInsertItem_0200
+     * @tc.desc   testing OH_ArkUI_NodeAdapter_InsertItem interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeAdapterInsertItem0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -279,14 +279,14 @@ export default function NodeAdapterTest() {
         }
       })
 
-    /*
-    * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterMoveItem_0100
-    * @tc.name       : testOHArkUINodeAdapterMoveItem0100
-    * @tc.desc       : testing OH_ArkUI_NodeAdapter_MoveItem interface
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testOHArkUINodeAdapterMoveItem0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterMoveItem_0100
+     * @tc.desc   testing OH_ArkUI_NodeAdapter_MoveItem interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeAdapterMoveItem0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -302,13 +302,13 @@ export default function NodeAdapterTest() {
         }
       })
 
-    /*
-     * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterMoveItem_0200
-     * @tc.name       : testOHArkUINodeAdapterMoveItem0200
-     * @tc.desc       : testing OH_ArkUI_NodeAdapter_MoveItem interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testOHArkUINodeAdapterMoveItem0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterMoveItem_0200
+     * @tc.desc   testing OH_ArkUI_NodeAdapter_MoveItem interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeAdapterMoveItem0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -325,14 +325,14 @@ export default function NodeAdapterTest() {
         }
       })
 
-    /*
-    * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterGetAllItems_0100
-    * @tc.name       : testOHArkUINodeAdapterGetAllItems0100
-    * @tc.desc       : testing OH_ArkUI_NodeAdapter_GetAllItems interface
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testOHArkUINodeAdapterGetAllItems0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterGetAllItems_0100
+     * @tc.desc   testing OH_ArkUI_NodeAdapter_GetAllItems interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeAdapterGetAllItems0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -348,13 +348,13 @@ export default function NodeAdapterTest() {
         }
       })
 
-    /*
-     * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterGetAllItems_0200
-     * @tc.name       : testOHArkUINodeAdapterGetAllItems0200
-     * @tc.desc       : testing OH_ArkUI_NodeAdapter_GetAllItems interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testOHArkUINodeAdapterGetAllItems0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterGetAllItems_0200
+     * @tc.desc   testing OH_ArkUI_NodeAdapter_GetAllItems interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeAdapterGetAllItems0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -371,14 +371,14 @@ export default function NodeAdapterTest() {
         }
       })
 
-    /*
-   * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterEventSetItem_0100
-   * @tc.name       : testOHArkUINodeAdapterEventSetItem0100
-   * @tc.desc       : testing OH_ArkUI_NodeAdapterEvent_SetItem interface
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 1
-   */
+    /**
+     * @tc.name   testOHArkUINodeAdapterEventSetItem0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterEventSetItem_0100
+     * @tc.desc   testing OH_ArkUI_NodeAdapterEvent_SetItem interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeAdapterEventSetItem0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -394,13 +394,13 @@ export default function NodeAdapterTest() {
         }
       })
 
-    /*
-     * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterEventSetItem_0200
-     * @tc.name       : testOHArkUINodeAdapterEventSetItem0200
-     * @tc.desc       : testing OH_ArkUI_NodeAdapterEvent_SetItem interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testOHArkUINodeAdapterEventSetItem0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterEventSetItem_0200
+     * @tc.desc   testing OH_ArkUI_NodeAdapterEvent_SetItem interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeAdapterEventSetItem0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -417,14 +417,14 @@ export default function NodeAdapterTest() {
         }
       })
 
-    /*
-   * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterEventSetNodeId_0100
-   * @tc.name       : testOHArkUINodeAdapterEventSetNodeId0100
-   * @tc.desc       : testing OH_ArkUI_NodeAdapterEvent_SetNodeId interface
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 1
-   */
+    /**
+     * @tc.name   testOHArkUINodeAdapterEventSetNodeId0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterEventSetNodeId_0100
+     * @tc.desc   testing OH_ArkUI_NodeAdapterEvent_SetNodeId interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUINodeAdapterEventSetNodeId0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -440,13 +440,13 @@ export default function NodeAdapterTest() {
         }
       })
 
-    /*
-     * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterEventSetNodeId_0200
-     * @tc.name       : testOHArkUINodeAdapterEventSetNodeId0200
-     * @tc.desc       : testing OH_ArkUI_NodeAdapterEvent_SetNodeId interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testOHArkUINodeAdapterEventSetNodeId0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeAdapterEventSetNodeId_0200
+     * @tc.desc   testing OH_ArkUI_NodeAdapterEvent_SetNodeId interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeAdapterEventSetNodeId0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {

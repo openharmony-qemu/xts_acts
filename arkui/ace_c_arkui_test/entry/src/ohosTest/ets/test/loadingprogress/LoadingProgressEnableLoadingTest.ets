@@ -26,39 +26,39 @@ export default function loadingProgressEnableLoadingTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LOADINGPROGRESS_ENABLELOADING_0100
-     * @tc.name       : testLoadingProgressEnableLoading001
-     * @tc.desc       : testing enableLoading for LoadingProgress with true value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLoadingProgressEnableLoading001
+     * @tc.number SUB_ARKUI_CAPI_LOADINGPROGRESS_ENABLELOADING_0100
+     * @tc.desc   testing enableLoading for LoadingProgress with true value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoadingProgressEnableLoading001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testLoadingProgressEnableLoading001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LOADINGPROGRESS_ENABLELOADING_0200
-     * @tc.name       : testLoadingProgressEnableLoading002
-     * @tc.desc       : testing enableLoading for LoadingProgress with false value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLoadingProgressEnableLoading002
+     * @tc.number SUB_ARKUI_CAPI_LOADINGPROGRESS_ENABLELOADING_0200
+     * @tc.desc   testing enableLoading for LoadingProgress with false value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoadingProgressEnableLoading002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testLoadingProgressEnableLoading002()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LOADINGPROGRESS_ENABLELOADING_0300
-     * @tc.name       : testLoadingProgressEnableLoading003
-     * @tc.desc       : testing enableLoading for LoadingProgress with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLoadingProgressEnableLoading003
+     * @tc.number SUB_ARKUI_CAPI_LOADINGPROGRESS_ENABLELOADING_0300
+     * @tc.desc   testing enableLoading for LoadingProgress with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLoadingProgressEnableLoading003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testLoadingProgressEnableLoading003()).assertEqual(0)

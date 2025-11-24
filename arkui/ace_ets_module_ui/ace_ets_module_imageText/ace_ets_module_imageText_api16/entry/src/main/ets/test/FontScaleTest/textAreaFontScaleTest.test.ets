@@ -45,13 +45,13 @@ export default function textAreaFontScaleTest() {
       console.info("textAreaFontScaleTest after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         textAreaFontScaleTest0001
-     * @tc.desic        Test textAreaFontScaleTest abnormal value :undefined
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textAreaFontScaleTest0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   textAreaFontScaleTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaFontScaleTest0001', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -66,13 +66,13 @@ export default function textAreaFontScaleTest() {
         console.info("[textAreaFontScaleTest0001] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         textAreaFontScaleTest0002
-     * @tc.desic        Test textAreaFontScaleTest reference value :$r('app.string')
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textAreaFontScaleTest0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   textAreaFontScaleTest0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaFontScaleTest0002', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -87,13 +87,13 @@ export default function textAreaFontScaleTest() {
         console.info("[textAreaFontScaleTest0002] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-     * @tc.name         textAreaFontScaleTest0003
-     * @tc.desic        Test textAreaFontScaleTest Normal value 
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textAreaFontScaleTest0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   textAreaFontScaleTest0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaFontScaleTest0003', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -108,13 +108,13 @@ export default function textAreaFontScaleTest() {
         console.info("[textAreaFontScaleTest0003] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0004
-     * @tc.name         textAreaFontScaleTest0004
-     * @tc.desic        Test textAreaFontScaleTest abnormal value :less than minimum
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textAreaFontScaleTest0004
+     * @tc.number SUB_ACE_BASIC_ETS_API_0004
+     * @tc.desc   textAreaFontScaleTest0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaFontScaleTest0004', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -129,13 +129,13 @@ export default function textAreaFontScaleTest() {
         console.info("[textAreaFontScaleTest0004] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0005
-     * @tc.name         textAreaFontScaleTest0005
-     * @tc.desic        Test textAreaFontScaleTest abnormal value :Greater than maximum
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textAreaFontScaleTest0005
+     * @tc.number SUB_ACE_BASIC_ETS_API_0005
+     * @tc.desc   textAreaFontScaleTest0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaFontScaleTest0005', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -150,13 +150,13 @@ export default function textAreaFontScaleTest() {
         console.info("[textAreaFontScaleTest0005] end");
     });
 
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0006
-     * @tc.name         textAreaFontScaleTest0006
-     * @tc.desic        Test textAreaFontScaleTest reference value :$r('app.boolean')
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textAreaFontScaleTest0006
+     * @tc.number SUB_ACE_BASIC_ETS_API_0006
+     * @tc.desc   textAreaFontScaleTest0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaFontScaleTest0006', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -171,13 +171,13 @@ export default function textAreaFontScaleTest() {
         console.info("[textAreaFontScaleTest0006] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0007
-     * @tc.name         textAreaFontScaleTest0007
-     * @tc.desic        Test textAreaFontScaleTest reference value :$r('app.color')
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textAreaFontScaleTest0007
+     * @tc.number SUB_ACE_BASIC_ETS_API_0007
+     * @tc.desc   textAreaFontScaleTest0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaFontScaleTest0007', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -192,13 +192,13 @@ export default function textAreaFontScaleTest() {
         console.info("[textAreaFontScaleTest0007] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0008
-     * @tc.name         textAreaFontScaleTest0008
-     * @tc.desic        Test textAreaFontScaleTest reference value :$r('app.float')
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textAreaFontScaleTest0008
+     * @tc.number SUB_ACE_BASIC_ETS_API_0008
+     * @tc.desc   textAreaFontScaleTest0008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaFontScaleTest0008', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -213,13 +213,13 @@ export default function textAreaFontScaleTest() {
         console.info("[textAreaFontScaleTest0008] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0009
-     * @tc.name         textAreaFontScaleTest0009
-     * @tc.desic        Test textAreaFontScaleTest reference value :$r('app.integer')
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textAreaFontScaleTest0009
+     * @tc.number SUB_ACE_BASIC_ETS_API_0009
+     * @tc.desc   textAreaFontScaleTest0009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaFontScaleTest0009', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -235,13 +235,13 @@ export default function textAreaFontScaleTest() {
     });
 	
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0010
-     * @tc.name         textAreaFontScaleTest00010
-     * @tc.desic        Test textAreaFontScaleTest reference value :$r('app.intarray')
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textAreaFontScaleTest0010
+     * @tc.number SUB_ACE_BASIC_ETS_API_0010
+     * @tc.desc   textAreaFontScaleTest0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaFontScaleTest0010', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -256,13 +256,13 @@ export default function textAreaFontScaleTest() {
         console.info("[textAreaFontScaleTest0010] end");
     });
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0011
-     * @tc.name         textAreaFontScaleTest0011
-     * @tc.desic        Test textAreaFontScaleTest reference value :$r('app.pattern')
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textAreaFontScaleTest0011
+     * @tc.number SUB_ACE_BASIC_ETS_API_0011
+     * @tc.desc   textAreaFontScaleTest0011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaFontScaleTest0011', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -278,13 +278,13 @@ export default function textAreaFontScaleTest() {
     });
 	
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0012
-     * @tc.name         textAreaFontScaleTest0012
-     * @tc.desic        Test textAreaFontScaleTest reference value :$r('app.plural')
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textAreaFontScaleTest0012
+     * @tc.number SUB_ACE_BASIC_ETS_API_0012
+     * @tc.desc   textAreaFontScaleTest0012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaFontScaleTest0012', Level.LEVEL1, async () => {
         let driver = Driver.create();
@@ -300,13 +300,13 @@ export default function textAreaFontScaleTest() {
     });
 	
 	
-	/*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0013
-     * @tc.name         textAreaFontScaleTest0013
-     * @tc.desic        Test textAreaFontScaleTest reference value :$r('app.strarray')
-	 * @tc.size         MediumTest
-	 * @tc.type         Function
-	 * @tc.level        1
+    /**
+     * @tc.name   textAreaFontScaleTest0013
+     * @tc.number SUB_ACE_BASIC_ETS_API_0013
+     * @tc.desc   textAreaFontScaleTest0013
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textAreaFontScaleTest0013', Level.LEVEL1, async () => {
         let driver = Driver.create();

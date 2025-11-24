@@ -69,14 +69,14 @@ export default function listCloseAllActionTest() {
   describe('ListCloseAllActionTest', () => {
 
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_LIST_CLOSE_ALL_ACTION_0001
-    * @tc.name       : testListCloseAllAction001
-    * @tc.desc       : test list close action with call back
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListCloseAllAction001
+     * @tc.number SUB_ARKUI_CAPI_LIST_CLOSE_ALL_ACTION_0001
+     * @tc.desc   test list close action with call back
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListCloseAllAction001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`list/ListCloseAllActionTest`);
       await flingComponentH("list1", true, 1000, 50);
@@ -89,14 +89,14 @@ export default function listCloseAllActionTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_LIST_CLOSE_ALL_ACTION_0002
-    * @tc.name       : testListCloseAllAction002
-    * @tc.desc       : test list close action without call back
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListCloseAllAction002
+     * @tc.number SUB_ARKUI_CAPI_LIST_CLOSE_ALL_ACTION_0002
+     * @tc.desc   test list close action without call back
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListCloseAllAction002', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`list/ListCloseAllActionTest`);
       await flingComponentH("list1", true, 1000, 50);
@@ -109,14 +109,14 @@ export default function listCloseAllActionTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_LIST_CLOSE_ALL_ACTION_0003
-    * @tc.name       : testListCloseAllAction003
-    * @tc.desc       : test list close action with call back
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListCloseAllAction003
+     * @tc.number SUB_ARKUI_CAPI_LIST_CLOSE_ALL_ACTION_0003
+     * @tc.desc   test list close action with call back
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListCloseAllAction003', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`list/ListCloseAllActionTest`);
       await flingComponentV("list2", true, 1000, 50);
@@ -129,14 +129,14 @@ export default function listCloseAllActionTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_LIST_CLOSE_ALL_ACTION_0004
-    * @tc.name       : testListCloseAllAction004
-    * @tc.desc       : test list close action without call back
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListCloseAllAction004
+     * @tc.number SUB_ARKUI_CAPI_LIST_CLOSE_ALL_ACTION_0004
+     * @tc.desc   test list close action without call back
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListCloseAllAction004', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`list/ListCloseAllActionTest`);
       await flingComponentV("list2", true, 1000, 50);

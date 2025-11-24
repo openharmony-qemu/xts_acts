@@ -45,6 +45,14 @@ export default function borderJsunit() {
       console.info("border after each called");
     });
 
+    /**
+     * @tc.name   testBorder_0100
+     * @tc.number testBorder_0100
+     * @tc.desc   testBorder_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testBorder_0100', Level.LEVEL1, async (done: Function) => {
       console.info('testBorder_0100 START');
       await CommonFunc.sleep(2000);
@@ -56,6 +64,14 @@ export default function borderJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testBorder_0200
+     * @tc.number testBorder_0200
+     * @tc.desc   testBorder_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testBorder_0200', Level.LEVEL1, async (done: Function) => {
       console.info('testBorder_0200 START');
       await CommonFunc.sleep(2000);
@@ -67,6 +83,14 @@ export default function borderJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testBorder_0300
+     * @tc.number testBorder_0300
+     * @tc.desc   testBorder_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testBorder_0300', Level.LEVEL1, async (done: Function) => {
       console.info('testBorder_0300 START');
       await CommonFunc.sleep(1000);

@@ -27,13 +27,13 @@ export default function scrollBackToTopTest() {
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_TOP_0100
-     * @tc.name       : testScrollBackToTop001
-     * @tc.desc       : testing scroll back to top
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollBackToTop001
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_TOP_0100
+     * @tc.desc   testing scroll back to top
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollBackToTop001',  Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ScrollBackToTopTest';

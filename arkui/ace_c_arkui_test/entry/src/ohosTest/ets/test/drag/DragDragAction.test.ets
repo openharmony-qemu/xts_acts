@@ -26,130 +26,130 @@ export default function DragDragActionTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DragAction_0100
-     * @tc.name       : DragActionTest001
-     * @tc.desc       : testing DragAction event callback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   DragActionTest001
+     * @tc.number SUB_ARKUI_CAPI_DragAction_0100
+     * @tc.desc   testing DragAction event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DragActionTest001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.drag_DragAction_Dispose_001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DragAction_0200
-     * @tc.name       : DragActionTest002
-     * @tc.desc       : testing SetPointerId event callback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   DragActionTest002
+     * @tc.number SUB_ARKUI_CAPI_DragAction_0200
+     * @tc.desc   testing SetPointerId event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DragActionTest002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.drag_DragAction_SetPointerId_002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SetPixelMaps_0300
-     * @tc.name       : SetPixelMapsTest003
-     * @tc.desc       : testing SetPointerId event callback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   DragActionTest003
+     * @tc.number SUB_ARKUI_CAPI_SetPixelMaps_0300
+     * @tc.desc   testing SetPointerId event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DragActionTest003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.drag_DragAction_SetPixelMaps_003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DragAction_0400
-     * @tc.name       : DragActionTest004
-     * @tc.desc       : testing SetTouchPointX event callback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   DragActionTest004
+     * @tc.number SUB_ARKUI_CAPI_DragAction_0400
+     * @tc.desc   testing SetTouchPointX event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DragActionTest004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.drag_DragAction_SetTouchPointX_004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_Drag_DragAction_0500
-     * @tc.name       : DragActionTest005
-     * @tc.desc       : testing SetTouchPointY event callback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   DragActionTest005
+     * @tc.number SUB_ARKUI_CAPI_Drag_DragAction_0500
+     * @tc.desc   testing SetTouchPointY event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DragActionTest005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.drag_DragAction_SetTouchPointY_005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_Drag_DragAction_0600
-     * @tc.name       : DragActionTest006
-     * @tc.desc       : testing SetDragPreviewOption event callback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   DragActionTest006
+     * @tc.number SUB_ARKUI_CAPI_Drag_DragAction_0600
+     * @tc.desc   testing SetDragPreviewOption event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DragActionTest006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.drag_DragAction_SetDragPreviewOption_006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_Drag_DragAction_0700
-     * @tc.name       : DragActionTest007
-     * @tc.desc       : testing RegisterStatusListener event callback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   DragActionTest007
+     * @tc.number SUB_ARKUI_CAPI_Drag_DragAction_0700
+     * @tc.desc   testing RegisterStatusListener event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DragActionTest007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.drag_DragAction_RegisterStatusListener_007()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_Drag_DragAction_0800
-     * @tc.name       : DragActionTest008
-     * @tc.desc       : testing UnregisterStatusListener event callback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   DragActionTest008
+     * @tc.number SUB_ARKUI_CAPI_Drag_DragAction_0800
+     * @tc.desc   testing UnregisterStatusListener event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DragActionTest008', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.drag_DragAction_UnregisterStatusListener_008()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_Drag_DragAction_0900
-     * @tc.name       : DragActionTest009
-     * @tc.desc       : testing UnregisterStatusListener event callback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   DragActionTest009
+     * @tc.number SUB_ARKUI_CAPI_Drag_DragAction_0900
+     * @tc.desc   testing UnregisterStatusListener event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DragActionTest009', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.drag_DragAction_StartDrag_009()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_Drag_DragAction_0010
-     * @tc.name       : DragActionTest0010
-     * @tc.desc       : testing UnregisterStatusListener event callback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   DragAndDropInfoTest0010
+     * @tc.number SUB_ARKUI_CAPI_Drag_DragAction_0010
+     * @tc.desc   testing UnregisterStatusListener event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DragAndDropInfoTest0010', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.drag_DragAction_DragAndDropInfo_0010()).assertEqual(0)

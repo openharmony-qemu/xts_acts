@@ -44,10 +44,13 @@ export default function grid_colSpanJsunit() {
       console.info("grid_colSpan after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testgrid_colSpan0001
-     * @tc.desic        acegrid_colSpanEtsTest0001
+    /**
+     * @tc.name   testgrid_colSpan0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testgrid_colSpan0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testgrid_colSpan0001',  Level.LEVEL0, async () => {
       console.info('grid_rowOnBreakpointChange testgrid_colSpan0001 START');

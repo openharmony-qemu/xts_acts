@@ -40,12 +40,12 @@ export default function renderNodeGetInterfaceTest() {
       done();
     });
     /**
-     * @tc.number    renderNodeGetInterfaceTest_0100
-     * @tc.name      renderNodeGetInterfaceTest_0100
-     * @tc.desc      set and get borderRadius
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   renderNodeGetInterfaceTest_0100
+     * @tc.number renderNodeGetInterfaceTest_0100
+     * @tc.desc   set and get borderRadius
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('renderNodeGetInterfaceTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('enderNodeGetInterfaceTest_0100 START');
@@ -64,12 +64,12 @@ export default function renderNodeGetInterfaceTest() {
       done();
     });
     /**
-     * @tc.number    renderNodeGetInterfaceTest_0200
-     * @tc.name      renderNodeGetInterfaceTest_0200
-     * @tc.desc      set and get borderColor
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   renderNodeGetInterfaceTest_0200
+     * @tc.number renderNodeGetInterfaceTest_0200
+     * @tc.desc   set and get borderColor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('renderNodeGetInterfaceTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('enderNodeGetInterfaceTest_0100 START');
@@ -88,12 +88,12 @@ export default function renderNodeGetInterfaceTest() {
       done();
     });
     /**
-     * @tc.number    renderNodeGetInterfaceTest_0300
-     * @tc.name      renderNodeGetInterfaceTest_0300
-     * @tc.desc      set and get width
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   renderNodeGetInterfaceTest_0300
+     * @tc.number renderNodeGetInterfaceTest_0300
+     * @tc.desc   set and get width
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('renderNodeGetInterfaceTest_0300', Level.LEVEL0, async (done: Function) => {
       console.info('renderNodeGetInterfaceTest_0300 START');
@@ -112,12 +112,12 @@ export default function renderNodeGetInterfaceTest() {
       done();
     });
     /**
-     * @tc.number    renderNodeGetInterfaceTest_0400
-     * @tc.name      renderNodeGetInterfaceTest_0400
-     * @tc.desc      set and get borderStyle
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   renderNodeGetInterfaceTest_0400
+     * @tc.number renderNodeGetInterfaceTest_0400
+     * @tc.desc   set and get borderStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('renderNodeGetInterfaceTest_0400', Level.LEVEL0, async (done: Function) => {
       console.info('renderNodeGetInterfaceTest_0400 START');

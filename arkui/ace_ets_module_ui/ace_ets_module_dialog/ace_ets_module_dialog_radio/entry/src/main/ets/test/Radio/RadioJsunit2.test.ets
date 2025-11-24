@@ -45,12 +45,12 @@ export default function radioJsunit2() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testRadio_100
-     * @tc.name: testRadio_100
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   testRadio_100
+     * @tc.number SUB_ARKUI_API_testRadio_100
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRadio_100', Level.LEVEL1, async (done: Function) => {
       console.info('[testRadio_100] START');
@@ -66,12 +66,12 @@ export default function radioJsunit2() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testRadio_200
-     * @tc.name: testRadio_200
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   testRadio_200
+     * @tc.number SUB_ARKUI_API_testRadio_200
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRadio_200', Level.LEVEL1, async (done: Function) => {
       console.info('[testRadio_200] START');
@@ -86,12 +86,12 @@ export default function radioJsunit2() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testRadio_300
-     * @tc.name: testRadio_300
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   testRadio_300
+     * @tc.number SUB_ARKUI_API_testRadio_300
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRadio_300', Level.LEVEL1, async (done: Function) => {
       console.info('[testRadio_300] START');

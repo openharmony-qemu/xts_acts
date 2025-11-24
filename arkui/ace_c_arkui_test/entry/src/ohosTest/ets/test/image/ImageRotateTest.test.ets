@@ -26,52 +26,52 @@ export default function imageRotateTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_ROTATE_0100
-     * @tc.name       : testImageRotate001
-     * @tc.desc       : testing rotate for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageRotate001
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_ROTATE_0100
+     * @tc.desc   testing rotate for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageRotate001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageRotate001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_ROTATE_0200
-     * @tc.name       : testImageRotate002
-     * @tc.desc       : testing rotate for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageRotate002
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_ROTATE_0200
+     * @tc.desc   testing rotate for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageRotate002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageRotate002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_ROTATE_0300
-     * @tc.name       : testImageRotate003
-     * @tc.desc       : testing rotate for image with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageRotate003
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_ROTATE_0300
+     * @tc.desc   testing rotate for image with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageRotate003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageRotate003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_ROTATE_0400
-     * @tc.name       : testImageRotate004
-     * @tc.desc       : testing rotate for image with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageRotate004
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_ROTATE_0400
+     * @tc.desc   testing rotate for image with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageRotate004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageRotate004()).assertEqual(0)

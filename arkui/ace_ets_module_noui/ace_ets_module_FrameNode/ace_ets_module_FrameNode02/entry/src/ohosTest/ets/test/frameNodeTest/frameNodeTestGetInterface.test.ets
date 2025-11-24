@@ -54,12 +54,12 @@ export default function frameNodeGetInterfaceTest() {
     });
 
     /**
+     * @tc.name   frameNodeGetInterfaceTest_0100
      * @tc.number frameNodeGetInterfaceTest_0100
-     * @tc.name frameNodeGetInterfaceTest_0100
-     * @tc.desc getNodeType Test
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   getNodeType Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('frameNodeGetInterfaceTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('frameNodeGetInterfaceTest_0100 START');
@@ -79,12 +79,12 @@ export default function frameNodeGetInterfaceTest() {
     });
 
     /**
+     * @tc.name   frameNodeGetInterfaceTest_0200
      * @tc.number frameNodeGetInterfaceTest_0200
-     * @tc.name frameNodeGetInterfaceTest_0200
-     * @tc.desc getOpacity test
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   getOpacity test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('frameNodeGetInterfaceTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('frameNodeGetInterfaceTest_0200  START');
@@ -104,12 +104,12 @@ export default function frameNodeGetInterfaceTest() {
     });
 
     /**
+     * @tc.name   frameNodeGetInterfaceTest_0300
      * @tc.number frameNodeGetInterfaceTest_0300
-     * @tc.name frameNodeGetInterfaceTest_0300
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('frameNodeGetInterfaceTest_0300', Level.LEVEL0, async (done: Function) => {
       console.info('frameNodeGetInterfaceTest_0300 START');
@@ -129,12 +129,12 @@ export default function frameNodeGetInterfaceTest() {
     });
 
     /**
+     * @tc.name   frameNodeGetInterfaceTest_0400
      * @tc.number frameNodeGetInterfaceTest_0400
-     * @tc.name frameNodeGetInterfaceTest_0400
-     * @tc.desc testIsClipToFrame
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   testIsClipToFrame
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('frameNodeGetInterfaceTest_0400', Level.LEVEL0, async (done: Function) => {
       console.info('frameNodeGetInterfaceTest_0300 START');
@@ -154,12 +154,12 @@ export default function frameNodeGetInterfaceTest() {
     });
 
     /**
+     * @tc.name   frameNodeGetInterfaceTest_0500
      * @tc.number frameNodeGetInterfaceTest_0500
-     * @tc.name frameNodeGetInterfaceTest_0500
-     * @tc.desc testIsIsAttached
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   testIsIsAttached
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('frameNodeGetInterfaceTest_0500', Level.LEVEL0, async (done: Function) => {
       console.info('frameNodeGetInterfaceTest_0500 START');
@@ -179,12 +179,12 @@ export default function frameNodeGetInterfaceTest() {
     });
 
     /**
+     * @tc.name   frameNodeGetInterfaceTest_0600
      * @tc.number frameNodeGetInterfaceTest_0600
-     * @tc.name frameNodeGetInterfaceTest_0600
-     * @tc.desc testGetInspectorInfo
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   testGetInspectorInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('frameNodeGetInterfaceTest_0600', Level.LEVEL0, async (done: Function) => {
       console.info('frameNodeGetInterfaceTest_0600 START');

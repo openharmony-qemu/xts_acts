@@ -65,9 +65,12 @@ export default function Tabs_scrollable() {
       });
     });
     /**
+     * @tc.name   testTabsScrollableToTrue
      * @tc.number SUB_ACE_TABS_SCROLLABLE_TEST_0100
-     * @tc.name testTabsScrollableToTrue
-     * @tc.desc The parent component sets scrollable to true
+     * @tc.desc   The parent component sets scrollable to true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTabsScrollableToTrue', Level.LEVEL1, async (done: Function) => {
       console.info('[testTabsScrollableToTrue] START');
@@ -169,9 +172,12 @@ export default function Tabs_scrollable() {
       done();
     });
     /**
+     * @tc.name   testTabsScrollableToFalse
      * @tc.number SUB_ACE_TABS_SCROLLABLE_TEST_0200
-     * @tc.name testTabsScrollableToFalse
-     * @tc.desc The parent component sets scrollable to false
+     * @tc.desc   The parent component sets scrollable to false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTabsScrollableToFalse', Level.LEVEL1, async (done: Function) => {
       console.info('[testTabsScrollableToFalse] START');

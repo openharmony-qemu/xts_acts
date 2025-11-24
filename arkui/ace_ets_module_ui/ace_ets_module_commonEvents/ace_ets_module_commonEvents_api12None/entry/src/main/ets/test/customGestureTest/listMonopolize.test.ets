@@ -58,13 +58,15 @@ export default function ListMonopolize() {
       console.info("ListMonopolize after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_ACTION_GESTURE_MONOPOLIZE_0110_ListMonopolize_001
-     * @tc.desc monopolize list mouseScroll test
-     * @tc.level Level 0
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   ListMonopolize_001
+     * @tc.number ListMonopolize_001
+     * @tc.desc   ListMonopolize_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ListMonopolize_001', Level.LEVEL0, async (done: Function) => {
       console.info('[ListMonopolize_001] START');
       await CommonFunc.sleep(1000);

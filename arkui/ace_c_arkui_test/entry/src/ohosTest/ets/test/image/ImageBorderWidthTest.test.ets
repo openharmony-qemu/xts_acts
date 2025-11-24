@@ -26,78 +26,78 @@ export default function imageBorderWidthTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_BORDERWIDTH_0100
-     * @tc.name       : testImageBorderWidth001
-     * @tc.desc       : testing borderWidth for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageBorderWidth001
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_BORDERWIDTH_0100
+     * @tc.desc   testing borderWidth for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageBorderWidth001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageBorderWidth001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_BORDERWIDTH_0200
-     * @tc.name       : testImageBorderWidth002
-     * @tc.desc       : testing borderWidth for image with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageBorderWidth002
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_BORDERWIDTH_0200
+     * @tc.desc   testing borderWidth for image with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageBorderWidth002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageBorderWidth002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_BORDERWIDTH_0300
-     * @tc.name       : testImageBorderWidth003
-     * @tc.desc       : testing borderWidth for image with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageBorderWidth003
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_BORDERWIDTH_0300
+     * @tc.desc   testing borderWidth for image with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageBorderWidth003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageBorderWidth003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_BORDERWIDTH_0400
-     * @tc.name       : testImageBorderWidth004
-     * @tc.desc       : testing borderWidth for image with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageBorderWidth004
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_BORDERWIDTH_0400
+     * @tc.desc   testing borderWidth for image with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageBorderWidth004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageBorderWidth004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_BORDERWIDTH_0500
-     * @tc.name       : testImageBorderWidth005
-     * @tc.desc       : testing borderWidth for image with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testImageBorderWidth005
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_BORDERWIDTH_0500
+     * @tc.desc   testing borderWidth for image with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageBorderWidth005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageBorderWidth005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_BORDERWIDTH_0600
-     * @tc.name       : testImageBorderWidth006
-     * @tc.desc       : testing borderWidth for image with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testImageBorderWidth006
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_BORDERWIDTH_0600
+     * @tc.desc   testing borderWidth for image with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageBorderWidth006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageBorderWidth006()).assertEqual(0)

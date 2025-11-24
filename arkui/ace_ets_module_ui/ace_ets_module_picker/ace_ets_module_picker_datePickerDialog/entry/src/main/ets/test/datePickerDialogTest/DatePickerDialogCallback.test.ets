@@ -43,12 +43,12 @@ export default function DatePickerDialogCallbackTest() {
     });
 
     /**
-     * @tc.number    : DatePickerDialogCallback_0100
-     * @tc.name      : test datePicker dialog callback function
-     * @tc.desc      : onWillAppear,onDidAppear,onWillDisappear,onDidDisappear
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : level 0
+     * @tc.name   DatePickerDialogCallback_0100
+     * @tc.number DatePickerDialogCallback_0100
+     * @tc.desc   onWillAppear,onDidAppear,onWillDisappear,onDidDisappear
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DatePickerDialogCallback_0100', Level.LEVEL0, async (done: Function) => {
       let driver1 = Driver.create();

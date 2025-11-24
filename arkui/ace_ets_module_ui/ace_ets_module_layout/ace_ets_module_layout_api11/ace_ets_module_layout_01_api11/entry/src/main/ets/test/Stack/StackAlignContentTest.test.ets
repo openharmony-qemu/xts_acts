@@ -60,12 +60,12 @@ export default function StackAlignContentTest() {
     })
 
     /**
+     * @tc.name   testStackAlignContent
      * @tc.number testStackAlignContent
-     * @tc.name   Test the stackAlignContent property of the gridcol component
      * @tc.desc   set the stackAlignConten property value is number
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackAlignContent',  Level.LEVEL0, async (done: Function) => {
       let tagName = 'testStackAlignContent';

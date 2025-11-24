@@ -27,14 +27,14 @@ export default function textInputOnFocusTest() {
     });
 
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_ONFOCUS_0100
-    * @tc.name       : testTextInputOnFocus001
-    * @tc.desc       : test onFocus event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testTextInputOnFocus001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_ONFOCUS_0100
+     * @tc.desc   test onFocus event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextInputOnFocus001', Level.LEVEL1, async (done: Function) => {
       focusControl.requestFocus('OnFocusTestTextInputCompare')
       await Utils.sleep(2000)
@@ -44,14 +44,14 @@ export default function textInputOnFocusTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_ONFOCUS_0200
-    * @tc.name       : testTextInputOnFocus002
-    * @tc.desc       : test onFocus event not callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testTextInputOnFocus002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_ONFOCUS_0200
+     * @tc.desc   test onFocus event not callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextInputOnFocus002', Level.LEVEL1, async (done: Function) => {
       focusControl.requestFocus('OnFocusTestTextInput')
       await Utils.sleep(2000)

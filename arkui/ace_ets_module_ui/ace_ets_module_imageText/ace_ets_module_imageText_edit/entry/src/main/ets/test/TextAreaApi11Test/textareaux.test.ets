@@ -73,9 +73,12 @@ export default function textAreaUxTest() {
 
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_MaxLength_0100
      * @tc.number ArkUX_Stage_TextArea_MaxLength_0100
-     * @tc.name Tests the maximum number of input characters for text
-     * @tc.desc Tests the MaxLength property parameter of the TextArea component to 0
+     * @tc.desc   Tests the MaxLength property parameter of the TextArea component to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextArea_MaxLength_0100', Level.LEVEL1, async (done: Function) => {
       await forKey("TextNum", "0");
@@ -94,9 +97,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_MaxLength_0200
      * @tc.number ArkUX_Stage_TextArea_MaxLength_0200
-     * @tc.name Tests the maximum number of input characters for text
-     * @tc.desc Tests the MaxLength property parameter of the TextArea component to 10
+     * @tc.desc   Tests the MaxLength property parameter of the TextArea component to 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextArea_MaxLength_0200', Level.LEVEL1, async (done: Function) => {
       await forKey("TextNum", "10");
@@ -115,9 +121,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_MaxLength_0300
      * @tc.number ArkUX_Stage_TextArea_MaxLength_0300
-     * @tc.name Tests the maximum number of input characters for text
-     * @tc.desc Set the MaxLength property parameter of the TextArea component to string "10".
+     * @tc.desc   Set the MaxLength property parameter of the TextArea component to string "10".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextArea_MaxLength_0300', Level.LEVEL1, async (done: Function) => {
       await forKey("TextStr", "10");
@@ -136,9 +145,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_MaxLength_0400
      * @tc.number ArkUX_Stage_TextArea_MaxLength_0400
-     * @tc.name Tests the maximum number of input characters for text
-     * @tc.desc Set the MaxLength property parameter of the TextArea component to -1.
+     * @tc.desc   Set the MaxLength property parameter of the TextArea component to -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextArea_MaxLength_0400', Level.LEVEL1, async (done: Function) => {
       await forKey("TextNum", "-1");
@@ -158,9 +170,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_MaxLength_0500
      * @tc.number ArkUX_Stage_TextArea_MaxLength_0500
-     * @tc.name Tests the maximum number of input characters for text
-     * @tc.desc Set the MaxLength property parameter of the TextArea component to "".
+     * @tc.desc   Set the MaxLength property parameter of the TextArea component to "".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextArea_MaxLength_0500', Level.LEVEL1, async (done: Function) => {
       await forKey("TextStr", "");
@@ -179,9 +194,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_MaxLength_0600
      * @tc.number ArkUX_Stage_TextArea_MaxLength_0600
-     * @tc.name Tests the maximum number of input characters for text
-     * @tc.desc Set the MaxLength property parameter of the TextArea component to null.
+     * @tc.desc   Set the MaxLength property parameter of the TextArea component to null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextArea_MaxLength_0600', Level.LEVEL1, async (done: Function) => {
       await forKey("TextErr", "null");
@@ -201,9 +219,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_MaxLength_0700
      * @tc.number ArkUX_Stage_TextArea_MaxLength_0700
-     * @tc.name Tests the maximum number of input characters for text
-     * @tc.desc Set the MaxLength property parameter of the TextArea component to undefined.
+     * @tc.desc   Set the MaxLength property parameter of the TextArea component to undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextArea_MaxLength_0700', Level.LEVEL1, async (done: Function) => {
       await forKey("TextErr", "undefined");
@@ -223,9 +244,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_MaxLength_0800
      * @tc.number ArkUX_Stage_TextArea_MaxLength_0800
-     * @tc.name Tests the maximum number of input characters for text
-     * @tc.desc Set the MaxLength property parameter of the TextArea component to 5 and again to 10
+     * @tc.desc   Set the MaxLength property parameter of the TextArea component to 5 and again to 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextArea_MaxLength_0800', Level.LEVEL1, async (done: Function) => {
       await forKey("TextNum", "5");
@@ -245,9 +269,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_MaxLength_0900
      * @tc.number ArkUX_Stage_TextArea_MaxLength_0900
-     * @tc.name Tests the maximum number of input characters for text
-     * @tc.desc Set the MaxLength property parameter of the TextArea component to 5 and again to null
+     * @tc.desc   Set the MaxLength property parameter of the TextArea component to 5 and again to null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextArea_MaxLength_0900', Level.LEVEL1, async (done: Function) => {
       await forKey("TextNum", "5");
@@ -267,9 +294,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_MaxLength_1000
      * @tc.number ArkUX_Stage_TextArea_MaxLength_1000
-     * @tc.name Tests the maximum number of input characters for text
-     * @tc.desc Set the MaxLength property parameter of the TextArea component to undefined and again to 5
+     * @tc.desc   Set the MaxLength property parameter of the TextArea component to undefined and again to 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextArea_MaxLength_1000', Level.LEVEL1, async (done: Function) => {
       await forKey("TextErr", "undefined");
@@ -289,9 +319,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_ShowCounter_0100
      * @tc.number ArkUX_Stage_TextArea_ShowCounter_0100
-     * @tc.name Set whether text displays a text counter
-     * @tc.desc Modify the assertion to set the TextArea component ShowCounter property parameter to true
+     * @tc.desc   Modify the assertion to set the TextArea component ShowCounter property parameter to true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextArea_ShowCounter_0100', Level.LEVEL1, async (done: Function) => {
       await forKey("BoolTrue", "");
@@ -310,9 +343,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_ShowCounter_0200
      * @tc.number ArkUX_Stage_TextArea_ShowCounter_0200
-     * @tc.name Set whether text displays a text counter
-     * @tc.desc Modify the assertion to set the TextArea component ShowCounter property parameter to false
+     * @tc.desc   Modify the assertion to set the TextArea component ShowCounter property parameter to false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextArea_ShowCounter_0200', Level.LEVEL1, async (done: Function) => {
       await forKey("BoolFalse", "");
@@ -331,9 +367,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_ShowCounter_0300
      * @tc.number ArkUX_Stage_TextArea_ShowCounter_0300
-     * @tc.name Set whether text displays a text counter
-     * @tc.desc Set the TextArea component ShowCounter property parameter to 1
+     * @tc.desc   Set the TextArea component ShowCounter property parameter to 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextArea_ShowCounter_0300', Level.LEVEL1, async (done: Function) => {
       await forKey("BoolErrNum", "1");
@@ -352,9 +391,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_ShowCounter_0400
      * @tc.number ArkUX_Stage_TextArea_ShowCounter_0400
-     * @tc.name Set whether text displays a text counter
-     * @tc.desc Set the TextArea component ShowCounter property parameter to ''
+     * @tc.desc   Set the TextArea component ShowCounter property parameter to ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextArea_ShowCounter_0400', Level.LEVEL1, async (done: Function) => {
       await forKey("BoolErrStr", "");
@@ -373,9 +415,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_ShowCounter_0500
      * @tc.number ArkUX_Stage_TextArea_ShowCounter_0500
-     * @tc.name Set whether text displays a text counter
-     * @tc.desc Set the TextArea component ShowCounter property parameter to null
+     * @tc.desc   Set the TextArea component ShowCounter property parameter to null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextArea_ShowCounter_0500', Level.LEVEL1, async (done: Function) => {
       await forKey("BoolErrNull", "");
@@ -394,9 +439,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_ShowCounter_0600
      * @tc.number ArkUX_Stage_TextArea_ShowCounter_0600
-     * @tc.name Set whether text displays a text counter
-     * @tc.desc Set the TextArea component ShowCounter property parameter to undefined
+     * @tc.desc   Set the TextArea component ShowCounter property parameter to undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextArea_ShowCounter_0600', Level.LEVEL1, async (done: Function) => {
       await forKey("BoolErrUndefined", "");
@@ -415,10 +463,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_ShowCounter_0700
      * @tc.number ArkUX_Stage_TextArea_ShowCounter_0700
-     * @tc.name Set whether text displays a text counter
-     * @tc.desc Set the TextArea component ShowCounter property parameter to true,
-     *               and then set the parameter to false again
+     * @tc.desc   Set the TextArea component ShowCounter property parameter to true,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextArea_ShowCounter_0700', Level.LEVEL1, async (done: Function) => {
       await forKey("BoolTrue", "");
@@ -438,10 +488,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_ShowCounter_0800
      * @tc.number ArkUX_Stage_TextArea_ShowCounter_0800
-     * @tc.name Set whether text displays a text counter
-     * @tc.desc Set the TextArea component ShowCounter property parameter to true,
-     *               and then set the parameter to null again
+     * @tc.desc   Set the TextArea component ShowCounter property parameter to true,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextArea_ShowCounter_0800', Level.LEVEL1, async (done: Function) => {
       await forKey("BoolTrue", "");
@@ -461,10 +513,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_ShowCounter_0900
      * @tc.number ArkUX_Stage_TextArea_ShowCounter_0900
-     * @tc.name Set whether text displays a text counter
-     * @tc.desc Set the TextArea component ShowCounter property parameter to undefined,
-     *               and then set the parameter to true again
+     * @tc.desc   Set the TextArea component ShowCounter property parameter to undefined,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextArea_ShowCounter_0900', Level.LEVEL1, async (done: Function) => {
       await forKey("BoolErrUndefined", "");
@@ -485,9 +539,12 @@ export default function textAreaUxTest() {
 
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_0100
      * @tc.number ArkUX_Stage_TextArea_0100
-     * @tc.name TextArea component ShowCounter and maxlength default value validation
-     * @tc.desc Do not set the TextArea components ShowCounter and maxlength properties
+     * @tc.desc   Do not set the TextArea components ShowCounter and maxlength properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_TextArea_0100', Level.LEVEL1, async (done: Function) => {
       try {
@@ -505,9 +562,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_barState_0100
      * @tc.number ArkUX_Stage_TextArea_barState_0100
-     * @tc.name Set TextArea text status
-     * @tc.desc Set the BarState property parameter of the TextArea component to BarState.Off
+     * @tc.desc   Set the BarState property parameter of the TextArea component to BarState.Off
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_TextArea_barState_0100', Level.LEVEL0, (done: Function) => {
       setTimeout(() => {
@@ -525,9 +585,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_barState_0200
      * @tc.number ArkUX_Stage_TextArea_barState_0200
-     * @tc.name Set TextArea text status
-     * @tc.desc Set the BarState property parameter of the TextArea component to BarState.AUTO
+     * @tc.desc   Set the BarState property parameter of the TextArea component to BarState.AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_TextArea_barState_0200', Level.LEVEL0, (done: Function) => {
       setTimeout(() => {
@@ -545,9 +608,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_barState_0300
      * @tc.number ArkUX_Stage_TextArea_barState_0300
-     * @tc.name Set TextArea text status
-     * @tc.desc Set the BarState property parameter of the TextArea component to BarState.ON
+     * @tc.desc   Set the BarState property parameter of the TextArea component to BarState.ON
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_TextArea_barState_0300', Level.LEVEL0, (done: Function) => {
       setTimeout(() => {
@@ -565,10 +631,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_barState_0400
      * @tc.number ArkUX_Stage_TextArea_barState_0400
-     * @tc.name Set TextArea text status
-     * @tc.desc Set the BarState property parameter of the TextArea component to BarState.OFF,
-     *               and then set the parameter to BarState.AUTO again
+     * @tc.desc   Set the BarState property parameter of the TextArea component to BarState.OFF,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_TextArea_barState_0400', Level.LEVEL0, (done: Function) => {
       setTimeout(() => {
@@ -586,9 +654,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_barState_0500
      * @tc.number ArkUX_Stage_TextArea_barState_0500
-     * @tc.name Set TextArea text status
-     * @tc.desc Set the BarState property parameter of the TextArea component to 0
+     * @tc.desc   Set the BarState property parameter of the TextArea component to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_TextArea_barState_0500', Level.LEVEL0, (done: Function) => {
       setTimeout(() => {
@@ -606,9 +677,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_barState_0600
      * @tc.number ArkUX_Stage_TextArea_barState_0600
-     * @tc.name Set TextArea text status
-     * @tc.desc Set the BarState property parameter of the TextArea component to 10
+     * @tc.desc   Set the BarState property parameter of the TextArea component to 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_TextArea_barState_0600', Level.LEVEL0, (done: Function) => {
       setTimeout(() => {
@@ -626,9 +700,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_barState_0700
      * @tc.number ArkUX_Stage_TextArea_barState_0700
-     * @tc.name Set TextArea text status
-     * @tc.desc Set the BarState property parameter of the TextArea component to "sfasf"
+     * @tc.desc   Set the BarState property parameter of the TextArea component to "sfasf"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_TextArea_barState_0700', Level.LEVEL0, (done: Function) => {
       setTimeout(() => {
@@ -646,9 +723,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_barState_0800
      * @tc.number ArkUX_Stage_TextArea_barState_0800
-     * @tc.name Set TextArea text status
-     * @tc.desc Set the BarState property parameter of the TextArea component to ""
+     * @tc.desc   Set the BarState property parameter of the TextArea component to ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_TextArea_barState_0800', Level.LEVEL0, (done: Function) => {
       setTimeout(() => {
@@ -666,9 +746,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_barState_0900
      * @tc.number ArkUX_Stage_TextArea_barState_0900
-     * @tc.name Set TextArea text status
-     * @tc.desc Set the BarState property parameter of the TextArea component to null
+     * @tc.desc   Set the BarState property parameter of the TextArea component to null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_TextArea_barState_0900', Level.LEVEL0, (done: Function) => {
       setTimeout(() => {
@@ -686,9 +769,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_barState_1000
      * @tc.number ArkUX_Stage_TextArea_barState_1000
-     * @tc.name Set TextArea text status
-     * @tc.desc Set the BarState property parameter of the TextArea component to undefined
+     * @tc.desc   Set the BarState property parameter of the TextArea component to undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_TextArea_barState_1000', Level.LEVEL0, (done: Function) => {
       setTimeout(() => {
@@ -706,10 +792,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_barState_1100
      * @tc.number ArkUX_Stage_TextArea_barState_1100
-     * @tc.name Set TextArea text status
-     * @tc.desc Set the barState property parameter of the TextArea component to Outlier undefined,
-     *               and set the parameter BarState.OFF again
+     * @tc.desc   Set the barState property parameter of the TextArea component to Outlier undefined,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_TextArea_barState_1100', Level.LEVEL0, (done: Function) => {
       setTimeout(() => {
@@ -727,10 +815,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_barState_1200
      * @tc.number ArkUX_Stage_TextArea_barState_1200
-     * @tc.name Set TextArea text status
-     * @tc.desc Set the barState property parameter of the TextArea component to BarState.OFF,
-     *               and set the parameter again to Outlier undefined
+     * @tc.desc   Set the barState property parameter of the TextArea component to BarState.OFF,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_TextArea_barState_1200', Level.LEVEL0, (done: Function) => {
       setTimeout(() => {
@@ -748,9 +838,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_barState_1300
      * @tc.number ArkUX_Stage_TextArea_barState_1300
-     * @tc.name Set TextArea text status
-     * @tc.desc Do not set the TextArea component barState property
+     * @tc.desc   Do not set the TextArea component barState property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_TextArea_barState_1300', Level.LEVEL0, (done: Function) => {
       setTimeout(() => {
@@ -768,10 +861,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_barState_1400
      * @tc.number ArkUX_Stage_TextArea_barState_1400
-     * @tc.name Set TextArea text status
-     * @tc.desc Set the BarState property parameter to BarState.ON
-     *               when the TextArea component is not in inline mode
+     * @tc.desc   Set the BarState property parameter to BarState.ON
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_TextArea_barState_1400', Level.LEVEL0, (done: Function) => {
       setTimeout(() => {
@@ -789,10 +884,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_Style_0100
      * @tc.number ArkUX_Stage_TextArea_Style_0100
-     * @tc.name Set TextArea text input style
-     * @tc.desc Set the TextArea text input style, set the TextArea component Style property
-     *               parameter to TextContentStyle.DEFAULT
+     * @tc.desc   Set the TextArea text input style, set the TextArea component Style property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_TextArea_Style_0100', Level.LEVEL0, (done: Function) => {
       setTimeout(() => {
@@ -810,10 +907,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_Style_0200
      * @tc.number ArkUX_Stage_TextArea_Style_0200
-     * @tc.name Set TextArea text input style
-     * @tc.desc Set the TextArea text input style, set the TextArea component Style property
-     *               parameter to TextContentStyle.INLINE
+     * @tc.desc   Set the TextArea text input style, set the TextArea component Style property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_TextArea_Style_0200', Level.LEVEL0, (done: Function) => {
       setTimeout(() => {
@@ -831,10 +930,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_Style_0300
      * @tc.number ArkUX_Stage_TextArea_Style_0300
-     * @tc.name Set TextArea text input style
-     * @tc.desc Set the TextArea text input style, set the TextArea component Style property
-     *               parameter to 0
+     * @tc.desc   Set the TextArea text input style, set the TextArea component Style property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_TextArea_Style_0300', Level.LEVEL0, (done: Function) => {
       setTimeout(() => {
@@ -852,10 +953,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_Style_0400
      * @tc.number ArkUX_Stage_TextArea_Style_0400
-     * @tc.name Set TextArea text input style
-     * @tc.desc Set the TextArea text input style, set the TextArea component Style property
-     *               parameter to 10
+     * @tc.desc   Set the TextArea text input style, set the TextArea component Style property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_TextArea_Style_0400', Level.LEVEL0, (done: Function) => {
       setTimeout(() => {
@@ -873,10 +976,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_Style_0500
      * @tc.number ArkUX_Stage_TextArea_Style_0500
-     * @tc.name Set TextArea text input style
-     * @tc.desc Set the TextArea text input style, set the TextArea component Style property
-     *               parameter to "10"
+     * @tc.desc   Set the TextArea text input style, set the TextArea component Style property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_TextArea_Style_0500', Level.LEVEL0, (done: Function) => {
       setTimeout(() => {
@@ -894,10 +999,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_Style_0600
      * @tc.number ArkUX_Stage_TextArea_Style_0600
-     * @tc.name Set TextArea text input style
-     * @tc.desc Set the TextArea text input style, set the TextArea component Style property
-     *               parameter to ""
+     * @tc.desc   Set the TextArea text input style, set the TextArea component Style property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_TextArea_Style_0600', Level.LEVEL0, (done: Function) => {
       setTimeout(() => {
@@ -915,10 +1022,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_Style_0700
      * @tc.number ArkUX_Stage_TextArea_Style_0700
-     * @tc.name Set TextArea text input style
-     * @tc.desc Set the TextArea text input style, set the TextArea component Style property
-     *               parameter to null
+     * @tc.desc   Set the TextArea text input style, set the TextArea component Style property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_TextArea_Style_0700', Level.LEVEL0, (done: Function) => {
       setTimeout(() => {
@@ -936,10 +1045,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_Style_0800
      * @tc.number ArkUX_Stage_TextArea_Style_0800
-     * @tc.name Set TextArea text input style
-     * @tc.desc Set the TextArea text input style, set the TextArea component Style property
-     *               parameter to undefined
+     * @tc.desc   Set the TextArea text input style, set the TextArea component Style property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_TextArea_Style_0800', Level.LEVEL0, (done: Function) => {
       setTimeout(() => {
@@ -957,10 +1068,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_Style_0900
      * @tc.number ArkUX_Stage_TextArea_Style_0900
-     * @tc.name Set TextArea text input style
-     * @tc.desc Set the TextArea component Style property parameter to TextContentStyle. DEFAULT, and
-     *               then set the parameter to TextContentStyle. INLINE again
+     * @tc.desc   Set the TextArea component Style property parameter to TextContentStyle. DEFAULT, and
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_TextArea_Style_0900', Level.LEVEL0, (done: Function) => {
       setTimeout(() => {
@@ -978,10 +1091,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_Style_1000
      * @tc.number ArkUX_Stage_TextArea_Style_1000
-     * @tc.name Set TextArea text input style
-     * @tc.desc Set the TextArea component Style property parameter to TextContentStyle. NLINE,
-     *               and then set the parameter to Outlier undefined
+     * @tc.desc   Set the TextArea component Style property parameter to TextContentStyle. NLINE,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_TextArea_Style_1000', Level.LEVEL0, (done: Function) => {
       setTimeout(() => {
@@ -999,10 +1114,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_Style_1100
      * @tc.number ArkUX_Stage_TextArea_Style_1100
-     * @tc.name Set TextArea text input style
-     * @tc.desc Set the TextArea component Style property parameter to Outlier undefined,
-     *               and set the parameter to TextContentStyle. INLINE again
+     * @tc.desc   Set the TextArea component Style property parameter to Outlier undefined,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_TextArea_Style_1100', Level.LEVEL0, (done: Function) => {
       setTimeout(() => {
@@ -1020,9 +1137,12 @@ export default function textAreaUxTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_TextArea_Style_1200
      * @tc.number ArkUX_Stage_TextArea_Style_1200
-     * @tc.name Set TextArea text input style
-     * @tc.desc Do not set the TextArea component Style property
+     * @tc.desc   Do not set the TextArea component Style property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_TextArea_Style_1200', Level.LEVEL0, (done: Function) => {
       setTimeout(() => {

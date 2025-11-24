@@ -26,14 +26,14 @@ export default function sliderEnabledTest() {
       await Utils.pushPage(`slider/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_SLIDER_ENABLED_0100
-    * @tc.name       : testSliderEnabled001
-    * @tc.desc       : testing enabled event callback for slider with normal value (1)
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testSliderEnabled001
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_ENABLED_0100
+     * @tc.desc   testing enabled event callback for slider with normal value (1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSliderEnabled001', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnClickEnabledSlider')
       await Utils.sleep(1000)
@@ -50,14 +50,14 @@ export default function sliderEnabledTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_SLIDER_ENABLED_0200
-    * @tc.name       : testSliderEnabled002
-    * @tc.desc       : testing enabled event callback for slider with normal value (0)
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testSliderEnabled002
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_ENABLED_0200
+     * @tc.desc   testing enabled event callback for slider with normal value (0)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSliderEnabled002', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnClickDisabledSlider')
       await Utils.sleep(1000)
@@ -74,14 +74,14 @@ export default function sliderEnabledTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_SLIDER_ENABLED_0300
-    * @tc.name       : testSliderEnabled003
-    * @tc.desc       : testing enabled event callback for slider with abnormal value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testSliderEnabled003
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_ENABLED_0300
+     * @tc.desc   testing enabled event callback for slider with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSliderEnabled003', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnClickAbnormalSlider')
       await Utils.sleep(1000)

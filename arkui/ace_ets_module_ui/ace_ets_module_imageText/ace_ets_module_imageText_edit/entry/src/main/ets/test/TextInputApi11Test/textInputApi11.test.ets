@@ -91,12 +91,14 @@ export default function textInputApi11() {
       }
     });
 
-    /* *
-    * @tc.number: textInputApi11_001
-    * @tc.name  : textInputApi11_001
-    * @tc.desc  : onSubmit event test
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   textInputApi11_001
+     * @tc.number textInputApi11_001
+     * @tc.desc   onSubmit event test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('textInputApi11_001', Level.LEVEL2, async (done: Function) => {
 
       console.info('[textInputApi11_001] START');

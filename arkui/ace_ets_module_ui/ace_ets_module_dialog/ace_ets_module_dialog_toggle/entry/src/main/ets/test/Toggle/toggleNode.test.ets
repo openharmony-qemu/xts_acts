@@ -48,12 +48,12 @@ export default function toggleNodeTest() {
     })
    
     /**
-     * @tc.number: SUB_ARKUI_API_toggleNode0100
-     * @tc.name: toggleNode0100
-     * @tc.desc: ToggleAPI 
-     * @tc.level: Level 1
-     * @tc.type : Toggle
-     * @tc.size : ToggleTest
+     * @tc.name   toggleNode0100
+     * @tc.number SUB_ARKUI_API_toggleNode0100
+     * @tc.desc   ToggleAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('toggleNode0100', Level.LEVEL1, async (done: Function) => {
 

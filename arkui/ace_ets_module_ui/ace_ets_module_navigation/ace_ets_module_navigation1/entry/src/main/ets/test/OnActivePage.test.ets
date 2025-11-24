@@ -50,10 +50,12 @@ export default function OnActivePage() {
 
 
     /**
-     * @tc.number    OnActivePage_0100
-     * @tc.name      OnActivePage_0100
-     * @tc.desc      Test NavDestinationActiveReason.OVERLAY in onActive and onInactive
-     * @tc.level     Level 2
+     * @tc.name   OnActivePage_0100
+     * @tc.number OnActivePage_0100
+     * @tc.desc   Test NavDestinationActiveReason.OVERLAY in onActive and onInactive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OnActivePage_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('OnActivePage_0100 START');
@@ -94,10 +96,12 @@ export default function OnActivePage() {
     });
 
     /**
-     * @tc.number    OnActivePage_0200
-     * @tc.name      OnActivePage_0200
-     * @tc.desc      Test NavDestinationActiveReason.TRANSITION in onActive and onInactive
-     * @tc.level     Level 2
+     * @tc.name   OnActivePage_0200
+     * @tc.number OnActivePage_0200
+     * @tc.desc   Test NavDestinationActiveReason.TRANSITION in onActive and onInactive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OnActivePage_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('OnActivePage_0200 START');
@@ -133,10 +137,12 @@ export default function OnActivePage() {
     });
 
     /**
-     * @tc.number    OnActivePage_0300
-     * @tc.name      OnActivePage_0300
-     * @tc.desc      Test NavDestinationActiveReason.DIALOG in onActive and onInactive
-     * @tc.level     Level 2
+     * @tc.name   OnActivePage_0300
+     * @tc.number OnActivePage_0300
+     * @tc.desc   Test NavDestinationActiveReason.DIALOG in onActive and onInactive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OnActivePage_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('OnActivePage_0300 START');
@@ -178,10 +184,12 @@ export default function OnActivePage() {
     });
 
     /**
-     * @tc.number    OnActivePage_0400
-     * @tc.name      OnActivePage_0400
-     * @tc.desc      Test NavDestinationActiveReason.SHEET in onActive and onInactive
-     * @tc.level     Level 2
+     * @tc.name   OnActivePage_0400
+     * @tc.number OnActivePage_0400
+     * @tc.desc   Test NavDestinationActiveReason.SHEET in onActive and onInactive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OnActivePage_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('OnActivePage_0400 START');
@@ -213,10 +221,12 @@ export default function OnActivePage() {
     });
 
     /**
-     * @tc.number    OnActivePage_0500
-     * @tc.name      OnActivePage_0500
-     * @tc.desc      Test NavDestinationActiveReason.CONTENT_COVER in onActive and onInactive
-     * @tc.level     Level 2
+     * @tc.name   OnActivePage_0500
+     * @tc.number OnActivePage_0500
+     * @tc.desc   Test NavDestinationActiveReason.CONTENT_COVER in onActive and onInactive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OnActivePage_0500',  Level.LEVEL0, async (done: Function) => {
       console.info('OnActivePage_0500 START');

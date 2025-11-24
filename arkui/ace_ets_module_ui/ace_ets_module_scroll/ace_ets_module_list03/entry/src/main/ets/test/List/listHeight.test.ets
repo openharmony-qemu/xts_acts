@@ -46,12 +46,12 @@ export default function listHeight() {
     });
 
     /**
-     * @tc.number    listHeight_001
-     * @tc.name      listHeight_0100
-     * @tc.desc      Set elements that are multiples of 3 is 0 and call the ScrollPage interface.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   listHeight_0100
+     * @tc.number listHeight_001
+     * @tc.desc   Set elements that are multiples of 3 is 0 and call the ScrollPage interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('listHeight_0100', Level.LEVEL3, async (done: Function) => {
       console.info('[listHeight_0100] START');

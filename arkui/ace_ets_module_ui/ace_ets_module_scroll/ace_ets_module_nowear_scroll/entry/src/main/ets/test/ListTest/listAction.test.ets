@@ -46,13 +46,12 @@ export default function listActionTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_ListItemSwipeActionManager_0010
-     * @tc.name      SUB_ACE_UI_COMPONENT_ListItemSwipeActionManager_0010
-     * @tc.desc      test ListItemSwipeActionDirection is start and ListItemSwipeActionManager is EXPANDED,
-     *               listItem slide out on the left side
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   SUB_ACE_UI_COMPONENT_ListItemSwipeActionManager_0010
+     * @tc.number SUB_ACE_UI_COMPONENT_ListItemSwipeActionManager_0010
+     * @tc.desc   test ListItemSwipeActionDirection is start and ListItemSwipeActionManager is EXPANDED,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_ListItemSwipeActionManager_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_ListItemSwipeActionManager_0010 START');
@@ -79,13 +78,12 @@ export default function listActionTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_ListItemSwipeActionManager_0020
-     * @tc.name      SUB_ACE_UI_COMPONENT_ListItemSwipeActionManager_0020
-     * @tc.desc      test ListItemSwipeActionDirection is end and ListItemSwipeActionManager is EXPANDED
-     *               listItem slide out on the right side
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   SUB_ACE_UI_COMPONENT_ListItemSwipeActionManager_0020
+     * @tc.number SUB_ACE_UI_COMPONENT_ListItemSwipeActionManager_0020
+     * @tc.desc   test ListItemSwipeActionDirection is end and ListItemSwipeActionManager is EXPANDED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_ListItemSwipeActionManager_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_ListItemSwipeActionManager_0020 START');
@@ -112,13 +110,12 @@ export default function listActionTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_ListItemSwipeActionManager_0030
-     * @tc.name      SUB_ACE_UI_COMPONENT_ListItemSwipeActionManager_0030
-     * @tc.desc      test ListItemSwipeActionManager is COLLAPSED,
-     *               listItem slide to close
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   SUB_ACE_UI_COMPONENT_ListItemSwipeActionManager_0030
+     * @tc.number SUB_ACE_UI_COMPONENT_ListItemSwipeActionManager_0030
+     * @tc.desc   test ListItemSwipeActionManager is COLLAPSED,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_ListItemSwipeActionManager_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_ListItemSwipeActionManager_0030 START');
@@ -140,13 +137,12 @@ export default function listActionTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_ListItemSwipeActionManager_0040
-     * @tc.name      SUB_ACE_UI_COMPONENT_ListItemSwipeActionManager_0040
-     * @tc.desc      ListItemSwipeActionDirection is undefined and ListItemSwipeActionManager is EXPANDED,
-     *               return errorCode 401
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   SUB_ACE_UI_COMPONENT_ListItemSwipeActionManager_0040
+     * @tc.number SUB_ACE_UI_COMPONENT_ListItemSwipeActionManager_0040
+     * @tc.desc   ListItemSwipeActionDirection is undefined and ListItemSwipeActionManager is EXPANDED,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_ListItemSwipeActionManager_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_ListItemSwipeActionManager_0040 START');
@@ -166,13 +162,12 @@ export default function listActionTest() {
     })
 
     /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_ListItemSwipeActionManager_0050
-     * @tc.name      SUB_ACE_UI_COMPONENT_ListItemSwipeActionManager_0050
-     * @tc.desc      ListItemSwipeActionDirection is null and ListItemSwipeActionManager is EXPANDED,
-     *               return errorCode 401
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   SUB_ACE_UI_COMPONENT_ListItemSwipeActionManager_0050
+     * @tc.number SUB_ACE_UI_COMPONENT_ListItemSwipeActionManager_0050
+     * @tc.desc   ListItemSwipeActionDirection is null and ListItemSwipeActionManager is EXPANDED,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_ListItemSwipeActionManager_0050', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_ListItemSwipeActionManager_0050 START');

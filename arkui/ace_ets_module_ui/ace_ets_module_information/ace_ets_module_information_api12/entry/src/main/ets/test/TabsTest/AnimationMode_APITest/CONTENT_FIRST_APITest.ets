@@ -53,12 +53,12 @@ export default function CONTENT_FIRST_APITest() {
       done();
     });
     /**
+     * @tc.name   CONTENT_FIRST_APITest_0100
      * @tc.number CONTENT_FIRST
-     * @tc.name CONTENT_FIRST_APITest_0100
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('CONTENT_FIRST_APITest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('CONTENT_FIRST_APITest_0100 START');

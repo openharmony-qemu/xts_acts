@@ -53,12 +53,12 @@ export default function AtomicServiceSearchTest() {
     });
 
     /**
+     * @tc.name   AtomicServiceSearchTest_0100
      * @tc.number AtomicServiceSearch
-     * @tc.name AtomicServiceSearchTest_0100
-     * @tc.desc Test AtomicServiceSearch
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test AtomicServiceSearch
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AtomicServiceSearchTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[AtomicServiceSearchTest_0100] START');

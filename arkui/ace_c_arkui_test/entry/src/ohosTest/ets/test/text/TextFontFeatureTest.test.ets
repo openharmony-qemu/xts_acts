@@ -26,52 +26,52 @@ export default function textFontFeatureTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_FONT_FEATURE_0100
-     * @tc.name       : testTextFontFeature001
-     * @tc.desc       : testing fontFeature for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextFontFeature001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_FONT_FEATURE_0100
+     * @tc.desc   testing fontFeature for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextFontFeature001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextFontFeature001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_FONT_FEATURE_0200
-     * @tc.name       : testTextFontFeature002
-     * @tc.desc       : testing fontFeature for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextFontFeature002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_FONT_FEATURE_0200
+     * @tc.desc   testing fontFeature for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextFontFeature002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextFontFeature002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_FONT_FEATURE_0300
-     * @tc.name       : testTextFontFeature003
-     * @tc.desc       : testing fontFeature for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextFontFeature003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_FONT_FEATURE_0300
+     * @tc.desc   testing fontFeature for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextFontFeature003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextFontFeature003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_FONT_FEATURE_0400
-     * @tc.name       : testTextFontFeature004
-     * @tc.desc       : testing fontFeature for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextFontFeature004
+     * @tc.number SUB_ARKUI_CAPI_TEXT_FONT_FEATURE_0400
+     * @tc.desc   testing fontFeature for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextFontFeature004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextFontFeature004()).assertEqual(0)

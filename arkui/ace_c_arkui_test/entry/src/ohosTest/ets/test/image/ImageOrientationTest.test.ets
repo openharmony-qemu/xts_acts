@@ -26,52 +26,52 @@ export default function imageOrientationTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_ORIENTATION_0100
-     * @tc.name       : testImageOrientation001
-     * @tc.desc       : test the orientation attribute using normal values
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageOrientation001
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ORIENTATION_0100
+     * @tc.desc   test the orientation attribute using normal values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageOrientation001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageOrientation001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_ORIENTATION_0200
-     * @tc.name       : testImageOrientation002
-     * @tc.desc       : test the orientation attribute using null values
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageOrientation002
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ORIENTATION_0200
+     * @tc.desc   test the orientation attribute using null values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageOrientation002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageOrientation002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_ORIENTATION_0300
-     * @tc.name       : testImageOrientation003
-     * @tc.desc       : test the orientation attribute using outliers
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageOrientation003
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ORIENTATION_0300
+     * @tc.desc   test the orientation attribute using outliers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageOrientation003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageOrientation003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_ORIENTATION_0400
-     * @tc.name       : testImageOrientation004
-     * @tc.desc       : test the orientation attribute using normal values
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageOrientation004
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ORIENTATION_0400
+     * @tc.desc   test the orientation attribute using normal values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageOrientation004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageOrientation004()).assertEqual(0)

@@ -79,14 +79,14 @@ export default function ArcListDemo() {
         });
 		
 		
-    /* *
-    * @tc.number: ArkUX_Stage_ArcList_ComponentTest_0100
-    * @tc.name  : ArkUX_Stage_ArcList_ComponentTest_0100
-    * @tc.desc  : Test default value for testing the arclist component.
-    * @tc.level : Level 1
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    */
+    /**
+     * @tc.name   ArkUX_Stage_ArcList_ComponentTest_0100
+     * @tc.number ArkUX_Stage_ArcList_ComponentTest_0100
+     * @tc.desc   Test default value for testing the arclist component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUX_Stage_ArcList_ComponentTest_0100',  Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_ArcList_ComponentTest_0100] START');
       let strJson = getInspectorByKey('arclistdefault');
@@ -120,14 +120,14 @@ export default function ArcListDemo() {
       done();
     });
 
-    /* *
-    * @tc.number: ArkUX_Stage_ArcList_ComponentTest_0200
-    * @tc.name  : ArkUX_Stage_ArcList_ComponentTest_0200
-    * @tc.desc  : Test default value for testing the arclist component.
-    * @tc.level : Level 1
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    */
+    /**
+     * @tc.name   ArkUX_Stage_ArcList_ComponentTest_0200
+     * @tc.number ArkUX_Stage_ArcList_ComponentTest_0200
+     * @tc.desc   Test default value for testing the arclist component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUX_Stage_ArcList_ComponentTest_0200',  Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_ArcList_ComponentTest_0200] START');
       let strJson = getInspectorByKey('arclist01');
@@ -160,14 +160,14 @@ export default function ArcListDemo() {
       done();
     });
 
-    /* *
-    * @tc.number: ArkUX_Stage_ArcList_ComponentTest_0300
-    * @tc.name  : ArkUX_Stage_ArcList_ComponentTest_0300
-    * @tc.desc  : Test default value for testing the arclist component.
-    * @tc.level : Level 1
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    */
+    /**
+     * @tc.name   ArkUX_Stage_ArcList_ComponentTest_0300
+     * @tc.number ArkUX_Stage_ArcList_ComponentTest_0300
+     * @tc.desc   Test default value for testing the arclist component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUX_Stage_ArcList_ComponentTest_0300',  Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUX_Stage_ArcList_ComponentTest_0300] START');
       let strJson = getInspectorByKey('arclist02');
@@ -201,14 +201,14 @@ export default function ArcListDemo() {
     });
 	
 	
-    /* *
-    * @tc.number: ArkUX_Stage_ArcList_ComponentTest_0400
-    * @tc.name  : ArkUX_Stage_ArcList_ComponentTest_0400
-    * @tc.desc  : Test default value for testing the arclist component.
-    * @tc.level : Level 1
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    */
+    /**
+     * @tc.name   ArkUX_Stage_ArcList_ComponentTest_0400
+     * @tc.number ArkUX_Stage_ArcList_ComponentTest_0400
+     * @tc.desc   Test default value for testing the arclist component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUX_Stage_ArcList_ComponentTest_0400',  Level.LEVEL1, async (done: Function) => {
       // Verify the functions of the arclist component
       console.info('[ArkUX_Stage_ArcList_ComponentTest_0400] START');

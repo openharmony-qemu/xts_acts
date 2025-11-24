@@ -60,14 +60,14 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       await button.click();
     });
 
-    /*
-    * @tc.number     : gestureEnabledJsunit_0100
-    * @tc.name       : gestureEnabledJsunit_0100
-    * @tc.desc       : test
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   gestureEnabledJsunit_0100
+     * @tc.number gestureEnabledJsunit_0100
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('gestureEnabledJsunit_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('gestureEnabledJsunit_0100 START');
@@ -84,14 +84,14 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       done();
     });
 
-    /*
-    * @tc.number     : gestureEnabledJsunit_0200
-    * @tc.name       : gestureEnabledJsunit_0200
-    * @tc.desc       : test
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   gestureEnabledJsunit_0200
+     * @tc.number gestureEnabledJsunit_0200
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('gestureEnabledJsunit_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('gestureEnabledJsunit_0200 START');
@@ -108,14 +108,14 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       done();
     });
 
-    /*
-    * @tc.number     : gestureEnabledJsunit_0300
-    * @tc.name       : gestureEnabledJsunit_0300
-    * @tc.desc       : test
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   gestureEnabledJsunit_0300
+     * @tc.number gestureEnabledJsunit_0300
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('gestureEnabledJsunit_0300', Level.LEVEL0, async (done: Function) => {
 
       console.info('gestureEnabledJsunit_0300 START');
@@ -132,14 +132,14 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       done();
     });
 
-    /*
-    * @tc.number     : gestureEnabledJsunit_0400
-    * @tc.name       : gestureEnabledJsunit_0400
-    * @tc.desc       : test
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   gestureEnabledJsunit_0400
+     * @tc.number gestureEnabledJsunit_0400
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('gestureEnabledJsunit_0400', Level.LEVEL0, async (done: Function) => {
 
       console.info('gestureEnabledJsunit_0400 START');

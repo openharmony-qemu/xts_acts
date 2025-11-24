@@ -42,14 +42,14 @@ export default function ListLanes04() {
       done();
     });
 
-     /* *
-      * @tc.number: ListLanes04_001
-      * @tc.name  : ListLanes04_001
-      * @tc.desc  : set gutter to 0 and listDirection to Axis.Horizontal
-      * @tc.level : Level 3
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   ListLanes04_001
+     * @tc.number ListLanes04_001
+     * @tc.desc   set gutter to 0 and listDirection to Axis.Horizontal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ListLanes04_001',  Level.LEVEL3, async (done: Function) => {
 
       console.info('[ListLanes04_001] START');
@@ -64,14 +64,14 @@ export default function ListLanes04() {
       done();
     });
 
-     /* *
-      * @tc.number: ListLanes04_002
-      * @tc.name  : ListLanes04_002
-      * @tc.desc  : set gutter to -1 and listDirection to Axis.Horizontal
-      * @tc.level : Level 3
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   ListLanes04_002
+     * @tc.number ListLanes04_002
+     * @tc.desc   set gutter to -1 and listDirection to Axis.Horizontal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ListLanes04_002',  Level.LEVEL3, async (done: Function) => {
 
       console.info('[ListLanes04_002] START');
@@ -86,14 +86,14 @@ export default function ListLanes04() {
       done();
     });
 
-     /* *
-      * @tc.number: ListLanes04_003
-      * @tc.name  : ListLanes04_003
-      * @tc.desc  : set gutter to 10% and listDirection to Axis.Horizontal
-      * @tc.level : Level 3
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   ListLanes04_003
+     * @tc.number ListLanes04_003
+     * @tc.desc   set gutter to 10% and listDirection to Axis.Horizontal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ListLanes04_003',  Level.LEVEL3, async (done: Function) => {
 
       console.info('[ListLanes04_003] START');

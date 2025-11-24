@@ -42,13 +42,13 @@ export default function QRCodeResourceStrTest() {
     });
 
     /**
-    * @tc.number: QRCodeResourceStrTest_001
-    * @tc.name  : QRCodeResourceStrTest_001
-    * @tc.desc  : To test the value: $r('app.string.module_desc')
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   QRCodeResourceStrTest_001
+     * @tc.number QRCodeResourceStrTest_001
+     * @tc.desc   To test the value: $r('app.string.module_desc')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('QRCodeResourceStrTest_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('QRCodeResourceStrTest_001 START');
       await Utils.sleep(1000);
@@ -61,13 +61,13 @@ export default function QRCodeResourceStrTest() {
     });
   
     /**
-    * @tc.number: QRCodeResourceStrTest_002
-    * @tc.name  : QRCodeResourceStrTest_002
-    * @tc.desc  : To test the value: undefined
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   QRCodeResourceStrTest_002
+     * @tc.number QRCodeResourceStrTest_002
+     * @tc.desc   To test the value: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('QRCodeResourceStrTest_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('QRCodeResourceStrTest_002 START');
       await Utils.sleep(1000);
@@ -80,13 +80,13 @@ export default function QRCodeResourceStrTest() {
     });
     
     /**
-    * @tc.number: QRCodeResourceStrTest_003
-    * @tc.name  : QRCodeResourceStrTest_003
-    * @tc.desc  : To test the value: null
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   QRCodeResourceStrTest_003
+     * @tc.number QRCodeResourceStrTest_003
+     * @tc.desc   To test the value: null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('QRCodeResourceStrTest_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('QRCodeResourceStrTest_003 START');
       await Utils.sleep(1000);
@@ -100,13 +100,13 @@ export default function QRCodeResourceStrTest() {
 
     
     /**
-    * @tc.number: QRCodeResourceStrTest_004
-    * @tc.name  : QRCodeResourceStrTest_004
-    * @tc.desc  : To test the value: null
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   QRCodeResourceStrTest_004
+     * @tc.number QRCodeResourceStrTest_004
+     * @tc.desc   To test the value: null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('QRCodeResourceStrTest_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('QRCodeResourceStrTest_004 START');
       await Utils.sleep(1000);

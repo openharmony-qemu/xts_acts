@@ -26,26 +26,26 @@ export default function customDialogMaskColorTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_MASKCOLOR_0100
-     * @tc.name       : testCustomDialogMaskColor001
-     * @tc.desc       : testing maskColor for customDialog with normal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomDialogMaskColor001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_MASKCOLOR_0100
+     * @tc.desc   testing maskColor for customDialog with normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogMaskColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogMaskColor001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_MASKCOLOR_0200
-     * @tc.name       : testCustomDialogMaskColor002
-     * @tc.desc       : testing maskColor for customDialog with normal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCustomDialogMaskColor002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_MASKCOLOR_0200
+     * @tc.desc   testing maskColor for customDialog with normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogMaskColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogMaskColor002()).assertEqual(0)

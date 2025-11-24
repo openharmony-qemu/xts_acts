@@ -40,12 +40,12 @@ export default function RELOAD() {
       done();
     });
     /**
-     * @tc.number    RELOAD_0100
-     * @tc.name      RELOAD_0100
-     * @tc.desc      frameNode: RELOADToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RELOAD_0100
+     * @tc.number RELOAD_0100
+     * @tc.desc   frameNode: RELOADToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RELOAD_0100', Level.LEVEL0, async (done: Function) => {
       console.info('RELOAD_0100 START');

@@ -38,12 +38,12 @@ export default function CustomDialogControllerOptionsTest() {
     });
 
     /**
-     * @tc.number    CustomDialogControllerOptionsTest_0100
-     * @tc.name      CustomDialogControllerOptionsTest_0100
-     * @tc.desc      createCustomDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   CustomDialogControllerOptionsTest_0100
+     * @tc.number CustomDialogControllerOptionsTest_0100
+     * @tc.desc   createCustomDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CustomDialogControllerOptionsTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('CustomDialogControllerOptionsTest_0100 START');

@@ -43,6 +43,14 @@ export default function PatternLockJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PatternLockJsunit_0100
+     * @tc.number PatternLockJsunit_0100
+     * @tc.desc   PatternLockJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('PatternLockJsunit_0100', Level.LEVEL2, async (done: Function) => {
       // Get the information of the PatternLock component
       console.info('[PatternLockJsunit_0100] START');
@@ -63,6 +71,14 @@ export default function PatternLockJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PatternLockJsunit_0200
+     * @tc.number PatternLockJsunit_0200
+     * @tc.desc   PatternLockJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('PatternLockJsunit_0200', Level.LEVEL2, async (done: Function) => {
       // Verify the content of the message
       let driver1 = await UiDriver.create()
@@ -73,6 +89,14 @@ export default function PatternLockJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PatternLockJsunit_0300
+     * @tc.number PatternLockJsunit_0300
+     * @tc.desc   PatternLockJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('PatternLockJsunit_0300', Level.LEVEL2, async (done: Function) => {
       // Verify that clicking the 'Reset PatternLock' button resets
       console.info('[PatternLockJsunit_0300] START');
@@ -90,6 +114,14 @@ export default function PatternLockJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PatternLockJsunit_0400
+     * @tc.number PatternLockJsunit_0400
+     * @tc.desc   PatternLockJsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('PatternLockJsunit_0400', Level.LEVEL2, async (done: Function) => {
       // Modify the content of the message
       console.info('[PatternLockJsunit_0400] START');
@@ -105,6 +137,14 @@ export default function PatternLockJsunit() {
       done();
     }); 
 
+    /**
+     * @tc.name   PatternLockJsunit_0500
+     * @tc.number PatternLockJsunit_0500
+     * @tc.desc   PatternLockJsunit_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('PatternLockJsunit_0500', Level.LEVEL2, async (done: Function) => {
       // Modify the sideLength value of the PatternLock component
       console.info('[PatternLockJsunit_0500] START');
@@ -119,6 +159,14 @@ export default function PatternLockJsunit() {
       done();
     }); 
 
+    /**
+     * @tc.name   PatternLockJsunit_0600
+     * @tc.number PatternLockJsunit_0600
+     * @tc.desc   PatternLockJsunit_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('PatternLockJsunit_0600', Level.LEVEL2, async (done: Function) => {
       // Modify the circleRadius value of the PatternLock component
       console.info('[PatternLockJsunit_0600] START');
@@ -133,6 +181,14 @@ export default function PatternLockJsunit() {
       done();
     }); 
 
+    /**
+     * @tc.name   PatternLockJsunit_0700
+     * @tc.number PatternLockJsunit_0700
+     * @tc.desc   PatternLockJsunit_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('PatternLockJsunit_0700', Level.LEVEL2, async (done: Function) => {
       // Modify the regularColor value of the PatternLock component
       console.info('[PatternLockJsunit_0700] START');
@@ -147,6 +203,14 @@ export default function PatternLockJsunit() {
       done();
     }); 
 
+    /**
+     * @tc.name   PatternLockJsunit_0800
+     * @tc.number PatternLockJsunit_0800
+     * @tc.desc   PatternLockJsunit_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('PatternLockJsunit_0800', Level.LEVEL2, async (done: Function) => {
       // Modify the selectedColor value of the PatternLock component
       console.info('[PatternLockJsunit_0800] START');
@@ -161,6 +225,14 @@ export default function PatternLockJsunit() {
       done();
     }); 
 
+    /**
+     * @tc.name   PatternLockJsunit_0900
+     * @tc.number PatternLockJsunit_0900
+     * @tc.desc   PatternLockJsunit_0900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('PatternLockJsunit_0900', Level.LEVEL2, async (done: Function) => {
       // Modify the activeColor value of the PatternLock component
       console.info('[PatternLockJsunit_0500] START');
@@ -175,6 +247,14 @@ export default function PatternLockJsunit() {
       done();
     }); 
 
+    /**
+     * @tc.name   PatternLockJsunit_1000
+     * @tc.number PatternLockJsunit_1000
+     * @tc.desc   PatternLockJsunit_1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('PatternLockJsunit_1000', Level.LEVEL2, async (done: Function) => {
       // Modify the pathColor value of the PatternLock component
       console.info('[PatternLockJsunit_1000] START');
@@ -189,6 +269,14 @@ export default function PatternLockJsunit() {
       done();
     }); 
 
+    /**
+     * @tc.name   PatternLockJsunit_1100
+     * @tc.number PatternLockJsunit_1100
+     * @tc.desc   PatternLockJsunit_1100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('PatternLockJsunit_1100', Level.LEVEL2, async (done: Function) => {
       // Modify the pathStrokeWidth value of the PatternLock component
       console.info('[PatternLockJsunit_1100] START');
@@ -204,6 +292,14 @@ export default function PatternLockJsunit() {
       done();
     }); 
 
+    /**
+     * @tc.name   PatternLockJsunit_1200
+     * @tc.number PatternLockJsunit_1200
+     * @tc.desc   PatternLockJsunit_1200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('PatternLockJsunit_1200', Level.LEVEL2, async (done: Function) => {
       // Modify the autoReset value of the PatternLock component
       console.info('[PatternLockJsunit_1200] START');
@@ -219,6 +315,14 @@ export default function PatternLockJsunit() {
       done();
     }); 
 
+    /**
+     * @tc.name   PatternLockJsunit_1300
+     * @tc.number PatternLockJsunit_1300
+     * @tc.desc   PatternLockJsunit_1300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('PatternLockJsunit_1300', Level.LEVEL2, async (done: Function) => {
       console.info('[PatternLockJsunit_1300] START');
       let strJson = getInspectorByKey('default');

@@ -46,12 +46,12 @@ export default function listItemJsunit2() {
     });
 
     /**
-     * @tc.number    testListItem01
-     * @tc.name      testListItem01
-     * @tc.desc      Testing for the List component.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testListItem01
+     * @tc.number testListItem01
+     * @tc.desc   Testing for the List component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItem01', Level.LEVEL1, async (done: Function) => {
       console.info('[testListItem01] START');
@@ -65,12 +65,12 @@ export default function listItemJsunit2() {
     });
 
     /**
-     * @tc.number    testListItem02
-     * @tc.name      testListItem02
-     * @tc.desc      Testing for the List component.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testListItem02
+     * @tc.number testListItem02
+     * @tc.desc   Testing for the List component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItem02', Level.LEVEL1, async (done: Function) => {
       console.info('[testListItem02] START');
@@ -99,12 +99,12 @@ export default function listItemJsunit2() {
     });
 
     /**
-     * @tc.number    testListItem03
-     * @tc.name      testListItem03
-     * @tc.desc      Testing for the List component.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testListItem03
+     * @tc.number testListItem03
+     * @tc.desc   Testing for the List component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItem03', Level.LEVEL1, async (done: Function) => {
       console.info('[testListItem03] START');
@@ -118,12 +118,12 @@ export default function listItemJsunit2() {
     });
 
     /**
-     * @tc.number    testListItem04
-     * @tc.name      testListItem04
-     * @tc.desc      Testing for the List component.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testListItem04
+     * @tc.number testListItem04
+     * @tc.desc   Testing for the List component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItem04', Level.LEVEL1, async (done: Function) => {
       console.info('[testEllipse03] START');

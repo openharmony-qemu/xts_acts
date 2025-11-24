@@ -43,12 +43,12 @@ export default function BarStateTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BarStateTest_0010
-     * @tc.name      BarStateTest_0010
-     * @tc.desc      get RichEditor barState: BarState.Auto
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   BarStateTest_0010
+     * @tc.number SUB_ACE_BarStateTest_0010
+     * @tc.desc   get RichEditor barState: BarState.Auto
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BarStateTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('[BarStateTest_0010] START');
@@ -61,12 +61,12 @@ export default function BarStateTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BarStateTest_0020
-     * @tc.name      BarStateTest_0020
-     * @tc.desc      set RichEditor barState: BarState.Off
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   BarStateTest_0020
+     * @tc.number SUB_ACE_BarStateTest_0020
+     * @tc.desc   set RichEditor barState: BarState.Off
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BarStateTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('[BarStateTest_0020] START');
@@ -79,12 +79,12 @@ export default function BarStateTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BarStateTest_0030
-     * @tc.name      BarStateTest_0030
-     * @tc.desc      set RichEditor barState: BarState.On
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   BarStateTest_0030
+     * @tc.number SUB_ACE_BarStateTest_0030
+     * @tc.desc   set RichEditor barState: BarState.On
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BarStateTest_0030', Level.LEVEL0, async (done: Function) => {
       console.info('[BarStateTest_0030] START');
@@ -97,12 +97,12 @@ export default function BarStateTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BarStateTest_0040
-     * @tc.name      BarStateTest_0040
-     * @tc.desc      set RichEditor barState: default
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   BarStateTest_0040
+     * @tc.number SUB_ACE_BarStateTest_0040
+     * @tc.desc   set RichEditor barState: default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BarStateTest_0040', Level.LEVEL0, async (done: Function) => {
       console.info('[BarStateTest_0040] START');
@@ -115,12 +115,12 @@ export default function BarStateTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BarStateTest_0050
-     * @tc.name      BarStateTest_0050
-     * @tc.desc      get RichEditor barState: undefined
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   BarStateTest_0050
+     * @tc.number SUB_ACE_BarStateTest_0050
+     * @tc.desc   get RichEditor barState: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BarStateTest_0050', Level.LEVEL0, async (done: Function) => {
       console.info('[BarStateTest_0050] START');

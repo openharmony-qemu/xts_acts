@@ -53,12 +53,12 @@ export default function segmentButtonDirectionTest() {
     });
 
     /**
+     * @tc.name   testSegmentButtonDirection_0100
      * @tc.number testSegmentButtonDirection_0100
-     * @tc.name testSegmentButtonDirection_0100
-     * @tc.desc Test SegmentButton page
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test SegmentButton page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSegmentButtonDirection_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -91,12 +91,12 @@ export default function segmentButtonDirectionTest() {
     });
 
     /**
+     * @tc.name   testSegmentButtonDirection_0200
      * @tc.number testSegmentButtonDirection_0200
-     * @tc.name testSegmentButtonDirection_0200
-     * @tc.desc Test SegmentButton page
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test SegmentButton page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSegmentButtonDirection_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {

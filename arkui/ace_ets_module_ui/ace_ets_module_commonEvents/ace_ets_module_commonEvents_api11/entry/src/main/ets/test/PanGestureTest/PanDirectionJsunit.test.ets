@@ -54,6 +54,14 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       console.info("panDirection after each called");
     });
 
+    /**
+     * @tc.name   panDirectionText_0100
+     * @tc.number panDirectionText_0100
+     * @tc.desc   panDirectionText_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('panDirectionText_0100', Level.LEVEL0, async (done: Function) => {
       console.info('panDirectionText_0100 START');
       let strJson: string = getInspectorByKey('panDirection');

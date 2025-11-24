@@ -65,9 +65,12 @@ export default function Tabs_barMode() {
       });
     });
     /**
+     * @tc.name   testTabsBarModeFixed
      * @tc.number SUB_ACE_TABS_BARMODE_TEST_0100
-     * @tc.name testTabsBarModeFixed
-     * @tc.desc The parent component sets barMode to BarMode.Fixed
+     * @tc.desc   The parent component sets barMode to BarMode.Fixed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTabsBarModeFixed', Level.LEVEL1, async (done: Function) => {
       console.info('[testTabsBarModeFixed] START');
@@ -159,6 +162,14 @@ export default function Tabs_barMode() {
     //     * @tc.name      testTabsBarModeScrollable
     //     * @tc.desc      The parent component sets barMode to BarMode.Scrollable
     //     */
+    /**
+     * @tc.name   testTabsBarModeScrollable
+     * @tc.number testTabsBarModeScrollable
+     * @tc.desc   testTabsBarModeScrollable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     //    it('testTabsBarModeScrollable', Level.LEVEL1, async  (done:Function)=> {
     //      console.info('[testTabsBarModeScrollable] START');
     //      globalThis.value.message.notify({name:'changeBarMode', value:BarMode.Scrollable});

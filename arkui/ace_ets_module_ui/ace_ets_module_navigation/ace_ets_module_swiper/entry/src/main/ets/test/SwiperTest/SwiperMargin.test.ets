@@ -43,14 +43,14 @@ export default function SwiperMarginTest() {
       done()
     });
 
-	/**
-      * @tc.number: ArkUI_Swiper_0100
-      * @tc.name  : ArkUI_Swiper_0100
-      * @tc.desc  : To test the avoidance interface swiper
-      * @tc.level : LEVEL 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   ArkUI_Swiper_0100
+     * @tc.number ArkUI_Swiper_0100
+     * @tc.desc   To test the avoidance interface swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_Swiper_0100', Level.LEVEL1, async (done: Function) => {
       let CASE = 'ArkUI_Swiper_0100'
       console.info(`${SUITE} ${CASE} START`);
@@ -65,14 +65,14 @@ export default function SwiperMarginTest() {
       done();
     });
 
-	/**
-      * @tc.number: ArkUI_Swiper_0200
-      * @tc.name  : ArkUI_Swiper_0200
-      * @tc.desc  : To test the avoidance interface swiper
-      * @tc.level : LEVEL 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   ArkUI_Swiper_0200
+     * @tc.number ArkUI_Swiper_0200
+     * @tc.desc   To test the avoidance interface swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_Swiper_0200', Level.LEVEL1, async (done: Function) => {
       let CASE = 'ArkUI_Swiper_0200'
       console.info(`${SUITE} ${CASE} START`);
@@ -86,14 +86,14 @@ export default function SwiperMarginTest() {
       done();
     });
 
-	/**
-      * @tc.number: ArkUI_Swiper_0300
-      * @tc.name  : ArkUI_Swiper_0300
-      * @tc.desc  : To test the avoidance interface swiper
-      * @tc.level : LEVEL 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   ArkUI_Swiper_0300
+     * @tc.number ArkUI_Swiper_0300
+     * @tc.desc   To test the avoidance interface swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_Swiper_0300', Level.LEVEL1, async (done: Function) => {
       let CASE = 'ArkUI_Swiper_0300'
       console.info(`${SUITE} ${CASE} START`);
@@ -108,14 +108,14 @@ export default function SwiperMarginTest() {
       done();
     });
 
-	/**
-      * @tc.number: ArkUI_Swiper_0400
-      * @tc.name  : ArkUI_Swiper_0400
-      * @tc.desc  : To test the avoidance interface swiper
-      * @tc.level : LEVEL 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   ArkUI_Swiper_0400
+     * @tc.number ArkUI_Swiper_0400
+     * @tc.desc   To test the avoidance interface swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_Swiper_0400', Level.LEVEL1, async (done: Function) => {
       let CASE = 'ArkUI_Swiper_0400'
       console.info(`${SUITE} ${CASE} START`);

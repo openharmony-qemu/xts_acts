@@ -56,14 +56,14 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       console.info("gestureParallel after each called");
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_testgestureParallel0001
-    * @tc.name       : testgestureParallel0001
-    * @tc.desc       : test
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testgestureParallel0001
+     * @tc.number SUB_ARKUI_testgestureParallel0001
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testgestureParallel0001', Level.LEVEL0, async (done: Function) => {
       console.info('gestureParallel testgestureParallel0001 START');
       await Utils.sleep(2000);

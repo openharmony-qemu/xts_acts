@@ -43,13 +43,15 @@ export default function tabsOnContentWillChangeIndex15JsunitTest() {
       console.info("tabsOnContentWillChangeIndex15JsunitTest after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_UI_COMPONENT_NAV_TABS_INTERCEPTION_0150
-     * @tc.name   tabsOnContentWillChangeJsunitTest_0150
-     * @tc.desc   it can not get index 3 page when trigger the OnContentWillChange interface and  click array
-     * @tc.level  3
-     */
 
+    /**
+     * @tc.name   tabsOnContentWillChangeJsunitTest_0150
+     * @tc.number tabsOnContentWillChangeJsunitTest_0150
+     * @tc.desc   tabsOnContentWillChangeJsunitTest_0150
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('tabsOnContentWillChangeJsunitTest_0150', Level.LEVEL1, async (done: Function) => {
       console.info('tabsOnContentWillChangeIndex15JsunitTest START');
       // add data

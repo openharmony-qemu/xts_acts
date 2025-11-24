@@ -46,9 +46,12 @@ export default function Grid_RowCol_maxCount() {
       console.info("Grid_RowCol_maxCount after each called")
     });
     /**
+     * @tc.name   testGridRowColGridMaxCount
      * @tc.number SUB_ACE_GRID_GRIDTEMPLATESALLSET_GRIDCHANGE_1000
-     * @tc.name testGridRowColGridMaxCount
-     * @tc.desc The Grid layout maxCount property does not take effect
+     * @tc.desc   The Grid layout maxCount property does not take effect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridRowColGridMaxCount',  Level.LEVEL0, async (done: Function) => {
       console.info('[testGridRowColGridMaxCount] START');

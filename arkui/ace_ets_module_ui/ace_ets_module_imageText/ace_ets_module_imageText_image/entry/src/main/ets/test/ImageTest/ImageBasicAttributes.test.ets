@@ -54,12 +54,12 @@ export default function ImageBasicAttributesTest() {
     });
 
     /**
-     * @tc.number: ImageBasicAttributesTest_010
-     * @tc.name  : ImageBasicAttributesTest_010
-     * @tc.desc  : aceEtsTest
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ImageBasicAttributesTest_010
+     * @tc.number ImageBasicAttributesTest_010
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageBasicAttributesTest_010', Level.LEVEL1, async (done: Function) => {
       console.info('ImageBasicAttributesTest_010 START');
@@ -89,12 +89,12 @@ export default function ImageBasicAttributesTest() {
     });
 
     /**
-     * @tc.number: ImageBasicAttributesTest_020
-     * @tc.name  : ImageBasicAttributesTest_020
-     * @tc.desc  : aceEtsTest
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ImageBasicAttributesTest_020
+     * @tc.number ImageBasicAttributesTest_020
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageBasicAttributesTest_020', Level.LEVEL1, async (done: Function) => {
       console.info('ImageBasicAttributesTest_020 START');
@@ -113,12 +113,12 @@ export default function ImageBasicAttributesTest() {
     });
 
     /**
-     * @tc.number: ImageBasicAttributesTest_030
-     * @tc.name  : ImageBasicAttributesTest_030
-     * @tc.desc  : aceEtsTest
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ImageBasicAttributesTest_030
+     * @tc.number ImageBasicAttributesTest_030
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageBasicAttributesTest_030', Level.LEVEL1, async (done: Function) => {
       console.info('ImageBasicAttributesTest_030 START');
@@ -135,12 +135,12 @@ export default function ImageBasicAttributesTest() {
     });
 
     /**
-     * @tc.number: ImageBasicAttributesTest_040
-     * @tc.name  : ImageBasicAttributesTest_040
-     * @tc.desc  : aceEtsTest
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ImageBasicAttributesTest_040
+     * @tc.number ImageBasicAttributesTest_040
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageBasicAttributesTest_040', Level.LEVEL1, async (done: Function) => {
       console.info('ImageBasicAttributesTest_040 START');
@@ -157,12 +157,12 @@ export default function ImageBasicAttributesTest() {
     });
 
     /**
-     * @tc.number: ImageBasicAttributesTest_050
-     * @tc.name  : ImageBasicAttributesTest_050
-     * @tc.desc  : aceEtsTest
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ImageBasicAttributesTest_050
+     * @tc.number ImageBasicAttributesTest_050
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageBasicAttributesTest_050', Level.LEVEL1, async (done: Function) => {
       console.info('ImageBasicAttributesTest_050 START');

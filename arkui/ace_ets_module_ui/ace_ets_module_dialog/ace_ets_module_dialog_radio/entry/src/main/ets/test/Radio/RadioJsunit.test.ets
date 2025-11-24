@@ -44,12 +44,12 @@ export default function RadioJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_RadioJsunit_0100
-     * @tc.name: RadioJsunit_0100
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   RadioJsunit_0100
+     * @tc.number SUB_ARKUI_API_RadioJsunit_0100
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RadioJsunit_0100', Level.LEVEL1, async (done: Function) => {
       // Get the information of the Radio component
@@ -75,12 +75,12 @@ export default function RadioJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_RadioJsunit_0200
-     * @tc.name: RadioJsunit_0200
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   RadioJsunit_0200
+     * @tc.number SUB_ARKUI_API_RadioJsunit_0200
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RadioJsunit_0200', Level.LEVEL1, async (done: Function) => {
       // Verify Radio Components Click to select
@@ -101,12 +101,12 @@ export default function RadioJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_RadioJsunit_0300
-     * @tc.name: RadioJsunit_0300
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   RadioJsunit_0300
+     * @tc.number SUB_ARKUI_API_RadioJsunit_0300
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RadioJsunit_0300', Level.LEVEL1, async (done: Function) => {
       // Verify that the radio components are in the same group Click to select only one of the three
@@ -142,12 +142,12 @@ export default function RadioJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_RadioJsunit_0400
-     * @tc.name: RadioJsunit_0400
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   RadioJsunit_0400
+     * @tc.number SUB_ARKUI_API_RadioJsunit_0400
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RadioJsunit_0400', Level.LEVEL1, async (done: Function) => {
       // Verify onChange event of of component Radio

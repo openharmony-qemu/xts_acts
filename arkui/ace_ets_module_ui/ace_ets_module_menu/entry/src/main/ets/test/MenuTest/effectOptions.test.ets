@@ -42,12 +42,12 @@ export default function effectOptions() {
     });
 
     /**
-     * @tc.number: EffectOptionsTest_0101
-     * @tc.name  : EffectOptionsTest_0101
-     * @tc.desc  : Menu component interface backgroundEffectOptions
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   EffectOptionsTest_0101
+     * @tc.number EffectOptionsTest_0101
+     * @tc.desc   Menu component interface backgroundEffectOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('EffectOptionsTest_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('EffectOptionsTest_0101 START');
@@ -88,12 +88,12 @@ export default function effectOptions() {
     });
 
     /**
-     * @tc.number: EffectOptionsTest_0102
-     * @tc.name  : EffectOptionsTest_0102
-     * @tc.desc  : Menu component interface backgroundEffectOptions
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   EffectOptionsTest_0102
+     * @tc.number EffectOptionsTest_0102
+     * @tc.desc   Menu component interface backgroundEffectOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('EffectOptionsTest_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('EffectOptionsTest_0102 START');
@@ -120,12 +120,12 @@ export default function effectOptions() {
     });
 
     /**
-     * @tc.number: EffectOptionsTest_0103
-     * @tc.name  : EffectOptionsTest_0103
-     * @tc.desc  : Menu component interface backgroundEffectOptions
-     * @tc.level : Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   EffectOptionsTest_0103
+     * @tc.number EffectOptionsTest_0103
+     * @tc.desc   Menu component interface backgroundEffectOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('EffectOptionsTest_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('EffectOptionsTest_0103 START');

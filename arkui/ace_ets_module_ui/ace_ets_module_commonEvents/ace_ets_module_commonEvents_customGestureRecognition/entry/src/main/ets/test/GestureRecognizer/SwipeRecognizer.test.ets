@@ -46,11 +46,13 @@ export default function SwipeRecognizerTest() {
     });
 
     /**
-    * @tc.number :SUB_effective_SwipeRecognizer_0100
-    * @tc.name  : SwipeRecognizer_0100
-    * @tc.desc  : To test whether SwipeRecognizer is effective.
-    * @tc.level : Level 0
-    */
+     * @tc.name   SwipeRecognizer_0100
+     * @tc.number SUB_effective_SwipeRecognizer_0100
+     * @tc.desc   To test whether SwipeRecognizer is effective.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SwipeRecognizer_0100', Level.LEVEL0, async (done: Function) => {
       console.info('SwipeRecognizer_0100 START');
       let driver = Driver.create();

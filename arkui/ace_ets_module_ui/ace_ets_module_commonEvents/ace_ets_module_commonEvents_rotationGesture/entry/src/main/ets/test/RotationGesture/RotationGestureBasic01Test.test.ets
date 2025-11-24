@@ -47,12 +47,12 @@ export default function RotationGestureBasic01Test() {
     });
 
     /**
-     * @tc.number    SUB_RotationGestureBasic01Test_0010
-     * @tc.name      RotationGestureBasic01Test_0010
-     * @tc.desc      api test RotationGesture
-     * @tc.level:    Level
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RotationGestureBasic01Test_0010
+     * @tc.number SUB_RotationGestureBasic01Test_0010
+     * @tc.desc   api test RotationGesture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RotationGestureBasic01Test_0010', Level.LEVEL0, async (done: Function) => {
       console.info('RotationGestureBasic01Test_0010 START');

@@ -42,12 +42,12 @@ export default function refreshString() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RefreshString_0100
-     * @tc.name      refreshString_0100
-     * @tc.desc      test list property
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   refreshString_0100
+     * @tc.number SUB_ACE_RefreshString_0100
+     * @tc.desc   test list property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('refreshString_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[refreshString_0100] START');
@@ -76,12 +76,12 @@ export default function refreshString() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RefreshString_0200
-     * @tc.name      refreshString_0200
-     * @tc.desc      test list property
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   refreshString_0200
+     * @tc.number SUB_ACE_RefreshString_0200
+     * @tc.desc   test list property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('refreshString_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[refreshString_0200] START');
@@ -110,12 +110,12 @@ export default function refreshString() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RefreshString_0300
-     * @tc.name      refreshString_0300
-     * @tc.desc      test list property
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   refreshString_0300
+     * @tc.number SUB_ACE_RefreshString_0300
+     * @tc.desc   test list property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('refreshString_0300', Level.LEVEL1, async (done: Function) => {
       console.info('[refreshString_0300] START');
@@ -144,12 +144,12 @@ export default function refreshString() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RefreshString_0400
-     * @tc.name      refreshString_0400
-     * @tc.desc      test list property
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   refreshString_0400
+     * @tc.number SUB_ACE_RefreshString_0400
+     * @tc.desc   test list property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('refreshString_0400', Level.LEVEL1, async (done: Function) => {
       console.info('[refreshString_0400] START');
@@ -178,12 +178,12 @@ export default function refreshString() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RefreshString_0500
-     * @tc.name      refreshString_0500
-     * @tc.desc      test list property
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   refreshString_0500
+     * @tc.number SUB_ACE_RefreshString_0500
+     * @tc.desc   test list property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('refreshString_0500', Level.LEVEL1, async (done: Function) => {
       console.info('[refreshString_0500] START');
@@ -212,12 +212,12 @@ export default function refreshString() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RefreshString_0600
-     * @tc.name      refreshString_0600
-     * @tc.desc      test list property
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   refreshString_0600
+     * @tc.number SUB_ACE_RefreshString_0600
+     * @tc.desc   test list property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('refreshString_0600', Level.LEVEL1, async (done: Function) => {
       console.info('[refreshString_0600] START');

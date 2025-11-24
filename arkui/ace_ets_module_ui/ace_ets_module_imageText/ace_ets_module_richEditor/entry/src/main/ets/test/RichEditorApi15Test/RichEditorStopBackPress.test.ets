@@ -42,12 +42,12 @@ export default function RichEditorStopBackPressTest() {
     });
     
     /**
-     * @tc.number    SUB_ACE_RichEditorStopBackPressTest_0010
-     * @tc.name      RichEditorStopBackPressTest_0010
-     * @tc.desc      test RichEditor StopBackPress: true
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+     * @tc.name   RichEditorStopBackPressTest_0010
+     * @tc.number SUB_ACE_RichEditorStopBackPressTest_0010
+     * @tc.desc   test RichEditor StopBackPress: true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditorStopBackPressTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('[RichEditorStopBackPressTest_0010] START');
@@ -60,12 +60,12 @@ export default function RichEditorStopBackPressTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RichEditorStopBackPressTest_0020
-     * @tc.name      RichEditorStopBackPressTest_0020
-     * @tc.desc      test RichEditor StopBackPress: false
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RichEditorStopBackPressTest_0020
+     * @tc.number SUB_ACE_RichEditorStopBackPressTest_0020
+     * @tc.desc   test RichEditor StopBackPress: false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditorStopBackPressTest_0020', Level.LEVEL2, async (done: Function) => {
       console.info('[RichEditorStopBackPressTest_0020] START');
@@ -78,12 +78,12 @@ export default function RichEditorStopBackPressTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RichEditorStopBackPressTest_0030
-     * @tc.name      RichEditorStopBackPressTest_0030
-     * @tc.desc      test RichEditor StopBackPress: default
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RichEditorStopBackPressTest_0030
+     * @tc.number SUB_ACE_RichEditorStopBackPressTest_0030
+     * @tc.desc   test RichEditor StopBackPress: default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditorStopBackPressTest_0030', Level.LEVEL2, async (done: Function) => {
       console.info('[RichEditorStopBackPressTest_0030] START');
@@ -96,12 +96,12 @@ export default function RichEditorStopBackPressTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RichEditorStopBackPressTest_0040
-     * @tc.name      RichEditorStopBackPressTest_0040
-     * @tc.desc      test RichEditor StopBackPress: undefined
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RichEditorStopBackPressTest_0040
+     * @tc.number SUB_ACE_RichEditorStopBackPressTest_0040
+     * @tc.desc   test RichEditor StopBackPress: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditorStopBackPressTest_0040', Level.LEVEL2, async (done: Function) => {
       console.info('[RichEditorStopBackPressTest_0040] START');

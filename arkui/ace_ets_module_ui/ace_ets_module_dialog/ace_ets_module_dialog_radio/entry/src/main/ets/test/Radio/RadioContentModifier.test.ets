@@ -48,12 +48,12 @@ export default function RadioContentModifier() {
 
 
     /**
-     * @tc.number: SUB_ARKUI_API_RadioContentModifier_001
-     * @tc.name: RadioContentModifier_001
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   RadioContentModifier_001
+     * @tc.number SUB_ARKUI_API_RadioContentModifier_001
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RadioContentModifier_001', Level.LEVEL1, async (done: Function) => {
       console.info('[RadioContentModifier_001] START');

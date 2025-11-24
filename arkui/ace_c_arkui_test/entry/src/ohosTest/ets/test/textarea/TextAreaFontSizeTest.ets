@@ -26,39 +26,39 @@ export default function textAreaFontSizeTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTAREA_FONTSIZE_0100
-     * @tc.name       : testTextAreaFontSize001
-     * @tc.desc       : testing fontSize for TextArea with value of 30vp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextAreaFontSize001
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_FONTSIZE_0100
+     * @tc.desc   testing fontSize for TextArea with value of 30vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaFontSize001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaFontSize001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTAREA_FONTSIZE_0200
-     * @tc.name       : testTextAreaFontSize002
-     * @tc.desc       : testing fontSize for TextArea with value of 0vp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextAreaFontSize002
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_FONTSIZE_0200
+     * @tc.desc   testing fontSize for TextArea with value of 0vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaFontSize002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaFontSize002()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTAREA_FONTSIZE_0300
-     * @tc.name       : testTextAreaFontSize003
-     * @tc.desc       : testing fontSize for TextArea with value of -100vp
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextAreaFontSize003
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_FONTSIZE_0300
+     * @tc.desc   testing fontSize for TextArea with value of -100vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaFontSize003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaFontSize003()).assertEqual(0)

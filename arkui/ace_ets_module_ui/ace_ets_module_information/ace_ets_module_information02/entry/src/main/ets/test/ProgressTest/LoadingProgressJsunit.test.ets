@@ -42,12 +42,12 @@ export default function LoadingProgressJsunit() {
       done();
     });
     /**
-     * @tc.number loadingProgressJsunit_0100
      * @tc.name   loadingProgressJsunit_0100
-     * @tc.desc     Test loadingProgress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.number loadingProgressJsunit_0100
+     * @tc.desc   Test loadingProgress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('loadingProgressJsunit_0100', Level.LEVEL2, async (done: Function) => {
        console.info('loadingProgressJsunit_0100 START');
@@ -59,14 +59,14 @@ export default function LoadingProgressJsunit() {
        expect(obj.$attrs.color).assertEqual('#FF0000FF');
        done();
     });
-    /**
-     * @tc.number loadingProgressJsunit_0200
-     * @tc.name   loadingProgressJsunit_0200
-     * @tc.desc   Test loadingProgress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
+   /**
+    * @tc.name   loadingProgressJsunit_0200
+    * @tc.number loadingProgressJsunit_0200
+    * @tc.desc   Test loadingProgress
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL2
+    */
    it('loadingProgressJsunit_0200', Level.LEVEL2, async (done: Function) => {
       console.info('loadingProgressJsunit_0200 START');
       await CommonFunc.sleep(1000);
@@ -80,14 +80,14 @@ export default function LoadingProgressJsunit() {
       expect(obj.$attrs.color).assertEqual('#FF008000');
       done();
     });
-    /**
-     * @tc.number   loadingProgressJsunit_0300
-     * @tc.name     loadingProgressJsunit_0300
-     * @tc.desc     Test loadingProgress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
+  /**
+   * @tc.name   loadingProgressJsunit_0300
+   * @tc.number loadingProgressJsunit_0300
+   * @tc.desc   Test loadingProgress
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
   it('loadingProgressJsunit_0300', Level.LEVEL2, async (done: Function) => {
       console.info('loadingProgressJsunit_0300 START');
       await CommonFunc.sleep(1000);

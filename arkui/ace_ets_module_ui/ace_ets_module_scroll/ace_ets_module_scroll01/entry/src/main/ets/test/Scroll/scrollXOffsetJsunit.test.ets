@@ -43,12 +43,12 @@ export default function scrollXOffsetJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ACE_SCROLL_scrollXOffsetJsunit_0100
-     * @tc.name: scrollXOffsetJsunit_0100
-     * @tc.desc: Trigger onWillScroll and onDidScroll callbacks
-     * @tc.level: Level 1
-     * @tc.type:
-     * @tc.size:
+     * @tc.name   scrollXOffsetJsunit_0100
+     * @tc.number SUB_ACE_SCROLL_scrollXOffsetJsunit_0100
+     * @tc.desc   Trigger onWillScroll and onDidScroll callbacks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('scrollXOffsetJsunit_0100', Level.LEVEL1, async (done: Function) => {
       console.info('scrollXOffsetJsunit_0100 START');

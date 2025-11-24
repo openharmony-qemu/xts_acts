@@ -44,10 +44,13 @@ export default function swiperCurveJsunit() {
       console.info("swiperCurve after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testswiperCurve0001
-     * @tc.desc         aceswiperCurveEtsTest0001
+    /**
+     * @tc.name   testswiperCurve0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   aceswiperCurveEtsTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testswiperCurve0001', Level.LEVEL1, async () => {
       console.info('swiperCurve testswiperCurve0001 START');
@@ -60,14 +63,14 @@ export default function swiperCurveJsunit() {
       console.info("[testswiperCurve0001] curve value :" + JSON.parse(strJson).$attrs.curve);
 
     });
-	/**
-      * @tc.number: testswiperCurve0002
-      * @tc.name  : testswiperCurve0002
-      * @tc.desc  : aceswiperCurveEtsTest0002
-      * @tc.level : LEVEL 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   testswiperCurve0002
+     * @tc.number testswiperCurve0002
+     * @tc.desc   aceswiperCurveEtsTest0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testswiperCurve0002', Level.LEVEL1, async () => {
       console.info('swiperCurve testswiperCurve0002 START');
       await Utils.sleep(2000);
@@ -80,10 +83,13 @@ export default function swiperCurveJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-     * @tc.name         testswiperCurve0003
-     * @tc.desc         aceswiperCurveEtsTest0003
+    /**
+     * @tc.name   testswiperCurve0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   aceswiperCurveEtsTest0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testswiperCurve0003', Level.LEVEL1, async () => {
       console.info('swiperCurve testswiperCurve0003 START');
@@ -97,10 +103,13 @@ export default function swiperCurveJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0004
-     * @tc.name         testswiperCurve0004
-     * @tc.desc         aceswiperCurveEtsTest0004
+    /**
+     * @tc.name   testswiperCurve0004
+     * @tc.number SUB_ACE_BASIC_ETS_API_0004
+     * @tc.desc   aceswiperCurveEtsTest0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testswiperCurve0004', Level.LEVEL1, async () => {
       console.info('swiperCurve testswiperCurve0004 START');
@@ -114,10 +123,13 @@ export default function swiperCurveJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0005
-     * @tc.name         testswiperCurve0005
-     * @tc.desc         aceswiperCurveEtsTest0005
+    /**
+     * @tc.name   testswiperCurve0005
+     * @tc.number SUB_ACE_BASIC_ETS_API_0005
+     * @tc.desc   aceswiperCurveEtsTest0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testswiperCurve0005', Level.LEVEL1, async () => {
       console.info('swiperCurve testswiperCurve0005 START');
@@ -131,10 +143,13 @@ export default function swiperCurveJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0006
-     * @tc.name         testswiperCurve0006
-     * @tc.desc         aceswiperCurveEtsTest0006
+    /**
+     * @tc.name   testswiperCurve0006
+     * @tc.number SUB_ACE_BASIC_ETS_API_0006
+     * @tc.desc   aceswiperCurveEtsTest0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testswiperCurve0006', Level.LEVEL1, async () => {
       console.info('swiperCurve testswiperCurve0006 START');
@@ -148,10 +163,13 @@ export default function swiperCurveJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0007
-     * @tc.name         testswiperCurve0007
-     * @tc.desc         aceswiperCurveEtsTest0007
+    /**
+     * @tc.name   testswiperCurve0007
+     * @tc.number SUB_ACE_BASIC_ETS_API_0007
+     * @tc.desc   aceswiperCurveEtsTest0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testswiperCurve0007', Level.LEVEL1, async () => {
       console.info('swiperCurve testswiperCurve0007 START');
@@ -165,10 +183,13 @@ export default function swiperCurveJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0008
-     * @tc.name         testswiperCurve0008
-     * @tc.desc         aceswiperCurveEtsTest0008
+    /**
+     * @tc.name   testswiperCurve0008
+     * @tc.number SUB_ACE_BASIC_ETS_API_0008
+     * @tc.desc   aceswiperCurveEtsTest0008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testswiperCurve0008', Level.LEVEL1, async () => {
       console.info('swiperCurve testswiperCurve0008 START');
@@ -182,10 +203,13 @@ export default function swiperCurveJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0009
-     * @tc.name         testswiperCurve0009
-     * @tc.desc         aceswiperCurveEtsTest0009
+    /**
+     * @tc.name   testswiperCurve0009
+     * @tc.number SUB_ACE_BASIC_ETS_API_0009
+     * @tc.desc   aceswiperCurveEtsTest0009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testswiperCurve0009', Level.LEVEL1, async () => {
       console.info('swiperCurve testswiperCurve0009 START');
@@ -199,10 +223,13 @@ export default function swiperCurveJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0010
-     * @tc.name         testswiperCurve0010
-     * @tc.desc         aceswiperCurveEtsTest0010
+    /**
+     * @tc.name   testswiperCurve00010
+     * @tc.number SUB_ACE_BASIC_ETS_API_0010
+     * @tc.desc   aceswiperCurveEtsTest0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testswiperCurve00010', Level.LEVEL1, async () => {
       console.info('swiperCurve testswiperCurve00010 START');
@@ -217,14 +244,14 @@ export default function swiperCurveJsunit() {
     });
 
     
-	/**
-      * @tc.number: testswiperCurve00011
-      * @tc.name  : testswiperCurve00011
-      * @tc.desc  : To test the avoidance interface swiper
-      * @tc.level : LEVEL 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   testswiperCurve00011
+     * @tc.number testswiperCurve00011
+     * @tc.desc   To test the avoidance interface swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testswiperCurve00011', Level.LEVEL1, async () => {
       console.info('swiperCurve testswiperCurve00011 START');
       await Utils.sleep(2000);

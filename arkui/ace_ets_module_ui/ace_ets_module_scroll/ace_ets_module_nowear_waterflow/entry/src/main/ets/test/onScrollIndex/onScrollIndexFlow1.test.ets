@@ -46,12 +46,12 @@ export default function onScrollIndexFlow1() {
     });
 
     /**
-     * @tc.number    onScrollIndexFlow1_001
-     * @tc.name      onScrollIndexFlow1_001
-     * @tc.desc      Scroll the FlowItem with the mouse wheel
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   onScrollIndexFlow1_0100
+     * @tc.number onScrollIndexFlow1_001
+     * @tc.desc   Scroll the FlowItem with the mouse wheel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('onScrollIndexFlow1_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[onScrollIndexFlow1_0100] START');

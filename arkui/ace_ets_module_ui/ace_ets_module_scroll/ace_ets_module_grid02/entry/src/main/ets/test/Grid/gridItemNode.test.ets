@@ -48,13 +48,13 @@ export default function GridItemNodeTest() {
     })
 
      /**
-     * @tc.number    gridItemNode0100
-     * @tc.name      gridItemNode0100
-     * @tc.desc      frameNode: createNodegridItemToWindow
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
-     */
+      * @tc.name   gridItemNode0100
+      * @tc.number gridItemNode0100
+      * @tc.desc   frameNode: createNodegridItemToWindow
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('gridItemNode0100', Level.LEVEL0, async (done: Function) => {
 
       let tagName = 'gridItemNode0100';

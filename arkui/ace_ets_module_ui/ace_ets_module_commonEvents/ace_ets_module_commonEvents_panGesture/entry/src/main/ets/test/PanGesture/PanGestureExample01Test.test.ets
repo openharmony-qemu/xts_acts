@@ -47,12 +47,12 @@ export default function PanGestureExample01Test() {
     });
 
     /**
-     * @tc.number    PanGestureExample01Test_0010
-     * @tc.name      PanGestureExample01Test_0010
-     * @tc.desc      api test TapGesture
-     * @tc.level:    Level
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   PanGestureExample01Test_0010
+     * @tc.number PanGestureExample01Test_0010
+     * @tc.desc   api test TapGesture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PanGestureExample01Test_0010', Level.LEVEL0, async (done: Function) => {
       console.info('PanGestureExample01Test_0010 START');

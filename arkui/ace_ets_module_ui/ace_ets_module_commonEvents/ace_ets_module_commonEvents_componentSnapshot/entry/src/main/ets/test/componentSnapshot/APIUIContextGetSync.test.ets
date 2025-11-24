@@ -43,10 +43,12 @@ export default function APIUIContextGetSync() {
       console.info("APIUIContextGetSync after each called");
     });
     /**
-     * @tc.number    APIUIContextGetSync_0100
-     * @tc.name      APIUIContextGetSync_0100
-     * @tc.desc      Test api getSync of componentSnapshot
-     * @tc.level     Level 2
+     * @tc.name   APIUIContextGetSync_0100
+     * @tc.number APIUIContextGetSync_0100
+     * @tc.desc   Test api getSync of componentSnapshot
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APIUIContextGetSync_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[APIUIContextGetSync_0100] START');

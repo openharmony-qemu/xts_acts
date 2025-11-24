@@ -62,11 +62,13 @@ export default function CustomLayoutLayoutChildTest() {
       console.info("CustomLayoutLayoutChildTest after each called");
     });
 
-    /*
-     * @tc.number    CustomLayoutLayoutChildTest_0010
-     * @tc.name      CustomLayoutLayoutChildTest_0010
-     * @tc.desc      test LayoutChild id & name
-     * @tc.level     Level 2
+    /**
+     * @tc.name   CustomLayoutLayoutChildTest_0010
+     * @tc.number CustomLayoutLayoutChildTest_0010
+     * @tc.desc   test LayoutChild id & name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('CustomLayoutLayoutChildTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('[CustomLayoutLayoutChildTest_0010] START');

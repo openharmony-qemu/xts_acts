@@ -51,12 +51,12 @@ export default function StyleStringEqualsTest() {
       AppStorage.delete('equalsResult2')
     })
     /**
-     * @tc.number    StyleStringEqualsTest_0100
-     * @tc.name      StyleStringEqualsTest_0100
-     * @tc.desc      Test Equals function in StyleString.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   StyleStringEqualsTest_0100
+     * @tc.number StyleStringEqualsTest_0100
+     * @tc.desc   Test Equals function in StyleString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('StyleStringEqualsTest_0100', Level.LEVEL2, async (done: Function) => {
       // Test stop
@@ -72,12 +72,12 @@ export default function StyleStringEqualsTest() {
       done();
     });
     /**
-     * @tc.number    StyleStringEqualsTest_0200
-     * @tc.name      StyleStringEqualsTest_0200
-     * @tc.desc      Test Equals function in StyleString.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   StyleStringEqualsTest_0200
+     * @tc.number StyleStringEqualsTest_0200
+     * @tc.desc   Test Equals function in StyleString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('StyleStringEqualsTest_0200', Level.LEVEL2, async (done: Function) => {
       // Test stop

@@ -22,13 +22,13 @@ export default function listScrollPageTest() {
 
   describe('ListScrollPageTest', () => {
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SCROLL_PAGE_0001
-     * @tc.name       : testListScrollPage001
-     * @tc.desc       : testing scroll edge for list with {0 0} value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListScrollPage001
+     * @tc.number SUB_ARKUI_CAPI_LIST_SCROLL_PAGE_0001
+     * @tc.desc   testing scroll edge for list with {0 0} value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListScrollPage001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`list/ListScrollPageTest`);
@@ -46,13 +46,13 @@ export default function listScrollPageTest() {
       expect(state3Data[state3Data.length-1] == 6).assertEqual(true)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SCROLL_PAGE_0002
-     * @tc.name       : testListScrollPage002
-     * @tc.desc       : testing scroll edge for list with {1 1} value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListScrollPage002
+     * @tc.number SUB_ARKUI_CAPI_LIST_SCROLL_PAGE_0002
+     * @tc.desc   testing scroll edge for list with {1 1} value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListScrollPage002', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`list/ListScrollPageTest`);

@@ -44,10 +44,13 @@ export default function navigatorTargetJsunit() {
       console.info("navigatorTarget after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testnavigatorTarget0001
-     * @tc.desic         acenavigatorTargetEtsTest0001
+    /**
+     * @tc.name   testnavigatorTarget0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testnavigatorTarget0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testnavigatorTarget0001',  Level.LEVEL0, async () => {
       console.info('navigatorTarget testnavigatorTarget0001 START');

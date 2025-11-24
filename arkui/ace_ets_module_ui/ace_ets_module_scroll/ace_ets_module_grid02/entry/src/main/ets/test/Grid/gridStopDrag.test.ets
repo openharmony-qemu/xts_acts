@@ -44,12 +44,12 @@ export default function gridStopDrag() {
     });
 
     /**
-     * @tc.number    gridStopDrag_001
-     * @tc.name      gridStopDrag_0100
-     * @tc.desc      Triggering onWillStopDragging when the Grid component moves horizontally and leaves the hand.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   gridStopDrag_0100
+     * @tc.number gridStopDrag_001
+     * @tc.desc   Triggering onWillStopDragging when the Grid component moves horizontally and leaves the hand.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('gridStopDrag_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[gridStopDrag_0100] START');
@@ -81,12 +81,12 @@ export default function gridStopDrag() {
     });
 
     /**
-     * @tc.number    gridStopDrag_002
-     * @tc.name      gridStopDrag_0200
-     * @tc.desc      Triggering onWillStopDragging when Grid component moves vertically away from hand.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   gridStopDrag_0200
+     * @tc.number gridStopDrag_002
+     * @tc.desc   Triggering onWillStopDragging when Grid component moves vertically away from hand.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('gridStopDrag_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[gridStopDrag_0200] START');

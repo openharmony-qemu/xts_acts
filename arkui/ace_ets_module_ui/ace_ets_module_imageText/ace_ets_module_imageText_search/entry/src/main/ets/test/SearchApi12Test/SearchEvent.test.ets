@@ -42,15 +42,15 @@ export default function SearchEvent() {
       console.info("SearchEvent after each called");
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_SEARCH_DELETE_CALLBACK_0010
-     * @tc.name       : SearchEvent_001
-     * @tc.desc       : onWillInsert Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   SearchEvent_001
+     * @tc.number SearchEvent_001
+     * @tc.desc   SearchEvent_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SearchEvent_001',  Level.LEVEL3, async (done: Function) => {
       console.info('[SearchEvent_001] START');
 
@@ -76,15 +76,15 @@ export default function SearchEvent() {
 
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_SEARCH_DELETE_CALLBACK_0020
-     * @tc.name       : SearchEvent_002
-     * @tc.desc       : onWillInsert Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   SearchEvent_002
+     * @tc.number SearchEvent_002
+     * @tc.desc   SearchEvent_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SearchEvent_002',  Level.LEVEL3, async (done: Function) => {
       console.info('[SearchEvent_002] START');
 
@@ -111,15 +111,15 @@ export default function SearchEvent() {
 
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_SEARCH_DELETE_CALLBACK_0030
-     * @tc.name       : SearchEvent_003
-     * @tc.desc       : onWillInsert Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   SearchEvent_003
+     * @tc.number SearchEvent_003
+     * @tc.desc   SearchEvent_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SearchEvent_003',  Level.LEVEL3, async (done: Function) => {
       console.info('[SearchEvent_003] START');
 
@@ -146,15 +146,15 @@ export default function SearchEvent() {
 
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_SEARCH_DELETE_CALLBACK_0040
-     * @tc.name       : SearchEvent_004
-     * @tc.desc       : onWillInsert Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   SearchEvent_004
+     * @tc.number SearchEvent_004
+     * @tc.desc   SearchEvent_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SearchEvent_004',  Level.LEVEL0, async (done: Function) => {
       console.info('[SearchEvent_004] START');
 
@@ -181,15 +181,15 @@ export default function SearchEvent() {
 
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_SEARCH_DELETE_CALLBACK_0090
-     * @tc.name       : SearchEvent_005
-     * @tc.desc       : onWillInsert Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   SearchEvent_005
+     * @tc.number SearchEvent_005
+     * @tc.desc   SearchEvent_005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SearchEvent_005',  Level.LEVEL0, async (done: Function) => {
       console.info('[SearchEvent_005] START');
 

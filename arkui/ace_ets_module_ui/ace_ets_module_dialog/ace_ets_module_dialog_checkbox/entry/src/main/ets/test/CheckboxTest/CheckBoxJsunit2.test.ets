@@ -44,12 +44,12 @@ export default function CheckBoxJsunit2() {
     });
 
     /**
-     * @tc.number testCheckbox_100
      * @tc.name   testCheckbox_100
+     * @tc.number testCheckbox_100
      * @tc.desc   test checkBox
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckbox_100', Level.LEVEL1, async (done: Function) => {
       console.info('[testCheckbox_100] START');
@@ -62,12 +62,12 @@ export default function CheckBoxJsunit2() {
     });
 
     /**
-     * @tc.number testCheckbox_200
      * @tc.name   testCheckbox_200
+     * @tc.number testCheckbox_200
      * @tc.desc   test checkBox
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckbox_200', Level.LEVEL1, async (done: Function) => {
       console.info('[testCheckbox_200] START');
@@ -80,12 +80,12 @@ export default function CheckBoxJsunit2() {
     });
 
     /**
-     * @tc.number testCheckbox_300
      * @tc.name   testCheckbox_300
+     * @tc.number testCheckbox_300
      * @tc.desc   test checkBox
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckbox_300', Level.LEVEL1, async (done: Function) => {
       console.info('[testCheckbox_300] START');
@@ -100,12 +100,12 @@ export default function CheckBoxJsunit2() {
     });
 
     /**
-     * @tc.number testCheckbox_400
      * @tc.name   testCheckbox_400
+     * @tc.number testCheckbox_400
      * @tc.desc   test checkBox
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckbox_400', Level.LEVEL1, async (done: Function) => {
       console.info('[testCheckbox_400] START');

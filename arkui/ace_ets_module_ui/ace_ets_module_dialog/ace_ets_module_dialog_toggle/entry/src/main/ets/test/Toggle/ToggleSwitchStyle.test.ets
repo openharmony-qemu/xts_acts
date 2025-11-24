@@ -48,12 +48,12 @@ export default function ToggleSwitchStyle() {
 
 
     /**
-     * @tc.number: SUB_ARKUI_API_ToggleSwitchStyle_001
-     * @tc.name: ToggleSwitchStyle_001
-     * @tc.desc: ToggleAPI 
-     * @tc.level: Level 1
-     * @tc.type : Toggle
-     * @tc.size : ToggleTest
+     * @tc.name   ToggleSwitchStyle_001
+     * @tc.number SUB_ARKUI_API_ToggleSwitchStyle_001
+     * @tc.desc   ToggleAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ToggleSwitchStyle_001', Level.LEVEL2, async (done: Function) => {
       console.info('[ToggleSwitchStyle_001] START');

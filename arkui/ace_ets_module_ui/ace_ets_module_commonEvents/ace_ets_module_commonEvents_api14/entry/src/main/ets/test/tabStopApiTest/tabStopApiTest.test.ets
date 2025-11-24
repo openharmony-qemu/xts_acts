@@ -43,12 +43,12 @@ export default function tabStopApiTest() {
     });
 
     /**
+     * @tc.name   tabStopApiTest_1000
      * @tc.number ArkUI_KeyEvent_TabStop_1000
-     * @tc.name   Tests the unicode property of the keyEvent
      * @tc.desc   Confirm unicode value
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('tabStopApiTest_1000', Level.LEVEL0, async (done: Function) => {
       console.info('[tabStopApiTest_1000] START');

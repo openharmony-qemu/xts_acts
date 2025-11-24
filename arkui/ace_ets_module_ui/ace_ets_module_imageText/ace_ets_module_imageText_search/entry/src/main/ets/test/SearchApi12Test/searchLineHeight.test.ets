@@ -49,13 +49,13 @@ export default function searchLineHeight() {
     })
 
     /**
-       * @tc.number searchLineHeight_0100
-       * @tc.name   Test the properties of components
-       * @tc.desc   Set attribute values
-       * @tc.size   MediumTest
-       * @tc.type   Function
-       * @tc.level  0
-       */
+     * @tc.name   searchLineHeight_0100
+     * @tc.number searchLineHeight_0100
+     * @tc.desc   Set attribute values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('searchLineHeight_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[searchLineHeight_0100] START');
       let strJson = getInspectorByKey('key_search_lineHeight_001');

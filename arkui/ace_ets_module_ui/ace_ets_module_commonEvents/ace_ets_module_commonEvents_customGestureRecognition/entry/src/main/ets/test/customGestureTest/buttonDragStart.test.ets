@@ -58,13 +58,15 @@ export default function btnDragStart() {
       console.info("btnDragStart after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_ACTION_GESTURE_JUDGE_0280_btnDragStart_001
-     * @tc.desc button click test
-     * @tc.level Level 0
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   btnDragStart_001
+     * @tc.number btnDragStart_001
+     * @tc.desc   btnDragStart_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('btnDragStart_001', Level.LEVEL0, async (done: Function) => {
       console.info('[btnDragStart_001] START');
       let str1 = getInspectorByKey("bttonDrag_key1");

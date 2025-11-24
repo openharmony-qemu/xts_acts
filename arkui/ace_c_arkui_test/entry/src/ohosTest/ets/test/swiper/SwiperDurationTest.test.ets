@@ -26,39 +26,39 @@ export default function swiperDurationTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_DURATION_0100
-     * @tc.name       : testSwiperDuration001
-     * @tc.desc       : testing duration for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperDuration001
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_DURATION_0100
+     * @tc.desc   testing duration for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperDuration001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperDuration001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_DURATION_0200
-     * @tc.name       : testSwiperDuration002
-     * @tc.desc       : testing duration for swiper with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperDuration002
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_DURATION_0200
+     * @tc.desc   testing duration for swiper with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperDuration002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperDuration002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_DURATION_0300
-     * @tc.name       : testSwiperDuration003
-     * @tc.desc       : testing duration for swiper with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testSwiperDuration003
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_DURATION_0300
+     * @tc.desc   testing duration for swiper with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperDuration003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperDuration003()).assertEqual(0)

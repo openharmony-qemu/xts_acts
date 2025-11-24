@@ -47,12 +47,12 @@ export default function RollAngle() {
     });
 
     /**
+     * @tc.name   RollAngle_0100
      * @tc.number RollAngle_0010
-     * @tc.name RollAngle
-     * @tc.desc api
-     * @tc.level: Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RollAngle_0100',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) => {
       console.info('[RollAngle_0100] START');

@@ -47,13 +47,13 @@ export default function StyledStringStrokeTest() {
       console.info("StyledStringStrokeTest after each called");
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_STYLED_STRING_STROKE_API_0001
-    * @tc.name         StyledStringStrokeTest0001
-    * @tc.desc         set undefined
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   StyledStringStrokeTest0001
+     * @tc.number SUB_ACE_BASIC_ETS_STYLED_STRING_STROKE_API_0001
+     * @tc.desc   set undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('StyledStringStrokeTest0001', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();
@@ -73,13 +73,13 @@ export default function StyledStringStrokeTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_STYLED_STRING_STROKE_API_0002
-    * @tc.name         StyledStringStrokeTest0002
-    * @tc.desc         set Normal
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   StyledStringStrokeTest0002
+     * @tc.number SUB_ACE_BASIC_ETS_STYLED_STRING_STROKE_API_0002
+     * @tc.desc   set Normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('StyledStringStrokeTest0002', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();
@@ -100,13 +100,13 @@ export default function StyledStringStrokeTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_STYLED_STRING_STROKE_API_0003
-    * @tc.name         StyledStringStrokeTest0003
-    * @tc.desc         set Normal
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   StyledStringStrokeTest0003
+     * @tc.number SUB_ACE_BASIC_ETS_STYLED_STRING_STROKE_API_0003
+     * @tc.desc   set Normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('StyledStringStrokeTest0003', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();

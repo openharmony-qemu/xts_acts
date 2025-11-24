@@ -40,13 +40,13 @@ export default function GridReboundTest() {
       done()
     });
 
-    /*
-     * @tc.number ArkUI_Rebound_0100
+    /**
      * @tc.name   ArkUI_Rebound_0100
+     * @tc.number ArkUI_Rebound_0100
      * @tc.desc   Grid with EdgeEffect.Spring
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Rebound_0100', Level.LEVEL1, async (done: Function) => {
       let CASE: string = 'ArkUI_Rebound_0100'
@@ -66,13 +66,13 @@ export default function GridReboundTest() {
       }, 500)
     });
 
-    /*
-     * @tc.number ArkUI_Rebound_0200
+    /**
      * @tc.name   ArkUI_Rebound_0200
+     * @tc.number ArkUI_Rebound_0200
      * @tc.desc   Grid with EdgeEffect.Fade
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Rebound_0200', Level.LEVEL1, async (done: Function) => {
       let CASE: string = 'ArkUI_Rebound_0200'
@@ -93,13 +93,13 @@ export default function GridReboundTest() {
       }, 500)
     });
 
-    /*
-     * @tc.number ArkUI_Rebound_0300
+    /**
      * @tc.name   ArkUI_Rebound_0300
+     * @tc.number ArkUI_Rebound_0300
      * @tc.desc   Grid with EdgeEffect.None
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Rebound_0300', Level.LEVEL1, async (done: Function) => {
       let CASE: string = 'ArkUI_Rebound_0300'

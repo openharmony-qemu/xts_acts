@@ -46,12 +46,12 @@ export default function lanesHeaderGroup() {
     });
 
     /**
-     * @tc.number    lanesHeaderGroup_001
-     * @tc.name      lanesHeaderGroup_0100
-     * @tc.desc      List component with top and bottom suction vertically arranged in multiple columns, jumps to the specified index.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   lanesHeaderGroup_0100
+     * @tc.number lanesHeaderGroup_001
+     * @tc.desc   List component with top and bottom suction vertically arranged in multiple columns, jumps to the specified index.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('lanesHeaderGroup_0100', Level.LEVEL3, async (done: Function) => {
       console.info('[lanesHeaderGroup_0100] START');

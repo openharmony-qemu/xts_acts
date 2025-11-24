@@ -49,12 +49,12 @@ export default function RichEditorTextStyleJsunit() {
     });
 
     /**
-     * @tc.number RichEditorTextStyleJsunit_0100
      * @tc.name   RichEditorTextStyleJsunit_0100
+     * @tc.number RichEditorTextStyleJsunit_0100
      * @tc.desc   Test the LineHeight of RichEditor.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RichEditorTextStyleJsunit_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[RichEditorTextStyleJsunit_0100] START');
@@ -77,12 +77,12 @@ export default function RichEditorTextStyleJsunit() {
     });
 
     /**
-     * @tc.number RichEditorTextStyleJsunit_0200
      * @tc.name   RichEditorTextStyleJsunit_0200
+     * @tc.number RichEditorTextStyleJsunit_0200
      * @tc.desc   Test the LetterSpacing of RichEditor.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RichEditorTextStyleJsunit_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[RichEditorTextStyleJsunit_0200] START');

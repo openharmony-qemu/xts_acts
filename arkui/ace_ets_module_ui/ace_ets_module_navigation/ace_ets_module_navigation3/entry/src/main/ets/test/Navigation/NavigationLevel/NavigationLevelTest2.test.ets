@@ -47,10 +47,12 @@ export default function NavigationLevelTest2() {
     });
 
     /**
-     * @tc.number    NavigationLevelTest2_0200
-     * @tc.name      NavigationLevelTest2_0200
-     * @tc.desc      Test NavPathStack pop return undefined
-     * @tc.level     Level 0
+     * @tc.name   NavigationLevelTest2_0200
+     * @tc.number NavigationLevelTest2_0200
+     * @tc.desc   Test NavPathStack pop return undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationLevelTest2_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[NavigationLevelTest2_0200] START');
@@ -70,10 +72,12 @@ export default function NavigationLevelTest2() {
     });
 
     /**
-     * @tc.number    NavigationLevelTest2_0300
-     * @tc.name      NavigationLevelTest2_0300
-     * @tc.desc      Test NavPathStack pop with param return undefined
-     * @tc.level     Level 0
+     * @tc.name   NavigationLevelTest2_0300
+     * @tc.number NavigationLevelTest2_0300
+     * @tc.desc   Test NavPathStack pop with param return undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationLevelTest2_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('[NavigationLevelTest2_0300] START');
@@ -93,10 +97,12 @@ export default function NavigationLevelTest2() {
     });
 
     /**
-     * @tc.number    NavigationLevelTest2_0100
-     * @tc.name      NavigationLevelTest2_0100
-     * @tc.desc      Test Navigation
-     * @tc.level     Level 0
+     * @tc.name   NavigationLevelTest2_0100
+     * @tc.number NavigationLevelTest2_0100
+     * @tc.desc   Test Navigation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationLevelTest2_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[NavigationLevelTest2_0100] START');
@@ -130,10 +136,12 @@ export default function NavigationLevelTest2() {
     });
 
     /**
-     * @tc.number    NavigationLevelTest2_0400
-     * @tc.name      NavigationLevelTest2_0400
-     * @tc.desc      Test NavPathStack pop with param return NavPathInfo
-     * @tc.level     Level 0
+     * @tc.name   NavigationLevelTest2_0400
+     * @tc.number NavigationLevelTest2_0400
+     * @tc.desc   Test NavPathStack pop with param return NavPathInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationLevelTest2_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('[NavigationLevelTest2_0400] START');

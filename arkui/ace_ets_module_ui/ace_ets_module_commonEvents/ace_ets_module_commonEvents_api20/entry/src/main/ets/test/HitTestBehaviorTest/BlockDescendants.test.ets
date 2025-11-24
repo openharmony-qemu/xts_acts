@@ -47,10 +47,12 @@ export default function BlockDescendantsTest() {
     });
 
     /**
-     * @tc.number    BlockDescendantsTest_0010
-     * @tc.name      BlockDescendantsTest_0010
-     * @tc.desc      HitTestMode: BLOCK_DESCENDANTS
-     * @tc.level:    Level 0
+     * @tc.name   BlockDescendantsTest_0010
+     * @tc.number BlockDescendantsTest_0010
+     * @tc.desc   HitTestMode: BLOCK_DESCENDANTS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BlockDescendantsTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('BlockDescendantsTest_0010 START');

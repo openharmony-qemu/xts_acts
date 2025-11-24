@@ -43,13 +43,13 @@ export default function ImageAnimatorBasicAttributesTest() {
       done();
     });
 
-    /*
-     * @tc.number: ImageAnimatorBasicAttributesTest_0100
-     * @tc.name  : ImageAnimatorBasicAttributesTest_0100
-     * @tc.desc  : get the text imageAnimator component and test attribute
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ImageAnimatorBasicAttributesTest_0100
+     * @tc.number ImageAnimatorBasicAttributesTest_0100
+     * @tc.desc   get the text imageAnimator component and test attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAnimatorBasicAttributesTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[imageAnimatorJsunit_0100] START');
@@ -76,13 +76,13 @@ export default function ImageAnimatorBasicAttributesTest() {
       done();
     });
 
-    /*
-     * @tc.number: ImageAnimatorBasicAttributesTest_0200
-     * @tc.name  : ImageAnimatorBasicAttributesTest_0200
-     * @tc.desc  : get the text imageAnimator component and test attribute
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ImageAnimatorBasicAttributesTest_0200
+     * @tc.number ImageAnimatorBasicAttributesTest_0200
+     * @tc.desc   get the text imageAnimator component and test attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAnimatorBasicAttributesTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[ImageAnimatorBasicAttributesTest_0200] START');
@@ -118,13 +118,13 @@ export default function ImageAnimatorBasicAttributesTest() {
       done();
     });
 
-    /*
-     * @tc.number: ImageAnimatorBasicAttributesTest_0300
-     * @tc.name  : ImageAnimatorBasicAttributesTest_0300
-     * @tc.desc  : get the text imageAnimator component and test attribute
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ImageAnimatorBasicAttributesTest_0300
+     * @tc.number ImageAnimatorBasicAttributesTest_0300
+     * @tc.desc   get the text imageAnimator component and test attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAnimatorBasicAttributesTest_0300', Level.LEVEL1, async (done: Function) => {
       console.info('ImageAnimatorBasicAttributesTest_0300 START');
@@ -141,13 +141,13 @@ export default function ImageAnimatorBasicAttributesTest() {
       done();
     });
 
-    /*
-     * @tc.number: ImageAnimatorBasicAttributesTest_0400
-     * @tc.name  : ImageAnimatorBasicAttributesTest_0400
-     * @tc.desc  : get the text imageAnimator component and test attribute
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ImageAnimatorBasicAttributesTest_0400
+     * @tc.number ImageAnimatorBasicAttributesTest_0400
+     * @tc.desc   get the text imageAnimator component and test attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAnimatorBasicAttributesTest_0400', Level.LEVEL1, async (done: Function) => {
       console.info('ImageAnimatorBasicAttributesTest_0400 START');
@@ -182,13 +182,13 @@ export default function ImageAnimatorBasicAttributesTest() {
       done();
     });
 
-    /*
-     * @tc.number: ImageAnimatorBasicAttributesTest_0500
-     * @tc.name  : ImageAnimatorBasicAttributesTest_0500
-     * @tc.desc  : get the text imageAnimator component and test attribute
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ImageAnimatorBasicAttributesTest_0500
+     * @tc.number ImageAnimatorBasicAttributesTest_0500
+     * @tc.desc   get the text imageAnimator component and test attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAnimatorBasicAttributesTest_0500', Level.LEVEL1, async (done: Function) => {
       console.info('ImageAnimatorBasicAttributesTest_0500 START');
@@ -205,13 +205,13 @@ export default function ImageAnimatorBasicAttributesTest() {
       done();
     });
 
-    /*
-     * @tc.number: ImageAnimatorBasicAttributesTest_0600
-     * @tc.name  : ImageAnimatorBasicAttributesTest_0600
-     * @tc.desc  : get the text imageAnimator component and test attribute
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ImageAnimatorBasicAttributesTest_0600
+     * @tc.number ImageAnimatorBasicAttributesTest_0600
+     * @tc.desc   get the text imageAnimator component and test attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAnimatorBasicAttributesTest_0600', Level.LEVEL1, async (done: Function) => {
       console.info('[ImageAnimatorBasicAttributesTest_0600] START');
@@ -245,13 +245,13 @@ export default function ImageAnimatorBasicAttributesTest() {
       done();
     });
 
-    /*
-     * @tc.number: ImageAnimatorBasicAttributesTest_0700
-     * @tc.name  : ImageAnimatorBasicAttributesTest_0700
-     * @tc.desc  : get the text imageAnimator component and test attribute
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ImageAnimatorBasicAttributesTest_0700
+     * @tc.number ImageAnimatorBasicAttributesTest_0700
+     * @tc.desc   get the text imageAnimator component and test attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAnimatorBasicAttributesTest_0700', Level.LEVEL1, async (done: Function) => {
       console.info('ImageAnimatorBasicAttributesTest_0700 START');
@@ -277,13 +277,13 @@ export default function ImageAnimatorBasicAttributesTest() {
       done();
     });
 
-    /*
-     * @tc.number: ImageAnimatorBasicAttributesTest_0800
-     * @tc.name  : ImageAnimatorBasicAttributesTest_0800
-     * @tc.desc  : get the text imageAnimator component and test attribute
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ImageAnimatorBasicAttributesTest_0800
+     * @tc.number ImageAnimatorBasicAttributesTest_0800
+     * @tc.desc   get the text imageAnimator component and test attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAnimatorBasicAttributesTest_0800', Level.LEVEL1, async (done: Function) => {
       console.info('ImageAnimatorBasicAttributesTest_0800 START');

@@ -56,12 +56,12 @@ export default function getXComponentSurfaceRectJsunit() {
     });
 
     /**
+     * @tc.name   getXComponentSurfaceRectTest_0010
      * @tc.number getXComponentSurfaceRectTest_0010
-     * @tc.name getXComponentSurfaceRectTest_0010
-     * @tc.desc Xcomponent: get the api of getXComponentSurfaceRect
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   Xcomponent: get the api of getXComponentSurfaceRect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getXComponentSurfaceRectTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('getXComponentSurfaceRectTest_0010 START');

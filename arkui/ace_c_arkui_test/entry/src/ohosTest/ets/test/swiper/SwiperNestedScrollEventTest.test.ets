@@ -26,6 +26,14 @@ export default function swiperNestedScrollEventTest() {
       done()
     });
 
+    /**
+     * @tc.name   testSwiperNestedScroll001
+     * @tc.number testSwiperNestedScroll001
+     * @tc.desc   testSwiperNestedScroll001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSwiperNestedScroll001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'SwiperNestedScrollTest';
       await Utils.pushPage(`swiper/${PAGE_TAG}`);
@@ -38,6 +46,14 @@ export default function swiperNestedScrollEventTest() {
       done();
     });
 
+    /**
+     * @tc.name   testSwiperNestedScroll002
+     * @tc.number testSwiperNestedScroll002
+     * @tc.desc   testSwiperNestedScroll002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSwiperNestedScroll002', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'SwiperNestedScrollChildTest';
       await Utils.pushPage(`swiper/${PAGE_TAG}`);

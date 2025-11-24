@@ -42,12 +42,12 @@ export default function RectResourceTest() {
     });
     
     /**
-     * @tc.number: SUB_ARKUI_API_RectResourceTest_0100
-     * @tc.name: RectResourceTest_0100
-     * @tc.desc: RectAPI 
-     * @tc.level: Level 2
-     * @tc.type : Rect
-     * @tc.size : RectTest
+     * @tc.name   RectResourceTest_0100
+     * @tc.number SUB_ARKUI_API_RectResourceTest_0100
+     * @tc.desc   RectAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RectResourceTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[RectResourceTest_0100] START');

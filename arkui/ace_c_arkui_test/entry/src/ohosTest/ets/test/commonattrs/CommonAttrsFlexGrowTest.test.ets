@@ -26,26 +26,26 @@ export default function commonAttrsFlexGrowTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_FLEXGROW_0100
-     * @tc.name: testCommonAttrsFlexGrow001
-     * @tc.desc: testing flexGrow for button with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCommonAttrsFlexGrow001
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_FLEXGROW_0100
+     * @tc.desc   testing flexGrow for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsFlexGrow001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsFlexGrow001()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_COMMONATTRS_FLEXGROW_0200
-     * @tc.name: testCommonAttrsFlexGrow002
-     * @tc.desc: testing flexGrow for button with abnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   testCommonAttrsFlexGrow002
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_FLEXGROW_0200
+     * @tc.desc   testing flexGrow for button with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsFlexGrow002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsFlexGrow002()).assertEqual(0)

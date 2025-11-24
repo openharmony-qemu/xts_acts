@@ -65,9 +65,12 @@ export default function Tabs_itemSize() {
       });
     });
     /**
+     * @tc.name   testTabsItemSize
      * @tc.number SUB_ACE_TABS_ITEMSIZE_TEST_0100
-     * @tc.name testTabsItemSize
-     * @tc.desc Set width to 200 and height to 200 for TabContent
+     * @tc.desc   Set width to 200 and height to 200 for TabContent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTabsItemSize', Level.LEVEL1, async (done: Function) => {
       console.info('[testTabsItemSize] START');

@@ -45,12 +45,12 @@ export default function RepeatLazyTest0150() {
     });
 
     /**
-     * @tc.number    RepeatLazyTest0150
-     * @tc.name      RepeatLazyTest0150_001
-     * @tc.desc      Persistently store UI related data
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   RepeatLazyTest0150_001
+     * @tc.number RepeatLazyTest0150
+     * @tc.desc   Persistently store UI related data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RepeatLazyTest0150_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[RepeatLazyTest0150_001] START');

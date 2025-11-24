@@ -44,13 +44,13 @@ export default function ImageObjectFitTest() {
       console.info("ImageObjectFitTest after each called");
     });
 
-    /*
-     * @tc.number: ImageObjectFitTest_001
-     * @tc.name  : ImageObjectFitTest_001
-     * @tc.desc  : objectFit test of image
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ImageObjectFitTest_001
+     * @tc.number ImageObjectFitTest_001
+     * @tc.desc   objectFit test of image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageObjectFitTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('[ImageObjectFitTest_001] START');
@@ -65,13 +65,13 @@ export default function ImageObjectFitTest() {
       done();
     });
 
-    /*
-     * @tc.number: ImageObjectFitTest_002
-     * @tc.name  : ImageObjectFitTest_002
-     * @tc.desc  : objectFit test of image
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ImageObjectFitTest_002
+     * @tc.number ImageObjectFitTest_002
+     * @tc.desc   objectFit test of image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageObjectFitTest_002', Level.LEVEL0, async (done: Function) => {
       console.info('[ImageObjectFitTest_002] START');
@@ -86,13 +86,13 @@ export default function ImageObjectFitTest() {
       done();
     });
 
-    /*
-     * @tc.number: ImageObjectFitTest_003
-     * @tc.name  : ImageObjectFitTest_003
-     * @tc.desc  : objectFit test of image
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ImageObjectFitTest_003
+     * @tc.number ImageObjectFitTest_003
+     * @tc.desc   objectFit test of image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageObjectFitTest_003', Level.LEVEL0, async (done: Function) => {
       console.info('[ImageObjectFitTest_003] START');
@@ -107,13 +107,13 @@ export default function ImageObjectFitTest() {
       done();
     });
 
-    /*
-     * @tc.number: ImageObjectFitTest_004
-     * @tc.name  : ImageObjectFitTest_004
-     * @tc.desc  : objectFit test of image
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ImageObjectFitTest_004
+     * @tc.number ImageObjectFitTest_004
+     * @tc.desc   objectFit test of image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageObjectFitTest_004', Level.LEVEL0, async (done: Function) => {
       console.info('[ImageObjectFitTest_003] START');

@@ -47,12 +47,12 @@ export default function appStorageV2() {
     });
 
     /**
-     * @tc.number    appStorageV2_001
-     * @tc.name      appStorageV2_001
-     * @tc.desc      all keys in AppStorage.
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   appStorageV2_001
+     * @tc.number appStorageV2_001
+     * @tc.desc   all keys in AppStorage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('appStorageV2_001', Level.LEVEL0, async (done: Function) => {
       console.info('[appStorageV2_001] START');
@@ -66,12 +66,12 @@ export default function appStorageV2() {
     });
 
     /**
-     * @tc.number    appStorageV2_002
-     * @tc.name      appStorageV2_002
-     * @tc.desc      Global UI state storage for applications
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   appStorageV2_002
+     * @tc.number appStorageV2_002
+     * @tc.desc   Global UI state storage for applications
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('appStorageV2_002', Level.LEVEL0, async (done: Function) => {
       console.info('[appStorageV2_002] START');
@@ -106,12 +106,12 @@ export default function appStorageV2() {
     });
 
     /**
-     * @tc.number    appStorageV2_003
-     * @tc.name      appStorageV2_003
-     * @tc.desc      all keys in AppStorage.
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   appStorageV2_003
+     * @tc.number appStorageV2_003
+     * @tc.desc   all keys in AppStorage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('appStorageV2_003', Level.LEVEL0, async (done: Function) => {
       console.info('[appStorageV2_003] START');

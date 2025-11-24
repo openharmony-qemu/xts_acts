@@ -61,12 +61,12 @@ export default function list_ListInitialIndex3Test() {
       console.info("List_ListInitialIndex3Test after each called");
     });
     /**
+     * @tc.name   testListInitialIndexToNegativeWithOneLane
      * @tc.number SUB_ACE_LIST_LISTINITIALINDEX_0300
-     * @tc.name testListInitialIndexToNegativeWithOneLane
-     * @tc.desc the InitialIndex of list set to -1
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   the InitialIndex of list set to -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListInitialIndexToNegativeWithOneLane',  Level.LEVEL0, async (done: Function) => {
       console.info('[testListInitialIndexToNegativeWithOneLane] START');

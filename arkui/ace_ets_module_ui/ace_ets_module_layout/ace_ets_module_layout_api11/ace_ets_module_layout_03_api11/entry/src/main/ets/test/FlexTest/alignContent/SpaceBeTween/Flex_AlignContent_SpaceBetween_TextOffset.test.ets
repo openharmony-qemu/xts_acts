@@ -46,9 +46,12 @@ export default function flex_AlignContent_SpaceBetween_TextOffsetTest() {
       console.info("Flex_AlignContent_SpaceBetween_TextOffsetTest after each called");
     });
     /**
+     * @tc.name   testFlexAlignContentSpaceAroundTextOffset
      * @tc.number SUB_ACE_FLEXALIGNCONTENT_SPACEBETWEEN_1000
-     * @tc.name testFlexAlignContentSpaceAroundTextOffset
-     * @tc.desc the offset of first subcomponent set to {x:10, y:10}
+     * @tc.desc   the offset of first subcomponent set to {x:10, y:10}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignContentSpaceAroundTextOffset',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignContentSpaceAroundTextOffset] START');

@@ -46,14 +46,14 @@ export default function SelectionMenuOptionsTest() {
       console.info("SelectionMenuOptions after each called");
     });
 
-    /*
-    * @tc.number       SelectionMenuOptions0001
-    * @tc.name         SelectionMenuOptions0001
-    * @tc.desc        Test Text by mouseClick
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
-    */
+    /**
+     * @tc.name   SelectionMenuOptions0001
+     * @tc.number SelectionMenuOptions0001
+     * @tc.desc   Test Text by mouseClick
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SelectionMenuOptions0001', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
       console.info('SelectionMenuOptions SelectionMenuOptions0001 START');
@@ -80,14 +80,14 @@ export default function SelectionMenuOptionsTest() {
       done();
     });
 
-    /*
-    * @tc.number       SelectionMenuOptions0002
-    * @tc.name         SelectionMenuOptions0002
-    * @tc.desc        Test Text by longClick
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
-    */
+    /**
+     * @tc.name   SelectionMenuOptions0002
+     * @tc.number SelectionMenuOptions0002
+     * @tc.desc   Test Text by longClick
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SelectionMenuOptions0002', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
       console.info('SelectionMenuOptions SelectionMenuOptions0002 START');
@@ -113,14 +113,14 @@ export default function SelectionMenuOptionsTest() {
     });
 
 
-    /*
-    * @tc.number       SelectionMenuOptions0004
-    * @tc.name         SelectionMenuOptions0004
-    * @tc.desc        Test image text by mouseClick
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
-    */
+    /**
+     * @tc.name   SelectionMenuOptions0004
+     * @tc.number SelectionMenuOptions0004
+     * @tc.desc   Test image text by mouseClick
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SelectionMenuOptions0004', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
       console.info('SelectionMenuOptions SelectionMenuOptions0004 START');
@@ -147,14 +147,14 @@ export default function SelectionMenuOptionsTest() {
       done();
     });
 
-    /*
-    * @tc.number       SelectionMenuOptions0005
-    * @tc.name         SelectionMenuOptions0005
-    * @tc.desc        Test image text by longClick
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
-    */
+    /**
+     * @tc.name   SelectionMenuOptions0005
+     * @tc.number SelectionMenuOptions0005
+     * @tc.desc   Test image text by longClick
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SelectionMenuOptions0005', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
       console.info('SelectionMenuOptions0005 START');
@@ -179,14 +179,14 @@ export default function SelectionMenuOptionsTest() {
       done();
     });
 
-    /*
-    * @tc.number       SelectionMenuOptions0007
-    * @tc.name         SelectionMenuOptions0007
-    * @tc.desc        Test mixed Text by mouseClick
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
-    */
+    /**
+     * @tc.name   SelectionMenuOptions0007
+     * @tc.number SelectionMenuOptions0007
+     * @tc.desc   Test mixed Text by mouseClick
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SelectionMenuOptions0007', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
       console.info('SelectionMenuOptions SelectionMenuOptions0007 START');
@@ -213,14 +213,14 @@ export default function SelectionMenuOptionsTest() {
       done();
     });
 
-    /*
-    * @tc.number       SelectionMenuOptions0008
-    * @tc.name         SelectionMenuOptions0008
-    * @tc.desc        Test mixed Text by longClick
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
-    */
+    /**
+     * @tc.name   SelectionMenuOptions0008
+     * @tc.number SelectionMenuOptions0008
+     * @tc.desc   Test mixed Text by longClick
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SelectionMenuOptions0008', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
       console.info('SelectionMenuOptions SelectionMenuOptions0008 START');

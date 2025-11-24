@@ -26,208 +26,208 @@ export default function  () {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_WEIGHT_0100
-     * @tc.name       : testTextInputFontWeight001
-     * @tc.desc       : testing fontWeight for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputFontWeight001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_WEIGHT_0100
+     * @tc.desc   testing fontWeight for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputFontWeight001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputFontWeight001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_WEIGHT_0200
-     * @tc.name       : testTextInputFontWeight002
-     * @tc.desc       : testing fontWeight for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputFontWeight002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_WEIGHT_0200
+     * @tc.desc   testing fontWeight for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputFontWeight002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputFontWeight002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_WEIGHT_0300
-     * @tc.name       : testTextInputFontWeight003
-     * @tc.desc       : testing fontWeight for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputFontWeight003
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_WEIGHT_0300
+     * @tc.desc   testing fontWeight for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputFontWeight003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputFontWeight003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_WEIGHT_0400
-     * @tc.name       : testTextInputFontWeight004
-     * @tc.desc       : testing fontWeight for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputFontWeight004
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_WEIGHT_0400
+     * @tc.desc   testing fontWeight for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputFontWeight004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputFontWeight004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_WEIGHT_0500
-     * @tc.name       : testTextInputFontWeight005
-     * @tc.desc       : testing fontWeight for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputFontWeight005
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_WEIGHT_0500
+     * @tc.desc   testing fontWeight for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputFontWeight005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputFontWeight005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_WEIGHT_0600
-     * @tc.name       : testTextInputFontWeight006
-     * @tc.desc       : testing fontWeight for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputFontWeight006
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_WEIGHT_0600
+     * @tc.desc   testing fontWeight for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputFontWeight006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputFontWeight006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_WEIGHT_0700
-     * @tc.name       : testTextInputFontWeight007
-     * @tc.desc       : testing fontWeight for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputFontWeight007
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_WEIGHT_0700
+     * @tc.desc   testing fontWeight for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputFontWeight007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputFontWeight007()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_WEIGHT_0800
-     * @tc.name       : testTextInputFontWeight008
-     * @tc.desc       : testing fontWeight for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputFontWeight008
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_WEIGHT_0800
+     * @tc.desc   testing fontWeight for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputFontWeight008', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputFontWeight008()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_WEIGHT_0900
-     * @tc.name       : testTextInputFontWeight009
-     * @tc.desc       : testing fontWeight for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputFontWeight009
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_WEIGHT_0900
+     * @tc.desc   testing fontWeight for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputFontWeight009', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputFontWeight009()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_WEIGHT_1000
-     * @tc.name       : testTextInputFontWeight010
-     * @tc.desc       : testing fontWeight for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputFontWeight010
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_WEIGHT_1000
+     * @tc.desc   testing fontWeight for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputFontWeight010', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputFontWeight010()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_WEIGHT_1100
-     * @tc.name       : testTextInputFontWeight011
-     * @tc.desc       : testing fontWeight for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputFontWeight011
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_WEIGHT_1100
+     * @tc.desc   testing fontWeight for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputFontWeight011', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputFontWeight011()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_WEIGHT_1200
-     * @tc.name       : testTextInputFontWeight012
-     * @tc.desc       : testing fontWeight for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputFontWeight012
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_WEIGHT_1200
+     * @tc.desc   testing fontWeight for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputFontWeight012', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputFontWeight012()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_WEIGHT_1300
-     * @tc.name       : testTextInputFontWeight013
-     * @tc.desc       : testing fontWeight for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputFontWeight013
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_WEIGHT_1300
+     * @tc.desc   testing fontWeight for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputFontWeight013', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputFontWeight013()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_WEIGHT_1400
-     * @tc.name       : testTextInputFontWeight014
-     * @tc.desc       : testing fontWeight for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputFontWeight014
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_WEIGHT_1400
+     * @tc.desc   testing fontWeight for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputFontWeight014', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputFontWeight014()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_WEIGHT_1500
-     * @tc.name       : testTextInputFontWeight015
-     * @tc.desc       : testing fontWeight for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputFontWeight015
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_WEIGHT_1500
+     * @tc.desc   testing fontWeight for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputFontWeight015', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputFontWeight015()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_WEIGHT_1600
-     * @tc.name       : testTextInputFontWeight015
-     * @tc.desc       : testing fontWeight for textInput with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testTextInputFontWeight016
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_WEIGHT_1600
+     * @tc.desc   testing fontWeight for textInput with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputFontWeight016', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputFontWeight016()).assertEqual(0)

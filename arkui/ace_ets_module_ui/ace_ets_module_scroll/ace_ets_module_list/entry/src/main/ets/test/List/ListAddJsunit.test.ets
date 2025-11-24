@@ -50,13 +50,13 @@ export default function ListAddJsunit() {
       }
     });
 
-    /*
-     * @tc.number    apiCommponentAddJsunit_0200
-     * @tc.name      ListAddJsunit_0200
-     * @tc.desc      Test List onScrollStartText
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ListAddJsunit_0200
+     * @tc.number apiCommponentAddJsunit_0200
+     * @tc.desc   Test List onScrollStartText
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ListAddJsunit_0200', Level.LEVEL1, async (done: Function) => {
       console.info('ListAddJsunit_0200 START');

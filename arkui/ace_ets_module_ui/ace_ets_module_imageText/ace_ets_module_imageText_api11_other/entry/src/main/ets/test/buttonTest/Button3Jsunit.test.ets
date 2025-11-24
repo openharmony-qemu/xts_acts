@@ -50,6 +50,14 @@ export default function button3Jsunit() {
       console.info("button after each called");
     })
 
+    /**
+     * @tc.name   testButton01
+     * @tc.number testButton01
+     * @tc.desc   testButton01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testButton01', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton01] START');
       await CommonFunc.sleep(1000);
@@ -60,6 +68,14 @@ export default function button3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testButton02
+     * @tc.number testButton02
+     * @tc.desc   testButton02
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testButton02', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton02] START');
       await CommonFunc.sleep(1000);
@@ -70,6 +86,14 @@ export default function button3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testButton03
+     * @tc.number testButton03
+     * @tc.desc   testButton03
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testButton03', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton03] START');
       await CommonFunc.sleep(1000);
@@ -79,6 +103,14 @@ export default function button3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testButton04
+     * @tc.number testButton04
+     * @tc.desc   testButton04
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testButton04', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton04] START');
       await CommonFunc.sleep(1000);
@@ -88,6 +120,14 @@ export default function button3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testButton05
+     * @tc.number testButton05
+     * @tc.desc   testButton05
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testButton05', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton05] START');
       await CommonFunc.sleep(1000);
@@ -114,6 +154,14 @@ export default function button3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testButton06
+     * @tc.number testButton06
+     * @tc.desc   testButton06
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testButton06', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton06] START');
       await CommonFunc.sleep(1000);
@@ -140,6 +188,14 @@ export default function button3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testButton07
+     * @tc.number testButton07
+     * @tc.desc   testButton07
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testButton07', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton07] START');
       await CommonFunc.sleep(1000);
@@ -168,6 +224,14 @@ export default function button3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testButton08
+     * @tc.number testButton08
+     * @tc.desc   testButton08
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testButton08', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton08] START');
       await CommonFunc.sleep(1000);
@@ -194,6 +258,14 @@ export default function button3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testButton09
+     * @tc.number testButton09
+     * @tc.desc   testButton09
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testButton09', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton09] START');
       await CommonFunc.sleep(1000);
@@ -220,6 +292,14 @@ export default function button3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testButton10
+     * @tc.number testButton10
+     * @tc.desc   testButton10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testButton10', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton10] START');
       try {
@@ -257,6 +337,14 @@ export default function button3Jsunit() {
       console.info('[testButton10] END');
     });
 
+    /**
+     * @tc.name   testButton11
+     * @tc.number testButton11
+     * @tc.desc   testButton11
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testButton11', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton11] START');
       try {
@@ -294,6 +382,14 @@ export default function button3Jsunit() {
       console.info('[testButton11] END');
     });
 
+    /**
+     * @tc.name   testButton12
+     * @tc.number testButton12
+     * @tc.desc   testButton12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testButton12', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
 
@@ -342,6 +438,14 @@ export default function button3Jsunit() {
       console.info('[testButton12] testSendTouchEvent END');
     });
 
+    /**
+     * @tc.name   testButton13
+     * @tc.number testButton13
+     * @tc.desc   testButton13
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testButton13', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton13] START');
       await CommonFunc.sleep(1000);
@@ -370,6 +474,14 @@ export default function button3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testButton14
+     * @tc.number testButton14
+     * @tc.desc   testButton14
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testButton14', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton14] START');
       await CommonFunc.sleep(1000);
@@ -398,6 +510,14 @@ export default function button3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testButton15
+     * @tc.number testButton15
+     * @tc.desc   testButton15
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testButton15', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton15] START');
       try {

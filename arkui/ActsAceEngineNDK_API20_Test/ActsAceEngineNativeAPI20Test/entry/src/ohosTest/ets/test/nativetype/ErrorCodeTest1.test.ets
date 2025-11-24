@@ -11,12 +11,12 @@ const ARKUI_ERROR_CODE_POST_CLONED_NO_COMPONENT_HIT_TO_RESPOND_TO_THE_EVENT = 18
 export default function ErrorCodeTest1() {
   describe('ErrorCodeTest1', () => {
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ErrorCode_1900
-     * @tc.name    : testArkUIACEErrorCode1900
-     * @tc.desc    : testing ARKUI_ERROR_CODE_NOT_CLONED_POINTER_EVENT ErrorCode.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIACEErrorCode1900
+     * @tc.number SUB_ArkUI_ACE_ErrorCode_1900
+     * @tc.desc   testing ARKUI_ERROR_CODE_NOT_CLONED_POINTER_EVENT ErrorCode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIACEErrorCode1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {

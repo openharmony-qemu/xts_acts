@@ -66,12 +66,12 @@ export default function List_divider() {
     });
 
     /**
+     * @tc.name   testListDividerStrokeWidthToTen
      * @tc.number SUB_ACE_LIST_LIST_DIVIDER_TEST_0100
-     * @tc.name testListDividerStrokeWidthToTen
-     * @tc.desc List parent component binding divider property and strokeWidth set to 10
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   List parent component binding divider property and strokeWidth set to 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListDividerStrokeWidthToTen',  Level.LEVEL0, async (done: Function) => {
       console.info('testListDividerStrokeWidthToTen START');
@@ -122,12 +122,12 @@ export default function List_divider() {
     });
 
     /**
+     * @tc.name   testListDividerStrokeWidthToForty
      * @tc.number SUB_ACE_LIST_LIST_DIVIDER_TEST_0200
-     * @tc.name testListDividerStrokeWidthToForty
-     * @tc.desc List parent component binding divider property and strokeWidth set to 40
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   List parent component binding divider property and strokeWidth set to 40
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListDividerStrokeWidthToForty',  Level.LEVEL0, async (done: Function) => {
       console.info('testListDividerStrokeWidthToForty START');

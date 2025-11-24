@@ -46,11 +46,13 @@ export default function WaterFlowCNodeTest() {
       console.info("WaterFlowCNode after each called");
     });
 
-    /*
-     * @tc.number    WaterFlowCNodeTest_0100
-     * @tc.name      WaterFlowCNodeTest_0100
-     * @tc.desc      Test WaterFlowCNode
-     * @tc.level     Level 1
+    /**
+     * @tc.name   WaterFlowCNodeTest_0100
+     * @tc.number WaterFlowCNodeTest_0100
+     * @tc.desc   Test WaterFlowCNode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('WaterFlowCNodeTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[WaterFlowCNodeTest_0100] START');

@@ -42,12 +42,12 @@ export default function TextTwoJsunit() {
       done();
     });
     /**
-     * @tc.number textTwoJsunit_0100
      * @tc.name   textTwoJsunit_0100
+     * @tc.number textTwoJsunit_0100
      * @tc.desc   Do not set decoration property
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textTwoJsunit_0100', Level.LEVEL1, async (done: Function) => {
       console.info('textTwoJsunit_0200 START');
@@ -66,12 +66,12 @@ export default function TextTwoJsunit() {
       done();
     });
     /**
-     * @tc.number textTwoJsunit_0200
      * @tc.name   textTwoJsunit_0200
+     * @tc.number textTwoJsunit_0200
      * @tc.desc   Do not set decoration property
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textTwoJsunit_0200', Level.LEVEL1, async (done: Function) => {
       console.info('imageOneJsunit_0200 START');
@@ -121,12 +121,12 @@ export default function TextTwoJsunit() {
 
    
     /**
-     * @tc.number textTwoJsunit_0300
      * @tc.name   textTwoJsunit_0300
+     * @tc.number textTwoJsunit_0300
      * @tc.desc   Do not set decoration property
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textTwoJsunit_0300', Level.LEVEL1, async (done: Function) => {
       console.info('textTwoJsunit_0300 START');
@@ -141,12 +141,12 @@ export default function TextTwoJsunit() {
       done();
     });
     /**
-     * @tc.number textTwoJsunit_0400
      * @tc.name   textTwoJsunit_0400
+     * @tc.number textTwoJsunit_0400
      * @tc.desc   Do not set decoration property
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textTwoJsunit_0400', Level.LEVEL1, async (done: Function) => {
       console.info('textTwoJsunit_0400 START');
@@ -161,12 +161,12 @@ export default function TextTwoJsunit() {
       done();
     });
     /**
-     * @tc.number textTwoJsunit_0500
      * @tc.name   textTwoJsunit_0500
+     * @tc.number textTwoJsunit_0500
      * @tc.desc   Do not set decoration property
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textTwoJsunit_0500', Level.LEVEL1, async (done: Function) => {
       console.info('textTwoJsunit_0500 START');
@@ -181,12 +181,12 @@ export default function TextTwoJsunit() {
       done();
     });
     /**
-     * @tc.number textTwoJsunit_0600
      * @tc.name   textTwoJsunit_0600
+     * @tc.number textTwoJsunit_0600
      * @tc.desc   Do not set decoration property
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textTwoJsunit_0600', Level.LEVEL1, async (done: Function) => {
       console.info('textTwoJsunit_0600 START');
@@ -201,12 +201,12 @@ export default function TextTwoJsunit() {
       done();
     });
     /**
-     * @tc.number textTwoJsunit_0700
      * @tc.name   textTwoJsunit_0700
+     * @tc.number textTwoJsunit_0700
      * @tc.desc   Do not set decoration property
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textTwoJsunit_0700', Level.LEVEL1, async (done: Function) => {
       console.info('textTwoJsunit_0700 START');
@@ -235,12 +235,12 @@ export default function TextTwoJsunit() {
       done();
     });
     /**
-     * @tc.number textTwoJsunit_0800
      * @tc.name   textTwoJsunit_0800
+     * @tc.number textTwoJsunit_0800
      * @tc.desc   Do not set decoration property
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textTwoJsunit_0800', Level.LEVEL1, async (done: Function) => {
       console.info('textTwoJsunit_0800 START');

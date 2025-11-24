@@ -60,9 +60,12 @@ export default function swiperAutoPlay_2() {
     });
 
     /**
+     * @tc.name   testSwiperAutoPlaySetting_2
      * @tc.number testSwiperAutoPlaySetting_2
-     * @tc.name testSwiperAutoPlaySetting_2
-     * @tc.desc Set swiper's  AutoPlay  value ' false ' and interval values '1000'.
+     * @tc.desc   Set swiper's  AutoPlay  value ' false ' and interval values '1000'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperAutoPlaySetting_2', Level.LEVEL1, async (done: Function) => {
       console.info('new testSwiperAutoPlaySetting_2 START');

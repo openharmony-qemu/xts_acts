@@ -46,12 +46,12 @@ export default function TextArea_lineBreakStrategyTest() {
     });
 
     /**
-     * @tc.number    TextArea_lineBreakStrategyTest
-     * @tc.name      testBack
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   TextArea_lineBreakStrategyTest_001
+     * @tc.number TextArea_lineBreakStrategyTest
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextArea_lineBreakStrategyTest_001',  Level.LEVEL0, async (done: Function) => {
       console.info('[TextArea_lineBreakStrategyTest_001] START');

@@ -40,12 +40,12 @@ export default function getAttachedFrameNodeById() {
       done();
     });
     /**
-     * @tc.number    getAttachedFrameNodeById_0100
-     * @tc.name      getAttachedFrameNodeById_0100
-     * @tc.desc      frameNode: getAttachedFrameNodeByIdFromWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getAttachedFrameNodeById_0100
+     * @tc.number getAttachedFrameNodeById_0100
+     * @tc.desc   frameNode: getAttachedFrameNodeByIdFromWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAttachedFrameNodeById_0100', Level.LEVEL0, async (done: Function) => {
       console.info('getAttachedFrameNodeById_0100 START');
@@ -63,12 +63,12 @@ export default function getAttachedFrameNodeById() {
       done();
     });
     /**
-     * @tc.number    getAttachedFrameNodeById_0200
-     * @tc.name      getAttachedFrameNodeById_0200
-     * @tc.desc      frameNode: getAttachedFrameNodeByIdFromWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getAttachedFrameNodeById_0200
+     * @tc.number getAttachedFrameNodeById_0200
+     * @tc.desc   frameNode: getAttachedFrameNodeByIdFromWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAttachedFrameNodeById_0200', Level.LEVEL0, async (done: Function) => {
       console.info('getAttachedFrameNodeById_0200 START');

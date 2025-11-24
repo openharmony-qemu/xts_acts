@@ -44,12 +44,12 @@ export default function lazyForEachTest() {
       console.info("lazyForEachTest after each called");
     });
     /**
-     * @tc.number    lazyForEachTest_0100
-     * @tc.name      lazyForEachTest_0100
-     * @tc.desc      Test expand
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   lazyForEachTest_0100
+     * @tc.number lazyForEachTest_0100
+     * @tc.desc   Test expand
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('lazyForEachTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('lazyForEachTest_0100 START');
@@ -74,12 +74,12 @@ export default function lazyForEachTest() {
       done();
     });
     /**
-     * @tc.number    lazyForEachTest_0200
-     * @tc.name      lazyForEachTest_0200
-     * @tc.desc      Test not expand
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   lazyForEachTest_0200
+     * @tc.number lazyForEachTest_0200
+     * @tc.desc   Test not expand
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('lazyForEachTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('lazyForEachTest_0200 START');
@@ -104,12 +104,12 @@ export default function lazyForEachTest() {
       done();
     });
     /**
-     * @tc.number    lazyForEachTest_0300
-     * @tc.name      lazyForEachTest_0300
-     * @tc.desc      Test lazy expand
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   lazyForEachTest_0300
+     * @tc.number lazyForEachTest_0300
+     * @tc.desc   Test lazy expand
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('lazyForEachTest_0300', Level.LEVEL0, async (done: Function) => {
       console.info('lazyForEachTest_0300 START');
@@ -134,12 +134,12 @@ export default function lazyForEachTest() {
       done();
     });
     /**
-     * @tc.number    lazyForEachTest_0400
-     * @tc.name      lazyForEachTest_0400
-     * @tc.desc      Test expand null
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   lazyForEachTest_0400
+     * @tc.number lazyForEachTest_0400
+     * @tc.desc   Test expand null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('lazyForEachTest_0400', Level.LEVEL0, async (done: Function) => {
       console.info('lazyForEachTest_0400 START');
@@ -164,12 +164,12 @@ export default function lazyForEachTest() {
       done();
     });
     /**
-     * @tc.number    lazyForEachTest_0500
-     * @tc.name      lazyForEachTest_0500
-     * @tc.desc      Test expand undefined
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   lazyForEachTest_0500
+     * @tc.number lazyForEachTest_0500
+     * @tc.desc   Test expand undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('lazyForEachTest_0500', Level.LEVEL0, async (done: Function) => {
       console.info('lazyForEachTest_0500 START');
@@ -194,12 +194,12 @@ export default function lazyForEachTest() {
       done();
     });
     /**
-     * @tc.number    lazyForEachTest_0600
-     * @tc.name      lazyForEachTest_0600
-     * @tc.desc      Test expand Out of bounds
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   lazyForEachTest_0600
+     * @tc.number lazyForEachTest_0600
+     * @tc.desc   Test expand Out of bounds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('lazyForEachTest_0600', Level.LEVEL0, async (done: Function) => {
       console.info('lazyForEachTest_0600 START');
@@ -224,12 +224,12 @@ export default function lazyForEachTest() {
       done();
     });
     /**
-     * @tc.number    lazyForEachTest_0700
-     * @tc.name      lazyForEachTest_0700
-     * @tc.desc      Test lazy expand Out of bounds
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   lazyForEachTest_0700
+     * @tc.number lazyForEachTest_0700
+     * @tc.desc   Test lazy expand Out of bounds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('lazyForEachTest_0700', Level.LEVEL0, async (done: Function) => {
       console.info('lazyForEachTest_0700 START');
@@ -254,12 +254,12 @@ export default function lazyForEachTest() {
       done();
     });
     /**
-     * @tc.number    lazyForEachTest_0800
-     * @tc.name      lazyForEachTest_0800
-     * @tc.desc      Test not expand Out of bounds
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   lazyForEachTest_0800
+     * @tc.number lazyForEachTest_0800
+     * @tc.desc   Test not expand Out of bounds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('lazyForEachTest_0800', Level.LEVEL0, async (done: Function) => {
       console.info('lazyForEachTest_0800 START');

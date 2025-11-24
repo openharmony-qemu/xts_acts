@@ -46,12 +46,12 @@ describe('alphabetEnableJsunit', () => {
     });
 
     /**
-     * @tc.number    alphabetEnableJsunit_001
-     * @tc.name      alphabetEnableJsunit_001
-     * @tc.desc      Support touch feedback.
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   alphabetEnableJsunit_001
+     * @tc.number alphabetEnableJsunit_001
+     * @tc.desc   Support touch feedback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('alphabetEnableJsunit_001', Level.LEVEL1, async (done: Function) => {
       console.info('[alphabetEnableJsunit_001] START');

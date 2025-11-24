@@ -64,12 +64,14 @@ export default function getGridItemRect1() {
       console.info("BadgeFocus after each called");
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getGridItemRect1_0100
-    * @tc.name  : onGetItemRect
-    * @tc.desc  : set index to 3
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getGridItemRect1_0100
+     * @tc.number SUB_ACE_TS_COMPONENT_getGridItemRect1_0100
+     * @tc.desc   set index to 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getGridItemRect1_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getGridItemRect1_0100] START');
@@ -124,12 +126,14 @@ export default function getGridItemRect1() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getGridItemRect1_0200
-    * @tc.name  : onGetItemRect
-    * @tc.desc  : set index to 4
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getGridItemRect1_0200
+     * @tc.number SUB_ACE_TS_COMPONENT_getGridItemRect1_0200
+     * @tc.desc   set index to 4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getGridItemRect1_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getGridItemRect1_0200] START');
@@ -180,12 +184,14 @@ export default function getGridItemRect1() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getGridItemRect1_0400
-    * @tc.name  : onGetItemRect
-    * @tc.desc  : set index to 100
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getGridItemRect1_0400
+     * @tc.number SUB_ACE_TS_COMPONENT_getGridItemRect1_0400
+     * @tc.desc   set index to 100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getGridItemRect1_0400', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getGridItemRect1_0400] START');
@@ -236,12 +242,14 @@ export default function getGridItemRect1() {
     });
 
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getGridItemRect1_0500
-    * @tc.name  : onGetItemRect
-    * @tc.desc  : set index to 0
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getGridItemRect1_0500
+     * @tc.number SUB_ACE_TS_COMPONENT_getGridItemRect1_0500
+     * @tc.desc   set index to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getGridItemRect1_0500', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getGridItemRect1_0500] START');
@@ -292,12 +300,14 @@ export default function getGridItemRect1() {
     });
 
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getGridItemRect1_0600
-    * @tc.name  : onGetItemRect
-    * @tc.desc  : set index to 1
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getGridItemRect1_0600
+     * @tc.number SUB_ACE_TS_COMPONENT_getGridItemRect1_0600
+     * @tc.desc   set index to 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getGridItemRect1_0600', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getGridItemRect1_0600] START');
@@ -347,12 +357,14 @@ export default function getGridItemRect1() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getGridItemRect1_0700
-    * @tc.name  : onGetItemRect
-    * @tc.desc  : set index to 0,set the padding of grid to 20
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getGridItemRect1_0700
+     * @tc.number SUB_ACE_TS_COMPONENT_getGridItemRect1_0700
+     * @tc.desc   set index to 0,set the padding of grid to 20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getGridItemRect1_0700', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getGridItemRect1_0700] START');

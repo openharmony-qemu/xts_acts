@@ -44,9 +44,12 @@ export default function ChipGroupApi1() {
     });
 
     /**
+     * @tc.name   ChipGroupApi1_0100
      * @tc.number ChipGroupApi1_0100
-     * @tc.name   testFocus
-     * @tc.desc
+     * @tc.desc   ChipGroupApi1_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ChipGroupApi1_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('ChipGroupApi1_0100 START');

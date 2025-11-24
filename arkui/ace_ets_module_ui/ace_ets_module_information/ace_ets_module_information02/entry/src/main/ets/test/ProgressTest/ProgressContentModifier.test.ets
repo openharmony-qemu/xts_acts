@@ -40,14 +40,14 @@ export default function ProgressContentModifierTest() {
       console.info('ProgressContentModifierTest beforeEach end');
       done();
     });
-    /* *
-    * @tc.number: ProgressContentModifierTest_001
-    * @tc.name  : ProgressContentModifierTest_001
-    * @tc.desc  : To test the contentModifier
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   ProgressContentModifierTest_001
+     * @tc.number ProgressContentModifierTest_001
+     * @tc.desc   To test the contentModifier
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ProgressContentModifierTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('ProgressContentModifierTest_001 START');
       await Utils.sleep(1000);

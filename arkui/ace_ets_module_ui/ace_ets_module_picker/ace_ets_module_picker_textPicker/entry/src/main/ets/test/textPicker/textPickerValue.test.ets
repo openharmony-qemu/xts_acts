@@ -42,13 +42,13 @@ export default function TextPickerValue() {
     });
 
     /**
-    * @tc.number: TextPickerValue_001
-    * @tc.name  : TextPickerValue_001
-    * @tc.desc  : To test the value: $r('app.string.apple')
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   TextPickerValue_001
+     * @tc.number TextPickerValue_001
+     * @tc.desc   To test the value: $r('app.string.apple')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TextPickerValue_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('TextPickerValue_001 START');
       await Utils.sleep(1000);
@@ -61,13 +61,13 @@ export default function TextPickerValue() {
     });
   
     /**
-    * @tc.number: TextPickerValue_002
-    * @tc.name  : TextPickerValue_002
-    * @tc.desc  : To test the value: undefined
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   TextPickerValue_002
+     * @tc.number TextPickerValue_002
+     * @tc.desc   To test the value: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TextPickerValue_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('TextPickerValue_002 START');
       await Utils.sleep(1000);
@@ -80,13 +80,13 @@ export default function TextPickerValue() {
     });
 
     /**
-    * @tc.number: TextPickerValue_003
-    * @tc.name  : TextPickerValue_003
-    * @tc.desc  : To test the value: null
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   TextPickerValue_003
+     * @tc.number TextPickerValue_003
+     * @tc.desc   To test the value: null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TextPickerValue_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('TextPickerValue_003 START');
       await Utils.sleep(1000);
@@ -99,13 +99,13 @@ export default function TextPickerValue() {
     });
     
     /**
-    * @tc.number: TextPickerValue_004
-    * @tc.name  : TextPickerValue_004
-    * @tc.desc  : To test the value: apple
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   TextPickerValue_004
+     * @tc.number TextPickerValue_004
+     * @tc.desc   To test the value: apple
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TextPickerValue_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('TextPickerValue_004 START');
       await Utils.sleep(1000);

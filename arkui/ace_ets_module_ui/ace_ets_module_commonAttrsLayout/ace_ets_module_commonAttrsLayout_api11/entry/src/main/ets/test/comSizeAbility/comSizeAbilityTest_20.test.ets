@@ -55,12 +55,14 @@ export default function comSizeAbilityTest_20() {
       done()
     })
     // 52 FormComponent
-    /* *
-        * @tc.number: 测试编号
-        * @tc.name  : comSizeAbilityTestJsunit_01
-        * @tc.desc  : test the size of component
-        * @tc.level : Level 2
-        */
+    /**
+     * @tc.name   comSizeAbilityTestJsunit_53
+     * @tc.number 测试编号
+     * @tc.desc   test the size of component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('comSizeAbilityTestJsunit_53', Level.LEVEL0, async (done: Function) => {
       console.info('comSizeAbilityTestJsunit_53 START')
       await CommonFunc.sleep(1000);

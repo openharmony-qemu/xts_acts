@@ -43,12 +43,12 @@ export default function checkBoxGroupUIJsunit() {
     });
 
     /**
-     * @tc.number checkBoxGroupUIJsunit_0100
      * @tc.name   checkBoxGroupUIJsunit_0100
+     * @tc.number checkBoxGroupUIJsunit_0100
      * @tc.desc   test checkBoxGroup
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('checkBoxGroupUIJsunit_0100', Level.LEVEL1, async (done: Function) => {
        console.info('checkBoxGroupUIJsunit_0100 START');
@@ -68,14 +68,14 @@ export default function checkBoxGroupUIJsunit() {
        done();
     });
 
-    /**
-     * @tc.number checkBoxGroupUIJsunit_0200
-     * @tc.name   checkBoxGroupUIJsunit_0200
-     * @tc.desc   test checkBoxGroup
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
-     */
+   /**
+    * @tc.name   checkBoxGroupUIJsunit_0200
+    * @tc.number checkBoxGroupUIJsunit_0200
+    * @tc.desc   test checkBoxGroup
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
    it('checkBoxGroupUIJsunit_0200', Level.LEVEL1, async (done: Function) => {
       console.info('checkBoxGroupUIJsunit_0200 START');
       await CommonFunc.sleep(1000);
@@ -97,12 +97,12 @@ export default function checkBoxGroupUIJsunit() {
     });
 
     /**
-     * @tc.number checkBoxGroupUIJsunit_0300
      * @tc.name   checkBoxGroupUIJsunit_0300
+     * @tc.number checkBoxGroupUIJsunit_0300
      * @tc.desc   test checkBoxGroup
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('checkBoxGroupUIJsunit_0300', Level.LEVEL1, async (done: Function) => {
       console.info('checkBoxGroupUIJsunit_0300 START');
@@ -119,12 +119,12 @@ export default function checkBoxGroupUIJsunit() {
     });
 
     /**
-     * @tc.number checkBoxGroupUIJsunit_0400
      * @tc.name   checkBoxGroupUIJsunit_0400
+     * @tc.number checkBoxGroupUIJsunit_0400
      * @tc.desc   test checkBoxGroup
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('checkBoxGroupUIJsunit_0400', Level.LEVEL1, async (done: Function) => {
       console.info('checkBoxGroupUIJsunit_0400 START');
@@ -141,12 +141,12 @@ export default function checkBoxGroupUIJsunit() {
     });
 
     /**
-     * @tc.number checkBoxGroupUIJsunit_0500
      * @tc.name   checkBoxGroupUIJsunit_0500
+     * @tc.number checkBoxGroupUIJsunit_0500
      * @tc.desc   test checkBoxGroup
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('checkBoxGroupUIJsunit_0500', Level.LEVEL1, async (done: Function) => {
       console.info('checkBoxGroupUIJsunit_0500 START');
@@ -163,12 +163,12 @@ export default function checkBoxGroupUIJsunit() {
     });
 
     /**
-     * @tc.number checkBoxGroupUIJsunit_0600
      * @tc.name   checkBoxGroupUIJsunit_0600
+     * @tc.number checkBoxGroupUIJsunit_0600
      * @tc.desc   test checkBoxGroup
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('checkBoxGroupUIJsunit_0600', Level.LEVEL1, async (done: Function) => {
       console.info('checkBoxGroupUIJsunit_0600 START');
@@ -196,12 +196,12 @@ export default function checkBoxGroupUIJsunit() {
     });
 
     /**
-     * @tc.number checkBoxGroupUIJsunit_0700
      * @tc.name   checkBoxGroupUIJsunit_0700
+     * @tc.number checkBoxGroupUIJsunit_0700
      * @tc.desc   test checkBoxGroup
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('checkBoxGroupUIJsunit_0700', Level.LEVEL1, async (done: Function) => {
       console.info('checkBoxGroupUIJsunit_0700 START');

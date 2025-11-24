@@ -43,12 +43,14 @@ export default function search_top() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_search_top_001
-    * @tc.name  : search_top_001
-    * @tc.desc  : Click to trigger the keyboard when search is at the top
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   search_top_001
+     * @tc.number SUB_ACE_TS_COMPONENT_search_top_001
+     * @tc.desc   Click to trigger the keyboard when search is at the top
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('search_top_001', Level.LEVEL2, async (done: Function) => {
 
       console.info('[search_top_001] START');

@@ -45,13 +45,13 @@ export default function videoOnFullscreenChangeJsunit() {
       console.info("videoOnFullscreenChange after each called");
     });
 
-   /**
-     * @tc.number: SUB_ARKUI_API_testvideoOnFullscreenChange0001
-     * @tc.name: testvideoOnFullscreenChange0001
-     * @tc.desc: VideoAPI 
-     * @tc.level: Level 1
-     * @tc.type : Video
-     * @tc.size : VideoTest
+    /**
+     * @tc.name   testvideoOnFullscreenChange0001
+     * @tc.number SUB_ARKUI_API_testvideoOnFullscreenChange0001
+     * @tc.desc   VideoAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testvideoOnFullscreenChange0001', Level.LEVEL1, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0001 START');
@@ -65,12 +65,12 @@ export default function videoOnFullscreenChangeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testvideoOnFullscreenChange0002
-     * @tc.name: testvideoOnFullscreenChange0002
-     * @tc.desc: VideoAPI 
-     * @tc.level: Level 1
-     * @tc.type : Video
-     * @tc.size : VideoTest
+     * @tc.name   testvideoOnFullscreenChange0002
+     * @tc.number SUB_ARKUI_API_testvideoOnFullscreenChange0002
+     * @tc.desc   VideoAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testvideoOnFullscreenChange0002', Level.LEVEL1, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0002 START');
@@ -85,12 +85,12 @@ export default function videoOnFullscreenChangeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testvideoOnFullscreenChange0003
-     * @tc.name: testvideoOnFullscreenChange0003
-     * @tc.desc: VideoAPI 
-     * @tc.level: Level 1
-     * @tc.type : Video
-     * @tc.size : VideoTest
+     * @tc.name   testvideoOnFullscreenChange0003
+     * @tc.number SUB_ARKUI_API_testvideoOnFullscreenChange0003
+     * @tc.desc   VideoAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testvideoOnFullscreenChange0003', Level.LEVEL1, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0003 START');
@@ -105,12 +105,12 @@ export default function videoOnFullscreenChangeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testvideoOnFullscreenChange0004
-     * @tc.name: testvideoOnFullscreenChange0004
-     * @tc.desc: VideoAPI 
-     * @tc.level: Level 1
-     * @tc.type : Video
-     * @tc.size : VideoTest
+     * @tc.name   testvideoOnFullscreenChange0004
+     * @tc.number SUB_ARKUI_API_testvideoOnFullscreenChange0004
+     * @tc.desc   VideoAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testvideoOnFullscreenChange0004', Level.LEVEL1, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0004 START');
@@ -125,12 +125,12 @@ export default function videoOnFullscreenChangeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testvideoOnFullscreenChange0005
-     * @tc.name: testvideoOnFullscreenChange0005
-     * @tc.desc: VideoAPI 
-     * @tc.level: Level 1
-     * @tc.type : Video
-     * @tc.size : VideoTest
+     * @tc.name   testvideoOnFullscreenChange0005
+     * @tc.number SUB_ARKUI_API_testvideoOnFullscreenChange0005
+     * @tc.desc   VideoAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testvideoOnFullscreenChange0005', Level.LEVEL1, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0005 START');
@@ -145,12 +145,12 @@ export default function videoOnFullscreenChangeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testvideoOnFullscreenChange0006
-     * @tc.name: testvideoOnFullscreenChange0006
-     * @tc.desc: VideoAPI 
-     * @tc.level: Level 1
-     * @tc.type : Video
-     * @tc.size : VideoTest
+     * @tc.name   testvideoOnFullscreenChange0006
+     * @tc.number SUB_ARKUI_API_testvideoOnFullscreenChange0006
+     * @tc.desc   VideoAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testvideoOnFullscreenChange0006', Level.LEVEL1, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0006 START');
@@ -165,12 +165,12 @@ export default function videoOnFullscreenChangeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testvideoOnFullscreenChange0007
-     * @tc.name: testvideoOnFullscreenChange0007
-     * @tc.desc: VideoAPI 
-     * @tc.level: Level 1
-     * @tc.type : Video
-     * @tc.size : VideoTest
+     * @tc.name   testvideoOnFullscreenChange0007
+     * @tc.number SUB_ARKUI_API_testvideoOnFullscreenChange0007
+     * @tc.desc   VideoAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testvideoOnFullscreenChange0007', Level.LEVEL1, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0007 START');
@@ -185,12 +185,12 @@ export default function videoOnFullscreenChangeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testvideoOnFullscreenChange0009
-     * @tc.name: testvideoOnFullscreenChange0009
-     * @tc.desc: VideoAPI 
-     * @tc.level: Level 1
-     * @tc.type : Video
-     * @tc.size : VideoTest
+     * @tc.name   testvideoOnFullscreenChange0009
+     * @tc.number SUB_ARKUI_API_testvideoOnFullscreenChange0009
+     * @tc.desc   VideoAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testvideoOnFullscreenChange0009', Level.LEVEL1, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange009 START');
@@ -205,12 +205,12 @@ export default function videoOnFullscreenChangeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testvideoOnFullscreenChange0010
-     * @tc.name: testvideoOnFullscreenChange0010
-     * @tc.desc: VideoAPI 
-     * @tc.level: Level 1
-     * @tc.type : Video
-     * @tc.size : VideoTest
+     * @tc.name   testvideoOnFullscreenChange0010
+     * @tc.number SUB_ARKUI_API_testvideoOnFullscreenChange0010
+     * @tc.desc   VideoAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testvideoOnFullscreenChange0010', Level.LEVEL1, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0010 START');
@@ -225,12 +225,12 @@ export default function videoOnFullscreenChangeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testvideoOnFullscreenChange0011
-     * @tc.name: testvideoOnFullscreenChange0011
-     * @tc.desc: VideoAPI 
-     * @tc.level: Level 1
-     * @tc.type : Video
-     * @tc.size : VideoTest
+     * @tc.name   testvideoOnFullscreenChange0011
+     * @tc.number SUB_ARKUI_API_testvideoOnFullscreenChange0011
+     * @tc.desc   VideoAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testvideoOnFullscreenChange0011', Level.LEVEL1, async () => {
       console.info('videoOnFullscreenChange testvideoOnFullscreenChange0011 START');

@@ -46,10 +46,12 @@ export default function bindPopupTest(){
     });
 
     /**
-     * @tc.number       bindPopupTest_0100
-     * @tc.name         bindPopupTest_0100
-     * @tc.desc        bindPopupTest_0100 test
-     * @tc.level       Level 2
+     * @tc.name   bindPopupTest_0100
+     * @tc.number bindPopupTest_0100
+     * @tc.desc   bindPopupTest_0100 test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindPopupTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('bindPopupTest_0100 START');
@@ -80,10 +82,12 @@ export default function bindPopupTest(){
     });
 
     /**
-     * @tc.number       bindPopupTest_0200
-     * @tc.name         bindPopupTest_0200
-     * @tc.desc        bindPopupTest_0200 test
-     * @tc.level       Level 2
+     * @tc.name   bindPopupTest_0200
+     * @tc.number bindPopupTest_0200
+     * @tc.desc   bindPopupTest_0200 test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindPopupTest_0200', Level.LEVEL2, async (done: Function) => {
       console.info('bindPopupTest_0200 START');
@@ -128,10 +132,12 @@ export default function bindPopupTest(){
     });
 
     /**
-     * @tc.number       bindPopupTest_0300
-     * @tc.name         bindPopupTest_0300
-     * @tc.desc        bindPopupTest_0300 test
-     * @tc.level       Level 2
+     * @tc.name   bindPopupTest_0300
+     * @tc.number bindPopupTest_0300
+     * @tc.desc   bindPopupTest_0300 test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindPopupTest_0300', Level.LEVEL2, async (done: Function) => {
       console.info('bindPopupTest_0300 START');

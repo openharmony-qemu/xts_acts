@@ -54,12 +54,14 @@ export default function StateNumber() {
       }
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0010
-    * @tc.name  : StateNumber_0100
-    * @tc.desc  : To test that the State decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   StateNumber_0100
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0010
+     * @tc.desc   To test that the State decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StateNumber_0100', Level.LEVEL0, async (done: Function) => {
       console.info('StateNumber_0100 START');
       let driver = await Driver.create()
@@ -75,12 +77,14 @@ export default function StateNumber() {
       console.info('[StateNumber_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0020
-    * @tc.name  : StateNumber_0200
-    * @tc.desc  : To test that the State decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   StateNumber_0200
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0020
+     * @tc.desc   To test that the State decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StateNumber_0200', Level.LEVEL0, async (done: Function) => {
       console.info('StateNumber_0100 START');
       let driver = await Driver.create()
@@ -96,12 +100,14 @@ export default function StateNumber() {
       console.info('[StateNumber_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0030
-    * @tc.name  : StateNumber_0300
-    * @tc.desc  : To test that the State decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   StateNumber_0300
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0030
+     * @tc.desc   To test that the State decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StateNumber_0300', Level.LEVEL0, async (done: Function) => {
       console.info('StateNumber_0100 START');
       let driver = await Driver.create()
@@ -117,12 +123,14 @@ export default function StateNumber() {
       console.info('[StateNumber_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0040
-    * @tc.name  : StateNumber_0400
-    * @tc.desc  : To test that the State decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   StateNumber_0400
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0040
+     * @tc.desc   To test that the State decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StateNumber_0400', Level.LEVEL0, async (done: Function) => {
       console.info('StateNumber_0100 START');
       let driver = await Driver.create()
@@ -138,12 +146,14 @@ export default function StateNumber() {
       console.info('[StateNumber_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0050
-    * @tc.name  : StateNumber_0500
-    * @tc.desc  : To test that the State decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   StateNumber_0500
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0050
+     * @tc.desc   To test that the State decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StateNumber_0500', Level.LEVEL0, async (done: Function) => {
       console.info('StateNumber_0100 START');
       let driver = await Driver.create()

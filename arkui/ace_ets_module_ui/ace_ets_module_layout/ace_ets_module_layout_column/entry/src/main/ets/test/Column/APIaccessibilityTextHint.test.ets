@@ -44,12 +44,12 @@ export default function APIaccessibilityTextHint() {
     });
 
     /**
-     * @tc.number    APIaccessibilityTextHint_0100
-     * @tc.name      APIaccessibilityTextHint_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :    Column
-     * @tc.size :
+     * @tc.name   APIaccessibilityTextHint_0100
+     * @tc.number APIaccessibilityTextHint_0100
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APIaccessibilityTextHint_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('APIaccessibilityTextHint_0100 START');

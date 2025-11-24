@@ -42,12 +42,12 @@ export default function barBackground() {
     });
 
     /**
-     * @tc.number    barBackground_001
-     * @tc.name      barBackground_0100
-     * @tc.desc      Provide TabBar with a blurring ability between background and content.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   barBackground_0100
+     * @tc.number barBackground_001
+     * @tc.desc   Provide TabBar with a blurring ability between background and content.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('barBackground_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[barBackground_0100] START');
@@ -60,12 +60,12 @@ export default function barBackground() {
     });
 
     /**
-     * @tc.number    barBackground_002
-     * @tc.name      barBackground_0200
-     * @tc.desc      Get TabBar background properties.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   barBackground_0200
+     * @tc.number barBackground_002
+     * @tc.desc   Get TabBar background properties.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('barBackground_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[barBackground_0200] START');

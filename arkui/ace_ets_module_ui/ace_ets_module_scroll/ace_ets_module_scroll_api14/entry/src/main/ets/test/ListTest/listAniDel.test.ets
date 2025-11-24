@@ -46,12 +46,12 @@ export default function listAniDel() {
     });
 
     /**
-     * @tc.number    listAniDel_001
-     * @tc.name      listAniDel_0100
-     * @tc.desc      Delete the tail elements of the List when flipping pages.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   listAniDel_0100
+     * @tc.number listAniDel_001
+     * @tc.desc   Delete the tail elements of the List when flipping pages.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('listAniDel_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[listAniDel_0100] START');

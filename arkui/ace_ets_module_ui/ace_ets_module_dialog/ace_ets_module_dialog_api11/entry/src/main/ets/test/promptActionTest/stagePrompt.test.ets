@@ -52,6 +52,14 @@ export default function stagePromptTest() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
+    /**
+     * @tc.name   testPromptActionShowToast001
+     * @tc.number testPromptActionShowToast001
+     * @tc.desc   testPromptActionShowToast001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testPromptActionShowToast001', Level.LEVEL2, async (done: Function) => {
       console.info('testPromptActionShowToast001 START');
       try {
@@ -78,6 +86,14 @@ export default function stagePromptTest() {
       done();
     });
 
+    /**
+     * @tc.name   testPromptActionShowToast002
+     * @tc.number testPromptActionShowToast002
+     * @tc.desc   testPromptActionShowToast002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testPromptActionShowToast002', Level.LEVEL2, async (done: Function) => {
       console.info('testPromptActionShowToast002 START');
       try {
@@ -103,6 +119,14 @@ export default function stagePromptTest() {
       }
       done();
     });
+    /**
+     * @tc.name   testPromptActionShowToast003
+     * @tc.number testPromptActionShowToast003
+     * @tc.desc   testPromptActionShowToast003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testPromptActionShowToast003', Level.LEVEL2, async (done: Function) => {
       console.info('testPromptActionShowToast003 START');
       try {
@@ -128,6 +152,14 @@ export default function stagePromptTest() {
       }
       done();
     });
+    /**
+     * @tc.name   testPromptActionShowToast004
+     * @tc.number testPromptActionShowToast004
+     * @tc.desc   testPromptActionShowToast004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testPromptActionShowToast004', Level.LEVEL2, async (done: Function) => {
       console.info('testPromptActionShowToast004 START');
       try {
@@ -153,6 +185,14 @@ export default function stagePromptTest() {
       }
       done();
     });
+    /**
+     * @tc.name   testPromptActionShowToast005
+     * @tc.number testPromptActionShowToast005
+     * @tc.desc   testPromptActionShowToast005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testPromptActionShowToast005', Level.LEVEL2, async (done: Function) => {
       console.info('testPromptActionShowToast005 START');
       try {

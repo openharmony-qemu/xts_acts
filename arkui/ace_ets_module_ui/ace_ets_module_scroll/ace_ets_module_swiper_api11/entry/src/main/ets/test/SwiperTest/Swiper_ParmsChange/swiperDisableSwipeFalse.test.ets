@@ -60,9 +60,12 @@ export default function swiperDisableSwipeFalse() {
     });
 
     /**
+     * @tc.name   testSwiperDisableSwipeFalse
      * @tc.number SUB_ACE_SWIPER_DISABLESWIPE_0200
-     * @tc.name testSwiperDisableSwipeFalse.
-     * @tc.desc Set swiper's disableSwipe values 'false'.
+     * @tc.desc   Set swiper's disableSwipe values 'false'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperDisableSwipeFalse', Level.LEVEL1, async (done: Function) => {
       console.info('new testSwiperDisableSwipeFalse START');

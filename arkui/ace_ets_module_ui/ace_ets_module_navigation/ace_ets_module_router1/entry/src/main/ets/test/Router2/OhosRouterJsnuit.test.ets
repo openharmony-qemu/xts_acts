@@ -45,9 +45,12 @@ export default function OhosRouterJsunit() {
     });
 
     /**
+     * @tc.name   ohosRouterTest001
      * @tc.number ohosRouterTest001
-     * @tc.name ohosRouterTest001
-     * @tc.desc
+     * @tc.desc   ohosRouterTest001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ohosRouterTest001', Level.LEVEL2, async (done: Function) => {
       console.info('[ohosRouterTest001] START');
@@ -70,9 +73,12 @@ export default function OhosRouterJsunit() {
     });
 
     /**
+     * @tc.name   ohosRouterTest002
      * @tc.number ohosRouterTest002
-     * @tc.name ohosRouterTest002
-     * @tc.desc
+     * @tc.desc   ohosRouterTest002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ohosRouterTest002', Level.LEVEL2, async (done: Function) => {
       console.info('[ohosRouterTest002] START');
@@ -108,9 +114,12 @@ export default function OhosRouterJsunit() {
     });
 
     /**
+     * @tc.name   ohosRouterTest003
      * @tc.number ohosRouterTest003
-     * @tc.name ohosRouterTest003
-     * @tc.desc
+     * @tc.desc   ohosRouterTest003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ohosRouterTest003', Level.LEVEL2, async (done: Function) => {
       console.info('[ohosRouterTest003] START');
@@ -125,9 +134,12 @@ export default function OhosRouterJsunit() {
     });
 
     /**
+     * @tc.name   ohosRouterTest004
      * @tc.number ohosRouterTest004
-     * @tc.name ohosRouterTest004
-     * @tc.desc
+     * @tc.desc   ohosRouterTest004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ohosRouterTest004', Level.LEVEL2, async (done: Function) => {
       console.info('[ohosRouterTest004] START');
@@ -160,9 +172,12 @@ export default function OhosRouterJsunit() {
     });
 
     /**
+     * @tc.name   ohosRouterTest005
      * @tc.number ohosRouterTest005
-     * @tc.name ohosRouterTest005
-     * @tc.desc
+     * @tc.desc   ohosRouterTest005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ohosRouterTest005', Level.LEVEL2, async (done: Function) => {
       console.info('[ohosRouterTest005] START');

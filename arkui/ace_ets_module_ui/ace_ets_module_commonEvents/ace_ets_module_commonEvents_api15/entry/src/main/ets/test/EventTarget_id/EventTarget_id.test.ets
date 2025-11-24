@@ -42,12 +42,12 @@ export default function EventTarget_id() {
     });
 
     /**
-     * @tc.number EventTarget_id_0100
      * @tc.name   EventTarget_id_0100
+     * @tc.number EventTarget_id_0100
      * @tc.desc   test the EventTarget_id
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EventTarget_id_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[EventTarget_id_0100] START');
@@ -68,12 +68,12 @@ export default function EventTarget_id() {
     });
 
     /**
-     * @tc.number EventTarget_id_0200
      * @tc.name   EventTarget_id_0200
+     * @tc.number EventTarget_id_0200
      * @tc.desc   test the EventTarget_id
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EventTarget_id_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[EventTarget_id_0200] START');

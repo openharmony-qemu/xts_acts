@@ -46,12 +46,12 @@ export default function Toggle3Jsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testToggle01
-     * @tc.name: testToggle01
-     * @tc.desc: ToggleAPI 
-     * @tc.level: Level 1
-     * @tc.type : Toggle
-     * @tc.size : ToggleTest
+     * @tc.name   testToggle01
+     * @tc.number SUB_ARKUI_API_testToggle01
+     * @tc.desc   ToggleAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggle01', Level.LEVEL1, async (done: Function) => {
       console.info('[testToggle01] START');
@@ -65,12 +65,12 @@ export default function Toggle3Jsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testToggle02
-     * @tc.name: testToggle02
-     * @tc.desc: ToggleAPI 
-     * @tc.level: Level 1
-     * @tc.type : Toggle
-     * @tc.size : ToggleTest
+     * @tc.name   testToggle02
+     * @tc.number SUB_ARKUI_API_testToggle02
+     * @tc.desc   ToggleAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggle02', Level.LEVEL1, async (done: Function) => {
       console.info('[testToggle02] START');
@@ -83,12 +83,12 @@ export default function Toggle3Jsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testToggle03
-     * @tc.name: testToggle03
-     * @tc.desc: ToggleAPI 
-     * @tc.level: Level 1
-     * @tc.type : Toggle
-     * @tc.size : ToggleTest
+     * @tc.name   testToggle03
+     * @tc.number SUB_ARKUI_API_testToggle03
+     * @tc.desc   ToggleAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggle03', Level.LEVEL1, async (done: Function) => {
       console.info('[testToggle03] START');
@@ -101,12 +101,12 @@ export default function Toggle3Jsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testToggle04
-     * @tc.name: testToggle04
-     * @tc.desc: ToggleAPI 
-     * @tc.level: Level 1
-     * @tc.type : Toggle
-     * @tc.size : ToggleTest
+     * @tc.name   testToggle04
+     * @tc.number SUB_ARKUI_API_testToggle04
+     * @tc.desc   ToggleAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggle04', Level.LEVEL1, async (done: Function) => {
       console.info('testToggle04 START');
@@ -134,12 +134,12 @@ export default function Toggle3Jsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testToggle05
-     * @tc.name: testToggle05
-     * @tc.desc: ToggleAPI 
-     * @tc.level: Level 1
-     * @tc.type : Toggle
-     * @tc.size : ToggleTest
+     * @tc.name   testToggle05
+     * @tc.number SUB_ARKUI_API_testToggle05
+     * @tc.desc   ToggleAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggle05', Level.LEVEL1, async (done: Function) => {
       console.info('testToggle05 START');
@@ -167,12 +167,12 @@ export default function Toggle3Jsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testToggle08
-     * @tc.name: testToggle08
-     * @tc.desc: ToggleAPI 
-     * @tc.level: Level 1
-     * @tc.type : Toggle
-     * @tc.size : ToggleTest
+     * @tc.name   testToggle08
+     * @tc.number SUB_ARKUI_API_testToggle08
+     * @tc.desc   ToggleAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggle08', Level.LEVEL1, async (done: Function) => {
       console.info('testToggle04 START');
@@ -200,12 +200,12 @@ export default function Toggle3Jsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testToggle09
-     * @tc.name: testToggle09
-     * @tc.desc: ToggleAPI 
-     * @tc.level: Level 1
-     * @tc.type : Toggle
-     * @tc.size : ToggleTest
+     * @tc.name   testToggle09
+     * @tc.number SUB_ARKUI_API_testToggle09
+     * @tc.desc   ToggleAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggle09', Level.LEVEL1, async (done: Function) => {
       console.info('testToggle04 START');

@@ -46,12 +46,12 @@ export default function enableScrollJsunit() {
     });
 
     /**
-     * @tc.number    enableScrollJsunit_001
-     * @tc.name      enableScrollJsunit_001
-     * @tc.desc      The ScrollBar component supports nested scrolling.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   enableScrollJsunit_0100
+     * @tc.number enableScrollJsunit_001
+     * @tc.desc   The ScrollBar component supports nested scrolling.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('enableScrollJsunit_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[enableScrollJsunit_0100] START');

@@ -53,9 +53,12 @@ export default function AlphabetIndexerJsunit() {
     });
 
     /**
+     * @tc.name   alphabetIndexerTest001
      * @tc.number alphabetIndexerTest001
-     * @tc.name alphabetIndexerTest001
-     * @tc.desc alphabetIndexerTest001
+     * @tc.desc   alphabetIndexerTest001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('alphabetIndexerTest001', Level.LEVEL1, async () => {
       console.info('AlphabetIndexerTest001 START');
@@ -68,9 +71,12 @@ export default function AlphabetIndexerJsunit() {
     });
 
     /**
+     * @tc.name   alphabetIndexerTest002
      * @tc.number alphabetIndexerTest002
-     * @tc.name alphabetIndexerTest002
-     * @tc.desc alphabetIndexerTest002
+     * @tc.desc   alphabetIndexerTest002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('alphabetIndexerTest002', Level.LEVEL1, async () => {
       console.info('AlphabetIndexerTest002 START');

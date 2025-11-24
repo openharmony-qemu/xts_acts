@@ -45,14 +45,14 @@ export default function swiperMaskJsunit() {
       console.info("swiperMask after each called");
     });
 
-	/**
-      * @tc.number: testswiperMask001
-      * @tc.name  : testswiperMask001
-      * @tc.desc  : To test the avoidance interface swiper
-      * @tc.level : LEVEL 1
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   testswiperMask001
+     * @tc.number testswiperMask001
+     * @tc.desc   To test the avoidance interface swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testswiperMask001', Level.LEVEL1, async (done: Function) => {
       console.info('swiperMask testswiperMask001 START');
       await Utils.sleep(2000);

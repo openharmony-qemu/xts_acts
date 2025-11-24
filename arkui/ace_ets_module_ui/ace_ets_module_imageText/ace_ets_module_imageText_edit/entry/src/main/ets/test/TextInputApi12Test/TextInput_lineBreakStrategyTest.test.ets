@@ -46,12 +46,12 @@ export default function TextInput_lineBreakStrategyTest() {
     });
 
     /**
-     * @tc.number    TextInput_lineBreakStrategyTest
-     * @tc.name      testBack
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   TextInput_lineBreakStrategyTest_001
+     * @tc.number TextInput_lineBreakStrategyTest
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TextInput_lineBreakStrategyTest_001',  Level.LEVEL3, async (done: Function) => {
       console.info('[TextInput_lineBreakStrategyTest_001] START');

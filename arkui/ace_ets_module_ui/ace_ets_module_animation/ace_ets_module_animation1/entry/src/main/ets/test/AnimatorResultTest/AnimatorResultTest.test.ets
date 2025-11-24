@@ -58,9 +58,12 @@ export default function AnimatorResultTest() {
     });
 
     /**
+     * @tc.name   AnimatorResultTest_001
      * @tc.number AnimatorResultTest_001
-     * @tc.desc AnimatorResultTest_001
-     * @tc.level Level 0
+     * @tc.desc   AnimatorResultTest_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AnimatorResultTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('[AnimatorResultTest_001] START');
@@ -81,9 +84,12 @@ export default function AnimatorResultTest() {
     });
 
     /**
+     * @tc.name   AnimatorResultTest_002
      * @tc.number AnimatorResultTest_002
-     * @tc.desc AnimatorResultTest_002
-     * @tc.level Level 0
+     * @tc.desc   AnimatorResultTest_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AnimatorResultTest_002', Level.LEVEL0, async (done: Function) => {
       console.info('[AnimatorResultTest_002] START');

@@ -57,12 +57,12 @@ export default function videoJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_videoAppInfoTest001
-     * @tc.name: videoAppInfoTest001
-     * @tc.desc: VideoAPI 
-     * @tc.level: Level 1
-     * @tc.type : Video
-     * @tc.size : VideoTest
+     * @tc.name   videoAppInfoTest001
+     * @tc.number SUB_ARKUI_API_videoAppInfoTest001
+     * @tc.desc   VideoAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('videoAppInfoTest001', Level.LEVEL1, async () => {
       console.info('videoAppInfoTest001 START');

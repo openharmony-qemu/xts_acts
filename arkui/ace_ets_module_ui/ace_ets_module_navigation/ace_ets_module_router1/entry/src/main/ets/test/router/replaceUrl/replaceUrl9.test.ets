@@ -48,10 +48,12 @@ export default function replaceUrl9() {
     });
 
     /**
-     * @tc.number    replaceUrl9_0100
-     * @tc.name      replaceUrl9_0100
-     * @tc.desc      Test replaceUrl
-     * @tc.level     Level 2
+     * @tc.name   replaceUrl9_0100
+     * @tc.number replaceUrl9_0100
+     * @tc.desc   Test replaceUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('replaceUrl9_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[replaceUrl9_0100] START');

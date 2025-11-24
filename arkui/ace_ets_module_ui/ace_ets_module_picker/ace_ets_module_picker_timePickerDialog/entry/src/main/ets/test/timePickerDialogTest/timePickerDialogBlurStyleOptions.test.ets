@@ -37,12 +37,12 @@ export default function timePickerDialogBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    timePickerDialogBlurStyleOptions_0100
-     * @tc.name      timePickerDialogBlurStyleOptions_0100
-     * @tc.desc      createTimePickerDialogModeToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   timePickerDialogBlurStyleOptions_0100
+     * @tc.number timePickerDialogBlurStyleOptions_0100
+     * @tc.desc   createTimePickerDialogModeToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('timePickerDialogBlurStyleOptions_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'timePickerDialogBlurStyleOptions';
@@ -79,12 +79,12 @@ export default function timePickerDialogBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    timePickerDialogBlurStyleOptions_0200
-     * @tc.name      timePickerDialogBlurStyleOptions_0200
-     * @tc.desc      createTimePickerDialogModeToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   timePickerDialogBlurStyleOptions_0200
+     * @tc.number timePickerDialogBlurStyleOptions_0200
+     * @tc.desc   createTimePickerDialogModeToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('timePickerDialogBlurStyleOptions_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'timePickerDialogBlurStyleOptions_0200';
@@ -111,12 +111,12 @@ export default function timePickerDialogBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    timePickerDialogBlurStyleOptions_0300
-     * @tc.name      timePickerDialogBlurStyleOptions_0300
-     * @tc.desc      createTimePickerDialogModeToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   timePickerDialogBlurStyleOptions_0300
+     * @tc.number timePickerDialogBlurStyleOptions_0300
+     * @tc.desc   createTimePickerDialogModeToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('timePickerDialogBlurStyleOptions_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'timePickerDialogBlurStyleOptions_0300';

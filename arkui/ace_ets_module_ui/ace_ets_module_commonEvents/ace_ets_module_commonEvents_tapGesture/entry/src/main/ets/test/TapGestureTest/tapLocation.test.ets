@@ -46,12 +46,14 @@ export default function tapLocationTest() {
       console.info('tapLocation after each called');
     });
 
-    /* *
-    * @tc.number: tapLocation1_0100
-    * @tc.name  : tapLocation1_0100
-    * @tc.desc  : To test whether tapLocation is effective.
-    * @tc.level : Level 1
-    */
+    /**
+     * @tc.name   tapLocation1_0100
+     * @tc.number tapLocation1_0100
+     * @tc.desc   To test whether tapLocation is effective.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('tapLocation1_0100', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(1000);
       console.info('tapLocation1_0100 START');
@@ -69,12 +71,14 @@ export default function tapLocationTest() {
       done();
     });
 
-    /* *
-    * @tc.number: tapLocation1_0200
-    * @tc.name  : tapLocation1_0200
-    * @tc.desc  : To test whether tapLocation is effective.
-    * @tc.level : Level 1
-    */
+    /**
+     * @tc.name   tapLocation1_0200
+     * @tc.number tapLocation1_0200
+     * @tc.desc   To test whether tapLocation is effective.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('tapLocation1_0200', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(1000);
       console.info('tapLocation1_0200 START');

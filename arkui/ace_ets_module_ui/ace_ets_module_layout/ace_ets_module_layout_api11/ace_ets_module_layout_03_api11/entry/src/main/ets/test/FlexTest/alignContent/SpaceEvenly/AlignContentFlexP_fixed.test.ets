@@ -50,13 +50,15 @@ export default function AlignContentFlexP_fixed() {
       console.info("AlignContentFlexP_fixed after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_SPACEEVENLY_0800
-     * @tc.name testAlignContentSpaceEvenlyFlexFixedSatisfy
-     * @tc.desc Set the alignContent property of the flex component to FlexAlign.SpaceEvenly, and adjust the height
-     *               of the child component to meet the flex component size.
-     */
 
+    /**
+     * @tc.name   testAlignContentSpaceEvenlyFlexFixedSatisfy
+     * @tc.number testAlignContentSpaceEvenlyFlexFixedSatisfy
+     * @tc.desc   testAlignContentSpaceEvenlyFlexFixedSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentSpaceEvenlyFlexFixedSatisfy',  Level.LEVEL0, async () => {
       console.info('testAlignContentSpaceEvenlyFlexFixedSatisfy START');
       GlobalContext.getContext().getObject<number>('value').message.notify({
@@ -115,13 +117,15 @@ export default function AlignContentFlexP_fixed() {
 
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_SPACEEVENLY_0900
-     * @tc.name testAlignContentSpaceEvenlyFlexFixedNOSatisfy
-     * @tc.desc Set the alignContent property of the flex component to FlexAlign.SpaceEvenly and adjust the
-     *               sub-component heights so that they do not meet the flex component size.
-     */
 
+    /**
+     * @tc.name   testAlignContentSpaceEvenlyFlexFixedNOSatisfy
+     * @tc.number testAlignContentSpaceEvenlyFlexFixedNOSatisfy
+     * @tc.desc   testAlignContentSpaceEvenlyFlexFixedNOSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentSpaceEvenlyFlexFixedNOSatisfy',  Level.LEVEL0, async () => {
       console.info('testAlignContentSpaceEvenlyFlexFixedNOSatisfy START');
       GlobalContext.getContext().getObject<number>('value').message.notify({

@@ -41,14 +41,14 @@ export default function textPickerDialogOnScrollStopTest(){
       done();
     });
     
-    /* *
-    * @tc.number: textPickerDialogOnScrollStopTest_0200
-    * @tc.name  : textPickerDialogOnScrollStopTest_0200
-    * @tc.desc  : To test the onScollStop interface
-    * @tc.level : Level 3
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   textPickerDialogOnScrollStopTest_0200
+     * @tc.number textPickerDialogOnScrollStopTest_0200
+     * @tc.desc   To test the onScollStop interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('textPickerDialogOnScrollStopTest_0200', Level.LEVEL3, async (done:Function) =>{
       console.info('textPickerDialogOnScrollStopTest_0200 START');
       let driver = await Driver.create()

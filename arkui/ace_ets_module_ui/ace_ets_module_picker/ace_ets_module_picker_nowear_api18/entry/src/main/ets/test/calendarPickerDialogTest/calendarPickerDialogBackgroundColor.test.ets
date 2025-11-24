@@ -42,12 +42,14 @@ export default function CalendarPickerDialogBGColorTest() {
       console.info('CalendarPickerDialogBGColorTest after each called');
     });
 
-    /* *
-    * @tc.number: CalendarPickerDialogBGColorTest_001
-    * @tc.name  : CalendarPickerDialogBGColorTest_001
-    * @tc.desc  : To test the CalendarPickerDialog BackgroundColor Color.White
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   CalendarPickerDialogBGColorTest_001
+     * @tc.number CalendarPickerDialogBGColorTest_001
+     * @tc.desc   To test the CalendarPickerDialog BackgroundColor Color.White
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('CalendarPickerDialogBGColorTest_001',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('ColorWhiteID'));
@@ -62,12 +64,14 @@ export default function CalendarPickerDialogBGColorTest() {
       await btn1?.click();
       done();
     })
-    /* *
-    * @tc.number: CalendarPickerDialogBGColorTest_002
-    * @tc.name  : CalendarPickerDialogBGColorTest_002
-    * @tc.desc  : To test the CalendarPickerDialog BackgroundColor 'rgb(255, 100, 255)'
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   CalendarPickerDialogBGColorTest_002
+     * @tc.number CalendarPickerDialogBGColorTest_002
+     * @tc.desc   To test the CalendarPickerDialog BackgroundColor 'rgb(255, 100, 255)'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('CalendarPickerDialogBGColorTest_002',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('rgb(255, 100, 255)ID'));
@@ -82,12 +86,14 @@ export default function CalendarPickerDialogBGColorTest() {
       await btn1?.click();
       done();
     })
-    /* *
-    * @tc.number: CalendarPickerDialogBGColorTest_003
-    * @tc.name  : CalendarPickerDialogBGColorTest_003
-    * @tc.desc  : To test the CalendarPickerDialog BackgroundColor 0x008080
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   CalendarPickerDialogBGColorTest_003
+     * @tc.number CalendarPickerDialogBGColorTest_003
+     * @tc.desc   To test the CalendarPickerDialog BackgroundColor 0x008080
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('CalendarPickerDialogBGColorTest_003',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('0x008080ID'));
@@ -102,12 +108,14 @@ export default function CalendarPickerDialogBGColorTest() {
       await btn1?.click();
       done();
     })
-    /* *
-    * @tc.number: CalendarPickerDialogBGColorTest_004
-    * @tc.name  : CalendarPickerDialogBGColorTest_004
-    * @tc.desc  : To test the CalendarPickerDialog BackgroundColor '#00FFFF'
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   CalendarPickerDialogBGColorTest_004
+     * @tc.number CalendarPickerDialogBGColorTest_004
+     * @tc.desc   To test the CalendarPickerDialog BackgroundColor '#00FFFF'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('CalendarPickerDialogBGColorTest_004',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('00FFFFID'));
@@ -122,12 +130,14 @@ export default function CalendarPickerDialogBGColorTest() {
       await btn1?.click();
       done();
     })
-    /* *
-    * @tc.number: CalendarPickerDialogBGColorTest_005
-    * @tc.name  : CalendarPickerDialogBGColorTest_005
-    * @tc.desc  : To test the CalendarPickerDialog BackgroundColor $r('app.color.blue')
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   CalendarPickerDialogBGColorTest_005
+     * @tc.number CalendarPickerDialogBGColorTest_005
+     * @tc.desc   To test the CalendarPickerDialog BackgroundColor $r('app.color.blue')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('CalendarPickerDialogBGColorTest_005',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('colorBlueID'));
@@ -142,12 +152,14 @@ export default function CalendarPickerDialogBGColorTest() {
       await btn1?.click();
       done();
     })
-    /* *
-    * @tc.number: CalendarPickerDialogBGColorTest_006
-    * @tc.name  : CalendarPickerDialogBGColorTest_006
-    * @tc.desc  : To test the CalendarPickerDialog BackgroundColor null
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   CalendarPickerDialogBGColorTest_006
+     * @tc.number CalendarPickerDialogBGColorTest_006
+     * @tc.desc   To test the CalendarPickerDialog BackgroundColor null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('CalendarPickerDialogBGColorTest_006',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('nullID'));
@@ -167,12 +179,14 @@ export default function CalendarPickerDialogBGColorTest() {
       await btn1?.click();
       done();
     })
-    /* *
-    * @tc.number: CalendarPickerDialogBGColorTest_007
-    * @tc.name  : CalendarPickerDialogBGColorTest_007
-    * @tc.desc  : To test the CalendarPickerDialog BackgroundColor undefined
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   CalendarPickerDialogBGColorTest_007
+     * @tc.number CalendarPickerDialogBGColorTest_007
+     * @tc.desc   To test the CalendarPickerDialog BackgroundColor undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('CalendarPickerDialogBGColorTest_007',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('undefinedID'));
@@ -192,12 +206,14 @@ export default function CalendarPickerDialogBGColorTest() {
       await btn1?.click();
       done();
     })
-    /* *
-    * @tc.number: CalendarPickerDialogBGColorTest_008
-    * @tc.name  : CalendarPickerDialogBGColorTest_008
-    * @tc.desc  : To test the CalendarPickerDialog BackgroundColor 'XXX'
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   CalendarPickerDialogBGColorTest_008
+     * @tc.number CalendarPickerDialogBGColorTest_008
+     * @tc.desc   To test the CalendarPickerDialog BackgroundColor 'XXX'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('CalendarPickerDialogBGColorTest_008',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('xxxID'));
@@ -217,12 +233,14 @@ export default function CalendarPickerDialogBGColorTest() {
       await btn1?.click();
       done();
     })
-    /* *
-    * @tc.number: CalendarPickerDialogBGColorTest_009
-    * @tc.name  : CalendarPickerDialogBGColorTest_009
-    * @tc.desc  : To test the CalendarPickerDialog BackgroundColor -5
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   CalendarPickerDialogBGColorTest_009
+     * @tc.number CalendarPickerDialogBGColorTest_009
+     * @tc.desc   To test the CalendarPickerDialog BackgroundColor -5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('CalendarPickerDialogBGColorTest_009',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('-100ID'));

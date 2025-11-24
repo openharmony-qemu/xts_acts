@@ -59,12 +59,12 @@ export default function RepeatIfElseBoolean() {
     });
 
     /**
+     * @tc.name   RepeatIfElseBoolean_001
      * @tc.number RepeatIfElseBoolean_001
-     * @tc.name RepeatIfElseBoolean_001
-     * @tc.desc Test RepeatIfElseBoolean component
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Test RepeatIfElseBoolean component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RepeatIfElseBoolean_001', Level.LEVEL0, async (done: Function) => {
       console.info('[RepeatIfElseBoolean_001] START');

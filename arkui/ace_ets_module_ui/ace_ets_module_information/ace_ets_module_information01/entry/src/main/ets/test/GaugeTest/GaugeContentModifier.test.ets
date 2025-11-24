@@ -44,14 +44,14 @@ export default function GaugeContentModifier() {
       await CommonFunc.sleep(1000);
       console.info('GaugeContentModifier after each called');
     });
-    /*
-    * @tc.number     : GaugeContentModifier_001
-    * @tc.name       : GaugeContentModifier_001
-    * @tc.desc       : test GaugeContentModifier_001
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   GaugeContentModifier_001
+     * @tc.number GaugeContentModifier_001
+     * @tc.desc   test GaugeContentModifier_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GaugeContentModifier_001', Level.LEVEL0, async (done: Function) => {
       console.info('[GaugeContentModifier_001] START');
       let strJson = getInspectorByKey('GaugeContentModifier01');
@@ -62,14 +62,14 @@ export default function GaugeContentModifier() {
       console.info('[GaugeContentModifier_001] END');
       done();
     });
-    /*
-    * @tc.number     : GaugeContentModifier_002
-    * @tc.name       : GaugeContentModifier_002
-    * @tc.desc       : test GaugeContentModifier_002
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   GaugeContentModifier_002
+     * @tc.number GaugeContentModifier_002
+     * @tc.desc   test GaugeContentModifier_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GaugeContentModifier_002', Level.LEVEL0, async (done: Function) => {
       console.info('[GaugeContentModifier_001] START');
       let strJson = getInspectorByKey('GaugeContentModifier02');
@@ -80,14 +80,14 @@ export default function GaugeContentModifier() {
       console.info('[GaugeContentModifier_002] END');
       done();
     });
-    /*
-    * @tc.number     : GaugeContentModifier_003
-    * @tc.name       : GaugeContentModifier_003
-    * @tc.desc       : test GaugeContentModifier_003
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   GaugeContentModifier_003
+     * @tc.number GaugeContentModifier_003
+     * @tc.desc   test GaugeContentModifier_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GaugeContentModifier_003', Level.LEVEL0, async (done: Function) => {
       console.info('[GaugeContentModifier_003] START');
       let strJson = getInspectorByKey('GaugeContentModifier03');
@@ -98,14 +98,14 @@ export default function GaugeContentModifier() {
       console.info('[GaugeContentModifier_003] END');
       done();
     });
-    /*
-    * @tc.number     : GaugeContentModifier_004
-    * @tc.name       : GaugeContentModifier_004
-    * @tc.desc       : test GaugeContentModifier_004
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   GaugeContentModifier_004
+     * @tc.number GaugeContentModifier_004
+     * @tc.desc   test GaugeContentModifier_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GaugeContentModifier_004', Level.LEVEL0, async (done: Function) => {
       console.info('[GaugeContentModifier_004] START');
       let strJson = getInspectorByKey('GaugeContentModifier04');
@@ -116,14 +116,14 @@ export default function GaugeContentModifier() {
       console.info('[GaugeContentModifier_004] END');
       done();
     });
-    /*
-    * @tc.number     : GaugeContentModifier_005
-    * @tc.name       : GaugeContentModifier_005
-    * @tc.desc       : test GaugeContentModifier_005
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   GaugeContentModifier_005
+     * @tc.number GaugeContentModifier_005
+     * @tc.desc   test GaugeContentModifier_005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GaugeContentModifier_005', Level.LEVEL0, async (done: Function) => {
       console.info('[GaugeContentModifier_005] START');
       let strJson = getInspectorByKey('GaugeContentModifier05');
@@ -134,14 +134,14 @@ export default function GaugeContentModifier() {
       console.info('[GaugeContentModifier_005] END');
       done();
     });
-    /*
-    * @tc.number     : GaugeContentModifier_006
-    * @tc.name       : GaugeContentModifier_006
-    * @tc.desc       : test GaugeContentModifier_006
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   GaugeContentModifier_006
+     * @tc.number GaugeContentModifier_006
+     * @tc.desc   test GaugeContentModifier_006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GaugeContentModifier_006', Level.LEVEL0, async (done: Function) => {
       console.info('[GaugeContentModifier_006] START');
       let strJson = getInspectorByKey('GaugeContentModifier06');
@@ -153,12 +153,12 @@ export default function GaugeContentModifier() {
       done();
     });
     /**
-     * @tc.number     : GaugeContentModifier_007
-     * @tc.name       : GaugeContentModifier_007
-     * @tc.desc       : test GaugeContentModifier_007
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   GaugeContentModifier_007
+     * @tc.number GaugeContentModifier_007
+     * @tc.desc   test GaugeContentModifier_007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GaugeContentModifier_007', Level.LEVEL0, async (done: Function) => {
       console.info('[GaugeContentModifier_007] START');
@@ -170,14 +170,14 @@ export default function GaugeContentModifier() {
       console.info('[GaugeContentModifier_007] END');
       done();
     });
-    /*
-    * @tc.number     : GaugeContentModifier_008
-    * @tc.name       : GaugeContentModifier_008
-    * @tc.desc       : test GaugeContentModifier_008
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   GaugeContentModifier_008
+     * @tc.number GaugeContentModifier_008
+     * @tc.desc   test GaugeContentModifier_008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GaugeContentModifier_008', Level.LEVEL0, async (done: Function) => {
       console.info('[GaugeContentModifier_008] START');
       let strJson = getInspectorByKey('GaugeContentModifier08');
@@ -189,14 +189,14 @@ export default function GaugeContentModifier() {
       done();
     });
 
-    /*
-    * @tc.number     : GaugeContentModifier_009
-    * @tc.name       : GaugeContentModifier_009
-    * @tc.desc       : test GaugeContentModifier_009
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   GaugeContentModifier_009
+     * @tc.number GaugeContentModifier_009
+     * @tc.desc   test GaugeContentModifier_009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GaugeContentModifier_009', Level.LEVEL0, async (done: Function) => {
       console.info('[GaugeContentModifier_009] START');
       let strJson = getInspectorByKey('GaugeContentModifier09');
@@ -207,14 +207,14 @@ export default function GaugeContentModifier() {
       console.info('[GaugeContentModifier_009] END');
       done();
     });
-    /*
-    * @tc.number     : GaugeContentModifier_010
-    * @tc.name       : GaugeContentModifier_010
-    * @tc.desc       : test GaugeContentModifier_010
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   GaugeContentModifier_010
+     * @tc.number GaugeContentModifier_010
+     * @tc.desc   test GaugeContentModifier_010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GaugeContentModifier_010', Level.LEVEL0, async (done: Function) => {
       console.info('[GaugeContentModifier_010] START');
       let strJson = getInspectorByKey('GaugeContentModifier10');
@@ -226,14 +226,14 @@ export default function GaugeContentModifier() {
       done();
     });
 
-    /*
-    * @tc.number     : GaugeContentModifier_011
-    * @tc.name       : GaugeContentModifier_011
-    * @tc.desc       : test GaugeContentModifier_011
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   GaugeContentModifier_011
+     * @tc.number GaugeContentModifier_011
+     * @tc.desc   test GaugeContentModifier_011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GaugeContentModifier_011', Level.LEVEL0, async (done: Function) => {
       console.info('[GaugeContentModifier_011] START');
       let strJson = getInspectorByKey('GaugeContentModifier11');
@@ -245,14 +245,14 @@ export default function GaugeContentModifier() {
       done();
     });
 
-    /*
-    * @tc.number     : GaugeContentModifier_012
-    * @tc.name       : GaugeContentModifier_012
-    * @tc.desc       : test GaugeContentModifier_012
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   GaugeContentModifier_012
+     * @tc.number GaugeContentModifier_012
+     * @tc.desc   test GaugeContentModifier_012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GaugeContentModifier_012', Level.LEVEL0, async (done: Function) => {
       console.info('[GaugeContentModifier_012] START');
       let strJson = getInspectorByKey('GaugeContentModifier12');
@@ -264,14 +264,14 @@ export default function GaugeContentModifier() {
       done();
     });
 
-    /*
-    * @tc.number     : GaugeContentModifier_013
-    * @tc.name       : GaugeContentModifier_013
-    * @tc.desc       : test GaugeContentModifier_013
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   GaugeContentModifier_013
+     * @tc.number GaugeContentModifier_013
+     * @tc.desc   test GaugeContentModifier_013
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GaugeContentModifier_013', Level.LEVEL0, async (done: Function) => {
       console.info('[GaugeContentModifier_013] START');
       let strJson = getInspectorByKey('GaugeContentModifier13');
@@ -283,14 +283,14 @@ export default function GaugeContentModifier() {
       done();
     });
 
-    /*
-    * @tc.number     : GaugeContentModifier_014
-    * @tc.name       : GaugeContentModifier_014
-    * @tc.desc       : test GaugeContentModifier_014
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   GaugeContentModifier_014
+     * @tc.number GaugeContentModifier_014
+     * @tc.desc   test GaugeContentModifier_014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GaugeContentModifier_014', Level.LEVEL0, async (done: Function) => {
       console.info('[GaugeContentModifier_014] START');
       let strJson = getInspectorByKey('GaugeContentModifier14');
@@ -302,14 +302,14 @@ export default function GaugeContentModifier() {
       done();
     });
 
-    /*
-    * @tc.number     : GaugeContentModifier_015
-    * @tc.name       : GaugeContentModifier_015
-    * @tc.desc       : test GaugeContentModifier_015
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   GaugeContentModifier_015
+     * @tc.number GaugeContentModifier_015
+     * @tc.desc   test GaugeContentModifier_015
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GaugeContentModifier_015', Level.LEVEL0, async (done: Function) => {
       console.info('[GaugeContentModifier_015] START');
       let strJson = getInspectorByKey('GaugeContentModifier15');
@@ -320,14 +320,14 @@ export default function GaugeContentModifier() {
       console.info('[GaugeContentModifier_015] END');
       done();
     });
-    /*
-    * @tc.number     : GaugeContentModifier_016
-    * @tc.name       : GaugeContentModifier_016
-    * @tc.desc       : test GaugeContentModifier_016
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   GaugeContentModifier_016
+     * @tc.number GaugeContentModifier_016
+     * @tc.desc   test GaugeContentModifier_016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GaugeContentModifier_016', Level.LEVEL0, async (done: Function) => {
       console.info('[GaugeContentModifier_016] START');
       let strJson = getInspectorByKey('GaugeContentModifier16');
@@ -338,14 +338,14 @@ export default function GaugeContentModifier() {
       console.info('[GaugeContentModifier_016] END');
       done();
     });
-    /*
-    * @tc.number     : GaugeContentModifier_017
-    * @tc.name       : GaugeContentModifier_017
-    * @tc.desc       : test GaugeContentModifier_017
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   GaugeContentModifier_017
+     * @tc.number GaugeContentModifier_017
+     * @tc.desc   test GaugeContentModifier_017
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GaugeContentModifier_017', Level.LEVEL0, async (done: Function) => {
       console.info('[GaugeContentModifier_017] START');
       let strJson = getInspectorByKey('GaugeContentModifier17');
@@ -356,14 +356,14 @@ export default function GaugeContentModifier() {
       console.info('[GaugeContentModifier_017] END');
       done();
     });
-    /*
-    * @tc.number     : GaugeContentModifier_018
-    * @tc.name       : GaugeContentModifier_018
-    * @tc.desc       : test GaugeContentModifier_018
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   GaugeContentModifier_018
+     * @tc.number GaugeContentModifier_018
+     * @tc.desc   test GaugeContentModifier_018
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GaugeContentModifier_018', Level.LEVEL0, async (done: Function) => {
       console.info('[GaugeContentModifier_018] START');
       let strJson = getInspectorByKey('GaugeContentModifier18');

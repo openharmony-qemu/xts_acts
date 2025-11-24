@@ -37,12 +37,12 @@ export default function showDatePickerDialogBackgroundEffectTest() {
     });
 
     /**
-     * @tc.number    showDatePickerDialogBackgroundEffectTest_0100
-     * @tc.name      showDatePickerDialogBackgroundEffectTest_0100
-     * @tc.desc      createShowDatePickerDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showDatePickerDialogBackgroundEffectTest_0100
+     * @tc.number showDatePickerDialogBackgroundEffectTest_0100
+     * @tc.desc   createShowDatePickerDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('showDatePickerDialogBackgroundEffectTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'showDatePickerDialogBackgroundEffectTest_0100';
@@ -85,12 +85,12 @@ export default function showDatePickerDialogBackgroundEffectTest() {
     });
 
     /**
-     * @tc.number    showDatePickerDialogBackgroundEffectTest_0200
-     * @tc.name      showDatePickerDialogBackgroundEffectTest_0200
-     * @tc.desc      createShowDatePickerDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showDatePickerDialogBackgroundEffectTest_0200
+     * @tc.number showDatePickerDialogBackgroundEffectTest_0200
+     * @tc.desc   createShowDatePickerDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('showDatePickerDialogBackgroundEffectTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'showDatePickerDialogDialogBackgroundEffectTest_0200';
@@ -120,12 +120,12 @@ export default function showDatePickerDialogBackgroundEffectTest() {
     });
 
     /**
-     * @tc.number    showDatePickerDialogBackgroundEffectTest_0300
-     * @tc.name      showDatePickerDialogBackgroundEffectTest_0300
-     * @tc.desc      createShowDatePickerDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showDatePickerDialogBackgroundEffectTest_0300
+     * @tc.number showDatePickerDialogBackgroundEffectTest_0300
+     * @tc.desc   createShowDatePickerDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('showDatePickerDialogBackgroundEffectTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'showDatePickerDialogBackgroundEffectTest_0300';

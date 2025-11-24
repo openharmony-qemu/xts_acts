@@ -41,12 +41,12 @@ export default function gridItemJsunit() {
     });
 
     /**
+     * @tc.name   testGridItem_0100
      * @tc.number testGridItem_0100
-     * @tc.name Test the properties of components
-     * @tc.desc Set selected values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set selected values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridItem_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[testGridItem_0100] START');
@@ -59,12 +59,12 @@ export default function gridItemJsunit() {
     });
 
     /**
+     * @tc.name   testGridItem_0101
      * @tc.number testGridItem_0101
-     * @tc.name Test the properties of components
-     * @tc.desc Set rowStart values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set rowStart values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridItem_0101', Level.LEVEL0, async (done: Function) => {
       console.info('[testGridItem_0101] START');
@@ -79,12 +79,12 @@ export default function gridItemJsunit() {
     });
 
     /**
+     * @tc.name   testGridItem_0102
      * @tc.number testGridItem_0102
-     * @tc.name Test the properties of components
-     * @tc.desc Set rowEnd values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set rowEnd values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridItem_0102', Level.LEVEL0, async (done: Function) => {
       console.info('[testGridItem_0102] START');
@@ -99,12 +99,12 @@ export default function gridItemJsunit() {
     });
 
     /**
+     * @tc.name   testGridItem_0103
      * @tc.number testGridItem_0103
-     * @tc.name Test the properties of components
-     * @tc.desc Set columnStart values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set columnStart values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridItem_0103', Level.LEVEL0, async (done: Function) => {
       console.info('[testGridItem_0103] START');
@@ -119,12 +119,12 @@ export default function gridItemJsunit() {
     });
 
     /**
+     * @tc.name   testGridItem_0104
      * @tc.number testGridItem_0104
-     * @tc.name Test the properties of components
-     * @tc.desc Set columnEnd values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set columnEnd values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridItem_0104', Level.LEVEL0, async (done: Function) => {
       console.info('[testGridItem_0104] START');
@@ -139,12 +139,12 @@ export default function gridItemJsunit() {
     });
 
     /**
+     * @tc.name   testGridItem_0105
      * @tc.number testGridItem_0105
-     * @tc.name Test the properties of components
-     * @tc.desc Set selectable values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set selectable values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridItem_0105', Level.LEVEL0, async (done: Function) => {
       console.info('[testGridItem_0105] START');
@@ -159,12 +159,12 @@ export default function gridItemJsunit() {
     });
 
     /**
+     * @tc.name   testGridItem_0106
      * @tc.number testGridItem_0106
-     * @tc.name Test the properties of components
-     * @tc.desc Change rowStart values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change rowStart values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridItem_0106', Level.LEVEL0, async (done: Function) => {
       console.info('testGridItem_0106 START');

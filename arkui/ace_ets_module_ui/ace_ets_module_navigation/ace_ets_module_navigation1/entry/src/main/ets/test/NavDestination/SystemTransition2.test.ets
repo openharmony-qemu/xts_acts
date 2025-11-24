@@ -49,10 +49,12 @@ export default function SystemTransition() {
 
 
     /**
-     * @tc.number    NavDestinationSystemTransition_0100
-     * @tc.name      NavDestinationSystemTransition_0100
-     * @tc.desc      Test systemTransition and NavigationSystemTransitionType.FADE
-     * @tc.level     Level 2
+     * @tc.name   NavDestinationSystemTransition_0100
+     * @tc.number NavDestinationSystemTransition_0100
+     * @tc.desc   Test systemTransition and NavigationSystemTransitionType.FADE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavDestinationSystemTransition_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('SystemTransition_0100 START');
@@ -82,10 +84,12 @@ export default function SystemTransition() {
     });
 
     /**
-     * @tc.number    NavDestinationSystemTransition_0200
-     * @tc.name      NavDestinationSystemTransition_0200
-     * @tc.desc      Test systemTransition and NavigationSystemTransitionType.EXPLODE
-     * @tc.level     Level 2
+     * @tc.name   NavDestinationSystemTransition_0200
+     * @tc.number NavDestinationSystemTransition_0200
+     * @tc.desc   Test systemTransition and NavigationSystemTransitionType.EXPLODE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavDestinationSystemTransition_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('SystemTransition_0200 START');
@@ -115,10 +119,12 @@ export default function SystemTransition() {
     });
 
     /**
-     * @tc.number    NavDestinationSystemTransition_0300
-     * @tc.name      NavDestinationSystemTransition_0300
-     * @tc.desc      Test systemTransition and NavigationSystemTransitionType.SLIDE_RIGHT
-     * @tc.level     Level 2
+     * @tc.name   NavDestinationSystemTransition_0300
+     * @tc.number NavDestinationSystemTransition_0300
+     * @tc.desc   Test systemTransition and NavigationSystemTransitionType.SLIDE_RIGHT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavDestinationSystemTransition_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('SystemTransition_0300 START');
@@ -148,10 +154,12 @@ export default function SystemTransition() {
     });
 
     /**
-     * @tc.number    NavDestinationSystemTransition_0400
-     * @tc.name      NavDestinationSystemTransition_0400
-     * @tc.desc      Test systemTransition and NavigationSystemTransitionType.SLIDE_BOTTOM
-     * @tc.level     Level 2
+     * @tc.name   NavDestinationSystemTransition_0400
+     * @tc.number NavDestinationSystemTransition_0400
+     * @tc.desc   Test systemTransition and NavigationSystemTransitionType.SLIDE_BOTTOM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavDestinationSystemTransition_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('SystemTransition_0400 START');

@@ -51,14 +51,14 @@ export default function textPickerOnChangeModifierTest() {
       done();
     });
   
-    /* *
-    * @tc.number: TextPicker_OnChange_Modifier_001
-    * @tc.name  : TextPicker_OnChange_Modifier_001
-    * @tc.desc  : To test the OnChange
-    * @tc.level : Level 3
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   TextPicker_OnChange_Modifier_001
+     * @tc.number TextPicker_OnChange_Modifier_001
+     * @tc.desc   To test the OnChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TextPicker_OnChange_Modifier_001', Level.LEVEL1, async (done: Function) => {
         console.info('TextPicker_OnChange_Modifier_001 START');
         let driver = Driver.create();
@@ -82,14 +82,14 @@ export default function textPickerOnChangeModifierTest() {
         done();
       });
   
-      /* *
-      * @tc.number: TextPicker_OnChange_Modifier_002
-      * @tc.name  : TextPicker_OnChange_Modifier_002
-      * @tc.desc  : To test the OnChange
-      * @tc.level : Level 3
-      * @tc.type
-      * @tc.size
-      */
+      /**
+       * @tc.name   TextPicker_OnChange_Modifier_002
+       * @tc.number TextPicker_OnChange_Modifier_002
+       * @tc.desc   To test the OnChange
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
       it('TextPicker_OnChange_Modifier_002', Level.LEVEL1, async (done: Function) => {
         console.info('TextPicker_OnChange_Modifier_002 START');
         let driver = Driver.create();

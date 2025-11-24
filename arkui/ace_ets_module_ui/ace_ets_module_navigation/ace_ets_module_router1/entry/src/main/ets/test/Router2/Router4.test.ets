@@ -47,15 +47,15 @@ export default function Router4() {
       router.back()
       console.info("Router4 after each called");
     });
-    /**
-     * @tc.number Router4_0100
-     * @tc.name Router4_0100
-     * @tc.desc Repeatedly jump to the page
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
-     */
 
+    /**
+     * @tc.name   Router4_0100
+     * @tc.number Router4_0100
+     * @tc.desc   Router4_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Router4_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[Router4_0100] START');
 

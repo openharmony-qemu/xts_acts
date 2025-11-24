@@ -47,11 +47,13 @@ export default function Prefetcher1() {
     });
 
     /**
-    * @tc.number Prefetcher1_0100
-    * @tc.name Prefetcher1_0100
-    * @tc.desc Test lazyforeach
-    * @tc.level Level 2
-    */
+     * @tc.name   Prefetcher1_0100
+     * @tc.number Prefetcher1_0100
+     * @tc.desc   Test lazyforeach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Prefetcher1_0100', Level.LEVEL0, async (done: Function) => {
       console.info('Prefetcher1_0100 START');
       await CommonFunc.sleep(1000);

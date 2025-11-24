@@ -47,11 +47,13 @@ export default function ListTypeNodeTest() {
       console.info("ListTypeNode after each called");
     });
 
-    /*
-     * @tc.number    ListTypeNodeTest_0100
-     * @tc.name      ListTypeNodeTest_0100
-     * @tc.desc      Test ListTypeNode
-     * @tc.level     Level 1
+    /**
+     * @tc.name   ListTypeNodeTest_0100
+     * @tc.number ListTypeNodeTest_0100
+     * @tc.desc   Test ListTypeNode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ListTypeNodeTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[ListTypeNodeTest_0100] START');
@@ -102,12 +104,12 @@ export default function ListTypeNodeTest() {
       done();
     });
     /**
-     * @tc.number    ListTypeNodeTest_0200
-     * @tc.name      ListTypeNodeTest_0200
-     * @tc.desc      Test ListTypeNodePage undefined.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   ListTypeNodeTest_0200
+     * @tc.number ListTypeNodeTest_0200
+     * @tc.desc   Test ListTypeNodePage undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ListTypeNodeTest_0200', Level.LEVEL3, async (done: Function) => {
       console.info('[ListTypeNodeTest_0200] START');

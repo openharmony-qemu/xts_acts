@@ -46,12 +46,12 @@ export default function ellipseJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testEllipse01
-     * @tc.name: testEllipse01
-     * @tc.desc: EllipseAPI 
-     * @tc.level: Level 0
-     * @tc.type : Ellipse
-     * @tc.size : EllipseTest
+     * @tc.name   testEllipse01
+     * @tc.number SUB_ARKUI_API_testEllipse01
+     * @tc.desc   EllipseAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEllipse01', Level.LEVEL0, async (done: Function) => {
       console.info('[testEllipse01] START');
@@ -65,12 +65,12 @@ export default function ellipseJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testEllipse02
-     * @tc.name: testEllipse02
-     * @tc.desc: EllipseAPI 
-     * @tc.level: Level 0
-     * @tc.type : Ellipse
-     * @tc.size : EllipseTest
+     * @tc.name   testEllipse02
+     * @tc.number SUB_ARKUI_API_testEllipse02
+     * @tc.desc   EllipseAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEllipse02', Level.LEVEL0, async (done: Function) => {
       console.info('[testEllipse02] START');
@@ -98,12 +98,12 @@ export default function ellipseJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testEllipse03
-     * @tc.name: testEllipse03
-     * @tc.desc: EllipseAPI 
-     * @tc.level: Level 0
-     * @tc.type : Ellipse
-     * @tc.size : EllipseTest
+     * @tc.name   testEllipse03
+     * @tc.number SUB_ARKUI_API_testEllipse03
+     * @tc.desc   EllipseAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEllipse03', Level.LEVEL0, async (done: Function) => {
       console.info('[testEllipse03] START');
@@ -131,12 +131,12 @@ export default function ellipseJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testEllipse04
-     * @tc.name: testEllipse04
-     * @tc.desc: EllipseAPI 
-     * @tc.level: Level 0
-     * @tc.type : Ellipse
-     * @tc.size : EllipseTest
+     * @tc.name   testEllipse04
+     * @tc.number SUB_ARKUI_API_testEllipse04
+     * @tc.desc   EllipseAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEllipse04', Level.LEVEL0, async (done: Function) => {
       console.info('[testEllipse04] START');
@@ -164,12 +164,12 @@ export default function ellipseJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testEllipse05
-     * @tc.name: testEllipse05
-     * @tc.desc: EllipseAPI 
-     * @tc.level: Level 0
-     * @tc.type : Ellipse
-     * @tc.size : EllipseTest
+     * @tc.name   testEllipse05
+     * @tc.number SUB_ARKUI_API_testEllipse05
+     * @tc.desc   EllipseAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEllipse05', Level.LEVEL0, async (done: Function) => {
       console.info('[testEllipse05] START');
@@ -197,12 +197,12 @@ export default function ellipseJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testEllipse06
-     * @tc.name: testEllipse06
-     * @tc.desc: EllipseAPI 
-     * @tc.level: Level 0
-     * @tc.type : Ellipse
-     * @tc.size : EllipseTest
+     * @tc.name   testEllipse06
+     * @tc.number SUB_ARKUI_API_testEllipse06
+     * @tc.desc   EllipseAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEllipse06', Level.LEVEL0, async (done: Function) => {
       console.info('[testEllipse06] START');
@@ -230,12 +230,12 @@ export default function ellipseJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testEllipse07
-     * @tc.name: testEllipse07
-     * @tc.desc: EllipseAPI 
-     * @tc.level: Level 0
-     * @tc.type : Ellipse
-     * @tc.size : EllipseTest
+     * @tc.name   testEllipse07
+     * @tc.number SUB_ARKUI_API_testEllipse07
+     * @tc.desc   EllipseAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEllipse07', Level.LEVEL0, async (done: Function) => {
       console.info('[testEllipse07] START');

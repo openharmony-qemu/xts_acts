@@ -55,12 +55,12 @@ export default function ProgressMask() {
     });
 
     /**
+     * @tc.name   ProgressMask_0100
      * @tc.number ProgressMask_0100
-     * @tc.name ProgressMask_0100
-     * @tc.desc frameNode: ProgressMaskToWindow
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   frameNode: ProgressMaskToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ProgressMask_0100', Level.LEVEL2, async (done: Function) => {
       console.info('ProgressMask_0100 START');
@@ -76,12 +76,12 @@ export default function ProgressMask() {
     });
 
     /**
+     * @tc.name   ProgressMask_0200
      * @tc.number ProgressMask_0200
-     * @tc.name ProgressMask_0200
-     * @tc.desc frameNode: ProgressMaskToWindow
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   frameNode: ProgressMaskToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ProgressMask_0200', Level.LEVEL2, async (done: Function) => {
       console.info('ProgressMask_0200 START');

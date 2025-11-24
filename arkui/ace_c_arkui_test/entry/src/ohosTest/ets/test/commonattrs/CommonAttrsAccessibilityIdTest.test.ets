@@ -26,13 +26,13 @@ export default function commonAttrsAccessibilityIdTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_ACCESSIBILITYGROUP_ACCESSIBILITYID_0100
-     * @tc.name       : testCommonAttrsAccessibilityId001
-     * @tc.desc       : testing accessibilty id for commonattrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsAccessibilityId001
+     * @tc.number SUB_ARKUI_CAPI_ACCESSIBILITYGROUP_ACCESSIBILITYID_0100
+     * @tc.desc   testing accessibilty id for commonattrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAccessibilityId001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAccessibilityId001()).assertEqual(0)
