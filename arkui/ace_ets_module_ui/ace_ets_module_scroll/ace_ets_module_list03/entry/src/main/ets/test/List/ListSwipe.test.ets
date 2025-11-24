@@ -63,7 +63,7 @@ export default function ListSwipeTest() {
       await driver.swipe(Math.round(globalThis.winLeft + rectCenter[0] + (rectCenter[3] - rectCenter[2]) / 4), Math.round( globalThis.winTop + rectCenter[1]),
         0, Math.round(globalThis.winTop + rectCenter[1]))
 
-      await sleep(8000) // wait for ui update
+      await sleep(3000) // wait for ui update
       console.info('get getInspectorByKey swipe0100')
       let strJson2: string = getInspectorByKey('swipe0100')
       console.info('ArkUI_List_Swipe_0100 text: ' + JSON.stringify(JSON.parse(strJson2)))
@@ -102,7 +102,7 @@ export default function ListSwipeTest() {
       let width = right - left;
       await driver.swipe(Math.round(left + width*0.3),Math.round(top + height/2),Math.round(left + width*0.9),Math.round(top + height/2));
 
-      await sleep(8000) // wait for ui update
+      await sleep(3000) // wait for ui update
       console.info('get getInspectorByKey swipe0300')
       let strJson2: string = getInspectorByKey('swipe0300')
       console.info('ArkUI_List_Swipe_0300 text: ' + JSON.stringify(JSON.parse(strJson2)))
@@ -129,7 +129,7 @@ export default function ListSwipeTest() {
 
       // 2.trigger button click, expect state change COLLAPSED and onFinish be called
       sendEventByKey('MyList2CloseButton', 10, null)
-      await sleep(8000) // wait for ui update
+      await sleep(3000) // wait for ui update
       let strJson2: string = getInspectorByKey('swipe0400')
       console.info('ArkUI_List_Swipe_0400 text: ' + JSON.stringify(JSON.parse(strJson2)))
       expect(JSON.parse(strJson2).$type).assertEqual('Text')
@@ -159,7 +159,7 @@ export default function ListSwipeTest() {
       console.info("windowRect Left: " + globalThis.winLeft + ',' + "windowRect Top: " + globalThis.winTop);
       await driver.swipe(Math.round(globalThis.winLeft + rectCenter[0] + (rectCenter[3] -rectCenter[2]) / 4), Math.round(globalThis.winTop + rectCenter[1]),
         0, Math.round(globalThis.winTop + rectCenter[1]))
-      await sleep(8000) // wait for ui update
+      await sleep(3000) // wait for ui update
       let strJson2: string = getInspectorByKey('swipe0500')
 
       console.info('ArkUI_List_Swipe_0500 text: ' + JSON.stringify(JSON.parse(strJson2)))
