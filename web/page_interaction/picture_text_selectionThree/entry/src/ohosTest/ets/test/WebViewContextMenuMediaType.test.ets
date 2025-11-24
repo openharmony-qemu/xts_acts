@@ -41,11 +41,11 @@ export default function WebViewContextMenuMediaType() {
           console.info("get WebViewContextMenuMediaType state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           console.info("push WebViewContextMenuMediaType page success " + JSON.stringify(result));
-          await driver.waitForComponent(ON.id("WebViewgContextMenuMediaTypeButton"), 10000)
         }
       } catch (err) {
         console.error("push WebViewContextMenuMediaType page error: " + err);
       }
+	  await driver.waitForComponent(ON.id("WebViewgContextMenuMediaTypeButton"), 10000)
       done()
     });
 
