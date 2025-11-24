@@ -23,7 +23,7 @@ import {
   it,
   expect,
   Level
-} from '../../../../hypium/index';
+} from '../../../../hypium';
 import router from '@ohos.router';
 import { UtilsTest } from '../Util.test';
 import Utils from '../../../ets/MainAbility/common/Utils';

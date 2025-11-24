@@ -12,47 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import UIAbility from '@ohos.app.ability.UIAbility';
-import AbilityConstant from '@ohos.app.ability.AbilityConstant';
-import Want from '@ohos.app.ability.Want';
-import window from '@ohos.window';
-import { BusinessError } from '@ohos.base';
-import hilog from '@ohos.hilog';
-import { MyCallback } from '../models/MyCallback';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import { UIContext } from '@ohos.arkui.UIContext';
+import TextPrivacySensitive from './PrivacySensitive.test'
 
 
-import Want from '@ohos.app.ability.Want';
-
-const TAG: string = '[ExampleEmbeddedAbility]'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export default function testsuite() {
+  TextPrivacySensitive()
+}

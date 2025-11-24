@@ -15,5 +15,5 @@
 
 import enableSecureTest from './XComponentTest/enableSecure.test';
 export default function testsuite() {
-  enableSecureTest();
+  enableSecureTest(); // enableSecure更新有延迟
 }

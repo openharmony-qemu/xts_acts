@@ -22,7 +22,7 @@ import {
   it,
   expect,
   Level
-} from '../../../../hypium/index';
+} from '../../../../hypium';
 import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
 import { UtilsTest } from '../Util.test';
@@ -112,8 +112,7 @@ export default function videoOnFullscreenChangeJsunit() {
       console.info("[testvideoOnFullscreenChange0003] component fontSize strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Video');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontSize')).assertEqual(undefined);
-      console.info("[testvideoOnFullscreenChange0003] fontSize value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontSize'));
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('fontSize')).assertEqual(undefined);
 
     });
 
@@ -163,8 +162,7 @@ export default function videoOnFullscreenChangeJsunit() {
       console.info("[testvideoOnFullscreenChange0006] component fontColor strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Video');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontColor')).assertEqual(undefined);
-      console.info("[testvideoOnFullscreenChange0006] fontColor value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('fontColor'));
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('fontColor')).assertEqual(undefined);
 
     });
 
@@ -180,8 +178,7 @@ export default function videoOnFullscreenChangeJsunit() {
       console.info("[testvideoOnFullscreenChange0007] component lineHeight strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Video');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('lineHeight')).assertEqual(undefined);
-      console.info("[testvideoOnFullscreenChange0007] lineHeight value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('lineHeight'));
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('lineHeight')).assertEqual(undefined);
 
     });
 
@@ -214,8 +211,7 @@ export default function videoOnFullscreenChangeJsunit() {
       console.info("[testvideoOnFullscreenChange0010] component textAlign strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual('Video');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('textAlign')).assertEqual(undefined);
-      console.info("[testvideoOnFullscreenChange0010] textAlign value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('textAlign'));
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('textAlign')).assertEqual(undefined);
 
     });
 

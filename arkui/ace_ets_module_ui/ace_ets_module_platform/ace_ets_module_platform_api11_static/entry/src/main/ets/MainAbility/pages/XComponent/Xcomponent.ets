@@ -12,11 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Column,Component,Button,Video,XComponentController,TextOverflow,TextAlign,Alignment,VideoController,FlexDirection,Flex,ImageFit,Row,ItemAlign,FlexAlign,ClickEvent,SeekMode,PlaybackSpeed,Resource,Text,$rawfile,$r } from '@ohos.arkui.component';
+import { Entry,Column,Component,Button,Color,Video,XComponentController,TextOverflow,TextAlign,Alignment,VideoController,FlexDirection,Flex,ImageFit,Row,ItemAlign,FlexAlign,ClickEvent,SeekMode,PlaybackSpeed,Resource,Text,$rawfile,$r } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import Log from '../../common/Log';
 import events_emitter from '@ohos.events.emitter';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 
 const TAG = 'ets_apiLack_add';
 
@@ -42,7 +42,7 @@ struct XcomponentGetXComponentContext {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor(Color.Red)
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
@@ -51,12 +51,11 @@ struct XcomponentGetXComponentContext {
         .key("getXComponentContextText")
         .onClick((e: ClickEvent) => {
           try {
-            // Log.showInfo(TAG, 'xcomponentController.getXComponentContext' + JSON.stringify(this.xcomponentController.getXComponentContext()))
-            // let result = (this.xcomponentController.getXComponentContext() != null)
+
             let backData: events_emitter.EventData = {
               data: {
                 "STATUS": "callBackSuccess"
-              } as Record<string, RecordData>
+              } as Record<String,undefined|null|Object>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 60228,
@@ -64,8 +63,7 @@ struct XcomponentGetXComponentContext {
             }
             console.info("xcomponentController start to emit action state")
             events_emitter.emit(backEvent, backData)
-          } catch (err) {
-            err = err as BusinessError;
+          } catch (err: BusinessError) {
             console.info("xcomponentController emit action state err: " + JSON.stringify((err as BusinessError)?.message))
           }
         })
@@ -76,7 +74,7 @@ struct XcomponentGetXComponentContext {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor(Color.Red)
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)
@@ -84,10 +82,11 @@ struct XcomponentGetXComponentContext {
         .textOverflow({ overflow: TextOverflow.None })
         .key("setXComponentSurfaceSizeText")
         .onClick((e: ClickEvent) => {
-          // this.xcomponentController.setXComponentSurfaceSize({
-          //   surfaceWidth: 200,
-          //   surfaceHeight: 200
-          // })
+          console.info('testxcomponentSetXComponentSurfaceSizeStatic0002 END 111111 onClick');
+          this.xcomponentController.setXComponentSurfaceRect({
+            surfaceWidth: 200,
+            surfaceHeight: 200
+          })
         })
 
     }.width("100%").height("100%")
