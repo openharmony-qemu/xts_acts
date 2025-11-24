@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -58,14 +58,13 @@ export default function APIcomponentSnapshotGetSync() {
       await CommonFunc.sleep(1000);
       console.info("APIcomponentSnapshotGetSync after each called");
     });
-    
-    /*
-     * @tc.number   APIcomponentSnapshotGetSync_static_0100
-     * @tc.name     APIcomponentSnapshotGetSync_static_0100
-     * @tc.desc     APIcomponentSnapshotGetSync_static_0100
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number    APIcomponentSnapshotGetSync_static_0100
+     * @tc.name      APIcomponentSnapshotGetSync_static_0100
+     * @tc.desc      Test api getSync of componentSnapshot
+     * @tc.level     Level 2
      */
-it('APIcomponentSnapshotGetSync_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('APIcomponentSnapshotGetSync_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[APIcomponentSnapshotGetSync_static_0100] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();

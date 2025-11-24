@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -82,14 +82,15 @@ export default function APIsetDragEventStrictReportingEnabled() {
       await CommonFunc.sleep(1000);
       console.info("APIsetDragEventStrictReportingEnabled after each called");
     })
-    
-    /*
+    /**
      * @tc.number   APIsetDragEventStrictReportingEnabled_static_0100
      * @tc.name     APIsetDragEventStrictReportingEnabled_static_0100
      * @tc.desc     APIsetDragEventStrictReportingEnabled_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.size     APIsetDragEventStrictReportingEnabled
+     * @tc.type     UIContext
+     * @tc.level    2
      */
-it('APIsetDragEventStrictReportingEnabled_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('APIsetDragEventStrictReportingEnabled_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('APIsetDragEventStrictReportingEnabled_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

@@ -14,28 +14,20 @@
  */
 import emitter from '@ohos.events.emitter';
 import {
-  $r,
-  $rawfile,
-  Button,
-  ClickEvent,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
   Entry,
-  PlaybackInfo,
-  PlaybackSpeed,
-  PreparedInfo,
-  Resource,
-  Row,
-  Text,
-  Video,
-  VideoController
+  Component,
+  $r,
+  Column,
+  ColumnOptions,ClickEvent,$rawfile,
+  Text,Video,Row,Button,
+  Color,PlaybackSpeed,Resource,VideoController,
 } from '@ohos.arkui.component';
-import { Link, Prop, State, } from '@ohos.arkui.stateManagement';
-import { AsyncCallback, Callback } from '@ohos.base';
-
-
+import {
+  State,
+  Link,
+  Prop,
+} from '@ohos.arkui.stateManagement';
+// xxx.ets
 @Entry
 @Component
 struct videoCallbackTest {
@@ -62,12 +54,12 @@ struct videoCallbackTest {
           let eventData: emitter.EventData = {
             data: {
               "action": 'onStart'
-            } as Record<String, undefined | null | Object>
+            } as Record<String,undefined|null|Object>
           } as emitter.EventData
           let event: emitter.InnerEvent = {
             eventId: 50101,
             priority: emitter.EventPriority.LOW
-          }
+          } as emitter.InnerEvent
           emitter.emit(event, eventData)
         })
         .onPause((): void => {
@@ -75,48 +67,51 @@ struct videoCallbackTest {
         .onFinish((): void => {
           console.info(' onFinish')
         })
+        .onError((): void => {
+          console.info(' onError')
+        })
         .onStop((): void => {
           console.info(' ETS  onStop')
           let eventData2: emitter.EventData = {
             data: {
               "action": 'onStop'
-            } as Record<String, undefined | null | Object>
+            } as Record<String,undefined|null|Object>
           } as emitter.EventData
           let event2: emitter.InnerEvent = {
             eventId: 50102,
             priority: emitter.EventPriority.LOW
-          }
+          } as emitter.InnerEvent
           emitter.emit(event2, eventData2)
         })
-        .onPrepared((e: PreparedInfo): void => {
+        .onPrepared((e?: DurationObject): void => {
           if (e != undefined) {
             console.info(' onPrepared is ' + e.duration)
           }
-        } as Callback<PreparedInfo>)
-        .onSeeking((e: PlaybackInfo): void => {
+        })
+        .onSeeking((e?: TimeObject): void => {
           if (e != undefined) {
             console.info(' onSeeking is ' + e.time)
           }
-        } as Callback<PlaybackInfo>)
-        .onSeeked((e: PlaybackInfo): void => {
+        })
+        .onSeeked((e?: TimeObject): void => {
           if (e != undefined) {
             console.info(' onSeeked is ' + e.time)
           }
-        } as Callback<PlaybackInfo>)
-        .onUpdate((e: PlaybackInfo): void => {
+        })
+        .onUpdate((e?: TimeObject): void => {
           if (e != undefined) {
             console.info(' onUpdate is ' + e.time)
           }
-        } as Callback<PlaybackInfo>)
+        })
 
       Row() {
-        Button('start').key('start').onClick((e: ClickEvent) => {
+        Button('start').id('start').onClick((e: ClickEvent) => {
           this.controller.start() // 开始播放
         }).margin(5)
-        Button('pause').key('pause').onClick((e: ClickEvent) => {
+        Button('pause').id('pause').onClick((e: ClickEvent) => {
           this.controller.pause() // 暂停播放
         }).margin(5)
-        Button('stop').key('stop').onClick((e: ClickEvent) => {
+        Button('stop').id('stop').onClick((e: ClickEvent) => {
           this.controller.stop() // 结束播放
         }).margin(5)
       }

@@ -1,4 +1,3 @@
-
 import { Entry, Text, TextAttribute, Column, Component, Button, ClickEvent } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
 import { State} from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -16,7 +15,7 @@ struct MyStateSample {
     try {
       let router1 = this.getUIContext().getRouter();
       AppStorage.setOrCreate<Router>('router', router1);
-    } catch (error) {
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }

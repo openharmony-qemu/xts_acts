@@ -52,7 +52,11 @@ struct Index {
                         console.log('++++++++++++++++++++++++1')
                         let uiContext:UIContext = this.getUIContext();
                         console.log('++++++++++++++++++++++++2')
-                        this.widthBp = uiContext.getWindowWidthBreakpoint();
+                        try{
+                            this.widthBp = uiContext.getWindowWidthBreakpoint();  // SDK11.17 Error: no impl
+                        }catch(err){
+                            console.log('+++++++getWindowWidthBreakpointError',err)
+                        }
                         console.log('++++++++++++++++++++++++3')
                         console.log(`sally----Window getWindowWidthBreakpoint is ${this.widthBp}`)
                     }).margin({top:4} as Margin)

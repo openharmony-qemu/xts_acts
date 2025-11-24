@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -62,14 +62,15 @@ export default function APIgetFrameNodeByUniqueId() {
       await CommonFunc.sleep(1000);
       console.info("APIgetFrameNodeByUniqueId after each called");
     })
-    
-    /*
-     * @tc.number   APIgetFrameNodeByUniqueId_static_0100
-     * @tc.name     APIgetFrameNodeByUniqueId_static_0100
-     * @tc.desc     APIgetFrameNodeByUniqueId_static_0100
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number api
+     * @tc.name APIgetFrameNodeByUniqueId_static_0100
+     * @tc.desc APIgetFrameNodeByUniqueId_static_0100
+     * @tc.size APIgetFrameNodeByUniqueId
+     * @tc.type UIContext
+     * @tc.level 2
      */
-it('APIgetFrameNodeByUniqueId_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('APIgetFrameNodeByUniqueId_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('APIgetFrameNodeByUniqueId_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

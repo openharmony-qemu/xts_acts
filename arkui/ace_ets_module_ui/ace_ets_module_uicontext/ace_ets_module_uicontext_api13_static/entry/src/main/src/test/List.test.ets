@@ -16,5 +16,5 @@
 import GetWindowWidthAndHeightTest from './window/GetWindowWidthAndHeight.test';
 
 export default function testsuite() {
-  // GetWindowWidthAndHeightTest(); // getWindowHeightBreakpoint
+  GetWindowWidthAndHeightTest(); // getWindowHeightBreakpoint
 }

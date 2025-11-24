@@ -36,7 +36,7 @@ export class AttrsManager {
     const eventData: events_emitter.EventData = {
       data: {
         'src': message
-      } as Record<String, undefined|null|Object>
+      } as Record<String,undefined|null|Object>
     };
     AttrsManager.emitEvent(caseName, Constants.EVENT_ID_CHANGE_DATA, eventData);
   }
