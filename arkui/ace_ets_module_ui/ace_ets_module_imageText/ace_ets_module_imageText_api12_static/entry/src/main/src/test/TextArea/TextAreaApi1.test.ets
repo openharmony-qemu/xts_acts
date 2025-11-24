@@ -64,15 +64,13 @@ export default function TextAreaApi1() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextAreaApi1_static_0100
      * @tc.name     TextAreaApi1_static_0100
      * @tc.desc     TextAreaApi1_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextAreaApi1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextAreaApi1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TextAreaApi1_0100 START');
       await CommonFunc.sleep(1000);
 

@@ -82,7 +82,7 @@ build() {
       Column() {
         RichEditor(this.options)
           .onReady((): void => {
-            this.controller.addTextSpan(this.message, { style: { fontColor: Color.Orange, fontSize: 30 } })
+            this.controller!.addTextSpan(this.message, { style: { fontColor: Color.Orange, fontSize: 30 } })
           })
           .bindSelectionMenu(RichEditorSpanType.BUILDER, this.panel, ResponseType.LongPress, {
           })

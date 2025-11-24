@@ -64,7 +64,7 @@ build() {
         }).id('set_enterType')
 
       Button('up customKeyboard').onClick((e: ClickEvent) => {
-        this.controller.stopEditing()
+        this.controller!.stopEditing()
         console.log('RichEditorController up customKeyboard');
       }).id('up_customKeyboard')
 
@@ -74,7 +74,7 @@ build() {
         .borderColor(Color.Red)
         .width('100%')
         .onReady((): void => {
-          this.controller.addTextSpan('01',
+          this.controller!.addTextSpan('01',
             {
               style:
               {
@@ -91,7 +91,7 @@ build() {
         .onSubmit((enterKey: EnterKeyType, event: SubmitEvent): void => {
           this.onSubmitCallBack = true;
           console.log('RichEditorController trigger richeditor onsubmit' + enterKey);
-          this.controller.addTextSpan(' type['+ enterKey +'] triggerred');
+          this.controller!.addTextSpan(' type['+ enterKey +'] triggerred');
           event.keepEditableState();
         })
         .id('RichEditorKeyBoard007')

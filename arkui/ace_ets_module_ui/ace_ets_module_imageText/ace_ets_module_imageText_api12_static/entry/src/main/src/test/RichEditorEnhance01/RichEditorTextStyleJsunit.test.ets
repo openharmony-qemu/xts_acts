@@ -83,15 +83,13 @@ export default function RichEditorTextStyleJsunit() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   RichEditorTextStyleJsunit_static_0100
      * @tc.name     RichEditorTextStyleJsunit_static_0100
      * @tc.desc     RichEditorTextStyleJsunit_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('RichEditorTextStyleJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RichEditorTextStyleJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[RichEditorTextStyleJsunit_static_0100] START');
       let driver = Driver.create();
       await driver.delayMs(1000)
@@ -112,15 +110,13 @@ it('RichEditorTextStyleJsunit_static_0100', Level.LEVEL0, async (done: () => voi
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   RichEditorTextStyleJsunit_static_0200
      * @tc.name     RichEditorTextStyleJsunit_static_0200
      * @tc.desc     RichEditorTextStyleJsunit_static_0200
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('RichEditorTextStyleJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RichEditorTextStyleJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[RichEditorTextStyleJsunit_static_0200] START');
       let driver = Driver.create();
       await driver.delayMs(1000)

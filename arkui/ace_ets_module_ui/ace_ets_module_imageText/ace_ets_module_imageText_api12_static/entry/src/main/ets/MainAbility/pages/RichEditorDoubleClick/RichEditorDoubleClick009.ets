@@ -55,18 +55,18 @@ import common from '@ohos.app.ability.common';
 @Entry
 @Component
 struct RichEditorDoubleClick009 {
-  // customSpan1: MyCustomSpan = new MyCustomSpan('Hello', 80);
-  // style1: MutableStyledString = new MutableStyledString(this.customSpan1);
+  customSpan1: MyCustomSpan = new MyCustomSpan('Hello', 80);
+  style1: MutableStyledString = new MutableStyledString(this.customSpan1);
   imagePixelMap: image.PixelMap | undefined = undefined;
   @State message: string = '';
   richEditorStyledString: MutableStyledString = new MutableStyledString('');
-  textStyle: TextStyle = {
+  textStyle: TextStyle = new TextStyle({
     fontWeight: FontWeight.Lighter,
     fontFamily: CommonFunc.FONT_FAMILY,
     fontColor: Color.Green,
-    // fontSize: lengthMetrics.vp(50),
+    fontSize: LengthMetrics.vp(50),
     fontStyle: FontStyle.Normal
-  } as TextStyle
+  })
   fontStyle1: TextStyle = { fontColor: Color.Blue } as TextStyle;
   // 创建属性字符串对象
   mutableStyledString: MutableStyledString = new MutableStyledString('abc',
@@ -102,13 +102,10 @@ build() {
             verticalAlign: ImageSpanAlignment.TOP,
             objectFit: ImageFit.Contain
           } as ImageAttachmentInterface))
-          let styledString = this.controller.getStyledString();
-          if (styledString !== undefined) {
-            this.richEditorStyledString = styledString;
-            this.richEditorStyledString.appendStyledString(imageStyledString);
-            this.controller.setStyledString(this.richEditorStyledString);
-            this.controller.setCaretOffset(this.richEditorStyledString.length);
-          }
+          this.richEditorStyledString = this.controller!.getStyledString()!;
+          this.richEditorStyledString.appendStyledString(imageStyledString);
+          this.controller!.setStyledString(this.richEditorStyledString);
+          this.controller!.setCaretOffset(this.richEditorStyledString.length);
         }
       }).id('imageTop')
 
@@ -116,7 +113,7 @@ build() {
 
       RichEditor(this.options)
         .onReady((): void => {
-          this.controller.setStyledString(this.mutableStyledString);
+          this.controller!.setStyledString(this.mutableStyledString);
         })
         .onSelectionChange((value: RichEditorRange): void => {
           console.log('RichEditorController value:' + JSON.stringify(value));
@@ -130,12 +127,10 @@ build() {
       Column() {
         Row() {
           Button('add custom').onClick((e: ClickEvent) => {
-            let styledString = this.controller.getStyledString();
-            if (styledString !== undefined) {
-              this.richEditorStyledString = styledString;
-              this.controller.setStyledString(this.richEditorStyledString);
-              this.controller.setCaretOffset(this.richEditorStyledString.length);
-            }
+            this.richEditorStyledString = this.controller!.getStyledString()!;
+            this.richEditorStyledString.appendStyledString(this.style1);
+            this.controller!.setStyledString(this.richEditorStyledString);
+            this.controller!.setCaretOffset(this.richEditorStyledString.length);
           }).id('addCustom')
         }
 

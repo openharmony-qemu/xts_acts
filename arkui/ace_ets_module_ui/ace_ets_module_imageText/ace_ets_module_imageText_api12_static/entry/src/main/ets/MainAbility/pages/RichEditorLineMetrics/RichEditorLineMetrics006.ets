@@ -59,14 +59,14 @@ build() {
       Text('lineMetrics(1):' + this.lineMetrics2).id('lineMetrics2')
       Button('get lineMetrics(0)').id('getFirst')
         .onClick((e: ClickEvent) => {
-          // let layoutManager: LayoutManager = this.controller.getLayoutManager();
-          // let lineMetrics = layoutManager.getLineMetrics(0);
-          // console.log('RichEditorController 0 lineMetrics 0:' +  JSON.stringify(lineMetrics));
-          // this.lineMetrics1 = JSON.stringify(lineMetrics);
-          //
-          // let lineMetrics1 = layoutManager.getLineMetrics(1);
-          // console.log('RichEditorController 1 lineMetrics1:' +  JSON.stringify(lineMetrics1));
-          // this.lineMetrics2 = JSON.stringify(lineMetrics1);
+          let layoutManager: LayoutManager = this.controller!.getLayoutManager() as LayoutManager;
+          let lineMetrics = layoutManager.getLineMetrics(0)!;
+          console.log('RichEditorController 0 lineMetrics 0:' +  JSON.stringify(lineMetrics));
+          this.lineMetrics1 = JSON.stringify(lineMetrics);
+
+          let lineMetrics1 = layoutManager.getLineMetrics(1)!;
+          console.log('RichEditorController 1 lineMetrics1:' +  JSON.stringify(lineMetrics1));
+          this.lineMetrics2 = JSON.stringify(lineMetrics1);
         })
         .margin({ bottom: 20, top: 10 } as Margin)
       RichEditor({ controller: this.controller } as RichEditorOptions)
@@ -76,7 +76,7 @@ build() {
         .borderColor(Color.Black)
         .onReady((): void => {
           for (let index = 0; index < 30; index++) {
-            this.controller.addImageSpan($r('app.media.icon'),
+            this.controller!.addImageSpan($r('app.media.icon'),
               {
                 imageStyle:
                 {

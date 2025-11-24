@@ -63,7 +63,7 @@ build() {
         .borderColor(Color.Red)
         .width('100%')
         .onReady((): void => {
-          this.controller.addImageSpan($r('app.media.app_icon'), {
+          this.controller!.addImageSpan($r('app.media.app_icon'), {
             imageStyle: {
               size: ['60px', '60px'],
               layoutStyle: {
@@ -89,33 +89,30 @@ build() {
 
       Button('get spans').onClick((e: ClickEvent) => {
         this.content = '';
-        let spans = this.controller.getSpans({
+        this.controller!.getSpans({
           start: 0,
           end: 6
-        })
-        if (spans !== undefined) {
-          spans.forEach(item => {
-            if ( (item as RichEditorImageSpanResult)?.imageStyle ) {
-              this.content += (item as RichEditorImageSpanResult).valueResourceStr;
-              if ( ((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)?.layoutStyle) {
-                this.style =
-                  JSON.stringify(((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)
-                    .layoutStyle);
-              }
+        })!.forEach(item => {
+          if ( (item as RichEditorImageSpanResult)?.imageStyle ) {
+            this.content += (item as RichEditorImageSpanResult).valueResourceStr;
+            if ( ((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)?.layoutStyle) {
+              this.style =
+                JSON.stringify(((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)
+                  .layoutStyle);
+            }
+            this.content += '\n'
+          } else {
+            if ( (item as RichEditorTextSpanResult)?.symbolSpanStyle ) {
+              console.log('get content get symbolSpanStyle');
+              this.content += (item as RichEditorTextSpanResult).symbolSpanStyle?.fontSize;
               this.content += '\n'
             } else {
-              if ( (item as RichEditorTextSpanResult)?.symbolSpanStyle ) {
-                console.log('get content get symbolSpanStyle');
-                this.content += (item as RichEditorTextSpanResult).symbolSpanStyle?.fontSize;
-                this.content += '\n'
-              } else {
-                console.log('get content no layoutStyle');
-                this.content += (item as RichEditorTextSpanResult).value;
-                this.content += '\n'
-              }
+              console.log('get content no layoutStyle');
+              this.content += (item as RichEditorTextSpanResult).value;
+              this.content += '\n'
             }
-          })
-        }
+          }
+        })
       }).id('get_content')
 
     }

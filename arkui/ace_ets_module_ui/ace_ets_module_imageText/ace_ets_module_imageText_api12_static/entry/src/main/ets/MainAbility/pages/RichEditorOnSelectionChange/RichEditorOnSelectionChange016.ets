@@ -60,7 +60,7 @@ build() {
       Text('onSelectCallBack:' + this.onSelectCallBack).id('onSelectCallBack')
       Text('message:' + this.message).id('message')
       Button('AddTextSpan').onClick((e: ClickEvent) => {
-        this.controller.addTextSpan('01',
+        this.controller!.addTextSpan('01',
           {
             style:
             {
@@ -71,7 +71,7 @@ build() {
       }).id('add_text_span')
 
       Button('add iamge').onClick((e: ClickEvent) => {
-        this.controller.addImageSpan($r('app.media.icon'),
+        this.controller!.addImageSpan($r('app.media.icon'),
           {
             imageStyle:
             {
@@ -81,7 +81,7 @@ build() {
       }).id('add_image')
 
       Button('add symbol').onClick((e: ClickEvent) => {
-        this.controller.addSymbolSpan($r('sys.symbol.ohos_trash'),
+        this.controller!.addSymbolSpan($r('sys.symbol.ohos_trash'),
           {
             style:
             {

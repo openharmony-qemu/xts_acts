@@ -60,7 +60,7 @@ build() {
         .borderColor(Color.Red)
         .width('100%')
         .onReady((): void => {
-          this.controller.addTextSpan('a', {
+          this.controller!.addTextSpan('a', {
             style:
             {
               fontColor: Color.Orange,
@@ -78,7 +78,7 @@ build() {
             }
           })
 
-          this.controller.addImageSpan($r('app.media.icon'),
+          this.controller!.addImageSpan($r('app.media.icon'),
             {
               imageStyle:
               {
@@ -99,7 +99,7 @@ build() {
                 }
               }
             })
-          this.controller.addTextSpan('b', {
+          this.controller!.addTextSpan('b', {
             style:
             {
               fontColor: Color.Orange,
@@ -117,7 +117,7 @@ build() {
             }
           })
 
-          this.controller.addImageSpan($r('app.media.icon'),
+          this.controller!.addImageSpan($r('app.media.icon'),
             {
               imageStyle:
               {

@@ -68,15 +68,13 @@ export default function textInputLineHeight() {
     })
 
     
-    
-    
-/*
+    /*
      * @tc.number   textInputLineHeight_static_0100
      * @tc.name     textInputLineHeight_static_0100
      * @tc.desc     textInputLineHeight_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('textInputLineHeight_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('textInputLineHeight_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[textInputLineHeight_0100] START');
       let strJson = inspector.getInspectorByKey('key_textInput_lineHeight_001');
       console.info("[textInputLineHeight_0100] obj is: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));

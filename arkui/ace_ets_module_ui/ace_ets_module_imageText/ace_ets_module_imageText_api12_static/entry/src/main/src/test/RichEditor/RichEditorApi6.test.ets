@@ -78,15 +78,13 @@ export default function RichEditorApi6() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   RichEditorApi6_static_0100
      * @tc.name     RichEditorApi6_static_0100
      * @tc.desc     RichEditorApi6_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('RichEditorApi6_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RichEditorApi6_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RichEditorApi6_static_0100 START');
       await CommonFunc.sleep(1000);
       if (AppStorage.get<number>("winLeft") as number == 0) {

@@ -71,14 +71,14 @@ build() {
       Text('lineMetrics(1):' + this.lineMetrics2).id('lineMetrics2')
       Button('get lineMetrics').id('getFirst')
         .onClick((e: ClickEvent) => {
-          // let layoutManager: LayoutManager = this.controller.getLayoutManager();
-          // let lineMetrics = layoutManager.getLineMetrics(0);
-          // console.log('RichEditorController 0 lineMetrics 0:' +  JSON.stringify(lineMetrics));
-          // this.lineMetrics1 = JSON.stringify(lineMetrics);
-          //
-          // let lineMetrics1 = layoutManager.getLineMetrics(1);
-          // console.log('RichEditorController 1 lineMetrics 1:' +  JSON.stringify(lineMetrics1));
-          // this.lineMetrics2 = JSON.stringify(lineMetrics1);
+          let layoutManager: LayoutManager = this.controller!.getLayoutManager() as LayoutManager;
+          let lineMetrics = layoutManager.getLineMetrics(0)!;
+          console.log('RichEditorController 0 lineMetrics 0:' +  JSON.stringify(lineMetrics));
+          this.lineMetrics1 = JSON.stringify(lineMetrics);
+
+          let lineMetrics1 = layoutManager.getLineMetrics(1);
+          console.log('RichEditorController 1 lineMetrics 1:' +  JSON.stringify(lineMetrics1));
+          this.lineMetrics2 = JSON.stringify(lineMetrics1);
         })
         .margin({ bottom: 20, top: 10 } as Margin)
       RichEditor({ controller: this.controller } as RichEditorOptions)
@@ -93,9 +93,9 @@ build() {
 
       Button('add builder')
         .onClick((e: ClickEvent) => {
-         this.controller.addBuilderSpan(this.myBuilder, { offset: this.myOffset });
-          this.controller.addTextSpan('\n');
-          this.controller.addBuilderSpan(this.myBuilder, { offset: this.myOffset });
+         this.controller!.addBuilderSpan(this.myBuilder, { offset: this.myOffset });
+          this.controller!.addTextSpan('\n');
+          this.controller!.addBuilderSpan(this.myBuilder, { offset: this.myOffset });
         }).id('add_builder1')
 
       Row() {

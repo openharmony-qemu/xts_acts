@@ -66,15 +66,13 @@ export default function textAreaMinFontSize() {
     })
 
     
-    
-    
-/*
+    /*
      * @tc.number   textAreaMinFontSize_static_0100
      * @tc.name     textAreaMinFontSize_static_0100
      * @tc.desc     textAreaMinFontSize_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('textAreaMinFontSize_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('textAreaMinFontSize_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'textAreaMinFontSize0100';
       console.info('[' + tagName + '] START============================');
       let strJsonNew = inspector.getInspectorByKey('key_textArea_minFontSize_001');

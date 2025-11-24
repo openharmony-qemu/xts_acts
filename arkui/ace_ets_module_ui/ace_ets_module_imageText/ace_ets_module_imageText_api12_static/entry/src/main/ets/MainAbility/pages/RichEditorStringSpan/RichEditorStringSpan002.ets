@@ -63,21 +63,21 @@ struct RichEditorStringSpan002 {
   @State rangeBefore: string = '';
   @State rangeAfter: string = '';
   richEditorStyledString: MutableStyledString = new MutableStyledString('');
-  textStyle: TextStyle = {
+  textStyle: TextStyle = new TextStyle({
     fontWeight: FontWeight.Lighter,
     fontFamily: CommonFunc.FONT_FAMILY,
     fontColor: Color.Green,
-    // fontSize: LengthMetrics.vp(30),
+    fontSize: LengthMetrics.vp(30),
     fontStyle: FontStyle.Normal
-  } as TextStyle
+  })
   fontStyle1: TextStyle = { fontColor: Color.Blue } as TextStyle;
-  fontStyle2: TextStyle = {
+  fontStyle2: TextStyle = new TextStyle({
     fontWeight: FontWeight.Bolder,
     fontFamily: 'Arial',
     fontColor: Color.Orange,
-    // fontSize: LengthMetrics.vp(50),
+    fontSize: LengthMetrics.vp(50),
     fontStyle: FontStyle.Italic
-  } as TextStyle
+  })
   // 创建属性字符串对象
   mutableStyledString: MutableStyledString = new MutableStyledString('init属性',
     [{ start: 0, length: 6, styledKey: StyledStringKey.FONT, styledValue: this.fontStyle1 }]);
@@ -123,24 +123,18 @@ build() {
             verticalAlign: ImageSpanAlignment.TOP,
             objectFit: ImageFit.Contain
           } as ImageAttachmentInterface))
-          let currentString = this.controller.getStyledString();
-          if (currentString !== undefined) {
-            this.richEditorStyledString = currentString;
-            this.richEditorStyledString.appendStyledString(imageStyledString);
-            this.controller.setStyledString(this.richEditorStyledString);
-            this.controller.setCaretOffset(this.richEditorStyledString.length);
-          }
+          this.richEditorStyledString = this.controller!.getStyledString()!;
+          this.richEditorStyledString.appendStyledString(imageStyledString);
+          this.controller!.setStyledString(this.richEditorStyledString);
+          this.controller!.setCaretOffset(this.richEditorStyledString.length);
         }
       }).id('image_top')
       Button('remove').onClick((e: ClickEvent) => {
         // 获取组件展示的属性字符串
-        let currentString = this.controller.getStyledString();
-        if (currentString !== undefined) {
-          this.richEditorStyledString = currentString;
-          this.richEditorStyledString.removeStyles(6, 5);
-          // 使删除内容后的属性字符串展示在组件上
-          this.controller.setStyledString(this.richEditorStyledString);
-        }
+        this.richEditorStyledString = this.controller!.getStyledString()!;
+        this.richEditorStyledString.removeStyles(6, 5);
+        // 使删除内容后的属性字符串展示在组件上
+        this.controller!.setStyledString(this.richEditorStyledString);
       }).id('remove')
 
       Button('get content').onClick((e: ClickEvent) => {
@@ -154,7 +148,7 @@ build() {
 
       RichEditor(this.options)
         .onReady((): void => {
-          this.controller.setStyledString(this.mutableStyledString);
+          this.controller!.setStyledString(this.mutableStyledString);
         })
         .height('20%')
         .width('100%')
@@ -164,13 +158,10 @@ build() {
       Column() {
         Row() {
           Button('add text').onClick((e: ClickEvent) => {
-            let currentString = this.controller.getStyledString();
-            if (currentString !== undefined) {
-              this.richEditorStyledString = currentString;
-              this.richEditorStyledString.appendStyledString(this.styledString);
-              this.controller.setStyledString(this.richEditorStyledString);
-              this.controller.setCaretOffset(this.richEditorStyledString.length);
-            }
+            this.richEditorStyledString = this.controller!.getStyledString()!;
+            this.richEditorStyledString.appendStyledString(this.styledString);
+            this.controller!.setStyledString(this.richEditorStyledString);
+            this.controller!.setCaretOffset(this.richEditorStyledString.length);
           }).id('add_text')
         }
 

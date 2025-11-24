@@ -65,7 +65,7 @@ build() {
           let options: SelectionOptions = {
             menuPolicy: MenuPolicy.SHOW
           };
-          this.controller.setSelection(1, 3, options);
+          this.controller!.setSelection(1, 3, options);
         })
 
       RichEditor({ controller: this.controller } as RichEditorOptions)
@@ -74,7 +74,7 @@ build() {
         .borderColor(Color.Red)
         .width('100%')
         .onReady((): void => {
-          this.controller.addTextSpan('abcd',
+          this.controller!.addTextSpan('abcd',
             {
               style:
               {
@@ -82,7 +82,7 @@ build() {
                 fontSize: 20
               }
             })
-          this.controller.addImageSpan($r('app.media.icon'),
+          this.controller!.addImageSpan($r('app.media.icon'),
             {
               imageStyle:
               {

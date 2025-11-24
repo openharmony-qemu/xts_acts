@@ -77,15 +77,13 @@ export default function onSelectionChange9() {
       console.info("onSelectionChange9 after each called");
     });
     
-    
-    
-/*
+    /*
      * @tc.number   onSelectionChange9_static_0100
      * @tc.name     onSelectionChange9_static_0100
      * @tc.desc     onSelectionChange9_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('onSelectionChange9_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('onSelectionChange9_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[onSelectionChange9_static_0100] START');
       await CommonFunc.sleep(1000);
 

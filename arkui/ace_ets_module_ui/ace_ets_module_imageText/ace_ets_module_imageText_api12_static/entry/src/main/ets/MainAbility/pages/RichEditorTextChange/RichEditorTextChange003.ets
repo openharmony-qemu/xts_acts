@@ -61,18 +61,15 @@ struct RichEditorTextChange003 {
           GridItem() {
             Button(item + '')
               .width(110).onClick((e: ClickEvent) => {
-              this.controller.addTextSpan(item + '', {
-                offset: this.controller.getCaretOffset(),
+              this.controller!.addTextSpan(item + '', {
+                offset: this.controller!.getCaretOffset(),
                 style:
                 {
                   fontColor: Color.Orange,
                   fontSize: 30
                 }
               })
-                let caretOffset = this.controller.getCaretOffset();
-                if (caretOffset !== undefined) {
-                  this.controller.setCaretOffset(caretOffset + item.toString().length)
-                }
+              this.controller!.setCaretOffset(this.controller!.getCaretOffset() as int + item.toString().length)
             })
           }
         })

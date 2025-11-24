@@ -61,16 +61,16 @@ build() {
         .onReady((): void => {
         })
         .onIMEInputComplete((value: RichEditorTextSpanResult): void => {
-          // let layoutManager: LayoutManager = this.controller.getLayoutManager();
-          // let lineMetrics = layoutManager.getLineMetrics(0);
-          // console.log('RichEditorController onIMEInputComplete:' +  JSON.stringify(lineMetrics));
-          // this.lineMetricsImeInput = JSON.stringify(lineMetrics);
+          let layoutManager: LayoutManager = this.controller!.getLayoutManager() as LayoutManager;
+          let lineMetrics = layoutManager.getLineMetrics(0);
+          console.log('RichEditorController onIMEInputComplete:' +  JSON.stringify(lineMetrics));
+          this.lineMetricsImeInput = JSON.stringify(lineMetrics);
         })
         .onDeleteComplete((): void => {
-          // let layoutManager: LayoutManager = this.controller.getLayoutManager();
-          // let lineMetrics = layoutManager.getLineMetrics(0);
-          // console.log('RichEditorController onDeleteComplete:' +  JSON.stringify(lineMetrics));
-          // this.lineMetricsOnDelete = JSON.stringify(lineMetrics);
+          let layoutManager: LayoutManager = this.controller!.getLayoutManager() as LayoutManager;
+          let lineMetrics = layoutManager.getLineMetrics(0);
+          console.log('RichEditorController onDeleteComplete:' +  JSON.stringify(lineMetrics));
+          this.lineMetricsOnDelete = JSON.stringify(lineMetrics);
         })
         .id('RichEditorLineMetrics022')
       Text('lineMetricsImeInput' + this.lineMetricsImeInput).id('lineMetricsImeInput')

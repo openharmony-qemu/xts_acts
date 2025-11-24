@@ -60,7 +60,7 @@ build() {
       Text('onSelectCallBack:' + this.onSelectCallBack).id('onSelectCallBack')
       Text('message:' + this.message).id('message')
       Button('setCaretOffset').onClick((e: ClickEvent) => {
-        this.controller.setCaretOffset(1);
+        this.controller!.setCaretOffset(1);
       }).id('setCaretOffset')
 
       Button('select')
@@ -71,7 +71,7 @@ build() {
           let options: SelectionOptions = {
             menuPolicy: MenuPolicy.SHOW
           };
-          this.controller.setSelection(2, 4, options);
+          this.controller!.setSelection(2, 4, options);
         })
 
       RichEditor({ controller: this.controller } as RichEditorOptions)
@@ -80,7 +80,7 @@ build() {
         .borderColor(Color.Red)
         .width('100%')
         .onReady((): void => {
-          this.controller.addTextSpan('01234',
+          this.controller!.addTextSpan('01234',
             {
               style:
               {
@@ -88,7 +88,7 @@ build() {
                 fontSize: 30
               }
             })
-          this.controller.addSymbolSpan($r('sys.symbol.ohos_trash'),
+          this.controller!.addSymbolSpan($r('sys.symbol.ohos_trash'),
             {
               style:
               {

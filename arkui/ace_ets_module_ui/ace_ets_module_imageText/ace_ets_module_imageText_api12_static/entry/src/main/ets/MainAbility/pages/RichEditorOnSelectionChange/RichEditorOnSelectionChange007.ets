@@ -60,7 +60,7 @@ build() {
       Text('onSelectCallBack:' + this.onSelectCallBack).id('onSelectCallBack')
       Text('message:' + this.message).id('message')
       Button('setSelection (1 4)').onClick((e: ClickEvent) => {
-        this.controller.setSelection(1, 4);
+        this.controller!.setSelection(1, 4);
       }).id('set1')
 
       RichEditor({ controller: this.controller } as RichEditorOptions)
@@ -69,7 +69,7 @@ build() {
         .borderColor(Color.Red)
         .width('100%')
         .onReady((): void => {
-          this.controller.addTextSpan('0123',
+          this.controller!.addTextSpan('0123',
             {
               style:
               {
@@ -77,7 +77,7 @@ build() {
                 fontSize: 30
               }
             })
-          this.controller.addImageSpan($r('app.media.icon'),
+          this.controller!.addImageSpan($r('app.media.icon'),
             {
               imageStyle:
               {

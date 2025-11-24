@@ -77,15 +77,13 @@ export default function RichEditorLayoutStyle001() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LAYOUTSTYLE_static_0100
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LAYOUTSTYLE_static_0100
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LAYOUTSTYLE_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LAYOUTSTYLE_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LAYOUTSTYLE_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LAYOUTSTYLE_static_0100 START');
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorLayoutStyle001')) as Promise<Component>);

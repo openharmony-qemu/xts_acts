@@ -14,7 +14,7 @@
  */
 
 import {
-  Entry,RichEditorImageSpanResult,
+  Entry,RichEditorImageSpanResult,Dimension,
   Component,
   Column,
   Row,
@@ -63,7 +63,7 @@ build() {
         .borderColor(Color.Red)
         .width('100%')
         .onReady((): void => {
-          this.controller.addImageSpan($r('app.media.icon'),
+          this.controller!.addImageSpan($r('app.media.icon'),
             {
               imageStyle:
               {
@@ -72,7 +72,7 @@ build() {
             })
         })
         .onWillChange((value: RichEditorChangeValue): boolean=> {
-          value.replacedImageSpans.forEach((item: RichEditorImageSpanResult) => {
+          value.replacedImageSpans!.forEach((item: RichEditorImageSpanResult) => {
             console.log('RichEditorController item:' + JSON.stringify(item));
             this.imageStyle = JSON.stringify(item.imageStyle.layoutStyle);
           })

@@ -64,17 +64,17 @@ build() {
           console.log('RichEditorController value:' + JSON.stringify(value));
         })
         .onWillChange((value: RichEditorChangeValue): boolean => {
-          // let layoutManager: LayoutManager = this.controller.getLayoutManager();
-          // let lineMetrics = layoutManager.getLineMetrics(0);
-          // console.log('RichEditorController onWillChange:' +  JSON.stringify(lineMetrics));
-          // this.lineMetricsWill = JSON.stringify(lineMetrics);
+          let layoutManager: LayoutManager = this.controller!.getLayoutManager() as LayoutManager;
+          let lineMetrics = layoutManager.getLineMetrics(0);
+          console.log('RichEditorController onWillChange:' +  JSON.stringify(lineMetrics));
+          this.lineMetricsWill = JSON.stringify(lineMetrics);
           return true
         })
         .onDidChange((rangeBefore: TextRange, rangeAfter: TextRange): void => {
-          // let layoutManager: LayoutManager = this.controller.getLayoutManager();
-          // let lineMetrics = layoutManager.getLineMetrics(0);
-          // console.log('RichEditorController onDidChange:' +  JSON.stringify(lineMetrics));
-          // this.lineMetricsDid = JSON.stringify(lineMetrics);
+          let layoutManager: LayoutManager = this.controller!.getLayoutManager() as LayoutManager;
+          let lineMetrics = layoutManager.getLineMetrics(0);
+          console.log('RichEditorController onDidChange:' +  JSON.stringify(lineMetrics));
+          this.lineMetricsDid = JSON.stringify(lineMetrics);
         })
         .id('RichEditorLineMetrics021')
       Text('lineMetricsWill' + this.lineMetricsWill).id('lineMetricsWill')

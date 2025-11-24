@@ -68,15 +68,13 @@ export default function underlineColor() {
       console.info("underlineColor after each called");
     });
 
-    
-    
-/*
+    /*
      * @tc.number   underlineColor_static_0100
      * @tc.name     underlineColor_static_0100
      * @tc.desc     underlineColor_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('underlineColor_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('underlineColor_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('underlineColor_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

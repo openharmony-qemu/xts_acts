@@ -82,9 +82,9 @@ build() {
         }).id('changeOrientation')
         RichEditor(this.options)
           .onReady((): void => {
-            this.controller.addTextSpan('0123456');
-            this.controller.addTextSpan('abc');
-            this.controller.addTextSpan('def');
+            this.controller!.addTextSpan('0123456');
+            this.controller!.addTextSpan('abc');
+            this.controller!.addTextSpan('def');
           })
           .onSelectionChange((value: RichEditorRange): void => {
             console.log('RichEditorController value:' + JSON.stringify(value));

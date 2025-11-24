@@ -50,26 +50,20 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 struct RichEditor009 {
   controller: RichEditorController = new RichEditorController();
   options: RichEditorOptions = { controller: this.controller } as RichEditorOptions;
-  @State pointPosition: number = -1;
+  @State pointPosition: int = -1;
 
 build() {
     Column() {
       Column() {
 
         Button('光标定位 emoji 前面').onClick((e: ClickEvent) => {
-          let caretOffset = this.controller.getCaretOffset();
-          if (caretOffset !== undefined) {
-            this.controller.setCaretOffset(caretOffset - 3);
-          }
+          this.controller!.setCaretOffset(this.controller!.getCaretOffset() as int - 3);
         }).id('back_emoji')
 
         Text('' + this.pointPosition).id('position_text');
 
         Button('get Point Position').onClick((e: ClickEvent) => {
-          let caretOffset = this.controller.getCaretOffset();
-          if (caretOffset !== undefined) {
-            this.pointPosition = caretOffset;
-          }
+          this.pointPosition = this.controller!.getCaretOffset() as int;
           console.log('this.point_position:' + this.pointPosition);
         }).id('get_position')
       }
@@ -81,7 +75,7 @@ build() {
       Column() {
         RichEditor(this.options as RichEditorOptions)
           .onReady((): void => {
-            this.controller.addImageSpan($r('app.media.icon'),
+            this.controller!.addImageSpan($r('app.media.icon'),
               {
                 imageStyle:
                 {
@@ -89,7 +83,7 @@ build() {
                 }
               })
 
-            this.controller.addTextSpan('\uD83D\uDE00',
+            this.controller!.addTextSpan('\uD83D\uDE00',
               {
                 style:
                 {
@@ -98,7 +92,7 @@ build() {
                 }
               })
 
-            this.controller.addImageSpan($r('app.media.icon'),
+            this.controller!.addImageSpan($r('app.media.icon'),
               {
                 imageStyle:
                 {

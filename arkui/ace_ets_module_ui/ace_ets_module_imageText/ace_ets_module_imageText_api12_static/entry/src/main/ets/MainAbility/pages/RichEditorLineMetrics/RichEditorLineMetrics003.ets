@@ -56,26 +56,26 @@ build() {
       Text('lineMetrics:' + this.lineMetrics).id('lineMetrics')
       Button('get lineMetrics(null)').id('getFirst')
         .onClick((e: ClickEvent) => {
-          // let layoutManager: LayoutManager = this.controller.getLayoutManager();
-          // let lineMetrics = layoutManager.getLineMetrics(null);
-          // console.log('RichEditorController 0 lineMetrics:' + lineMetrics);
-          // this.lineMetrics = lineMetrics + '';
+          let layoutManager: LayoutManager = this.controller!.getLayoutManager() as LayoutManager;
+          let lineMetrics = layoutManager.getLineMetrics(0);
+          console.log('RichEditorController 0 lineMetrics:' + lineMetrics);
+          this.lineMetrics = JSON.stringify(lineMetrics);
         })
         .margin({ bottom: 20, top: 10 } as Margin)
       Button('get lineMetrics(undefined)').id('getUndefined')
         .onClick((e: ClickEvent) => {
-          // let layoutManager: LayoutManager = this.controller.getLayoutManager();
-          // let lineMetrics = layoutManager.getLineMetrics(undefined);
-          // console.log('RichEditorController 0 lineMetrics:' + lineMetrics);
-          // this.lineMetrics = lineMetrics + '';
+          let layoutManager: LayoutManager = this.controller!.getLayoutManager() as LayoutManager;
+          let lineMetrics = layoutManager.getLineMetrics(0);
+          console.log('RichEditorController 0 lineMetrics:' + lineMetrics);
+          this.lineMetrics = JSON.stringify(lineMetrics);
         })
         .margin({ bottom: 20, top: 10 } as Margin)
       Button('get lineMetrics(-1)').id('get1')
         .onClick((e: ClickEvent) => {
-          // let layoutManager: LayoutManager = this.controller.getLayoutManager();
-          // let lineMetrics = layoutManager.getLineMetrics(-1);
-          // console.log('RichEditorController 0 lineMetrics:' + lineMetrics);
-          // this.lineMetrics = lineMetrics + '';
+          let layoutManager: LayoutManager = this.controller!.getLayoutManager() as LayoutManager;
+          let lineMetrics = layoutManager.getLineMetrics(-1);
+          console.log('RichEditorController 0 lineMetrics:' + lineMetrics);
+          this.lineMetrics = JSON.stringify(lineMetrics);
         })
         .margin({ bottom: 20, top: 10 } as Margin)
       RichEditor({ controller: this.controller } as RichEditorOptions)
@@ -84,7 +84,7 @@ build() {
         .borderColor(Color.Red)
         .width('100%')
         .onReady((): void => {
-          this.controller.addTextSpan('012345',
+          this.controller!.addTextSpan('012345',
             {
               style:
               {
@@ -92,7 +92,7 @@ build() {
                 fontSize: 30
               }
             })
-          this.controller.addImageSpan($r('app.media.icon'),
+          this.controller!.addImageSpan($r('app.media.icon'),
             {
               imageStyle:
               {

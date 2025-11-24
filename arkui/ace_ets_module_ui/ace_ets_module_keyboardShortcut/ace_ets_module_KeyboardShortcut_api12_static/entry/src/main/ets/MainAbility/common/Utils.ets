@@ -18,7 +18,7 @@ import inspector from '@ohos.arkui.inspector';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { TouchObject, TouchType } from '@ohos.arkui.component';
-import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from "@ohos.arkui.Test";
+import { sendTouchEvent } from "@ohos.arkui.Test";
 
 export default class Utils {
   static rect_left: number;

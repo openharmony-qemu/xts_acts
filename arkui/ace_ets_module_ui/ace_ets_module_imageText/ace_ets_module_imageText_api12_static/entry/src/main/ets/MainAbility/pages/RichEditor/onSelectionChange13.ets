@@ -59,7 +59,7 @@ build() {
     Column() {
       RichEditor(this.options)
         .onReady((): void => {
-          this.controller.addTextSpan("0123456789",
+          this.controller!.addTextSpan("0123456789",
             {
               style:
               {
@@ -67,7 +67,7 @@ build() {
                 fontSize: 50
               }
             })
-          this.controller.addSymbolSpan($r("sys.symbol.ohos_trash"),
+          this.controller!.addSymbolSpan($r("sys.symbol.ohos_trash"),
             {
               style:
               {

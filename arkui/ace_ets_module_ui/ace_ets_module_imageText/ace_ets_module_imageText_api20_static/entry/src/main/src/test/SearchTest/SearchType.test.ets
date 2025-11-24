@@ -65,15 +65,13 @@ export default function SearchTypeTest() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SearchTypeTest_static_0010
      * @tc.name     SearchTypeTest_static_0010
      * @tc.desc     SearchTypeTest_static_0010
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SearchTypeTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SearchTypeTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SearchTypeTest_static_0010] START');
       let strJson = inspector.getInspectorByKey('SearchType_ONE_TIME_CODE');
       let obj = JSON.parseJsonElement(strJson);
@@ -84,15 +82,13 @@ it('SearchTypeTest_static_0010', Level.LEVEL0, async (done: () => void): Promise
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SearchTypeTest_static_0020
      * @tc.name     SearchTypeTest_static_0020
      * @tc.desc     SearchTypeTest_static_0020
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SearchTypeTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SearchTypeTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SearchTypeTest_static_0020] START');
       let strJson = inspector.getInspectorByKey('SearchType_undefined');
       let obj = JSON.parseJsonElement(strJson);
@@ -103,15 +99,13 @@ it('SearchTypeTest_static_0020', Level.LEVEL0, async (done: () => void): Promise
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SearchTypeTest_static_0030
      * @tc.name     SearchTypeTest_static_0030
      * @tc.desc     SearchTypeTest_static_0030
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SearchTypeTest_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SearchTypeTest_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SearchTypeTest_static_0030] START');
       let strJson = inspector.getInspectorByKey('SearchType_default');
       let obj = JSON.parseJsonElement(strJson);
@@ -122,15 +116,13 @@ it('SearchTypeTest_static_0030', Level.LEVEL0, async (done: () => void): Promise
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SearchTypeTest_static_0040
      * @tc.name     SearchTypeTest_static_0040
      * @tc.desc     SearchTypeTest_static_0040
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SearchTypeTest_static_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SearchTypeTest_static_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SearchTypeTest_static_0040] START');
       let strJson = inspector.getInspectorByKey('SearchType_Modifier');
       let obj = JSON.parseJsonElement(strJson);

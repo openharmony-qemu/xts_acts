@@ -75,15 +75,13 @@ export default function RichEditorScroll001() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SUB_ACE_UI_RICHEDITOR_SCROLL_static_0010
      * @tc.name     SUB_ACE_UI_RICHEDITOR_SCROLL_static_0010
      * @tc.desc     SUB_ACE_UI_RICHEDITOR_SCROLL_static_0010
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SUB_ACE_UI_RICHEDITOR_SCROLL_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_RICHEDITOR_SCROLL_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_RICHEDITOR_SCROLL_static_0010 START');
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorScroll001')) as Promise<Component>);

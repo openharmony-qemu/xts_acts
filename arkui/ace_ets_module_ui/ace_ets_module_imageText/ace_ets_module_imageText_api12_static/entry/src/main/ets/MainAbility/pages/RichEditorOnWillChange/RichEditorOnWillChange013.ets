@@ -72,7 +72,7 @@ build() {
       Text('ondid rangeAfter:' + this.onDidRangeAfter).id('ondid_rangeAfter')
 
       Button('删除span内容').onClick((e: ClickEvent) => {
-        this.controller.deleteSpans({
+        this.controller!.deleteSpans({
           start: 2,
           end: 4
         })
@@ -84,7 +84,7 @@ build() {
         .borderColor(Color.Red)
         .width('100%')
         .onReady((): void => {
-          this.controller.addTextSpan('12',
+          this.controller!.addTextSpan('12',
             {
               style:
               {
@@ -92,7 +92,7 @@ build() {
                 fontSize: 30
               }
             })
-          this.controller.addTextSpan('ab',
+          this.controller!.addTextSpan('ab',
             {
               style:
               {
@@ -107,7 +107,7 @@ build() {
           this.onWillChangeRangeBefore = JSON.stringify(value.rangeBefore);
           this.onWillChangeCallback = true;
           this.replacedSpansCallbackInfo = JSON.stringify(value.replacedSpans);
-          value.replacedSpans.forEach((item: RichEditorTextSpanResult) => {
+          value.replacedSpans!.forEach((item: RichEditorTextSpanResult) => {
             console.log('RichEditorController：replacedSpans');
             console.log('RichEditorController item:' + JSON.stringify(item));
             console.log('RichEditorController spanPosition spanIndex:' + JSON.stringify(item.spanPosition.spanIndex));
@@ -119,7 +119,7 @@ build() {
           return true;
         })
         .aboutToDelete((value: RichEditorDeleteValue): boolean => {
-          value.richEditorDeleteSpans.forEach(item => {
+          value.richEditorDeleteSpans!.forEach(item => {
             console.log('RichEditorController aboutToDelete spanIndex:' + item.spanPosition.spanIndex);
             this.spanIndex = item.spanPosition.spanIndex + '';
           })

@@ -51,7 +51,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 struct RichEditorLineMetrics012 {
   controller: RichEditorController = new RichEditorController();
   @State lineMetrics: string = '';
-  @State lineCount: number = 0;
+  @State lineCount: int = 0;
   @State lineMetrics2: string = '';
 
 
@@ -61,18 +61,18 @@ build() {
     Column() {
       Button('get lineMetrics').id('getFirst')
         .onClick((e: ClickEvent) => {
-          // let layoutManager: LayoutManager = this.controller.getLayoutManager();
-          // this.lineCount = layoutManager.getLineCount()
-          // let lineMetrics1 = layoutManager.getLineMetrics(1);
-          // console.log('RichEditorController 1 lineMetrics 1:' +  JSON.stringify(lineMetrics1));
-          // this.lineMetrics2 = JSON.stringify(lineMetrics1);
+          let layoutManager: LayoutManager = this.controller!.getLayoutManager() as LayoutManager;
+          this.lineCount = layoutManager.getLineCount() as int
+          let lineMetrics1 = layoutManager.getLineMetrics(1);
+          console.log('RichEditorController 1 lineMetrics 1:' +  JSON.stringify(lineMetrics1));
+          this.lineMetrics2 = JSON.stringify(lineMetrics1);
         })
         .margin({ bottom: 20, top: 10 } as Margin)
       RichEditor({ controller: this.controller } as RichEditorOptions)
         .padding('10px')
         .width(200)
         .onReady((): void => {
-          this.controller.addTextSpan('012345012345abctest012345012345abctest')
+          this.controller!.addTextSpan('012345012345abctest012345012345abctest')
         })
         .onSelectionChange((value: RichEditorRange): void => {
           console.log('RichEditorController value:' + JSON.stringify(value));

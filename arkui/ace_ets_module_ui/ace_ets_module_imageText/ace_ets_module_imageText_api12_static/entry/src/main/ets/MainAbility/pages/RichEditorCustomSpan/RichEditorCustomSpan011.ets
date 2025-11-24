@@ -67,30 +67,20 @@ build() {
     Column() {
 
       Button('get content').onClick((e: ClickEvent) => {
-        let richEditorStyledString = this.controller.getStyledString();
-        if (richEditorStyledString !== undefined) {
-          this.length = richEditorStyledString.getString().length + '';
-        }
+        let richEditorStyledString = this.controller!.getStyledString()!;
+        this.length = richEditorStyledString!.getString().length + '';
       }).id('getContent')
-
       Button('getStyles')
         .onClick((e: ClickEvent) => {
-          let richEditorStyledString = this.controller.getStyledString();
-          if (richEditorStyledString !== undefined) {
-            let styles = richEditorStyledString.getStyles(0, richEditorStyledString.length);
-            if (styles !== undefined) {
-              this.stylesInfo += JSON.stringify(Array.from(styles));
-            }
-          }
+          let richEditorStyledString = this.controller!.getStyledString()!;
+          let styles = richEditorStyledString!.getStyles(0, richEditorStyledString.length);
+          this.stylesInfo += JSON.stringify(styles);
         })
         .id('getStyles')
-
       Button('removeStyle').onClick((e: ClickEvent) => {
-        let richEditorStyledString = this.controller.getStyledString();
-        if (richEditorStyledString !== undefined) {
-          richEditorStyledString.removeStyle(0, 1, StyledStringKey.CUSTOM_SPAN);
-          this.controller.setStyledString(richEditorStyledString);
-        }
+        let richEditorStyledString = this.controller!.getStyledString()!;
+        richEditorStyledString.removeStyle(0, 1, StyledStringKey.CUSTOM_SPAN);
+        this.controller!.setStyledString(richEditorStyledString);
       }).id('removeStyle')
 
       Text('length:' + this.length).id('length')
@@ -107,13 +97,10 @@ build() {
       Column() {
         Row() {
           Button('add custom').onClick((e: ClickEvent) => {
-            let styledString = this.controller.getStyledString();
-            if (styledString !== undefined) {
-              this.richEditorStyledString = styledString;
-              this.richEditorStyledString.appendStyledString(this.style1);
-              this.controller.setStyledString(this.richEditorStyledString);
-              this.controller.setCaretOffset(this.richEditorStyledString.length);
-            }
+            this.richEditorStyledString = this.controller!.getStyledString()!;
+            this.richEditorStyledString.appendStyledString(this.style1);
+            this.controller!.setStyledString(this.richEditorStyledString);
+            this.controller!.setCaretOffset(this.richEditorStyledString.length);
           }).id('addCustom')
         }
       }

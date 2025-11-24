@@ -65,14 +65,14 @@ build() {
           let options: SelectionOptions = {
             menuPolicy: MenuPolicy.SHOW
           };
-          this.controller.setSelection(1, 2, options);
+          this.controller!.setSelection(1, 2, options);
         })
       Button('set end')
         .id('set_end')
         .margin(15)
         .backgroundColor(Color.Transparent)
         .onClick((e: ClickEvent) => {
-          this.controller.setCaretOffset(5);
+          this.controller!.setCaretOffset(5);
         })
       RichEditor({ controller: this.controller } as RichEditorOptions)
         .height(200)
@@ -80,7 +80,7 @@ build() {
         .borderColor(Color.Red)
         .width('100%')
         .onReady((): void => {
-          this.controller.addTextSpan('abcdef',
+          this.controller!.addTextSpan('abcdef',
             {
               style:
               {
@@ -90,16 +90,16 @@ build() {
             })
         })
         .onCut((event:CutEvent): void => {
-          // let layoutManager: LayoutManager = this.controller.getLayoutManager();
-          // let lineMetrics = layoutManager.getLineMetrics(0);
-          // console.log('RichEditorController lineMetricsOnCut:' +  JSON.stringify(lineMetrics));
-          // this.lineMetricsOnCut = JSON.stringify(lineMetrics);
+          let layoutManager: LayoutManager = this.controller!.getLayoutManager() as LayoutManager;
+          let lineMetrics = layoutManager.getLineMetrics(0);
+          console.log('RichEditorController lineMetricsOnCut:' +  JSON.stringify(lineMetrics));
+          this.lineMetricsOnCut = JSON.stringify(lineMetrics);
         })
         .onPaste((): void => {
-          // let layoutManager: LayoutManager = this.controller.getLayoutManager();
-          // let lineMetrics = layoutManager.getLineMetrics(0);
-          // console.log('RichEditorController lineMetricsOnPaste:' +  JSON.stringify(lineMetrics));
-          // this.lineMetricsOnPaste = JSON.stringify(lineMetrics);
+          let layoutManager: LayoutManager = this.controller!.getLayoutManager() as LayoutManager;
+          let lineMetrics = layoutManager.getLineMetrics(0);
+          console.log('RichEditorController lineMetricsOnPaste:' +  JSON.stringify(lineMetrics));
+          this.lineMetricsOnPaste = JSON.stringify(lineMetrics);
         })
         .id('RichEditorLineMetrics023')
     }

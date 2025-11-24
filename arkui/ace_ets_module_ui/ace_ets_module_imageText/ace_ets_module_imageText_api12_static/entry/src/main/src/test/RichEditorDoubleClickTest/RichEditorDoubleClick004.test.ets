@@ -78,15 +78,13 @@ export default function RichEditorDoubleClick004() {
     });
     
     
-    
-    
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_doubleclick_static_004
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_doubleclick_static_004
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_doubleclick_static_004
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_doubleclick_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_doubleclick_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_doubleclick_static_004 START');
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorDoubleClick004')) as Promise<Component>);

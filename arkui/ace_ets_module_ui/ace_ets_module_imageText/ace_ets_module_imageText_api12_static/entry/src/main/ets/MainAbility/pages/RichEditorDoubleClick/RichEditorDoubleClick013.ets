@@ -62,12 +62,12 @@ build() {
 
         Text('message:' + this.message).id('message')
         Button('addTextSpan').onClick((e: ClickEvent) => {
-          this.controller.addTextSpan('aaa');
+          this.controller!.addTextSpan('aaa');
         }).id('addTextSpan')
         Button('setTypingStyle')
           .fontSize(10)
           .onClick((e: ClickEvent) => {
-            this.controller.setTypingStyle(
+            this.controller!.setTypingStyle(
               {
                 fontWeight: FontWeight.Bolder,
                 fontFamily: CommonFunc.FONT_FAMILY,
@@ -78,14 +78,14 @@ build() {
               })
           }).id('setTypingStyle')
         Button('deleteSpans').onClick((e: ClickEvent) => {
-          this.controller.deleteSpans({
+          this.controller!.deleteSpans({
             start: 3,
             end: 6
           });
         }).id('deleteSpans')
         RichEditor(this.options)
           .onReady((): void => {
-            this.controller.addTextSpan('0123456', {
+            this.controller!.addTextSpan('0123456', {
               style: {
                 fontWeight: FontWeight.Lighter,
                 fontFamily: CommonFunc.FONT_FAMILY,
@@ -94,8 +94,8 @@ build() {
                 decoration: { type: TextDecorationType.Underline, color: Color.Green }
               }
             })
-            this.controller.addTextSpan('mmm')
-            this.controller.addTextSpan('nnn')
+            this.controller!.addTextSpan('mmm')
+            this.controller!.addTextSpan('nnn')
           })
           .onSelectionChange((value: RichEditorRange): void => {
             console.log('RichEditorController value:' + JSON.stringify(value));

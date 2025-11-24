@@ -68,15 +68,13 @@ export default function ContainerSpanModifierTest() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   ContainerSpanModifierTest_static_0001
      * @tc.name     ContainerSpanModifierTest_static_0001
      * @tc.desc     ContainerSpanModifierTest_static_0001
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('ContainerSpanModifierTest_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ContainerSpanModifierTest_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let driver = Driver.create();
       console.info('ContainerSpanModifierTest0001 START');
       await CommonFunc.sleep(1000);

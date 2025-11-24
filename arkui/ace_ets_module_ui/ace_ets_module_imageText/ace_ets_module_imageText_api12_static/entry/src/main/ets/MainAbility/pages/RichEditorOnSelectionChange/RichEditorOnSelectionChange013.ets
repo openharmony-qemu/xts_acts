@@ -70,7 +70,7 @@ build() {
         .borderColor(Color.Red)
         .width('100%')
         .onReady((): void => {
-          this.controller.addTextSpan('cd',
+          this.controller!.addTextSpan('cd',
             {
               style:
               {
@@ -78,14 +78,14 @@ build() {
                 fontSize: 30
               }
             })
-          this.controller.addImageSpan($r('app.media.icon'),
+          this.controller!.addImageSpan($r('app.media.icon'),
             {
               imageStyle:
               {
                 size: ['57px', '57px']
               }
             })
-          this.controller.addSymbolSpan($r('sys.symbol.ohos_trash'),
+          this.controller!.addSymbolSpan($r('sys.symbol.ohos_trash'),
             {
               style:
               {

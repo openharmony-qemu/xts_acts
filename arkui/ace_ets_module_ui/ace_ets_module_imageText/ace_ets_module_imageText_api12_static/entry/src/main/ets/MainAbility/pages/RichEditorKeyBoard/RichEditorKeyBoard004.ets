@@ -60,18 +60,16 @@ struct RichEditorKeyBoard004 {
           GridItem() {
             Button(item + '')
               .width(110).onClick((e: ClickEvent) => {
-                let caretOffset = this.controller.getCaretOffset();
-                if (caretOffset !== undefined) {
-                  this.controller.addTextSpan(item + '', {
-                    offset: caretOffset,
-                    style: {
-                      fontColor: Color.Orange,
-                      fontSize: 30
-                    }
-                  });
-                  this.controller.setCaretOffset(caretOffset + item.toString().length);
+              this.controller!.addTextSpan(item + '', {
+                offset: this.controller!.getCaretOffset(),
+                style:
+                {
+                  fontColor: Color.Orange,
+                  fontSize: 30
                 }
               })
+              this.controller!.setCaretOffset(this.controller!.getCaretOffset() as int + item.toString().length)
+            })
           }
         })
       }.maxCount(3).columnsGap(10).rowsGap(10).padding(5)
@@ -85,7 +83,7 @@ build() {
 
       Text('isEditingFlag:' + this.isEditingFlag).id('isEditingFlag')
       Button('up customKeyboard').onClick((e: ClickEvent) => {
-        this.controller.stopEditing()
+        this.controller!.stopEditing()
         console.log('RichEditorController up customKeyboard');
       }).id('up_customKeyboard')
 

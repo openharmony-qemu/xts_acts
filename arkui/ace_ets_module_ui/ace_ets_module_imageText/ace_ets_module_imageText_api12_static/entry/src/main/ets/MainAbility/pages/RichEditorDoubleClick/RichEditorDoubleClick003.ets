@@ -77,7 +77,7 @@ build() {
     Column() {
       Text('message:' + this.message).id('message')
       Button('add image').onClick((e: ClickEvent) => {
-        this.controller.addImageSpan($r('app.media.icon'),
+        this.controller!.addImageSpan($r('app.media.icon'),
           {
             imageStyle:
             {
@@ -86,12 +86,12 @@ build() {
           })
       }).id('addImage')
       Button('set center').onClick((e: ClickEvent) => {
-        this.controller.setCaretOffset(2);
+        this.controller!.setCaretOffset(2);
       }).id('setCenter')
       Column() {
         RichEditor(this.options)
           .onReady((): void => {
-            this.controller.addTextSpan('abc 123 test select',
+            this.controller!.addTextSpan('abc 123 test select',
               {
                 style:
                 {

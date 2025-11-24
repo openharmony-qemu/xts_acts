@@ -59,8 +59,8 @@ build() {
         Text('' + this.wordBreak).id('word_break_text');
 
         Button('getParagraphStyle').onClick((e: ClickEvent) => {
-          console.info('getParagraphStylegetParagraphStyle',JSON.stringify(this.controller.getParagraphs({ start: -1, end: -1 })))
-          this.wordBreak = JSON.stringify(this.controller.getParagraphs({ start: -1, end: -1 }));
+          console.info('getParagraphStylegetParagraphStyle',JSON.stringify(this.controller!.getParagraphs({ start: -1, end: -1 })))
+          this.wordBreak = JSON.stringify(this.controller!.getParagraphs({ start: -1, end: -1 }));
         }).id('getParagraphStyle')
       }
       .borderWidth(1)
@@ -71,8 +71,8 @@ build() {
       Column() {
         RichEditor(this.options)
           .onReady((): void => {
-            this.controller.addTextSpan('TestWord abc', { style: { fontColor: Color.Orange, fontSize: 30 } })
-            this.controller.updateParagraphStyle({
+            this.controller!.addTextSpan('TestWord abc', { style: { fontColor: Color.Orange, fontSize: 30 } })
+            this.controller!.updateParagraphStyle({
               start: -1, end: -1,
               style: {
                 textAlign: TextAlign.Center,
@@ -80,7 +80,7 @@ build() {
             })
           })
           .onWillChange((value: RichEditorChangeValue): boolean => {
-            value.replacedSpans.forEach((item: RichEditorTextSpanResult) => {
+            value.replacedSpans!.forEach((item: RichEditorTextSpanResult) => {
               console.log('change')
             })
             return true

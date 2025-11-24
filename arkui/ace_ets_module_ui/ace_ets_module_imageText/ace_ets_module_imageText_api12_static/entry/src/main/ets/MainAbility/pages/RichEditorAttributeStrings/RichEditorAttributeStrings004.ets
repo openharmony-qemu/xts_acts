@@ -64,29 +64,23 @@ build() {
 
       Button('getSpans')
         .onClick((e: ClickEvent) => {
-          let spans = this.controller.getSpans({
+          this.controller!.getSpans({
             start: 0,
             end: 7
-          });
-          if (spans !== undefined) {
-            spans.forEach(item => {
-              this.spans += (item as RichEditorTextSpanResult).value + '\n';
-            })
-          }
+          })!.forEach(item => {
+            this.spans += (item as RichEditorTextSpanResult).value + '\n';
+          })
         })
         .id('getSpans')
 
       Button('getOtherSpans')
         .onClick((e: ClickEvent) => {
-          let spans = this.controller1.getSpans({
+          this.controller1.getSpans({
             start: 0,
             end: 7
-          });
-          if (spans !== undefined) {
-            spans.forEach(item => {
-              this.spans += (item as RichEditorTextSpanResult).value + '\n';
-            })
-          }
+          })!.forEach(item => {
+            this.spans += (item as RichEditorTextSpanResult).value + '\n';
+          })
         })
         .id('getOtherSpans')
 
@@ -94,7 +88,7 @@ build() {
 
       RichEditor(this.options as RichEditorOptions)
         .onReady((): void => {
-          this.controller.addTextSpan('0123',
+          this.controller!.addTextSpan('0123',
             {
               style:
               {

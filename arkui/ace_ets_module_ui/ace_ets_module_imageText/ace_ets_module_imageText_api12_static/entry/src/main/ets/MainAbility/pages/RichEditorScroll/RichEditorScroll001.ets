@@ -56,16 +56,13 @@ struct RichEditorScroll001 {
 build() {
     Column() {
       Button('get Position').onClick((e: ClickEvent) => {
-        let caretOffset = this.controller.getCaretOffset();
-        if (caretOffset !== undefined) {
-          this.pointPosition = caretOffset;
-        }
+        this.pointPosition = this.controller!.getCaretOffset() as int;
       }).id('getPosition')
       Text('' + this.pointPosition).id('pointPosition')
         RichEditor(this.options)
           .onReady((): void => {
             for (let index = 0; index < 100; index++) {
-              this.controller.addTextSpan('abc test 123456')
+              this.controller!.addTextSpan('abc test 123456')
             }
           })
           .barState(BarState.Auto)

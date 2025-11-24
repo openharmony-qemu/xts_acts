@@ -52,7 +52,7 @@ struct RichEditorShortCutKeys004 {
   controller: RichEditorController = new RichEditorController();
   private myOffset: int | undefined = undefined;
   private myBuilder: CustomBuilder = ()=>{};
-  @State positionNum: number = -1;
+  @State positionNum: int = -1;
   @State selection: string = '';
   @Builder
   placeholderBuilder() {
@@ -72,17 +72,14 @@ build() {
         .margin(15)
         .backgroundColor(Color.Blue)
         .onClick((e: ClickEvent) => {
-          let caretOffset = this.controller.getCaretOffset();
-          if (caretOffset !== undefined) {
-            this.positionNum = caretOffset;
-          }
+          this.positionNum = this.controller!.getCaretOffset() as int;
         })
       Button('set position')
         .id('set_position')
         .margin(15)
         .backgroundColor(Color.Blue)
         .onClick((e: ClickEvent) => {
-          this.controller.setCaretOffset(3);
+          this.controller!.setCaretOffset(3);
         })
       RichEditor({ controller: this.controller } as RichEditorOptions)
         .padding('10px')
@@ -91,21 +88,21 @@ build() {
         .borderWidth(1)
         .borderColor(Color.Green)
         .onReady((): void => {
-          this.controller.addTextSpan('abc123');
+          this.controller!.addTextSpan('abc123');
             this.myBuilder = () => {
               this.placeholderBuilder();
             }
-            this.controller.addBuilderSpan(this.myBuilder, { offset: this.myOffset });
-          this.controller.addTextSpan('abc123');
-            this.controller.addImageSpan($r('app.media.icon'),
+            this.controller!.addBuilderSpan(this.myBuilder, { offset: this.myOffset });
+          this.controller!.addTextSpan('abc123');
+            this.controller!.addImageSpan($r('app.media.icon'),
               {
                 imageStyle:
                 {
                   size: ['25px', '25px']
                 }
               });
-          this.controller.addTextSpan('abc123');
-            this.controller.addSymbolSpan($r('sys.symbol.ohos_trash'),
+          this.controller!.addTextSpan('abc123');
+            this.controller!.addSymbolSpan($r('sys.symbol.ohos_trash'),
               {
                 style:
                 {

@@ -127,7 +127,7 @@ export default function KeyboardShortcutJsunit() {
 
       let callback = (event: events_emitter.EventData) => {
         expect(((event.data) as Record<String,undefined|null|Object>)?.['msg']).assertEqual('Shift_left');
-        console.info(`${SUITE} ${CASE} ((eventData.data) as  Record<string, Object>).msg:` +
+        console.info(`${SUITE} ${CASE} ((eventData.data) as  Record<String,undefined|null|Object>).msg:` +
           ((event.data) as Record<String,undefined|null|Object>)?.['msg']);
         done();
       }

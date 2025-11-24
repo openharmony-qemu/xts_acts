@@ -75,15 +75,13 @@ export default function RichEditorTransformation003() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_AffineTransformation_static_005
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_AffineTransformation_static_005
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_AffineTransformation_static_005
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_AffineTransformation_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_AffineTransformation_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_AffineTransformation_static_005 START');
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorTransformation003')) as Promise<Component>);

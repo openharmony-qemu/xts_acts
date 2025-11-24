@@ -50,7 +50,7 @@ export default function getLineMetrics() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get getLineMetrics state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("getLineMetrics" == pages.name)) {
           console.info("get getLineMetrics pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -68,15 +68,13 @@ export default function getLineMetrics() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   getLineMetrics_static_0100
      * @tc.name     getLineMetrics_static_0100
      * @tc.desc     getLineMetrics_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('getLineMetrics_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('getLineMetrics_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('getLineMetrics_0100 START');
       await CommonFunc.sleep(1000);
 

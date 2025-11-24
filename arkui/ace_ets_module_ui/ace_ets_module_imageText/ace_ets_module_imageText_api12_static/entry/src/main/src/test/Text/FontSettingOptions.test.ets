@@ -63,15 +63,13 @@ export default function FontSettingOptions() {
 
 
     
-    
-    
-/*
+    /*
      * @tc.number   FontSettingOptions_static_0010
      * @tc.name     FontSettingOptions_static_0010
      * @tc.desc     FontSettingOptions_static_0010
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('FontSettingOptions_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('FontSettingOptions_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('FontSettingOptions_0010 START');
       let FontSettingOptions_1 = inspector.getInspectorByKey('FontTestText_01');
       console.info('--------------'+JSON.parseJsonElement(FontSettingOptions_1).getElement('$attrs').getString('font'))
@@ -81,15 +79,13 @@ it('FontSettingOptions_static_0010', Level.LEVEL0, async (done: () => void): Pro
     });
 	
 	
-    
-    
-/*
+    /*
      * @tc.number   FontSettingOptions_static_0020
      * @tc.name     FontSettingOptions_static_0020
      * @tc.desc     FontSettingOptions_static_0020
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('FontSettingOptions_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('FontSettingOptions_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('FontSettingOptions_0020 START');
       let FontSettingOptions_2 = inspector.getInspectorByKey('FontTestText_02');
       console.info('--------------'+JSON.parseJsonElement(FontSettingOptions_2).getElement('$attrs').getString('fontWeight'))

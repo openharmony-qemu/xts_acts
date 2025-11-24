@@ -71,7 +71,7 @@ build() {
       Text('replacedSpans Callback:' + this.replacedSpansCallbackInfo).id('replacedSpansCallback')
 
       Button('add emoji').onClick((e: ClickEvent) => {
-        this.controller.addTextSpan('\uD83D\uDE00',
+        this.controller!.addTextSpan('\uD83D\uDE00',
           {
             style:
             {
@@ -95,7 +95,7 @@ build() {
           this.onWillChangeRangeBefore = JSON.stringify(value.rangeBefore);
           this.onWillChangeCallback = true;
           this.replacedSpansCallbackInfo = JSON.stringify(value.replacedSpans);
-          value.replacedSpans.forEach((item: RichEditorTextSpanResult) => {
+          value.replacedSpans!.forEach((item: RichEditorTextSpanResult) => {
             console.log('RichEditorController：replacedSpans')
             this.replacedSpansCallback = true;
             console.log('RichEditorController replacedSpans value:' + item.value);

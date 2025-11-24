@@ -58,20 +58,15 @@ build() {
     Column() {
 
       RichEditor({controller:this.controller} as RichEditorOptions).onReady((): void => {
-        this.controller.addTextSpan('aaaaaaaaaa')
+        this.controller!.addTextSpan('aaaaaaaaaa')
       })
       RichEditor(this.options)
       Button('span转属性字符串').onClick((event: ClickEvent) => {
-        let change = this.controller.toStyledString({start:0,end:3})
-        if (change !== undefined) {
-          this.controller2.setStyledString(change)
-        }
+        let change = this.controller!.toStyledString({start:0,end:3})!
+        this.controller2!.setStyledString(change)
       }).id('RichEditorApi12_btn1')
       Button('get').onClick((event: ClickEvent) => {
-        let layoutManager = this.controller2.getLayoutManager();
-        if (layoutManager !== undefined) {
-          this.text = JSON.stringify(layoutManager.getLineCount())
-        }
+        this.text = JSON.stringify(this.controller2!.getLayoutManager()!.getLineCount() as int)
       }).id('RichEditorApi12_btn2')
 
       Text(this.text).id('RichEditorApi12_text1')

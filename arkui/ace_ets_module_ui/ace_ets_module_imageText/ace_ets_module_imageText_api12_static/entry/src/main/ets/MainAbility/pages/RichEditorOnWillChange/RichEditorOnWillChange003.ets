@@ -63,7 +63,7 @@ build() {
       Text('onDidChange_callback:' + this.onDidChangeCallback).id('onDidChange_callback')
 
       Button('add text').onClick((e: ClickEvent) => {
-        this.controller.addTextSpan('012345',
+        this.controller!.addTextSpan('012345',
           {
             style:
             {
@@ -85,7 +85,7 @@ build() {
         .onWillChange((value: RichEditorChangeValue): boolean => {
           console.log('RichEditorController：onWillChange')
           this.onWillChangeCallback = true;
-          value.replacedSpans.forEach((item: RichEditorTextSpanResult) => {
+          value.replacedSpans!.forEach((item: RichEditorTextSpanResult) => {
             console.log('RichEditorController：replacedSpans')
             this.replacedSpansCallback = true;
             console.log('RichEditorController replacedSpans value:' + item.value);

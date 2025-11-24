@@ -81,15 +81,13 @@ export default function RichEditor2() {
       console.info("RichEditor2 after each called");
     });
     
-    
-    
-/*
+    /*
      * @tc.number   RichEditor2_static_0100
      * @tc.name     RichEditor2_static_0100
      * @tc.desc     RichEditor2_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('RichEditor2_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RichEditor2_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       // Test stop
       console.info('[RichEditor2_static_0100] START');
       let driver = Driver.create();

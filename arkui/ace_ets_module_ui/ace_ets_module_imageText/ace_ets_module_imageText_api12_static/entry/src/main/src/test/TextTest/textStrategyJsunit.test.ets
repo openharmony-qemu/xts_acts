@@ -60,15 +60,13 @@ export default function textStrategyJsunit() {
       console.info("textStrategyJsunit beforeEach end");
     });
 
-    
-    
-/*
+    /*
      * @tc.number   textStrategyJsunit_static_0100
      * @tc.name     textStrategyJsunit_static_0100
      * @tc.desc     textStrategyJsunit_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('textStrategyJsunit_static_0100', Level.LEVEL0, async (done: () => void) : Promise<void> => {
+    it('textStrategyJsunit_static_0100', Level.LEVEL0, async (done: () => void) : Promise<void> => {
       console.info('textStrategyJsunit_0100 START');
 
       let strJson = inspector.getInspectorByKey('text_Strategy_1');

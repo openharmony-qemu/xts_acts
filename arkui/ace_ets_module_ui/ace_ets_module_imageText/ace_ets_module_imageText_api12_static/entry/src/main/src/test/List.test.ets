@@ -472,13 +472,171 @@ import StyledStringApi1 from "./StyledString/StyledStringApi1.test";
 import StyledStringKeyTest1 from "./StyledString/StyledStringKeyTest1.test";
 import spanTest from './spanTest/SpanJsunit1.test'
 export default function testsuite() {
+  // fail 106 可能JSON.stringify问题
+  // RichEditorStringSpan001();
+  // RichEditorStringSpan002();
+  // RichEditorStringSpan003();
+  // RichEditorStringSpan004();
+  // RichEditorCustomSpan001();
+  // RichEditorCustomSpan002();
+  // RichEditorCustomSpan003();
+  // RichEditorCustomSpan004();
+  // RichEditorCustomSpan005();
+  // RichEditorCustomSpan006();
+  // RichEditorCustomSpan007();
+  // RichEditorCustomSpan008();
+  // RichEditorCustomSpan009();
+  // RichEditorCustomSpan010();
+  // RichEditorCustomSpan011();
+  // RichEditorCustomSpan012();
+  // RichEditorCustomSpan013();
+  // RichEditorCustomSpan014();
+  // RichEditorCustomSpan015();
+  // RichEditorCustomSpan016();
+  // RichEditorLineMetrics001();
+  // RichEditorLineMetrics002();
+  // RichEditorLineMetrics003();
+  // RichEditorLineMetrics004();
+  // RichEditorLineMetrics005();
+  // RichEditorLineMetrics006();
+  // RichEditorLineMetrics007();
+  // RichEditorLineMetrics009();
+  // RichEditorLineMetrics011();
+  // RichEditorLineMetrics012();
+  // RichEditorLineMetrics013();
+  // RichEditorLineMetrics014();
+  // RichEditorLineMetrics015();
+  // RichEditorLineMetrics016();
+  // RichEditorLineMetrics017();
+  // RichEditorLineMetrics018();
+  // RichEditorLineMetrics021();
+  // RichEditorLineMetrics022();
+  // RichEditorLineMetrics023();
+  // RichEditorTransformation004();
+  // RichEditorSetStyledString012();
+  // RichEditorSetStyledString015();
+  // RichEditorSetStyledString018();
+  // RichEditorLayoutStyle003();
+  // RichEditorLayoutStyle001();
+  // RichEditorLayoutStyle002();
+  // RichEditorLineLetter001();
+  // RichEditorLineLetter002();
+  // RichEditorLineLetter003();
+  // RichEditorLineLetter004();
+  // RichEditorLineLetter005();
+  // RichEditorLineLetter006();
+  // RichEditorLineLetter007();
+  // RichEditorLineLetter008();
+  // RichEditorLineLetter009();
+  // RichEditorLineLetter010();
+  // RichEditorLineLetter011();
+  // RichEditorLineLetter012();
+  // RichEditorLineLetter013();
+  // RichEditorLineLetter014();
+  // RichEditorLineLetter015();
+  // RichEditorShortCutKeys006();
+  // RichEditorShortCutKeys009();
+  // RichEditorShortCutKeys010();
+  // RichEditorShortCutKeys011();
+  // RichEditorShortCutKeys012();
+  // RichEditorShortCutKeys013();
+  // RichEditorShortCutKeys014();
+  // RichEditorShortCutKeys015();
+  // RichEditorShortCutKeys017();
+  // RichEditorShortCutKeys018();
+  // RichEditorShortCutKeys019();
+  // RichEditorShortCutKeys020();
+  // RichEditorShortCutKeys021();
+  // RichEditorShortCutKeys022();
+  // RichEditorShortCutKeys023();
+  // RichEditorShortCutKeys024();
+  // RichEditorUxConFormance001();
+  // RichEditorUxConFormance002();
+  // RichEditorUxConFormance004();
+  // RichEditorUxConFormance005();
+  // RichEditorUxConFormance006();
+  //   RichEditorQueryLayout001();
+  // RichEditorQueryLayout002();
+  // RichEditorQueryLayout003();
+  // RichEditorQueryLayout004();
+  // RichEditorQueryLayout005();
+  // RichEditorQueryLayout006();
+  // RichEditorQueryLayout007();
+  // RichEditorQueryLayout008();
+  // RichEditorQueryLayout009();
+  // RichEditorQueryLayout010();
+  // RichEditorQueryLayout011();
+  // RichEditorQueryLayout012();
+  // RichEditorQueryLayout013();
+  // RichEditorQueryLayout014();
+  // RichEditorQueryLayout015();
+  // RichEditorQueryLayout016();
+  // RichEditorQueryLayout017();
+  // RichEditorQueryLayout018();
+  // RichEditorQueryLayout019();
+  // RichEditorQueryLayout020();
+  // RichEditorQueryLayout021();
+  // RichEditorQueryLayout022();
+  // RichEditorQueryLayout023();
+  // RichEditorQueryLayout024();
+
+  // getStyles();//fail 2 getStyles和subStyledString 401问题   expect  equals 401
+  // replaceString();//fail 9 insertStyledString和replaceStyledString和removeStyles 401问题 expect  equals 401
+  //
+  // getLayout() // fail 6 组件2组 Text 失败6个用例
+  // getLineMetrics(); //fail 1  组件2组 text组件 失败1个用例 Property 'getLineMetrics' does not exist on type 'LayoutManager'
+  // TextMaxLines();//fail 1 组件2组 text组件 失败1个用例 expect 5.00vp equals 5.00fp
+
+
+
+  // RichEditor020();// 富文本组 RichEditor组件 失败1个用例  断言不符合预期 2 is not larger than 2
+  // RichEditor021();// 富文本组 RichEditor组件 失败1个用例  断言不符合预期 2 is not larger than 2
+  // RichEditor022();// 富文本组 RichEditor组件 失败1个用例  断言不符合预期 2 is not larger than 2
+  // RichEditor023();// 富文本组 RichEditor组件 失败1个用例  断言不符合预期 3 is not larger than 3
+
+  // 以下fail 5
+  // RichEditorBreak001(); // 富文本组 RichEditor组件 失败1个用例  expect false equals true wordBreak默认值为{}
+  // RichEditorBreak002(); // 富文本组 RichEditor组件 失败1个用例  expect false equals true wordBreak值为{}
+  // RichEditorBreak003(); // 富文本组 RichEditor组件 失败1个用例
+  // RichEditorBreak004();// app died 可能getParagraphs导致
+  // RichEditorBreak005(); // 富文本组 RichEditor组件 失败1个用例
+
+  // RichEditorAttributeStrings005();// fail 1 SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_COPY_PASTE_ATTRIBUTE_STRINGS_static_0033, expect false, spans:undefined do not have  spans:[{"offsetInSpan":[0,1],"spanPosition":{"spanIndex":0,"spanRange":[0,1]}}]
+  // RichEditorSetStyledString005();// fail 1 in SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_static_0013, expect false, content:width:20.00vp;height:20.00vp;verticalAlign:3;objectFit:0{} do not have  verticalAlign:1;objectFit:1{"topLeft":10,"topRight":10,"bottomLeft":10,"bottomRight":10}
+  // RichEditorSetStyledString006();// fail 1 in SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_static_0015, expect false, content:width:30.00vp;height:30.00vp;verticalAlign:2;objectFit:0{} do not have  verticalAlign:2;objectFit:1{"topLeft":20,"topRight":20,"bottomLeft":20,"bottomRight":20}
+  // RichEditorSetStyledString017();// fail 1 in SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledString_static_0054, expect false, styleStr:1,0,0,0, do not have  styleStr:1,0,undefined,undefined
+  // RichEditorOnWillChange018();
+  // RichEditorApi9();
+  // RichEditorOnWillChange019();
+  // RichEditorChangeValueTest1();
+  // RichEditorOnWillChange002();
+  // RichEditorOnWillChange008();
+  // spanTest();
+  // textInputEnterKeyTypeTest();
+  // MarqueeMirroringTest();
+  // RichEditorCustomSpan017();
+  // RichEditorLineMetrics008();
+  // RichEditorLineMetrics010();
+  // RichEditorLineMetrics019();
+  // RichEditorLineMetrics020();
+  // RichEditorSetStyledString007();
+  // RichEditorSetStyledString008();
+  // RichEditorSetStyledString002();
+  // RichEditorSetStyledString003();
+  // RichEditorSetStyledString004();
+  // RichEditorSetStyledString009();
+  // RichEditorSetStyledString010();
+  // RichEditorSetStyledString011();
+  // RichEditorSetStyledString013();
+  // RichEditorSetStyledString014();
+  // RichEditorSetStyledString016();
+  // RichEditorSetStyledString019();
+  // RichEditorSetStyledString020();
+  // RichEditorStringSpan005();
   // MarqueeApi();
-  // MarqueeMirroringTest();// 组件2组 Marquee组件 start状态变更会app died 失败3个用例
   // SearchApi1();
   // SearchEvent();
   // SearchEvent2();
-  // spanTest(); // 组件2组 span组件 失败10个用例 可能是通信问题
-  //
   // SymbolGlyphApi();
   // TextCommonTextComputing1();
   // TextCommonTextComputing2();
@@ -510,7 +668,6 @@ export default function testsuite() {
   // Text_lineSpacingTest();
   // textStrategyJsunit();
   // Context()
-  // getLayout() // 组件2组 Text 失败6个用例
   // styledStringApi()
   // TextInputApi1();
   // AttributeUpdaterTest();
@@ -525,7 +682,7 @@ export default function testsuite() {
   // TextArea_lineBreakStrategyTest();
   // TextArea_lineSpacingTest();
   // styledStringAddApi()
-  // getLineMetrics(); // 组件2组 text组件 失败1个用例 Property 'getLineMetrics' does not exist on type 'LayoutManager'
+  //
   //
   // textSelectableJsunit();
   // typeNodeTextDecorationStyleTest();
@@ -547,8 +704,7 @@ export default function testsuite() {
   // imageSpanTest7();
   //
   // imageSpanTest8();
-  // TextMaxLines();// 组件2组 text组件 失败1个用例 expect 5.00vp equals 5.00fp
-  // textInputEnterKeyTypeTest(); // 组件2组 textInput组件 失败4个用例 可能是events_emitter通信问题
+  //
   // textAreaAutoFillTest()
   //
   // textAreaHeightAdaptivePolicyTest();
@@ -589,7 +745,7 @@ export default function testsuite() {
   // SelectionMenuApi();
   // menuPolicyHIDE();
   // menuPolicySHOW();
-  // RichEditorChangeValueTest1(); // 富文本组 RichEditor组件 失败1个用例 imageStyle app died
+  //
   //
   // RichEditorGetLayoutManagerTest1();
   // RichEditorStyledStringTest1();
@@ -599,7 +755,7 @@ export default function testsuite() {
   // RichEditorApi7();
   // RichEditorApi8();
   //
-  // RichEditorApi9();// 富文本组 RichEditor组件 失败1个用例 imageStyle app died
+  //
   // RichEditorApi10();
   //
   // RichEditorApi11();
@@ -626,17 +782,10 @@ export default function testsuite() {
   // RichEditor017();
   // RichEditor018();
   // RichEditor019();
-  RichEditor020();// 富文本组 RichEditor组件 失败1个用例  断言不符合预期 2 is not larger than 2
-  RichEditor021();// 富文本组 RichEditor组件 失败1个用例  断言不符合预期 2 is not larger than 2
-  RichEditor022();// 富文本组 RichEditor组件 失败1个用例  断言不符合预期 2 is not larger than 2
-  RichEditor023();// 富文本组 RichEditor组件 失败1个用例  断言不符合预期 3 is not larger than 3
+  //
   // RichEditor024();
   //
-  // RichEditorBreak001(); // 富文本组 RichEditor组件 失败1个用例  expect false equals true wordBreak默认值为{}
-  // RichEditorBreak002(); // 富文本组 RichEditor组件 失败1个用例  expect false equals true wordBreak值为{}
-  // RichEditorBreak003(); // 富文本组 RichEditor组件 失败1个用例
-  // RichEditorBreak004();// 富文本组 RichEditor组件 失败1个用例
-  // RichEditorBreak005(); // 富文本组 RichEditor组件 失败1个用例
+  //
   // RichEditorCustomColors001();
   // RichEditorCustomColors002();
   // RichEditorInterFace001();
@@ -645,13 +794,13 @@ export default function testsuite() {
   // RichEditorParticiple002();
   // RichEditorOnWillChange001();
   //
-  // RichEditorOnWillChange002();// 富文本组 RichEditor组件 失败1个用例  imageStyle app died
+  //
   // RichEditorOnWillChange003();
   // RichEditorOnWillChange004();
   // RichEditorOnWillChange005();
   // RichEditorOnWillChange006();
   // RichEditorOnWillChange007();
-  // RichEditorOnWillChange008();// 富文本组 RichEditor组件 失败1个用例  expect range_text:[0,3][0,2] equals range_text:[0,3][2,3]
+  //
   // RichEditorOnWillChange009();
   // RichEditorOnWillChange010();
   // RichEditorOnWillChange011();
@@ -661,35 +810,7 @@ export default function testsuite() {
   // RichEditorOnWillChange015();
   // RichEditorOnWillChange016();
   // RichEditorOnWillChange017();
-  // RichEditorOnWillChange018();// 富文本组 RichEditor组件 失败1个用例  剪切 app died
-  // RichEditorOnWillChange019();// 富文本组 RichEditor组件 失败1个用例  crash
   // RichEditorOnWillChange020();
-  //
-  // RichEditorQueryLayout001();// 富文本组 RichEditor组件 失败1个用例 getSpans app died
-  // RichEditorQueryLayout002();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorQueryLayout003();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorQueryLayout004();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorQueryLayout005();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorQueryLayout006();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorQueryLayout007();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorQueryLayout008();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorQueryLayout009();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorQueryLayout010();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorQueryLayout011();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorQueryLayout012();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorQueryLayout013();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorQueryLayout014();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorQueryLayout015();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorQueryLayout016();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorQueryLayout017();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorQueryLayout018();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorQueryLayout019();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorQueryLayout020();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorQueryLayout021();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorQueryLayout022();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorQueryLayout023();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorQueryLayout024();// 富文本组 RichEditor组件 失败1个用例  crash
-  //
   // RichEditorPlaceHolder001();
   // RichEditorTextChange001();
   // RichEditorTextChange002();
@@ -724,23 +845,6 @@ export default function testsuite() {
   // RichEditorOnSelectionChange017();
   // RichEditorOnSelectionChange018();
   // RichEditorOnSelectionChange019();
-  //
-  // RichEditorLineLetter001();// 富文本组 RichEditor组件 失败1个用例  imageStyle app died
-  // RichEditorLineLetter002();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorLineLetter003();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorLineLetter004();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorLineLetter005();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorLineLetter006();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorLineLetter007();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorLineLetter008();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorLineLetter009();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorLineLetter010();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorLineLetter011();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorLineLetter012();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorLineLetter013();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorLineLetter014();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorLineLetter015();// 富文本组 RichEditor组件 失败1个用例  crash
-  //
   // RichEditorKeyBoard001();
   // RichEditorKeyBoard002();
   // RichEditorKeyBoard003();
@@ -749,41 +853,6 @@ export default function testsuite() {
   // RichEditorKeyBoard006();
   // RichEditorKeyBoard007();
   // RichEditorKeyBoard008();
-  //
-  // RichEditorUxConFormance001();// 富文本组 RichEditor组件 失败1个用例  crash getSpans
-  // RichEditorUxConFormance002();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorUxConFormance004();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorUxConFormance005();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorUxConFormance006();// 富文本组 RichEditor组件 失败1个用例  crash
-  //
-  // RichEditorLayoutStyle001();// 富文本组 RichEditor组件 失败1个用例  crash imageStyle
-  // RichEditorLayoutStyle002();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorLayoutStyle003();// 富文本组 RichEditor组件 失败1个用例  crash
-
-  // RichEditorLineMetrics001();// 富文本组 RichEditor组件 失败1个用例  crash Property 'getLineMetrics' does not exist on type 'LayoutManager'
-  // RichEditorLineMetrics002();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorLineMetrics003();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorLineMetrics004();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorLineMetrics005();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorLineMetrics006();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorLineMetrics007();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorLineMetrics008();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorLineMetrics009();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorLineMetrics010();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorLineMetrics011();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorLineMetrics012();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorLineMetrics013();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorLineMetrics014();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorLineMetrics015();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorLineMetrics016();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorLineMetrics017();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorLineMetrics018();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorLineMetrics019();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorLineMetrics020();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorLineMetrics021();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorLineMetrics022();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorLineMetrics023();// 富文本组 RichEditor组件 失败1个用例  crash
-  //
   // RichEditorLineBreakStrategy001();
   // RichEditorLineBreakStrategy002();
   // RichEditorLineBreakStrategy003();
@@ -795,30 +864,12 @@ export default function testsuite() {
   // RichEditorPreventDefault006();
   // RichEditorPreventDefault007();
   //
-  // RichEditorSetStyledString002();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorSetStyledString003();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorSetStyledString004();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorSetStyledString005();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorSetStyledString006();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorSetStyledString007();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorSetStyledString008();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorSetStyledString009();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorSetStyledString010();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorSetStyledString011();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorSetStyledString012();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorSetStyledString013();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorSetStyledString014();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorSetStyledString015();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorSetStyledString016();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorSetStyledString017();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorSetStyledString018();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorSetStyledString019();// 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorSetStyledString020();// 富文本组 RichEditor组件 失败1个用例  crash
+  //
   //
   // RichEditorTransformation001();
   // RichEditorTransformation002();
   // RichEditorTransformation003();
-  // RichEditorTransformation004();// 富文本组 RichEditor组件 失败1个用例
+  //
   // RichEditorTransformation005();
   // RichEditorGetNumber001();
   // RichEditorGetNumber002();
@@ -842,57 +893,19 @@ export default function testsuite() {
   // RichEditorShortCutKeys003();
   // RichEditorShortCutKeys004();
   // RichEditorShortCutKeys005();
-  // RichEditorShortCutKeys006();// 富文本组 RichEditor组件 失败1个用例
+  //
   // RichEditorShortCutKeys007();
   // RichEditorShortCutKeys008();
-  // RichEditorShortCutKeys009(); // 富文本组 RichEditor组件 失败1个用例 thicknessScale 不存在
-  // RichEditorShortCutKeys010(); // 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorShortCutKeys011(); // 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorShortCutKeys012(); // 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorShortCutKeys013(); // 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorShortCutKeys014(); // 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorShortCutKeys015(); // 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorShortCutKeys017(); // 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorShortCutKeys018(); // 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorShortCutKeys019(); // 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorShortCutKeys020(); // 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorShortCutKeys021(); // 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorShortCutKeys022(); // 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorShortCutKeys023(); // 富文本组 RichEditor组件 失败1个用例  crash
-  // RichEditorShortCutKeys024(); // 富文本组 RichEditor组件 失败1个用例  crash
   //
-  // RichEditorStringSpan001();// 富文本组 RichEditor组件 失败1个用例
-  // RichEditorStringSpan002();// 富文本组 RichEditor组件 失败1个用例
-  // RichEditorStringSpan003();// 富文本组 RichEditor组件 失败1个用例
-  // RichEditorStringSpan004();// 富文本组 RichEditor组件 失败1个用例
-  // RichEditorStringSpan005();// 富文本组 RichEditor组件 失败1个用例
-  // RichEditorCustomSpan001();// 富文本组 RichEditor组件 失败1个用例
-  // RichEditorCustomSpan002();// 富文本组 RichEditor组件 失败1个用例
-  // RichEditorCustomSpan003();// 富文本组 RichEditor组件 失败1个用例
-  // RichEditorCustomSpan004();// 富文本组 RichEditor组件 失败1个用例
-  // RichEditorCustomSpan005();// 富文本组 RichEditor组件 失败1个用例
-  // RichEditorCustomSpan006();// 富文本组 RichEditor组件 失败1个用例
-  // RichEditorCustomSpan007();// 富文本组 RichEditor组件 失败1个用例
-  // RichEditorCustomSpan008();// 富文本组 RichEditor组件 失败1个用例
-  // RichEditorCustomSpan009();// 富文本组 RichEditor组件 失败1个用例
-  // RichEditorCustomSpan010();// 富文本组 RichEditor组件 失败1个用例
-  // RichEditorCustomSpan011();// 富文本组 RichEditor组件 失败1个用例
-  // RichEditorCustomSpan012();// 富文本组 RichEditor组件 失败1个用例
-  // RichEditorCustomSpan013();// 富文本组 RichEditor组件 失败1个用例
-  // RichEditorCustomSpan014();// 富文本组 RichEditor组件 失败1个用例
-  // RichEditorCustomSpan015();// 富文本组 RichEditor组件 失败1个用例
-  // RichEditorCustomSpan016();// 富文本组 RichEditor组件 失败1个用例
-  // RichEditorCustomSpan017();// 富文本组 RichEditor组件 失败1个用例
   //
   // RichEditorAttributeStrings001();
   // RichEditorAttributeStrings002();
   // RichEditorAttributeStrings003();
   // RichEditorAttributeStrings004();
-  // RichEditorAttributeStrings005();// 富文本组 RichEditor组件 失败4个用例
+  //
   // RichEditorAttributeStrings006();
   // RichEditorAttributeStrings007();
   // RichEditorAttributeStrings008();
-  //
   // RichEditorStabillity001();
   // RichEditorStabillity002();
   // RichEditorStabillity003();
@@ -906,7 +919,6 @@ export default function testsuite() {
   // RichEditorThreeStrikes006();
   // RichEditorThreeStrikes007();
   // RichEditorThreeStrikes008();
-  //
   // RichEditorDoubleClick001();
   // RichEditorDoubleClick002();
   // RichEditorDoubleClick003();
@@ -933,8 +945,6 @@ export default function testsuite() {
   // dstIndexTest();
   // srcIndexTest();
   // RelativeContainerApi1();
-  // getStyles();////组件1组件 Image组件 失败1个用例  expect  equals 401
-  // replaceString();////组件1组件 Image组件 失败9个用例 expect  equals 401  MutableStyledString 异常值问题
   // StyledStringApi1();
   // StyledStringKeyTest1();
 }

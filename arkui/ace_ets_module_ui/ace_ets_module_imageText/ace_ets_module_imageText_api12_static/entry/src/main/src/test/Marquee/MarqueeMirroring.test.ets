@@ -49,7 +49,7 @@ export default function MarqueeMirroringTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get FontSettingOptions state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("MarqueeMirroring" == pages.name)) {
           console.info("get FontSettingOptions pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);
@@ -67,45 +67,13 @@ export default function MarqueeMirroringTest() {
       console.info("MarqueeMirroringTest after each called");
     });
 
-    
-    
-    
-/*
-     * @tc.number   MarqueeMirroringTest_static_001
-     * @tc.name     MarqueeMirroringTest_static_001
-     * @tc.desc     MarqueeMirroringTest_static_001
-     * @tc.level    Level.LEVEL0
-     */
-it('MarqueeMirroringTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[MarqueeMirroringTest_static_001] START');
-      let driver = Driver.create();
-      await CommonFunc.sleep(1000);
-      let button1 = await (driver.findComponent(ON.id('MarqueeMirroring_Start')) as Promise<Component>);
-      console.info('[MarqueeMirroringTest_static_002] click');
-      await button1.click();
-      console.info('[MarqueeMirroringTest_static_002] after');
-      CommonFunc.sleep(3000);
-      let strJson = inspector.getInspectorByKey('MarqueeMirroring_onStart');
-      await CommonFunc.sleep(1000);
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("[MarqueeMirroringTest_static_001] component obj is: " + strJson);
-      await CommonFunc.sleep(1000);
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('onStart succ');
-      expect(obj !== null).assertTrue();
-      console.info('[MarqueeMirroringTest_static_001] END');
-      done();
-    });
-
-    
-    
-    
-/*
+    /*
      * @tc.number   MarqueeMirroringTest_static_002
      * @tc.name     MarqueeMirroringTest_static_002
      * @tc.desc     MarqueeMirroringTest_static_002
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('MarqueeMirroringTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('MarqueeMirroringTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[MarqueeMirroringTest_static_002] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -116,7 +84,7 @@ it('MarqueeMirroringTest_static_002', Level.LEVEL0, async (done: () => void): Pr
       console.info('[MarqueeMirroringTest_static_002] click before');
       await CommonFunc.sleep(8000);
       let strJson = inspector.getInspectorByKey('MarqueeMirroring_onBounce');
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[MarqueeMirroringTest_static_002] component obj is: " + String(obj));
       await CommonFunc.sleep(1000);
@@ -125,17 +93,39 @@ it('MarqueeMirroringTest_static_002', Level.LEVEL0, async (done: () => void): Pr
       console.info('[MarqueeMirroringTest_static_002] END');
       done();
     });
+    /*
+         * @tc.number   MarqueeMirroringTest_static_001
+         * @tc.name     MarqueeMirroringTest_static_001
+         * @tc.desc     MarqueeMirroringTest_static_001
+         * @tc.level   Level.LEVEL0
+         */
+    it('MarqueeMirroringTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('[MarqueeMirroringTest_static_001] START');
+      let driver = Driver.create();
+      await CommonFunc.sleep(1000);
+      let button1 = await (driver.findComponent(ON.id('MarqueeMirroring_Start')) as Promise<Component>);
+      console.info('[MarqueeMirroringTest_static_002] click');
+      await button1.click();
+      console.info('[MarqueeMirroringTest_static_002] after');
+      CommonFunc.sleep(3000);
+      let strJson = inspector.getInspectorByKey('MarqueeMirroring_onStart');
+      await CommonFunc.sleep(2000);
+      let obj = JSON.parseJsonElement(strJson);
+      console.info("[MarqueeMirroringTest_static_001] component obj is: " + strJson);
+      await CommonFunc.sleep(1000);
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('onStart succ');
+      expect(obj !== null).assertTrue();
+      console.info('[MarqueeMirroringTest_static_001] END');
+      done();
+    });
 
-    
-    
-    
-/*
+    /*
      * @tc.number   MarqueeMirroringTest_static_003
      * @tc.name     MarqueeMirroringTest_static_003
      * @tc.desc     MarqueeMirroringTest_static_003
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('MarqueeMirroringTest_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('MarqueeMirroringTest_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[MarqueeMirroringTest_static_003] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -143,7 +133,7 @@ it('MarqueeMirroringTest_static_003', Level.LEVEL0, async (done: () => void): Pr
       await button1.click();
       await CommonFunc.sleep(6000);
       let strJson = inspector.getInspectorByKey('MarqueeMirroring_onFinish');
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[MarqueeMirroringTest_static_003] component obj is: " + String(obj));
       await CommonFunc.sleep(1000);

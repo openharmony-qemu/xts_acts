@@ -59,11 +59,11 @@ build() {
       Text(this.baseLine + '').id('baseLine')
       Button('get lineMetrics(0)').id('getFirst')
         .onClick((e: ClickEvent) => {
-          // let layoutManager: LayoutManager = this.controller.getLayoutManager();
-          // let lineMetrics = layoutManager.getLineMetrics(0);
-          // console.log('RichEditorController lineMetrics:' + JSON.stringify(lineMetrics));
-          // this.topHeight = lineMetrics.topHeight;
-          // this.baseLine = lineMetrics.baseline;
+          let layoutManager: LayoutManager = this.controller!.getLayoutManager() as LayoutManager;
+          let lineMetrics = layoutManager.getLineMetrics(0)!;
+          console.log('RichEditorController lineMetrics:' + JSON.stringify(lineMetrics));
+          this.topHeight = lineMetrics.topHeight;
+          this.baseLine = lineMetrics.baseline;
         })
         .margin({ bottom: 20, top: 10 } as Margin)
       RichEditor({ controller: this.controller } as RichEditorOptions)
@@ -73,13 +73,13 @@ build() {
         .height(100)
         .width(200)
         .onReady((): void => {
-          this.controller.addTextSpan('011\n');
-          this.controller.addTextSpan('012\n');
-          this.controller.addTextSpan('013\n');
-          this.controller.addTextSpan('014\n');
-          this.controller.addTextSpan('015\n');
-          this.controller.addTextSpan('016\n');
-          this.controller.addTextSpan('017\n');
+          this.controller!.addTextSpan('011\n');
+          this.controller!.addTextSpan('012\n');
+          this.controller!.addTextSpan('013\n');
+          this.controller!.addTextSpan('014\n');
+          this.controller!.addTextSpan('015\n');
+          this.controller!.addTextSpan('016\n');
+          this.controller!.addTextSpan('017\n');
         })
         .barState(BarState.On)
         .onSelectionChange((value: RichEditorRange): void => {

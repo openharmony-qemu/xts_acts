@@ -19,7 +19,7 @@ import {
   Component,
   Column,
   Row,
-  Text,
+  Text,SpanStyle,
   ColumnOptions,
   TouchType,
   CustomBuilder,
@@ -62,7 +62,7 @@ struct RichEditorCustomSpan001 {
       return
     }
     this.isPageShow = false;
-    this.controller.setStyledString(this.style1)
+    this.controller!.setStyledString(this.style1)
   }
 
 
@@ -71,13 +71,9 @@ build() {
       Text('customSpanInfo:' + this.customSpanInfo).id('customSpanInfo')
       Button('get CustomSpanInfo')
         .onClick((e: ClickEvent) => {
-          let richEditorStyledString = this.controller.getStyledString();
-          if (richEditorStyledString !== undefined) {
-            let styles = richEditorStyledString.getStyles(0, richEditorStyledString.length);
-            if (styles !== undefined) {
-              this.customSpanInfo = JSON.stringify(Array.from(styles));
-            }
-          }
+          let richEditorStyledString = this.controller!.getStyledString()!;
+          let styles: SpanStyle[] = richEditorStyledString!.getStyles(0, richEditorStyledString.length) as SpanStyle[];
+          this.customSpanInfo = JSON.stringify(styles);
         })
         .id('getCustomSpanInfo')
       RichEditor(this.options)

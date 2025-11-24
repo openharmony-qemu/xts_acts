@@ -76,15 +76,13 @@ export default function RichEditor020() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_static_0013
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_static_0013
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_static_0013
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_static_0013', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_static_0013', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_EMOJI_static_0013 START');
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('rich_struct')) as Promise<Component>);

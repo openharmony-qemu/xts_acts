@@ -62,13 +62,13 @@ export default function TextTimerApiTest() {
       await CommonFunc.sleep(1000);
       console.info("TextTimerApiTest after each called");
     });
-/*
+
+    /*
      * @tc.number   TextTimerApiTest_static_001
      * @tc.name     TextTimerApiTest_static_001
      * @tc.desc     TextTimerApiTest_static_001
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-    
     it("TextTimerApiTest_static_001",  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[TextTimerApiTest_001] START");
       await CommonFunc.sleep(1000);

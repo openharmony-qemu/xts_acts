@@ -65,15 +65,13 @@ export default function TextInputApi1() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextInputApi1_static_0100
      * @tc.name     TextInputApi1_static_0100
      * @tc.desc     TextInputApi1_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextInputApi1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextInputApi1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TextInputApi1_0100 START');
       await CommonFunc.sleep(1000);
 

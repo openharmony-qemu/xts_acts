@@ -66,15 +66,13 @@ export default function dstIndexTest() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   dstIndexTest_static_001
      * @tc.name     dstIndexTest_static_001
      * @tc.desc     dstIndexTest_static_001
      * @tc.level    Level.LEVEL0
      */
-it('dstIndexTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('dstIndexTest_static_001',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[dstIndexTest_001] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();

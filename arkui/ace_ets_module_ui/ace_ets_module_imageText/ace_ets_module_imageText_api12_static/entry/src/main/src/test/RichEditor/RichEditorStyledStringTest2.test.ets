@@ -83,15 +83,13 @@ export default function RichEditorStyledStringTest2() {
 
 
     
-    
-    
-/*
+    /*
      * @tc.number   RichEditorStyledStringTest2_static_0100
      * @tc.name     RichEditorStyledStringTest2_static_0100
      * @tc.desc     RichEditorStyledStringTest2_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('RichEditorStyledStringTest2_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RichEditorStyledStringTest2_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RichEditorStyledStringTest2_static_0100 START');
       await CommonFunc.sleep(2000);
 

@@ -19,7 +19,7 @@ import CommonFunc from '../../common/Common'
 
 import {
   Entry,ImageAttachmentInterface,ImageSpanAlignment,ImageFit,
-  Component,
+  Component,SpanStyle,
   Column,
   Row,
   Text,
@@ -61,13 +61,13 @@ struct RichEditorCustomSpan007 {
   @State stylesInfo: string = '';
 
   richEditorStyledString: MutableStyledString = new MutableStyledString('');
-  textStyle: TextStyle = {
+  textStyle: TextStyle = new TextStyle({
     fontWeight: FontWeight.Lighter,
     fontFamily: CommonFunc.FONT_FAMILY,
     fontColor: Color.Green,
-    // fontSize: LengthMetrics.vp(30),
+    fontSize: LengthMetrics.vp(30),
     fontStyle: FontStyle.Normal
-  } as TextStyle
+  })
   fontStyle1: TextStyle = { fontColor: Color.Blue } as TextStyle
   // 创建属性字符串对象
   mutableStyledString: MutableStyledString = new MutableStyledString('abcd',
@@ -102,27 +102,24 @@ build() {
             verticalAlign: ImageSpanAlignment.TOP,
             objectFit: ImageFit.Contain
           } as ImageAttachmentInterface))
-          let styledString = this.controller.getStyledString();
-          if (styledString !== undefined) {
-            this.richEditorStyledString = styledString;
-            this.richEditorStyledString.appendStyledString(imageStyledString);
-            this.controller.setStyledString(this.richEditorStyledString);
-            this.controller.setCaretOffset(this.richEditorStyledString.length);
-          }
+          this.richEditorStyledString = this.controller!.getStyledString()!;
+          this.richEditorStyledString.appendStyledString(imageStyledString);
+          this.controller!.setStyledString(this.richEditorStyledString);
+          this.controller!.setCaretOffset(this.richEditorStyledString.length);
         }
       }).id('imageTop')
 
       Button('get content').onClick((e: ClickEvent) => {
-        // this.richEditorStyledString = this.controller.getStyledString();
+        // this.richEditorStyledString = this.controller!.getStyledString()!;
         // this.content = this.richEditorStyledString.subStyledString(0, 6).getString();
         // console.log('RichEditorController this.content:' + this.content);
 
       }).id('getContent')
       Button('getStyles')
         .onClick((e: ClickEvent) => {
-          // let richEditorStyledString = this.controller.getStyledString();
-          // let styles = richEditorStyledString.getStyles(0, richEditorStyledString.length);
-          // this.stylesInfo = JSON.stringify(styles);
+          let richEditorStyledString = this.controller!.getStyledString()!;
+          let styles:SpanStyle[] = richEditorStyledString!.getStyles(0, richEditorStyledString.length) as SpanStyle[];
+          this.stylesInfo = JSON.stringify(styles);
         })
         .id('getStyles')
 
@@ -132,7 +129,7 @@ build() {
 
       RichEditor(this.options)
         .onReady((): void => {
-          // this.controller.setStyledString(this.mutableStyledString);
+          // this.controller!.setStyledString(this.mutableStyledString);
         })
         .height('20%')
         .width('100%')
@@ -142,10 +139,10 @@ build() {
       Column() {
         Row() {
           Button('add custom').onClick((e: ClickEvent) => {
-            // this.richEditorStyledString = this.controller.getStyledString();
+            // this.richEditorStyledString = this.controller!.getStyledString()!;
             // this.richEditorStyledString.appendStyledString(this.style1);
-            // this.controller.setStyledString(this.richEditorStyledString);
-            // this.controller.setCaretOffset(this.richEditorStyledString.length);
+            // this.controller!.setStyledString(this.richEditorStyledString);
+            // this.controller!.setCaretOffset(this.richEditorStyledString.length);
           }).id('addCustom')
         }
 

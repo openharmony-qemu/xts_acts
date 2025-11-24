@@ -23,7 +23,7 @@ struct TextAddApi1 {
   @State text: string = 'editMenuOptions'
 
   onCreateMenu(menuItems: Array<TextMenuItem>) {
-    menuItems.forEach((value, index) => {
+    menuItems!.forEach((value, index) => {
       value.icon = $r('app.media.icon')
       if (value.id.equals(TextMenuItemId.COPY)) {
         value.content = '复制change'

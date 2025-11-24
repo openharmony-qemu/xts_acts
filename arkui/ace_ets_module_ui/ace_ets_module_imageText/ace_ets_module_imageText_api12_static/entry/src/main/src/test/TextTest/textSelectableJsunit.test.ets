@@ -67,15 +67,13 @@ export default function textSelectableJsunit() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   textSelectableJsunit_static_0100
      * @tc.name     textSelectableJsunit_static_0100
      * @tc.desc     textSelectableJsunit_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('textSelectableJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('textSelectableJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textSelectableJsunit_0100 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('textSelectable_mess');

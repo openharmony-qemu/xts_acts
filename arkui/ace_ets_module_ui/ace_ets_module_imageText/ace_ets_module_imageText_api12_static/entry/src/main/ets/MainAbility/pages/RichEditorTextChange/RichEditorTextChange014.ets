@@ -62,7 +62,7 @@ build() {
         .borderColor(Color.Red)
         .width(100)
         .onReady((): void => {
-          this.controller.addTextSpan('012345',
+          this.controller!.addTextSpan('012345',
             {
               style:
               {

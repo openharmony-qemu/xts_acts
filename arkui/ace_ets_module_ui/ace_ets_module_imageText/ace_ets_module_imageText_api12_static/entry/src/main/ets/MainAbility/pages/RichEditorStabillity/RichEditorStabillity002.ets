@@ -53,7 +53,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 struct RichEditorStabillity002 {
   controller: RichEditorController = new RichEditorController();
   options: RichEditorOptions = { controller: this.controller } as RichEditorOptions;
-  @State pointPosition: number = -1;
+  @State pointPosition: int = -1;
   @State style: string = '';
 
 build() {
@@ -63,28 +63,22 @@ build() {
         Text('' + this.pointPosition).id('pointPosition');
         Text('style:' + this.style).id('style');
         Button('get Point Position').onClick((e: ClickEvent) => {
-          let caretOffset = this.controller.getCaretOffset();
-          if (caretOffset !== undefined) {
-            this.pointPosition = caretOffset;
-            console.log('this.pointPosition:' + this.pointPosition);
-          }
+          this.pointPosition = this.controller!.getCaretOffset() as int;
+          console.log('this.pointPosition:' + this.pointPosition);
         }).id('getPosition')
         Button('get spans').onClick((e: ClickEvent) => {
           this.style = '';
-          let spans = this.controller.getSpans({
+          this.controller!.getSpans({
             start: -1,
             end: -1
-          });
-          if (spans !== undefined) {
-            spans.forEach(item => {
-              this.style = JSON.stringify((item as RichEditorTextSpanResult));
-              console.log('RichEditorController  this.style:' + JSON.stringify(this.style));
-            })
-          }
+          })!.forEach(item => {
+            this.style = JSON.stringify((item as RichEditorTextSpanResult));
+            console.log('RichEditorController  this.style:' +  JSON.stringify(this.style));
+          })
         }).id('getSpans')
         Button('UpdateSpanStyles').onClick((e: ClickEvent) => {
           setTimeout(() => {
-            this.controller.updateSpanStyle({ start: -1, end: -1,
+            this.controller!.updateSpanStyle({ start: -1, end: -1,
               textStyle: {
                 fontColor: Color.Brown,
                 fontSize: 20
@@ -92,7 +86,7 @@ build() {
             } as RichEditorUpdateTextSpanStyleOptions)
           }, 200)
           setTimeout(() => {
-            this.controller.updateSpanStyle({ start: -1, end: -1,
+            this.controller!.updateSpanStyle({ start: -1, end: -1,
               textStyle: {
                 fontColor: Color.Red,
                 fontSize: 20
@@ -100,7 +94,7 @@ build() {
             } as RichEditorUpdateTextSpanStyleOptions)
           }, 400)
           setTimeout(() => {
-            this.controller.updateSpanStyle({ start: -1, end: -1,
+            this.controller!.updateSpanStyle({ start: -1, end: -1,
               textStyle: {
                 fontColor: Color.Green,
                 fontSize: 40
@@ -108,7 +102,7 @@ build() {
             } as RichEditorUpdateTextSpanStyleOptions)
           }, 600)
           setTimeout(() => {
-            this.controller.updateSpanStyle({ start: -1, end: -1,
+            this.controller!.updateSpanStyle({ start: -1, end: -1,
               textStyle: {
                 fontColor: Color.Green,
                 fontSize: 40,
@@ -117,7 +111,7 @@ build() {
             } as RichEditorUpdateTextSpanStyleOptions)
           }, 800)
           setTimeout(() => {
-            this.controller.updateSpanStyle({ start: -1, end: -1,
+            this.controller!.updateSpanStyle({ start: -1, end: -1,
               textStyle: {
                 fontColor: Color.Green,
                 fontSize: 30,
@@ -127,7 +121,7 @@ build() {
             } as RichEditorUpdateTextSpanStyleOptions)
           }, 1000)
           setTimeout(() => {
-            this.controller.updateSpanStyle({ start: -1, end: -1,
+            this.controller!.updateSpanStyle({ start: -1, end: -1,
               textStyle: {
                 fontColor: Color.Green,
                 fontSize: 40,
@@ -138,7 +132,7 @@ build() {
             } as RichEditorUpdateTextSpanStyleOptions)
           }, 1200)
           setTimeout(() => {
-            this.controller.updateSpanStyle({ start: -1, end: -1,
+            this.controller!.updateSpanStyle({ start: -1, end: -1,
               textStyle: {
                 fontColor: Color.Blue,
                 fontSize: 30,
@@ -160,7 +154,7 @@ build() {
       Column() {
         RichEditor(this.options)
           .onReady((): void => {
-            this.controller.addTextSpan('abc',
+            this.controller!.addTextSpan('abc',
               {
                 style:
                 {

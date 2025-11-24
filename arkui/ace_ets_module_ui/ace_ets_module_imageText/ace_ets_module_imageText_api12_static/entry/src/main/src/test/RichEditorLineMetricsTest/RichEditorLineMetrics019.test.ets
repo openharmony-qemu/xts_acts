@@ -77,15 +77,13 @@ export default function RichEditorLineMetrics019() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0024
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0024
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0024
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0024', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0024', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0024 START');
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('RichEditorLineMetrics019')) as Promise<Component>);
@@ -99,12 +97,12 @@ it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LINEMETRICS_static_0024', Level.LEVEL0,
 
       let lineMetrics1 = await (driver.findComponent(ON.id('lineMetrics1')) as Promise<Component>);
       let lineMetrics1Text = await lineMetrics1.getText();
-      expect(lineMetrics1Text).assertLarger(30);
+      expect(parseInt(lineMetrics1Text)).assertLarger(30);
       await CommonFunc.sleep(500);
       let lineMetrics2 = await (driver.findComponent(ON.id('lineMetrics2')) as Promise<Component>);
       let lineMetrics2Text = await lineMetrics2.getText();
       await CommonFunc.sleep(500);
-      expect(lineMetrics2Text).assertLarger(30);
+      expect(parseInt(lineMetrics2Text)).assertLarger(30);
       done();
     });
 

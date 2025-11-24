@@ -117,7 +117,7 @@ build() {
       RichEditor(this.options)
         .onReady((): void => {
           // 注册文本变化回调
-          this.controller.onContentChanged(this.contentChangedListener);
+          this.controller!.onContentChanged(this.contentChangedListener);
         })
         .height("80vp")
         .width("90%")

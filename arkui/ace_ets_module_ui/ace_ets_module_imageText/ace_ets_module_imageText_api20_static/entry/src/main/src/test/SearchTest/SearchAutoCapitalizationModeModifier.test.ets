@@ -69,15 +69,13 @@ export default function SearchAutoCapitalizationModeModifierTest() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SearchAutoCapitalizationModeModifierTest_static_0010
      * @tc.name     SearchAutoCapitalizationModeModifierTest_static_0010
      * @tc.desc     SearchAutoCapitalizationModeModifierTest_static_0010
-     * @tc.level    Level.LEVEL2
+     * @tc.level   Level.LEVEL2
      */
-it('SearchAutoCapitalizationModeModifierTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SearchAutoCapitalizationModeModifierTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[SearchAutoCapitalizationModeModifierTest_static_0010] START');
       let strJson = inspector.getInspectorByKey('Search_AutoCapitalizationModeModifier_NONE');
       let obj = JSON.parseJsonElement(strJson);
@@ -89,15 +87,13 @@ it('SearchAutoCapitalizationModeModifierTest_static_0010', Level.LEVEL2, async (
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SearchAutoCapitalizationModeModifierTest_static_0020
      * @tc.name     SearchAutoCapitalizationModeModifierTest_static_0020
      * @tc.desc     SearchAutoCapitalizationModeModifierTest_static_0020
-     * @tc.level    Level.LEVEL2
+     * @tc.level   Level.LEVEL2
      */
-it('SearchAutoCapitalizationModeModifierTest_static_0020', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SearchAutoCapitalizationModeModifierTest_static_0020', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[SearchAutoCapitalizationModeModifierTest_static_0020] START');
       let strJson = inspector.getInspectorByKey('Search_AutoCapitalizationModeModifier_WORDS');
       let obj = JSON.parseJsonElement(strJson);
@@ -109,15 +105,13 @@ it('SearchAutoCapitalizationModeModifierTest_static_0020', Level.LEVEL2, async (
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SearchAutoCapitalizationModeModifierTest_static_0030
      * @tc.name     SearchAutoCapitalizationModeModifierTest_static_0030
      * @tc.desc     SearchAutoCapitalizationModeModifierTest_static_0030
-     * @tc.level    Level.LEVEL2
+     * @tc.level   Level.LEVEL2
      */
-it('SearchAutoCapitalizationModeModifierTest_static_0030', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SearchAutoCapitalizationModeModifierTest_static_0030', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[SearchAutoCapitalizationModeModifierTest_static_0030] START');
       let strJson = inspector.getInspectorByKey('Search_AutoCapitalizationModeModifier_SENTENCES');
       let obj = JSON.parseJsonElement(strJson);
@@ -129,15 +123,13 @@ it('SearchAutoCapitalizationModeModifierTest_static_0030', Level.LEVEL2, async (
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SearchAutoCapitalizationModeModifierTest_static_0040
      * @tc.name     SearchAutoCapitalizationModeModifierTest_static_0040
      * @tc.desc     SearchAutoCapitalizationModeModifierTest_static_0040
-     * @tc.level    Level.LEVEL2
+     * @tc.level   Level.LEVEL2
      */
-it('SearchAutoCapitalizationModeModifierTest_static_0040', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SearchAutoCapitalizationModeModifierTest_static_0040', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[SearchAutoCapitalizationModeModifierTest_static_0040] START');
       let strJson = inspector.getInspectorByKey('Search_AutoCapitalizationModeModifier_ALL_CHARACTERS');
       let obj = JSON.parseJsonElement(strJson);
@@ -149,15 +141,13 @@ it('SearchAutoCapitalizationModeModifierTest_static_0040', Level.LEVEL2, async (
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SearchAutoCapitalizationModeModifierTest_static_0050
      * @tc.name     SearchAutoCapitalizationModeModifierTest_static_0050
      * @tc.desc     SearchAutoCapitalizationModeModifierTest_static_0050
-     * @tc.level    Level.LEVEL2
+     * @tc.level   Level.LEVEL2
      */
-it('SearchAutoCapitalizationModeModifierTest_static_0050', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SearchAutoCapitalizationModeModifierTest_static_0050', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[SearchAutoCapitalizationModeModifierTest_static_0050] START');
       let strJson = inspector.getInspectorByKey('Search_AutoCapitalizationModeModifier_undefined');
       let obj = JSON.parseJsonElement(strJson);
@@ -169,15 +159,13 @@ it('SearchAutoCapitalizationModeModifierTest_static_0050', Level.LEVEL2, async (
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SearchAutoCapitalizationModeModifierTest_static_0060
      * @tc.name     SearchAutoCapitalizationModeModifierTest_static_0060
      * @tc.desc     SearchAutoCapitalizationModeModifierTest_static_0060
-     * @tc.level    Level.LEVEL2
+     * @tc.level   Level.LEVEL2
      */
-it('SearchAutoCapitalizationModeModifierTest_static_0060', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('SearchAutoCapitalizationModeModifierTest_static_0060', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[SearchAutoCapitalizationModeModifierTest_static_0060] START');
       let strJson = inspector.getInspectorByKey('Search_AutoCapitalizationModeModifier_undefined');
       let obj = JSON.parseJsonElement(strJson);

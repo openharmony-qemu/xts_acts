@@ -69,15 +69,13 @@ export default function TextShaderStyleTest() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextShaderStyleTest_static_0010
      * @tc.name     TextShaderStyleTest_static_0010
      * @tc.desc     TextShaderStyleTest_static_0010
-     * @tc.level    Level.LEVEL2
+     * @tc.level   Level.LEVEL2
      */
-it('TextShaderStyleTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('TextShaderStyleTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[TextShaderStyleTest_static_0010] START');
       let strJson = inspector.getInspectorByKey('Text_linearGradientStyle');
       let obj = JSON.parseJsonElement(strJson);
@@ -91,15 +89,13 @@ it('TextShaderStyleTest_static_0010', Level.LEVEL2, async (done: () => void): Pr
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextShaderStyleTest_static_0020
      * @tc.name     TextShaderStyleTest_static_0020
      * @tc.desc     TextShaderStyleTest_static_0020
-     * @tc.level    Level.LEVEL2
+     * @tc.level   Level.LEVEL2
      */
-it('TextShaderStyleTest_static_0020', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('TextShaderStyleTest_static_0020', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[TextShaderStyleTest_static_0020] START');
       let strJson = inspector.getInspectorByKey('Text_radialGradientStyle');
       let obj = JSON.parseJsonElement(strJson);

@@ -47,7 +47,7 @@ export default function MarqueeApi() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get FontSettingOptions state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("MarqueeApi" == pages.name)) {
           console.info("get FontSettingOptions pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
@@ -66,15 +66,13 @@ export default function MarqueeApi() {
 
     
 
-    
-    
-/*
+    /*
      * @tc.number   MarqueeApi_static_001
      * @tc.name     MarqueeApi_static_001
      * @tc.desc     MarqueeApi_static_001
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('MarqueeApi_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('MarqueeApi_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[MarqueeApi_static_001] START');
 
       await CommonFunc.sleep(1000);

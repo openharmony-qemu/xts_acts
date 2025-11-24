@@ -63,7 +63,7 @@ struct RichEditorCustomSpan008 {
       return
     }
     this.isPageShow = false;
-    this.controller.setStyledString(this.style1);
+    this.controller!.setStyledString(this.style1);
   }
 
 
@@ -72,18 +72,14 @@ build() {
       Text('length:' + this.length).id('length')
       Button('get CustomSpanInfo')
         .onClick((e: ClickEvent) => {
-          let richEditorStyledString = this.controller.getStyledString();
-          if (richEditorStyledString !== undefined) {
-            this.length = richEditorStyledString.getString().length + '';
-          }
+          let richEditorStyledString = this.controller!.getStyledString()!;
+          this.length = richEditorStyledString!.getString().length + '';
         })
         .id('getCustomSpanInfo')
       Button('removeString').onClick((e: ClickEvent) => {
-        let richEditorStyledString = this.controller.getStyledString();
-        if (richEditorStyledString !== undefined) {
-          richEditorStyledString.removeString(0, 1);
-          this.controller.setStyledString(richEditorStyledString);
-        }
+        let richEditorStyledString = this.controller!.getStyledString()!;
+        richEditorStyledString.removeString(0, 1);
+        this.controller!.setStyledString(richEditorStyledString);
       }).id('removeString')
       RichEditor(this.options)
         .onReady((): void => {

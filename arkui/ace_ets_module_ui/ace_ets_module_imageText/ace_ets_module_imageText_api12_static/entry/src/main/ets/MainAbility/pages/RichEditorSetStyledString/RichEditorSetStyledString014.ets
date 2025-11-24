@@ -58,13 +58,13 @@ struct RichEditorSetStyledString014 {
   imagePixelMap: image.PixelMap | undefined = undefined;
   richEditorStyledString: MutableStyledString = new MutableStyledString('');
 
-  fontStyle2: TextStyle = {
+  fontStyle2: TextStyle = new TextStyle({
     fontWeight: FontWeight.Bolder,
     fontFamily: 'Arial',
     fontColor: Color.Orange,
-    // fontSize: LengthMetrics.vp(50),
+    fontSize: LengthMetrics.vp(50),
     fontStyle: FontStyle.Italic
-  } as TextStyle
+  })
 
   styledString: StyledString = new StyledString('test',
     [{ start: 0, length: 4, styledKey: StyledStringKey.FONT,
@@ -103,13 +103,10 @@ struct RichEditorSetStyledString014 {
             verticalAlign: ImageSpanAlignment.CENTER,
             objectFit: ImageFit.Contain
           } as ImageAttachmentInterface))
-          let currentString = this.controller.getStyledString();
-          if (currentString !== undefined) {
-            this.richEditorStyledString = currentString;
-            this.richEditorStyledString.appendStyledString(imageStyledString);
-            this.controller.setStyledString(this.richEditorStyledString as StyledString);
-            this.controller.setCaretOffset(this.richEditorStyledString.length);
-          }
+          this.richEditorStyledString = this.controller!.getStyledString()!;
+          this.richEditorStyledString.appendStyledString(imageStyledString);
+          this.controller!.setStyledString(this.richEditorStyledString as StyledString);
+          this.controller!.setCaretOffset(this.richEditorStyledString.length);
         }
       }).id('image_top')
 
@@ -122,14 +119,11 @@ struct RichEditorSetStyledString014 {
             verticalAlign: ImageSpanAlignment.CENTER,
             objectFit: ImageFit.Contain
           } as ImageAttachmentInterface))
-          let currentString = this.controller.getStyledString();
-          if (currentString !== undefined) {
-            this.richEditorStyledString = currentString;
-            this.richEditorStyledString.appendStyledString(imageStyledString);
-            this.richEditorStyledString.appendStyledString(this.styledString1);
-            this.controller.setStyledString(this.richEditorStyledString as StyledString);
-            this.controller.setCaretOffset(this.richEditorStyledString.length);
-          }
+          this.richEditorStyledString = this.controller!.getStyledString()!;
+          this.richEditorStyledString.appendStyledString(imageStyledString);
+          this.richEditorStyledString.appendStyledString(this.styledString1);
+          this.controller!.setStyledString(this.richEditorStyledString as StyledString);
+          this.controller!.setCaretOffset(this.richEditorStyledString.length);
         }
       }).id('setStyledString')
 
@@ -137,7 +131,7 @@ struct RichEditorSetStyledString014 {
       Text('onDidChangeCall:' + this.onDidChangeCall).id('onDidChangeCall')
       RichEditor(this.options)
         .onReady((): void => {
-          this.controller.setStyledString(this.styledString);
+          this.controller!.setStyledString(this.styledString);
         })
         .onWillChange((value: RichEditorChangeValue): boolean => {
           this.onWillChangeCall = true;

@@ -57,7 +57,7 @@ build() {
     Column() {
       RichEditor({ controller: this.controller } as RichEditorOptions)
         .onReady((): void => {
-          this.controller.addTextSpan("H2O, difficult \n", {
+          this.controller!.addTextSpan("H2O, difficult \n", {
             style: {
               fontColor: Color.Pink,
               fontFeature: "\"sups\" on",
@@ -94,7 +94,7 @@ build() {
           .height('5%')
           .id("RichEditorFontFeature_UpdateBtn1")
           .onClick((e: ClickEvent) => {
-            this.controller.updateSpanStyle({
+            this.controller!.updateSpanStyle({
               start: -1,
               end: -1,
               textStyle:
@@ -107,7 +107,7 @@ build() {
           .height('5%')
           .id("RichEditorFontFeature_UpdateBtn2")
           .onClick((e: ClickEvent) => {
-            this.controller.updateSpanStyle({
+            this.controller!.updateSpanStyle({
               start: -1,
               end: -1,
               textStyle:
@@ -121,16 +121,16 @@ build() {
             .height('5%')
             .id("RichEditorFontFeature_GetSpansBtn")
             .onClick((e: ClickEvent) => {
-              let spans = this.controller.getSpans({start: -1, end: -1});
-              if (spans !== undefined) {
-                spans.forEach(item => {
-                  if(typeof(item as RichEditorTextSpanResult)?.textStyle != 'undefined'){
-                    this.content=""
-                    this.content += (item as RichEditorTextSpanResult)?.textStyle.fontFeature;
-                    console.info("sddd"+ JSON.stringify((item as RichEditorTextSpanResult)?.textStyle.fontFeature))
-                  }
-                })
-              }
+              this.controller!.getSpans({
+                start: -1,
+                end: -1
+              })!.forEach(item => {
+                if(typeof(item as RichEditorTextSpanResult)?.textStyle != 'undefined'){
+                  this.content=""
+                  this.content += (item as RichEditorTextSpanResult)?.textStyle.fontFeature;
+                  console.info("sddd"+ JSON.stringify((item as RichEditorTextSpanResult)?.textStyle.fontFeature))
+                }
+              })
             })
         }
       }

@@ -66,15 +66,13 @@ export default function imageAddApi2() {
 
     
 
-    
-    
-/*
+    /*
      * @tc.number   imageAddApi2_static_001
      * @tc.name     imageAddApi2_static_001
      * @tc.desc     imageAddApi2_static_001
      * @tc.level    Level.LEVEL0
      */
-it('imageAddApi2_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('imageAddApi2_static_001',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[imageAddApi2_001] START');
 
       await CommonFunc.sleep(1000);

@@ -68,15 +68,13 @@ export default function APIUnderlineColorTest() {
 
     
 
-    
-    
-/*
+    /*
      * @tc.number   APIUnderlineColorTest_static_001
      * @tc.name     APIUnderlineColorTest_static_001
      * @tc.desc     APIUnderlineColorTest_static_001
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('APIUnderlineColorTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('APIUnderlineColorTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[APIUnderlineColorTest_001] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();

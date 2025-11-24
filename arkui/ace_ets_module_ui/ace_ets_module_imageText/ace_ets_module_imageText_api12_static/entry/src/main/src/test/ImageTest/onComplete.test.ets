@@ -66,15 +66,13 @@ export default function onComplete() {
       console.info("onComplete after each called");
     });
     
-    
-    
-/*
+    /*
      * @tc.number   onComplete_static_0100
      * @tc.name     onComplete_static_0100
      * @tc.desc     onComplete_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('onComplete_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('onComplete_static_0100',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[onComplete_0100] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -88,15 +86,13 @@ it('onComplete_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
 
 
     
-    
-    
-/*
+    /*
      * @tc.number   onComplete_static_0200
      * @tc.name     onComplete_static_0200
      * @tc.desc     onComplete_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('onComplete_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('onComplete_static_0200',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[onComplete_0200] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -110,15 +106,13 @@ it('onComplete_static_0200', Level.LEVEL0, async (done: () => void): Promise<voi
 
 
     
-    
-    
-/*
+    /*
      * @tc.number   onComplete_static_0300
      * @tc.name     onComplete_static_0300
      * @tc.desc     onComplete_static_0300
      * @tc.level    Level.LEVEL0
      */
-it('onComplete_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('onComplete_static_0300',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[onComplete_0300] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -131,15 +125,13 @@ it('onComplete_static_0300', Level.LEVEL0, async (done: () => void): Promise<voi
 
 
     
-    
-    
-/*
+    /*
      * @tc.number   onComplete_static_0400
      * @tc.name     onComplete_static_0400
      * @tc.desc     onComplete_static_0400
      * @tc.level    Level.LEVEL0
      */
-it('onComplete_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('onComplete_static_0400',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[onComplete_0400] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
@@ -152,15 +144,13 @@ it('onComplete_static_0400', Level.LEVEL0, async (done: () => void): Promise<voi
 
 
     
-    
-    
-/*
+    /*
      * @tc.number   onComplete_static_0500
      * @tc.name     onComplete_static_0500
      * @tc.desc     onComplete_static_0500
      * @tc.level    Level.LEVEL0
      */
-it('onComplete_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('onComplete_static_0500',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[onComplete_0500] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);

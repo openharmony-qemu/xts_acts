@@ -67,15 +67,13 @@ export default function textAreaAutoFillTest() {
 
 
     
-    
-    
-/*
+    /*
      * @tc.number   AutoFillTextAreaTest_static_0100
      * @tc.name     AutoFillTextAreaTest_static_0100
      * @tc.desc     AutoFillTextAreaTest_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('AutoFillTextAreaTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('AutoFillTextAreaTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TAG = 'AutoFillTextAreaTest_0100_TAG';
       console.info(TAG, 'Start');
       let driver = Driver.create();
@@ -92,15 +90,13 @@ it('AutoFillTextAreaTest_static_0100', Level.LEVEL0, async (done: () => void): P
     })
 
     
-    
-    
-/*
+    /*
      * @tc.number   AutoFillTextAreaTest_static_0200
      * @tc.name     AutoFillTextAreaTest_static_0200
      * @tc.desc     AutoFillTextAreaTest_static_0200
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('AutoFillTextAreaTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('AutoFillTextAreaTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TAG = 'AutoFillTextAreaTest_0200_TAG';
       console.info(TAG, 'Start');
       let driver = Driver.create();
@@ -117,15 +113,13 @@ it('AutoFillTextAreaTest_static_0200', Level.LEVEL0, async (done: () => void): P
     })
 
     
-    
-    
-/*
+    /*
      * @tc.number   AutoFillTextAreaTest_static_0300
      * @tc.name     AutoFillTextAreaTest_static_0300
      * @tc.desc     AutoFillTextAreaTest_static_0300
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('AutoFillTextAreaTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('AutoFillTextAreaTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TAG = 'AutoFillTextAreaTest_0300_TAG';
       console.info(TAG, 'Start');
       let driver = Driver.create();
@@ -142,15 +136,13 @@ it('AutoFillTextAreaTest_static_0300', Level.LEVEL0, async (done: () => void): P
     })
 
     
-    
-    
-/*
+    /*
      * @tc.number   AutoFillTextAreaTest_static_0400
      * @tc.name     AutoFillTextAreaTest_static_0400
      * @tc.desc     AutoFillTextAreaTest_static_0400
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('AutoFillTextAreaTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('AutoFillTextAreaTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TAG = 'AutoFillTextAreaTest_0400_TAG';
       console.info(TAG, 'Start');
       let driver = Driver.create();
@@ -167,15 +159,13 @@ it('AutoFillTextAreaTest_static_0400', Level.LEVEL0, async (done: () => void): P
     })
 
     
-    
-    
-/*
+    /*
      * @tc.number   AutoFillTextAreaTest_static_0500
      * @tc.name     AutoFillTextAreaTest_static_0500
      * @tc.desc     AutoFillTextAreaTest_static_0500
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('AutoFillTextAreaTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('AutoFillTextAreaTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TAG = 'AutoFillTextAreaTest_0500_TAG';
       console.info(TAG, 'Start');
       let driver = Driver.create();
@@ -192,15 +182,13 @@ it('AutoFillTextAreaTest_static_0500', Level.LEVEL0, async (done: () => void): P
     })
 
     
-    
-    
-/*
+    /*
      * @tc.number   AutoFillTextAreaTest_static_0600
      * @tc.name     AutoFillTextAreaTest_static_0600
      * @tc.desc     AutoFillTextAreaTest_static_0600
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('AutoFillTextAreaTest_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('AutoFillTextAreaTest_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TAG = 'AutoFillTextAreaTest_0600_TAG';
       console.info(TAG, 'Start');
       let driver = Driver.create();
@@ -217,15 +205,13 @@ it('AutoFillTextAreaTest_static_0600', Level.LEVEL0, async (done: () => void): P
     })
 
     
-    
-    
-/*
+    /*
      * @tc.number   AutoFillTextAreaTest_static_0700
      * @tc.name     AutoFillTextAreaTest_static_0700
      * @tc.desc     AutoFillTextAreaTest_static_0700
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('AutoFillTextAreaTest_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('AutoFillTextAreaTest_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TAG = 'AutoFillTextAreaTest_0700_TAG';
       console.info(TAG, 'Start');
       let driver = Driver.create();
@@ -242,15 +228,13 @@ it('AutoFillTextAreaTest_static_0700', Level.LEVEL0, async (done: () => void): P
     })
 
     
-    
-    
-/*
+    /*
      * @tc.number   AutoFillTextAreaTest_static_0800
      * @tc.name     AutoFillTextAreaTest_static_0800
      * @tc.desc     AutoFillTextAreaTest_static_0800
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('AutoFillTextAreaTest_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('AutoFillTextAreaTest_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TAG = 'AutoFillTextAreaTest_0800_TAG';
       console.info(TAG, 'Start');
       let driver = Driver.create();
@@ -267,15 +251,13 @@ it('AutoFillTextAreaTest_static_0800', Level.LEVEL0, async (done: () => void): P
     })
 
     
-    
-    
-/*
+    /*
      * @tc.number   AutoFillTextAreaTest_static_0900
      * @tc.name     AutoFillTextAreaTest_static_0900
      * @tc.desc     AutoFillTextAreaTest_static_0900
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('AutoFillTextAreaTest_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('AutoFillTextAreaTest_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TAG = 'AutoFillTextAreaTest_0900_TAG';
       console.info(TAG, 'Start');
       let driver = Driver.create();
@@ -292,15 +274,13 @@ it('AutoFillTextAreaTest_static_0900', Level.LEVEL0, async (done: () => void): P
     })
 
     
-    
-    
-/*
+    /*
      * @tc.number   AutoFillTextAreaTest_static_1000
      * @tc.name     AutoFillTextAreaTest_static_1000
      * @tc.desc     AutoFillTextAreaTest_static_1000
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('AutoFillTextAreaTest_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('AutoFillTextAreaTest_static_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TAG = 'AutoFillTextAreaTest_1000_TAG';
       console.info(TAG, 'Start');
       let driver = Driver.create();
@@ -317,15 +297,13 @@ it('AutoFillTextAreaTest_static_1000', Level.LEVEL0, async (done: () => void): P
     })
 
     
-    
-    
-/*
+    /*
      * @tc.number   AutoFillTextAreaTest_static_1100
      * @tc.name     AutoFillTextAreaTest_static_1100
      * @tc.desc     AutoFillTextAreaTest_static_1100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('AutoFillTextAreaTest_static_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('AutoFillTextAreaTest_static_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TAG = 'AutoFillTextAreaTest_1100_TAG';
       console.info(TAG, 'Start');
       let driver = Driver.create();
@@ -342,15 +320,13 @@ it('AutoFillTextAreaTest_static_1100', Level.LEVEL0, async (done: () => void): P
     })
 
     
-    
-    
-/*
+    /*
      * @tc.number   AutoFillTextAreaTest_static_1200
      * @tc.name     AutoFillTextAreaTest_static_1200
      * @tc.desc     AutoFillTextAreaTest_static_1200
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('AutoFillTextAreaTest_static_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('AutoFillTextAreaTest_static_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TAG = 'AutoFillTextAreaTest_1200_TAG';
       console.info(TAG, 'Start');
       let driver = Driver.create();
@@ -367,15 +343,13 @@ it('AutoFillTextAreaTest_static_1200', Level.LEVEL0, async (done: () => void): P
     })
 
     
-    
-    
-/*
+    /*
      * @tc.number   AutoFillTextAreaTest_static_1300
      * @tc.name     AutoFillTextAreaTest_static_1300
      * @tc.desc     AutoFillTextAreaTest_static_1300
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('AutoFillTextAreaTest_static_1300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('AutoFillTextAreaTest_static_1300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TAG = 'AutoFillTextAreaTest_1300_TAG';
       console.info(TAG, 'Start');
       let driver = Driver.create();
@@ -392,15 +366,13 @@ it('AutoFillTextAreaTest_static_1300', Level.LEVEL0, async (done: () => void): P
     })
 
     
-    
-    
-/*
+    /*
      * @tc.number   AutoFillTextAreaTest_static_1400
      * @tc.name     AutoFillTextAreaTest_static_1400
      * @tc.desc     AutoFillTextAreaTest_static_1400
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('AutoFillTextAreaTest_static_1400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('AutoFillTextAreaTest_static_1400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TAG = 'AutoFillTextAreaTest_1400_TAG';
       console.info(TAG, 'Start');
       let driver = Driver.create();
@@ -417,15 +389,13 @@ it('AutoFillTextAreaTest_static_1400', Level.LEVEL0, async (done: () => void): P
     })
 
     
-    
-    
-/*
+    /*
      * @tc.number   AutoFillTextAreaTest_static_1500
      * @tc.name     AutoFillTextAreaTest_static_1500
      * @tc.desc     AutoFillTextAreaTest_static_1500
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('AutoFillTextAreaTest_static_1500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('AutoFillTextAreaTest_static_1500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TAG = 'AutoFillTextAreaTest_1500_TAG';
       console.info(TAG, 'Start');
       let driver = Driver.create();
@@ -442,15 +412,13 @@ it('AutoFillTextAreaTest_static_1500', Level.LEVEL0, async (done: () => void): P
     })
 
     
-    
-    
-/*
+    /*
      * @tc.number   AutoFillTextAreaTest_static_1600
      * @tc.name     AutoFillTextAreaTest_static_1600
      * @tc.desc     AutoFillTextAreaTest_static_1600
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('AutoFillTextAreaTest_static_1600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('AutoFillTextAreaTest_static_1600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TAG = 'AutoFillTextAreaTest_1600_TAG';
       console.info(TAG, 'Start');
       let driver = Driver.create();
@@ -467,15 +435,13 @@ it('AutoFillTextAreaTest_static_1600', Level.LEVEL0, async (done: () => void): P
     })
 
     
-    
-    
-/*
+    /*
      * @tc.number   AutoFillTextAreaTest_static_1700
      * @tc.name     AutoFillTextAreaTest_static_1700
      * @tc.desc     AutoFillTextAreaTest_static_1700
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('AutoFillTextAreaTest_static_1700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('AutoFillTextAreaTest_static_1700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TAG = 'AutoFillTextAreaTest_1700_TAG';
       console.info(TAG, 'Start');
       let driver = Driver.create();
@@ -492,15 +458,13 @@ it('AutoFillTextAreaTest_static_1700', Level.LEVEL0, async (done: () => void): P
     })
 
     
-    
-    
-/*
+    /*
      * @tc.number   AutoFillTextAreaTest_static_1800
      * @tc.name     AutoFillTextAreaTest_static_1800
      * @tc.desc     AutoFillTextAreaTest_static_1800
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('AutoFillTextAreaTest_static_1800', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('AutoFillTextAreaTest_static_1800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TAG = 'AutoFillTextAreaTest_1800_TAG';
       console.info(TAG, 'Start');
       let driver = Driver.create();
@@ -517,15 +481,13 @@ it('AutoFillTextAreaTest_static_1800', Level.LEVEL0, async (done: () => void): P
     })
 
     
-    
-    
-/*
+    /*
      * @tc.number   AutoFillTextAreaTest_static_1900
      * @tc.name     AutoFillTextAreaTest_static_1900
      * @tc.desc     AutoFillTextAreaTest_static_1900
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('AutoFillTextAreaTest_static_1900', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('AutoFillTextAreaTest_static_1900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const TAG = 'AutoFillTextAreaTest_1900_TAG';
       console.info(TAG, 'Start');
       let driver = Driver.create();

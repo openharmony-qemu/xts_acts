@@ -68,15 +68,13 @@ export default function textInputMinFontSize() {
     })
 
     
-    
-    
-/*
+    /*
      * @tc.number   textInputMinFontSize_static_0100
      * @tc.name     textInputMinFontSize_static_0100
      * @tc.desc     textInputMinFontSize_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('textInputMinFontSize_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('textInputMinFontSize_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'textAreaMinFontSize0100';
       console.info('[' + tagName + '] START============================');
 

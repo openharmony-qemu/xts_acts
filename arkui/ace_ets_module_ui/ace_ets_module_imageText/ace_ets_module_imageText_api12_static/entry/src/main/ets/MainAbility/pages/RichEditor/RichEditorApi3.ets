@@ -59,7 +59,7 @@ build() {
     Column() {
       RichEditor({ controller: this.controller } as RichEditorOptions)
         .onReady((): void => {
-          this.controller.addTextSpan(this.testStr, {
+          this.controller!.addTextSpan(this.testStr, {
             style: {
               fontColor: Color.Black,
               fontSize: "32",
@@ -77,16 +77,13 @@ build() {
 
       Text(this.attributeValue == '0' ? 'LineBreakStrategy.GREEDY' : '').id('RichEditorApi3_text1')
       Button('获取linebreak属性值').onClick((e: ClickEvent) => {
-        let paragraphs = this.controller.getParagraphs({ start: -1, end: -1 })
-        if (paragraphs !== undefined) {
-          this.spanParagraphs = paragraphs;
-          this.spanParagraphs.forEach((item: RichEditorParagraphResult) => {
-            if (typeof (item as RichEditorParagraphResult)?.style !== 'undefined') {
-              console.info('lineBreakStrategy:' + `${item?.style?.lineBreakStrategy}`)
-              this.attributeValue = `${item?.style?.lineBreakStrategy}`
-            }
-          })
-        }
+        this.spanParagraphs = this.controller!.getParagraphs({ start: -1, end: -1 }) as RichEditorParagraphResult[]
+        this.spanParagraphs!.forEach((item: RichEditorParagraphResult) => {
+          if(typeof(item as RichEditorParagraphResult)?.style !== 'undefined'){
+            console.info('lineBreakStrategy:'+ `${item?.style?.lineBreakStrategy}`)
+            this.attributeValue = `${item?.style?.lineBreakStrategy}`
+          }
+        })
       }).id('RichEditorApi3_btn1')
 
     }

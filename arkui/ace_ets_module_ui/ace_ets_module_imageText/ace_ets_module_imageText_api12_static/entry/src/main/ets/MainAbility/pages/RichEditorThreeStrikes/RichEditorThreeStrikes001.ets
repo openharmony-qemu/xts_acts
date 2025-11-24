@@ -60,7 +60,7 @@ build() {
         Text('message:' + this.message).id('message')
         RichEditor(this.options)
           .onReady((): void => {
-            this.controller.addTextSpan('123456789',
+            this.controller!.addTextSpan('123456789',
               {
                 style:
                 {
@@ -68,7 +68,7 @@ build() {
                   fontSize: 30
                 }
               })
-            this.controller.addTextSpan('123456789',
+            this.controller!.addTextSpan('123456789',
               {
                 style:
                 {
@@ -76,7 +76,7 @@ build() {
                   fontSize: 30
                 }
               })
-            this.controller.addTextSpan('123456789',
+            this.controller!.addTextSpan('123456789',
               {
                 style:
                 {
@@ -84,7 +84,7 @@ build() {
                   fontSize: 30
                 }
               })
-            this.controller.addTextSpan('123456789',
+            this.controller!.addTextSpan('123456789',
               {
                 style:
                 {

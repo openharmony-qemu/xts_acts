@@ -59,7 +59,7 @@ build() {
     Column() {
       RichEditor(this.options)
         .onReady((): void => {
-          this.controller.addTextSpan("012",
+          this.controller!.addTextSpan("012",
             {
               style:
               {

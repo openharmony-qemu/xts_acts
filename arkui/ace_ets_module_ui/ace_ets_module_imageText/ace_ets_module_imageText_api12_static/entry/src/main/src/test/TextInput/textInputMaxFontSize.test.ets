@@ -68,15 +68,13 @@ export default function textInputMaxFontSize() {
     })
 
     
-    
-    
-/*
+    /*
      * @tc.number   textInputMaxFontSize_static_0100
      * @tc.name     textInputMaxFontSize_static_0100
      * @tc.desc     textInputMaxFontSize_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('textInputMaxFontSize_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('textInputMaxFontSize_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'textInputMaxFontSize0100';
       console.info('[' + tagName + '] START============================');
 

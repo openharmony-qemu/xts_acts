@@ -60,18 +60,18 @@ build() {
         Text('' + this.wordBreak).id('word_break_text');
 
         Button('getParagraphStyle').onClick((e: ClickEvent) => {
-          this.wordBreak = JSON.stringify(this.controller.getParagraphs({ start: -1, end: -1 }));
+          this.wordBreak = JSON.stringify(this.controller!.getParagraphs({ start: -1, end: -1 }));
         }).id('getParagraphStyle')
 
         Button('updateParagraphStyle').onClick((e: ClickEvent) => {
-          this.controller.updateParagraphStyle({
+          this.controller!.updateParagraphStyle({
             start: -1, end: -1,
             style: {
               textAlign: TextAlign.Start,
               wordBreak: WordBreak.BREAK_ALL
             }
           })
-          this.wordBreak = JSON.stringify(this.controller.getParagraphs({ start: -1, end: -1 }));
+          this.wordBreak = JSON.stringify(this.controller!.getParagraphs({ start: -1, end: -1 }));
         }).id('updateParagraphStyle')
 
       }
@@ -83,8 +83,8 @@ build() {
       Column() {
         RichEditor(this.options)
           .onReady((): void => {
-            this.controller.addTextSpan('TestWord abc', { style: { fontColor: Color.Orange, fontSize: 30 } })
-            this.controller.updateParagraphStyle({
+            this.controller!.addTextSpan('TestWord abc', { style: { fontColor: Color.Orange, fontSize: 30 } })
+            this.controller!.updateParagraphStyle({
               start: -1, end: -1,
               style: {
                 textAlign: TextAlign.Center,
@@ -93,7 +93,7 @@ build() {
             })
           })
           .onWillChange((value: RichEditorChangeValue): boolean => {
-            value.replacedSpans.forEach((item: RichEditorTextSpanResult) => {
+            value.replacedSpans!.forEach((item: RichEditorTextSpanResult) => {
               console.log('RichEditorController ----------item.paragraphStyle:-- ' + JSON.stringify(item.paragraphStyle));
               this.wordBreak = JSON.stringify(item.paragraphStyle);
             })

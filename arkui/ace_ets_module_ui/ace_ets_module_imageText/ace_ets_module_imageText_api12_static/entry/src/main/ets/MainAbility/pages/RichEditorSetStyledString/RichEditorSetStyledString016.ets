@@ -58,13 +58,13 @@ struct RichEditorSetStyledString016 {
   imagePixelMap: image.PixelMap | undefined = undefined;
   richEditorStyledString: MutableStyledString = new MutableStyledString('');
 
-  fontStyle2: TextStyle = {
+  fontStyle2: TextStyle = new TextStyle({
     fontWeight: FontWeight.Bolder,
     fontFamily: 'Arial',
     fontColor: Color.Orange,
-    // fontSize: LengthMetrics.vp(50),
+    fontSize: LengthMetrics.vp(50),
     fontStyle: FontStyle.Italic
-  } as TextStyle
+  })
 
   styledString: StyledString = new StyledString('test',
     [{ start: 0, length: 4, styledKey: StyledStringKey.FONT,
@@ -99,30 +99,27 @@ struct RichEditorSetStyledString016 {
             verticalAlign: ImageSpanAlignment.CENTER,
             objectFit: ImageFit.Contain
           } as ImageAttachmentInterface))
-          let currentString = this.controller.getStyledString();
-          if (currentString !== undefined) {
-            this.richEditorStyledString = currentString;
-            this.richEditorStyledString.appendStyledString(imageStyledString);
-            this.controller.setStyledString(this.richEditorStyledString as StyledString);
-            this.controller.setCaretOffset(this.richEditorStyledString.length);
-          }
+          this.richEditorStyledString = this.controller!.getStyledString()!;
+          this.richEditorStyledString.appendStyledString(imageStyledString);
+          this.controller!.setStyledString(this.richEditorStyledString as StyledString);
+          this.controller!.setCaretOffset(this.richEditorStyledString.length);
         }
       }).id('image_center')
       Button('setSelection').onClick((e: ClickEvent) => {
-        this.controller.setSelection(-1, -1);
+        this.controller!.setSelection(-1, -1);
       }).id('setSelection')
       Button('getSelection').onClick((e: ClickEvent) => {
-        let select = this.controller.getSelection();
-        this.content = 'start:' + select?.start + ';end:' + select?.end;
+        let select = this.controller!.getSelection()!;
+        this.content = 'start:' + select.start + ';end:' + select.end;
       }).id('getSelection')
       Button('stopEditing').onClick((e: ClickEvent) => {
-        this.controller.stopEditing();
+        this.controller!.stopEditing();
       }).id('stopEditing')
       Text('content:' + this.content).id('content')
       Text('isEditing:' + this.isEditing).id('isEditing')
       RichEditor(this.options)
         .onReady((): void => {
-          this.controller.setStyledString(this.styledString)
+          this.controller!.setStyledString(this.styledString)
         })
         .onEditingChange((isEditing: boolean): void => {
           this.isEditing = isEditing;

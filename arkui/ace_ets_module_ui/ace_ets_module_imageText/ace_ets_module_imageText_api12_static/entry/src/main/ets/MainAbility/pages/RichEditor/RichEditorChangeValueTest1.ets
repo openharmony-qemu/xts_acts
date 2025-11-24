@@ -60,7 +60,7 @@ build() {
         .borderColor(Color.Red)
         .width("90%")
         .onReady((): void => {
-          this.controller.addImageSpan($r("app.media.icon"),
+          this.controller!.addImageSpan($r("app.media.icon"),
             {
               imageStyle:
               {
@@ -70,7 +70,7 @@ build() {
         })
         .onWillChange((value: RichEditorChangeValue): boolean => {
           console.log('测试log1：onWillChange'+JSON.stringify(value))
-          value.replacedImageSpans.forEach((item: RichEditorImageSpanResult) => {
+          value.replacedImageSpans!.forEach((item: RichEditorImageSpanResult) => {
             console.log("testTag testTag spanPosition:" + JSON.stringify((item as RichEditorImageSpanResult).spanPosition))
             console.log("testTag valuePixelMap:" + JSON.stringify((item as RichEditorImageSpanResult).valuePixelMap))
             console.log("testTag valueResourceStr:" + (item as RichEditorImageSpanResult).valueResourceStr)
@@ -79,7 +79,7 @@ build() {
             this.text1 = (item as RichEditorImageSpanResult).spanPosition.spanIndex + ''
           })
 
-          value.replacedSymbolSpans.forEach((item: RichEditorTextSpanResult) => {
+          value.replacedSymbolSpans!.forEach((item: RichEditorTextSpanResult) => {
             console.log("spanPosition:" + JSON.stringify((item as RichEditorTextSpanResult).spanPosition))
             console.log("value:" + (item as RichEditorTextSpanResult).value)
             console.log("textStyle:" + JSON.stringify((item as RichEditorTextSpanResult).textStyle))

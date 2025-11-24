@@ -61,9 +61,9 @@ build() {
         Text('' + this.endPosition).id('endPosition')
         RichEditor(this.options)
           .onReady((): void => {
-            this.controller.addTextSpan('15000000000\n');
-            this.controller.addTextSpan('中国人\n');
-            this.controller.addTextSpan('XX省XX市XX区XXXX');
+            this.controller!.addTextSpan('15000000000\n');
+            this.controller!.addTextSpan('中国人\n');
+            this.controller!.addTextSpan('XX省XX市XX区XXXX');
           })
           .onSelectionChange((value: RichEditorRange): void => {
             console.log('RichEditorController value:' + JSON.stringify(value));

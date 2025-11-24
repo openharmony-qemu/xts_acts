@@ -62,13 +62,13 @@ struct RichEditorSetStyledString010 {
   @State rangeAfter: string = '';
   richEditorStyledString: MutableStyledString = new MutableStyledString('');
 
-  fontStyle2: TextStyle = {
+  fontStyle2: TextStyle = new TextStyle({
     fontWeight: FontWeight.Bolder,
     fontFamily: 'Arial',
     fontColor: Color.Orange,
-    // fontSize: LengthMetrics.vp(50),
+    fontSize: LengthMetrics.vp(50),
     fontStyle: FontStyle.Italic
-  } as TextStyle
+  })
 
   styledString: StyledString = new StyledString('test',
     [{ start: 0, length: 4, styledKey: StyledStringKey.FONT,
@@ -103,25 +103,22 @@ struct RichEditorSetStyledString010 {
             verticalAlign: ImageSpanAlignment.TOP,
             objectFit: ImageFit.Contain
           } as ImageAttachmentInterface))
-          let currentString = this.controller.getStyledString();
-          if (currentString !== undefined) {
-            this.richEditorStyledString = currentString;
-            this.richEditorStyledString.appendStyledString(imageStyledString);
-            this.controller.setStyledString(this.richEditorStyledString as StyledString);
-            this.controller.setCaretOffset(this.richEditorStyledString.length);
-          }
+          this.richEditorStyledString = this.controller!.getStyledString()!;
+          this.richEditorStyledString.appendStyledString(imageStyledString);
+          this.controller!.setStyledString(this.richEditorStyledString as StyledString);
+          this.controller!.setCaretOffset(this.richEditorStyledString.length);
         }
       }).id('image_top')
 
       Text('lengthStr:' + this.lengthStr).id('lengthStr')
 
       Button('get length').onClick((e: ClickEvent) => {
-        this.lengthStr = this.controller.getStyledString()?.length + '';
+        this.lengthStr = this.controller!.getStyledString()!.length + '';
       }).id('get_length')
 
       RichEditor(this.options)
         .onReady((): void => {
-          this.controller.setStyledString(this.styledString);
+          this.controller!.setStyledString(this.styledString);
         })
         .height('20%')
         .width('100%')
@@ -131,14 +128,11 @@ struct RichEditorSetStyledString010 {
       Column() {
         Row() {
           Button('add text').onClick((e: ClickEvent) => {
-            let currentString = this.controller.getStyledString();
-            if (currentString !== undefined) {
-              this.richEditorStyledString = currentString;
-              this.richEditorStyledString.insertString(5, '11');
-              this.richEditorStyledString.insertString(0, '22');
-              this.controller.setStyledString(this.richEditorStyledString as StyledString);
-              this.controller.setCaretOffset(this.richEditorStyledString.length);
-            }
+            this.richEditorStyledString = this.controller!.getStyledString()!;
+            this.richEditorStyledString.insertString(5, '11');
+            this.richEditorStyledString.insertString(0, '22');
+            this.controller!.setStyledString(this.richEditorStyledString as StyledString);
+            this.controller!.setCaretOffset(this.richEditorStyledString.length);
           }).id('add_text')
         }
 

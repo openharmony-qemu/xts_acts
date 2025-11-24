@@ -65,15 +65,13 @@ export default function removeStyles() {
       console.info("removeStyles after each called");
     });
     
-    
-    
-/*
+    /*
      * @tc.number   removeStyles_static_0100
      * @tc.name     removeStyles_static_0100
      * @tc.desc     removeStyles_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('removeStyles_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('removeStyles_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[removeStyles_0100] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);

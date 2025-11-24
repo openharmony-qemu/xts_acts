@@ -66,15 +66,13 @@ export default function Context() {
 
     
 
-    
-    
-/*
+    /*
      * @tc.number   Context_static_001
      * @tc.name     Context_static_001
      * @tc.desc     Context_static_001
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('Context_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('Context_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[Context_001] START');
 
       await CommonFunc.sleep(1000);
@@ -90,15 +88,13 @@ it('Context_static_001', Level.LEVEL0, async (done: () => void): Promise<void> =
 
     });
 
-    
-    
-/*
+    /*
      * @tc.number   Context_static_002
      * @tc.name     Context_static_002
      * @tc.desc     Context_static_002
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('Context_static_002', Level.LEVEL0, async (done: () => void): Promise<void> =>{
+    it('Context_static_002', Level.LEVEL0, async (done: () => void): Promise<void> =>{
       console.info('[Context_002] START');
 
       await CommonFunc.sleep(1000);

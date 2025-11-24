@@ -61,29 +61,26 @@ build() {
       Text('paragraphStyle:' + this.paragraphStyle).id('paragraphStyle')
 
       Button('getSpans').onClick((e: ClickEvent) => {
-        let spans = this.controller.getSpans({
+        this.controller!.getSpans({
           start: 0,
           end: 7
-        })
-        if (spans !== undefined) {
-          spans.forEach(item => {
-            if ( (item as RichEditorImageSpanResult)?.imageStyle) {
-              if ( ((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)?.layoutStyle) {
-                this.layoutStyle =
-                  JSON.stringify(((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)
-                    .layoutStyle);
-                console.log('RichEditorController this.layoutStyle:' + this.layoutStyle);
-              }
-            } else {
-              if ( (item as RichEditorTextSpanResult)?.symbolSpanStyle) {
-                console.log('RichEditorController get content get symbolSpanStyle');
-              } else {
-                this.paragraphStyle += JSON.stringify((item as RichEditorTextSpanResult).paragraphStyle);
-                console.log('RichEditorController this.paragraphStyle:' + this.paragraphStyle);
-              }
+        })!.forEach(item => {
+          if ( (item as RichEditorImageSpanResult)?.imageStyle) {
+            if ( ((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)?.layoutStyle) {
+              this.layoutStyle =
+                JSON.stringify(((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)
+                  .layoutStyle);
+              console.log('RichEditorController this.layoutStyle:' + this.layoutStyle);
             }
-          })
-        }
+          } else {
+            if ( (item as RichEditorTextSpanResult)?.symbolSpanStyle) {
+              console.log('RichEditorController get content get symbolSpanStyle');
+            } else {
+              this.paragraphStyle += JSON.stringify((item as RichEditorTextSpanResult).paragraphStyle);
+              console.log('RichEditorController this.paragraphStyle:' + this.paragraphStyle);
+            }
+          }
+        })
       }).id('get_content')
 
       RichEditor({ controller: this.controller } as RichEditorOptions)
@@ -92,7 +89,7 @@ build() {
         .borderColor(Color.Red)
         .width('100%')
         .onReady((): void => {
-          this.controller.addTextSpan('0123', {
+          this.controller!.addTextSpan('0123', {
             style: {
               fontColor: Color.Pink,
               fontSize: '32',
@@ -103,7 +100,7 @@ build() {
             }
           })
 
-          this.controller.addImageSpan($r('app.media.app_icon'), {
+          this.controller!.addImageSpan($r('app.media.app_icon'), {
             imageStyle: {
               size: ['30px', '30px'],
               layoutStyle: {

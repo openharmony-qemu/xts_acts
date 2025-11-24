@@ -68,7 +68,7 @@ export default function TextClockApiTest() {
      * @tc.number   TextClockApiTest_static_001
      * @tc.name     TextClockApiTest_static_001
      * @tc.desc     TextClockApiTest_static_001
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
     it("TextClockApiTest_static_001",  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[TextClockApiTest_001] START");
@@ -84,7 +84,7 @@ export default function TextClockApiTest() {
      * @tc.number   TextClockApiTest_static_002
      * @tc.name     TextClockApiTest_static_002
      * @tc.desc     TextClockApiTest_static_002
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
     it("TextClockApiTest_static_002",  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[TextClockApiTest_002] START");

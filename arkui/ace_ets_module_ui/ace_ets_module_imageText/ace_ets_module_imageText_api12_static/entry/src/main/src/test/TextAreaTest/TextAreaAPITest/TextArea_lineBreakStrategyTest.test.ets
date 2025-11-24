@@ -66,15 +66,13 @@ export default function TextArea_lineBreakStrategyTest() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextArea_lineBreakStrategyTest_static_001
      * @tc.name     TextArea_lineBreakStrategyTest_static_001
      * @tc.desc     TextArea_lineBreakStrategyTest_static_001
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextArea_lineBreakStrategyTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextArea_lineBreakStrategyTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextArea_lineBreakStrategyTest_001] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
