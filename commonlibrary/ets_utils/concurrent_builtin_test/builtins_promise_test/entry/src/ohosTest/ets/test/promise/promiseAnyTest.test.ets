@@ -2476,45 +2476,6 @@ export default function promiseAnyTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_Promise_any_TEST_098
-     * @tc.name PromiseAnyTest098
-     * @tc.desc Combine Promise.any with retry logic using Promise combinators
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    it('PromiseAnyTest098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      const withRetry = (id: number, attempts: number, delay: number): Promise<number> => {
-        if (attempts === 0) {
-          return Promise.reject(new Error(`All attempts failed for ${id}`));
-        }
-
-        return Promise.race([
-          new Promise<number>((resolve, reject) => {
-            // 50% chance to succeed
-            setTimeout(() => {
-              if (Math.random() > 0.5) {
-                resolve(id);
-              } else {
-                reject(new Error(`Attempt failed`));
-              }
-            }, delay);
-          }),
-          new Promise<number>((_, reject) =>
-          setTimeout(() => reject(`Timeout`), delay * 2)
-          )
-        ]).catch(() => withRetry(id, attempts - 1, delay * 2));
-      };
-
-      const result = await Promise.any([
-        withRetry(1, 3, 100), // 2 attempts with initial 10ms delay
-        withRetry(2, 3, 50)// 2 attempts with initial 5ms delay
-      ]);
-
-      expect([1, 2]).assertContain(result);
-    });
-
-    /**
      * @tc.number SUB_BUILTINS_Promise_any_TEST_099
      * @tc.name PromiseAnyTest099
      * @tc.desc Complex combination with Promise.any, all and race

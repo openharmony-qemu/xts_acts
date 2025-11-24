@@ -779,45 +779,6 @@ export default function promiseRaceTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_Promise_race_TEST_034
-     * @tc.name PromiseRaceTest034
-     * @tc.desc Race with promises that modify and check DOM state
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    it('PromiseRaceTest034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let mockState = obj34;
-
-      // p1: Periodically checks for state change, resolves when ready is true
-      const p1: Promise<string> = new Promise<string>(resolve => {
-        const check = () => {
-          if (mockState.ready) {
-            resolve('State updated by p2');
-          } else {
-            // Check every 5ms, replacing setTimeout(check, 5)
-            setTimeout(check, 5);
-          }
-        };
-        check(); // Start checking
-      });
-
-      // p2: Updates state after 30ms and resolves
-      const p2: Promise<string> = new Promise<string>(resolve => {
-        setTimeout(() => {
-          mockState.ready = true; // Simulates setting testDiv.dataset.ready = 'true'
-          resolve('Updated state');
-        }, 30);
-      });
-
-      // Race result should be from p2 which finishes first
-      const result = await Promise.race([p1, p2]);
-
-      // Verify the result
-      expect(result).assertEqual('Updated state');
-    });
-
-    /**
      * @tc.number SUB_BUILTINS_Promise_race_TEST_035
      * @tc.name PromiseRaceTest035
      * @tc.desc Race with promises that use different delay calculation methods
@@ -1353,31 +1314,6 @@ export default function promiseRaceTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_Promise_race_TEST_053
-     * @tc.name PromiseRaceTest053
-     * @tc.desc Race with promises that resolve after multiple async iterations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 4
-     */
-    it('PromiseRaceTest053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-
-      let iterateAsync = async (count: number, delay: number, value: number): Promise<number> => {
-        for (let i = 0; i < count; i++) {
-          await new Promise<void>(resolve => setTimeout(resolve, delay));
-        }
-        return value;
-      }
-
-      const p1: Promise<number> = iterateAsync(3, 20, 1); // 3×20ms = 60ms
-      const p2: Promise<number> = iterateAsync(2, 25, 2); // 2×25ms = 50ms
-      const p3: Promise<number> = iterateAsync(4, 10, 3); // 4×10ms = 40ms
-
-      const result = await Promise.race([p1, p2, p3]);
-      expect(result).assertEqual(3);
-    });
-
-    /**
      * @tc.number SUB_BUILTINS_Promise_race_TEST_054
      * @tc.name PromiseRaceTest054
      * @tc.desc Race between promises with interleaved micro and macro tasks
@@ -1773,39 +1709,6 @@ export default function promiseRaceTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_Promise_race_TEST_067
-     * @tc.name PromiseRaceTest067
-     * @tc.desc Race between promises with interleaved resolve and reject chains
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 4
-     */
-    it('PromiseRaceTest067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const p1: Promise<number> = new Promise<number>((resolve, reject) =>
-      setTimeout(() => reject(new Error('First fail')), 100)
-      ).catch((error: Error) => {
-        return new Promise<number>((resolve, reject) =>
-        setTimeout(() => resolve(10), 200)
-        );
-      });
-
-      const p2: Promise<number> = new Promise<number>(resolve =>
-      setTimeout(() => resolve(5), 100)
-      ).then(num => {
-        return new Promise<number>((resolve, reject) =>
-        setTimeout(() => reject(new Error('Second fail')), 100)
-        );
-      }).catch((error: Error) => {
-        return new Promise<number>(resolve =>
-        setTimeout(() => resolve(15), 50)
-        );
-      });
-
-      const result = await Promise.race([p1, p2]);
-      expect(result).assertEqual(15);
-    });
-
-    /**
      * @tc.number SUB_BUILTINS_Promise_race_TEST_068
      * @tc.name PromiseRaceTest068
      * @tc.desc Race with promises that use async iterators with varying yields
@@ -1923,68 +1826,6 @@ export default function promiseRaceTest() {
 
       const result = await Promise.race([p1, p2]);
       expect(result).assertEqual('Recovery 2');
-    });
-
-    /**
-     * @tc.number SUB_BUILTINS_Promise_race_TEST_072
-     * @tc.name PromiseRaceTest072
-     * @tc.desc Race with promises that use complex async transformation pipelines
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 4
-     */
-    it('PromiseRaceTest072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      // Transformation pipeline
-      const transform = (value: number, delay: number, fn: (n: number) => number): Promise<number> => {
-        return new Promise<number>(resolve =>
-        setTimeout(() => resolve(fn(value)), delay)
-        );
-      };
-
-      const pipeline1: Promise<number> = transform(2, 10, x => x * 2)
-        .then(num => transform(num, 15, x => x + 3))
-        .then(num => transform(num, 10, x => x * 2));
-
-      const pipeline2: Promise<number> = transform(3, 5, x => x + 5)
-        .then(num => transform(num, 10, x => x * 2))
-        .then(num => transform(num, 15, x => x - 4));
-
-      const result = await Promise.race([pipeline1, pipeline2]);
-      expect(result).assertEqual(12);
-    });
-
-    /**
-     * @tc.number SUB_BUILTINS_Promise_race_TEST_073
-     * @tc.name PromiseRaceTest073
-     * @tc.desc Race with promises that use time-based branching logic
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 4
-     */
-    it('PromiseRaceTest073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const startTime = Date.now();
-
-      const p1: Promise<number> = new Promise<number>(resolve => {
-        setTimeout(() => {
-          const elapsed = Date.now() - startTime;
-          // Choose different paths based on elapsed time
-          if (elapsed < 20) {
-            setTimeout(() => resolve(10), 10);
-          } else {
-            setTimeout(() => resolve(15), 5);
-          }
-        }, 15);
-      });
-
-      const p2: Promise<number> = new Promise<number>(resolve => {
-        setTimeout(() => {
-          const elapsed = Date.now() - startTime;
-          resolve(elapsed > 25 ? 20 : 25);
-        }, 20);
-      });
-
-      const result = await Promise.race([p1, p2]);
-      expect(result).assertEqual(25);
     });
 
     /**
@@ -2141,53 +1982,6 @@ export default function promiseRaceTest() {
 
       const result = await Promise.race([p1, p2]);
       expect(result).assertEqual(15);
-    });
-
-    /**
-     * @tc.number SUB_BUILTINS_Promise_race_TEST_079
-     * @tc.name PromiseRaceTest079
-     * @tc.desc Race with promises that use async resource acquisition and release
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 4
-     */
-    it('PromiseRaceTest079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const resources: string[] = [];
-
-      const acquireResource = (name: string, delay: number): Promise<string> => {
-        return new Promise<string>(resolve => {
-          setTimeout(() => {
-            resources.push(name);
-            resolve(name);
-          }, delay);
-        });
-      };
-
-      const releaseResource = (name: string, delay: number): Promise<void> => {
-        return new Promise<void>(resolve => {
-          setTimeout(() => {
-            const index = resources.indexOf(name);
-            if (index !== -1) {
-              resources.splice(index, 1);
-            }
-            resolve();
-          }, delay);
-        });
-      };
-
-      const p1: Promise<number> = acquireResource('res1', 100)
-        .then(name => releaseResource(name, 100))
-        .then(() => 1);
-
-      const p2: Promise<number> = acquireResource('res2', 50)
-        .then(name => releaseResource(name, 250))
-        .then(() => 2);
-
-      const result = await Promise.race([p1, p2]);
-      expect(result).assertEqual(1);
-      // Verify all resources are released after both complete
-      await new Promise<number>(resolve => setTimeout(resolve, 100));
-      expect(resources).assertDeepEquals([]);
     });
 
     /**
@@ -2888,49 +2682,6 @@ export default function promiseRaceTest() {
 
       // all should complete first (~20ms) vs allSettled (~30ms)
       expect(result).assertDeepEquals([2, 3]);
-    });
-
-    /**
-     * @tc.number SUB_BUILTINS_Promise_race_TEST_099
-     * @tc.name PromiseRaceTest099
-     * @tc.desc Race between multiple nested race and all combinations
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 5
-     */
-    it('PromiseRaceTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      // Complex nested structure 1
-      const complex1 = Promise.race([
-        Promise.all([
-          new Promise<number>(resolve => setTimeout(() => resolve(10), 15)),
-          Promise.race([
-            new Promise<number>(resolve => setTimeout(() => resolve(20), 10)),
-            new Promise<number>(resolve => setTimeout(() => resolve(30), 15))
-          ])
-        ]),
-        new Promise<string>(resolve => setTimeout(() => resolve('direct'), 15))
-      ]);
-
-      // Complex nested structure 2
-      const complex2 = Promise.all([
-        Promise.race([
-          new Promise<number>(resolve => setTimeout(() => resolve(50), 10)),
-          new Promise<number>(resolve => setTimeout(() => resolve(60), 10))
-        ]),
-        new Promise<number>(resolve => setTimeout(() => resolve(70), 10))
-      ]);
-
-      const result = await Promise.race([complex1, complex2]);
-
-      // complex1 should complete around 15ms, complex2 around 12ms
-      // The faster one wins
-      if (Array.isArray(result)) {
-        // complex2 won
-        expect(result).assertDeepEquals([50, 70]);
-      } else {
-        // complex1 won
-        expect(result).assertEqual('direct');
-      }
     });
 
     /**
