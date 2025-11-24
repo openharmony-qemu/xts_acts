@@ -21,7 +21,7 @@ import image from "@ohos.multimedia.image";
 import { BusinessError } from '@kit.BasicServicesKit';
 
 const AUDIO_SOURCE = 'mjpeg_mp3.mp3';
-const VIDEO_SOURCE = 'H264_AAC_Matedata.mp4';
+const VIDEO_SOURCE = 'test1.mp4';
 const VIDEO_NOSUPPORT = 'No_Support_Format.mov'
 const HTTP_SOURCE = 'http://XXX';
 const TAG = "MetadataDemo"
@@ -44,6 +44,10 @@ function fullZero(num: string, digitalNum: number = 2){
 }
 
 function validateType(track: media.MediaDescription, key: string, type: string, composedKeys: string): void{
+  if (track[key] === undefined) {
+    console.log(`key ${key} is undefined, skip validation`);
+    return;
+  }
   const trackType = Math.pow(2,track[media.MediaDescriptionKey.MD_KEY_TRACK_TYPE] as number).toString(2)
   const composedKeysFirstPart = Number(`0b${composedKeys.split('.')[0]}`)
   const composedKeysSecondPart = Number(`0b${fullZero(composedKeys.split('.')[1] || '0')}`)
@@ -104,6 +108,8 @@ function validateMediaDescriptionKey(track: media.MediaDescription): void{
   validateType(track, media.MediaDescriptionKey.MD_KEY_AUD_SAMPLE_DEPTH, 'number', composeKeys([BinaryKeys.get("AUD")!]))
   validateType(track, media.MediaDescriptionKey.MD_KEY_ORIGINAL_WIDTH, 'number', composeKeys([BinaryKeys.get("VID")!]))
   validateType(track, media.MediaDescriptionKey.MD_KEY_ORIGINAL_HEIGHT, 'number', composeKeys([BinaryKeys.get("VID")!]))
+  validateType(track, media.MediaDescriptionKey.MD_KEY_TRACK_REFERENCE_TYPE, 'string', composeKeys([BinaryKeys.get("ALL")!]))
+  validateType(track, media.MediaDescriptionKey.MD_KEY_REFERENCE_TRACK_IDS, 'string', composeKeys([BinaryKeys.get("ALL")!]))
 }
 
 export default function AVMetadata() {
