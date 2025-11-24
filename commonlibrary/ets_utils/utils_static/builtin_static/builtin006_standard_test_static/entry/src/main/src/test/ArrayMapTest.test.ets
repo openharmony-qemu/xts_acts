@@ -210,7 +210,7 @@ export default function builtinsArrayMapPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<byte> = [1, 2, 3];
         let result = map(arr, (v, k, array) => (v + 1).toByte());
-        expect([...result]).assertDeepEquals([2, 3, 4]);
+        expect([...result]).assertDeepEquals([2, 3, 4] as Array<byte>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -229,7 +229,7 @@ export default function builtinsArrayMapPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<byte> = [5, 6, 7];
         let result = map(arr, (v, k, array) => (0).toByte() );
-        expect([...result]).assertDeepEquals([0, 0, 0]);
+        expect([...result]).assertDeepEquals([0, 0, 0] as Array<byte>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -248,7 +248,7 @@ export default function builtinsArrayMapPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<byte> = [1, 2, 3];
         let result = map(arr, (v, k, array) => (255).toByte());
-        expect([...result]).assertDeepEquals([-1, -1, -1]);
+        expect([...result]).assertDeepEquals([-1, -1, -1] as Array<byte>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -267,7 +267,7 @@ export default function builtinsArrayMapPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<byte> = [10, 20, 30, 40];
         let result = map(arr, (v, k, array) => (k * 2).toByte());
-        expect([...result]).assertDeepEquals([0, 2, 4, 6]);
+        expect([...result]).assertDeepEquals([0, 2, 4, 6] as Array<byte>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -286,7 +286,7 @@ export default function builtinsArrayMapPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<byte> = [7, 8, 9];
         let result = map(arr, (v, k, array) => array[0]);
-        expect([...result]).assertDeepEquals([7, 7, 7]);
+        expect([...result]).assertDeepEquals([7, 7, 7] as Array<byte>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -324,7 +324,7 @@ export default function builtinsArrayMapPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<byte> = [10];
         let result = map(arr, (v, k, array) => (v + 1).toByte());
-        expect([...result]).assertDeepEquals([11]);
+        expect([...result]).assertDeepEquals([11] as Array<byte>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -343,7 +343,7 @@ export default function builtinsArrayMapPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<byte> = [(255).toByte()];
         let result = map(arr, (v, k, array) => (0).toByte());
-        expect([...result]).assertDeepEquals([0]);
+        expect([...result]).assertDeepEquals([0] as Array<byte>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -685,7 +685,7 @@ export default function builtinsArrayMapPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<float> = [5.5.toFloat(), 6.6.toFloat(), 7.7.toFloat()];
         let result = map(arr, (v, k, array) => 0.0.toFloat());
-        expect([...result]).assertDeepEquals([0.0, 0.0, 0.0]);
+        expect([...result]).assertDeepEquals([0.0.toFloat(), 0.0.toFloat(), 0.0.toFloat()]);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -723,7 +723,7 @@ export default function builtinsArrayMapPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<float> = [10.0.toFloat(), 20.0.toFloat(), 30.0.toFloat(), 40.0.toFloat()];
         let result = map(arr, (v, k, array) => (k * 1.0).toFloat());
-        expect([...result]).assertDeepEquals([0.0, 1.0, 2.0, 3.0]);
+        expect([...result]).assertDeepEquals([0.0.toFloat(), 1.0.toFloat(), 2.0.toFloat(), 3.0.toFloat()]);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -780,7 +780,7 @@ export default function builtinsArrayMapPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<float> = [10.0.toFloat()];
         let result = map(arr, (v, k, array) => v + 1.5.toFloat());
-        expect([...result]).assertDeepEquals([11.5]);
+        expect([...result]).assertDeepEquals([11.5.toFloat()]);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -799,7 +799,7 @@ export default function builtinsArrayMapPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<float> = [255.0.toFloat()];
         let result = map(arr, (v, k, array) => 0.0.toFloat());
-        expect([...result]).assertDeepEquals([0.0]);
+        expect([...result]).assertDeepEquals([0.0.toFloat()]);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -970,7 +970,7 @@ export default function builtinsArrayMapPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<long> = [1, 2, 3];
         let result = map(arr, (v, k, array) => v + 1);
-        expect([...result]).assertDeepEquals([2, 3, 4]);
+        expect([...result]).assertDeepEquals([2, 3, 4] as Array<long>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -989,7 +989,7 @@ export default function builtinsArrayMapPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<long> = [5, 6, 7];
         let result = map(arr, (v, k, array) => 0);
-        expect([...result]).assertDeepEquals([0, 0, 0]);
+        expect([...result]).assertDeepEquals([0, 0, 0] as Array<long>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1008,7 +1008,7 @@ export default function builtinsArrayMapPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<long> = [1, 2, 3];
         let result = map(arr, (v, k, array) => -1);
-        expect([...result]).assertDeepEquals([-1, -1, -1]);
+        expect([...result]).assertDeepEquals([-1, -1, -1] as Array<long>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1027,7 +1027,7 @@ export default function builtinsArrayMapPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<long> = [10, 20, 30, 40];
         let result = map(arr, (v, k, array) => (k.toLong() * 2));
-        expect([...result]).assertDeepEquals([0, 2, 4, 6]);
+        expect([...result]).assertDeepEquals([0, 2, 4, 6] as Array<long>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1046,7 +1046,7 @@ export default function builtinsArrayMapPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<long> = [7, 8, 9];
         let result = map(arr, (v, k, array) => array[0]);
-        expect([...result]).assertDeepEquals([7, 7, 7]);
+        expect([...result]).assertDeepEquals([7, 7, 7] as Array<long>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1084,7 +1084,7 @@ export default function builtinsArrayMapPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<long> = [10];
         let result = map(arr, (v, k, array) => v + 1);
-        expect([...result]).assertDeepEquals([11]);
+        expect([...result]).assertDeepEquals([11] as Array<long>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1103,7 +1103,7 @@ export default function builtinsArrayMapPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<long> = [255];
         let result = map(arr, (v, k, array) => 0);
-        expect([...result]).assertDeepEquals([0]);
+        expect([...result]).assertDeepEquals([0] as Array<long>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1122,7 +1122,7 @@ export default function builtinsArrayMapPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<short> = [1, 2, 3];
         let result = map(arr, (v, k, array) => (v + 1).toShort());
-        expect([...result]).assertDeepEquals([2, 3, 4]);
+        expect([...result]).assertDeepEquals([2, 3, 4] as Array<short>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1141,7 +1141,7 @@ export default function builtinsArrayMapPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<short> = [5, 6, 7];
         let result = map(arr, (v, k, array) => 0);
-        expect([...result]).assertDeepEquals([0, 0, 0]);
+        expect([...result]).assertDeepEquals([0, 0, 0] as Array<short>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1160,7 +1160,7 @@ export default function builtinsArrayMapPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<short> = [1, 2, 3];
         let result = map(arr, (v, k, array) => (-1).toShort());
-        expect([...result]).assertDeepEquals([-1, -1, -1]);
+        expect([...result]).assertDeepEquals([-1, -1, -1] as Array<short>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1179,7 +1179,7 @@ export default function builtinsArrayMapPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<short> = [10, 20, 30, 40];
         let result = map(arr, (v, k, array) => (k * 2).toShort());
-        expect([...result]).assertDeepEquals([0, 2, 4, 6]);
+        expect([...result]).assertDeepEquals([0, 2, 4, 6] as Array<short>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1198,7 +1198,7 @@ export default function builtinsArrayMapPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<short> = [7, 8, 9];
         let result = map(arr, (v, k, array) => array[0]);
-        expect([...result]).assertDeepEquals([7, 7, 7]);
+        expect([...result]).assertDeepEquals([7, 7, 7] as Array<short>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1236,7 +1236,7 @@ export default function builtinsArrayMapPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<short> = [10];
         let result = map(arr, (v, k, array) => (v + 1).toShort());
-        expect([...result]).assertDeepEquals([11]);
+        expect([...result]).assertDeepEquals([11] as Array<short>);
         console.info(`${caseName}, test end`);
         Done();
       })
@@ -1255,7 +1255,7 @@ export default function builtinsArrayMapPrototypebTest(){
         console.info(`${caseName}, test start`);
         let arr: FixedArray<short> = [255];
         let result = map(arr, (v, k, array) => 0);
-        expect([...result]).assertDeepEquals([0]);
+        expect([...result]).assertDeepEquals([0] as Array<short>);
         console.info(`${caseName}, test end`);
         Done();
       })
