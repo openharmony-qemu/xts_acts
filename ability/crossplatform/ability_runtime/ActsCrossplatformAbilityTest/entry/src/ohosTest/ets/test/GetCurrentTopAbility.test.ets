@@ -16,13 +16,25 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
 import AbilityDelegatorRegistry from "@ohos.app.ability.abilityDelegatorRegistry";
 import { BusinessError } from '@ohos.base';
 import UIAbility from '@ohos.app.ability.UIAbility';
+import { Driver, ON, Component} from '@kit.TestKit';
 
 let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 const START_ABILITY_TIMEOUT_TWO_THOUSAND = 2000;
+let driver = Driver.create();
 
 export default function GetCurrentTopAbilityTest() {
   describe("GetCurrentTopAbilityTest", () => {
-    beforeAll(() => {
+    beforeAll(async () => {
+      let allowed: Component | undefined;
+      try {
+        allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+      if (allowed) {
+        await allowed.click();
+      }
+
       abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
       abilityDelegator.startAbility({
         abilityName: "MainAbility",
