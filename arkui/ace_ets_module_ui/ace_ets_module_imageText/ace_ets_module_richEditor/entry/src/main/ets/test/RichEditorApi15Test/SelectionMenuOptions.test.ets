@@ -18,8 +18,8 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { Driver, ON, MouseButton } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/common/Common'
 
-export default function SelectionMenuOptions() {
-  describe('SelectionMenuOptions', () => {
+export default function SelectionMenuOptionsTest() {
+  describe('SelectionMenuOptionsTest', () => {
     beforeEach(async (done: Function) => {
       console.info("SelectionMenuOptions beforeEach start");
       let options: router.RouterOptions = {
@@ -62,7 +62,7 @@ export default function SelectionMenuOptions() {
       await CommonFunc.sleep(500);
       await update.click();
       await CommonFunc.sleep(500);
-      let richEditor = await driver.findComponent(ON.id('richEditor'))
+      let richEditor = await driver.findComponent(ON.id('richEditor_SelectionMenu'))
       await CommonFunc.sleep(500);
       let point = await richEditor.getBoundsCenter();
       await CommonFunc.sleep(500);
@@ -70,7 +70,7 @@ export default function SelectionMenuOptions() {
       await CommonFunc.sleep(500);
       await driver.assertComponentExist(ON.text('自定义菜单'));
       await CommonFunc.sleep(500);
-      let strJson = getInspectorByKey('richEditor');
+      let strJson = getInspectorByKey('richEditor_SelectionMenu');
       await CommonFunc.sleep(200);
       let obj: ESObject = JSON.parse(strJson);
       console.info("[SelectionMenuOptions0001] component obj is: " + JSON.stringify(obj));
@@ -96,13 +96,13 @@ export default function SelectionMenuOptions() {
       await CommonFunc.sleep(500);
       await update.click();
       await CommonFunc.sleep(500);
-      let richEditor = await driver.findComponent(ON.id('richEditor'))
+      let richEditor = await driver.findComponent(ON.id('richEditor_SelectionMenu'))
       await CommonFunc.sleep(500);
       await richEditor.longClick();
       await CommonFunc.sleep(500);
       await driver.assertComponentExist(ON.text('自定义菜单'));
       await CommonFunc.sleep(500);
-      let strJson = getInspectorByKey('richEditor');
+      let strJson = getInspectorByKey('richEditor_SelectionMenu');
       await CommonFunc.sleep(200);
       let obj: ESObject = JSON.parse(strJson);
       console.info("[SelectionMenuOptions0002] component obj is: " + JSON.stringify(obj));
