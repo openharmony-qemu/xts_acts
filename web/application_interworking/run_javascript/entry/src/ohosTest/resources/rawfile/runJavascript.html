@@ -13,10 +13,10 @@
 </body>
 <script>
     function throwErrorSize(size) {
-        throw Error('a'.repeat(size-8) + 'b');
+        throw Error('a'.repeat(size - 8) + 'b');
     }
     function retObjSize(size) {
-        return {'name': 'test', 'desc': 'a'.repeat(size-26) + 'b'};
+        return { 'name': 'test', 'desc': 'a'.repeat(size - 26) + 'b' };
     }
     function registerRetSize(size) {
         return testObj.testReturnObj2(size);
