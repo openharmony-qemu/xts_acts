@@ -18,14 +18,14 @@ import { describe, it, expect, TestType, Size, Level } from '@ohos/hypium'
 export default function ActsOsAccountErrCodeCheck() {
   describe('ActsOsAccountErrCodeCheck', () => {
 
-    /*
-    * @tc.number    : OsAccountErrCodeCheck_0100
-    * @tc.name      : test interface checkOsAccountActivated callback
-    * @tc.desc      : 401 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountErrCodeCheck_0100
+     * @tc.number OsAccountErrCodeCheck_0100
+     * @tc.desc   401 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountErrCodeCheck_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountErrCodeCheck_0100 "
       console.info(tag + "start====");
@@ -50,14 +50,14 @@ export default function ActsOsAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountErrCodeCheck_0200
-    * @tc.name      : test interface checkOsAccountActivated promise
-    * @tc.desc      : 401 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountErrCodeCheck_0200
+     * @tc.number OsAccountErrCodeCheck_0200
+     * @tc.desc   401 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountErrCodeCheck_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountErrCodeCheck_0200 "
       console.info(tag + "start====");
@@ -76,14 +76,14 @@ export default function ActsOsAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountErrCodeCheck_0300
-    * @tc.name      : test interface checkOsAccountConstraintEnabled callback
-    * @tc.desc      : 401 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountErrCodeCheck_0300
+     * @tc.number OsAccountErrCodeCheck_0300
+     * @tc.desc   401 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountErrCodeCheck_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountErrCodeCheck_0300 "
       console.info(tag + "start====");
@@ -108,14 +108,14 @@ export default function ActsOsAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountErrCodeCheck_0400
-    * @tc.name      : test interface checkOsAccountConstraintEnabled promise
-    * @tc.desc      : 401 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountErrCodeCheck_0400
+     * @tc.number OsAccountErrCodeCheck_0400
+     * @tc.desc   401 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountErrCodeCheck_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountErrCodeCheck_0400 "
       console.info(tag + "start====");
@@ -134,14 +134,14 @@ export default function ActsOsAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountErrCodeCheck_0500
-    * @tc.name      : test interface checkOsAccountConstraintEnabled callback
-    * @tc.desc      : 401 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountErrCodeCheck_0500
+     * @tc.number OsAccountErrCodeCheck_0500
+     * @tc.desc   401 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountErrCodeCheck_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountErrCodeCheck_0500 "
       console.info(tag + "start====");
@@ -166,14 +166,14 @@ export default function ActsOsAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountErrCodeCheck_0600
-    * @tc.name      : test interface checkOsAccountConstraintEnabled promise
-    * @tc.desc      : 401 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountErrCodeCheck_0600
+     * @tc.number OsAccountErrCodeCheck_0600
+     * @tc.desc   401 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountErrCodeCheck_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountErrCodeCheck_0600 "
       console.info(tag + "start====");
@@ -192,14 +192,14 @@ export default function ActsOsAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountErrCodeCheck_0700
-    * @tc.name      : test interface checkOsAccountVerified callback
-    * @tc.desc      : 401 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountErrCodeCheck_0700
+     * @tc.number OsAccountErrCodeCheck_0700
+     * @tc.desc   401 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountErrCodeCheck_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountErrCodeCheck_0700 "
       console.info(tag + "start====");
@@ -220,14 +220,14 @@ export default function ActsOsAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountErrCodeCheck_0800
-    * @tc.name      : test interface checkOsAccountVerified promise
-    * @tc.desc      : 401 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountErrCodeCheck_0800
+     * @tc.number OsAccountErrCodeCheck_0800
+     * @tc.desc   401 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountErrCodeCheck_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountErrCodeCheck_0800 "
       console.info(tag + "start====");
@@ -245,14 +245,14 @@ export default function ActsOsAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountErrCodeCheck_0900
-    * @tc.name      : test interface getOsAccountCount callback
-    * @tc.desc      : 401 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountErrCodeCheck_0900
+     * @tc.number OsAccountErrCodeCheck_0900
+     * @tc.desc   401 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountErrCodeCheck_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountErrCodeCheck_0900 "
       console.info(tag + "start====");
@@ -269,14 +269,14 @@ export default function ActsOsAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountErrCodeCheck_1000
-    * @tc.name      : test interface getOsAccountCount callback
-    * @tc.desc      : 401 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountErrCodeCheck_1000
+     * @tc.number OsAccountErrCodeCheck_1000
+     * @tc.desc   401 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountErrCodeCheck_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountErrCodeCheck_1000 "
       console.info(tag + "start====");
@@ -294,14 +294,14 @@ export default function ActsOsAccountErrCodeCheck() {
     });
 
 
-    /*
-    * @tc.number    : OsAccountErrCodeCheck_1100
-    * @tc.name      : test interface getOsAccountLocalIdForDomain callback
-    * @tc.desc      : 401 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountErrCodeCheck_1100
+     * @tc.number OsAccountErrCodeCheck_1100
+     * @tc.desc   401 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountErrCodeCheck_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountErrCodeCheck_1100 "
       console.info(tag + "start====");
@@ -326,14 +326,14 @@ export default function ActsOsAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountErrCodeCheck_1200
-    * @tc.name      : test interface getOsAccountLocalIdForDomain promise
-    * @tc.desc      : 401 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountErrCodeCheck_1200
+     * @tc.number OsAccountErrCodeCheck_1200
+     * @tc.desc   401 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountErrCodeCheck_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountErrCodeCheck_1200 "
       console.info(tag + "start====");
@@ -352,14 +352,14 @@ export default function ActsOsAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountErrCodeCheck_1300
-    * @tc.name      : test interface getOsAccountConstraints callback
-    * @tc.desc      : 401 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountErrCodeCheck_1300
+     * @tc.number OsAccountErrCodeCheck_1300
+     * @tc.desc   401 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountErrCodeCheck_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountErrCodeCheck_1300 "
       console.info(tag + "start====");
@@ -384,14 +384,14 @@ export default function ActsOsAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountErrCodeCheck_1400
-    * @tc.name      : test interface getOsAccountConstraints promise
-    * @tc.desc      : 401 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountErrCodeCheck_1400
+     * @tc.number OsAccountErrCodeCheck_1400
+     * @tc.desc   401 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountErrCodeCheck_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountErrCodeCheck_1400 "
       console.info(tag + "start====");
@@ -410,14 +410,14 @@ export default function ActsOsAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountErrCodeCheck_1500
-    * @tc.name      : test interface getCurrentOsAccount callback
-    * @tc.desc      : 401 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountErrCodeCheck_1500
+     * @tc.number OsAccountErrCodeCheck_1500
+     * @tc.desc   401 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountErrCodeCheck_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountErrCodeCheck_1500 "
       console.info(tag + "start====");
@@ -434,14 +434,14 @@ export default function ActsOsAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountErrCodeCheck_1600
-    * @tc.name      : test interface getCurrentOsAccount callback
-    * @tc.desc      : 401 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountErrCodeCheck_1600
+     * @tc.number OsAccountErrCodeCheck_1600
+     * @tc.desc   401 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountErrCodeCheck_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountErrCodeCheck_1600 "
       console.info(tag + "start====");
@@ -458,14 +458,14 @@ export default function ActsOsAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountErrCodeCheck_1700
-    * @tc.name      : test interface getOsAccountType callback
-    * @tc.desc      : 401 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountErrCodeCheck_1700
+     * @tc.number OsAccountErrCodeCheck_1700
+     * @tc.desc   401 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountErrCodeCheck_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountErrCodeCheck_1700 "
       console.info(tag + "start====");
@@ -483,14 +483,14 @@ export default function ActsOsAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountErrCodeCheck_1800
-    * @tc.name      : test interface getOsAccountType callback
-    * @tc.desc      : 401 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountErrCodeCheck_1800
+     * @tc.number OsAccountErrCodeCheck_1800
+     * @tc.desc   401 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountErrCodeCheck_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountErrCodeCheck_1800 "
       console.info(tag + "start====");
@@ -508,14 +508,14 @@ export default function ActsOsAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountErrCodeCheck_1900
-    * @tc.name      : test interface queryDistributedVirtualDeviceId callback
-    * @tc.desc      : 401 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountErrCodeCheck_1900
+     * @tc.number OsAccountErrCodeCheck_1900
+     * @tc.desc   401 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountErrCodeCheck_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountErrCodeCheck_1900 "
       console.info(tag + "start====");
@@ -532,14 +532,14 @@ export default function ActsOsAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountErrCodeCheck_2000
-    * @tc.name      : test interface queryDistributedVirtualDeviceId callback
-    * @tc.desc      : 401 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountErrCodeCheck_2000
+     * @tc.number OsAccountErrCodeCheck_2000
+     * @tc.desc   401 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountErrCodeCheck_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountErrCodeCheck_2000 "
       console.info(tag + "start====");
@@ -556,14 +556,14 @@ export default function ActsOsAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountErrCodeCheck_2100
-    * @tc.name      : test checkOsAccountConstraintEnabled callback
-    * @tc.desc      : err code check 12300002
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountErrCodeCheck_2100
+     * @tc.number OsAccountErrCodeCheck_2100
+     * @tc.desc   err code check 12300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountErrCodeCheck_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountErrCodeCheck_2100 "
       console.info(tag + "start====");
@@ -588,14 +588,14 @@ export default function ActsOsAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountErrCodeCheck_2200
-    * @tc.name      : test checkOsAccountConstraintEnabled promise
-    * @tc.desc      : err code check 12300002
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountErrCodeCheck_2200
+     * @tc.number OsAccountErrCodeCheck_2200
+     * @tc.desc   err code check 12300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountErrCodeCheck_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountErrCodeCheck_2200 "
       console.info(tag + "start====");
@@ -614,14 +614,14 @@ export default function ActsOsAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountErrCodeCheck_2300
-    * @tc.name      : test getOsAccountLocalIdForDomain callback
-    * @tc.desc      : err code check 12300002
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountErrCodeCheck_2300
+     * @tc.number OsAccountErrCodeCheck_2300
+     * @tc.desc   err code check 12300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountErrCodeCheck_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountErrCodeCheck_2300 "
       console.info(tag + "start====");
@@ -651,14 +651,14 @@ export default function ActsOsAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountErrCodeCheck_2400
-    * @tc.name      : test getOsAccountLocalIdForDomain callback
-    * @tc.desc      : err code check 12300002
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountErrCodeCheck_2400
+     * @tc.number OsAccountErrCodeCheck_2400
+     * @tc.desc   err code check 12300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountErrCodeCheck_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountErrCodeCheck_2400 "
       console.info(tag + "start====");
@@ -688,14 +688,14 @@ export default function ActsOsAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountErrCodeCheck_2500
-    * @tc.name      : test getOsAccountLocalIdForDomain promise
-    * @tc.desc      : err code check 12300002
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountErrCodeCheck_2500
+     * @tc.number OsAccountErrCodeCheck_2500
+     * @tc.desc   err code check 12300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountErrCodeCheck_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountErrCodeCheck_2500 "
       console.info(tag + "start====");
@@ -722,14 +722,14 @@ export default function ActsOsAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountErrCodeCheck_2600
-    * @tc.name      : test getOsAccountLocalIdForDomain promise
-    * @tc.desc      : err code check 12300002
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountErrCodeCheck_2600
+     * @tc.number OsAccountErrCodeCheck_2600
+     * @tc.desc   err code check 12300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountErrCodeCheck_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountErrCodeCheck_2600 "
       console.info(tag + "start====");
@@ -756,14 +756,14 @@ export default function ActsOsAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountErrCodeCheck_2700
-    * @tc.name      : test getOsAccountLocalIdForSerialNumber callback
-    * @tc.desc      : err code check 12300003
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountErrCodeCheck_2700
+     * @tc.number OsAccountErrCodeCheck_2700
+     * @tc.desc   err code check 12300003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountErrCodeCheck_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountErrCodeCheck_2700 "
       console.info(tag + "start====");
@@ -788,14 +788,14 @@ export default function ActsOsAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountErrCodeCheck_2800
-    * @tc.name      : test getOsAccountLocalIdForSerialNumber promise
-    * @tc.desc      : err code check 12300003
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountErrCodeCheck_2800
+     * @tc.number OsAccountErrCodeCheck_2800
+     * @tc.desc   err code check 12300003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountErrCodeCheck_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountErrCodeCheck_2800 "
       console.info(tag + "start====");
