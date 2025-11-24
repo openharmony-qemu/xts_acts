@@ -18,12 +18,14 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 const TIMEOUT = 5000;
 export default function ActsCreatAppAccountManager() {
     describe('ActsCreatAppAccountManager', function () {        
-        /*
-        * @tc.number    : ActsCreatAppAccountManager_0100
-        * @tc.name      : createAppAccountManager
-        * @tc.desc      : Create two application account module objects, one object adds an application account,
-        *                 the other object deletes the application account
-        */
+        /**
+         * @tc.name   ActsCreatAppAccountManager_0100
+         * @tc.number ActsCreatAppAccountManager_0100
+         * @tc.desc   Create two application account module objects, one object adds an application account,
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ActsCreatAppAccountManager_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("====>ActsCreatAppAccountManager_0100 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -41,13 +43,14 @@ export default function ActsCreatAppAccountManager() {
             });
         });
 
-        /*
-        * @tc.number    : ActsCreatAppAccountManager_0200
-        * @tc.name      : createAppAccountManager
-        * @tc.desc      : Create two application account module objects, one object adds application accounts and
-        *                 sets additional information, and the other object can obtain additional information of
-        *                 the application account
-        */
+        /**
+         * @tc.name   ActsCreatAppAccountManager_0200
+         * @tc.number ActsCreatAppAccountManager_0200
+         * @tc.desc   Create two application account module objects, one object adds application accounts and
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ActsCreatAppAccountManager_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("====>ActsCreatAppAccountManager_0200 start====");
             var appAccountManager = account.createAppAccountManager();

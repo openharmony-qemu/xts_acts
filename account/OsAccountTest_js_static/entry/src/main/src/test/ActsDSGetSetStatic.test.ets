@@ -29,12 +29,12 @@ export default function ActsDAGetSetTestStatic() {
   describe('ActsDAGetSetTestStatic', () => {
 
     /**
-     * @tc.number   getDistributedAccountAbility_test
-     * @tc.name     getDistributedAccountAbilityStatic_test
-     * @tc.desc     Test distributedAccount.getDistributedAccountAbility API functionality.
-     * @tc.level    Level0
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   getDistributedAccountAbilityStatic_test
+     * @tc.number getDistributedAccountAbility_test
+     * @tc.desc   Test distributedAccount.getDistributedAccountAbility API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getDistributedAccountAbilityStatic_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -50,12 +50,12 @@ export default function ActsDAGetSetTestStatic() {
       });
 
     /**
-     * @tc.number   getOsAccountDistributedInfo_test001
-     * @tc.name     getOsAccountDistributedInfoStatic_test0100
-     * @tc.desc     Test distributedAccount.getOsAccountDistributedInfo API functionality.
-     * @tc.level    Level0
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   getOsAccountDistributedInfoStatic_test0100
+     * @tc.number getOsAccountDistributedInfo_test001
+     * @tc.desc   Test distributedAccount.getOsAccountDistributedInfo API functionality.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getOsAccountDistributedInfoStatic_test0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -81,12 +81,12 @@ export default function ActsDAGetSetTestStatic() {
       });
 
     /**
-     * @tc.number   getOsAccountDistributedInfo_test002
-     * @tc.name     getOsAccountDistributedInfoStatic_test0200
-     * @tc.desc     Test distributedAccount.getOsAccountDistributedInfo API functionality by callback.
-     * @tc.level    Level0
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   getOsAccountDistributedInfoStatic_test0200
+     * @tc.number getOsAccountDistributedInfo_test002
+     * @tc.desc   Test distributedAccount.getOsAccountDistributedInfo API functionality by callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getOsAccountDistributedInfoStatic_test0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

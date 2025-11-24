@@ -21,11 +21,14 @@ const EACHTIMEOUT = 500;
 export default function ActsAccountAppAccess() {
     describe('ActsAccountAppAccess', function () {
 
-        /*
-        * @tc.number    : ActsAccountAppAccess_0100
-        * @tc.name      : enableAppAccess callback
-        * @tc.desc      : Enable the app to access the app itself
-        */
+        /**
+         * @tc.name   ActsAccountAppAccess_0100
+         * @tc.number ActsAccountAppAccess_0100
+         * @tc.desc   Enable the app to access the app itself
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ActsAccountAppAccess_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("====>ActsAccountAppAccess_0100 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -46,11 +49,14 @@ export default function ActsAccountAppAccess() {
             })
         });
 
-        /*
-        * @tc.number    : ActsAccountAppAccess_0200
-        * @tc.name      : enableAppAccess promise
-        * @tc.desc      : Enable the app to access the app itself
-        */
+        /**
+         * @tc.name   ActsAccountAppAccess_0200
+         * @tc.number ActsAccountAppAccess_0200
+         * @tc.desc   Enable the app to access the app itself
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ActsAccountAppAccess_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("====>ActsAccountAppAccess_0200 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -75,11 +81,14 @@ export default function ActsAccountAppAccess() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountAppAccess_0300
-        * @tc.name      : enableAppAccess callback
-        * @tc.desc      : The enabled bundleName does not exist
-        */
+        /**
+         * @tc.name   ActsAccountAppAccess_0300
+         * @tc.number ActsAccountAppAccess_0300
+         * @tc.desc   The enabled bundleName does not exist
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountAppAccess_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountAppAccess_0300 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -101,11 +110,14 @@ export default function ActsAccountAppAccess() {
             })
         });
 
-        /*
-        * @tc.number    : ActsAccountAppAccess_0400
-        * @tc.name      : enableAppAccess promise
-        * @tc.desc      : The enabled bundleName does not exist
-        */
+        /**
+         * @tc.name   ActsAccountAppAccess_0400
+         * @tc.number ActsAccountAppAccess_0400
+         * @tc.desc   The enabled bundleName does not exist
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountAppAccess_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountAppAccess_0400 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -131,11 +143,14 @@ export default function ActsAccountAppAccess() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountAppAccess_0500
-        * @tc.name      : enableAppAccess callback
-        * @tc.desc      : The enabled account name does not exist
-        */
+        /**
+         * @tc.name   ActsAccountAppAccess_0500
+         * @tc.number ActsAccountAppAccess_0500
+         * @tc.desc   The enabled account name does not exist
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountAppAccess_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountAppAccess_0500 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -150,11 +165,14 @@ export default function ActsAccountAppAccess() {
             })
         });
 
-        /*
-        * @tc.number    : ActsAccountAppAccess_0600
-        * @tc.name      : enableAppAccess promise
-        * @tc.desc      : The enabled account name does not exist
-        */
+        /**
+         * @tc.name   ActsAccountAppAccess_0600
+         * @tc.number ActsAccountAppAccess_0600
+         * @tc.desc   The enabled account name does not exist
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountAppAccess_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountAppAccess_0600 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -173,11 +191,14 @@ export default function ActsAccountAppAccess() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountAppAccess_0700
-        * @tc.name      : enableAppAccess disableAppAccess callback
-        * @tc.desc      : Cancel the authorization after authorizing the account to another app
-        */
+        /**
+         * @tc.name   ActsAccountAppAccess_0700
+         * @tc.number ActsAccountAppAccess_0700
+         * @tc.desc   Cancel the authorization after authorizing the account to another app
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsAccountAppAccess_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsAccountAppAccess_0700 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -203,11 +224,14 @@ export default function ActsAccountAppAccess() {
             })
         });
 
-        /*
-        * @tc.number    : ActsAccountAppAccess_0800
-        * @tc.name      : enableAppAccess disableAppAccess promise
-        * @tc.desc      : Cancel the authorization after authorizing the account to another account
-        */
+        /**
+         * @tc.name   ActsAccountAppAccess_0800
+         * @tc.number ActsAccountAppAccess_0800
+         * @tc.desc   Cancel the authorization after authorizing the account to another account
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsAccountAppAccess_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsAccountAppAccess_0800 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -239,11 +263,14 @@ export default function ActsAccountAppAccess() {
             done();
         });
 
-        /*
-        * @tc.number    : ActsAccountAppAccess_0900
-        * @tc.name      : enableAppAccess callback
-        * @tc.desc      : The authorized account name is a long string
-        */
+        /**
+         * @tc.name   ActsAccountAppAccess_0900
+         * @tc.number ActsAccountAppAccess_0900
+         * @tc.desc   The authorized account name is a long string
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
+         */
         it('ActsAccountAppAccess_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
             console.info("====>ActsAccountAppAccess_0900 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -261,11 +288,14 @@ export default function ActsAccountAppAccess() {
             })
         });
 
-        /*
-        * @tc.number    : ActsAccountAppAccess_1000
-        * @tc.name      : enableAppAccess promise
-        * @tc.desc      : The authorized account name is a long string
-        */
+        /**
+         * @tc.name   ActsAccountAppAccess_1000
+         * @tc.number ActsAccountAppAccess_1000
+         * @tc.desc   The authorized account name is a long string
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
+         */
         it('ActsAccountAppAccess_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
             console.info("====>ActsAccountAppAccess_1000 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -287,11 +317,14 @@ export default function ActsAccountAppAccess() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountAppAccess_1100
-        * @tc.name      : enableAppAccess callback
-        * @tc.desc      : The authorized bundle name is a long string
-        */
+        /**
+         * @tc.name   ActsAccountAppAccess_1100
+         * @tc.number ActsAccountAppAccess_1100
+         * @tc.desc   The authorized bundle name is a long string
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
+         */
         it('ActsAccountAppAccess_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
             console.info("====>ActsAccountAppAccess_1100 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -316,11 +349,14 @@ export default function ActsAccountAppAccess() {
             })
         });
 
-        /*
-        * @tc.number    : ActsAccountAppAccess_1200
-        * @tc.name      : enableAppAccess promise
-        * @tc.desc      : The authorized bundle name is a long string
-        */
+        /**
+         * @tc.name   ActsAccountAppAccess_1200
+         * @tc.number ActsAccountAppAccess_1200
+         * @tc.desc   The authorized bundle name is a long string
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
+         */
         it('ActsAccountAppAccess_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
             console.info("====>ActsAccountAppAccess_1200 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -345,11 +381,14 @@ export default function ActsAccountAppAccess() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountAppAccess_1300
-        * @tc.name      : enableAppAccess callback
-        * @tc.desc      : The authorized account name is an empty string
-        */
+        /**
+         * @tc.name   ActsAccountAppAccess_1300
+         * @tc.number ActsAccountAppAccess_1300
+         * @tc.desc   The authorized account name is an empty string
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
+         */
         it('ActsAccountAppAccess_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
             console.info("====>ActsAccountAppAccess_1300 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -371,11 +410,14 @@ export default function ActsAccountAppAccess() {
             })
         });
 
-        /*
-        * @tc.number    : ActsAccountAppAccess_1400
-        * @tc.name      : enableAppAccess promise
-        * @tc.desc      : The authorized account name is an empty string
-        */
+        /**
+         * @tc.name   ActsAccountAppAccess_1400
+         * @tc.number ActsAccountAppAccess_1400
+         * @tc.desc   The authorized account name is an empty string
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
+         */
         it('ActsAccountAppAccess_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
             console.info("====>ActsAccountAppAccess_1400 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -397,11 +439,14 @@ export default function ActsAccountAppAccess() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountAppAccess_1500
-        * @tc.name      : disableAppAccess callback
-        * @tc.desc      : Cancel authorization Accounts that have not authorized other applications
-        */
+        /**
+         * @tc.name   ActsAccountAppAccess_1500
+         * @tc.number ActsAccountAppAccess_1500
+         * @tc.desc   Cancel authorization Accounts that have not authorized other applications
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsAccountAppAccess_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsAccountAppAccess_1500 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -422,11 +467,14 @@ export default function ActsAccountAppAccess() {
             })
         });
 
-        /*
-        * @tc.number    : ActsAccountAppAccess_1600
-        * @tc.name      : disableAppAccess promise
-        * @tc.desc      : Cancel authorization Accounts that have not authorized other applications
-        */
+        /**
+         * @tc.name   ActsAccountAppAccess_1600
+         * @tc.number ActsAccountAppAccess_1600
+         * @tc.desc   Cancel authorization Accounts that have not authorized other applications
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsAccountAppAccess_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsAccountAppAccess_1600 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -454,11 +502,14 @@ export default function ActsAccountAppAccess() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountAppAccess_1700
-        * @tc.name      : disableAppAccess callback
-        * @tc.desc      : The disableAppAccess parameter bundleName does not exist
-        */
+        /**
+         * @tc.name   ActsAccountAppAccess_1700
+         * @tc.number ActsAccountAppAccess_1700
+         * @tc.desc   The disableAppAccess parameter bundleName does not exist
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountAppAccess_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountAppAccess_1700 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -479,11 +530,14 @@ export default function ActsAccountAppAccess() {
             })
         });
 
-        /*
-        * @tc.number    : ActsAccountAppAccess_1800
-        * @tc.name      : disableAppAccess promise
-        * @tc.desc      : The disableAppAccess parameter bundleName does not exist
-        */
+        /**
+         * @tc.name   ActsAccountAppAccess_1800
+         * @tc.number ActsAccountAppAccess_1800
+         * @tc.desc   The disableAppAccess parameter bundleName does not exist
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountAppAccess_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountAppAccess_1800 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -505,11 +559,14 @@ export default function ActsAccountAppAccess() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountAppAccess_1900
-        * @tc.name      : disableAppAccess callback
-        * @tc.desc      : The disableAppAccess parameter accountName does not exist
-        */
+        /**
+         * @tc.name   ActsAccountAppAccess_1900
+         * @tc.number ActsAccountAppAccess_1900
+         * @tc.desc   The disableAppAccess parameter accountName does not exist
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountAppAccess_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountAppAccess_1900 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -525,11 +582,14 @@ export default function ActsAccountAppAccess() {
             })
         });
 
-        /*
-        * @tc.number    : ActsAccountAppAccess_2000
-        * @tc.name      : disableAppAccess promise
-        * @tc.desc      : The disableAppAccess parameter accountName does not exist
-        */
+        /**
+         * @tc.name   ActsAccountAppAccess_2000
+         * @tc.number ActsAccountAppAccess_2000
+         * @tc.desc   The disableAppAccess parameter accountName does not exist
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountAppAccess_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountAppAccess_2000 start====");
             var appAccountManager = account.createAppAccountManager();

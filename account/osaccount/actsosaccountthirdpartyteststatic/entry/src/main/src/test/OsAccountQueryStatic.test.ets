@@ -30,13 +30,13 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
 
 
     /**
-    * @tc.number   ActsOsAccountQueryIdFormUid_0100
-    * @tc.name     ActsOsAccountQueryIdFormUid_0100
-    * @tc.desc     Verify that the user localId is obtained by uid getOsAccountLocalIdForUid callback
-    * @tc.level    Level3
-    * @tc.size     MediumTest
-    * @tc.type     Function
-    */
+     * @tc.name   ActsOsAccountQueryIdFormUid_0100
+     * @tc.number ActsOsAccountQueryIdFormUid_0100
+     * @tc.desc   Verify that the user localId is obtained by uid getOsAccountLocalIdForUid callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountQueryIdFormUid_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>ActsOsAccountQueryIdFormUid_0100 start====");
@@ -73,13 +73,13 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
       });
 
     /**
-    * @tc.number   ActsOsAccountQueryIdFormUid_0200
-    * @tc.name     ActsOsAccountQueryIdFormUid_0200
-    * @tc.desc     Verify that the user localId is obtained by uid getOsAccountLocalIdForUid promise
-    * @tc.level    Level3
-    * @tc.size     MediumTest
-    * @tc.type     Function
-    */
+     * @tc.name   ActsOsAccountQueryIdFormUid_0200
+     * @tc.number ActsOsAccountQueryIdFormUid_0200
+     * @tc.desc   Verify that the user localId is obtained by uid getOsAccountLocalIdForUid promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountQueryIdFormUid_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>ActsOsAccountQueryIdFormUid_0200 start====");
@@ -99,13 +99,13 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
       });
 
     /**
-    * @tc.number   ActsOsAccountQueryIdFormUid_0300
-    * @tc.name     ActsOsAccountQueryIdFormUid_0300
-    * @tc.desc     Authentication failed to query user by uid -1 getOsAccountLocalIdForUid callback
-    * @tc.level    Level3
-    * @tc.size     MediumTest
-    * @tc.type     Function
-    */
+     * @tc.name   ActsOsAccountQueryIdFormUid_0300
+     * @tc.number ActsOsAccountQueryIdFormUid_0300
+     * @tc.desc   Authentication failed to query user by uid -1 getOsAccountLocalIdForUid callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountQueryIdFormUid_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>ActsOsAccountQueryIdFormUid_0300 start====");
@@ -129,13 +129,13 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
       });
 
     /**
-    * @tc.number   ActsOsAccountQueryIdFormUid_0400
-    * @tc.name     ActsOsAccountQueryIdFormUid_0400
-    * @tc.desc     Authentication failed to query user by uid -1  getOsAccountLocalIdForUid promise
-    * @tc.level    Level3
-    * @tc.size     MediumTest
-    * @tc.type     Function
-    */
+     * @tc.name   ActsOsAccountQueryIdFormUid_0400
+     * @tc.number ActsOsAccountQueryIdFormUid_0400
+     * @tc.desc   Authentication failed to query user by uid -1  getOsAccountLocalIdForUid promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountQueryIdFormUid_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>ActsOsAccountQueryIdFormUid_0400 start====");
@@ -154,13 +154,13 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
 
 
     /**
-    * @tc.number   ActsOsAccountQueryIdFormUidSync_0100
-    * @tc.name     ActsOsAccountQueryIdFormUidSync_0100
-    * @tc.desc     Verify that the user localId is obtained by uid getOsAccountLocalIdForUidSync
-    * @tc.level    Level3
-    * @tc.size     MediumTest
-    * @tc.type     Function
-    */
+     * @tc.name   ActsOsAccountQueryIdFormUidSync_0100
+     * @tc.number ActsOsAccountQueryIdFormUidSync_0100
+     * @tc.desc   Verify that the user localId is obtained by uid getOsAccountLocalIdForUidSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountQueryIdFormUidSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>ActsOsAccountQueryIdFormUidSync_0100 start====");
@@ -187,13 +187,13 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
       });
 
     /**
-    * @tc.number   ActsOsAccountQueryIdFormUidSync_0200
-    * @tc.name     ActsOsAccountQueryIdFormUidSync_0200
-    * @tc.desc     Authentication failed to query user by uid -1  getOsAccountLocalIdForUidSync
-    * @tc.level    Level3
-    * @tc.size     MediumTest
-    * @tc.type     Function
-    */
+     * @tc.name   ActsOsAccountQueryIdFormUidSync_0200
+     * @tc.number ActsOsAccountQueryIdFormUidSync_0200
+     * @tc.desc   Authentication failed to query user by uid -1  getOsAccountLocalIdForUidSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountQueryIdFormUidSync_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>ActsOsAccountQueryIdFormUidSync_0200 start====");
@@ -212,13 +212,13 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
       });
 
     /**
-    * @tc.number   ActsOsAccountQueryIdFormProcess_0100
-    * @tc.name     ActsOsAccountQueryIdFormProcess_0100
-    * @tc.desc     Verify that the user localId obtained from the current process uid getOsAccountLocalId callback
-    * @tc.level    Level0
-    * @tc.size     MediumTest
-    * @tc.type     Function
-    */
+     * @tc.name   ActsOsAccountQueryIdFormProcess_0100
+     * @tc.number ActsOsAccountQueryIdFormProcess_0100
+     * @tc.desc   Verify that the user localId obtained from the current process uid getOsAccountLocalId callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ActsOsAccountQueryIdFormProcess_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>ActsOsAccountQueryIdFormProcess_0100 start====");
@@ -253,13 +253,13 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
       });
 
     /**
-    * @tc.number   ActsOsAccountQueryIdFormProcess_0200
-    * @tc.name     ActsOsAccountQueryIdFormProcess_0200
-    * @tc.desc     Verify that the user localId obtained from the current process uid getOsAccountType callback
-    * @tc.level    Level0
-    * @tc.size     MediumTest
-    * @tc.type     Function
-    */
+     * @tc.name   ActsOsAccountQueryIdFormProcess_0200
+     * @tc.number ActsOsAccountQueryIdFormProcess_0200
+     * @tc.desc   Verify that the user localId obtained from the current process uid getOsAccountType callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ActsOsAccountQueryIdFormProcess_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>ActsOsAccountQueryIdFormProcess_0200 start====");
@@ -279,13 +279,13 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
       });
 
     /**
-    * @tc.number   ActsOsAccountgetType_0100
-    * @tc.name     ActsOsAccountgetType_0100
-    * @tc.desc     Verify that the user type obtained from the current process uid getOsAccountType callback
-    * @tc.level    Level3
-    * @tc.size     MediumTest
-    * @tc.type     Function
-    */
+     * @tc.name   ActsOsAccountgetType_0100
+     * @tc.number ActsOsAccountgetType_0100
+     * @tc.desc   Verify that the user type obtained from the current process uid getOsAccountType callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountgetType_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>ActsOsAccountgetType_0100 start====");
@@ -309,13 +309,13 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
       });
 
     /**
-    * @tc.number   ActsOsAccountgetType_0200
-    * @tc.name     ActsOsAccountgetType_0200
-    * @tc.desc     Verify that the user type obtained from the current process uid getOsAccountType promise
-    * @tc.level    Level0
-    * @tc.size     MediumTest
-    * @tc.type     Function
-    */
+     * @tc.name   ActsOsAccountgetType_0200
+     * @tc.number ActsOsAccountgetType_0200
+     * @tc.desc   Verify that the user type obtained from the current process uid getOsAccountType promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ActsOsAccountgetType_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>ActsOsAccountgetType_0200 start====");
@@ -332,13 +332,13 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
       });
 
     /**
-    * @tc.number   ActsOsAccountGetActivedOsAccountIds_0100
-    * @tc.name     ActsOsAccountGetActivedOsAccountIds_0100
-    * @tc.desc     query activated osAccount Ids getActivatedOsAccountLocalIds callback
-    * @tc.level    Level3
-    * @tc.size     MediumTest
-    * @tc.type     Function
-    */
+     * @tc.name   ActsOsAccountGetActivedOsAccountIds_0100
+     * @tc.number ActsOsAccountGetActivedOsAccountIds_0100
+     * @tc.desc   query activated osAccount Ids getActivatedOsAccountLocalIds callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountGetActivedOsAccountIds_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>ActsOsAccountGetActivedOsAccountIds_0100 start====");
@@ -366,13 +366,13 @@ export default function ActsOsAccountThirdPartyTest_third_4_Static() {
       });
 
     /**
-    * @tc.number   ActsOsAccountGetActivedOsAccountIds_0200
-    * @tc.name     ActsOsAccountGetActivedOsAccountIds_0200
-    * @tc.desc     query activated osAccount Ids getActivatedOsAccountLocalIds promise
-    * @tc.level    Level3
-    * @tc.size     MediumTest
-    * @tc.type     Function
-    */
+     * @tc.name   ActsOsAccountGetActivedOsAccountIds_0200
+     * @tc.number ActsOsAccountGetActivedOsAccountIds_0200
+     * @tc.desc   query activated osAccount Ids getActivatedOsAccountLocalIds promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountGetActivedOsAccountIds_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>ActsOsAccountGetActivedOsAccountIds_0200 start====");

@@ -20,14 +20,14 @@ const ERR_APPACCOUNT_SERVICE_PERMISSION_DENIED = 4521993;
 export default function ActsAccountNoPermission() {
     describe('ActsAccountNoPermission', function () {
 
-        /*
-        * @tc.number    : ActsAccountNoPermission_0100
-        * @tc.name      : test setAppAccountSyncEnable callback
-        * @tc.desc      : Set the added account to allow synchronization without permission
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   ActsAccountNoPermission_0100
+         * @tc.number ActsAccountNoPermission_0100
+         * @tc.desc   Set the added account to allow synchronization without permission
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsAccountNoPermission_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsAccountNoPermission_0100 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -48,14 +48,14 @@ export default function ActsAccountNoPermission() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountNoPermission_0200
-        * @tc.name      : test setAppAccountSyncEnable promise
-        * @tc.desc      : Set the added account to allow synchronization without permission
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   ActsAccountNoPermission_0200
+         * @tc.number ActsAccountNoPermission_0200
+         * @tc.desc   Set the added account to allow synchronization without permission
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsAccountNoPermission_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsAccountNoPermission_0200 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -76,14 +76,14 @@ export default function ActsAccountNoPermission() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountNoPermission_0300
-        * @tc.name      : test Check sync flag callback form
-        * @tc.desc      : Check the added account synchronization without permission
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   ActsAccountNoPermission_0300
+         * @tc.number ActsAccountNoPermission_0300
+         * @tc.desc   Check the added account synchronization without permission
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountNoPermission_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountNoPermission_0300 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -104,14 +104,14 @@ export default function ActsAccountNoPermission() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountNoPermission_0400
-        * @tc.name      : test Check sync flag promise form
-        * @tc.desc      : Check the added account synchronization without permission
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   ActsAccountNoPermission_0400
+         * @tc.number ActsAccountNoPermission_0400
+         * @tc.desc   Check the added account synchronization without permission
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountNoPermission_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountNoPermission_0400 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -131,14 +131,14 @@ export default function ActsAccountNoPermission() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountNoPermission_0500
-        * @tc.name      : test getAllAccessibleAccounts callback
-        * @tc.desc      : This application gets authorization after adding a single account without permission
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   ActsAccountNoPermission_0500
+         * @tc.number ActsAccountNoPermission_0500
+         * @tc.desc   This application gets authorization after adding a single account without permission
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsAccountNoPermission_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsAccountNoPermission_0500 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -159,14 +159,14 @@ export default function ActsAccountNoPermission() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountNoPermission_0600
-        * @tc.name      : test getAllAccessibleAccounts promise
-        * @tc.desc      : This application gets authorization after adding a single account without permission
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   ActsAccountNoPermission_0600
+         * @tc.number ActsAccountNoPermission_0600
+         * @tc.desc   This application gets authorization after adding a single account without permission
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsAccountNoPermission_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsAccountNoPermission_0600 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -186,14 +186,14 @@ export default function ActsAccountNoPermission() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountNoPermission_0700
-        * @tc.name      : test getAllAccounts callback
-        * @tc.desc      : This application gets its own application information after adding an account  permission
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   ActsAccountNoPermission_0700
+         * @tc.number ActsAccountNoPermission_0700
+         * @tc.desc   This application gets its own application information after adding an account  permission
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsAccountNoPermission_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsAccountNoPermission_0700 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -216,14 +216,14 @@ export default function ActsAccountNoPermission() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountNoPermission_0800
-        * @tc.name      : test getAllAccounts promise
-        * @tc.desc      : This application gets its own application information after adding an account  permission
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   ActsAccountNoPermission_0800
+         * @tc.number ActsAccountNoPermission_0800
+         * @tc.desc   This application gets its own application information after adding an account  permission
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsAccountNoPermission_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsAccountNoPermission_0800 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -247,14 +247,14 @@ export default function ActsAccountNoPermission() {
             }          
         });
         
-        /*
-        * @tc.number    : ActsAccountNoPermission_0900
-        * @tc.name      : test getAllAccounts callback
-        * @tc.desc      : This application gets its own application information after adding an account  permission
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   ActsAccountNoPermission_0900
+         * @tc.number ActsAccountNoPermission_0900
+         * @tc.desc   This application gets its own application information after adding an account  permission
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountNoPermission_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountNoPermission_0900 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -276,14 +276,14 @@ export default function ActsAccountNoPermission() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountNoPermission_1000
-        * @tc.name      : test getAllAccounts promise
-        * @tc.desc      : This application gets its own application information after adding an account  permission
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   ActsAccountNoPermission_1000
+         * @tc.number ActsAccountNoPermission_1000
+         * @tc.desc   This application gets its own application information after adding an account  permission
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountNoPermission_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountNoPermission_1000 start====");
             var appAccountManager = account.createAppAccountManager();

@@ -27,14 +27,13 @@ export default function ActsOsAccountThirdPartyTest_third_3_Static() {
   describe('ActsOsAccountThirdPartyTest_third_3_Static', () => {
 
     /**
-    * @tc.number   ActsOsAccountIsOsAccountUnlocked_0100
-    * @tc.name     ActsOsAccountIsOsAccountUnlocked_0100
-    * @tc.desc     Verify isOsAccountUnlocked that the initial state query is unlocked to false
-    *               isOsAccountUnlocked promise
-    * @tc.level    Level0
-    * @tc.size     MediumTest
-    * @tc.type     Function
-    */
+     * @tc.name   ActsOsAccountIsOsAccountUnlocked_0100
+     * @tc.number ActsOsAccountIsOsAccountUnlocked_0100
+     * @tc.desc   Verify isOsAccountUnlocked that the initial state query is unlocked to false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ActsOsAccountIsOsAccountUnlocked_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
