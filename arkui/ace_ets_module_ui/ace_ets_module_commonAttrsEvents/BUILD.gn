@@ -20,7 +20,7 @@ group("ActsAceEtsModuleCommonAttrsEventsTest") {
       "ace_ets_module_commonAttrsEvents_api11:ActsAceEtsModuleCommonAttrsEventsApi11Test",
       "ace_ets_module_commonAttrsEvents_api13:ActsAceEtsModuleCommonAttrsEventsApi13Test",
       "ace_ets_module_commonAttrsEvents_api20:ActsAceEtsModuleCommonAttrsEventsApi20Test",
-      "ace_ets_module_commonAttrsEvents_interactiveAttributes:ActsAceEtsModuleCommonAttrsEventsInteractiveAttributes",
+      "ace_ets_module_commonAttrsEvents_interactiveAttributes:ActsAceEtsModuleCommonAttrsEventsInteractiveAttributesTest",
     ]
   } else {
     deps = [
