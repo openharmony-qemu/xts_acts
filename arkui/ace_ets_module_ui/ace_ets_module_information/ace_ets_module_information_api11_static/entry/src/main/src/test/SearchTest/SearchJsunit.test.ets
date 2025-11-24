@@ -21,14 +21,13 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 import events_emitter from '@ohos.events.emitter';
 import { CopyOptions } from '@ohos.arkui.component'
-
 import accessibility from '@ohos.accessibility';
 const BUNDLE_NAME = 'com.arkui.ace.information/MainAbility';
 
@@ -41,7 +40,6 @@ export default function searchJsunit() {
       await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
-    
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Search/search',
       }
@@ -91,17 +89,8 @@ it('testSearch_static_002', Level.LEVEL0, async (done: () => void): Promise<void
       console.info('[testSearch002] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "searchButton": "5"
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 190,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testSearch002] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        AppStorage.setOrCreate<string>('searchButton','5')
+
       } catch (err) {
         console.log("[testSearch002] change component data error: " + (err as BusinessError).message);
       }
@@ -113,7 +102,7 @@ it('testSearch_static_002', Level.LEVEL0, async (done: () => void): Promise<void
       done();
     });
 
-    
+
     /*
      * @tc.number   testSearch_static_003
      * @tc.name     testSearch_static_003
@@ -130,7 +119,7 @@ it('testSearch_static_003', Level.LEVEL0, async (done: () => void): Promise<void
       done();
     });
 
-    
+
     /*
      * @tc.number   testSearch_static_004
      * @tc.name     testSearch_static_004
@@ -141,17 +130,8 @@ it('testSearch_static_004', Level.LEVEL0, async (done: () => void): Promise<void
       console.info('[testSearch004] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "maxLength": 0
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 190,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testSearch004] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        AppStorage.setOrCreate<int>('maxLength',0)
+
       } catch (err) {
         console.log("[testSearch004] change component data error: " + (err as BusinessError).message);
       }
@@ -163,7 +143,7 @@ it('testSearch_static_004', Level.LEVEL0, async (done: () => void): Promise<void
       done();
     });
 
-    
+
     /*
      * @tc.number   testSearch_static_005
      * @tc.name     testSearch_static_005
@@ -174,17 +154,7 @@ it('testSearch_static_005', Level.LEVEL0, async (done: () => void): Promise<void
       console.info('[testSearch005] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "maxLength": 123
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 190,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testSearch005] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        AppStorage.setOrCreate<int>('maxLength',123)
       } catch (err) {
         console.log("[testSearch005] change component data error: " + (err as BusinessError).message);
       }
@@ -196,7 +166,7 @@ it('testSearch_static_005', Level.LEVEL0, async (done: () => void): Promise<void
       done();
     });
 
-    
+
     /*
      * @tc.number   testSearch_static_006
      * @tc.name     testSearch_static_006
@@ -207,17 +177,7 @@ it('testSearch_static_006', Level.LEVEL0, async (done: () => void): Promise<void
       console.info('[testSearch006] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "maxLength": 1000000
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 190,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testSearch006] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        AppStorage.setOrCreate<int>('maxLength',1000000)
       } catch (err) {
         console.log("[testSearch006] change component data error: " + (err as BusinessError).message);
       }
@@ -229,7 +189,7 @@ it('testSearch_static_006', Level.LEVEL0, async (done: () => void): Promise<void
       done();
     });
 
-    
+
     /*
      * @tc.number   testSearch_static_007
      * @tc.name     testSearch_static_007
@@ -240,17 +200,8 @@ it('testSearch_static_007', Level.LEVEL0, async (done: () => void): Promise<void
       console.info('[testSearch007] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "maxLength": -1
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 190,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testSearch007] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        AppStorage.setOrCreate<int>('maxLength',-1)
+
       } catch (err) {
         console.log("[testSearch007] change component data error: " + (err as BusinessError).message);
       }
@@ -262,7 +213,7 @@ it('testSearch_static_007', Level.LEVEL0, async (done: () => void): Promise<void
       done();
     });
 
-    
+
     /*
      * @tc.number   testSearch_static_008
      * @tc.name     testSearch_static_008
@@ -273,17 +224,8 @@ it('testSearch_static_008', Level.LEVEL0, async (done: () => void): Promise<void
       console.info('[testSearch008] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "maxLength": 1020300
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 190,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testSearch008] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        AppStorage.setOrCreate<int>('maxLength',1020300)
+
       } catch (err) {
         console.log("[testSearch008] change component data error: " + (err as BusinessError).message);
       }
@@ -295,7 +237,7 @@ it('testSearch_static_008', Level.LEVEL0, async (done: () => void): Promise<void
       done();
     });
 
-    
+
     /*
      * @tc.number   testSearch_static_009
      * @tc.name     testSearch_static_009
@@ -312,7 +254,7 @@ it('testSearch_static_009', Level.LEVEL0, async (done: () => void): Promise<void
       done();
     });
 
-    
+
     /*
      * @tc.number   testSearch_static_0010
      * @tc.name     testSearch_static_0010
@@ -323,17 +265,8 @@ it('testSearch_static_0010', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info('[testSearch0010] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "copyOption": CopyOptions.InApp
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 190,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testSearch0010] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        AppStorage.setOrCreate<CopyOptions>('copyOption',CopyOptions.InApp)
+
       } catch (err) {
         console.log("[testSearch0010] change component data error: " + (err as BusinessError).message);
       }
@@ -345,7 +278,7 @@ it('testSearch_static_0010', Level.LEVEL0, async (done: () => void): Promise<voi
       done();
     });
 
-    
+
     /*
      * @tc.number   testSearch_static_0011
      * @tc.name     testSearch_static_0011
@@ -356,17 +289,8 @@ it('testSearch_static_0011', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info('[testSearch0011] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 190,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testSearch0011] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        AppStorage.setOrCreate<CopyOptions>('copyOption',CopyOptions.LocalDevice)
+
       } catch (err) {
         console.log("[testSearch0011] change component data error: " + (err as BusinessError).message);
       }
@@ -374,7 +298,7 @@ it('testSearch_static_0011', Level.LEVEL0, async (done: () => void): Promise<voi
       let strJson = inspector.getInspectorByKey('search');
       console.info("[testSearch0011] component strJson:" + strJson);
       let obj11 = JSON.parseJsonElement(strJson);
-      expect(obj11.getElement('$attrs').getString('copyOption')).assertEqual('CopyOptions.Distributed');
+      expect(obj11.getElement('$attrs').getString('copyOption')).assertEqual('CopyOptions.Local');
       done();
     });
 
@@ -390,10 +314,10 @@ it('testSearch_static_099', Level.LEVEL0, async (done: () => void): Promise<void
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      let btn = await driver.findComponent(ON.text('caretOffsetBtn'));
+      let btn = await driver.findComponent(ON.id('caretOffsetBtn'));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
-      let caretText = await driver.findComponent(ON.text('caretOffsetText'));
+      let caretText = await driver.findComponent(ON.id('caretOffsetText'));
       let text = await (caretText?.getText() as Promise<string>);
       expect(text).assertEqual('Index0');
       done();
@@ -410,27 +334,18 @@ it('testSearch_static_100', Level.LEVEL0, async (done: () => void): Promise<void
       console.info('[testSearch100] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "text": '123456789'
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 190,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testSearch100] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        AppStorage.setOrCreate<string>('searchText','123456789')
+
       } catch (err) {
         console.log("[testSearch100] change component data error: " + (err as BusinessError).message);
       }
       await CommonFunc.sleep(2000);
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      let btn = await driver.findComponent(ON.text('caretOffsetBtn'));
+      let btn = await driver.findComponent(ON.id('caretOffsetBtn'));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let caretText = await driver.findComponent(ON.text('caretOffsetText'));
+      let caretText = await driver.findComponent(ON.id('caretOffsetText'));
       let text = await (caretText?.getText() as Promise<string>);
       expect(text).assertEqual('Index9');
       done();
@@ -447,27 +362,18 @@ it('testSearch_static_101', Level.LEVEL0, async (done: () => void): Promise<void
       console.info('[testSearch101] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "text": '1234567890abc'
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 190,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testSearch101] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        AppStorage.setOrCreate<string>('searchText','1234567890abc')
+
       } catch (err) {
         console.log("[testSearch101] change component data error: " + (err as BusinessError).message);
       }
       await CommonFunc.sleep(2000);
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      let btn = await driver.findComponent(ON.text('caretOffsetBtn'));
+      let btn = await driver.findComponent(ON.id('caretOffsetBtn'));
       await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      let caretText = await driver.findComponent(ON.text('caretOffsetText'));
+      let caretText = await driver.findComponent(ON.id('caretOffsetText'));
       await CommonFunc.sleep(1000);
       let text = await (caretText?.getText() as Promise<string>);
       expect(text).assertEqual('Index10');

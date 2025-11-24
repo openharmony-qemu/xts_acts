@@ -26,5 +26,5 @@ export default function testsuite() {
   ProgressContentModifier()
   ProgressPrivacySensitive()
   TextClockDateTimeOptions()
-  TextClockDateTimeOptions()
+  TextTimerTextShadow()
 }

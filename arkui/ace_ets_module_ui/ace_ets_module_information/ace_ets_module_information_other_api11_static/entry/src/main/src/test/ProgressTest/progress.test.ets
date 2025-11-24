@@ -34,13 +34,13 @@ let testAbilityContext:common.UIAbilityContext;
 export default function progressTest() {
   describe('ActsProgressTest', () => {
     beforeAll(() => {
-      console.info("ActsProgressTest beforeEach start");
+      console.info("progressTest beforeEach start");
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.information.other.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
-      console.info("ActsProgressTest beforeEach start");
+      console.info("progressTest beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Progress/Progress',
       }
@@ -48,21 +48,20 @@ export default function progressTest() {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
-        console.info("get ActsProgressTest state success " + JSON.stringify(pages));
+        console.info("get progressTest state success " + JSON.stringify(pages));
         if (!("Progress" == pages.name)) {
-          console.info("get ActsProgressTest state success " + JSON.stringify(pages.name));
-          
+          console.info("get progressTest state success " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
-        console.error("push ActsProgressTest page error: " + err);
+        console.error("push progressTest page error: " + err);
       }
     });
 
     afterEach(async (): Promise<void> => {
       await CommonFunc.sleep(1000);
-      console.info("ActsProgressTest after each called");
+      console.info("progressTest after each called");
     });
 
 
@@ -83,8 +82,8 @@ it('ArkUX_Stage_Progress_updateColor_static_0100', Level.LEVEL0, async (done: ()
           console.info("ArkUX_Stage_Progress_updateColor_0100 component obj.$attrs is: " +
           JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_Progress_updateColor_0100 component obj.$attrs.updateColor is: " +
-          JSON.stringify(obj.getElement('$attrs').getString('content')));
-          expect(obj.getElement('$attrs').getString('content')).assertEqual("#FF00FF00");
+          JSON.stringify(obj.getElement('$attrs').getString('updateColor')));
+          expect(obj.getElement('$attrs').getString('updateColor')).assertEqual("#FF00FF00");
           console.info('ArkUX_Stage_Progress_updateColor_0100 END ');
         } catch (err) {
           expect().assertFail();
@@ -115,8 +114,8 @@ it('ArkUX_Stage_Progress_updateColor_static_0200', Level.LEVEL0, async (done: ()
           console.info("ArkUX_Stage_Progress_updateColor_0200 component obj.$attrs is: " +
           JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_Progress_updateColor_0200 component obj.$attrs.updateColor is: " +
-          JSON.stringify(obj.getElement('$attrs').getString('content')));
-          expect(obj.getElement('$attrs').getString('content')).assertEqual("#FFFD0000");
+          JSON.stringify(obj.getElement('$attrs').getString('updateColor')));
+          expect(obj.getElement('$attrs').getString('updateColor')).assertEqual("#FFFD0000");
           console.info('ArkUX_Stage_Progress_updateColor_0200 END ');
         } catch (err) {
           expect().assertFail();
@@ -148,8 +147,8 @@ it('ArkUX_Stage_Progress_updateColor_static_0300', Level.LEVEL0, async (done: ()
           console.info("ArkUX_Stage_Progress_updateColor_0300 component obj.$attrs is: " +
           JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_Progress_updateColor_0300 component obj.$attrs.updateColor is: " +
-          JSON.stringify(obj.getElement('$attrs').getString('content')));
-          expect(obj.getElement('$attrs').getString('content')).assertEqual("#FF8A2BE2");
+          JSON.stringify(obj.getElement('$attrs').getString('updateColor')));
+          expect(obj.getElement('$attrs').getString('updateColor')).assertEqual("#FF8A2BE2");
           console.info('ArkUX_Stage_Progress_updateColor_0300 END ');
         } catch (err) {
           expect().assertFail();
@@ -181,8 +180,8 @@ it('ArkUX_Stage_Progress_updateColor_static_0400', Level.LEVEL0, async (done: ()
           console.info("ArkUX_Stage_Progress_updateColor_0400 component obj.$attrs is: " +
           JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_Progress_updateColor_0400 component obj.$attrs.updateColor is: " +
-          JSON.stringify(obj.getElement('$attrs').getString('content')));
-          expect(obj.getElement('$attrs').getString('content')).assertEqual("#FFFFC0CB");
+          JSON.stringify(obj.getElement('$attrs').getString('updateColor')));
+          expect(obj.getElement('$attrs').getString('updateColor')).assertEqual("#FFFFC0CB");
           console.info('ArkUX_Stage_Progress_updateColor_0400 END ');
         } catch (err) {
           expect().assertFail();
@@ -214,8 +213,8 @@ it('ArkUX_Stage_Progress_updateColor_static_0500', Level.LEVEL0, async (done: ()
           console.info("ArkUX_Stage_Progress_updateColor_0500 component obj.$attrs is: " +
           JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_Progress_updateColor_0500 component obj.$attrs.updateColor is: " +
-          JSON.stringify(obj.getElement('$attrs').getString('content')));
-          expect(obj.getElement('$attrs').getString('content')).assertEqual("#FFFD0000");
+          JSON.stringify(obj.getElement('$attrs').getString('updateColor')));
+          expect(obj.getElement('$attrs').getString('updateColor')).assertEqual("#FFFD0000");
           console.info('ArkUX_Stage_Progress_updateColor_0500 END ');
         } catch (err) {
           expect().assertFail();
@@ -247,8 +246,8 @@ it('ArkUX_Stage_Progress_updateColor_static_0600', Level.LEVEL0, async (done: ()
           console.info("ArkUX_Stage_Progress_updateColor_0600 component obj.$attrs is: " +
           JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_Progress_updateColor_0600 component obj.$attrs.updateColor is: " +
-          JSON.stringify(obj.getElement('$attrs').getString('content')));
-          expect(obj.getElement('$attrs').getString('content')).assertEqual("#FF006CDE");
+          JSON.stringify(obj.getElement('$attrs').getString('updateColor')));
+          expect(obj.getElement('$attrs').getString('updateColor')).assertEqual("#FF006CDE");
           console.info('ArkUX_Stage_Progress_updateColor_0600 END ');
         } catch (err) {
           expect().assertFail();
@@ -280,8 +279,8 @@ it('ArkUX_Stage_Progress_updateColor_static_0700', Level.LEVEL0, async (done: ()
           console.info("ArkUX_Stage_Progress_updateColor_0700 component obj.$attrs is: " +
           JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_Progress_updateColor_0700 component obj.$attrs.updateColor is: " +
-          JSON.stringify(obj.getElement('$attrs').getString('content')));
-          expect(obj.getElement('$attrs').getString('content')).assertEqual("#33006CDE");
+          JSON.stringify(obj.getElement('$attrs').getString('updateColor')));
+          expect(obj.getElement('$attrs').getString('updateColor')).assertEqual("#33006CDE");
           console.info('ArkUX_Stage_Progress_updateColor_0700 END ');
         } catch (err) {
           expect().assertFail();
@@ -313,8 +312,8 @@ it('ArkUX_Stage_Progress_updateColor_static_0800', Level.LEVEL0, async (done: ()
           console.info("ArkUX_Stage_Progress_updateColor_0800 component obj.$attrs is: " +
           JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_Progress_updateColor_0800 component obj.$attrs.updateColor is: " +
-          JSON.stringify(obj.getElement('$attrs').getString('content')));
-          expect(obj.getElement('$attrs').getString('content')).assertEqual("#CC006CDE");
+          JSON.stringify(obj.getElement('$attrs').getString('updateColor')));
+          expect(obj.getElement('$attrs').getString('updateColor')).assertEqual("#CC006CDE");
           console.info('ArkUX_Stage_Progress_updateColor_0800 END ');
         } catch (err) {
           expect().assertFail();
@@ -346,8 +345,8 @@ it('ArkUX_Stage_Progress_updateColor_static_0900', Level.LEVEL0, async (done: ()
           console.info("ArkUX_Stage_Progress_updateColor_0900 component obj.$attrs is: " +
           JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_Progress_updateColor_0900 component obj.$attrs.updateColor is: " +
-          JSON.stringify(obj.getElement('$attrs').getString('content')));
-          expect(obj.getElement('$attrs').getString('content')).assertEqual("#33006CDE");
+          JSON.stringify(obj.getElement('$attrs').getString('updateColor')));
+          expect(obj.getElement('$attrs').getString('updateColor')).assertEqual("#33006CDE");
           console.info('ArkUX_Stage_Progress_updateColor_0900 END ');
         } catch (err) {
           expect().assertFail();
@@ -381,8 +380,8 @@ it('ArkUX_Stage_Progress_updateColor_static_1000', Level.LEVEL0, async (done: ()
           console.info("ArkUX_Stage_Progress_updateColor_1000 component obj.$attrs is: " +
           JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_Progress_updateColor_1000 component obj.$attrs.updateColor is: " +
-          JSON.stringify(obj.getElement('$attrs').getString('content')));
-          expect(obj.getElement('$attrs').getString('content')).assertEqual(obj_default.getElement('$attrs').getString('content'));
+          JSON.stringify(obj.getElement('$attrs').getString('updateColor')));
+          expect(obj.getElement('$attrs').getString('updateColor')).assertEqual(obj_default.getElement('$attrs').getString('updateColor'));
           console.info('ArkUX_Stage_Progress_updateColor_1000 END ');
         } catch (err) {
           expect().assertFail();
@@ -416,8 +415,8 @@ it('ArkUX_Stage_Progress_updateColor_static_1100', Level.LEVEL0, async (done: ()
           console.info("ArkUX_Stage_Progress_updateColor_1100 component obj.$attrs is: " +
           JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_Progress_updateColor_1100 component obj.$attrs.updateColor is: " +
-          JSON.stringify(obj.getElement('$attrs').getString('content')));
-          expect(obj.getElement('$attrs').getString('content')).assertEqual(obj_default.getElement('$attrs').getString('content'));
+          JSON.stringify(obj.getElement('$attrs').getString('updateColor')));
+          expect(obj.getElement('$attrs').getString('updateColor')).assertEqual(obj_default.getElement('$attrs').getString('updateColor'));
           console.info('ArkUX_Stage_Progress_updateColor_1100 END ');
         } catch (err) {
           expect().assertFail();
@@ -451,8 +450,8 @@ it('ArkUX_Stage_Progress_updateColor_static_1200', Level.LEVEL0, async (done: ()
           console.info("ArkUX_Stage_Progress_updateColor_1200 component obj.$attrs is: " +
           JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_Progress_updateColor_1200 component obj.$attrs.updateColor is: " +
-          JSON.stringify(obj.getElement('$attrs').getString('content')));
-          expect(obj.getElement('$attrs').getString('content')).assertEqual(obj_default.getElement('$attrs').getString('content'));
+          JSON.stringify(obj.getElement('$attrs').getString('updateColor')));
+          expect(obj.getElement('$attrs').getString('updateColor')).assertEqual(obj_default.getElement('$attrs').getString('updateColor'));
           console.info('ArkUX_Stage_Progress_updateColor_1200 END ');
         } catch (err) {
           expect().assertFail();
@@ -486,8 +485,8 @@ it('ArkUX_Stage_Progress_updateColor_static_1300', Level.LEVEL0, async (done: ()
           console.info("ArkUX_Stage_Progress_updateColor_1300 component obj.$attrs is: " +
           JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_Progress_updateColor_1300 component obj.$attrs.updateColor is: " +
-          JSON.stringify(obj.getElement('$attrs').getString('content')));
-          expect(obj.getElement('$attrs').getString('content')).assertEqual(obj_default.getElement('$attrs').getString('content'));
+          JSON.stringify(obj.getElement('$attrs').getString('updateColor')));
+          expect(obj.getElement('$attrs').getString('updateColor')).assertEqual(obj_default.getElement('$attrs').getString('updateColor'));
           console.info('ArkUX_Stage_Progress_updateColor_1300 END ');
         } catch (err) {
           expect().assertFail();
@@ -519,8 +518,8 @@ it('ArkUX_Stage_Progress_updateColor_static_1400', Level.LEVEL0, async (done: ()
           console.info("ArkUX_Stage_Progress_updateColor_1400 component obj.$attrs is: " +
           JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_Progress_updateColor_1400 component obj.$attrs.updateColor is: " +
-          JSON.stringify(obj.getElement('$attrs').getString('content')));
-          expect(obj.getElement('$attrs').getString('content')).assertEqual("#FFFFC0CB");
+          JSON.stringify(obj.getElement('$attrs').getString('updateColor')));
+          expect(obj.getElement('$attrs').getString('updateColor')).assertEqual("#FFFFC0CB");
           console.info('ArkUX_Stage_Progress_updateColor_1400 END ');
         } catch (err) {
           expect().assertFail();
@@ -554,8 +553,8 @@ it('ArkUX_Stage_Progress_updateColor_static_1500', Level.LEVEL0, async (done: ()
           console.info("ArkUX_Stage_Progress_updateColor_1500 component obj.$attrs is: " +
           JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_Progress_updateColor_1500 component obj.$attrs.updateColor is: " +
-          JSON.stringify(obj.getElement('$attrs').getString('content')));
-          expect(obj.getElement('$attrs').getString('content')).assertEqual(obj_default.getElement('$attrs').getString('content'));
+          JSON.stringify(obj.getElement('$attrs').getString('updateColor')));
+          expect(obj.getElement('$attrs').getString('updateColor')).assertEqual(obj_default.getElement('$attrs').getString('updateColor'));
           console.info('ArkUX_Stage_Progress_updateColor_1500 END ');
         } catch (err) {
           expect().assertFail();
@@ -588,8 +587,8 @@ it('ArkUX_Stage_Progress_updateColor_static_1600', Level.LEVEL0, async (done: ()
           console.info("ArkUX_Stage_Progress_updateColor_1600 component obj.$attrs is: " +
           JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_Progress_updateColor_1600 component obj.$attrs.updateColor is: " +
-          JSON.stringify(obj.getElement('$attrs').getString('content')));
-          expect(obj.getElement('$attrs').getString('content')).assertEqual("#FF00FF00");
+          JSON.stringify(obj.getElement('$attrs').getString('updateColor')));
+          expect(obj.getElement('$attrs').getString('updateColor')).assertEqual("#FF00FF00");
           console.info('ArkUX_Stage_Progress_updateColor_1600 END ');
         } catch (err) {
           expect().assertFail();
@@ -621,8 +620,8 @@ it('ArkUX_Stage_Progress_updateProgress_0100', Level.LEVEL0, async (done: () => 
           console.info("ArkUX_Stage_Progress_updateProgress_0100 component obj.$attrs is: " +
           JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_Progress_updateProgress_0100 component obj.$attrs.updateProgress is: " +
-          JSON.stringify(obj.getElement('$attrs').getString('updateProgress')));
-          expect(obj.getElement('$attrs').getString('updateProgress')).assertEqual(0);
+          JSON.stringify(obj.getElement('$attrs').getDouble('updateProgress')));
+          expect(obj.getElement('$attrs').getDouble('updateProgress')).assertEqual(0);
           console.info('ArkUX_Stage_Progress_updateProgress_0100 END ');
         } catch (err) {
           expect().assertFail();
@@ -654,8 +653,8 @@ it('ArkUX_Stage_Progress_updateProgress_0200', Level.LEVEL0, async (done: () => 
           console.info("ArkUX_Stage_Progress_updateProgress_0200 component obj.$attrs is: " +
           JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_Progress_updateProgress_0200 component obj.$attrs.updateProgress is: " +
-          JSON.stringify(obj.getElement('$attrs').getString('updateProgress')));
-          expect(obj.getElement('$attrs').getString('updateProgress')).assertEqual(5);
+          JSON.stringify(obj.getElement('$attrs').getDouble('updateProgress')));
+          expect(obj.getElement('$attrs').getDouble('updateProgress')).assertEqual(5);
           console.info('ArkUX_Stage_Progress_updateProgress_0200 END ');
         } catch (err) {
           expect().assertFail();
@@ -687,8 +686,8 @@ it('ArkUX_Stage_Progress_updateProgress_0500', Level.LEVEL0, async (done: () => 
           console.info("ArkUX_Stage_Progress_updateProgress_0500 component obj.$attrs is: " +
           JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_Progress_updateProgress_0500 component obj.$attrs.updateProgress is: " +
-          JSON.stringify(obj.getElement('$attrs').getString('updateProgress')));
-          expect(obj.getElement('$attrs').getString('updateProgress')).assertEqual(0);
+          JSON.stringify(obj.getElement('$attrs').getDouble('updateProgress')));
+          expect(obj.getElement('$attrs').getDouble('updateProgress')).assertEqual(0);
           console.info('ArkUX_Stage_Progress_updateProgress_0500 END ');
         } catch (err) {
           expect().assertFail();
@@ -720,8 +719,8 @@ it('ArkUX_Stage_Progress_updateProgress_0600', Level.LEVEL0, async (done: () => 
           console.info("ArkUX_Stage_Progress_updateProgress_0600 component obj.$attrs is: " +
           JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_Progress_updateProgress_0600 component obj.$attrs.updateProgress is: " +
-          JSON.stringify(obj.getElement('$attrs').getString('updateProgress')));
-          expect(obj.getElement('$attrs').getString('updateProgress')).assertEqual(0);
+          JSON.stringify(obj.getElement('$attrs').getDouble('updateProgress')));
+          expect(obj.getElement('$attrs').getDouble('updateProgress')).assertEqual(0);
           console.info('ArkUX_Stage_Progress_updateProgress_0600 END ');
         } catch (err) {
           expect().assertFail();
@@ -753,8 +752,8 @@ it('ArkUX_Stage_Progress_updateProgress_0700', Level.LEVEL0, async (done: () => 
           console.info("ArkUX_Stage_Progress_updateProgress_0700 component obj.$attrs is: " +
           JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_Progress_updateProgress_0700 component obj.$attrs.updateProgress is: " +
-          JSON.stringify(obj.getElement('$attrs').getString('updateProgress')));
-          expect(obj.getElement('$attrs').getString('updateProgress')).assertEqual(0);
+          JSON.stringify(obj.getElement('$attrs').getDouble('updateProgress')));
+          expect(obj.getElement('$attrs').getDouble('updateProgress')).assertEqual(0);
           console.info('ArkUX_Stage_Progress_updateProgress_0700 END ');
         } catch (err) {
           expect().assertFail();
@@ -786,8 +785,8 @@ it('ArkUX_Stage_Progress_updateProgress_0900', Level.LEVEL0, async (done: () => 
           console.info("ArkUX_Stage_Progress_updateProgress_0900 component obj.$attrs is: " +
           JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_Progress_updateProgress_0900 component obj.$attrs.updateProgress is: " +
-          JSON.stringify(obj.getElement('$attrs').getString('updateProgress')));
-          expect(obj.getElement('$attrs').getString('updateProgress')).assertEqual(1);
+          JSON.stringify(obj.getElement('$attrs').getDouble('updateProgress')));
+          expect(obj.getElement('$attrs').getDouble('updateProgress')).assertEqual(1);
           console.info('ArkUX_Stage_Progress_updateProgress_0900 END ');
         } catch (err) {
           expect().assertFail();
@@ -819,8 +818,8 @@ it('ArkUX_Stage_Progress_updateProgress_1000', Level.LEVEL0, async (done: () => 
           console.info("ArkUX_Stage_Progress_updateProgress_1000 component obj.$attrs is: " +
           JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_Progress_updateProgress_1000 component obj.$attrs.updateProgress is: " +
-          JSON.stringify(obj.getElement('$attrs').getString('updateProgress')));
-          expect(obj.getElement('$attrs').getString('updateProgress')).assertEqual(0);
+          JSON.stringify(obj.getElement('$attrs').getDouble('updateProgress')));
+          expect(obj.getElement('$attrs').getDouble('updateProgress')).assertEqual(0);
           console.info('ArkUX_Stage_Progress_updateProgress_1000 END ');
         } catch (err) {
           expect().assertFail();
@@ -852,8 +851,8 @@ it('ArkUX_Stage_Progress_updateProgress_1100', Level.LEVEL0, async (done: () => 
           console.info("ArkUX_Stage_Progress_updateProgress_1100 component obj.$attrs is: " +
           JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_Progress_updateProgress_1100 component obj.$attrs.updateProgress is: " +
-          JSON.stringify(obj.getElement('$attrs').getString('updateProgress')));
-          expect(obj.getElement('$attrs').getString('updateProgress')).assertEqual(5);
+          JSON.stringify(obj.getElement('$attrs').getDouble('updateProgress')));
+          expect(obj.getElement('$attrs').getDouble('updateProgress')).assertEqual(5);
           console.info('ArkUX_Stage_Progress_updateProgress_1100 END ');
         } catch (err) {
           expect().assertFail();

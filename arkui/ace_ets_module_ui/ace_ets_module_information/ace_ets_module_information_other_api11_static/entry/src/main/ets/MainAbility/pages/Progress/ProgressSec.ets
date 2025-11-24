@@ -15,172 +15,69 @@
 
 import events_emitter from '@ohos.events.emitter';
 import { MessageManager, Message, Callback } from '../../common/MessageManager';
-
 import { Entry, Component, ProgressMask, Row, Column, List, ListItem, Image, $r, Color, ClickEvent, Button,
-  HorizontalAlign, Flex, FlexDirection, ItemAlign, FontWeight,FlexAlign, Alignment, TextOverflow, ProgressType,
+  HorizontalAlign, Flex, FlexDirection, ItemAlign, FontWeight,FlexAlign, Alignment, TextOverflow, ProgressType,ResourceColor,
   RowOptions, ColumnOptions, Text, Progress, Margin, ProgressStyle, Resource, ProgressStatus, LinearGradient, FontStyle,
   CapsuleStyleOptions, RingStyleOptions
 } from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, AppStorage,StoragePropRef } from '@ohos.arkui.stateManagement'
 import { UIContext, Router, Context } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
 struct progressSecTest {
-  @State progress_capsule_borderWidth_number: number = 1
-  @State progress_capsule_borderWidth_string: string = '1vp'
-  @State progress_capsule_borderWidth_resource: Resource = $r('sys.float.ohos_id_text_margin_vertical')
-  @State progress_capsule_borderColor_number: int = 0xFF000000
-  @State progress_capsule_borderColor_string: string = '#FFFF9535'
-  @State progress_capsule_borderColor_color: Color = Color.Red
-  @State progress_capsule_borderColor_resource: Resource = $r('sys.color.ohos_id_color_connected')
-  @State progress_capsule_fontSize_number: number = 12
-  @State progress_capsule_fontSize_string: string = '12vp'
-  @State progress_capsule_fontSize_resource: Resource = $r('sys.float.ohos_id_text_margin_vertical')
-  @State progress_capsule_fontWeight_number: int = 400
-  @State progress_capsule_fontWeight_string: string = '400'
-  @State progress_capsule_fontWeight_fontWeight: FontWeight = FontWeight.Normal
-  @State progress_capsule_fontStyle_fontStyle: FontStyle = FontStyle.Normal
-  @State progress_capsule_fontColor_number: int = 0xFF000000
-  @State progress_capsule_fontColor_string: string = '#FFFF9535'
-  @State progress_capsule_fontColor_color: Color = Color.Red
-  @State progress_capsule_fontColor_resource: Resource = $r('sys.color.ohos_id_color_connected')
-  @State progress_capsule_content_string: string = '下载'
-  @State progress_capsule_enableScanEffect_boolean: boolean = false
-  @State progress_capsule_showDefaultPercentage_boolean: boolean = false
-  @State progress_capsule_enableSmoothEffect_boolean: boolean = false
-  @State progress_ring_strokeWidth_number: number = 4
-  @State progress_ring_strokeWidth_string: string = '4vp'
-  @State progress_ring_strokeWidth_resource: Resource = $r('sys.float.ohos_id_text_margin_vertical')
-  @State progress_ring_shadow_bool: boolean = false
-  @State progress_ring_status_progressStatus: ProgressStatus = ProgressStatus.PROGRESSING
-  @State progress_ring_color_purity: int = 0x000000
-  @State progress_ring_color_linear_number: LinearGradient = new LinearGradient([{ color: 0xFFFF0000, offset: 0 }, {
+  @StoragePropRef('progress_capsule_borderWidth_number') progress_capsule_borderWidth_number: number|undefined = 10
+  @StoragePropRef('progress_capsule_borderWidth_string') progress_capsule_borderWidth_string: string = '1vp'
+  @StoragePropRef('progress_capsule_borderWidth_resource') progress_capsule_borderWidth_resource: Resource = $r('sys.float.ohos_id_text_margin_vertical')
+  @StoragePropRef('progress_capsule_borderColor_number') progress_capsule_borderColor_number: ResourceColor = 0xFF000000
+  @StoragePropRef('progress_capsule_borderColor_string') progress_capsule_borderColor_string: string|undefined = '#FFFF9535'
+  @StoragePropRef('progress_capsule_borderColor_color') progress_capsule_borderColor_color: Color = Color.Red
+  @StoragePropRef('progress_capsule_borderColor_resource') progress_capsule_borderColor_resource: Resource = $r('sys.color.ohos_id_color_connected')
+  @StoragePropRef('progress_capsule_fontSize_number') progress_capsule_fontSize_number: number|undefined = 12
+  @StoragePropRef('progress_capsule_fontSize_string') progress_capsule_fontSize_string: string = '12vp'
+  @StoragePropRef('progress_capsule_fontSize_resource') progress_capsule_fontSize_resource: Resource = $r('sys.float.ohos_id_text_margin_vertical')
+  @StoragePropRef('progress_capsule_fontWeight_number') progress_capsule_fontWeight_number: FontWeight | int | string |undefined= 400
+  @StoragePropRef('progress_capsule_fontWeight_string') progress_capsule_fontWeight_string: string = '400'
+  @StoragePropRef('progress_capsule_fontWeight_fontWeight') progress_capsule_fontWeight_fontWeight: FontWeight = FontWeight.Normal
+  @StoragePropRef('progress_capsule_fontStyle_fontStyle') progress_capsule_fontStyle_fontStyle: FontStyle|undefined = FontStyle.Normal
+  @StoragePropRef('progress_capsule_fontColor_number') progress_capsule_fontColor_number: ResourceColor = 0xFF000000
+  @StoragePropRef('progress_capsule_fontColor_string') progress_capsule_fontColor_string: string|undefined = '#FFFF9535'
+  @StoragePropRef('progress_capsule_fontColor_color') progress_capsule_fontColor_color: Color = Color.Red
+  @StoragePropRef('progress_capsule_fontColor_resource') progress_capsule_fontColor_resource: Resource = $r('sys.color.ohos_id_color_connected')
+  @StoragePropRef('progress_capsule_content_string') progress_capsule_content_string: string|undefined = '下载'
+  @StoragePropRef('progress_capsule_enableScanEffect_boolean') progress_capsule_enableScanEffect_boolean: boolean|undefined = false
+  @StoragePropRef('progress_capsule_showDefaultPercentage_boolean') progress_capsule_showDefaultPercentage_boolean: boolean|undefined = false
+  @StoragePropRef('progress_capsule_enableSmoothEffect_boolean') progress_capsule_enableSmoothEffect_boolean: boolean = false
+  @StoragePropRef('progress_ring_strokeWidth_number') progress_ring_strokeWidth_number: number|undefined = 4
+  @StoragePropRef('progress_ring_strokeWidth_string') progress_ring_strokeWidth_string: string = '4vp'
+  @StoragePropRef('progress_ring_strokeWidth_resource') progress_ring_strokeWidth_resource: Resource = $r('sys.float.ohos_id_text_margin_vertical')
+  @StoragePropRef('progress_ring_shadow_bool') progress_ring_shadow_bool: boolean|undefined = false
+  @StoragePropRef('progress_ring_status_progressStatus') progress_ring_status_progressStatus: ProgressStatus|undefined = ProgressStatus.PROGRESSING
+  @StoragePropRef('progress_ring_color_purity') progress_ring_color_purity: ResourceColor | LinearGradient = 0x000000
+  @StoragePropRef('progress_ring_color_linear_number') progress_ring_color_linear_number: LinearGradient = new LinearGradient([{ color: 0xFFFF0000, offset: 0 }, {
     color: 0xFFFFFFFF,
     offset: 1
   }])
-  @State progress_ring_color_linear_string: LinearGradient = new LinearGradient([{ color: '#FFFF9A35', offset: 0 }, {
+  @StoragePropRef('progress_ring_color_linear_string') progress_ring_color_linear_string: LinearGradient = new LinearGradient([{ color: '#FFFF9A35', offset: 0 }, {
     color: '#FFFFFFFF',
     offset: 1
   }])
-  @State progress_ring_color_linear_color: LinearGradient = new LinearGradient([{ color: Color.Red, offset: 0 }, {
+  @StoragePropRef('progress_ring_color_linear_color') progress_ring_color_linear_color: LinearGradient = new LinearGradient([{ color: Color.Red, offset: 0 }, {
     color: Color.White,
     offset: 1
   }])
-  @State progress_ring_color_linear_resource: LinearGradient = new LinearGradient([{
+  @StoragePropRef('progress_ring_color_linear_resource') progress_ring_color_linear_resource: LinearGradient = new LinearGradient([{
     color: $r('sys.color.ohos_id_color_connected'),
     offset: 0
   }, { color: $r('sys.color.ohos_id_color_background'), offset: 1 }]) as LinearGradient
-  @State progress_ring_color_linear_null: LinearGradient | null = null
-  @State progress_ring_color_linear_undefined: LinearGradient | undefined = undefined
-  @State progress_ring_enableScanEffect_boolean: boolean = false
-  @State progress_ring_enableSmoothEffect_boolean: boolean = false
-  @State progress_linear_enableScanEffect_boolean: boolean = false
-  @State progress_linear_enableSmoothEffect_boolean: boolean = false
-  @State progress_scaleRing_enableSmoothEffect_boolean: boolean = false
-  @State progress_eclipse_enableSmoothEffect_boolean: boolean = false
-
-
-  private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
-    console.info('progress page state change called:' + JSON.stringify(eventData));
-    console.info('[ArkUI_Stage_Progress_Capsule_BorderWidth_0400]: callback ' +
-      ((eventData.data) as ESObject).getProperty('progress_capsule_borderWidth_resource'));
-
-    this.progress_capsule_borderWidth_number = ((eventData.data) as ESObject).getProperty('progress_capsule_borderWidth_number').toNumber();
-    this.progress_capsule_borderWidth_string = ((eventData.data) as ESObject).getProperty('progress_capsule_borderWidth_string').toString();
-    this.progress_capsule_borderWidth_resource = ((eventData.data) as ESObject).getProperty('progress_capsule_borderWidth_resource').toStaticObject() as Resource;
-    console.info('[ArkUI_Stage_Progress_Capsule_BorderWidth_0400]: callback2 ' + this.progress_capsule_borderWidth_resource);
-    this.progress_capsule_borderColor_number = Double.toInt(((eventData.data) as ESObject).getProperty('progress_capsule_borderColor_number').toNumber());
-    this.progress_capsule_borderColor_string = ((eventData.data) as ESObject).getProperty('progress_capsule_borderColor_string').toString();
-    this.progress_capsule_borderColor_color = ((eventData.data) as ESObject).getProperty('progress_capsule_borderColor_color').toStaticObject() as Color;
-    this.progress_capsule_borderColor_resource = ((eventData.data) as ESObject).getProperty('progress_capsule_borderColor_resource').toStaticObject() as Resource;
-    this.progress_capsule_fontSize_number = ((eventData.data) as ESObject).getProperty('progress_capsule_fontSize_number').toNumber();
-    this.progress_capsule_fontSize_string = ((eventData.data) as ESObject).getProperty('progress_capsule_fontSize_string').toString();
-    this.progress_capsule_fontSize_resource = ((eventData.data) as ESObject).getProperty('progress_capsule_fontSize_resource').toStaticObject() as Resource;
-    this.progress_capsule_fontWeight_number = Double.toInt(((eventData.data) as ESObject).getProperty('progress_capsule_fontWeight_number').toNumber());
-    this.progress_capsule_fontWeight_string = ((eventData.data) as ESObject).getProperty('progress_capsule_fontWeight_string').toString();
-    this.progress_capsule_fontWeight_fontWeight = ((eventData.data) as ESObject).getProperty('progress_capsule_fontWeight_fontWeight').toStaticObject() as FontWeight;
-    this.progress_capsule_fontStyle_fontStyle = ((eventData.data) as ESObject).getProperty('progress_capsule_fontStyle_fontStyle').toStaticObject() as FontStyle;
-    this.progress_capsule_fontColor_number = Double.toInt(((eventData.data) as ESObject).getProperty('progress_capsule_fontColor_number').toNumber());
-    this.progress_capsule_fontColor_string = ((eventData.data) as ESObject).getProperty('progress_capsule_fontColor_string').toString();
-    this.progress_capsule_fontColor_color = ((eventData.data) as ESObject).getProperty('progress_capsule_fontColor_color').toStaticObject() as Color;
-    this.progress_capsule_fontColor_resource = ((eventData.data) as ESObject).getProperty('progress_capsule_fontColor_resource').toStaticObject() as Resource;
-    this.progress_capsule_content_string = ((eventData.data) as ESObject).getProperty('progress_capsule_content_string').toString();
-    this.progress_capsule_enableScanEffect_boolean = ((eventData.data) as ESObject).getProperty('progress_capsule_enableScanEffect_boolean').toBoolean();
-    this.progress_capsule_showDefaultPercentage_boolean =
-      ((eventData.data) as ESObject).getProperty('progress_capsule_showDefaultPercentage_boolean').toBoolean();
-    this.progress_capsule_enableSmoothEffect_boolean = ((eventData.data) as ESObject).getProperty('progress_capsule_enableSmoothEffect_boolean').toBoolean();
-
-    this.progress_ring_strokeWidth_number = ((eventData.data) as ESObject).getProperty('progress_ring_strokeWidth_number').toNumber();
-    this.progress_ring_strokeWidth_string = ((eventData.data) as ESObject).getProperty('progress_ring_strokeWidth_string').toString();
-    this.progress_ring_strokeWidth_resource = ((eventData.data) as ESObject).getProperty('progress_ring_strokeWidth_resource').toStaticObject() as Resource;
-    this.progress_ring_shadow_bool = ((eventData.data) as ESObject).getProperty('progress_ring_shadow_bool').toBoolean();
-    this.progress_ring_status_progressStatus = ((eventData.data) as ESObject).getProperty('progress_ring_status_progressStatus').toStaticObject() as ProgressStatus;
-    this.progress_ring_color_purity = Double.toInt(((eventData.data) as ESObject).getProperty('progress_ring_color_purity').toNumber());
-    this.progress_ring_color_linear_number = ((eventData.data) as ESObject).getProperty('progress_ring_color_linear_number').toStaticObject() as LinearGradient;
-    this.progress_ring_color_linear_string = ((eventData.data) as ESObject).getProperty('progress_ring_color_linear_string').toStaticObject() as LinearGradient;
-    this.progress_ring_color_linear_color = ((eventData.data) as ESObject).getProperty('progress_ring_color_linear_color').toStaticObject() as LinearGradient;
-    this.progress_ring_color_linear_resource = ((eventData.data) as ESObject).getProperty('progress_ring_color_linear_resource').toStaticObject() as LinearGradient;
-    this.progress_ring_color_linear_null = ((eventData.data) as ESObject).getProperty('progress_ring_color_linear_null').toStaticObject() as LinearGradient;
-    this.progress_ring_color_linear_undefined = ((eventData.data) as ESObject).getProperty('progress_ring_color_linear_undefined').toStaticObject() as LinearGradient;
-    this.progress_ring_enableScanEffect_boolean = ((eventData.data) as ESObject).getProperty('progress_ring_enableScanEffect_boolean').toBoolean();
-    this.progress_ring_enableSmoothEffect_boolean = ((eventData.data) as ESObject).getProperty('progress_ring_enableSmoothEffect_boolean').toBoolean();
-
-    this.progress_linear_enableScanEffect_boolean = ((eventData.data) as ESObject).getProperty('progress_linear_enableScanEffect_boolean').toBoolean();
-    this.progress_linear_enableSmoothEffect_boolean = ((eventData.data) as ESObject).getProperty('progress_linear_enableSmoothEffect_boolean').toBoolean();
-
-    this.progress_scaleRing_enableSmoothEffect_boolean = ((eventData.data) as ESObject).getProperty('progress_scaleRing_enableSmoothEffect_boolean').toBoolean();
-    this.progress_eclipse_enableSmoothEffect_boolean = ((eventData.data) as ESObject).getProperty('progress_eclipse_enableSmoothEffect_boolean').toBoolean();
-  }
-
-
-  messageManager: MessageManager<object> = new MessageManager<object>()
-  onPageShow() {
-    console.info('divider onPageShow')
-  
-    AppStorage.setOrCreate<Context>('context', this.getUIContext().getHostContext()!)
-    AppStorage.setOrCreate<object>('messageManager',  this.messageManager);
-
-    let callback: Callback<object> = (message: Message<object>) => {
-      console.error('message = ' + message.name + '--' + message.value)
-      if (message.name == 'progress_capsule_borderWidth_resource') {
-        this.progress_capsule_borderWidth_resource = message.value as Resource
-      }
-      if (message.name == 'progress_capsule_borderColor_resource') {
-        this.progress_capsule_borderColor_resource = message.value as Resource
-      }
-      if (message.name == 'progress_capsule_fontSize_resource') {
-        this.progress_capsule_fontSize_resource = message.value as Resource
-      }
-      if (message.name == 'progress_capsule_fontColor_resource') {
-        this.progress_capsule_fontColor_resource = message.value as Resource
-      }
-      if (message.name == 'progress_ring_strokeWidth_resource') {
-        this.progress_ring_strokeWidth_resource = message.value as Resource
-      }
-      if (message.name == 'progress_ring_color_linear_number') {
-        this.progress_ring_color_linear_number = message.value as LinearGradient
-      }
-      if (message.name == 'progress_ring_color_linear_string') {
-        this.progress_ring_color_linear_string = message.value as LinearGradient
-      }
-      if (message.name == 'progress_ring_color_linear_color') {
-        this.progress_ring_color_linear_color = message.value as LinearGradient
-      }
-      if (message.name == 'progress_ring_color_linear_resource') {
-        this.progress_ring_color_linear_resource = message.value as LinearGradient
-      }
-    }
-    this.messageManager.registerCallback(callback)
-  }
-
-  aboutToAppear() {
-    let stateChangeEvent: events_emitter.InnerEvent = {
-      eventId: 183,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
-  }
+  @StoragePropRef('progress_ring_color_linear_null') progress_ring_color_linear_null: LinearGradient|undefined|Color|int|String|Resource = undefined
+  @StoragePropRef('progress_ring_color_linear_undefined') progress_ring_color_linear_undefined: LinearGradient | undefined = undefined
+  @StoragePropRef('progress_ring_enableScanEffect_boolean') progress_ring_enableScanEffect_boolean: boolean| undefined = false
+  @StoragePropRef('progress_ring_enableSmoothEffect_boolean') progress_ring_enableSmoothEffect_boolean: boolean| undefined = false
+  @StoragePropRef('progress_linear_enableScanEffect_boolean') progress_linear_enableScanEffect_boolean: boolean| undefined = false
+  @StoragePropRef('progress_linear_enableSmoothEffect_boolean') progress_linear_enableSmoothEffect_boolean: boolean| undefined = false
+  @StoragePropRef('progress_scaleRing_enableSmoothEffect_boolean') progress_scaleRing_enableSmoothEffect_boolean: boolean| undefined = false
+  @StoragePropRef('progress_eclipse_enableSmoothEffect_boolean') progress_eclipse_enableSmoothEffect_boolean: boolean| undefined = false
 
   build() {
     Column() {
@@ -219,6 +116,7 @@ struct progressSecTest {
             style: this.progress_capsule_fontStyle_fontStyle
           },
           fontColor: this.progress_capsule_fontColor_number,
+          content: this.progress_capsule_content_string,
           enableScanEffect: this.progress_capsule_enableScanEffect_boolean,
           showDefaultPercentage: this.progress_capsule_showDefaultPercentage_boolean,
           enableSmoothEffect: this.progress_capsule_enableSmoothEffect_boolean
@@ -235,6 +133,7 @@ struct progressSecTest {
             style: this.progress_capsule_fontStyle_fontStyle
           },
           fontColor: this.progress_capsule_fontColor_string,
+          content: this.progress_capsule_content_string,
           enableScanEffect: this.progress_capsule_enableScanEffect_boolean,
           showDefaultPercentage: this.progress_capsule_showDefaultPercentage_boolean
         } as CapsuleStyleOptions)
@@ -250,6 +149,7 @@ struct progressSecTest {
             style: this.progress_capsule_fontStyle_fontStyle
           },
           fontColor: this.progress_capsule_fontColor_color,
+          content: this.progress_capsule_content_string,
           enableScanEffect: this.progress_capsule_enableScanEffect_boolean,
           showDefaultPercentage: this.progress_capsule_showDefaultPercentage_boolean
         } as CapsuleStyleOptions)
@@ -265,6 +165,7 @@ struct progressSecTest {
             style: this.progress_capsule_fontStyle_fontStyle
           },
           fontColor: this.progress_capsule_fontColor_resource,
+          content: this.progress_capsule_content_string,
           enableScanEffect: this.progress_capsule_enableScanEffect_boolean,
           showDefaultPercentage: this.progress_capsule_showDefaultPercentage_boolean
         } as CapsuleStyleOptions)
@@ -280,6 +181,7 @@ struct progressSecTest {
             style: this.progress_capsule_fontStyle_fontStyle
           },
           fontColor: $r('sys.color.ohos_id_color_connected'),
+          content: this.progress_capsule_content_string,
           enableScanEffect: this.progress_capsule_enableScanEffect_boolean,
           showDefaultPercentage: this.progress_capsule_showDefaultPercentage_boolean
         } as CapsuleStyleOptions)
@@ -385,6 +287,7 @@ struct progressSecTest {
           shadow: this.progress_ring_shadow_bool,
           status: this.progress_ring_status_progressStatus
         } as RingStyleOptions)
+        .color(this.progress_ring_color_linear_null)
 
       Progress({ value: 60, total: 100, type: ProgressType.Ring })
         .key('progress_ring_linear_undefined')
@@ -424,6 +327,7 @@ struct progressSecTest {
 
       Progress({ value: 60, total: 100, type: ProgressType.Linear })
         .key('progress_linear_color_linear_null')
+        .color(this.progress_ring_color_linear_null)
 
       Progress({ value: 60, total: 100, type: ProgressType.Linear })
         .key('progress_linear_color_linear_undefined')
@@ -457,6 +361,7 @@ struct progressSecTest {
 
       Progress({ value: 60, total: 100, type: ProgressType.Eclipse })
         .key('progress_eclipse_color_linear_null')
+        .color(this.progress_ring_color_linear_null)
 
       Progress({ value: 60, total: 100, type: ProgressType.Eclipse })
         .key('progress_eclipse_color_linear_undefined')
@@ -490,6 +395,7 @@ struct progressSecTest {
 
       Progress({ value: 60, total: 100, type: ProgressType.ScaleRing })
         .key('progress_scaleRing_color_linear_null')
+        .color(this.progress_ring_color_linear_null)
 
       Progress({ value: 60, total: 100, type: ProgressType.ScaleRing })
         .key('progress_scaleRing_color_linear_undefined')
@@ -520,6 +426,7 @@ struct progressSecTest {
 
       Progress({ value: 60, total: 100, type: ProgressType.Capsule })
         .key('progress_capsule_color_linear_null')
+        .color(this.progress_ring_color_linear_null)
 
       Progress({ value: 60, total: 100, type: ProgressType.Capsule })
         .key('progress_capsule_color_linear_undefined')

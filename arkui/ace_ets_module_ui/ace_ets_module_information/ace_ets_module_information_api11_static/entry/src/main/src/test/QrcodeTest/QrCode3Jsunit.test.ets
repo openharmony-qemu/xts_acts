@@ -21,15 +21,18 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 import events_emitter from '@ohos.events.emitter';
 import bundle from '@ohos.bundle.bundleManager';
+import { ResourceColor } from '@ohos.arkui.component'
 
+// import config from '@ohos.accessibility.config';
 import accessibility from '@ohos.accessibility';
+// const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.arkui.ace.information/MainAbility';
 
 export default function qrCodeJsunit() {
@@ -41,7 +44,11 @@ export default function qrCodeJsunit() {
       await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
-  
+      // config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
+      //   console.info(`enable success`);
+      // }).catch((err: object) => {
+      //   console.error(`failed to enable, ${err}`);
+      // })
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Qrcode/QrCode3',
       }
@@ -52,7 +59,6 @@ export default function qrCodeJsunit() {
         console.info("get QrCode state success " + JSON.stringify(pages));
         if (!("QrCode3" == pages.name)) {
           console.info("get QrCode pages success " + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -94,17 +100,8 @@ it('test_qrCode_static_002', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info('[test_qrCode_002] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "color": "#FFB6C1"
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 170,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[test_qrCode_002] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        AppStorage.setOrCreate<ResourceColor>('qrCodeColor',"#FFB6C1")
+
       } catch (err) {
         console.log("[test_qrCode_002] change component color error: " + (err as BusinessError).message);
       }
@@ -126,17 +123,8 @@ it('test_qrCode_static_003', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info('[test_qrCode_003] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "backgroundColor": "#FFB6C1"
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 171,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[test_qrCode_003] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        AppStorage.setOrCreate<string>('qrCodeBackgroundColor',"#FFB6C1")
+
       } catch (err) {
         console.log("[test_qrCode_003] change component color error: " + (err as BusinessError).message);
       }
@@ -158,17 +146,8 @@ it('test_qrCode_static_004', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info('[test_qrCode_004] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "color": 'a'
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 1023,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[test_qrCode_004] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        AppStorage.setOrCreate<ResourceColor>('qrCodeColor',"a")
+
       } catch (err) {
         console.log("[test_qrCode_004] change component color error: " + (err as BusinessError).message);
       }
@@ -196,17 +175,8 @@ it('test_qrCode_static_005', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info('[test_qrCode_005] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "color": 332
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 1024,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[test_qrCode_005] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        AppStorage.setOrCreate<ResourceColor>('qrCodeColor',332)
+
       } catch (err) {
         console.log("[test_qrCode_005] change component color error: " + (err as BusinessError).message);
       }
@@ -227,17 +197,8 @@ it('test_qrCode_static_006', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info('[test_qrCode_006] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "backgroundColor": 'b'
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 1025,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[test_qrCode_006] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        AppStorage.setOrCreate<ResourceColor>('qrCodeBackgroundColor','b')
+
       } catch (err) {
         console.log("[test_qrCode_006] change component color error: " + (err as BusinessError).message);
       }
@@ -247,6 +208,7 @@ it('test_qrCode_static_006', Level.LEVEL0, async (done: () => void): Promise<voi
 
       console.info("[test_qrCode_006] component JSON.parse(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[test_qrCode_006] component objDefault is: " + JSON.stringify(JSON.parseJsonElement(strJsonDefault)));
+      // 非法入参默认初始值
       let targetVersion = bundle.getBundleInfoForSelfSync(bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT).targetVersion;
       if (targetVersion < 11) {
         expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('backgroundColor')).assertEqual('#FFFFFFFF');
@@ -267,17 +229,8 @@ it('test_qrCode_static_007', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info('[test_qrCode_007] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "backgroundColor": 333
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 1026,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[test_qrCode_007] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        AppStorage.setOrCreate<ResourceColor>('qrCodeBackgroundColor',333)
+
       } catch (err) {
         console.log("[test_qrCode_007] change component color error: " + (err as BusinessError).message);
       }

@@ -13,49 +13,17 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { Entry, Component, Column, Flex, FlexDirection, FlexOptions, BadgeParamWithNumber, BadgeParamWithString, ItemAlign, FlexAlign, Text, FontWeight, Badge, BadgePosition, Button, ClickEvent, Color, TextAlign, Margin} from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { Entry, Component, Column, Flex, FlexDirection, FlexOptions, BadgeParamWithNumber, BadgeParamWithString, ItemAlign,ResourceStr,
+  FlexAlign, Text, FontWeight, Badge, BadgePosition, Button, ClickEvent, Color, ResourceColor,Resource,TextAlign, Margin} from '@ohos.arkui.component'
+import { State, StoragePropRef, AppStorage } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
 struct Badge3Example {
   @State counts: int = 1;
-  @State message: string = 'new';
-  @State fontSizeValue: double = 20;
-  @State colorValue: Color = Color.Red;
-  private stateChangCallBack:(eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
-    if (eventData != null) {
-      console.info("Badge page state change called:" + JSON.stringify(eventData));
-      if (((eventData.data) as ESObject).getProperty('fontSizeValue') != null) {
-        this.fontSizeValue = ((eventData.data) as ESObject).getProperty('fontSizeValue').toNumber();
-      }
-      if (((eventData.data) as ESObject).getProperty('colorValue') != null) {
-        this.colorValue = ((eventData.data) as ESObject).getProperty('colorValue').toStaticObject() as Color;
-      }
-      if (((eventData.data) as ESObject).getProperty('message') != null) {
-        this.message = ((eventData.data) as ESObject).getProperty('message').toString();
-      }
-    }
-  }
-
-  onPageShow() {
-    console.info('Badge page show called');
-    let stateChangeEvent: events_emitter.InnerEvent = {
-      eventId: 63,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
-    let stateChangeEventOne: events_emitter.InnerEvent = {
-      eventId: 64,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventOne, this.stateChangCallBack);
-    let stateChangeEventTwo: events_emitter.InnerEvent = {
-      eventId: 65,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEventTwo, this.stateChangCallBack);
-  }
+  @StoragePropRef('message') message: string = 'new';
+  @StoragePropRef('fontSizeValue') fontSizeValue: undefined|number|string|Resource = 20 as number;
+  @StoragePropRef('colorValue') colorValue: ResourceColor | undefined = Color.Red;
 
   build() {
     Flex({ justifyContent: FlexAlign.SpaceAround } as FlexOptions) {
@@ -70,7 +38,7 @@ struct Badge3Example {
           })
           .width(200)
           .height(100)
-          .backgroundColor(0x317aff)
+          .backgroundColor(Color.White)
           .fontSize(20)
       }.width(100).height(50).key('badge')
 
@@ -85,7 +53,7 @@ struct Badge3Example {
           .lineHeight(37)
           .borderRadius(10)
           .textAlign(TextAlign.Center)
-          .backgroundColor(0xF3F4ED)
+          .backgroundColor(Color.White)
       }.width(80).height(50).key('badge2')
 
       Badge({
@@ -100,7 +68,7 @@ struct Badge3Example {
           .lineHeight(37)
           .borderRadius(10)
           .textAlign(TextAlign.Center)
-          .backgroundColor(0xF3F4ED)
+          .backgroundColor(Color.White)
       }.width(90).height(50)
 
     }.width('100%').margin({ top: 5 } as Margin)

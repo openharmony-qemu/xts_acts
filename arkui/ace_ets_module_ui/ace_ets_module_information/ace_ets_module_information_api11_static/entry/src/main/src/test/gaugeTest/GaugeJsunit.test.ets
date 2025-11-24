@@ -23,7 +23,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
@@ -53,7 +53,6 @@ export default function gaugeJsunit() {
         console.info("get gauge state success " + JSON.stringify(pages));
         if (!("gauge" == pages.name)) {
           console.info("get gauge state success " + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -78,7 +77,7 @@ it('testGauge_static_001', Level.LEVEL0, async (done: () => void): Promise<void>
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('gauge');
       console.info("[testGauge001] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('Gauge');
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Gauge');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('strokeWidth')).assertEqual('20.00vp');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('width')).assertEqual('200.00vp');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('height')).assertEqual('200.00vp');
@@ -96,17 +95,7 @@ it('testGauge_static_002', Level.LEVEL0, async (done: () => void): Promise<void>
       console.info('[testGauge002] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "gaugeValue": 10
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 102,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testGauge002] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        AppStorage.setOrCreate<number>('gaugeValue',10)
       } catch (err) {
         console.log("[testGauge002] change component data error: " + (err as BusinessError).message);
       }
@@ -128,17 +117,8 @@ it('testGauge_static_003', Level.LEVEL0, async (done: () => void): Promise<void>
       console.info('[testGauge003] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "strokeWidthValue": "30",
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 102,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testGauge003] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        AppStorage.setOrCreate<string>('strokeWidthValue',"30")
+
       } catch (err) {
         console.log("[testGauge003] change component data error: " + (err as BusinessError).message);
       }
@@ -160,17 +140,8 @@ it('testGauge_static_004', Level.LEVEL0, async (done: () => void): Promise<void>
       console.info('[testGauge004] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "startAngleValue": 200
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 102,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testGauge004] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        AppStorage.setOrCreate<number>('startAngleValue',200)
+
       } catch (err) {
         console.log("[testGauge004] change component data error: " + (err as BusinessError).message);
       }
@@ -192,17 +163,8 @@ it('testGauge_static_005', Level.LEVEL0, async (done: () => void): Promise<void>
       console.info('[testGauge005] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "endAngleValue": 200
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 102,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testGauge005] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        AppStorage.setOrCreate<number>('endAngleValue',200)
+
       } catch (err) {
         console.log("[testGauge005] change component data error: " + (err as BusinessError).message);
       }
@@ -224,17 +186,8 @@ it('testGauge_static_006', Level.LEVEL0, async (done: () => void): Promise<void>
       console.info('[testGauge006] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "colorValues": JSON.stringify([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1]])
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 103,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testGauge006] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        AppStorage.setOrCreate<string>('colorValues',JSON.stringify([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1]]))
+
       } catch (err) {
         expect().assertFail();
         console.log("[testGauge006] change component data error: " + (err as BusinessError).message);
@@ -252,17 +205,8 @@ it('testGauge_static_007', Level.LEVEL0, async (done: () => void): Promise<void>
       console.info('[testGauge007] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "gaugeValue": -10
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 904,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testGauge007] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        AppStorage.setOrCreate<number>('gaugeValue',-10)
+
       } catch (err) {
         console.log("[testGauge007] change component data error: " + (err as BusinessError).message);
       }
@@ -284,17 +228,8 @@ it('testGauge_static_008', Level.LEVEL0, async (done: () => void): Promise<void>
       console.info('[testGauge008] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "strokeWidthValue": "-30",
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 904,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testGauge008] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        AppStorage.setOrCreate<string>('strokeWidthValue','-30')
+
       } catch (err) {
         console.log("[testGauge008] change component data error: " + (err as BusinessError).message);
       }
@@ -316,17 +251,8 @@ it('testGauge_static_009', Level.LEVEL0, async (done: () => void): Promise<void>
       console.info('[testGauge009] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "startAngleValue": -10
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 905,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testGauge009] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        AppStorage.setOrCreate<number>('startAngleValue',-10)
+
       } catch (err) {
         console.log("[testGauge009] change component data error: " + (err as BusinessError).message);
       }
@@ -348,17 +274,8 @@ it('testGauge_static_010', Level.LEVEL0, async (done: () => void): Promise<void>
       console.info('[testGauge010] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "endAngleValue": -10
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 906,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testGauge010] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        AppStorage.setOrCreate<number>('endAngleValue',-10)
+
       } catch (err) {
         console.log("[testGauge010] change component data error: " + (err as BusinessError).message);
       }
@@ -379,17 +296,8 @@ it('testGauge_static_011', Level.LEVEL0, async (done: () => void): Promise<void>
       console.info('[testGauge011] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "strokeWidthValue": "121111111"
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 905,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testGauge011] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        AppStorage.setOrCreate<string>('strokeWidthValue',"121111111")
+
       } catch (err) {
         console.log("[testGauge011] change component data error: " + (err as BusinessError).message);
       }

@@ -76,8 +76,8 @@ it('TextClockNode_static_0100', Level.LEVEL2, async (done: () => void): Promise<
         let tagName = 'TextClockNode0100';
         console.info('[' + tagName + '] START============================');
         let strJsonNew = inspector.getInspectorByKey('key_ TextClock_001');
-        console.info('[' + tagName + '] Search is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$type')));
-        expect(JSON.parseJsonElement(strJsonNew).getElement('$type')).assertEqual('TextClock');
+        console.info('[' + tagName + '] Search is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew).getString('$type')));
+        expect(JSON.parseJsonElement(strJsonNew).getString('$type')).assertEqual('TextClock');
         console.info('[' + tagName + '] END ===========================');
         done();
       });

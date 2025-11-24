@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -51,7 +51,6 @@ export default function TextTimerTextShadowTest() {
         console.info('get TextTimerTextShadowTest state pages:' + JSON.stringify(pages));
         if (!('TextTimerTextShadow' == pages.name)) {
           console.info('get TextTimerTextShadowTest pages.name:' + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
           await Utils.sleep(2500);
         }
@@ -72,7 +71,6 @@ it('TextTimerTextShadowTest_static_001', Level.LEVEL0, async (done: () => void):
       await Utils.sleep(1000);
       let strJson = inspector.getInspectorByKey('textTimer1');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('TextTimerTextShadowTest_001 component obj is: ' + obj.getElement('$attrs').getString('textShadow'));
       expect(obj.getElement('$attrs').getElement('textShadow').getString('radius')).assertEqual('10.000000');
       expect(obj.getElement('$attrs').getElement('textShadow').getString('color')).assertEqual('#FFFF0000');
       expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetX')).assertEqual('10.000000');
@@ -92,7 +90,6 @@ it('TextTimerTextShadowTest_static_002', Level.LEVEL0, async (done: () => void):
       await Utils.sleep(1000);
       let strJson = inspector.getInspectorByKey('textTimer2');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('TextTimerTextShadowTest_002 component obj is: ' + obj.getElement('$attrs').getString('textShadow'));
       expect(obj.getElement('$attrs').getElement('textShadow').getString('radius')).assertEqual('0.000000');
       expect(obj.getElement('$attrs').getElement('textShadow').getString('color')).assertEqual('#FF000000');
       expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetX')).assertEqual('-10.000000');
@@ -112,7 +109,6 @@ it('TextTimerTextShadowTest_static_003', Level.LEVEL0, async (done: () => void):
       await Utils.sleep(1000);
       let strJson = inspector.getInspectorByKey('textTimer3');
       let obj = JSON.parseJsonElement(strJson);
-      console.info('TextTimerTextShadowTest_003 component obj is: ' + obj.getElement('$attrs').getString('textShadow'));
       expect(obj.getElement('$attrs').getElement('textShadow').getString('radius')).assertEqual('50.000000');
       expect(obj.getElement('$attrs').getElement('textShadow').getString('color')).assertEqual('#FFFF00FF');
       expect(obj.getElement('$attrs').getElement('textShadow').getString('offsetX')).assertEqual('0.000000');

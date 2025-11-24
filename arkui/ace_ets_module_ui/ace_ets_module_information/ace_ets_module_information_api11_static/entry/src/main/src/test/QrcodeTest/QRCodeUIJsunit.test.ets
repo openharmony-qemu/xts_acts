@@ -27,7 +27,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
 import bundle from '@ohos.bundle.bundleManager';
-import { Color } from '@ohos.arkui.component'
+import { Color,ResourceColor } from '@ohos.arkui.component'
 
 import accessibility from '@ohos.accessibility';
 const BUNDLE_NAME = 'com.arkui.ace.information/MainAbility';
@@ -52,7 +52,6 @@ export default function QRCodeUIJsunit() {
         console.info("get QRCodeUIJsunit state pages: " + JSON.stringify(pages));
         if (!("QRCodePage" == pages.name)) {
           console.info("get QRCodeUIJsunit state pages.name: " + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -61,7 +60,6 @@ export default function QRCodeUIJsunit() {
         expect().assertFail();
       }
     });
-
     /*
      * @tc.number   QRCodeUIJsunit_static_0100
      * @tc.name     QRCodeUIJsunit_static_0100
@@ -69,7 +67,7 @@ export default function QRCodeUIJsunit() {
      * @tc.level    Level.LEVEL0
      */
 it('QRCodeUIJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      
+      // Get the information of the QRCode component
       console.info('[QRCodeUIJsunit_0100] START');
       let strJson = inspector.getInspectorByKey('qr');
       let strJsonDefault = inspector.getInspectorByKey('qrDefault');
@@ -98,11 +96,11 @@ it('QRCodeUIJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise
      * @tc.level    Level.LEVEL0
      */
 it('QRCodeUIJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      
+      // Modify the color of the QRCode component
       console.info('[QRCodeUIJsunit_0200] START');
-      const message2:MessageManager<Color> = AppStorage.get<MessageManager<Color>>("messageManager")!
-      message2.notify({name:'QRCodeColor', value:Color.Yellow})
+  AppStorage.setOrCreate<Color>('QRCodeColor',Color.Yellow)
       await CommonFunc.sleep(2000);
+      // Get the color of the QRCode component
       let strJson = inspector.getInspectorByKey('qr1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[QRCodeUIJsunit_0200] component obj is: " + JSON.stringify(obj));
@@ -118,11 +116,11 @@ it('QRCodeUIJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise
      * @tc.level    Level.LEVEL0
      */
 it('QRCodeUIJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      
+      // Modify the backgroundColor of the QRCode component
       console.info('[QRCodeUIJsunit_0300] START');
-      const message2:MessageManager<Color> = AppStorage.get<MessageManager<Color>>("messageManager")!
-      message2.notify({name:'backgroundColor', value:Color.Green})
+  AppStorage.setOrCreate<Color>('backColor',Color.Green)
       await CommonFunc.sleep(1000);
+      // Get the backgroundColor of the QRCode component
       let strJson = inspector.getInspectorByKey('qr2');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[QRCodeUIJsunit_0300] component obj is: " + JSON.stringify(obj));
@@ -138,10 +136,11 @@ it('QRCodeUIJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise
      * @tc.level    Level.LEVEL0
      */
 it('QRCodeUIJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      // Modify the value of the QRCode component
       console.info('[QRCodeUIJsunit_0400] START');
-      const message2:MessageManager<string> = AppStorage.get<MessageManager<string>>("messageManager")!
-      message2.notify({name:'QRCodeValue', value:'myTest'})
+  AppStorage.setOrCreate<string>('QRvalue','myTest')
       await CommonFunc.sleep(2000);
+      // Get the value of the QRCode component
       let strJson = inspector.getInspectorByKey('qr1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[QRCodeUIJsunit_0400] component obj is: " + JSON.stringify(obj));
@@ -152,26 +151,55 @@ it('QRCodeUIJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise
     });
 
     /*
-     * @tc.number   QRCodeUIJsunit_static_0500
-     * @tc.name     QRCodeUIJsunit_static_0500
-     * @tc.desc     QRCodeUIJsunit_static_0500
+     * @tc.number   QRCodeUIJsunit_static_0600
+     * @tc.name     QRCodeUIJsunit_static_0600
+     * @tc.desc     QRCodeUIJsunit_static_0600
      * @tc.level    Level.LEVEL0
      */
-it('QRCodeUIJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('QRCodeUIJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+  await CommonFunc.sleep(2000);
+      // Verify that component QRCode only supports click events
+      console.info('[QRCodeUIJsunit_0600] START');
+      let driver = Driver.create()
+      let qrComponent = await driver.findComponent(ON.id('qr'));
+      await CommonFunc.sleep(1000);
+      await (qrComponent?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
+
+  let strJson = inspector.getInspectorByKey('text');
+  await CommonFunc.sleep(1000);
+  let obj = JSON.parseJsonElement(strJson);
+      await CommonFunc.sleep(1000);
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('click succ');
+      console.info('[QRCodeUIJsunit_0600] END');
+      done();
+    });
+    /*
+        * @tc.number   QRCodeUIJsunit_static_0500
+        * @tc.name     QRCodeUIJsunit_static_0500
+        * @tc.desc     QRCodeUIJsunit_static_0500
+        * @tc.level    Level.LEVEL0
+        */
+    it('QRCodeUIJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await CommonFunc.sleep(2000);
+      // Illegal modification of the QRCode component value
       console.info('[QRCodeUIJsunit_0500] START');
-      const message:MessageManager<int> = AppStorage.get<MessageManager<int>>("messageManager")!
-      message.notify({name:'QRCodeColor', value:1})
-      message.notify({name:'QRCodeColor', value:-10})
+      AppStorage.setOrCreate<int>('QRCodeColor',1)
 
       await CommonFunc.sleep(1000);
+      AppStorage.setOrCreate<string>('QRvalue','-10')
+
+      await CommonFunc.sleep(1000);
+      // Get the color and value of the QRCode component
       let strJson = inspector.getInspectorByKey('qr1');
+      await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[QRCodeUIJsunit_0500] component obj is: " + JSON.stringify(obj));
+      console.info("[QRCodeUIJsunit_0500] component obj is: " + strJson);
       expect(obj.getElement('$attrs').getString('color')).assertEqual('#FF000001');
       expect(obj.getElement('$attrs').getString('value')).assertEqual('-10');
 
-      const message2:MessageManager<string> = AppStorage.get<MessageManager<string>>("messageManager")!
-      message2.notify({name:'backgroundColor', value:'test'})
+      // Get the backgroundColor of the QRCode component
+      AppStorage.setOrCreate<string>('backColor','test')
       await CommonFunc.sleep(2000);
       let strJson1 = inspector.getInspectorByKey('qr2');
       let strJsonDefault = inspector.getInspectorByKey('qrDefault');
@@ -186,28 +214,6 @@ it('QRCodeUIJsunit_static_0500', Level.LEVEL0, async (done: () => void): Promise
         expect(obj1.getElement('$attrs').getString('backgroundColor')).assertEqual(objDefault.getElement('$attrs').getString('backgroundColor'));
       }
       console.info('[QRCodeUIJsunit_0500] END');
-      done();
-    });
-
-    /*
-     * @tc.number   QRCodeUIJsunit_static_0600
-     * @tc.name     QRCodeUIJsunit_static_0600
-     * @tc.desc     QRCodeUIJsunit_static_0600
-     * @tc.level    Level.LEVEL0
-     */
-it('QRCodeUIJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[QRCodeUIJsunit_0600] START');
-      let driver = Driver.create()
-      let qrComponent = await driver.findComponent(ON.text('qr'));
-      await CommonFunc.sleep(1000);
-      await (qrComponent?.click() as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let textComponent = await driver.findComponent(ON.text('text'));
-      await CommonFunc.sleep(1000);
-      let text = await (textComponent?.getText() as Promise<string>);
-      await CommonFunc.sleep(1000);
-      expect(text).assertEqual('click succ');
-      console.info('[QRCodeUIJsunit_0600] END');
       done();
     });
   })

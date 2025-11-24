@@ -14,57 +14,27 @@
  */
 import events_emitter from '@ohos.events.emitter'
 import {Entry, Component, CopyOptions, SearchController, CaretOffset, FontStyle, Font, Column, Text, Search, SearchOptions, ClickEvent, Button, Color } from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { State, StoragePropRef, AppStorage } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
 struct SearchExample {
   @State changevalue: string= ''
   @State submitvalue: string= ''
-  @State textFont:Font = {
+  @StoragePropRef('textFont') textFont:Font = {
           size: 10,
           weight: 10,
           family: 'serif', 
           style: FontStyle.Normal
         } as Font
-  @State searchButton:string = "10"
-  @State maxLength: int = 19
-  @State copyOption:CopyOptions = CopyOptions.LocalDevice
+  @StoragePropRef('searchButton') searchButton:string = "10"
+  @StoragePropRef('maxLength') maxLength: int = 19
+  @StoragePropRef('copyOption') copyOption:CopyOptions = CopyOptions.LocalDevice
   controller: SearchController= new SearchController()
   controller2: SearchController= new SearchController()
-  @State caretIndex: undefined | int = 9999
-  @State text: string = ''
-  @State positionInfo: CaretOffset | undefined = { index: 9999, x: 0, y: 0 } as CaretOffset
-
-  private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
-    console.info("search page state change called:" + JSON.stringify(eventData));
-    if (eventData != null) {
-      if (((eventData.data) as ESObject ).getProperty('textFont') != null) {
-        this.textFont = ((eventData.data) as ESObject ).getProperty('textFont').toStaticObject() as Font;
-      }
-      if (((eventData.data) as ESObject ).getProperty('searchButton') != null) {
-        this.searchButton = ((eventData.data) as ESObject ).getProperty('searchButton').toString();
-      }
-      if (((eventData.data) as ESObject ).getProperty('text') != null) {
-        this.text = ((eventData.data) as ESObject ).getProperty('text').toString();
-      }
-      if (((eventData.data) as ESObject ).getProperty('maxLength') != null) {
-        this.maxLength = Double.toInt(((eventData.data) as ESObject ).getProperty('maxLength').toNumber());
-      }
-      if (((eventData.data) as ESObject ).getProperty('copyOption') != null) {
-        this.copyOption = ((eventData.data) as ESObject ).getProperty('copyOption').toStaticObject() as CopyOptions;
-      }
-    }
-  }
-
-  onPageShow() {
-    console.info('search page show called');
-    let stateChangeEvent: events_emitter.InnerEvent = {
-      eventId: 190,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
-  }
+  @State caretIndex : number = 9999
+  @StoragePropRef('searchText') searchText: string = ''
+  @State positionInfo: CaretOffset = { index: 9999, x: 0, y: 0 } as CaretOffset
 
   build() {
     Column() {
@@ -91,7 +61,7 @@ struct SearchExample {
           this.changevalue = value
         })
 
-      Search({ value: this.text, placeholder: 'input content', controller: this.controller2 } as SearchOptions)
+      Search({ value: this.searchText, placeholder: 'input content', controller: this.controller2 } as SearchOptions)
         .textFont(this.textFont)
         .key('mySearch')
         .placeholderColor(Color.Red)
@@ -107,11 +77,11 @@ struct SearchExample {
         .backgroundColor('#00FF00')
         .margin(15)
         .onClick((e: ClickEvent) => {
-          console.info('text length:' + this.text.length)
-          this.controller2.caretPosition(this.text.length)
-          this.positionInfo = this.controller2.getCaretOffset()
-          console.info("index:" + this.positionInfo?.index)
-          this.caretIndex = this.positionInfo?.index
+          console.info('text length:' + this.searchText.length)
+          this.controller2.caretPosition(this.searchText.length)
+          this.positionInfo = this.controller2.getCaretOffset() as CaretOffset
+          console.info("index1111111:" + this.positionInfo.index)
+          this.caretIndex = this.positionInfo.index
         })
         .key('caretOffsetBtn')
 

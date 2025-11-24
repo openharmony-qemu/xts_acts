@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -48,7 +48,6 @@ export default function ProgressCapsuleRadius() {
         console.info("get ProgressCapsuleRadius state pages:" + JSON.stringify(pages));
         if (!("ProgressCapsuleRadius" === pages.name)) {
           console.info("get  Context pages.name:" + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl({url:"MainAbility/pages/progress/ProgressCapsuleRadius"})
           await CommonFunc.sleep(2000);
         }
@@ -78,7 +77,6 @@ it('testProgressCapsuleRadius_static_0001', Level.LEVEL2, async (done: () => voi
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testProgressCapsuleRadius0001] component width strJson:" + JSON.stringify(strJson));
       expect(obj.getElement('$attrs').getElement('capsuleStyle').getString('borderRadius')).assertEqual("10.00px");
-      console.info("[testProgressCapsuleRadius0001] borderRadius value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderRadius'));
       done();
     });
 
@@ -98,7 +96,6 @@ it('testProgressCapsuleRadius_static_0002', Level.LEVEL2, async (done: () => voi
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testProgressCapsuleRadius0002] component width strJson:" + JSON.stringify(strJson));
       expect(obj.getElement('$attrs').getElement('capsuleStyle').getString('borderRadius')).assertEqual("20.00px");
-      console.info("[testProgressCapsuleRadius0002] borderRadius value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderRadius'));
       done();
     });
 
@@ -118,7 +115,6 @@ it('testProgressCapsuleRadius_static_0003', Level.LEVEL2, async (done: () => voi
       let obj = JSON.parseJsonElement(strJson);
       console.info("[testProgressCapsuleRadius0003] component width strJson:" + JSON.stringify(strJson));
       expect(obj.getElement('$attrs').getElement('capsuleStyle').getString('borderRadius')).assertEqual("20.00px");
-      console.info("[testProgressCapsuleRadius0003] borderRadius value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('borderRadius'));
       done();
     });
   })

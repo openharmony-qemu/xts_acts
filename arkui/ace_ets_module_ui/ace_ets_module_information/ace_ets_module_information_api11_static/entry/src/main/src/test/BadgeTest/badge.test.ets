@@ -50,7 +50,6 @@ export default function badgeTest() {
         console.info("get badgeTest state success " + JSON.stringify(pages));
         if (!("BadgeIndex" == pages.name)) {
           console.info("get badgeTest state success " + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options)
         }
       } catch (err) {
@@ -90,7 +89,7 @@ it('ArkUX_Stage_Badge_FontWeight_static_0100', Level.LEVEL0, async (done: () => 
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_FontWeight_static_0200
      * @tc.name     ArkUX_Stage_Badge_FontWeight_static_0200
@@ -130,23 +129,17 @@ it('ArkUX_Stage_Badge_FontWeight_static_0200', Level.LEVEL0, async (done: () => 
 it('ArkUX_Stage_Badge_FontWeight_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUX_Stage_Badge_FontWeight_0300 START');
       setTimeout(() => {
-        try {
-          let strJson = inspector.getInspectorByKey('ArkUX_Stage_Badge_FontWeight_0300');
-          console.info('ArkUX_Stage_Badge_FontWeight_0300 START  :' + JSON.stringify(strJson));
-          let obj = JSON.parseJsonElement(strJson);
-          console.info("ArkUX_Stage_Badge_FontWeight_0300 component obj is: " + JSON.stringify(obj));
-          console.info("ArkUX_Stage_Badge_FontWeight_0300 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attrs')));
-          console.info("ArkUX_Stage_Badge_FontWeight_0300 component obj.$attrs.style is: " +
-          JSON.stringify(obj.getElement('$attrs').getString('style')));
-          let style = JSON.parseJsonElement(obj.getElement('$attrs').getString('style'));
-          expect(style.getString('fontWeight').replace(new RegExp("[^\\d]", "g") ,"")).assertEqual("100");
-          console.info('ArkUX_Stage_Badge_FontWeight_0300 END ');
-          done();
-        } catch (err) {
-          expect().assertFail();
-          console.info('ArkUX_Stage_Badge_FontWeight_0300 ERR  ' + JSON.stringify(err));
-          done();
-        }
+        let strJson = inspector.getInspectorByKey('ArkUX_Stage_Badge_FontWeight_0300');
+        console.info('ArkUX_Stage_Badge_FontWeight_0300 START  :' + JSON.stringify(strJson));
+        let obj = JSON.parseJsonElement(strJson);
+        console.info("ArkUX_Stage_Badge_FontWeight_0300 component obj is: " + JSON.stringify(obj));
+        console.info("ArkUX_Stage_Badge_FontWeight_0300 component obj.$attrs is: " + JSON.stringify(obj.getElement('$attrs')));
+        console.info("ArkUX_Stage_Badge_FontWeight_0300 component obj.$attrs.style is: " +
+        JSON.stringify(obj.getElement('$attrs').getString('style')));
+        let style = JSON.parseJsonElement(obj.getElement('$attrs').getString('style'));
+        expect(style.getString('fontWeight').replace(new RegExp("[^\\d]", "g") ,"")).assertEqual("100");
+        console.info('ArkUX_Stage_Badge_FontWeight_0300 END ');
+        done();
       }, 500)
     });
 
@@ -180,7 +173,7 @@ it('ArkUX_Stage_Badge_FontWeight_static_0400', Level.LEVEL0, async (done: () => 
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_FontWeight_static_0500
      * @tc.name     ArkUX_Stage_Badge_FontWeight_static_0500
@@ -210,7 +203,7 @@ it('ArkUX_Stage_Badge_FontWeight_static_0500', Level.LEVEL0, async (done: () => 
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_FontWeight_static_0600
      * @tc.name     ArkUX_Stage_Badge_FontWeight_static_0600
@@ -240,7 +233,7 @@ it('ArkUX_Stage_Badge_FontWeight_static_0600', Level.LEVEL0, async (done: () => 
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_FontWeight_static_0700
      * @tc.name     ArkUX_Stage_Badge_FontWeight_static_0700
@@ -270,7 +263,7 @@ it('ArkUX_Stage_Badge_FontWeight_static_0700', Level.LEVEL0, async (done: () => 
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_FontWeight_static_0800
      * @tc.name     ArkUX_Stage_Badge_FontWeight_static_0800
@@ -300,7 +293,7 @@ it('ArkUX_Stage_Badge_FontWeight_static_0800', Level.LEVEL0, async (done: () => 
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_FontWeight_static_0900
      * @tc.name     ArkUX_Stage_Badge_FontWeight_static_0900
@@ -330,7 +323,7 @@ it('ArkUX_Stage_Badge_FontWeight_static_0900', Level.LEVEL0, async (done: () => 
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_FontWeight_static_1000
      * @tc.name     ArkUX_Stage_Badge_FontWeight_static_1000
@@ -360,7 +353,7 @@ it('ArkUX_Stage_Badge_FontWeight_static_1000', Level.LEVEL0, async (done: () => 
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_FontWeight_static_1100
      * @tc.name     ArkUX_Stage_Badge_FontWeight_static_1100
@@ -390,7 +383,7 @@ it('ArkUX_Stage_Badge_FontWeight_static_1100', Level.LEVEL0, async (done: () => 
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_FontWeight_static_1200
      * @tc.name     ArkUX_Stage_Badge_FontWeight_static_1200
@@ -420,7 +413,7 @@ it('ArkUX_Stage_Badge_FontWeight_static_1200', Level.LEVEL0, async (done: () => 
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_FontWeight_static_1300
      * @tc.name     ArkUX_Stage_Badge_FontWeight_static_1300
@@ -450,7 +443,7 @@ it('ArkUX_Stage_Badge_FontWeight_static_1300', Level.LEVEL0, async (done: () => 
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_FontWeight_static_1400
      * @tc.name     ArkUX_Stage_Badge_FontWeight_static_1400
@@ -480,7 +473,7 @@ it('ArkUX_Stage_Badge_FontWeight_static_1400', Level.LEVEL0, async (done: () => 
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_FontWeight_static_1500
      * @tc.name     ArkUX_Stage_Badge_FontWeight_static_1500
@@ -510,7 +503,7 @@ it('ArkUX_Stage_Badge_FontWeight_static_1500', Level.LEVEL0, async (done: () => 
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_FontWeight_static_1600
      * @tc.name     ArkUX_Stage_Badge_FontWeight_static_1600
@@ -540,7 +533,7 @@ it('ArkUX_Stage_Badge_FontWeight_static_1600', Level.LEVEL0, async (done: () => 
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_BorderColor_static_0100
      * @tc.name     ArkUX_Stage_Badge_BorderColor_static_0100
@@ -559,7 +552,7 @@ it('ArkUX_Stage_Badge_BorderColor_static_0100', Level.LEVEL0, async (done: () =>
           console.info("ArkUX_Stage_Badge_BorderColor_0100 component obj.$attrs.style is: " +
           JSON.stringify(obj.getElement('$attrs').getString('style')));
           let style = JSON.parseJsonElement(obj.getElement('$attrs').getString('style'));
-          expect(style.getString('borderColor')).assertEqual("#FF00FF00");
+          expect(style.getString('borderColor')).assertEqual("#FFFFFFFF");
           console.info('ArkUX_Stage_Badge_BorderColor_0100 END ');
           done();
         } catch (err) {
@@ -570,7 +563,7 @@ it('ArkUX_Stage_Badge_BorderColor_static_0100', Level.LEVEL0, async (done: () =>
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_BorderColor_static_0200
      * @tc.name     ArkUX_Stage_Badge_BorderColor_static_0200
@@ -600,7 +593,7 @@ it('ArkUX_Stage_Badge_BorderColor_static_0200', Level.LEVEL0, async (done: () =>
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_BorderColor_static_0300
      * @tc.name     ArkUX_Stage_Badge_BorderColor_static_0300
@@ -630,7 +623,7 @@ it('ArkUX_Stage_Badge_BorderColor_static_0300', Level.LEVEL0, async (done: () =>
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_BorderColor_static_0400
      * @tc.name     ArkUX_Stage_Badge_BorderColor_static_0400
@@ -660,7 +653,7 @@ it('ArkUX_Stage_Badge_BorderColor_static_0400', Level.LEVEL0, async (done: () =>
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_BorderColor_static_0500
      * @tc.name     ArkUX_Stage_Badge_BorderColor_static_0500
@@ -690,7 +683,7 @@ it('ArkUX_Stage_Badge_BorderColor_static_0500', Level.LEVEL0, async (done: () =>
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_BorderColor_static_0600
      * @tc.name     ArkUX_Stage_Badge_BorderColor_static_0600
@@ -720,7 +713,7 @@ it('ArkUX_Stage_Badge_BorderColor_static_0600', Level.LEVEL0, async (done: () =>
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_BorderColor_static_0700
      * @tc.name     ArkUX_Stage_Badge_BorderColor_static_0700
@@ -750,7 +743,7 @@ it('ArkUX_Stage_Badge_BorderColor_static_0700', Level.LEVEL0, async (done: () =>
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_BorderColor_static_0800
      * @tc.name     ArkUX_Stage_Badge_BorderColor_static_0800
@@ -780,7 +773,7 @@ it('ArkUX_Stage_Badge_BorderColor_static_0800', Level.LEVEL0, async (done: () =>
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_BorderColor_static_0900
      * @tc.name     ArkUX_Stage_Badge_BorderColor_static_0900
@@ -810,7 +803,7 @@ it('ArkUX_Stage_Badge_BorderColor_static_0900', Level.LEVEL0, async (done: () =>
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_BorderColor_static_1000
      * @tc.name     ArkUX_Stage_Badge_BorderColor_static_1000
@@ -840,7 +833,7 @@ it('ArkUX_Stage_Badge_BorderColor_static_1000', Level.LEVEL0, async (done: () =>
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_BorderColor_static_1100
      * @tc.name     ArkUX_Stage_Badge_BorderColor_static_1100
@@ -870,7 +863,7 @@ it('ArkUX_Stage_Badge_BorderColor_static_1100', Level.LEVEL0, async (done: () =>
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_BorderColor_static_1200
      * @tc.name     ArkUX_Stage_Badge_BorderColor_static_1200
@@ -889,7 +882,7 @@ it('ArkUX_Stage_Badge_BorderColor_static_1200', Level.LEVEL0, async (done: () =>
           console.info("ArkUX_Stage_Badge_BorderColor_1200 component obj.$attrs.style is: " +
           JSON.stringify(obj.getElement('$attrs').getString('style')));
           let style = JSON.parseJsonElement(obj.getElement('$attrs').getString('style'));
-          expect(style.getString('borderColor')).assertEqual("#FF00FF00");
+          expect(style.getString('borderColor')).assertEqual("#FFFFFFFF");
           console.info('ArkUX_Stage_Badge_BorderColor_1200 END ');
           done();
         } catch (err) {
@@ -900,7 +893,7 @@ it('ArkUX_Stage_Badge_BorderColor_static_1200', Level.LEVEL0, async (done: () =>
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_BorderWidth_static_0100
      * @tc.name     ArkUX_Stage_Badge_BorderWidth_static_0100
@@ -930,7 +923,7 @@ it('ArkUX_Stage_Badge_BorderWidth_static_0100', Level.LEVEL0, async (done: () =>
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_BorderWidth_static_0200
      * @tc.name     ArkUX_Stage_Badge_BorderWidth_static_0200
@@ -960,7 +953,7 @@ it('ArkUX_Stage_Badge_BorderWidth_static_0200', Level.LEVEL0, async (done: () =>
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_BorderWidth_static_0300
      * @tc.name     ArkUX_Stage_Badge_BorderWidth_static_0300
@@ -990,7 +983,7 @@ it('ArkUX_Stage_Badge_BorderWidth_static_0300', Level.LEVEL0, async (done: () =>
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_BorderWidth_static_0400
      * @tc.name     ArkUX_Stage_Badge_BorderWidth_static_0400
@@ -1020,7 +1013,7 @@ it('ArkUX_Stage_Badge_BorderWidth_static_0400', Level.LEVEL0, async (done: () =>
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_BorderWidth_static_0500
      * @tc.name     ArkUX_Stage_Badge_BorderWidth_static_0500
@@ -1050,7 +1043,7 @@ it('ArkUX_Stage_Badge_BorderWidth_static_0500', Level.LEVEL0, async (done: () =>
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_BorderWidth_static_0600
      * @tc.name     ArkUX_Stage_Badge_BorderWidth_static_0600
@@ -1065,7 +1058,7 @@ it('ArkUX_Stage_Badge_BorderWidth_static_0600', Level.LEVEL0, async (done: () =>
           console.info('ArkUX_Stage_Badge_BorderWidth_0600 START  :' + JSON.stringify(strJson));
           let obj = JSON.parseJsonElement(strJson);
           console.info("ArkUX_Stage_Badge_BorderWidth_0600 component obj is: " + JSON.stringify(obj));
-          console.info("ArkUX_Stage_Badge_BorderWidth_0600 component obj.getElement('$attrs') is: " + JSON.stringify(obj.getElement('$attr')));
+          console.info("ArkUX_Stage_Badge_BorderWidth_0600 component obj.getElement('$attrs') is: " + JSON.stringify(obj.getElement('$attrs')));
           console.info("ArkUX_Stage_Badge_BorderWidth_0600 component obj.$attrs.style is: " +
           JSON.stringify(obj.getElement('$attrs').getString('style')));
           let style = JSON.parseJsonElement(obj.getElement('$attrs').getString('style'));
@@ -1080,7 +1073,7 @@ it('ArkUX_Stage_Badge_BorderWidth_static_0600', Level.LEVEL0, async (done: () =>
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_BorderWidth_static_0700
      * @tc.name     ArkUX_Stage_Badge_BorderWidth_static_0700
@@ -1110,7 +1103,7 @@ it('ArkUX_Stage_Badge_BorderWidth_static_0700', Level.LEVEL0, async (done: () =>
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_BorderWidth_static_0800
      * @tc.name     ArkUX_Stage_Badge_BorderWidth_static_0800
@@ -1140,7 +1133,7 @@ it('ArkUX_Stage_Badge_BorderWidth_static_0800', Level.LEVEL0, async (done: () =>
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_BorderWidth_static_0900
      * @tc.name     ArkUX_Stage_Badge_BorderWidth_static_0900
@@ -1170,7 +1163,7 @@ it('ArkUX_Stage_Badge_BorderWidth_static_0900', Level.LEVEL0, async (done: () =>
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_BorderWidth_static_1000
      * @tc.name     ArkUX_Stage_Badge_BorderWidth_static_1000
@@ -1200,7 +1193,7 @@ it('ArkUX_Stage_Badge_BorderWidth_static_1000', Level.LEVEL0, async (done: () =>
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_BorderWidth_static_1100
      * @tc.name     ArkUX_Stage_Badge_BorderWidth_static_1100
@@ -1230,7 +1223,7 @@ it('ArkUX_Stage_Badge_BorderWidth_static_1100', Level.LEVEL0, async (done: () =>
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_BorderWidth_static_1200
      * @tc.name     ArkUX_Stage_Badge_BorderWidth_static_1200
@@ -1262,7 +1255,7 @@ it('ArkUX_Stage_Badge_BorderWidth_static_1200', Level.LEVEL0, async (done: () =>
       }, 500)
     });
 
-    
+
     /*
      * @tc.number   ArkUX_Stage_Badge_BorderWidth_static_1300
      * @tc.name     ArkUX_Stage_Badge_BorderWidth_static_1300

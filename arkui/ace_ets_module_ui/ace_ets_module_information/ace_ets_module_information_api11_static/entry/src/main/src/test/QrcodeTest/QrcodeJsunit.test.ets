@@ -57,8 +57,9 @@ export default function qrcodeJsunit() {
         console.info("get Qrcode state success " + JSON.stringify(pages));
         if (!("Qrcode" == pages.name)) {
           console.info("get Qrcode state success " + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
+          // console.info("push Qrcode page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push Qrcode page error " + JSON.stringify(err));

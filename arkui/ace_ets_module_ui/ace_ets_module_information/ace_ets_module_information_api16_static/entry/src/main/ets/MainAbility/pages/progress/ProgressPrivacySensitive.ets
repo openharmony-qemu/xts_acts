@@ -25,7 +25,6 @@ import {
 @Entry
 @Component
 struct ProgressPrivacySensitive {
-  
   @State isSensitive: boolean | undefined = true
   build() {
     Row() {

@@ -34,7 +34,32 @@ class MyNodeController extends NodeController {
 
     let row = typeNode.createRowNode(uiContext)
     row.initialize().width('100%')
-   
+    let textTimer = typeNode.createTextTimerNode(uiContext)
+    textTimer.initialize(undefined)
+    textTimer.initialize(data)
+      .format('HH:mm:ss.SS')
+      .fontColor(Color.Red)
+      .width(150)
+      .key('key_ TextTimer_001')
+
+
+    let timerStart = typeNode.createButtonNode(uiContext)
+    let timerPause = typeNode.createButtonNode(uiContext)
+    let timerReset = typeNode.createButtonNode(uiContext)
+    timerStart.initialize('start').onClick((e:ClickEvent)=>{
+      timerController.start()
+    })
+    timerPause.initialize('pause').onClick((e:ClickEvent)=>{
+      timerController.pause()
+    })
+    timerReset.initialize('reset').onClick((e:ClickEvent)=>{
+      timerController.reset()
+    })
+
+    row.appendChild(textTimer)
+    row.appendChild(timerStart)
+    row.appendChild(timerPause)
+    row.appendChild(timerReset)
     col.appendChild(row)
     node.appendChild(col)
     return node

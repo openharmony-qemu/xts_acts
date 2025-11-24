@@ -14,15 +14,8 @@
 */
 import { Entry, Component, Column, Gauge, Margin, Flex, Text, Builder, $r, Color, FlexOptions, LinearGradient, GaugeShadowOptions, Resource,
   GaugeIndicatorOptions, ColumnOptions, FlexDirection, ItemAlign, FlexAlign, Alignment, TextAlign, TextOverflow, ResourceColor} from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { State,  AppStorage } from '@ohos.arkui.stateManagement'
 
-function fakeGaugeIndicatorOptions(val: GaugeIndicatorOptions | string | number): GaugeIndicatorOptions {
-  return val as GaugeIndicatorOptions;
-}
-
-function fakeGaugeShadowOptions(val: GaugeShadowOptions | string | number): GaugeShadowOptions {
-  return val as GaugeShadowOptions;
-}
 
 @Entry
 @Component
@@ -71,7 +64,7 @@ struct gaugeuxTest {
       .key("ArkUX_Gauge_Colors_InterfaceName_0200")
       .startAngle(210)
       .endAngle(150)
-      .colors(0xffffff)
+      .colors(Color.White)
       .strokeWidth(20)
       .width(200)
       .height(200)
@@ -281,7 +274,6 @@ struct gaugeuxTest {
                 .startAngle(210)
                 .endAngle(150)
                 .colors($r('app.color.gaugeColor1'))
-                .indicator(fakeGaugeIndicatorOptions(" "))
                 .indicator({ icon: $r('app.media.icon1'), space: 5 })
                 .strokeWidth(20)
                 .width(200)
@@ -292,7 +284,7 @@ struct gaugeuxTest {
                 .endAngle(150)
                 .colors($r('app.color.gaugeColor1'))
                 .indicator({ icon: 'resources/base/media/icon1.svg', space: 10 })
-                .indicator(fakeGaugeIndicatorOptions(" "))
+                .indicator({ icon: 'resources/base/media/icon1.svg', space: 8 })
                 .strokeWidth(20)
                 .width(200)
                 .height(200)
@@ -301,7 +293,7 @@ struct gaugeuxTest {
                 .startAngle(210)
                 .endAngle(150)
                 .colors($r('app.color.gaugeColor1'))
-                .indicator(fakeGaugeIndicatorOptions(1))
+                .indicator({ icon: 'resources/base/media/icon1.svg', space: 8 })
                 .strokeWidth(20)
                 .width(200)
                 .height(200)
@@ -310,7 +302,7 @@ struct gaugeuxTest {
                 .startAngle(210)
                 .endAngle(150)
                 .colors($r('app.color.gaugeColor1'))
-                .indicator(fakeGaugeIndicatorOptions(-1))
+                .indicator({ icon: 'resources/base/media/icon1.svg', space: 8 })
                 .strokeWidth(20)
                 .width(200)
                 .height(200)
@@ -319,7 +311,7 @@ struct gaugeuxTest {
                 .startAngle(210)
                 .endAngle(150)
                 .colors($r('app.color.gaugeColor1'))
-                .indicator(fakeGaugeIndicatorOptions(0))
+                .indicator({ icon: 'resources/base/media/icon1.svg', space: 8 })
                 .strokeWidth(20)
                 .width(200)
                 .height(200)
@@ -328,7 +320,7 @@ struct gaugeuxTest {
                 .startAngle(210)
                 .endAngle(150)
                 .colors($r('app.color.gaugeColor1'))
-                .indicator(fakeGaugeIndicatorOptions(" "))
+                .indicator({ icon: 'resources/base/media/icon1.svg', space: 8 })
                 .strokeWidth(20)
                 .width(200)
                 .height(200)
@@ -345,6 +337,7 @@ struct gaugeuxTest {
                 .startAngle(210)
                 .endAngle(150)
                 .colors($r('app.color.gaugeColor1'))
+                  .indicator(null)
                 .strokeWidth(20)
                 .width(200)
                 .height(200)
@@ -408,7 +401,7 @@ struct gaugeuxTest {
                 .startAngle(210)
                 .endAngle(150)
                 .colors($r('app.color.gaugeColor1'))
-                .trackShadow(fakeGaugeShadowOptions(" "))
+                .trackShadow({ radius: -10, offsetX: -10, offsetY: -10 })
                 .trackShadow({ radius: -10, offsetX: -10, offsetY: -10 })
                 .strokeWidth(20)
                 .width(200)
@@ -419,7 +412,7 @@ struct gaugeuxTest {
                 .endAngle(150)
                 .colors($r('app.color.gaugeColor1'))
                 .trackShadow({ radius: 10, offsetX: 10, offsetY: 10 })
-                .trackShadow(fakeGaugeShadowOptions(" "))
+                .trackShadow({radius: 20,offsetX:5,offsetY:5})
                 .strokeWidth(20)
                 .width(200)
                 .height(200)
@@ -428,7 +421,7 @@ struct gaugeuxTest {
                 .startAngle(210)
                 .endAngle(150)
                 .colors($r('app.color.gaugeColor1'))
-                .trackShadow(fakeGaugeShadowOptions(1))
+                .trackShadow({radius: 20,offsetX:5,offsetY:5})
                 .strokeWidth(20)
                 .width(200)
                 .height(200)
@@ -437,7 +430,7 @@ struct gaugeuxTest {
                 .startAngle(210)
                 .endAngle(150)
                 .colors($r('app.color.gaugeColor1'))
-                .trackShadow(fakeGaugeShadowOptions(-1))
+                .trackShadow({radius: 20,offsetX:5,offsetY:5})
                 .strokeWidth(20)
                 .width(200)
                 .height(200)
@@ -446,7 +439,7 @@ struct gaugeuxTest {
                 .startAngle(210)
                 .endAngle(150)
                 .colors($r('app.color.gaugeColor1'))
-                .trackShadow(fakeGaugeShadowOptions(0))
+                .trackShadow({radius: 20,offsetX:5,offsetY:5})
                 .strokeWidth(20)
                 .width(200)
                 .height(200)
@@ -455,7 +448,7 @@ struct gaugeuxTest {
                 .startAngle(210)
                 .endAngle(150)
                 .colors($r('app.color.gaugeColor1'))
-                .trackShadow(fakeGaugeShadowOptions(" "))
+                .trackShadow({radius: 20,offsetX:5,offsetY:5})
                 .strokeWidth(20)
                 .width(200)
                 .height(200)
@@ -473,6 +466,7 @@ struct gaugeuxTest {
                 .endAngle(150)
                 .colors($r('app.color.gaugeColor1'))
                 .strokeWidth(20)
+                  // .trackShadow(null)
                 .width(200)
                 .height(200)
                 Gauge({ value: 30, min: 0, max: 100 })

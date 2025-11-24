@@ -73,9 +73,11 @@ function myProgress(config: ProgressConfiguration) {
 @Component
 struct ProgressBuilderExample {
   @State currentValue: number = 0
+  modifier: MyProgressModifier = new MyProgressModifier(Color.Red)
 
   build() {
     Column() {
+      Progress({ value: this.currentValue, total: 3, type: ProgressType.Ring }).contentModifier(this.modifier)
       Button('Progress++').onClick((e: ClickEvent) => {
         if (this.currentValue < 3) {
           this.currentValue += 1

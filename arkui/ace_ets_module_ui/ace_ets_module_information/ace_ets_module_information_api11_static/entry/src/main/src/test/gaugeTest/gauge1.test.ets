@@ -27,11 +27,13 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
+// import config from '@ohos.accessibility.config';
 import accessibility from '@ohos.accessibility';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+// const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.arkui.ace.information/MainAbility';
 
 export default function gaugeColorsJsunit() {
@@ -43,7 +45,11 @@ export default function gaugeColorsJsunit() {
       await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
-     
+      // config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
+      //   console.info(`enable success`);
+      // }).catch((err: object) => {
+      //   console.error(`failed to enable, ${err}`);
+      // })
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/gauge/gauge1',
@@ -81,10 +87,10 @@ it('testgaugeColors_static_0001', Level.LEVEL0, async (done: () => void): Promis
       let strJson = inspector.getInspectorByKey('Gauge');
       console.info("[testgaugeColors0001] component width strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Gauge');
-      expect(JSON.parseJsonElement(strJson).getElement('$attr').getString('width')).assertEqual("200.00vp");
-      console.info("[testgaugeColors0001] width value :" + JSON.parseJsonElement(strJson).getElement('$attr').getString('width'));
-
+      expect(obj.getString('$type')).assertEqual('Gauge');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('width')).assertEqual("200.00vp");
+      console.info("[testgaugeColors0001] width value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('width'));
+  done()
     });
 
     
@@ -100,10 +106,10 @@ it('testgaugeColors_static_0002', Level.LEVEL0, async (done: () => void): Promis
       let strJson = inspector.getInspectorByKey('Gauge');
       console.info("[testgaugeColors0002] component height strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Gauge');
-      expect(JSON.parseJsonElement(strJson).getElement('$attr').getString('height')).assertEqual("200.00vp");
-      console.info("[testgaugeColors0002] height value :" + JSON.parseJsonElement(strJson).getElement('$attr').getString('height'));
-
+      expect(obj.getString('$type')).assertEqual('Gauge');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('height')).assertEqual("200.00vp");
+      console.info("[testgaugeColors0002] height value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('height'));
+  done()
     });
 
     
@@ -119,10 +125,10 @@ it('testgaugeColors_static_0003', Level.LEVEL0, async (done: () => void): Promis
       let strJson = inspector.getInspectorByKey('Gauge');
       console.info("[testgaugeColors0003] component startAngle strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Gauge');
-      expect(JSON.parseJsonElement(strJson).getElement('$attr').getString('startAnglengle')).assertEqual("210.00");
-      console.info("[testgaugeColors0003] startAngle value :" + JSON.parseJsonElement(strJson).getElement('$attr').getString('startAnglengle'));
-
+      expect(obj.getString('$type')).assertEqual('Gauge');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('startAngle')).assertEqual("210.00");
+      console.info("[testgaugeColors0003] startAngle value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('startAngle'));
+  done()
     });
 
     
@@ -138,10 +144,10 @@ it('testgaugeColors_static_0004', Level.LEVEL0, async (done: () => void): Promis
       let strJson = inspector.getInspectorByKey('Gauge');
       console.info("[testgaugeColors0004] component endAngle strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Gauge');
-      expect(JSON.parseJsonElement(strJson).getElement('$attr').getString('endAngle')).assertEqual("150.00");
-      console.info("[testgaugeColors0004] endAngle value :" + JSON.parseJsonElement(strJson).getElement('$attr').getString('endAngle'));
-
+      expect(obj.getString('$type')).assertEqual('Gauge');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('endAngle')).assertEqual("150.00");
+      console.info("[testgaugeColors0004] endAngle value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('endAngle'));
+  done()
     });
 
     
@@ -157,10 +163,10 @@ it('testgaugeColors_static_0005', Level.LEVEL0, async (done: () => void): Promis
       let strJson = inspector.getInspectorByKey('Gauge');
       console.info("[testgaugeColors0005] component strokeWidth strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Gauge');
-      expect(JSON.parseJsonElement(strJson).getElement('$attr').getString('strokeWidth')).assertEqual("20.00vp");
-      console.info("[testgaugeColors0005] strokeWidth value :" + JSON.parseJsonElement(strJson).getElement('$attr').getString('strokeWidth'));
-
+      expect(obj.getString('$type')).assertEqual('Gauge');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('strokeWidth')).assertEqual("20.00vp");
+      console.info("[testgaugeColors0005] strokeWidth value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('strokeWidth'));
+  done()
     });
 
     
@@ -176,11 +182,11 @@ it('testgaugeColors_static_0006', Level.LEVEL0, async (done: () => void): Promis
       let strJson = inspector.getInspectorByKey('Gauge');
       console.info("[testgaugeColors0006] component colors strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Gauge');
-      expect(JSON.parseJsonElement(strJson).getElement('$attr').getString('colors'))
+      expect(obj.getString('$type')).assertEqual('Gauge');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('colors'))
         .assertEqual('[[[["#FF317AF7","0.000000"]],1],[[["#FF5BA854","0.000000"]],1],[[["#FFE08C3A","0.000000"]],1],[[["#FF9C554B","0.000000"]],1],[[["#FFD94838","0.000000"]],1]]');
-      console.info("[testgaugeColors0006] colors value :" + JSON.parseJsonElement(strJson).getElement('$attr').getString('colors'));
-
+      console.info("[testgaugeColors0006] colors value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('colors'));
+  done()
     });
   })
 }

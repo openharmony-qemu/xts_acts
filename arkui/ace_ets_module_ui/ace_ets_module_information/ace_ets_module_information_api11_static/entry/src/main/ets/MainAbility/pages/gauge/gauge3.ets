@@ -14,69 +14,36 @@
  * limitations under the License.
  */
 import {MessageManager,Callback, Message} from '../../common/MessageManager';
-import { Entry, Component, Column, Gauge, Margin, Flex, FlexOptions, ResourceColor, ColumnOptions, FlexDirection, ItemAlign, FlexAlign, Alignment, TextAlign, TextOverflow, LinearGradient,
+import { Entry, Component, Column, Gauge, Margin,Length, Flex, FlexOptions, ResourceColor, ColumnOptions, FlexDirection, ItemAlign, FlexAlign, Alignment, TextAlign, TextOverflow, LinearGradient,
  Color, Resource, } from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { State,  AppStorage,StoragePropRef } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct Gauge3Example {
-  @State startAngle:double = 0;
-  @State endAngle:double = 0;
-  @State colors: ResourceColor | LinearGradient | Array<[ResourceColor | LinearGradient, double]> = [[0x317AF7, 0.1], [0x5BA854, 0.2], [0xE08C3A, 0.3], [0x9C554B, 0.4]] as ResourceColor | LinearGradient | Array<[ResourceColor | LinearGradient, double]>
-  @State strokeWidth:number = 0;
-  @State value:double = 30;
-  @State min:double = 0;
-  @State max:double = 100;
-  @State wth:number = 100;
-
-  messageManager:MessageManager<Object> = new MessageManager<Object>()
-  onPageShow() {
-    console.info('Gauge onPageShow')
-    
-    AppStorage.setOrCreate<Object>('messageManager', this.messageManager)
-    let callback:Callback<Object> = (message:Message<Object>) => {
-      console.error('message = ' + message.name + "--" + message.value)
-      if (message.name == 'startAngle') {
-          this.startAngle = message.value as double
-      }
-      if (message.name == 'endAngle') {
-          this.endAngle = message.value as double
-      }
-      if (message.name == 'colors') {
-          this.colors = message.value as ResourceColor | LinearGradient | Array<[ResourceColor | LinearGradient, double]>
-      }
-      if (message.name == 'strokeWidth') {
-          this.strokeWidth = message.value as number
-      }
-      if (message.name == 'value') {
-          this.value = message.value as double
-      }
-      if (message.name == 'min') {
-          this.min = message.value as double
-      }
-      if (message.name == 'max') {
-          this.max = message.value as double
-      }
-      if (message.name == 'wth') {
-          this.wth = message.value as number
-      }
-    }
-    this.messageManager.registerCallback(callback)
-
-  }
+  @StoragePropRef('startAngle') startAngle:number = 0;
+  @StoragePropRef('endAngle') endAngle:number = 0;
+  @StoragePropRef('colors') colors: Array<[ResourceColor | LinearGradient , number]>= [[0x317AF7, 0.1], [0x5BA854, 0.2], [0xE08C3A, 0.3], [0x9C554B, 0.4]] as Array<[ResourceColor | LinearGradient , number]>
+  @StoragePropRef('strokeWidth') strokeWidth:Length = 0;
+  @StoragePropRef('value') value:number = 30;
+  @StoragePropRef('min') min:number = 0;
+  @StoragePropRef('max') max:number = 100;
+  @StoragePropRef('wth') wth:Length = 100;
 
   build() {
     Column({ space: 20 } as ColumnOptions) {
-      
+      // 使用默认的min和max为0-100，角度范围默认0-360，value值设置
+      // 参数中设置当前值为75
       Gauge({ value: 75 })
         .width(200).height(200)
         .colors([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1], [0x9C554B, 1]])
 
+      // 参数设置当前值为75，属性设置值为25，属性设置优先级高
       Gauge({ value: 75 })
-        .value(25) 
+        .value(25) // 属性和参数都设置时以参数为准
         .width(200).height(200)
         .colors([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1], [0x9C554B, 1]])
 
+      // 210--150度环形图表
       Gauge({ value: this.value, min: this.min, max: this.max })
         .startAngle(this.startAngle)
         .endAngle(this.endAngle)
