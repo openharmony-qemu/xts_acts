@@ -19,17 +19,17 @@ import Utils from './Util.test';
 import { BusinessError } from '@ohos.base';
 import storageStatistics from '@ohos.file.storageStatistics';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-
+ 
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 const FILE_CONTENT = 'hello world';
-
+ 
 export default function storageStatistics_test() {
   let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
   let context = abilityDelegator.getAppContext();
   describe("storageStatistics_test", (): void => {
     hilog.info(domain, tag, '%{public}s', 'storageStatistics_test start');
-
+ 
     /**
      * @tc.number SUB_DF_STATISTICS_GET_CURRENT_BUNDLE_STATS_ASYNC_0000
      * @tc.name storage_statistics_test_get_current_bundle_stats_async_static_000
@@ -44,7 +44,7 @@ export default function storageStatistics_test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', 'storage_statistics_test_get_current_bundle_stats_async_000 START');
-
+ 
         try {
           let bundleStat = await storageStatistics.getCurrentBundleStats();
           expect(bundleStat != null).assertTrue();
@@ -61,10 +61,10 @@ export default function storageStatistics_test() {
           expect(false).assertTrue();
           done();
         }
-
+ 
         hilog.info(domain, tag, '%{public}s', 'storage_statistics_test_get_current_bundle_stats_async_000 END');
       });
-
+ 
     /**
      * @tc.number SUB_DF_STATISTICS_GET_CURRENT_BUNDLE_STATS_ASYNC_0001
      * @tc.name storage_statistics_test_get_current_bundle_stats_async_static_001
@@ -79,7 +79,7 @@ export default function storageStatistics_test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', 'storage_statistics_test_get_current_bundle_stats_async_001 START');
-
+ 
         try {
           storageStatistics.getCurrentBundleStats((error: BusinessError | null,
             bundleStat: storageStatistics.BundleStats | undefined) => {
@@ -94,17 +94,17 @@ export default function storageStatistics_test() {
               .assertTrue();
             done();
           });
-
+ 
           hilog.info(domain, tag, 'Test PASSED');
         } catch (err) {
           hilog.info(domain, tag, `unknown error: ${err}`);
           expect(false).assertTrue();
           done();
         }
-
+ 
         hilog.info(domain, tag, '%{public}s', 'storage_statistics_test_get_current_bundle_stats_async_001 END');
       });
-
+ 
     /**
      * @tc.number SUB_DF_STATISTICS_GET_USER_STORAGE_STATS_ASYNC_0000
      * @tc.name storage_statistics_test_get_user_storage_stats_async_static_000
@@ -119,10 +119,15 @@ export default function storageStatistics_test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', 'storage_statistics_test_get_user_storage_stats_async_000 START');
-
+ 
         try {
           const userStat: storageStatistics.StorageStats = await storageStatistics.getUserStorageStats();
-          hilog.info(domain, tag, 'userStat.total : %{public}s', String(userStat.total));
+          hilog.info(domain, tag, 'userStat.total : %{public}s', String(userStat.total),
+            'userStat.audio : %{public}s', String(userStat.audio),
+            'userStat.video : %{public}s', String(userStat.video),
+            'userStat.image : %{public}s', String(userStat.image),
+            'userStat.file : %{public}s', String(userStat.file),
+            'userStat.app : %{public}s', String(userStat.app));
           done();
         } catch (e) {
           const err = e as BusinessError;
@@ -131,10 +136,10 @@ export default function storageStatistics_test() {
           expect(false).assertTrue();
           done();
         }
-
+ 
         hilog.info(domain, tag, '%{public}s', 'storage_statistics_test_get_user_storage_stats_async_000 END');
       });
-
+ 
     /**
      * @tc.number SUB_DF_STATISTICS_GET_USER_STORAGE_STATS_ASYNC_0001
      * @tc.name storage_statistics_test_get_user_storage_stats_async_static_001
@@ -149,7 +154,7 @@ export default function storageStatistics_test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', 'storage_statistics_test_get_user_storage_stats_async_001 START');
-
+ 
         try {
           storageStatistics.getUserStorageStats((error: BusinessError | null,
             storageStat: storageStatistics.StorageStats | undefined) => {
@@ -160,7 +165,12 @@ export default function storageStatistics_test() {
               expect(false).assertTrue();
             }
             let storageStatTemp = storageStat as storageStatistics.StorageStats;
-            hilog.info(domain, tag, 'storageStat.total : %{public}s', String(storageStatTemp.total));
+            hilog.info(domain, tag, 'userStat.total : %{public}s', String(userStat.total),
+              'userStat.audio : %{public}s', String(userStat.audio),
+              'userStat.video : %{public}s', String(userStat.video),
+              'userStat.image : %{public}s', String(userStat.image),
+              'userStat.file : %{public}s', String(userStat.file),
+              'userStat.app : %{public}s', String(userStat.app));
             done();
           });
         } catch (err) {
@@ -172,10 +182,10 @@ export default function storageStatistics_test() {
           expect(false).assertTrue();
           done();
         }
-
+ 
         hilog.info(domain, tag, '%{public}s', 'storage_statistics_test_get_user_storage_stats_async_001 END');
       });
-
+ 
     /**
      * @tc.number SUB_DF_STATISTICS_GET_USER_STORAGE_STATS_ASYNC_0002
      * @tc.name storage_statistics_test_get_user_storage_stats_async_static_002
@@ -190,11 +200,16 @@ export default function storageStatistics_test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', 'storage_statistics_test_get_user_storage_stats_async_002 START');
-
+ 
         try {
           const userId = 100;
           const userStat: storageStatistics.StorageStats = await storageStatistics.getUserStorageStats(userId);
-          hilog.info(domain, tag, 'userStat.total : %{public}s', String(userStat.total));
+          hilog.info(domain, tag, 'userStat.total : %{public}s', String(userStat.total),
+            'userStat.audio : %{public}s', String(userStat.audio),
+            'userStat.video : %{public}s', String(userStat.video),
+            'userStat.image : %{public}s', String(userStat.image),
+            'userStat.file : %{public}s', String(userStat.file),
+            'userStat.app : %{public}s', String(userStat.app));
           done();
         } catch (e) {
           const err = e as BusinessError;
@@ -203,10 +218,10 @@ export default function storageStatistics_test() {
           expect(false).assertTrue();
           done();
         }
-
+ 
         hilog.info(domain, tag, '%{public}s', 'storage_statistics_test_get_user_storage_stats_async_002 END');
       });
-
+ 
     /**
      * @tc.number SUB_DF_STATISTICS_GET_USER_STORAGE_STATS_ASYNC_0003
      * @tc.name storage_statistics_test_get_user_storage_stats_async_static_003
@@ -221,7 +236,7 @@ export default function storageStatistics_test() {
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, '%{public}s', 'storage_statistics_test_get_user_storage_stats_async_003 START');
-
+ 
         try {
           const userId = 100;
           storageStatistics.getUserStorageStats(userId, (error: BusinessError | null,
@@ -233,7 +248,12 @@ export default function storageStatistics_test() {
               expect(false).assertTrue();
             }
             let storageStatTemp = storageStat as storageStatistics.StorageStats;
-            hilog.info(domain, tag, 'storageStat.total : %{public}s', String(storageStatTemp.total));
+            hilog.info(domain, tag, 'userStat.total : %{public}s', String(userStat.total),
+              'userStat.audio : %{public}s', String(userStat.audio),
+              'userStat.video : %{public}s', String(userStat.video),
+              'userStat.image : %{public}s', String(userStat.image),
+              'userStat.file : %{public}s', String(userStat.file),
+              'userStat.app : %{public}s', String(userStat.app));
             done();
           });
         } catch (err) {
@@ -245,10 +265,10 @@ export default function storageStatistics_test() {
           expect(false).assertTrue();
           done();
         }
-
+ 
         hilog.info(domain, tag, '%{public}s', 'storage_statistics_test_get_user_storage_stats_async_003 END');
       });
-
+ 
     /**
      * @tc.number SUB_DF_STATISTICS_GET_FREE_SIZE_SYNC_0000
      * @tc.name storageStatistics_test_get_free_size_sync_static_000
@@ -274,7 +294,7 @@ export default function storageStatistics_test() {
           done();
         }
       });
-
+ 
     /**
      * @tc.number SUB_DF_STATISTICS_GET_FREE_SIZE_SYNC_0100
      * @tc.name storageStatistics_test_get_free_size_sync_static_001
@@ -300,7 +320,7 @@ export default function storageStatistics_test() {
           done();
         }
       });
-
+ 
         /**
      * @tc.number SUB_DF_STATISTICS_GET_TOTAL_SIZE_SYNC_0000
      * @tc.name storageStatistics_test_get_total_size_sync_static_000
@@ -326,7 +346,7 @@ export default function storageStatistics_test() {
           done();
         }
       });
-
+ 
     /**
      * @tc.number SUB_DF_STATISTICS_GET_TOTAL_SIZE_SYNC_0100
      * @tc.name storageStatistics_test_get_total_size_sync_static_001
@@ -352,7 +372,7 @@ export default function storageStatistics_test() {
           done();
         }
       });
-
+ 
     
         /**
      * @tc.number SUB_DF_STATISTICS_GET_FREE_SIZE_0000
@@ -379,7 +399,7 @@ export default function storageStatistics_test() {
           done();
         }
       });
-
+ 
     /**
      * @tc.number SUB_DF_STATISTICS_GET_FREE_SIZE_0100
      * @tc.name storageStatistics_test_get_free_size_async_static_001
@@ -412,7 +432,7 @@ export default function storageStatistics_test() {
           expect(false).assertTrue();
         }
       });
-
+ 
         /**
      * @tc.number SUB_DF_STATISTICS_GET_TOTAL_SIZE_0000
      * @tc.name storageStatistics_test_get_total_size_async_static_000
@@ -437,7 +457,7 @@ export default function storageStatistics_test() {
           expect(false).assertTrue();
         }
       });
-
+ 
     /**
      * @tc.number SUB_DF_STATISTICS_GET_TOTAL_SIZE_0100
      * @tc.name storageStatistics_test_get_total_size_async_static_001
@@ -470,8 +490,8 @@ export default function storageStatistics_test() {
           expect(false).assertTrue();
         }
       });
-
+ 
   })
   hilog.info(domain, tag, '%{public}s', 'storageStatistics_test end');
-
+ 
 }
