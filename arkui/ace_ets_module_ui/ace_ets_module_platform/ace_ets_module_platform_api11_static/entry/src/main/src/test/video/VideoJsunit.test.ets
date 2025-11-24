@@ -23,7 +23,7 @@ import {
   it,
   expect,
   Level
-} from '../../../../hypium/index';
+} from '../../../../hypium';
 import router from '@ohos.router';
 import { UtilsTest } from '../Util.test';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -87,15 +87,20 @@ export default function videoJsunit() {
     it('videoAppInfoStaticTest001', Level.LEVEL1, async () => {
       console.info('videoAppInfoTest001 START');
       await sleep(1)
-      let strJson = inspector.getInspectorByKey('video');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("cd video component obj is: " + JSON.stringify(obj));
-      console.log("cd video type" + JSON.stringify(obj.getElement('$type')));
-      console.log("cd video autoPlay" + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$type').getString('autoPlay')));
-      console.log("cd video muted" + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$type').getString('muted')));
-      console.log("cd video controls" + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$type').getString('controls')));
-      console.log("cd video loop" + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$type').getString('loop')));
-      console.log("cd video objectFit" + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$type').getString('objectFit')));
+     try{
+       let strJson = inspector.getInspectorByKey('video');
+       let obj = JSON.parseJsonElement(strJson);
+       console.info("cd video component obj is: " + strJson);
+       console.log("cd video $type" + obj.getString('$type'));
+       console.log("cd video $attrs" + JSON.stringifyJsonElement(obj.getElement('$attrs')));
+       console.log("cd video autoPlay" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('autoPlay'));
+       console.log("cd video muted" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('muted'));
+       console.log("cd video controls" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('controls'));
+       console.log("cd video loop" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop'));
+       console.log("cd video objectFit" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('objectFit'));
+     }catch(e){
+        expect().assertFail()
+     }
       console.info('videoAppInfoTest001 END');
     });
   })

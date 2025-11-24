@@ -30,7 +30,7 @@ struct componentType {
         controller: this.xcomponentController
       } as XComponentParameters).id('xcomponent_1')
         .onLoad((): void => {
-          // this.xcomponentController.setXComponentSurfaceSize({surfaceWidth:1920,surfaceHeight:1080});
+          this.xcomponentController.setXComponentSurfaceRect({surfaceWidth:1920,surfaceHeight:1080});
           this.surfaceId = this.xcomponentController.getXComponentSurfaceId()
           console.log(this.surfaceId)
         })
@@ -45,7 +45,7 @@ struct componentType {
         controller: this.xcomponentController
       } as XComponentParameters).id('xcomponent_2')
         .onLoad((): void => {
-          // this.xcomponentController.setXComponentSurfaceSize({surfaceWidth:1920,surfaceHeight:1080});
+          this.xcomponentController.setXComponentSurfaceRect({surfaceWidth:1920,surfaceHeight:1080});
           this.surfaceId = this.xcomponentController.getXComponentSurfaceId()
           console.log(this.surfaceId)
         })
@@ -60,7 +60,7 @@ struct componentType {
         controller: this.xcomponentController
       } as XComponentParameters).id('xcomponent_3')
         .onLoad((): void => {
-          // this.xcomponentController.setXComponentSurfaceSize({surfaceWidth:1920,surfaceHeight:1080});
+          this.xcomponentController.setXComponentSurfaceRect({surfaceWidth:1920,surfaceHeight:1080});
           this.surfaceId = this.xcomponentController.getXComponentSurfaceId()
           console.log(this.surfaceId)
         })

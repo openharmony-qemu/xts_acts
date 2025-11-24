@@ -16,5 +16,5 @@
 import counterApi from './Counter/counterApi.test';
 
 export default function testsuite() {
-  counterApi();
+  counterApi(); //组件3组 CounterComponent组件 失败3个用例 TypeError: Cannot find imported element 'CounterType'
 }

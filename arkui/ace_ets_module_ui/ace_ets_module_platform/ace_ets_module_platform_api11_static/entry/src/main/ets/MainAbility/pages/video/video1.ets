@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Column,Component,Button,Video,VideoController,ImageFit,Row,ClickEvent,SeekMode,PlaybackSpeed,Resource,Text,$rawfile,$r } from '@ohos.arkui.component';
+import { Entry,Column,Component,Button,Video,VideoController,PlaybackInfo,PreparedInfo,ImageFit,Row,ClickEvent,SeekMode,PlaybackSpeed,Resource,Text,$rawfile,$r } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
@@ -35,55 +35,6 @@ struct VideoComponentBC1 {
 
   build() {
     Column() {
-      Video({
-        src: this.videoSrc,
-        previewUri: this.previewUri,
-        currentProgressRate: this.curRate,
-        controller: this.controller
-      })
-        .width('100%')
-        .height(300)
-        .autoPlay(this.isAutoPlay)
-        .controls(this.showControls)
-        .onStart((): void => {
-          this.onStart = 'onStart_Doing'
-        })
-        .onPause((): void => {
-          this.onPause = 'onPause_Doing'
-        })
-        .onFinish((): void => {
-          this.onFinish = 'onFinish_Doing'
-        })
-          // 播放失败不好整
-        .onError((): void => {
-          this.onError = 'onError_Doing'
-        })
-          // 视频准备完成时触发该事件，通过duration可以获取视频时长
-        .onPrepared((e?: DurationObject): void => {
-          if (e != undefined) {
-            this.onPrepared = `onPrepared_Doing`
-          }
-        })
-          // 操作进度条过程时上报时间信息
-        .onSeeking((e?: TimeObject): void => {
-          if (e != undefined) {
-            this.onSeeking = `onSeeking_Doing`
-          }
-        })
-          // 操作进度条完成后，上报播放时间信息
-        .onSeeked((e?: TimeObject): void => {
-          if (e != undefined) {
-            this.onSeeked = `onSeeked_Doing`
-          }
-        })
-          // 播放进度变化时触发该事件
-        .onUpdate((e?: TimeObject): void => {
-          if (e != undefined) {
-            this.onUpdate = `onUpdate_Doing`
-          }
-        })
-
-
       Column(){Text(this.onStart).fontSize(16).key('onStart')}
       Column(){Text(this.onPause).fontSize(16).key('onPause')}
       Column(){Text(this.onFinish).fontSize(16).key('onFinish')}
@@ -130,14 +81,54 @@ struct VideoComponentBC1 {
           this.curRate = PlaybackSpeed.Speed_Forward_2_00_X // 2倍速播放
         }).margin(5)
       }
+      Video({
+        src: this.videoSrc,
+        previewUri: this.previewUri,
+        currentProgressRate: this.curRate,
+        controller: this.controller
+      })
+        .width('100%')
+        .height(300)
+        .autoPlay(this.isAutoPlay)
+        .controls(this.showControls)
+        .onStart((): void => {
+          this.onStart = 'onStart_Doing'
+        })
+        .onPause((): void => {
+          this.onPause = 'onPause_Doing'
+        })
+        .onFinish((): void => {
+          this.onFinish = 'onFinish_Doing'
+        })
+        // 播放失败不好整
+        // .onError((): void => {
+        //   this.onError = 'onError_Doing'
+        // })
+        // 视频准备完成时触发该事件，通过duration可以获取视频时长
+        .onPrepared((e?: PreparedInfo): void => {
+          console.log('PreparedInfo',e)
+          if (e != undefined) {
+            this.onPrepared = `onPrepared_Doing`
+          }
+        })
+        // 操作进度条过程时上报时间信息
+        .onSeeking((e?: PlaybackInfo): void => {
+          if (e != undefined) {
+            this.onSeeking = `onSeeking_Doing`
+          }
+        })
+        // 操作进度条完成后，上报播放时间信息
+        .onSeeked((e?: PlaybackInfo): void => {
+          if (e != undefined) {
+            this.onSeeked = `onSeeked_Doing`
+          }
+        })
+        // 播放进度变化时触发该事件
+        .onUpdate((e?: PlaybackInfo): void => {
+          if (e != undefined) {
+            this.onUpdate = `onUpdate_Doing`
+          }
+        })
     }
   }
-}
-
-interface DurationObject {
-  duration: number;
-}
-
-interface TimeObject {
-  time: number;
 }
