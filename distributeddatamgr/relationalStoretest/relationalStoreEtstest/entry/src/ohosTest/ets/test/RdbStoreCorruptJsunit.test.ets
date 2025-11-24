@@ -17,12 +17,9 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import data_relationalStore from '@ohos.data.relationalStore';
 import common from '@ohos.app.ability.common';
 import fs from '@ohos.file.fs';
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-// let context: common.UIAbilityContext;
+let context: common.UIAbilityContext;
 
 const TAG = "[RELATIONAL_STORE_ESTKITS_Corrupt_TEST]  ";
-const delegator = abilityDelegatorRegistry.getAbilityDelegator();
-const context = delegator.getAppContext().getApplicationContext();
 
 let dataBaseDir : String;
 var rdbStore = undefined;
@@ -50,7 +47,7 @@ export default function rdbStoreCorruptJSunitTest() {
 
     beforeAll(async function () {
       console.log(TAG + 'beforeAll');
-      // context = AppStorage.Get<common.UIAbilityContext>("TestAbilityContext") as common.UIAbilityContext;
+      context = AppStorage.Get<common.UIAbilityContext>("TestAbilityContext") as common.UIAbilityContext;
     })
 
     beforeEach(async function () {
@@ -58,7 +55,7 @@ export default function rdbStoreCorruptJSunitTest() {
       isFileUsed = false;
       file_ = null;
     })
-
+    
     afterEach(async function () {
       console.log(TAG + 'afterEach')
       if(isFileUsed){
@@ -74,11 +71,9 @@ export default function rdbStoreCorruptJSunitTest() {
       rdbStore = null;
       await data_relationalStore.deleteRdbStore(context, "Resultset.db");
     })
-
     afterAll(async function () {
       console.log(TAG + 'afterAll');
     })
-
     async function Generate() {
       let dir = await context.filesDir;
       dbPath = context.databaseDir + "/rdb/" + dbName;
@@ -100,9 +95,6 @@ export default function rdbStoreCorruptJSunitTest() {
         valueBucketArray.push(valueBucket);
       }
       let count = await rdbStore.batchInsert("test", valueBucketArray);
-      // rdbStore.close();
-      // rdbStore = null;
-      // rdbStore = await data_relationalStore.getRdbStore(context, STORE_CONFIG);
       try {
         await CreateCorruptDb();
       } catch (e) {
