@@ -251,7 +251,6 @@ export default function videoOnFullscreenChangeJsunit() {
       try {
         events_emitter.on(innerEvent, callback);
         await Utils.sleep(500);
-        console.info("video_101 click result is: " + JSON.stringify(sendEventByKey('fullScreen', 10, "")));
         await Utils.sleep(2000);
 
       } catch (err) {
