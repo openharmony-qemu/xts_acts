@@ -3,7 +3,7 @@ import hilog from '@ohos.hilog'
 
 const abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
 let domain: Int = 0x0000;
-let tag: string = 'testlog';
+let tag: string = 'ActsAceEtsModuleImageTextNowearApi18StaticTest';
 
 class UtilsTest {
   static isloadAndSetUpUiTest = false;

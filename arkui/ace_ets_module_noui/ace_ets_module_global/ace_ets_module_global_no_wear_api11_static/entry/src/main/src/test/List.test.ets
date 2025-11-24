@@ -16,5 +16,5 @@
 import webGetTitleJsunit from './webTest/web2.test';
 
 export default function testsuite() {
-  webGetTitleJsunit()
+  webGetTitleJsunit()//Web组件 失败9个用例
 }

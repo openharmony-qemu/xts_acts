@@ -4,15 +4,15 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -52,8 +52,6 @@ export default function onHoverStatusChange() {
             url: "MainAbility/pages/onHoverStatusChange/onHoverStatusChange"
           })
           await CommonFunc.sleep(2000);
-
-
         }
       } catch (err) {
         console.error("push onHoverStatusChange page error:" + err);
@@ -65,13 +63,13 @@ export default function onHoverStatusChange() {
       console.info("onHoverStatusChange after each called");
     });
 
-
-    /*
-     * @tc.number    onHoverStatusChange_static_001
-     * @tc.name      onHoverStatusChange_static_001
-     * @tc.desc      onHoverStatusChange_static_001
-     * @tc.level     2
+    /**
+     * @tc.number SUB_ACE_UI_COMPONENT_Common_onHoverStatusChange_static_001
+     * @tc.desc onHoverStatusChange test
+     * @tc.level Level 3
+     * @tc.type
      */
+
     it('onHoverStatusChange_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[onHoverStatusChange_static_001] START');
 

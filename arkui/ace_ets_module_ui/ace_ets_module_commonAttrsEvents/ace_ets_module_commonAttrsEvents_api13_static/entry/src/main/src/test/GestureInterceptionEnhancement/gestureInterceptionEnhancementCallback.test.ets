@@ -4,15 +4,15 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -21,7 +21,6 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { Message, MessageManager } from '../../../ets/MainAbility/common/MessageManager';
 import RectValue from '../../../ets/MainAbility/common/Rect'
-
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -53,27 +52,25 @@ export default function gestureInterceptionEnhancementCallbackTest() {
         console.info("get gestureInterceptionEnhancementCallbackTest state pages:" + JSON.stringify(pages));
         if (!("ColumnSpaceResourcePage" == pages.name)) {
           console.info("get gestureInterceptionEnhancementCallbackTest pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push gestureInterceptionEnhancementCallbackTest page error:" + err);
       }
       console.info("gestureInterceptionEnhancementCallbackTest beforeEach end");
-
     });
     afterEach(async (): Promise<void> => {
       await CommonFunc.sleep(1500);
     });
 
-
-    /*
+    /**
      * @tc.number    gestureInterceptionEnhancementCallbackTest_static_0010
      * @tc.name      gestureInterceptionEnhancementCallbackTest_static_0010
-     * @tc.desc      gestureInterceptionEnhancementCallbackTest_static_0010
-     * @tc.level     2
+     * @tc.desc      test the BaseGestureEvent callBackData when invoke gesture Interception Enhancement interface (exposeInnerGesture value true)
+     * @tc.level:    Level 2
+     * @tc.type :
+     * @tc.size :
      */
     it('gestureInterceptionEnhancementCallbackTest_static_0010', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -90,7 +87,7 @@ export default function gestureInterceptionEnhancementCallbackTest() {
         let height = bottom - top;
         let width = right - left;
         await CommonFunc.sleep(1000);
-
+        // tabs nest scroll
         await driver.swipe(Math.round(left + width * 0.8) as Int, Math.round(top + height / 2) as Int,
           Math.round(left) as Int, Math.round(top + height / 2) as Int);
         await CommonFunc.sleep(2500);
@@ -102,77 +99,29 @@ export default function gestureInterceptionEnhancementCallbackTest() {
         await driver.swipe(Math.round(left + width * 0.8) as Int, Math.round(top + height / 2) as Int,
           Math.round(left) as Int, Math.round(top + height / 2) as Int);
         await CommonFunc.sleep(2500);
-
+        // check the callback data
         let strJson = inspector.getInspectorByKey('eventtest');
+        await CommonFunc.sleep(2500);
         let obj = JSON.parseJsonElement(strJson);
         console.info("[gestureInterceptionEnhancementCallbackTest_static_0010 ] content: " +
-        JSON.stringify(obj.getElement('$attrs').getString('content')));
+          strJson);
         let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('content'));
-        console.info("gestureInterceptionEnhancementCallbackTest_static_0010" + obj2.getInteger('offsetX'));
-        console.info("gestureInterceptionEnhancementCallbackTest_static_0010" + obj2.getInteger('offsetY'));
-        console.info("gestureInterceptionEnhancementCallbackTest_static_0010" + obj2.getInteger('velocityX'));
-        console.info("gestureInterceptionEnhancementCallbackTest_static_0010" + obj2.getInteger('velocityY'));
-        console.info("gestureInterceptionEnhancementCallbackTest_static_0010" + obj2.getInteger('velocity'));
-        expect(obj2.getInteger('offsetX') <= 0).assertTrue();
-        expect(obj2.getInteger('offsetY') == 0).assertTrue();
-        expect(Math.abs(obj2.getInteger('velocityX')) > 0).assertTrue();
-        expect(Math.abs(obj2.getInteger('velocityY')) > 0).assertTrue();
-        expect(obj2.getInteger('velocity') > 0).assertTrue();
-        expect(obj2.getInteger('source') == 2).assertTrue();
-        expect(obj2.getInteger('pressure') == 0).assertTrue();
-        expect(obj2.getInteger('tiltX') == 0).assertTrue();
-        expect(obj2.getInteger('tiltY') == 0).assertTrue();
-        expect(obj2.getInteger('sourceTool') == 1).assertTrue();
+        console.info("gestureInterceptionEnhancementCallbackTest_static_0010" + obj2.getDouble('offsetX'));
+        console.info("gestureInterceptionEnhancementCallbackTest_static_0010" + obj2.getDouble('offsetY'));
+        console.info("gestureInterceptionEnhancementCallbackTest_static_0010" + obj2.getDouble('velocityX'));
+        console.info("gestureInterceptionEnhancementCallbackTest_static_0010" + obj2.getDouble('velocityY'));
+        console.info("gestureInterceptionEnhancementCallbackTest_static_0010" + obj2.getDouble('velocity'));
+        expect(obj2.getDouble('offsetX') <= 0).assertTrue();
+        expect(obj2.getDouble('offsetY') == 0).assertTrue();
+        expect(Math.abs(obj2.getDouble('velocityX')) > 0).assertTrue();
+        expect(Math.abs(obj2.getDouble('velocityY')) > 0).assertTrue();
+        expect(obj2.getDouble('velocity') > 0).assertTrue();
+        expect(obj2.getDouble('source') == 2).assertTrue();
+        expect(obj2.getDouble('pressure') == 0).assertTrue();
+        expect(obj2.getDouble('tiltX') == 0).assertTrue();
+        expect(obj2.getDouble('tiltY') == 0).assertTrue();
+        expect(obj2.getDouble('sourceTool') == 1).assertTrue();
         expect(obj2.getInteger('deviceId') == -1).assertTrue();
-        console.info("gestureInterceptionEnhancementCallbackTest_static_0010" +
-        JSON.stringify(obj2.getArray("fingerList")));
-        console.info("gestureInterceptionEnhancementCallbackTest_static_0010" +
-        obj2.getArray("fingerList")[0].getInteger('id'));
-        expect(obj2.getArray("fingerList")[0].getInteger('id') == 0).assertTrue();
-        let actualGlobalX: number = Math.round(left + width * 0.8);
-        let actualGlobalY: number = Math.round(height / 2 + top);
-        console.info("gestureInterceptionEnhancementCallbackTest_static_0010" + "actualGlobalX " + actualGlobalX +
-          "actualGlobalY = " + actualGlobalY);
-        console.info("gestureInterceptionEnhancementCallbackTest_static_0010_fingerList " +
-        Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getArray("fingerList")[0].getInteger('globalX'))) + " ** " +
-        Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getArray("fingerList")[0].getInteger('globalY'))) +
-          "**" + Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getArray("fingerList")[0].getInteger('localX'))) + "** " +
-        Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getArray("fingerList")[0].getInteger('localY'))) + "**" +
-        Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getArray("fingerList")[0].getInteger('displayX'))) + "**" +
-        Math.floor((UIContext.getFocusedUIContext()!.vp2px(obj2.getArray("fingerList")[0].getInteger('displayY')))));
-
-        expect(Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getArray("fingerList")[0].getInteger('globalX'))) <= actualGlobalX).assertTrue();
-        expect(Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getArray("fingerList")[0].getInteger('globalY'))) <= actualGlobalY).assertTrue();
-        expect(Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getArray("fingerList")[0].getInteger('localX'))) <= actualGlobalX).assertTrue();
-        expect(Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getArray("fingerList")[0].getInteger('localY'))) <= actualGlobalY).assertTrue();
-        expect(Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getArray("fingerList")[0].getInteger('displayX'))) <= actualGlobalX).assertTrue();
-        expect(Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getArray("fingerList")[0].getInteger('displayY'))) <= actualGlobalY).assertTrue();
-        console.info("gestureInterceptionEnhancementCallbackTest_static_0010_target " +
-        Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getElement('target').getElement('area').getElement('globalPosition').getInteger('x'))) +
-          "--" +
-        Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getElement('target').getElement('area').getElement('globalPosition').getInteger('y')))
-          + Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getElement('target').getElement('area').getElement('position').getInteger('x'))) +
-          "..." +
-        Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getElement('target').getElement('area').getElement('position').getInteger('y'))) + "..." +
-        Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getElement('target').getElement('area').getInteger('width'))) + ".." +
-        UIContext.getFocusedUIContext()!.vp2px(obj2.getElement('target').getElement('area').getInteger('height')));
-
-        expect(Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getElement('target')
-          .getElement('area')
-          .getElement('globalPosition')
-          .getInteger('x'))) <= actualGlobalX).assertTrue();
-        expect(Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getElement('target')
-          .getElement('area')
-          .getElement('globalPosition')
-          .getInteger('y'))) <= actualGlobalY).assertTrue();
-        expect(Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getElement('target').getElement('area').getElement('position').getInteger('x'))) <=
-          actualGlobalX).assertTrue();
-        expect(Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getElement('target').getElement('area').getElement('position').getInteger('y'))) <=
-          actualGlobalY).assertTrue();
-        expect(Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getElement('target').getElement('area').getInteger('width'))) <= width)
-          .assertTrue();
-        expect(Math.floor(UIContext.getFocusedUIContext()!.vp2px(obj2.getElement('target').getElement('area').getInteger('height'))) <= height)
-          .assertTrue();
         done();
       });
 

@@ -42,10 +42,10 @@ export interface CurrentRatio{
   isVisible: boolean
 };
 export interface SetValue {
-  colorBlend: Color;
+  colorBlend: string;
 }
 export interface ExpectValue {
-  colorBlend: Color;
+  colorBlend: string;
 }
 export class RouterParams {
   view: PageConfig = new PageConfig()

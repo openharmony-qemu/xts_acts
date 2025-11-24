@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -64,15 +64,15 @@ struct requestFocus23 {
   private controller: TabsController = new TabsController()
 
   build() {
-    Column() {
+    Column({space: 5} as ColumnOptions) {
       Tabs({ barPosition: BarPosition.Start, index: this.currentIndex, controller: this.controller }) {
         TabContent() {
-          Column() {
+          Column({space: 5} as ColumnOptions) {
             Text('' + this.text1).id('requestFocus23_text1')
             Button('Focus-textInput1').onClick((e: ClickEvent) => {
               try {
                 this.getUIContext().getFocusController().requestFocus('requestFocus23_textInput1')
-              } catch (error) {
+              } catch (error: Error) {
                 this.text1 = '' + error.code
               }
             }).id('requestFocus23_btn1')

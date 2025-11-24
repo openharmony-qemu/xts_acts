@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -14,32 +14,18 @@
  */
 
 
-import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../../hypium/index'
+import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../../hypium';
+import { Component, Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
-import {
-  Component,
-  DisplayRotation,
-  Driver,
-  MatchPattern,
-  ON,
-  Point,
-  PointerMatrix,
-  Rect,
-  ResizeDirection,
-  UiWindow,
-  WindowMode
-} from '@ohos.UiTest';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
-import { Callback, MessageManager } from '../../../../ets/MainAbility/utils/MessageManager';
-import window from '@ohos.window';
-import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
-import inspector from '@ohos.arkui.inspector'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement'
-import display from '@ohos.display'
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import inspector from '@ohos.arkui.inspector';
+import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../../Util.test'
 
 let domain: number = 0x0000;
@@ -65,11 +51,9 @@ export default function FocusScopePriority12() {
         let pages = routerInstance.getState();
         console.info("get FocusScopePriority12 state success " + JSON.stringify(pages));
         if (!("FocusScopePriority12" == pages.name)) {
-
-
+          console.info("get FocusScopePriority12 state success " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push FocusScopePriority12 page error: " + err);
@@ -81,12 +65,11 @@ export default function FocusScopePriority12() {
       console.info("FocusScopePriority12 after each called");
     });
 
-
-    /*
+    /**
      * @tc.number    FocusScopePriority12_static_0100
      * @tc.name      FocusScopePriority12_static_0100
-     * @tc.desc      FocusScopePriority12_static_0100
-     * @tc.level     2
+     * @tc.desc      Test FocusScopePriority
+     * @tc.level     Level 2
      */
     it('FocusScopePriority12_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[FocusScopePriority12_static_0100] START');

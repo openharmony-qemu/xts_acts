@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -48,7 +48,7 @@ import {
   Text,
   TextInput,
   TouchEvent,
-  Visibility
+  Visibility,ModalTransition,ContentCoverOptions,$$
 } from '@ohos.arkui.component'
 
 @Entry
@@ -60,7 +60,7 @@ struct requestFocus19 {
 
   @Builder
   myBuilder() {
-    Column() {
+    Column({space: 5} as ColumnOptions) {
       TextInput({ text: this.text2 })
         .id('requestFocus19_textInput1')
         .onFocus(() => {
@@ -79,7 +79,7 @@ struct requestFocus19 {
       Button('Focus-textInput1').onClick((e: ClickEvent) => {
         try {
           this.getUIContext().getFocusController().requestFocus('requestFocus19_textInput1')
-        } catch (error) {
+        } catch (error: Error) {
           this.text1 = '' + error.code
         }
       }).id('requestFocus19_btn2')
@@ -87,7 +87,10 @@ struct requestFocus19 {
       Button('modalPageOne').onClick((e: ClickEvent) => {
         this.isShow = true
       }).id('requestFocus19_btn1')
-
+      .bindContentCover($$(this.isShow),this.myBuilder,{
+        modalTransition:ModalTransition.DEFAULT,
+        backgroundColor:Color.Pink
+      } as ContentCoverOptions)
 
     }.width('100%').margin({ top: 20 } as Margin)
   }

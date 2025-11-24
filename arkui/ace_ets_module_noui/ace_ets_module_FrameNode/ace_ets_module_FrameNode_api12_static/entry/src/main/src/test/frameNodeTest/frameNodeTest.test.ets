@@ -12,17 +12,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium';
+import inspector from '@ohos.arkui.inspector'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from "../../../../hypium/index"
 import router from '@ohos.router';
-import CommonFunc from "../../../ets/MainAbility/common/Common";
-import {Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
-import inspector from '@ohos.arkui.inspector';
-import { Router } from '@ohos.arkui.UIContext';
+import pasteboard from '@ohos.pasteboard'
+import {
+  Component,
+  Driver,
+  UiWindow,
+  ON,
+  MatchPattern,
+  DisplayRotation,
+  ResizeDirection,
+  WindowMode,
+  PointerMatrix
+} from '@ohos.UiTest';
+import CommonFunc from '../../../ets/MainAbility/common/Common';
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { startAbility, UtilsTest } from '../Util.test';
+import {UtilsTest,startAbility} from '../Util.test'
 
-
+let domain: number = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext:common.UIAbilityContext;
 export default function frameNodeTest() {
   describe('frameNodeTest', () => {
     beforeAll(() => {
@@ -43,10 +60,8 @@ export default function frameNodeTest() {
         console.info("get frameNodeTest state pages: " + JSON.stringify(pages));
         if (!("frameNode" == pages.name)) {
           console.info("get frameNodeTest state pages.name: " + JSON.stringify(pages.name));
-          
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push frameNodeTest page error: " + err);
@@ -57,12 +72,12 @@ export default function frameNodeTest() {
 
 
     /*
-     * @tc.number   frameNodeTest_static_0100
-     * @tc.name     frameNodeTest_static_0100
-     * @tc.desc     frameNodeTest_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.number    frameNodeTest_static_0100
+     * @tc.name      frameNodeTest_static_0100
+     * @tc.desc      frameNodeTest_static_0100
+     * @tc.level     2
      */
-it('frameNodeTest_static_0100', Level.LEVEL0, async (done: ()=>void) => {
+    it('frameNodeTest_static_0100', Level.LEVEL0, async (done: ()=>void) => {
       console.info('frameNodeTest_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -80,12 +95,12 @@ it('frameNodeTest_static_0100', Level.LEVEL0, async (done: ()=>void) => {
 
 
     /*
-     * @tc.number   frameNodeTest_static_0200
-     * @tc.name     frameNodeTest_static_0200
-     * @tc.desc     frameNodeTest_static_0200
-     * @tc.level    Level.LEVEL0
+     * @tc.number    frameNodeTest_static_0200
+     * @tc.name      frameNodeTest_static_0200
+     * @tc.desc      frameNodeTest_static_0200
+     * @tc.level     2
      */
-it('frameNodeTest_static_0200', Level.LEVEL0, async (done: ()=>void) => {
+    it('frameNodeTest_static_0200', Level.LEVEL0, async (done: ()=>void) => {
       console.info('frameNodeTest_static_0200 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -103,12 +118,12 @@ it('frameNodeTest_static_0200', Level.LEVEL0, async (done: ()=>void) => {
 
 
     /*
-     * @tc.number   frameNodeTest_static_0300
-     * @tc.name     frameNodeTest_static_0300
-     * @tc.desc     frameNodeTest_static_0300
-     * @tc.level    Level.LEVEL0
+     * @tc.number    frameNodeTest_static_0300
+     * @tc.name      frameNodeTest_static_0300
+     * @tc.desc      frameNodeTest_static_0300
+     * @tc.level     2
      */
-it('frameNodeTest_static_0300', Level.LEVEL0, async (done: ()=>void) => {
+    it('frameNodeTest_static_0300', Level.LEVEL0, async (done: ()=>void) => {
       console.info('frameNodeTest_static_0300 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -126,12 +141,12 @@ it('frameNodeTest_static_0300', Level.LEVEL0, async (done: ()=>void) => {
 
 
     /*
-     * @tc.number   frameNodeTest_static_0400
-     * @tc.name     frameNodeTest_static_0400
-     * @tc.desc     frameNodeTest_static_0400
-     * @tc.level    Level.LEVEL0
+     * @tc.number    frameNodeTest_static_0400
+     * @tc.name      frameNodeTest_static_0400
+     * @tc.desc      frameNodeTest_static_0400
+     * @tc.level     2
      */
-it('frameNodeTest_static_0400', Level.LEVEL0, async (done: ()=>void) => {
+    it('frameNodeTest_static_0400', Level.LEVEL0, async (done: ()=>void) => {
       console.info('frameNodeTest_static_0400 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -149,12 +164,12 @@ it('frameNodeTest_static_0400', Level.LEVEL0, async (done: ()=>void) => {
 
 
     /*
-     * @tc.number   frameNodeTest_static_0500
-     * @tc.name     frameNodeTest_static_0500
-     * @tc.desc     frameNodeTest_static_0500
-     * @tc.level    Level.LEVEL0
+     * @tc.number    frameNodeTest_static_0500
+     * @tc.name      frameNodeTest_static_0500
+     * @tc.desc      frameNodeTest_static_0500
+     * @tc.level     2
      */
-it('frameNodeTest_static_0500', Level.LEVEL0, async (done: ()=>void) => {
+    it('frameNodeTest_static_0500', Level.LEVEL0, async (done: ()=>void) => {
       console.info('frameNodeTest_static_0500 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -178,12 +193,12 @@ it('frameNodeTest_static_0500', Level.LEVEL0, async (done: ()=>void) => {
 
 
     /*
-     * @tc.number   frameNodeTest_static_0600
-     * @tc.name     frameNodeTest_static_0600
-     * @tc.desc     frameNodeTest_static_0600
-     * @tc.level    Level.LEVEL0
+     * @tc.number    frameNodeTest_static_0600
+     * @tc.name      frameNodeTest_static_0600
+     * @tc.desc      frameNodeTest_static_0600
+     * @tc.level     2
      */
-it('frameNodeTest_static_0600', Level.LEVEL0, async (done: ()=>void) => {
+    it('frameNodeTest_static_0600', Level.LEVEL0, async (done: ()=>void) => {
       console.info('frameNodeTest_static_0600 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
