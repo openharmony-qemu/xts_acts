@@ -29,11 +29,11 @@ struct ObserverPageId {
   }
 
   aboutToAppear(): void {
-    observer.onRouterPageUpdate(this.getUIContext(), this.testFunc)
+    // observer.onRouterPageUpdate( this.getUIContext(), this.testFunc)
   }
 
   aboutToDisappear(): void {
-    observer.offRouterPageUpdate(this.getUIContext(), this.testFunc)
+    observer.offRouterPageUpdate( this.getUIContext(), this.testFunc)
   }
 
 
@@ -62,6 +62,7 @@ struct CustomCom {
 
   aboutToAppear() {
     this.pageInfo  = this.queryRouterPageInfo();
+    console.log('++++++++++++++++++++',this.pageInfo )
     this.pageIdValue = this.pageInfo?.pageId
   }
 

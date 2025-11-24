@@ -12,8 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import emitter from '@ohos.events.emitter';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/IndexStatic"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -52,9 +52,10 @@ export default function idScrollEvent() {
         console.info("get idScrollEvent state pages:" + JSON.stringify(pages));
         if (!("idScrollEvent" == pages.name)) {
           console.info("get idScrollEvent pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push idScrollEvent page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push idScrollEvent page error:" + err);
@@ -90,19 +91,19 @@ it('idScrollEvent_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       await (driver.swipe(Math.round(left + width/2) as int,Math.round(top + height*0.8) as int ,Math.round(left + width/2)as int ,Math.round(top + height*0.2) as int) as Promise<void>);
       await CommonFunc.sleep(2000);
 
-      let strJson1 = inspector.getInspectorByKey('scroll_observer_id');
+      let strJson1 = inspector.getInspectorByKey('scroll_observer_id'); //[scrollSourceDrag_0100] content1: "id: testScroll"
       console.info("[scrollSourceDrag_0100] content1: " + JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')));
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')).assertEqual('id: testScroll');
 
-      let strJson2 = inspector.getInspectorByKey('scroll_observer_uniqueId');
+      let strJson2 = inspector.getInspectorByKey('scroll_observer_uniqueId');  //[scrollSourceDrag_0100] content2: "uniqueId: 0"
       console.info("[scrollSourceDrag_0100] content2: " + JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')));
       expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content') != 'uniqueId: 0').assertTrue();
 
-      let strJson3 = inspector.getInspectorByKey('scroll_observer_scrollEvent');
+      let strJson3 = inspector.getInspectorByKey('scroll_observer_scrollEvent'); //[scrollSourceDrag_0100] content3: "scrollEvent: 0"
       console.info("[scrollSourceDrag_0100] content3: " + JSON.stringify(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('content')));
       expect(JSON.parseJsonElement(strJson3).getElement('$attrs').getString('content')).assertEqual('scrollEvent: 1');
 
-      let strJson4 = inspector.getInspectorByKey('scroll_observer_offset');
+      let strJson4 = inspector.getInspectorByKey('scroll_observer_offset');//[scrollSourceDrag_0100] content4: "offset: 0"
       console.info("[scrollSourceDrag_0100] content4: " + JSON.stringify(JSON.parseJsonElement(strJson4).getElement('$attrs').getString('content')));
       expect(JSON.parseJsonElement(strJson4).getElement('$attrs').getString('content') != 'offset: 0').assertTrue();
       await CommonFunc.sleep(1000);

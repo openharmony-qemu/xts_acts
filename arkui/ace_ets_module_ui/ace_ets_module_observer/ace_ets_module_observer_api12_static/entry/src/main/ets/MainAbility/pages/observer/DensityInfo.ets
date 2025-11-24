@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+import uiObserver from '@ohos.arkui.observer';
 import observer from '@ohos.arkui.observer';
 import { Entry, Component, Column, Text, Image, Color, FontWeight, Padding, Button, ClickEvent, ColumnOptions} from '@ohos.arkui.component'
 import { State, AppStorage } from '@ohos.arkui.stateManagement'
@@ -23,7 +24,7 @@ struct DensityInfo1 {
   @State density: number = 0;
   @State message: string = 'start'
 
-  densityUpdateCallback: (info: observer.DensityInfo) => void = (info: observer.DensityInfo) => {
+  densityUpdateCallback:(info: observer.DensityInfo) => void = (info: observer.DensityInfo) => {
     this.density = info.density;
     this.message = 'later DPI: ' + this.density.toString();
   }
@@ -35,7 +36,9 @@ struct DensityInfo1 {
         .fontWeight(FontWeight.Bold)
       Button(this.message).id("DensityInfo_id")
         .onClick((e: ClickEvent) => {
-          observer.onDensityUpdate(this.getUIContext(), this.densityUpdateCallback);
+          console.log('++++++++++++++++++++++1')
+          this.getUIContext().getUIObserver().onDensityUpdate(this.densityUpdateCallback);
+          console.log('++++++++++++++++++++++2')
           this.message = 'DensityInfo succ'
         })
     }

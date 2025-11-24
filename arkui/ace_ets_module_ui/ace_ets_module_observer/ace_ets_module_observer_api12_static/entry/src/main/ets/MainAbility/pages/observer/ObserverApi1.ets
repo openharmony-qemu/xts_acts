@@ -83,11 +83,13 @@ struct CustomCom {
   @Link navDestinationParamValue: string | undefined;
 
   aboutToAppear() {
-    this.navInfo = this.queryNavigationInfo();
+    this.navInfo = this.queryNavigationInfo();//这个得到的是空
     this.navIdValue = this.navInfo?.navigationId
-
-    this.navDesInfo = this.queryNavDestinationInfo();
-    this.navDestinationParamValue = String(this.navDesInfo?.param)
+    console.log('+++++++++++++navIdValue',this.navIdValue)
+    this.navDesInfo = this.queryNavDestinationInfo(); //这个得到的param是undefined
+    console.log('+++++++++++++++++++++++++++'+JSON.stringify(this.navDesInfo))
+    this.navDestinationParamValue = String(this.navDesInfo?.param) // 没有param参数 {"navDestinationId":"","navigationId":"","state":{},"index":0,"name":""}
+    console.log('this.navDestinationParamValue',this.navDesInfo?.param)
   }
 
   build() {

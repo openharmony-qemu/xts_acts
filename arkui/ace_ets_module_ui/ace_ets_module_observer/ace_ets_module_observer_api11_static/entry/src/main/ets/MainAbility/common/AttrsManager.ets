@@ -14,7 +14,7 @@
  */
 
 import { Constants } from '../../constants/Constants';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import { TextCase, TextDecorationType, Resource, AlignRuleOption } from '@ohos.arkui.component';
 
 export interface Message {
@@ -33,7 +33,7 @@ export class AttrsManager {
   static change(caseName: string, setValue: AlignRuleOption) {
     const message: Message = { value: setValue };
 
-    const eventData: events_emitter.EventData = {
+    const eventData: emitter.EventData = {
       data: {
         'src': message
       } as Record<String,undefined|null|Object>
@@ -47,28 +47,28 @@ export class AttrsManager {
   }
 
   static unRegisterDataChange() {
-    events_emitter.off(Constants.EVENT_ID_CHANGE_DATA);
+    emitter.off(Constants.EVENT_ID_CHANGE_DATA);
   }
 
   private onEvent(eventId: number) {
-    let stateChangeEvent: events_emitter.InnerEvent = {
+    let stateChangeEvent: emitter.InnerEvent = {
       eventId: eventId.toLong(),
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
-    events_emitter.off(eventId.toLong());
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
+    emitter.off(eventId.toLong());
+    emitter.on(stateChangeEvent, this.stateChangCallBack);
   }
 
-  private static emitEvent(tag: string, eventId: number, eventData: events_emitter.EventData) {
-    let innerEvent: events_emitter.InnerEvent = {
+  private static emitEvent(tag: string, eventId: number, eventData: emitter.EventData) {
+    let innerEvent: emitter.InnerEvent = {
       eventId: eventId.toLong(),
-      priority: events_emitter.EventPriority.LOW
+      priority: emitter.EventPriority.LOW
     }
     console.info(tag + ' start to publish emit');
-    events_emitter.emit(innerEvent, eventData);
+    emitter.emit(innerEvent, eventData);
   }
 
-  private stateChangCallBack = (eventData: events_emitter.EventData) => {
+  private stateChangCallBack = (eventData: emitter.EventData) => {
     console.info('[stateChangCallBack] stateChangCallBack ');
     if (eventData != null && eventData.data != null) {
       console.info('[stateChangCallBack] state change called: ' + JSON.stringify(eventData));

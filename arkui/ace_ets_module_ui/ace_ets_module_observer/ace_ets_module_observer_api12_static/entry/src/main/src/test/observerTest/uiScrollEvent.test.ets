@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/IndexStatic"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -47,9 +47,10 @@ export default function uiScrollEvent() {
         console.info("get uiScrollEvent state pages:" + JSON.stringify(pages));
         if (!("uiScrollEvent" == pages.name)) {
           console.info("get uiScrollEvent pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push uiScrollEvent page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push uiScrollEvent page error:" + err);

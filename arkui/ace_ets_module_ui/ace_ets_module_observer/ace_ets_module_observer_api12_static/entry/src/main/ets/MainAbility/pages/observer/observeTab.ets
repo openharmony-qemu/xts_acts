@@ -18,7 +18,7 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct observerTabsExample {
-  @State currentIndex: int = 0
+  @State currentIndex: number = 0
   private controller: TabsController = new TabsController()
   @State uniqueId: number = 0
   @State uniqueId1: number = 0
@@ -31,7 +31,7 @@ struct observerTabsExample {
           .id('observer_tabOn')
           .height('5%')
           .onClick((e: ClickEvent)=>{
-            observer.onTabContentUpdate({ id: 'tabsId2' }, (info: observer.TabContentInfo) => {
+            observer.onTabContentUpdate( { id: 'tabsId2' }, (info: observer.TabContentInfo) => {
               this.uniqueId = info.uniqueId
               this.uniqueId1 = info.tabContentUniqueId
               this.text1 = info.tabContentId
@@ -42,7 +42,7 @@ struct observerTabsExample {
           .id('observer_tabOff')
           .height('5%')
           .onClick((e: ClickEvent)=>{
-            observer.offTabContentUpdate({ id: 'tabsId2' }, (info: observer.TabContentInfo) => {
+            observer.offTabContentUpdate( { id: 'tabsId2' }, (info: observer.TabContentInfo) => {
               console.info('off tabContentUpdate with id', JSON.stringify(info));
             })
           })
@@ -60,7 +60,7 @@ struct observerTabsExample {
         .onClick((e: ClickEvent)=>{
           this.currentIndex = 1
         })
-      Tabs({ index: this.currentIndex, controller: this.controller }) {
+      Tabs({ index: this.currentIndex as int, controller: this.controller }) {
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#00CB87')
         }.tabBar('green').id('tabContent01')

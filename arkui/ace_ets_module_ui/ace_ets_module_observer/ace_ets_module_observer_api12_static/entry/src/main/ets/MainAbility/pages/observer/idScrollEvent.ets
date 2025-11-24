@@ -37,22 +37,27 @@ struct scrollEventScrollIndex {
           Button('ObserverId on')
             .id('scroll_observer_on')
             .onClick((e: ClickEvent) => {
+              console.log('+++++++++++++++++++++1')
+              let observer = this.getUIContext().getUIObserver();
+              console.log('+++++++++++++++++++++2')
               observer.onScrollEvent(this.options, (info: observer.ScrollEventInfo) => {
-                this.Id1 = info.id
-                this.uniqueId1 = info.uniqueId
-                this.text1 = info.scrollEvent
-                this.offset1 = info.offset
-                console.info('scrollEventInfo', JSON.stringify(info));
-                console.info('scrollEventInfo id', JSON.stringify(info.id));
-                console.info('scrollEventInfo uniqueId', JSON.stringify(info.uniqueId));
-                console.info('scrollEventInfo scrollEvent', JSON.stringify(info.scrollEvent));
-                console.info('scrollEventInfo offset', JSON.stringify(info.offset));
-              });
+                  this.Id1 = info.id
+                  this.uniqueId1 = info.uniqueId
+                  this.text1 = info.scrollEvent
+                  this.offset1 = info.offset
+                  console.info('scrollEventInfo', JSON.stringify(info));
+                  console.info('scrollEventInfo id', JSON.stringify(info.id));
+                  console.info('scrollEventInfo uniqueId', JSON.stringify(info.uniqueId));
+                  console.info('scrollEventInfo scrollEvent', JSON.stringify(info.scrollEvent));
+                  console.info('scrollEventInfo offset', JSON.stringify(info.offset));
+                })
+              console.log('+++++++++++++++++++++3')
             })
           Button('ObserverId off')
             .id('scroll_observer_off')
             .onClick((e: ClickEvent) => {
-              observer.offScrollEvent(this.options);
+              let observer = this.getUIContext().getUIObserver();
+              observer.offScrollEvent( this.options);
             })
         }
       }.margin({top:5} as Margin)
