@@ -245,7 +245,8 @@ export default function imagePixelmap() {
       logger: Logger,
       pixelMap: image.PixelMap | undefined,
       originImageInfo: image.ImageInfo,
-      allocatorType: image.AllocatorType = AUTO
+      allocatorType: image.AllocatorType = AUTO,
+      exceptedMimeType?: string
     ): Promise<boolean> => {
       let ret = false;
       if (pixelMap != undefined) {
@@ -254,7 +255,8 @@ export default function imagePixelmap() {
         logger.log("dstImageInfo is:" + JSON.stringify(dstImageInfo));
         ret = (dstImageInfo != undefined) &&
               (dstImageInfo.size.height == originImageInfo.size.height) &&
-              (dstImageInfo.size.width  == originImageInfo.size.width)
+              (dstImageInfo.size.width  == originImageInfo.size.width) &&
+              (dstImageInfo.mimeType == exceptedMimeType || exceptedMimeType == undefined);
         if (allocatorType != AUTO) {
           let fromatBytes = getPixelMapFormatBytes(originImageInfo.pixelFormat);
           ret = ret && (dstImageInfo.stride >= (originImageInfo.size.width * fromatBytes));
@@ -6973,7 +6975,7 @@ export default function imagePixelmap() {
       };
       let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, AUTO);
       let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
-      let ret = await checkPixelmap(done, logger, pixelMap, imageInfo, AUTO);
+      let ret = await checkPixelmap(done, logger, pixelMap, imageInfo, AUTO, "image/wbmp");
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
       await pixelMap?.release();
@@ -7002,7 +7004,7 @@ export default function imagePixelmap() {
       };
       let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, AUTO);
       let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
-      let ret = await checkPixelmap(done, logger, pixelMap, imageInfo, AUTO);
+      let ret = await checkPixelmap(done, logger, pixelMap, imageInfo, AUTO, "image/wbmp");
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
       await pixelMap?.release();
@@ -7031,7 +7033,7 @@ export default function imagePixelmap() {
       };
       let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, SHARE_MEMORY);
       let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
-      let ret = await checkPixelmap(done, logger, pixelMap, imageInfo, SHARE_MEMORY);
+      let ret = await checkPixelmap(done, logger, pixelMap, imageInfo, SHARE_MEMORY, "image/wbmp");
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
       await pixelMap?.release();
@@ -7060,7 +7062,7 @@ export default function imagePixelmap() {
       };
       let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, SHARE_MEMORY);
       let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
-      let ret = await checkPixelmap(done, logger, pixelMap, imageInfo, SHARE_MEMORY);
+      let ret = await checkPixelmap(done, logger, pixelMap, imageInfo, SHARE_MEMORY, "image/wbmp");
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
       await pixelMap?.release();
@@ -7089,7 +7091,7 @@ export default function imagePixelmap() {
       };
       let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
       let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
-      let ret = await checkPixelmap(done, logger, pixelMap, imageInfo, DMA);
+      let ret = await checkPixelmap(done, logger, pixelMap, imageInfo, DMA, "image/wbmp");
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
       await pixelMap?.release();
@@ -7118,7 +7120,7 @@ export default function imagePixelmap() {
       };
       let pixelMap = await getPixelmapFromAllocator(logger, buffer, "default", decodingOptions, DMA);
       let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
-      let ret = await checkPixelmap(done, logger, pixelMap, imageInfo, DMA);
+      let ret = await checkPixelmap(done, logger, pixelMap, imageInfo, DMA, "image/wbmp");
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
       await pixelMap?.release();
@@ -7147,7 +7149,7 @@ export default function imagePixelmap() {
       };
       let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, AUTO);
       let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
-      let ret = await checkPixelmap(done, logger, pixelMap, imageInfo, AUTO);
+      let ret = await checkPixelmap(done, logger, pixelMap, imageInfo, AUTO, "image/wbmp");
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
       await pixelMap?.release();
@@ -7176,7 +7178,7 @@ export default function imagePixelmap() {
       };
       let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, AUTO);
       let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
-      let ret = await checkPixelmap(done, logger, pixelMap, imageInfo, AUTO);
+      let ret = await checkPixelmap(done, logger, pixelMap, imageInfo, AUTO, "image/wbmp");
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
       await pixelMap?.release();
@@ -7205,7 +7207,7 @@ export default function imagePixelmap() {
       };
       let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, SHARE_MEMORY);
       let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
-      let ret = await checkPixelmap(done, logger, pixelMap, imageInfo, SHARE_MEMORY);
+      let ret = await checkPixelmap(done, logger, pixelMap, imageInfo, SHARE_MEMORY, "image/wbmp");
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
       await pixelMap?.release();
@@ -7234,7 +7236,7 @@ export default function imagePixelmap() {
       };
       let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, SHARE_MEMORY);
       let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
-      let ret = await checkPixelmap(done, logger, pixelMap, imageInfo, SHARE_MEMORY);
+      let ret = await checkPixelmap(done, logger, pixelMap, imageInfo, SHARE_MEMORY, "image/wbmp");
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
       await pixelMap?.release();
@@ -7263,7 +7265,7 @@ export default function imagePixelmap() {
       };
       let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
       let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
-      let ret = await checkPixelmap(done, logger, pixelMap, imageInfo, DMA);
+      let ret = await checkPixelmap(done, logger, pixelMap, imageInfo, DMA, "image/wbmp");
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
       await pixelMap?.release();
@@ -7292,7 +7294,7 @@ export default function imagePixelmap() {
       };
       let pixelMap = await getPixelmapFromAllocator(logger, buffer, "sync", decodingOptions, DMA);
       let imageInfo = await getImageInfo(logger, buffer, decodingOptions);
-      let ret = await checkPixelmap(done, logger, pixelMap, imageInfo, DMA);
+      let ret = await checkPixelmap(done, logger, pixelMap, imageInfo, DMA, "image/wbmp");
       logger.log("checkPixelmap result is: " + ret);
       expect(ret).assertTrue();
       await pixelMap?.release();
