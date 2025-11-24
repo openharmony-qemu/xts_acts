@@ -25,6 +25,7 @@ import Utils from './Util.test';
 
 const DOMAIN: Int = 0x0000;
 const TAG: string = 'testTag';
+const BOOL_TRUE: boolean = true;
 
 export default function formProviderTest() {
   describe('formProviderTest', (): void => {
@@ -50,7 +51,7 @@ export default function formProviderTest() {
       hilog.info(DOMAIN, TAG, `formId set for test: ${result.formId}`);
       formId = result.formId;
     }).catch((error: Error) => {
-      hilog.error(DOMAIN, TAG, 'addForm error, set formId manually');
+      hilog.error(DOMAIN, TAG, `addForm error, set formId manually error error, code: ${error?.code}, message: ${error?.message}`);
     })
 
     afterEach(() => {
@@ -73,7 +74,7 @@ export default function formProviderTest() {
           } else {
             hilog.info(DOMAIN, TAG, 'SetFormNextRefreshTimeTest001 success');
           }
-          expect(true).assertTrue();
+          expect(error?.code).assertEqual(16501001);
         });
       } catch (error: Error) {
         hilog.error(DOMAIN, TAG, `SetFormNextRefreshTimeTest001 error, code: ${error?.code}, message: ${error?.message}`);
@@ -95,10 +96,11 @@ export default function formProviderTest() {
       try {
         formProvider.setFormNextRefreshTime(formId, 3).then(() => {
           hilog.info(DOMAIN, TAG, `SetFormNextRefreshTimeTest002 success`);
+          expect().assertFail();
         }).catch((error: Error) => {
           hilog.error(DOMAIN, TAG, `SetFormNextRefreshTimeTest002 error, code: ${error?.code}, message: ${error?.message}`);
+          expect(error?.code).assertEqual(16501001);
         });
-        expect(true).assertTrue();
       } catch (error: Error) {
         hilog.error(DOMAIN, TAG, `SetFormNextRefreshTimeTest002 error, code: ${error?.code}, message: ${error?.message}`);
         expect().assertFail();
@@ -121,11 +123,7 @@ export default function formProviderTest() {
         formProvider.setFormNextRefreshTime(falseFormId, 2, (error: BusinessError<void> | null) => {
           if (error != null && error?.code != 0) {
             hilog.error(DOMAIN, TAG, `SetFormNextRefreshTimeTest003 error, code: ${error?.code}, message: ${error?.message}`);
-            if (error?.code === 16501001) {
-              expect(true).assertTrue();
-            } else {
-              expect().assertFail();
-            }
+            expect(error?.code).assertEqual(16501001);
           } else {
             hilog.info(DOMAIN, TAG, 'SetFormNextRefreshTimeTest003 success');
             expect().assertFail();
@@ -151,14 +149,10 @@ export default function formProviderTest() {
         let falseFormId = '123123123';
         formProvider.setFormNextRefreshTime(falseFormId, 3).then(() => {
           hilog.info(DOMAIN, TAG, `SetFormNextRefreshTimeTest004 success`);
-          expect(true).assertFail();
+          expect().assertFail();
         }).catch((error: Error) => {
           hilog.error(DOMAIN, TAG, `SetFormNextRefreshTimeTest004 error, code: ${error?.code}, message: ${error?.message}`);
-          if (error.code === 16501001) {
-            expect(true).assertTrue();
-          } else {
-            expect().assertFail();
-          }
+          expect(error?.code).assertEqual(16501001);
         });
       } catch (error: Error) {
         hilog.error(DOMAIN, TAG, `SetFormNextRefreshTimeTest004 error, code: ${error?.code}, message: ${error?.message}`);
@@ -186,10 +180,10 @@ export default function formProviderTest() {
       try {
         formProvider.updateForm(formId, bindingData).then(() => {
           hilog.info(DOMAIN, TAG, `UpdateFormTest001 success`);
-          expect(true).assertTrue();
+          expect().assertFail();
         }).catch((error: Error) => {
           hilog.error(DOMAIN, TAG, `UpdateFormTest001 error, code: ${error?.code}, message: ${error?.message}`);
-          expect(true).assertTrue();
+          expect(error?.code).assertEqual(16501001);
         });
       } catch (error: Error) {
         hilog.error(DOMAIN, TAG, `UpdateFormTest001 error, code: ${error?.code}, message: ${error?.message}`);
@@ -218,10 +212,10 @@ export default function formProviderTest() {
         formProvider.updateForm(formId, bindingData, (error: BusinessError<void> | null) => {
           if (error != null && error?.code != 0) {
             hilog.info(DOMAIN, TAG, `UpdateFormTest002 error, code: ${error?.code}, message: ${error?.message}`);
-            expect(true).assertTrue();
+            expect(error?.code).assertEqual(16501001);
           } else {
             hilog.info(DOMAIN, TAG, 'UpdateFormTest002 success');
-            expect(true).assertTrue();
+            expect().assertFail();
           }
         });
       } catch (error: Error) {
@@ -252,9 +246,7 @@ export default function formProviderTest() {
         formProvider.updateForm(falseFormId, bindingData, (error: BusinessError<void> | null) => {
           if (error != null && error?.code != 0) {
             hilog.info(DOMAIN, TAG, `UpdateFormTest003 error, code: ${error?.code}, message: ${error?.message}`);
-            if (error?.code === 16501001) {
-              expect(true).assertTrue();
-            }
+            expect(error?.code).assertEqual(16501001);
           } else {
             hilog.info(DOMAIN, TAG, 'UpdateFormTest003 success');
             expect().assertFail();
@@ -286,12 +278,10 @@ export default function formProviderTest() {
       try {
         formProvider.updateForm(falseFormId, bindingData).then(() => {
           hilog.info(DOMAIN, TAG, `UpdateFormTest004 success`);
-          expect(true).assertTrue();
+          expect().assertFail();
         }).catch((error: Error) => {
           hilog.error(DOMAIN, TAG, `UpdateFormTest004 error, code: ${error?.code}, message: ${error?.message}`);
-          if (error?.code === 16501001) {
-            expect(true).assertTrue();
-          }
+          expect(error?.code).assertEqual(16501001);
         });
       } catch (error: Error) {
         hilog.error(DOMAIN, TAG, `UpdateFormTest004 error, code: ${error?.code}, message: ${error?.message}`);
@@ -322,7 +312,7 @@ export default function formProviderTest() {
         )).assertTrue();
         hilog.info(DOMAIN, TAG, `OpenFormManagerTest001 currentBundleName is` + bundleName);
         formProvider.openFormManager(want);
-        expect(true).assertTrue();
+        expect(BOOL_TRUE).assertEqual(true);
       } catch (error: Error) {
         hilog.error(DOMAIN, TAG, `OpenFormManagerTest001 error, code: ${error?.code}, message: ${error?.message}`);
         expect().assertFail();
@@ -353,9 +343,7 @@ export default function formProviderTest() {
         expect().assertFail();
       } catch (error: Error) {
         hilog.error(DOMAIN, TAG, `OpenFormManagerTest002 error, code: ${error?.code}, message: ${error?.message}`);
-        if (error.code === 401) {
-          expect(true).assertTrue();
-        }
+        expect(401).assertEqual(error?.code);
       }
 
       done();
@@ -373,10 +361,10 @@ export default function formProviderTest() {
       try {
         formProvider.openFormEditAbility(editAbilityName, formId);
         hilog.info(DOMAIN, TAG, `OpenFormEditAbilityTest001 success`);
-        expect(true).assertTrue();
+        expect().assertFail();
       } catch (error: Error) {
         hilog.error(DOMAIN, TAG, `OpenFormEditAbilityTest001 error, code: ${error?.code}, message: ${error?.message}`);
-        expect(true).assertTrue();
+        expect(error?.code).assertEqual(16501001);
       }
 
       done();
@@ -398,9 +386,7 @@ export default function formProviderTest() {
         expect().assertFail();
       } catch (error: Error) {
         hilog.error(DOMAIN, TAG, `OpenFormEditAbilityTest002 error, code: ${error?.code}, message: ${error?.message}`);
-        if (error.code === 401) {
-          expect(true).assertTrue();
-        }
+        expect(error?.code).assertEqual(16501001);
       }
 
       done();
@@ -426,7 +412,7 @@ export default function formProviderTest() {
             expect(element.name).assertEqual(widgetName);
           }
           hilog.info(DOMAIN, TAG, `GetFormsInfoTest001 success`);
-          expect(true).assertTrue();
+          expect(BOOL_TRUE).assertEqual(true);
         }).catch((error: Error) => {
           hilog.error(DOMAIN, TAG, `GetFormsInfoTest001 error, code: ${error?.code}, message: ${error?.message}`);
           expect().assertFail();
@@ -471,7 +457,7 @@ export default function formProviderTest() {
               expect(element.name).assertEqual(widgetName);
             }
             hilog.info(DOMAIN, TAG, `GetFormsInfoTest002 success`);
-            expect(true).assertTrue();
+            expect(BOOL_TRUE).assertEqual(true);
           }
         });
       } catch (error: Error) {
@@ -516,7 +502,7 @@ export default function formProviderTest() {
               expect(element.name).assertEqual(widgetName);
             }
             hilog.info(DOMAIN, TAG, `GetFormsInfoTest003 success`);
-            expect(true).assertTrue();
+            expect(BOOL_TRUE).assertEqual(true);
           }
         });
       } catch (error: Error) {
@@ -547,7 +533,7 @@ export default function formProviderTest() {
           if (error !== null && error?.code != 0) {
             hilog.error(DOMAIN, TAG, `GetFormsInfoTest004 error, code: ${error?.code}, message: ${error?.message}`);
             if (error?.code === 401) {
-              expect(false).assertTrue();
+              expect(BOOL_TRUE).assertEqual(true);
             } else {
               expect().assertFail();
             }
@@ -573,7 +559,7 @@ export default function formProviderTest() {
       try {
         formProvider.isRequestPublishFormSupported().then(() => {
           hilog.info(DOMAIN, TAG, 'IsRequestPublishFormSupported success');
-          expect(true).assertTrue();
+          expect(BOOL_TRUE).assertEqual(true);
         }).catch((error: Error) => {
           hilog.error(DOMAIN, TAG, `IsRequestPublishFormSupported error, code: ${error?.code}, message: ${error?.message}`);
           expect().assertFail();
@@ -598,7 +584,7 @@ export default function formProviderTest() {
       try {
         formProvider.isRequestPublishFormSupported((error: BusinessError<void> | null, result: boolean | undefined) => {
           hilog.info(DOMAIN, TAG, 'IsRequestPublishFormSupported success');
-          expect(true).assertTrue();
+          expect(BOOL_TRUE).assertEqual(true);
         });
       } catch (error: Error) {
         hilog.error(DOMAIN, TAG, `IsRequestPublishFormSupported error, code: ${error?.code}, message: ${error?.message}`);
@@ -632,10 +618,10 @@ export default function formProviderTest() {
         formProvider.requestPublishForm(want, (error: BusinessError<void> | null, data: string | undefined) => {
           if (error != null && error?.code != 0) {
             hilog.error(DOMAIN, TAG, `RequestPublishFormTest001 error, code: ${error?.code}, message: ${error?.message}`);
-            expect(true).assertTrue();
+            expect(error?.code).assertEqual(202);
           } else {
             hilog.info(DOMAIN, TAG, 'RequestPublishFormTest001 success');
-            expect(true).assertTrue();
+            expect().assertFail();
           }
         });
       } catch (error: Error) {
@@ -676,10 +662,10 @@ export default function formProviderTest() {
         formProvider.requestPublishForm(want, bindingData, (error: BusinessError<void> | null, data: string | undefined) => {
           if (error != null && error?.code != 0) {
             hilog.error(DOMAIN, TAG, `RequestPublishFormTest002 error, code: ${error?.code}, message: ${error?.message}`);
-            expect(true).assertTrue();
+            expect(error?.code).assertEqual(202);
           } else {
             hilog.info(DOMAIN, TAG, 'RequestPublishFormTest002 success');
-            expect(true).assertTrue();
+            expect().assertFail();
           }
         });
       } catch (error: Error) {
@@ -714,10 +700,10 @@ export default function formProviderTest() {
 
         formProvider.requestPublishForm(want).then((data: string | undefined) => {
           hilog.info(DOMAIN, TAG, 'RequestPublishFormTest003 promise success');
-          expect(true).assertTrue();
+          expect().assertFail();
         }).catch((error: Error) => {
           hilog.error(DOMAIN, TAG, `RequestPublishFormTest003 error, code: ${error?.code}, message: ${error?.message}`);
-          expect(true).assertTrue();
+          expect(error.code).assertEqual(202);
         });
       } catch (error: Error) {
         hilog.error(DOMAIN, TAG, `RequestPublishFormTest003 error, code: ${error?.code}, message: ${error?.message}`);
@@ -756,10 +742,10 @@ export default function formProviderTest() {
 
         formProvider.requestPublishForm(want, bindingData).then((data: string) => {
           hilog.info(DOMAIN, TAG, 'RequestPublishFormTest004 success');
-          expect(true).assertTrue();
+          expect().assertFail();
         }).catch((error: Error) => {
           hilog.error(DOMAIN, TAG, `RequestPublishFormTest004 error, code: ${error?.code}, message: ${error?.message}`);
-          expect(true).assertTrue();
+          expect(error.code).assertEqual(202);
         });
       } catch (error: Error) {
         hilog.error(DOMAIN, TAG, `RequestPublishFormTest004 error, code: ${error?.code}, message: ${error?.message}`);
@@ -785,10 +771,7 @@ export default function formProviderTest() {
         formProvider.requestPublishForm(want, (error: BusinessError<void> | null, data: string | undefined) => {
           if (error != null && error?.code != 0) {
             hilog.error(DOMAIN, TAG, `RequestPublishFormTest005 error, code: ${error?.code}, message: ${error?.message}`);
-            if (error?.code === 16500100) {
-              expect(true).assertTrue();
-            } else {
-            }
+            expect(error?.code).assertEqual(202);
           } else {
             hilog.info(DOMAIN, TAG, 'RequestPublishFormTest005 success');
             expect().assertFail();
@@ -814,10 +797,10 @@ export default function formProviderTest() {
       try {
         formProvider.getPublishedRunningFormInfos().then((result: Array<formInfo.RunningFormInfo>) => {
           hilog.info(DOMAIN, TAG, 'GetPublishedRunningFormInfosTest001 success');
-          expect(true).assertTrue();
+          expect().assertFail();
         }).catch((error: Error) => {
           hilog.error(DOMAIN, TAG, `getPublishedRunningFormInfos error, code: ${error?.code}, message: ${error?.message}`);
-          expect(true).assertTrue();
+          expect(error?.code).assertEqual(16500100);
         });
       } catch (error: Error) {
         hilog.error(DOMAIN, TAG, `GetPublishedRunningFormInfosTest001 error, code: ${error?.code}, message: ${error?.message}`);
@@ -839,10 +822,10 @@ export default function formProviderTest() {
       try {
         formProvider.getPublishedRunningFormInfoById(formId).then((result: formInfo.RunningFormInfo) => {
           hilog.info(DOMAIN, TAG, 'GetPublishedRunningFormInfoByIdTest001 success');
-          expect(true).assertTrue();
+          expect().assertFail();
         }).catch((error: Error) => {
           hilog.error(DOMAIN, TAG, `GetPublishedRunningFormInfoByIdTest001 error, code: ${error?.code}, message: ${error?.message}`);
-          expect(true).assertTrue();
+          expect(error?.code).assertEqual(16500100);
         });
       } catch (error: Error) {
         hilog.error(DOMAIN, TAG, `GetPublishedRunningFormInfoByIdTest001 error, code: ${error?.code}, message: ${error?.message}`);
@@ -865,13 +848,10 @@ export default function formProviderTest() {
         let falseFormId = "123123123";
         formProvider.getPublishedRunningFormInfoById(falseFormId).then((result: formInfo.RunningFormInfo) => {
           hilog.info(DOMAIN, TAG, 'GetPublishedRunningFormInfoByIdTest002 success');
+          expect().assertFail();
         }).catch((error: Error) => {
           hilog.error(DOMAIN, TAG, `GetPublishedRunningFormInfoByIdTest002 error, code: ${error?.code}, message: ${error?.message}`);
-          if (error.code === 16500100) {
-            expect(true).assertTrue();
-          } else {
-            expect(true).assertTrue();
-          }
+          expect(error?.code).assertEqual(16500100);
         });
       } catch (error: Error) {
         hilog.error(DOMAIN, TAG, `GetPublishedRunningFormInfoByIdTest002 error, code: ${error?.code}, message: ${error?.message}`);
@@ -893,10 +873,10 @@ export default function formProviderTest() {
       try {
         formProvider.getPublishedFormInfos().then((result: Array<formInfo.FormInfo>) => {
           hilog.info(DOMAIN, TAG, 'GetPublishedFormInfosTest001 success');
-          expect(true).assertTrue();
+          expect().assertFail();
         }).catch((error: Error) => {
           hilog.error(DOMAIN, TAG, `getPublishedFormInfos error, code: ${error?.code}, message: ${error?.message}`);
-          expect(true).assertTrue();
+          expect(error?.code).assertEqual(16500100);
         });
       } catch (error: Error) {
         hilog.error(DOMAIN, TAG, `GetPublishedFormInfosTest001 error, code: ${error?.code}, message: ${error?.message}`);
@@ -918,10 +898,10 @@ export default function formProviderTest() {
       try {
         formProvider.getPublishedFormInfoById(formId).then((result: formInfo.FormInfo) => {
           hilog.info(DOMAIN, TAG, 'GetPublishedFormInfoByIdTest001 success');
-          expect(true).assertTrue();
+          expect().assertFail();
         }).catch((error: Error) => {
           hilog.error(DOMAIN, TAG, `GetPublishedFormInfoByIdTest001 error, code: ${error?.code}, message: ${error?.message}`);
-          expect(true).assertTrue();
+          expect(error?.code).assertEqual(16500100);
         });
       } catch (error: Error) {
         hilog.error(DOMAIN, TAG, `GetPublishedFormInfoByIdTest001 error, code: ${error?.code}, message: ${error?.message}`);
@@ -944,13 +924,10 @@ export default function formProviderTest() {
         let falseFormId = "123123123";
         formProvider.getPublishedFormInfoById(falseFormId).then((result: formInfo.FormInfo) => {
           hilog.info(DOMAIN, TAG, 'GetPublishedFormInfoByIdTest002 success');
+          expect().assertFail();
         }).catch((error: Error) => {
           hilog.error(DOMAIN, TAG, `GetPublishedFormInfoByIdTest002 error, code: ${error?.code}, message: ${error?.message}`);
-          if (error.code === 16500100) {
-            expect(true).assertTrue();
-          } else {
-            expect(true).assertTrue();
-          }
+          expect(error?.code).assertEqual(16500100);
         });
       } catch (error: Error) {
         hilog.error(DOMAIN, TAG, `GetPublishedFormInfoByIdTest002 error, code: ${error?.code}, message: ${error?.message}`);
