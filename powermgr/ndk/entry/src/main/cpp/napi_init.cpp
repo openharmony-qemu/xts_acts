@@ -55,25 +55,22 @@ static napi_value GetPluggedType(napi_env env, napi_callback_info info)
     
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     BatteryInfo_BatteryPluggedType type =  OH_BatteryInfo_GetPluggedType();
-    std::string str;
+    int32_t value;
     switch (type) {
         case PLUGGED_TYPE_NONE:
-            str = "NONE";
+            value = PLUGGED_TYPE_NONE;
             break;
         case PLUGGED_TYPE_AC:
-            str = "AC";
+            value = PLUGGED_TYPE_AC;
             break;
         case PLUGGED_TYPE_USB:
-            str = "USB";
+            value = PLUGGED_TYPE_USB;
             break;
         case PLUGGED_TYPE_WIRELESS:
-            str = "WIRELESS";
-            break;
-        case PLUGGED_TYPE_BUTT:
-            str = "BUTT";
+            value = PLUGGED_TYPE_WIRELESS;
             break;
         default:
-            str = "UNKNOWN";
+            value = PLUGGED_TYPE_BUTT;
             break;
     }
     napi_value ret;
