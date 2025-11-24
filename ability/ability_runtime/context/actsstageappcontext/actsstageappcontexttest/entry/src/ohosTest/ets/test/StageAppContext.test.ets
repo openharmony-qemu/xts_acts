@@ -46,14 +46,13 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
         })
 
         /**
-          * @tc.number: SUB_AA_OpenHarmony_ApplicationContext_0200
-          * @tc.name: Validating the context obtained by the AbilityContext call 
-          * getApplicationContext can be obtained using getApplicationContext
-          * @tc.desc: Function test
-          * @tc.size: MediumTest
-          * @tc.type: Function
-          * @tc.level   0
-          */
+         * @tc.name   SUB_AA_OpenHarmony_ApplicationContext_0200
+         * @tc.number SUB_AA_OpenHarmony_ApplicationContext_0200
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_AA_OpenHarmony_ApplicationContext_0200', Level.LEVEL0, async (done:Function) => {
             let TAG = "SUB_AA_OpenHarmony_ApplicationContext_0200";
             console.log(TAG + " --- start");
@@ -66,14 +65,13 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
         });
 
         /**
-          * @tc.number: SUB_AA_OpenHarmony_ApplicationContext_0300
-          * @tc.name: Verify that the AbilityContext call getApplicationContext 
-          * gets the context using resourceManger
-          * @tc.desc: Function test
-          * @tc.size: MediumTest
-          * @tc.type: Function
-          * @tc.level   3
-          */
+         * @tc.name   SUB_AA_OpenHarmony_ApplicationContext_0300
+         * @tc.number SUB_AA_OpenHarmony_ApplicationContext_0300
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_AA_OpenHarmony_ApplicationContext_0300', Level.LEVEL0, async (done:Function) => {
             let TAG = "SUB_AA_OpenHarmony_ApplicationContext_0300";
             console.log(TAG + " --- start");
@@ -85,14 +83,13 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
         });
 
         /**
-          * @tc.number: SUB_AA_OpenHarmony_ApplicationContext_0400
-          * @tc.name: Verify that the AbilityContext call getApplicationContext 
-          * gets the context using applicationInfo
-          * @tc.desc: Function test
-          * @tc.size: MediumTest
-          * @tc.type: Function
-          * @tc.level   3
-          */
+         * @tc.name   SUB_AA_OpenHarmony_ApplicationContext_0400
+         * @tc.number SUB_AA_OpenHarmony_ApplicationContext_0400
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_AA_OpenHarmony_ApplicationContext_0400', Level.LEVEL0, async (done:Function) => {
             let TAG = "SUB_AA_OpenHarmony_ApplicationContext_0400";
             console.log(TAG + " --- start");
@@ -105,14 +102,13 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
 
 
         /**
-          * @tc.number: SUB_AA_OpenHarmony_ApplicationContext_0500
-          * @tc.name: Validating the context obtained by the AbilityStageContext call 
-          * getApplicationContext can be obtained using getApplicationContext
-          * @tc.desc: Function test
-          * @tc.size: MediumTest
-          * @tc.type: Function
-          * @tc.level   3
-          */
+         * @tc.name   SUB_AA_OpenHarmony_ApplicationContext_0500
+         * @tc.number SUB_AA_OpenHarmony_ApplicationContext_0500
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_AA_OpenHarmony_ApplicationContext_0500', Level.LEVEL0, async (done:Function) => {
             let TAG = "SUB_AA_OpenHarmony_ApplicationContext_0500";
             console.log(TAG + " --- start");
@@ -125,14 +121,13 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
         });
 
         /**
-          * @tc.number: SUB_AA_OpenHarmony_ApplicationContext_0600
-          * @tc.name: Verify that the AbilityStageContext call getApplicationContext 
-          * gets the context using applicationInfo
-          * @tc.desc: Function test
-          * @tc.size: MediumTest
-          * @tc.type: Function
-          * @tc.level   3
-          */
+         * @tc.name   SUB_AA_OpenHarmony_ApplicationContext_0600
+         * @tc.number SUB_AA_OpenHarmony_ApplicationContext_0600
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_AA_OpenHarmony_ApplicationContext_0600', Level.LEVEL0, async (done:Function) => {
             let TAG = "SUB_AA_OpenHarmony_ApplicationContext_0600";
             console.log(TAG + " --- start");
@@ -144,14 +139,13 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
         });
 
         /**
-          * @tc.number: SUB_AA_OpenHarmony_ApplicationContext_1200
-          * @tc.name: Verify that the app-level context calls the interface 
-          * getApplicationContext to get the context using getApplicationContext
-          * @tc.desc: Function test
-          * @tc.size: MediumTest
-          * @tc.type: Function
-          * @tc.level   3
-          */
+         * @tc.name   SUB_AA_OpenHarmony_ApplicationContext_1200
+         * @tc.number SUB_AA_OpenHarmony_ApplicationContext_1200
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_AA_OpenHarmony_ApplicationContext_1200', Level.LEVEL0, async (done:Function) => {
             let TAG = "SUB_AA_OpenHarmony_ApplicationContext_1200";
             console.log(TAG + " --- start");
@@ -165,14 +159,13 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
         });
 
         /**
-          * @tc.number: SUB_AA_OpenHarmony_ApplicationContext_1300
-          * @tc.name: Verify that the context obtained by the application-level 
-          * context calling interface getApplicationContext can use resourceManger
-          * @tc.desc: Function test
-          * @tc.size: MediumTest
-          * @tc.type: Function
-          * @tc.level   3
-          */
+         * @tc.name   SUB_AA_OpenHarmony_ApplicationContext_1300
+         * @tc.number SUB_AA_OpenHarmony_ApplicationContext_1300
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_AA_OpenHarmony_ApplicationContext_1300', Level.LEVEL0, async (done:Function) => {
             let TAG = "SUB_AA_OpenHarmony_ApplicationContext_1300";
             console.log(TAG + " --- start");
@@ -185,14 +178,13 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
         });
 
         /**
-           * @tc.number: SUB_AA_OpenHarmony_ApplicationContext_1400
-           * @tc.name: Verify that the application-level context calling interface 
-           * getApplicationContext gets the context using applicationInfo
-           * @tc.desc: Function test
-           * @tc.size: MediumTest
-           * @tc.type: Function
-           * @tc.level   3
-           */
+         * @tc.name   SUB_AA_OpenHarmony_ApplicationContext_1400
+         * @tc.number SUB_AA_OpenHarmony_ApplicationContext_1400
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_AA_OpenHarmony_ApplicationContext_1400', Level.LEVEL0, async (done:Function) => {
             let TAG = "SUB_AA_OpenHarmony_ApplicationContext_1400";
             console.log(TAG + " --- start");
@@ -205,14 +197,13 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
         });
 
         /**
-           * @tc.number: SUB_AA_OpenHarmony_ApplicationContext_1500
-           * @tc.name: Verify that the context obtained by the app-level context 
-           * calling interface getApplicationContext can be obtained using getApplicationContext
-           * @tc.desc: Function test
-           * @tc.size: MediumTest
-           * @tc.type: Function
-           * @tc.level   3
-           */
+         * @tc.name   SUB_AA_OpenHarmony_ApplicationContext_1500
+         * @tc.number SUB_AA_OpenHarmony_ApplicationContext_1500
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_AA_OpenHarmony_ApplicationContext_1500', Level.LEVEL0, async (done:Function) => {
             let TAG = "SUB_AA_OpenHarmony_ApplicationContext_1500";
             console.log(TAG + " --- start");
@@ -230,13 +221,12 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
         });
 
         /**
-         * @tc.number: SUB_AA_OpenHarmony_ApplicationContext_1600
-         * @tc.name: getProcessRunningInformation test 1
-         * getProcessRunningInformation test
-         * @tc.desc: Function test
-         * @tc.size: MediumTest
-         * @tc.type: Function
-         * @tc.level   3
+         * @tc.name   SUB_AA_OpenHarmony_ApplicationContext_1600
+         * @tc.number SUB_AA_OpenHarmony_ApplicationContext_1600
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_AA_OpenHarmony_ApplicationContext_1600', Level.LEVEL0, async (done:Function) => {
             let TAG = "SUB_AA_OpenHarmony_ApplicationContext_1600";
@@ -251,13 +241,12 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
         });
 
         /**
-         * @tc.number: SUB_AA_OpenHarmony_ApplicationContext_1700
-         * @tc.name: getProcessRunningInformation test 2
-         * getProcessRunningInformation test
-         * @tc.desc: Function test
-         * @tc.size: MediumTest
-         * @tc.type: Function
-         * @tc.level   3
+         * @tc.name   SUB_AA_OpenHarmony_ApplicationContext_1700
+         * @tc.number SUB_AA_OpenHarmony_ApplicationContext_1700
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_AA_OpenHarmony_ApplicationContext_1700', Level.LEVEL0, async (done:Function) => {
             let TAG = "SUB_AA_OpenHarmony_ApplicationContext_1700";
@@ -271,13 +260,12 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
         });
 
         /**
-         * @tc.number: SUB_AA_OpenHarmony_ApplicationContext_1800
-         * @tc.name: getProcessRunningInformation test 2
-         * getProcessRunningInformation test
-         * @tc.desc: Function test
-         * @tc.size: MediumTest
-         * @tc.type: Function
-         * @tc.level   3
+         * @tc.name   SUB_AA_OpenHarmony_ApplicationContext_1800
+         * @tc.number SUB_AA_OpenHarmony_ApplicationContext_1800
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_AA_OpenHarmony_ApplicationContext_1800', Level.LEVEL0, async (done:Function) => {
             let TAG = "SUB_AA_OpenHarmony_ApplicationContext_1800";
@@ -292,13 +280,12 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
         });
 
         /**
-         * @tc.number: SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0100
-         * @tc.name: Verify that the clearUpApplicationData cleaning application data test 1
-         * calling interface clearUpApplicationData can be cleaning application data, run entry applicationData use Promise
-         * @tc.desc: Function test
-         * @tc.size: MediumTest
-         * @tc.type: Function
-         * @tc.level   1
+         * @tc.name   SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0100
+         * @tc.number SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0100', Level.LEVEL0, async (done:Function) => {
             let TAG = 'SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0100';
@@ -361,13 +348,12 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
         });
 
         /**
-         * @tc.number: SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0200
-         * @tc.name: Verify that the clearUpApplicationData cleaning application data test 2
-         * calling interface clearUpApplicationData can be cleaning application data, run entry applicationData use Callback
-         * @tc.desc: Function test
-         * @tc.size: MediumTest
-         * @tc.type: Function
-         * @tc.level   1
+         * @tc.name   SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0200
+         * @tc.number SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0200
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0200', Level.LEVEL0, async (done:Function) => {
             let TAG = 'SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0200';
@@ -430,13 +416,12 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
         });
 
         /**
-         * @tc.number: SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0300
-         * @tc.name: Verify that the clearUpApplicationData cleaning application data test 3
-         * calling interface clearUpApplicationData can be cleaning application data, run feature applicationData use Promise
-         * @tc.desc: Function test
-         * @tc.size: MediumTest
-         * @tc.type: Function
-         * @tc.level   1
+         * @tc.name   SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0300
+         * @tc.number SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0300
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0300', Level.LEVEL0, async (done:Function) => {
             let TAG = 'SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0300';
@@ -499,13 +484,12 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
         });
 
         /**
-         * @tc.number: SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0400
-         * @tc.name: Verify that the clearUpApplicationData cleaning application data test 4
-         * calling interface clearUpApplicationData can be cleaning application data, run feature applicationData use Callback
-         * @tc.desc: Function test
-         * @tc.size: MediumTest
-         * @tc.type: Function
-         * @tc.level   1
+         * @tc.name   SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0400
+         * @tc.number SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0400
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0400', Level.LEVEL0, async (done:Function) => {
             let TAG = 'SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0400';
@@ -568,13 +552,12 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
         });
 
         /**
-         * @tc.number: SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0500
-         * @tc.name: Verify that the clearUpApplicationData cleaning application data test 5
-         * calling interface clearUpApplicationData can be cleaning application data, run system applicationData use Promise
-         * @tc.desc: Function test
-         * @tc.size: MediumTest
-         * @tc.type: Function
-         * @tc.level   1
+         * @tc.name   SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0500
+         * @tc.number SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0500
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0500', Level.LEVEL0, async (done:Function) => {
             let TAG = 'SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0500';
@@ -637,13 +620,12 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
         });
 
         /**
-         * @tc.number: SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0600
-         * @tc.name: Verify that the clearUpApplicationData cleaning application data test 6
-         * calling interface clearUpApplicationData can be cleaning application data, run system applicationData use Callback
-         * @tc.desc: Function test
-         * @tc.size: MediumTest
-         * @tc.type: Function
-         * @tc.level   1
+         * @tc.name   SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0600
+         * @tc.number SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0600
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0600', Level.LEVEL0, async (done:Function) => {
             let TAG = 'SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0600';
@@ -706,13 +688,12 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
         });
 
         /**
-         * @tc.number: SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0700
-         * @tc.name: Verify that the clearUpApplicationData cleaning application data test 7
-         * calling interface clearUpApplicationData can be cleaning application data, run applicationDatas use Promise
-         * @tc.desc: Function test
-         * @tc.size: MediumTest
-         * @tc.type: Function
-         * @tc.level   1
+         * @tc.name   SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0700
+         * @tc.number SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0700
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0700', Level.LEVEL0, async (done:Function) => {
             let TAG = 'SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0700';
@@ -831,13 +812,12 @@ export default function stageAppContextTest(abilityContext:common.UIAbilityConte
         });
 
         /**
-         * @tc.number: SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0800
-         * @tc.name: Verify that the clearUpApplicationData cleaning application data test 7
-         * calling interface clearUpApplicationData can be cleaning application data, run applicationDatas use Callback
-         * @tc.desc: Function test
-         * @tc.size: MediumTest
-         * @tc.type: Function
-         * @tc.level   1
+         * @tc.name   SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0800
+         * @tc.number SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0800
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0800', Level.LEVEL0, async (done: Function) => {
             let TAG = 'SUB_Ability_AbilityRuntime_Configration_ApplicationContext_ClearUpApplicationData_0800';

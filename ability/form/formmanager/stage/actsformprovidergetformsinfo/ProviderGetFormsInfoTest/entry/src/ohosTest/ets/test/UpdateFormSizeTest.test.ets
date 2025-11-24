@@ -76,7 +76,7 @@ export default function updateFormSizeTest() {
      * @tc.desc   Function UpdateFormSize test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  请输入文本
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0100`, 0, async (done:Function) => {
         console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0100 start`);
@@ -121,7 +121,7 @@ export default function updateFormSizeTest() {
      * @tc.desc   Function UpdateFormSize test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  请输入文本
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0200`, 0, async (done:Function) => {
         console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0200 start`);
@@ -165,7 +165,7 @@ export default function updateFormSizeTest() {
      * @tc.desc   Function UpdateFormSize test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  请输入文本
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0300`, 0, async (done:Function) => {
         console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0300 start`);
@@ -209,7 +209,7 @@ export default function updateFormSizeTest() {
      * @tc.desc   Function UpdateFormSize test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  请输入文本
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0400`, 0, async (done:Function) => {
         console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0400 start`);
@@ -253,7 +253,7 @@ export default function updateFormSizeTest() {
      * @tc.desc   Function UpdateFormSize test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  请输入文本
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0500`, 0, async (done:Function) => {
         console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0500 start`);
@@ -296,7 +296,7 @@ export default function updateFormSizeTest() {
      * @tc.desc   Function UpdateFormSize test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  请输入文本
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0600`, 0, async (done:Function) => {
         console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0600 start`);
@@ -339,7 +339,7 @@ export default function updateFormSizeTest() {
      * @tc.desc   Function UpdateFormSize test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  请输入文本
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0700`, 0, async (done:Function) => {
         console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0700 start`);
@@ -382,7 +382,7 @@ export default function updateFormSizeTest() {
      * @tc.desc   Function UpdateFormSize test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  请输入文本
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0800`, 0, async (done:Function) => {
         console.log(`SUB_ABILITY_FORM_FWK_UPDATE_FORM_SIZE_0800 start`);
@@ -426,7 +426,7 @@ export default function updateFormSizeTest() {
      * @tc.desc   Function FormLocationChanged test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  请输入文本
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(`SUB_ABILITY_FORM_FWK_FORMLOCATIONCHANGED_0100`, 0, async (done:Function) => {
         console.log(`SUB_ABILITY_FORM_FWK_FORMLOCATIONCHANGED_0100 start`);

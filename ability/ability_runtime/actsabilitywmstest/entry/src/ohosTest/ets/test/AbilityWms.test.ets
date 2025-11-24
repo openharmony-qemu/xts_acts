@@ -34,13 +34,13 @@ export default function abilityWMSTest() {
     afterAll(() => {
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_AMS_AbilityWMS_0800
-     * @tc.name   : SUB_Ability_AbilityRuntime_AMS_AbilityWMS_0800
-     * @tc.desc   : Stage model applications query their own application processes.
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AMS_AbilityWMS_0800
+     * @tc.number SUB_Ability_AbilityRuntime_AMS_AbilityWMS_0800
+     * @tc.desc   Stage model applications query their own application processes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_AMS_AbilityWMS_0800', Level.LEVEL3, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_AMS_AbilityWMS_0800`;
@@ -55,13 +55,13 @@ export default function abilityWMSTest() {
       });
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_AMS_AbilityWMS_0900
-     * @tc.name   : SUB_Ability_AbilityRuntime_AMS_AbilityWMS_0900
-     * @tc.desc   : Stage model applications terminate their own application processes.
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AMS_AbilityWMS_0900
+     * @tc.number SUB_Ability_AbilityRuntime_AMS_AbilityWMS_0900
+     * @tc.desc   Stage model applications terminate their own application processes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_AMS_AbilityWMS_0900', Level.LEVEL3, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_AMS_AbilityWMS_0900`;

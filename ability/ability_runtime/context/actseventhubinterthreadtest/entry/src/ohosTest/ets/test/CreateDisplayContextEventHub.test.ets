@@ -39,11 +39,13 @@ export default function createDisplayContextEventHubTest() {
       hilog.info(0x0000, 'testTag', '%{public}s', msg);
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_setEventHubMultithreadingEnabled_3700
-     * @tc.name: SUB_Ability_AbilityRuntime_setEventHubMultithreadingEnabled_3700
-     * @tc.desc: Test createAreaModeContext.eventHub.eventHub communicate when main thread 
-     *   subscribe event1(callback1) and worker trigger event1.
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_setEventHubMultithreadingEnabled_3700
+     * @tc.number SUB_Ability_AbilityRuntime_setEventHubMultithreadingEnabled_3700
+     * @tc.desc   Test createAreaModeContext.eventHub.eventHub communicate when main thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_setEventHubMultithreadingEnabled_3700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
@@ -73,11 +75,13 @@ export default function createDisplayContextEventHubTest() {
       }
     })
     
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_setEventHubMultithreadingEnabled_3800
-     * @tc.name: SUB_Ability_AbilityRuntime_setEventHubMultithreadingEnabled_3800
-     * @tc.desc: Test createAreaModeContext.eventHub.eventHub communicate when main thread subscribe event1(callback1) 
-     *   and event1(callback2) and worker trigger event1.
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_setEventHubMultithreadingEnabled_3800
+     * @tc.number SUB_Ability_AbilityRuntime_setEventHubMultithreadingEnabled_3800
+     * @tc.desc   Test createAreaModeContext.eventHub.eventHub communicate when main thread subscribe event1(callback1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_setEventHubMultithreadingEnabled_3800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
@@ -111,11 +115,13 @@ export default function createDisplayContextEventHubTest() {
       }
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_setEventHubMultithreadingEnabled_3900
-     * @tc.name: SUB_Ability_AbilityRuntime_setEventHubMultithreadingEnabled_3900
-     * @tc.desc: Test createAreaModeContext.eventHub.eventHub communicate when worker
-     *   subscribe event1(callback1) and main thread trigger event1.
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_setEventHubMultithreadingEnabled_3900
+     * @tc.number SUB_Ability_AbilityRuntime_setEventHubMultithreadingEnabled_3900
+     * @tc.desc   Test createAreaModeContext.eventHub.eventHub communicate when worker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_setEventHubMultithreadingEnabled_3900',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
@@ -151,11 +157,13 @@ export default function createDisplayContextEventHubTest() {
       }
     })
     
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_setEventHubMultithreadingEnabled_4000
-     * @tc.name: SUB_Ability_AbilityRuntime_setEventHubMultithreadingEnabled_4000
-     * @tc.desc: Test createAreaModeContext.eventHub.eventHub communicate when worker
-     *   subscribe event1(callback1) and event1(callback2) and main thread trigger event1.
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_setEventHubMultithreadingEnabled_4000
+     * @tc.number SUB_Ability_AbilityRuntime_setEventHubMultithreadingEnabled_4000
+     * @tc.desc   Test createAreaModeContext.eventHub.eventHub communicate when worker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_setEventHubMultithreadingEnabled_4000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {

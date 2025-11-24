@@ -21,12 +21,12 @@ export default function abilityTest() {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
 
     /**
+     * @tc.name   SUB_Ability_AbilityRunTime_InsightIntent_0010
      * @tc.number SUB_Ability_AbilityRunTime_InsightIntent_0010
-     * @tc.name SUB_Ability_AbilityRunTime_InsightIntent_0010
-     * @tc.desc The Ability or Page with @InsightIntentLink @InsightIntentEntry @InsightIntentFunction&@InsightIntentFunctionMethod @InsightIntentPage Decorator can start normally
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : Level 1
+     * @tc.desc   The Ability or Page with @InsightIntentLink @InsightIntentEntry @InsightIntentFunction&@InsightIntentFunctionMethod @InsightIntentPage Decorator can start normally
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRunTime_InsightIntent_0010', Level.LEVEL1, async (done: Function) => {
       let caseName = 'SUB_Ability_AbilityRunTime_InsightIntent_0010';

@@ -37,11 +37,13 @@ function sleep(delay: number) {
 
 export default function abilityTest() {
   describe('ActsAbilityTest', () => {
-    /*
-     * @tc.number: Acts_StopServiceExtension_0100
-     * @tc.name: Distributed Component Support Remote Stop Extension
-     * @tc.desc: Local device usage StopServiceExtensionAbility Stop the ServiceExtension application
-     *           started by startAbility.
+    /**
+     * @tc.name   Acts_StopServiceExtension_0100
+     * @tc.number Acts_StopServiceExtension_0100
+     * @tc.desc   Local device usage StopServiceExtensionAbility Stop the ServiceExtension application
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_StopServiceExtension_0100', Level.LEVEL0, async (done : Function) => {
       let subscriber: ESObject;
@@ -87,11 +89,13 @@ export default function abilityTest() {
       }, CASE_TIME_OUT)
     })
 
-    /*
-     * @tc.number: Acts_StopServiceExtension_0200
-     * @tc.name: Distributed Component Support Remote Stop Extension
-     * @tc.desc: Local device usage StopServiceExtensionAbility Stop the ServiceExtension application
-     *           started by startAbility.
+    /**
+     * @tc.name   Acts_StopServiceExtension_0200
+     * @tc.number Acts_StopServiceExtension_0200
+     * @tc.desc   Local device usage StopServiceExtensionAbility Stop the ServiceExtension application
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_StopServiceExtension_0200', Level.LEVEL0, async (done : Function) => {
       let subscriber: ESObject;
@@ -150,11 +154,13 @@ export default function abilityTest() {
       }, CASE_TIME_OUT)
     })
 
-    /*
-     * @tc.number: Acts_StopServiceExtension_0300
-     * @tc.name: Distributed Component Support Remote Stop Extension
-     * @tc.desc: Local device usage StopServiceExtensionAbility Stop the ServiceExtension application
-     *           started by startServiceExtensionAbility.
+    /**
+     * @tc.name   Acts_StopServiceExtension_0300
+     * @tc.number Acts_StopServiceExtension_0300
+     * @tc.desc   Local device usage StopServiceExtensionAbility Stop the ServiceExtension application
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_StopServiceExtension_0300', Level.LEVEL0, async (done : Function) => {
       let subscriber: ESObject;
@@ -201,11 +207,13 @@ export default function abilityTest() {
       }, CASE_TIME_OUT)
     })
 
-    /*
-     * @tc.number: Acts_StopServiceExtension_0400
-     * @tc.name: Distributed Component Support Remote Stop Extension
-     * @tc.desc: Local device usage StopServiceExtensionAbility Stop the ServiceExtension application
-     *           started by startServiceExtensionAbility.
+    /**
+     * @tc.name   Acts_StopServiceExtension_0400
+     * @tc.number Acts_StopServiceExtension_0400
+     * @tc.desc   Local device usage StopServiceExtensionAbility Stop the ServiceExtension application
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_StopServiceExtension_0400', Level.LEVEL0, async (done : Function) => {
       let subscriber: ESObject;
@@ -264,11 +272,13 @@ export default function abilityTest() {
       }, CASE_TIME_OUT)
     })
 
-    /*
-     * @tc.number: Acts_StopServiceExtension_0500
-     * @tc.name: Distributed Component Support Remote Stop Extension
-     * @tc.desc: Local device usage StopServiceExtensionAbility Stop the ServiceExtension application
-     *           started by connectServiceExtensionAbility.
+    /**
+     * @tc.name   Acts_StopServiceExtension_0500
+     * @tc.number Acts_StopServiceExtension_0500
+     * @tc.desc   Local device usage StopServiceExtensionAbility Stop the ServiceExtension application
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_StopServiceExtension_0500', Level.LEVEL0, async (done : Function) => {
       let subscriber: ESObject;
@@ -332,11 +342,13 @@ export default function abilityTest() {
       }, CASE_TIME_OUT)
     })
 
-    /*
-     * @tc.number: Acts_StopServiceExtension_0600
-     * @tc.name: Distributed Component Support Remote Stop Extension
-     * @tc.desc: Local device usage StopServiceExtensionAbility Stop the ServiceExtension application
-     *           started by connectServiceExtensionAbility.
+    /**
+     * @tc.name   Acts_StopServiceExtension_0600
+     * @tc.number Acts_StopServiceExtension_0600
+     * @tc.desc   Local device usage StopServiceExtensionAbility Stop the ServiceExtension application
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_StopServiceExtension_0600', Level.LEVEL0, async (done : Function) => {
       console.info("====>Acts_StopServiceExtension_0600 start");
@@ -391,11 +403,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number: Acts_StopServiceExtension_0700
-     * @tc.name: Distributed Component Support Remote Stop Extension
-     * @tc.desc: Calling stopServiceExtensionAbility to stop the remote device ServiceExtension application
-     *           without distributed permissions returns an error value.
+    /**
+     * @tc.name   Acts_StopServiceExtension_0700
+     * @tc.number Acts_StopServiceExtension_0700
+     * @tc.desc   Calling stopServiceExtensionAbility to stop the remote device ServiceExtension application
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_StopServiceExtension_0700', Level.LEVEL0, async (done : Function) => {
       console.info("====>Acts_StopServiceExtension_0700 start");
@@ -412,11 +426,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number: Acts_StopServiceExtension_0800
-     * @tc.name: Distributed Component Support Remote Stop Extension
-     * @tc.desc: Calling stopServiceExtensionAbility to stop the remote device ServiceExtension application
-     *           without distributed permissions returns an error value.
+    /**
+     * @tc.name   Acts_StopServiceExtension_0800
+     * @tc.number Acts_StopServiceExtension_0800
+     * @tc.desc   Calling stopServiceExtensionAbility to stop the remote device ServiceExtension application
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_StopServiceExtension_0800', Level.LEVEL0, async (done : Function) => {
       let subscriber: ESObject;
@@ -465,11 +481,13 @@ export default function abilityTest() {
       }, CASE_TIME_OUT)
     })
 
-    /*
-     * @tc.number: Acts_StopServiceExtension_1700
-     * @tc.name: Distributed Component Support Remote Stop Extension
-     * @tc.desc: The local device does not have distributed permissions. The device ID is undefined. Call
-     *           stopServiceExtensionAbility to stop the ServiceExtension application and return an error value.
+    /**
+     * @tc.name   Acts_StopServiceExtension_1700
+     * @tc.number Acts_StopServiceExtension_1700
+     * @tc.desc   The local device does not have distributed permissions. The device ID is undefined. Call
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_StopServiceExtension_1700', Level.LEVEL0, async (done : Function) => {
       console.info("====>Acts_StopServiceExtension_1700 start");
@@ -486,11 +504,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number: Acts_StopServiceExtension_1800
-     * @tc.name: Distributed Component Support Remote Stop Extension
-     * @tc.desc: The local device does not have distributed permissions. The device ID is undefined. Call
-     *           stopServiceExtensionAbility to stop the ServiceExtension application and return an error value.
+    /**
+     * @tc.name   Acts_StopServiceExtension_1800
+     * @tc.number Acts_StopServiceExtension_1800
+     * @tc.desc   The local device does not have distributed permissions. The device ID is undefined. Call
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_StopServiceExtension_1800', Level.LEVEL0, async (done : Function) => {
       let subscriber: ESObject;

@@ -32,12 +32,12 @@ export default function GetCurrentTopAbilityTest() {
     });
 
     /**
-     * @tc.number: ACTS_GET_CURRENT_TOP_ABILITY_CALL_BACK_0001
-     * @tc.name  : actsGetCurrentTopAbilityCallback0001
-     * @tc.desc  : Test the api "abilityDelegator.getCurrentTopAbility", return the uiAbility state result.
-     * @tc.size  : MediumTest
-     * @tc.type  : Method
-     * @tc.level : Level 2
+     * @tc.name   ACTS_GET_CURRENT_TOP_ABILITY_CALL_BACK_0001
+     * @tc.number ACTS_GET_CURRENT_TOP_ABILITY_CALL_BACK_0001
+     * @tc.desc   Test the api "abilityDelegator.getCurrentTopAbility", return the uiAbility state result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_GET_CURRENT_TOP_ABILITY_CALL_BACK_0001", Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_GET_CURRENT_TOP_ABILITY_CALL_BACK_0001 :start");
@@ -74,12 +74,12 @@ export default function GetCurrentTopAbilityTest() {
     });
 
     /**
-     * @tc.number: ACTS_GET_CURRENT_TOP_ABILITY_PROMISE_0002
-     * @tc.name  : actsGetCurrentTopAbilityCallback0002
-     * @tc.desc  : Test the api "abilityDelegator.getCurrentTopAbility", return the uiAbility state result.
-     * @tc.size  : MediumTest
-     * @tc.type  : Method
-     * @tc.level : Level 2
+     * @tc.name   ACTS_GET_CURRENT_TOP_ABILITY_PROMISE_0002
+     * @tc.number ACTS_GET_CURRENT_TOP_ABILITY_PROMISE_0002
+     * @tc.desc   Test the api "abilityDelegator.getCurrentTopAbility", return the uiAbility state result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_GET_CURRENT_TOP_ABILITY_PROMISE_0002", Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_GET_CURRENT_TOP_ABILITY_PROMISE_0002 :start");

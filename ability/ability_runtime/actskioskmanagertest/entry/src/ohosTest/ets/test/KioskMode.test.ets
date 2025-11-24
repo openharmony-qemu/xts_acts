@@ -22,10 +22,13 @@ export default function KioskModeTest() {
   describe('KioskModeTest', () => {
     let context: common.UIAbilityContext | undefined = AppStorage.get<common.UIAbilityContext>('testAbilityContext');
   
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_KIOSK_0100
-     * @tc.name: SUB_Ability_AbilityRuntime_KIOSK_0100
-     * @tc.desc: Test enterKioskMode(null) when application is not in kiosk app list or capability not supported.
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_KIOSK_0100
+     * @tc.number SUB_Ability_AbilityRuntime_KIOSK_0100
+     * @tc.desc   Test enterKioskMode(null) when application is not in kiosk app list or capability not supported.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_KIOSK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName: string = 'SUB_Ability_AbilityRuntime_KIOSK_0100';
@@ -51,10 +54,13 @@ export default function KioskModeTest() {
       }
     })
   
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_KIOSK_0200
-     * @tc.name: SUB_Ability_AbilityRuntime_KIOSK_0200
-     * @tc.desc: Test enterKioskMode(undefined) when application is not in kiosk app list or capability not supported.
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_KIOSK_0200
+     * @tc.number SUB_Ability_AbilityRuntime_KIOSK_0200
+     * @tc.desc   Test enterKioskMode(undefined) when application is not in kiosk app list or capability not supported.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_KIOSK_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName: string = 'SUB_Ability_AbilityRuntime_KIOSK_0200';
@@ -80,10 +86,13 @@ export default function KioskModeTest() {
       }
     })
   
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_KIOSK_0300
-     * @tc.name: SUB_Ability_AbilityRuntime_KIOSK_0300
-     * @tc.desc: Test enterKioskMode(UIAbilityContext) when application is not in kiosk app list.
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_KIOSK_0300
+     * @tc.number SUB_Ability_AbilityRuntime_KIOSK_0300
+     * @tc.desc   Test enterKioskMode(UIAbilityContext) when application is not in kiosk app list.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_KIOSK_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName: string = 'SUB_Ability_AbilityRuntime_KIOSK_0300';
@@ -108,10 +117,13 @@ export default function KioskModeTest() {
       }
     })
   
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_KIOSK_0400
-     * @tc.name: SUB_Ability_AbilityRuntime_KIOSK_0400
-     * @tc.desc: Test enterKioskMode(UIAbilityContext) when current ability is not in foreground.
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_KIOSK_0400
+     * @tc.number SUB_Ability_AbilityRuntime_KIOSK_0400
+     * @tc.desc   Test enterKioskMode(UIAbilityContext) when current ability is not in foreground.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_KIOSK_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName: string = 'SUB_Ability_AbilityRuntime_KIOSK_0400';
@@ -151,10 +163,13 @@ export default function KioskModeTest() {
       }, 2000);
     })
   
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_KIOSK_0800
-     * @tc.name: SUB_Ability_AbilityRuntime_KIOSK_0800
-     * @tc.desc: Test exitKioskMode(null) when application is not in kiosk app list or capability not supported.
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_KIOSK_0800
+     * @tc.number SUB_Ability_AbilityRuntime_KIOSK_0800
+     * @tc.desc   Test exitKioskMode(null) when application is not in kiosk app list or capability not supported.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_KIOSK_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName: string = 'SUB_Ability_AbilityRuntime_KIOSK_0800';
@@ -180,10 +195,13 @@ export default function KioskModeTest() {
       }
     })
   
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_KIOSK_0900
-     * @tc.name: SUB_Ability_AbilityRuntime_KIOSK_0900
-     * @tc.desc: Test exitKioskMode(undefined) when application is not in kiosk app list or capability not supported.
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_KIOSK_0900
+     * @tc.number SUB_Ability_AbilityRuntime_KIOSK_0900
+     * @tc.desc   Test exitKioskMode(undefined) when application is not in kiosk app list or capability not supported.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_KIOSK_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName: string = 'SUB_Ability_AbilityRuntime_KIOSK_0900';
@@ -209,10 +227,13 @@ export default function KioskModeTest() {
       }
     })
   
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_KIOSK_1000
-     * @tc.name: SUB_Ability_AbilityRuntime_KIOSK_1000
-     * @tc.desc: Test exitKioskMode(UIAbilityContext) when application is not in kiosk app list.
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_KIOSK_1000
+     * @tc.number SUB_Ability_AbilityRuntime_KIOSK_1000
+     * @tc.desc   Test exitKioskMode(UIAbilityContext) when application is not in kiosk app list.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_KIOSK_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName: string = 'SUB_Ability_AbilityRuntime_KIOSK_1000';
@@ -239,10 +260,13 @@ export default function KioskModeTest() {
       }
     })
   
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_KIOSK_1100
-     * @tc.name: SUB_Ability_AbilityRuntime_KIOSK_1100
-     * @tc.desc: Test kioskManager.KioskStatus.
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_KIOSK_1100
+     * @tc.number SUB_Ability_AbilityRuntime_KIOSK_1100
+     * @tc.desc   Test kioskManager.KioskStatus.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_KIOSK_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName: string = 'SUB_Ability_AbilityRuntime_KIOSK_1100';

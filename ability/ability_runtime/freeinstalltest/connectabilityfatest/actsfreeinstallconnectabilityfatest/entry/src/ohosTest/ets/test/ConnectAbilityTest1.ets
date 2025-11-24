@@ -63,12 +63,13 @@ export default function ConnectAbilityTest1() {
     });
 
 
-    /*
-     * @tc.number  FreeInstall_FA_ConnectAbility_1500
-     * @tc.name    The application is not in the foreground,
-                   [start another project first, then connect,atomic service does not exist locally]
-     * @tc.desc    Function test
-     * @tc.level   1
+    /**
+     * @tc.name   FreeInstall_FA_ConnectAbility_1500
+     * @tc.number FreeInstall_FA_ConnectAbility_1500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_FA_ConnectAbility_1500", Level.LEVEL0, async (done: Function) => {
       console.log("------------start FreeInstall_FA_ConnectAbility_1500-------------");
@@ -106,12 +107,13 @@ export default function ConnectAbilityTest1() {
       done();
     });
 
-    /*
-     * @tc.number  FreeInstall_FA_ConnectAbility_1600
-     * @tc.name    The application is not in the foreground,
-                   [start another project first, then connect,atomic service exists locally]
-     * @tc.desc    Function test
-     * @tc.level   1
+    /**
+     * @tc.name   FreeInstall_FA_ConnectAbility_1600
+     * @tc.number FreeInstall_FA_ConnectAbility_1600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_FA_ConnectAbility_1600", Level.LEVEL0, async (done: Function) => {
       console.log("------------start FreeInstall_FA_ConnectAbility_1600-------------");
@@ -150,12 +152,14 @@ export default function ConnectAbilityTest1() {
       done();
     });
 
-    /*
-    * @tc.number  FreeInstall_FA_ConnectAbility_1400
-    * @tc.name    The application is not in the foreground [start myapp2 first, then connect]
-    * @tc.desc    Function test
-    * @tc.level   1
-    */
+    /**
+     * @tc.name   FreeInstall_FA_ConnectAbility_1400
+     * @tc.number FreeInstall_FA_ConnectAbility_1400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("FreeInstall_FA_ConnectAbility_1400", Level.LEVEL0, async (done: Function) => {
       console.log("------------start FreeInstall_FA_ConnectAbility_1400-------------");
       TAG = "FreeInstall_FA_ConnectAbility_1400";
@@ -188,11 +192,13 @@ export default function ConnectAbilityTest1() {
       console.log("------------end FreeInstall_FA_ConnectAbility_1400-------------");
     });
 
-    /*
-     * @tc.number  FreeInstall_FA_ConnectAbility_1700
-     * @tc.name    Do not pass flags, connect to the service of another project
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   FreeInstall_FA_ConnectAbility_1700
+     * @tc.number FreeInstall_FA_ConnectAbility_1700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_FA_ConnectAbility_1700", Level.LEVEL0, async (done: Function) => {
       console.log("------------start FreeInstall_FA_ConnectAbility_1700-------------");
@@ -218,11 +224,13 @@ export default function ConnectAbilityTest1() {
       done();
     });
 
-    /*
-     * @tc.number  FreeInstall_FA_ConnectAbility_1800
-     * @tc.name    Incorrect moduleName passed in
-     * @tc.desc    Function test
-     * @tc.level   1
+    /**
+     * @tc.name   FreeInstall_FA_ConnectAbility_1800
+     * @tc.number FreeInstall_FA_ConnectAbility_1800
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_FA_ConnectAbility_1800", Level.LEVEL0, async (done: Function) => {
       console.log("------------start FreeInstall_FA_ConnectAbility_1800-------------");
@@ -246,11 +254,13 @@ export default function ConnectAbilityTest1() {
       done();
     });
 
-    /*
-     * @tc.number  FreeInstall_FA_ConnectAbility_1900
-     * @tc.name    The target is atomized as hapA, and hapB is placed under the path
-     * @tc.desc    Function test
-     * @tc.level   1
+    /**
+     * @tc.name   FreeInstall_FA_ConnectAbility_1900
+     * @tc.number FreeInstall_FA_ConnectAbility_1900
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_FA_ConnectAbility_1900", Level.LEVEL0, async (done: Function) => {
       console.log("------------start FreeInstall_FA_ConnectAbility_1900-------------");
@@ -278,11 +288,13 @@ export default function ConnectAbilityTest1() {
       done();
     });
 
-    /*
-     * @tc.number  FreeInstall_FA_ConnectAbility_2000
-     * @tc.name    Pass in parameters
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   FreeInstall_FA_ConnectAbility_2000
+     * @tc.number FreeInstall_FA_ConnectAbility_2000
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_FA_ConnectAbility_2000", Level.LEVEL0, async (done: Function) => {
       console.log("------------start FreeInstall_FA_ConnectAbility_2000-------------");

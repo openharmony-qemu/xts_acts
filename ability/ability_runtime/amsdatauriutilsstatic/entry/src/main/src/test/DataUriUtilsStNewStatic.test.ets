@@ -23,10 +23,13 @@ export default function DataUriUtilsStNewStaticTest() {
   describe('DataUriUtilsStNewStaticTest', () => {
 
     /**
-    * @tc.number Sub_Ability_AbilityBase_dataUriUtils_getId_Static_0100
-    * @tc.name Sub_Ability_AbilityBase_dataUriUtils_getId_Static_0100
-    * @tc.desc Obtains the ID attached to the end of the path component of the given URI. Check the return value of the interface
-    */
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_getId_Static_0100
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_getId_Static_0100
+     * @tc.desc   Obtains the ID attached to the end of the path component of the given URI. Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Ability_AbilityBase_dataUriUtils_getId_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(DOMAIN, TAG, 'dataUriUtils getId start1');
@@ -40,10 +43,13 @@ export default function DataUriUtilsStNewStaticTest() {
       })
 
     /**
-    * @tc.number Sub_Ability_AbilityBase_dataUriUtils_getId_Static_0200
-    * @tc.name Sub_Ability_AbilityBase_dataUriUtils_getId_Static_0200
-    * @tc.desc Obtains the ID attached to the end of the path component of the given URI. Check the return value of the interface
-    */
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_getId_Static_0200
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_getId_Static_0200
+     * @tc.desc   Obtains the ID attached to the end of the path component of the given URI. Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Ability_AbilityBase_dataUriUtils_getId_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
@@ -60,10 +66,13 @@ export default function DataUriUtilsStNewStaticTest() {
       })
 
     /**
-    * @tc.number Sub_Ability_AbilityBase_dataUriUtils_getId_Static_0300
-    * @tc.name Sub_Ability_AbilityBase_dataUriUtils_getId_Static_0300
-    * @tc.desc Obtains the ID attached to the end of the path component of the given URI. Check the return value of the interface
-    */
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_getId_Static_0300
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_getId_Static_0300
+     * @tc.desc   Obtains the ID attached to the end of the path component of the given URI. Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Ability_AbilityBase_dataUriUtils_getId_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(DOMAIN, TAG, 'dataUriUtils getId start3 ');
@@ -76,10 +85,13 @@ export default function DataUriUtilsStNewStaticTest() {
       })
 
     /**
-    * @tc.number Sub_Ability_AbilityBase_dataUriUtils_getId_Static_0400
-    * @tc.name Sub_Ability_AbilityBase_dataUriUtils_getId_Static_0400
-    * @tc.desc Obtains the ID attached to the end of the path component of the given URI. Check the return value of the interface
-    */
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_getId_Static_0400
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_getId_Static_0400
+     * @tc.desc   Obtains the ID attached to the end of the path component of the given URI. Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Ability_AbilityBase_dataUriUtils_getId_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
@@ -97,10 +109,13 @@ export default function DataUriUtilsStNewStaticTest() {
       })
 
     /**
-    * @tc.number Sub_Ability_AbilityBase_dataUriUtils_getId_Static_0500
-    * @tc.name Sub_Ability_AbilityBase_dataUriUtils_getId_Static_0500
-    * @tc.desc Obtains the ID attached to the end of the path component of the given URI. Check the return value of the interface
-    */
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_getId_Static_0500
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_getId_Static_0500
+     * @tc.desc   Obtains the ID attached to the end of the path component of the given URI. Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Ability_AbilityBase_dataUriUtils_getId_Static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(DOMAIN, TAG, 'dataUriUtils getId start5 ');
@@ -115,10 +130,13 @@ export default function DataUriUtilsStNewStaticTest() {
       })
 
     /**
-    * @tc.number Sub_Ability_AbilityBase_dataUriUtils_attachId_Static_0100
-    * @tc.name Sub_Ability_AbilityBase_dataUriUtils_attachId_Static_0100
-    * @tc.desc Attaches the given ID to the end of the path component of the given URI. Check the return value of the interface
-    */
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_attachId_Static_0100
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_attachId_Static_0100
+     * @tc.desc   Attaches the given ID to the end of the path component of the given URI. Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Ability_AbilityBase_dataUriUtils_attachId_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(DOMAIN, TAG, 'dataUriUtils attachId start1 ');
@@ -134,10 +152,13 @@ export default function DataUriUtilsStNewStaticTest() {
       })
 
     /**
-    * @tc.number Sub_Ability_AbilityBase_dataUriUtils_attachId_Static_0200
-    * @tc.name Sub_Ability_AbilityBase_dataUriUtils_attachId_Static_0200
-    * @tc.desc Attaches the given ID to the end of the path component of the given URI. Check the return value of the interface
-    */
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_attachId_Static_0200
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_attachId_Static_0200
+     * @tc.desc   Attaches the given ID to the end of the path component of the given URI. Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Ability_AbilityBase_dataUriUtils_attachId_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(DOMAIN, TAG, 'dataUriUtils attachId start2 ');
@@ -153,10 +174,13 @@ export default function DataUriUtilsStNewStaticTest() {
       })
 
     /**
-    * @tc.number Sub_Ability_AbilityBase_dataUriUtils_attachId_Static_0300
-    * @tc.name Sub_Ability_AbilityBase_dataUriUtils_attachId_Static_0300
-    * @tc.desc Attaches the given ID to the end of the path component of the given URI. Check the return value of the interface
-    */
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_attachId_Static_0300
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_attachId_Static_0300
+     * @tc.desc   Attaches the given ID to the end of the path component of the given URI. Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Ability_AbilityBase_dataUriUtils_attachId_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(DOMAIN, TAG, 'dataUriUtils attachId start3 ');
@@ -172,10 +196,13 @@ export default function DataUriUtilsStNewStaticTest() {
       })
 
     /**
-    * @tc.number Sub_Ability_AbilityBase_dataUriUtils_attachId_Static_0400
-    * @tc.name Sub_Ability_AbilityBase_dataUriUtils_attachId_Static_0400
-    * @tc.desc Attaches the given ID to the end of the path component of the given URI. Check the return value of the interface
-    */
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_attachId_Static_0400
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_attachId_Static_0400
+     * @tc.desc   Attaches the given ID to the end of the path component of the given URI. Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Ability_AbilityBase_dataUriUtils_attachId_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(DOMAIN, TAG, 'dataUriUtils attachId start4 ');
@@ -191,10 +218,13 @@ export default function DataUriUtilsStNewStaticTest() {
       })
 
     /**
-    * @tc.number Sub_Ability_AbilityBase_dataUriUtils_attachId_Static_0500
-    * @tc.name Sub_Ability_AbilityBase_dataUriUtils_attachId_Static_0500
-    * @tc.desc Attaches the given ID to the end of the path component of the given URI. Check the return value of the interface
-    */
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_attachId_Static_0500
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_attachId_Static_0500
+     * @tc.desc   Attaches the given ID to the end of the path component of the given URI. Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Ability_AbilityBase_dataUriUtils_attachId_Static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(DOMAIN, TAG, 'dataUriUtils attachId start5 ');
@@ -210,10 +240,13 @@ export default function DataUriUtilsStNewStaticTest() {
       })
 
     /**
-    * @tc.number Sub_Ability_AbilityBase_dataUriUtils_deleteId_Static_0100
-    * @tc.name Sub_Ability_AbilityBase_dataUriUtils_deleteId_Static_0100
-    * @tc.desc Deletes the ID from the end of the path component of the given URI. Check the return value of the interface
-    */
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_deleteId_Static_0100
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_deleteId_Static_0100
+     * @tc.desc   Deletes the ID from the end of the path component of the given URI. Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Ability_AbilityBase_dataUriUtils_deleteId_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
@@ -230,10 +263,13 @@ export default function DataUriUtilsStNewStaticTest() {
       })
 
     /**
-    * @tc.number Sub_Ability_AbilityBase_dataUriUtils_deleteId_Static_0200
-    * @tc.name Sub_Ability_AbilityBase_dataUriUtils_deleteId_Static_0200
-    * @tc.desc Deletes the ID from the end of the path component of the given URI. Check the return value of the interface
-    */
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_deleteId_Static_0200
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_deleteId_Static_0200
+     * @tc.desc   Deletes the ID from the end of the path component of the given URI. Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Ability_AbilityBase_dataUriUtils_deleteId_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(DOMAIN, TAG, 'dataUriUtils deleteId start2 ');
@@ -248,10 +284,13 @@ export default function DataUriUtilsStNewStaticTest() {
       })
 
     /**
-    * @tc.number Sub_Ability_AbilityBase_dataUriUtils_deleteId_Static_0300
-    * @tc.name Sub_Ability_AbilityBase_dataUriUtils_deleteId_Static_0300
-    * @tc.desc Deletes the ID from the end of the path component of the given URI. Check the return value of the interface
-    */
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_deleteId_Static_0300
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_deleteId_Static_0300
+     * @tc.desc   Deletes the ID from the end of the path component of the given URI. Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Ability_AbilityBase_dataUriUtils_deleteId_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         try {
@@ -268,10 +307,13 @@ export default function DataUriUtilsStNewStaticTest() {
       })
 
     /**
-    * @tc.number Sub_Ability_AbilityBase_dataUriUtils_deleteId_Static_0400
-    * @tc.name Sub_Ability_AbilityBase_dataUriUtils_deleteId_Static_0400
-    * @tc.desc Deletes the ID from the end of the path component of the given URI. Check the return value of the interface
-    */
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_deleteId_Static_0400
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_deleteId_Static_0400
+     * @tc.desc   Deletes the ID from the end of the path component of the given URI. Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Ability_AbilityBase_dataUriUtils_deleteId_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(DOMAIN, TAG, 'dataUriUtils deleteId start4 ');
@@ -286,10 +328,13 @@ export default function DataUriUtilsStNewStaticTest() {
       })
 
     /**
-    * @tc.number Sub_Ability_AbilityBase_dataUriUtils_deleteId_Static_0500
-    * @tc.name Sub_Ability_AbilityBase_dataUriUtils_deleteId_Static_0500
-    * @tc.desc Deletes the ID from the end of the path component of the given URI. Check the return value of the interface
-    */
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_deleteId_Static_0500
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_deleteId_Static_0500
+     * @tc.desc   Deletes the ID from the end of the path component of the given URI. Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Ability_AbilityBase_dataUriUtils_deleteId_Static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(DOMAIN, TAG, 'dataUriUtils deleteId start5 ');
@@ -304,10 +349,13 @@ export default function DataUriUtilsStNewStaticTest() {
       })
 
     /**
-    * @tc.number Sub_Ability_AbilityBase_dataUriUtils_updateId_Static_0100
-    * @tc.name Sub_Ability_AbilityBase_dataUriUtils_updateId_Static_0100
-    * @tc.desc Updates the ID in the specified dataUri. Check the return value of the interface
-    */
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_updateId_Static_0100
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_updateId_Static_0100
+     * @tc.desc   Updates the ID in the specified dataUri. Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Ability_AbilityBase_dataUriUtils_updateId_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(DOMAIN, TAG, 'dataUriUtils updateId start1 ');
@@ -325,10 +373,13 @@ export default function DataUriUtilsStNewStaticTest() {
       })
 
     /**
-    * @tc.number Sub_Ability_AbilityBase_dataUriUtils_updateId_Static_0200
-    * @tc.name Sub_Ability_AbilityBase_dataUriUtils_updateId_Static_0200
-    * @tc.desc Updates the ID in the specified dataUri. Check the return value of the interface
-    */
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_updateId_Static_0200
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_updateId_Static_0200
+     * @tc.desc   Updates the ID in the specified dataUri. Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Ability_AbilityBase_dataUriUtils_updateId_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(DOMAIN, TAG, 'dataUriUtils updateId start2 ');
@@ -346,10 +397,13 @@ export default function DataUriUtilsStNewStaticTest() {
       })
 
     /**
-    * @tc.number Sub_Ability_AbilityBase_dataUriUtils_updateId_Static_0300
-    * @tc.name Sub_Ability_AbilityBase_dataUriUtils_updateId_Static_0300
-    * @tc.desc Updates the ID in the specified dataUri. Check the return value of the interface
-    */
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_updateId_Static_0300
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_updateId_Static_0300
+     * @tc.desc   Updates the ID in the specified dataUri. Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Ability_AbilityBase_dataUriUtils_updateId_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(DOMAIN, TAG, 'dataUriUtils updateId start3 ');
@@ -365,10 +419,13 @@ export default function DataUriUtilsStNewStaticTest() {
       })
 
     /**
-    * @tc.number Sub_Ability_AbilityBase_dataUriUtils_updateId_Static_0400
-    * @tc.name Sub_Ability_AbilityBase_dataUriUtils_updateId_Static_0400
-    * @tc.desc Updates the ID in the specified dataUri. Check the return value of the interface
-    */
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_updateId_Static_0400
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_updateId_Static_0400
+     * @tc.desc   Updates the ID in the specified dataUri. Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Ability_AbilityBase_dataUriUtils_updateId_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(DOMAIN, TAG, 'dataUriUtils updateId start4 ');
@@ -384,10 +441,13 @@ export default function DataUriUtilsStNewStaticTest() {
       })
 
     /**
-    * @tc.number Sub_Ability_AbilityBase_dataUriUtils_updateId_Static_0500
-    * @tc.name Sub_Ability_AbilityBase_dataUriUtils_updateId_Static_0500
-    * @tc.desc Updates the ID in the specified dataUri. Check the return value of the interface
-    */
+     * @tc.name   Sub_Ability_AbilityBase_dataUriUtils_updateId_Static_0500
+     * @tc.number Sub_Ability_AbilityBase_dataUriUtils_updateId_Static_0500
+     * @tc.desc   Updates the ID in the specified dataUri. Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Ability_AbilityBase_dataUriUtils_updateId_Static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(DOMAIN, TAG, 'dataUriUtils updateId start5 ');

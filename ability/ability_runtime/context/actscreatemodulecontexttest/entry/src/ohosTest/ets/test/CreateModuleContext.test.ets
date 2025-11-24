@@ -23,11 +23,12 @@ let bundleName:string;
 export default function actsCreateModuleContextTest() {
   describe("CreateModuleContext", () => {
     /**
-     * @tc.number: SUB_AA_CreateModuleContext_0100
-     * @tc.name: AbilityContext calls createModuleContext, passing in the moduleName of
-     * the current application hap1
-     * @tc.desc: Verify that the context of the application can be obtained
-     * @tc.level: 1
+     * @tc.name   SUB_AA_CreateModuleContext_0100
+     * @tc.number SUB_AA_CreateModuleContext_0100
+     * @tc.desc   Verify that the context of the application can be obtained
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_AA_CreateModuleContext_0100", Level.LEVEL0, async (done:Function) => {
       console.info("SUB_AA_AbilityStage_0100 begin");
@@ -44,11 +45,12 @@ export default function actsCreateModuleContextTest() {
     });
 
     /**
-     * @tc.number: SUB_AA_CreateModuleContext_0200
-     * @tc.name: AbilityContext calls createModuleContext, passing in the moduleName of
-     * the current application hap2
-     * @tc.desc: Verify that the context of the application can be obtained
-     * @tc.level: 3
+     * @tc.name   SUB_AA_CreateModuleContext_0200
+     * @tc.number SUB_AA_CreateModuleContext_0200
+     * @tc.desc   Verify that the context of the application can be obtained
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_AA_CreateModuleContext_0200", Level.LEVEL0, async (done:Function) => {
       console.log("SUB_AA_CreateModuleContext_0200 begin");
@@ -65,11 +67,12 @@ export default function actsCreateModuleContextTest() {
     });
 
     /**
-     * @tc.number: SUB_AA_CreateModuleContext_0300
-     * @tc.name: AbilityContext calls createModuleContext, passing in the moduleName of
-     * the cross-application hap1
-     * @tc.desc: Verify that the context of the application can not be obtained
-     * @tc.level: 3
+     * @tc.name   SUB_AA_CreateModuleContext_0300
+     * @tc.number SUB_AA_CreateModuleContext_0300
+     * @tc.desc   Verify that the context of the application can not be obtained
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_AA_CreateModuleContext_0300", Level.LEVEL0, async (done:Function) => {
       console.info("SUB_AA_CreateModuleContext_0300 begin");
@@ -91,10 +94,12 @@ export default function actsCreateModuleContextTest() {
     });
 
     /**
-     * @tc.number: SUB_AA_CreateModuleContext_0400
-     * @tc.name: AbilityContext calls createModuleContext, passing in a non-existing moduleName
-     * @tc.desc: Verify that the context of the application can not be obtained
-     * @tc.level: 3
+     * @tc.name   SUB_AA_CreateModuleContext_0400
+     * @tc.number SUB_AA_CreateModuleContext_0400
+     * @tc.desc   Verify that the context of the application can not be obtained
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_AA_CreateModuleContext_0400", Level.LEVEL0, async (done:Function) => {
       console.info("SUB_AA_CreateModuleContext_0400 begin");
@@ -116,10 +121,12 @@ export default function actsCreateModuleContextTest() {
     });
 
     /**
-     * @tc.number: SUB_AA_CreateModuleContext_0500
-     * @tc.name: AbilityContext calls createModuleContext, and the incoming moduleName is undefined
-     * @tc.desc: Verify that the context of the application can not be obtained
-     * @tc.level: 3
+     * @tc.name   SUB_AA_CreateModuleContext_0500
+     * @tc.number SUB_AA_CreateModuleContext_0500
+     * @tc.desc   Verify that the context of the application can not be obtained
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_AA_CreateModuleContext_0500", Level.LEVEL0, async (done:Function) => {
       console.info("SUB_AA_CreateModuleContext_0500 begin");
@@ -142,11 +149,12 @@ export default function actsCreateModuleContextTest() {
     });
 
     /**
-     * @tc.number: SUB_AA_CreateModuleContext_0600
-     * @tc.name: AbilityStageContext calls createModuleContext, passing in the moduleName of
-     * the current application hap1
-     * @tc.desc: Verify that the context of the application can be obtained
-     * @tc.level: 3
+     * @tc.name   SUB_AA_CreateModuleContext_0600
+     * @tc.number SUB_AA_CreateModuleContext_0600
+     * @tc.desc   Verify that the context of the application can be obtained
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_AA_CreateModuleContext_0600", Level.LEVEL0, async (done:Function) => {
       console.info("SUB_AA_CreateModuleContext_0600 begin");
@@ -163,11 +171,12 @@ export default function actsCreateModuleContextTest() {
     });
 
     /**
-     * @tc.number: SUB_AA_CreateModuleContext_0700
-     * @tc.name: AbilityStageContext calls createModuleContext, passing in the moduleName of
-     * the current application hap2
-     * @tc.desc: Verify that the context of the application can be obtained
-     * @tc.level: 3
+     * @tc.name   SUB_AA_CreateModuleContext_0700
+     * @tc.number SUB_AA_CreateModuleContext_0700
+     * @tc.desc   Verify that the context of the application can be obtained
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_AA_CreateModuleContext_0700", Level.LEVEL0, async (done:Function) => {
       console.info("SUB_AA_CreateModuleContext_0700 begin");
@@ -184,11 +193,12 @@ export default function actsCreateModuleContextTest() {
     });
 
     /**
-     * @tc.number: SUB_AA_CreateModuleContext_0800
-     * @tc.name: AbilityStageContext calls createModuleContext, passing in the moduleName of
-     * the cross-application hap1
-     * @tc.desc: Verify that the context of the application can not be obtained
-     * @tc.level: 3
+     * @tc.name   SUB_AA_CreateModuleContext_0800
+     * @tc.number SUB_AA_CreateModuleContext_0800
+     * @tc.desc   Verify that the context of the application can not be obtained
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_AA_CreateModuleContext_0800", Level.LEVEL0, async (done:Function) => {
       console.info("SUB_AA_CreateModuleContext_0800 begin");
@@ -210,10 +220,12 @@ export default function actsCreateModuleContextTest() {
     });
 
     /**
-     * @tc.number: SUB_AA_CreateModuleContext_0900
-     * @tc.name: AbilityStageContext calls createModuleContext, passing in a non-existing moduleName
-     * @tc.desc: Verify that the context of the application can not be obtained
-     * @tc.level: 3
+     * @tc.name   SUB_AA_CreateModuleContext_0900
+     * @tc.number SUB_AA_CreateModuleContext_0900
+     * @tc.desc   Verify that the context of the application can not be obtained
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_AA_CreateModuleContext_0900", Level.LEVEL0, async (done:Function) => {
       console.info("SUB_AA_CreateModuleContext_0900 begin");
@@ -235,10 +247,12 @@ export default function actsCreateModuleContextTest() {
     });
 
     /**
-     * @tc.number: SUB_AA_CreateModuleContext_1000
-     * @tc.name: AbilityStageContext calls createModuleContext, and the incoming moduleName is undefined
-     * @tc.desc: Verify that the context of the application can not be obtained
-     * @tc.level: 3
+     * @tc.name   SUB_AA_CreateModuleContext_1000
+     * @tc.number SUB_AA_CreateModuleContext_1000
+     * @tc.desc   Verify that the context of the application can not be obtained
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_AA_CreateModuleContext_1000", Level.LEVEL0, async (done:Function) => {
       console.info("SUB_AA_CreateModuleContext_1000 begin");
