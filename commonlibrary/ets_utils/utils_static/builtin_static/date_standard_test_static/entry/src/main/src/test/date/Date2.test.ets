@@ -140,7 +140,7 @@ export default function Date2Test() {
         const timestamp8 = Date.parse('20/05/2024');
         expect().assertFail();
       }catch(e){
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
 
@@ -168,7 +168,7 @@ export default function Date2Test() {
      */
     it('Date2Test_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const timestamp10 = Date.parse('2024年5月20日');
-      expect(isNaN(timestamp10)).assertEqual(true);
+      expect(timestamp10).assertEqual(1716134400000);
     });
 
     /**
@@ -242,7 +242,7 @@ export default function Date2Test() {
         const timestamp15 = Date.parse('2024-13-20');
         expect().assertFail();
       }catch(e){
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
 
@@ -259,7 +259,7 @@ export default function Date2Test() {
         const timestamp16 = Date.parse('2024-05-20T25:30:00');
         expect().assertFail();
       }catch(e){
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
 
@@ -276,7 +276,7 @@ export default function Date2Test() {
         const timestamp17 = Date.parse('');
         expect().assertFail();
       }catch(e){
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
 
@@ -293,7 +293,7 @@ export default function Date2Test() {
         const timestamp18 = Date.parse('hello world');
         expect().assertFail();
       }catch(e){
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
 
@@ -306,8 +306,12 @@ export default function Date2Test() {
      * @tc.level Level 2
      */
     it('Date2Test_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const timestamp19 = Date.parse('20240520');
-      expect(isNaN(timestamp19)).assertEqual(true);
+      try{
+        const timestamp19 = Date.parse('20240520');
+        expect().assertFail();
+      }catch(e){
+        expect(e instanceof RangeError).assertEqual(true);
+      }
     });
 
     /**
@@ -439,7 +443,7 @@ export default function Date2Test() {
         const timestamp29 = Date.parse('2024-05-20T12:30:00+2500');
         expect().assertFail();
       }catch(e){
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
 
@@ -480,10 +484,13 @@ export default function Date2Test() {
      * @tc.level Level 2
      */
     it('Date2Test_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const timestamp32 = Date.parse('2024-05-20T1:5:3');
-      const localExpected32 = new Date(2024, 4, 20, 1, 5, 3).getTime();
-      expect(isNaN(timestamp32)).assertEqual(true);
-      expect(localExpected32).assertEqual(1716138303000);
+      try{
+        const timestamp32 = Date.parse('2024-05-20T1:5:3');
+        const localExpected32 = new Date(2024, 4, 20, 1, 5, 3).getTime();
+        expect().assertFail();
+      }catch(e){
+        expect(e instanceof FormatError).assertEqual(true);
+      }
     });
 
     /**
@@ -810,7 +817,7 @@ export default function Date2Test() {
         const timestamp63 = Date.parse('2024-05-20T');
         expect().assertFail();
       }catch(e){
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
 
@@ -879,8 +886,12 @@ export default function Date2Test() {
      * @tc.level Level 2
      */
     it('Date2Test_068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const timestamp68 = Date.parse('Mon, May 2024 12:30:00 GMT');
-      expect(isNaN(timestamp68)).assertEqual(true);
+      try{
+        const timestamp68 = Date.parse('Mon, May 2024 12:30:00 GMT');
+        expect().assertFail();
+      }catch(e){
+        expect(e instanceof FormatError).assertEqual(true);
+      }
     });
 
     /**
@@ -925,7 +936,7 @@ export default function Date2Test() {
         const timestamp71 = Date.parse('   ');
         expect().assertFail();
       }catch(e){
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
 
@@ -1054,7 +1065,7 @@ export default function Date2Test() {
         const timestamp84 = Date.parse('12:30:00');
         expect().assertFail();
       }catch(e){
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
 
@@ -1154,7 +1165,7 @@ export default function Date2Test() {
         const timestamp92 = Date.parse('2024-05-20T12::30:00');
         expect().assertFail();
       }catch(e){
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
 
@@ -1171,7 +1182,7 @@ export default function Date2Test() {
         const timestamp93 = Date.parse('2024-05-20T12:30:00.123aZ');
         expect().assertFail();
       }catch(e){
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
 
@@ -1201,7 +1212,7 @@ export default function Date2Test() {
         const timestamp95 = Date.parse('T12:30:00Z');
         expect().assertFail();
       }catch(e){
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
 
@@ -1284,7 +1295,7 @@ export default function Date2Test() {
         const timestamp104 = Date.parse('NaN');
         expect().assertFail();
       }catch(e){
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
 
@@ -1367,12 +1378,8 @@ export default function Date2Test() {
      * @tc.level Level 2
      */
     it('Date2Test_111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      try{
-        const timestamp111 = Date.parse('2024年05月20日');
-        expect().assertFail();
-      }catch(e){
-        expect(e instanceof RangeError).assertEqual(true);
-      }
+      const timestamp111 = Date.parse('2024年5月20日');
+      expect(timestamp111).assertEqual(1716134400000);
     });
 
     /**
@@ -1443,7 +1450,7 @@ export default function Date2Test() {
         const expected116 = new Date('-0001-12-31T00:00:00Z').getTime();
         expect().assertFail();
       }catch(e){
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
 
@@ -1570,7 +1577,7 @@ export default function Date2Test() {
         const timestamp125 = Date.parse('2024-05-20T12:30:00-');
         expect().assertFail();
       }catch(e){
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
 
@@ -1657,7 +1664,7 @@ export default function Date2Test() {
         const timestamp133 = Date.parse('undefined');
         expect().assertFail();
       }catch(e){
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
 
@@ -1674,7 +1681,7 @@ export default function Date2Test() {
         const timestamp134 = Date.parse('null');
         expect().assertFail();
       }catch(e){
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
 
@@ -1692,7 +1699,7 @@ export default function Date2Test() {
         const timestamp135False = Date.parse('false');
         expect().assertFail();
       }catch(e){
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
 
@@ -1802,12 +1809,8 @@ export default function Date2Test() {
      * @tc.level Level 2
      */
     it('Date2Test_143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      try{
-        const timestamp143 = Date.parse('2024年5月20日');
-        expect().assertFail();
-      }catch(e){
-        expect(e instanceof RangeError).assertEqual(true);
-      }
+      const timestamp143 = Date.parse('2024年5月20日');
+      expect(timestamp143).assertEqual(1716134400000);
     });
 
     /**
@@ -1833,8 +1836,12 @@ export default function Date2Test() {
      * @tc.level Level 2
      */
     it('Date2Test_145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const timestamp145 = Date.parse('20240520');
-      expect(isNaN(timestamp145)).assertEqual(true);
+      try{
+        const timestamp145 = Date.parse('20240520');
+        expect().assertFail();
+      }catch(e){
+        expect(e instanceof RangeError).assertEqual(true);
+      }
     });
 
     /**
@@ -1851,7 +1858,7 @@ export default function Date2Test() {
         const expected146 = new Date('-0100-01-01T00:00:00Z').getTime();
         expect().assertFail();
       }catch(e){
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
 

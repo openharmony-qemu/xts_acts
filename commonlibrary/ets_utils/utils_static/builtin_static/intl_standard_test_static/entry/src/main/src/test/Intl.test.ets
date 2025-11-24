@@ -590,7 +590,7 @@ export default function etsIntlFunTest() {
             };
             let intlObj = new Intl.NumberFormat("en-US", option);
             console.log("intlNumberFormatTest017::" + intlObj.format(numberValue));
-            expect(intlObj.format(numberValue)).assertEqual('+USD 123,456.79');
+            expect(intlObj.format(numberValue).replace(String.fromCharCode(160), ' ')).assertEqual('+USD 123,456.79');
             expect(intlObj.resolvedOptions().currency).assertEqual('USD');
             expect(intlObj.format(numberValue)).assertContain('+USD 123,456.79');
         })

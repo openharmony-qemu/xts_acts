@@ -127,9 +127,12 @@ export default function Date1Test() {
       const date3 = new Date(-1);
       expect(isNaN(date3.getTime())).assertEqual(false);
       expect(date3.getMilliseconds()).assertEqual(999);
-      const date4 = new Date("1620000000000");
-      expect(isNaN(date4.getTime())).assertEqual(true);
-      expect(isNaN(date4.getFullYear())).assertEqual(true);
+      try{
+        const date4 = new Date("1620000000000");
+        expect().assertFail();
+      }catch(e){
+        expect(e instanceof RangeError).assertEqual(true);
+      }
     });
     /**
      * @tc.number SUB_BUILTINS_DATE1_TEST_0600
@@ -140,10 +143,12 @@ export default function Date1Test() {
      * @tc.level Level 2
      */
     it('Date1Test_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const date = new Date("20240520");
-      expect(isNaN(date.getUTCFullYear())).assertEqual(true);
-      expect(isNaN(date.getUTCMonth())).assertEqual(true);
-      expect(isNaN(date.getUTCDate())).assertEqual(true);
+      try{
+        const date = new Date("20240520");
+        expect().assertFail();
+      }catch(e){
+        expect(e instanceof RangeError).assertEqual(true);
+      }
     });
     /**
      * @tc.number SUB_BUILTINS_DATE1_TEST_0700
@@ -192,8 +197,8 @@ export default function Date1Test() {
      */
     it('Date1Test_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date = new Date("2024年05月20日");
-      expect(isNaN(date.getFullYear())).assertEqual(true);
-      expect(isNaN(date.getMonth())).assertEqual(true);
+      expect(date.getFullYear()).assertEqual(2024);
+      expect(date.getMonth()).assertEqual(4);
     });
     /**
      * @tc.number SUB_BUILTINS_DATE1_TEST_1100
@@ -208,7 +213,7 @@ export default function Date1Test() {
         const date = new Date("2024-05-20T14:30+25:00");
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
     /**
@@ -236,7 +241,7 @@ export default function Date1Test() {
         const date = new Date("null");
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
     /**
@@ -420,7 +425,7 @@ export default function Date1Test() {
      */
     it('Date1Test_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date11 = new Date("1622505600000");
-      expect(date11.toISOString()).assertEqual('2021-06-01T00:00:00.000Z');
+      expect(date11.getMonth()).assertEqual(5);
     });
     /**
      * @tc.number SUB_BUILTINS_DATE1_TEST_3200
@@ -498,7 +503,7 @@ export default function Date1Test() {
         const date17 = new Date("");
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
     /**
@@ -514,7 +519,7 @@ export default function Date1Test() {
         const date18 = new Date("abc123");
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
     /**
@@ -592,7 +597,7 @@ export default function Date1Test() {
         const copy25 = new Date(invalid25);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
     /**
@@ -709,13 +714,10 @@ export default function Date1Test() {
      * @tc.level Level 2
      */
     it('Date1Test_074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      try {
-        const date66_1 = new Date("9999-12-31");
-        const date66_2 = new Date("10000-01-01");
-        expect().assertFail();
-      } catch (e) {
-        expect(e instanceof RangeError).assertEqual(true);
-      }
+      const date66_1 = new Date("9999-12-31");
+      const date66_2 = new Date("10000-01-01");
+      expect(date66_1.getMonth()).assertEqual(11);
+      expect(date66_2.getMonth()).assertEqual(0);
     });
 
     /**
@@ -731,7 +733,7 @@ export default function Date1Test() {
         const date73 = new Date("2023-10-01T12");
         expect(date73.toISOString()).assertEqual('2023-10-01T12:00:00.000Z');
       }catch(e){
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
     /**
@@ -808,7 +810,7 @@ export default function Date1Test() {
         const date95 = new Date("2023-10-01t12:34:56");
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
     /**
@@ -878,7 +880,7 @@ export default function Date1Test() {
         const date107 = new Date("0000-00-00");
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
     /**
@@ -894,7 +896,7 @@ export default function Date1Test() {
         const date108 = new Date("10000-00-01");
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
 
@@ -911,7 +913,7 @@ export default function Date1Test() {
         const date111 = new Date("2023-10-01T12:34.567");
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
     /**
@@ -923,12 +925,8 @@ export default function Date1Test() {
      * @tc.level Level 2
      */
     it('Date1Test_105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      try {
-        const date112 = new Date("2023-10-01T12:00:00+0800");
-        expect().assertFail();
-      } catch (e) {
-        expect(e instanceof RangeError).assertEqual(true);
-      }
+      const date112 = new Date("2023-10-01T12:00:00+0800");
+      expect(date112).assertEqual("2023-10-01T04:00:00.000Z");
     });
     /**
      * @tc.number SUB_BUILTINS_DATE1_TEST_10600
@@ -956,7 +954,7 @@ export default function Date1Test() {
         const date114 = new Date("2023-10-01T12:00:00z");
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
     /**
@@ -984,7 +982,7 @@ export default function Date1Test() {
         const date116 = new Date("2023-10-01T9:5");
         expect(date116.toISOString()).assertEqual('2023-10-01T09:05:00.000Z');
       } catch (e) {
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
 
@@ -1064,7 +1062,7 @@ export default function Date1Test() {
         copy134.setFullYear(2023);
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
     /**
@@ -1159,7 +1157,7 @@ export default function Date1Test() {
         const date141 = new Date("2023-10-01T12");
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
     /**
@@ -1224,7 +1222,7 @@ export default function Date1Test() {
         const date146 = new Date("9999-12-32");
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
     /**
@@ -1240,7 +1238,7 @@ export default function Date1Test() {
         const date152 = new Date("0x1717F880000");
         expect(date152.toISOString()).assertEqual('2021-06-01T00:00:00.000Z');
       } catch (e) {
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
     /**
@@ -1374,7 +1372,7 @@ export default function Date1Test() {
         const date171 = new Date("2023-10-01T12:34:56:");
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
     /**
@@ -1416,7 +1414,7 @@ export default function Date1Test() {
         const date175 = new Date("2023-10-01T:34");
         expect().assertFail();
       } catch (e) {
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
     /**
