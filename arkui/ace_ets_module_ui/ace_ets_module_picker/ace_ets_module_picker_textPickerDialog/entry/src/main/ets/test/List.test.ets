@@ -34,6 +34,7 @@ import textPickerDialogCancelButtonStyleTest from './textPickerDialogTest/textPi
 import TextPickerDialogOptionsTest from './textPickerDialogTest/TextPickerDialogOptions.test';
 import TextPickerDialogUITest from './textPickerDialogTest/TextPickerDialogUI.test';
 import textPickerDialogWindowPropertiesTest from './textPickerDialogTest/textPickerDialogWindowProperties.test';
+import textPickerDialogOnScrollStopTest from './textPickerDialogTest/textPickerDialogOnScrollStopTest.test';
 
 export default function testsuite() {
   textPickerDialogBGBlurStyleTest();
@@ -58,4 +59,5 @@ export default function testsuite() {
   TextPickerDialogOptionsTest();
   TextPickerDialogUITest();
   textPickerDialogWindowPropertiesTest();
+  textPickerDialogOnScrollStopTest();
 }

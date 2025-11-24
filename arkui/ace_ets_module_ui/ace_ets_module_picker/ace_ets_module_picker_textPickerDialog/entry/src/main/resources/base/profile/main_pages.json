@@ -22,6 +22,7 @@
     "MainAbility/pages/textPickerDialog/textPickerDialogCancelButtonStyle",
     "MainAbility/pages/textPickerDialog/TextPickerDialogOptions",
     "MainAbility/pages/textPickerDialog/TextPickerDialogUI",
-    "MainAbility/pages/textPickerDialog/textPickerDialogWindowProperties"
+    "MainAbility/pages/textPickerDialog/textPickerDialogWindowProperties",
+    "MainAbility/pages/textPickerDialog/textPickerDialogOnScrollStop"
   ]
 }
