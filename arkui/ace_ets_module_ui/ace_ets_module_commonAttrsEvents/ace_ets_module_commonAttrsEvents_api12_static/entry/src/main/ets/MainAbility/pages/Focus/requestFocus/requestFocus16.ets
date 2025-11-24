@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -23,6 +23,7 @@ import {
   Column,
   ColumnOptions,
   Component,
+  CustomDialog,
   CustomDialogController,
   CustomPopupOptions,
   DialogAlignment,
@@ -50,10 +51,44 @@ import {
   Visibility
 } from '@ohos.arkui.component'
 
+@CustomDialog
+struct CustomDialogExample {
+  controllerTwo?: CustomDialogController
+  @State text1: string = ''
+  cancel: () => void = () => {
+
+  }
+  confirm: () => void = () => {
+
+  }
+
+  build() {
+    Column({space: 5} as ColumnOptions) {
+      Text('' + this.text1).id('requestFocus16_text1')
+      Button('Focus-textInput1').onClick((e: ClickEvent) => {
+        try {
+          this.getUIContext().getFocusController().requestFocus('requestFocus16_textInput1')
+        } catch (error: Error) {
+          this.text1 = '' + error.code
+        }
+      }).id('requestFocus16_btn2')
+    }.width(200).height(50)
+  }
+}
 
 @Entry
 @Component
 struct requestFocus16 {
+  dialogController: CustomDialogController | null = new CustomDialogController({
+    builder: CustomDialogExample({
+      cancel: this.onCancel,
+      confirm: this.onAccept
+    }),
+    autoCancel: true,
+    alignment: DialogAlignment.Center,
+    offset: { dx: 0, dy: 0 },
+    customStyle: false
+  })
   @State text2: string = 'TextInput'
 
   onCancel() {
@@ -75,7 +110,7 @@ struct requestFocus16 {
         })
 
       Button('openDialog').onClick((e: ClickEvent) => {
-
+        this.dialogController?.open()
       }).id('requestFocus16_btn1')
 
     }.width('100%').margin({ top: 20 } as Margin)

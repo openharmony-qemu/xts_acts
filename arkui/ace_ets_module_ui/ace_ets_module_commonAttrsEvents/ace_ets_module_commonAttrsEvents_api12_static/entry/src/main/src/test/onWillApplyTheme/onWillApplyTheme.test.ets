@@ -4,21 +4,22 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
+
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -50,8 +51,6 @@ export default function onWillApplyTheme() {
           routerInstance.pushUrl({
             url: "MainAbility/pages/onWillApplyTheme/onWillApplyTheme"
           })
-
-
         }
       } catch (err) {
         console.error("push onWillApplyTheme page error:" + err);
@@ -63,13 +62,13 @@ export default function onWillApplyTheme() {
       console.info("onWillApplyTheme after each called");
     });
 
-
-    /*
-     * @tc.number    onWillApplyTheme_static_001
-     * @tc.name      onWillApplyTheme_static_001
-     * @tc.desc      onWillApplyTheme_static_001
-     * @tc.level     2
+    /**
+     * @tc.number SUB_ACE_UI_COMPONENT_Common_onWillApplyTheme_static_001
+     * @tc.desc onWillApplyTheme test
+     * @tc.level Level 3
+     * @tc.type
      */
+
     it('onWillApplyTheme_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[onWillApplyTheme_static_001] START');
 
@@ -78,12 +77,9 @@ export default function onWillApplyTheme() {
       await CommonFunc.sleep(200);
       console.info("[onWillApplyTheme_static_001] component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       await CommonFunc.sleep(1000);
-
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('onWillApplyTheme');
       console.info('[onWillApplyTheme_static_001] END');
       done();
     });
-
-
   })
 }

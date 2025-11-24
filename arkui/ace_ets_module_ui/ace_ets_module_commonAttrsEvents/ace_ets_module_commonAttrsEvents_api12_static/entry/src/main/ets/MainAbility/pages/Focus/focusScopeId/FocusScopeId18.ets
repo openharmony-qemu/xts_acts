@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -32,6 +32,7 @@ import {
   NavDestination,
   Navigation,
   NavigationMode,
+  NavPathInfo,
   NavPathStack,
   Placement,
   PopupStateChangeParam,
@@ -67,36 +68,36 @@ struct FocusScopeId18 {
         Column({ space: 5 } as ColumnOptions) {
           Button('btn1')
             .focusOnTouch(true)
-            .focusBox({
-              margin: new LengthMetrics(0),
-              strokeColor: ColorMetrics.rgba(255, 0, 0)
-            })
+            // .focusBox({
+            //   margin: new LengthMetrics(0),
+            //   strokeColor: ColorMetrics.rgba(255, 0, 0)
+            // })
 
           Button('btn2')
             .focusOnTouch(true)
-            .focusBox({
-              margin: new LengthMetrics(0),
-              strokeColor: ColorMetrics.rgba(255, 0, 0)
-            })
+            // .focusBox({
+            //   margin: new LengthMetrics(0),
+            //   strokeColor: ColorMetrics.rgba(255, 0, 0)
+            // })
         }.focusScopeId('FocusScopeId18_focusGroup7', true)
         .borderWidth(1)
 
         Button('btn3')
           .focusOnTouch(true)
-          .focusBox({
-            margin: new LengthMetrics(0),
-            strokeColor: ColorMetrics.rgba(255, 0, 0)
-          })
+          // .focusBox({
+          //   margin: new LengthMetrics(0),
+          //   strokeColor: ColorMetrics.rgba(255, 0, 0)
+          // })
 
       }
     }.title('pageOne')
   }
 
   build() {
-    Column() {
+    Column({space: 5} as ColumnOptions) {
       Navigation(this.pageInfos) {
         Scroll() {
-          Column() {
+          Column({space: 5} as ColumnOptions) {
             Column({ space: 5 } as ColumnOptions) {
 
               Text('焦点组5')
@@ -118,7 +119,8 @@ struct FocusScopeId18 {
                 Button('pushPageOne')
                   .id('FocusScopeId18_btn3_5')
                   .onClick((e: ClickEvent) => {
-
+                    const pathInfo = new NavPathInfo('pageOne', null);
+                    this.pageInfos.pushPath(pathInfo);
                   })
                   .focusOnTouch(true)
               }

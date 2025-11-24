@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,7 +17,7 @@ import type { KeyCode } from '@ohos.multimodalInput.keyCode';
 import { KeyCode } from '@ohos.multimodalInput.keyCode'
 import { BusinessError } from '@ohos.base';
 import { Callback, Message, MessageManager } from '../../../ets/MainAbility/common/MessageManager';
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -31,26 +31,12 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { UtilsTest } from '../Util.test'
 
-let domain: Int = 0x0000;
+let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
-class Msg {
-  name: string = ''
-  value: number
-
-  constructor(name: string, value: number) {
-    this.name = name
-    this.value = value
-  }
-}
-
-interface ParamName {
-  name: string,
-  message: MessageManager<string | FunctionKey>
-}
-
-const keycodeMap = new Map<string | FunctionKey, Int>();
+// to test Ctrl + A ,Ctrl + C ..
+const keycodeMap = new Map<string | FunctionKey, int>();
 keycodeMap.set("C", KeyCode.KEYCODE_C);
 keycodeMap.set("A", KeyCode.KEYCODE_A);
 keycodeMap.set("Z", KeyCode.KEYCODE_Z);
@@ -75,25 +61,6 @@ keycodeMap.set(FunctionKey.DPAD_UP, KeyCode.KEYCODE_DPAD_UP);
 keycodeMap.set(FunctionKey.DPAD_DOWN, KeyCode.KEYCODE_DPAD_DOWN);
 keycodeMap.set(FunctionKey.DPAD_LEFT, KeyCode.KEYCODE_DPAD_LEFT);
 keycodeMap.set(FunctionKey.DPAD_RIGHT, KeyCode.KEYCODE_DPAD_RIGHT);
-
-async function testAsyncFunction(keyChar: string | FunctionKey, driver: Driver): Promise<void> {
-  console.info('test Ctrl + ' + keyChar + " start");
-  const animate = AppStorage.get<ParamName>("value")
-  let msg: Message<string | FunctionKey> = {
-    name: 'changeChar', value: keyChar
-  }
-  animate?.message.notify(msg);
-  await CommonFunc.sleep(500);
-
-  driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, keycodeMap.get(keyChar) as Int);
-  await CommonFunc.sleep(2000);
-
-  let tt2 = inspector.getInspectorByKey('keyTest');
-  let obj2 = JSON.parseJsonElement(tt2);
-  console.info('SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0800 ' +
-  obj2.getElement('$attrs').getString('content'));
-  expect(obj2.getElement('$attrs').getString('content')).assertEqual("I clicked Button " + keyChar);
-}
 
 export default function globalShortcutKeyTest3() {
   describe('globalShortcutKeyTest3', () => {
@@ -128,34 +95,49 @@ export default function globalShortcutKeyTest3() {
       await CommonFunc.sleep(500);
     });
 
-
-    /*
+    /**
      * @tc.number    SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_STATIC_0080
      * @tc.name      SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_STATIC_0080
-     * @tc.desc      SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_STATIC_0080
-     * @tc.level     2
+     * @tc.desc      simulate the keyboard operate “CTRL + C”
+     * @tc.level:    Level 0
+     * @tc.type :
+     * @tc.size :
      */
     it('SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_STATIC_0080', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        try {
-          let keyStrings: (string | FunctionKey)[] =
-            ["C", "A", "Z", "Y", "V", FunctionKey.ESC, FunctionKey.F1, FunctionKey.F2,
-              FunctionKey.F3, FunctionKey.F3,
-              FunctionKey.F4, FunctionKey.F5,
-              FunctionKey.F6, FunctionKey.F7,
-              FunctionKey.F8, FunctionKey.F9,
-              FunctionKey.F10, FunctionKey.F12,
-              FunctionKey.TAB, FunctionKey.DPAD_UP,
-              FunctionKey.DPAD_DOWN, FunctionKey.DPAD_LEFT,
-              FunctionKey.DPAD_RIGHT];
-          let driver = Driver.create();
-
-
-          console.info("SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0800 end");
-          done();
-        } catch (err) {
-          expect().assertFail();
+        let keyStrings: (string | FunctionKey)[] =
+          ["C", "A", "Z", "Y", "V", FunctionKey.ESC, FunctionKey.F1, FunctionKey.F2,
+            FunctionKey.F3, FunctionKey.F3,
+            FunctionKey.F4, FunctionKey.F5,
+            FunctionKey.F6, FunctionKey.F7,
+            FunctionKey.F8, FunctionKey.F9,
+            FunctionKey.F10, FunctionKey.F12,
+            FunctionKey.TAB, FunctionKey.DPAD_UP,
+            FunctionKey.DPAD_DOWN, FunctionKey.DPAD_LEFT,
+            FunctionKey.DPAD_RIGHT];
+        let driver = Driver.create();
+        // to test Ctrl + A ,Ctrl + C ..
+        for (const keyChar of keyStrings) {
+          await testAsyncFunction(keyChar, driver);
         }
+        console.info("SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0800 end");
+        done();
       });
   })
+}
+async function testAsyncFunction(keyChar: string | FunctionKey, driver: Driver): Promise<void> {
+  console.info('test Ctrl + ' + keyChar + " start");
+  AppStorage.get<MessageManager<string | FunctionKey>>("messageManager")!.notify({
+    name: 'changeChar', value: keyChar
+  });
+  await CommonFunc.sleep(500);
+  // keyboard to sumilate
+  driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, keycodeMap.get(keyChar) as int);
+  await CommonFunc.sleep(2000);
+  // to get the data to check
+  let tt2 = inspector.getInspectorByKey('keyTest');
+  let obj2 = JSON.parseJsonElement(tt2);
+  console.info('SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0800 ' +
+  obj2.getElement('$attrs').getString('content'));
+  expect(obj2.getElement('$attrs').getString('content')).assertEqual("I clicked Button " + keyChar);
 }

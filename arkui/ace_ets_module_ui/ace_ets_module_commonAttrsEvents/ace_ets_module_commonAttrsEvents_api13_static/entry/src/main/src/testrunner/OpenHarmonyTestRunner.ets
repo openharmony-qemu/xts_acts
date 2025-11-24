@@ -18,7 +18,7 @@ import { TestRunner } from '@kit.TestKit';
 
 import hilog from '@ohos.hilog';
 
-import { Hypium } from '../../../hypium/hypium';
+import { Hypium } from '../../../hypium';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import testsuite from '../test/List.test';
 

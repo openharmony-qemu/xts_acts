@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -80,12 +80,12 @@ struct requestFocus15 {
       Text('' + this.text1).id('requestFocus15_text1')
 
       Button('bindMenu')
-
+        .bindMenu(this.myMenu1, { showInSubWindow: true })
         .id('requestFocus15_btn1')
       Button('Focus-textInput1').onClick((e: ClickEvent) => {
         try {
           this.getUIContext().getFocusController().requestFocus('requestFocus15_textInput1')
-        } catch (error) {
+        } catch (error: Error) {
           this.text1 = '' + error.code
         }
       }).id('requestFocus15_btn2')

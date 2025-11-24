@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,7 +18,7 @@ import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
 import {
-  BarPosition,
+  BarPosition,GestureEvent,
   BaseGestureEvent,
   Builder,
   Button,
@@ -34,7 +34,7 @@ import {
   Padding,
   PanGestureEvent,
   Resource,
-  ScrollableTargetInfo,
+  ScrollableTargetInfo,ColumnOptions,
   SubTabBarStyle,
   TabContent,
   Tabs,
@@ -43,7 +43,19 @@ import {
   Text
 } from '@ohos.arkui.component'
 
-
+class testRecognizer {
+  offsetX?: number = 0;
+  offsetY?: number = 0;
+  velocityX?: number = 0;
+  velocityY?: number = 0;
+  velocity?: number = 0;
+  source?: number = 0;
+  pressure?: number = 0;
+  tiltX?: number = 0;
+  tiltY?: number = 0;
+  sourceTool?: number = 0;
+  deviceId?: int = 0;
+}
 @Entry
 @Component
 struct GestureTest2 {
@@ -57,8 +69,8 @@ struct GestureTest2 {
   @State timestamp: number = 0
 
   @Builder
-  tabBuilder(index: int, name: string) {
-    Column() {
+  tabBuilder(index: number, name: string) {
+    Column({space: 5} as ColumnOptions) {
       Text(name)
         .fontColor(this.selectedIndex === index ? this.selectedFontColor : this.fontColor)
         .fontSize(16)
@@ -73,39 +85,51 @@ struct GestureTest2 {
   }
 
   build() {
-    Column() {
+    Column({space: 5} as ColumnOptions) {
 
       Text(this.eventString).key("eventtest");
       Text(this.timestamp + "").key("timestamp");
       Tabs({ barPosition: BarPosition.Start, index: this.currentIndex, controller: this.controller }) {
         TabContent() {
-          Column() {
+          Column({space: 5} as ColumnOptions) {
             Text(`GreenTest`).fontSize(16)
           }.width('100%').height('100%').backgroundColor(Color.Green).key("firstTabsContent")
 
         }
 
+        .tabBar(()=>{this.tabBuilder(0, 'green')})
         TabContent() {
           Tabs() {
             TabContent() {
-              Column() {
+              Column({space: 5} as ColumnOptions) {
                 Text(`BlueTest`).fontSize(16)
               }.width('100%').height('100%').backgroundColor(Color.Blue)
-            }.tabBar(new SubTabBarStyle('blue'))
+            }.tabBar(()=>{new SubTabBarStyle('blue')})
 
             TabContent() {
-              Column() {
+              Column({space: 5} as ColumnOptions) {
                 Text(`PinkTest`).fontSize(16)
               }.width('100%').height('100%').backgroundColor(Color.Pink)
-            }.tabBar(new SubTabBarStyle('pink'))
+            }.tabBar(()=>{new SubTabBarStyle('pink')})
           }
           .onGestureRecognizerJudgeBegin((event: BaseGestureEvent, current: GestureRecognizer,
-            others: Array<GestureRecognizer>): GestureJudgeResult => {
+            others: Array<GestureRecognizer>): GestureJudgeResult => { // 在识别器即将要成功时，根据当前组件状态，设置识别器使能状态
             console.info('enhance ets onGestureRecognizerJudgeBegin child')
+            let events:testRecognizer = {
 
-            console.info("enhance" + JSON.stringify(event));
-            this.eventString = JSON.stringify(event);
-
+              offsetX:(event as PanGestureEvent)!.offsetX,
+              offsetY:(event as PanGestureEvent)!.offsetY,
+              velocityX:(event as PanGestureEvent)!.velocityX,
+              velocityY:(event as PanGestureEvent)!.velocityY,
+              velocity:(event as PanGestureEvent)!.velocity,
+              source:(event as PanGestureEvent)!.source,
+              pressure:(event as PanGestureEvent)!.pressure,
+              tiltX:(event as PanGestureEvent)!.tiltX,
+              tiltY:(event as PanGestureEvent)!.tiltY,
+              sourceTool:(event as PanGestureEvent)!.sourceTool,
+              deviceId:(event as PanGestureEvent)!.deviceId
+            }
+            this.eventString = JSON.stringify(events);
             console.info("enhance tag = " + current.getTag() + " type = " + current.getType() + " isBuildIn = " +
             current.isBuiltIn()
               + " isEnable = " + current.isEnabled() + " getState " + current.getState() + " EventTargetInfo = " +
@@ -146,15 +170,17 @@ struct GestureTest2 {
           }, this.exposeInnerGesture)
         }
 
+        .tabBar(()=>{this.tabBuilder(1, 'blue and pink')})
         TabContent() {
-          Column() {
+          Column({space: 5} as ColumnOptions) {
             Text(`blue and pink test`).fontSize(16)
           }.width('100%').height('100%').backgroundColor(Color.Brown)
         }
 
+        .tabBar(()=>{this.tabBuilder(2, 'brown')})
       }
       .onAnimationStart((index: int, targetIndex: int, event: TabsAnimationEvent): void => {
-
+        // 切换动画开始时触发该回调。目标页签显示下划线。
         this.selectedIndex = targetIndex
       })
     }

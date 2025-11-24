@@ -12,15 +12,36 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium';
+import inspector from '@ohos.arkui.inspector'
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from "../../../../hypium/index"
 import router from '@ohos.router';
-import CommonFunc from "../../../ets/MainAbility/common/Common";
-import {Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
-import inspector from '@ohos.arkui.inspector';
-import { Router } from '@ohos.arkui.UIContext';
+import {
+  Component,
+  Driver,
+  UiWindow,
+  ON,
+  MatchPattern,
+  DisplayRotation,
+  ResizeDirection,
+  WindowMode,
+  PointerMatrix
+} from '@ohos.UiTest';
+import CommonFunc from '../../../ets/MainAbility/common/Common';
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { startAbility, UtilsTest } from '../Util.test';
-
+import CommonFunc from '../../../ets/MainAbility/common/Common';
+import {UtilsTest,startAbility} from '../Util.test'
+let domain: number = 0x0000;
+let tag: string = 'testTag';
+let testAbilityContext:common.UIAbilityContext;
+let flexGrow = 3;
+let compareFlexGrow = 1;
+const uiContext = new UIContext();
 export default function nodeContainerTest() {
   describe('nodeContainerTest', () => {
     beforeAll(() => {
@@ -41,10 +62,8 @@ export default function nodeContainerTest() {
         console.info("get nodeContainerTest state pages: " + JSON.stringify(pages));
         if (!("nodeContainer" == pages.name)) {
           console.info("get nodeContainerTest state pages.name: " + JSON.stringify(pages.name));
-          
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push nodeContainerTest page error: " + err);
@@ -55,18 +74,20 @@ export default function nodeContainerTest() {
 
 
     /*
-     * @tc.number   nodeContainerTest_static_0100
-     * @tc.name     nodeContainerTest_static_0100
-     * @tc.desc     nodeContainerTest_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.number    nodeContainerTest_static_0100
+     * @tc.name      nodeContainerTest_static_0100
+     * @tc.desc      nodeContainerTest_static_0100
+     * @tc.level     2
      */
-it('nodeContainerTest_static_0100', Level.LEVEL0, async (done: ()=>void) => {
+    it('nodeContainerTest_static_0100', Level.LEVEL0, async (done: ()=>void) => {
       console.info('nodeContainerTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('nodeContainer_7'));
+      console.info("[nodeContainerTest_0100] component obj is: " + 'button');
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
+      console.info("[nodeContainerTest_0100] component obj is: " + 'click');
       let strJson = inspector.getInspectorByKey('nodeContainer_6');
       let obj= JSON.parseJsonElement(strJson);
       console.info("[nodeContainerTest_0100] component obj is: " + JSON.stringify(obj));
@@ -78,12 +99,12 @@ it('nodeContainerTest_static_0100', Level.LEVEL0, async (done: ()=>void) => {
 
 
     /*
-     * @tc.number   nodeContainerTest_static_0200
-     * @tc.name     nodeContainerTest_static_0200
-     * @tc.desc     nodeContainerTest_static_0200
-     * @tc.level    Level.LEVEL0
+     * @tc.number    nodeContainerTest_static_0200
+     * @tc.name      nodeContainerTest_static_0200
+     * @tc.desc      nodeContainerTest_static_0200
+     * @tc.level     2
      */
-it('nodeContainerTest_static_0200', Level.LEVEL0, async (done: ()=>void) => {
+    it('nodeContainerTest_static_0200', Level.LEVEL0, async (done: ()=>void) => {
       console.info('nodeContainerTest_0200 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -113,12 +134,12 @@ it('nodeContainerTest_static_0200', Level.LEVEL0, async (done: ()=>void) => {
 
 
     /*
-     * @tc.number   nodeContainerTest_static_0300
-     * @tc.name     nodeContainerTest_static_0300
-     * @tc.desc     nodeContainerTest_static_0300
-     * @tc.level    Level.LEVEL0
+     * @tc.number    nodeContainerTest_static_0300
+     * @tc.name      nodeContainerTest_static_0300
+     * @tc.desc      nodeContainerTest_static_0300
+     * @tc.level     2
      */
-it('nodeContainerTest_static_0300', Level.LEVEL0, async (done: ()=>void) => {
+    it('nodeContainerTest_static_0300', Level.LEVEL0, async (done: ()=>void) => {
       console.info('nodeContainerTest_0300 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -139,12 +160,12 @@ it('nodeContainerTest_static_0300', Level.LEVEL0, async (done: ()=>void) => {
 
 
     /*
-     * @tc.number   nodeContainerTest_static_0400
-     * @tc.name     nodeContainerTest_static_0400
-     * @tc.desc     nodeContainerTest_static_0400
-     * @tc.level    Level.LEVEL0
+     * @tc.number    nodeContainerTest_static_0400
+     * @tc.name      nodeContainerTest_static_0400
+     * @tc.desc      nodeContainerTest_static_0400
+     * @tc.level     2
      */
-it('nodeContainerTest_static_0400', Level.LEVEL0, async (done: ()=>void) => {
+    it('nodeContainerTest_static_0400', Level.LEVEL0, async (done: ()=>void) => {
       console.info('nodeContainerTest_0400 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -162,12 +183,12 @@ it('nodeContainerTest_static_0400', Level.LEVEL0, async (done: ()=>void) => {
 
 
     /*
-     * @tc.number   nodeContainerTest_static_0500
-     * @tc.name     nodeContainerTest_static_0500
-     * @tc.desc     nodeContainerTest_static_0500
-     * @tc.level    Level.LEVEL0
+     * @tc.number    nodeContainerTest_static_0500
+     * @tc.name      nodeContainerTest_static_0500
+     * @tc.desc      nodeContainerTest_static_0500
+     * @tc.level     2
      */
-it('nodeContainerTest_static_0500', Level.LEVEL0, async (done: ()=>void) => {
+    it('nodeContainerTest_static_0500', Level.LEVEL0, async (done: ()=>void) => {
       console.info('nodeContainerTest_0500 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

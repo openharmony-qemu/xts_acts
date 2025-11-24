@@ -4,15 +4,15 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -52,28 +52,26 @@ export default function gestureInterceptionEnhancementCallbackRecognizerTest() {
         if (!("ColumnSpaceResourcePage" == pages.name)) {
           console.info("get gestureInterceptionEnhancementCallbackRecognizerTest pages.name:" +
           JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push gestureInterceptionEnhancementCallbackRecognizerTest page error:" + err);
       }
       console.info("gestureInterceptionEnhancementCallbackRecognizerTest beforeEach end");
-
     });
 
     afterEach(async (): Promise<void> => {
       await CommonFunc.sleep(1500);
     });
 
-
-    /*
-     * @tc.number     gestureInterceptionEnhancementCallbackRecognizerTest_static_0010
-     * @tc.name       gestureInterceptionEnhancementCallbackRecognizerTest_static_0010
-     * @tc.desc       gestureInterceptionEnhancementCallbackRecognizerTest_static_0010
-     * @tc.level     2
+    /**
+     * @tc.number    tabsInterceptionEnhancementcallbackRecognizerTest_0010
+     * @tc.name      gestureInterceptionEnhancementCallbackRecognizerTest_static_0010
+     * @tc.desc      test the Recognizer callBackData when invoke gesture Interception Enhancement interface (exposeInnerGesture value true)
+     * @tc.level:    Level 2
+     * @tc.type :
+     * @tc.size :
      */
     it(' gestureInterceptionEnhancementCallbackRecognizerTest_static_0010', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -90,7 +88,7 @@ export default function gestureInterceptionEnhancementCallbackRecognizerTest() {
         let height = bottom - top;
         let width = right - left;
         await CommonFunc.sleep(1000);
-
+        // tabs nest scroll
         await driver.swipe(Math.round(left + width * 0.8) as Int, Math.round(top + height / 2) as Int,
           Math.round(left) as Int, Math.round(top + height / 2) as Int);
         await CommonFunc.sleep(2500);
@@ -102,11 +100,12 @@ export default function gestureInterceptionEnhancementCallbackRecognizerTest() {
         await driver.swipe(Math.round(left + width * 0.8) as Int, Math.round(top + height / 2) as Int,
           Math.round(left) as Int, Math.round(top + height / 2) as Int);
         await CommonFunc.sleep(2500);
-
+        // check the callback data
         let strJson = inspector.getInspectorByKey('eventceshi');
+        await CommonFunc.sleep(2500);
         let obj = JSON.parseJsonElement(strJson);
         console.info("[ gestureInterceptionEnhancementCallbackRecognizerTest_static_0010 ] content: " +
-        JSON.stringify(obj.getElement('$attrs').getString('content')));
+          strJson);
         let obj2 = JSON.parseJsonElement(obj.getElement('$attrs').getString('content'));
         console.info("gestureInterceptionEnhancementCallbackRecognizerTest_static_0010" + obj2.getInteger('type'));
         console.info("gestureInterceptionEnhancementCallbackRecognizerTest_static_0010" + obj2.getString('tag'));
@@ -127,7 +126,7 @@ export default function gestureInterceptionEnhancementCallbackRecognizerTest() {
         console.info("[ gestureInterceptionEnhancementCallbackRecognizerTest_static_0010 ] contentA: " +
         JSON.stringify(objA.getElement('$attrs').getString('content')));
         let objAA = JSON.parseJsonElement(objA.getElement('$attrs').getString('content'));
-        expect(objAA[0].getString('tag')).assertEqual("");
+        expect(objAA.asArray()[0].getString('tag')).assertEqual("");
         expect(objAA.asArray()[0].getInteger('type') == 2).assertTrue();
         expect(objAA.asArray()[0].getBoolean('isBuildIn')).assertTrue();
         expect(objAA.asArray()[0].getBoolean('isEnabled')).assertTrue();

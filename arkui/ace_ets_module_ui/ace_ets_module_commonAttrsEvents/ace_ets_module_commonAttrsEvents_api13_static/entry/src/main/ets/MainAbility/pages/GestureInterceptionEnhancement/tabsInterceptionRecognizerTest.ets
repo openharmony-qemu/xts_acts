@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -48,22 +48,22 @@ import {
   TextAlign
 } from '@ohos.arkui.component'
 
-interface testRecognizer {
+class testRecognizer {
 
-  type: number;
-  tag: string;
-  isBuildIn: boolean;
-  isEnabled: boolean;
-  getState: number;
-  getId: string;
-  isValid: boolean;
+  type: number = 0;
+  tag: string  = '';
+  isBuildIn: boolean=false;
+  isEnabled: boolean=false;
+  getState: number = 0;
+  getId: string  = '';
+  isValid: boolean=false;
 }
 
 @Entry
 @Component
 struct GestureTest5 {
   @State currentIndex: int = 0
-  @State selectedIndex: number = 0
+  @State selectedIndex: int = 0
   @State fontColor: string = '#182431'
   @State selectedFontColor: string = '#007DFF'
   controller?: TabsController = new TabsController();
@@ -74,7 +74,7 @@ struct GestureTest5 {
 
   @Builder
   tabBuilder(index: number, name: string) {
-    Column() {
+    Column({space: 5} as ColumnOptions) {
       Text(name)
         .fontColor(this.selectedIndex === index ? this.selectedFontColor : this.fontColor)
         .fontSize(16)
@@ -89,34 +89,35 @@ struct GestureTest5 {
   }
 
   build() {
-    Column() {
+    Column({space: 5} as ColumnOptions) {
       Text(this.eventString).key("eventceshi");
       Text(this.eventStringArray).key("eventArray");
       Tabs({ barPosition: BarPosition.Start, index: this.currentIndex, controller: this.controller }) {
         TabContent() {
-          Column() {
+          Column({space: 5} as ColumnOptions) {
             Text(`GreenTest`).fontSize(16)
           }.width('100%').height('100%').backgroundColor(Color.Green).key("firstTabsContentR")
 
         }
 
+        .tabBar(()=>{this.tabBuilder(0, 'green')})
 
         TabContent() {
           Tabs() {
             TabContent() {
-              Column() {
+              Column({space: 5} as ColumnOptions) {
                 Text(`BlueTest`).fontSize(16)
               }.width('100%').height('100%').backgroundColor(Color.Blue)
-            }.tabBar(new SubTabBarStyle('blue'))
+            }.tabBar(()=>{new SubTabBarStyle('blue')})
 
             TabContent() {
-              Column() {
+              Column({space: 5} as ColumnOptions) {
                 Text(`PinkTest`).fontSize(16)
               }.width('100%').height('100%').backgroundColor(Color.Pink)
-            }.tabBar(new SubTabBarStyle('pink'))
+            }.tabBar(()=>{new SubTabBarStyle('pink')})
           }
           .onGestureRecognizerJudgeBegin((event: BaseGestureEvent, current: GestureRecognizer,
-            others: Array<GestureRecognizer>): GestureJudgeResult => {
+            others: Array<GestureRecognizer>): GestureJudgeResult => { // 在识别器即将要成功时，根据当前组件状态，设置识别器使能状态
             console.info('enhance ets onGestureRecognizerJudgeBegin child')
 
             console.info("enhance tag = " + current.getTag() + " type = " + current.getType() + " isBuildIn = " +
@@ -183,15 +184,17 @@ struct GestureTest5 {
           .id("gestureId")
         }
 
+        .tabBar(()=>{this.tabBuilder(1, 'blue and pink')})
         TabContent() {
-          Column() {
+          Column({space: 5} as ColumnOptions) {
             Text(`blue and pink test`).fontSize(16)
           }.width('100%').height('100%').backgroundColor(Color.Brown)
         }
 
+        .tabBar(()=>{this.tabBuilder(2, 'brown')})
       }
       .onAnimationStart((index: int, targetIndex: int, event: TabsAnimationEvent): void => {
-
+        // 切换动画开始时触发该回调。目标页签显示下划线。
         this.selectedIndex = targetIndex
       })
     }

@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { UtilsTest } from '../../Util.test'
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../../hypium/index';
+import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../../hypium';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
@@ -51,8 +51,6 @@ export default function FocusScopeId4() {
         if (!("FocusScopeId4" == pages.name)) {
           console.info("get FocusScopeId4 state success " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-
-
         }
       } catch (err) {
         console.error("push FocusScopeId4 page error: " + err);
@@ -64,12 +62,11 @@ export default function FocusScopeId4() {
       console.info("FocusScopeId4 after each called");
     });
 
-
-    /*
-     * @tc.number    FocusScopeId4_static_0100
-     * @tc.name      FocusScopeId4_static_0100
-     * @tc.desc      FocusScopeId4_static_0100
-     * @tc.level     2
+    /**
+     * @tc.number FocusScopeId4_static_0100
+     * @tc.name FocusScopeId4_static_0100
+     * @tc.desc Test support for directional key focus group penetration ability
+     * @tc.level Level 2
      */
     it('FocusScopeId4_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[FocusScopeId4_static_0100] START');

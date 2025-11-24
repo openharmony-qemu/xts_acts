@@ -4,15 +4,15 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -42,11 +42,6 @@ class Msg {
   }
 }
 
-interface ParamName {
-  name: string,
-  message: MessageManager<boolean>
-}
-
 export default function gestureInterceptionEnhancementCallbackSwiperTest() {
   describe('gestureInterceptionEnhancementCallbackSwiperTest', () => {
     beforeAll(() => {
@@ -67,30 +62,28 @@ export default function gestureInterceptionEnhancementCallbackSwiperTest() {
         console.info("get gestureInterceptionEnhancementCallbackSwiperTest state pages:" + JSON.stringify(pages));
         if (!("ColumnSpaceResourcePage" == pages.name)) {
           console.info("get gestureInterceptionEnhancementCallbackSwiperTest pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push gestureInterceptionEnhancementCallbackSwiperTest page error:" + err);
       }
       console.info("gestureInterceptionEnhancementCallbackSwiperTest beforeEach end");
-
     });
     afterEach(async (): Promise<void> => {
       const tabsInterceptionSwiperTest = AppStorage.get<Router>("router") as Router
 
-      await tabsInterceptionSwiperTest.replaceUrl({ url: 'MainAbility/pages/index/indexassist' })
+      tabsInterceptionSwiperTest.replaceUrl({ url: 'MainAbility/pages/index/indexassist' })
       await CommonFunc.sleep(2000);
     });
 
-
-    /*
-     * @tc.number    gestureInterceptionEnhancementCallbackSwiperTest_static_0010
+    /**
+     * @tc.number    gestureInterceptionEnhancementCallbackSwiperTest_0010
      * @tc.name      gestureInterceptionEnhancementCallbackSwiperTest_static_0010
-     * @tc.desc      gestureInterceptionEnhancementCallbackSwiperTest_static_0010
-     * @tc.level     2
+     * @tc.desc      test  GestureRecognizerJudgeBegin trigger when invoke gesture Interception Enhancement interface (exposeInnerGesture value true)
+     * @tc.level:    Level 2
+     * @tc.type :
+     * @tc.size :
      */
     it('gestureInterceptionEnhancementCallbackSwiperTest_static_0010', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -107,7 +100,7 @@ export default function gestureInterceptionEnhancementCallbackSwiperTest() {
         let height = bottom - top;
         let width = right - left;
         await CommonFunc.sleep(1000);
-
+        // tabs nest scroll
         await driver.swipe(Math.round(left + width * 0.8) as Int, Math.round(top + height / 2) as Int,
           Math.round(left) as Int, Math.round(top + height / 2) as Int);
         await CommonFunc.sleep(3000);
@@ -116,7 +109,7 @@ export default function gestureInterceptionEnhancementCallbackSwiperTest() {
           Math.round(left) as Int, Math.round(top + height / 2) as Int);
         await CommonFunc.sleep(3000);
 
-
+        // check the GestureRecognizerJudgeBegin trigger
         let strJson = inspector.getInspectorByKey('callBackString');
         let obj = JSON.parseJsonElement(strJson);
         console.info("[gestureInterceptionEnhancementCallbackSwiperTest_static_0010 ] content: " +
@@ -125,22 +118,21 @@ export default function gestureInterceptionEnhancementCallbackSwiperTest() {
         done();
       });
 
-
-    /*
-     * @tc.number    gestureInterceptionEnhancementCallbackSwiperTest_static_0020
+    /**
+     * @tc.number    gestureInterceptionEnhancementCallbackSwiperTest_0020
      * @tc.name      gestureInterceptionEnhancementCallbackSwiperTest_static_0020
-     * @tc.desc      gestureInterceptionEnhancementCallbackSwiperTest_static_0020
-     * @tc.level     2
+     * @tc.desc      test  GestureRecognizerJudgeBegin trigger when invoke gesture Interception Enhancement interface (exposeInnerGesture value false)
+     * @tc.level:    Level 2
+     * @tc.type :
+     * @tc.size :
      */
     it('gestureInterceptionEnhancementCallbackSwiperTest_static_0020', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         console.info('gestureInterceptionEnhancementCallbackSwiperTest_static_0020 START');
 
-        const animate = AppStorage.get<ParamName>("value")
-        let msg: Message<boolean> = {
+        AppStorage.get<MessageManager<boolean>>("messageManager")?.notify({
           name: 'exposeInnerGesture', value: false
-        }
-        animate?.message.notify(msg);
+        });
         let driver = Driver.create()
         await CommonFunc.sleep(1000);
         let firstswiper = CommonFunc.getComponentRectOnScreen('swiperRecogniserTest');
@@ -153,7 +145,7 @@ export default function gestureInterceptionEnhancementCallbackSwiperTest() {
         let height = bottom - top;
         let width = right - left;
         await CommonFunc.sleep(1000);
-
+        // tabs nest scroll
         await driver.swipe(Math.round(left + width * 0.8) as Int, Math.round(top + height / 2) as Int,
           Math.round(left) as Int, Math.round(top + height / 2) as Int);
         await CommonFunc.sleep(3000);
@@ -162,7 +154,7 @@ export default function gestureInterceptionEnhancementCallbackSwiperTest() {
           Math.round(left) as Int, Math.round(top + height / 2) as Int);
         await CommonFunc.sleep(3000);
 
-
+        // check the GestureRecognizerJudgeBegin trigger
         let strJson = inspector.getInspectorByKey('callBackString');
         let obj = JSON.parseJsonElement(strJson);
         console.info("[gestureInterceptionEnhancementCallbackSwiperTest_static_0020 ] content: " +

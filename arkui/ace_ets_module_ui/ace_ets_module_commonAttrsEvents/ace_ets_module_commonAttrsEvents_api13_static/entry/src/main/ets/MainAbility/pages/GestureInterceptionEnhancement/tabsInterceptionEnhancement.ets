@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,7 +18,7 @@ import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
 import {
-  BarPosition,
+  BarPosition,ColumnOptions,
   BaseGestureEvent,
   Builder,
   Button,
@@ -43,34 +43,26 @@ import {
   Text
 } from '@ohos.arkui.component'
 
-interface ParamName {
-  name: string,
-  message: MessageManager<Resource>
-}
-
 @Entry
 @Component
 struct GestureTest {
   @State currentIndex: int = 0
-  @State selectedIndex: number = 0
+  @State selectedIndex: int = 0
   @State fontColor: string = '#182431'
   @State selectedFontColor: string = '#007DFF'
   controller?: TabsController = new TabsController();
   @State exposeInnerGesture: boolean = true;
-  @State callBackString: string = "";
-  messageManager: MessageManager<Resource> = new MessageManager<Resource>();
+  @State callBackString: string = '';
+  messageManager: MessageManager<boolean> = new MessageManager<boolean>();
 
   onPageShow() {
     console.info('tabsInterceptionEnhancement pages onPageShow');
-    let value: ParamName = {
-      name: 'messageManager', message: this.messageManager
-    }
 
-    AppStorage.setOrCreate<ParamName>('value', value);
-    let callback: (message: Message<Resource>) => void = (message: Message<Resource>) => {
+    AppStorage.setOrCreate<MessageManager<boolean>>('messageManager',  this.messageManager);
+    let callback: (message: Message<boolean>) => void = (message: Message<boolean>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'exposeInnerGesture') {
-        this.exposeInnerGesture = Boolean(message.value);
+        this.exposeInnerGesture = message.value;
       }
 
     };
@@ -79,7 +71,7 @@ struct GestureTest {
 
   @Builder
   tabBuilder(index: number, name: string) {
-    Column() {
+    Column({space: 5} as ColumnOptions) {
       Text(name)
         .fontColor(this.selectedIndex === index ? this.selectedFontColor : this.fontColor)
         .fontSize(16)
@@ -94,32 +86,34 @@ struct GestureTest {
   }
 
   build() {
-    Column() {
+    Column({space: 5} as ColumnOptions) {
       Text(this.callBackString).key("callBackS");
       Tabs({ barPosition: BarPosition.Start, index: this.currentIndex, controller: this.controller }) {
         TabContent() {
-          Column() {
+          Column({space: 5} as ColumnOptions) {
             Text(`GreenTest`).fontSize(16)
           }.width('100%').height('100%').backgroundColor(Color.Green).key("firstTabsContent")
 
         }
 
+        .tabBar(()=>{this.tabBuilder(0, 'green')})
+
         TabContent() {
           Tabs() {
             TabContent() {
-              Column() {
+              Column({space: 5} as ColumnOptions) {
                 Text(`BlueTest`).fontSize(16)
               }.width('100%').height('100%').backgroundColor(Color.Blue)
-            }.tabBar(new SubTabBarStyle('blue'))
+            }.tabBar(()=>{new SubTabBarStyle('blue')})
 
             TabContent() {
-              Column() {
+              Column({space: 5} as ColumnOptions) {
                 Text(`PinkTest`).fontSize(16)
               }.width('100%').height('100%').backgroundColor(Color.Pink)
-            }.tabBar(new SubTabBarStyle('pink'))
+            }.tabBar(()=>{new SubTabBarStyle('pink')})
           }
           .onGestureRecognizerJudgeBegin((event: BaseGestureEvent, current: GestureRecognizer,
-            others: Array<GestureRecognizer>): GestureJudgeResult => {
+            others: Array<GestureRecognizer>): GestureJudgeResult => { // 在识别器即将要成功时，根据当前组件状态，设置识别器使能状态
             console.info('ets onGestureRecognizerJudgeBegin child')
             this.callBackString = "接口触发"
             if (current) {
@@ -150,15 +144,18 @@ struct GestureTest {
           }, this.exposeInnerGesture)
         }
 
+        .tabBar(()=>{this.tabBuilder(1, 'blue and pink')})
+
         TabContent() {
-          Column() {
+          Column({space: 5} as ColumnOptions) {
             Text(`blue and pink test`).fontSize(16)
           }.width('100%').height('100%').backgroundColor(Color.Brown)
         }
 
-      }
+        .tabBar(()=>{this.tabBuilder(2, 'brown')})
+      }.width('80%')
       .onAnimationStart((index: int, targetIndex: int, event: TabsAnimationEvent): void => {
-
+        // 切换动画开始时触发该回调。目标页签显示下划线。
         this.selectedIndex = targetIndex
       })
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,12 +13,13 @@
  * limitations under the License.
  */
 import CommonTest from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium/index'
+import { describe, expect, beforeAll } from '../../../../hypium'
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue, SetValue} from '../../../ets/MainAbility/common/Utils';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-import { RepeatMode, GradientDirection,Color } from '@ohos.arkui.component'
+import { RepeatMode, GradientDirection,Color,AttributeModifier,ButtonAttribute } from '@ohos.arkui.component'
 import { AppStorage } from '@ohos.arkui.stateManagement';
+import inspector from '@ohos.arkui.inspector';
 
 export default function ColorBlendTest() {
   //A list of components that support the position attribute, which is required.
@@ -50,10 +51,10 @@ export default function ColorBlendTest() {
   let testValues:TestValue[]= [{
     describe: 'SetColorBlend',
     setValue: {
-      colorBlend: Color.Blue
+      colorBlend: '#FF123456'
     },
     expectValue: {
-      colorBlend: Color.Blue
+      colorBlend: '#FF123456'
     }
   }]
 
@@ -73,13 +74,15 @@ export default function ColorBlendTest() {
     //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       //Modify the target component properties.
-      AppStorage.setOrCreate<SetValue>('_zIndexButtonModifier',data.testValue.setValue)
-      console.error('[' + data.caseTag + '] colorBlendTest');
-      AttrsManager.change(data.caseTag, data.testValue.setValue);
+
       console.error('[' + data.caseTag + '] check colorBlend.' + ` ${data.testValue.setValue.colorBlend}`);
       console.error('[' + data.testValue.expectValue.colorBlend + '] expectValue');
       console.error('[' + data.viewObj!.getElement('$attrs').getString('colorBlend') + '] viewObj.$attrs.colorBlend');
-      expect(data.viewObj!.getElement('$attrs').getElement('colorBlend').asString()).assertEqual(data.testValue.expectValue.colorBlend.toString());
+      let strJson = inspector.getInspectorByKey(data.pageConfig.componentKey);
+      console.info('strJsonstrJsonstrJson2' + strJson);
+      await Utils.sleep(2000);
+      let colorBlendStrJson = JSON.parseJsonElement(strJson);
+      expect(colorBlendStrJson.getElement('$attrs').getString('colorBlend')).assertEqual(data.testValue.expectValue.colorBlend);
 
     });
   })
