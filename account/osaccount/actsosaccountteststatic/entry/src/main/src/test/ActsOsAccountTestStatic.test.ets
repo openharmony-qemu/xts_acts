@@ -33,13 +33,13 @@ export default function ActsOsAccountTestStatic() {
     hilog.info(0x0000, tag, "====>start describe ActsOsAccountTestStatic");
 
     /**
-    * @tc.number   ActsOsAccountGetForegroundOsAccountLocalId_0100
-    * @tc.name     ActsOsAccountGetForegroundOsAccountLocalIdStatic_0100
-    * @tc.desc     Gets the local ID of the foreground OS account.
-    * @tc.level    Level0
-    * @tc.size     MediumTest
-    * @tc.type     Function
-    */
+     * @tc.name   ActsOsAccountGetForegroundOsAccountLocalIdStatic_0100
+     * @tc.number ActsOsAccountGetForegroundOsAccountLocalId_0100
+     * @tc.desc   Gets the local ID of the foreground OS account.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ActsOsAccountGetForegroundOsAccountLocalIdStatic_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, tag, "====>ActsOsAccountGetForegroundOsAccountLocalId_0100 start====");

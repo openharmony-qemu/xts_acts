@@ -24,12 +24,12 @@ export default function ActsDANoPermissionTestStatic() {
   describe('ActsDANoPermissionTestStatic', () => {
 
     /**
-     * @tc.number   SUB_Account_DistributedAccount_NoPermission_static_0100
-     * @tc.name     SUB_Account_DistributedAccount_NoPermission_static_0100
-     * @tc.desc     no ohos.permission.MANAGE_DISTRIBUTED_ACCOUNTS.
-     * @tc.level    Level3
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   SUB_Account_DistributedAccount_NoPermission_static_0100
+     * @tc.number SUB_Account_DistributedAccount_NoPermission_static_0100
+     * @tc.desc   no ohos.permission.MANAGE_DISTRIBUTED_ACCOUNTS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Account_DistributedAccount_NoPermission_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -60,12 +60,12 @@ export default function ActsDANoPermissionTestStatic() {
       });
 
     /**
-     * @tc.number   SUB_Account_DistributedAccount_NoPermission_static_0200
-     * @tc.name     SUB_Account_DistributedAccount_NoPermission_static_0200
-     * @tc.desc     no ohos.permission.MANAGE_DISTRIBUTED_ACCOUNTS.
-     * @tc.level    Level3
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   SUB_Account_DistributedAccount_NoPermission_static_0200
+     * @tc.number SUB_Account_DistributedAccount_NoPermission_static_0200
+     * @tc.desc   no ohos.permission.MANAGE_DISTRIBUTED_ACCOUNTS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Account_DistributedAccount_NoPermission_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {

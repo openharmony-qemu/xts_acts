@@ -19,12 +19,14 @@ const TIMEOUT = 5000;
 const EACHTIMEOUT = 500;
 export default function ActsAccountAssociatedData() {
     describe('ActsAccountAssociatedData', function () {
-        /*
-        * @tc.number    : ActsAccountAssociatedData_0100
-        * @tc.name      : The correct calls setAssociatedData and getAssociatedData get the value
-        * @tc.desc      : The setAssociatedData setting valueis called when the forwarding parameters
-        *                 are correct, and then getAssociatedData is called for the value(callback)
-        */
+        /**
+         * @tc.name   ActsAccountAssociatedData_0100
+         * @tc.number ActsAccountAssociatedData_0100
+         * @tc.desc   The setAssociatedData setting valueis called when the forwarding parameters
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ActsAccountAssociatedData_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("====>ActsAccountAssociatedData_0100 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -51,12 +53,14 @@ export default function ActsAccountAssociatedData() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountAssociatedData_0200
-        * @tc.name      : The correct calls setAssociatedData and getAssociatedData get the value
-        * @tc.desc      : The setAssociatedData setting value is called when the forwarding parameters
-        *                 are correct, and then getAssociatedData is called for the value(promise)
-        */
+        /**
+         * @tc.name   ActsAccountAssociatedData_0200
+         * @tc.number ActsAccountAssociatedData_0200
+         * @tc.desc   The setAssociatedData setting value is called when the forwarding parameters
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ActsAccountAssociatedData_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("====>ActsAccountAssociatedData_0200 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -103,11 +107,14 @@ export default function ActsAccountAssociatedData() {
             done();
         });
 
-        /*
-        * @tc.number    : ActsAccountAssociatedData_0300
-        * @tc.name      : Get it directly without setting value
-        * @tc.desc      : Call getAssociatedData directly to get value without calling setAssociatedData(callback)
-        */
+        /**
+         * @tc.name   ActsAccountAssociatedData_0300
+         * @tc.number ActsAccountAssociatedData_0300
+         * @tc.desc   Call getAssociatedData directly to get value without calling setAssociatedData(callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsAccountAssociatedData_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsAccountAssociatedData_0300 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -130,11 +137,14 @@ export default function ActsAccountAssociatedData() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountAssociatedData_0400
-        * @tc.name      : Get it directly without setting value
-        * @tc.desc      : Call getAssociatedData directly to get value without calling setAssociatedData(promise)
-        */
+        /**
+         * @tc.name   ActsAccountAssociatedData_0400
+         * @tc.number ActsAccountAssociatedData_0400
+         * @tc.desc   Call getAssociatedData directly to get value without calling setAssociatedData(promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountAssociatedData_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountAssociatedData_0400 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -171,12 +181,14 @@ export default function ActsAccountAssociatedData() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountAssociatedData_0500
-        * @tc.name      : Call getAssociatedData to get value when passing in the error parameter
-        * @tc.desc      : After calling setAssociatedData setting value correctly,
-        *                 call the getAssociatedData of the pass error to check if you get the value(callback)
-        */
+        /**
+         * @tc.name   ActsAccountAssociatedData_0500
+         * @tc.number ActsAccountAssociatedData_0500
+         * @tc.desc   After calling setAssociatedData setting value correctly,
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsAccountAssociatedData_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsAccountAssociatedData_0500 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -202,12 +214,14 @@ export default function ActsAccountAssociatedData() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountAssociatedData_0600
-        * @tc.name      : Call getAssociatedData to get value when passing in the error parameter
-        * @tc.desc      : After calling setAssociatedData setting value correctly,
-        *                 call the getAssociatedData of the pass error to check if you get the value(promise)
-        */
+        /**
+         * @tc.name   ActsAccountAssociatedData_0600
+         * @tc.number ActsAccountAssociatedData_0600
+         * @tc.desc   After calling setAssociatedData setting value correctly,
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountAssociatedData_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountAssociatedData_0600 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -242,13 +256,14 @@ export default function ActsAccountAssociatedData() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountAssociatedData_0700
-        * @tc.name      : Whether getAssociatedData can get the correct value when calling setAssociatedData multiple times
-        * @tc.desc      : When the first setAssociatedData is called and the second setAssociatedData
-        *                 is called,the setting of the value is different if the call getAssociatedData
-        *                 can get the second value(callback)
-        */
+        /**
+         * @tc.name   ActsAccountAssociatedData_0700
+         * @tc.number ActsAccountAssociatedData_0700
+         * @tc.desc   When the first setAssociatedData is called and the second setAssociatedData
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsAccountAssociatedData_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsAccountAssociatedData_0700 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -279,13 +294,14 @@ export default function ActsAccountAssociatedData() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountAssociatedData_0800
-        * @tc.name      : Whether getAssociatedData can get the correct value when calling setAssociatedData multiple times
-        * @tc.desc      : When the first setAssociatedData is called and the second setAssociatedData
-        *                 is called,the setting of the value is different if the call getAssociatedData
-        *                 can get the second value(promise)
-        */
+        /**
+         * @tc.name   ActsAccountAssociatedData_0800
+         * @tc.number ActsAccountAssociatedData_0800
+         * @tc.desc   When the first setAssociatedData is called and the second setAssociatedData
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountAssociatedData_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountAssociatedData_0800 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -329,13 +345,14 @@ export default function ActsAccountAssociatedData() {
             done();
         });
 
-        /*
-        * @tc.number    : ActsAccountAssociatedData_0900
-        * @tc.name      : Whether getAssociatedData can get the correct value when calling setAssociatedData multiple times
-        * @tc.desc      : When the first setAssociatedData is called and the second setAssociatedData
-        *                 is called,the setting of the value is same if the call getAssociatedData
-        *                 can get the second value(callback)
-        */
+        /**
+         * @tc.name   ActsAccountAssociatedData_0900
+         * @tc.number ActsAccountAssociatedData_0900
+         * @tc.desc   When the first setAssociatedData is called and the second setAssociatedData
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountAssociatedData_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountAssociatedData_0900 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -366,13 +383,14 @@ export default function ActsAccountAssociatedData() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountAssociatedData_1000
-        * @tc.name      : Whether getAssociatedData can get the correct value when calling setAssociatedData multiple times
-        * @tc.desc      : When the first setAssociatedData is called and the second setAssociatedData
-        *                 is called,the setting of the value is same if the call getAssociatedData
-        *                 can get the second value(promise)
-        */
+        /**
+         * @tc.name   ActsAccountAssociatedData_1000
+         * @tc.number ActsAccountAssociatedData_1000
+         * @tc.desc   When the first setAssociatedData is called and the second setAssociatedData
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountAssociatedData_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountAssociatedData_1000 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -418,12 +436,14 @@ export default function ActsAccountAssociatedData() {
             done();
         });
 
-        /*
-        * @tc.number    : ActsAccountAssociatedData_1100
-        * @tc.name      : Call multiple setAssociatedData calls multiple times getAssociatedData gets the value separately
-        * @tc.desc      : Call setAssociatedData setting value again after calling setAssociatedData setting
-        *                 different value, and then call getAssociatedData twice to get the set value(callback)
-        */
+        /**
+         * @tc.name   ActsAccountAssociatedData_1100
+         * @tc.number ActsAccountAssociatedData_1100
+         * @tc.desc   Call setAssociatedData setting value again after calling setAssociatedData setting
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsAccountAssociatedData_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsAccountAssociatedData_1100 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -459,12 +479,14 @@ export default function ActsAccountAssociatedData() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountAssociatedData_1200
-        * @tc.name      : Call multiple setAssociatedData calls multiple times getAssociatedData gets the value separately
-        * @tc.desc      : Call setAssociatedData setting value again after calling setAssociatedData setting
-        *                 different value, and then call getAssociatedData twice to get the set value(promise)
-        */
+        /**
+         * @tc.name   ActsAccountAssociatedData_1200
+         * @tc.number ActsAccountAssociatedData_1200
+         * @tc.desc   Call setAssociatedData setting value again after calling setAssociatedData setting
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountAssociatedData_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountAssociatedData_1200 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -513,11 +535,14 @@ export default function ActsAccountAssociatedData() {
             done();
         });
 
-        /*
-        * @tc.number    : ActsAccountAssociatedData_1300
-        * @tc.name      : setAssociatedData setting value is called when the argument is wrong
-        * @tc.desc      : Call setAssociatedData setting value when the incoming parameter KEY is wrong(callback)
-        */
+        /**
+         * @tc.name   ActsAccountAssociatedData_1300
+         * @tc.number ActsAccountAssociatedData_1300
+         * @tc.desc   Call setAssociatedData setting value when the incoming parameter KEY is wrong(callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountAssociatedData_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountAssociatedData_1300 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -538,11 +563,14 @@ export default function ActsAccountAssociatedData() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountAssociatedData_1400
-        * @tc.name      : setAssociatedData setting value is called when the argument is wrong
-        * @tc.desc      : Call setAssociatedData setting value when the incoming parameter KEY is wrong(promise)
-        */
+        /**
+         * @tc.name   ActsAccountAssociatedData_1400
+         * @tc.number ActsAccountAssociatedData_1400
+         * @tc.desc   Call setAssociatedData setting value when the incoming parameter KEY is wrong(promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountAssociatedData_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountAssociatedData_1400 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -576,11 +604,14 @@ export default function ActsAccountAssociatedData() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountAssociatedData_1500
-        * @tc.name      : setAssociatedData setting key is called when the argument is wrong
-        * @tc.desc      : Call setAssociatedData setting key when the incoming parameter KEY is wrong(callback)
-        */
+        /**
+         * @tc.name   ActsAccountAssociatedData_1500
+         * @tc.number ActsAccountAssociatedData_1500
+         * @tc.desc   Call setAssociatedData setting key when the incoming parameter KEY is wrong(callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsAccountAssociatedData_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsAccountAssociatedData_1500 start====");
             var keyOverSize = "K"
@@ -606,11 +637,14 @@ export default function ActsAccountAssociatedData() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountAssociatedData_1600
-        * @tc.name      : setAssociatedData setting key is called when the argument is wrong
-        * @tc.desc      : Call setAssociatedData setting key when the incoming parameter KEY is wrong(promise)
-        */
+        /**
+         * @tc.name   ActsAccountAssociatedData_1600
+         * @tc.number ActsAccountAssociatedData_1600
+         * @tc.desc   Call setAssociatedData setting key when the incoming parameter KEY is wrong(promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountAssociatedData_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountAssociatedData_1600 start====");
             var keyOverSize = "K"
@@ -648,11 +682,14 @@ export default function ActsAccountAssociatedData() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountAssociatedData_1700
-        * @tc.name      : setAssociatedData and getAssociatedData are called when the argument is spaced
-        * @tc.desc      : Call setAssociatedData and then getAssociatedData when the incoming key is a space(callback)
-        */
+        /**
+         * @tc.name   ActsAccountAssociatedData_1700
+         * @tc.number ActsAccountAssociatedData_1700
+         * @tc.desc   Call setAssociatedData and then getAssociatedData when the incoming key is a space(callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsAccountAssociatedData_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsAccountAssociatedData_1700 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -679,11 +716,14 @@ export default function ActsAccountAssociatedData() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountAssociatedData_1800
-        * @tc.name      : setAssociatedData and getAssociatedData are called when the argument is spaced
-        * @tc.desc      : Call setAssociatedData and then getAssociatedData when the incoming key is a space(promise)
-        */
+        /**
+         * @tc.name   ActsAccountAssociatedData_1800
+         * @tc.number ActsAccountAssociatedData_1800
+         * @tc.desc   Call setAssociatedData and then getAssociatedData when the incoming key is a space(promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountAssociatedData_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountAssociatedData_1800 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -721,11 +761,14 @@ export default function ActsAccountAssociatedData() {
             done();
         });
 
-        /*
-        * @tc.number    : ActsAccountAssociatedData_1900
-        * @tc.name      : setAssociatedData and getAssociatedData are called when the argument is spaced
-        * @tc.desc      : Call setAssociatedData and then getAssociatedData when the incoming value is null(callback)
-        */
+        /**
+         * @tc.name   ActsAccountAssociatedData_1900
+         * @tc.number ActsAccountAssociatedData_1900
+         * @tc.desc   Call setAssociatedData and then getAssociatedData when the incoming value is null(callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountAssociatedData_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountAssociatedData_1900 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -752,11 +795,14 @@ export default function ActsAccountAssociatedData() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountAssociatedData_2000
-        * @tc.name      : setAssociatedData and getAssociatedData are called when the argument is spaced
-        * @tc.desc      : Call setAssociatedData and then getAssociatedData when the incoming value is null(promise)
-        */
+        /**
+         * @tc.name   ActsAccountAssociatedData_2000
+         * @tc.number ActsAccountAssociatedData_2000
+         * @tc.desc   Call setAssociatedData and then getAssociatedData when the incoming value is null(promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountAssociatedData_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountAssociatedData_2000 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -801,11 +847,14 @@ export default function ActsAccountAssociatedData() {
             done();
         });
 
-        /*
-        * @tc.number    : ActsAccountAssociatedData_2100
-        * @tc.name      : setAssociatedData setting value is called when the argument is wrong
-        * @tc.desc      : Call setAssociatedData setting value when the incoming parameter value is wrong(callback)
-        */
+        /**
+         * @tc.name   ActsAccountAssociatedData_2100
+         * @tc.number ActsAccountAssociatedData_2100
+         * @tc.desc   Call setAssociatedData setting value when the incoming parameter value is wrong(callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
+         */
         it('ActsAccountAssociatedData_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
             console.info("====>ActsAccountAssociatedData_2100 start====");
             var valueOverSize = "K"
@@ -830,11 +879,14 @@ export default function ActsAccountAssociatedData() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountAssociatedData_2200
-        * @tc.name      : setAssociatedData setting value is called when the argument is wrong
-        * @tc.desc      : Call setAssociatedData setting value when the incoming parameter value is wrong(promise)
-        */
+        /**
+         * @tc.name   ActsAccountAssociatedData_2200
+         * @tc.number ActsAccountAssociatedData_2200
+         * @tc.desc   Call setAssociatedData setting value when the incoming parameter value is wrong(promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
+         */
         it('ActsAccountAssociatedData_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
             console.info("====>ActsAccountAssociatedData_2200 start====");
             var valueOverSize = "K"
@@ -871,11 +923,14 @@ export default function ActsAccountAssociatedData() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountAssociatedData_2300
-        * @tc.name      : setAssociatedData and getAssociatedData are called when the argument is spaced
-        * @tc.desc      : Call setAssociatedData and then getAssociatedData when the incoming value is a space(callback)
-        */
+        /**
+         * @tc.name   ActsAccountAssociatedData_2300
+         * @tc.number ActsAccountAssociatedData_2300
+         * @tc.desc   Call setAssociatedData and then getAssociatedData when the incoming value is a space(callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountAssociatedData_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountAssociatedData_2300 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -902,11 +957,14 @@ export default function ActsAccountAssociatedData() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountAssociatedData_2400
-        * @tc.name      : setAssociatedData and getAssociatedData are called when the argument is spaced
-        * @tc.desc      : Call setAssociatedData and then getAssociatedData when the incoming value is a space(promise)
-        */
+        /**
+         * @tc.name   ActsAccountAssociatedData_2400
+         * @tc.number ActsAccountAssociatedData_2400
+         * @tc.desc   Call setAssociatedData and then getAssociatedData when the incoming value is a space(promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountAssociatedData_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountAssociatedData_2400 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -944,11 +1002,14 @@ export default function ActsAccountAssociatedData() {
             done();
         });
 
-        /*
-        * @tc.number    : ActsAccountAssociatedData_2500
-        * @tc.name      : setAssociatedData and getAssociatedData are called when the argument is spaced
-        * @tc.desc      : Call setAssociatedData and then getAssociatedData when the incoming name is null(callback)
-        */
+        /**
+         * @tc.name   ActsAccountAssociatedData_2500
+         * @tc.number ActsAccountAssociatedData_2500
+         * @tc.desc   Call setAssociatedData and then getAssociatedData when the incoming name is null(callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountAssociatedData_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountAssociatedData_2500 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -969,11 +1030,14 @@ export default function ActsAccountAssociatedData() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountAssociatedData_2600
-        * @tc.name      : setAssociatedData and getAssociatedData are called when the argument is spaced
-        * @tc.desc      : Call setAssociatedData and then getAssociatedData when the incoming name is null(promise)
-        */
+        /**
+         * @tc.name   ActsAccountAssociatedData_2600
+         * @tc.number ActsAccountAssociatedData_2600
+         * @tc.desc   Call setAssociatedData and then getAssociatedData when the incoming name is null(promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountAssociatedData_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountAssociatedData_2600 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1007,11 +1071,14 @@ export default function ActsAccountAssociatedData() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountAssociatedData_2700
-        * @tc.name      : setAssociatedData setting name is called when the argument is wrong
-        * @tc.desc      : Call setAssociatedData setting name when the incoming parameter name is wrong(callback)
-        */
+        /**
+         * @tc.name   ActsAccountAssociatedData_2700
+         * @tc.number ActsAccountAssociatedData_2700
+         * @tc.desc   Call setAssociatedData setting name when the incoming parameter name is wrong(callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsAccountAssociatedData_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsAccountAssociatedData_2700 start====");
             var nameOverSize = "n"
@@ -1036,11 +1103,14 @@ export default function ActsAccountAssociatedData() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountAssociatedData_2800
-        * @tc.name      : setAssociatedData setting name is called when the argument is wrong
-        * @tc.desc      : Call setAssociatedData setting name when the incoming parameter name is wrong(promise)
-        */
+        /**
+         * @tc.name   ActsAccountAssociatedData_2800
+         * @tc.number ActsAccountAssociatedData_2800
+         * @tc.desc   Call setAssociatedData setting name when the incoming parameter name is wrong(promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
+         */
         it('ActsAccountAssociatedData_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
             console.info("====>ActsAccountAssociatedData_2800 start====");
             var nameOverSize = "n"
@@ -1078,11 +1148,14 @@ export default function ActsAccountAssociatedData() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountAssociatedData_2900
-        * @tc.name      : setAssociatedData and getAssociatedData are called when the argument is spaced
-        * @tc.desc      : Call setAssociatedData and then getAssociatedData when the incoming name is a space(callback)
-        */
+        /**
+         * @tc.name   ActsAccountAssociatedData_2900
+         * @tc.number ActsAccountAssociatedData_2900
+         * @tc.desc   Call setAssociatedData and then getAssociatedData when the incoming name is a space(callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountAssociatedData_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountAssociatedData_2900 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1104,11 +1177,14 @@ export default function ActsAccountAssociatedData() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountAssociatedData_3000
-        * @tc.name      : setAssociatedData and getAssociatedData are called when the argument is spaced
-        * @tc.desc      : Call setAssociatedData and then getAssociatedData when the incoming name is a space(promise)
-        */
+        /**
+         * @tc.name   ActsAccountAssociatedData_3000
+         * @tc.number ActsAccountAssociatedData_3000
+         * @tc.desc   Call setAssociatedData and then getAssociatedData when the incoming name is a space(promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountAssociatedData_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountAssociatedData_3000 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -1139,12 +1215,14 @@ export default function ActsAccountAssociatedData() {
         })
 
 
-        /*
-        * @tc.number    : ActsAccountAssociatedData_3100
-        * @tc.name      : The correct calls setAssociatedData and getAssociatedData get the value
-        * @tc.desc      : The setAssociatedData setting valueis called when the forwarding parameters
-        *                 are correct, and then getAssociatedData is called for the value(callback)
-        */
+        /**
+         * @tc.name   ActsAccountAssociatedData_3100
+         * @tc.number ActsAccountAssociatedData_3100
+         * @tc.desc   The setAssociatedData setting valueis called when the forwarding parameters
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountAssociatedData_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountAssociatedData_3100 start====");
             var appAccountManager = account.createAppAccountManager();
