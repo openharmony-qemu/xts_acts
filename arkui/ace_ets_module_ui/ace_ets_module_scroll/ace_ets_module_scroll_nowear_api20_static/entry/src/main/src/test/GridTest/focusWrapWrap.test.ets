@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeEach, afterEach, it, expect, Level, beforeAll } from '../../../../hypium/index'
+import { describe, beforeEach, afterEach, it, expect, Level, beforeAll } from '../../../../hypium'
 import events_emitter from '@ohos.events.emitter';
 import {
   Driver,
@@ -60,9 +60,10 @@ export default function focusWrapWrap() {
         console.info("get focusWrapWrap state pages:" + JSON.stringify(pages));
         if (!("focusWrapWrap" == pages.name)) {
           console.info("get focusWrapWrap pages.name:" + JSON.stringify(pages.name));
-
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push focusWrapWrap page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push focusWrapWrap page error:" + err);

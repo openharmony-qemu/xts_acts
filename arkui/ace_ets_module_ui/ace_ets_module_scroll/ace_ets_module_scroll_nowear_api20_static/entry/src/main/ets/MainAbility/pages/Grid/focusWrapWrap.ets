@@ -16,16 +16,8 @@ import {
   Entry,
   Column,
   Component,
-  Flex,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
   Text,
   TextAlign,
-  Button,
-  FontWeight,
-  ButtonType,
-  ClickEvent,
   Margin,
   Grid,
   GridItem,
@@ -96,7 +88,7 @@ struct focusWrapModeWrap {
       .width('90%')
       .height('50%')
       .columnsTemplate('1fr 1fr')
-      //.focusWrapMode(FocusWrapMode.WRAP_WITH_ARROW)
+      // .focusWrapMode(FocusWrapMode.WRAP_WITH_ARROW)
       .columnsGap(10)
       .rowsGap(20)
       .backgroundColor(0xDCDCDC)

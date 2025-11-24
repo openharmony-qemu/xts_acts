@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import {MessageManager,Callback} from '../../common/MessageManager';
-
+// import{DatePickerModifier} from '@ohos.arkui.modifier'
 
 import {
   Entry, Component, Builder,NodeContainer, DatePicker,
@@ -35,18 +35,18 @@ struct TimePickerPage {
   @State minute: number = 0
   @State onChangeOff: string = 'false'
   @State onDateChangeOff: string = 'false'
-  
+  // messageManager: MessageManager = new MessageManager()
   @State enableCascade: boolean | undefined | null = true
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  // @State modifier:DatePickerModifier = new DatePickerModifier().onDateChange((value: Date) => {
+  //   this.onDateChangeOff = 'true'
+  //   console.info('check002 DatePickerOnDateChangeModifier select: ' + value.toString())
+  // })
+  // @State modifier1:DatePickerModifier = new DatePickerModifier().onChange((value: DatePickerResult) => {
+  //   console.info('check002 DatePickerOnchange modifier select current year is: ' + value.year)
+  //   console.info('check002 DatePickerOnchange modifier select current month is: ' + value.month)
+  //   console.info('check002 DatePickerOnchange modifier select current day is: ' + value.day)
+  //   this.onChangeOff = 'true'
+  // })
 
 
   build() {
@@ -66,8 +66,8 @@ struct TimePickerPage {
       })
         .id('DatePicker')
         .lunar(this.isLunar)
-        
-        
+        // .attributeModifier(this.modifier1 as DatePickerModifier)
+        // .attributeModifier(this.modifier as DatePickerModifier)
 
       Text(this.onChangeOff.toString()).key('onChangeOff')
       Text(this.onDateChangeOff.toString()).key('onDateChangeOff')

@@ -17,7 +17,6 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
-
 @Entry
 @Component
 struct Index {
@@ -25,8 +24,10 @@ struct Index {
   aboutToAppear(){
     try {
       let router1 = this.getUIContext().getRouter();
+      let uiContext = this.getUIContext();
       AppStorage.setOrCreate<Router>('router', router1);
-    } catch (error) {
+      AppStorage.setOrCreate<UIContext>('uiContext', uiContext);
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }

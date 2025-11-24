@@ -16,7 +16,6 @@
   "module": {
     "name": "entry",
     "type": "entry",
-    "srcEntry": "./ets/Application/AbilityStage.ts",
     "description": "$string:module_desc",
     "mainElement": "EntryAbility",
     "deviceTypes": [],
@@ -25,15 +24,14 @@
     "pages": "$profile:main_pages",
     "abilities": [
       {
-        "name": "com.acts.arkui.theme.test.EntryAbility",
+        "name": "EntryAbility",
         "srcEntry": "./ets/entryability/EntryAbility.ets",
         "description": "$string:EntryAbility_desc",
-        "icon": "$media:icon",
+        "icon": "$media:layered_image",
         "label": "$string:EntryAbility_label",
-        "startWindowIcon": "$media:icon",
+        "startWindowIcon": "$media:startIcon",
         "startWindowBackground": "$color:start_window_background",
         "exported": true,
-        "orientation": "portrait",
         "skills": [
           {
             "entities": [
@@ -44,18 +42,6 @@
             ]
           }
         ]
-      }
-    ],
-    "requestPermissions": [
-      {
-        "name": "ohos.permission.INTERNET",
-        "reason": "$string:description_application",
-        "usedScene": {
-          "abilities": [
-            "EntryAbility"
-          ],
-          "when": "always"
-        }
       }
     ]
   }

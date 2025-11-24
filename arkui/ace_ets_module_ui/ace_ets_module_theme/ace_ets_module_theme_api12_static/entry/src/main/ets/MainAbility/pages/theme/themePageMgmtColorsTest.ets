@@ -22,22 +22,22 @@ import {
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// class ToggleColors implements CustomColors {
+//   iconPrimary = '#FFFFFFFF';
+//   iconOnPrimary = '#FFD53032'
+//   iconSecondary = "#FF00541F"
+//   iconTertiary = '#FFD00000'
+//   iconFourth = '#1111FF11'
+//   iconEmphasize = '#44FF2222' //高亮图标颜色
+//   iconSubEmphasize = '#7efca7b1' //高亮辅助图标颜色
+//   iconOnSecondary = '#FFD00000' //二级图标反转颜色
+//   iconOnTertiary = '#33FF1111' //三级图标反转颜色，用于彩色背景。
+//   iconOnFourth = '#ffa9cfa8'
+//   backgroundPrimary = '#ff5f66a9'
+//   backgroundSecondary = '#ff6b146a'
+//   backgroundTertiary = '#ffc396c2'
+//   backgroundFourth = '#609d9370'
+// }
 
 class PageCustomTheme implements CustomTheme {
   colors?: CustomColors
@@ -53,35 +53,35 @@ struct themeTogglePage {
   static readonly themeCount:int = 3;
   themeNames: string[] = ['System', 'Custom (green)'];
   themeArray: Array<CustomTheme | undefined> = new Array<CustomTheme|undefined>(
-    undefined, 
-    
+    undefined, // System
+    // new PageCustomTheme(new ToggleColors()),
   )
-  @State themeIndex: Int = 0;
+  @State themeIndex: number = 0;
 
   build() {
-    Column() {
+    Column(undefined) {
       Column({ space: '8vp' } as ColumnOptions) {
         Text(`未使用WithTheme`)
-        
-        Button(`切换theme配色：${this.themeNames[this.themeIndex]}`)
+        // 点击按钮切换局部换肤
+        Button(`切换theme配色：${this.themeNames[this.themeIndex as Int]}`)
           .onClick((e:ClickEvent) => {
             this.themeIndex = (this.themeIndex + 1) % themeTogglePage.themeCount;
           }).key('themeToggleClick')
 
-        
+        // 系统默认按钮配色
         Toggle({ type: ToggleType.Switch, isOn: false })
       }
       .margin({
         top: '50vp'
       } as Margin)
 
-      
-      
-      
-      
-      
-      
-      
+      WithTheme({ theme: this.themeArray[this.themeIndex as Int] }) {
+        // WithTheme作用域
+        Column({ space: '8vp' } as ColumnOptions) {
+          Toggle({ type: ToggleType.Switch, isOn: true }).key('toggleBg')
+        }
+        .width('100%')
+      }
     }
   }
 }

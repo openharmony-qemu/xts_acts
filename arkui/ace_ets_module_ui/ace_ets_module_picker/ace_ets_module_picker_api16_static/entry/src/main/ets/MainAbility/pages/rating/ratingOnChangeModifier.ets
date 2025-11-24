@@ -12,8 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-
+// checkbox
+// import {RatingModifier}from '@ohos.arkui.modifier'   // SDK未找到
 import {
   Entry, Component, Builder,NodeContainer, CheckBoxShape,
   Column, ColumnOptions, ImageAnalyzerType, CheckboxGroup, Checkbox, Rating,
@@ -25,12 +25,12 @@ import { State } from '@ohos.arkui.stateManagement';
 @Component
 struct CheckboxExample {
 
-  @State rating: double = 3.5
+  @State rating: number = 3.5
   @State mRadio1Value: String = ''
-  
-  
-  
-  
+  // @State modifier:RatingModifier =  new RatingModifier().onChange((value: number) => {
+  //   this.rating = value
+  //   console.log('form004 rating_nodifier value is '+ this.rating)
+  // })
 
 
   build() {
@@ -43,8 +43,8 @@ struct CheckboxExample {
         .stars(5)
         .stepSize(0.5)
         .margin({ top: 24 } as Margin)
-        
-        
+        // .attributeModifier(this.modifier as RatingModifier)
+        // .id('ratingModifier')
       Text(this.rating.toString()).key('ratingModifierKey')
     }.width('100%')
   }
