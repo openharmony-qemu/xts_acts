@@ -31,12 +31,12 @@ export default function ScopeSupportTest() {
     }
 
     /**
-     * @tc.number     SUB_ANI_CREATE_LOCAL_SCOPE_0100
-     * @tc.name       test_Create_Local_Scope_0001
-     * @tc.desc       MediumTest
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Create_Local_Scope_0001
+     * @tc.number SUB_ANI_CREATE_LOCAL_SCOPE_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Create_Local_Scope_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -50,12 +50,12 @@ export default function ScopeSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_0100
-     * @tc.name       test_Create_Escape_Local_Scope_0001
-     * @tc.desc       MediumTest
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Create_Escape_Local_Scope_0001
+     * @tc.number SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Create_Escape_Local_Scope_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -69,12 +69,12 @@ export default function ScopeSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_0200
-     * @tc.name       test_Create_Escape_Local_Scope_0002
-     * @tc.desc       create local scope
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Create_Escape_Local_Scope_0002
+     * @tc.number SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_0200
+     * @tc.desc   create local scope
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Create_Escape_Local_Scope_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -88,12 +88,12 @@ export default function ScopeSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_0300
-     * @tc.name       test_Create_Escape_Local_Scope_0003
-     * @tc.desc       create escape local scope
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Create_Escape_Local_Scope_0003
+     * @tc.number SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_0300
+     * @tc.desc   create escape local scope
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Create_Escape_Local_Scope_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -107,12 +107,12 @@ export default function ScopeSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_0400
-     * @tc.name       test_Create_Escape_Local_Scope_0004
-     * @tc.desc       destroy local scope
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Create_Escape_Local_Scope_0004
+     * @tc.number SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_0400
+     * @tc.desc   destroy local scope
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Create_Escape_Local_Scope_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -126,12 +126,12 @@ export default function ScopeSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_0500
-     * @tc.name       test_Create_Escape_Local_Scope_0005
-     * @tc.desc       destroy escape local scope
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Create_Escape_Local_Scope_0005
+     * @tc.number SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_0500
+     * @tc.desc   destroy escape local scope
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Create_Escape_Local_Scope_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -145,12 +145,12 @@ export default function ScopeSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_0600
-     * @tc.name       test_Create_Escape_Local_Scope_0006
-     * @tc.desc       destroy escape local scope null
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Create_Escape_Local_Scope_0006
+     * @tc.number SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_0600
+     * @tc.desc   destroy escape local scope null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Create_Escape_Local_Scope_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -164,12 +164,12 @@ export default function ScopeSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_0700
-     * @tc.name       test_Create_Escape_Local_Scope_0007
-     * @tc.desc       destroy escape local scope undefinde
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Create_Escape_Local_Scope_0007
+     * @tc.number SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_0700
+     * @tc.desc   destroy escape local scope undefinde
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Create_Escape_Local_Scope_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -183,12 +183,12 @@ export default function ScopeSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_0800
-     * @tc.name       test_Create_Escape_Local_Scope_0008
-     * @tc.desc       test HugeNrRefs
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Create_Escape_Local_Scope_0008
+     * @tc.number SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_0800
+     * @tc.desc   test HugeNrRefs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Create_Escape_Local_Scope_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -202,12 +202,12 @@ export default function ScopeSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_0900
-     * @tc.name       test_Create_Escape_Local_Scope_0009
-     * @tc.desc       create local scope
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Create_Escape_Local_Scope_0009
+     * @tc.number SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_0900
+     * @tc.desc   create local scope
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Create_Escape_Local_Scope_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -221,12 +221,12 @@ export default function ScopeSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_1000
-     * @tc.name       test_Create_Escape_Local_Scope_0010
-     * @tc.desc       create local scope
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Create_Escape_Local_Scope_0010
+     * @tc.number SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_1000
+     * @tc.desc   create local scope
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Create_Escape_Local_Scope_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -240,12 +240,12 @@ export default function ScopeSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_1100
-     * @tc.name       test_Create_Escape_Local_Scope_0011
-     * @tc.desc       create local scope
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Create_Escape_Local_Scope_0011
+     * @tc.number SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_1100
+     * @tc.desc   create local scope
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Create_Escape_Local_Scope_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -259,12 +259,12 @@ export default function ScopeSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_1200
-     * @tc.name       test_Create_Escape_Local_Scope_0012
-     * @tc.desc       create local scope
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Create_Escape_Local_Scope_0012
+     * @tc.number SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_1200
+     * @tc.desc   create local scope
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Create_Escape_Local_Scope_0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -278,12 +278,12 @@ export default function ScopeSupportTest() {
       })
  
     /**
-     * @tc.number     SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_1300
-     * @tc.name       test_Create_Escape_Local_Scope_0013
-     * @tc.desc       create local scope
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Create_Escape_Local_Scope_0013
+     * @tc.number SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_1300
+     * @tc.desc   create local scope
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Create_Escape_Local_Scope_0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -297,12 +297,12 @@ export default function ScopeSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_1400
-     * @tc.name       test_Create_Escape_Local_Scope_0014
-     * @tc.desc       destroy local scope
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Create_Escape_Local_Scope_0014
+     * @tc.number SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_1400
+     * @tc.desc   destroy local scope
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Create_Escape_Local_Scope_0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -316,12 +316,12 @@ export default function ScopeSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_1500
-     * @tc.name       test_Create_Escape_Local_Scope_0015
-     * @tc.desc       destroy local scope
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Create_Escape_Local_Scope_0015
+     * @tc.number SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_1500
+     * @tc.desc   destroy local scope
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Create_Escape_Local_Scope_0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -335,12 +335,12 @@ export default function ScopeSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_1600
-     * @tc.name       test_Create_Escape_Local_Scope_0016
-     * @tc.desc       create escape local scope
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Create_Escape_Local_Scope_0016
+     * @tc.number SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_1600
+     * @tc.desc   create escape local scope
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Create_Escape_Local_Scope_0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -354,12 +354,12 @@ export default function ScopeSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_1700
-     * @tc.name       test_Create_Escape_Local_Scope_0017
-     * @tc.desc       create escape local scope
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Create_Escape_Local_Scope_0017
+     * @tc.number SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_1700
+     * @tc.desc   create escape local scope
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Create_Escape_Local_Scope_0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -373,12 +373,12 @@ export default function ScopeSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_1800
-     * @tc.name       test_Create_Escape_Local_Scope_0018
-     * @tc.desc       create escape local scope
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Create_Escape_Local_Scope_0018
+     * @tc.number SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_1800
+     * @tc.desc   create escape local scope
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Create_Escape_Local_Scope_0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -392,12 +392,12 @@ export default function ScopeSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_1900
-     * @tc.name       test_Create_Escape_Local_Scope_0019
-     * @tc.desc       create escape local scope
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Create_Escape_Local_Scope_0019
+     * @tc.number SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_1900
+     * @tc.desc   create escape local scope
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Create_Escape_Local_Scope_0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -411,12 +411,12 @@ export default function ScopeSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_2000
-     * @tc.name       test_Create_Escape_Local_Scope_0020
-     * @tc.desc       create escape local scope
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Create_Escape_Local_Scope_0020
+     * @tc.number SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_2000
+     * @tc.desc   create escape local scope
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Create_Escape_Local_Scope_0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -430,12 +430,12 @@ export default function ScopeSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_2100
-     * @tc.name       test_Create_Escape_Local_Scope_0021
-     * @tc.desc       destroy escape local scope
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Create_Escape_Local_Scope_0021
+     * @tc.number SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_2100
+     * @tc.desc   destroy escape local scope
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Create_Escape_Local_Scope_0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -449,12 +449,12 @@ export default function ScopeSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_2200
-     * @tc.name       test_Create_Escape_Local_Scope_0022
-     * @tc.desc       destroy escape local scope
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Create_Escape_Local_Scope_0022
+     * @tc.number SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_2200
+     * @tc.desc   destroy escape local scope
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Create_Escape_Local_Scope_0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -468,12 +468,12 @@ export default function ScopeSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_2300
-     * @tc.name       test_Create_Escape_Local_Scope_0023
-     * @tc.desc       destroy escape local scope
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Create_Escape_Local_Scope_0023
+     * @tc.number SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_2300
+     * @tc.desc   destroy escape local scope
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Create_Escape_Local_Scope_0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -487,12 +487,12 @@ export default function ScopeSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_2400
-     * @tc.name       test_Create_Escape_Local_Scope_0024
-     * @tc.desc       create local scope
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Create_Escape_Local_Scope_0024
+     * @tc.number SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_2400
+     * @tc.desc   create local scope
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Create_Escape_Local_Scope_0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -506,12 +506,12 @@ export default function ScopeSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_2500
-     * @tc.name       test_Create_Escape_Local_Scope_0025
-     * @tc.desc       create local scope
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Create_Escape_Local_Scope_0025
+     * @tc.number SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_2500
+     * @tc.desc   create local scope
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Create_Escape_Local_Scope_0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -525,12 +525,12 @@ export default function ScopeSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_2600
-     * @tc.name       test_Create_Escape_Local_Scope_0026
-     * @tc.desc       create local scope
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Create_Escape_Local_Scope_0026
+     * @tc.number SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_2600
+     * @tc.desc   create local scope
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Create_Escape_Local_Scope_0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -544,12 +544,12 @@ export default function ScopeSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_2700
-     * @tc.name       test_Create_Escape_Local_Scope_0027
-     * @tc.desc       create local scope
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Create_Escape_Local_Scope_0027
+     * @tc.number SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_2700
+     * @tc.desc   create local scope
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Create_Escape_Local_Scope_0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -563,12 +563,12 @@ export default function ScopeSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_2800
-     * @tc.name       test_Create_Escape_Local_Scope_0028
-     * @tc.desc       destroy escape local scope
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Create_Escape_Local_Scope_0028
+     * @tc.number SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_2800
+     * @tc.desc   destroy escape local scope
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Create_Escape_Local_Scope_0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -582,12 +582,12 @@ export default function ScopeSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_2900
-     * @tc.name       test_Create_Escape_Local_Scope_0029
-     * @tc.desc       destroy escape local scope
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Create_Escape_Local_Scope_0029
+     * @tc.number SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_2900
+     * @tc.desc   destroy escape local scope
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Create_Escape_Local_Scope_0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -601,12 +601,12 @@ export default function ScopeSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_3000
-     * @tc.name       test_Create_Escape_Local_Scope_0030
-     * @tc.desc       destroy escape local scope
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Create_Escape_Local_Scope_0030
+     * @tc.number SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_3000
+     * @tc.desc   destroy escape local scope
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Create_Escape_Local_Scope_0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -620,12 +620,12 @@ export default function ScopeSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_3100
-     * @tc.name       test_Create_Escape_Local_Scope_0031
-     * @tc.desc       create local scope invalid env
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Create_Escape_Local_Scope_0031
+     * @tc.number SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_3100
+     * @tc.desc   create local scope invalid env
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Create_Escape_Local_Scope_0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -639,12 +639,12 @@ export default function ScopeSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_3200
-     * @tc.name       test_Create_Escape_Local_Scope_0032
-     * @tc.desc       destroy local scope invalid env
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Create_Escape_Local_Scope_0032
+     * @tc.number SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_3200
+     * @tc.desc   destroy local scope invalid env
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Create_Escape_Local_Scope_0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -658,12 +658,12 @@ export default function ScopeSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_3300
-     * @tc.name       test_Create_Escape_Local_Scope_0033
-     * @tc.desc       create escape local scope invalid env
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Create_Escape_Local_Scope_0033
+     * @tc.number SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_3300
+     * @tc.desc   create escape local scope invalid env
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Create_Escape_Local_Scope_0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -677,12 +677,12 @@ export default function ScopeSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_3400
-     * @tc.name       test_Create_Escape_Local_Scope_0034
-     * @tc.desc       destroy escape local scope invalid env
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Create_Escape_Local_Scope_0034
+     * @tc.number SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_3400
+     * @tc.desc   destroy escape local scope invalid env
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Create_Escape_Local_Scope_0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -696,12 +696,12 @@ export default function ScopeSupportTest() {
       })
 
     /**
-     * @tc.number     SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_3500
-     * @tc.name       test_Create_Escape_Local_Scope_0035
-     * @tc.desc       destroy escape local scope invalid result
-     * @tc.size       Function
-     * @tc.type       Function test
-     * @tc.level      Level 0
+     * @tc.name   test_Create_Escape_Local_Scope_0035
+     * @tc.number SUB_ANI_CREATE_ESCAPE_LOCAL_SCOPE_3500
+     * @tc.desc   destroy escape local scope invalid result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Create_Escape_Local_Scope_0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

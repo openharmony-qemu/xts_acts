@@ -22,23 +22,23 @@ import { test2019_06_ans } from './test2019_06'
 export default function es2019Test() {
   describe('ES2019Test', () => {
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_ES2019NewFeatures_0001
-     * @tc.name      : testArray.prototype.flatMap
-     * @tc.desc      : add name of task for taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testArray.prototype.flatMap
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ES2019NewFeatures_0001
+     * @tc.desc   add name of task for taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testArray.prototype.flatMap', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(test2019_01_ans).assertDeepEquals([1, 2, 3, 4, 5, 6]);
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_ES2019NewFeatures_0002
-     * @tc.name      : testArray.prototype.flat
-     * @tc.desc      : add name of task for taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testArray.prototype.flat
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ES2019NewFeatures_0002
+     * @tc.desc   add name of task for taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testArray.prototype.flat', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const arr1 = [1, 2, [3, 4]];
@@ -51,12 +51,12 @@ export default function es2019Test() {
       expect(arr4.flat()).assertDeepEquals([1, 2, 4, 5]);
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_ES2019NewFeatures_0003
-     * @tc.name      : testObject.fromEntries
-     * @tc.desc      : add name of task for taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testObject.fromEntries
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ES2019NewFeatures_0003
+     * @tc.desc   add name of task for taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testObject.fromEntries', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(test2019_03_ans).assertDeepEquals({
@@ -64,12 +64,12 @@ export default function es2019Test() {
       });
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_ES2019NewFeatures_0004
-     * @tc.name      : testTrimStart&TrimEnd
-     * @tc.desc      : add name of task for taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testTrimStart&TrimEnd
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ES2019NewFeatures_0004
+     * @tc.desc   add name of task for taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTrimStart&TrimEnd', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const test = " hello "
@@ -77,12 +77,12 @@ export default function es2019Test() {
       expect(test.trimEnd()).assertEqual(" hello");
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_ES2019NewFeatures_0005
-     * @tc.name      : testAlternativeCatchParameter
-     * @tc.desc      : add name of task for taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testAlternativeCatchParameter
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ES2019NewFeatures_0005
+     * @tc.desc   add name of task for taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAlternativeCatchParameter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -92,35 +92,35 @@ export default function es2019Test() {
       }
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_ES2019NewFeatures_0006
-     * @tc.name      : testSymbol.description
-     * @tc.desc      : add name of task for taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSymbol.description
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ES2019NewFeatures_0006
+     * @tc.desc   add name of task for taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSymbol.description', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(test2019_06_ans).assertEqual("Desc")
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_ES2019NewFeatures_0007
-     * @tc.name      : testJsonSuperSet
-     * @tc.desc      : add name of task for taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testJsonSuperSet
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ES2019NewFeatures_0007
+     * @tc.desc   add name of task for taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testJsonSuperSet', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const jsonObj: JSON = JSON.parse('"\u2028\u2029Hello,World!"');
       expect(jsonObj.toString()).assertContain("Hello,World!");
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_ES2019NewFeatures_0008
-     * @tc.name      : testJson.stringfy
-     * @tc.desc      : add name of task for taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testJson.stringfy
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_ES2019NewFeatures_0008
+     * @tc.desc   add name of task for taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testJson.stringfy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(JSON.stringify('\u{D800}')).assertEqual("\"\\ud800\"");

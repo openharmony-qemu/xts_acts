@@ -38,12 +38,12 @@ import { testNapiImportModuleDone } from "./executePromiseAfterModuleLoad/napiIm
 export default function executePromiseAfterModuleLoadTest() {
   describe('ExecutePromiseAfterModuleLoadTest', () => {
     /**
-     * @tc.number: SUB_Runtime_Language_Execute_Promise_After_Module_Load_0001
-     * @tc.name: testLoadSoExecutePromisePendingJob
-     * @tc.desc: load so will execute pending promise job
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testLoadSoExecutePromisePendingJob
+     * @tc.number SUB_Runtime_Language_Execute_Promise_After_Module_Load_0001
+     * @tc.desc   load so will execute pending promise job
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLoadSoExecutePromisePendingJob', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       let sequence = LogMap.getModuleLoadSequence("testLoadSoExecutePromisePendingJob");
@@ -57,12 +57,12 @@ export default function executePromiseAfterModuleLoadTest() {
       expect(sequence?.[index++]).assertEqual("ReExportModule.ets")
     })
     /**
-     * @tc.number: SUB_Runtime_Language_Execute_Promise_After_Module_Load_0002
-     * @tc.name: testLoadSoInTaskPoolNotExecutePromisePendingJob
-     * @tc.desc: load so in taskpool will not execute pending promise job
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testLoadSoInTaskPoolNotExecutePromisePendingJob
+     * @tc.number SUB_Runtime_Language_Execute_Promise_After_Module_Load_0002
+     * @tc.desc   load so in taskpool will not execute pending promise job
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLoadSoInTaskPoolNotExecutePromisePendingJob', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       let sequence = LogMap.getModuleLoadSequence("testLoadSoInTaskPoolNotExecutePromisePendingJob");
@@ -76,12 +76,12 @@ export default function executePromiseAfterModuleLoadTest() {
       expect(sequence?.[index++]).assertEqual("DynamicImportedModule.ets")
     })
     /**
-     * @tc.number: SUB_Runtime_Language_Execute_Promise_After_Module_Load_0003
-     * @tc.name: testLoadCjsNotExecutePromisePendingJob
-     * @tc.desc: load cjs will not execute pending promise job
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testLoadCjsNotExecutePromisePendingJob
+     * @tc.number SUB_Runtime_Language_Execute_Promise_After_Module_Load_0003
+     * @tc.desc   load cjs will not execute pending promise job
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLoadCjsNotExecutePromisePendingJob', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       let sequence = LogMap.getModuleLoadSequence("testLoadCjsNotExecutePromisePendingJob");
@@ -94,12 +94,12 @@ export default function executePromiseAfterModuleLoadTest() {
       expect(sequence?.[index++]).assertEqual("DynamicImportedModule.ets")
     })
     /**
-     * @tc.number: SUB_Runtime_Language_Execute_Promise_After_Module_Load_0004
-     * @tc.name: testLoadJsonNotExecutePromisePendingJob
-     * @tc.desc: load json will not execute pending promise job
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testLoadJsonNotExecutePromisePendingJob
+     * @tc.number SUB_Runtime_Language_Execute_Promise_After_Module_Load_0004
+     * @tc.desc   load json will not execute pending promise job
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLoadJsonNotExecutePromisePendingJob', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       let sequence = LogMap.getModuleLoadSequence("testLoadJsonNotExecutePromisePendingJob");
@@ -112,12 +112,12 @@ export default function executePromiseAfterModuleLoadTest() {
       expect(sequence?.[index++]).assertEqual("DynamicImportedModule.ets")
     })
     /**
-     * @tc.number: SUB_Runtime_Language_Execute_Promise_After_Module_Load_0005
-     * @tc.name: testStaticImportExecutePromisePendingJob
-     * @tc.desc: when the entry module is static imported, pending promise job will immediately execute after every module loaded
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testStaticImportExecutePromisePendingJob
+     * @tc.number SUB_Runtime_Language_Execute_Promise_After_Module_Load_0005
+     * @tc.desc   when the entry module is static imported, pending promise job will immediately execute after every module loaded
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testStaticImportExecutePromisePendingJob', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       let sequence = LogMap.getModuleLoadSequence("testStaticImportExecutePromisePendingJob");
@@ -130,12 +130,12 @@ export default function executePromiseAfterModuleLoadTest() {
       expect(sequence?.[index++]).assertEqual("StaticImportedModule.ets")
     })
     /**
-     * @tc.number: SUB_Runtime_Language_Execute_Promise_After_Module_Load_0006
-     * @tc.name: testLazyImportExecutePromisePendingJob
-     * @tc.desc: when the entry module is lazy imported, pending promise job will immediately execute after all module loaded
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testLazyImportExecutePromisePendingJob
+     * @tc.number SUB_Runtime_Language_Execute_Promise_After_Module_Load_0006
+     * @tc.desc   when the entry module is lazy imported, pending promise job will immediately execute after all module loaded
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLazyImportExecutePromisePendingJob', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       let sequence = LogMap.getModuleLoadSequence("testLazyImportExecutePromisePendingJob");
@@ -148,12 +148,12 @@ export default function executePromiseAfterModuleLoadTest() {
       expect(sequence?.[index++]).assertEqual("DynamicImportedModule.ets")
     })
     /**
-     * @tc.number: SUB_Runtime_Language_Execute_Promise_After_Module_Load_0007
-     * @tc.name: testLazyImportSendableValueExecutePromisePendingJob
-     * @tc.desc: when the entry module is lazy imported, and the lazy imported module value is sendable, pending promise job will immediately execute after every module loaded
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testLazyImportSendableValueExecutePromisePendingJob
+     * @tc.number SUB_Runtime_Language_Execute_Promise_After_Module_Load_0007
+     * @tc.desc   when the entry module is lazy imported, and the lazy imported module value is sendable, pending promise job will immediately execute after every module loaded
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLazyImportSendableValueExecutePromisePendingJob', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       let sequence = LogMap.getModuleLoadSequence("testLazyImportSendableValueExecutePromisePendingJob");
@@ -167,12 +167,12 @@ export default function executePromiseAfterModuleLoadTest() {
       expect(sequence?.[index++]).assertEqual("LazyImportedEntryModule.ets")
     })
     /**
-     * @tc.number: SUB_Runtime_Language_Execute_Promise_After_Module_Load_0008
-     * @tc.name: testDynamicImportExecutePromisePendingJob
-     * @tc.desc: when the entry module is dynamic imported, pending promise job will immediately execute after all module loaded
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testDynamicImportExecutePromisePendingJob
+     * @tc.number SUB_Runtime_Language_Execute_Promise_After_Module_Load_0008
+     * @tc.desc   when the entry module is dynamic imported, pending promise job will immediately execute after all module loaded
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDynamicImportExecutePromisePendingJob', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       let sequence = LogMap.getModuleLoadSequence("testDynamicImportExecutePromisePendingJob");
@@ -185,12 +185,12 @@ export default function executePromiseAfterModuleLoadTest() {
       expect(sequence?.[index++]).assertEqual("DynamicImportedModule.ets")
     })
     /**
-     * @tc.number: SUB_Runtime_Language_Execute_Promise_After_Module_Load_0009
-     * @tc.name: testNapiImportExecutePromisePendingJob
-     * @tc.desc: when the entry module is napi imported, pending promise job will immediately execute after all module loaded
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testNapiImportExecutePromisePendingJob
+     * @tc.number SUB_Runtime_Language_Execute_Promise_After_Module_Load_0009
+     * @tc.desc   when the entry module is napi imported, pending promise job will immediately execute after all module loaded
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNapiImportExecutePromisePendingJob', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       let sequence = LogMap.getModuleLoadSequence("testNapiImportExecutePromisePendingJob");

@@ -40,12 +40,12 @@ export default function exportDefaultTest() {
     })
 
     /**
+     * @tc.name   exportDefaultsTestTest1001
      * @tc.number SUB_EXPORT_DEFAULTS_TEST_0100
-     * @tc.name exportDefaultsTestTest1001
-     * @tc.desc Test default
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Test default
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('exportDefaultsTestTest1001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
         expect(1).assertEqual(test1(1))
