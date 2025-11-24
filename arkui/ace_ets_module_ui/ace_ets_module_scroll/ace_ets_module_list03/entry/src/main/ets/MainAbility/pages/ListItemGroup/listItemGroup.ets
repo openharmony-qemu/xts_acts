@@ -55,7 +55,7 @@ function buildTest(params: Params){
 
 @Entry
 @Component
-struct ComponentContent {
+struct ListItemGroupComponent {
   aboutToAppear(){
     console.info('start run testcase!!!!')
     console.info('start run testcase!!!')
