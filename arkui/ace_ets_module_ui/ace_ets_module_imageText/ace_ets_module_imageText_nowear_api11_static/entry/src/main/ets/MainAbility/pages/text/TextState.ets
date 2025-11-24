@@ -30,7 +30,6 @@ import {
 } from '@ohos.arkui.component'
 import {
   State,
-  
 } from '@ohos.arkui.stateManagement'
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { Hypium } from '../../../../../hypium/index';
@@ -40,13 +39,6 @@ import testsuite from '../../../../src/test/List.test'
 @Entry
 @Component
 struct TextState {
-  aboutToAppear() {
-    let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
-    let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
-    hilog.isLoggable(0x0000, 'testTag', hilog.LogLevel.INFO);
-    hilog.info(0x0000, 'testTag', '%{public}s', 'start run testcase!!!');
-    Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
-  }
 
   @State overMessage: string = 'This is the setting of textOverflow to Clip text content This is the setting of textO' +
     'verflow to None text content. This is the setting of textOverflow to Clip text content This is the setting of '
@@ -93,7 +85,7 @@ struct TextState {
       Text(this.message)
         .key('ArkUX_Stage_Text_TextShadow_0800')
         .height(20)
-        .textShadow({ radius: 1, color: String(0xff0000) } as ShadowOptions )
+        .textShadow({ radius: 1, color: String(Color.Red) } as ShadowOptions )
 
       Text(this.message)
         .key('ArkUX_Stage_Text_TextShadow_0900')
@@ -323,7 +315,7 @@ struct TextState {
         .height(20)
         .bindPopup(this.handlePopup, {
           message: 'This is a popup with PopupOptions',
-          
+          // placementOnTop: true,
           showInSubWindow: false,
           messageOptions: { textColor: Color.Blue, font: { weight: FontWeight.Bolder, size: 25 } },
           targetSpace: 50,

@@ -54,11 +54,8 @@ export default function RichTextJsunit() {
         console.info("get RichTextJsunit state pages:" + "");
         if (!("TextClockApi" == pages.name)) {
           console.info("get RichTextJsunit pages.name:" + "");
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push RichTextJsunit page error:" + err);
@@ -77,7 +74,7 @@ export default function RichTextJsunit() {
      * @tc.level    Level.LEVEL0
      */
 it('RichTextJsunit_static_0100', Level.LEVEL0, async (done: () => void) => {
-      
+      // Get the data of the RichText component
       console.info('[RichTextJsunit_0100] START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('richText');
@@ -108,7 +105,7 @@ it('RichTextJsunit_static_0100', Level.LEVEL0, async (done: () => void) => {
      * @tc.level    Level.LEVEL0
      */
 it('RichTextJsunit_static_0200', Level.LEVEL0, async (done: () => void) => {
-      
+      // Verify the onStart of the RichText component
       console.info('[RichTextJsunit_0200] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create()
@@ -131,7 +128,7 @@ it('RichTextJsunit_static_0200', Level.LEVEL0, async (done: () => void) => {
      * @tc.level    Level.LEVEL0
      */
 it('RichTextJsunit_static_0300', Level.LEVEL0, async (done: () => void) => {
-      
+      // Verify the onComplete of the RichText component
       console.info('[RichTextJsunit_0300] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create()
@@ -153,12 +150,11 @@ it('RichTextJsunit_static_0300', Level.LEVEL0, async (done: () => void) => {
      * @tc.level    Level.LEVEL0
      */
 it('RichTextJsunit_static_0400', Level.LEVEL0, async (done: () => void) => {
-      
+      // Modify data of the RichText component
       console.info('[RichTextJsunit_0400] START');
-      const message:MessageManager = AppStorage.get<MessageManager>("messageManager")!
-      message.notify({name:'RichTextData',value:'<h1 style="text-align: center;">h1Test标题</h1>'})
+  AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'RichTextData',value:'<h1 style="text-align: center;">h1Test标题</h1>'})
       await CommonFunc.sleep(2000);
-      
+      // Get the value of the QRCode component
       let strJson = inspector.getInspectorByKey('richText');
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getElement('$attrs').getString('content')).assertEqual('<h1 style="text-align: center;">h1Test标题</h1>');
@@ -177,12 +173,11 @@ it('RichTextJsunit_static_0400', Level.LEVEL0, async (done: () => void) => {
      * @tc.level    Level.LEVEL0
      */
 it('RichTextJsunit_static_0500', Level.LEVEL0, async (done: () => void) => {
-      
+      // Illegal modification content of the RichText component
       console.info('[RichTextJsunit_0500] START');
-      const message:MessageManager = AppStorage.get<MessageManager>("messageManager")!
-      message.notify({name:'RichTextData',value:1})
+  AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'RichTextData',value: '1'})
       await CommonFunc.sleep(2000);
-      
+      // Get the content of the RichText component
       let strJson = inspector.getInspectorByKey('richText');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[RichTextJsunit_0500] component obj is: " + JSON.stringify(obj));

@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *   http:
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -46,27 +46,22 @@ export default function textAreaBC1Jsunit() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get textAreaBC1Jsunit state pages:" + "");
         if (!("TextClockApi" == pages.name)) {
           console.info("get textAreaBC1Jsunit pages.name:" + "");
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push textAreaBC1Jsunit page error:" + err);
       }
       console.info("textAreaBC1Jsunit beforeEach end");
     });
-
-
-    
-    
-    
+    afterEach(() => {
+      await CommonFunc.sleep(2000);
+    })
     /*
      * @tc.number   textAreaBC1Jsunit_static_0100
      * @tc.name     textAreaBC1Jsunit_static_0100
@@ -86,18 +81,11 @@ it('textAreaBC1Jsunit_static_0100', Level.LEVEL3, async (done: ()=>void) => {
       console.info('textAreaBC1Jsunit_0100 Storage12Button1 clicked');
       let strJsont = inspector.getInspectorByKey('isEdit');
       let objt = JSON.parseJsonElement(strJsont);
-      console.info('textAreaBC1Jsunit_0200 objt is: ' + objt.getElement('$attrs').getString('content'));
+      console.info('textAreaBC1Jsunit_0100 objt is: ' + objt.getElement('$attrs').getString('content'));
       await CommonFunc.sleep(1000);
-
-
         expect(objt.getElement('$attrs').getString('content')).assertEqual('Nodoing');
-
       done();
     });
-
-    
-    
-    
     /*
      * @tc.number   textAreaBC1Jsunit_static_0200
      * @tc.name     textAreaBC1Jsunit_static_0200
@@ -108,40 +96,31 @@ it('textAreaBC1Jsunit_static_0200', Level.LEVEL3, async (done: ()=>void) => {
       console.info('textAreaBC1Jsunit_0200 START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      
+      // 第一次设置文本
       let text = await driver.findComponent(ON.id('textArea1'));
       await (text?.inputText('123') as Promise<void>);
       await CommonFunc.sleep(2000);
       let strJson1 = inspector.getInspectorByKey('change');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info('textAreaBC1Jsunit_0200 obj1 is: ' + obj1.getElement('$attrs').getString('content'));
-
+  expect(obj1.getElement('$attrs').getString('content')).assertEqual('123');
       let strJsont = inspector.getInspectorByKey('isEdit');
       let objt = JSON.parseJsonElement(strJsont);
       console.info('textAreaBC1Jsunit_0200 objt is: ' + objt.getElement('$attrs').getString('content'));
-
+      expect(objt.getElement('$attrs').getString('content')).assertEqual('doing');
       await CommonFunc.sleep(2000);
       await (text?.inputText('123456') as Promise<void>);
       await CommonFunc.sleep(2000);
       let strJson2 = inspector.getInspectorByKey('change');
       let obj2 = JSON.parseJsonElement(strJson2);
       console.info('textAreaBC1Jsunit_0200 obj2 is: ' + obj2.getElement('$attrs').getString('content'));
-
+      expect(obj2.getElement('$attrs').getString('content')).assertEqual('123456');
       let strJsont1 = inspector.getInspectorByKey('isEdit');
       let objt1 = JSON.parseJsonElement(strJsont1);
       console.info('textAreaBC1Jsunit_0200 objt1 is: ' + objt1.getElement('$attrs').getString('content'));
-
-
-        expect(obj1.getElement('$attrs').getString('content')).assertEqual('doing');
-        expect(objt.getElement('$attrs').getString('content')).assertEqual('doing');
-        expect(obj2.getElement('$attrs').getString('content')).assertEqual('123456');
-        expect(objt1.getElement('$attrs').getString('content')).assertEqual('doing');
-
+      expect(objt1.getElement('$attrs').getString('content')).assertEqual('doing');
       done();
     });
-
-    
-    
     
     /*
      * @tc.number   textAreaBC1Jsunit_static_0300
@@ -163,14 +142,11 @@ it('textAreaBC1Jsunit_static_0300', Level.LEVEL3, async (done: ()=>void) => {
 
       await CommonFunc.sleep(1000);
       console.info('textAreaBC1Jsunit_0300 START');
-      const message:MessageManager = AppStorage.get<MessageManager>("messageManager")!
-      message.notify({name:'placeholderColor', value:'#FFFFFFFF'})
+  AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'placeholderColor', value:'#FFFFFFFF'})
       await CommonFunc.sleep(2000);
-      const message1:MessageManager = AppStorage.get<MessageManager>("messageManager")!
-      message1.notify({name:'textColor', value:'#FF66DD00'})
+  AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'textColor', value:'#FF66DD00'})
       await CommonFunc.sleep(2000);
-      const message2:MessageManager = AppStorage.get<MessageManager>("messageManager")!
-      message2.notify({name:'fontSize', value:12})
+  AppStorage.get<MessageManager<number>>("messageManager")!.notify({name:'fontSize', value:12})
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('textArea1');
       let obj = JSON.parseJsonElement(strJson);
@@ -191,9 +167,6 @@ it('textAreaBC1Jsunit_static_0300', Level.LEVEL3, async (done: ()=>void) => {
 
       done();
     });
-
-    
-    
     
     /*
      * @tc.number   textAreaBC1Jsunit_static_0400
@@ -215,15 +188,12 @@ it('textAreaBC1Jsunit_static_0400', Level.LEVEL3, async (done: ()=>void) => {
       let strJson1 = inspector.getInspectorByKey('change');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info('textAreaBC1Jsunit_0400 obj1 is: ' + obj1.getElement('$attrs').getString('content'));
-
+      expect(obj1.getElement('$attrs').getString('content')).assertEqual('rrr');
       await CommonFunc.sleep(1000);
       let strJsont = inspector.getInspectorByKey('isEdit');
       let objt = JSON.parseJsonElement(strJsont);
       console.info('textAreaBC1Jsunit_0400 objt is: ' + objt.getElement('$attrs').getString('content'));
-
-
-        expect(obj1.getElement('$attrs').getString('content')).assertEqual('rrr');
-        expect(objt.getElement('$attrs').getString('content')).assertEqual('doing');
+      expect(objt.getElement('$attrs').getString('content')).assertEqual('doing');
 
       done();
     });
@@ -239,18 +209,18 @@ it('textAreaBC1Jsunit_static_0400', Level.LEVEL3, async (done: ()=>void) => {
      */
 it('textAreaBC1Jsunit_static_0500', Level.LEVEL3, async (done: ()=>void) => {
       console.info('textAreaBC1Jsunit_0500 START');
-      let driver =  Driver.create()
-      let Storage12Button1 = await driver.findComponent(ON.id('textArea1'));
-      await CommonFunc.sleep(1000);
-      console.log('dududud',Storage12Button1)
-      await (Storage12Button1?.click()  as Promise<void>);
-      await CommonFunc.sleep(1000);
-      let strJsont = inspector.getInspectorByKey('isEdit');
-      let objt = JSON.parseJsonElement(strJsont);
-      console.info('textAreaBC1Jsunit_0500 objt is: ' + objt.getElement('$attrs').getString('content'));
+  let driver =  Driver.create()
+  let Storage12Button1 = await driver.findComponent(ON.id('textArea1'));
+  await CommonFunc.sleep(1000);
+  console.log('dududud',Storage12Button1)
+  await (Storage12Button1?.click()  as Promise<void>);
+  await CommonFunc.sleep(1000);
+  let strJsont = inspector.getInspectorByKey('isEdit');
+  let objt = JSON.parseJsonElement(strJsont);
+  console.info('textAreaBC1Jsunit_0500 objt is: ' + objt.getElement('$attrs').getString('content'));
 
 
-        expect(objt.getElement('$attrs').getString('content')).assertEqual('doing');
+  expect(objt.getElement('$attrs').getString('content')).assertEqual('doing');
 
       done();
     });

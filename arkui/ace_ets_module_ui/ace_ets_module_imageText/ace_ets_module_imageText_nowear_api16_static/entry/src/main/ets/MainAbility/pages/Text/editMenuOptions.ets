@@ -32,8 +32,7 @@ import {
   CopyOptions
 } from '@ohos.arkui.component'
 import {
-  State,
-  
+  State
 } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
@@ -66,7 +65,7 @@ struct editMenuOptionsExample {
       content: 'custom2',
       id: TextMenuItemId.of('custom2'),
       icon: $r('app.media.icon'),
-      labelInfo: $r('app.media.icon')
+      labelInfo: $r('app.string.kauijiejain')
     }
 
     let extensionMenuItems: TextMenuItem[] = [];
@@ -202,25 +201,25 @@ struct editMenuOptionsExample {
         .editMenuOptions({
           onCreateMenu: this.onCreateMenu, onMenuItemClick: (menuItem: TextMenuItem, textRange: TextRange) => {
             if (menuItem.id.equals(TextMenuItemId.of('custom1'))) {
-              console.log('拦截 id: custom2 start:' + textRange.start + '; end:' + textRange.end )
+              console.log('拦截RichEditor id: custom2 start:' + textRange.start + '; end:' + textRange.end + menuItem.labelInfo )
               this.content = menuItem.content
               this.richEditorLabelInfo = menuItem.labelInfo
               return true;
             }
             if (menuItem.id.equals(TextMenuItemId.of('custom2'))) {
-              console.log('拦截 id: custom1 start:' + textRange.start + '; end:' + textRange.end )
+              console.log('拦截RichEditor id: custom1 start:' + textRange.start + '; end:' + textRange.end + menuItem.labelInfo )
               this.content = menuItem.content
               this.richEditorLabelInfo = menuItem.labelInfo
               return true;
             }
             if (menuItem.id.equals(TextMenuItemId.COPY)) {
-              console.log('拦截 COPY start:' + textRange.start + '; end:' + textRange.end+'   labelInfo:'+menuItem.labelInfo + '   content:'+menuItem.content)
+              console.log('拦截RichEditor COPY start:' + textRange.start + '; end:' + textRange.end+'   labelInfo:'+menuItem.labelInfo + '   content:'+menuItem.content + menuItem.labelInfo)
               this.content = menuItem.content
               this.richEditorLabelInfo = menuItem.labelInfo
               return true;
             }
             if (menuItem.id.equals(TextMenuItemId.SELECT_ALL)) {
-              console.log('不拦截 SELECT_ALL start:' + textRange.start + '; end:' + textRange.end+'   labelInfo:'+menuItem.labelInfo + '   content:'+menuItem.content)
+              console.log('拦截RichEditor SELECT_ALL start:' + textRange.start + '; end:' + textRange.end+'   labelInfo:'+menuItem.labelInfo + '   content:'+menuItem.content + menuItem.labelInfo)
               this.content = menuItem.content
               this.richEditorLabelInfo = menuItem.labelInfo
               return false;

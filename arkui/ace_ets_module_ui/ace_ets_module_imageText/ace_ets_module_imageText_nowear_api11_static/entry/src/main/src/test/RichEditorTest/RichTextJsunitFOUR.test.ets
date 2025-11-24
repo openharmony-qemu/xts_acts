@@ -52,11 +52,8 @@ export default function richTextJsunitFOUR() {
         console.info("get richTextJsunitFOUR state pages:" + "");
         if (!("TextClockApi" == pages.name)) {
           console.info("get richTextJsunitFOUR pages.name:" + "");
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push richTextJsunitFOUR page error:" + err);
@@ -82,8 +79,8 @@ export default function richTextJsunitFOUR() {
 it('testRichText_static_01', Level.LEVEL0, async (done: () => void) => {
       try {
         console.info('[testRichText01] START');
-        let strJson: string = inspector.getInspectorByKey('richText');
-        console.info('[testRichText01]' + strJson);
+        // let strJson: string = inspector.getInspectorByKey('richText');
+        // console.info('[testRichText01]' + strJson);
         console.info('[testRichText01] END');
       } catch (err) {
         console.error("[testRichText01] error: " + err);

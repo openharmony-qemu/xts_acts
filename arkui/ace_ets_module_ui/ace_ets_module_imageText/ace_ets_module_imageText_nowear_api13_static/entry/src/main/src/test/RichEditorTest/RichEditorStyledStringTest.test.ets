@@ -53,10 +53,10 @@ export default function RichEditorStyledStringTest() {
         console.info("get RichEditorStyledStringTest state pages:" + JSON.stringify(pages));
         if (!("RichEditorStyledStringTest" == pages.name)) {
           console.info("get RichEditorStyledStringTest pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push RichEditorStyledStringTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push RichEditorStyledStringTest page error:" + err);

@@ -13,48 +13,24 @@
  * limitations under the License.
  */
 import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent,
-  Image, ImageFit, Scroller, Row, Scroll, VerticalAlign, ForEach, Search, SafeAreaType, ScrollDirection,
+  Image,ImageFit, Scroller, Row, Scroll, VerticalAlign, ForEach, Search, SafeAreaType, ScrollDirection,
   BarState, Color, EdgeEffect, TextAlign, Margin, IconOptions, CancelButtonStyle, CancelButtonOptions, $r,
-  CaretStyle, Font} from '@ohos.arkui.component'  
-import { State } from '@ohos.arkui.stateManagement' 
+  CaretStyle, Font} from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
+import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import { MessageManager, Callback } from '../../common/MessageManager';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-
-class MyClass {
-  name: string;
-  messageManager: MessageManager;
-  message: MessageManager;
-
-  constructor() {
-    this.name = 'messageManager';
-    this.messageManager = new MessageManager();
-    this.message = this.messageManager;
-  }
-}
 
 @Entry
 @Component
 struct search_center {
   private arr:Array<Number> = new Array<Number>(0,1,2,3);
   scroll: Scroller = new Scroller()
-  messageManager:MessageManager = new MessageManager()
-
-  aboutToAppear() {
-    let uiContext: UIContext | undefined = AppStorage.get("uiContent");
-    try {
-      if (uiContext != undefined) {
-        let router = (uiContext as UIContext).getRouter();
-        AppStorage.setOrCreate<Router>('router', router);
-      }
-    } catch (error) {
-      console.log('error ' + error);
-    }
-  }
+  messageManager:MessageManager<string> = new MessageManager<string>()
 
   onPageShow() {
     console.info('search_center onPageShow')
-    AppStorage.setOrCreate("value",  new MyClass());
+    AppStorage.setOrCreate<MessageManager<string>>("messageManager",  this.messageManager);
   }
 
   build(){
@@ -66,7 +42,7 @@ struct search_center {
               Text(String(item))
                 .width('90%')
                 .height('17%')
-                .backgroundColor(0xFFFFFF)
+                .backgroundColor(Color.Red)
                 .borderRadius(15)
                 .fontSize(16)
                 .textAlign(TextAlign.Center)
@@ -111,7 +87,7 @@ struct search_center {
               Text(String(item))
                 .width('90%')
                 .height(150)
-                .backgroundColor(0xFFFFFF)
+                .backgroundColor(Color.Red)
                 .borderRadius(15)
                 .fontSize(16)
                 .textAlign(TextAlign.Center)

@@ -32,129 +32,27 @@ import {
   TextInputStyle
 } from '@ohos.arkui.component'
 import {
-  State,
-  
+  State,StorageProp
 } from '@ohos.arkui.stateManagement'
 import hilog from '@ohos.hilog';
-import events_emitter from '@ohos.events.emitter';
-import { RecordData } from '@ohos.base';
-
-function asNumber(val: string | int | null | undefined) {
-  return val as int;
-}
-function asBoolean(value: string | number | boolean | null | undefined) {
-  return value as boolean;
-}
-function asResourceStr(value: string | number | boolean | null | undefined) {
-  return value as ResourceStr;
-}
 
 @Entry
 @Component
 struct Index {
-  onPageShow() {
-    let valueChangeEvent: events_emitter.InnerEvent = {
-      eventId: 10,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
-    console.info("key==>pages res : onPageShow")
-  }
-
-  private valueChangeCallBack :(eventData: events_emitter.EventData) => void  = (eventData: events_emitter.EventData) => {
-    console.info("key==> page valueChangeCallBack");
-    if (((((eventData.data) as Record<String, RecordData>)) as Record<String, RecordData>)?.['type'] == "TextNum") {
-      console.info("valueChangeCallBack TextNum:" + JSON.stringify(eventData));
-      this.flag = true
-      this.isNum = true
-      this.textNum = ((eventData.data) as Record<String, RecordData>)?.['text'] as number
-    }
-    if (((eventData.data) as Record<String, RecordData>)?.['type'] == "TextStr") {
-      console.info("valueChangeCallBack TextStr:" + JSON.stringify(eventData));
-      this.flag = true
-      this.isNum = false
-      this.textStr = ((eventData.data) as Record<String, RecordData>)?.['text'] as string
-    }
-    if (((eventData.data) as Record<String, RecordData>)?.['type'] == "TextErr" && ((eventData.data) as Record<String, RecordData>)?.['text'] == "null") {
-      console.info("valueChangeCallBack TextNull:" + JSON.stringify(eventData));
-      this.flag = false
-      this.isNull = true
-    }
-    if (((eventData.data) as Record<String, RecordData>)?.['type'] == "TextErr" && ((eventData.data) as Record<String, RecordData>)?.['text'] == "undefined") {
-      console.info("valueChangeCallBack TextErr:" + JSON.stringify(eventData));
-      this.flag = false
-      this.isNull = false
-    }
-
-
-    if (((eventData.data) as Record<String, RecordData>)?.['type'] == "BoolTrue") {
-      console.info("valueChangeCallBack TextAreaShowCounterTrue:" + JSON.stringify(eventData));
-      this.boolFlag = true
-      this.bool = true
-    }
-    if (((eventData.data) as Record<String, RecordData>)?.['type'] == "BoolFalse") {
-      console.info("valueChangeCallBack TextAreaShowCounterTrue:" + JSON.stringify(eventData));
-      this.boolFlag = true
-      this.bool = false
-    }
-    if (((eventData.data) as Record<String, RecordData>)?.['type'] == "BoolErrNum") {
-      console.info("valueChangeCallBack TextAreaMaxLengthStr:" + JSON.stringify(eventData));
-      this.boolFlag = false
-      this.boolIsNum = true
-      this.boolNum = ((eventData.data) as Record<String, RecordData>)?.['text'] as number
-    }
-    if (((eventData.data) as Record<String, RecordData>)?.['type'] == "BoolErrStr") {
-      console.info("valueChangeCallBack TextAreaMaxLengthStr:" + JSON.stringify(eventData));
-      this.boolFlag = false
-      this.boolIsNum = false
-      this.boolIsStr = true
-      this.boolStr = ((eventData.data) as Record<String, RecordData>)?.['text'] as string
-    }
-    if (((eventData.data) as Record<String, RecordData>)?.['type'] == "BoolErrNull") {
-      console.info("valueChangeCallBack TextAreaMaxLengthStr:" + JSON.stringify(eventData));
-      this.boolFlag = false
-      this.boolIsNum = false
-      this.boolIsStr = false
-      this.boolIsNull = true
-    }
-    if (((eventData.data) as Record<String, RecordData>)?.['type'] == "BoolErrUndefined") {
-      console.info("valueChangeCallBack TextAreaMaxLengthStr:" + JSON.stringify(eventData));
-      this.boolFlag = false
-      this.boolIsNum = false
-      this.boolIsStr = false
-      this.boolIsNull = false
-    }
-    if (((eventData.data) as Record<String, RecordData>)?.['type'] == "passWordIcon") {
-      console.info("valueChangeCallBack ResourceIcon:" + JSON.stringify(eventData));
-      this.passwordIcon = JSON.parseJsonElement(((eventData.data) as Record<String, RecordData>)?.['icon'] as string) as PasswordIcon
-    }
-
-  }
 
   aboutToAppear() {
     hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility index aboutToAppear');
   }
 
-  @State flag: boolean = false
-  @State isNum: boolean = false
-  @State isNull: boolean = false
   @State errFlag: boolean = false
-  @State textNum: number = 2
-  @State textStr: string = ''
-  @State boolFlag: boolean = false
-  @State bool: boolean = false
-  @State boolIsNum:boolean = false
-  @State boolIsStr: boolean = false
-  @State boolIsNull: boolean = false
-  @State boolNum: number = 2
-  @State boolStr: string = ''
   @State onIconFlag: boolean = false
   @State offIconFlag: boolean = false
-  @State passwordIcon: PasswordIcon = {
+  @StorageProp('passwordIcon') passwordIcon: PasswordIcon|undefined = {
     onIconSrc: "",
     offIconSrc: ""
   } as PasswordIcon
-
+  @StorageProp('showUnderline') showUnderline: boolean|undefined = undefined
+  @StorageProp('showError') showError: ResourceStr | undefined = ''
   @Builder
   ShowUnit() {
     Column() {
@@ -174,7 +72,6 @@ struct Index {
   }
 
   @State text: string = 'Hello World'
-  
   controller: TextInputController = new TextInputController();
 
   build() {
@@ -186,8 +83,8 @@ struct Index {
         .margin(20)
         .maxLength(5)
         .type(InputType.Password)
-        .showUnderline(asBoolean(this.boolFlag ? this.bool : (this.boolIsNum ? this.boolNum : (this.boolIsStr ? this.boolStr : (this.boolIsNull ? null : undefined)))))
-        .showError(asResourceStr(this.flag ? (this.isNum ? this.textNum : this.textStr) : (this.isNull ? null : undefined)))
+        .showUnderline(this.showUnderline)
+        .showError(this.showError)
         .passwordIcon(this.passwordIcon)
       TextInput({ text: 'input your password...' })
         .key("TextInputResources")
@@ -236,19 +133,19 @@ struct Index {
       TextInput({
         text: "test", placeholder: 'input your word...', controller: this.controller
       })
-        .barState(BarState.On)
+        .barState(BarState.Auto)
         .style(TextInputStyle.Inline)
         .key("ArkUX_Stage_TextInput_barState_0600")
       TextInput({
         text: "test", placeholder: 'input your word...', controller: this.controller
       })
-        .barState(BarState.On)
+        .barState(BarState.Auto)
         .style(TextInputStyle.Inline)
         .key("ArkUX_Stage_TextInput_barState_0700")
       TextInput({
         text: "test", placeholder: 'input your word...', controller: this.controller
       })
-        .barState(BarState.On)
+        .barState(BarState.Auto)
         .style(TextInputStyle.Inline)
         .key("ArkUX_Stage_TextInput_barState_0800")
       TextInput({
@@ -304,7 +201,6 @@ struct Index {
       TextInput({
         text: "test", placeholder: 'input your word...', controller: this.controller
       })
-        .maxLines(asNumber("123"))
         .style(TextInputStyle.Inline)
         .key("ArkUX_Stage_TextInput_maxLines_0300")
       TextInput({
@@ -316,7 +212,6 @@ struct Index {
       TextInput({
         text: "test", placeholder: 'input your word...', controller: this.controller
       })
-        .maxLines(asNumber(""))
         .style(TextInputStyle.Inline)
         .key("ArkUX_Stage_TextInput_maxLines_0500")
       TextInput({

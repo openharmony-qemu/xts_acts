@@ -31,8 +31,7 @@ import {
   TextMenuOptions
 } from '@ohos.arkui.component'
 import {
-  State,
-  
+  State
 } from '@ohos.arkui.stateManagement'
 import { TextMenuController } from '@ohos.arkui.UIContext';
 

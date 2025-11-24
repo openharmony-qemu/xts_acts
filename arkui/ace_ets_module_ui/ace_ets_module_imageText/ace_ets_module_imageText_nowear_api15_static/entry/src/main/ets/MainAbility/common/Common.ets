@@ -64,18 +64,6 @@ export default class CommonFunc {
     }
   }
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
 }
 
 

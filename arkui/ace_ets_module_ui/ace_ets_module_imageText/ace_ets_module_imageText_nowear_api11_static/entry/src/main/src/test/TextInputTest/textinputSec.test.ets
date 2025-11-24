@@ -14,7 +14,7 @@
  */
 import {
   $r,
-  Resource
+  Resource,ResourceStr
 } from '@ohos.arkui.component'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import events_emitter from '@ohos.events.emitter';
@@ -25,45 +25,52 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
+import {
+  PasswordIcon} from '@ohos.arkui.component'
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-function sleep(time: int) {
-  return new Promise<int>((resolve, reject) => {
-    setTimeout(() => {
-      resolve(0)
-    }, time)
-  })
-}
 
-async function forKey(Key: string, text: string, icon?: ESObject1) {
+async function forKey(Key: string, text: string, icon?: PasswordIcon) {
   try {
-    let backData: events_emitter.EventData = {
-      data: {
-        "type": Key,
-        "text": text,
-        "icon": JSON.stringify(icon),
-      } as Record<String, RecordData>
-    } as events_emitter.EventData
-    let backEvent: events_emitter.InnerEvent = {
-      eventId: 10,
-      priority: events_emitter.EventPriority.LOW
+    if (Key == "TextNum") {
+      AppStorage.setOrCreate<ResourceStr | undefined>('showError',undefined)
     }
-    console.info("start send emitKey");
-    events_emitter.emit(backEvent, backData);
-    console.info("backData :====>" + JSON.stringify(backData));
+    if (Key == "TextStr") {
+      AppStorage.setOrCreate<ResourceStr | undefined>('showError',text)
+    }
+    if (Key == "TextErr"&&text == 'null') {
+      AppStorage.setOrCreate<ResourceStr | undefined>('showError',undefined)
+    }
+    if (Key == "TextErr"&&text == 'undefined') {
+      AppStorage.setOrCreate<ResourceStr | undefined>('showError',undefined)
+    }
+    if (Key == "BoolTrue") {
+      AppStorage.setOrCreate<boolean|undefined>('showUnderline',true)
+    }
+    if (Key == "BoolFalse") {
+      AppStorage.setOrCreate<boolean|undefined>('showUnderline',false)
+    }
+    if (Key == "BoolErrNum") {
+      AppStorage.setOrCreate<boolean|undefined>('showUnderline',false)
+    }
+    if (Key == "BoolErrStr") {
+      AppStorage.setOrCreate<boolean|undefined>('showUnderline',false)
+    }
+    if (Key == "BoolErrNull" || Key == "BoolErrUndefined") {
+      AppStorage.setOrCreate<boolean|undefined>('showUnderline',undefined)
+    }
+    if (Key == "passWordIcon") {
+      AppStorage.setOrCreate<PasswordIcon|undefined>('passwordIcon',icon)
+    }
   } catch (err) {
     console.info("emit emitKey  err: " + JSON.stringify(err));
   }
-  await sleep(2000)
-}
-interface ESObject1{
-  offIconSrc?: string | Resource | null | undefined | number;
-  onIconSrc?: string | Resource | null | undefined | number;
+  await UtilsTest.msSleep(2000)
 }
 export default function textinputSec() {
   describe('textinputSec', () :void=> {
@@ -87,23 +94,15 @@ export default function textinputSec() {
         console.info("get textinputSec state pages:" + "");
         if (!("TextClockApi" == pages.name)) {
           console.info("get textinputSec pages.name:" + "");
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push textinputSec page error:" + err);
       }
       console.info("textinputSec beforeEach end");
     });
-    
-
-    
-    
-    
-    /*
+        /*
      * @tc.number   ArkUX_Stage_TextInput_ShowUnderline_static_0100
      * @tc.name     ArkUX_Stage_TextInput_ShowUnderline_static_0100
      * @tc.desc     ArkUX_Stage_TextInput_ShowUnderline_static_0100
@@ -115,8 +114,8 @@ it('ArkUX_Stage_TextInput_ShowUnderline_static_0100', Level.LEVEL1, async (done:
         let strJson = inspector.getInspectorByKey('TextInput');
         console.info('ArkUX_Stage_TextInput_ShowUnderline_0100 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
-        console.info('ArkUX_Stage_TextInput_ShowUnderline_0100 obj $attrs.showUnderline :' + JSON.stringify(obj.getElement('$attrs').getString('showUnderline')));
-        expect(obj.getElement('$attrs').getString('showUnderline')).assertEqual(true);
+        console.info('ArkUX_Stage_TextInput_ShowUnderline_0100 obj $attrs.showUnderline :' + JSON.stringify(obj.getElement('$attrs').getBoolean('showUnderline')));
+        expect(obj.getElement('$attrs').getBoolean('showUnderline')).assertEqual(true);
         done()
       } catch (err) {
         expect().assertFail()
@@ -125,10 +124,6 @@ it('ArkUX_Stage_TextInput_ShowUnderline_static_0100', Level.LEVEL1, async (done:
       }
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_ShowUnderline_static_0200
      * @tc.name     ArkUX_Stage_TextInput_ShowUnderline_static_0200
@@ -141,8 +136,8 @@ it('ArkUX_Stage_TextInput_ShowUnderline_static_0200', Level.LEVEL1, async (done:
         let strJson = inspector.getInspectorByKey('TextInput');
         console.info('ArkUX_Stage_TextInput_ShowUnderline_0200 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
-        console.info('ArkUX_Stage_TextInput_ShowUnderline_0200 obj $attrs.showUnderline :' + JSON.stringify(obj.getElement('$attrs').getString('showUnderline')));
-        expect(obj.getElement('$attrs').getString('showUnderline')).assertEqual(false);
+        console.info('ArkUX_Stage_TextInput_ShowUnderline_0200 obj $attrs.showUnderline :' + JSON.stringify(obj.getElement('$attrs').getBoolean('showUnderline')));
+        expect(obj.getElement('$attrs').getBoolean('showUnderline')).assertEqual(false);
         done()
       } catch (err) {
         expect().assertFail()
@@ -151,10 +146,6 @@ it('ArkUX_Stage_TextInput_ShowUnderline_static_0200', Level.LEVEL1, async (done:
       }
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_ShowUnderline_static_0300
      * @tc.name     ArkUX_Stage_TextInput_ShowUnderline_static_0300
@@ -167,9 +158,9 @@ it('ArkUX_Stage_TextInput_ShowUnderline_static_0300', Level.LEVEL1, async (done:
         let strJson = inspector.getInspectorByKey('TextInput');
         console.info('ArkUX_Stage_TextInput_ShowUnderline_0300 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
-        console.info('ArkUX_Stage_TextInput_ShowUnderline_0300 obj $attrs.showUnderline :' + JSON.stringify(obj.getElement('$attrs').getString('showUnderline')));
-        await sleep(5000)
-        expect(obj.getElement('$attrs').getString('showUnderline')).assertEqual(false);
+        console.info('ArkUX_Stage_TextInput_ShowUnderline_0300 obj $attrs.showUnderline :' + JSON.stringify(obj.getElement('$attrs').getBoolean('showUnderline')));
+        await UtilsTest.msSleep(5000)
+        expect(obj.getElement('$attrs').getBoolean('showUnderline')).assertEqual(false);
         done()
       } catch (err) {
         expect().assertFail()
@@ -178,10 +169,6 @@ it('ArkUX_Stage_TextInput_ShowUnderline_static_0300', Level.LEVEL1, async (done:
       }
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_ShowUnderline_static_0400
      * @tc.name     ArkUX_Stage_TextInput_ShowUnderline_static_0400
@@ -194,8 +181,8 @@ it('ArkUX_Stage_TextInput_ShowUnderline_static_0400', Level.LEVEL1, async (done:
         let strJson = inspector.getInspectorByKey('TextInput');
         console.info('ArkUX_Stage_TextInput_ShowUnderline_0400 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
-        console.info('ArkUX_Stage_TextInput_ShowUnderline_0400 obj $attrs.showUnderline :' + JSON.stringify(obj.getElement('$attrs').getString('showUnderline')));
-        expect(obj.getElement('$attrs').getString('showUnderline')).assertEqual(false);
+        console.info('ArkUX_Stage_TextInput_ShowUnderline_0400 obj $attrs.showUnderline :' + JSON.stringify(obj.getElement('$attrs').getBoolean('showUnderline')));
+        expect(obj.getElement('$attrs').getBoolean('showUnderline')).assertEqual(false);
         done()
       } catch (err) {
         expect().assertFail()
@@ -204,10 +191,6 @@ it('ArkUX_Stage_TextInput_ShowUnderline_static_0400', Level.LEVEL1, async (done:
       }
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_ShowUnderline_static_0500
      * @tc.name     ArkUX_Stage_TextInput_ShowUnderline_static_0500
@@ -220,8 +203,8 @@ it('ArkUX_Stage_TextInput_ShowUnderline_static_0500', Level.LEVEL1, async (done:
         let strJson = inspector.getInspectorByKey('TextInput');
         console.info('ArkUX_Stage_TextInput_ShowUnderline_0500 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
-        console.info('ArkUX_Stage_TextInput_ShowUnderline_0500 obj $attrs.showUnderline :' + JSON.stringify(obj.getElement('$attrs').getString('showUnderline')));
-        expect(obj.getElement('$attrs').getString('showUnderline')).assertEqual(false);
+        console.info('ArkUX_Stage_TextInput_ShowUnderline_0500 obj $attrs.showUnderline :' + JSON.stringify(obj.getElement('$attrs').getBoolean('showUnderline')));
+        expect(obj.getElement('$attrs').getBoolean('showUnderline')).assertEqual(false);
         done()
       } catch (err) {
         expect().assertFail()
@@ -230,10 +213,6 @@ it('ArkUX_Stage_TextInput_ShowUnderline_static_0500', Level.LEVEL1, async (done:
       }
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_ShowUnderline_static_0600
      * @tc.name     ArkUX_Stage_TextInput_ShowUnderline_static_0600
@@ -247,8 +226,8 @@ it('ArkUX_Stage_TextInput_ShowUnderline_static_0600', Level.LEVEL1, async (done:
         let strJson = inspector.getInspectorByKey('TextInput');
         console.info('ArkUX_Stage_TextInput_ShowUnderline_0600 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
-        console.info('ArkUX_Stage_TextInput_ShowUnderline_0600 obj $attrs.showUnderline :' + JSON.stringify(obj.getElement('$attrs').getString('showUnderline')));
-        expect(obj.getElement('$attrs').getString('showUnderline')).assertEqual(true);
+        console.info('ArkUX_Stage_TextInput_ShowUnderline_0600 obj $attrs.showUnderline :' + JSON.stringify(obj.getElement('$attrs').getBoolean('showUnderline')));
+        expect(obj.getElement('$attrs').getBoolean('showUnderline')).assertEqual(true);
         done()
       } catch (err) {
         expect().assertFail()
@@ -257,10 +236,6 @@ it('ArkUX_Stage_TextInput_ShowUnderline_static_0600', Level.LEVEL1, async (done:
       }
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_ShowUnderline_static_0700
      * @tc.name     ArkUX_Stage_TextInput_ShowUnderline_static_0700
@@ -274,8 +249,8 @@ it('ArkUX_Stage_TextInput_ShowUnderline_static_0700', Level.LEVEL1, async (done:
         let strJson = inspector.getInspectorByKey('TextInput');
         console.info('ArkUX_Stage_TextInput_ShowUnderline_0700 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
-        console.info('ArkUX_Stage_TextInput_ShowUnderline_0700 obj $attrs.showUnderline :' + JSON.stringify(obj.getElement('$attrs').getString('showUnderline')));
-        expect(obj.getElement('$attrs').getString('showUnderline')).assertEqual(false);
+        console.info('ArkUX_Stage_TextInput_ShowUnderline_0700 obj $attrs.showUnderline :' + JSON.stringify(obj.getElement('$attrs').getBoolean('showUnderline')));
+        expect(obj.getElement('$attrs').getBoolean('showUnderline')).assertEqual(false);
         done()
       } catch (err) {
         expect().assertFail()
@@ -284,10 +259,6 @@ it('ArkUX_Stage_TextInput_ShowUnderline_static_0700', Level.LEVEL1, async (done:
       }
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_ShowUnderline_static_0800
      * @tc.name     ArkUX_Stage_TextInput_ShowUnderline_static_0800
@@ -301,8 +272,8 @@ it('ArkUX_Stage_TextInput_ShowUnderline_static_0800', Level.LEVEL1, async (done:
         let strJson = inspector.getInspectorByKey('TextInput');
         console.info('ArkUX_Stage_TextInput_ShowUnderline_0800 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
-        console.info('ArkUX_Stage_TextInput_ShowUnderline_0800 obj $attrs.showUnderline :' + JSON.stringify(obj.getElement('$attrs').getString('showUnderline')));
-        expect(obj.getElement('$attrs').getString('showUnderline')).assertEqual(true);
+        console.info('ArkUX_Stage_TextInput_ShowUnderline_0800 obj $attrs.showUnderline :' + JSON.stringify(obj.getElement('$attrs').getBoolean('showUnderline')));
+        expect(obj.getElement('$attrs').getBoolean('showUnderline')).assertEqual(true);
         done()
       } catch (err) {
         expect().assertFail()
@@ -311,10 +282,6 @@ it('ArkUX_Stage_TextInput_ShowUnderline_static_0800', Level.LEVEL1, async (done:
       }
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_ShowUnderline_static_0900
      * @tc.name     ArkUX_Stage_TextInput_ShowUnderline_static_0900
@@ -323,13 +290,13 @@ it('ArkUX_Stage_TextInput_ShowUnderline_static_0800', Level.LEVEL1, async (done:
      */
 it('ArkUX_Stage_TextInput_ShowUnderline_static_0900', Level.LEVEL1, async (done: ()=>void) => {
       await forKey("BoolErrNum", "1");
-      await sleep(2000)
+      await UtilsTest.msSleep(2000)
       try {
         let strJson = inspector.getInspectorByKey('TextInput');
         console.info('ArkUX_Stage_TextInput_ShowUnderline_0900 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
-        console.info('ArkUX_Stage_TextInput_ShowUnderline_0900 obj $attrs.showUnderline :' + JSON.stringify(obj.getElement('$attrs').getString('showUnderline')));
-        expect(obj.getElement('$attrs').getString('showUnderline')).assertEqual(false);
+        console.info('ArkUX_Stage_TextInput_ShowUnderline_0900 obj $attrs.showUnderline :' + JSON.stringify(obj.getElement('$attrs').getBoolean('showUnderline')));
+        expect(obj.getElement('$attrs').getBoolean('showUnderline')).assertEqual(false);
         done()
       } catch (err) {
         expect().assertFail()
@@ -338,10 +305,6 @@ it('ArkUX_Stage_TextInput_ShowUnderline_static_0900', Level.LEVEL1, async (done:
       }
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_ShowError_static_0100
      * @tc.name     ArkUX_Stage_TextInput_ShowError_static_0100
@@ -355,10 +318,10 @@ it('ArkUX_Stage_TextInput_ShowError_static_0100', Level.LEVEL1, async (done: ()=
         console.info('ArkUX_Stage_TextInput_ShowError_0100 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info('ArkUX_Stage_TextInput_ShowError_0100 obj $attrs.showError :' + JSON.stringify(obj.getElement('$attrs').getString('showError')));
-        console.info('ArkUX_Stage_TextInput_ShowError_0100 obj $attrs.showErrorText :' + JSON.stringify(obj.getElement('$attrs').getString('showErrorText')));
+        console.info('ArkUX_Stage_TextInput_ShowError_0100 obj $attrs.showErrorText :' + JSON.stringify(obj.getElement('$attrs').getBoolean('showErrorText')));
         console.info('ArkUX_Stage_TextInput_ShowError_0100 obj $attrs.errorText :' + JSON.stringify(obj.getElement('$attrs').getString('errorText')));
 
-        expect(obj.getElement('$attrs').getString('showErrorText')).assertEqual(false);
+        expect(obj.getElement('$attrs').getBoolean('showErrorText')).assertEqual(true);
         expect(obj.getElement('$attrs').getString('errorText')).assertEqual('string');
         expect(obj.getElement('$attrs').getString('showError')).assertEqual('string');
 
@@ -370,10 +333,6 @@ it('ArkUX_Stage_TextInput_ShowError_static_0100', Level.LEVEL1, async (done: ()=
       }
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_ShowError_static_0200
      * @tc.name     ArkUX_Stage_TextInput_ShowError_static_0200
@@ -387,10 +346,10 @@ it('ArkUX_Stage_TextInput_ShowError_static_0200', Level.LEVEL1, async (done: ()=
         console.info('ArkUX_Stage_TextInput_ShowError_0200 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info('ArkUX_Stage_TextInput_ShowError_0200 obj $attrs.showError :' + JSON.stringify(obj.getElement('$attrs').getString('showError')));
-        console.info('ArkUX_Stage_TextInput_ShowError_0200 obj $attrs.showErrorText :' + JSON.stringify(obj.getElement('$attrs').getString('showErrorText')));
+        console.info('ArkUX_Stage_TextInput_ShowError_0200 obj $attrs.showErrorText :' + JSON.stringify(obj.getElement('$attrs').getBoolean('showErrorText')));
         console.info('ArkUX_Stage_TextInput_ShowError_0200 obj $attrs.errorText :' + JSON.stringify(obj.getElement('$attrs').getString('errorText')));
 
-        expect(obj.getElement('$attrs').getString('showErrorText')).assertEqual(false);
+        expect(obj.getElement('$attrs').getBoolean('showErrorText')).assertEqual(false);
         expect(obj.getElement('$attrs').getString('errorText')).assertEqual('');
         expect(obj.getElement('$attrs').getString('showError')).assertEqual('undefined');
         done()
@@ -401,10 +360,6 @@ it('ArkUX_Stage_TextInput_ShowError_static_0200', Level.LEVEL1, async (done: ()=
       }
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_ShowError_static_0300
      * @tc.name     ArkUX_Stage_TextInput_ShowError_static_0300
@@ -418,10 +373,10 @@ it('ArkUX_Stage_TextInput_ShowError_static_0300', Level.LEVEL1, async (done: ()=
         console.info('ArkUX_Stage_TextInput_ShowError_0300 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info('ArkUX_Stage_TextInput_ShowError_0300 obj $attrs.showError :' + JSON.stringify(obj.getElement('$attrs').getString('showError')));
-        console.info('ArkUX_Stage_TextInput_ShowError_0300 obj $attrs.showErrorText :' + JSON.stringify(obj.getElement('$attrs').getString('showErrorText')));
+        console.info('ArkUX_Stage_TextInput_ShowError_0300 obj $attrs.showErrorText :' + JSON.stringify(obj.getElement('$attrs').getBoolean('showErrorText')));
         console.info('ArkUX_Stage_TextInput_ShowError_0300 obj $attrs.errorText :' + JSON.stringify(obj.getElement('$attrs').getString('errorText')));
 
-        expect(obj.getElement('$attrs').getString('showErrorText')).assertEqual(false);
+        expect(obj.getElement('$attrs').getBoolean('showErrorText')).assertEqual(false);
         expect(obj.getElement('$attrs').getString('errorText')).assertEqual('');
         expect(obj.getElement('$attrs').getString('showError')).assertEqual('undefined');
         done()
@@ -432,10 +387,6 @@ it('ArkUX_Stage_TextInput_ShowError_static_0300', Level.LEVEL1, async (done: ()=
       }
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_ShowError_static_0400
      * @tc.name     ArkUX_Stage_TextInput_ShowError_static_0400
@@ -448,10 +399,10 @@ it('ArkUX_Stage_TextInput_ShowError_static_0400', Level.LEVEL1, async (done: ()=
         console.info('ArkUX_Stage_TextInput_ShowError_0400 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info('ArkUX_Stage_TextInput_ShowError_0400 obj $attrs.showError :' + JSON.stringify(obj.getElement('$attrs').getString('showError')));
-        console.info('ArkUX_Stage_TextInput_ShowError_0400 obj $attrs.showErrorText :' + JSON.stringify(obj.getElement('$attrs').getString('showErrorText')));
+        console.info('ArkUX_Stage_TextInput_ShowError_0400 obj $attrs.showErrorText :' + JSON.stringify(obj.getElement('$attrs').getBoolean('showErrorText')));
         console.info('ArkUX_Stage_TextInput_ShowError_0400 obj $attrs.errorText :' + JSON.stringify(obj.getElement('$attrs').getString('errorText')));
 
-        expect(obj.getElement('$attrs').getString('showErrorText')).assertEqual(true);
+        expect(obj.getElement('$attrs').getBoolean('showErrorText')).assertEqual(true);
         expect(obj.getElement('$attrs').getString('errorText')).assertEqual('string');
         expect(obj.getElement('$attrs').getString('showError')).assertEqual('string');
         done()
@@ -462,10 +413,6 @@ it('ArkUX_Stage_TextInput_ShowError_static_0400', Level.LEVEL1, async (done: ()=
       }
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_ShowError_static_0500
      * @tc.name     ArkUX_Stage_TextInput_ShowError_static_0500
@@ -473,16 +420,16 @@ it('ArkUX_Stage_TextInput_ShowError_static_0400', Level.LEVEL1, async (done: ()=
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_TextInput_ShowError_static_0500', Level.LEVEL1, async (done: ()=>void) => {
-      await forKey("TextStr", "");
+      await forKey("TextStr", '');
       try {
         let strJson = inspector.getInspectorByKey('TextInput');
         console.info('ArkUX_Stage_TextInput_ShowError_0500 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info('ArkUX_Stage_TextInput_ShowUnderline_0500 obj $attrs.showError :' + JSON.stringify(obj.getElement('$attrs').getString('showError')));
-        console.info('ArkUX_Stage_TextInput_ShowUnderline_0500 obj $attrs.showErrorText :' + JSON.stringify(obj.getElement('$attrs').getString('showErrorText')));
+        console.info('ArkUX_Stage_TextInput_ShowUnderline_0500 obj $attrs.showErrorText :' + JSON.stringify(obj.getElement('$attrs').getBoolean('showErrorText')));
         console.info('ArkUX_Stage_TextInput_ShowUnderline_0500 obj $attrs.errorText :' + JSON.stringify(obj.getElement('$attrs').getString('errorText')));
 
-        expect(obj.getElement('$attrs').getString('showErrorText')).assertEqual(true);
+        expect(obj.getElement('$attrs').getBoolean('showErrorText')).assertEqual(true);
         expect(obj.getElement('$attrs').getString('errorText')).assertEqual('');
         expect(obj.getElement('$attrs').getString('showError')).assertEqual('');
         done()
@@ -493,10 +440,6 @@ it('ArkUX_Stage_TextInput_ShowError_static_0500', Level.LEVEL1, async (done: ()=
       }
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_ShowError_static_0600
      * @tc.name     ArkUX_Stage_TextInput_ShowError_static_0600
@@ -510,10 +453,10 @@ it('ArkUX_Stage_TextInput_ShowError_static_0600', Level.LEVEL1, async (done: ()=
         console.info('ArkUX_Stage_TextInput_ShowError_0600 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info('ArkUX_Stage_TextInput_ShowError_0600 obj $attrs.showError :' + JSON.stringify(obj.getElement('$attrs').getString('showError')));
-        console.info('ArkUX_Stage_TextInput_ShowError_0600 obj $attrs.showErrorText :' + JSON.stringify(obj.getElement('$attrs').getString('showErrorText')));
+        console.info('ArkUX_Stage_TextInput_ShowError_0600 obj $attrs.showErrorText :' + JSON.stringify(obj.getElement('$attrs').getBoolean('showErrorText')));
         console.info('ArkUX_Stage_TextInput_ShowError_0600 obj $attrs.errorText :' + JSON.stringify(obj.getElement('$attrs').getString('errorText')));
 
-        expect(obj.getElement('$attrs').getString('showErrorText')).assertEqual(false);
+        expect(obj.getElement('$attrs').getBoolean('showErrorText')).assertEqual(false);
         expect(obj.getElement('$attrs').getString('errorText')).assertEqual('');
         expect(obj.getElement('$attrs').getString('showError')).assertEqual('undefined');
         done()
@@ -524,10 +467,6 @@ it('ArkUX_Stage_TextInput_ShowError_static_0600', Level.LEVEL1, async (done: ()=
       }
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_ShowError_static_0700
      * @tc.name     ArkUX_Stage_TextInput_ShowError_static_0700
@@ -541,10 +480,10 @@ it('ArkUX_Stage_TextInput_ShowError_static_0700', Level.LEVEL1, async (done: ()=
         console.info('ArkUX_Stage_TextInput_ShowError_0700 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info('ArkUX_Stage_TextInput_ShowError_0700 obj $attrs.showError :' + JSON.stringify(obj.getElement('$attrs').getString('showError')));
-        console.info('ArkUX_Stage_TextInput_ShowError_0700 obj $attrs.showErrorText :' + JSON.stringify(obj.getElement('$attrs').getString('showErrorText')));
+        console.info('ArkUX_Stage_TextInput_ShowError_0700 obj $attrs.showErrorText :' + JSON.stringify(obj.getElement('$attrs').getBoolean('showErrorText')));
         console.info('ArkUX_Stage_TextInput_ShowError_0700 obj $attrs.errorText :' + JSON.stringify(obj.getElement('$attrs').getString('errorText')));
 
-        expect(obj.getElement('$attrs').getString('showErrorText')).assertEqual(false);
+        expect(obj.getElement('$attrs').getBoolean('showErrorText')).assertEqual(false);
         expect(obj.getElement('$attrs').getString('errorText')).assertEqual('');
         expect(obj.getElement('$attrs').getString('showError')).assertEqual('undefined');
         done()
@@ -555,10 +494,6 @@ it('ArkUX_Stage_TextInput_ShowError_static_0700', Level.LEVEL1, async (done: ()=
       }
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_ShowError_static_0800
      * @tc.name     ArkUX_Stage_TextInput_ShowError_static_0800
@@ -573,10 +508,10 @@ it('ArkUX_Stage_TextInput_ShowError_static_0800', Level.LEVEL1, async (done: ()=
         console.info('ArkUX_Stage_TextInput_ShowError_0800 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info('ArkUX_Stage_TextInput_ShowError_0800 obj $attrs.showError :' + JSON.stringify(obj.getElement('$attrs').getString('showError')));
-        console.info('ArkUX_Stage_TextInput_ShowError_0800 obj $attrs.showErrorText :' + JSON.stringify(obj.getElement('$attrs').getString('showErrorText')));
+        console.info('ArkUX_Stage_TextInput_ShowError_0800 obj $attrs.showErrorText :' + JSON.stringify(obj.getElement('$attrs').getBoolean('showErrorText')));
         console.info('ArkUX_Stage_TextInput_ShowError_0800 obj $attrs.errorText :' + JSON.stringify(obj.getElement('$attrs').getString('errorText')));
 
-        expect(obj.getElement('$attrs').getString('showErrorText')).assertEqual(true);
+        expect(obj.getElement('$attrs').getBoolean('showErrorText')).assertEqual(true);
         expect(obj.getElement('$attrs').getString('errorText')).assertEqual('showError');
         expect(obj.getElement('$attrs').getString('showError')).assertEqual('showError');
         done()
@@ -587,10 +522,6 @@ it('ArkUX_Stage_TextInput_ShowError_static_0800', Level.LEVEL1, async (done: ()=
       }
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_ShowError_static_0900
      * @tc.name     ArkUX_Stage_TextInput_ShowError_static_0900
@@ -605,10 +536,10 @@ it('ArkUX_Stage_TextInput_ShowError_static_0900', Level.LEVEL1, async (done: ()=
         console.info('ArkUX_Stage_TextInput_ShowError_0900 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info('ArkUX_Stage_TextInput_ShowError_0900 obj $attrs.showError :' + JSON.stringify(obj.getElement('$attrs').getString('showError')));
-        console.info('ArkUX_Stage_TextInput_ShowError_0900 obj $attrs.showErrorText :' + JSON.stringify(obj.getElement('$attrs').getString('showErrorText')));
+        console.info('ArkUX_Stage_TextInput_ShowError_0900 obj $attrs.showErrorText :' + JSON.stringify(obj.getElement('$attrs').getBoolean('showErrorText')));
         console.info('ArkUX_Stage_TextInput_ShowError_0900 obj $attrs.errorText :' + JSON.stringify(obj.getElement('$attrs').getString('errorText')));
 
-        expect(obj.getElement('$attrs').getString('showErrorText')).assertEqual(false);
+        expect(obj.getElement('$attrs').getBoolean('showErrorText')).assertEqual(false);
         expect(obj.getElement('$attrs').getString('errorText')).assertEqual('');
         expect(obj.getElement('$attrs').getString('showError')).assertEqual('undefined');
         done()
@@ -619,10 +550,6 @@ it('ArkUX_Stage_TextInput_ShowError_static_0900', Level.LEVEL1, async (done: ()=
       }
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_ShowError_static_1000
      * @tc.name     ArkUX_Stage_TextInput_ShowError_static_1000
@@ -637,10 +564,10 @@ it('ArkUX_Stage_TextInput_ShowError_static_1000', Level.LEVEL1, async (done: ()=
         console.info('ArkUX_Stage_TextInput_ShowError_1000 START :' + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info('ArkUX_Stage_TextInput_ShowError_1000 obj $attrs.showError :' + JSON.stringify(obj.getElement('$attrs').getString('showError')));
-        console.info('ArkUX_Stage_TextInput_ShowError_1000 obj $attrs.showErrorText :' + JSON.stringify(obj.getElement('$attrs').getString('showErrorText')));
+        console.info('ArkUX_Stage_TextInput_ShowError_1000 obj $attrs.showErrorText :' + JSON.stringify(obj.getElement('$attrs').getBoolean('showErrorText')));
         console.info('ArkUX_Stage_TextInput_ShowError_1000 obj $attrs.errorText :' + JSON.stringify(obj.getElement('$attrs').getString('errorText')));
 
-        expect(obj.getElement('$attrs').getString('showErrorText')).assertEqual(true);
+        expect(obj.getElement('$attrs').getBoolean('showErrorText')).assertEqual(true);
         expect(obj.getElement('$attrs').getString('errorText')).assertEqual('string');
         expect(obj.getElement('$attrs').getString('showError')).assertEqual('string');
         done()
@@ -651,10 +578,6 @@ it('ArkUX_Stage_TextInput_ShowError_static_1000', Level.LEVEL1, async (done: ()=
       }
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_PasswordIcon_static_0100
      * @tc.name     ArkUX_Stage_TextInput_PasswordIcon_static_0100
@@ -662,7 +585,7 @@ it('ArkUX_Stage_TextInput_ShowError_static_1000', Level.LEVEL1, async (done: ()=
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_TextInput_PasswordIcon_static_0100', Level.LEVEL1, async (done: ()=>void) => {
-      let passwordIcon: ESObject1 = {
+      let passwordIcon: PasswordIcon = {
         onIconSrc: $r("app.media.ohos_app_bar_fa"),
       }
       await forKey("passWordIcon", "", passwordIcon);
@@ -672,7 +595,7 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0100', Level.LEVEL1, async (done: 
         let Icon = JSON.parseJsonElement(obj.getElement('$attrs').getString('passwordIcon'));
         console.info('ArkUX_Stage_TextInput_PasswordIcon_0100 obj Icon :' + JSON.stringify(Icon));
         expect((Icon.getElement('onIconSrc').asString().indexOf($r("app.media.ohos_app_bar_fa").id.toString() + ".svg")) != -1).assertTrue();
-        expect(Icon.getElement('offIconSrc')).assertEqual("SYS_HIDE_PASSWORD_SVG");
+        expect(Icon.getString('offIconSrc')).assertEqual("SYS_HIDE_PASSWORD_SVG");
         done()
       } catch (err) {
         expect().assertFail()
@@ -681,10 +604,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0100', Level.LEVEL1, async (done: 
       }
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_PasswordIcon_static_0200
      * @tc.name     ArkUX_Stage_TextInput_PasswordIcon_static_0200
@@ -692,7 +611,7 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0100', Level.LEVEL1, async (done: 
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_TextInput_PasswordIcon_static_0200', Level.LEVEL1, async (done: ()=>void) => {
-      let passwordIcon: ESObject1 = {
+      let passwordIcon: PasswordIcon = {
         offIconSrc: $r("app.media.ohos_app_bar_back"),
       }
       await forKey("passWordIcon", "", passwordIcon);
@@ -701,7 +620,7 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0200', Level.LEVEL1, async (done: 
         console.info('ArkUX_Stage_TextInput_PasswordIcon_0200 obj $attrs.passwordIcon :' + JSON.stringify(obj.getElement('$attrs').getString('passwordIcon')));
         let Icon = JSON.parseJsonElement(obj.getElement('$attrs').getString('passwordIcon'));
         console.info('ArkUX_Stage_TextInput_PasswordIcon_0200 obj Icon :' + JSON.stringify(Icon));
-        expect(Icon.getElement('onIconSrc')).assertEqual("SYS_SHOW_PASSWORD_SVG");
+        expect(Icon.getString('onIconSrc')).assertEqual("SYS_SHOW_PASSWORD_SVG");
         expect((Icon.getElement('offIconSrc').asString().indexOf($r("app.media.ohos_app_bar_back").id.toString() + ".svg")) != -1).assertTrue();
         done()
       } catch (err) {
@@ -711,10 +630,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0200', Level.LEVEL1, async (done: 
       }
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_PasswordIcon_static_0300
      * @tc.name     ArkUX_Stage_TextInput_PasswordIcon_static_0300
@@ -722,7 +637,7 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0200', Level.LEVEL1, async (done: 
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_TextInput_PasswordIcon_static_0300', Level.LEVEL1, async (done: ()=>void) => {
-      let passwordIcon: ESObject1 = {
+      let passwordIcon: PasswordIcon = {
         onIconSrc: $r("app.media.ohos_correct"),
         offIconSrc: $r("app.media.ohos_close"),
       }
@@ -742,10 +657,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0300', Level.LEVEL1, async (done: 
       }
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_PasswordIcon_static_0400
      * @tc.name     ArkUX_Stage_TextInput_PasswordIcon_static_0400
@@ -753,9 +664,9 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0300', Level.LEVEL1, async (done: 
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_TextInput_PasswordIcon_static_0400', Level.LEVEL1, async (done: ()=>void) => {
-      let passwordIcon: ESObject1 = {
-        onIconSrc: null,
-        offIconSrc: null,
+      let passwordIcon: PasswordIcon = {
+        onIconSrc: undefined,
+        offIconSrc: undefined,
       }
       await forKey("passWordIcon", "", passwordIcon);
       try {
@@ -763,8 +674,8 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0400', Level.LEVEL1, async (done: 
         console.info('ArkUX_Stage_TextInput_PasswordIcon_0400 obj $attrs.passwordIcon :' + JSON.stringify(obj.getElement('$attrs').getString('passwordIcon')));
         let Icon = JSON.parseJsonElement(obj.getElement('$attrs').getString('passwordIcon'));
         console.info('ArkUX_Stage_TextInput_PasswordIcon_0400 obj Icon :' + JSON.stringify(Icon));
-        expect(Icon.getElement('onIconSrc')).assertEqual("SYS_SHOW_PASSWORD_SVG");
-        expect(Icon.getElement('offIconSrc')).assertEqual("SYS_HIDE_PASSWORD_SVG");
+        expect(Icon.getString('onIconSrc')).assertEqual("SYS_SHOW_PASSWORD_SVG");
+        expect(Icon.getString('offIconSrc')).assertEqual("SYS_HIDE_PASSWORD_SVG");
 
         done()
       } catch (err) {
@@ -774,10 +685,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0400', Level.LEVEL1, async (done: 
       }
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_PasswordIcon_static_0500
      * @tc.name     ArkUX_Stage_TextInput_PasswordIcon_static_0500
@@ -785,7 +692,7 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0400', Level.LEVEL1, async (done: 
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_TextInput_PasswordIcon_static_0500', Level.LEVEL1, async (done: ()=>void) => {
-      let passwordIcon: ESObject1 = {
+      let passwordIcon: PasswordIcon = {
         onIconSrc: undefined,
         offIconSrc: undefined,
       }
@@ -795,8 +702,8 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0500', Level.LEVEL1, async (done: 
         console.info('ArkUX_Stage_TextInput_PasswordIcon_0500 obj $attrs.passwordIcon :' + JSON.stringify(obj.getElement('$attrs').getString('passwordIcon')));
         let Icon = JSON.parseJsonElement(obj.getElement('$attrs').getString('passwordIcon'));
         console.info('ArkUX_Stage_TextInput_PasswordIcon_0500 obj Icon :' + JSON.stringify(Icon));
-        expect(Icon.getElement('onIconSrc')).assertEqual("SYS_SHOW_PASSWORD_SVG");
-        expect(Icon.getElement('offIconSrc')).assertEqual("SYS_HIDE_PASSWORD_SVG");
+        expect(Icon.getString('onIconSrc')).assertEqual("SYS_SHOW_PASSWORD_SVG");
+        expect(Icon.getString('offIconSrc')).assertEqual("SYS_HIDE_PASSWORD_SVG");
         done()
       } catch (err) {
         expect().assertFail()
@@ -805,10 +712,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0500', Level.LEVEL1, async (done: 
       }
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_PasswordIcon_static_0600
      * @tc.name     ArkUX_Stage_TextInput_PasswordIcon_static_0600
@@ -816,7 +719,7 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0500', Level.LEVEL1, async (done: 
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_TextInput_PasswordIcon_static_0600', Level.LEVEL1, async (done: ()=>void) => {
-      let passwordIcon: ESObject1 = {
+      let passwordIcon: PasswordIcon = {
         onIconSrc: "",
         offIconSrc: "",
       }
@@ -826,8 +729,8 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0600', Level.LEVEL1, async (done: 
         console.info('ArkUX_Stage_TextInput_PasswordIcon_0600 obj $attrs.passwordIcon :' + JSON.stringify(obj.getElement('$attrs').getString('passwordIcon')));
         let Icon = JSON.parseJsonElement(obj.getElement('$attrs').getString('passwordIcon'));
         console.info('ArkUX_Stage_TextInput_PasswordIcon_0600 obj Icon :' + JSON.stringify(Icon));
-        expect(Icon.getElement('onIconSrc')).assertEqual("SYS_SHOW_PASSWORD_SVG");
-        expect(Icon.getElement('offIconSrc')).assertEqual("SYS_HIDE_PASSWORD_SVG");
+        expect(Icon.getString('onIconSrc')).assertEqual("SYS_SHOW_PASSWORD_SVG");
+        expect(Icon.getString('offIconSrc')).assertEqual("SYS_HIDE_PASSWORD_SVG");
         done()
       } catch (err) {
         expect().assertFail()
@@ -836,10 +739,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0600', Level.LEVEL1, async (done: 
       }
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_PasswordIcon_static_0700
      * @tc.name     ArkUX_Stage_TextInput_PasswordIcon_static_0700
@@ -847,9 +746,9 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0600', Level.LEVEL1, async (done: 
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_TextInput_PasswordIcon_static_0700', Level.LEVEL1, async (done: ()=>void) => {
-      let passwordIcon: ESObject1 = {
-        onIconSrc: 123,
-        offIconSrc: 123,
+      let passwordIcon: PasswordIcon = {
+        onIconSrc: undefined,
+        offIconSrc: undefined,
       }
       await forKey("passWordIcon", "", passwordIcon);
       try {
@@ -857,8 +756,8 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0700', Level.LEVEL1, async (done: 
         console.info('ArkUX_Stage_TextInput_PasswordIcon_0700 obj $attrs.passwordIcon :' + JSON.stringify(obj.getElement('$attrs').getString('passwordIcon')));
         let Icon = JSON.parseJsonElement(obj.getElement('$attrs').getString('passwordIcon'));
         console.info('ArkUX_Stage_TextInput_PasswordIcon_0700 obj Icon :' + JSON.stringify(Icon));
-        expect(Icon.getElement('onIconSrc')).assertEqual("SYS_SHOW_PASSWORD_SVG");
-        expect(Icon.getElement('offIconSrc')).assertEqual("SYS_HIDE_PASSWORD_SVG");
+        expect(Icon.getString('onIconSrc')).assertEqual("SYS_SHOW_PASSWORD_SVG");
+        expect(Icon.getString('offIconSrc')).assertEqual("SYS_HIDE_PASSWORD_SVG");
         done()
       } catch (err) {
         expect().assertFail()
@@ -867,10 +766,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0700', Level.LEVEL1, async (done: 
       }
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_PasswordIcon_static_0800
      * @tc.name     ArkUX_Stage_TextInput_PasswordIcon_static_0800
@@ -878,9 +773,9 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0700', Level.LEVEL1, async (done: 
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_TextInput_PasswordIcon_static_0800', Level.LEVEL1, async (done: ()=>void) => {
-      let passwordIcon: ESObject1 = {
+      let passwordIcon: PasswordIcon = {
         onIconSrc: $r('app.media.ohos_correct'),
-        offIconSrc: null
+        offIconSrc: undefined
       }
       await forKey("passWordIcon", "", passwordIcon);
       try {
@@ -889,7 +784,7 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0800', Level.LEVEL1, async (done: 
         let Icon = JSON.parseJsonElement(obj.getElement('$attrs').getString('passwordIcon'));
         console.info('ArkUX_Stage_TextInput_PasswordIcon_0800 obj Icon :' + JSON.stringify(Icon));
         expect((Icon.getElement('onIconSrc').asString().indexOf($r("app.media.ohos_correct").id.toString() + ".svg")) != -1).assertTrue();
-        expect(Icon.getElement('offIconSrc')).assertEqual("SYS_HIDE_PASSWORD_SVG");
+        expect(Icon.getString('offIconSrc')).assertEqual("SYS_HIDE_PASSWORD_SVG");
         done()
       } catch (err) {
         expect().assertFail()
@@ -898,10 +793,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0800', Level.LEVEL1, async (done: 
       }
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_PasswordIcon_static_0900
      * @tc.name     ArkUX_Stage_TextInput_PasswordIcon_static_0900
@@ -909,8 +800,8 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0800', Level.LEVEL1, async (done: 
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_TextInput_PasswordIcon_static_0900', Level.LEVEL1, async (done: ()=>void) => {
-      let passwordIcon: ESObject1 = {
-        onIconSrc: null, offIconSrc: $r('app.media.ohos_close')
+      let passwordIcon: PasswordIcon = {
+        onIconSrc: undefined, offIconSrc: $r('app.media.ohos_close')
       }
       await forKey("passWordIcon", "", passwordIcon);
       try {
@@ -918,8 +809,8 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0900', Level.LEVEL1, async (done: 
         console.info('ArkUX_Stage_TextInput_PasswordIcon_0900 obj $attrs.passwordIcon :' + JSON.stringify(obj.getElement('$attrs').getString('passwordIcon')));
         let Icon = JSON.parseJsonElement(obj.getElement('$attrs').getString('passwordIcon'));
         console.info('ArkUX_Stage_TextInput_PasswordIcon_0900 obj Icon :' + JSON.stringify(Icon));
-        expect(Icon.getElement('onIconSrc')).assertEqual("SYS_SHOW_PASSWORD_SVG");
-        expect((Icon.getElement('offIconSrc').asString().indexOf($r("app.media.ohos_close").id.toString() + ".svg")) != -1).assertTrue();
+        expect(Icon.getString('onIconSrc')).assertEqual("SYS_SHOW_PASSWORD_SVG");
+        expect((Icon.getString('offIconSrc').indexOf($r("app.media.ohos_close").id.toString() + ".svg")) != -1).assertTrue();
 
         done()
       } catch (err) {
@@ -929,10 +820,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0900', Level.LEVEL1, async (done: 
       }
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_PasswordIcon_static_1000
      * @tc.name     ArkUX_Stage_TextInput_PasswordIcon_static_1000
@@ -940,7 +827,7 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_0900', Level.LEVEL1, async (done: 
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_TextInput_PasswordIcon_static_1000', Level.LEVEL1, async (done: ()=>void) => {
-      let passwordIcon: ESObject1 = {
+      let passwordIcon: PasswordIcon = {
         onIconSrc: $r('app.media.ohos_correct'), offIconSrc: $r('app.media.ohos_close')
       }
       await forKey("passWordIcon", "", passwordIcon);
@@ -948,7 +835,7 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1000', Level.LEVEL1, async (done: 
         onIconSrc: $r('app.media.ohos_app_bar_fa'), offIconSrc: $r('app.media.ohos_app_bar_back')
       }
       await forKey("passWordIcon", "", passwordIcon);
-      await sleep(1000)
+      await UtilsTest.msSleep(1000)
       try {
         let obj = JSON.parseJsonElement(inspector.getInspectorByKey('TextInput'));
         console.info('ArkUX_Stage_TextInput_PasswordIcon_1000 obj $attrs.passwordIcon :' + JSON.stringify(obj.getElement('$attrs').getString('passwordIcon')));
@@ -964,10 +851,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1000', Level.LEVEL1, async (done: 
       }
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_PasswordIcon_static_1100
      * @tc.name     ArkUX_Stage_TextInput_PasswordIcon_static_1100
@@ -975,12 +858,12 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1000', Level.LEVEL1, async (done: 
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_TextInput_PasswordIcon_static_1100', Level.LEVEL1, async (done: ()=>void) => {
-      let passwordIcon: ESObject1 = {
+      let passwordIcon: PasswordIcon = {
         onIconSrc: $r('app.media.ohos_correct'), offIconSrc: $r('app.media.ohos_close')
       }
       await forKey("passWordIcon", "", passwordIcon);
       passwordIcon = {
-        onIconSrc: null, offIconSrc: null
+        onIconSrc: undefined, offIconSrc: undefined
       }
       await forKey("passWordIcon", "", passwordIcon);
       try {
@@ -988,8 +871,8 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1100', Level.LEVEL1, async (done: 
         console.info('ArkUX_Stage_TextInput_PasswordIcon_1100 obj $attrs.passwordIcon :' + JSON.stringify(obj.getElement('$attrs').getString('passwordIcon')));
         let Icon = JSON.parseJsonElement(obj.getElement('$attrs').getString('passwordIcon'));
         console.info('ArkUX_Stage_TextInput_PasswordIcon_1100 obj Icon :' + JSON.stringify(Icon));
-        expect(Icon.getElement('onIconSrc')).assertEqual("SYS_SHOW_PASSWORD_SVG");
-        expect(Icon.getElement('offIconSrc')).assertEqual("SYS_HIDE_PASSWORD_SVG");
+        expect(Icon.getString('onIconSrc')).assertEqual("SYS_SHOW_PASSWORD_SVG");
+        expect(Icon.getString('offIconSrc')).assertEqual("SYS_HIDE_PASSWORD_SVG");
         done()
       } catch (err) {
         expect().assertFail()
@@ -998,10 +881,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1100', Level.LEVEL1, async (done: 
       }
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_PasswordIcon_static_1200
      * @tc.name     ArkUX_Stage_TextInput_PasswordIcon_static_1200
@@ -1009,8 +888,8 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1100', Level.LEVEL1, async (done: 
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_TextInput_PasswordIcon_static_1200', Level.LEVEL1, async (done: ()=>void) => {
-      let passwordIcon: ESObject1 = {
-        onIconSrc: null, offIconSrc: null
+      let passwordIcon: PasswordIcon = {
+        onIconSrc: undefined, offIconSrc: undefined
       }
       await forKey("passWordIcon", "", passwordIcon);
       passwordIcon = {
@@ -1032,10 +911,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1200', Level.LEVEL1, async (done: 
       }
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_PasswordIcon_static_1300
      * @tc.name     ArkUX_Stage_TextInput_PasswordIcon_static_1300
@@ -1043,12 +918,12 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1200', Level.LEVEL1, async (done: 
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_TextInput_PasswordIcon_static_1300', Level.LEVEL1, async (done: ()=>void) => {
-      let passwordIcon: ESObject1 = {
-        onIconSrc: $r('app.media.ohos_correct'), offIconSrc: null
+      let passwordIcon: PasswordIcon = {
+        onIconSrc: $r('app.media.ohos_correct'), offIconSrc: undefined
       }
       await forKey("passWordIcon", "", passwordIcon);
       passwordIcon = {
-        onIconSrc: null, offIconSrc: $r('app.media.ohos_app_bar_back')
+        onIconSrc: undefined, offIconSrc: $r('app.media.ohos_app_bar_back')
       }
       await forKey("passWordIcon", "", passwordIcon);
       try {
@@ -1056,8 +931,8 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1300', Level.LEVEL1, async (done: 
         console.info('ArkUX_Stage_TextInput_PasswordIcon_1200 obj $attrs.passwordIcon :' + JSON.stringify(obj.getElement('$attrs').getString('passwordIcon')));
         let Icon = JSON.parseJsonElement(obj.getElement('$attrs').getString('passwordIcon'));
         console.info('ArkUX_Stage_TextInput_PasswordIcon_1200 obj Icon :' + JSON.stringify(Icon));
-        expect(Icon.getElement('onIconSrc')).assertEqual("SYS_SHOW_PASSWORD_SVG");
-        expect((Icon.getElement('offIconSrc').asString().indexOf($r("app.media.ohos_app_bar_back").id.toString() + ".svg")) != -1).assertTrue();
+        expect(Icon.getString('onIconSrc')).assertEqual("SYS_SHOW_PASSWORD_SVG");
+        expect((Icon.getString('offIconSrc').indexOf($r("app.media.ohos_app_bar_back").id.toString() + ".svg")) != -1).assertTrue();
         done()
       } catch (err) {
         expect().assertFail()
@@ -1066,10 +941,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1300', Level.LEVEL1, async (done: 
       }
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_PasswordIcon_static_1400
      * @tc.name     ArkUX_Stage_TextInput_PasswordIcon_static_1400
@@ -1077,12 +948,12 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1300', Level.LEVEL1, async (done: 
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_TextInput_PasswordIcon_static_1400', Level.LEVEL1, async (done: ()=>void) => {
-      let passwordIcon: ESObject1 = {
+      let passwordIcon: PasswordIcon = {
         onIconSrc: $r('app.media.ohos_correct'), offIconSrc: $r('app.media.ohos_close')
       }
       await forKey("passWordIcon", "", passwordIcon);
-      let passwordIconSec: ESObject1 = {
-        onIconSrc: null
+      let passwordIconSec: PasswordIcon = {
+        onIconSrc: undefined
       }
       await forKey("passWordIcon", "", passwordIconSec);
       try {
@@ -1090,8 +961,8 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1400', Level.LEVEL1, async (done: 
         console.info('ArkUX_Stage_TextInput_PasswordIcon_1400 obj $attrs.passwordIcon :' + JSON.stringify(obj.getElement('$attrs').getString('passwordIcon')));
         let Icon = JSON.parseJsonElement(obj.getElement('$attrs').getString('passwordIcon'));
         console.info('ArkUX_Stage_TextInput_PasswordIcon_1400 obj Icon :' + JSON.stringify(Icon));
-        expect(Icon.getElement('onIconSrc')).assertEqual("SYS_SHOW_PASSWORD_SVG");
-        expect(Icon.getElement('offIconSrc')).assertEqual("SYS_HIDE_PASSWORD_SVG");
+        expect(Icon.getString('onIconSrc')).assertEqual("SYS_SHOW_PASSWORD_SVG");
+        expect(Icon.getString('offIconSrc')).assertEqual("SYS_HIDE_PASSWORD_SVG");
         done()
       } catch (err) {
         expect().assertFail()
@@ -1100,10 +971,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1400', Level.LEVEL1, async (done: 
       }
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_PasswordIcon_static_1500
      * @tc.name     ArkUX_Stage_TextInput_PasswordIcon_static_1500
@@ -1118,10 +985,10 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1500', Level.LEVEL1, async (done: 
         console.info('ArkUX_Stage_TextInput_PasswordIcon_1500 obj Icon :' + JSON.stringify(Icon));
         expect(Icon.getElement('onIconSrc')).assertEqual(983328);
         expect(Icon.getElement('offIconSrc')).assertEqual(983327);
-        expect(obj.getElement('$attrs').getString('showErrorText')).assertEqual(false);
+        expect(obj.getElement('$attrs').getBoolean('showErrorText')).assertEqual(false);
         expect(obj.getElement('$attrs').getString('errorText')).assertEqual('');
         expect(obj.getElement('$attrs').getString('showError')).assertEqual('undefined');
-        expect(obj.getElement('$attrs').getString('showUnderline')).assertEqual(false);
+        expect(obj.getElement('$attrs').getBoolean('showUnderline')).assertEqual(false);
 
         done()
       } catch (err) {
@@ -1131,10 +998,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1500', Level.LEVEL1, async (done: 
       }
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_PasswordIcon_static_1600
      * @tc.name     ArkUX_Stage_TextInput_PasswordIcon_static_1600
@@ -1142,7 +1005,7 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1500', Level.LEVEL1, async (done: 
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_TextInput_PasswordIcon_static_1600', Level.LEVEL1, async (done: ()=>void) => {
-      let passwordIcon: ESObject1 = {
+      let passwordIcon: PasswordIcon = {
         onIconSrc: $r('app.media.icon'), offIconSrc: $r('app.media.icon')
       }
       await forKey("passWordIcon", "", passwordIcon);
@@ -1162,10 +1025,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1600', Level.LEVEL1, async (done: 
       }
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_PasswordIcon_static_1700
      * @tc.name     ArkUX_Stage_TextInput_PasswordIcon_static_1700
@@ -1173,7 +1032,7 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1600', Level.LEVEL1, async (done: 
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_TextInput_PasswordIcon_static_1700', Level.LEVEL1, async (done: ()=>void) => {
-      let passwordIcon: ESObject1 = {
+      let passwordIcon: PasswordIcon = {
         onIconSrc: "../../resources/base/media/icon.png", offIconSrc: "../../resources/base/media/icon.png"
       }
       await forKey("passWordIcon", "", passwordIcon);
@@ -1182,8 +1041,8 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1700', Level.LEVEL1, async (done: 
         console.info('ArkUX_Stage_TextInput_PasswordIcon_1700 obj $attrs.passwordIcon :' + JSON.stringify(obj.getElement('$attrs').getString('passwordIcon')));
         let Icon = JSON.parseJsonElement(obj.getElement('$attrs').getString('passwordIcon'));
         console.info('ArkUX_Stage_TextInput_PasswordIcon_1700 obj Icon :' + JSON.stringify(Icon));
-        expect(Icon.getElement('onIconSrc')).assertEqual("../../resources/base/media/icon.png");
-        expect(Icon.getElement('offIconSrc')).assertEqual("../../resources/base/media/icon.png");
+        expect(Icon.getString('onIconSrc')).assertEqual("../../resources/base/media/icon.png");
+        expect(Icon.getString('offIconSrc')).assertEqual("../../resources/base/media/icon.png");
         done()
       } catch (err) {
         expect().assertFail()
@@ -1192,10 +1051,6 @@ it('ArkUX_Stage_TextInput_PasswordIcon_static_1700', Level.LEVEL1, async (done: 
       }
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_barState_static_0100
      * @tc.name     ArkUX_Stage_TextInput_barState_static_0100
@@ -1217,10 +1072,6 @@ it('ArkUX_Stage_TextInput_barState_static_0100', Level.LEVEL1, (done: ()=>void) 
       }, 500);
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_barState_static_0200
      * @tc.name     ArkUX_Stage_TextInput_barState_static_0200
@@ -1242,10 +1093,6 @@ it('ArkUX_Stage_TextInput_barState_static_0200', Level.LEVEL1, (done: ()=>void) 
       }, 500);
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_barState_static_0300
      * @tc.name     ArkUX_Stage_TextInput_barState_static_0300
@@ -1267,10 +1114,6 @@ it('ArkUX_Stage_TextInput_barState_static_0300', Level.LEVEL1, (done: ()=>void) 
       }, 500);
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_barState_static_0400
      * @tc.name     ArkUX_Stage_TextInput_barState_static_0400
@@ -1292,10 +1135,6 @@ it('ArkUX_Stage_TextInput_barState_static_0400', Level.LEVEL1, (done: ()=>void) 
       }, 500);
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_barState_static_0500
      * @tc.name     ArkUX_Stage_TextInput_barState_static_0500
@@ -1317,10 +1156,6 @@ it('ArkUX_Stage_TextInput_barState_static_0500', Level.LEVEL1, (done: ()=>void) 
       }, 500);
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_barState_static_0600
      * @tc.name     ArkUX_Stage_TextInput_barState_static_0600
@@ -1342,10 +1177,6 @@ it('ArkUX_Stage_TextInput_barState_static_0600', Level.LEVEL1, (done: ()=>void) 
       }, 500);
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_barState_static_0700
      * @tc.name     ArkUX_Stage_TextInput_barState_static_0700
@@ -1367,10 +1198,6 @@ it('ArkUX_Stage_TextInput_barState_static_0700', Level.LEVEL1, (done: ()=>void) 
       }, 500);
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_barState_static_0800
      * @tc.name     ArkUX_Stage_TextInput_barState_static_0800
@@ -1392,10 +1219,6 @@ it('ArkUX_Stage_TextInput_barState_static_0800', Level.LEVEL1, (done: ()=>void) 
       }, 500);
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_barState_static_0900
      * @tc.name     ArkUX_Stage_TextInput_barState_static_0900
@@ -1417,10 +1240,6 @@ it('ArkUX_Stage_TextInput_barState_static_0900', Level.LEVEL1, (done: ()=>void) 
       }, 500);
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_barState_static_1000
      * @tc.name     ArkUX_Stage_TextInput_barState_static_1000
@@ -1442,10 +1261,6 @@ it('ArkUX_Stage_TextInput_barState_static_1000', Level.LEVEL1, (done: ()=>void) 
       }, 500);
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_barState_static_1100
      * @tc.name     ArkUX_Stage_TextInput_barState_static_1100
@@ -1467,10 +1282,6 @@ it('ArkUX_Stage_TextInput_barState_static_1100', Level.LEVEL1, (done: ()=>void) 
       }, 500);
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_barState_static_1200
      * @tc.name     ArkUX_Stage_TextInput_barState_static_1200
@@ -1492,10 +1303,6 @@ it('ArkUX_Stage_TextInput_barState_static_1200', Level.LEVEL1, (done: ()=>void) 
       }, 500);
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_barState_static_1300
      * @tc.name     ArkUX_Stage_TextInput_barState_static_1300
@@ -1517,10 +1324,6 @@ it('ArkUX_Stage_TextInput_barState_static_1300', Level.LEVEL1, (done: ()=>void) 
       }, 500);
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_barState_static_1400
      * @tc.name     ArkUX_Stage_TextInput_barState_static_1400
@@ -1542,10 +1345,6 @@ it('ArkUX_Stage_TextInput_barState_static_1400', Level.LEVEL1, (done: ()=>void) 
       }, 500);
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_maxLines_static_0100
      * @tc.name     ArkUX_Stage_TextInput_maxLines_static_0100
@@ -1567,10 +1366,6 @@ it('ArkUX_Stage_TextInput_maxLines_static_0100', Level.LEVEL1, (done: ()=>void) 
       }, 500);
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_maxLines_static_0200
      * @tc.name     ArkUX_Stage_TextInput_maxLines_static_0200
@@ -1592,10 +1387,6 @@ it('ArkUX_Stage_TextInput_maxLines_static_0200', Level.LEVEL1, (done: ()=>void) 
       }, 500);
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_maxLines_static_0300
      * @tc.name     ArkUX_Stage_TextInput_maxLines_static_0300
@@ -1617,10 +1408,6 @@ it('ArkUX_Stage_TextInput_maxLines_static_0300', Level.LEVEL1, (done: ()=>void) 
       }, 500);
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_maxLines_static_0400
      * @tc.name     ArkUX_Stage_TextInput_maxLines_static_0400
@@ -1642,10 +1429,6 @@ it('ArkUX_Stage_TextInput_maxLines_static_0400', Level.LEVEL1, (done: ()=>void) 
       }, 500);
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_maxLines_static_0500
      * @tc.name     ArkUX_Stage_TextInput_maxLines_static_0500
@@ -1667,10 +1450,6 @@ it('ArkUX_Stage_TextInput_maxLines_static_0500', Level.LEVEL1, (done: ()=>void) 
       }, 500);
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_maxLines_static_0600
      * @tc.name     ArkUX_Stage_TextInput_maxLines_static_0600
@@ -1692,10 +1471,6 @@ it('ArkUX_Stage_TextInput_maxLines_static_0600', Level.LEVEL1, (done: ()=>void) 
       }, 500);
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_maxLines_static_0700
      * @tc.name     ArkUX_Stage_TextInput_maxLines_static_0700
@@ -1717,10 +1492,6 @@ it('ArkUX_Stage_TextInput_maxLines_static_0700', Level.LEVEL1, (done: ()=>void) 
       }, 500);
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_maxLines_static_0800
      * @tc.name     ArkUX_Stage_TextInput_maxLines_static_0800
@@ -1742,10 +1513,6 @@ it('ArkUX_Stage_TextInput_maxLines_static_0800', Level.LEVEL1, (done: ()=>void) 
       }, 500);
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_maxLines_static_0900
      * @tc.name     ArkUX_Stage_TextInput_maxLines_static_0900
@@ -1767,10 +1534,6 @@ it('ArkUX_Stage_TextInput_maxLines_static_0900', Level.LEVEL1, (done: ()=>void) 
       }, 500);
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_maxLines_static_1000
      * @tc.name     ArkUX_Stage_TextInput_maxLines_static_1000
@@ -1792,10 +1555,6 @@ it('ArkUX_Stage_TextInput_maxLines_static_1000', Level.LEVEL1, (done: ()=>void) 
       }, 500);
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_maxLines_static_1100
      * @tc.name     ArkUX_Stage_TextInput_maxLines_static_1100
@@ -1817,10 +1576,6 @@ it('ArkUX_Stage_TextInput_maxLines_static_1100', Level.LEVEL1, (done: ()=>void) 
       }, 500);
     })
 
-
-    
-    
-    
     /*
      * @tc.number   ArkUX_Stage_TextInput_maxLines_static_1200
      * @tc.name     ArkUX_Stage_TextInput_maxLines_static_1200

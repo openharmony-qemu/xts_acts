@@ -35,7 +35,6 @@ import {
 } from '@ohos.arkui.component'
 import {
   State,
-  
 } from '@ohos.arkui.stateManagement'
 import { MessageManager, Callback } from '../../common/MessageManager';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -43,22 +42,18 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct textArea_center {
-  
   private arr: Array<number> = new Array<number>(0, 1, 2, 3, 4, 5)
   @State height1:string = '58%'
-  @State fontSize1:int = 17
+  @State fontSize1:number = 17
   @State fontWeight1:int = 400
   controller: TextAreaController = new TextAreaController()
   scroll: Scroller = new Scroller()
-  messageManager:MessageManager= new MessageManager()
+  messageManager:MessageManager<string>= new MessageManager<string>()
 
 
   onPageShow() {
     console.info('textArea_center onPageShow')
-    
-    
-    
-    AppStorage.setOrCreate<object>("messageManager",  this.messageManager);
+    AppStorage.setOrCreate<MessageManager<string>>("messageManager", this.messageManager);
   }
 
   build(){
@@ -98,7 +93,7 @@ struct textArea_center {
             Text(item + '')
               .width('90%')
               .height(150)
-              .backgroundColor(0xFFFFFF)
+              .backgroundColor(Color.Red)
               .borderRadius(15)
               .fontSize(16)
               .textAlign(TextAlign.Center)

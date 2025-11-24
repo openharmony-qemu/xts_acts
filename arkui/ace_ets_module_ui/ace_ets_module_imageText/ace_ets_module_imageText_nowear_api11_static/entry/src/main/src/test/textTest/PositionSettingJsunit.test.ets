@@ -25,19 +25,23 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-class Data1 {
-  x: number | string = 0;
-  y: number | string = 0;
+interface Data1 {
+  x: number
+  y: number
+}
+interface Data2 {
+  x: string
+  y: string
 }
 export default function positionSettingJsunit() {
-  describe('borderTest_five_3', () : void=> {
+  describe('positionSettingJsunit', () : void=> {
     beforeAll(() => {
       console.info("positionSettingJsunit beforeEach start");
 
@@ -58,11 +62,8 @@ export default function positionSettingJsunit() {
         console.info("get positionSettingJsunit state pages:" + "");
         if (!("TextClockApi" == pages.name)) {
           console.info("get positionSettingJsunit pages.name:" + "");
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push positionSettingJsunit page error:" + err);
@@ -74,9 +75,6 @@ export default function positionSettingJsunit() {
       console.info("positionSettingJsunit after each called");
     });
 
-    
-    
-    
     /*
      * @tc.number   testPositionSetting_static_001
      * @tc.name     testPositionSetting_static_001
@@ -86,8 +84,6 @@ export default function positionSettingJsunit() {
 it('testPositionSetting_static_001', Level.LEVEL1, async (done: ()=>void) => {
       console.info('[testPositionSetting001] START');
       await CommonFunc.sleep(1000);
-
-
         let strJson: string = inspector.getInspectorByKey('textAlign');
         console.info("[testPositionSetting001] component strJson:" + strJson);
         let obj = JSON.parseJsonElement(strJson)
@@ -98,9 +94,6 @@ it('testPositionSetting_static_001', Level.LEVEL1, async (done: ()=>void) => {
       done();
     });
 
-    
-    
-    
     /*
      * @tc.number   testPositionSetting_static_002
      * @tc.name     testPositionSetting_static_002
@@ -110,8 +103,6 @@ it('testPositionSetting_static_001', Level.LEVEL1, async (done: ()=>void) => {
 it('testPositionSetting_static_002', Level.LEVEL1, async (done: ()=>void) => {
       console.info('[testPositionSetting002] START');
       await CommonFunc.sleep(1000);
-
-
         let strJson: string = inspector.getInspectorByKey('rowDirection');
         console.info("[testPositionSetting002] component strJson:" + strJson);
         let obj = JSON.parseJsonElement(strJson)
@@ -121,9 +112,6 @@ it('testPositionSetting_static_002', Level.LEVEL1, async (done: ()=>void) => {
       console.info('[testPositionSetting002] END');
       done();
     });
-
-    
-    
     
     /*
      * @tc.number   testPositionSetting_static_003
@@ -137,7 +125,7 @@ it('testPositionSetting_static_003', Level.LEVEL1, async (done: ()=>void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "textAlign": Alignment.BottomEnd
-          } as Record<string, RecordData>
+          } as Record<String,undefined|null|Object>
         } as events_emitter.EventData
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 25,
@@ -145,12 +133,10 @@ it('testPositionSetting_static_003', Level.LEVEL1, async (done: ()=>void) => {
         }
         console.info("[testPositionSetting003] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
+      } catch (err:Error) {
         console.log("[testPositionSetting003] change component data error: " + err.message );
       }
       await CommonFunc.sleep(4000);
-
-
         let strJson: string = inspector.getInspectorByKey('textAlign');
         console.info("[testPositionSetting003] component strJson:" + strJson);
         let obj = JSON.parseJsonElement(strJson)
@@ -160,10 +146,6 @@ it('testPositionSetting_static_003', Level.LEVEL1, async (done: ()=>void) => {
       console.info('[testPositionSetting003] END');
       done();
     });
-
-    
-    
-    
     /*
      * @tc.number   testPositionSetting_static_004
      * @tc.name     testPositionSetting_static_004
@@ -177,7 +159,7 @@ it('testPositionSetting_static_004', Level.LEVEL1, async (done: ()=>void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "direction": Direction.Ltr
-          } as Record<string, RecordData>
+          } as Record<String,undefined|null|Object>
         } as events_emitter.EventData
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 26,
@@ -185,12 +167,10 @@ it('testPositionSetting_static_004', Level.LEVEL1, async (done: ()=>void) => {
         }
         console.info("[testPositionSetting004] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
+      } catch (err : Error) {
         console.log("[testPositionSetting004] change component data error: " + err?.message);
       }
       await CommonFunc.sleep(3000);
-
-
         let strJson: string = inspector.getInspectorByKey('rowDirection');
         console.info("[testPositionSetting004] component strJson:" + strJson);
         let obj = JSON.parseJsonElement(strJson)
@@ -200,10 +180,6 @@ it('testPositionSetting_static_004', Level.LEVEL1, async (done: ()=>void) => {
       console.info('[testPositionSetting004] END');
       done();
     });
-
-    
-    
-    
     /*
      * @tc.number   testPositionSetting_static_005
      * @tc.name     testPositionSetting_static_005
@@ -213,8 +189,6 @@ it('testPositionSetting_static_004', Level.LEVEL1, async (done: ()=>void) => {
 it('testPositionSetting_static_005', Level.LEVEL1, async (done: ()=>void) => {
       console.info('[testPositionSetting005] START');
       await CommonFunc.sleep(1000);
-
-
         let strJson: string = inspector.getInspectorByKey('position1');
         console.info("[testPositionSetting005] component strJson:" + strJson);
         let obj = JSON.parseJsonElement(strJson)
@@ -227,14 +201,9 @@ it('testPositionSetting_static_005', Level.LEVEL1, async (done: ()=>void) => {
         console.info("[testPositionSetting005] position1: " + JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('position')));
         expect(obj1.getElement('$attrs').getElement('position').getString('x')).assertEqual('50.00%');
         expect(obj1.getElement('$attrs').getElement('position').getString('y')).assertEqual('70.00%');
-
       console.info('[testPositionSetting005] END');
       done();
     });
-
-    
-    
-    
     /*
      * @tc.number   testPositionSetting_static_006
      * @tc.name     testPositionSetting_static_006
@@ -245,17 +214,15 @@ it('testPositionSetting_static_006', Level.LEVEL1, async (done: ()=>void) => {
       console.info('[testPositionSetting006] START');
       await CommonFunc.sleep(1000);
       try {
-        let data: Data1 = {
-          x: 10, y: 25
-        };
-        let data2: Data1 = {
-          x: '30%', y: '50%'
-        };
         let eventData: events_emitter.EventData = {
           data: {
-            "position1": JSON.stringify(data),
-            "position2": JSON.stringify(data2)
-          }as Record<string, RecordData>
+            "position1": {
+              x: 10, y: 25
+            } as Data1,
+            "position2": {
+              x: '30%', y: '50%'
+            } as Data2
+          } as Record<String,undefined|null|Object>
         } as events_emitter.EventData
 
         let indexEvent: events_emitter.InnerEvent = {
@@ -264,7 +231,7 @@ it('testPositionSetting_static_006', Level.LEVEL1, async (done: ()=>void) => {
         }
         console.info("[testPositionSetting006] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
+      } catch (err:Error) {
         console.log("[testPositionSetting006] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -288,9 +255,6 @@ it('testPositionSetting_static_006', Level.LEVEL1, async (done: ()=>void) => {
       done();
     });
 
-    
-    
-    
     /*
      * @tc.number   testPositionSetting_static_007
      * @tc.name     testPositionSetting_static_007
@@ -312,10 +276,6 @@ it('testPositionSetting_static_007', Level.LEVEL1, async (done: ()=>void) => {
       console.info('[testPositionSetting007] END');
       done();
     });
-
-    
-    
-    
     /*
      * @tc.number   testPositionSetting_static_008
      * @tc.name     testPositionSetting_static_008
@@ -326,13 +286,12 @@ it('testPositionSetting_static_008', Level.LEVEL1, async (done: ()=>void) => {
       console.info('[testPositionSetting008] START');
       await CommonFunc.sleep(1000);
       try {
-        let data: Data1 = {
-          x: 0, y: 0
-        };
         let eventData: events_emitter.EventData = {
           data: {
-            "markAnchor": JSON.stringify(data),
-          }as Record<string, RecordData>
+            "markAnchor": {
+              x: 0, y: 0
+            } as Data1,
+          } as Record<String,undefined|null|Object>
         } as events_emitter.EventData
 
         let indexEvent: events_emitter.InnerEvent = {
@@ -341,7 +300,7 @@ it('testPositionSetting_static_008', Level.LEVEL1, async (done: ()=>void) => {
         }
         console.info("[testPositionSetting008] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
+      } catch (err :Error) {
         console.log("[testPositionSetting008] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -357,11 +316,7 @@ it('testPositionSetting_static_008', Level.LEVEL1, async (done: ()=>void) => {
       console.info('[testPositionSetting008] END');
       done();
     });
-
-    
-    
-    
-    /*
+ /*
      * @tc.number   testPositionSetting_static_009
      * @tc.name     testPositionSetting_static_009
      * @tc.desc     testPositionSetting_static_009
@@ -382,10 +337,6 @@ it('testPositionSetting_static_009', Level.LEVEL1, async (done: ()=>void) => {
       console.info('[testPositionSetting009] END');
       done();
     });
-
-    
-    
-    
     /*
      * @tc.number   testPositionSetting_static_010
      * @tc.name     testPositionSetting_static_010
@@ -396,13 +347,12 @@ it('testPositionSetting_static_010', Level.LEVEL1, async (done: ()=>void) => {
       console.info('[testPositionSetting010] START');
       await CommonFunc.sleep(1000);
       try {
-        let data: Data1 = {
-          x: 150, y: 10
-        };
         let eventData: events_emitter.EventData = {
           data: {
-            "offset": JSON.stringify(data),
-          }as Record<string, RecordData>
+            "offset": {
+              x: 150, y: 10
+            } as Data1,
+          } as Record<String,undefined|null|Object>
         } as events_emitter.EventData
 
         let indexEvent: events_emitter.InnerEvent = {
@@ -411,7 +361,7 @@ it('testPositionSetting_static_010', Level.LEVEL1, async (done: ()=>void) => {
         }
         console.info("[testPositionSetting010] start to publish emit");
         events_emitter.emit(indexEvent, eventData);
-      } catch (err) {
+      } catch (err :Error) {
         console.log("[testPositionSetting010] change component data error: " + err.message);
       }
       await CommonFunc.sleep(3000);
@@ -427,10 +377,6 @@ it('testPositionSetting_static_010', Level.LEVEL1, async (done: ()=>void) => {
       console.info('[testPositionSetting010] END');
       done();
     });
-
-    
-    
-    
     /*
      * @tc.number   testPositionSetting_static_011
      * @tc.name     testPositionSetting_static_011
@@ -450,10 +396,6 @@ it('testPositionSetting_static_011', Level.LEVEL1, async (done: ()=>void) => {
       console.info('[testPositionSetting011] END');
       done();
     });
-
-    
-    
-    
     /*
      * @tc.number   testPositionSetting_static_012
      * @tc.name     testPositionSetting_static_012
@@ -466,7 +408,7 @@ it('testPositionSetting_static_012', Level.LEVEL1, async (done: ()=>void) => {
         let eventData: events_emitter.EventData = {
           data: {
             "opacityValue": "0.7"
-          }as Record<string, RecordData>
+          } as Record<String,undefined|null|Object>
         } as events_emitter.EventData
 
         let innerEvent: events_emitter.InnerEvent = {
@@ -475,7 +417,7 @@ it('testPositionSetting_static_012', Level.LEVEL1, async (done: ()=>void) => {
         }
         console.info("[testPositionSetting012] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err :Error) {
         console.log("[testPositionSetting012] change component data error: " + err.message);
       }
       await CommonFunc.sleep(2000);

@@ -28,7 +28,6 @@ import { UtilsTest } from '../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-const uiContext = new UIContext();
 export default function textArea_center() {
   describe('textArea_center', () : void=> {
     beforeAll(() => {
@@ -51,11 +50,8 @@ export default function textArea_center() {
         console.info("get textArea_center state pages:" + "");
         if (!("TextClockApi" == pages.name)) {
           console.info("get textArea_center pages.name:" + "");
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push textArea_center page error:" + err);
@@ -131,7 +127,7 @@ it('textArea_center_static_002', Level.LEVEL2, async (done: ()=>void ) => {
         let driver =  Driver.create();
         await CommonFunc.sleep(500);
         await (driver.click(
-          (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2) as int),(Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) /2 + UIContext.getFocusedUIContext()!.vp2px(20)) as int)
+          (Math.round(textArea_01.left + (textArea_01.right - textArea_01.left) /2) as int),(Math.round(textArea_01.top + (textArea_01.bottom - textArea_01.top) /2 + AppStorage.get<UIContext>('uiContext')!.vp2px(20)) as int)
         ) as Promise<void>);
         await CommonFunc.sleep(1000);
 

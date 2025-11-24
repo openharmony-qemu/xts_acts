@@ -12,23 +12,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Font, TextAlign, CopyOptions } from '@ohos.arkui.component'
-
-export class Message {
-  name: string = '';
-  value: string | Font | TextAlign | CopyOptions | Number | Boolean = '';
+export interface Message<T> {
+  name: string;
+  value: T;
 }
-export type Callback = (message: Message) => void
 
-export class MessageManager {
-  callback?: Callback = undefined
-  callbacks: Map<string, Callback> = new Map<string, Callback>()
+export type Callback<T> = (message: Message<T>) => void;
+
+export class MessageManager<T> {
+  callback?: Callback<T>
+  callbacks: Map<string, Callback<T>> = new Map<string, Callback<T>>()
 
   constructor() {
 
   }
 
-  registerCallback(callback: Callback, type?: string) {
+  registerCallback(callback: Callback<T>, type?: string) {
     if (type == undefined) {
       console.error('registerCallback callback set')
       this.callback = callback
@@ -37,15 +36,13 @@ export class MessageManager {
     this.callbacks.set(type, callback)
   }
 
-  notify(message: Message, type?: string) {
+  notify(message: Message<T>, type?: string) {
     if (type == undefined) {
-      if (this.callback !== undefined) {
-        this.callback?.(message);
-      }
+      this.callback?.(message)
       return
     }
 
-    let tmpCallback: Callback | undefined = this.callbacks.get(type)
+    let tmpCallback: Callback<T> = this.callbacks.get(type)!;
     if (tmpCallback === undefined) {
       console.error('callbacks has no callback for type ' + type)
       return

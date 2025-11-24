@@ -13,21 +13,10 @@
  * limitations under the License.
  */
 import { MessageManager, Callback, Message } from '../../common/MessageManager';
-import { Entry, Text, Column, Component, Select, Font, Color } from '@ohos.arkui.component'  
-import { State } from '@ohos.arkui.stateManagement' 
+import { Entry, Text, Column, Component, Select, Font, Color } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
+import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import { AppStorage } from '@ohos.arkui.stateManagement'
 
-class MyClass {
-  name: string;
-  messageManager: MessageManager;
-  message: MessageManager;
-
-  constructor() {
-    this.name = 'messageManager';
-    this.messageManager = new MessageManager();
-    this.message = this.messageManager;
-  }
-}
 
 @Entry
 @Component
@@ -45,47 +34,48 @@ struct SelectPage {
   @State optionFont: Font = { size: 16, weight: 400 } as Font
   @State optionFontColor: Color = Color.Green
   @State indexValue: number = 0
-  messageManager:MessageManager = new MessageManager()
+  messageManager:MessageManager<string|int|Font|Color> = new MessageManager<string|int|Font|Color>()
 
   onPageShow() {
     console.info('SelectPage onPageShow')
-    
-    
-    
-    
-    AppStorage.setOrCreate("value",  new MyClass());
-    let callback: Callback = (message: Message) => {
+    AppStorage.setOrCreate<MessageManager<string|int|Font|Color>>("messageManager", this.messageManager);
+    let callback: (message: Message<string|int|Font|Color>)=>void = (message: Message<string|int|Font|Color>) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'optionValue') {
-        this.optionValue = message.value as String
+        this.optionValue = (message as Message<string>).value
       }
       if (message.name == 'icon') {
-        this.icon = message.value as String
+        this.icon = (message as Message<string>).value
       }
       if (message.name == 'selected') {
-        this.selected = Number.parseInt(message.value.toString()) as int
+        this.selected = (message as Message<int>).value
       }
       if (message.name == 'selectValue') {
-        this.selectValue = message.value as String
+        this.selectValue = (message as Message<string>).value
       }
       if (message.name == 'selectFont') {
-        this.selectFont = message.value as Font
+        this.selectFont = (message as Message<Font>).value
       }
       if (message.name == 'fontColor') {
+        this.fontColor = (message as Message<Color>).value
       }
       if (message.name == 'selectedOptionBgColor') {
+        this.selectedOptionBgColor = (message as Message<Color>).value
       }
       if (message.name == 'selectedOptionFont') {
-        this.selectedOptionFont = message.value as Font
+        this.selectedOptionFont = (message as Message<Font>).value
       }
       if (message.name == 'selectedOptionFontColor') {
+        this.selectedOptionFontColor = (message as Message<Color>).value
       }
       if (message.name == 'optionBgColor') {
+        this.optionBgColor = (message as Message<Color>).value
       }
       if (message.name == 'optionFont') {
-        this.optionFont = message.value as Font
+        this.optionFont = (message as Message<Font>).value
       }
       if (message.name == 'optionFontColor') {
+        this.optionFontColor = (message as Message<Color>).value
       }
     }
     this.messageManager.registerCallback(callback)

@@ -15,7 +15,7 @@
 import RectValue from './Rect';
 import inspector from '@ohos.arkui.inspector';
 import { TouchObject, TouchType } from '@ohos.arkui.component'
-import { sendTouchEvent } from "@kit.ArkUI";
+import { sendTouchEvent } from "@ohos.arkui.Test";
 import { Component, Driver, WindowMode } from '@ohos.UiTest';
 
 export default class Utils {

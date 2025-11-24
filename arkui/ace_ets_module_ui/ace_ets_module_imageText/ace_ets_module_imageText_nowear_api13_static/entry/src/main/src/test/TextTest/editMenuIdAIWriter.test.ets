@@ -53,11 +53,8 @@ export default function editMenuIdAIWriterTest() {
         console.info("get editMenuIdAIWriterTest state pages:" + "");
         if (!("editMenuIdAIWriter" == pages.name)) {
           console.info("get editMenuIdAIWriterTest pages.name:" + "");
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push editMenuIdAIWriterTest page error:" + err);

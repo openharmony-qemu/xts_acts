@@ -14,7 +14,7 @@
  */
 import {
   Entry, Component,
-  Column, Row, Button, ClickEvent,
+  Column, Row, Button, ClickEvent,MutableStyledString,
   RichEditor, RichEditorOptions, RichEditorController , RichEditorImageSpanResult, RichEditorTextSpanResult
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement'
@@ -22,11 +22,10 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct RichEditorMaxLengthTest {
-  
+  richEditorStyledString: MutableStyledString = new MutableStyledString('');
   controller1: RichEditorController = new RichEditorController()
-  @State maxLengthIndex:number =0
-  
-  @State maxLengthList:Array<int|undefined> = new Array<int|undefined>(-1,5,undefined,7)
+  @State maxLengthIndex: number = 0
+  @State maxLengthList:Array<int|undefined> = new Array<int|undefined>(-1,5,undefined,7.2 as int )
   build() {
     Column() {
       Row(){
@@ -44,16 +43,14 @@ struct RichEditorMaxLengthTest {
         Button('获取富文本内容')
           .id('getRichTextContent')
           .onClick((e:ClickEvent) => {
-            this.controller1.getSpans({
+            this.controller1?.getSpans({
               start: 0,
-            })?.forEach(item => {
-              
+            })?.forEach((item: RichEditorImageSpanResult | RichEditorTextSpanResult) => {
               if(item instanceof RichEditorImageSpanResult && item.imageStyle !== undefined){
               } else {
-                
                 if(item instanceof RichEditorTextSpanResult && item.symbolSpanStyle !== undefined){
                 }else {
-                  AppStorage.setOrCreate('RichEditorMaxLength',(item as RichEditorTextSpanResult).value)
+                  AppStorage.setOrCreate<string>('RichEditorMaxLength',(item as RichEditorTextSpanResult).value)
                   console.log('zww'+(item as RichEditorTextSpanResult).value)
                 }
               }
@@ -64,7 +61,7 @@ struct RichEditorMaxLengthTest {
         .width('95%')
         .margin(10)
         .height(60)
-        .maxLength(this.maxLengthList[this.maxLengthIndex.toInt()])
+        .maxLength(this.maxLengthList[this.maxLengthIndex as int])
         .backgroundColor('rgb(240,250,255)')
         .id('MaxLengthRichText')
     }

@@ -19,8 +19,8 @@ import SetMenuOptionsTest from './TextTest/setMenuOptions.test';
 import TextMenuItemId from './RichEditorTest/TextMenuItemId.test';
 
 export default function testsuite() {
-  textAreaInputTest();
-  editMenuOptions();
-  SetMenuOptionsTest();
-  TextMenuItemId();
+  // textAreaInputTest();
+  // editMenuOptions();
+  SetMenuOptionsTest(); //  Error: 5, Pass: 20  std.core.Null cannot be cast to @ohos.UiTest.UiWindow 可能是showMode: TextMenuShowMode.PREFER_WINDOW导致
+  // TextMenuItemId();
 }

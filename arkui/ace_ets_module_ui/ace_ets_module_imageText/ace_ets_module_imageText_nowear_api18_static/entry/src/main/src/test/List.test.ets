@@ -20,8 +20,9 @@ import RichEditorMaxLengthTest from './RichEditorTest/RichEditorMaxLengthTest.te
 import textAreaInputTest from './TextTest/textAreaInputTest.test';
 import MovingPhotoView from './MovingPhotoViewTest/MovingPhotoView.test'
 export default function testsuite() {
-  TextMenuItemId();
   getCaretRect();
+  TextMenuItemId();
   RichEditorMaxLengthTest();
   textAreaInputTest();
+  // MovingPhotoView()//fail 2 @ohos.multimedia.movingphotoview'未交付
 }

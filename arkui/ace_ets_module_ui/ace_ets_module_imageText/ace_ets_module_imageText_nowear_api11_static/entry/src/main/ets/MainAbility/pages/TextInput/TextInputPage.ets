@@ -32,7 +32,6 @@ import {
 } from '@ohos.arkui.component'
 import {
   State,
-  
 } from '@ohos.arkui.stateManagement'
 import { MessageManager, Callback,Message } from '../../common/MessageManager';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -46,7 +45,7 @@ struct TextInputPage {
   @State placeholderFont : Font = { size: 14, weight: 400 } as Font
   @State enterKeyType: EnterKeyType = EnterKeyType.Search
   @State caretColor: Color = Color.Blue
-  @State maxLength: number = 10
+  @State maxLength: int = 10
   @State copyOption: CopyOptions = CopyOptions.InApp
   @State showPasswordIcon: boolean = false
   @State style: TextInputStyle = TextInputStyle.Default
@@ -58,65 +57,64 @@ struct TextInputPage {
   @State onCut: string = ''
   @State onPaste: string = ''
   controller: TextInputController = new TextInputController()
-  messageManager:MessageManager = new MessageManager()
+  messageManager:MessageManager<string|InputType|Color|Font|EnterKeyType|int|boolean|TextInputStyle|TextAlign|number> = new MessageManager<string|number|InputType|Color|Font|EnterKeyType|int|boolean|TextInputStyle|TextAlign>()
 
   onPageShow() {
     console.info('TextInput onPageShow')
-    
-    
-    
-    AppStorage.setOrCreate<object>("messageManager",  this.messageManager);
+    AppStorage.setOrCreate<MessageManager<string|InputType|Color|Font|EnterKeyType|int|boolean|TextInputStyle|TextAlign|number>>("messageManager", this.messageManager);
 
-    let callback: Callback = (message: Message) => {
+    let callback: (message: Message<string|InputType|Color|Font|EnterKeyType|int|boolean|TextInputStyle|TextAlign|number>) => void = (message: Message<string|number|InputType|Color|Font|EnterKeyType|int|boolean|TextInputStyle|TextAlign>) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'placeholder') {
-        this.placeholder = message.value as string
+        this.placeholder = (message as Message<string>).value
       }
       if (message.name == 'text') {
-        this.text = message.value as string
+        this.text = (message as Message<string>).value
       }
       if (message.name == 'type') {
-        this.type = message.value as InputType
+        this.type = (message as Message<InputType>).value
       }
       if (message.name == 'placeholderColor') {
+        this.placeholderColor = (message as Message<Color>).value
       }
       if (message.name == 'placeholderFont') {
-        this.placeholderFont = message.value as Font
+        this.placeholderFont = (message as Message<Font>).value
       }
       if (message.name == 'enterKeyType') {
-        this.enterKeyType = message.value as EnterKeyType
+        this.enterKeyType = (message as Message<EnterKeyType>).value
       }
       if (message.name == 'caretColor') {
+        this.caretColor = (message as Message<Color>).value
       }
       if (message.name == 'maxLength') {
-        this.maxLength = message.value as number
+        this.maxLength = (message as Message<int>).value
       }
       if (message.name == 'copyOption') {
-        this.copyOption = message.value  as CopyOptions
+        this.copyOption = (message as Message<CopyOptions>).value
       }
       if (message.name == 'showPasswordIcon') {
-        this.showPasswordIcon = message.value  as boolean
+        this.showPasswordIcon = (message as Message<boolean>).value
       }
       if (message.name == 'style') {
-        this.style = message.value   as TextInputStyle
+        this.style = (message as Message<TextInputStyle>).value
       }
       if (message.name == 'textAlign') {
-        this.textAlign = message.value  as TextAlign
+        this.textAlign = (message as Message<TextAlign>).value
       }
       if (message.name == 'onSubmit') {
-        this.onSubmit = message.value as string
+        this.onSubmit = (message as Message<string>).value
       }
       if (message.name == 'onEditChange') {
-        this.onEditChange = message.value as string
+        this.onEditChange = (message as Message<string>).value
       }
       if (message.name == 'onCopy') {
-        this.onCopy = message.value as string
+        this.onCopy = (message as Message<string>).value
       }
       if (message.name == 'onCut') {
-        this.onCut = message.value as string
+        this.onCut = (message as Message<string>).value
       }
       if (message.name == 'onPaste') {
-        this.onPaste = message.value as string
+        this.onPaste = (message as Message<string>).value
       }
     }
     this.messageManager.registerCallback(callback)
@@ -130,7 +128,7 @@ struct TextInputPage {
         .placeholderFont(this.placeholderFont)
         .enterKeyType(this.enterKeyType)
         .caretColor(this.caretColor)
-        .maxLength(this.maxLength as int)
+        .maxLength(this.maxLength)
         .copyOption(this.copyOption)
         .showPasswordIcon(this.showPasswordIcon)
         .style(this.style)
@@ -162,11 +160,11 @@ struct TextInputPage {
       Button('Set caretPosition 1')
         .key('button')
         .onClick((e:ClickEvent) => {
-          
+          // 将光标移动至第一个字符后
           this.controller.caretPosition(1)
         })
         .height('5%')
-      
+      // 密码输入框
       TextInput({ placeholder: 'input your password...' })
         .key('password')
         .width(400)
@@ -174,7 +172,7 @@ struct TextInputPage {
         .type(InputType.Password)
         .maxLength(9)
         .showPasswordIcon(true)
-      
+      // 内联风格输入框
       TextInput({ placeholder: 'inline style' })
         .key('input')
         .width(400)

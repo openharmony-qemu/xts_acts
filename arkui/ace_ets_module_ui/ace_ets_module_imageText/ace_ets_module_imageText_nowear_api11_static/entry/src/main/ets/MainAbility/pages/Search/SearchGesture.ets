@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *   http:
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,8 +13,8 @@
  * limitations under the License.
  */
 import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent,
-  Image,ImageFit, CaretOffset, SearchController, TextAlign, Search, Row, Color } from '@ohos.arkui.component'  
-import { State } from '@ohos.arkui.stateManagement' 
+  Image,ImageFit, CaretOffset, SearchController, TextAlign, Search, Row, Color } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
+import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 
 @Entry
 @Component
@@ -23,8 +23,8 @@ struct SearchGesture {
   @State changeValue2: string = '这是预置文本'
   @State caretIndexText: string = ''
   @State caretXText: string = ''
-  @State positionInfo: CaretOffset | undefined = { index: 0, x: 0, y: 0 } as CaretOffset
-  @State positionInfo2: CaretOffset | undefined = { index: 0, x: 0, y: 0 } as CaretOffset
+  @State positionInfo: CaretOffset = { index: 0, x: 0, y: 0 } as CaretOffset
+  @State positionInfo2: CaretOffset = { index: 0, x: 0, y: 0 } as CaretOffset
   controller: SearchController = new SearchController()
   controller2: SearchController = new SearchController()
 
@@ -61,14 +61,14 @@ struct SearchGesture {
           .key('SearchCaret11')
           .onClick((): void => {
             this.controller.caretPosition(11)
-            this.positionInfo = this.controller.getCaretOffset()
-            this.caretXText = Number(this.positionInfo?.x.toString()).toFixed(2)
+            this.positionInfo = this.controller.getCaretOffset() as CaretOffset
+            this.caretXText = Number(this.positionInfo.x).toFixed(2)
           })
         Button('Get Caret')
           .key('GetCaret')
           .onClick((): void => {
-            this.positionInfo2 = this.controller2.getCaretOffset()
-            this.caretIndexText = this.positionInfo2?.index +  ''
+            this.positionInfo2 = this.controller2.getCaretOffset() as CaretOffset
+            this.caretIndexText = this.positionInfo2.index +  ''
           })
       }.height('10%')
       Row(){

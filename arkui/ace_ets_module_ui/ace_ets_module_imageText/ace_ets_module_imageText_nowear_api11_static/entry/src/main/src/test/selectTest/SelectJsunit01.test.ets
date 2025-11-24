@@ -51,10 +51,8 @@ export default function SelectJsunit01() {
         console.info("get SelectJsunit state pages: " + JSON.stringify(pages));
         if (!("SelectJsunit01" == pages.name)) {
           console.info("get SelectJsunit01 state pages.name: " + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push SelectJsunit01 page error: " + err);
@@ -73,50 +71,49 @@ export default function SelectJsunit01() {
      * @tc.level    Level.LEVEL0
      */
 it('SelectJsunit01_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      
+      // Illegal modification of properties of component select
       console.info('[SelectJsunit_0400] START');
-      
-      const message:MessageManager = AppStorage.get<MessageManager>("messageManager")!
+      const message:MessageManager<string> = AppStorage.get<MessageManager<string>>("messageManager")!
       message.notify({name:'optionValue',value:'-20'})
       await CommonFunc.sleep(2000);
-      
-      message.notify({name:'icon',value:'10'})
+  const message1:MessageManager<string> = AppStorage.get<MessageManager<string>>("messageManager")!
+      message1.notify({name:'icon',value:'10'})
       await CommonFunc.sleep(2000);
-      
-     message.notify({name:'selected',value:'test'})
+  const message2:MessageManager<string> = AppStorage.get<MessageManager<string>>("messageManager")!
+     message2.notify({name:'selected',value:'test'})
       await CommonFunc.sleep(2000);
-      
-     message.notify({name:'selectValue',value:'10'})
+  const message3:MessageManager<string> = AppStorage.get<MessageManager<string>>("messageManager")!
+     message3.notify({name:'selectValue',value:'10'})
       await CommonFunc.sleep(2000);
-      
-     message.notify({name:'selectFont',value:'###'})
+  const message4:MessageManager<string> = AppStorage.get<MessageManager<string>>("messageManager")!
+     message4.notify({name:'selectFont',value:'###'})
       await CommonFunc.sleep(2000);
-      
-     message.notify({name:'fontColor',value:'123'})
+  const message5:MessageManager<string> = AppStorage.get<MessageManager<string>>("messageManager")!
+     message5.notify({name:'fontColor',value:'123'})
       await CommonFunc.sleep(2000);
-      
-     message.notify({name:'selectedOptionBgColor',value:'0'})
+  const message6:MessageManager<string> = AppStorage.get<MessageManager<string>>("messageManager")!
+     message6.notify({name:'selectedOptionBgColor',value:'0'})
       await CommonFunc.sleep(2000);
-      
-     message.notify({name:'selectedOptionFont',value:'%666'})
+  const message7:MessageManager<string> = AppStorage.get<MessageManager<string>>("messageManager")!
+     message7.notify({name:'selectedOptionFont',value:'%666'})
       await CommonFunc.sleep(2000);
-      
-     message.notify({name:'selectedOptionFontColor',value:'hello'})
+  const message8:MessageManager<string> = AppStorage.get<MessageManager<string>>("messageManager")!
+     message8.notify({name:'selectedOptionFontColor',value:'hello'})
       await CommonFunc.sleep(2000);
-      
-     message.notify({name:'optionBgColor',value:'-10'})
+  const message9:MessageManager<string> = AppStorage.get<MessageManager<string>>("messageManager")!
+     message9.notify({name:'optionBgColor',value:'-10'})
       await CommonFunc.sleep(2000);
-      
-     message.notify({name:'optionFont',value:'aaa'})
+  const message10:MessageManager<string> = AppStorage.get<MessageManager<string>>("messageManager")!
+     message10.notify({name:'optionFont',value:'aaa'})
       await CommonFunc.sleep(2000);
-      
-     message.notify({name:'optionFontColor',value:'123'})
+  const message11:MessageManager<string> = AppStorage.get<MessageManager<string>>("messageManager")!
+     message11.notify({name:'optionFontColor',value:'123'})
       await CommonFunc.sleep(2000);
-      
-     message.notify({name:'indexValue',value:'bbb'})
+  const message12:MessageManager<string> = AppStorage.get<MessageManager<string>>("messageManager")!
+     message12.notify({name:'indexValue',value:'bbb'})
       await CommonFunc.sleep(2000);
 
-      
+      // Get the propoties value of the select component
       let strJson = inspector.getInspectorByKey('select');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[SelectJsunit_0400] component obj is: " + JSON.stringify(obj));
@@ -125,9 +122,6 @@ it('SelectJsunit01_static_0100', Level.LEVEL0, async (done: () => void): Promise
       let strJson1 = inspector.getInspectorByKey('indexValue');
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[SelectJsunit_0400] component obj1 is: " + JSON.stringify(obj1));
-      
-
-
        expect(obj.getElement('$attrs').getString('selected')).assertEqual('0');
        expect(obj.getElement('$attrs').getString('value')).assertEqual('SelecteButton');
        expect(obj.getElement('$attrs').getString('font')).assertEqual('{"size":"16.00fp","weight":"FontWeight.Medium","family":"","style":"FontStyle.Normal"}');
