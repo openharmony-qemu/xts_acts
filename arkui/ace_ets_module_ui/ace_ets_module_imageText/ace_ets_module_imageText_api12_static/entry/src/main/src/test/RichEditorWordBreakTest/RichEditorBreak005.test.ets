@@ -75,15 +75,13 @@ export default function RichEditorBreak005() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_WORDBREAK_static_0002
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_WORDBREAK_static_0002
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_WORDBREAK_static_0002
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_WORDBREAK_static_0002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_WORDBREAK_static_0002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_WORDBREAK_static_0002 START');
       let driver = Driver.create();
       await (driver.findComponent(ON.id('rich_struct')) as Promise<Component>);

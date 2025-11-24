@@ -67,7 +67,7 @@ build() {
 
         RichEditor(this.options)
           .onReady((): void => {
-            this.controller.addTextSpan('abc123', {
+            this.controller!.addTextSpan('abc123', {
               style: {
                 fontWeight: 'medium',
                 fontFamily: CommonFunc.FONT_FAMILY,
@@ -77,8 +77,8 @@ build() {
                 decoration: { type: TextDecorationType.Underline, color: Color.Green }
               }
             })
-            this.controller.addTextSpan('test demo')
-            this.controller.addTextSpan('hello world')
+            this.controller!.addTextSpan('test demo')
+            this.controller!.addTextSpan('hello world')
           })
           .onSelectionChange((value: RichEditorRange): void => {
             console.log('RichEditorController value:' + JSON.stringify(value));

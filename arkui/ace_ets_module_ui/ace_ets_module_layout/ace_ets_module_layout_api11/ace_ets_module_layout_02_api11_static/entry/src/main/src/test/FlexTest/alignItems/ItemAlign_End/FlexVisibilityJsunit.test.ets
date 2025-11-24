@@ -15,6 +15,7 @@
 
 import { describe, beforeEach, it, expect, Level, afterEach, beforeAll,Level } from '../../../../../../hypium/index'
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
+import { Visibility } from '@ohos.arkui.component'
 import { MessageManager } from '../../../../../ets/MainAbility/common/MessageManager'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -39,9 +40,8 @@ export default function flexVisibility_EndJsunit() {
   describe('flexItemAlignEndTest8', () => {
     beforeAll(() => {
       console.info("SearchTypeTest beforeEach start");
-      
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace_ets_module_layout_02_api11_static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
@@ -58,11 +58,8 @@ export default function flexVisibility_EndJsunit() {
         console.info("get flexItemAlignEndTest8 state pages:" + JSON.stringify(pages));
         if (!("ItemAlign_End_FlexVisibility" == pages.name)) {
           console.info("get flexItemAlignEndTest8 pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push flexItemAlignEndTest8 page error:" + err);
@@ -70,15 +67,13 @@ export default function flexVisibility_EndJsunit() {
       console.info("flexItemAlignEndTest8 beforeEach end");
     });
 
-
-
     afterEach(async () : Promise<void> => {
+      const routerInstance = AppStorage.get<Router>("router") as Router
+      routerInstance.pushUrl({url:"MainAbility/pages/index/index"});
       await CommonFunc.sleep(1000);
       console.info("ItemAlign_End_FlexVisibility after each called");
     });
 
-    
-    
 /*
      * @tc.number   testFlexItemAlignEndSubSetVisibilityNone_static
      * @tc.name     testFlexItemAlignEndSubSetVisibilityNone_static
@@ -88,17 +83,10 @@ export default function flexVisibility_EndJsunit() {
 it('testFlexItemAlignEndSubSetVisibilityNone_static', Level.LEVEL0, async () : Promise<void> => {
       console.info('new testFlexItemAlignEndSubSetVisibilityNone START');
       try {
-        
-        
-        
-        
-        
-        
-        
-        let result = AppStorage.get<MessageManager<number>>("messageManager")
+        let result = AppStorage.get<MessageManager<Visibility>>("messageManager")
         if (result !== null) {
           result!.notify({
-            name: 'height', value: 0
+            name: 'visibility', value: Visibility.None
           });
         }
         await CommonFunc.sleep(2000);
@@ -111,7 +99,6 @@ it('testFlexItemAlignEndSubSetVisibilityNone_static', Level.LEVEL0, async () : P
         let textVisible02: RectValue = CommonFunc.getComponentRect('ItemAlign_End_textVisible02');
         let textVisible03: RectValue = CommonFunc.getComponentRect('ItemAlign_End_textVisible03');
         let flexVisible: RectValue = CommonFunc.getComponentRect('ItemAlign_End_flexVisible');
-        const uiContext = new UIContext();
         expect(Math.abs(textVisible01.left - textVisible01.right) <= 1).assertTrue()
         expect(Math.abs(textVisible01.right - flexVisible.left) <= 1).assertTrue()
         expect(Math.abs(textVisible02.left - flexVisible.left) <= 1).assertTrue()
@@ -119,14 +106,14 @@ it('testFlexItemAlignEndSubSetVisibilityNone_static', Level.LEVEL0, async () : P
         expect(Math.abs(textVisible02.bottom - textVisible03.bottom) <= 1).assertTrue()
         expect(Math.abs(textVisible03.bottom - flexVisible.bottom) <= 1).assertTrue()
 
-        expect(Math.abs(textVisible02.bottom - textVisible02.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue()
-        expect(Math.abs(textVisible03.bottom - textVisible03.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
-        expect(Math.abs(textVisible02.right - textVisible02.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
-        expect(Math.abs(textVisible03.right - textVisible03.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+        expect(Math.abs(textVisible02.bottom - textVisible02.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue()
+        expect(Math.abs(textVisible03.bottom - textVisible03.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
+        expect(Math.abs(textVisible02.right - textVisible02.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
+        expect(Math.abs(textVisible03.right - textVisible03.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('visibility')).assertEqual("Visibility.Visible");
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.End')
-      } catch (err) {
+      } catch (err:Error) {
         console.error('[testFlexItemAlignBaselineSubSetVisibilityNone_static] failed');
         expect().assertFail();
       }
@@ -134,8 +121,6 @@ it('testFlexItemAlignEndSubSetVisibilityNone_static', Level.LEVEL0, async () : P
 
     });
 
-    
-    
 /*
      * @tc.number   testFlexItemAlignEndSubSetVisibilityHidden_static
      * @tc.name     testFlexItemAlignEndSubSetVisibilityHidden_static
@@ -145,17 +130,10 @@ it('testFlexItemAlignEndSubSetVisibilityNone_static', Level.LEVEL0, async () : P
 it('testFlexItemAlignEndSubSetVisibilityHidden_static', Level.LEVEL0, async () : Promise<void> => {
       console.info('new testFlexItemAlignEndSubSetVisibilityHidden START');
       try {
-        
-        
-        
-        
-        
-        
-        
-        let result = AppStorage.get<MessageManager<number>>("messageManager")
+        let result = AppStorage.get<MessageManager<Visibility>>("messageManager")
         if (result !== null) {
           result!.notify({
-            name: 'height', value: 0
+            name: 'visibility', value: Visibility.Hidden
           });
         }
         await CommonFunc.sleep(2000);
@@ -175,15 +153,15 @@ it('testFlexItemAlignEndSubSetVisibilityHidden_static', Level.LEVEL0, async () :
         expect(Math.abs(textVisible02.bottom - textVisible03.bottom) <= 1).assertTrue()
         expect(Math.abs(textVisible03.bottom - flexVisible.bottom) <= 1).assertTrue()
 
-        expect(Math.abs(textVisible01.bottom - textVisible01.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue()
-        expect(Math.abs(textVisible02.bottom - textVisible02.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue()
-        expect(Math.abs(textVisible03.bottom - textVisible03.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
-        expect(Math.abs(textVisible01.right - textVisible01.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
-        expect(Math.abs(textVisible02.right - textVisible02.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
-        expect(Math.abs(textVisible03.right - textVisible03.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+        expect(Math.abs(textVisible01.bottom - textVisible01.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) <= 1).assertTrue()
+        expect(Math.abs(textVisible02.bottom - textVisible02.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue()
+        expect(Math.abs(textVisible03.bottom - textVisible03.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
+        expect(Math.abs(textVisible01.right - textVisible01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
+        expect(Math.abs(textVisible02.right - textVisible02.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
+        expect(Math.abs(textVisible03.right - textVisible03.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
         expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.End')
-      } catch (err) {
+      } catch (err:Error) {
         console.error('[testFlexItemAlignBaselineSubSetVisibilityNone_static] failed');
         expect().assertFail();
       }

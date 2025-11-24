@@ -68,7 +68,7 @@ build() {
       Column() {
         RichEditor(this.options)
           .onReady((): void => {
-            this.controller.addTextSpan('abcdef',
+            this.controller!.addTextSpan('abcdef',
               {
                 style: {
                   fontColor: Color.Orange,
@@ -81,7 +81,7 @@ build() {
               })
           })
           .onWillChange((value: RichEditorChangeValue): boolean => {
-            value.replacedSpans.forEach((item: RichEditorTextSpanResult) => {
+            value.replacedSpans!.forEach((item: RichEditorTextSpanResult) => {
               console.log('change')
             })
             return true

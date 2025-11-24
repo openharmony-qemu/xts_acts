@@ -18,8 +18,6 @@ import { MessageManager, Callback, Message } from './../../../common/MessageMana
 import { Entry, Component, Column, FlexAlign, ColumnOptions, Text } from '@ohos.arkui.component'
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 
-type MessageData = number
-
 @Entry
 @Component
 struct flexGrow_Part {
@@ -29,10 +27,6 @@ struct flexGrow_Part {
   messageManager: MessageManager<number> = new MessageManager<number>()
   onPageShow() {
     console.info('flexGrow_Part onPageShow');
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<number>>("messageManager",  this.messageManager);
     let callback: Callback<number> = (message: Message<number>) => {
       console.error('message = ' + message.name + "--" + message.value);

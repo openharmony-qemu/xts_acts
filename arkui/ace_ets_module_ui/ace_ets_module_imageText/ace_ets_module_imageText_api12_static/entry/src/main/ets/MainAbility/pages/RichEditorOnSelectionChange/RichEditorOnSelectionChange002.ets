@@ -62,22 +62,22 @@ build() {
       Text('setCaretOffset:' + this.setCaretOffset).id('setCaretOffset')
 
       Button('setCaretOffset -1').onClick((e: ClickEvent) => {
-        this.controller.setCaretOffset(this.offsets);
+        this.controller!.setCaretOffset(this.offsets);
       }).id('set1')
 
       Button('setCaretOffset 0').onClick((e: ClickEvent) => {
         this.offsets = 0;
-        this.controller.setCaretOffset(this.offsets);
+        this.controller!.setCaretOffset(this.offsets);
       }).id('set2')
 
       Button('setCaretOffset 1').onClick((e: ClickEvent) => {
         this.offsets = 1;
-        this.controller.setCaretOffset(this.offsets);
+        this.controller!.setCaretOffset(this.offsets);
       }).id('set3')
 
       Button('setCaretOffset 5').onClick((e: ClickEvent) => {
         this.offsets = 5;
-        this.controller.setCaretOffset(this.offsets);
+        this.controller!.setCaretOffset(this.offsets);
       }).id('set4')
 
       Button('setCaretOffset 10000').onClick((e: ClickEvent) => {

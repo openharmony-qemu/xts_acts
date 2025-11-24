@@ -44,32 +44,32 @@ struct getLineMetricsText {
           .fontSize(25)
           .borderWidth(1)
           .onAreaChange(():void => {
-            let layoutManager: LayoutManager | undefined = this.controller.getLayoutManager()
-            this.lineCount = 'LineCount: ' + layoutManager?.getLineCount()
+            let layoutManager: LayoutManager = this.controller!.getLayoutManager() as LayoutManager
+            this.lineCount = 'LineCount: ' + String(layoutManager.getLineCount() as int)
           })
           .height('5%')
 
         Text('GlyphPositionAtCoordinate').fontSize(9).fontColor(Color.Red).width('90%').padding(10)
         Button('getGlyphPositionAtCoordinate').id('position_get')
           .onClick((e:ClickEvent) => {
-            let layoutManager: LayoutManager | undefined = this.controller.getLayoutManager()
-            let position: PositionWithAffinity | undefined = layoutManager?.getGlyphPositionAtCoordinate(150, 50)
+            let layoutManager: LayoutManager = this.controller!.getLayoutManager() as LayoutManager
+            let position: PositionWithAffinity = layoutManager!.getGlyphPositionAtCoordinate(150, 50) as PositionWithAffinity
             console.log('positionpositionposition',JSON.stringify(position))
-            // this.glyphPositionAtCoordinate =
-            //   'position: ' + position.position + ' affinity: ' +
-            //   position.affinity
+            this.glyphPositionAtCoordinate =
+              'position: ' + position.position + ' affinity: ' +
+              position.affinity
           })
           .height('5%')
 
         Text('LineMetrics').fontSize(9).fontColor(Color.Red).width('90%').padding(10)
         Button('getLineMetrics').id('lineMetrics_get')
           .onClick((e:ClickEvent) => {
-            // let layoutManager: LayoutManager = this.controller.getLayoutManager()
+            let layoutManager: LayoutManager = this.controller!.getLayoutManager() as LayoutManager
             // let lineMetrics = layoutManager.getLineMetrics(0)
             // this.startIndex = 'startIndex: ' + JSON.stringify(lineMetrics.startIndex)
             // this.lineMetrics = 'lineMetrics is ' + JSON.stringify(lineMetrics) + '\n\n'
             // let runMetrics = lineMetrics.runMetrics
-            // runMetrics.forEach((value, key) => {
+            // runMetrics!.forEach((value, key) => {
             //   this.lineMetrics += 'runMetrics key is ' + key + ' ' + JSON.stringify(value) + '\n\n'
             // });
           }).height('5%')

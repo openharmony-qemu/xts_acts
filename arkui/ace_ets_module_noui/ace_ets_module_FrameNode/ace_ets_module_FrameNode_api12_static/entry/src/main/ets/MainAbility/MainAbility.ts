@@ -16,19 +16,19 @@ import Ability from '@ohos.app.ability.UIAbility'
 export default class MainAbility extends Ability {
     static windowStage
     onCreate(want,launchParam){
-        
+        // Ability is creating, initialize resources for this ability
         console.log("[Demo] MainAbility onCreate")
         globalThis.abilityWant = want;
     }
     onDestroy() {
-        
+        // Ability is destroying, release resources for this ability
         console.log("[Demo] MainAbility onDestroy")
     }
     onWindowStageCreate(windowStage) {
-        
+        // Main window is created, set main page for this ability
         console.log("[Demo] MainAbility onWindowStageCreate windowStage="+ windowStage)
         globalThis.windowStage = windowStage
-        
+        // globalThis.windowStage1 = windowStage.getMainWindowSync().getUIContext()
         globalThis.abilityContext = this.context
         windowStage.loadContent("MainAbility/pages/index/index", (err, data) => {
             if (err.code) {
@@ -41,15 +41,15 @@ export default class MainAbility extends Ability {
         console.log('2233213')
     }
     onWindowStageDestroy() {
-        
+        //Main window is destroyed, release UI related resources
         console.log("[Demo] MainAbility onWindowStageDestroy")
     }
     onForeground() {
-        
+        // Ability has brought to foreground
         console.log("[Demo] MainAbility onForeground")
     }
     onBackground() {
-        
+        // Ability has back to background
         console.log("[Demo] MainAbility onBackground")
     }
 };

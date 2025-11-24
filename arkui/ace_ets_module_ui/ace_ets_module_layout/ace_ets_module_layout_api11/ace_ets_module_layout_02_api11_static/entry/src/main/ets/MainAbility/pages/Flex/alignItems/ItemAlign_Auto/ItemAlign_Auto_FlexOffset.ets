@@ -22,6 +22,7 @@ import {
   Button,
   ButtonAttribute,
   ClickEvent,
+
   Image,
   ImageFit,
   Scroller,
@@ -41,15 +42,11 @@ import {
   Position
 } from '@ohos.arkui.component'
 import { Router } from '@ohos.arkui.UIContext';
-/*
-import {
-  Offset
- } from '@ohos.arkui.componentUtils'
- */
+
 
 import {
   State,
-  
+
   AppStorage
 } from '@ohos.arkui.stateManagement'
 

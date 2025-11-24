@@ -13,15 +13,15 @@
  * limitations under the License.
  */
 import lazyForEachTest from './FrameNodeTest/lazyForEachTest.test';
-
+import ApplyNormalAttributeTest from './AttributeUpdaterTest/ApplyNormalAttribute.test';  // 阻塞
 import UIObserverDensityUpdateTest from './ObserverTest/UIObserverDensityUpdate.test';
 import UIObserverWillDrawTest from './ObserverTest/UIObserverWillDraw.test';
 import UIObserverDidLayoutTest from './ObserverTest/UIObserverDidLayout.test';
 
 export default function testsuite() {
-  lazyForEachTest();
-  
-  UIObserverDensityUpdateTest();
-  UIObserverWillDrawTest();
-  UIObserverDidLayoutTest();
+  lazyForEachTest();  // （page188）getFirstChildIndexWithoutExpand 造成app Died 8个用例
+  ApplyNormalAttributeTest(); //pass
+  UIObserverDensityUpdateTest(); // (page39).getUIObserver().on('densityUpdate', this.densityUpdateCallback); 造成app died 1个用例
+  UIObserverWillDrawTest(); // .getUIObserver().on('willDraw', this.willDrawCallback); 1个用例
+  UIObserverDidLayoutTest(); // .getUIObserver().on('didLayout', this.didLayoutCallback);1个用例
 }

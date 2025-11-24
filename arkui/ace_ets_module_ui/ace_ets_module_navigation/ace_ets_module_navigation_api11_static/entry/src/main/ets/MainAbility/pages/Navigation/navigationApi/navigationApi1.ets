@@ -13,15 +13,15 @@
  * limitations under the License.
  */
 import {
-  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,animateTo,AnimateParam,
-  NavigationTitleMode,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,
-  Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,
-  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date
+  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,animateTo,AnimateParam,NavPathInfo,
+  NavigationTitleMode,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,NavigationTransitionProxy,
+  Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,
+  FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, NavContentInfo,NavigationOperation,NavigationAnimatedTransition
 ,NavPathStack} from '@ohos.arkui.component';
 import {
   State,
   Link,
-  PropRef,Provide
+  Prop,Provide,Consume
 } from '@ohos.arkui.stateManagement';
 import {MessageManager,Callback,Message} from '../../../common/MessageManager';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -35,10 +35,10 @@ struct navigationApi1{
   @State durationOne: number = 1000
   @State text: string = ''
 
-  // @Provide('pageInfo') pageInfos:NavPathStack = new  NavPathStack()
+  pageInfos:NavPathStack = new  NavPathStack()
 
-  @Builder PageMap(name:string){
-    if (name === 'pageOne'){
+  @Builder PageMap(name: string, param: Object|null|undefined) {
+    if (name == 'page1'){
       pageOne()
     }
   }
@@ -65,62 +65,67 @@ struct navigationApi1{
   }
 
   build(){
-    // Navigation(this.pageInfos){
-    //   Column(){
-    //     Text(this.text).width('80%').fontSize(12).key('navigationApi1_text1')
-    //     Button('pushPath').onClick((e: ClickEvent) => {
-    //       // this.pageInfos.pushPath({name: 'pageOne'})
-    //     }).id('navigationApi1_btn1')
-    //   }.opacity(this.opacity1)
-    // }
-    // .mode(NavigationMode.Split)
-    // .navBarWidth('30%')
-    // .title('main')
-    // .navDestination(this.PageMap)
-    // .customNavContentTransition((from: NavContentInfo, to: NavContentInfo, operation: NavigationOperation) => {
-    //   this.text = NavigationOperation[operation] + ''
-    //   if (from.mode == NavDestinationMode.DIALOG || to.mode == NavDestinationMode.DIALOG) {
-    //     return undefined;
-    //   }
-    //   console.log(`current info: ${to.name}, index: ${to.index}, mode: ${to.mode}`);
-    //   console.log(`pre info: ${from.name}, index: ${from.index}, mode: ${from.mode}`);
-    //   console.log(`operation: ${operation}`)
-    //   if (from.index === -1) {
-    //     return undefined;
-    //   }
-    //   let customAnimation: NavigationAnimatedTransition = {
-    //     onTransitionEnd: () => {
-    //
-    //     },
-    //     timeout: 700,
-    //     transition: (transitionContext)=>{
-    //       let onFinish:() => void = () => {
-    //         transitionContext.finishTransition()
-    //       }
-    //
-    //       let fromAnimatedFunc: (isPush: boolean, onFinish: () => void,isexit: boolean, isPop: boolean) => void
-    //       fromAnimatedFunc = CustomTransition.getInstance().getNavParam(transitionContext.from.name)
-    //       if (fromAnimatedFunc != undefined && operation === NavigationOperation.PUSH) {
-    //         fromAnimatedFunc(operation === NavigationOperation.PUSH, onFinish,false,false)
-    //       }else if (fromAnimatedFunc != undefined && operation === NavigationOperation.POP) {
-    //         fromAnimatedFunc(operation === NavigationOperation.POP, onFinish,false,false)
-    //       }
-    //
-    //       let toAnimatedFunc:(isPush:boolean,onFinish:() => void, isexit:boolean, isPop:boolean) => void
-    //       toAnimatedFunc = CustomTransition.getInstance().getNavParam(transitionContext.to.name)
-    //       if (toAnimatedFunc != undefined && operation == NavigationOperation.PUSH) {
-    //         toAnimatedFunc(operation == NavigationOperation.PUSH, onFinish,true,false)
-    //       }
-    //     }
-    //   };
-    //   return customAnimation;
-    // })
+    Navigation(this.pageInfos){
+      List({ space: 12, initialIndex: 0 }) {
+        ForEach(['1','2'], (item: string, index: int) => {
+          ListItem() {
+            Column(){
+              Text(this.text).width('80%').fontSize(12).key('navigationApi1_text1')
+              Button('pushPath' + item)
+            }.opacity(this.opacity1).onClick((e: ClickEvent) => {
+              let pageName = 'page' + item
+              this.pageInfos.pushPathByName(pageName,null)
+            }).id('navigationApi1_btn' + item)
+          }})}
+    }
+    .mode(NavigationMode.Split)
+    .navBarWidth('30%')
+    .title('main')
+    .navDestination(this.PageMap)
+    .customNavContentTransition((from: NavContentInfo, to: NavContentInfo, operation: NavigationOperation) => {
+      this.text = NavigationOperation[operation] + ''
+      if (from.mode == NavDestinationMode.DIALOG || to.mode == NavDestinationMode.DIALOG) {
+        return undefined;
+      }
+      console.log(`current info: ${to.name}, index: ${to.index}, mode: ${to.mode}`);
+      console.log(`pre info: ${from.name}, index: ${from.index}, mode: ${from.mode}`);
+      console.log(`operation: ${operation}`)
+      let customAnimation: NavigationAnimatedTransition = {
+        onTransitionEnd: () => {
+
+        },
+        timeout: 700,
+        transition: (transitionContext: NavigationTransitionProxy)=>{
+          let onFinish:() => void = () => {
+            transitionContext.finishTransition()
+          }
+          console.log(`CustomTransitiontransition1`)
+          let fromAnimatedFunc: ((isPush: boolean, onFinish: () => void,isexit: boolean, isPop: boolean) => void) | undefined
+          fromAnimatedFunc = CustomTransition.getInstance().getNavParam(transitionContext?.from?.name??'')
+          console.log(`CustomTransitiontransition2`)
+          if (fromAnimatedFunc != undefined && operation === NavigationOperation.PUSH) {
+            fromAnimatedFunc(operation === NavigationOperation.PUSH, onFinish,false,false)
+          }else if (fromAnimatedFunc != undefined && operation === NavigationOperation.POP) {
+            fromAnimatedFunc(operation === NavigationOperation.POP, onFinish,false,false)
+          }
+          console.log(`CustomTransitiontransition3`)
+          let toAnimatedFunc:((isPush:boolean,onFinish:() => void, isexit:boolean, isPop:boolean) => void) | undefined
+          toAnimatedFunc = CustomTransition.getInstance().getNavParam(transitionContext.to.name??'')
+          console.log(`CustomTransitiontransition4`)
+          if (toAnimatedFunc != undefined && operation == NavigationOperation.PUSH) {
+            toAnimatedFunc(operation == NavigationOperation.PUSH, onFinish,true,false)
+          }
+          console.log(`CustomTransitiontransition5`)
+        }
+      };
+      return customAnimation;
+    })
   }
 }
 
 @Component
 export  struct  pageOne{
-  // @Consume('pageInfo') pageInfos:NavPathStack
+ pageInfos:NavPathStack = new  NavPathStack()
   @State opacity1: number = 1
   @State duration: int = durationOne
 
@@ -150,14 +155,12 @@ export  struct  pageOne{
   }
 
   build(){
-    Scroll(){
-      NavDestination(){
-        Column(){
-          Button('pop').onClick((e: ClickEvent) => {
-            // this.pageInfos.pop()
-          }).id('navigationApi1_btn2')
-        }.width('100%').height('100%')
-      }.title('pageOne').opacity(this.opacity1)
-    }
+    NavDestination(){
+      Column(){
+        Button('pop').onClick((e: ClickEvent) => {
+          this.pageInfos.popToName('page1')
+        }).id('navigationApi1_btn2')
+      }.width('100%').height('100%')
+    }.title('pageOne').opacity(this.opacity1)
   }
 }

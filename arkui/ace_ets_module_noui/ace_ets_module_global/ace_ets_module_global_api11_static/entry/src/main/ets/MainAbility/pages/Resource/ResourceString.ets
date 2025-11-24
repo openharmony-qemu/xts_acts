@@ -73,18 +73,18 @@ struct ResourceString {
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Swiper(this.swiperController) {
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        LazyForEach(this.data, (item: number, index: int) => {
+          Column() {
+            Column() {
+              Text('string test').fontSize(20)
+              Text('string').fontSize($r('app.string.string_' + String(item))).id('string')
+            }.border({ width: 2 }).margin(30)
+          }
+          .justifyContent(FlexAlign.SpaceEvenly)
+          .width(300)
+          .height(300)
+
+        }, (item: number) => String(item))
       }
       .cachedCount(2)
       .index(1)

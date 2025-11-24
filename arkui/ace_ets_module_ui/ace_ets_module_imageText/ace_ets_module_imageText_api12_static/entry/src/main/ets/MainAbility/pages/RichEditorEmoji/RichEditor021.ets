@@ -50,7 +50,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 struct RichEditor021 {
   controller: RichEditorController = new RichEditorController();
   options: RichEditorOptions = { controller: this.controller } as RichEditorOptions;
-  @State pointPosition: number = -1;
+  @State pointPosition: int = -1;
 
 build() {
     Column() {
@@ -59,19 +59,16 @@ build() {
         Text('' + this.pointPosition).id('position_text');
 
         Button('get Point Position').onClick((e: ClickEvent) => {
-          let caretOffset = this.controller.getCaretOffset();
-          if (caretOffset !== undefined) {
-            this.pointPosition = caretOffset;
-          }
+          this.pointPosition = this.controller!.getCaretOffset() as int;
           console.log('this.point_position:' + this.pointPosition);
         }).id('get_position')
 
         Button('set select').onClick((e: ClickEvent) => {
-          this.controller.setSelection(2, 5);
+          this.controller!.setSelection(2, 5);
         }).id('set_select')
 
         Button('set select image').onClick((e: ClickEvent) => {
-          this.controller.setSelection(7, 10);
+          this.controller!.setSelection(7, 10);
         }).id('set_select_image')
       }
       .borderWidth(1)
@@ -82,7 +79,7 @@ build() {
       Column() {
         RichEditor(this.options)
           .onReady((): void => {
-            this.controller.addTextSpan('abc\uD83D\uDE00\uD83D\uDE33\uD83D\uDC96\uD83D\uDC4F',
+            this.controller!.addTextSpan('abc\uD83D\uDE00\uD83D\uDE33\uD83D\uDC96\uD83D\uDC4F',
               {
                 style:
                 {
@@ -91,7 +88,7 @@ build() {
                 }
               })
 
-            this.controller.addImageSpan($r('app.media.icon'),
+            this.controller!.addImageSpan($r('app.media.icon'),
               {
                 imageStyle:
                 {

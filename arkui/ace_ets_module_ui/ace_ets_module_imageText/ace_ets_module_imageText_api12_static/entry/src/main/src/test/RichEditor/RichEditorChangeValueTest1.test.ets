@@ -82,15 +82,13 @@ export default function RichEditorChangeValueTest1() {
 
 
     
-    
-    
-/*
+    /*
      * @tc.number   RichEditorChangeValueTest1_static_0100
      * @tc.name     RichEditorChangeValueTest1_static_0100
      * @tc.desc     RichEditorChangeValueTest1_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('RichEditorChangeValueTest1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RichEditorChangeValueTest1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RichEditorChangeValueTest1_static_0100 START');
       await CommonFunc.sleep(2000);
 

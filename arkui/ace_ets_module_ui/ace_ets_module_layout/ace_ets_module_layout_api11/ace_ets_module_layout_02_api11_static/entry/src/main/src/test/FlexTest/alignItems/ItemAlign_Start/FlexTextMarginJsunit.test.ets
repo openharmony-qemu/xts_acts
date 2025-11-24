@@ -39,9 +39,8 @@ export default function flexTextMargin_StartJsunit() {
 
     beforeAll(() => {
       console.info("flexItemAlignStartTest4 beforeEach start");
-      
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace_ets_module_layout_02_api11_static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
@@ -57,11 +56,8 @@ export default function flexTextMargin_StartJsunit() {
         console.info("get flexItemAlignStartTest4 state pages:" + JSON.stringify(pages));
         if (!("ItemAlign_Start_FlexTextMargin" == pages.name)) {
           console.info("get flexItemAlignStartTest4 pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push flexItemAlignStartTest4 page error:" + err);
@@ -87,11 +83,9 @@ it('testFlexItemAlignStartSubSetMargin_static', Level.LEVEL0, async () : Promise
       let result = AppStorage.get<MessageManager<number>>("messageManager")
       if (result !== null) {
         result!.notify({
-          name: 'height', value: 10
+          name: 'margin', value: 10
         });
-
       }
-
       await CommonFunc.sleep(2000);
       let strJson1 = inspector.getInspectorByKey('ItemAlign_Start_flexTextMargin01');
 
@@ -99,22 +93,21 @@ it('testFlexItemAlignStartSubSetMargin_static', Level.LEVEL0, async () : Promise
       let textMargin02: RectValue = CommonFunc.getComponentRect('ItemAlign_Start_textMargin02');
       let textMargin03: RectValue = CommonFunc.getComponentRect('ItemAlign_Start_textMargin03');
       let flexTextMargin01: RectValue = CommonFunc.getComponentRect('ItemAlign_Start_flexTextMargin01');
-      const uiContext = new UIContext();
-      expect(Math.floor(Math.abs(textMargin01.left - flexTextMargin01.left - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs(textMargin02.left - textMargin01.right - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(textMargin01.left - flexTextMargin01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(textMargin02.left - textMargin01.right - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))) <= 1).assertTrue()
       expect(Math.floor(Math.abs(textMargin02.right - textMargin03.left)) <= 1).assertTrue()
-      expect(Math.floor(Math.abs(flexTextMargin01.right - textMargin03.right - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(flexTextMargin01.right - textMargin03.right - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30)))) <= 1).assertTrue()
 
-      expect(Math.floor(Math.abs(textMargin01.top - flexTextMargin01.top - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(textMargin01.top - flexTextMargin01.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))) <= 1).assertTrue()
       expect(Math.floor(Math.abs(textMargin02.top - textMargin03.top)) <= 1).assertTrue()
       expect(Math.floor(Math.abs(textMargin03.top - flexTextMargin01.top)) <= 1).assertTrue()
 
-      expect(Math.floor(Math.abs(textMargin01.bottom - textMargin01.top - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs(textMargin02.bottom - textMargin02.top - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs(textMargin03.bottom - textMargin03.top - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs(textMargin01.right - textMargin01.left - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs(textMargin02.right - textMargin02.left - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs(textMargin03.right - textMargin03.left - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(textMargin01.bottom - textMargin01.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(textMargin02.bottom - textMargin02.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(textMargin03.bottom - textMargin03.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(textMargin01.right - textMargin01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(textMargin02.right - textMargin02.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(textMargin03.right - textMargin03.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue()
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Start')
       console.info('new testFlexItemAlignStartSubSetMargin END');
@@ -134,33 +127,31 @@ it('testFlexItemAlignStartSubSetMarginExceed_static', Level.LEVEL0, async () : P
       let result = AppStorage.get<MessageManager<number>>("messageManager")
       if (result !== null) {
         result!.notify({
-          name: 'height', value: 30
+          name: 'margin', value: 30
         });
-
       }
 
       await CommonFunc.sleep(2000);
       let strJson1 = inspector.getInspectorByKey('ItemAlign_Start_flexTextMargin01');
-      const uiContext = new UIContext();
       let textMargin01: RectValue = CommonFunc.getComponentRect('ItemAlign_Start_textMargin01');
       let textMargin02: RectValue = CommonFunc.getComponentRect('ItemAlign_Start_textMargin02');
       let textMargin03: RectValue = CommonFunc.getComponentRect('ItemAlign_Start_textMargin03');
       let flexTextMargin01: RectValue = CommonFunc.getComponentRect('ItemAlign_Start_flexTextMargin01');
-      expect(Math.floor(Math.abs(textMargin01.left - flexTextMargin01.left - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs(textMargin02.left - textMargin01.right - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(textMargin01.left - flexTextMargin01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30)))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(textMargin02.left - textMargin01.right - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30)))) <= 1).assertTrue()
       expect(Math.floor(Math.abs(textMargin02.right - textMargin03.left)) <= 1).assertTrue()
       expect(Math.floor(Math.abs(textMargin03.right - flexTextMargin01.right)) <= 1).assertTrue()
 
-      expect(Math.floor(Math.abs(textMargin01.top - flexTextMargin01.top - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(textMargin01.top - flexTextMargin01.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30)))) <= 1).assertTrue()
       expect(Math.floor(Math.abs(textMargin02.top - textMargin03.top)) <= 1).assertTrue()
       expect(Math.floor(Math.abs(textMargin03.top - flexTextMargin01.top)) <= 1).assertTrue()
 
-      expect(Math.floor(Math.abs(textMargin01.bottom - textMargin01.top - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs(textMargin02.bottom - textMargin02.top - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs(textMargin03.bottom - textMargin03.top - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs(textMargin01.right - textMargin01.left - UIContext.getFocusedUIContext()!.vp2px(440 / 3))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs(textMargin02.right - textMargin02.left - UIContext.getFocusedUIContext()!.vp2px(440 / 3))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs(textMargin03.right - textMargin03.left - UIContext.getFocusedUIContext()!.vp2px(440 / 3))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(textMargin01.bottom - textMargin01.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(textMargin02.bottom - textMargin02.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(textMargin03.bottom - textMargin03.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(textMargin01.right - textMargin01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(textMargin02.right - textMargin02.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(textMargin03.right - textMargin03.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 1).assertTrue()
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Start')
       console.info('new testFlexItemAlignStartSubSetMarginExceed END');

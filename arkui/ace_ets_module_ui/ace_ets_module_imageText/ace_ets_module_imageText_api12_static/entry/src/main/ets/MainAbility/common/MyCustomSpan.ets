@@ -16,6 +16,8 @@
 import drawing from '@ohos.graphics.drawing'
 import {CustomSpan,DrawContext,CustomSpanDrawInfo,CustomSpanMeasureInfo,CustomSpanMetrics} from '@ohos.arkui.component'
 import common2D from '@ohos.graphics.displaySync'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 export class MyCustomSpan extends CustomSpan {
   constructor(word: string, width: number, height?: number) {
     this.word = word;
@@ -28,25 +30,28 @@ export class MyCustomSpan extends CustomSpan {
   }
 
   onDraw(context: DrawContext, options: CustomSpanDrawInfo) {
-    // let canvas = context.canvas;
-    //
-    // // const brush = new drawing.Brush();
-    // // brush.setColor({ alpha: 255, red: 0, green: 74, blue: 175 } as common2D.Color);
-    // const font = new drawing.Font();
-    // font.setSize(25);
-    // // const textBlob = drawing.TextBlob.makeFromString(this.word, font, drawing.TextEncoding.TEXT_ENCODING_UTF8);
-    // // canvas.attachBrush(brush);
-    // canvas.drawRect({
-    //   left: options.x + 10,
-    //   right: options.x + vp2px(this.width) - 10,
-    //   top: options.lineTop + 10,
-    //   bottom: options.lineBottom - 10
-    // });
-    //
-    // // brush.setColor({ alpha: 255, red: 23, green: 169, blue: 141 });
-    // // canvas.attachBrush(brush);
-    // // canvas.drawTextBlob(textBlob, options.x + 20, options.lineBottom - 15);
-    // canvas.detachBrush();
+    let canvas = context.canvas;
+
+    const brush = new drawing.Brush();
+    //11.6sdk不支持传入common2D.Color
+    // brush.setColor({ alpha: 255, red: 0, green: 74, blue: 175 } as common2D.Color);
+    brush.setColor(2)
+    const font = new drawing.Font();
+    font.setSize(25);
+    const textBlob = drawing.TextBlob.makeFromString(this.word, font, drawing.TextEncoding.TEXT_ENCODING_UTF8) as drawing.TextBlob;
+    canvas.attachBrush(brush);
+    canvas.drawRect({
+      left: options.x + 10,
+      right: options.x + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(this.width)) - 10,
+      top: options.lineTop + 10,
+      bottom: options.lineBottom - 10
+    });
+
+    // brush.setColor({ alpha: 255, red: 23, green: 169, blue: 141 });
+    brush.setColor(2)
+    canvas.attachBrush(brush);
+    canvas.drawTextBlob(textBlob, options.x + 20, options.lineBottom - 15);
+    canvas.detachBrush();
   }
 
   setWord(word: string) {

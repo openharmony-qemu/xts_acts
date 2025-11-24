@@ -81,15 +81,13 @@ export default function TextInputTextAreaSearch() {
       console.info("TextInputTextAreaSearch after each called");
     });
     
-    
-    
-/*
+    /*
      * @tc.number   TextInputTextAreaSearch_static_0100
      * @tc.name     TextInputTextAreaSearch_static_0100
      * @tc.desc     TextInputTextAreaSearch_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextInputTextAreaSearch_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextInputTextAreaSearch_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       // Test stop
       console.info('[TextInputTextAreaSearch_static_0100] START');
       let driver = Driver.create();
@@ -108,15 +106,13 @@ it('TextInputTextAreaSearch_static_0100', Level.LEVEL0, async (done: () => void)
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextInputTextAreaSearch_static_0200
      * @tc.name     TextInputTextAreaSearch_static_0200
      * @tc.desc     TextInputTextAreaSearch_static_0200
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextInputTextAreaSearch_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextInputTextAreaSearch_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       // Test stop
       console.info('[TextInputTextAreaSearch_static_0200] START');
       let driver = Driver.create();
@@ -134,15 +130,13 @@ it('TextInputTextAreaSearch_static_0200', Level.LEVEL0, async (done: () => void)
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextInputTextAreaSearch_static_0300
      * @tc.name     TextInputTextAreaSearch_static_0300
      * @tc.desc     TextInputTextAreaSearch_static_0300
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextInputTextAreaSearch_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextInputTextAreaSearch_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       // Test stop
       console.info('[TextInputTextAreaSearch_static_0300] START');
       let driver = Driver.create();

@@ -26,7 +26,6 @@ export default function UIObserverWillDrawTest() {
   describe('UIObserverWillDrawTest', () => {
     beforeAll(() => {
       console.info("UIObserverWillDrawTest beforeEach start");
-      await UtilsTest.msSleep(4000)
       await startAbility("com.arkui.ace.XNode.api15.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -39,8 +38,8 @@ export default function UIObserverWillDrawTest() {
         const router = AppStorage.get<Router>("router") as Router
         router.clear();
         let pages = router.getState();
-        
-        router.replaceUrl(options);
+        // let result = await router.replaceUrl(options);
+        router.pushUrl(options);
         console.info("get UIObserverWillDrawTest state pages:" + JSON.stringify(pages));
         if (!("UIObserverWillDrawTest" == pages.name)) {
           console.info("get UIObserverWillDrawTest pages.name:" + JSON.stringify(pages.name));
@@ -60,13 +59,14 @@ export default function UIObserverWillDrawTest() {
     
     
 
+
 /*
      * @tc.number   UIObserverWillDrawTest_static_0100
      * @tc.name     UIObserverWillDrawTest_static_0100
      * @tc.desc     UIObserverWillDrawTest_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('UIObserverWillDrawTest_static_0100', Level.LEVEL2, async (done: ()=>void) => {
+    it('UIObserverWillDrawTest_static_0100', Level.LEVEL2, async (done: ()=>void) => {
       console.info('UIObserverWillDrawTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

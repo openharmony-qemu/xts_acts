@@ -63,16 +63,16 @@ build() {
         Column({space: 1} as ColumnOptions){
           Row() {
             Button('+text').id("menuPolicyHIDEText").onClick((event: ClickEvent) => {
-              let CareOffset = this.controller.getCaretOffset()
-              this.controller.addTextSpan("richEditor添加文本", {
-                style: this.controller.getTypingStyle(),
+              let CareOffset = this.controller!.getCaretOffset()
+              this.controller!.addTextSpan("richEditor添加文本", {
+                style: this.controller!.getTypingStyle(),
                 offset: CareOffset
               })
             })
 
             Button('+image').onClick((event: ClickEvent) => {
-              let CareOffset = this.controller.getCaretOffset()
-              this.controller.addImageSpan($r('app.media.icon'), {
+              let CareOffset = this.controller!.getCaretOffset()
+              this.controller!.addImageSpan($r('app.media.icon'), {
                 offset: CareOffset,
                 imageStyle: { size: [80, 80], verticalAlign: ImageSpanAlignment.BOTTOM, layoutStyle: this.style_iii},
                 gesture: { onLongPress: (event: GestureEvent) => {
@@ -93,7 +93,7 @@ build() {
               LongPressGesture({duration: 400})
                 .onAction((event) => {
                   this.menuPolicyHIDEValue = "menuPolicy HIDE success"
-                  this.controller.setSelection(-1, -1, {menuPolicy: MenuPolicy.HIDE})
+                  this.controller!.setSelection(-1, -1, {menuPolicy: MenuPolicy.HIDE})
                 })
             )
 

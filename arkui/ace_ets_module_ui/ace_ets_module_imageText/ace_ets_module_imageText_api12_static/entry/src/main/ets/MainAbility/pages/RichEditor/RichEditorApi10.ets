@@ -58,20 +58,20 @@ build() {
       Column() {
         RichEditor(this.options as RichEditorOptions)
           .onReady((): void => {
-            this.controller.addTextSpan('aaaaaaaa',
+            this.controller!.addTextSpan('aaaaaaaa',
               {
                 style:
                 {
                   fontSize: 30
                 }
               })
-            this.controller.addSymbolSpan($r("sys.symbol.ohos_trash"),{
+            this.controller!.addSymbolSpan($r("sys.symbol.ohos_trash"),{
               style:
               {
                 fontSize: 30
               }
             })
-            this.controller.deleteSpans({
+            this.controller!.deleteSpans({
               start:0,
               end:2
             })
@@ -86,7 +86,7 @@ build() {
             console.log('previewText' + value.previewText)
           })
           .onWillChange((value:RichEditorChangeValue): boolean => {
-            value.replacedSymbolSpans.forEach(item => {
+            value.replacedSymbolSpans!.forEach(item => {
               this.text = String(item.symbolSpanStyle?.fontSize)
             });
             return true

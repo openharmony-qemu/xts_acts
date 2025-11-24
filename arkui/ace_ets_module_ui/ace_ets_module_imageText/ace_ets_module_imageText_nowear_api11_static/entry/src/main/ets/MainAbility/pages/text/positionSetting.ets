@@ -32,29 +32,18 @@ import {
 } from '@ohos.arkui.component'
 import {
   State,
-  
 } from '@ohos.arkui.stateManagement'
 import events_emitter from '@ohos.events.emitter';
-
-interface PositionNum {
-  x: number;
-  y: number;
-}
-
-interface PositionStr {
-  x: string;
-  y: string;
-}
 
 @Entry
 @Component
 struct PositionSetting {
   @State alignT: Alignment = Alignment.TopStart;
   @State directionT: Direction = Direction.Rtl;
-  @State position1: PositionNum = {x: 25, y: 15} as PositionNum;
-  @State position2: PositionStr = {x: '50%', y: '70%'} as PositionStr;
-  @State anchor: PositionNum = {x: 25, y: 25} as PositionNum;
-  @State offsetT: PositionNum = {x: 10, y: 15} as PositionNum;
+  @State position1: Position = {x: 25, y: 15} as Position;
+  @State position2: Position = {x: '50%', y: '70%'} as Position;
+  @State anchor: Position = {x: 25, y: 25} as Position;
+  @State offsetT: Position = {x: 10, y: 15} as Position;
   @State opacityValue: number = 1;
 
   build() {
@@ -66,15 +55,15 @@ struct PositionSetting {
           .height(50)
           .width('90%')
           .fontSize(20)
-          .backgroundColor(0xFFE4C4)
+          .backgroundColor(Color.Red)
           .key('textAlign')
 
         Text('direction').fontSize(20).fontColor(Color.Black).width('90%')
         Row() {
-          Text('1').height(50).width('25%').fontSize(20).backgroundColor(0xF5DEB3)
-          Text('2').height(50).width('25%').fontSize(20).backgroundColor(0xD2B48C)
-          Text('3').height(50).width('25%').fontSize(20).backgroundColor(0xF5DEB3)
-          Text('4').height(50).width('25%').fontSize(20).backgroundColor(0xD2B48C)
+          Text('1').height(50).width('25%').fontSize(20).backgroundColor(Color.Red)
+          Text('2').height(50).width('25%').fontSize(20).backgroundColor(Color.Red)
+          Text('3').height(50).width('25%').fontSize(20).backgroundColor(Color.Red)
+          Text('4').height(50).width('25%').fontSize(20).backgroundColor(Color.Red)
         }
         .width('90%')
         .direction(this.directionT)
@@ -84,22 +73,22 @@ struct PositionSetting {
         Row({ space: 20 } as RowOptions) {
           Text('1')
             .size({ width: '45%', height: '50' })
-            .backgroundColor(0xdeb887)
+            .backgroundColor(Color.Red)
             .border({ width: 1 })
             .fontSize(20)
           Text(`2 position(${this.position1.x}, ${this.position1.y})`)
             .size({ width: '60%', height: '30' })
-            .backgroundColor(0xbbb2cb).border({ width: 1 })
+            .backgroundColor(Color.Red).border({ width: 1 })
             .fontSize(20).align(Alignment.Start)
             .position({ x: this.position1.x, y: this.position1.y } as Position)
             .key('position1')
           Text('3')
             .size({ width: '45%', height: '50' })
-            .backgroundColor(0xdeb887)
+            .backgroundColor(Color.Red)
             .border({ width: 1 }).fontSize(20)
           Text(`4 position(${this.position2.x}, ${this.position2.y})`)
             .size({ width: '50%', height: '50' })
-            .backgroundColor(0xbbb2cb)
+            .backgroundColor(Color.Red)
             .border({ width: 1 }).fontSize(20)
             .position({ x: this.position2.x, y: this.position2.y } as Position)
             .key('position2')
@@ -109,7 +98,7 @@ struct PositionSetting {
         Stack({ alignContent: Alignment.TopStart }) {
           Row()
             .size({ width: '100', height: '100' })
-            .backgroundColor(0xdeb887)
+            .backgroundColor(Color.Red)
           Image('/images/ic_health_heart.png')
             .size({ width: 25, height: 25 })
             .markAnchor({ x: this.anchor.x, y: this.anchor.y } as Position)
@@ -122,15 +111,15 @@ struct PositionSetting {
 
         Text('offset').fontSize(20).fontColor(Color.Black).width('90%')
         Row() {
-          Text('1').size({ width: '15%', height: '100' }).backgroundColor(0xdeb887).border({ width: 1 }).fontSize(20)
+          Text('1').size({ width: '15%', height: '100' }).backgroundColor(Color.Red).border({ width: 1 }).fontSize(20)
           Text(`2\noffset(${this.offsetT.x}, ${this.offsetT.y})`)
-            .size({ width: 170, height: '50' }).backgroundColor(0xbbb2cb).border({ width: 1 })
+            .size({ width: 170, height: '50' }).backgroundColor(Color.Red).border({ width: 1 })
             .fontSize(20).align(Alignment.Start)
             .offset({ x: this.offsetT.x, y: this.offsetT.y } as Position)
             .key('offset')
-          Text('3').size({ width: '15%', height: '50' }).backgroundColor(0xdeb887).border({ width: 1 }).fontSize(20)
+          Text('3').size({ width: '15%', height: '50' }).backgroundColor(Color.Red).border({ width: 1 }).fontSize(20)
           Text('4\noffset(-10%, 20%)')
-            .size({ width: 170, height: '50' }) .backgroundColor(0xbbb2cb).border({ width: 1 }).fontSize(20)
+            .size({ width: 170, height: '50' }) .backgroundColor(Color.Red).border({ width: 1 }).fontSize(20)
             .offset({ x: '-10%', y: '50%' } as Position)
         }.width('90%').height(100).border({ width: 1, style: BorderStyle.Dashed })
       }
@@ -176,13 +165,13 @@ struct PositionSetting {
       } else if (((eventData.data) as ESObject).getProperty('direction')) {
         this.directionT =  ((eventData.data) as ESObject).getProperty('direction').toStaticObject() as Direction;
       } else if (((eventData.data) as ESObject).getProperty('position1')) {
-        this.position1 = JSON.parseJsonElement(((eventData.data) as ESObject).getProperty('position1').toString()) as PositionNum;
-        this.position2 = JSON.parseJsonElement(((eventData.data) as ESObject).getProperty('position2').toString()) as PositionStr;
+        this.position1 = JSON.parseJsonElement(((eventData.data) as ESObject).getProperty('position1').toString()) as Position;
+        this.position2 = JSON.parseJsonElement(((eventData.data) as ESObject).getProperty('position2').toString()) as Position;
 
       } else if (((eventData.data) as ESObject).getProperty('markAnchor')) {
-        this.anchor = JSON.parseJsonElement(((eventData.data) as ESObject).getProperty('markAnchor').toString())as PositionNum;
+        this.anchor = JSON.parseJsonElement(((eventData.data) as ESObject).getProperty('markAnchor').toString())as Position;
       } else if (((eventData.data) as ESObject).getProperty('offset')) {
-        this.offsetT = JSON.parseJsonElement(((eventData.data) as ESObject).getProperty('offset').toString())as PositionNum;
+        this.offsetT = JSON.parseJsonElement(((eventData.data) as ESObject).getProperty('offset').toString())as Position;
       } else if (((eventData.data) as ESObject).getProperty('opacityValue')) {
         this.opacityValue = ((eventData.data) as ESObject).getProperty('opacityValue').toNumber();
       }

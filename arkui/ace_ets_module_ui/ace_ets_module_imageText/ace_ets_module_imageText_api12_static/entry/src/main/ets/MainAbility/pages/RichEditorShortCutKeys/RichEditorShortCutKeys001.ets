@@ -91,7 +91,7 @@ build() {
         .borderColor(Color.Red)
         .width('100%')
         .onReady((): void => {
-          this.controller.addTextSpan('abcd',
+          this.controller!.addTextSpan('abcd',
             {
               style:
               {
@@ -101,16 +101,16 @@ build() {
             })
         })
         .onWillChange((value: RichEditorChangeValue): boolean => {
-          value.replacedSpans.forEach((item: RichEditorTextSpanResult) => {
+          value.replacedSpans!.forEach((item: RichEditorTextSpanResult) => {
             console.log('RichEditorController item:' + JSON.stringify(item.value));
             this.finalText = JSON.stringify(item.value);
           })
           console.log('print replacedImageSpans')
-          value.replacedImageSpans.forEach((item: RichEditorImageSpanResult) => {
+          value.replacedImageSpans!.forEach((item: RichEditorImageSpanResult) => {
             console.log('RichEditorController imageStyle:' + JSON.stringify(item.imageStyle))
             console.log('RichEditorController offsetInSpan:' + item.offsetInSpan)
           })
-          value.replacedSymbolSpans.forEach((item: RichEditorTextSpanResult) => {
+          value.replacedSymbolSpans!.forEach((item: RichEditorTextSpanResult) => {
             console.log('RichEditorController symbolSpanStyle:' + JSON.stringify(item.symbolSpanStyle))
             console.log('RichEditorController paragraphStyle:' + JSON.stringify(item.paragraphStyle))
           })

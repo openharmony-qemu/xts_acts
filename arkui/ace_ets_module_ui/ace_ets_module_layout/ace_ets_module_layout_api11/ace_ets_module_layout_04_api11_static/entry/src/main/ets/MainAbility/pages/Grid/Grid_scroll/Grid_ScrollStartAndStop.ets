@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,7 +19,7 @@ import { State,AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct Grid_ScorllStartAndStop {
-  @State numberData: String[] = ['0', '1', '2', '3', '4'];
+  @State Number01: String[] = ['0', '1', '2', '3', '4'] as string[];
   scroller: Scroller = new Scroller();
   @State text1: string = '';
   @State text2: string = '';
@@ -61,8 +61,8 @@ struct Grid_ScorllStartAndStop {
 
       Stack({ alignContent: Alignment.BottomEnd }) {
         Grid(this.scroller) {
-          ForEach(this.numberData, (day: string) => {
-            ForEach(this.numberData, (day: string) => {
+          ForEach(this.Number01, (day: string) => {
+            ForEach(this.Number01, (day: string) => {
               GridItem() {
                 Text(day)
                   .fontSize(16)

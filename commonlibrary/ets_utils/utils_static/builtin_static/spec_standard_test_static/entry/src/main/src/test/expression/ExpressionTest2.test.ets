@@ -645,9 +645,9 @@ export default function expressionTest2() {
      * @tc.level Level 1
      */
     it('ExpressionTest0235', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let a: number = -2147483648;
-      let result: number = a >>> 31;
-      let expected: number = 1;
+      let a: int = -2147483648;
+      let result: int = a >>> 31;
+      let expected: int = 1;
       expect(result).assertEqual(expected);
     });
 
@@ -887,10 +887,10 @@ export default function expressionTest2() {
      * @tc.level Level 1
      */
     it('ExpressionTest0253', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let a: number = -0;
+      let a: number = -0.0;
       let b: number = 5;
       let result: number = a * b;
-      let expected: number = -0;
+      let expected: number = -0.0;
       expect(1 / result).assertEqual(-Infinity); // Check for -0 specifically
     });
 
@@ -1302,9 +1302,9 @@ export default function expressionTest2() {
      * @tc.level Level 1
      */
     it('ExpressionTest0283', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let a: number = 0x40000000;
-      let result: number = (a << 1) >>> 0;
-      let expected: number = 0x80000000;
+      let a: int = 0x40000000;
+      let result: int = (a << 1) >>> 0;
+      let expected: int = 0x80000000;
       expect(result).assertEqual(expected);
     });
 
@@ -1332,9 +1332,9 @@ export default function expressionTest2() {
      * @tc.level Level 1
      */
     it('ExpressionTest0285', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      let a: number = 0x80000000;
-      let result: number = a >>> 2;
-      let expected: number = 0x20000000;
+      let a: int = 0x80000000;
+      let result: int = a >>> 2;
+      let expected: int = 0x20000000;
       expect(result).assertEqual(expected);
     });
 
@@ -1654,9 +1654,9 @@ export default function expressionTest2() {
      * @tc.level Level 1
      */
     it('ExpressionTest0310', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const a: number = 1073741824; // 0b01000000000000000000000000000000
-      const result: number = a << 1;
-      const expected: number = -2147483648; // Overflow becomes negative
+      const a: int = 1073741824; // 0b01000000000000000000000000000000
+      const result: int = a << 1;
+      const expected: int = -2147483648; // Overflow becomes negative
       expect(result).assertEqual(expected);
     });
 

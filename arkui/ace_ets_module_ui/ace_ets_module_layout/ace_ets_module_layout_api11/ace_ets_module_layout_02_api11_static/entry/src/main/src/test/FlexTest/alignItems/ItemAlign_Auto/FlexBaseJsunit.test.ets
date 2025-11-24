@@ -38,9 +38,8 @@ export default function flexBase_AutoJsunit() {
   describe('flexItemAlignAutoTest3', () => {
     beforeAll(() => {
       console.info("flexItemAlignAutoTest3 beforeEach start");
-      
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace_ets_module_layout_02_api11_static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
@@ -58,11 +57,8 @@ export default function flexBase_AutoJsunit() {
         console.info("get flexItemAlignAutoTest3 state pages:" + JSON.stringify(pages));
         if (!("ItemAlign_Auto_FlexBase" == pages.name)) {
           console.info("get flexItemAlignAutoTest3 pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push flexItemAlignAutoTest3 page error:" + err);
@@ -103,23 +99,19 @@ it('testFlexItemAlignAutoFlexWidHeiMeet_static', Level.LEVEL0, async () => {
       expect(Math.abs(flex01.top - textFlex01.top) <= 1).assertTrue();
       expect(Math.abs(textFlex01.top - textFlex02.top) <= 1).assertTrue();
       expect(Math.abs(textFlex02.top - textFlex03.top) <= 1).assertTrue();
-
       expect(Math.abs(textFlex01.right - textFlex02.left) <= 1).assertTrue();
       expect(Math.abs(textFlex02.right - textFlex03.left) <= 1).assertTrue();
-      const uiContext = new UIContext();
-      expect(Math.abs(Math.round(flex01.right - textFlex03.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
-
-      expect(Math.abs(Math.round(textFlex01.bottom - textFlex01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(textFlex02.bottom - textFlex02.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(textFlex03.bottom - textFlex03.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(textFlex01.right - textFlex01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(textFlex02.right - textFlex02.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(textFlex03.right - textFlex03.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(flex01.right - textFlex03.right) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(textFlex01.bottom - textFlex01.top) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(textFlex02.bottom - textFlex02.top) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(textFlex03.bottom - textFlex03.top) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(textFlex01.right - textFlex01.left) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(textFlex02.right - textFlex02.left) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(textFlex03.right - textFlex03.left) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue();
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row');
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Auto');
       console.info('new testFlexItemAlignAutoFlexWidHeiMeet END');
-
-    });
+    })
 
     
     
@@ -131,7 +123,6 @@ it('testFlexItemAlignAutoFlexWidHeiMeet_static', Level.LEVEL0, async () => {
      */
 it('testFlexItemAlignAutoFlexWidHeiOverflow_static', Level.LEVEL0, async (): Promise<void> => {
       console.info('new testFlexItemAlignAutoFlexWidHeiOverflow_static START');
-
       let result = AppStorage.get<MessageManager<number>>("messageManager")
       if (result !== null) {
         result!.notify({
@@ -141,7 +132,6 @@ it('testFlexItemAlignAutoFlexWidHeiOverflow_static', Level.LEVEL0, async (): Pro
           name: 'width', value: 420
         });
       }
-
       await CommonFunc.sleep(2000);
       let strJson1 = inspector.getInspectorByKey('ItemAlign_Auto_flex01');
       let textFlex01: RectValue = CommonFunc.getComponentRect('ItemAlign_Auto_textFlex01');
@@ -154,13 +144,12 @@ it('testFlexItemAlignAutoFlexWidHeiOverflow_static', Level.LEVEL0, async (): Pro
 
       expect(Math.abs(textFlex03.right - flex01.right) <= 1).assertTrue();
       expect(textFlex03.bottom).assertLarger(flex01.bottom);
-      const uiContext = new UIContext();
-      expect(Math.abs(Math.round(textFlex01.bottom - textFlex01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(textFlex02.bottom - textFlex02.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(textFlex03.bottom - textFlex03.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(textFlex01.right - textFlex01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(140))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(textFlex02.right - textFlex02.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(140))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(textFlex03.right - textFlex03.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(140))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(textFlex01.bottom - textFlex01.top) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(textFlex02.bottom - textFlex02.top) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(textFlex03.bottom - textFlex03.top) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(textFlex01.right - textFlex01.left) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(140)))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(textFlex02.right - textFlex02.left) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(140)))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(textFlex03.right - textFlex03.left) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(140)))) <= 1).assertTrue();
 
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row');
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Auto');

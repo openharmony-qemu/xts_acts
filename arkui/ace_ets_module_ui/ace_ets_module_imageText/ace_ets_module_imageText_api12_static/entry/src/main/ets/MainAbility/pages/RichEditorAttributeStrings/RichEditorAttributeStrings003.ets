@@ -60,19 +60,16 @@ build() {
     Column() {
 
       Button('get spans').onClick((e: ClickEvent) => {
-        let spans = this.controller.getSpans({
+        this.controller!.getSpans({
           start: 0,
           end: 9
-        });
-        if (spans !== undefined) {
-          spans.forEach(item => {
-            this.spans += (item as RichEditorTextSpanResult).value + '\n';
-          })
-        }
+        })!.forEach(item => {
+          this.spans += (item as RichEditorTextSpanResult).value + '\n';
+        })
       }).id('getSpans')
 
       Button('set care').onClick((e: ClickEvent) => {
-        this.controller.setSelection(1, 3);
+        this.controller!.setSelection(1, 3);
       }).id('setCare')
 
 
@@ -81,7 +78,7 @@ build() {
 
       RichEditor(this.options as RichEditorOptions)
         .onReady((): void => {
-          this.controller.addTextSpan('0123',
+          this.controller!.addTextSpan('0123',
             {
               style:
               {
@@ -90,7 +87,7 @@ build() {
                 textShadow: { radius: 10, color: Color.Blue, offsetX: 10, offsetY: 0 }
               }
             })
-          this.controller.addTextSpan('abc',
+          this.controller!.addTextSpan('abc',
             {
               style:
               {

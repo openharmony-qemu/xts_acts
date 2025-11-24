@@ -17,7 +17,7 @@ import { Builder, DataPanelConfiguration, Column, ForEach, Line, Row, Text, Alig
 } from '@ohos.arkui.component'
 import {
   State,
-  PropRef,
+  Prop,
   AppStorage
 } from '@ohos.arkui.stateManagement'
 
@@ -27,7 +27,7 @@ function buildDataPanel(config: DataPanelConfiguration) {
   Column() {
     Column() {
       ForEach(config.values, (item: number, index: int) => {
-        ChildItem({ item: item, index: index, max: config.maxValue })
+        ChildItem({ item: item, index: index as int, max: config.maxValue })
       })
     }.padding(10)
 
@@ -70,9 +70,9 @@ struct DataPanelBuilderExample {
 
 @Component
 struct ChildItem {
-  @PropRef item: number;
-  @PropRef index: number;
-  @PropRef max: number;
+  @Prop item: number;
+  @Prop index: int;
+  @Prop max: number;
   public color1: string = '#65ff00dd'
   public color2: string = '#6500ff99'
   public color3: string = '#65ffe600'
@@ -87,7 +87,7 @@ struct ChildItem {
         Rect()
           .height(25)
           .width(this.item * 600 / this.max)
-          .foregroundColor(this.colorArray[this.index.toInt()])
+          .foregroundColor(this.colorArray[this.index])
           .radius(5)
           .align(Alignment.Start)
         Text(' ' + this.item)

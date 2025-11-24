@@ -39,9 +39,8 @@ export default function flexHeightModify_AutoJsunit() {
 
     beforeAll(() => {
       console.info("flexItemAlignAutoTest6 beforeEach start");
-      
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace_ets_module_layout_02_api11_static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
@@ -57,11 +56,8 @@ export default function flexHeightModify_AutoJsunit() {
         console.info("get flexItemAlignAutoTest6 state pages:" + JSON.stringify(pages));
         if (!("ItemAlign_Auto_FlexHeightModify" == pages.name)) {
           console.info("get flexItemAlignAutoTest6 pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push flexItemAlignAutoTest6 page error:" + err);
@@ -85,7 +81,6 @@ export default function flexHeightModify_AutoJsunit() {
 it('testFlexItemAlignAutoTextHeiCheck_static', Level.LEVEL0, async (): Promise<void> => {
       console.info('new testFlexItemAlignAutoTextHeiCheck_static START');
       let strJson1 = inspector.getInspectorByKey('ItemAlign_Auto_flexHeightModify');
-
       let textHeightModify01: RectValue = CommonFunc.getComponentRect('ItemAlign_Auto_textHeightModify01');
       let textHeightModify02: RectValue = CommonFunc.getComponentRect('ItemAlign_Auto_textHeightModify02');
       let textHeightModify03: RectValue = CommonFunc.getComponentRect('ItemAlign_Auto_textHeightModify03');
@@ -97,13 +92,12 @@ it('testFlexItemAlignAutoTextHeiCheck_static', Level.LEVEL0, async (): Promise<v
 
       expect(Math.abs(textHeightModify01.left - flexHeightModify.left) <= 1).assertTrue();
       expect(Math.abs(textHeightModify02.left - textHeightModify01.right) <= 1).assertTrue();
-      const uiContext = new UIContext();
-      expect(Math.abs(textHeightModify01.bottom - textHeightModify01.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue();
-      expect(Math.abs(textHeightModify02.bottom - textHeightModify02.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs(textHeightModify03.bottom - textHeightModify03.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(textHeightModify01.right - textHeightModify01.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(textHeightModify02.right - textHeightModify02.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(textHeightModify03.right - textHeightModify03.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(textHeightModify01.bottom - textHeightModify01.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(textHeightModify02.bottom - textHeightModify02.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(textHeightModify03.bottom - textHeightModify03.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
+      expect(Math.abs(textHeightModify01.right - textHeightModify01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
+      expect(Math.abs(textHeightModify02.right - textHeightModify02.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
+      expect(Math.abs(textHeightModify03.right - textHeightModify03.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row');
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Auto');
       console.info('new testFlexItemAlignAutoTextHeiCheck_static END');
@@ -125,9 +119,7 @@ it('testFlexItemAlignAutoTextHei_static', Level.LEVEL0, async (): Promise<void> 
         result!.notify({
           name: 'height', value: 80
         });
-
       }
-
       await CommonFunc.sleep(2000);
       let strJson1 = inspector.getInspectorByKey('ItemAlign_Auto_flexHeightModify');
 
@@ -135,7 +127,6 @@ it('testFlexItemAlignAutoTextHei_static', Level.LEVEL0, async (): Promise<void> 
       let textHeightModify02: RectValue = CommonFunc.getComponentRect('ItemAlign_Auto_textHeightModify02');
       let textHeightModify03: RectValue = CommonFunc.getComponentRect('ItemAlign_Auto_textHeightModify03');
       let flexHeightModify: RectValue = CommonFunc.getComponentRect('ItemAlign_Auto_flexHeightModify');
-      const uiContext = new UIContext();
       expect(Math.abs(textHeightModify01.top - textHeightModify02.top) <= 1).assertTrue();
       expect(Math.abs(textHeightModify02.top - textHeightModify03.top) <= 1).assertTrue();
       expect(Math.abs(textHeightModify01.top - flexHeightModify.top) <= 1).assertTrue();
@@ -143,12 +134,12 @@ it('testFlexItemAlignAutoTextHei_static', Level.LEVEL0, async (): Promise<void> 
       expect(Math.abs(textHeightModify01.left - flexHeightModify.left) <= 1).assertTrue();
       expect(Math.abs(textHeightModify02.left - textHeightModify01.right) <= 1).assertTrue();
 
-      expect(Math.abs(textHeightModify01.bottom - textHeightModify01.top - UIContext.getFocusedUIContext()!.vp2px(80)) <= 1).assertTrue();
-      expect(Math.abs(textHeightModify02.bottom - textHeightModify02.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue();
-      expect(Math.abs(textHeightModify03.bottom - textHeightModify03.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(textHeightModify01.right - textHeightModify01.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(textHeightModify02.right - textHeightModify02.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
-      expect(Math.abs(textHeightModify03.right - textHeightModify03.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue();
+      expect(Math.abs(textHeightModify01.bottom - textHeightModify01.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(80))) <= 1).assertTrue();
+      expect(Math.abs(textHeightModify02.bottom - textHeightModify02.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue();
+      expect(Math.abs(textHeightModify03.bottom - textHeightModify03.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
+      expect(Math.abs(textHeightModify01.right - textHeightModify01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
+      expect(Math.abs(textHeightModify02.right - textHeightModify02.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
+      expect(Math.abs(textHeightModify03.right - textHeightModify03.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue();
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row');
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Auto');
       console.info('new testFlexItemAlignAutoTextHei_static END');

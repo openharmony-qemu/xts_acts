@@ -31,6 +31,7 @@ import { Router } from '@ohos.arkui.UIContext';
 import {
   State,
 
+
   AppStorage
 } from '@ohos.arkui.stateManagement'
 @Entry
@@ -101,15 +102,16 @@ struct flexDirectionExample {
 
   private stateChangCallBack:(eventData: events_emitter.EventData)=>void = (eventData: events_emitter.EventData) => {
     if (eventData != null) {
+      const data = eventData.data as Record<String,undefined|null|Object>
       console.info("swiper page state change called:" + JSON.stringify(eventData));
-      if (((eventData.data) as ESObject)?.getProperty('width') != null) {
-        
+      if (data['width'] != null) {
+        this.sWidth = data['width'] as string;
       }
-      if (((eventData.data) as ESObject)?.getProperty('height') != null) {
-        
+      if (data['height'] != null) {
+        this.sHeight = data['height'] as number;
       }
-      if (((eventData.data) as ESObject)?.getProperty('backgroundColor') != null) {
-        
+      if (data['backgroundColor'] != null) {
+        this.sBackgroundColor = data['backgroundColor'] as Color;
       }
     }
   }

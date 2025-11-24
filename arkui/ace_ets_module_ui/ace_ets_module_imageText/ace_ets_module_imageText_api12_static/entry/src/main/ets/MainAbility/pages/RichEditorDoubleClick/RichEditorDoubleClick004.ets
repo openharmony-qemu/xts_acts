@@ -62,14 +62,14 @@ build() {
 
         RichEditor(this.options)
           .onReady((): void => {
-            this.controller.addImageSpan($r('app.media.icon'),
+            this.controller!.addImageSpan($r('app.media.icon'),
               {
                 imageStyle:
                 {
                   size: ['15px', '15px']
                 }
               })
-            this.controller.addImageSpan($r('app.media.icon'),
+            this.controller!.addImageSpan($r('app.media.icon'),
               {
                 imageStyle:
                 {

@@ -16,7 +16,6 @@ import { Entry,Column,Component,Button,XComponent,NodeContainer,Position,Video,X
 import { State } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
 import { NodeController, FrameNode, BuilderNode, NodeRenderType } from '@ohos.arkui.node';
-
 let message: string = 'init'
 
 // class XComponentNodeController extends NodeController {

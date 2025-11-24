@@ -68,19 +68,16 @@ struct RichEditor2 {
           GridItem() {
             Button(item + "")
               .width('10%').onClick((e: ClickEvent) => {
-                let caretOffset = this.controller.getCaretOffset();
-                if (caretOffset !== undefined) {
-                  this.controller.addTextSpan(item + '', {
-                    offset: caretOffset,
-                    style:
-                    {
-                      fontColor: Color.Orange,
-                      fontSize: 10
-                    }
-                  })
-                  this.controller.setCaretOffset(caretOffset + String(item).length)
+              this.controller!.addTextSpan(item + '', {
+                offset: this.controller!.getCaretOffset(),
+                style:
+                {
+                  fontColor: Color.Orange,
+                  fontSize: 10
                 }
               })
+              this.controller!.setCaretOffset(this.controller!.getCaretOffset() as int + String(item).length)
+            })
           }
         })
       }.maxCount(3).columnsGap('1%').rowsGap('1%').padding('1%')

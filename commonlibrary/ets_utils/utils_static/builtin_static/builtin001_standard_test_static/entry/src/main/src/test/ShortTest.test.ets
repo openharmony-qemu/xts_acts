@@ -875,7 +875,7 @@ export default function builtinsShortPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_SHORT_PROTOTYPEB_TEST_4100
      * @tc.name builtinsShortPrototypebTest4100
-     * @tc.desc test public equals(other: NullishType): boolean
+     * @tc.desc test public equals(other: Any): boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -893,7 +893,7 @@ export default function builtinsShortPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_SHORT_PROTOTYPEB_TEST_4200
      * @tc.name builtinsShortPrototypebTest4200
-     * @tc.desc test public equals(other: NullishType): boolean
+     * @tc.desc test public equals(other: Any): boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -912,7 +912,7 @@ export default function builtinsShortPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_SHORT_PROTOTYPEB_TEST_4300
      * @tc.name builtinsShortPrototypebTest4300
-     * @tc.desc test public equals(other: NullishType): boolean
+     * @tc.desc test public equals(other: Any): boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -931,7 +931,7 @@ export default function builtinsShortPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_SHORT_PROTOTYPEB_TEST_4400
      * @tc.name builtinsShortPrototypebTest4400
-     * @tc.desc test public equals(other: NullishType): boolean
+     * @tc.desc test public equals(other: Any): boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -949,7 +949,7 @@ export default function builtinsShortPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_SHORT_PROTOTYPEB_TEST_4500
      * @tc.name builtinsShortPrototypebTest4500
-     * @tc.desc test public equals(other: NullishType): boolean
+     * @tc.desc test public equals(other: Any): boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -967,7 +967,7 @@ export default function builtinsShortPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_SHORT_PROTOTYPEB_TEST_4600
      * @tc.name builtinsShortPrototypebTest4600
-     * @tc.desc test public equals(other: NullishType): boolean
+     * @tc.desc test public equals(other: Any): boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -987,7 +987,7 @@ export default function builtinsShortPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_SHORT_PROTOTYPEB_TEST_4700
      * @tc.name builtinsShortPrototypebTest4700
-     * @tc.desc test public equals(other: NullishType): boolean
+     * @tc.desc test public equals(other: Any): boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2
@@ -1011,7 +1011,7 @@ export default function builtinsShortPrototypebTest() {
     /**
      * @tc.number SUB_BUILTINS_SHORT_PROTOTYPEB_TEST_4800
      * @tc.name builtinsShortPrototypebTest4800
-     * @tc.desc test public equals(other: NullishType): boolean
+     * @tc.desc test public equals(other: Any): boolean
      * @tc.size MediumTest
      * @tc.type Function
      * @tc.level Level 2

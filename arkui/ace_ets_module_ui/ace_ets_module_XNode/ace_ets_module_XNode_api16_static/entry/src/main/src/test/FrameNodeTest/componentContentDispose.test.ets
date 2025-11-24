@@ -58,10 +58,10 @@ export default function componentContentDisposeTest() {
         console.info("get componentContentDisposeTest_0100 state pages:" + JSON.stringify(pages));
         if (!("componentContentDisposeTest" == pages.name)) {
           console.info("get componentContentDisposeTest_0100 pages.name:" + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push componentContentDisposeTest_0100 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push componentContentDisposeTest_0100 page error:" + err);
@@ -77,13 +77,14 @@ export default function componentContentDisposeTest() {
     
     
 
+
 /*
      * @tc.number   componentContentDisposeTest_static_0100
      * @tc.name     componentContentDisposeTest_static_0100
      * @tc.desc     componentContentDisposeTest_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('componentContentDisposeTest_static_0100', Level.LEVEL2, async (done: () => void) => {
+    it('componentContentDisposeTest_static_0100', Level.LEVEL2, async (done: () => void) => {
       console.info('componentContentDisposeTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

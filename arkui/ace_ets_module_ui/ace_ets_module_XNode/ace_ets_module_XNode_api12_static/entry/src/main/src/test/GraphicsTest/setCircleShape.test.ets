@@ -40,20 +40,21 @@ export default function setCircleShapeTest() {
         console.info("get setCircleShapeTest state pages: " + JSON.stringify(pages));
         if (!("setCircleShape" == pages.name)) {
           console.info("get setCircleShapeTest state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push setCircleShapeTest success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push setCircleShapeTest page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     }); 
 
     
     
+
 
 /*
      * @tc.number   setCircleShapeTest_static_0010
@@ -61,7 +62,7 @@ export default function setCircleShapeTest() {
      * @tc.desc     setCircleShapeTest_static_0010
      * @tc.level    Level.LEVEL0
      */
-it('setCircleShapeTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('setCircleShapeTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('setCircleShapeTest_0010 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);

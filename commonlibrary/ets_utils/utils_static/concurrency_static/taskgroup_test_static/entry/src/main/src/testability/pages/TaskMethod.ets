@@ -67,7 +67,7 @@ export async function printArgsLock1() {
 export async function printArgsLock3() {
   try {
     // 获取锁
-    await lock.acquire1().then((e: NullishType): void => {
+    await lock.acquire1().then((e: Any): void => {
       console.log('Lock is held.');
       console.log('Executing task...');
       if (Math.random() < 1) { // 抛出异常
@@ -86,14 +86,14 @@ export async function printArgsLock3() {
 export async function printArgsLock5() {
   try {
     // 获取锁
-    await lock.acquire1().then((e: NullishType): void => {
+    await lock.acquire1().then((e: Any): void => {
       console.log('Lock is held.');
       console.log('Executing task...');
       if (Math.random() < 1) { // 抛出异常
         throw new Error('Simulated error in task execution.');
       }
       console.log('Task completed successfully.');
-    }).catch((error: NullishType) => {
+    }).catch((error: Any) => {
       console.error('Error during task execution:',(error as BusinessError).message);
       if (Math.random() < 1) { // 抛出异常
         throw new Error('Simulated error in task execution.');
@@ -109,11 +109,11 @@ export async function printArgsLock5() {
 export async function printArgsLock7() {
   try {
     // 获取锁
-    await lock.acquire1().then((e: NullishType): void => {
+    await lock.acquire1().then((e: Any): void => {
       console.log('Lock is held.');
       console.log('Executing task...');
       console.log('Task completed successfully.');
-    }).catch((error: NullishType) => {
+    }).catch((error: Any) => {
       console.error('Error during task execution:', (error as BusinessError).message);
     })
   } finally {
@@ -145,7 +145,7 @@ export async function printArgsPromise1() {
 
 export async function printArgsPromise3() {
   await asyncTask()
-    .then((e: NullishType) => {
+    .then((e: Any) => {
       // 在.then回调中模拟抛出异常
       if (Math.random() < 1) {
         throw new Error('Simulated error in then callback.');
@@ -156,13 +156,13 @@ export async function printArgsPromise3() {
 
 export async function printArgsPromise5() {
   await asyncTask()
-    .then((e: NullishType) => {
+    .then((e: Any) => {
       if (Math.random() < 1) {
         throw new Error('Simulated error in then callback.');
       }
       console.log('Task completed successfully');
     })
-    .catch((error: NullishType) => {
+    .catch((error: Any) => {
       console.error('caught error in then callback:',  (error as BusinessError).message);
       if (Math.random() < 1) {
         throw new Error('Simulated error in then callback.');
@@ -172,10 +172,10 @@ export async function printArgsPromise5() {
 
 export async function printArgsPromise7() {
   await asyncTask()
-    .then((e: NullishType) => {
+    .then((e: Any) => {
       console.log('Task completed successfully');
     })
-    .catch((error: NullishType) => {
+    .catch((error: Any) => {
       console.error('caught error in then callback:',  (error as BusinessError).message);
     })
     .finally(() => {
@@ -215,7 +215,7 @@ export async function printArgsWait(a: AsyncLockTest) {
 }
 
 export async function printArgsWait1(a: AsyncLockTest1) {
-  await a.setCount(10).then((e: NullishType): void => {
+  await a.setCount(10).then((e: Any): void => {
     if (Math.random() < 1) {
       throw new Error('Simulated error in then callback.');
     }
@@ -223,11 +223,11 @@ export async function printArgsWait1(a: AsyncLockTest1) {
 }
 
 export async function printArgsWait2(a: AsyncLockTest1) {
-  await a.setCount(10).then((e: NullishType): void => {
+  await a.setCount(10).then((e: Any): void => {
     if (Math.random() < 1) {
       throw new Error('Simulated error in then callback.');
     }
-  }).catch((error: NullishType) => {
+  }).catch((error: Any) => {
     if (Math.random() < 1) {
       throw new Error('Simulated error in catch callback.');
     }
@@ -235,7 +235,7 @@ export async function printArgsWait2(a: AsyncLockTest1) {
 }
 
 export async function printArgsWait3(a: AsyncLockTest1) {
-  await a.setCount(10).then((e: NullishType): void => {
+  await a.setCount(10).then((e: Any): void => {
   }).finally(() => {
     if (Math.random() < 1) {
       throw new Error('Simulated error in finally callback.');
@@ -261,7 +261,7 @@ export async function printArgsTaskpool1(args: Number): Promise<Number> {
   let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
   taskGroup.addTask(printArgs02, 1.0);
   try {
-    await taskpool.execute(taskGroup).then((e: NullishType) => {
+    await taskpool.execute(taskGroup).then((e: Any) => {
       if (Math.random() < 1) { // 抛出异常
         throw new Error('Simulated error in then execution.');
       }
@@ -279,9 +279,9 @@ export async function printArgsTaskpool2(args: Number): Promise<Number> {
   let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
   taskGroup.addTask(printArgs01, 1.0);
   try {
-    await taskpool.execute(taskGroup).then((e: NullishType) => {
+    await taskpool.execute(taskGroup).then((e: Any) => {
 
-    }).catch((e: NullishType) => {
+    }).catch((e: Any) => {
       if (Math.random() < 1) { // 抛出异常
         throw new Error('Simulated error in catch execution.');
       }
@@ -299,7 +299,7 @@ export async function printArgsTaskpool3(args: Number): Promise<Number> {
   let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
   taskGroup.addTask(printArgs02, 1.0);
   try {
-    await taskpool.execute(taskGroup).then((e: NullishType) => {
+    await taskpool.execute(taskGroup).then((e: Any) => {
 
     }).finally(() => {
       if (Math.random() < 1) { // 抛出异常

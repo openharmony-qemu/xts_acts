@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import {
-  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,animateTo,AnimateParam,Search,TextAlign,Axis,NavBarPosition,
+  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,animateTo,AnimateParam,Search,TextAlign,Axis,NavBarPosition,PopInfo,
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,
   Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,
   FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Visibility,Date,NavigationCommonTitle,NavDestinationCommonTitle
@@ -21,7 +21,7 @@ import {
 import {
   State,
   Link,
-  PropRef,Provide
+  Prop,Provide
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
@@ -29,7 +29,7 @@ import { BusinessError } from '@ohos.base';
 @Entry
 @Component
 struct navigation_pushDestinationByName7 {
-  // @Provide('pageInfos') pageInfos: NavPathStack = new NavPathStack()
+  @Provide pageInfos: NavPathStack = new NavPathStack()
   @State str:string = '1'
   @State code:string = '2'
 
@@ -49,20 +49,20 @@ struct navigation_pushDestinationByName7 {
   }
 
   build() {
-    // Navigation(this.pageInfos) {
+    Navigation(this.pageInfos) {
       Column({space:5} as ColumnOptions) {
 
         Button('pushDestinationByName')
           .fontSize(14)
           .onClick((e: ClickEvent) => {
-            // this.pageInfos.pushDestinationByName('pageOne',null,(popInfo: PopInfo)=>{})
-            //   .then(()=>{
-            //     this.str = 'success'
-            //   })
-            //   .catch((error: BusinessError)=>{
-            //     console.log('Test:'+JSON.stringify(error))
-            //     this.code = (error.code).toString() + error.message
-            //   })
+            this.pageInfos.pushDestinationByName('pageOne',{},(popInfo: PopInfo)=>{})
+              .then(()=>{
+                this.str = 'success'
+              })
+              .catch((error: BusinessError): void =>{
+                console.log('Test:'+JSON.stringify(error))
+                this.code = (error.code).toString() + error.message
+              })
           })
           .id('navigation_pushDestinationByName7_pushDestination')
 
@@ -70,6 +70,6 @@ struct navigation_pushDestinationByName7 {
         Text(this.code).id('navigation_pushDestinationByName7_text_code')
 
       }
-    // }.title('Navigation')
+    }.title('Navigation')
   }
 }

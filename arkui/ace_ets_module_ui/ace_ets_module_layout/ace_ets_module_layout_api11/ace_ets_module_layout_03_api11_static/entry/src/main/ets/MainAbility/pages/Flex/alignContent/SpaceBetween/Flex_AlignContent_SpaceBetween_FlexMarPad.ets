@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,7 +16,7 @@
 
 
 import { MessageManager, Callback, Message } from '../../../../common/MessageManager';
-import { Entry, Component, Column,ColumnOptions,Text,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign } from '@ohos.arkui.component';
+import { Entry, Component,Color, Column,ColumnOptions,Text,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign } from '@ohos.arkui.component';
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 
 @Entry
@@ -28,10 +28,6 @@ struct FlexAlign_SpaceBetween_FlexMarPad {
 
   onPageShow() {
     console.info('FlexAlign_SpaceBetween_FlexMarPad onPageShow');
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<number>>("messageManager",  this.messageManager);
     let callback: Callback<number> = (message: Message<number>) => {
       console.log('message = ' + message.name + "--" + message.value);
@@ -48,16 +44,16 @@ struct FlexAlign_SpaceBetween_FlexMarPad {
   build() {
     Column({ space: 30 } as ColumnOptions) {
       Flex({ wrap: FlexWrap.Wrap, alignContent: FlexAlign.SpaceBetween } as FlexOptions) {
-        Text('1').width(150).height(50).backgroundColor(0xD2B48C).key('AlignContent_SpaceBetween_FlexMarPad01');
-        Text('2').width(150).height(100).backgroundColor(0xF5DEB3).key('AlignContent_SpaceBetween_FlexMarPad02');
-        Text('3').width(150).height(150).backgroundColor(0xD2B48C).key('AlignContent_SpaceBetween_FlexMarPad03');
-        Text('4').width(150).height(200).backgroundColor(0xF5DEB3).key('AlignContent_SpaceBetween_FlexMarPad04');
+        Text('1').width(150).height(50).backgroundColor(Color.Red).key('AlignContent_SpaceBetween_FlexMarPad01');
+        Text('2').width(150).height(100).backgroundColor(Color.Red).key('AlignContent_SpaceBetween_FlexMarPad02');
+        Text('3').width(150).height(150).backgroundColor(Color.Red).key('AlignContent_SpaceBetween_FlexMarPad03');
+        Text('4').width(150).height(200).backgroundColor(Color.Red).key('AlignContent_SpaceBetween_FlexMarPad04');
       }
       .width(200)
       .height(540)
       .padding(this.testPadding)
       .margin(this.testMargin)
-      .backgroundColor(0xAFEEEE)
+      .backgroundColor(Color.Red)
       .key('FlexAlign_SpaceBetween_FlexMarPad_Container01')
     }
     .width('100%')

@@ -69,15 +69,13 @@ export default function TextAreaAutoCapitalizationModeTest() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextAreaAutoCapitalizationModeTest_static_0010
      * @tc.name     TextAreaAutoCapitalizationModeTest_static_0010
      * @tc.desc     TextAreaAutoCapitalizationModeTest_static_0010
-     * @tc.level    Level.LEVEL2
+     * @tc.level   Level.LEVEL2
      */
-it('TextAreaAutoCapitalizationModeTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('TextAreaAutoCapitalizationModeTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[TextAreaAutoCapitalizationModeTest_static_0010] START');
       let strJson = inspector.getInspectorByKey('TextArea_AutoCapitalizationMode_NONE');
       let obj = JSON.parseJsonElement(strJson);
@@ -89,15 +87,13 @@ it('TextAreaAutoCapitalizationModeTest_static_0010', Level.LEVEL2, async (done: 
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextAreaAutoCapitalizationModeTest_static_0020
      * @tc.name     TextAreaAutoCapitalizationModeTest_static_0020
      * @tc.desc     TextAreaAutoCapitalizationModeTest_static_0020
-     * @tc.level    Level.LEVEL2
+     * @tc.level   Level.LEVEL2
      */
-it('TextAreaAutoCapitalizationModeTest_static_0020', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('TextAreaAutoCapitalizationModeTest_static_0020', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[TextAreaAutoCapitalizationModeTest_static_0020] START');
       let strJson = inspector.getInspectorByKey('TextArea_AutoCapitalizationMode_WORDS');
       let obj = JSON.parseJsonElement(strJson);
@@ -109,15 +105,13 @@ it('TextAreaAutoCapitalizationModeTest_static_0020', Level.LEVEL2, async (done: 
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextAreaAutoCapitalizationModeTest_static_0030
      * @tc.name     TextAreaAutoCapitalizationModeTest_static_0030
      * @tc.desc     TextAreaAutoCapitalizationModeTest_static_0030
-     * @tc.level    Level.LEVEL2
+     * @tc.level   Level.LEVEL2
      */
-it('TextAreaAutoCapitalizationModeTest_static_0030', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('TextAreaAutoCapitalizationModeTest_static_0030', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[TextAreaAutoCapitalizationModeTest_static_0030] START');
       let strJson = inspector.getInspectorByKey('TextArea_AutoCapitalizationMode_SENTENCES');
       let obj = JSON.parseJsonElement(strJson);
@@ -129,15 +123,13 @@ it('TextAreaAutoCapitalizationModeTest_static_0030', Level.LEVEL2, async (done: 
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextAreaAutoCapitalizationModeTest_static_0040
      * @tc.name     TextAreaAutoCapitalizationModeTest_static_0040
      * @tc.desc     TextAreaAutoCapitalizationModeTest_static_0040
-     * @tc.level    Level.LEVEL2
+     * @tc.level   Level.LEVEL2
      */
-it('TextAreaAutoCapitalizationModeTest_static_0040', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('TextAreaAutoCapitalizationModeTest_static_0040', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[TextAreaAutoCapitalizationModeTest_static_0040] START');
       let strJson = inspector.getInspectorByKey('TextArea_AutoCapitalizationMode_ALL_CHARACTERS');
       let obj = JSON.parseJsonElement(strJson);
@@ -149,15 +141,13 @@ it('TextAreaAutoCapitalizationModeTest_static_0040', Level.LEVEL2, async (done: 
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextAreaAutoCapitalizationModeTest_static_0050
      * @tc.name     TextAreaAutoCapitalizationModeTest_static_0050
      * @tc.desc     TextAreaAutoCapitalizationModeTest_static_0050
-     * @tc.level    Level.LEVEL2
+     * @tc.level   Level.LEVEL2
      */
-it('TextAreaAutoCapitalizationModeTest_static_0050', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('TextAreaAutoCapitalizationModeTest_static_0050', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[TextAreaAutoCapitalizationModeTest_static_0050] START');
       let strJson = inspector.getInspectorByKey('TextArea_AutoCapitalizationMode_default');
       let obj = JSON.parseJsonElement(strJson);
@@ -169,15 +159,13 @@ it('TextAreaAutoCapitalizationModeTest_static_0050', Level.LEVEL2, async (done: 
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextAreaAutoCapitalizationModeTest_static_0060
      * @tc.name     TextAreaAutoCapitalizationModeTest_static_0060
      * @tc.desc     TextAreaAutoCapitalizationModeTest_static_0060
-     * @tc.level    Level.LEVEL2
+     * @tc.level   Level.LEVEL2
      */
-it('TextAreaAutoCapitalizationModeTest_static_0060', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('TextAreaAutoCapitalizationModeTest_static_0060', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[TextAreaAutoCapitalizationModeTest_static_0060] START');
       let strJson = inspector.getInspectorByKey('TextArea_AutoCapitalizationMode_undefined');
       let obj = JSON.parseJsonElement(strJson);
@@ -189,15 +177,13 @@ it('TextAreaAutoCapitalizationModeTest_static_0060', Level.LEVEL2, async (done: 
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextAreaAutoCapitalizationModeTest_static_0070
      * @tc.name     TextAreaAutoCapitalizationModeTest_static_0070
      * @tc.desc     TextAreaAutoCapitalizationModeTest_static_0070
-     * @tc.level    Level.LEVEL2
+     * @tc.level   Level.LEVEL2
      */
-it('TextAreaAutoCapitalizationModeTest_static_0070', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('TextAreaAutoCapitalizationModeTest_static_0070', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[TextAreaAutoCapitalizationModeTest_static_0070] START');
       let strJson = inspector.getInspectorByKey('TextArea_AutoCapitalizationMode_0');
       let obj = JSON.parseJsonElement(strJson);

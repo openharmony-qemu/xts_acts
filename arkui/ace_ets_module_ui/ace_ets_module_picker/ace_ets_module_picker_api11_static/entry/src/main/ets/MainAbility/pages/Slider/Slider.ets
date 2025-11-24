@@ -36,14 +36,14 @@ import {
 import {
   State,
   Link,
-  PropRef,
+  Prop,
 } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct slider {
-  @State inSetValue: double = 40
-  @State outSetValue: double = 40
-  @State Begin: SliderChangeMode = SliderChangeMode.Begin
+  @State inSetValue: number = 40
+  @State outSetValue: number = 40
+  @State Begin: number = SliderChangeMode.Begin
   onPageShow() {
     console.info('Slider page show called');
   }
@@ -70,9 +70,11 @@ struct slider {
           .blockColor('#FFFF0000')
           .selectedColor('#FF0000FF')
           .trackColor('#FF808080')
+          //.minLabel('0')
+          //.maxLabel('100')
           .showTips(false)
           .showSteps(false)
-          .onChange((value: double, mode: SliderChangeMode): void => {
+          .onChange((value: number, mode: SliderChangeMode): void => {
             this.outSetValue = value
             this.Begin = mode
             console.info('value: ' + value + '---mode: ' + mode)
@@ -80,6 +82,7 @@ struct slider {
           .width("100")
           .height("100")
           .key('slider1')
+          .id('slider1')
         Slider({
           value: 40,
           min: 0,
@@ -93,6 +96,7 @@ struct slider {
           .showTips(true)
           .showSteps(true)
           .key('slider2')
+          .id('slider2')
       }.width(300)
       .height(300)
       .borderColor(Color.Pink)

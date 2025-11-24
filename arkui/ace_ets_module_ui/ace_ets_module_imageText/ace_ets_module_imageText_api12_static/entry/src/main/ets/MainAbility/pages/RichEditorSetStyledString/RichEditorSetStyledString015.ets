@@ -54,18 +54,18 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Component
 struct RichEditorSetStyledString015 {
   @State onWillChangeCall: boolean = false;
-  @State careNum: Int | undefined = 0;
+  @State careNum: int = 0;
   @State textStyle: string = '';
   imagePixelMap: image.PixelMap | undefined = undefined;
   richEditorStyledString: MutableStyledString = new MutableStyledString('');
 
-  fontStyle2: TextStyle = {
+  fontStyle2: TextStyle = new TextStyle({
     fontWeight: FontWeight.Bolder,
     fontFamily: 'Arial',
     fontColor: Color.Orange,
-    // fontSize: LengthMetrics.vp(50),
+    fontSize: LengthMetrics.vp(50),
     fontStyle: FontStyle.Italic
-  } as TextStyle
+  })
 
   styledString: StyledString = new StyledString('test',
     [{ start: 0, length: 4, styledKey: StyledStringKey.FONT,
@@ -100,28 +100,25 @@ struct RichEditorSetStyledString015 {
             verticalAlign: ImageSpanAlignment.CENTER,
             objectFit: ImageFit.Contain
           } as ImageAttachmentInterface))
-          let currentString = this.controller.getStyledString();
-          if (currentString !== undefined) {
-            this.richEditorStyledString = currentString;
-            this.richEditorStyledString.appendStyledString(imageStyledString);
-            this.controller.setStyledString(this.richEditorStyledString as StyledString);
-            this.controller.setCaretOffset(this.richEditorStyledString.length);
-          }
+          this.richEditorStyledString = this.controller!.getStyledString()!;
+          this.richEditorStyledString.appendStyledString(imageStyledString);
+          this.controller!.setStyledString(this.richEditorStyledString as StyledString);
+          this.controller!.setCaretOffset(this.richEditorStyledString.length);
         }
       }).id('image_top')
 
       Button('set care').onClick((e: ClickEvent) => {
-        this.controller.setCaretOffset(2);
+        this.controller!.setCaretOffset(2);
       }).id('set_care')
 
       Button('get care').onClick((e: ClickEvent) => {
-        this.careNum =  this.controller.getCaretOffset();
+        this.careNum =  this.controller!.getCaretOffset() as int;
       }).id('get_care')
 
       Button('setTypingStyle')
         .fontSize(10)
         .onClick((e: ClickEvent) => {
-          this.controller.setTypingStyle(
+          this.controller!.setTypingStyle(
             {
               fontWeight: 'medium',
               fontFamily: 'MiSans-Bold',
@@ -133,20 +130,20 @@ struct RichEditorSetStyledString015 {
         }).id('setTypingStyle')
 
       Button('getTypingStyle').onClick((e: ClickEvent) => {
-        let richEditorTextStyle = this.controller.getTypingStyle();
+        let richEditorTextStyle = this.controller!.getTypingStyle();
         this.textStyle = JSON.stringify(richEditorTextStyle);
         console.log('RichEditor getTypingStyle:' + JSON.stringify(richEditorTextStyle));
       }).id('getTypingStyle')
 
       Button('close menu').onClick((e: ClickEvent) => {
-        this.controller.closeSelectionMenu();
+        this.controller!.closeSelectionMenu();
       }).id('close_menu')
 
-      Text('careNum:' + (this.careNum !== undefined ? this.careNum : '')).id('careNum')
+      Text('careNum:' + this.careNum).id('careNum')
       Text('textStyle:' + this.textStyle).id('textStyle')
       RichEditor(this.options)
         .onReady((): void => {
-          this.controller.setStyledString(this.styledString);
+          this.controller!.setStyledString(this.styledString);
         })
         .height('20%')
         .width('100%')

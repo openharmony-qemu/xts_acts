@@ -68,7 +68,7 @@ build() {
 
 
       Button('setTypingStyle insert').onClick((e: ClickEvent) => {
-        this.controller.setTypingStyle(
+        this.controller!.setTypingStyle(
           {
             fontWeight: 'medium',
             fontFamily: 'MiSans-Bold',
@@ -77,10 +77,8 @@ build() {
             fontStyle: FontStyle.Italic,
             decoration: { type: TextDecorationType.Underline, color: Color.Green }
           })
-        let caretOffset = this.controller.getCaretOffset();
-        if (caretOffset !== undefined) {
-          this.controller.setCaretOffset(caretOffset - 3);
-        }
+        this.controller!.setCaretOffset(this.controller!.getCaretOffset() as int - 3)
+
       }).id('set_style')
 
       RichEditor({ controller: this.controller } as RichEditorOptions)
@@ -89,7 +87,7 @@ build() {
         .borderColor(Color.Red)
         .width('100%')
         .onReady((): void => {
-          this.controller.addTextSpan('123',
+          this.controller!.addTextSpan('123',
             {
               style:
               {
@@ -97,7 +95,7 @@ build() {
                 fontSize: 30
               }
             })
-          this.controller.addTextSpan('abc',
+          this.controller!.addTextSpan('abc',
             {
               style:
               {
@@ -109,7 +107,7 @@ build() {
         .onWillChange((value: RichEditorChangeValue): boolean => {
           console.log('RichEditorController：onWillChange')
           this.onWillChangeCallback = true;
-          value.replacedSpans.forEach((item: RichEditorTextSpanResult) => {
+          value.replacedSpans!.forEach((item: RichEditorTextSpanResult) => {
             console.log('RichEditorController：replacedSpans');
             console.log('RichEditorController item:' + JSON.stringify(item));
             console.log('RichEditorController spanPosition spanIndex:' + JSON.stringify(item.spanPosition.spanIndex));
@@ -121,7 +119,7 @@ build() {
           return true;
         })
         .aboutToDelete((value: RichEditorDeleteValue): boolean => {
-          value.richEditorDeleteSpans.forEach(item => {
+          value.richEditorDeleteSpans!.forEach(item => {
             console.log('RichEditorController aboutToDelete spanIndex:' + item.spanPosition.spanIndex);
           })
           return true;

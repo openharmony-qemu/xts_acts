@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../hypium/index';
 import router from '@ohos.router';
+
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
 import { GlobalContext } from '../../../../ets/MainAbility/common/GlobalContext'
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
@@ -35,7 +36,6 @@ export default function RelativeContainer_Level() {
   describe('RelativeContainer_Level', () => {
     beforeAll(async() => {
       console.info("RelativeContainer_Level beforeAll start");
-   
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -52,10 +52,8 @@ export default function RelativeContainer_Level() {
         console.info("get RelativeContainer_Level state pages:" + "");
         if (!("RelativeContainer_Level" == pages.name)) {
           console.info("get RelativeContainer_Level pages.name:" + "");
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push RelativeContainer_Level page error " + JSON.stringify(err));

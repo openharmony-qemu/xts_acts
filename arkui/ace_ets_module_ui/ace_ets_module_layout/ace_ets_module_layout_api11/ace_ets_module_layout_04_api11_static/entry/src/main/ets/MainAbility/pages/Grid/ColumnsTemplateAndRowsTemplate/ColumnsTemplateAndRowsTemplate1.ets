@@ -13,30 +13,32 @@
  * limitations under the License.
  */
 import { Entry, Component, Column, ColumnOptions, Grid, GridItem, Text, TextAlign } from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement';
+import { State, AppStorage,StorageProp } from '@ohos.arkui.stateManagement';
 import { MessageManager, Callback, Message } from '../../../common/MessageManager';
 
 @Entry
 @Component
 struct ColumnsTemplateAndRowsTemplate1 {
-  @State columnStart1: number = 0;
-  @State columnEnd1: number = 1;
-  @State rowStart1: number = 1;
-  @State rowEnd1: number = 1;
-  messageManager: MessageManager<number> = new MessageManager<number>();
+  @StorageProp('columnStart1') columnStart1: int = 0;
+  @State columnEnd1: int = 1;
+  @State rowStart1: int = 1;
+  @State rowEnd1: int = 1;
+  messageManager: MessageManager<int> = new MessageManager<int>();
 
   onPageShow() {
     console.info('ColumnsTemplateAndRowsTemplate1 page show called');
-    AppStorage.setOrCreate<MessageManager<number>>('messageManager', this.messageManager);
-    let callback: Callback<number> = (message: Message<number>) => {
+    AppStorage.setOrCreate<MessageManager<int>>('messageManager', this.messageManager);
+    let callback: (message: Message<int>)=>void = (message: Message<int>) => {
       console.log('message = ' + message.name + "--" + message.value);
       if (message.name == 'columnStart1') {
         this.columnStart1 = message.value;
       } else if (message.name == 'columnEnd1') {
         this.columnEnd1 = message.value;
       } else if (message.name == 'rowStart1') {
+        console.info('rowStart1rowStart1rowStart1rowStart1',message.value)
         this.rowStart1 = message.value;
       } else if (message.name == 'rowEnd1') {
+        console.info('rowEnd1rowEnd1rowEnd1',message.value)
         this.rowEnd1 = message.value;
       }
     };
@@ -56,12 +58,10 @@ struct ColumnsTemplateAndRowsTemplate1 {
         }
         .border({ width: 1 })
         .borderColor(0x000000)
-        
-        
-        .columnStart(Double.toInt(this.columnStart1))
-        .columnEnd(Double.toInt(this.columnEnd1))
-        .rowStart(Double.toInt(this.rowStart1))
-        .rowEnd(Double.toInt(this.rowEnd1))
+        .columnStart(this.columnStart1 as int)
+        .columnEnd(this.columnEnd1 as int)
+        .rowStart(this.rowStart1)
+        .rowEnd(this.rowEnd1)
         .key('ColumnsTemplateAndRowsTemplate1_GridItem_01')
       }
       .columnsTemplate('1fr 1fr 1fr 1fr 1fr')

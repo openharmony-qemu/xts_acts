@@ -41,21 +41,22 @@ export default function edgeWidths() {
         console.info("get edgeWidths state pages: " + JSON.stringify(pages));
         if (!("edgeWidths" == pages.name)) {
           console.info("get edgeWidths state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push edgeWidths success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push edgeWidths page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     }); 
 
     
      
     
+
 
 /*
      * @tc.number   edgeWidths_static_0100
@@ -63,7 +64,7 @@ export default function edgeWidths() {
      * @tc.desc     edgeWidths_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('edgeWidths_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('edgeWidths_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('edgeWidths_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -74,7 +75,7 @@ it('edgeWidths_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
       let obj = JSON.parseJsonElement(strJson);
       console.info("[edgeWidths_0100] component obj is: " + JSON.stringify(obj));
       console.info("[edgeWidths_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('edgeWidthsValue:5');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('edgeWidthsValue:5');//0xFF0000FF转换为十进制
       console.info('[edgeWidths_0100] END');
       done();
     });

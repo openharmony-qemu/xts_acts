@@ -26,7 +26,7 @@ import {
   FlexAlign,
   FlexOptions,
   FlexSpaceOptions,
-  ItemAlign
+  ItemAlign,Color
 } from '@ohos.arkui.component';
 import { LengthMetrics } from '@ohos.arkui.node';
 
@@ -36,116 +36,116 @@ struct SpaceMain5JustifyContent {
   build() {
     Column() {
       Column({ space: 5 } as ColumnOptions) {
-        Text('main：5,FlexWrap.NoWrap').fontSize(9).fontColor(0xCCCCCC).width('90%')
+        Text('main：5,FlexWrap.NoWrap').fontSize(9).fontColor(Color.Red).width('90%')
         Flex({
           direction: FlexDirection.Row,
           wrap: FlexWrap.NoWrap,
           space: { main: LengthMetrics.vp(5) } as FlexSpaceOptions
-        } as FlexOptions) { 
-          Text('1').width('50%').height(50).backgroundColor(0xF5DEB3)
-          Text('2').width('50%').height(50).backgroundColor(0xD2B48C)
-          Text('3').width('50%').height(50).backgroundColor(0xD2B48C)
+        } as FlexOptions) { // 子组件多行布局
+          Text('1').width('50%').height(50).backgroundColor(Color.Red)
+          Text('2').width('50%').height(50).backgroundColor(Color.Red)
+          Text('3').width('50%').height(50).backgroundColor(Color.Red)
         }
         .id("SpaceMain5NoWrap_1")
         .width('90%')
         .padding(10)
-        .backgroundColor(0xAFEEEE)
+        .backgroundColor(Color.Red)
 
-        Text('main：5, justifyContent: FlexAlign.Start').fontSize(9).fontColor(0xCCCCCC).width('90%')
+        Text('main：5, justifyContent: FlexAlign.Start').fontSize(9).fontColor(Color.Red).width('90%')
         Flex({
           direction: FlexDirection.RowReverse,
           wrap: FlexWrap.Wrap,
           justifyContent: FlexAlign.Start,
           space: { main: LengthMetrics.vp(5) } as FlexSpaceOptions
         } as FlexOptions) {
-          Text('1').width('50%').height(50).backgroundColor(0xF5DEB3)
-          Text('2').width('50%').height(50).backgroundColor(0xD2B48C)
-          Text('3').width('50%').height(50).backgroundColor(0xD2B48C)
+          Text('1').width('50%').height(50).backgroundColor(Color.Red)
+          Text('2').width('50%').height(50).backgroundColor(Color.Red)
+          Text('3').width('50%').height(50).backgroundColor(Color.Red)
         }
         .id("SpaceMain5JustifyContent_Start")
         .width('90%')
         .padding(10)
-        .backgroundColor(0xAFEEEE)
+        .backgroundColor(Color.Red)
 
-        Text('main：5, justifyContent: FlexAlign.Center').fontSize(9).fontColor(0xCCCCCC).width('90%')
+        Text('main：5, justifyContent: FlexAlign.Center').fontSize(9).fontColor(Color.Red).width('90%')
         Flex({
           direction: FlexDirection.RowReverse,
           wrap: FlexWrap.Wrap,
           justifyContent: FlexAlign.Center,
           space: { main: LengthMetrics.vp(5) } as FlexSpaceOptions
         } as FlexOptions) {
-          Text('1').width('50%').height(50).backgroundColor(0xF5DEB3)
-          Text('2').width('50%').height(50).backgroundColor(0xD2B48C)
-          Text('3').width('50%').height(50).backgroundColor(0xD2B48C)
+          Text('1').width('50%').height(50).backgroundColor(Color.Red)
+          Text('2').width('50%').height(50).backgroundColor(Color.Red)
+          Text('3').width('50%').height(50).backgroundColor(Color.Red)
         }
         .id("SpaceMain5JustifyContent_Center")
         .width('90%')
         .padding(10)
-        .backgroundColor(0xAFEEEE)
+        .backgroundColor(Color.Red)
 
-        Text('main：5, justifyContent: FlexAlign.End').fontSize(9).fontColor(0xCCCCCC).width('90%')
+        Text('main：5, justifyContent: FlexAlign.End').fontSize(9).fontColor(Color.Red).width('90%')
         Flex({
           direction: FlexDirection.RowReverse,
           wrap: FlexWrap.Wrap,
           justifyContent: FlexAlign.End,
           space: { main: LengthMetrics.vp(5) } as FlexSpaceOptions
         } as FlexOptions) {
-          Text('1').width('50%').height(50).backgroundColor(0xF5DEB3)
-          Text('2').width('50%').height(50).backgroundColor(0xD2B48C)
-          Text('3').width('50%').height(50).backgroundColor(0xD2B48C)
+          Text('1').width('50%').height(50).backgroundColor(Color.Red)
+          Text('2').width('50%').height(50).backgroundColor(Color.Red)
+          Text('3').width('50%').height(50).backgroundColor(Color.Red)
         }
         .id("SpaceMain5JustifyContent_End")
         .width('90%')
         .padding(10)
-        .backgroundColor(0xAFEEEE)
+        .backgroundColor(Color.Red)
 
-        Text('main：5, justifyContent: FlexAlign.SpaceBetween').fontSize(9).fontColor(0xCCCCCC).width('90%')
+        Text('main：5, justifyContent: FlexAlign.SpaceBetween').fontSize(9).fontColor(Color.Red).width('90%')
         Flex({
           direction: FlexDirection.RowReverse,
           wrap: FlexWrap.Wrap,
           justifyContent: FlexAlign.SpaceBetween,
           space: { main: LengthMetrics.vp(5) } as FlexSpaceOptions
         } as FlexOptions) {
-          Text('1').width('50%').height(50).backgroundColor(0xF5DEB3)
-          Text('2').width('50%').height(50).backgroundColor(0xD2B48C)
-          Text('3').width('50%').height(50).backgroundColor(0xD2B48C)
+          Text('1').width('50%').height(50).backgroundColor(Color.Red)
+          Text('2').width('50%').height(50).backgroundColor(Color.Red)
+          Text('3').width('50%').height(50).backgroundColor(Color.Red)
         }
         .id("SpaceMain5JustifyContent_SpaceBetween")
         .width('90%')
         .padding(10)
-        .backgroundColor(0xAFEEEE)
+        .backgroundColor(Color.Red)
 
-        Text('main：5, justifyContent: FlexAlign.SpaceAround').fontSize(9).fontColor(0xCCCCCC).width('90%')
+        Text('main：5, justifyContent: FlexAlign.SpaceAround').fontSize(9).fontColor(Color.Red).width('90%')
         Flex({
           direction: FlexDirection.RowReverse,
           wrap: FlexWrap.Wrap,
           justifyContent: FlexAlign.SpaceAround,
           space: { main: LengthMetrics.vp(5) } as FlexSpaceOptions
         } as FlexOptions) {
-          Text('1').width('50%').height(50).backgroundColor(0xF5DEB3)
-          Text('2').width('50%').height(50).backgroundColor(0xD2B48C)
-          Text('3').width('50%').height(50).backgroundColor(0xD2B48C)
+          Text('1').width('50%').height(50).backgroundColor(Color.Red)
+          Text('2').width('50%').height(50).backgroundColor(Color.Red)
+          Text('3').width('50%').height(50).backgroundColor(Color.Red)
         }
         .id("SpaceMain5JustifyContent_SpaceAround")
         .width('90%')
         .padding(10)
-        .backgroundColor(0xAFEEEE)
+        .backgroundColor(Color.Red)
 
-        Text('main：5, justifyContent: FlexAlign.SpaceEvenly').fontSize(9).fontColor(0xCCCCCC).width('90%')
+        Text('main：5, justifyContent: FlexAlign.SpaceEvenly').fontSize(9).fontColor(Color.Red).width('90%')
         Flex({
           direction: FlexDirection.RowReverse,
           wrap: FlexWrap.Wrap,
           justifyContent: FlexAlign.SpaceEvenly,
           space: { main: LengthMetrics.vp(5) } as FlexSpaceOptions
         } as FlexOptions) {
-          Text('1').width('50%').height(50).backgroundColor(0xF5DEB3)
-          Text('2').width('50%').height(50).backgroundColor(0xD2B48C)
-          Text('3').width('50%').height(50).backgroundColor(0xD2B48C)
+          Text('1').width('50%').height(50).backgroundColor(Color.Red)
+          Text('2').width('50%').height(50).backgroundColor(Color.Red)
+          Text('3').width('50%').height(50).backgroundColor(Color.Red)
         }
         .id("SpaceMain5JustifyContent_SpaceEvenly")
         .width('90%')
         .padding(10)
-        .backgroundColor(0xAFEEEE)
+        .backgroundColor(Color.Red)
       }.width('100%').margin({ top: 5 } as Margin)
     }.width('100%')
   }

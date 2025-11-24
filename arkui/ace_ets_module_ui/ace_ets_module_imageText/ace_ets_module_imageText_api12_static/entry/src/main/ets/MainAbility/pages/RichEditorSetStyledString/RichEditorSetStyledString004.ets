@@ -58,27 +58,27 @@ struct RichEditorSetStyledString004 {
   stringLength: number = 0;
   imagePixelMap: image.PixelMap | undefined = undefined;
   @State selection: string = '';
-  @State content: string | undefined = '';
+  @State content: string = '';
   @State range: string = '';
   @State replaceString: string = '';
   @State rangeBefore: string = '';
   @State rangeAfter: string = '';
   richEditorStyledString: MutableStyledString = new MutableStyledString('');
-  textStyle: TextStyle = {
+  textStyle: TextStyle = new TextStyle({
     fontWeight: FontWeight.Lighter,
     fontFamily: CommonFunc.FONT_FAMILY,
     fontColor: Color.Green,
-    // fontSize: LengthMetrics.vp(30),
+    fontSize: LengthMetrics.vp(30),
     fontStyle: FontStyle.Normal
-  } as TextStyle
+  })
   fontStyle1: TextStyle = { fontColor: Color.Blue } as TextStyle;
-  fontStyle2: TextStyle = {
+  fontStyle2: TextStyle = new TextStyle({
     fontWeight: FontWeight.Bolder,
     fontFamily: 'Arial',
     fontColor: Color.Orange,
-    // fontSize: LengthMetrics.vp(50),
+    fontSize: LengthMetrics.vp(50),
     fontStyle: FontStyle.Italic
-  } as TextStyle
+  })
   // 创建属性字符串对象
   mutableStyledString: MutableStyledString = new MutableStyledString('text',
     [{ start: 0, length: 4, styledKey: StyledStringKey.FONT, styledValue: this.fontStyle1 }]);
@@ -115,18 +115,15 @@ struct RichEditorSetStyledString004 {
             verticalAlign: ImageSpanAlignment.CENTER,
             objectFit: ImageFit.Contain
           } as ImageAttachmentInterface))
-          let styledString = this.controller.getStyledString();
-          if(styledString !== undefined){
-            this.richEditorStyledString = styledString;
-            this.richEditorStyledString.appendStyledString(imageStyledString as StyledString);
-            this.controller.setStyledString(this.richEditorStyledString as StyledString);
-            this.controller.setCaretOffset(this.richEditorStyledString.length);
-          }
+          this.richEditorStyledString = this.controller!.getStyledString()!;
+          this.richEditorStyledString.appendStyledString(imageStyledString as StyledString);
+          this.controller!.setStyledString(this.richEditorStyledString as StyledString);
+          this.controller!.setCaretOffset(this.richEditorStyledString.length);
         }
       }).id('image_top')
       RichEditor(this.options)
         .onReady((): void => {
-          this.controller.setStyledString(this.mutableStyledString);
+          this.controller!.setStyledString(this.mutableStyledString);
         })
         .height('20%')
         .width('100%')
@@ -136,22 +133,19 @@ struct RichEditorSetStyledString004 {
       Column() {
         Row() {
           Button('add text').onClick((e: ClickEvent) => {
-            let styledString = this.controller.getStyledString();
-            if (styledString !== undefined) {
-              this.richEditorStyledString = styledString;
-              this.richEditorStyledString.appendStyledString(this.styledString);
-              this.controller.setStyledString(this.richEditorStyledString as StyledString);
-              this.controller.setCaretOffset(this.richEditorStyledString.length);
-            }
+            this.richEditorStyledString = this.controller!.getStyledString()!;
+            this.richEditorStyledString.appendStyledString(this.styledString);
+            this.controller!.setStyledString(this.richEditorStyledString as StyledString);
+            this.controller!.setCaretOffset(this.richEditorStyledString.length);
           }).id('add_text')
         }
         Button('subString')
           .onClick((e: ClickEvent) => {
-            this.content = this.richEditorStyledString.subStyledString(0, 11)?.getString();
+            this.content = this.richEditorStyledString!.subStyledString(0, 11)!.getString();
           }).id('subString')
         Button('get length')
           .onClick((e: ClickEvent) => {
-            this.content = this.richEditorStyledString.getString().length + '';
+            this.content = this.richEditorStyledString!.getString().length + '';
           }).id('get_length')
         Text('content:' + this.content).id('content')
       }

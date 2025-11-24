@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -51,7 +51,6 @@ export default function ProgressPrivacySensitiveTest() {
         console.info('get ProgressPrivacySensitiveTest state pages:' + JSON.stringify(pages));
         if (!('GaugePrivacySensitive' == pages.name)) {
           console.info('get ProgressPrivacySensitiveTest pages.name:' + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
           await Utils.sleep(2500);
         }
@@ -60,7 +59,6 @@ export default function ProgressPrivacySensitiveTest() {
       }
       console.info('ProgressPrivacySensitiveTest beforeEach end');
     });
-    
     /*
      * @tc.number   ProgressPrivacySensitiveTest_static_001
      * @tc.name     ProgressPrivacySensitiveTest_static_001
@@ -79,7 +77,7 @@ it('ProgressPrivacySensitiveTest_static_001', Level.LEVEL0, async (done: () => v
       let strJson = inspector.getInspectorByKey('progress');
       let obj = JSON.parseJsonElement(strJson);
       console.info('ProgressPrivacySensitiveTest_001 component obj is: ' + obj.getElement('$attrs').getString('privacySensitive'));
-      expect(obj.getElement('$attrs').getString('privacySensitive')).assertEqual('false');
+      expect(obj.getElement('$attrs').getString('privacySensitive')).assertEqual('true');
       console.info('[ProgressPrivacySensitiveTest_001] END');
       done();
     });
@@ -106,7 +104,7 @@ it('ProgressPrivacySensitiveTest_static_002', Level.LEVEL0, async (done: () => v
       console.info('[ProgressPrivacySensitiveTest_002] END');
       done();
     });
-    
+
     /*
      * @tc.number   ProgressPrivacySensitiveTest_static_003
      * @tc.name     ProgressPrivacySensitiveTest_static_003
@@ -129,7 +127,7 @@ it('ProgressPrivacySensitiveTest_static_003', Level.LEVEL0, async (done: () => v
       console.info('[ProgressPrivacySensitiveTest_003] END');
       done();
     });
-    
+
     /*
      * @tc.number   ProgressPrivacySensitiveTest_static_004
      * @tc.name     ProgressPrivacySensitiveTest_static_004

@@ -18,8 +18,8 @@ import { BusinessError } from '@ohos.base';
 import { ComponentContent } from '@kit.ArkUI';
 import { BuilderNode, FrameNode, NodeController,typeNode } from '@ohos.arkui.node'
 import { Entry, Column, Component,Builder,Text,ColumnOptions,Margin,Button,NodeContainer,
-  Visibility,wrapBuilder,FontWeight,Color,WrappedBuilder,Scroll,Scroller,ColumnOptions,
-  HorizontalAlign,ColumnOptions,Stack,Row,Position
+  Visibility,FontWeight,Color,WrappedBuilder,Scroll,Scroller,ColumnOptions,
+  HorizontalAlign,ColumnOptions,Stack,Row,Position, CustomBuilderT,
 
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
@@ -55,7 +55,7 @@ class MyNodeController extends NodeController {
     this.uiContext = uiContext;
     this.rootNode = new FrameNode(uiContext);
     this.builderNode = new BuilderNode<[]>(uiContext, { selfIdealSize: { width: 200, height: 100 } });
-    
+    this.builderNode?.build(new WrappedBuilder<CustomBuilderT<[]>>(buildComponent),[])
 
     const rootRenderNode = this.rootNode!.getRenderNode();
     if (rootRenderNode !== null) {
@@ -68,11 +68,11 @@ class MyNodeController extends NodeController {
 
   builderNodeAppendChild(): string {
     let errorStr: string = '';
-    
+    let textNode = typeNode.createTextNode(this.uiContext!)
     try {
-      
+      this.builderNode?.getFrameNode()?.moveTo(textNode, 0);
     } catch (e) {
-      
+      //100021:The FrameNode is not modifiable.
       errorStr = (e as BusinessError).code + ':' + (e as BusinessError).message;
     }
     return errorStr

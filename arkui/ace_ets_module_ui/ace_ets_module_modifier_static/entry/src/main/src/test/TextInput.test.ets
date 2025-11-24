@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
 import router from '@ohos.router';
-import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -59,12 +59,13 @@ export default function textInput() {
       }
     });
 
-    
-    /*
-     * @tc.number   textInputJsunit_static_0100
-     * @tc.name     textInputJsunit_static_0100
-     * @tc.desc     textInputJsunit_static_0100
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textInputJsunit_static_0100
+     * @tc.name textInputJsunit_static_0100
+     * @tc.desc Set maxLines values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textInputJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textInputJsunit_static_0100 START');
@@ -76,29 +77,31 @@ export default function textInput() {
       done();
     });
 
-    
-    /*
-     * @tc.number   textInputJsunit_static_0101
-     * @tc.name     textInputJsunit_static_0101
-     * @tc.desc     textInputJsunit_static_0101
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textInputJsunit_static_0101
+     * @tc.name textInputJsunit_static_0101
+     * @tc.desc Set showUnderline values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textInputJsunit_static_0101', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textInputJsunit_static_0101 START');
       let strJson = inspector.getInspectorByKey('textInputKey1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[textInputJsunit_static_0101] obj is: " + JSON.stringify(obj.getElement('$attrs')));
-      expect(obj.getElement('$attrs').getBoolean('showUnderline')).assertEqual(true);
+      expect(obj.getElement('$attrs').getString('showUnderline')).assertEqual(true);
       console.info('textInputJsunit_static_0101 END');
       done();
     });
 
-    
-    /*
-     * @tc.number   textInputJsunit_static_0102
-     * @tc.name     textInputJsunit_static_0102
-     * @tc.desc     textInputJsunit_static_0102
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textInputJsunit_static_0102
+     * @tc.name textInputJsunit_static_0102
+     * @tc.desc Set showError values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textInputJsunit_static_0102', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textInputJsunit_static_0102 START');
@@ -110,12 +113,13 @@ export default function textInput() {
       done();
     });
 
-    
-    /*
-     * @tc.number   textInputJsunit_static_0103
-     * @tc.name     textInputJsunit_static_0103
-     * @tc.desc     textInputJsunit_static_0103
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textInputJsunit_static_0103
+     * @tc.name textInputJsunit_static_0103
+     * @tc.desc Set passwordIcon values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textInputJsunit_static_0103', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textInputJsunit_static_0103 START');
@@ -127,12 +131,13 @@ export default function textInput() {
       done();
     });
 
-    
-    /*
-     * @tc.number   textInputJsunit_static_0104
-     * @tc.name     textInputJsunit_static_0104
-     * @tc.desc     textInputJsunit_static_0104
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textInputJsunit_static_0104
+     * @tc.name textInputJsunit_static_0104
+     * @tc.desc Set style values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textInputJsunit_static_0104', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textInputJsunit_static_0104 START');
@@ -144,29 +149,31 @@ export default function textInput() {
       done();
     });
 
-    
-    /*
-     * @tc.number   textInputJsunit_static_0105
-     * @tc.name     textInputJsunit_static_0105
-     * @tc.desc     textInputJsunit_static_0105
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textInputJsunit_static_0105
+     * @tc.name textInputJsunit_static_0105
+     * @tc.desc Set selectionMenuHidden values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textInputJsunit_static_0105', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textInputJsunit_static_0105 START');
       let strJson = inspector.getInspectorByKey('textInputKey1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[textInputJsunit_static_0105] obj is: " + JSON.stringify(obj.getElement('$attrs')));
-      expect(obj.getElement('$attrs').tryGetElement('selectionMenuHidden')).assertEqual(undefined);
+      expect(obj.getElement('$attrs').getString('selectionMenuHidden')).assertEqual(undefined);
       console.info('textInputJsunit_static_0105 END');
       done();
     });
 
-    
-    /*
-     * @tc.number   textInputJsunit_static_0106
-     * @tc.name     textInputJsunit_static_0106
-     * @tc.desc     textInputJsunit_static_0106
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textInputJsunit_static_0106
+     * @tc.name textInputJsunit_static_0106
+     * @tc.desc Set barState values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textInputJsunit_static_0106', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textInputJsunit_static_0106 START');
@@ -178,29 +185,31 @@ export default function textInput() {
       done();
     });
 
-    
-    /*
-     * @tc.number   textInputJsunit_static_0107
-     * @tc.name     textInputJsunit_static_0107
-     * @tc.desc     textInputJsunit_static_0107
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textInputJsunit_static_0107
+     * @tc.name textInputJsunit_static_0107
+     * @tc.desc Set enableKeyboardOnFocus values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textInputJsunit_static_0107', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textInputJsunit_static_0107 START');
       let strJson = inspector.getInspectorByKey('textInputKey1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[textInputJsunit_static_0107] obj is: " + JSON.stringify(obj.getElement('$attrs')));
-      expect(obj.getElement('$attrs').tryGetElement('enableKeyboardOnFocus')).assertEqual(undefined);
+      expect(obj.getElement('$attrs').getString('enableKeyboardOnFocus')).assertEqual(undefined);
       console.info('textInputJsunit_static_0107 END');
       done();
     });
 
-    
-    /*
-     * @tc.number   textInputJsunit_static_0109
-     * @tc.name     textInputJsunit_static_0109
-     * @tc.desc     textInputJsunit_static_0109
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textInputJsunit_static_0109
+     * @tc.name textInputJsunit_static_0109
+     * @tc.desc Set caretStyle values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textInputJsunit_static_0109', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textInputJsunit_static_0109 START');
@@ -213,12 +222,13 @@ export default function textInput() {
       done();
     });
 
-    
-    /*
-     * @tc.number   textInputJsunit_static_0110
-     * @tc.name     textInputJsunit_static_0110
-     * @tc.desc     textInputJsunit_static_0110
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textInputJsunit_static_0110
+     * @tc.name textInputJsunit_static_0110
+     * @tc.desc Set selectedBackgroundColor values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textInputJsunit_static_0110', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textInputJsunit_static_0110 START');
@@ -230,12 +240,13 @@ export default function textInput() {
       done();
     });
 
-    
-    /*
-     * @tc.number   textInputJsunit_static_0111
-     * @tc.name     textInputJsunit_static_0111
-     * @tc.desc     textInputJsunit_static_0111
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textInputJsunit_static_0111
+     * @tc.name textInputJsunit_static_0111
+     * @tc.desc Set caretPosition values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level textInputJsunit_static_0111
      */
     it('textInputJsunit_static_0111', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textInputJsunit_static_0111 START');
@@ -247,12 +258,13 @@ export default function textInput() {
       done();
     });
 
-    
-    /*
-     * @tc.number   textInputJsunit_static_0112
-     * @tc.name     textInputJsunit_static_0112
-     * @tc.desc     textInputJsunit_static_0112
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textInputJsunit_static_0112
+     * @tc.name textInputJsunit_static_0112
+     * @tc.desc Set caretColor values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textInputJsunit_static_0112', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textInputJsunit_static_0112 START');
@@ -264,12 +276,13 @@ export default function textInput() {
       done();
     });
 
-    
-    /*
-     * @tc.number   textInputJsunit_static_0113
-     * @tc.name     textInputJsunit_static_0113
-     * @tc.desc     textInputJsunit_static_0113
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textInputJsunit_static_0113
+     * @tc.name textInputJsunit_static_0113
+     * @tc.desc Set placeholderFont values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textInputJsunit_static_0113', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textInputJsunit_static_0113 START');
@@ -283,12 +296,13 @@ export default function textInput() {
       done();
     });
 
-    
-    /*
-     * @tc.number   textInputJsunit_static_0114
-     * @tc.name     textInputJsunit_static_0114
-     * @tc.desc     textInputJsunit_static_0114
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textInputJsunit_static_0114
+     * @tc.name textInputJsunit_static_0114
+     * @tc.desc Set placeholderColor values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textInputJsunit_static_0114', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textInputJsunit_static_0114 START');
@@ -300,12 +314,13 @@ export default function textInput() {
       done();
     });
 
-    
-    /*
-     * @tc.number   textInputJsunit_static_0115
-     * @tc.name     textInputJsunit_static_0115
-     * @tc.desc     textInputJsunit_static_0115
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textInputJsunit_static_0115
+     * @tc.name textInputJsunit_static_0115
+     * @tc.desc Set type values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textInputJsunit_static_0115', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textInputJsunit_static_0115 START');
@@ -317,12 +332,13 @@ export default function textInput() {
       done();
     });
 
-    
-    /*
-     * @tc.number   textInputJsunit_static_0116
-     * @tc.name     textInputJsunit_static_0116
-     * @tc.desc     textInputJsunit_static_0116
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textInputJsunit_static_0116
+     * @tc.name textInputJsunit_static_0116
+     * @tc.desc Set enterKeyType values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textInputJsunit_static_0116', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textInputJsunit_static_0116 START');
@@ -334,12 +350,13 @@ export default function textInput() {
       done();
     });
 
-    
-    /*
-     * @tc.number   textInputJsunit_static_0117
-     * @tc.name     textInputJsunit_static_0117
-     * @tc.desc     textInputJsunit_static_0117
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textInputJsunit_static_0117
+     * @tc.name textInputJsunit_static_0117
+     * @tc.desc Set maxLength values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textInputJsunit_static_0117', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textInputJsunit_static_0117 START');
@@ -351,12 +368,13 @@ export default function textInput() {
       done();
     });
 
-    
-    /*
-     * @tc.number   textInputJsunit_static_0118
-     * @tc.name     textInputJsunit_static_0118
-     * @tc.desc     textInputJsunit_static_0118
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textInputJsunit_static_0118
+     * @tc.name textInputJsunit_static_0118
+     * @tc.desc Set fontColor values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textInputJsunit_static_0118', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textInputJsunit_static_0118 START');
@@ -369,12 +387,13 @@ export default function textInput() {
       done();
     });
 
-    
-    /*
-     * @tc.number   textInputJsunit_static_0119
-     * @tc.name     textInputJsunit_static_0119
-     * @tc.desc     textInputJsunit_static_0119
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textInputJsunit_static_0119
+     * @tc.name textInputJsunit_static_0119
+     * @tc.desc Set fontSize values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textInputJsunit_static_0119', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textInputJsunit_static_0119 START');
@@ -386,12 +405,13 @@ export default function textInput() {
       done();
     });
 
-    
-    /*
-     * @tc.number   textInputJsunit_static_0120
-     * @tc.name     textInputJsunit_static_0120
-     * @tc.desc     textInputJsunit_static_0120
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textInputJsunit_static_0120
+     * @tc.name textInputJsunit_static_0120
+     * @tc.desc Set fontStyle values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textInputJsunit_static_0120', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textInputJsunit_static_0120 START');
@@ -403,12 +423,13 @@ export default function textInput() {
       done();
     });
 
-    
-    /*
-     * @tc.number   textInputJsunit_static_0121
-     * @tc.name     textInputJsunit_static_0121
-     * @tc.desc     textInputJsunit_static_0121
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textInputJsunit_static_0121
+     * @tc.name textInputJsunit_static_0121
+     * @tc.desc Set fontWeight values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textInputJsunit_static_0121', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textInputJsunit_static_0121 START');
@@ -420,12 +441,13 @@ export default function textInput() {
       done();
     });
 
-    
-    /*
-     * @tc.number   textInputJsunit_static_0122
-     * @tc.name     textInputJsunit_static_0122
-     * @tc.desc     textInputJsunit_static_0122
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textInputJsunit_static_0122
+     * @tc.name textInputJsunit_static_0122
+     * @tc.desc Set fontFamily values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textInputJsunit_static_0122', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textInputJsunit_static_0122 START');
@@ -437,12 +459,13 @@ export default function textInput() {
       done();
     });
 
-    
-    /*
-     * @tc.number   textInputJsunit_static_0123
-     * @tc.name     textInputJsunit_static_0123
-     * @tc.desc     textInputJsunit_static_0123
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textInputJsunit_static_0123
+     * @tc.name textInputJsunit_static_0123
+     * @tc.desc Set copyOption values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textInputJsunit_static_0123', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textInputJsunit_static_0123 START');
@@ -454,29 +477,31 @@ export default function textInput() {
       done();
     });
 
-    
-    /*
-     * @tc.number   textInputJsunit_static_0124
-     * @tc.name     textInputJsunit_static_0124
-     * @tc.desc     textInputJsunit_static_0124
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textInputJsunit_static_0124
+     * @tc.name textInputJsunit_static_0124
+     * @tc.desc Set showPasswordIcon values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textInputJsunit_static_0124', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textInputJsunit_static_0124 START');
       let strJson = inspector.getInspectorByKey('textInputKey1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[textInputJsunit_static_0124] obj is: " + JSON.stringify(obj.getElement('$attrs')));
-      expect(obj.getElement('$attrs').getBoolean('showPasswordIcon')).assertEqual(true);
+      expect(obj.getElement('$attrs').getString('showPasswordIcon')).assertEqual(true);
       console.info('textInputJsunit_static_0124 END');
       done();
     });
 
-    
-    /*
-     * @tc.number   textInputJsunit_static_0125
-     * @tc.name     textInputJsunit_static_0125
-     * @tc.desc     textInputJsunit_static_0125
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textInputJsunit_static_0125
+     * @tc.name textInputJsunit_static_0125
+     * @tc.desc Set textAlign values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textInputJsunit_static_0125', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textInputJsunit_static_0125 START');
@@ -488,12 +513,13 @@ export default function textInput() {
       done();
     });
 
-    
-    /*
-     * @tc.number   textInputJsunit_static_0127
-     * @tc.name     textInputJsunit_static_0127
-     * @tc.desc     textInputJsunit_static_0127
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number textInputJsunit_static_0127
+     * @tc.name textInputJsunit_static_0127
+     * @tc.desc Change fontSize values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('textInputJsunit_static_0127', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textInputJsunit_static_0127 START');

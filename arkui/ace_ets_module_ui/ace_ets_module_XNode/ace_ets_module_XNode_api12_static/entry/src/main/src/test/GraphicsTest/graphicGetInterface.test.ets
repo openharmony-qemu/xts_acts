@@ -40,20 +40,21 @@ export default function graphicGetInterfaceTest() {
         console.info("get graphicGetInterfaceTest state pages: " + JSON.stringify(pages));
         if (!("graphicTestInterface" == pages.name)) {
           console.info("get graphicGetInterfaceTest state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push graphicGetInterfaceTest success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push graphicGetInterfaceTest page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     }); 
 
     
     
+
 
 /*
      * @tc.number   graphicTestInterfaceTest_static_0100
@@ -61,14 +62,14 @@ export default function graphicGetInterfaceTest() {
      * @tc.desc     graphicTestInterfaceTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('graphicTestInterfaceTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('graphicTestInterfaceTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('graphicTestInterfaceTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button: Component|null = await driver.findComponent(ON.id('setOvalShape'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
-      
+      // get the data
       let strJson: string = inspector.getInspectorByKey('overLay');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[graphicTestInterfaceTest_0100] component obj is: " + JSON.stringify(obj));

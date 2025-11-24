@@ -13,17 +13,17 @@
  * limitations under the License.
  */
 
+// import { MovingPhotoView, MovingPhotoViewController, MovingPhotoViewAttribute } from '@ohos.multimedia.movingphotoview';
 
-
-
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import common from '@ohos.app.ability.common';
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import fs from '@ohos.file.fs';
 import image from '@ohos.multimedia.image'
 import { Entry, Component, ImageAnalyzerController, ClickEvent, Row, Stack, Text, Column, ImageAIOptions, ImageFit,
-  ImageAnalyzerType, NavDestination, Context, Alignment, Button } from '@ohos.arkui.component';
+  ImageAnalyzerType, NavDestination, Alignment, Button } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement'
 import { BusinessError } from '@ohos.base';
-
 let data: photoAccessHelper.MovingPhoto
 function delay(milliseconds: int) {
   return new Promise<int>((resolve) => {
@@ -32,28 +32,27 @@ function delay(milliseconds: int) {
     }, milliseconds);
   });
 }
-function checkResourceFile(context: Context) {
+function checkResourceFile(context: common.Context | undefined) {
   try {
-    
-    
-    
-    
-    
-    
-    
-    
+    const sandboxPath = context!.filesDir;
+    let resourcePath = context!.resourceDir;
+    let resourcePathArray = fs.listFileSync(resourcePath);
+    for (let index = 0; index < resourcePathArray.length; index++) {
+      fs.copyFileSync((resourcePath + '/' + resourcePathArray[index]), (sandboxPath + '/' + resourcePathArray[index]))
+      delay(2000)
+    }
+    let sandboxFileArray = fs.listFileSync(sandboxPath)
   } catch (error) {
     console.error(`checkResourceFile failed.err is ${error}`);
   }
 }
-async function example111() {
+async function example111(context: common.Context | undefined) {
   try {
     let imageFileUri = 'file://com.arkui.ace.imageText.nowear.api18/data/storage/el2/base/haps/entry/files/test_mov_1.jpg';
     let videoFileUri = 'file://com.arkui.ace.imageText.nowear.api18/data/storage/el2/base/haps/entry/files/test_mov_1.mp4';
-
+    data = await photoAccessHelper.MediaAssetManager.loadMovingPhoto(context as common.Context, imageFileUri, videoFileUri);
     console.info('load moving photo successfully');
-  } catch (err) {
-    err = err as BusinessError;
+  } catch (err: BusinessError){
     console.error(`load moving photo failed with error: ${err.code}, ${err.message}`);
   }
 }
@@ -61,7 +60,7 @@ async function example111() {
 @Entry
 @Component
 struct MovingPhotoView1 {
-  
+  // controller: MovingPhotoViewController = new MovingPhotoViewController()
   private aiController: ImageAnalyzerController = new ImageAnalyzerController()
   private options: ImageAIOptions = {
     types: [ImageAnalyzerType.OBJECT_LOOKUP, ImageAnalyzerType.TEXT],
@@ -85,52 +84,52 @@ struct MovingPhotoView1 {
   @State enableAnalyzerFlag: boolean = false;
   @State refresh: string = "Init";
   aboutToAppear(): void {
-    
-    example111()
+    checkResourceFile(AppStorage.get<common.Context>('applicationContext'))
+    example111(AppStorage.get<common.Context>('applicationContext'))
   }
 
   build() {
     NavDestination() {
       Column() {
         Stack({ alignContent: Alignment.BottomStart }) {
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        //   MovingPhotoView({
+        //     movingPhoto: data,
+        //     controller: this.controller,
+        //     imageAIOptions: this.options
+        //   })
+        //     .id('MovingPhotoView')
+        //     .width(200)
+        //     .height(200)
+        //     .muted(this.flag)
+        //     .objectFit(this.ImageFit)
+        //     .onStart(() => {
+        //       this.start = "onStart succ"
+        //     })
+        //     .onStop(() => {
+        //       this.stop = "onStop succ"
+        //     })
+        //     .onPause(() => {
+        //       this.pause = "onPause succ"
+        //     })
+        //     .onFinish(() => {
+        //       this.finish = "onFinish succ"
+        //     })
+        //     .onError(() => {
+        //       this.error = "onError succ"
+        //     })
+        //     .onComplete(() => {
+        //       this.complete = "onComplete succ"
+        //     })
+        //     .autoPlay(this.autoPlayFlag)
+        //     .autoPlayPeriod(this.autoPlayPeriodStart, this.autoPlayPeriodEnd)
+        //     .repeatPlay(this.repeatPlayFlag)
+        //     .enableAnalyzer(this.enableAnalyzerFlag)
         }
 
         Row(){
           Button('Play').id('MovingPhotoView_playButton')
             .onClick((e: ClickEvent) => {
-              
+              // this.controller.startPlayback()
               this.play = "startPlayback succ"
             })
           Button('Stop').id('MovingPhotoView_stopButton')
@@ -142,7 +141,7 @@ struct MovingPhotoView1 {
         Row(){
           Button('StopPlay').id('MovingPhotoView_stopPlay')
             .onClick((e: ClickEvent) => {
-              
+              // this.controller.stopPlayback()
               this.stopPlay = "stopPlayback succ"
             })
           Button('mute').id('MovingPhotoView_true')
@@ -181,7 +180,7 @@ struct MovingPhotoView1 {
             })
           Button('Refresh').id('MovingPhotoView_refreshButton')
             .onClick((e: ClickEvent) => {
-              
+              // this.controller.refreshMovingPhoto()
               this.refresh = "refresh succ"
             })
         }

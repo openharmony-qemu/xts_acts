@@ -66,7 +66,7 @@ build() {
         .borderColor(Color.Red)
         .width('100%')
         .onReady((): void => {
-          this.controller.addTextSpan('0123', {
+          this.controller!.addTextSpan('0123', {
             style: {
               fontColor: Color.Pink,
               fontSize: '32',
@@ -77,7 +77,7 @@ build() {
             }
           })
 
-          this.controller.addImageSpan($r('app.media.app_icon'), {
+          this.controller!.addImageSpan($r('app.media.app_icon'), {
             imageStyle: {
               size: ['20px', '20px'],
               layoutStyle: {
@@ -88,7 +88,7 @@ build() {
           })
         })
         .aboutToDelete((value: RichEditorDeleteValue): boolean => {
-          value.richEditorDeleteSpans.forEach(item => {
+          value.richEditorDeleteSpans!.forEach(item => {
             if ( (item as RichEditorImageSpanResult)?.imageStyle) {
               this.delLayoutStyle = JSON.stringify(((item as RichEditorImageSpanResult).imageStyle))
               console.log('RichEditorController image:' + (item as RichEditorImageSpanResult).valueResourceStr)

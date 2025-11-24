@@ -16,7 +16,7 @@
 
 
 import { MessageManager, Callback, Message } from '../../../../common/MessageManager';
-import { Entry, Component, Column,ColumnOptions,Text,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign,Margin } from '@ohos.arkui.component';
+import { Entry, Component, Column,ColumnOptions,Color,Text,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign,Margin } from '@ohos.arkui.component';
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 
 @Entry
@@ -29,11 +29,6 @@ struct AlignEnd_AddLayoutWeight {
 
   onPageShow() {
     console.info('AlignEnd_AddLayoutWeight onPageShow');
-    
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<number>>("messageManager",  this.messageManager);
     let callback: Callback<number> = (message: Message<number>) => {
       console.log('message = ' + message.name + "--" + message.value);
@@ -55,31 +50,31 @@ struct AlignEnd_AddLayoutWeight {
 
   build() {
     Column() {
-      Text('justifyContent:FlexAlign.End').fontSize(9).fontColor(0xCCCCCC).width('90%');
+      Text('justifyContent:FlexAlign.End').fontSize(9).fontColor(Color.Red).width('90%');
       Flex({ justifyContent: this.justifyContent, direction: FlexDirection.Row } as FlexOptions) {
         Text('1')
           .width(150)
           .height(50)
-          .backgroundColor(0xF5DEB3)
+          .backgroundColor(Color.Red)
           .key("End_AddLayoutWeight_011")
           .layoutWeight(this.OneLayoutWeight1);
         Text('2')
           .width(150)
           .height(100)
-          .backgroundColor(0xD2B48C)
+          .backgroundColor(Color.Red)
           .key("End_AddLayoutWeight_012")
           .layoutWeight(this.OneLayoutWeight2);
         Text('3')
           .width(150)
           .height(150)
-          .backgroundColor(0xF5DEB3)
+          .backgroundColor(Color.Red)
           .key("End_AddLayoutWeight_013")
           .layoutWeight(this.OneLayoutWeight3);
       }
       .key("End_AddLayoutWeight_01")
       .width(500)
       .height(200)
-      .backgroundColor(0xAFEEEE)
+      .backgroundColor(Color.Red)
     }
   }
 }

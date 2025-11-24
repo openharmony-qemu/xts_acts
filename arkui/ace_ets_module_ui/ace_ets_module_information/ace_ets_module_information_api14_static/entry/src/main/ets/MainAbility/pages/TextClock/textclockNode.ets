@@ -18,24 +18,41 @@ import { BadgeParamWithNumber, BadgeParamWithString, Color, HorizontalAlign, $r,
   TextClockOptions,
 } from '@ohos.arkui.component'
 import { typeNode, NodeController, FrameNode } from '@ohos.arkui.node';
-interface Options {
-  timeZoneOffset?: number;
-  controller?: TextClockController
-}
+
 let timeController = new TextClockController()
 let data: TextClockOptions = {
   timeZoneOffset: -8,
   controller: timeController
-} as TextClockOptions
+}
 
 class MyNodeController extends NodeController {
   makeNode(uiContext: UIContext): FrameNode | null {
     let node = new FrameNode(uiContext)
-    
+    let scroll = typeNode.createScrollNode(uiContext)
     let col = typeNode.createColumnNode(uiContext)
     col.initialize({ space: 10 } as ColumnOptions).borderColor(Color.Black).alignItems(HorizontalAlign.Center)
       .width('100%')
+    let textClock = typeNode.createTextClockNode(uiContext)
+    textClock.initialize(undefined)
+    textClock.initialize(data)
+      .width('100%')
+      .key('key_ TextClock_001')
 
+    let start = typeNode.createButtonNode(uiContext)
+    let stop = typeNode.createButtonNode(uiContext)
+
+    start.initialize('start').onClick((e:ClickEvent)=>{
+      timeController.start()
+    })
+    stop.initialize('stop').onClick((e:ClickEvent)=>{
+      timeController.stop()
+    })
+
+    col.appendChild(textClock)
+    col.appendChild(start)
+    col.appendChild(stop)
+    scroll.appendChild(col)
+    node.appendChild(scroll)
     return node
   }
 }

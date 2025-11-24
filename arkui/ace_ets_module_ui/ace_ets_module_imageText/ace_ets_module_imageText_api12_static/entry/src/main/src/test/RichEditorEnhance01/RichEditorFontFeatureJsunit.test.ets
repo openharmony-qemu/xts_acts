@@ -83,15 +83,13 @@ export default function RichEditorFontFeatureJsunit() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   RichEditorFontFeatureJsunit_static_0100
      * @tc.name     RichEditorFontFeatureJsunit_static_0100
      * @tc.desc     RichEditorFontFeatureJsunit_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('RichEditorFontFeatureJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RichEditorFontFeatureJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       // Test stop
       console.info('[RichEditorFontFeatureJsunit_static_0100] START');
       let driver = Driver.create();
@@ -116,15 +114,13 @@ it('RichEditorFontFeatureJsunit_static_0100', Level.LEVEL0, async (done: () => v
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   RichEditorFontFeatureJsunit_static_0200
      * @tc.name     RichEditorFontFeatureJsunit_static_0200
      * @tc.desc     RichEditorFontFeatureJsunit_static_0200
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('RichEditorFontFeatureJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RichEditorFontFeatureJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       // Test stop
       console.info('[RichEditorFontFeatureJsunit_static_0200] START');
       let driver = Driver.create();

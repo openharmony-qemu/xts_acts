@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
 import router from '@ohos.router';
-import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -58,12 +58,13 @@ export default function progressStyleJsunit() {
       }
     });
 
-    
-    /*
-     * @tc.number   testProgressStyleStatic0001
-     * @tc.name     testProgressStyleStatic0001
-     * @tc.desc     testProgressStyleStatic0001
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number testProgressStyleStatic0001
+     * @tc.name testProgressStyleStatic0001
+     * @tc.desc Set color values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('testProgressStyleStatic0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testProgressStyleStatic0001 START');
@@ -77,12 +78,13 @@ export default function progressStyleJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   testProgressStyleStatic0002
-     * @tc.name     testProgressStyleStatic0002
-     * @tc.desc     testProgressStyleStatic0002
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number testProgressStyleStatic0002
+     * @tc.name testProgressStyleStatic0002
+     * @tc.desc Set value values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('testProgressStyleStatic0002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testProgressStyleStatic0002 START');
@@ -96,12 +98,13 @@ export default function progressStyleJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   testProgressStyleStatic0003
-     * @tc.name     testProgressStyleStatic0003
-     * @tc.desc     testProgressStyleStatic0003
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number testProgressStyleStatic0003
+     * @tc.name testProgressStyleStatic0003
+     * @tc.desc Set style values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('testProgressStyleStatic0003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testProgressStyleStatic0003 START');
@@ -113,12 +116,13 @@ export default function progressStyleJsunit() {
       console.info('testProgressStyleStatic0003 END');
       done();
     });
-    
-    /*
-     * @tc.number   testProgressStyleStatic0004
-     * @tc.name     testProgressStyleStatic0004
-     * @tc.desc     testProgressStyleStatic0004
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number testProgressStyleStatic0004
+     * @tc.name testProgressStyleStatic0004
+     * @tc.desc Change value values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('testProgressStyleStatic0004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testProgressStyleStatic0004 START');

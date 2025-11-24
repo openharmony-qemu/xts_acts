@@ -22,11 +22,14 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
 import Utils from '../../../ets/MainAbility/common/Utils'
-import app, { ScreenOnVisibleOptions } from '@system.app';
+import App, { ScreenOnVisibleOptions } from '@system.app';
+
+
 export default function systemAppJsunit() {
   describe('appInfoTest_four_9', () => {
 
     
+
 
 /*
      * @tc.number   systemAppTest_static_0100
@@ -34,20 +37,21 @@ export default function systemAppJsunit() {
      * @tc.desc     systemAppTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('systemAppTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('systemAppTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('systemAppTest_0100 START');
-      let a = app.getInfo();
+      let a = App.getInfo(); //app Died
       console.log('systemAppTest_0100 END' + JSON.stringify(a));
       if (a != null) {
         expect(a.appID == "com.open.harmony.acetestfour").assertTrue();
         console.info('systemAppTest_0100 END');
       } else {
-        expect(a == null).assertTrue();
+        expect().assertFail();
       }
       done();
     });
     
     
+
 
 /*
      * @tc.number   systemAppTest_static_0200
@@ -55,14 +59,14 @@ it('systemAppTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<
      * @tc.desc     systemAppTest_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('systemAppTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('systemAppTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('systemAppTest_0200 START');
-      let a = app.getInfo();
+      let a = App.getInfo();
       console.log('systemAppTest_0200 END' + JSON.stringify(a));
       if (a != null) {
         expect(a.appName == "$string:entry_MainAbility").assertTrue();
       } else {
-        expect(a == null).assertTrue();
+        expect().assertFail();
       }
       console.info('systemAppTest_0200 END');
       done();
@@ -70,20 +74,21 @@ it('systemAppTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<
     
     
 
+
 /*
      * @tc.number   systemAppTest_static_0300
      * @tc.name     systemAppTest_static_0300
      * @tc.desc     systemAppTest_static_0300
      * @tc.level    Level.LEVEL0
      */
-it('systemAppTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('systemAppTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('systemAppTest_0300 START');
-      let a = app.getInfo();
+      let a = App.getInfo();
       console.log('systemAppTest_0300 END' + JSON.stringify(a));
       if (a != null) {
         expect(a.versionName == "1.0.0").assertTrue();
       } else {
-        expect(a == null).assertTrue();
+        expect().assertFail();
       }
       console.info('systemAppTest_0300 END');
       done();
@@ -91,16 +96,17 @@ it('systemAppTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<
     
     
 
+
 /*
      * @tc.number   systemAppTest_static_0400
      * @tc.name     systemAppTest_static_0400
      * @tc.desc     systemAppTest_static_0400
      * @tc.level    Level.LEVEL0
      */
-it('systemAppTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('systemAppTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('systemAppTest_0400 START');
       try {
-        app.requestFullWindow({
+        App.requestFullWindow({
           duration: 2000
         });
       } catch (err) {
@@ -113,19 +119,20 @@ it('systemAppTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<
     
     
 
+
 /*
      * @tc.number   systemAppTest_static_0500
      * @tc.name     systemAppTest_static_0500
      * @tc.desc     systemAppTest_static_0500
      * @tc.level    Level.LEVEL0
      */
-it('systemAppTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('systemAppTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('systemAppTest_0500 START');
       try {
         let visible: ScreenOnVisibleOptions = {
           visible: true
         };
-        app.screenOnVisible(visible);
+        App.screenOnVisible(visible);
       } catch (err) {
         expect().assertFail();
         console.log("systemAppTest_0500 error: " + err);
@@ -136,6 +143,7 @@ it('systemAppTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<
   
     
 
+    
     /*
      * @tc.number   systemAppTest_static_0600
      * @tc.name     systemAppTest_static_0600
@@ -146,8 +154,8 @@ it('systemAppTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<
       console.info('systemAppTest_0600 START');
       try {
         let a = 100;
-        app.setImageCacheCount(a);
-      } catch(ERROR) {
+        App.setImageCacheCount(a);
+      }catch(Error) {
           expect().assertFail();
       }
       console.info('systemAppTest_0600 END');
@@ -158,6 +166,7 @@ it('systemAppTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<
 
     
 
+    
     /*
      * @tc.number   systemAppTest_static_0700
      * @tc.name     systemAppTest_static_0700
@@ -168,8 +177,8 @@ it('systemAppTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<
       console.info('systemAppTest_0700 START');
       try {
         let a = 104857600;
-        app.setImageRawDataCacheSize(a);
-      } catch(ERROR) {
+        App.setImageRawDataCacheSize(a);
+      }catch(Error) {
           expect().assertFail();
       }
       console.info('systemAppTest_0700 END');
@@ -178,6 +187,7 @@ it('systemAppTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<
 
     
 
+    
     /*
      * @tc.number   systemAppTest_static_0800
      * @tc.name     systemAppTest_static_0800
@@ -188,8 +198,8 @@ it('systemAppTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<
       console.info('systemAppTest_0800 START');
       try {
         let a = 1048;
-        app.setImageFileCacheSize(a);
-      } catch(ERROR) {
+        App.setImageFileCacheSize(a);
+      }catch(Error) {
           expect().assertFail();
       }
       console.info('systemAppTest_0800 END');
@@ -198,6 +208,7 @@ it('systemAppTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<
 
     
 
+    
     /*
      * @tc.number   systemAppTest_static_0900
      * @tc.name     systemAppTest_static_0900
@@ -207,8 +218,8 @@ it('systemAppTest_static_0500', Level.LEVEL0, async (done: () => void): Promise<
     it('systemAppTest_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('systemAppTest_0900 START');
       try {
-        app.terminate();
-      } catch(ERROR) {
+        App.terminate();
+      }catch(Error) {
           expect().assertFail();
       }
       console.info('systemAppTest_0900 END');

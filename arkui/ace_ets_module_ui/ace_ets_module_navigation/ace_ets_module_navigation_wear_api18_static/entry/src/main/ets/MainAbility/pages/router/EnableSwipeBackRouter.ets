@@ -25,9 +25,11 @@ struct EnableSwipeBackRouter {
     Navigation(new NavPathStack()) {
       Column({ space: '5vp' } as ColumnOptions) {
         Button('push').id('pushOneId').onClick((e: ClickEvent) => {
+          console.log('+++++++++++++++++++++++++1')
           this.getUIContext().getRouter().pushUrl({
             url: 'MainAbility/pages/router/EnableSwipeBackRouterPageOne',
           })
+          console.log('+++++++++++++++++++++++++2')
         })
         .height('10%')
         .id('pushId')

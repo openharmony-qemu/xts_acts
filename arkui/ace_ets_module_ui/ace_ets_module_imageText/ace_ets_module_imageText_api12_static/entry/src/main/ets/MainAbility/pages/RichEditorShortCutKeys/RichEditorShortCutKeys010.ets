@@ -64,14 +64,14 @@ build() {
         .borderWidth(1)
         .borderColor(Color.Green)
         .onReady((): void => {
-          this.controller.addImageSpan($r('app.media.icon'),
+          this.controller!.addImageSpan($r('app.media.icon'),
             {
               imageStyle:
               {
                 size: ['25px', '25px']
               }
             });
-          this.controller.addTextSpan('Test', {
+          this.controller!.addTextSpan('Test', {
             style: {
               fontSize: 35,
               fontWeight: FontWeight.Bolder,
@@ -84,21 +84,18 @@ build() {
         .id('RichEditorShortCutKeys010')
 
       Button('set select').onClick((e: ClickEvent) => {
-        this.controller.setSelection(2,5);
+        this.controller!.setSelection(2,5);
       }).id('setSelect')
 
       Button('get spans').onClick((e: ClickEvent) => {
         this.style = '';
-        let spans = this.controller.getSpans({
+        this.controller!.getSpans({
           start: 0,
           end: 6
+        })!.forEach(item => {
+          this.style = JSON.stringify((item));
+          console.log('RichEditorController  this.style:' +  JSON.stringify(this.style));
         })
-        if (spans !== undefined) {
-          spans.forEach(item => {
-            this.style = JSON.stringify((item as RichEditorTextSpanResult));
-            console.log('RichEditorController  this.style:' + JSON.stringify(this.style));
-          })
-        }
       }).id('getSpans')
 
       Text('style:' + this.style).id('style')

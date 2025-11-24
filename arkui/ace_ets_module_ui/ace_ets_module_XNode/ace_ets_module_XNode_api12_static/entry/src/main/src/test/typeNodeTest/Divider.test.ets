@@ -40,20 +40,21 @@ export default function typeNodeDividerTest() {
         console.info("get typeNodeDividerTest state pages: " + JSON.stringify(pages));
         if (!("Divider" == pages.name)) {
           console.info("get typeNodeDividerTest state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push typeNodeDividerTest success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push typeNodeDividerTest page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     });
 
     
     
+
 
 /*
      * @tc.number   DividerTest_static_0100
@@ -61,7 +62,7 @@ export default function typeNodeDividerTest() {
      * @tc.desc     DividerTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('DividerTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('DividerTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('DividerTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

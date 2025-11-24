@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+import { MultiNavPathStack } from '@ohos.arkui.advanced.MultiNavigation';
 import hilog from '@ohos.hilog';
  import { State, Provide, Consume, AppStorage,  } from '@ohos.arkui.stateManagement'
  import { Entry, Component, Column, Button, ColumnOptions, ClickEvent, Text, Color, Builder, Scroll, Margin, Row, $r,
@@ -22,6 +23,7 @@ import hilog from '@ohos.hilog';
 @Component
 export struct PagePlaceholder {
   @State message: string = 'PagePlaceholder';
+  @Consume('pageStack') pageStack: MultiNavPathStack;
   controller: TextInputController = new TextInputController()
   text: String = '';
   lastBackTime: number = 0;

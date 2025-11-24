@@ -57,17 +57,17 @@ build() {
 
       Button('get lineMetrics(0)').id('getFirst')
         .onClick((e: ClickEvent) => {
-          // let layoutManager: LayoutManager = this.controller.getLayoutManager();
-          // let lineMetrics = layoutManager.getLineMetrics(0);
-          // console.log('RichEditorController lineMetrics:' + JSON.stringify(lineMetrics));
-          // this.getHeight = JSON.stringify(lineMetrics.height);
+          let layoutManager: LayoutManager = this.controller!.getLayoutManager() as LayoutManager;
+          let lineMetrics = layoutManager.getLineMetrics(0)!;
+          console.log('RichEditorController lineMetrics:' + JSON.stringify(lineMetrics));
+          this.getHeight = JSON.stringify(lineMetrics.height);
         })
         .margin({ bottom: 20, top: 10 } as Margin)
       RichEditor({ controller: this.controller } as RichEditorOptions)
         .padding(0)
         .width(200)
         .onReady((): void => {
-          this.controller.addTextSpan('0123456',
+          this.controller!.addTextSpan('0123456',
             {
               style:
               {

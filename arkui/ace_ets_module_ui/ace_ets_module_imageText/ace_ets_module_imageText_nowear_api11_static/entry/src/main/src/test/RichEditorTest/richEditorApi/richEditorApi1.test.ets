@@ -53,11 +53,8 @@ export default function richEditorApi1() {
         console.info("get richEditorApi1 state pages:" + "");
         if (!("TextClockApi" == pages.name)) {
           console.info("get richEditorApi1 pages.name:" + "");
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push richEditorApi1 page error:" + err);
@@ -68,10 +65,6 @@ export default function richEditorApi1() {
       await CommonFunc.sleep(1000);
       console.info("richEditorApi1 after each called");
     });
-
-
-    
-    
     
     /*
      * @tc.number   richEditorApi1_static_0100
@@ -87,7 +80,7 @@ it('richEditorApi1_static_0100', Level.LEVEL2, async (done: () => void) => {
       await CommonFunc.sleep(2000);
 
       let richEditor1 = await driver.findComponent(ON.id('RichEditor1'));
-      
+      // doubleClick
       let centerPoint = await (richEditor1?.getBoundsCenter() as Promise<Point>);
       let point = `${centerPoint.x} ${centerPoint.y}`;
       let cmd = `uinput -T -d ${point} -u ${point} -i 50 -d ${point} -u ${point}`;
@@ -108,7 +101,7 @@ it('richEditorApi1_static_0100', Level.LEVEL2, async (done: () => void) => {
 
       let text1 = inspector.getInspectorByKey('richEditorApi1_text1');
       let Obj1 = JSON.parseJsonElement(text1);
-      expect(Obj1.getElement('$attrs').getElement("content")).assertEqual('222');
+      expect(Obj1.getElement('$attrs').getString("content")).assertEqual('222');
       console.info('[testRichEditor_0100] END');
       done();
     });

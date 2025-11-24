@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { DrawContext, FrameNode, NodeController, LayoutConstraint, Size, NodePosition } from '@ohos.arkui.node';
+import { DrawContext, FrameNode, NodeController, LayoutConstraint, Size,NodePosition } from '@ohos.arkui.node';
 import drawing from '@ohos.graphics.drawing';
 import {
   Entry,
@@ -32,8 +32,7 @@ import {
   Color,
   Builder,
   Row,
-  NodeContainer,
-  wrapBuilder
+  NodeContainer,Position
 } from '@ohos.arkui.component'
 import { AppStorage, LocalStorage, State } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
@@ -101,13 +100,13 @@ class MyFrameNode extends FrameNode {
 
   onDraw(context: DrawContext) {
     const canvas = context.canvas;
-    
-    
-    
-    
-    
-    
-    storage.set('PropAPIonDrow', 'onDraw succ');
+    const pen = new drawing.Pen();
+    // pen.setStrokeWidth(5);
+    // pen.setColor({ alpha: 255, red: 255, green: 0, blue: 0 });
+    // canvas.attachPen(pen);
+    // canvas.drawRect({ left: 0, right: this.width, top: 0, bottom: this.width });
+    // canvas.detachPen();
+    // storage.set('PropAPIonDrow', 'onDraw succ');
   }
 
   addWidth() {

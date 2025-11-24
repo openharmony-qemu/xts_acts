@@ -18,7 +18,7 @@ import { MyCustomSpan } from '../../common/MyCustomSpan'
 
 import {
   Entry,ImageSpanAlignment,ImageFit,ImageAttachmentInterface,
-  Component,
+  Component,SpanStyle,
   Column,
   Row,
   Text,
@@ -98,46 +98,34 @@ build() {
             verticalAlign: ImageSpanAlignment.TOP,
             objectFit: ImageFit.Contain
           } as ImageAttachmentInterface))
-          let styledString = this.controller.getStyledString();
-          if (styledString !== undefined) {
-            this.richEditorStyledString = styledString;
-            this.richEditorStyledString.appendStyledString(imageStyledString);
-            this.richEditorStyledString.appendStyledString(this.style1);
-            this.controller.setStyledString(this.richEditorStyledString);
-            this.controller.setCaretOffset(this.richEditorStyledString.length);
-          }
+          this.richEditorStyledString = this.controller!.getStyledString()!;
+          this.richEditorStyledString.appendStyledString(imageStyledString);
+          this.richEditorStyledString.appendStyledString(this.style1);
+          this.controller!.setStyledString(this.richEditorStyledString);
+          this.controller!.setCaretOffset(this.richEditorStyledString.length);
         }
       }).id('imageTop')
-
-      Button('getStyles').onClick((e: ClickEvent) => {
-        let styledString = this.controller.getStyledString();
-        if (styledString !== undefined) {
-          this.richEditorStyledString = styledString;
+      Button('getStyles')
+        .onClick((e: ClickEvent) => {
+          this.richEditorStyledString = this.controller!.getStyledString()!;
           let styles = this.richEditorStyledString.getStyles(0, this.richEditorStyledString.length);
-          if (styles !== undefined) {
-            this.info = JSON.stringify(Array.from(styles));
-          }
-        }
-      }).id('getStyles')
+          this.info = JSON.stringify(styles);
+        })
+        .id('getStyles')
 
-      Button('getOtherStyles').onClick((e: ClickEvent) => {
-        let richEditorStyled = this.controller1.getStyledString();
-        if (richEditorStyled !== undefined) {
-          let styles = richEditorStyled.getStyles(0, richEditorStyled.length);
-          if (styles !== undefined) {
-            this.info = JSON.stringify(Array.from(styles));
-          }
-        }
-      }).id('getOtherStyles')
+      Button('getOtherStyles')
+        .onClick((e: ClickEvent) => {
+          let richEditorStyled = this.controller1.getStyledString()!;
+          let styles: SpanStyle[] = richEditorStyled.getStyles(0, richEditorStyled.length) as SpanStyle[];
+          this.info = JSON.stringify(styles);
+        })
+        .id('getOtherStyles')
 
       Button('set select').onClick((e: ClickEvent) => {
-        let styledString = this.controller.getStyledString();
-        if (styledString !== undefined) {
-          this.richEditorStyledString = styledString;
-          this.controller.setSelection(5, 6);
-          let select = this.controller.getSelection();
-          this.info = JSON.stringify(select);
-        }
+        this.richEditorStyledString = this.controller!.getStyledString()!;
+        this.controller!.setSelection(5, 6);
+        let select = this.controller!.getSelection();
+        this.info = JSON.stringify(select);
       }).id('setSelect')
 
 
@@ -145,7 +133,7 @@ build() {
 
       RichEditor(this.options)
         .onReady((): void => {
-          this.controller.setStyledString(this.mutableStyledString);
+          this.controller!.setStyledString(this.mutableStyledString);
         })
         .height(100)
         .width('100%')

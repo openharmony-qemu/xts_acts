@@ -38,7 +38,7 @@ struct OnResultPage {
     Navigation(this.pageInfos) {
       Column({space: '5vp'} as ColumnOptions) {
         Button('push pageOne').id('pushId').onClick((e: ClickEvent) => {
-          
+          this.pageInfos.pushPath(new NavPathInfo('pageOne',undefined),true )
         }).height('10%')
       }
       .width('100%')
@@ -58,8 +58,10 @@ struct PageOne1 {
     NavDestination() {
       Text(this.info).id('infoId').height('5%')
       Button('push pageTwo').id('pushTwoId').onClick((e: ClickEvent) => {
+        this.pageInfos.pushPath(new NavPathInfo('pageTwo',undefined),true )
       }).height('10%')
       Button('push pageDialog').id('pushDialogId').onClick((e: ClickEvent) => {
+        this.pageInfos.pushPath(new NavPathInfo('pageDialog',undefined),true)
       }).height('10%')
     }
     .title('pageOne')
@@ -87,7 +89,7 @@ struct PageTwo1 {
         this.pageInfos.popToName('pageOne', undefined)
       }).height('10%')
       Button('popToIndexNull').id('popNullId').onClick((e: ClickEvent) => {
-        
+        // this.pageInfos.popToIndex(0, null)
       }).height('10%')
     }
     .title('pageTwo')

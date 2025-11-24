@@ -25,7 +25,6 @@ export default function AttachDetachRebindTest() {
   describe('AttachDetachRebindTest', () => {
     beforeAll(() => {
       console.info("AttachDetachRebindTest beforeAll start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.drawAPI13.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -33,20 +32,20 @@ export default function AttachDetachRebindTest() {
     beforeEach(async (): Promise<void> => {
       console.info("AttachDetachRebindTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/CanvasRenderingContext2D/AttachDetachRebindTes',
+        url: 'MainAbility/pages/CanvasRenderingContext2D/AttachDetachRebindTest',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get AttachDetachRebindTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("AttachDetachRebindTes" == pages.name)) {
           console.info("get AttachDetachRebindTest pages.name:" + JSON.stringify(pages.name));
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push AttachDetachRebindTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push AttachDetachRebindTest page error:" + err);
@@ -56,31 +55,35 @@ export default function AttachDetachRebindTest() {
     
     
 
+
 /*
      * @tc.number   AttachDetachRebindTest_static_0100
      * @tc.name     AttachDetachRebindTest_static_0100
      * @tc.desc     AttachDetachRebindTest_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('AttachDetachRebindTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('AttachDetachRebindTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('AttachDetachRebindTest_static_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
 
-      
-      
+      // aboutToAppear中已绑定“onAttach”和“onDetach”
+      // 页面加载，触发“onAttach”回调
       let strJson = inspector.getInspectorByKey('attach_detach_content');
+      await CommonFunc.sleep(1000);
+      console.info('[wll]'+strJson)    //  let strJson = inspector.getInspectorByKey('attach_detach_content');取不到值
       let obj = JSON.parseJsonElement(strJson);
       console.info("页面加载，触发onAttach回调");
       console.info("[AttachDetachRebindTest_0100] content is: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('onAttach');
 
-      
+      // 点击按钮绑定新的canvas，原cavas解绑触发“onDetach”回调，新canvas绑定触发“onAttach”回调
       let button = await driver.findComponent(ON.id('change_canvas'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       strJson = inspector.getInspectorByKey('attach_detach_content');
+      await CommonFunc.sleep(1000);
       obj = JSON.parseJsonElement(strJson);
       console.info("点击按钮绑定新的canvas，原cavas解绑触发onDetach回调，新canvas绑定触发onAttach回调");
       console.info("[AttachDetachRebindTest_0100] content is: " + JSON.stringify(obj.getElement('$attrs').getString('content')));

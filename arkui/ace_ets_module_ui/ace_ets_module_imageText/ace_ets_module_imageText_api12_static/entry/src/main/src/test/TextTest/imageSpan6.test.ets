@@ -64,15 +64,13 @@ export default function imageSpanTest6() {
 
     
      
-    
-    
-/*
+    /*
      * @tc.number   imageSpanTest6_static_0100
      * @tc.name     imageSpanTest6_static_0100
      * @tc.desc     imageSpanTest6_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('imageSpanTest6_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('imageSpanTest6_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageSpanTest6_0100 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ImageSpan_onComplete_6');
@@ -84,15 +82,13 @@ it('imageSpanTest6_static_0100', Level.LEVEL0, async (done: () => void): Promise
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   imageSpanTest6_static_0200
      * @tc.name     imageSpanTest6_static_0200
      * @tc.desc     imageSpanTest6_static_0200
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('imageSpanTest6_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('imageSpanTest6_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageSpanTest6_0200 START');
       let driver =  Driver.create();
       await CommonFunc.sleep(500);

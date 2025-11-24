@@ -64,13 +64,13 @@ struct RichEditorSetStyledString011 {
   @State rangeBefore: string = '';
   @State rangeAfter: string = '';
   richEditorStyledString: MutableStyledString = new MutableStyledString('');
-  fontStyle2: TextStyle = {
+  fontStyle2: TextStyle = new TextStyle({
     fontWeight: FontWeight.Bolder,
     fontFamily: 'Arial',
     fontColor: Color.Orange,
-    // fontSize: LengthMetrics.vp(50),
+    fontSize: LengthMetrics.vp(50),
     fontStyle: FontStyle.Italic
-  } as TextStyle
+  })
 
   styledString: StyledString = new StyledString('ab',
     [{ start: 0, length: 2, styledKey: StyledStringKey.FONT,
@@ -105,13 +105,10 @@ struct RichEditorSetStyledString011 {
             verticalAlign: ImageSpanAlignment.TOP,
             objectFit: ImageFit.Contain
           } as ImageAttachmentInterface))
-          let currentString = this.controller.getStyledString();
-          if (currentString !== undefined) {
-            this.richEditorStyledString = currentString;
-            this.richEditorStyledString.appendStyledString(imageStyledString);
-            this.controller.setStyledString(this.richEditorStyledString as StyledString);
-            this.controller.setCaretOffset(this.richEditorStyledString.length);
-          }
+          this.richEditorStyledString = this.controller!.getStyledString()!;
+          this.richEditorStyledString.appendStyledString(imageStyledString);
+          this.controller!.setStyledString(this.richEditorStyledString as StyledString);
+          this.controller!.setCaretOffset(this.richEditorStyledString.length);
         }
       }).id('image_top')
 
@@ -121,7 +118,7 @@ struct RichEditorSetStyledString011 {
 
       RichEditor(this.options)
         .onReady((): void => {
-          this.controller.setStyledString(this.styledString);
+          this.controller!.setStyledString(this.styledString);
         })
         .onPaste((event?: PasteEvent): void => {
           this.onPasteCall = true;

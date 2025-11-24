@@ -39,10 +39,6 @@ struct FlexAlignSelf_Auto {
     console.info('FlexAlignSelf_Auto page build done called');
   }
 
-
-
-
-
   build() {
     Column() {
       Column() {

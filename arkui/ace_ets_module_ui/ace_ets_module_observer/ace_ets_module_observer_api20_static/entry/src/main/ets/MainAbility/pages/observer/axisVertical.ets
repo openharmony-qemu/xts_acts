@@ -22,7 +22,7 @@ import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Component
 struct scrollAxisVerticalIndex {
   scroller: Scroller = new Scroller();
-  options: uiObserver.ObserverOptions = { id: 'axisVertical' } as uiObserver.ObserverOptions;
+  // options: uiObserver.ObserverOptions = { id: 'axisVertical' } as uiObserver.ObserverOptions;  //造成create Page Fail
   private arr: Array<int> = new Array<int>(0, 1, 2, 3, 4, 5)
   @State Id1: string = '0'
   @State axis1: Axis | undefined = undefined
@@ -35,14 +35,16 @@ struct scrollAxisVerticalIndex {
         Row() {
           Button('observer on')
             .onClick((e: ClickEvent) => {
-              uiObserver.onScrollEvent((info: uiObserver.ScrollEventInfo) => {
-                console.info('scrollEventInfo', JSON.stringify(info));
-                
-              });
+              console.info('scrollEventInfo');
+              // uiObserver.on('scrollEvent', (info: uiObserver.ScrollEventInfo) => {
+              //   // console.info('scrollEventInfo', JSON.stringify(info));
+              //   console.info('scrollEventInfo');
+              //   // console.info('scrollEventInfo axis', JSON.stringify(info.axis));
+              // });
             })
           Button('observer off')
             .onClick((e: ClickEvent) => {
-              uiObserver.offScrollEvent();
+              // uiObserver.off('scrollEvent');
             })
         }
 
@@ -50,15 +52,18 @@ struct scrollAxisVerticalIndex {
           Button('observerWithId on')
             .id('axisVertical_on')
             .onClick((e: ClickEvent) => {
-              uiObserver.onScrollEvent(this.options, (info: uiObserver.ScrollEventInfo) => {
-                this.Id1 = info.id
-                console.info('scrollEventInfo', JSON.stringify(info));
-              });
+              // uiObserver.on('scrollEvent', this.options, (info: uiObserver.ScrollEventInfo) => {
+              //   this.Id1 = info.id
+                // this.axis1 = info.axis
+                // console.info('scrollEventInfo', JSON.stringify(info));
+                console.info('scrollEventInfo');
+                // console.info('scrollEventInfo axis', JSON.stringify(info.axis));
+              // });
             })
           Button('observerWithId off')
             .id('axisVertical_off')
             .onClick((e: ClickEvent) => {
-              uiObserver.offScrollEvent(this.options);
+              // uiObserver.off('scrollEvent', this.options);
             })
         }
       }.margin({top:5} as Margin)

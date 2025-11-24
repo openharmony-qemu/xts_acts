@@ -47,7 +47,6 @@ export default function ProgressMask() {
         console.info("get ProgressMask state pages: " + JSON.stringify(pages));
         if (!("ProgressMask" == pages.name)) {
           console.info("get ProgressMask state pages.name: " + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }

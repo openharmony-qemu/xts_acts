@@ -68,15 +68,13 @@ export default function textInputHeightAdaptivePolicy() {
     })
 
     
-    
-    
-/*
+    /*
      * @tc.number   textInputHeightAdaptivePolicy_static_0100
      * @tc.name     textInputHeightAdaptivePolicy_static_0100
      * @tc.desc     textInputHeightAdaptivePolicy_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('textInputHeightAdaptivePolicy_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('textInputHeightAdaptivePolicy_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'textInputHeightAdaptivePolicy0100';
       console.info('[' + tagName + '] START============================');
 
@@ -92,15 +90,13 @@ it('textInputHeightAdaptivePolicy_static_0100', Level.LEVEL0, async (done: () =>
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   textInputHeightAdaptivePolicy_static_0200
      * @tc.name     textInputHeightAdaptivePolicy_static_0200
      * @tc.desc     textInputHeightAdaptivePolicy_static_0200
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('textInputHeightAdaptivePolicy_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('textInputHeightAdaptivePolicy_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'textInputHeightAdaptivePolicy0200';
       console.info('[' + tagName + '] START============================');
 
@@ -114,15 +110,13 @@ it('textInputHeightAdaptivePolicy_static_0200', Level.LEVEL0, async (done: () =>
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   textInputHeightAdaptivePolicy_static_0300
      * @tc.name     textInputHeightAdaptivePolicy_static_0300
      * @tc.desc     textInputHeightAdaptivePolicy_static_0300
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('textInputHeightAdaptivePolicy_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('textInputHeightAdaptivePolicy_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'textInputHeightAdaptivePolicy0300';
       console.info('[' + tagName + '] START============================');
 

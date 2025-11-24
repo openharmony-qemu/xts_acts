@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -34,7 +34,6 @@ export default function NavigationEnableDragBar() {
   describe('NavigationEnableDragBar', () => {
     beforeAll(() => {
       console.info("NavigationEnableDragBar beforeEach start");
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.navigation14.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
     });
@@ -50,9 +49,10 @@ export default function NavigationEnableDragBar() {
         console.info("get NavigationEnableDragBar state pages:" + JSON.stringify(pages));
         if (!("NavigationEnableDragBar" == pages.name)) {
           console.info("get NavigationEnableDragBar pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push NavigationEnableDragBar page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push NavigationEnableDragBar page error:" + err);
@@ -67,17 +67,20 @@ export default function NavigationEnableDragBar() {
 
 
     
-    /*
+    
+/*
      * @tc.number   NavigationEnableDragBar_static_0100
      * @tc.name     NavigationEnableDragBar_static_0100
      * @tc.desc     NavigationEnableDragBar_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('NavigationEnableDragBar_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('NavigationEnableDragBar_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('NavigationEnableDragBar_0100 START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
 
+      // The pc device does not have a DragBar.
+      // if (globalThis.winLeft == 0) {
       if (AppStorage.get<number>("winLeft")! == 0) {
         let btn1 = await driver.findComponent(ON.id('drag_true'));
         await (btn1?.click() as Promise<void>)

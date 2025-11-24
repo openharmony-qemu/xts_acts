@@ -124,6 +124,14 @@
     {
       "name": "Path_commands",
       "value": "M0 300 S100 0 240 300 Z"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "label"
     }
   ]
 }

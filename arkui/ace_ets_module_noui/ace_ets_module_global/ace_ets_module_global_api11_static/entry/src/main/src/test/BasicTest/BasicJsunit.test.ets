@@ -14,17 +14,18 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, Level, expect } from "../../../../hypium/index";
 import { Callback } from '@ohos.arkui.component'
-function callbackTest(callback: Callback<string>): void {
-  callback('');
+function callbackTest(callback: Callback<void>): void {
+  callback(undefined);
 }
 export default function basicJsunit() {
   describe('basicTest', () => {
-    let callback: Callback<string> = (data:string):void => {
+    let callback: Callback<void> = (data:undefined):void => {
       console.log(data);
       expect(true).assertTrue();
     }
     
     
+
 
 /*
      * @tc.number   testBasic_static_01
@@ -32,11 +33,11 @@ export default function basicJsunit() {
      * @tc.desc     testBasic_static_01
      * @tc.level    Level.LEVEL0
      */
-it('testBasic_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('testBasic_static_01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[testBasic_static_01] START');
       try {
         callbackTest(callback);
-      } catch(ERROR) {
+      }catch(Error) {
           expect().assertFail();
       }
       console.info('[testBasic_static_01] END');

@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../../hypium/index';
+import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../../hypium';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
@@ -52,8 +52,6 @@ export default function FocusScopeId10() {
         if (!("FocusScopeId10" == pages.name)) {
           console.info("get FocusScopeId10 state success " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-
-
         }
       } catch (err) {
         console.error("push FocusScopeId10 page error: " + err);
@@ -65,12 +63,11 @@ export default function FocusScopeId10() {
       console.info("FocusScopeId10 after each called");
     });
 
-
-    /*
+    /**
      * @tc.number    FocusScopeId10_static_0100
      * @tc.name      FocusScopeId10_static_0100
-     * @tc.desc      FocusScopeId10_static_0100
-     * @tc.level     2
+     * @tc.desc      Support cross group and circular focusing with tab keys in focus groups
+     * @tc.level     Level 2
      */
     it('FocusScopeId10_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[FocusScopeId10_static_0100] START');

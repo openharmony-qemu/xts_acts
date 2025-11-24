@@ -65,15 +65,13 @@ export default function StyledString() {
       console.info("StyledString after each called");
     });
     
-    
-    
-/*
+    /*
      * @tc.number   StyledString_static_0100
      * @tc.name     StyledString_static_0100
      * @tc.desc     StyledString_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('StyledString_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('StyledString_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[StyledString_0100] START');
       let driver = Driver.create();
       await CommonFunc.sleep(1000);

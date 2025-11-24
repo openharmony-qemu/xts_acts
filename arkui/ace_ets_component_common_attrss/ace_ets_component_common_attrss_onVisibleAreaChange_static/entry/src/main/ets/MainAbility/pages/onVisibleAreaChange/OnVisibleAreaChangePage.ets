@@ -29,7 +29,7 @@ CommonMethod,Curve,AlphabetIndexer,ScrollAnimationOptions,Blank,Checkbox,Checkbo
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import { AppStorage,StoragePropRef } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';
 import { RouterParams } from '../../common/Utils';
 interface VisibleData{
@@ -58,9 +58,9 @@ interface RouterParamOptions {
 @Entry
 @Component
 struct OnVisibleAreaChangePage {
-  _yOffSetValue: number = 0;
-  @State _ratiosLeft: number = 0.0;
-  @State _ratiosRight: number = 0.0;
+  @StoragePropRef("_yOffSetValue") _yOffSetValue: number = 0;
+  @StoragePropRef("_ratiosLeft") _ratiosLeft: number = 0.0;
+  @StoragePropRef("_ratiosRight") _ratiosRight: number = 0.0;
   @State _compositionValue: string = '';
   @State targetView: string = '';
   @State componentKey: string = '';
@@ -82,38 +82,22 @@ struct OnVisibleAreaChangePage {
 
   onPageShow() {
     console.info('OnVisibleAreaChangePage show called ')
-    attrsManager.registerDataChange((value: Leave | Enter) => {
-      if ((value as Leave).yOffSetValueLeave != undefined) {
-        this._yOffSetValue = (value as Leave).yOffSetValueLeave as number
-      }
-      if (((value as Enter).yOffSetValueEnter) != undefined) {
-        this._yOffSetValue = (value as Enter).yOffSetValueEnter as number
-      }
-      if ((value as Leave).ratiosLeft != undefined) {
-        this._ratiosLeft = (value as Leave).ratiosLeft as number
-        console.info('this._ratiosLeft:' + this._ratiosLeft);
-      }
-      if ((value as Leave).ratiosRight != undefined) {
-        this._ratiosRight = (value as Leave).ratiosRight as number
-        console.info('this._ratiosRight:' + this._ratiosRight);
-      }
-    })
 
     try {
-    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParamOptions;
-this.targetView = routerParamOptions.view.targetView
-this.componentKey = routerParamOptions.view.componentKey
-this.compareTextKey = routerParamOptions.view.compareTextKey
-this.compareTextWidth = routerParamOptions.view.compareTextWidth
-this.compareTextHeight = routerParamOptions.view.compareTextHeight
-this.scrollWidth = routerParamOptions.view.scrollWidth
-this.scrollHeight = routerParamOptions.view.scrollHeight
-this.columnWidth = routerParamOptions.view.columnWidth
-this.columnHeight = routerParamOptions.view.columnHeight
-this.buttonWidth = routerParamOptions.view.buttonWidth
-this.buttonHeight = routerParamOptions.view.buttonHeight
-this.componentWidth = routerParamOptions.view.componentWidth
-this.componentHeight = routerParamOptions.view.componentHeight
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+      this.targetView = routerParamOptions.view.targetView
+      this.componentKey = routerParamOptions.view.componentKey
+      this.compareTextKey = routerParamOptions.view.compareTextKey
+      this.compareTextWidth = routerParamOptions.view.compareTextWidth
+      this.compareTextHeight = routerParamOptions.view.compareTextHeight
+      this.scrollWidth = routerParamOptions.view.scrollWidth
+      this.scrollHeight = routerParamOptions.view.scrollHeight
+      this.columnWidth = routerParamOptions.view.columnWidth
+      this.columnHeight = routerParamOptions.view.columnHeight
+      this.buttonWidth = routerParamOptions.view.buttonWidth
+      this.buttonHeight = routerParamOptions.view.buttonHeight
+      this.componentWidth = routerParamOptions.view.componentWidth
+      this.componentHeight = routerParamOptions.view.componentHeight
   } catch (error: Error) {
     console.log(' routerParamOptions error ' + error);
   }
@@ -128,12 +112,13 @@ commonStyle(instance: CommonMethod) {
     instance.height(this.componentHeight)
     instance.onVisibleAreaChange([this._ratiosLeft, this._ratiosRight], (isVisible: boolean, currentRatio: number) => {
       console.info('Text isVisible: ' + isVisible + ', currentRatio:' + currentRatio)
-      this._compositionValue += `@` + String({
+      this._compositionValue += `@` + JSON.stringify({  //对象转字符串为空 this._compositionValue @{}
         isVisible: `${isVisible}`,
         currentRatio: currentRatio
       } as VisibleData)
     })
   }
+
   @Builder
   myBuilder() {
     Column() {
@@ -155,74 +140,52 @@ commonStyle(instance: CommonMethod) {
             .height(this.compareTextHeight as number)
           if (this.targetView == 'AlphabetIndexer') {
             AlphabetIndexer({ arrayValue: this.value, selected: 0 })
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'Blank') {
             Blank()
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'Button') {
-            Button('button')
-.applyStyles(this.commonStyle)
+            Button('button').applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'Checkbox') {
             Checkbox({ name: 'checkbox1', group: 'checkboxGroup' })
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'CheckboxGroup') {
             CheckboxGroup({ group: 'checkboxGroup' })
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'DataPanel') {
             DataPanel({ values: [25] })
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'DatePicker') {
             DatePicker()
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'Divider') {
             Divider()
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'Gauge') {
+            console.log('++++++1++++++++++')
             Gauge({ value: 75 })
-              .colors([[0x317AF7, 1], [0x5BA854, 1], [0xE08C3A, 1], [0x9C554B, 1]])
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
-
+              .colors([['0x317AF7', 1], ['0x5BA854', 1], ['0xE08C3A', 1], ['0x9C554B', 1]])
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
+            console.log('++++++2++++++++++')
           } else if (this.targetView == 'Image') {
-            Image($r('app.media.icon'))
-
-.applyStyles(this.commonStyle)
+            Image($r('app.media.icon')).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'ImageAnimator') {
             ImageAnimator()
-              .images([{ src: $r('app.media.icon') }])
-
-.applyStyles(this.commonStyle)
+              .images([{ src: $r('app.media.icon') }]).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'LoadingProgress') {
             LoadingProgress()
               .color(Color.Blue)
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'Marquee') {
             Marquee({
@@ -230,37 +193,27 @@ commonStyle(instance: CommonMethod) {
               src: this.src
             })
               .fontSize(15)
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'Menu') {
             Menu() {
               MenuItem({ startIcon: $r('app.media.icon'), content: 'Menu' } as MenuItemOptions)
-            }.backgroundColor(Color.Pink)
-.applyStyles(this.commonStyle)
+            }.backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'MenuItem') {
             Menu() {
               MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
-                .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
-
+                .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
             }
           } else if (this.targetView == 'MenuItemGroup') {
             Menu() {
               MenuItemGroup({ header: 'MenuItemGroup' }) {
                 MenuItem({ startIcon: $r('app.media.icon'), content: 'MenuItem' } as MenuItemOptions)
-              }
-.applyStyles(this.commonStyle)
-
+              }.applyStyles(this.commonStyle)
             }
           } else if (this.targetView == 'Navigation') {
             Navigation({})
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'NavDestination') {
             NavDestination(){}.backgroundColor(Color.Pink).applyStyles(this.commonStyle)
@@ -274,126 +227,93 @@ commonStyle(instance: CommonMethod) {
                   isVisible: String(isVisible),
                   currentRatio: Number(Number(currentRatio).toFixed(2))
                 }
-                this._compositionValue += '@' + String(visibleData)
+                this._compositionValue += '@' + JSON.stringify(visibleData)
               })
           } else if (this.targetView == 'Progress') {
             Progress({ value: 20 })
               .border({ width: 2 })
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'QRCode') {
             QRCode(this.src)
               .border({ width: 2 })
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'Radio') {
             Radio({ value: 'Radio1', group: 'radioGroup' })
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'Rating') {
             Rating()
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'RichText') {
-            RichText('RichText').backgroundColor(Color.Pink)
-.applyStyles(this.commonStyle)
-
+            console.log('1+++++++++++++++++++++++++')
+            RichText('RichText')
+              .backgroundColor(Color.Pink)
+              .applyStyles(this.commonStyle)
+            console.log('2+++++++++++++++++++++++++')
           } else if (this.targetView == 'ScrollBar') {
             ScrollBar({ scroller: this.scroller, state: BarState.On }) {
               Text('text')
             }
-            .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+            .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'Search') {
             Search()
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'Select') {
             Select([{ value: 'aaa' }, { value: 'bbb' }, { value: 'ccc' }])
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'Slider') {
             Slider()
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'Stepper') {
             Stepper() {
               StepperItem()
-            }.backgroundColor(Color.Pink)
-.applyStyles(this.commonStyle)
+            }.backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'StepperItem') {
             Stepper() {
-              StepperItem().backgroundColor(Color.Pink)
-.applyStyles(this.commonStyle)
-
+              StepperItem().backgroundColor(Color.Pink).applyStyles(this.commonStyle)
             }
           } else if (this.targetView == 'Text') {
             Text('text')
               .fontSize(15)
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'TextArea') {
             TextArea()
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'TextClock') {
             TextClock()
               .fontSize(15)
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'TextInput') {
             TextInput()
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'TextPicker') {
             TextPicker({ range: this.value })
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'TextTimer') {
             TextTimer({ controller: this.textTimerController })
               .fontSize(15)
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'TimePicker') {
             TimePicker()
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'Toggle') {
             Toggle({ type: ToggleType.Switch })
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'Badge') {
             Badge({
@@ -402,50 +322,36 @@ commonStyle(instance: CommonMethod) {
             } as BadgeParamWithNumber) {
               Button('message').backgroundColor(0x317aff)
             }
-            .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+            .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'Column') {
             Column()
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'ColumnSplit') {
             ColumnSplit() {
               Text('1').backgroundColor(0xF5DEB3).textAlign(TextAlign.Center)
               Text('2').backgroundColor(0xD2B48C).textAlign(TextAlign.Center)
             }
-            .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+            .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'Flex') {
             Flex()
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'FlowItem') {
             WaterFlow() {
-              FlowItem().backgroundColor(Color.Pink)
-.applyStyles(this.commonStyle)
-
+              FlowItem().backgroundColor(Color.Pink).applyStyles(this.commonStyle)
             }
           } else if (this.targetView == 'GridRow') {
             GridRow()
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'GridCol') {
             GridRow() {
               GridCol() {
                 Text('GridCol')
-              }.backgroundColor(Color.Pink)
-.applyStyles(this.commonStyle)
-
+              }.backgroundColor(Color.Pink).applyStyles(this.commonStyle)
             }
           } else if (this.targetView == 'Grid') {
             Grid() {
@@ -453,37 +359,26 @@ commonStyle(instance: CommonMethod) {
                 Text('Grid').backgroundColor(Color.White)
               }
             }
-            .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+            .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'GridItem') {
             Grid() {
-              GridItem().backgroundColor(Color.Pink)
-.applyStyles(this.commonStyle)
-
+              GridItem().backgroundColor(Color.Pink).applyStyles(this.commonStyle)
             }
           } else if (this.targetView == 'List') {
             List()
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'ListItem') {
             List() {
               ListItem() {
                 Button('ListItem')
               }
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
-
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
             }
           } else if (this.targetView == 'ListItemGroup') {
             List() {
-              ListItemGroup().backgroundColor(Color.Pink)
-.applyStyles(this.commonStyle)
-
+              ListItemGroup().backgroundColor(Color.Pink).applyStyles(this.commonStyle)
             }
           }  else if (this.targetView == 'Panel') {
 
@@ -493,9 +388,7 @@ commonStyle(instance: CommonMethod) {
             .bindSheet(true,this.myBuilder)
           } else if (this.targetView == 'Refresh') {
             Refresh({ refreshing: false })
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'RelativeContainer') {
             RelativeContainer() {
@@ -506,24 +399,19 @@ commonStyle(instance: CommonMethod) {
                 .alignRules({
                   top: { anchor: '__container__', align: VerticalAlign.Top },
                   left: { anchor: '__container__', align: HorizontalAlign.Start }
-                })
+                } as AlignRuleOption)
                 .id('OnVisibleAreaChange')
             }
-            .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+            .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'Row') {
             Row()
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'RowSplit') {
             RowSplit() {
               Text('Text')
-            }
-.applyStyles(this.commonStyle)
+            }.applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'Scroll') {
             Scroll() {
@@ -536,8 +424,7 @@ commonStyle(instance: CommonMethod) {
                     .textAlign(TextAlign.Center)
                 }, (item:number) => String(item))
               }.width('100%')
-            }.scrollBar(BarState.On)
-.applyStyles(this.commonStyle)
+            }.scrollBar(BarState.On).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'SideBarContainer') {
             SideBarContainer(SideBarContainerType.Embed) {
@@ -559,14 +446,11 @@ commonStyle(instance: CommonMethod) {
                 Text('SideBarContainer content')
                   .fontSize(25)
               }.backgroundColor(Color.Orange)
-            }
-.applyStyles(this.commonStyle)
+            }.applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'Stack') {
             Stack()
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'Swiper') {
             Swiper() {
@@ -575,49 +459,35 @@ commonStyle(instance: CommonMethod) {
               }, (item:number) => String(item))
             }
             .indicator(true)
-            .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+            .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'Tabs') {
             Tabs()
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'TabContent') {
             Tabs() {
               TabContent() {
                 Text('TabContent Test')
-              }.backgroundColor(Color.Pink)
-.applyStyles(this.commonStyle)
-
+              }.backgroundColor(Color.Pink).applyStyles(this.commonStyle)
             }
           } else if (this.targetView == 'WaterFlow') {
             WaterFlow()
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'Circle') {
             Circle()
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'Ellipse') {
             Ellipse()
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'Line') {
             Line()
               .backgroundColor(Color.Pink)
               .startPoint([0, 0])
-              .endPoint([50, 100])
-
-.applyStyles(this.commonStyle)
+              .endPoint([50, 100]).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'Polyline') {
             Polyline()
@@ -625,9 +495,7 @@ commonStyle(instance: CommonMethod) {
               .fillOpacity(0)
               .stroke(Color.Blue)
               .strokeWidth(3)
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'Polygon') {
             Polygon()
@@ -635,9 +503,7 @@ commonStyle(instance: CommonMethod) {
               .fillOpacity(0)
               .strokeWidth(5)
               .stroke(Color.Blue)
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'Path') {
             Path()
@@ -645,30 +511,22 @@ commonStyle(instance: CommonMethod) {
               .fillOpacity(0)
               .stroke(Color.Black)
               .strokeWidth(3)
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'Rect') {
             Rect()
               .fillOpacity(0)
               .stroke(Color.Red)
               .strokeWidth(3)
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'Shape') {
             Shape()
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           } else if (this.targetView == 'Counter') {
             Counter()
-              .backgroundColor(Color.Pink)
-
-.applyStyles(this.commonStyle)
+              .backgroundColor(Color.Pink).applyStyles(this.commonStyle)
 
           }
         }.width(this.columnWidth as number).height(this.columnHeight as number)
@@ -682,12 +540,16 @@ commonStyle(instance: CommonMethod) {
         .width(this.buttonWidth as number)
         .height(this.buttonHeight as number)
         .onClick((e: ClickEvent) => {
+          console.log('++++++++++++++++++++++++click1')
           this._compositionValue = ''
+          console.log('++++++++++++++++++++++++click2')
           this.scroller.scrollTo({
             xOffset: 0,
             yOffset: this._yOffSetValue,
             animation: { duration: 3000, curve: Curve.Linear } as ScrollAnimationOptions
           })
+          console.log('++++++++++++++++++++++++_yOffSetValue'+this._yOffSetValue)
+          console.log('++++++++++++++++++++++++click3')
         })
     }
   }

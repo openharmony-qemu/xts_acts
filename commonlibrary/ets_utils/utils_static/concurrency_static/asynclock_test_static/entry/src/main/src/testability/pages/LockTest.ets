@@ -81,7 +81,7 @@ export function exclusiveMultiTest(): Promise<String> {
   let lockName = 'exclusiveMultiLock';
   let tidBuf = createInt();
   tidBuf[0] = 0;
-  let p1: Promise<NullishType> = taskpool.execute(exclusiveMultiJob, lockName, Number(100), tidBuf, Number(2));
+  let p1: Promise<Any> = taskpool.execute(exclusiveMultiJob, lockName, Number(100), tidBuf, Number(2));
   let p2 = exclusiveMultiJob(lockName, Number(100), tidBuf, Number(1));
   return check('exclusiveMultiTest', Promise.all([p1, p2]));
 }
@@ -184,7 +184,7 @@ export function sharedMultiTest(): Promise<String> {
   flagBuf[0] = 0;
   flagBuf[1] = 0;
   let p1 = sharedMultiJob(lockName, Number(200), flagBuf, Number(0));
-  let p2: Promise<NullishType> = taskpool.execute(sharedMultiJob, lockName, Number(100), flagBuf, Number(1));
+  let p2: Promise<Any> = taskpool.execute(sharedMultiJob, lockName, Number(100), flagBuf, Number(1));
   return check('sharedMultiTest', Promise.all([p1, p2]));
 }
 
@@ -248,7 +248,7 @@ export function isAvailableTest(): Promise<string> {
       }, 1000);
     });
   });
-  let p: Promise<NullishType> = taskpool.execute(isAvailableTrueJob, lockName) as Promise<NullishType>;
+  let p: Promise<Any> = taskpool.execute(isAvailableTrueJob, lockName) as Promise<Any>;
   return check('isAvailableTest', p);
 }
 
@@ -279,7 +279,7 @@ export function isNotAvailableTest(): Promise<string> {
       }, 100);
     });
   });
-  let p: Promise<NullishType> = taskpool.execute(isAvailableFalseJob, lockName);
+  let p: Promise<Any> = taskpool.execute(isAvailableFalseJob, lockName);
   return check('isNotAvailableTest', p);
 }
 
@@ -440,8 +440,8 @@ async function exclusiveLockAcquireJob(): Promise<void> {
 
 // test entry point
 export function twoThreadsAcquireOwnLocks(): Promise<string> {
-  let p1: Promise<NullishType> = taskpool.execute(exclusiveLockAcquireJob) as Promise<NullishType>;
-  let p2: Promise<NullishType> = taskpool.execute(exclusiveLockAcquireJob) as Promise<NullishType>;
+  let p1: Promise<Any> = taskpool.execute(exclusiveLockAcquireJob) as Promise<Any>;
+  let p2: Promise<Any> = taskpool.execute(exclusiveLockAcquireJob) as Promise<Any>;
   return check('twoThreadsAcquireOwnLocks', Promise.all([p1, p2]));
 }
 
@@ -464,7 +464,7 @@ export async function multipleWakeupTest(): Promise<string> {
   let lockName = 'multipleWakeupLock';
   let flagBuf = createInt();
   flagBuf[0] = 0;
-  let p: Promise<NullishType> = taskpool.execute(lockJob, lockName, flagBuf) as Promise<NullishType>;
+  let p: Promise<Any> = taskpool.execute(lockJob, lockName, flagBuf) as Promise<Any>;
   // busy loop
   while (Atomics.load(flagBuf, 0) == 0) {
     await sleep(100)
@@ -784,11 +784,11 @@ async function applyLockJob(lockName: string, mode: AsyncLockMode, tidBuf: Int32
   }, mode);
 }
 
-function fourThreadsApplyForSameLockImpl(mode: AsyncLockMode): Promise<Array<NullishType>> {
+function fourThreadsApplyForSameLockImpl(mode: AsyncLockMode): Promise<Array<Any>> {
   let lockName = 'fourThreadsApplyForSameLock' + (mode == AsyncLockMode.EXCLUSIVE ? '_exclusive' : 'shared');
   let tidBuf = createInt();
   tidBuf[0] = 0;
-  let promises = new Array<Promise<NullishType>>(4);
+  let promises = new Array<Promise<Any>>(4);
   for (let i: int = 0; i < 4; ++i) {
     promises.push(taskpool.execute(applyLockJob, lockName, mode, tidBuf, 0));
   }
@@ -923,10 +923,10 @@ export function pressureTest(): Promise<string> {
     taskBuf[i] = 0;
   }
   let lockName = 'pressureLock';
-  let promises = new Array<Promise<NullishType>>(100);
+  let promises = new Array<Promise<Any>>(100);
   for (let i = 0; i < taskBuf.length; ++i) {
     let timeout = i % 10;
-    let p = taskpool.execute(pressureWorker, lockName, timeout, taskBuf) as Promise<NullishType>;
+    let p = taskpool.execute(pressureWorker, lockName, timeout, taskBuf) as Promise<Any>;
     promises[i] = p;
   }
   return check('pressureTest', Promise.all(promises));

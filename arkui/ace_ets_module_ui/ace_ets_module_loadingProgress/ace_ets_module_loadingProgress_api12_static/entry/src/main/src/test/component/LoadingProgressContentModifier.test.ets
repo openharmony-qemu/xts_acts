@@ -14,7 +14,7 @@
  */
 import router from '@ohos.router';
 import window from '@ohos.window';
-import events_emitter from '@ohos.events.emitter';
+import emitter from '@ohos.events.emitter';
 import {
   describe,
   beforeAll,
@@ -59,7 +59,6 @@ let testAbilityContext: common.UIAbilityContext;
 export default function LoadingProgressContentModifier() {
   describe('LoadingProgressContentModifier', () => {
     beforeAll(async () => {
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -75,10 +74,11 @@ export default function LoadingProgressContentModifier() {
         console.info("get LoadingProgressContentModifier state pages:" + JSON.stringify(pages));
         if (!("LoadingProgressContentModifier" == pages.name)) {
           console.info("get LoadingProgressContentModifier pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          console.info('[wll]pushUrl',options)
+          // console.info("push LoadingProgressContentModifier page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push LoadingProgressContentModifier page error: ' + err);
@@ -91,6 +91,7 @@ export default function LoadingProgressContentModifier() {
       console.info('LoadingProgressContentModifier after each called');
     });
 
+    
     /*
      * @tc.number   LoadingProgressContentModifier_static_001
      * @tc.name     LoadingProgressContentModifier_static_001
@@ -100,8 +101,9 @@ export default function LoadingProgressContentModifier() {
     it('LoadingProgressContentModifier_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[LoadingProgressContentModifier_static_001] START');
       let strJson2 = inspector.getInspectorByKey('loadingProgressContentModifierKey01');
+      await Utils.sleep(2000);
       let obj1 = JSON.parseJsonElement(strJson2);
-      await Utils.sleep(1000);
+      await Utils.sleep(2000);
       console.info('[LoadingProgressContentModifier_static_001] obj1 is: ' + JSON.stringify(obj1));
       expect(obj1.getElement('$attrs').getString('content')).assertEqual('config.enableLoading是：true');
       console.info('[LoadingProgressContentModifier_static_001] END');

@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,47 +13,47 @@
  * limitations under the License.
  */
 import {
-  $r,
-  Button,
-  Checkbox,
-  Color,
-  Column,
-  ColumnOptions,
-  Component,
   Entry,
-  Flex,
-  ForEach,
-  Grid,
-  HorizontalAlign,
-  Image,
-  Line,
-  List,
+  Component,
+  $r,
   Margin,
-  Scroll,
-  Swiper,
+  Column,
+  Button,
+  ColumnOptions,
   Text,
+  HorizontalAlign,
+  Color,
+  Line,
+  Swiper,
+  Scroll,
+  List,
+  Grid,
+  Flex,
+  Image,
+  Checkbox,
+  ForEach,
+  ColumnOptions,
   TouchEvent,
   TouchType,
 } from '@ohos.arkui.component';
-import { Callback, MessageManager } from '../../common/MessageManager';
+import { MessageManager, Callback } from '../../common/MessageManager';
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
 struct RollAngleExample {
   @State text: string = ''
   @State eventType: string = ''
-
   build() {
     Column() {
       Button('Touch')
-        .height('10%')
-        .width('15%')
-        .margin(10)
-        .key('Touch')
+      .height('10%')
+      .width('15%')
+      .margin(10)
+      .key('Touch')
         .onTouch((event?: TouchEvent) => {
-          if (event) {
+          if(event){
             if (event.type === TouchType.Down) {
               this.eventType = 'Down'
             }
@@ -65,7 +65,7 @@ struct RollAngleExample {
             }
 
             this.text = 'Touch:' + this.eventType +
-              '\n tiltX:' + event.tiltX +
+              '\n tiltX:' + event.tiltX+
               '\n rollAngle:' + event.rollAngle;
           }
         })

@@ -55,13 +55,13 @@ export default function RenderNodeDisposeTest() {
         const router = AppStorage.get<Router>("router") as Router
         router.clear();
         let pages = router.getState();
-        
+        // let result = await router.replaceUrl(options);
         router.replaceUrl(options);
         console.info('get RenderNodeDisposeTest state pages:' + JSON.stringify(pages));
         if (!('RenderNodeDisposeTest' == pages.name)) {
           console.info('get RenderNodeDisposeTest pages.name:' + JSON.stringify(pages.name));
           await CommonFunc.sleep(2000);
-          
+          //console.info('push RenderNodeDisposeTest page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push RenderNodeDisposeTest page error:' + err);
@@ -77,13 +77,14 @@ export default function RenderNodeDisposeTest() {
     
     
 
+
 /*
      * @tc.number   renderNodeDisposeTest_static_0100
      * @tc.name     renderNodeDisposeTest_static_0100
      * @tc.desc     renderNodeDisposeTest_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('renderNodeDisposeTest_static_0100', Level.LEVEL2, async (done: () => void) => {
+    it('renderNodeDisposeTest_static_0100', Level.LEVEL2, async (done: () => void) => {
       console.info('renderNodeDisposeTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

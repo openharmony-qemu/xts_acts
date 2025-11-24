@@ -14,5 +14,5 @@
  */
 import onDisAppearTest from './onDisAppear/OnDisAppearTest.test';
 export default function testsuite() {
-  onDisAppearTest();
+  onDisAppearTest();//onDisAppear(Navigator,Gauge)
 }

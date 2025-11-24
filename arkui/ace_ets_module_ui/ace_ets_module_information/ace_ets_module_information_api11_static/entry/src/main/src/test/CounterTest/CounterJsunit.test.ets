@@ -60,7 +60,6 @@ export default function counterJsunit() {
         console.info("get Counter state success " + JSON.stringify(pages));
         if (!("Counter" == pages.name)) {
           console.info("get Counter state success " + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options)
         }
       } catch (err) {

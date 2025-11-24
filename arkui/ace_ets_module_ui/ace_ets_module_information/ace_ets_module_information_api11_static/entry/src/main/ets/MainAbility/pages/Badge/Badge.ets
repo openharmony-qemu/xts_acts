@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { Entry, Component, Column, Flex, BadgeParamWithNumber, FlexDirection, Scroll, ItemAlign, FlexAlign, Text, FontWeight, Badge, BadgePosition, Button, ClickEvent, Color} from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { State,  AppStorage } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
@@ -42,13 +42,13 @@ struct badge {
             count: this.counts,
             position: BadgePosition.Right,
             maxCount: 99,
-            style: { color: 0xFFFFFF, fontSize: 16, badgeSize: 20, badgeColor: Color.Red }
+            style: { color: Color.White, fontSize: 16, badgeSize: 20, badgeColor: Color.Red }
           } as BadgeParamWithNumber) {
             Button('message')
               .onClick((e: ClickEvent) => {
                 this.counts++
               })
-              .width(100).height(50).backgroundColor(0x317aff)
+              .width(100).height(50).backgroundColor(Color.White)
           }
           .width(100)
           .height(50)
@@ -59,13 +59,13 @@ struct badge {
             count: this.counts,
             position: BadgePosition.RightTop,
             maxCount: 99,
-            style: { color: 0xFFFFFF, fontSize: '16', badgeSize: '20', badgeColor: Color.Red }
+            style: { color: Color.White, fontSize: '16', badgeSize: '20', badgeColor: Color.Red }
           } as BadgeParamWithNumber) {
             Button('message')
               .onClick((e: ClickEvent) => {
                 this.counts++
               })
-              .width(100).height(50).backgroundColor(0x317aff)
+              .width(100).height(50).backgroundColor(Color.White)
           }
           .width(100)
           .height(50)
@@ -82,7 +82,7 @@ struct badge {
               .onClick((e: ClickEvent) => {
                 this.counts++
               })
-              .width(100).height(50).backgroundColor(0x317aff)
+              .width(100).height(50).backgroundColor(Color.White)
           }
           .width(100)
           .height(50)

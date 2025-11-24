@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -21,7 +21,6 @@ import RectValue from '../../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import { UIContext } from "@ohos.arkui.UIContext";
 import inspector from '@ohos.arkui.inspector';
-import { GlobalContext } from '../../../../../ets/MainAbility/common/GlobalContext'
 import { Visibility } from '@ohos.arkui.component';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -55,11 +54,8 @@ export default function flex_AlignContent_SpaceAround_TextVisibilityTest() {
         console.info("get Flex_AlignContent_SpaceAround_TextVisibilityTest state pages:" + JSON.stringify(pages));
         if (!("Flex_AlignContent_SpaceAround_TextVisibility" == pages.name)) {
           console.info("get Flex_AlignContent_SpaceAround_TextVisibilityTest pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push Flex_AlignContent_SpaceAround_TextVisibilityTest page error:" + err);
@@ -69,7 +65,7 @@ export default function flex_AlignContent_SpaceAround_TextVisibilityTest() {
 
     afterEach(async (): Promise<void> => {
       await CommonFunc.sleep(1000);
-      AppStorage.get<MessageManager<number>>("messageManager")?.notify({
+      AppStorage.get<MessageManager<Visibility>>("messageManager")?.notify({
         name: 'visibility', value: Visibility.Visible
       });
       console.info("Flex_AlignContent_SpaceAround_TextVisibilityTest after each called");
@@ -88,9 +84,6 @@ it('testFlexAlignContentSpaceAroundTextVisibilityHidden_static', Level.LEVEL0, a
         let firstText: RectValue = CommonFunc.getComponentRect('AlignContent_SpaceAround_TextVisibility01');
         let secondText: RectValue = CommonFunc.getComponentRect('AlignContent_SpaceAround_TextVisibility02');
         let distanceBefore = secondText.top - firstText.bottom;
-        
-        
-        
         AppStorage.get<MessageManager<Visibility>>("messageManager")?.notify({
           name: 'visibility', value: Visibility.Hidden
         });
@@ -102,22 +95,21 @@ it('testFlexAlignContentSpaceAroundTextVisibilityHidden_static', Level.LEVEL0, a
         let flexContainerStrJson = inspector.getInspectorByKey('FlexAlign_SpaceAround_TextVisibility_Container01');
 
         expect(JSON.parseJsonElement(flexContainerStrJson).getString('$type')).assertEqual('Flex');
-        expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('warp')).assertEqual('FlexWrap.Wrap');
+        expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('wrap')).assertEqual('FlexWrap.Wrap');
         expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('alignContent')).assertEqual('FlexAlign.SpaceAround');
 
         let firstTextStrJson = inspector.getInspectorByKey('AlignContent_SpaceAround_TextVisibility01');
         expect(JSON.parseJsonElement(firstTextStrJson).getElement('$attrs').getString('visibility')).assertEqual("Visibility.Hidden");
 
-        const uiContext = new UIContext();
-        expect(Math.abs(Math.round(secondText.bottom - secondText.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 2).assertTrue();
-        expect(Math.abs(Math.round(thirdText.bottom - thirdText.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 2).assertTrue();
-        expect(Math.abs(Math.round(fourthText.bottom - fourthText.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 2).assertTrue();
+        expect(Math.abs(Math.round(secondText.bottom - secondText.top) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 2).assertTrue();
+        expect(Math.abs(Math.round(thirdText.bottom - thirdText.top) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))) <= 2).assertTrue();
+        expect(Math.abs(Math.round(fourthText.bottom - fourthText.top) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 2).assertTrue();
 
         expect(Math.abs(Math.round(secondText.left) - Math.round(thirdText.left)) <= 2).assertTrue();
         expect(Math.abs(Math.round(thirdText.left) - Math.round(fourthText.left)) <= 2).assertTrue();
 
         expect(Math.abs(Math.round(fourthText.left) - Math.round(flexContainer.left)) <= 2).assertTrue();
-        expect(Math.abs(Math.round((secondText.top - flexContainer.top) * 100) / 100 - Math.round((distanceBefore * 1.5 + UIContext.getFocusedUIContext()!.vp2px(50)) * 100) / 100) <= 2)
+        expect(Math.abs(Math.round((secondText.top - flexContainer.top) * 100) / 100 - Math.round((distanceBefore * 1.5 + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) * 100) / 100) <= 2)
           .assertTrue();
 
         expect(Math.abs(Math.round(thirdText.top - secondText.bottom) - Math.round(fourthText.top - thirdText.bottom)) <= 2)
@@ -149,9 +141,6 @@ it('testFlexAlignContentSpaceAroundTextVisibilityNone_static', Level.LEVEL0, asy
         let firstText: RectValue = CommonFunc.getComponentRect('AlignContent_SpaceAround_TextVisibility01');
         let secondText: RectValue = CommonFunc.getComponentRect('AlignContent_SpaceAround_TextVisibility02');
         let distanceBefore = Math.round(secondText.top - firstText.bottom);
-        
-        
-        
         AppStorage.get<MessageManager<Visibility>>("messageManager")?.notify({
           name: 'visibility', value: Visibility.None
         });
@@ -163,15 +152,14 @@ it('testFlexAlignContentSpaceAroundTextVisibilityNone_static', Level.LEVEL0, asy
         let flexContainerStrJson = inspector.getInspectorByKey('FlexAlign_SpaceAround_TextVisibility_Container01');
 
         expect(JSON.parseJsonElement(flexContainerStrJson).getString('$type')).assertEqual('Flex');
-        expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('warp')).assertEqual('FlexWrap.Wrap');
+        expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('wrap')).assertEqual('FlexWrap.Wrap');
         expect(JSON.parseJsonElement(flexContainerStrJson).getElement('$attrs').getElement('constructor').getString('alignContent')).assertEqual('FlexAlign.SpaceAround');
 
         let firstTextStrJson = inspector.getInspectorByKey('AlignContent_SpaceAround_TextVisibility01');
         expect(JSON.parseJsonElement(firstTextStrJson).getElement('$attrs').getString('visibility')).assertEqual("Visibility.None");
-        const uiContext = new UIContext();
-        expect(Math.abs(secondText.bottom - secondText.top) - UIContext.getFocusedUIContext()!.vp2px(100) <= 1).assertTrue();
-        expect(Math.abs(thirdText.bottom - thirdText.top) - UIContext.getFocusedUIContext()!.vp2px(50) <= 1).assertTrue();
-        expect(Math.abs(fourthText.bottom - fourthText.top) - UIContext.getFocusedUIContext()!.vp2px(100) <= 1).assertTrue();
+        expect(Math.abs(secondText.bottom - secondText.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)) <= 1).assertTrue();
+        expect(Math.abs(thirdText.bottom - thirdText.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)) <= 1).assertTrue();
+        expect(Math.abs(fourthText.bottom - fourthText.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)) <= 1).assertTrue();
 
         expect(Math.abs(Math.round(secondText.left) - Math.round(thirdText.left)) <= 1).assertTrue();
         expect(Math.abs(Math.round(thirdText.left) - Math.round(fourthText.left)) <= 1).assertTrue();

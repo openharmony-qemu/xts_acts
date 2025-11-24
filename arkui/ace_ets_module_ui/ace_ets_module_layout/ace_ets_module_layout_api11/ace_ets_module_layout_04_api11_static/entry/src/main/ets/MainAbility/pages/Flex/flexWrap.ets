@@ -12,25 +12,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Component, Row, FlexAlign, Margin, Column, ColumnOptions, Text, Flex, FlexDirection, FlexWrap, Color } from '@ohos.arkui.component'
-import { State,AppStorage } from '@ohos.arkui.stateManagement';
+import { Entry, Component, Row, FlexAlign,ResourceColor,Resource, Length,Margin, Column, ColumnOptions, Text, Flex, FlexDirection, FlexWrap, Color } from '@ohos.arkui.component'
+import { State,AppStorage,StorageProp } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter'
 
 @Entry
 @Component
 struct FlexWrapExample {
-  @State sWidth: string = '20%'
-  @State sHeight: number = 40
-  @State sBackgroundColor: Color = Color.Brown;
+  @StorageProp('sWidth') sWidth: Length = '20%'
+  @StorageProp('sHeight') sHeight: undefined|string|number|Resource = 40 as number
+  @StorageProp('sBackgroundColor') sBackgroundColor: ResourceColor = 0xD2B48C
 
   build() {
     Column() {
       Column({ space: 5 } as ColumnOptions) {
         Text('WrapReverse').fontSize(9).fontColor(0xCCCCCC).width('90%')
         Flex({ wrap: FlexWrap.WrapReverse, direction: FlexDirection.Row }) {
-          Text('1').width(this.sWidth).height(this.sHeight).backgroundColor(this.sBackgroundColor)
-          Text('2').width(this.sWidth).height(this.sHeight).backgroundColor(this.sBackgroundColor)
-          Text('3').width(this.sWidth).height(this.sHeight).backgroundColor(this.sBackgroundColor)
+          Text('1')
+            .width(this.sWidth)
+            .height(this.sHeight)
+            .backgroundColor(this.sBackgroundColor)
+          Text('2')
+            .width(this.sWidth).height(this.sHeight)
+            .backgroundColor(this.sBackgroundColor)
+          Text('3')
+            .width(this.sWidth).height(this.sHeight)
+            .backgroundColor(this.sBackgroundColor)
             .key('WrapReverse')
         }
         .width('90%')
@@ -39,27 +46,5 @@ struct FlexWrapExample {
         .backgroundColor(0xAFEEEE)
       }.width('100%').margin({ top: 5 } as Margin)
     }.width('100%')
-  }
-  onPageShow() {
-    console.info('flexDirection page show called');
-    let stateChangeEvent: events_emitter.InnerEvent = {
-      eventId: 100,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack)
-  }
-  private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData): void => {
-    if (eventData != null) {
-      console.info("swiper page state change called:" + JSON.stringify(eventData));
-      if (((eventData.data) as ESObject)?.getProperty('width') != null) {
-        this.sWidth = ((eventData.data) as ESObject)!.getProperty('width').toString();
-      }
-      if (((eventData.data) as ESObject)!.getProperty('height') != null) {
-        this.sHeight = ((eventData.data) as ESObject)!.getProperty('height').toNumber();
-      }
-      if (((eventData.data) as ESObject)!.getProperty('height') != null) {
-        
-      }
-    }
   }
 }

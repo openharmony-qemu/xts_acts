@@ -32,7 +32,6 @@ import {
   Builder,
   Row,
   NodeContainer,
-  wrapBuilder,
   Position
 } from '@ohos.arkui.component'
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
@@ -61,7 +60,7 @@ class MyNodeController extends NodeController {
   }
 
   removeChild(idx:number){
-    let child = this.rootNode?.getChild(Double.toInt(idx))
+    let child = this.rootNode?.getChild(idx as int)
     if (child){
       this.rootNode?.removeChild(child)
       console.log(`sally-----removechild(${idx})`)
@@ -79,7 +78,7 @@ class MyNodeController extends NodeController {
   }
 
   getPreviousSibling(idx:number){
-    let child = this.rootNode?.getChild(Double.toInt(idx))
+    let child = this.rootNode?.getChild(idx as int)
     if (child){
       let previousSibling = child.getPreviousSibling()
       console.log(`sally-----getPreviousSibling(${idx}) is ${previousSibling}}`)
@@ -87,7 +86,7 @@ class MyNodeController extends NodeController {
   }
 
   getNextSibling(idx:number){
-    let child = this.rootNode?.getChild(Double.toInt(idx))
+    let child = this.rootNode?.getChild(idx as int)
     if (child){
       let nextSibling = child.getNextSibling()
       console.log(`sally-----getNextSibling(${idx}) is ${nextSibling}}`)

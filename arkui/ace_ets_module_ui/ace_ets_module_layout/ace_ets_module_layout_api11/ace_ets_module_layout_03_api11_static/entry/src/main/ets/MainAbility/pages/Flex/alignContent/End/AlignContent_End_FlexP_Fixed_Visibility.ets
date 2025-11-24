@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,7 +16,7 @@
 
 
 import { MessageManager, Callback, Message } from '../../../../common/MessageManager';
-import { Entry, Component, Column,ColumnOptions,Text,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign,Margin,Visibility } from '@ohos.arkui.component';
+import { Entry, Component,Color, Column,ColumnOptions,Text,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign,Margin,Visibility } from '@ohos.arkui.component';
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 
 @Entry
@@ -27,10 +27,6 @@ struct AlignContent_End_FlexP_Fixed_Visibility {
 
   onPageShow() {
     console.info('AlignContentFlex onPageShow');
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<Visibility>>("messageManager",  this.messageManager);
     let callback: Callback<Visibility> = (message: Message<Visibility>) => {
       console.error('message = ' + message.name + "--" + message.value);
@@ -43,7 +39,7 @@ struct AlignContent_End_FlexP_Fixed_Visibility {
 
   build() {
     Column() {
-      Text('AlignContent_End_FlexP_Fixed_Visibility').fontSize(9).fontColor(0xCCCCCC).width('90%')
+      Text('AlignContent_End_FlexP_Fixed_Visibility').fontSize(9).fontColor(Color.Red).width('90%')
       Flex({
         direction: FlexDirection.Row,
         wrap: FlexWrap.Wrap,
@@ -53,17 +49,17 @@ struct AlignContent_End_FlexP_Fixed_Visibility {
         Text('1')
           .width(150)
           .height(50)
-          .backgroundColor(0xF5DEB3)
+          .backgroundColor(Color.Red)
           .key('AlignContent_End_FlexP_Fixed_Visibility_1')
           .visibility(this.textVisibility == 0? Visibility.Visible:(this.textVisibility == 1? Visibility.Hidden:Visibility.None))
-        Text('2').width(150).height(100).backgroundColor(0xD2B48C).key('AlignContent_End_FlexP_Fixed_Visibility_2')
-        Text('3').width(150).height(150).backgroundColor(0xF5DEB3).key('AlignContent_End_FlexP_Fixed_Visibility_3')
-        Text('4').width(150).height(200).backgroundColor(0xD2B48C).key('AlignContent_End_FlexP_Fixed_Visibility_4')
+        Text('2').width(150).height(100).backgroundColor(Color.Red).key('AlignContent_End_FlexP_Fixed_Visibility_2')
+        Text('3').width(150).height(150).backgroundColor(Color.Red).key('AlignContent_End_FlexP_Fixed_Visibility_3')
+        Text('4').width(150).height(200).backgroundColor(Color.Red).key('AlignContent_End_FlexP_Fixed_Visibility_4')
       }
       .key('AlignContent_End_FlexP_Fixed_Visibility_flex001')
       .width(500)
       .height(400)
-      .backgroundColor(0xAFEEEE)
+      .backgroundColor(Color.Red)
 
     }.width('100%')
   }

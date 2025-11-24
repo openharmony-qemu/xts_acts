@@ -15,7 +15,7 @@
 import observer from '@ohos.arkui.observer';
 import { Entry, Component, Column, Text, Image, Color, Padding, Button, TextAlign, ClickEvent, ColumnOptions, Scroller, Scroll,
   TabsController, ForEach, Margin, Row, TabContent, Tabs} from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { State,AppStorage } from '@ohos.arkui.stateManagement'
 
 function callbackFunc(info: observer.TabContentInfo) {
   console.info('tabContentUpdate', JSON.stringify(info));
@@ -24,7 +24,7 @@ function callbackFunc(info: observer.TabContentInfo) {
 @Entry
 @Component
 struct callbackFuncTabsExample {
-  @State currentIndex: int = 0
+  @State currentIndex: number = 0
   private controller: TabsController = new TabsController()
   @State index1: number = -1
 
@@ -45,7 +45,7 @@ struct callbackFuncTabsExample {
           this.currentIndex = 1
         })
       Text('index: ' + this.index1).id('tab_Index_1')
-      Tabs({ index: this.currentIndex, controller: this.controller }) {
+      Tabs({ index: this.currentIndex as int, controller: this.controller }) {
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#00CB87')
         }.tabBar('green').id('tabContentId_0')

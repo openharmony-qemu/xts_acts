@@ -27,12 +27,13 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
-
+// import config from '@ohos.accessibility.config';
 import accessibility from '@ohos.accessibility';
 
 let domain: Int = 0x0000;
 let tag = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
+// const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.arkui.ace.information/MainAbility';
 
 export default function loadingProgressCircularJsunit() {
@@ -44,6 +45,11 @@ export default function loadingProgressCircularJsunit() {
       await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
+      // config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
+      //   console.info(`enable success`);
+      // }).catch((err: object) => {
+      //   console.error(`failed to enable, ${err}`);
+      // })
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/LoadingProgress/loadingProgress',
@@ -80,13 +86,10 @@ it('testloadingProgressCircular_static_0011', Level.LEVEL0, async (done: () => v
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('CircularText');
       console.info("[testloadingProgressCircular0011] component textAlign strJson:" + strJson);
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('Text');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('color')).assertEqual(undefined);
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('color')).assertEqual(undefined);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('width')).assertEqual('100.00vp');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('margin')).assertEqual('5.00vp');
-      console.info("[testloadingProgressCircular0011] color value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('color'));
-      console.info("[testloadingProgressCircular0011] width value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('width'));
-      console.info("[testloadingProgressCircular0011] margin value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('margin'));
       done();
     });
 
@@ -102,13 +105,10 @@ it('testloadingProgressOrbital_static_0001', Level.LEVEL0, async (done: () => vo
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('OrbitalText');
       console.info("[testloadingProgressOrbital0001] component textAlign strJson:" + strJson);
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('Text');
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('color')).assertEqual(undefined);
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Text');
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('color')).assertEqual(undefined);
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('width')).assertEqual('100.00vp');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('margin')).assertEqual('5.00vp');
-      console.info("[testloadingProgressOrbital0001] color value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('color'));
-      console.info("[testloadingProgressOrbital0001] width value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('width'));
-      console.info("[testloadingProgressOrbital0001] margin value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('margin'));
       done();
     });
   })

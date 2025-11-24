@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium"
 import router from '@ohos.router';
 import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -57,11 +57,8 @@ export default function checkboxGroupJsunit() {
         console.info("get checkboxGroup state pages:" + JSON.stringify(pages));
         if (!("checkboxGroup" == pages.name)) {
           console.info("get checkboxGroup pages.name:" + JSON.stringify(pages.name));
-
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push checkboxGroup page error " + err);
@@ -74,13 +71,14 @@ export default function checkboxGroupJsunit() {
     });
 
 
+    
     /*
      * @tc.number   testCheckboxGroup_static_100
      * @tc.name     testCheckboxGroup_static_100
      * @tc.desc     testCheckboxGroup_static_100
      * @tc.level    Level.LEVEL1
      */
-    it('testCheckboxGroup_static_100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testCheckboxGroup_static_100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testCheckboxGroup_100] START');
       await Utils.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('CheckboxGroup');
@@ -91,13 +89,14 @@ export default function checkboxGroupJsunit() {
     });
 
 
+    
     /*
      * @tc.number   testCheckboxGroup_static_200
      * @tc.name     testCheckboxGroup_static_200
      * @tc.desc     testCheckboxGroup_static_200
      * @tc.level    Level.LEVEL1
      */
-    it('testCheckboxGroup_static_200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testCheckboxGroup_static_200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testCheckboxGroup_200] START');
       await Utils.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('CheckboxGroup');
@@ -108,30 +107,32 @@ export default function checkboxGroupJsunit() {
     });
 
 
+    
     /*
      * @tc.number   testCheckboxGroup_static_300
      * @tc.name     testCheckboxGroup_static_300
      * @tc.desc     testCheckboxGroup_static_300
      * @tc.level    Level.LEVEL1
      */
-    it('testCheckboxGroup_static_300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testCheckboxGroup_static_300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testCheckboxGroup_300] START');
       await Utils.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('CheckboxGroup');
       console.info("testCheckboxGroup_300 component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('scrollable')).assertEqual(false);
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('scrollable')).assertEqual(false);
       console.info('testCheckboxGroup_300 END');
       done();
     });
 
 
+    
     /*
      * @tc.number   testCheckboxGroup_static_400
      * @tc.name     testCheckboxGroup_static_400
      * @tc.desc     testCheckboxGroup_static_400
      * @tc.level    Level.LEVEL1
      */
-    it('testCheckboxGroup_static_400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testCheckboxGroup_static_400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testCheckboxGroup_400] START');
       await Utils.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('CheckboxGroup');
@@ -142,13 +143,14 @@ export default function checkboxGroupJsunit() {
     });
 
 
+    
     /*
      * @tc.number   testCheckboxGroup_static_500
      * @tc.name     testCheckboxGroup_static_500
      * @tc.desc     testCheckboxGroup_static_500
      * @tc.level    Level.LEVEL1
      */
-    it('testCheckboxGroup_static_500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testCheckboxGroup_static_500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testCheckboxGroup_500] START');
       await Utils.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('CheckboxGroup');
@@ -159,13 +161,14 @@ export default function checkboxGroupJsunit() {
     });
 
 
+    
     /*
      * @tc.number   testCheckboxGroup_static_600
      * @tc.name     testCheckboxGroup_static_600
      * @tc.desc     testCheckboxGroup_static_600
      * @tc.level    Level.LEVEL1
      */
-    it('testCheckboxGroup_static_600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testCheckboxGroup_static_600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testCheckboxGroup_600] START');
       await Utils.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('CheckboxGroup');

@@ -66,15 +66,13 @@ export default function textAreaLetterSpacing() {
     })
 
     
-    
-    
-/*
+    /*
      * @tc.number   textAreaLetterSpacing_static_0100
      * @tc.name     textAreaLetterSpacing_static_0100
      * @tc.desc     textAreaLetterSpacing_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('textAreaLetterSpacing_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('textAreaLetterSpacing_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[textAreaLetterSpacing_0100] START');
       let strJson = inspector.getInspectorByKey('key_textArea_letterSpacing_001');
       console.info("[textAreaLetterSpacing_0100] obj is: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));

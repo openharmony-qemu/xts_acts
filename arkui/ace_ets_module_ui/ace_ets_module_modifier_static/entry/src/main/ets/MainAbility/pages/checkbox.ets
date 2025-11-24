@@ -12,53 +12,50 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Component,$r,Column,ColumnOptions,Checkbox,Blank,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,
-  FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle,
-  CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, CheckboxAttribute,
-  Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
+import { Entry,Component,$r,Column,ColumnOptions,Checkbox,Blank,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
   State,
   Link,
   Prop,
 } from '@ohos.arkui.stateManagement';
-import { CheckboxModifier } from "@ohos.arkui.modifier";
-
-class CustomModifier extends CheckboxModifier{
-
-  applyNormalAttribute(instance: CheckboxAttribute): void {
-    // super.applyNormalAttribute(instance);
-  }
-
-  onChange1() {
-    this.unselectedColor("#FFED6F21")
-  }
-}
+// import { CheckboxModifier } from "@ohos.arkui.modifier";
+//
+// class CustomModifier extends CheckboxModifier{
+//
+//   applyNormalAttribute(instance: CheckboxAttribute): void {
+//     super.applyNormalAttribute?.(instance);
+//   }
+//
+//   onChange1() {
+//     this.unselectedColor("#FFED6F21")
+//   }
+// }
 
 @Entry
 @Component
 struct checkBoxTest {
-  @State customModifier: CheckboxModifier = new CustomModifier()
-    .select(false)
-    .selectedColor("#FFED6F21")
-    .unselectedColor("#FF00FF00")
-    .mark({
-        strokeColor: Color.Black,
-        size: 50,
-        strokeWidth: 5
-      })
+//   @State customModifier: CheckboxModifier = new CustomModifier()
+//     .select(false)
+//     .selectedColor("#FFED6F21")
+//     .unselectedColor("#FF00FF00")
+//     .mark({
+//         strokeColor: Color.Black,
+//         size: 50,
+//         strokeWidth: 5
+//       })
 
   build() {
     Row() {
       Column() {
         Button("change value").onClick((e: ClickEvent) => {
-          (this.customModifier as CustomModifier).onChange1();
+//           (this.customModifier as CustomModifier).onChange1();
         }).key("changeButton")
 
         Checkbox({ name: 'checkbox1', group: 'checkboxGroup1' })
           .key("Checkbox_0100")
-          .attributeModifier(this.customModifier as CustomModifier)
+//           .attributeModifier(this.customModifier as CustomModifier)
           .onChange((value: boolean) => {
-            // console.info('Checkbox1 change is' + value)
+            console.info('Checkbox1 change is' + value)
           })
       }
       .width('100%')

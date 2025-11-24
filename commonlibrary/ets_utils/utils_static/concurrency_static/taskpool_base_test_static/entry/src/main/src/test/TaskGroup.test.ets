@@ -63,7 +63,7 @@ export default function taskPoolTest() {
           let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
           let task: taskpool.Task = new taskpool.Task(TaskGroup001);
           taskGroup.addTask(task);
-          await taskpool.execute(taskGroup).then((res:NullishType) => {
+          await taskpool.execute(taskGroup).then((res:Any) => {
             taskFlag = true;
           });
           expect(taskFlag).assertEqual(true);
@@ -91,7 +91,7 @@ export default function taskPoolTest() {
           let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
           let task: taskpool.Task = new taskpool.Task(TaskGroup002);
           taskGroup.addTask(task);
-          await taskpool.execute(taskGroup).then((res:NullishType) => {
+          await taskpool.execute(taskGroup).then((res:Any) => {
             expect((res as Array<Char>)[0]).assertEqual(2);
           });
         } catch (error) {
@@ -148,7 +148,7 @@ export default function taskPoolTest() {
           let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
           let task: taskpool.Task = new taskpool.Task(TaskGroup004, undefined);
           taskGroup.addTask(task);
-          await taskpool.execute(taskGroup).then((res:NullishType) => {
+          await taskpool.execute(taskGroup).then((res:Any) => {
             expect((res as Array<Double>)[0]).assertEqual(2);
           });
         } catch (error) {
@@ -178,7 +178,7 @@ export default function taskPoolTest() {
           let name = task.name as string;
           expect(name).assertEqual(taskName);
           taskGroup.addTask(task);
-          await taskpool.execute(taskGroup, taskpool.Priority.LOW).then((res:NullishType) => {
+          await taskpool.execute(taskGroup, taskpool.Priority.LOW).then((res:Any) => {
             expect((res as Array<string>)[0]).assertEqual('taskPoolName');
           });
         } catch (error) {

@@ -12,43 +12,42 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Component,$r,Column,Button,NavDestination,ClickEvent,Text,
-  NavDestinationAttribute} from '@ohos.arkui.component';
+import { Entry,Component,$r,Builder,List, ListItem,Marquee,NavDestination,HorizontalAlign,Menu,MenuItemOptions,FontStyle,MenuItem,Font,Dimension,BorderRadiuses,ListItemGroup,LoadingProgress,Padding,Column,StickyStyle,ImageAnimator,ImageSpan,Alignment,Hyperlink,BreakpointsReference,GridRowDirection,TextOverflow,GridCol,ColumnOptions,Grid,GridItem,Gauge,animateTo,FormComponent,Visibility,FormDimension,Divider,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,GridRow,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
   State,
   Link,
   Prop,
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
-import { NavDestinationModifier } from "@ohos.arkui.modifier";
-
-class CustomModifier extends NavDestinationModifier {
-  applyNavDestinationAttribute(instance: NavDestinationAttribute): void {
-    // super.applyNormalAttribute?.(instance);
-  }
-
-  onChange1() {
-    this.hideTitleBar(true)
-  }
-}
+// import { NavDestinationModifier } from "@ohos.arkui.modifier";
+//
+// class CustomModifier extends NavDestinationModifier {
+//   applyNavDestinationAttribute(instance: NavDestinationAttribute): void {
+//     super.applyNormalAttribute?.(instance);
+//   }
+//
+//   onChange1() {
+//     this.hideTitleBar(true)
+//   }
+// }
 
 @Entry
 @Component
 struct hideTitleBarTest {
-  @State customModifier: NavDestinationModifier = new CustomModifier()
-    .hideTitleBar(false)
+//   @State customModifier: NavDestinationModifier = new CustomModifier()
+//     .hideTitleBar(false)
 
   build() {
     Column() {
       Button("change value").onClick((e: ClickEvent) => {
-        (this.customModifier as CustomModifier).onChange1();
+//         (this.customModifier as CustomModifier).onChange1();
       }).key("changeButton")
 
       NavDestination() {
         Text(`我是NavDestination第1页内容`).fontSize(50)
       }
       .key('NavDestination1')
-      .attributeModifier(this.customModifier as CustomModifier)
+//       .attributeModifier(this.customModifier as CustomModifier)
       .backgroundColor('#ccc')
       .title(`NavDestination`)
 

@@ -12,24 +12,38 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,NavPathStack,Component,$r,ResourceStr,Builder,Resource,NavigationTitleMode,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
+import { Entry,NavPathStack,Component,$r,List,ResourceStr,ListItem,Builder,Resource,NavigationTitleMode,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
   State,
   Link,
-  PropRef,Provide
+  Prop,Provide
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import observer from '@ohos.arkui.observer'
 
-class T32 {
-  names: string = ""
-  values: NavPathStack | null = null
+@Component
+struct PageOne {
+
+  build(){
+    NavDestination() {
+      Text('NavDestination').fontSize(26).fontWeight(700).fontColor(Color.Red)
+    }.backgroundColor('#0c182431').id('backgroundColor1')
+  }
+}
+@Component
+struct PageTwo {
+
+  build(){
+    NavDestination() {
+      Text('NavDestination').fontSize(26).fontWeight(700).fontColor(Color.Red)
+    }.backgroundColor('#0c182431').id('backgroundColor2')
+  }
 }
 @Entry
 @Component
 struct NavDestinationInfoState {
-  private arr: number[] = new Array<number>(1,2,3)
-  // @Provide('pageInfos') pageInfos: NavPathStack = new NavPathStack()
+  private arr: number[] = [1,2,3]
+   pageInfos: NavPathStack = new NavPathStack()
   @State isShow:boolean = false
   @State isShow2:boolean = false
   @State bool: boolean = false
@@ -43,93 +57,70 @@ struct NavDestinationInfoState {
   infoSta1t:observer.NavDestinationState = observer.NavDestinationState.ON_HIDDEN
 
   onPageShow() {
-    observer.onNavDestinationUpdate((info) => {
-
-      if (info.state == this.infoStat) {
-           this.tState = "ON_SHOWN"
-      }
-
-      if (info.state == this.infoSta1t) {
-          this.tState = "ON_HIDDEN"
-      }
-      // this.tState = info !== undefined ? JSON.stringify(info?.state) : 'state'
-    });
+//     observer.onNavDestinationUpdate((info) => {
+// console.info('infoinfoinfoinfo',info.state)
+//       // if (info.state == this.infoStat) {
+//       //   this.tState = "ON_SHOWN"
+//       // }
+//       //
+//       // if (info.state == this.infoSta1t) {
+//       //   this.tState = "ON_HIDDEN"
+//       // }
+//     });
   }
 
   @Builder
-  pageOneTmp(info: T32) {
-    NavDestination() {
-      Column() {
-        Button('pageOneTmp', { stateEffect: true, type: ButtonType.Capsule }).id('NavigationStack111pageOneTmpbut')
-          .width('80%')
-          .height(40)
-          .onClick((e: ClickEvent) => {
-            (info.values as NavPathStack).pushPathByName('pageTwo', null)
-          })
-      }.width('100%').height('100%')
-    }.title('pageOne')
-  }
-  @Builder
-  pageTwoTmp(info: T32) {
-    NavDestination() {
-      Column() {
-        Button('pageTwoTmp', { stateEffect: true, type: ButtonType.Capsule }).id('NavigationStack111pageTwoTmpbut')
-          .width('80%')
-          .height(40)
-          .onClick((e: ClickEvent) => {
-            (info.values as NavPathStack).pushPathByName('pageOne', null)
-          })
-      }.width('100%').height('100%')
-    }.title('pageTwo')
-  }
-  @Builder
-  PageMap(name: string) {
-    if (name === 'pageOne') {
-      // this.pageOneTmp({ names: name, values: this.pageInfos })
-    } else if (name === 'pageTwo') {
-      // this.pageTwoTmp({ names: name, values: this.pageInfos })
+  PageBuilder(name: string, param: Object|null|undefined) {
+    if (name == "page0") {
+      PageOne()
+
+    } else if (name == "page1") {
+      PageTwo()
     }
   }
 
 
-
   build() {
     Column(){
-      // Navigation(this.pageInfos) {
-      //   NavRouter() {
-      //     Row() {
-      //       Row().width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 } as Margin).backgroundColor(Color.Pink)
-      //       Text(`WLAN`).key('NavDestinationInfoStateText01')
-      //         .fontSize(22)
-      //         .fontWeight(500)
-      //         .textAlign(TextAlign.Center)
-      //     }
-      //     .width('90%')
-      //     .height(72)
-      //     NavDestination() {
-      //       Text('NavDestination').fontSize(26).fontWeight(700).fontColor(Color.Red)
-      //     }.backgroundColor('#0c182431').id('backgroundColor111')
-      //   }.backgroundColor(Color.Orange)
-      // }
-      // .id('dfjaslgjsdfkljlsdfjakldfsdf')
-      // .navDestination(this.PageMap)
-      // .height('60%')
-      // .title('NavIndex')
-      // .titleMode(NavigationTitleMode.Mini)
-      // .mode(NavigationMode.Stack)
-      // .hideNavBar(this.bool)
-      // .navBarWidth(260)
-      // .minContentWidth(300)
-      // .navBarWidthRange([200,400])
-      // .border({width: 1})
-      // .height('70%')
-      // .width('100%')
-      // .backgroundColor(Color.Pink)
+      Navigation(this.pageInfos) {
+        List({ space: 12, initialIndex: 0 }) {
+          ForEach(['1','2'], (item: string, index: int) => {
+            ListItem() {
+              Row() {
+                Row().width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 } as Margin).backgroundColor(Color.Pink)
+                Text(`WLAN`).key('NavDestinationInfoStateText01')
+                  .fontSize(22)
+                  .fontWeight(500)
+                  .textAlign(TextAlign.Center)
+                  .onClick((e: ClickEvent)=>{
+                    let pageName = "page" + String(item);
+                    this.pageInfos.pushPathByName(pageName, null);
+                  })
+              }
+              .width('90%')
+              .height(72)
+            }})}
+
+      }
+      .id('dfjaslgjsdfkljlsdfjakldfsdf')
+      .navDestination(this.PageBuilder)
+      .height('60%')
+      .title('NavIndex')
+      .titleMode(NavigationTitleMode.Mini)
+      .mode(NavigationMode.Stack)
+      .hideNavBar(this.bool)
+      .navBarWidth(260)
+      .minContentWidth(300)
+      .navBarWidthRange([200,400])
+      .border({width: 1})
+      .height('70%')
+      .width('100%')
+      .backgroundColor(Color.Pink)
 
       Text(this.tState).key('NavDestinationInfoStateText02').fontWeight(700)
       Button('pop path').key('NavDestinationInfoStateButton')
-        .onClick((e: ClickEvent) => {
-          // this.pageInfos.pop()
+        .onClick(() => {
+          this.pageInfos.pop()
         })
     }
     .border({width:1})

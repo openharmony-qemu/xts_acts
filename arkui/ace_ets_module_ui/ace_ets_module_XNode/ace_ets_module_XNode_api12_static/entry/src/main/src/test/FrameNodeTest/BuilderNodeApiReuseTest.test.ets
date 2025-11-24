@@ -48,19 +48,20 @@ export default function BuilderNodeApiReuseTest() {
         console.info("get BuilderNodeApiReuseTest state pages: " + JSON.stringify(pages));
         if (!("BuilderNodeApiReuse" == pages.name)) {
           console.info("get BuilderNodeApiReuseTest state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push BuilderNodeApiReuseTest success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push BuilderNodeApiReuseTest page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     });
     
     
+
 
 /*
      * @tc.number   BuilderNodeApiReuseTest_static_0100
@@ -68,7 +69,7 @@ export default function BuilderNodeApiReuseTest() {
      * @tc.desc     BuilderNodeApiReuseTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('BuilderNodeApiReuseTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('BuilderNodeApiReuseTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('BuilderNodeApiReuseTest_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(2000);

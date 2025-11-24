@@ -24,15 +24,16 @@ struct RowTest2 {
 
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     console.info("row page stateChangCallBack");
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    if (eventData != null) {
+      const data = eventData.data as Record<String,undefined|null|Object>
+      console.info("row page state change called:" + JSON.stringify(eventData));
+      if(data['alignItems'] != null) {
+        this.alignItems = data['alignItems'] as VerticalAlign;
+      }
+      if(data['justifyContent'] != null) {
+        this.justifyContent = data['justifyContent'] as FlexAlign;
+      }
+    }
   }
 
   onPageShow() {

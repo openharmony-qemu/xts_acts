@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { Entry, Column, Component,Builder,Text,ColumnOptions,Margin,Button,NodeContainer,
-  Visibility,wrapBuilder
+  Visibility,wrapBuilder,CustomBuilderT
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import { ClickEvent } from '@ohos.arkui.component';
@@ -45,14 +45,15 @@ function buildText(params:Params){
 }
 class MyNodeController extends NodeController{
   rootNode:FrameNode|null=null
-  textNode:BuilderNode<[Params]>|null=null
+  textNode:BuilderNode<Params>|null=null
   private uiContext:UIContext|null=null
   private childrenCount :number=0
+  private wrapBuilder = wrapBuilder<CustomBuilderT<Params>>(buildText)
   makeNode(uiContext: UIContext): FrameNode | null{
     this.rootNode=new FrameNode(uiContext)
     this.rootNode?.appendChild(frameNode!)
-    this.textNode= new BuilderNode<[Params]>(uiContext,{selfIdealSize:{width:100,height:100}})!
-    
+    this.textNode= new BuilderNode<Params>(uiContext,{selfIdealSize:{width:100,height:100}})!
+    this.textNode?.build(this.wrapBuilder,new Params('HELLO'))
     this.childrenCount = this.childrenCount+2
     this.uiContext = uiContext
     return this.rootNode
@@ -86,8 +87,11 @@ struct frameNode1{
       Button('appendChild').height('2%')
         .id('frameNode_2')
         .onClick((e:ClickEvent)=>{
-        let child =new FrameNode( AppStorage.get<UIContext>('UIContent')!)
+          console.info('frameNodeTest_static_0100 onClick');
+        let child = new FrameNode(AppStorage.get<UIContext>('UIContent')!)
+          console.info('frameNodeTest_static_0100 child');
         frameNode!.appendChild(child)
+          console.info('frameNodeTest_static_0100 frameNode');
         this.count1=frameNode!.getChildrenCount()
       })
       Button('insertChildAfter').height('2%')

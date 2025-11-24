@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import {
-  Entry,CircleShape, RectShape,
+  Entry,
   Component,
   Column,
   ColumnOptions,
@@ -41,7 +41,7 @@ struct APIClipMaskShape {
   build() {
     Column({ space: 15 } as ColumnOptions) {
       Image($r('app.media.icon')).key('APITextBackgroundStyleSpan').key('APIClipMaskShape_Image1')
-        .clipShape(new CircleShape({ width: '100px', height: '100px' }))
+        // .clipShape(new CircleShape({ width: '100px', height: '100px' }))
         .width('500px').height('280px')
 
       Image($r('app.media.icon')).key('APITextBackgroundStyleSpan').key('APIClipMaskShape_Image2')

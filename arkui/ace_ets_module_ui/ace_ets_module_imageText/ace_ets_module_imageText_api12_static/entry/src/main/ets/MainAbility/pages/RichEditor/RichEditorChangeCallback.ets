@@ -62,14 +62,14 @@ build() {
         .borderColor(Color.Red)
         .width('300vp')
         .onReady((): void => {
-          this.controller.addTextSpan('test')
+          this.controller!.addTextSpan('test')
         })
         .onWillChange((value: RichEditorChangeValue): boolean=>{
           console.log('onWillChange: '+JSON.stringify(value))
           this.text = 'onWillChange'
           this.text2 = value.replacedSpans[0].value
 
-          value.replacedSpans.forEach((item: RichEditorTextSpanResult) => {
+          value.replacedSpans!.forEach((item: RichEditorTextSpanResult) => {
             console.log("spanPosition:" + JSON.stringify(item.spanPosition))
             console.log("value:" + item.value)
             console.log("textStyle:" + JSON.stringify(item.textStyle))

@@ -75,7 +75,9 @@ struct DatePickerLunar {
       })
         .key("DatePicker")
         .lunar(true)
-
+        .onDateChange((date: Date) => {
+          Log.showInfo(TAG, 'select current date is: ' + JSON.stringify(date))
+        })
 
       DatePicker({
         start: new Date('1970-1-1'),
@@ -83,7 +85,9 @@ struct DatePickerLunar {
         selected: this.selectedDate,
       })
         .lunar(false)
-
+        .onDateChange((date: Date) => {
+          Log.showInfo(TAG, 'select current date is: ' + JSON.stringify(date))
+        })
     }
     .width("100%")
     .height("100%")

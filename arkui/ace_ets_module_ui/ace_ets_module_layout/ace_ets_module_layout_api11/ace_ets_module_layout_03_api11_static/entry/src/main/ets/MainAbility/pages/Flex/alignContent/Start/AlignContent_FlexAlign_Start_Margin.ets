@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { Entry, Component, Column,ColumnOptions,Text,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign } from '@ohos.arkui.component';
+import { Entry, Component,Color, Column,ColumnOptions,Text,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign } from '@ohos.arkui.component';
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
@@ -29,16 +29,16 @@ struct AlignContent_FlexAlign_Start_Margin {
         alignContent: FlexAlign.Start,
         alignItems: ItemAlign.Start
       }  as FlexOptions as FlexOptions) {
-        Text('1').width(150).height(50).backgroundColor(0xF5DEB3).key('AlignContentFlexStartMargin_flex_1')
-        Text('2').width(150).height(100).backgroundColor(0xD2B48C).key('AlignContentFlexStartMargin_flex_2')
-        Text('3').width(150).height(150).backgroundColor(0xD2B48C).key('AlignContentFlexStartMargin_flex_3')
-        Text('4').width(150).height(200).backgroundColor(0xF5DEB3).key('AlignContentFlexStartMargin_flex_4')
+        Text('1').width(150).height(50).backgroundColor(Color.Red).key('AlignContentFlexStartMargin_flex_1')
+        Text('2').width(150).height(100).backgroundColor(Color.Red).key('AlignContentFlexStartMargin_flex_2')
+        Text('3').width(150).height(150).backgroundColor(Color.Red).key('AlignContentFlexStartMargin_flex_3')
+        Text('4').width(150).height(200).backgroundColor(Color.Red).key('AlignContentFlexStartMargin_flex_4')
 
       }
       .key('AlignContentFlexStartMargin_flex')
       .width(400)
       .height(360)
-      .backgroundColor(0xAFEEEE)
+      .backgroundColor(Color.Red)
       .margin(15)
 
     }

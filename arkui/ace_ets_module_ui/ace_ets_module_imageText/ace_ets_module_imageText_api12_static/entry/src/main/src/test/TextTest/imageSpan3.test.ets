@@ -63,15 +63,13 @@ export default function imageSpanTest3() {
 
     
      
-    
-    
-/*
+    /*
      * @tc.number   imageSpanTest3_static_0100
      * @tc.name     imageSpanTest3_static_0100
      * @tc.desc     imageSpanTest3_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('imageSpanTest3_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('imageSpanTest3_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageSpanTest3_0100 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('ImageSpan_onComplete_3');

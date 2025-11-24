@@ -56,7 +56,7 @@ struct APIPanGestureisisBegin {
 
   build() {
     Column() {
-      Scroll(this.scroller) { 
+      Scroll(this.scroller) { // 外部滚动容器
         Column() {
           Column().width(200).height(100)
           ForEach(this.arr, (item: number) => {
@@ -75,7 +75,7 @@ struct APIPanGestureisisBegin {
       }
       .id("outer")
       .height(400)
-      .parallelGesture( 
+      .parallelGesture( // 绑定一个Pan手势作为动态控制器
         PanGesture()
           .onActionUpdate((event: GestureEvent)=>{
             let target = this.childRecognizer.getEventTargetInfo() as ScrollableTargetInfo;

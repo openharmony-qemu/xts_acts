@@ -48,16 +48,16 @@ export default function commonEventTest1() {
         console.info("get commonEventTest1 state pages:" + JSON.stringify(pages));
         if (!("commonEventTest1" == pages.name)) {
           console.info("get commonEventTest1 pages.name:" + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push commonEventTest1 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push commonEventTest1 page error:" + err);
       }
       console.info("commonEventTest1 beforeEach end");
-      
+      //done();
     });
     afterEach(async () => {
       await CommonFunc.sleep(1000);
@@ -66,13 +66,14 @@ export default function commonEventTest1() {
     
     
 
+
 /*
      * @tc.number   commonEventTest1_static_0100
      * @tc.name     commonEventTest1_static_0100
      * @tc.desc     commonEventTest1_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('commonEventTest1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('commonEventTest1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('commonEventTest1_static_0100 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create()
@@ -95,13 +96,14 @@ it('commonEventTest1_static_0100', Level.LEVEL0, async (done: () => void): Promi
     
     
 
+
 /*
      * @tc.number   commonEventTest1_static_0200
      * @tc.name     commonEventTest1_static_0200
      * @tc.desc     commonEventTest1_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('commonEventTest1_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('commonEventTest1_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('commonEventTest1_static_0200 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create()

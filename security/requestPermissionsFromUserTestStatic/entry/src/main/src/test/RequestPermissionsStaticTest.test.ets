@@ -184,7 +184,7 @@ export default function requestPermissionsStaticTest() {
             expect(data.authResults[0]).assertEqual(0); // 0: granted
             expect(data.dialogShownResults?.[0]).assertEqual(false);
             done();
-          }).catch((error: NullishType): void => {
+          }).catch((error: Any): void => {
             hilog.info(domain, tag, "Test_requestPermissionsFromUser_004 error" + JSON.stringify(error));
             expect(false).assertFail();
             done();

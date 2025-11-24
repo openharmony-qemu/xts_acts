@@ -51,11 +51,8 @@ export default function RichEditorMaxLengthTest() {
         console.info("get RichEditorMaxLengthTest state pages:" + "");
         if (!("TextClockApi" == pages.name)) {
           console.info("get RichEditorMaxLengthTest pages.name:" + "");
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push RichEditorMaxLengthTest page error:" + err);
@@ -90,7 +87,7 @@ it('RichEditorMaxLengthTest_static_0001', Level.LEVEL1, async (done: () => void)
         await CommonFunc.sleep(500);
         await (getRichTextContent?.click() as  Promise<void>)
         await CommonFunc.sleep(500);
-        expect(AppStorage.get('RichEditorMaxLength')).assertEqual('012345678910');
+        expect(AppStorage.get<string>('RichEditorMaxLength')).assertEqual('012345678910');
 
       AppStorage.delete('RichEditorMaxLength')
       console.info("[RichEditorMaxLengthTest0001] end");
@@ -122,7 +119,7 @@ it('RichEditorMaxLengthTest_static_0002', Level.LEVEL1, async (done: () => void)
         await CommonFunc.sleep(500);
         await (getRichTextContent?.click() as  Promise<void>)
         await CommonFunc.sleep(500);
-        expect(AppStorage.get('RichEditorMaxLength')).assertEqual('01234');
+        expect(AppStorage.get<string>('RichEditorMaxLength')).assertEqual('01234');
 
       AppStorage.delete('RichEditorMaxLength')
       console.info("[RichEditorMaxLengthTest0002] end");
@@ -154,7 +151,7 @@ it('RichEditorMaxLengthTest_static_0003', Level.LEVEL1, async (done: () => void)
         await CommonFunc.sleep(500);
         await (getRichTextContent?.click() as  Promise<void>)
         await CommonFunc.sleep(500);
-        expect(AppStorage.get('RichEditorMaxLength')).assertEqual('012345678910');
+        expect(AppStorage.get<string>('RichEditorMaxLength')).assertEqual('012345678910');
 
       AppStorage.delete('RichEditorMaxLength')
       console.info("[RichEditorMaxLengthTest0003] end");
@@ -186,7 +183,7 @@ it('RichEditorMaxLengthTest_static_0004', Level.LEVEL1, async (done: () => void)
         await CommonFunc.sleep(500);
         await (getRichTextContent?.click() as  Promise<void>)
         await CommonFunc.sleep(500);
-        expect(AppStorage.get('RichEditorMaxLength')).assertEqual('0123456');
+        expect(AppStorage.get<string>('RichEditorMaxLength')).assertEqual('0123456');
 
       AppStorage.delete('RichEditorMaxLength')
       console.info("[RichEditorMaxLengthTest0004] end");

@@ -68,15 +68,13 @@ export default function StyledStringKeyTest1() {
 
 
     
-    
-    
-/*
+    /*
      * @tc.number   StyledStringKeyTest1_static_0100
      * @tc.name     StyledStringKeyTest1_static_0100
      * @tc.desc     StyledStringKeyTest1_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('StyledStringKeyTest1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('StyledStringKeyTest1_static_0100',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StyledStringKeyTest1_0100 START');
       await CommonFunc.sleep(1000);
 
@@ -86,7 +84,7 @@ it('StyledStringKeyTest1_static_0100', Level.LEVEL0, async (done: () => void): P
       try{
         let btn = await driver.findComponent(ON.id('StyledStringKeyTest1_btn'));
         await (btn?.click() as Promise<void>);
-      }catch(e){}
+      }catch(e: Error){}
       await CommonFunc.sleep(1000);
       console.info("[StyledStringKeyTest1_text] btn click");
 

@@ -39,13 +39,13 @@ renderNode.borderStyle = {
   bottom: BorderStyle.Solid
 }
 renderNode.borderRadius = { topLeft: 32, topRight: 32, bottomLeft: 32, bottomRight: 32 };
-const borderWidth = renderNode.borderWidth!;
-const borderColor = renderNode.borderColor!;
-const borderStyle = renderNode.borderStyle!;
-const borderRadius = renderNode.borderRadius!;
+const borderWidth = renderNode.borderWidth;
+const borderColor = renderNode.borderColor;
+const borderStyle = renderNode.borderStyle;
+const borderRadius = renderNode.borderRadius;
 
 renderNode.shapeMask = mask;
-const shapeMask = renderNode.shapeMask!;
+const shapeMask = renderNode.shapeMask;
 
 class MyNodeController extends NodeController {
   private rootNode: FrameNode | null = null;
@@ -72,51 +72,51 @@ struct RenderNodeAttribute {
     Column({space: 10} as ColumnOptions) {
       NodeContainer(this.myNodeController)
       Row(){
-        Text(`${borderWidth.left}`).key('RenderNodeAttribute_borderWidth_left')
+        Text(`${borderWidth!.left}`).key('RenderNodeAttribute_borderWidth_left')
           .fontWeight(700).fontSize(30).width('25%')
-        Text(`${borderWidth.top}`).key('RenderNodeAttribute_borderWidth_top')
+        Text(`${borderWidth!.top}`).key('RenderNodeAttribute_borderWidth_top')
           .fontWeight(700).fontSize(30).width('25%')
-        Text(`${borderWidth.bottom}`).key('RenderNodeAttribute_borderWidth_bottom')
+        Text(`${borderWidth!.bottom}`).key('RenderNodeAttribute_borderWidth_bottom')
           .fontWeight(700).fontSize(30).width('25%')
-        Text(`${borderWidth.right}`).key('RenderNodeAttribute_borderWidth_right')
-          .fontWeight(700).fontSize(30).width('25%')
-      }
-
-      Row(){
-        Text(`${borderColor.left == 0xFF0000FF}`).key('RenderNodeAttribute_borderColor_left')
-          .fontWeight(700).fontSize(30).width('25%')
-        Text(`${borderColor.right == 0xFF0000FF}`).key('RenderNodeAttribute_borderColor_right')
-          .fontWeight(700).fontSize(30).width('25%')
-        Text(`${borderColor.top == 0xFF0000FF}`).key('RenderNodeAttribute_borderColor_top')
-          .fontWeight(700).fontSize(30).width('25%')
-        Text(`${borderColor.bottom == 0xFF0000FF}`).key('RenderNodeAttribute_borderColor_bottom')
+        Text(`${borderWidth!.right}`).key('RenderNodeAttribute_borderWidth_right')
           .fontWeight(700).fontSize(30).width('25%')
       }
 
       Row(){
-        Text(`${borderStyle.left}`).key('RenderNodeAttribute_borderStyle_left')
+        Text(`${borderColor!.left == 0xFF0000FF}`).key('RenderNodeAttribute_borderColor_left')
           .fontWeight(700).fontSize(30).width('25%')
-        Text(`${borderStyle.right}`).key('RenderNodeAttribute_borderStyle_right')
+        Text(`${borderColor!.right == 0xFF0000FF}`).key('RenderNodeAttribute_borderColor_right')
           .fontWeight(700).fontSize(30).width('25%')
-        Text(`${borderStyle.top}`).key('RenderNodeAttribute_borderStyle_top')
+        Text(`${borderColor!.top == 0xFF0000FF}`).key('RenderNodeAttribute_borderColor_top')
           .fontWeight(700).fontSize(30).width('25%')
-        Text(`${borderStyle.bottom}`).key('RenderNodeAttribute_borderStyle_bottom')
-          .fontWeight(700).fontSize(30).width('25%')
-      }
-
-      Row(){
-        Text(`${borderRadius?.topRight}`).key('RenderNodeAttribute_borderRadius_topRight')
-          .fontWeight(700).fontSize(30).width('25%')
-        Text(`${borderRadius?.topLeft}`).key('RenderNodeAttribute_borderRadius_topLeft')
-          .fontWeight(700).fontSize(30).width('25%')
-        Text(`${borderRadius?.bottomLeft}`).key('RenderNodeAttribute_borderRadius_bottomLeft')
-          .fontWeight(700).fontSize(30).width('25%')
-        Text(`${borderRadius?.bottomRight}`).key('RenderNodeAttribute_borderRadius_bottomRight')
+        Text(`${borderColor!.bottom == 0xFF0000FF}`).key('RenderNodeAttribute_borderColor_bottom')
           .fontWeight(700).fontSize(30).width('25%')
       }
 
       Row(){
-        Text(`${shapeMask.strokeWidth}`).key('RenderNodeAttribute_shapeMask_strokeWidth')
+        Text(`${borderStyle!.left}`).key('RenderNodeAttribute_borderStyle_left')
+          .fontWeight(700).fontSize(30).width('25%')
+        Text(`${borderStyle!.right}`).key('RenderNodeAttribute_borderStyle_right')
+          .fontWeight(700).fontSize(30).width('25%')
+        Text(`${borderStyle!.top}`).key('RenderNodeAttribute_borderStyle_top')
+          .fontWeight(700).fontSize(30).width('25%')
+        Text(`${borderStyle!.bottom}`).key('RenderNodeAttribute_borderStyle_bottom')
+          .fontWeight(700).fontSize(30).width('25%')
+      }
+
+      Row(){
+        Text(`${borderRadius!.topRight}`).key('RenderNodeAttribute_borderRadius_topRight')
+          .fontWeight(700).fontSize(30).width('25%')
+        Text(`${borderRadius!.topLeft}`).key('RenderNodeAttribute_borderRadius_topLeft')
+          .fontWeight(700).fontSize(30).width('25%')
+        Text(`${borderRadius!.bottomLeft}`).key('RenderNodeAttribute_borderRadius_bottomLeft')
+          .fontWeight(700).fontSize(30).width('25%')
+        Text(`${borderRadius!.bottomRight}`).key('RenderNodeAttribute_borderRadius_bottomRight')
+          .fontWeight(700).fontSize(30).width('25%')
+      }
+
+      Row(){
+        Text(`${shapeMask!.strokeWidth}`).key('RenderNodeAttribute_shapeMask_strokeWidth')
           .fontWeight(700).fontSize(30).width('25%')
       }
 

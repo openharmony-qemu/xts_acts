@@ -31,7 +31,6 @@ import {
   Builder,
   Row,
   NodeContainer,
-  wrapBuilder,
   ListOptions,
 } from '@ohos.arkui.component'
 import { AppStorage, State, LocalStorage } from '@ohos.arkui.stateManagement';
@@ -47,7 +46,6 @@ let para: Record<string,string> = {
 let storage: LocalStorage = new LocalStorage();
 
 class MyNodeAdapter extends NodeAdapter {
-  
   uiContext: UIContext = new UIContext();
   cachePool: Array<FrameNode> = new Array<FrameNode>();
   changed: boolean = false
@@ -58,7 +56,7 @@ class MyNodeAdapter extends NodeAdapter {
   constructor(uiContext: UIContext, count: number) {
     super();
     this.uiContext = uiContext;
-    this.totalNodeCount = Double.toInt(count);
+    this.totalNodeCount = count as int;
     this.loadData();
   }
 
@@ -66,7 +64,7 @@ class MyNodeAdapter extends NodeAdapter {
     this.reloadTimes++;
     NodeAdapter.attachNodeAdapter(this, this.hostNode!);
     storage.set('attachNodeAdapter', this.hostNode?.getChildrenCount().toString());
-    this.totalNodeCount = Double.toInt(count);
+    this.totalNodeCount = count as int;
     this.loadData();
     this.reloadAllItems();
   }
@@ -92,33 +90,33 @@ class MyNodeAdapter extends NodeAdapter {
   changeData(from: number, count: number): void {
     this.changed = !this.changed;
     for (let i = 0; i < count; i++) {
-      let index = i + from.toInt();
-      this.data[index] = 'Adapter ListItem ' + (this.changed ? 'changed:' : '') + index + " r:" + this.reloadTimes;
+      let index = i + from;
+      this.data[index.toInt()] = 'Adapter ListItem ' + (this.changed ? 'changed:' : '') + index + " r:" + this.reloadTimes;
     }
-    this.reloadItem(Double.toInt(from), Double.toInt(count));
+    this.reloadItem(from as int, count as int);
   }
 
   insertData(from: number, count: number): void {
     for (let i = 0; i < count; i++) {
-      let index = i + from.toInt();
-      this.data.splice(index, 0, 'Adapter ListItem ' + from + '-' + i);
+      let index = i + from;
+      this.data.splice(index as int, 0, 'Adapter ListItem ' + from + '-' + i);
     }
-    this.insertItem(Double.toInt(from), Double.toInt(count));
+    this.insertItem(from as int, count as int);
     this.totalNodeCount += count;
     console.log('UINodeAdapter after insert count:' + this.totalNodeCount);
   }
 
   removeData(from: number, count: number): void {
-    let arr = this.data.splice(from.toInt(), count.toInt());
-    this.removeItem(Double.toInt(from), Double.toInt(count));
+    let arr = this.data.splice(from as int, count as int);
+    this.removeItem(from as int, count as int);
     this.totalNodeCount -= arr.length;
     console.log('UINodeAdapter after remove count:' + this.totalNodeCount);
   }
 
-  moveData(from: int, to: int): void {
-    let tmp = this.data.splice(from, 1);
-    this.data.splice(to, 0, tmp[0]);
-    this.moveItem(Double.toInt(from), Double.toInt(to));
+  moveData(from: number, to: number): void {
+    let tmp = this.data.splice(from as int, 1);
+    this.data.splice(to as int, 0, tmp[0]);
+    this.moveItem(from as int, to as int);
   }
 
   onAttachToNode(target: FrameNode): void {
@@ -135,26 +133,26 @@ class MyNodeAdapter extends NodeAdapter {
     return index;
   }
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  onCreateChild(index: number): FrameNode {
+    storage.set('onCreateChild', 'onCreateChild succ');
+    console.log('UINodeAdapter onCreateChild:' + index);
+    if (this.cachePool.length > 0) {
+      let cacheNode = this.cachePool.pop();
+      if (cacheNode !== undefined) {
+        console.log('UINodeAdapter onCreateChild reused id:' + cacheNode.getUniqueId());
+        let text = cacheNode?.getFirstChild();
+        let textNode = text as typeNode.Text;
+        textNode?.initialize(this.data[index.toInt()]).fontSize(20);
+        return cacheNode;
+      }
+    }
+    console.log('UINodeAdapter onCreateChild createNew');
+    let itemNode = typeNode.createListItemNode(this.uiContext);
+    let textNode = typeNode.createTextNode(this.uiContext);
+    textNode.initialize(this.data[index.toInt()]).fontSize(20);
+    itemNode.appendChild(textNode);
+    return itemNode;
+  }
 
 
 
@@ -174,8 +172,8 @@ class MyNodeAdapter extends NodeAdapter {
   onUpdateChild(id: number, node: FrameNode): void {
     let index = id;
     let text = node.getFirstChild();
-    
-    
+    let textNode = text as typeNode.Text;
+    textNode?.initialize(this.data[index.toInt()]).fontSize(20);
     storage.set('onUpdateChild', 'onUpdateChild succ');
   }
 }

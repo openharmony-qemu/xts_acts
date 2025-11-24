@@ -201,7 +201,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         taskGroup.addTask(doScryptKdfCallbackStub, 256, 1024, 8, 16);
         taskGroup.addTask(doScryptKdfCallbackStub, 512, 1024, 8, 16);
         taskGroup.addTask(doScryptKdfCallbackStub, 1024, 1024, 8, 16);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<boolean> = res?(res as Array<boolean>) : new Array<Boolean>();
           for (let i = 0; i< tmp.length; i++) {
             let ret: boolean = tmp[i] as boolean;
@@ -238,7 +238,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
             "password", new Uint8Array(16), CallbackType.TYPE_IS_PROMISE);
         }
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let ret: boolean = tmp[i].ret as boolean;
@@ -277,7 +277,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
             "password", new Uint8Array(16), CallbackType.TYPE_IS_SYNC);
         }
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let ret: boolean = tmp[i].ret as boolean;
@@ -314,7 +314,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
             "password", new Uint8Array(), CallbackType.TYPE_IS_PROMISE);
         }
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let ret: boolean = tmp[i].ret as boolean;
@@ -351,7 +351,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
             "password", new Uint8Array(), CallbackType.TYPE_IS_SYNC);
         }
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let ret: boolean = tmp[i].ret as boolean;
@@ -388,7 +388,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
             new Uint8Array(8), new Uint8Array(), CallbackType.TYPE_IS_PROMISE);
         }
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let ret: boolean = tmp[i].ret as boolean;
@@ -425,7 +425,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
             new Uint8Array(8), new Uint8Array(), CallbackType.TYPE_IS_PROMISE);
         }
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let ret: boolean = tmp[i].ret as boolean;
@@ -462,7 +462,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
             new Uint8Array(8), new Uint8Array(), CallbackType.TYPE_IS_CALLBACK);
         }
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let ret: boolean = tmp[i].ret as boolean;
@@ -499,7 +499,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
             "password", new Uint8Array(12), CallbackType.TYPE_IS_CALLBACK);
         }
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let ret: boolean = tmp[i].ret as boolean;
@@ -535,7 +535,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           "password", new Uint8Array(12), CallbackType.TYPE_IS_PROMISE);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -571,7 +571,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           "password", new Uint8Array(12), CallbackType.TYPE_IS_PROMISE);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -607,7 +607,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           "password", new Uint8Array(12), CallbackType.TYPE_IS_SYNC);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -643,7 +643,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           "password", new Uint8Array(12), CallbackType.TYPE_IS_SYNC);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -679,7 +679,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           "password", new Uint8Array(12), CallbackType.TYPE_IS_SYNC);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -715,7 +715,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           "password", new Uint8Array(12), CallbackType.TYPE_IS_PROMISE);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -751,7 +751,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           "password", new Uint8Array(12), CallbackType.TYPE_IS_PROMISE);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -787,7 +787,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           "password", new Uint8Array(12), CallbackType.TYPE_IS_PROMISE);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -823,7 +823,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           "password", new Uint8Array(12), CallbackType.TYPE_IS_PROMISE);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -859,7 +859,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           "password", new Uint8Array(12), CallbackType.TYPE_IS_PROMISE);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -895,7 +895,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           "password", new Uint8Array(12), CallbackType.TYPE_IS_CALLBACK);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -931,7 +931,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           "password", new Uint8Array(12), CallbackType.TYPE_IS_SYNC);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -967,7 +967,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           "password", new Uint8Array(12), CallbackType.TYPE_IS_SYNC);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -1003,7 +1003,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           "password", new Uint8Array(12), CallbackType.TYPE_IS_PROMISE);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -1039,7 +1039,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           "password", new Uint8Array(12), CallbackType.TYPE_IS_PROMISE);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -1075,7 +1075,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           new Uint8Array(64), new Uint8Array(12), CallbackType.TYPE_IS_CALLBACK);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -1111,7 +1111,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           new Uint8Array(64), new Uint8Array(12), CallbackType.TYPE_IS_CALLBACK);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -1147,7 +1147,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           "", new Uint8Array(12), CallbackType.TYPE_IS_CALLBACK);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -1183,7 +1183,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           new Uint8Array(), new Uint8Array(12), CallbackType.TYPE_IS_SYNC);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -1221,7 +1221,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
           taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, vector.keySize,
             vector.passphrase, salt, CallbackType.TYPE_IS_PROMISE);
-          await taskpool.execute(taskGroup).then((res: NullishType) => {
+          await taskpool.execute(taskGroup).then((res: Any) => {
             let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
             for (let i = 0; i< tmp.length; i++) {
               let res: secretResult = tmp[i] as secretResult;

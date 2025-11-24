@@ -15,45 +15,17 @@
 import { GlobalContext } from './../../common/GlobalContext';
 import { ValueT } from './../../common/Value';
 import { MessageManager, Callback, Message } from './../../common/MessageManager';
-import { Entry, Component, LineCapStyle, Color, Flex, Row, Column, ClickEvent, FlexDirection, ItemAlign, FlexAlign, Text, Divider, Button, Margin } from '@ohos.arkui.component'
-import { State,AppStorage } from '@ohos.arkui.stateManagement';
-
-type MessageData = boolean | string | number | LineCapStyle
+import { Entry, Component, LineCapStyle, Color,Length, Flex,Resource,ResourceColor, Row, Column, ClickEvent, FlexDirection, ItemAlign, FlexAlign, Text, Divider, Button, Margin } from '@ohos.arkui.component'
+import { State,AppStorage,StorageProp } from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component
 struct DividerExample {
-  @State vertical:boolean = false
-  @State color:string = '#acbdef'
-  @State strokeWidth:number = 20
-  @State lineCapStyle:LineCapStyle = LineCapStyle.Butt
-  @State widthK:number = 0
-  messageManager: MessageManager<object> = new MessageManager<object>()
-   onPageShow() {
-    console.info('divider onPageShow')
-    AppStorage.setOrCreate<MessageManager<object>>("messageManager",  this.messageManager);
-    let callback: Callback<object> = (message: Message<object>) => {
-      console.error('message = ' + message.name + "--" + message.value)
-      if (message.name == 'vertical') {
-          this.vertical = message.value as boolean
-      }
-      if (message.name == 'color') {
-          this.color = message.value as string
-      }
-      if (message.name == 'strokeWidth') {
-          this.strokeWidth = message.value as number
-      }
-      if (message.name == 'lineCapStyle') {
-          this.lineCapStyle = message.value as LineCapStyle
-      }
-      if (message.name == 'widthK') {
-          this.widthK = message.value as number
-         
-      }
-    }
-    this.messageManager.registerCallback(callback)
-
-  }
+  @StorageProp('vertical') vertical:boolean = false
+  @StorageProp('color') color:ResourceColor|undefined = Color.Red
+  @StorageProp('strokeWidth') strokeWidth:number|string|undefined = 20 as number
+  @StorageProp('lineCapStyle') lineCapStyle: LineCapStyle = LineCapStyle.Butt
+  @StorageProp('widthK') widthK: undefined|string|number|Resource = 0 as number
 
   build() {
     Column() {
@@ -70,7 +42,11 @@ struct DividerExample {
               .fontColor('#007DFF')
               .fontWeight(500)
               .backgroundColor(Color.Transparent)
-            Divider().vertical(this.vertical).height(22).color(this.color).width(this.widthK).margin({ left: 8, right: 8 } as Margin).strokeWidth(this.strokeWidth).lineCap(this.lineCapStyle).key("divider")
+            Divider().vertical(this.vertical).height(22).color(this.color)
+              .width(this.widthK)
+              .margin({ left: 8, right: 8 } as Margin)
+              .strokeWidth(this.strokeWidth)
+              .lineCap(this.lineCapStyle).key("divider")
             Button('Button')
               .width(136)
               .height(22)

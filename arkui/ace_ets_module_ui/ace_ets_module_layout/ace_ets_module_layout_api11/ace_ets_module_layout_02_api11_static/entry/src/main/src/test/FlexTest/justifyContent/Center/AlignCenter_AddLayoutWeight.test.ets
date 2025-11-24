@@ -40,9 +40,8 @@ export default function AlignCenter_AddLayoutWeight() {
 
     beforeAll(() => {
       console.info("AlignCenter_AddLayoutWeight beforeEach start");
-      
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace_ets_module_layout_02_api11_static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
@@ -58,11 +57,8 @@ export default function AlignCenter_AddLayoutWeight() {
         console.info("get AlignCenter_AddLayoutWeight state pages:" + JSON.stringify(pages));
         if (!("AlignCenter_AddLayoutWeight" == pages.name)) {
           console.info("get AlignCenter_AddLayoutWeight pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push AlignCenter_AddLayoutWeight page error:" + err);
@@ -95,11 +91,9 @@ it('testFlexAlignCenterTextLayoutWeight01_static', Level.LEVEL0, async () : Prom
           name: 'OneLayoutWeight2', value: 2
         });
         result!.notify({
-          name: 'OneLayoutWeight2', value: 2
+          name: 'OneLayoutWeight3', value: 2
         });
       }
-
-
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('Center_AddLayoutWeight_01');
 
@@ -110,7 +104,6 @@ it('testFlexAlignCenterTextLayoutWeight01_static', Level.LEVEL0, async () : Prom
       let Center_AddLayoutWeight_012: RectValue = CommonFunc.getComponentRect('Center_AddLayoutWeight_012');
       let Center_AddLayoutWeight_013: RectValue = CommonFunc.getComponentRect('Center_AddLayoutWeight_013');
       let Center_AddLayoutWeight_01: RectValue = CommonFunc.getComponentRect('Center_AddLayoutWeight_01');
-      const uiContext = new UIContext();
       expect(Math.abs(Center_AddLayoutWeight_011.top - Center_AddLayoutWeight_012.top) <= 1).assertTrue();
       expect(Math.abs(Center_AddLayoutWeight_013.top - Center_AddLayoutWeight_012.top) <= 1).assertTrue();
       expect(Math.abs(Center_AddLayoutWeight_011.top - Center_AddLayoutWeight_01.top) <= 1).assertTrue();
@@ -118,17 +111,17 @@ it('testFlexAlignCenterTextLayoutWeight01_static', Level.LEVEL0, async () : Prom
       expect(Math.abs(Center_AddLayoutWeight_012.right - Center_AddLayoutWeight_013.left) <= 1).assertTrue();
       expect(Math.abs(Center_AddLayoutWeight_011.left - Center_AddLayoutWeight_01.left) <= 1).assertTrue();
       expect(Math.abs(Center_AddLayoutWeight_013.right - Center_AddLayoutWeight_01.right) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Center_AddLayoutWeight_011.right - Center_AddLayoutWeight_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddLayoutWeight_011.right - Center_AddLayoutWeight_011.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddLayoutWeight_012.right - Center_AddLayoutWeight_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddLayoutWeight_012.right - Center_AddLayoutWeight_012.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddLayoutWeight_013.right - Center_AddLayoutWeight_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddLayoutWeight_013.right - Center_AddLayoutWeight_013.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddLayoutWeight_011.bottom - Center_AddLayoutWeight_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddLayoutWeight_011.bottom - Center_AddLayoutWeight_011.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddLayoutWeight_012.bottom - Center_AddLayoutWeight_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddLayoutWeight_012.bottom - Center_AddLayoutWeight_012.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Center_AddLayoutWeight_013.bottom - Center_AddLayoutWeight_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Center_AddLayoutWeight_013.bottom - Center_AddLayoutWeight_013.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
       console.info('[testFlexAlignCenterTextLayoutWeight01] END');
 
@@ -155,7 +148,6 @@ it('testFlexAlignCenterTextLayoutWeight02_static', Level.LEVEL0, async () : Prom
           name: 'OneLayoutWeight3', value: 0
         });
       }
-
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('Center_AddLayoutWeight_01');
 
@@ -166,7 +158,6 @@ it('testFlexAlignCenterTextLayoutWeight02_static', Level.LEVEL0, async () : Prom
       let Center_AddLayoutWeight_012: RectValue = CommonFunc.getComponentRect('Center_AddLayoutWeight_012');
       let Center_AddLayoutWeight_013: RectValue = CommonFunc.getComponentRect('Center_AddLayoutWeight_013');
       let Center_AddLayoutWeight_01: RectValue = CommonFunc.getComponentRect('Center_AddLayoutWeight_01');
-      const uiContext = new UIContext();
       expect(Math.abs(Center_AddLayoutWeight_011.top - Center_AddLayoutWeight_012.top) <= 1).assertTrue();
       expect(Math.abs(Center_AddLayoutWeight_013.top - Center_AddLayoutWeight_012.top) <= 1).assertTrue();
       expect(Math.abs(Center_AddLayoutWeight_011.top - Center_AddLayoutWeight_01.top) <= 1).assertTrue();
@@ -177,14 +168,14 @@ it('testFlexAlignCenterTextLayoutWeight02_static', Level.LEVEL0, async () : Prom
       let oneWidth = Math.round(Center_AddLayoutWeight_011.right - Center_AddLayoutWeight_011.left);
       let twoWidth = Math.round(Center_AddLayoutWeight_012.right - Center_AddLayoutWeight_012.left);
       expect(Math.abs((Math.round(twoWidth / oneWidth)) - (2)) <= 1).assertTrue();
-      expect(Math.abs(Math.round(twoWidth + oneWidth) - Math.round(UIContext.getFocusedUIContext()!.vp2px(350))) <= 1).assertTrue();
-      expect(Math.abs(Math.round(Center_AddLayoutWeight_013.right - Center_AddLayoutWeight_013.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
+      expect(Math.abs(Math.round(twoWidth + oneWidth) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(350)))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(Center_AddLayoutWeight_013.right - Center_AddLayoutWeight_013.left) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Center_AddLayoutWeight_011.bottom - Center_AddLayoutWeight_011.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
+      expect(Math.abs(Math.round(Center_AddLayoutWeight_011.bottom - Center_AddLayoutWeight_011.top) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Center_AddLayoutWeight_012.bottom - Center_AddLayoutWeight_012.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
+      expect(Math.abs(Math.round(Center_AddLayoutWeight_012.bottom - Center_AddLayoutWeight_012.top) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.abs(Math.round(Center_AddLayoutWeight_013.bottom - Center_AddLayoutWeight_013.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
+      expect(Math.abs(Math.round(Center_AddLayoutWeight_013.bottom - Center_AddLayoutWeight_013.top) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1)
         .assertTrue();
       console.info('[testFlexAlignCenterTextLayoutWeight02] END');
 

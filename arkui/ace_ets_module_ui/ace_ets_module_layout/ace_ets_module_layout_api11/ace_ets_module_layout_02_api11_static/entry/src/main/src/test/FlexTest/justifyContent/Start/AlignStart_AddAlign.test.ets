@@ -41,9 +41,8 @@ export default function AlignStart_AddAlign() {
 
     beforeAll(() => {
       console.info("AlignStart_AddAlign beforeEach start");
-      
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace_ets_module_layout_02_api11_static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
@@ -59,11 +58,8 @@ export default function AlignStart_AddAlign() {
         console.info("get AlignStart_AddAlign state pages:" + JSON.stringify(pages));
         if (!("AlignStart_AddAlign" == pages.name)) {
           console.info("get AlignStart_AddAlign pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push AlignStart_AddAlign page error:" + err);
@@ -90,11 +86,9 @@ it('textFlexAlignStartAlignBottomEnd_static', Level.LEVEL0, async () : Promise<v
       let result = AppStorage.get<MessageManager<Alignment>>("messageManager")
       if (result !== null) {
         result!.notify({
-          name: 'DadAlign', value: Alignment.BottomEnd
+          name: 'DadAddAlign', value: Alignment.BottomEnd
         });
-
       }
-
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('Start_AddAlign_01');
 
@@ -105,20 +99,19 @@ it('textFlexAlignStartAlignBottomEnd_static', Level.LEVEL0, async () : Promise<v
       let Start_AddAlign_012: RectValue = CommonFunc.getComponentRect('Start_AddAlign_012');
       let Start_AddAlign_013: RectValue = CommonFunc.getComponentRect('Start_AddAlign_013');
       let Start_AddAlign_01: RectValue = CommonFunc.getComponentRect('Start_AddAlign_01');
-      const uiContext = new UIContext();
       expect(Math.abs(Start_AddAlign_011.top - Start_AddAlign_012.top) <= 1).assertTrue()
       expect(Math.abs(Start_AddAlign_012.top - Start_AddAlign_013.top) <= 1).assertTrue()
       expect(Math.abs(Start_AddAlign_011.top - Start_AddAlign_01.top) <= 1).assertTrue()
       expect(Math.abs(Start_AddAlign_012.left - Start_AddAlign_011.right) <= 1).assertTrue()
       expect(Math.abs(Start_AddAlign_013.left - Start_AddAlign_012.right) <= 1).assertTrue()
       expect(Math.abs(Start_AddAlign_01.left - Start_AddAlign_011.left) <= 1).assertTrue()
-      expect(Math.abs(Start_AddAlign_011.right - Start_AddAlign_011.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddAlign_012.right - Start_AddAlign_012.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddAlign_013.right - Start_AddAlign_013.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddAlign_011.bottom - Start_AddAlign_011.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddAlign_012.bottom - Start_AddAlign_012.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddAlign_013.bottom - Start_AddAlign_013.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddAlign_01.right - Start_AddAlign_013.right - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue()
+      expect(Math.abs(Start_AddAlign_011.right - Start_AddAlign_011.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(Start_AddAlign_012.right - Start_AddAlign_012.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(Start_AddAlign_013.right - Start_AddAlign_013.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(Start_AddAlign_011.bottom - Start_AddAlign_011.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) <= 1).assertTrue()
+      expect(Math.abs(Start_AddAlign_012.bottom - Start_AddAlign_012.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue()
+      expect(Math.abs(Start_AddAlign_013.bottom - Start_AddAlign_013.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(Start_AddAlign_01.right - Start_AddAlign_013.right - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) <= 1).assertTrue()
       console.info('[textFlexAlignStartAlignBottomEnd] END');
 
     });

@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,7 +17,7 @@ import type { KeyCode } from '@ohos.multimodalInput.keyCode';
 import { KeyCode } from '@ohos.multimodalInput.keyCode'
 import { BusinessError } from '@ohos.base';
 import { Callback, Message, MessageManager } from '../../../ets/MainAbility/common/MessageManager';
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -35,23 +35,10 @@ let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
-
-const keycodeMap = new Map<string | FunctionKey, Int>();
+// to test SHIFT +TAB
+const keycodeMap = new Map<string | FunctionKey, int>();
 
 keycodeMap.set(FunctionKey.TAB, KeyCode.KEYCODE_TAB);
-
-async function testAsyncFunction(keyChar: string | FunctionKey, driver: Driver): Promise<void> {
-  console.info('test SHIFT + ' + keyChar + " start");
-
-  driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, keycodeMap.get(keyChar) as Int);
-  await CommonFunc.sleep(2000);
-
-  let tt2 = inspector.getInspectorByKey('keyTest2Tab');
-  let obj2 = JSON.parseJsonElement(tt2);
-  console.info('SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_STATIC_0160 ' +
-  obj2.getElement('$attrs').getString('content'));
-  expect(obj2.getElement('$attrs').getString('content')).assertEqual("I clicked Button 1");
-}
 
 export default function globalShortcutKeyTest2() {
   describe('globalShortcutKeyTest2', () => {
@@ -86,28 +73,37 @@ export default function globalShortcutKeyTest2() {
       await CommonFunc.sleep(500);
     });
 
-
-    /*
+    /**
      * @tc.number    SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_STATIC_0160
      * @tc.name      SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_STATIC_0160
-     * @tc.desc      SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_STATIC_0160
-     * @tc.level     2
+     * @tc.desc      simulate the keyboard operate “SHIFT + TAB”
+     * @tc.level:    Level 3
+     * @tc.type :
+     * @tc.size :
      */
     it('SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_STATIC_0160', Level.LEVEL0,
       async (done: () => void): Promise<void> => {
-        try {
-          let keyStrings: (string | FunctionKey)[] = [
-            FunctionKey.TAB];
-          let driver = Driver.create();
-
-          for (const keyChar of keyStrings) {
-            await testAsyncFunction(keyChar, driver);
-          }
-          console.info("SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_STATIC_0160 end");
-          done();
-        } catch (err) {
-          expect().assertFail();
+        let keyStrings: (string | FunctionKey)[] = [
+          FunctionKey.TAB];
+        let driver = Driver.create();
+        // SHIT + TAB
+        for (const keyChar of keyStrings) {
+          await testAsyncFunction(keyChar, driver);
         }
+        console.info("SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_STATIC_0160 end");
+        done();
       });
   })
+}
+async function testAsyncFunction(keyChar: string | FunctionKey, driver: Driver): Promise<void> {
+  console.info('test SHIFT + ' + keyChar + " start");
+  // keyboard to simulate
+  driver.triggerCombineKeys(KeyCode.KEYCODE_SHIFT_LEFT, keycodeMap.get(keyChar) as int);
+  await CommonFunc.sleep(2000);
+  // to get the data to check
+  let tt2 = inspector.getInspectorByKey('keyTest2Tab');
+  let obj2 = JSON.parseJsonElement(tt2);
+  console.info('SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_STATIC_0160 ' +
+  obj2.getElement('$attrs').getString('content'));
+  expect(obj2.getElement('$attrs').getString('content')).assertEqual("I clicked Button 1");
 }

@@ -67,15 +67,13 @@ export default function TextStyle() {
 
     
 
-    
-    
-/*
+    /*
      * @tc.number   TextStyle_static_001
      * @tc.name     TextStyle_static_001
      * @tc.desc     TextStyle_static_001
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextStyle_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextStyle_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextStyle_001] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
@@ -96,15 +94,13 @@ it('TextStyle_static_001', Level.LEVEL0, async (done: () => void): Promise<void>
 
     });
 
-    
-    
-/*
+    /*
      * @tc.number   TextStyle_static_002
      * @tc.name     TextStyle_static_002
      * @tc.desc     TextStyle_static_002
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextStyle_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextStyle_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextStyle_002] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
@@ -125,15 +121,13 @@ it('TextStyle_static_002', Level.LEVEL0, async (done: () => void): Promise<void>
 
     });
 
-    
-    
-/*
+    /*
      * @tc.number   TextStyle_static_003
      * @tc.name     TextStyle_static_003
      * @tc.desc     TextStyle_static_003
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextStyle_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextStyle_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextStyle_003] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
@@ -154,15 +148,13 @@ it('TextStyle_static_003', Level.LEVEL0, async (done: () => void): Promise<void>
 
     });
 
-    
-    
-/*
+    /*
      * @tc.number   TextStyle_static_004
      * @tc.name     TextStyle_static_004
      * @tc.desc     TextStyle_static_004
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextStyle_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextStyle_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextStyle_004] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
@@ -183,15 +175,13 @@ it('TextStyle_static_004', Level.LEVEL0, async (done: () => void): Promise<void>
 
     });
 
-    
-    
-/*
+    /*
      * @tc.number   TextStyle_static_005
      * @tc.name     TextStyle_static_005
      * @tc.desc     TextStyle_static_005
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextStyle_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextStyle_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextStyle_005] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
@@ -212,15 +202,13 @@ it('TextStyle_static_005', Level.LEVEL0, async (done: () => void): Promise<void>
 
     });
 
-    
-    
-/*
+    /*
      * @tc.number   TextStyle_static_006
      * @tc.name     TextStyle_static_006
      * @tc.desc     TextStyle_static_006
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextStyle_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextStyle_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextStyle_006] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();

@@ -35,7 +35,7 @@ renderNode.frame = {
 };
 renderNode.backgroundColor = 0XFF00FF00;
 renderNode.shapeClip = clip;
-const shapeClip = renderNode.shapeClip!;
+const shapeClip = renderNode.shapeClip;
 
 class MyNodeController extends NodeController {
   private rootNode: FrameNode | null = null;
@@ -76,12 +76,12 @@ struct SetShapeClip {
         })
       Button('setRoundRectShape')
         .onClick((e:ClickEvent) => {
-          renderNode.shapeClip!.setRoundRectShape({
+          renderNode.shapeClip.setRoundRectShape({
             rect: {
               left: 0,
               top: 0,
-              right: UIContext.getFocusedUIContext()!.vp2px(150),
-              bottom: UIContext.getFocusedUIContext()!.vp2px(150)
+              right: vp2px(150),
+              bottom: vp2px(150)
             },
             corners: {
               topLeft: { x: 32, y: 32 },
@@ -90,24 +90,28 @@ struct SetShapeClip {
               bottomRight: { x: 32, y: 32 }
             }
           });
+          renderNode.shapeClip = renderNode.shapeClip;
         })
       Button('setCircleShape')
         .onClick((e:ClickEvent) => {
-          renderNode.shapeClip!.setCircleShape({ centerY: 75, centerX: 75, radius: 75 });
+          renderNode.shapeClip.setCircleShape({ centerY: 75, centerX: 75, radius: 75 });
+          renderNode.shapeClip = renderNode.shapeClip;
 
         })
       Button('setOvalShape')
         .onClick((e:ClickEvent) => {
-          renderNode.shapeClip!.setOvalShape({
+          renderNode.shapeClip.setOvalShape({
             left: 0,
-            right: UIContext.getFocusedUIContext()!.vp2px(150),
+            right: vp2px(150),
             top: 0,
-            bottom: UIContext.getFocusedUIContext()!.vp2px(100)
+            bottom: vp2px(100)
           });
+          renderNode.shapeClip = renderNode.shapeClip;
         })
       Button('setCommandPath')
         .onClick((e:ClickEvent) => {
-          renderNode.shapeClip!.setCommandPath({ commands: 'M100 0 L0 100 L50 200 L150 200 L200 100 Z' });
+          renderNode.shapeClip.setCommandPath({ commands: 'M100 0 L0 100 L50 200 L150 200 L200 100 Z' });
+          renderNode.shapeClip = renderNode.shapeClip;
         })
     }
   }

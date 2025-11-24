@@ -12,7 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { DrawContext, FrameNode, NodeController, LayoutConstraint, Size, NodePosition } from '@ohos.arkui.node';
+import { DrawContext, FrameNode, NodeController, LayoutConstraint, Size,NodePosition} from '@ohos.arkui.node';
+// import {  Position } from '@ohos.window';
 import drawing from '@ohos.graphics.drawing';
 import {
   Entry,
@@ -32,8 +33,7 @@ import {
   Builder,
   Row,
   NodeContainer,
-  wrapBuilder,
-  TextAlign
+  TextAlign,Position
 } from '@ohos.arkui.component'
 import { AppStorage, State } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
@@ -98,12 +98,12 @@ class MyFrameNode extends FrameNode {
 
   onDraw(context: DrawContext) {
     const canvas = context.canvas;
-    
-    
-    
-    
-    
-    
+    // const pen = new drawing.Pen();
+    // pen.setStrokeWidth(5);
+    // pen.setColor({ alpha: 255, red: 255, green: 0, blue: 0 });
+    // canvas.attachPen(pen);
+    // canvas.drawRect({ left: 0, right: this.width, top: 0, bottom: this.width });
+    // canvas.detachPen();
   }
 
   addWidth() {

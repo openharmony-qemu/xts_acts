@@ -12,43 +12,39 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { GlobalContext } from './../../common/GlobalContext';
-import { ValueT } from './../../common/Value';
 import { MessageManager, Callback, Message } from './../../common/MessageManager';
 import { Entry, Component, Column, Color, Grid, GridItem, ForEach, Text, TextAlign, Margin } from '@ohos.arkui.component'
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
-
-type MessageData = number | boolean | string
 
 @Entry
 @Component
 struct GridItemPage {
   @State numbers: string[] = Array.from(Array(16).keys() as Iterable<number>).map((item: number) => String(item));
-  @State rowStart: number = 1
-  @State rowEnd: number = 4
-  @State columnStart: number = 1
-  @State columnEnd: number = 5
+  @State rowStart: int = 1
+  @State rowEnd: int = 4
+  @State columnStart: int = 1
+  @State columnEnd: int = 5
   @State forceRebuild: boolean = true
   @State selectable: boolean = false
   @State onSelect: string = 'a'
-  messageManager:MessageManager<object> = new MessageManager<object>()
+  messageManager:MessageManager<int | boolean | string> = new MessageManager<int | boolean | string>()
 
   onPageShow() {
     console.info('GridItemPage onPageShow')
-    AppStorage.setOrCreate<MessageManager<object>>("messageManager",  this.messageManager);
-    let callback: Callback<object> = (message: Message<object>) => {
+    AppStorage.setOrCreate<MessageManager<int | boolean | string>>("messageManager",  this.messageManager);
+    let callback: Callback<int | boolean | string> = (message: Message<int | boolean | string>) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'rowStart') {
-        this.rowStart = message.value as number
+        this.rowStart = message.value as int
       }
       if (message.name == 'rowEnd') {
-        this.rowEnd = message.value as number
+        this.rowEnd = message.value as int
       }
       if (message.name == 'columnStart') {
-        this.columnStart = message.value as number
+        this.columnStart = message.value as int
       }
       if (message.name == 'columnEnd') {
-        this.columnEnd = message.value as number
+        this.columnEnd = message.value as int
       }
       if (message.name == 'forceRebuild') {
         this.forceRebuild = message.value as boolean
@@ -74,8 +70,8 @@ struct GridItemPage {
             .width('100%')
             .height('100%')
             .textAlign(TextAlign.Center)
-        }.rowStart(Double.toInt(this.rowStart))
-        .rowEnd(Double.toInt(this.rowEnd))
+        }.rowStart(this.rowStart)
+        .rowEnd(this.rowEnd)
         .key("gridItem1")
         .selectable(this.selectable)
         .onSelect((isSelected: boolean) =>{
@@ -92,7 +88,8 @@ struct GridItemPage {
               .height('100%')
               .textAlign(TextAlign.Center)
               .key(item)
-          }/*.forceRebuild(this.forceRebuild)*/
+          }
+          // .forceRebuild(this.forceRebuild)
           .key("gridItem2")
         }, (item: string) => item)
 
@@ -103,7 +100,7 @@ struct GridItemPage {
             .width('100%')
             .height('100%')
             .textAlign(TextAlign.Center)
-        }.columnStart(Double.toInt(this.columnStart)).columnEnd(Double.toInt(this.columnEnd)).key("gridItem3")
+        }.columnStart(this.columnStart).columnEnd(this.columnEnd).key("gridItem3")
       }
       .key('grid1')
       .columnsGap("4")

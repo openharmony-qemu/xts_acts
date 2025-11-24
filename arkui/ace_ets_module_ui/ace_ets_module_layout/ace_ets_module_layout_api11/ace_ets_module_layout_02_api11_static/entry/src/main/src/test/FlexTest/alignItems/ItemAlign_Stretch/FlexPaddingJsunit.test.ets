@@ -36,12 +36,10 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function flexPadding_StretchJsunit() {
   describe('flexPadding_StretchJsunit', () => {
-
     beforeAll(() => {
       console.info("flexPadding_StretchJsunit beforeEach start");
-      
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace_ets_module_layout_02_api11_static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
@@ -57,11 +55,8 @@ export default function flexPadding_StretchJsunit() {
         console.info("get flexPadding_StretchJsunit state pages:" + JSON.stringify(pages));
         if (!("ItemAlign_Stretch_FlexPadding" == pages.name)) {
           console.info("get flexPadding_StretchJsunit pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push flexPadding_StretchJsunit page error:" + err);
@@ -87,11 +82,9 @@ it('testFlexItemAlignStretchParentSetPadding_static', Level.LEVEL0, async () : P
       let result = AppStorage.get<MessageManager<number>>("messageManager")
       if (result !== null) {
         result!.notify({
-          name: 'height', value: 10
+          name: 'padding', value: 10
         });
-
       }
-
       await CommonFunc.sleep(2000);
       let strJson1 = inspector.getInspectorByKey('ItemAlign_Stretch_flexPadding01');
 
@@ -99,24 +92,23 @@ it('testFlexItemAlignStretchParentSetPadding_static', Level.LEVEL0, async () : P
       let textFlexPadding02: RectValue = CommonFunc.getComponentRect('ItemAlign_Stretch_textFlexPadding02');
       let textFlexPadding03: RectValue = CommonFunc.getComponentRect('ItemAlign_Stretch_textFlexPadding03');
       let flexPadding01: RectValue = CommonFunc.getComponentRect('ItemAlign_Stretch_flexPadding01');
-      const uiContext = new UIContext();
       expect(Math.floor(Math.abs(textFlexPadding01.top - textFlexPadding02.top)) <= 1).assertTrue()
       expect(Math.floor(Math.abs(textFlexPadding02.top - textFlexPadding03.top)) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((textFlexPadding01.top - flexPadding01.top) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((textFlexPadding01.top - flexPadding01.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))) <= 1).assertTrue()
 
       expect(Math.floor(Math.abs(textFlexPadding01.bottom - textFlexPadding02.bottom)) <= 1).assertTrue()
       expect(Math.floor(Math.abs(textFlexPadding02.bottom - textFlexPadding03.bottom)) <= 1).assertTrue()
       expect(flexPadding01.bottom).assertLarger(textFlexPadding01.bottom)
       expect(flexPadding01.right).assertLarger(textFlexPadding03.right)
-      expect(Math.floor(Math.abs((textFlexPadding01.left - flexPadding01.left) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((textFlexPadding01.left - flexPadding01.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))) <= 1).assertTrue()
 
-      expect(Math.floor(Math.abs((textFlexPadding01.bottom - textFlexPadding01.top) - UIContext.getFocusedUIContext()!.vp2px(180))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((textFlexPadding02.bottom - textFlexPadding02.top) - UIContext.getFocusedUIContext()!.vp2px(180))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((textFlexPadding03.bottom - textFlexPadding03.top) - UIContext.getFocusedUIContext()!.vp2px(180))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((textFlexPadding01.bottom - textFlexPadding01.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(180)))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((textFlexPadding02.bottom - textFlexPadding02.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(180)))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((textFlexPadding03.bottom - textFlexPadding03.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(180)))) <= 1).assertTrue()
 
-      expect(Math.floor(Math.abs((textFlexPadding01.right - textFlexPadding01.left) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((textFlexPadding02.right - textFlexPadding02.left) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((textFlexPadding03.right - textFlexPadding03.left) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((textFlexPadding01.right - textFlexPadding01.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((textFlexPadding02.right - textFlexPadding02.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((textFlexPadding03.right - textFlexPadding03.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue()
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Stretch')
       console.info('new testFlexItemAlignStretchParentSetPadding END');
@@ -136,11 +128,9 @@ it('testFlexItemAlignStretchParentSetPaddingExceed_static', Level.LEVEL0, async 
       let result = AppStorage.get<MessageManager<number>>("messageManager")
       if (result !== null) {
         result!.notify({
-          name: 'height', value: 30
+          name: 'padding', value: 30
         });
-
       }
-
       await CommonFunc.sleep(2000);
       let strJson1 = inspector.getInspectorByKey('ItemAlign_Stretch_flexPadding01');
 
@@ -148,25 +138,24 @@ it('testFlexItemAlignStretchParentSetPaddingExceed_static', Level.LEVEL0, async 
       let textFlexPadding02: RectValue = CommonFunc.getComponentRect('ItemAlign_Stretch_textFlexPadding02');
       let textFlexPadding03: RectValue = CommonFunc.getComponentRect('ItemAlign_Stretch_textFlexPadding03');
       let flexPadding01: RectValue = CommonFunc.getComponentRect('ItemAlign_Stretch_flexPadding01');
-      const uiContext = new UIContext();
       expect(Math.floor(Math.abs(textFlexPadding01.top - textFlexPadding02.top)) <= 1).assertTrue()
       expect(Math.floor(Math.abs(textFlexPadding02.top - textFlexPadding03.top)) <= 1).assertTrue()
-      expect(Math.floor(Math.abs(textFlexPadding01.top - flexPadding01.top) - UIContext.getFocusedUIContext()!.vp2px(30)) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(textFlexPadding01.top - flexPadding01.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))) <= 1).assertTrue()
 
       expect(Math.floor(Math.abs(textFlexPadding01.bottom - textFlexPadding02.bottom)) <= 1).assertTrue()
       expect(Math.floor(Math.abs(textFlexPadding02.bottom - textFlexPadding03.bottom)) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((flexPadding01.bottom - textFlexPadding01.bottom) - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs(textFlexPadding01.left - flexPadding01.left) - UIContext.getFocusedUIContext()!.vp2px(30)) <= 1).assertTrue()
-      expect(Math.floor(Math.abs(textFlexPadding03.right - flexPadding01.right) - UIContext.getFocusedUIContext()!.vp2px(30)) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((flexPadding01.bottom - textFlexPadding01.bottom) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30)))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(textFlexPadding01.left - flexPadding01.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs(textFlexPadding03.right - flexPadding01.right) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))) <= 1).assertTrue()
 
-      expect(Math.floor(Math.abs((textFlexPadding01.bottom - textFlexPadding01.top) - UIContext.getFocusedUIContext()!.vp2px(140))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((textFlexPadding02.bottom - textFlexPadding02.top) - UIContext.getFocusedUIContext()!.vp2px(140))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((textFlexPadding03.bottom - textFlexPadding03.top) - UIContext.getFocusedUIContext()!.vp2px(140))) <= 1).assertTrue()
-      expect(Math.floor(Math.abs((textFlexPadding01.right - textFlexPadding01.left) - UIContext.getFocusedUIContext()!.vp2px(440 / 3))) <= 1)
+      expect(Math.floor(Math.abs((textFlexPadding01.bottom - textFlexPadding01.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(140)))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((textFlexPadding02.bottom - textFlexPadding02.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(140)))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((textFlexPadding03.bottom - textFlexPadding03.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(140)))) <= 1).assertTrue()
+      expect(Math.floor(Math.abs((textFlexPadding01.right - textFlexPadding01.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 1)
         .assertTrue()
-      expect(Math.floor(Math.abs((textFlexPadding02.right - textFlexPadding02.left) - UIContext.getFocusedUIContext()!.vp2px(440 / 3))) <= 1)
+      expect(Math.floor(Math.abs((textFlexPadding02.right - textFlexPadding02.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 1)
         .assertTrue()
-      expect(Math.floor(Math.abs((textFlexPadding03.right - textFlexPadding03.left) - UIContext.getFocusedUIContext()!.vp2px(440 / 3))) <= 1)
+      expect(Math.floor(Math.abs((textFlexPadding03.right - textFlexPadding03.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3)))) <= 1)
         .assertTrue()
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Stretch')

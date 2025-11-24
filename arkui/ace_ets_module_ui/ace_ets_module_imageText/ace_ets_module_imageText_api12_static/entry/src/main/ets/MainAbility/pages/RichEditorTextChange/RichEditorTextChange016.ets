@@ -59,7 +59,7 @@ build() {
       Text('isEditingFlag:' + this.isEditingFlag).id('isEditingFlag')
 
       Button('set select').onClick((e: ClickEvent) => {
-        this.controller.setSelection(2, 5);
+        this.controller!.setSelection(2, 5);
       }).id('set_select')
 
       RichEditor({ controller: this.controller } as RichEditorOptions)
@@ -68,7 +68,7 @@ build() {
         .borderColor(Color.Red)
         .width('100%')
         .onReady((): void => {
-          this.controller.addTextSpan('abcefghi',
+          this.controller!.addTextSpan('abcefghi',
             {
               style:
               {

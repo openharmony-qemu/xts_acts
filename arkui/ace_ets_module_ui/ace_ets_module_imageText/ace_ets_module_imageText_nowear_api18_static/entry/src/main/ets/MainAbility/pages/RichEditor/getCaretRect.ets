@@ -26,6 +26,7 @@ struct getCaretRectDemo {
       Button('get caret rect')
         .onClick((e:ClickEvent) => {
           let rectCaret = this.controller.getCaretRect();
+          console.log('rectCaretrectCaret1111',rectCaret)
           if(rectCaret == undefined) {
             this.caretRect = 'undefined'
           } else {
@@ -49,7 +50,7 @@ struct getCaretRectDemo {
             style:
             {
               fontColor: Color.Orange,
-              fontSize: 50.0
+              fontSize: 50
             }
           })
         })

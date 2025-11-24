@@ -14,5 +14,5 @@
  */
 import onVisibleAreaChangeTest from './onVisibleAreaChange/OnVisibleAreaChangeTest.test';
 export default function testsuite() {
-  onVisibleAreaChangeTest();
+  onVisibleAreaChangeTest();//对象转字符串为空 this._compositionValue @{}
 }

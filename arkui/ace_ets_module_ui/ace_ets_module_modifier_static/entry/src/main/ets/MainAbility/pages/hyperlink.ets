@@ -12,110 +12,41 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { Entry,Component,$r, Padding,Column,Alignment,Hyperlink,BreakpointsReference,GridRowDirection,TextOverflow,GridCol,ColumnOptions,Grid,GridItem,Gauge,animateTo,FormComponent,Visibility,FormDimension,Divider,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,GridRow,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
-  Entry,
-  Component,
-  $r,
-  Padding,
-  Column,
-  Alignment,
-  Hyperlink,
-  BreakpointsReference,
-  GridRowDirection,
-  TextOverflow,
-  GridCol,
-  ColumnOptions,
-  Grid,
-  GridItem,
-  Gauge,
-  animateTo,
-  FormComponent,
-  Visibility,
-  FormDimension,
-  Divider,
-  Counter,
-  DataPanel,
-  DatePicker,
-  BorderImageOption,
-  BorderOptions,
-  AdaptiveColor,
-  BackgroundEffectOptions,
-  BorderStyle,
-  RepeatMode,
-  GradientDirection,
-  Image,
-  Checkbox,
-  Blank,
-  MarkStyle,
-  ResourceColor,
-  CheckboxGroup,
-  Text,
-  Toggle,
-  ToggleType,
-  FlexAlign,
-  Color,
-  Flex,
-  ButtonType,
-  FlexDirection,
-  ItemAlign,
-  Row,
-  Button,
-  ClickEvent,
-  Week,
-  GridRow,
-  FontWeight,
-  Axis,
-  Margin,
-  Swiper,
-  ForEach,
-  PickerTextStyle,
-  CalendarAlign,
-  CalendarPicker,
-  EdgeEffect,
-  Curve,
-  SwiperDisplayMode,
-  ArrowPosition,
-  Select,
-  BlurStyle,
-  MenuAlignType,
-  TextInputController,
-  TextAlign,
-  AlphabetIndexer,
-  HyperlinkAttribute,
-  Resource
-} from '@ohos.arkui.component';
-import { State, Link, Prop, } from '@ohos.arkui.stateManagement';
-import { HyperlinkModifier } from "@ohos.arkui.modifier";
-
-
-class CustomModifier extends HyperlinkModifier {
-	applyNormalAttribute(instance: HyperlinkAttribute): void {
-		// super.applyNormalAttribute?.(instance);
-	}
-
-	onChange1() {
-		this.color('#FF654321')
-	}
-}
+  State,
+  Link,
+  Prop,
+} from '@ohos.arkui.stateManagement';
+// import { HyperlinkModifier } from "@ohos.arkui.modifier";
+//
+// class CustomModifier extends HyperlinkModifier {
+// 	applyNormalAttribute(instance: HyperlinkAttribute): void {
+// 		super.applyNormalAttribute?.(instance);
+// 	}
+//
+// 	onChange1() {
+// 		this.color('#FF654321')
+// 	}
+// }
 
 @Entry
 @Component
 struct TestHyperlinkPage {
-  mColor: Color|Int|String|Resource|undefined = '#FF123456'
+	mColor: ResourceColor = '#FF123456'
+// 	@State customModifier: HyperlinkModifier = new CustomModifier()
+// 		.color(this.mColor)
 
-  	@State customModifier: HyperlinkModifier = new CustomModifier()
-  		.color(this.mColor)
-
-  build() {
-    Column() {
-      Button("change value").onClick((e: ClickEvent) => {
-        				(this.customModifier as CustomModifier).onChange1();
-      }).key("changeButton")
-      Hyperlink('https://example.com/')
-        .key('HyperlinkKey1')
-      				.attributeModifier(this.customModifier as CustomModifier)
-    }
-    .width('100%')
-    .height('100%')
-  }
+	build() {
+		Column() {
+			Button("change value").onClick((e: ClickEvent) => {
+// 				(this.customModifier as CustomModifier).onChange1();
+			}).key("changeButton")
+			Hyperlink('https://example.com/')
+				.key('HyperlinkKey1')
+// 				.attributeModifier(this.customModifier as CustomModifier)
+		}
+			.width('100%')
+			.height('100%')
+	}
 }

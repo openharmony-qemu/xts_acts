@@ -17,11 +17,13 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
+import accessibility from '@ohos.accessibility'
 import {MessageManager,Callback} from '../../../ets/MainAbility/common/MessageManager';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
+import config from '@ohos.accessibility.config'
 import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -30,8 +32,8 @@ import {UtilsTest, startAbility, stopApplication} from "../Util.test"
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-
-const BUNDLE_NAME = 'com.arkui.ace.information.other/MainAbility';
+// const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
+// const BUNDLE_NAME = 'com.arkui.ace.information.other/MainAbility';
 
 export default function progressStyleJsunit() {
   describe('progressStyleTest', () => {
@@ -42,7 +44,11 @@ export default function progressStyleJsunit() {
       await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
-   
+      // config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
+      //   console.info(`enable success`);
+      // }).catch((err: object) => {
+      //   console.error(`failed to enable, ${err}`);
+      // })
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Progress/progress2',
@@ -54,7 +60,6 @@ export default function progressStyleJsunit() {
         console.info("get progress state success " + JSON.stringify(pages));
         if (!("progress2" == pages.name)) {
           console.info("get progress state success " + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -81,10 +86,10 @@ it('testprogressStyle_static_0001', Level.LEVEL0, async (done: () => void): Prom
       let strJson = inspector.getInspectorByKey('Progress');
       console.info("[testprogressStyle0001] component width strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Progress');
+      expect(obj.getString('$type')).assertEqual('Progress');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('width')).assertEqual("100.00vp");
       console.info("[testprogressStyle0001] width value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('width'));
-
+  done()
     });
 
     
@@ -100,10 +105,10 @@ it('testprogressStyle_static_0002', Level.LEVEL0, async (done: () => void): Prom
       let strJson = inspector.getInspectorByKey('Progress');
       console.info("[testprogressStyle0002] component color strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Progress');
+      expect(obj.getString('$type')).assertEqual('Progress');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('color')).assertEqual("#FF008000");
       console.info("[testprogressStyle0002] color value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('color'));
-
+  done()
     });
 
     
@@ -119,9 +124,10 @@ it('testprogressStyle_static_0003', Level.LEVEL0, async (done: () => void): Prom
       let strJson = inspector.getInspectorByKey('Progress');
       console.info("[testprogressStyle0003] component value strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Progress');
+      expect(obj.getString('$type')).assertEqual('Progress');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('value')).assertEqual("50.000000");
       console.info("[testprogressStyle0003] value value :" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('value'));
+  done()
     });
 
     
@@ -137,11 +143,11 @@ it('testprogressStyle_static_0004', Level.LEVEL0, async (done: () => void): Prom
       let strJson = inspector.getInspectorByKey('Progress');
       console.info("[testprogressStyle0004] component style strokeWidth strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Progress');
+      expect(obj.getString('$type')).assertEqual('Progress');
       console.info("[testprogressStyle0004] component style strokeWidth strJson:" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('style'));
       let jsonObject = JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('style'));
       expect(jsonObject.getString('strokeWidth')).assertEqual("20.00vp");
-
+  done()
     });
 
     
@@ -157,10 +163,10 @@ it('testprogressStyle_static_0005', Level.LEVEL0, async (done: () => void): Prom
       let strJson = inspector.getInspectorByKey('Progress');
       console.info("[testprogressStyle0005] component style scaleCount strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Progress');
+      expect(obj.getString('$type')).assertEqual('Progress');
       let jsonObject = JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('style'));
       expect(jsonObject.getString('scaleCount')).assertEqual("30");
-
+  done()
     });
 
     
@@ -176,9 +182,10 @@ it('testprogressStyle_static_0006', Level.LEVEL0, async (done: () => void): Prom
       let strJson = inspector.getInspectorByKey('Progress');
       console.info("[testprogressStyle0006] component style scaleWidth strJson:" + strJson);
       let obj = JSON.parseJsonElement(strJson);
-      expect(obj.getElement('$type')).assertEqual('Progress');
+      expect(obj.getString('$type')).assertEqual('Progress');
       let jsonObject = JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('style'));
       expect(jsonObject.getString('scaleWidth')).assertEqual("20.00vp");
+  done()
     });
   })
 }

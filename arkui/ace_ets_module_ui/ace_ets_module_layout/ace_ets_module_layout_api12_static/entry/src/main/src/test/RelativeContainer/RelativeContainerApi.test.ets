@@ -72,10 +72,8 @@ export default function RelativeContainerApi() {
         console.info("get RelativeContainerApi state pages:" + JSON.stringify(pages));
         if (!("RelativeContainerApi" == pages.name)) {
           console.info("get RelativeContainerApi pages.name:" + JSON.stringify(pages.name));
-          
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push RelativeContainerApi page error:" + err);
@@ -106,7 +104,7 @@ export default function RelativeContainerApi() {
       await CommonFunc.sleep(1000);
 
       console.info('RelativeContainerApi_static_0100 END');
-
+      done()
     });
 
   })

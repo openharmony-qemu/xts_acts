@@ -13,11 +13,11 @@
  * limitations under the License.
  */
 
-
+import { MultiNavPathStack, SplitPolicy } from '@ohos.arkui.advanced.MultiNavigation';
 import hilog from '@ohos.hilog';
 import { State, Provide, Consume, AppStorage,  } from '@ohos.arkui.stateManagement'
 import { Entry, Component, Column, Button, ColumnOptions, ClickEvent, Text, Color, Builder, Scroll, Margin, Row, $r,
-  NavDestination, FontWeight, ButtonType, NavDestinationMode, LaunchMode,
+  NavDestination, FontWeight, ButtonType, NavDestinationMode, LaunchMode, NavPathInfo,
 } from '@ohos.arkui.component'
 
 class Param {
@@ -28,6 +28,7 @@ class Param {
 @Component
 export struct PageHome1 {
   @State message: string = 'PageHome1';
+  @Consume('pageStack') pageStack: MultiNavPathStack;
 
   @State disableAnimationValue: boolean = false
 
@@ -48,7 +49,10 @@ export struct PageHome1 {
                 .height(40)
                 .margin(10)
                 .onClick((e: ClickEvent) => {
-                 
+                  if (this.pageStack !== undefined && this.pageStack !== null) {
+                    console.log('test setPlaceholderPage');
+                    this.pageStack.setPlaceholderPage(new NavPathInfo('PagePlaceholder',undefined));
+                  }
                 })
                 .id('setPlaceholderPageId')
 
@@ -56,7 +60,9 @@ export struct PageHome1 {
                 .height(40)
                 .margin(10)
                 .onClick((e: ClickEvent) => {
-                  
+                  if (this.pageStack !== undefined && this.pageStack !== null) {
+                    this.pageStack.pushPath(new NavPathInfo('PageDetail1',new Param('ok') ), true, SplitPolicy.DETAIL_PAGE);
+                  }
                 })
                 .id('pageDetail1Id')
 
@@ -66,22 +72,32 @@ export struct PageHome1 {
                 .margin(10)
                 .backgroundColor('#ffac056d')
                 .onClick((e: ClickEvent) => {
-              
+                  if (this.pageStack !== undefined && this.pageStack !== null) {
+                    this.pageStack.pop();
+                  }
                 })
 
+              //clear
               Button('clear', { stateEffect: true, type: ButtonType.Capsule})
                 .height(40)
                 .margin(10)
                 .backgroundColor('#ffac056d')
                 .onClick((e: ClickEvent) => {
-                 
+                  if (this.pageStack !== undefined && this.pageStack !== null) {
+                    this.pageStack.clear()
+                  }
                 })
 
+              //switchFullScreen
               Button('switchFullScreen true', { stateEffect: true, type: ButtonType.Capsule})
                 .height(40)
                 .margin(10)
                 .onClick((e: ClickEvent) => {
-                 
+                  if (this.pageStack !== undefined && this.pageStack !== null) {
+                    console.log('test switchFullScreenState');
+                    let result = this.pageStack.switchFullScreenState(true);
+                    hilog.info(0x0000, 'demotest', 'switchFullScreen return : ' + result);
+                  }
                 }).id('switchFullScreenId')
 
 
@@ -89,27 +105,38 @@ export struct PageHome1 {
                 .height(40)
                 .margin(10)
                 .onClick((e: ClickEvent) => {
-                
+                  if (this.pageStack !== undefined && this.pageStack !== null) {
+                    let result = this.pageStack.switchFullScreenState(false);
+                    hilog.info(0x0000, 'demotest', 'switchFullScreen return : ' + result);
+                  }
                 })
               Button('switchFullScreen undefined', { stateEffect: true, type: ButtonType.Capsule})
                 .height(40)
                 .margin(10)
                 .onClick((e: ClickEvent) => {
-                 
+                  if (this.pageStack !== undefined && this.pageStack !== null) {
+                    let result  = this.pageStack.switchFullScreenState(undefined);
+                    hilog.info(0x0000, 'demotest', 'switchFullScreen return : ' + result);
+                  }
                 })
 
+              //setKeepBottomPage
               Button('setKeepBottomPage true', { stateEffect: true, type: ButtonType.Capsule})
                 .height(40)
                 .margin(10)
                 .onClick((e: ClickEvent) => {
-                 
+                  if (this.pageStack !== undefined && this.pageStack !== null) {
+                    this.pageStack.keepBottomPage(true);
+                  }
                 })
 
               Button('setKeepBottomPage false', { stateEffect: true, type: ButtonType.Capsule})
                 .height(40)
                 .margin(10)
                 .onClick((e: ClickEvent) => {
-
+                  if (this.pageStack !== undefined && this.pageStack !== null) {
+                    this.pageStack.keepBottomPage(false);
+                  }
                 })
             }
             .width('100%')

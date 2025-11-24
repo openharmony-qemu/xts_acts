@@ -13,22 +13,10 @@
  * limitations under the License.
  */
 import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute,
-  ClickEvent, Image,ImageFit,Color, TextAlign, CopyOptions, SearchController, Font, Search } from '@ohos.arkui.component'  
-import { State } from '@ohos.arkui.stateManagement' 
+  ClickEvent, Image,ImageFit,Color, TextAlign, CopyOptions, SearchController, Font, Search,ResourceColor } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
+import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import { MessageManager, Callback, Message } from '../../common/MessageManager';
-
-class MyClass {
-  name: string;
-  messageManager: MessageManager;
-  message: MessageManager;
-
-  constructor() {
-    this.name = 'messageManager';
-    this.messageManager = new MessageManager();
-    this.message = this.messageManager;
-  }
-}
 
 @Entry
 @Component
@@ -42,63 +30,61 @@ struct SearchPage {
   @State placeholder: string = 'Type to search...'
   @State icon: string = ''
   @State searchButton: string = 'SEARCH'
-  @State placeholderColor: Color = Color.Grey
+  @State placeholderColor: ResourceColor = Color.Grey
   @State placeholderFont: Font = { size: 14, weight: 400 } as Font
-  @State textFont: Font = { size: 14, weight: 400 } as Font
+  @State textFont: Font | undefined = { size: 14, weight: 400 } as Font
   @State textAlign: TextAlign = TextAlign.Start
   @State copyOption: CopyOptions = CopyOptions.InApp
   controller: SearchController = new SearchController()
-  messageManager:MessageManager = new MessageManager()
+  messageManager:MessageManager<string|int|Font|TextAlign|CopyOptions|ResourceColor> = new MessageManager<string|int|Font|TextAlign|CopyOptions|ResourceColor>()
 
   onPageShow() {
     console.info('SearchPage onPageShow')
-    
-    
-    
-
-    AppStorage.setOrCreate("value",  new MyClass());
-    let callback: Callback = (message: Message) => {
+    AppStorage.setOrCreate<MessageManager<string|int|Font|TextAlign|CopyOptions|ResourceColor>>("messageManager", this.messageManager);
+    let callback: (message: Message<string|int|Font|TextAlign|CopyOptions|ResourceColor>)=>void = (message: Message<string|int|Font|TextAlign|CopyOptions|ResourceColor>) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'changeValue') {
-        this.changeValue = message.value as String
+        this.changeValue = (message as Message<string>).value
       }
       if (message.name == 'submitValue') {
-        this.submitValue = message.value as String
+        this.submitValue = (message as Message<string>).value
       }
       if (message.name == 'copyValue') {
-        this.copyValue = message.value as String
+        this.copyValue = (message as Message<string>).value
       }
       if (message.name == 'cutValue') {
-        this.cutValue = message.value as String
+        this.cutValue = (message as Message<string>).value
       }
       if (message.name == 'pasteValue') {
-        this.pasteValue = message.value as String
+        this.pasteValue = (message as Message<string>).value
       }
       if (message.name == 'positionValue') {
-        this.positionValue = message.value as int
+        this.positionValue = (message as Message<int>).value
       }
       if (message.name == 'placeHolder') {
-        this.placeholder = message.value as String
+        this.placeholder = (message as Message<string>).value
       }
       if (message.name == 'icon') {
-        this.icon = message.value as String
+        this.icon = (message as Message<string>).value
       }
       if (message.name == 'searchButton') {
-        this.searchButton = message.value as String
+        this.searchButton = (message as Message<string>).value
       }
       if (message.name == 'placeholderColor') {
+        console.log('(message as Message<ResourceColor>).value',(message as Message<ResourceColor>).value)
+        this.placeholderColor = (message as Message<ResourceColor>).value
       }
       if (message.name == 'placeholderFont') {
-        this.placeholderFont = message.value as Font
+        this.placeholderFont = (message as Message<Font>).value
       }
       if (message.name == 'textFont') {
-        this.textFont = message.value as Font
+        this.textFont = (message as Message<Font>).value
       }
       if (message.name == 'textAlign') {
-        this.textAlign = message.value as TextAlign
+        this.textAlign = (message as Message<TextAlign>).value
       }
       if (message.name == 'copyOption') {
-        this.copyOption = message.value as CopyOptions
+        this.copyOption = (message as Message<CopyOptions>).value
       }
     }
     this.messageManager.registerCallback(callback)
@@ -140,7 +126,7 @@ struct SearchPage {
         .margin(20)
       Button('Set caretPosition ' + this.positionValue)
         .onClick((): void => {
-          
+          // 设置光标位置到输入的第一个字符后
           this.controller.caretPosition(this.positionValue)
         }).key('button').height('5%')
     }.width('100%')

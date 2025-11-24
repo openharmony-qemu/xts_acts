@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -51,7 +51,6 @@ export default function GaugePrivacySensitiveTest() {
         console.info('get GaugePrivacySensitiveTest state pages:' + JSON.stringify(pages));
         if (!('GaugePrivacySensitive' == pages.name)) {
           console.info('get GaugePrivacySensitiveTest pages.name:' + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
           await Utils.sleep(2500);
         }
@@ -71,15 +70,15 @@ it('GaugePrivacySensitiveTest_static_001', Level.LEVEL0, async (done: () => void
       console.info('GaugePrivacySensitiveTest_001 START');
       let driver = Driver.create();
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('trueFlag'));
+      let button = await (driver.findComponent(ON.id('trueFlag')) as Promise<Component>);
       await Utils.sleep(1000);
-      await (button?.click() as Promise<void>)
+      await button.click()
       await Utils.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('gauge');
       let obj = JSON.parseJsonElement(strJson);
       console.info('GaugePrivacySensitiveTest_001 component obj is: ' + obj.getElement('$attrs').getString('privacySensitive'));
-      expect(obj.getElement('$attrs').getString('privacySensitive')).assertEqual('false');
+      expect(obj.getElement('$attrs').getString('privacySensitive')).assertEqual('true');
       console.info('[GaugePrivacySensitiveTest_001] END');
       done();
     });
@@ -94,9 +93,9 @@ it('GaugePrivacySensitiveTest_static_002', Level.LEVEL0, async (done: () => void
       console.info('GaugePrivacySensitiveTest_002 START');
       let driver = Driver.create();
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('falseFlag'));
+      let button = await (driver.findComponent(ON.id('falseFlag')) as Promise<Component>);
       await Utils.sleep(1000);
-      await (button?.click() as Promise<void>)
+      await button.click()
       await Utils.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('gauge');
@@ -117,9 +116,9 @@ it('GaugePrivacySensitiveTest_static_003', Level.LEVEL0, async (done: () => void
       console.info('GaugePrivacySensitiveTest_003 START');
       let driver = Driver.create();
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('undefinedFlag'));
+      let button = await (driver.findComponent(ON.id('undefinedFlag')) as Promise<Component>);
       await Utils.sleep(1000);
-      await (button?.click() as Promise<void>)
+      await button.click()
       await Utils.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('gauge');
@@ -129,7 +128,7 @@ it('GaugePrivacySensitiveTest_static_003', Level.LEVEL0, async (done: () => void
       console.info('[GaugePrivacySensitiveTest_003] END');
       done();
     });
-    
+
     /*
      * @tc.number   GaugePrivacySensitiveTest_static_004
      * @tc.name     GaugePrivacySensitiveTest_static_004
@@ -140,9 +139,9 @@ it('GaugePrivacySensitiveTest_static_004', Level.LEVEL0, async (done: () => void
       console.info('GaugePrivacySensitiveTest_004 START');
       let driver = Driver.create();
       await Utils.sleep(1000);
-      let button = await driver.findComponent(ON.id('nullFlag'));
+      let button = await (driver.findComponent(ON.id('nullFlag')) as Promise<Component>);
       await Utils.sleep(1000);
-      await (button?.click() as Promise<void>)
+      await button.click()
       await Utils.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('gauge');

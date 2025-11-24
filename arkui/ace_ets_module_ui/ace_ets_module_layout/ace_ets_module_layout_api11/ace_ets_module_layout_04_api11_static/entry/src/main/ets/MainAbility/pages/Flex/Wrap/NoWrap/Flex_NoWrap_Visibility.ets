@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,8 +15,6 @@
 
 import { Entry, Component, Column, ColumnOptions, Visibility, Flex, FlexWrap, Text } from '@ohos.arkui.component'
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
-import { GlobalContext } from '../../../../common/GlobalContext';
-import { ValueT } from '../../../../common/Value';
 import { MessageManager, Callback, Message } from '../../../../common/MessageManager';
 
 @Entry
@@ -26,24 +24,24 @@ struct Flex_NoWrap_Visibility {
   @State firstTextWidth: number = 150;
   @State secondTextWidth: number = 150;
   @State thirdTextWidth: number = 150;
-  messageManager: MessageManager<number> = new MessageManager<number>();
+  messageManager: MessageManager<number|Visibility> = new MessageManager<number|Visibility>();
 
   onPageShow() {
     console.info('Flex_NoWrap_Visibility onPageShow');
-    AppStorage.setOrCreate<MessageManager<number>>("messageManager",  this.messageManager);
-    let callback: Callback<number> = (message: Message<number>) => {
+    AppStorage.setOrCreate<MessageManager<number|Visibility>>("messageManager",  this.messageManager);
+    let callback: Callback<number|Visibility> = (message: Message<number|Visibility>) => {
       console.log('message = ' + message.name + "--" + message.value);
       if (message.name == 'visibility') {
-        
+        this.testVisibility = message.value as Visibility;
       }
       if (message.name == 'firstTextWidth') {
-        this.firstTextWidth = message.value;
+        this.firstTextWidth = message.value as number;
       }
       if (message.name == 'secondTextWidth') {
-        this.secondTextWidth = message.value;
+        this.secondTextWidth = message.value as number;
       }
       if (message.name == 'secondTextWidth') {
-        this.thirdTextWidth = message.value;
+        this.thirdTextWidth = message.value as number;
       }
     };
     this.messageManager.registerCallback(callback);

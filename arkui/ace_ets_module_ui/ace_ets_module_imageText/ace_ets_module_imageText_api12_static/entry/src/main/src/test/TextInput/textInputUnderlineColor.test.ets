@@ -67,15 +67,13 @@ export default function textInputUnderlineColorTest() {
     })
 
     
-    
-    
-/*
+    /*
      * @tc.number   textInputUnderlineColor_static_0100
      * @tc.name     textInputUnderlineColor_static_0100
      * @tc.desc     textInputUnderlineColor_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('textInputUnderlineColor_static_0100', Level.LEVEL0, async  (done: () => void): Promise<void> =>{
+    it('textInputUnderlineColor_static_0100', Level.LEVEL0, async  (done: () => void): Promise<void> =>{
       let tagName = 'textInputUnderlineColor_0100';
       console.info('[' + tagName + '] START============================');
 
@@ -91,15 +89,13 @@ it('textInputUnderlineColor_static_0100', Level.LEVEL0, async  (done: () => void
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   textInputUnderlineColor_static_0200
      * @tc.name     textInputUnderlineColor_static_0200
      * @tc.desc     textInputUnderlineColor_static_0200
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('textInputUnderlineColor_static_0200', Level.LEVEL0, async  (done: () => void): Promise<void> =>{
+    it('textInputUnderlineColor_static_0200', Level.LEVEL0, async  (done: () => void): Promise<void> =>{
       let tagName = 'textInputUnderlineColor_0200';
       console.info('[' + tagName + '] START============================');
 
@@ -115,15 +111,13 @@ it('textInputUnderlineColor_static_0200', Level.LEVEL0, async  (done: () => void
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   textInputUnderlineColor_static_0300
      * @tc.name     textInputUnderlineColor_static_0300
      * @tc.desc     textInputUnderlineColor_static_0300
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('textInputUnderlineColor_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> =>{
+    it('textInputUnderlineColor_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> =>{
       let tagName = 'textInputUnderlineColor_0300';
       console.info('[' + tagName + '] START============================');
 
@@ -139,15 +133,13 @@ it('textInputUnderlineColor_static_0300', Level.LEVEL0, async (done: () => void)
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   textInputUnderlineColor_static_0400
      * @tc.name     textInputUnderlineColor_static_0400
      * @tc.desc     textInputUnderlineColor_static_0400
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('textInputUnderlineColor_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> =>{
+    it('textInputUnderlineColor_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> =>{
       let tagName = 'ArkUI_textInputUnderlineColor_0400';
       console.info('[' + tagName + '] START============================');
 

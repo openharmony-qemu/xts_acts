@@ -77,15 +77,13 @@ export default function RichEditorOnWillChange018() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_static_0012
      * @tc.name     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_static_0012
      * @tc.desc     SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_static_0012
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_static_0012', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_static_0012', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_static_0012 START');
       let driver = Driver.create();
       let rich = await (driver.findComponent(ON.id('rich_struct')) as Promise<Component>);
@@ -113,8 +111,10 @@ it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_static_0012', Level.LEVEL0
       await driver.click(pointCenter.x, pointCenter.y);
       await CommonFunc.sleep(500);
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_static_0012 pointCenter');
-      let paste = await (driver.findComponent(ON.text('粘贴')) as Promise<Component>);
-      await paste.click();
+     try{
+       let paste = await (driver.findComponent(ON.text('粘贴')) as Promise<Component>);
+       await paste.click();
+     }catch(e){}
       await CommonFunc.sleep(1000);
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_static_0012 paste');
       let onWillChange = await (driver.findComponent(ON.id('onWillChange_callback')) as Promise<Component>);

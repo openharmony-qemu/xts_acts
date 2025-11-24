@@ -27,10 +27,10 @@ class MyNodeController extends  NodeController {
     let node = new FrameNode(uiContext)
     let col = typeNode.createColumnNode(uiContext)
     col.initialize({ space: 10 } as ColumnOptions).borderColor(Color.Black).alignItems(HorizontalAlign.Center)
-    
-    
-    
-    
+    // let rating = typeNode.createNode(uiContext, 'Rating')
+    // rating.initialize({ rating: 0, indicator: true })
+    // .key('key_Rating_001')
+    // col.appendChild(rating)
     node.appendChild(col)
     return node
   }

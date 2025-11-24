@@ -13,10 +13,10 @@
  * limitations under the License.
  */
 import RectValue from './Rect';
-import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, TouchObject, TouchType } from '@ohos.arkui.component'  
-import { State } from '@ohos.arkui.stateManagement' 
+import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, TouchObject, TouchType } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
+import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import inspector from '@ohos.arkui.inspector';
-import { sendTouchEvent } from "@kit.ArkUI";
+import { sendTouchEvent } from "@ohos.arkui.Test";
 import common from '@ohos.app.ability.common';
 
 export default class Utils {
@@ -49,76 +49,6 @@ export default class Utils {
     }).then(() => {
       console.info(`sleep ${time} over...`)
     })
-  }
-
-
-  static async drag(downX: number, downY: number, upX: number, upY: number, steps: number) {
-    console.info('start to drag')
-    let xStep: number;
-    let yStep: number;
-    let swipeSteps: number;
-    let ret: boolean;
-    xStep = 0;
-    yStep = 0;
-    ret = false;
-    swipeSteps = steps;
-    if (swipeSteps == 0) {
-      swipeSteps = 1;
-    }
-    xStep = (upX - downX) / swipeSteps;
-    yStep = (upY - downY) / swipeSteps;
-    console.info('move step is: ' + 'xStep: ' + xStep + '    yStep: ' + yStep)
-    let downPoint: TouchObject = {
-      id: 1,
-      x: downX,
-      y: downY,
-      displayX: downX,
-      displayY: downY,
-      windowX: downX,
-      windowY: downY,
-      type: TouchType.Down
-    }
-    console.info('down touch started: ' + JSON.stringify(downPoint))
-    sendTouchEvent(downPoint);
-    console.info('start to move')
-    if (true) {
-      Utils.sleep(500)
-    }
-    for (let i = 1; i <= swipeSteps; i++) {
-      let movePoint: TouchObject = {
-        id: 1,
-        x: downX + (xStep * i),
-        y: downY + (yStep * i),
-        displayX: downX + (xStep * i),
-        displayY: downY + (yStep * i),
-        windowX: downX + (xStep * i),
-        windowY: downY + (yStep * i),
-        type: TouchType.Move,
-      }
-      console.info('move touch started: ' + JSON.stringify(movePoint))
-      ret = sendTouchEvent(movePoint)
-      if (ret == false) {
-        break;
-      }
-      Utils.sleep(5)
-    }
-    console.info('start to up')
-    if (true) {
-      Utils.sleep(100)
-    }
-    let upPoint: TouchObject = {
-      id: 1,
-      x: upX,
-      y: upY,
-      displayX: upX,
-      displayY: upY,
-      windowX: upX,
-      windowY: upY,
-      type: TouchType.Up,
-    }
-    console.info('up touch started: ' + JSON.stringify(upPoint))
-    sendTouchEvent(upPoint)
-    Utils.sleep(500)
   }
 }
 

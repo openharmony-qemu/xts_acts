@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../hypium/index';
 import router from '@ohos.router';
+
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import hilog from '@ohos.hilog'
@@ -63,7 +64,7 @@ export default function ColumnsTemplateAndRowsTemplate2() {
     afterEach(async () => {
       await CommonFunc.sleep(1000);
       const router = AppStorage.get<Router>("router") as Router
-      router.back()
+      router.replaceUrl({url:'MainAbility/pages/index/index'})
       console.info("ColumnsTemplateAndRowsTemplate2 after each called");
     });
 
@@ -89,16 +90,16 @@ it('SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate2_static_0100', Level.LEVEL0, asy
       expect(GridItem_01.left).assertEqual(Grid_1.left);
       console.log('GridItem_01.left' + GridItem_01.left)
       console.log('Grid_1.left' + Grid_1.left)
-      const uiContext = new UIContext();
-      expect(Math.round(GridItem_01.left - Grid_1.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(0)));
+
+      expect(Math.round(GridItem_01.left - Grid_1.left)).assertEqual(Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(0))));
       console.log('GridItem_01.left - Grid_1.left' + (GridItem_01.left - Grid_1.left))
-      expect(Math.round(GridItem_01.top - Grid_1.top)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(0)));
+      expect(Math.round(GridItem_01.top - Grid_1.top)).assertEqual(Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(0))));
       console.log('GridItem_01.left - Grid_1.left' + (GridItem_01.left - Grid_1.left))
 
       console.log('assert size')
-      expect(Math.round(GridItem_01.right - GridItem_01.left)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(120)));
+      expect(Math.round(GridItem_01.right - GridItem_01.left)).assertEqual(Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(120))));
       console.log('GridItem_01.right - GridItem_01.left' + (GridItem_01.right - GridItem_01.left))
-      expect(Math.round(GridItem_01.bottom - GridItem_01.top)).assertEqual(Math.round(UIContext.getFocusedUIContext()!.vp2px(60)));
+      expect(Math.round(GridItem_01.bottom - GridItem_01.top)).assertEqual(Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(60))));
       console.log('GGridItem_01.bottom - GridItem_01.top' + (GridItem_01.bottom - GridItem_01.top))
 
 

@@ -63,7 +63,6 @@ export default function datapanelJsunit() {
         console.info("get DataPanel state success " + JSON.stringify(pages));
         if (!("DataPanel" == pages.name)) {
           console.info("get DataPanel state success " + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
         }
       } catch (err) {
@@ -89,16 +88,13 @@ it('testDataPanelGetInspectorByKey_static_010', Level.LEVEL0, async (done: () =>
       let strJson = inspector.getInspectorByKey('DataPanel');
       let obj = JSON.parseJsonElement(strJson);
       console.info("cd DatePanel component obj is: " + JSON.stringify(obj));
-      console.log("cd DataPanel type " + JSON.stringify(obj.getElement('$type')));
-      console.log("cd DataPanel values1 " + typeof ([20, 40, 20]));
-      console.log("cd DataPanel values " + typeof (obj.getElement('$attrs').getString('values')));
-      console.log("cd DataPanel values" + JSON.stringify(obj.getElement('$attrs').getString('values')));
-      console.log("cd DataPanel dataPanelType" + JSON.stringify(obj.getElement('$attrs').getString('DataPanelType')));
+      console.log("cd DataPanel type " + JSON.stringify(obj.getString('$type')));
+      console.log("cd DataPanel values" + JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('values')));
       console.log("cd  DataPanel max" + JSON.stringify(obj.getElement('$attrs').getString('max')));
       console.log("panel closeEffect" + JSON.stringify(obj.getElement('$attrs').getString('closeEffect')));
       expect(obj.getElement('$attrs').getString('closeEffect')).assertEqual("false");
-      expect(obj.getElement('$type')).assertEqual("DataPanel");
-      expect(JSON.stringify(obj.getElement('$attrs').getString('values'))).assertEqual('[20,40,20]')
+      expect(obj.getString('$type')).assertEqual("DataPanel");
+      expect(JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('values'))).assertEqual('[20,40,20]')
       expect(obj.getElement('$attrs').getString('max')).assertEqual(100.000000.toFixed(6));
       console.info('cd dataPanelInspectorByKey END');
       done();
@@ -133,21 +129,18 @@ it('testDataPanelGetInspectorByKey_static_020', Level.LEVEL0, async (done: () =>
      * @tc.level    Level.LEVEL0
      */
 it('testDataPanelGetInspectorByKey_static_030', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('testGetInspectorByKey START');
+      console.info('testDataPanelGetInspectorByKey_static_030 START');
       let strJson = inspector.getInspectorByKey('DataPanel3');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("cd DatePanel component obj is: " + JSON.stringify(obj));
-      console.log("cd DataPanel type " + JSON.stringify(obj.getElement('$type')));
-      console.log("cd DataPanel values1 " + typeof ([20, 40, 20]));
-      console.log("cd DataPanel values " + typeof (obj.getElement('$attrs').getString('values')));
-      console.log("cd DataPanel values" + JSON.stringify(obj.getElement('$attrs').getString('values')));
-      console.log("cd  DataPanel max" + JSON.stringify(obj.getElement('$attrs').getString('max')));
-      console.log("panel closeEffect" + JSON.stringify(obj.getElement('$attrs').getString('closeEffect')))
-      expect(obj.getElement('$attrs').getString('closeEffect')).assertEqual("false");
-      expect(obj.getElement('$type')).assertEqual("DataPanel");
-      expect(JSON.stringify(obj.getElement('$attrs').getString('values'))).assertEqual('[20,40,20]');
+      console.info("testDataPanelGetInspectorByKey_static_030 component obj is: " + strJson);
+      console.log("testDataPanelGetInspectorByKey_static_030 type " + JSON.stringify(obj.getString('$type')));
+      console.log("testDataPanelGetInspectorByKey_static_030 closeEffect" + obj.getElement('$attrs').getString('closeEffect'));
+      console.log("testDataPanelGetInspectorByKey_static_030 max" + JSON.stringify(obj.getElement('$attrs').getString('max')));
+      expect(obj.getElement('$attrs').getString('closeEffect')).assertEqual('false');
+      expect(obj.getString('$type')).assertEqual("DataPanel");
+      expect(JSON.stringifyJsonElement(obj.getElement('$attrs').getElement('values'))).assertEqual('[20,40,20]');
       expect(obj.getElement('$attrs').getString('max')).assertEqual(100.000000.toFixed(6));
-      console.info('cd dataPanelInspectorByKey END');
+      console.info('testDataPanelGetInspectorByKey_static_030 END');
       done();
     });
   })

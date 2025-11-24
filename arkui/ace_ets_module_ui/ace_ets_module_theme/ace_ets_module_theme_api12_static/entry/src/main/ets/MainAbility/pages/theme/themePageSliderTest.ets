@@ -21,26 +21,26 @@ import {
   Text, Button, FontWeight, ClickEvent, Margin, Color, SliderStyle,
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// class GreenColors implements CustomColors {
+//   compBackgroundPrimary = '#ff049404';
+//   ompBackgroundPrimaryTran = '#FF00541F';
+//   compBackgroundPrimaryContrary = '#FFFFFFFF';
+//   compBackgroundSecondary = '#1111FF11';
+//   compBackgroundTertiary = '#FF00541F';
+//   compBackgroundEmphasiz = '#3322FF22';
+//   compBackgroundNeutral = '#FFFFFFFF'
+//   compEmphasizeSecondary = '#44FF2222'
+//   compEmphasizeTertiary = '#33FF1111'
+// }
+//
+// class RedColors implements CustomColors {
+//   fontPrimary = '#fff32b3c';
+//   fontEmphasize = '#FFD53032';
+//   fontOnPrimary = '#FFFFFFFF';
+//   compBackgroundTertiary = '#44FF2222';
+//   backgroundEmphasize = '#FFD00000';
+//   compEmphasizeSecondary = '#33FF1111';
+// }
 
 class PageCustomTheme implements CustomTheme {
   colors?: CustomColors
@@ -56,23 +56,23 @@ struct themeSliderPage {
   static readonly themeCount:int = 3;
   themeNames: string[] = ['System', 'Custom (green)', 'Custom (red)'];
   themeArray: Array<CustomTheme | undefined> = new Array<CustomTheme|undefined>(
-    undefined, 
-    
-    
+    undefined, // System
+    // new PageCustomTheme(new GreenColors()),
+    // new PageCustomTheme(new RedColors())
   )
-  @State themeIndex: Int = 0;
+  @State themeIndex: number = 0;
 
   build() {
-    Column() {
+    Column(undefined) {
       Column({ space: '8vp' } as ColumnOptions) {
         Text(`未使用WithTheme`)
-        
-        Button(`切换theme配色：${this.themeNames[this.themeIndex]}`)
+        // 点击按钮切换局部换肤
+        Button(`切换theme配色：${this.themeNames[this.themeIndex as Int]}`)
           .onClick((e:ClickEvent) => {
             this.themeIndex = (this.themeIndex + 1) % themeSliderPage.themeCount;
           }).key('themeSliderClick')
 
-        
+        // 系统默认按钮配色
         Text('block').fontSize(9).fontColor(0xCCCCCC).margin(15).width('90%')
         Slider({ style: SliderStyle.OutSet, value: 40 }  as SliderOptions)
           .blockSize({ width: 40, height: 40 })
@@ -94,30 +94,30 @@ struct themeSliderPage {
         top: '50vp'
       } as Margin)
 
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+      WithTheme({ theme: this.themeArray[this.themeIndex as Int] }) {
+        // WithTheme作用域
+        Column({ space: '8vp' } as ColumnOptions) {
+          Text(`使用WithTheme`).key('themeText')
+          Text('block').fontSize(9).fontColor(0xCCCCCC).margin(15).width('90%')
+          Slider({ style: SliderStyle.OutSet, value: 40 } as SliderOptions)
+            .blockSize({ width: 40, height: 40 })
+            .blockBorderColor(Color.Red)
+            .blockBorderWidth(5)
+          Divider()
+          Text('step').fontSize(9).fontColor(0xCCCCCC).margin(15).width('90%')
+          Slider({ style: SliderStyle.InSet, value: 40, step: 10 } as SliderOptions)
+            .showSteps(true)
+            .stepSize(8)
+            .stepColor(Color.Yellow)
+          Divider()
+          Text('track').fontSize(9).fontColor(0xCCCCCC).margin(15).width('90%')
+          Slider({ style: SliderStyle.InSet, value: 40 } as SliderOptions)
+            .selectedColor("#EEFF00FF")
+            .trackBorderRadius(2).key('sliderBg')
+          Divider()
+        }
+        .width('100%')
+      }
     }
   }
 }

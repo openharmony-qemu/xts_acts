@@ -80,11 +80,11 @@ struct MyComponent {
         .onClick((e:ClickEvent) => {
           const uiContext: UIContext = this.getUIContext();
           const uniqueId: number = this.getUniqueId();
-          const pageInfo: PageInfo = uiContext.getPageInfoByUniqueId(uniqueId as Int);
+          const pageInfo: PageInfo = uiContext.getPageInfoByUniqueId(uniqueId as int);
           this.text1 = pageInfo.routerPageInfo?.name + ''
           this.text2 = pageInfo.navDestinationInfo?.name + ''
           console.info('pageInfo: ' + JSON.stringify(pageInfo));
-          console.info('navigationInfo: ' + JSON.stringify(uiContext.getNavigationInfoByUniqueId(uniqueId as Int)));
+          console.info('navigationInfo: ' + JSON.stringify(uiContext.getNavigationInfoByUniqueId(uniqueId as int)));
         })
     }
     .width('100%')

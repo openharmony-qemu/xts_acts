@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
 import router from '@ohos.router';
-import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -55,12 +55,13 @@ export default function radioGroupJsunit() {
       }
     });
 
-    
-    /*
-     * @tc.number   testRadioGroupStatic001
-     * @tc.name     testRadioGroupStatic001
-     * @tc.desc     testRadioGroupStatic001
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number testRadioGroupStatic001
+     * @tc.name testRadioGroupStatic001
+     * @tc.desc Set radioStyle values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('testRadioGroupStatic001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[testRadioGroupStatic001] START");
@@ -76,12 +77,13 @@ export default function radioGroupJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   testRadioGroupStatic002
-     * @tc.name     testRadioGroupStatic002
-     * @tc.desc     testRadioGroupStatic002
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number testRadioGroupStatic002
+     * @tc.name testRadioGroupStatic002
+     * @tc.desc Set checked values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('testRadioGroupStatic002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[testRadioGroupStatic002] START");
@@ -94,12 +96,13 @@ export default function radioGroupJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   testRadioGroupStatic003
-     * @tc.name     testRadioGroupStatic003
-     * @tc.desc     testRadioGroupStatic003
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number testRadioGroupStatic003
+     * @tc.name testRadioGroupStatic003
+     * @tc.desc Change checked values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('testRadioGroupStatic003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('testRadioGroupStatic003 START');

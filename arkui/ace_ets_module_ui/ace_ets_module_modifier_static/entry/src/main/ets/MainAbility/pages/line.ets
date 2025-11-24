@@ -12,36 +12,36 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Component,$r, Padding,Column,Line,ImageAnimator,LineAttribute,ImageSpan,Alignment,Hyperlink,BreakpointsReference,GridRowDirection,TextOverflow,GridCol,ColumnOptions,Grid,GridItem,Gauge,animateTo,FormComponent,Visibility,FormDimension,Divider,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,GridRow,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
+import { Entry,Component,$r, Padding,Column,Line,ImageAnimator,ImageSpan,Alignment,Hyperlink,BreakpointsReference,GridRowDirection,TextOverflow,GridCol,ColumnOptions,Grid,GridItem,Gauge,animateTo,FormComponent,Visibility,FormDimension,Divider,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,GridRow,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
   State,
   Link,
   Prop,
 } from '@ohos.arkui.stateManagement';
-import { LineModifier } from "@ohos.arkui.modifier";
-
-class CustomModifier extends LineModifier {
-
-  applyNormalAttribute(instance: LineAttribute): void {
-    // super.applyNormalAttribute?.(instance);
-  }
-
-  onChange1() {
-    this.startPoint([1, 2])
-  }
-}
+// import { LineModifier } from "@ohos.arkui.modifier";
+//
+// class CustomModifier extends LineModifier {
+//
+//   applyNormalAttribute(instance: LineAttribute): void {
+//     super.applyNormalAttribute?.(instance);
+//   }
+//
+//   onChange1() {
+//     this.startPoint([1, 2])
+//   }
+// }
 
 @Entry
 @Component
 struct LineNe {
-  @State customModifier: LineModifier = new CustomModifier()
-    .startPoint([0, 1])
-    .endPoint([200, 220])
+//   @State customModifier: LineModifier = new CustomModifier()
+//     .startPoint([0, 1])
+//     .endPoint([200, 220])
 
   build() {
     Column() {
       Button("change value").onClick((e: ClickEvent) => {
-        (this.customModifier as CustomModifier).onChange1();
+//         (this.customModifier as CustomModifier).onChange1();
       }).key("changeButton")
 
       Line()
@@ -49,7 +49,7 @@ struct LineNe {
         .stroke(Color.Red)
         .strokeWidth(3)
         .key("LineKey1")
-        .attributeModifier(this.customModifier as CustomModifier)
+//         .attributeModifier(this.customModifier as CustomModifier)
     }
     .width('100%')
     .height('100%')

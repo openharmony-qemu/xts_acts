@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -34,7 +34,6 @@ export default function MultiEntry() {
   describe('MultiEntry', () => {
     beforeAll(() => {
       console.info("MultiEntry beforeEach start");
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.navigation14.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
     });
@@ -50,9 +49,10 @@ export default function MultiEntry() {
         console.info('get MultiEntry state pages:' + JSON.stringify(pages));
         if (!('MultiEntryEntry' == pages.name)) {
           console.info('get MultiEntry pages.name:' + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info('push MultiEntry page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push MultiEntry page error:' + err);
@@ -67,13 +67,14 @@ export default function MultiEntry() {
 
 
     
-    /*
+    
+/*
      * @tc.number   MultiEntry_static_0100
      * @tc.name     MultiEntry_static_0100
      * @tc.desc     MultiEntry_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('MultiEntry_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('MultiEntry_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('MultiEntry_0100 START');
       await CommonFunc.sleep(500);
 
@@ -101,13 +102,14 @@ it('MultiEntry_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
 
     
     
-    /*
+    
+/*
      * @tc.number   MultiEntry_static_0200
      * @tc.name     MultiEntry_static_0200
      * @tc.desc     MultiEntry_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('MultiEntry_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('MultiEntry_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('MultiEntry_0200 START');
       await CommonFunc.sleep(500);
 
@@ -131,13 +133,14 @@ it('MultiEntry_static_0200', Level.LEVEL0, async (done: () => void): Promise<voi
 
     
     
-    /*
+    
+/*
      * @tc.number   MultiEntry_static_0300
      * @tc.name     MultiEntry_static_0300
      * @tc.desc     MultiEntry_static_0300
      * @tc.level    Level.LEVEL0
      */
-it('MultiEntry_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('MultiEntry_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('MultiEntry_0300 START');
       await CommonFunc.sleep(500);
 
@@ -166,13 +169,14 @@ it('MultiEntry_static_0300', Level.LEVEL0, async (done: () => void): Promise<voi
     });
 
     
-    /*
+    
+/*
      * @tc.number   MultiEntry_static_0400
      * @tc.name     MultiEntry_static_0400
      * @tc.desc     MultiEntry_static_0400
      * @tc.level    Level.LEVEL0
      */
-it('MultiEntry_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('MultiEntry_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('MultiEntry_0400 START');
       await CommonFunc.sleep(500);
 
@@ -198,13 +202,14 @@ it('MultiEntry_static_0400', Level.LEVEL0, async (done: () => void): Promise<voi
     });
 
     
-    /*
+    
+/*
      * @tc.number   MultiEntry_static_0500
      * @tc.name     MultiEntry_static_0500
      * @tc.desc     MultiEntry_static_0500
      * @tc.level    Level.LEVEL0
      */
-it('MultiEntry_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('MultiEntry_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('MultiEntry_0500 START');
       await CommonFunc.sleep(500);
 
@@ -230,13 +235,14 @@ it('MultiEntry_static_0500', Level.LEVEL0, async (done: () => void): Promise<voi
     });
 
     
-    /*
+    
+/*
      * @tc.number   MultiEntry_static_0600
      * @tc.name     MultiEntry_static_0600
      * @tc.desc     MultiEntry_static_0600
      * @tc.level    Level.LEVEL0
      */
-it('MultiEntry_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('MultiEntry_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('MultiEntry_0600 START');
       await CommonFunc.sleep(500);
 
@@ -262,13 +268,14 @@ it('MultiEntry_static_0600', Level.LEVEL0, async (done: () => void): Promise<voi
     });
 
     
-    /*
+    
+/*
      * @tc.number   MultiEntry_static_0700
      * @tc.name     MultiEntry_static_0700
      * @tc.desc     MultiEntry_static_0700
      * @tc.level    Level.LEVEL0
      */
-it('MultiEntry_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('MultiEntry_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('MultiEntry_0700 START');
       await CommonFunc.sleep(500);
 

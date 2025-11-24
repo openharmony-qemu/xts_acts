@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,30 +13,33 @@
  * limitations under the License.
  */
 import {
+  Entry,
+  Component,
   $r,
-  AxisAction,
-  AxisEvent,
-  Checkbox,
-  Color,
+  Margin,
   Column,
   ColumnOptions,
-  Component,
-  Entry,
-  Flex,
-  ForEach,
-  Grid,
+  Text,
   HorizontalAlign,
-  Image,
+  Color,
   Line,
+  Swiper,
+  Scroll,
   List,
+  Grid,
+  Flex,
+  Image,
+  Checkbox,
+  ForEach,
+  ColumnOptions,
   Margin,
   Padding,
-  Scroll,
-  Swiper,
-  Text,
+  AxisEvent,
+  AxisAction,
 } from '@ohos.arkui.component';
-import { AppStorage, Link, PropRef, State, } from '@ohos.arkui.stateManagement';
-import { Router, UIContext } from '@ohos.arkui.UIContext';
+import { State, Link, Prop, } from '@ohos.arkui.stateManagement';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 
 @Entry
@@ -44,17 +47,17 @@ import inspector from '@ohos.arkui.inspector';
 struct Index {
   @State count: number = 0;
   @State color: number = 0X330000FF;
-  @State x: string = 'Int'
-  @State y: string = 'Int'
-  @State displayY: string = 'Int'
-  @State displayX: string = 'Int'
-  @State windowX: string = 'Int'
-  @State windowY: string = 'Int'
-  @State scrollStep: string = 'Int'
-  @State action: string = 'Int'
-  @State getVerticalAxisValue: string = 'Int'
-  @State getHorizontalAxisValue: string = 'Int'
-  @State propagationValue: string = 'Int'
+  @State x: string = 'int'
+  @State y: string = 'int'
+  @State displayY: string = 'int'
+  @State displayX: string = 'int'
+  @State windowX: string = 'int'
+  @State windowY: string = 'int'
+  @State scrollStep: string = 'int'
+  @State action: string = 'int'
+  @State getVerticalAxisValue: string = 'int'
+  @State getHorizontalAxisValue: string = 'int'
+  @State propagationValue: string = 'int'
   @State None: string = '123'
   @State Begin: string = '123'
   @State UPDATE: string = '123'
@@ -82,7 +85,7 @@ struct Index {
           this.action = event.action + ''
           this.getVerticalAxisValue = event.getVerticalAxisValue() + ''
           this.getHorizontalAxisValue = event.getHorizontalAxisValue() + ''
-
+          this.propagationValue = event.propagation + ''
           if (event.action == AxisAction.NONE) {
             console.log("NONE");
             this.None = "NONE"

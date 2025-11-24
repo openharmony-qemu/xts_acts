@@ -69,15 +69,13 @@ export default function RelativeContainerApi1() {
 
     
 
-    
-    
-/*
+    /*
      * @tc.number   RelativeContainerApi1_static_001
      * @tc.name     RelativeContainerApi1_static_001
      * @tc.desc     RelativeContainerApi1_static_001
      * @tc.level    Level.LEVEL0
      */
-it('RelativeContainerApi1_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RelativeContainerApi1_static_001',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[RelativeContainerApi1_001] START');
       await CommonFunc.sleep(1000);
 

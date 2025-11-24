@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../hypium/index';
 import router from '@ohos.router';
+
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector'
 import { MessageManager } from '../../../../ets/MainAbility/common/MessageManager';
@@ -34,7 +35,6 @@ export default function rowPad_TextMarPadTest() {
   describe('rowPad_TextMarPadTest', () => {
     beforeAll(() => {
       console.info("rowPad_TextMarPadTest beforeAll start");
-   
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -51,10 +51,8 @@ export default function rowPad_TextMarPadTest() {
         console.info("get RowPad_TextMarPad state pages:" + "");
         if (!("RowPad_TextMarPad" == pages.name)) {
           console.info("get RowPad_TextMarPad pages.name:" + "");
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push RowPad_TextMarPad page error:" + err);
@@ -99,14 +97,14 @@ it('testRowPadTextPad_static_01', Level.LEVEL0, async (done: () => void): Promis
       let rowContainer: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad_Container01');
       let rowContainerStrJson = inspector.getInspectorByKey('RowPad_TextMarPad_Container01');
 
-      let obj: Record<string, Object> = JSON.parse<Object>(rowContainerStrJson, Type.of(new String() as Object)) as Record<string, Object>;
-      expect(obj['$type']).assertEqual('Row');
-      const uiContext = new UIContext();
-      expect(Math.floor(Math.abs((firstText.bottom - firstText.top) - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((secondText.bottom - secondText.top) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((thirdText.bottom - thirdText.top) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
+  let obj = JSON.parseJsonElement(rowContainerStrJson);
+  expect(obj.getString('$type')).assertEqual('Row');
 
-      expect(Math.floor(Math.abs((firstText.right - firstText.left) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((firstText.bottom - firstText.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((secondText.bottom - secondText.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((thirdText.bottom - thirdText.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue();
+
+      expect(Math.floor(Math.abs((firstText.right - firstText.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((firstText.right - firstText.left) - (secondText.right - secondText.left))) <= 1)
         .assertTrue();
       expect(Math.floor(Math.abs((secondText.right - secondText.left) - (thirdText.right - thirdText.left))) <= 1)
@@ -119,13 +117,13 @@ it('testRowPadTextPad_static_01', Level.LEVEL0, async (done: () => void): Promis
       expect(Math.floor(Math.abs((thirdText.top - rowContainer.top) - (rowContainer.bottom - thirdText.bottom))) <= 1)
         .assertTrue();
 
-      expect(Math.floor(Math.abs((firstText.left - rowContainer.left) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((firstText.left - rowContainer.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))) <= 1).assertTrue();
 
-      expect(Math.floor(Math.abs((secondText.left - firstText.right) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((secondText.left - firstText.right) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((secondText.left - firstText.right) - (thirdText.left - secondText.right))) <= 1)
         .assertTrue();
 
-      expect(Math.floor(Math.abs((rowContainer.right - thirdText.right) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((rowContainer.right - thirdText.right) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20)))) <= 1).assertTrue();
       console.info('[testRowPadTextPad_static_01] END');
       done();
     });
@@ -154,14 +152,14 @@ it('testRowPadTextMar_static_02', Level.LEVEL0, async (done: () => void): Promis
       let rowContainer: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad_Container01');
       let rowContainerStrJson = inspector.getInspectorByKey('RowPad_TextMarPad_Container01');
 
-      let obj: Record<string, Object> = JSON.parse<Object>(rowContainerStrJson, Type.of(new String() as Object)) as Record<string, Object>;
-      expect(obj['$type']).assertEqual('Row');
-      const uiContext = new UIContext();
-      expect(Math.floor(Math.abs((firstText.bottom - firstText.top) - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((secondText.bottom - secondText.top) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((thirdText.bottom - thirdText.top) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
+      let obj = JSON.parseJsonElement(rowContainerStrJson);
+      expect(obj.getString('$type')).assertEqual('Row');
 
-      expect(Math.floor(Math.abs((firstText.right - firstText.left) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((firstText.bottom - firstText.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((secondText.bottom - secondText.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((thirdText.bottom - thirdText.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue();
+
+      expect(Math.floor(Math.abs((firstText.right - firstText.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((firstText.right - firstText.left) - (secondText.right - secondText.left))) <= 1)
         .assertTrue();
       expect(Math.floor(Math.abs((secondText.right - secondText.left) - (thirdText.right - thirdText.left))) <= 1)
@@ -174,17 +172,15 @@ it('testRowPadTextMar_static_02', Level.LEVEL0, async (done: () => void): Promis
       expect(Math.floor(Math.abs((thirdText.top - rowContainer.top) - (rowContainer.bottom - thirdText.bottom))) <= 1)
         .assertTrue();
 
-      expect(Math.floor(Math.abs((firstText.left - rowContainer.left) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((firstText.left - rowContainer.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20)))) <= 1).assertTrue();
 
-      expect(Math.floor(Math.abs((secondText.left - firstText.right) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((thirdText.left - secondText.right) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((secondText.left - firstText.right) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((thirdText.left - secondText.right) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))) <= 1).assertTrue();
 
       expect(Math.floor(Math.abs(rowContainer.right - thirdText.right)) <= 2).assertTrue();
       console.info('[testRowPadTextMar_static_02] END');
       done();
     });
-    
-    
     
 
 /*
@@ -211,14 +207,14 @@ it('testRowPadTextMarPad_static_03', Level.LEVEL0, async (done: () => void): Pro
       let rowContainer: RectValue = CommonFunc.getComponentRect('RowPad_TextMarPad_Container01');
       let rowContainerStrJson = inspector.getInspectorByKey('RowPad_TextMarPad_Container01');
 
-      let obj: Record<string, Object> = JSON.parse<Object>(rowContainerStrJson, Type.of(new String() as Object)) as Record<string, Object>;
-      expect(obj['$type']).assertEqual('Row');
-      const uiContext = new UIContext();
-      expect(Math.floor(Math.abs((firstText.bottom - firstText.top) - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((secondText.bottom - secondText.top) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((thirdText.bottom - thirdText.top) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
+  let obj = JSON.parseJsonElement(rowContainerStrJson);
+  expect(obj.getString('$type')).assertEqual('Row');
 
-      expect(Math.floor(Math.abs((firstText.right - firstText.left) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((firstText.bottom - firstText.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((secondText.bottom - secondText.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((thirdText.bottom - thirdText.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue();
+
+      expect(Math.floor(Math.abs((firstText.right - firstText.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1).assertTrue();
       expect(Math.floor(Math.abs((firstText.right - firstText.left) - (secondText.right - secondText.left))) <= 1)
         .assertTrue();
       expect(Math.floor(Math.abs((secondText.right - secondText.left) - (thirdText.right - thirdText.left))) <= 1)
@@ -231,10 +227,10 @@ it('testRowPadTextMarPad_static_03', Level.LEVEL0, async (done: () => void): Pro
       expect(Math.floor(Math.abs((thirdText.top - rowContainer.top) - (rowContainer.bottom - thirdText.bottom))) <= 1)
         .assertTrue();
 
-      expect(Math.floor(Math.abs((firstText.left - rowContainer.left) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((firstText.left - rowContainer.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20)))) <= 1).assertTrue();
 
-      expect(Math.floor(Math.abs((secondText.left - firstText.right) - UIContext.getFocusedUIContext()!.vp2px(20))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs((thirdText.left - secondText.right) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((secondText.left - firstText.right) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(20)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs((thirdText.left - secondText.right) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))) <= 1).assertTrue();
 
       expect(Math.floor(Math.abs(rowContainer.right - thirdText.right)) <= 2).assertTrue();
       console.info('[testRowPadTextMarPad_static_03] END');

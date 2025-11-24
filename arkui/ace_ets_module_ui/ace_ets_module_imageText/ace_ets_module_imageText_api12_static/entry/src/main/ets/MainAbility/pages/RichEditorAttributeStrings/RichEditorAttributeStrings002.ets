@@ -80,19 +80,15 @@ build() {
 
       Button('getStyles')
         .onClick((e: ClickEvent) => {
-          let richEditorStyledString = this.controller.getStyledString();
-          if (richEditorStyledString !== undefined) {
-            this.styledString = richEditorStyledString.getString();
-          }
+          let richEditorStyledString = this.controller!.getStyledString()!;
+          this.styledString = richEditorStyledString!.getString();
         })
         .id('getStyles')
 
       Button('getOtherStyles')
         .onClick((e: ClickEvent) => {
           let richEditorStyledString = this.controller1.getStyledString();
-          if (richEditorStyledString !== undefined) {
-            this.styledString = richEditorStyledString.getString();
-          }
+          this.styledString = richEditorStyledString!.getString();
         })
         .id('getOtherStyles')
 
@@ -100,7 +96,7 @@ build() {
 
       RichEditor(this.options)
         .onReady((): void => {
-          this.controller.setStyledString(this.mutableStyledString);
+          this.controller!.setStyledString(this.mutableStyledString);
         })
         .height(100)
         .width('100%')

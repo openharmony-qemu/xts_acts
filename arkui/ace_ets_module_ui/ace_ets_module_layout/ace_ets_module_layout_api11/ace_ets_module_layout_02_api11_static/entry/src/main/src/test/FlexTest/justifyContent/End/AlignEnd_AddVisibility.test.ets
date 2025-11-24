@@ -16,16 +16,13 @@
 import { describe, beforeEach, it, expect, Level, afterEach, beforeAll,Level } from '../../../../../../hypium/index'
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { Visibility } from '@ohos.arkui.component'
 import {MessageManager} from '../../../../../ets/MainAbility/common/MessageManager'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../../../Util.test';
 import router from '@ohos.router';
 import inspector from '@ohos.arkui.inspector';
 import RectValue from '../../../../../ets/MainAbility/common/Rect';
-import { FaceValue } from '../../../../../ets/MainAbility/common/Value';
-import GlobalContext from '../../../../../ets/MainAbility/common/GlobalContext';
-import {Alignment } from '@ohos.arkui.component'
-import { Router } from '@ohos.arkui.UIContext';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -41,9 +38,8 @@ export default function AlignEnd_AddVisibility() {
 
     beforeAll(() => {
       console.info("AlignEnd_AddVisibility beforeEach start");
-      
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace_ets_module_layout_02_api11_static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
@@ -59,11 +55,8 @@ export default function AlignEnd_AddVisibility() {
         console.info("get AlignEnd_AddVisibility state pages:" + JSON.stringify(pages));
         if (!("AlignEnd_AddVisibility" == pages.name)) {
           console.info("get AlignEnd_AddVisibility pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push AlignEnd_AddVisibility page error:" + err);
@@ -88,15 +81,10 @@ export default function AlignEnd_AddVisibility() {
 it('testFlexAlignEndVisibilityNone_static', Level.LEVEL0, async () : Promise<void>=> {
       console.info('[testFlexAlignEndVisibilityNone] START');
       try {
-        
-        
-        
-        
-        
-        let result = AppStorage.get<MessageManager<Alignment>>("messageManager")
+        let result = AppStorage.get<MessageManager<Visibility>>("messageManager")
         if (result !== null) {
           result!.notify({
-            name: 'DadAlign', value: Alignment.BottomEnd
+            name: 'OneVisibility', value: Visibility.None
           });
         }
 
@@ -112,22 +100,21 @@ it('testFlexAlignEndVisibilityNone_static', Level.LEVEL0, async () : Promise<voi
         let End_AddVisibility_012: RectValue = CommonFunc.getComponentRect('End_AddVisibility_012');
         let End_AddVisibility_013: RectValue = CommonFunc.getComponentRect('End_AddVisibility_013');
         let End_AddVisibility_01: RectValue = CommonFunc.getComponentRect('End_AddVisibility_01');
-        const uiContext = new UIContext();
         expect(Math.abs((End_AddVisibility_012.top) - (End_AddVisibility_013.top)) <= 1).assertTrue();
         expect(Math.abs((End_AddVisibility_012.top) - (End_AddVisibility_01.top)) <= 1).assertTrue();
         expect(Math.abs((End_AddVisibility_012.right) - (End_AddVisibility_013.left)) <= 1).assertTrue();
         expect(Math.abs((End_AddVisibility_013.right) - (End_AddVisibility_01.right)) <= 1).assertTrue();
-        expect(Math.abs((Math.round(End_AddVisibility_012.left - End_AddVisibility_01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(200)))) <= 1)
+        expect(Math.abs((Math.round(End_AddVisibility_012.left - End_AddVisibility_01.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200))))) <= 1)
           .assertTrue();
-        expect(Math.abs((Math.round(End_AddVisibility_012.right - End_AddVisibility_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+        expect(Math.abs((Math.round(End_AddVisibility_012.right - End_AddVisibility_012.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
           .assertTrue();
-        expect(Math.abs((Math.round(End_AddVisibility_013.right - End_AddVisibility_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+        expect(Math.abs((Math.round(End_AddVisibility_013.right - End_AddVisibility_013.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
           .assertTrue();
-        expect(Math.abs((Math.round(End_AddVisibility_012.bottom - End_AddVisibility_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+        expect(Math.abs((Math.round(End_AddVisibility_012.bottom - End_AddVisibility_012.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
           .assertTrue();
-        expect(Math.abs((Math.round(End_AddVisibility_013.bottom - End_AddVisibility_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+        expect(Math.abs((Math.round(End_AddVisibility_013.bottom - End_AddVisibility_013.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
           .assertTrue();
-      } catch (err) {
+      } catch (err:Error) {
         console.error('[testFlexAlignEndVisibilityNone] failed');
         expect().assertFail();
       }
@@ -145,21 +132,12 @@ it('testFlexAlignEndVisibilityNone_static', Level.LEVEL0, async () : Promise<voi
 it('testFlexAlignEndVisibilityHidden_static', Level.LEVEL0, async () : Promise<void>=> {
       console.info('[testFlexAlignEndVisibilityHidden] START');
       try {
-        
-        
-        
-        
-        
-
-        let result = AppStorage.get<MessageManager<number>>("messageManager")
+        let result = AppStorage.get<MessageManager<Visibility>>("messageManager")
         if (result !== null) {
           result!.notify({
-            name: 'OneVisibility', value: 0
+            name: 'OneVisibility', value: Visibility.Hidden
           });
         }
-       /* GlobalContext.getContext().getObject<number>('value').message.notify({
-          name: 'OneVisibility', value: Visibility.Hidden
-        })*/
         await CommonFunc.sleep(3000);
         let strJson = inspector.getInspectorByKey('End_AddVisibility_01');
 
@@ -173,7 +151,6 @@ it('testFlexAlignEndVisibilityHidden_static', Level.LEVEL0, async () : Promise<v
         let End_AddVisibility_012: RectValue = CommonFunc.getComponentRect('End_AddVisibility_012');
         let End_AddVisibility_013: RectValue = CommonFunc.getComponentRect('End_AddVisibility_013');
         let End_AddVisibility_01: RectValue = CommonFunc.getComponentRect('End_AddVisibility_01');
-        const uiContext = new UIContext();
         expect(Math.abs((Math.round(End_AddVisibility_011.top)) - (Math.round(End_AddVisibility_012.top))) <= 1)
           .assertTrue();
         expect(Math.abs((Math.round(End_AddVisibility_012.top)) - (Math.round(End_AddVisibility_013.top))) <= 1)
@@ -186,21 +163,21 @@ it('testFlexAlignEndVisibilityHidden_static', Level.LEVEL0, async () : Promise<v
           .assertTrue();
         expect(Math.abs((Math.round(End_AddVisibility_013.left)) - (Math.round(End_AddVisibility_012.right))) <= 1)
           .assertTrue();
-        expect(Math.abs((Math.round(End_AddVisibility_011.left - End_AddVisibility_01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+        expect(Math.abs((Math.round(End_AddVisibility_011.left - End_AddVisibility_01.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
           .assertTrue();
-        expect(Math.abs((Math.round(End_AddVisibility_011.right - End_AddVisibility_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+        expect(Math.abs((Math.round(End_AddVisibility_011.right - End_AddVisibility_011.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
           .assertTrue();
-        expect(Math.abs((Math.round(End_AddVisibility_012.right - End_AddVisibility_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+        expect(Math.abs((Math.round(End_AddVisibility_012.right - End_AddVisibility_012.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
           .assertTrue();
-        expect(Math.abs((Math.round(End_AddVisibility_013.right - End_AddVisibility_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+        expect(Math.abs((Math.round(End_AddVisibility_013.right - End_AddVisibility_013.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
           .assertTrue();
-        expect(Math.abs((Math.round(End_AddVisibility_011.bottom - End_AddVisibility_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+        expect(Math.abs((Math.round(End_AddVisibility_011.bottom - End_AddVisibility_011.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
           .assertTrue();
-        expect(Math.abs((Math.round(End_AddVisibility_012.bottom - End_AddVisibility_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+        expect(Math.abs((Math.round(End_AddVisibility_012.bottom - End_AddVisibility_012.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
           .assertTrue();
-        expect(Math.abs((Math.round(End_AddVisibility_013.bottom - End_AddVisibility_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+        expect(Math.abs((Math.round(End_AddVisibility_013.bottom - End_AddVisibility_013.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
           .assertTrue();
-      } catch (err) {
+      } catch (err:Error) {
         console.error('[testFlexAlignEndVisibilityHidden] failed');
         expect().assertFail();
       }
@@ -218,20 +195,12 @@ it('testFlexAlignEndVisibilityHidden_static', Level.LEVEL0, async () : Promise<v
 it('testFlexAlignEndVisibilityVisible_static', Level.LEVEL0, async () : Promise<void>=> {
       console.info('[testFlexAlignEndVisibilityVisible] START');
       try {
-        
-        
-        
-        
-        
-        let result = AppStorage.get<MessageManager<number>>("messageManager")
+        let result = AppStorage.get<MessageManager<Visibility>>("messageManager")
         if (result !== null) {
           result!.notify({
-            name: 'OneVisibility', value: 0
+            name: 'OneVisibility', value: Visibility.Visible
           })
         }
-        
-        
-        
         await CommonFunc.sleep(3000);
         let strJson = inspector.getInspectorByKey('End_AddVisibility_01');
 
@@ -245,28 +214,27 @@ it('testFlexAlignEndVisibilityVisible_static', Level.LEVEL0, async () : Promise<
         let End_AddVisibility_012: RectValue = CommonFunc.getComponentRect('End_AddVisibility_012');
         let End_AddVisibility_013: RectValue = CommonFunc.getComponentRect('End_AddVisibility_013');
         let End_AddVisibility_01: RectValue = CommonFunc.getComponentRect('End_AddVisibility_01');
-        const uiContext = new UIContext();
         expect(Math.abs((End_AddVisibility_011.top) - (End_AddVisibility_012.top)) <= 1).assertTrue();
         expect(Math.abs((End_AddVisibility_012.top) - (End_AddVisibility_013.top)) <= 1).assertTrue();
         expect(Math.abs((End_AddVisibility_012.top) - (End_AddVisibility_01.top)) <= 1).assertTrue();
         expect(Math.abs((End_AddVisibility_011.right) - (End_AddVisibility_012.left)) <= 1).assertTrue();
         expect(Math.abs((End_AddVisibility_013.right) - (End_AddVisibility_01.right)) <= 1).assertTrue();
         expect(Math.abs((End_AddVisibility_013.left) - (End_AddVisibility_012.right)) <= 1).assertTrue();
-        expect(Math.abs((Math.round(End_AddVisibility_011.left - End_AddVisibility_01.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+        expect(Math.abs((Math.round(End_AddVisibility_011.left - End_AddVisibility_01.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
           .assertTrue();
-        expect(Math.abs((Math.round(End_AddVisibility_011.right - End_AddVisibility_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+        expect(Math.abs((Math.round(End_AddVisibility_011.right - End_AddVisibility_011.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
           .assertTrue();
-        expect(Math.abs((Math.round(End_AddVisibility_012.right - End_AddVisibility_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+        expect(Math.abs((Math.round(End_AddVisibility_012.right - End_AddVisibility_012.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
           .assertTrue();
-        expect(Math.abs((Math.round(End_AddVisibility_013.right - End_AddVisibility_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+        expect(Math.abs((Math.round(End_AddVisibility_013.right - End_AddVisibility_013.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
           .assertTrue();
-        expect(Math.abs((Math.round(End_AddVisibility_011.bottom - End_AddVisibility_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+        expect(Math.abs((Math.round(End_AddVisibility_011.bottom - End_AddVisibility_011.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
           .assertTrue();
-        expect(Math.abs((Math.round(End_AddVisibility_012.bottom - End_AddVisibility_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+        expect(Math.abs((Math.round(End_AddVisibility_012.bottom - End_AddVisibility_012.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
           .assertTrue();
-        expect(Math.abs((Math.round(End_AddVisibility_013.bottom - End_AddVisibility_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+        expect(Math.abs((Math.round(End_AddVisibility_013.bottom - End_AddVisibility_013.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
           .assertTrue();
-      } catch (err) {
+      } catch (err:Error) {
         console.error('[testFlexAlignEndVisibilityVisible] failed');
         expect().assertFail();
       }

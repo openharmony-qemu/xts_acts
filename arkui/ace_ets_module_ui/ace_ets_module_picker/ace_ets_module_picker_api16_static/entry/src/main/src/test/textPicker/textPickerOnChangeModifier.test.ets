@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium';
 import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -21,16 +21,17 @@ import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector'
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
+// import { px2vp } from '@ohos.arkui.component'
 
-const uiContext = new UIContext();
-function getRectCenterVp(rect: string) {
-  let regexp: RegExp = new RegExp('\\[', 'g');
-  let rtn: string[] = rect.replace(regexp, '').replace(regexp, '').split(',')
-  return [
-    UIContext.getFocusedUIContext()!.px2vp(Number.parseFloat(rtn[0].trim()) + (Number.parseFloat(rtn[2].trim()) - Number.parseFloat(rtn[0].trim())) / 2),
-    UIContext.getFocusedUIContext()!.px2vp(Number.parseFloat(rtn[1].trim()) + (Number.parseFloat(rtn[3].trim()) - Number.parseFloat(rtn[1].trim())) / 2),
-  ]
-}
+// function getRectCenterVp(rect: string) {
+//   let regexp: RegExp = new RegExp('\\[', 'g');
+//   let rtn: string[] = rect.replace(regexp, '').replace(regexp, '').split(',')
+//   let uiContext = AppStorage.get<UIContext>('uiContext');
+//   return [
+//     uiContext!.px2vp(Number.parseFloat(rtn[0].trim()) + (Number.parseFloat(rtn[2].trim()) - Number.parseFloat(rtn[0].trim())) / 2),
+//     uiContext!.px2vp(Number.parseFloat(rtn[1].trim()) + (Number.parseFloat(rtn[3].trim()) - Number.parseFloat(rtn[1].trim())) / 2),
+//   ]
+// }
 
 export default function textPickerOnChangeModifierTest() {
   describe('textPickerOnChangeModifierTest', () => {
@@ -53,11 +54,11 @@ export default function textPickerOnChangeModifierTest() {
         console.info("get textPickerOnChangeModifierTest state pages:" + JSON.stringify(pages));
         if (!("textPickerOnChangeModifier" == pages.name)) {
           console.info("get textPickerOnChangeModifierTest pages.name:" + '');
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push textPickerOnChangeModifierTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push textPickerOnChangeModifierTest page error:" + err);

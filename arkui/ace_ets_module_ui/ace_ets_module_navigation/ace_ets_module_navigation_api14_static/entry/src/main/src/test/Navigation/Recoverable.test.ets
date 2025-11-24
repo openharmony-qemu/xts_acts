@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -33,6 +33,11 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function Recoverable() {
   describe('Recoverable', () => {
+    beforeAll(() => {
+      console.info("Recoverable beforeEach start");
+      await UtilsTest.startAbility("com.arkui.ace.navigation14.static", "EntryAbility");
+      await UtilsTest.msSleep(4000);
+    });
     beforeEach(async (): Promise<void> => {
       console.info("Recoverable beforeEach start");
       let options: router.RouterOptions = {
@@ -45,9 +50,10 @@ export default function Recoverable() {
         console.info("get Recoverable state pages:" + JSON.stringify(pages));
         if (!("Recoverable" == pages.name)) {
           console.info("get Recoverable pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push Recoverable page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push Recoverable page error:" + err);
@@ -62,13 +68,14 @@ export default function Recoverable() {
 
 
     
-    /*
+    
+/*
      * @tc.number   Recoverable_static_0100
      * @tc.name     Recoverable_static_0100
      * @tc.desc     Recoverable_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('Recoverable_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('Recoverable_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('Recoverable_0100 START');
       await CommonFunc.sleep(1000);
 
@@ -78,7 +85,7 @@ it('Recoverable_static_0100', Level.LEVEL0, async (done: () => void): Promise<vo
       let strJson = inspector.getInspectorByKey('testNavigation');
       let obj = JSON.parseJsonElement(strJson);
       console.info('[Recoverable_0100] component obj is: ' + JSON.stringify(obj));
-      console.info('[Recoverable_0100] recoverable obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('recoverable')));
+      // console.info('[Recoverable_0100] recoverable obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('recoverable')));
       console.info('[Recoverable_0200] height obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('height')));
       expect('' + obj.getElement('$attrs').getString('height')).assertEqual('50.00%');
 
@@ -87,13 +94,14 @@ it('Recoverable_static_0100', Level.LEVEL0, async (done: () => void): Promise<vo
     });
 
     
-    /*
+    
+/*
      * @tc.number   Recoverable_static_0200
      * @tc.name     Recoverable_static_0200
      * @tc.desc     Recoverable_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('Recoverable_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('Recoverable_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('Recoverable_0200 START');
       await CommonFunc.sleep(1000);
 
@@ -108,7 +116,7 @@ it('Recoverable_static_0200', Level.LEVEL0, async (done: () => void): Promise<vo
       let strJson = inspector.getInspectorByKey('testNavigation');
       let obj = JSON.parseJsonElement(strJson);
       console.info('[Recoverable_0200] component obj is: ' + JSON.stringify(obj));
-      console.info('[Recoverable_0200] recoverable obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('recoverable')));
+      // console.info('[Recoverable_0200] recoverable obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('recoverable')));
       console.info('[Recoverable_0200] height obj is: ' + JSON.stringify(obj.getElement('$attrs').getString('height')));
       expect('' + obj.getElement('$attrs').getString('height')).assertEqual('50.00%');
 
@@ -117,13 +125,14 @@ it('Recoverable_static_0200', Level.LEVEL0, async (done: () => void): Promise<vo
     });
 
     
-    /*
+    
+/*
      * @tc.number   Recoverable_static_0300
      * @tc.name     Recoverable_static_0300
      * @tc.desc     Recoverable_static_0300
      * @tc.level    Level.LEVEL0
      */
-it('Recoverable_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('Recoverable_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('Recoverable_0300 START');
 
       expect(true).assertEqual(true);
@@ -133,13 +142,14 @@ it('Recoverable_static_0300', Level.LEVEL0, async (done: () => void): Promise<vo
     });
 
     
-    /*
+    
+/*
      * @tc.number   Recoverable_static_0400
      * @tc.name     Recoverable_static_0400
      * @tc.desc     Recoverable_static_0400
      * @tc.level    Level.LEVEL0
      */
-it('Recoverable_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('Recoverable_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('Recoverable_0400 START');
 
       expect(false).assertEqual(false);

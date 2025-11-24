@@ -31,6 +31,7 @@ import { Router } from '@ohos.arkui.UIContext';
 import {
   State,
   
+
   AppStorage
 } from '@ohos.arkui.stateManagement'
 @Entry
@@ -41,11 +42,6 @@ struct Flex_NoWrap_Position {
 
   onPageShow() {
     console.info('Flex_NoWrap_Position onPageShow');
-    
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<Position>>("messageManager",  this.messageManager);
     let callback: Callback<Position> = (message: Message<Position>) => {
       console.log('message = ' + message.name + "--" + message.value);

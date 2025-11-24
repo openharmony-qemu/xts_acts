@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -49,31 +49,23 @@ import {
   TextAlign
 } from '@ohos.arkui.component'
 
-interface ParamName {
-  name: string,
-  message: MessageManager<Resource>
-}
-
 @Entry
 @Component
 struct SwiperExample {
   @State exposeInnerGesture: boolean = true;
   @State callBackString: string = "";
-  messageManager: MessageManager<Resource> = new MessageManager<Resource>();
+  messageManager: MessageManager<boolean> = new MessageManager<boolean>();
   private swiperController: SwiperController = new SwiperController()
   private swiperController1: SwiperController = new SwiperController()
 
   onPageShow() {
     console.info('tabsInterceptionEnhancement pages onPageShow');
-    let value: ParamName = {
-      name: 'messageManager', message: this.messageManager
-    }
 
-    AppStorage.setOrCreate<ParamName>('value', value);
-    let callback: (message: Message<Resource>) => void = (message: Message<Resource>) => {
+    AppStorage.setOrCreate<MessageManager<boolean>>('messageManager', this.messageManager);
+    let callback: (message: Message<boolean>) => void = (message: Message<boolean>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'exposeInnerGesture') {
-        this.exposeInnerGesture = Boolean(message.value);
+        this.exposeInnerGesture = message.value;
       }
 
     };
@@ -113,7 +105,7 @@ struct SwiperExample {
             .textAlign(TextAlign.Center)
             .fontSize(30)
         }
-        .cachedCount(2)
+        .cachedCount(2,true)
         .index(1)
         .autoPlay(false, undefined)
         .interval(4000)
@@ -122,7 +114,7 @@ struct SwiperExample {
         .duration(1000)
         .itemSpace(0)
         .onGestureRecognizerJudgeBegin((event: BaseGestureEvent, current: GestureRecognizer,
-          others: Array<GestureRecognizer>): GestureJudgeResult => {
+          others: Array<GestureRecognizer>): GestureJudgeResult => { // 在识别器即将要成功时，根据当前组件状态，设置识别器使能状态
           console.info('enhance ets onGestureRecognizerJudgeBegin child')
           this.callBackString = "接口触发"
           console.info("enhance" + JSON.stringify(event));
@@ -171,7 +163,7 @@ struct SwiperExample {
           .textAlign(TextAlign.Center)
           .fontSize(30)
       }
-      .cachedCount(2)
+      .cachedCount(2,true)
       .index(1)
       .autoPlay(false, undefined)
       .interval(4000)
@@ -180,21 +172,21 @@ struct SwiperExample {
       .itemSpace(0)
       .key("swiperRecogniserTest")
       .curve(Curve.Linear)
-      .onChange((index: Int): void => {
-        console.info(index.toString())
+      .onChange((index: int): void => {
+        console.info(String(index))
       })
-      .onGestureSwipe((index: Int, extraInfo: SwiperAnimationEvent): void => {
+      .onGestureSwipe((index: int, extraInfo: SwiperAnimationEvent): void => {
         console.info("index: " + index)
         console.info("current offset: " + extraInfo.currentOffset)
       })
-      .onAnimationStart((index: Int, targetIndex: Int, extraInfo: SwiperAnimationEvent): void => {
+      .onAnimationStart((index: int, targetIndex: int, extraInfo: SwiperAnimationEvent): void => {
         console.info("index: " + index)
         console.info("targetIndex: " + targetIndex)
         console.info("current offset: " + extraInfo.currentOffset)
         console.info("target offset: " + extraInfo.targetOffset)
         console.info("velocity: " + extraInfo.velocity)
       })
-      .onAnimationEnd((index: Int, extraInfo: SwiperAnimationEvent): void => {
+      .onAnimationEnd((index: int, extraInfo: SwiperAnimationEvent): void => {
         console.info("index: " + index)
         console.info("current offset: " + extraInfo.currentOffset)
       })

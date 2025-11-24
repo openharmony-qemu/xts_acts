@@ -60,7 +60,7 @@ build() {
         Text('' + this.wordBreak).id('word_break_text');
 
         Button('set select').onClick((e: ClickEvent) => {
-          this.controller.setSelection(2, 4);
+          this.controller!.setSelection(2, 4);
         }).id('set_select')
 
       }
@@ -72,7 +72,7 @@ build() {
       Column() {
         RichEditor(this.options)
           .onReady((): void => {
-            this.controller.addTextSpan('abcdef',
+            this.controller!.addTextSpan('abcdef',
               {
                 style: {
                   fontColor: Color.Orange,
@@ -85,7 +85,7 @@ build() {
               })
           })
           .onWillChange((value: RichEditorChangeValue): boolean => {
-            value.replacedSpans.forEach((item: RichEditorTextSpanResult) => {
+            value.replacedSpans!.forEach((item: RichEditorTextSpanResult) => {
               console.log('change')
             })
             return true

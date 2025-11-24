@@ -25,10 +25,7 @@ struct flexBasis_Default {
   messageManager: MessageManager<number> = new MessageManager<number>()
   onPageShow() {
     console.info('flexBasis_Default onPageShow');
-    let value: ValueT<number> = {
-      name: 'messageManager', message: this.messageManager
-    }
-    GlobalContext.getContext().setObject('value', value, Type.from<ValueT<number>>());
+    AppStorage.setOrCreate<MessageManager<number>>("messageManager",  this.messageManager);
     let callback: Callback<number> = (message: Message<number>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'addflexBasis') {

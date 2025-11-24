@@ -23,17 +23,17 @@ import inspector from '@ohos.arkui.inspector';
 import events_emitter from '@ohos.events.emitter';
 import {ButtonModifier} from "@ohos.arkui.modifier";
 
-class CustomModifier extends ButtonModifier {
-  applyNormalAttribute(instance: ButtonAttribute): void {
-    // super.applyNormalAttribute?.(instance);
-  }
-}
+// class CustomModifier extends ButtonModifier {
+//   applyNormalAttribute(instance: ButtonAttribute): void {
+//     super.applyNormalAttribute?.(instance);
+//   }
+// }
 
 @Entry
 @Component
 struct ShortcutKey7Test {
-  @State buttonModifier: ButtonAttribute = new CustomModifier()
-      .keyboardShortcut('B', [ModifierKey.CTRL]);
+  // @State buttonModifier: ButtonAttribute = new CustomModifier()
+  //     .keyboardShortcut('B', [ModifierKey.CTRL]);
 
   sendEvent(message: string, eventId: int) {
     let eventData: events_emitter.EventData = {
@@ -54,7 +54,7 @@ struct ShortcutKey7Test {
     Scroll() {
       Column({ space: 10 } as ColumnOptions) {
         Button("Ctrl + B")
-          .attributeModifier(this.buttonModifier as ButtonModifier)
+          // .attributeModifier(this.buttonModifier as ButtonModifier)
           .onClick((e: ClickEvent) => {
             this.sendEvent('Ctrl_B', this.baseEvent)
           })

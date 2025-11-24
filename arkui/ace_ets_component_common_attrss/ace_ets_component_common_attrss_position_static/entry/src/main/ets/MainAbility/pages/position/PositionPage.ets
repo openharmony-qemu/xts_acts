@@ -36,9 +36,9 @@ import {
   RectOptions,CommonMethod,applyStyles,Builder
 } from '@ohos.arkui.component';
 import { MessageManager, Callback } from '../../common/MessageManager';
-import { AppStorage, State } from '@ohos.arkui.stateManagement';
+import { AppStorage, State, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { SetValue } from '../../common/Utils';
+import { SetValue, TestValue } from '../../common/Utils';
 interface ViewOption {
 targetView: string
 componentKey: string
@@ -56,7 +56,7 @@ interface RouterParamOptions {
 @Entry
 @Component
 struct PositionPage {
-  @State _position: SetValue = { x: 0, y: 0 } as SetValue;
+  @StoragePropRef('_position') _position: Position = { x: 0, y: 0 } as Position;
   @State targetView: string = ''
   @State componentKey: string = ''
   @State parentWidth: number = 0
@@ -73,17 +73,20 @@ struct PositionPage {
     .height('100%')
     .backgroundColor(Color.Pink)
   }
+
   onPageShow() {
     console.info('[PositionPage] page show called ')
 
     //Register data change call back.
-    attrsManager.registerDataChange((value: SetValue) => {
-      this._position = value
-    })
-  }
-aboutToAppear(){
+    // attrsManager.registerDataChange((value: SetValue) => {
+    //   this._position = value
+    // })
     try {
-      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParamOptions;
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+      AppStorage.setOrCreate<Position>('_position', (routerParamOptions.view.testValue as TestValue).setValue as Position)
+      // console.log('=============== pageValue'+(routerParamOptions.view.testValue as TestValue).setValue)
+      // console.log('=============== pageValue_x'+((routerParamOptions.view.testValue as TestValue).setValue as Position).x)
+      // console.log('=============== pageValue_y'+((routerParamOptions.view.testValue as TestValue).setValue as Position).y)
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey
       this.parentWidth = routerParamOptions.view.parentWidth
@@ -94,11 +97,14 @@ aboutToAppear(){
       console.log(' routerParamOptions error ' + error);
     }
   }
+  aboutToAppear(){
+
+  }
   /**
    * Set common style.
    */
   commonStyle(instance: CommonMethod) {
-      instance.position(this._position as Position)
+      instance.position(this._position)
       instance.key(this.componentKey)
   }
   build() {
@@ -199,7 +205,7 @@ aboutToAppear(){
               Text('1')
                 .width('100%')
                 .height(50)
-                .backgroundColor(0xF5DEB3)
+                .backgroundColor('0xF5DEB3')
                 .textAlign(TextAlign.Center)
             }
             .applyStyles(this.commonStyle)
@@ -219,27 +225,27 @@ aboutToAppear(){
               Text('1')
                 .width('10%')
                 .height(100)
-                .backgroundColor(0xF5DEB3)
+                .backgroundColor('0xF5DEB3')
                 .textAlign(TextAlign.Center)
               Text('2')
                 .width('10%')
                 .height(100)
-                .backgroundColor(0xD2B48C)
+                .backgroundColor('0xD2B48C')
                 .textAlign(TextAlign.Center)
               Text('3')
                 .width('10%')
                 .height(100)
-                .backgroundColor(0xF5DEB3)
+                .backgroundColor('0xF5DEB3')
                 .textAlign(TextAlign.Center)
               Text('4')
                 .width('10%')
                 .height(100)
-                .backgroundColor(0xD2B48C)
+                .backgroundColor('0xD2B48C')
                 .textAlign(TextAlign.Center)
               Text('5')
                 .width('10%')
                 .height(100)
-                .backgroundColor(0xF5DEB3)
+                .backgroundColor('0xF5DEB3')
                 .textAlign(TextAlign.Center)
             }
             .width('90%')
@@ -318,6 +324,8 @@ aboutToAppear(){
           Row() {
             //Set view by page config.
             if (this.targetView == 'AlphabetIndexer') {
+              // console.info('wj----------position',JSON.stringify(this._position))
+              console.info('wj----------position',this._position)
               AlphabetIndexerView({ _position: this._position as Position, componentKey: this.componentKey })
             } else if (this.targetView == 'Blank') {
               Blank().backgroundColor(Color.Orange).applyStyles(this.commonStyle)
@@ -346,8 +354,11 @@ aboutToAppear(){
                 .vertical(true)
                 .applyStyles(this.commonStyle)
             } else if (this.targetView == 'Gauge') {
-              Gauge({ value: 75 }).colors([[Color.White, 1], [Color.Black, 1]])
+              console.log('wj----------------------',this.targetView);
+              Gauge({ value: 75 })
                 .applyStyles(this.commonStyle)
+                .colors([[Color.White, 1], [Color.Black, 1]]) //加上这个属性 导致空指针
+
             } else if (this.targetView == 'Image') {
               Image($r('app.media.icon')).applyStyles(this.commonStyle)
             } else if (this.targetView == 'ImageAnimator') {
@@ -481,8 +492,8 @@ aboutToAppear(){
               .applyStyles(this.commonStyle)
             } else if (this.targetView == 'Grid') {
               Grid() {
-                ForEach(new Array<string>('0', '1', '2', '3', '4'), (day:string, index:Int):void => {
-                  ForEach(new Array<string>('0', '1', '2', '3', '4'), (item:string, index:Int):void => {
+                ForEach(new Array<string>('0', '1', '2', '3', '4'), (day:string, index:int):void => {
+                  ForEach(new Array<string>('0', '1', '2', '3', '4'), (item:string, index:int):void => {
                     GridItem() {
                       Text(day)
                         .backgroundColor(Color.White)
@@ -498,20 +509,25 @@ aboutToAppear(){
               .applyStyles(this.commonStyle)
             } else if (this.targetView == 'List') {
               List({ space: 20, initialIndex: 0 }) {
-                ForEach(new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), (item:number, index:Int):void => {
+                ForEach(new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), (item:number, index:int):void => {
                   ListItem() {
                     Text('' + item)
                       .width('100%')
                       .textAlign(TextAlign.Center)
                       .backgroundColor(Color.White)
                   }
-                }, (item: number, index:Int):string => String(item))
+                }, (item: number, index:int):string => String(item))
               }
               .width('100%')
               .height('100%')
               .listDirection(Axis.Vertical)
               .applyStyles(this.commonStyle)
-            } else if (this.targetView == 'RelativeContainer') {
+            } else if (this.targetView == 'Navigator') {
+              // Navigator({ target: 'MainAbility/pages/index/Index' }) {
+              //   Text('Navigator Go to index page')
+              //     .width('100%').textAlign(TextAlign.Center)
+              // }.applyStyles(this.commonStyle)
+            }else if (this.targetView == 'RelativeContainer') {
               RelativeContainer() {
                 Row()
                   .width(100)
@@ -520,7 +536,7 @@ aboutToAppear(){
                   .alignRules({
                     top: { anchor: '__container__', align: VerticalAlign.Top },
                     left: { anchor: '__container__', align: HorizontalAlign.Start }
-                  })
+                  } as AlignRuleOption)
                   .id('PositionPageRow')
               }
               .height('50%')
@@ -534,11 +550,12 @@ aboutToAppear(){
                 .backgroundColor(Color.Green)
                 .applyStyles(this.commonStyle)
             } else if (this.targetView == 'Panel') {
+              console.log('---------------------------------',this.targetView);
               Column(){
                 Text('Panel')
               }.height('100%').width('100%')
+              .bindSheet(true,this.myBuilder)  //10.13sdk已解决
               .applyStyles(this.commonStyle)
-              .bindSheet(true,this.myBuilder)
 
             } else if (this.targetView == 'Refresh') {
               Refresh({ refreshing: true }) {
@@ -548,13 +565,13 @@ aboutToAppear(){
             } else if (this.targetView == 'Scroll') {
               Scroll() {
                 Column() {
-                  ForEach(new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), (item: number, index:Int):void => {
+                  ForEach(new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), (item: number, index:int):void => {
                     Text('Scroll' + item.toString())
                       .width('90%')
                       .height(150)
                       .backgroundColor(Color.White)
                       .textAlign(TextAlign.Center)
-                  }, (item: number, index:Int):string => String(item))
+                  }, (item: number, index:int):string => String(item))
                 }.width('100%')
               }
               .scrollBar(BarState.On)
@@ -562,7 +579,7 @@ aboutToAppear(){
             } else if (this.targetView == 'SideBarContainer') {
               SideBarContainer(SideBarContainerType.Embed) {
                 Column() {
-                  ForEach(new Array<number>(1, 2, 3), (item: number, index:Int):void => {
+                  ForEach(new Array<number>(1, 2, 3), (item: number, index:int):void => {
                     Column({ space: 5 } as ColumnOptions) {
                       Image($r('app.media.icon'))
                         .width(64)
@@ -590,11 +607,11 @@ aboutToAppear(){
               .applyStyles(this.commonStyle)
             } else if (this.targetView == 'Swiper') {
               Swiper() {
-                ForEach(new Array<number>(1, 2, 3), (item: number, index:Int):void => {
+                ForEach(new Array<number>(1, 2, 3), (item: number, index:int):void => {
                   Text('Swiper' + item)
                     .width('90%')
                     .height(160)
-                }, (item: number, index:Int):string => String(item))
+                }, (item: number, index:int):string => String(item))
               }
               .indicator(true)
               .backgroundColor(Color.White)
@@ -647,6 +664,7 @@ aboutToAppear(){
                 .stroke(Color.Transparent)
                 .applyStyles(this.commonStyle)
             } else if (this.targetView == 'Shape') {
+              console.info('wj----------position',this._position)
               Shape() {
                 Path().width(200).height(60).commands('M0 0 L400 0 L400 150 Z')
               }

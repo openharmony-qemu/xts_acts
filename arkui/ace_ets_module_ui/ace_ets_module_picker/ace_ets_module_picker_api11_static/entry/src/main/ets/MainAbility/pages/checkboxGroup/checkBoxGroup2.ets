@@ -104,7 +104,7 @@ struct CheckBoxGroupSelectAll {
       Scroll() {
         Column() {
           CheckboxGroup({ group: 'checkboxGroup' })
-            .selectedColor(0xed6f21)
+            .selectedColor('0xed6f21')
             .key('CheckboxGroup')
             .selectAll(this.isSelect)
             .onChange((itemName: CheckboxGroupResult):void => {

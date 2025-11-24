@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/IndexStatic"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -52,9 +52,10 @@ export default function ObserverNavDestinationId() {
         console.info("get ObserverNavDestinationId state success " + JSON.stringify(pages));
         if (!("ObserverNavDestinationId" == pages.name)) {
           console.info("get ObserverNavDestinationId state success " + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push ObserverNavDestinationId page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ObserverNavDestinationId page error: " + err);

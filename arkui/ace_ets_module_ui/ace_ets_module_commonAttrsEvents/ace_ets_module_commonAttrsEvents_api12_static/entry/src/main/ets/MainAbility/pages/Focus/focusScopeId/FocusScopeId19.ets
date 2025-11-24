@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -32,6 +32,7 @@ import {
   NavDestination,
   Navigation,
   NavigationMode,
+  NavPathInfo,
   NavPathStack,
   Placement,
   PopupStateChangeParam,
@@ -68,28 +69,28 @@ struct FocusScopeId19 {
           Button('btn1')
             .id('FocusScopeId19_btn1')
             .focusOnTouch(true)
-            .focusBox({
-              margin: new LengthMetrics(0),
-              strokeColor: ColorMetrics.rgba(255, 0, 0)
-            })
+            // .focusBox({
+            //   margin: new LengthMetrics(0),
+            //   strokeColor: ColorMetrics.rgba(255, 0, 0)
+            // })
 
           Button('btn2')
             .id('FocusScopeId19_btn2')
             .focusOnTouch(true)
-            .focusBox({
-              margin: new LengthMetrics(0),
-              strokeColor: ColorMetrics.rgba(255, 0, 0)
-            })
+            // .focusBox({
+            //   margin: new LengthMetrics(0),
+            //   strokeColor: ColorMetrics.rgba(255, 0, 0)
+            // })
         }.focusScopeId('FocusScopeId19_focusGroup7', true)
         .borderWidth(1)
 
         Button('btn3')
           .id('FocusScopeId19_btn3')
           .focusOnTouch(true)
-          .focusBox({
-            margin: new LengthMetrics(0),
-            strokeColor: ColorMetrics.rgba(255, 0, 0)
-          })
+          // .focusBox({
+          //   margin: new LengthMetrics(0),
+          //   strokeColor: ColorMetrics.rgba(255, 0, 0)
+          // })
 
         Button('clearFocus')
           .id('FocusScopeId19_clearFocus')
@@ -102,7 +103,7 @@ struct FocusScopeId19 {
   }
 
   build() {
-    Column() {
+    Column({space: 5} as ColumnOptions) {
       Navigation(this.pageInfos) {
         Scroll() {
           Column({ space: 5 } as ColumnOptions) {
@@ -110,7 +111,8 @@ struct FocusScopeId19 {
             Button('pushPageOne')
               .id('FocusScopeId19_pushPageOne')
               .onClick((e: ClickEvent) => {
-
+                const pathInfo = new NavPathInfo('pageOne', null);
+                this.pageInfos.pushPath(pathInfo);
               })
 
           }

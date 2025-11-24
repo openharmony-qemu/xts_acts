@@ -59,12 +59,12 @@ build() {
 
       Button('up Keyboard')
         .onClick((e: ClickEvent) => {
-          this.controller.stopEditing();
+          this.controller!.stopEditing();
         }).id('stop_edite')
 
       Button('set select')
         .onClick((e: ClickEvent) => {
-          this.controller.setSelection(0, 2);
+          this.controller!.setSelection(0, 2);
         }).id('set_select')
 
       RichEditor({ controller: this.controller } as RichEditorOptions)
@@ -73,7 +73,7 @@ build() {
         .borderColor(Color.Red)
         .width('100%')
         .onReady((): void => {
-          this.controller.addTextSpan('345a',
+          this.controller!.addTextSpan('345a',
             {
               style:
               {

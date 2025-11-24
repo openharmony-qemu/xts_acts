@@ -62,9 +62,6 @@ struct VideoCreateComponent {
         .onUpdate((): void  => {
           console.info("onUpdate");
         })
-        .onError((): void  => {
-          console.info("onError");
-        })
 
       Row() {
         Button("").onClick((e: ClickEvent) => {

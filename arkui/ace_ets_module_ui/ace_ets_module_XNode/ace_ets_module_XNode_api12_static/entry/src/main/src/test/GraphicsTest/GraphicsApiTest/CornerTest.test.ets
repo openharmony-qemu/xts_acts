@@ -40,16 +40,16 @@ export default function CornerTest() {
         console.info("get CornerTest state pages: " + JSON.stringify(pages));
         if (!("Corner" == pages.name)) {
           console.info("get CornerTest state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push CornerTest success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push CornerTest page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     }); 
 
     afterEach(async () => {
@@ -57,13 +57,14 @@ export default function CornerTest() {
       console.info("CornerTest after each called");
     });
     
-    /*
+    
+/*
      * @tc.number   CornerTest_static_001
      * @tc.name     CornerTest_static_001
      * @tc.desc     CornerTest_static_001
      * @tc.level    Level.LEVEL0
      */
-it('CornerTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('CornerTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[CornerTest_001] START");
       await CommonFunc.sleep(1000);
       let corners_x = inspector.getInspectorByKey("corners_x");

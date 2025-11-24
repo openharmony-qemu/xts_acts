@@ -13,8 +13,6 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter'
-
-
 import { MessageManager, Callback, Message } from '../../common/MessageManager';
 import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, Image,ImageFit, Scroller,
   Scroll,
@@ -25,7 +23,12 @@ import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute,
   BarState,
   Color,
   Flex,FlexOptions,Margin,FlexWrap,ItemAlign,FlexDirection,HorizontalAlign,Alignment,FlexAlign,Position,Placement,Padding,
-  ColumnOptions
+  ColumnOptions,
+  Builder,
+  Row,
+  RowOptions,
+  CustomPopupOptions,
+  PopupStateChangeParam
 } from '@ohos.arkui.component'
 import { Router } from '@ohos.arkui.UIContext';
 import {
@@ -33,7 +36,6 @@ import {
 
   AppStorage
 } from '@ohos.arkui.stateManagement'
-import { RecordData } from '@ohos.base';
 @Entry
 @Component
 struct PlacementExample {
@@ -46,26 +48,26 @@ struct PlacementExample {
   @State placementTwo: Placement = Placement.BottomLeft
   @State placementThree: Placement = Placement.BottomRight
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  @Builder popupBuilder() {
+    Row({ space: 2 } as RowOptions) {
+      Text('Custom Popup').fontSize(12)
+    }.width(100).height(50).backgroundColor(Color.White).key('image')
+  }
+  @Builder popupBuilderOne() {
+    Row({ space: 2 } as RowOptions) {
+      Text('Custom PopupOne').fontSize(12)
+    }.width(100).height(50).backgroundColor(Color.White).key('image1')
+  }
+  @Builder popupBuilderTwo() {
+    Row({ space: 2 } as RowOptions) {
+      Text('Custom PopupTwo').fontSize(12)
+    }.width(100).height(50).backgroundColor(Color.White).key('image2')
+  }
+  @Builder popupBuilderThree() {
+    Row({ space: 2 } as RowOptions) {
+      Text('Custom PopupThree').fontSize(12)
+    }.width(100).height(50).backgroundColor(Color.White).key('image3')
+  }
 
   build() {
     Flex({ direction: FlexDirection.Column } as FlexOptions) {
@@ -77,7 +79,7 @@ struct PlacementExample {
             let backData: events_emitter.EventData = {
               data:{
                 "placement":this.placement
-              } as Record<string, RecordData>
+              } as Record<String,undefined|null|Object>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 157,
@@ -89,18 +91,18 @@ struct PlacementExample {
             console.info("button emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        .bindPopup(this.customPopup, {
+          builder: this.popupBuilder,
+          placement: this.placement,
+          // maskColor: 0x33000000,
+          popupColor: Color.White,
+          enableArrow: true,
+          onStateChange: (event: PopupStateChangeParam) => {
+            if (!event.isVisible) {
+              this.customPopup = false
+            }
+          }
+        } as CustomPopupOptions)
         .position({ x: 100, y: 50 } as Position)
 
       Button('custom popupOne')
@@ -111,7 +113,7 @@ struct PlacementExample {
             let backDataOne: events_emitter.EventData = {
               data:{
                 "placement":this.placementOne
-              } as Record<string, RecordData>
+              } as Record<String,undefined|null|Object>
             }
             let backEventOne: events_emitter.InnerEvent = {
               eventId: 158,
@@ -123,18 +125,18 @@ struct PlacementExample {
             console.info("button1 emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        .bindPopup(this.customPopupOne, {
+          builder: this.popupBuilderOne,
+          placement: this.placementOne,
+          // maskColor: 0x33000000,
+          popupColor: Color.White,
+          enableArrow: true,
+          onStateChange: (event: PopupStateChangeParam) => {
+            if (!event.isVisible) {
+              this.customPopupOne = false
+            }
+          }
+        } as CustomPopupOptions)
         .position({ x: 100, y: 150 } as Position)
 
       Button('custom popupTwo')
@@ -145,7 +147,7 @@ struct PlacementExample {
             let backDataTwo: events_emitter.EventData = {
               data:{
                 "placement":this.placementTwo
-              } as Record<string, RecordData>
+              } as Record<String,undefined|null|Object>
             }
             let backEventTwo: events_emitter.InnerEvent = {
               eventId: 159,
@@ -157,18 +159,18 @@ struct PlacementExample {
             console.info("button2 emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        .bindPopup(this.customPopupTwo, {
+          builder: this.popupBuilderTwo,
+          placement: this.placementTwo,
+          // maskColor: 0x33000000,
+          popupColor: Color.White,
+          enableArrow: true,
+          onStateChange: (event: PopupStateChangeParam) => {
+            if (!event.isVisible) {
+              this.customPopupTwo = false
+            }
+          }
+        } as CustomPopupOptions)
         .position({ x: 100, y: 250 } as Position)
 
       Button('custom popupThree')
@@ -179,7 +181,7 @@ struct PlacementExample {
             let backDataThree: events_emitter.EventData = {
               data:{
                 "placement":this.placementThree
-              } as Record<string, RecordData>
+              } as Record<String,undefined|null|Object>
             }
             let backEventThree: events_emitter.InnerEvent = {
               eventId: 160,
@@ -191,18 +193,18 @@ struct PlacementExample {
             console.info("button3 emit action state err: " + JSON.stringify((err as Error)?.message))
           }
         })
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        .bindPopup(this.customPopupThree, {
+          builder: this.popupBuilderThree,
+          placement: this.placementThree,
+          // maskColor: 0x33000000,
+          popupColor: Color.White,
+          enableArrow: true,
+          onStateChange: (event: PopupStateChangeParam) => {
+            if (!event.isVisible) {
+              this.customPopupThree = false
+            }
+          }
+        } as CustomPopupOptions)
         .position({ x: 100, y: 550 } as Position)
     }.width('100%').padding({ top: 5 } as Padding)
   }

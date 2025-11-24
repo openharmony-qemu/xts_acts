@@ -32,7 +32,7 @@ export default function getNumeric() {
     beforeEach(async () : Promise<void> => {
       console.info("getNumeric beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/getNumeric",
+        url: "MainAbility/pages/Graphics/getNumeric",
       }
       try {
         const router = AppStorage.get<Router>("router") as Router
@@ -41,21 +41,22 @@ export default function getNumeric() {
         console.info("get getNumeric state pages: " + JSON.stringify(pages));
         if (!("getNumeric" == pages.name)) {
           console.info("get getNumeric state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push getNumeric success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push getNumeric page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     }); 
 
     
      
     
+
 
 /*
      * @tc.number   getNumeric_static_0100
@@ -63,7 +64,7 @@ export default function getNumeric() {
      * @tc.desc     getNumeric_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('getNumeric_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('getNumeric_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('getNumeric_0100 START');
       let strJson: string = inspector.getInspectorByKey('getNumeric');
       let obj = JSON.parseJsonElement(strJson);

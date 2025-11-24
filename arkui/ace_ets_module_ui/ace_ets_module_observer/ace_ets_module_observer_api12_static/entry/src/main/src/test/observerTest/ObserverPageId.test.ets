@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/IndexStatic"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -53,8 +53,10 @@ export default function ObserverPageId() {
         console.info("get ObserverPageId state success " + JSON.stringify(pages));
         if (!("ObserverPageId" == pages.name)) {
           console.info("get ObserverPageId state success " + JSON.stringify(pages.name));
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push ObserverPageId page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ObserverPageId page error: " + err);
@@ -93,7 +95,8 @@ it('ObserverPageId_static_0100', Level.LEVEL0, async (done: () => void): Promise
       let strJson2 = inspector.getInspectorByKey('ObserverPageId_text2');
       let obj2 = JSON.parseJsonElement(strJson2);
       await CommonFunc.sleep(1000);
-      console.info("[ObserverPageId_0100] obj2 is: " + JSON.stringify(obj2));
+      console.info("[ObserverPageId_0100] obj2 is: " + JSON.stringifyJsonElement(obj2));
+      console.info("[ObserverPageId_0100] obj2 content: " + obj.getElement('$attrs').getString('content'));
 
       expect(obj.getElement('$attrs').getString('content')).assertEqual(obj2.getElement('$attrs').getString('content'));
 

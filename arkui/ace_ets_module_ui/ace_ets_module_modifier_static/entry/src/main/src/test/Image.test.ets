@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
 import router from '@ohos.router';
-import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -57,12 +57,13 @@ export default function imageJsunit() {
       }
     });
 
-    
-    /*
-     * @tc.number   imageTest_static_0001
-     * @tc.name     imageTest_static_0001
-     * @tc.desc     imageTest_static_0001
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number imageTest_static_0001
+     * @tc.name imageTest_static_0001
+     * @tc.desc Set copyOption values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('imageTest_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageTest_static_0001 START');
@@ -75,12 +76,13 @@ export default function imageJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   imageTest_static_0002
-     * @tc.name     imageTest_static_0002
-     * @tc.desc     imageTest_static_0002
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number imageTest_static_0002
+     * @tc.name imageTest_static_0002
+     * @tc.desc Set colorFilter values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('imageTest_static_0002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageTest_static_0002 START');
@@ -94,12 +96,13 @@ export default function imageJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   imageTest_static_0003
-     * @tc.name     imageTest_static_0003
-     * @tc.desc     imageTest_static_0003
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number imageTest_static_0003
+     * @tc.name imageTest_static_0003
+     * @tc.desc Set syncLoad values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('imageTest_static_0003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageTest_static_0003 START');
@@ -112,12 +115,13 @@ export default function imageJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   imageTest_static_0004
-     * @tc.name     imageTest_static_0004
-     * @tc.desc     imageTest_static_0004
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number imageTest_static_0004
+     * @tc.name imageTest_static_0004
+     * @tc.desc Set sourceSize values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('imageTest_static_0004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageTest_static_0004 START');
@@ -130,12 +134,13 @@ export default function imageJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   imageTest_static_0005
-     * @tc.name     imageTest_static_0005
-     * @tc.desc     imageTest_static_0005
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number imageTest_static_0005
+     * @tc.name imageTest_static_0005
+     * @tc.desc Set interpolation values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('imageTest_static_0005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageTest_static_0005 START');
@@ -148,12 +153,13 @@ export default function imageJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   imageTest_static_0006
-     * @tc.name     imageTest_static_0006
-     * @tc.desc     imageTest_static_0006
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number imageTest_static_0006
+     * @tc.name imageTest_static_0006
+     * @tc.desc Set renderMode values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('imageTest_static_0006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageTest_static_0006 START');
@@ -166,12 +172,13 @@ export default function imageJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   imageTest_static_0007
-     * @tc.name     imageTest_static_0007
-     * @tc.desc     imageTest_static_0007
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number imageTest_static_0007
+     * @tc.name imageTest_static_0007
+     * @tc.desc Set autoResize values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('imageTest_static_0007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageTest_static_0007 START');
@@ -184,12 +191,13 @@ export default function imageJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   imageTest_static_0008
-     * @tc.name     imageTest_static_0008
-     * @tc.desc     imageTest_static_0008
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number imageTest_static_0008
+     * @tc.name imageTest_static_0008
+     * @tc.desc Set objectRepeat values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('imageTest_static_0008', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageTest_static_0008 START');
@@ -202,12 +210,13 @@ export default function imageJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   imageTest_static_0009
-     * @tc.name     imageTest_static_0009
-     * @tc.desc     imageTest_static_0009
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number imageTest_static_0009
+     * @tc.name imageTest_static_0009
+     * @tc.desc Set objectFit values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('imageTest_static_0009', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageTest_static_0009 START');
@@ -220,12 +229,13 @@ export default function imageJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   imageTest_static_0010
-     * @tc.name     imageTest_static_0010
-     * @tc.desc     imageTest_static_0010
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number imageTest_static_0010
+     * @tc.name imageTest_static_0010
+     * @tc.desc Set fillColor values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('imageTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageTest_static_0010 START');
@@ -238,12 +248,13 @@ export default function imageJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   imageTest_static_0011
-     * @tc.name     imageTest_static_0011
-     * @tc.desc     imageTest_static_0011
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number imageTest_static_0011
+     * @tc.name imageTest_static_0011
+     * @tc.desc Set fitOriginalSize values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('imageTest_static_0011', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageTest_static_0011 START');
@@ -256,12 +267,13 @@ export default function imageJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   imageTest_static_0012
-     * @tc.name     imageTest_static_0012
-     * @tc.desc     imageTest_static_0012
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number imageTest_static_0012
+     * @tc.name imageTest_static_0012
+     * @tc.desc Set matchTextDirection values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('imageTest_static_0012', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageTest_static_0012 START');
@@ -274,12 +286,13 @@ export default function imageJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   imageTest_static_0013
-     * @tc.name     imageTest_static_0013
-     * @tc.desc     imageTest_static_0013
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number imageTest_static_0013
+     * @tc.name imageTest_static_0013
+     * @tc.desc Set alt values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('imageTest_static_0013', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageTest_static_0013 START');
@@ -292,12 +305,13 @@ export default function imageJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   imageTest_static_0014
-     * @tc.name     imageTest_static_0014
-     * @tc.desc     imageTest_static_0014
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number imageTest_static_0014
+     * @tc.name imageTest_static_0014
+     * @tc.desc Set draggable values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('imageTest_static_0014', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('imageTest_static_0014 START');
@@ -310,12 +324,13 @@ export default function imageJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   imageTest_static_0015
-     * @tc.name     imageTest_static_0015
-     * @tc.desc     imageTest_static_0015
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number imageTest_static_0015
+     * @tc.name imageTest_static_0015
+     * @tc.desc Change syncLoad values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('imageTest_static_0015', Level.LEVEL0, async (done: () => void): Promise<void> => {
 

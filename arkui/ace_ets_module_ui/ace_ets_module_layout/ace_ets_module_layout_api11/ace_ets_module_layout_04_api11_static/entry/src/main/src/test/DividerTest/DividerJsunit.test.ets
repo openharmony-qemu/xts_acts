@@ -16,6 +16,7 @@
 
 import { afterEach, beforeEach, describe, expect, it, beforeAll,Level } from '../../../../hypium/index';
 import router from '@ohos.router';
+
 import { LineCapStyle } from '@ohos.arkui.component'
 import inspector from '@ohos.arkui.inspector'
 import CommonFunc from '../../../ets/MainAbility/utils/Common';
@@ -30,16 +31,6 @@ import { UtilsTest } from '../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-
-
-
-
-
-
-
-
-
-
 
 export default function dividerJsunit() {
   describe('dividerTest', () => {
@@ -62,11 +53,8 @@ export default function dividerJsunit() {
         console.info("get divider state success " + "");
         if (!("Divider" == pages.name)) {
           console.info("get divider state success " + "");
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000)
-
-          
         }
       } catch (err) {
         console.error("push divider page error " + JSON.stringify(err));
@@ -78,9 +66,6 @@ export default function dividerJsunit() {
       await UtilsTest.msSleep(1000)
       console.info("Divider after each called");
     });
-    
-    
-    
 
 /*
      * @tc.number   testDividerGetInspectorByKey010_static_01
@@ -108,10 +93,6 @@ it('testDividerGetInspectorByKey010_static_01', Level.LEVEL0, async (done: () =>
       done();
     });
 
-    
-    
-    
-
 /*
      * @tc.number   testDividerGetInspectorByKey020_static_02
      * @tc.name     testDividerGetInspectorByKey020_static_02
@@ -129,9 +110,6 @@ it('testDividerGetInspectorByKey020_static_02', Level.LEVEL0, async (done: () =>
       console.info('testDividerGetInspectorByKey020_static_02 END');
       done();
     });
-    
-    
-    
 
 /*
      * @tc.number   testDividerGetInspectorByKey030_static_03

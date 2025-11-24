@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { UtilsTest } from '../../Util.test'
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../../hypium/index';
+import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../../hypium';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../../../ets/MainAbility/common/Common';
@@ -51,8 +51,6 @@ export default function FocusScopeId6() {
         if (!("FocusScopeId6" == pages.name)) {
           console.info("get FocusScopeId6 state success " + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-
-
         }
       } catch (err) {
         console.error("push FocusScopeId6 page error: " + err);
@@ -64,12 +62,11 @@ export default function FocusScopeId6() {
       console.info("FocusScopeId6 after each called");
     });
 
-
-    /*
-     * @tc.number    FocusScopeId6_static_0100
-     * @tc.name      FocusScopeId6_static_0100
-     * @tc.desc      FocusScopeId6_static_0100
-     * @tc.level     2
+    /**
+     * @tc.number FocusScopeId6_static_0100
+     * @tc.name FocusScopeId6_static_0100
+     * @tc.desc Support for mixed focusing of focus groups and ordinary components
+     * @tc.level Level 2
      */
     it('FocusScopeId6_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[FocusScopeId6_static_0100] START');

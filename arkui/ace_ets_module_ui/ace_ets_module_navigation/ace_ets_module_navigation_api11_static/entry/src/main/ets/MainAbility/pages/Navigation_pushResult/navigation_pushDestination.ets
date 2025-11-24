@@ -14,14 +14,14 @@
  */
 import {
   Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,animateTo,AnimateParam,Search,TextAlign,Axis,NavBarPosition,
-  NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,
+  NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,NavPathInfo,
   Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,
   FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date,NavigationCommonTitle,NavDestinationCommonTitle
 ,NavPathStack} from '@ohos.arkui.component';
 import {
   State,
   Link,
-  PropRef,Provide
+  Prop,Provide
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
@@ -29,7 +29,7 @@ import { BusinessError } from '@ohos.base';
 @Entry
 @Component
 struct navigation_pushDestination {
-  // @Provide('pageInfos') pageInfos: NavPathStack = new NavPathStack()
+  @Provide pageInfos: NavPathStack = new NavPathStack()
   @State str:string = '1'
   @State code:string = '2'
 
@@ -52,23 +52,23 @@ struct navigation_pushDestination {
   }
 
   build() {
-    // Navigation(this.pageInfos) {
+    Navigation(this.pageInfos) {
       Column({space:5} as ColumnOptions) {
 
         Button('pushPageOne')
           .fontSize(14)
           .onClick((e: ClickEvent) => {
-            // this.pageInfos.pushDestination({ name: 'pageOne',param:null })
-            //   .then(()=>{
-            //     this.str = 'success'
-            //   })
-            //   .catch((error: BusinessError)=>{
-            //     this.code = (error.code).toString() + error.message
-            //   })
+            this.pageInfos.pushDestination(new NavPathInfo('pageOne', null))
+              .then(()=>{
+                this.str = 'success'
+              })
+              .catch((error: BusinessError):void=>{
+                this.code = (error.code).toString() + error.message
+              })
           })
           .id('navigation_pushDestination_pushDestination')
 
       }
-    // }.title('Navigation').navDestination(this.PageMap)
+    }.title('Navigation').navDestination(this.PageMap)
   }
 }

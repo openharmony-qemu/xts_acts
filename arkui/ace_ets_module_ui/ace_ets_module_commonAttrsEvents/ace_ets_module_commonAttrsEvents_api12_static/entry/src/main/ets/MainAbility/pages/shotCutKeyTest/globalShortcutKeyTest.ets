@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -67,11 +67,6 @@ import {
   Visibility
 } from '@ohos.arkui.component'
 
-interface ParamName {
-  name: string,
-  message: MessageManager<string | FunctionKey>
-}
-
 @Entry
 @Component
 struct FunctionKeyTest {
@@ -99,11 +94,7 @@ struct FunctionKeyTest {
 
   onPageShow(): void {
     console.info("FunctionKeyTest onPageShow");
-    let value: ParamName = {
-      name: 'messageManager', message: this.messageManager
-    }
-
-    AppStorage.setOrCreate<ParamName>('value', value);
+    AppStorage.setOrCreate<MessageManager<string | FunctionKey>>('messageManager', this.messageManager);
 
     let callback: Callback<string | FunctionKey> = (message: Message<string | FunctionKey>) => {
       console.error('message = ' + message.name + "--" + message.value)
@@ -125,7 +116,6 @@ struct FunctionKeyTest {
   }
 
   build() {
-    Row() {
       Column({ space: 5 } as ColumnOptions) {
         Text(this.message2).key("keyTest2")
         Button("Test short cut 2").onClick((event: ClickEvent) => {
@@ -133,10 +123,10 @@ struct FunctionKeyTest {
           console.info("I clicked 2");
         })
           .keyboardShortcut(this.changeChar2, new Array<ModifierKey>())
-          .onKeyEvent((event: KeyEvent) => {
+          .onKeyEvent((event: KeyEvent): boolean => {
             console.info("event.keyCode: " + JSON.stringify(event));
             this.message2 = "the key Button " + this.changeChar2;
-            return false
+            return true
           })
         Text(this.message3).key("keyTest3")
         Button("Test short cut 3").onClick((event: ClickEvent) => {
@@ -176,7 +166,5 @@ struct FunctionKeyTest {
 
       }
       .width('100%').height('100%')
-    }
-    .height('100%')
   }
 }

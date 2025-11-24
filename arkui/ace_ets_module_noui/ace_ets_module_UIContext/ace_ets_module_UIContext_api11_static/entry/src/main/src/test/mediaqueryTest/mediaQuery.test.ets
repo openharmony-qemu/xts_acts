@@ -16,7 +16,7 @@
 import router from '@ohos.router';
 import { UIContext, AtomicServiceBar, Router, KeyboardAvoidMode } from '@ohos.arkui.UIContext';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium"
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UtilsTest } from '../Util.test';
@@ -27,24 +27,33 @@ import emitter from '@ohos.events.emitter';
 
 export default function mediaQueryOffJsunit() {
   describe('mediaQueryOffTest', () => {
+    beforeAll(() => {
+      console.info("mediaQueryOffTest beforeEach start");
 
+      await UtilsTest.startAbility("com.arkui.ace.UIContext.static", "EntryAbility")
+      await UtilsTest.msSleep(4000)
+    });
     beforeEach(async (): Promise<void> => {
       console.info("mediaQueryOffTest beforeEach start");
       let options: router.RouterOptions = {
         url:'MainAbility/pages/mediaquery/mediaQuery',
       }
       try {
-        const routerInstance = AppStorage.get<Router>("router" ) as Router
-        routerInstance.clear();
+        const routerInstance = AppStorage.get<Router>("router") as Router
+        console.info('test router:'+ routerInstance)
+        // routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get mediaQueryOffTest state pages:" + JSON.stringify(pages));
-        if (!("mediaQuery" == pages.name)) {
-          console.info("get mediaQueryOffTest pages.name:" + '');
-          
-          
+        if (!("MainAbility/pages/mediaquery/mediaQuery" == pages.name)) { //"mediaQuery" == pages.name
+          console.info("get mediaQueryOffTest pages.name:" + pages.name);
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
+          console.info("cui 111" + pages.name);
           routerInstance.pushUrl(options);
+          console.info("cui 222" + pages.name);
           await CommonFunc.sleep(2000);
-          
+          console.info("cui 333" + pages.name);
+          // console.info("push mediaQueryOffTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push mediaQueryOffTest page error:" + err);
@@ -58,15 +67,16 @@ export default function mediaQueryOffJsunit() {
       await UtilsTest.msSleep(1000)
     });
 
-    
-
     /*
-     * @tc.number   testmediaQueryOff_static_0001
-     * @tc.name     testmediaQueryOff_static_0001
-     * @tc.desc     testmediaQueryOff_static_0001
-     * @tc.level    Level.LEVEL0
+     * @tc.number       testmediaQueryOff_static_0001
+     * @tc.name         testmediaQueryOff_static_0001
+     * @tc.desc         testmediaQueryOff_static_0001
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
      */
-it('testmediaQueryOff_static_0001', Level.LEVEL0, async  () => {
+
+    it('testmediaQueryOff_static_0001', Level.LEVEL0, async  () => {
       console.info('mediaQueryOff testmediaQueryOff0001 START');
       await UtilsTest.msSleep(2000);
       let strJson = inspector.getInspectorByKey('offText');
@@ -78,15 +88,16 @@ it('testmediaQueryOff_static_0001', Level.LEVEL0, async  () => {
 
     });
 
-    
-
     /*
-     * @tc.number   testmediaQueryOff_static_0002
-     * @tc.name     testmediaQueryOff_static_0002
-     * @tc.desc     testmediaQueryOff_static_0002
-     * @tc.level    Level.LEVEL0
+     * @tc.number       testmediaQueryOff_static_0002
+     * @tc.name         testmediaQueryOff_static_0002
+     * @tc.desc         testmediaQueryOff_static_0002
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
      */
-it('testmediaQueryOff_static_0002', Level.LEVEL0, async  () => {
+
+    it('testmediaQueryOff_static_0002', Level.LEVEL0, async  () => {
       console.info('mediaQueryOff testmediaQueryOff0002 START');
       await UtilsTest.msSleep(2000);
       let strJson = inspector.getInspectorByKey('offText');
@@ -98,15 +109,16 @@ it('testmediaQueryOff_static_0002', Level.LEVEL0, async  () => {
 
     });
 
-    
-
     /*
-     * @tc.number   testmediaQueryOff_static_0003
-     * @tc.name     testmediaQueryOff_static_0003
-     * @tc.desc     testmediaQueryOff_static_0003
-     * @tc.level    Level.LEVEL0
+     * @tc.number       testmediaQueryOff_static_0003
+     * @tc.name         testmediaQueryOff_static_0003
+     * @tc.desc         testmediaQueryOff_static_0003
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
      */
-it('testmediaQueryOff_static_0003', Level.LEVEL0, async  () => {
+
+    it('testmediaQueryOff_static_0003', Level.LEVEL0, async  () => {
       console.info('mediaQueryOff testmediaQueryOff0003 START');
       await UtilsTest.msSleep(2000);
       let strJson = inspector.getInspectorByKey('offText');
@@ -118,15 +130,16 @@ it('testmediaQueryOff_static_0003', Level.LEVEL0, async  () => {
 
     });
 
-    
-
     /*
-     * @tc.number   testmediaQueryOff_static_0004
-     * @tc.name     testmediaQueryOff_static_0004
-     * @tc.desc     testmediaQueryOff_static_0004
-     * @tc.level    Level.LEVEL0
+     * @tc.number       testmediaQueryOff_static_0004
+     * @tc.name         testmediaQueryOff_static_0004
+     * @tc.desc         testmediaQueryOff_static_0004
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
      */
-it('testmediaQueryOff_static_0004', Level.LEVEL0, async  () => {
+
+    it('testmediaQueryOff_static_0004', Level.LEVEL0, async  () => {
       console.info('mediaQueryOff testmediaQueryOff0004 START');
       await UtilsTest.msSleep(2000);
       let strJson = inspector.getInspectorByKey('offText');
@@ -138,15 +151,16 @@ it('testmediaQueryOff_static_0004', Level.LEVEL0, async  () => {
 
     });
 
-    
-
     /*
-     * @tc.number   testmediaQueryOff_static_0005
-     * @tc.name     testmediaQueryOff_static_0005
-     * @tc.desc     testmediaQueryOff_static_0005
-     * @tc.level    Level.LEVEL0
+     * @tc.number       testmediaQueryOff_static_0005
+     * @tc.name         testmediaQueryOff_static_0005
+     * @tc.desc         testmediaQueryOff_static_0005
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
      */
-it('testmediaQueryOff_static_0005', Level.LEVEL0, async  () => {
+
+    it('testmediaQueryOff_static_0005', Level.LEVEL0, async  () => {
       console.info('mediaQueryOff testmediaQueryOff0005 START');
       await UtilsTest.msSleep(2000);
       let strJson = inspector.getInspectorByKey('offText');
@@ -158,15 +172,16 @@ it('testmediaQueryOff_static_0005', Level.LEVEL0, async  () => {
 
     });
 
-    
-
     /*
-     * @tc.number   testmediaQueryOff_static_0006
-     * @tc.name     testmediaQueryOff_static_0006
-     * @tc.desc     testmediaQueryOff_static_0006
-     * @tc.level    Level.LEVEL0
+     * @tc.number       testmediaQueryOff_static_0006
+     * @tc.name         testmediaQueryOff_static_0006
+     * @tc.desc         testmediaQueryOff_static_0006
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
      */
-it('testmediaQueryOff_static_0006', Level.LEVEL0, async  () => {
+
+    it('testmediaQueryOff_static_0006', Level.LEVEL0, async  () => {
       console.info('mediaQueryOff testmediaQueryOff_static_0006 START');
       await UtilsTest.msSleep(2000);
       let strJson = inspector.getInspectorByKey('offText');
@@ -178,15 +193,16 @@ it('testmediaQueryOff_static_0006', Level.LEVEL0, async  () => {
 
     });
 
-    
-
     /*
-     * @tc.number   testmediaQueryOff_static_0007
-     * @tc.name     testmediaQueryOff_static_0007
-     * @tc.desc     testmediaQueryOff_static_0007
-     * @tc.level    Level.LEVEL0
+     * @tc.number       testmediaQueryOff_static_0007
+     * @tc.name         testmediaQueryOff_static_0007
+     * @tc.desc         testmediaQueryOff_static_0007
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
      */
-it('testmediaQueryOff_static_0007', Level.LEVEL0, async  () => {
+
+    it('testmediaQueryOff_static_0007', Level.LEVEL0, async  () => {
       console.info('mediaQueryOff testmediaQueryOff_static_0007 START');
       await UtilsTest.msSleep(2000);
       let strJson = inspector.getInspectorByKey('offText');
@@ -198,15 +214,16 @@ it('testmediaQueryOff_static_0007', Level.LEVEL0, async  () => {
 
     });
 
-    
-
     /*
-     * @tc.number   testmediaQueryOff_static_0009
-     * @tc.name     testmediaQueryOff_static_0009
-     * @tc.desc     testmediaQueryOff_static_0009
-     * @tc.level    Level.LEVEL0
+     * @tc.number       testmediaQueryOff_static_0009
+     * @tc.name         testmediaQueryOff_static_0009
+     * @tc.desc         testmediaQueryOff_static_0009
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
      */
-it('testmediaQueryOff_static_0009', Level.LEVEL0, async  () => {
+
+    it('testmediaQueryOff_static_0009', Level.LEVEL0, async  () => {
       console.info('mediaQueryOff testmediaQueryOff_static_0009 START');
       await UtilsTest.msSleep(2000);
       let strJson = inspector.getInspectorByKey('offText');
@@ -218,15 +235,16 @@ it('testmediaQueryOff_static_0009', Level.LEVEL0, async  () => {
 
     });
 
-    
-
     /*
-     * @tc.number   testmediaQueryOff_static_0010
-     * @tc.name     testmediaQueryOff_static_0010
-     * @tc.desc     testmediaQueryOff_static_0010
-     * @tc.level    Level.LEVEL0
+     * @tc.number       testmediaQueryOff_static_0010
+     * @tc.name         testmediaQueryOff_static_0010
+     * @tc.desc         testmediaQueryOff_static_0010
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
      */
-it('testmediaQueryOff_static_0010', Level.LEVEL0, async  () => {
+
+    it('testmediaQueryOff_static_0010', Level.LEVEL0, async  () => {
       console.info('mediaQueryOff testmediaQueryOff_static_0010 START');
       await UtilsTest.msSleep(2000);
       let strJson = inspector.getInspectorByKey('offText');
@@ -238,15 +256,16 @@ it('testmediaQueryOff_static_0010', Level.LEVEL0, async  () => {
 
     });
 
-    
-
     /*
-     * @tc.number   testmediaQueryOff_static_0011
-     * @tc.name     testmediaQueryOff_static_0011
-     * @tc.desc     testmediaQueryOff_static_0011
-     * @tc.level    Level.LEVEL0
+     * @tc.number       testmediaQueryOff_static_0011
+     * @tc.name         testmediaQueryOff_static_0011
+     * @tc.desc         testmediaQueryOff_static_0011
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
      */
-it('testmediaQueryOff_static_0011', Level.LEVEL0, async  () => {
+
+    it('testmediaQueryOff_static_0011', Level.LEVEL0, async  () => {
       console.info('mediaQueryOff testmediaQueryOff_static_0011 START');
       await UtilsTest.msSleep(2000);
       try {
@@ -260,22 +279,23 @@ it('testmediaQueryOff_static_0011', Level.LEVEL0, async  () => {
         }
         console.info("onSelect_0012 click result is: " + JSON.stringify(inspector.sendEventByKey('offText', 10, "")));
         emitter.on(innerEventOne, callback1);
-      } catch (err) {
+      } catch (err:Error) {
         console.info("onRequestPopupData_0012 on emitter err : " + JSON.stringify(err));
       }
       console.info('testmediaQueryOff_static_0011 END');
 
     });
 
-    
-
     /*
-     * @tc.number   testmatchMediaSync_static_0001
-     * @tc.name     testmatchMediaSync_static_0001
-     * @tc.desc     testmatchMediaSync_static_0001
-     * @tc.level    Level.LEVEL0
+     * @tc.number       testmatchMediaSync_static_0001
+     * @tc.name         testmatchMediaSync_static_0001
+     * @tc.desc         testmatchMediaSync_static_0001
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
      */
-it('testmatchMediaSync_static_0001', Level.LEVEL0, async  () => {
+
+    it('testmatchMediaSync_static_0001', Level.LEVEL0, async  () => {
       console.info('matchMediaSync testmatchMediaSync_static_0001 START');
       await UtilsTest.msSleep(2000);
       try {
@@ -289,7 +309,7 @@ it('testmatchMediaSync_static_0001', Level.LEVEL0, async  () => {
         }
         console.info("onSelect_0012 click result is: " + JSON.stringify(inspector.sendEventByKey('matchMediaSyncText', 10, "")));
         emitter.on(innerEventOne, callback1);
-      } catch (err) {
+      } catch (err:Error) {
         console.info("onRequestPopupData_0012 on emitter err : " + JSON.stringify(err));
       }
       console.info('testmatchMediaSync_static_0001 END');

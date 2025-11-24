@@ -74,7 +74,7 @@ export default function badgeJsunit() {
       console.info("Badge after each called");
     });
 
-    
+
     /*
      * @tc.number   testBadge_static_010
      * @tc.name     testBadge_static_010
@@ -86,9 +86,9 @@ it('testBadge_static_010', Level.LEVEL0, async (done: () => void): Promise<void>
       let strJson = inspector.getInspectorByKey('badge');
       let obj = JSON.parseJsonElement(strJson);
       let style = JSON.parseJsonElement(obj.getElement('$attrs').getString('content'));
-      expect(obj.getElement('$type')).assertEqual('Badge');
-      console.log(JSON.stringify(obj.getElement('$type')));
-      console.info("yr badge0 type: " + JSON.stringify(obj.getElement('$type')));
+      expect(obj.getString('$type')).assertEqual('Badge');
+      console.log(JSON.stringify(obj.getString('$type')));
+      console.info("yr badge0 type: " + JSON.stringify(obj.getString('$type')));
       console.info("component obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('count')).assertEqual('33');
       console.log("yr badge0 count-'33'" + JSON.stringify(obj.getElement('$attrs').getString('count')));
@@ -107,7 +107,7 @@ it('testBadge_static_010', Level.LEVEL0, async (done: () => void): Promise<void>
       done();
     });
 
-    
+
     /*
      * @tc.number   testBadge_static_020
      * @tc.name     testBadge_static_020
@@ -130,7 +130,7 @@ it('testBadge_static_020', Level.LEVEL0, async (done: () => void): Promise<void>
       done();
     });
 
-    
+
     /*
      * @tc.number   testBadge_static_030
      * @tc.name     testBadge_static_030

@@ -53,27 +53,27 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 struct RichEditorStyledStringTest1 {
   stringLength: number = 0;
   @State selection: string = '';
-  @State content: string | undefined = '';
+  @State content: string = '';
   @State range: string = '';
   @State replaceString: string = '';
   @State rangeBefore: string = '';
   @State rangeAfter: string = '';
   richEditorStyledString: MutableStyledString = new MutableStyledString('');
-  textStyle: TextStyle = {
+  textStyle: TextStyle = new TextStyle({
     fontWeight: FontWeight.Lighter,
     fontFamily: 'HarmonyOS Sans',
     fontColor: Color.Green,
-    // fontSize: LengthMetrics.vp(10),
+    fontSize: LengthMetrics.vp(10),
     fontStyle: FontStyle.Normal
-  } as TextStyle
+  })
   fontStyle1: TextStyle = { fontColor: Color.Blue } as TextStyle;
-  fontStyle2: TextStyle = {
+  fontStyle2: TextStyle = new TextStyle({
     fontWeight: FontWeight.Bolder,
     fontFamily: 'Arial',
     fontColor: Color.Orange,
-    // fontSize: LengthMetrics.vp(10),
+    fontSize: LengthMetrics.vp(10),
     fontStyle: FontStyle.Italic
-  } as TextStyle
+  })
   // 创建属性字符串对象
   mutableStyledString: MutableStyledString = new MutableStyledString('start',
     [{ start: 0, length: 5, styledKey: StyledStringKey.FONT, styledValue: this.fontStyle1 }]);
@@ -145,9 +145,9 @@ build() {
       RichEditor(this.options)
         .onReady((): void => {
           // 注册文本变化回调
-          this.controller.onContentChanged(this.contentChangedListener);
+          this.controller!.onContentChanged(this.contentChangedListener);
           // 设定组件展示的属性字符串
-          this.controller.setStyledString(this.mutableStyledString);
+          this.controller!.setStyledString(this.mutableStyledString);
         })
         .height('10%')
         .width('90%')
@@ -158,61 +158,49 @@ build() {
         Row() {
           Button('获取属性字符串').onClick((e: ClickEvent) => {
             // 获取组件展示的属性字符串
-            let styledString = this.controller.getStyledString();
-            if (styledString !== undefined) {
-              this.richEditorStyledString = styledString;
-              this.str = this.richEditorStyledString.getString();
-            }
+            this.richEditorStyledString = this.controller!.getStyledString()!;
+            this.str = this.richEditorStyledString!.getString();
           }).height('5%')
             .id('RichEditorStyledStringTest1_get')
           Button('删除选中内容').onClick((e: ClickEvent) => {
             // 获取选中范围
-            let richEditorSelection = this.controller.getSelection();
-            let start = richEditorSelection?.start ?? 0;
-            let end = richEditorSelection?.end ?? 0;
+            let richEditorSelection = this.controller!.getSelection()!;
+            let start = richEditorSelection.start ?? 0;
+            let end = richEditorSelection.end ?? 0;
             // 获取组件展示的属性字符串
-            let styledString = this.controller.getStyledString();
-            if (styledString !== undefined) {
-              this.richEditorStyledString = styledString;
-              this.richEditorStyledString.removeString(Number(start) as int, Number(end - start) as int);
-              // 使删除内容后的属性字符串展示在组件上
-              this.controller.setStyledString(this.richEditorStyledString);
-            }
+            this.richEditorStyledString = this.controller!.getStyledString()!;
+            this.richEditorStyledString.removeString(Number(start) as int, Number(end - start) as int);
+            // 使删除内容后的属性字符串展示在组件上
+            this.controller!.setStyledString(this.richEditorStyledString);
           }).height('5%')
         }
 
         Row() {
           Button('获取选中内容').onClick((e: ClickEvent) => {
             // 获取选中范围
-            let richEditorSelection = this.controller.getSelection();
-            let start = richEditorSelection?.start ?? 0;
-            let end = richEditorSelection?.end ?? 0;
+            let richEditorSelection = this.controller!.getSelection()!;
+            let start = richEditorSelection.start ?? 0;
+            let end = richEditorSelection.end ?? 0;
             // 获取组件展示的属性字符串
-            let styledString = this.controller.getStyledString();
-            if (styledString !== undefined) {
-              this.richEditorStyledString = styledString;
-              this.selection = '[ ' + start + ' , ' + end + ' ]';
-              this.content = this.richEditorStyledString.subStyledString(Number(start) as int, Number(end - start) as int)?.getString();
-            }
+            this.richEditorStyledString = this.controller!.getStyledString()!;
+            this.selection = '[ ' + start + ' , ' + end + ' ]';
+            this.content = this.richEditorStyledString!.subStyledString(Number(start) as int, Number(end - start) as int)!.getString();
           }).height('5%')
           Button('更新选中样式').onClick((e: ClickEvent) => {
             // 获取选中范围
-            let richEditorSelection = this.controller.getSelection();
-            let start = richEditorSelection?.start ?? 0;
-            let end = richEditorSelection?.end ?? 0;
+            let richEditorSelection = (this.controller!.getSelection()) as RichEditorRange;
+            let start = richEditorSelection.start ?? 0;
+            let end = richEditorSelection.end ?? 0;
             // 获取组件展示的属性字符串
-            let styledString = this.controller.getStyledString();
-            if (styledString !== undefined) {
-              this.richEditorStyledString = styledString;
-              this.richEditorStyledString.setStyle({
-                start: start as int,
-                length: (end - start) as int,
-                styledKey: StyledStringKey.FONT,
-                styledValue: this.textStyle
-              })
-              // 使变更样式后的属性字符串展示在组件上
-              this.controller.setStyledString(this.richEditorStyledString);
-            }
+            this.richEditorStyledString = this.controller!.getStyledString()!;
+            this.richEditorStyledString.setStyle({
+              start: start as int,
+              length: (end - start) as int,
+              styledKey: StyledStringKey.FONT,
+              styledValue: this.textStyle
+            })
+            // 使变更样式后的属性字符串展示在组件上
+            this.controller!.setStyledString(this.richEditorStyledString);
           }).height('5%')
         }
       }

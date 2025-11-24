@@ -40,20 +40,21 @@ export default function typeNodeLoadingProgressTest() {
         console.info("get typeNodeLoadingProgressTest state pages: " + JSON.stringify(pages));
         if (!("LoadingProgress" == pages.name)) {
           console.info("get typeNodeLoadingProgressTest state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push typeNodeLoadingProgressTest success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push typeNodeLoadingProgressTest page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     }); 
 
     
     
+
 
 /*
      * @tc.number   LoadingProgressTest_static_0100
@@ -61,7 +62,7 @@ export default function typeNodeLoadingProgressTest() {
      * @tc.desc     LoadingProgressTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('LoadingProgressTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('LoadingProgressTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('LoadingProgressTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

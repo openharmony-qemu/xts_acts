@@ -23,7 +23,7 @@ import inspector from '@ohos.arkui.inspector';
 import RectValue from '../../../../../ets/MainAbility/common/Rect';
 import { FaceValue } from '../../../../../ets/MainAbility/common/Value';
 import GlobalContext from '../../../../../ets/MainAbility/common/GlobalContext';
-import {Alignment } from '@ohos.arkui.component'
+import {Position } from '@ohos.arkui.component'
 import { Router } from '@ohos.arkui.UIContext';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -40,9 +40,8 @@ export default function AlignStart_AddOffset() {
 
     beforeAll(() => {
       console.info("AlignStart_AddOffset beforeEach start");
-      
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace_ets_module_layout_02_api11_static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
@@ -58,11 +57,8 @@ export default function AlignStart_AddOffset() {
         console.info("get AlignStart_AddOffset state pages:" + JSON.stringify(pages));
         if (!("AlignStart_AddOffset" == pages.name)) {
           console.info("get AlignStart_AddOffset pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push AlignStart_AddOffset page error:" + err);
@@ -86,18 +82,14 @@ export default function AlignStart_AddOffset() {
      */
 it('testFlexAlignStartTextOffset_static', Level.LEVEL0, async () : Promise<void> => {
       console.info('[testFlexAlignStartTextOffset] START');
-      let result = AppStorage.get<MessageManager<number>>("messageManager")
+      let result = AppStorage.get<MessageManager<Position>>("messageManager")
       if (result !== null) {
         result!.notify({
-          name: 'OneOffset', value:0
+          name: 'OneOffset', value:{
+            x: 10, y: 15
+          }
         });
-
       }
-      
-      
-      
-      
-      
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('Start_AddOffset_01');
 
@@ -108,18 +100,17 @@ it('testFlexAlignStartTextOffset_static', Level.LEVEL0, async () : Promise<void>
       let Start_AddOffset_012: RectValue = CommonFunc.getComponentRect('Start_AddOffset_012');
       let Start_AddOffset_013: RectValue = CommonFunc.getComponentRect('Start_AddOffset_013');
       let Start_AddOffset_01: RectValue = CommonFunc.getComponentRect('Start_AddOffset_01');
-      const uiContext = new UIContext();
-      expect(Math.abs(Start_AddOffset_011.top - Start_AddOffset_01.top - UIContext.getFocusedUIContext()!.vp2px(15)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddOffset_011.left - Start_AddOffset_01.left - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue()
+      expect(Math.abs(Start_AddOffset_011.top - Start_AddOffset_01.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(15))) <= 1).assertTrue()
+      expect(Math.abs(Start_AddOffset_011.left - Start_AddOffset_01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))) <= 1).assertTrue()
       expect(Math.abs(Start_AddOffset_012.top - Start_AddOffset_013.top) <= 1).assertTrue()
       expect(Math.abs(Start_AddOffset_013.left - Start_AddOffset_012.right) <= 1).assertTrue()
-      expect(Math.abs(Start_AddOffset_01.right - Start_AddOffset_013.right - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddOffset_011.right - Start_AddOffset_011.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddOffset_012.right - Start_AddOffset_012.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddOffset_013.right - Start_AddOffset_013.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddOffset_011.bottom - Start_AddOffset_011.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddOffset_012.bottom - Start_AddOffset_012.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue()
-      expect(Math.abs(Start_AddOffset_013.bottom - Start_AddOffset_013.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(Start_AddOffset_01.right - Start_AddOffset_013.right - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) <= 1).assertTrue()
+      expect(Math.abs(Start_AddOffset_011.right - Start_AddOffset_011.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(Start_AddOffset_012.right - Start_AddOffset_012.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(Start_AddOffset_013.right - Start_AddOffset_013.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(Start_AddOffset_011.bottom - Start_AddOffset_011.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) <= 1).assertTrue()
+      expect(Math.abs(Start_AddOffset_012.bottom - Start_AddOffset_012.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue()
+      expect(Math.abs(Start_AddOffset_013.bottom - Start_AddOffset_013.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
       console.info('[testFlexAlignStartTextOffset] END');
 
     });

@@ -64,7 +64,7 @@ build() {
         .borderColor(Color.Red)
         .width('100%')
         .onReady((): void => {
-          this.controller.addTextSpan('abcefghi',
+          this.controller!.addTextSpan('abcefghi',
             {
               style:
               {

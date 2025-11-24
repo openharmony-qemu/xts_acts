@@ -102,24 +102,19 @@ struct RichEditorSetStyledString020 {
             verticalAlign: ImageSpanAlignment.TOP,
             objectFit: ImageFit.Contain
           } as ImageAttachmentInterface))
-          let currentString = this.controller.getStyledString();
-          if (currentString !== undefined) {
-            this.richEditorStyledString = currentString;
-            imageStyledString.setStyle({
-              start: 0, length: 1, styledKey: StyledStringKey.GESTURE,
-              styledValue: this.gestureStyleAttr
-            });
-            this.richEditorStyledString.appendStyledString(imageStyledString);
-            this.controller.setStyledString(this.richEditorStyledString as StyledString);
-            this.controller.setCaretOffset(this.richEditorStyledString.length);
-          }
+          this.richEditorStyledString = this.controller!.getStyledString()!;
+          imageStyledString.setStyle({ start: 0, length: 1, styledKey: StyledStringKey.GESTURE,
+            styledValue: this.gestureStyleAttr });
+          this.richEditorStyledString.appendStyledString(imageStyledString);
+          this.controller!.setStyledString(this.richEditorStyledString as StyledString);
+          this.controller!.setCaretOffset(this.richEditorStyledString.length);
         }
       }).id('imageTop')
       Text('onLongPressFlag:' + this.onLongPressFlag).id('onLongPressFlag')
       Text('onClickFlag:' + this.onClickFlag).id('onClickFlag')
       RichEditor(this.options)
         .onReady((): void => {
-          this.controller.setStyledString(this.mutableStyledString);
+          this.controller!.setStyledString(this.mutableStyledString);
         })
         .height(100)
         .width('100%')

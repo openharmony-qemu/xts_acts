@@ -21,10 +21,16 @@ import hilog from '@ohos.hilog';
 import { MyCallback } from '../models/MyCallback';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
-
+import common from '@ohos.app.ability.common';
 class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag sjd EntryAbility', 'EntryAbility onCreate');
+    console.log('MyAbility onCreate');
+    try {
+      AppStorage.setOrCreate<common.Context>('applicationContext', this.context.getApplicationContext());
+    } catch (error) {
+      console.error(`getApplicationContext failed, error.code: ${(error as BusinessError).code}, error.message: ${(error as BusinessError).message}`);
+    }
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
@@ -55,21 +61,20 @@ class EntryAbility extends UIAbility {
           } catch (exception) {
             hilog.error(0x0000, 'testTag', 'Failed to obtain the window properties. Cause: ' + JSON.stringify(exception));
           }
-          
+          // Obtain a UIContext instance.
           if (windowClass !== null) {
             AppStorage.setOrCreate<UIContext>('uiContent', windowClass!.getUIContext());
           }
         })
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent ok');
       });
-    } catch (e) {
+    } catch (e: Error) {
       hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent catch error：-----------' + e.message);
     }
   }
 
-  onDestroy(): Promise<void> | undefined {
+  onDestroy(): Promise<void> {
     hilog.info(0x0000, 'testTag sjd EntryAbility', '%{public}s', 'TestAbility onDestroy');
-    return undefined;
   }
 
   onWindowStageDestroy() {

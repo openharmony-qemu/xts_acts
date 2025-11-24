@@ -12,8 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium"
 import router from '@ohos.router';
 import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -26,9 +25,10 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
-import { DatePickerDialogOptions }  from "@ohos.arkui.component";
-
 import Utils  from "../../../ets/MainAbility/common/Utils";
+import events_emitter from '@ohos.events.emitter'
+import Utils from '../../../ets/MainAbility/common/Utils'
+import { Color, FontWeight,PickerTextStyle } from '@ohos.arkui.component';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -39,9 +39,8 @@ function sleep(time: int):Promise<int> {
     }, time * 1000);
   })
 }
-
-export default function ActsDatePickerTest() {
-  describe('ActsDatePickerTest', () => {
+export default function datepicker() {
+  describe('ActsAceDatePickerTest', () => {
 
     beforeAll(() => {
       await UtilsTest.msSleep(4000)
@@ -50,59 +49,982 @@ export default function ActsDatePickerTest() {
     });
 
     beforeEach(async (): Promise<void> => {
-      console.info("flex beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/DatePicker/DatePicker',
+        url: "MainAbility/pages/DatePicker/DatePickerIndex",
       }
+
       try {
-        const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
-        let pages = routerInstance.getState();
-        console.info("get DatePicker state pages:" + JSON.stringify(pages));
-        if (!("DatePicker" == pages.name)) {
-          console.info("get DatePicker pages.name:" + JSON.stringify(pages.name));
-
-
-          routerInstance.pushUrl(options);
-          await CommonFunc.sleep(2000);
+        const router = AppStorage.get<Router>("router") as Router
+        let pages:router.RouterState = router.getState();
+        console.info("[datepicker] current page is: " + JSON.stringify(pages.name));
+        if (!('DatePickerIndex' == pages.name)) {
+          router.pushUrl(options);
         }
       } catch (err) {
-        console.error("push DatePicker page error: " + err);
+        console.info("push datepicker page page error " + JSON.stringify(err));
       }
-    });
-
+      await sleep(2);
+    })
     /*
-     * @tc.number   Stage_DatePicker_Test_static_0010
-     * @tc.name     Stage_DatePicker_Test_static_0010
-     * @tc.desc     Stage_DatePicker_Test_static_0010
+     * @tc.number   ArkUI_Stage_datePicker_disappearTextStyle_static_0100
+     * @tc.name     ArkUI_Stage_datePicker_disappearTextStyle_static_0100
+     * @tc.desc     ArkUI_Stage_datePicker_disappearTextStyle_static_0100
      * @tc.level    Level.LEVEL1
      */
-    it('Stage_DatePicker_Test_static_0010', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('Stage_DatePicker_Test_static_0010 START');
-      try{
-        let strJson = inspector.getInspectorByKey('Stage_DatePicker_Test_static_0010');
-        console.info('Stage_DatePicker_Test_static_0010 START  :'+ JSON.stringify(strJson));
-        let obj = JSON.parseJsonElement(strJson);
-        console.info("Stage_DatePicker_Test_static_0010 obj is: " + JSON.stringify(obj));
-        let onDateChange = obj.getElement('$attrs').getElement('onDateChange')
-        expect(typeof onDateChange).assertEqual("undefined")
-        let DatePickerDialog: DatePickerDialogOptions = {
-          onDateAccept: (value: Date) => {
-            console.info("DatePickerDialog:onAccept()" + value.toString())
-          },
-          onDateChange: (value: Date) => {
-            console.info("DatePickerDialog:onChange()" + value.toString())
-          }}
-        console.info("Stage_DatePicker_Test_static_0010 InsertValue is: " + JSON.stringify(DatePickerDialog))
-        expect(typeof DatePickerDialog.onDateAccept).assertEqual("function")
-        expect(typeof DatePickerDialog.onDateChange).assertEqual("function")
-        console.info('Stage_DatePicker_Test_static_0010 END ');
-      } catch(err) {
-        expect().assertFail()
-        console.info('Stage_DatePicker_Test_static_0010 ERR  '+ JSON.stringify(err));
-      }
-      done();
-    });
+it('ArkUI_Stage_datePicker_disappearTextStyle_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let strJson = inspector.getInspectorByKey('datePicker');
+        let obj = JSON.parseJsonElement(strJson)
+        console.info("[ArkUI_Stage_datePicker_disappearTextStyle_static_0100] disappearColor:" + obj.getElement('$attrs').getElement('disappearTextStyle').getString('color'));
+        expect(obj.getElement('$attrs').getElement('disappearTextStyle').getString('color')).assertEqual('#FF000000');
+        expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('size')).assertEqual('8.00fp');
+        expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Lighter');
+        done();
+      });
 
-  })
-}
+
+
+      
+    /*
+     * @tc.number   ArkUI_Stage_datePicker_disappearTextStyle_static_0200
+     * @tc.name     ArkUI_Stage_datePicker_disappearTextStyle_static_0200
+     * @tc.desc     ArkUI_Stage_datePicker_disappearTextStyle_static_0200
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUI_Stage_datePicker_disappearTextStyle_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let value: PickerTextStyle = {color:Color.Black,font:{size:8,weight:FontWeight.Bolder}}
+        try {
+          let eventData: events_emitter.EventData = {
+            data: {
+              "disappearTextStyle":value
+            } as Record<string, Object | null | undefined>
+          }
+          let innerEvent: events_emitter.InnerEvent = {
+            eventId: 183,
+            priority: events_emitter.EventPriority.LOW
+          }
+          console.info("[ArkUI_Stage_datePicker_disappearTextStyle_static_0200] start to publish emit");
+          events_emitter.emit(innerEvent, eventData);
+        } catch (err) {
+          console.log("[ArkUI_Stage_datePicker_disappearTextStyle_static_0200] change component data error: " + (err as Error).message);
+        }
+        await Utils.sleep(3000);
+        let strJson = inspector.getInspectorByKey('datePicker');
+        let obj = JSON.parseJsonElement(strJson)
+        console.error("[ArkUI_Stage_datePicker_disappearTextStyle_static_0200] disappearColor:" + obj.getElement('$attrs').getElement('disappearTextStyle').getString('color'));
+        expect(obj.getElement('$attrs').getElement('disappearTextStyle').getString('color')).assertEqual('#FF000000');
+        expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('size')).assertEqual('8.00fp');
+        expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Bolder');
+        done();
+      });
+
+
+
+      
+    /*
+     * @tc.number   ArkUI_Stage_datePicker_disappearTextStyle_static_0300
+     * @tc.name     ArkUI_Stage_datePicker_disappearTextStyle_static_0300
+     * @tc.desc     ArkUI_Stage_datePicker_disappearTextStyle_static_0300
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUI_Stage_datePicker_disappearTextStyle_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let value: PickerTextStyle = {color:0x808080,font:{size:8,weight:100}}
+        try {
+          let eventData: events_emitter.EventData = {
+            data: {
+              "disappearTextStyle": value
+            } as Record<string, Object | null | undefined>
+          }
+          let innerEvent: events_emitter.InnerEvent = {
+            eventId: 183,
+            priority: events_emitter.EventPriority.LOW
+          }
+          console.info("[ArkUI_Stage_datePicker_disappearTextStyle_static_0300] start to publish emit");
+          events_emitter.emit(innerEvent, eventData);
+        } catch (err) {
+          console.log("[ArkUI_Stage_datePicker_disappearTextStyle_static_0300] change component data error: " + (err as Error).message);
+        }
+        await Utils.sleep(2000);
+        let strJson = inspector.getInspectorByKey('datePicker');
+        let obj = JSON.parseJsonElement(strJson)
+        console.info("[ArkUI_Stage_datePicker_disappearTextStyle_static_0300] disappearColor:" + obj.getElement('$attrs').getElement('disappearTextStyle').getString('color'));
+        expect(obj.getElement('$attrs').getElement('disappearTextStyle').getString('color')).assertEqual('#FF808080');
+        expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('size')).assertEqual('8.00fp');
+        expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('weight')).assertEqual('100');
+        done();
+      });
+
+
+
+
+    /*
+     * @tc.number   ArkUI_Stage_datePicker_disappearTextStyle_static_0400
+     * @tc.name     ArkUI_Stage_datePicker_disappearTextStyle_static_0400
+     * @tc.desc     ArkUI_Stage_datePicker_disappearTextStyle_static_0400
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUI_Stage_datePicker_disappearTextStyle_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let value: PickerTextStyle = {color:'#ff0000',font:{size:'1px',weight:'700'}}
+        try {
+          let eventData: events_emitter.EventData = {
+            data: {
+              "disappearTextStyle": value
+            } as Record<string, Object | null | undefined>
+          }
+          let innerEvent: events_emitter.InnerEvent = {
+            eventId: 183,
+            priority: events_emitter.EventPriority.LOW
+          }
+          console.info("[ArkUI_Stage_datePicker_disappearTextStyle_static_0400] start to publish emit");
+          events_emitter.emit(innerEvent, eventData);
+        } catch (err) {
+          console.log("[ArkUI_Stage_datePicker_disappearTextStyle_static_0400] change component data error: " + (err as Error).message);
+        }
+        await Utils.sleep(2000);
+        let strJson = inspector.getInspectorByKey('datePicker');
+        let obj = JSON.parseJsonElement(strJson)
+        console.info("[ArkUI_Stage_datePicker_disappearTextStyle_static_0400] disappearColor:" + obj.getElement('$attrs').getElement('disappearTextStyle').getString('color'));
+        expect(obj.getElement('$attrs').getElement('disappearTextStyle').getString('color')).assertEqual('#FFFF0000');
+        expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('size')).assertEqual('1.00px');
+        expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('weight')).assertEqual('700');
+        done();
+      });
+
+
+
+
+    /*
+     * @tc.number   ArkUI_Stage_datePicker_disappearTextStyle_static_0500
+     * @tc.name     ArkUI_Stage_datePicker_disappearTextStyle_static_0500
+     * @tc.desc     ArkUI_Stage_datePicker_disappearTextStyle_static_0500
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUI_Stage_datePicker_disappearTextStyle_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let value: PickerTextStyle = {color:Color.Green,font:{size:30,weight:450}}
+        try {
+          let eventData: events_emitter.EventData = {
+            data: {
+              "disappearTextStyle": value
+            } as Record<string, Object | null | undefined>
+          }
+          let innerEvent: events_emitter.InnerEvent = {
+            eventId: 183,
+            priority: events_emitter.EventPriority.LOW
+          }
+          console.info("[ArkUI_Stage_datePicker_disappearTextStyle_static_0500] start to publish emit");
+          events_emitter.emit(innerEvent, eventData);
+        } catch (err) {
+          console.log("[ArkUI_Stage_datePicker_disappearTextStyle_static_0500] change component data error: " + (err as Error).message);
+        }
+        await Utils.sleep(2000);
+        let strJson = inspector.getInspectorByKey('datePicker');
+        let obj = JSON.parseJsonElement(strJson)
+        console.info("[ArkUI_Stage_datePicker_disappearTextStyle_static_0500] disappearColor:" + obj.getElement('$attrs').getElement('disappearTextStyle').getString('color'));
+        expect(obj.getElement('$attrs').getElement('disappearTextStyle').getString('color')).assertEqual('#FF008000');
+        expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('size')).assertEqual('30.00fp');
+        expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Regular');
+        done();
+      });
+
+
+
+
+    /*
+     * @tc.number   ArkUI_Stage_datePicker_disappearTextStyle_static_0600
+     * @tc.name     ArkUI_Stage_datePicker_disappearTextStyle_static_0600
+     * @tc.desc     ArkUI_Stage_datePicker_disappearTextStyle_static_0600
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUI_Stage_datePicker_disappearTextStyle_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let value: PickerTextStyle = {color:'#80808g',font:{size:-1,weight:1000}}
+        try {
+          let eventData: events_emitter.EventData = {
+            data: {
+              "disappearTextStyle": value
+            } as Record<string, Object | null | undefined>
+          }
+          let innerEvent: events_emitter.InnerEvent = {
+            eventId: 183,
+            priority: events_emitter.EventPriority.LOW
+          }
+          console.info("[ArkUI_Stage_datePicker_disappearTextStyle_static_0600] start to publish emit");
+          events_emitter.emit(innerEvent, eventData);
+        } catch (err) {
+          console.log("[ArkUI_Stage_datePicker_disappearTextStyle_static_0600] change component data error: " + (err as Error).message);
+        }
+        await Utils.sleep(2000);
+        let strJson = inspector.getInspectorByKey('datePicker');
+        let obj = JSON.parseJsonElement(strJson)
+
+        let strJsonDefault = inspector.getInspectorByKey('datePickerDefault');
+        let objDefault = JSON.parseJsonElement(strJsonDefault)
+
+        console.info("[ArkUI_Stage_datePicker_disappearTextStyle_static_0600] disappearColor:" + obj.getElement('$attrs').getElement('disappearTextStyle').getString('color'));
+        expect(obj.getElement('$attrs').getElement('disappearTextStyle').getString('color')).assertEqual(objDefault.getElement('$attrs').getElement('disappearTextStyle').getString('color'));
+        expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('size')).assertEqual(objDefault.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('size'));
+        expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Regular');
+        done();
+      });
+
+
+
+
+    /*
+     * @tc.number   ArkUI_Stage_datePicker_disappearTextStyle_static_0700
+     * @tc.name     ArkUI_Stage_datePicker_disappearTextStyle_static_0700
+     * @tc.desc     ArkUI_Stage_datePicker_disappearTextStyle_static_0700
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUI_Stage_datePicker_disappearTextStyle_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let value: PickerTextStyle = {color:'xxx',font:{size:'xxx',weight:FontWeight.Bold}}
+        try {
+          let eventData: events_emitter.EventData = {
+            data: {
+              "disappearTextStyle": value
+            } as Record<string, Object | null | undefined>
+          }
+          let innerEvent: events_emitter.InnerEvent = {
+            eventId: 183,
+            priority: events_emitter.EventPriority.LOW
+          }
+          console.info("[ArkUI_Stage_datePicker_disappearTextStyle_static_0700] start to publish emit");
+          events_emitter.emit(innerEvent, eventData);
+        } catch (err) {
+          console.log("[ArkUI_Stage_datePicker_disappearTextStyle_static_0700] change component data error: " + (err as Error).message);
+        }
+        await Utils.sleep(2000);
+        let strJson = inspector.getInspectorByKey('datePicker');
+        let obj = JSON.parseJsonElement(strJson)
+
+        let strJsonDefault = inspector.getInspectorByKey('datePickerDefault');
+        let objDefault = JSON.parseJsonElement(strJsonDefault)
+
+        console.info("[ArkUI_Stage_datePicker_disappearTextStyle_static_0700] disappearColor:" + obj.getElement('$attrs').getElement('disappearTextStyle').getString('color'));
+        expect(obj.getElement('$attrs').getElement('disappearTextStyle').getString('color')).assertEqual(objDefault.getElement('$attrs').getElement('disappearTextStyle').getString('color'));
+        expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('size')).assertEqual(objDefault.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('size'));
+        expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Bold');
+        done();
+      });
+
+
+
+
+    /*
+     * @tc.number   ArkUI_Stage_datePicker_disappearTextStyle_static_0800
+     * @tc.name     ArkUI_Stage_datePicker_disappearTextStyle_static_0800
+     * @tc.desc     ArkUI_Stage_datePicker_disappearTextStyle_static_0800
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUI_Stage_datePicker_disappearTextStyle_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let value: PickerTextStyle = {color:'rgb(138,43,226)',font:{size:'20vp',weight:900}}
+        try {
+          let eventData: events_emitter.EventData = {
+            data: {
+              "disappearTextStyle": value
+            } as Record<string, Object | null | undefined>
+          }
+          let innerEvent: events_emitter.InnerEvent = {
+            eventId: 183,
+            priority: events_emitter.EventPriority.LOW
+          }
+          console.info("[ArkUI_Stage_datePicker_disappearTextStyle_static_0800] start to publish emit");
+          events_emitter.emit(innerEvent, eventData);
+        } catch (err) {
+          console.log("[ArkUI_Stage_datePicker_disappearTextStyle_static_0800] change component data error: " + (err as Error).message);
+        }
+        await Utils.sleep(3000);
+        let strJson = inspector.getInspectorByKey('datePicker');
+        let obj = JSON.parseJsonElement(strJson)
+        expect(obj.getElement('$attrs').getElement('disappearTextStyle').getString('color')).assertEqual('#FF8A2BE2');
+        expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('size')).assertEqual('20.00vp');
+        expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('weight')).assertEqual('900');
+        done();
+      });
+
+
+
+
+    /*
+     * @tc.number   ArkUI_Stage_datePicker_disappearTextStyle_static_0900
+     * @tc.name     ArkUI_Stage_datePicker_disappearTextStyle_static_0900
+     * @tc.desc     ArkUI_Stage_datePicker_disappearTextStyle_static_0900
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUI_Stage_datePicker_disappearTextStyle_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let value: PickerTextStyle = {color:'rgb(138,43,226)',font:{size:'15lpx',weight:90}}
+        try {
+          let eventData: events_emitter.EventData = {
+            data: {
+              "disappearTextStyle": value
+            } as Record<string, Object | null | undefined>
+          }
+          let innerEvent: events_emitter.InnerEvent = {
+            eventId: 183,
+            priority: events_emitter.EventPriority.LOW
+          }
+          console.info("[ArkUI_Stage_datePicker_disappearTextStyle_static_0900] start to publish emit");
+          events_emitter.emit(innerEvent, eventData);
+        } catch (err) {
+          console.log("[ArkUI_Stage_datePicker_disappearTextStyle_static_0900] change component data error: " + (err as Error).message);
+        }
+        await Utils.sleep(3000);
+        let strJson = inspector.getInspectorByKey('datePicker');
+        let obj = JSON.parseJsonElement(strJson)
+        expect(obj.getElement('$attrs').getElement('disappearTextStyle').getString('color')).assertEqual('#FF8A2BE2');
+        expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('size')).assertEqual('15.00lpx');
+        expect(obj.getElement('$attrs').getElement('disappearTextStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Regular');
+        done();
+      });
+
+
+
+    /*
+     * @tc.number   ArkUI_Stage_datePicker_textStyle_static_0100
+     * @tc.name     ArkUI_Stage_datePicker_textStyle_static_0100
+     * @tc.desc     ArkUI_Stage_datePicker_textStyle_static_0100
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUI_Stage_datePicker_textStyle_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let strJson = inspector.getInspectorByKey('datePicker');
+        let obj = JSON.parseJsonElement(strJson)
+        console.info("[ArkUI_Stage_datePicker_textStyle_static_0100] disappearColor:" + obj.getElement('$attrs').getElement('textStyle').getString('color'));
+        expect(obj.getElement('$attrs').getElement('textStyle').getString('color')).assertEqual('#FFFF0000');
+        expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('size')).assertEqual('10.00px');
+        expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Normal');
+        done();
+      });
+
+
+
+
+    /*
+     * @tc.number   ArkUI_Stage_datePicker_textStyle_static_0200
+     * @tc.name     ArkUI_Stage_datePicker_textStyle_static_0200
+     * @tc.desc     ArkUI_Stage_datePicker_textStyle_static_0200
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUI_Stage_datePicker_textStyle_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let value: PickerTextStyle = {color:Color.Red,font:{size:'10px',weight:FontWeight.Bolder}}
+        try {
+          let eventData: events_emitter.EventData = {
+            data: {
+              "textStyle": value
+            } as Record<string, Object | null | undefined>
+          }
+          let innerEvent: events_emitter.InnerEvent = {
+            eventId: 183,
+            priority: events_emitter.EventPriority.LOW
+          }
+          console.info("[ArkUI_Stage_datePicker_textStyle_static_0200] start to publish emit");
+          events_emitter.emit(innerEvent, eventData);
+        } catch (err) {
+          console.log("[ArkUI_Stage_datePicker_textStyle_static_0200] change component data error: " + (err as Error).message);
+        }
+        await Utils.sleep(3000);
+        let strJson = inspector.getInspectorByKey('datePicker');
+        let obj = JSON.parseJsonElement(strJson)
+        console.error("[ArkUI_Stage_datePicker_textStyle_static_0200] disappearColor:" + obj.getElement('$attrs').getElement('textStyle').getString('color'));
+        expect(obj.getElement('$attrs').getElement('textStyle').getString('color')).assertEqual('#FFFF0000');
+        expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('size')).assertEqual('10.00px');
+        expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Bolder');
+        done();
+      });
+
+
+
+
+    /*
+     * @tc.number   ArkUI_Stage_datePicker_textStyle_static_0300
+     * @tc.name     ArkUI_Stage_datePicker_textStyle_static_0300
+     * @tc.desc     ArkUI_Stage_datePicker_textStyle_static_0300
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUI_Stage_datePicker_textStyle_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let value: PickerTextStyle = {color:0xFF808080,font:{size:'10px',weight:100}}
+        try {
+          let eventData: events_emitter.EventData = {
+            data: {
+              "textStyle": value
+            } as Record<string, Object | null | undefined>
+          }
+          let innerEvent: events_emitter.InnerEvent = {
+            eventId: 183,
+            priority: events_emitter.EventPriority.LOW
+          }
+          console.info("[ArkUI_Stage_datePicker_textStyle_static_0300] start to publish emit");
+          events_emitter.emit(innerEvent, eventData);
+        } catch (err) {
+          console.log("[ArkUI_Stage_datePicker_textStyle_static_0300] change component data error: " + (err as Error).message);
+        }
+        await Utils.sleep(2000);
+        let strJson = inspector.getInspectorByKey('datePicker');
+        let obj = JSON.parseJsonElement(strJson)
+        console.info("[ArkUI_Stage_datePicker_textStyle_static_0300] disappearColor:" + obj.getElement('$attrs').getElement('textStyle').getString('color'));
+        expect(obj.getElement('$attrs').getElement('textStyle').getString('color')).assertEqual('#FF808080');
+        expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('size')).assertEqual('10.00px');
+        expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('weight')).assertEqual('100');
+        done();
+      });
+
+
+
+
+    /*
+     * @tc.number   ArkUI_Stage_datePicker_textStyle_static_0400
+     * @tc.name     ArkUI_Stage_datePicker_textStyle_static_0400
+     * @tc.desc     ArkUI_Stage_datePicker_textStyle_static_0400
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUI_Stage_datePicker_textStyle_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let value: PickerTextStyle = {color:'#00ff00',font:{size:'1px',weight:'700'}}
+        try {
+          let eventData: events_emitter.EventData = {
+            data: {
+              "textStyle": value
+            } as Record<string, Object | null | undefined>
+          }
+          let innerEvent: events_emitter.InnerEvent = {
+            eventId: 183,
+            priority: events_emitter.EventPriority.LOW
+          }
+          console.info("[ArkUI_Stage_datePicker_textStyle_static_0400] start to publish emit");
+          events_emitter.emit(innerEvent, eventData);
+        } catch (err) {
+          console.log("[ArkUI_Stage_datePicker_textStyle_static_0400] change component data error: " + (err as Error).message);
+        }
+        await Utils.sleep(2000);
+        let strJson = inspector.getInspectorByKey('datePicker');
+        let obj = JSON.parseJsonElement(strJson)
+        console.info("[ArkUI_Stage_datePicker_textStyle_static_0400] disappearColor:" + obj.getElement('$attrs').getElement('textStyle').getString('color'));
+        expect(obj.getElement('$attrs').getElement('textStyle').getString('color')).assertEqual('#FF00FF00');
+        expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('size')).assertEqual('1.00px');
+        expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('weight')).assertEqual('700');
+        done();
+      });
+
+
+
+
+    /*
+     * @tc.number   ArkUI_Stage_datePicker_textStyle_static_0500
+     * @tc.name     ArkUI_Stage_datePicker_textStyle_static_0500
+     * @tc.desc     ArkUI_Stage_datePicker_textStyle_static_0500
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUI_Stage_datePicker_textStyle_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let value: PickerTextStyle = {color:Color.Green,font:{size:30,weight:450}}
+        try {
+          let eventData: events_emitter.EventData = {
+            data: {
+              "textStyle": value
+            } as Record<string, Object | null | undefined>
+          }
+          let innerEvent: events_emitter.InnerEvent = {
+            eventId: 183,
+            priority: events_emitter.EventPriority.LOW
+          }
+          console.info("[ArkUI_Stage_datePicker_textStyle_static_0500] start to publish emit");
+          events_emitter.emit(innerEvent, eventData);
+        } catch (err) {
+          console.log("[ArkUI_Stage_datePicker_textStyle_static_0500] change component data error: " + (err as Error).message);
+        }
+        await Utils.sleep(2000);
+        let strJson = inspector.getInspectorByKey('datePicker');
+        let obj = JSON.parseJsonElement(strJson)
+        console.info("[ArkUI_Stage_datePicker_textStyle_static_0500] disappearColor:" + obj.getElement('$attrs').getElement('textStyle').getString('color'));
+        expect(obj.getElement('$attrs').getElement('textStyle').getString('color')).assertEqual('#FF008000');
+        expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('size')).assertEqual('30.00fp');
+        expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Regular');
+        done();
+      });
+
+
+
+
+    /*
+     * @tc.number   ArkUI_Stage_datePicker_textStyle_static_0600
+     * @tc.name     ArkUI_Stage_datePicker_textStyle_static_0600
+     * @tc.desc     ArkUI_Stage_datePicker_textStyle_static_0600
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUI_Stage_datePicker_textStyle_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let value: PickerTextStyle = {color:'#80808g',font:{size:-1,weight:1000}}
+        try {
+          let eventData: events_emitter.EventData = {
+            data: {
+              "textStyle": value
+            } as Record<string, Object | null | undefined>
+          }
+          let innerEvent: events_emitter.InnerEvent = {
+            eventId: 183,
+            priority: events_emitter.EventPriority.LOW
+          }
+          console.info("[ArkUI_Stage_datePicker_textStyle_static_0600] start to publish emit");
+          events_emitter.emit(innerEvent, eventData);
+        } catch (err) {
+          console.log("[ArkUI_Stage_datePicker_textStyle_static_0600] change component data error: " + (err as Error).message);
+        }
+        await Utils.sleep(2000);
+        let strJson = inspector.getInspectorByKey('datePicker');
+        let obj = JSON.parseJsonElement(strJson)
+
+        let strJsonDefault = inspector.getInspectorByKey('datePickerDefault');
+        let objDefault = JSON.parseJsonElement(strJsonDefault)
+
+        console.info("[ArkUI_Stage_datePicker_textStyle_static_0600] disappearColor:" + obj.getElement('$attrs').getElement('textStyle').getString('color'));
+        expect(obj.getElement('$attrs').getElement('textStyle').getString('color')).assertEqual(objDefault.getElement('$attrs').getElement('textStyle').getString('color'));
+        expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('size')).assertEqual(objDefault.getElement('$attrs').getElement('textStyle').getElement('font').getString('size'));
+        expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Regular');
+        done();
+      });
+
+
+
+
+    /*
+     * @tc.number   ArkUI_Stage_datePicker_textStyle_static_0700
+     * @tc.name     ArkUI_Stage_datePicker_textStyle_static_0700
+     * @tc.desc     ArkUI_Stage_datePicker_textStyle_static_0700
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUI_Stage_datePicker_textStyle_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let value: PickerTextStyle = {color:'xxx',font:{size:'xxx',weight:FontWeight.Lighter}}
+        try {
+          let eventData: events_emitter.EventData = {
+            data: {
+              "textStyle": value
+            } as Record<string, Object | null | undefined>
+          }
+          let innerEvent: events_emitter.InnerEvent = {
+            eventId: 183,
+            priority: events_emitter.EventPriority.LOW
+          }
+          console.info("[ArkUI_Stage_datePicker_textStyle_static_0700] start to publish emit");
+          events_emitter.emit(innerEvent, eventData);
+        } catch (err) {
+          console.log("[ArkUI_Stage_datePicker_textStyle_static_0700] change component data error: " + (err as Error).message);
+        }
+        await Utils.sleep(2000);
+        let strJson = inspector.getInspectorByKey('datePicker');
+        let obj = JSON.parseJsonElement(strJson)
+
+        let strJsonDefault = inspector.getInspectorByKey('datePickerDefault');
+        let objDefault = JSON.parseJsonElement(strJsonDefault)
+
+        console.info("[ArkUI_Stage_datePicker_textStyle_static_0700] disappearColor:" + obj.getElement('$attrs').getElement('textStyle').getString('color'));
+        expect(obj.getElement('$attrs').getElement('textStyle').getString('color')).assertEqual(objDefault.getElement('$attrs').getElement('textStyle').getString('color'));
+        expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('size')).assertEqual(objDefault.getElement('$attrs').getElement('textStyle').getElement('font').getString('size'));
+        expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Lighter');
+        done();
+      });
+
+
+
+
+    /*
+     * @tc.number   ArkUI_Stage_datePicker_textStyle_static_0800
+     * @tc.name     ArkUI_Stage_datePicker_textStyle_static_0800
+     * @tc.desc     ArkUI_Stage_datePicker_textStyle_static_0800
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUI_Stage_datePicker_textStyle_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let value: PickerTextStyle = {color:'rgb(138,43,226)',font:{size:'20vp',weight:900}}
+        try {
+          let eventData: events_emitter.EventData = {
+            data: {
+              "textStyle": value
+            } as Record<string, Object | null | undefined>
+          }
+          let innerEvent: events_emitter.InnerEvent = {
+            eventId: 183,
+            priority: events_emitter.EventPriority.LOW
+          }
+          console.info("[ArkUI_Stage_datePicker_textStyle_static_0800] start to publish emit");
+          events_emitter.emit(innerEvent, eventData);
+        } catch (err) {
+          console.log("[ArkUI_Stage_datePicker_textStyle_static_0800] change component data error: " + (err as Error).message);
+        }
+        await Utils.sleep(3000);
+        let strJson = inspector.getInspectorByKey('datePicker');
+        let obj = JSON.parseJsonElement(strJson)
+        expect(obj.getElement('$attrs').getElement('textStyle').getString('color')).assertEqual('#FF8A2BE2');
+        expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('size')).assertEqual('20.00vp');
+        expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('weight')).assertEqual('900');
+        done();
+      });
+
+
+
+
+    /*
+     * @tc.number   ArkUI_Stage_datePicker_textStyle_static_0900
+     * @tc.name     ArkUI_Stage_datePicker_textStyle_static_0900
+     * @tc.desc     ArkUI_Stage_datePicker_textStyle_static_0900
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUI_Stage_datePicker_textStyle_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let value: PickerTextStyle = {color:'rgb(138,43,226)',font:{size:'15lpx',weight:90}}
+        try {
+          let eventData: events_emitter.EventData = {
+            data: {
+              "textStyle": value
+            } as Record<string, Object | null | undefined>
+          }
+          let innerEvent: events_emitter.InnerEvent = {
+            eventId: 183,
+            priority: events_emitter.EventPriority.LOW
+          }
+          console.info("[ArkUI_Stage_datePicker_textStyle_static_0900] start to publish emit");
+          events_emitter.emit(innerEvent, eventData);
+        } catch (err) {
+          console.log("[ArkUI_Stage_datePicker_textStyle_static_0900] change component data error: " + (err as Error).message);
+        }
+        await Utils.sleep(3000);
+        let strJson = inspector.getInspectorByKey('datePicker');
+        let obj = JSON.parseJsonElement(strJson)
+        expect(obj.getElement('$attrs').getElement('textStyle').getString('color')).assertEqual('#FF8A2BE2');
+        expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('size')).assertEqual('15.00lpx');
+        expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Regular');
+        done();
+      });
+
+
+
+    /*
+     * @tc.number   ArkUI_Stage_datepicker_selectedTextStyle_static_0100
+     * @tc.name     ArkUI_Stage_datepicker_selectedTextStyle_static_0100
+     * @tc.desc     ArkUI_Stage_datepicker_selectedTextStyle_static_0100
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUI_Stage_datepicker_selectedTextStyle_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let strJson = inspector.getInspectorByKey('datePicker');
+        let obj = JSON.parseJsonElement(strJson)
+        console.info("[ArkUI_Stage_datepicker_selectedTextStyle_static_0100] disappearColor:" + obj.getElement('$attrs').getElement('selectedTextStyle').getString('color'));
+        expect(obj.getElement('$attrs').getElement('selectedTextStyle').getString('color')).assertEqual('#FF0000FF');
+        expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('size')).assertEqual('20.00px');
+        expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Bold');
+        done();
+      });
+
+
+
+
+    /*
+     * @tc.number   ArkUI_Stage_datepicker_selectedTextStyle_static_0200
+     * @tc.name     ArkUI_Stage_datepicker_selectedTextStyle_static_0200
+     * @tc.desc     ArkUI_Stage_datepicker_selectedTextStyle_static_0200
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUI_Stage_datepicker_selectedTextStyle_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let value: PickerTextStyle = {color:Color.Blue,font:{size:'20px',weight:FontWeight.Bolder}}
+        try {
+          let eventData: events_emitter.EventData = {
+            data: {
+              "selectedTextStyle": value
+            } as Record<string, Object | null | undefined>
+          }
+          let innerEvent: events_emitter.InnerEvent = {
+            eventId: 183,
+            priority: events_emitter.EventPriority.LOW
+          }
+          console.info("[ArkUI_Stage_datepicker_selectedTextStyle_static_0200] start to publish emit");
+          events_emitter.emit(innerEvent, eventData);
+        } catch (err) {
+          console.log("[ArkUI_Stage_datepicker_selectedTextStyle_static_0200] change component data error: " + (err as Error).message);
+        }
+        await Utils.sleep(3000);
+        let strJson = inspector.getInspectorByKey('datePicker');
+        let obj = JSON.parseJsonElement(strJson)
+        console.error("[ArkUI_Stage_datepicker_selectedTextStyle_static_0200] disappearColor:" + obj.getElement('$attrs').getElement('selectedTextStyle').getString('color'));
+        expect(obj.getElement('$attrs').getElement('selectedTextStyle').getString('color')).assertEqual('#FF0000FF');
+        expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('size')).assertEqual('20.00px');
+        expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Bolder');
+        done();
+      });
+
+
+
+
+    /*
+     * @tc.number   ArkUI_Stage_datepicker_selectedTextStyle_static_0300
+     * @tc.name     ArkUI_Stage_datepicker_selectedTextStyle_static_0300
+     * @tc.desc     ArkUI_Stage_datepicker_selectedTextStyle_static_0300
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUI_Stage_datepicker_selectedTextStyle_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let value: PickerTextStyle = {color:0xFF808080,font:{size:'20px',weight:100}}
+        try {
+          let eventData: events_emitter.EventData = {
+            data: {
+              "selectedTextStyle": value
+            } as Record<string, Object | null | undefined>
+          }
+          let innerEvent: events_emitter.InnerEvent = {
+            eventId: 183,
+            priority: events_emitter.EventPriority.LOW
+          }
+          console.info("[ArkUI_Stage_datepicker_selectedTextStyle_static_0300] start to publish emit");
+          events_emitter.emit(innerEvent, eventData);
+        } catch (err) {
+          console.log("[ArkUI_Stage_datepicker_selectedTextStyle_static_0300] change component data error: " + (err as Error).message);
+        }
+        await Utils.sleep(2000);
+        let strJson = inspector.getInspectorByKey('datePicker');
+        let obj = JSON.parseJsonElement(strJson)
+        console.info("[ArkUI_Stage_datepicker_selectedTextStyle_static_0300] disappearColor:" + obj.getElement('$attrs').getElement('selectedTextStyle').getString('color'));
+        expect(obj.getElement('$attrs').getElement('selectedTextStyle').getString('color')).assertEqual('#FF808080');
+        expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('size')).assertEqual('20.00px');
+        expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('weight')).assertEqual('100');
+        done();
+      });
+
+
+
+
+    /*
+     * @tc.number   ArkUI_Stage_datepicker_selectedTextStyle_static_0400
+     * @tc.name     ArkUI_Stage_datepicker_selectedTextStyle_static_0400
+     * @tc.desc     ArkUI_Stage_datepicker_selectedTextStyle_static_0400
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUI_Stage_datepicker_selectedTextStyle_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let value: PickerTextStyle = {color:'#00ff00',font:{size:'1px',weight:'700'}}
+        try {
+          let eventData: events_emitter.EventData = {
+            data: {
+              "selectedTextStyle": value
+            } as Record<string, Object | null | undefined>
+          }
+          let innerEvent: events_emitter.InnerEvent = {
+            eventId: 183,
+            priority: events_emitter.EventPriority.LOW
+          }
+          console.info("[ArkUI_Stage_datepicker_selectedTextStyle_static_0400] start to publish emit");
+          events_emitter.emit(innerEvent, eventData);
+        } catch (err) {
+          console.log("[ArkUI_Stage_datepicker_selectedTextStyle_static_0400] change component data error: " + (err as Error).message);
+        }
+        await Utils.sleep(2000);
+        let strJson = inspector.getInspectorByKey('datePicker');
+        let obj = JSON.parseJsonElement(strJson)
+        console.info("[ArkUI_Stage_datepicker_selectedTextStyle_static_0400] disappearColor:" + obj.getElement('$attrs').getElement('selectedTextStyle').getString('color'));
+        expect(obj.getElement('$attrs').getElement('selectedTextStyle').getString('color')).assertEqual('#FF00FF00');
+        expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('size')).assertEqual('1.00px');
+        expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('weight')).assertEqual('700');
+        done();
+      });
+
+
+
+
+    /*
+     * @tc.number   ArkUI_Stage_datepicker_selectedTextStyle_static_0500
+     * @tc.name     ArkUI_Stage_datepicker_selectedTextStyle_static_0500
+     * @tc.desc     ArkUI_Stage_datepicker_selectedTextStyle_static_0500
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUI_Stage_datepicker_selectedTextStyle_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let value: PickerTextStyle = {color:Color.Green,font:{size:30,weight:450}}
+        try {
+          let eventData: events_emitter.EventData = {
+            data: {
+              "selectedTextStyle": value
+            } as Record<string, Object | null | undefined>
+          }
+          let innerEvent: events_emitter.InnerEvent = {
+            eventId: 183,
+            priority: events_emitter.EventPriority.LOW
+          }
+          console.info("[ArkUI_Stage_datepicker_selectedTextStyle_static_0500] start to publish emit");
+          events_emitter.emit(innerEvent, eventData);
+        } catch (err) {
+          console.log("[ArkUI_Stage_datepicker_selectedTextStyle_static_0500] change component data error: " + (err as Error).message);
+        }
+        await Utils.sleep(2000);
+        let strJson = inspector.getInspectorByKey('datePicker');
+        let obj = JSON.parseJsonElement(strJson)
+        console.info("[ArkUI_Stage_datepicker_selectedTextStyle_static_0500] disappearColor:" + obj.getElement('$attrs').getElement('selectedTextStyle').getString('color'));
+        expect(obj.getElement('$attrs').getElement('selectedTextStyle').getString('color')).assertEqual('#FF008000');
+        expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('size')).assertEqual('30.00fp');
+        expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Medium');
+        done();
+      });
+
+
+
+
+    /*
+     * @tc.number   ArkUI_Stage_datepicker_selectedTextStyle_static_0600
+     * @tc.name     ArkUI_Stage_datepicker_selectedTextStyle_static_0600
+     * @tc.desc     ArkUI_Stage_datepicker_selectedTextStyle_static_0600
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUI_Stage_datepicker_selectedTextStyle_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let value: PickerTextStyle = {color:'#80808g',font:{size:-1,weight:1000}}
+        try {
+          let eventData: events_emitter.EventData = {
+            data: {
+              "selectedTextStyle": value
+            } as Record<string, Object | null | undefined>
+          }
+          let innerEvent: events_emitter.InnerEvent = {
+            eventId: 183,
+            priority: events_emitter.EventPriority.LOW
+          }
+          console.info("[ArkUI_Stage_datepicker_selectedTextStyle_static_0600] start to publish emit");
+          events_emitter.emit(innerEvent, eventData);
+        } catch (err) {
+          console.log("[ArkUI_Stage_datepicker_selectedTextStyle_static_0600] change component data error: " + (err as Error).message);
+        }
+        await Utils.sleep(2000);
+        let strJson = inspector.getInspectorByKey('datePicker');
+        let obj = JSON.parseJsonElement(strJson)
+
+        let strJsonDefault = inspector.getInspectorByKey('datePickerDefault');
+        let objDefault = JSON.parseJsonElement(strJsonDefault)
+
+        console.info("[ArkUI_Stage_datepicker_selectedTextStyle_static_0600] disappearColor:" + obj.getElement('$attrs').getElement('selectedTextStyle').getString('color'));
+        expect(obj.getElement('$attrs').getElement('selectedTextStyle').getString('color')).assertEqual(objDefault.getElement('$attrs').getElement('selectedTextStyle').getString('color'));
+        expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('size')).assertEqual(objDefault.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('size'));
+        expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Medium');
+        done();
+      });
+
+
+
+
+    /*
+     * @tc.number   ArkUI_Stage_datepicker_selectedTextStyle_static_0700
+     * @tc.name     ArkUI_Stage_datepicker_selectedTextStyle_static_0700
+     * @tc.desc     ArkUI_Stage_datepicker_selectedTextStyle_static_0700
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUI_Stage_datepicker_selectedTextStyle_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let value: PickerTextStyle = {color:'xxx',font:{size:'xxx',weight:FontWeight.Lighter}}
+        try {
+          let eventData: events_emitter.EventData = {
+            data: {
+              "selectedTextStyle": value
+            } as Record<string, Object | null | undefined>
+          }
+          let innerEvent: events_emitter.InnerEvent = {
+            eventId: 183,
+            priority: events_emitter.EventPriority.LOW
+          }
+          console.info("[ArkUI_Stage_datepicker_selectedTextStyle_static_0700] start to publish emit");
+          events_emitter.emit(innerEvent, eventData);
+        } catch (err) {
+          console.log("[ArkUI_Stage_datepicker_selectedTextStyle_static_0700] change component data error: " + (err as Error).message);
+        }
+        await Utils.sleep(2000);
+        let strJson = inspector.getInspectorByKey('datePicker');
+        let obj = JSON.parseJsonElement(strJson)
+
+	let strJsonDefault = inspector.getInspectorByKey('datePickerDefault');
+        let objDefault = JSON.parseJsonElement(strJsonDefault)
+
+        console.info("[ArkUI_Stage_datepicker_selectedTextStyle_static_0700] disappearColor:" + obj.getElement('$attrs').getElement('selectedTextStyle').getString('color'));
+        expect(obj.getElement('$attrs').getElement('selectedTextStyle').getString('color')).assertEqual(objDefault.getElement('$attrs').getElement('selectedTextStyle').getString('color'));
+        expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('size')).assertEqual(objDefault.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('size'));
+        expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Lighter');
+        done();
+      });
+
+
+
+
+    /*
+     * @tc.number   ArkUI_Stage_datepicker_selectedTextStyle_static_0800
+     * @tc.name     ArkUI_Stage_datepicker_selectedTextStyle_static_0800
+     * @tc.desc     ArkUI_Stage_datepicker_selectedTextStyle_static_0800
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUI_Stage_datepicker_selectedTextStyle_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let value: PickerTextStyle = {color:'rgb(138,43,226)',font:{size:'20vp',weight:900}}
+        try {
+          let eventData: events_emitter.EventData = {
+            data: {
+              "selectedTextStyle": value
+            } as Record<string, Object | null | undefined>
+          }
+          let innerEvent: events_emitter.InnerEvent = {
+            eventId: 183,
+            priority: events_emitter.EventPriority.LOW
+          }
+          console.info("[ArkUI_Stage_datepicker_selectedTextStyle_static_0800] start to publish emit");
+          events_emitter.emit(innerEvent, eventData);
+        } catch (err) {
+          console.log("[ArkUI_Stage_datepicker_selectedTextStyle_static_0800] change component data error: " + (err as Error).message);
+        }
+        await Utils.sleep(3000);
+        let strJson = inspector.getInspectorByKey('datePicker');
+        let obj = JSON.parseJsonElement(strJson)
+        expect(obj.getElement('$attrs').getElement('selectedTextStyle').getString('color')).assertEqual('#FF8A2BE2');
+        expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('size')).assertEqual('20.00vp');
+        expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('weight')).assertEqual('900');
+        done();
+      });
+
+
+
+
+    /*
+     * @tc.number   ArkUI_Stage_datepicker_selectedTextStyle_static_0900
+     * @tc.name     ArkUI_Stage_datepicker_selectedTextStyle_static_0900
+     * @tc.desc     ArkUI_Stage_datepicker_selectedTextStyle_static_0900
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUI_Stage_datepicker_selectedTextStyle_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
+        let value: PickerTextStyle = {color:'rgb(138,43,226)',font:{size:'15lpx',weight:90}}
+        try {
+          let eventData: events_emitter.EventData = {
+            data: {
+              "selectedTextStyle": value
+            } as Record<string, Object | null | undefined>
+          }
+          let innerEvent: events_emitter.InnerEvent = {
+            eventId: 183,
+            priority: events_emitter.EventPriority.LOW
+          }
+          console.info("[ArkUI_Stage_datepicker_selectedTextStyle_static_0900] start to publish emit");
+          events_emitter.emit(innerEvent, eventData);
+        } catch (err) {
+          console.log("[ArkUI_Stage_datepicker_selectedTextStyle_static_0900] change component data error: " + (err as Error).message);
+        }
+        await Utils.sleep(3000);
+        let strJson = inspector.getInspectorByKey('datePicker');
+        let obj = JSON.parseJsonElement(strJson)
+        expect(obj.getElement('$attrs').getElement('selectedTextStyle').getString('color')).assertEqual('#FF8A2BE2');
+        expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('size')).assertEqual('15.00lpx');
+        expect(obj.getElement('$attrs').getElement('selectedTextStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Medium');
+        done();
+      });
+
+
+    /*
+     * @tc.number   ArkUI_Stage_datepicker_dialog_0100
+     * @tc.name     ArkUI_Stage_datepicker_dialog_0100
+     * @tc.desc     ArkUI_Stage_datepicker_dialog_0100
+     * @tc.level    Level.LEVEL1
+     */
+it('ArkUI_Stage_datepicker_dialog_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('testDialog START');
+      await Utils.sleep(3000);
+        try {
+          let eventData: events_emitter.EventData = {
+            data: undefined
+          }
+          let innerEvent: events_emitter.InnerEvent = {
+            eventId: 183,
+            priority: events_emitter.EventPriority.LOW
+          }
+          console.info("[ArkUI_Stage_datepicker_dialog_0100] start to publish emit");
+          events_emitter.emit(innerEvent, eventData);
+        } catch (err) {
+          expect().assertFail()
+          console.log("[ArkUI_Stage_datepicker_dialog_0100] change component data error: " + (err as Error).message);
+        }
+        done();
+      });
+
+    })
+  }

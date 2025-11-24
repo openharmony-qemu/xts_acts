@@ -21,19 +21,21 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector';
+// import config from '@ohos.accessibility.config';
 import accessibility from '@ohos.accessibility';
 import events_emitter from '@ohos.events.emitter';
-import { Color } from '@ohos.arkui.component'
+import { Color,ResourceStr,ResourceColor,Resource } from '@ohos.arkui.component'
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-
+// const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
+// const BUNDLE_NAME = 'com.arkui.ace.information/MainAbility';
 
 export default function badge3Jsunit() {
   describe('badge3Jsunit', () => {
@@ -44,7 +46,11 @@ export default function badge3Jsunit() {
       await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
-
+      // config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
+      //   console.info(`enable success`);
+      // }).catch((err: object) => {
+      //   console.error(`failed to enable, ${err}`);
+      // })
       console.info("badge beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Badge/badge3',
@@ -82,7 +88,7 @@ it('testBadge_static_01', Level.LEVEL0, async (done: () => void): Promise<void> 
 
       console.info("[testBadge01] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)
         .getElement('$attrs').getString('style')) + "---" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('style'));
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('Badge');
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Badge');
       expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('style')).getString('fontSize')).assertEqual('20.00fp');
       done();
     });
@@ -97,17 +103,7 @@ it('testBadge_static_03', Level.LEVEL0, async (done: () => void): Promise<void> 
       console.info('[testBadge03] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "fontSizeValue": -1,
-          } as Record<String, RecordData>
-        }as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 63,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testBadge03] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        AppStorage.setOrCreate<undefined|number|string|Resource>('fontSizeValue',-1)
       } catch (err) {
         console.log("[testBadge03] change component data error: " + (err as BusinessError).message);
       }
@@ -129,17 +125,7 @@ it('testBadge_static_02', Level.LEVEL0, async (done: () => void): Promise<void> 
       console.info('[testBadge02] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "fontSizeValue": "30",
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 63,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testBadge02] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        AppStorage.setOrCreate<undefined|number|string|Resource>('fontSizeValue','30')
       } catch (err) {
         console.log("[testBadge02] change component data error: " + (err as BusinessError).message);
       }
@@ -161,17 +147,8 @@ it('testBadge_static_04', Level.LEVEL0, async (done: () => void): Promise<void> 
       console.info('[testBadge04] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "fontSizeValue": "121212121",
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 63,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testBadge04] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        AppStorage.setOrCreate<undefined|number|string|Resource>('fontSizeValue','121212121')
+
       } catch (err) {
         console.log("[testBadge04] change component data error: " + (err as BusinessError).message);
       }
@@ -192,17 +169,7 @@ it('testBadge_static_05', Level.LEVEL0, async (done: () => void): Promise<void> 
       console.info('[testBadge05] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "fontSizeValue": "121212121vaas",
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 63,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testBadge05] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        AppStorage.setOrCreate<undefined|number|string|Resource>('fontSizeValue','121212121vaas')
       } catch (err) {
         console.log("[testBadge05] change component data error: " + (err as BusinessError).message);
       }
@@ -226,7 +193,7 @@ it('testBadge_static_06', Level.LEVEL0, async (done: () => void): Promise<void> 
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('badge2');
       console.info("[testBadge06] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('Badge');
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Badge');
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('value')).assertEqual('new');
       done();
     });
@@ -242,7 +209,7 @@ it('testBadge_static_07', Level.LEVEL0, async (done: () => void): Promise<void> 
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('badge2');
       console.info("[testBadge07] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      expect(JSON.parseJsonElement(strJson).getElement('$type')).assertEqual('Badge');
+      expect(JSON.parseJsonElement(strJson).getString('$type')).assertEqual('Badge');
       expect(JSON.parseJsonElement(JSON.parseJsonElement(strJson).getElement('$attrs').getString('style')).getString('color')).assertEqual('#FFFF0000');
       done();
     });
@@ -257,17 +224,8 @@ it('testBadge_static_08', Level.LEVEL0, async (done: () => void): Promise<void> 
       console.info('[testBadge08] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "colorValue": Color.Blue,
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 63,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testBadge08] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        AppStorage.setOrCreate<ResourceColor | undefined>('colorValue',Color.Blue)
+
       } catch (err) {
         console.log("[testBadge08] change component data error: " + (err as BusinessError).message);
       }
@@ -288,17 +246,7 @@ it('testBadge_static_09', Level.LEVEL0, async (done: () => void): Promise<void> 
       console.info('[testBadge09] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "message": "test",
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 63,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testBadge09] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        AppStorage.setOrCreate<string>('message','test')
       } catch (err) {
         console.log("[testBadge09] change component data error: " + (err as BusinessError).message);
       }
@@ -319,16 +267,8 @@ it('testBadge_static_10', Level.LEVEL0, async (done: () => void): Promise<void> 
       console.info('[testBadge10] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 64,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testBadge10] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        AppStorage.setOrCreate<ResourceColor | undefined>('colorValue',undefined)
+
       } catch (err) {
         console.log("[testBadge10] change component data error: " + (err as BusinessError).message);
       }
@@ -349,17 +289,8 @@ it('testBadge_static_11', Level.LEVEL0, async (done: () => void): Promise<void> 
       console.info('[testBadge11] START');
       await CommonFunc.sleep(1000);
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "colorValue": -300,
-          } as Record<String, RecordData>
-        } as events_emitter.EventData
-        let innerEvent: events_emitter.InnerEvent = {
-          eventId: 65,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("[testBadge11] start to publish emit");
-        events_emitter.emit(innerEvent, eventData);
+        AppStorage.setOrCreate<ResourceColor | undefined>('colorValue',-300)
+
       } catch (err) {
         console.log("[testBadge11] change component data error: " + (err as BusinessError).message);
       }

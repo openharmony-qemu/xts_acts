@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../hypium/index';
 import router from '@ohos.router';
+
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import hilog from '@ohos.hilog'
@@ -94,31 +95,31 @@ it('SUB_ACE_Row_flexShrink_Part_TEST_static_0100', Level.LEVEL0, async (done: ()
         .assertTrue();
       expect(Math.abs(Math.round(Row_flexShrink_Part_013.top - Row_flexShrink_Part_01.top) - Math.round(Row_flexShrink_Part_01.bottom - Row_flexShrink_Part_013.bottom)) <= 1)
         .assertTrue();
-      const uiContext = new UIContext();
+
       console.log('assert space')
-      expect(Math.abs((Math.round(Row_flexShrink_Part_012.left - Row_flexShrink_Part_011.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexShrink_Part_012.left - Row_flexShrink_Part_011.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_flexShrink_Part_013.left - Row_flexShrink_Part_012.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexShrink_Part_013.left - Row_flexShrink_Part_012.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1)
         .assertTrue();
       console.log('Row_flexShrink_Part_012.left - Row_flexShrink_Part_011.right', Row_flexShrink_Part_012.left - Row_flexShrink_Part_011.right)
       console.log('Row_flexShrink_Part_013.left - Row_flexShrink_Part_012.right', Row_flexShrink_Part_013.left - Row_flexShrink_Part_012.right)
 
       console.log('assert height')
-      expect(Math.abs((Math.round(Row_flexShrink_Part_011.bottom - Row_flexShrink_Part_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexShrink_Part_011.bottom - Row_flexShrink_Part_011.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
       console.log('Row_flexShrink_Part_011.bottom - Row_flexShrink_Part_011.top', Row_flexShrink_Part_011.bottom - Row_flexShrink_Part_011.top)
-      expect(Math.abs((Math.round(Row_flexShrink_Part_012.bottom - Row_flexShrink_Part_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexShrink_Part_012.bottom - Row_flexShrink_Part_012.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
       console.log('Row_flexShrink_Part_012.bottom - Row_flexShrink_Part_012.top', Row_flexShrink_Part_012.bottom - Row_flexShrink_Part_012.top)
-      expect(Math.abs((Math.round(Row_flexShrink_Part_013.bottom - Row_flexShrink_Part_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexShrink_Part_013.bottom - Row_flexShrink_Part_013.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
       console.log('Row_flexShrink_Part_013.bottom - Row_flexShrink_Part_013.top', Row_flexShrink_Part_013.bottom - Row_flexShrink_Part_013.top)
       console.log('assert weight')
-      expect(Math.abs((Math.round(Row_flexShrink_Part_011.right - Row_flexShrink_Part_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(300)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexShrink_Part_011.right - Row_flexShrink_Part_011.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(300))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_flexShrink_Part_012.right - Row_flexShrink_Part_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(65)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexShrink_Part_012.right - Row_flexShrink_Part_012.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(65))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_flexShrink_Part_013.right - Row_flexShrink_Part_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(65)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexShrink_Part_013.right - Row_flexShrink_Part_013.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(65))))) <= 1)
         .assertTrue();
       console.info('[SUB_ACE_Row_flexShrink_Part_TEST_static_0100] END');
       done();
@@ -154,31 +155,31 @@ it('SUB_ACE_Row_flexShrink_Part_TEST_static_0200', Level.LEVEL0, async (done: ()
         .assertTrue();
       expect(Math.abs(Math.round(Row_flexShrink_Part_013.top - Row_flexShrink_Part_01.top) - Math.round(Row_flexShrink_Part_01.bottom - Row_flexShrink_Part_013.bottom)) <= 1)
         .assertTrue();
-      const uiContext = new UIContext();
+
       console.log('assert space')
-      expect(Math.abs((Math.round(Row_flexShrink_Part_012.left - Row_flexShrink_Part_011.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexShrink_Part_012.left - Row_flexShrink_Part_011.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_flexShrink_Part_013.left - Row_flexShrink_Part_012.right)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(10)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexShrink_Part_013.left - Row_flexShrink_Part_012.right)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))))) <= 1)
         .assertTrue();
       console.log('Row_flexShrink_Part_012.left - Row_flexShrink_Part_011.right', Row_flexShrink_Part_012.left - Row_flexShrink_Part_011.right)
       console.log('Row_flexShrink_Part_013.left - Row_flexShrink_Part_012.right', Row_flexShrink_Part_013.left - Row_flexShrink_Part_012.right)
 
       console.log('assert height')
-      expect(Math.abs((Math.round(Row_flexShrink_Part_011.bottom - Row_flexShrink_Part_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexShrink_Part_011.bottom - Row_flexShrink_Part_011.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
       console.log('Row_flexShrink_Part_011.bottom - Row_flexShrink_Part_011.top', Row_flexShrink_Part_011.bottom - Row_flexShrink_Part_011.top)
-      expect(Math.abs((Math.round(Row_flexShrink_Part_012.bottom - Row_flexShrink_Part_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexShrink_Part_012.bottom - Row_flexShrink_Part_012.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
       console.log('Row_flexShrink_Part_012.bottom - Row_flexShrink_Part_012.top', Row_flexShrink_Part_012.bottom - Row_flexShrink_Part_012.top)
-      expect(Math.abs((Math.round(Row_flexShrink_Part_013.bottom - Row_flexShrink_Part_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexShrink_Part_013.bottom - Row_flexShrink_Part_013.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
       console.log('Row_flexShrink_Part_013.bottom - Row_flexShrink_Part_013.top', Row_flexShrink_Part_013.bottom - Row_flexShrink_Part_013.top)
       console.log('assert weight')
-      expect(Math.abs((Math.round(Row_flexShrink_Part_011.right - Row_flexShrink_Part_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(300)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexShrink_Part_011.right - Row_flexShrink_Part_011.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(300))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_flexShrink_Part_012.right - Row_flexShrink_Part_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(65)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexShrink_Part_012.right - Row_flexShrink_Part_012.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(65))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_flexShrink_Part_013.right - Row_flexShrink_Part_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(65)))) <= 1)
+      expect(Math.abs((Math.round(Row_flexShrink_Part_013.right - Row_flexShrink_Part_013.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(65))))) <= 1)
         .assertTrue();
       console.info('[SUB_ACE_Row_flexShrink_Part_TEST_static_0200] END');
       done();

@@ -58,20 +58,20 @@ build() {
       Column() {
         RichEditor(this.options)
           .onReady((): void => {
-            this.controller.addTextSpan('aaaaaaaa',
+            this.controller!.addTextSpan('aaaaaaaa',
               {
                 style:
                 {
                   fontSize: 30
                 }
               })
-            this.controller.addImageSpan($r('app.media.icon'),{
+            this.controller!.addImageSpan($r('app.media.icon'),{
               imageStyle:
               {
                 size: ["57px", "57px"]
               }
             })
-            this.controller.deleteSpans({
+            this.controller!.deleteSpans({
               start:0,
               end:2
             })
@@ -86,7 +86,7 @@ build() {
             console.log('previewText' + value.previewText)
           })
           .onWillChange((value:RichEditorChangeValue): boolean => {
-            value.replacedImageSpans.forEach(item => {
+            value.replacedImageSpans!.forEach(item => {
               this.text = String(item.offsetInSpan)
             });
             return true

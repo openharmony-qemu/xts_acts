@@ -64,24 +64,24 @@ export default function textInputEnterKeyTypeTest() {
 
 
     afterEach(async  ()=> {
+      const routerInstance = AppStorage.get<Router>("router") as Router
+      routerInstance.pushUrl({url: 'MainAbility/pages/index/index'});
       await Utils.sleep(1000);
       console.info("textInputEnterKeyType after each called");
     }) 
 
     
-    
-    
-/*
+    /*
      * @tc.number   textInputEnterKeyType_static_0100
      * @tc.name     textInputEnterKeyType_static_0100
      * @tc.desc     textInputEnterKeyType_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('textInputEnterKeyType_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('textInputEnterKeyType_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'textInputEnterKeyType0100';
       console.info('[' + tagName + '] START============================');
-      await Utils.sleep(1000) 
-       
+      await Utils.sleep(1000)
+
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -94,7 +94,7 @@ it('textInputEnterKeyType_static_0100', Level.LEVEL0, async (done: () => void): 
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err:Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
@@ -110,19 +110,17 @@ it('textInputEnterKeyType_static_0100', Level.LEVEL0, async (done: () => void): 
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   textInputEnterKeyType_static_0200
      * @tc.name     textInputEnterKeyType_static_0200
      * @tc.desc     textInputEnterKeyType_static_0200
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('textInputEnterKeyType_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('textInputEnterKeyType_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'textInputEnterKeyType0200';
       console.info('[' + tagName + '] START============================');
-      await Utils.sleep(1000) 
-       
+      await Utils.sleep(1000)
+
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -135,35 +133,33 @@ it('textInputEnterKeyType_static_0200', Level.LEVEL0, async (done: () => void): 
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err:Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
-    
+
       let strJsonNew = inspector.getInspectorByKey('key_textinput_enterkeytype');
       let obj = JSON.parseJsonElement(strJsonNew);
       console.info('[' + tagName + '] Text EnterKeyType is: ' + JSON.stringify(obj.getElement('$attrs').getString('enterKeyType')));
 
       expect(obj.getElement('$attrs').getString('enterKeyType')).assertEqual('EnterKeyType.Search');
-       
+
       console.info('[' + tagName + '] END ===========================');
       done();
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   textInputEnterKeyType_static_0300
      * @tc.name     textInputEnterKeyType_static_0300
      * @tc.desc     textInputEnterKeyType_static_0300
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('textInputEnterKeyType_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('textInputEnterKeyType_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'textInputEnterKeyType0300';
       console.info('[' + tagName + '] START============================');
-      await Utils.sleep(1000) 
-       
+      await Utils.sleep(1000)
+
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -176,35 +172,33 @@ it('textInputEnterKeyType_static_0300', Level.LEVEL0, async (done: () => void): 
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err:Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
-    
+
       let strJsonNew = inspector.getInspectorByKey('key_textinput_enterkeytype');
       let obj = JSON.parseJsonElement(strJsonNew);
       console.info('[' + tagName + '] Text EnterKeyType is: ' + JSON.stringify(obj.getElement('$attrs').getString('enterKeyType')));
 
       expect(obj.getElement('$attrs').getString('enterKeyType')).assertEqual('EnterKeyType.Send');
-       
+
       console.info('[' + tagName + '] END ===========================');
       done();
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   textInputEnterKeyType_static_0400
      * @tc.name     textInputEnterKeyType_static_0400
      * @tc.desc     textInputEnterKeyType_static_0400
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('textInputEnterKeyType_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('textInputEnterKeyType_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'textInputEnterKeyType0400';
       console.info('[' + tagName + '] START============================');
-      await Utils.sleep(1000) 
-       
+      await Utils.sleep(1000)
+
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -217,35 +211,33 @@ it('textInputEnterKeyType_static_0400', Level.LEVEL0, async (done: () => void): 
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err:Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
-    
+
       let strJsonNew = inspector.getInspectorByKey('key_textinput_enterkeytype');
       let obj = JSON.parseJsonElement(strJsonNew);
       console.info('[' + tagName + '] Text EnterKeyType is: ' + JSON.stringify(obj.getElement('$attrs').getString('enterKeyType')));
 
       expect(obj.getElement('$attrs').getString('enterKeyType')).assertEqual('EnterKeyType.Next');
-       
+
       console.info('[' + tagName + '] END ===========================');
       done();
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   textInputEnterKeyType_static_0500
      * @tc.name     textInputEnterKeyType_static_0500
      * @tc.desc     textInputEnterKeyType_static_0500
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('textInputEnterKeyType_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('textInputEnterKeyType_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'textInputEnterKeyType0500';
       console.info('[' + tagName + '] START============================');
-      await Utils.sleep(1000) 
-       
+      await Utils.sleep(1000)
+
       try {
         let eventData: events_emitter.EventData = {
           data: {
@@ -258,20 +250,20 @@ it('textInputEnterKeyType_static_0500', Level.LEVEL0, async (done: () => void): 
         }
         console.info('[' + tagName + '] start to publish emit');
         events_emitter.emit(innerEvent, eventData);
-      } catch (err) {
+      } catch (err:Error) {
         console.log('[' + tagName + '] change component data error: ' + err.message);
       }
       await Utils.sleep(2000);
-    
+
       let strJsonNew = inspector.getInspectorByKey('key_textinput_enterkeytype');
       let obj = JSON.parseJsonElement(strJsonNew);
       console.info('[' + tagName + '] Text EnterKeyType is: ' + JSON.stringify(obj.getElement('$attrs').getString('enterKeyType')));
 
       expect(obj.getElement('$attrs').getString('enterKeyType')).assertEqual('EnterKeyType.Done');
-       
+
       console.info('[' + tagName + '] END ===========================');
       done();
-    }); 
+    });
     
 })
 }

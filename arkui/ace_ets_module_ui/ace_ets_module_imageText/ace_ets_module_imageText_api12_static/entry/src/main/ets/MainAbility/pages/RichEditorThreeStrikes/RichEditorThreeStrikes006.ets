@@ -55,13 +55,13 @@ struct RichEditorThreeStrikes006 {
   @State message: string = '';
 
   richEditorStyledString: MutableStyledString = new MutableStyledString('');
-  textStyle: TextStyle = {
+  textStyle: TextStyle = new TextStyle({
     fontWeight: FontWeight.Lighter,
     fontFamily: CommonFunc.FONT_FAMILY,
     fontColor: Color.Green,
-    // fontSize: LengthMetrics.vp(50),
+    fontSize: LengthMetrics.vp(50),
     fontStyle: FontStyle.Normal
-  } as TextStyle
+  })
   fontStyle1: TextStyle = { fontColor: Color.Blue } as TextStyle;
   // 创建属性字符串对象
   mutableStyledString: MutableStyledString = new MutableStyledString('123456',
@@ -78,7 +78,7 @@ build() {
 
       RichEditor(this.options)
         .onReady((): void => {
-          this.controller.setStyledString(this.mutableStyledString);
+          this.controller!.setStyledString(this.mutableStyledString);
         })
         .onSelectionChange((value: RichEditorRange): void => {
           console.log('RichEditorController value:' + JSON.stringify(value));

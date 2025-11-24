@@ -60,13 +60,14 @@ export default function NavigationApi2() {
     });
 
 
-    /*
+    
+/*
      * @tc.number   NavigationApi2_static_0100
      * @tc.name     NavigationApi2_static_0100
      * @tc.desc     NavigationApi2_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('NavigationApi2_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('NavigationApi2_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('NavigationApi2_static_0100 START');
       await CommonFunc.sleep(1000);
 

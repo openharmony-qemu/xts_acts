@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
 import router from '@ohos.router';
-import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -58,12 +58,13 @@ export default function menuItemJsunit() {
     })
 
 
-    
-    /*
-     * @tc.number   menuItemJsunitStatic01
-     * @tc.name     menuItemJsunitStatic01
-     * @tc.desc     menuItemJsunitStatic01
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number menuItemJsunitStatic01
+     * @tc.name menuItemJsunitStatic01
+     * @tc.desc Set size values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('menuItemJsunitStatic01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[menuItemJsunitStatic01] START');
@@ -75,12 +76,13 @@ export default function menuItemJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   menuItemJsunitStatic02
-     * @tc.name     menuItemJsunitStatic02
-     * @tc.desc     menuItemJsunitStatic02
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number menuItemJsunitStatic02
+     * @tc.name menuItemJsunitStatic02
+     * @tc.desc Set contentFontColor values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('menuItemJsunitStatic02', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[menuItemJsunitStatic02] START');
@@ -92,12 +94,13 @@ export default function menuItemJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   menuItemJsunitStatic03
-     * @tc.name     menuItemJsunitStatic03
-     * @tc.desc     menuItemJsunitStatic03
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number menuItemJsunitStatic03
+     * @tc.name menuItemJsunitStatic03
+     * @tc.desc Set labelFont values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('menuItemJsunitStatic03', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[menuItemJsunitStatic03] START');
@@ -109,12 +112,13 @@ export default function menuItemJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   menuItemJsunitStatic04
-     * @tc.name     menuItemJsunitStatic04
-     * @tc.desc     menuItemJsunitStatic04
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number menuItemJsunitStatic04
+     * @tc.name menuItemJsunitStatic04
+     * @tc.desc Set labelFontColor values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('menuItemJsunitStatic04', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[menuItemJsunitStatic04] START');
@@ -126,12 +130,13 @@ export default function menuItemJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   menuItemJsunitStatic05
-     * @tc.name     menuItemJsunitStatic05
-     * @tc.desc     menuItemJsunitStatic05
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number menuItemJsunitStatic05
+     * @tc.name menuItemJsunitStatic05
+     * @tc.desc Set attribute values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('menuItemJsunitStatic05', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[menuItemJsunitStatic05] START');
@@ -143,12 +148,13 @@ export default function menuItemJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   menuItemJsunitStatic06
-     * @tc.name     menuItemJsunitStatic06
-     * @tc.desc     menuItemJsunitStatic06
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number menuItemJsunitStatic06
+     * @tc.name menuItemJsunitStatic06
+     * @tc.desc Set attribute values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('menuItemJsunitStatic06', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[menuItemJsunitStatic06] START');
@@ -160,12 +166,13 @@ export default function menuItemJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   menuItemJsunitStatic07
-     * @tc.name     menuItemJsunitStatic07
-     * @tc.desc     menuItemJsunitStatic07
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number menuItemJsunitStatic07
+     * @tc.name menuItemJsunitStatic07
+     * @tc.desc Change labelFontColor values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('menuItemJsunitStatic07', Level.LEVEL0, async (done: () => void): Promise<void> => {
 

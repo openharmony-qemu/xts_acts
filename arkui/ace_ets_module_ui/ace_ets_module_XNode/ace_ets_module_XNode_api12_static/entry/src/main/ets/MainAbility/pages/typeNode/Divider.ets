@@ -23,10 +23,10 @@ import { AppStorage, State, LocalStorage } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
 import { typeNode, NodeController, FrameNode } from '@ohos.arkui.node';
 
-
-
-
-
+// let para: Record<string> = {
+//   'DividerType': 'Init',
+// };
+// let storage: LocalStorage = new LocalStorage(para);
 let storage: LocalStorage = new LocalStorage();
 storage.setOrCreate('DividerType', 'Init');
 

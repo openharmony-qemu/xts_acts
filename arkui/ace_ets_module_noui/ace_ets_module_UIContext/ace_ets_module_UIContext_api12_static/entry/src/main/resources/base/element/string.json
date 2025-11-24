@@ -59,6 +59,18 @@
     {
       "name": "app_name",
       "value": "Demo"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "label"
+    },
+    {
+      "name": "module_desc",
+      "value": "m"
     }
   ]
 }

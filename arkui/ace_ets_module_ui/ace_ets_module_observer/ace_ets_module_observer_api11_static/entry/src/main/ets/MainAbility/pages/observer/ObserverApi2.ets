@@ -15,7 +15,7 @@
 import common from '@ohos.app.ability.common';
 import router from '@ohos.router';
 import { Entry, Component, Column, Text, Image, Color, Padding, Button, ClickEvent, ColumnOptions} from '@ohos.arkui.component'
-import { State,    AppStorage } from '@ohos.arkui.stateManagement'
+import { State,  AppStorage } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
@@ -30,7 +30,7 @@ struct ObserverApi2Test {
       Button('getText')
         .fontSize(14)
         .onClick((e: ClickEvent)=>{
-          this.text1 =  '' + AppStorage.get<string>('Observer_HIDE') + AppStorage.get<string>('Observer_APPEAR') + AppStorage.get<string>('Observer_SHOW')
+          this.text1 = AppStorage.get<string>('Observer_HIDE') as string + AppStorage.get<string>('Observer_APPEAR') as string + AppStorage.get<string>('Observer_SHOW') as string + ''
         })
         .id('ObserverApi2_getText')
 

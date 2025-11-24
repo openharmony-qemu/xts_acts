@@ -18,7 +18,7 @@ import accessibilitySelectedTypeTest from './chip/accessibilitySelectedTypeTest.
 import onScrollStopTest from './textPicker/onScrollStopTest.test';
 import maxFontScaleTest from './segmentButton/maxFontScaleTest.test'
 export default function testsuite() {
-  accessibilitySelectedTypeTest()
-  onScrollStopTest()
-  maxFontScaleTest()
+  // accessibilitySelectedTypeTest()   //11.13SDK上没有chip，B018交付
+  onScrollStopTest()  // 用例1 pass ,用例2 （page53）uiContext.showTextPickerDialog app died
+  // maxFontScaleTest()  // 编译问题
 }

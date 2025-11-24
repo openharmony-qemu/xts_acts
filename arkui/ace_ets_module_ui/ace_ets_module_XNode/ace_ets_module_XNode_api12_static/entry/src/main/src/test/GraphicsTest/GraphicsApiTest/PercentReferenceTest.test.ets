@@ -40,16 +40,16 @@ export default function PercentReferenceTest() {
         console.info("get PercentReferenceTest state pages: " + JSON.stringify(pages));
         if (!("PercentReference" == pages.name)) {
           console.info("get PercentReferenceTest state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push PercentReferenceTest success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push PercentReferenceTest page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     }); 
 
     afterEach(async () => {
@@ -57,13 +57,14 @@ export default function PercentReferenceTest() {
       console.info("PercentReferenceTest after each called");
     });
     
-    /*
+    
+/*
      * @tc.number   PercentReferenceTest_static_001
      * @tc.name     PercentReferenceTest_static_001
      * @tc.desc     PercentReferenceTest_static_001
      * @tc.level    Level.LEVEL0
      */
-it('PercentReferenceTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('PercentReferenceTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("[PercentReferenceTest_001] START");
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();

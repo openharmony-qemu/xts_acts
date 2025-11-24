@@ -64,7 +64,7 @@ build() {
         .borderWidth(1)
         .borderColor(Color.Green)
         .onReady((): void => {
-          this.controller.addImageSpan($r('app.media.icon'),
+          this.controller!.addImageSpan($r('app.media.icon'),
             {
               imageStyle:
               {
@@ -72,7 +72,7 @@ build() {
               }
             });
 
-          this.controller.addTextSpan('abcd', {
+          this.controller!.addTextSpan('abcd', {
             style: {
               fontSize: 35,
               fontWeight: FontWeight.Bolder,
@@ -87,28 +87,25 @@ build() {
 
       Button('get spans').onClick((e: ClickEvent) => {
         this.style = '';
-        let spans = this.controller.getSpans({
+        this.controller!.getSpans({
           start: 0,
           end: 6
-        });
-        if (spans !== undefined) {
-          spans.forEach(item => {
-            if (typeof (item as RichEditorTextSpanResult)?.textStyle != 'undefined') {
-              let span = item as RichEditorTextSpanResult
-              let spanPosition = JSON.stringify(span.spanPosition);
-              let value = JSON.stringify(span.value);
-              let textStyle = JSON.stringify(span.textStyle);
-              this.style += 'spanPosition:' + spanPosition + ',';
-              this.style += 'value:' + value + ',';
-              this.style += 'textStyle:' + textStyle + ',';
-              console.log('RichEditorController  this.style:' + JSON.stringify(this.style));
-            }
-          })
-        }
+        })!.forEach(item => {
+          if (typeof (item as RichEditorTextSpanResult)?.textStyle != 'undefined') {
+            let span = item as RichEditorTextSpanResult
+            let spanPosition = JSON.stringify(span.spanPosition);
+            let value = JSON.stringify(span.value);
+            let textStyle = JSON.stringify(span.textStyle);
+            this.style += 'spanPosition:' + spanPosition + ',';
+            this.style += 'value:' + value + ',';
+            this.style += 'textStyle:' + textStyle + ',';
+            console.log('RichEditorController  this.style:' +  JSON.stringify(this.style));
+          }
+        })
       }).id('getSpans')
 
       Button('set select').onClick((e: ClickEvent) => {
-        this.controller.setSelection(3, 5);
+        this.controller!.setSelection(3, 5);
       }).id('setSelect')
 
       Text('style:' + this.style).id('style')

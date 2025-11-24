@@ -66,15 +66,13 @@ export default function textAreaHeightAdaptivePolicyTest() {
     })
 
     
-    
-    
-/*
+    /*
      * @tc.number   textAreaHeightAdaptivePolicy_static_0100
      * @tc.name     textAreaHeightAdaptivePolicy_static_0100
      * @tc.desc     textAreaHeightAdaptivePolicy_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('textAreaHeightAdaptivePolicy_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('textAreaHeightAdaptivePolicy_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'textAreaHeightAdaptivePolicy0100';
       console.info('[' + tagName + '] START============================');
       let strJsonNew = inspector.getInspectorByKey('key_textArea_heightAdaptivePolicy_001');
@@ -89,15 +87,13 @@ it('textAreaHeightAdaptivePolicy_static_0100', Level.LEVEL0, async (done: () => 
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   textAreaHeightAdaptivePolicy_static_0200
      * @tc.name     textAreaHeightAdaptivePolicy_static_0200
      * @tc.desc     textAreaHeightAdaptivePolicy_static_0200
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('textAreaHeightAdaptivePolicy_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('textAreaHeightAdaptivePolicy_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'textAreaHeightAdaptivePolicy0200';
       console.info('[' + tagName + '] START============================');
       let strJsonNew = inspector.getInspectorByKey('key_textArea_heightAdaptivePolicy_002');
@@ -111,15 +107,13 @@ it('textAreaHeightAdaptivePolicy_static_0200', Level.LEVEL0, async (done: () => 
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   textAreaHeightAdaptivePolicy_static_0300
      * @tc.name     textAreaHeightAdaptivePolicy_static_0300
      * @tc.desc     textAreaHeightAdaptivePolicy_static_0300
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('textAreaHeightAdaptivePolicy_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('textAreaHeightAdaptivePolicy_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tagName = 'textAreaHeightAdaptivePolicy0300';
       console.info('[' + tagName + '] START============================');
       let strJsonNew = inspector.getInspectorByKey('key_textArea_heightAdaptivePolicy_003');

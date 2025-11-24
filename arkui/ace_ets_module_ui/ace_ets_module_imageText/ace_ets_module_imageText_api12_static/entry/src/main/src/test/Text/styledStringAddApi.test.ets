@@ -70,15 +70,13 @@ export default function styledStringAddApi() {
 
     
 
-    
-    
-/*
+    /*
      * @tc.number   styledStringAddApi_static_001
      * @tc.name     styledStringAddApi_static_001
      * @tc.desc     styledStringAddApi_static_001
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('styledStringAddApi_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('styledStringAddApi_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[styledStringAddApi_001] START');
       let driver = Driver.create();
       let text = await (driver.findComponent(ON.id('styledStringAddApi')) as Promise<Component>);
@@ -97,15 +95,13 @@ it('styledStringAddApi_static_001', Level.LEVEL0, async (done: () => void): Prom
       done();
     });
 
-    
-    
-/*
+    /*
      * @tc.number   styledStringAddApi_static_002
      * @tc.name     styledStringAddApi_static_002
      * @tc.desc     styledStringAddApi_static_002
-     * @tc.level    Level.LEVEL3
+     * @tc.level   Level.LEVEL3
      */
-it('styledStringAddApi_static_002', Level.LEVEL3, async () => {
+    it('styledStringAddApi_static_002', Level.LEVEL3, async () => {
       let msg = 'testPositionWithAffinity'
       console.info(msg + 'begin');
       try {

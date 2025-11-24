@@ -18,7 +18,7 @@ import { State,AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct onGetIrregular5 {
-  @State numberData: String[] = ['0', '1', '2'];
+  @State Number01: String[] = ['0', '1', '2'] as string[];
   scroller: Scroller = new Scroller();
   layoutOptions2: GridLayoutOptions = {
     regularSize: [1, 1],
@@ -32,8 +32,8 @@ struct onGetIrregular5 {
     Column({ space: 5 } as ColumnOptions) {
       
       Grid(undefined, this.layoutOptions2) {
-        ForEach(this.numberData, (day: string) => {
-          ForEach(this.numberData, (day: string) => {
+        ForEach(this.Number01, (day: string) => {
+          ForEach(this.Number01, (day: string) => {
             GridItem() {
               Text(day)
                 .fontSize(16)

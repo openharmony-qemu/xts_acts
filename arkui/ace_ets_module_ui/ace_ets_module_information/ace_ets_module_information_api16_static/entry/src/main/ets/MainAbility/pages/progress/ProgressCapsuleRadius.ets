@@ -30,28 +30,31 @@ struct ProgressCapsuleRadius {
       Text('Capsule Progress').fontSize(9).width('90%')
       Row({ space: 15 } as RowOptions) {
         Progress({ value: 50, total: 100, type: ProgressType.Capsule } as ProgressOptions)
-          .style({ 
-            
-            borderWidth: 2, 
-            borderRadius: LengthMetrics.px(10) } as CapsuleStyleOptions)
+          .style({
+            // content: 'ProgressCapsuleRadius',
+            borderWidth: 2,
+            borderRadius: LengthMetrics.px(10)
+          } as CapsuleStyleOptions)
           .width(100)
           .height(40)
           .key('ProgressCapsuleRadius')
 
         Progress({ value: 50, total: 100, type: ProgressType.Capsule } as ProgressOptions)
           .style({
-            
+            // content: 'ProgressCapsuleRadius',
             borderWidth: 2,
-            borderRadius: LengthMetrics.px(-0.1) } as CapsuleStyleOptions)
+            borderRadius: LengthMetrics.px(-0.1)
+          } as CapsuleStyleOptions)
           .width(100)
           .height('40px')
           .key('ProgressCapsuleRadius_negative')
 
         Progress({ value: 50, total: 100, type: ProgressType.Capsule } as ProgressOptions)
           .style({
-            
+            // content: 'ProgressCapsuleRadius',
             borderWidth: 2,
-            borderRadius: LengthMetrics.px(40) } as CapsuleStyleOptions)
+            borderRadius: LengthMetrics.px(40)
+          } as CapsuleStyleOptions)
           .width(100)
           .onClick((e: ClickEvent)=>{
           })

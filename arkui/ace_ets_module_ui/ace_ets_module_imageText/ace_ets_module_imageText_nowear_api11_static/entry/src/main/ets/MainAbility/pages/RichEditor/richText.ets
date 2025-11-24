@@ -20,34 +20,12 @@ import { State } from '@ohos.arkui.stateManagement'
 import inspector from '@ohos.arkui.inspector'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { MessageManager } from '../../utils/MessageManager'
-import { RecordData } from '@ohos.base';
+import { MessageManager } from '../../common/MessageManager'
 
 @Entry
 @Component
 struct RichTextCreateComponent {
   @State data: string = "test data";
-  messageManager:MessageManager = new MessageManager()
-  onPageShow() {
-    AppStorage.setOrCreate<object>("imageNamePng", this.messageManager);
-    console.info('[list] page show called');
-    let stateChangeEvent: events_emitter.InnerEvent = {
-      eventId: 181,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
-  }
-
-  private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
-    console.info("[stateChangCallBack] stateChangCallBack");
-    if (eventData != null) {
-      console.info("[stateChangCallBack] state change called:" + JSON.stringify(eventData));
-      if (((eventData.data) as Record<String, RecordData>)?.['data'] != null && ((eventData.data) as Record<String, RecordData>)?.['data'] != undefined) {
-        this.data = ((eventData.data) as Record<String, RecordData>)?.['data'] as string;
-      }
-    }
-  }
-
   build() {
     Flex({
       direction: FlexDirection.Column, alignItems: ItemAlign.Center,

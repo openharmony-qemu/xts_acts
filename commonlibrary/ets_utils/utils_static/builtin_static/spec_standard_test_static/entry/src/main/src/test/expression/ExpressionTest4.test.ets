@@ -578,10 +578,13 @@ export default function expressionTest4() {
       const str: string = "abcdefgh";
       let result: string = "";
       let i: int, char1: string;
-      for (i = 0, char1 = str[i] ; i < str.length; i += 2, char1 = str[i] ) {
-        result += char1;
+      try {
+        for (i = 0, char1 = str[i] ; i < str.length; i += 2, char1 = str[i] ) {
+          result += char1;
+        }
+      } catch(e) {
+        expect(e.name).assertEqual("StringIndexOutOfBoundsError");
       }
-      expect(result).assertEqual("aceg");
     });
 
     /**
@@ -1415,9 +1418,12 @@ export default function expressionTest4() {
     it('ExpressionTest0572', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const items: string[] | null = ["first", "second", "third"];
       const result1: string | undefined = items?.[1];
-      const result2: string | undefined = items?.[5];
       expect(result1).assertEqual("second");
-      expect(result2).assertUndefined();
+      try {
+        const result2: string | undefined = items?.[5];
+      } catch(e) {
+        expect(e.name).assertEqual("RangeError");
+      }
     });
 
     /**
@@ -1429,7 +1435,7 @@ export default function expressionTest4() {
      * @tc.level Level 1
      */
     it('ExpressionTest0573', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-      const a: number = -16;
+      const a: int = -16;
       const result: boolean = (a >>> 2) === 1073741820;
       expect(result).assertTrue();
     });

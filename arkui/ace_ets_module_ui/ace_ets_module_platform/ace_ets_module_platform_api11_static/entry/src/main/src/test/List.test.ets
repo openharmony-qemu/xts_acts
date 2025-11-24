@@ -17,12 +17,12 @@ import videoJsunit from './video/VideoJsunit.test';
 import videoJsunit2 from './video/VideoJsunit2.test';
 import videoOnFullscreenChangeJsunit from './video/video.test';
 import xcomponentGetXComponentContextJsunit from './XComponentTest/xcomponent.test';
-
+import video1Jsunit from './video/video1Jsunit.test.ets'
 export default function testsuite() {
   XComponentNodeChageJsSuit();
   videoJsunit();
   videoJsunit2();
   videoOnFullscreenChangeJsunit();
   xcomponentGetXComponentContextJsunit();
-
+  video1Jsunit();
 }

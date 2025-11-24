@@ -63,7 +63,7 @@ build() {
 
         RichEditor(this.options)
           .onReady((): void => {
-            this.controller.addTextSpan('\uD83D\uDE00\uD83D\uDE00\uD83D\uDE00', {
+            this.controller!.addTextSpan('\uD83D\uDE00\uD83D\uDE00\uD83D\uDE00', {
               style: {
                 fontColor: Color.Pink,
                 fontSize: '32',

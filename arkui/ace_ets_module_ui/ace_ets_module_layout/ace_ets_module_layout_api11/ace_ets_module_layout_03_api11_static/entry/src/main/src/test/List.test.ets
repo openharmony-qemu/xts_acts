@@ -63,14 +63,14 @@ import flexWrapReverse_fixedParentChildDisplayPriority
   from './FlexTest/Wrap/WrapReverse/FlexWrapReverse_fixedParentChildDisplayPriority.test.ets';
 import flexAlign_SpaceBetween_fixedChild
   from './FlexTest/justifyContent/SpaceBetween/FlexAlign_SpaceBetween_fixedChild.test.ets';
+import flexAlign_SpaceBetween_fixedChildParentItemAlignEnd
+  from './FlexTest/justifyContent/SpaceBetween/FlexAlign_SpaceBetween_fixedChildParentItemAlignEnd.test.ets';
 import flexAlign_SpaceBetween_fixedChildParentPadding
   from './FlexTest/justifyContent/SpaceBetween/FlexAlign_SpaceBetween_fixedChildParentPadding.test.ets';
 import flexAlign_SpaceBetween_fixedChildParentMargin
   from './FlexTest/justifyContent/SpaceBetween/FlexAlign_SpaceBetween_fixedChildParentMargin.test.ets';
 import flexAlign_SpaceBetween_fixedChildParentMarPad
   from './FlexTest/justifyContent/SpaceBetween/FlexAlign_SpaceBetween_fixedChildParentMarPad.test.ets';
-
-
 import flexAlign_SpaceBetween_fixedParent
   from './FlexTest/justifyContent/SpaceBetween/FlexAlign_SpaceBetween_fixedParent.test.ets';
 import flexAlign_SpaceBetween_fixedParentVisibility
@@ -174,21 +174,22 @@ import AlignContent_FlexAlign_Center_padding
 
 export default function testsuite() {
   flex_AlignContent_SpaceBetween_FlexSizeTest();
-  flex_AlignContent_SpaceBetween_FlexPadTest();
+
   flex_AlignContent_SpaceBetween_FlexMarTest();
   flex_AlignContent_SpaceBetween_FlexMarPadTest();
   flex_AlignContent_SpaceBetween_TextSizeTest();
   flex_AlignContent_SpaceBetween_TextMarTest();
   flex_AlignContent_SpaceBetween_TextOffsetTest();
-  flex_AlignContent_SpaceBetween_TextVisibilityTest();
+
   flex_AlignContent_SpaceAround_FlexSizeTest();
   flex_AlignContent_SpaceAround_FlexPadTest();
-  flex_AlignContent_SpaceAround_FlexMarTest();
+
   flex_AlignContent_SpaceAround_FlexMarPadTest();
   flex_AlignContent_SpaceAround_TextSizeTest();
   flex_AlignContent_SpaceAround_TextMarTest();
   flex_AlignContent_SpaceAround_TextOffsetTest();
   flex_AlignContent_SpaceAround_TextVisibilityTest();
+
   flexWrapReverse_notFixedParent()
   flexWrapReverse_notFixedParentPadding()
   flexWrapReverse_notFixedParentMargin()
@@ -196,15 +197,16 @@ export default function testsuite() {
   flexWrapReverse_fixedParentPadding()
   flexWrapReverse_fixedParentMargin()
   flexWrapReverse_fixedParentMarPad()
-  flexWrapReverse_fixedParentChildVisibility()
+
   flexWrapReverse_fixedParentChildPosition()
   flexWrapReverse_fixedParentChildLayoutWeight()
   flexWrapReverse_fixedParentChildDisplayPriority()
+
   flexAlign_SpaceBetween_fixedChild()
+  flexAlign_SpaceBetween_fixedChildParentItemAlignEnd()
   flexAlign_SpaceBetween_fixedChildParentPadding()
   flexAlign_SpaceBetween_fixedChildParentMargin()
   flexAlign_SpaceBetween_fixedChildParentMarPad()
-  
   flexAlign_SpaceBetween_fixedParent()
   flexAlign_SpaceBetween_fixedParentVisibility()
   flexAlign_SpaceBetween_fixedParentChangeFirst()
@@ -218,7 +220,7 @@ export default function testsuite() {
   flexAlign_SpaceAround_fixedParent()
   flexAlign_SpaceAround_fixedParentVisibility()
   flexAlign_SpaceAround_fixedParentChangeFirst()
-  flexAlign_SpaceAround_fixedParentChangeFirstWidth()
+
   flexAlign_SpaceAround_fixedParentMarginFirst()
   flex_NoWrap_FlexSizeTest();
   flex_NoWrap_PaddingTest();
@@ -226,7 +228,7 @@ export default function testsuite() {
   flex_NoWrap_FlexPad_TextMarPadTest();
   flex_NoWrap_FlexMar_TextMarPadTest();
   flex_NoWrap_FlexMarPad_TextMarPadTest();
-  flex_NoWrap_VisibilityTest();
+
   flex_NoWrap_LayoutWeightTest();
   flex_NoWrap_DisplayPriorityTest();
   flex_NoWrap_PositionTest();
@@ -236,7 +238,7 @@ export default function testsuite() {
   flex_Wrap_FlexPad_TextMarPadTest();
   flex_Wrap_FlexMar_TextMarPadTest();
   flex_Wrap_FlexMarPad_TextMarPadTest();
-  flex_Wrap_VisibilityTest();
+
   flex_Wrap_PositionTest();
   flex_Wrap_LayoutWeightTest();
   flex_Wrap_DisplayPriorityTest();
@@ -252,7 +254,7 @@ export default function testsuite() {
   AlignContentFlexP_fixed();
   AlignContentFlexP_Fixed_Margin();
   AlignContentFlexP_Fixed_Offset();
-  AlignContentFlexP_Fixed_Visibility();
+
   AlignContent_FlexAlign_SpaceEvenly_Margin();
   AlignContent_FlexAlign_SpaceEvenly_Margin_padding();
   AlignContent_FlexAlign_SpaceEvenly_padding();
@@ -272,4 +274,12 @@ export default function testsuite() {
   AlignContent_FlexAlign_Center_Margin();
   AlignContent_FlexAlign_Center_Margin_padding();
   AlignContent_FlexAlign_Center_padding();
+  AlignContentFlexP_Fixed_Visibility();
+  flex_Wrap_VisibilityTest();
+  flex_NoWrap_VisibilityTest();
+  flexAlign_SpaceAround_fixedParentChangeFirstWidth()
+  flexWrapReverse_fixedParentChildVisibility()
+  flex_AlignContent_SpaceAround_FlexMarTest();
+  flex_AlignContent_SpaceBetween_TextVisibilityTest();
+  flex_AlignContent_SpaceBetween_FlexPadTest();
 }

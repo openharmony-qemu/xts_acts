@@ -35,12 +35,10 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function flexAlignSelf_StretchJsunit() {
   describe('flexAlignSelf_StretchJsunit', () => {
-
     beforeAll(() => {
       console.info("flexAlignSelf_StretchJsunit beforeEach start");
-      
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace_ets_module_layout_02_api11_static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
@@ -56,11 +54,8 @@ export default function flexAlignSelf_StretchJsunit() {
         console.info("get flexAlignSelf_StretchJsunit state pages:" + JSON.stringify(pages));
         if (!("ItemAlign_Stretch_FlexAlignSelf" == pages.name)) {
           console.info("get flexAlignSelf_StretchJsunit pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push flexAlignSelf_StretchJsunit page error:" + err);
@@ -91,7 +86,6 @@ it('testFlexItemAlignStretchSetAlignSelf_static', Level.LEVEL0, async () : Promi
       let textAlignSelf02: RectValue = CommonFunc.getComponentRect('ItemAlign_Stretch_textAlignSelf02');
       let textAlignSelf03: RectValue = CommonFunc.getComponentRect('ItemAlign_Stretch_textAlignSelf03');
       let flexAlignSelf01: RectValue = CommonFunc.getComponentRect('ItemAlign_Stretch_flexAlignSelf');
-      const uiContext = new UIContext();
       expect(Math.abs(textAlignSelf02.top - textAlignSelf03.top) <= 1).assertTrue()
       expect(Math.abs(textAlignSelf03.top - flexAlignSelf01.top) <= 1).assertTrue()
 
@@ -99,12 +93,12 @@ it('testFlexItemAlignStretchSetAlignSelf_static', Level.LEVEL0, async () : Promi
       expect(Math.abs(textAlignSelf01.right - textAlignSelf02.left) <= 1).assertTrue()
       expect(Math.abs(textAlignSelf02.bottom - textAlignSelf03.bottom) <= 1).assertTrue()
 
-      expect(Math.abs((textAlignSelf01.bottom - textAlignSelf01.top) - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue()
-      expect(Math.abs((textAlignSelf01.right - textAlignSelf01.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs((textAlignSelf02.bottom - textAlignSelf02.top) - UIContext.getFocusedUIContext()!.vp2px(200)) <= 1).assertTrue()
-      expect(Math.abs((textAlignSelf02.right - textAlignSelf02.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs((textAlignSelf03.bottom - textAlignSelf03.top) - UIContext.getFocusedUIContext()!.vp2px(200)) <= 1).assertTrue()
-      expect(Math.abs((textAlignSelf03.right - textAlignSelf03.left) - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs((textAlignSelf01.bottom - textAlignSelf01.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) <= 1).assertTrue()
+      expect(Math.abs((textAlignSelf01.right - textAlignSelf01.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs((textAlignSelf02.bottom - textAlignSelf02.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200))) <= 1).assertTrue()
+      expect(Math.abs((textAlignSelf02.right - textAlignSelf02.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs((textAlignSelf03.bottom - textAlignSelf03.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200))) <= 1).assertTrue()
+      expect(Math.abs((textAlignSelf03.right - textAlignSelf03.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
 
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Stretch')

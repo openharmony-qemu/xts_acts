@@ -63,7 +63,7 @@ build() {
       Button('up Keyboard')
         .onClick((e: ClickEvent) => {
           this.getUIContext().getFocusController().clearFocus();
-          this.controller.stopEditing();
+          this.controller!.stopEditing();
         }).id('stop_edite')
 
       RichEditor({ controller: this.controller } as RichEditorOptions)

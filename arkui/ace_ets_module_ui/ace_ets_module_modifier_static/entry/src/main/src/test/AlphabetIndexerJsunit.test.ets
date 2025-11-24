@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
 import router from '@ohos.router';
-import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -61,12 +61,13 @@ export default function alphabetIndexerJsunit() {
       }
     })
 
-    
-    /*
-     * @tc.number   ArkUI_AlphabetIndexer_static_0101
-     * @tc.name     ArkUI_AlphabetIndexer_static_0101
-     * @tc.desc     ArkUI_AlphabetIndexer_static_0101
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ArkUI_AlphabetIndexer_static_0101
+     * @tc.name ArkUI_AlphabetIndexer_static_0101
+     * @tc.desc Set font values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ArkUI_AlphabetIndexer_static_0101', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_AlphabetIndexer_static_0101 start");
@@ -75,12 +76,13 @@ export default function alphabetIndexerJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   ArkUI_AlphabetIndexer_static_0102
-     * @tc.name     ArkUI_AlphabetIndexer_static_0102
-     * @tc.desc     ArkUI_AlphabetIndexer_static_0102
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ArkUI_AlphabetIndexer_static_0102
+     * @tc.name ArkUI_AlphabetIndexer_static_0102
+     * @tc.desc Set selectFont values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ArkUI_AlphabetIndexer_static_0102', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_AlphabetIndexer_static_0102 start");
@@ -90,12 +92,13 @@ export default function alphabetIndexerJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   ArkUI_AlphabetIndexer_static_0103
-     * @tc.name     ArkUI_AlphabetIndexer_static_0103
-     * @tc.desc     ArkUI_AlphabetIndexer_static_0103
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ArkUI_AlphabetIndexer_static_0103
+     * @tc.name ArkUI_AlphabetIndexer_static_0103
+     * @tc.desc Set color values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ArkUI_AlphabetIndexer_static_0103', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_AlphabetIndexer_static_0103 start");
@@ -105,12 +108,13 @@ export default function alphabetIndexerJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   ArkUI_AlphabetIndexer_static_0104
-     * @tc.name     ArkUI_AlphabetIndexer_static_0104
-     * @tc.desc     ArkUI_AlphabetIndexer_static_0104
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ArkUI_AlphabetIndexer_static_0104
+     * @tc.name ArkUI_AlphabetIndexer_static_0104
+     * @tc.desc Set selectedColor values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ArkUI_AlphabetIndexer_static_0104', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_AlphabetIndexer_static_0104 start");
@@ -120,12 +124,13 @@ export default function alphabetIndexerJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   ArkUI_AlphabetIndexer_static_0105
-     * @tc.name     ArkUI_AlphabetIndexer_static_0105
-     * @tc.desc     ArkUI_AlphabetIndexer_static_0105
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ArkUI_AlphabetIndexer_static_0105
+     * @tc.name ArkUI_AlphabetIndexer_static_0105
+     * @tc.desc Set selectedBackgroundColor values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ArkUI_AlphabetIndexer_static_0105', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_AlphabetIndexer_static_0105 start");
@@ -135,12 +140,13 @@ export default function alphabetIndexerJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   ArkUI_AlphabetIndexer_static_0106
-     * @tc.name     ArkUI_AlphabetIndexer_static_0106
-     * @tc.desc     ArkUI_AlphabetIndexer_static_0106
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ArkUI_AlphabetIndexer_static_0106
+     * @tc.name ArkUI_AlphabetIndexer_static_0106
+     * @tc.desc Set itemSize values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ArkUI_AlphabetIndexer_static_0106', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_AlphabetIndexer_static_0106 start");
@@ -150,12 +156,13 @@ export default function alphabetIndexerJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   ArkUI_AlphabetIndexer_static_0107
-     * @tc.name     ArkUI_AlphabetIndexer_static_0107
-     * @tc.desc     ArkUI_AlphabetIndexer_static_0107
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ArkUI_AlphabetIndexer_static_0107
+     * @tc.name ArkUI_AlphabetIndexer_static_0107
+     * @tc.desc Set usingPopup values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ArkUI_AlphabetIndexer_static_0107', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_AlphabetIndexer_static_0107 start");
@@ -163,12 +170,13 @@ export default function alphabetIndexerJsunit() {
 
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('usingPopup')).assertEqual("true");
       done();
-    }); 
-    /*
-     * @tc.number   ArkUI_AlphabetIndexer_static_0108
-     * @tc.name     ArkUI_AlphabetIndexer_static_0108
-     * @tc.desc     ArkUI_AlphabetIndexer_static_0108
-     * @tc.level    Level.LEVEL0
+    }); /**
+     * @tc.number ArkUI_AlphabetIndexer_static_0108
+     * @tc.name ArkUI_AlphabetIndexer_static_0108
+     * @tc.desc Set alignStyle values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ArkUI_AlphabetIndexer_static_0108', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_AlphabetIndexer_static_0108 start");
@@ -178,12 +186,13 @@ export default function alphabetIndexerJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   ArkUI_AlphabetIndexer_static_0109
-     * @tc.name     ArkUI_AlphabetIndexer_static_0109
-     * @tc.desc     ArkUI_AlphabetIndexer_static_0109
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ArkUI_AlphabetIndexer_static_0109
+     * @tc.name ArkUI_AlphabetIndexer_static_0109
+     * @tc.desc Set popupFont values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ArkUI_AlphabetIndexer_static_0109', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_AlphabetIndexer_static_0109 start");
@@ -193,12 +202,13 @@ export default function alphabetIndexerJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   ArkUI_AlphabetIndexer_static_0110
-     * @tc.name     ArkUI_AlphabetIndexer_static_0110
-     * @tc.desc     ArkUI_AlphabetIndexer_static_0110
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ArkUI_AlphabetIndexer_static_0110
+     * @tc.name ArkUI_AlphabetIndexer_static_0110
+     * @tc.desc Set popupColor values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ArkUI_AlphabetIndexer_static_0110', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_AlphabetIndexer_static_0110 start");
@@ -208,12 +218,13 @@ export default function alphabetIndexerJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   ArkUI_AlphabetIndexer_static_0111
-     * @tc.name     ArkUI_AlphabetIndexer_static_0111
-     * @tc.desc     ArkUI_AlphabetIndexer_static_0111
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ArkUI_AlphabetIndexer_static_0111
+     * @tc.name ArkUI_AlphabetIndexer_static_0111
+     * @tc.desc Set popupBackground values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ArkUI_AlphabetIndexer_static_0111', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_AlphabetIndexer_static_0111 start");
@@ -223,12 +234,13 @@ export default function alphabetIndexerJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   ArkUI_AlphabetIndexer_static_0112
-     * @tc.name     ArkUI_AlphabetIndexer_static_0112
-     * @tc.desc     ArkUI_AlphabetIndexer_static_0112
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ArkUI_AlphabetIndexer_static_0112
+     * @tc.name ArkUI_AlphabetIndexer_static_0112
+     * @tc.desc Set selected values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ArkUI_AlphabetIndexer_static_0112', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_AlphabetIndexer_static_0112 start");
@@ -238,12 +250,13 @@ export default function alphabetIndexerJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   ArkUI_AlphabetIndexer_static_0113
-     * @tc.name     ArkUI_AlphabetIndexer_static_0113
-     * @tc.desc     ArkUI_AlphabetIndexer_static_0113
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ArkUI_AlphabetIndexer_static_0113
+     * @tc.name ArkUI_AlphabetIndexer_static_0113
+     * @tc.desc Set popupPosition values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ArkUI_AlphabetIndexer_static_0113', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_AlphabetIndexer_static_0113 start");
@@ -253,12 +266,13 @@ export default function alphabetIndexerJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   ArkUI_AlphabetIndexer_static_0114
-     * @tc.name     ArkUI_AlphabetIndexer_static_0114
-     * @tc.desc     ArkUI_AlphabetIndexer_static_0114
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ArkUI_AlphabetIndexer_static_0114
+     * @tc.name ArkUI_AlphabetIndexer_static_0114
+     * @tc.desc Set popupSelectedColor values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ArkUI_AlphabetIndexer_static_0114', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_AlphabetIndexer_static_0114 start");
@@ -268,12 +282,13 @@ export default function alphabetIndexerJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   ArkUI_AlphabetIndexer_static_0115
-     * @tc.name     ArkUI_AlphabetIndexer_static_0115
-     * @tc.desc     ArkUI_AlphabetIndexer_static_0115
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ArkUI_AlphabetIndexer_static_0115
+     * @tc.name ArkUI_AlphabetIndexer_static_0115
+     * @tc.desc Set popupUnselectedColor values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ArkUI_AlphabetIndexer_static_0115', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_AlphabetIndexer_static_0115 start");
@@ -283,12 +298,13 @@ export default function alphabetIndexerJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   ArkUI_AlphabetIndexer_static_0116
-     * @tc.name     ArkUI_AlphabetIndexer_static_0116
-     * @tc.desc     ArkUI_AlphabetIndexer_static_0116
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ArkUI_AlphabetIndexer_static_0116
+     * @tc.name ArkUI_AlphabetIndexer_static_0116
+     * @tc.desc Set popupItemBackground values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ArkUI_AlphabetIndexer_static_0116', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_AlphabetIndexer_static_0116 start");
@@ -298,12 +314,13 @@ export default function alphabetIndexerJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   ArkUI_AlphabetIndexer_static_0117
-     * @tc.name     ArkUI_AlphabetIndexer_static_0117
-     * @tc.desc     ArkUI_AlphabetIndexer_static_0117
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ArkUI_AlphabetIndexer_static_0117
+     * @tc.name ArkUI_AlphabetIndexer_static_0117
+     * @tc.desc Set popupItemFontSize values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ArkUI_AlphabetIndexer_static_0117', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ArkUI_AlphabetIndexer_static_0117 start");
@@ -312,12 +329,13 @@ export default function alphabetIndexerJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   ArkUI_AlphabetIndexer_static_0118
-     * @tc.name     ArkUI_AlphabetIndexer_static_0118
-     * @tc.desc     ArkUI_AlphabetIndexer_static_0118
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ArkUI_AlphabetIndexer_static_0118
+     * @tc.name ArkUI_AlphabetIndexer_static_0118
+     * @tc.desc Change selected values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ArkUI_AlphabetIndexer_static_0118', Level.LEVEL0, async (done: () => void): Promise<void> => {
 

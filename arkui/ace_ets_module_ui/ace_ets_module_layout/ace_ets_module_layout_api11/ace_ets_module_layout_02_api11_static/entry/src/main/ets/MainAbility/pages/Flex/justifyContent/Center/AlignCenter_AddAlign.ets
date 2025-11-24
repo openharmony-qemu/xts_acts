@@ -30,6 +30,7 @@ import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute,
 import {
   State,
   
+
   AppStorage
 } from '@ohos.arkui.stateManagement'
 import { Router } from '@ohos.arkui.UIContext';
@@ -37,16 +38,12 @@ import { Router } from '@ohos.arkui.UIContext';
 @Component
 struct AlignCenter_AddAlign {
   @State DadAddAlign: number = 0;
-  messageManager: MessageManager<number> = new MessageManager<number>();
+  messageManager: MessageManager<Alignment> = new MessageManager<Alignment>();
 
   onPageShow() {
     console.info('AlignCenter_AddAlign onPageShow');
-    
-    
-    
-    
-    AppStorage.setOrCreate<MessageManager<number>>("messageManager",  this.messageManager);
-    let callback: Callback<number> = (message: Message<number>) => {
+    AppStorage.setOrCreate<MessageManager<Alignment>>("messageManager",  this.messageManager);
+    let callback: Callback<Alignment> = (message: Message<Alignment>) => {
       console.log('message = ' + message.name + "--" + message.value);
       if (message.name == 'DadAddAlign') {
         this.DadAddAlign = message.value;

@@ -60,21 +60,19 @@ build() {
       }.margin({bottom: 10} as Margin)
 
       Button('get linebreak attributeValue').onClick((e: ClickEvent) => {
-        let spanParagraphs = this.controller.getParagraphs({ start: -1, end: -1 })
+        let spanParagraphs = this.controller!.getParagraphs({ start: -1, end: -1 })
         console.log('RichEditor getParagraphs:' + JSON.stringify(spanParagraphs))
-        if (spanParagraphs !== undefined) {
-          spanParagraphs.forEach(item => {
-            if(typeof(item as RichEditorParagraphResult)?.style!= 'undefined'){
-              this.attributeValue = ''
-              console.info('lineBreakStrategy:'+ `${(item as RichEditorParagraphResult).style.lineBreakStrategy}`)
-              this.attributeValue += this.lineBreakOptionStr[Number(`${(item as RichEditorParagraphResult).style.lineBreakStrategy}`) as int];
-            }
-          })
-        }
+        spanParagraphs!.forEach(item => {
+          if(typeof(item as RichEditorParagraphResult)?.style!= 'undefined'){
+            this.attributeValue = ''
+            console.info('lineBreakStrategy:'+ `${(item as RichEditorParagraphResult).style.lineBreakStrategy}`)
+            this.attributeValue += this.lineBreakOptionStr[Number(`${(item as RichEditorParagraphResult).style.lineBreakStrategy}`) as int];
+          }
+        })
       }).id('getAttr')
 
       Button('updateParagraphStyle').onClick((e: ClickEvent) => {
-        this.controller.updateParagraphStyle({ start: -1, end: -1,
+        this.controller!.updateParagraphStyle({ start: -1, end: -1,
           style: {
             textAlign: TextAlign.Center,
           }
@@ -82,7 +80,7 @@ build() {
       }).id('updateParagraphStyle')
 
       Button('updateQuality').onClick((e: ClickEvent) => {
-        this.controller.updateParagraphStyle({ start: -1, end: -1,
+        this.controller!.updateParagraphStyle({ start: -1, end: -1,
           style: {
             lineBreakStrategy: LineBreakStrategy.HIGH_QUALITY,
           }
@@ -90,7 +88,7 @@ build() {
       }).id('updateQuality')
 
       Button('update -1').onClick((e: ClickEvent) => {
-        this.controller.updateParagraphStyle({ start: -1, end: -1,
+        this.controller!.updateParagraphStyle({ start: -1, end: -1,
           style: {
             // lineBreakStrategy: -1,
           }
@@ -103,7 +101,7 @@ build() {
         .borderColor(Color.Red)
         .width(300)
         .onReady((): void => {
-          this.controller.addTextSpan('0123456789,0123456789,0123456789,0123456789,0123456789.',
+          this.controller!.addTextSpan('0123456789,0123456789,0123456789,0123456789,0123456789.',
             {
               style:
               {

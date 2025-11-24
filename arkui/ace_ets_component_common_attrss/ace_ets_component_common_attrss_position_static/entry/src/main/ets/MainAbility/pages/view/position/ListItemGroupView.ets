@@ -33,7 +33,7 @@ import { Link } from '@ohos.arkui.stateManagement';
 
 @Component
 export struct ListItemGroupView {
-  @Link _position!: Position;
+  private _position: Position = { x: 0, y:0} as Position;
   private componentKey: string = '';
   private parentWidth: number = 0;
   private parentHeight: number = 0;
@@ -45,7 +45,7 @@ export struct ListItemGroupView {
   itemHead(text: string) {
     Text(text)
       .fontSize(20)
-      .backgroundColor(0xAABBCC)
+      .backgroundColor('0xAABBCC')
       .width('100%')
       .padding(10)
   }
@@ -54,7 +54,7 @@ export struct ListItemGroupView {
   itemFoot(num: number) {
     Text('total:' + num)
       .fontSize(16)
-      .backgroundColor(0xAABBCC)
+      .backgroundColor('0xAABBCC')
       .width('100%')
       .padding(5)
   }
@@ -66,16 +66,12 @@ export struct ListItemGroupView {
       .height(100)
       .fontSize(20)
       .textAlign(TextAlign.Center)
-      .backgroundColor(0xFFFFFF)
+      .backgroundColor('0xFFFFFF')
   }
 
   build() {
     List({ space: 20 }) {
-      ListItemGroup({ header: ()=>{
-      this.itemHead('Group1')
-      }, footer: ()=>{
-      this.itemFoot(this.projects.length)
-      } } as ListItemGroupOptions) {
+      ListItemGroup({ header:()=>{this.itemHead('Group1')} , footer:()=>{this.itemFoot(this.projects.length)}  } as ListItemGroupOptions) {
         ForEach(this.projects, (project: string) => {
           ListItem() {
             this.content(project)
@@ -87,11 +83,7 @@ export struct ListItemGroupView {
       .key(this.componentKey)
       .divider({ strokeWidth: 1, color: Color.Blue })
 
-      ListItemGroup({ header: ()=>{
-      this.itemHead('Group2')
-      }, footer: ()=>{
-      this.itemFoot(this.projects.length)
-      } } as ListItemGroupOptions) {
+      ListItemGroup({ header:()=>{this.itemHead('Group2')} , footer:()=>{this.itemFoot(this.projects.length)} } as ListItemGroupOptions) {
         ForEach(this.projects, (project: string) => {
           ListItem() {
             this.content(project)

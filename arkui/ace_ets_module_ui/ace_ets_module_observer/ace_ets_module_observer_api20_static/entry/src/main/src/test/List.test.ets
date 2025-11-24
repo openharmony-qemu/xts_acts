@@ -17,6 +17,6 @@ import axisVertical from './observerTest/axisVertical.test'
 
 
 export default function testsuite() {
-  axisHorizontal()
-  axisVertical()
+  axisHorizontal() //API20接口：SR20250421173488
+  // axisVertical() //API20接口：SR20250421173488
 }

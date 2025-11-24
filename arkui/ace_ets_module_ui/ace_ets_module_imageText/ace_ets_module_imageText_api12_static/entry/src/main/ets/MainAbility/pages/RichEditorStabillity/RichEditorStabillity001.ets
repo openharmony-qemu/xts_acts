@@ -51,7 +51,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 struct RichEditorStabillity001 {
   controller: RichEditorController = new RichEditorController();
   options: RichEditorOptions = { controller: this.controller } as RichEditorOptions;
-  @State pointPosition: number = -1;
+  @State pointPosition: int = -1;
 
 build() {
     Column() {
@@ -59,11 +59,8 @@ build() {
       Column() {
         Text('' + this.pointPosition).id('pointPosition');
         Button('get Point Position').onClick((e: ClickEvent) => {
-          let caretOffset = this.controller.getCaretOffset();
-          if (caretOffset !== undefined) {
-            this.pointPosition = caretOffset;
-            console.log('this.pointPosition:' + this.pointPosition);
-          }
+          this.pointPosition = this.controller!.getCaretOffset() as int;
+          console.log('this.pointPosition:' + this.pointPosition);
         }).id('getPosition')
       }
       .borderWidth(1)
@@ -75,7 +72,7 @@ build() {
         RichEditor(this.options)
           .onReady((): void => {
             for (let i = 0; i < 50; i++) {
-              this.controller.addTextSpan('12',
+              this.controller!.addTextSpan('12',
                 {
                   style:
                   {

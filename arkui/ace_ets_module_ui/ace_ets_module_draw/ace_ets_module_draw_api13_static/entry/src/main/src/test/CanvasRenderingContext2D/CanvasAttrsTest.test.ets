@@ -25,7 +25,6 @@ export default function CanvasAttrsTest() {
   describe('CanvasAttrsTest', () => {
     beforeAll(() => {
       console.info("CanvasAttrsTest beforeAll start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.drawAPI13.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
@@ -40,13 +39,13 @@ export default function CanvasAttrsTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get CanvasAttrsTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("CanvasAttrsTest" == pages.name)) {
           console.info("get CanvasAttrsTest pages.name:" + JSON.stringify(pages.name));
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push CanvasAttrsTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push CanvasAttrsTest page error:" + err);
@@ -57,13 +56,14 @@ export default function CanvasAttrsTest() {
     
     
 
+
 /*
      * @tc.number   CanvasAttrsTest_static_0100
      * @tc.name     CanvasAttrsTest_static_0100
      * @tc.desc     CanvasAttrsTest_static_0100
      * @tc.level    Level.LEVEL2
      */
-it('CanvasAttrsTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('CanvasAttrsTest_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('CanvasAttrsTest_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
@@ -73,25 +73,27 @@ it('CanvasAttrsTest_static_0100', Level.LEVEL2, async (done: () => void): Promis
       console.info("[CanvasAttrsTest_0100] content is: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('Canvas is fully visible.');
 
-      
+      // 
       let button = await driver.findComponent(ON.id('swipe_bottom'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
 
       strJson = inspector.getInspectorByKey('show_content');
+      await CommonFunc.sleep(1000);
       obj = JSON.parseJsonElement(strJson);
       console.info("[CanvasAttrsTest_0100] content is: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('Canvas is completely invisible.');
 
-      
+      // 
       button = await driver.findComponent(ON.id('swipe_top'));
       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
 
       strJson = inspector.getInspectorByKey('show_content');
+      await CommonFunc.sleep(1000);
       obj = JSON.parseJsonElement(strJson);
       console.info("[CanvasAttrsTest_0100] content is: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('Canvas is fully visible.');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('Canvas is fully visible.');   // 断言失败
 
       console.info('[CanvasAttrsTest_0100] END');
       done();

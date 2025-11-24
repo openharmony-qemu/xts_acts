@@ -38,7 +38,7 @@ struct TimePickerExample {
         .useMilitaryTime(false)
         .onChange((value: TimePickerResult) => {
           if (value.hour) {
-            this.selectedTime1.setHours(value.hour.toInt(), value.minute.toInt())
+            this.selectedTime1.setHours(value.hour, value.minute)
             console.info('select current date is: ' + JSON.stringify(value))
           }
         })

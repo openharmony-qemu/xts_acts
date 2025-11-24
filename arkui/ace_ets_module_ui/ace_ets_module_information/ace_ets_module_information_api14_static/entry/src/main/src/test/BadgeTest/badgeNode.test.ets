@@ -75,9 +75,9 @@ it('badgeNode_static_0100', Level.LEVEL2, async (done: () => void): Promise<void
 
       let tagName = 'badgeNode0100';
       console.info('[' + tagName + '] START============================');
-      let strJsonNew = inspector.getInspectorByKey('key_ badge_001');
-      console.info('[' + tagName + '] Search is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$type')));
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$type')).assertEqual("Badge");
+      let strJsonNew = inspector.getInspectorByKey('key_badge_001');
+      console.info('[' + tagName + '] Search is: ' + JSON.stringify(JSON.parseJsonElement(strJsonNew).getString('$type')));
+      expect(JSON.parseJsonElement(strJsonNew).getString('$type')).assertEqual("Badge");
       console.info('[' + tagName + '] END ===========================');
       done();
     });

@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
 import router from '@ohos.router';
-import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -65,12 +65,13 @@ export default function shortcutKeyJsunit() {
       }
     });
 
-    
-    /*
-     * @tc.number   ArkUI_Shortcut_Key_static_0100
-     * @tc.name     ArkUI_Shortcut_Key_static_0100
-     * @tc.desc     ArkUI_Shortcut_Key_static_0100
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ArkUI_Shortcut_Key_static_0100
+     * @tc.name ArkUI_Shortcut_Key_static_0100
+     * @tc.desc Set shortcut values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ArkUI_Shortcut_Key_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let CASE = 'ArkUI_Shortcut_Key_static_0100'

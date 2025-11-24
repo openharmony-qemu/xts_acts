@@ -4,7 +4,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http:
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -54,15 +54,12 @@ export default function waterFlowDemoJsunit() {
         console.info("get waterflowDemo state pages:" + "");
         if (!("waterflowDemo" == pages.name)) {
           console.info("get waterflowDemo pages.name:" + "");
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push waterflowDemo page error: " + err);
       }
-      
     });
 
     afterEach(async () => {

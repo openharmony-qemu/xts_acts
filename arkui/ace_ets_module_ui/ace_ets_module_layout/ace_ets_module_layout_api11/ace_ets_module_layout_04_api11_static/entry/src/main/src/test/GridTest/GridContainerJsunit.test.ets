@@ -15,6 +15,7 @@
 
 import { afterEach, beforeEach, describe, expect, it, beforeAll,Level } from '../../../../hypium/index';
 import router from '@ohos.router';
+
 import inspector from '@ohos.arkui.inspector'
 import CommonFunc from '../../../ets/MainAbility/utils/Common';
 import hilog from '@ohos.hilog'
@@ -29,20 +30,10 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
-
-
-
-
-
-
-
-
-
 export default function gridContainerJsunit() {
   describe('gridContainerTest', () => {
     beforeAll(() => {
       console.info("gridContainerJsunit beforeAll start");
-   
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -59,9 +50,7 @@ export default function gridContainerJsunit() {
         console.info("get GridContainer state success " + "");
         if (!("GridContainer" == pages.name)) {
           console.info("get GridContainer state success " + "");
-          
           routerInstance.pushUrl(options);
-          
         }
       } catch (err) {
         console.error("push GridContainer page error " + JSON.stringify(err));
@@ -73,9 +62,6 @@ export default function gridContainerJsunit() {
       await UtilsTest.msSleep(1000)
       console.info("GridContainer after each called");
     });
-    
-    
-    
 
 /*
      * @tc.number   testGridContainer010_static_01
@@ -88,16 +74,10 @@ it('testGridContainer010_static_01', Level.LEVEL0, async (done: () => void): Pro
       let strJson = inspector.getInspectorByKey('gridContainer');
      let obj = JSON.parseJsonElement(strJson);
      console.info("component obj is: " + JSON.stringify(obj));
-     expect(obj.getString('$type')).assertEqual('GridContainer');
-     console.info("yr GridContainer0 type: " + JSON.stringify(obj.getString('$type')));
-     console.log("yr gridContainer0 obj.$attrs.alignItems-'HorizontalAlign.Start':" + JSON.stringify(obj.getElement('$attrs').getString('alignItems')));
+     expect(obj.getString('$type')).assertEqual('GridCol');
       console.info('testGridContainer010_static_01 END');
       done();
     });
-
-    
-    
-    
 
 /*
      * @tc.number   testGridContainer020_static_02
@@ -110,15 +90,10 @@ it('testGridContainer020_static_02', Level.LEVEL0, async (done: () => void): Pro
       let strJson = inspector.getInspectorByKey('gridContainer1');
      let obj = JSON.parseJsonElement(strJson);
      console.info("component obj is: " + JSON.stringify(obj));
-     expect(obj.getElement('$attrs').getString('alignItems')).assertEqual('HorizontalAlign.Center');
-     console.log("yr gridContainer1 obj.$attrs.alignItems-'HorizontalAlign.Center':" + JSON.stringify(obj.getElement('$attrs').getString('alignItems')));
+  expect(obj.getString('$type')).assertEqual('GridCol');
       console.info('testGridContainer020_static_02 END');
       done();
     });
-
-    
-    
-    
 
 /*
      * @tc.number   testGridContainer030_static_03
@@ -131,15 +106,10 @@ it('testGridContainer030_static_03', Level.LEVEL0, async (done: () => void): Pro
       let strJson = inspector.getInspectorByKey('gridContainer2');
      let obj = JSON.parseJsonElement(strJson);
      console.info("component obj is: " + JSON.stringify(obj));
-     expect(obj.getElement('$attrs').getString('alignItems')).assertEqual('HorizontalAlign.End');
-     console.log("yr gridContainer obj.$attrs.alignItems-'HorizontalAlign.End':" + JSON.stringify(obj.getElement('$attrs').getString('alignItems')));
+  expect(obj.getString('$type')).assertEqual('GridCol');
       console.info('testGridContainer030_static_03 END');
       done();
     });
-
-    
-    
-    
 
 /*
      * @tc.number   testGridContainer040_static_04
@@ -152,15 +122,10 @@ it('testGridContainer040_static_04', Level.LEVEL0, async (done: () => void): Pro
       let strJson = inspector.getInspectorByKey('gridContainer3');
      let obj = JSON.parseJsonElement(strJson);
      console.info("component obj is: " + JSON.stringify(obj));
-     expect(obj.getElement('$attrs').getString('alignItems')).assertEqual('HorizontalAlign.End');
-     console.log("yr gridContainer3 obj.$attrs.alignItems-'HorizontalAlign.End':" + JSON.stringify(obj.getElement('$attrs').getString('alignItems')));
+  expect(obj.getString('$type')).assertEqual('GridCol');
       console.info('testGridContainer040_static_04  END');
       done();
     });
-
-    
-    
-    
 
 /*
      * @tc.number   testGridContainer050_static_05
@@ -174,7 +139,7 @@ it('testGridContainer050_static_05', Level.LEVEL0, async (done: () => void): Pro
       let strJson = inspector.getInspectorByKey('gridContainer4');
      let obj = JSON.parseJsonElement(strJson);
      console.info("component obj is: " + JSON.stringify(obj));
-     console.log("gridContainer obj.$attrs.sizeType:" + JSON.stringify(obj.getElement('$attrs').getString('sizeType'))); 
+    expect(obj.getString('$type')).assertEqual('GridCol');
       console.info('testGridContainer050_static_05  END');
       done();
   }

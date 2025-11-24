@@ -21,14 +21,14 @@ import {
 import {
   State,
   Link,
-  PropRef,Provide
+  Prop,Provide
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct NavigationStack19 {
   private arr: number[] = new Array<number>(1, 2,3)
-  // @Provide('pageInfos') pageInfos: NavPathStack = new NavPathStack()
+  @Provide pageInfos: NavPathStack = new NavPathStack()
   @State bool: boolean = false
   @State text: string = 'start'
   @State flagBlur: string = 'BlurStart'
@@ -36,56 +36,56 @@ struct NavigationStack19 {
   build() {
     Scroll() {
       Column(){
-        // Navigation(this.pageInfos) {
+        Navigation(this.pageInfos) {
           Column() {
             List({space:12}){
               ForEach(this.arr, (item: number) => {
                 ListItem() {
-                  // NavRouter(){
-                  //   Text("NavRouter" + item).key(`NavigationStack19ListItemText${item}`)
-                  //     .width('100%')
-                  //     .height(60)
-                  //     .backgroundColor('#FFFFFF')
-                  //     .borderRadius(24)
-                  //     .fontSize(16)
-                  //     .fontWeight(1000)
-                  //     .textAlign(TextAlign.Center)
-                  //   NavDestination() {
-                  //     Text(`${this.text+item}`).key('NavigationStack19TextCont')
-                  //     Button('button').key('NavigationStack19ButtonContent')
-                  //       .onClick((e: ClickEvent) => {
-                  //         this.text = 'clicked'
-                  //       })
-                  //   }.key('NavigationStack19NavDestination')
-                  //   .onBlur(()=>{
-                  //     this.flagBlur = 'BlurDone'
-                  //   })
-                  //   .onFocus(()=>{
-                  //     this.flagFocus = 'FocusDone'
-                  //   })
-                  //   .backgroundColor(Color.Orange)
-                  //   .title("NavDestinationTitle"+ item)
-                  // }
+                  Column(){
+                    Text("NavRouter" + item).key(`NavigationStack19ListItemText${item}`)
+                      .width('100%')
+                      .height(60)
+                      .backgroundColor('#FFFFFF')
+                      .borderRadius(24)
+                      .fontSize(16)
+                      .fontWeight(1000)
+                      .textAlign(TextAlign.Center)
+                    NavDestination() {
+                      Text(`${this.text+item}`).key('NavigationStack19TextCont')
+                      Button('button').key('NavigationStack19ButtonContent')
+                        .onClick((e: ClickEvent) => {
+                          this.text = 'clicked'
+                        })
+                    }.key('NavigationStack19NavDestination')
+                    .onBlur(()=>{
+                      this.flagBlur = 'BlurDone'
+                    })
+                    .onFocus(()=>{
+                      this.flagFocus = 'FocusDone'
+                    })
+                    .backgroundColor(Color.Orange)
+                    .title("NavDestinationTitle"+ item)
+                  }
                 }.key(`NavigationStack19ListItem${item}`)
               },(item: number) => String(item))
             }
             .width('100%')
             .margin({top:12} as Margin)
           }
-        // }
-        // .key('NavigationStack19Navigation')
-        // .height('60%')
-        // .title('NavIndex')
-        // .titleMode(NavigationTitleMode.Mini)
-        // .mode(NavigationMode.Split)
-        // .hideNavBar(this.bool)
-        // .navBarWidth('40%')
-        // .minContentWidth('40%')
-        // .navBarWidthRange(['30%','50%'])
-        // .border({width: 1})
-        // .height('70%')
-        // .width('100%')
-        // .backgroundColor(Color.Pink)
+        }
+        .key('NavigationStack19Navigation')
+        .height('60%')
+        .title('NavIndex')
+        .titleMode(NavigationTitleMode.Mini)
+        .mode(NavigationMode.Split)
+        .hideNavBar(this.bool)
+        .navBarWidth('40%')
+        .minContentWidth('40%')
+        .navBarWidthRange(['30%','50%'])
+        .border({width: 1})
+        .height('70%')
+        .width('100%')
+        .backgroundColor(Color.Pink)
         Text(this.flagBlur).key('NavigationStack19Blur').fontWeight(700)
         Text(this.flagFocus).key('NavigationStack19Focus').fontWeight(700)
         Button('隐藏导航栏')

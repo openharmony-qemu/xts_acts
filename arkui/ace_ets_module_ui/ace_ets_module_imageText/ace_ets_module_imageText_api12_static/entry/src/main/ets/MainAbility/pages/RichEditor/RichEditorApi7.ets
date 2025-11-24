@@ -59,13 +59,13 @@ build() {
 
       RichEditor({ controller: this.controller } as RichEditorOptions)
         .onReady((): void => {
-          this.controller.addTextSpan('testWord',{
+          this.controller!.addTextSpan('testWord',{
             style:{
               fontColor:Color.Orange,
               fontSize:30
             }
           })
-          this.controller.deleteSpans({
+          this.controller!.deleteSpans({
             start:0,
             end:1
           })

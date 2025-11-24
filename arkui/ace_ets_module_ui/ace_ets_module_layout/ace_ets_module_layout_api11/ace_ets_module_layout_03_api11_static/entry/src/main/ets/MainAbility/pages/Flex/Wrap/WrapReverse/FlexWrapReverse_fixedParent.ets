@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,7 +16,7 @@
 
 
 import { MessageManager, Callback, Message } from '../../../../common/MessageManager';
-import { Entry, Component, Column,ColumnOptions,Text,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign,Margin } from '@ohos.arkui.component';
+import { Entry, Component, Column,ColumnOptions,Color,Text,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign,Margin } from '@ohos.arkui.component';
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 
 @Entry
@@ -28,11 +28,6 @@ struct FlexWrapReverse_fixedParent {
 
   onPageShow() {
     console.info('FlexWrapReverse_fixedParent page show called');
-    
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<number>>("messageManager",  this.messageManager);
     let callback: Callback<number> = (message: Message<number>) => {
       console.log('message = ' + message.name + "--" + message.value);
@@ -49,16 +44,16 @@ struct FlexWrapReverse_fixedParent {
 
   build() {
     Column() {
-      Text('Wrap:WrapReverseTest8').fontSize(9).fontColor(0xCCCCCC).width('90%')
+      Text('Wrap:WrapReverseTest8').fontSize(9).fontColor(Color.Red).width('90%')
       Flex({ direction: FlexDirection.Row, wrap: FlexWrap.WrapReverse }  as FlexOptions) {
-        Text('1').width(this.testWidth).height(50).backgroundColor(0xF5DEB3).key('WrapReverseTest22')
-        Text('2').width(this.testWidth).height(100).backgroundColor(0xD2B48C).key('WrapReverseTest23')
-        Text('3').width(this.testWidth).height(150).backgroundColor(0xffa500).key('WrapReverseTest24')
+        Text('1').width(this.testWidth).height(50).backgroundColor(Color.Red).key('WrapReverseTest22')
+        Text('2').width(this.testWidth).height(100).backgroundColor(Color.Red).key('WrapReverseTest23')
+        Text('3').width(this.testWidth).height(150).backgroundColor(Color.Red).key('WrapReverseTest24')
       }
       .key('FlexWrapReverseTest8')
       .height(300)
       .width(500)
-      .backgroundColor(0xAFEEEE)
+      .backgroundColor(Color.Red)
     }.width('100%')
   }
 }

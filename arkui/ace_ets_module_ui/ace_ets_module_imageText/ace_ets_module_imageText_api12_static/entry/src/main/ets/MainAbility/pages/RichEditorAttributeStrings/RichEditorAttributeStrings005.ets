@@ -90,12 +90,10 @@ build() {
     Column() {
 
       Button('fromStyledString').onClick((e: ClickEvent) => {
-        let array = this.controller.fromStyledString(this.mutableStyledString);
-        if (array !== undefined) {
-          array.forEach(item => {
-            this.spans = (item as RichEditorTextSpanResult).value;
-          })
-        }
+        let array = this.controller!.fromStyledString(this.mutableStyledString);
+        array!.forEach(item => {
+          this.spans = (item as RichEditorTextSpanResult).value;
+        })
       }).id('fromStyledString')
 
       Button('image fromStyledString').onClick((e: ClickEvent) => {
@@ -107,27 +105,26 @@ build() {
             verticalAlign: ImageSpanAlignment.TOP,
             objectFit: ImageFit.Contain
           } as ImageAttachmentInterface))
-          let array = this.controller.fromStyledString(imageStyledString);
-          if (array !== undefined) {
-            array.forEach(item => {
-              if (typeof (item as RichEditorImageSpanResult).imageStyle != 'undefined') {
-                this.imageSpan = 'imageSpan index:' + (item as RichEditorImageSpanResult).spanPosition.spanIndex + ', range: ' +
-                (item as RichEditorImageSpanResult).offsetInSpan[0] + ', ' + (item as RichEditorImageSpanResult).offsetInSpan[1] + ', size : ' +
-                (item as RichEditorImageSpanResult).imageStyle.size[0] + ', ' + (item as RichEditorImageSpanResult).imageStyle.size[1];
-              }
-            })
-          }
+          let array = this.controller!.fromStyledString(imageStyledString);
+          array!.forEach(item => {
+            if (typeof (item as RichEditorImageSpanResult).imageStyle != 'undefined') {
+              this.imageSpan = 'imageSpan index:' + (item as RichEditorImageSpanResult).spanPosition.spanIndex + ', range: ' +
+              (item as RichEditorImageSpanResult).offsetInSpan[0] + ', ' + (item as RichEditorImageSpanResult).offsetInSpan[1] + ', size : ' +
+              (item as RichEditorImageSpanResult).imageStyle.size[0] + ', ' + (item as RichEditorImageSpanResult).imageStyle.size[1];
+            }
+          })
         }
       }).id('imageFromStyledString')
 
       Button('cusFromStyledString').onClick((e: ClickEvent) => {
-        let array = this.controller.fromStyledString(this.styleStr);
+        console.log('styleStrstyleStr',JSON.stringify(this.styleStr))
+        let array = this.controller!.fromStyledString(this.styleStr);
         this.spans = JSON.stringify(array);
       }).id('cusFromStyledString')
 
       Button('undefined fromStyledString').onClick((e: ClickEvent) => {
-        // let array = this.controller.fromStyledString(undefined);
-        // this.spans = JSON.stringify(array);
+        let array = this.controller!.fromStyledString(new MutableStyledString(''));
+        this.spans = JSON.stringify(array);
       }).id('undefinedFromStyledString')
 
       Text('spans:' + this.spans).id('spans')
@@ -135,7 +132,7 @@ build() {
 
       RichEditor(this.options as RichEditorOptions)
         .onReady((): void => {
-          this.controller.addTextSpan('0123',
+          this.controller!.addTextSpan('0123',
             {
               style:
               {

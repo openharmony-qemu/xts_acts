@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { 
+import {
   Entry, Component, Builder,NodeContainer,
   Column, ColumnOptions,
   Flex, FlexDirection, ItemAlign, FlexAlign,
@@ -22,20 +22,20 @@ import { AppStorage, State, LocalStorage } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
 import { RenderNode, FrameNode, NodeController, DrawContext } from "@ohos.arkui.node"
 import drawing from '@ohos.graphics.drawing';
-
-
+// let para: Record<string> = { 'RenderNodeDemo01': false };
+// let storage: LocalStorage = new LocalStorage(para);
 let storage: LocalStorage = new LocalStorage();
 storage.setOrCreate('RenderNodeDemo01', false);
 class MyRenderNode extends RenderNode {
   draw(context: DrawContext) {
     const canvas = context.canvas;
     const brush = new drawing.Brush();
-    
+    // brush.setColor({ alpha: 255, red: 255, green: 0, blue: 0 });
     canvas.attachBrush(brush);
     canvas.drawRect({ left: 0, right: 200, top: 0, bottom: 200 });
     canvas.detachBrush();
 
-    
+    // brush.setColor({ alpha: 255, red: 0, green: 255, blue: 0 });
     canvas.attachBrush(brush);
     canvas.drawRect({ left: 100, right: 300, top: 100, bottom: 300 });
     canvas.detachBrush();

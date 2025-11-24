@@ -58,10 +58,10 @@ export default function resourceColorErrorCodeTest() {
         console.info("get resourceColorErrorCodeTest state pages:" + JSON.stringify(pages));
         if (!("resourceColorErrorCodeTest" == pages.name)) {
           console.info("get resourceColorErrorCodeTest pages.name:" + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push resourceColorErrorCodeTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push resourceColorErrorCodeTest page error:" + err);
@@ -77,13 +77,14 @@ export default function resourceColorErrorCodeTest() {
     
     
 
+
 /*
      * @tc.number   resourceColorErrorCodeTest_static_0100
      * @tc.name     resourceColorErrorCodeTest_static_0100
      * @tc.desc     resourceColorErrorCodeTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('resourceColorErrorCodeTest_static_0100', Level.LEVEL0, async (done: () => void) => {
+    it('resourceColorErrorCodeTest_static_0100', Level.LEVEL0, async (done: () => void) => {
       console.info('resourceColorErrorCodeTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

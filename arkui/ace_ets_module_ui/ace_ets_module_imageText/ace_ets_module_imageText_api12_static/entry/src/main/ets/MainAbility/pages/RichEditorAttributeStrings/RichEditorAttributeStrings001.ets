@@ -72,28 +72,22 @@ build() {
     Column() {
 
       Button('get spans').onClick((e: ClickEvent) => {
-        let spans = this.controller1.getSpans({
+        this.controller1!.getSpans({
           start: 0,
           end: 8
-        });
-        if (spans !== undefined) {
-          spans.forEach((item): void => {
-            this.spans += (item as RichEditorTextSpanResult).value + '\n';
-          })
-        }
+        })!!.forEach((item): void => {
+          this.spans += (item as RichEditorTextSpanResult).value + '\n';
+        })
       }).id('getSpans')
 
       Button('get final Spans').onClick((e: ClickEvent) => {
         this.finalSpans = '';
-        let spans = this.controller1.getSpans({
+        this.controller1!.getSpans({
           start: 0,
           end: 16
-        });
-        if (spans !== undefined) {
-          spans.forEach((item): void => {
-            this.finalSpans += (item as RichEditorTextSpanResult).value;
-          })
-        }
+        })!!.forEach((item): void => {
+          this.finalSpans += (item as RichEditorTextSpanResult).value;
+        })
       }).id('getFinalSpans')
 
       Button('set center').onClick((e: ClickEvent) => {
@@ -110,7 +104,7 @@ build() {
 
       RichEditor(this.options)
         .onReady((): void => {
-          this.controller.setStyledString(this.mutableStyledString);
+          this.controller!.setStyledString(this.mutableStyledString);
         })
         .height(100)
         .width('100%')

@@ -63,15 +63,13 @@ export default function TextAreaTypeTest() {
 
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextAreaTypeTest_static_0010
      * @tc.name     TextAreaTypeTest_static_0010
      * @tc.desc     TextAreaTypeTest_static_0010
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextAreaTypeTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextAreaTypeTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextAreaTypeTest_0010] START');
       let strJson = inspector.getInspectorByKey('TextAreaType_NUMBER_DECIMAL');
       let obj = JSON.parseJsonElement(strJson);
@@ -82,15 +80,13 @@ it('TextAreaTypeTest_static_0010', Level.LEVEL0, async (done: () => void): Promi
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextAreaTypeTest_static_0020
      * @tc.name     TextAreaTypeTest_static_0020
      * @tc.desc     TextAreaTypeTest_static_0020
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextAreaTypeTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextAreaTypeTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextAreaTypeTest_0020] START');
       let strJson = inspector.getInspectorByKey('TextAreaType_URL');
       let obj = JSON.parseJsonElement(strJson);
@@ -101,15 +97,13 @@ it('TextAreaTypeTest_static_0020', Level.LEVEL0, async (done: () => void): Promi
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextAreaTypeTest_static_0030
      * @tc.name     TextAreaTypeTest_static_0030
      * @tc.desc     TextAreaTypeTest_static_0030
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextAreaTypeTest_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextAreaTypeTest_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextAreaTypeTest_0030] START');
       let strJson = inspector.getInspectorByKey('TextAreaType_default');
       let obj = JSON.parseJsonElement(strJson);
@@ -120,15 +114,13 @@ it('TextAreaTypeTest_static_0030', Level.LEVEL0, async (done: () => void): Promi
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextAreaTypeTest_static_0040
      * @tc.name     TextAreaTypeTest_static_0040
      * @tc.desc     TextAreaTypeTest_static_0040
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextAreaTypeTest_static_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextAreaTypeTest_static_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextAreaTypeTest_0040] START');
       let strJson = inspector.getInspectorByKey('TextAreaType_undefined');
       let obj = JSON.parseJsonElement(strJson);

@@ -15,6 +15,7 @@
 
 import { afterEach, beforeEach, describe, expect, it, beforeAll,Level } from '../../../../hypium/index';
 import router from '@ohos.router';
+
 import inspector from '@ohos.arkui.inspector'
 import CommonFunc from '../../../ets/MainAbility/utils/Common';
 import hilog from '@ohos.hilog'
@@ -30,19 +31,10 @@ let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
 
 
-
-
-
-
-
-
-
-
 export default function columnJsunit() {
   describe('columnTest', () => {
     beforeAll(() => {
       console.info("columnTest beforeAll start");
-   
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
       await UtilsTest.msSleep(4000)

@@ -45,11 +45,11 @@ export default function ResourceString() {
         console.info("get ResourceString state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get ResourceString pages.name:" + JSON.stringify(pages.name));
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
-          await CommonFunc.sleep(2000);
-          
+          await CommonFunc.sleep(5000);
+          // console.info("push ResourceString page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ResourceString page error:" + err);
@@ -59,13 +59,14 @@ export default function ResourceString() {
 
     
 
+
 /*
      * @tc.number   ResourceString_static_0100
      * @tc.name     ResourceString_static_0100
      * @tc.desc     ResourceString_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ResourceString_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ResourceString_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ResourceString_0100 START');
       let strJson = inspector.getInspectorByKey('string');
       let obj = JSON.parseJsonElement(strJson);
@@ -78,19 +79,20 @@ it('ResourceString_static_0100', Level.LEVEL0, async (done: () => void): Promise
     });
     
 
+
 /*
      * @tc.number   ResourceString_static_0200
      * @tc.name     ResourceString_static_0200
      * @tc.desc     ResourceString_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('ResourceString_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ResourceString_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ResourceString_0200 START');
       let driver = Driver.create();
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(5000);
       let button = await driver.findComponent(ON.id('ResourceString'));
       await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(5000);
       let strJson = inspector.getInspectorByKey('string');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ResourceString_0200] component obj is: " + JSON.stringify(obj));

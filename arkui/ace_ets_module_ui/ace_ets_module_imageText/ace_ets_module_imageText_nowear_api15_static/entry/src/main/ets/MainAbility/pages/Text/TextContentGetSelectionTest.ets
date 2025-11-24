@@ -32,8 +32,7 @@ import {
 } from '@ohos.arkui.component'
 
 import {
-  State,
-  
+  State
 } from '@ohos.arkui.stateManagement'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
@@ -68,16 +67,16 @@ struct TextContentGetSelectionTest {
         .id('TextInput')
       Row(){
         Button('getSelectionTextArea').onClick((e:ClickEvent)=>{
-          AppStorage.setOrCreate('TextAreaSelectionStart', this.controller1.getSelection()?.start);
-          AppStorage.setOrCreate('TextAreaSelectionEnd', this.controller1.getSelection()?.end);
+          AppStorage.setOrCreate<int|undefined>('TextAreaSelectionStart', this.controller1!.getSelection()!.start);
+          AppStorage.setOrCreate<int|undefined>('TextAreaSelectionEnd', this.controller1!.getSelection()!.end);
         }).id('getTextArea').width('30%')
         Button('getSelectionSearch').onClick((e:ClickEvent)=>{
-          AppStorage.setOrCreate('SearchSelectionStart', this.controller2.getSelection()?.start);
-          AppStorage.setOrCreate('SearchSelectionEnd', this.controller2.getSelection()?.end);
+          AppStorage.setOrCreate<int|undefined>('SearchSelectionStart', this.controller2.getSelection()!.start);
+          AppStorage.setOrCreate<int|undefined>('SearchSelectionEnd', this.controller2.getSelection()!.end);
         }).id('getSearch').width('30%')
         Button('getSelectionTextInput').onClick((e:ClickEvent)=>{
-          AppStorage.setOrCreate('TextInputSelectionStart', this.controller3.getSelection()?.start);
-          AppStorage.setOrCreate('TextInputSelectionEnd', this.controller3.getSelection()?.end);
+          AppStorage.setOrCreate<int|undefined>('TextInputSelectionStart', this.controller3.getSelection()!.start);
+          AppStorage.setOrCreate<int|undefined>('TextInputSelectionEnd', this.controller3.getSelection()!.end);
         }).id('getTextInput').width('30%')
       }.height('5%').margin({top:25} as Margin)
     }.width('100%').height('100%')

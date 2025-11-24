@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -60,13 +60,13 @@ export default function UIContextComponentSnapshot() {
     
 
     /*
-     * @tc.number   UIContextComponentSnapshot_0100
-     * @tc.name     UIContextComponentSnapshot_0100
-     * @tc.desc     UIContextComponentSnapshot_0100
+     * @tc.number   UIContextComponentSnapshot_static_0100
+     * @tc.name     UIContextComponentSnapshot_static_0100
+     * @tc.desc     UIContextComponentSnapshot_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('UIContextComponentSnapshot_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('UIContextComponentSnapshot_0100 START');
+it('UIContextComponentSnapshot_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('UIContextComponentSnapshot_static_0100 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create()
       let button = await driver.findComponent(ON.id('gPromise'));
@@ -75,21 +75,21 @@ it('UIContextComponentSnapshot_0100', Level.LEVEL0, async (done: () => void): Pr
       let strcontent = inspector.getInspectorByKey('ERRORcODE');
       let obj= JSON.parseJsonElement(strcontent);
       await CommonFunc.sleep(1000);
-      console.info('UIContextComponentSnapshot_0100 component obj is: ' + obj);
+      console.info('UIContextComponentSnapshot_static_0100 component obj is: ' + obj);
       expect(obj.getElement('$attrs').getString('content')).assertEqual('100001');
-      console.info('UIContextComponentSnapshot_0100 END')
+      console.info('UIContextComponentSnapshot_static_0100 END')
       done();
     });
     
 
     /*
-     * @tc.number   UIContextComponentSnapshot_0200
-     * @tc.name     UIContextComponentSnapshot_0200
-     * @tc.desc     UIContextComponentSnapshot_0200
+     * @tc.number   UIContextComponentSnapshot_static_0200
+     * @tc.name     UIContextComponentSnapshot_static_0200
+     * @tc.desc     UIContextComponentSnapshot_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('UIContextComponentSnapshot_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('UIContextComponentSnapshot_0200 START');
+it('UIContextComponentSnapshot_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('UIContextComponentSnapshot_static_0200 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create()
       let button = await driver.findComponent(ON.id('gPromise1'));
@@ -98,21 +98,21 @@ it('UIContextComponentSnapshot_0200', Level.LEVEL0, async (done: () => void): Pr
       let strcontent = inspector.getInspectorByKey('ERRORcODE1');
       let obj= JSON.parseJsonElement(strcontent);
       await CommonFunc.sleep(1000);
-      console.info('UIContextComponentSnapshot_0200 component obj is: ' + obj);
+      console.info('UIContextComponentSnapshot_static_0200 component obj is: ' + obj);
       expect(obj.getElement('$attrs').getString('content')).assertEqual('100001');
-      console.info('UIContextComponentSnapshot_0200 END')
+      console.info('UIContextComponentSnapshot_static_0200 END')
       done();
     });
     
 
     /*
-     * @tc.number   UIContextComponentSnapshot_0300
-     * @tc.name     UIContextComponentSnapshot_0300
-     * @tc.desc     UIContextComponentSnapshot_0300
+     * @tc.number   UIContextComponentSnapshot_static_0300
+     * @tc.name     UIContextComponentSnapshot_static_0300
+     * @tc.desc     UIContextComponentSnapshot_static_0300
      * @tc.level    Level.LEVEL0
      */
-it('UIContextComponentSnapshot_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('UIContextComponentSnapshot_0300 START');
+it('UIContextComponentSnapshot_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('UIContextComponentSnapshot_static_0300 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create()
       let button = await driver.findComponent(ON.id('gPromise2'));
@@ -121,21 +121,21 @@ it('UIContextComponentSnapshot_0300', Level.LEVEL0, async (done: () => void): Pr
       let strcontent = inspector.getInspectorByKey('ERRORcODE2');
       let obj= JSON.parseJsonElement(strcontent);
       await CommonFunc.sleep(1000);
-      console.info('UIContextComponentSnapshot_0300 component obj is: ' + obj);
+      console.info('UIContextComponentSnapshot_static_0300 component obj is: ' + obj);
       expect(obj.getElement('$attrs').getString('content')).assertEqual('100001');
-      console.info('UIContextComponentSnapshot_0300 END')
+      console.info('UIContextComponentSnapshot_static_0300 END')
       done();
     });
     
 
     /*
-     * @tc.number   UIContextComponentSnapshot_0400
-     * @tc.name     UIContextComponentSnapshot_0400
-     * @tc.desc     UIContextComponentSnapshot_0400
+     * @tc.number   UIContextComponentSnapshot_static_0400
+     * @tc.name     UIContextComponentSnapshot_static_0400
+     * @tc.desc     UIContextComponentSnapshot_static_0400
      * @tc.level    Level.LEVEL0
      */
-it('UIContextComponentSnapshot_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('UIContextComponentSnapshot_0400 START');
+it('UIContextComponentSnapshot_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('UIContextComponentSnapshot_static_0400 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create()
       let button = await driver.findComponent(ON.id('gPromise3'));
@@ -144,9 +144,9 @@ it('UIContextComponentSnapshot_0400', Level.LEVEL0, async (done: () => void): Pr
       let strcontent = inspector.getInspectorByKey('ERRORcODE3');
       let obj= JSON.parseJsonElement(strcontent);
       await CommonFunc.sleep(1000);
-      console.info('UIContextComponentSnapshot_0400 component obj is: ' + obj);
+      console.info('UIContextComponentSnapshot_static_0400 component obj is: ' + obj);
       expect(obj.getElement('$attrs').getString('content')).assertEqual('100001');
-      console.info('UIContextComponentSnapshot_0400 END')
+      console.info('UIContextComponentSnapshot_static_0400 END')
       done();
     });
   })

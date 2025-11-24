@@ -16,7 +16,6 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level } from '../../../../../../hypium/index';
 import router from '@ohos.router';
 import { Router } from '@ohos.arkui.UIContext';
-
 import RectValue from '../../../../../ets/MainAbility/common/Rect';
 import CommonFunc from '../../../../../ets/MainAbility/common/Common';
 import { UIContext } from "@ohos.arkui.UIContext";
@@ -39,7 +38,6 @@ export default function AlignContent_FlexAlign_SpaceEvenly_Margin_padding() {
   describe('AlignContent_FlexAlign_SpaceEvenly_Margin_padding', () => {
     beforeAll(() => {
       console.info("AlignContent_FlexAlign_SpaceEvenly_Margin_padding beforeEach start");
-      
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -56,11 +54,8 @@ export default function AlignContent_FlexAlign_SpaceEvenly_Margin_padding() {
         console.info("get AlignContent_FlexAlign_SpaceEvenly_Margin_padding state pages:" + JSON.stringify(pages));
         if (!("AlignContent_FlexAlign_SpaceEvenly_Margin_padding" == pages.name)) {
           console.info("get AlignContent_FlexAlign_SpaceEvenly_Margin_padding pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push AlignContent_FlexAlign_SpaceEvenly_Margin_padding page error:" + err);
@@ -113,29 +108,29 @@ it('testAlignContentSpaceEvenlyFlexMarginAndPaddingNOSatisfy_static', Level.LEVE
       JSON.stringify(AlignContentFlexSpaceEvenly_3));
       console.log('AlignContentFlexSpaceEvenlyMargin&padding_flex001_4 rect_value is:' +
       JSON.stringify(AlignContentFlexSpaceEvenly_4));
-      const uiContext = new UIContext();
-      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_1.bottom - AlignContentFlexSpaceEvenly_1.top) - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
+
+      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_1.bottom - AlignContentFlexSpaceEvenly_1.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_2.bottom - AlignContentFlexSpaceEvenly_2.top) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_2.bottom - AlignContentFlexSpaceEvenly_2.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_3.bottom - AlignContentFlexSpaceEvenly_3.top) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_3.bottom - AlignContentFlexSpaceEvenly_3.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_4.bottom - AlignContentFlexSpaceEvenly_4.top) - UIContext.getFocusedUIContext()!.vp2px(200))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_4.bottom - AlignContentFlexSpaceEvenly_4.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_1.right - AlignContentFlexSpaceEvenly_1.left) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_1.right - AlignContentFlexSpaceEvenly_1.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_2.right - AlignContentFlexSpaceEvenly_2.left) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_2.right - AlignContentFlexSpaceEvenly_2.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_3.right - AlignContentFlexSpaceEvenly_3.left) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_3.right - AlignContentFlexSpaceEvenly_3.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_4.right - AlignContentFlexSpaceEvenly_4.left) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_4.right - AlignContentFlexSpaceEvenly_4.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_flex001.top - SpaceEvenly_Margin_Column_1.top) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_flex001.top - SpaceEvenly_Margin_Column_1.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_1.top - SpaceEvenly_Margin_Column_1.top) - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_1.top - SpaceEvenly_Margin_Column_1.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))) <= 1)
         .assertTrue();
       expect(Math.floor(Math.abs(AlignContentFlexSpaceEvenly_4.top - AlignContentFlexSpaceEvenly_2.bottom)) <= 1).assertTrue();
-      expect(AlignContentFlexSpaceEvenly_flex001.bottom - AlignContentFlexSpaceEvenly_4.bottom).assertLess(UIContext.getFocusedUIContext()!.vp2px(40));
+      expect(AlignContentFlexSpaceEvenly_flex001.bottom - AlignContentFlexSpaceEvenly_4.bottom).assertLess(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(40)));
 
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual("FlexDirection.Row");
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('alignContent')).assertEqual("FlexAlign.SpaceEvenly");
@@ -184,37 +179,37 @@ it('testAlignContentSpaceEvenlyFlexMarginAndPaddingSatisfy_static', Level.LEVEL0
       JSON.stringify(AlignContentFlexSpaceEvenly_3));
       console.log('AlignContentFlexSpaceEvenlyMargin&padding_flex001_4 rect_value is:' +
       JSON.stringify(AlignContentFlexSpaceEvenly_4));
-      const uiContext = new UIContext();
-      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_1.bottom - AlignContentFlexSpaceEvenly_1.top) - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
+
+      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_1.bottom - AlignContentFlexSpaceEvenly_1.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_2.bottom - AlignContentFlexSpaceEvenly_2.top) - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_2.bottom - AlignContentFlexSpaceEvenly_2.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_3.bottom - AlignContentFlexSpaceEvenly_3.top) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_3.bottom - AlignContentFlexSpaceEvenly_3.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_4.bottom - AlignContentFlexSpaceEvenly_4.top) - UIContext.getFocusedUIContext()!.vp2px(200))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_4.bottom - AlignContentFlexSpaceEvenly_4.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(200)))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_1.right - AlignContentFlexSpaceEvenly_1.left) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_1.right - AlignContentFlexSpaceEvenly_1.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_2.right - AlignContentFlexSpaceEvenly_2.left) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_2.right - AlignContentFlexSpaceEvenly_2.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_3.right - AlignContentFlexSpaceEvenly_3.left) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_3.right - AlignContentFlexSpaceEvenly_3.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_4.right - AlignContentFlexSpaceEvenly_4.left) - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_4.right - AlignContentFlexSpaceEvenly_4.left) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1)
         .assertTrue();
 
 
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual("FlexDirection.Row");
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getElement('constructor').getString('alignContent')).assertEqual("FlexAlign.SpaceEvenly");
 
-      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_flex002.top - SpaceEvenly_Margin_Column_2.top) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_flex002.top - SpaceEvenly_Margin_Column_2.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_1.top - SpaceEvenly_Margin_Column_2.top) - UIContext.getFocusedUIContext()!.vp2px(35))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_1.top - SpaceEvenly_Margin_Column_2.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(35)))) <= 1)
         .assertTrue();
       expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_flex002.bottom - AlignContentFlexSpaceEvenly_4.bottom) - (AlignContentFlexSpaceEvenly_2.top - AlignContentFlexSpaceEvenly_flex002.top))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_4.top - AlignContentFlexSpaceEvenly_2.bottom) - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_4.top - AlignContentFlexSpaceEvenly_2.bottom) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))) <= 1)
         .assertTrue();
-      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_1.top - AlignContentFlexSpaceEvenly_flex002.top) - UIContext.getFocusedUIContext()!.vp2px(25))) <= 1)
+      expect(Math.floor(Math.abs((AlignContentFlexSpaceEvenly_1.top - AlignContentFlexSpaceEvenly_flex002.top) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(25)))) <= 1)
         .assertTrue();
 
       console.info('testAlignContentSpaceEvenlyFlexMarginAndPaddingSatisfy END')

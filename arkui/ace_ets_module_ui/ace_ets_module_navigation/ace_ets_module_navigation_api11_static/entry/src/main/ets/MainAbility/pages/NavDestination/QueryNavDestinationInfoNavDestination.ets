@@ -12,66 +12,120 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,NavPathStack,Component,$r,ResourceStr,Builder,List,ListItem,Resource,NavigationTitleMode,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
-  State,
-  Link,
-  PropRef,Provide
-} from '@ohos.arkui.stateManagement';
-import {MessageManager,Callback,Message} from '../../common/MessageManager';
+  Entry,
+  NavPathStack,
+  Component,
+  $r,
+  ResourceStr,
+  Builder,
+  List,
+  ListItem,
+  Resource,
+  NavigationTitleMode,
+  NavigationMode,
+  Column,
+  Navigation,
+  ButtonType,
+  NavDestination,
+  Stack,
+  ColumnOptions,
+  Position,
+  EffectType,
+  EffectComponent,
+  Text,
+  Color,
+  Flex,
+  FlexDirection,
+  ItemAlign,
+  Row,
+  Button,
+  ClickEvent,
+  Week,
+  FontWeight,
+  Axis,
+  Margin,
+  Swiper,
+  ForEach,
+  PickerTextStyle,
+  CalendarAlign,
+  Date,
+  CalendarPicker,
+  EdgeEffect,
+  Curve,
+  SwiperDisplayMode,
+  ArrowPosition,
+  Select,
+  BlurStyle,
+  MenuAlignType,
+  TextInputController,
+  TextAlign,
+  AlphabetIndexer
+} from '@ohos.arkui.component';
+import { State, Link, Prop, Provide } from '@ohos.arkui.stateManagement';
+import { MessageManager, Callback, Message } from '../../common/MessageManager';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import observer from '@ohos.arkui.observer'
 let tt : string|Resource|ResourceStr = 'TTTTTT'
-
 @Entry
 @Component
 struct QueryNavDestinationInfoNavDestination {
   @State isActiveWLAN: boolean = false
   @State isActiveBluetooth: boolean = false
-  @State tState: string|Resource|ResourceStr = 'YYYYY'
+  @State tState: string | Resource | ResourceStr = 'YYYYY'
+  pageInfos: NavPathStack = new NavPathStack()
   // 可删
-  aboutToAppear() {
-    observer.onNavDestinationUpdate((info) => {
-      this.tState = info !== undefined ? JSON.stringify(info?.navigationId) : 'observer'
-    });
-    // if (typeof this.queryNavDestinationInfo === 'function') {
-    //   observer.onNavDestinationUpdate((info) => {
-    //     this.tState = info !== undefined ? JSON.stringify(info?.navigationId) : 'observer'
-    //   });
-    //   let info1: observer.NavDestinationInfo | undefined = this.queryNavDestinationInfo();
-    //   tt = info1 !== undefined ? JSON.stringify(info1?.state) : 'queryNavDestinationInfo'
-    // }
-  }
+  // aboutToAppear() {
+  //   observer.onNavDestinationUpdate((info) => {
+  //     this.tState = info !== undefined ? JSON.stringify(info?.navigationId) : 'observer'
+  //   });
+  //   if (typeof this.queryNavDestinationInfo === 'function') {
+  //     observer.onNavDestinationUpdate((info) => {
+  //       this.tState = info !== undefined ? JSON.stringify(info?.navigationId) : 'observer'
+  //     });
+  //     let info1: observer.NavDestinationInfo | undefined = this.queryNavDestinationInfo();
+  //     tt = info1 !== undefined ? JSON.stringify(info1?.state) : 'queryNavDestinationInfo'
+  //   }
+  // }
 
   onPageShow() {
+
     observer.onNavDestinationUpdate((info) => {
       this.tState = info !== undefined ? JSON.stringify(info?.navigationId) : 'observer'
     });
   }
-
+  @Builder
+  PageBuilder(name: string, param: Object|null|undefined) {
+    if(name == 'pageOne'){
+      XX()
+    }
+  }
   build() {
-    Column({space:20} as ColumnOptions) {
-      Text(this.tState).fontSize(26).fontWeight(700).key('QueryNavDestinationInfoNavDestinationTextObserver').fontColor(Color.Red)
-      Navigation({}) {
-        // NavRouter() {
-        //   Row() {
-        //     Row().width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 } as Margin).backgroundColor(Color.Pink)
-        //     Text(`WLAN`).key('QueryNavDestinationInfoNavDestinationText01')
-        //       .fontSize(22)
-        //       .fontWeight(500)
-        //       .textAlign(TextAlign.Center)
-        //   }
-        //   .width('90%')
-        //   .height(72)
-        //   NavDestination() {
-        //     XX()
-        //   }.hideTitleBar(false).backgroundColor('#0c182431').id('111')
-        // }.backgroundColor(this.isActiveWLAN ? '#ccc' : '#fff')
-        // .borderRadius(24)
-        // .onStateChange((isActivated: boolean) => {
-        //   this.isActiveWLAN = isActivated
-        // })
-
+    Column({ space: 20 } as ColumnOptions) {
+      Text(this.tState)
+        .fontSize(26)
+        .fontWeight(700)
+        .key('QueryNavDestinationInfoNavDestinationTextObserver')
+        .fontColor(Color.Red)
+      Navigation(this.pageInfos) {
+        Column() {
+        Row() {
+          Row().width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 } as Margin).backgroundColor(Color.Pink)
+          Text(`WLAN`)
+            .fontSize(22)
+            .fontWeight(500)
+            .textAlign(TextAlign.Center)
+        }
+        .width('90%')
+        .height(72)
+        .key('QueryNavDestinationInfoNavDestinationText01')
+        .onClick((e: ClickEvent)=>{
+          let pageName = "pageOne";
+          this.pageInfos.pushPathByName('pageOne', null);
+        })
+        }
+        .backgroundColor('#ccc')
+        .borderRadius(24)
       }
       .title('设置')
       .titleMode(NavigationTitleMode.Free)
@@ -87,15 +141,20 @@ struct QueryNavDestinationInfoNavDestination {
 @Component
 struct XX {
   aboutToAppear() {
-    // if (typeof this.queryNavDestinationInfo === 'function') {
+    // if (this.queryNavDestinationInfo instanceOf Function  === 'function') {
     //   let info1: observer.NavDestinationInfo | undefined = this.queryNavDestinationInfo();
     //   tt = info1 !== undefined ? JSON.stringify(info1?.state) : 'queryNavDestinationInfo'
     // }
   }
 
   build() {
-    Column({space:20} as ColumnOptions){
-      Text(tt).fontSize(26).fontWeight(700).key('XXqueryNavDestinationInfoNavDestinationText01').fontColor(Color.Blue)
+    NavDestination() {
+      Column({ space: 20 } as ColumnOptions) {
+        Text(tt).fontSize(26).fontWeight(700).key('XXqueryNavDestinationInfoNavDestinationText01').fontColor(Color.Blue)
+      }
     }
+    .hideTitleBar(false)
+    .backgroundColor('#0c182431').id('111')
+
   }
 }

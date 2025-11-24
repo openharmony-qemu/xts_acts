@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
 import router from '@ohos.router';
-import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -57,12 +57,13 @@ export default function RatingJsunit() {
       }
     });
 
-    
-    /*
-     * @tc.number   RatingJsunit_static_0100
-     * @tc.name     RatingJsunit_static_0100
-     * @tc.desc     RatingJsunit_static_0100
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number RatingJsunit_static_0100
+     * @tc.name RatingJsunit_static_0100
+     * @tc.desc Set stars values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('RatingJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[RatingJsunit_static_0100] START');
@@ -74,12 +75,13 @@ export default function RatingJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   RatingJsunit_static_0200
-     * @tc.name     RatingJsunit_static_0200
-     * @tc.desc     RatingJsunit_static_0200
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number RatingJsunit_static_0200
+     * @tc.name RatingJsunit_static_0200
+     * @tc.desc Set stepSize values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('RatingJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
 
@@ -92,31 +94,33 @@ export default function RatingJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   RatingJsunit_static_0300
-     * @tc.name     RatingJsunit_static_0300
-     * @tc.desc     RatingJsunit_static_0300
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number RatingJsunit_static_0300
+     * @tc.name RatingJsunit_static_0300
+     * @tc.desc Set starStyle values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('RatingJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[RatingJsunit_static_0300] START');
       let strJson = inspector.getInspectorByKey('rating1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[RatingJsunit_static_0300] component obj is: " + JSON.stringify(obj));
-      expect(JSON.parseJsonElement(obj.getElement('$attrs').getString('starStyle')).getString('backgroundUri')).assertEqual("resources/base/media/star_1.png");
-      expect(JSON.parseJsonElement(obj.getElement('$attrs').getString('starStyle')).getString('foregroundUri')).assertEqual("resources/base/media/star_2.png");
-      expect(JSON.parseJsonElement(obj.getElement('$attrs').getString('starStyle')).getString('secondaryUri')).assertEqual("resources/base/media/star_3.png");
+      expect(obj.getElement('$attrs').getElement('starStyle').getString('backgroundUri')).assertEqual("resources/base/media/star_1.png");
+      expect(obj.getElement('$attrs').getElement('starStyle').getString('foregroundUri')).assertEqual("resources/base/media/star_2.png");
+      expect(obj.getElement('$attrs').getElement('starStyle').getString('secondaryUri')).assertEqual("resources/base/media/star_3.png");
       console.info('[RatingJsunit_static_0300] END');
       done();
     });
 
-    
-    /*
-     * @tc.number   RatingJsunit_static_0400
-     * @tc.name     RatingJsunit_static_0400
-     * @tc.desc     RatingJsunit_static_0400
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number RatingJsunit_static_0400
+     * @tc.name RatingJsunit_static_0400
+     * @tc.desc Set starStyle values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('RatingJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[RatingJsunit_static_0400] START');

@@ -16,7 +16,7 @@ import { ComponentContent } from '@kit.ArkUI';
 import { BuilderNode, FrameNode, NodeController } from '@ohos.arkui.node'
 import { BusinessError } from '@ohos.base';
 import { Entry, Column, Component,Builder,Text,ColumnOptions,Margin,Button,NodeContainer,
-  Visibility,wrapBuilder,FontWeight,Color,WrappedBuilder
+  Visibility,wrapBuilder,FontWeight,Color,WrappedBuilder,CustomBuilderT,
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import { ClickEvent } from '@ohos.arkui.component';
@@ -50,8 +50,8 @@ class MyNodeController extends NodeController {
   makeNode(uiContext: UIContext): FrameNode | null {
     this.uiContext = uiContext;
     this.rootNode = new FrameNode(uiContext);
-    this.builderNode = new BuilderNode<[]>(uiContext, { selfIdealSize: { width: 200, height: 100 } });
-    
+    this.builderNode = new BuilderNode<[]>(uiContext, { selfIdealSize: { width: 200, height: 100 } })!;
+    this.builderNode?.build(new WrappedBuilder<CustomBuilderT<[]>>(buildComponent),[]);
 
     this.component = new ComponentContent<Object>(this.uiContext!, wrapBuilder(buildComponent))!;
 

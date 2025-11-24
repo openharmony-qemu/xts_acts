@@ -80,6 +80,13 @@ struct Index {
         }
 
         Flex({ justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
+          Checkbox({ name: 'checkbox3', group: 'checkboxGroup' })
+            .key("ArkUX_CheckBox_Visual_0130")
+            .width(30)
+            .height(30)
+            .enabled(false)
+            .select(true)
+            .shape(undefined)
           Text('Checkbox3').fontSize(20)
         }
       }

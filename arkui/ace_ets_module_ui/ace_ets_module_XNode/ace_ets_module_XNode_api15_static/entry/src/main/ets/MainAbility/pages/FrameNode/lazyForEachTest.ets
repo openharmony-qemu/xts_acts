@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { ExpandMode } from '@ohos.arkui.node'
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight, ButtonType, ClickEvent, Margin,
+import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight, ButtonType, ClickEvent,
   IDataSource,DataOperation,DataChangeListener,Visibility,Scroll,ColumnOptions,Color,List,Row,LazyForEach,ListItem,Margin
 } from '@ohos.arkui.component'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
@@ -31,10 +31,10 @@ class BasicDataSource implements IDataSource<string> {
   }
 
   public getData(index: int): string {
-    return this.originDataArray[index.toInt()];
+    return this.originDataArray[index as Int];
   }
 
-  
+  // 该方法为框架侧调用，为LazyForEach组件向其数据源处添加listener监听
   registerDataChangeListener(listener: DataChangeListener): void {
     if (this.listeners.indexOf(listener) < 0) {
       console.info('add listener');
@@ -42,47 +42,47 @@ class BasicDataSource implements IDataSource<string> {
     }
   }
 
-  
+  // 该方法为框架侧调用，为对应的LazyForEach组件在数据源处去除listener监听
   unregisterDataChangeListener(listener: DataChangeListener): void {
-    const pos = this.listeners.indexOf(listener).toInt();
+    const pos = this.listeners.indexOf(listener);
     if (pos >= 0) {
       console.info('remove listener');
       this.listeners.splice(pos, 1);
     }
   }
 
-  
+  // 通知LazyForEach组件需要重载所有子组件
   notifyDataReload(): void {
     this.listeners.forEach(listener => {
       listener.onDataReloaded();
     })
   }
 
-  
-  notifyDataAdd(index: int): void {
+  // 通知LazyForEach组件需要在index对应索引处添加子组件
+  notifyDataAdd(index: number): void {
     this.listeners.forEach(listener => {
-      listener.onDataAdd(index);
+      listener.onDataAdd(index as int);
     })
   }
 
-  
-  notifyDataChange(index: int): void {
+  // 通知LazyForEach组件在index对应索引处数据有变化，需要重建该子组件
+  notifyDataChange(index: number): void {
     this.listeners.forEach(listener => {
-      listener.onDataChange(index);
+      listener.onDataChange(index as int);
     })
   }
 
-  
-  notifyDataDelete(index: int): void {
+  // 通知LazyForEach组件需要在index对应索引处删除该子组件
+  notifyDataDelete(index: number): void {
     this.listeners.forEach(listener => {
-      listener.onDataDelete(index);
+      listener.onDataDelete(index as int);
     })
   }
 
-  
-  notifyDataMove(from: int, to: int): void {
+  // 通知LazyForEach组件将from索引和to索引处的子组件进行交换
+  notifyDataMove(from: number, to: number): void {
     this.listeners.forEach(listener => {
-      listener.onDataMove(from, to);
+      listener.onDataMove(from as int, to as int);
     })
   }
 
@@ -100,12 +100,12 @@ class MyDataSource extends BasicDataSource {
     return this.dataArray.length;
   }
 
-  public getData(index: int): string {
-    return this.dataArray[index.toInt()];
+  public getData(index: number): string {
+    return this.dataArray[index as Int];
   }
 
-  public addData(index: int, data: string): void {
-    this.dataArray.splice(index, 0, data);
+  public addData(index: number, data: string): void {
+    this.dataArray.splice(index as int, 0, data);
     this.notifyDataAdd(index);
   }
 
@@ -148,16 +148,16 @@ struct lazyForEachTest {
           Scroll() {
             Column() {
               List({ space: 3 }) {
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
+                LazyForEach(this.data1, (item1: string) => {
+                  ListItem() {
+                    Row() {
+                      Text(item1).fontSize(20).id(item1)
+                        .onAppear(() => {
+                          console.info('appear:' + item1)
+                        })
+                    }.margin({ left: 10, right: 10 } as Margin)
+                  }.id('LazyForEachListItem_' + item1)
+                }, (item1: string) => item1)
               }
               .margin(8)
               .id('LazyForEachList')
@@ -174,13 +174,21 @@ struct lazyForEachTest {
                     .id('button_expand')
                     .width('20%').margin(5).height('3%')
                     .onClick((e:ClickEvent) => {
+                      console.info('+++++++++++++++++++++2.1');
                       const uiContext = this.getUIContext();
+                      console.info('+++++++++++++++++++++2.2');
                       if (uiContext) {
+                        console.info('+++++++++++++++++++++2.3');
                         const frameNode = uiContext.getFrameNodeById('LazyForEachList');
+                        console.info('+++++++++++++++++++++2.4');
                         if (frameNode) {
-                          this.getChildValue = frameNode.getChild(3, ExpandMode.EXPAND)?.getId() + '';
-                          this.getFirstChildIndexWithoutExpandValue = frameNode.getFirstChildIndexWithoutExpand() + '';
-                          this.getLastChildIndexWithoutExpandValue = frameNode.getLastChildIndexWithoutExpand() + '';
+                          console.info('+++++++++++++++++++++2.5');
+                          this.getChildValue = frameNode.getChild(3, ExpandMode.EXPAND)?.getId() + ''; //取值是undefined，期望值是LazyForEachListItem_TTT3，断言失败
+                          console.info('+++++++++++++++++++++2.6',this.getChildValue);
+                          this.getFirstChildIndexWithoutExpandValue = frameNode.getFirstChildIndexWithoutExpand() + ''; //取值是-1，期望值是0，断言失败
+                          console.info('+++++++++++++++++++++2.7',this.getFirstChildIndexWithoutExpandValue);
+                          this.getLastChildIndexWithoutExpandValue = frameNode.getLastChildIndexWithoutExpand() + '';//取值是-1，期望值是10，断言失败
+                          console.info('+++++++++++++++++++++2.8',this.getLastChildIndexWithoutExpandValue);
                         }
                       }
                     })
@@ -193,7 +201,7 @@ struct lazyForEachTest {
                         const frameNode = uiContext.getFrameNodeById('LazyForEachList');
                         if (frameNode) {
                           this.getChildValue = frameNode.getChild(3, ExpandMode.NOT_EXPAND)?.getId() + '';
-                          this.getFirstChildIndexWithoutExpandValue = frameNode.getFirstChildIndexWithoutExpand() + '';
+                          this.getFirstChildIndexWithoutExpandValue = frameNode.getFirstChildIndexWithoutExpand() + ''; //取值不对
                           this.getLastChildIndexWithoutExpandValue = frameNode.getLastChildIndexWithoutExpand() + '';
                         }
                       }

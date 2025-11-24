@@ -50,7 +50,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 struct RichEditor019 {
   controller: RichEditorController = new RichEditorController();
   options: RichEditorOptions = { controller: this.controller } as RichEditorOptions;
-  @State pointPosition: number = -1;
+  @State pointPosition: int = -1;
 
 build() {
     Column() {
@@ -59,18 +59,12 @@ build() {
         Text('' + this.pointPosition).id('position_text');
 
         Button('get Point Position').onClick((e: ClickEvent) => {
-          let caretOffset = this.controller.getCaretOffset();
-          if (caretOffset !== undefined) {
-            this.pointPosition = caretOffset;
-          }
-          console.log('this.point_position:' + this.pointPosition);
+          this.pointPosition = this.controller!.getCaretOffset() as int;
+          console.log('this.pointPosition:' + this.pointPosition);
         }).id('get_position')
 
         Button('put point back emoji').onClick((e: ClickEvent) => {
-          let caretOffset = this.controller.getCaretOffset();
-          if (caretOffset !== undefined) {
-            this.controller.setCaretOffset(caretOffset - 4);
-          }
+          this.controller!.setCaretOffset(this.controller!.getCaretOffset() as int - 4);
         }).id('back')
       }
       .borderWidth(1)
@@ -81,7 +75,7 @@ build() {
       Column() {
         RichEditor(this.options)
           .onReady((): void => {
-            this.controller.addTextSpan('\uD83D\uDE0A\uD83C\uDFFB\n' +
+            this.controller!.addTextSpan('\uD83D\uDE0A\uD83C\uDFFB\n' +
               '\uD83D\uDE06\uD83C\uDFFF\uD83C\uDDFA\uD83C\uDDF8\uD83C\uDDEC\uD83C\uDDFA\uD83C\uDDEA\uD83C\uDDFA',
               {
                 style:

@@ -23,10 +23,8 @@ import { State } from '@ohos.arkui.stateManagement'
 @Component
 struct getcomponentadd {
   private scroller: Scroller = new Scroller();
-  
   private arr: Array<number> = new Array<number>(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15)
-  
-  @State numberData: Array<String> = new Array<String>('0', '1', '2', '3', '4')
+  @State NumberArray: Array<String> = new Array<String>('0', '1', '2', '3', '4')
   @State message: string = 'Hello World';
   build() {
     Row() {
@@ -48,7 +46,7 @@ struct getcomponentadd {
 
         Checkbox({ name: 'checkbox1', group: 'checkboxGroup' })
           .select(true)
-          .selectedColor(0xed6f21)
+          .selectedColor(Color.Red)
           .position({ x: 100, y: 100 } as Position)
           .key('ArkUX_Get_component_add_0020')
 
@@ -73,7 +71,7 @@ struct getcomponentadd {
           Flex({ direction: FlexDirection.Column }) {
             ForEach(this.arr, (item: number) => {
               Row() {
-                Text(item.toString())
+                Text(String(item))
                   .width('80%')
                   .height(60)
                   .backgroundColor('#3366CC')
@@ -116,12 +114,12 @@ struct getcomponentadd {
           .key('ArkUX_Get_component_add_0070')
 
         Grid() {
-          ForEach(this.numberData, (day: string) => {
-            ForEach(this.numberData, (day: string) => {
+          ForEach(this.NumberArray, (day: string) => {
+            ForEach(this.NumberArray, (day: string) => {
               GridItem() {
                 Text(day)
                   .fontSize(16)
-                  .backgroundColor(0xF9CF93)
+                  .backgroundColor(Color.Red)
                   .width('100%')
                   .height('100%')
                   .textAlign(TextAlign.Center)
@@ -134,7 +132,7 @@ struct getcomponentadd {
         .columnsGap(10)
         .rowsGap(10)
         .width('90%')
-        .backgroundColor(0xFAEEE0)
+        .backgroundColor(Color.Red)
         .height(300)
         .position({ x: 700, y: 700 } as Position)
         .key('ArkUX_Get_component_add_0080')
@@ -149,14 +147,14 @@ struct getcomponentadd {
                 .fontSize(16)
                 .textAlign(TextAlign.Center)
                 .borderRadius(10)
-                .backgroundColor(0xFFFFFF)
+                .backgroundColor(Color.Red)
             }
           })
         }
         .position({ x: 800, y: 800 } as Position)
         .key('ArkUX_Get_component_add_0090')
         .listDirection(Axis.Vertical)
-        .divider({ strokeWidth: 2, color: 0xFFFFFF, startMargin: 20, endMargin: 20 })
+        .divider({ strokeWidth: 2, color: Color.Red, startMargin: 20, endMargin: 20 })
         .edgeEffect(EdgeEffect.Spring)
         .onScrollIndex((firstIndex: int, lastIndex: int): void => {
           console.info('first' + firstIndex)
@@ -174,7 +172,7 @@ struct getcomponentadd {
           .position({ x: 900, y: 900 } as Position)
           .key('ArkUX_Get_component_add_0100')
 
-        Button("") {
+        Button('') {
           Text('next page')
             .fontSize(20)
             .fontWeight(FontWeight.Bold)

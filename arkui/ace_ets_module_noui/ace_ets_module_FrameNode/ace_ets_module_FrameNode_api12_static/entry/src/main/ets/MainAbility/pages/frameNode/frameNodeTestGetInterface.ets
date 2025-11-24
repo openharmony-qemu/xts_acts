@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component,Builder,Text,ColumnOptions,WrappedBuilder,Flex,
+import { Entry, Column, Component,Builder,Text,ColumnOptions,WrappedBuilder,Flex,CustomBuilderT,
   FontWeight,Color,Padding,FlexDirection,ItemAlign,Row,Button,NodeContainer,FlexAlign,
   TextAlign
 } from '@ohos.arkui.component'
@@ -24,7 +24,12 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
 const TEST_TAG : string = "FrameNode"
-
+class Params{
+  text:string=''
+  constructor(text:string) {
+    this.text=text
+  }
+}
 
 @Component
 struct TestComponent {
@@ -48,7 +53,13 @@ struct TestComponent {
 }
 @Builder
 function buildComponent() {
-  TestComponent()
+  Column() {
+    Text('This is a BuilderNode.')
+      .fontSize(16)
+      .fontWeight(FontWeight.Bold)
+  }
+  .width('100%')
+  .backgroundColor(Color.Gray)
 }
 
 class MyNodeController extends NodeController {
@@ -69,10 +80,8 @@ class MyNodeController extends NodeController {
       const rootRenderNode = this.rootNode?.getRenderNode();
       let childNode = new FrameNode(uiContext);
       this.builderNode = new BuilderNode<[]>(uiContext, { selfIdealSize: { width: 200, height: 100 } })!;
-      
-
       this.childList.push(childNode);
-      rootRenderNode!.appendChild(this.builderNode!.getFrameNode()!.getRenderNode()!);
+      rootRenderNode!.appendChild(childNode!.getRenderNode()!);
     }
     return this.rootNode;
   }
@@ -82,20 +91,19 @@ class MyNodeController extends NodeController {
 
     const rootRenderNode = cNode.getRenderNode();
     this.builderNode = new BuilderNode<[]>(this.uiContext!, { selfIdealSize: { width: 200, height: 100 } })!;
-    
     rootRenderNode!.appendChild(this.builderNode!.getFrameNode()!.getRenderNode()!);
     this.childrenCount = this.childrenCount + 1;
   }
-  insertChildAfter(index : number)
+  insertChildAfter(index : int)
   {
     let insertNode = new FrameNode(this.uiContext!);
-    let childNode = this.rootNode!.getChild(Double.toInt(index));
+    let childNode = this.rootNode!.getChild(index);
     this.rootNode!.insertChildAfter(insertNode,childNode);
     this.childrenCount = this.childrenCount + 1;
   }
-  removeChild(index : number)
+  removeChild(index : int)
   {
-    let childNode = this.rootNode!.getChild(Double.toInt(index));
+    let childNode = this.rootNode!.getChild(index);
     if(childNode == null)
     {
       console.log(`${TEST_TAG} getchild at index {${index}} : fail`);
@@ -257,7 +265,7 @@ class MyNodeController extends NodeController {
 @Component
 struct FrameNodeTest {
   private myNodeController: MyNodeController = new MyNodeController();
-  @State index : number = 0;
+  @State index : int = 0;
 
   @State textS: string = "";
 
@@ -265,7 +273,7 @@ struct FrameNodeTest {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
       Column(){
         Text("result " + this.textS)
-          .textAlign(TextAlign.Center).borderRadius(10).backgroundColor(0xFFFFFF).key("resultKey")
+          .textAlign(TextAlign.Center).borderRadius(10).backgroundColor(Color.Red).key("resultKey")
           .width('100%').fontSize(16)
         Row()
         {
@@ -275,7 +283,7 @@ struct FrameNodeTest {
             .onClick((e:ClickEvent)=>{this.index--;})
         }
         Text("Current index is " + this.index)
-          .textAlign(TextAlign.Center).borderRadius(10).backgroundColor(0xFFFFFF)
+          .textAlign(TextAlign.Center).borderRadius(10).backgroundColor(Color.Red)
           .width('100%').fontSize(16)
       }
       Button("appendChild")
@@ -353,7 +361,7 @@ struct FrameNodeTest {
         })
       Column(){
         Text("This is a NodeContainer.")
-          .textAlign(TextAlign.Center).borderRadius(10).backgroundColor(0xFFFFFF)
+          .textAlign(TextAlign.Center).borderRadius(10).backgroundColor(Color.Red)
           .width('100%').fontSize(16)
         NodeContainer(this.myNodeController)
           .borderWidth(1)

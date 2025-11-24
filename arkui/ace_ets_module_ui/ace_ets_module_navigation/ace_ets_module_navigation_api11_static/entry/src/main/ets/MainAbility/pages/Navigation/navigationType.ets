@@ -21,7 +21,7 @@ import {
 import {
   State,
   Link,
-  PropRef,Provide
+  Prop,Provide
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
@@ -48,20 +48,17 @@ struct navigationType {
         List({ space: 12 }) {
           ForEach(this.arr, (item: number) => {
             ListItem() {
-              // NavRouter() {
-              //   Text("NavRouter" + item)
-              //     .width("100%")
-              //     .height(72)
-              //     .backgroundColor('#FFFFFF')
-              //     .borderRadius(24)
-              //     .fontSize(16)
-              //     .fontWeight(500)
-              //     .textAlign(TextAlign.Center)
-              //   NavDestination() {
-              //     Text("NavDestinationContent" + item)
-              //   }
-              //   .title("NavDestinationTitle" + item)
-              // }
+              NavDestination() {
+                Text("NavRouter" + item)
+                  .width("100%")
+                  .height(72)
+                  .backgroundColor('#FFFFFF')
+                  .borderRadius(24)
+                  .fontSize(16)
+                  .fontWeight(500)
+                  .textAlign(TextAlign.Center)
+                  Text("NavDestinationContent" + item)
+              }.title("NavDestinationTitle" + item)
 
             }
           }, (item: number) => String(item))
@@ -98,22 +95,6 @@ struct navigationType {
         }
         }
       ])
-      // .toolBar({
-      //   items: [
-      //     {
-      //       value: "aas", icon: "./image/ic_public_highlights.svg", action: () => {
-      //     }
-      //     },
-      //     {
-      //       value: "bbbsdsdsdsdbb", icon: "./image/ic_public_highlights.svg", action: () => {
-      //     }
-      //     },
-      //     {
-      //       value: "ccccassdsddcccc", icon: "./image/ic_public_highlights.svg", action: () => {
-      //     }
-      //     }
-      //   ]
-      // })
 
       Navigation({}) {
         TextInput({ placeholder: 'search...' })
@@ -124,20 +105,18 @@ struct navigationType {
         List({ space: 12 }) {
           ForEach(this.arr, (item: number) => {
             ListItem() {
-              // NavRouter() {
-              //   Text("NavRouter" + item)
-              //     .width("100%")
-              //     .height(72)
-              //     .backgroundColor('#FFFFFF')
-              //     .borderRadius(24)
-              //     .fontSize(16)
-              //     .fontWeight(500)
-              //     .textAlign(TextAlign.Center)
-              //   NavDestination() {
-              //     Text("NavDestinationContent" + item)
-              //   }
-              //   .title("NavDestinationTitle" + item)
-              // }
+              NavDestination() {
+                Text("NavRouter" + item)
+                  .width("100%")
+                  .height(72)
+                  .backgroundColor('#FFFFFF')
+                  .borderRadius(24)
+                  .fontSize(16)
+                  .fontWeight(500)
+                  .textAlign(TextAlign.Center)
+                  Text("NavDestinationContent" + item)
+
+              }.title("NavDestinationTitle" + item)
 
             }
           }, (item: number) => String(item))
@@ -152,28 +131,28 @@ struct navigationType {
       .minContentWidth(20000)
       .navBarWidth(15000)
       .navBarWidthRange([10000, 30000])
-      .menus([
-        {
-          value: "", icon: "./image/ic_public_search.svg", action: () => {
-        }
-        },
-        {
-          value: "", icon: "./image/ic_public_add.svg", action: () => {
-        }
-        },
-        {
-          value: "", icon: "./image/ic_public_add.svg", action: () => {
-        }
-        },
-        {
-          value: "", icon: "./image/ic_public_add.svg", action: () => {
-        }
-        },
-        {
-          value: "", icon: "./image/ic_public_add.svg", action: () => {
-        }
-        }
-      ])
+      // .menus([
+      //   {
+      //     value: "", icon: "./image/ic_public_search.svg", action: () => {
+      //   }
+      //   },
+      //   {
+      //     value: "", icon: "./image/ic_public_add.svg", action: () => {
+      //   }
+      //   },
+      //   {
+      //     value: "", icon: "./image/ic_public_add.svg", action: () => {
+      //   }
+      //   },
+      //   {
+      //     value: "", icon: "./image/ic_public_add.svg", action: () => {
+      //   }
+      //   },
+      //   {
+      //     value: "", icon: "./image/ic_public_add.svg", action: () => {
+      //   }
+      //   }
+      // ])
       // .toolBar({
       //   items: [
       //     {
@@ -201,20 +180,18 @@ struct navigationType {
         List({ space: 12 }) {
           ForEach(this.arr, (item: number) => {
             ListItem() {
-              // NavRouter() {
-              //   Text("NavRouter" + item)
-              //     .width("100%")
-              //     .height(72)
-              //     .backgroundColor('#FFFFFF')
-              //     .borderRadius(24)
-              //     .fontSize(16)
-              //     .fontWeight(500)
-              //     .textAlign(TextAlign.Center)
-              //   NavDestination() {
-              //     Text("NavDestinationContent" + item)
-              //   }
-              //   .title("NavDestinationTitle" + item)
-              // }
+              NavDestination() {
+                Text("NavRouter" + item)
+                  .width("100%")
+                  .height(72)
+                  .backgroundColor('#FFFFFF')
+                  .borderRadius(24)
+                  .fontSize(16)
+                  .fontWeight(500)
+                  .textAlign(TextAlign.Center)
+                  Text("NavDestinationContent" + item)
+
+              }.title("NavDestinationTitle" + item)
 
             }
           }, (item: number) => String(item))
@@ -229,28 +206,28 @@ struct navigationType {
       .minContentWidth(30)
       .navBarWidth(100)
       .navBarWidthRange([10, 20])
-      .menus([
-        {
-          value: "", icon: "./image/ic_public_search.svg", action: () => {
-        }
-        },
-        {
-          value: "", icon: "./image/ic_public_add.svg", action: () => {
-        }
-        },
-        {
-          value: "", icon: "./image/ic_public_add.svg", action: () => {
-        }
-        },
-        {
-          value: "", icon: "./image/ic_public_add.svg", action: () => {
-        }
-        },
-        {
-          value: "", icon: "./image/ic_public_add.svg", action: () => {
-        }
-        }
-      ])
+      // .menus([
+      //   {
+      //     value: "", icon: "./image/ic_public_search.svg", action: () => {
+      //   }
+      //   },
+      //   {
+      //     value: "", icon: "./image/ic_public_add.svg", action: () => {
+      //   }
+      //   },
+      //   {
+      //     value: "", icon: "./image/ic_public_add.svg", action: () => {
+      //   }
+      //   },
+      //   {
+      //     value: "", icon: "./image/ic_public_add.svg", action: () => {
+      //   }
+      //   },
+      //   {
+      //     value: "", icon: "./image/ic_public_add.svg", action: () => {
+      //   }
+      //   }
+      // ])
       // .toolBar({
       //   items: [
       //     {
@@ -278,20 +255,18 @@ struct navigationType {
         List({ space: 12 }) {
           ForEach(this.arr, (item: number) => {
             ListItem() {
-              // NavRouter() {
-              //   Text("NavRouter" + item)
-              //     .width("100%")
-              //     .height(72)
-              //     .backgroundColor('#FFFFFF')
-              //     .borderRadius(24)
-              //     .fontSize(16)
-              //     .fontWeight(500)
-              //     .textAlign(TextAlign.Center)
-              //   NavDestination() {
-              //     Text("NavDestinationContent" + item)
-              //   }
-              //   .title("NavDestinationTitle" + item)
-              // }
+              NavDestination() {
+                Text("NavRouter" + item)
+                  .width("100%")
+                  .height(72)
+                  .backgroundColor('#FFFFFF')
+                  .borderRadius(24)
+                  .fontSize(16)
+                  .fontWeight(500)
+                  .textAlign(TextAlign.Center)
+                Text("NavDestinationContent" + item)
+
+              }.title("NavDestinationTitle" + item)
 
             }
           }, (item: number) => String(item))
@@ -303,28 +278,28 @@ struct navigationType {
       .title("������������")
       .titleMode(NavigationTitleMode.Mini)
       .navBarWidth(100)
-      .menus([
-        {
-          value: "", icon: "./image/ic_public_search.svg", action: () => {
-        }
-        },
-        {
-          value: "", icon: "./image/ic_public_add.svg", action: () => {
-        }
-        },
-        {
-          value: "", icon: "./image/ic_public_add.svg", action: () => {
-        }
-        },
-        {
-          value: "", icon: "./image/ic_public_add.svg", action: () => {
-        }
-        },
-        {
-          value: "", icon: "./image/ic_public_add.svg", action: () => {
-        }
-        }
-      ])
+      // .menus([
+      //   {
+      //     value: "", icon: "./image/ic_public_search.svg", action: () => {
+      //   }
+      //   },
+      //   {
+      //     value: "", icon: "./image/ic_public_add.svg", action: () => {
+      //   }
+      //   },
+      //   {
+      //     value: "", icon: "./image/ic_public_add.svg", action: () => {
+      //   }
+      //   },
+      //   {
+      //     value: "", icon: "./image/ic_public_add.svg", action: () => {
+      //   }
+      //   },
+      //   {
+      //     value: "", icon: "./image/ic_public_add.svg", action: () => {
+      //   }
+      //   }
+      // ])
       // .toolBar({
       //   items: [
       //     {
@@ -352,20 +327,18 @@ struct navigationType {
         List({ space: 12 }) {
           ForEach(this.arr, (item: number) => {
             ListItem() {
-              // NavRouter() {
-              //   Text("NavRouter" + item)
-              //     .width("100%")
-              //     .height(72)
-              //     .backgroundColor('#FFFFFF')
-              //     .borderRadius(24)
-              //     .fontSize(16)
-              //     .fontWeight(500)
-              //     .textAlign(TextAlign.Center)
-              //   NavDestination() {
-              //     Text("NavDestinationContent" + item)
-              //   }
-              //   .title("NavDestinationTitle" + item)
-              // }
+              NavDestination() {
+                Text("NavRouter" + item)
+                  .width("100%")
+                  .height(72)
+                  .backgroundColor('#FFFFFF')
+                  .borderRadius(24)
+                  .fontSize(16)
+                  .fontWeight(500)
+                  .textAlign(TextAlign.Center)
+                Text("NavDestinationContent" + item)
+
+              }.title("NavDestinationTitle" + item)
 
             }
           }, (item: number) => String(item))
@@ -428,20 +401,18 @@ struct navigationType {
         List({ space: 12 }) {
           ForEach(this.arr, (item: number) => {
             ListItem() {
-              // NavRouter() {
-              //   Text("NavRouter" + item)
-              //     .width("100%")
-              //     .height(72)
-              //     .backgroundColor('#FFFFFF')
-              //     .borderRadius(24)
-              //     .fontSize(16)
-              //     .fontWeight(500)
-              //     .textAlign(TextAlign.Center)
-              //   NavDestination() {
-              //     Text("NavDestinationContent" + item)
-              //   }
-              //   .title("NavDestinationTitle" + item)
-              // }
+              NavDestination() {
+                Text("NavRouter" + item)
+                  .width("100%")
+                  .height(72)
+                  .backgroundColor('#FFFFFF')
+                  .borderRadius(24)
+                  .fontSize(16)
+                  .fontWeight(500)
+                  .textAlign(TextAlign.Center)
+                  Text("NavDestinationContent" + item)
+
+              }.title("NavDestinationTitle" + item)
 
             }
           }, (item: number) => String(item))

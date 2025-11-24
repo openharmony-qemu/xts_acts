@@ -65,15 +65,13 @@ export default function TextLineSpacingTest() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextLineSpacingTest_static_0010
      * @tc.name     TextLineSpacingTest_static_0010
      * @tc.desc     TextLineSpacingTest_static_0010
-     * @tc.level    Level.LEVEL2
+     * @tc.level   Level.LEVEL2
      */
-it('TextLineSpacingTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('TextLineSpacingTest_static_0010', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[TextLineSpacingTest_static_0010] START');
       let strJson = inspector.getInspectorByKey('Text_lineSpacing_true');
       let obj = JSON.parseJsonElement(strJson);
@@ -86,15 +84,13 @@ it('TextLineSpacingTest_static_0010', Level.LEVEL2, async (done: () => void): Pr
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextLineSpacingTest_static_0020
      * @tc.name     TextLineSpacingTest_static_0020
      * @tc.desc     TextLineSpacingTest_static_0020
-     * @tc.level    Level.LEVEL2
+     * @tc.level   Level.LEVEL2
      */
-it('TextLineSpacingTest_static_0020', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('TextLineSpacingTest_static_0020', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[TextLineSpacingTest_static_0020] START');
       let strJson = inspector.getInspectorByKey('Text_lineSpacing_false');
       let obj = JSON.parseJsonElement(strJson);
@@ -107,15 +103,13 @@ it('TextLineSpacingTest_static_0020', Level.LEVEL2, async (done: () => void): Pr
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextLineSpacingTest_static_0030
      * @tc.name     TextLineSpacingTest_static_0030
      * @tc.desc     TextLineSpacingTest_static_0030
-     * @tc.level    Level.LEVEL2
+     * @tc.level   Level.LEVEL2
      */
-it('TextLineSpacingTest_static_0030', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('TextLineSpacingTest_static_0030', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[TextLineSpacingTest_static_0030] START');
       let strJson = inspector.getInspectorByKey('Text_lineSpacing_default');
       let obj = JSON.parseJsonElement(strJson);
@@ -128,15 +122,13 @@ it('TextLineSpacingTest_static_0030', Level.LEVEL2, async (done: () => void): Pr
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextLineSpacingTest_static_0040
      * @tc.name     TextLineSpacingTest_static_0040
      * @tc.desc     TextLineSpacingTest_static_0040
-     * @tc.level    Level.LEVEL2
+     * @tc.level   Level.LEVEL2
      */
-it('TextLineSpacingTest_static_0040', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('TextLineSpacingTest_static_0040', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[TextLineSpacingTest_static_0040] START');
       let strJson = inspector.getInspectorByKey('Text_lineSpacing_undefined_all');
       let obj = JSON.parseJsonElement(strJson);
@@ -149,15 +141,13 @@ it('TextLineSpacingTest_static_0040', Level.LEVEL2, async (done: () => void): Pr
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextLineSpacingTest_static_0050
      * @tc.name     TextLineSpacingTest_static_0050
      * @tc.desc     TextLineSpacingTest_static_0050
-     * @tc.level    Level.LEVEL2
+     * @tc.level   Level.LEVEL2
      */
-it('TextLineSpacingTest_static_0050', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('TextLineSpacingTest_static_0050', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[TextLineSpacingTest_static_0050] START');
       let strJson = inspector.getInspectorByKey('TextModifier_lineSpacing_true');
       let obj = JSON.parseJsonElement(strJson);
@@ -170,15 +160,13 @@ it('TextLineSpacingTest_static_0050', Level.LEVEL2, async (done: () => void): Pr
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextLineSpacingTest_static_0060
      * @tc.name     TextLineSpacingTest_static_0060
      * @tc.desc     TextLineSpacingTest_static_0060
-     * @tc.level    Level.LEVEL2
+     * @tc.level   Level.LEVEL2
      */
-it('TextLineSpacingTest_static_0060', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('TextLineSpacingTest_static_0060', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[TextLineSpacingTest_static_0060] START');
       let strJson = inspector.getInspectorByKey('TextModifier_lineSpacing_false');
       let obj = JSON.parseJsonElement(strJson);
@@ -191,15 +179,13 @@ it('TextLineSpacingTest_static_0060', Level.LEVEL2, async (done: () => void): Pr
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextLineSpacingTest_static_0070
      * @tc.name     TextLineSpacingTest_static_0070
      * @tc.desc     TextLineSpacingTest_static_0070
-     * @tc.level    Level.LEVEL2
+     * @tc.level   Level.LEVEL2
      */
-it('TextLineSpacingTest_static_0070', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('TextLineSpacingTest_static_0070', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[TextLineSpacingTest_static_0070] START');
       let strJson = inspector.getInspectorByKey('TextModifier_lineSpacing_undefined');
       let obj = JSON.parseJsonElement(strJson);
@@ -212,15 +198,13 @@ it('TextLineSpacingTest_static_0070', Level.LEVEL2, async (done: () => void): Pr
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextLineSpacingTest_static_0080
      * @tc.name     TextLineSpacingTest_static_0080
      * @tc.desc     TextLineSpacingTest_static_0080
-     * @tc.level    Level.LEVEL2
+     * @tc.level   Level.LEVEL2
      */
-it('TextLineSpacingTest_static_0080', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('TextLineSpacingTest_static_0080', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[TextLineSpacingTest_static_0080] START');
       let strJson = inspector.getInspectorByKey('TextModifier_lineSpacing_undefined');
       let obj = JSON.parseJsonElement(strJson);
@@ -233,15 +217,13 @@ it('TextLineSpacingTest_static_0080', Level.LEVEL2, async (done: () => void): Pr
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextLineSpacingTest_static_0090
      * @tc.name     TextLineSpacingTest_static_0090
      * @tc.desc     TextLineSpacingTest_static_0090
-     * @tc.level    Level.LEVEL2
+     * @tc.level   Level.LEVEL2
      */
-it('TextLineSpacingTest_static_0090', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('TextLineSpacingTest_static_0090', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[TextLineSpacingTest_static_0090] START');
       let strJson = inspector.getInspectorByKey('Text_lineSpacing_undefined');
       let obj = JSON.parseJsonElement(strJson);

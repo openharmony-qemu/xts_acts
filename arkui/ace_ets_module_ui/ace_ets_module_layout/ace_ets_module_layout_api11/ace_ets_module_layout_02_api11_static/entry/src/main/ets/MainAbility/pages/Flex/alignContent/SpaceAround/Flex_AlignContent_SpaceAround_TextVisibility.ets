@@ -26,6 +26,7 @@ import {
   Button,
   ButtonAttribute,
   ClickEvent,
+
   Image,
   ImageFit,
   Scroller,
@@ -51,6 +52,7 @@ import {
 import {
   State,
   
+
   AppStorage
 } from '@ohos.arkui.stateManagement'
 
@@ -62,10 +64,6 @@ struct AlignContent_SpaceAround_TextVisibility {
 
   onPageShow() {
     console.info('AlignContent_SpaceAround_TextVisibility onPageShow');
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<Visibility>>("messageManager",  this.messageManager);
     let callback: Callback<Visibility> = (message: Message<Visibility>) => {
       console.log('message = ' + message.name + "--" + message.value);

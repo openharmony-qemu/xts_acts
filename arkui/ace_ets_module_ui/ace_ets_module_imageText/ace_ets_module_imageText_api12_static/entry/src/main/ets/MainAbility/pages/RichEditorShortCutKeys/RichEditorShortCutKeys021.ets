@@ -76,7 +76,7 @@ build() {
         .id('RichEditorShortCutKeys021')
 
       Button('add text').onClick((e: ClickEvent) => {
-        this.controller.addTextSpan('    ', {
+        this.controller!.addTextSpan('    ', {
           style: {
             fontSize: 35,
             fontWeight: FontWeight.Bolder,
@@ -90,16 +90,13 @@ build() {
 
       Button('get spans').onClick((e: ClickEvent) => {
         this.style = '';
-        let spans = this.controller.getSpans({
+        this.controller!.getSpans({
           start: 0,
           end: 4
-        });
-        if (spans !== undefined) {
-          spans.forEach(item => {
-            this.style = JSON.stringify((item as RichEditorTextSpanResult));
-            console.log('RichEditorController  this.style:' + JSON.stringify(this.style));
-          })
-        }
+        })!.forEach(item => {
+          this.style = JSON.stringify((item));
+          console.log('RichEditorController  this.style:' +  JSON.stringify(this.style));
+        })
       }).id('getSpans')
 
       Text('style:' + this.style).id('style')

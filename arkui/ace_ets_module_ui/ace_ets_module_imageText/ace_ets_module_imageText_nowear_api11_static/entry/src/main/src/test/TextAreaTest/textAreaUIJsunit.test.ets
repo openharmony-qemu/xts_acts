@@ -30,6 +30,9 @@ import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
+import {
+ ResourceColor
+} from '@ohos.arkui.component'
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -57,11 +60,8 @@ export default function textAreaUIJsunit() {
         console.info("get textAreaUIJsunit state pages:" + "");
         if (!("TextClockApi" == pages.name)) {
           console.info("get textAreaUIJsunit pages.name:" + "");
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push textAreaUIJsunit page error:" + err);
@@ -69,9 +69,6 @@ export default function textAreaUIJsunit() {
       console.info("textAreaUIJsunit beforeEach end");
     });
 
-    
-    
-    
     /*
      * @tc.number   textAreaUIJsunit_static_0100
      * @tc.name     textAreaUIJsunit_static_0100
@@ -81,13 +78,12 @@ export default function textAreaUIJsunit() {
 it('textAreaUIJsunit_static_0100', Level.LEVEL0, async (done: ()=>void) => {
        console.info('textAreaUIJsunit_0100');
        await CommonFunc.sleep(1000);
-       
+       // get the textArea component and test attribute
        let strJson = inspector.getInspectorByKey('textArea');
-       
+       // let obj: ESObject = JSON.parse(strJson);
       let obj = JSON.parseJsonElement(strJson);
       console.info('textAreaUIJsunit_0100 component obj is: ' +obj.getElement('$attrs').getString('placeholderFont') + "---" + obj.getElement('$attrs').getString('text') + "--" + obj.getElement('$attrs').getString('placeholderColor') + "--" + obj.getElement('$attrs').getString('placeholder')
       + "--" + obj.getElement('$attrs').getString('textAlign') + "--" + obj.getElement('$attrs').getString('caretColor') + "--" + obj.getElement('$attrs').getString('fontSize') + "--" + obj.getElement('$attrs').getString('inputFilter') + "--" + obj.getElement('$attrs').getString('copyOption'));
-
 
         expect(obj.getElement('$attrs').getString('placeholderFont')).assertEqual('{"style":"FontStyle.Normal","size":"16.00fp","weight":"400","fontFamily":"sans-serif"}');
         expect(obj.getElement('$attrs').getString('placeholder')).assertEqual('The text area can hold an unlimited amount of text. input your word...');
@@ -101,9 +97,6 @@ it('textAreaUIJsunit_static_0100', Level.LEVEL0, async (done: ()=>void) => {
        done();
     });
 
-   
-   
-   
    /*
      * @tc.number   textAreaUIJsunit_static_0200
      * @tc.name     textAreaUIJsunit_static_0200
@@ -112,26 +105,17 @@ it('textAreaUIJsunit_static_0100', Level.LEVEL0, async (done: ()=>void) => {
      */
 it('textAreaUIJsunit_static_0200', Level.LEVEL0, async (done: ()=>void) => {
       console.info('textAreaUIJsunit_0200 START');
-     const message:MessageManager = AppStorage.get<MessageManager>("messageManager")!
-     message.notify({name:'sizeT', value:20})
+  AppStorage.get<MessageManager<number>>("messageManager")!.notify({name:'sizeT', value:20})
       await CommonFunc.sleep(2000);
-     const message1:MessageManager = AppStorage.get<MessageManager>("messageManager")!
-     message1.notify({name:'weightT', value:300})
+  AppStorage.get<MessageManager<int>>("messageManager")!.notify({name:'weightT', value:300})
       await CommonFunc.sleep(2000);
-      
+      // check the value of changed parameter
       let strJson = inspector.getInspectorByKey('textArea');
      let obj = JSON.parseJsonElement(strJson);
      console.info('textAreaUIJsunit_0200 component obj is: ' + obj.getElement('$attrs').getString('placeholderFont'));
-
-
        expect(obj.getElement('$attrs').getString('placeholderFont')).assertEqual('{"style":"FontStyle.Normal","size":"20.00fp","weight":"300","fontFamily":"sans-serif"}');
-
       done();
     });
-
-    
-    
-    
     /*
      * @tc.number   textAreaUIJsunit_static_0300
      * @tc.name     textAreaUIJsunit_static_0300
@@ -141,26 +125,19 @@ it('textAreaUIJsunit_static_0200', Level.LEVEL0, async (done: ()=>void) => {
 it('textAreaUIJsunit_static_0300', Level.LEVEL0, async (done: ()=>void) => {
       console.info('marqueeJsunit_0300 START');
       await CommonFunc.sleep(1000);
-      const message:MessageManager = AppStorage.get<MessageManager>("messageManager")!
-      message.notify({name:'sizeT', value:-30})
+  AppStorage.get<MessageManager<number>>("messageManager")!.notify({name:'sizeT', value:-30})
       await CommonFunc.sleep(200);
-      const message1:MessageManager = AppStorage.get<MessageManager>("messageManager")!
-      message1.notify({name:'weightT', value:-300})
+  AppStorage.get<MessageManager<int>>("messageManager")!.notify({name:'weightT', value:-300})
       await CommonFunc.sleep(200);
-      
+      // check the value of changed parameter
       let strJson = inspector.getInspectorByKey('textArea');
       let obj = JSON.parseJsonElement(strJson);
       console.info('textAreaUIJsunit_0300 component obj is: ' + obj.getElement('$attrs').getString('placeholderFont'));
-
-
         expect(obj.getElement('$attrs').getString('placeholderFont')).assertEqual('{"style":"FontStyle.Normal","size":"-30.00fp","fontWeight":"FontWeight.Normal","fontFamily":"sans-serif"}');
 
       done();
    });
 
-    
-    
-    
     /*
      * @tc.number   textAreaUIJsunit_static_0400
      * @tc.name     textAreaUIJsunit_static_0400
@@ -169,26 +146,19 @@ it('textAreaUIJsunit_static_0300', Level.LEVEL0, async (done: ()=>void) => {
      */
 it('textAreaUIJsunit_static_0400', Level.LEVEL0, async (done: ()=>void) => {
       console.info('textAreaUIJsunit_0400 START');
-      const message:MessageManager = AppStorage.get<MessageManager>("messageManager")!
-      message.notify({name:'placeholderColor', value:'#FFFFFF'})
+  AppStorage.get<MessageManager<ResourceColor>>("messageManager")!.notify({name:'placeholderColor', value:'#FFFFFF'})
       await CommonFunc.sleep(2000);
-      const message1:MessageManager = AppStorage.get<MessageManager>("messageManager")!
-      message1.notify({name:'caretColor', value:'#EEFFFF'})
+  AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'caretColor', value:'#EEFFFF'})
       await CommonFunc.sleep(2000);
-      
+      // check the value of changed parameter
       let strJson = inspector.getInspectorByKey('textArea');
       let obj = JSON.parseJsonElement(strJson);
       console.info('textAreaUIJsunit_0400 component obj is: ' + obj.getElement('$attrs').getString('placeholderColor') + '--' +  obj.getElement('$attrs').getString('caretColor') );
-
-
         expect(obj.getElement('$attrs').getString('caretColor')).assertEqual('#FFEEFFFF');
 
       done();
     });
 
-    
-    
-    
     /*
      * @tc.number   textAreaUIJsunit_static_0500
      * @tc.name     textAreaUIJsunit_static_0500
@@ -197,28 +167,22 @@ it('textAreaUIJsunit_static_0400', Level.LEVEL0, async (done: ()=>void) => {
      */
 it('textAreaUIJsunit_static_0500', Level.LEVEL0, async (done: ()=>void) => {
       console.info('textAreaUIJsunit_0500 START');
-      
-      const message:MessageManager = AppStorage.get<MessageManager>("messageManager")!
-      message.notify({name:'placeholderColor', value:'rgb(238, 130, 238)'})
+      // modify the Color attribute normal value of textArea dynamically
+  AppStorage.get<MessageManager<ResourceColor>>("messageManager")!.notify({name:'placeholderColor', value:'rgb(238, 130, 238)'})
       await CommonFunc.sleep(2000);
-      const message1:MessageManager = AppStorage.get<MessageManager>("messageManager")!
-      message1.notify({name:'caretColor', value:'rgb(238, 131, 233)'})
+  AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'caretColor', value:'rgb(238, 131, 233)'})
       await CommonFunc.sleep(2000);
-      
+      // check the value of changed parameter
       let strJson = inspector.getInspectorByKey('textArea');
       let obj = JSON.parseJsonElement(strJson);
       console.info('textAreaUIJsunit_0500 component obj is: ' + obj.getElement('$attrs').getString('placeholderColor') + '--' +  obj.getElement('$attrs').getString('caretColor') );
-
-
         expect(obj.getElement('$attrs').getString('placeholderColor')).assertEqual('#FFEE82EE');
         expect(obj.getElement('$attrs').getString('caretColor')).assertEqual('#FFEE83E9');
 
       done();
     });
 
-    
-    
-    
+
     /*
      * @tc.number   textAreaUIJsunit_static_0600
      * @tc.name     textAreaUIJsunit_static_0600
@@ -227,14 +191,12 @@ it('textAreaUIJsunit_static_0500', Level.LEVEL0, async (done: ()=>void) => {
      */
 it('textAreaUIJsunit_static_0600', Level.LEVEL0, async (done: ()=>void) => {
       console.info('textAreaUIJsunit_0600 START');
-      
-      const message:MessageManager = AppStorage.get<MessageManager>("messageManager")!
-      message.notify({name:'placeholderColor', value:Color.Green})
+      // modify the Color attribute normal value of textArea dynamically
+  AppStorage.get<MessageManager<ResourceColor>>("messageManager")!.notify({name:'placeholderColor', value:Color.Green})
       await CommonFunc.sleep(2000);
-      const message1:MessageManager = AppStorage.get<MessageManager>("messageManager")!
-      message1.notify({name:'caretColor', value:Color.Red})
+  AppStorage.get<MessageManager<ResourceColor>>("messageManager")!.notify({name:'caretColor', value:Color.Red})
       await CommonFunc.sleep(2000);
-      
+      // check the value of changed parameter
       let strJson = inspector.getInspectorByKey('textArea');
       let obj = JSON.parseJsonElement(strJson);
       console.info('textAreaUIJsunit_0600 component obj is: ' + obj.getElement('$attrs').getString('placeholderColor') + '--' +  obj.getElement('$attrs').getString('caretColor') );
@@ -246,9 +208,9 @@ it('textAreaUIJsunit_static_0600', Level.LEVEL0, async (done: ()=>void) => {
       done();
     });
 
-   
-   
-   
+
+
+
    /*
      * @tc.number   textAreaUIJsunit_static_0700
      * @tc.name     textAreaUIJsunit_static_0700
@@ -257,28 +219,20 @@ it('textAreaUIJsunit_static_0600', Level.LEVEL0, async (done: ()=>void) => {
      */
 it('textAreaUIJsunit_static_0700', Level.LEVEL0, async (done: ()=>void) => {
       console.info('textAreaUIJsunit_0700 START');
-      
-     const message:MessageManager = AppStorage.get<MessageManager>("messageManager")!
-     message.notify({name:'placeholderColor', value:'#AED'})
+      // modify the Color attribute illegal value of textArea dynamically
+  AppStorage.get<MessageManager<ResourceColor>>("messageManager")!.notify({name:'placeholderColor', value:'#AED'})
       await CommonFunc.sleep(2000);
-     const message1:MessageManager = AppStorage.get<MessageManager>("messageManager")!
-     message1.notify({name:'caretColor', value:'#ACD'})
+  AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'caretColor', value:'#ACD'})
       await CommonFunc.sleep(2000);
-      
+      // check the value of changed parameter
       let strJson = inspector.getInspectorByKey('textArea');
      let obj = JSON.parseJsonElement(strJson);
      console.info('textAreaUIJsunit_0700 component obj is: ' + obj.getElement('$attrs').getString('placeholderColor') + '--' +  obj.getElement('$attrs').getString('caretColor') );
-
-
        expect(obj.getElement('$attrs').getString('placeholderColor')).assertEqual('#FFAAEEDD');
        expect(obj.getElement('$attrs').getString('caretColor')).assertEqual('#FFAACCDD');
-
       done();
    });
 
-   
-   
-   
    /*
      * @tc.number   textAreaUIJsunit_static_0800
      * @tc.name     textAreaUIJsunit_static_0800
@@ -287,28 +241,22 @@ it('textAreaUIJsunit_static_0700', Level.LEVEL0, async (done: ()=>void) => {
      */
 it('textAreaUIJsunit_static_0800', Level.LEVEL0, async (done: ()=>void) => {
       console.info('textAreaUIJsunit_0800 START');
-     const message:MessageManager = AppStorage.get<MessageManager>("messageManager")!
-     message.notify({name:'text', value:''})
+  AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'text', value:''})
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
-      
+      // test the change event
       let text = await driver.findComponent(ON.id('textArea'));
       await (text?.inputText('123') as Promise<void>);
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('change');
      let obj = JSON.parseJsonElement(strJson);
      console.info('textAreaUIJsunit_0800 component obj is: ' + obj.getElement('$attrs').getString('content'));
-
-
        expect(obj.getElement('$attrs').getString('content')).assertEqual('123');
 
       done();
     });
 
-    
-    
-    
     /*
      * @tc.number   textAreaUIJsunit_static_0900
      * @tc.name     textAreaUIJsunit_static_0900
@@ -318,36 +266,37 @@ it('textAreaUIJsunit_static_0800', Level.LEVEL0, async (done: ()=>void) => {
 it('textAreaUIJsunit_static_0900', Level.LEVEL0, async (done: ()=>void) => {
       console.info('marqueeJsunit_0900 START');
       await CommonFunc.sleep(1000);
-      
+      // test the copy event
       let driver = Driver.create();
       let driverX =  Driver.create()
       let textAreaRect = CommonFunc.getComponentRectOnScreen('textArea')
-      let clickX = Math.round((textAreaRect.right + textAreaRect.left)/2) as int
-      let clickY = Math.round((textAreaRect.bottom + textAreaRect.top)/2) as int
-      await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
+  await CommonFunc.sleep(1000);
+      let clickX = Math.round((textAreaRect.right + textAreaRect.left)/2)
+      let clickY = Math.round((textAreaRect.bottom + textAreaRect.top)/2)
+      await driverX.mouseClick({ x: clickX.toInt(), y: clickY.toInt() }, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
-      let allSelect = await driver.findComponent(ON.text('全选'));
+      let allSelect = await (driver.findComponent(ON.text('全选')) as Promise<Component>);
       if (allSelect != null) {
         await allSelect.click();
         await CommonFunc.sleep(1000);
       }
-      await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
+      await driverX.mouseClick({ x: clickX.toInt(), y: clickY.toInt() }, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
-      let copy = await driver.findComponent(ON.text('复制'));
+      let copy = await (driver.findComponent(ON.text('复制')) as Promise<Component>);
       if (copy != null) {
         await copy.click();
         await CommonFunc.sleep(1000);
       }
       await CommonFunc.sleep(2000);
-      let textIn = await driver.findComponent(ON.id('copy'));
+      let textIn = await (driver.findComponent(ON.id('copy')) as Promise<Component>);
       let txt = await (textIn?.getText() as Promise<string>);
       console.info('textAreaUIJsunit_0900 component obj is: ' + txt);
 
 
-      
-      await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
+      // test the paste event
+      await driverX.mouseClick({ x: clickX.toInt(), y: clickY.toInt() }, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
-      let paste = await driver.findComponent(ON.text('粘贴'));
+      let paste = await (driver.findComponent(ON.text('粘贴')) as Promise<Component>);
       if (paste != null) {
         await paste.click();
         await CommonFunc.sleep(1000);
@@ -356,17 +305,12 @@ it('textAreaUIJsunit_static_0900', Level.LEVEL0, async (done: ()=>void) => {
       let textPaste = await driver.findComponent(ON.id('paste'));
       let text1 = await (textPaste?.getText() as Promise<string>);
       console.info('textAreaUIJsunit_0900 text1: ' + text1);
-
-
         expect(txt).assertEqual('copy');
         expect(text1).assertEqual('paste');
 
       done();
     });
 
-    
-    
-    
     /*
      * @tc.number   textAreaUIJsunit_static_1000
      * @tc.name     textAreaUIJsunit_static_1000
@@ -376,23 +320,24 @@ it('textAreaUIJsunit_static_0900', Level.LEVEL0, async (done: ()=>void) => {
 it('textAreaUIJsunit_static_1000', Level.LEVEL0, async (done: ()=>void) => {
       console.info('textAreaUIJsunit_1000 START');
       await CommonFunc.sleep(1000);
-      
+      // test the cut event
       let driver = Driver.create();
       let textArea = await driver.findComponent(ON.id('textArea'));
       await (textArea?.inputText('123') as Promise<void>);
       await CommonFunc.sleep(1000);
       let driverX =  Driver.create()
       let textAreaRect = CommonFunc.getComponentRectOnScreen('textArea')
-      let clickX = Math.round((textAreaRect.right + textAreaRect.left)/2) as int
-      let clickY = Math.round((textAreaRect.bottom + textAreaRect.top)/2) as int
-      await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
+      await CommonFunc.sleep(1000);
+      let clickX = Math.round((textAreaRect.right + textAreaRect.left)/2)
+      let clickY = Math.round((textAreaRect.bottom + textAreaRect.top)/2)
+      await driverX.mouseClick({ x: clickX.toInt(), y: clickY.toInt() }, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
       let allSelect = await driver.findComponent(ON.text('全选'));
       if (allSelect != null) {
         await allSelect.click();
         await CommonFunc.sleep(1000);
       }
-      await driverX.mouseClick({ x: clickX, y: clickY }, MouseButton.MOUSE_BUTTON_RIGHT)
+      await driverX.mouseClick({ x: clickX.toInt(), y: clickY.toInt() }, MouseButton.MOUSE_BUTTON_RIGHT)
       await CommonFunc.sleep(1000);
       let cutComponent = await driver.findComponent(ON.text('剪切'));
       if (cutComponent != null) {
@@ -410,9 +355,9 @@ it('textAreaUIJsunit_static_1000', Level.LEVEL0, async (done: ()=>void) => {
       done();
     });
 
-    
-    
-    
+
+
+
     /*
      * @tc.number   textAreaUIJsunit_static_1100
      * @tc.name     textAreaUIJsunit_static_1100
@@ -421,11 +366,10 @@ it('textAreaUIJsunit_static_1000', Level.LEVEL0, async (done: ()=>void) => {
      */
 it('textAreaUIJsunit_static_1100', Level.LEVEL0, async (done: ()=>void) => {
       console.info('textAreaUIJsunit_1100 START');
-      
-      const message:MessageManager = AppStorage.get<MessageManager>("messageManager")!
-      message.notify({name:'caretColor', value:'rgba(0, 255, 0, 1)'})
+      // modify the Color attribute normal value of textArea dynamically
+  AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'caretColor', value:'rgba(0, 255, 0, 1)'})
       await CommonFunc.sleep(2000);
-      
+      // check the value of changed parameter
       let strJson = inspector.getInspectorByKey('textArea');
       let obj = JSON.parseJsonElement(strJson);
       console.info('textAreaUIJsunit_1100 component obj is: ' + obj.getElement('$attrs').getString('placeholderColor') + '--' +  obj.getElement('$attrs').getString('caretColor') );
@@ -436,9 +380,9 @@ it('textAreaUIJsunit_static_1100', Level.LEVEL0, async (done: ()=>void) => {
       done();
     });
 
-    
-    
-    
+
+
+
     /*
      * @tc.number   textAreaUIJsunit_static_1200
      * @tc.name     textAreaUIJsunit_static_1200
@@ -447,11 +391,10 @@ it('textAreaUIJsunit_static_1100', Level.LEVEL0, async (done: ()=>void) => {
      */
 it('textAreaUIJsunit_static_1200', Level.LEVEL0, async (done: ()=>void) => {
       console.info('textAreaUIJsunit_1200 START');
-      
-      const message:MessageManager = AppStorage.get<MessageManager>("messageManager")!
-      message.notify({name:'caretColor', value:0xffc0cb})
+      // modify the Color attribute normal value of textArea dynamically
+  AppStorage.get<MessageManager<int>>("messageManager")!.notify({name:'caretColor', value:0xffc0cb})
       await CommonFunc.sleep(2000);
-      
+      // check the value of changed parameter
       let strJson = inspector.getInspectorByKey('textArea');
       let obj = JSON.parseJsonElement(strJson);
       console.info('textAreaUIJsunit_1200 component obj is: ' + obj.getElement('$attrs').getString('placeholderColor') + '--' +  obj.getElement('$attrs').getString('caretColor') );
@@ -462,9 +405,9 @@ it('textAreaUIJsunit_static_1200', Level.LEVEL0, async (done: ()=>void) => {
       done();
     });
 
-    
-    
-    
+
+
+
     /*
      * @tc.number   textAreaUIJsunit_static_1300
      * @tc.name     textAreaUIJsunit_static_1300
@@ -477,8 +420,7 @@ it('textAreaUIJsunit_static_1300', Level.LEVEL0, async (done: ()=>void) => {
       console.info("[textAreaUIJsunit_1300]: " + JSON.stringify(newJson));
 
       let caretColor = $r('sys.color.ohos_id_color_connected');
-      const message:MessageManager = AppStorage.get<MessageManager>("messageManager")!
-      message.notify({name:'caretColor', value:`${$r('sys.color.ohos_id_color_connected')}`})
+  AppStorage.get<MessageManager<string>>("messageManager")!.notify({name:'caretColor', value:`${$r('sys.color.ohos_id_color_connected')}`})
       await CommonFunc.sleep(2000);
 
       let strJson = inspector.getInspectorByKey('textArea');

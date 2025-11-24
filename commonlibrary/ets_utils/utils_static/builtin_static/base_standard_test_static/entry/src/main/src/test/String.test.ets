@@ -1780,7 +1780,7 @@ export default function StringTest() {
       try {
         const str: string = "The quick red fox jumped over the lazy dog's back.";
         const iterator = str.$_iterator();
-        let result: NullishType = iterator.next();
+        let result: Any = iterator.next();
         console.log('String.prototypeSymbol result:' + JSON.stringify(result));
         expect(JSON.stringify(result)).assertEqual("{\"done\":false,\"value\":\"T\"}");
       } catch (err) {

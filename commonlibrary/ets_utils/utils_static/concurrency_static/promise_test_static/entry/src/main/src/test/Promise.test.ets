@@ -56,7 +56,7 @@ export default function PromiseTest() {
         const TAG: string = 'PromiseTest001';
         console.info(`${TAG} test start`);
         try {
-          const promise1 = new Promise<NullishType>((resolve) => {
+          const promise1 = new Promise<Any>((resolve) => {
             setTimeout(() => resolve(null), 100);
           });
           const result = await promise1 as null;
@@ -450,7 +450,7 @@ export default function PromiseTest() {
         const TAG: string = 'PromiseTest014';
         console.info(`${TAG} test start`);
         try {
-          const promise1 = Promise.resolve<NullishType>(null);
+          const promise1 = Promise.resolve<Any>(null);
           const result = await promise1 as null;
           expect(result).assertEqual(null);
         } catch (err) {
@@ -630,7 +630,7 @@ export default function PromiseTest() {
         const TAG: string = 'PromiseTest021';
         console.info(`${TAG} test start`);
         try {
-          const promise = Promise.reject<NullishType>(new Error(undefined));
+          const promise = Promise.reject<Any>(new Error(undefined));
           const result = await promise as undefined;
         } catch (err) {
           err = err as Error;
@@ -805,13 +805,13 @@ export default function PromiseTest() {
         const TAG: string = 'PromiseTest028';
         console.info(`${TAG} test start`);
         try {
-          const promise1 = Promise.resolve<NullishType>(undefined);
+          const promise1 = Promise.resolve<Any>(undefined);
           const promise2 = Promise.resolve<Double>(10);
           const promise3 = Promise.resolve<Boolean>(true);
           const promise4 = Promise.resolve<[number, string]>([1, 'tupleValue'])
           let results =
-            await Promise.all<NullishType | Double | Boolean | [number, string]>([promise1, promise2, promise3,
-              promise4]) as Array<NullishType | Double | Boolean | [number, string]>
+            await Promise.all<Any | Double | Boolean | [number, string]>([promise1, promise2, promise3,
+              promise4]) as Array<Any | Double | Boolean | [number, string]>
           let resultNullish = results[0] as undefined;
           let resultNum = results[1] as number;
           let resultBoolean = results[2] as boolean;
@@ -847,13 +847,13 @@ export default function PromiseTest() {
             return 20
           };
           const promiseTest: Promise<number> = new Promise<number>((resolve) => resolve(30))
-          const promise1 = Promise.resolve<NullishType>(null);
+          const promise1 = Promise.resolve<Any>(null);
           const promise2 = Promise.resolve<() => number>(func);
           const promise3 = Promise.resolve<Promise<number>>(promiseTest);
           const promise4 = Promise.resolve<[number, string]>([1, 'tupleValue'])
           let results =
-            await Promise.all<NullishType | () => number | Promise<number> | [number, string]>([promise1, promise2,
-              promise3, promise4]) as Array<NullishType | () => number | Promise<number> | [number, string]>
+            await Promise.all<Any | () => number | Promise<number> | [number, string]>([promise1, promise2,
+              promise3, promise4]) as Array<Any | () => number | Promise<number> | [number, string]>
           let resultNullish = results[0] as null;
           const resultFun: () => number = results[1] as () => number;
           const tuple = results[3] as [number, string];
@@ -886,13 +886,13 @@ export default function PromiseTest() {
         const TAG: string = 'PromiseTest030';
         console.info(`${TAG} test start`);
         try {
-          const promise1 = Promise.resolve<NullishType>(undefined);
+          const promise1 = Promise.resolve<Any>(undefined);
           const promise2 = Promise.resolve<[number, string]>([1, 'tupleValue'])
           const promise3 = Promise.resolve<short>(10 as short);
           // const promise4 = Promise.resolve<void>();
           const promise5 = Promise.reject(new Error('Error occurred'));
-          let results = await Promise.all<NullishType | short | char | [number, string]>([promise1, promise2, promise3,
-            promise5]) as Array<NullishType | short | [number, string]>
+          let results = await Promise.all<Any | short | char | [number, string]>([promise1, promise2, promise3,
+            promise5]) as Array<Any | short | [number, string]>
           let resultNullish = results[0] as undefined;
           let tuple = results[1] as [number, string];
           let resultNum = results[2] as number;
@@ -926,14 +926,14 @@ export default function PromiseTest() {
             return 20
           };
           const promiseTest: Promise<number> = new Promise<number>((resolve) => resolve(30))
-          const promise1 = Promise.resolve<NullishType>(null);
+          const promise1 = Promise.resolve<Any>(null);
           const promise2 = Promise.resolve<() => number>(func);
           const promise3 = Promise.resolve<Promise<number>>(promiseTest);
           const promise4 = Promise.resolve<[number, string]>([1, 'tupleValue'])
           const promise5 = Promise.reject(new Error('Error occurred'));
           let results =
-            await Promise.all<NullishType | number | char | [number, string]>([promise1, promise2, promise3, promise4,
-              promise5]) as Array<NullishType | number | char | [number, string]>
+            await Promise.all<Any | number | char | [number, string]>([promise1, promise2, promise3, promise4,
+              promise5]) as Array<Any | number | char | [number, string]>
           const resultNullish = results[0] as null;
           const resultNum = results[2] as number;
           const resultFun: () => number = results[1] as () => number;
@@ -967,19 +967,19 @@ export default function PromiseTest() {
         console.info(`${TAG} test start`);
         try {
           const person: Person = new Person('aaa')
-          const promise1 = Promise.resolve<NullishType>(undefined);
+          const promise1 = Promise.resolve<Any>(undefined);
           const promise2 = Promise.resolve<Person>(person);
           const promise3 = Promise.resolve<[number, string]>([1, 'tupleValue'])
           // const promise4 = Promise.resolve<void>();
-          let results = await Promise.allSettled<NullishType | Person | [number, string]>([promise1,
+          let results = await Promise.allSettled<Any | Person | [number, string]>([promise1,
             promise2,
-            promise3]) as Array<PromiseFulfilledResult<NullishType | Person | [number, string]> | PromiseRejectedResult>;
-          const result1 = results[0] as PromiseFulfilledResult<NullishType | Person | [number, string]>;
+            promise3]) as Array<PromiseFulfilledResult<Any | Person | [number, string]> | PromiseRejectedResult>;
+          const result1 = results[0] as PromiseFulfilledResult<Any | Person | [number, string]>;
           const result2 = result1.value as undefined;
           expect(result2).assertEqual(undefined);
-          expect(((results[1] as PromiseFulfilledResult<NullishType | Person | [number, string]>).value as Person).name)
+          expect(((results[1] as PromiseFulfilledResult<Any | Person | [number, string]>).value as Person).name)
             .assertEqual('aaa');
-          expect(((results[2] as PromiseFulfilledResult<NullishType | Person | [number, string]>).value as [number, string])[0])
+          expect(((results[2] as PromiseFulfilledResult<Any | Person | [number, string]>).value as [number, string])[0])
             .assertEqual(1);
         } catch (err) {
           err = err as Error;
@@ -1007,26 +1007,26 @@ export default function PromiseTest() {
             return 20
           };
           const promiseTest: Promise<number> = new Promise<number>((resolve) => resolve(30))
-          const promise1 = Promise.resolve<NullishType>(null);
+          const promise1 = Promise.resolve<Any>(null);
           const promise2 = Promise.resolve<() => number>(func);
           const promise3 = Promise.resolve<Promise<number>>(promiseTest);
           const promise4 = Promise.resolve<[number, string]>([1, 'tupleValue'])
           let results =
-            await Promise.allSettled<NullishType | () => number | [number, string] | Promise<number>>([promise1,
+            await Promise.allSettled<Any | () => number | [number, string] | Promise<number>>([promise1,
               promise2,
               promise3,
-              promise4]) as Array<PromiseFulfilledResult<NullishType | () => number | [number, string] | Promise<number>> | PromiseRejectedResult>;
-          const result1 = results[0] as PromiseFulfilledResult<NullishType | Person | [number, string]>;
+              promise4]) as Array<PromiseFulfilledResult<Any | () => number | [number, string] | Promise<number>> | PromiseRejectedResult>;
+          const result1 = results[0] as PromiseFulfilledResult<Any | Person | [number, string]>;
           const result2 = result1.value as null;
           const result3 =
-            results[2] as PromiseFulfilledResult<NullishType | () => number | [number, string] | Promise<number>>;
+            results[2] as PromiseFulfilledResult<Any | () => number | [number, string] | Promise<number>>;
           const result4 = result3.value as number;
           expect(result2).assertEqual(null);
           const result: () => number =
-            (results[1] as PromiseFulfilledResult<NullishType | () => number | [number, string] | Promise<number>>).value as () => number;
+            (results[1] as PromiseFulfilledResult<Any | () => number | [number, string] | Promise<number>>).value as () => number;
           expect(result()).assertEqual(20);
           expect(result4).assertEqual(30);
-          expect(((results[3] as PromiseFulfilledResult<NullishType | () => number | [number, string] | Promise<number>>).value as [number, string])[1])
+          expect(((results[3] as PromiseFulfilledResult<Any | () => number | [number, string] | Promise<number>>).value as [number, string])[1])
             .assertEqual('tupleValue');
         } catch (err) {
           err = err as Error;
@@ -1052,23 +1052,23 @@ export default function PromiseTest() {
         const TAG: string = 'PromiseTest034';
         console.info(`${TAG} test start`);
         try {
-          const promise1 = Promise.resolve<NullishType>(null);
+          const promise1 = Promise.resolve<Any>(null);
           const promise2 = Promise.resolve<Byte>(1 as Byte);
           const promise3 = Promise.resolve<int>(1);
           const promise4 = Promise.resolve<[number, string]>([1, 'tupleValue'])
           const promise5 = Promise.reject(new Error('Error occurred'));
-          let results = await Promise.allSettled<NullishType | int>([promise1, promise2, promise3, promise4,
-            promise5]) as Array<PromiseFulfilledResult<NullishType | Byte | int | [number, string]> | PromiseRejectedResult>;
-          let result1 = results[1] as PromiseFulfilledResult<NullishType | Byte | int | [number, string]>;
+          let results = await Promise.allSettled<Any | int>([promise1, promise2, promise3, promise4,
+            promise5]) as Array<PromiseFulfilledResult<Any | Byte | int | [number, string]> | PromiseRejectedResult>;
+          let result1 = results[1] as PromiseFulfilledResult<Any | Byte | int | [number, string]>;
           let result2 = result1.value as Byte;
-          let result3 = results[2] as PromiseFulfilledResult<NullishType | Byte | int | [number, string]>;
+          let result3 = results[2] as PromiseFulfilledResult<Any | Byte | int | [number, string]>;
           let result4 = result3.value as int;
-          let result5 = results[0] as PromiseFulfilledResult<NullishType>;
+          let result5 = results[0] as PromiseFulfilledResult<Any>;
           let result6 = result5.value as null;
           expect(result6).assertEqual(null);
           expect(result2).assertEqual(1);
           expect(result4).assertEqual(1);
-          expect(((results[3] as PromiseFulfilledResult<NullishType | Byte | int | [number, string]>).value as [number, string])[0])
+          expect(((results[3] as PromiseFulfilledResult<Any | Byte | int | [number, string]>).value as [number, string])[0])
             .assertEqual(1);
           expect((results[4] as PromiseRejectedResult).reason.message).assertEqual('Error occurred');
         } catch (err) {
@@ -1098,29 +1098,29 @@ export default function PromiseTest() {
             return 20
           };
           const promiseTest: Promise<number> = new Promise<number>((resolve) => resolve(30))
-          const promise1 = Promise.resolve<NullishType>(null);
+          const promise1 = Promise.resolve<Any>(null);
           const promise2 = Promise.resolve<() => number>(func);
           const promise3 = Promise.resolve<Promise<number>>(promiseTest);
           const promise4 = Promise.resolve<[number, string]>([1, 'tupleValue'])
           const promise5 = Promise.reject(new Error('Error occurred'));
           let results =
-            await Promise.allSettled<NullishType | () => number | [number, string] | Promise<number>>([promise1,
+            await Promise.allSettled<Any | () => number | [number, string] | Promise<number>>([promise1,
               promise2,
               promise3,
               promise4,
-              promise5]) as Array<PromiseFulfilledResult<NullishType | () => number | [number, string] | Promise<number>> | PromiseRejectedResult>;
-          const result1 = results[0] as PromiseFulfilledResult<NullishType>;
+              promise5]) as Array<PromiseFulfilledResult<Any | () => number | [number, string] | Promise<number>> | PromiseRejectedResult>;
+          const result1 = results[0] as PromiseFulfilledResult<Any>;
           const result2 = result1.value as null;
           const result3 =
-            results[2] as PromiseFulfilledResult<NullishType | () => number | [number, string] | Promise<number>>;
+            results[2] as PromiseFulfilledResult<Any | () => number | [number, string] | Promise<number>>;
           const result4 = result3.value as number;
           expect(result2).assertEqual(null);
           const result: () => number =
-            (results[1] as PromiseFulfilledResult<NullishType | () => number | [number, string] | Promise<number>>).value as () => number;
+            (results[1] as PromiseFulfilledResult<Any | () => number | [number, string] | Promise<number>>).value as () => number;
           expect(result()).assertEqual(20);
           expect(result4)
             .assertEqual(30);
-          expect(((results[3] as PromiseFulfilledResult<NullishType | () => number | [number, string] | Promise<number>>).value as [number, string])[1])
+          expect(((results[3] as PromiseFulfilledResult<Any | () => number | [number, string] | Promise<number>>).value as [number, string])[1])
             .assertEqual('tupleValue');
           expect((results[4] as PromiseRejectedResult).reason.message).assertEqual('Error occurred');
         } catch (err) {
@@ -1149,7 +1149,7 @@ export default function PromiseTest() {
         try {
           const array: Array<number> = new Array<number>(10);
           array.push(10);
-          const promise1 = Promise.resolve<NullishType>(undefined);
+          const promise1 = Promise.resolve<Any>(undefined);
           const promise2 = Promise.resolve<null>(null);
           const promise3 = Promise.resolve<Array<number>>(array);
           const promise4 = Promise.resolve<[number, string]>([1, 'tupleValue'])
@@ -1185,7 +1185,7 @@ export default function PromiseTest() {
           const promiseTest: Promise<number> = new Promise<number>((resolve) => resolve(30))
           const promise1 = Promise.resolve<Promise<number>>(promiseTest);
           const promise2 = Promise.resolve<() => number>(func);
-          const promise3 = Promise.resolve<NullishType>(undefined);
+          const promise3 = Promise.resolve<Any>(undefined);
           const promise4 = Promise.resolve<[number, string]>([1, 'tupleValue'])
           let result = await Promise.any([promise1, promise2, promise3,
             promise4]) as number;
@@ -1217,7 +1217,7 @@ export default function PromiseTest() {
           const set: Set<number> = new Set<number>();
           set.add(2);
 
-          const promise1 = Promise.resolve<NullishType>(undefined);
+          const promise1 = Promise.resolve<Any>(undefined);
           const promise2 = Promise.resolve<Set<number>>(set);
           const promise3 = Promise.resolve<[number, string]>([1, 'tupleValue'])
           const promise4 = Promise.reject(new Error('Error occurred'));
@@ -1254,7 +1254,7 @@ export default function PromiseTest() {
           };
           const promiseTest: Promise<number> = new Promise<number>((resolve) => resolve(30))
           const promise1 = Promise.resolve<Promise<number>>(promiseTest);
-          const promise2 = Promise.resolve<NullishType>(null);
+          const promise2 = Promise.resolve<Any>(null);
           const promise3 = Promise.resolve<() => number>(func);
           const promise4 = Promise.resolve<[number, string]>([1, 'tupleValue'])
           const promise5 = Promise.reject(new Error('Error occurred'));
@@ -1290,9 +1290,9 @@ export default function PromiseTest() {
           const promise1 = new Promise<containers.ConcurrentSet<number>>((resolve) => {
             setTimeout(() => resolve(concurrentSet), 100);
           });
-          const promise2 = Promise.resolve<NullishType>(undefined);
+          const promise2 = Promise.resolve<Any>(undefined);
           const promise3 = Promise.resolve<[number, string]>([1, 'tupleValue'])
-          let result = await Promise.race<NullishType | [number, string]>([promise1, promise2, promise3]) as undefined;
+          let result = await Promise.race<Any | [number, string]>([promise1, promise2, promise3]) as undefined;
           expect(result).assertEqual(undefined);
         } catch (err) {
           err = err as Error;
@@ -1325,7 +1325,7 @@ export default function PromiseTest() {
           });
           const promise1 = Promise.reject(new Error('Error occurred'));
           const promise2 = Promise.resolve<Promise<number>>(promiseTest);
-          const promise3 = Promise.resolve<NullishType>(null);
+          const promise3 = Promise.resolve<Any>(null);
           const promise4 = Promise.resolve<() => number>(func);
           const promise5 = Promise.resolve<[number, string]>([1, 'tupleValue'])
           let result = await Promise.race([promise1, promise2, promise3, promise4]) as null;
@@ -1356,7 +1356,7 @@ export default function PromiseTest() {
           const promise1 = new Promise<number>((_, reject) => {
             setTimeout(() => reject(new Error('Promise 1 Error occurred')), 100);
           });
-          const promise2 = Promise.resolve<NullishType>(undefined);
+          const promise2 = Promise.resolve<Any>(undefined);
           const promise3 = Promise.resolve<[number, string]>([1, 'tupleValue'])
           const queue: containers.LinkedBlockingQueue<number> = new containers.LinkedBlockingQueue<number>();
           queue.add(2);
@@ -1364,7 +1364,7 @@ export default function PromiseTest() {
             setTimeout(() => resolve(queue), 100);
           });
           let result =
-            await Promise.race<number | NullishType | [number, string] | containers.LinkedBlockingQueue<number>>([promise1,
+            await Promise.race<number | Any | [number, string] | containers.LinkedBlockingQueue<number>>([promise1,
               promise2, promise3, promise4]) as undefined;
           expect(result).assertEqual(undefined);
         } catch (err) {
@@ -1398,12 +1398,12 @@ export default function PromiseTest() {
           });
           const promise1 = Promise.resolve<Promise<number>>(promiseTest);
 
-          const promise2 = Promise.resolve<NullishType>(null);
+          const promise2 = Promise.resolve<Any>(null);
           const promise3 = Promise.resolve<() => number>(func);
           const promise4 = Promise.reject(new Error('Error occurred'));
           const promise5 = Promise.resolve<[number, string]>([1, 'tupleValue'])
           let result =
-            await Promise.race<NullishType | () => number | [number, string]>([promise1, promise2, promise3, promise4,
+            await Promise.race<Any | () => number | [number, string]>([promise1, promise2, promise3, promise4,
               promise5]) as null;
           expect(result).assertEqual(null);
         } catch (err) {

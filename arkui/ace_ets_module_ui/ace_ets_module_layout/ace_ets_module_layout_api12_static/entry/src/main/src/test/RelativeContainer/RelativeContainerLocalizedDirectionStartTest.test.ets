@@ -48,7 +48,6 @@ import { UtilsTest } from '../Util.test';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
-let testAbilityContext: common.UIAbilityContext;
 
 
 export default function RelativeContainerLocalizedDirectionStartTest() {
@@ -61,6 +60,7 @@ export default function RelativeContainerLocalizedDirectionStartTest() {
       await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
+      await UtilsTest.msSleep(4000)
       console.info("RelativeContainerLocalizedDirectionStart beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/RelativeContainer/RelativeContainerLocalizedDirectionStartPage',
@@ -72,10 +72,8 @@ export default function RelativeContainerLocalizedDirectionStartTest() {
         console.info("get RelativeContainerLocalizedDirectionStart state pages:" + JSON.stringify(pages));
         if (!("RelativeContainerLocalizedDirectionStart" == pages.name)) {
           console.info("get RelativeContainerLocalizedDirectionStart pages.name:" + JSON.stringify(pages.name));
-          
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push RelativeContainerLocalizedDirectionStart page error:" + err);
@@ -92,7 +90,7 @@ export default function RelativeContainerLocalizedDirectionStartTest() {
      * @tc.desc     RelativeContainerLocalizedDirectionStart_static_0100
      * @tc.level    Level.LEVEL1
      */
-    it('RelativeContainerLocalizedDirectionStart_static_0100', Level.LEVEL1, async (done: Function) => {
+    it('RelativeContainerLocalizedDirectionStart_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('RelativeContainerLocalizedDirectionStart_static_0100 START');
       await CommonFunc.sleep(1000);
       let rel = CommonFunc.getComponentRect('RelativeBarrierLocalizedDirectionStart');
@@ -100,12 +98,12 @@ export default function RelativeContainerLocalizedDirectionStartTest() {
       let row2 = CommonFunc.getComponentRect('RelativeBarrierStartButton2');
       let row3 = CommonFunc.getComponentRect('RelativeBarrierStartButton3');
       await CommonFunc.sleep(2000);
-      const uiContext = new UIContext();
       console.info("[RelativeContainerLocalizedDirectionStart_static_0100] RelativeContainer is: " +
       JSON.stringify(rel) + 'row1:' + JSON.stringify(row1) + 'row2:' + JSON.stringify(row2) + 'row3:' +
       JSON.stringify(row3));
-      expect(Math.abs(Math.round(rel.right - row3.right) - Math.round(UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(rel.right - row3.right) - Math.round(AppStorage.get<UIContext>('uiContext')?.vp2px(150) ?? 0)) <= 1).assertTrue();
       console.info('RelativeContainerLocalizedDirectionStart_static_0100 END');
+      done()
     });
   })
 }

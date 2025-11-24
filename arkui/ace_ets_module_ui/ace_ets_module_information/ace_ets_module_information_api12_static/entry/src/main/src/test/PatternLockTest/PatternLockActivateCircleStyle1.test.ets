@@ -49,7 +49,6 @@ export default function PatternLockActivateCircleStyle1() {
         console.info("get PatternLockActivateCircleStyle1 state success " + JSON.stringify(pages));
         if (!("PatternLockActivateCircleStyle1" == pages.name)) {
           console.info("get PatternLockActivateCircleStyle1 state success " + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -78,9 +77,9 @@ it('PatternLockActivateCircleStyle1_static_0100', Level.LEVEL0, async (done: () 
       let obj1 = JSON.parseJsonElement(strJson1);
       await CommonFunc.sleep(1000);
       console.info("[VideoReset1_0100] obj1 is: " + JSON.stringify(obj1));
-      expect(obj1.getElement('$type').getString('activeCircleColor')).assertEqual('#FF90EE90');
-      expect(obj1.getElement('$type').getString('activeCircleRadius')).assertEqual('16.00vp');
-      expect(obj1.getElement('$type').getString('enableWaveEffect')).assertEqual('true');
+      expect(obj1.getElement('$attrs').getString('activeCircleColor')).assertEqual('#FF90EE90');
+      expect(obj1.getElement('$attrs').getString('activeCircleRadius')).assertEqual('16.00vp');
+      expect(obj1.getElement('$attrs').getString('enableWaveEffect')).assertEqual('true');
 
       console.info('[PatternLockActivateCircleStyle1_0100] END');
       done();

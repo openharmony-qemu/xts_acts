@@ -64,7 +64,7 @@ build() {
           console.log('RichEditorController click event');
         })
         .onReady((): void => {
-          this.controller.addTextSpan('a', {
+          this.controller!.addTextSpan('a', {
             style:
             {
               fontColor: Color.Orange,
@@ -79,7 +79,7 @@ build() {
             }
           })
 
-          this.controller.addImageSpan($r('app.media.icon'),
+          this.controller!.addImageSpan($r('app.media.icon'),
             {
               imageStyle:
               {

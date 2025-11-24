@@ -58,10 +58,10 @@ export default function setCrossLanguageOptionsErrorCodeTest() {
         console.info("get setCrossLanguageOptionsErrorCodeTest state pages:" + JSON.stringify(pages));
         if (!("setCrossLanguageOptionsErrorCodeTest" == pages.name)) {
           console.info("get setCrossLanguageOptionsErrorCodeTest pages.name:" + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push setCrossLanguageOptionsErrorCodeTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push setCrossLanguageOptionsErrorCodeTest page error:" + err);
@@ -77,13 +77,14 @@ export default function setCrossLanguageOptionsErrorCodeTest() {
     
     
 
+
 /*
      * @tc.number   setCrossLanguageOptionsErrorCodeTest_static_0100
      * @tc.name     setCrossLanguageOptionsErrorCodeTest_static_0100
      * @tc.desc     setCrossLanguageOptionsErrorCodeTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('setCrossLanguageOptionsErrorCodeTest_static_0100', Level.LEVEL0, async (done: () => void) => {
+    it('setCrossLanguageOptionsErrorCodeTest_static_0100', Level.LEVEL0, async (done: () => void) => {
       console.info('setCrossLanguageOptionsErrorCodeTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

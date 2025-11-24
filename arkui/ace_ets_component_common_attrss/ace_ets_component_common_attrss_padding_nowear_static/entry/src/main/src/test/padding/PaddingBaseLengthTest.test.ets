@@ -12,11 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import Utils , { BasePageConfig, PageConfig, TestValue, RectValue }  from '../../../ets/MainAbility/common/Utils';
+import Utils , { BasePageConfig, PageConfig, TestValue, RectValue,RectValueExpect }  from '../../../ets/MainAbility/common/Utils';
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import CommonTest from '../common/CommonTest';
-import { describe, expect, beforeAll } from '../../../../hypium'
-import { $r } from '@ohos.arkui.component'
+import { describe, expect, beforeAll } from '../../../../hypium/index'
+import { $r , Padding, Resource} from '@ohos.arkui.component'
 import {
   Color
 } from '@ohos.arkui.component'
@@ -36,13 +36,14 @@ let testAbilityContext:common.UIAbilityContext;
 /**
  * Test of common attribute: padding
  */
-export default function paddingTest() {
+export default function paddingTest2() {
   //A list of components that support padding attributes is required.
   let supportView: Array<string> = new Array<string>(
     'Select',
     'Stepper',
     'StepperItem',
-    'Web')
+    // 'Web'  // app died
+  )
 
   //Called from the parent class when setting the background color.
   let parentBackGroundColor = Color.Yellow
@@ -95,24 +96,23 @@ export default function paddingTest() {
    */
   describe('PaddingBaseLengthTest', () => {
     beforeAll(() => {
-      
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.padding.nowear.test.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
     //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       //Modify the reference component properties.
-      AttrsManager.change(data.caseTag, data.testValue.setValue);
+      // AttrsManager.change(data.caseTag, data.testValue.setValue);
+      // AppStorage.setOrCreate<number|string|Padding|Resource>('_padding', data.testValue.setValue.padding as number|string|Padding|Resource)
       await Utils.sleep(1000);
 
       //Confirm that the padding attribute values have been successfully set.
       let viewObj = Utils.getComponentByKey(data.pageConfig.componentKey);
-      console.info('[' + data.caseTag + '] viewObj.$attrs.padding:' + viewObj.getElement('$attrs').getElement('padding'));
+      console.info('[' + data.caseTag + '] viewObj.$attrs.padding:' + viewObj.getElement('$attrs').getString('padding'));
       console.info('[' + data.caseTag + '] data.testValue.expectValue.padding:' + data.testValue.expectValue.padding);
 
       //Confirm that the size attribute values have been successfully set.
-      expect(viewObj.getElement('$attrs').getElement('padding')).assertEqual(data.testValue.expectValue.padding);
+      expect(viewObj.getElement('$attrs').getString('padding')).assertEqual(data.testValue.expectValue.padding);
     })
   })
 }

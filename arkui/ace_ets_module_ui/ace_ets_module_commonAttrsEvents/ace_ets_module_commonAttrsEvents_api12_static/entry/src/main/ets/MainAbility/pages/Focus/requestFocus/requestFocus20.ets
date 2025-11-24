@@ -4,8 +4,8 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { AppStorage, State } from '@ohos.arkui.stateManagement'
+import { AppStorage, Consume, Provide, State } from '@ohos.arkui.stateManagement';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
 import {
@@ -55,6 +55,7 @@ import {
 @Component
 struct requestFocus20 {
   @State text1: string = ''
+  @Provide({ alias: 'pageInfos' }) pageInfos: NavPathStack = new NavPathStack();
 
   @Builder
   PageMap(name: string) {
@@ -64,18 +65,32 @@ struct requestFocus20 {
   }
 
   build() {
+    Navigation(this.pageInfos) {
+      Column({space: 5} as ColumnOptions) {
+        Text('' + this.text1).id('requestFocus20_text1')
 
-
+        Button('Focus-textInput1').onClick((e: ClickEvent) => {
+          try {
+            this.getUIContext().getFocusController().requestFocus('requestFocus20_textInput1')
+          } catch (error: Error) {
+            this.text1 = '' + error.code
+          }
+        }).id('requestFocus20_btn2')
+      }
+    }
+    .title('main')
+    .navDestination(this.PageMap)
   }
 }
 
 @Component
 export struct pageOne {
+  @Consume('pageInfos') pageInfos: NavPathStack;
   @State text2: string = 'TextInput'
 
   build() {
     NavDestination() {
-      Column() {
+      Column({space: 5} as ColumnOptions) {
         TextInput({ text: this.text2 })
           .id('requestFocus20_textInput1')
           .onFocus(() => {

@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -50,9 +50,10 @@ export default function MultiNavigationTest() {
         console.info("get MultiNavigation state pages:" + JSON.stringify(pages));
         if (!("MultiNavigationEntry" == pages.name)) {
           console.info("get MultiNavigation pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push MultiNavigation page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push MultiNavigation page error:" + err);
@@ -67,13 +68,14 @@ export default function MultiNavigationTest() {
 
 
     
-    /*
+    
+/*
      * @tc.number   MultiNavigation_static_0100
      * @tc.name     MultiNavigation_static_0100
      * @tc.desc     MultiNavigation_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('MultiNavigation_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('MultiNavigation_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('MultiNavigation_0100 START');
       await CommonFunc.sleep(500);
 
@@ -97,13 +99,14 @@ it('MultiNavigation_static_0100', Level.LEVEL0, async (done: () => void): Promis
 
 
     
-    /*
+    
+/*
      * @tc.number   MultiNavigation_static_0200
      * @tc.name     MultiNavigation_static_0200
      * @tc.desc     MultiNavigation_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('MultiNavigation_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('MultiNavigation_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('MultiNavigation_0200 START');
       await CommonFunc.sleep(500);
 
@@ -128,13 +131,14 @@ it('MultiNavigation_static_0200', Level.LEVEL0, async (done: () => void): Promis
 
 
     
-    /*
+    
+/*
      * @tc.number   MultiNavigation_static_0300
      * @tc.name     MultiNavigation_static_0300
      * @tc.desc     MultiNavigation_static_0300
      * @tc.level    Level.LEVEL0
      */
-it('MultiNavigation_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('MultiNavigation_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('MultiNavigation_0300 START');
       await CommonFunc.sleep(500);
 

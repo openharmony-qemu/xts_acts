@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-
+// import {CheckboxGroupModifier}from '@ohos.arkui.modifier'
 import {
   Entry, Component, Builder,NodeContainer, CheckBoxShape,
   Column, ColumnOptions, ImageAnalyzerType, CheckboxGroup, Checkbox,
@@ -26,13 +26,13 @@ import { State } from '@ohos.arkui.stateManagement';
 @Component
 struct CheckboxExample {
 
-  
+  //Tab1
   @State mItemNameTrue: String = ''
   @State mItemNameFalse: String = ''
-  
-  
-  
-  
+  // @State groupModifierTrue:CheckboxGroupModifier = new CheckboxGroupModifier()
+  //   .onChange((itemName: CheckboxGroupResult) => {
+  //     this.mItemNameTrue = 'CheckboxGroupModifierOnChange'
+  // })
 
 
   build() {
@@ -40,8 +40,8 @@ struct CheckboxExample {
       CheckboxGroup({ group: 'mCheckboxGroup' })
         .checkboxShape(CheckBoxShape.ROUNDED_SQUARE)
         .selectedColor('#007DFF')
-        
-        
+        // .attributeModifier(this.groupModifierTrue as CheckboxGroupModifier)
+        // .id('checkbosGroupOnchange')
       Text('M Select All').fontSize(14).lineHeight(20).fontColor('#182431').fontWeight(500)
       Checkbox({ name: 'mcheckbox1', group: 'mCheckboxGroup' })
         .selectedColor('#007DFF')

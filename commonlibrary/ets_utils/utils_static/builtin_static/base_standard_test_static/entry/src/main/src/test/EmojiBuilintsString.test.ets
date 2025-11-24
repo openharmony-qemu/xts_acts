@@ -626,11 +626,10 @@ export default function EmojiString() {
       try {
         const sentence4 = '\u260e';
         const index = 1;
-        expect(String(sentence4.charCodeAt(index))).assertEqual("NaN")
+        let s = String(sentence4.charCodeAt(index))
       } catch (err) {
-        err = err as BusinessError;
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        err = err as RangeError;
+        expect(err.message).assertEqual('Invalid index: 1');
       }
     });
 
@@ -752,13 +751,10 @@ export default function EmojiString() {
       try {
         const sentence10 = '\u2666';
         const index = 1;
-        hilog.info(2, TAG, '%{public}s',
-          'SJG_testStringPrototypeCharCodetEmoji0010:' + String(sentence10.charCodeAt(index)));
-        expect(String(sentence10.charCodeAt(index))).assertEqual("NaN")
+        let s = String(sentence10.charCodeAt(index))
       } catch (err) {
-        err = err as BusinessError;
-        console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        err = err as RangeError;
+        expect(err.message).assertEqual('Invalid index: 1');
       }
     });
 

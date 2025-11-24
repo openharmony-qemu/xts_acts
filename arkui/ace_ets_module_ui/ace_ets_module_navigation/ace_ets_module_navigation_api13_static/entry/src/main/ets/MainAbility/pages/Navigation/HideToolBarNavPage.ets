@@ -18,6 +18,7 @@ import { Entry, Component, NavPathStack, Builder, Navigation, Column, Button, Co
   NavigationMode, NavDestination, NavPathInfo, BarStyle, Stack, StackOptions, BlurStyle, Row, Image, Margin, Alignment, $r, Resource,
 } from '@ohos.arkui.component'
 import { State, Provide, Consume, AppStorage } from '@ohos.arkui.stateManagement'
+import { UIContext } from '@ohos.arkui.UIContext';
 @Component
 struct HideToolBarNav {
   @State show: boolean = false;
@@ -84,10 +85,25 @@ struct SymbolGlyphModifierBackBtn {
 struct PixelMapBackBtn {
   @State imagePixelMap: image.PixelMap | undefined = undefined;
 
- 
+  aboutToAppear() {
+    // this.imagePixelMap = await (this.getPixmapFromMedia($r('app.media.icon')) as Promise<image.PixelMap>)  // 等 getPixmapFromMedia 修复之后放开
+  }
 
   async getPixmapFromMedia(resource: Resource) {
-   
+    let uiContext = AppStorage.get<UIContext>('uiContext')?.getHostContext();
+    // let uiContext = this.getUIContext()?.getHostContext() // 报错Property 'getUIContext' does not exist on type 'PixelMapBackBtn'
+    // let unit8Array = await uiContext?.resourceManager?.getMediaContent({
+    //   bundleName: resource.bundleName,
+    //   moduleName: resource.moduleName,
+    //   id: resource.id
+    // })
+    // let array = unit8Array!.buffer.slice(0, unit8Array!.buffer.byteLength)
+    // let imageSource = image.createImageSource(array)
+    // let createPixelMap: image.PixelMap = await imageSource.createPixelMap({
+    //   desiredPixelFormat: image.PixelMapFormat.RGBA_8888
+    // })
+    // await imageSource.release()
+    // return createPixelMap
   }
 
   build() {

@@ -21,7 +21,7 @@ export function check<T>(testName: string, p: Promise<T>): Promise<string> {
     (): string => {
       hilog.info(0x0000, testName, 'passed check for test');
       return 'PASSED';
-    }, (e: NullishType) => {
+    }, (e: Any) => {
     const message = (e as BusinessError).message
     const stack = (e as BusinessError).stack
     hilog.info(0x0000, testName, 'Test failed: ' + '\nError message: ' + message + '\nStack: \n' + stack);
@@ -35,7 +35,7 @@ export function check_negative<T>(testName: string, p: Promise<T>): Promise<stri
     (): string => {
       hilog.info(0x0000, testName, 'Test failed: ' + 'Expected Error was not caught');
       return 'FAILED: ' + 'Expected Error was not caught'
-    }, (e: NullishType) => {
+    }, (e: Any) => {
     hilog.info(0x0000, testName,
       '\nExpected Error message: ' + (e as BusinessError).message + '\nStack: \n' + (e as BusinessError).stack);
     return 'PASSED';

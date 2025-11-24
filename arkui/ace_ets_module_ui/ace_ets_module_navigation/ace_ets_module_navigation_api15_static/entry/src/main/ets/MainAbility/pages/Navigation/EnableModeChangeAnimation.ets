@@ -24,6 +24,7 @@ import { State, Provide, Consume, AppStorage} from '@ohos.arkui.stateManagement'
 struct EnableModeChangeAnimation {
   @State navigationMode: NavigationMode = NavigationMode.Auto;
   @State hideNavBar: boolean = false;
+  // @State enableModeAnimationValue: boolean | undefined | null = false;
   @State enableModeAnimationValue: boolean | undefined = false;
 
   build() {

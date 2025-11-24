@@ -14,6 +14,7 @@
  */
 import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect,Level} from "../../../../hypium/index"
 import router from '@ohos.router';
+
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../Utils.test';
 import inspector from '@ohos.arkui.inspector'
@@ -23,7 +24,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
@@ -99,17 +100,7 @@ it('GradientDirectionTest_static_0100', Level.LEVEL0, async (done: () => void): 
 it('GradientDirectionTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('GradientDirectionTest_static_0200 START');
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "ACTION": GradientDirection.LeftBottom
-          } as Record<String, RecordData>
-        }
-        let indexEvent: events_emitter.InnerEvent = {
-          eventId: 106,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("GradientDirectionTest_static_0200 start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
+        AppStorage.setOrCreate<GradientDirection>('sDirection',GradientDirection.LeftBottom)
       } catch (err) {
         console.log("GradientDirectionTest_static_0200 change component data error: " + (err as Error)?.message);
       }
@@ -135,17 +126,7 @@ it('GradientDirectionTest_static_0200', Level.LEVEL0, async (done: () => void): 
 it('GradientDirectionTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('GradientDirectionTest_static_0300 START');
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "ACTION": GradientDirection.RightBottom
-          } as Record<String, RecordData>
-        }
-        let indexEvent: events_emitter.InnerEvent = {
-          eventId: 107,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("GradientDirectionTest_static_0300 start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
+        AppStorage.setOrCreate<GradientDirection>('sDirection',GradientDirection.RightBottom)
       } catch (err) {
         console.log("GradientDirectionTest_static_0300 change component data error: " + (err as Error)?.message);
       }
@@ -159,9 +140,6 @@ it('GradientDirectionTest_static_0300', Level.LEVEL0, async (done: () => void): 
       done();
     });
 
-    
-    
-
 /*
      * @tc.number   GradientDirectionTest_static_0400
      * @tc.name     GradientDirectionTest_static_0400
@@ -171,17 +149,8 @@ it('GradientDirectionTest_static_0300', Level.LEVEL0, async (done: () => void): 
 it('GradientDirectionTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('GradientDirectionTest_static_0400 START');
       try {
-        let eventData: events_emitter.EventData = {
-          data: {
-            "ACTION": GradientDirection.None
-          } as Record<String, RecordData>
-        }
-        let indexEvent: events_emitter.InnerEvent = {
-          eventId: 108,
-          priority: events_emitter.EventPriority.LOW
-        }
-        console.info("GradientDirectionTest_static_0400 start to publish emit");
-        events_emitter.emit(indexEvent, eventData);
+        AppStorage.setOrCreate<GradientDirection>('sDirection',GradientDirection.None)
+
       } catch (err) {
         console.log("GradientDirectionTest_static_0400 change component data error: " + (err as Error)?.message);
       }

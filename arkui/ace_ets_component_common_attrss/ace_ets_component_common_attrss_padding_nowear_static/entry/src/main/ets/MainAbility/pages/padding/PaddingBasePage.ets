@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { attrsManager  }  from '../../common/AttrsManager';
-import { RouterParams , SetValue } from '../../common/Utils';
+import { RouterParams , SetValue, RectValue } from '../../common/Utils';
 import router from '@ohos.router'
 import {
   Entry,
@@ -26,11 +26,11 @@ import {
 ,Builder,Button,DataPanelType,Color,Image,MenuItem,ProgressType,BarState,StepperItem,Search,SliderStyle,Axis,ToggleType,Column,Flex,GridRowDirection,GridCol
 ,GridItem,ListItem,Scroll,SideBarContainerType,TabContent,FlowItem,$r,MenuItemOptions,Scroller,BadgeParamWithNumber,BadgeStyle,GridColOptions,GridColColumnOption,
   AlignRuleOption,VerticalAlign,HorizontalAlign,ColumnOptions,FlexAlign,ImageFit,Position,PolylineOptions,RectOptions,FlexDirection
-,Padding,Web,WebviewController,RichText,MenuItemGroup,CommonMethod,MarqueeOptions
+,Padding,Web,WebviewController,RichText,MenuItemGroup,CommonMethod
 } from '@ohos.arkui.component'
 
 import { MessageManager, Callback } from '../../common/MessageManager';
-import { AppStorage, State } from '@ohos.arkui.stateManagement';
+import { AppStorage, State,StorageProp } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { Color } from '@ohos.arkui.component'
 interface ViewOption {
@@ -53,7 +53,7 @@ struct paddingPage {
   private value: string[] = ['#', 'A', 'B'];
   //Use for DataPanel.
   public valueArr: Array<number> = [5, 10, 10, 7, 9, 10, 10, 10, 10] as Array<number>;
-  @State _padding: Padding = { left: 0, right: 0, top: 0, bottom: 0 } as Padding;
+  @StorageProp('_padding') _padding: Padding|String|number = { left: 0, right: 0, top: 0, bottom: 0 } as Padding;
   @State targetView: string = ''
   @State componentKey: string = ''
   @State parentBackGroundColor: Color = Color.Pink
@@ -61,23 +61,30 @@ struct paddingPage {
 
   onPageShow() {
     console.info('padding page show called ')
-    attrsManager.registerDataChange((value: SetValue) => {
-      this._padding = value.padding as Padding
-    })
+    // attrsManager.registerDataChange((value: SetValue) => {
+    //   console.info('[wll]attrsManager1' + value.padding)
+    //   this._padding = value.padding as Padding
+    // })
 
     try {
-    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParamOptions;
-this.targetView = routerParamOptions.view.targetView
-this.componentKey = routerParamOptions.view.componentKey
-this.parentBackGroundColor = routerParamOptions.view.parentBackGroundColor
-this.parentComponentKey = routerParamOptions.view.parentComponentKey
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+      AppStorage.setOrCreate<Padding>('_padding', (routerParamOptions.view.testValue.setValue as SetValue)!.padding as Padding)
+
+      this.targetView = routerParamOptions.view.targetView
+      this.componentKey = routerParamOptions.view.componentKey
+      this.parentBackGroundColor = routerParamOptions.view.parentBackGroundColor
+      this.parentComponentKey = routerParamOptions.view.parentComponentKey
+
+      // console.log('[wll][onPageShow]'+routerParamOptions.view.testValue)
+      // console.log('[wll][all]'+routerParamOptions.view.testValue.setValue.padding)
+      // console.log('[wll][onPageShow]'+(routerParamOptions.view.testValue.setValue))
   } catch (error: Error) {
     console.log(' routerParamOptions error ' + error);
   }
   }
 
-commonStyle(instance: CommonMethod) {
-        instance.padding(this._padding)
+  commonStyle(instance: CommonMethod) {
+    instance.padding(this._padding)
     instance.key(this.componentKey)
   }
   build() {
@@ -128,10 +135,10 @@ commonStyle(instance: CommonMethod) {
         Marquee({
           start: true,
           step: 50,
-          loop: Infinity.toInt(),
+          loop: Infinity as int,
           fromStart: true,
           src: this.src
-        } as MarqueeOptions).applyStyles(this.commonStyle)
+        }).applyStyles(this.commonStyle)
       } else if (this.targetView == 'Navigation') {
         Navigation({}).applyStyles(this.commonStyle)
       } else if (this.targetView == 'Stepper') {

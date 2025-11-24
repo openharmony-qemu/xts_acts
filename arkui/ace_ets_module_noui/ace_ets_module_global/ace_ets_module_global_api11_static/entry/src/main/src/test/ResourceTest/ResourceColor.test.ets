@@ -32,6 +32,8 @@ import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
+import Utils from '../../../ets/MainAbility/common/Utils';
+
 
 export default function ResourceColor() {
   describe('ResourceColor', () => {
@@ -52,29 +54,36 @@ export default function ResourceColor() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get ResourceColor state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("MainAbility/pages/Resource/ResourceColor" == pages.name)) { //ResourceColor" == pages.name
           console.info("get ResourceColor pages.name:" + JSON.stringify(pages.name));
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
-          await CommonFunc.sleep(2000);
-          
+          await CommonFunc.sleep(5000);
+          // console.info("push ResourceColor page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ResourceColor page error:" + err);
       }
       console.info("ResourceColor beforeEach end");
     });
+    afterEach(async () => {
+      const router = AppStorage.get<Router>("router") as Router
+      let options: router.RouterOptions = {
+        url: 'MainAbility/pages/index/index',
+      }
+      router.pushUrl(options);
+      await Utils.sleep(1000);
+    });
 
-    
 
-/*
-     * @tc.number   ResourceColor_static_0100
-     * @tc.name     ResourceColor_static_0100
-     * @tc.desc     ResourceColor_static_0100
-     * @tc.level    Level.LEVEL0
-     */
-it('ResourceColor_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    /*
+         * @tc.number   ResourceColor_static_0100
+         * @tc.name     ResourceColor_static_0100
+         * @tc.desc     ResourceColor_static_0100
+         * @tc.level    Level.LEVEL0
+         */
+    it('ResourceColor_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ResourceColor_0100 START');
       let strJson = inspector.getInspectorByKey('color');
       let obj = JSON.parseJsonElement(strJson);
@@ -86,21 +95,25 @@ it('ResourceColor_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       done();
     });
 
-    
 
-/*
-     * @tc.number   ResourceColor_static_0200
-     * @tc.name     ResourceColor_static_0200
-     * @tc.desc     ResourceColor_static_0200
-     * @tc.level    Level.LEVEL0
-     */
-it('ResourceColor_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    /*
+         * @tc.number   ResourceColor_static_0200
+         * @tc.name     ResourceColor_static_0200
+         * @tc.desc     ResourceColor_static_0200
+         * @tc.level    Level.LEVEL0
+         */
+    it('ResourceColor_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ResourceColor_0200 START');
       let driver = Driver.create();
-      await CommonFunc.sleep(2000);
+      // await CommonFunc.sleep(10000);
+      await UtilsTest.msSleep(1000)
+      console.log('+++++++++++++++++++++++++++1')
       let button = await driver.findComponent(ON.id('ResourceColor'));
+      console.log('+++++++++++++++++++++++++++2', button)
       await (button?.click() as Promise<void>);
-      await CommonFunc.sleep(2000);
+      console.log('+++++++++++++++++++++++++++3')
+      // await CommonFunc.sleep(10000);
+      await UtilsTest.msSleep(1000)
       let strJson = inspector.getInspectorByKey('color');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ResourceColor_0200] component obj is: " + JSON.stringify(obj));

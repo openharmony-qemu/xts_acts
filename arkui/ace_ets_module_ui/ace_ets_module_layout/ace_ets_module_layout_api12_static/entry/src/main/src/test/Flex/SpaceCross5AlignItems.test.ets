@@ -72,11 +72,8 @@ export default function SpaceCross5AlignItemsJsunit() {
         console.info("get SpaceCross5AlignItemsJsunit state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get SpaceCross5AlignItemsJsunit pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push SpaceCross5AlignItemsJsunit page error:" + err);
@@ -94,10 +91,8 @@ export default function SpaceCross5AlignItemsJsunit() {
     it('SpaceCross5AlignItemsTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('SpaceCross5AlignItemsTest_static_0010 START');
       let strJson = inspector.getInspectorByKey('SpaceCross5AlignItems_1');
-      
       let obj = JSON.parseJsonElement(strJson)
-      console.info("[SpaceCross5AlignItemsTest_static_0010] component obj is: " +
-      JSON.stringify(obj.getElement('$attrs').getElement('space').getString('cross')));
+      console.info("[SpaceCross5AlignItemsTest_static_0010] component obj is: " ,strJson);
       expect(obj.getElement('$attrs').getElement('constructor').getString('direction'))
         .assertEqual("FlexDirection.Column");
       expect(obj.getElement('$attrs').getElement('constructor').getString('wrap')).assertEqual("FlexWrap.NoWrap");

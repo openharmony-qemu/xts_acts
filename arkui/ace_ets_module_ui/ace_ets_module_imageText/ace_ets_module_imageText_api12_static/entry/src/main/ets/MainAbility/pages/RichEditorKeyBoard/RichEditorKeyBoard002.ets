@@ -60,7 +60,7 @@ build() {
 
       Button('up Keyboard')
         .onClick((e: ClickEvent) => {
-          this.controller.stopEditing();
+          this.controller!.stopEditing();
         }).id('stop_edite')
 
       RichEditor({ controller: this.controller } as RichEditorOptions)
@@ -78,7 +78,7 @@ build() {
         .onSubmit((enterKey: EnterKeyType, event: SubmitEvent): void => {
           this.onSubmitCallBack = true;
           console.log('RichEditorController trigger richeditor onsubmit' + enterKey);
-          this.controller.addTextSpan(' type['+ enterKey +'] triggerred')
+          this.controller!.addTextSpan(' type['+ enterKey +'] triggerred')
           event.keepEditableState();
         })
         .id('RichEditorKeyBoard002')

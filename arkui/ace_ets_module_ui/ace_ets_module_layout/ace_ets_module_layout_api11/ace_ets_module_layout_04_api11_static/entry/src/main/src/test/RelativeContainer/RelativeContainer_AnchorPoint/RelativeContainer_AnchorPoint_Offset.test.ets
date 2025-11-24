@@ -15,10 +15,11 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../hypium/index';
 import router from '@ohos.router';
+
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
 import { GlobalContext } from '../../../../ets/MainAbility/common/GlobalContext'
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
-import { HorizontalAlign } from '@ohos.arkui.component'
+import { HorizontalAlign} from '@ohos.arkui.component'
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -52,9 +53,8 @@ export default function RelativeContainer_AnchorPoint_Offset() {
         console.info("get RelativeContainer_AnchorPoint_Offset state pages:" + JSON.stringify(pages));
         if (!("RelativeContainer_AnchorPoint_Offset" == pages?.name)) {
           console.info("get RelativeContainer_AnchorPoint_Offset pages.name:" + JSON.stringify(pages?.name));
-            routerInstance?.pushUrl(options)
+          routerInstance?.pushUrl(options)
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push RelativeContainer_AnchorPoint_Offset page error " + JSON.stringify(err));
@@ -91,7 +91,7 @@ it('SUB_ACE_RelativeContainer_AnchorPoint_Offset_TEST_static_0100', Level.LEVEL0
         .assertTrue();
       expect(Math.abs(RelativeContainer_AnchorPoint_Offset_tx2.bottom - RelativeContainer_AnchorPoint_Offset_r1.bottom) <= 1)
         .assertTrue();
-      expect(Math.abs(RelativeContainer_AnchorPoint_Offset_tx2.right - ((RelativeContainer_AnchorPoint_Offset_bt1.right - RelativeContainer_AnchorPoint_Offset_bt1.left) / 2 + RelativeContainer_AnchorPoint_Offset_bt1.left + UIContext.getFocusedUIContext()!.vp2px(50))) <= 1)
+      expect(Math.abs(RelativeContainer_AnchorPoint_Offset_tx2.right - ((RelativeContainer_AnchorPoint_Offset_bt1.right - RelativeContainer_AnchorPoint_Offset_bt1.left) / 2 + RelativeContainer_AnchorPoint_Offset_bt1.left + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))) <= 1)
         .assertTrue();
 
       console.info('[SUB_ACE_RelativeContainer_AnchorPoint_Offset_TEST_0100] END');

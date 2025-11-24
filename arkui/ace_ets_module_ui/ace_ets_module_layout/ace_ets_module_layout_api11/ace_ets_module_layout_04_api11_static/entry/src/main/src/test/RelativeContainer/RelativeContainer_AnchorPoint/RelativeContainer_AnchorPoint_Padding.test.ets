@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../hypium/index';
 import router from '@ohos.router';
+
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
 import { GlobalContext } from '../../../../ets/MainAbility/common/GlobalContext'
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
@@ -35,7 +36,7 @@ export default function RelativeContainer_AnchorPoint_Padding() {
   describe('RelativeContainer_AnchorPoint_Padding', () => {
     beforeAll(async () => {
       console.info("RelativeContainer_AnchorPoint_Padding beforeEach start");
-   
+
       await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
@@ -54,7 +55,7 @@ export default function RelativeContainer_AnchorPoint_Padding() {
           console.info("get RelativeContainer_AnchorPoint_Padding pages.name:" + JSON.stringify(pages?.name));
             routerInstance?.pushUrl(options)
           await CommonFunc.sleep(2000);
-          
+
         }
       } catch (err) {
         console.error("push RelativeContainer_AnchorPoint_Padding page error " + JSON.stringify(err));
@@ -66,9 +67,9 @@ export default function RelativeContainer_AnchorPoint_Padding() {
       console.info("RelativeContainer_AnchorPoint_Padding after each called")
     });
 
-    
-    
-    
+
+
+
 
 /*
      * @tc.number   SUB_ACE_RelativeContainer_AnchorPoint_Padding_TEST_static_0100
@@ -88,9 +89,8 @@ it('SUB_ACE_RelativeContainer_AnchorPoint_Padding_TEST_static_0100', Level.LEVEL
 
 
       console.log('assert position')
-      expect(Math.abs(RelativeContainer_AnchorPoint_Padding_r1.left - (RelativeContainer_AnchorPoint_Padding_row1.left + UIContext.getFocusedUIContext()!.vp2px(100))) <= 1)
-        .assertTrue();
-
+  expect(Math.abs(RelativeContainer_AnchorPoint_Padding_r1.left - (RelativeContainer_AnchorPoint_Padding_row1.left + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1)
+    .assertTrue();
       expect(Math.abs(RelativeContainer_AnchorPoint_Padding_tx2.top - RelativeContainer_AnchorPoint_Padding_bt1.bottom) <= 1)
         .assertTrue();
       expect(Math.abs(RelativeContainer_AnchorPoint_Padding_tx2.bottom - RelativeContainer_AnchorPoint_Padding_r1.bottom) <= 1)

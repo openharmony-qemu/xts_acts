@@ -12,9 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+// import { CounterComponent, CounterType, DateData } from '@ohos.arkui.advanced.Counter';
 import { Entry, Component, Column, ColumnOptions, Button, ClickEvent, Row, Text, } from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { State,  AppStorage } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
@@ -22,18 +22,38 @@ struct DataStyleExample {
   @State value1: string = ""
   @State value2: string = ""
   @State type: string = ""
+  // @State mType: CounterType = CounterType.INLINE_DATE
   build() {
     Row() {
       Column({ space: 12 } as ColumnOptions) {
+        //日期内联型counter
         Text(this.value1)
         Text(this.value2)
         Text(this.type)
           .id("type")
-   
+        // CounterComponent({
+        //   options: {
+        //     type: this.mType,
+        //     dateOptions: {
+        //       year: 2016,
+        //       onDateChange: (date: DateData) => {
+        //         console.log("onDateChange Date: " + date.toString());
+        //       },
+        //       onHoverIncrease: () => {
+        //         this.value1 = "onHoverIncrease trigger"
+        //       },
+        //       onHoverDecrease: () => {
+        //         this.value2 = "onHoverDecrease trigger"
+        //       }
+        //     }
+        //   }
+        // })
         Button("click to show value")
           .id("btn")
           .onClick((e: ClickEvent) => {
-           
+            // if (this.mType == CounterType.INLINE_DATE) {
+            //   this.type = "INLINE_DATE"
+            // }
           })
       }.width("100%")
     }.height("100%")

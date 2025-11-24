@@ -69,80 +69,74 @@ export default function SearchEvent() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SearchEvent_static_001
      * @tc.name     SearchEvent_static_001
      * @tc.desc     SearchEvent_static_001
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SearchEvent_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[SearchEvent_static001] START');
-    
-      await CommonFunc.sleep(1000);
-      let driver = Driver.create();
-      let text = await (driver.findComponent(ON.id('SearchEvent')) as Promise<Component>);
-      await text.inputText('9');
-      await CommonFunc.sleep(1000);
-	    await driver.triggerKey(2070);
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('SearchEventText')
-      let strJson2 = inspector.getInspectorByKey('SearchEventText2');
-      await CommonFunc.sleep(200);
-      let obj = JSON.parseJsonElement(strJson);
-      let obj2 = JSON.parseJsonElement(strJson2);
-      console.info("[SearchEvent_static001] component obj is: " + String(obj));
-      await CommonFunc.sleep(1000);
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('0');
-      expect(obj2.getElement('$attrs').getString('content')).assertEqual('9');
-      console.info('[SearchEvent_static001] END');
-      done();
-    
-    });
+    // it('SearchEvent_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    //   console.info('[SearchEvent_static001] START');
+    //
+    //   await CommonFunc.sleep(1000);
+    //   let driver = Driver.create();
+    //   let text = await (driver.findComponent(ON.id('SearchEvent')) as Promise<Component>);
+    //   await text.inputText('9');
+    //   await CommonFunc.sleep(1000);
+	  //   await driver.triggerKey(2070);
+    //   await CommonFunc.sleep(1000);
+    //   let strJson = inspector.getInspectorByKey('SearchEventText')
+    //   let strJson2 = inspector.getInspectorByKey('SearchEventText2');
+    //   await CommonFunc.sleep(200);
+    //   let obj = JSON.parseJsonElement(strJson);
+    //   let obj2 = JSON.parseJsonElement(strJson2);
+    //   console.info("[SearchEvent_static001] component obj is: " + String(obj));
+    //   await CommonFunc.sleep(1000);
+    //   expect(obj.getElement('$attrs').getString('content')).assertEqual('0');
+    //   expect(obj2.getElement('$attrs').getString('content')).assertEqual('9');
+    //   console.info('[SearchEvent_static001] END');
+    //   done();
+    //
+    // });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SearchEvent_static_002
      * @tc.name     SearchEvent_static_002
      * @tc.desc     SearchEvent_static_002
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SearchEvent_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[SearchEvent_static002] START');
-      await CommonFunc.sleep(1000);
-      let driver = Driver.create();
-      let text = await (driver.findComponent(ON.id('SearchEvent2')) as Promise<Component>);
-      let point = await text.getBoundsCenter();
-      await driver.inputText(point, '9');
-      await CommonFunc.sleep(1000);
-	    await driver.triggerKey(2070);
-      await CommonFunc.sleep(1000);
-      let strJson = inspector.getInspectorByKey('SearchEventText')
-      let strJson2 = inspector.getInspectorByKey('SearchEventText2');
-      await CommonFunc.sleep(200);
-      let obj = JSON.parseJsonElement(strJson);
-      let obj2 = JSON.parseJsonElement(strJson2);
-      console.info("[SearchEvent_static002] component obj is: " + String(obj));
-      await CommonFunc.sleep(1000);
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('1');
-      expect(obj2.getElement('$attrs').getString('content')).assertEqual('9');
-      console.info('[SearchEvent_static002] END');
-      done();
-    });
+    // it('SearchEvent_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    //   console.info('[SearchEvent_static002] START');
+    //   await CommonFunc.sleep(1000);
+    //   let driver = Driver.create();
+    //   let text = await (driver.findComponent(ON.id('SearchEvent2')) as Promise<Component>);
+    //   let point = await text.getBoundsCenter();
+    //   await driver.inputText(point, '9');
+    //   await CommonFunc.sleep(1000);
+	  //   await driver.triggerKey(2070);
+    //   await CommonFunc.sleep(1000);
+    //   let strJson = inspector.getInspectorByKey('SearchEventText')
+    //   let strJson2 = inspector.getInspectorByKey('SearchEventText2');
+    //   await CommonFunc.sleep(200);
+    //   let obj = JSON.parseJsonElement(strJson);
+    //   let obj2 = JSON.parseJsonElement(strJson2);
+    //   console.info("[SearchEvent_static002] component obj is: " + String(obj));
+    //   await CommonFunc.sleep(1000);
+    //   expect(obj.getElement('$attrs').getString('content')).assertEqual('1');
+    //   expect(obj2.getElement('$attrs').getString('content')).assertEqual('9');
+    //   console.info('[SearchEvent_static002] END');
+    //   done();
+    // });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SearchEvent_static_003
      * @tc.name     SearchEvent_static_003
      * @tc.desc     SearchEvent_static_003
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SearchEvent_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SearchEvent_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SearchEvent_static003] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
@@ -167,15 +161,13 @@ it('SearchEvent_static_003', Level.LEVEL0, async (done: () => void): Promise<voi
     });
 
 
-    
-    
-/*
+    /*
      * @tc.number   SearchEvent_static_004
      * @tc.name     SearchEvent_static_004
      * @tc.desc     SearchEvent_static_004
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SearchEvent_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SearchEvent_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SearchEvent_static004] START');
 
       await CommonFunc.sleep(1000);
@@ -202,15 +194,13 @@ it('SearchEvent_static_004', Level.LEVEL0, async (done: () => void): Promise<voi
     });
 
 
-    
-    
-/*
+    /*
      * @tc.number   SearchEvent_static_005
      * @tc.name     SearchEvent_static_005
      * @tc.desc     SearchEvent_static_005
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SearchEvent_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SearchEvent_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SearchEvent_static005] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();

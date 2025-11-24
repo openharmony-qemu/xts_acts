@@ -23,10 +23,10 @@ import { AppStorage, State, LocalStorage } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
 import { typeNode, NodeController, FrameNode } from '@ohos.arkui.node';
 
-
-
-
-
+// let para: Record<string> = {
+//   'ListitemType': 'Init',
+// };
+// let storage: LocalStorage = new LocalStorage(para);
 let storage: LocalStorage = new LocalStorage();
 storage.setOrCreate('ListitemType', 'Init');
 
@@ -47,22 +47,22 @@ class MyNodeController extends NodeController {
     list.initialize({ space: 5 } as ListOptions).width('100%').height('100%').margin({ top: 5 } as Margin);
     col.appendChild(list);
 
-    
-    
-    
-    
+    let listItem1 = typeNode.createListItemNode(uiContext);
+    listItem1.initialize().width('100%').height('100%').margin({ top: 5 } as Margin);
+    list.appendChild(listItem1);
+    storage.set('ListitemType', '' + listItem1.getNodeType());
 
-    
-    
-    
+    let text1 = typeNode.createTextNode(uiContext);
+    text1.initialize("ListItem Text1").fontColor(Color.Blue).fontSize(10);
+    listItem1.appendChild(text1);
 
-    
-    
-    
+    let listItem2 = typeNode.createListItemNode(uiContext);
+    listItem2.initialize().width('100%').height('100%').margin({ top: 5 } as Margin);
+    list.appendChild(listItem2);
 
-    
-    
-    
+    let text2 = typeNode.createTextNode(uiContext);
+    text2.initialize("ListItem Text2").fontColor(Color.Blue).fontSize(10);
+    listItem2.appendChild(text2);
     return node;
   }
 }

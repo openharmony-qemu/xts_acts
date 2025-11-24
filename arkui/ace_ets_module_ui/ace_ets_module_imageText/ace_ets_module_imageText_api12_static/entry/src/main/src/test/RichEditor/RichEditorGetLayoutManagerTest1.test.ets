@@ -83,15 +83,13 @@ export default function RichEditorGetLayoutManagerTest1() {
 
 
     
-    
-    
-/*
+    /*
      * @tc.number   RichEditorGetLayoutManagerTest1_static_0100
      * @tc.name     RichEditorGetLayoutManagerTest1_static_0100
      * @tc.desc     RichEditorGetLayoutManagerTest1_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('RichEditorGetLayoutManagerTest1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('RichEditorGetLayoutManagerTest1_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('RichEditorGetLayoutManagerTest1_static_0100 START');
       await CommonFunc.sleep(1000);
 

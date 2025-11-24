@@ -48,7 +48,7 @@ export default function RichEditorMenuType() {
     beforeEach(async (): Promise<void> => {
       console.info("RichEditorMenuType beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/richEditorApi/richEditorApi2",
+        url: "MainAbility/pages/RichEditor/RichEditorMenuType",
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
@@ -57,11 +57,8 @@ export default function RichEditorMenuType() {
         console.info("get RichEditorMenuType state pages:" + JSON.stringify(pages));
         if (!("RichEditorMenuType" == pages.name)) {
           console.info("get RichEditorMenuType pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push RichEditorMenuType page error:" + err);

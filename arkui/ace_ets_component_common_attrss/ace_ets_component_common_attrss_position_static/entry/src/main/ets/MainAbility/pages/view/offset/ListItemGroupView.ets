@@ -16,7 +16,7 @@
 import {
   Component,
   Text,
-  Button,ForEach,
+  Button,
   ClickEvent,
   Column,
   List,
@@ -51,7 +51,7 @@ export struct ListItemGroupView {
   itemHead(text: string) {
     Text(text)
       .fontSize(20)
-      .backgroundColor(0xAABBCC)
+      .backgroundColor('0xAABBCC')
       .width('100%')
       .padding(10)
   }
@@ -60,7 +60,7 @@ export struct ListItemGroupView {
   itemFoot(num: number) {
     Text('have ' + num + 'classes')
       .fontSize(16)
-      .backgroundColor(0xAABBCC)
+      .backgroundColor('0xAABBCC')
       .width('100%')
       .padding(5)
   }
@@ -72,49 +72,41 @@ export struct ListItemGroupView {
       .height(100)
       .fontSize(20)
       .textAlign(TextAlign.Center)
-      .backgroundColor(0xFFFFFF)
+      .backgroundColor('0xFFFFFF')
   }
 
   build() {
     List({ space: 20 }) {
-      ListItemGroup({
-        header: ()=>{
-        this.itemHead('Monday')
-        },
-        footer: ()=>{
-        this.itemFoot(this.projects.length)
-        }
-      } as ListItemGroupOptions) {
-        ForEach(this.projects, (project: string) => {
-          ListItem() {
-            this.content(project)
-          }
-        }, (item: string) => item)
-      }
-      .width(this.subassemblyWidth)
-      .height(this.subassemblyHeight)
-      .borderRadius(20)
-      .offset(this._offset)
-      .key(this.componentKey)
-      .divider({ strokeWidth: 1, color: Color.Blue }) // line of demarcation
-
-      ListItemGroup({
-        header: ()=>{
-        this.itemHead('Tuesday')
-        },
-        footer: ()=>{
-        this.itemFoot(this.projects.length)
-        }
-      } as ListItemGroupOptions) {
-        ForEach(this.projects, (project: string) => {
-          ListItem() {
-            this.content(project)
-          }
-        }, (item: string) => item)
-      }
-      .borderRadius(20)
-      .key(this.referenceComponentKey)
-      .divider({ strokeWidth: 1, color: Color.Blue }) // line of demarcation
+      // ListItemGroup({
+      //   header: this.itemHead('Monday'),
+      //   footer: this.itemFoot(this.projects.length)
+      // } as ListItemGroupOptions) {
+      //   ForEach(this.projects, (project: string) => {
+      //     ListItem() {
+      //       this.content(project)
+      //     }
+      //   }, (item: string) => item)
+      // }
+      // .width(this.subassemblyWidth)
+      // .height(this.subassemblyHeight)
+      // .borderRadius(20)
+      // .offset(this._offset)
+      // .key(this.componentKey)
+      // .divider({ strokeWidth: 1, color: Color.Blue }) // line of demarcation
+      //
+      // ListItemGroup({
+      //   header: this.itemHead('Tuesday'),
+      //   footer: this.itemFoot(this.projects.length)
+      // } as ListItemGroupOptions) {
+      //   ForEach(this.projects, (project: string) => {
+      //     ListItem() {
+      //       this.content(project)
+      //     }
+      //   }, (item: string) => item)
+      // }
+      // .borderRadius(20)
+      // .key(this.referenceComponentKey)
+      // .divider({ strokeWidth: 1, color: Color.Blue }) // line of demarcation
     }
     .width(this.parentWidth)
     .height(this.parentHeight)

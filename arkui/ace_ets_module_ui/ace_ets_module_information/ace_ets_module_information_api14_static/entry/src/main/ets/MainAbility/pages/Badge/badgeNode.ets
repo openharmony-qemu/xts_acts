@@ -42,7 +42,21 @@ class MyNodeController extends NodeController {
     let col = typeNode.createColumnNode(uiContext)
     let row = typeNode.createRowNode(uiContext)
     col.initialize({ space: 10 } as ColumnOptions).borderColor(Color.Black).alignItems(HorizontalAlign.Center)
-   
+    let badgeNumber = typeNode.createBadgeNode(uiContext)
+    badgeNumber.initialize(data1).width(20).key('key_badge_001')
+    let imageNumber = typeNode.createImageNode(uiContext)
+    imageNumber.initialize($r('app.media.icon')).width(100)
+    badgeNumber.appendChild(imageNumber)
+
+    let badgeString = typeNode.createBadgeNode(uiContext)
+    badgeString.initialize(data2)
+    let imageString = typeNode.createImageNode(uiContext)
+    imageString.initialize($r('app.media.icon')).width(100)
+    badgeString.appendChild(imageString)
+
+
+    col.appendChild(badgeNumber)
+    col.appendChild(badgeString)
     node.appendChild(col)
     node.appendChild(row)
     return node

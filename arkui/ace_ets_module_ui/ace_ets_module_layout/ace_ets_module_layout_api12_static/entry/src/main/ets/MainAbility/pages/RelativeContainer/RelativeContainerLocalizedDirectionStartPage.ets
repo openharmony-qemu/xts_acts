@@ -36,7 +36,7 @@ import {
 @Entry
 @Component
 struct RelativeContainerLocalizedDirectionStartPage {
-  
+
   build() {
     Row() {
       RelativeContainer() {
@@ -74,13 +74,13 @@ struct RelativeContainerLocalizedDirectionStartPage {
       .height(300)
       .backgroundColor(Color.Grey)
       .margin({ left: 50 } as Margin)
-      .barrier([
-        {
-          id: "barrier1",
-          localizedDirection: LocalizedBarrierDirection.START,
-          referencedId: ["RelativeBarrierStartButton1", "RelativeBarrierStartButton2"]
-        }
-      ] as Array<LocalizedBarrierStyle>)
+      // .barrier([
+      //   {
+      //     id: "barrier1",
+      //     localizedDirection: LocalizedBarrierDirection.START,
+      //     referencedId: ["RelativeBarrierStartButton1", "RelativeBarrierStartButton2"]
+      //   }
+      // ] as Array<LocalizedBarrierStyle>)
     }
     .height('100%')
   }

@@ -15,7 +15,7 @@
 
 import { Constants } from '../../constants/Constants';
 import events_emitter from '@ohos.events.emitter';
-import { AlignRuleOption, Resource, TextCase, TextDecorationType } from '@ohos.arkui.component';
+import { TextCase, TextDecorationType, Resource, AlignRuleOption } from '@ohos.arkui.component';
 
 export interface Message {
   value: AlignRuleOption
@@ -36,27 +36,18 @@ export class AttrsManager {
     const eventData: events_emitter.EventData = {
       data: {
         'src': message
-      } as Record<String, undefined | null | Object>
+      } as Record<String,undefined|null|Object>
     };
     AttrsManager.emitEvent(caseName, Constants.EVENT_ID_CHANGE_DATA, eventData);
-  }
-
-  static unRegisterDataChange() {
-    events_emitter.off(Constants.EVENT_ID_CHANGE_DATA);
-  }
-
-  private static emitEvent(tag: string, eventId: number, eventData: events_emitter.EventData) {
-    let innerEvent: events_emitter.InnerEvent = {
-      eventId: eventId.toLong(),
-      priority: events_emitter.EventPriority.LOW
-    }
-    console.info(tag + ' start to publish emit');
-    events_emitter.emit(innerEvent, eventData);
   }
 
   registerDataChange(callBack: Callback) {
     this.callBack = callBack
     this.onEvent(Constants.EVENT_ID_CHANGE_DATA);
+  }
+
+  static unRegisterDataChange() {
+    events_emitter.off(Constants.EVENT_ID_CHANGE_DATA);
   }
 
   private onEvent(eventId: number) {
@@ -66,6 +57,15 @@ export class AttrsManager {
     }
     events_emitter.off(eventId.toLong());
     events_emitter.on(stateChangeEvent, this.stateChangCallBack);
+  }
+
+  private static emitEvent(tag: string, eventId: number, eventData: events_emitter.EventData) {
+    let innerEvent: events_emitter.InnerEvent = {
+      eventId: eventId.toLong(),
+      priority: events_emitter.EventPriority.LOW
+    }
+    console.info(tag + ' start to publish emit');
+    events_emitter.emit(innerEvent, eventData);
   }
 
   private stateChangCallBack = (eventData: events_emitter.EventData) => {

@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component,Builder,Text,ColumnOptions,WrappedBuilder,Flex,
+import { Entry, Column, Component,Builder,Text,ColumnOptions,WrappedBuilder,Flex,CustomBuilderT,wrapBuilder,
   ColumnOptions,Margin,Button,NodeContainer,Visibility
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
@@ -23,7 +23,7 @@ import { UIContext } from '@ohos.arkui.UIContext'
 let frameNode:FrameNode|undefined=new FrameNode( AppStorage.get<UIContext>('UIContent')!)
 let childList =new Array<FrameNode>()
 for (let i= 0;i<10;i++){
-  let childNode = new FrameNode( AppStorage.get<UIContext>('UIContent')!)
+  let childNode = new FrameNode(AppStorage.get<UIContext>('UIContent')!)
   childList.push(childNode)
   frameNode?.appendChild(childNode)
 }
@@ -45,15 +45,16 @@ function buildText(params:Params){
 }
 class MyNodeController extends NodeController{
   rootNode:FrameNode|null=null
-  textNode:BuilderNode<[Params]>|null=null
+  textNode:BuilderNode<Params>|null=null
   private uiContext:UIContext|null=null
   private childrenCount :number=0
+  private wrapBuilder = wrapBuilder<CustomBuilderT<Params>>(buildText)
   makeNode(uiContext: UIContext): FrameNode | null{
     this.rootNode=new FrameNode(uiContext)
-    this.rootNode!.appendChild(frameNode!)
-    this.textNode=new BuilderNode<[Params]>(uiContext,{selfIdealSize:{width:100,height:100}})!
-    
-    this.rootNode?.appendChild((this.textNode!.getFrameNode()!))
+    this.rootNode?.appendChild(frameNode!)
+    this.textNode= new BuilderNode<Params>(uiContext,{selfIdealSize:{width:100,height:100}})!
+    this.textNode?.build(this.wrapBuilder,new Params('HELLO'))
+    this.rootNode!.appendChild((this.textNode!.getFrameNode()) as FrameNode)
     this.childrenCount = this.childrenCount+2
     this.uiContext = uiContext
     return this.rootNode
@@ -92,7 +93,7 @@ struct frameNode1{
       Button('nodeContainer:count').height('2%')
         .id('nodeContainer_7')
         .onClick((e:ClickEvent)=>{
-          let nodeContainerNode=this.myNodeController.rootNode!.getParent()
+          let nodeContainerNode = this.myNodeController.rootNode!.getParent()
           this.count2=nodeContainerNode!.getChildrenCount()
         })
       Button('nodeContainer').height('2%')

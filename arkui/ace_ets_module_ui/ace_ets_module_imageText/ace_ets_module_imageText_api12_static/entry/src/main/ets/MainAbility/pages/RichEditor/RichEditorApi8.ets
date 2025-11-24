@@ -58,14 +58,14 @@ build() {
       Column() {
         RichEditor(this.options)
           .onReady((): void => {
-            this.controller.addTextSpan('aaaaaaaa',
+            this.controller!.addTextSpan('aaaaaaaa',
               {
                 style:
                 {
                   fontSize: 30
                 }
               })
-            this.controller.deleteSpans({
+            this.controller!.deleteSpans({
               start:0,
               end:2
             })
@@ -80,7 +80,7 @@ build() {
             console.log('previewText' + value.previewText)
           })
           .onWillChange((value:RichEditorChangeValue): boolean => {
-            value.replacedSpans.forEach(item => {
+            value.replacedSpans!.forEach(item => {
               this.text = String(item.value)
             });
             return true

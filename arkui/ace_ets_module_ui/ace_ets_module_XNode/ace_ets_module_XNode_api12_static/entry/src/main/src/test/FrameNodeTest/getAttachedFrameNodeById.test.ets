@@ -48,19 +48,20 @@ export default function getAttachedFrameNodeById() {
         console.info("get getAttachedFrameNodeById state pages: " + JSON.stringify(pages));
         if (!("getAttachedFrameNodeById" == pages.name)) {
           console.info("get getAttachedFrameNodeById state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push getAttachedFrameNodeById success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push getAttachedFrameNodeById page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     });
     
     
+
 
 /*
      * @tc.number   getAttachedFrameNodeById_static_0100
@@ -68,7 +69,7 @@ export default function getAttachedFrameNodeById() {
      * @tc.desc     getAttachedFrameNodeById_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('getAttachedFrameNodeById_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('getAttachedFrameNodeById_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('getAttachedFrameNodeById_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -86,13 +87,14 @@ it('getAttachedFrameNodeById_static_0100', Level.LEVEL0, async (done: () => void
     
     
 
+
 /*
      * @tc.number   getAttachedFrameNodeById_static_0200
      * @tc.name     getAttachedFrameNodeById_static_0200
      * @tc.desc     getAttachedFrameNodeById_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('getAttachedFrameNodeById_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('getAttachedFrameNodeById_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('getAttachedFrameNodeById_0200 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

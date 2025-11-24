@@ -63,15 +63,13 @@ export default function TextDataDetectorConfig() {
 
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextDataDetectorConfig_static_0010
      * @tc.name     TextDataDetectorConfig_static_0010
      * @tc.desc     TextDataDetectorConfig_static_0010
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextDataDetectorConfig_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextDataDetectorConfig_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TextDataDetectorConfig_0010 START');
       let TextDataDetectorConfig_1 = inspector.getInspectorByKey('text_dataDetectorConfig');
       expect(""+JSON.parseJsonElement(JSON.parseJsonElement(TextDataDetectorConfig_1).getElement('$attrs').getString('dataDetectorConfig')).getString('color')).assertEqual('#FF0000FF');
@@ -80,15 +78,13 @@ it('TextDataDetectorConfig_static_0010', Level.LEVEL0, async (done: () => void):
     });
 	
 	
-    
-    
-/*
+    /*
      * @tc.number   TextDataDetectorConfig_static_0020
      * @tc.name     TextDataDetectorConfig_static_0020
      * @tc.desc     TextDataDetectorConfig_static_0020
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextDataDetectorConfig_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextDataDetectorConfig_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TextDataDetectorConfig_0020 START');
       let TextDataDetectorConfig_1 = inspector.getInspectorByKey('text_dataDetectorConfig');
       console.info('TextDataDetectorConfig_static_0020',JSON.parseJsonElement(TextDataDetectorConfig_1).getElement('$attrs').getString('dataDetectorConfig'));
@@ -99,15 +95,13 @@ it('TextDataDetectorConfig_static_0020', Level.LEVEL0, async (done: () => void):
     });
 	
 	
-    
-    
-/*
+    /*
      * @tc.number   TextDataDetectorConfig_static_0030
      * @tc.name     TextDataDetectorConfig_static_0030
      * @tc.desc     TextDataDetectorConfig_static_0030
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextDataDetectorConfig_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextDataDetectorConfig_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TextDataDetectorConfig_0030 START');
       let TextDataDetectorConfig_1 = inspector.getInspectorByKey('text_dataDetectorConfig');
       expect(""+JSON.parseJsonElement(JSON.parseJsonElement(TextDataDetectorConfig_1).getElement('$attrs').getString('dataDetectorConfig')).getElement('decoration').getString('color')).assertEqual('#FFFF0000');
@@ -116,15 +110,13 @@ it('TextDataDetectorConfig_static_0030', Level.LEVEL0, async (done: () => void):
     });
 	
 	
-    
-    
-/*
+    /*
      * @tc.number   TextDataDetectorConfig_static_0040
      * @tc.name     TextDataDetectorConfig_static_0040
      * @tc.desc     TextDataDetectorConfig_static_0040
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextDataDetectorConfig_static_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextDataDetectorConfig_static_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TextDataDetectorConfig_0040 START');
       let TextDataDetectorConfig_1 = inspector.getInspectorByKey('text_dataDetectorConfig');
       console.info('TextDataDetectorConfig_0040',JSON.parseJsonElement(TextDataDetectorConfig_1).getElement('$attrs').getString('dataDetectorConfig'));

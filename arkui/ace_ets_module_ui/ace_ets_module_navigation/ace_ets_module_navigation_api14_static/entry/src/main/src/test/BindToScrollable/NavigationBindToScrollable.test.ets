@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/IndexStatic';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Rect} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -34,7 +34,6 @@ export default function NavigationBindToScrollable() {
   describe('NavigationBindToScrollable', () => {
     beforeAll(() => {
       console.info("NavigationBindToScrollable beforeEach start");
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.navigation14.static", "EntryAbility");
       await UtilsTest.msSleep(4000);
     });
@@ -50,9 +49,10 @@ export default function NavigationBindToScrollable() {
         console.info("get NavigationBindToScrollable state pages:" + JSON.stringify(pages));
         if (!("NavigationBindToScrollable" == pages.name)) {
           console.info("get NavigationBindToScrollable pages.name:" + JSON.stringify(pages.name));
-          
+          // let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          // console.info("push NavigationBindToScrollable page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push NavigationBindToScrollable page error:" + err);
@@ -67,13 +67,14 @@ export default function NavigationBindToScrollable() {
 
 
     
-    /*
+    
+/*
      * @tc.number   NavigationBindToScrollable_static_0100
      * @tc.name     NavigationBindToScrollable_static_0100
      * @tc.desc     NavigationBindToScrollable_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('NavigationBindToScrollable_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('NavigationBindToScrollable_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('NavigationBindToScrollable_0100 START');
 
       try {

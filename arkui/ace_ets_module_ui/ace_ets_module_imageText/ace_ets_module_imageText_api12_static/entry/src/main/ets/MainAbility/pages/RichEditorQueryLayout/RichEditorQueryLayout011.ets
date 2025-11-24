@@ -62,31 +62,28 @@ build() {
 
       Button('get spans').onClick((e: ClickEvent) => {
         this.style = '';
-        let spans = this.controller.getSpans({
+        this.controller!.getSpans({
           start: 0,
           end: 6
-        })
-        if (spans !== undefined) {
-          spans.forEach(item => {
-            if ( (item as RichEditorImageSpanResult)?.imageStyle) {
-              this.style += (item as RichEditorImageSpanResult).valueResourceStr;
-              if ( ((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)?.layoutStyle) {
-                this.style =
-                  JSON.stringify(((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)
-                    .layoutStyle);
-              }
+        })!.forEach(item => {
+          if ( (item as RichEditorImageSpanResult)?.imageStyle) {
+            this.style += (item as RichEditorImageSpanResult).valueResourceStr;
+            if ( ((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)?.layoutStyle) {
+              this.style =
+                JSON.stringify(((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)
+                  .layoutStyle);
+            }
+            this.style += '\n'
+          } else {
+            if ( (item as RichEditorTextSpanResult)?.symbolSpanStyle) {
+              console.log('get content get symbolSpanStyle');
+              this.style += (item as RichEditorTextSpanResult).symbolSpanStyle?.fontSize;
               this.style += '\n'
             } else {
-              if ( (item as RichEditorTextSpanResult)?.symbolSpanStyle) {
-                console.log('get content get symbolSpanStyle');
-                this.style += (item as RichEditorTextSpanResult).symbolSpanStyle?.fontSize;
-                this.style += '\n'
-              } else {
-                this.style += JSON.stringify((item as RichEditorTextSpanResult).paragraphStyle);
-              }
+              this.style += JSON.stringify((item as RichEditorTextSpanResult).paragraphStyle);
             }
-          })
-        }
+          }
+        })
       }).id('get_content')
 
       RichEditor({ controller: this.controller } as RichEditorOptions)
@@ -95,7 +92,7 @@ build() {
         .borderColor(Color.Red)
         .width('100%')
         .onReady((): void => {
-          this.controller.addTextSpan('01234567', {
+          this.controller!.addTextSpan('01234567', {
             style: {
               fontColor: Color.Pink,
               fontSize: '32',

@@ -23,7 +23,7 @@ import inspector from '@ohos.arkui.inspector';
 import RectValue from '../../../../../ets/MainAbility/common/Rect';
 import { FaceValue } from '../../../../../ets/MainAbility/common/Value';
 import GlobalContext from '../../../../../ets/MainAbility/common/GlobalContext';
-import {Alignment } from '@ohos.arkui.component'
+import {Position } from '@ohos.arkui.component'
 import { Router } from '@ohos.arkui.UIContext';
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -40,9 +40,8 @@ export default function AlignSpaceEvenly_AddOffset() {
 
     beforeAll(() => {
       console.info("AlignSpaceEvenly_AddOffset beforeEach start");
-      
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace_ets_module_layout_02_api11_static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
@@ -58,11 +57,8 @@ export default function AlignSpaceEvenly_AddOffset() {
         console.info("get AlignSpaceEvenly_AddOffset state pages:" + JSON.stringify(pages));
         if (!("AlignSpaceEvenly_AddOffset" == pages.name)) {
           console.info("get AlignSpaceEvenly_AddOffset pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push AlignSpaceEvenly_AddOffset page error:" + err);
@@ -86,18 +82,14 @@ export default function AlignSpaceEvenly_AddOffset() {
      */
 it('testFlexAlignSpaceEvenlyTextOffset_static', Level.LEVEL0, async () : Promise<void> => {
       console.info('[testFlexAlignSpaceEvenlyTextOffset] START');
-      let result = AppStorage.get<MessageManager<number>>("messageManager")
+      let result = AppStorage.get<MessageManager<Position>>("messageManager")
       if (result !== null) {
         result!.notify({
-          name: 'height', value: 0
+          name: 'OneOffset', value: {
+            x: 10, y: 15
+          }
         });
-
       }
-      
-      
-      
-      
-      
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('SpaceEvenly_AddOffset_01');
 
@@ -108,20 +100,19 @@ it('testFlexAlignSpaceEvenlyTextOffset_static', Level.LEVEL0, async () : Promise
       let SpaceEvenly_AddOffset_012: RectValue = CommonFunc.getComponentRect('SpaceEvenly_AddOffset_012');
       let SpaceEvenly_AddOffset_013: RectValue = CommonFunc.getComponentRect('SpaceEvenly_AddOffset_013');
       let SpaceEvenly_AddOffset_01: RectValue = CommonFunc.getComponentRect('SpaceEvenly_AddOffset_01');
-      const uiContext = new UIContext();
-      expect(Math.abs(SpaceEvenly_AddOffset_011.top - SpaceEvenly_AddOffset_01.top - UIContext.getFocusedUIContext()!.vp2px(15)) <= 1).assertTrue()
-      expect(Math.abs(SpaceEvenly_AddOffset_011.left - SpaceEvenly_AddOffset_01.left - UIContext.getFocusedUIContext()!.vp2px(22.5)) <= 1).assertTrue()
+      expect(Math.abs(SpaceEvenly_AddOffset_011.top - SpaceEvenly_AddOffset_01.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(15))) <= 1).assertTrue()
+      expect(Math.abs(SpaceEvenly_AddOffset_011.left - SpaceEvenly_AddOffset_01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(22.5))) <= 1).assertTrue()
       expect(Math.abs(SpaceEvenly_AddOffset_012.top - SpaceEvenly_AddOffset_013.top) <= 1).assertTrue()
       expect(Math.abs(SpaceEvenly_AddOffset_012.top - SpaceEvenly_AddOffset_01.top) <= 1).assertTrue()
-      expect(Math.abs(SpaceEvenly_AddOffset_01.right - SpaceEvenly_AddOffset_013.right - UIContext.getFocusedUIContext()!.vp2px(12.5)) <= 1).assertTrue()
-      expect(Math.abs(SpaceEvenly_AddOffset_012.left - SpaceEvenly_AddOffset_011.right - UIContext.getFocusedUIContext()!.vp2px(2.5)) <= 1).assertTrue()
-      expect(Math.abs(SpaceEvenly_AddOffset_013.left - SpaceEvenly_AddOffset_012.right - UIContext.getFocusedUIContext()!.vp2px(12.5)) <= 1).assertTrue()
-      expect(Math.abs(SpaceEvenly_AddOffset_011.right - SpaceEvenly_AddOffset_011.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(SpaceEvenly_AddOffset_012.right - SpaceEvenly_AddOffset_012.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(SpaceEvenly_AddOffset_013.right - SpaceEvenly_AddOffset_013.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(SpaceEvenly_AddOffset_011.bottom - SpaceEvenly_AddOffset_011.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue()
-      expect(Math.abs(SpaceEvenly_AddOffset_012.bottom - SpaceEvenly_AddOffset_012.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue()
-      expect(Math.abs(SpaceEvenly_AddOffset_013.bottom - SpaceEvenly_AddOffset_013.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(SpaceEvenly_AddOffset_01.right - SpaceEvenly_AddOffset_013.right - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(12.5))) <= 1).assertTrue()
+      expect(Math.abs(SpaceEvenly_AddOffset_012.left - SpaceEvenly_AddOffset_011.right - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(2.5))) <= 1).assertTrue()
+      expect(Math.abs(SpaceEvenly_AddOffset_013.left - SpaceEvenly_AddOffset_012.right - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(12.5))) <= 1).assertTrue()
+      expect(Math.abs(SpaceEvenly_AddOffset_011.right - SpaceEvenly_AddOffset_011.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(SpaceEvenly_AddOffset_012.right - SpaceEvenly_AddOffset_012.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(SpaceEvenly_AddOffset_013.right - SpaceEvenly_AddOffset_013.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(SpaceEvenly_AddOffset_011.bottom - SpaceEvenly_AddOffset_011.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) <= 1).assertTrue()
+      expect(Math.abs(SpaceEvenly_AddOffset_012.bottom - SpaceEvenly_AddOffset_012.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue()
+      expect(Math.abs(SpaceEvenly_AddOffset_013.bottom - SpaceEvenly_AddOffset_013.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
       console.info('[testFlexAlignSpaceEvenlyTextOffset] END');
 
     });

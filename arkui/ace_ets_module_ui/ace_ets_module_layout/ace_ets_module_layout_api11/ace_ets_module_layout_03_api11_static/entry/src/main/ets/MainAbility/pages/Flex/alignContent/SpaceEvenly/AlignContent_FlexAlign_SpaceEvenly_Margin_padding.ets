@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2023 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,7 +16,7 @@
 
 
 import { MessageManager, Callback, Message } from '../../../../common/MessageManager';
-import { Entry, Component, Column,ColumnOptions,Text,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign } from '@ohos.arkui.component';
+import { Entry, Component, Column,Color,ColumnOptions,Text,Flex,FlexDirection,FlexWrap,FlexAlign,ItemAlign,FlexOptions,HorizontalAlign } from '@ohos.arkui.component';
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 
 @Entry
@@ -27,10 +27,6 @@ struct AlignContent_FlexAlign_SpaceEvenly_Margin_padding {
 
   onPageShow() {
     console.info('AlignContentFlex onPageShow');
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<number>>("messageManager",  this.messageManager);
     let callback: Callback<number> = (message: Message<number>) => {
       console.error('message = ' + message.name + "--" + message.value);
@@ -50,19 +46,19 @@ struct AlignContent_FlexAlign_SpaceEvenly_Margin_padding {
           alignContent: FlexAlign.SpaceEvenly,
           alignItems: ItemAlign.Start
         } as FlexOptions) {
-          Text('1').width(150).height(50).backgroundColor(0xF5DEB3)
+          Text('1').width(150).height(50).backgroundColor(Color.Red)
             .key('AlignContentFlexSpaceEvenlyMargin&padding_flex001_1')
-          Text('2').width(150).height(100).backgroundColor(0xD2B48C)
+          Text('2').width(150).height(100).backgroundColor(Color.Red)
             .key('AlignContentFlexSpaceEvenlyMargin&padding_flex001_2')
-          Text('3').width(150).height(150).backgroundColor(0xD2B48C)
+          Text('3').width(150).height(150).backgroundColor(Color.Red)
             .key('AlignContentFlexSpaceEvenlyMargin&padding_flex001_3')
-          Text('4').width(150).height(200).backgroundColor(0xF5DEB3)
+          Text('4').width(150).height(200).backgroundColor(Color.Red)
             .key('AlignContentFlexSpaceEvenlyMargin&padding_flex001_4')
         }
         .key('AlignContentFlexSpaceEvenlyMargin&padding_flex001')
         .width(400)
         .height(360)
-        .backgroundColor(0xAFEEEE)
+        .backgroundColor(Color.Red)
         .margin(10)
         .padding(this.flexPadding)
 

@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium';
 import router from '@ohos.router';
 import { Driver, ON } from '@ohos.UiTest'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -43,11 +43,11 @@ export default function toggleNodeTest() {
         console.info("get toggleNodeTest state pages:" + JSON.stringify(pages));
         if (!("toggleNode" == pages.name)) {
           console.info("get toggleNodeTest pages.name:" + '');
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push toggleNodeTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push toggleNodeTest page error:" + err);

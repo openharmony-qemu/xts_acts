@@ -12,22 +12,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight, ButtonType, ClickEvent, Margin} from '@ohos.arkui.component'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
+import router from '@ohos.router';
+import { Entry, Component, Column, Marquee, MarqueeUpdateStrategy, ButtonType, Flex, FontWeight, ClickEvent, Margin, FlexDirection, ItemAlign, FlexAlign, Button, Text } from '@ohos.arkui.component'
+import {
+  State,
+  AppStorage,
+} from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import common2D from '@ohos.graphics.displaySync'
 
 @Entry
 @Component
 struct Index {
 
-  aboutToAppear(){
+  onPageShow(){
     try {
       let router1 = this.getUIContext().getRouter();
       AppStorage.setOrCreate<Router>('router', router1);
-    } catch (error) {
-      error = error as Error;
+      AppStorage.setOrCreate<UIContext>('uiContext', this.getUIContext());
+    } catch (error: Error) {
       console.log('error ' + error);
     }
   }
@@ -36,15 +38,15 @@ struct Index {
     Flex({ direction:FlexDirection.Column, alignItems:ItemAlign.Center, justifyContent: FlexAlign.Center }) {
       Text('Hello World')
         .fontSize(50)
-      Button("123") {
+      Button('123') {
         Text('next page')
           .fontSize(25)
-      }
+      }.type(ButtonType.Capsule)
       .margin({
         top: 20
       } as Margin)
       .backgroundColor('#0D9FFB')
-      .onClick((e:ClickEvent) => {
+      .onClick((e: ClickEvent) => {
 
       })
     }

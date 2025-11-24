@@ -65,15 +65,13 @@ export default function Text_lineBreakStrategyTest() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   Text_lineBreakStrategyTest_static_001
      * @tc.name     Text_lineBreakStrategyTest_static_001
      * @tc.desc     Text_lineBreakStrategyTest_static_001
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('Text_lineBreakStrategyTest_static_001', Level.LEVEL0, (done: () => void): Promise<void> => {
+    it('Text_lineBreakStrategyTest_static_001', Level.LEVEL0, (done: () => void): Promise<void> => {
       console.info('[Text_lineBreakStrategyTest_001] START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();

@@ -13,10 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
 import router from '@ohos.router';
-import { UIContext } from '@ohos.arkui.UIContext';
-import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -63,12 +62,13 @@ export default function listNestedScrollJsunit() {
       }
     });
 
-    
-    /*
-     * @tc.number   ArkUI_Stage_listNestedScrollStatic01
-     * @tc.name     ArkUI_Stage_listNestedScrollStatic01
-     * @tc.desc     ArkUI_Stage_listNestedScrollStatic01
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number ArkUI_Stage_listNestedScrollStatic01
+     * @tc.name ArkUI_Stage_listNestedScrollStatic01
+     * @tc.desc Set nestedScrol values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('ArkUI_Stage_listNestedScrollStatic01', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ArkUI_Stage_listNestedScrollStatic01] START');
@@ -78,8 +78,7 @@ export default function listNestedScrollJsunit() {
       let x = Math.floor(Utils.getRectHorizontalCenterX(webRect))
       let y = Math.floor(Utils.getRectVerticalCenterY(webRect))
       let driver = Driver.create();
-      const uiContext = AppStorage.get<UIContext>('uiContext');
-      await driver.swipe(Math.round(x) as int, Math.round(y + uiContext!.vp2px(60)) as int, Math.round(x) as int, Math.round(y - uiContext!.vp2px(60)) as int);
+      // await driver.swipe(Math.round(x), Math.round(y + vp2px(60)), Math.round(x), Math.round(y - vp2px(60)));
       console.info('[ArkUI_Stage_listNestedScrollStatic01] driver.swipe end');
       try {
         let callBack = (backData: events_emitter.EventData) => {

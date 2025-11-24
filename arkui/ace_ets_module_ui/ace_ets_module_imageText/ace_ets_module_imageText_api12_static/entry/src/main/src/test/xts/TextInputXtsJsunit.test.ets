@@ -59,15 +59,13 @@ export default function TextInputXtsJsunit() {
     })
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextInputXtsJsunit_static_0101
      * @tc.name     TextInputXtsJsunit_static_0101
      * @tc.desc     TextInputXtsJsunit_static_0101
      * @tc.level    Level.LEVEL0
      */
-it('TextInputXtsJsunit_static_0101', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextInputXtsJsunit_static_0101',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextInputXtsJsunit_0103] START');
       let strJson = inspector.getInspectorByKey('key_textinput_textIndent');
       let obj = JSON.parseJsonElement(strJson);
@@ -78,15 +76,13 @@ it('TextInputXtsJsunit_static_0101', Level.LEVEL0, async (done: () => void): Pro
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextInputXtsJsunit_static_0102
      * @tc.name     TextInputXtsJsunit_static_0102
      * @tc.desc     TextInputXtsJsunit_static_0102
      * @tc.level    Level.LEVEL0
      */
-it('TextInputXtsJsunit_static_0102', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextInputXtsJsunit_static_0102',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextInputXtsJsunit_0102] START');
       let strJson = inspector.getInspectorByKey('key_textinput_textOverflow');
       let obj = JSON.parseJsonElement(strJson);
@@ -96,15 +92,13 @@ it('TextInputXtsJsunit_static_0102', Level.LEVEL0, async (done: () => void): Pro
       done();
     });
     
-    
-    
-/*
+    /*
      * @tc.number   TextInputXtsJsunit_static_0103
      * @tc.name     TextInputXtsJsunit_static_0103
      * @tc.desc     TextInputXtsJsunit_static_0103
      * @tc.level    Level.LEVEL0
      */
-it('TextInputXtsJsunit_static_0103', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextInputXtsJsunit_static_0103',  Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextInputXtsJsunit_0103] START');
       let strJson = inspector.getInspectorByKey('key_textinput_caretStyle');
       let obj = JSON.parseJsonElement(strJson);

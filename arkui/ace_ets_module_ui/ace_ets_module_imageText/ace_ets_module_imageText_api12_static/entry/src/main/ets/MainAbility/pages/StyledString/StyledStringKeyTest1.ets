@@ -60,7 +60,7 @@ struct StyledStringKeyTest1 {
   }])
 
   onPageShow(): void {
-    this.controller.setStyledString(this.styleString)
+    this.controller!.setStyledString(this.styleString)
   }
 
   build() {
@@ -68,12 +68,10 @@ struct StyledStringKeyTest1 {
       Text(undefined, { controller: this.controller })
       Button("get user data")
         .id('StyledStringKeyTest1_btn')
-        .onClick((e: ClickEvent) => {
-          let arr = this.styleString.getStyles(0, this.styleString.length)
-          if (arr) {
-            let userDataSpan = arr[0].styledValue as MyUserDateSpan
-            this.name = userDataSpan.name
-          }
+        .onClick((e:ClickEvent) => {
+          let arr = this.styleString.getStyles(0, this.styleString.length)!
+          let userDataSpan = arr[0].styledValue as MyUserDateSpan
+          this.name = userDataSpan.name
         })
       Text(this.name).id('StyledStringKeyTest1_text')
     }.width('100%')

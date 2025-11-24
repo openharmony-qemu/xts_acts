@@ -71,16 +71,13 @@ export default function enumFolderTest() {
         console.info("get enumFolderTest state pages:" + "");
         if (!("ColumnSpaceResourcePage" == pages.name)) {
           console.info("get enumFolderTest pages.name:" + "");
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push enumFolderTest page error:" + err);
       }
       console.info("enumFolderTest beforeEach end");
-      
     });
 
     afterEach(async () => {
@@ -98,7 +95,7 @@ export default function enumFolderTest() {
     it('enumFolderTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[enumFolderTest_static_0100] START');
       await CommonFunc.sleep(2000);
-      
+      // no trigger
       let json = inspector.getInspectorByKey('flod_tx3');
       let Obj1 = JSON.parseJsonElement(json);
       console.info("enumFolderTest_static_0100 json info " + JSON.stringify(json));

@@ -56,11 +56,8 @@ export default function flexAlign_SpaceAround_fixedParent() {
         console.info("get FlexAlign_SpaceAround_fixedParent state pages:" + JSON.stringify(pages));
         if (!("FlexAlign_SpaceAround_fixedParent" == pages.name)) {
           console.info("get FlexAlign_SpaceAround_fixedParent pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push FlexAlign_SpaceAround_fixedParent page error:" + err);
@@ -84,24 +81,15 @@ export default function flexAlign_SpaceAround_fixedParent() {
      */
 it('testAlignSpaceAroundRowNoWrapOffset_static', Level.LEVEL0, async () => {
       console.info('new testAlignSpaceAroundRowNoWrapOffset START');
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      AppStorage.get<MessageManager<object>>("messageManager")?.notify({
+      AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'x', value: 15
       });
-      AppStorage.get<MessageManager<object>>("messageManager")?.notify({
+      AppStorage.get<MessageManager<number>>("messageManager")?.notify({
         name: 'y', value: 30
       });
-      AppStorage.get<MessageManager<object>>("messageManager")?.notify({
-        name: 'visibility', value: Visibility.Visible
-      });
+      // AppStorage.get<MessageManager<object>>("messageManager")?.notify({//1.1的ets中不存在visibility变量接受value
+      //   name: 'visibility', value: Visibility.Visible
+      // });
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('FlexAlignSpaceAround9');
 
@@ -116,25 +104,25 @@ it('testAlignSpaceAroundRowNoWrapOffset_static', Level.LEVEL0, async () => {
       let locationText2: RectValue = CommonFunc.getComponentRect('AlignSpaceAround26');
       let locationText3: RectValue = CommonFunc.getComponentRect('AlignSpaceAround27');
       let locationFlex: RectValue = CommonFunc.getComponentRect('FlexAlignSpaceAround9');
-      const uiContext = new UIContext();
-      expect(Math.floor(Math.abs(locationText1.top - locationFlex.top - UIContext.getFocusedUIContext()!.vp2px(30))) <= 1).assertTrue();
+
+      expect(Math.floor(Math.abs(locationText1.top - locationFlex.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30)))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(locationText1.left - locationFlex.left -
-        (UIContext.getFocusedUIContext()!.vp2px(15) + (locationFlex.right - locationText3.right)))) <= 1).assertTrue();
+        (Number(AppStorage.get<UIContext>('uiContext')?.vp2px(15)) + (locationFlex.right - locationText3.right)))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(locationText2.top - locationText3.top)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(locationText3.top - locationFlex.top)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(locationText1.bottom - locationText1.top - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(locationText2.bottom - locationText2.top - UIContext.getFocusedUIContext()!.vp2px(100))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(locationText3.bottom - locationText3.top - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(locationFlex.bottom - locationText3.bottom - UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(locationText1.bottom - locationText1.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(locationText2.bottom - locationText2.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(locationText3.bottom - locationText3.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(locationFlex.bottom - locationText3.bottom - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))) <= 1).assertTrue();
 
       expect(Math.floor(Math.abs(locationText1.right - locationText1.left -
         (locationText2.right - locationText2.left))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(locationText3.right - locationText3.left -
         (locationText2.right - locationText2.left))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(locationText2.right - locationText2.left - UIContext.getFocusedUIContext()!.vp2px(150))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(locationText2.left - locationText1.right + UIContext.getFocusedUIContext()!.vp2px(15) -
+      expect(Math.floor(Math.abs(locationText2.right - locationText2.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150)))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(locationText2.left - locationText1.right + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(15)) -
         (locationText3.left - locationText2.right))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(locationText1.left - locationFlex.left - UIContext.getFocusedUIContext()!.vp2px(15) -
+      expect(Math.floor(Math.abs(locationText1.left - locationFlex.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(15)) -
         (locationFlex.right - locationText3.right))) <= 1).assertTrue();
       expect(Math.floor(Math.abs(locationText3.left - locationText2.right -
         2 * (locationFlex.right - locationText3.right))) <= 2).assertTrue();

@@ -14,89 +14,21 @@
 */
 
 import events_emitter from '@ohos.events.emitter';
-import { Entry, Component, Column, Flex, Text, QRCode, FlexDirection, ItemAlign, FlexAlign, FontWeight, ColumnOptions, Margin, } from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { Entry, Component, Column, Flex,Color, Text, QRCode, FlexDirection, ItemAlign, FlexAlign, FontWeight, ColumnOptions, Margin,ResourceColor } from '@ohos.arkui.component'
+import { State, StoragePropRef, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct QrCode3 {
-  @State qrCodeBackgroundColor: string = "#FF008000";
-  @State qrCodeColor: string = "#FF0000FF";
+  @StoragePropRef('qrCodeBackgroundColor') qrCodeBackgroundColor: 	ResourceColor = "#FF008000";
+  @StoragePropRef('qrCodeColor') qrCodeColor: ResourceColor = "#FF0000FF";
   @State qrCodeValue: string = 'qrCodeValue';
-  private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
-    if (eventData != null) {
-      console.info("qrCode page state change called:" + JSON.stringify(eventData));
-      let colorValue: string = ((eventData.data) as ESObject).getProperty('color').toString();
-      if (colorValue != null && colorValue.length != 0) {
-        this.qrCodeColor = colorValue;
-        console.info("qrCodeColor:" + this.qrCodeColor);
-      } else {
-        console.info("qrCodeColor is null or empty " + this.qrCodeColor);
-      }
-    } else {
-      console.info("qrCode page color not change called:" + JSON.stringify(eventData));
-    }
-  }
-  private stateChangCallBackTwo: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
-    if (eventData != null) {
-      console.info("qrCode page state change called:" + JSON.stringify(eventData));
-      let backgroundColorValue: string = ((eventData.data) as ESObject).getProperty('backgroundColor').toString();
-      if (backgroundColorValue != null && backgroundColorValue.length != 0) {
-        this.qrCodeBackgroundColor = backgroundColorValue;
-        console.info("qrCodeBackgroundColor:" + this.qrCodeBackgroundColor);
-      } else {
-        console.info("backgroundColorValue is null or empty " + this.qrCodeColor);
-      }
-    } else {
-      console.info("qrCode page backgroundColorValue not change called:" + JSON.stringify(eventData));
-    }
-  }
-
-  onPageShow() {
-    console.info('qrCode page show called');
-    let stateChangeEvent: events_emitter.InnerEvent = {
-      eventId: 170,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
-
-    stateChangeEvent = {
-      eventId: 171,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent, this.stateChangCallBackTwo);
-
-    stateChangeEvent = {
-      eventId: 1023,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
-
-    stateChangeEvent = {
-      eventId: 1024,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent, this.stateChangCallBack);
-
-    stateChangeEvent = {
-      eventId: 1025,
-      priority: events_emitter.EventPriority.LOW
-    }
-    events_emitter.on(stateChangeEvent, this.stateChangCallBackTwo);
-
-    stateChangeEvent = {
-    eventId: 1026,
-    priority: events_emitter.EventPriority.LOW
-  }
-  events_emitter.on(stateChangeEvent, this.stateChangCallBackTwo);
-}
-
 build() {
   Column({ space: 5 } as ColumnOptions) {
     Text('QRCodeColor')
     .fontSize(40)
     .fontWeight(FontWeight.Bold)
     .width('90%')
-    .fontColor(0xCCCCCC)
+    .fontColor(Color.White)
     QRCode(`${this.qrCodeValue}`)
     .backgroundColor(`${this.qrCodeBackgroundColor}`)
     .color(`${this.qrCodeColor}`)
@@ -107,7 +39,7 @@ build() {
     .fontSize(40)
     .fontWeight(FontWeight.Bold)
     .width('90%')
-    .fontColor(0xCCCCCC)
+    .fontColor(Color.White)
     QRCode(`${this.qrCodeValue}`)
     .backgroundColor(`${this.qrCodeBackgroundColor}`)
     .color(`${this.qrCodeColor}`)
@@ -115,11 +47,11 @@ build() {
     .height(197)
     .key("QrCodeBackgroundColor")
     QRCode(`${this.qrCodeValue}`)
-    .color(0xFF000000)
-    .backgroundColor(0xFFFFFFFF)
-    .width(197)
-    .height(197)
-    .key("QrCodeDefault")
+      .color(0xFF000000)
+      .backgroundColor(0xFFFFFFFF)
+      .width(197)
+      .height(197)
+      .key("QrCodeDefault")
   }
   .width('100%')
   .height('100%')

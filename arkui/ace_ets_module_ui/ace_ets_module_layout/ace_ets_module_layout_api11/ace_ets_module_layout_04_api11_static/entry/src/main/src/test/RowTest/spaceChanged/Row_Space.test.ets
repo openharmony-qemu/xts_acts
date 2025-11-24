@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../hypium/index';
 import router from '@ohos.router';
+
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
 import { MessageManager } from '../../../../ets/MainAbility/common/MessageManager';
 import hilog from '@ohos.hilog'
@@ -33,7 +34,6 @@ export default function Row_Space() {
   describe('row_SpaceTest', () => {
     beforeAll(() => {
       console.info("row_SpaceTest beforeAll start");
-   
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -50,10 +50,8 @@ export default function Row_Space() {
         console.info("get row_SpaceTest state pages:" + "");
         if (!("Row_Space" == pages.name)) {
           console.info("get row_SpaceTest pages.name:" + "");
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push row_SpaceTest page error " + JSON.stringify(err));
@@ -93,21 +91,21 @@ it('testRowSpaceUnfill_static_01', Level.LEVEL0, async (done: () => void): Promi
         .assertTrue();
       expect(Math.abs(Math.round(Row_Space_012.left - Row_Space_011.right) - Math.round(Row_Space_013.left - Row_Space_012.right)) <= 1)
         .assertTrue();
-      const uiContext = new UIContext();
-      expect(Math.round(Row_Space_012.left - Row_Space_011.right) - UIContext.getFocusedUIContext()!.vp2px(10) <= 1).assertTrue();
+
+      expect(Math.round(Row_Space_012.left - Row_Space_011.right) - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)) <= 1).assertTrue();
       expect(Math.abs(Math.round(Row_Space_01.left) - Math.round(Row_Space_011.left)) <= 1).assertTrue();
       expect(Row_Space_013.right).assertLess(Row_Space_01.right);
-      expect(Math.abs((Math.round(Row_Space_011.bottom - Row_Space_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_011.bottom - Row_Space_011.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_012.bottom - Row_Space_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_012.bottom - Row_Space_012.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_013.bottom - Row_Space_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_013.bottom - Row_Space_013.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_011.right - Row_Space_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_011.right - Row_Space_011.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_012.right - Row_Space_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_012.right - Row_Space_012.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_013.right - Row_Space_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_013.right - Row_Space_013.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
       console.info('[testRowSpaceUnfill_static_01] END');
       done();
@@ -140,22 +138,22 @@ it('testRowSpaceFill_static_02', Level.LEVEL0, async (done: () => void): Promise
         .assertTrue();
       expect(Math.abs(Math.round(Row_Space_012.left - Row_Space_011.right) - Math.round(Row_Space_013.left - Row_Space_012.right)) <= 1)
         .assertTrue();
-      const uiContext = new UIContext();
-      expect(Math.abs(Math.round((Row_Space_012.left - Row_Space_011.right) * 10) / 10 - Math.round(UIContext.getFocusedUIContext()!.vp2px(25) * 10) / 10) <= 1)
+
+      expect(Math.abs(Math.round((Row_Space_012.left - Row_Space_011.right) * 10) / 10 - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(25)) * 10) / 10) <= 1)
         .assertTrue();
       expect(Math.abs(Math.round(Row_Space_01.left) - Math.round(Row_Space_011.left)) <= 1).assertTrue();
       expect(Math.abs(Math.round(Row_Space_013.right) - Math.round(Row_Space_01.right)) <= 1).assertTrue();
-      expect(Math.abs((Math.round(Row_Space_011.bottom - Row_Space_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_011.bottom - Row_Space_011.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_012.bottom - Row_Space_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_012.bottom - Row_Space_012.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_013.bottom - Row_Space_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_013.bottom - Row_Space_013.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_011.right - Row_Space_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_011.right - Row_Space_011.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_012.right - Row_Space_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_012.right - Row_Space_012.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_013.right - Row_Space_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_013.right - Row_Space_013.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
       console.info('[testRowSpaceFill_static_02] END');
       done();
@@ -188,21 +186,21 @@ it('testRowSpaceOverflow_static_03', Level.LEVEL0, async (done: () => void): Pro
         .assertTrue();
       expect(Math.abs(Math.round(Row_Space_012.left - Row_Space_011.right) - Math.round(Row_Space_013.left - Row_Space_012.right)) <= 1)
         .assertTrue();
-      const uiContext = new UIContext();
-      expect(Math.abs(Row_Space_012.left - Row_Space_011.right - UIContext.getFocusedUIContext()!.vp2px(30)) <= 1).assertTrue();
+
+      expect(Math.abs(Row_Space_012.left - Row_Space_011.right - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))) <= 1).assertTrue();
       expect(Math.abs(Math.round(Row_Space_01.left) - Math.round(Row_Space_011.left)) <= 1).assertTrue();
       expect(Row_Space_013.right).assertLarger(Row_Space_01.right);
-      expect(Math.abs((Math.round(Row_Space_011.bottom - Row_Space_011.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(50)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_011.bottom - Row_Space_011.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_012.bottom - Row_Space_012.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_012.bottom - Row_Space_012.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_013.bottom - Row_Space_013.top)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(150)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_013.bottom - Row_Space_013.top)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_011.right - Row_Space_011.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_011.right - Row_Space_011.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_012.right - Row_Space_012.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_012.right - Row_Space_012.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
-      expect(Math.abs((Math.round(Row_Space_013.right - Row_Space_013.left)) - (Math.round(UIContext.getFocusedUIContext()!.vp2px(100)))) <= 1)
+      expect(Math.abs((Math.round(Row_Space_013.right - Row_Space_013.left)) - (Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))))) <= 1)
         .assertTrue();
       console.info('[testRowSpaceOverflow_static_03] END');
       done();

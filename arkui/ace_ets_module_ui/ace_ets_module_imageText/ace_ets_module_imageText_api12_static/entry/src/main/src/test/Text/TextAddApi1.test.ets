@@ -66,15 +66,13 @@ export default function TextAddApi1() {
       console.info("TextAddApi1 after each called");
     });
 
-    
-    
-/*
+    /*
      * @tc.number   TextAddApi1_static_001
      * @tc.name     TextAddApi1_static_001
      * @tc.desc     TextAddApi1_static_001
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextAddApi1_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextAddApi1_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextAddApi1_001] START');
 
       let strJson = inspector.getInspectorByKey('TextAddApi1');

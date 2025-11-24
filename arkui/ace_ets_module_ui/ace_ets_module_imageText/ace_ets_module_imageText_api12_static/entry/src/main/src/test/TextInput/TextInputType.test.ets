@@ -61,15 +61,13 @@ export default function TextInputTypeTest() {
 
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextInputTypeTest_static_0010
      * @tc.name     TextInputTypeTest_static_0010
      * @tc.desc     TextInputTypeTest_static_0010
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextInputTypeTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextInputTypeTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextInputTypeTest_0010] START');
       let strJson = inspector.getInspectorByKey('TextInputType_URL');
       let obj = JSON.parseJsonElement(strJson);
@@ -80,15 +78,13 @@ it('TextInputTypeTest_static_0010', Level.LEVEL0, async (done: () => void): Prom
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextInputTypeTest_static_0020
      * @tc.name     TextInputTypeTest_static_0020
      * @tc.desc     TextInputTypeTest_static_0020
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextInputTypeTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextInputTypeTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextInputTypeTest_0020] START');
       let strJson = inspector.getInspectorByKey('TextInputType_default');
       let obj = JSON.parseJsonElement(strJson);
@@ -99,15 +95,13 @@ it('TextInputTypeTest_static_0020', Level.LEVEL0, async (done: () => void): Prom
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextInputTypeTest_static_0030
      * @tc.name     TextInputTypeTest_static_0030
      * @tc.desc     TextInputTypeTest_static_0030
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextInputTypeTest_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextInputTypeTest_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[TextInputTypeTest_0030] START');
       let strJson = inspector.getInspectorByKey('TextInputType_undefined');
       let obj = JSON.parseJsonElement(strJson);

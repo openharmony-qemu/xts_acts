@@ -74,7 +74,7 @@ build() {
         .onWillChange((value: RichEditorChangeValue): boolean => {
           console.log('RichEditorController：onWillChange')
           this.onWillChangeCallback = true;
-          value.replacedSpans.forEach((item: RichEditorTextSpanResult) => {
+          value.replacedSpans!.forEach((item: RichEditorTextSpanResult) => {
             console.log('RichEditorController：replacedSpans')
             this.replacedSpansCallback = true;
             console.log('RichEditorController replacedSpans value:' + item.value);

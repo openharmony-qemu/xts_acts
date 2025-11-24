@@ -14,7 +14,7 @@
  */
 import inspector from '@ohos.arkui.inspector'
 import { TouchObject, TouchType } from '@ohos.arkui.component'
-import { sendTouchEvent } from "@kit.ArkUI";
+import { sendTouchEvent } from "@ohos.arkui.Test";
 
 export class RectValue {
   left: number = 0;
@@ -40,7 +40,7 @@ export default class Utils {
 
   static getComponentRect(key: string) {
     let strJson = inspector.getInspectorByKey(key);
-    let obj: Record<string, Object> = JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
+    let obj: Record<String,undefined|null|Object> = JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<String,undefined|null|Object>;
     console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
     let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj['$rect']! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);

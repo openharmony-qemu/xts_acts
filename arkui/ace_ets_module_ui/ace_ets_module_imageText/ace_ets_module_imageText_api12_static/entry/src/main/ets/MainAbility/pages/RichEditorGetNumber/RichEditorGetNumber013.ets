@@ -50,7 +50,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Component
 struct RichEditorGetNumber013 {
   controller: RichEditorController = new RichEditorController();
-  @State lineCount: Int | undefined = 0;
+  @State lineCount: int = 0;
 
 build() {
 
@@ -58,10 +58,8 @@ build() {
       Text('lineCount:' + this.lineCount).id('lineCount')
       Button('get lineCount').id('getLineCount')
         .onClick((e: ClickEvent) => {
-          let layoutManager = this.controller.getLayoutManager();
-          if (layoutManager !== undefined) {
-            this.lineCount = layoutManager.getLineCount();
-          }
+          let layoutManager: LayoutManager = this.controller!.getLayoutManager() as LayoutManager;
+          this.lineCount = layoutManager.getLineCount() as int
         })
         .margin({ bottom: 20, top: 10 } as Margin)
       RichEditor({ controller: this.controller } as RichEditorOptions)
@@ -72,7 +70,7 @@ build() {
         .borderColor(Color.Green)
         .onReady((): void => {
           for (let index = 0; index < 9; index++) {
-            this.controller.addTextSpan('abcdef\n',
+            this.controller!.addTextSpan('abcdef\n',
               {
                 style:
                 {
@@ -81,7 +79,7 @@ build() {
                 }
               })
           }
-          this.controller.addTextSpan('123456',
+          this.controller!.addTextSpan('123456',
             {
               style:
               {

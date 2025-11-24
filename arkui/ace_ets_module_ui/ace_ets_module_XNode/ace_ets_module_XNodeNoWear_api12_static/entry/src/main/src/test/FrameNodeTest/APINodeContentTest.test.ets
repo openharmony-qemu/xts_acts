@@ -50,7 +50,7 @@ export default function APINodeContentTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get APINodeContentTest state pages:" + JSON.stringify(pages));
-        if (!("MainAbility/pages/FrameNode/APINodeContent" == pages.name)) {  //"APINodeContent" == pages.name
+        if (!("APINodeContent" == pages.name)) {
           console.info("get APINodeContentTest pages.name:" + JSON.stringify(pages.name));
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
@@ -66,14 +66,13 @@ export default function APINodeContentTest() {
 
 
     
-    
-/*
+    /*
      * @tc.number   APINodeContentTest_static_0100
      * @tc.name     APINodeContentTest_static_0100
      * @tc.desc     APINodeContentTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('APINodeContentTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> =>{
+    it('APINodeContentTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> =>{
       console.info('APINodeContentTest_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -85,7 +84,7 @@ it('APINodeContentTest_static_0100', Level.LEVEL0, async (done: () => void): Pro
       await CommonFunc.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('APINodeContent_Text');
       let obj = JSON.parseJsonElement(strJson)
-      console.info("[APINodeContentTest_static_0100] component obj is: ", obj, obj.getElement('$attrs').getString('content'))
+      console.info("[APINodeContentTest_static_0100] component obj is: ", obj.getElement('$attrs').getString('content'))
       console.info("[APINodeContentTest_static_0100] component obj is1: ", JSON.stringifyJsonElement(obj.getElement('$attrs')))
       expect(obj.getElement('$attrs').getString('content')).assertEqual('1');
       console.info('[APINodeContentTest_static_0100] END');
@@ -93,14 +92,13 @@ it('APINodeContentTest_static_0100', Level.LEVEL0, async (done: () => void): Pro
     });
 
     
-    
-/*
+    /*
      * @tc.number   APINodeContentTest_static_0200
      * @tc.name     APINodeContentTest_static_0200
      * @tc.desc     APINodeContentTest_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('APINodeContentTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> =>{
+    it('APINodeContentTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> =>{
       console.info('APINodeContentTest_static_0200 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

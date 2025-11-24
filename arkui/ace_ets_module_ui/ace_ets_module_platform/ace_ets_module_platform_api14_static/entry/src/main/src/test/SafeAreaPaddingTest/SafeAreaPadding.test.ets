@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium"
 import { Driver, ON,Component } from '@ohos.UiTest';
 import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
@@ -24,7 +24,6 @@ import inspector from '@ohos.arkui.inspector';
 import common from '@ohos.app.ability.common';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 let testAbilityContext: common.UIAbilityContext;
-const uiContext = new UIContext();
 export default function SafeAreaPadding1() {
   describe('SafeAreaPadding1', () => {
     beforeAll(() => {
@@ -72,6 +71,7 @@ export default function SafeAreaPadding1() {
       let Button1 = await (driver.findComponent(ON.id('SafeArea_button1')) as Promise<Component>);
       await CommonFunc.sleep(500);
       Button1.click();
+      console.log("[SafeAreaPadding1_static_0100] Button1 Button1 is: " + JSON.stringify(Button1));
       await CommonFunc.sleep(1000);
       let SafeAreaPaading001 = CommonFunc.getComponentRect('safeAreaPadding_001');
       console.log("[SafeAreaPadding1_static_0100] component safeAreaPadding_001 is: " + SafeAreaPaading001);
@@ -79,7 +79,9 @@ export default function SafeAreaPadding1() {
       let SafeAreaPaading002 = CommonFunc.getComponentRect('safeAreaPadding_002');
       console.log("[SafeAreaPadding1_static_0100] component safeAreaPadding_002 is: " + SafeAreaPaading002);
       console.log("[SafeAreaPadding1_static_0100] component safeAreaPadding_002 top is: " + SafeAreaPaading002.top);
-      expect(Math.abs(Math.round(SafeAreaPaading001.top - SafeAreaPaading002.top)-Math.round(UIContext.getFocusedUIContext()!.vp2px(5)))<=1).assertTrue()
+      console.info('SafeAreaPadding1_static_0100 result is' + Number(AppStorage.get<UIContext>('uiContext')?.vp2px(5)))
+      console.info('SafeAreaPadding1_static_0100 SafeAreaPaading001 is'+ Math.round(SafeAreaPaading001.top - SafeAreaPaading002.top))
+      expect(Math.abs(Math.round(SafeAreaPaading001.top - SafeAreaPaading002.top)-Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(5) as number)))<=1).assertTrue()
 
       console.info('SafeAreaPadding1_static_0100 END');
       done();

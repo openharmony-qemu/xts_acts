@@ -16,6 +16,7 @@
     "MainAbility/pages/Navigation/RouterPage2",
     "MainAbility/pages/Navigation/RouterRecoverable",
     "MainAbility/pages/Navigation/SystemTransition",
-    "MainAbility/pages/Navigation/SystemTransition2"
+    "MainAbility/pages/Navigation/SystemTransition2",
+    "MainAbility/pages/MultiNavigation/Page"
   ]
 }

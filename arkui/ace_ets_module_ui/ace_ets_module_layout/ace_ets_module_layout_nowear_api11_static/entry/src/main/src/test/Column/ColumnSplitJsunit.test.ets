@@ -65,16 +65,13 @@ export default function ColumnSplitJsunit() {
         console.info("get ColumnSplitJsunit state pages:" + "");
         if (!("ColumnSpaceResourcePage" == pages.name)) {
           console.info("get ColumnSplitJsunit pages.name:" + "");
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push ColumnSplitJsunit page error:" + err);
       }
       console.info("ColumnSplitJsunit beforeEach end");
-      
     });
 
 

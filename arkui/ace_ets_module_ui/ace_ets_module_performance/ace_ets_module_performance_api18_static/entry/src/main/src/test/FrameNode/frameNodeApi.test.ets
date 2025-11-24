@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -42,10 +42,11 @@ export default function frameNodeApi() {
         console.info("get frameNodeApi state pages:" + JSON.stringify(pages));
         if (!("checkboxGroupOnChangeModifier" == pages.name)) {
           console.info("get frameNodeApi pages.name:" + '');
-
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
+          // console.info("push frameNodeApi page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push frameNodeApi page error:" + err);

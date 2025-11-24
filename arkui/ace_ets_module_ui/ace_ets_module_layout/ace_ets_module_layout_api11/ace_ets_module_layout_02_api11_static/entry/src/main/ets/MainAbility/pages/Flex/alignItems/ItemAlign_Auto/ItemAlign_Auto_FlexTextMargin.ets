@@ -29,7 +29,7 @@ import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute,
 import { Router } from '@ohos.arkui.UIContext';
 import {
   State,
-  
+
   AppStorage
 } from '@ohos.arkui.stateManagement'
 
@@ -42,10 +42,6 @@ struct FlexTextMargin_Auto {
 
   onPageShow() {
     console.info('FlexBase_Center onPageShow');
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<number>>("messageManager",  this.messageManager);
     let callback: Callback<number> = (message: Message<number>) => {
       console.log('message = ' + message.name + '--' + message.value);

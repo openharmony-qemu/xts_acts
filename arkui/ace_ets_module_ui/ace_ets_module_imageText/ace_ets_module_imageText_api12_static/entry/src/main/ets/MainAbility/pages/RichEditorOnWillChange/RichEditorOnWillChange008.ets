@@ -67,7 +67,7 @@ build() {
       Text('span_text:' + this.spanText).id('span_text')
 
       Button('insert new line').onClick((e: ClickEvent) => {
-        this.controller.addTextSpan('\n',
+        this.controller!.addTextSpan('\n',
           {
             offset: 1
           }
@@ -85,7 +85,7 @@ build() {
         .onWillChange((value: RichEditorChangeValue): boolean => {
           console.log('RichEditorController：onWillChange')
           this.onWillChangeCallback = true;
-          value.replacedSpans.forEach((item: RichEditorTextSpanResult) => {
+          value.replacedSpans!.forEach((item: RichEditorTextSpanResult) => {
             console.log('RichEditorController：replacedSpans');
             console.log('RichEditorController item:' + JSON.stringify(item));
             this.rangeText = JSON.stringify(item.spanPosition.spanRange) + JSON.stringify(item.offsetInSpan);
@@ -99,7 +99,7 @@ build() {
           return true;
         })
         .aboutToDelete((value: RichEditorDeleteValue): boolean => {
-          value.richEditorDeleteSpans.forEach(item => {
+          value.richEditorDeleteSpans!.forEach(item => {
             console.log('RichEditorController aboutToDelete spanIndex:' + item.spanPosition.spanIndex);
           })
           return true;

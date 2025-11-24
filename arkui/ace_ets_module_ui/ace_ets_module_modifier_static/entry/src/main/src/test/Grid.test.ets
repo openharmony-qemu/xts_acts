@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
 import router from '@ohos.router';
-import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -56,12 +56,13 @@ export default function gridJsunit() {
       }
     });
 
-    
-    /*
-     * @tc.number   GridJsunit_static_0100
-     * @tc.name     GridJsunit_static_0100
-     * @tc.desc     GridJsunit_static_0100
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number GridJsunit_static_0100
+     * @tc.name GridJsunit_static_0100
+     * @tc.desc Set friction values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('GridJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[GridJsunit_static_0100] START');
@@ -75,12 +76,13 @@ export default function gridJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   GridJsunit_static_0101
-     * @tc.name     GridJsunit_static_0101
-     * @tc.desc     GridJsunit_static_0101
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number GridJsunit_static_0101
+     * @tc.name GridJsunit_static_0101
+     * @tc.desc Set enableScrollInteraction values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('GridJsunit_static_0101', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[GridJsunit_static_0101] START');
@@ -94,12 +96,13 @@ export default function gridJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   GridJsunit_static_0103
-     * @tc.name     GridJsunit_static_0103
-     * @tc.desc     GridJsunit_static_0103
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number GridJsunit_static_0103
+     * @tc.name  GridJsunit_static_0103
+     * @tc.desc Set edgeEffect values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('GridJsunit_static_0103', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[GridJsunit_static_0103] START');
@@ -113,12 +116,13 @@ export default function gridJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   GridJsunit_static_0104
-     * @tc.name     GridJsunit_static_0104
-     * @tc.desc     GridJsunit_static_0104
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number GridJsunit_static_0104
+     * @tc.name  GridJsunit_static_0104
+     * @tc.desc Set rowsTemplate values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('GridJsunit_static_0104', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[GridJsunit_static_0104] START');
@@ -132,12 +136,13 @@ export default function gridJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   GridJsunit_static_0105
-     * @tc.name     GridJsunit_static_0105
-     * @tc.desc     GridJsunit_static_0105
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number GridJsunit_static_0105
+     * @tc.name GridJsunit_static_0105
+     * @tc.desc Set columnsTemplate values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('GridJsunit_static_0105', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[GridJsunit_static_0105] START');
@@ -151,12 +156,13 @@ export default function gridJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   GridJsunit_static_0106
-     * @tc.name     GridJsunit_static_0106
-     * @tc.desc     GridJsunit_static_0106
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number GridJsunit_static_0106
+     * @tc.name GridJsunit_static_0106
+     * @tc.desc Set columnsGap values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('GridJsunit_static_0106', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[GridJsunit_static_0106] START');
@@ -169,12 +175,13 @@ export default function gridJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   GridJsunit_static_0107
-     * @tc.name     GridJsunit_static_0107
-     * @tc.desc     GridJsunit_static_0107
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number GridJsunit_static_0107
+     * @tc.name GridJsunit_static_0107
+     * @tc.desc Set rowsGap values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('GridJsunit_static_0107', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[GridJsunit_static_0107] START');
@@ -188,12 +195,13 @@ export default function gridJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   GridJsunit_static_0108
-     * @tc.name     GridJsunit_static_0108
-     * @tc.desc     GridJsunit_static_0108
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number GridJsunit_static_0108
+     * @tc.name GridJsunit_static_0108
+     * @tc.desc Set scrollBarWidth values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('GridJsunit_static_0108', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[GridJsunit_static_0108] START');
@@ -207,12 +215,13 @@ export default function gridJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   GridJsunit_static_0109
-     * @tc.name     GridJsunit_static_0109
-     * @tc.desc     GridJsunit_static_0109
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number GridJsunit_static_0109
+     * @tc.name  GridJsunit_static_0109
+     * @tc.desc Set scrollBarColor values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('GridJsunit_static_0109', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[GridJsunit_static_0109] START');
@@ -226,12 +235,13 @@ export default function gridJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   GridJsunit_static_0110
-     * @tc.name     GridJsunit_static_0110
-     * @tc.desc     GridJsunit_static_0110
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number GridJsunit_static_0110
+     * @tc.name  GridJsunit_static_0110
+     * @tc.desc Set scrollBar values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('GridJsunit_static_0110', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[GridJsunit_static_0110] START');
@@ -245,12 +255,13 @@ export default function gridJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   GridJsunit_static_0111
-     * @tc.name     GridJsunit_static_0111
-     * @tc.desc     GridJsunit_static_0111
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number GridJsunit_static_0111
+     * @tc.name  GridJsunit_static_0111
+     * @tc.desc Set editMode values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('GridJsunit_static_0111', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[GridJsunit_static_0111] START');
@@ -264,12 +275,13 @@ export default function gridJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   GridJsunit_static_0113
-     * @tc.name     GridJsunit_static_0113
-     * @tc.desc     GridJsunit_static_0113
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number GridJsunit_static_0113
+     * @tc.name  GridJsunit_static_0113
+     * @tc.desc Set multiSelectable values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('GridJsunit_static_0113', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[GridJsunit_static_0113] START');
@@ -283,12 +295,13 @@ export default function gridJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   GridJsunit_static_0114
-     * @tc.name     GridJsunit_static_0114
-     * @tc.desc     GridJsunit_static_0114
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number GridJsunit_static_0114
+     * @tc.name  GridJsunit_static_0114
+     * @tc.desc Set maxCount values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('GridJsunit_static_0114', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[GridJsunit_static_0114] START');
@@ -302,12 +315,13 @@ export default function gridJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   GridJsunit_static_0115
-     * @tc.name     GridJsunit_static_0115
-     * @tc.desc     GridJsunit_static_0115
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number GridJsunit_static_0115
+     * @tc.name  GridJsunit_static_0115
+     * @tc.desc Set minCount values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('GridJsunit_static_0115', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[GridJsunit_static_0115] START');
@@ -321,12 +335,13 @@ export default function gridJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   GridJsunit_static_0116
-     * @tc.name     GridJsunit_static_0116
-     * @tc.desc     GridJsunit_static_0116
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number GridJsunit_static_0116
+     * @tc.name  GridJsunit_static_0116
+     * @tc.desc Set cellLength values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('GridJsunit_static_0116', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[GridJsunit_static_0116] START');
@@ -340,12 +355,13 @@ export default function gridJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   GridJsunit_static_0117
-     * @tc.name     GridJsunit_static_0117
-     * @tc.desc     GridJsunit_static_0117
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number GridJsunit_static_0117
+     * @tc.name  GridJsunit_static_0117
+     * @tc.desc Set layoutDirection values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('GridJsunit_static_0117', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[GridJsunit_static_0117] START');
@@ -359,12 +375,13 @@ export default function gridJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   GridJsunit_static_0118
-     * @tc.name     GridJsunit_static_0118
-     * @tc.desc     GridJsunit_static_0118
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number GridJsunit_static_0118
+     * @tc.name  GridJsunit_static_0118
+     * @tc.desc Set supportAnimation values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('GridJsunit_static_0118', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[GridJsunit_static_0118] START');
@@ -378,12 +395,13 @@ export default function gridJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   GridJsunit_static_0120
-     * @tc.name     GridJsunit_static_0120
-     * @tc.desc     GridJsunit_static_0120
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number GridJsunit_static_0120
+     * @tc.name  GridJsunit_static_0120
+     * @tc.desc Set cachedCount values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('GridJsunit_static_0120', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[GridJsunit_static_0120] START');
@@ -397,22 +415,20 @@ export default function gridJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   GridJsunit_static_0119
-     * @tc.name     GridJsunit_static_0119
-     * @tc.desc     GridJsunit_static_0119
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number GridJsunit_static_0119
+     * @tc.name  GridJsunit_static_0119
+     * @tc.desc Change rowsGap values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('GridJsunit_static_0119', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('GridJsunit_static_0119 START');
       let driver = Driver.create();
       let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
-      console.info('GridJsunit_static_0119 findComponent');
       await button.click();
-      console.info('GridJsunit_static_0119 click');
-      await UtilsTest.msSleep(2000)
-      console.info('GridJsunit_static_0119 click end');
+     await UtilsTest.msSleep(2000)
 
       let strJsonNew = inspector.getInspectorByKey('GridKey1');
       console.info("GridJsunit_static_0119 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew).getElement('$attrs')));

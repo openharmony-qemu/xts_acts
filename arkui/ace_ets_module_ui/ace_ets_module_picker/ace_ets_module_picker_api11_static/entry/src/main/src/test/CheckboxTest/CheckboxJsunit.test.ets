@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium"
 import router from '@ohos.router';
 import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -57,8 +57,6 @@ export default function checkboxJsunit() {
         console.info("get checkbox state pages:" + JSON.stringify(pages));
         if (!("checkbox" == pages.name)) {
           console.info("get checkbox pages.name:" + JSON.stringify(pages.name));
-
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -73,13 +71,14 @@ export default function checkboxJsunit() {
     });
 
 
+    
     /*
      * @tc.number   testCheckbox_100_static
      * @tc.name     testCheckbox_100_static
      * @tc.desc     testCheckbox_100_static
      * @tc.level    Level.LEVEL1
      */
-    it('testCheckbox_100_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testCheckbox_100_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testCheckbox_100] START');
       await Utils.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('Checkbox1');
@@ -90,13 +89,14 @@ export default function checkboxJsunit() {
     });
 
 
+    
     /*
      * @tc.number   testCheckbox_200_static
      * @tc.name     testCheckbox_200_static
      * @tc.desc     testCheckbox_200_static
      * @tc.level    Level.LEVEL1
      */
-    it('testCheckbox_200_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testCheckbox_200_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testCheckbox_200] START');
       await Utils.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('Checkbox1');
@@ -107,13 +107,14 @@ export default function checkboxJsunit() {
     });
 
 
+    
     /*
      * @tc.number   testCheckbox_300_static
      * @tc.name     testCheckbox_300_static
      * @tc.desc     testCheckbox_300_static
      * @tc.level    Level.LEVEL1
      */
-    it('testCheckbox_300_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testCheckbox_300_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testCheckbox_300] START');
       await Utils.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('Checkbox1');
@@ -126,13 +127,14 @@ export default function checkboxJsunit() {
     });
 
 
+    
     /*
      * @tc.number   testCheckbox_400_static
      * @tc.name     testCheckbox_400_static
      * @tc.desc     testCheckbox_400_static
      * @tc.level    Level.LEVEL1
      */
-    it('testCheckbox_400_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('testCheckbox_400_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testCheckbox_400] START');
       await Utils.sleep(1000);
       let strJson: string = inspector.getInspectorByKey('Checkbox1');

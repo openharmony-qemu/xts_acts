@@ -48,19 +48,20 @@ export default function createNodeSearch() {
         console.info("get createNodeSearch state pages: " + JSON.stringify(pages));
         if (!("createNodeSearch" == pages.name)) {
           console.info("get createNodeSearch state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push createNodeSearch success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push createNodeSearch page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     });
     
     
+
 
 /*
      * @tc.number   createNodeSearch_static_0100
@@ -68,7 +69,7 @@ export default function createNodeSearch() {
      * @tc.desc     createNodeSearch_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('createNodeSearch_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('createNodeSearch_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('createNodeSearch_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

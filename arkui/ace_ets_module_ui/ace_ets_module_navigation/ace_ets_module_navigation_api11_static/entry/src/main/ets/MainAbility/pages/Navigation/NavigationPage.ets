@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import {
-  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,animateTo,AnimateParam,Search,TextAlign,Axis,NavBarPosition,
+  Entry,Component,$r,Scroll,Builder,List,ListItem,Resource,animateTo,AnimateParam,Search,TextAlign,Axis,NavBarPosition,Length,
   NavigationTitleMode,Image,NavigationMode,Column,Navigation,ButtonType,NavDestination,Stack,ColumnOptions,TextInput,
   Position,EffectType,EffectComponent,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,NavDestinationMode,Dimension,
   FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date,NavigationCommonTitle,NavDestinationCommonTitle,HorizontalAlign
@@ -21,7 +21,7 @@ import {
 import {
   State,
   Link,
-  PropRef,Provide
+  Prop,Provide
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import {MessageManager,Callback,Message } from '../../common/MessageManager';
@@ -39,7 +39,7 @@ struct NavigationPage {
   @State hideToolBar: boolean = false
   @State hideTitleBar: boolean = false
   @State hideBackButton: boolean = false
-  @State navBarWidth: number = 700
+  @State navBarWidth: Length = 700 as number
   @State navBarPosition: NavBarPosition = NavBarPosition.Start
   @State mode: NavigationMode = NavigationMode.Split
   @State backButtonIcon: string = 'resources/base/media/icon.png'
@@ -61,18 +61,18 @@ struct NavigationPage {
       num: 2
     }
   ] as Array<Txt>
-  messageManager:MessageManager<string> = new MessageManager<string>()
+  messageManager:MessageManager<Length|boolean | NavBarPosition | string | NavigationTitleMode|number|NavigationMode> = new MessageManager<Length|boolean | NavBarPosition | string | NavigationTitleMode|number|NavigationMode>()
 
   onPageShow() {
     console.info('NavDestination onPageShow')
-    AppStorage.setOrCreate<MessageManager<string>>("messageManager",  this.messageManager );
-    let callback: Callback<string> = (message: Message<string>) => {
+    AppStorage.setOrCreate<MessageManager<Length|boolean | NavBarPosition | string | NavigationTitleMode|number|NavigationMode>>("messageManager",  this.messageManager );
+    let callback: Callback<Length|boolean | NavBarPosition | string | NavigationTitleMode|number|NavigationMode> = (message: Message<Length|boolean | NavBarPosition | string | NavigationTitleMode|number|NavigationMode>) => {
       console.error('message = ' + message.name + "--" + message.value)
       if (message.name == 'mainTitleName') {
-        this.mainTitleName = message.value
+        this.mainTitleName = (message as Message<string>).value
       }
       if (message.name == 'subTitleName') {
-        this.subTitleName = message.value
+        this.subTitleName = (message as Message<string>).value
       }
       if (message.name == 'titleMode') {
         this.titleMode = (message as Message<NavigationTitleMode>).value
@@ -87,7 +87,7 @@ struct NavigationPage {
         this.hideBackButton = (message as Message<boolean>).value
       }
       if (message.name == 'navBarWidth') {
-        this.navBarWidth = (message as Message<number>).value
+        this.navBarWidth = (message as Message<Length>).value
       }
       if (message.name == 'navBarPosition') {
         this.navBarPosition = (message as Message<NavBarPosition>).value
@@ -96,7 +96,7 @@ struct NavigationPage {
         this.mode = (message as Message<NavigationMode>).value
       }
       if (message.name == 'backButtonIcon') {
-        this.backButtonIcon = message.value
+        this.backButtonIcon = (message as Message<string>).value
       }
       if (message.name == 'hideNavBar') {
         this.hideNavBar = (message as Message<boolean>).value
@@ -177,7 +177,6 @@ struct NavigationPage {
                 .fontWeight(500)
                 .textAlign(TextAlign.Center)
             }
-            // .editable(true)
           }, (item: number) => String(item))
         }
         .height(324)
@@ -191,7 +190,6 @@ struct NavigationPage {
       .title(this.NavigationTitle)
       .menus(this.NavigationMenus)
       .titleMode(this.titleMode)
-      // .toolBar(this.NavigationToolbar)
       .key('navigation')
       .hideTitleBar(this.hideTitleBar)
       .hideToolBar(this.hideToolBar)

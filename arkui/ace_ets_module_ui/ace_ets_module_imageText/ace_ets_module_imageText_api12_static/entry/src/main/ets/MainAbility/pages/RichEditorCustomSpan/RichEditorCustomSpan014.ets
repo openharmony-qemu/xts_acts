@@ -116,82 +116,61 @@ build() {
             verticalAlign: ImageSpanAlignment.TOP,
             objectFit: ImageFit.Contain
           } as ImageAttachmentInterface))
-          let styledString = this.controller.getStyledString();
-          if (styledString !== undefined) {
-            this.richEditorStyledString = styledString;
-            this.richEditorStyledString.appendStyledString(imageStyledString);
-            this.controller.setStyledString(this.richEditorStyledString);
-            this.controller.setCaretOffset(this.richEditorStyledString.length);
-          }
+          this.richEditorStyledString = this.controller!.getStyledString()!;
+          this.richEditorStyledString.appendStyledString(imageStyledString);
+          this.controller!.setStyledString(this.richEditorStyledString);
+          this.controller!.setCaretOffset(this.richEditorStyledString.length);
         }
       }).id('imageTop')
-
-      Button('getStyles').onClick((e: ClickEvent) => {
-        let styledString = this.controller.getStyledString();
-        if (styledString !== undefined) {
-          this.richEditorStyledString = styledString;
+      Button('getStyles')
+        .onClick((e: ClickEvent) => {
+          this.richEditorStyledString = this.controller!.getStyledString()!;
           let styles = this.richEditorStyledString.getStyles(0, this.richEditorStyledString.length);
           this.stylesInfo = JSON.stringify(styles);
-        }
-      }).id('getStyles')
-
+        })
+        .id('getStyles')
       Button('replaceStyledString').onClick((e: ClickEvent) => {
-        let styledString = this.controller.getStyledString();
-        if (styledString !== undefined) {
-          this.richEditorStyledString = styledString;
-          this.richEditorStyledString.replaceStyledString(0, 4, this.mutableStyledString1);
-          if (this.imagePixelMap !== undefined) {
-            let imageStyledString = new MutableStyledString(new ImageAttachment({
-              value: this.imagePixelMap as image.PixelMap,
-              size: { width: 30, height: 30 },
-              layoutStyle: { borderRadius: LengthMetrics.vp(10) },
-              verticalAlign: ImageSpanAlignment.CENTER,
-              objectFit: ImageFit.Contain
-            } as ImageAttachmentInterface))
-            this.richEditorStyledString.replaceStyledString(4, 1, imageStyledString);
-          }
-          this.richEditorStyledString.replaceStyledString(5, 1, this.style2);
-          this.controller.setStyledString(this.richEditorStyledString);
-          this.controller.setCaretOffset(this.richEditorStyledString.length);
+        this.richEditorStyledString = this.controller!.getStyledString()!;
+        this.richEditorStyledString.replaceStyledString(0, 4, this.mutableStyledString1);
+        if (this.imagePixelMap !== undefined) {
+          let imageStyledString = new MutableStyledString(new ImageAttachment({
+            value: this.imagePixelMap as image.PixelMap,
+            size: { width: 30, height: 30 },
+            layoutStyle: { borderRadius: LengthMetrics.vp(10) },
+            verticalAlign: ImageSpanAlignment.CENTER,
+            objectFit: ImageFit.Contain
+          } as ImageAttachmentInterface))
+          this.richEditorStyledString.replaceStyledString(4, 1, imageStyledString);
         }
+        this.richEditorStyledString.replaceStyledString(5, 1, this.style2);
+        this.controller!.setStyledString(this.richEditorStyledString);
+        this.controller!.setCaretOffset(this.richEditorStyledString.length);
       }).id('replaceStyledString')
 
       Button('replace String').onClick((e: ClickEvent) => {
-        let styledString = this.controller.getStyledString();
-        if (styledString !== undefined) {
-          this.richEditorStyledString = styledString;
-          this.richEditorStyledString.replaceStyledString(0, 4, this.mutableStyledString2);
-          this.controller.setStyledString(this.richEditorStyledString);
-          this.controller.setCaretOffset(this.richEditorStyledString.length);
-        }
+        this.richEditorStyledString = this.controller!.getStyledString()!;
+        this.richEditorStyledString.replaceStyledString(0, 4, this.mutableStyledString2);
+        this.controller!.setStyledString(this.richEditorStyledString);
+        this.controller!.setCaretOffset(this.richEditorStyledString.length);
       }).id('replaceString')
 
       Button('replace Custom').onClick((e: ClickEvent) => {
-        let styledString = this.controller.getStyledString();
-        if (styledString !== undefined) {
-          this.richEditorStyledString = styledString;
-          this.richEditorStyledString.replaceStyledString(6, 1, this.style3);
-          this.controller.setStyledString(this.richEditorStyledString);
-          this.controller.setCaretOffset(this.richEditorStyledString.length);
-        }
+        this.richEditorStyledString = this.controller!.getStyledString()!;
+        this.richEditorStyledString.replaceStyledString(6, 1, this.style3);
+        this.controller!.setStyledString(this.richEditorStyledString);
+        this.controller!.setCaretOffset(this.richEditorStyledString.length);
       }).id('replaceCustom')
 
       Button('get style String').onClick((e: ClickEvent) => {
-        let styledString = this.controller.getStyledString();
-        if (styledString !== undefined) {
-          this.styleString = styledString.getString();
-        }
+        this.styleString = this.controller!.getStyledString()!.getString();
       }).id('getString')
       Column() {
         Row() {
           Button('add custom').onClick((e: ClickEvent) => {
-            let styledString = this.controller.getStyledString();
-            if (styledString !== undefined) {
-              this.richEditorStyledString = styledString;
-              this.richEditorStyledString.appendStyledString(this.style1);
-              this.controller.setStyledString(this.richEditorStyledString);
-              this.controller.setCaretOffset(this.richEditorStyledString.length);
-            }
+            this.richEditorStyledString = this.controller!.getStyledString()!;
+            this.richEditorStyledString.appendStyledString(this.style1);
+            this.controller!.setStyledString(this.richEditorStyledString);
+            this.controller!.setCaretOffset(this.richEditorStyledString.length);
           }).id('addCustom')
         }
       }
@@ -201,7 +180,7 @@ build() {
 
       RichEditor(this.options)
         .onReady((): void => {
-          this.controller.setStyledString(this.mutableStyledString);
+          this.controller!.setStyledString(this.mutableStyledString);
         })
         .height('20%')
         .width('100%')

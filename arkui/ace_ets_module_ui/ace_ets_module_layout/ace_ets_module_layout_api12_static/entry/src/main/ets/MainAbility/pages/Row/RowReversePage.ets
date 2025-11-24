@@ -23,11 +23,13 @@ struct RowReversePage {
       Row() {
         Row() {
           Text('1')
-        }.width('40%').height('80%').backgroundColor(0xAFEEEE).key('RowReverse_Row_01')
+        }.width('40%').height('80%').backgroundColor(Color.Red)
+        .key('RowReverse_Row_01')
 
         Row() {
           Text('2')
-        }.width('40%').height('80%').backgroundColor(0x00FFFF).key('RowReverse_Row_02')
+        }.width('40%').height('80%').backgroundColor(Color.Red)
+        .key('RowReverse_Row_02')
       }
       .width('90%')
       .height('40%')
@@ -38,11 +40,13 @@ struct RowReversePage {
       Row() {
         Row() {
           Text('3')
-        }.width('40%').height('80%').backgroundColor(0xAFEEEE).key('RowReverse_Row_03')
+        }.width('40%').height('80%').backgroundColor(Color.Red)
+        .key('RowReverse_Row_03')
 
         Row() {
           Text('4')
-        }.width('40%').height('80%').backgroundColor(0x00FFFF).key('RowReverse_Row_04')
+        }.width('40%').height('80%').backgroundColor(Color.Red)
+        .key('RowReverse_Row_04')
       }
       .width('90%')
       .height('40%')

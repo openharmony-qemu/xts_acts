@@ -31,17 +31,6 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
-function sleep(time: int) {
-  return new Promise<string>((resolve, reject) => {
-    setTimeout(() => {
-      resolve("ok");
-    }, time * 1000);
-  }).then(() => {
-    console.info(`sleep ${time} over...`);
-  })
-}
-
-
 export default function rowSplitJsunit() {
 
   describe('RowSplitTest', () => {
@@ -65,21 +54,18 @@ export default function rowSplitJsunit() {
         console.info("get RowSplitTest state pages:" + "");
         if (!("ColumnSpaceResourcePage" == pages.name)) {
           console.info("get RowSplitTest pages.name:" + "");
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push RowSplitTest page error:" + err);
       }
       console.info("RowSplitTest beforeEach end");
-      
     });
 
 
     afterEach(async () => {
-      await sleep(1);
+      await CommonFunc.sleep(1000);
       console.info("RowSplit after each called");
     });
 

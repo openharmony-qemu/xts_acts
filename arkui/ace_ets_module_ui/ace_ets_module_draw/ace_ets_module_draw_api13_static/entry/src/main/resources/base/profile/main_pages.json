@@ -1,6 +1,6 @@
 {
     "src": [
-        "MainAbility/pages/index/index",
+      "MainAbility/pages/index/index",
         "MainAbility/pages/CanvasRenderingContext2D/AttachDetachTest",
         "MainAbility/pages/CanvasRenderingContext2D/AttachDetachRebindTest",
         "MainAbility/pages/CanvasRenderingContext2D/CanvasAttrsTest",

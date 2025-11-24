@@ -17,8 +17,8 @@ import { ComponentContent } from '@kit.ArkUI';
 import { BuilderNode, FrameNode, NodeController,typeNode } from '@ohos.arkui.node'
 import { BusinessError } from '@ohos.base';
 import { Entry, Column, Component,Builder,Text,ColumnOptions,Margin,Button,NodeContainer,
-  Visibility,wrapBuilder,FontWeight,Color,WrappedBuilder,Scroll,Scroller,ColumnOptions
-
+  Visibility,wrapBuilder,FontWeight,Color,WrappedBuilder,Scroll,Scroller,ColumnOptions,
+  CustomBuilderT
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import { ClickEvent } from '@ohos.arkui.component';
@@ -54,7 +54,7 @@ class MyNodeController extends NodeController {
     this.uiContext = uiContext;
     this.rootNode = new FrameNode(uiContext);
     this.builderNode = new BuilderNode<[]>(uiContext!, { selfIdealSize: { width: 200, height: 50 } });
-    
+    this.builderNode?.build(new WrappedBuilder<CustomBuilderT<[]>>(buildComponent),[] );
 
     const rootRenderNode = this.rootNode!.getRenderNode()!;
     if (rootRenderNode !== null) {
@@ -67,9 +67,9 @@ class MyNodeController extends NodeController {
 
   builderNodeBindController401(): string {
     let errorStr401: string = '';
-    
+    let textNode = typeNode.createTextNode(this.uiContext!);
     try {
-      
+      // typeNode.bindController(textNode, this.scroller, 'Scroll');
     } catch (e) {
       errorStr401 = (e as BusinessError).code + '';
     }
@@ -79,7 +79,7 @@ class MyNodeController extends NodeController {
   builderNodeBindController100021(): string {
     let errorStr100021: string = '';
     try {
-      
+      // typeNode.bindController(this.builderNode?.getFrameNode()?.getFirstChild(), this.scroller, 'Scroll');
     } catch (e) {
       errorStr100021 = (e as BusinessError).code + ':' + (e as BusinessError).message;
     }

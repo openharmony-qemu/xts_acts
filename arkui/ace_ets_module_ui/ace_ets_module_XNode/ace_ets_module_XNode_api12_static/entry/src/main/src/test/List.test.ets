@@ -12,6 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import borderRadiuses from './GraphicsTest/borderRadiuses.test';
 import borderStyles from './GraphicsTest/borderStyles.test';
 import edgeColors from './GraphicsTest/edgeColors.test';
@@ -22,8 +23,6 @@ import disposeTest from './FrameNodeTest/dispose.test';
 import getAttrsTest from './FrameNodeTest/getAttrs.test';
 import getPosition from './FrameNodeTest/getPosition.test';
 import setLayout from './FrameNodeTest/setLayout.test';
-
-
 import RenderNodeAttributeTest from './renderNode/RenderNodeAttributeTest.test';
 import setRectShape from './GraphicsTest/setRectShape.test';
 import LengthUnitTest from './GraphicsTest/LengthUnit.test'
@@ -63,14 +62,12 @@ import typeNodeProgressTest from './typeNodeTest/Progress.test';
 import typeNodeRelativeContainerTest from './typeNodeTest/RelativeContainer.test';
 import typeNodeSwiperTest from './typeNodeTest/Swiper.test';
 import RELOAD from './FrameNodeTest/RELOAD.test';
-
 import BuilderNodeApiRecycleTest from './FrameNodeTest/BuilderNodeApiRecycleTest.test';
 import BuilderNodeApiReuseTest from './FrameNodeTest/BuilderNodeApiReuseTest.test';
 import ComponentContentAPIRecycleTest from './FrameNodeTest/ComponentContentAPIRecycleTest.test';
 import ComponentContentAPIReuseTest from './FrameNodeTest/ComponentContentAPIReuseTest.test';
 import APImarkNodeGroupTest from './FrameNodeTest/APImarkNodeGroupTest.test';
 import APIPanGestureisisBeginTest from './FrameNodeTest/APIPanGestureisisBeginTest.test';
-
 import RenderNodeDemo01Test from './renderNode/RenderNodeDemo/RenderNodeDemo01Test.test';
 import RenderNodeDemo02Test from './renderNode/RenderNodeDemo/RenderNodeDemo02Test.test';
 import RenderNodeDemo03Test from './renderNode/RenderNodeDemo/RenderNodeDemo03Test.test';
@@ -80,7 +77,6 @@ import RenderNodeDemo06Test from './renderNode/RenderNodeDemo/RenderNodeDemo06Te
 import setLabelTest from './renderNode/setLabel.test';
 import setMarkNodeGroupTest from './renderNode/setMarkNodeGroup.test';
 import setShapeClipTest from './renderNode/setShapeClip.test';
-
 import APIdisposeTreeTest from './FrameNodeTest/APIdisposeTreeTest.test';
 import typeNodeTextInputTest from './typeNodeTest/TextInput.test';
 import typeNodeListItemTest from './typeNodeTest/ListItem.test';
@@ -92,71 +88,77 @@ import getAttachedFrameNodeById from './FrameNodeTest/getAttachedFrameNodeById.t
 import getAfterRemove from './FrameNodeTest/getAfterRemove.test';
 
 export default function testsuite() {
-  APIdisposeTreeTest();
-
-  RenderNodeDemo01Test();
-  RenderNodeDemo02Test();
-  RenderNodeDemo03Test();
-  RenderNodeDemo04Test();
-  RenderNodeDemo05Test();
-  RenderNodeDemo06Test();
-  setLabelTest();
-  setMarkNodeGroupTest();
-  setShapeClipTest();
-
-  BuilderNodeApiRecycleTest();
-  BuilderNodeApiReuseTest();
-  ComponentContentAPIRecycleTest();
-  ComponentContentAPIReuseTest();
-  APImarkNodeGroupTest();
-  APIPanGestureisisBeginTest();
-  borderRadiuses();
-  borderStyles();
-  edgeColors();
-  edgeWidths();
-  renderNodeGetInterfaceTest();
-  disposeTest();
-  getAttrsTest();
-  getPosition();
-  setLayout();
-  RenderNodeAttributeTest();
-  setRectShape();
-  LengthUnitTest();
-  getBlendColor();
-  resourceColor();
   getNumeric();
   getAlpha();
   getBlue();
   getGreen();
   getRed();
-  onAppear();
-  setMeasureSizeTest();
-  createNodeBlank();
-  createNodeColumn();
-  createNodeDivider();
-  createNodeFlex();
-  createNodeGrid();
-  createNodeImage();
-  createNodeList();
-  createNodeLoad();
-  createNodeScroll();
-  createNodeSearch();
-  createNodeStack();
-  createNodeText();
-  commonEventTest1();
-  CornerTest();
   LengthMetricsUnitTest();
-  PercentReferenceTest();
-  setCircleShapeTest();
-  graphicGetInterfaceTest();
-  typeNodeTextInputTest();
-  typeNodeListItemTest();
   typeNodechildrenMainSizeTest();
-
-  attachNodeAdapterTest();
-  updateConfigurationTest1();
-  updateConfigurationTest2();
-  getAttachedFrameNodeById();
-  getAfterRemove();
-
+  APIdisposeTreeTest();   // pass
+  RELOAD();  // pass
+  ComponentContentAPIRecycleTest();// pass
+  APIPanGestureisisBeginTest();// pass
+  LengthUnitTest(); // pass
+  getBlendColor();  // error
+  RenderNodeDemo02Test();   // page页面代码有注释  影响运行
+  RenderNodeDemo01Test();   // page页面代码有注释  影响运行
+  RenderNodeDemo03Test();   // page页面代码有注释  影响运行
+  RenderNodeDemo04Test();   // page页面代码有注释  影响运行
+  RenderNodeDemo05Test();   // page页面代码有注释  影响运行
+  RenderNodeDemo06Test();   // page页面代码有注释  影响运行
+  setMeasureSizeTest();  //  page页面代码有注释  影响运行
+  updateConfigurationTest1(); //  page页面代码有注释  影响运行
+  updateConfigurationTest2(); //  page页面代码有注释  影响运行
+  setLabelTest();   // app died
+  setMarkNodeGroupTest(); // app died
+  setShapeClipTest(); // app died
+  typeNodeSwiperTest();  // app died
+  typeNodeRelativeContainerTest();  // app died
+  typeNodeProgressTest(); // app died
+  typeNodeLoadingProgressTest();  // app died
+  typeNodeListTest(); // app died
+  typeNodeGridColTest();// app died
+  typeNodeDividerTest();// app died
+  typeNodeBlankTest();// app died
+  BuilderNodeApiRecycleTest();// app died
+  BuilderNodeApiReuseTest();// app died
+  ComponentContentAPIReuseTest();  // app_died type2
+  APImarkNodeGroupTest();  // app died
+  borderRadiuses();  // app died
+  borderStyles();  // app died
+  edgeColors();  // app died
+  edgeWidths();  // app died
+  renderNodeGetInterfaceTest();  // app died
+  disposeTest();  // app died
+  getAttrsTest();  // app died
+  getPosition();  // app died
+  setLayout();  // app died
+  RenderNodeAttributeTest();  // app died
+  setRectShape();  // app died
+  resourceColor();  // app_died type2
+  onAppear();  // app died
+  createNodeBlank();  // app died
+  createNodeColumn();  // app died
+  createNodeDivider();  // app died
+  createNodeFlex();  // app died
+  createNodeGrid();  // app died
+  createNodeImage();  // app died
+  createNodeList();  // app died
+  createNodeLoad();  // app died
+  createNodeScroll();  // app died
+  createNodeSearch();  // app died
+  createNodeStack();  // app died
+  createNodeText();  // app died
+  commonEventTest1();  // app died
+  expectedUpdateInterval();  // app died
+  CornerTest();  // app died
+  PercentReferenceTest();  // app died
+  setCircleShapeTest();  // app died
+  graphicGetInterfaceTest();  // app died
+  typeNodeTextInputTest();  // app died
+  typeNodeListItemTest();  // app died
+  attachNodeAdapterTest();  // app died
+  getAttachedFrameNodeById();  // app died
+  getAfterRemove();  // app died
 }

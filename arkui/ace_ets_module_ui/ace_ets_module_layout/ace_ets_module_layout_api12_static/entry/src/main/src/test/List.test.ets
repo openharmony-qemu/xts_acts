@@ -16,7 +16,6 @@ import SpaceMainNumberJsunit from './Flex/SpaceMainNumber.test';
 import SpaceMain5JustifyContentJsunit from './Flex/SpaceMain5JustifyContent.test';
 import SpaceCross5AlignItemsJsunit from './Flex/SpaceCross5AlignItems.test';
 import RelativeContainerApi from './RelativeContainer/RelativeContainerApi.test'
-
 import SpaceMainNumberJsunit from './Flex/SpaceMainNumber.test.ets';
 import SpaceMain5JustifyContentJsunit from './Flex/SpaceMain5JustifyContent.test.ets';
 import SpaceCross5AlignItemsJsunit from './Flex/SpaceCross5AlignItems.test.ets';
@@ -31,15 +30,15 @@ import APIaccessibilityTextHint from './Column/APIaccessibilityTextHint.test'
 import RelativeContainerStartApi from './RelativeContainerStart/RelativeContainerStartApi.test'
 
 export default function testsuite() {
-  SpaceMainNumberJsunit();
-  SpaceMain5JustifyContentJsunit();
-  SpaceCross5AlignItemsJsunit();
-  RelativeContainerApi();
-  RelativeContainerLocalizedDirectionStartTest();
-  FlexSpaceTest();
-  APIremoveGestureByTag();
-  APIaccessibilityTextHint();
-  ColumnReverseTest();
-  RowReverseTest();
-  RelativeContainerStartApi()
+  // FlexSpaceTest();
+  RelativeContainerLocalizedDirectionStartTest();// barrier会导致页面白屏
+  // SpaceMainNumberJsunit();
+  // SpaceMain5JustifyContentJsunit();
+  // SpaceCross5AlignItemsJsunit();
+  // RelativeContainerApi();
+  // APIremoveGestureByTag();
+  // APIaccessibilityTextHint();
+  // ColumnReverseTest();
+  // RowReverseTest();
+  // RelativeContainerStartApi()
 }

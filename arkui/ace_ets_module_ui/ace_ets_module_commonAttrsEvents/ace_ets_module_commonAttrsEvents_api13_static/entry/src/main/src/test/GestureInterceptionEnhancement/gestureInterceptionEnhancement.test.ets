@@ -4,15 +4,15 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- **     http://www.apache.org/licenses/LICENSE-2.0
- **
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium/index';
+import { afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium';
 import { Component, Driver, ON } from '@ohos.UiTest';
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -67,29 +67,28 @@ export default function gestureInterceptionEnhancementTest() {
         console.info("get gestureInterceptionEnhancementTest state pages:" + JSON.stringify(pages));
         if (!("ColumnSpaceResourcePage" == pages.name)) {
           console.info("get gestureInterceptionEnhancementTest pages.name:" + JSON.stringify(pages.name));
-
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-
         }
       } catch (err) {
         console.error("push gestureInterceptionEnhancementTest page error:" + err);
       }
       console.info("gestureInterceptionEnhancementTest beforeEach end");
-
     });
     afterEach(async (): Promise<void> => {
       const tabsInterceptionEnhancement = AppStorage.get<Router>("router") as Router
-      await tabsInterceptionEnhancement.replaceUrl({ url: 'MainAbility/pages/index/indexassist' })
+      await CommonFunc.sleep(2000);
+      tabsInterceptionEnhancement.replaceUrl({ url: 'MainAbility/pages/index/indexassist' })
       await CommonFunc.sleep(2000);
     });
 
-
-    /*
+    /**
      * @tc.number    gestureInterceptionEnhancementTest_static_0010
      * @tc.name      gestureInterceptionEnhancementTest_static_0010
-     * @tc.desc      gestureInterceptionEnhancementTest_static_0010
-     * @tc.level     2
+     * @tc.desc      check the tabs nest scroll when invoke gesture Interception Enhancement interface (exposeInnerGesture value true)
+     * @tc.level:    Level 2
+     * @tc.type :
+     * @tc.size :
      */
     it('gestureInterceptionEnhancementTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('gestureInterceptionEnhancementTest_static_0010 START');
@@ -105,23 +104,23 @@ export default function gestureInterceptionEnhancementTest() {
       let height = bottom - top;
       let width = right - left;
       await CommonFunc.sleep(1000);
-
-      await (driver.swipe(Math.round(left + width * 0.8) as Int, Math.round(top + height / 2) as Int,
-        Math.round(left) as Int, Math.round(top + height / 2) as Int) as Promise<void>);
+      // tabs nest scroll
+      await driver.swipe(Math.round(left + width * 0.8) as Int, Math.round(top + height / 2) as Int,
+        Math.round(left) as Int, Math.round(top + height / 2) as Int);
       await CommonFunc.sleep(2500);
       let text01 = await (driver.findComponent(ON.text("BlueTest")) as Promise<Component>)
       let textContent01: string = await text01.getText();
       expect(textContent01).assertEqual("BlueTest");
 
-      await (driver.swipe(Math.round(left + width * 0.8) as Int, Math.round(top + height / 2) as Int,
-        Math.round(left) as Int, Math.round(top + height / 2) as Int) as Promise<void>);
+      await driver.swipe(Math.round(left + width * 0.8) as Int, Math.round(top + height / 2) as Int,
+        Math.round(left) as Int, Math.round(top + height / 2) as Int);
       await CommonFunc.sleep(2500);
       let text02 = await (driver.findComponent(ON.text("PinkTest")) as Promise<Component>)
       let textContent02: string = await text02.getText();
       expect(textContent02).assertEqual("PinkTest");
 
-      await (driver.swipe(Math.round(left + width * 0.8) as Int, Math.round(top + height / 2) as Int,
-        Math.round(left) as Int, Math.round(top + height / 2) as Int) as Promise<void>);
+      await driver.swipe(Math.round(left + width * 0.8) as Int, Math.round(top + height / 2) as Int,
+        Math.round(left) as Int, Math.round(top + height / 2) as Int);
       await CommonFunc.sleep(2500);
       let text03 = await (driver.findComponent(ON.text("blue and pink test")) as Promise<Component>)
       let textContent03: string = await text03.getText();
@@ -130,19 +129,19 @@ export default function gestureInterceptionEnhancementTest() {
     });
 
 
-    /*
+    /**
      * @tc.number    gestureInterceptionEnhancementTest_static_0020
      * @tc.name      gestureInterceptionEnhancementTest_static_0020
-     * @tc.desc      gestureInterceptionEnhancementTest_static_0020
-     * @tc.level     2
+     * @tc.desc      check the tabs nest scroll when invoke gesture Interception Enhancement interface (exposeInnerGesture value false)
+     * @tc.level:    Level 2
+     * @tc.type :
+     * @tc.size :
      */
     it('gestureInterceptionEnhancementTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('gestureInterceptionEnhancementTest_static_0020 START');
-      const animate = AppStorage.get<ParamName>("value")
-      let msg: Message<boolean> = {
+      AppStorage.get<MessageManager<boolean>>("messageManager")?.notify({
         name: 'exposeInnerGesture', value: false
-      }
-      animate?.message.notify(msg);
+      });
       await CommonFunc.sleep(1000);
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -156,11 +155,14 @@ export default function gestureInterceptionEnhancementTest() {
       let height = bottom - top;
       let width = right - left;
       await CommonFunc.sleep(1000);
-
-      await (driver.swipe(Math.round(left + width * 0.8) as Int, Math.round(top + height / 2) as Int,
-        Math.round(left) as Int, Math.round(top + height / 2) as Int) as Promise<void>);
+      // tabs nest scroll
+      console.info("gestureInterceptionEnhancementTest_static_0020 driver.swipe start");
+      await driver.swipe(Math.round(left + width * 0.8) as Int, Math.round(top + height / 2) as Int,
+        Math.round(left) as Int, Math.round(top + height / 2) as Int);
       await CommonFunc.sleep(2500);
+      console.info("gestureInterceptionEnhancementTest_static_0020 BlueTest start");
       let text01 = await (driver.findComponent(ON.text("BlueTest")) as Promise<Component>);
+      console.info("gestureInterceptionEnhancementTest_static_0020 BlueTest success");
       let textContent01: string = await text01.getText();
       expect(textContent01).assertEqual("BlueTest");
 
@@ -180,21 +182,19 @@ export default function gestureInterceptionEnhancementTest() {
       done();
     });
 
-
-    /*
+    /**
      * @tc.number    gestureInterceptionEnhancementTest_static_0030
      * @tc.name      gestureInterceptionEnhancementTest_static_0030
-     * @tc.desc      gestureInterceptionEnhancementTest_static_0030
-     * @tc.level     2
+     * @tc.desc      check the callback trigger when invoke gesture Interception Enhancement interface (exposeInnerGesture value false)
+     * @tc.level:    Level 2
+     * @tc.type :
+     * @tc.size :
      */
     it('gestureInterceptionEnhancementTest_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('gestureInterceptionEnhancementTest_static_0030 START');
-
-      const animate = AppStorage.get<ParamName>("value")
-      let msg: Message<boolean> = {
+      AppStorage.get<MessageManager<boolean>>("messageManager")?.notify({
         name: 'exposeInnerGesture', value: false
-      }
-      animate?.message.notify(msg);
+      });
       await CommonFunc.sleep(1000);
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -208,17 +208,21 @@ export default function gestureInterceptionEnhancementTest() {
       let height = bottom - top;
       let width = right - left;
       await CommonFunc.sleep(1000);
-
-      await (driver.swipe(Math.round(left + width * 0.8) as Int, Math.round(top + height / 2) as Int,
-        Math.round(left) as Int, Math.round(top + height / 2) as Int) as Promise<void>);
+      // tabs nest scroll
+      console.info("gestureInterceptionEnhancementTest_static_0030 driver.swipe start");
+      await driver.swipe(Math.round(left + width * 0.8) as Int, Math.round(top + height / 2) as Int,
+        Math.round(left) as Int, Math.round(top + height / 2) as Int);
       await CommonFunc.sleep(2500);
-      await (driver.swipe(Math.round(left + width * 0.8) as Int, Math.round(top + height / 2) as Int,
-        Math.round(left) as Int, Math.round(top + height / 2) as Int) as Promise<void>);
+      await driver.swipe(Math.round(left + width * 0.8) as Int, Math.round(top + height / 2) as Int,
+        Math.round(left) as Int, Math.round(top + height / 2) as Int);
+      console.info("gestureInterceptionEnhancementTest_static_0030 driver.swipe 2 success");
       await CommonFunc.sleep(2500);
-      await (driver.swipe(Math.round(left + width * 0.8) as Int, Math.round(top + height / 2) as Int,
-        Math.round(left) as Int, Math.round(top + height / 2) as Int) as Promise<void>);
+      await driver.swipe(Math.round(left + width * 0.8) as Int, Math.round(top + height / 2) as Int,
+        Math.round(left) as Int, Math.round(top + height / 2) as Int);
       await CommonFunc.sleep(2500);
+      console.info("gestureInterceptionEnhancementTest_static_0030 driver.swipe success");
       let strJson = inspector.getInspectorByKey('callBackS');
+      await CommonFunc.sleep(2000);
       let obj = JSON.parseJsonElement(strJson);
       console.info("[gestureInterceptionEnhancementTest_static_0030] content: " +
       JSON.stringify(obj.getElement('$attrs').getString('content')));

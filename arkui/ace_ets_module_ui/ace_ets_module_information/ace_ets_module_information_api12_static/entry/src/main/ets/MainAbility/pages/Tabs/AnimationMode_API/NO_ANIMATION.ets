@@ -14,7 +14,7 @@
  */
 import {Entry, Component, Column, ColumnOptions, Row, Text, RowOptions, Color, ProgressMask, Padding, Image, $r,Button, ClickEvent, Margin, Builder, TabsController,
   Divider, Tabs, TabContent, BarPosition, AnimationMode, BarMode} from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { State,  AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct TabsExample_NO_ANIMATION {
@@ -24,7 +24,7 @@ struct TabsExample_NO_ANIMATION {
   private controller: TabsController = new TabsController()
 
   @Builder
-  tabBuilder(index: int, name: string) {
+  tabBuilder(index: number, name: string) {
     Column() {
       Text(name)
         .fontColor(this.currentIndex === index ? this.selectedFontColor : this.fontColor)
@@ -42,7 +42,21 @@ struct TabsExample_NO_ANIMATION {
   build() {
     Column() {
       Tabs({ barPosition: BarPosition.Start, index: this.currentIndex, controller: this.controller }) {
-      
+        // TabContent() {
+        //   Column().width('100%').height('100%').backgroundColor('#00CB87')
+        // }.tabBar(this.tabBuilder(0, 'green'))
+        //
+        // TabContent() {
+        //   Column().width('100%').height('100%').backgroundColor('#007DFF')
+        // }.tabBar(this.tabBuilder(1, 'blue'))
+        //
+        // TabContent() {
+        //   Column().width('100%').height('100%').backgroundColor('#FFBF00')
+        // }.tabBar(this.tabBuilder(2, 'yellow'))
+        //
+        // TabContent() {
+        //   Column().width('100%').height('100%').backgroundColor('#E67C92')
+        // }.tabBar(this.tabBuilder(3, 'pink'))
       }
       .animationMode(AnimationMode.NO_ANIMATION)
       .id('NO_ANIMATION')

@@ -27,7 +27,7 @@ struct FlexVisibility_Baseline {
 
   onPageShow() {
     console.info('FlexVisibility_Baseline onPageShow');
-        AppStorage.setOrCreate<MessageManager<Visibility>>("messageManager",  this.messageManager);
+    AppStorage.setOrCreate<MessageManager<Visibility>>("messageManager",  this.messageManager);
     let callback: Callback<Visibility> = (message: Message<Visibility>) => {
       console.log('message = ' + message.name + "--" + message.value);
       if (message.name == 'visibility') {

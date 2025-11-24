@@ -40,20 +40,21 @@ export default function typeNodechildrenMainSizeTest() {
         console.info("get typeNodechildrenMainSizeTest state pages: " + JSON.stringify(pages));
         if (!("ChildrenMainSize" == pages.name)) {
           console.info("get typeNodechildrenMainSizeTest state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push typeNodechildrenMainSizeTest success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push typeNodechildrenMainSizeTest page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     });
 
     
     
+
 
 /*
      * @tc.number   childrenMainSizeTest_static_0100
@@ -61,7 +62,7 @@ export default function typeNodechildrenMainSizeTest() {
      * @tc.desc     childrenMainSizeTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('childrenMainSizeTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('childrenMainSizeTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('childrenMainSizeTest_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -81,13 +82,14 @@ it('childrenMainSizeTest_static_0100', Level.LEVEL0, async (done: () => void): P
     
     
 
+
 /*
      * @tc.number   childrenMainSizeTest_static_0200
      * @tc.name     childrenMainSizeTest_static_0200
      * @tc.desc     childrenMainSizeTest_static_0200
      * @tc.level    Level.LEVEL0
      */
-it('childrenMainSizeTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('childrenMainSizeTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('childrenMainSizeTest_0100 START');
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);

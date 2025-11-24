@@ -18,23 +18,21 @@ import { MessageManager, Callback, Message } from './../../common/MessageManager
 import { Entry, Component, Column, GridDirection, Scroller, Padding, ColumnOptions, Grid, Margin,GridItem, Text, ForEach, TextAlign } from '@ohos.arkui.component'
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 
-type MessageData = string | GridDirection
-
 @Entry
 @Component
 struct GridRowCol02 {
-  @State numberData: String[] = ['0', '1', '2', '3', '4']
+  @State Number01: String[] = ['0', '1', '2', '3', '4'] as String[]
   scroller: Scroller = new Scroller()
   @State rowsTemplate: string = '1fr 1fr 1fr'
-  messageManager: MessageManager<object> = new MessageManager<object>()
+  messageManager: MessageManager<string | GridDirection> = new MessageManager<string | GridDirection>()
   @State layoutDirection: GridDirection = GridDirection.Row
 
   @State text: string = ''
 
   onPageShow() {
     console.info('navigationPosition  onPageShow');
-    AppStorage.setOrCreate<MessageManager<object>>("messageManager",  this.messageManager);
-    let callback: Callback<object> = (message: Message<object>) => {
+    AppStorage.setOrCreate<MessageManager<string | GridDirection>>("messageManager",  this.messageManager);
+    let callback: Callback<string | GridDirection> = (message: Message<string | GridDirection>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'rowsTemplate') {
         this.rowsTemplate = message.value as string
@@ -50,8 +48,8 @@ struct GridRowCol02 {
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Grid() {
-        ForEach(this.numberData, (day: string ,index1:int|undefined) => {
-          ForEach(this.numberData, (day: string ,index2:int|undefined) => {
+        ForEach(this.Number01, (day: string ,index1:int|undefined) => {
+          ForEach(this.Number01, (day: string ,index2:int|undefined) => {
             GridItem() {
               Text('' + index1 + index2)
                 .fontSize(16)

@@ -14,7 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
-import { Driver, ON} from '@ohos.UiTest';
+import { Driver, ON,Component} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector'
 import hilog from '@ohos.hilog'
@@ -50,11 +50,8 @@ export default function text_drag() {
         console.info("get text_drag state pages:" + "");
         if (!("TextClockApi" == pages.name)) {
           console.info("get text_drag pages.name:" + "");
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push text_drag page error:" + err);
@@ -76,39 +73,40 @@ export default function text_drag() {
      */
 it('SUB_ACE_UI_TEXT_DRAG_static_0100', Level.LEVEL1, async (done: ()=>void) => {
 
-      console.info('[text_drag_001] START');
-      let driver = Driver.create();
-      let textComponent = await driver.findComponent(ON.id('DraggedText'));
-      
-      await (textComponent?.longClick() as Promise<void>);
-      await CommonFunc.sleep(500);
-      console.info('[text_drag_001] longClick success');
-      let selectAllButton = await driver.findComponent(ON.text('全选'));
-      selectAllButton?.click();
-      await CommonFunc.sleep(300);
+  console.info('[text_drag_001] START');
+  let driver = Driver.create();
+  let textComponent = await (driver.findComponent(ON.id('DraggedText')) as Promise<Component>);
+  //first step: longClick
+  await textComponent.longClick();
+  await CommonFunc.sleep(2000);
+  console.info('[text_drag_001] longClick success');
+  let selectAllButton = await (driver.findComponent(ON.text('全选')) as Promise<Component>);
+  selectAllButton?.click();
+  await CommonFunc.sleep(300);
+  let strJson1 = inspector.getInspectorByKey('DraggedText');
+  console.info(`[text_drag_001] DraggedText strJson1 is:${strJson1}`);
+  let obj1 = JSON.parseJsonElement(strJson1);
+  console.info(`[text_drag_001] DraggedText selection range is:${obj1.getElement('$attrs').getString('selection')}`);
+  await CommonFunc.sleep(300);
+  expect(obj1.getElement('$attrs').getString('selection')).assertEqual('[0,45]');
 
+  //second step: drag text to textArea
+  let textAreaComponent = await (driver.findComponent(ON.id('textAreaDrag')) as Promise<Component>);
+  console.info(`[text_drag_001] textAreaComponent is:${JSON.stringify(textAreaComponent)}`);
+  await textComponent!.dragTo(textAreaComponent);
+  await CommonFunc.sleep(2000);
+  console.info(`[text_drag_001] dragTo is: success}`);
+  let strJson2 = inspector.getInspectorByKey('DraggedText');
+  console.info(`[text_drag_001] DraggedText strJson2 is:${strJson2}`);
+  let obj2 = JSON.parseJsonElement(strJson2);
+  console.info(`[text_drag_001] after dragging text, selection range is:${obj2.getElement('$attrs').getString('selection')}`);
+  await CommonFunc.sleep(300);
+  expect(obj2.getElement('$attrs').getString('selection')).assertEqual('[-1,-1]');
+  let textAreaContent = await textAreaComponent.getText();
+  expect(textAreaContent).assertEqual('test drag event draggable设为true, 有onDragStart');
 
-        let strJson1 = inspector.getInspectorByKey('DraggedText');
-        console.info(`[text_drag_001] DraggedText strJson1 is:${strJson1}`);
-        let obj1 = JSON.parseJsonElement(strJson1);
-        console.info(`[text_drag_001] DraggedText selection range is:${obj1.getElement('$attrs').getString('selection')}`);
-        await CommonFunc.sleep(300);
-        expect(obj1.getElement('$attrs').getString('selection')).assertEqual('[0,45]');
-
-        
-        let textAreaComponent = await driver.findComponent(ON.id('textAreaDrag'));
-        textComponent?.dragTo(textAreaComponent!);
-        let strJson2 = inspector.getInspectorByKey('DraggedText');
-        console.info(`[text_drag_001] DraggedText strJson2 is:${strJson2}`);
-        let obj2 = JSON.parseJsonElement(strJson2);
-        console.info(`[text_drag_001] after dragging text, selection range is:${obj2.getElement('$attrs').getString('selection')}`);
-        await CommonFunc.sleep(300);
-        expect(obj2.getElement('$attrs').getString('selection')).assertEqual('[-1,-1]');
-        let textAreaContent = textAreaComponent?.getText() ;
-        expect(textAreaContent).assertEqual('test drag event draggable设为true, 有onDragStart');
-
-      console.info('[text_drag_001] END');
-      done();
+  console.info('[text_drag_001] END');
+  done();
     });
     
   })

@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -52,7 +52,6 @@ export default function DataPanelContentModifierTest() {
         console.info('get DataPanelContentModifierTest state pages:' + JSON.stringify(pages));
         if (!('DataPanelContentModifier' == pages.name)) {
           console.info('get DataPanelContentModifierTest pages.name:' + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
           await Utils.sleep(2500);
         }
@@ -70,8 +69,9 @@ export default function DataPanelContentModifierTest() {
      */
 it('DataPanelContentModifierTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('DataPanelContentModifierTest_001 START');
-      await Utils.sleep(1000);
+
       let strJson = inspector.getInspectorByKey('DataPanelContentModifier_max');
+      await Utils.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
       await Utils.sleep(1000);
       console.info("[DataPanelContentModifierTest_001] obj is: " + JSON.stringify(obj));

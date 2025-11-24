@@ -32,7 +32,7 @@ class UtilsTest{
           UtilsTest.isloadAndSetUpUiTest = true;
         }
         resolve(true)
-      } catch(error) {
+      } catch(error: Error) {
         hilog.info(domain, tag, `UiTestCase, start abilityFailed: ${String(error)}`);
         reject(error)
       }

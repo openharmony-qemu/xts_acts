@@ -73,7 +73,7 @@ build() {
       Text('onDidChange_callback:' + this.onDidChangeCallback).id('onDidChange_callback')
 
       Button('add iamge').onClick((e: ClickEvent) => {
-        this.controller.addImageSpan($r('app.media.icon'),
+        this.controller!.addImageSpan($r('app.media.icon'),
           {
             imageStyle:
             {
@@ -83,7 +83,7 @@ build() {
       }).id('add_image')
 
       Button('add symbol').onClick((e: ClickEvent) => {
-        this.controller.addSymbolSpan($r('sys.symbol.ohos_trash'),
+        this.controller!.addSymbolSpan($r('sys.symbol.ohos_trash'),
           {
             style:
             {
@@ -94,7 +94,7 @@ build() {
 
       Button('add builder')
         .onClick((e: ClickEvent) => {
-          let num = this.controller.addBuilderSpan(this.myBuilder, { offset: this.myOffset })
+          let num = this.controller!.addBuilderSpan(this.myBuilder, { offset: this.myOffset })
           console.info('addBuilderSpan return ' + num)
         }).id('add_builder')
 
@@ -125,7 +125,7 @@ build() {
         .onWillChange((value: RichEditorChangeValue): boolean => {
           console.log('RichEditorController：onWillChange')
           this.onWillChangeCallback = true;
-          value.replacedSpans.forEach((item: RichEditorTextSpanResult) => {
+          value.replacedSpans!.forEach((item: RichEditorTextSpanResult) => {
             console.log('RichEditorController：replacedSpans')
             this.replacedSpansCallback = true;
             console.log('RichEditorController replacedSpans value:' + item.value);

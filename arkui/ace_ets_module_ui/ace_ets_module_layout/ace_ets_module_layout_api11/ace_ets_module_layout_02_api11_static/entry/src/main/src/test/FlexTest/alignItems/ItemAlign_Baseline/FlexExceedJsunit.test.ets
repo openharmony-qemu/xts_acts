@@ -39,9 +39,8 @@ export default function flexExceed_BaselineJsunit() {
 
     beforeAll(() => {
       console.info("flexItemAlignBaselineTest2 beforeEach start");
-      
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace_ets_module_layout_02_api11_static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
@@ -57,11 +56,8 @@ export default function flexExceed_BaselineJsunit() {
         console.info("get flexItemAlignBaselineTest2 state pages:" + JSON.stringify(pages));
         if (!("TextClockApi" == pages.name)) {
           console.info("get flexItemAlignBaselineTest2 pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push flexItemAlignBaselineTest2 page error:" + err);
@@ -70,12 +66,12 @@ export default function flexExceed_BaselineJsunit() {
     });
 
     afterEach(async () : Promise<void> => {
-      await CommonFunc.sleep(1000);
+      const routerInstance = AppStorage.get<Router>("router") as Router
+      routerInstance.pushUrl({url:"MainAbility/pages/index/index"});
+      await CommonFunc.sleep(2000);
       console.info("ItemAlign_Baseline_FlexExceed after each called");
     });
 
-    
-    
 /*
      * @tc.number   testFlexItemAlignBaselineSetMarPad_static
      * @tc.name     testFlexItemAlignBaselineSetMarPad_static
@@ -87,10 +83,10 @@ it('testFlexItemAlignBaselineSetMarPad_static', Level.LEVEL0, async () : Promise
       let result = AppStorage.get<MessageManager<number>>("messageManager")
       if (result !== null) {
         result!.notify({
-          name: 'height', value: 10
+          name: 'padding', value: 10
         });
         result!.notify({
-          name: 'width', value: 10
+          name: 'margin', value: 10
         });
       }
       await CommonFunc.sleep(2000);
@@ -100,33 +96,29 @@ it('testFlexItemAlignBaselineSetMarPad_static', Level.LEVEL0, async () : Promise
       let textExceed02: RectValue = CommonFunc.getComponentRect('ItemAlign_Baseline_textExceed02');
       let textExceed03: RectValue = CommonFunc.getComponentRect('ItemAlign_Baseline_textExceed03');
       let flexExceed01: RectValue = CommonFunc.getComponentRect('ItemAlign_Baseline_flexExceed01');
-      const uiContext = new UIContext();
-      expect(Math.abs(textExceed01.left - flexExceed01.left - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue()
+      expect(Math.abs(textExceed01.left - flexExceed01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))) <= 1).assertTrue()
       expect(Math.abs(textExceed01.right - textExceed02.left) <= 1).assertTrue()
       expect(Math.abs(textExceed02.right - textExceed03.left) <= 1).assertTrue()
-      expect(Math.abs(flexExceed01.right - textExceed03.right - UIContext.getFocusedUIContext()!.vp2px(40)) <= 1).assertTrue()
+      expect(Math.abs(flexExceed01.right - textExceed03.right - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(40))) <= 1).assertTrue()
 
-      expect(Math.abs(textExceed01.top - flexExceed01.top - UIContext.getFocusedUIContext()!.vp2px(60)) <= 1).assertTrue()
-      expect(Math.abs(textExceed03.top - flexExceed01.top - UIContext.getFocusedUIContext()!.vp2px(10)) <= 1).assertTrue()
+      expect(Math.abs(textExceed01.top - flexExceed01.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(60))) <= 1).assertTrue()
+      expect(Math.abs(textExceed03.top - flexExceed01.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10))) <= 1).assertTrue()
       expect(Math.abs(textExceed01.top - textExceed03.top - textExceed03.bottom + textExceed01.bottom) <= 1)
         .assertTrue()
       expect(Math.abs(textExceed02.top - textExceed03.top - textExceed03.bottom + textExceed02.bottom) <= 1)
         .assertTrue()
 
-      expect(Math.abs(textExceed01.bottom - textExceed01.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue()
-      expect(Math.abs(textExceed02.bottom - textExceed02.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue()
-      expect(Math.abs(textExceed03.bottom - textExceed03.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(textExceed01.right - textExceed01.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(textExceed02.right - textExceed02.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(textExceed03.right - textExceed03.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(textExceed01.bottom - textExceed01.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) <= 1).assertTrue()
+      expect(Math.abs(textExceed02.bottom - textExceed02.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue()
+      expect(Math.abs(textExceed03.bottom - textExceed03.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(textExceed01.right - textExceed01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(textExceed02.right - textExceed02.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(textExceed03.right - textExceed03.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Baseline')
       console.info('new testFlexItemAlignBaselineSetMarPad_static END');
 
     });
-
-    
-    
 /*
      * @tc.number   testFlexItemAlignBaselineSetMarPadExceed_static
      * @tc.name     testFlexItemAlignBaselineSetMarPadExceed_static
@@ -138,10 +130,10 @@ it('testFlexItemAlignBaselineSetMarPadExceed_static', Level.LEVEL0, async () : P
       let result = AppStorage.get<MessageManager<number>>("messageManager")
       if (result !== null) {
         result!.notify({
-          name: 'height', value: 30
+          name: 'padding', value: 30
         });
         result!.notify({
-          name: 'width', value: 30
+          name: 'margin', value: 30
         });
       }
 
@@ -152,25 +144,24 @@ it('testFlexItemAlignBaselineSetMarPadExceed_static', Level.LEVEL0, async () : P
       let textExceed02: RectValue = CommonFunc.getComponentRect('ItemAlign_Baseline_textExceed02');
       let textExceed03: RectValue = CommonFunc.getComponentRect('ItemAlign_Baseline_textExceed03');
       let flexExceed01: RectValue = CommonFunc.getComponentRect('ItemAlign_Baseline_flexExceed01');
-      const uiContext = new UIContext();
-      expect(Math.abs(textExceed01.left - flexExceed01.left - UIContext.getFocusedUIContext()!.vp2px(30)) <= 1).assertTrue()
+      expect(Math.abs(textExceed01.left - flexExceed01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))) <= 1).assertTrue()
       expect(Math.abs(textExceed01.right - textExceed02.left) <= 1).assertTrue()
       expect(Math.abs(textExceed02.right - textExceed03.left) <= 1).assertTrue()
-      expect(Math.abs(flexExceed01.right - textExceed03.right - UIContext.getFocusedUIContext()!.vp2px(30)) <= 1).assertTrue()
+      expect(Math.abs(flexExceed01.right - textExceed03.right - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))) <= 1).assertTrue()
 
-      expect(Math.abs(textExceed01.top - flexExceed01.top - UIContext.getFocusedUIContext()!.vp2px(80)) <= 1).assertTrue()
-      expect(Math.abs(textExceed03.top - flexExceed01.top - UIContext.getFocusedUIContext()!.vp2px(30)) <= 1).assertTrue()
+      expect(Math.abs(textExceed01.top - flexExceed01.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(80))) <= 1).assertTrue()
+      expect(Math.abs(textExceed03.top - flexExceed01.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(30))) <= 1).assertTrue()
       expect(Math.abs(textExceed01.top - textExceed03.top - textExceed03.bottom + textExceed01.bottom) <= 1)
         .assertTrue()
       expect(Math.abs(textExceed02.top - textExceed03.top - textExceed03.bottom + textExceed02.bottom) <= 1)
         .assertTrue()
 
-      expect(Math.abs(textExceed01.bottom - textExceed01.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue()
-      expect(Math.abs(textExceed02.bottom - textExceed02.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue()
-      expect(Math.abs(textExceed03.bottom - textExceed03.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(textExceed01.right - textExceed01.left - UIContext.getFocusedUIContext()!.vp2px(440 / 3)) <= 1).assertTrue()
-      expect(Math.abs(textExceed02.right - textExceed02.left - UIContext.getFocusedUIContext()!.vp2px(440 / 3)) <= 1).assertTrue()
-      expect(Math.abs(textExceed03.right - textExceed03.left - UIContext.getFocusedUIContext()!.vp2px(440 / 3)) <= 1).assertTrue()
+      expect(Math.abs(textExceed01.bottom - textExceed01.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) <= 1).assertTrue()
+      expect(Math.abs(textExceed02.bottom - textExceed02.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue()
+      expect(Math.abs(textExceed03.bottom - textExceed03.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(textExceed01.right - textExceed01.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))) <= 1).assertTrue()
+      expect(Math.abs(textExceed02.right - textExceed02.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))) <= 1).assertTrue()
+      expect(Math.abs(textExceed03.right - textExceed03.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(440 / 3))) <= 1).assertTrue()
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('direction')).assertEqual('FlexDirection.Row')
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getElement('constructor').getString('alignItems')).assertEqual('ItemAlign.Baseline')
       console.info('new testFlexItemAlignBaselineSetMarPadExceed_static END');

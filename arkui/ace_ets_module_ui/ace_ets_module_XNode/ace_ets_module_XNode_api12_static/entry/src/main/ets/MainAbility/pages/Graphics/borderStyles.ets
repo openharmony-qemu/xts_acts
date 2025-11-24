@@ -55,14 +55,14 @@ struct borderStylesExample {
   build() {
     Column() {
       NodeContainer(this.myNodeController)
-      Text('borderStyleValue:' + this.borderStyleValue).margin(10).id("borderStylesValue") 
+      Text('borderStyleValue:' + this.borderStyleValue).margin(10).id("borderStylesValue") //2
       Button('click borderStyleValue')
         .id("borderStylesClick")
         .onClick((e:ClickEvent) => {
-          
+          // renderNode.borderColor = borderStyles(BorderStyle.Dotted)    // ←源码，疑似.borderColor错误，改为.borderStyle
           renderNode.borderStyle = borderStyles(BorderStyle.Dotted)
           renderNode.invalidate()
-          this.borderStyleValue = renderNode.borderStyle!.left
+          this.borderStyleValue = renderNode!.borderStyle!.left
         })
     }
   }

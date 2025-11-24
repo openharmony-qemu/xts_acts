@@ -62,15 +62,13 @@ export default function TextMaxLines() {
 
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextMaxLines_static_0010
      * @tc.name     TextMaxLines_static_0010
      * @tc.desc     TextMaxLines_static_0010
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextMaxLines_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextMaxLines_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TextMaxLines_0010 START');
       let TextMaxLines_1 = inspector.getInspectorByKey('textMaxLines1');
       expect(''+JSON.parseJsonElement(TextMaxLines_1).getElement('$attrs').getString('maxLines')).assertEqual('4');
@@ -79,15 +77,13 @@ it('TextMaxLines_static_0010', Level.LEVEL0, async (done: () => void): Promise<v
     });
 
 
-    
-    
-/*
+    /*
      * @tc.number   TextLineHeight_static_0020
      * @tc.name     TextLineHeight_static_0020
      * @tc.desc     TextLineHeight_static_0020
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextLineHeight_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextLineHeight_static_0020', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TextLineHeight_0020 START');
       let TextMaxLines_1 = inspector.getInspectorByKey('textMaxLines1');
       expect(''+JSON.parseJsonElement(TextMaxLines_1).getElement('$attrs').getString('lineHeight')).assertEqual('10.00fp');
@@ -96,15 +92,13 @@ it('TextLineHeight_static_0020', Level.LEVEL0, async (done: () => void): Promise
     });
 
 
-    
-    
-/*
+    /*
      * @tc.number   TextBaselineOffset_static_0030
      * @tc.name     TextBaselineOffset_static_0030
      * @tc.desc     TextBaselineOffset_static_0030
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextBaselineOffset_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextBaselineOffset_static_0030', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TextBaselineOffset_0030 START');
       let TextMaxLines_1 = inspector.getInspectorByKey('textMaxLines1');
       expect(''+JSON.parseJsonElement(TextMaxLines_1).getElement('$attrs').getString('baselineOffset')).assertEqual('10');
@@ -113,15 +107,13 @@ it('TextBaselineOffset_static_0030', Level.LEVEL0, async (done: () => void): Pro
     });
 
 
-    
-    
-/*
+    /*
      * @tc.number   TextFontStyle_static_0040
      * @tc.name     TextFontStyle_static_0040
      * @tc.desc     TextFontStyle_static_0040
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextFontStyle_static_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextFontStyle_static_0040', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TextFontStyle_0040 START');
       let TextMaxLines_1 = inspector.getInspectorByKey('textMaxLines1');
       expect(''+JSON.parseJsonElement(TextMaxLines_1).getElement('$attrs').getString('fontStyle')).assertEqual('FontStyle.Italic');
@@ -130,15 +122,13 @@ it('TextFontStyle_static_0040', Level.LEVEL0, async (done: () => void): Promise<
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextLetterSpacing_static_0050
      * @tc.name     TextLetterSpacing_static_0050
      * @tc.desc     TextLetterSpacing_static_0050
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextLetterSpacing_static_0050', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextLetterSpacing_static_0050', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TextLetterSpacing_0050 START');
       let TextMaxLines_1 = inspector.getInspectorByKey('textMaxLines1');
       expect(''+JSON.parseJsonElement(TextMaxLines_1).getElement('$attrs').getString('letterSpacing')).assertEqual('5.00fp');
@@ -147,15 +137,13 @@ it('TextLetterSpacing_static_0050', Level.LEVEL0, async (done: () => void): Prom
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextTextAlign_static_0060
      * @tc.name     TextTextAlign_static_0060
      * @tc.desc     TextTextAlign_static_0060
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextTextAlign_static_0060', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextTextAlign_static_0060', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TextTextAlign_0060 START');
       let TextMaxLines_1 = inspector.getInspectorByKey('textMaxLines1');
       expect(''+JSON.parseJsonElement(TextMaxLines_1).getElement('$attrs').getString('textAlign')).assertEqual('TextAlign.Center');
@@ -164,15 +152,13 @@ it('TextTextAlign_static_0060', Level.LEVEL0, async (done: () => void): Promise<
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   TextConstraintSize_static_0070
      * @tc.name     TextConstraintSize_static_0070
      * @tc.desc     TextConstraintSize_static_0070
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextConstraintSize_static_0070', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextConstraintSize_static_0070', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TextConstraintSize_0070 START');
       let TextMaxLines_1 = inspector.getInspectorByKey('textMaxLines1');
       expect(''+JSON.parseJsonElement(JSON.parseJsonElement(TextMaxLines_1).getElement('$attrs').getString('constraintSize')).getString('minWidth')).assertEqual('100.00vp');
@@ -181,15 +167,13 @@ it('TextConstraintSize_static_0070', Level.LEVEL0, async (done: () => void): Pro
     });
 
 
-    
-    
-/*
+    /*
      * @tc.number   TextConstraintSize_static_0080
      * @tc.name     TextConstraintSize_static_0080
      * @tc.desc     TextConstraintSize_static_0080
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextConstraintSize_static_0080', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextConstraintSize_static_0080', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TextConstraintSize_0080 START');
       let TextMaxLines_1 = inspector.getInspectorByKey('textMaxLines1');
       expect(''+JSON.parseJsonElement(JSON.parseJsonElement(TextMaxLines_1).getElement('$attrs').getString('constraintSize')).getString('maxWidth')).assertEqual('200.00vp');
@@ -198,15 +182,13 @@ it('TextConstraintSize_static_0080', Level.LEVEL0, async (done: () => void): Pro
     });
 
 
-    
-    
-/*
+    /*
      * @tc.number   TextConstraintSize_static_0090
      * @tc.name     TextConstraintSize_static_0090
      * @tc.desc     TextConstraintSize_static_0090
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('TextConstraintSize_static_0090', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('TextConstraintSize_static_0090', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('TextConstraintSize_0090 START');
       let TextMaxLines_1 = inspector.getInspectorByKey('textMaxLines1');
       expect(''+JSON.parseJsonElement(JSON.parseJsonElement(TextMaxLines_1).getElement('$attrs').getString('constraintSize')).getString('minHeight')).assertEqual('100.00vp');

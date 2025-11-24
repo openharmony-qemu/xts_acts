@@ -63,7 +63,7 @@ struct RichEditorCustomSpan005 {
       return
     }
     this.isPageShow = false;
-    this.controller.setStyledString(this.style1)
+    this.controller!.setStyledString(this.style1)
   }
 
 

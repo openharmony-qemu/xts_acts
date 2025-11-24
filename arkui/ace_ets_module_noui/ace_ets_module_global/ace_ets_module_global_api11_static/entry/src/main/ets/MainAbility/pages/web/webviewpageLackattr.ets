@@ -13,11 +13,10 @@
  * limitations under the License.
  */
 
-
 import prompt from '@ohos.prompt'
 import emitter from '@ohos.events.emitter';
 import webview from '@ohos.web.webview'
-import { BusinessError, RecordData } from '@ohos.base';
+import { BusinessError } from '@ohos.base';
 import {
   Entry, Component,
   Column, ColumnOptions, List, ListItem, ListOptions,
@@ -26,27 +25,25 @@ import {
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
-
-
 @Entry
 @Component
 struct WebComponent {
   controller: webview.WebviewController = new webview.WebviewController();
   @State isLoad: boolean = false;
-  
-  
-  
-  
-  
+  @State hitTestValue: webview.WebHitTestType = webview.WebHitTestType.EditText;
+  @State hitTestValue8: webview.HitTestValue = {
+    type: webview.WebHitTestType.Phone,
+    extra: "hello"
+  } as webview.HitTestValue;
   @State webStorage: webview.WebStorageOrigin = {
     origin: 'prign',
     usage: 2,
     quota: 3
   } as webview.WebStorageOrigin;
-  
-  
-  
-  
+  headers: Array<webview.WebHeader> = [{
+    headerKey: "requesstHeader",
+    headerValue: "requestValue"
+  } as webview.WebHeader]
 
   aboutToAppear() {
     console.info(`aboutToAppear HeaderV9 start`)
@@ -60,13 +57,13 @@ struct WebComponent {
     Column() {
       Button('loadUrl').onClick((e:ClickEvent) => {
         try {
-          
+          this.controller.loadUrl('www.baidu.com', this.headers);
           this.isLoad = true;
           try {
             let backData: emitter.EventData = {
               data: {
                 "STATUS": this.isLoad
-              } as Record<String, RecordData>
+              } as Record<String, undefined|null|Object>
             }
             let backEvent: emitter.InnerEvent = {
               eventId: 90201,
@@ -74,25 +71,23 @@ struct WebComponent {
             }
             console.info("loadUrl headerV9 to emit action state")
             emitter.emit(backEvent, backData)
-          } catch (err) {
-            err = err as BusinessError;
+          } catch (err:BusinessError) {
             console.info("loadUrl headerV9 emit action state err: " + JSON.stringify((err as BusinessError).message))
           }
 
-        } catch (error) {
-          error = error as BusinessError;
+        } catch (error:BusinessError) {
           console.error(`ErrorCode: ${error.code},  Message: ${(error as BusinessError).message}`);
         }
       }).key('btloadurl')
       Button('getHitTest').onClick((e:ClickEvent) => {
         try {
-          let hitTestType = this.controller.getLastHitTest(); 
+          let hitTestType = this.controller.getLastHitTest(); // getHitTest
           console.info("hitTestType: " + hitTestType);
           try {
             let backData: emitter.EventData = {
               data: {
-                
-              } as Record<String, RecordData>
+                "STATUS": this.hitTestValue
+              } as Record<String, undefined|null|Object>
             }
             let backEvent: emitter.InnerEvent = {
               eventId: 90202,
@@ -100,25 +95,23 @@ struct WebComponent {
             }
             console.info("loadUrl hitTestType to emit action state")
             emitter.emit(backEvent, backData)
-          } catch (err) {
-            err = err as BusinessError;
+          } catch (err:BusinessError) {
             console.info("loadUrl hitTestType emit action state err: " + JSON.stringify((err as BusinessError).message))
           }
 
-        } catch (error) {
-          error = error as BusinessError;
+        } catch (error:BusinessError) {
           console.error(`ErrorCode: ${error.code},  Message: ${(error as BusinessError).message}`);
         }
       }).key('btngetHitTest')
 
       Button('getHitTestValue').onClick((e:ClickEvent) => {
         try {
-          let hitValue = this.controller.getLastHitTest(); 
+          let hitValue = this.controller.getLastHitTest(); // getHitTestValue
           try {
             let backData: emitter.EventData = {
               data: {
-                
-              } as Record<String, RecordData>
+                "STATUS": this.hitTestValue8
+              } as Record<String, undefined|null|Object>
             }
             let backEvent: emitter.InnerEvent = {
               eventId: 90203,
@@ -126,14 +119,12 @@ struct WebComponent {
             }
             console.info("loadUrl getHitTestValue to emit action state")
             emitter.emit(backEvent, backData)
-          } catch (err) {
-            err = err as BusinessError;
+          } catch (err:BusinessError) {
             console.info("loadUrl getHitTestValue emit action state err: " + JSON.stringify((err as BusinessError).message))
           }
           console.info("hitType: " + hitValue.type);
           console.info("extra: " + hitValue.extra);
-        } catch (error) {
-          error = error as BusinessError;
+        } catch (error:BusinessError) {
           console.error(`ErrorCode: ${error.code},  Message: ${(error as BusinessError).message}`);
         }
       })
@@ -151,8 +142,7 @@ struct WebComponent {
             .catch((e: Error) => {
               console.log('error: ' + e);
             })
-        } catch (error) {
-          error = error as BusinessError;
+        } catch (error:BusinessError) {
           console.error(`ErrorCode: ${error.code}, Message: ${(error as BusinessError).message}`);
         }
       })
@@ -169,7 +159,7 @@ struct WebComponent {
                 let backData: emitter.EventData = {
                   data: {
                     "STATUS": this.webStorage.origin
-                  } as Record<String, RecordData>
+                  } as Record<String, undefined|null|Object>
                 }
                 let backEvent: emitter.InnerEvent = {
                   eventId: 90204,
@@ -177,16 +167,14 @@ struct WebComponent {
                 }
                 console.info("loadUrl getHitTestValue to emit action state")
                 emitter.emit(backEvent, backData)
-              } catch (err) {
-                err = err as BusinessError;
+              } catch (err:BusinessError) {
                 console.info("loadUrl getHitTestValue emit action state err: " + JSON.stringify((err as BusinessError).message))
               }
             })
             .catch((e: Error) => {
               console.log('error: ' + e);
             })
-        } catch (error) {
-          error = error as BusinessError;
+        } catch (error:BusinessError) {
           console.error(`ErrorCode: ${error.code}, Message: ${(error as BusinessError).message}`);
         }
 
@@ -201,8 +189,7 @@ struct WebComponent {
               .catch((e: Error) => {
                 console.info('error: ' + e);
               })
-          } catch (error) {
-            error = error as BusinessError;
+          } catch (error:BusinessError) {
             console.error(`ErrorCode: ${error.code}, Message: ${(error as BusinessError).message}`);
           }
 
@@ -218,7 +205,7 @@ struct WebComponent {
                   let backData: emitter.EventData = {
                     data: {
                       "STATUS": usage
-                    } as Record<String, RecordData>
+                    } as Record<String, undefined|null|Object>
                   }
                   let backEvent: emitter.InnerEvent = {
                     eventId: 90206,
@@ -226,16 +213,14 @@ struct WebComponent {
                   }
                   console.info("getOriginUsage to emit action state")
                   emitter.emit(backEvent, backData)
-                } catch (err) {
-                  err = err as BusinessError;
+                } catch (err:BusinessError) {
                   console.info("getOriginUsage emit action state err: " + JSON.stringify((err as BusinessError).message))
                 }
               })
               .catch((e: Error) => {
                 console.info('error: ' + e);
               })
-          } catch (error) {
-            error = error as BusinessError;
+          } catch (error:BusinessError) {
             console.error(`ErrorCode: ${error.code}, Message: ${(error as BusinessError).message}`);
           }
         })
@@ -254,7 +239,7 @@ struct WebComponent {
               let backData: emitter.EventData = {
                 data: {
                   "STATUS": this.isLoad
-                } as Record<String, RecordData>
+                } as Record<String, undefined|null|Object>
               }
               let backEvent: emitter.InnerEvent = {
                 eventId: 90207,
@@ -262,13 +247,11 @@ struct WebComponent {
               }
               console.info("saveCookieAsync to emit action state")
               emitter.emit(backEvent, backData)
-            } catch (err) {
-              err = err as BusinessError;
+            } catch (err:BusinessError) {
               console.info("saveCookieAsync emit action state err: " + JSON.stringify((err as BusinessError).message))
             }
 
-          } catch (error) {
-            error = error as BusinessError;
+          } catch (error:BusinessError) {
             console.error(`ErrorCode: ${error.code},  Message: ${(error as BusinessError).message}`);
           }
         })
@@ -285,7 +268,7 @@ struct WebComponent {
                   let backData: emitter.EventData = {
                     data: {
                       "STATUS": filename
-                    } as Record<String, RecordData>
+                    } as Record<String, undefined|null|Object>
                   }
                   let backEvent: emitter.InnerEvent = {
                     eventId: 90208,
@@ -293,8 +276,7 @@ struct WebComponent {
                   }
                   console.info("saveCookieAsync to emit action state")
                   emitter.emit(backEvent, backData)
-                } catch (err) {
-                  err = err as BusinessError;
+                } catch (err:BusinessError) {
                   console.info("saveCookieAsync emit action state err: " + JSON.stringify((err as BusinessError).message))
                 }
 
@@ -303,8 +285,7 @@ struct WebComponent {
               .catch((error: Error) => {
                 console.log('error: ' + JSON.stringify(error));
               })
-          } catch (error) {
-            error = error as BusinessError;
+          } catch (error:BusinessError) {
             console.error(`ErrorCode: ${error.code},  Message: ${(error as BusinessError).message}`);
           }
         })
@@ -319,7 +300,7 @@ struct WebComponent {
                   let backData: emitter.EventData = {
                     data: {
                       "STATUS": result
-                    } as Record<String, RecordData>
+                    } as Record<String, undefined|null|Object>
                   }
                   let backEvent: emitter.InnerEvent = {
                     eventId: 90209,
@@ -327,8 +308,7 @@ struct WebComponent {
                   }
                   console.info("runJavaScript to emit action state")
                   emitter.emit(backEvent, backData)
-                } catch (err) {
-                  err = err as BusinessError;
+                } catch (err:BusinessError) {
                   console.info("runJavaScript emit action state err: " + JSON.stringify((err as BusinessError).message))
                 }
               })
@@ -336,12 +316,10 @@ struct WebComponent {
                 console.error("error: " + error);
               })
             console.info('url: ', e.url);
-          } catch (error) {
-            error = error as BusinessError;
+          } catch (error:BusinessError) {
             console.error(`Errorcode: ${error.code}, Message: ${(error as BusinessError).message}`);
           }
         })
-
 
       Web({ src: 'www.baidu.com', controller: this.controller }).key('webattr')
 

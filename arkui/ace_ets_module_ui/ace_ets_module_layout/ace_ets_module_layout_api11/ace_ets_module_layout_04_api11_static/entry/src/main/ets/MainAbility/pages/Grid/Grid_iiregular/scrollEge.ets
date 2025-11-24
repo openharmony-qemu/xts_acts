@@ -12,19 +12,40 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Component, Column, GridItem, ComputedBarAttribute, Text, ForEach, TextAlign, EdgeEffect, BarState, Edge, Scroller, ClickEvent, ColumnOptions, Grid, Button, Margin } from '@ohos.arkui.component'
-import { State,AppStorage } from '@ohos.arkui.stateManagement';
+import {
+  Entry,
+  Component,
+  Column,
+  GridItem,
+  ComputedBarAttribute,
+  Text,
+  ForEach,
+  TextAlign,
+  EdgeEffect,
+  BarState,
+  Edge,
+  Scroller,
+  ClickEvent,
+  ColumnOptions,
+  Grid,
+  Button,
+  Margin
+} from '@ohos.arkui.component'
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
+
 @Entry
 @Component
 struct scrollEge {
-  @State numberData: String[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25'];
+  @State Number01: String[] =
+    ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20',
+      '21', '22', '23', '24', '25'] as String[];
   scroller: Scroller = new Scroller();
 
   build() {
     Column({ space: 5 } as ColumnOptions) {
       Grid(this.scroller) {
-        
-        ForEach(this.numberData, (day: string) => {
+
+        ForEach(this.Number01, (day: string) => {
           GridItem() {
             Text(day)
               .fontSize(16)
@@ -35,7 +56,6 @@ struct scrollEge {
               .key('text' + day)
           }.height('100%')
 
-          
         }, (day: string) => day)
       }
       .key('scrollEgePages')
@@ -45,10 +65,10 @@ struct scrollEge {
       .friction(0.6)
       .edgeEffect(EdgeEffect.Spring)
       .scrollBar(BarState.On)
-      .onScrollIndex((first: int,last: int) => {
+      .onScrollIndex((first: int, last: int) => {
         console.info(first)
       })
-      .onScrollBarUpdate((index: int, offset: double) => {
+      .onScrollBarUpdate((index: int, offset: number) => {
         return { totalOffset: (index / 5) * (80 + 10) - offset, totalLength: 80 * 5 + 10 * 4 } as ComputedBarAttribute
       })
       .width('90%')

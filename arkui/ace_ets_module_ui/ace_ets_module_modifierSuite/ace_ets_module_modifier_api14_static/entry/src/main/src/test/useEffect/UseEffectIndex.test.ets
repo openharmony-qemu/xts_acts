@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium"
 import router from '@ohos.router';
 import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -58,14 +58,15 @@ export default function UseEffectIndexTest() {
       }
     });
 
-    
-    /*
+    /**
      * @tc.number   UseEffectIndex_static_0100
-     * @tc.name     UseEffectIndex_static_0100
-     * @tc.desc     UseEffectIndex_static_0100
-     * @tc.level    Level.LEVEL2
+    * @tc.name      UseEffectIndex_static_0100
+     * @tc.desc      api
+     * @tc.level:    Level 2
+     * @tc.type :
+     * @tc.size :
      */
-it('UseEffectIndex_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+    it('UseEffectIndex_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
 
       try {
         console.info('[UseEffectIndex_static_0100] START');

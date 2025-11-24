@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -42,11 +42,11 @@ export default function themePageToggleTest() {
         console.info("get themePageToggleTest state pages:" + JSON.stringify(pages));
         if (!("themePageMgmtColorsTest" == pages.name)) {
           console.info("get themePageToggleTest pages.name:" + '');
-          
-          
+          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
+          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          // console.info("push themePageToggleTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push themePageToggleTest page error:" + err);
@@ -56,7 +56,6 @@ export default function themePageToggleTest() {
 
     
     
-
 /*
      * @tc.number   themeInterfaceIsValidTest_static_0100
      * @tc.name     themeInterfaceIsValidTest_static_0100
@@ -67,11 +66,12 @@ it('themeInterfaceIsValidTest_static_0100', Level.LEVEL0, async (done: () => voi
       console.info('themeInterfaceIsValidTest_0100 START');
       let driver = Driver.create()
       await Utils.sleep(1000);
-      
+      // click to change the skin
       let button = await driver.findComponent(ON.id('themeToggleClick'));
+      await Utils.sleep(1000);
       await (button?.click() as Promise<void>);
       await Utils.sleep(2000);
-      
+      // test the color whether change
       let strJson = inspector.getInspectorByKey('toggleBg');
       console.info("[themeInterfaceIsValidTest_static_0100] component JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       console.info("[themeInterfaceIsValidTest_static_0100] component JSON.parseJsonElement(strJson) is: " + JSON.parseJsonElement(strJson).getElement('$attrs').getString('backgroundColor'));

@@ -17,10 +17,10 @@ import { indexSetter, taskpoolExecuteChainedRecursive } from './TaskPoolTestImpo
 
 export async function taskpoolExecuteChained(data: Uint32Array, index: number, limit: number): Promise<Uint32Array> {
   let task: taskpool.Task = new taskpool.Task(indexSetter, data, index);
-  let promise: Promise<NullishType> = taskpool.execute(task);
+  let promise: Promise<Any> = taskpool.execute(task);
   if (index < limit + 1) {
     await taskpoolExecuteChainedRecursive(data, index + 1, limit)
   }
-  let ret: NullishType = (await promise);
+  let ret: Any = (await promise);
   return ret as Uint32Array;
 }

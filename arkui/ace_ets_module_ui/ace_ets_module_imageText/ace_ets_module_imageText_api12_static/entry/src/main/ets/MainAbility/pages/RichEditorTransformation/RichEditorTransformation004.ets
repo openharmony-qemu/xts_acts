@@ -57,7 +57,7 @@ build() {
       Button('setTypingStyle')
         .fontSize(10)
         .onClick((e: ClickEvent) => {
-          this.controller.setTypingStyle(
+          this.controller!.setTypingStyle(
             {
               fontWeight: FontWeight.Lighter,
               fontFamily: 'Arial',
@@ -68,7 +68,7 @@ build() {
             })
         }).id('setTypingStyle')
       Button('getTypingStyle').onClick((e: ClickEvent) => {
-        let richEditorTextStyle = this.controller.getTypingStyle();
+        let richEditorTextStyle = this.controller!.getTypingStyle();
         this.textStyle = JSON.stringify(richEditorTextStyle);
         console.log('RichEditor getTypingStyle:' + JSON.stringify(richEditorTextStyle));
       }).id('getTypingStyle')
@@ -80,21 +80,21 @@ build() {
         .borderWidth(1)
         .borderColor(Color.Green)
         .onReady((): void => {
-          this.controller.addTextSpan('abc',
+          this.controller!.addTextSpan('abc',
             {
               style:
               {
                 fontSize: 30
               }
             })
-          this.controller.addImageSpan($r('app.media.icon'),
+          this.controller!.addImageSpan($r('app.media.icon'),
             {
               imageStyle:
               {
                 size: ['25px', '25px']
               }
             })
-          this.controller.addSymbolSpan($r('sys.symbol.ohos_trash'),
+          this.controller!.addSymbolSpan($r('sys.symbol.ohos_trash'),
             {
               style:
               {

@@ -83,10 +83,10 @@ export default function taskPoolErrorSuccessTest() {
       Count2.count = 0
 
       for (let i = 0; i < 1; i++) {
-        taskpool.execute(taskGroup).then((num: Array<NullishType>) => {
+        taskpool.execute(taskGroup).then((num: Array<Any>) => {
           Count1.count = Count1.count + (num[0] as Number)
           console.info('======', Count1.count, Count2.count)
-        }).catch((err: NullishType) => {
+        }).catch((err: Any) => {
           Count2.count += 1
           console.error('=======', JSON.stringify(err))
         })
@@ -137,9 +137,9 @@ export default function taskPoolErrorSuccessTest() {
       })
 
       for (let i = 0; i < 1; i++) {
-        taskpool.execute(taskGroup).then((num: Array<NullishType>) => {
+        taskpool.execute(taskGroup).then((num: Array<Any>) => {
           console.info("====taskpool: execute task success")
-        }).catch((err: NullishType) => {
+        }).catch((err: Any) => {
           console.error("====taskpool: execute task err")
           count2 = 0
           count = 0
@@ -174,11 +174,11 @@ export default function taskPoolErrorSuccessTest() {
       let count2: Number = 0
 
       for (let i = 0; i < 1; i++) {
-        taskpool.execute(taskGroup).then((num: Array<NullishType>) => {
+        taskpool.execute(taskGroup).then((num: Array<Any>) => {
           count += (num[0] as Number)
           let s: string[] = []
           s[0].split('')[1].toString()
-        }).catch((e: NullishType) => {
+        }).catch((e: Any) => {
           count2 ++
         })
 
@@ -214,14 +214,14 @@ export default function taskPoolErrorSuccessTest() {
       let count2: Number = 0
 
       for (let i = 0; i < 1; i++) {
-        taskpool.execute(taskGroup).then((num: Array<NullishType>) => {
+        taskpool.execute(taskGroup).then((num: Array<Any>) => {
           count += (num[0] as Number)
           let s: string[] = []
           s[0].split('')[1].toString()
-        }).catch((e: NullishType) => {
+        }).catch((e: Any) => {
           let s: string[] = []
           s[0].split('')[1].toString()
-        }).catch((err: NullishType) => {
+        }).catch((err: Any) => {
           count2 ++
         })
       }
@@ -256,12 +256,12 @@ export default function taskPoolErrorSuccessTest() {
       let count2: Number = 0
 
       for (let i = 0; i < 1; i++) {
-        taskpool.execute(taskGroup).then((num: Array<NullishType>) => {
+        taskpool.execute(taskGroup).then((num: Array<Any>) => {
           count += 1
         }).finally(() => {
           let s: string[] = []
           s[0].split('')[1].toString()
-        }).catch((err: NullishType) => {
+        }).catch((err: Any) => {
           count2 ++
         })
       }
@@ -297,9 +297,9 @@ export default function taskPoolErrorSuccessTest() {
       let count2: Number = 0.0
 
       for (let i = 0; i < 1; i++) {
-        taskpool.execute(taskGroup).then((num: Array<NullishType>) => {
+        taskpool.execute(taskGroup).then((num: Array<Any>) => {
           count += 1.0
-        }).catch((e: NullishType) => {
+        }).catch((e: Any) => {
           count2 ++
         })
       }
@@ -348,7 +348,7 @@ export default function taskPoolErrorSuccessTest() {
       });
 
       for (let i = 0; i < 1; i++) {
-        taskpool.execute(taskGroup).then((num: Array<NullishType>) => {
+        taskpool.execute(taskGroup).then((num: Array<Any>) => {
           Count1.count = Count1.count + 1
           console.info("taskpool: execute task success")
         });
@@ -387,9 +387,9 @@ export default function taskPoolErrorSuccessTest() {
       let count2: Number = 0
 
       for (let i = 0; i < 1; i++) {
-        taskpool.execute(taskGroup).then((e: Array<NullishType>) => {
+        taskpool.execute(taskGroup).then((e: Array<Any>) => {
           count ++
-        }).catch((e: NullishType) => {
+        }).catch((e: Any) => {
           count2 ++
         })
       }
@@ -425,9 +425,9 @@ export default function taskPoolErrorSuccessTest() {
       let count2: Number = 0
 
       for (let i = 0; i < 1; i++) {
-        taskpool.execute(taskGroup).then((e: Array<NullishType>) => {
+        taskpool.execute(taskGroup).then((e: Array<Any>) => {
           count ++
-        }).catch((error: NullishType) => {
+        }).catch((error: Any) => {
           count2 ++
         })
       }
@@ -463,9 +463,9 @@ export default function taskPoolErrorSuccessTest() {
       let count2: Number = 0
 
       for (let i = 0; i < 1; i++) {
-        taskpool.execute(taskGroup).then((e: Array<NullishType>) => {
+        taskpool.execute(taskGroup).then((e: Array<Any>) => {
           count ++
-        }).catch((error: NullishType) => {
+        }).catch((error: Any) => {
           count2 ++
         })
       }
@@ -501,9 +501,9 @@ export default function taskPoolErrorSuccessTest() {
       let count2: Number = 0
 
       for (let i = 0; i < 1; i++) {
-        taskpool.execute(taskGroup).then((e: Array<NullishType>) => {
+        taskpool.execute(taskGroup).then((e: Array<Any>) => {
           count ++
-        }).catch((error: NullishType) => {
+        }).catch((error: Any) => {
           count2 ++
         })
       }
@@ -539,9 +539,9 @@ export default function taskPoolErrorSuccessTest() {
       let count2: Number = 0
 
       for (let i = 0; i < 1; i++) {
-        taskpool.execute(taskGroup).then((e: Array<NullishType>) => {
+        taskpool.execute(taskGroup).then((e: Array<Any>) => {
           count ++
-        }).catch((error: NullishType) => {
+        }).catch((error: Any) => {
           count2 ++
         })
       }
@@ -577,9 +577,9 @@ export default function taskPoolErrorSuccessTest() {
       let count2: Number = 0
 
       for (let i = 0; i < 1; i++) {
-        taskpool.execute(taskGroup).then((e: Array<NullishType>) => {
+        taskpool.execute(taskGroup).then((e: Array<Any>) => {
           count ++
-        }).catch((error: NullishType) => {
+        }).catch((error: Any) => {
           count2 ++
         })
       }
@@ -615,9 +615,9 @@ export default function taskPoolErrorSuccessTest() {
       let count2: Number = 0
 
       for (let i = 0; i < 1; i++) {
-        taskpool.execute(taskGroup).then((e: Array<NullishType>) => {
+        taskpool.execute(taskGroup).then((e: Array<Any>) => {
           count ++
-        }).catch((error: NullishType) => {
+        }).catch((error: Any) => {
           count2 ++
         })
       }
@@ -653,9 +653,9 @@ export default function taskPoolErrorSuccessTest() {
       let count2: Number = 0
 
       for (let i = 0; i < 1; i++) {
-        taskpool.execute(taskGroup).then((e: Array<NullishType>) => {
+        taskpool.execute(taskGroup).then((e: Array<Any>) => {
           count ++
-        }).catch((error: NullishType) => {
+        }).catch((error: Any) => {
           count2 ++
         })
       }
@@ -691,9 +691,9 @@ export default function taskPoolErrorSuccessTest() {
       let count2: Number = 0
 
       for (let i = 0; i < 1; i++) {
-        taskpool.execute(taskGroup).then((e: Array<NullishType>) => {
+        taskpool.execute(taskGroup).then((e: Array<Any>) => {
           count ++
-        }).catch((error: NullishType) => {
+        }).catch((error: Any) => {
           count2 ++
         })
       }
@@ -729,9 +729,9 @@ export default function taskPoolErrorSuccessTest() {
       let count2: Number = 0
 
       for (let i = 0; i < 1; i++) {
-        taskpool.execute(taskGroup).then((e: Array<NullishType>) => {
+        taskpool.execute(taskGroup).then((e: Array<Any>) => {
           count ++
-        }).catch((error: NullishType) => {
+        }).catch((error: Any) => {
           count2 ++
         })
       }
@@ -768,9 +768,9 @@ export default function taskPoolErrorSuccessTest() {
       let count2: Number = 0
 
       for (let i = 0; i < 1; i++) {
-        taskpool.execute(taskGroup).then((e: Array<NullishType>) => {
+        taskpool.execute(taskGroup).then((e: Array<Any>) => {
           count ++
-        }).catch((error: NullishType) => {
+        }).catch((error: Any) => {
           count2 ++
         })
       }

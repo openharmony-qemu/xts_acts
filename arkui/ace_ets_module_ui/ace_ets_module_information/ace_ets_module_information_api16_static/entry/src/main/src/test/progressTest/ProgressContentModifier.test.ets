@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium';
 import router from '@ohos.router';
 import {Driver, Component, UiWindow, ON,  MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -51,7 +51,6 @@ export default function ProgressContentModifierTest() {
         console.info('get ProgressContentModifierTest state pages:' + JSON.stringify(pages));
         if (!('ProgressContentModifier' == pages.name)) {
           console.info('get ProgressContentModifierTest pages.name:' + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
           await Utils.sleep(2500);
         }
@@ -69,8 +68,9 @@ export default function ProgressContentModifierTest() {
      */
 it('ProgressContentModifierTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ProgressContentModifierTest_001 START');
-      await Utils.sleep(1000);
+
       let strJson = inspector.getInspectorByKey('ProgressContentModifier_total');
+      await Utils.sleep(1000);
       let obj = JSON.parseJsonElement(strJson);
       await Utils.sleep(1000);
       console.info("[ProgressContentModifierTest_001] obj is: " + JSON.stringify(obj));

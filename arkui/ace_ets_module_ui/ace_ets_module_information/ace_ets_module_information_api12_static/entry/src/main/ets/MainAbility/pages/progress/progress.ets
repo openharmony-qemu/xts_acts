@@ -37,7 +37,7 @@ struct ProgressStyle {
         .fontSize(20)
         .opacity(1)
         .align(Alignment.TopStart)
-        .fontColor(0xCCCCCC)
+        .fontColor(Color.Red)
         .lineHeight(25)
         .border({ width: 1 })
         .padding(10)

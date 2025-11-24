@@ -24,7 +24,7 @@ struct columnNesting_Space {
   messageManager:MessageManager<string> = new MessageManager<string>()
   onPageShow() {
     console.info('columnNesting_Space onPageShow');
-        AppStorage.setOrCreate<MessageManager<string>>("messageManager",  this.messageManager);
+    AppStorage.setOrCreate<MessageManager<string>>("messageManager",  this.messageManager);
     let callback: Callback<string> = (message: Message<string>) => {
       console.error('message = ' + message.name + "--" + message.value);
       if (message.name == 'addSpace') {

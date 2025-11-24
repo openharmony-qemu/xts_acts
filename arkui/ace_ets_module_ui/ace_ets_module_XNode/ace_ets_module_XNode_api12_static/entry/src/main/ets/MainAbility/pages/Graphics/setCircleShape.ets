@@ -24,10 +24,10 @@ import { UIContext } from '@ohos.arkui.UIContext';
 import { RenderNode, ShapeMask, FrameNode, NodeController } from "@ohos.arkui.node";
 
 
-
-
-let storage: LocalStorage = new LocalStorage();
-storage.setOrCreate('PropSetCircleShape', 'start');   
+// let para: Record<string,IStorageProperties> = { 'PropSetCircleShape': 'start' };
+// let storage: LocalStorage = new LocalStorage(para);   // 原写法报错,若更换string为IStorageProperties则报unknown，
+let storage: LocalStorage = new LocalStorage();   // 这里更换写法，先new，然后设置值
+storage.setOrCreate('PropSetCircleShape', 'start');
 
 class MyNodeController extends NodeController {
   private rootNode: FrameNode | null = null;
@@ -39,8 +39,7 @@ class MyNodeController extends NodeController {
     if (rootRenderNode !== null) {
       const mask = new ShapeMask();
       const vp2px = uiContext.vp2px
-      mask.setCircleShape({ centerY: UIContext.getFocusedUIContext()!.vp2px(75),
-        centerX: UIContext.getFocusedUIContext()!.vp2px(75), radius: UIContext.getFocusedUIContext()!.vp2px(75) });
+      mask.setCircleShape({ centerY: vp2px(75), centerX: vp2px(75), radius: vp2px(75) });
       storage.set('PropSetCircleShape', 'setCircleShape succ');
       mask.fillColor = 0X55FF0000;
 
@@ -64,8 +63,8 @@ struct setCircleShapeApi {
     Row() {
       Text(this.flag).id("setCircleShape_text")
         .onClick((e:ClickEvent) => {
-          
-          this.flag = storage!.get<string>('PropSetCircleShape') as String;    
+          // this.flag = storage.get('PropSetCircleShape') as String
+          this.flag = storage!.get<string>('PropSetCircleShape') as String;
         })
       NodeContainer(this.myNodeController)
     }

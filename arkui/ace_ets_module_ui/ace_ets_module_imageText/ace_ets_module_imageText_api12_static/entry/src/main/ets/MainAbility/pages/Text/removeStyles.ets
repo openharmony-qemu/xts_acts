@@ -33,7 +33,7 @@ struct styled_string_demo1 {
   @State fontWeight1: number = 400;
   @State color1: Color = Color.Blue;
   scroll: Scroller = new Scroller();
-  @State length: undefined | Int = 0
+  @State length: number = 0
 
   fontStyleAttr1: TextStyle = new TextStyle({ fontColor: Color.Blue } as TextStyleInterface);
   fontStyleAttr2: StyledStringValue = new TextStyle({ fontColor: Color.Orange } as TextStyleInterface);
@@ -166,7 +166,7 @@ struct styled_string_demo1 {
           Button('初始长度')
             .onClick((e:ClickEvent) => {
               let styles = this.mutableStyledString2.getStyles(0,this.mutableStyledString2.length)
-              this.length = styles?.length
+              this.length = styles!.length
             }).id('firstLength')
             .height('5%')
 
@@ -174,7 +174,7 @@ struct styled_string_demo1 {
             .onClick((e:ClickEvent) => {
               this.mutableStyledString2.removeStyles(6, 5);
               let styles = this.mutableStyledString2.getStyles(0,this.mutableStyledString2.length)
-              this.length = styles?.length
+              this.length = styles!.length
             })
             .height('5%')
 

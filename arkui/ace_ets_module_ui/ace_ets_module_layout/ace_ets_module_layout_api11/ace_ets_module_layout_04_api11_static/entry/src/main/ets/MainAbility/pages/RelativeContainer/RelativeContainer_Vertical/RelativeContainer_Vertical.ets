@@ -16,7 +16,7 @@
 
 
 import { MessageManager, Callback, Message } from './../../../common/MessageManager';
-import { Entry, Component, Column, HorizontalAlign, Row, RelativeContainer, Button, Text, Color, VerticalAlign, AlignRuleOption } from '@ohos.arkui.component'
+import { Entry, Component, Column, HorizontalAlign,AlignRuleOption,AlignRuleOption, Row, RelativeContainer, Button, Text, Color, VerticalAlign } from '@ohos.arkui.component'
 import { State,AppStorage } from '@ohos.arkui.stateManagement';
 
 @Entry
@@ -27,10 +27,6 @@ struct RelativeContainer_Vertical {
 
   onPageShow() {
     console.info('RelativeContainer_Vertical onPageShow');
-    
-    
-    
-    
     AppStorage.setOrCreate<MessageManager<VerticalAlign>>("messageManager",  this.messageManager);
     let callback: Callback<VerticalAlign> = (message: Message<VerticalAlign>) => {
       console.error('message = ' + message.name + "--" + message.value);

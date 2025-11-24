@@ -60,13 +60,14 @@ export default function MultiNavigation21() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   MultiNavigation21_static_0100
      * @tc.name     MultiNavigation21_static_0100
      * @tc.desc     MultiNavigation21_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('MultiNavigation21_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('MultiNavigation21_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('MultiNavigation21_static_0100 START');
       await CommonFunc.sleep(1000);
 

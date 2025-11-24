@@ -28,11 +28,11 @@ export class GlobalContext {
     return GlobalContext.instance;
   }
 
-  getObject(value: string): Object | undefined {
+  getObject(value: string, tType: Type): Object | undefined {
     return AppStorage.get(value);
   }
 
-  setObject(key: string, objectClass: Object): void {
+  setObject(key: string, objectClass: Object, tType: Type): void {
     AppStorage.setOrCreate(key, objectClass);
   }
 }

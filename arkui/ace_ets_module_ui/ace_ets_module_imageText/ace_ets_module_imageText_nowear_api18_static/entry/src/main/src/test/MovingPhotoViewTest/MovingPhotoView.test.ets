@@ -60,10 +60,8 @@ export default function MovingPhotoViewTest() {
         console.info("get MovingPhotoViewTest state pages: " + JSON.stringify(pages));
         if (!("MovingPhotoView" == pages.name)) {
           console.info("get MovingPhotoViewTest state pages.name: " + JSON.stringify(pages.name));
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push MovingPhotoViewTest page error: " + err);
@@ -86,8 +84,6 @@ it('MovingPhotoViewTest_static_0120', Level.LEVEL2, async (done: () => void): Pr
       await CommonFunc.sleep(500);
       await (button?.click() as  Promise<void>);
       await CommonFunc.sleep(500);
-      
-
 
         let strJson = inspector.getInspectorByKey('MovingPhotoView_enableAnalyzerFlag');
         console.log('MovingPhotoViewTest_0120', JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))

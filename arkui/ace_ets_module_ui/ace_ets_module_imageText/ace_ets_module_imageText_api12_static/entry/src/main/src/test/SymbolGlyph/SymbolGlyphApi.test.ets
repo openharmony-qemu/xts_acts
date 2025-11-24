@@ -66,15 +66,13 @@ export default function SymbolGlyphApi() {
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SymbolGlyphApi_static_001
      * @tc.name     SymbolGlyphApi_static_001
      * @tc.desc     SymbolGlyphApi_static_001
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SymbolGlyphApi_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SymbolGlyphApi_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SymbolGlyphApi_static001] START');
 
       await CommonFunc.sleep(1000);
@@ -89,15 +87,13 @@ it('SymbolGlyphApi_static_001', Level.LEVEL0, async (done: () => void): Promise<
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SymbolGlyphApi_static_002
      * @tc.name     SymbolGlyphApi_static_002
      * @tc.desc     SymbolGlyphApi_static_002
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SymbolGlyphApi_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SymbolGlyphApi_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SymbolGlyphApi_static002] START');
 
       await CommonFunc.sleep(1000);
@@ -112,15 +108,13 @@ it('SymbolGlyphApi_static_002', Level.LEVEL0, async (done: () => void): Promise<
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SymbolGlyphApi_static_003
      * @tc.name     SymbolGlyphApi_static_003
      * @tc.desc     SymbolGlyphApi_static_003
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SymbolGlyphApi_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SymbolGlyphApi_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SymbolGlyphApi_static003] START');
 
       await CommonFunc.sleep(1000);
@@ -135,15 +129,13 @@ it('SymbolGlyphApi_static_003', Level.LEVEL0, async (done: () => void): Promise<
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SymbolGlyphApi_static_004
      * @tc.name     SymbolGlyphApi_static_004
      * @tc.desc     SymbolGlyphApi_static_004
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SymbolGlyphApi_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SymbolGlyphApi_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SymbolGlyphApi_static004] START');
 
       await CommonFunc.sleep(1000);
@@ -160,15 +152,13 @@ it('SymbolGlyphApi_static_004', Level.LEVEL0, async (done: () => void): Promise<
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SymbolGlyphApi_static_005
      * @tc.name     SymbolGlyphApi_static_005
      * @tc.desc     SymbolGlyphApi_static_005
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SymbolGlyphApi_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SymbolGlyphApi_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SymbolGlyphApi_static005] START');
 
       await CommonFunc.sleep(1000);
@@ -184,15 +174,13 @@ it('SymbolGlyphApi_static_005', Level.LEVEL0, async (done: () => void): Promise<
     });
 
     
-    
-    
-/*
+    /*
      * @tc.number   SymbolGlyphApi_static_006
      * @tc.name     SymbolGlyphApi_static_006
      * @tc.desc     SymbolGlyphApi_static_006
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('SymbolGlyphApi_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('SymbolGlyphApi_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[SymbolGlyphApi_static006] START');
 
       await CommonFunc.sleep(1000);

@@ -13,9 +13,9 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
 import router from '@ohos.router';
-import { Component, Driver,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
+import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -55,12 +55,13 @@ export default function patternLockJsunit() {
       }
     });
 
-    
-    /*
-     * @tc.number   patternLockTest_static_0001
-     * @tc.name     patternLockTest_static_0001
-     * @tc.desc     patternLockTest_static_0001
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number patternLockTest_static_0001
+     * @tc.name patternLockTest_static_0001
+     * @tc.desc Set sideLength values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('patternLockTest_static_0001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('patternLockTest_static_0001 START');
@@ -73,12 +74,13 @@ export default function patternLockJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   patternLockTest_static_0002
-     * @tc.name     patternLockTest_static_0002
-     * @tc.desc     patternLockTest_static_0002
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number patternLockTest_static_0002
+     * @tc.name patternLockTest_static_0002
+     * @tc.desc Set circleRadius values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('patternLockTest_static_0002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('patternLockTest_static_0002 START');
@@ -91,12 +93,13 @@ export default function patternLockJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   patternLockTest_static_0003
-     * @tc.name     patternLockTest_static_0003
-     * @tc.desc     patternLockTest_static_0003
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number patternLockTest_static_0003
+     * @tc.name patternLockTest_static_0003
+     * @tc.desc Set selectedColor values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('patternLockTest_static_0003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('patternLockTest_static_0003 START');
@@ -109,12 +112,13 @@ export default function patternLockJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   patternLockTest_static_0004
-     * @tc.name     patternLockTest_static_0004
-     * @tc.desc     patternLockTest_static_0004
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number patternLockTest_static_0004
+     * @tc.name patternLockTest_static_0004
+     * @tc.desc Set regularColor values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('patternLockTest_static_0004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('patternLockTest_static_0004 START');
@@ -127,12 +131,13 @@ export default function patternLockJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   patternLockTest_static_0005
-     * @tc.name     patternLockTest_static_0005
-     * @tc.desc     patternLockTest_static_0005
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number patternLockTest_static_0005
+     * @tc.name patternLockTest_static_0005
+     * @tc.desc Set activeColor values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('patternLockTest_static_0005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('patternLockTest_static_0005 START');
@@ -145,12 +150,13 @@ export default function patternLockJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   patternLockTest_static_0006
-     * @tc.name     patternLockTest_static_0006
-     * @tc.desc     patternLockTest_static_0006
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number patternLockTest_static_0006
+     * @tc.name patternLockTest_static_0006
+     * @tc.desc Set pathColor values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('patternLockTest_static_0006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('patternLockTest_static_0006 START');
@@ -163,12 +169,13 @@ export default function patternLockJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   patternLockTest_static_0007
-     * @tc.name     patternLockTest_static_0007
-     * @tc.desc     patternLockTest_static_0007
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number patternLockTest_static_0007
+     * @tc.name patternLockTest_static_0007
+     * @tc.desc Set pathStrokeWidth values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('patternLockTest_static_0007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('patternLockTest_static_0007 START');
@@ -181,12 +188,13 @@ export default function patternLockJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   patternLockTest_static_0008
-     * @tc.name     patternLockTest_static_0008
-     * @tc.desc     patternLockTest_static_0008
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number patternLockTest_static_0008
+     * @tc.name patternLockTest_static_0008
+     * @tc.desc Set autoReset values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('patternLockTest_static_0008', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('patternLockTest_static_0008 START');
@@ -199,12 +207,13 @@ export default function patternLockJsunit() {
       done();
     });
 
-    
-    /*
-     * @tc.number   patternLockTest_static_0009
-     * @tc.name     patternLockTest_static_0009
-     * @tc.desc     patternLockTest_static_0009
-     * @tc.level    Level.LEVEL0
+    /**
+     * @tc.number patternLockTest_static_0009
+     * @tc.name patternLockTest_static_0009
+     * @tc.desc Change sideLength values
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level 0
      */
     it('patternLockTest_static_0009', Level.LEVEL0, async (done: () => void): Promise<void> => {
 

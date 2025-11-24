@@ -60,20 +60,20 @@ build() {
     Column() {
       Button('get lineMetrics(0)').id('getFirst')
         .onClick((e: ClickEvent) => {
-          // let layoutManager: LayoutManager = this.controller.getLayoutManager();
-          // let lineMetrics = layoutManager.getLineMetrics(0);
-          // console.log('RichEditorController 0 lineMetrics 0:' +  JSON.stringify(lineMetrics));
-          // this.lineMetrics1 = JSON.stringify(lineMetrics.left);
-          //
-          // let lineMetrics1 = layoutManager.getLineMetrics(1);
-          // console.log('RichEditorController 1 lineMetrics1:' +  JSON.stringify(lineMetrics1));
-          // this.lineMetrics2 = JSON.stringify(lineMetrics1.left);
+          let layoutManager: LayoutManager = this.controller!.getLayoutManager() as LayoutManager;
+          let lineMetrics = layoutManager.getLineMetrics(0)!;
+          console.log('RichEditorController 0 lineMetrics 0:' +  JSON.stringify(lineMetrics));
+          this.lineMetrics1 = JSON.stringify(lineMetrics.left);
+
+          let lineMetrics1 = layoutManager.getLineMetrics(1)!;
+          console.log('RichEditorController 1 lineMetrics1:' +  JSON.stringify(lineMetrics1));
+          this.lineMetrics2 = JSON.stringify(lineMetrics1.left);
         })
         .margin({ bottom: 20, top: 10 } as Margin)
       RichEditor({ controller: this.controller } as RichEditorOptions)
         .width(200)
         .onReady((): void => {
-          this.controller.addTextSpan('1111111\n22222', {
+          this.controller!.addTextSpan('1111111\n22222', {
             style: {
               fontColor: Color.Pink,
               fontSize: '32',

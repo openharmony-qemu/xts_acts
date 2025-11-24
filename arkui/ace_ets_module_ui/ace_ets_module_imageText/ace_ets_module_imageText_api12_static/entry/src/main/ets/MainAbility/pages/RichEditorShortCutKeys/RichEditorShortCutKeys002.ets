@@ -50,7 +50,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Component
 struct RichEditorShortCutKeys002 {
   controller: RichEditorController = new RichEditorController();
-  @State positionNum: number = -1;
+  @State positionNum: int = -1;
 build() {
 
     Column() {
@@ -61,10 +61,7 @@ build() {
         .margin(15)
         .backgroundColor(Color.Blue)
         .onClick((e: ClickEvent) => {
-          let caretOffset = this.controller.getCaretOffset();
-          if (caretOffset !== undefined) {
-            this.positionNum = caretOffset;
-          }
+          this.positionNum = this.controller!.getCaretOffset() as int;
         })
 
       RichEditor({ controller: this.controller } as RichEditorOptions)
@@ -73,7 +70,7 @@ build() {
         .borderColor(Color.Red)
         .width('100%')
         .onReady((): void => {
-          this.controller.addTextSpan('abcd',
+          this.controller!.addTextSpan('abcd',
             {
               style:
               {
@@ -81,7 +78,7 @@ build() {
                 fontSize: 20
               }
             })
-          this.controller.addImageSpan($r('app.media.icon'),
+          this.controller!.addImageSpan($r('app.media.icon'),
             {
               imageStyle:
               {

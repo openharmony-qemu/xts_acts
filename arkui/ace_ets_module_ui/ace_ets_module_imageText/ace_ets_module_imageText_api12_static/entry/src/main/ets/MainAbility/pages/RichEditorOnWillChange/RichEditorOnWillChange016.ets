@@ -78,7 +78,7 @@ build() {
           console.log('RichEditorController：value' + JSON.stringify(value));
           this.onWillChangeRangeBefore = JSON.stringify(value.rangeBefore);
           this.replacedSpansCallback = JSON.stringify(value.replacedSpans);
-          value.replacedSpans.forEach((item: RichEditorTextSpanResult) => {
+          value.replacedSpans!.forEach((item: RichEditorTextSpanResult) => {
             console.log('RichEditorController：replacedSpans');
             console.log('RichEditorController item:' + JSON.stringify(item));
             console.log('RichEditorController spanPosition spanIndex:' + JSON.stringify(item.spanPosition.spanIndex));

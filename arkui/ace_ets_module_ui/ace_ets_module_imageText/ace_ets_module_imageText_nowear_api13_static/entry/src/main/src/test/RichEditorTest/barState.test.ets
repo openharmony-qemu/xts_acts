@@ -30,7 +30,7 @@ import { UtilsTest } from '../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-
+// import Context from '@ohod.abilityAccessCtrl'
 
 
 export default function BarStateTest() {
@@ -47,7 +47,7 @@ export default function BarStateTest() {
     beforeEach(async (): Promise<void> => {
       console.info("BarStateTest beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/richEditorApi/richEditorApi2",
+        url: "MainAbility/pages/RichEditor/barState",
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
@@ -56,11 +56,8 @@ export default function BarStateTest() {
         console.info("get BarStateTest state pages:" + JSON.stringify(pages));
         if (!("barState" == pages.name)) {
           console.info("get BarStateTest pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push BarStateTest page error:" + err);
@@ -79,7 +76,7 @@ it('BarStateTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<v
 
         let strJson =inspector.getInspectorByKey('RichEditor_BarState_Auto');
         let obj = JSON.parseJsonElement(strJson);
-        console.info('[BarStateTest_static_0010] BarState: ' + JSON.stringify(obj.getElement('$attrs').getString('barState')));
+        console.info('[BarStateTest_static_0010] BarState: ' + JSON.stringify(obj.getElement('$attrs').getInteger('barState')));
         expect(obj.getElement('$attrs').getInteger('barState')).assertEqual(1);
 
       console.info('[BarStateTest_static_0010] END');
@@ -99,7 +96,7 @@ it('BarStateTest_static_0020', Level.LEVEL0, async (done: () => void): Promise<v
 
         let strJson = inspector.getInspectorByKey('RichEditor_BarState_Off');
         let obj = JSON.parseJsonElement(strJson);
-        console.info('[BarStateTest_static_0020] BarState: ' + JSON.stringify(obj.getElement('$attrs').getString('barState')));
+        console.info('[BarStateTest_static_0020] BarState: ' + JSON.stringify(obj.getElement('$attrs').getInteger('barState')));
         expect(obj.getElement('$attrs').getInteger('barState')).assertEqual(0);
 
       console.info('[BarStateTest_static_0020] END');
@@ -119,7 +116,7 @@ it('BarStateTest_static_0030', Level.LEVEL0, async (done: () => void): Promise<v
 
         let strJson =inspector.getInspectorByKey('RichEditor_BarState_On');
         let obj = JSON.parseJsonElement(strJson);
-        console.info('[BarStateTest_static_0030] BarState: ' + JSON.stringify(obj.getElement('$attrs').getString('barState')));
+        console.info('[BarStateTest_static_0030] BarState: ' + JSON.stringify(obj.getElement('$attrs').getInteger('barState')));
         expect(obj.getElement('$attrs').getInteger('barState')).assertEqual(2);
 
       console.info('[BarStateTest_static_0030] END');
@@ -139,7 +136,7 @@ it('BarStateTest_static_0040', Level.LEVEL0, async (done: () => void): Promise<v
 
         let strJson =inspector.getInspectorByKey('RichEditor_barState_default');
         let obj = JSON.parseJsonElement(strJson);
-        console.info('[BarStateTest_static_0040] BarState: ' + JSON.stringify(obj.getElement('$attrs').getString('barState')));
+        console.info('[BarStateTest_static_0040] BarState: ' + JSON.stringify(obj.getElement('$attrs').getInteger('barState')));
         expect(obj.getElement('$attrs').getInteger('barState')).assertEqual(1);
 
       console.info('[BarStateTest_static_0040] END');
@@ -159,7 +156,7 @@ it('BarStateTest_static_0050', Level.LEVEL0, async (done: () => void): Promise<v
 
         let strJson = inspector.getInspectorByKey('RichEditor_barState_undefined');
         let obj = JSON.parseJsonElement(strJson);
-        console.info('[BarStateTest_static_0050] BarState: ' + JSON.stringify(obj.getElement('$attrs').getString('barState')));
+        console.info('[BarStateTest_static_0050] BarState: ' + JSON.stringify(obj.getElement('$attrs').getInteger('barState')));
         expect(obj.getElement('$attrs').getInteger('barState')).assertEqual(1);
 
       console.info('[BarStateTest_static_0050] END');

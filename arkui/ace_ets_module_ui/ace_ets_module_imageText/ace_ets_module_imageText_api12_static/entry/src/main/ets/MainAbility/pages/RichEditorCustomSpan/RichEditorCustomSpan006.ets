@@ -66,7 +66,7 @@ struct RichEditorCustomSpan006 {
     }
     this.isPageShow = false;
     this.style1.appendStyledString(this.style2);
-    this.controller.setStyledString(this.style1);
+    this.controller!.setStyledString(this.style1);
   }
 
 

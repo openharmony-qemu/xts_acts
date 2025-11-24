@@ -15,6 +15,7 @@
 import { Entry, Component, Row, Text, RowOptions } from '@ohos.arkui.component'
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { MessageManager, Callback, Message } from './../../../common/MessageManager';
+import { UIContext } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
@@ -24,6 +25,7 @@ struct Row_Space_String {
 
   onPageShow() {
     console.info('Row_Space_String onPageShow');
+    AppStorage.setOrCreate<UIContext>('context', this.getUIContext());
     AppStorage.setOrCreate<MessageManager<string>>('messageManager', this.messageManager);
     let callback: Callback<string> = (message: Message<string>) => {
       console.error('message = ' + message.name + "--" + message.value);

@@ -12,14 +12,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+// import screen from '@ohos.screen';
 import { BusinessError } from '@ohos.base';
-import RectValue from './Rect';
 import inspector from '@ohos.arkui.inspector';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 
-export { RectValue }
+export class RectValue {
+  left: number = 0;
+  top: number = 0;
+  right: number = 0;
+  bottom: number = 0;
+}
 
 export default class CommonFunc {
   static rect_left: number = 0;
@@ -28,6 +32,15 @@ export default class CommonFunc {
   static rect_bottom: number = 0;
   static rect_value: RectValue = new RectValue();
 
+  // static sleep(time: number) {
+  //   return new Promise<string>((resolve: (value: string) => void) => {
+  //     setTimeout(() => {
+  //       resolve("ok")
+  //     }, time)
+  //   }).then(() => {
+  //     console.info(`sleep ${time} over...`)
+  //   })
+  // }
 
   static async sleep(time:int) : Promise<int> {
     return new Promise<int>((resolve, reject) => {
@@ -69,6 +82,18 @@ export default class CommonFunc {
     }
   }
 
+  // static setScreenOrientation(orientation: screen.Orientation) {
+  //   screen.getAllScreens().then((data: Array<screen.Screen>) => {
+  //     console.log('Succeeded in getting all screens. Data:'+ JSON.stringify(data));
+  //     return data[0] as screen.Screen;
+  //   }).then((screenClass: screen.Screen) => {
+  //     return screenClass.setOrientation(orientation);
+  //   }).then(() => {
+  //     console.log('Succeeded in setting the vertical orientation.');
+  //   }).catch((err: Error) => {
+  //     console.error('Failed to set the vertical orientation. Cause: ' + err.toString());
+  //   });
+  // }
 }
 
 

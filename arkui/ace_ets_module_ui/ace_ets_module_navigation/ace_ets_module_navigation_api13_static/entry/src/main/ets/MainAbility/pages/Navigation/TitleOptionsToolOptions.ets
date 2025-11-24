@@ -57,6 +57,8 @@ struct ColorAndBlur {
     NavDestination() {
       Stack({ alignContent: Alignment.Center }) {
         BackComponent()
+          // .width('100%')
+          // .height('100%')
         Column() {
           Button('switch')
             .onClick((e: ClickEvent) => {
@@ -113,6 +115,8 @@ struct TitleOptionsToolOptions {
     Navigation(this.navPathStack) {
       Stack({ alignContent: Alignment.Center }) {
         BackComponent()
+          // .width('100%')
+          // .height('100%')
         Column() {
           Button('switch')
             .onClick((e: ClickEvent) => {

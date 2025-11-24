@@ -62,13 +62,13 @@ build() {
         .borderWidth(1)
         .borderColor(Color.Green)
         .onReady((): void => {
-          this.controller.addTextSpan('abc123', {
+          this.controller!.addTextSpan('abc123', {
             style: {
               fontSize: 35,
               fontWeight: FontWeight.Bolder
             }
           });
-            this.controller.addImageSpan($r('app.media.icon'),
+            this.controller!.addImageSpan($r('app.media.icon'),
               {
                 imageStyle:
                 {
@@ -80,16 +80,13 @@ build() {
 
       Button('get spans').onClick((e: ClickEvent) => {
         this.style = '';
-        let spans = this.controller.getSpans({
+        this.controller!.getSpans({
           start: 0,
           end: 6
-        });
-        if (spans !== undefined) {
-          spans.forEach(item => {
-            this.style += JSON.stringify(item);
-            console.log('RichEditorController  this.style:' + JSON.stringify(this.style));
-          })
-        }
+        })!.forEach(item => {
+          this.style += JSON.stringify(item);
+          console.log('RichEditorController  this.style:' +  JSON.stringify(this.style));
+        })
       }).id('get_content')
 
       Text('style:' + this.style).id('style')

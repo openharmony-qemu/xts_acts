@@ -72,10 +72,8 @@ export default function RowReverseTest() {
         console.info("get RowReverseTest state pages:" + JSON.stringify(pages));
         if (!("RowReverseTest" == pages.name)) {
           console.info("get RowReverseTest pages.name:" + JSON.stringify(pages.name));
-          
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push RowReverseTest page error:" + err);
@@ -99,13 +97,13 @@ export default function RowReverseTest() {
       let Row_1 = CommonFunc.getComponentRect('RowReverse_Row_1');
       let Row_01 = CommonFunc.getComponentRect('RowReverse_Row_01');
       let Row_02 = CommonFunc.getComponentRect('RowReverse_Row_02');
-
       console.log('[RowReverseTest_static_0100] Row_01.left - Row_02.right', +(Row_01.left - Row_02.right));
       console.log('[RowReverseTest_static_0100] Row_01.right - Row_1.right', +(Row_01.right - Row_1.right));
       expect(Math.floor(Math.abs(Row_01.left - Row_02.right)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(Row_01.right - Row_1.right)) <= 1).assertTrue();
 
       console.info('[RowReverseTest_static_0100] END');
+      done()
     });
 
 
@@ -129,7 +127,7 @@ export default function RowReverseTest() {
       expect(Math.floor(Math.abs(Row_03.right - Row_04.left)) <= 1).assertTrue();
 
       console.info('[RowReverseTest_static_0200] END');
-
+      done()
     });
   })
 }

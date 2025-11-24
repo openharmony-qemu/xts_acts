@@ -13,23 +13,27 @@
  * limitations under the License.
  */
  
-
+import { MultiNavigation, MultiNavPathStack, SplitPolicy } from '@ohos.arkui.advanced.MultiNavigation';
 import { PageHome } from './PageHome';
+import { PageDetail } from './PageDetail';
 import { State, Provide, Consume, AppStorage,  } from '@ohos.arkui.stateManagement'
 import { Entry, Component, Column, Button, ColumnOptions, ClickEvent, Text, Color, Builder, Scroll, Margin, Row, $r,} from '@ohos.arkui.component'
 @Entry
 @Component
 struct MultiEntry {
+  @Provide({alias: 'pageStack' }) pageStack: MultiNavPathStack = new MultiNavPathStack();
 
   @Builder
   PageMap(name: string) {
     if (name === 'PageHome') {
       PageHome()
     } if (name === 'PageDetail') {
+      PageDetail()
     }
   }
 
   aboutToAppear(): void {
+    this.pageStack.pushPathByName('PageHome', 'paramTest', false, SplitPolicy.HOME_PAGE);
   }
 
   onNavigationModeChangeCallback() {
@@ -43,6 +47,8 @@ struct MultiEntry {
   build() {
     Column() {
       Row() {
+        MultiNavigation({ navDestination: this.PageMap, multiStack: this.pageStack,
+          onNavigationModeChange: this.onNavigationModeChangeCallback, onHomeShowOnTop: this.onHomeShowOnTopCallback})
       }
       .width('100%')
     }

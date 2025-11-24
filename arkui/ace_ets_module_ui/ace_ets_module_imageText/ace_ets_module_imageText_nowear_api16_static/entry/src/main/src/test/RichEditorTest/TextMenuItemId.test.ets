@@ -15,7 +15,7 @@
 
 import { describe, beforeEach, it, expect, Level, beforeAll } from "../../../../hypium/index"
 import router from '@ohos.router';
-import { Driver, ON, Point } from '@ohos.UiTest';
+import { Driver, ON, Point,Component } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -53,11 +53,8 @@ export default function TextMenuItemId() {
         console.info("get TextMenuItemId state pages:" + "");
         if (!("TextClockApi" == pages.name)) {
           console.info("get TextMenuItemId pages.name:" + "");
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push TextMenuItemId page error:" + err);
@@ -78,9 +75,9 @@ it('TextMenuItemId_static_0001', Level.LEVEL0, async (done: ()=>void) => {
         let driver = Driver.create();
         console.info('TextMenuItemId TextMenuItemId0001 START');
         await CommonFunc.sleep(500);
-        let text = await driver.findComponent(ON.id('text'));
+        let text = await (driver.findComponent(ON.id('text')) as Promise<Component>);
         await CommonFunc.sleep(500);
-        let point :Point= await (text?.getBoundsCenter() as Promise<Point>);
+        let point :Point= await text.getBoundsCenter();
         await CommonFunc.sleep(500);
         await driver.longClick(point.x, point.y);
         await CommonFunc.sleep(500);
@@ -106,9 +103,9 @@ it('TextMenuItemId_static_0002', Level.LEVEL0, async (done: ()=>void) => {
         let driver = Driver.create();
         console.info('TextMenuItemId TextMenuItemId0002 START');
         await CommonFunc.sleep(500);
-        let textArea = await driver.findComponent(ON.id('textArea'));
+        let textArea = await (driver.findComponent(ON.id('textArea')) as Promise<Component>);
         await CommonFunc.sleep(500);
-        let point :Point= await (textArea?.getBoundsCenter() as Promise<Point>);
+        let point :Point= await textArea.getBoundsCenter();
         await CommonFunc.sleep(500);
         await driver.longClick(point.x, point.y);
         await CommonFunc.sleep(500);
@@ -135,9 +132,9 @@ it('TextMenuItemId_static_0003', Level.LEVEL0, async (done: ()=>void) => {
         let driver = Driver.create();
         console.info('TextMenuItemId TextMenuItemId0003 START');
         await CommonFunc.sleep(500);
-        let textInput = await driver.findComponent(ON.id('textInput'));
+        let textInput = await (driver.findComponent(ON.id('textInput')) as Promise<Component>);
         await CommonFunc.sleep(500);
-        let point :Point= await (textInput?.getBoundsCenter() as Promise<Point>);
+        let point :Point= await textInput.getBoundsCenter();
         await CommonFunc.sleep(500);
         await driver.longClick(point.x, point.y);
         await CommonFunc.sleep(500);
@@ -162,9 +159,9 @@ it('TextMenuItemId_static_0004', Level.LEVEL0, async (done: ()=>void) => {
         let driver = Driver.create();
         console.info('TextMenuItemId TextMenuItemId0004 START');
         await CommonFunc.sleep(500);
-        let richEditor = await driver.findComponent(ON.id('richEditor'));
+        let richEditor = await (driver.findComponent(ON.id('richEditor')) as Promise<Component>);
         await CommonFunc.sleep(500);
-        let point :Point= await (richEditor?.getBoundsCenter() as Promise<Point>);
+        let point :Point= await richEditor.getBoundsCenter();
         await CommonFunc.sleep(500);
         await driver.longClick(point.x, point.y);
         await CommonFunc.sleep(500);
@@ -191,9 +188,9 @@ it('TextMenuItemId_static_0005', Level.LEVEL0, async (done: ()=>void) => {
         let driver = Driver.create();
         console.info('TextMenuItemId TextMenuItemId0005 START');
         await CommonFunc.sleep(500);
-        let search = await driver.findComponent(ON.id('search'));
+        let search = await (driver.findComponent(ON.id('search')) as Promise<Component>);
         await CommonFunc.sleep(500);
-        let point :Point= await (search?.getBoundsCenter() as Promise<Point>);
+        let point :Point= await search.getBoundsCenter();
         await CommonFunc.sleep(500);
         await driver.longClick(point.x, point.y);
         await CommonFunc.sleep(500);

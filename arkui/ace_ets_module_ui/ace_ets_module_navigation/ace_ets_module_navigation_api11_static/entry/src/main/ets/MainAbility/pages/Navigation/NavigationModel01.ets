@@ -21,7 +21,7 @@ import {
 import {
   State,
   Link,
-  PropRef,Provide
+  Prop,Provide
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 @Entry
@@ -31,7 +31,7 @@ struct NavigationModel01 {
   @State currentIndex: number = 0
   @State strText: string = 'doing'
   @State Sizearr: number[] = new Array<number>(240,360,400,500,600,650, 100)
-  @State FatherColumnWidthIndex: number = 2
+  @State FatherColumnWidthIndex: int = 2
   build() {
     Column() {
       Navigation({}) {
@@ -53,7 +53,6 @@ struct NavigationModel01 {
                 .fontWeight(500)
                 .textAlign(TextAlign.Center)
             }
-            // .editable(true)
           }, (item: number) => String(item))
         }
         .height(324)
@@ -64,6 +63,6 @@ struct NavigationModel01 {
         this.currentIndex ++
         this.strText =  'doing' + `${ this.currentIndex }`
       })
-    }.width(this.Sizearr[this.FatherColumnWidthIndex.toInt()]).height('100%').backgroundColor('#F1F3F5')
+    }.width(this.Sizearr[this.FatherColumnWidthIndex]).height('100%').backgroundColor('#F1F3F5')
   }
 }

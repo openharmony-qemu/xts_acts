@@ -12,11 +12,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+// import { uiObserver } from '@kit.ArkUI';
 import  uiObserver from '@ohos.arkui.observer';
 import { Entry, Component, Column, Text, Image, Color, Padding, Button, TextAlign, ClickEvent, ColumnOptions, Scroller, Scroll,
   TabsController, ForEach, Margin, Row, TabContent, Tabs} from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
+import { State,AppStorage } from '@ohos.arkui.stateManagement'
 
 function callbackFunc(info: uiObserver.TabContentInfo) {
   console.info('tabContentUpdate', JSON.stringify(info));
@@ -31,7 +31,7 @@ function callbackFunc(info: uiObserver.TabContentInfo) {
 @Entry
 @Component
 struct TabsUIOptionsExample {
-  @State currentIndex: int = 0
+  @State currentIndex: number = 0
   private controller: TabsController = new TabsController()
   @State index1:number = -1
 
@@ -42,7 +42,7 @@ struct TabsUIOptionsExample {
 
   aboutToDisappear(): void {
     let observer = this.getUIContext().getUIObserver();
-    observer.offTabContentUpdate({ id: 'tabsId_uiUpdate' }, callbackFunc);
+    observer.offTabContentUpdate( { id: 'tabsId_uiUpdate' }, callbackFunc);
   }
 
   build() {
@@ -54,7 +54,7 @@ struct TabsUIOptionsExample {
           this.currentIndex = 1
         })
       Text('index: ' + this.index1).id('text_index_uiId')
-      Tabs({ index: this.currentIndex, controller: this.controller }) {
+      Tabs({ index: this.currentIndex as int, controller: this.controller }) {
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#00CB87')
         }.tabBar('green').id('tabContentId0')

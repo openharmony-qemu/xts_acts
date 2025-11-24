@@ -24,7 +24,7 @@ import {
   ColumnOptions,
   FlexSpaceOptions,
   FlexOptions,
-  Text
+  Text,Color
 } from '@ohos.arkui.component';
 import { LengthMetrics } from '@ohos.arkui.node'
 import { State } from '@ohos.arkui.stateManagement';
@@ -40,14 +40,14 @@ struct FlexSpaceTest {
         direction: FlexDirection.Row,
         wrap: FlexWrap.Wrap,
         space: { main: LengthMetrics.px(20), cross: LengthMetrics.px(50) } as FlexSpaceOptions
-      } as FlexOptions) { 
-        Text('1').width('80vp').height('50vp').backgroundColor(0xF5DEB3).id('FlexSpaceTest_text1')
-        Text('2').width('80vp').height('50vp').backgroundColor(0xD2B48C)
-        Text('3').width('80vp').height('50vp').backgroundColor(0xD2B48C).id('FlexSpaceTest_text3')
+      } as FlexOptions) { // 子组件多行布局
+        Text('1').width('80vp').height('50vp').backgroundColor(Color.Red).id('FlexSpaceTest_text1')
+        Text('2').width('80vp').height('50vp').backgroundColor(Color.Red)
+        Text('3').width('80vp').height('50vp').backgroundColor(Color.Red).id('FlexSpaceTest_text3')
       }
       .width('200vp')
       .padding(10)
-      .backgroundColor(0xAFEEEE)
+      .backgroundColor(Color.Red)
 
     }
     .width('100%')

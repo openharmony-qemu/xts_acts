@@ -61,15 +61,13 @@ export default function textAreaPreview() {
       console.info("textAreaPreview beforeEach end");
     }); 
 
-    
-    
-/*
+    /*
      * @tc.number   textAreaPreview_static_0100
      * @tc.name     textAreaPreview_static_0100
      * @tc.desc     textAreaPreview_static_0100
-     * @tc.level    Level.LEVEL0
+     * @tc.level   Level.LEVEL0
      */
-it('textAreaPreview_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('textAreaPreview_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textAreaPreview_0100 START');
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('enablePreview_textArea');

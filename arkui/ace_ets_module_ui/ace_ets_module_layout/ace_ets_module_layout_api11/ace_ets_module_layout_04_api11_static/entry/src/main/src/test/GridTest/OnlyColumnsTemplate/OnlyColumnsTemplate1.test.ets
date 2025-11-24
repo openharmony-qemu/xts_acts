@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2025 iSoftStone Information Technology (Group) Co.,Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level} from '../../../../../hypium/index';
 import router from '@ohos.router';
+
 import CommonFunc, { RectValue } from '../../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../../ets/MainAbility/common/MessageManager';
 import hilog from '@ohos.hilog'
@@ -51,10 +52,8 @@ export default function OnlyColumnsTemplate1() {
         console.info("get OnlyColumnsTemplate1 state pages:" + "");
         if (!("OnlyColumnsTemplate1" == pages.name)) {
           console.info("get OnlyColumnsTemplate1 pages.name:" + "");
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push OnlyColumnsTemplate1 page error:" + err);
@@ -64,11 +63,6 @@ export default function OnlyColumnsTemplate1() {
     afterEach(async () => {
       console.info("OnlyColumnsTemplate1 after each called");
     });
-
-
-    
-    
-    
 
 /*
      * @tc.number   SUB_ACE_GRID_OnlyColumnsTemplate1_static_0100
@@ -88,10 +82,10 @@ it('SUB_ACE_GRID_OnlyColumnsTemplate1_static_0100', Level.LEVEL0, async (done: (
       expect(GridItem_01.left).assertEqual(GridItem_02.left);
       console.log('GridItem_01.left' + GridItem_01.left)
       console.log('GridItem_02.left' + GridItem_02.left)
-      const uiContext = new UIContext();
+
       console.log('assert space')
       expect(Math.abs(Math.round(GridItem_02.top - GridItem_01.bottom) -
-        Math.round(UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+        Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(10)))) <= 1).assertTrue();
       console.log('GridItem_02.top - GridItem_01.bottom' + (GridItem_02.top - GridItem_01.bottom))
 
       await CommonFunc.sleep(1000);
@@ -103,9 +97,6 @@ it('SUB_ACE_GRID_OnlyColumnsTemplate1_static_0100', Level.LEVEL0, async (done: (
       console.info('[SUB_ACE_GRID_OnlyColumnsTemplate1_static_0100] END');
       done();
     });
-    
-    
-    
 
 /*
      * @tc.number   SUB_ACE_GRID_OnlyColumnsTemplate1_static_0200
@@ -133,11 +124,11 @@ it('SUB_ACE_GRID_OnlyColumnsTemplate1_static_0200', Level.LEVEL0, async (done: (
       let GridItem_01: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_01');
       let GridItem_02: RectValue = CommonFunc.getComponentRect('OnlyColumnsTemplate1_GridItem_02');
 
-      const uiContext = new UIContext();
+
       console.log('assert size')
-      expect(Math.abs(Math.round(GridItem_01.right - GridItem_01.left) - Math.round(UIContext.getFocusedUIContext()!.vp2px(114))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(GridItem_01.right - GridItem_01.left) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(114)))) <= 1).assertTrue();
       console.log('GGridItem_01.right - GridItem_01.left' + (GridItem_01.right - GridItem_01.left))
-      expect(Math.abs(Math.round(GridItem_01.bottom - GridItem_01.top) - Math.round(UIContext.getFocusedUIContext()!.vp2px(50))) <= 1).assertTrue();
+      expect(Math.abs(Math.round(GridItem_01.bottom - GridItem_01.top) - Math.round(Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50)))) <= 1).assertTrue();
       console.log('GGridItem_01.bottom - GridItem_01.top' + (GridItem_01.bottom - GridItem_01.top))
 
       await CommonFunc.sleep(1000);

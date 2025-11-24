@@ -12,103 +12,39 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { Entry,Component,$r, Padding,Column,Alignment,TextOverflow,ColumnOptions,Grid,GridItem,Gauge,animateTo,FormComponent,Visibility,FormDimension,Divider,Counter,DataPanel,DatePicker,BorderImageOption,BorderOptions,AdaptiveColor,BackgroundEffectOptions,BorderStyle,RepeatMode,GradientDirection,Image,Checkbox,Blank,MarkStyle,ResourceColor,CheckboxGroup,Text,Toggle,ToggleType,FlexAlign,Color,Flex,ButtonType,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer} from '@ohos.arkui.component';
 import {
-  Entry,
-  Component,
-  $r,
-  Padding,
-  Column,
-  Alignment,
-  TextOverflow,
-  ColumnOptions,
-  Grid,
-  GridItem,
-  Gauge,
-  animateTo,
-  FormComponent,
-  Visibility,
-  FormDimension,
-  Divider,
-  Counter,
-  DataPanel,
-  DatePicker,
-  BorderImageOption,
-  BorderOptions,
-  AdaptiveColor,
-  BackgroundEffectOptions,
-  BorderStyle,
-  RepeatMode,
-  GradientDirection,
-  Image,
-  Checkbox,
-  Blank,
-  MarkStyle,
-  ResourceColor,
-  CheckboxGroup,
-  Text,
-  Toggle,
-  ToggleType,
-  FlexAlign,
-  Color,
-  Flex,
-  ButtonType,
-  FlexDirection,
-  ItemAlign,
-  Row,
-  Button,
-  ClickEvent,
-  Week,
-  FontWeight,
-  Axis,
-  Margin,
-  Swiper,
-  ForEach,
-  PickerTextStyle,
-  CalendarAlign,
-  Date,
-  CalendarPicker,
-  EdgeEffect,
-  Curve,
-  SwiperDisplayMode,
-  ArrowPosition,
-  Select,
-  BlurStyle,
-  MenuAlignType,
-  TextInputController,
-  TextAlign,
-  AlphabetIndexer,
-  GridItemAttribute
-} from '@ohos.arkui.component';
-import { State, Link, Prop, } from '@ohos.arkui.stateManagement';
-import { GridItemModifier } from "@ohos.arkui.modifier";
-
-class CustomModifier extends GridItemModifier {
-  applyGridItemAttribute(instance: GridItemAttribute): void {
-    // super.applyNormalAttribute?.(instance);
-  }
-
-  onChange1() {
-    console.log("================================ onChange1")
-    this.rowStart(2)
-    console.log("================================ onChange1 this.rowStart")
-  }
-}
+  State,
+  Link,
+  Prop,
+} from '@ohos.arkui.stateManagement';
+// import { GridItemModifier } from "@ohos.arkui.modifier";
+//
+// class CustomModifier extends GridItemModifier {
+//   applyGridItemAttribute(instance: GridItemAttribute): void {
+//     super.applyNormalAttribute?.(instance);
+//   }
+//
+//   onChange1() {
+//     this.rowStart(2)
+//   }
+// }
 
 @Entry
 @Component
 struct GridItemOnSelect {
-    @State customModifier: GridItemModifier = new CustomModifier()
-      .selected(true)
-      .rowStart(1)
-      .rowEnd(12)
-      .columnStart(1)
-      .columnEnd(12)
-      .selectable(true)
+//   @State customModifier: GridItemModifier = new CustomModifier()
+//     .selected(true)
+//     .rowStart(1)
+//     .rowEnd(12)
+//     .columnStart(1)
+//     .columnEnd(12)
+//     .selectable(true)
 
   build() {
     Column() {
       Button("change value").onClick((e: ClickEvent) => {
-                (this.customModifier as CustomModifier).onChange1();
+//         (this.customModifier as CustomModifier).onChange1();
       }).key("changeButton")
 
       Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
@@ -139,8 +75,7 @@ struct GridItemOnSelect {
                 .key("onSelected")
             }
             .key("GridItemKey1")
-
-                        .attributeModifier(this.customModifier as CustomModifier)
+//             .attributeModifier(this.customModifier as CustomModifier)
           }
           .columnsTemplate('1fr 1fr 1fr 1fr 1fr')
           .rowsTemplate('1fr 1fr 1fr 1fr 1fr')

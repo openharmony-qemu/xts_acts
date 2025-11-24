@@ -26,7 +26,7 @@ import { BusinessError } from '@ohos.base';
 function getResourceColor(baseColor: number):ColorMetrics {
   let sourceColor:ColorMetrics;
   try {
-    sourceColor = ColorMetrics.numeric(Double.toInt(baseColor))
+    sourceColor = ColorMetrics.numeric(baseColor as int)
   } catch (error) {
     console.log("getBlendColor failed, code = " + (error as BusinessError).code + ", message = " + (error as BusinessError).message);
     sourceColor = ColorMetrics.numeric(0xffff0000);

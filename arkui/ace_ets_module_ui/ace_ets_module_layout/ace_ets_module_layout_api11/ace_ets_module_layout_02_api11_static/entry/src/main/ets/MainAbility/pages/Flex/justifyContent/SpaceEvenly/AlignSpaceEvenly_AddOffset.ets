@@ -30,6 +30,7 @@ import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute,
 import {
   State,
   
+
   AppStorage
 } from '@ohos.arkui.stateManagement'
 import { Router } from '@ohos.arkui.UIContext';
@@ -41,10 +42,7 @@ struct AlignSpaceEvenly_AddOffset {
 
   onPageShow() {
     console.info('AlignSpaceEvenly_AddOffset onPageShow');
-    let value: FaceValue<Position> = {
-      name: 'messageManager', message: this.messageManager
-    };
-    GlobalContext.getContext().setObject('value', value);
+    AppStorage.setOrCreate<MessageManager<Position>>("messageManager",  this.messageManager);
     let callback: Callback<Position> = (message: Message<Position>) => {
       console.log('message = ' + message.name + "--" + message.value);
       if (message.name == 'OneOffset') {

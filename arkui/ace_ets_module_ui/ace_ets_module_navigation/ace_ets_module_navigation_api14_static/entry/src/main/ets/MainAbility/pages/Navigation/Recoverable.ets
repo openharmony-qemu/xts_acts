@@ -50,6 +50,8 @@ struct RecoverableDemo {
               .height(40)
               .margin({ bottom: 10 } as Margin)
               .onClick((e: ClickEvent) => {
+                // this.pageInfos.pushPath({name: 'pageOne'})
+                this.pageInfos.pushPath(new NavPathInfo('pageOne',undefined),true)
               })
             Button('routerPage1_recoverable=true', { stateEffect: true, type: ButtonType.Capsule })
               .width('80%')

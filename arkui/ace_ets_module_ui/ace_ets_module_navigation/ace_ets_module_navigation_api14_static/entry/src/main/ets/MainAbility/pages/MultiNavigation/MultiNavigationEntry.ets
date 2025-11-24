@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+import { MultiNavigation, MultiNavPathStack, SplitPolicy } from '@ohos.arkui.advanced.MultiNavigation';
 import { PageHome1 } from './PageHome1';
 import hilog  from '@ohos.hilog';
 import { PageDetail1 } from './PageDetail1';
@@ -23,6 +23,7 @@ import { Entry, Component, Column, Button, ColumnOptions, ClickEvent, Text, Colo
 @Entry
 @Component
 struct MultiNavigationEntry {
+  @Provide({alias: 'pageStack' })pageStack: MultiNavPathStack = new MultiNavPathStack();
 
   @Builder
   PageMap(name: string) {
@@ -36,11 +37,18 @@ struct MultiNavigationEntry {
   }
 
   aboutToAppear(): void {
+    console.log('++++++++++++++++aboutToAppear1')
+    this.pageStack.pushPathByName('PageHome1', 'paramTest', (popInfo) => {  //执行但没有跳转
+      hilog.info(0x0000, 'demotest', 'PageHome1 onpop popInfo.result=' + popInfo.result);
+    }, false, SplitPolicy.HOME_PAGE);
+    console.log('++++++++++++++++aboutToAppear2')
   }
 
   build() {
     Column() {
       Row() {
+        Text('11111111111111111111111111')
+        MultiNavigation({ navDestination: this.PageMap, multiStack: this.pageStack })
       }
       .width('100%')
     }

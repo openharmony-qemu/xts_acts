@@ -41,21 +41,22 @@ export default function borderStyles() {
         console.info("get borderStyles state pages: " + JSON.stringify(pages));
         if (!("borderStyles" == pages.name)) {
           console.info("get borderStyles state pages.name: " + JSON.stringify(pages.name));
-          
+          //let result = await router.pushUrl(options);
           router.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push borderStyles success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push borderStyles page error: " + err);
            expect().assertFail();
       }
-      
+      //done();
     }); 
 
     
      
     
+
 
 /*
      * @tc.number   borderStyles_static_0100
@@ -63,7 +64,7 @@ export default function borderStyles() {
      * @tc.desc     borderStyles_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('borderStyles_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('borderStyles_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('borderStyles_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

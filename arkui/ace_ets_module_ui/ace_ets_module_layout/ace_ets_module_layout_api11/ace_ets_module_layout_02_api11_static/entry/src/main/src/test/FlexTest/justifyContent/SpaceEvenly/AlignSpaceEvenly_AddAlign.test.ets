@@ -41,9 +41,8 @@ export default function AlignSpaceEvenly_AddAlign() {
 
     beforeAll(() => {
       console.info("AlignSpaceEvenly_AddAlign beforeEach start");
-      
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace_ets_module_layout_02_api11_static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
@@ -59,11 +58,8 @@ export default function AlignSpaceEvenly_AddAlign() {
         console.info("get AlignSpaceEvenly_AddAlign state pages:" + JSON.stringify(pages));
         if (!("AlignSpaceEvenly_AddAlign" == pages.name)) {
           console.info("get AlignSpaceEvenly_AddAlign pages.name:" + '');
-          
-          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
         }
       } catch (err) {
         console.error("push AlignSpaceEvenly_AddAlign page error:" + err);
@@ -90,9 +86,8 @@ it('testFlexAlignSpaceEvenlyAlignBottomEnd_static', Level.LEVEL0, async () : Pro
       let result = AppStorage.get<MessageManager<Alignment>>("messageManager")
       if (result !== null) {
         result!.notify({
-          name: 'DadAlign', value: Alignment.BottomEnd
+          name: 'DadAddAlign', value: Alignment.BottomEnd
         });
-
       }
 
       await CommonFunc.sleep(3000);
@@ -105,7 +100,6 @@ it('testFlexAlignSpaceEvenlyAlignBottomEnd_static', Level.LEVEL0, async () : Pro
       let SpaceEvenly_AddAlign_012: RectValue = CommonFunc.getComponentRect('SpaceEvenly_AddAlign_012');
       let SpaceEvenly_AddAlign_013: RectValue = CommonFunc.getComponentRect('SpaceEvenly_AddAlign_013');
       let SpaceEvenly_AddAlign_01: RectValue = CommonFunc.getComponentRect('SpaceEvenly_AddAlign_01');
-      const uiContext = new UIContext();
       expect(Math.abs(SpaceEvenly_AddAlign_011.top - SpaceEvenly_AddAlign_012.top) <= 1).assertTrue()
       expect(Math.abs(SpaceEvenly_AddAlign_012.top - SpaceEvenly_AddAlign_013.top) <= 1).assertTrue()
       expect(Math.abs(SpaceEvenly_AddAlign_011.top - SpaceEvenly_AddAlign_01.top) <= 1).assertTrue()
@@ -113,14 +107,14 @@ it('testFlexAlignSpaceEvenlyAlignBottomEnd_static', Level.LEVEL0, async () : Pro
         .assertTrue()
       expect(Math.abs(SpaceEvenly_AddAlign_011.left - SpaceEvenly_AddAlign_01.left - SpaceEvenly_AddAlign_01.right + SpaceEvenly_AddAlign_013.right) <= 1)
         .assertTrue()
-      expect(Math.abs(SpaceEvenly_AddAlign_012.left - SpaceEvenly_AddAlign_011.right - UIContext.getFocusedUIContext()!.vp2px(12.5)) <= 1).assertTrue()
-      expect(Math.abs(SpaceEvenly_AddAlign_01.right - SpaceEvenly_AddAlign_013.right - UIContext.getFocusedUIContext()!.vp2px(12.5)) <= 1).assertTrue()
-      expect(Math.abs(SpaceEvenly_AddAlign_011.right - SpaceEvenly_AddAlign_011.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(SpaceEvenly_AddAlign_012.right - SpaceEvenly_AddAlign_012.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(SpaceEvenly_AddAlign_013.right - SpaceEvenly_AddAlign_013.left - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
-      expect(Math.abs(SpaceEvenly_AddAlign_011.bottom - SpaceEvenly_AddAlign_011.top - UIContext.getFocusedUIContext()!.vp2px(50)) <= 1).assertTrue()
-      expect(Math.abs(SpaceEvenly_AddAlign_012.bottom - SpaceEvenly_AddAlign_012.top - UIContext.getFocusedUIContext()!.vp2px(100)) <= 1).assertTrue()
-      expect(Math.abs(SpaceEvenly_AddAlign_013.bottom - SpaceEvenly_AddAlign_013.top - UIContext.getFocusedUIContext()!.vp2px(150)) <= 1).assertTrue()
+      expect(Math.abs(SpaceEvenly_AddAlign_012.left - SpaceEvenly_AddAlign_011.right - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(12.5))) <= 1).assertTrue()
+      expect(Math.abs(SpaceEvenly_AddAlign_01.right - SpaceEvenly_AddAlign_013.right - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(12.5))) <= 1).assertTrue()
+      expect(Math.abs(SpaceEvenly_AddAlign_011.right - SpaceEvenly_AddAlign_011.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(SpaceEvenly_AddAlign_012.right - SpaceEvenly_AddAlign_012.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(SpaceEvenly_AddAlign_013.right - SpaceEvenly_AddAlign_013.left - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
+      expect(Math.abs(SpaceEvenly_AddAlign_011.bottom - SpaceEvenly_AddAlign_011.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(50))) <= 1).assertTrue()
+      expect(Math.abs(SpaceEvenly_AddAlign_012.bottom - SpaceEvenly_AddAlign_012.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(100))) <= 1).assertTrue()
+      expect(Math.abs(SpaceEvenly_AddAlign_013.bottom - SpaceEvenly_AddAlign_013.top - Number(AppStorage.get<UIContext>('uiContext')?.vp2px(150))) <= 1).assertTrue()
       console.info('[testFlexAlignSpaceEvenlyAlignBottomEnd] END');
 
     });

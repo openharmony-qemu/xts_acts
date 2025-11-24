@@ -12,7 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import observer from '@ohos.arkui.observer'
+import  uiObserver  from '@ohos.arkui.observer'
+import  observer  from '@ohos.arkui.observer'
 import { Entry, Component, Column, Text, Image, Color, Padding, Button, TextAlign, ClickEvent, ColumnOptions, Scroller, Scroll, ForEach, Margin, Row} from '@ohos.arkui.component'
 import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
@@ -32,12 +33,23 @@ struct scrollEvent1 {
           Button('UIObserver on')
             .id('scrollEvent_3')
             .onClick((e: ClickEvent) => {
-              observer.onScrollEvent((info) => {
+              // observer.on('scrollEvent', (info) => {代码在下面平替
+              //   console.info('scrollEventInfo', JSON.stringify(info));
+              //   if (uiObserver.ScrollEventType.SCROLL_START == info.scrollEvent) {
+              //     this.message1 = 'SCROLL_START'
+              //   }
+              //   if (uiObserver.ScrollEventType.SCROLL_STOP == info.scrollEvent) {
+              //     this.message2 = 'SCROLL_STOP'
+              //   }
+              // });
+
+              let observer = this.getUIContext().getUIObserver();
+              observer.onScrollEvent( (info) => {
                 console.info('scrollEventInfo', JSON.stringify(info));
-                if (observer.ScrollEventType.SCROLL_START == info.scrollEvent) {
+                if (uiObserver.ScrollEventType.SCROLL_START == info.scrollEvent) {
                   this.message1 = 'SCROLL_START'
                 }
-                if (observer.ScrollEventType.SCROLL_STOP == info.scrollEvent) {
+                if (uiObserver.ScrollEventType.SCROLL_STOP == info.scrollEvent) {
                   this.message2 = 'SCROLL_STOP'
                 }
               });
@@ -45,6 +57,11 @@ struct scrollEvent1 {
           Button('UIObserver off')
             .id('scrollEvent_5')
             .onClick((e: ClickEvent) => {
+
+              // observer.off('scrollEvent', (info) => {  代码在下面平替
+              //   console.info('off scrollEvent', JSON.stringify(info));
+              // })
+              let observer = this.getUIContext().getUIObserver();
               observer.offScrollEvent((info) => {
                 console.info('off scrollEvent', JSON.stringify(info));
               })
