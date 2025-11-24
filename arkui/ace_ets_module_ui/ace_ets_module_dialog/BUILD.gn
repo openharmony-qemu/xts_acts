@@ -16,6 +16,7 @@ group("ActsAceEtsModuleDialogTest") {
   testonly = true
   if (ace_engine_feature_wearable) {
     deps = [
+      "ace_ets_module_menu:ActsAceEtsModuleMenuTest",
       "ace_ets_module_dialog_api11:ActsAceEtsModuleDialogApi11Test",
       "ace_ets_module_dialog_api12:ActsAceEtsModuleDialogApi12Test",
       "ace_ets_module_dialog_api15:ActsAceEtsModuleDialogApi15Test",
@@ -27,10 +28,10 @@ group("ActsAceEtsModuleDialogTest") {
       "ace_ets_module_dialog_toggle:ActsAceEtsModuleDialogToggleTest",
       "ace_ets_module_dialog_radio:ActsAceEtsModuleDialogRadioTest",
       "ace_ets_module_dialog_checkbox:ActsAceEtsModuleDialogCheckBoxTest",
-      "ace_ets_module_menu:ActsAceEtsModuleMenuTest",
     ]
   } else {
     deps = [
+      "ace_ets_module_menu:ActsAceEtsModuleMenuTest",
       "ace_ets_module_dialog_api11:ActsAceEtsModuleDialogApi11Test",
       "ace_ets_module_dialog_api12:ActsAceEtsModuleDialogApi12Test",
       "ace_ets_module_dialog_api15:ActsAceEtsModuleDialogApi15Test",
@@ -48,7 +49,6 @@ group("ActsAceEtsModuleDialogTest") {
       "ace_ets_module_dialog_toggle:ActsAceEtsModuleDialogToggleTest",
       "ace_ets_module_dialog_radio:ActsAceEtsModuleDialogRadioTest",
       "ace_ets_module_dialog_checkbox:ActsAceEtsModuleDialogCheckBoxTest",
-      "ace_ets_module_menu:ActsAceEtsModuleMenuTest",
     ]
   }
 }
