@@ -21,7 +21,7 @@ export default function RELOAD() {
     beforeEach(async (done: Function) => {
       console.info("RELOAD beforeEach start");
       let options: router.RouterOptions = {
-        url: "MainAbility/pages/FrameNode/RELOAD",
+        url: "MainAbility/pages/LazyForEach/RELOAD",
       }
       try {
         router.clear();
@@ -58,7 +58,7 @@ export default function RELOAD() {
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       console.info("[RELOAD_0100] component obj is: " + JSON.stringify(obj));
       console.info("[RELOAD_0100] content obj is: " + JSON.stringify(obj.$attrs.content));
-      expect(obj.$attrs.content).assertEqual("appear:Hello 100");
+      expect(obj.$attrs.content).assertEqual("appear:Hello 00");
       console.info('[RELOAD_0100] END');
       done();
     });

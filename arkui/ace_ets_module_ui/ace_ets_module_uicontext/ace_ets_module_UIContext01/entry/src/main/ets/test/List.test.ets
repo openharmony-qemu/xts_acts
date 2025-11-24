@@ -29,14 +29,8 @@ import IsAvailableTest from './ContextTest/IsAvailableTest.test';
 import IsFollowingSystemFontScaleFalseTest from './ContextTest/IsFollowingSystemFontScaleFalseTest.test';
 
 export default function testsuite() {
-  APIgetFrameNodeByUniqueId();
-  UIContextOnIdle();
-  GetWindowWidthAndHeight();
-  PixelUnitsConversion();
-  atomicServiceBarTest();
   UIContextApi1();
   UIContextTestCase();
-
   CacheMaxCountForHSPTest();
   GetNodeByIdNullTest();
   UIContextUndefinedTest();
@@ -44,4 +38,10 @@ export default function testsuite() {
   UIContextGetOpacityTest();
   IsAvailableTest();
   IsFollowingSystemFontScaleFalseTest();
+
+  APIgetFrameNodeByUniqueId();
+  UIContextOnIdle();
+  GetWindowWidthAndHeight();
+  PixelUnitsConversion();
+  atomicServiceBarTest();
 }
