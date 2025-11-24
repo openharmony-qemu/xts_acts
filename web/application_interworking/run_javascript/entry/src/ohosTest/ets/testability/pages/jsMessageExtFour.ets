@@ -20,11 +20,11 @@ import { JsProxyObject } from '../../test/Interfaces.d';
 import business_error from '@ohos.base';
 import {waitForAssert, waitForExist} from '../../test/WaitTest.test';
 
-class testObj {
-  testReturnStr = '';
-  testNoReturnStr = '';
-  testReturnNumber = -1;
-  testNoReturnNumber = -1;
+class TestObj {
+  private testReturnStr = '';
+  private testNoReturnStr = '';
+  private testReturnNumber = -1;
+  private testNoReturnNumber = -1;
   constructor() {}
   testReturnObj() {
     this.testReturnStr = '';
@@ -44,7 +44,7 @@ struct jsMessageExtFour {
   @State str: string = '';
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
-  @State testObj: testObj = new testObj();
+  @State testObj: TestObj = new TestObj();
 
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
