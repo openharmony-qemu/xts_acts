@@ -384,6 +384,57 @@ export default function getBundleInfoForSelf() {
       })
 
     /**
+     * @tc.name   getBundleInfoForSelfCallbackEntryModuleInfo
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_static_5661
+     * @tc.desc   Test getBundleInfoForSelf with hapModuleInfo flag(by callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('getBundleInfoForSelfCallbackEntryModuleInfo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        bundle.getBundleInfoForSelf(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_ENTRY_MODULE,
+          (err: BusinessError<void> | null, data: BundleInfo | undefined) => {
+            hilog.info(domain, tag, 'getBundleInfoForSelfCallbackEntryModuleInfo  ====> start');
+            if (err) {
+              hilog.info(domain, tag, 'getBundleInfoForSelfCallbackEntryModuleInfo  ====> err' + JSON.stringify(err));
+              expect().assertFail();
+            } else if (data !== undefined) {
+              expect(data!.appInfo).assertEqual(null);
+              expect(data!.hapModulesInfo.length).assertEqual(1.0);
+              expect(data!.hapModulesInfo[0].name).assertEqual("entry");
+              expect(data!.hapModulesInfo[0].icon).assertEqual("$media:layered_image");
+              expect(data!.hapModulesInfo[0].iconId).assertLarger(0.0);
+              expect(data!.hapModulesInfo[0].label).assertEqual("$string:EntryAbility_label");
+              expect(data!.hapModulesInfo[0].labelId).assertLarger(0.0);
+              expect(data!.hapModulesInfo[0].description).assertEqual("$string:module_desc");
+              expect(data!.hapModulesInfo[0].descriptionId).assertLarger(0.0);
+              expect(data!.hapModulesInfo[0].mainElementName).assertEqual("EntryAbility");
+              expect(data!.hapModulesInfo[0].abilitiesInfo.length).assertEqual(0.0);
+              expect(data!.hapModulesInfo[0].extensionAbilitiesInfo.length).assertEqual(0.0);
+              expect(data!.hapModulesInfo[0].metadata.length).assertEqual(0.0);
+              expect(data!.hapModulesInfo[0].deviceTypes.length).assertEqual(0.0);
+              expect(data!.hapModulesInfo[0].installationFree).assertFalse();
+              expect(data!.hapModulesInfo[0].hashValue).assertEqual("");
+              expect(data!.hapModulesInfo[0].dependencies.length).assertEqual(0.0);
+              expect(data!.hapModulesInfo[0].preloads.length).assertEqual(0.0);
+              expect(data!.routerMap.length).assertEqual(0.0);
+              expect(data!.reqPermissionDetails.length).assertEqual(0.0);
+              expect(data!.permissionGrantStates.length).assertEqual(0.0);
+              expect(data!.signatureInfo).assertEqual(null);
+              expect(data!.hapModulesInfo[0].codePath).assertEqual("/data/storage/el1/bundle/entry.hap");
+              expect(data!.hapModulesInfo[0].nativeLibraryPath).assertEqual("");
+              expect(data!.hapModulesInfo[0].fileContextMenuConfig).assertEqual("");
+            } else {
+              hilog.info(domain, tag, 'getBundleInfoForSelfCallbackEntryModuleInfo  ====> Fail');
+              expect().assertFail();
+            }
+            hilog.info(domain, tag, 'getBundleInfoForSelfCallbackEntryModuleInfo  ====> end');
+            done();
+          })
+      })
+
+    /**
      * @tc.name   getBundleInfoForSelfHapModuleInfoPromise
      * @tc.number Sub_Bms_Framework_Query_AppInfo_static_5640
      * @tc.desc   Test getBundleInfoForSelf with hapModuleInfo flag(by promise).

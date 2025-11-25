@@ -213,6 +213,7 @@ export default function getBundleInfoForSelf() {
           done();
         })
       })
+
   })
 }
 
