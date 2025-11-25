@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,17 +28,17 @@ class MyNodeController extends  NodeController {
   makeNode(uiContext: UIContext): FrameNode | null {
     let node = new FrameNode(uiContext)
     let col = typeNode.createColumnNode(uiContext)
-    // let slider = typeNode.createNode(uiContext, 'Slider')
-    // slider.initialize({
-    //   value:null,
-    //   min: null,
-    //   max: null,
-    //   style:  null,
-    //   direction: null,
-    //   reverse: null,
-    // })
-    // .key('key_Slider_001')
-    // col.appendChild(slider)
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     node.appendChild(col)
     return node
   }

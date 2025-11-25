@@ -1,5 +1,6 @@
+'use static';
 /*
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,7 +17,7 @@ import hilog from '@ohos.hilog';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import events_emitter from '@ohos.events.emitter';
 import {
-  Entry,ResourceStr,
+  Entry,
   Component,
   $r,
   Column,
@@ -39,7 +40,7 @@ import {
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
@@ -56,72 +57,72 @@ struct Index {
     console.info("key==> page valueChangeCallBack");
     if (eventData != null && eventData.data != null) {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, Object | null | undefined>                         //需要先获取并声明类型之后  再访问成员属性
-      if(data!['value'] =="true"){
-        if( data!['content'] =="no") {
+      const data = eventData.data as ESObject                        //需要先获取并声明类型之后  再访问成员属性
+      if(data.getProperty('value').toString() =="true"){
+        if( data.getProperty('content').toString() =="no") {
           this.valueNo = true;
         }
-        if( data!['content'] =="null") {
+        if( data.getProperty('content').toString() =="null") {
           this.value = true
           this.isStr = false
           this.isNum = false
           this.isNUll = true
         }
-        if( data!['content'] =="undefined") {
+        if( data.getProperty('content').toString() =="undefined") {
           this.value = true
           this.isStr = false
           this.isNum = false
           this.isNUll = false
         }
-        if( data!['content'] =="ResourceTest") {
+        if( data.getProperty('content').toString() =="ResourceTest") {
           this.style = SliderStyle.InSet
           this.resFalg = true
         }
       }
-      if(data!['value'] =="false"){
-        if( data!['content'] =="no") {
+      if(data.getProperty('value').toString() =="false"){
+        if( data.getProperty('content').toString() =="no") {
           this.valueNo = false;
         }
-        if( data!['content'] =="null") {
+        if( data.getProperty('content').toString() =="null") {
           this.value = false
           this.isStr = false
           this.isNum = false
           this.isNUll = true
         }
-        if( data!['content'] =="undefined") {
+        if( data.getProperty('content').toString() =="undefined") {
           this.value = false
           this.isStr = false
           this.isNum = false
           this.isNUll = false
         }
-        if( data!['content'] =="ResourceTest") {
+        if( data.getProperty('content').toString() =="ResourceTest") {
           this.style = SliderStyle.OutSet
           this.resFalg = false
         }
       }
-      if(data!['value'] =="trueStr") {
+      if(data.getProperty('value').toString() =="trueStr") {
         this.style = SliderStyle.InSet
         this.isStr = true
         this.value = true
-        this.content = data!['content'] as ResourceStr;
+        this.content = data.getProperty('content').toString();
       }
-      if(data!['value'] =="falseStr") {
+      if(data.getProperty('value').toString() =="falseStr") {
         this.style = SliderStyle.OutSet
         this.value = false
         this.isStr = true
-        this.content = data!['content'] as ResourceStr;
+        this.content = data.getProperty('content').toString();
       }
-      if(data!['value'] =="trueNum") {
+      if(data.getProperty('value').toString() =="trueNum") {
         this.isStr = false
         this.isNum = true
         this.value = true
-        this.num = data!['content'] as ResourceStr;
+        this.num = Number(data.getProperty('content').toString()) as double;
       }
-      if(data!['value'] =="falseNum") {
+      if(data.getProperty('value').toString() =="falseNum") {
         this.value = false
         this.isStr = false
         this.isNum = true
-        this.num = data!['content'] as ResourceStr;
+        this.num = Number(data.getProperty('content').toString()) as double;
       }
     }
 
@@ -130,20 +131,20 @@ struct Index {
     hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility index aboutToAppear');
   }
 
-  @State ValueOne: number = 40;
-  @State ValueTwo: number = 40;
-  @State ValueThi: number = 40;
-  @State ValueFour: number = 40;
+  @State ValueOne: double = 40;
+  @State ValueTwo: double = 40;
+  @State ValueThi: double = 40;
+  @State ValueFour: double = 40;
   @State value:boolean = false;
   @State isStr:boolean = false;
   @State isNum:boolean = false;
   @State isNUll:boolean = false;
   @State valueNo:boolean = false;
   @State resFalg:boolean = false;
-  @State content: ResourceStr = "";
+  @State content:string = "";
   @State style:SliderStyle = SliderStyle.InSet;
   @State direction_:Axis =Axis.Vertical;
-  @State num: ResourceStr = '';
+  @State num: double = 0;
 
   build() {
     Row() {
@@ -154,8 +155,8 @@ struct Index {
           max: 100,
           style: this.style
         })
-          .showTips(this.value,this.isStr?this.content:this.isNum?this.num:(this.isNUll? undefined:undefined))
-          .onChange((value: number, mode: SliderChangeMode) => {
+          .showTips(this.value,this.isStr?this.content:fakeString(this.isNum?this.num:(this.isNUll? null:undefined)))
+          .onChange((value: double, mode: SliderChangeMode) => {
             this.ValueOne = value
             console.info('value:' + value + 'mode:' + mode.toString())
           })
@@ -167,7 +168,7 @@ struct Index {
           style: this.style
         })
           .showTips(this.valueNo)
-          .onChange((value: number, mode: SliderChangeMode) => {
+          .onChange((value: double, mode: SliderChangeMode) => {
             this.ValueTwo = value
             console.info('value:' + value + 'mode:' + mode.toString())
           })
@@ -182,7 +183,7 @@ struct Index {
               .height(300)
               .showSteps(true)
               .showTips(this.resFalg,$r("app.string.sliderTest"))
-              .onChange((value: number, mode: SliderChangeMode) => {
+              .onChange((value: double, mode: SliderChangeMode) => {
                 this.ValueThi = value
                 console.info('value:' + value + 'mode:' + mode.toString())
               })
@@ -195,7 +196,7 @@ struct Index {
             })
               .height(300)
               .showSteps(true)
-              .onChange((value: number, mode: SliderChangeMode) => {
+              .onChange((value: double, mode: SliderChangeMode) => {
                 this.ValueFour = value
                 console.info('value:' + value + 'mode:' + mode.toString())
               })
@@ -206,4 +207,8 @@ struct Index {
     }
     .height('100%')
   }
+}
+
+function fakeString(val: string|double|null|undefined) {
+  return val as string
 }

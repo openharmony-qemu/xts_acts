@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -56,8 +57,7 @@ export default function CalendarPickerDialogBGBlurStyleTest() {
 
 
     
-    
-/*
+    /*
      * @tc.number   CalendarPickerDialogBGBlurStyleTest_static_001
      * @tc.name     CalendarPickerDialogBGBlurStyleTest_static_001
      * @tc.desc     CalendarPickerDialogBGBlurStyleTest_static_001
@@ -83,8 +83,7 @@ it('CalendarPickerDialogBGBlurStyleTest_static_001', Level.LEVEL0, async (done: 
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   CalendarPickerDialogBGBlurStyleTest_static_002
      * @tc.name     CalendarPickerDialogBGBlurStyleTest_static_002
      * @tc.desc     CalendarPickerDialogBGBlurStyleTest_static_002
@@ -110,8 +109,7 @@ it('CalendarPickerDialogBGBlurStyleTest_static_002', Level.LEVEL0, async (done: 
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   CalendarPickerDialogBGBlurStyleTest_static_003
      * @tc.name     CalendarPickerDialogBGBlurStyleTest_static_003
      * @tc.desc     CalendarPickerDialogBGBlurStyleTest_static_003
@@ -137,8 +135,7 @@ it('CalendarPickerDialogBGBlurStyleTest_static_003', Level.LEVEL0, async (done: 
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   CalendarPickerDialogBGBlurStyleTest_static_004
      * @tc.name     CalendarPickerDialogBGBlurStyleTest_static_004
      * @tc.desc     CalendarPickerDialogBGBlurStyleTest_static_004
@@ -164,8 +161,7 @@ it('CalendarPickerDialogBGBlurStyleTest_static_004', Level.LEVEL0, async (done: 
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   CalendarPickerDialogBGBlurStyleTest_static_005
      * @tc.name     CalendarPickerDialogBGBlurStyleTest_static_005
      * @tc.desc     CalendarPickerDialogBGBlurStyleTest_static_005
@@ -191,8 +187,7 @@ it('CalendarPickerDialogBGBlurStyleTest_static_005', Level.LEVEL0, async (done: 
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   CalendarPickerDialogBGBlurStyleTest_static_006
      * @tc.name     CalendarPickerDialogBGBlurStyleTest_static_006
      * @tc.desc     CalendarPickerDialogBGBlurStyleTest_static_006
@@ -218,8 +213,7 @@ it('CalendarPickerDialogBGBlurStyleTest_static_006', Level.LEVEL0, async (done: 
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   CalendarPickerDialogBGBlurStyleTest_static_007
      * @tc.name     CalendarPickerDialogBGBlurStyleTest_static_007
      * @tc.desc     CalendarPickerDialogBGBlurStyleTest_static_007
@@ -245,8 +239,7 @@ it('CalendarPickerDialogBGBlurStyleTest_static_007', Level.LEVEL0, async (done: 
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   CalendarPickerDialogBGBlurStyleTest_static_008
      * @tc.name     CalendarPickerDialogBGBlurStyleTest_static_008
      * @tc.desc     CalendarPickerDialogBGBlurStyleTest_static_008
@@ -267,8 +260,7 @@ it('CalendarPickerDialogBGBlurStyleTest_static_008', Level.LEVEL0, async (done: 
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   CalendarPickerDialogBGBlurStyleTest_static_009
      * @tc.name     CalendarPickerDialogBGBlurStyleTest_static_009
      * @tc.desc     CalendarPickerDialogBGBlurStyleTest_static_009
@@ -294,8 +286,7 @@ it('CalendarPickerDialogBGBlurStyleTest_static_009', Level.LEVEL0, async (done: 
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   CalendarPickerDialogBGBlurStyleTest_static_0010
      * @tc.name     CalendarPickerDialogBGBlurStyleTest_static_0010
      * @tc.desc     CalendarPickerDialogBGBlurStyleTest_static_0010
@@ -321,8 +312,7 @@ it('CalendarPickerDialogBGBlurStyleTest_static_0010', Level.LEVEL0, async (done:
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   CalendarPickerDialogBGBlurStyleTest_static_0011
      * @tc.name     CalendarPickerDialogBGBlurStyleTest_static_0011
      * @tc.desc     CalendarPickerDialogBGBlurStyleTest_static_0011
@@ -348,8 +338,7 @@ it('CalendarPickerDialogBGBlurStyleTest_static_0011', Level.LEVEL0, async (done:
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   CalendarPickerDialogBGBlurStyleTest_static_0012
      * @tc.name     CalendarPickerDialogBGBlurStyleTest_static_0012
      * @tc.desc     CalendarPickerDialogBGBlurStyleTest_static_0012
@@ -375,8 +364,7 @@ it('CalendarPickerDialogBGBlurStyleTest_static_0012', Level.LEVEL0, async (done:
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   CalendarPickerDialogBGBlurStyleTest_static_0013
      * @tc.name     CalendarPickerDialogBGBlurStyleTest_static_0013
      * @tc.desc     CalendarPickerDialogBGBlurStyleTest_static_0013
@@ -402,8 +390,7 @@ it('CalendarPickerDialogBGBlurStyleTest_static_0013', Level.LEVEL0, async (done:
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   CalendarPickerDialogBGBlurStyleTest_static_0014
      * @tc.name     CalendarPickerDialogBGBlurStyleTest_static_0014
      * @tc.desc     CalendarPickerDialogBGBlurStyleTest_static_0014
@@ -429,8 +416,7 @@ it('CalendarPickerDialogBGBlurStyleTest_static_0014', Level.LEVEL0, async (done:
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   CalendarPickerDialogBGBlurStyleTest_static_0015
      * @tc.name     CalendarPickerDialogBGBlurStyleTest_static_0015
      * @tc.desc     CalendarPickerDialogBGBlurStyleTest_static_0015
@@ -456,8 +442,7 @@ it('CalendarPickerDialogBGBlurStyleTest_static_0015', Level.LEVEL0, async (done:
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   CalendarPickerDialogBGBlurStyleTest_static_0016
      * @tc.name     CalendarPickerDialogBGBlurStyleTest_static_0016
      * @tc.desc     CalendarPickerDialogBGBlurStyleTest_static_0016
@@ -483,8 +468,7 @@ it('CalendarPickerDialogBGBlurStyleTest_static_0016', Level.LEVEL0, async (done:
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   CalendarPickerDialogBGBlurStyleTest_static_0017
      * @tc.name     CalendarPickerDialogBGBlurStyleTest_static_0017
      * @tc.desc     CalendarPickerDialogBGBlurStyleTest_static_0017

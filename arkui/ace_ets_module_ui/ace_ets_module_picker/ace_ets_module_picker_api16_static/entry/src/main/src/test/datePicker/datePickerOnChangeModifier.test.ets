@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import { Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -21,18 +22,17 @@ import { UtilsTest } from '../Util.test';
 import inspector from '@ohos.arkui.inspector'
 import router from '@ohos.router';
 import Utils from '../../../ets/MainAbility/common/Utils';
-// import { px2vp } from '@ohos.arkui.component'
-// const uiContext = new UIContext();
 
-// function getRectCenterVp(rect: string) {
-//   let regexp: RegExp = new RegExp('\\[', 'g');
-//   let rtn: string[] = rect.replace(regexp, '').replace(regexp, '').split(',')
-//   let uiContext = AppStorage.get<UIContext>('uiContext');
-//   return [
-//     uiContext!.px2vp(Number.parseFloat(rtn[0].trim()) + (Number.parseFloat(rtn[2].trim()) - Number.parseFloat(rtn[0].trim())) / 2),
-//     uiContext!.px2vp(Number.parseFloat(rtn[1].trim()) + (Number.parseFloat(rtn[3].trim()) - Number.parseFloat(rtn[1].trim())) / 2),
-//   ]
-// }
+const uiContext = new UIContext();
+
+function getRectCenterVp(rect: string) {
+  let regexp: RegExp = new RegExp('\\[', 'g');
+  let rtn: string[] = rect.replace(regexp, '').replace(regexp, '').split(',')
+  return [
+    UIContext.getFocusedUIContext()!.px2vp(Number.parseFloat(rtn[0].trim()) + (Number.parseFloat(rtn[2].trim()) - Number.parseFloat(rtn[0].trim())) / 2),
+    UIContext.getFocusedUIContext()!.px2vp(Number.parseFloat(rtn[1].trim()) + (Number.parseFloat(rtn[3].trim()) - Number.parseFloat(rtn[1].trim())) / 2),
+  ]
+}
 
 export default function datePickerOnChangeModifierTest() {
   describe('datePickerOnChangeModifierTest', () => {
@@ -55,11 +55,11 @@ export default function datePickerOnChangeModifierTest() {
         console.info("get datePickerOnChangeModifierTest state pages:" + JSON.stringify(pages));
         if (!("datePickerOnChangeModifier" == pages.name)) {
           console.info("get datePickerOnChangeModifierTest pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
+          
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push datePickerOnChangeModifierTest page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push datePickerOnChangeModifierTest page error:" + err);
@@ -84,7 +84,6 @@ it('DatePicker_OnChange_Modifier_static_001', Level.LEVEL1, async (done: () => v
       await (switchButton?.click() as Promise<void>);
       await Utils.sleep(1000);
       let switchButton1 = await driver.findComponent(ON.id('LunarBtn'));
-  await Utils.sleep(1000);
       await (switchButton1?.click() as Promise<void>);
       await Utils.sleep(1000);
       let datePicker = Utils.getComponentRect('DatePicker');
@@ -117,7 +116,6 @@ it('DatePicker_OnChange_Modifier_static_002', Level.LEVEL1, async (done: () => v
       console.info('DatePicker_OnChange_Modifier_static_002 START');
       let driver = Driver.create();
       let switchButton = await driver.findComponent(ON.id('LunarBtn'));
-  await Utils.sleep(1000);
       await (switchButton?.click() as Promise<void>);
       await Utils.sleep(1000);
       let datePicker = Utils.getComponentRect('DatePicker');
@@ -132,7 +130,7 @@ it('DatePicker_OnChange_Modifier_static_002', Level.LEVEL1, async (done: () => v
       let strJsonNew:string = inspector.getInspectorByKey('onDateChangeOff');
       console.info("DatePicker_OnChange_Modifier_static_002 component  is: " + JSON.stringify(JSON.parseJsonElement(strJsonNew)
         .getElement('$attrs')));
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getBoolean('content')).assertEqual('true');
+      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString('content')).assertEqual('true');
       console.info('DatePicker_OnChange_Modifier_static_002 END');
       done();
     });

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -61,6 +62,9 @@ struct VideoCreateComponent {
         })
         .onUpdate((): void  => {
           console.info("onUpdate");
+        })
+        .onError((): void  => {
+          console.info("onError");
         })
 
       Row() {

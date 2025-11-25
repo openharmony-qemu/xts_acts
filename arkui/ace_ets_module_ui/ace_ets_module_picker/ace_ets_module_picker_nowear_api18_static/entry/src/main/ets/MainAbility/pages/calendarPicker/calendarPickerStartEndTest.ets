@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,10 +30,6 @@ struct CalendarPickerExample {
           .textStyle({ color: '#ff182431', font: { size: 20, weight: FontWeight.Normal } })
           .margin(10)
           .id('CalendarPicker02')
-        CalendarPicker({ hintRadius: 10/*, start: null, end: null*/ })
-          .textStyle({ color: '#ff182431', font: { size: 20, weight: FontWeight.Normal } })
-          .margin(10)
-          .id('CalendarPicker03')
         CalendarPicker({ hintRadius: 10, start: undefined, end: undefined })
           .textStyle({ color: '#ff182431', font: { size: 20, weight: FontWeight.Normal } })
           .margin(10)

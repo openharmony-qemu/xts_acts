@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,11 +24,11 @@ import { LengthMetrics } from '@kit.ArkUI'
 @Entry
 @Component
 struct TextPickerTextStyleAnimation {
-  private select: int = 1
-  private fruits: string[] = ['AAAAA', 'BBBBBBBBBBBBB', 'CCCC', 'DDDDDDDD', 'EEE']
-  @State textStyleAnimation: boolean | undefined = true
-  @State minFontSize: undefined|number|string|Resource = 18 as undefined|number|string|Resource
-  @State maxFontSize: undefined|number|string|Resource = 28 as undefined|number|string|Resource
+  private select: int = 1;
+  private fruits: string[] = ['AAAAA', 'BBBBBBBBBBBBB', 'CCCC', 'DDDDDDDD', 'EEE'];
+  @State textStyleAnimation: boolean | undefined = true;
+  @State minFontSize: undefined | double | string | Resource = 18 as undefined | double | string | Resource;
+  @State maxFontSize: undefined | double | string | Resource = 28 as undefined | double | string | Resource;
   @State overflow: TextOverflow | undefined = TextOverflow.Ellipsis
 
   build() {
@@ -73,7 +74,6 @@ struct TextPickerTextStyleAnimation {
           .height('5%')
           .key('TextStyleAnimation_NULL')
           .onClick((e:ClickEvent) => {
-            // this.textStyleAnimation = null
           })
       }
     }.width('100%').height('100%')

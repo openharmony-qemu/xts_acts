@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -52,8 +53,7 @@ export default function textPickerDialogDisableTextStyleAnimationTest() {
       console.info('textPickerDialogDisableTextStyleAnimationTest beforeEach end');
     });
     
-    
-/*
+    /*
      * @tc.number   textPickerDialogDisableTextStyleAnimationTest_static_001
      * @tc.name     textPickerDialogDisableTextStyleAnimationTest_static_001
      * @tc.desc     textPickerDialogDisableTextStyleAnimationTest_static_001
@@ -82,8 +82,7 @@ it('textPickerDialogDisableTextStyleAnimationTest_static_001', Level.LEVEL0, asy
     });
 
     
-    
-/*
+    /*
      * @tc.number   textPickerDialogDisableTextStyleAnimationTest_static_002
      * @tc.name     textPickerDialogDisableTextStyleAnimationTest_static_002
      * @tc.desc     textPickerDialogDisableTextStyleAnimationTest_static_002
@@ -112,8 +111,7 @@ it('textPickerDialogDisableTextStyleAnimationTest_static_002', Level.LEVEL0, asy
     });
 
     
-    
-/*
+    /*
      * @tc.number   textPickerDialogDisableTextStyleAnimationTest_static_003
      * @tc.name     textPickerDialogDisableTextStyleAnimationTest_static_003
      * @tc.desc     textPickerDialogDisableTextStyleAnimationTest_static_003
@@ -142,8 +140,7 @@ it('textPickerDialogDisableTextStyleAnimationTest_static_003', Level.LEVEL0, asy
     });
 
     
-    
-/*
+    /*
      * @tc.number   textPickerDialogDisableTextStyleAnimationTest_static_004
      * @tc.name     textPickerDialogDisableTextStyleAnimationTest_static_004
      * @tc.desc     textPickerDialogDisableTextStyleAnimationTest_static_004

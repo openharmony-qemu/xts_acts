@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -18,7 +19,7 @@ import { State } from '@ohos.arkui.stateManagement'
 class SelectTime{
   private selectTime: Date = new Date('2020-12-25T08:30:00')
   hours(h:number,m:number){
-    this.selectTime.setHours(h as Int,m as Int)
+    this.selectTime.setHours(h.toInt(), m.toInt())
   }
 }
 

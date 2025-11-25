@@ -1,5 +1,6 @@
+'use static';
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -104,7 +105,7 @@ struct CheckBoxGroupSelectAll {
       Scroll() {
         Column() {
           CheckboxGroup({ group: 'checkboxGroup' })
-            .selectedColor('0xed6f21')
+            .selectedColor(0xed6f21)
             .key('CheckboxGroup')
             .selectAll(this.isSelect)
             .onChange((itemName: CheckboxGroupResult):void => {

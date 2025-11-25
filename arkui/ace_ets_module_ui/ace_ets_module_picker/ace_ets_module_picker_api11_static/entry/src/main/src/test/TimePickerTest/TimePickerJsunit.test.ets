@@ -1,5 +1,6 @@
-/**
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+'use static';
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix, Rect } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -64,16 +65,21 @@ export default function TimePickerJsunit() {
       await sleep(2);
     });
 
+    afterEach(async (): Promise<void> => {
+      console.info('[TimePicker] after each called');
+      const toggle = AppStorage.get<Router>("toggle") as Router
+      toggle.clear();
+      await sleep(1)
+    });
 
 
-    
     /*
      * @tc.number   TimePickerJsunit_static_0100
      * @tc.name     TimePickerJsunit_static_0100
      * @tc.desc     TimePickerJsunit_static_0100
      * @tc.level    Level.LEVEL1
      */
-it('TimePickerJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('TimePickerJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       // Verify 12-hour function of TimePicker component
       // switch 12-hour
       console.info('[TimePickerJsunit_static_0100] START');
@@ -125,14 +131,14 @@ it('TimePickerJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promi
       done();
     });
 
-    
+
     /*
      * @tc.number   TimePickerJsunit_static_0200
      * @tc.name     TimePickerJsunit_static_0200
      * @tc.desc     TimePickerJsunit_static_0200
      * @tc.level    Level.LEVEL1
      */
-it('TimePickerJsunit_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('TimePickerJsunit_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       // Verify switch 12-hour/24-hour system of TimePicker component
       console.info('[TimePickerJsunit_static_0200] START');
       // Verify switch 24-hour
@@ -157,14 +163,13 @@ it('TimePickerJsunit_static_0200', Level.LEVEL1, async (done: () => void): Promi
     });
 
 
-    
     /*
      * @tc.number   TimePickerJsunit_static_0300
      * @tc.name     TimePickerJsunit_static_0300
      * @tc.desc     TimePickerJsunit_static_0300
      * @tc.level    Level.LEVEL1
      */
-it('TimePickerJsunit_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('TimePickerJsunit_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       // Verify 24-hour function of TimePicker component
       console.info('[TimePickerJsunit_static_0300] START');
       let driver = Driver.create()

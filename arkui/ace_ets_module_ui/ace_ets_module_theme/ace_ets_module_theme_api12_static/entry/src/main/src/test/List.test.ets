@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,9 +21,9 @@ import themePageSliderTest from "./theme/themePageSliderTest.test";
 import APIFontPrimaryTest from "./theme/APIFontPrimaryTest.test";
 import themePageListTest from "./theme/themePageListTest.test";
 export default function testsuite() {
-  APIFontPrimaryTest();//WithTheme
-  // themePageTest(); //WithTheme
-  // themePageToggleTest(); //WithTheme
-  // themePageSliderTest(); //WithTheme
-  // themePageListTest(); //WithTheme
+  APIFontPrimaryTest();
+  themePageTest();
+  themePageToggleTest();
+  themePageSliderTest();
+  themePageListTest();
 }

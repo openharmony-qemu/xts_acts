@@ -1,5 +1,6 @@
-/**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+'use static';
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -58,6 +59,8 @@ export default function TimePickerTest() {
         console.info("get TimePicker state pages:" + JSON.stringify(pages));
         if (!("TimePicker" == pages.name)) {
           console.info("get TimePicker pages.name:" + JSON.stringify(pages.name));
+
+
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -69,14 +72,13 @@ export default function TimePickerTest() {
 
 
 
-    
     /*
      * @tc.number   TimePicker_static_001
      * @tc.name     TimePicker_static_001
      * @tc.desc     TimePicker_static_001
      * @tc.level    Level.LEVEL1
      */
-it('TimePicker_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('TimePicker_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
 
       console.info('[TimePicker_static_001] START');
       await CommonFunc.sleep(1000);
@@ -85,7 +87,7 @@ it('TimePicker_static_001', Level.LEVEL1, async (done: () => void): Promise<void
       let obj = JSON.parseJsonElement(strJson);
       console.info("[TimePicker_static_001] component obj is: " + JSON.stringify(obj));
       await CommonFunc.sleep(1000);
-      expect(obj.getElement('$type').asString()).assertEqual('TimePicker');
+      expect(obj.getElement('$type')).assertEqual('TimePicker');
 
       console.info('[TimePicker_static_001] END');
       done();

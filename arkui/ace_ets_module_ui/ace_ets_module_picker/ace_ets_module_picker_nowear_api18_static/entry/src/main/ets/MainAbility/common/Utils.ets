@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,24 +14,10 @@
  * limitations under the License.
  */
 import RectValue from './Rect';
-import {
-  State,
-} from '@ohos.arkui.stateManagement' // should be insert by ui-plugins // should be insert by ui-plugins
-import {
-  Button,
-  ButtonAttribute,
-  ClickEvent,
-  Column,
-  Component,
-  Entry,
-  Text,
-  TextAttribute,
-  TouchObject,
-  TouchType
-} from '@ohos.arkui.component' // TextAttribute should be insert by ui-plugins
-import inspector from '@ohos.arkui.inspector';
-import { sendTouchEvent } from '@ohos.arkui.Test';
-import common from '@ohos.app.ability.common';
+import { Entry, Text, TextAttribute, Column, Component, Button, ButtonAttribute, ClickEvent, TouchObject, TouchType } from '@ohos.arkui.component'  // TextAttribute should be insert by ui-plugins
+import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
+import inspector from '@ohos.arkui.inspector'
+import { sendTouchEvent } from "@kit.ArkUI";
 
 export default class Utils {
   static rect_left: number = 0;

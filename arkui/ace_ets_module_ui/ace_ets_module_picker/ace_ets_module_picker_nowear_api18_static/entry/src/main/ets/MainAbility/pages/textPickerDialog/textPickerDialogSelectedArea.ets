@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -16,24 +17,25 @@ import { Entry, Column, ColumnOptions, RowOptions, Component, Row, Button, Click
 import { State } from '@ohos.arkui.stateManagement'
 
 class SelectedValue{
-  private select: number = 2
-  set(val:number){
+  private select: int = 2
+  set(val: int){
     this.select = val
   }
 }
 class SelectedArray{
-  private select: number[] = []
-  set(val:number[]){
+  private select: int[] = []
+  set(val: int[]){
     this.select = val
   }
 }
+
 @Entry
 @Component
 struct TextPickerDialogSelectedAreaExample {
   @State selectTime: Date = new Date('2023-12-25T08:30:00');
-  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5']
-  private select: Int  = 0;
-  @State selectedFlag: string = ''
+  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5'];
+  private select: int = 0;
+  @State selectedFlag: string = '';
   build() {
     Column() {
       Button('showTextPickerDialog ' + this.selectedFlag)
@@ -49,7 +51,6 @@ struct TextPickerDialogSelectedAreaExample {
               let selectedVal = new SelectedValue()
               let selectedArr = new SelectedArray()
               if(value.index){
-                // value.index instanceof Array?selectedArr.set(value.index) : selectedVal.set(value.index)
               }
               console.info('TextPickerDialog:onAccept()' + JSON.stringify(value))
             },

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,12 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry,Column,Component,Button,Video,VideoController,Text,HorizontalAlign,
+import { Entry,Column,Component,Button,Video,VideoController,Text,
   ColumnOptions,ImageFit,Row,ClickEvent,SeekMode,Color,Blank,Scroll,  Padding } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import { LengthMetrics } from '@ohos.arkui.node'
-import { UIContext } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
+
 @Entry
 @Component
 struct SafeAreaPadding_01 {
@@ -25,14 +25,7 @@ struct SafeAreaPadding_01 {
   @State column_safeArea_bottom: number = 0;
   @State column_safeArea_left: number = 0;
   @State column_safeArea_right: number = 0;
-  aboutToAppear(){
-    try {
-      let uiContext = this.getUIContext();
-      AppStorage.setOrCreate<UIContext>('uiContext', uiContext);
-    } catch (error: Error) {
-      console.log('error ' + error);
-    }
-  }
+
   build() {
     Column({ space: 20 } as ColumnOptions) {
       Column() {
@@ -52,7 +45,7 @@ struct SafeAreaPadding_01 {
       .backgroundColor(Color.Pink)
       .width(200)
       .height('40%')
-      .alignItems(HorizontalAlign.Start)
+      
       .safeAreaPadding({
         top: this.column_safeArea_top,
         bottom: this.column_safeArea_bottom,

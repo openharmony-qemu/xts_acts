@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -54,8 +55,7 @@ export default function TimePickerDialogShadowTest() {
       console.info("TimePickerDialogShadow after each called");
     });
     
-    
-/*
+    /*
      * @tc.number   TimePickerDialogShadowTest_static_001
      * @tc.name     TimePickerDialogShadowTest_static_001
      * @tc.desc     TimePickerDialogShadowTest_static_001
@@ -76,8 +76,7 @@ it('TimePickerDialogShadowTest_static_001', Level.LEVEL0, async (done: () => voi
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   TimePickerDialogShadowTest_static_002
      * @tc.name     TimePickerDialogShadowTest_static_002
      * @tc.desc     TimePickerDialogShadowTest_static_002
@@ -98,8 +97,7 @@ it('TimePickerDialogShadowTest_static_002', Level.LEVEL0, async (done: () => voi
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   TimePickerDialogShadowTest_static_003
      * @tc.name     TimePickerDialogShadowTest_static_003
      * @tc.desc     TimePickerDialogShadowTest_static_003
@@ -120,8 +118,7 @@ it('TimePickerDialogShadowTest_static_003', Level.LEVEL0, async (done: () => voi
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   TimePickerDialogShadowTest_static_004
      * @tc.name     TimePickerDialogShadowTest_static_004
      * @tc.desc     TimePickerDialogShadowTest_static_004
@@ -142,8 +139,7 @@ it('TimePickerDialogShadowTest_static_004', Level.LEVEL0, async (done: () => voi
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   TimePickerDialogShadowTest_static_005
      * @tc.name     TimePickerDialogShadowTest_static_005
      * @tc.desc     TimePickerDialogShadowTest_static_005
@@ -164,8 +160,7 @@ it('TimePickerDialogShadowTest_static_005', Level.LEVEL0, async (done: () => voi
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   TimePickerDialogShadowTest_static_006
      * @tc.name     TimePickerDialogShadowTest_static_006
      * @tc.desc     TimePickerDialogShadowTest_static_006
@@ -186,8 +181,7 @@ it('TimePickerDialogShadowTest_static_006', Level.LEVEL0, async (done: () => voi
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   TimePickerDialogShadowTest_static_007
      * @tc.name     TimePickerDialogShadowTest_static_007
      * @tc.desc     TimePickerDialogShadowTest_static_007

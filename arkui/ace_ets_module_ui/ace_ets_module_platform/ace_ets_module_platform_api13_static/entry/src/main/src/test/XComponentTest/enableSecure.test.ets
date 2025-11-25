@@ -1,6 +1,8 @@
-/**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+'use static';
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -26,7 +28,7 @@ import {
   it,
   expect,
   Level
-} from '../../../../hypium';
+} from '../../../../hypium/index';
 import router from '@ohos.router';
 import { UtilsTest } from '../Util.test';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -45,7 +47,7 @@ export default function enableSecureTest() {
     beforeAll(() => {
 
       await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.platform.api13.static", "EntryAbility")
+      await UtilsTest.startAbility("com.arkui.ace.platform.api12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
@@ -87,7 +89,7 @@ export default function enableSecureTest() {
       await CommonFunc.sleep(1000);
       await button1.click();
 	  console.info('enableSecureTest_static_0010 Click1');
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(1500);
       let button2 = await (driver.findComponent(ON.id('enableSecureTest_button2')) as Promise<Component>);
 	  console.info('enableSecureTest_static_0010 getButton2');
       await CommonFunc.sleep(1000);
@@ -99,8 +101,8 @@ export default function enableSecureTest() {
 	  console.info("[enableSecureTest_static_0010] img1_attrs_enableSecure: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('enableSecure')));
 	  console.info("[enableSecureTest_static_0010] img1_attrs_height: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString('height')));
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('enableSecure')).assertEqual('true');
-
-      console.info('[enableSecureTest_static_0010] END');
+	  
+      console.info('[enableSecureTest_static_0010] END'); 
       done();
     });
   })

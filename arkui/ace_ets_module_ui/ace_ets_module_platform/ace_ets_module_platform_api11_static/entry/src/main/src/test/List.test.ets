@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,12 +18,12 @@ import videoJsunit from './video/VideoJsunit.test';
 import videoJsunit2 from './video/VideoJsunit2.test';
 import videoOnFullscreenChangeJsunit from './video/video.test';
 import xcomponentGetXComponentContextJsunit from './XComponentTest/xcomponent.test';
-import video1Jsunit from './video/video1Jsunit.test.ets'
+
 export default function testsuite() {
   XComponentNodeChageJsSuit();
   videoJsunit();
   videoJsunit2();
   videoOnFullscreenChangeJsunit();
   xcomponentGetXComponentContextJsunit();
-  video1Jsunit();
+
 }

@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -55,8 +56,7 @@ export default function CalendarPickerDialogBGColorTest() {
     });
 
     
-    
-/*
+    /*
      * @tc.number   CalendarPickerDialogBGColorTest_static_001
      * @tc.name     CalendarPickerDialogBGColorTest_static_001
      * @tc.desc     CalendarPickerDialogBGColorTest_static_001
@@ -77,8 +77,7 @@ it('CalendarPickerDialogBGColorTest_static_001', Level.LEVEL0, async (done: () =
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   CalendarPickerDialogBGColorTest_static_002
      * @tc.name     CalendarPickerDialogBGColorTest_static_002
      * @tc.desc     CalendarPickerDialogBGColorTest_static_002
@@ -99,8 +98,7 @@ it('CalendarPickerDialogBGColorTest_static_002', Level.LEVEL0, async (done: () =
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   CalendarPickerDialogBGColorTest_static_003
      * @tc.name     CalendarPickerDialogBGColorTest_static_003
      * @tc.desc     CalendarPickerDialogBGColorTest_static_003
@@ -121,8 +119,7 @@ it('CalendarPickerDialogBGColorTest_static_003', Level.LEVEL0, async (done: () =
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   CalendarPickerDialogBGColorTest_static_004
      * @tc.name     CalendarPickerDialogBGColorTest_static_004
      * @tc.desc     CalendarPickerDialogBGColorTest_static_004
@@ -143,8 +140,7 @@ it('CalendarPickerDialogBGColorTest_static_004', Level.LEVEL0, async (done: () =
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   CalendarPickerDialogBGColorTest_static_005
      * @tc.name     CalendarPickerDialogBGColorTest_static_005
      * @tc.desc     CalendarPickerDialogBGColorTest_static_005
@@ -165,8 +161,7 @@ it('CalendarPickerDialogBGColorTest_static_005', Level.LEVEL0, async (done: () =
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   CalendarPickerDialogBGColorTest_static_006
      * @tc.name     CalendarPickerDialogBGColorTest_static_006
      * @tc.desc     CalendarPickerDialogBGColorTest_static_006
@@ -192,8 +187,7 @@ it('CalendarPickerDialogBGColorTest_static_006', Level.LEVEL0, async (done: () =
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   CalendarPickerDialogBGColorTest_static_007
      * @tc.name     CalendarPickerDialogBGColorTest_static_007
      * @tc.desc     CalendarPickerDialogBGColorTest_static_007
@@ -219,8 +213,7 @@ it('CalendarPickerDialogBGColorTest_static_007', Level.LEVEL0, async (done: () =
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   CalendarPickerDialogBGColorTest_static_008
      * @tc.name     CalendarPickerDialogBGColorTest_static_008
      * @tc.desc     CalendarPickerDialogBGColorTest_static_008
@@ -246,8 +239,7 @@ it('CalendarPickerDialogBGColorTest_static_008', Level.LEVEL0, async (done: () =
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   CalendarPickerDialogBGColorTest_static_009
      * @tc.name     CalendarPickerDialogBGColorTest_static_009
      * @tc.desc     CalendarPickerDialogBGColorTest_static_009

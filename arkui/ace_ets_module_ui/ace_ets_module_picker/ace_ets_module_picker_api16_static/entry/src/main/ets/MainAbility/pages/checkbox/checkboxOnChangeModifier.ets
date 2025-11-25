@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +14,7 @@
  * limitations under the License.
  */
 
-// import {CheckboxModifier}from '@ohos.arkui.modifier'
+
 import {
   Entry, Component, Builder,NodeContainer, CheckBoxShape,
   Column, ColumnOptions, ImageAnalyzerType, CheckboxGroup, Checkbox,
@@ -26,23 +27,23 @@ import { State } from '@ohos.arkui.stateManagement';
 @Component
 struct CheckboxExample {
 
-  //Tab1
+  
   @State checkboxOnChangeModValueTure: String = ''
   @State checkboxOnChangeModValueFalse: String = ''
-  // @State modifierTrue: CheckboxModifier  = new CheckboxModifier().onChange((value: boolean) => {
-  //   if (value) {
-  //     this.checkboxOnChangeModValueTure = 'true'
-  //   } else {
-  //     this.checkboxOnChangeModValueTure = 'false'
-  //   }
-  // })
-  // @State modifierFalse: CheckboxModifier  = new CheckboxModifier().onChange((value: boolean) => {
-  //   if (value) {
-  //     this.checkboxOnChangeModValueFalse = 'true'
-  //   } else {
-  //     this.checkboxOnChangeModValueFalse = 'false'
-  //   }
-  // })
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
 
   build() {
@@ -51,15 +52,15 @@ struct CheckboxExample {
         .select(true)
         .selectedColor(0xed6f21)
         .shape(CheckBoxShape.CIRCLE)
-        // .attributeModifier(this.modifierTrue)
-        .id('mcheckbox1')
+        
+        
       Text(this.checkboxOnChangeModValueTure.toString()).id('checkboxOnChangeModTrue')
       Checkbox({ name: 'mcheckbox2', group: 'checkboxGroup' })
         .select(false)
         .selectedColor(0xed6f21)
         .shape(CheckBoxShape.CIRCLE)
-        // .attributeModifier(this.modifierFalse)
-        .id('mcheckbox2')
+        
+        
       Text(this.checkboxOnChangeModValueFalse.toString()).id('checkboxOnChangeModFalse')
     }.width('100%')
   }

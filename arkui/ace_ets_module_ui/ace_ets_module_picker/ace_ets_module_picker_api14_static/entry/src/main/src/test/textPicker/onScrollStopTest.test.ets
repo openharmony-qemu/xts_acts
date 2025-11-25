@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -46,12 +47,11 @@ export default function onScrollStopTest(){
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info('get onScrollStopTest state pages: ' + JSON.stringify(pages));
-        if (!('MainAbility/pages/textPicker/onScrollStopTest' == pages.name)) {     //   'onScrollStopTest' == pages.name
+        if (!('onScrollStopTest' == pages.name)) {
           console.info('get onScrollStopTest state pages.name: ' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          // let result = await routerInstance.replace(options);
+          
           await CommonFunc.sleep(2000);
-          // console.info('push onScrollStopTest success: ' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push onScrollStopTest page error: ' + err);
@@ -59,6 +59,7 @@ export default function onScrollStopTest(){
       }
     });
 
+    
     
     
     /*
@@ -89,6 +90,7 @@ export default function onScrollStopTest(){
 
     
     
+    
     /*
      * @tc.number   onScrollStopTest_static_0200
      * @tc.name     onScrollStopTest_static_0200
@@ -100,13 +102,9 @@ export default function onScrollStopTest(){
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let btn1 = await driver.findComponent(ON.id('myTextPicker1'));
-      console.log('++++++++++++++++++++++1')
       await btn1!.click()
-      console.log('++++++++++++++++++++++2')
       let btn2 = await driver.findComponent(ON.text('确定'));
-      console.log('++++++++++++++++++++++3')
       await btn2!.click()
-      console.log('++++++++++++++++++++++4')
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('text1');
       console.info('[onScrollStopTest_static_0200] onScrollStopTest JSON.parseJsonElement(strJson) is: ' + JSON.stringify(strJson));

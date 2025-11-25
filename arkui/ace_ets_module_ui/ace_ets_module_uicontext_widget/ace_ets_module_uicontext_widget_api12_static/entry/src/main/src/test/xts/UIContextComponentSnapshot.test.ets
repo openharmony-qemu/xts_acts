@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,7 +27,7 @@ export default function UIContextComponentSnapshotJsunit() {
     beforeAll(() => {
       console.info("UIContextComponentSnapshotTest beforeEach start");
       await UtilsTest.msSleep(4000)
-      await startAbility("com.example.myapplication.static", "EntryAbility")
+      await startAbility("com.arkui.ace.uicontext_widget_api12_static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
     beforeEach(async () => {
@@ -41,7 +42,7 @@ export default function UIContextComponentSnapshotJsunit() {
         console.info('get UIContextComponentSnapshot state pages:' + JSON.stringify(pages));
         if (!('UIContextComponentSnapshot' == pages.name)) {
           console.info('get UIContextComponentSnapshot state pages.name:' + JSON.stringify(pages.name));
-          // let result = await router.pushUrl(options);
+          
           router.pushUrl(options);
           await Utils.sleep(2000);
         }
@@ -69,7 +70,7 @@ it('UIContextComponentSnapshotTest_static_0100', Level.LEVEL0, async (done: ()=>
       await (button?.click() as Promise<void>);
       await Utils.sleep(1000);
       let text =  inspector.getInspectorByKey('key_getComponentSnapshot_text_01');
-      expect(JSON.parseJsonElement(text).getElement('$attrs').getString('content')).assertEqual('snapshot');//UIContextComponentSnapshotTest_static_0100, expect  equals snapshot
+      expect(JSON.parseJsonElement(text).getElement('$attrs').getString('content')).assertEqual('snapshot');
       console.info('UIContextComponentSnapshotTest_0100 END');
       done();
     });

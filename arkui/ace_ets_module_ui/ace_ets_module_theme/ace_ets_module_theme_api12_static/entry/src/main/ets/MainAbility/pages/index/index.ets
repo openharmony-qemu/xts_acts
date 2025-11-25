@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,42 +13,47 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight, ButtonType, ClickEvent, Margin} from '@ohos.arkui.component'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import common2D from '@ohos.graphics.displaySync'
-import common from '@ohos.app.ability.common';
 
+import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
+import { Hypium } from '../../../../../hypium/index'
+import testsuite from '../../../../src/test/List.test';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage,State } from '@ohos.arkui.stateManagement';
+import {
+  Entry, Component,
+  Column, ColumnOptions, 
+  Flex, FlexDirection, ItemAlign, FlexAlign,
+  Text, Button, FontWeight, ClickEvent, Margin, Color,
+} from '@ohos.arkui.component'
 
 @Entry
 @Component
 struct Index {
-
-  aboutToAppear(){
+  aboutToAppear() {
+    console.info('start run testcase!!!!')
+    let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator
+    abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
+    let abilityDelegatorArguments: AbilityDelegatorRegistry.AbilityDelegatorArgs
+    abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
+    console.info('start run testcase!!!')
+    Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
     try {
       let router1 = this.getUIContext().getRouter();
-      AppStorage.setOrCreate<Router>('router', router1);
-    } catch (error: Error) {
+      AppStorage.setOrCreate<Router>('router', router1 );
+    } catch (error) {
       console.log('error ' + error);
     }
   }
 
   build() {
-    Flex({ direction:FlexDirection.Column, alignItems:ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-      Text('Hello World')
+    Flex({
+      direction: FlexDirection.Column,
+      alignItems: ItemAlign.Center,
+      justifyContent: FlexAlign.Center
+    }) {
+      Text('Dynamic Style ETS TEST')
         .fontSize(50)
-      Button(' ') {
-        Text('next page')
-          .fontSize(25)
-      }
-      .margin({
-        top: 20
-      } as Margin)
-      .backgroundColor('#0D9FFB')
-      .onClick((e:ClickEvent) => {
-
-      })
+        .fontWeight(FontWeight.Bold)
     }
     .width('100%')
     .height('100%')

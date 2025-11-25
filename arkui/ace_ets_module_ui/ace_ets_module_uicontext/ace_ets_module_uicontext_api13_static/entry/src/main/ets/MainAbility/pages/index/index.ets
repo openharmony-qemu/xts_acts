@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,7 @@
  * limitations under the License.
  */
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import { Hypium } from '../../../../../hypium';
+import { Hypium } from '../../../../../hypium/index';
 import testsuite from '../../../../src/test/List.test'
 import { Entry, Column, Component, Flex, FlexDirection,ClickEvent,Margin,
   ItemAlign, FlexAlign, Text, Button, FontWeight, ButtonType, ClickEvent, Margin,BorderStyle, Search
@@ -38,7 +39,7 @@ struct Index {
       let indexRouter = this.getUIContext().getRouter();
       AppStorage.setOrCreate<Router>('router', indexRouter );
       AppStorage.setOrCreate<UIContext>('uiCOntext', this.getUIContext() );
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

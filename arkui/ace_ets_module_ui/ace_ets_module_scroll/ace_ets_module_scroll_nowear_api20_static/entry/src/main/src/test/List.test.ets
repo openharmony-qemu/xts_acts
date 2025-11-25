@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +18,7 @@ import focusWrapDefault from './GridTest/focusWrapDefault.test';
 import focusWrapWrap from './GridTest/focusWrapWrap.test';
 
 export default function testsuite() {
-  // barMarginFlow()   //api20接口未交付 注释导致1个用例断言失败
-  // focusWrapDefault() // pass
-  // focusWrapWrap() //api20接口未交付 导致1个用例断言失败
+  barMarginFlow()
+  focusWrapDefault()
+  focusWrapWrap()
 }

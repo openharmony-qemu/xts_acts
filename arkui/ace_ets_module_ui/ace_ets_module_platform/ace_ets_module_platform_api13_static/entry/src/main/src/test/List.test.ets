@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,5 +16,5 @@
 
 import enableSecureTest from './XComponentTest/enableSecure.test';
 export default function testsuite() {
-  enableSecureTest(); // enableSecure更新有延迟
+  enableSecureTest();
 }

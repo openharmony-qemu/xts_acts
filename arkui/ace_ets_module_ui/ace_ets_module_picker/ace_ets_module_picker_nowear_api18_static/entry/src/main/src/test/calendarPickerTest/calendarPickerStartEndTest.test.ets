@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -53,8 +54,7 @@ export default function calendarPickerStartEndTest() {
     });
     
     
-    
-/*
+    /*
      * @tc.number   CalendarPickerStartEndTest_static_001
      * @tc.name     CalendarPickerStartEndTest_static_001
      * @tc.desc     CalendarPickerStartEndTest_static_001
@@ -74,8 +74,7 @@ it('CalendarPickerStartEndTest_static_001', Level.LEVEL1, async (done: () => voi
     });
 
     
-    
-/*
+    /*
      * @tc.number   CalendarPickerStartEndTest_static_002
      * @tc.name     CalendarPickerStartEndTest_static_002
      * @tc.desc     CalendarPickerStartEndTest_static_002
@@ -95,8 +94,7 @@ it('CalendarPickerStartEndTest_static_002', Level.LEVEL1, async (done: () => voi
     });
 
     
-    
-/*
+    /*
      * @tc.number   CalendarPickerStartEndTest_static_003
      * @tc.name     CalendarPickerStartEndTest_static_003
      * @tc.desc     CalendarPickerStartEndTest_static_003
@@ -116,8 +114,7 @@ it('CalendarPickerStartEndTest_static_003', Level.LEVEL1, async (done: () => voi
     });
 
     
-    
-/*
+    /*
      * @tc.number   CalendarPickerStartEndTest_static_004
      * @tc.name     CalendarPickerStartEndTest_static_004
      * @tc.desc     CalendarPickerStartEndTest_static_004
@@ -128,8 +125,8 @@ it('CalendarPickerStartEndTest_static_004', Level.LEVEL1, async (done: () => voi
       await Utils.sleep(1000);
       let strJson = inspector.getInspectorByKey('CalendarPicker04');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("CalendarPickerStartEndTest_static_004 " + obj.getElement('$attrs'))
-      console.info("CalendarPickerStartEndTest_static_004 " + obj.getElement('$attrs'))
+      console.info("CalendarPickerStartEndTest_static_004 " + obj.getElement('$attrs').getString('start'))
+      console.info("CalendarPickerStartEndTest_static_004 " + obj.getElement('$attrs').getString('end'))
       expect(obj.getElement('$attrs').getString('start')).assertEqual(undefined)
       expect(obj.getElement('$attrs').getString('end')).assertEqual(undefined)
       console.info('CalendarPickerStartEndTest_static_004 END');
@@ -137,8 +134,7 @@ it('CalendarPickerStartEndTest_static_004', Level.LEVEL1, async (done: () => voi
     });
 
     
-    
-/*
+    /*
      * @tc.number   CalendarPickerStartEndTest_static_005
      * @tc.name     CalendarPickerStartEndTest_static_005
      * @tc.desc     CalendarPickerStartEndTest_static_005

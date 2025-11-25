@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -54,44 +55,33 @@ export default function TimePickerDialogEnableHapticFeedbackTest() {
 
     
 
-     
-/*
+     /*
      * @tc.number   TimePickerDialog_EnableHapticFeedback_static_001
      * @tc.name     TimePickerDialog_EnableHapticFeedback_static_001
      * @tc.desc     TimePickerDialog_EnableHapticFeedback_static_001
      * @tc.level    Level.LEVEL1
      */
 it('TimePickerDialog_EnableHapticFeedback_static_001', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let tagName = 'TimePickerDialog_EnableHapticFeedback_static_001aaaa';
+      let tagName = 'TimePickerDialog_EnableHapticFeedback_static_001';
       console.info('[' + tagName + '] START============================');
       await CommonFunc.sleep(1000);
       inspector.sendEventByKey('TimePickerDialog1', 10, "")
-      console.info('[' + tagName + '] START1============================');
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(1000);
       let obj1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
-      console.info('[' + tagName + '] START3============================');
-
       await CommonFunc.sleep(2000);
-      // console.info('[' + tagName + '] START2============================',obj1);
       let timePicker1 = JSON.stringify(obj1.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1])
-
-      // let timePicker1 = JSON.stringify(obj1.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1])
-      // console.info('[' + tagName + '] START3============================');
-      // console.info("[TimePickerDialog_EnableHapticFeedback_static_001] obj1 is: " + timePicker1);
-      // console.info("[TimePickerDialog_EnableHapticFeedback_static_001] obj1 is: " + JSON.stringify(JSON.parseJsonElement(timePicker1).getElement('$attrs').getString('enableHapticFeedback')));
-      // inspector.sendEventByKey('TimePickerDialog1', 10, "")
-      // // let btn1 = await  driver.findComponent(ON.text('确定'));
-      // // await (btn1?.click() as Promise<void>)
-      expect(obj1.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getElement('$attrs').getBoolean('enableHapticFeedback')).assertEqual(true);
-      // console.info('[' + tagName + '] END ===========================');
-      // await CommonFunc.sleep(2000);
+      console.info("[TimePickerDialog_EnableHapticFeedback_static_001] obj1 is: " + timePicker1);
+      console.info("[TimePickerDialog_EnableHapticFeedback_static_001] obj1 is: " + JSON.stringify(JSON.parseJsonElement(timePicker1).getElement('$attrs').getString('enableHapticFeedback')));
+      inspector.sendEventByKey('TimePickerDialog1', 10, "")
+      expect(JSON.parseJsonElement(timePicker1).getElement('$attrs').getString('enableHapticFeedback')).assertEqual(true);
+      console.info('[' + tagName + '] END ===========================');
+      await CommonFunc.sleep(2000);
       done();
     });
 
-
-
     
-/*
+
+    /*
      * @tc.number   TimePickerDialog_EnableHapticFeedback_static_002
      * @tc.name     TimePickerDialog_EnableHapticFeedback_static_002
      * @tc.desc     TimePickerDialog_EnableHapticFeedback_static_002
@@ -102,23 +92,22 @@ it('TimePickerDialog_EnableHapticFeedback_static_002', Level.LEVEL1, async (done
       console.info('[' + tagName + '] START============================');
       await CommonFunc.sleep(1000);
       inspector.sendEventByKey('TimePickerDialog2', 10, "")
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(1000);
       let obj2 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       await CommonFunc.sleep(2000);
-      // let timePicker2 = JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1])
-      // console.info("[TimePickerDialog_EnableHapticFeedback_static_002] obj2 is: " + timePicker2);
-      // console.info("[TimePickerDialog_EnableHapticFeedback_static_002] obj2 is: " + JSON.stringify(JSON.parseJsonElement(timePicker2).getElement('$attrs').getString('enableHapticFeedback')));
-      // inspector.sendEventByKey('TimePickerDialog2', 10, "")
-      expect(obj2.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getElement('$attrs').getBoolean('enableHapticFeedback')).assertEqual(false);
+      let timePicker2 = JSON.stringify(obj2.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1])
+      console.info("[TimePickerDialog_EnableHapticFeedback_static_002] obj2 is: " + timePicker2);
+      console.info("[TimePickerDialog_EnableHapticFeedback_static_002] obj2 is: " + JSON.stringify(JSON.parseJsonElement(timePicker2).getElement('$attrs').getString('enableHapticFeedback')));
+      inspector.sendEventByKey('TimePickerDialog2', 10, "")
+      expect(JSON.parseJsonElement(timePicker2).getElement('$attrs').getString('enableHapticFeedback')).assertEqual(false);
       console.info('[' + tagName + '] END ===========================');
       await CommonFunc.sleep(2000);
       done();
     });
 
-
-
     
-/*
+
+    /*
      * @tc.number   TimePickerDialog_EnableHapticFeedback_static_003
      * @tc.name     TimePickerDialog_EnableHapticFeedback_static_003
      * @tc.desc     TimePickerDialog_EnableHapticFeedback_static_003
@@ -129,23 +118,22 @@ it('TimePickerDialog_EnableHapticFeedback_static_003', Level.LEVEL1, async (done
       console.info('[' + tagName + '] START============================');
       await CommonFunc.sleep(1000);
       inspector.sendEventByKey('TimePickerDialog3', 10, "")
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(1000);
       let obj3 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       await CommonFunc.sleep(2000);
-      // let timePicker3 = JSON.stringify(obj3.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1])
-      // console.info("[TimePickerDialog_EnableHapticFeedback_static_003] obj3 is: " + timePicker3);
-      // console.info("[TimePickerDialog_EnableHapticFeedback_static_003] obj3 is: " + JSON.stringify(JSON.parseJsonElement(timePicker3).getElement('$attrs').getString('enableHapticFeedback')));
-      // inspector.sendEventByKey('TimePickerDialog3', 10, "")
-      expect(obj3.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getElement('$attrs').getBoolean('enableHapticFeedback')).assertEqual(true);
+      let timePicker3 = JSON.stringify(obj3.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1])
+      console.info("[TimePickerDialog_EnableHapticFeedback_static_003] obj3 is: " + timePicker3);
+      console.info("[TimePickerDialog_EnableHapticFeedback_static_003] obj3 is: " + JSON.stringify(JSON.parseJsonElement(timePicker3).getElement('$attrs').getString('enableHapticFeedback')));
+      inspector.sendEventByKey('TimePickerDialog3', 10, "")
+      expect(JSON.parseJsonElement(timePicker3).getElement('$attrs').getString('enableHapticFeedback')).assertEqual(true);
       console.info('[' + tagName + '] END ===========================');
       await CommonFunc.sleep(2000);
       done();
     });
 
-
-
     
-/*
+
+    /*
      * @tc.number   TimePickerDialog_EnableHapticFeedback_static_004
      * @tc.name     TimePickerDialog_EnableHapticFeedback_static_004
      * @tc.desc     TimePickerDialog_EnableHapticFeedback_static_004
@@ -156,14 +144,14 @@ it('TimePickerDialog_EnableHapticFeedback_static_004', Level.LEVEL1, async (done
       console.info('[' + tagName + '] START============================');
       await CommonFunc.sleep(1000);
       inspector.sendEventByKey('TimePickerDialog4', 10, "")
-      await CommonFunc.sleep(2000);
+      await CommonFunc.sleep(1000);
       let obj4 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       await CommonFunc.sleep(2000);
-      // let timePicker4 = JSON.stringify(obj4.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1])
-      // console.info("[TimePickerDialog_EnableHapticFeedback_static_004] obj4 is: " + timePicker4);
-      // console.info("[TimePickerDialog_EnableHapticFeedback_static_004] obj4 is: " + JSON.stringify(JSON.parseJsonElement(timePicker4).getElement('$attrs').getBoolean('enableHapticFeedback')));
-      // inspector.sendEventByKey('TimePickerDialog4', 10, "")
-      expect(obj4.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1].getElement('$attrs').getBoolean('enableHapticFeedback')).assertEqual(true);
+      let timePicker4 = JSON.stringify(obj4.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0].getArray('$children')[1])
+      console.info("[TimePickerDialog_EnableHapticFeedback_static_004] obj4 is: " + timePicker4);
+      console.info("[TimePickerDialog_EnableHapticFeedback_static_004] obj4 is: " + JSON.stringify(JSON.parseJsonElement(timePicker4).getElement('$attrs').getString('enableHapticFeedback')));
+      inspector.sendEventByKey('TimePickerDialog4', 10, "")
+      expect(JSON.parseJsonElement(timePicker4).getElement('$attrs').getString('enableHapticFeedback')).assertEqual(true);
       console.info('[' + tagName + '] END ===========================');
       await CommonFunc.sleep(2000);
       done();

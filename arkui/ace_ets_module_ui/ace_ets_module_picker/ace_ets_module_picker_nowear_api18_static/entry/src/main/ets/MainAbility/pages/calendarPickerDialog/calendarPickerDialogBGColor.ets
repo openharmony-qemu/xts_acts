@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -12,15 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, $r, ResourceColor, CalendarPickerDialog, Flex, FlexWrap, Button, Color, BlurStyle, ShadowStyle, ClickEvent, Resource } from '@ohos.arkui.component'
+import { Entry, Column, Component, $r, ResourceColor, CalendarPickerDialog, Flex, FlexWrap, Button, Color, BlurStyle, ShadowStyle, ClickEvent } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
 struct CalendarPickerDialogBGColor {
-  showDialog(color: null|undefined|Color|Double|String|Resource) {
+  showDialog(color: ResourceColor | null | undefined) {
     CalendarPickerDialog.show({
-      backgroundColor: (color as undefined|Color|Int|String|Resource),
       backgroundBlurStyle: BlurStyle.NONE,
       shadow: ShadowStyle.OUTER_FLOATING_SM,
     })

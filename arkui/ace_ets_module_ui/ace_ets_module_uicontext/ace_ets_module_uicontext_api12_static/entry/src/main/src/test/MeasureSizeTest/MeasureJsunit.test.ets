@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -12,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -55,15 +56,14 @@ export default function MeasureJsunit() {
       console.info("MeasureJsunit beforeEach end");
     }); 
 
-    /**
-     * @tc.number: ArkUI_Stage_Measure_static_0100
-     * @tc.name  : Test the text computing power of the context
-     * @tc.desc  : Test measureTextSize function
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    
+    /*
+     * @tc.number   ArkUI_Stage_Measure_static_0100
+     * @tc.name     ArkUI_Stage_Measure_static_0100
+     * @tc.desc     ArkUI_Stage_Measure_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('ArkUI_Stage_Measure_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUI_Stage_Measure_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUI_Stage_Measure_static_0100 START');
       await CommonFunc.sleep(2000);
       let strJsonMaxLine2 = inspector.getInspectorByKey('textSizeMaxLine2');
@@ -73,15 +73,14 @@ export default function MeasureJsunit() {
       expect(JSON.parseJsonElement(strJsonMaxLine2).getElement('$attrs').getString('content')).assertEqual(JSON.parseJsonElement(strJsonMaxLine3).getElement('$attrs').getString('content'));
       done();
     });
-    /**
-     * @tc.number: ArkUI_Stage_Measure_static_0200
-     * @tc.name  : Test the text computing power of the context
-     * @tc.desc  : Test measureTextSize function
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    
+    /*
+     * @tc.number   ArkUI_Stage_Measure_static_0200
+     * @tc.name     ArkUI_Stage_Measure_static_0200
+     * @tc.desc     ArkUI_Stage_Measure_static_0200
+     * @tc.level    Level.LEVEL0
      */
-    it('ArkUI_Stage_Measure_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUI_Stage_Measure_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUI_Stage_Measure_static_0200 START');
       await CommonFunc.sleep(2000);
       let driver = Driver.create();
@@ -98,15 +97,14 @@ export default function MeasureJsunit() {
         .assertLarger(Number.parseInt(JSON.parseJsonElement(strJsonMaxLine2).getElement('$attrs').getString('content')));
       done();
     });
-    /**
-     * @tc.number: ArkUI_Stage_Measure_static_0300
-     * @tc.name  : Test the text computing power of the context
-     * @tc.desc  : Test measureTextSize function
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    
+    /*
+     * @tc.number   ArkUI_Stage_Measure_static_0300
+     * @tc.name     ArkUI_Stage_Measure_static_0300
+     * @tc.desc     ArkUI_Stage_Measure_static_0300
+     * @tc.level    Level.LEVEL0
      */
-    it('ArkUI_Stage_Measure_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUI_Stage_Measure_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUI_Stage_Measure_static_0300 START');
       await CommonFunc.sleep(2000);
       let driver = Driver.create();
@@ -131,15 +129,14 @@ export default function MeasureJsunit() {
       expect(Number.parseInt(JSON.parseJsonElement(strJsonMaxLine3).getElement('$attrs').getString('content'))).assertLarger(Number.parseInt(JSON.parseJsonElement(strJsonMaxLine2).getElement('$attrs').getString('content')));
       done();
     });
-    /**
-     * @tc.number: ArkUI_Stage_Measure_static_0400
-     * @tc.name  : Test the text computing power of the context
-     * @tc.desc  : Test measureTextSize function
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    
+    /*
+     * @tc.number   ArkUI_Stage_Measure_static_0400
+     * @tc.name     ArkUI_Stage_Measure_static_0400
+     * @tc.desc     ArkUI_Stage_Measure_static_0400
+     * @tc.level    Level.LEVEL0
      */
-    it('ArkUI_Stage_Measure_static_0400', Level.LEVEL0,async (done: () => void): Promise<void> => {
+it('ArkUI_Stage_Measure_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUI_Stage_Measure_static_0400 START');
       await CommonFunc.sleep(2000);
       let driver = Driver.create();
@@ -155,15 +152,14 @@ export default function MeasureJsunit() {
       expect(JSON.parseJsonElement(strJsonMaxLine2).getElement('$attrs').getString('content')).assertEqual(JSON.parseJsonElement(strJsonMaxLine3).getElement('$attrs').getString('content'));
       done();
     });
-    /**
-     * @tc.number: ArkUI_Stage_Measure_static_0500
-     * @tc.name  : Test the text computing power of the context
-     * @tc.desc  : Test measureTextSize function
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    
+    /*
+     * @tc.number   ArkUI_Stage_Measure_static_0500
+     * @tc.name     ArkUI_Stage_Measure_static_0500
+     * @tc.desc     ArkUI_Stage_Measure_static_0500
+     * @tc.level    Level.LEVEL0
      */
-    it('ArkUI_Stage_Measure_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('ArkUI_Stage_Measure_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ArkUI_Stage_Measure_static_0500 START');
       await CommonFunc.sleep(2000);
       let driver = Driver.create();

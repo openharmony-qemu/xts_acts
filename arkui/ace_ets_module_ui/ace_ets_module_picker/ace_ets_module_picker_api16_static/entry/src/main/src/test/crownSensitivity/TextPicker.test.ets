@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium';
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Driver, ON } from '@ohos.UiTest'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -45,11 +46,11 @@ export default function TextPicker() {
           console.info("get TextPicker state pages:" + JSON.stringify(pages));
           if (!("TextPicker" == pages.name)) {
             console.info("get TextPicker pages.name:" + '');
-            // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-            // let result = await routerInstance.pushUrl(options);
+            
+            
             routerInstance.pushUrl(options);
             await CommonFunc.sleep(2000);
-            // console.info("push TextPicker page result:" + JSON.stringify(result));
+            
           }
         } catch (err) {
           console.error("push TextPicker page error:" + err);
@@ -76,7 +77,7 @@ export default function TextPicker() {
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_TextPicker_ComponentTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-          // Verify the functions of the ArcAlphabetIndexer component
+          
           console.info('[ArkUX_Stage_TextPicker_ComponentTest_static_0100] START');
           let strJson = inspector.getInspectorByKey('textpicker01');
           let obj = JSON.parseJsonElement(strJson);
@@ -99,7 +100,7 @@ it('ArkUX_Stage_TextPicker_ComponentTest_static_0100', Level.LEVEL1, async (done
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_TextPicker_ComponentTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
-          // Verify the functions of the ArcAlphabetIndexer component
+          
           console.info('[ArkUX_Stage_TextPicker_ComponentTest_static_0200] START');
           let strJson = inspector.getInspectorByKey('textpicker02');
           let obj = JSON.parseJsonElement(strJson);
@@ -123,7 +124,7 @@ it('ArkUX_Stage_TextPicker_ComponentTest_static_0200', Level.LEVEL1, async (done
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_TextPicker_ComponentTest_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
-          // Verify the functions of the ArcAlphabetIndexer component
+          
           console.info('[ArkUX_Stage_TextPicker_ComponentTest_static_0300] START');
           let strJson = inspector.getInspectorByKey('textpicker03');
           let obj = JSON.parseJsonElement(strJson);
@@ -144,7 +145,7 @@ it('ArkUX_Stage_TextPicker_ComponentTest_static_0300', Level.LEVEL1, async (done
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_TextPicker_ComponentTest_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
-          // Verify the functions of the ArcAlphabetIndexer component
+          
           console.info('[ArkUX_Stage_TextPicker_ComponentTest_static_0400] START');
           let strJson = inspector.getInspectorByKey('textpicker04');
           let obj = JSON.parseJsonElement(strJson);
@@ -166,7 +167,7 @@ it('ArkUX_Stage_TextPicker_ComponentTest_static_0400', Level.LEVEL1, async (done
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_TextPicker_ComponentTest_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
-          // Verify the functions of the ArcAlphabetIndexer component
+          
           console.info('[ArkUX_Stage_TextPicker_ComponentTest_static_0500] START');
           let strJson = inspector.getInspectorByKey('textpicker05');
           let obj = JSON.parseJsonElement(strJson);
@@ -187,7 +188,7 @@ it('ArkUX_Stage_TextPicker_ComponentTest_static_0500', Level.LEVEL1, async (done
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_TextPicker_ComponentTest_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
-        // Verify the functions of the ArcAlphabetIndexer component
+        
         console.info('[ArkUX_Stage_TextPicker_ComponentTest_static_0600] START');
         let strJson = inspector.getInspectorByKey('textpicker06');
         let obj = JSON.parseJsonElement(strJson);
@@ -208,7 +209,7 @@ it('ArkUX_Stage_TextPicker_ComponentTest_static_0600', Level.LEVEL1, async (done
      * @tc.level    Level.LEVEL1
      */
 it('ArkUX_Stage_TextPicker_ComponentTest_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
-        // Verify the functions of the ArcAlphabetIndexer component
+        
         console.info('[ArkUX_Stage_TextPicker_ComponentTest_static_0700] START');
         let strJson = inspector.getInspectorByKey('textpicker07');
         let obj = JSON.parseJsonElement(strJson);

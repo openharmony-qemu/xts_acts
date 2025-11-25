@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,25 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import { TextCase, TextDecorationType, Resource } from '@ohos.arkui.component';
-
-export class Message {
-  name: string = ''
-  value: string | number | TextCase | TextDecorationType | boolean | Resource = ''
+export interface Message<T> {
+  name: string;
+  value: T;
 }
 
-export type Callback = (message: Message) => void
+export type Callback<T> = (message: Message<T>) => void;
 
-export class MessageManager {
-  callback?: Callback = undefined
-  callbacks: Map<string, Callback> = new Map<string, Callback>()
+export class MessageManager<T> {
+  callback?: Callback<T>
+  callbacks: Map<string, Callback<T>> = new Map<string, Callback<T>>()
 
   constructor() {
 
   }
 
-  registerCallback(callback: Callback, type?: string) {
+  registerCallback(callback: Callback<T>, type?: string) {
     if (type == undefined) {
       console.error('registerCallback callback set')
       this.callback = callback
@@ -39,15 +37,13 @@ export class MessageManager {
     this.callbacks.set(type, callback)
   }
 
-  notify(message: Message, type?: string) {
+  notify(message: Message<T>, type?: string) {
     if (type == undefined) {
-      if (this.callback !== undefined) {
-        this.callback!(message)
-      }
+      this.callback?.(message)
       return
     }
 
-    let tmpCallback: Callback | undefined = this.callbacks.get(type)
+    let tmpCallback: Callback<T> = this.callbacks.get(type)!;
     if (tmpCallback === undefined) {
       console.error('callbacks has no callback for type ' + type)
       return

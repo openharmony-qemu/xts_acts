@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +14,7 @@
  * limitations under the License.
  */
 import { typeNode, NodeController, FrameNode } from  '@ohos.arkui.node';
-import { MenuItemModifier, SymbolGlyphModifier } from '@ohos.arkui.modifier'
+import { /*MenuItemModifier,*/ SymbolGlyphModifier } from '@ohos.arkui.modifier'
 import { Entry, Component, Column, $r, Color, Margin, NodeContainer } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import { UIContext } from '@ohos.arkui.UIContext';
@@ -26,14 +27,7 @@ class MyNodeController extends  NodeController {
     let node = new FrameNode(uiContext)
     let col = typeNode.createColumnNode(uiContext)
     col.initialize()
-    let select = typeNode.createSelectNode(uiContext)
-    select.initialize([{ value: 'item1', icon: $r('app.media.icon'), symbolIcon: symbolModifier1 },
-      { value: 'item1', icon: $r('app.media.icon'), symbolIcon: symbolModifier2 },
-      { value: 'item1', icon: $r('app.media.icon'), symbolIcon: undefined } ,
-      { value: 'item1', icon: $r('app.media.icon'), symbolIcon: undefined }])
-      .key('key_Select_001')
     node.appendChild(col)
-    col.appendChild(select)
     return node
   }
 }

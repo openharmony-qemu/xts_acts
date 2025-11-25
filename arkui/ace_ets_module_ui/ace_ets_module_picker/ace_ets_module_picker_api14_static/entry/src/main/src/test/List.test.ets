@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,7 +19,7 @@ import accessibilitySelectedTypeTest from './chip/accessibilitySelectedTypeTest.
 import onScrollStopTest from './textPicker/onScrollStopTest.test';
 import maxFontScaleTest from './segmentButton/maxFontScaleTest.test'
 export default function testsuite() {
-  // accessibilitySelectedTypeTest()   //11.13SDK上没有chip，B018交付
-  onScrollStopTest()  // 用例1 pass ,用例2 （page53）uiContext.showTextPickerDialog app died
-  // maxFontScaleTest()  // 编译问题
+  accessibilitySelectedTypeTest()
+  onScrollStopTest()
+  maxFontScaleTest()
 }

@@ -1,5 +1,6 @@
-/**
- * Copyright (c) 2024 Shenzhen Kaihong Digital Industry Development Co., Ltd.
+'use static';
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -49,12 +50,12 @@ import {
 import {
   State,
   Link,
-  Prop
+  PropRef
 } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct Slider23 {
-  @State outSetValueOne: number = 0
+  @State outSetValueOne: double = 0
   @State sliderMode:SliderChangeMode | int = 0
 
   build() {
@@ -70,7 +71,7 @@ struct Slider23 {
         .blockSize({ width: 10, height: 30 })
         .trackThickness(60)
         .showTips(true)
-        .onChange((value: number, mode: SliderChangeMode) => {
+        .onChange((value: double, mode: SliderChangeMode) => {
           this.outSetValueOne = value
           this.sliderMode = mode
           console.info('value:' + value + 'mode:' + mode.toString())

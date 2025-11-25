@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -55,8 +56,7 @@ export default function DatePickerDialogBGBlurStyleTest() {
     });
 
     
-    
-/*
+    /*
      * @tc.number   DatePickerDialogBGBlurStyleTest_static_001
      * @tc.name     DatePickerDialogBGBlurStyleTest_static_001
      * @tc.desc     DatePickerDialogBGBlurStyleTest_static_001
@@ -82,8 +82,7 @@ it('DatePickerDialogBGBlurStyleTest_static_001', Level.LEVEL0, async (done: () =
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   DatePickerDialogBGBlurStyleTest_static_002
      * @tc.name     DatePickerDialogBGBlurStyleTest_static_002
      * @tc.desc     DatePickerDialogBGBlurStyleTest_static_002
@@ -109,8 +108,7 @@ it('DatePickerDialogBGBlurStyleTest_static_002', Level.LEVEL0, async (done: () =
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   DatePickerDialogBGBlurStyleTest_static_003
      * @tc.name     DatePickerDialogBGBlurStyleTest_static_003
      * @tc.desc     DatePickerDialogBGBlurStyleTest_static_003
@@ -136,8 +134,7 @@ it('DatePickerDialogBGBlurStyleTest_static_003', Level.LEVEL0, async (done: () =
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   DatePickerDialogBGBlurStyleTest_static_004
      * @tc.name     DatePickerDialogBGBlurStyleTest_static_004
      * @tc.desc     DatePickerDialogBGBlurStyleTest_static_004
@@ -163,8 +160,7 @@ it('DatePickerDialogBGBlurStyleTest_static_004', Level.LEVEL0, async (done: () =
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   DatePickerDialogBGBlurStyleTest_static_005
      * @tc.name     DatePickerDialogBGBlurStyleTest_static_005
      * @tc.desc     DatePickerDialogBGBlurStyleTest_static_005
@@ -190,8 +186,7 @@ it('DatePickerDialogBGBlurStyleTest_static_005', Level.LEVEL0, async (done: () =
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   DatePickerDialogBGBlurStyleTest_static_006
      * @tc.name     DatePickerDialogBGBlurStyleTest_static_006
      * @tc.desc     DatePickerDialogBGBlurStyleTest_static_006
@@ -217,8 +212,7 @@ it('DatePickerDialogBGBlurStyleTest_static_006', Level.LEVEL0, async (done: () =
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   DatePickerDialogBGBlurStyleTest_static_007
      * @tc.name     DatePickerDialogBGBlurStyleTest_static_007
      * @tc.desc     DatePickerDialogBGBlurStyleTest_static_007
@@ -244,8 +238,7 @@ it('DatePickerDialogBGBlurStyleTest_static_007', Level.LEVEL0, async (done: () =
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   DatePickerDialogBGBlurStyleTest_static_008
      * @tc.name     DatePickerDialogBGBlurStyleTest_static_008
      * @tc.desc     DatePickerDialogBGBlurStyleTest_static_008
@@ -266,8 +259,7 @@ it('DatePickerDialogBGBlurStyleTest_static_008', Level.LEVEL0, async (done: () =
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   DatePickerDialogBGBlurStyleTest_static_009
      * @tc.name     DatePickerDialogBGBlurStyleTest_static_009
      * @tc.desc     DatePickerDialogBGBlurStyleTest_static_009
@@ -293,8 +285,7 @@ it('DatePickerDialogBGBlurStyleTest_static_009', Level.LEVEL0, async (done: () =
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   DatePickerDialogBGBlurStyleTest_static_0010
      * @tc.name     DatePickerDialogBGBlurStyleTest_static_0010
      * @tc.desc     DatePickerDialogBGBlurStyleTest_static_0010
@@ -320,8 +311,7 @@ it('DatePickerDialogBGBlurStyleTest_static_0010', Level.LEVEL0, async (done: () 
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   DatePickerDialogBGBlurStyleTest_static_0011
      * @tc.name     DatePickerDialogBGBlurStyleTest_static_0011
      * @tc.desc     DatePickerDialogBGBlurStyleTest_static_0011
@@ -347,8 +337,7 @@ it('DatePickerDialogBGBlurStyleTest_static_0011', Level.LEVEL0, async (done: () 
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   DatePickerDialogBGBlurStyleTest_static_0012
      * @tc.name     DatePickerDialogBGBlurStyleTest_static_0012
      * @tc.desc     DatePickerDialogBGBlurStyleTest_static_0012
@@ -374,8 +363,7 @@ it('DatePickerDialogBGBlurStyleTest_static_0012', Level.LEVEL0, async (done: () 
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   DatePickerDialogBGBlurStyleTest_static_0013
      * @tc.name     DatePickerDialogBGBlurStyleTest_static_0013
      * @tc.desc     DatePickerDialogBGBlurStyleTest_static_0013
@@ -401,8 +389,7 @@ it('DatePickerDialogBGBlurStyleTest_static_0013', Level.LEVEL0, async (done: () 
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   DatePickerDialogBGBlurStyleTest_static_0014
      * @tc.name     DatePickerDialogBGBlurStyleTest_static_0014
      * @tc.desc     DatePickerDialogBGBlurStyleTest_static_0014
@@ -428,8 +415,7 @@ it('DatePickerDialogBGBlurStyleTest_static_0014', Level.LEVEL0, async (done: () 
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   DatePickerDialogBGBlurStyleTest_static_0015
      * @tc.name     DatePickerDialogBGBlurStyleTest_static_0015
      * @tc.desc     DatePickerDialogBGBlurStyleTest_static_0015
@@ -455,8 +441,7 @@ it('DatePickerDialogBGBlurStyleTest_static_0015', Level.LEVEL0, async (done: () 
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   DatePickerDialogBGBlurStyleTest_static_0016
      * @tc.name     DatePickerDialogBGBlurStyleTest_static_0016
      * @tc.desc     DatePickerDialogBGBlurStyleTest_static_0016
@@ -482,8 +467,7 @@ it('DatePickerDialogBGBlurStyleTest_static_0016', Level.LEVEL0, async (done: () 
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   DatePickerDialogBGBlurStyleTest_static_0017
      * @tc.name     DatePickerDialogBGBlurStyleTest_static_0017
      * @tc.desc     DatePickerDialogBGBlurStyleTest_static_0017

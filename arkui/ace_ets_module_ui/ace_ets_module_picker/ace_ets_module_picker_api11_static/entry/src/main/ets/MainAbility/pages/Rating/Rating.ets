@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -38,7 +39,7 @@ import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct rating_testcase {
-  @State rating: number = 2
+  @State rating: double = 2
   onPageShow() {
     console.info('Rating page show called');
   }
@@ -61,7 +62,7 @@ struct rating_testcase {
             foregroundUri: '/resources/rawfile/star-1-3.png',
             secondaryUri: '/resources/rawfile/star-1-2.png'
           })
-          .onChange((value: number): void => {
+          .onChange((value: double): void => {
             this.rating = value
           })
           .key('rating1')

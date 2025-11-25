@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,12 +15,11 @@
  */
 
 
-import PixelUnitsConversionJsunit from './xts/PixelUnitsConversion.test'
-import UIContextComponentSnapshotJsunit from './xts/UIContextComponentSnapshot.test'
-import UIContextCreateFromBuilderJsunit from './xts/UIContextCreateFromBuilder.test'
+import PixelUnitsConversion from './xts/PixelUnitsConversion.test'
+import UIContextComponentSnapshot from './xts/UIContextComponentSnapshot.test'
+import UIContextCreateFromBuilder from './xts/UIContextCreateFromBuilder.test'
 export default function testsuite() {
-  // PixelUnitsConversionJsunit(); //pass
-  // UIContextComponentSnapshotJsunit();  //页面加载失败 getComponentSnapshot()
-  UIContextCreateFromBuilderJsunit()  // Failure: 1, Pass: 1  page53行 getComponentSnapshot回调未执行
-
+  PixelUnitsConversion();
+  UIContextComponentSnapshot();
+  UIContextCreateFromBuilder();
 }

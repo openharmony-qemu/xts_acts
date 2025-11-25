@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +26,6 @@ struct textPickerDialogExample {
         Button('1')
           .id('TimePickerDialog1')
           .onClick((e: ClickEvent) => {
-            console.info('aaaaaaaa111111111')
             this.getUIContext().showTimePickerDialog({
               selected: this.selectTime,
               enableHapticFeedback:true,
@@ -34,7 +34,7 @@ struct textPickerDialogExample {
               selectedTextStyle: { color: Color.Blue, font: { size: 30, weight: FontWeight.Bolder } },
               onAccept: (value: TimePickerResult) => {
                 if (value.hour != undefined && value.minute != undefined) {
-                  this.selectTime.setHours(value.hour, value.minute)
+                  this.selectTime.setHours(value.hour.toInt(), value.minute.toInt())
                   console.info('TimePickerDialog:onAccept()' + JSON.stringify(value))
                 }
               },
@@ -51,7 +51,7 @@ struct textPickerDialogExample {
               selectedTextStyle: { color: Color.Blue, font: { size: 30, weight: FontWeight.Bolder } },
               onAccept: (value: TimePickerResult) => {
                 if (value.hour != undefined && value.minute != undefined) {
-                  this.selectTime.setHours(value.hour, value.minute)
+                  this.selectTime.setHours(value.hour.toInt(), value.minute.toInt())
                   console.info('TimePickerDialog:onAccept()' + JSON.stringify(value))
                 }
               },
@@ -70,7 +70,7 @@ struct textPickerDialogExample {
               selectedTextStyle: { color: Color.Blue, font: { size: 30, weight: FontWeight.Bolder } },
               onAccept: (value: TimePickerResult) => {
                 if (value.hour != undefined && value.minute != undefined) {
-                  this.selectTime.setHours(value.hour, value.minute)
+                  this.selectTime.setHours(value.hour.toInt(), value.minute.toInt())
                   console.info('TimePickerDialog:onAccept()' + JSON.stringify(value))
                 }
               },
@@ -81,13 +81,12 @@ struct textPickerDialogExample {
           .onClick((e: ClickEvent) => {
             this.getUIContext().showTimePickerDialog({
               selected: this.selectTime,
-              // enableHapticFeedback:null,
               disappearTextStyle: { color: Color.Red, font: { size: 15, weight: FontWeight.Lighter } },
               textStyle: { color: Color.Black, font: { size: 20, weight: FontWeight.Normal } },
               selectedTextStyle: { color: Color.Blue, font: { size: 30, weight: FontWeight.Bolder } },
               onAccept: (value: TimePickerResult) => {
                 if (value.hour != undefined && value.minute != undefined) {
-                  this.selectTime.setHours(value.hour, value.minute)
+                  this.selectTime.setHours(value.hour.toInt(), value.minute.toInt())
                   console.info('TimePickerDialog:onAccept()' + JSON.stringify(value))
                 }
               },

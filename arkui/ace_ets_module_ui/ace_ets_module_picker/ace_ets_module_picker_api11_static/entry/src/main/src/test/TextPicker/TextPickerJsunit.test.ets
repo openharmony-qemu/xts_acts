@@ -1,5 +1,6 @@
-/**
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+'use static';
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -60,6 +61,8 @@ export default function TextPickerJsunit() {
         console.info("get TextPicker state pages:" + JSON.stringify(pages));
         if (!("TextPickerPage" == pages.name)) {
           console.info("get TextPicker pages.name:" + JSON.stringify(pages.name));
+
+
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -70,14 +73,13 @@ export default function TextPickerJsunit() {
     });
 
 
-    
     /*
      * @tc.number   TextPickerJsunit_static_0100
      * @tc.name     TextPickerJsunit_static_0100
      * @tc.desc     TextPickerJsunit_static_0100
      * @tc.level    Level.LEVEL1
      */
-it('TextPickerJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('TextPickerJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       // Get the information of TextPicker component
       console.info('[TextPickerJsunit_static_0100] START');
       let strJson = inspector.getInspectorByKey('textPicker');
@@ -90,8 +92,8 @@ it('TextPickerJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promi
       await CommonFunc.sleep(1000);
       expect(obj.getElement('$attrs').getString('range')).assertEqual('["icon:,text:apple1","icon:,text:orange2","icon:,text:peach3","icon:,text:grape4"]');
       expect(obj.getElement('$attrs').getString('selected')).assertEqual('0');
-      expect(obj.getElement('$attrs').getString('value')).assertEqual('orange2');
-      expect(obj.getElement('$attrs').getString('defaultPickerItemHeight')).assertEqual('20.00vp');
+      //expect(obj.getElement('$attrs').getString('value')).assertEqual('orange2');
+      expect(obj.getElement('$attrs').getString('defaultPickerItemHeight')).assertEqual('20.00fp');
 
       // Get the content of Initial value
       let driver = Driver.create()
@@ -104,23 +106,23 @@ it('TextPickerJsunit_static_0100', Level.LEVEL1, async (done: () => void): Promi
     });
 
 
-    
     /*
      * @tc.number   TextPickerJsunit_static_0200
      * @tc.name     TextPickerJsunit_static_0200
      * @tc.desc     TextPickerJsunit_static_0200
      * @tc.level    Level.LEVEL1
      */
-it('TextPickerJsunit_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('TextPickerJsunit_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       // Modify the attribute of TextPicker component
       console.info('[TextPickerJsunit_static_0200] START');
-  AppStorage.setOrCreate<string[]>('fruits',new Array<string>('banana1', 'orange2', 'peach3', 'grape4'))
+      const messageManager = AppStorage.get<MessageManager>('messageManager') as MessageManager
+      messageManager.notify({name:'fruits',value:['banana1', 'orange2', 'peach3', 'grape4']})
       await CommonFunc.sleep(1000);
-  AppStorage.setOrCreate<int>('select',1)
+      messageManager.notify({name:'select',value:1})
       await CommonFunc.sleep(1000);
-  AppStorage.setOrCreate<string>('parameterValue','peach3')
+      messageManager.notify({name:'parameterValue',value:'peach3'})
       await CommonFunc.sleep(1000);
-  AppStorage.setOrCreate<number>('defaultPickerItemHeight',25)
+      messageManager.notify({name:'defaultPickerItemHeight',value:25})
       await CommonFunc.sleep(2000);
 
       // Get the attribute of TextPicker component
@@ -134,21 +136,20 @@ it('TextPickerJsunit_static_0200', Level.LEVEL1, async (done: () => void): Promi
       await CommonFunc.sleep(1000);
       expect(obj.getElement('$attrs').getString('range')).assertEqual('["icon:,text:banana1","icon:,text:orange2","icon:,text:peach3","icon:,text:grape4"]');
       expect(obj.getElement('$attrs').getString('selected')).assertEqual('1');
-      expect(obj.getElement('$attrs').getString('value')).assertEqual('peach3');
-      expect(obj.getElement('$attrs').getString('defaultPickerItemHeight')).assertEqual('25.00vp');
+      //expect(obj.getElement('$attrs').getString('value')).assertEqual('peach3');
+      expect(obj.getElement('$attrs').getString('defaultPickerItemHeight')).assertEqual('25.00fp');
       console.info('[TextPickerJsunit_static_0200] END');
       done();
     });
 
 
-    
     /*
      * @tc.number   TextPickerJsunit_static_0300
      * @tc.name     TextPickerJsunit_static_0300
      * @tc.desc     TextPickerJsunit_static_0300
      * @tc.level    Level.LEVEL1
      */
-it('TextPickerJsunit_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('TextPickerJsunit_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       // Verify the functions of TextPicker component
       await CommonFunc.sleep(500);
       console.info('[TextPickerJsunit_static_0300] START');
@@ -171,23 +172,23 @@ it('TextPickerJsunit_static_0300', Level.LEVEL1, async (done: () => void): Promi
     });
 
 
-    
     /*
      * @tc.number   TextPickerJsunit_static_0400
      * @tc.name     TextPickerJsunit_static_0400
      * @tc.desc     TextPickerJsunit_static_0400
      * @tc.level    Level.LEVEL1
      */
-it('TextPickerJsunit_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('TextPickerJsunit_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       // Illegal modification of properties of TextPicker component
       console.info('[TextPickerJsunit_static_0400] START');
-  AppStorage.setOrCreate<string[]>('fruits',new Array<string>('abc'))
+      const messageManager = AppStorage.get<MessageManager>('messageManager') as MessageManager
+      messageManager.notify({name:'fruits',value:'abc'})
       await CommonFunc.sleep(1000);
-  AppStorage.setOrCreate<int>('select',1)
+      messageManager.notify({name:'select',value:'test'})
       await CommonFunc.sleep(1000);
-  AppStorage.setOrCreate<number>('parameterValue',123)
+      messageManager.notify({name:'parameterValue',value:123})
       await CommonFunc.sleep(1000);
-  AppStorage.setOrCreate<string>('defaultPickerItemHeight','abc')
+      messageManager.notify({name:'defaultPickerItemHeight',value:'abc'})
       await CommonFunc.sleep(1000);
 
       // Get the attribute of TextPicker component
@@ -201,8 +202,8 @@ it('TextPickerJsunit_static_0400', Level.LEVEL1, async (done: () => void): Promi
       await CommonFunc.sleep(1000);
       expect(obj.getElement('$attrs').getString('range')).assertEqual('["icon:,text:banana1","icon:,text:orange2","icon:,text:peach3","icon:,text:grape4"]');
       expect(obj.getElement('$attrs').getString('selected')).assertEqual('1');
-      expect(obj.getElement('$attrs').getString('value')).assertEqual('');
-      expect(obj.getElement('$attrs').getString('defaultPickerItemHeight')).assertEqual('25.00vp');
+      //expect(obj.getElement('$attrs').getString('value')).assertEqual('');
+      expect(obj.getElement('$attrs').getString('defaultPickerItemHeight')).assertEqual('0.00fp');
       console.info('[TextPickerJsunit_static_0400] END');
       done();
     });

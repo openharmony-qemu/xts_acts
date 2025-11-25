@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -54,15 +55,14 @@ export default function UIContextOnIdle() {
       console.info("UIContextOnIdle beforeEach end");
     }); 
 
-    /**
-     * @tc.number UIContextApi1_static_0100
-     * @tc.name UIContextApi1_static_0100
-     * @tc.desc test onIdle
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+    
+    /*
+     * @tc.number   onIdleTest_static_0100
+     * @tc.name     onIdleTest_static_0100
+     * @tc.desc     onIdleTest_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('onIdleTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('onIdleTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('UIContextApi1_static_0100 START');
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create()

@@ -1,5 +1,6 @@
-/**
- * Copyright (c) 2022 Shenzhen Kaihong Digital Industry Development Co., Ltd.
+'use static';
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -75,9 +76,7 @@ struct DatePickerLunar {
       })
         .key("DatePicker")
         .lunar(true)
-        .onDateChange((date: Date) => {
-          Log.showInfo(TAG, 'select current date is: ' + JSON.stringify(date))
-        })
+
 
       DatePicker({
         start: new Date('1970-1-1'),
@@ -85,9 +84,7 @@ struct DatePickerLunar {
         selected: this.selectedDate,
       })
         .lunar(false)
-        .onDateChange((date: Date) => {
-          Log.showInfo(TAG, 'select current date is: ' + JSON.stringify(date))
-        })
+
     }
     .width("100%")
     .height("100%")

@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +22,7 @@ import { MessageManager, Callback } from '../../common/MessageManager';
 @Entry
 @Component
 struct TextPickerPage {
-  @State selectedIndex: number = 0;
+  @State selectedIndex: int = 0;
   private apfruits: string[] = ['apple1', 'apple2', 'apple3', 'apple4'];
   private orfruits: string[] = ['orange1', 'orange2', 'orange3', 'orange4'];
   private pefruits: string[] = ['peach1', 'peach2', 'peach3', 'peach4'];
@@ -30,19 +31,9 @@ struct TextPickerPage {
     Column() {
       TextPicker({
         range: this.multi,
-        selected: this.selectedIndex as int,
-        // textPicker1
+        selected: this.selectedIndex,
       })
         .id('textPicker1')
-        // .selectedBackgroundStyle({   // Property 'selectedBackgroundStyle' does not exist on type 'TextPickerAttribute'
-        //   color : Color.Red,
-        //   borderRadius: {
-        //     topLeft:15,
-        //     topRight:15,
-        //     bottomLeft:15,
-        //     bottomRight:15
-        //   },
-        // })
     }
   }
 }

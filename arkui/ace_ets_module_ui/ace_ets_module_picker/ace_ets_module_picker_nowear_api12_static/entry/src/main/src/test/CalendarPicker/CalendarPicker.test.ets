@@ -1,5 +1,6 @@
+'use static';
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -33,12 +34,11 @@ export default function calendarPickerJsunit() {
 
     beforeAll(() => {
       console.info("calendarPickerJsunit beforeAll start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api12.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
 
-    beforeEach(async (): Promise<void> => {
+    beforeEach(async (done: () => void): Promise<void> => {
       console.info("calendarPickerJsunit beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/CalendarPicker/calendarpicker',
@@ -59,8 +59,7 @@ export default function calendarPickerJsunit() {
     });
 
     
-    
-/*
+    /*
      * @tc.number   ArkUI_Stage_CalendarPicker_static_0100
      * @tc.name     ArkUI_Stage_CalendarPicker_static_0100
      * @tc.desc     ArkUI_Stage_CalendarPicker_static_0100
@@ -81,8 +80,7 @@ it('ArkUI_Stage_CalendarPicker_static_0100', Level.LEVEL1, async (done: () => vo
     });
 
     
-    
-/*
+    /*
      * @tc.number   ArkUI_Stage_CalendarPicker_attributeModifier_static_0101
      * @tc.name     ArkUI_Stage_CalendarPicker_attributeModifier_static_0101
      * @tc.desc     ArkUI_Stage_CalendarPicker_attributeModifier_static_0101

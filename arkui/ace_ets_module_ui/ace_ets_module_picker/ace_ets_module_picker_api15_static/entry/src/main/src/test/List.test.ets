@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +18,7 @@ import pickerTextStyleTest from './textPicker/TextPickerTextStyle.test';
 import pickerTextStyleAnimationTest from './textPicker/TextPickerTextStyleAnimation.test';
 import pickerTextStyleModifierTest from './textPicker/ModifierTextStyle.test';
 export default function testsuite() {
-  pickerTextStyleTest()  //11.13SDK 6个pass
-  pickerTextStyleAnimationTest()  //11.13SDK 4个pass
-   pickerTextStyleModifierTest()    //11.13SDK 1个pass
+  pickerTextStyleTest()
+  pickerTextStyleAnimationTest()
+  pickerTextStyleModifierTest()
 }

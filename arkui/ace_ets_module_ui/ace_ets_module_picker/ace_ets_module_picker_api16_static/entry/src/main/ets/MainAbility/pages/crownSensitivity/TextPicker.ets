@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,12 +23,12 @@ import { State } from '@ohos.arkui.stateManagement';
 @Entry
 @Component
 struct TextPickerExample {
-  @State sensitivity: CrownSensitivity = CrownSensitivity.HIGH
-  private select: number = 1
-  private apfruits: string[] = ['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10', 'a11']
-  private orfruits: string[] = ['o1', 'o2', 'o3', 'o4']
-  private pefruits: string[] = ['p1', 'p2', 'p3', 'p4']
-  private multi: string[][] = [this.apfruits, this.orfruits, this.pefruits]
+  @State sensitivity: CrownSensitivity = CrownSensitivity.HIGH;
+  private select: int = 1;
+  private apfruits: string[] = ['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8', 'a9', 'a10', 'a11'];
+  private orfruits: string[] = ['o1', 'o2', 'o3', 'o4'];
+  private pefruits: string[] = ['p1', 'p2', 'p3', 'p4'];
+  private multi: string[][] = [this.apfruits, this.orfruits, this.pefruits];
 
   build() {
     Column() {
@@ -56,13 +57,13 @@ struct TextPickerExample {
       TextPicker({ range: this.multi })
         .key('textpicker04')
 
-      TextPicker({ range: this.multi })
-        .key('textpicker05')
-        // .digitalCrownSensitivity(-1)
-      //
-      TextPicker({ range: this.multi })
-        .key('textpicker06')
-      //   .digitalCrownSensitivity(null)
+      
+      
+      
+      
+      
+      
+      
 
       TextPicker({ range: this.multi })
         .key('textpicker07')

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,8 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-// page 里面没有对应文件啊 ？？？？
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium';
+
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import { Driver, ON } from '@ohos.UiTest'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -43,11 +44,11 @@ export default function selectNodeTest() {
         console.info("get selectNodeTest state pages:" + JSON.stringify(pages));
         if (!("selectNode" == pages.name)) {
           console.info("get selectNodeTest pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
+          
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push selectNodeTest page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push selectNodeTest page error:" + err);

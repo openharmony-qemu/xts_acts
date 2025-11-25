@@ -1,5 +1,6 @@
+'use static';
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -21,7 +22,7 @@ import { State } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct TextPickerExample {
-  @State select: int = 1
+  @State select: int = 1;
   private multipleColumns: TextPickerRangeContent[] = [
     { icon: $r('app.media.icon'), text: 'apple1' } as TextPickerRangeContent,
     { icon: $r('app.media.icon'), text: 'orange2' } as TextPickerRangeContent,
@@ -47,15 +48,15 @@ struct TextPickerExample {
   private stateChangCallBack:(eventData:events_emitter.EventData) => void = (eventData:events_emitter.EventData) => {
     console.info("select page state change called:" + JSON.stringify(eventData));
     if (eventData != null && eventData.data != null) {
-      const data = eventData.data as Record<string, Object | null | undefined>                           //需要先获取并声明类型之后  再访问成员属性
-      if (data!['disappearTextStyle'] != null) {
-        this.disappearTextStyle = data!['disappearTextStyle'] as PickerTextStyle
+      const data = eventData.data as ESObject                        //需要先获取并声明类型之后  再访问成员属性
+      if (data.getProperty('disappearTextStyle') != null) {
+        this.disappearTextStyle = data.getProperty('disappearTextStyle').toStaticObject() as PickerTextStyle
       }
-      if (data!['textStyle'] != null) {
-        this.textStyle = data!['textStyle'] as PickerTextStyle;
+      if (data.getProperty('textStyle') != null) {
+        this.textStyle = data.getProperty('textStyle').toStaticObject() as PickerTextStyle;
       }
-      if (data!['selectedTextStyle'] != null) {
-        this.selectedTextStyle = data!['selectedTextStyle'] as PickerTextStyle;
+      if (data.getProperty('selectedTextStyle') != null) {
+        this.selectedTextStyle = data.getProperty('selectedTextStyle').toStaticObject() as PickerTextStyle;
       }
     }
   }
@@ -80,7 +81,7 @@ struct TextPickerExample {
         .textStyle(this.textStyle)
         .selectedTextStyle(this.selectedTextStyle)
         .key('textPicker')
-        .onChange((value: string|string[], index: int|int[]):void => {
+        .onChange((value: string | string[], index: int | int[]):void => {
           console.info('Picker item changed, value: ' + value + ', index: ' + index)
         })
 
@@ -89,7 +90,7 @@ struct TextPickerExample {
         .textStyle(this.textStyleDefault)
         .selectedTextStyle(this.selectedTextStyleDefault)
         .key('textPickerDefault')
-        .onChange((value: string|string[], index: int|int[]):void => {
+        .onChange((value: string | string[], index: int | int[]):void => {
           console.info('Picker item changed, value: ' + value + ', index: ' + index)
         })
     }

@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -50,9 +51,7 @@ export default function TextPickerPage() {
         if (!('textpickerselectedBackgroundStyle' == pages.name)) {
           console.info('get TextPickerPage pages.name:' + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
           await Utils.sleep(2500);
-          // console.info('push TextPickerPage page result:' + JSON.stringify(result));
         }
       } catch (err) {
         console.error('push TextPickerPage page error:' + err);
@@ -60,6 +59,7 @@ export default function TextPickerPage() {
       console.info('TextPickerPage beforeEach end');
     });
 
+    
     
     
     /*

@@ -1,5 +1,6 @@
+'use static';
 /*
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -40,18 +41,15 @@ struct TimePickerExample1 {
   private stateChangCallBack:(eventData:events_emitter.EventData) => void = (eventData:events_emitter.EventData) => {
     console.info("select page state change called:" + JSON.stringify(eventData));
     if (eventData != null && eventData.data != null) {
-      const data = eventData.data as Record<string, Object | null | undefined>                        //需要先获取并声明类型之后  再访问成员属性
-      if (data!['disappearTextStyle'] != null) {
-        console.log('disappearTextStyledisappearTextStyle',data!['disappearTextStyle'] as PickerTextStyle)
-
-        this.disappearTextStyle = data!['disappearTextStyle'] as PickerTextStyle
-        console.log('disappearTextStyledisappearTextStyle',this.disappearTextStyle)
+      const data = eventData.data as ESObject                        //需要先获取并声明类型之后  再访问成员属性
+      if (data.getProperty('disappearTextStyle') != null) {
+        this.disappearTextStyle = data.getProperty('disappearTextStyle').toStaticObject() as PickerTextStyle
       }
-      if (data!['textStyle'] != null) {
-        this.textStyle = data!['textStyle'] as PickerTextStyle;
+      if (data.getProperty('textStyle') != null) {
+        this.textStyle = data.getProperty('textStyle').toStaticObject() as PickerTextStyle;
       }
-      if (data!['selectedTextStyle'] != null) {
-        this.selectedTextStyle = data!['selectedTextStyle'] as PickerTextStyle;
+      if (data.getProperty('selectedTextStyle') != null) {
+        this.selectedTextStyle = data.getProperty('selectedTextStyle').toStaticObject() as PickerTextStyle;
       }
     }
   }
@@ -76,7 +74,6 @@ struct TimePickerExample1 {
         .textStyle(this.textStyle)
         .selectedTextStyle(this.selectedTextStyle)
         .key('timePicker')
-        .id('timePicker')
         .onChange((date: TimePickerResult):void => {
           console.info('select current date is: ' + JSON.stringify(date))
         })
@@ -86,7 +83,6 @@ struct TimePickerExample1 {
         .textStyle(this.textStyleDefault)
         .selectedTextStyle(this.selectedTextStyleDefault)
         .key('timePickerDefault')
-        .id('timePickerDefault')
         .onChange((date: TimePickerResult):void => {
           console.info('select current date is: ' + JSON.stringify(date))
         })

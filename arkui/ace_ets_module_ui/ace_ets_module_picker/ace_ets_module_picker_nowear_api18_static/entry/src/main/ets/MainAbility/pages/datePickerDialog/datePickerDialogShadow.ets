@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, ShadowOptions, Flex, FlexWrap, Button, Color, BlurStyle, ShadowStyle, ClickEvent, Margin, ShadowType } from '@ohos.arkui.component'
+import { Entry, Column, Component, ShadowOptions, Flex, FlexWrap, Button, Color, BlurStyle, ShadowStyle, ClickEvent, Margin } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
@@ -30,14 +31,6 @@ struct DatePickerDialogShadow {
     Flex({wrap: FlexWrap.Wrap}) {
       Button('ShadowOptions')
         .onClick((e: ClickEvent) => {
-          this.showDialog({
-            radius: 30,
-            type: ShadowType.COLOR,
-            color: Color.Red,
-            offsetX: 100,
-            offsetY: 100,
-            fill: true,
-          } as ShadowOptions)
         })
         .id('shadowOptionID')
       Button('OUTER_DEFAULT_XS')

@@ -1,5 +1,6 @@
-/**
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+'use static';
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -45,9 +46,9 @@ struct RatingExample {
     console.info("rating page stateChangCallBack");
     if (eventData != null && eventData.data != null) {
       console.info("rating page state change called:" + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, Object | null | undefined>                       //需要先获取并声明类型之后  再访问成员属性
-      if (data!['rating'] != null) {
-        this.rating = data!['rating'] as double;
+      const data = eventData.data as ESObject                        //需要先获取并声明类型之后  再访问成员属性
+      if (data.getProperty('rating') != null) {
+        this.rating = data.getProperty('rating').toNumber() as double;
       }
     }
   }
@@ -59,6 +60,48 @@ struct RatingExample {
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(stateChangeEvent, this.stateChangCallBack)
+
+    let stateChangeEventTwo: events_emitter.InnerEvent = {
+      eventId: 174,
+      priority: events_emitter.EventPriority.LOW
+    }
+    events_emitter.on(stateChangeEventTwo, this.stateChangCallBack)
+
+    let stateChangeEventThree: events_emitter.InnerEvent = {
+      eventId: 175,
+      priority: events_emitter.EventPriority.LOW
+    }
+    events_emitter.on(stateChangeEventThree, this.stateChangCallBack)
+
+    let stateChangeEventFour: events_emitter.InnerEvent = {
+      eventId: 176,
+      priority: events_emitter.EventPriority.LOW
+    }
+    events_emitter.on(stateChangeEventFour, this.stateChangCallBack)
+
+    let stateChangeEventSix: events_emitter.InnerEvent = {
+      eventId: 177,
+      priority: events_emitter.EventPriority.LOW
+    }
+    events_emitter.on(stateChangeEventSix, this.stateChangCallBack)
+
+    let stateChangeEventSeven: events_emitter.InnerEvent = {
+      eventId: 178,
+      priority: events_emitter.EventPriority.LOW
+    }
+    events_emitter.on(stateChangeEventSeven, this.stateChangCallBack)
+
+    stateChangeEventSeven = {
+      eventId: 1027,
+      priority: events_emitter.EventPriority.LOW
+    }
+    events_emitter.on(stateChangeEventSeven, this.stateChangCallBack)
+
+    stateChangeEventSeven = {
+      eventId: 1028,
+      priority: events_emitter.EventPriority.LOW
+    }
+    events_emitter.on(stateChangeEventSeven, this.stateChangCallBack)
   }
 
   build() {
@@ -67,7 +110,7 @@ struct RatingExample {
       Rating({ rating: this.rating, indicator: this.indicator })
         .stars(5).key('Rating')
         .stepSize(0.5)
-        .onChange((value: number):void => {
+        .onChange((value: double):void => {
           this.rating = value
         })
     }.width(350).height(200).padding(35)

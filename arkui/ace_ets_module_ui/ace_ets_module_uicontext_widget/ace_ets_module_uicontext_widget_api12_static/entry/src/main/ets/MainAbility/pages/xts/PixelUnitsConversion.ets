@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -83,7 +84,7 @@ struct PixelUnitsConversion {
           .height('5%')
           .id('px2vp_01')
           .onClick((e:ClickEvent) => {
-            this.uiContext.px2vp(220)
+            UIContext.getFocusedUIContext()!.px2vp(220)
             console.info('PixelUnitsConversion_0100 start')
             this.px2vp = '220'
           })
@@ -92,7 +93,7 @@ struct PixelUnitsConversion {
           .height('5%')
           .id('vp2px_01')
           .onClick((e:ClickEvent) => {
-            this.uiContext.vp2px(220)
+            UIContext.getFocusedUIContext()!.vp2px(220)
             console.info('PixelUnitsConversion_0200 start')
             this.vp2px = '220'
           })

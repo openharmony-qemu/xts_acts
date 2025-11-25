@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -19,14 +20,6 @@ import { State } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct TextPickerExample {
-  @State columnWidths1: (LengthMetrics)[] | undefined = [
-    LengthMetrics.vp(100)
-  ] as (LengthMetrics)[] | undefined
-  @State columnWidths2: (LengthMetrics)[] | undefined = [
-    LengthMetrics.vp(20),
-    LengthMetrics.vp(40),
-    LengthMetrics.vp(60)
-  ] as (LengthMetrics)[] | undefined
   @State message: string = 'mess'
   private apfruits: string[] = ['apple123456789', 'apple2', 'apple3', 'apple4']
   private orfruits: string[] = ['orange123456789', 'orange2', 'orange3', 'orange4']
@@ -35,24 +28,24 @@ struct TextPickerExample {
 
   build() {
           Column({ space: 10 } as ColumnOptions) {
-            TextPicker({ range: this.apfruits, columnWidths: this.columnWidths1 })
+            TextPicker({ range: this.apfruits })
               .id('columnWidths_001')
-              .onChange((value: string | string[], index: Int | Int[]) => {
+              .onChange((value: string | string[], index: int | int[]) => {
                 console.info('Picker item changed, value: ' + value + ', index: ' + index)
               })
-            TextPicker({ range: this.multi, columnWidths: this.columnWidths2 })
+            TextPicker({ range: this.multi })
               .id('columnWidths_002')
-              .onChange((value: string | string[], index: Int | Int[]) => {
+              .onChange((value: string | string[], index: int | int[]) => {
                 console.info('Picker item changed, value: ' + value + ', index: ' + index)
               })
             TextPicker({ range: this.multi, columnWidths: undefined })
               .id('columnWidths_003')
-              .onChange((value: string | string[], index: Int | Int[]) => {
+              .onChange((value: string | string[], index: int | int[]) => {
                 console.info('Picker item changed, value: ' + value + ', index: ' + index)
               })
-            TextPicker({ range: this.multi/*, columnWidths: null*/ })
+            TextPicker({ range: this.multi })
               .id('columnWidths_004')
-              .onChange((value: string | string[], index: Int | Int[]) => {
+              .onChange((value: string | string[], index: int | int[]) => {
                 console.info('Picker item changed, value: ' + value + ', index: ' + index)
               })
           }

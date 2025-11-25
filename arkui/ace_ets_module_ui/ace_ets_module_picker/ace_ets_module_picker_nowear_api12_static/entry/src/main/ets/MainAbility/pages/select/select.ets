@@ -1,5 +1,6 @@
-/**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+'use static';
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,7 +18,7 @@ import { State } from '@ohos.arkui.stateManagement'
 
 class SelectModifier1 implements AttributeModifier<SelectAttribute> {
     font: Font = { size: 30, weight: 400, family: 'serif', style: FontStyle.Normal }
-    fontColor: int = 0xCCCCCC as int
+    fontColor: Color = Color.Brown
     spaceValue: number = 8
     spaceValueString: string = '50.00vp'
     arrowPosition: ArrowPosition = ArrowPosition.END

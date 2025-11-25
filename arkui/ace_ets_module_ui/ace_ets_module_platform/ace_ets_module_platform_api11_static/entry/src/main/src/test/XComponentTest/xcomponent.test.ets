@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,7 +24,7 @@ import {
   it,
   expect,
   Level
-} from '../../../../hypium';
+} from '../../../../hypium/index';
 import router from '@ohos.router';
 import { UtilsTest } from '../Util.test';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -113,11 +114,8 @@ export default function xcomponentGetXComponentContextJsunit() {
       let strJson = inspector.getInspectorByKey('setXComponentSurfaceSizeText');
       //console
       let obj = JSON.parseJsonElement(strJson);
-      console.info("setXComponentSurfaceSize0001 strJsonstringify is: " + JSON.stringify(strJson));
-      console.info("setXComponentSurfaceSize0001 strJson is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
-      console.info("setXComponentSurfaceSize0001 strJson obj is: " + obj);
       expect(obj.getString('$type')).assertEqual("Text");
-      expect(obj.getElement('$attrs').tryGetElement('surfaceWidth')).assertEqual(undefined);
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('surfaceWidth')).assertEqual(undefined);
       console.info('testxcomponentSetXComponentSurfaceSize0001 END');
 
     });
@@ -136,7 +134,7 @@ export default function xcomponentGetXComponentContextJsunit() {
       //console
       let obj = JSON.parseJsonElement(strJson);
       expect(obj.getString('$type')).assertEqual("Text");
-      expect(JSON.parseJsonElement(strJson).getElement('$attrs').tryGetElement('surfaceHeight')).assertEqual(undefined);
+      expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('surfaceHeight')).assertEqual(undefined);
       console.info('testxcomponentSetXComponentSurfaceSizeStatic0002 END');
 
     });
