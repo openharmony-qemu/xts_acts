@@ -311,7 +311,7 @@ struct webViewOnScroll {
             console.info("y = " + event.yOffset + this.secondId)
             Utils.emitEvent(event.yOffset, this.secondId)
           }
-        })
+        }).height('95%')
     }
   }
 }
