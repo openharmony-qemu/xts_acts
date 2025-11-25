@@ -95,6 +95,7 @@ export default function PictureMarshallingTest() {
         done();
       }
     })
+
     /**
      * @tc.number     PICTURE_MARSHALLING_002
      * @tc.name       PICTURE_MARSHALLING_002
@@ -117,6 +118,7 @@ export default function PictureMarshallingTest() {
         done();
       }
     })
+
     /**
      * @tc.number     PICTURE_MARSHALLING_003
      * @tc.name       PICTURE_MARSHALLING_003
@@ -140,6 +142,7 @@ export default function PictureMarshallingTest() {
         done();
       }
     })
+
     /**
      * @tc.number     PICTURE_MARSHALLING_004
      * @tc.name       PICTURE_MARSHALLING_004
@@ -162,6 +165,7 @@ export default function PictureMarshallingTest() {
         done();
       }
     })
+
     /**
      * @tc.number     PICTURE_MARSHALLING_005
      * @tc.name       PICTURE_MARSHALLING_005
@@ -184,6 +188,7 @@ export default function PictureMarshallingTest() {
         done();
       }
     })
+
     /**
      * @tc.number     PICTURE_MARSHALLING_006
      * @tc.name       PICTURE_MARSHALLING_006
@@ -208,5 +213,144 @@ export default function PictureMarshallingTest() {
       }
     })
 
+    /**
+     * @tc.number     PICTURE_MARSHALLING_007
+     * @tc.name       PICTURE_MARSHALLING_007
+     * @tc.desc       picture_marshalling jpg图片第一个参数为null覆盖
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('PICTURE_MARSHALLING_007', Level.LEVEL0, async (done: Function) => {
+      const testName = 'PICTURE_MARSHALLING_007';
+      const path = 'test_exif.jpg';
+      try {
+        await marshallingTest(done, testName, path, (picture: image.Picture) => {
+          picture.marshalling(null);
+        });
+        done();
+      } catch (error) {
+        console.info(TAG, testName, ' marshalling error', error.message, error.code);
+        expect(error.code).assertEqual('401');
+        done();
+      }
+    })
+
+     /**
+     * @tc.number     PICTURE_MARSHALLING_008
+     * @tc.name       PICTURE_MARSHALLING_008
+     * @tc.desc       picture_marshalling jpg图片第一个参数为undefined覆盖
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+     it('PICTURE_MARSHALLING_008', Level.LEVEL0, async (done: Function) => {
+      const testName = 'PICTURE_MARSHALLING_008';
+      const path = 'test_exif.jpg';
+      try {
+        await marshallingTest(done, testName, path, (picture: image.Picture) => {
+          picture.marshalling(undefined);
+        });
+        done();
+      } catch (error) {
+        console.info(TAG, testName, ' marshalling error', error.message, error.code);
+        expect(error.code).assertEqual('401');
+        done();
+      }
+    })
+
+    /**
+     * @tc.number     PICTURE_MARSHALLING_009
+     * @tc.name       PICTURE_MARSHALLING_009
+     * @tc.desc       picture_marshalling jpg图片第一个参数为空覆盖
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('PICTURE_MARSHALLING_009', Level.LEVEL0, async (done: Function) => {
+      const testName = 'PICTURE_MARSHALLING_009';
+      const path = 'test_exif.jpg';
+      try {
+        await marshallingTest(done, testName, path, (picture: image.Picture) => {
+          let data: rpc.MessageSequence = rpc.MessageSequence.create();
+          picture.marshalling(data);
+        });
+        done();
+      } catch (error) {
+        console.info(TAG, testName, ' marshalling error', error.message, error.code);
+        expect(error.code).assertEqual('401');
+        done();
+      }
+    })
+
+    /**
+     * @tc.number     PICTURE_MARSHALLING_010
+     * @tc.name       PICTURE_MARSHALLING_010
+     * @tc.desc       picture_marshalling jpeg图片第一个参数为null覆盖
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('PICTURE_MARSHALLING_010', Level.LEVEL0, async (done: Function) => {
+      const testName = 'PICTURE_MARSHALLING_010';
+      const path = 'test.jpeg';
+      try {
+        await marshallingTest(done, testName, path, (picture: image.Picture) => {
+          picture.marshalling(null);
+        });
+        done();
+      } catch (error) {
+        console.info(TAG, testName, ' marshalling error', error.message, error.code);
+        expect(error.code).assertEqual('401');
+        done();
+      }
+    })
+
+     /**
+     * @tc.number     PICTURE_MARSHALLING_011
+     * @tc.name       PICTURE_MARSHALLING_011
+     * @tc.desc       picture_marshalling jpeg图片第一个参数为undefined覆盖
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+     it('PICTURE_MARSHALLING_011', Level.LEVEL0, async (done: Function) => {
+      const testName = 'PICTURE_MARSHALLING_011';
+      const path = 'test.jpeg';
+      try {
+        await marshallingTest(done, testName, path, (picture: image.Picture) => {
+          picture.marshalling(undefined);
+        });
+        done();
+      } catch (error) {
+        console.info(TAG, testName, ' marshalling error', error.message, error.code);
+        expect(error.code).assertEqual('401');
+        done();
+      }
+    })
+
+    /**
+     * @tc.number     PICTURE_MARSHALLING_012
+     * @tc.name       PICTURE_MARSHALLING_012
+     * @tc.desc       picture_marshalling jpeg图片第一个参数为空覆盖
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('PICTURE_MARSHALLING_012', Level.LEVEL0, async (done: Function) => {
+      const testName = 'PICTURE_MARSHALLING_012';
+      const path = 'test.jpeg';
+      try {
+        await marshallingTest(done, testName, path, (picture: image.Picture) => {
+          let data: rpc.MessageSequence = rpc.MessageSequence.create();
+          picture.marshalling(data);
+        });
+        done();
+      } catch (error) {
+        console.info(TAG, testName, ' marshalling error', error.message, error.code);
+        expect(error.code).assertEqual('401');
+        done();
+      }
+    })
   })
 }
