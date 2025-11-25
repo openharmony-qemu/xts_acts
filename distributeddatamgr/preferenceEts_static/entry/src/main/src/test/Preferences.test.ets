@@ -780,7 +780,7 @@ export default function preferenceTest() {
       dataPreferences.getPreferences(context, NAME1).then(async (preferences : dataPreferences.Preferences) => {
         hilog.info(domain, tag, '%{public}s', TAG + "Get preferences success" + preferences);
         await preferences.put(KEY_TEST_STRING_ELEMENT, "test");
-        preferences.get(KEY_TEST_STRING_ELEMENT, "defaultvalue", (err: BusinessError | null, ret: Object|undefined) => {
+        preferences.get(KEY_TEST_STRING_ELEMENT, "defaultvalue", (err: BusinessError | null, ret: dataPreferences.ValueType | undefined) => {
           expect("test").assertEqual(ret);
         });
         await dataPreferences.deletePreferences(context, NAME1).then<void, void>((): void => {});
@@ -1191,7 +1191,7 @@ export default function preferenceTest() {
 
         await mPreferences.put("object_key", company);
         let compJson = await mPreferences.get("object_key", {});
-        let compJsonElement = JSON.parseJsonElement(compJson.toString());
+        let compJsonElement = JSON.parseJsonElement(compJson?.toString());
         expect("我的公司").assertEqual(compJsonElement.getElement("cName").asString());
         expect("myCompany").assertEqual(compJsonElement.getElement("enName").asString());
         expect(1998).assertEqual(compJsonElement.getElement("year").asInteger());
