@@ -107,6 +107,7 @@ export default function UiTest() {
                 try {
                     expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
                     expect(elementInfo.windowChangeType == WindowChangeType.WINDOW_ADDED).assertTrue();
+                    expect(elementInfo.windowId != 0).assertTrue();
                 } catch (err) {
                     console.log(`${TestTag}, testWindowChangeAddOptionsMonitor callback error ,${JSON.stringify(err)}`);
                 }
@@ -142,6 +143,7 @@ export default function UiTest() {
                 try {
                     expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
                     expect(elementInfo.windowChangeType == WindowChangeType.WINDOW_REMOVED).assertTrue();
+                    expect(elementInfo.windowId != 0).assertTrue();
                 } catch (err) {
                     console.log(`${TestTag}, testWindowChangeRemoveOptionsMonitor callback error ,${JSON.stringify(err)}`);
                 }
@@ -177,6 +179,7 @@ export default function UiTest() {
                 try {
                     expect(elementInfo.bundleName == 'com.uitestScene.acts').assertTrue()
                     expect(elementInfo.windowChangeType == WindowChangeType.WINDOW_BOUNDS_CHANGED).assertTrue();
+                    expect(elementInfo.windowId != 0).assertTrue();
                 } catch (err) {
                     console.log(`${TestTag}, testWindowChangeResizeOptionsMonitor callback error ,${JSON.stringify(err)}`);
                 }
