@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import Utils from '../../test/Utils.test';
+import Utils from '../../test/Utils';
 import webView from '@ohos.web.webview';
 import events_emitter from '@ohos.events.emitter';
 import image from '@ohos.multimedia.image';
@@ -32,11 +32,13 @@ const TAG = 'ContextMenu';
 @Entry
 @Component
 struct webViewController {
+  webcontroller: webView.WebviewController = new webView.WebviewController();
   @State str: string = ""
   @State isReceive: number = -1;
   @State isPageEnd: number = -1;
+  @State blankScreenReasonArr:DetectedBlankScreenReason[] = [DetectedBlankScreenReason.NO_CONTENTFUL_NODES,DetectedBlankScreenReason.SUB_THRESHOLD_CONTENTFUL_NODES]
+  @State flag: number = 1;
 
-  webcontroller: webView.WebviewController = new webView.WebviewController();
 
 
   onPageShow() {
@@ -80,13 +82,36 @@ struct webViewController {
           switch (this.str) {
             case "emitWebViewBlankScreenDetectionConfig": {
               try {
-                await Utils.sleep(2000);
+                await waitForExist(()=>this.isPageEnd, 'emitWebViewBlankScreenDetectionConfig', 0);
                 Utils.emitEvent('onDetectedBlankScreen', 20251110)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
               break;
             }
+
+            case "emitDetectedBlankScreenReason01": {
+              try {
+                this.flag = 2;
+                this.webcontroller.loadUrl($rawfile('1text.html'));
+                await waitForExist(()=>this.isPageEnd, 'emitDetectedBlankScreenReason01', 0);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+
+            case "emitDetectedBlankScreenReason02": {
+              try {
+                this.flag = 3;
+                this.webcontroller.loadUrl($rawfile('kongbai.html'));
+                await waitForExist(()=>this.isPageEnd, 'emitDetectedBlankScreenReason02', 0);
+              } catch (error) {
+                console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
+              }
+              break;
+            }
+
           }
         })
       }
@@ -94,7 +119,13 @@ struct webViewController {
       Web({ src: $rawfile('1text.html'), controller: this.webcontroller })
         .onDetectedBlankScreen((event: BlankScreenDetectionEventInfo) =>{
           console.log(`Found blank screen on ${event.url}.`);
-          console.log(`Found blank screen reason is ${event.blankScreenReason}.`);
+          if(this.flag == 2) {
+            Utils.emitEvent(event.blankScreenReason == DetectedBlankScreenReason.SUB_THRESHOLD_CONTENTFUL_NODES, 20251207)
+          } else if(this.flag == 3) {
+            Utils.emitEvent(event.blankScreenReason == DetectedBlankScreenReason.NO_CONTENTFUL_NODES, 20251208)
+          }
+
+          console.log(`Found blank screen reason is ${this.blankScreenReasonArr[event.blankScreenReason]}.`);
           console.log(`Found blank screen blankScreenDetails is ${event.blankScreenDetails?.detectedContentfulNodesCount}.`);
         })
         .blankScreenDetectionConfig({
@@ -105,6 +136,9 @@ struct webViewController {
         })
         .width('100%')
         .height('50%%')
+        .onPageEnd(()=>{
+          this.isPageEnd = 0;
+        })
 
     }.width('100%').height('100%').backgroundColor('#F1F3F5')
   }
