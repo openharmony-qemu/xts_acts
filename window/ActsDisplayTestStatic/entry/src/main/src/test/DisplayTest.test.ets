@@ -481,7 +481,7 @@ export default function DisplayTest() {
                 hilog.info(0x0000, '[ANI]',msgStr + 'Listening enabled. Data: ' + JSON.stringify(data));
             };
             try {
-                display.on("add", callback);
+                display.onAdd(callback);
             } catch (exception:Error) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
@@ -489,14 +489,14 @@ export default function DisplayTest() {
 
             }
             try {
-                display.off("add");
+                display.offAdd();
             } catch (exception:Error) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
             }
             try {
-                display.off("add");
+                display.offAdd();
                 done();
             } catch (exception:Error) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
@@ -520,21 +520,21 @@ export default function DisplayTest() {
                 console.info(msgStr + 'Listening enabled. Data: ' + JSON.stringify(data));
             };
             try {
-                display.on("change", callback);
+                display.onChange(callback);
             } catch (exception:Error) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
             }
             try {
-                display.off("change");
+                display.offChange();
             } catch (exception:Error) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
             }
             try {
-                display.off("change");
+                display.offChange();
                 done();
 
             } catch (exception:Error) {
@@ -559,21 +559,21 @@ export default function DisplayTest() {
                 hilog.info(0x0000, '[ANI]',msgStr + 'Listening enabled. Data: ' + JSON.stringify(data));
             };
             try {
-                display.on("remove", callback);
+                display.onRemove(callback);
             } catch (exception:Error) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
             }
             try {
-                display.off("remove");
+                display.offRemove();
             } catch (exception:Error) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
             }
             try {
-                display.off("remove");
+                display.offRemove();
                 done();
             } catch (exception:Error) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
