@@ -15,5 +15,5 @@
 import ImageReceiverTest from './receiver.test';
 
 export default function testsuite() {
-    ImageReceiverRewriteTest();
+    ImageReceiverTest();
 }
