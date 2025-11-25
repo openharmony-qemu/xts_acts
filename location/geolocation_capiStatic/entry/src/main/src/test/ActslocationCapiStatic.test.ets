@@ -1143,7 +1143,7 @@ export default function actslocationTest() {
          * @tc.type: Function
          * @tc.size: MEDIUMTEST
          */
-        it('Sub_Location_getCurrentLocation_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
+        it('Sub_Location_removeGnssGeofence_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let fenceId = 1;
             try {
               geoLocationManager.removeGnssGeofence(fenceId).then(() => {
@@ -1212,14 +1212,14 @@ export default function actslocationTest() {
 
 
         /*
-         * @tc.number: Sub_Location_getCurrentLocation_0100
-         * @tc.name: Sub_Location_getCurrentLocation_0100
+         * @tc.number: Sub_Location_getCurrentLocation_0200
+         * @tc.name: Sub_Location_getCurrentLocation_0200
          * @tc.desc: getCurrentLocation(request: CurrentLocationRequest | SingleLocationRequest, callback: AsyncCallback<Location>): void
          * @tc.level: Level 0
          * @tc.type: Function
          * @tc.size: MEDIUMTEST
          */
-        it('Sub_Location_getCurrentLocation_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
+        it('Sub_Location_getCurrentLocation_0200',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
               let request: geoLocationManager.SingleLocationRequest = {
                 'locatingTimeoutMs': 10000,
                 'locatingPriority': geoLocationManager.LocatingPriority.PRIORITY_ACCURACY
