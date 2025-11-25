@@ -219,7 +219,7 @@ export default function WindowOrientationTest() {
             await subWindowClass.destroyWindow();
             try {
                 let rotationCallback = (rotationInfo: window.RotationChangeInfo): window.RotationChangeResult => {}
-                subWindowClass.on('rotationChange', rotationCallback);
+                subWindowClass.onRotationChange(rotationCallback);
                 done();
             } catch (err:BusinessError) {
                 hilog.error(0x0000, '[ANI]',`${caseName} :Failed . Cause code: ${err!.code}, message: ${err!.message}`);
@@ -305,7 +305,7 @@ export default function WindowOrientationTest() {
                         return rotationResult;
                     }
                 };
-                subWindowClass.off('rotationChange', rotationCallback);
+                subWindowClass.offRotationChange(rotationCallback);
                 done();
             } catch (err:BusinessError) {
                 hilog.error(0x0000, '[ANI]',`${caseName} :Failed . Cause code: ${err!.code}, message: ${err!.message}`);
@@ -331,8 +331,8 @@ export default function WindowOrientationTest() {
                 await subWindowClass.showWindow();
                 let rotationCallback = (rotationInfo: window.RotationChangeInfo): window.RotationChangeResult  => {
                 }
-                subWindowClass.on('rotationChange', rotationCallback);
-                subWindowClass.off('rotationChange', rotationCallback);
+                subWindowClass.onRotationChange(rotationCallback);
+                subWindowClass.offRotationChange(rotationCallback);
                 hilog.info(0x0000, '[ANI]',`${caseName} :on rotationChange success. `);
                 await subWindowClass.destroyWindow()
                 expect(true).assertTrue();
@@ -368,7 +368,7 @@ export default function WindowOrientationTest() {
             try {
                 await subWindowClass.setUIContent('pages/index2');
                 await subWindowClass.showWindow();
-                subWindowClass.off('rotationChange');
+                subWindowClass.offRotationChange();
                 hilog.info(0x0000, '[ANI]',`${caseName} :off rotationChange success. `);
                 await subWindowClass.destroyWindow()
                 expect(true).assertTrue();
