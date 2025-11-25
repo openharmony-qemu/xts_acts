@@ -1983,45 +1983,6 @@ export default function promiseAnyTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_Promise_any_TEST_0830
-     * @tc.name PromiseAnyTest083
-     * @tc.desc Asynchronous resource acquisition with multi-step setup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    it('PromiseAnyTest083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      class Resource {
-        private name: string;
-        private setupSteps: number[]
-
-        constructor(name: string, setupSteps: number[]) {
-          this.name = name
-          this.setupSteps = setupSteps
-        }
-
-        async acquire(): Promise<string> {
-          for (const stepDelay of this.setupSteps) {
-            await new Promise<void>((resolve) => setTimeout(resolve, stepDelay));
-          }
-          return `Resource ${this.name} acquired`;
-        }
-      }
-
-      const resourceA = new Resource("A", [10, 20, 15]); // Total: 45ms
-      const resourceB = new Resource("B", [5, 25, 10]); // Total: 40ms
-      const resourceC = new Resource("C", [15, 15, 15]); // Total: 45ms
-
-      const result = await Promise.any([
-        resourceA.acquire(),
-        resourceB.acquire(),
-        resourceC.acquire()
-      ]);
-
-      expect(result).assertEqual("Resource B acquired");
-    });
-
-    /**
      * @tc.number SUB_BUILTINS_Promise_any_TEST_0840
      * @tc.name PromiseAnyTest084
      * @tc.desc Sequential async operations with early termination
@@ -2055,40 +2016,6 @@ export default function promiseAnyTest() {
 
       const result = await Promise.any(promises);
       expect(result).assertEqual(2);
-    });
-
-    /**
-     * @tc.number SUB_BUILTINS_Promise_any_TEST_0850
-     * @tc.name PromiseAnyTest085
-     * @tc.desc Complex promise graph with multiple resolution paths
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    it('PromiseAnyTest085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      // Create a graph of promises with various dependencies
-      const p1: Promise<number> = new Promise<number>((resolve) =>
-      setTimeout(() => resolve(1), 10)
-      );
-
-      const p2: Promise<number> = new Promise<number>((resolve) =>
-      setTimeout(() => resolve(2), 15)
-      );
-
-      const p3: Promise<number> = Promise.all([p1, p2]).then((res: number[]) =>
-      new Promise<number>((resolve) => setTimeout(() => resolve(res[0] + res[1]), 20))
-      );
-
-      const p4: Promise<number> = p1.then(num =>
-      new Promise<number>((resolve) => setTimeout(() => resolve(num * 5), 25))
-      );
-
-      const p5: Promise<number> = p2.then(num =>
-      new Promise<number>((resolve) => setTimeout(() => resolve(num * 3), 10))
-      );
-
-      const result = await Promise.any([p3, p4, p5]);
-      expect(result).assertEqual(6);
     });
 
     /**

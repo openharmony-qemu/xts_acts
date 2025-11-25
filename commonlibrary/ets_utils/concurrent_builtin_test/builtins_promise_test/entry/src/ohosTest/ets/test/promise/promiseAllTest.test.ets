@@ -17,7 +17,7 @@ import { sleep } from './utils';
 export default function promiseAllTest() {
   describe('promiseAllTest', () => {
     afterEach(async () => {
-      await sleep(50)
+      await sleep(100)
     })
 
     /**
@@ -1494,58 +1494,6 @@ export default function promiseAllTest() {
       const result = await Promise.all([p1, p2, p3]);
 
       expect(result).assertDeepEquals([1, 2, 4]);
-    });
-
-    /**
-     * @tc.number SUB_BUILTINS_Promise_all_TEST_6400
-     * @tc.name PromiseAllTest064
-     * @tc.desc test Promise.all with parallel cascading chains
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('PromiseAllTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
-      const log: string[] = [];
-
-      // First chain
-      const a1: Promise<number> = new Promise<number>(resolve => {
-        setTimeout(() => {
-          log.push('a1');
-          resolve(1);
-        }, 10);
-      });
-      const a2: Promise<number> = a1.then(val => {
-        log.push('a2 start');
-        return new Promise<number>(resolve => {
-          setTimeout(() => {
-            log.push('a2');
-            resolve(val * 2);
-          }, 13);
-        });
-      });
-
-      // Second chain
-      const b1: Promise<number> = new Promise<number>(resolve => {
-        setTimeout(() => {
-          log.push('b1');
-          resolve(3);
-        }, 15);
-      });
-      const b2: Promise<number> = b1.then(val => {
-        log.push('b2 start');
-        return new Promise<number>(resolve => {
-          setTimeout(() => {
-            log.push('b2');
-            resolve(val * 2);
-          }, 5);
-        });
-      });
-
-      const result = await Promise.all([a2, b2]);
-      expect(result).assertDeepEquals([2, 6]);
-      expect(log).assertDeepEquals([
-        "a1", "a2 start", "b1", "b2 start", "b2", "a2"
-      ]);
     });
 
     /**

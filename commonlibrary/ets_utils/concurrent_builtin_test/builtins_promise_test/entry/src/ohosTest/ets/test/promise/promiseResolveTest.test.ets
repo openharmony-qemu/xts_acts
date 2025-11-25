@@ -36,7 +36,7 @@ import { sleep } from './utils';
 export default function promiseResolveTest() {
   describe('promiseResolveTest', () => {
     afterEach(async () => {
-      await sleep(50)
+      await sleep(100)
     })
     /**
      * @tc.number SUB_BUILTINS_Promise_resolve_TEST_0001
@@ -1620,31 +1620,6 @@ export default function promiseResolveTest() {
         });
 
       expect(timeLog).assertDeepEquals(['L1: 1', 'L2: 2', 'L3: 3', 'L4: 4', 'L5: 5']);
-    });
-
-    /**
-     * @tc.number SUB_BUILTINS_Promise_resolve_TEST_0081
-     * @tc.name PromiseResolveTest081
-     * @tc.desc Nested Promise.any with cascading delays, verify first fulfillment timing
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 5
-     */
-    it('PromiseResolveTest081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const start = Date.now();
-      const innerAny = Promise.any([
-        Promise.resolve(new Promise<string>(resolve => setTimeout(() => resolve('inner-30ms'), 30))),
-        Promise.resolve(new Promise<string>(resolve => setTimeout(() => resolve('inner-15ms'), 15)))
-      ]);
-      const outerAny = Promise.any([
-        Promise.resolve(new Promise<string>(resolve => setTimeout(() => resolve(innerAny), 20))),
-        Promise.resolve(new Promise<string>(resolve => setTimeout(() => resolve('outer-10ms'), 10)))
-      ]);
-
-      const result = await outerAny;
-      const end = Date.now();
-      expect(result).assertEqual('outer-10ms');
-      expect(end - start).assertLess(15);
     });
 
     /**

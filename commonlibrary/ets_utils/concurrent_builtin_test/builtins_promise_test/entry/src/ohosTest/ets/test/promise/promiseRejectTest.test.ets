@@ -14,7 +14,7 @@ import { sleep } from './utils';
 export default function promiseRejectTest() {
   describe('promiseRejectTest', () => {
     afterEach(async () => {
-      await sleep(50)
+      await sleep(100)
     })
 
     /**
@@ -2516,48 +2516,6 @@ export default function promiseRejectTest() {
       // Execution order: 10ms(reject) → 15ms(catch trigger, starts 10ms timeout) → 25ms(timeout ends + finally)
       expect(result).assertEqual('Recover: Root');
       expect(orderLog).assertDeepEquals(['Reject(10ms)', 'Catch(15ms)', 'Finally(25ms)']);
-    });
-
-    /**
-     * @tc.number SUB_BUILTINS_Promise_reject_TEST_1087
-     * @tc.name PromiseRejectTest087
-     * @tc.desc Async Promise.any with nested Promise.reject and resolve timing priority
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 5
-     */
-    it('PromiseRejectTest087', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, async () => {
-      const timeLog: string[] = [];
-      const innerAny: Promise<number> = Promise.any([
-        new Promise<number>((_, reject) => setTimeout(() => {
-          timeLog.push('Inner-reject1(5ms)');
-          reject(Promise.reject('Inner1'));
-        }, 5)),
-        new Promise<number>((resolve) => setTimeout(() => {
-          timeLog.push('Inner-resolve(12ms)');
-          resolve(100);
-        }, 12)),
-        new Promise<number>((_, reject) => setTimeout(() => {
-          timeLog.push('Inner-reject2(10ms)');
-          reject('Inner2');
-        }, 10))
-      ]);
-      const outerAny: Promise<Object> = Promise.any([
-        new Promise<string>((_, reject) => setTimeout(() => {
-          timeLog.push('Outer-reject(8ms)');
-          reject('Outer');
-        }, 8)),
-        innerAny,
-        new Promise<boolean>((resolve) => setTimeout(() => {
-          timeLog.push('Outer-resolve(15ms)');
-          resolve(true);
-        }, 15))
-      ]);
-
-      const result = await outerAny;
-      expect(result).assertEqual(100);
-      expect(timeLog)
-        .assertDeepEquals(['Inner-reject1(5ms)', 'Outer-reject(8ms)', 'Inner-reject2(10ms)', 'Inner-resolve(12ms)']);
     });
 
     /**

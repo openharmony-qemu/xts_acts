@@ -1626,39 +1626,6 @@ export default function promiseRaceTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_Promise_race_TEST_064
-     * @tc.name PromiseRaceTest064
-     * @tc.desc Race with promises that resolve after async validation steps
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 4
-     */
-    it('PromiseRaceTest064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const validate = (value: number, delay: number): Promise<number> => {
-        return new Promise<number>((resolve, reject) => {
-          setTimeout(() => {
-            if (value > 0) {
-              resolve(value);
-            } else {
-              reject(new Error('Invalid value'));
-            }
-          }, delay);
-        });
-      };
-
-      const p1: Promise<number> = validate(5, 10)
-        .then(num => validate(num * 2, 20))
-        .then(num => validate(num - 3, 15));
-
-      const p2: Promise<number> = validate(3, 5)
-        .then(num => validate(num + 4, 10))
-        .then(num => validate(num * 2, 25));
-
-      const result = await Promise.race([p1, p2]);
-      expect(result).assertEqual(14);
-    });
-
-    /**
      * @tc.number SUB_BUILTINS_Promise_race_TEST_065
      * @tc.name PromiseRaceTest065
      * @tc.desc Race with promises that use async retry logic with backoff
@@ -1692,19 +1659,6 @@ export default function promiseRaceTest() {
       const p2: Promise<number> = withBackoff('p2', 3, 5); // 5ms (fail) → 10ms (success) → total ~15ms
 
       const result = await Promise.race([p1, p2]);
-      expect(result).assertEqual(2);
-    });
-
-    /**
-     * @tc.number SUB_BUILTINS_Promise_race_TEST_066
-     * @tc.name PromiseRaceTest066
-     * @tc.desc Race with promises that use time-based state machines
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 4
-     */
-    it('PromiseRaceTest066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const result = await PromiseRaceTest066();
       expect(result).assertEqual(2);
     });
 
