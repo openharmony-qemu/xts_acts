@@ -65,12 +65,12 @@ export default function List_aspectRatio_width() {
     });
 
     /**
+     * @tc.name   SUB_ACE_List_aspectRatio_width_0100
      * @tc.number SUB_ACE_List_aspectRatio_width_0100
-     * @tc.name testListAspectRatio
-     * @tc.desc set the aspectRatio of list to '0'
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   set the aspectRatio of list to '0'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_List_aspectRatio_width_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_List_aspectRatio_width_0100] START');
@@ -90,12 +90,12 @@ export default function List_aspectRatio_width() {
     });
 
     /**
+     * @tc.name   SUB_ACE_List_aspectRatio_width_0200
      * @tc.number SUB_ACE_List_aspectRatio_width_0200
-     * @tc.name testListAspectRatio
-     * @tc.desc set the aspectRatio of list to '0.5'
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   set the aspectRatio of list to '0.5'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_List_aspectRatio_width_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_List_aspectRatio_width_0200] START');
@@ -114,12 +114,12 @@ export default function List_aspectRatio_width() {
     });
 
     /**
+     * @tc.name   SUB_ACE_List_aspectRatio_width_0300
      * @tc.number SUB_ACE_List_aspectRatio_width_0300
-     * @tc.name testListAspectRatio
-     * @tc.desc set the aspectRatio of list to '2'
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   set the aspectRatio of list to '2'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_List_aspectRatio_width_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_List_aspectRatio_width_0300] START');
@@ -138,12 +138,12 @@ export default function List_aspectRatio_width() {
     });
 
     /**
+     * @tc.name   SUB_ACE_List_aspectRatio_width_0400
      * @tc.number SUB_ACE_List_aspectRatio_width_0400
-     * @tc.name testListAspectRatio
-     * @tc.desc set the aspectRatio of list to '-1'
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   set the aspectRatio of list to '-1'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_List_aspectRatio_width_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_List_aspectRatio_width_0400] START');

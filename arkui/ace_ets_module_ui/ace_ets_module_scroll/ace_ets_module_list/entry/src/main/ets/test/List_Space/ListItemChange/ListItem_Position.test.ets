@@ -65,12 +65,12 @@ export default function listItem_Position() {
     });
 
     /**
+     * @tc.name   testListItemPosition
      * @tc.number SUB_ACE_LIST_LISTITEM_POSITION_TEST_0100
-     * @tc.name testListItemPosition
-     * @tc.desc ListItem subcomponent binding position property
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   ListItem subcomponent binding position property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListItemPosition',  Level.LEVEL0, async (done: Function) => {
       console.info('new testListItemPosition START');

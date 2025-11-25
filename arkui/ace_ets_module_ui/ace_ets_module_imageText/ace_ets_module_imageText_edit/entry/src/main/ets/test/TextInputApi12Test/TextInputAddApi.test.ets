@@ -42,13 +42,15 @@ export default function TextInputAddApi() {
       console.info("TextInputAddApi after each called");
     });
 
-    /**
-     * @tc.number    TextInputAddApi_001
-     * @tc.desc      onWillInsert test of TextInput
-     * @tc.level     Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   TextInputAddApi_001
+     * @tc.number TextInputAddApi_001
+     * @tc.desc   TextInputAddApi_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('TextInputAddApi_001',  Level.LEVEL3, async (done: Function) => {
       console.info('[TextInputAddApi_001] START');
 
@@ -70,10 +72,12 @@ export default function TextInputAddApi() {
     });
 
     /**
-     * @tc.number    TextInputAddApi_002
-     * @tc.desc      onDidInsert test of TextInput
-     * @tc.level     Level 3
-     * @tc.type
+     * @tc.name   TextInputAddApi_002
+     * @tc.number TextInputAddApi_002
+     * @tc.desc   onDidInsert test of TextInput
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TextInputAddApi_002',  Level.LEVEL3, async (done: Function) => {
       console.info('[TextInputAddApi_002] START');

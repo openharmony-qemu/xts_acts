@@ -26,52 +26,52 @@ export default function datePickerSelectedTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DATEPICKER_SELECTED_0100
-     * @tc.name       : testDatePickerSelected001
-     * @tc.desc       : testing selected for DatePicker with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testDatePickerSelected001
+     * @tc.number SUB_ARKUI_CAPI_DATEPICKER_SELECTED_0100
+     * @tc.desc   testing selected for DatePicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDatePickerSelected001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testDatePickerSelected001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DATEPICKER_SELECTED_0200
-     * @tc.name       : testDatePickerSelected002
-     * @tc.desc       : testing selected for DatePicker with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testDatePickerSelected002
+     * @tc.number SUB_ARKUI_CAPI_DATEPICKER_SELECTED_0200
+     * @tc.desc   testing selected for DatePicker with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDatePickerSelected002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testDatePickerSelected002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DATEPICKER_SELECTED_0300
-     * @tc.name       : testDatePickerSelected003
-     * @tc.desc       : testing selected for DatePicker with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testDatePickerSelected003
+     * @tc.number SUB_ARKUI_CAPI_DATEPICKER_SELECTED_0300
+     * @tc.desc   testing selected for DatePicker with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDatePickerSelected003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testDatePickerSelected003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DATEPICKER_SELECTED_0400
-     * @tc.name       : testDatePickerSelected004
-     * @tc.desc       : testing selected for DatePicker with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testDatePickerSelected004
+     * @tc.number SUB_ARKUI_CAPI_DATEPICKER_SELECTED_0400
+     * @tc.desc   testing selected for DatePicker with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDatePickerSelected004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testDatePickerSelected004()).assertEqual(0)

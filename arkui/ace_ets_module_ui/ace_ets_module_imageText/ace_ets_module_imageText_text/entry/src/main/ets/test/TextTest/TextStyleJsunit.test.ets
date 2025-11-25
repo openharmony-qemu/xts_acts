@@ -48,12 +48,12 @@ export default function TextStyleJsunit() {
     });
 	let resourceSize = getContext().resourceManager.getNumber($r('sys.float.ohos_id_text_font_size').id)
     /**
-     * @tc.number    testTextStyle006
-     * @tc.name      testTextStyle006
-     * @tc.desc      set Text_Style
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testTextStyle006
+     * @tc.number testTextStyle006
+     * @tc.desc   set Text_Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextStyle006', Level.LEVEL1, async () => {
       console.info('[testTextStyle006] START');
@@ -66,12 +66,12 @@ export default function TextStyleJsunit() {
 	  
     });
     /**
-     * @tc.number    testTextStyle007
-     * @tc.name      testTextStyle007
-     * @tc.desc      set Text_Style
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testTextStyle007
+     * @tc.number testTextStyle007
+     * @tc.desc   set Text_Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextStyle007', Level.LEVEL1, async () => {
       console.info('[testTextStyle007] START');
@@ -99,12 +99,12 @@ export default function TextStyleJsunit() {
 	  expect(JSON.parse(strJson).$attrs.fontSize).assertEqual(px2fp(resourceSize)+'.00fp');
     });
     /**
-     * @tc.number    testTextStyle008
-     * @tc.name      testTextStyle008
-     * @tc.desc      set Text_Style
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testTextStyle008
+     * @tc.number testTextStyle008
+     * @tc.desc   set Text_Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextStyle008', Level.LEVEL1, async () => {
       console.info('[testTextStyle008] START');
@@ -132,12 +132,12 @@ export default function TextStyleJsunit() {
 	  expect(JSON.parse(strJson).$attrs.fontSize).assertEqual(px2fp(resourceSize)+'.00fp');
     });
     /**
-     * @tc.number    testTextStyle009
-     * @tc.name      testTextStyle009
-     * @tc.desc      set Text_Style
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testTextStyle009
+     * @tc.number testTextStyle009
+     * @tc.desc   set Text_Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextStyle009', Level.LEVEL1, async () => {
       console.info('[testTextStyle009] START');
@@ -165,12 +165,12 @@ export default function TextStyleJsunit() {
 	  expect(JSON.parse(strJson).$attrs.fontSize).assertEqual(px2fp(resourceSize)+'.00fp');
     });
     /**
-     * @tc.number    testTextStyle010
-     * @tc.name      testTextStyle010
-     * @tc.desc      set Text_Style
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testTextStyle010
+     * @tc.number testTextStyle010
+     * @tc.desc   set Text_Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextStyle010', Level.LEVEL1, async () => {
       console.info('[testTextStyle010] START');
@@ -199,12 +199,12 @@ export default function TextStyleJsunit() {
 
     });
     /**
-     * @tc.number    testTextStyle011
-     * @tc.name      testTextStyle011
-     * @tc.desc      set Text_Style
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testTextStyle011
+     * @tc.number testTextStyle011
+     * @tc.desc   set Text_Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextStyle011', Level.LEVEL1, async () => {
       console.info('[testTextStyle011] START');
@@ -217,12 +217,12 @@ export default function TextStyleJsunit() {
 
     });
     /**
-     * @tc.number    testTextStyle012
-     * @tc.name      testTextStyle012
-     * @tc.desc      set Text_Style
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testTextStyle012
+     * @tc.number testTextStyle012
+     * @tc.desc   set Text_Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextStyle012', Level.LEVEL1, async () => {
       console.info('[testTextStyle012] START');
@@ -250,12 +250,12 @@ export default function TextStyleJsunit() {
 
     });
     /**
-     * @tc.number    testTextStyle013
-     * @tc.name      testTextStyle013
-     * @tc.desc      set Text_Style
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testTextStyle013
+     * @tc.number testTextStyle013
+     * @tc.desc   set Text_Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextStyle013', Level.LEVEL1, async () => {
       console.info('[testTextStyle013] START');
@@ -283,12 +283,12 @@ export default function TextStyleJsunit() {
 
     });
     /**
-     * @tc.number    testTextStyle014
-     * @tc.name      testTextStyle014
-     * @tc.desc      set Text_Style
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testTextStyle014
+     * @tc.number testTextStyle014
+     * @tc.desc   set Text_Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextStyle014', Level.LEVEL1, async () => {
       console.info('[testTextStyle014] START');
@@ -316,12 +316,12 @@ export default function TextStyleJsunit() {
 
     });
     /**
-     * @tc.number    testTextStyle015
-     * @tc.name      testTextStyle015
-     * @tc.desc      set Text_Style
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testTextStyle015
+     * @tc.number testTextStyle015
+     * @tc.desc   set Text_Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextStyle015', Level.LEVEL1, async () => {
       console.info('[testTextStyle015] START');
@@ -349,12 +349,12 @@ export default function TextStyleJsunit() {
 
     });
     /**
-     * @tc.number    testTextStyle016
-     * @tc.name      testTextStyle016
-     * @tc.desc      set Text_Style
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testTextStyle016
+     * @tc.number testTextStyle016
+     * @tc.desc   set Text_Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextStyle016', Level.LEVEL1, async () => {
       console.info('[testTextStyle016] START');
@@ -367,12 +367,12 @@ export default function TextStyleJsunit() {
 
     });
     /**
-     * @tc.number    testTextStyle017
-     * @tc.name      testTextStyle017
-     * @tc.desc      set Text_Style
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testTextStyle017
+     * @tc.number testTextStyle017
+     * @tc.desc   set Text_Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextStyle017', Level.LEVEL1, async () => {
       console.info('[testTextStyle017] START');
@@ -400,12 +400,12 @@ export default function TextStyleJsunit() {
 
     });
     /**
-     * @tc.number    testTextStyle018
-     * @tc.name      testTextStyle018
-     * @tc.desc      set Text_Style
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testTextStyle018
+     * @tc.number testTextStyle018
+     * @tc.desc   set Text_Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextStyle018', Level.LEVEL1, async () => {
       console.info('[testTextStyle018] START');
@@ -433,12 +433,12 @@ export default function TextStyleJsunit() {
 
     });
     /**
-     * @tc.number    testTextStyle019
-     * @tc.name      testTextStyle019
-     * @tc.desc      set Text_Style
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testTextStyle019
+     * @tc.number testTextStyle019
+     * @tc.desc   set Text_Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextStyle019', Level.LEVEL1, async () => {
       console.info('[testTextStyle019] START');
@@ -466,12 +466,12 @@ export default function TextStyleJsunit() {
 
     });
     /**
-     * @tc.number    testTextStyle020
-     * @tc.name      testTextStyle020
-     * @tc.desc      set Text_Style
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testTextStyle020
+     * @tc.number testTextStyle020
+     * @tc.desc   set Text_Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextStyle020', Level.LEVEL1, async () => {
       console.info('[testTextStyle020] START');
@@ -499,12 +499,12 @@ export default function TextStyleJsunit() {
 
     });
     /**
-     * @tc.number    testTextStyle021
-     * @tc.name      testTextStyle021
-     * @tc.desc      set Text_Style
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testTextStyle021
+     * @tc.number testTextStyle021
+     * @tc.desc   set Text_Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextStyle021', Level.LEVEL1, async () => {
       console.info('[testTextStyle021] START');
@@ -517,12 +517,12 @@ export default function TextStyleJsunit() {
 
     });
     /**
-     * @tc.number    testTextStyle022
-     * @tc.name      testTextStyle022
-     * @tc.desc      set Text_Style
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testTextStyle022
+     * @tc.number testTextStyle022
+     * @tc.desc   set Text_Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextStyle022', Level.LEVEL1, async () => {
       console.info('[testTextStyle022] START');
@@ -550,12 +550,12 @@ export default function TextStyleJsunit() {
 
     });
     /**
-     * @tc.number    testTextStyle023
-     * @tc.name      testTextStyle023
-     * @tc.desc      set Text_Style
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testTextStyle023
+     * @tc.number testTextStyle023
+     * @tc.desc   set Text_Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextStyle023', Level.LEVEL1, async () => {
       console.info('[testTextStyle023] START');

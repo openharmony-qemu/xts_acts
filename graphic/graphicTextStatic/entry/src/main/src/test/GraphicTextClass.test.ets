@@ -60,6 +60,59 @@ export default function GraphicTextClass() {
     })
 
     /**
+     * @tc.number    : testPaintStatic_02
+     * @tc.name      : testPaintStatic_02
+     * @tc.desc      : To test Paragraph Paint interface.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('testPaintStatic_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        const msg = 'testCanvasConstructorNormalStatic';
+        let canvas = new drawing.Canvas(pixel)
+        expect(true).assertTrue();
+        let paragraph: text.Paragraph = buildParagraph();
+        try {
+          paragraph.paint(canvas, 10, 10);
+          console.info(msg + 'canvasConstructor successed');
+          expect(true).assertTrue();
+        } catch (e) {
+          e = e as BusinessError;
+          console.info(msg + `canvasConstructor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+          expect().assertFail();
+        }
+        done();
+    })
+
+    /**
+     * @tc.number    : testPaintOnPathStatic_02
+     * @tc.name      : testPaintOnPathStatic_02
+     * @tc.desc      : To test Paragraph Paint interface.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('testPaintOnPathStatic_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        const msg = 'testCanvasConstructorNormalStatic';
+        let canvas = new drawing.Canvas(pixel)
+        expect(true).assertTrue();
+        let paragraph: text.Paragraph = buildParagraph();
+        let path = new drawing.Path();
+        try {
+          paragraph.paintOnPath(canvas, path, 0, 0);
+          console.info(msg + 'canvasConstructor successed');
+          expect(true).assertTrue();
+        } catch (e) {
+          e = e as BusinessError;
+          console.info(msg + `canvasConstructor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+          expect().assertFail();
+        }
+        done();
+      })
+
+    /**
      * @tc.number    : testParagraphBuilder_AonstructorAndAddTextStatic
      * @tc.name      : testParagraphBuilder_AonstructorAndAddTextStatic
      * @tc.desc      : Constructs a ParagraphBuilder object and calls its methods

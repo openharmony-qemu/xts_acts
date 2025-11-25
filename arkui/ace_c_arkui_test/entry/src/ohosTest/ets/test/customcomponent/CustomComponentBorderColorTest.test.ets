@@ -26,26 +26,26 @@ export default function customComponentBorderColorTest() {
       done();
     });
 
-    /*
- * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_BORDERCOLOR_0100
- * @tc.name       : testCustomComponentBorderColor001
- * @tc.desc       : testing borderColor for customComponent with normal value
- * @tc.size       : MediumTest
- * @tc.type       : Function
- * @tc.level      : Level1
- */
+    /**
+     * @tc.name   testCustomComponentBorderColor001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_BORDERCOLOR_0100
+     * @tc.desc   testing borderColor for customComponent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCustomComponentBorderColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentBorderColor001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_BORDERCOLOR_0200
-     * @tc.name       : testCustomComponentBorderColor002
-     * @tc.desc       : testing borderColor for customComponent with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentBorderColor002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_BORDERCOLOR_0200
+     * @tc.desc   testing borderColor for customComponent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentBorderColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentBorderColor002()).assertEqual(0)

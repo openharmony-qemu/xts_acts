@@ -49,12 +49,12 @@ export default function radioOnChangeModifierTest() {
     })
    
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUX_Modifier_Radio_OnChange_1001
-     * @tc.name: ArkUX_Modifier_Radio_OnChange_1001
-     * @tc.desc: RadioAPI 
-     * @tc.level: Level 1
-     * @tc.type : Radio
-     * @tc.size : RadioTest
+     * @tc.name   ArkUX_Modifier_Radio_OnChange_1001
+     * @tc.number SUB_ARKUI_API_ArkUX_Modifier_Radio_OnChange_1001
+     * @tc.desc   RadioAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Modifier_Radio_OnChange_1001', Level.LEVEL1, async (done: Function) => {
         console.info('ArkUX_Modifier_CheckboxGroup_OnChange_1001 START');
@@ -72,12 +72,12 @@ export default function radioOnChangeModifierTest() {
       });
   
       /**
-       * @tc.number: SUB_ARKUI_API_ArkUX_Modifier_Radio_OnChange_1002
-       * @tc.name: ArkUX_Modifier_Radio_OnChange_1002
-       * @tc.desc: RadioAPI 
-       * @tc.level: Level 1
-       * @tc.type : Radio
-       * @tc.size : RadioTest
+       * @tc.name   ArkUX_Modifier_Radio_OnChange_1002
+       * @tc.number SUB_ARKUI_API_ArkUX_Modifier_Radio_OnChange_1002
+       * @tc.desc   RadioAPI
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
        */
       it('ArkUX_Modifier_Radio_OnChange_1002', Level.LEVEL1, async (done: Function) => {
         console.info('ArkUX_Modifier_Radio_OnChange_1002 START');

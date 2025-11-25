@@ -41,13 +41,13 @@ export default function CalendarDialogAJsunit() {
       done()
     });
 
-    /*
-     * @tc.number: CalendarDialogAJsunit_0100
-     * @tc.name  : CalendarDialogAJsunit_0100
-     * @tc.desc  : Test the the CalendarPickerDialog component Pop-up window exits layer by layer
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   CalendarDialogAJsunit_0100
+     * @tc.number CalendarDialogAJsunit_0100
+     * @tc.desc   Test the the CalendarPickerDialog component Pop-up window exits layer by layer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('CalendarDialogAJsunit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('CalendarDialogAJsunit_0100 START');

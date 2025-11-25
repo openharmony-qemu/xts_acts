@@ -43,12 +43,12 @@ export default function TextPickerDialogAJsunit() {
     });
 
     /**
+     * @tc.name   TextPickerDialogAJsunit_0100
      * @tc.number TextPickerDialogAJsunit_0100
-     * @tc.name TextPickerDialogWindowPropertiesTest_0100
-     * @tc.desc set api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextPickerDialogAJsunit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('TextPickerDialogAJsunit_0100 START');

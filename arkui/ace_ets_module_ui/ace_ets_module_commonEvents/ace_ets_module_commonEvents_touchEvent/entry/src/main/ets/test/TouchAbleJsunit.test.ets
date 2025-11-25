@@ -46,14 +46,14 @@ export default function touchAbleJsunit() {
       console.info("touchAble after each called");
     });
 
-    /*
-    * @tc.number     : SUB_testTouchAble001
-    * @tc.name       : testTouchAble001
-    * @tc.desc       : test
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testTouchAble001
+     * @tc.number SUB_testTouchAble001
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testTouchAble001', Level.LEVEL0, async () => {
       await Utils.sleep(1000)
       let strJson: string = getInspectorByKey('ellipse');
@@ -61,14 +61,14 @@ export default function touchAbleJsunit() {
       expect(JSON.parse(strJson).$attrs.focusable).assertEqual(false);
     });
 
-    /*
-    * @tc.number     : SUB_testTouchAble002
-    * @tc.name       : testTouchAble002
-    * @tc.desc       : test
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testTouchAble002
+     * @tc.number SUB_testTouchAble002
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testTouchAble002', Level.LEVEL0, async (done:Function) => {
       await Utils.sleep(1000);
       let callbackTwo = (eventData: events_emitter.EventData) => {

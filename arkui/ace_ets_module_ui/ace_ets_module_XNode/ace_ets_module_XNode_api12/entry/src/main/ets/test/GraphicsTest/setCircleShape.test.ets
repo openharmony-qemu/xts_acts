@@ -40,12 +40,12 @@ export default function setCircleShapeTest() {
       done();
     });
     /**
-     * @tc.number    setCircleShapeTest_0010
-     * @tc.name      setCircleShapeTest_0010
-     * @tc.desc      graphic: setCircleShape
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   setCircleShapeTest_0010
+     * @tc.number setCircleShapeTest_0010
+     * @tc.desc   graphic: setCircleShape
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setCircleShapeTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('setCircleShapeTest_0010 START');

@@ -42,14 +42,14 @@ export default function ListLanes03() {
       done();
     });
 
-      /* *
-       * @tc.number: ListLanes03_001
-       * @tc.name  : ListLanes03_001
-       * @tc.desc  : set gutter to 10vp and listDirection to Axis.Vertical
-       * @tc.level : Level 3
-       * @tc.type
-       * @tc.size
-       */
+    /**
+     * @tc.name   ListLanes03_001
+     * @tc.number ListLanes03_001
+     * @tc.desc   set gutter to 10vp and listDirection to Axis.Vertical
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ListLanes03_001',  Level.LEVEL3, async (done: Function) => {
 
       console.info('[ListLanes03_001] START');
@@ -63,14 +63,14 @@ export default function ListLanes03() {
       console.info('[ListLanes03_001] END');
       done();
     });
-      /* *
-       * @tc.number: ListLanes03_002
-       * @tc.name  : ListLanes03_002
-       * @tc.desc  : set gutter to 10fp and listDirection to Axis.Vertical
-       * @tc.level : Level 3
-       * @tc.type
-       * @tc.size
-       */
+    /**
+     * @tc.name   ListLanes03_002
+     * @tc.number ListLanes03_002
+     * @tc.desc   set gutter to 10fp and listDirection to Axis.Vertical
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ListLanes03_002',  Level.LEVEL3, async (done: Function) => {
 
       console.info('[ListLanes03_002] START');
@@ -85,14 +85,14 @@ export default function ListLanes03() {
       done();
     });
 
-      /* *
-       * @tc.number: ListLanes03_003
-       * @tc.name  : ListLanes03_003
-       * @tc.desc  : set gutter to 10lpx and listDirection to Axis.Vertical
-       * @tc.level : Level 3
-       * @tc.type
-       * @tc.size
-       */
+    /**
+     * @tc.name   ListLanes03_003
+     * @tc.number ListLanes03_003
+     * @tc.desc   set gutter to 10lpx and listDirection to Axis.Vertical
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ListLanes03_003',  Level.LEVEL3, async (done: Function) => {
 
       console.info('[ListLanes03_003] START');
@@ -107,14 +107,14 @@ export default function ListLanes03() {
       done();
     });
 
-      /* *
-       * @tc.number: ListLanes03_004
-       * @tc.name  : ListLanes03_004
-       * @tc.desc  : set gutter to 10px and listDirection to Axis.Vertical
-       * @tc.level : Level 3
-       * @tc.type
-       * @tc.size
-       */
+    /**
+     * @tc.name   ListLanes03_004
+     * @tc.number ListLanes03_004
+     * @tc.desc   set gutter to 10px and listDirection to Axis.Vertical
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ListLanes03_004',  Level.LEVEL3, async (done: Function) => {
 
       console.info('[ListLanes03_004] START');

@@ -27,14 +27,14 @@ export default function toggleEnabledTest() {
       await Utils.pushPage(`toggle/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_TOGGLE_ENABLED_0100
-    * @tc.name       : testToggleEnabled001
-    * @tc.desc       : testing enabled event callback for toggle with normal value (true)
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testToggleEnabled001
+     * @tc.number SUB_ARKUI_CAPI_TOGGLE_ENABLED_0100
+     * @tc.desc   testing enabled event callback for toggle with normal value (true)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testToggleEnabled001', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnClickEnabledToggle')
       await Utils.sleep(1000)
@@ -52,14 +52,14 @@ export default function toggleEnabledTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_TOGGLE_ENABLED_0200
-    * @tc.name       : testToggleEnabled002
-    * @tc.desc       : testing enabled event callback for toggle with normal value (false)
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testToggleEnabled002
+     * @tc.number SUB_ARKUI_CAPI_TOGGLE_ENABLED_0200
+     * @tc.desc   testing enabled event callback for toggle with normal value (false)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testToggleEnabled002', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnClickDisabledToggle')
       await Utils.sleep(1000)
@@ -77,14 +77,14 @@ export default function toggleEnabledTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_TOGGLE_ENABLED_0300
-    * @tc.name       : testToggleEnabled003
-    * @tc.desc       : testing enabled event callback for toggle with abnormal value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testToggleEnabled003
+     * @tc.number SUB_ARKUI_CAPI_TOGGLE_ENABLED_0300
+     * @tc.desc   testing enabled event callback for toggle with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testToggleEnabled003', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnClickAbnormalToggle')
       await Utils.sleep(1000)

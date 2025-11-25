@@ -46,9 +46,12 @@ export default function ColumnSetFlexShinkNone_SubChange() {
     });
 
     /**
+     * @tc.name   testColumnSetFlexShinkNone
      * @tc.number SUB_ACE_COLUMN_SUBCOMPONENTCHANGED_1900
-     * @tc.name testColumnSetFlexShinkNone
-     * @tc.desc Subcomponents set flexshink (0-0-1) attribute.
+     * @tc.desc   Subcomponents set flexshink (0-0-1) attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnSetFlexShinkNone',  Level.LEVEL0, async () => {
       console.info('new testColumnSetFlexShinkNone START');

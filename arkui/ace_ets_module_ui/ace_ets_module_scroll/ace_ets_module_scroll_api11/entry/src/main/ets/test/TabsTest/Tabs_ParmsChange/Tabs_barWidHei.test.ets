@@ -71,9 +71,12 @@ export default function Tabs_barWidHei() {
       });
     });
     /**
+     * @tc.name   testTabsBarWidToNegative
      * @tc.number SUB_ACE_TABS_BARWIDHEI_TEST_0100
-     * @tc.name testTabsBarWidToNegative
-     * @tc.desc The parent component sets the value of barWidth to a negative number .barwidth(-10)
+     * @tc.desc   The parent component sets the value of barWidth to a negative number .barwidth(-10)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTabsBarWidToNegative', Level.LEVEL1, async (done: Function) => {
       console.info('[testTabsBarWidToNegative] START');
@@ -167,10 +170,12 @@ export default function Tabs_barWidHei() {
       done();
     });
     /**
+     * @tc.name   testTabsBarWidExceedTabsWid
      * @tc.number SUB_ACE_TABS_BARWIDHEI_TEST_0200
-     * @tc.name testTabsBarWidExceedTabsWid
-     * @tc.desc The parent component sets the value of barWidth to a positive number (exceeding the width of Tabs)
-     * .barwidth(400)
+     * @tc.desc   The parent component sets the value of barWidth to a positive number (exceeding the width of Tabs)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTabsBarWidExceedTabsWid', Level.LEVEL1, async (done: Function) => {
       console.info('[testTabsBarWidExceedTabsWid] START');
@@ -273,10 +278,12 @@ export default function Tabs_barWidHei() {
       done();
     });
     /**
+     * @tc.name   testTabsBarWidWithinTabsWid
      * @tc.number SUB_ACE_TABS_BARWIDHEI_TEST_0300
-     * @tc.name testTabsBarWidWithinTabsWid
-     * @tc.desc The parent component sets the value of barWidth to a positive number
-     * (a value within the Tabs width).barwidth(300)
+     * @tc.desc   The parent component sets the value of barWidth to a positive number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTabsBarWidWithinTabsWid', Level.LEVEL1, async (done: Function) => {
       console.info('[testTabsBarWidWithinTabsWid] START');
@@ -377,9 +384,12 @@ export default function Tabs_barWidHei() {
       done();
     });
     /**
+     * @tc.name   testTabsBarHeiExceedTabsHei
      * @tc.number SUB_ACE_TABS_BARWIDHEI_TEST_0400
-     * @tc.name testTabsBarHeiExceedTabsHei
-     * @tc.desc The parent component sets the value of barHeigh to a positive number (exceeding the height of Tabs)
+     * @tc.desc   The parent component sets the value of barHeigh to a positive number (exceeding the height of Tabs)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTabsBarHeiExceedTabsHei', Level.LEVEL1, async (done: Function) => {
       console.info('[testTabsBarHeiExceedTabsHei] START');
@@ -491,10 +501,12 @@ export default function Tabs_barWidHei() {
       done();
     });
     /**
+     * @tc.name   testTabsBarHeiWithinTabsHei
      * @tc.number SUB_ACE_TABS_BARWIDHEI_TEST_0500
-     * @tc.name testTabsBarHeiWithinTabsHei
-     * @tc.desc The parent component sets the value of barHeigh to a positive number
-     * (a value within the height range of Tabs).barHeight(100)
+     * @tc.desc   The parent component sets the value of barHeigh to a positive number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTabsBarHeiWithinTabsHei', Level.LEVEL1, async (done: Function) => {
       console.info('[testTabsBarHeiWithinTabsHei] START');
@@ -594,9 +606,12 @@ export default function Tabs_barWidHei() {
       done();
     });
     /**
+     * @tc.name   testTabsBarHeiToNegative
      * @tc.number SUB_ACE_TABS_BARWIDHEI_TEST_0600
-     * @tc.name testTabsBarHeiToNegative
-     * @tc.desc The parent component sets the value of barHeight to a negative number
+     * @tc.desc   The parent component sets the value of barHeight to a negative number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTabsBarHeiToNegative', Level.LEVEL1, async (done: Function) => {
       console.info('[testTabsBarHeiToNegative] START');

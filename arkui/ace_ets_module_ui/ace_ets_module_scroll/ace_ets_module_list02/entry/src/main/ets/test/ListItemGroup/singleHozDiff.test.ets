@@ -46,12 +46,12 @@ export default function singleHozDiff() {
     });
 
     /**
-     * @tc.number    singleHozDiff_001
-     * @tc.name      singleHozDiff_0100
-     * @tc.desc      List component with different heights arranged horizontally in a single column, jumps to the specified index.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   singleHozDiff_0100
+     * @tc.number singleHozDiff_001
+     * @tc.desc   List component with different heights arranged horizontally in a single column, jumps to the specified index.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('singleHozDiff_0100', Level.LEVEL3, async (done: Function) => {
       console.info('[singleHozDiff_0100] START');

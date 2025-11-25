@@ -40,14 +40,14 @@ export default function textPickerSelectedAreaTest() {
       console.info('textPickerSelectedAreaTest beforeEach end');
       done();
     });
-    /* *
-    * @tc.number: textPickerSelectedAreaTest_001
-    * @tc.name  : textPickerSelectedAreaTest_001
-    * @tc.desc  : To test the onEnterSelectedArea event
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   textPickerSelectedAreaTest_001
+     * @tc.number textPickerSelectedAreaTest_001
+     * @tc.desc   To test the onEnterSelectedArea event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('textPickerSelectedAreaTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('textPickerSelectedAreaTest_001 START');
       let driver = Driver.create();

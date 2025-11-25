@@ -26,37 +26,37 @@ export default function textInputSelectAllTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_SELECTALL_0001
-     * @tc.name: testTextInputSelectAll001
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputSelectAll001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_SELECTALL_0001
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputSelectAll001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputSelectAll001()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_SELECTALL_0002
-     * @tc.name: testTextInputSelectAll002
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputSelectAll002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_SELECTALL_0002
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputSelectAll002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputSelectAll002()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_SELECTALL_0003
-     * @tc.name: testTextInputSelectAll003
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputSelectAll003
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_SELECTALL_0003
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputSelectAll003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputSelectAll003()).assertEqual(0)

@@ -52,15 +52,15 @@ export default function ResourceInteger() {
       }
       done();
     });
-      /*
-         * @tc.number       ResourceInteger_0100
-         * @tc.name         ResourceInteger_0100
-         * @tc.desic         ResourceInteger
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : LEVEL0
-         */
 
+    /**
+     * @tc.name   ResourceInteger_0100
+     * @tc.number ResourceInteger_0100
+     * @tc.desc   ResourceInteger_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ResourceInteger_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ResourceInteger_0100 START');
       let strJson = getInspectorByKey('integer');
@@ -72,14 +72,14 @@ export default function ResourceInteger() {
       done();
     });
 
-      /*
-         * @tc.number       ResourceInteger_0200
-         * @tc.name         ResourceInteger_0200
-         * @tc.desic         ResourceInteger
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : LEVEL0
-         */
+    /**
+     * @tc.name   ResourceInteger_0200
+     * @tc.number ResourceInteger_0200
+     * @tc.desc   ResourceInteger_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ResourceInteger_0200', Level.LEVEL0, async (done: Function) => {
       console.info('ResourceInteger_0200 START');
       let driver = Driver.create();

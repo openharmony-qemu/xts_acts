@@ -41,12 +41,12 @@ export default function LineResourceTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_LineResourceTest_0100
-     * @tc.name: LineResourceTest_0100
-     * @tc.desc: LineAPI 
-     * @tc.level: Level 2
-     * @tc.type : Line
-     * @tc.size : LineTest
+     * @tc.name   LineResourceTest_0100
+     * @tc.number SUB_ARKUI_API_LineResourceTest_0100
+     * @tc.desc   LineAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('LineResourceTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[LineResourceTest_0100] START');

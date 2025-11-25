@@ -52,13 +52,13 @@ export default function ImageObscuredTest() {
       // This API supports only one parameter: clear action function.
     })
 
-    /*
+    /**
+     * @tc.name   ArkUX_Redacted_Image_0150
      * @tc.number ArkUX_Redacted_Image_0150
-     * @tc.name ArkUX_Redacted_Image_0150
-     * @tc.desc Image test
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Image test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Redacted_Image_0150', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Redacted_Image_0150 START');
@@ -82,13 +82,13 @@ export default function ImageObscuredTest() {
       }, 500)
     });
 
-    /*
+    /**
+     * @tc.name   ArkUX_Redacted_Image_0160
      * @tc.number ArkUX_Redacted_Image_0160
-     * @tc.name ArkUX_Redacted_Image_0160
-     * @tc.desc Image test
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Image test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Redacted_Image_0160', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Redacted_Image_0160 START');
@@ -109,13 +109,13 @@ export default function ImageObscuredTest() {
       }, 500)
     });
 
-    /*
+    /**
+     * @tc.name   ArkUX_Redacted_Image_0170
      * @tc.number ArkUX_Redacted_Image_0170
-     * @tc.name ArkUX_Redacted_Image_0170
-     * @tc.desc Image test
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Image test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Redacted_Image_0170', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Redacted_Image_0170 START');
@@ -138,13 +138,13 @@ export default function ImageObscuredTest() {
       }, 500)
     });
 
-    /*
+    /**
+     * @tc.name   ArkUX_Redacted_Image_0180
      * @tc.number ArkUX_Redacted_Image_0180
-     * @tc.name ArkUX_Redacted_Image_0180
-     * @tc.desc Image test
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Image test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Redacted_Image_0180', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Redacted_Image_0180 START');
@@ -165,13 +165,13 @@ export default function ImageObscuredTest() {
       }, 500)
     });
 
-    /*
+    /**
+     * @tc.name   ArkUX_Redacted_Image_0190
      * @tc.number ArkUX_Redacted_Image_0190
-     * @tc.name ArkUX_Redacted_Image_0190
-     * @tc.desc Image test
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Image test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Redacted_Image_0190', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Redacted_Image_0190 START');

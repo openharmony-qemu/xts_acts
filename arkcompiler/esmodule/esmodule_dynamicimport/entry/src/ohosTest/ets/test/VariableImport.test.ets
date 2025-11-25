@@ -22,13 +22,13 @@ export default function variableImport() {
   describe('ActVariableImport', () => {
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_variableImport_0001
-     * @tc.name      : testVariableHspName
-     * @tc.desc      : add name of task for taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   testVariableHspName
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_variableImport_0001
+     * @tc.desc   add name of task for taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testVariableHspName', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let packageName = 'Sharelibraryhsp'
       let lib: ESObject= await import(packageName)
@@ -37,13 +37,13 @@ export default function variableImport() {
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_variableImport_0002
-     * @tc.name      : testVariableHarName
-     * @tc.desc      : add name of task for taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   testVariableHarName
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_variableImport_0002
+     * @tc.desc   add name of task for taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testVariableHarName', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let packageName = 'Staticlibraryhar'
       let lib: ESObject= await import(packageName)
@@ -52,13 +52,13 @@ export default function variableImport() {
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_variableImport_0005
-     * @tc.name      : testVaribleWithinHspPath
-     * @tc.desc      : add name of task for taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   testVaribleWithinHspPath
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_variableImport_0005
+     * @tc.desc   add name of task for taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testVaribleWithinHspPath', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let res = await varibleWithinHsp()
       expect(res).assertTrue()
@@ -66,13 +66,13 @@ export default function variableImport() {
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_variableImport_0006
-     * @tc.name      : testVaribleWithinHapPath
-     * @tc.desc      : add name of task for taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   testVaribleWithinHapPath
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_variableImport_0006
+     * @tc.desc   add name of task for taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testVaribleWithinHapPath', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let res = await varibleWithinHap()
       expect(res).assertTrue()
@@ -80,13 +80,13 @@ export default function variableImport() {
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_ETSUTILS_variableImport_0007
-     * @tc.name      : testVaribleWithinHarPath
-     * @tc.desc      : add name of task for taskpool
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
-    */
+     * @tc.name   testVaribleWithinHarPath
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_variableImport_0007
+     * @tc.desc   add name of task for taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testVaribleWithinHarPath', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       let res = await varibleWithinHarPath()
       expect(res).assertTrue()

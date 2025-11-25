@@ -46,13 +46,13 @@ export default function textShadowTest() {
       console.info("textShadowTest after each called");
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-    * @tc.name         textShadowTest0001
-    * @tc.desic        The textShadow set []
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   textShadowTest0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   textShadowTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textShadowTest0001', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
@@ -86,13 +86,13 @@ export default function textShadowTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-    * @tc.name         textShadowTest0002
-    * @tc.desic        The textShadow set {}
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   textShadowTest0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   textShadowTest0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textShadowTest0002', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
@@ -118,13 +118,13 @@ export default function textShadowTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-    * @tc.name         textShadowTest0003
-    * @tc.desic        The textShadow set undefined
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   textShadowTest0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   textShadowTest0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textShadowTest0003', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
@@ -150,13 +150,13 @@ export default function textShadowTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0004
-    * @tc.name         textShadowTest0004
-    * @tc.desic        The textShadow set Color
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   textShadowTest0004
+     * @tc.number SUB_ACE_BASIC_ETS_API_0004
+     * @tc.desc   textShadowTest0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textShadowTest0004', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
@@ -182,13 +182,13 @@ export default function textShadowTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0005
-    * @tc.name         textShadowTest0005
-    * @tc.desic        The textShadow set -1
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   textShadowTest0005
+     * @tc.number SUB_ACE_BASIC_ETS_API_0005
+     * @tc.desc   textShadowTest0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textShadowTest0005', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
@@ -214,13 +214,13 @@ export default function textShadowTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0006
-    * @tc.name         textShadowTest0006
-    * @tc.desic        The textShadow set -1
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   textShadowTest0006
+     * @tc.number SUB_ACE_BASIC_ETS_API_0006
+     * @tc.desc   textShadowTest0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textShadowTest0006', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();

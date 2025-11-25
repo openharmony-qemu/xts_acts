@@ -42,12 +42,12 @@ export default function tabsThirdJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Tabs_BarGridAlign_0200
      * @tc.number ArkUI_Tabs_BarGridAlign_0200
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Tabs_BarGridAlign_0200', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarGridAlign_0200] start");
@@ -65,12 +65,12 @@ export default function tabsThirdJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Tabs_BarMode_0200
      * @tc.number ArkUI_Tabs_BarMode_0200
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Tabs_BarMode_0200', Level.LEVEL0, async (done: Function) => {
       console.info("[ArkUI_Tabs_BarMode_0200] start");

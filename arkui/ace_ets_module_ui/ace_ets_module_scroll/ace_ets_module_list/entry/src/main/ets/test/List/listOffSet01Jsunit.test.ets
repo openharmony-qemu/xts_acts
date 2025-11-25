@@ -57,13 +57,13 @@ export default function ListOffSet01Jsunit() {
       done();
     });
 
-    /*
-     * @tc.number    ListOffSet01Jsunit_0010
-     * @tc.name      ListOffSet01Jsunit_0010
-     * @tc.desc      Test List components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ListOffSet01Jsunit_0010
+     * @tc.number ListOffSet01Jsunit_0010
+     * @tc.desc   Test List components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListOffSet01Jsunit_0010',  Level.LEVEL0, async (done: Function) => {
       console.info('[ListOffSet01Jsunit_0010] START');// end set -2
@@ -82,13 +82,13 @@ export default function ListOffSet01Jsunit() {
       done();
     });
 
-    /*
-     * @tc.number    ListOffSet01Jsunit_0020
-     * @tc.name      ListOffSet01Jsunit_0020
-     * @tc.desc      Test List components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ListOffSet01Jsunit_0020
+     * @tc.number ListOffSet01Jsunit_0020
+     * @tc.desc   Test List components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListOffSet01Jsunit_0020',  Level.LEVEL0, async (done: Function) => {
       console.info('[ListOffSet01Jsunit_0020] START');// end set 5
@@ -107,13 +107,13 @@ export default function ListOffSet01Jsunit() {
       done();
     });
 
-    /*
-     * @tc.number    ListOffSet01Jsunit_0030
-     * @tc.name      ListOffSet01Jsunit_0030
-     * @tc.desc      Test List components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ListOffSet01Jsunit_0030
+     * @tc.number ListOffSet01Jsunit_0030
+     * @tc.desc   Test List components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListOffSet01Jsunit_0030',  Level.LEVEL0, async (done: Function) => {
       console.info('[ListOffSet01Jsunit_0030] START');// end set 10,start set 10
@@ -142,13 +142,13 @@ export default function ListOffSet01Jsunit() {
       done();
     });
 
-    /*
-     * @tc.number    ListOffSet01Jsunit_0040
-     * @tc.name      ListOffSet01Jsunit_0040
-     * @tc.desc      Test List components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ListOffSet01Jsunit_0040
+     * @tc.number ListOffSet01Jsunit_0040
+     * @tc.desc   Test List components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListOffSet01Jsunit_0040',  Level.LEVEL0, async (done: Function) => {
       console.info('[ListOffSet01Jsunit_0040] START');// start set -2
@@ -168,13 +168,13 @@ export default function ListOffSet01Jsunit() {
       done();
     });
 
-    /*
-     * @tc.number    ListOffSet01Jsunit_0050
-     * @tc.name      ListOffSet01Jsunit_0050
-     * @tc.desc      Test List components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ListOffSet01Jsunit_0050
+     * @tc.number ListOffSet01Jsunit_0050
+     * @tc.desc   Test List components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListOffSet01Jsunit_0050',  Level.LEVEL0, async (done: Function) => {
       console.info('[ListOffSet01Jsunit_0050] START');// start set 5
@@ -193,13 +193,13 @@ export default function ListOffSet01Jsunit() {
       done();
     });
 
-    /*
-     * @tc.number    ListOffSet01Jsunit_0060
-     * @tc.name      ListOffSet01Jsunit_0060
-     * @tc.desc      Test List components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ListOffSet01Jsunit_0060
+     * @tc.number ListOffSet01Jsunit_0060
+     * @tc.desc   Test List components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListOffSet01Jsunit_0060',  Level.LEVEL0, async (done: Function) => {
       // start set 5 , end set 0 , padding set 5
@@ -225,13 +225,13 @@ export default function ListOffSet01Jsunit() {
       done();
     });
 
-    /*
-     * @tc.number    ListOffSet01Jsunit_0070
-     * @tc.name      ListOffSet01Jsunit_0070
-     * @tc.desc      Test List components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ListOffSet01Jsunit_0070
+     * @tc.number ListOffSet01Jsunit_0070
+     * @tc.desc   Test List components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListOffSet01Jsunit_0070',  Level.LEVEL0, async (done: Function) => {
       // start set 0 , end set 5 , padding set 5
@@ -257,13 +257,13 @@ export default function ListOffSet01Jsunit() {
       done();
     });
 
-    /*
-     * @tc.number    ListOffSet01Jsunit_0080
-     * @tc.name      ListOffSet01Jsunit_0080
-     * @tc.desc      Test List components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ListOffSet01Jsunit_0080
+     * @tc.number ListOffSet01Jsunit_0080
+     * @tc.desc   Test List components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListOffSet01Jsunit_0080',  Level.LEVEL0, async (done: Function) => {
       // start set 10 , end set 10 , padding set 0 , get currentOffset value

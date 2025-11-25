@@ -38,14 +38,14 @@ describe('AccessibleRegisterState', function () {
         done();
     })
 
-    /*
-    * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0100
-    * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0100
-    * @tc.desc    on(accessibilityStateChange)
-    * @tc.size    SmallTest
-    * @tc.type    User
-    * @tc.level   Level 1
-    */
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0100
+     * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0100
+     * @tc.desc   on(accessibilityStateChange)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0100', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
       console.info('SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0100');
       let callbackdata = (data) => {
@@ -56,14 +56,14 @@ describe('AccessibleRegisterState', function () {
       done();
     })
 
-    /*
-    * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0200
-    * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0200
-    * @tc.desc    on(touchGuideStateChange)
-    * @tc.size    SmallTest
-    * @tc.type    User
-    * @tc.level   Level 1
-    */
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0200
+     * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0200
+     * @tc.desc   on(touchGuideStateChange)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0200', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
       console.info('SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0200');
       let callbackdata = (data) => {
@@ -74,14 +74,14 @@ describe('AccessibleRegisterState', function () {
       done();
     })
     
-    /*
-    * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0300
-    * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0300
-    * @tc.desc    on(screenReaderStateChange)
-    * @tc.size    SmallTest
-    * @tc.type    User
-    * @tc.level   Level 1
-    */
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0300
+     * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0300
+     * @tc.desc   on(screenReaderStateChange)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0300', TestType.FUNCTION | Size.SmallTest| Level.LEVEL1, async function (done) {
       console.info('SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0300');
       let callbackdata = (data) => {
@@ -92,14 +92,14 @@ describe('AccessibleRegisterState', function () {
       done();
     })
 
-    /*
-    * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0400
-    * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0400
-    * @tc.desc    on(touchModeChange)
-    * @tc.size    SmallTest
-    * @tc.type    User
-    * @tc.level   Level 1
-    */
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0400
+     * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0400
+     * @tc.desc   on(touchModeChange)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0400', TestType.FUNCTION | Size.SmallTest| Level.LEVEL1, async function (done) {
         console.info('SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_0400');
         let callbackdata = (data) => {

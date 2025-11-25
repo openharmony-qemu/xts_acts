@@ -49,13 +49,13 @@ export default function listItemGroupComponent() {
       done()
     });
 
-  /**
-     * @tc.number    SUB_ACE_ARKUI_ListItemGroup_Component_0100
-     * @tc.name      ListItemGroupComponent_0100
-     * @tc.desc      TestUpdater: HeaderComponentUpdateTest1
-     * @tc.level:    Level 0
-     * @tc.type :    Function
-     * @tc.size :    MediumTest
+    /**
+     * @tc.name   listItemGroupComponent_0100
+     * @tc.number SUB_ACE_ARKUI_ListItemGroup_Component_0100
+     * @tc.desc   TestUpdater: HeaderComponentUpdateTest1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('listItemGroupComponent_0100', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
@@ -66,14 +66,14 @@ export default function listItemGroupComponent() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_ARKUI_ListItemGroup_Component_0101
-     * @tc.name      ListItemGroupComponent_0101
-     * @tc.desc      TestUpdater: FooterComponentUpdateTest2
-     * @tc.level:    Level 0
-     * @tc.type :    Function
-     * @tc.size :    MediumTest
-     */
+  /**
+   * @tc.name   listItemGroupComponent_0101
+   * @tc.number SUB_ACE_ARKUI_ListItemGroup_Component_0101
+   * @tc.desc   TestUpdater: FooterComponentUpdateTest2
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
   it('listItemGroupComponent_0101', Level.LEVEL1, async (done: Function) => {
     let driver = Driver.create();
     await driver.delayMs(2000);

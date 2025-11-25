@@ -46,12 +46,12 @@ export default function SetSizeJsunit() {
     });
     
     /**
-     * @tc.number    SUB_ACE_RICHEDITOR_SetSizeJsunit_001
-     * @tc.name      SetSizeJsunit
-     * @tc.desc      set api
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   SetSizeJsunit_001
+     * @tc.number SUB_ACE_RICHEDITOR_SetSizeJsunit_001
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SetSizeJsunit_001', Level.LEVEL2, async (done: Function) => {
       console.info('[SetSizeJsunit_001] START');

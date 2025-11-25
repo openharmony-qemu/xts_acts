@@ -26,117 +26,117 @@ export default function commonAttrsCustomShadowTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_CUSTOMSHADOW_0100
-     * @tc.name       : testCommonAttrsCustomShadow001
-     * @tc.desc       : testing customShadow for commonAttrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsCustomShadow001
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_CUSTOMSHADOW_0100
+     * @tc.desc   testing customShadow for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsCustomShadow001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsCustomShadow001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_CUSTOMSHADOW_0200
-     * @tc.name       : testCommonAttrsCustomShadow002
-     * @tc.desc       : testing customShadow for commonAttrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsCustomShadow002
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_CUSTOMSHADOW_0200
+     * @tc.desc   testing customShadow for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsCustomShadow002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsCustomShadow002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_CUSTOMSHADOW_0300
-     * @tc.name       : testCommonAttrsCustomShadow003
-     * @tc.desc       : testing customShadow for commonAttrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsCustomShadow003
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_CUSTOMSHADOW_0300
+     * @tc.desc   testing customShadow for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsCustomShadow003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsCustomShadow003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_CUSTOMSHADOW_0400
-     * @tc.name       : testCommonAttrsCustomShadow004
-     * @tc.desc       : testing customShadow for commonAttrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsCustomShadow004
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_CUSTOMSHADOW_0400
+     * @tc.desc   testing customShadow for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsCustomShadow004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsCustomShadow004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_CUSTOMSHADOW_0500
-     * @tc.name       : testCommonAttrsCustomShadow005
-     * @tc.desc       : testing customShadow for commonAttrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsCustomShadow005
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_CUSTOMSHADOW_0500
+     * @tc.desc   testing customShadow for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsCustomShadow005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsCustomShadow005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_CUSTOMSHADOW_0600
-     * @tc.name       : testCommonAttrsCustomShadow006
-     * @tc.desc       : testing customShadow for commonAttrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsCustomShadow006
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_CUSTOMSHADOW_0600
+     * @tc.desc   testing customShadow for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsCustomShadow006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsCustomShadow006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_CUSTOMSHADOW_0700
-     * @tc.name       : testCommonAttrsCustomShadow007
-     * @tc.desc       : testing customShadow for commonAttrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsCustomShadow007
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_CUSTOMSHADOW_0700
+     * @tc.desc   testing customShadow for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsCustomShadow007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsCustomShadow007()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_CUSTOMSHADOW_0800
-     * @tc.name       : testCommonAttrsCustomShadow008
-     * @tc.desc       : testing customShadow for commonAttrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsCustomShadow008
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_CUSTOMSHADOW_0800
+     * @tc.desc   testing customShadow for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsCustomShadow008', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsCustomShadow008()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_CUSTOMSHADOW_0900
-     * @tc.name       : testCommonAttrsCustomShadow009
-     * @tc.desc       : testing resetAttribute customShadow for commonAttrs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsCustomShadow009
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_CUSTOMSHADOW_0900
+     * @tc.desc   testing resetAttribute customShadow for commonAttrs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsCustomShadow009', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsCustomShadow009()).assertEqual(0)

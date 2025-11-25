@@ -44,12 +44,12 @@ export default function UIContextComponentSnapshotJsunit() {
       console.info('UIContextComponentSnapshot after each called');
     });
     /**
+     * @tc.name   UIContextComponentSnapshotTest_0100
      * @tc.number UIContextComponentSnapshotTest_0100
-     * @tc.name Test the properties of components
-     * @tc.desc Set attribute values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set attribute values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('UIContextComponentSnapshotTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('UIContextComponentSnapshotTest_0100 START');
@@ -63,12 +63,12 @@ export default function UIContextComponentSnapshotJsunit() {
       done();
     });
     /**
+     * @tc.name   UIContextComponentSnapshotTest_0200
      * @tc.number UIContextComponentSnapshotTest_0200
-     * @tc.name Test the properties of components
-     * @tc.desc Set attribute values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set attribute values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('UIContextComponentSnapshotTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('UIContextComponentSnapshotTest_0200 START');

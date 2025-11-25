@@ -66,9 +66,12 @@ export default function List_lanes() {
     });
 
     /**
+     * @tc.name   testListLanesToTwo
      * @tc.number SUB_ACE_LIST_LANES_TEST_0200
-     * @tc.name testListLanesToTwo
-     * @tc.desc List parent component binds the lanes property lanes(2)
+     * @tc.desc   List parent component binds the lanes property lanes(2)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListLanesToTwo',  Level.LEVEL0, async (done: Function) => {
       console.info('testListLanesToTwo START');
@@ -115,9 +118,12 @@ export default function List_lanes() {
       done();
     });
     /**
+     * @tc.name   testListLanesToRange01
      * @tc.number SUB_ACE_LIST_LANES_TEST_0300
-     * @tc.name testListLanesToRange01
-     * @tc.desc List parent component binds the lanes property lanes({minLength:100,maxLength:150})
+     * @tc.desc   List parent component binds the lanes property lanes({minLength:100,maxLength:150})
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListLanesToRange01',  Level.LEVEL0, async (done: Function) => {
       console.info('testListLanesToRange01 START');
@@ -166,9 +172,12 @@ export default function List_lanes() {
       done();
     });
     /**
+     * @tc.name   testListLanesToRange02
      * @tc.number SUB_ACE_LIST_LANES_TEST_0400
-     * @tc.name testListLanesToRange02
-     * @tc.desc List parent component binds the lanes property lanes({minLength:150,maxLength:200})
+     * @tc.desc   List parent component binds the lanes property lanes({minLength:150,maxLength:200})
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListLanesToRange02',  Level.LEVEL0, async (done: Function) => {
       console.info('testListLanesToRange02 START');

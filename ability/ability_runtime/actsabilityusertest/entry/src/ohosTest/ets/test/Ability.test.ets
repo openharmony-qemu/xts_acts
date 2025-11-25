@@ -30,11 +30,14 @@ export default function abilityTest() {
         await abilityDelegator.executeShellCommand('aa start -b com.example.actsabilityusertest -a MainAbility');
         done();
     });
-    /*
-   * @tc.number    : ACTS_StartAbility_Callback_Successfully_0100
-   * @tc.name      : start new ability
-   * @tc.desc      : Starting mainability2 with startability succeeded.(callback)
-   */
+    /**
+     * @tc.name   ACTS_StartAbility_Callback_Successfully_0100
+     * @tc.number ACTS_StartAbility_Callback_Successfully_0100
+     * @tc.desc   Starting mainability2 with startability succeeded.(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_StartAbility_Callback_Successfully_0100', Level.LEVEL0, async (done: Function) => {
       let Subscriber: commonEventManager.CommonEventSubscriber;
       let flag = true;
@@ -85,11 +88,14 @@ export default function abilityTest() {
       }, START_ABILITY_TIMEOUT);
     })
 
-    /*
-   * @tc.number    : ACTS_StartAbility_Callback_Error_0200
-   * @tc.name      : start new ability
-   * @tc.desc      : Starting mainability2 with startability failed.(callback)
-   */
+    /**
+     * @tc.name   ACTS_StartAbility_Callback_Error_0200
+     * @tc.number ACTS_StartAbility_Callback_Error_0200
+     * @tc.desc   Starting mainability2 with startability failed.(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_StartAbility_Callback_Error_0200', Level.LEVEL0, async (done: Function) => {
       let AbilityDelegatorArgs = AbilityDelegatorRegistry.getArguments();
       console.log("====>getArguments is====>" + JSON.stringify(AbilityDelegatorArgs));
@@ -130,11 +136,14 @@ export default function abilityTest() {
       }, START_ABILITY_TIMEOUT)
     })
 
-    /*
-   * @tc.number    : ACTS_StartAbility_Promise_Successfully_0100
-   * @tc.name      : start new ability
-   * @tc.desc      : Starting mainability2 with startability succeeded.(callback)
-   */
+    /**
+     * @tc.name   ACTS_StartAbility_Promise_Successfully_0100
+     * @tc.number ACTS_StartAbility_Promise_Successfully_0100
+     * @tc.desc   Starting mainability2 with startability succeeded.(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_StartAbility_Promise_Successfully_0100', Level.LEVEL0, async (done: Function) => {
       let Subscriber: commonEventManager.CommonEventSubscriber;
       let flag = true;
@@ -185,11 +194,14 @@ export default function abilityTest() {
       }, START_ABILITY_TIMEOUT)
     })
 
-    /*
-   * @tc.number    : ACTS_StartAbility_Promise_Error_0200
-   * @tc.name      : start new ability
-   * @tc.desc      : Starting mainability2 with startability failed.(callback)
-   */
+    /**
+     * @tc.name   ACTS_StartAbility_Promise_Error_0200
+     * @tc.number ACTS_StartAbility_Promise_Error_0200
+     * @tc.desc   Starting mainability2 with startability failed.(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_StartAbility_Promise_Error_0200', Level.LEVEL0, async (done: Function) => {
       let AbilityDelegatorArgs = AbilityDelegatorRegistry.getArguments();
       console.log("====>getArguments is====>" + JSON.stringify(AbilityDelegatorArgs));

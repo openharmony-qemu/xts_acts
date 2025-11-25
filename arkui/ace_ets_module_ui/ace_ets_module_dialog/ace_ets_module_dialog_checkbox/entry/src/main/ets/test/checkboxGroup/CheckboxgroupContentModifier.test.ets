@@ -47,12 +47,12 @@ export default function CheckboxgroupContentModifier() {
       console.info('CheckboxgroupContentModifier after each called');
     });
     /**
-     * @tc.number     CheckboxgroupContentModifier_001
-     * @tc.name       CheckboxgroupContentModifier_001
-     * @tc.desc       test CheckboxgroupContentModifier_001
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   CheckboxgroupContentModifier_001
+     * @tc.number CheckboxgroupContentModifier_001
+     * @tc.desc   test CheckboxgroupContentModifier_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CheckboxgroupContentModifier_001', Level.LEVEL0, async (done: Function) => {
       console.info('[CheckboxgroupContentModifier_001] START');
@@ -65,12 +65,12 @@ export default function CheckboxgroupContentModifier() {
       done();
     });
     /**
-     * @tc.number     CheckboxgroupContentModifier_002
-     * @tc.name       CheckboxgroupContentModifier_002
-     * @tc.desc       test CheckboxgroupContentModifier_002
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   CheckboxgroupContentModifier_002
+     * @tc.number CheckboxgroupContentModifier_002
+     * @tc.desc   test CheckboxgroupContentModifier_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CheckboxgroupContentModifier_002', Level.LEVEL0, async (done: Function) => {
       console.info('[CheckboxgroupContentModifier_002] START');
@@ -85,12 +85,12 @@ export default function CheckboxgroupContentModifier() {
       done();
     });
     /**
-     * @tc.number     CheckboxgroupContentModifier_003
-     * @tc.name       CheckboxgroupContentModifier_003
-     * @tc.desc       test CheckboxgroupContentModifier_003
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   CheckboxgroupContentModifier_003
+     * @tc.number CheckboxgroupContentModifier_003
+     * @tc.desc   test CheckboxgroupContentModifier_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CheckboxgroupContentModifier_003', Level.LEVEL0, async (done: Function) => {
       console.info('[CheckboxgroupContentModifier_003] START');
@@ -111,12 +111,12 @@ export default function CheckboxgroupContentModifier() {
       done();
     });
     /**
-     * @tc.number     CheckboxgroupContentModifier_004
-     * @tc.name       CheckboxgroupContentModifier_004
-     * @tc.desc       test CheckboxgroupContentModifier_004
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   CheckboxgroupContentModifier_004
+     * @tc.number CheckboxgroupContentModifier_004
+     * @tc.desc   test CheckboxgroupContentModifier_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CheckboxgroupContentModifier_004', Level.LEVEL0, async (done: Function) => {
       console.info('[CheckboxgroupContentModifier_004] START');
@@ -137,12 +137,12 @@ export default function CheckboxgroupContentModifier() {
       done();
     });
     /**
-     * @tc.number     CheckboxgroupContentModifier_005
-     * @tc.name       CheckboxgroupContentModifier_005
-     * @tc.desc       test CheckboxgroupContentModifier_005
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   CheckboxgroupContentModifier_005
+     * @tc.number CheckboxgroupContentModifier_005
+     * @tc.desc   test CheckboxgroupContentModifier_005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CheckboxgroupContentModifier_005', Level.LEVEL0, async (done: Function) => {
       console.info('[CheckboxgroupContentModifier_005] START');
@@ -172,12 +172,12 @@ export default function CheckboxgroupContentModifier() {
       done();
     });
     /**
-     * @tc.number     CheckboxgroupContentModifier_006
-     * @tc.name       CheckboxgroupContentModifier_006
-     * @tc.desc       test CheckboxgroupContentModifier_006
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   CheckboxgroupContentModifier_006
+     * @tc.number CheckboxgroupContentModifier_006
+     * @tc.desc   test CheckboxgroupContentModifier_006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CheckboxgroupContentModifier_006', Level.LEVEL0, async (done: Function) => {
       console.info('[CheckboxgroupContentModifier_006] START');
@@ -207,12 +207,12 @@ export default function CheckboxgroupContentModifier() {
       done();
     });
     /**
-     * @tc.number     CheckboxgroupContentModifier_007
-     * @tc.name       CheckboxgroupContentModifier_007
-     * @tc.desc       test CheckboxgroupContentModifier_007
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   CheckboxgroupContentModifier_007
+     * @tc.number CheckboxgroupContentModifier_007
+     * @tc.desc   test CheckboxgroupContentModifier_007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CheckboxgroupContentModifier_007', Level.LEVEL0, async (done: Function) => {
       console.info('[CheckboxgroupContentModifier_007] START');
@@ -243,12 +243,12 @@ export default function CheckboxgroupContentModifier() {
       done();
     });
     /**
-     * @tc.number     CheckboxgroupContentModifier_008
-     * @tc.name       CheckboxgroupContentModifier_008
-     * @tc.desc       test CheckboxgroupContentModifier_008
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   CheckboxgroupContentModifier_008
+     * @tc.number CheckboxgroupContentModifier_008
+     * @tc.desc   test CheckboxgroupContentModifier_008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CheckboxgroupContentModifier_008', Level.LEVEL0, async (done: Function) => {
       console.info('[CheckboxgroupContentModifier_008] START');
@@ -279,12 +279,12 @@ export default function CheckboxgroupContentModifier() {
       done();
     });
     /**
-     * @tc.number     CheckboxgroupContentModifier_009
-     * @tc.name       CheckboxgroupContentModifier_009
-     * @tc.desc       test CheckboxgroupContentModifier_009
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   CheckboxgroupContentModifier_009
+     * @tc.number CheckboxgroupContentModifier_009
+     * @tc.desc   test CheckboxgroupContentModifier_009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CheckboxgroupContentModifier_009', Level.LEVEL0, async (done: Function) => {
       console.info('[CheckboxgroupContentModifier_009] START');
@@ -315,12 +315,12 @@ export default function CheckboxgroupContentModifier() {
       done();
     });
     /**
-     * @tc.number     CheckboxgroupContentModifier_010
-     * @tc.name       CheckboxgroupContentModifier_010
-     * @tc.desc       test CheckboxgroupContentModifier_010
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   CheckboxgroupContentModifier_010
+     * @tc.number CheckboxgroupContentModifier_010
+     * @tc.desc   test CheckboxgroupContentModifier_010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CheckboxgroupContentModifier_010', Level.LEVEL0, async (done: Function) => {
       console.info('[CheckboxgroupContentModifier_010] START');
@@ -351,12 +351,12 @@ export default function CheckboxgroupContentModifier() {
       done();
     });
     /**
-     * @tc.number     CheckboxgroupContentModifier_011
-     * @tc.name       CheckboxgroupContentModifier_011
-     * @tc.desc       test CheckboxgroupContentModifier_011
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   CheckboxgroupContentModifier_011
+     * @tc.number CheckboxgroupContentModifier_011
+     * @tc.desc   test CheckboxgroupContentModifier_011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CheckboxgroupContentModifier_011', Level.LEVEL0, async (done: Function) => {
       console.info('[CheckboxgroupContentModifier_011] START');
@@ -386,12 +386,12 @@ export default function CheckboxgroupContentModifier() {
       done();
     });
     /**
-     * @tc.number     CheckboxgroupContentModifier_012
-     * @tc.name       CheckboxgroupContentModifier_012
-     * @tc.desc       test CheckboxgroupContentModifier_012
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   CheckboxgroupContentModifier_012
+     * @tc.number CheckboxgroupContentModifier_012
+     * @tc.desc   test CheckboxgroupContentModifier_012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CheckboxgroupContentModifier_012', Level.LEVEL0, async (done: Function) => {
       console.info('[CheckboxgroupContentModifier_012] START');
@@ -421,12 +421,12 @@ export default function CheckboxgroupContentModifier() {
       done();
     });
     /**
-     * @tc.number     : CheckboxgroupContentModifier_013
-     * @tc.name       : CheckboxgroupContentModifier_013
-     * @tc.desc       : test CheckboxgroupContentModifier_013
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   CheckboxgroupContentModifier_013
+     * @tc.number CheckboxgroupContentModifier_013
+     * @tc.desc   test CheckboxgroupContentModifier_013
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CheckboxgroupContentModifier_013', Level.LEVEL0, async (done: Function) => {
       console.info('[CheckboxgroupContentModifier_013] START');
@@ -457,12 +457,12 @@ export default function CheckboxgroupContentModifier() {
       done();
     });
     /**
-     * @tc.number     : CheckboxgroupContentModifier_014
-     * @tc.name       : CheckboxgroupContentModifier_014
-     * @tc.desc       : test CheckboxgroupContentModifier_014
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   CheckboxgroupContentModifier_014
+     * @tc.number CheckboxgroupContentModifier_014
+     * @tc.desc   test CheckboxgroupContentModifier_014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CheckboxgroupContentModifier_014', Level.LEVEL0, async (done: Function) => {
       console.info('[CheckboxgroupContentModifier_014] START');

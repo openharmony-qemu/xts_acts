@@ -103,14 +103,14 @@ export default function continuationManagerTest() {
             console.info('afterEach end');
         })
 
-        /*
-        * @tc.number  SUM_DMS_AbilityConstant_0100
-        * @tc.name    Test abilityConstant
-        * @tc.desc    Function test
-        * @tc.size    MediumTest
-        * @tc.type:   Function
-        * @tc.level   Level3
-        */
+        /**
+         * @tc.name   SUB_DMS_AbilityConstant_0100
+         * @tc.number SUM_DMS_AbilityConstant_0100
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('SUB_DMS_AbilityConstant_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
             console.log("----------------------SUB_DMS_AbilityConstant_0100 start----------------------");
             try {
@@ -123,14 +123,14 @@ export default function continuationManagerTest() {
             done();
         })
 
-        /*
-        * @tc.number  testRegister001
-        * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-        * @tc.desc  Function test
-        * @tc.size  MediumTest
-        * @tc.type:  Function
-        * @tc.level  Level0
-        */
+        /**
+         * @tc.name   testRegister001
+         * @tc.number testRegister001
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testRegister001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testRegister001 start----------------------");
             try {
@@ -148,14 +148,14 @@ export default function continuationManagerTest() {
             console.info("----------------------testRegister001 end----------------------");
         })
 
-        /*
-        * @tc.number  testRegister002
-        * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-        * @tc.desc  Function test
-        * @tc.size  MediumTest
-        * @tc.type:  Function
-        * @tc.level  Level0
-        */
+        /**
+         * @tc.name   testRegister002
+         * @tc.number testRegister002
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testRegister002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testRegister002 start----------------------");
             try {
@@ -180,13 +180,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testRegister002 end----------------------");
         })
 
-        /*
-         * @tc.number  testRegister003
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testRegister003
+         * @tc.number testRegister003
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRegister003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testRegister003 start----------------------");
@@ -212,13 +212,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testRegister003 end----------------------");
         })
 
-        /*
-         * @tc.number  testRegister004
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testRegister004
+         * @tc.number testRegister004
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRegister004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testRegister004 start----------------------");
@@ -244,13 +244,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testRegister004 end----------------------");
         })
 
-        /*
-         * @tc.number  testRegister005
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testRegister005
+         * @tc.number testRegister005
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRegister005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testRegister005 start----------------------");
@@ -277,13 +277,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testRegister005 end----------------------");
         })
 
-        /*
-         * @tc.number  testRegister006
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testRegister006
+         * @tc.number testRegister006
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRegister006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testRegister006 start----------------------");
@@ -314,13 +314,13 @@ export default function continuationManagerTest() {
         })
 
 
-        /*
-         * @tc.number  testRegister007
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testRegister007
+         * @tc.number testRegister007
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRegister007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testRegister007 start----------------------");
@@ -349,13 +349,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testRegister007 end----------------------");
         })
 
-        /*
-         * @tc.number  testRegister008
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testRegister008
+         * @tc.number testRegister008
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRegister008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testRegister008 start----------------------");
@@ -384,13 +384,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testRegister008 end----------------------");
         })
 
-        /*
-         * @tc.number  testRegister009
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testRegister009
+         * @tc.number testRegister009
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRegister009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testRegister009 start----------------------");
@@ -419,13 +419,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testRegister009 end----------------------");
         })
 
-        /*
-         * @tc.number  testRegister010
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testRegister010
+         * @tc.number testRegister010
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRegister010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testRegister010 start----------------------");
@@ -453,13 +453,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testRegister010 end----------------------");
         })
 
-        /*
-         * @tc.number  testRegister011
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testRegister011
+         * @tc.number testRegister011
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRegister011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testRegister011 start----------------------");
@@ -481,13 +481,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testRegister011 end----------------------");
         })
 
-        /*
-         * @tc.number  testRegisterContinuation001
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testRegisterContinuation001
+         * @tc.number testRegisterContinuation001
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRegisterContinuation001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testRegisterContinuation001 start----------------------");
@@ -506,13 +506,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testRegisterContinuation001 end----------------------");
         })
 
-        /*
-         * @tc.number  testRegisterContinuation002
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testRegisterContinuation002
+         * @tc.number testRegisterContinuation002
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRegisterContinuation002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testRegisterContinuation002 start----------------------");
@@ -538,13 +538,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testRegisterContinuation002 end----------------------");
         })
 
-        /*
-         * @tc.number  testRegisterContinuation003
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testRegisterContinuation003
+         * @tc.number testRegisterContinuation003
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRegisterContinuation003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testRegisterContinuation003 start----------------------");
@@ -570,13 +570,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testRegisterContinuation003 end----------------------");
         })
 
-        /*
-         * @tc.number  testRegisterContinuation004
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testRegisterContinuation004
+         * @tc.number testRegisterContinuation004
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRegisterContinuation004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testRegisterContinuation004 start----------------------");
@@ -603,13 +603,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testRegisterContinuation004 end----------------------");
         })
 
-        /*
-         * @tc.number  testRegisterContinuation005
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testRegisterContinuation005
+         * @tc.number testRegisterContinuation005
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRegisterContinuation005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testRegisterContinuation005 start----------------------");
@@ -636,13 +636,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testRegisterContinuation005 end----------------------");
         })
 
-        /*
-         * @tc.number  testRegisterContinuation006
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testRegisterContinuation006
+         * @tc.number testRegisterContinuation006
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRegisterContinuation006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testRegisterContinuation006 start----------------------");
@@ -672,13 +672,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testRegisterContinuation006 end----------------------");
         })
 
-        /*
-         * @tc.number  testRegisterContinuation007
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testRegisterContinuation007
+         * @tc.number testRegisterContinuation007
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRegisterContinuation007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testRegisterContinuation007 start----------------------");
@@ -707,13 +707,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testRegisterContinuation007 end----------------------");
         })
 
-        /*
-         * @tc.number  testRegisterContinuation008
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testRegisterContinuation008
+         * @tc.number testRegisterContinuation008
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRegisterContinuation008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testRegisterContinuation008 start----------------------");
@@ -742,13 +742,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testRegisterContinuation008 end----------------------");
         })
 
-        /*
-         * @tc.number  testRegisterContinuation009
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testRegisterContinuation009
+         * @tc.number testRegisterContinuation009
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRegisterContinuation009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testRegisterContinuation009 start----------------------");
@@ -777,13 +777,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testRegisterContinuation009 end----------------------");
         })
 
-        /*
-         * @tc.number  testRegisterContinuation010
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testRegisterContinuation010
+         * @tc.number testRegisterContinuation010
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRegisterContinuation010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testRegisterContinuation010 start----------------------");
@@ -806,13 +806,13 @@ export default function continuationManagerTest() {
         })
 
 
-        /*
-         * @tc.number  testRegisterContinuation011
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testRegisterContinuation011
+         * @tc.number testRegisterContinuation011
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRegisterContinuation011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testRegisterContinuation011 start----------------------");
@@ -844,13 +844,13 @@ export default function continuationManagerTest() {
             done();
         })
 
-        /*
-         * @tc.number  testRegisterContinuation012
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testRegisterContinuation012
+         * @tc.number testRegisterContinuation012
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRegisterContinuation012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.log("----------------------testRegisterContinuation012 start----------------------");
@@ -882,13 +882,13 @@ export default function continuationManagerTest() {
             done();
         })
 
-        /*
-         * @tc.number  testRegisterContinuation013
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testRegisterContinuation013
+         * @tc.number testRegisterContinuation013
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRegisterContinuation013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.log("----------------------testRegisterContinuation013 start----------------------");
@@ -920,13 +920,13 @@ export default function continuationManagerTest() {
             done();
         })
 
-        /*
-         * @tc.number  testRegisterContinuation014
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testRegisterContinuation014
+         * @tc.number testRegisterContinuation014
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRegisterContinuation014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.log("----------------------testRegisterContinuation014 start----------------------");
@@ -958,13 +958,13 @@ export default function continuationManagerTest() {
             done();
         })
 
-        /*
-         * @tc.number  testUnregister001
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testUnregister001
+         * @tc.number testUnregister001
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testUnregister001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testUnregister001 start----------------------");
@@ -989,14 +989,14 @@ export default function continuationManagerTest() {
             console.info("----------------------testUnregister001 end----------------------");
         })
 
-        /*
-        * @tc.number  testUnregister002
-        * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-        * @tc.desc  Function test
-        * @tc.size  MediumTest
-        * @tc.type:  Function
-        * @tc.level  Level0
-        */
+        /**
+         * @tc.name   testUnregister002
+         * @tc.number testUnregister002
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testUnregister002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testUnregister002 start----------------------");
             try {
@@ -1016,13 +1016,13 @@ export default function continuationManagerTest() {
         })
 
 
-        /*
-         * @tc.number  testUnregister003
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testUnregister003
+         * @tc.number testUnregister003
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testUnregister003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testUnregister003 start----------------------");
@@ -1042,13 +1042,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testUnregister003 end----------------------");
         })
 
-        /*
-         * @tc.number  testUnregister004
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testUnregister004
+         * @tc.number testUnregister004
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testUnregister004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testUnregister004 start----------------------");
@@ -1066,13 +1066,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testUnregister004 end----------------------");
         })
 
-        /*
-         * @tc.number  testUnregister005
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testUnregister005
+         * @tc.number testUnregister005
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testUnregister005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testUnregister005 start----------------------");
@@ -1090,13 +1090,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testUnregister005 end----------------------");
         })
 
-        /*
-         * @tc.number  testUnregister006
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testUnregister006
+         * @tc.number testUnregister006
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testUnregister006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testUnregister006 start----------------------");
@@ -1118,13 +1118,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testUnregister006 end----------------------");
         })
 
-        /*
-         * @tc.number  testUnregisterContinuation001
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testUnregisterContinuation001
+         * @tc.number testUnregisterContinuation001
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testUnregisterContinuation001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testUnregisterContinuation001 start----------------------");
@@ -1144,13 +1144,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testUnregisterContinuation001 end----------------------");
         })
 
-        /*
-         * @tc.number  testUnregisterContinuation002
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testUnregisterContinuation002
+         * @tc.number testUnregisterContinuation002
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testUnregisterContinuation002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testUnregisterContinuation002 start----------------------");
@@ -1170,13 +1170,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testUnregisterContinuation002 end----------------------");
         })
 
-        /*
-         * @tc.number  testUnregisterContinuation003
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testUnregisterContinuation003
+         * @tc.number testUnregisterContinuation003
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testUnregisterContinuation003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testUnregisterContinuation003 start----------------------");
@@ -1196,13 +1196,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testUnregisterContinuation003 end----------------------");
         })
 
-        /*
-         * @tc.number  testUnregisterContinuation004
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testUnregisterContinuation004
+         * @tc.number testUnregisterContinuation004
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testUnregisterContinuation004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testUnregisterContinuation004 start----------------------");
@@ -1220,13 +1220,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testUnregisterContinuation004 end----------------------");
         })
 
-        /*
-         * @tc.number  testUnregisterContinuation005
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testUnregisterContinuation005
+         * @tc.number testUnregisterContinuation005
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testUnregisterContinuation005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testUnregisterContinuation005 start----------------------");
@@ -1244,13 +1244,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testUnregisterContinuation005 end----------------------");
         })
 
-        /*
-         * @tc.number  testUnregisterContinuation006
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testUnregisterContinuation006
+         * @tc.number testUnregisterContinuation006
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testUnregisterContinuation006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testUnregisterContinuation006 start----------------------");
@@ -1272,13 +1272,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testUnregisterContinuation006 end----------------------");
         })
 
-        /*
-         * @tc.number  testOn001
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testOn001
+         * @tc.number testOn001
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testOn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testOn001 start----------------------");
@@ -1296,13 +1296,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testOn001 end----------------------");
         })
 
-        /*
-         * @tc.number  testOn002
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testOn002
+         * @tc.number testOn002
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testOn002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testOn002 start----------------------");
@@ -1320,13 +1320,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testOn002 end----------------------");
         })
 
-        /*
-         * @tc.number  testOn003
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testOn003
+         * @tc.number testOn003
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testOn003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testOn003 start----------------------");
@@ -1344,13 +1344,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testOn003 end----------------------");
         })
 
-        /*
-         * @tc.number  testOn004
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testOn004
+         * @tc.number testOn004
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testOn004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testOn004 start----------------------");
@@ -1368,13 +1368,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testOn004 end----------------------");
         })
 
-        /*
-         * @tc.number  testOn005
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testOn005
+         * @tc.number testOn005
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testOn005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testOn005 start----------------------");
@@ -1392,13 +1392,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testOn005 end----------------------");
         })
 
-        /*
-         * @tc.number  testOn006
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testOn006
+         * @tc.number testOn006
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testOn006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testOn006 start----------------------");
@@ -1417,13 +1417,13 @@ export default function continuationManagerTest() {
             done()
         })
 
-        /*
-         * @tc.number  testOn007
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testOn007
+         * @tc.number testOn007
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testOn007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testOn007 start----------------------");
@@ -1442,13 +1442,13 @@ export default function continuationManagerTest() {
             done()
         })
 
-        /*
-         * @tc.number  testOn008
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testOn008
+         * @tc.number testOn008
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testOn008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testOn008 start----------------------");
@@ -1467,13 +1467,13 @@ export default function continuationManagerTest() {
             done()
         })
 
-        /*
-         * @tc.number  testOn009
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testOn009
+         * @tc.number testOn009
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testOn009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testOn009 start----------------------");
@@ -1495,14 +1495,14 @@ export default function continuationManagerTest() {
             done()
         })
 
-        /*
-        * @tc.number  testOn010
-        * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-        * @tc.desc  Function test
-        * @tc.size  MediumTest
-        * @tc.type:  Function
-        * @tc.level  Level0
-        */
+        /**
+         * @tc.name   testOn010
+         * @tc.number testOn010
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testOn010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testOn010 start----------------------");
             try {
@@ -1522,13 +1522,13 @@ export default function continuationManagerTest() {
             done()
         })
 
-        /*
-         * @tc.number  testOff001
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testOff001
+         * @tc.number testOff001
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testOff001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testOff001 start----------------------");
@@ -1546,13 +1546,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testOff001 end----------------------");
         })
 
-        /*
-         * @tc.number  testOff002
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testOff002
+         * @tc.number testOff002
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testOff002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testOff002 start----------------------");
@@ -1570,13 +1570,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testOff002 end----------------------");
         })
 
-        /*
-         * @tc.number  testOff003
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testOff003
+         * @tc.number testOff003
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testOff003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testOff003 start----------------------");
@@ -1591,13 +1591,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testOff003 end----------------------");
         })
 
-        /*
-         * @tc.number  testOff004
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testOff004
+         * @tc.number testOff004
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testOff004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testOff004 start----------------------");
@@ -1612,13 +1612,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testOff004 end----------------------");
         })
 
-        /*
-         * @tc.number  testOff005
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testOff005
+         * @tc.number testOff005
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testOff005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testOff005 start----------------------");
@@ -1636,13 +1636,13 @@ export default function continuationManagerTest() {
             done()
         })
 
-        /*
-         * @tc.number  testOff006
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testOff006
+         * @tc.number testOff006
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testOff006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testOff006 start----------------------");
@@ -1660,13 +1660,13 @@ export default function continuationManagerTest() {
             done()
         })
 
-        /*
-         * @tc.number  testStartDeviceManager001
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testStartDeviceManager001
+         * @tc.number testStartDeviceManager001
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStartDeviceManager001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testStartDeviceManager001 start----------------------");
@@ -1686,13 +1686,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testStartDeviceManager001 end----------------------");
         })
 
-        /*
-         * @tc.number  testStartDeviceManager002
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testStartDeviceManager002
+         * @tc.number testStartDeviceManager002
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStartDeviceManager002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testStartDeviceManager002 start----------------------");
@@ -1712,13 +1712,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testStartDeviceManager002 end----------------------");
         })
 
-        /*
-         * @tc.number  testStartDeviceManager003
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testStartDeviceManager003
+         * @tc.number testStartDeviceManager003
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStartDeviceManager003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testStartDeviceManager003 start----------------------");
@@ -1750,13 +1750,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testStartDeviceManager003 end----------------------");
         })
 
-        /*
-         * @tc.number  testStartDeviceManager004
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testStartDeviceManager004
+         * @tc.number testStartDeviceManager004
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStartDeviceManager004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testStartDeviceManager004 start----------------------");
@@ -1783,13 +1783,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testStartDeviceManager004 end----------------------");
         })
 
-        /*
-         * @tc.number  testStartDeviceManager005
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testStartDeviceManager005
+         * @tc.number testStartDeviceManager005
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStartDeviceManager005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testStartDeviceManager005 start----------------------");
@@ -1816,13 +1816,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testStartDeviceManager005 end----------------------");
         })
 
-        /*
-         * @tc.number  testStartDeviceManager006
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testStartDeviceManager006
+         * @tc.number testStartDeviceManager006
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStartDeviceManager006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testStartDeviceManager006 start----------------------");
@@ -1844,13 +1844,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testStartDeviceManager006 end----------------------");
         })
 
-        /*
-         * @tc.number  testStartDeviceManager007
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testStartDeviceManager007
+         * @tc.number testStartDeviceManager007
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStartDeviceManager007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testStartDeviceManager007 start----------------------");
@@ -1877,13 +1877,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testStartDeviceManager007 end----------------------");
         })
 
-        /*
-         * @tc.number  testStartDeviceManager008
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testStartDeviceManager008
+         * @tc.number testStartDeviceManager008
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStartDeviceManager008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testStartDeviceManager008 start----------------------");
@@ -1912,13 +1912,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testStartDeviceManager008 end----------------------");
         })
 
-        /*
-         * @tc.number  testStartDeviceManager009
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testStartDeviceManager009
+         * @tc.number testStartDeviceManager009
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStartDeviceManager009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testStartDeviceManager009 start----------------------");
@@ -1940,13 +1940,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testStartDeviceManager009 end----------------------");
         })
 
-        /*
-         * @tc.number  testStartContinuationDeviceManager001
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testStartContinuationDeviceManager001
+         * @tc.number testStartContinuationDeviceManager001
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStartContinuationDeviceManager001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testStartContinuationDeviceManager001 start----------------------");
@@ -1966,13 +1966,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testStartContinuationDeviceManager001 end----------------------");
         })
 
-        /*
-         * @tc.number  testStartContinuationDeviceManager002
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testStartContinuationDeviceManager002
+         * @tc.number testStartContinuationDeviceManager002
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStartContinuationDeviceManager002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testStartContinuationDeviceManager002 start----------------------");
@@ -1992,13 +1992,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testStartContinuationDeviceManager002 end----------------------");
         })
 
-        /*
-         * @tc.number  testStartContinuationDeviceManager003
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testStartContinuationDeviceManager003
+         * @tc.number testStartContinuationDeviceManager003
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStartContinuationDeviceManager003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testStartContinuationDeviceManager003 start----------------------");
@@ -2025,13 +2025,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testStartContinuationDeviceManager003 end----------------------");
         })
 
-        /*
-         * @tc.number  testStartContinuationDeviceManager004
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testStartContinuationDeviceManager004
+         * @tc.number testStartContinuationDeviceManager004
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStartContinuationDeviceManager004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testStartContinuationDeviceManager004 start----------------------");
@@ -2058,13 +2058,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testStartContinuationDeviceManager004 end----------------------");
         })
 
-        /*
-         * @tc.number  testStartContinuationDeviceManager005
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testStartContinuationDeviceManager005
+         * @tc.number testStartContinuationDeviceManager005
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStartContinuationDeviceManager005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testStartContinuationDeviceManager005 start----------------------");
@@ -2091,13 +2091,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testStartContinuationDeviceManager005 end----------------------");
         })
 
-        /*
-         * @tc.number  testStartContinuationDeviceManager006
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testStartContinuationDeviceManager006
+         * @tc.number testStartContinuationDeviceManager006
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStartContinuationDeviceManager006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testStartContinuationDeviceManager006 start----------------------");
@@ -2119,13 +2119,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testStartContinuationDeviceManager006 end----------------------");
         })
 
-        /*
-         * @tc.number  testStartContinuationDeviceManager007
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testStartContinuationDeviceManager007
+         * @tc.number testStartContinuationDeviceManager007
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStartContinuationDeviceManager007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testStartContinuationDeviceManager007 start----------------------");
@@ -2152,13 +2152,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testStartContinuationDeviceManager007 end----------------------");
         })
 
-        /*
-         * @tc.number  testStartContinuationDeviceManager008
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testStartContinuationDeviceManager008
+         * @tc.number testStartContinuationDeviceManager008
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStartContinuationDeviceManager008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testStartContinuationDeviceManager008 start----------------------");
@@ -2187,13 +2187,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testStartContinuationDeviceManager008 end----------------------");
         })
 
-        /*
-         * @tc.number  testStartContinuationDeviceManager009
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testStartContinuationDeviceManager009
+         * @tc.number testStartContinuationDeviceManager009
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStartContinuationDeviceManager009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testStartContinuationDeviceManager009 start----------------------");
@@ -2215,13 +2215,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testStartContinuationDeviceManager009 end----------------------");
         })
 
-        /*
-         * @tc.number  testUpdateConnectStatus001
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testUpdateConnectStatus001
+         * @tc.number testUpdateConnectStatus001
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testUpdateConnectStatus001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testUpdateConnectStatus001 start----------------------");
@@ -2241,13 +2241,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testUpdateConnectStatus001 end----------------------");
         })
 
-        /*
-         * @tc.number  testUpdateConnectStatus002
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testUpdateConnectStatus002
+         * @tc.number testUpdateConnectStatus002
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testUpdateConnectStatus002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testUpdateConnectStatus002 start----------------------");
@@ -2267,13 +2267,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testUpdateConnectStatus002 end----------------------");
         })
 
-        /*
-         * @tc.number  testUpdateConnectStatus003
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testUpdateConnectStatus003
+         * @tc.number testUpdateConnectStatus003
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testUpdateConnectStatus003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testUpdateConnectStatus003 start----------------------");
@@ -2293,13 +2293,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testUpdateConnectStatus003 end----------------------");
         })
 
-        /*
-         * @tc.number  testUpdateConnectStatus004
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testUpdateConnectStatus004
+         * @tc.number testUpdateConnectStatus004
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testUpdateConnectStatus004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testUpdateConnectStatus004 start----------------------");
@@ -2322,13 +2322,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testUpdateConnectStatus004 end----------------------");
         })
 
-        /*
-         * @tc.number  testUpdateConnectStatus005
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testUpdateConnectStatus005
+         * @tc.number testUpdateConnectStatus005
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testUpdateConnectStatus005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testUpdateConnectStatus005 start----------------------");
@@ -2351,13 +2351,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testUpdateConnectStatus005 end----------------------");
         })
 
-        /*
-         * @tc.number  testUpdateConnectStatus006
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testUpdateConnectStatus006
+         * @tc.number testUpdateConnectStatus006
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testUpdateConnectStatus006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testUpdateConnectStatus006 start----------------------");
@@ -2380,13 +2380,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testUpdateConnectStatus006 end----------------------");
         })
 
-        /*
-         * @tc.number  testUpdateConnectStatus007
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testUpdateConnectStatus007
+         * @tc.number testUpdateConnectStatus007
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testUpdateConnectStatus007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testUpdateConnectStatus007 start----------------------");
@@ -2410,13 +2410,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testUpdateConnectStatus007 end----------------------");
         })
 
-        /*
-         * @tc.number  testUpdateConnectStatus008
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testUpdateConnectStatus008
+         * @tc.number testUpdateConnectStatus008
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testUpdateConnectStatus008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testUpdateConnectStatus008 start----------------------");
@@ -2439,13 +2439,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testUpdateConnectStatus008 end----------------------");
         })
 
-        /*
-         * @tc.number  testUpdateConnectStatus009
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testUpdateConnectStatus009
+         * @tc.number testUpdateConnectStatus009
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testUpdateConnectStatus009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testUpdateConnectStatus009 start----------------------");
@@ -2468,13 +2468,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testUpdateConnectStatus009 end----------------------");
         })
 
-        /*
-         * @tc.number  testUpdateConnectStatus010
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testUpdateConnectStatus010
+         * @tc.number testUpdateConnectStatus010
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testUpdateConnectStatus010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testUpdateConnectStatus010 start----------------------");
@@ -2497,13 +2497,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testUpdateConnectStatus010 end----------------------");
         })
 
-        /*
-         * @tc.number  testUpdateConnectStatus011
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testUpdateConnectStatus011
+         * @tc.number testUpdateConnectStatus011
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testUpdateConnectStatus011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testUpdateConnectStatus011 start----------------------");
@@ -2526,13 +2526,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testUpdateConnectStatus011 end----------------------");
         })
 
-        /*
-         * @tc.number  testUpdateConnectStatus012
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testUpdateConnectStatus012
+         * @tc.number testUpdateConnectStatus012
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testUpdateConnectStatus012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testUpdateConnectStatus012 start----------------------");
@@ -2556,13 +2556,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testUpdateConnectStatus012 end----------------------");
         })
 
-        /*
-         * @tc.number  testUpdateConnectStatus013
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testUpdateConnectStatus013
+         * @tc.number testUpdateConnectStatus013
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testUpdateConnectStatus013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testUpdateConnectStatus013 start----------------------");
@@ -2585,13 +2585,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testUpdateConnectStatus013 end----------------------");
         })
 
-        /*
-         * @tc.number  testUpdateContinuationState001
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testUpdateContinuationState001
+         * @tc.number testUpdateContinuationState001
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testUpdateContinuationState001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testUpdateContinuationState001 start----------------------");
@@ -2611,13 +2611,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testUpdateContinuationState001 end----------------------");
         })
 
-        /*
-         * @tc.number  testUpdateContinuationState002
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testUpdateContinuationState002
+         * @tc.number testUpdateContinuationState002
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testUpdateContinuationState002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testUpdateContinuationState002 start----------------------");
@@ -2637,13 +2637,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testUpdateContinuationState002 end----------------------");
         })
 
-        /*
-         * @tc.number  testUpdateContinuationState003
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testUpdateContinuationState003
+         * @tc.number testUpdateContinuationState003
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testUpdateContinuationState003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testUpdateContinuationState003 start----------------------");
@@ -2663,13 +2663,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testUpdateContinuationState003 end----------------------");
         })
 
-        /*
-         * @tc.number  testUpdateContinuationState004
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testUpdateContinuationState004
+         * @tc.number testUpdateContinuationState004
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testUpdateContinuationState004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testUpdateContinuationState004 start----------------------");
@@ -2692,13 +2692,13 @@ export default function continuationManagerTest() {
             console.info("----------------------testUpdateContinuationState004 end----------------------");
         })
 
-        /*
-         * @tc.number  testUpdateContinuationState005
-         * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-         * @tc.desc  Function test
-         * @tc.size  MediumTest
-         * @tc.type:  Function
-         * @tc.level  Level0
+        /**
+         * @tc.name   testUpdateContinuationState005
+         * @tc.number testUpdateContinuationState005
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testUpdateContinuationState005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testUpdateContinuationState005 start----------------------");
@@ -2721,14 +2721,14 @@ export default function continuationManagerTest() {
             console.info("----------------------testUpdateContinuationState005 end----------------------");
         })
 
-        /*
-        * @tc.number  testUpdateContinuationState006
-        * @tc.name  Continuation Manager-Modul bietet die Möglichkeit
-        * @tc.desc  Function test
-        * @tc.size  MediumTest
-        * @tc.type:  Function
-        * @tc.level  Level0
-        */
+        /**
+         * @tc.name   testUpdateContinuationState006
+         * @tc.number testUpdateContinuationState006
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testUpdateContinuationState006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("----------------------testUpdateContinuationState006 start----------------------");
             try {

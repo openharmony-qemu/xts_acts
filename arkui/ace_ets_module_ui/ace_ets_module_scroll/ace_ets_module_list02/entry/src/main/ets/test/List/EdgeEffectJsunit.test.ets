@@ -45,12 +45,12 @@ export default function edgeEffectJsunit() {
     });
 
     /**
-     * @tc.number    edgeEffectTest_0100
-     * @tc.name      edgeEffectTest_0100
-     * @tc.desc      Testing edgeEffect for the List component.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   edgeEffectTest_0100
+     * @tc.number edgeEffectTest_0100
+     * @tc.desc   Testing edgeEffect for the List component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('edgeEffectTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('edgeEffectTest_0100 START');
@@ -62,12 +62,12 @@ export default function edgeEffectJsunit() {
     });
 
     /**
-     * @tc.number    edgeEffectTest_0200
-     * @tc.name      edgeEffectTest_0200
-     * @tc.desc      Testing edgeEffect for the List component.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   edgeEffectTest_0200
+     * @tc.number edgeEffectTest_0200
+     * @tc.desc   Testing edgeEffect for the List component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('edgeEffectTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('edgeEffectTest_0200 START');

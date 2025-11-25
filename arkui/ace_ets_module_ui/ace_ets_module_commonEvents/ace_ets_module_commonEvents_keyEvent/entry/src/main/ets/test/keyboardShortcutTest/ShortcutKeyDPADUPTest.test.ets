@@ -44,14 +44,14 @@ export default function ShortcutKeyDPADUPTest() {
       await CommonFunc.sleep(2000);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_ShortcutKeyDPADUPTest_0100
-    * @tc.name       : ShortcutKeyDPADUPTest_0100
-    * @tc.desc       : test
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   ShortcutKeyDPADUPTest_0100
+     * @tc.number SUB_ARKUI_ShortcutKeyDPADUPTest_0100
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ShortcutKeyDPADUPTest_0100', Level.LEVEL0, async () => {
       let CASE = 'ShortcutKeyDPADUPTest_0100'
       console.info(`ShortcutKeyDPADUPTest_0100 START`);

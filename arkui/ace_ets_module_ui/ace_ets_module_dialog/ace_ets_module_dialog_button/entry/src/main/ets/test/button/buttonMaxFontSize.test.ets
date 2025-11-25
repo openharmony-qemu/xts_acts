@@ -44,14 +44,14 @@ export default function buttonMaxFontSize() {
       }
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_buttonMaxFontSize_0100
-    * @tc.name  : buttonMaxFontSize_0100
-    * @tc.desc  : To test that the button MaxFontSize
-    * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+    /**
+     * @tc.name   buttonMaxFontSize_0100
+     * @tc.number SUB_ACE_buttonMaxFontSize_0100
+     * @tc.desc   To test that the button MaxFontSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('buttonMaxFontSize_0100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('buttonMaxFontSize_0100 START');
       let driver = await Driver.create()
@@ -65,14 +65,14 @@ export default function buttonMaxFontSize() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_buttonMaxFontSize_0200
-    * @tc.name  : buttonMaxFontSize_0200
-    * @tc.desc  : To test that the button MaxFontSize
-    * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+    /**
+     * @tc.name   buttonMaxFontSize_0200
+     * @tc.number SUB_ACE_buttonMaxFontSize_0200
+     * @tc.desc   To test that the button MaxFontSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('buttonMaxFontSize_0200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('buttonMaxFontSize_0200 START');
       let driver = await Driver.create()
@@ -85,14 +85,14 @@ export default function buttonMaxFontSize() {
       console.info('[buttonMaxFontSize_0200] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_buttonMaxFontSize_0300
-    * @tc.name  : buttonMaxFontSize_0300
-    * @tc.desc  : To test that the button MaxFontSize
-    * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+    /**
+     * @tc.name   buttonMaxFontSize_0300
+     * @tc.number SUB_ACE_buttonMaxFontSize_0300
+     * @tc.desc   To test that the button MaxFontSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('buttonMaxFontSize_0300', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('buttonMaxFontSize_0300 START');
       let driver = await Driver.create()

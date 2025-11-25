@@ -45,11 +45,13 @@ export default function searchButton() {
       console.info("searchButton after each called");
     });
 
-    /*
-     * @tc.number       searchButton0001
-     * @tc.name         searchButton0001
-     * @tc.desc         When the content of the search component is 
-                          empty, the search button is dimmed
+    /**
+     * @tc.name   searchButton0001
+     * @tc.number searchButton0001
+     * @tc.desc   When the content of the search component is
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('searchButton0001', Level.LEVEL1, async () => {
         let driver = Driver.create();

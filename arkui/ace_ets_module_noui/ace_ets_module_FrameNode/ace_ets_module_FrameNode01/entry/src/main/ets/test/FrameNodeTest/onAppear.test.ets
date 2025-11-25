@@ -40,12 +40,12 @@ export default function onAppear() {
       done();
     });
     /**
-     * @tc.number    onAppear_0100
-     * @tc.name      onAppear_0100
-     * @tc.desc      frameNode: onAppearToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   onAppear_0100
+     * @tc.number onAppear_0100
+     * @tc.desc   frameNode: onAppearToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onAppear_0100', Level.LEVEL0, async (done: Function) => {
       console.info('onAppear_0100 START');
@@ -59,12 +59,12 @@ export default function onAppear() {
       done();
     });
     /**
-     * @tc.number    onAppear_0200
-     * @tc.name      onAppear_0200
-     * @tc.desc      frameNode: onAppearToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   onAppear_0200
+     * @tc.number onAppear_0200
+     * @tc.desc   frameNode: onAppearToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onAppear_0200', Level.LEVEL0, async (done: Function) => {
       console.info('onAppear_0200 START');

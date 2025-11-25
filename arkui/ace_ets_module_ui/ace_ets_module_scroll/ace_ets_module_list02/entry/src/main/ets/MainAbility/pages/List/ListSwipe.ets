@@ -17,7 +17,7 @@ import events_emitter from '@ohos.events.emitter';
 
 @Entry
 @Component
-struct ListSwipe {
+struct ListSwipeAction {
   private listScroller = new ListScroller();
   @State list1Item0State: string = ''
   @State list1Item1Offset: string = ''

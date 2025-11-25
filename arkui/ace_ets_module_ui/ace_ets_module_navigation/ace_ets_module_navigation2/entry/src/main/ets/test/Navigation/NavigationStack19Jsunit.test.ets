@@ -39,12 +39,14 @@ export default function NavigationStack19Jsunit() {
       }
       done();
     });
-    /* *
-    * @tc.number: NavigationStack19Jsunit_0100
-    * @tc.name  : NavigationStack19Jsunit_0100
-    * @tc.desc  : When NavigationMode is set to split, hideNavBar is dynamically changed to false.
-    * @tc.level : Level 3
-    */
+    /**
+     * @tc.name   NavigationStack19Jsunit_0100
+     * @tc.number NavigationStack19Jsunit_0100
+     * @tc.desc   When NavigationMode is set to split, hideNavBar is dynamically changed to false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NavigationStack19Jsunit_0100',  Level.LEVEL0, async  (done:Function) =>{
       await CommonFunc.sleep(1000);
       let driver = await Driver.create()

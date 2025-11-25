@@ -47,6 +47,14 @@ export default function navigatorCodeJsunit() {
       console.info("NavigatorClick after each called");
     });
 
+    /**
+     * @tc.name   test_NavigatorClick_001
+     * @tc.number test_NavigatorClick_001
+     * @tc.desc   test_NavigatorClick_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('test_NavigatorClick_001',  Level.LEVEL0, async (done: Function) => {
       console.info('[test_NavigatorClick_001] START');
       await Utils.sleep(1000);
@@ -57,6 +65,14 @@ export default function navigatorCodeJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   test_NavigatorClick_002
+     * @tc.number test_NavigatorClick_002
+     * @tc.desc   test_NavigatorClick_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('test_NavigatorClick_002',  Level.LEVEL0, async (done: Function) => {
       console.info('[test_NavigatorClick_002] START');
       await Utils.sleep(1000);
@@ -82,6 +98,14 @@ export default function navigatorCodeJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   test_NavigatorClick_003
+     * @tc.number test_NavigatorClick_003
+     * @tc.desc   test_NavigatorClick_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('test_NavigatorClick_003',  Level.LEVEL0, async (done: Function) => {
       await Utils.sleep(1000)
       let callback = (eventData: events_emitter.EventData) => {

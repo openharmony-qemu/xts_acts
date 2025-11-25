@@ -21,14 +21,14 @@ const ABILITYNAME = "com.open.harmony.packagemag.MainAbility";
 export default function getLaunchWant() {
     describe('GetLaunchWant', function () {
 
-        /*
-        * @tc.number: testGetLaunchWant_0100
-        * @tc.name: testGetLaunchWant.
-        * @tc.desc: Test getLaunchWant interface to get own launch want.
-        * @tc.size MediumTest
-        * @tc.type Function
-        * @tc.level Level 1
-        */
+        /**
+         * @tc.name   testGetLaunchWant
+         * @tc.number testGetLaunchWant_0100
+         * @tc.desc   Test getLaunchWant interface to get own launch want.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testGetLaunchWant', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
             let want = bundleMgr.getLaunchWant();
             expect(want.abilityName).assertEqual(ABILITYNAME);
@@ -36,14 +36,14 @@ export default function getLaunchWant() {
             done();
         });
 
-        /*
-        * @tc.number: testGetLaunchWant_0200
-        * @tc.name: testRepeatGetLaunchWant.
-        * @tc.desc: Test repeated call getLaunchWant interface to get own launch want.
-        * @tc.size MediumTest
-        * @tc.type Function
-        * @tc.level Level 1
-        */
+        /**
+         * @tc.name   testRepeatGetLaunchWant
+         * @tc.number testGetLaunchWant_0200
+         * @tc.desc   Test repeated call getLaunchWant interface to get own launch want.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testRepeatGetLaunchWant', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
             let want = bundleMgr.getLaunchWant();
             expect(want.abilityName).assertEqual(ABILITYNAME);

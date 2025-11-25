@@ -51,12 +51,12 @@ export default function button3Jsunit() {
     })
 
     /**
-     * @tc.number testButton01
      * @tc.name   testButton01
+     * @tc.number testButton01
      * @tc.desc   test Button
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButton01', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton01] START');
@@ -69,12 +69,12 @@ export default function button3Jsunit() {
     });
 
     /**
-     * @tc.number testButton02
      * @tc.name   testButton02
+     * @tc.number testButton02
      * @tc.desc   test Button
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButton02', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton02] START');
@@ -87,12 +87,12 @@ export default function button3Jsunit() {
     });
 
     /**
-     * @tc.number testButton03
      * @tc.name   testButton03
+     * @tc.number testButton03
      * @tc.desc   test Button
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButton03', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton03] START');
@@ -104,12 +104,12 @@ export default function button3Jsunit() {
     });
 
     /**
-     * @tc.number testButton04
      * @tc.name   testButton04
+     * @tc.number testButton04
      * @tc.desc   test Button
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButton04', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton04] START');
@@ -121,12 +121,12 @@ export default function button3Jsunit() {
     });
 
     /**
-     * @tc.number testButton05
      * @tc.name   testButton05
+     * @tc.number testButton05
      * @tc.desc   test Button
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButton05', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton05] START');
@@ -155,12 +155,12 @@ export default function button3Jsunit() {
     });
 
     /**
-     * @tc.number testButton06
      * @tc.name   testButton06
+     * @tc.number testButton06
      * @tc.desc   test Button
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButton06', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton06] START');
@@ -189,12 +189,12 @@ export default function button3Jsunit() {
     });
 
     /**
-     * @tc.number testButton07
      * @tc.name   testButton07
+     * @tc.number testButton07
      * @tc.desc   test Button
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButton07', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton07] START');
@@ -225,12 +225,12 @@ export default function button3Jsunit() {
     });
 
     /**
-     * @tc.number testButton08
      * @tc.name   testButton08
+     * @tc.number testButton08
      * @tc.desc   test Button
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButton08', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton08] START');
@@ -259,12 +259,12 @@ export default function button3Jsunit() {
     });
 
     /**
-     * @tc.number testButton09
      * @tc.name   testButton09
+     * @tc.number testButton09
      * @tc.desc   test Button
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButton09', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton09] START');
@@ -293,12 +293,12 @@ export default function button3Jsunit() {
     });
 
     /**
-     * @tc.number testButton10
      * @tc.name   testButton10
+     * @tc.number testButton10
      * @tc.desc   test Button
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButton10', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton10] START');
@@ -338,12 +338,12 @@ export default function button3Jsunit() {
     });
 
     /**
-     * @tc.number testButton11
      * @tc.name   testButton11
+     * @tc.number testButton11
      * @tc.desc   test Button
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButton11', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton11] START');
@@ -383,12 +383,12 @@ export default function button3Jsunit() {
     });
 
     /**
-     * @tc.number testButton12
      * @tc.name   testButton12
+     * @tc.number testButton12
      * @tc.desc   test Button
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButton12', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
@@ -439,12 +439,12 @@ export default function button3Jsunit() {
     });
 
     /**
-     * @tc.number testButton13
      * @tc.name   testButton13
+     * @tc.number testButton13
      * @tc.desc   test Button
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButton13', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton13] START');
@@ -475,12 +475,12 @@ export default function button3Jsunit() {
     });
 
     /**
-     * @tc.number testButton14
      * @tc.name   testButton14
+     * @tc.number testButton14
      * @tc.desc   test Button
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButton14', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton14] START');
@@ -511,12 +511,12 @@ export default function button3Jsunit() {
     });
 
     /**
-     * @tc.number testButton15
      * @tc.name   testButton15
+     * @tc.number testButton15
      * @tc.desc   test Button
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButton15', Level.LEVEL1, async (done: Function) => {
       console.info('[testButton15] START');

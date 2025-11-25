@@ -43,12 +43,12 @@ export default function maintainPosition() {
     });
 
     /**
-     * @tc.number    maintainPosition_001
-     * @tc.name      maintainPosition_0100
-     * @tc.desc      When inserting data in front of the display area, the visible content position changes.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   maintainPosition_0100
+     * @tc.number maintainPosition_001
+     * @tc.desc   When inserting data in front of the display area, the visible content position changes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('maintainPosition_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[maintainPosition_0100] START');
@@ -75,12 +75,12 @@ export default function maintainPosition() {
     });
 
     /**
-     * @tc.number    maintainPosition_002
-     * @tc.name      maintainPosition_0200
-     * @tc.desc      Keep the visible content position unchanged when inserting data in front of the display area.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   maintainPosition_0200
+     * @tc.number maintainPosition_002
+     * @tc.desc   Keep the visible content position unchanged when inserting data in front of the display area.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('maintainPosition_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[maintainPosition_0200] START');

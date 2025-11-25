@@ -56,12 +56,14 @@ export default function onGetIrregular6Jsunit() {
       done();
     });
 
-    /* *
-    * @tc.number: onGetIrregular6Jsunit_0001
-    * @tc.name  : onGetIrregular6Jsunit_0001
-    * @tc.desc  : SonGetIrregular[0,1], the custom size of the obtained index setting is laid out in 1 row and 1 column
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   onGetIrregular6Jsunit_0001
+     * @tc.number onGetIrregular6Jsunit_0001
+     * @tc.desc   SonGetIrregular[0,1], the custom size of the obtained index setting is laid out in 1 row and 1 column
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('onGetIrregular6Jsunit_0001',  Level.LEVEL0, async (done: Function) => {
 
       console.info('[onGetIrregular6Jsunit_0001] START');

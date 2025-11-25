@@ -42,12 +42,12 @@ export default function APICanvasSizeTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_APICanvasSizeTest_0100
-     * @tc.name: APICanvasSizeTest_0100
-     * @tc.desc: CanvasAPI 
-     * @tc.level: Level 2
-     * @tc.type : Canvas
-     * @tc.size : CanvasTest
+     * @tc.name   APICanvasSizeTest_0100
+     * @tc.number SUB_ARKUI_API_APICanvasSizeTest_0100
+     * @tc.desc   CanvasAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('APICanvasSizeTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('APICanvasSizeTest_0100 START');
@@ -74,12 +74,12 @@ export default function APICanvasSizeTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_APICanvasSizeTest_0200
-     * @tc.name: APICanvasSizeTest_0200
-     * @tc.desc: CanvasAPI 
-     * @tc.level: Level 2
-     * @tc.type : Canvas
-     * @tc.size : CanvasTest
+     * @tc.name   APICanvasSizeTest_0200
+     * @tc.number SUB_ARKUI_API_APICanvasSizeTest_0200
+     * @tc.desc   CanvasAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('APICanvasSizeTest_0200', Level.LEVEL2, async (done: Function) => {
       console.info('APICanvasSizeTest_0200 START');

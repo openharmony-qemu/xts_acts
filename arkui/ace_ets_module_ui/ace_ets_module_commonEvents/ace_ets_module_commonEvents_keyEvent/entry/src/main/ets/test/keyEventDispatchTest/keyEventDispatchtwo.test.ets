@@ -43,12 +43,12 @@ export default function keyEventDispatchTest2() {
     });
 
     /**
-     * @tc.number keyEventDispatchTest2_0100
      * @tc.name   keyEventDispatchTest2_0100
+     * @tc.number keyEventDispatchTest2_0100
      * @tc.desc   test the onKeyEvent api16 CallBack  only child component response when trigger 'TAB' key and call stopPropagation function
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('keyEventDispatchTest2_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[keyEventDispatchTest2_0100] START');

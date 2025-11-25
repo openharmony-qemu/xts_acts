@@ -47,12 +47,12 @@ export default function ListContentSize() {
     });
 
     /**
+     * @tc.name   test_list_getContentSize_001
      * @tc.number test_list_getContentSize_001
-     * @tc.name   Test the properties of components
      * @tc.desc   the callback for getting content size, which determines that the value is 1000.
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_list_getContentSize_001', Level.LEVEL0, async (done: Function) => {
       console.info('test_list_getContentSize_001 START');
@@ -67,12 +67,12 @@ export default function ListContentSize() {
     });
 
     /**
+     * @tc.name   test_list_getContentSize_002
      * @tc.number test_list_getContentSize_002
-     * @tc.name   Test the properties of components
      * @tc.desc   the callback for getting width content size, which determines that the value is 1000.
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_list_getContentSize_002', Level.LEVEL0, async (done: Function) => {
       console.info('test_list_getContentSize_002 START');
@@ -86,13 +86,13 @@ export default function ListContentSize() {
       done();
     });
 
-        /**
+    /**
+     * @tc.name   test_list_getContentSizeErrorCode_001
      * @tc.number test_list_getContentSizeErrorCode_001
-     * @tc.name   Test the properties of components
      * @tc.desc   the callback ErrorCode is 100004.
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_list_getContentSizeErrorCode_001', Level.LEVEL0, async (done: Function) => {
       console.info('test_list_getContentSizeErrorCode_001 START');

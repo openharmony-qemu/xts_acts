@@ -77,6 +77,14 @@ export default function abilityTest() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     })
+    /**
+     * @tc.name   ACTS_UIExtension_TerminateSelfWithResult_001
+     * @tc.number ACTS_UIExtension_TerminateSelfWithResult_001
+     * @tc.desc   ACTS_UIExtension_TerminateSelfWithResult_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_UIExtension_TerminateSelfWithResult_001', Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_UIExtension_TerminateSelfWithResult_001 == ';
       console.log(TAG + "begin");
@@ -133,6 +141,14 @@ export default function abilityTest() {
       })
     })
 
+    /**
+     * @tc.name   Acts_ReportDrawnCompleted_AsyncCallback_001
+     * @tc.number Acts_ReportDrawnCompleted_AsyncCallback_001
+     * @tc.desc   Acts_ReportDrawnCompleted_AsyncCallback_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Acts_ReportDrawnCompleted_AsyncCallback_001', Level.LEVEL0, async (done: Function) => {
       console.log('====>Acts_ReportDrawnCompleted_AsyncCallback_001 expect start ');
       let appearEvent = 'ACTS_UIExtension_AboutToAppear';
@@ -185,10 +201,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number  : ACTS_UIExtension_ConnectAbility_001
-     * @tc.name    : UIExtension connect serviceAbility
-     * @tc.desc    : test UIExtension connectServiceExtensionAbility api
+    /**
+     * @tc.name   ACTS_UIExtension_ConnectAbility_001
+     * @tc.number ACTS_UIExtension_ConnectAbility_001
+     * @tc.desc   test UIExtension connectServiceExtensionAbility api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_UIExtension_ConnectAbility_001', Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_UIExtension_ConnectAbility_001 == ';
@@ -244,10 +263,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number  : ACTS_UIExtension_MoreParamater_001
-     * @tc.name    : UIExtension Connect MoreParamater
-     * @tc.desc    : test UIExtension connect and disconnect serviceAbility with more paramater
+    /**
+     * @tc.name   ACTS_UIExtension_MoreParamater_001
+     * @tc.number ACTS_UIExtension_MoreParamater_001
+     * @tc.desc   test UIExtension connect and disconnect serviceAbility with more paramater
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_UIExtension_MoreParamater_001', Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_UIExtension_MoreParamater_001 == ';
@@ -295,10 +317,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number  : ACTS_UIExtension_Exception_001
-     * @tc.name    : UIExtension connect serviceAbility with Exception
-     * @tc.desc    : test UIExtension connect serviceAbility with Exception about error paramater
+    /**
+     * @tc.name   ACTS_UIExtension_Exception_001
+     * @tc.number ACTS_UIExtension_Exception_001
+     * @tc.desc   test UIExtension connect serviceAbility with Exception about error paramater
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_UIExtension_Exception_001', Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_UIExtension_Exception_001 == ';
@@ -342,10 +367,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number  : ACTS_UIExtension_DisConnectAbility_001
-     * @tc.name    : UIExtension disconnect serviceAbility
-     * @tc.desc    : test UIExtension disconnectServiceExceptionAbility much example
+    /**
+     * @tc.name   ACTS_UIExtension_DisConnectAbility_001
+     * @tc.number ACTS_UIExtension_DisConnectAbility_001
+     * @tc.desc   test UIExtension disconnectServiceExceptionAbility much example
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_UIExtension_DisConnectAbility_001', Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_UIExtension_DisConnectAbility_001 == ';
@@ -389,10 +417,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number  : ACTS_UIExtension_SameApp_001
-     * @tc.name    : UIExtension connect serviceAbility in sameApp
-     * @tc.desc    : UIExtension connect serviceAbility in sameApp with callback in many example
+    /**
+     * @tc.name   ACTS_UIExtension_SameApp_001
+     * @tc.number ACTS_UIExtension_SameApp_001
+     * @tc.desc   UIExtension connect serviceAbility in sameApp with callback in many example
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_UIExtension_SameApp_001', Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_UIExtension_SameApp_001 == ';
@@ -453,10 +484,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number  : ACTS_UIExtension_DifferentApp_001
-     * @tc.name    : UIExtension connect serviceAbility and disconnect serviceAbility
-     * @tc.desc    : UIExtension connect serviceAbility and disconnect serviceAbility in difference app with promise
+    /**
+     * @tc.name   ACTS_UIExtension_DifferentApp_001
+     * @tc.number ACTS_UIExtension_DifferentApp_001
+     * @tc.desc   UIExtension connect serviceAbility and disconnect serviceAbility in difference app with promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_UIExtension_DifferentApp_001', Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_UIExtension_DifferentApp_001 == ';
@@ -499,10 +533,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number  : ACTS_UIExtension_DifferentApp_002
-     * @tc.name    : test UIExtension in DifferentApp 002
-     * @tc.desc    : UIExtension connect serviceAbility and terminal UIExtensionAbility
+    /**
+     * @tc.name   ACTS_UIExtension_DifferentApp_002
+     * @tc.number ACTS_UIExtension_DifferentApp_002
+     * @tc.desc   UIExtension connect serviceAbility and terminal UIExtensionAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_UIExtension_DifferentApp_002', Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_UIExtension_DifferentApp_002 == ';
@@ -540,10 +577,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number  : ACTS_UIExtension_DifferentApp_003
-     * @tc.name    : test UIExtension in DifferentApp 003
-     * @tc.desc    : UIExtension connect lots of serviceAbility and terminal UIExtensionAbility
+    /**
+     * @tc.name   ACTS_UIExtension_DifferentApp_003
+     * @tc.number ACTS_UIExtension_DifferentApp_003
+     * @tc.desc   UIExtension connect lots of serviceAbility and terminal UIExtensionAbility
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_UIExtension_DifferentApp_003', Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_UIExtension_DifferentApp_003 == ';
@@ -593,10 +633,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number  : ACTS_UIExtension_DifferentApp_004
-     * @tc.name    : test UIExtension in DifferentApp 004
-     * @tc.desc    : UIExtension connect serviceAbility and terminal service
+    /**
+     * @tc.name   ACTS_UIExtension_DifferentApp_004
+     * @tc.number ACTS_UIExtension_DifferentApp_004
+     * @tc.desc   UIExtension connect serviceAbility and terminal service
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_UIExtension_DifferentApp_004', Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_UIExtension_DifferentApp_004 == ';
@@ -634,10 +677,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number  : ACTS_UIExtension_DifferentApp_005
-     * @tc.name    : test UIExtension in DifferentApp 005
-     * @tc.desc    : UIExtension connect service1, servce1 connect service2, disconnect by self
+    /**
+     * @tc.name   ACTS_UIExtension_DifferentApp_005
+     * @tc.number ACTS_UIExtension_DifferentApp_005
+     * @tc.desc   UIExtension connect service1, servce1 connect service2, disconnect by self
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_UIExtension_DifferentApp_005', Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_UIExtension_DifferentApp_005 == ';
@@ -675,10 +721,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number  : ACTS_UIExtension_DifferentApp_006
-     * @tc.name    : test UIExtension in DifferentApp 006
-     * @tc.desc    : UIExtension connect service visable and invisible with no Permission in foreground
+    /**
+     * @tc.name   ACTS_UIExtension_DifferentApp_006
+     * @tc.number ACTS_UIExtension_DifferentApp_006
+     * @tc.desc   UIExtension connect service visable and invisible with no Permission in foreground
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_UIExtension_DifferentApp_006', Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_UIExtension_DifferentApp_006 == ';
@@ -728,10 +777,13 @@ export default function abilityTest() {
       })
     })
 
-     /*
-     * @tc.number  : ACTS_UIExtension_DifferentApp_007
-     * @tc.name    : test UIExtension in DifferentApp 007
-     * @tc.desc    : UIExtension connect service visable and invisible with START_ABILITY_ABILITY Permission  in foreground
+    /**
+     * @tc.name   ACTS_UIExtension_DifferentApp_007
+     * @tc.number ACTS_UIExtension_DifferentApp_007
+     * @tc.desc   UIExtension connect service visable and invisible with START_ABILITY_ABILITY Permission  in foreground
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_UIExtension_DifferentApp_007', Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_UIExtension_DifferentApp_007 == ';
@@ -794,10 +846,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number  : ACTS_UIExtension_DifferentApp_008
-     * @tc.name    : test UIExtension in DifferentApp 008
-     * @tc.desc    : UIExtension connect service visable and invisible with no Permission  in background
+    /**
+     * @tc.name   ACTS_UIExtension_DifferentApp_008
+     * @tc.number ACTS_UIExtension_DifferentApp_008
+     * @tc.desc   UIExtension connect service visable and invisible with no Permission  in background
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_UIExtension_DifferentApp_008', Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_UIExtension_DifferentApp_008 == ';
@@ -847,10 +902,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number  : ACTS_UIExtension_DifferentApp_009
-     * @tc.name    : test UIExtension in DifferentApp 009
-     * @tc.desc    : UIExtension connect service visable and invisible with START_ABILITY_ABILITY Permission in background
+    /**
+     * @tc.name   ACTS_UIExtension_DifferentApp_009
+     * @tc.number ACTS_UIExtension_DifferentApp_009
+     * @tc.desc   UIExtension connect service visable and invisible with START_ABILITY_ABILITY Permission in background
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_UIExtension_DifferentApp_009', Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_UIExtension_DifferentApp_009 == ';
@@ -914,10 +972,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number  : ACTS_UIExtension_DifferentApp_010
-     * @tc.name    : test UIExtension in DifferentApp 010
-     * @tc.desc    : different UIExtension connect same service
+    /**
+     * @tc.name   ACTS_UIExtension_DifferentApp_010
+     * @tc.number ACTS_UIExtension_DifferentApp_010
+     * @tc.desc   different UIExtension connect same service
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_UIExtension_DifferentApp_010', Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_UIExtension_DifferentApp_010 == ';
@@ -979,10 +1040,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number  : ACTS_UIExtension_DifferentApp_011
-     * @tc.name    : test UIExtension in DifferentApp 011
-     * @tc.desc    : UIExtension connect service visable and invisible with START_ABILITY_ABILITY and START_ABILITIES_FROM_BACKGROUND Permission in background
+    /**
+     * @tc.name   ACTS_UIExtension_DifferentApp_011
+     * @tc.number ACTS_UIExtension_DifferentApp_011
+     * @tc.desc   UIExtension connect service visable and invisible with START_ABILITY_ABILITY and START_ABILITIES_FROM_BACKGROUND Permission in background
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_UIExtension_DifferentApp_011', Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_UIExtension_DifferentApp_011 == ';
@@ -1044,10 +1108,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number  : ACTS_UIExtension_StartAbilityByType001
-     * @tc.name    : test start UIExtensionAbility by type failed
-     * @tc.desc    : start UIExtensionAbility not configured in json
+    /**
+     * @tc.name   ACTS_UIExtension_StartAbilityByType001
+     * @tc.number ACTS_UIExtension_StartAbilityByType001
+     * @tc.desc   start UIExtensionAbility not configured in json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_UIExtension_StartAbilityByType001', Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_UIExtension_StartAbilityByType001 == ';
@@ -1105,10 +1172,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number  : ACTS_UIExtension_StartAbilityByType002
-     * @tc.name    : test start UIExtensionAbility by type failed
-     * @tc.desc    : start UIExtensionAbility not configured in json
+    /**
+     * @tc.name   ACTS_UIExtension_StartAbilityByType002
+     * @tc.number ACTS_UIExtension_StartAbilityByType002
+     * @tc.desc   start UIExtensionAbility not configured in json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_UIExtension_StartAbilityByType002', Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_UIExtension_StartAbilityByType002 == ';
@@ -1135,10 +1205,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number  : ACTS_UIExtension_StartAbilityByType003
-     * @tc.name    : test start UIExtensionAbility by type failed
-     * @tc.desc    : start UIExtensionAbility not configured in json
+    /**
+     * @tc.name   ACTS_UIExtension_StartAbilityByType003
+     * @tc.number ACTS_UIExtension_StartAbilityByType003
+     * @tc.desc   start UIExtensionAbility not configured in json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_UIExtension_StartAbilityByType003', Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_UIExtension_StartAbilityByType003 == ';
@@ -1163,10 +1236,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number  : ACTS_UIExtension_StartAbilityByType004
-     * @tc.name    : test start UIExtensionAbility by type failed
-     * @tc.desc    : start UIExtensionAbility not configured in json
+    /**
+     * @tc.name   ACTS_UIExtension_StartAbilityByType004
+     * @tc.number ACTS_UIExtension_StartAbilityByType004
+     * @tc.desc   start UIExtensionAbility not configured in json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_UIExtension_StartAbilityByType004', Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_UIExtension_StartAbilityByType004 == ';
@@ -1195,10 +1271,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number  : ACTS_UIExtension_Device_01
-     * @tc.name    : test UIExtension back to desktop
-     * @tc.desc    : UIExtension connect service successful back to desktop
+    /**
+     * @tc.name   ACTS_UIExtension_Device_01
+     * @tc.number ACTS_UIExtension_Device_01
+     * @tc.desc   UIExtension connect service successful back to desktop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_UIExtension_Device_01', Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_UIExtension_Device_01 == ';
@@ -1251,10 +1330,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number  : ACTS_UIExtension_Device_02
-     * @tc.name    : test UIExtension off the screen
-     * @tc.desc    : UIExtension connect service successful then off the screen
+    /**
+     * @tc.name   ACTS_UIExtension_Device_02
+     * @tc.number ACTS_UIExtension_Device_02
+     * @tc.desc   UIExtension connect service successful then off the screen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_UIExtension_Device_02', Level.LEVEL0, async (done: Function) => {
       TAG = 'ACTS_UIExtension_Device_02 == ';

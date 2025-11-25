@@ -43,12 +43,14 @@ export default function textArea_center() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_TextArea_Center_001
-    * @tc.name  : textArea_center_001
-    * @tc.desc  : When textArea is in the middle, clicking on the top of the input box triggers the keyboard
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   textArea_center_001
+     * @tc.number SUB_ACE_TS_COMPONENT_TextArea_Center_001
+     * @tc.desc   When textArea is in the middle, clicking on the top of the input box triggers the keyboard
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('textArea_center_001', Level.LEVEL2, async (done: Function) => {
 
       console.info('[textArea_center_001] START');
@@ -81,12 +83,14 @@ export default function textArea_center() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_TextArea_Center_002
-    * @tc.name  : textArea_center_002
-    * @tc.desc  : When textArea is in the middle, clicking on the middle of the input box triggers the keyboard
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   textArea_center_002
+     * @tc.number SUB_ACE_TS_COMPONENT_TextArea_Center_002
+     * @tc.desc   When textArea is in the middle, clicking on the middle of the input box triggers the keyboard
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('textArea_center_002', Level.LEVEL2, async (done: Function) => {
 
       console.info('[textArea_center_002] START');
@@ -118,12 +122,14 @@ export default function textArea_center() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_TextArea_Center_003
-    * @tc.name  : textArea_center_003
-    * @tc.desc  : When textArea is in the middle, clicking on the bottom of the input box triggers the keyboard
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   textArea_center_003
+     * @tc.number SUB_ACE_TS_COMPONENT_TextArea_Center_003
+     * @tc.desc   When textArea is in the middle, clicking on the bottom of the input box triggers the keyboard
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('textArea_center_003', Level.LEVEL2, async (done: Function) => {
 
       console.info('[textArea_center_003] START');

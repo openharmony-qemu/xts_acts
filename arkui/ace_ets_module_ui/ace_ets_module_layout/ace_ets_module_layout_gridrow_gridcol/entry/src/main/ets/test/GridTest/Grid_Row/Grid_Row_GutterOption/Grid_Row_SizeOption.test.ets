@@ -47,9 +47,12 @@ export default function Grid_Row_SizeOption() {
     });
 
     /**
+     * @tc.name   SUB_ACE_GridRowSizeOption_0100
      * @tc.number SUB_ACE_GRIDROWSIZEOPTION_0100
-     * @tc.name testGridRowSizeOption
-     * @tc.desc Set the GridRowSizeOption of GridRow to '30vp'
+     * @tc.desc   Set the GridRowSizeOption of GridRow to '30vp'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GridRowSizeOption_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_GridRowGutterOption_0100 START');
@@ -75,9 +78,12 @@ export default function Grid_Row_SizeOption() {
     });
 
     /**
+     * @tc.name   SUB_ACE_GridRowSizeOption_0200
      * @tc.number SUB_ACE_GRIDROWSIZEOPTION_0200
-     * @tc.name testGridRowSizeOption
-     * @tc.desc Set the GridRowSizeOption of GridRow to '50vp'
+     * @tc.desc   Set the GridRowSizeOption of GridRow to '50vp'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GridRowSizeOption_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_GridRowSizeOption_0200 START');
@@ -104,9 +110,12 @@ export default function Grid_Row_SizeOption() {
     });
 
     /**
+     * @tc.name   SUB_ACE_GridRowSizeOption_0300
      * @tc.number SUB_ACE_GRIDROWSIZEOPTION_0300
-     * @tc.name testGridRowSizeOption
-     * @tc.desc Set the GridRowSizeOption of GridRow to '100vp'
+     * @tc.desc   Set the GridRowSizeOption of GridRow to '100vp'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GridRowSizeOption_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_GridRowSizeOption_0300 START');
@@ -133,9 +142,12 @@ export default function Grid_Row_SizeOption() {
       done();
     });
     /**
+     * @tc.name   SUB_ACE_GridRowSizeOption_0400
      * @tc.number SUB_ACE_GRIDROWSIZEOPTION_0400
-     * @tc.name testGridRowSizeOption
-     * @tc.desc Set the GridRowSizeOption of GridRow to '150vp'
+     * @tc.desc   Set the GridRowSizeOption of GridRow to '150vp'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GridRowSizeOption_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_GridRowSizeOption_0400 START');
@@ -162,9 +174,12 @@ export default function Grid_Row_SizeOption() {
       done();
     });
     /**
+     * @tc.name   SUB_ACE_GridRowSizeOption_0500
      * @tc.number SUB_ACE_GRIDROWSIZEOPTION_0500
-     * @tc.name testGridRowSizeOption
-     * @tc.desc Set the GridRowSizeOption of GridRow to '200vp'
+     * @tc.desc   Set the GridRowSizeOption of GridRow to '200vp'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GridRowSizeOption_0500',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_GridRowSizeOption_0500 START');
@@ -190,9 +205,12 @@ export default function Grid_Row_SizeOption() {
       done();
     });
     /**
+     * @tc.name   SUB_ACE_GridRowSizeOption_0600
      * @tc.number SUB_ACE_GRIDROWSIZEOPTION_0600
-     * @tc.name testGridRowSizeOption
-     * @tc.desc Set the GridRowSizeOption of GridRow to '300vp'
+     * @tc.desc   Set the GridRowSizeOption of GridRow to '300vp'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GridRowSizeOption_0600',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_GridRowSizeOption_0600 START');

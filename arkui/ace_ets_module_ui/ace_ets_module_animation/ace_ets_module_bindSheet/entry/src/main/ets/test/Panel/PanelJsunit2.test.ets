@@ -45,10 +45,13 @@ export default function panelJsunit2() {
     });
 
     /**
-    * @tc.number: testPanel_100
-    * @tc.name  : testPanel_100
-    * @tc.desc  : testPanel_100
-    */
+     * @tc.name   testPanel_100
+     * @tc.number testPanel_100
+     * @tc.desc   testPanel_100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testPanel_100', Level.LEVEL2, async (done: Function) => {
       console.info('testPanel_100 START');
       await Utils.sleep(1000);
@@ -77,10 +80,13 @@ export default function panelJsunit2() {
     });
 
     /**
-    * @tc.number: testPanel_200
-    * @tc.name  : testPanel_200
-    * @tc.desc  : testPanel_200
-    */
+     * @tc.name   testPanel_200
+     * @tc.number testPanel_200
+     * @tc.desc   testPanel_200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testPanel_200', Level.LEVEL2, async (done: Function) => {
       console.info('testPanel_200 START');
       await Utils.sleep(1000);
@@ -109,10 +115,13 @@ export default function panelJsunit2() {
     });
 
     /**
-    * @tc.number: testPanel_300
-    * @tc.name  : testPanel_300
-    * @tc.desc  : testPanel_300
-    */
+     * @tc.name   testPanel_300
+     * @tc.number testPanel_300
+     * @tc.desc   testPanel_300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testPanel_300', Level.LEVEL2, async (done: Function) => {
       console.info('testPanel_300 START');
       await Utils.sleep(1000);
@@ -140,10 +149,13 @@ export default function panelJsunit2() {
     });
 
     /**
-    * @tc.number: testPanel_400
-    * @tc.name  : testPanel_400
-    * @tc.desc  : testPanel_400
-    */
+     * @tc.name   testPanel_400
+     * @tc.number testPanel_400
+     * @tc.desc   testPanel_400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testPanel_400', Level.LEVEL2, async (done: Function) => {
       console.info('testPanel_400 START');
       await Utils.sleep(2000);
@@ -155,10 +167,13 @@ export default function panelJsunit2() {
     });
 
     /**
-    * @tc.number: testPanel_500
-    * @tc.name  : testPanel_500
-    * @tc.desc  : testPanel_500
-    */
+     * @tc.name   testPanel_500
+     * @tc.number testPanel_500
+     * @tc.desc   testPanel_500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testPanel_500', Level.LEVEL2, async (done: Function) => {
       console.info('testPanel_500 START');
       await Utils.sleep(2000);
@@ -170,10 +185,13 @@ export default function panelJsunit2() {
     });
 
     /**
-    * @tc.number: testPanel_600
-    * @tc.name  : testPanel_600
-    * @tc.desc  : testPanel_600
-    */
+     * @tc.name   testPanel_600
+     * @tc.number testPanel_600
+     * @tc.desc   testPanel_600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testPanel_600', Level.LEVEL2, async (done: Function) => {
       console.info('testPanel_600 START');
       await Utils.sleep(2000);
@@ -185,10 +203,13 @@ export default function panelJsunit2() {
     });
 
     /**
-    * @tc.number: testPanel_700
-    * @tc.name  : testPanel_700
-    * @tc.desc  : testPanel_700
-    */
+     * @tc.name   testPanel_700
+     * @tc.number testPanel_700
+     * @tc.desc   testPanel_700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testPanel_700', Level.LEVEL2, async (done: Function) => {
       console.info('testPanel_700 START');
       await Utils.sleep(2000);

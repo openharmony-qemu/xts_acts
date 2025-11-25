@@ -54,6 +54,14 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       console.info("gestureMode after each called");
     });
 
+    /**
+     * @tc.name   fillModeText_0100
+     * @tc.number fillModeText_0100
+     * @tc.desc   fillModeText_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('fillModeText_0100', Level.LEVEL0, async (done: Function) => {
       console.info('fillModeText_0100 START');
       let strJson: string = getInspectorByKey('gestureMode');

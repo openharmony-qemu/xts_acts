@@ -26,299 +26,299 @@ export default function keyframeAnimateOptionTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_0100
-     * @tc.name       : testKeyframeAnimateOption001
-     * @tc.desc       : testing keyframeAnimateTo with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testKeyframeAnimateOption001
+     * @tc.number SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_0100
+     * @tc.desc   testing keyframeAnimateTo with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testKeyframeAnimateOption001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testKeyframeAnimateOption001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_0200
-     * @tc.name       : testKeyframeAnimateOption002
-     * @tc.desc       : testing keyframeAnimateTo without context
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testKeyframeAnimateOption002
+     * @tc.number SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_0200
+     * @tc.desc   testing keyframeAnimateTo without context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testKeyframeAnimateOption002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testKeyframeAnimateOption002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_0300
-     * @tc.name       : testKeyframeAnimateOption003
-     * @tc.desc       : testing keyframeAnimateTo without option
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testKeyframeAnimateOption003
+     * @tc.number SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_0300
+     * @tc.desc   testing keyframeAnimateTo without option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testKeyframeAnimateOption003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testKeyframeAnimateOption003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_0400
-     * @tc.name       : testKeyframeAnimateOption004
-     * @tc.desc       : testing OH_ArkUI_KeyframeAnimateOption_Create with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testKeyframeAnimateOption004
+     * @tc.number SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_0400
+     * @tc.desc   testing OH_ArkUI_KeyframeAnimateOption_Create with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testKeyframeAnimateOption004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testKeyframeAnimateOption004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_0500
-     * @tc.name       : testKeyframeAnimateOption005
-     * @tc.desc       : testing OH_ArkUI_KeyframeAnimateOption_Dispose
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testKeyframeAnimateOption005
+     * @tc.number SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_0500
+     * @tc.desc   testing OH_ArkUI_KeyframeAnimateOption_Dispose
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testKeyframeAnimateOption005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testKeyframeAnimateOption005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_0600
-     * @tc.name       : testKeyframeAnimateOption006
-     * @tc.desc       : testing OH_ArkUI_KeyframeAnimateOption_SetDelay with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testKeyframeAnimateOption006
+     * @tc.number SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_0600
+     * @tc.desc   testing OH_ArkUI_KeyframeAnimateOption_SetDelay with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testKeyframeAnimateOption006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testKeyframeAnimateOption006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_0700
-     * @tc.name       : testKeyframeAnimateOption007
-     * @tc.desc       : testing OH_ArkUI_KeyframeAnimateOption_SetDelay with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testKeyframeAnimateOption007
+     * @tc.number SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_0700
+     * @tc.desc   testing OH_ArkUI_KeyframeAnimateOption_SetDelay with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testKeyframeAnimateOption007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testKeyframeAnimateOption007()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_0800
-     * @tc.name       : testKeyframeAnimateOption008
-     * @tc.desc       : testing OH_ArkUI_KeyframeAnimateOption_SetDelay with nullptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testKeyframeAnimateOption008
+     * @tc.number SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_0800
+     * @tc.desc   testing OH_ArkUI_KeyframeAnimateOption_SetDelay with nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testKeyframeAnimateOption008', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testKeyframeAnimateOption008()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_0900
-     * @tc.name       : testKeyframeAnimateOption009
-     * @tc.desc       : testing OH_ArkUI_KeyframeAnimateOption_SetIterations with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testKeyframeAnimateOption009
+     * @tc.number SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_0900
+     * @tc.desc   testing OH_ArkUI_KeyframeAnimateOption_SetIterations with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testKeyframeAnimateOption009', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testKeyframeAnimateOption009()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_1000
-     * @tc.name       : testKeyframeAnimateOption010
-     * @tc.desc       : testing OH_ArkUI_KeyframeAnimateOption_SetIterations with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testKeyframeAnimateOption010
+     * @tc.number SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_1000
+     * @tc.desc   testing OH_ArkUI_KeyframeAnimateOption_SetIterations with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testKeyframeAnimateOption010', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testKeyframeAnimateOption010()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_1100
-     * @tc.name       : testKeyframeAnimateOption011
-     * @tc.desc       : testing OH_ArkUI_KeyframeAnimateOption_SetIterations with nullptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testKeyframeAnimateOption011
+     * @tc.number SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_1100
+     * @tc.desc   testing OH_ArkUI_KeyframeAnimateOption_SetIterations with nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testKeyframeAnimateOption011', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testKeyframeAnimateOption011()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_1300
-     * @tc.name       : testKeyframeAnimateOption013
-     * @tc.desc       : testing OH_ArkUI_KeyframeAnimateOption_RegisterOnFinishCallback with nullptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testKeyframeAnimateOption013
+     * @tc.number SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_1300
+     * @tc.desc   testing OH_ArkUI_KeyframeAnimateOption_RegisterOnFinishCallback with nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testKeyframeAnimateOption013', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testKeyframeAnimateOption013()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_1400
-     * @tc.name       : testKeyframeAnimateOption014
-     * @tc.desc       : testing OH_ArkUI_KeyframeAnimateOption_SetDuration with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testKeyframeAnimateOption014
+     * @tc.number SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_1400
+     * @tc.desc   testing OH_ArkUI_KeyframeAnimateOption_SetDuration with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testKeyframeAnimateOption014', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testKeyframeAnimateOption014()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_1500
-     * @tc.name       : testKeyframeAnimateOption015
-     * @tc.desc       : testing OH_ArkUI_KeyframeAnimateOption_SetDuration with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testKeyframeAnimateOption015
+     * @tc.number SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_1500
+     * @tc.desc   testing OH_ArkUI_KeyframeAnimateOption_SetDuration with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testKeyframeAnimateOption015', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testKeyframeAnimateOption015()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_1600
-     * @tc.name       : testKeyframeAnimateOption016
-     * @tc.desc       : testing OH_ArkUI_KeyframeAnimateOption_SetDuration with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testKeyframeAnimateOption016
+     * @tc.number SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_1600
+     * @tc.desc   testing OH_ArkUI_KeyframeAnimateOption_SetDuration with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testKeyframeAnimateOption016', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testKeyframeAnimateOption016()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_1700
-     * @tc.name       : testKeyframeAnimateOption017
-     * @tc.desc       : testing OH_ArkUI_KeyframeAnimateOption_SetDuration with nullptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testKeyframeAnimateOption017
+     * @tc.number SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_1700
+     * @tc.desc   testing OH_ArkUI_KeyframeAnimateOption_SetDuration with nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testKeyframeAnimateOption017', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testKeyframeAnimateOption017()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_1800
-     * @tc.name       : testKeyframeAnimateOption018
-     * @tc.desc       : testing OH_ArkUI_KeyframeAnimateOption_GetDuration with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testKeyframeAnimateOption018
+     * @tc.number SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_1800
+     * @tc.desc   testing OH_ArkUI_KeyframeAnimateOption_GetDuration with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testKeyframeAnimateOption018', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testKeyframeAnimateOption018()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_1900
-     * @tc.name       : testKeyframeAnimateOption019
-     * @tc.desc       : testing OH_ArkUI_KeyframeAnimateOption_SetCurve with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testKeyframeAnimateOption019
+     * @tc.number SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_1900
+     * @tc.desc   testing OH_ArkUI_KeyframeAnimateOption_SetCurve with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testKeyframeAnimateOption019', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testKeyframeAnimateOption019()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_2000
-     * @tc.name       : testKeyframeAnimateOption020
-     * @tc.desc       : testing OH_ArkUI_KeyframeAnimateOption_SetCurve with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testKeyframeAnimateOption020
+     * @tc.number SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_2000
+     * @tc.desc   testing OH_ArkUI_KeyframeAnimateOption_SetCurve with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testKeyframeAnimateOption020', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testKeyframeAnimateOption020()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_2100
-     * @tc.name       : testKeyframeAnimateOption021
-     * @tc.desc       : testing OH_ArkUI_KeyframeAnimateOption_SetCurve with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testKeyframeAnimateOption021
+     * @tc.number SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_2100
+     * @tc.desc   testing OH_ArkUI_KeyframeAnimateOption_SetCurve with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testKeyframeAnimateOption021', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testKeyframeAnimateOption021()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_2200
-     * @tc.name       : testKeyframeAnimateOption022
-     * @tc.desc       : testing OH_ArkUI_KeyframeAnimateOption_SetCurve with nullptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testKeyframeAnimateOption022
+     * @tc.number SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_2200
+     * @tc.desc   testing OH_ArkUI_KeyframeAnimateOption_SetCurve with nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testKeyframeAnimateOption022', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testKeyframeAnimateOption022()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_2400
-     * @tc.name       : testKeyframeAnimateOption024
-     * @tc.desc       : testing OH_ArkUI_KeyframeAnimateOption_RegisterOnEventCallback with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testKeyframeAnimateOption024
+     * @tc.number SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_2400
+     * @tc.desc   testing OH_ArkUI_KeyframeAnimateOption_RegisterOnEventCallback with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testKeyframeAnimateOption024', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testKeyframeAnimateOption024()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_2500
-     * @tc.name       : testKeyframeAnimateOption025
-     * @tc.desc       : testing OH_ArkUI_KeyframeAnimateOption_RegisterOnEventCallback with nullptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testKeyframeAnimateOption025
+     * @tc.number SUB_ARKUI_CAPI_KEYFRAMEANIMATEOPTION_2500
+     * @tc.desc   testing OH_ArkUI_KeyframeAnimateOption_RegisterOnEventCallback with nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testKeyframeAnimateOption025', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testKeyframeAnimateOption025()).assertEqual(0)

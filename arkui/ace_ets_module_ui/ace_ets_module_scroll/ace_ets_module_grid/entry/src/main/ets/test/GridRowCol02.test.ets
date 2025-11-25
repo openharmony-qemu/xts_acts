@@ -43,14 +43,14 @@ export default function GridRowCol02() {
       done();
     });
 
-    /* *
-      * @tc.number: GridRowCol02_001
-      * @tc.name  : GridRowCol02_001
-      * @tc.desc  : set rowsTemplate to repeat(auto-fit,10%)
-      * @tc.level : Level 3
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   GridRowCol02_001
+     * @tc.number GridRowCol02_001
+     * @tc.desc   set rowsTemplate to repeat(auto-fit,10%)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('GridRowCol02_001',  Level.LEVEL3, async (done: Function) => {
 
       console.info('[GridRowCol02_001] START');
@@ -66,14 +66,14 @@ export default function GridRowCol02() {
       done();
     });
 
-    /* *
-      * @tc.number: GridRowCol02_002
-      * @tc.name  : GridRowCol02_002
-      * @tc.desc  : set rowsTemplate to repeat(auto-fit,10%)
-      * @tc.level : Level 3
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   GridRowCol02_002
+     * @tc.number GridRowCol02_002
+     * @tc.desc   set rowsTemplate to repeat(auto-fit,10%)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('GridRowCol02_002',  Level.LEVEL3, async (done: Function) => {
 
       console.info('[GridRowCol02_002] START');
@@ -89,14 +89,14 @@ export default function GridRowCol02() {
       done();
     });
 
-    /* *
-      * @tc.number: GridRowCol02_003
-      * @tc.name  : GridRowCol02_003
-      * @tc.desc  : set rowsTemplate to repeat(auto-fit,10%)
-      * @tc.level : Level 3
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   GridRowCol02_003
+     * @tc.number GridRowCol02_003
+     * @tc.desc   set rowsTemplate to repeat(auto-fit,10%)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('GridRowCol02_003',  Level.LEVEL3, async (done: Function) => {
       console.info('[GridRowCol02_003] START');
       await CommonFunc.sleep(1000);
@@ -111,14 +111,14 @@ export default function GridRowCol02() {
       done();
     });
 
-    /* *
-      * @tc.number: GridRowCol02_004
-      * @tc.name  : GridRowCol02_004
-      * @tc.desc  : set rowsTemplate to repeat(auto-fit,10%)
-      * @tc.level : Level 3
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   GridRowCol02_004
+     * @tc.number GridRowCol02_004
+     * @tc.desc   set rowsTemplate to repeat(auto-fit,10%)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('GridRowCol02_004',  Level.LEVEL3, async (done: Function) => {
       console.info('[GridRowCol02_004] START');
       await CommonFunc.sleep(1000);
@@ -137,14 +137,14 @@ export default function GridRowCol02() {
       done();
     });
 
-    /* *
-      * @tc.number: GridRowCol02_005
-      * @tc.name  : GridRowCol02_005
-      * @tc.desc  : set rowsTemplate to repeat(auto-fit,10%)
-      * @tc.level : Level 3
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   GridRowCol02_005
+     * @tc.number GridRowCol02_005
+     * @tc.desc   set rowsTemplate to repeat(auto-fit,10%)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('GridRowCol02_005',  Level.LEVEL3, async (done: Function) => {
       console.info('[GridRowCol02_005] START');
       await CommonFunc.sleep(1000);
@@ -163,14 +163,14 @@ export default function GridRowCol02() {
       done();
     });
 
-    /* *
-      * @tc.number: GridRowCol02_006
-      * @tc.name  : GridRowCol02_006
-      * @tc.desc  : set rowsTemplate to repeat(auto-fit,10%)
-      * @tc.level : Level 3
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   GridRowCol02_006
+     * @tc.number GridRowCol02_006
+     * @tc.desc   set rowsTemplate to repeat(auto-fit,10%)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('GridRowCol02_006',  Level.LEVEL3, async (done: Function) => {
       console.info('[GridRowCol02_006] START');
       await CommonFunc.sleep(1000);

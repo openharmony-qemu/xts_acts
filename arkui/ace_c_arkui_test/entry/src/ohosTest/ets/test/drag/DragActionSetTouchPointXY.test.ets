@@ -28,13 +28,13 @@ export default function DragActionSetTouchPointXYTest() {
       await Utils.pushPage(`drag/${PAGE_TAG}`, done);
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DragActionSetTouchPointXY_0100
-     * @tc.name       : DragActionSetTouchPointXYTest001
-     * @tc.desc       : testing DragActionSetTouchPointXY
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   DragActionSetTouchPointXYTest001
+     * @tc.number SUB_ARKUI_CAPI_DragActionSetTouchPointXY_0100
+     * @tc.desc   testing DragActionSetTouchPointXY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DragActionSetTouchPointXYTest001', Level.LEVEL1, async (done: Function) => {
       console.info('DragActionSetTouchPointXYTest001 START');

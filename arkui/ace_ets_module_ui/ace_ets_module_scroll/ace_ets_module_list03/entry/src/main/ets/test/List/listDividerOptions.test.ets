@@ -43,12 +43,12 @@ export default function listDividerOptions() {
     });
 
     /**
-     * @tc.number    listDividerOptions_001
-     * @tc.name      listDividerOptions_0100
-     * @tc.desc      Set ListItem Breakline Style.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   listDividerOptions_0100
+     * @tc.number listDividerOptions_001
+     * @tc.desc   Set ListItem Breakline Style.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('listDividerOptions_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[listDividerOptions_0100] START');

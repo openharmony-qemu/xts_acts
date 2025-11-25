@@ -1866,7 +1866,9 @@ napi_value OHNativeBufferSetMetadataValueEnumTraversal(napi_env env, napi_callba
         OH_VIDEO_HDR_HDR10,
         OH_VIDEO_HDR_VIVID,
         OH_IMAGE_HDR_VIVID_DUAL,
-        OH_IMAGE_HDR_VIVID_SINGLE
+        OH_IMAGE_HDR_VIVID_SINGLE,
+        OH_IMAGE_HDR_ISO_DUAL,
+        OH_IMAGE_HDR_ISO_SINGLE
     };
     for (int i = 0; i <= sizeof(hdr_type) / sizeof(hdr_type[0]) - 1; i++) {
         int32_t bufferSize;

@@ -43,12 +43,12 @@ export default function getItemError() {
     });
 
     /**
-     * @tc.number    getItemError_001
-     * @tc.name      getItemError_0100
-     * @tc.desc      401 error code for getItemRect.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   getItemError_0100
+     * @tc.number getItemError_001
+     * @tc.desc   401 error code for getItemRect.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getItemError_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[getItemError_0100] START');
@@ -65,12 +65,12 @@ export default function getItemError() {
     });
 
     /**
-     * @tc.number    getItemError_002
-     * @tc.name      getItemError_0200
-     * @tc.desc      100004 error code for getItemRect.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   getItemError_0200
+     * @tc.number getItemError_002
+     * @tc.desc   100004 error code for getItemRect.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getItemError_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[getItemError_0200] START');
@@ -87,12 +87,12 @@ export default function getItemError() {
     });
 
     /**
-     * @tc.number    getItemError_003
-     * @tc.name      getItemError_0300
-     * @tc.desc      401 error code for getItemIndex.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   getItemError_0300
+     * @tc.number getItemError_003
+     * @tc.desc   401 error code for getItemIndex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getItemError_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[getItemError_0300] START');
@@ -109,12 +109,12 @@ export default function getItemError() {
     });
 
     /**
-     * @tc.number    getItemError_004
-     * @tc.name      getItemError_0400
-     * @tc.desc      100004 error code for getItemIndex.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   getItemError_0400
+     * @tc.number getItemError_004
+     * @tc.desc   100004 error code for getItemIndex.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getItemError_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[getItemError_0400] START');

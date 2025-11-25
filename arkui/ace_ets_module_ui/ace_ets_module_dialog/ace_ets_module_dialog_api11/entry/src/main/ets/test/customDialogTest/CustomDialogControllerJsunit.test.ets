@@ -45,15 +45,15 @@ export default function customDialogControllerJsunit() {
       await Utils.sleep(1000);
       console.info("customDialogControllers after each called");
     });
-    /**
-     * @tc.number    testCustomDialogControllers_100
-     * @tc.name      testCustomDialogControllers_100
-     * @tc.desc      set api
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
-     */
 
+    /**
+     * @tc.name   testCustomDialogControllers_100
+     * @tc.number testCustomDialogControllers_100
+     * @tc.desc   testCustomDialogControllers_100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testCustomDialogControllers_100', Level.LEVEL2, async (done: Function) => {
       console.info('[testCustomDialogControllers_100] START');
       let driver = await Driver.create()

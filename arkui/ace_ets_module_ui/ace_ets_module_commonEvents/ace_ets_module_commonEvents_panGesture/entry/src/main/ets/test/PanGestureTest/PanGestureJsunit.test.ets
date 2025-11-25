@@ -59,12 +59,12 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
     });
 
     /**
-     * @tc.number    testPanGesture01
-     * @tc.name      testPanGesture01
-     * @tc.desc      api test TapGesture
-     * @tc.level:    Level
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   testPanGesture01
+     * @tc.number testPanGesture01
+     * @tc.desc   api test TapGesture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPanGesture01', Level.LEVEL0, async (done: Function) => {
       console.info('[testPanGesture01] START');
@@ -92,12 +92,12 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
     });
 
     /**
-     * @tc.number    testPanGesture02
-     * @tc.name      testPanGesture02
-     * @tc.desc      api test TapGesture
-     * @tc.level:    Level
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   testPanGesture02
+     * @tc.number testPanGesture02
+     * @tc.desc   api test TapGesture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPanGesture02', Level.LEVEL0, async (done: Function) => {
       let rect = CommonFunc.getComponentRect('PanGesture')

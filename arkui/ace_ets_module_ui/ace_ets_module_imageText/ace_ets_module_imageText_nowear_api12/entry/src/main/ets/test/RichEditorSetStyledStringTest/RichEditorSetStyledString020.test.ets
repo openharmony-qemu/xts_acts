@@ -55,12 +55,12 @@ export default function RichEditorSetStyledString020() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledStrin_000116
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledStrin_000116
-     * @tc.desc  : Verify the effect of the attribute string setting after clicking on the image gesture event to test RichEditor setStyledString
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledStrin_000116
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledStrin_000116
+     * @tc.desc   Verify the effect of the attribute string setting after clicking on the image gesture event to test RichEditor setStyledString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledStrin_000116',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledStrin_000116 START');
@@ -85,12 +85,12 @@ export default function RichEditorSetStyledString020() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledStrin_000117
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledStrin_000117
-     * @tc.desc  : Verify the effect of the attribute string setting after long pressing the image gesture event to test RichEditor setStyledString
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledStrin_000117
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledStrin_000117
+     * @tc.desc   Verify the effect of the attribute string setting after long pressing the image gesture event to test RichEditor setStyledString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledStrin_000117',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_setStyledStrin_000117 START');

@@ -42,12 +42,12 @@ export default function SearchXtsJsunit() {
     })
 
     /**
+     * @tc.name   SearchXtsJsunit_0101
      * @tc.number SearchXtsJsunit_0101
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SearchXtsJsunit_0101',  Level.LEVEL0, async (done: Function) => {
       console.info('[SearchXtsJsunit_0101] START');
@@ -60,12 +60,12 @@ export default function SearchXtsJsunit() {
     });
 
     /**
+     * @tc.name   SearchXtsJsunit_0102
      * @tc.number SearchXtsJsunit_0102
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SearchXtsJsunit_0102',  Level.LEVEL0, async (done: Function) => {
       console.info('[SearchXtsJsunit_0102] START');
@@ -79,12 +79,12 @@ export default function SearchXtsJsunit() {
     });
 
     /**
+     * @tc.name   SearchXtsJsunit_0103
      * @tc.number SearchXtsJsunit_0103
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SearchXtsJsunit_0103',  Level.LEVEL0, async (done: Function) => {
       console.info('[SearchXtsJsunit_0103] START');
@@ -98,12 +98,12 @@ export default function SearchXtsJsunit() {
     });
 
     /**
+     * @tc.name   SearchXtsTest_0105
      * @tc.number SearchXtsTest_0105
-     * @tc.name Test the properties of components
-     * @tc.desc Set attribute values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set attribute values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SearchXtsTest_0105',  Level.LEVEL0, async (done: Function) => {
       console.info('SearchXtsTest_0105 START');

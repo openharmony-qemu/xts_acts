@@ -26,39 +26,39 @@ export default function swiperDisableSwipeTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_DISABLESWIPE_0100
-     * @tc.name       : testSwiperDisableSwipe001
-     * @tc.desc       : testing disableSwipe for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperDisableSwipe001
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_DISABLESWIPE_0100
+     * @tc.desc   testing disableSwipe for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperDisableSwipe001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperDisableSwipe001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_DISABLESWIPE_0200
-     * @tc.name       : testSwiperDisableSwipe002
-     * @tc.desc       : testing disableSwipe for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperDisableSwipe002
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_DISABLESWIPE_0200
+     * @tc.desc   testing disableSwipe for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperDisableSwipe002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperDisableSwipe002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_DISABLESWIPE_0300
-     * @tc.name       : testSwiperDisableSwipe003
-     * @tc.desc       : testing disableSwipe for swiper with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testSwiperDisableSwipe003
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_DISABLESWIPE_0300
+     * @tc.desc   testing disableSwipe for swiper with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperDisableSwipe003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperDisableSwipe003()).assertEqual(0)

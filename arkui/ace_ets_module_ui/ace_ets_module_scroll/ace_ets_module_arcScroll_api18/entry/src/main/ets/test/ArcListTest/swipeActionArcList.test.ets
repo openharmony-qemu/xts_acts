@@ -43,12 +43,12 @@ export default function swipeActionArcList() {
     });
 
     /**
-     * @tc.number    swipeActionArcList_001
-     * @tc.name      swipeActionArcList_0100
-     * @tc.desc      The swipeAction attribute 'end' of the ArcList component,
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   swipeActionArcList_0100
+     * @tc.number swipeActionArcList_001
+     * @tc.desc   The swipeAction attribute 'end' of the ArcList component,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('swipeActionArcList_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[swipeActionArcList_0100] START');
@@ -80,12 +80,12 @@ export default function swipeActionArcList() {
     });
 
     /**
-     * @tc.number    swipeActionArcList_002
-     * @tc.name      swipeActionArcList_0200
-     * @tc.desc      The swipeAction attribute 'start' of the ArcList component,
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   swipeActionArcList_0200
+     * @tc.number swipeActionArcList_002
+     * @tc.desc   The swipeAction attribute 'start' of the ArcList component,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('swipeActionArcList_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[swipeActionArcList_0200] START');

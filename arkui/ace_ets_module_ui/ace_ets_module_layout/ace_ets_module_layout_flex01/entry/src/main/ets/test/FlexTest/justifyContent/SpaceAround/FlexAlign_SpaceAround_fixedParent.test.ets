@@ -49,9 +49,12 @@ export default function flexAlign_SpaceAround_fixedParent() {
     });
 
     /**
+     * @tc.name   testAlignSpaceAroundRowNoWrapOffset
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_SPACEAROUND_TEST_0900
-     * @tc.name testAlignSpaceAroundRowNoWrapOffset
-     * @tc.desc Parent component fixed, child component binding offset properties
+     * @tc.desc   Parent component fixed, child component binding offset properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAlignSpaceAroundRowNoWrapOffset',  Level.LEVEL0, async () => {
       console.info('new testAlignSpaceAroundRowNoWrapOffset START');

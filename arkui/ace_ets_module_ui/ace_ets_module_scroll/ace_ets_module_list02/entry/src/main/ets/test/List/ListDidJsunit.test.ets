@@ -46,12 +46,12 @@ export default function listDidJsunit() {
     });
 
     /**
-     * @tc.number    List_ONDIDSCROLL_0100
-     * @tc.name      listDidJsunit_0100
-     * @tc.desc      The list component triggers the onDidScroll event
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   listDidJsunit_0100
+     * @tc.number List_ONDIDSCROLL_0100
+     * @tc.desc   The list component triggers the onDidScroll event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('listDidJsunit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[listDidJsunit_0100] START');

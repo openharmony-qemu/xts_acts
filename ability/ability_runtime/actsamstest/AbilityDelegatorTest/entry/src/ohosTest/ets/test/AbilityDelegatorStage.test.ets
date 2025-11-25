@@ -62,13 +62,13 @@ export default function abilityDelegatorStage() {
       }, 1000);
     })
 
-    /*
-     * @tc.number:SUB_Ability_AbilityTools_AbilityDelegator_Stage_12700
-     * @tc.name: SUB_Ability_AbilityTools_AbilityDelegator_Stage_12700
-     * @tc.desc:Unable to start specified PageAbility (AsyncCallback)
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_12700
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_12700
+     * @tc.desc   Unable to start specified PageAbility (AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_12700', Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
@@ -99,13 +99,13 @@ export default function abilityDelegatorStage() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Ability_AbilityTools_AbilityDelegator_Stage_12800
-     * @tc.name: SUB_Ability_AbilityTools_AbilityDelegator_Stage_12800
-     * @tc.desc:Unable to start specified PageAbility(Promise)
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_12800
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_12800
+     * @tc.desc   Unable to start specified PageAbility(Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_12800', Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
@@ -137,13 +137,13 @@ export default function abilityDelegatorStage() {
       }
     });
 
-    /*
-     * @tc.number:SUB_Ability_AbilityTools_AbilityDelegator_Stage_12900
-     * @tc.name: SUB_Ability_AbilityTools_AbilityDelegator_Stage_12900
-     * @tc.desc:Unable to obtain background Ability information (Promise)
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_12900
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_12900
+     * @tc.desc   Unable to obtain background Ability information (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_12900', Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
@@ -193,13 +193,13 @@ export default function abilityDelegatorStage() {
       })
     });
 
-    /*
-     * @tc.number:SUB_Ability_AbilityTools_AbilityDelegator_Stage_13000
-     * @tc.name: SUB_Ability_AbilityTools_AbilityDelegator_Stage_13000
-     * @tc.desc:Unable to obtain background Ability information (callback)
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_13000
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_13000
+     * @tc.desc   Unable to obtain background Ability information (callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_13000', Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
@@ -250,13 +250,13 @@ export default function abilityDelegatorStage() {
       });
     })
 
-    /*
-     * @tc.number:SUB_Ability_AbilityTools_AbilityDelegator_Stage_21900
-     * @tc.name: SUB_Ability_AbilityTools_AbilityDelegator_Stage_21900
-     * @tc.desc:Can start the specified PageAbility (AsyncCallback)
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_21900
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_21900
+     * @tc.desc   Can start the specified PageAbility (AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_21900', Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',
@@ -287,13 +287,13 @@ export default function abilityDelegatorStage() {
       });
     });
 
-    /*
-     * @tc.number:SUB_Ability_AbilityTools_AbilityDelegator_Stage_22000
-     * @tc.name: SUB_Ability_AbilityTools_AbilityDelegator_Stage_22000
-     * @tc.desc:Can start the specified PageAbility (Promise)
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_22000
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_22000
+     * @tc.desc   Can start the specified PageAbility (Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_22000', Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'abilityDelegatorStageTag', '%{public}s',

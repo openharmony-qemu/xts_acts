@@ -49,12 +49,12 @@ export default function searchMinFontSize() {
     })
 
     /**
+     * @tc.name   searchMinFontSize0100
      * @tc.number searchMinFontSize0100
-     * @tc.name   Test the minFontSize property of the textInput component
      * @tc.desc   set the minFontSize property value is  16
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('searchMinFontSize0100',  Level.LEVEL0, async (done: Function) => {
       let tagName = 'searchMinFontSize0100';

@@ -26,39 +26,39 @@ export default function scrollClipTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_CLIP_0100
-     * @tc.name       : testScrollClip001
-     * @tc.desc       : testing clip for scroll with true value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollClip001
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_CLIP_0100
+     * @tc.desc   testing clip for scroll with true value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollClip001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollClip001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_CLIP_0200
-     * @tc.name       : testScrollClip002
-     * @tc.desc       : testing clip for scroll with false value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollClip002
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_CLIP_0200
+     * @tc.desc   testing clip for scroll with false value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollClip002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollClip002()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_CLIP_0300
-     * @tc.name       : testScrollClip003
-     * @tc.desc       : testing clip for scroll with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testScrollClip003
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_CLIP_0300
+     * @tc.desc   testing clip for scroll with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollClip003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollClip003()).assertEqual(0)

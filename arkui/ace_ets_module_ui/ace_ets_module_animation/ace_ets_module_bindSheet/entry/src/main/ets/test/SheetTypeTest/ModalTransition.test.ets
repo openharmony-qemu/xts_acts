@@ -40,14 +40,14 @@ export default function ModalTransitionTest(){
       }
       done();
     });
-    /* *
-    * @tc.number: ModalTransitionTest_0100
-    * @tc.name  : ModalTransitionTest_0100
-    * @tc.desc  : To test the mode of sheet how to avoid keyboard
-    * @tc.level : Level 3
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   ModalTransitionTest_0100
+     * @tc.number ModalTransitionTest_0100
+     * @tc.desc   To test the mode of sheet how to avoid keyboard
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ModalTransitionTest_0100', Level.LEVEL0, async (done:Function) =>{
       console.info('ModalTransitionTest_0100 START');
       let driver = await Driver.create()
@@ -67,14 +67,14 @@ export default function ModalTransitionTest(){
       done();
     });
 
-    /* *
-    * @tc.number: ModalTransitionTest_0200
-    * @tc.name  : ModalTransitionTest_0200
-    * @tc.desc  : To test the mode of sheet how to avoid keyboard
-    * @tc.level : Level 3
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   ModalTransitionTest_0200
+     * @tc.number ModalTransitionTest_0200
+     * @tc.desc   To test the mode of sheet how to avoid keyboard
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ModalTransitionTest_0200', Level.LEVEL0, async (done:Function) =>{
       console.info('ModalTransitionTest_0200 START');
       let driver = await Driver.create()
@@ -94,14 +94,14 @@ export default function ModalTransitionTest(){
       done();
     });
     
-    /* *
-     * @tc.number: ModalTransitionTest_0300
-     * @tc.name  : ModalTransitionTest_0300
-     * @tc.desc  : To test the mode of sheet how to avoid keyboard
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
-     */ 
+    /**
+     * @tc.name   ModalTransitionTest_0300
+     * @tc.number ModalTransitionTest_0300
+     * @tc.desc   To test the mode of sheet how to avoid keyboard
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ModalTransitionTest_0300', Level.LEVEL0, async (done:Function) =>{
       console.info('ModalTransitionTest_0300 START');
       let driver = await Driver.create()

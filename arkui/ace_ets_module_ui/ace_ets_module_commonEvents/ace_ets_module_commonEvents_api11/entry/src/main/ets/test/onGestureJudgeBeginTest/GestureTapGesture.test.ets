@@ -54,12 +54,12 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       done();
     });
     /**
-     * @tc.number    GestureTapGesture_0100
-     * @tc.name  GestureTapGesture_0100
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+     * @tc.name   GestureTapGesture_0100
+     * @tc.number GestureTapGesture_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GestureTapGesture_0100', Level.LEVEL0, async (done: Function) => {
       console.info('GestureTapGesture_0100 START');

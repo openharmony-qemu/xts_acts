@@ -44,12 +44,12 @@ export default function abilityTest() {
   describe('ActsAbilityTest', () => {
 
     /**
-     * @tc.number     Acts_OrientationTest_static_001
-     * @tc.name       Acts_OrientationTest_static_001
-     * @tc.desc       Query if the orientation value is FOLLOW_RECENT.
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   Acts_OrientationTest_static_001
+     * @tc.number Acts_OrientationTest_static_001
+     * @tc.desc   Query if the orientation value is FOLLOW_RECENT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Acts_OrientationTest_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -85,13 +85,13 @@ export default function abilityTest() {
       })
 
     /**
-    * @tc.number  TestAbilityDisable_static_014
-    * @tc.name    TestAbilityDisable_static_014
-    * @tc.desc    test enumeration bundleManager.AbilityFlag
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level 1
-    */
+     * @tc.name   TestAbilityDisable_static_014
+     * @tc.number TestAbilityDisable_static_014
+     * @tc.desc   test enumeration bundleManager.AbilityFlag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestAbilityDisable_static_014', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         bundleManager.queryAbilityInfo(want, abilityFlags | abilityFlags1 | abilityFlags2 | abilityFlags3 |abilityFlags4

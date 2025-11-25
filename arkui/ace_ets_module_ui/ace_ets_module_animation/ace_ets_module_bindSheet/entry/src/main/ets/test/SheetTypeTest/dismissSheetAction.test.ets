@@ -41,12 +41,14 @@ export default function dismissSheetActionTest() {
       done()
     });
 
-    /* *
-    * @tc.number: dismissSheetActionTest_001
-    * @tc.name  : dismissSheetActionTest_001
-    * @tc.desc  : Test the SheetTypeTest not null
-    * @tc.level : Level 1
-    */                                                                        
+    /**
+     * @tc.name   dismissSheetActionTest_001
+     * @tc.number dismissSheetActionTest_001
+     * @tc.desc   Test the SheetTypeTest not null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('dismissSheetActionTest_001', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('dismissSheetActionTest_001 START');
       let driver = await Driver.create()

@@ -21,13 +21,13 @@ export default function refreshOnOffsetChangeTest() {
 
   describe('RefreshOnOffsetChangeTest', () => {
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_REFRESH_ON_OFFSET_CHANGE_0100
-     * @tc.name: testRefreshOnOffsetChange001
-     * @tc.desc: testing onOffsetChange for Refresh with red value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testRefreshOnOffsetChange001
+     * @tc.number SUB_ARKUI_CAPI_REFRESH_ON_OFFSET_CHANGE_0100
+     * @tc.desc   testing onOffsetChange for Refresh with red value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRefreshOnOffsetChange001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'RefreshOnOffsetChangeTest';

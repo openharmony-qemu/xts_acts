@@ -45,12 +45,12 @@ export default function flexWrapJsunit() {
     });
 
     /**
-     * @tc.number flexWrap_0100
      * @tc.name   flexWrap_0100
+     * @tc.number flexWrap_0100
      * @tc.desc   test flex width
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('flexWrap_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('flexWrap_0100 START');
@@ -65,12 +65,12 @@ export default function flexWrapJsunit() {
     });
 
     /**
-     * @tc.number flexWrap_0200
      * @tc.name   flexWrap_0200
+     * @tc.number flexWrap_0200
      * @tc.desc   test flex height
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('flexWrap_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('flexWrap_0200 START');
@@ -85,12 +85,12 @@ export default function flexWrapJsunit() {
     });
 
     /**
-     * @tc.number flexWrap_0300
      * @tc.name   flexWrap_0300
+     * @tc.number flexWrap_0300
      * @tc.desc   test flex width and height
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('flexWrap_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('flexWrap_0300 START');

@@ -35,12 +35,12 @@ export default function bmsZlibChecksumCrc32Test() {
     })
 
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_static_2600
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_static_2600
-     * @tc.desc: test crc32(0,bufEmpty)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_static_2600
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_static_2600
+     * @tc.desc   test crc32(0,bufEmpty)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Sub_Bms_Zlib_Checksum_Check_static_2600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {

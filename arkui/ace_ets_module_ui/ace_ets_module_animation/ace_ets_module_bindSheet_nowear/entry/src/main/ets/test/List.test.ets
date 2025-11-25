@@ -15,8 +15,12 @@
 
 import detentSelection from './bindSheet/detentSelection.test'
 import bindSheetKeyboardAvoidMode from './SheetTypeTest/bindSheetKeyboardAvoidMode.test';
+import tabsOnContentWillChangeIndex10JsunitTest from './tabs/tabsOnContentWillChangeIndex10.test';
+import tabsOnContentWillChangeIndex11JsunitTest from './tabs/tabsOnContentWillChangeIndex11.test';
 
 export default function testsuite() {
   detentSelection();
   bindSheetKeyboardAvoidMode();
+  tabsOnContentWillChangeIndex10JsunitTest();
+  tabsOnContentWillChangeIndex11JsunitTest();
 }

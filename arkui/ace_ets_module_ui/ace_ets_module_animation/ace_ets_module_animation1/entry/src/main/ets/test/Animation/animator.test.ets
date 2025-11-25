@@ -42,10 +42,13 @@ export default function animatorOnframeJsunit() {
       await Utils.sleep(1000);
       console.info("animatorOnframe after each called");
     });
-    /*
-     * @tc.number       testanimatorOnframe0001
-     * @tc.name         testanimatorOnframe0001
-     * @tc.desc         aceanimatorOnframeEtsTest0001
+    /**
+     * @tc.name   testanimatorOnframe0001
+     * @tc.number testanimatorOnframe0001
+     * @tc.desc   aceanimatorOnframeEtsTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testanimatorOnframe0001', Level.LEVEL0, async (done: Function) => {
       console.info('animatorOnframe testanimatorOnframe0001 START');
@@ -57,10 +60,13 @@ export default function animatorOnframeJsunit() {
       console.info("[testanimatorOnframe0001] width value :" + JSON.parse(strJson).$attrs.width);
       done();
     });
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testanimatorOnframe0002
-     * @tc.desc         aceanimatorOnframeEtsTest0002
+    /**
+     * @tc.name   testanimatorOnframe0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   aceanimatorOnframeEtsTest0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testanimatorOnframe0002', Level.LEVEL0, async (done: Function) => {
       console.info('animatorOnframe testanimatorOnframe0002 START');
@@ -72,10 +78,13 @@ export default function animatorOnframeJsunit() {
       console.info("[testanimatorOnframe0002] height value :" + JSON.parse(strJson).$attrs.height);
       done();
     });
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-     * @tc.name         testanimatorOnframe0003
-     * @tc.desc         aceanimatorOnframeEtsTest0003
+    /**
+     * @tc.name   testanimatorOnframe0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   aceanimatorOnframeEtsTest0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testanimatorOnframe0003', Level.LEVEL0, async (done: Function) => {
       console.info('animatorOnframe testanimatorOnframe0003 START');
@@ -87,10 +96,13 @@ export default function animatorOnframeJsunit() {
       console.info("[testanimatorOnframe0003] fontSize value :" + JSON.parse(strJson).$attrs.fontSize);
       done();
     });
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0004
-     * @tc.name         testanimatorOnframe0004
-     * @tc.desc         aceanimatorOnframeEtsTest0004
+    /**
+     * @tc.name   testanimatorOnframe0004
+     * @tc.number SUB_ACE_BASIC_ETS_API_0004
+     * @tc.desc   aceanimatorOnframeEtsTest0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testanimatorOnframe0004', Level.LEVEL0, async (done: Function) => {
       console.info('animatorOnframe testanimatorOnframe0004 START');
@@ -102,10 +114,13 @@ export default function animatorOnframeJsunit() {
       console.info("[testanimatorOnframe0004] opacity value :" + JSON.parse(strJson).$attrs.opacity);
       done();
     });
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0005
-     * @tc.name         testanimatorOnframe0005
-     * @tc.desc         aceanimatorOnframeEtsTest0005
+    /**
+     * @tc.name   testanimatorOnframe0005
+     * @tc.number SUB_ACE_BASIC_ETS_API_0005
+     * @tc.desc   aceanimatorOnframeEtsTest0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testanimatorOnframe0005', Level.LEVEL0, async (done: Function) => {
       console.info('animatorOnframe testanimatorOnframe0005 START');
@@ -117,10 +132,13 @@ export default function animatorOnframeJsunit() {
       console.info("[testanimatorOnframe0005] align value :" + JSON.parse(strJson).$attrs.align);
       done();
     });
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0006
-     * @tc.name         testanimatorOnframe0006
-     * @tc.desc         aceanimatorOnframeEtsTest0006
+    /**
+     * @tc.name   testanimatorOnframe0006
+     * @tc.number SUB_ACE_BASIC_ETS_API_0006
+     * @tc.desc   aceanimatorOnframeEtsTest0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testanimatorOnframe0006', Level.LEVEL0, async (done: Function) => {
       console.info('animatorOnframe testanimatorOnframe0006 START');
@@ -132,10 +150,13 @@ export default function animatorOnframeJsunit() {
       console.info("[testanimatorOnframe0006] fontColor value :" + JSON.parse(strJson).$attrs.fontColor);
       done();
     });
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0007
-     * @tc.name         testanimatorOnframe0007
-     * @tc.desc         aceanimatorOnframeEtsTest0007
+    /**
+     * @tc.name   testanimatorOnframe0007
+     * @tc.number SUB_ACE_BASIC_ETS_API_0007
+     * @tc.desc   aceanimatorOnframeEtsTest0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testanimatorOnframe0007', Level.LEVEL0, async (done: Function) => {
       console.info('animatorOnframe testanimatorOnframe0007 START');
@@ -147,10 +168,13 @@ export default function animatorOnframeJsunit() {
       console.info("[testanimatorOnframe0007] lineHeight value :" + JSON.parse(strJson).$attrs.lineHeight);
       done();
     });
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0009
-     * @tc.name         testanimatorOnframe0009
-     * @tc.desc         aceanimatorOnframeEtsTest0009
+    /**
+     * @tc.name   testanimatorOnframe0009
+     * @tc.number SUB_ACE_BASIC_ETS_API_0009
+     * @tc.desc   aceanimatorOnframeEtsTest0009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testanimatorOnframe0009', Level.LEVEL0, async (done: Function) => {
       console.info('animatorOnframe testanimatorOnframe009 START');
@@ -162,10 +186,13 @@ export default function animatorOnframeJsunit() {
       console.info("[testanimatorOnframe0009] padding value :" + JSON.parse(strJson).$attrs.padding);
       done();
     });
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0010
-     * @tc.name         testanimatorOnframe0010
-     * @tc.desc         aceanimatorOnframeEtsTest0010
+    /**
+     * @tc.name   testanimatorOnframe0010
+     * @tc.number SUB_ACE_BASIC_ETS_API_0010
+     * @tc.desc   aceanimatorOnframeEtsTest0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testanimatorOnframe0010', Level.LEVEL0, async (done: Function) => {
       console.info('animatorOnframe testanimatorOnframe0010 START');
@@ -178,10 +205,13 @@ export default function animatorOnframeJsunit() {
       done();
     });
 
-    /*
-     * @tc.number       testanimatorOnframe0011
-     * @tc.name         testanimatorOnframe0011
-     * @tc.desc         test animator OnFrame
+    /**
+     * @tc.name   testanimatorOnframe0011
+     * @tc.number testanimatorOnframe0011
+     * @tc.desc   test animator OnFrame
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testanimatorOnframe0011', Level.LEVEL0, async (done: Function) => {
       console.info('animatorOnframe testanimatorOnframe0011 START');
@@ -203,10 +233,13 @@ export default function animatorOnframeJsunit() {
       done();  
     });
 
-    /*
-     * @tc.number       testanimatorOnframe012
-     * @tc.name         testanimatorOnframe012
-     * @tc.desc         test animator onRepeat
+    /**
+     * @tc.name   testanimatorOnframe012
+     * @tc.number testanimatorOnframe012
+     * @tc.desc   test animator onRepeat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testanimatorOnframe012', Level.LEVEL0, async (done: Function) => {
       console.info('animatorOnframe testanimatorOnframe0011 START');
@@ -219,10 +252,13 @@ export default function animatorOnframeJsunit() {
       done();  
     });
 
-    /*
-     * @tc.number       testanimatorOnframe013
-     * @tc.name         testanimatorOnframe013
-     * @tc.desc        test animator onCancel
+    /**
+     * @tc.name   testanimatorOnframe013
+     * @tc.number testanimatorOnframe013
+     * @tc.desc   test animator onCancel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testanimatorOnframe013', Level.LEVEL0, async (done: Function) => {
       console.info('animatorOnframe testanimatorOnframe013 START');

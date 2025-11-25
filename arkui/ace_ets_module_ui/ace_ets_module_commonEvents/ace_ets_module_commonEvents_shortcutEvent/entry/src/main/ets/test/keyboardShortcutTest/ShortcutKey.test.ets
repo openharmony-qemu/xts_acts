@@ -96,14 +96,14 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       await CommonFunc.sleep(2000)
     });
 
-    /*
-    * @tc.number     : SUB_ArkUI_Shortcut_Key_0100
-    * @tc.name       : ArkUI_Shortcut_Key_0100
-    * @tc.desc       : test
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   ArkUI_Shortcut_Key_0100
+     * @tc.number SUB_ArkUI_Shortcut_Key_0100
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUI_Shortcut_Key_0100', Level.LEVEL0, async () => {
       let CASE = 'ArkUI_Shortcut_Key_0100'
       console.info(`${SUITE} ${CASE} START`);
@@ -123,14 +123,14 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       console.info(`${SUITE} ${CASE} END`);
     });
 
-    /*
-    * @tc.number     : SUB_ArkUI_Shortcut_Key_0200
-    * @tc.name       : ArkUI_Shortcut_Key_0200
-    * @tc.desc       : test
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   ArkUI_Shortcut_Key_0200
+     * @tc.number SUB_ArkUI_Shortcut_Key_0200
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUI_Shortcut_Key_0200', Level.LEVEL0, async () => {
       let CASE = 'ArkUI_Shortcut_Key_0200'
       console.info(`${SUITE} ${CASE} START`);
@@ -150,14 +150,14 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       console.info(`${SUITE} ${CASE} END`);
     });
 
-    /*
-    * @tc.number     : SUB_ArkUI_Shortcut_Key_0300
-    * @tc.name       : ArkUI_Shortcut_Key_0300
-    * @tc.desc       : test
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   ArkUI_Shortcut_Key_0300
+     * @tc.number SUB_ArkUI_Shortcut_Key_0300
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUI_Shortcut_Key_0300', Level.LEVEL0, async () => {
       let CASE = 'ArkUI_Shortcut_Key_0300'
       console.info(`${SUITE} ${CASE} START`);
@@ -177,14 +177,14 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       console.info(`${SUITE} ${CASE} END`);
     });
 
-    /*
-    * @tc.number     : SUB_ArkUI_Shortcut_Key_0400
-    * @tc.name       : ArkUI_Shortcut_Key_0400
-    * @tc.desc       : test
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   ArkUI_Shortcut_Key_0400
+     * @tc.number SUB_ArkUI_Shortcut_Key_0400
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUI_Shortcut_Key_0400', Level.LEVEL0, async () => {
       let CASE = 'ArkUI_Shortcut_Key_0400'
       console.info(`${SUITE} ${CASE} START`);

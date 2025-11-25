@@ -48,12 +48,12 @@ export default function ToggleContentModifier() {
 
 
     /**
-     * @tc.number: SUB_ARKUI_API_ToggleContentModifier_001
-     * @tc.name: ToggleContentModifier_001
-     * @tc.desc: ToggleAPI 
-     * @tc.level: Level 2
-     * @tc.type : Toggle
-     * @tc.size : ToggleTest
+     * @tc.name   ToggleContentModifier_001
+     * @tc.number SUB_ARKUI_API_ToggleContentModifier_001
+     * @tc.desc   ToggleAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ToggleContentModifier_001', Level.LEVEL2, async (done: Function) => {
       console.info('[ToggleContentModifier_001] START');

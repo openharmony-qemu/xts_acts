@@ -48,12 +48,12 @@ export default function textAreaHeightAdaptivePolicyTest() {
     })
 
     /**
+     * @tc.name   textAreaHeightAdaptivePolicy0100
      * @tc.number textAreaHeightAdaptivePolicy0100
-     * @tc.name Test the TextInputHeightAdaptivePolicy property of the textInput component
-     * @tc.desc set the textOverflow property value is TextHeightAdaptivePolicy.LAYOUT_CONSTRAINT_FIRST
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set the textOverflow property value is TextHeightAdaptivePolicy.LAYOUT_CONSTRAINT_FIRST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textAreaHeightAdaptivePolicy0100',  Level.LEVEL0, async (done: Function) => {
       let tagName = 'textAreaHeightAdaptivePolicy0100';
@@ -69,12 +69,12 @@ export default function textAreaHeightAdaptivePolicyTest() {
     });
 
     /**
+     * @tc.name   textAreaHeightAdaptivePolicy0200
      * @tc.number textAreaHeightAdaptivePolicy0200
-     * @tc.name Test the textOverflow property of the textInput component
-     * @tc.desc set the textOverflow property value is TextHeightAdaptivePolicy.MAX_LINES_FIRST
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set the textOverflow property value is TextHeightAdaptivePolicy.MAX_LINES_FIRST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textAreaHeightAdaptivePolicy0200',  Level.LEVEL0, async (done: Function) => {
       let tagName = 'textAreaHeightAdaptivePolicy0200';
@@ -89,12 +89,12 @@ export default function textAreaHeightAdaptivePolicyTest() {
     });
 
     /**
+     * @tc.name   textAreaHeightAdaptivePolicy0300
      * @tc.number textAreaHeightAdaptivePolicy0300
-     * @tc.name Test the textOverflow property of the textInput component
-     * @tc.desc set the textOverflow property value is TextHeightAdaptivePolicy.MIN_FONT_SIZE_FIRST
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set the textOverflow property value is TextHeightAdaptivePolicy.MIN_FONT_SIZE_FIRST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textAreaHeightAdaptivePolicy0300',  Level.LEVEL0, async (done: Function) => {
       let tagName = 'textAreaHeightAdaptivePolicy0300';

@@ -44,12 +44,12 @@ export default function ImageResizableTest() {
       console.info('ImageResizableTest after each called');
     });
     /**
+     * @tc.name   ImageResizableTest_001
      * @tc.number ImageResizableTest_001
-     * @tc.name ImageResizableTest_001
-     * @tc.desc ImageResizableTest_test
-     * @tc.size ImageResizableTest
-     * @tc.type Attribute
-     * @tc.level 2
+     * @tc.desc   ImageResizableTest_test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageResizableTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('[ImageResizableTest_001] START');

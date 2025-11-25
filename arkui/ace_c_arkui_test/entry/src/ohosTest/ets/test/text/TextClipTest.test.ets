@@ -26,156 +26,156 @@ export default function textClipTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_CLIP_0100
-     * @tc.name       : testTextClip001
-     * @tc.desc       : testing clip for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextClip001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_CLIP_0100
+     * @tc.desc   testing clip for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextClip001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextClip001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_CLIP_0200
-     * @tc.name       : testTextClip002
-     * @tc.desc       : testing clip for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextClip002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_CLIP_0200
+     * @tc.desc   testing clip for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextClip002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextClip002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_CLIP_0300
-     * @tc.name       : testTextClip003
-     * @tc.desc       : testing clip for text with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testTextClip003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_CLIP_0300
+     * @tc.desc   testing clip for text with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextClip003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextClip003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_CLIP_0400
-     * @tc.name       : testTextClip004
-     * @tc.desc       : testing clip for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextClip004
+     * @tc.number SUB_ARKUI_CAPI_TEXT_CLIP_0400
+     * @tc.desc   testing clip for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextClip004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextClip004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_CLIP_0500
-     * @tc.name       : testTextClip005
-     * @tc.desc       : testing clip for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextClip005
+     * @tc.number SUB_ARKUI_CAPI_TEXT_CLIP_0500
+     * @tc.desc   testing clip for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextClip005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextClip005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_CLIP_0600
-     * @tc.name       : testTextClip006
-     * @tc.desc       : testing clip for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextClip006
+     * @tc.number SUB_ARKUI_CAPI_TEXT_CLIP_0600
+     * @tc.desc   testing clip for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextClip006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextClip006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_CLIP_0700
-     * @tc.name       : testTextClip007
-     * @tc.desc       : testing clip for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextClip007
+     * @tc.number SUB_ARKUI_CAPI_TEXT_CLIP_0700
+     * @tc.desc   testing clip for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextClip007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextClip007()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_CLIP_0800
-     * @tc.name       : testTextClip008
-     * @tc.desc       : testing clip for text with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testTextClip008
+     * @tc.number SUB_ARKUI_CAPI_TEXT_CLIP_0800
+     * @tc.desc   testing clip for text with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextClip008', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextClip008()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_CLIP_0900
-     * @tc.name       : testTextClip009
-     * @tc.desc       : testing clip for text with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testTextClip009
+     * @tc.number SUB_ARKUI_CAPI_TEXT_CLIP_0900
+     * @tc.desc   testing clip for text with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextClip009', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextClip009()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_CLIP_1000
-     * @tc.name       : testTextClip010
-     * @tc.desc       : testing clip for text with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testTextClip010
+     * @tc.number SUB_ARKUI_CAPI_TEXT_CLIP_1000
+     * @tc.desc   testing clip for text with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextClip010', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextClip010()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_CLIP_1100
-     * @tc.name       : testTextClip011
-     * @tc.desc       : testing clip for text with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testTextClip011
+     * @tc.number SUB_ARKUI_CAPI_TEXT_CLIP_1100
+     * @tc.desc   testing clip for text with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextClip011', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextClip011()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_CLIP_1200
-     * @tc.name       : testTextClip012
-     * @tc.desc       : testing clip for text with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testTextClip012
+     * @tc.number SUB_ARKUI_CAPI_TEXT_CLIP_1200
+     * @tc.desc   testing clip for text with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextClip012', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextClip012()).assertEqual(0)

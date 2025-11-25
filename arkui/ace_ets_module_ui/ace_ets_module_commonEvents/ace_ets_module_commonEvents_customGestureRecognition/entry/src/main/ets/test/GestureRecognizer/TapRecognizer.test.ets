@@ -46,12 +46,14 @@ export default function TapRecognizerTest() {
       console.info('TapRecognizer after each called');
     });
 
-    /* *
-    * @tc.number :SUB_effective_TapRecognizer_0100
-    * @tc.name  : TapRecognizer_0100
-    * @tc.desc  : To test whether TapRecognizer is effective.
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   TapRecognizer_0100
+     * @tc.number SUB_effective_TapRecognizer_0100
+     * @tc.desc   To test whether TapRecognizer is effective.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('TapRecognizer_0100', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000);
       console.info('TapRecognizer_0100 START');

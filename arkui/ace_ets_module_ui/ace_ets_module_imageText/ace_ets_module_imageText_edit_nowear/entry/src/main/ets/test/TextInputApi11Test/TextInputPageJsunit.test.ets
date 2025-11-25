@@ -45,14 +45,14 @@ export default function TextInputPageJsunit() {
       done();
     });
 
-    /*
-    * @tc.number       TextInputPageJsunit_0100
-    * @tc.name         TextInputPageJsunit_0100
-    * @tc.desc         test  TextInput
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
-    */
+    /**
+     * @tc.name   TextInputPageJsunit_0100
+     * @tc.number TextInputPageJsunit_0100
+     * @tc.desc   test  TextInput
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TextInputPageJsunit_0100', Level.LEVEL1, async (done: Function) => {
       // Get the information of the TextInput component
       console.info('[TextInputPageJsunit_0100] START');
@@ -86,14 +86,14 @@ export default function TextInputPageJsunit() {
       done();
     });
 
-    /*
-    * @tc.number       TextInputPageJsunit_0200
-    * @tc.name         TextInputPageJsunit_0200
-    * @tc.desc         test  TextInput
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
-    */
+    /**
+     * @tc.name   TextInputPageJsunit_0200
+     * @tc.number TextInputPageJsunit_0200
+     * @tc.desc   test  TextInput
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TextInputPageJsunit_0200', Level.LEVEL1, async (done: Function) => {
       // Get default attributes of TextInput component
       console.info('[TextInputPageJsunit_0200] START');
@@ -126,14 +126,14 @@ export default function TextInputPageJsunit() {
       done();
     });
 
-    /*
-    * @tc.number       TextInputPageJsunit_0300
-    * @tc.name         TextInputPageJsunit_0300
-    * @tc.desc         test  TextInput
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
-    */
+    /**
+     * @tc.name   TextInputPageJsunit_0300
+     * @tc.number TextInputPageJsunit_0300
+     * @tc.desc   test  TextInput
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TextInputPageJsunit_0300', Level.LEVEL1, async (done: Function) => {
       // Modify the properties of TextInput component 
       console.info('[TextInputPageJsunit_0300] START');
@@ -178,14 +178,14 @@ export default function TextInputPageJsunit() {
       done();
     });
 
-    /*
-    * @tc.number       TextInputPageJsunit_0400
-    * @tc.name         TextInputPageJsunit_0400
-    * @tc.desc         test  TextInput
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
-    */
+    /**
+     * @tc.name   TextInputPageJsunit_0400
+     * @tc.number TextInputPageJsunit_0400
+     * @tc.desc   test  TextInput
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TextInputPageJsunit_0400', Level.LEVEL1, async (done: Function) => {
       // Verify functions of TextInput component
       console.info('[TextInputPageJsunit_0400] START');
@@ -197,6 +197,7 @@ export default function TextInputPageJsunit() {
       await CommonFunc.sleep(500);
       await textComponent.inputText("hello")
       await CommonFunc.sleep(1000);
+      await driver.triggerKey(2047)
       let component = await driver.findComponent(BY.key('text'));
       let text = await component.getText();
       expect(text).assertEqual('hello');

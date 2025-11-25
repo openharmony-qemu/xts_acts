@@ -26,13 +26,13 @@ export default function TextStyleGraphicTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TextTextStyleGraphic001
-     * @tc.name       : testStyleGraphic_001
-     * @tc.desc       : testing text style
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStyleGraphic_001
+     * @tc.number SUB_ARKUI_CAPI_TextTextStyleGraphic001
+     * @tc.desc   testing text style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStyleGraphic_001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.textTextStyleGraphic001()).assertEqual(0)
@@ -40,13 +40,13 @@ export default function TextStyleGraphicTest() {
     })
     
     
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TextTextStyleGraphic002
-     * @tc.name       : testStyleGraphic_002
-     * @tc.desc       : testing text style
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStyleGraphic_002
+     * @tc.number SUB_ARKUI_CAPI_TextTextStyleGraphic002
+     * @tc.desc   testing text style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStyleGraphic_002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.textTextStyleGraphic002()).assertEqual(0)

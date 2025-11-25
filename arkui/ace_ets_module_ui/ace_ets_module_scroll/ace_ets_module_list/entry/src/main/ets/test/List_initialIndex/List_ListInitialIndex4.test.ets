@@ -61,12 +61,12 @@ export default function list_ListInitialIndex4Test() {
       console.info("List_ListInitialIndex4Test after each called");
     });
     /**
+     * @tc.name   testListInitialIndexToTwelveWithOneLane
      * @tc.number SUB_ACE_LIST_LISTINITIALINDEX_0400
-     * @tc.name testListInitialIndexToTwelveWithOneLane
-     * @tc.desc the InitialIndex of list set to 12
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   the InitialIndex of list set to 12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListInitialIndexToTwelveWithOneLane',  Level.LEVEL0, async (done: Function) => {
       console.info('[testListInitialIndexToTwelveWithOneLane] START');

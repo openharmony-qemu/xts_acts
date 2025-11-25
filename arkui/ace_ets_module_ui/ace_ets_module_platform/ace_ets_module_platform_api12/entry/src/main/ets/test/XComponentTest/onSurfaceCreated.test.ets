@@ -56,12 +56,12 @@ export default function onSurfaceCreatedJsunit() {
     });
 
     /**
+     * @tc.name   onSurfaceCreatedTest_0010
      * @tc.number onSurfaceCreatedTest_0010
-     * @tc.name onSurfaceCreatedTest_0010
-     * @tc.desc Xcomponent: get the api of onSurfaceCreated
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   Xcomponent: get the api of onSurfaceCreated
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('onSurfaceCreatedTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('onSurfaceCreatedTest_0010 START');
@@ -78,12 +78,12 @@ export default function onSurfaceCreatedJsunit() {
     });
 
     /**
+     * @tc.name   onSurfaceChangedTest_0020
      * @tc.number onSurfaceChangedTest_0020
-     * @tc.name onSurfaceChangedTest_0020
-     * @tc.desc Xcomponent: get the api of onSurfaceChanged
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   Xcomponent: get the api of onSurfaceChanged
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('onSurfaceChangedTest_0020', Level.LEVEL2, async (done: Function) => {
       console.info('onSurfaceChangedTest_0020 START');
@@ -103,12 +103,12 @@ export default function onSurfaceCreatedJsunit() {
     });
 
     /**
+     * @tc.name   onSurfaceDestroyedTest_0030
      * @tc.number onSurfaceDestroyedTest_0030
-     * @tc.name onSurfaceDestroyedTest_0030
-     * @tc.desc Xcomponent: get the api of onSurfaceDestroyed
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   Xcomponent: get the api of onSurfaceDestroyed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('onSurfaceDestroyedTest_0030', Level.LEVEL2, async (done: Function) => {
       console.info('onSurfaceDestroyedTest_0030 START');

@@ -47,9 +47,12 @@ export default function RelativeContainer_AnchorPoint_Id_Null() {
     });
 
     /**
+     * @tc.name   SUB_ACE_RelativeContainer_AnchorPoint_Id_Null_TEST_0100
      * @tc.number SUB_ACE_RelativeContainer_AnchorPoint_Id_Null_TEST_0100
-     * @tc.name testRelativeContainer
-     * @tc.desc Set the id of the child element to null
+     * @tc.desc   Set the id of the child element to null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_RelativeContainer_AnchorPoint_Id_Null_TEST_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_RelativeContainer_AnchorPoint_Id_Null_TEST_0100] START');

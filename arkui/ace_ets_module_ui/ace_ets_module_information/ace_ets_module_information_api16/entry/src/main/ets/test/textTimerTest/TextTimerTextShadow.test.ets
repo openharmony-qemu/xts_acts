@@ -40,14 +40,14 @@ export default function TextTimerTextShadowTest() {
       console.info('TextTimerTextShadowTest beforeEach end');
       done();
     });
-    /* *
-    * @tc.number: TextTimerTextShadowTest_001
-    * @tc.name  : TextTimerTextShadowTest_001
-    * @tc.desc  : To test the TextShadow { radius: 10, color: Color.Red, offsetX: 10, offsetY: 0 }
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   TextTimerTextShadowTest_001
+     * @tc.number TextTimerTextShadowTest_001
+     * @tc.desc   To test the TextShadow { radius: 10, color: Color.Red, offsetX: 10, offsetY: 0 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('TextTimerTextShadowTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('TextTimerTextShadowTest_001 START');
       await Utils.sleep(1000);
@@ -61,14 +61,14 @@ export default function TextTimerTextShadowTest() {
       console.info('[TextTimerTextShadowTest_001] END');
       done();
     });
-    /* *
-    * @tc.number: TextTimerTextShadowTest_002
-    * @tc.name  : TextTimerTextShadowTest_002
-    * @tc.desc  : To test the TextShadow { radius: -10, color: '#ff00ff00', offsetX: -10, offsetY: 0 }
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   TextTimerTextShadowTest_002
+     * @tc.number TextTimerTextShadowTest_002
+     * @tc.desc   To test the TextShadow { radius: -10, color: '#ff00ff00', offsetX: -10, offsetY: 0 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('TextTimerTextShadowTest_002', Level.LEVEL0, async (done: Function) => {
       console.info('TextTimerTextShadowTest_002 START');
       await Utils.sleep(1000);
@@ -82,14 +82,14 @@ export default function TextTimerTextShadowTest() {
       console.info('[TextTimerTextShadowTest_002] END');
       done();
     });
-    /* *
-    * @tc.number: TextTimerTextShadowTest_003
-    * @tc.name  : TextTimerTextShadowTest_003
-    * @tc.desc  : To test the TextShadow { radius: 50, color: $r('app.color.pink'), offsetX: 0, offsetY: 10 }
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   TextTimerTextShadowTest_003
+     * @tc.number TextTimerTextShadowTest_003
+     * @tc.desc   To test the TextShadow { radius: 50, color: $r('app.color.pink'), offsetX: 0, offsetY: 10 }
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('TextTimerTextShadowTest_003', Level.LEVEL0, async (done: Function) => {
       console.info('TextTimerTextShadowTest_003 START');
       await Utils.sleep(1000);

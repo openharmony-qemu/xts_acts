@@ -46,13 +46,13 @@ export default function SpanTextShadowTest() {
       console.info("SpanTextShadowTest after each called");
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-    * @tc.name         SpanTextShadowTest0001
-    * @tc.desc        test ShadowOptions {radius:1,type:ShadowType.COLOR,color:Color.Blue,offsetX:10,offsetY:10,fill:true}
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   SpanTextShadowTest0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   test ShadowOptions {radius:1,type:ShadowType.COLOR,color:Color.Blue,offsetX:10,offsetY:10,fill:true}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SpanTextShadowTest0001', Level.LEVEL1, async (done: Function) => {
       console.info('SpanTextShadowTest0001 START');
@@ -69,13 +69,13 @@ export default function SpanTextShadowTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-    * @tc.name         SpanTextShadowTest0002
-    * @tc.desc        test ShadowOptions {radius:-1,type:ShadowType.BLUR,color:Color.Green,offsetX:-10,offsetY:-10,fill:false}
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   SpanTextShadowTest0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   test ShadowOptions {radius:-1,type:ShadowType.BLUR,color:Color.Green,offsetX:-10,offsetY:-10,fill:false}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SpanTextShadowTest0002', Level.LEVEL1, async (done: Function) => {
       console.info('SpanTextShadowTest0002 START');
@@ -92,13 +92,13 @@ export default function SpanTextShadowTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-    * @tc.name         SpanTextShadowTest0003
-    * @tc.desc        test ShadowOptions []
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   SpanTextShadowTest0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   test ShadowOptions []
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SpanTextShadowTest0003', Level.LEVEL1, async (done: Function) => {
       console.info('SpanTextShadowTest0003 START');

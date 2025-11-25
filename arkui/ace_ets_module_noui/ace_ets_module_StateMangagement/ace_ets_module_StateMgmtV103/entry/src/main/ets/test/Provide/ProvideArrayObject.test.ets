@@ -54,14 +54,14 @@ export default function ProvideArrayObject() {
       }
       done();
     });
-    /* *
-    * @tc.number: ProvideArrayObject_0100
-    * @tc.name  : ProvideArrayObject_0100
-    * @tc.desc  : Test if the state decorator supports ProvideArrayObject types.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   ProvideArrayObject_0100
+     * @tc.number ProvideArrayObject_0100
+     * @tc.desc   Test if the state decorator supports ProvideArrayObject types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ProvideArrayObject_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ProvideArrayObject_0100 START');
       let driver: Driver = await Driver.create()
@@ -80,14 +80,14 @@ export default function ProvideArrayObject() {
       console.info('[ProvideArrayObject_0100] END');
       done();
     });
-    /* *
-    * @tc.number: ProvideArrayObject_0200
-    * @tc.name  : ProvideArrayObject_0200
-    * @tc.desc  : Test if the state decorator supports ProvideArrayObject types.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   ProvideArrayObject_0200
+     * @tc.number ProvideArrayObject_0200
+     * @tc.desc   Test if the state decorator supports ProvideArrayObject types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ProvideArrayObject_0200', Level.LEVEL0, async (done: Function) => {
       console.info('ProvideArrayObject_0200 START');
       let driver: Driver = await Driver.create()
@@ -106,14 +106,14 @@ export default function ProvideArrayObject() {
       console.info('[ProvideArrayObject_0200] END');
       done();
     });
-    /* *
-    * @tc.number: ProvideArrayObject_0300
-    * @tc.name  : ProvideArrayObject_0300
-    * @tc.desc  : Test if the state decorator supports ProvideArrayObject types.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   ProvideArrayObject_0300
+     * @tc.number ProvideArrayObject_0300
+     * @tc.desc   Test if the state decorator supports ProvideArrayObject types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ProvideArrayObject_0300', Level.LEVEL0, async (done: Function) => {
       console.info('ProvideArrayObject_0300 START');
       let driver: Driver = await Driver.create()
@@ -132,14 +132,14 @@ export default function ProvideArrayObject() {
       console.info('[ProvideArrayObject_0300] END');
       done();
     });
-    /* *
-    * @tc.number: ProvideArrayObject_0400
-    * @tc.name  : ProvideArrayObject_0400
-    * @tc.desc  : Test if the state decorator supports ProvideArrayObject types.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   ProvideArrayObject_0400
+     * @tc.number ProvideArrayObject_0400
+     * @tc.desc   Test if the state decorator supports ProvideArrayObject types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ProvideArrayObject_0400', Level.LEVEL0, async (done: Function) => {
       console.info('ProvideArrayObject_0400 START');
       let driver: Driver = await Driver.create()
@@ -158,14 +158,14 @@ export default function ProvideArrayObject() {
       console.info('[ProvideArrayObject_0400] END');
       done();
     });
-    /* *
-    * @tc.number: ProvideArrayObject_0500
-    * @tc.name  : ProvideArrayObject_0500
-    * @tc.desc  : Test if the state decorator supports ProvideArrayObject types.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   ProvideArrayObject_0500
+     * @tc.number ProvideArrayObject_0500
+     * @tc.desc   Test if the state decorator supports ProvideArrayObject types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ProvideArrayObject_0500', Level.LEVEL0, async (done: Function) => {
       console.info('ProvideArrayObject_0500 START');
       let driver: Driver = await Driver.create()

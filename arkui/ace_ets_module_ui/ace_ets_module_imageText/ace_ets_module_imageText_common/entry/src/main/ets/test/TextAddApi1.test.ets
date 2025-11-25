@@ -43,15 +43,15 @@ export default function TextAddApi1() {
       console.info("TextAddApi1 after each called");
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_TextAddApi1_001
-     * @tc.name       : TextAddApi1_001
-     * @tc.desc       : Text Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   TextAddApi1_001
+     * @tc.number TextAddApi1_001
+     * @tc.desc   TextAddApi1_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('TextAddApi1_001',  Level.LEVEL0, async (done: Function) => {
       console.info('[TextAddApi1_001] START');
 

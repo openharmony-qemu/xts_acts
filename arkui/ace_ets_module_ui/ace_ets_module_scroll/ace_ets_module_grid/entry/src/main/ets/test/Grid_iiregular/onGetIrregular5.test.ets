@@ -56,14 +56,14 @@ export default function onGetIrregular5Jsunit() {
       done();
     });
 
-    /* *
-    * @tc.number: onGetIrregular5Jsunit_0001
-    * @tc.name  : onGetIrregular5Jsunit_0001
-    * @tc.desc  : Set onGetIrregularSizeByIndex[-1,1], and the custom size of the obtained index settings is laid out according to the row and column layout
-    * @tc.level : Level 2
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   onGetIrregular5Jsunit_0001
+     * @tc.number onGetIrregular5Jsunit_0001
+     * @tc.desc   Set onGetIrregularSizeByIndex[-1,1], and the custom size of the obtained index settings is laid out according to the row and column layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('onGetIrregular5Jsunit_0001',  Level.LEVEL0, async (done: Function) => {
 
       console.info('[onGetIrregular5Jsunit_0000] START');

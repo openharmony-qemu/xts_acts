@@ -55,14 +55,14 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       console.info("priorityGesture after each called");
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_priorityGestureTest_0100
-    * @tc.name       : priorityGestureTest_0100
-    * @tc.desc       : test
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   priorityGestureTest_0100
+     * @tc.number SUB_ARKUI_priorityGestureTest_0100
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('priorityGestureTest_0100', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000)
       let rect = CommonFunc.getComponentRect('tapGesture')

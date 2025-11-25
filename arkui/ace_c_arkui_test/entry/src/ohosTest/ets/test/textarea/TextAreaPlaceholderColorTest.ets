@@ -26,39 +26,39 @@ export default function textAreaPlaceholderColorTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_PLACEHOLDERCOLOR_0100
-     * @tc.name: testTextAreaPlaceholderColor001
-     * @tc.desc: testing PlaceHolderColor for textArea with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaPlaceholderColor001
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_PLACEHOLDERCOLOR_0100
+     * @tc.desc   testing PlaceHolderColor for textArea with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaPlaceholderColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaPlaceholderColor001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_PLACEHOLDERCOLOR_0200
-     * @tc.name: testTextAreaPlaceholderColor002
-     * @tc.desc: testing PlaceHolderColor for textArea with black value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaPlaceholderColor002
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_PLACEHOLDERCOLOR_0200
+     * @tc.desc   testing PlaceHolderColor for textArea with black value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaPlaceholderColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaPlaceholderColor002()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_PLACEHOLDERCOLOR_0300
-     * @tc.name: testTextAreaPlaceholderColor003
-     * @tc.desc: testing PlaceHolderColor for textArea with white value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaPlaceholderColor003
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_PLACEHOLDERCOLOR_0300
+     * @tc.desc   testing PlaceHolderColor for textArea with white value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaPlaceholderColor003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaPlaceholderColor003()).assertEqual(0)

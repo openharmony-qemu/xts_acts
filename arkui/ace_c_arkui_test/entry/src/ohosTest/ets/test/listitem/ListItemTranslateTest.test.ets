@@ -26,78 +26,78 @@ export default function listItemTranslateTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_TRANSLATE_0100
-     * @tc.name       : testListItemTranslate001
-     * @tc.desc       : testing translate for listItem with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemTranslate001
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_TRANSLATE_0100
+     * @tc.desc   testing translate for listItem with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemTranslate001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemTranslate001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_TRANSLATE_0200
-     * @tc.name       : testListItemTranslate002
-     * @tc.desc       : testing translate for listItem with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemTranslate002
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_TRANSLATE_0200
+     * @tc.desc   testing translate for listItem with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemTranslate002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemTranslate002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_TRANSLATE_0300
-     * @tc.name       : testListItemTranslate003
-     * @tc.desc       : testing translate for listItem with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemTranslate003
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_TRANSLATE_0300
+     * @tc.desc   testing translate for listItem with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemTranslate003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemTranslate003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_TRANSLATE_0400
-     * @tc.name       : testListItemTranslate004
-     * @tc.desc       : testing translate for listItem with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemTranslate004
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_TRANSLATE_0400
+     * @tc.desc   testing translate for listItem with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemTranslate004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemTranslate004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_TRANSLATE_0500
-     * @tc.name       : testListItemTranslate005
-     * @tc.desc       : testing translate for listItem with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testListItemTranslate005
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_TRANSLATE_0500
+     * @tc.desc   testing translate for listItem with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemTranslate005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemTranslate005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_TRANSLATE_0600
-     * @tc.name       : testListItemTranslate006
-     * @tc.desc       : testing translate for listItem with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemTranslate006
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_TRANSLATE_0600
+     * @tc.desc   testing translate for listItem with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemTranslate006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemTranslate006()).assertEqual(0)

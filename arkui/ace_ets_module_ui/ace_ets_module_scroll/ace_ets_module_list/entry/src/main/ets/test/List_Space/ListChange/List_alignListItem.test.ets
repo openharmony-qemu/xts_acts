@@ -66,12 +66,12 @@ export default function List_alignListItem() {
     });
 
     /**
+     * @tc.name   testListAlignListItemStart
      * @tc.number SUB_ACE_LIST_ALIGNLISTITEM_TEST_0100
-     * @tc.name testListAlignListItemStart
-     * @tc.desc The List parent component binds the alignListItem property ListItemAlign.Start
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   The List parent component binds the alignListItem property ListItemAlign.Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListAlignListItemStart',  Level.LEVEL0, async (done: Function) => {
       console.info('testListAlignListItemStart START');
@@ -123,12 +123,12 @@ export default function List_alignListItem() {
     });
 
     /**
+     * @tc.name   testListAlignListItemCenter
      * @tc.number SUB_ACE_LIST_ALIGNLISTITEM_TEST_0200
-     * @tc.name testListAlignListItemCenter
-     * @tc.desc The List parent component binds the alignListItem property ListItemAlign.Center
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   The List parent component binds the alignListItem property ListItemAlign.Center
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListAlignListItemCenter',  Level.LEVEL0, async (done: Function) => {
       console.info('testListAlignListItemCenter START');
@@ -186,12 +186,12 @@ export default function List_alignListItem() {
       done();
     });
     /**
+     * @tc.name   testListAlignListItemEnd
      * @tc.number SUB_ACE_LIST_ALIGNLISTITEM_TEST_0300
-     * @tc.name testListAlignListItemEnd
-     * @tc.desc The List parent component binds the alignListItem property ListItemAlign.End
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   The List parent component binds the alignListItem property ListItemAlign.End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListAlignListItemEnd',  Level.LEVEL0, async (done: Function) => {
       console.info('testListAlignListItemEnd START');

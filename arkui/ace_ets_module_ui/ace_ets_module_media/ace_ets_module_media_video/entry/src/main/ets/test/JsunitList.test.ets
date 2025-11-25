@@ -47,7 +47,6 @@ export default function testsuite() {
 
   videoJsunit()
   videoJsunit2()
-  videoOnFullscreenChangeJsunit()
 
   VideoTest1();
   VideoReset1();
@@ -69,4 +68,5 @@ export default function testsuite() {
   VideoOnErrorTest()
   VideoContentTransitionEffectTest()
   VideoSupportMoreSpeedTest()
+  videoOnFullscreenChangeJsunit()
 }

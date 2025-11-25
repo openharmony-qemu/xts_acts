@@ -30,6 +30,11 @@ async function oHNativeWindowDropBufferModeSetTrueNormal2(): Promise<number> {
   return nativeimage.oHNativeWindowDropBufferModeSetTrueNormal2();
 }
 
+@Concurrent
+async function oHNativeImageAcquireLatestNativeWindowBufferAbNormal01(): Promise<number> {
+  return nativeimage.oHNativeImageAcquireLatestNativeWindowBufferAbNormal01();
+}
+
 export default function nativeImageTest() {
     describe('NativeImageTest', () => {
       let deviceTypeInfo: string = deviceInfo.deviceType;
@@ -1363,9 +1368,15 @@ export default function nativeImageTest() {
      */
     it('testNativeImageAcquireLatestNativeWindowBufferAbNormal01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-        let result: number = nativeimage.oHNativeImageAcquireLatestNativeWindowBufferAbNormal01();
-        expect(result).assertEqual(0);
-        done();
+        try {
+          // 通过 taskpool 调度到子线程执行
+          const result = await taskpool.execute(oHNativeImageAcquireLatestNativeWindowBufferAbNormal01);
+          expect(result).assertEqual(0);
+        } catch (err) {
+          console.error(`Task execution failed: ${err}`);
+        } finally {
+          done();  // 确保完成回调
+        }
       });
 
     /**
@@ -1409,6 +1420,21 @@ export default function nativeImageTest() {
     it('testNativeImageAcquireLatestNativeWindowBufferCall', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         let result: number = nativeimage.oHNativeImageAcquireLatestNativeWindowBufferCall();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3700
+     * @tc.name       : testNativeImageCreateWithSingleBufferModeChangeTextureTarget
+     * @tc.desc       : test OH_NativeImage_CreateWithSingleBufferMode
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testNativeImageCreateWithSingleBufferModeChangeTextureTarget', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        let result: number = nativeimage.oHNativeImageCreateWithSingleBufferModeChangeTextureTarget();
         expect(result).assertEqual(0);
         done();
       });

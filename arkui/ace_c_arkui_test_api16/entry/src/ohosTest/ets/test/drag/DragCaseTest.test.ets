@@ -53,13 +53,13 @@ export default function DragTest(){
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_DRAG_CASE_001
-     * @tc.name       : dragCaseTest001
-     * @tc.desc       : testing List lanes
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   dragCaseTest001
+     * @tc.number SUB_ARKUI_DRAG_CASE_001
+     * @tc.desc   testing List lanes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragCaseTest001', Level.LEVEL1, async (done: Function) => {
         let PAGE_TAG = 'DragCaseTest1'
@@ -71,13 +71,13 @@ export default function DragTest(){
         done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_DRAG_CASE_002
-     * @tc.name       : dragCaseTest002
-     * @tc.desc       : testing List contentStartOffset And contentAndOffset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   dragCaseTest002
+     * @tc.number SUB_ARKUI_DRAG_CASE_002
+     * @tc.desc   testing List contentStartOffset And contentAndOffset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragCaseTest002', Level.LEVEL1, async (done: Function) => {
         let PAGE_TAG = 'DragCaseTest2'
@@ -89,13 +89,13 @@ export default function DragTest(){
         done()
     })
 
-        /*
-     * @tc.number     : SUB_ARKUI_DRAG_CASE_003
-     * @tc.name       : dragCaseTest003
-     * @tc.desc       : testing List maintainVisibleContentPosition
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   dragCaseTest003
+     * @tc.number SUB_ARKUI_DRAG_CASE_003
+     * @tc.desc   testing List maintainVisibleContentPosition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('dragCaseTest003', Level.LEVEL1, async (done: Function) => {
         let PAGE_TAG = 'DragCaseTest3'

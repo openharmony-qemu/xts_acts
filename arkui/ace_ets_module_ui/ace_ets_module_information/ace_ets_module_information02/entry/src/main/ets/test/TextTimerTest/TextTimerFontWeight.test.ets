@@ -42,13 +42,13 @@ export default function TextTimerFontWeightTest() {
     });
 
     /**
-    * @tc.number: TextTimerFontWeightTest_001
-    * @tc.name  : TextTimerFontWeightTest_001
-    * @tc.desc  : To test the fontWeight： $r('app.string.lighter')
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   TextTimerFontWeightTest_001
+     * @tc.number TextTimerFontWeightTest_001
+     * @tc.desc   To test the fontWeight： $r('app.string.lighter')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TextTimerFontWeightTest_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('TextTimerFontWeightTest_001 START');
       await Utils.sleep(1000);
@@ -62,13 +62,13 @@ export default function TextTimerFontWeightTest() {
     });
    
     /**
-    * @tc.number: TextTimerFontWeightTest_002
-    * @tc.name  : TextTimerFontWeightTest_002
-    * @tc.desc  : To test the fontWeight： undefined
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   TextTimerFontWeightTest_002
+     * @tc.number TextTimerFontWeightTest_002
+     * @tc.desc   To test the fontWeight： undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TextTimerFontWeightTest_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('TextTimerFontWeightTest_002 START');
       await Utils.sleep(1000);
@@ -86,13 +86,13 @@ export default function TextTimerFontWeightTest() {
 
     
     /**
-    * @tc.number: TextTimerFontWeightTest_003
-    * @tc.name  : TextTimerFontWeightTest_003
-    * @tc.desc  : To test the fontWeight： null
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   TextTimerFontWeightTest_003
+     * @tc.number TextTimerFontWeightTest_003
+     * @tc.desc   To test the fontWeight： null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TextTimerFontWeightTest_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('TextTimerFontWeightTest_003 START');
       await Utils.sleep(1000);
@@ -110,13 +110,13 @@ export default function TextTimerFontWeightTest() {
 
     
     /**
-    * @tc.number: TextTimerFontWeightTest_004
-    * @tc.name  : TextTimerFontWeightTest_004
-    * @tc.desc  : To test the fontWeight： FontWeight.Lighter
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   TextTimerFontWeightTest_004
+     * @tc.number TextTimerFontWeightTest_004
+     * @tc.desc   To test the fontWeight： FontWeight.Lighter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TextTimerFontWeightTest_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('TextTimerFontWeightTest_004 START');
       await Utils.sleep(1000);

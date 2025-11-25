@@ -43,13 +43,6 @@ interface ResourceConfig {
 struct injectOfflineResourcesTest {
   controller: web_webview.WebviewController = new web_webview.WebviewController(undefined);
   @State str: string = ''
-  @State font: string = 'serif'
-  @State det: int = 13
-  @State isTextAutosizing: boolean = false;
-  @State defaultFixedFontSize: int = 72
-  @State setDownloadDelegateKey: boolean = false;
-  @State onRequestSelectedCalled: boolean = false
-
   resourceConfigs: ResourceConfig[] = [
     {
       localPath: 'icon.png',
@@ -102,7 +95,8 @@ struct injectOfflineResourcesTest {
       if (context) {
         return context.resourceManager.getRawFileContentSync(url);
       }
-    } catch (err: BusinessError) {
+    } catch (err) {
+      err = err as BusinessError;
       return new Uint8Array(0);
     }
     return new Uint8Array(0);
@@ -126,26 +120,20 @@ struct injectOfflineResourcesTest {
   }
 
   aboutToAppear() {
-    console.info('Entry aboutToAppear');
     let valueChangeEvent: emitter.InnerEvent = {
       eventId: 10,
       priority: emitter.EventPriority.LOW
     }
     emitter.on(valueChangeEvent, this.valueChangeCallBack)
-    console.info('Finish aboutToAppear' + this.valueChangeCallBack);
   }
 
   private valueChangeCallBack: Callback<emitter.EventData> = (eventData: emitter.EventData): void => {
-    console.info('web page valueChangeCallBack');
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       const data = eventData.data as Record<string, RecordData>;
-      if (data && data['ACTION'] != null) {
-        console.info('Received ACTION vaclue: ' + data['ACTION']);
+      if (data != null && data['ACTION'] != null) {
         let strValue: string = String(data['ACTION']);
-        console.info('strValue has been updated to: ' + strValue);
         this.str = strValue;
-        console.info('this.str has been updated to: ' + this.str);
       }
     }
   }
@@ -164,7 +152,8 @@ struct injectOfflineResourcesTest {
                 setTimeout(() => {
                   Utils.emitEvent(true, 20001)
                 }, 2000)
-              } catch (err: BusinessError) {
+              } catch (err) {
+                err = err as BusinessError;
                 console.error(msg + ' error: ' + err.code + ' message ' + err.message);
                 Utils.emitEvent(err.code, 20001)
               }
@@ -174,7 +163,8 @@ struct injectOfflineResourcesTest {
               let msg = 'testInjectOfflineResources002'
               try {
                 this.controller.injectOfflineResources([] as web_webview.OfflineResourceMap[]);
-              } catch (err: BusinessError) {
+              } catch (err) {
+                err = err as BusinessError;
                 console.error(msg + ' error: ' + err.code + ' message ' + err.message);
                 Utils.emitEvent(err.code, 20002)
               }
@@ -197,29 +187,6 @@ struct injectOfflineResourcesTest {
       }
 
       Web({ src: 'resource://rawfile/index.html', controller: this.controller })
-	  .onRequestSelected(() => {
-        this.onRequestSelectedCalled = true
-        console.log('onRequestSelected==> ' + this.onRequestSelectedCalled)
-       })
-	  .webStandardFont(this.font)
-	  .defaultFixedFontSize(this.det)
-	  .optimizeParserBudget(true)
-	  .enableWebAVSession(true)
-	  .textAutosizing(this.isTextAutosizing)
-	  .onFullScreenExit(() => {
-        console.log('onFullScreenExit...')
-      })
-	  .onControllerAttached(()=>{
-      console.log('onControllerAttached webId:' + this.controller.getWebId());
-      })
-	  .defaultTextEncodingFormat('UTF-8')
-	  .enableNativeMediaPlayer({ enable: true, shouldOverlay: false })
-	  .defaultFixedFontSize(this.defaultFixedFontSize)
-	  .onContextMenuHide(() => {
-      if (this.setDownloadDelegateKey) {
-           console.log('onContextMenuHide success' + this.setDownloadDelegateKey);
-        }
-      })
     }
   }
 }

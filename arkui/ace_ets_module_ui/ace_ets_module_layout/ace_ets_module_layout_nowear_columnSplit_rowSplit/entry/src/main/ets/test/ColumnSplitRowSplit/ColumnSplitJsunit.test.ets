@@ -56,12 +56,12 @@ export default function columnSplitJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testColumnSplit010
-     * @tc.name: testColumnSplit010
-     * @tc.desc: ColumnSplitRowSplitAPI 
-     * @tc.level: Level 0
-     * @tc.type : ColumnSplitRowSplit
-     * @tc.size : ColumnSplitRowSplitTest
+     * @tc.name   testColumnSplit010
+     * @tc.number SUB_ARKUI_API_testColumnSplit010
+     * @tc.desc   ColumnSplitRowSplitAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnSplit010',  Level.LEVEL0, async (done: Function) => {
       console.info('new columnSplit0 START');
@@ -77,12 +77,12 @@ export default function columnSplitJsunit() {
     })
 
     /**
-     * @tc.number: SUB_ARKUI_API_testColumnSplit020
-     * @tc.name: testColumnSplit020
-     * @tc.desc: ColumnSplitRowSplitAPI 
-     * @tc.level: Level 0
-     * @tc.type : ColumnSplitRowSplit
-     * @tc.size : ColumnSplitRowSplitTest
+     * @tc.name   testColumnSplit020
+     * @tc.number SUB_ARKUI_API_testColumnSplit020
+     * @tc.desc   ColumnSplitRowSplitAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnSplit020',  Level.LEVEL0, async (done: Function) => {
       console.info('new columnSplit1 START');

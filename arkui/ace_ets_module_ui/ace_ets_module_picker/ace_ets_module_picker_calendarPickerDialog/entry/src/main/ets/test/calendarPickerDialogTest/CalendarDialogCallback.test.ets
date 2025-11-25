@@ -43,13 +43,13 @@ export default function CalendarDialogCallback() {
       done()
     });
 
-    /*
-     * @tc.number    : SUB_ACE_ARKUI_CALENDAR_PICKER_DIALOG_CALLBACK_0100
-     * @tc.name      : test calendarPicker dialog callback function
-     * @tc.desc      : onWillAppear,onDidAppear,onWillDisappear,onDidDisappear
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : level 0
+    /**
+     * @tc.name   CalendarPickerDialogCallback_0100
+     * @tc.number SUB_ACE_ARKUI_CALENDAR_PICKER_DIALOG_CALLBACK_0100
+     * @tc.desc   onWillAppear,onDidAppear,onWillDisappear,onDidDisappear
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CalendarPickerDialogCallback_0100', Level.LEVEL0, async (done: Function) => {
       let driver1 = Driver.create();

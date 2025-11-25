@@ -53,12 +53,12 @@ export default function BounceSymbolEffect_APITest() {
       done();
     });
     /**
+     * @tc.name   BounceSymbolEffect_APITest_0100
      * @tc.number BounceSymbolEffect
-     * @tc.name BounceSymbolEffect_APITest_0100
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('BounceSymbolEffect_APITest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('BounceSymbolEffect_APITest_0100 START');

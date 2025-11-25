@@ -47,14 +47,14 @@ export default function search_gesture() {
       done();
     });
 
-   /* *
-      * @tc.number: SUB_ACE_UI_SEARCH_GESTURE_0100
-      * @tc.name  : search_gesture_001
-      * @tc.desc  : click caret, check caret to singleHandle and the text selection menu appears
-      * @tc.level : Level 0
-      * @tc.type : Function
-      * @tc.size : MediumTest
-      */
+    /**
+     * @tc.name   search_gesture_001
+     * @tc.number SUB_ACE_UI_SEARCH_GESTURE_0100
+     * @tc.desc   click caret, check caret to singleHandle and the text selection menu appears
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('search_gesture_001', Level.LEVEL0, async (done: Function) => {
 
       console.info('[search_gesture_001] START');
@@ -101,14 +101,14 @@ export default function search_gesture() {
       done();
     });
 
-/* *
-   * @tc.number: SUB_ACE_UI_SEARCH_GESTURE_0200
-   * @tc.name  : search_gesture_002
-   * @tc.desc  : longClick and check selection state
-   * @tc.level : Level 0
-   * @tc.type : Function
-   * @tc.size : MediumTest
-   */
+    /**
+     * @tc.name   SUB_ACE_UI_SEARCH_GESTURE_0200
+     * @tc.number SUB_ACE_UI_SEARCH_GESTURE_0200
+     * @tc.desc   longClick and check selection state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_ACE_UI_SEARCH_GESTURE_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('[search_gesture_002] START');
@@ -173,14 +173,14 @@ export default function search_gesture() {
       done();
     });
 
-    /* *
-       * @tc.number: SUB_ACE_UI_SEARCH_GESTURE_0300
-       * @tc.name  : search_gesture_003
-       * @tc.desc  : input long text and press enter,check focus state
-       * @tc.level : Level 2
-       * @tc.type : Function
-       * @tc.size : MediumTest
-       */
+    /**
+     * @tc.name   SUB_ACE_UI_SEARCH_GESTURE_0300
+     * @tc.number SUB_ACE_UI_SEARCH_GESTURE_0300
+     * @tc.desc   input long text and press enter,check focus state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_ACE_UI_SEARCH_GESTURE_0300', Level.LEVEL2, async (done: Function) => {
 
       console.info('[search_gesture_003] START');
@@ -205,14 +205,14 @@ export default function search_gesture() {
       done();
     });
 
-/* *
-   * @tc.number: SUB_ACE_UI_SEARCH_GESTURE_0400
-   * @tc.name  : search_gesture_004
-   * @tc.desc  : move mouse and check mouse form
-   * @tc.level : Level 2
-   * @tc.type : Function
-   * @tc.size : MediumTest
-   */
+    /**
+     * @tc.name   SUB_ACE_UI_SEARCH_GESTURE_0400
+     * @tc.number SUB_ACE_UI_SEARCH_GESTURE_0400
+     * @tc.desc   move mouse and check mouse form
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_ACE_UI_SEARCH_GESTURE_0400', Level.LEVEL2, async (done: Function) => {
 
       console.info('[search_gesture_004] START');
@@ -241,14 +241,14 @@ export default function search_gesture() {
       done();
     });
 
- /* *
-    * @tc.number: SUB_ACE_UI_SEARCH_GESTURE_0500
-    * @tc.name  : search_gesture_005
-    * @tc.desc  : click different position and check caret
-    * @tc.level : Level 2
-    * @tc.type : Function
-    * @tc.size : MediumTest
-    */
+    /**
+     * @tc.name   SUB_ACE_UI_SEARCH_GESTURE_0500
+     * @tc.number SUB_ACE_UI_SEARCH_GESTURE_0500
+     * @tc.desc   click different position and check caret
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_ACE_UI_SEARCH_GESTURE_0500', Level.LEVEL2, async (done: Function) => {
 
       console.info('[search_gesture_005] START');

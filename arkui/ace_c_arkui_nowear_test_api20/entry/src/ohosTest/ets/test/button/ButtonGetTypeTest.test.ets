@@ -27,14 +27,14 @@ export default function buttonGetTypeTest() {
       await Utils.pushPage(`button/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_BUTTON_GetType_0100
-    * @tc.name       : ButtonGetTypeTest001
-    * @tc.desc       : test OH_ArkUI_UIInputEvent_GetType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   ButtonGetTypeTest001
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_GetType_0100
+     * @tc.desc   test OH_ArkUI_UIInputEvent_GetType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ButtonGetTypeTest001', Level.LEVEL0, async (done: Function) => {
       let driver = await Driver.create()
       await driver.triggerKey(2049)

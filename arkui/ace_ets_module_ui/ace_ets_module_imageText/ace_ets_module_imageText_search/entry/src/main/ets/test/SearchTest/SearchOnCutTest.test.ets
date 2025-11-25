@@ -44,13 +44,13 @@ export default function SearchOnCutTest() {
       console.info("SearchOnCutTest after each called");
     });
 
-    /*
-     * @tc.number       testsearchOnCut0001
-     * @tc.name         testsearchOnCut0001
-     * @tc.desc         acesearchOnCutEtsTest0001
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testsearchOnCut0001
+     * @tc.number testsearchOnCut0001
+     * @tc.desc   acesearchOnCutEtsTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testsearchOnCut0001',  Level.LEVEL0, async () => {
       console.info('searchOnCut testsearchOnCut0001 START');
@@ -64,13 +64,13 @@ export default function SearchOnCutTest() {
 
     });
 
-    /*
-     * @tc.number       testsearchOnCut0002
-     * @tc.name         testsearchOnCut0002
-     * @tc.desc         acesearchOnCutEtsTest0002
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testsearchOnCut0002
+     * @tc.number testsearchOnCut0002
+     * @tc.desc   acesearchOnCutEtsTest0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testsearchOnCut0002',  Level.LEVEL0, async () => {
       console.info('searchOnCut testsearchOnCut0002 START');
@@ -84,13 +84,13 @@ export default function SearchOnCutTest() {
 
     });
 
-    /*
-     * @tc.number       testsearchOnCut0003
-     * @tc.name         testsearchOnCut0003
-     * @tc.desc         acesearchOnCutEtsTest0003
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testsearchOnCut0003
+     * @tc.number testsearchOnCut0003
+     * @tc.desc   acesearchOnCutEtsTest0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testsearchOnCut0003',  Level.LEVEL0, async () => {
       console.info('searchOnCut testsearchOnCut0003 START');
@@ -104,13 +104,13 @@ export default function SearchOnCutTest() {
 
     });
 
-    /*
-     * @tc.number       testsearchOnCut0004
-     * @tc.name         testsearchOnCut0004
-     * @tc.desc         acesearchOnCutEtsTest0004
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testsearchOnCut0004
+     * @tc.number testsearchOnCut0004
+     * @tc.desc   acesearchOnCutEtsTest0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testsearchOnCut0004',  Level.LEVEL0, async () => {
       console.info('searchOnCut testsearchOnCut0004 START');
@@ -124,13 +124,13 @@ export default function SearchOnCutTest() {
 
     });
 
-    /*
-     * @tc.number       testsearchOnCut0005
-     * @tc.name         testsearchOnCut0005
-     * @tc.desc         acesearchOnCutEtsTest0005
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testsearchOnCut0005
+     * @tc.number testsearchOnCut0005
+     * @tc.desc   acesearchOnCutEtsTest0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testsearchOnCut0005',  Level.LEVEL0, async () => {
       console.info('searchOnCut testsearchOnCut0005 START');
@@ -144,13 +144,13 @@ export default function SearchOnCutTest() {
 
     });
 
-    /*
-     * @tc.number       testsearchOnCut0006
-     * @tc.name         testsearchOnCut0006
-     * @tc.desc         acesearchOnCutEtsTest0006
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testsearchOnCut0006
+     * @tc.number testsearchOnCut0006
+     * @tc.desc   acesearchOnCutEtsTest0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testsearchOnCut0006',  Level.LEVEL0, async () => {
       console.info('searchOnCut testsearchOnCut0006 START');
@@ -164,13 +164,13 @@ export default function SearchOnCutTest() {
 
     });
 
-    /*
-     * @tc.number       testsearchOnCut0007
-     * @tc.name         testsearchOnCut0007
-     * @tc.desc         acesearchOnCutEtsTest0007
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testsearchOnCut0007
+     * @tc.number testsearchOnCut0007
+     * @tc.desc   acesearchOnCutEtsTest0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testsearchOnCut0007',  Level.LEVEL0, async () => {
       console.info('searchOnCut testsearchOnCut0007 START');
@@ -184,13 +184,13 @@ export default function SearchOnCutTest() {
 
     });
 
-    /*
-     * @tc.number       testsearchOnCut0009
-     * @tc.name         testsearchOnCut0009
-     * @tc.desc         acesearchOnCutEtsTest0009
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testsearchOnCut0009
+     * @tc.number testsearchOnCut0009
+     * @tc.desc   acesearchOnCutEtsTest0009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testsearchOnCut0009',  Level.LEVEL0, async () => {
       console.info('searchOnCut testsearchOnCut009 START');
@@ -204,13 +204,13 @@ export default function SearchOnCutTest() {
 
     });
 
-    /*
-     * @tc.number       testsearchOnCut0010
-     * @tc.name         testsearchOnCut0010
-     * @tc.desc         acesearchOnCutEtsTest0010
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testsearchOnCut0010
+     * @tc.number testsearchOnCut0010
+     * @tc.desc   acesearchOnCutEtsTest0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testsearchOnCut0010',  Level.LEVEL0, async () => {
       console.info('searchOnCut testsearchOnCut0010 START');

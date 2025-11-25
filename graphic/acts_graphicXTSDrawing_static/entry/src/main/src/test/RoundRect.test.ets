@@ -16,7 +16,7 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestType, Size, Level } from "../../../hypium/index";
 import drawing from '@ohos.graphics.drawing';
 import { BusinessError } from '@ohos.base';
-import { getEnumCount, getRandomNumber } from './Util.test';
+import { getRandomNumber } from './Util.test';
 
 export default function roundRectTest() {
   describe('DrawingTsRoundRectTest', () => {
@@ -156,5 +156,413 @@ export default function roundRectTest() {
         }
       }
     });
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_STATIC_0200
+     * @tc.name      : testRoundRectSetAndGetCornerNormalStatic
+     * @tc.desc      : Test for testRoundRectSetAndGetCornerNormalStatic.
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testRoundRectSetAndGetCornerNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const msg = 'testRoundRectSetAndGetCornerNormalStatic';
+      const roundRect_ = new drawing.RoundRect({
+        left: 0,
+        top: 0,
+        right: 0,
+        bottom: 0
+      }, 0, 0);
+
+      try {
+        roundRect_.setCorner(drawing.CornerPos.BOTTOM_RIGHT_POS, 150, 150);
+        let point1 = roundRect_.getCorner(drawing.CornerPos.BOTTOM_LEFT_POS);
+        if (point1) {
+          expect(point1.x == 0 && point1.y == 0).assertTrue();
+          console.info(msg + ' setAndGetCorner succeeded, point1：' + JSON.stringify(point1));
+        }
+        let point2 = roundRect_.getCorner(drawing.CornerPos.BOTTOM_RIGHT_POS);
+        if (point2) {
+          expect(point2.x == 150 && point2.y == 150).assertTrue();
+          console.info(msg + ' setAndGetCorner succeeded，point2：' + JSON.stringify(point2));
+        }
+        let point3 = roundRect_.getCorner(drawing.CornerPos.TOP_LEFT_POS);
+        if (point3) {
+          expect(point3.x == 0 && point3.y == 0).assertTrue();
+          console.info(msg + ' setAndGetCorner succeeded，point33：' + JSON.stringify(point3));
+        }
+        let point4 = roundRect_.getCorner(drawing.CornerPos.TOP_RIGHT_POS);
+        if (point4) {
+          expect(point4.x == 0 && point4.y == 0).assertTrue();
+          console.info(msg + ' setAndGetCorner succeeded，point4：' + JSON.stringify(point4));
+        }
+        console.info(msg + ' setAndGetCorner succeeded');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` setAndGetCorner errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+
+      try {
+        roundRect_.setCorner(drawing.CornerPos.BOTTOM_RIGHT_POS, 100.1, 100.1);
+        let point1 = roundRect_.getCorner(drawing.CornerPos.BOTTOM_LEFT_POS);
+        if (point1) {
+          expect(point1.x == 0 && point1.y == 0).assertTrue();
+          console.info(msg + ' setAndGetCorner succeeded, point1：' + JSON.stringify(point1));
+        }
+        let point2 = roundRect_.getCorner(drawing.CornerPos.BOTTOM_RIGHT_POS);
+        if (point2) {
+          expect(Math.floor(point2.x) == 100 && Math.floor(point2.y) == 100).assertTrue();
+          console.info(msg + ' setAndGetCorner succeeded，point2：' + JSON.stringify(point2));
+        }
+        let point3 = roundRect_.getCorner(drawing.CornerPos.TOP_LEFT_POS);
+        if (point3) {
+          expect(point3.x == 0 && point3.y == 0).assertTrue();
+          console.info(msg + ' setAndGetCorner succeeded，point33：' + JSON.stringify(point3));
+        }
+        let point4 = roundRect_.getCorner(drawing.CornerPos.TOP_RIGHT_POS);
+        if (point4) {
+          expect(point4.x == 0 && point4.y == 0).assertTrue();
+          console.info(msg + ' setAndGetCorner succeeded，point4：' + JSON.stringify(point4));
+        }
+        console.info(msg + ' setAndGetCorner succeeded');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` setAndGetCorner errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+
+      try {
+        roundRect_.setCorner(drawing.CornerPos.BOTTOM_RIGHT_POS, 0, 100.1);
+        let point1 = roundRect_.getCorner(drawing.CornerPos.BOTTOM_LEFT_POS);
+        if (point1) {
+          expect(point1.x == 0 && point1.y == 0).assertTrue();
+          console.info(msg + ' setAndGetCorner succeeded, point1：' + JSON.stringify(point1));
+        }
+        let point2 = roundRect_.getCorner(drawing.CornerPos.BOTTOM_RIGHT_POS);
+        if (point2) {
+          expect(point2.x == 0 && Math.floor(point2.y) == 100).assertTrue();
+          console.info(msg + ' setAndGetCorner succeeded，point2：' + JSON.stringify(point2));
+        }
+        let point3 = roundRect_.getCorner(drawing.CornerPos.TOP_LEFT_POS);
+        if (point3) {
+          expect(point3.x == 0 && point3.y == 0).assertTrue();
+          console.info(msg + ' setAndGetCorner succeeded，point33：' + JSON.stringify(point3));
+        }
+        let point4 = roundRect_.getCorner(drawing.CornerPos.TOP_RIGHT_POS);
+        if (point4) {
+          expect(point4.x == 0 && point4.y == 0).assertTrue();
+          console.info(msg + ' setAndGetCorner succeeded，point4：' + JSON.stringify(point4));
+        }
+        console.info(msg + ' setAndGetCorner succeeded');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` setAndGetCorner errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+
+      try {
+        roundRect_.setCorner(drawing.CornerPos.BOTTOM_RIGHT_POS, 100, 0);
+        let point1 = roundRect_.getCorner(drawing.CornerPos.BOTTOM_LEFT_POS);
+        if (point1) {
+          expect(point1.x == 0 && point1.y == 0).assertTrue();
+          console.info(msg + ' setAndGetCorner succeeded, point1：' + JSON.stringify(point1));
+        }
+        let point2 = roundRect_.getCorner(drawing.CornerPos.BOTTOM_RIGHT_POS);
+        if (point2) {
+          expect(point2.x == 100 && point2.y == 0).assertTrue();
+          console.info(msg + ' setAndGetCorner succeeded，point2：' + JSON.stringify(point2));
+        }
+        let point3 = roundRect_.getCorner(drawing.CornerPos.TOP_LEFT_POS);
+        if (point3) {
+          expect(point3.x == 0 && point3.y == 0).assertTrue();
+          console.info(msg + ' setAndGetCorner succeeded，point33：' + JSON.stringify(point3));
+        }
+        let point4 = roundRect_.getCorner(drawing.CornerPos.TOP_RIGHT_POS);
+        if (point4) {
+          expect(point4.x == 0 && point4.y == 0).assertTrue();
+          console.info(msg + ' setAndGetCorner succeeded，point4：' + JSON.stringify(point4));
+        }
+        console.info(msg + ' setAndGetCorner succeeded');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` setAndGetCorner errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+
+      try {
+        roundRect_.setCorner(drawing.CornerPos.BOTTOM_RIGHT_POS, -1, 100.1);
+        let point1 = roundRect_.getCorner(drawing.CornerPos.BOTTOM_LEFT_POS);
+        if (point1) {
+          expect(point1.x == 0 && point1.y == 0).assertTrue();
+          console.info(msg + ' setAndGetCorner succeeded, point1：' + JSON.stringify(point1));
+        }
+        let point2 = roundRect_.getCorner(drawing.CornerPos.BOTTOM_RIGHT_POS);
+        if (point2) {
+          expect(point2.x == -1 && Math.floor(point2.y) == 100).assertTrue();
+          console.info(msg + ' setAndGetCorner succeeded，point2：' + JSON.stringify(point2));
+        }
+        let point3 = roundRect_.getCorner(drawing.CornerPos.TOP_LEFT_POS);
+        if (point3) {
+          expect(point3.x == 0 && point3.y == 0).assertTrue();
+          console.info(msg + ' setAndGetCorner succeeded，point33：' + JSON.stringify(point3));
+        }
+        let point4 = roundRect_.getCorner(drawing.CornerPos.TOP_RIGHT_POS);
+        if (point4) {
+          expect(point4.x == 0 && point4.y == 0).assertTrue();
+          console.info(msg + ' setAndGetCorner succeeded，point4：' + JSON.stringify(point4));
+        }
+        console.info(msg + ' setAndGetCorner succeeded');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` setAndGetCorner errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+
+      try {
+        roundRect_.setCorner(drawing.CornerPos.BOTTOM_RIGHT_POS, 100, -1);
+        let point1 = roundRect_.getCorner(drawing.CornerPos.BOTTOM_LEFT_POS);
+        if (point1) {
+          expect(point1.x == 0 && point1.y == 0).assertTrue();
+          console.info(msg + ' setAndGetCorner succeeded, point1：' + JSON.stringify(point1));
+        }
+        let point2 = roundRect_.getCorner(drawing.CornerPos.BOTTOM_RIGHT_POS);
+        if (point2) {
+          expect(point2.x == 100 && Math.floor(point2.y) == -1).assertTrue();
+          console.info(msg + ' setAndGetCorner succeeded，point2：' + JSON.stringify(point2));
+        }
+        let point3 = roundRect_.getCorner(drawing.CornerPos.TOP_LEFT_POS);
+        if (point3) {
+          expect(point3.x == 0 && point3.y == 0).assertTrue();
+          console.info(msg + ' setAndGetCorner succeeded，point33：' + JSON.stringify(point3));
+        }
+        let point4 = roundRect_.getCorner(drawing.CornerPos.TOP_RIGHT_POS);
+        if (point4) {
+          expect(point4.x == 0 && point4.y == 0).assertTrue();
+          console.info(msg + ' setAndGetCorner succeeded，point4：' + JSON.stringify(point4));
+          console.info(msg + ' setAndGetCorner succeeded');
+        }
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` setAndGetCorner errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_STATIC_0203
+     * @tc.name      : testRoundRectSetAndGetCornerMultipleCallsStatic
+     * @tc.desc      : Test for testRoundRectSetAndGetCornerMultipleCallsStatic.
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('testRoundRectSetAndGetCornerMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      const msg = 'testRoundRectSetAndGetCornerMultipleCallsStatic';
+      const roundRect_ = new drawing.RoundRect({
+        left: 0,
+        top: 0,
+        right: 0,
+        bottom: 0
+      }, 0, 0);
+      let itemList: drawing.CornerPos[] = [
+        drawing.CornerPos.TOP_LEFT_POS,
+        drawing.CornerPos.TOP_RIGHT_POS,
+        drawing.CornerPos.BOTTOM_RIGHT_POS,
+        drawing.CornerPos.BOTTOM_LEFT_POS
+      ];
+      for (let i = 0; i < 20; i++) {
+        const randomEnum = Math.floor(4 * Math.random()).toInt();
+        try {
+          roundRect_.setCorner(itemList[randomEnum], getRandomNumber(0, 500), getRandomNumber(0, 500));
+          roundRect_.getCorner(itemList[randomEnum]);
+          console.info(msg + ' setAndGetCorner succeeded');
+        } catch (e) {
+          e = e as BusinessError;
+          console.info(msg + ` setAndGetCorner errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+          expect().assertFail();
+        }
+      }
+
+      for (let i = 0; i < 20; i++) {
+        const randomEnum = Math.floor(4 * Math.random()).toInt();
+        try {
+          roundRect_.setCorner(itemList[randomEnum], getRandomNumber(0, 500), getRandomNumber(0, 500));
+          console.info(msg + ' setCorner succeeded');
+        } catch (e) {
+          e = e as BusinessError;
+          console.info(msg + ` setCorner errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+          expect().assertFail();
+        }
+      }
+
+      for (let i = 0; i < 20; i++) {
+        const randomEnum = Math.floor(4 * Math.random()).toInt();
+        try {
+          roundRect_.getCorner(itemList[randomEnum]);
+          console.info(msg + ' getCorner succeeded');
+        } catch (e) {
+          e = e as BusinessError;
+          console.info(msg + ` getCorner errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+          expect().assertFail();
+        }
+      }
+    });
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_STATIC_0300
+     * @tc.name      : testRoundRectOffsetNormalStatic
+     * @tc.desc      : Test for testRoundRectOffsetNormalStatic.
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testRoundRectOffsetNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const msg = 'testRoundRectOffsetNormalStatic';
+      const roundRect_ = new drawing.RoundRect({
+        left: 0,
+        top: 0,
+        right: 0,
+        bottom: 0
+      }, 0, 0);
+
+      try {
+        roundRect_.offset(100, 100);
+        console.info(msg + ' offset succeeded');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` offset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+
+      try {
+        roundRect_.offset(100.1, 100.1);
+        console.info(msg + ' offset succeeded');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` offset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+
+      try {
+        roundRect_.offset(-100, 100);
+        console.info(msg + ' offset succeeded');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` offset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+
+      try {
+        roundRect_.offset(100.1, -100.1);
+        console.info(msg + ' offset succeeded');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` offset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_STATIC_0303
+     * @tc.name      : testRoundRectOffsetMultipleCallsStatic
+     * @tc.desc      : Test for testRoundRectOffsetMultipleCallsStatic.
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('testRoundRectOffsetMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      const msg = 'testRoundRectOffsetMultipleCallsStatic';
+      const roundRect_ = new drawing.RoundRect({
+        left: 0,
+        top: 0,
+        right: 0,
+        bottom: 0
+      }, 0, 0);
+
+      for (let i = 0; i < 20; i++) {
+        try {
+          roundRect_.offset(getRandomNumber(0, 500), getRandomNumber(0, 500));
+          console.info(msg + ' offset succeeded');
+        } catch (e) {
+          e = e as BusinessError;
+          console.info(msg + ` offset errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+          expect(e.code).assertEqual(401);
+        }
+      }
+    });
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_STATIC_0400
+     * @tc.name      : testRoundRectConstructor2NormalStatic
+     * @tc.desc      : Test for testRoundRectConstructor2NormalStatic.
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level 0
+     */
+    it('testRoundRectConstructor2NormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const msg = 'testRoundRectConstructor2NormalStatic';
+      let roundRect: drawing.RoundRect = new drawing.RoundRect({
+        left: 100,
+        top: 100,
+        right: 400,
+        bottom: 400
+      }, 0, 0);
+      try {
+        // let roundRect2 = new drawing.RoundRect(roundRect);
+        console.info(msg + ' roundRect2 succeeded');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` roundRect2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      roundRect.setCorner(drawing.CornerPos.TOP_LEFT_POS, 20, 20);
+      roundRect.setCorner(drawing.CornerPos.TOP_RIGHT_POS, 20, 20);
+      roundRect.setCorner(drawing.CornerPos.BOTTOM_LEFT_POS, 20, 20);
+      roundRect.setCorner(drawing.CornerPos.BOTTOM_RIGHT_POS, 20, 20);
+      try {
+        // let roundRect3 = new drawing.RoundRect(roundRect);
+        console.info(msg + ' roundRect3 succeeded');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` roundRect3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      roundRect.setCorner(drawing.CornerPos.TOP_LEFT_POS, 10, 16);
+      roundRect.setCorner(drawing.CornerPos.TOP_RIGHT_POS, 5, 30);
+      roundRect.setCorner(drawing.CornerPos.BOTTOM_LEFT_POS, 30, 10);
+      roundRect.setCorner(drawing.CornerPos.BOTTOM_RIGHT_POS, 40, 40);
+      try {
+        // let roundRect4 = new drawing.RoundRect(roundRect);
+        console.info(msg + ' roundRect4 succeeded');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + ` roundRect4 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_ROUNDRECT_STATIC_0401
+     * @tc.name      : testRoundRectConstructor2MultipleCallsStatic
+     * @tc.desc      : testRoundRectConstructor2MultipleCallsStatic
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('testRoundRectConstructor2MultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      const msg = 'testRoundRectConstructor2MultipleCallsStatic';
+      for (let i = 0; i < 20; i += 1) {
+        try {
+          let roundRect: drawing.RoundRect = new drawing.RoundRect({
+            left: Math.random() * 10,
+            top: Math.random() * 20,
+            right: Math.random() * 30,
+            bottom: Math.random() * 40
+          }, Math.random() * 10, Math.random() * 20);
+          // let roundRect2 = new drawing.RoundRect(roundRect);
+          console.info(msg + `drawing RoundRect success step: ` + i);
+        } catch (e) {
+          e = e as BusinessError;
+          console.info(msg +
+            `drawing RoundRect error. errorCode is: ${e.code} + errormsg is: ${e.message}} step: ${i}`);
+          expect().assertFail()
+        }
+      }
+    })
   });
 }

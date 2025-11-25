@@ -45,12 +45,12 @@ export default function contentModifier() {
     });
 
     /**
-     * @tc.number contentModifierTest_0100
      * @tc.name   contentModifierTest_0100
+     * @tc.number contentModifierTest_0100
      * @tc.desc   test Modifier
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('contentModifierTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('contentModifierText_0100 START');

@@ -26,40 +26,40 @@ export default function checkboxShapeTest() {
       done();
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_CHECKBOX_SHAPE_0100
-    * @tc.name       : testCheckboxShape001
-    * @tc.desc       : testing shape for checkbox with normal value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCheckboxShape001
+     * @tc.number SUB_ARKUI_CAPI_CHECKBOX_SHAPE_0100
+     * @tc.desc   testing shape for checkbox with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCheckboxShape001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCheckboxShape001()).assertEqual(0)
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_CHECKBOX_SHAPE_0200
-    * @tc.name       : testCheckboxShape002
-    * @tc.desc       : testing shape for checkbox with normal value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCheckboxShape002
+     * @tc.number SUB_ARKUI_CAPI_CHECKBOX_SHAPE_0200
+     * @tc.desc   testing shape for checkbox with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCheckboxShape002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCheckboxShape002()).assertEqual(0)
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_CHECKBOX_SHAPE_0300
-    * @tc.name       : testCheckboxSelect003
-    * @tc.desc       : testing shape for checkbox with default value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCheckboxShape003
+     * @tc.number SUB_ARKUI_CAPI_CHECKBOX_SHAPE_0300
+     * @tc.desc   testing shape for checkbox with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCheckboxShape003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCheckboxShape003()).assertEqual(0)
       done()

@@ -40,12 +40,12 @@ export default function MenuPolicy_HIDE_APITest() {
       done();
     });
     /**
-     * @tc.number    MenuPolicy_HIDE_APITest_0100
-     * @tc.name      MenuPolicy_HIDE_APITest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   MenuPolicy_HIDE_APITest_0100
+     * @tc.number MenuPolicy_HIDE_APITest_0100
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('MenuPolicy_HIDE_APITest_0100',  Level.LEVEL2, async (done: Function) => {
       console.info('MenuPolicy_HIDE_APITest_0100 START');

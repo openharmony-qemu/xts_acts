@@ -66,9 +66,12 @@ export default function swiperItemVisibility() {
     });
 
     /**
+     * @tc.name   SUB_ACE_SWIPER_VISIBLECHANGED_0100
      * @tc.number SUB_ACE_SWIPER_VISIBLECHANGED_0100
-     * @tc.name Swiper_VisibleChanged_SetVisibility
-     * @tc.desc Set swiper's  first items visiblity  value ' Visible '.
+     * @tc.desc   Set swiper's  first items visiblity  value ' Visible '.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_ACE_SWIPER_VISIBLECHANGED_0100', Level.LEVEL1, async (done: Function) => {
       console.info('new SUB_ACE_SWIPER_VISIBLECHANGED_0100 START');
@@ -125,9 +128,12 @@ export default function swiperItemVisibility() {
     });
 
     /**
+     * @tc.name   SUB_ACE_SWIPER_VISIBLECHANGED_0200
      * @tc.number SUB_ACE_SWIPER_VISIBLECHANGED_0200
-     * @tc.name Swiper_VisibleChanged_SetVisibility
-     * @tc.desc Set swiper's  first items visiblity  value ' hidden '.
+     * @tc.desc   Set swiper's  first items visiblity  value ' hidden '.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_ACE_SWIPER_VISIBLECHANGED_0200', Level.LEVEL1, async (done: Function) => {
       console.info('new SUB_ACE_SWIPER_VISIBLECHANGED_0200 START');
@@ -187,9 +193,12 @@ export default function swiperItemVisibility() {
     });
 
     /**
+     * @tc.name   SUB_ACE_SWIPER_VISIBLECHANGED_0300
      * @tc.number SUB_ACE_SWIPER_VISIBLECHANGED_0300
-     * @tc.name Swiper_VisibleChanged_SetVisibility
-     * @tc.desc Set swiper's  first items visiblity  value ' None '.
+     * @tc.desc   Set swiper's  first items visiblity  value ' None '.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_ACE_SWIPER_VISIBLECHANGED_0300', Level.LEVEL1, async (done: Function) => {
       console.info('new SUB_ACE_SWIPER_VISIBLECHANGED_0300 START');

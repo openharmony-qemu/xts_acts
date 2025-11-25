@@ -45,12 +45,12 @@ export default function GridMaxCountJsunit() {
     });
 
     /**
-     * @tc.number    testcheckgridMaxCount0001
-     * @tc.name      testcheckgridMaxCount0001
-     * @tc.desc      The Grid maxCount.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   testcheckgridMaxCount0001
+     * @tc.number testcheckgridMaxCount0001
+     * @tc.desc   The Grid maxCount.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testcheckgridMaxCount0001', Level.LEVEL0, async () => {
       console.info('testcheckgridMaxCount testcheckgridMaxCount0001 START');
@@ -65,12 +65,12 @@ export default function GridMaxCountJsunit() {
     });
 
     /**
-     * @tc.number    testEdgeEffectOptions0002
-     * @tc.name      testEdgeEffectOptions0002
-     * @tc.desc      The Grid edgeEffectOptions alwaysEnabled true.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   testEdgeEffectOptions0002
+     * @tc.number testEdgeEffectOptions0002
+     * @tc.desc   The Grid edgeEffectOptions alwaysEnabled true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEdgeEffectOptions0002', Level.LEVEL0, async () => {
       console.info('testEdgeEffectOptions testEdgeEffectOptions0002 START');
@@ -82,12 +82,12 @@ export default function GridMaxCountJsunit() {
     });
 
     /**
-     * @tc.number    testEdgeEffectOptions0003
-     * @tc.name      testEdgeEffectOptions0003
-     * @tc.desc      The Grid edgeEffectOptions alwaysEnabled false.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   testEdgeEffectOptions0003
+     * @tc.number testEdgeEffectOptions0003
+     * @tc.desc   The Grid edgeEffectOptions alwaysEnabled false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEdgeEffectOptions0003', Level.LEVEL0, async () => {
       console.info('testEdgeEffectOptions testEdgeEffectOptions0003 START');

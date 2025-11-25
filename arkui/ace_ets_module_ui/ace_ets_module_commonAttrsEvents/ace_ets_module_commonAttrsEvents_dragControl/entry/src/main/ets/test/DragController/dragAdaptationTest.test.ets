@@ -55,14 +55,14 @@ done();
       console.info("dragAdaptationTest after each called");
     });
 
-    /*
-    * @tc.number     : SUB_dragAdaptationTest_001
-    * @tc.name       : dragAdaptationTest_001
-    * @tc.desc       : test
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   dragAdaptationTest_001
+     * @tc.number SUB_dragAdaptationTest_001
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('dragAdaptationTest_001', Level.LEVEL0, async () => {
       if (globalThis.winLeft == 0) {
         let driver = Driver.create();

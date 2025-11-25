@@ -50,12 +50,15 @@ export default function AlignContent_Start_FlexP_Fixed_Offset() {
       console.info("AlignContent_Start_FlexP_Fixed_Offset after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_START_1000
-     * @tc.name testAlignContentStartFlexFixedOffset
-     * @tc.desc Sets the offsize property of the child component.
-     */
 
+    /**
+     * @tc.name   testAlignContentStartFlexFixedOffset
+     * @tc.number testAlignContentStartFlexFixedOffset
+     * @tc.desc   testAlignContentStartFlexFixedOffset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentStartFlexFixedOffset',  Level.LEVEL0, async () => {
       console.info('testAlignContentStartFlexFixedOffset START');
       let strJson = getInspectorByKey('AlignContent_Start_FlexP_Fixed_Offset_flex001');

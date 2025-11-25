@@ -49,10 +49,12 @@ export default function NavigationLaunchMode() {
 
 
     /**
-     * @tc.number    NavigationLaunchMode_0100
-     * @tc.name      NavigationLaunchMode_0100
-     * @tc.desc      Test NavigationLaunchMode
-     * @tc.level     Level 2
+     * @tc.name   NavigationLaunchMode_0100
+     * @tc.number NavigationLaunchMode_0100
+     * @tc.desc   Test NavigationLaunchMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationLaunchMode_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('NavigationLaunchMode_0100 START');

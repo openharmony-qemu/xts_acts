@@ -40,12 +40,12 @@ export default function RenderNodeAttributeTest() {
       done();
     });
     /**
-     * @tc.number    api
-     * @tc.name      RenderNodeAttributeTest_0100
-     * @tc.desc      borderWidth_left
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RenderNodeAttributeTest_0100
+     * @tc.number api
+     * @tc.desc   borderWidth_left
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RenderNodeAttributeTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('RenderNodeAttributeTest_0100 START');
@@ -58,12 +58,12 @@ export default function RenderNodeAttributeTest() {
       done();
     });
     /**
-     * @tc.number    api
-     * @tc.name      RenderNodeAttributeTest_0200
-     * @tc.desc      borderWidth_top
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RenderNodeAttributeTest_0200
+     * @tc.number api
+     * @tc.desc   borderWidth_top
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RenderNodeAttributeTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('RenderNodeAttributeTest_0200 START');
@@ -76,12 +76,12 @@ export default function RenderNodeAttributeTest() {
       done();
     });
     /**
-     * @tc.number    api
-     * @tc.name      RenderNodeAttributeTest_0300
-     * @tc.desc      borderWidth_bottom
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RenderNodeAttributeTest_0300
+     * @tc.number api
+     * @tc.desc   borderWidth_bottom
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RenderNodeAttributeTest_0300', Level.LEVEL0, async (done: Function) => {
       console.info('RenderNodeAttributeTest_0300 START');
@@ -94,12 +94,12 @@ export default function RenderNodeAttributeTest() {
       done();
     });
     /**
-     * @tc.number    api
-     * @tc.name      RenderNodeAttributeTest_0400
-     * @tc.desc      borderWidth_right
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RenderNodeAttributeTest_0400
+     * @tc.number api
+     * @tc.desc   borderWidth_right
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RenderNodeAttributeTest_0400', Level.LEVEL0, async (done: Function) => {
       console.info('RenderNodeAttributeTest_0400 START');
@@ -112,12 +112,12 @@ export default function RenderNodeAttributeTest() {
       done();
     });
     /**
-     * @tc.number    api
-     * @tc.name      RenderNodeAttributeTest_0500
-     * @tc.desc      borderColor_left
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RenderNodeAttributeTest_0500
+     * @tc.number api
+     * @tc.desc   borderColor_left
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RenderNodeAttributeTest_0500', Level.LEVEL0, async (done: Function) => {
       console.info('RenderNodeAttributeTest_0500 START');
@@ -130,12 +130,12 @@ export default function RenderNodeAttributeTest() {
       done();
     });
     /**
-     * @tc.number    api
-     * @tc.name      RenderNodeAttributeTest_0600
-     * @tc.desc      borderColor_right
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RenderNodeAttributeTest_0600
+     * @tc.number api
+     * @tc.desc   borderColor_right
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RenderNodeAttributeTest_0600', Level.LEVEL0, async (done: Function) => {
       console.info('RenderNodeAttributeTest_0600 START');
@@ -148,12 +148,12 @@ export default function RenderNodeAttributeTest() {
       done();
     });
     /**
-     * @tc.number    api
-     * @tc.name      RenderNodeAttributeTest_0700
-     * @tc.desc      borderColor_top
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RenderNodeAttributeTest_0700
+     * @tc.number api
+     * @tc.desc   borderColor_top
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RenderNodeAttributeTest_0700', Level.LEVEL0, async (done: Function) => {
       console.info('RenderNodeAttributeTest_0700 START');
@@ -166,12 +166,12 @@ export default function RenderNodeAttributeTest() {
       done();
     });
     /**
-     * @tc.number    api
-     * @tc.name      RenderNodeAttributeTest_0800
-     * @tc.desc      borderColor_bottom
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RenderNodeAttributeTest_0800
+     * @tc.number api
+     * @tc.desc   borderColor_bottom
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RenderNodeAttributeTest_0800', Level.LEVEL0, async (done: Function) => {
       console.info('RenderNodeAttributeTest_0800 START');
@@ -184,12 +184,12 @@ export default function RenderNodeAttributeTest() {
       done();
     });
     /**
-     * @tc.number    api
-     * @tc.name      RenderNodeAttributeTest_0900
-     * @tc.desc      borderStyle_left
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RenderNodeAttributeTest_0900
+     * @tc.number api
+     * @tc.desc   borderStyle_left
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RenderNodeAttributeTest_0900', Level.LEVEL0, async (done: Function) => {
       console.info('RenderNodeAttributeTest_0900 START');
@@ -202,12 +202,12 @@ export default function RenderNodeAttributeTest() {
       done();
     });
     /**
-     * @tc.number    api
-     * @tc.name      RenderNodeAttributeTest_1000
-     * @tc.desc      borderStyle_right
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RenderNodeAttributeTest_1000
+     * @tc.number api
+     * @tc.desc   borderStyle_right
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RenderNodeAttributeTest_1000', Level.LEVEL0, async (done: Function) => {
       console.info('RenderNodeAttributeTest_1000 START');
@@ -220,12 +220,12 @@ export default function RenderNodeAttributeTest() {
       done();
     });
     /**
-     * @tc.number    api
-     * @tc.name      RenderNodeAttributeTest_1100
-     * @tc.desc      borderStyle_top
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RenderNodeAttributeTest_1100
+     * @tc.number api
+     * @tc.desc   borderStyle_top
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RenderNodeAttributeTest_1100', Level.LEVEL0, async (done: Function) => {
       console.info('RenderNodeAttributeTest_1100 START');
@@ -238,12 +238,12 @@ export default function RenderNodeAttributeTest() {
       done();
     });
     /**
-     * @tc.number    api
-     * @tc.name      RenderNodeAttributeTest_1200
-     * @tc.desc      borderStyle_bottom
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RenderNodeAttributeTest_1200
+     * @tc.number api
+     * @tc.desc   borderStyle_bottom
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RenderNodeAttributeTest_1200', Level.LEVEL0, async (done: Function) => {
       console.info('RenderNodeAttributeTest_1200 START');
@@ -256,12 +256,12 @@ export default function RenderNodeAttributeTest() {
       done();
     });
     /**
-     * @tc.number    api
-     * @tc.name      RenderNodeAttributeTest_1300
-     * @tc.desc      borderRadius_topRight
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RenderNodeAttributeTest_1300
+     * @tc.number api
+     * @tc.desc   borderRadius_topRight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RenderNodeAttributeTest_1300', Level.LEVEL0, async (done: Function) => {
       console.info('RenderNodeAttributeTest_1300 START');
@@ -274,12 +274,12 @@ export default function RenderNodeAttributeTest() {
       done();
     });
     /**
-     * @tc.number    api
-     * @tc.name      RenderNodeAttributeTest_1400
-     * @tc.desc      borderRadius_topLeft
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RenderNodeAttributeTest_1400
+     * @tc.number api
+     * @tc.desc   borderRadius_topLeft
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RenderNodeAttributeTest_1400', Level.LEVEL0, async (done: Function) => {
       console.info('RenderNodeAttributeTest_1400 START');
@@ -292,12 +292,12 @@ export default function RenderNodeAttributeTest() {
       done();
     });
     /**
-     * @tc.number    api
-     * @tc.name      RenderNodeAttributeTest_1500
-     * @tc.desc      borderRadius_bottomLeft
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RenderNodeAttributeTest_1500
+     * @tc.number api
+     * @tc.desc   borderRadius_bottomLeft
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RenderNodeAttributeTest_1500', Level.LEVEL0, async (done: Function) => {
       console.info('RenderNodeAttributeTest_1500 START');
@@ -310,12 +310,12 @@ export default function RenderNodeAttributeTest() {
       done();
     });
     /**
-     * @tc.number    api
-     * @tc.name      RenderNodeAttributeTest_1600
-     * @tc.desc      borderRadius_bottomRight
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RenderNodeAttributeTest_1600
+     * @tc.number api
+     * @tc.desc   borderRadius_bottomRight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RenderNodeAttributeTest_1600', Level.LEVEL0, async (done: Function) => {
       console.info('RenderNodeAttributeTest_1600 START');

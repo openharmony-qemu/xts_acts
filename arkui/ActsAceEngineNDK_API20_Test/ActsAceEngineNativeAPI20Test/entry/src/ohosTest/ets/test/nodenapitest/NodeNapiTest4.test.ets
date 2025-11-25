@@ -26,14 +26,14 @@ export default function NodeNapiTest4() {
     beforeAll(async (done: Function) => {
       await Utils.pushPageNoClear(`nodenapitest/nodenapiTest4`, done);
     });
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetDrawableDescriptorFromResourceNapiValue_0100
-       * @tc.name       : testOHArkUIGetDrawableDescriptorFromResourceNapiValue0100
-       * @tc.desc       : testing OH_ArkUI_GetDrawableDescriptorFromResourceNapiValue interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetDrawableDescriptorFromResourceNapiValue0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetDrawableDescriptorFromResourceNapiValue_0100
+     * @tc.desc   testing OH_ArkUI_GetDrawableDescriptorFromResourceNapiValue interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetDrawableDescriptorFromResourceNapiValue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {

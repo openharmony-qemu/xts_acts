@@ -26,13 +26,13 @@ export default function toggleSwitchTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TOGGLE_SWITCH_0100
-     * @tc.name: testToggleSwitch001
-     * @tc.desc: testing switch for toggle with default value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testToggleSwitch001
+     * @tc.number SUB_ARKUI_CAPI_TOGGLE_SWITCH_0100
+     * @tc.desc   testing switch for toggle with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToggleSwitch001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testToggleSwitch001()).assertEqual(0)

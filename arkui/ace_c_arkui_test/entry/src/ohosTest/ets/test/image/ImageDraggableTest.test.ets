@@ -26,65 +26,65 @@ export default function imageDraggableTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_DRAGGABLE_0100
-     * @tc.name       : testImageDraggable001
-     * @tc.desc       : testing draggable for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageDraggable001
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_DRAGGABLE_0100
+     * @tc.desc   testing draggable for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageDraggable001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageDraggable001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_DRAGGABLE_0200
-     * @tc.name       : testImageDraggable002
-     * @tc.desc       : testing draggable for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageDraggable002
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_DRAGGABLE_0200
+     * @tc.desc   testing draggable for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageDraggable002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageDraggable002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_DRAGGABLE_0300
-     * @tc.name       : testImageDraggable003
-     * @tc.desc       : testing draggable for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageDraggable003
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_DRAGGABLE_0300
+     * @tc.desc   testing draggable for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageDraggable003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageDraggable003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_DRAGGABLE_0400
-     * @tc.name       : testImageDraggable004
-     * @tc.desc       : testing draggable for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageDraggable004
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_DRAGGABLE_0400
+     * @tc.desc   testing draggable for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageDraggable004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageDraggable004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_DRAGGABLE_0500
-     * @tc.name       : testImageDraggable005
-     * @tc.desc       : testing draggable for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageDraggable005
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_DRAGGABLE_0500
+     * @tc.desc   testing draggable for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageDraggable005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageDraggable005()).assertEqual(0)

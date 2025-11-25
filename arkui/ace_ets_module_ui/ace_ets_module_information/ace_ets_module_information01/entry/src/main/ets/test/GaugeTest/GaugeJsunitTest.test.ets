@@ -46,12 +46,12 @@ export default function GaugeJsunitTest() {
       console.info("GaugeJsunitTest after each called");
     });
     /**
-     * @tc.number    SUB_ACE_testGauge001
-     * @tc.name      testGauge001
-     * @tc.desc      Test gauge
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   testGauge001
+     * @tc.number SUB_ACE_testGauge001
+     * @tc.desc   Test gauge
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGauge001', Level.LEVEL0, async (done:Function) => {
       console.info('[testGauge001] START');
@@ -65,13 +65,13 @@ export default function GaugeJsunitTest() {
       expect(JSON.parse(strJson).$attrs.value).assertEqual('50.00');
       done()
     });
-     /**
-     * @tc.number    SUB_ACE_testGauge002
-     * @tc.name      testGauge002
-     * @tc.desc      Test gauge
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testGauge002
+     * @tc.number SUB_ACE_testGauge002
+     * @tc.desc   Test gauge
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGauge002', Level.LEVEL0, async (done:Function) => {
       console.info('[testGauge002] START');
@@ -98,13 +98,13 @@ export default function GaugeJsunitTest() {
       expect(JSON.parse(strJsonNew).$attrs.value).assertEqual('10.00');
       done()
     });
-     /**
-     * @tc.number    SUB_ACE_testGauge003
-     * @tc.name      testGauge003
-     * @tc.desc      Test gauge
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testGauge003
+     * @tc.number SUB_ACE_testGauge003
+     * @tc.desc   Test gauge
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGauge003', Level.LEVEL0, async (done:Function) => {
       console.info('[testGauge003] START');
@@ -131,13 +131,13 @@ export default function GaugeJsunitTest() {
       expect(JSON.parse(strJsonNew).$attrs.strokeWidth).assertEqual('30.00vp');
       done()
     });
-     /**
-     * @tc.number    SUB_ACE_testGauge004
-     * @tc.name      testGauge004
-     * @tc.desc      Test gauge
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testGauge004
+     * @tc.number SUB_ACE_testGauge004
+     * @tc.desc   Test gauge
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGauge004', Level.LEVEL0, async (done:Function) => {
       console.info('[testGauge004] START');
@@ -164,13 +164,13 @@ export default function GaugeJsunitTest() {
       expect(JSON.parse(strJsonNew).$attrs.startAngle).assertEqual('200.00');
       done()
     });
-     /**
-     * @tc.number    SUB_ACE_testGauge005
-     * @tc.name      testGauge005
-     * @tc.desc      Test gauge
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testGauge005
+     * @tc.number SUB_ACE_testGauge005
+     * @tc.desc   Test gauge
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGauge005', Level.LEVEL0, async (done:Function) => {
       console.info('[testGauge005] START');
@@ -197,13 +197,13 @@ export default function GaugeJsunitTest() {
       expect(JSON.parse(strJsonNew).$attrs.endAngle).assertEqual('200.00');
       done()
     });
-     /**
-     * @tc.number    SUB_ACE_testGauge007
-     * @tc.name      testGauge007
-     * @tc.desc      Test gauge
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testGauge007
+     * @tc.number SUB_ACE_testGauge007
+     * @tc.desc   Test gauge
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGauge007', Level.LEVEL0, async (done:Function) => {
       console.info('[testGauge007] START');
@@ -230,13 +230,13 @@ export default function GaugeJsunitTest() {
       expect(JSON.parse(strJsonNew).$attrs.value).assertEqual('-10.00');
       done()
     });
-     /**
-     * @tc.number    SUB_ACE_testGauge008
-     * @tc.name      testGauge008
-     * @tc.desc      Test gauge
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testGauge008
+     * @tc.number SUB_ACE_testGauge008
+     * @tc.desc   Test gauge
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGauge008', Level.LEVEL0, async (done:Function) => {
       console.info('[testGauge008] START');
@@ -263,13 +263,13 @@ export default function GaugeJsunitTest() {
       expect(JSON.parse(strJsonNew).$attrs.strokeWidth).assertEqual('-30.00vp');
       done()
     });
-     /**
-     * @tc.number    SUB_ACE_testGauge009
-     * @tc.name      testGauge009
-     * @tc.desc      Test gauge
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testGauge009
+     * @tc.number SUB_ACE_testGauge009
+     * @tc.desc   Test gauge
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGauge009', Level.LEVEL0, async (done:Function) => {
       console.info('[testGauge009] START');
@@ -296,13 +296,13 @@ export default function GaugeJsunitTest() {
       expect(JSON.parse(strJsonNew).$attrs.startAngle).assertEqual('-10.00');
       done()
     });
-     /**
-     * @tc.number    SUB_ACE_testGauge010
-     * @tc.name      testGauge010
-     * @tc.desc      Test gauge
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testGauge010
+     * @tc.number SUB_ACE_testGauge010
+     * @tc.desc   Test gauge
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGauge010', Level.LEVEL0, async (done:Function) => {
       console.info('[testGauge010] START');
@@ -328,13 +328,13 @@ export default function GaugeJsunitTest() {
       expect(JSON.parse(strJsonNew).$attrs.endAngle).assertEqual('-10.00');
       done()
     });
-     /**
-     * @tc.number    SUB_ACE_testGauge011
-     * @tc.name      testGauge011
-     * @tc.desc      Test gauge
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testGauge011
+     * @tc.number SUB_ACE_testGauge011
+     * @tc.desc   Test gauge
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGauge011', Level.LEVEL0, async (done:Function) => {
       console.info('[testGauge011] START');

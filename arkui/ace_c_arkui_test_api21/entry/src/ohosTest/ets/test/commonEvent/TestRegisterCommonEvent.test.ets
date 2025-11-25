@@ -25,39 +25,39 @@ export default function TestRegisterCommonEvent(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TestRegisterCommonEvent_001
-     * @tc.name       : TestRegisterCommonEvent_001
-     * @tc.desc       : Test RegisterCommonEvent.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   TestRegisterCommonEvent_001
+     * @tc.number SUB_ARKUI_CAPI_TestRegisterCommonEvent_001
+     * @tc.desc   Test RegisterCommonEvent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestRegisterCommonEvent_001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.TestRegisterCommonEvent001()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TestRegisterCommonEvent_002
-     * @tc.name       : TestRegisterCommonEvent_002
-     * @tc.desc       : Test RegisterCommonEvent.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   TestRegisterCommonEvent_002
+     * @tc.number SUB_ARKUI_CAPI_TestRegisterCommonEvent_002
+     * @tc.desc   Test RegisterCommonEvent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestRegisterCommonEvent_002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.TestRegisterCommonEvent002()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TestRegisterCommonEvent_003
-     * @tc.name       : TestRegisterCommonEvent_003
-     * @tc.desc       : Test RegisterCommonEvent.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   TestRegisterCommonEvent_003
+     * @tc.number SUB_ARKUI_CAPI_TestRegisterCommonEvent_003
+     * @tc.desc   Test RegisterCommonEvent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestRegisterCommonEvent_003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.TestRegisterCommonEvent003()).assertEqual(0)

@@ -46,12 +46,12 @@ export default function ImageAnalyzerControllerTest() {
     });
 
     /**
+     * @tc.name   ImageAnalyzerControllerTest001
      * @tc.number ImageAnalyzerControllerTest001
-     * @tc.name ImageAnalyzerControllerTest001
-     * @tc.desc test the ImageAnalyzerController  Array.length
-     * @tc.level: Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   test the ImageAnalyzerController  Array.length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageAnalyzerControllerTest001', Level.LEVEL1, async (done: Function) => {
       console.info('[ImageAnalyzerControllerTest001] START');

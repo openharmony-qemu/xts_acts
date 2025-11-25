@@ -27,13 +27,13 @@ export default function InspectorLayoutCallbackTest() {
       await Utils.sleep(100);
       done();
     });
-    /*
-     * @tc.number     : SUB_ACE_TOOLCHAIN_ARKUI_BARRIERFREE_INSPECTOR_CAPI_0001
-     * @tc.name       : InspectorLayoutCallback001
-     * @tc.desc       : 组件注册布局回调验证
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   InspectorLayoutCallback001
+     * @tc.number SUB_ACE_TOOLCHAIN_ARKUI_BARRIERFREE_INSPECTOR_CAPI_0001
+     * @tc.desc   组件注册布局回调验证
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('InspectorLayoutCallback001', Level.LEVEL0, async (done: Function) => {
       await Utils.pushPage(`${PAGE_TAG}`, done);
@@ -53,13 +53,13 @@ export default function InspectorLayoutCallbackTest() {
       expect(obj.$attrs.content).assertEqual('layout callback');
       done()
     });
-    /*
-     * @tc.number     : SUB_ACE_TOOLCHAIN_ARKUI_BARRIERFREE_INSPECTOR_CAPI_0002
-     * @tc.name       : InspectorLayoutCallback002
-     * @tc.desc       : 组件注册布局回调验证
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   InspectorLayoutCallback002
+     * @tc.number SUB_ACE_TOOLCHAIN_ARKUI_BARRIERFREE_INSPECTOR_CAPI_0002
+     * @tc.desc   组件注册布局回调验证
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('InspectorLayoutCallback002', Level.LEVEL0, async (done: Function) => {
       await Utils.pushPage(`${PAGE_TAG}`, done);
@@ -79,13 +79,13 @@ export default function InspectorLayoutCallbackTest() {
       expect(obj.$attrs.content).assertEqual('0');
       done()
     });
-    /*
-     * @tc.number     : SUB_ACE_TOOLCHAIN_ARKUI_BARRIERFREE_INSPECTOR_CAPI_0003
-     * @tc.name       : InspectorLayoutCallback003
-     * @tc.desc       : 组件注册布局回调验证
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   InspectorLayoutCallback003
+     * @tc.number SUB_ACE_TOOLCHAIN_ARKUI_BARRIERFREE_INSPECTOR_CAPI_0003
+     * @tc.desc   组件注册布局回调验证
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('InspectorLayoutCallback003', Level.LEVEL0, async (done: Function) => {
       await Utils.pushPage(`${PAGE_TAG}`, done);
@@ -105,13 +105,13 @@ export default function InspectorLayoutCallbackTest() {
       expect(obj.$attrs.content).assertEqual('draw callback');
       done()
     });
-    /*
-     * @tc.number     : SUB_ACE_TOOLCHAIN_ARKUI_BARRIERFREE_INSPECTOR_CAPI_0004
-     * @tc.name       : InspectorLayoutCallback004
-     * @tc.desc       : 组件注册布局回调验证
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   InspectorLayoutCallback004
+     * @tc.number SUB_ACE_TOOLCHAIN_ARKUI_BARRIERFREE_INSPECTOR_CAPI_0004
+     * @tc.desc   组件注册布局回调验证
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('InspectorLayoutCallback004', Level.LEVEL0, async (done: Function) => {
       await Utils.pushPage(`${PAGE_TAG}`, done);

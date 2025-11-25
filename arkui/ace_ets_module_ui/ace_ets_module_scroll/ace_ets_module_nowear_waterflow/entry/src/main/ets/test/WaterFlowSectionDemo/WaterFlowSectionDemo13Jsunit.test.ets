@@ -40,12 +40,12 @@ export default function WaterFlowSectionDemo13Jsunit() {
       done();
     });
     /**
-     * @tc.number SUB_ACE_UI_COMPONENT_LISTANDGRID_WATERFLOW_SECTIONS_0120
      * @tc.name   WaterFlowSectionDemo13Jsunit_0100
+     * @tc.number SUB_ACE_UI_COMPONENT_LISTANDGRID_WATERFLOW_SECTIONS_0120
      * @tc.desc   itemsCount: 5, columnsGap: 10
-     * @tc.level  1
-     * @tc.type
-     * @tc.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('WaterFlowSectionDemo13Jsunit_0100', Level.LEVEL3, async (done: Function) => {
       console.info('WaterFlowSectionDemo13Jsunit_0100 START');

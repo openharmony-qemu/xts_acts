@@ -57,12 +57,12 @@ export default function GridScrollEdgeCallbackJsunit() {
     });
 
     /**
+     * @tc.name   GridScrollEdgeCallbackTest_1580
      * @tc.number GridScrollEdgeCallbackTest_1580
-     * @tc.name Test the properties of components
-     * @tc.desc Set attribute values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Set attribute values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('GridScrollEdgeCallbackTest_1580', Level.LEVEL1, async (done: Function) => {
       console.info('GridScrollEdgeCallbackTest_1580 START');

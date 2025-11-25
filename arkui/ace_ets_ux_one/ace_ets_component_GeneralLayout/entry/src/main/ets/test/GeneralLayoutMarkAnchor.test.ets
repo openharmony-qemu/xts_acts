@@ -51,13 +51,13 @@ export default function GeneralLayoutMarkAnchorTest() {
       done();
     });
 
-    /*
-     *@tc.number     : ArkUIHDS_General_Layout_1000
-     *@tc.name       : ArkUIHDS_General_Layout_1000
-     *@tc.desc       : test LengthMetrics type of markAnchor
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 1
+    /**
+     * @tc.name   ArkUIHDS_General_Layout_1000
+     * @tc.number ArkUIHDS_General_Layout_1000
+     * @tc.desc   test LengthMetrics type of markAnchor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUIHDS_General_Layout_1000', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUIHDS_General_Layout_1000 START');
@@ -94,13 +94,13 @@ export default function GeneralLayoutMarkAnchorTest() {
       done();
     });
 
-    /*
-     *@tc.number     : ArkUIHDS_General_Layout_1100
-     *@tc.name       : ArkUIHDS_General_Layout_1100
-     *@tc.desc       : test LengthMetrics type of markAnchor
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 1
+    /**
+     * @tc.name   ArkUIHDS_General_Layout_1100
+     * @tc.number ArkUIHDS_General_Layout_1100
+     * @tc.desc   test LengthMetrics type of markAnchor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUIHDS_General_Layout_1100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUIHDS_General_Layout_1100 START');
@@ -139,13 +139,13 @@ export default function GeneralLayoutMarkAnchorTest() {
       done();
     });
 
-    /*
-     *@tc.number     : ArkUIHDS_General_Layout_1200
-     *@tc.name       : ArkUIHDS_General_Layout_1200
-     *@tc.desc       : test LengthMetrics type of markAnchor
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 1
+    /**
+     * @tc.name   ArkUIHDS_General_Layout_1200
+     * @tc.number ArkUIHDS_General_Layout_1200
+     * @tc.desc   test LengthMetrics type of markAnchor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUIHDS_General_Layout_1200', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUIHDS_General_Layout_1200 START');
@@ -184,13 +184,13 @@ export default function GeneralLayoutMarkAnchorTest() {
       done();
     });
 
-    /*
-     *@tc.number     : ArkUIHDS_General_Layout_1300
-     *@tc.name       : ArkUIHDS_General_Layout_1300
-     *@tc.desc       : test LengthMetrics type of markAnchor
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 1
+    /**
+     * @tc.name   ArkUIHDS_General_Layout_1300
+     * @tc.number ArkUIHDS_General_Layout_1300
+     * @tc.desc   test LengthMetrics type of markAnchor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUIHDS_General_Layout_1300', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUIHDS_General_Layout_1300 START');
@@ -236,13 +236,13 @@ export default function GeneralLayoutMarkAnchorTest() {
       done();
     });
 
-    /*
-     *@tc.number     : ArkUIHDS_General_Layout_1400
-     *@tc.name       : ArkUIHDS_General_Layout_1400
-     *@tc.desc       : test LengthMetrics type of markAnchor
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 1
+    /**
+     * @tc.name   ArkUIHDS_General_Layout_1400
+     * @tc.number ArkUIHDS_General_Layout_1400
+     * @tc.desc   test LengthMetrics type of markAnchor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUIHDS_General_Layout_1400', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUIHDS_General_Layout_1400 START');
@@ -279,13 +279,13 @@ export default function GeneralLayoutMarkAnchorTest() {
       done();
     });
 
-    /*
-     *@tc.number     : ArkUIHDS_General_Layout_1500
-     *@tc.name       : ArkUIHDS_General_Layout_1500
-     *@tc.desc       : test LengthMetrics type of markAnchor
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 1
+    /**
+     * @tc.name   ArkUIHDS_General_Layout_1500
+     * @tc.number ArkUIHDS_General_Layout_1500
+     * @tc.desc   test LengthMetrics type of markAnchor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUIHDS_General_Layout_1500', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUIHDS_General_Layout_1500 START');
@@ -327,13 +327,13 @@ export default function GeneralLayoutMarkAnchorTest() {
       done();
     });
 
-    /*
-     *@tc.number     : ArkUIHDS_General_Layout_1600
-     *@tc.name       : ArkUIHDS_General_Layout_1600
-     *@tc.desc       : test LengthMetrics type of markAnchor
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 1
+    /**
+     * @tc.name   ArkUIHDS_General_Layout_1600
+     * @tc.number ArkUIHDS_General_Layout_1600
+     * @tc.desc   test LengthMetrics type of markAnchor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUIHDS_General_Layout_1600', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUIHDS_General_Layout_1600 START');
@@ -363,13 +363,13 @@ export default function GeneralLayoutMarkAnchorTest() {
       done();
     });
 
-    /*
-     *@tc.number     : ArkUIHDS_General_Layout_1700
-     *@tc.name       : ArkUIHDS_General_Layout_1700
-     *@tc.desc       : test LengthMetrics type of markAnchor
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 1
+    /**
+     * @tc.name   ArkUIHDS_General_Layout_1700
+     * @tc.number ArkUIHDS_General_Layout_1700
+     * @tc.desc   test LengthMetrics type of markAnchor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUIHDS_General_Layout_1700', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUIHDS_General_Layout_1700 START');
@@ -399,13 +399,13 @@ export default function GeneralLayoutMarkAnchorTest() {
       done();
     });
 
-    /*
-     *@tc.number     : ArkUIHDS_General_Layout_1800
-     *@tc.name       : ArkUIHDS_General_Layout_1800
-     *@tc.desc       : test LengthMetrics type of markAnchor
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 1
+    /**
+     * @tc.name   ArkUIHDS_General_Layout_1800
+     * @tc.number ArkUIHDS_General_Layout_1800
+     * @tc.desc   test LengthMetrics type of markAnchor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUIHDS_General_Layout_1800', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUIHDS_General_Layout_1800 START');

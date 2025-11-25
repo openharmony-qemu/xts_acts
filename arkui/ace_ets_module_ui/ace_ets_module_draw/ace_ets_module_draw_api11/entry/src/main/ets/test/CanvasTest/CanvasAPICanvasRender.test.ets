@@ -40,10 +40,13 @@ export default function CanvasAPICanvasRenderTest() {
       done()
     });
 
-    /*
-     *tc.number ArkUI_Canvas_API_CanvasRender_0100
-     *tc.name   CanvasRenderer fillText and strokeText add parameter 'maxWidth'
-     *tc.desc   CanvasRenderer fillText and strokeText add parameter 'maxWidth'
+    /**
+     * @tc.name   ArkUI_Canvas_API_CanvasRender_0100
+     * @tc.number ArkUI_Canvas_API_CanvasRender_0100
+     * @tc.desc   CanvasRenderer fillText and strokeText add parameter 'maxWidth'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Canvas_API_CanvasRender_0100', Level.LEVEL0, async (done: Function) => {
       let CASE: string = 'ArkUI_Canvas_API_CanvasRender_0100'

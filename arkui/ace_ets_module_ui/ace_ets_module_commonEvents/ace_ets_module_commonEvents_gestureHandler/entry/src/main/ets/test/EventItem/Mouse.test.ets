@@ -42,12 +42,14 @@ export default function mouseEventTest() {
       }
       done();
     });
-    /* *
-    * @tc.number : Mouse1_0100
-    * @tc.name  : Mouse1_0100
-    * @tc.desc  : To test the new item of MouseEvent.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   Mouse1_0100
+     * @tc.number Mouse1_0100
+     * @tc.desc   To test the new item of MouseEvent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Mouse1_0100', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000);
       console.info('Mouse1_0100 START');

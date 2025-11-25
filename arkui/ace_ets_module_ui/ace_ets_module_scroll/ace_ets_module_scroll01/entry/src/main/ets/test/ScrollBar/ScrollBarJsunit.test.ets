@@ -43,12 +43,12 @@ export default function ScrollBarJsunit() {
     });
 
     /**
-     * @tc.number    ScrollBarJsunit_0100
-     * @tc.name      ScrollBarJsunit_0100
-     * @tc.desc      Testing for the ScrollBar component.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ScrollBarJsunit_0100
+     * @tc.number ScrollBarJsunit_0100
+     * @tc.desc   Testing for the ScrollBar component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ScrollBarJsunit_0100', Level.LEVEL1, async (done: Function) => {
       // Get the information of the ScrollBar component
@@ -65,12 +65,12 @@ export default function ScrollBarJsunit() {
     });
 
     /**
-     * @tc.number    ScrollBarJsunit_0200
-     * @tc.name      ScrollBarJsunit_0200
-     * @tc.desc      Testing for the ScrollBar component.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ScrollBarJsunit_0200
+     * @tc.number ScrollBarJsunit_0200
+     * @tc.desc   Testing for the ScrollBar component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ScrollBarJsunit_0200', Level.LEVEL1, async (done: Function) => {
       // Modify the direction of the ScrollBar component
@@ -87,12 +87,12 @@ export default function ScrollBarJsunit() {
     });
 
     /**
-     * @tc.number    ScrollBarJsunit_0300
-     * @tc.name      ScrollBarJsunit_0300
-     * @tc.desc      Testing for the ScrollBar component.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ScrollBarJsunit_0300
+     * @tc.number ScrollBarJsunit_0300
+     * @tc.desc   Testing for the ScrollBar component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ScrollBarJsunit_0300', Level.LEVEL1, async (done: Function) => {
       // Modify the state of the ScrollBar component
@@ -109,12 +109,12 @@ export default function ScrollBarJsunit() {
     });
 
     /**
-     * @tc.number    ScrollBarJsunit_0400
-     * @tc.name      ScrollBarJsunit_0400
-     * @tc.desc      Testing for the ScrollBar component.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ScrollBarJsunit_0400
+     * @tc.number ScrollBarJsunit_0400
+     * @tc.desc   Testing for the ScrollBar component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ScrollBarJsunit_0400', Level.LEVEL1, async (done: Function) => {
       // Modify the backgroundColor of the ScrollBar component
@@ -131,12 +131,12 @@ export default function ScrollBarJsunit() {
     });
 
     /**
-     * @tc.number    ScrollBarJsunit_0500
-     * @tc.name      ScrollBarJsunit_0500
-     * @tc.desc      Testing for the ScrollBar component.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ScrollBarJsunit_0500
+     * @tc.number ScrollBarJsunit_0500
+     * @tc.desc   Testing for the ScrollBar component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ScrollBarJsunit_0500', Level.LEVEL1, async (done: Function) => {
       // Illegal modification of attribute value of the ScrollBar component
@@ -159,12 +159,12 @@ export default function ScrollBarJsunit() {
     });
 
     /**
-     * @tc.number    ScrollBarJsunit_0600
-     * @tc.name      ScrollBarJsunit_0600
-     * @tc.desc      Testing for the ScrollBar component.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ScrollBarJsunit_0600
+     * @tc.number ScrollBarJsunit_0600
+     * @tc.desc   Testing for the ScrollBar component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ScrollBarJsunit_0600', Level.LEVEL1, async (done: Function) => {
       // Modify the direction of the Scroll component and ScrollBar component

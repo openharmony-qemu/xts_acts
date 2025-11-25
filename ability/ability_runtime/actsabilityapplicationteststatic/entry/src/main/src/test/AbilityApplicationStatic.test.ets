@@ -26,9 +26,12 @@ export default function AbilityApplicationStaticTest() {
   describe('AbilityApplicationStaticTest', () => {
 
     /**
-     * @tc.number  SUB_Ability_AbilityRuntime_application_getApplicationContextInstance_Static_0100
-     * @tc.name  SUB_Ability_AbilityRuntime_application_getApplicationContextInstance_Static_0100
-     * @tc.desc  applicationContext obtained by application calls the processName property
+     * @tc.name   SUB_Ability_AbilityRuntime_application_getApplicationContextInstance_Static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_application_getApplicationContextInstance_Static_0100
+     * @tc.desc   applicationContext obtained by application calls the processName property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_application_getApplicationContextInstance_Static_0100', Level.LEVEL0,
       async (done: () => void): Promise<void> => {

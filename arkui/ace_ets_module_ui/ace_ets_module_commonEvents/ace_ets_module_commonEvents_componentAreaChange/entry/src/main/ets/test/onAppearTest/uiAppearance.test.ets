@@ -57,14 +57,14 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       console.info("uiAppearanceALWAYS_DARK after each called");
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_testuiAppearanceALWAYS_DARK0001
-    * @tc.name       : testuiAppearanceALWAYS_DARK0001
-    * @tc.desc       : test
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testuiAppearanceALWAYS_DARK0001
+     * @tc.number SUB_ARKUI_testuiAppearanceALWAYS_DARK0001
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testuiAppearanceALWAYS_DARK0001', Level.LEVEL0, async (done: Function) => {
       console.info('uiAppearanceALWAYS_DARK testuiAppearanceALWAYS_DARK0001 START');
       await CommonFunc.sleep(2000);
@@ -86,14 +86,14 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       }
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_testuiAppearanceALWAYS_LIGHT0001
-    * @tc.name       : testuiAppearanceALWAYS_LIGHT0001
-    * @tc.desc       : test
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testuiAppearanceALWAYS_LIGHT0001
+     * @tc.number SUB_ARKUI_testuiAppearanceALWAYS_LIGHT0001
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testuiAppearanceALWAYS_LIGHT0001', Level.LEVEL0, async (done: Function) => {
       console.info('uiAppearanceALWAYS_LIGHT testuiAppearanceALWAYS_LIGHT0001 START');
       await CommonFunc.sleep(2000);

@@ -61,12 +61,12 @@ export default function InteractionEventBindingInfoTest() {
     });
 
     /**
+     * @tc.name   InteractionEventBindingInfoTest_0100
      * @tc.number InteractionEventBindingInfoTest_0100
-     * @tc.name Test the api of InteractionEventBindingInfo
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('InteractionEventBindingInfoTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('InteractionEventBindingInfoTest_0100 START');
@@ -84,12 +84,12 @@ export default function InteractionEventBindingInfoTest() {
     });
 
     /**
+     * @tc.name   InteractionEventBindingInfoTest_0200
      * @tc.number InteractionEventBindingInfoTest_0200
-     * @tc.name Test the api of InteractionEventBindingInfo
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('InteractionEventBindingInfoTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('InteractionEventBindingInfoTest_0200 START');
@@ -107,12 +107,12 @@ export default function InteractionEventBindingInfoTest() {
     });
 
     /**
+     * @tc.name   InteractionEventBindingInfoTest_0300
      * @tc.number InteractionEventBindingInfoTest_0300
-     * @tc.name Test the api of InteractionEventBindingInfo
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('InteractionEventBindingInfoTest_0300', Level.LEVEL0, async (done: Function) => {
       console.info('InteractionEventBindingInfoTest_0300 START');
@@ -130,12 +130,12 @@ export default function InteractionEventBindingInfoTest() {
     });
 
     /**
+     * @tc.name   InteractionEventBindingInfoTest_0400
      * @tc.number InteractionEventBindingInfoTest_0400
-     * @tc.name Test the api of InteractionEventBindingInfo
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('InteractionEventBindingInfoTest_0400', Level.LEVEL0, async (done: Function) => {
       console.info('InteractionEventBindingInfoTest_0400 START');
@@ -153,12 +153,12 @@ export default function InteractionEventBindingInfoTest() {
     });
 
     /**
+     * @tc.name   InteractionEventBindingInfoTest_0500
      * @tc.number InteractionEventBindingInfoTest_0500
-     * @tc.name Test the api of InteractionEventBindingInfo
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('InteractionEventBindingInfoTest_0500', Level.LEVEL0, async (done: Function) => {
       console.info('InteractionEventBindingInfoTest_0500 START');
@@ -176,12 +176,12 @@ export default function InteractionEventBindingInfoTest() {
     });
 
     /**
+     * @tc.name   InteractionEventBindingInfoTest_0600
      * @tc.number InteractionEventBindingInfoTest_0600
-     * @tc.name Test the api of InteractionEventBindingInfo
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('InteractionEventBindingInfoTest_0600', Level.LEVEL0, async (done: Function) => {
       console.info('InteractionEventBindingInfoTest_0600 START');
@@ -199,12 +199,12 @@ export default function InteractionEventBindingInfoTest() {
     });
 
     /**
+     * @tc.name   InteractionEventBindingInfoTest_0700
      * @tc.number InteractionEventBindingInfoTest_0700
-     * @tc.name Test the api of InteractionEventBindingInfo
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('InteractionEventBindingInfoTest_0700', Level.LEVEL0, async (done: Function) => {
       console.info('InteractionEventBindingInfoTest_0700 START');
@@ -222,12 +222,12 @@ export default function InteractionEventBindingInfoTest() {
     });
 
     /**
+     * @tc.name   InteractionEventBindingInfoTest_0800
      * @tc.number InteractionEventBindingInfoTest_0800
-     * @tc.name Test the api of InteractionEventBindingInfo
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('InteractionEventBindingInfoTest_0800', Level.LEVEL0, async (done: Function) => {
       console.info('InteractionEventBindingInfoTest_0800 START');

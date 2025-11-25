@@ -59,9 +59,12 @@ export default function LazyForEachSingleString() {
     });
 
     /**
+     * @tc.name   LazyForEachSingleString_001
      * @tc.number LazyForEachSingleString_001
-     * @tc.name LazyForEachSingleString_001
-     * @tc.desc Test LazyForEachSingleString
+     * @tc.desc   Test LazyForEachSingleString
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LazyForEachSingleString_001', Level.LEVEL0, async (done: Function) => {
       console.info('[LazyForEachSingleString_001] START');

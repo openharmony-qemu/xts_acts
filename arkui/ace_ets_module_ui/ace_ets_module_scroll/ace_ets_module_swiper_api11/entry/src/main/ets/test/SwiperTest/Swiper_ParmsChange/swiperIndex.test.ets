@@ -67,6 +67,14 @@ export default function swiperIndex() {
     //     * @tc.name      Swiper_IndexChanged_SetIndexValue
     //     * @tc.desc      Set swiper's  index normal value.
     //     */
+    /**
+     * @tc.name   SUB_ACE_SWIPER_INDEXCHANGED_0100
+     * @tc.number SUB_ACE_SWIPER_INDEXCHANGED_0100
+     * @tc.desc   SUB_ACE_SWIPER_INDEXCHANGED_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     //    it('SUB_ACE_SWIPER_INDEXCHANGED_0100', Level.LEVEL1, async  (done:Function)=> {
     //      console.info('new SUB_ACE_SWIPER_INDEXCHANGED_0100 START');
     //      globalThis.value.message.notify({name:'swiperIndex', value: 3});
@@ -115,6 +123,14 @@ export default function swiperIndex() {
     //     * @tc.name      Swiper_IndexChanged_SetIndexValue
     //     * @tc.desc      Set swiper's  index  value ' -1 '.
     //     */
+    /**
+     * @tc.name   SUB_ACE_SWIPER_INDEXCHANGED_0200
+     * @tc.number SUB_ACE_SWIPER_INDEXCHANGED_0200
+     * @tc.desc   SUB_ACE_SWIPER_INDEXCHANGED_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     //    it('SUB_ACE_SWIPER_INDEXCHANGED_0200', Level.LEVEL1, async  (done:Function)=> {
     //      console.info('new SUB_ACE_SWIPER_INDEXCHANGED_0200 START');
     //      globalThis.value.message.notify({name:'swiperIndex', value: -1});
@@ -165,6 +181,14 @@ export default function swiperIndex() {
     //     * @tc.name      Swiper_IndexChanged_SetIndexValue
     //     * @tc.desc      Set swiper's  index  value ' 11 '.
     //     */
+    /**
+     * @tc.name   SUB_ACE_SWIPER_INDEXCHANGED_0300
+     * @tc.number SUB_ACE_SWIPER_INDEXCHANGED_0300
+     * @tc.desc   SUB_ACE_SWIPER_INDEXCHANGED_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     //    it('SUB_ACE_SWIPER_INDEXCHANGED_0300', Level.LEVEL1, async  (done:Function)=> {
     //      console.info('new SUB_ACE_SWIPER_INDEXCHANGED_0300 START');
     //      globalThis.value.message.notify({name:'swiperIndex', value: 11});

@@ -42,12 +42,12 @@ export default function menuItemJsunit() {
 
 
     /**
+     * @tc.name   menuItemJsunit01
      * @tc.number menuItemJsunit01
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('menuItemJsunit01', Level.LEVEL0, async (done: Function) => {
       console.info('[menuItemJsunit01] START');
@@ -61,12 +61,12 @@ export default function menuItemJsunit() {
     });
 
     /**
+     * @tc.name   menuItemJsunit02
      * @tc.number menuItemJsunit02
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('menuItemJsunit02', Level.LEVEL0, async (done: Function) => {
       console.info('[menuItemJsunit02] START');
@@ -80,12 +80,12 @@ export default function menuItemJsunit() {
     });
 
     /**
+     * @tc.name   menuItemJsunit03
      * @tc.number menuItemJsunit03
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('menuItemJsunit03', Level.LEVEL0, async (done: Function) => {
       console.info('[menuItemJsunit03] START');
@@ -99,12 +99,12 @@ export default function menuItemJsunit() {
     });
 
     /**
+     * @tc.name   menuItemJsunit04
      * @tc.number menuItemJsunit04
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('menuItemJsunit04', Level.LEVEL0, async (done: Function) => {
       console.info('[menuItemJsunit04] START');
@@ -118,12 +118,12 @@ export default function menuItemJsunit() {
     });
 
     /**
+     * @tc.name   menuItemJsunit05
      * @tc.number menuItemJsunit05
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('menuItemJsunit05', Level.LEVEL0, async (done: Function) => {
       console.info('[menuItemJsunit05] START');

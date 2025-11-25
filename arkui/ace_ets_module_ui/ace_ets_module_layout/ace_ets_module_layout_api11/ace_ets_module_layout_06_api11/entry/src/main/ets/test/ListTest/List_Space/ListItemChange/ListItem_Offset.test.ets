@@ -65,9 +65,12 @@ export default function listItem_Offset() {
     });
 
     /**
+     * @tc.name   testListItemOffset
      * @tc.number SUB_ACE_LIST_LISTITEM_OFFSET_TEST_0100
-     * @tc.name testListItemOffset
-     * @tc.desc ListItem subcomponent binding offset property
+     * @tc.desc   ListItem subcomponent binding offset property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListItemOffset',  Level.LEVEL0, async (done: Function) => {
       console.info('new testListItemOffset START');

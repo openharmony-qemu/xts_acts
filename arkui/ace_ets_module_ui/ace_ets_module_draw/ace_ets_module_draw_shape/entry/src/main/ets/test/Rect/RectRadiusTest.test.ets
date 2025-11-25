@@ -45,12 +45,12 @@ export default function RectRadiusTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testRectRadiusTest_0010
-     * @tc.name: testRectRadiusTest_0010
-     * @tc.desc: RectAPI 
-     * @tc.level: Level 0
-     * @tc.type : Rect
-     * @tc.size : RectTest
+     * @tc.name   testRectRadiusTest_0010
+     * @tc.number SUB_ARKUI_API_testRectRadiusTest_0010
+     * @tc.desc   RectAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRectRadiusTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('[testRectRadiusTest_0010] START');
@@ -70,12 +70,12 @@ export default function RectRadiusTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testRectRadiusTest_0020
-     * @tc.name: testRectRadiusTest_0020
-     * @tc.desc: RectAPI 
-     * @tc.level: Level 0
-     * @tc.type : Rect
-     * @tc.size : RectTest
+     * @tc.name   testRectRadiusTest_0020
+     * @tc.number SUB_ARKUI_API_testRectRadiusTest_0020
+     * @tc.desc   RectAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRectRadiusTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('[testRectRadiusTest_0020] START');

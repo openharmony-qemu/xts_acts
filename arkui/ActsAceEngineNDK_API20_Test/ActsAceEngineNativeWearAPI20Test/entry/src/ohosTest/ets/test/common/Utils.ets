@@ -399,6 +399,14 @@ export default class Utils {
   }
 
   static async keydo(name: string, type: number, key: number, ndkfunction: Function) {
+    /**
+     * @tc.name   name
+     * @tc.number name
+     * @tc.desc   name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
+     */
     it(name,type,async (done: Function) => {
       try {
         console.info(`====>${name} start<====`);

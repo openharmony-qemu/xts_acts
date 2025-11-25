@@ -39,9 +39,12 @@ export default function settingUiJsunit() {
     console.log("************* settings Test start*************");
 
     /**
-     * @tc.number: settings_uri_test_static_static_001
-     * @tc.name: settings_uri_test_static_static_001
-     * @tc.desc: check settings uri
+     * @tc.name   settings_uri_test_static_static_001
+     * @tc.number settings_uri_test_static_static_001
+     * @tc.desc   check settings uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_uri_test_static_static_001',  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let name = 'settings.screen.test';
@@ -54,9 +57,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: ssettings_uri_test_static_static_002
-     * @tc.name: settings_uri_test_static_static_002
-     * @tc.desc: check settings uri
+     * @tc.name   settings_uri_test_static_static_002
+     * @tc.number ssettings_uri_test_static_static_002
+     * @tc.desc   check settings uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_uri_test_static_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let name = '';
@@ -67,9 +73,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_uri_test_static_static_004
-     * @tc.name: settings_uri_test_static_static_004
-     * @tc.desc: check settings value
+     * @tc.name   settings_uri_test_static_static_004
+     * @tc.number settings_uri_test_static_static_004
+     * @tc.desc   check settings value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_uri_test_static_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let name = 'settings.screen.brightness';
@@ -80,9 +89,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_005
-     * @tc.name: settings_get_value_static_005
-     * @tc.desc: check getValueSync value
+     * @tc.name   settings_get_value_static_005
+     * @tc.number settings_get_value_static_005
+     * @tc.desc   check getValueSync value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_005',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let name = 'settings.screen.brightness20';
@@ -93,9 +105,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_119
-     * @tc.name: settings_get_value_static_119
-     * @tc.desc: check getValueSync value
+     * @tc.name   settings_get_value_static_119
+     * @tc.number settings_get_value_static_119
+     * @tc.desc   check getValueSync value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_119',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let name = 'settings.screen.brightness119';//关键字
@@ -114,9 +129,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_033
-     * @tc.name: settings_get_value_static_033
-     * @tc.desc: check getValue value
+     * @tc.name   settings_get_value_static_033
+     * @tc.number settings_get_value_static_033
+     * @tc.desc   check getValue value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_033',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let uri = 'datashare:///com.ohos.settingsdata/entry/settingsdata/SETTINGSDATA?Proxy=true&key=';
@@ -137,9 +155,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_034
-     * @tc.name: settings_get_value_static_034
-     * @tc.desc: check getValue value
+     * @tc.name   settings_get_value_static_034
+     * @tc.number settings_get_value_static_034
+     * @tc.desc   check getValue value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_034',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let uri = 'datashare:///com.ohos.settingsdata/entry/settingsdata/SETTINGSDATA?Proxy=true&key=';
@@ -161,9 +182,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_set_value_127
-     * @tc.name: settings_set_value_127
-     * @tc.desc: check set value sync
+     * @tc.name   settings_set_value_127
+     * @tc.number settings_set_value_127
+     * @tc.desc   check set value sync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_set_value_127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let name = 'settings.screen.brightness127';//关键字
@@ -181,9 +205,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_035
-     * @tc.name: settings_get_value_static_035
-     * @tc.desc: check getValue value
+     * @tc.name   settings_get_value_static_035
+     * @tc.number settings_get_value_static_035
+     * @tc.desc   check getValue value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_035',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let name = 'settings.screen.brightness35';//关键字
@@ -213,9 +240,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_set_value_113
-     * @tc.name: settings_set_value_113
-     * @tc.desc: check setValueSync
+     * @tc.name   settings_set_value_113
+     * @tc.number settings_set_value_113
+     * @tc.desc   check setValueSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_set_value_113',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let name = 'settings.screen.brightness113';//关键字
@@ -240,9 +270,12 @@ export default function settingUiJsunit() {
 
 
     /**
-     * @tc.number: settings_get_value_static_037
-     * @tc.name: settings_get_value_static_037
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_037
+     * @tc.number settings_get_value_static_037
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_037',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str ="settings.date.date_format"
@@ -251,9 +284,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_038
-     * @tc.name: settings_get_value_static_038
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_038
+     * @tc.number settings_get_value_static_038
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_038',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str ="settings.date.time_format"
@@ -262,9 +298,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_039
-     * @tc.name: settings_get_value_static_039
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_039
+     * @tc.number settings_get_value_static_039
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_039',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str ="settings.date.auto_gain_time"
@@ -273,9 +312,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_040
-     * @tc.name: settings_get_value_static_040
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_040
+     * @tc.number settings_get_value_static_040
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_040',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str ="settings.date.auto_gain_time_zone"
@@ -284,9 +326,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_041
-     * @tc.name: settings_get_value_static_041
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_041
+     * @tc.number settings_get_value_static_041
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_041',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str ="font_scale"
@@ -295,9 +340,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_042
-     * @tc.name: settings_get_value_static_042
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_042
+     * @tc.number settings_get_value_static_042
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_042',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str ="settings.display.screen_brightness_status"
@@ -306,9 +354,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_043
-     * @tc.name: settings_get_value_static_043
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_043
+     * @tc.number settings_get_value_static_043
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_043',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str ="settings.display.auto_screen_brightness"
@@ -317,9 +368,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_044
-     * @tc.name: settings_get_value_static_044
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_044
+     * @tc.number settings_get_value_static_044
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_044',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let mode = 1
@@ -328,9 +382,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_045
-     * @tc.name: settings_get_value_static_045
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_045
+     * @tc.number settings_get_value_static_045
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_045',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let mode = 0
@@ -339,9 +396,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_046
-     * @tc.name: settings_get_value_static_046
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_046
+     * @tc.number settings_get_value_static_046
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_046',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str ="settings.display.screen_off_timeout"
@@ -350,9 +410,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_047
-     * @tc.name: settings_get_value_static_047
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_047
+     * @tc.number settings_get_value_static_047
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_047',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str ="settings.display.default_screen_rotation"
@@ -361,9 +424,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_048
-     * @tc.name: settings_get_value_static_048
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_048
+     * @tc.number settings_get_value_static_048
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_048',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str ="settings.display.animator_duration_scale"
@@ -372,9 +438,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_049
-     * @tc.name: settings_get_value_static_049
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_049
+     * @tc.number settings_get_value_static_049
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_049',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str ="settings.display.transition_animation_scale"
@@ -383,9 +452,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_050
-     * @tc.name: settings_get_value_static_050
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_050
+     * @tc.number settings_get_value_static_050
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_050',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str ="settings.display.window_animation_scale"
@@ -394,9 +466,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_051
-     * @tc.name: settings_get_value_static_051
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_051
+     * @tc.number settings_get_value_static_051
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_051',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str = "settings.display.display_inversion_status"
@@ -405,9 +480,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_052
-     * @tc.name: settings_get_value_static_052
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_052
+     * @tc.number settings_get_value_static_052
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_052',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str = "settings.general.setup_wizard_finished"
@@ -416,9 +494,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_053
-     * @tc.name: settings_get_value_static_053
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_053
+     * @tc.number settings_get_value_static_053
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_053',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str = "settings.general.end_button_action"
@@ -427,9 +508,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_054
-     * @tc.name: settings_get_value_static_054
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_054
+     * @tc.number settings_get_value_static_054
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_054',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str = "settings.general.airplane_mode_status"
@@ -438,9 +522,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_055
-     * @tc.name: settings_get_value_static_055
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_055
+     * @tc.number settings_get_value_static_055
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_055',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str = "settings.general.accelerometer_rotation_status"
@@ -449,9 +536,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_056
-     * @tc.name: settings_get_value_static_056
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_056
+     * @tc.number settings_get_value_static_056
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_056',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str = "settings.general.device_provision_status"
@@ -460,9 +550,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_057
-     * @tc.name: settings_get_value_static_057
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_057
+     * @tc.number settings_get_value_static_057
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_057',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str = "settings.general.hdc_status"
@@ -471,9 +564,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_058
-     * @tc.name: settings_get_value_static_058
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_058
+     * @tc.number settings_get_value_static_058
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_058',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str = "settings.general.boot_counting"
@@ -482,9 +578,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_059
-     * @tc.name: settings_get_value_static_059
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_059
+     * @tc.number settings_get_value_static_059
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_059',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str = "settings.general.contact_metadata_sync_status"
@@ -493,9 +592,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_060
-     * @tc.name: settings_get_value_static_060
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_060
+     * @tc.number settings_get_value_static_060
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_060',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str = "settings.general.development_settings_status"
@@ -504,9 +606,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_061
-     * @tc.name: settings_get_value_static_061
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_061
+     * @tc.number settings_get_value_static_061
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_061',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str = "settings.general.device_name"
@@ -515,9 +620,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_062
-     * @tc.name: settings_get_value_static_062
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_062
+     * @tc.number settings_get_value_static_062
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_062',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str = "settings.general.usb_storage_status"
@@ -526,9 +634,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_063
-     * @tc.name: settings_get_value_static_063
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_063
+     * @tc.number settings_get_value_static_063
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_063',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str = "settings.general.debugger_waiting"
@@ -537,9 +648,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_064
-     * @tc.name: settings_get_value_static_064
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_064
+     * @tc.number settings_get_value_static_064
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_064',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str = "settings.general.debug_app_package"
@@ -548,9 +662,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_065
-     * @tc.name: settings_get_value_static_065
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_065
+     * @tc.number settings_get_value_static_065
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_065',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str = "settings.general.accessibility_status"
@@ -559,9 +676,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_066
-     * @tc.name: settings_get_value_static_066
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_066
+     * @tc.number settings_get_value_static_066
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_066',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str = "settings.general.activated_accessibility_services"
@@ -570,9 +690,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_067
-     * @tc.name: settings_get_value_static_067
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_067
+     * @tc.number settings_get_value_static_067
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_067',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str = "settings.general.geolocation_origins_allowed"
@@ -581,9 +704,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_068
-     * @tc.name: settings_get_value_static_068
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_068
+     * @tc.number settings_get_value_static_068
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_068',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str = "settings.general.skip_use_hints"
@@ -592,9 +718,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_069
-     * @tc.name: settings_get_value_static_069
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_069
+     * @tc.number settings_get_value_static_069
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_069',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str = "settings.general.touch_exploration_status"
@@ -603,9 +732,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_070
-     * @tc.name: settings_get_value_static_070
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_070
+     * @tc.number settings_get_value_static_070
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_070',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str = "settings.input.default_input_method"
@@ -614,9 +746,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_071
-     * @tc.name: settings_get_value_static_071
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_071
+     * @tc.number settings_get_value_static_071
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_071',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> =>{
       let str = "settings.input.activated_input_method_submode"
@@ -626,9 +761,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_072
-     * @tc.name: settings_get_value_static_072
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_072
+     * @tc.number settings_get_value_static_072
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_072',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> =>{
       let str = "settings.input.activated_input_methods"
@@ -637,9 +775,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_073
-     * @tc.name: settings_get_value_static_073
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_073
+     * @tc.number settings_get_value_static_073
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_073',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> =>{
       let str = "settings.input.selector_visibility_for_input_method"
@@ -648,9 +789,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_074
-     * @tc.name: settings_get_value_static_074
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_074
+     * @tc.number settings_get_value_static_074
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_074',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> =>{
       let str = "settings.input.auto_caps_text_input"
@@ -659,9 +803,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_075
-     * @tc.name: settings_get_value_static_075
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_075
+     * @tc.number settings_get_value_static_075
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_075',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> =>{
       let str = "settings.input.auto_punctuate_text_input"
@@ -670,9 +817,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_076
-     * @tc.name: settings_get_value_static_076
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_076
+     * @tc.number settings_get_value_static_076
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_076',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> =>{
       let str = "settings.input.auto_replace_text_input"
@@ -681,9 +831,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_077
-     * @tc.name: settings_get_value_static_077
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_077
+     * @tc.number settings_get_value_static_077
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_077',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> =>{
       let str = "settings.input.show_password_text_input"
@@ -692,9 +845,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_078
-     * @tc.name: settings_get_value_static_078
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_078
+     * @tc.number settings_get_value_static_078
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_078',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> =>{
       let str = "settings.network.data_roaming_status"
@@ -703,9 +859,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_079
-     * @tc.name: settings_get_value_static_079
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_079
+     * @tc.number settings_get_value_static_079
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_079',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> =>{
       let str = "settings.network.http_proxy_cfg"
@@ -714,9 +873,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_080
-     * @tc.name: settings_get_value_static_080
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_080
+     * @tc.number settings_get_value_static_080
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_080',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> =>{
       let str = "settings.network.network_preference_usage"
@@ -725,9 +887,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_081
-     * @tc.name: settings_get_value_static_081
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_081
+     * @tc.number settings_get_value_static_081
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_081',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> =>{
       let str = "settings.phone.rtt_calling_status"
@@ -736,9 +901,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_082
-     * @tc.name: settings_get_value_static_082
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_082
+     * @tc.number settings_get_value_static_082
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_082',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> =>{
       let str = "settings.sound.vibrate_while_ringing"
@@ -747,9 +915,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_083
-     * @tc.name: settings_get_value_static_083
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_083
+     * @tc.number settings_get_value_static_083
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_083',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> =>{
       let str = "settings.sound.default_alarm_alert"
@@ -758,9 +929,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_084
-     * @tc.name: settings_get_value_static_084
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_084
+     * @tc.number settings_get_value_static_084
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_084',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> =>{
       let str = "settings.sound.dtmf_tone_type_while_dialing"
@@ -769,9 +943,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_085
-     * @tc.name: settings_get_value_static_085
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_085
+     * @tc.number settings_get_value_static_085
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_085',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> =>{
       let str = "settings.sound.dtmf_tone_while_dialing"
@@ -780,9 +957,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_086
-     * @tc.name: settings_get_value_static_086
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_086
+     * @tc.number settings_get_value_static_086
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_086',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> =>{
       let str = "settings.sound.haptic_feedback_status"
@@ -791,9 +971,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_087
-     * @tc.name: settings_get_value_static_087
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_087
+     * @tc.number settings_get_value_static_087
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_087',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> =>{
       let str = "settings.sound.affected_mode_ringer_streams"
@@ -802,9 +985,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_088
-     * @tc.name: settings_get_value_static_088
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_088
+     * @tc.number settings_get_value_static_088
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_088',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> =>{
       let str = "settings.sound.affected_mute_streams"
@@ -813,9 +999,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_089
-     * @tc.name: settings_get_value_static_089
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_089
+     * @tc.number settings_get_value_static_089
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_089',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> =>{
       let str = "settings.sound.default_notification_sound"
@@ -824,9 +1013,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_090
-     * @tc.name: settings_get_value_static_090
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_090
+     * @tc.number settings_get_value_static_090
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_090',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> =>{
       let str = "settings.sound.default_ringtone"
@@ -835,9 +1027,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_091
-     * @tc.name: settings_get_value_static_091
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_091
+     * @tc.number settings_get_value_static_091
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_091',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str ="settings.sound.sound_effects_status"
@@ -846,9 +1041,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_092
-     * @tc.name: settings_get_value_static_092
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_092
+     * @tc.number settings_get_value_static_092
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_092',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str ="settings.sound.vibrate_status"
@@ -857,9 +1055,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_093
-     * @tc.name: settings_get_value_static_093
-     * @tc.desc: check settings.TTS.DEFAULT_TTS_PITCH
+     * @tc.name   settings_get_value_static_093
+     * @tc.number settings_get_value_static_093
+     * @tc.desc   check settings.TTS.DEFAULT_TTS_PITCH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_093',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str ="settings.tts.default_tts_pitch"
@@ -868,9 +1069,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_094
-     * @tc.name: settings_get_value_static_094
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_094
+     * @tc.number settings_get_value_static_094
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_094',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str ="settings.tts.default_tts_rate"
@@ -879,9 +1083,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_095
-     * @tc.name: settings_get_value_static_095
-     * @tc.desc: check settings.TTS.DEFAULT_TTS_SYNTH
+     * @tc.name   settings_get_value_static_095
+     * @tc.number settings_get_value_static_095
+     * @tc.desc   check settings.TTS.DEFAULT_TTS_SYNTH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_095',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str ="settings.tts.default_tts_synth"
@@ -890,9 +1097,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_096
-     * @tc.name: settings_get_value_static_096
-     * @tc.desc: check settings.TTS.ENABLED_TTS_PLUGINS
+     * @tc.name   settings_get_value_static_096
+     * @tc.number settings_get_value_static_096
+     * @tc.desc   check settings.TTS.ENABLED_TTS_PLUGINS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_096',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str ="settings.tts.enabled_tts_plugins"
@@ -901,9 +1111,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_097
-     * @tc.name: settings_get_value_static_097
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_097
+     * @tc.number settings_get_value_static_097
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_097',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str ="settings.wireless.bluetooth_radio"
@@ -912,9 +1125,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_098
-     * @tc.name: settings_get_value_static_098
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_098
+     * @tc.number settings_get_value_static_098
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_098',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str ="settings.wireless.cell_radio"
@@ -923,9 +1139,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_099
-     * @tc.name: settings_get_value_static_099
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_099
+     * @tc.number settings_get_value_static_099
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_099',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str ="settings.wireless.nfc_radio"
@@ -934,9 +1153,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_100
-     * @tc.name: settings_get_value_static_100
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_100
+     * @tc.number settings_get_value_static_100
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_100',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str ="settings.wireless.airplane_mode_radios"
@@ -945,9 +1167,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_101
-     * @tc.name: settings_get_value_static_101
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_101
+     * @tc.number settings_get_value_static_101
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_101',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str ="settings.wireless.bluetooth_status"
@@ -956,9 +1181,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_102
-     * @tc.name: settings_get_value_static_102
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_102
+     * @tc.number settings_get_value_static_102
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_102',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str ="settings.wireless.bluetooth_discoverability_status"
@@ -967,9 +1195,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_103
-     * @tc.name: settings_get_value_static_103
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_103
+     * @tc.number settings_get_value_static_103
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_103',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str ="settings.wireless.bluetooth_discover_timeout"
@@ -978,9 +1209,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_104
-     * @tc.name: settings_get_value_static_104
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_104
+     * @tc.number settings_get_value_static_104
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_104',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str ="settings.wireless.wifi_dhcp_max_retry_count"
@@ -989,9 +1223,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_105
-     * @tc.name: settings_get_value_static_105
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_105
+     * @tc.number settings_get_value_static_105
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_105',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str ="settings.wireless.wifi_to_mobile_data_awake_timeout"
@@ -1000,9 +1237,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_106
-     * @tc.name: settings_get_value_static_106
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_106
+     * @tc.number settings_get_value_static_106
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_106',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str ="settings.wireless.wifi_status"
@@ -1011,9 +1251,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_107
-     * @tc.name: settings_get_value_static_107
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_107
+     * @tc.number settings_get_value_static_107
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_107',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str ="settings.wireless.wifi_watchdog_status"
@@ -1022,9 +1265,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_108
-     * @tc.name: settings_get_value_static_108
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_108
+     * @tc.number settings_get_value_static_108
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_108',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str ="settings.wireless.wifi_radio"
@@ -1033,9 +1279,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_109
-     * @tc.name: settings_get_value_static_109
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_109
+     * @tc.number settings_get_value_static_109
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_109',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str ="settings.wireless.owner_lockdown_wifi_cfg"
@@ -1044,9 +1293,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_110
-     * @tc.name: settings_get_value_static_110
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_110
+     * @tc.number settings_get_value_static_110
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_110',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str ="settings.wireless.owner_lockdown_wifi_cfg"
@@ -1055,9 +1307,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_113
-     * @tc.name: settings_get_value_static_113
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_113
+     * @tc.number settings_get_value_static_113
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_113',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> =>{
       try{console.info('test settings_get_value_static_113 start');
@@ -1077,9 +1332,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_114
-     * @tc.name: settings_get_value_static_114
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_114
+     * @tc.number settings_get_value_static_114
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_114',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> =>{
       try{
@@ -1103,9 +1361,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_115
-     * @tc.name: settings_get_value_static_115
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_115
+     * @tc.number settings_get_value_static_115
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_115',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try{
@@ -1124,9 +1385,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_116
-     * @tc.name: settings_get_value_static_116
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_116
+     * @tc.number settings_get_value_static_116
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_116',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       try{
@@ -1148,9 +1412,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_117
-     * @tc.name: settings_get_value_static_117
-     * @tc.desc: check settings get value
+     * @tc.name   settings_get_value_static_117
+     * @tc.number settings_get_value_static_117
+     * @tc.desc   check settings get value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> =>  {
       let name = 'settings.screen.brightness117';//关键字
@@ -1177,9 +1444,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_118
-     * @tc.name: settings_get_value_static_118
-     * @tc.desc: check registerKeyObserver
+     * @tc.name   settings_get_value_static_118
+     * @tc.number settings_get_value_static_118
+     * @tc.desc   check registerKeyObserver
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let name = 'settings.screen.brightness118';//关键字
@@ -1203,9 +1473,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_122
-     * @tc.name: settings_get_value_static_122
-     * @tc.desc: check unregisterKeyObserver
+     * @tc.name   settings_get_value_static_122
+     * @tc.number settings_get_value_static_122
+     * @tc.desc   check unregisterKeyObserver
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('settings_get_value_static_122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let name = 'settings.screen.brightness122';//关键字
@@ -1229,9 +1502,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: open_manager_settings_static_119
-     * @tc.name: open_manager_settings_static_119
-     * @tc.desc: check open manager
+     * @tc.name   open_manager_settings_static_119
+     * @tc.number open_manager_settings_static_119
+     * @tc.desc   check open manager
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('open_manager_settings_static_119', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let value = settings.openNetworkManagerSettings(abilityContext)
@@ -1250,9 +1526,12 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: open_manager_settings_static_120
-     * @tc.name: open_manager_settings_static_120
-     * @tc.desc: check open manager
+     * @tc.name   open_manager_settings_static_120
+     * @tc.number open_manager_settings_static_120
+     * @tc.desc   check open manager
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('open_manager_settings_static_120', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
         let value = settings.openNetworkManagerSettings(abilityContext)

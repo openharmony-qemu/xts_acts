@@ -45,10 +45,13 @@ export default function stepperItemDisabledJsunit() {
       console.info("stepperItemDisabled after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         teststepperItemDisabled0001
-     * @tc.desic         acestepperItemDisabledEtsTest0001
+    /**
+     * @tc.name   teststepperItemDisabled0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   teststepperItemDisabled0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('teststepperItemDisabled0001',  Level.LEVEL0, async (done: Function) => {
       console.info('stepperItemDisabled teststepperItemDisabled0001 START');

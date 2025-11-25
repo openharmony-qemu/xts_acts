@@ -42,12 +42,12 @@ export default function ImageSpanModifierTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ImageSpanModifierTest_0010
-     * @tc.name      ImageSpanModifierTest_0010
-     * @tc.desc      test ImageSpanModifier: width
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ImageSpanModifierTest_0010
+     * @tc.number SUB_ACE_ImageSpanModifierTest_0010
+     * @tc.desc   test ImageSpanModifier: width
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageSpanModifierTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('ImageSpanModifierTest_0010 START');
@@ -61,12 +61,12 @@ export default function ImageSpanModifierTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ImageSpanModifierTest_0020
-     * @tc.name      ImageSpanModifierTest_0020
-     * @tc.desc      test type of ImageSpanInstance: undefined
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ImageSpanModifierTest_0020
+     * @tc.number SUB_ACE_ImageSpanModifierTest_0020
+     * @tc.desc   test type of ImageSpanInstance: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageSpanModifierTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('ImageSpanModifierTest_0020 START');

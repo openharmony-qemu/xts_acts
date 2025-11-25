@@ -41,6 +41,14 @@ export default function ShapeResourceTest() {
       done();
     });
     
+    /**
+     * @tc.name   ShapeResourceTest_0100
+     * @tc.number ShapeResourceTest_0100
+     * @tc.desc   ShapeResourceTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ShapeResourceTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[ShapeResourceTest_0100] START');
       await CommonFunc.sleep(1000);

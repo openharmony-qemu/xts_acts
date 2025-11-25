@@ -47,14 +47,14 @@ export default function TextInputAutoCapitalizationModeModifierTest() {
       console.info("TextInputAutoCapitalizationModeModifierTest after each called");
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_TextInputAutoCapitalizationModeModifierTest_0010
-    * @tc.name         TextInputAutoCapitalizationModeModifierTest_0010
-    * @tc.desc         test TextInput autoCapitalizationMode Modifier: AutoCapitalizationMode.NONE
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        2
-    */
+    /**
+     * @tc.name   TextInputAutoCapitalizationModeModifierTest_0010
+     * @tc.number SUB_ACE_BASIC_ETS_API_TextInputAutoCapitalizationModeModifierTest_0010
+     * @tc.desc   test TextInput autoCapitalizationMode Modifier: AutoCapitalizationMode.NONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('TextInputAutoCapitalizationModeModifierTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('[TextInputAutoCapitalizationModeModifierTest_0010] START');
       let strJson = getInspectorByKey('TextInput_AutoCapitalizationModeModifier_NONE');
@@ -66,14 +66,14 @@ export default function TextInputAutoCapitalizationModeModifierTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_TextInputAutoCapitalizationModeModifierTest_0020
-    * @tc.name         TextInputAutoCapitalizationModeModifierTest_0020
-    * @tc.desc         test TextInput autoCapitalizationMode Modifier: AutoCapitalizationMode.WORDS
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        2
-    */
+    /**
+     * @tc.name   TextInputAutoCapitalizationModeModifierTest_0020
+     * @tc.number SUB_ACE_BASIC_ETS_API_TextInputAutoCapitalizationModeModifierTest_0020
+     * @tc.desc   test TextInput autoCapitalizationMode Modifier: AutoCapitalizationMode.WORDS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('TextInputAutoCapitalizationModeModifierTest_0020', Level.LEVEL2, async (done: Function) => {
       console.info('[TextInputAutoCapitalizationModeModifierTest_0020] START');
       let strJson = getInspectorByKey('TextInput_AutoCapitalizationModeModifier_WORDS');
@@ -85,14 +85,14 @@ export default function TextInputAutoCapitalizationModeModifierTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_TextInputAutoCapitalizationModeModifierTest_0030
-    * @tc.name         TextInputAutoCapitalizationModeModifierTest_0030
-    * @tc.desc         test TextInput autoCapitalizationMode Modifier: AutoCapitalizationMode.SENTENCES
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        2
-    */
+    /**
+     * @tc.name   TextInputAutoCapitalizationModeModifierTest_0030
+     * @tc.number SUB_ACE_BASIC_ETS_API_TextInputAutoCapitalizationModeModifierTest_0030
+     * @tc.desc   test TextInput autoCapitalizationMode Modifier: AutoCapitalizationMode.SENTENCES
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('TextInputAutoCapitalizationModeModifierTest_0030', Level.LEVEL2, async (done: Function) => {
       console.info('[TextInputAutoCapitalizationModeModifierTest_0030] START');
       let strJson = getInspectorByKey('TextInput_AutoCapitalizationModeModifier_SENTENCES');
@@ -104,14 +104,14 @@ export default function TextInputAutoCapitalizationModeModifierTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_TextInputAutoCapitalizationModeModifierTest_0040
-    * @tc.name         TextInputAutoCapitalizationModeModifierTest_0040
-    * @tc.desc         test TextInput autoCapitalizationMode Modifier: AutoCapitalizationMode.ALL_CHARACTERS
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        2
-    */
+    /**
+     * @tc.name   TextInputAutoCapitalizationModeModifierTest_0040
+     * @tc.number SUB_ACE_BASIC_ETS_API_TextInputAutoCapitalizationModeModifierTest_0040
+     * @tc.desc   test TextInput autoCapitalizationMode Modifier: AutoCapitalizationMode.ALL_CHARACTERS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('TextInputAutoCapitalizationModeModifierTest_0040', Level.LEVEL2, async (done: Function) => {
       console.info('[TextInputAutoCapitalizationModeModifierTest_0040] START');
       let strJson = getInspectorByKey('TextInput_AutoCapitalizationModeModifier_ALL_CHARACTERS');
@@ -123,14 +123,14 @@ export default function TextInputAutoCapitalizationModeModifierTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_TextInputAutoCapitalizationModeModifierTest_0050
-    * @tc.name         TextInputAutoCapitalizationModeModifierTest_0050
-    * @tc.desc         test TextInput autoCapitalizationMode Modifier: undefined
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        2
-    */
+    /**
+     * @tc.name   TextInputAutoCapitalizationModeModifierTest_0050
+     * @tc.number SUB_ACE_BASIC_ETS_API_TextInputAutoCapitalizationModeModifierTest_0050
+     * @tc.desc   test TextInput autoCapitalizationMode Modifier: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('TextInputAutoCapitalizationModeModifierTest_0050', Level.LEVEL2, async (done: Function) => {
       console.info('[TextInputAutoCapitalizationModeModifierTest_0050] START');
       let strJson = getInspectorByKey('TextInput_AutoCapitalizationModeModifier_undefined');
@@ -142,14 +142,14 @@ export default function TextInputAutoCapitalizationModeModifierTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_TextInputAutoCapitalizationModeModifierTest_0060
-    * @tc.name         TextInputAutoCapitalizationModeModifierTest_0060
-    * @tc.desc         test TextInput autoCapitalizationMode Modifier: 0
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        2
-    */
+    /**
+     * @tc.name   TextInputAutoCapitalizationModeModifierTest_0060
+     * @tc.number SUB_ACE_BASIC_ETS_API_TextInputAutoCapitalizationModeModifierTest_0060
+     * @tc.desc   test TextInput autoCapitalizationMode Modifier: 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('TextInputAutoCapitalizationModeModifierTest_0060', Level.LEVEL2, async (done: Function) => {
       console.info('[TextInputAutoCapitalizationModeModifierTest_0060] START');
       let strJson = getInspectorByKey('TextInput_AutoCapitalizationModeModifier_undefined');

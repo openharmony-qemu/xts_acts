@@ -26,39 +26,39 @@ export default function imageBlurTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_BLUR_0100
-     * @tc.name       : testImageBlur001
-     * @tc.desc       : testing blur for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageBlur001
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_BLUR_0100
+     * @tc.desc   testing blur for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageBlur001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageBlur001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_BLUR_0200
-     * @tc.name       : testImageBlur002
-     * @tc.desc       : testing blur for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageBlur002
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_BLUR_0200
+     * @tc.desc   testing blur for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageBlur002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageBlur002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_BLUR_0300
-     * @tc.name       : testImageBlur003
-     * @tc.desc       : testing blur for image with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageBlur003
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_BLUR_0300
+     * @tc.desc   testing blur for image with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageBlur003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageBlur003()).assertEqual(0)

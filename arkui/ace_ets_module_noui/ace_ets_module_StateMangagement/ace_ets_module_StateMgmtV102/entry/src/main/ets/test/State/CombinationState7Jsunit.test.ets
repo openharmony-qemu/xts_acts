@@ -55,14 +55,14 @@ export default function CombinationState7Jsunit() {
       done();
     });
 
-		/**
-		 * @tc.number    CombinationState7Jsunit_0100
-		 * @tc.name      CombinationState7Jsunit_0100
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   CombinationState7Jsunit_0100
+     * @tc.number CombinationState7Jsunit_0100
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('CombinationState7Jsunit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[CombinationState7Jsunit_0100] START');
       let strJson = getInspectorByKey('SubState_text1');
@@ -80,14 +80,14 @@ export default function CombinationState7Jsunit() {
       done();
     });
 
-		/**
-		 * @tc.number    CombinationState7Jsunit_0200
-		 * @tc.name      CombinationState7Jsunit_0200
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   CombinationState7Jsunit_0200
+     * @tc.number CombinationState7Jsunit_0200
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('CombinationState7Jsunit_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[CombinationState7Jsunit_0200] START');
       let strJson = getInspectorByKey('SubProp_text1');
@@ -105,14 +105,14 @@ export default function CombinationState7Jsunit() {
       done();
     });
 
-		/**
-		 * @tc.number    CombinationState7Jsunit_0300
-		 * @tc.name      CombinationState7Jsunit_0300
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   CombinationState7Jsunit_0300
+     * @tc.number CombinationState7Jsunit_0300
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('CombinationState7Jsunit_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[CombinationState7Jsunit_0300] START');
       let strJson = getInspectorByKey('SubProvide_text1');
@@ -130,14 +130,14 @@ export default function CombinationState7Jsunit() {
       done();
     });
 
-		/**
-		 * @tc.number    CombinationState7Jsunit_0400
-		 * @tc.name      CombinationState7Jsunit_0400
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   CombinationState7Jsunit_0400
+     * @tc.number CombinationState7Jsunit_0400
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('CombinationState7Jsunit_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[CombinationState7Jsunit_0400] START');
       let strJson = getInspectorByKey('SubLink_text1');

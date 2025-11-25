@@ -43,12 +43,12 @@ export default function onkeyEventDispatchTest8() {
     });
 
     /**
-     * @tc.number SUB_ACE_ACTION_EVEVENT_COMMEVENT_KEYEVENT_DISPATCH_0300
      * @tc.name   SUB_ACE_ACTION_EVEVENT_COMMEVENT_KEYEVENT_DISPATCH_0300
+     * @tc.number SUB_ACE_ACTION_EVEVENT_COMMEVENT_KEYEVENT_DISPATCH_0300
      * @tc.desc   test the dispatchKeyEvent  when  dispatch event through "Context().dispatchKeyEvent" with no exsit key
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_ACTION_EVEVENT_COMMEVENT_KEYEVENT_DISPATCH_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_ACTION_EVEVENT_COMMEVENT_KEYEVENT_DISPATCH_0300] START');

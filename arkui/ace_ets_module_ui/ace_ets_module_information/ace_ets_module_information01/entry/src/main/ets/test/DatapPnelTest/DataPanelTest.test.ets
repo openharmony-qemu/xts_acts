@@ -58,9 +58,12 @@ export default function DataPanelTest() {
     });
 
     /**
+     * @tc.name   testDataPanelGetInspectorByKey010
      * @tc.number SUB_ACE_BASIC_ETS_API_testDataPanelGetInspectorByKey010
-     * @tc.name testDataPanelGetInspectorByKey010
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDataPanelGetInspectorByKey010', Level.LEVEL0, async (done: Function) => {
       console.info('testGetInspectorByKey START');
@@ -83,9 +86,12 @@ export default function DataPanelTest() {
     });
 
     /**
+     * @tc.name   testDataPanelGetInspectorByKey020
      * @tc.number SUB_ACE_BASIC_ETS_API_testDataPanelGetInspectorByKey020
-     * @tc.name testDataPanelGetInspectorByKey020
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDataPanelGetInspectorByKey020', Level.LEVEL0, async (done: Function) => {
       console.info('testGetInspectorByKey START');
@@ -102,9 +108,12 @@ export default function DataPanelTest() {
     });
 
     /**
+     * @tc.name   testDataPanelGetInspectorByKey030
      * @tc.number SUB_ACE_BASIC_ETS_API_testDataPanelGetInspectorByKey030
-     * @tc.name testDataPanelGetInspectorByKey030
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDataPanelGetInspectorByKey030', Level.LEVEL0, async (done: Function) => {
       console.info('testGetInspectorByKey START');

@@ -65,12 +65,12 @@ export default function listItem_Margin() {
     });
 
     /**
+     * @tc.name   testListItemMargin
      * @tc.number SUB_ACE_LIST_LISTITEM_MARGIN_TEST_0100
-     * @tc.name testListItemMargin
-     * @tc.desc ListItem subcomponent binding margin property
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   ListItem subcomponent binding margin property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListItemMargin',  Level.LEVEL0, async (done: Function) => {
       console.info('new testListItemMargin START');

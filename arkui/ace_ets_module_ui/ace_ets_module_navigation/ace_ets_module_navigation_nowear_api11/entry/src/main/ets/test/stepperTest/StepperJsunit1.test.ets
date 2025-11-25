@@ -44,9 +44,12 @@ export default function stepperJsunit1() {
 
 
     /**
+     * @tc.name   testStepper010
      * @tc.number SUB_ACE_BASIC_ETS_API_1400
-     * @tc.name testStepper010
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStepper010',  Level.LEVEL0, async (done: Function) => {
       console.info('testStepper010 START');

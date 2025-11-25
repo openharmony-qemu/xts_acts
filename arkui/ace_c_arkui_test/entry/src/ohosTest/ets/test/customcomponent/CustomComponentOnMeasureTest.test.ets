@@ -26,14 +26,14 @@ export default function customComponentOnMeasureTest() {
       await Utils.pushPage(`customcomponent/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ONMEASURE_0100
-    * @tc.name       : testCustomComponentOnMeasure001
-    * @tc.desc       : test onMeasure event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCustomComponentOnMeasure001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ONMEASURE_0100
+     * @tc.desc   test onMeasure event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCustomComponentOnMeasure001', Level.LEVEL1, async (done: Function) => {
       expect(Utils.getComponentInfoByKey('OnMeasureTest').$attrs.backgroundColor).assertEqual('#FF00FF00')
       done()

@@ -60,14 +60,14 @@ export default function listEventTest() {
 
   describe('ListEventTest', () => {
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_LIST_ON_SCROLL_0003
-    * @tc.name       : testListOnScroll003
-    * @tc.desc       : test Scroll the mouse backwards
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListOnScroll003
+     * @tc.number SUB_ARKUI_CAPI_LIST_ON_SCROLL_0003
+     * @tc.desc   test Scroll the mouse backwards
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListOnScroll003', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`list/ListEmptyTest`)
       await Utils.sleep(2000)
@@ -87,14 +87,14 @@ export default function listEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_LIST_ON_SCROLL_0005
-    * @tc.name       : testListOnScroll005
-    * @tc.desc       : test Page flipping and scrolling
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListOnScroll005
+     * @tc.number SUB_ARKUI_CAPI_LIST_ON_SCROLL_0005
+     * @tc.desc   test Page flipping and scrolling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListOnScroll005', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`list/ListOnScrollTest`);
       {
@@ -121,14 +121,14 @@ export default function listEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_LIST_ON_SCROLL_0006
-    * @tc.name       : testListOnScroll006
-    * @tc.desc       : test Interrupt animation
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListOnScroll006
+     * @tc.number SUB_ARKUI_CAPI_LIST_ON_SCROLL_0006
+     * @tc.desc   test Interrupt animation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListOnScroll006', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`list/ListOnScrollTest`);
       await flingComponentV('list', true)
@@ -144,14 +144,14 @@ export default function listEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_LIST_ON_SCROLL_STOP_0001
-    * @tc.name       : testListOnScrollStop001
-    * @tc.desc       : test onScrollStop event not callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListOnScrollStop001
+     * @tc.number SUB_ARKUI_CAPI_LIST_ON_SCROLL_STOP_0001
+     * @tc.desc   test onScrollStop event not callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListOnScrollStop001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`list/ListOnScrollStopTest`);
       await Utils.clickComponent('btn')
@@ -160,14 +160,14 @@ export default function listEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_LIST_ON_SCROLL_START_0001
-    * @tc.name       : testListOnScrollStart001
-    * @tc.desc       : test onScrollStart event not callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListOnScrollStart001
+     * @tc.number SUB_ARKUI_CAPI_LIST_ON_SCROLL_START_0001
+     * @tc.desc   test onScrollStart event not callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListOnScrollStart001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`list/ListOnScrollStartTest`);
       await Utils.clickComponent('btn')
@@ -176,14 +176,14 @@ export default function listEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_LIST_ON_REACH_START_0001
-    * @tc.name       : testListOnReachStart001
-    * @tc.desc       : test onReachStart event not callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListOnReachStart001
+     * @tc.number SUB_ARKUI_CAPI_LIST_ON_REACH_START_0001
+     * @tc.desc   test onReachStart event not callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListOnReachStart001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`list/ListOnReachStartTest`);
       await Utils.clickComponent('btn')
@@ -192,14 +192,14 @@ export default function listEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_LIST_ON_REACH_END_0001
-    * @tc.name       : testListOnReachEnd001
-    * @tc.desc       : test onReachEndTest event not callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListOnReachEnd001
+     * @tc.number SUB_ARKUI_CAPI_LIST_ON_REACH_END_0001
+     * @tc.desc   test onReachEndTest event not callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListOnReachEnd001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`list/ListOnReachEndTest`);
       await Utils.clickComponent('btn')
@@ -208,14 +208,14 @@ export default function listEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_LIST_ON_WILL_DID_SCROLL_0003
-    * @tc.name       : testListOnWillDidScroll003
-    * @tc.desc       : test Scroll the mouse backwards
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListOnWillDidScroll003
+     * @tc.number SUB_ARKUI_CAPI_LIST_ON_WILL_DID_SCROLL_0003
+     * @tc.desc   test Scroll the mouse backwards
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListOnWillDidScroll003', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`list/ListEmptyTest`)
       await Utils.sleep(2000)
@@ -242,14 +242,14 @@ export default function listEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_LIST_ON_WILL_DID_SCROLL_0005
-    * @tc.name       : testListOnWillDidScroll005
-    * @tc.desc       : test Page flipping and scrolling
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListOnWillDidScroll005
+     * @tc.number SUB_ARKUI_CAPI_LIST_ON_WILL_DID_SCROLL_0005
+     * @tc.desc   test Page flipping and scrolling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListOnWillDidScroll005', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`list/ListOnWillDidScrollTest`);
       {
@@ -290,14 +290,14 @@ export default function listEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_LIST_ON_WILL_DID_SCROLL_0006
-    * @tc.name       : testListOnWillDidScroll006
-    * @tc.desc       : test Interrupt animation
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListOnWillDidScroll006
+     * @tc.number SUB_ARKUI_CAPI_LIST_ON_WILL_DID_SCROLL_0006
+     * @tc.desc   test Interrupt animation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListOnWillDidScroll006', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`list/ListOnWillDidScrollTest`);
       await flingComponentV('list', true)
@@ -323,14 +323,14 @@ export default function listEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_LIST_ON_WILL_SCROLL_0003
-    * @tc.name       : testListOnWillScroll003
-    * @tc.desc       : test Scroll the mouse backwards
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListOnWillScroll003
+     * @tc.number SUB_ARKUI_CAPI_LIST_ON_WILL_SCROLL_0003
+     * @tc.desc   test Scroll the mouse backwards
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListOnWillScroll003', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`list/ListOnWillScrollTest`);
       // Scroll the mouse backwards
@@ -350,14 +350,14 @@ export default function listEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_LIST_ON_WILL_SCROLL_0005
-    * @tc.name       : testListOnWillScroll005
-    * @tc.desc       : test Page flipping and scrolling
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListOnWillScroll005
+     * @tc.number SUB_ARKUI_CAPI_LIST_ON_WILL_SCROLL_0005
+     * @tc.desc   test Page flipping and scrolling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListOnWillScroll005', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`list/ListOnWillScrollTest`);
       {
@@ -389,14 +389,14 @@ export default function listEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_LIST_ON_WILL_SCROLL_0006
-    * @tc.name       : testListOnWillScroll006
-    * @tc.desc       : test Interrupt animation
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListOnWillScroll006
+     * @tc.number SUB_ARKUI_CAPI_LIST_ON_WILL_SCROLL_0006
+     * @tc.desc   test Interrupt animation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListOnWillScroll006', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`list/ListOnWillScrollTest`);
       await flingComponentV('list', true)
@@ -416,14 +416,14 @@ export default function listEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_LIST_ON_DID_SCROLL_0003
-    * @tc.name       : testListOnDidScroll003
-    * @tc.desc       : test Scroll the mouse backwards
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListOnDidScroll003
+     * @tc.number SUB_ARKUI_CAPI_LIST_ON_DID_SCROLL_0003
+     * @tc.desc   test Scroll the mouse backwards
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListOnDidScroll003', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`list/ListOnDidScrollTest`);
       // Scroll the mouse backwards
@@ -442,14 +442,14 @@ export default function listEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_LIST_ON_DID_SCROLL_0005
-    * @tc.name       : testListOnDidScroll005
-    * @tc.desc       : test Page flipping and scrolling
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListOnDidScroll005
+     * @tc.number SUB_ARKUI_CAPI_LIST_ON_DID_SCROLL_0005
+     * @tc.desc   test Page flipping and scrolling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListOnDidScroll005', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`list/ListOnDidScrollTest`);
       {
@@ -478,14 +478,14 @@ export default function listEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_LIST_ON_DID_SCROLL_0006
-    * @tc.name       : testListOnDidScroll006
-    * @tc.desc       : test Interrupt animation
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListOnDidScroll006
+     * @tc.number SUB_ARKUI_CAPI_LIST_ON_DID_SCROLL_0006
+     * @tc.desc   test Interrupt animation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListOnDidScroll006', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`list/ListOnDidScrollTest`);
       await flingComponentV('list', true)
@@ -503,14 +503,14 @@ export default function listEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_LIST_ON_SCROLL_FRAME_BEGIN_0004
-    * @tc.name       : testListOnScrollFrameBegin004
-    * @tc.desc       : test OnScrollFrameBegin event use scroll controller when upForward
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testListOnScrollFrameBegin004
+     * @tc.number SUB_ARKUI_CAPI_LIST_ON_SCROLL_FRAME_BEGIN_0004
+     * @tc.desc   test OnScrollFrameBegin event use scroll controller when upForward
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testListOnScrollFrameBegin004', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`list/ListOnScrollFrameBeginTest`);
       await Utils.clickComponent('btn')

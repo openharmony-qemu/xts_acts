@@ -26,65 +26,65 @@ export default function listStickyTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_STICKY_0100
-     * @tc.name       : testListSticky001
-     * @tc.desc       : testing sticky for list with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListSticky001
+     * @tc.number SUB_ARKUI_CAPI_LIST_STICKY_0100
+     * @tc.desc   testing sticky for list with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListSticky001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListSticky001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_STICKY_0200
-     * @tc.name       : testListSticky002
-     * @tc.desc       : testing sticky for list with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListSticky002
+     * @tc.number SUB_ARKUI_CAPI_LIST_STICKY_0200
+     * @tc.desc   testing sticky for list with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListSticky002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListSticky002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_STICKY_0300
-     * @tc.name       : testListSticky003
-     * @tc.desc       : testing sticky for list with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListSticky003
+     * @tc.number SUB_ARKUI_CAPI_LIST_STICKY_0300
+     * @tc.desc   testing sticky for list with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListSticky003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListSticky003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_STICKY_0400
-     * @tc.name       : testListSticky004
-     * @tc.desc       : testing sticky for list with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListSticky004
+     * @tc.number SUB_ARKUI_CAPI_LIST_STICKY_0400
+     * @tc.desc   testing sticky for list with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListSticky004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListSticky004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_STICKY_0500
-     * @tc.name       : testListSticky005
-     * @tc.desc       : testing sticky for list with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testListSticky005
+     * @tc.number SUB_ARKUI_CAPI_LIST_STICKY_0500
+     * @tc.desc   testing sticky for list with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListSticky005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListSticky005()).assertEqual(0)

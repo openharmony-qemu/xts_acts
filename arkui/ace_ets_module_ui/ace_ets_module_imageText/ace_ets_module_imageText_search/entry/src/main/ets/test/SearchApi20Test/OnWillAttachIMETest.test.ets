@@ -47,13 +47,13 @@ export default function OnWillAttachIMETest() {
       console.info("OnWillAttachIMETest after each called");
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ON_WILL_ATTACH_IME_ETS_API_0001
-    * @tc.name         OnWillAttachIMETest0001
-    * @tc.desc         test  Search onWillAttachIME callback
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   OnWillAttachIMETest0001
+     * @tc.number SUB_ACE_BASIC_ON_WILL_ATTACH_IME_ETS_API_0001
+     * @tc.desc   test  Search onWillAttachIME callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('OnWillAttachIMETest0001', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();
@@ -69,13 +69,13 @@ export default function OnWillAttachIMETest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ON_WILL_ATTACH_IME_ETS_API_0002
-    * @tc.name         OnWillAttachIMETest0002
-    * @tc.desc         test  TextInput onWillAttachIME callback
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   OnWillAttachIMETest0002
+     * @tc.number SUB_ACE_BASIC_ON_WILL_ATTACH_IME_ETS_API_0002
+     * @tc.desc   test  TextInput onWillAttachIME callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('OnWillAttachIMETest0002', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();

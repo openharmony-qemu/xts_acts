@@ -42,12 +42,12 @@ export default function Matrix2DMultiplyTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_Matrix2DMultiplyTest_0100
-     * @tc.name: Matrix2DMultiplyTest_0100
-     * @tc.desc: CanvasAPI 
-     * @tc.level: Level 2
-     * @tc.type : Canvas
-     * @tc.size : CanvasTest
+     * @tc.name   Matrix2DMultiplyTest_0100
+     * @tc.number SUB_ARKUI_API_Matrix2DMultiplyTest_0100
+     * @tc.desc   CanvasAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Matrix2DMultiplyTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[Matrix2DMultiplyTest_0100] START');

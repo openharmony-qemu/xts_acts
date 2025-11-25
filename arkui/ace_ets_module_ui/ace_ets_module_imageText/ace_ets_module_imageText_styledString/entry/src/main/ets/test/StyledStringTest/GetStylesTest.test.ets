@@ -45,12 +45,12 @@ export default function GetStylesTest() {
     });
 
     /**
-     * @tc.number getStyles_0100
      * @tc.name   getStyles_0100
+     * @tc.number getStyles_0100
      * @tc.desc   test getStyles
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getStyles_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('getStyles_0100 START');
@@ -72,12 +72,12 @@ export default function GetStylesTest() {
     });
 
     /**
-     * @tc.number getStyles_0200
      * @tc.name   getStyles_0200
+     * @tc.number getStyles_0200
      * @tc.desc   test getStyles
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getStyles_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('getStyles_0200 START');

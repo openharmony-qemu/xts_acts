@@ -26,78 +26,78 @@ export default function timePickerAccessibilityLevelTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TIMEPICKER_ACCESSIBILITYLEVEL_0100
-     * @tc.name       : testTimePickerAccessibilityLevel001
-     * @tc.desc       : testing accessibilityLevel for TimePicker with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTimePickerAccessibilityLevel001
+     * @tc.number SUB_ARKUI_CAPI_TIMEPICKER_ACCESSIBILITYLEVEL_0100
+     * @tc.desc   testing accessibilityLevel for TimePicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimePickerAccessibilityLevel001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTimePickerAccessibilityLevel001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TIMEPICKER_ACCESSIBILITYLEVEL_0200
-     * @tc.name       : testTimePickerAccessibilityLevel002
-     * @tc.desc       : testing accessibilityLevel for TimePicker with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTimePickerAccessibilityLevel002
+     * @tc.number SUB_ARKUI_CAPI_TIMEPICKER_ACCESSIBILITYLEVEL_0200
+     * @tc.desc   testing accessibilityLevel for TimePicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimePickerAccessibilityLevel002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTimePickerAccessibilityLevel002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TIMEPICKER_ACCESSIBILITYLEVEL_0300
-     * @tc.name       : testTimePickerAccessibilityLevel003
-     * @tc.desc       : testing accessibilityLevel for TimePicker with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTimePickerAccessibilityLevel003
+     * @tc.number SUB_ARKUI_CAPI_TIMEPICKER_ACCESSIBILITYLEVEL_0300
+     * @tc.desc   testing accessibilityLevel for TimePicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimePickerAccessibilityLevel003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTimePickerAccessibilityLevel003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TIMEPICKER_ACCESSIBILITYLEVEL_0400
-     * @tc.name       : testTimePickerAccessibilityLevel004
-     * @tc.desc       : testing accessibilityLevel for TimePicker with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTimePickerAccessibilityLevel004
+     * @tc.number SUB_ARKUI_CAPI_TIMEPICKER_ACCESSIBILITYLEVEL_0400
+     * @tc.desc   testing accessibilityLevel for TimePicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimePickerAccessibilityLevel004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTimePickerAccessibilityLevel004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TIMEPICKER_ACCESSIBILITYLEVEL_0500
-     * @tc.name       : testTimePickerAccessibilityLevel005
-     * @tc.desc       : testing accessibilityLevel for TimePicker with alnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testTimePickerAccessibilityLevel005
+     * @tc.number SUB_ARKUI_CAPI_TIMEPICKER_ACCESSIBILITYLEVEL_0500
+     * @tc.desc   testing accessibilityLevel for TimePicker with alnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimePickerAccessibilityLevel005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTimePickerAccessibilityLevel005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TIMEPICKER_ACCESSIBILITYLEVEL_0600
-     * @tc.name       : testTimePickerAccessibilityLevel006
-     * @tc.desc       : testing accessibilityLevel for TimePicker with alnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testTimePickerAccessibilityLevel006
+     * @tc.number SUB_ARKUI_CAPI_TIMEPICKER_ACCESSIBILITYLEVEL_0600
+     * @tc.desc   testing accessibilityLevel for TimePicker with alnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimePickerAccessibilityLevel006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTimePickerAccessibilityLevel006()).assertEqual(0)

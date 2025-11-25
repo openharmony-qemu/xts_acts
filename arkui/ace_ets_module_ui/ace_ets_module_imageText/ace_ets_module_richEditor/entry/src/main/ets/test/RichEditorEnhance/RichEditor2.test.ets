@@ -47,12 +47,12 @@ export default function RichEditor2() {
       console.info("RichEditor2 after each called");
     });
     /**
-     * @tc.number RichEditor2_0100
      * @tc.name   RichEditor2_0100
+     * @tc.number RichEditor2_0100
      * @tc.desc   Test custom keyboard avoidance.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RichEditor2_0100',  Level.LEVEL0, async (done: Function) => {
       // Test stop

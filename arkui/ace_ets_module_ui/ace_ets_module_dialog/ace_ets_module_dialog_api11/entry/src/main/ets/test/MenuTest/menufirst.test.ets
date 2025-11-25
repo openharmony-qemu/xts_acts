@@ -47,10 +47,13 @@ export default function menuTest() {
       done()
     });
 
-   /**
+    /**
+     * @tc.name   ArkUX_Stage_Menu_EnableArrow_0100
      * @tc.number ArkUX_Stage_Menu_EnableArrow_0100
-     * @tc.name Tests whether the directional menu arrow is displayed
-     * @tc.desc Tests whether the directional menu arrow is displayed
+     * @tc.desc   Tests whether the directional menu arrow is displayed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUX_Stage_Menu_EnableArrow_0100', Level.LEVEL2, async () => {
       let obj: ESObject = JSON.parse(getInspectorByKey("menu"))
@@ -59,9 +62,12 @@ export default function menuTest() {
     })
 
     /**
+     * @tc.name   ArkUX_Stage_Menu_ArrowOffset_0100
      * @tc.number ArkUX_Stage_Menu_ArrowOffset_0100
-     * @tc.name Test directional menu arrow shows location distance
-     * @tc.desc Test directional menu arrow shows location distance
+     * @tc.desc   Test directional menu arrow shows location distance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUX_Stage_Menu_ArrowOffset_0100', Level.LEVEL2, async () => {
       let obj: ESObject = JSON.parse(getInspectorByKey("menu"))

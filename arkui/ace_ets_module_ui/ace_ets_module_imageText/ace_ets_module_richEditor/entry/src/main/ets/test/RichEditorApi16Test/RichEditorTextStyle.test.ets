@@ -46,14 +46,13 @@ export default function RichEditorTextStyle() {
       console.info("RichEditorTextStyle after each called");
     });
 
-    /*
-    * @tc.number       RichEditorTextStyle0001
-    * @tc.name         RichEditorTextStyle0001
-    * @tc.desc         The halfLeading variable is added to the RichEditorTextStyle 
-    *                      and RichEditorTextStyleResult objects of the RichEditor component.
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   RichEditorTextStyle0001
+     * @tc.number RichEditorTextStyle0001
+     * @tc.desc   The halfLeading variable is added to the RichEditorTextStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RichEditorTextStyle0001', Level.LEVEL1, async (done: Function) => {
         let driver = Driver.create();
@@ -76,14 +75,13 @@ export default function RichEditorTextStyle() {
         done();
     });
 
-    /*
-    * @tc.number       RichEditorTextStyle0002
-    * @tc.name         RichEditorTextStyle0002
-    * @tc.desc        The halfLeading variable is added to the RichEditorTextStyle 
-    *                     and RichEditorTextStyleResult objects of the RichEditor component.
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   RichEditorTextStyle0002
+     * @tc.number RichEditorTextStyle0002
+     * @tc.desc   The halfLeading variable is added to the RichEditorTextStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RichEditorTextStyle0002', Level.LEVEL1, async (done: Function) => {
         let driver = Driver.create();
@@ -106,14 +104,13 @@ export default function RichEditorTextStyle() {
         done();
     });
 
-    /*
-    * @tc.number       RichEditorTextStyle0003
-    * @tc.name         RichEditorTextStyle0003
-    * @tc.desc        The halfLeading variable is added to the RichEditorTextStyle 
-    *                      and RichEditorTextStyleResult objects of the RichEditor component.
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   RichEditorTextStyle0003
+     * @tc.number RichEditorTextStyle0003
+     * @tc.desc   The halfLeading variable is added to the RichEditorTextStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RichEditorTextStyle0003', Level.LEVEL1, async (done: Function) => {
         let driver = Driver.create();
@@ -137,14 +134,13 @@ export default function RichEditorTextStyle() {
     });
 
 
-    /*
-    * @tc.number       RichEditorTextStyle0004
-    * @tc.name         RichEditorTextStyle0004
-    * @tc.desc         The halfLeading variable is added to the RichEditorTextStyle 
-    *                      and RichEditorTextStyleResult objects of the RichEditor component.
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   RichEditorTextStyle0004
+     * @tc.number RichEditorTextStyle0004
+     * @tc.desc   The halfLeading variable is added to the RichEditorTextStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RichEditorTextStyle0004', Level.LEVEL1, async (done: Function) => {
         let driver = Driver.create();
@@ -167,14 +163,13 @@ export default function RichEditorTextStyle() {
         done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0005
-    * @tc.name         RichEditorTextStyle0005
-    * @tc.desc        The halfLeading variable is added to the RichEditorTextStyle 
-    *                      and RichEditorTextStyleResult objects of the RichEditor component.
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   RichEditorTextStyle0005
+     * @tc.number SUB_ACE_BASIC_ETS_API_0005
+     * @tc.desc   The halfLeading variable is added to the RichEditorTextStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RichEditorTextStyle0005', Level.LEVEL1, async (done: Function) => {
         let driver = Driver.create();
@@ -197,14 +192,13 @@ export default function RichEditorTextStyle() {
         done();
     });
 
-    /*
-    * @tc.number       RichEditorTextStyle0006
-    * @tc.name         RichEditorTextStyle0006
-    * @tc.desc        The halfLeading variable is added to the RichEditorTextStyle 
-    *                      and RichEditorTextStyleResult objects of the RichEditor component.
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   RichEditorTextStyle0006
+     * @tc.number RichEditorTextStyle0006
+     * @tc.desc   The halfLeading variable is added to the RichEditorTextStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RichEditorTextStyle0006', Level.LEVEL1, async (done: Function) => {
         let driver = Driver.create();

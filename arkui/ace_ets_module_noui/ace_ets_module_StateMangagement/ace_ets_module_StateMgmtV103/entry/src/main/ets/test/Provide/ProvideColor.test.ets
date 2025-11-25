@@ -53,12 +53,14 @@ export default function ProvideColor() {
       }
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0290
-    * @tc.name  : ProvideColor_0100
-    * @tc.desc  : To test that the Provide decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   ProvideColor_0100
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0290
+     * @tc.desc   To test that the Provide decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ProvideColor_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ProvideColor_0100 START');
       let driver = await Driver.create()
@@ -74,12 +76,14 @@ export default function ProvideColor() {
       console.info('[ProvideColor_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0300
-    * @tc.name  : ProvideColor_0200
-    * @tc.desc  : To test that the Provide decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   ProvideColor_0200
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0300
+     * @tc.desc   To test that the Provide decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ProvideColor_0200', Level.LEVEL0, async (done: Function) => {
       console.info('ProvideColor_0100 START');
       let driver = await Driver.create()
@@ -95,12 +99,14 @@ export default function ProvideColor() {
       console.info('[ProvideColor_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0310
-    * @tc.name  : ProvideColor_0300
-    * @tc.desc  : To test that the Provide decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   ProvideColor_0300
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0310
+     * @tc.desc   To test that the Provide decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ProvideColor_0300', Level.LEVEL0, async (done: Function) => {
       console.info('ProvideColor_0100 START');
       let driver = await Driver.create()
@@ -116,12 +122,14 @@ export default function ProvideColor() {
       console.info('[ProvideColor_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0320
-    * @tc.name  : ProvideColor_0400
-    * @tc.desc  : To test that the Provide decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   ProvideColor_0400
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0320
+     * @tc.desc   To test that the Provide decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ProvideColor_0400', Level.LEVEL0, async (done: Function) => {
       console.info('ProvideColor_0100 START');
       let driver = await Driver.create()
@@ -137,12 +145,14 @@ export default function ProvideColor() {
       console.info('[ProvideColor_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0330
-    * @tc.name  : ProvideColor_0500
-    * @tc.desc  : To test that the Provide decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   ProvideColor_0500
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0330
+     * @tc.desc   To test that the Provide decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ProvideColor_0500', Level.LEVEL0, async (done: Function) => {
       console.info('ProvideColor_0100 START');
       let driver = await Driver.create()
@@ -158,12 +168,14 @@ export default function ProvideColor() {
       console.info('[ProvideColor_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0340
-    * @tc.name  : ProvideColor_0600
-    * @tc.desc  : To test that the Provide decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   ProvideColor_0600
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0340
+     * @tc.desc   To test that the Provide decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ProvideColor_0600', Level.LEVEL0, async (done: Function) => {
       console.info('ProvideColor_0100 START');
       let driver = await Driver.create()

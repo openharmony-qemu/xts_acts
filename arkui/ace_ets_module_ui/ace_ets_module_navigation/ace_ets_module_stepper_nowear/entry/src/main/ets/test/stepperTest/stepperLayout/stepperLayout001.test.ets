@@ -51,10 +51,13 @@ export default function stepperLayout001() {
       console.info("stepperLayout001 after each called");
     });
 
-    /*
-     * @tc.number       stepperLayout0010
-     * @tc.name         stepperLayout0010
-     * @tc.desc         stepperLayout0010
+    /**
+     * @tc.name   stepperLayout0010
+     * @tc.number stepperLayout0010
+     * @tc.desc   stepperLayout0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stepperLayout0010',  Level.LEVEL0, async (done: Function) => {
       console.info('stepperLayout0010 START');

@@ -49,10 +49,12 @@ export default function NavigationSymbolIcon() {
 
 
     /**
-     * @tc.number    NavigationSymbolIcon_0100
-     * @tc.name      NavigationSymbolIcon_0100
-     * @tc.desc      Test Navigation symbolIcon
-     * @tc.level     Level 2
+     * @tc.name   NavigationSymbolIcon_0100
+     * @tc.number NavigationSymbolIcon_0100
+     * @tc.desc   Test Navigation symbolIcon
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationSymbolIcon_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('NavigationSymbolIcon_0100 START');

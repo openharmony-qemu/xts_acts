@@ -21,10 +21,12 @@ export default function wantAgentTest() {
   describe('wantAgentTest', () => {
 
     /**
-     * @tc.number: SUB_AA_OpenHarmony_Context_0100
-     * @tc.name: callback form getWant system interface interception test
-     * @tc.desc: Test the third-party application call getWant will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_WantAgent_Manager_0100
+     * @tc.number SUB_AA_OpenHarmony_Context_0100
+     * @tc.desc   Test the third-party application call getWant will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_WantAgent_Manager_0100', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_WantAgent_Manager_0100';
@@ -40,10 +42,12 @@ export default function wantAgentTest() {
     })
 
     /**
-     * @tc.number: SUB_AA_OpenHarmony_Context_0100
-     * @tc.name: promise form getWant system interface interception test
-     * @tc.desc: Test the third-party application call getWant will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_QuickFix_Manager_0200
+     * @tc.number SUB_AA_OpenHarmony_Context_0100
+     * @tc.desc   Test the third-party application call getWant will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_QuickFix_Manager_0200', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_QuickFix_Manager_0200';

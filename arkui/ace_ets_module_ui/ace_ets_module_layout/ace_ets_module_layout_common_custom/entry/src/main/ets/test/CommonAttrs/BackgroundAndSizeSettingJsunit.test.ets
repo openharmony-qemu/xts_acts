@@ -46,12 +46,12 @@ export default function backgroundAndSizeSettingJsunit() {
     });
 
     /**
-     * @tc.number testBackgroundAndSizeSetting_0100
      * @tc.name   testBackgroundAndSizeSetting_0100
+     * @tc.number testBackgroundAndSizeSetting_0100
      * @tc.desc   test fontColor
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBackgroundAndSizeSetting_0100', Level.LEVEL1, async (done: Function) => {
       console.info('testBackgroundAndSizeSetting_0100 START');
@@ -65,12 +65,12 @@ export default function backgroundAndSizeSettingJsunit() {
     });
 
     /**
-     * @tc.number testBackgroundAndSizeSetting_0200
      * @tc.name   testBackgroundAndSizeSetting_0200
+     * @tc.number testBackgroundAndSizeSetting_0200
      * @tc.desc   test backgroundColor
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBackgroundAndSizeSetting_0200', Level.LEVEL1, async (done: Function) => {
       console.info('testBackgroundAndSizeSetting_0200 START');
@@ -99,12 +99,12 @@ export default function backgroundAndSizeSettingJsunit() {
     });
 
     /**
-     * @tc.number testBackgroundAndSizeSetting_0300
      * @tc.name   testBackgroundAndSizeSetting_0300
+     * @tc.number testBackgroundAndSizeSetting_0300
      * @tc.desc   test borderWidth
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBackgroundAndSizeSetting_0300', Level.LEVEL1, async (done: Function) => {
       console.info('testBackgroundAndSizeSetting_0300 START');
@@ -118,12 +118,12 @@ export default function backgroundAndSizeSettingJsunit() {
     });
 
     /**
-     * @tc.number testBackgroundAndSizeSetting_0400
      * @tc.name   testBackgroundAndSizeSetting_0400
+     * @tc.number testBackgroundAndSizeSetting_0400
      * @tc.desc   test width&height&padding&margin
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBackgroundAndSizeSetting_0400', Level.LEVEL1, async (done: Function) => {
       console.info('[testBackgroundAndSizeSetting_0400] START');
@@ -139,12 +139,12 @@ export default function backgroundAndSizeSettingJsunit() {
     });
 
     /**
-     * @tc.number testBackgroundAndSizeSetting_0500
      * @tc.name   testBackgroundAndSizeSetting_0500
+     * @tc.number testBackgroundAndSizeSetting_0500
      * @tc.desc   test width&height
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBackgroundAndSizeSetting_0500', Level.LEVEL1, async (done: Function) => {
       console.info('[testBackgroundAndSizeSetting_0500] START');
@@ -158,12 +158,12 @@ export default function backgroundAndSizeSettingJsunit() {
     });
 
     /**
-     * @tc.number testBackgroundAndSizeSetting_0600
      * @tc.name   testBackgroundAndSizeSetting_0600
+     * @tc.number testBackgroundAndSizeSetting_0600
      * @tc.desc   test width&height&padding&margin
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBackgroundAndSizeSetting_0600', Level.LEVEL1, async (done: Function) => {
       console.info('[testBackgroundAndSizeSetting_0600] START');
@@ -197,12 +197,12 @@ export default function backgroundAndSizeSettingJsunit() {
     });
 
     /**
-     * @tc.number testBackgroundAndSizeSetting_0700
      * @tc.name   testBackgroundAndSizeSetting_0700
+     * @tc.number testBackgroundAndSizeSetting_0700
      * @tc.desc   test width&height
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBackgroundAndSizeSetting_0700', Level.LEVEL1, async (done: Function) => {
       console.info('[testBackgroundAndSizeSetting_0700] START');
@@ -233,12 +233,12 @@ export default function backgroundAndSizeSettingJsunit() {
     });
 
     /**
-     * @tc.number testBackgroundAndSizeSetting_0800
      * @tc.name   testBackgroundAndSizeSetting_0800
+     * @tc.number testBackgroundAndSizeSetting_0800
      * @tc.desc   test layoutWeight
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBackgroundAndSizeSetting_0800', Level.LEVEL1, async (done: Function) => {
       console.info('[testBackgroundAndSizeSetting_0800] START');
@@ -251,12 +251,12 @@ export default function backgroundAndSizeSettingJsunit() {
     });
 
     /**
-     * @tc.number testBackgroundAndSizeSetting_0900
      * @tc.name   testBackgroundAndSizeSetting_0900
+     * @tc.number testBackgroundAndSizeSetting_0900
      * @tc.desc   test layoutWeight
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBackgroundAndSizeSetting_0900', Level.LEVEL1, async (done: Function) => {
       console.info('[testBackgroundAndSizeSetting_0900] START');

@@ -42,10 +42,12 @@ export default function navigationuxtest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Navigation_0100
-     * @tc.name      ArkUX_Stage_Navigation_0100
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   ArkUX_Stage_Navigation_0100
+     * @tc.number ArkUX_Stage_Navigation_0100
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Navigation_0100',  Level.LEVEL0, async  (done:Function) =>{
       console.info('ArkUX_Stage_Navigation_0100 START');

@@ -44,12 +44,12 @@ export default function checkboxGroupJsunit() {
     });
 
     /**
-     * @tc.number testCheckboxGroup_100
      * @tc.name   testCheckboxGroup_100
+     * @tc.number testCheckboxGroup_100
      * @tc.desc   test CheckBoxGroup
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckboxGroup_100', Level.LEVEL1, async (done: Function) => {
       console.info('[testCheckboxGroup_100] START');
@@ -62,12 +62,12 @@ export default function checkboxGroupJsunit() {
     });
 
     /**
-     * @tc.number testCheckboxGroup_200
      * @tc.name   testCheckboxGroup_200
+     * @tc.number testCheckboxGroup_200
      * @tc.desc   test CheckBoxGroup
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckboxGroup_200', Level.LEVEL1, async (done: Function) => {
       console.info('[testCheckboxGroup_200] START');
@@ -80,12 +80,12 @@ export default function checkboxGroupJsunit() {
     });
 
     /**
-     * @tc.number testCheckboxGroup_300
      * @tc.name   testCheckboxGroup_300
+     * @tc.number testCheckboxGroup_300
      * @tc.desc   test CheckBoxGroup
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckboxGroup_300', Level.LEVEL1, async (done: Function) => {
       console.info('[testCheckboxGroup_300] START');
@@ -98,12 +98,12 @@ export default function checkboxGroupJsunit() {
     });
 
     /**
-     * @tc.number testCheckboxGroup_400
      * @tc.name   testCheckboxGroup_400
+     * @tc.number testCheckboxGroup_400
      * @tc.desc   test CheckBoxGroup
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckboxGroup_400', Level.LEVEL1, async (done: Function) => {
       console.info('[testCheckboxGroup_400] START');
@@ -116,12 +116,12 @@ export default function checkboxGroupJsunit() {
     });
 
     /**
-     * @tc.number testCheckboxGroup_500
      * @tc.name   testCheckboxGroup_500
+     * @tc.number testCheckboxGroup_500
      * @tc.desc   test CheckBoxGroup
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckboxGroup_500', Level.LEVEL1, async (done: Function) => {
       console.info('[testCheckboxGroup_500] START');
@@ -134,12 +134,12 @@ export default function checkboxGroupJsunit() {
     });
 
     /**
-     * @tc.number testCheckboxGroup_600
      * @tc.name   testCheckboxGroup_600
+     * @tc.number testCheckboxGroup_600
      * @tc.desc   test CheckBoxGroup
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckboxGroup_600', Level.LEVEL1, async (done: Function) => {
       console.info('[testCheckboxGroup_600] START');

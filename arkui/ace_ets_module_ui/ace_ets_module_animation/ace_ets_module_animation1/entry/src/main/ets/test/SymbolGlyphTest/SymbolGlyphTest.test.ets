@@ -58,9 +58,12 @@ export default function SymbolGlyphTest() {
     });
 
     /**
+     * @tc.name   SymbolGlyphTest_001
      * @tc.number SymbolGlyphTest_001
-     * @tc.desc Return specified page by index value
-     * @tc.level Level 0
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SymbolGlyphTest_001", Level.LEVEL0, async (done: Function) => {
       console.info("[SymbolGlyphTest_001] START");
@@ -74,9 +77,12 @@ export default function SymbolGlyphTest() {
     });
 
     /**
+     * @tc.name   SymbolGlyphTest_002
      * @tc.number SymbolGlyphTest_002
-     * @tc.desc SymbolGlyphTest_002
-     * @tc.level Level 0
+     * @tc.desc   SymbolGlyphTest_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SymbolGlyphTest_002", Level.LEVEL0, async (done: Function) => {
       console.info("[SymbolGlyphTest_002] START");
@@ -90,9 +96,12 @@ export default function SymbolGlyphTest() {
     });
 
     /**
+     * @tc.name   SymbolGlyphTest_003
      * @tc.number SymbolGlyphTest_003
-     * @tc.desc SymbolGlyphTest_003
-     * @tc.level Level 0
+     * @tc.desc   SymbolGlyphTest_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SymbolGlyphTest_003", Level.LEVEL0, async (done: Function) => {
       console.info("[SymbolGlyphTest_003] START");
@@ -106,9 +115,12 @@ export default function SymbolGlyphTest() {
     });
 
     /**
+     * @tc.name   SymbolGlyphTest_004
      * @tc.number SymbolGlyphTest_004
-     * @tc.desc SymbolGlyphTest_004
-     * @tc.level Level 0
+     * @tc.desc   SymbolGlyphTest_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SymbolGlyphTest_004", Level.LEVEL0, async (done: Function) => {
       console.info("[SymbolGlyphTest_004] START");

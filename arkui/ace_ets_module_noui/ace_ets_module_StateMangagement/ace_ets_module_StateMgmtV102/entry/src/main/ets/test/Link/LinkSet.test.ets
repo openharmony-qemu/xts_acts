@@ -54,14 +54,14 @@ export default function LinkSet() {
       }
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_LINKSET_0010
-    * @tc.name  : LinkSet_0100
-    * @tc.desc  : Test if the state decorator supports SET types.
-    * @tc.level : Level 2
-    * @tc.type : 
-    * @tc.size : 
-    */
+    /**
+     * @tc.name   LinkSet_0100
+     * @tc.number SUB_ACE_STATUSMANAGER_LINKSET_0010
+     * @tc.desc   Test if the state decorator supports SET types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LinkSet_0100', Level.LEVEL0, async (done: Function) => {
       console.info('LinkSet_0100 START');
       let driver: Driver = await Driver.create()
@@ -80,14 +80,14 @@ export default function LinkSet() {
       console.info('[LinkSet_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_LINKSET_0020
-    * @tc.name  : LinkSet_0200
-    * @tc.desc  : Test if the state decorator supports SET types.
-    * @tc.level : Level 2
-    * @tc.type : 
-    * @tc.size : 
-    */
+    /**
+     * @tc.name   LinkSet_0200
+     * @tc.number SUB_ACE_STATUSMANAGER_LINKSET_0020
+     * @tc.desc   Test if the state decorator supports SET types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LinkSet_0200', Level.LEVEL0, async (done: Function) => {
       console.info('LinkSet_0200 START');
       let driver: Driver = await Driver.create()
@@ -106,14 +106,14 @@ export default function LinkSet() {
       console.info('[LinkSet_0200] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_LINKSET_0030
-    * @tc.name  : LinkSet_0300
-    * @tc.desc  : Test if the state decorator supports SET types.
-    * @tc.level : Level 2
-    * @tc.type : 
-    * @tc.size : 
-    */
+    /**
+     * @tc.name   LinkSet_0300
+     * @tc.number SUB_ACE_STATUSMANAGER_LINKSET_0030
+     * @tc.desc   Test if the state decorator supports SET types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LinkSet_0300', Level.LEVEL0, async (done: Function) => {
       console.info('LinkSet_0300 START');
       let driver: Driver = await Driver.create()

@@ -48,12 +48,12 @@ export default function MultiSegmentButtonV2PageTest() {
     });
 
     /**
+     * @tc.name   MultiSegmentButtonV2PageTest_001
      * @tc.number MultiSegmentButtonV2PageTest_001
-     * @tc.name MultiSegmentButtonV2PageTest_001
-     * @tc.desc Test MultiSegmentButtonV2 selectedIndexes
-     * @tc.size
-     * @tc.type
-     * @tc.level Level.LEVEL0
+     * @tc.desc   Test MultiSegmentButtonV2 selectedIndexes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiSegmentButtonV2PageTest_001', Level.LEVEL0, async (done: Function) => {
       console.log("[MultiSegmentButtonV2PageTest_001] START");
@@ -71,12 +71,12 @@ export default function MultiSegmentButtonV2PageTest() {
     })
 
     /**
+     * @tc.name   MultiSegmentButtonV2PageTest_002
      * @tc.number MultiSegmentButtonV2PageTest_002
-     * @tc.name MultiSegmentButtonV2PageTest_002
-     * @tc.desc Test MultiSegmentButtonV2 selectedIndexes
-     * @tc.size
-     * @tc.type
-     * @tc.level Level.LEVEL0
+     * @tc.desc   Test MultiSegmentButtonV2 selectedIndexes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiSegmentButtonV2PageTest_002', Level.LEVEL0, async (done: Function) => {
       console.log("[MultiSegmentButtonV2PageTest_002] START");
@@ -94,12 +94,12 @@ export default function MultiSegmentButtonV2PageTest() {
     })
 
     /**
+     * @tc.name   MultiSegmentButtonV2PageTest_003
      * @tc.number MultiSegmentButtonV2PageTest_003
-     * @tc.name MultiSegmentButtonV2PageTest_003
-     * @tc.desc Test MultiSegmentButtonV2 selectedIndexes
-     * @tc.size
-     * @tc.type
-     * @tc.level Level.LEVEL0
+     * @tc.desc   Test MultiSegmentButtonV2 selectedIndexes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiSegmentButtonV2PageTest_003', Level.LEVEL0, async (done: Function) => {
       console.log("[MultiSegmentButtonV2PageTest_003] START");
@@ -117,12 +117,12 @@ export default function MultiSegmentButtonV2PageTest() {
     })
 
     /**
+     * @tc.name   MultiSegmentButtonV2PageTest_004
      * @tc.number MultiSegmentButtonV2PageTest_004
-     * @tc.name MultiSegmentButtonV2PageTest_004
-     * @tc.desc Test MultiSegmentButtonV2 selectedIndexes
-     * @tc.size
-     * @tc.type
-     * @tc.level Level.LEVEL0
+     * @tc.desc   Test MultiSegmentButtonV2 selectedIndexes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiSegmentButtonV2PageTest_004', Level.LEVEL0, async (done: Function) => {
       console.log("[MultiSegmentButtonV2PageTest_004] START");
@@ -144,12 +144,12 @@ export default function MultiSegmentButtonV2PageTest() {
     })
 
     /**
+     * @tc.name   MultiSegmentButtonV2PageTest_005
      * @tc.number MultiSegmentButtonV2PageTest_005
-     * @tc.name MultiSegmentButtonV2PageTest_005
-     * @tc.desc Test MultiSegmentButtonV2 $selectedIndexes
-     * @tc.size
-     * @tc.type
-     * @tc.level Level.LEVEL0
+     * @tc.desc   Test MultiSegmentButtonV2 $selectedIndexes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiSegmentButtonV2PageTest_005', Level.LEVEL0, async (done: Function) => {
       console.log("[MultiSegmentButtonV2PageTest_005] START");
@@ -167,12 +167,12 @@ export default function MultiSegmentButtonV2PageTest() {
     })
 
     /**
+     * @tc.name   MultiSegmentButtonV2PageTest_006
      * @tc.number MultiSegmentButtonV2PageTest_006
-     * @tc.name MultiSegmentButtonV2PageTest_006
-     * @tc.desc Test MultiSegmentButtonV2 $selectedIndexes
-     * @tc.size
-     * @tc.type
-     * @tc.level Level.LEVEL0
+     * @tc.desc   Test MultiSegmentButtonV2 $selectedIndexes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiSegmentButtonV2PageTest_006', Level.LEVEL0, async (done: Function) => {
       console.log("[MultiSegmentButtonV2PageTest_006] START");
@@ -190,12 +190,12 @@ export default function MultiSegmentButtonV2PageTest() {
     })
 
     /**
+     * @tc.name   MultiSegmentButtonV2PageTest_007
      * @tc.number MultiSegmentButtonV2PageTest_007
-     * @tc.name MultiSegmentButtonV2PageTest_007
-     * @tc.desc Test MultiSegmentButtonV2 $selectedIndexes
-     * @tc.size
-     * @tc.type
-     * @tc.level Level.LEVEL0
+     * @tc.desc   Test MultiSegmentButtonV2 $selectedIndexes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiSegmentButtonV2PageTest_007', Level.LEVEL0, async (done: Function) => {
       console.log("[MultiSegmentButtonV2PageTest_007] START");
@@ -213,12 +213,12 @@ export default function MultiSegmentButtonV2PageTest() {
     })
 
     /**
+     * @tc.name   MultiSegmentButtonV2PageTest_008
      * @tc.number MultiSegmentButtonV2PageTest_008
-     * @tc.name MultiSegmentButtonV2PageTest_008
-     * @tc.desc Test MultiSegmentButtonV2 $selectedIndexes
-     * @tc.size
-     * @tc.type
-     * @tc.level Level.LEVEL0
+     * @tc.desc   Test MultiSegmentButtonV2 $selectedIndexes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiSegmentButtonV2PageTest_008', Level.LEVEL0, async (done: Function) => {
       console.log("[MultiSegmentButtonV2PageTest_008] START");
@@ -236,12 +236,12 @@ export default function MultiSegmentButtonV2PageTest() {
     })
 
     /**
+     * @tc.name   MultiSegmentButtonV2PageTest_009
      * @tc.number MultiSegmentButtonV2PageTest_009
-     * @tc.name MultiSegmentButtonV2PageTest_009
-     * @tc.desc Test MultiSegmentButtonV2 itemBackgroundColor
-     * @tc.size
-     * @tc.type
-     * @tc.level Level.LEVEL0
+     * @tc.desc   Test MultiSegmentButtonV2 itemBackgroundColor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiSegmentButtonV2PageTest_009', Level.LEVEL0, async (done: Function) => {
       console.log("[MultiSegmentButtonV2PageTest_009] START");
@@ -261,12 +261,12 @@ export default function MultiSegmentButtonV2PageTest() {
     })
 
     /**
+     * @tc.name   MultiSegmentButtonV2PageTest_010
      * @tc.number MultiSegmentButtonV2PageTest_010
-     * @tc.name MultiSegmentButtonV2PageTest_010
-     * @tc.desc Test MultiSegmentButtonV2 itemBackgroundEffect
-     * @tc.size
-     * @tc.type
-     * @tc.level Level.LEVEL0
+     * @tc.desc   Test MultiSegmentButtonV2 itemBackgroundEffect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiSegmentButtonV2PageTest_010', Level.LEVEL0, async (done: Function) => {
       console.log("[MultiSegmentButtonV2PageTest_010] START");
@@ -289,12 +289,12 @@ export default function MultiSegmentButtonV2PageTest() {
     })
 
     /**
+     * @tc.name   MultiSegmentButtonV2PageTest_011
      * @tc.number MultiSegmentButtonV2PageTest_011
-     * @tc.name MultiSegmentButtonV2PageTest_011
-     * @tc.desc Test MultiSegmentButtonV2 itemBackgroundBlurStyle
-     * @tc.size
-     * @tc.type
-     * @tc.level Level.LEVEL0
+     * @tc.desc   Test MultiSegmentButtonV2 itemBackgroundBlurStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiSegmentButtonV2PageTest_011', Level.LEVEL0, async (done: Function) => {
       console.log("[MultiSegmentButtonV2PageTest_011] START");
@@ -320,12 +320,12 @@ export default function MultiSegmentButtonV2PageTest() {
     })
 
     /**
+     * @tc.name   MultiSegmentButtonV2PageTest_012
      * @tc.number MultiSegmentButtonV2PageTest_012
-     * @tc.name MultiSegmentButtonV2PageTest_012
-     * @tc.desc Test MultiSegmentButtonV2 itemBackgroundBlurStyleOptions
-     * @tc.size
-     * @tc.type
-     * @tc.level Level.LEVEL0
+     * @tc.desc   Test MultiSegmentButtonV2 itemBackgroundBlurStyleOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiSegmentButtonV2PageTest_012', Level.LEVEL0, async (done: Function) => {
       console.log("[MultiSegmentButtonV2PageTest_012] START");
@@ -348,12 +348,12 @@ export default function MultiSegmentButtonV2PageTest() {
     })
 
     /**
+     * @tc.name   MultiSegmentButtonV2PageTest_015
      * @tc.number MultiSegmentButtonV2PageTest_015
-     * @tc.name MultiSegmentButtonV2PageTest_015
-     * @tc.desc Test MultiSegmentButtonV2 languageDirection
-     * @tc.size
-     * @tc.type
-     * @tc.level Level.LEVEL0
+     * @tc.desc   Test MultiSegmentButtonV2 languageDirection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiSegmentButtonV2PageTest_015', Level.LEVEL0, async (done: Function) => {
       console.log("[MultiSegmentButtonV2PageTest_022] START");
@@ -374,12 +374,12 @@ export default function MultiSegmentButtonV2PageTest() {
     })
 
     /**
+     * @tc.name   MultiSegmentButtonV2PageTest_016
      * @tc.number MultiSegmentButtonV2PageTest_016
-     * @tc.name MultiSegmentButtonV2PageTest_016
-     * @tc.desc Test MultiSegmentButtonV2 itemFontColor
-     * @tc.size
-     * @tc.type
-     * @tc.level Level.LEVEL0
+     * @tc.desc   Test MultiSegmentButtonV2 itemFontColor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiSegmentButtonV2PageTest_016', Level.LEVEL0, async (done: Function) => {
       console.log("[MultiSegmentButtonV2PageTest_016] START");
@@ -400,12 +400,12 @@ export default function MultiSegmentButtonV2PageTest() {
     })
 
     /**
+     * @tc.name   MultiSegmentButtonV2PageTest_017
      * @tc.number MultiSegmentButtonV2PageTest_017
-     * @tc.name MultiSegmentButtonV2PageTest_017
-     * @tc.desc Test MultiSegmentButtonV2 itemFontSize
-     * @tc.size
-     * @tc.type
-     * @tc.level Level.LEVEL0
+     * @tc.desc   Test MultiSegmentButtonV2 itemFontSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiSegmentButtonV2PageTest_017', Level.LEVEL0, async (done: Function) => {
       console.log("[MultiSegmentButtonV2PageTest_017] START");
@@ -426,12 +426,12 @@ export default function MultiSegmentButtonV2PageTest() {
     })
 
     /**
+     * @tc.name   MultiSegmentButtonV2PageTest_018
      * @tc.number MultiSegmentButtonV2PageTest_018
-     * @tc.name MultiSegmentButtonV2PageTest_018
-     * @tc.desc Test MultiSegmentButtonV2 itemFontWeight
-     * @tc.size
-     * @tc.type
-     * @tc.level Level.LEVEL0
+     * @tc.desc   Test MultiSegmentButtonV2 itemFontWeight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiSegmentButtonV2PageTest_018', Level.LEVEL0, async (done: Function) => {
       console.log("[MultiSegmentButtonV2PageTest_018] START");
@@ -452,12 +452,12 @@ export default function MultiSegmentButtonV2PageTest() {
     })
 
     /**
+     * @tc.name   MultiSegmentButtonV2PageTest_019
      * @tc.number MultiSegmentButtonV2PageTest_019
-     * @tc.name MultiSegmentButtonV2PageTest_019
-     * @tc.desc Test MultiSegmentButtonV2 itemPadding
-     * @tc.size
-     * @tc.type
-     * @tc.level Level.LEVEL0
+     * @tc.desc   Test MultiSegmentButtonV2 itemPadding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiSegmentButtonV2PageTest_019', Level.LEVEL0, async (done: Function) => {
       console.log("[MultiSegmentButtonV2PageTest_019] START");

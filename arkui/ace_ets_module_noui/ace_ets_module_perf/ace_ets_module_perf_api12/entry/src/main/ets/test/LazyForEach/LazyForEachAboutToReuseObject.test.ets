@@ -59,9 +59,12 @@ export default function LazyForEachAboutToReuseObject() {
     });
 
     /**
+     * @tc.name   LazyForEachAboutToReuseObject_001
      * @tc.number LazyForEachAboutToReuseObject_001
-     * @tc.name LazyForEachAboutToReuseObject_001
-     * @tc.desc Test LazyForEachAboutToReuseObject
+     * @tc.desc   Test LazyForEachAboutToReuseObject
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('LazyForEachAboutToReuseObject_001', Level.LEVEL1, async (done: Function) => {
       console.info('[LazyForEachAboutToReuseObject_001] START');      

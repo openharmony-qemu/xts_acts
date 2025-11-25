@@ -53,12 +53,14 @@ export default function NavigationStack15Jsunit() {
       }
       done();
     });
-    /* *
-    * @tc.number: NavigationStack15Jsunit_0100
-    * @tc.name  : NavigationStack15Jsunit_0100
-    * @tc.desc  : NavigationMode is set to stack mode, and NavigationMode is dynamically changed to auto mode.
-    * @tc.level : Level 3
-    */
+    /**
+     * @tc.name   NavigationStack15Jsunit_0100
+     * @tc.number NavigationStack15Jsunit_0100
+     * @tc.desc   NavigationMode is set to stack mode, and NavigationMode is dynamically changed to auto mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NavigationStack15Jsunit_0100',  Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000);
       let driver = await Driver.create()

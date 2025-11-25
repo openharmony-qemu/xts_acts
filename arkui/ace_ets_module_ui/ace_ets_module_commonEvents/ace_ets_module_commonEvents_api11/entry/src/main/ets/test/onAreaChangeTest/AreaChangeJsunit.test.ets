@@ -56,6 +56,14 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       console.info("areaChange after each called");
     });
 
+    /**
+     * @tc.name   areaChangeTest_0300
+     * @tc.number areaChangeTest_0300
+     * @tc.desc   areaChangeTest_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('areaChangeTest_0300', Level.LEVEL0, async (done: Function) => {
       console.info('areaChangeTest_0300 START');
       await CommonFunc.sleep(1000);

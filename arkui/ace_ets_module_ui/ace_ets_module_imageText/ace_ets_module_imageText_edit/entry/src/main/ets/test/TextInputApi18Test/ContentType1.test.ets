@@ -42,12 +42,12 @@ export default function ContentTypeTest1() {
     });
     
     /**
-     * @tc.number    SUB_ACE_ContentTypeTest1_0010
-     * @tc.name      ContentTypeTest1_0010
-     * @tc.desc      set textInput ContentType: PASSPORT_NUMBER
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+     * @tc.name   ContentTypeTest1_0010
+     * @tc.number SUB_ACE_ContentTypeTest1_0010
+     * @tc.desc   set textInput ContentType: PASSPORT_NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ContentTypeTest1_0010', Level.LEVEL2, async (done: Function) => {
       console.info('ContentTypeTest1_0010 START');
@@ -61,12 +61,12 @@ export default function ContentTypeTest1() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ContentTypeTest1_0020
-     * @tc.name      ContentTypeTest1_0020
-     * @tc.desc      set textInput ContentType: VALIDITY
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ContentTypeTest1_0020
+     * @tc.number SUB_ACE_ContentTypeTest1_0020
+     * @tc.desc   set textInput ContentType: VALIDITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ContentTypeTest1_0020', Level.LEVEL2, async (done: Function) => {
       console.info('ContentTypeTest1_0020 START');
@@ -80,12 +80,12 @@ export default function ContentTypeTest1() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ContentTypeTest1_0030
-     * @tc.name      ContentTypeTest1_0030
-     * @tc.desc      set textInput ContentType: ISSUE_AT
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ContentTypeTest1_0030
+     * @tc.number SUB_ACE_ContentTypeTest1_0030
+     * @tc.desc   set textInput ContentType: ISSUE_AT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ContentTypeTest1_0030', Level.LEVEL2, async (done: Function) => {
       console.info('ContentTypeTest1_0030 START');
@@ -99,12 +99,12 @@ export default function ContentTypeTest1() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ContentTypeTest1_0040
-     * @tc.name      ContentTypeTest1_0040
-     * @tc.desc      set textInput ContentType: ORGANIZATION
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ContentTypeTest1_0040
+     * @tc.number SUB_ACE_ContentTypeTest1_0040
+     * @tc.desc   set textInput ContentType: ORGANIZATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ContentTypeTest1_0040', Level.LEVEL2, async (done: Function) => {
       console.info('ContentTypeTest1_0040 START');
@@ -118,12 +118,12 @@ export default function ContentTypeTest1() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ContentTypeTest1_0050
-     * @tc.name      ContentTypeTest1_0050
-     * @tc.desc      set textInput ContentType: TAX_ID
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ContentTypeTest1_0050
+     * @tc.number SUB_ACE_ContentTypeTest1_0050
+     * @tc.desc   set textInput ContentType: TAX_ID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ContentTypeTest1_0050', Level.LEVEL2, async (done: Function) => {
       console.info('ContentTypeTest1_0050 START');
@@ -137,12 +137,12 @@ export default function ContentTypeTest1() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ContentTypeTest1_0060
-     * @tc.name      ContentTypeTest1_0060
-     * @tc.desc      set textInput ContentType: ADDRESS_CITY_AND_STATE
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ContentTypeTest1_0060
+     * @tc.number SUB_ACE_ContentTypeTest1_0060
+     * @tc.desc   set textInput ContentType: ADDRESS_CITY_AND_STATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ContentTypeTest1_0060', Level.LEVEL2, async (done: Function) => {
       console.info('ContentTypeTest1_0060 START');
@@ -156,12 +156,12 @@ export default function ContentTypeTest1() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ContentTypeTest1_0070
-     * @tc.name      ContentTypeTest1_0070
-     * @tc.desc      test default value about textInput ContentType: DEFAULT
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ContentTypeTest1_0070
+     * @tc.number SUB_ACE_ContentTypeTest1_0070
+     * @tc.desc   test default value about textInput ContentType: DEFAULT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ContentTypeTest1_0070', Level.LEVEL2, async (done: Function) => {
       console.info('ContentTypeTest1_0070 START');

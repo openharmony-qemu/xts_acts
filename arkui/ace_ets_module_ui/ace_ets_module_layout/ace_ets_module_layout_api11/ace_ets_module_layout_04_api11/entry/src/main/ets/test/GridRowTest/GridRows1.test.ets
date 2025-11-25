@@ -42,14 +42,15 @@ export default function GridRows1() {
       console.info("GridRows1 after each called");
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_LISTANDGRID_GRID_CAPABILITY_0240
-     * @tc.desc      set rowsGap to 0
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
-     */
 
+    /**
+     * @tc.name   GridRows1_001
+     * @tc.number GridRows1_001
+     * @tc.desc   GridRows1_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GridRows1_001',  Level.LEVEL0, async (done: Function) => {
       console.info('[GridRows1_001] START');
 
@@ -65,13 +66,15 @@ export default function GridRows1() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_LISTANDGRID_GRID_CAPABILITY_0230
-     * @tc.desc      set rowsGap to -5
-     * @tc.level     Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   GridRows1_002
+     * @tc.number GridRows1_002
+     * @tc.desc   GridRows1_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GridRows1_002',  Level.LEVEL0, async (done: Function) => {
       console.info('[GridRows1_002] START');
 
@@ -94,13 +97,15 @@ export default function GridRows1() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_LISTANDGRID_GRID_CAPABILITY_0250
-     * @tc.desc      set rowsGap to 5
-     * @tc.level     Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   GridRows1_003
+     * @tc.number GridRows1_003
+     * @tc.desc   GridRows1_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GridRows1_003',  Level.LEVEL0, async (done: Function) => {
       console.info('[GridRows1_003] START');
 
@@ -123,13 +128,15 @@ export default function GridRows1() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_LISTANDGRID_GRID_CAPABILITY_0260
-     * @tc.desc      set rowsGap to 500
-     * @tc.level     Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   GridRows1_004
+     * @tc.number GridRows1_004
+     * @tc.desc   GridRows1_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GridRows1_004',  Level.LEVEL0, async (done: Function) => {
       console.info('[GridRows1_004] START');
 

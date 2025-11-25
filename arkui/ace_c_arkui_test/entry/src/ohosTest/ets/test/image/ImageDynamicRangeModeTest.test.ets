@@ -26,52 +26,52 @@ export default function imageDynamicRangeModeTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_DYNAMICRANGEMODE_0100
-     * @tc.name       : testImageDynamicRangeMode001
-     * @tc.desc       : test the dynamic display range attribute using normal values
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageDynamicRangeMode001
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_DYNAMICRANGEMODE_0100
+     * @tc.desc   test the dynamic display range attribute using normal values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageDynamicRangeMode001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageDynamicRangeMode001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_DYNAMICRANGEMODE_0200
-     * @tc.name       : testImageDynamicRangeMode002
-     * @tc.desc       : test the dynamic display range attribute using null values
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageDynamicRangeMode002
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_DYNAMICRANGEMODE_0200
+     * @tc.desc   test the dynamic display range attribute using null values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageDynamicRangeMode002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageDynamicRangeMode002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_DYNAMICRANGEMODE_0300
-     * @tc.name       : testImageDynamicRangeMode003
-     * @tc.desc       : test the dynamic display range attribute using outliers
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageDynamicRangeMode003
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_DYNAMICRANGEMODE_0300
+     * @tc.desc   test the dynamic display range attribute using outliers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageDynamicRangeMode003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageDynamicRangeMode003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_DYNAMICRANGEMODE_0400
-     * @tc.name       : testImageDynamicRangeMode004
-     * @tc.desc       : test the dynamic display range attribute using normal values
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageDynamicRangeMode004
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_DYNAMICRANGEMODE_0400
+     * @tc.desc   test the dynamic display range attribute using normal values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageDynamicRangeMode004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageDynamicRangeMode004()).assertEqual(0)

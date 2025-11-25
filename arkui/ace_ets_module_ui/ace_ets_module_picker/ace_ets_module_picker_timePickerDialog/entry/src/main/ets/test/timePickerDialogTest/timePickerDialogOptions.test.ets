@@ -43,13 +43,13 @@ export default function TimePickerDialogOptionsTest() {
       done()
     });
 
-    /*
-     * @tc.number: TimePickerDialogOptionsTest_0100
-     * @tc.name  : TimePickerDialogOptionsTest_0100
-     * @tc.desc  : set api
-     * @tc.level : Level 2
-     * @tc.type  :
-     * @tc.size  :
+    /**
+     * @tc.name   TimePickerDialogOptionsTest_0100
+     * @tc.number TimePickerDialogOptionsTest_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TimePickerDialogOptionsTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('TimePickerDialogOptionsTest_0100 START');

@@ -47,10 +47,12 @@ export default function AlignEnd_AddMargin() {
     });
 
     /**
+     * @tc.name   testFlexAlignEndFlexMargin
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_END_TEST_0500
-     * @tc.name testFlexAlignEndFlexMargin
-     * @tc.desc The interface display where the child component is offset by the margin setting of the parent
-     * component
+     * @tc.desc   The interface display where the child component is offset by the margin setting of the parent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignEndFlexMargin',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignEndFlexMargin] START');

@@ -59,9 +59,12 @@ export default function LazyForEachDelete() {
     });
 
     /**
+     * @tc.name   LazyForEachDelete_001
      * @tc.number LazyForEachDelete_001
-     * @tc.name LazyForEachDelete_001
-     * @tc.desc Test LazyForEach delete function
+     * @tc.desc   Test LazyForEach delete function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LazyForEachDelete_001', Level.LEVEL0, async (done: Function) => {
       console.info('[LazyForEachDelete_001] START');

@@ -52,13 +52,13 @@ export default function ImageAdvancedTest() {
       console.info("after each called");
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0050
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0050
-     * @tc.desc   : src:base64,check onComplete
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0050
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0050
+     * @tc.desc   src:base64,check onComplete
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0050', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0050] START');
@@ -74,13 +74,13 @@ export default function ImageAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0280
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0280
-     * @tc.desc   : set aspectRatio 1.5,load 50*50 image and check onComplete
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0280
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0280
+     * @tc.desc   set aspectRatio 1.5,load 50*50 image and check onComplete
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0280', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0280] START');
@@ -107,13 +107,13 @@ export default function ImageAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0290
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0290
-     * @tc.desc   : set aspectRatio 0.5,load 50*50 image and check onComplete
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0290
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0290
+     * @tc.desc   set aspectRatio 0.5,load 50*50 image and check onComplete
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0290', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0290] START');
@@ -128,13 +128,13 @@ export default function ImageAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0300
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0300
-     * @tc.desc   : set border width 10,load 80*80 image and check onComplete
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0300
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0300
+     * @tc.desc   set border width 10,load 80*80 image and check onComplete
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0300', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0300] START');
@@ -160,13 +160,13 @@ export default function ImageAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0310
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0310
-     * @tc.desc   : set border width 20,load 80*80 image and check onComplete
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0310
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0310
+     * @tc.desc   set border width 20,load 80*80 image and check onComplete
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0310', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0310] START');
@@ -188,13 +188,13 @@ export default function ImageAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0320
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0320
-     * @tc.desc   : set padding 10,load 80*80 image and check onComplete
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0320
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0320
+     * @tc.desc   set padding 10,load 80*80 image and check onComplete
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0320', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0320] START');
@@ -220,13 +220,13 @@ export default function ImageAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0330
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0330
-     * @tc.desc   : set padding 20,load 80*80 image and check onComplete
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0330
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0330
+     * @tc.desc   set padding 20,load 80*80 image and check onComplete
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0330', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0330] START');
@@ -248,13 +248,13 @@ export default function ImageAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0340
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0340
-     * @tc.desc   : set clip,load 50*50 image and check onComplete
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0340
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0340
+     * @tc.desc   set clip,load 50*50 image and check onComplete
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0340', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0340] START');
@@ -275,13 +275,13 @@ export default function ImageAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0350
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0350
-     * @tc.desc   : set mask,load 50*50 image and check onComplete
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0350
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0350
+     * @tc.desc   set mask,load 50*50 image and check onComplete
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0350', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0350] START');
@@ -301,13 +301,13 @@ export default function ImageAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0360
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0360
-     * @tc.desc   : citation rawfile
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0360
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0360
+     * @tc.desc   citation rawfile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0360', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0360] START');
@@ -322,13 +322,13 @@ export default function ImageAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0370
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0370
-     * @tc.desc   : citation resource
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0370
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0370
+     * @tc.desc   citation resource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0370', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0370] START');
@@ -343,13 +343,13 @@ export default function ImageAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0380
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0380
-     * @tc.desc   : citation base64
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0380
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0380
+     * @tc.desc   citation base64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0380', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0380] START');
@@ -364,13 +364,13 @@ export default function ImageAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0420
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0420
-     * @tc.desc   : citation jpg,png,bmp,svg,gif
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0420
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0420
+     * @tc.desc   citation jpg,png,bmp,svg,gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0420', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0420] START');
@@ -405,13 +405,13 @@ export default function ImageAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0430
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0430
-     * @tc.desc   : citation internal img
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0430
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0430
+     * @tc.desc   citation internal img
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0430', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0430] START');
@@ -426,13 +426,13 @@ export default function ImageAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0440
-     * @tc.name   : SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0440
-     * @tc.desc   : Referencing using relative paths
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0440
+     * @tc.number SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0440
+     * @tc.desc   Referencing using relative paths
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0440', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_MEDIA_IMAGE_SIZE_0440] START');

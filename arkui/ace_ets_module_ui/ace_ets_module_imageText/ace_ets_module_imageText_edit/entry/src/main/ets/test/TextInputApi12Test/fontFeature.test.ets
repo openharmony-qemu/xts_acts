@@ -42,12 +42,12 @@ export default function fontFeatureTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_fontFeatureTest_0010
-     * @tc.name      fontFeatureTest_0010
-     * @tc.desc      test TextInput fontFeature: on
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   fontFeatureTest_0010
+     * @tc.number SUB_ACE_fontFeatureTest_0010
+     * @tc.desc   test TextInput fontFeature: on
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fontFeatureTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('[fontFeatureTest_0010] START');
@@ -60,12 +60,12 @@ export default function fontFeatureTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_fontFeatureTest_0020
-     * @tc.name      fontFeatureTest_0020
-     * @tc.desc      set TextInput fontFeature: fontFeature.Off
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   fontFeatureTest_0020
+     * @tc.number SUB_ACE_fontFeatureTest_0020
+     * @tc.desc   set TextInput fontFeature: fontFeature.Off
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fontFeatureTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('[fontFeatureTest_0020] START');
@@ -78,12 +78,12 @@ export default function fontFeatureTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_fontFeatureTest_0030
-     * @tc.name      fontFeatureTest_0030
-     * @tc.desc      set TextInput fontFeature: default
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   fontFeatureTest_0030
+     * @tc.number SUB_ACE_fontFeatureTest_0030
+     * @tc.desc   set TextInput fontFeature: default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fontFeatureTest_0030', Level.LEVEL0, async (done: Function) => {
       console.info('[fontFeatureTest_0030] START');
@@ -96,12 +96,12 @@ export default function fontFeatureTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_fontFeatureTest_0040
-     * @tc.name      fontFeatureTest_0040
-     * @tc.desc      set TextInput fontFeature: undefined
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   fontFeatureTest_0040
+     * @tc.number SUB_ACE_fontFeatureTest_0040
+     * @tc.desc   set TextInput fontFeature: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fontFeatureTest_0040', Level.LEVEL0, async (done: Function) => {
       console.info('[fontFeatureTest_0040] START');

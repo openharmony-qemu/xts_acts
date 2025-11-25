@@ -26,52 +26,52 @@ export default function imageHdrBrightnessTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_HDRBRIGHTNESS_0100
-     * @tc.name       : testImageHdrBrightness001
-     * @tc.desc       : test the brightness attribute using normal values
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageHdrBrightness001
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_HDRBRIGHTNESS_0100
+     * @tc.desc   test the brightness attribute using normal values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageHdrBrightness001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageHdrBrightness001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_HDRBRIGHTNESS_0200
-     * @tc.name       : testImageHdrBrightness002
-     * @tc.desc       : test the brightness attribute using null values
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageHdrBrightness002
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_HDRBRIGHTNESS_0200
+     * @tc.desc   test the brightness attribute using null values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageHdrBrightness002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageHdrBrightness002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_HDRBRIGHTNESS_0300
-     * @tc.name       : testImageHdrBrightness003
-     * @tc.desc       : test the brightness attribute using outliers
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageHdrBrightness003
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_HDRBRIGHTNESS_0300
+     * @tc.desc   test the brightness attribute using outliers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageHdrBrightness003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageHdrBrightness003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_HDRBRIGHTNESS_0400
-     * @tc.name       : testImageHdrBrightness004
-     * @tc.desc       : test the brightness attribute using normal values
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageHdrBrightness004
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_HDRBRIGHTNESS_0400
+     * @tc.desc   test the brightness attribute using normal values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageHdrBrightness004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageHdrBrightness004()).assertEqual(0)

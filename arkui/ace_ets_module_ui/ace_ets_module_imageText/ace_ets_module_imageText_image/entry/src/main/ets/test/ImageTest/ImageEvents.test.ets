@@ -43,13 +43,13 @@ export default function ImageEventsTest() {
       done();
     });
 
-    /*
+    /**
+     * @tc.name   ImageEventsTest_0100
      * @tc.number ImageEventsTest_0100
-     * @tc.name ImageEventsTest_0100
-     * @tc.desc Image test
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Image test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageEventsTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ImageEventsTest_0100 START');
@@ -62,13 +62,13 @@ export default function ImageEventsTest() {
       done();
     });
 
-    /*
+    /**
+     * @tc.name   ImageEventsTest_0200
      * @tc.number ImageEventsTest_0200
-     * @tc.name ImageEventsTest_0200
-     * @tc.desc Image test
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Image test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageEventsTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('ImageEventsTest_0100 START');
@@ -81,13 +81,13 @@ export default function ImageEventsTest() {
       done();
     });
 
-    /*
+    /**
+     * @tc.name   ImageEventsTest_0300
      * @tc.number ImageEventsTest_0300
-     * @tc.name ImageEventsTest_0300
-     * @tc.desc Image test
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Image test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageEventsTest_0300', Level.LEVEL1, async (done: Function) => {
       console.info('ImageEventsTest_0300 START');
@@ -104,13 +104,13 @@ export default function ImageEventsTest() {
       done();
     });
 
-    /*
+    /**
+     * @tc.name   ImageEventsTest_0400
      * @tc.number ImageEventsTest_0400
-     * @tc.name ImageEventsTest_0400
-     * @tc.desc Image test
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Image test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageEventsTest_0400', Level.LEVEL1, async (done: Function) => {
       console.info('ImageEventsTest_0200 START');

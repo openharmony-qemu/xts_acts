@@ -42,12 +42,12 @@ export default function ContentTypeTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ContentTypeTest_0010
-     * @tc.name      ContentTypeTest_0010
-     * @tc.desc      set textInput ContentType: USER_NAME
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ContentTypeTest_0010
+     * @tc.number SUB_ACE_ContentTypeTest_0010
+     * @tc.desc   set textInput ContentType: USER_NAME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ContentTypeTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('ContentTypeTest_0010 START');
@@ -61,12 +61,12 @@ export default function ContentTypeTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ContentTypeTest_0020
-     * @tc.name      ContentTypeTest_0020
-     * @tc.desc      set textInput ContentType: NEW_PASSWORD
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ContentTypeTest_0020
+     * @tc.number SUB_ACE_ContentTypeTest_0020
+     * @tc.desc   set textInput ContentType: NEW_PASSWORD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ContentTypeTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('ContentTypeTest_0020 START');

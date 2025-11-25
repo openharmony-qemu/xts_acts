@@ -43,12 +43,12 @@ export default function TextInputGetTextTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextInputGetTextTest_0010
-     * @tc.name      TextInputGetTextTest_0010
-     * @tc.desc      test TextInput getText: set start and end
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextInputGetTextTest_0010
+     * @tc.number SUB_ACE_TextInputGetTextTest_0010
+     * @tc.desc   test TextInput getText: set start and end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextInputGetTextTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('TextInputGetTextTest_0010 START');
@@ -65,12 +65,12 @@ export default function TextInputGetTextTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextInputGetTextTest_0020
-     * @tc.name      TextInputGetTextTest_0020
-     * @tc.desc      test TextInput getText: only set start
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextInputGetTextTest_0020
+     * @tc.number SUB_ACE_TextInputGetTextTest_0020
+     * @tc.desc   test TextInput getText: only set start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextInputGetTextTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('[TextInputGetTextTest_0020] START');
@@ -87,12 +87,12 @@ export default function TextInputGetTextTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextInputGetTextTest_0030
-     * @tc.name      TextInputGetTextTest_0030
-     * @tc.desc      test TextInput getText: only set end
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextInputGetTextTest_0030
+     * @tc.number SUB_ACE_TextInputGetTextTest_0030
+     * @tc.desc   test TextInput getText: only set end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextInputGetTextTest_0030', Level.LEVEL0, async (done: Function) => {
       console.info('[TextInputGetTextTest_0030] START');
@@ -109,12 +109,12 @@ export default function TextInputGetTextTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextInputGetTextTest_0040
-     * @tc.name      TextInputGetTextTest_0040
-     * @tc.desc      test TextInput getText: set start undefined
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextInputGetTextTest_0040
+     * @tc.number SUB_ACE_TextInputGetTextTest_0040
+     * @tc.desc   test TextInput getText: set start undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextInputGetTextTest_0040', Level.LEVEL0, async (done: Function) => {
       console.info('[TextInputGetTextTest_0040] START');
@@ -131,12 +131,12 @@ export default function TextInputGetTextTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextInputGetTextTest_0050
-     * @tc.name      TextInputGetTextTest_0050
-     * @tc.desc      test TextInput getText: set end undefined
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextInputGetTextTest_0050
+     * @tc.number SUB_ACE_TextInputGetTextTest_0050
+     * @tc.desc   test TextInput getText: set end undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextInputGetTextTest_0050', Level.LEVEL0, async (done: Function) => {
       console.info('[TextInputGetTextTest_0050] START');
@@ -153,12 +153,12 @@ export default function TextInputGetTextTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextInputGetTextTest_0060
-     * @tc.name      TextInputGetTextTest_0060
-     * @tc.desc      test TextInput getText: set start and end: undefined
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextInputGetTextTest_0060
+     * @tc.number SUB_ACE_TextInputGetTextTest_0060
+     * @tc.desc   test TextInput getText: set start and end: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextInputGetTextTest_0060', Level.LEVEL0, async (done: Function) => {
       console.info('[TextInputGetTextTest_0060] START');
@@ -175,12 +175,12 @@ export default function TextInputGetTextTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextInputGetTextTest_0070
-     * @tc.name      TextInputGetTextTest_0070
-     * @tc.desc      test TextInput getText: not set TextRange
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextInputGetTextTest_0070
+     * @tc.number SUB_ACE_TextInputGetTextTest_0070
+     * @tc.desc   test TextInput getText: not set TextRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextInputGetTextTest_0070', Level.LEVEL0, async (done: Function) => {
       console.info('[TextInputGetTextTest_0070] START');
@@ -197,12 +197,12 @@ export default function TextInputGetTextTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TextInputGetTextTest_0080
-     * @tc.name      TextInputGetTextTest_0080
-     * @tc.desc      test TextInput: clearPreviewText
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextInputGetTextTest_0080
+     * @tc.number SUB_ACE_TextInputGetTextTest_0080
+     * @tc.desc   test TextInput: clearPreviewText
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextInputGetTextTest_0080', Level.LEVEL0, async (done: Function) => {
       console.info('[TextInputGetTextTest_0080] START');

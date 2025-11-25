@@ -43,6 +43,14 @@ export default function RadioJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   RadioJsunit_0100
+     * @tc.number RadioJsunit_0100
+     * @tc.desc   RadioJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('RadioJsunit_0100', Level.LEVEL1, async (done: Function) => {
       // Get the information of the Radio component
       console.info('[RadioJsunit_0100] START');
@@ -66,6 +74,14 @@ export default function RadioJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   RadioJsunit_0200
+     * @tc.number RadioJsunit_0200
+     * @tc.desc   RadioJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('RadioJsunit_0200', Level.LEVEL1, async (done: Function) => {
       // Verify Radio Components Click to select
       console.info('[RadioJsunit_0200] START');
@@ -84,6 +100,14 @@ export default function RadioJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   RadioJsunit_0300
+     * @tc.number RadioJsunit_0300
+     * @tc.desc   RadioJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('RadioJsunit_0300', Level.LEVEL1, async (done: Function) => {
       // Verify that the radio components are in the same group Click to select only one of the three
       console.info('[RadioJsunit_0300] START');
@@ -117,6 +141,14 @@ export default function RadioJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   RadioJsunit_0400
+     * @tc.number RadioJsunit_0400
+     * @tc.desc   RadioJsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('RadioJsunit_0400', Level.LEVEL1, async (done: Function) => {
       // Verify onChange event of of component Radio
       console.info('[RadioJsunit_0400] START');

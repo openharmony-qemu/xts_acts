@@ -42,13 +42,13 @@ export default function TextInputEvent() {
       console.info("TextInputEvent after each called");
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_TextInputEvent_001
-     * @tc.name       : TextInputEvent_001
-     * @tc.desc       : onWillInsert Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   TextInputEvent_001
+     * @tc.number SUB_ACE_UI_COMPONENT_TextInputEvent_001
+     * @tc.desc   onWillInsert Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TextInputEvent_001',  Level.LEVEL3, async (done: Function) => {
       console.info('[TextInputEvent_001] START');
@@ -75,13 +75,13 @@ export default function TextInputEvent() {
 
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_TextInputEvent_002
-     * @tc.name       : TextInputEvent_002
-     * @tc.desc       : onWillInsert Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   TextInputEvent_002
+     * @tc.number SUB_ACE_UI_COMPONENT_TextInputEvent_002
+     * @tc.desc   onWillInsert Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TextInputEvent_002',  Level.LEVEL3, async (done: Function) => {
       console.info('[TextInputEvent_002] START');
@@ -108,13 +108,13 @@ export default function TextInputEvent() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_TextInputEvent_003
-     * @tc.name       : TextInputEvent_003
-     * @tc.desc       : onWillInsert Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   TextInputEvent_003
+     * @tc.number SUB_ACE_UI_COMPONENT_TextInputEvent_003
+     * @tc.desc   onWillInsert Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TextInputEvent_003',  Level.LEVEL3, async (done: Function) => {
       console.info('[TextInputEvent_003] START');
@@ -141,13 +141,13 @@ export default function TextInputEvent() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_TextInputEvent_004
-     * @tc.name       : TextInputEvent_004
-     * @tc.desc       : onWillInsert Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   TextInputEvent_004
+     * @tc.number SUB_ACE_UI_COMPONENT_TextInputEvent_004
+     * @tc.desc   onWillInsert Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TextInputEvent_004',  Level.LEVEL3, async (done: Function) => {
       console.info('[TextInputEvent_004] START');
@@ -174,13 +174,13 @@ export default function TextInputEvent() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_TextInputEvent_005
-     * @tc.name       : TextInputEvent_005
-     * @tc.desc       : onWillInsert Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   TextInputEvent_005
+     * @tc.number SUB_ACE_UI_COMPONENT_TextInputEvent_005
+     * @tc.desc   onWillInsert Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TextInputEvent_005',  Level.LEVEL3, async (done: Function) => {
       console.info('[TextInputEvent_005] START');
@@ -206,13 +206,13 @@ export default function TextInputEvent() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_TextInputEvent_006
-     * @tc.name       : TextInputEvent_006
-     * @tc.desc       : onWillInsert Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   TextInputEvent_006
+     * @tc.number SUB_ACE_UI_COMPONENT_TextInputEvent_006
+     * @tc.desc   onWillInsert Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TextInputEvent_006',  Level.LEVEL3, async (done: Function) => {
       console.info('[TextInputEvent_006] START');
@@ -242,13 +242,13 @@ export default function TextInputEvent() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_TextInputEvent_007
-     * @tc.name       : TextInputEvent_007
-     * @tc.desc       : onWillInsert Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   TextInputEvent_007
+     * @tc.number SUB_ACE_UI_COMPONENT_TextInputEvent_007
+     * @tc.desc   onWillInsert Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TextInputEvent_007',  Level.LEVEL3, async (done: Function) => {
       console.info('[TextInputEvent_007] START');

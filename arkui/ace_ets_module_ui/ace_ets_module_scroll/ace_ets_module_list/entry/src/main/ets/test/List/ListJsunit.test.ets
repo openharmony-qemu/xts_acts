@@ -43,13 +43,13 @@ export default function ListJsunit() {
       done();
     });
 
-    /*
-     * @tc.number    ListJsunit_0100
-     * @tc.name      ListJsunit_0100
-     * @tc.desc      Test List components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ListJsunit_0100
+     * @tc.number ListJsunit_0100
+     * @tc.desc   Test List components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0100',  Level.LEVEL0, async (done: Function) => {
       // Get the information of the List component
@@ -94,13 +94,13 @@ export default function ListJsunit() {
       done();
     });
 
-    /*
-     * @tc.number    ListJsunit_0600
-     * @tc.name      ListJsunit_0600
-     * @tc.desc      Test List components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ListJsunit_0600
+     * @tc.number ListJsunit_0600
+     * @tc.desc   Test List components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0600',  Level.LEVEL0, async (done: Function) => {
       // Verify the Vertical layout of List components
@@ -115,13 +115,13 @@ export default function ListJsunit() {
       done();
     });
     
-    /*
-     * @tc.number    ListJsunit_0200
-     * @tc.name      ListJsunit_0200
-     * @tc.desc      Test List components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ListJsunit_0200
+     * @tc.number ListJsunit_0200
+     * @tc.desc   Test List components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0200',  Level.LEVEL0, async (done: Function) => {
       // Verify the functions of the List component
@@ -189,13 +189,13 @@ export default function ListJsunit() {
       done();
     });
 
-    /*
-     * @tc.number    ListJsunit_0300
-     * @tc.name      ListJsunit_0300
-     * @tc.desc      Test List components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ListJsunit_0300
+     * @tc.number ListJsunit_0300
+     * @tc.desc   Test List components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0300',  Level.LEVEL0, async (done: Function) => {
       // Modify the properties of component List
@@ -270,13 +270,13 @@ export default function ListJsunit() {
       done();
     });
 
-    /*
-     * @tc.number    ListJsunit_0400
-     * @tc.name      ListJsunit_0400
-     * @tc.desc      Test List components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ListJsunit_0400
+     * @tc.number ListJsunit_0400
+     * @tc.desc   Test List components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0400',  Level.LEVEL0, async (done: Function) => {
       // Illegal modification of properties of component List
@@ -346,13 +346,13 @@ export default function ListJsunit() {
       done();
     });
 
-    /*
-     * @tc.number    ListJsunit_0500
-     * @tc.name      ListJsunit_0500
-     * @tc.desc      Test List components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ListJsunit_0500
+     * @tc.number ListJsunit_0500
+     * @tc.desc   Test List components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0500',  Level.LEVEL0, async (done: Function) => {
       // Verify default value of the List component
@@ -373,13 +373,13 @@ export default function ListJsunit() {
       done();
     });
 
-    /*
-     * @tc.number    ListJsunit_0700
-     * @tc.name      ListJsunit_0700
-     * @tc.desc      Test List components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   ListJsunit_0700
+     * @tc.number ListJsunit_0700
+     * @tc.desc   Test List components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ListJsunit_0700',  Level.LEVEL0, async (done: Function) => {
       // Verify the Vertical layout of List components

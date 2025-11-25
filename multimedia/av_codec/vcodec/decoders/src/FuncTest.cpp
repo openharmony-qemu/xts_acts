@@ -83,10 +83,10 @@ void DecFuncNdkTest::SetUpTestCase()
     }
     g_codecNameMsvideo1 = OH_AVCapability_GetName(g_capMsvideo1);
     cout << "g_codecNameMsvideo1: " << g_codecNameMsvideo1 << endl;
-    if (g_capWmv3== nullptr) {
+    g_capWmv3 = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_WMV3, false, SOFTWARE);
+    if (g_capWmv3 == nullptr) {
         return;
     }
-    g_capWmv3 = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_WMV3, false, SOFTWARE);
     g_codecNameWmv3 = OH_AVCapability_GetName(g_capWmv3);
     cout << "g_codecNameWmv3: " << g_codecNameWmv3 << endl;
 }

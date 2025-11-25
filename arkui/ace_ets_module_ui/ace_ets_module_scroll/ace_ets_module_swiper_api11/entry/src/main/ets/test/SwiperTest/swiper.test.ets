@@ -77,9 +77,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedItemWidth_0100
      * @tc.number ArkUX_Stage_Swiper_SelectedItemWidth_0100
-     * @tc.name Tests the selectedItemWidth property of the swiper component
-     * @tc.desc set the selectedItemWidth property parameter to 5
+     * @tc.desc   set the selectedItemWidth property parameter to 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedItemWidth_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedItemWidth_0100 START');
@@ -106,9 +109,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedItemWidth_0200
      * @tc.number ArkUX_Stage_Swiper_SelectedItemWidth_0200
-     * @tc.name Tests the selectedItemWidth property of the swiper component
-     * @tc.desc Set the selectedItemWidth property parameter to ""
+     * @tc.desc   Set the selectedItemWidth property parameter to ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedItemWidth_0200', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedItemWidth_0200 START');
@@ -135,9 +141,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedItemWidth_0300
      * @tc.number ArkUX_Stage_Swiper_SelectedItemWidth_0300
-     * @tc.name Tests the selectedItemWidth property of the swiper component
-     * @tc.desc Set the selectedItemWidth property parameter to "9999vp"
+     * @tc.desc   Set the selectedItemWidth property parameter to "9999vp"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedItemWidth_0300', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedItemWidth_0300 START');
@@ -164,9 +173,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedItemWidth_0400
      * @tc.number ArkUX_Stage_Swiper_SelectedItemWidth_0400
-     * @tc.name Tests the selectedItemWidth property of the swiper component
-     * @tc.desc Set the selectedItemWidth property parameter to -1
+     * @tc.desc   Set the selectedItemWidth property parameter to -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedItemWidth_0400', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedItemWidth_0400 START');
@@ -193,9 +205,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedItemWidth_0500
      * @tc.number ArkUX_Stage_Swiper_SelectedItemWidth_0500
-     * @tc.name Tests the selectedItemWidth property of the swiper component
-     * @tc.desc Set the selectedItemWidth property parameter to "abc"
+     * @tc.desc   Set the selectedItemWidth property parameter to "abc"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedItemWidth_0500', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedItemWidth_0500 START');
@@ -222,9 +237,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedItemWidth_0600
      * @tc.number ArkUX_Stage_Swiper_SelectedItemWidth_0600
-     * @tc.name Tests the selectedItemWidth property of the swiper component
-     * @tc.desc Set the selectedItemWidth property parameter to 0
+     * @tc.desc   Set the selectedItemWidth property parameter to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedItemWidth_0600', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedItemWidth_0600 START');
@@ -251,9 +269,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedItemWidth_0700
      * @tc.number ArkUX_Stage_Swiper_SelectedItemWidth_0700
-     * @tc.name Tests the selectedItemWidth property of the swiper component
-     * @tc.desc Set the selectedItemWidth property parameter to "8fp"
+     * @tc.desc   Set the selectedItemWidth property parameter to "8fp"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedItemWidth_0700', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedItemWidth_0700 START');
@@ -280,9 +301,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedItemWidth_0800
      * @tc.number ArkUX_Stage_Swiper_SelectedItemWidth_0800
-     * @tc.name Tests the selectedItemWidth property of the swiper component
-     * @tc.desc Set the selectedItemWidth property parameter to "8lpx"
+     * @tc.desc   Set the selectedItemWidth property parameter to "8lpx"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedItemWidth_0800', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedItemWidth_0800 START');
@@ -309,9 +333,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedItemHeight_0100
      * @tc.number ArkUX_Stage_Swiper_SelectedItemHeight_0100
-     * @tc.name Tests the selectedItemHeight property of the swiper component
-     * @tc.desc Set the selectedItemHeight property parameter to 3
+     * @tc.desc   Set the selectedItemHeight property parameter to 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedItemHeight_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedItemHeight_0100 START');
@@ -338,9 +365,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedItemHeight_0200
      * @tc.number ArkUX_Stage_Swiper_SelectedItemHeight_0200
-     * @tc.name Tests the selectedItemHeight property of the swiper component
-     * @tc.desc Set the selectedItemHeight property parameter to ""
+     * @tc.desc   Set the selectedItemHeight property parameter to ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedItemHeight_0200', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedItemHeight_0200 START');
@@ -367,9 +397,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedItemHeight_0300
      * @tc.number ArkUX_Stage_Swiper_SelectedItemHeight_0300
-     * @tc.name Tests the selectedItemHeight property of the swiper component
-     * @tc.desc Set the selectedItemHeight property parameter to "9999fp"
+     * @tc.desc   Set the selectedItemHeight property parameter to "9999fp"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedItemHeight_0300', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedItemHeight_0300 START');
@@ -396,9 +429,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedItemHeight_0400
      * @tc.number ArkUX_Stage_Swiper_SelectedItemHeight_0400
-     * @tc.name Tests the selectedItemHeight property of the swiper component
-     * @tc.desc Set the selectedItemHeight property parameter to -1
+     * @tc.desc   Set the selectedItemHeight property parameter to -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedItemHeight_0400', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedItemHeight_0400 START');
@@ -425,9 +461,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedItemHeight_0500
      * @tc.number ArkUX_Stage_Swiper_SelectedItemHeight_0500
-     * @tc.name Tests the selectedItemHeight property of the swiper component
-     * @tc.desc Set the selectedItemHeight property parameter to "abc"
+     * @tc.desc   Set the selectedItemHeight property parameter to "abc"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedItemHeight_0500', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedItemHeight_0500 START');
@@ -454,9 +493,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedItemHeight_0600
      * @tc.number ArkUX_Stage_Swiper_SelectedItemHeight_0600
-     * @tc.name Tests the selectedItemHeight property of the swiper component
-     * @tc.desc Set the selectedItemHeight property parameter to 0
+     * @tc.desc   Set the selectedItemHeight property parameter to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedItemHeight_0600', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedItemHeight_0600 START');
@@ -483,9 +525,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedItemHeight_0700
      * @tc.number ArkUX_Stage_Swiper_SelectedItemHeight_0700
-     * @tc.name Tests the selectedItemHeight property of the swiper component
-     * @tc.desc Set the selectedItemHeight property parameter to "8vp"
+     * @tc.desc   Set the selectedItemHeight property parameter to "8vp"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedItemHeight_0700', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedItemHeight_0700 START');
@@ -512,9 +557,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedItemHeight_0800
      * @tc.number ArkUX_Stage_Swiper_SelectedItemHeight_0800
-     * @tc.name Tests the selectedItemHeight property of the swiper component
-     * @tc.desc Set the selectedItemHeight property parameter to "8lpx"
+     * @tc.desc   Set the selectedItemHeight property parameter to "8lpx"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedItemHeight_0800', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedItemHeight_0800 START');
@@ -541,9 +589,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ItemWidth_0100
      * @tc.number ArkUX_Stage_Swiper_ItemWidth_0100
-     * @tc.name Tests the itemWidth property of the swiper component
-     * @tc.desc Set the itemWidth property parameter to 3
+     * @tc.desc   Set the itemWidth property parameter to 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ItemWidth_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_ItemWidth_0100 START');
@@ -570,9 +621,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ItemWidth_0200
      * @tc.number ArkUX_Stage_Swiper_ItemWidth_0200
-     * @tc.name Tests the itemWidth property of the swiper component
-     * @tc.desc Set the itemWidth property parameter to ""
+     * @tc.desc   Set the itemWidth property parameter to ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ItemWidth_0200', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_ItemWidth_0200 START');
@@ -599,9 +653,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ItemWidth_0300
      * @tc.number ArkUX_Stage_Swiper_ItemWidth_0300
-     * @tc.name Tests the itemWidth property of the swiper component
-     * @tc.desc Set the itemWidth property parameter to "9999lpx"
+     * @tc.desc   Set the itemWidth property parameter to "9999lpx"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ItemWidth_0300', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_ItemWidth_0300 START');
@@ -628,9 +685,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ItemWidth_0400
      * @tc.number ArkUX_Stage_Swiper_ItemWidth_0400
-     * @tc.name Tests the itemWidth property of the swiper component
-     * @tc.desc Set the itemWidth property parameter to -1
+     * @tc.desc   Set the itemWidth property parameter to -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ItemWidth_0400', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_ItemWidth_0400 START');
@@ -657,9 +717,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ItemWidth_0500
      * @tc.number ArkUX_Stage_Swiper_ItemWidth_0500
-     * @tc.name Tests the itemWidth property of the swiper component
-     * @tc.desc Set the itemWidth property parameter to "abc"
+     * @tc.desc   Set the itemWidth property parameter to "abc"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ItemWidth_0500', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_ItemWidth_0500 START');
@@ -686,9 +749,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ItemWidth_0600
      * @tc.number ArkUX_Stage_Swiper_ItemWidth_0600
-     * @tc.name Tests the itemWidth property of the swiper component
-     * @tc.desc Set the itemWidth property parameter to "8px"
+     * @tc.desc   Set the itemWidth property parameter to "8px"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ItemWidth_0600', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_ItemWidth_0600 START');
@@ -715,9 +781,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ItemWidth_0700
      * @tc.number ArkUX_Stage_Swiper_ItemWidth_0700
-     * @tc.name Tests the itemWidth property of the swiper component
-     * @tc.desc Set the itemWidth property parameter to "8fp"
+     * @tc.desc   Set the itemWidth property parameter to "8fp"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ItemWidth_0700', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_ItemWidth_0700 START');
@@ -744,9 +813,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ItemHeight_0100
      * @tc.number ArkUX_Stage_Swiper_ItemHeight_0100
-     * @tc.name Tests the itemHeight property of the swiper component
-     * @tc.desc Set the itemHeight property parameter to 3
+     * @tc.desc   Set the itemHeight property parameter to 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ItemHeight_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_ItemHeight_0100 START');
@@ -773,9 +845,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ItemHeight_0200
      * @tc.number ArkUX_Stage_Swiper_ItemHeight_0200
-     * @tc.name Tests the itemHeight property of the swiper component
-     * @tc.desc Set the itemHeight property parameter to ""
+     * @tc.desc   Set the itemHeight property parameter to ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ItemHeight_0200', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_ItemHeight_0200 START');
@@ -802,9 +877,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ItemHeight_0300
      * @tc.number ArkUX_Stage_Swiper_ItemHeight_0300
-     * @tc.name Tests the itemHeight property of the swiper component
-     * @tc.desc Set the itemHeight property parameter to "9999vp"
+     * @tc.desc   Set the itemHeight property parameter to "9999vp"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ItemHeight_0300', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_ItemHeight_0300 START');
@@ -831,9 +909,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ItemHeight_0400
      * @tc.number ArkUX_Stage_Swiper_ItemHeight_0400
-     * @tc.name Tests the itemHeight property of the swiper component
-     * @tc.desc Set the itemHeight property parameter to -1
+     * @tc.desc   Set the itemHeight property parameter to -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ItemHeight_0400', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_ItemHeight_0400 START');
@@ -860,9 +941,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ItemHeight_0500
      * @tc.number ArkUX_Stage_Swiper_ItemHeight_0500
-     * @tc.name Tests the itemHeight property of the swiper component
-     * @tc.desc Set the itemHeight property parameter to "abc"
+     * @tc.desc   Set the itemHeight property parameter to "abc"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ItemHeight_0500', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_ItemHeight_0500 START');
@@ -889,9 +973,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ItemHeight_0600
      * @tc.number ArkUX_Stage_Swiper_ItemHeight_0600
-     * @tc.name Tests the itemHeight property of the swiper component
-     * @tc.desc Set the itemHeight property parameter to "8fp"
+     * @tc.desc   Set the itemHeight property parameter to "8fp"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ItemHeight_0600', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_ItemHeight_0500 START');
@@ -918,9 +1005,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_ItemHeight_0700
      * @tc.number ArkUX_Stage_Swiper_ItemHeight_0700
-     * @tc.name Tests the itemHeight property of the swiper component
-     * @tc.desc Set the itemHeight property parameter to "8lpx"
+     * @tc.desc   Set the itemHeight property parameter to "8lpx"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_ItemHeight_0700', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_ItemHeight_0700 START');
@@ -947,9 +1037,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedFontColor_0100
      * @tc.number ArkUX_Stage_Swiper_SelectedFontColor_0100
-     * @tc.name Tests the selectedFontColor property of the swiper component
-     * @tc.desc Set the selectedFontColor property parameter to 0x00ff00
+     * @tc.desc   Set the selectedFontColor property parameter to 0x00ff00
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedFontColor_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedFontColor_0100 START');
@@ -976,9 +1069,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedFontColor_0200
      * @tc.number ArkUX_Stage_Swiper_SelectedFontColor_0200
-     * @tc.name Tests the selectedFontColor property of the swiper component
-     * @tc.desc Set the selectedFontColor property parameter to "#FFFF0000"
+     * @tc.desc   Set the selectedFontColor property parameter to "#FFFF0000"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedFontColor_0200', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedFontColor_0200 START');
@@ -1005,9 +1101,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedFontColor_0300
      * @tc.number ArkUX_Stage_Swiper_SelectedFontColor_0300
-     * @tc.name Tests the selectedFontColor property of the swiper component
-     * @tc.desc Set the selectedFontColor property parameter to "rgb(138,43,226)"
+     * @tc.desc   Set the selectedFontColor property parameter to "rgb(138,43,226)"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedFontColor_0300', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedFontColor_0300 START');
@@ -1034,9 +1133,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedFontColor_0400
      * @tc.number ArkUX_Stage_Swiper_SelectedFontColor_0400
-     * @tc.name Tests the selectedFontColor property of the swiper component
-     * @tc.desc Set the selectedFontColor property parameter to Color.Pink
+     * @tc.desc   Set the selectedFontColor property parameter to Color.Pink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedFontColor_0400', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedFontColor_0400 START');
@@ -1063,9 +1165,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedFontColor_0500
      * @tc.number ArkUX_Stage_Swiper_SelectedFontColor_0500
-     * @tc.name Tests the selectedFontColor property of the swiper component
-     * @tc.desc Set the selectedFontColor property parameter to ""
+     * @tc.desc   Set the selectedFontColor property parameter to ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedFontColor_0500', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedFontColor_0500 START');
@@ -1092,9 +1197,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedFontColor_0600
      * @tc.number ArkUX_Stage_Swiper_SelectedFontColor_0600
-     * @tc.name Tests the selectedFontColor property of the swiper component
-     * @tc.desc Set the selectedFontColor property parameter to null
+     * @tc.desc   Set the selectedFontColor property parameter to null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedFontColor_0600', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedFontColor_0600 START');
@@ -1121,9 +1229,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedFontColor_0700
      * @tc.number ArkUX_Stage_Swiper_SelectedFontColor_0700
-     * @tc.name Tests the selectedFontColor property of the swiper component
-     * @tc.desc Set the selectedFontColor property parameter to $r("app.color.selected_font_color_test")
+     * @tc.desc   Set the selectedFontColor property parameter to $r("app.color.selected_font_color_test")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedFontColor_0700', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedFontColor_0700 START');
@@ -1151,9 +1262,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedFontColor_0800
      * @tc.number ArkUX_Stage_Swiper_SelectedFontColor_0800
-     * @tc.name Tests the selectedFontColor property of the swiper component
-     * @tc.desc Set the selectedFontColor property parameter to "bgr(138,43,226)"
+     * @tc.desc   Set the selectedFontColor property parameter to "bgr(138,43,226)"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedFontColor_0800', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedFontColor_0800 START');
@@ -1180,9 +1294,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedFontColor_0900
      * @tc.number ArkUX_Stage_Swiper_SelectedFontColor_0900
-     * @tc.name Tests the selectedFontColor property of the swiper component
-     * @tc.desc Set the selectedFontColor property parameter to undefined
+     * @tc.desc   Set the selectedFontColor property parameter to undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedFontColor_0900', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedFontColor_0900 START');
@@ -1209,10 +1326,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedFontColor_1000
      * @tc.number ArkUX_Stage_Swiper_SelectedFontColor_1000
-     * @tc.name Tests the selectedFontColor property of the swiper component
-     * @tc.desc Set the selectedFontColor attribute parameter to "rgb (138,43,226)",
-     *               and set the selectedFontColor attribute parameter to the normal value Color.Gray again
+     * @tc.desc   Set the selectedFontColor attribute parameter to "rgb (138,43,226)",
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedFontColor_1000', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedFontColor_1000 START');
@@ -1239,10 +1358,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedFontColor_1100
      * @tc.number ArkUX_Stage_Swiper_SelectedFontColor_1100
-     * @tc.name Tests the selectedFontColor property of the swiper component
-     * @tc.desc Set the selectedFontColor property parameter to 0x00ff00,
-     *               and set the general property backgroundColor parameter to Color.Pink
+     * @tc.desc   Set the selectedFontColor property parameter to 0x00ff00,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedFontColor_1100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedFontColor_1100 START');
@@ -1269,10 +1390,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedFontColor_1200
      * @tc.number ArkUX_Stage_Swiper_SelectedFontColor_1200
-     * @tc.name Tests the selectedFontColor property of the swiper component
-     * @tc.desc Set the selectedFontColor property parameter to "rgb (255,0,0)",
-     *               and set the selectedFontColor property parameter to the outlier undefined again
+     * @tc.desc   Set the selectedFontColor property parameter to "rgb (255,0,0)",
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedFontColor_1200', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedFontColor_1200 START');
@@ -1299,9 +1422,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_FontColor_0100
      * @tc.number ArkUX_Stage_Swiper_FontColor_0100
-     * @tc.name Tests the fontColor property of the swiper component
-     * @tc.desc Set the fontColor property parameter to 0x00ff00
+     * @tc.desc   Set the fontColor property parameter to 0x00ff00
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_FontColor_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_FontColor_0100 START');
@@ -1328,9 +1454,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_FontColor_0200
      * @tc.number ArkUX_Stage_Swiper_FontColor_0200
-     * @tc.name Tests the fontColor property of the swiper component
-     * @tc.desc Set the fontColor property parameter to "#FFFF0000"
+     * @tc.desc   Set the fontColor property parameter to "#FFFF0000"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_FontColor_0200', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_FontColor_0200 START');
@@ -1357,9 +1486,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_FontColor_0300
      * @tc.number ArkUX_Stage_Swiper_FontColor_0300
-     * @tc.name Tests the fontColor property of the swiper component
-     * @tc.desc Set the fontColor property parameter to "rgb(138,43,226)"
+     * @tc.desc   Set the fontColor property parameter to "rgb(138,43,226)"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_FontColor_0300', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_FontColor_0300 START');
@@ -1386,9 +1518,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_FontColor_0400
      * @tc.number ArkUX_Stage_Swiper_FontColor_0400
-     * @tc.name Tests the fontColor property of the swiper component
-     * @tc.desc Set the fontColor property parameter to Color.Pink
+     * @tc.desc   Set the fontColor property parameter to Color.Pink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_FontColor_0400', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_FontColor_0400 START');
@@ -1415,9 +1550,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_FontColor_0500
      * @tc.number ArkUX_Stage_Swiper_FontColor_0500
-     * @tc.name Tests the fontColor property of the swiper component
-     * @tc.desc Set the fontColor property parameter to ""
+     * @tc.desc   Set the fontColor property parameter to ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_FontColor_0500', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_FontColor_0500 START');
@@ -1444,9 +1582,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_FontColor_0600
      * @tc.number ArkUX_Stage_Swiper_FontColor_0600
-     * @tc.name Tests the fontColor property of the swiper component
-     * @tc.desc Set the fontColor property parameter to null
+     * @tc.desc   Set the fontColor property parameter to null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_FontColor_0600', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_FontColor_0600 START');
@@ -1473,9 +1614,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_FontColor_0700
      * @tc.number ArkUX_Stage_Swiper_FontColor_0700
-     * @tc.name Tests the fontColor property of the swiper component
-     * @tc.desc Set the fontColor property parameter to $r("app.color.font_color_test")
+     * @tc.desc   Set the fontColor property parameter to $r("app.color.font_color_test")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_FontColor_0700', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_FontColor_0700 START');
@@ -1503,9 +1647,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_FontColor_0800
      * @tc.number ArkUX_Stage_Swiper_FontColor_0800
-     * @tc.name Tests the fontColor property of the swiper component
-     * @tc.desc Set the fontColor property parameter to "bgr(138,43,226)"
+     * @tc.desc   Set the fontColor property parameter to "bgr(138,43,226)"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_FontColor_0800', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_FontColor_0800 START');
@@ -1532,9 +1679,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_FontColor_0900
      * @tc.number ArkUX_Stage_Swiper_FontColor_0900
-     * @tc.name Tests the fontColor property of the swiper component
-     * @tc.desc Set the fontColor property parameter to undefined
+     * @tc.desc   Set the fontColor property parameter to undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_FontColor_0900', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_FontColor_0900 START');
@@ -1561,10 +1711,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_FontColor_1000
      * @tc.number ArkUX_Stage_Swiper_FontColor_1000
-     * @tc.name Tests the fontColor property of the swiper component
-     * @tc.desc Set the fontColor attribute parameter to "rgb (138,43,226)",
-     *               and set the fontColor attribute parameter to the normal value Color.Gray again
+     * @tc.desc   Set the fontColor attribute parameter to "rgb (138,43,226)",
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_FontColor_1000', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_FontColor_1000 START');
@@ -1591,10 +1743,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_FontColor_1100
      * @tc.number ArkUX_Stage_Swiper_FontColor_1100
-     * @tc.name Tests the fontColor property of the swiper component
-     * @tc.desc Set the fontColor property parameter to 0x00ff00,
-     *               and set the general property backgroundColor parameter to Color.Pink
+     * @tc.desc   Set the fontColor property parameter to 0x00ff00,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_FontColor_1100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_FontColor_1100 START');
@@ -1621,10 +1775,12 @@ export default function swiperTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_FontColor_1200
      * @tc.number ArkUX_Stage_Swiper_FontColor_1200
-     * @tc.name Tests the fontColor property of the swiper component
-     * @tc.desc Set the fontColor property parameter to "rgb (255,0,0)",
-     *               and set the fontColor property parameter to the outlier undefined again
+     * @tc.desc   Set the fontColor property parameter to "rgb (255,0,0)",
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_FontColor_1200', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_FontColor_1200 START');

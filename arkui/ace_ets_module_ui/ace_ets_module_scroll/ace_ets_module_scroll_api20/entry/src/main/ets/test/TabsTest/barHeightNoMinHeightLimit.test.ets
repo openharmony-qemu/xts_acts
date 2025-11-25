@@ -47,12 +47,12 @@ export default function barHeightNoMinHeightLimit() {
     });
 
     /**
-     * @tc.number    barHeightNoMinHeightLimit_001
-     * @tc.name      barHeightNoMinHeightLimit_0100
-     * @tc.desc      The height of tabBar has no minimum height limit. The value is true.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   barHeightNoMinHeightLimit_0100
+     * @tc.number barHeightNoMinHeightLimit_001
+     * @tc.desc   The height of tabBar has no minimum height limit. The value is true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('barHeightNoMinHeightLimit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[barHeightNoMinHeightLimit_0100] START');
@@ -69,12 +69,12 @@ export default function barHeightNoMinHeightLimit() {
     });
 
     /**
-     * @tc.number    barHeightNoMinHeightLimit_002
-     * @tc.name      barHeightNoMinHeightLimit_0200
-     * @tc.desc      The height of tabBar has a minimum height limit. The value is false.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   barHeightNoMinHeightLimit_0200
+     * @tc.number barHeightNoMinHeightLimit_002
+     * @tc.desc   The height of tabBar has a minimum height limit. The value is false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('barHeightNoMinHeightLimit_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[barHeightNoMinHeightLimit_0200] START');
@@ -91,12 +91,12 @@ export default function barHeightNoMinHeightLimit() {
     });
 
     /**
-     * @tc.number    barHeightNoMinHeightLimit_003
-     * @tc.name      barHeightNoMinHeightLimit_0300
-     * @tc.desc      The height of tabBar has a minimum height limit. The value is undefined.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   barHeightNoMinHeightLimit_0300
+     * @tc.number barHeightNoMinHeightLimit_003
+     * @tc.desc   The height of tabBar has a minimum height limit. The value is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('barHeightNoMinHeightLimit_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[barHeightNoMinHeightLimit_0300] START');
@@ -113,12 +113,12 @@ export default function barHeightNoMinHeightLimit() {
     });
 
     /**
-     * @tc.number    barHeightNoMinHeightLimit_004
-     * @tc.name      barHeightNoMinHeightLimit_0400
-     * @tc.desc      The height of tabBar has a minimum height limit. The value is null.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   barHeightNoMinHeightLimit_0400
+     * @tc.number barHeightNoMinHeightLimit_004
+     * @tc.desc   The height of tabBar has a minimum height limit. The value is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('barHeightNoMinHeightLimit_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[barHeightNoMinHeightLimit_0400] START');

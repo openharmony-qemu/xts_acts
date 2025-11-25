@@ -44,10 +44,13 @@ export default function textInputOnEditChangeJsunit() {
       console.info("textInputOnEditChange after each called");
     });
 
-    /*
-     * @tc.number       testtextInputOnEditChange0001
-     * @tc.name         testtextInputOnEditChange0001
-     * @tc.desc         acetextInputOnEditChangeEtsTest0001
+    /**
+     * @tc.name   testtextInputOnEditChange0001
+     * @tc.number testtextInputOnEditChange0001
+     * @tc.desc   acetextInputOnEditChangeEtsTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testtextInputOnEditChange0001', Level.LEVEL1, async () => {
       console.info('textInputOnEditChange testtextInputOnEditChange0001 START');
@@ -61,10 +64,13 @@ export default function textInputOnEditChangeJsunit() {
 
     });
 
-    /*
-     * @tc.number       testtextInputOnEditChange0002
-     * @tc.name         testtextInputOnEditChange0002
-     * @tc.desc         acetextInputOnEditChangeEtsTest0002
+    /**
+     * @tc.name   testtextInputOnEditChange0002
+     * @tc.number testtextInputOnEditChange0002
+     * @tc.desc   acetextInputOnEditChangeEtsTest0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testtextInputOnEditChange0002', Level.LEVEL1, async () => {
       console.info('textInputOnEditChange testtextInputOnEditChange0002 START');
@@ -77,10 +83,13 @@ export default function textInputOnEditChangeJsunit() {
       console.info("[testtextInputOnEditChange0002] height value :" + JSON.parse(strJson).$attrs.height);
     });
 
-    /*
-     * @tc.number       testtextInputOnEditChange0003
-     * @tc.name         testtextInputOnEditChange0003
-     * @tc.desc         acetextInputOnEditChangeEtsTest0003
+    /**
+     * @tc.name   testtextInputOnEditChange0003
+     * @tc.number testtextInputOnEditChange0003
+     * @tc.desc   acetextInputOnEditChangeEtsTest0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testtextInputOnEditChange0003', Level.LEVEL1, async () => {
       console.info('textInputOnEditChange testtextInputOnEditChange0003 START');
@@ -93,10 +102,13 @@ export default function textInputOnEditChangeJsunit() {
       console.info("[testtextInputOnEditChange0003] fontSize value :" + JSON.parse(strJson).$attrs.fontSize);
     });
 
-    /*
-     * @tc.number       testtextInputOnEditChange0004
-     * @tc.name         testtextInputOnEditChange0004
-     * @tc.desc         acetextInputOnEditChangeEtsTest0004
+    /**
+     * @tc.name   testtextInputOnEditChange0004
+     * @tc.number testtextInputOnEditChange0004
+     * @tc.desc   acetextInputOnEditChangeEtsTest0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testtextInputOnEditChange0004', Level.LEVEL1, async () => {
       console.info('textInputOnEditChange testtextInputOnEditChange0004 START');
@@ -110,10 +122,13 @@ export default function textInputOnEditChangeJsunit() {
 
     });
 
-    /*
-     * @tc.number       testtextInputOnEditChange0005
-     * @tc.name         testtextInputOnEditChange0005
-     * @tc.desc         acetextInputOnEditChangeEtsTest0005
+    /**
+     * @tc.name   testtextInputOnEditChange0005
+     * @tc.number testtextInputOnEditChange0005
+     * @tc.desc   acetextInputOnEditChangeEtsTest0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testtextInputOnEditChange0005', Level.LEVEL1, async () => {
       console.info('textInputOnEditChange testtextInputOnEditChange0005 START');
@@ -126,10 +141,13 @@ export default function textInputOnEditChangeJsunit() {
       console.info("[testtextInputOnEditChange0005] align value :" + JSON.parse(strJson).$attrs.align);
     });
 
-    /*
-     * @tc.number       testtextInputOnEditChange0006
-     * @tc.name         testtextInputOnEditChange0006
-     * @tc.desc         acetextInputOnEditChangeEtsTest0006
+    /**
+     * @tc.name   testtextInputOnEditChange0006
+     * @tc.number testtextInputOnEditChange0006
+     * @tc.desc   acetextInputOnEditChangeEtsTest0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testtextInputOnEditChange0006', Level.LEVEL1, async () => {
       console.info('textInputOnEditChange testtextInputOnEditChange0006 START');
@@ -142,10 +160,13 @@ export default function textInputOnEditChangeJsunit() {
       console.info("[testtextInputOnEditChange0006] fontColor value :" + JSON.parse(strJson).$attrs.fontColor);
     });
 
-    /*
-     * @tc.number       testtextInputOnEditChange0009
-     * @tc.name         testtextInputOnEditChange0009
-     * @tc.desc         acetextInputOnEditChangeEtsTest0009
+    /**
+     * @tc.name   testtextInputOnEditChange0009
+     * @tc.number testtextInputOnEditChange0009
+     * @tc.desc   acetextInputOnEditChangeEtsTest0009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testtextInputOnEditChange0009', Level.LEVEL1, async () => {
       console.info('textInputOnEditChange testtextInputOnEditChange009 START');
@@ -158,10 +179,13 @@ export default function textInputOnEditChangeJsunit() {
       console.info("[testtextInputOnEditChange0009] padding value :" + JSON.parse(strJson).$attrs.padding);
     });
 
-    /*
-     * @tc.number       testtextInputOnEditChange0010
-     * @tc.name         testtextInputOnEditChange0010
-     * @tc.desc         acetextInputOnEditChangeEtsTest0010
+    /**
+     * @tc.name   testtextInputOnEditChange0010
+     * @tc.number testtextInputOnEditChange0010
+     * @tc.desc   acetextInputOnEditChangeEtsTest0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testtextInputOnEditChange0010', Level.LEVEL1, async () => {
       console.info('textInputOnEditChange testtextInputOnEditChange0010 START');
@@ -174,10 +198,13 @@ export default function textInputOnEditChangeJsunit() {
       console.info("[testtextInputOnEditChange0010] textAlign value :" + JSON.parse(strJson).$attrs.textAlign);
     });
 
-    /*
-     * @tc.number       testtextInputCopyOption0001
-     * @tc.name         testtextInputCopyOption0001
-     * @tc.desc         testtextInputCopyOption0001
+    /**
+     * @tc.name   testtextInputCopyOption0001
+     * @tc.number testtextInputCopyOption0001
+     * @tc.desc   testtextInputCopyOption0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testtextInputCopyOption0001', Level.LEVEL1, async () => {
       console.info('textInputCopyOption testtextInputCopyOption0001 START');
@@ -190,10 +217,13 @@ export default function textInputOnEditChangeJsunit() {
       console.info("[testtextInputCopyOption0001] copyOption value :" + JSON.parse(strJson).$attrs.copyOption);
     });
 
-    /*
-     * @tc.number       testtextInputShowPasswordIcon0001
-     * @tc.name         testtextInputShowPasswordIcon0001
-     * @tc.desc         testtextInputShowPasswordIcon0001
+    /**
+     * @tc.name   testtextInputShowPasswordIcon0001
+     * @tc.number testtextInputShowPasswordIcon0001
+     * @tc.desc   testtextInputShowPasswordIcon0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testtextInputShowPasswordIcon0001', Level.LEVEL1, async () => {
       console.info('textInputShowPasswordIcon testtextInputShowPasswordIcon0001 START');

@@ -47,12 +47,12 @@ export default function getPinchAxisScaleValue() {
     });
 
     /**
-     * @tc.number    getPinchAxisScaleValueTest_0010
-     * @tc.name      getPinchAxisScaleValueTest_0010
-     * @tc.desc      api axisPinch
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getPinchAxisScaleValueTest_0010
+     * @tc.number getPinchAxisScaleValueTest_0010
+     * @tc.desc   api axisPinch
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getPinchAxisScaleValueTest_0010', Level.LEVEL1, async (done: Function) => {
       console.info('getPinchAxisScaleValueTest_0010 START');
@@ -71,12 +71,12 @@ export default function getPinchAxisScaleValue() {
     });
 
     /**
-     * @tc.number    getPinchAxisScaleValueTest_0020
-     * @tc.name      getPinchAxisScaleValueTest_0020
-     * @tc.desc      api getPinchAxisScaleValue
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getPinchAxisScaleValueTest_0020
+     * @tc.number getPinchAxisScaleValueTest_0020
+     * @tc.desc   api getPinchAxisScaleValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getPinchAxisScaleValueTest_0020', Level.LEVEL1, async (done: Function) => {
       console.info('getPinchAxisScaleValueTest_0020 START');

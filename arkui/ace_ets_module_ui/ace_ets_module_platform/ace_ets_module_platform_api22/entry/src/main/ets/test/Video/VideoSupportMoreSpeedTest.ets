@@ -42,6 +42,14 @@ export default function VideoSupportMoreSpeedTest() {
       done();
     });
  
+    /**
+     * @tc.name   VideoSupportMoreSpeedTest_0100
+     * @tc.number VideoSupportMoreSpeedTest_0100
+     * @tc.desc   VideoSupportMoreSpeedTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('VideoSupportMoreSpeedTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[VideoSupportMoreSpeedTest_0100] START');
       let driver = await Driver.create()

@@ -48,12 +48,12 @@ export default function textAreaMinFontSize() {
     })
 
     /**
+     * @tc.name   textAreaMinFontSize0100
      * @tc.number textAreaMinFontSize0100
-     * @tc.name Test the minFontSize property of the textArea component
-     * @tc.desc set the minFontSize property value is  16
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set the minFontSize property value is  16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textAreaMinFontSize0100',  Level.LEVEL0, async (done: Function) => {
       let tagName = 'textAreaMinFontSize0100';

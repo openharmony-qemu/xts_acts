@@ -47,12 +47,12 @@ export default function SwipeGestureExample03Test() {
     });
 
     /**
-     * @tc.number
-     * @tc.name      SwipeGestureExample03Test_0010
-     * @tc.desc      api test TapGesture
-     * @tc.level:    Level
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SwipeGestureExample03Test_0010
+     * @tc.number SwipeGestureExample03Test_0010
+     * @tc.desc   api test TapGesture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SwipeGestureExample03Test_0010', Level.LEVEL0, async (done: Function) => {
       console.info('SwipeGestureExample03Test_0010 START');

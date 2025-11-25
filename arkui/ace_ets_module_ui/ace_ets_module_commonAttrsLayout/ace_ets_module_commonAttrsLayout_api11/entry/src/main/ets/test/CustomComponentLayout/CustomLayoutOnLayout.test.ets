@@ -44,10 +44,13 @@ export default function CustomLayoutOnLayoutTest() {
       console.info("CustomLayoutOnLayoutTest after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         CustomLayoutOnLayoutTest_0010
-     * @tc.desic        test Rect radius
+    /**
+     * @tc.name   CustomLayoutOnLayoutTest_0010
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   CustomLayoutOnLayoutTest_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('CustomLayoutOnLayoutTest_0010', Level.LEVEL1, async (done: Function) => {
       console.info('[CustomLayoutOnLayoutTest_0010] START');

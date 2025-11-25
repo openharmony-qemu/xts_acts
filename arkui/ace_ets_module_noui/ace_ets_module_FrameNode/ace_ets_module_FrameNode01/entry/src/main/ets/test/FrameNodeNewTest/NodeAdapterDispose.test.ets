@@ -47,12 +47,12 @@ export default function NodeAdapterDispose() {
     });
 
     /**
-     * @tc.number    NodeAdapterDispose_0100
-     * @tc.name      NodeAdapterDispose_0100
-     * @tc.desc      frameNode: NodeAdapter Dispose Test
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   NodeAdapterDispose_0100
+     * @tc.number NodeAdapterDispose_0100
+     * @tc.desc   frameNode: NodeAdapter Dispose Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NodeAdapterDispose_0100', Level.LEVEL0, async (done: Function) => {
       console.info('NodeAdapterDispose_0100 START');

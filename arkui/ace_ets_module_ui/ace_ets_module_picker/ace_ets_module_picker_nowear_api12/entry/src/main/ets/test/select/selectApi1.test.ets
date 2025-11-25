@@ -45,9 +45,12 @@ export default function selectApi1() {
     });
 
     /**
+     * @tc.name   selectApi1_0100
      * @tc.number selectApi1_0100
-     * @tc.name   testFocus
-     * @tc.desc
+     * @tc.desc   selectApi1_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('selectApi1_0100', Level.LEVEL1, async (done: Function) => {
       console.info('selectApi1_0100 START');

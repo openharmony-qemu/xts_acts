@@ -26,13 +26,13 @@ export default function swiperOnAnimationEndTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SWIPER_EVENT_ON_ANIMATION_END_0100
-     * @tc.name: testSwiperOnAnimationEnd001
-     * @tc.desc: testing onAnimationEnd for swiper
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSwiperOnAnimationEnd001
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_EVENT_ON_ANIMATION_END_0100
+     * @tc.desc   testing onAnimationEnd for swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperOnAnimationEnd001', Level.LEVEL1, async (done: Function) => {
         let PAGE_TAG = 'SwiperOnAnimationEndTest';

@@ -59,9 +59,12 @@ export default function LazyForEachCacheEnhance() {
     });
 
     /**
+     * @tc.name   LazyForEachCacheEnhance_001
      * @tc.number LazyForEachCacheEnhance_001
-     * @tc.name LazyForEachCacheEnhance_001
-     * @tc.desc Test LazyForEachCacheEnhance
+     * @tc.desc   Test LazyForEachCacheEnhance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('LazyForEachCacheEnhance_001', Level.LEVEL1, async (done: Function) => {
       console.info('[LazyForEachCacheEnhance_001] START');      

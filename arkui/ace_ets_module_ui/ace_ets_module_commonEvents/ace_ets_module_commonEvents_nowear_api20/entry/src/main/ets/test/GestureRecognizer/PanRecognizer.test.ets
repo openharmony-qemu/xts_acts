@@ -59,10 +59,12 @@ export default function PanRecognizerTest() {
     });
 
     /**
-     * @tc.number : PanRecognizer_0100
-     * @tc.name  : PanRecognizer_0100
-     * @tc.desc  : To test whether PanRecognizer is effective.
-     * @tc.level : Level 0
+     * @tc.name   PanRecognizer_0100
+     * @tc.number PanRecognizer_0100
+     * @tc.desc   To test whether PanRecognizer is effective.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PanRecognizer_0100', Level.LEVEL0, async (done: Function) => {
       console.info('PanRecognizer_0100 START');
@@ -99,10 +101,12 @@ export default function PanRecognizerTest() {
     });
 
     /**
-     * @tc.number : PanRecognizer_0200
-     * @tc.name  : PanRecognizer_0200
-     * @tc.desc  : To test for Horizontal
-     * @tc.level : Level 0
+     * @tc.name   PanRecognizer_0200
+     * @tc.number PanRecognizer_0200
+     * @tc.desc   To test for Horizontal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PanRecognizer_0200', Level.LEVEL0, async (done: Function) => {
       console.info('PanRecognizer_0200 START');
@@ -119,10 +123,12 @@ export default function PanRecognizerTest() {
     });
 
     /**
-     * @tc.number : PanRecognizer_0300
-     * @tc.name  : PanRecognizer_0300
-     * @tc.desc  : To test for Left
-     * @tc.level : Level 0
+     * @tc.name   PanRecognizer_0300
+     * @tc.number PanRecognizer_0300
+     * @tc.desc   To test for Left
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PanRecognizer_0300', Level.LEVEL0, async (done: Function) => {
       console.info('PanRecognizer_0300 START');
@@ -139,10 +145,12 @@ export default function PanRecognizerTest() {
     });
 
     /**
-     * @tc.number : PanRecognizer_0400
-     * @tc.name  : PanRecognizer_0400
-     * @tc.desc  : To test for Right
-     * @tc.level : Level 0
+     * @tc.name   PanRecognizer_0400
+     * @tc.number PanRecognizer_0400
+     * @tc.desc   To test for Right
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PanRecognizer_0400', Level.LEVEL0, async (done: Function) => {
       console.info('PanRecognizer_0400 START');
@@ -159,10 +167,12 @@ export default function PanRecognizerTest() {
     });
 
     /**
-     * @tc.number : PanRecognizer_0500
-     * @tc.name  : PanRecognizer_0500
-     * @tc.desc  : To test for Vertical
-     * @tc.level : Level 0
+     * @tc.name   PanRecognizer_0500
+     * @tc.number PanRecognizer_0500
+     * @tc.desc   To test for Vertical
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PanRecognizer_0500', Level.LEVEL0, async (done: Function) => {
       console.info('PanRecognizer_0500 START');
@@ -179,10 +189,12 @@ export default function PanRecognizerTest() {
     });
 
     /**
-     * @tc.number : PanRecognizer_0600
-     * @tc.name  : PanRecognizer_0600
-     * @tc.desc  : To test for Up
-     * @tc.level : Level 0
+     * @tc.name   PanRecognizer_0600
+     * @tc.number PanRecognizer_0600
+     * @tc.desc   To test for Up
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PanRecognizer_0600', Level.LEVEL0, async (done: Function) => {
       console.info('PanRecognizer_0600 START');
@@ -199,10 +211,12 @@ export default function PanRecognizerTest() {
     });
 
     /**
-     * @tc.number : PanRecognizer_0700
-     * @tc.name  : PanRecognizer_0700
-     * @tc.desc  : To test for Down
-     * @tc.level : Level 0
+     * @tc.name   PanRecognizer_0700
+     * @tc.number PanRecognizer_0700
+     * @tc.desc   To test for Down
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PanRecognizer_0700', Level.LEVEL0, async (done: Function) => {
       console.info('PanRecognizer_0700 START');
@@ -219,10 +233,12 @@ export default function PanRecognizerTest() {
     });
 
     /**
-     * @tc.number : PanRecognizer_0800
-     * @tc.name  : PanRecognizer_0800
-     * @tc.desc  : To test for None
-     * @tc.level : Level 0
+     * @tc.name   PanRecognizer_0800
+     * @tc.number PanRecognizer_0800
+     * @tc.desc   To test for None
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PanRecognizer_0800', Level.LEVEL0, async (done: Function) => {
       console.info('PanRecognizer_0800 START');

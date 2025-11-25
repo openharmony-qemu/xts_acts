@@ -46,12 +46,12 @@ export default function waterFlow3Jsunit() {
     });
 
     /**
-     * @tc.number    waterFlow3Jsunit_001
-     * @tc.name      waterFlow3Jsunit_001
-     * @tc.desc      Add and delete data to waterFlow component
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   waterFlow3Jsunit_001
+     * @tc.number waterFlow3Jsunit_001
+     * @tc.desc   Add and delete data to waterFlow component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('waterFlow3Jsunit_001', Level.LEVEL2, async (done: Function) => {
       console.info('[waterFlow3Jsunit_001] START');

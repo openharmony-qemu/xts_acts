@@ -42,14 +42,15 @@ export default function SwiperLoop() {
       console.info("SwiperLoop after each called");
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0270
-     * @tc.desc      set loop to false and set autoPlay to false
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
-     */
 
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0270
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0270
+     * @tc.desc   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0270
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0270', Level.LEVEL1, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0270] START');
       await CommonFunc.sleep(2000);
@@ -82,14 +83,15 @@ export default function SwiperLoop() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0280
-     * @tc.desc      set loop to true and set autoPlay to false
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
-     */
 
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0280
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0280
+     * @tc.desc   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0280
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0280', Level.LEVEL1, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0280] START');
       await CommonFunc.sleep(2000);
@@ -122,14 +124,15 @@ export default function SwiperLoop() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0340
-     * @tc.desc      set loop to true and set autoPlay to false
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
-     */
 
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0340
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0340
+     * @tc.desc   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0340
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0340', Level.LEVEL1, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0340] START');
       await CommonFunc.sleep(2000);
@@ -162,14 +165,15 @@ export default function SwiperLoop() {
     });
 
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0350
-     * @tc.desc      set loop to true and set autoPlay to false
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
-     */
 
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0350
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0350
+     * @tc.desc   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0350
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0350', Level.LEVEL1, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0350] START');
       await CommonFunc.sleep(2000);
@@ -198,14 +202,15 @@ export default function SwiperLoop() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0480
-     * @tc.desc      set loop to false and set autoPlay to true
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
-     */
 
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0480
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0480
+     * @tc.desc   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0480
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0480', Level.LEVEL1, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0480] START');
       await CommonFunc.sleep(2000);

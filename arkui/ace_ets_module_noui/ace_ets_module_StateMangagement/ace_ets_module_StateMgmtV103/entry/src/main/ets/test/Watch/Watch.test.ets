@@ -41,12 +41,12 @@ export default function WatchTest() {
       done();
     });
     /**
-     * @tc.number    WatchTest_0100
-     * @tc.name      WatchTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 0
-     * @tc.type :    FUNC
-     * @tc.size :    MEDIUM
+     * @tc.name   WatchTest_0100
+     * @tc.number WatchTest_0100
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('WatchTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('WatchTest_0100 START');

@@ -64,13 +64,13 @@ export default function overlayManagerTest() {
     });
 
     /**
+     * @tc.name   overlayManagerTest_0100
      * @tc.number SUB_ACE_overlayManagerTest_0100
-     * @tc.name overlayManagerTest_0100
-     * @tc.desc To test LevelOrder.clamp,addComponentContentWithOrder,getBottomOrder,getTopOrder
-     * @tc.level: Level 1
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test LevelOrder.clamp,addComponentContentWithOrder,getBottomOrder,getTopOrder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('overlayManagerTest_0100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1 , async (done: Function) => {
       console.info('overlayManagerTest_0100 START');
       let driver = await Driver.create()

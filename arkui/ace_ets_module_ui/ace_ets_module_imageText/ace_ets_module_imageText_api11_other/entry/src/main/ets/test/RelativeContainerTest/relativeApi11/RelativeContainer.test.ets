@@ -42,12 +42,12 @@ export default function RelativeContainer() {
     });
 
     /**
-     * @tc.number    RelativeContainer_0100
-     * @tc.name      RelativeContainer_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RelativeContainer_0100
+     * @tc.number RelativeContainer_0100
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RelativeContainer_0100', Level.LEVEL2, async (done: Function) => {
       console.info('RelativeContainer_0100 START');

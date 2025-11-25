@@ -45,12 +45,12 @@ export default function repeatReusableTrue() {
     });
 
     /**
-     * @tc.number    repeatreusabletrue
-     * @tc.name      repeatreusabletrue_001
-     * @tc.desc      Persistently store UI related data
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   repeatreusabletrue_001
+     * @tc.number repeatreusabletrue
+     * @tc.desc   Persistently store UI related data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('repeatreusabletrue_001', Level.LEVEL0, async (done: Function) => {
       console.info('[repeatreusabletrue_001] START');

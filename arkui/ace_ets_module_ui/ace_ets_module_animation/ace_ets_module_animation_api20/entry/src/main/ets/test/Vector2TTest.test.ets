@@ -61,12 +61,12 @@ export default function Vector2TTest() {
     });
 
     /**
+     * @tc.name   Vector2TTest_001
      * @tc.number Vector2TTest_001
-     * @tc.name Vector2TTest_001
-     * @tc.desc test annulusRegion
-     * @tc.level Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test annulusRegion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Vector2TTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('[Vector2TTest_001] START');

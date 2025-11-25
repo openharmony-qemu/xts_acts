@@ -48,12 +48,12 @@ export default function APISearchExample() {
     })
 
     /**
-     * @tc.number APISearchExample_0100
      * @tc.name   APISearchExample_0100
+     * @tc.number APISearchExample_0100
      * @tc.desc   APISearchExample_0100
-     * @tc.size   APISearchExample
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APISearchExample_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('APISearchExample_0100 START');
@@ -76,12 +76,12 @@ export default function APISearchExample() {
     });
 
     /**
-     * @tc.number APISearchExample_0200
      * @tc.name   APISearchExample_0200
+     * @tc.number APISearchExample_0200
      * @tc.desc   APISearchExample_0200
-     * @tc.size   APISearchExample
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APISearchExample_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('APISearchExample_0200 START');
@@ -101,12 +101,12 @@ export default function APISearchExample() {
       done();
     });
     /**
-     * @tc.number APISearchExample_0300
      * @tc.name   APISearchExample_0300
+     * @tc.number APISearchExample_0300
      * @tc.desc   APISearchExample_0300
-     * @tc.size   APISearchExample
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APISearchExample_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('APISearchExample_0200 START');
@@ -129,12 +129,12 @@ export default function APISearchExample() {
     });
 
     /**
-     * @tc.number APISearchExample_0400
      * @tc.name   APISearchExample_0400
+     * @tc.number APISearchExample_0400
      * @tc.desc   APISearchExample_0400
-     * @tc.size   APISearchExample
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APISearchExample_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('APISearchExample_0200 START');

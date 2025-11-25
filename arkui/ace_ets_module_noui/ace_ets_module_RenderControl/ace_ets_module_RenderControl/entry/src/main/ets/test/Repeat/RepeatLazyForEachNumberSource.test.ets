@@ -59,12 +59,12 @@ export default function RepeatLazyForEachNumberSource() {
     });
 
     /**
+     * @tc.name   RepeatLazyForEachNumberSource_001
      * @tc.number RepeatLazyForEachNumberSource_001
-     * @tc.name RepeatLazyForEachNumberSource_001
-     * @tc.desc Test RepeatLazyForEachNumberSource component
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Test RepeatLazyForEachNumberSource component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RepeatLazyForEachNumberSource_001', Level.LEVEL0, async (done: Function) => {
       console.info('[RepeatLazyForEachNumberSource_001] START');

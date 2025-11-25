@@ -46,12 +46,12 @@ export default function Monitor2Jsunit() {
     });
 
     /**
-     * @tc.number    Monitor2Jsunit_001
-     * @tc.name      Monitor2Jsunit_001
-     * @tc.desc      Inherited scene decorated by @ Trace
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   Monitor2Jsunit_001
+     * @tc.number Monitor2Jsunit_001
+     * @tc.desc   Inherited scene decorated by @ Trace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Monitor2Jsunit_001', Level.LEVEL0, async (done: Function) => {
       console.info('[Monitor2Jsunit_001] START');

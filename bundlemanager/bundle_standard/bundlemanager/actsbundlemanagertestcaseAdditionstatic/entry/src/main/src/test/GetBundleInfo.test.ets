@@ -12,11 +12,14 @@ const VENDOR = "example";
 export default function getBundleInfo() {
   describe('getBundleInfo', (): void => {
 
-    /*
-      * @tc.number: Sub_Bms_GetBundleInfoWithUserIdCallBack_static_17700001
-      * @tc.name:  getBundleInfoTestWithUserIdCallBack17700001
-      * @tc.desc: test errCode 17700001 when call getBundleInfo with userID
-      */
+    /**
+     * @tc.name   getBundleInfoTestWithUserIdCallBack17700001
+     * @tc.number Sub_Bms_GetBundleInfoWithUserIdCallBack_static_17700001
+     * @tc.desc   test errCode 17700001 when call getBundleInfo with userID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('getBundleInfoTestWithUserIdCallBack17700001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         bundle.getBundleInfo("com.example.helloworld5", bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT, 100, (err: BusinessError<void> | null, data : BundleInfo | undefined) => {
@@ -32,11 +35,14 @@ export default function getBundleInfo() {
         });
       })
 
-    /*
-      * @tc.number: Sub_Bms_GetBundleInfoWithUserIdCallBack_static_17700004
-      * @tc.name:  getBundleInfoTestWithUserIdCallBack17700004
-      * @tc.desc: test errCode 17700004 when call getBundleInfo with userID
-      */
+    /**
+     * @tc.name   getBundleInfoTestWithUserIdCallBack17700004
+     * @tc.number Sub_Bms_GetBundleInfoWithUserIdCallBack_static_17700004
+     * @tc.desc   test errCode 17700004 when call getBundleInfo with userID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('getBundleInfoTestWithUserIdCallBack17700004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         bundle.getBundleInfo(BUNDLE_NAME, bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT, 1010, (err: BusinessError<void> | null, data : BundleInfo | undefined) => {
@@ -52,11 +58,14 @@ export default function getBundleInfo() {
         });
       })
 
-    /*
-      * @tc.number: Sub_Bms_GetBundleInfoCallBack_static_17700001
-      * @tc.name:  getBundleInfoTestCallBack17700001
-      * @tc.desc: test errCode 17700001 when call getBundleInfo
-      */
+    /**
+     * @tc.name   getBundleInfoTestCallBack17700001
+     * @tc.number Sub_Bms_GetBundleInfoCallBack_static_17700001
+     * @tc.desc   test errCode 17700001 when call getBundleInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('getBundleInfoTestCallBack17700001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         bundle.getBundleInfo("com.example.helloworld5", bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT, (err: BusinessError<void> | null, data : BundleInfo | undefined) => {
@@ -72,10 +81,13 @@ export default function getBundleInfo() {
         });
       })
 
-    /*
-     * @tc.number: Sub_Bms_GetBundleInfoWithUserId_static_17700001
-     * @tc.name:  getBundleInfoTestWithUserIdPromise17700001
-     * @tc.desc: test errCode 17700001 when call getBundleInfo
+    /**
+     * @tc.name   getBundleInfoTestWithUserIdPromise17700001
+     * @tc.number Sub_Bms_GetBundleInfoWithUserId_static_17700001
+     * @tc.desc   test errCode 17700001 when call getBundleInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getBundleInfoTestWithUserIdPromise17700001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -97,10 +109,13 @@ export default function getBundleInfo() {
         }
       });
 
-    /*
-     * @tc.number: Sub_Bms_GetBundleInfoWithUserId_static_17700004
-     * @tc.name:  getBundleInfoTestWithUserIdPromise17700004
-     * @tc.desc: test errCode 17700004 when call getBundleInfo
+    /**
+     * @tc.name   getBundleInfoTestWithUserIdPromise17700004
+     * @tc.number Sub_Bms_GetBundleInfoWithUserId_static_17700004
+     * @tc.desc   test errCode 17700004 when call getBundleInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getBundleInfoTestWithUserIdPromise17700004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -122,10 +137,13 @@ export default function getBundleInfo() {
         }
       });
 
-    /*
-     * @tc.number: Sub_Bms_GetBundleInfoSync_static_17700001
-     * @tc.name:  getBundleInfoTestSync17700001
-     * @tc.desc: test errCode 17700001 when call getBundleInfoSync
+    /**
+     * @tc.name   getBundleInfoTestSync17700001
+     * @tc.number Sub_Bms_GetBundleInfoSync_static_17700001
+     * @tc.desc   test errCode 17700001 when call getBundleInfoSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getBundleInfoTestSync17700001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -146,10 +164,13 @@ export default function getBundleInfo() {
         hilog.info(domain, tag, 'getBundleInfoTestSync17700001 end');
       })
 
-    /*
-     * @tc.number: Sub_Bms_GetBundleInfoSyncWithUserID_static_17700001
-     * @tc.name:  getBundleInfoTestSyncWithUserID17700001
-     * @tc.desc: test errCode 17700001 when call getBundleInfoSync with userID
+    /**
+     * @tc.name   getBundleInfoTestSyncWithUserID17700001
+     * @tc.number Sub_Bms_GetBundleInfoSyncWithUserID_static_17700001
+     * @tc.desc   test errCode 17700001 when call getBundleInfoSync with userID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getBundleInfoTestSyncWithUserID17700001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -170,10 +191,13 @@ export default function getBundleInfo() {
         hilog.info(domain, tag, 'getBundleInfoTestSyncWithUserID17700001 end');
       })
 
-    /*
-     * @tc.number: Sub_Bms_GetBundleInfoSyncWithUserID_static_17700004
-     * @tc.name:  getBundleInfoTestSyncWithUserID17700004
-     * @tc.desc: test errCode 17700004 when call getBundleInfoSync with userID
+    /**
+     * @tc.name   getBundleInfoTestSyncWithUserID17700004
+     * @tc.number Sub_Bms_GetBundleInfoSyncWithUserID_static_17700004
+     * @tc.desc   test errCode 17700004 when call getBundleInfoSync with userID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getBundleInfoTestSyncWithUserID17700004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {

@@ -26,52 +26,52 @@ export default function commonAttrsTransformTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_TRANSFORM_0100
-     * @tc.name       : testCommonAttrsTransform001
-     * @tc.desc       : testing transform for common with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsTransform001
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_TRANSFORM_0100
+     * @tc.desc   testing transform for common with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTransform001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTransform001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_TRANSFORM_0200
-     * @tc.name       : testCommonAttrsTransform002
-     * @tc.desc       : testing transform for common with sixteen zeros
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCommonAttrsTransform002
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_TRANSFORM_0200
+     * @tc.desc   testing transform for common with sixteen zeros
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTransform002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTransform002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_TRANSFORM_0300
-     * @tc.name       : testCommonAttrsTransform003
-     * @tc.desc       : testing transform for common with no values
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCommonAttrsTransform003
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_TRANSFORM_0300
+     * @tc.desc   testing transform for common with no values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTransform003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTransform003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_TRANSFORM_0400
-     * @tc.name       : testCommonAttrsTransform004
-     * @tc.desc       : testing transform for common with default values
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsTransform004
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_TRANSFORM_0400
+     * @tc.desc   testing transform for common with default values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTransform004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTransform004()).assertEqual(0)

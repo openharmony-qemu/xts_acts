@@ -47,12 +47,12 @@ export default function componentContentDisposeTest() {
     });
 
     /**
-     * @tc.number    componentContentDisposeTest_0100
-     * @tc.name      componentContentDisposeTest_0100
-     * @tc.desc      ComponentContent dispose test
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   componentContentDisposeTest_0100
+     * @tc.number componentContentDisposeTest_0100
+     * @tc.desc   ComponentContent dispose test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('componentContentDisposeTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('componentContentDisposeTest_0100 START');

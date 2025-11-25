@@ -49,12 +49,12 @@ export default function FolderStackTest1() {
 
 
     /**
-     * @tc.number: SUB_ARKUI_API_FolderStackTest1_0100
-     * @tc.name: FolderStackTest1_0100
-     * @tc.desc: FolderStackAPI 
-     * @tc.level: Level 0
-     * @tc.type : FolderStack
-     * @tc.size : FolderStackTest
+     * @tc.name   FolderStackTest1_0100
+     * @tc.number SUB_ARKUI_API_FolderStackTest1_0100
+     * @tc.desc   FolderStackAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FolderStackTest1_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('FolderStackTest1_0100 START');

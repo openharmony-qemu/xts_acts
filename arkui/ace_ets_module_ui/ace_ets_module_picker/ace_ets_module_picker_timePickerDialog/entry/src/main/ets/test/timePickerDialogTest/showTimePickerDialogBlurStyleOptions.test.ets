@@ -37,12 +37,12 @@ export default function showTimePickerDialogBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    showTimePickerDialogBlurStyleOptions_0100
-     * @tc.name      showTimePickerDialogBlurStyleOptions_0100
-     * @tc.desc      showTimePickerDialogBackgroundEffectTest_0200
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showTimePickerDialogBlurStyleOptions_0100
+     * @tc.number showTimePickerDialogBlurStyleOptions_0100
+     * @tc.desc   showTimePickerDialogBackgroundEffectTest_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('showTimePickerDialogBlurStyleOptions_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'showTimePickerDialogBlurStyleOptions';
@@ -79,12 +79,12 @@ export default function showTimePickerDialogBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    showTimePickerDialogBlurStyleOptions_0200
-     * @tc.name      showTimePickerDialogBlurStyleOptions_0200
-     * @tc.desc      showTimePickerDialogBackgroundEffectTest_0200
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showTimePickerDialogBlurStyleOptions_0200
+     * @tc.number showTimePickerDialogBlurStyleOptions_0200
+     * @tc.desc   showTimePickerDialogBackgroundEffectTest_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('showTimePickerDialogBlurStyleOptions_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'showTimePickerDialogBlurStyleOptions_0200';
@@ -111,12 +111,12 @@ export default function showTimePickerDialogBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    showTimePickerDialogBlurStyleOptions_0300
-     * @tc.name      showTimePickerDialogBlurStyleOptions_0300
-     * @tc.desc      showTimePickerDialogBackgroundEffectTest_0200
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showTimePickerDialogBlurStyleOptions_0300
+     * @tc.number showTimePickerDialogBlurStyleOptions_0300
+     * @tc.desc   showTimePickerDialogBackgroundEffectTest_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('showTimePickerDialogBlurStyleOptions_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'showTimePickerDialogBlurStyleOptions_0300';

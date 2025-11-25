@@ -26,65 +26,65 @@ export default function textAreaTypeTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_TYPE_0100
-     * @tc.name: testTextAreaType001
-     * @tc.desc: testing Type for textArea with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaType001
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_TYPE_0100
+     * @tc.desc   testing Type for textArea with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaType001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaType001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_TYPE_0200
-     * @tc.name: testTextAreaType002
-     * @tc.desc: testing Type for textArea with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaType002
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_TYPE_0200
+     * @tc.desc   testing Type for textArea with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaType002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaType002()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_TYPE_0300
-     * @tc.name: testTextAreaType003
-     * @tc.desc: testing Type for textArea with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaType003
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_TYPE_0300
+     * @tc.desc   testing Type for textArea with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaType003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaType003()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_TYPE_0400
-     * @tc.name: testTextAreaType004
-     * @tc.desc: testing Type for textArea with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaType004
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_TYPE_0400
+     * @tc.desc   testing Type for textArea with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaType004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaType004()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_TYPE_0500
-     * @tc.name: testTextAreaType005
-     * @tc.desc: testing Type for textArea with abnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaType005
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_TYPE_0500
+     * @tc.desc   testing Type for textArea with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaType005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaType005()).assertEqual(0)

@@ -79,9 +79,12 @@ export default function selectPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSelectIdProp
-         * @tc.desc      ACE
+         * @tc.name   testSelectIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSelectIdProp', Level.LEVEL0, async function(done) {
             console.info('testSelectIdProp START');
@@ -97,9 +100,12 @@ export default function selectPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSelectClassProp
-         * @tc.desc      ACE
+         * @tc.name   testSelectClassProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSelectClassProp', Level.LEVEL0, async function(done) {
             console.info('testSelectClassProp START');
@@ -116,9 +122,12 @@ export default function selectPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSelectClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testSelectClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSelectClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testSelectClassPropNone START');
@@ -136,9 +145,12 @@ export default function selectPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSelectRefProp
-         * @tc.desc      ACE
+         * @tc.name   testSelectRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSelectRefProp', Level.LEVEL0, async function(done) {
             console.info('testSelectRefProp START');
@@ -155,9 +167,12 @@ export default function selectPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSelectRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testSelectRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSelectRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testSelectRefPropNone START');
@@ -175,9 +190,12 @@ export default function selectPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSelectDisabledPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testSelectDisabledPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSelectDisabledPropTrue', Level.LEVEL0, async function(done) {
             console.info('testSelectDisabledPropTrue START');
@@ -194,9 +212,12 @@ export default function selectPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSelectDisabledPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testSelectDisabledPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSelectDisabledPropFalse', Level.LEVEL0, async function(done) {
             console.info('testSelectDisabledPropFalse START');
@@ -213,9 +234,12 @@ export default function selectPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSelectDisabledPropNone
-         * @tc.desc      ACE
+         * @tc.name   testSelectDisabledPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSelectDisabledPropNone', Level.LEVEL0, async function(done) {
             console.info('testSelectDisabledPropNone START');
@@ -232,9 +256,12 @@ export default function selectPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSelectFocusablePropTrue
-         * @tc.desc      ACE
+         * @tc.name   testSelectFocusablePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSelectFocusablePropTrue', Level.LEVEL0, async function(done) {
             console.info('testSelectFocusablePropTrue START');
@@ -251,9 +278,12 @@ export default function selectPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSelectFocusablePropFalse
-         * @tc.desc      ACE
+         * @tc.name   testSelectFocusablePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSelectFocusablePropFalse', Level.LEVEL0, async function(done) {
             console.info('testSelectFocusablePropFalse START');
@@ -270,9 +300,12 @@ export default function selectPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSelectFocusablePropNone
-         * @tc.desc      ACE
+         * @tc.name   testSelectFocusablePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSelectFocusablePropNone', Level.LEVEL0, async function(done) {
             console.info('testSelectFocusablePropNone START');
@@ -289,9 +322,12 @@ export default function selectPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSelectDataProp
-         * @tc.desc      ACE
+         * @tc.name   testSelectDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSelectDataProp', Level.LEVEL0, async function(done) {
             console.info('testSelectDataProp START');
@@ -309,9 +345,12 @@ export default function selectPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSelectDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testSelectDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSelectDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testSelectDataPropNone START');
@@ -329,9 +368,12 @@ export default function selectPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSelectClickEffectPropSmall
-         * @tc.desc      ACE
+         * @tc.name   testSelectClickEffectPropSmall
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSelectClickEffectPropSmall', Level.LEVEL0, async function(done) {
             console.info('testSelectClickEffectPropSmall START');
@@ -348,9 +390,12 @@ export default function selectPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSelectClickEffectPropMedium
-         * @tc.desc      ACE
+         * @tc.name   testSelectClickEffectPropMedium
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSelectClickEffectPropMedium', Level.LEVEL0, async function(done) {
             console.info('testSelectClickEffectPropMedium START');
@@ -367,9 +412,12 @@ export default function selectPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSelectClickEffectPropLarge
-         * @tc.desc      ACE
+         * @tc.name   testSelectClickEffectPropLarge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSelectClickEffectPropLarge', Level.LEVEL0, async function(done) {
             console.info('testSelectClickEffectPropLarge START');
@@ -386,9 +434,12 @@ export default function selectPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSelectClickEffectPropNone
-         * @tc.desc      ACE
+         * @tc.name   testSelectClickEffectPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSelectClickEffectPropNone', Level.LEVEL0, async function(done) {
             console.info('testSelectClickEffectPropNone START');
@@ -406,9 +457,12 @@ export default function selectPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSelectDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testSelectDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSelectDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testSelectDirPropRtl START');
@@ -425,9 +479,12 @@ export default function selectPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSelectDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testSelectDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSelectDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testSelectDirPropLtr START');
@@ -444,9 +501,12 @@ export default function selectPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSelectDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testSelectDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSelectDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testSelectDirPropAuto START');
@@ -463,9 +523,12 @@ export default function selectPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSelectDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testSelectDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSelectDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testSelectDirPropNone START');
@@ -482,9 +545,12 @@ export default function selectPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSelectForPropNull
-         * @tc.desc      ACE
+         * @tc.name   testSelectForPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSelectForPropNull', Level.LEVEL0, async function(done) {
             console.info('testSelectForPropNull START');
@@ -502,9 +568,12 @@ export default function selectPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSelectForPropOne
-         * @tc.desc      ACE
+         * @tc.name   testSelectForPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSelectForPropOne', Level.LEVEL0, async function(done) {
             console.info('testSelectForPropOne START');
@@ -522,9 +591,12 @@ export default function selectPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSelectForPropThree
-         * @tc.desc      ACE
+         * @tc.name   testSelectForPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSelectForPropThree', Level.LEVEL0, async function(done) {
             console.info('testSelectForPropThree START');
@@ -542,9 +614,12 @@ export default function selectPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSelectIfPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testSelectIfPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSelectIfPropTrue', Level.LEVEL0, async function(done) {
             console.info('testSelectIfPropTrue START');
@@ -562,9 +637,12 @@ export default function selectPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSelectShowPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testSelectShowPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSelectShowPropTrue', Level.LEVEL0, async function(done) {
             console.info('testSelectShowPropTrue START');
@@ -582,9 +660,12 @@ export default function selectPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSelectShowPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testSelectShowPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSelectShowPropFalse', Level.LEVEL0, async function(done) {
             console.info('testSelectShowPropFalse START');
@@ -602,9 +683,12 @@ export default function selectPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSelectShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testSelectShowPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSelectShowPropNone', Level.LEVEL0, async function(done) {
             console.info('testSelectShowPropNone START');

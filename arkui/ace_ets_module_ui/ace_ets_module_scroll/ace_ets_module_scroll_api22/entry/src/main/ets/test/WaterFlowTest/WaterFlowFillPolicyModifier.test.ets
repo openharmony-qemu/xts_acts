@@ -41,12 +41,12 @@ export default function WaterFlowFillPolicyModifier() {
     });
 
     /**
-     * @tc.number    WaterFlowFillPolicyModifier_001
-     * @tc.name      WaterFlowFillPolicyModifier_0100
-     * @tc.desc      Display 2 columns when the width of the component belongs to sm and smaller breakpoint intervals.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   WaterFlowFillPolicyModifier_0100
+     * @tc.number WaterFlowFillPolicyModifier_001
+     * @tc.desc   Display 2 columns when the width of the component belongs to sm and smaller breakpoint intervals.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('WaterFlowFillPolicyModifier_0100', Level.LEVEL3, async (done: Function) => {
       console.info('[WaterFlowFillPolicyModifier_0100] START');
@@ -75,12 +75,12 @@ export default function WaterFlowFillPolicyModifier() {
     });
 
     /**
-     * @tc.number    WaterFlowFillPolicyModifier_002
-     * @tc.name      WaterFlowFillPolicyModifier_0200
-     * @tc.desc      Display 1 column when the width of the component belongs to sm and smaller breakpoint intervals.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   WaterFlowFillPolicyModifier_0200
+     * @tc.number WaterFlowFillPolicyModifier_002
+     * @tc.desc   Display 1 column when the width of the component belongs to sm and smaller breakpoint intervals.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('WaterFlowFillPolicyModifier_0200', Level.LEVEL3, async (done: Function) => {
       console.info('[WaterFlowFillPolicyModifier_0200] START');
@@ -108,12 +108,12 @@ export default function WaterFlowFillPolicyModifier() {
     });
 
     /**
-     * @tc.number    WaterFlowFillPolicyModifier_003
-     * @tc.name      WaterFlowFillPolicyModifier_0300
-     * @tc.desc      Display 2 columns when the width of the component belongs to sm and smaller breakpoint intervals.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   WaterFlowFillPolicyModifier_0300
+     * @tc.number WaterFlowFillPolicyModifier_003
+     * @tc.desc   Display 2 columns when the width of the component belongs to sm and smaller breakpoint intervals.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('WaterFlowFillPolicyModifier_0300', Level.LEVEL3, async (done: Function) => {
       console.info('[WaterFlowFillPolicyModifier_0300] START');
@@ -141,12 +141,12 @@ export default function WaterFlowFillPolicyModifier() {
     });
 
     /**
-     * @tc.number    WaterFlowFillPolicyModifier_004
-     * @tc.name      WaterFlowFillPolicyModifier_0400
-     * @tc.desc      Display 2 columns when the width of the component belongs to sm and smaller breakpoint intervals.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   WaterFlowFillPolicyModifier_0400
+     * @tc.number WaterFlowFillPolicyModifier_004
+     * @tc.desc   Display 2 columns when the width of the component belongs to sm and smaller breakpoint intervals.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('WaterFlowFillPolicyModifier_0400', Level.LEVEL3, async (done: Function) => {
       console.info('[WaterFlowFillPolicyModifier_0400] START');
@@ -174,12 +174,12 @@ export default function WaterFlowFillPolicyModifier() {
     });
 
     /**
-     * @tc.number    WaterFlowFillPolicyModifier_005
-     * @tc.name      WaterFlowFillPolicyModifier_0500
-     * @tc.desc      Display 2 columns when the width of the component belongs to sm and smaller breakpoint intervals.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   WaterFlowFillPolicyModifier_0500
+     * @tc.number WaterFlowFillPolicyModifier_005
+     * @tc.desc   Display 2 columns when the width of the component belongs to sm and smaller breakpoint intervals.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('WaterFlowFillPolicyModifier_0500', Level.LEVEL3, async (done: Function) => {
       console.info('[WaterFlowFillPolicyModifier_0500] START');

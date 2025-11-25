@@ -39,12 +39,12 @@ export default function GridScrollBar() {
     });
 
     /**
+     * @tc.name   Grid_scrollbarUpdate_0801
      * @tc.number Grid_scrollbarUpdate_0801
-     * @tc.name  Grid_scrollbarUpdate_0801
-     * @tc.desc  set Grid test
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   set Grid test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Grid_scrollbarUpdate_0801', Level.LEVEL1, async (done: Function) => {
       console.info('Grid_scrollbarUpdate_0801 START');
@@ -69,12 +69,12 @@ export default function GridScrollBar() {
     })
 
     /**
+     * @tc.name   Grid_scrollbarUpdate_0802
      * @tc.number Grid_scrollbarUpdate_0802
-     * @tc.name  Grid_scrollbarUpdate_0802
-     * @tc.desc  set Grid test
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   set Grid test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Grid_scrollbarUpdate_0802', Level.LEVEL1, async (done: Function) => {
       console.info('Grid_scrollbarUpdate_0802 START');

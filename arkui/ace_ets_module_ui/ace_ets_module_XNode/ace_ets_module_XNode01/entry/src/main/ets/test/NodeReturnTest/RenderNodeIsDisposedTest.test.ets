@@ -47,12 +47,12 @@ export default function RenderNodeIsDisposedTest() {
     });
 
     /**
-     * @tc.number    RenderNodeIsDisposedTest_0100
-     * @tc.name      RenderNodeIsDisposedTest_0100
-     * @tc.desc      frameNode: RenderNode isDisposed Test
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RenderNodeIsDisposedTest_0100
+     * @tc.number RenderNodeIsDisposedTest_0100
+     * @tc.desc   frameNode: RenderNode isDisposed Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RenderNodeIsDisposedTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('RenderNodeIsDisposedTest_0100 START');

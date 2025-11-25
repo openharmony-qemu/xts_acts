@@ -59,12 +59,12 @@ export default function getResultTest() {
     });
 
     /**
-     * @tc.number    getResultTest_0010
-     * @tc.name      getResultTest_0010
-     * @tc.desc      getResultTest
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getResultTest_0010
+     * @tc.number getResultTest_0010
+     * @tc.desc   getResultTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getResultTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('getResultTest_0010 START');

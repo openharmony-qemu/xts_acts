@@ -53,6 +53,14 @@ export default function stageTimePickerDialog() {
       // This API supports only one parameter: clear action function.
     })
 
+    /**
+     * @tc.name   TimePickerDialog001
+     * @tc.number TimePickerDialog001
+     * @tc.desc   TimePickerDialog001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TimePickerDialog001', Level.LEVEL1, async (done: Function) => {
       console.info('TimePickerDialog001 START');
       setTimeout(() => {
@@ -81,6 +89,14 @@ export default function stageTimePickerDialog() {
       }, 500)
     });
 
+    /**
+     * @tc.name   TimePickerDialog002
+     * @tc.number TimePickerDialog002
+     * @tc.desc   TimePickerDialog002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TimePickerDialog002', Level.LEVEL1, async (done: Function) => {
       console.info('TimePickerDialog002 START');
       setTimeout(() => {
@@ -108,6 +124,14 @@ export default function stageTimePickerDialog() {
         done();
       }, 500)
     });
+    /**
+     * @tc.name   TimePickerDialog003
+     * @tc.number TimePickerDialog003
+     * @tc.desc   TimePickerDialog003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TimePickerDialog003', Level.LEVEL1, async (done: Function) => {
       console.info('TimePickerDialog003 START');
       setTimeout(() => {

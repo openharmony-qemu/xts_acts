@@ -63,12 +63,12 @@ export default function List_divider_resource() {
     });
 
     /**
+     * @tc.name   SUB_ACE_List_divider_resource_0100
      * @tc.number SUB_ACE_List_divider_resource_0100
-     * @tc.name testListItem
-     * @tc.desc StrokeWidth is set through digital resources
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   StrokeWidth is set through digital resources
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_List_divider_resource_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_List_divider_resource_0100] START');
@@ -85,12 +85,12 @@ export default function List_divider_resource() {
     });
 
     /**
+     * @tc.name   SUB_ACE_List_divider_resource_0200
      * @tc.number SUB_ACE_List_divider_resource_0200
-     * @tc.name testListItem
-     * @tc.desc StrokeWidth is set through floating-point type resources
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   StrokeWidth is set through floating-point type resources
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_List_divider_resource_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_List_divider_resource_0200] START');

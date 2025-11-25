@@ -42,12 +42,12 @@ export default function SearchTypeApi11Test() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SearchTypeApi11Test_0010
-     * @tc.name      SearchTypeApi11Test_0010
-     * @tc.desc      test Search: SearchType.NORMAL
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SearchTypeApi11Test_0010
+     * @tc.number SUB_ACE_SearchTypeApi11Test_0010
+     * @tc.desc   test Search: SearchType.NORMAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SearchTypeApi11Test_0010', Level.LEVEL0, async (done: Function) => {
       console.info('[SearchTypeApi11Test_0010] START');
@@ -60,12 +60,12 @@ export default function SearchTypeApi11Test() {
     });
 
     /**
-     * @tc.number    SUB_ACE_SearchTypeApi11Test_0020
-     * @tc.name      SearchTypeApi11Test_0020
-     * @tc.desc      test Search: SearchType.NUMBER
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SearchTypeApi11Test_0020
+     * @tc.number SUB_ACE_SearchTypeApi11Test_0020
+     * @tc.desc   test Search: SearchType.NUMBER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SearchTypeApi11Test_0020', Level.LEVEL0, async (done: Function) => {
       console.info('[SearchTypeApi11Test_0020] START');

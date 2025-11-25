@@ -43,12 +43,12 @@ export default function focusWrapDefault() {
     });
 
     /**
-     * @tc.number    focusWrapDefault_001
-     * @tc.name      focusWrapDefault_0100
-     * @tc.desc      The cross axis directional keys cannot wrap lines.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   focusWrapDefault_0100
+     * @tc.number focusWrapDefault_001
+     * @tc.desc   The cross axis directional keys cannot wrap lines.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('focusWrapDefault_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[focusWrapDefault_0100] START');

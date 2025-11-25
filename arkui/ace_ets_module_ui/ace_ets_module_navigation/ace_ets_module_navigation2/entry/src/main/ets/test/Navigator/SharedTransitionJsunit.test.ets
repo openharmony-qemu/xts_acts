@@ -47,10 +47,12 @@ export default function sharedTransitionJsunit() {
     });
 
     /**
-     * @tc.number    sharedTransitionTest_0100
-     * @tc.name      sharedTransitionTest_0100
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   sharedTransitionTest_0100
+     * @tc.number sharedTransitionTest_0100
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sharedTransitionTest_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('sharedTransitionTest_0100 START');
@@ -63,10 +65,12 @@ export default function sharedTransitionJsunit() {
     });
 
     /**
-     * @tc.number    sharedTransitionTest_0200
-     * @tc.name      sharedTransitionTest_0200
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   sharedTransitionTest_0200
+     * @tc.number sharedTransitionTest_0200
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sharedTransitionTest_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('sharedTransitionTest_0200 START');
@@ -80,10 +84,12 @@ export default function sharedTransitionJsunit() {
     });
 
     /**
-     * @tc.number    sharedTransitionTest_0300
-     * @tc.name      sharedTransitionTest_0300
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   sharedTransitionTest_0300
+     * @tc.number sharedTransitionTest_0300
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sharedTransitionTest_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('sharedTransitionTest_0300 START');
@@ -97,10 +103,12 @@ export default function sharedTransitionJsunit() {
     });
 
     /**
-     * @tc.number    sharedTransitionTest_0400
-     * @tc.name      sharedTransitionTest_0400
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   sharedTransitionTest_0400
+     * @tc.number sharedTransitionTest_0400
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('sharedTransitionTest_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('sharedTransitionTest_0400 START');

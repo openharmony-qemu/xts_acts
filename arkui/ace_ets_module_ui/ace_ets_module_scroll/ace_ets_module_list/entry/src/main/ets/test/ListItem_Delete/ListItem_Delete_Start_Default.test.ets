@@ -66,12 +66,12 @@ export default function ListItem_Delete_Start_Default() {
       console.info("ListItem_Delete_Start_Default after each called");
     });
     /**
+     * @tc.name   SUB_ACE_ListItem_Delete_Start_Default_0200
      * @tc.number SUB_ACE_ListItem_Delete_Start_Default_0200
-     * @tc.name testListItem
-     * @tc.desc Do not set actionAreaDistance and slide 70
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Do not set actionAreaDistance and slide 70
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_ListItem_Delete_Start_Default_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_ListItem_Delete_Start_Default_0200] START');
@@ -109,12 +109,12 @@ export default function ListItem_Delete_Start_Default() {
       done();
     });
     /**
+     * @tc.name   SUB_ACE_ListItem_Delete_Start_Default_0300
      * @tc.number SUB_ACE_ListItem_Delete_Start_Default_0300
-     * @tc.name testListItem
-     * @tc.desc Do not set actionAreaDistance and slide 40
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Do not set actionAreaDistance and slide 40
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_ListItem_Delete_Start_Default_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_ListItem_Delete_Start_Default_0300] START');

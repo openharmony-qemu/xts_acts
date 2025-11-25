@@ -47,10 +47,12 @@ export default function NavigationLevelTest8() {
     });
 
     /**
-     * @tc.number    NavigationLevelTest8_0100
-     * @tc.name      NavigationLevelTest8_0100
-     * @tc.desc      Test Navigation
-     * @tc.level     Level 0
+     * @tc.name   NavigationLevelTest8_0100
+     * @tc.number NavigationLevelTest8_0100
+     * @tc.desc   Test Navigation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationLevelTest8_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[NavigationLevelTest8_0100] START');

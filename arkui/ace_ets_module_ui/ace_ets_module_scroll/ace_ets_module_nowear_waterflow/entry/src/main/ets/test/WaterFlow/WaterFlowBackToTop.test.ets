@@ -36,13 +36,13 @@ export default function WaterFlowBackToTopTest() {
       }
       done()
     });
-    /*
-     * @tc.number :ArkUI_WaterFlow_BackToTop_0100
-     * @tc.name   :test waterFlow back to top
-     * @tc.desc   :test whether backToTop events are effective
-     * @tc.level  :Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   WaterFlowScrollTest1_0100
+     * @tc.number ArkUI_WaterFlow_BackToTop_0100
+     * @tc.desc   test whether backToTop events are effective
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('WaterFlowScrollTest1_0100', Level.LEVEL1, async () => {
       console.info('WaterFlowScrollTest_0100 START');

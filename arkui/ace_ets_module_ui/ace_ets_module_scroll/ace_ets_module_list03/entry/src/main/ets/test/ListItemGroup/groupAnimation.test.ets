@@ -46,12 +46,12 @@ export default function groupAnimation() {
     });
 
     /**
-     * @tc.number    groupAnimation_001
-     * @tc.name      groupAnimation_0100
-     * @tc.desc      When the animation parameter is true, trigger the onScrollVisibleContentChange callback.
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   groupAnimation_0100
+     * @tc.number groupAnimation_001
+     * @tc.desc   When the animation parameter is true, trigger the onScrollVisibleContentChange callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('groupAnimation_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[groupAnimation_0100] START');

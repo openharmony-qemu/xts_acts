@@ -44,6 +44,14 @@ export default function span3Jsunit() {
       console.info("span after each called");
     });
 
+    /**
+     * @tc.name   testSpan001
+     * @tc.number testSpan001
+     * @tc.desc   testSpan001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSpan001', Level.LEVEL1, async (done: Function) => {
       console.info('[testSpan001] START');
       await CommonFunc.sleep(1000);
@@ -55,6 +63,14 @@ export default function span3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testSpan002
+     * @tc.number testSpan002
+     * @tc.desc   testSpan002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSpan002', Level.LEVEL1, async (done: Function) => {
       console.info('[testSpan002] START');
       await CommonFunc.sleep(2000);
@@ -66,6 +82,14 @@ export default function span3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testSpan003
+     * @tc.number testSpan003
+     * @tc.desc   testSpan003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSpan003', Level.LEVEL1, async (done: Function) => {
       console.info('[testSpan003] START');
       try {
@@ -92,6 +116,14 @@ export default function span3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testSpan004
+     * @tc.number testSpan004
+     * @tc.desc   testSpan004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSpan004', Level.LEVEL1, async (done: Function) => {
       console.info('[testSpan004] START');
       await CommonFunc.sleep(2000);
@@ -103,6 +135,14 @@ export default function span3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testSpan005
+     * @tc.number testSpan005
+     * @tc.desc   testSpan005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSpan005', Level.LEVEL1, async (done: Function) => {
       console.info('[testSpan005] START');
       try {
@@ -129,6 +169,14 @@ export default function span3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testSpan006
+     * @tc.number testSpan006
+     * @tc.desc   testSpan006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSpan006', Level.LEVEL1, async (done: Function) => {
       console.info('[testSpan006] START');
       try {
@@ -155,6 +203,14 @@ export default function span3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testSpan007
+     * @tc.number testSpan007
+     * @tc.desc   testSpan007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSpan007', Level.LEVEL1, async (done: Function) => {
       console.info('[testSpan007] START');
       try {

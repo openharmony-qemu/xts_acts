@@ -47,12 +47,12 @@ export default function listJsunit() {
     });
 
     /**
-     * @tc.number    testList01
-     * @tc.name      testList01
-     * @tc.desc      Testing for the List component.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testList01
+     * @tc.number testList01
+     * @tc.desc   Testing for the List component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testList01', Level.LEVEL1, async (done:Function) => {
       console.info('[testList01] START');
@@ -73,12 +73,12 @@ export default function listJsunit() {
     });
 
     /**
-     * @tc.number    testList02
-     * @tc.name      testList02
-     * @tc.desc      Testing listDirection for the List component.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testList02
+     * @tc.number testList02
+     * @tc.desc   Testing listDirection for the List component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testList02', Level.LEVEL1, async (done:Function) => {
       console.info('[testList02] START');
@@ -107,12 +107,12 @@ export default function listJsunit() {
     });
 
     /**
-     * @tc.number    testList03
-     * @tc.name      testList03
-     * @tc.desc      Testing editMode for the List component.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testList03
+     * @tc.number testList03
+     * @tc.desc   Testing editMode for the List component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testList03', Level.LEVEL1, async (done:Function) => {
       console.info('[testList03] START');
@@ -141,12 +141,12 @@ export default function listJsunit() {
     });
 
     /**
-     * @tc.number    testList04
-     * @tc.name      testList04
-     * @tc.desc      Testing edgeEffect for the List component.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testList04
+     * @tc.number testList04
+     * @tc.desc   Testing edgeEffect for the List component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testList04', Level.LEVEL1, async (done:Function) => {
       console.info('[testList04] START');
@@ -175,12 +175,12 @@ export default function listJsunit() {
     });
 
     /**
-     * @tc.number    testList05
-     * @tc.name      testList05
-     * @tc.desc      Testing chainAnimation for the List component.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testList05
+     * @tc.number testList05
+     * @tc.desc   Testing chainAnimation for the List component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testList05', Level.LEVEL1, async (done:Function) => {
       console.info('[testList05] START');
@@ -209,12 +209,12 @@ export default function listJsunit() {
     });
 
     /**
-     * @tc.number    testList06
-     * @tc.name      testList06
-     * @tc.desc      Testing strokeWidth for the List component.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testList06
+     * @tc.number testList06
+     * @tc.desc   Testing strokeWidth for the List component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testList06', Level.LEVEL1, async (done:Function) => {
       console.info('[testList06] START');
@@ -243,12 +243,12 @@ export default function listJsunit() {
     });
 
     /**
-     * @tc.number    testList07
-     * @tc.name      testList07
-     * @tc.desc      Testing color for the List component.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testList07
+     * @tc.number testList07
+     * @tc.desc   Testing color for the List component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testList07', Level.LEVEL1, async (done:Function) => {
       console.info('[testList07] START');
@@ -277,12 +277,12 @@ export default function listJsunit() {
     });
 
     /**
-     * @tc.number    testList08
-     * @tc.name      testList08
-     * @tc.desc      Testing startMargin for the List component.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testList08
+     * @tc.number testList08
+     * @tc.desc   Testing startMargin for the List component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testList08', Level.LEVEL1, async (done:Function) => {
       console.info('[testList08] START');
@@ -311,12 +311,12 @@ export default function listJsunit() {
     });
 
     /**
-     * @tc.number    testList09
-     * @tc.name      testList09
-     * @tc.desc      Testing endMargin for the List component.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testList09
+     * @tc.number testList09
+     * @tc.desc   Testing endMargin for the List component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testList09', Level.LEVEL1, async (done:Function) => {
       console.info('[testList09] START');
@@ -345,12 +345,12 @@ export default function listJsunit() {
     });
 
     /**
-     * @tc.number    testList10
-     * @tc.name      testList10
-     * @tc.desc      Testing editMode for the List component.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testList10
+     * @tc.number testList10
+     * @tc.desc   Testing editMode for the List component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testList10', Level.LEVEL1, async (done:Function) => {
       console.info('[testList10] START');
@@ -379,12 +379,12 @@ export default function listJsunit() {
     });
 
     /**
-     * @tc.number    testList11
-     * @tc.name      testList11
-     * @tc.desc      Testing editMode for the List component.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testList11
+     * @tc.number testList11
+     * @tc.desc   Testing editMode for the List component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testList11', Level.LEVEL1, async (done:Function) => {
       console.info('[testList11] START');
@@ -413,12 +413,12 @@ export default function listJsunit() {
     });
 
     /**
-     * @tc.number    testList12
-     * @tc.name      testList12
-     * @tc.desc      Testing chainAnimation for the List component.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   testList12
+     * @tc.number testList12
+     * @tc.desc   Testing chainAnimation for the List component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testList12', Level.LEVEL1, async (done:Function) => {
       console.info('[testList12] START');

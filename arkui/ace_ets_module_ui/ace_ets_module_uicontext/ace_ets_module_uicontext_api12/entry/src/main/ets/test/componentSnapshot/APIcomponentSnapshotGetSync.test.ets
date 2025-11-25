@@ -43,10 +43,12 @@ export default function APIcomponentSnapshotGetSync() {
       console.info("APIcomponentSnapshotGetSync after each called");
     });
     /**
-     * @tc.number    APIcomponentSnapshotGetSync_0100
-     * @tc.name      APIcomponentSnapshotGetSync_0100
-     * @tc.desc      Test api getSync of componentSnapshot
-     * @tc.level     Level 2
+     * @tc.name   APIcomponentSnapshotGetSync_0100
+     * @tc.number APIcomponentSnapshotGetSync_0100
+     * @tc.desc   Test api getSync of componentSnapshot
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APIcomponentSnapshotGetSync_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[APIcomponentSnapshotGetSync_0100] START');

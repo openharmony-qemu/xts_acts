@@ -55,14 +55,14 @@ export default function PropArrayJsunit() {
       done();
     });
 
-		/**
-		 * @tc.number    PropArrayJsunit_0100
-		 * @tc.name      PropArrayJsunit_0100
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   PropArrayJsunit_0100
+     * @tc.number PropArrayJsunit_0100
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropArrayJsunit_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropArrayJsunit_0100 START');
@@ -75,14 +75,14 @@ export default function PropArrayJsunit() {
       done();
     });
 
-		/**
-		 * @tc.number    PropArrayJsunit_0200
-		 * @tc.name      PropArrayJsunit_0200
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   PropArrayJsunit_0200
+     * @tc.number PropArrayJsunit_0200
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropArrayJsunit_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropArrayJsunit_0200 START');
@@ -99,14 +99,14 @@ export default function PropArrayJsunit() {
       done();
     });
 
-		/**
-		 * @tc.number    PropArrayJsunit_0300
-		 * @tc.name      PropArrayJsunit_0300
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   PropArrayJsunit_0300
+     * @tc.number PropArrayJsunit_0300
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropArrayJsunit_0300', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropArrayJsunit_0300 START');
@@ -118,14 +118,14 @@ export default function PropArrayJsunit() {
       done();
     });
 
-		/**
-		 * @tc.number    PropArrayJsunit_0400
-		 * @tc.name      PropArrayJsunit_0400
-		 * @tc.desc      Frequently updating and modifying the values of parent components
-		 * @tc.level     Level 0
-		 * @tc.type
-		 * @tc.size
-		 */
+    /**
+     * @tc.name   PropArrayJsunit_0400
+     * @tc.number PropArrayJsunit_0400
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropArrayJsunit_0400', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropArrayJsunit_0400 START');

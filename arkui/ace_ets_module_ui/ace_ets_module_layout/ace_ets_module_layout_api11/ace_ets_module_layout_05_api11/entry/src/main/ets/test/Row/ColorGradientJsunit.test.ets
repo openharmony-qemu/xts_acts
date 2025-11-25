@@ -67,6 +67,14 @@ export default function colorGradientJsunit() {
       console.info("colorGradient after each called");
     });
 
+    /**
+     * @tc.name   testColorGradient001
+     * @tc.number testColorGradient001
+     * @tc.desc   testColorGradient001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testColorGradient001',  Level.LEVEL0, async (done: Function) => {
       console.info('[testColorGradient001] START');
       await Utils.sleep(1000);
@@ -81,6 +89,14 @@ export default function colorGradientJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testColorGradient002
+     * @tc.number testColorGradient002
+     * @tc.desc   testColorGradient002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testColorGradient002',  Level.LEVEL0, async (done: Function) => {
       console.info('[testColorGradient002] START');
       await Utils.sleep(1000);
@@ -116,6 +132,14 @@ export default function colorGradientJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testColorGradient003
+     * @tc.number testColorGradient003
+     * @tc.desc   testColorGradient003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testColorGradient003',  Level.LEVEL0, async (done: Function) => {
       await Utils.sleep(1000)
       console.info('[testColorGradient003] START');
@@ -129,6 +153,14 @@ export default function colorGradientJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testColorGradient004
+     * @tc.number testColorGradient004
+     * @tc.desc   testColorGradient004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testColorGradient004',  Level.LEVEL0, async (done: Function) => {
       console.info('[testColorGradient004] START');
       await Utils.sleep(1000);
@@ -164,6 +196,14 @@ export default function colorGradientJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testColorGradient005
+     * @tc.number testColorGradient005
+     * @tc.desc   testColorGradient005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testColorGradient005',  Level.LEVEL0, async (done: Function) => {
       await Utils.sleep(1000)
       console.info('[testColorGradient005] START');
@@ -179,6 +219,14 @@ export default function colorGradientJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testColorGradient006
+     * @tc.number testColorGradient006
+     * @tc.desc   testColorGradient006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testColorGradient006',  Level.LEVEL0, async (done: Function) => {
       console.info('[testColorGradient006] START');
       await Utils.sleep(1000);

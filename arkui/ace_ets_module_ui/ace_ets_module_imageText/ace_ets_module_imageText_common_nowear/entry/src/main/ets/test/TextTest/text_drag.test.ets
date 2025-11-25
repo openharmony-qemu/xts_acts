@@ -41,14 +41,14 @@ export default function text_drag() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_UI_TEXT_DRAG_0100
-    * @tc.name  : text_drag_001
-    * @tc.desc  : After longClick on Text Component, drag text and check text state
-    * @tc.level : Level 1
-    * @tc.type : Function
-    * @tc.size : MediumTest
-    */
+    /**
+     * @tc.name   SUB_ACE_UI_TEXT_DRAG_0100
+     * @tc.number SUB_ACE_UI_TEXT_DRAG_0100
+     * @tc.desc   After longClick on Text Component, drag text and check text state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ACE_UI_TEXT_DRAG_0100', Level.LEVEL1, async (done: Function) => {
 
       console.info('[text_drag_001] START');

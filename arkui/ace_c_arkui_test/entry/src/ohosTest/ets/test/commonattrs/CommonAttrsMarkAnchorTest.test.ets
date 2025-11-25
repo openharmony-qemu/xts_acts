@@ -26,52 +26,52 @@ export default function commonAttrsMarkAnchorTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_MARKANCHOR_0100
-     * @tc.name       : testCommonAttrsMarkAnchorTest001
-     * @tc.desc       : testing markanchor for text with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsMarkAnchorTest001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_MARKANCHOR_0100
+     * @tc.desc   testing markanchor for text with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsMarkAnchorTest001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsMarkAnchorTest001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_MARKANCHOR_0200
-     * @tc.name       : testCommonAttrsMarkAnchorTest002
-     * @tc.desc       : testing markanchor for text with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsMarkAnchorTest002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_MARKANCHOR_0200
+     * @tc.desc   testing markanchor for text with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsMarkAnchorTest002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsMarkAnchorTest002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_MARKANCHOR_0300
-     * @tc.name       : testCommonAttrsMarkAnchorTest003
-     * @tc.desc       : testing markanchor for text with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsMarkAnchorTest003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_MARKANCHOR_0300
+     * @tc.desc   testing markanchor for text with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsMarkAnchorTest003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsMarkAnchorTest003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_MARKANCHOR_0400
-     * @tc.name       : testCommonAttrsMarkAnchorTest004
-     * @tc.desc       : testing resetAttribute markanchor for text
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsMarkAnchorTest004
+     * @tc.number SUB_ARKUI_CAPI_TEXT_MARKANCHOR_0400
+     * @tc.desc   testing resetAttribute markanchor for text
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsMarkAnchorTest004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsMarkAnchorTest004()).assertEqual(0)

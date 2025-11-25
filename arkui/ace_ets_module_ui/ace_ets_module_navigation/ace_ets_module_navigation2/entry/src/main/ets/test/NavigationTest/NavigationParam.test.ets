@@ -42,10 +42,12 @@ export default function NavigationParamTest() {
     });
 
     /**
-     * @tc.number    ArkUI_Navigation_0100
-     * @tc.name      ArkUI_Navigation_0100
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   ArkUI_Navigation_0100
+     * @tc.number ArkUI_Navigation_0100
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Navigation_0100',  Level.LEVEL0, async (done: Function) => {
       let CASE: string = 'ArkUI_Navigation_0100'
@@ -57,10 +59,12 @@ export default function NavigationParamTest() {
     });
 
     /**
-     * @tc.number    ArkUI_Navigation_0200
-     * @tc.name      ArkUI_Navigation_0200
-     * @tc.desc      Test HomePageInfo name and param
-     * @tc.level     Level 0
+     * @tc.name   ArkUI_Navigation_0200
+     * @tc.number ArkUI_Navigation_0200
+     * @tc.desc   Test HomePageInfo name and param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Navigation_0200',  Level.LEVEL0, async (done: Function) => {
       let CASE: string = 'ArkUI_Navigation_0200'

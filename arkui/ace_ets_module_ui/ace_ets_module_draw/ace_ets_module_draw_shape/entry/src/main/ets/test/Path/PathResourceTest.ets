@@ -41,12 +41,12 @@ export default function PathResourceTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_PathResourceTest_0100
-     * @tc.name: PathResourceTest_0100
-     * @tc.desc: PathAPI 
-     * @tc.level: Level 2
-     * @tc.type : Path
-     * @tc.size : PathTest
+     * @tc.name   PathResourceTest_0100
+     * @tc.number SUB_ARKUI_API_PathResourceTest_0100
+     * @tc.desc   PathAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PathResourceTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[PathResourceTest_0100] START');

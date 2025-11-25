@@ -26,65 +26,65 @@ export default function listBorderWidthTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_BORDERWIDTH_0100
-     * @tc.name       : testListBorderWidth001
-     * @tc.desc       : testing borderWidth for list with unify the border width of the four edges
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListBorderWidth001
+     * @tc.number SUB_ARKUI_CAPI_LIST_BORDERWIDTH_0100
+     * @tc.desc   testing borderWidth for list with unify the border width of the four edges
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListBorderWidth001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListBorderWidth001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_BORDERWIDTH_0200
-     * @tc.name       : testListBorderWidth002
-     * @tc.desc       : testing borderWidth for list with set the width of the borders on each side separately
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListBorderWidth002
+     * @tc.number SUB_ARKUI_CAPI_LIST_BORDERWIDTH_0200
+     * @tc.desc   testing borderWidth for list with set the width of the borders on each side separately
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListBorderWidth002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListBorderWidth002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_BORDERWIDTH_0300
-     * @tc.name       : testListBorderWidth003
-     * @tc.desc       : testing borderWidth for list with set the width of the borders on each side, with three values of 0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListBorderWidth003
+     * @tc.number SUB_ARKUI_CAPI_LIST_BORDERWIDTH_0300
+     * @tc.desc   testing borderWidth for list with set the width of the borders on each side, with three values of 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListBorderWidth003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListBorderWidth003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_BORDERWIDTH_0400
-     * @tc.name       : testListBorderWidth004
-     * @tc.desc       : testing borderWidth for list with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testListBorderWidth004
+     * @tc.number SUB_ARKUI_CAPI_LIST_BORDERWIDTH_0400
+     * @tc.desc   testing borderWidth for list with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListBorderWidth004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListBorderWidth004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_BORDERWIDTH_0500
-     * @tc.name       : testListBorderWidth005
-     * @tc.desc       : testing borderWidth for list with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testListBorderWidth005
+     * @tc.number SUB_ARKUI_CAPI_LIST_BORDERWIDTH_0500
+     * @tc.desc   testing borderWidth for list with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListBorderWidth005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListBorderWidth005()).assertEqual(0)

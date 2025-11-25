@@ -31,16 +31,12 @@ function sleep(time: number) {
 export default function abilityTest(abilityContext:common.UIAbilityContext) {
   describe('ActsStartUpRuleOptimizeTest', () => {
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_LaunchRule_StartUpRuleOptimizeTest_0700
-     * @tc.name  : Ability Allows startAbility in the process of scheduling to the foreground
-     * @tc.desc  : number one:Start test Demo;number two:Test Demo's Ability to call startAbilityForResult to
-                   pull up the auxiliary Demo;number three:Auxiliary Ability registered "terminateAssistantAbility"
-                   event,call terminateAbilityWithResult received after the event;number four:Test the Demo 
-                   "terminateAssistantAbility" event; number five:The test Demo calls startAbility in the callback
-                   to startAbilityForResult
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_LaunchRule_StartUpRuleOptimizeTest_0700
+     * @tc.number SUB_Ability_AbilityRuntime_LaunchRule_StartUpRuleOptimizeTest_0700
+     * @tc.desc   number one:Start test Demo;number two:Test Demo's Ability to call startAbilityForResult to
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_LaunchRule_StartUpRuleOptimizeTest_0700', Level.LEVEL1, async (done: Function) => {
       try {

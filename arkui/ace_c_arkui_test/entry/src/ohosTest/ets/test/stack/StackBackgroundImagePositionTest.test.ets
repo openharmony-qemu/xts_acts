@@ -26,26 +26,26 @@ export default function stackBackgroundImagePositionTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_BACKGROUNDIMAGEPOSITION_0100
-     * @tc.name       : testStackBackgroundImagePosition001
-     * @tc.desc       : testing backgroundImagePosition for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackBackgroundImagePosition001
+     * @tc.number SUB_ARKUI_CAPI_STACK_BACKGROUNDIMAGEPOSITION_0100
+     * @tc.desc   testing backgroundImagePosition for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackBackgroundImagePosition001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackBackgroundImagePosition001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_BACKGROUNDIMAGEPOSITION_0200
-     * @tc.name       : testStackBackgroundImagePosition002
-     * @tc.desc       : testing backgroundImagePosition for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackBackgroundImagePosition002
+     * @tc.number SUB_ARKUI_CAPI_STACK_BACKGROUNDIMAGEPOSITION_0200
+     * @tc.desc   testing backgroundImagePosition for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackBackgroundImagePosition002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackBackgroundImagePosition002()).assertEqual(0)

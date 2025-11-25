@@ -42,12 +42,12 @@ export default function overlayManager() {
     });
 
     /**
-     * @tc.number    overlayManager_0100
-     * @tc.name      overlayManager_0100
-     * @tc.desc      set renderRootOverlay: true
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   overlayManager_0100
+     * @tc.number overlayManager_0100
+     * @tc.desc   set renderRootOverlay: true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('overlayManager_0100', Level.LEVEL1, async (done: Function) => {
       console.info('overlayManager_0100 START');
@@ -68,12 +68,12 @@ export default function overlayManager() {
 
 
     /**
-     * @tc.number    overlayManager_0200
-     * @tc.name      overlayManager_0200
-     * @tc.desc      set renderRootOverlay: false
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   overlayManager_0200
+     * @tc.number overlayManager_0200
+     * @tc.desc   set renderRootOverlay: false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('overlayManager_0200', Level.LEVEL1, async (done: Function) => {
       console.info('overlayManager_0200 START');
