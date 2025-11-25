@@ -46,12 +46,12 @@ export default function circleJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_circleTest_0100
-     * @tc.name: circleTest_0100
-     * @tc.desc: CircleAPI 
-     * @tc.level: Level 0
-     * @tc.type : Circle
-     * @tc.size : CircleTest
+     * @tc.name   circleTest_0100
+     * @tc.number SUB_ARKUI_API_circleTest_0100
+     * @tc.desc   CircleAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('circleTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('circleTest_0100 START');
@@ -65,12 +65,12 @@ export default function circleJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_circleTest_0200
-     * @tc.name: circleTest_0200
-     * @tc.desc: CircleAPI 
-     * @tc.level: Level 0
-     * @tc.type : Circle
-     * @tc.size : CircleTest
+     * @tc.name   circleTest_0200
+     * @tc.number SUB_ARKUI_API_circleTest_0200
+     * @tc.desc   CircleAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('circleTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[circleTest_0200] START');
@@ -101,12 +101,12 @@ export default function circleJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_circleTest_0300
-     * @tc.name: circleTest_0300
-     * @tc.desc: CircleAPI 
-     * @tc.level: Level 0
-     * @tc.type : Circle
-     * @tc.size : CircleTest
+     * @tc.name   circleTest_0300
+     * @tc.number SUB_ARKUI_API_circleTest_0300
+     * @tc.desc   CircleAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('circleTest_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[circleTest_0300] START');

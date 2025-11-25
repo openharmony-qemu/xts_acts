@@ -25,13 +25,13 @@ export default function listCaseTest(){
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_001
-     * @tc.name       : listLanesTest001
-     * @tc.desc       : testing List lanes
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   listLanesTest001
+     * @tc.number SUB_ARKUI_CAPI_LIST_001
+     * @tc.desc   testing List lanes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('listLanesTest001', Level.LEVEL1, async (done: Function) => {
         console.info('listLanesTest001 START' )
@@ -71,13 +71,13 @@ export default function listCaseTest(){
         done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_002
-     * @tc.name       : listscrollSnapAlignTest001
-     * @tc.desc       : testing List scrollSnapAlign
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   listscrollSnapAlignTest001
+     * @tc.number SUB_ARKUI_CAPI_LIST_002
+     * @tc.desc   testing List scrollSnapAlign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('listscrollSnapAlignTest001', Level.LEVEL1, async (done: Function) => {
         console.info('listscrollSnapAlignTest001 START' )
@@ -108,13 +108,13 @@ export default function listCaseTest(){
         done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_003
-     * @tc.name       : listContentOffsetTest001
-     * @tc.desc       : testing List contentStartOffset And contentAndOffset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   listContentOffsetTest001
+     * @tc.number SUB_ARKUI_CAPI_LIST_003
+     * @tc.desc   testing List contentStartOffset And contentAndOffset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('listContentOffsetTest001', Level.LEVEL1, async (done: Function) => {
         console.info('listContentOffsetTest001 START' )
@@ -165,13 +165,13 @@ export default function listCaseTest(){
         done()
     })
 
-        /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_004
-     * @tc.name       : listmaintainVisibleContentPositionTest001
-     * @tc.desc       : testing List maintainVisibleContentPosition
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   listmaintainVisibleContentPositionTest001
+     * @tc.number SUB_ARKUI_CAPI_LIST_004
+     * @tc.desc   testing List maintainVisibleContentPosition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('listmaintainVisibleContentPositionTest001', Level.LEVEL1, async (done: Function) => {
         console.info('listmaintainVisibleContentPositionTest001 START' )

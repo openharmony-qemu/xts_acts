@@ -56,9 +56,12 @@ export default function QueryNavDestinationInfoNavDestinationJsunit() {
     });
 
     /**
+     * @tc.name   QueryNavDestinationInfoNavDestinationJsunit_0300
      * @tc.number QueryNavDestinationInfoNavDestinationJsunit_0300
-     * @tc.name QueryNavDestinationInfoNavDestinationJsunit_0300
-     * @tc.desc queryNavDestinationInfo return undefined
+     * @tc.desc   queryNavDestinationInfo return undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('QueryNavDestinationInfoNavDestinationJsunit_0300',  Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000);
@@ -76,9 +79,12 @@ export default function QueryNavDestinationInfoNavDestinationJsunit() {
     });
 
     /**
+     * @tc.name   QueryNavDestinationInfoNavDestinationJsunit_0400
      * @tc.number QueryNavDestinationInfoNavDestinationJsunit_0400
-     * @tc.name QueryNavDestinationInfoNavDestinationJsunit_0400
-     * @tc.desc queryNavDestinationInfo with param return undefined
+     * @tc.desc   queryNavDestinationInfo with param return undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('QueryNavDestinationInfoNavDestinationJsunit_0400',  Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000);
@@ -95,6 +101,14 @@ export default function QueryNavDestinationInfoNavDestinationJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   QueryNavDestinationInfoNavDestinationJsunit_0100
+     * @tc.number QueryNavDestinationInfoNavDestinationJsunit_0100
+     * @tc.desc   QueryNavDestinationInfoNavDestinationJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('QueryNavDestinationInfoNavDestinationJsunit_0100',  Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000);
       console.info('QueryNavDestinationInfoNavDestinationJsunit_0100 START');
@@ -113,6 +127,14 @@ export default function QueryNavDestinationInfoNavDestinationJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   QueryNavDestinationInfoNavDestinationJsunit_0200
+     * @tc.number QueryNavDestinationInfoNavDestinationJsunit_0200
+     * @tc.desc   QueryNavDestinationInfoNavDestinationJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('QueryNavDestinationInfoNavDestinationJsunit_0200',  Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000);
       console.info('QueryNavDestinationInfoNavDestinationJsunit_0200 START');

@@ -45,13 +45,13 @@ export default function grid3Jsunit() {
       console.info('[ afterEach ] ===================grid test after each called===================');
     });
 
-    /*
-     * @tc.number gridTest01
+    /**
      * @tc.name   gridTest01
+     * @tc.number gridTest01
      * @tc.desc   Test Grid with columnsGap
-     * @tc.level  Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('gridTest01', Level.LEVEL1, async (done: Function) => {
       console.info('gridTest01==================== start');
@@ -87,13 +87,13 @@ export default function grid3Jsunit() {
       done();
     });
 
-    /*
-     * @tc.number gridTest02
+    /**
      * @tc.name   gridTest02
+     * @tc.number gridTest02
      * @tc.desc   Test Grid with rowsGap
-     * @tc.level  Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('gridTest02', Level.LEVEL1, async (done: Function) => {
       console.info('[ gridTest02 ] ==================== start');
@@ -129,13 +129,13 @@ export default function grid3Jsunit() {
       done();
     });
 
-    /*
-     * @tc.number gridTest03
+    /**
      * @tc.name   gridTest03
+     * @tc.number gridTest03
      * @tc.desc   Test Grid with columnsTemplate
-     * @tc.level  Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('gridTest03', Level.LEVEL1, async (done: Function) => {
       console.info('[ gridTest03 ] ==================== start');
@@ -171,13 +171,13 @@ export default function grid3Jsunit() {
       done();
     });
 
-    /*
-     * @tc.number gridTest04
+    /**
      * @tc.name   gridTest04
+     * @tc.number gridTest04
      * @tc.desc   Test Grid with rowsTemplate
-     * @tc.level  Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('gridTest04', Level.LEVEL1, async (done: Function) => {
       console.info('[ gridTest04 ] ==================== start');

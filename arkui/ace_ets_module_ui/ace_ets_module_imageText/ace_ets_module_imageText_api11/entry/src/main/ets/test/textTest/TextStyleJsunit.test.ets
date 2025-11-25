@@ -48,6 +48,14 @@ export default function textStyleJsunit() {
     });
 	let resourceSize = getContext().resourceManager.getNumber($r('sys.float.ohos_id_text_font_size').id)
 
+    /**
+     * @tc.name   testTextStyle006
+     * @tc.number testTextStyle006
+     * @tc.desc   testTextStyle006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextStyle006', Level.LEVEL1, async () => {
       console.info('[testTextStyle006] START');
       await CommonFunc.sleep(1000);
@@ -59,6 +67,14 @@ export default function textStyleJsunit() {
 	  
     });
 
+    /**
+     * @tc.name   testTextStyle007
+     * @tc.number testTextStyle007
+     * @tc.desc   testTextStyle007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextStyle007', Level.LEVEL1, async () => {
       console.info('[testTextStyle007] START');
       try {
@@ -85,6 +101,14 @@ export default function textStyleJsunit() {
 	  expect(JSON.parse(strJson).$attrs.fontSize).assertEqual(px2fp(resourceSize)+'.00fp');
     });
 
+    /**
+     * @tc.name   testTextStyle008
+     * @tc.number testTextStyle008
+     * @tc.desc   testTextStyle008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextStyle008', Level.LEVEL1, async () => {
       console.info('[testTextStyle008] START');
       try {
@@ -111,6 +135,14 @@ export default function textStyleJsunit() {
 	  expect(JSON.parse(strJson).$attrs.fontSize).assertEqual(px2fp(resourceSize)+'.00fp');
     });
 
+    /**
+     * @tc.name   testTextStyle009
+     * @tc.number testTextStyle009
+     * @tc.desc   testTextStyle009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextStyle009', Level.LEVEL1, async () => {
       console.info('[testTextStyle009] START');
       try {
@@ -137,6 +169,14 @@ export default function textStyleJsunit() {
 	  expect(JSON.parse(strJson).$attrs.fontSize).assertEqual(px2fp(resourceSize)+'.00fp');
     });
 
+    /**
+     * @tc.name   testTextStyle010
+     * @tc.number testTextStyle010
+     * @tc.desc   testTextStyle010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextStyle010', Level.LEVEL1, async () => {
       console.info('[testTextStyle010] START');
       try {
@@ -164,6 +204,14 @@ export default function textStyleJsunit() {
 
     });
 
+    /**
+     * @tc.name   testTextStyle011
+     * @tc.number testTextStyle011
+     * @tc.desc   testTextStyle011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextStyle011', Level.LEVEL1, async () => {
       console.info('[testTextStyle011] START');
       await CommonFunc.sleep(1000);
@@ -175,6 +223,14 @@ export default function textStyleJsunit() {
 
     });
 
+    /**
+     * @tc.name   testTextStyle012
+     * @tc.number testTextStyle012
+     * @tc.desc   testTextStyle012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextStyle012', Level.LEVEL1, async () => {
       console.info('[testTextStyle012] START');
       try {
@@ -201,6 +257,14 @@ export default function textStyleJsunit() {
 
     });
 
+    /**
+     * @tc.name   testTextStyle013
+     * @tc.number testTextStyle013
+     * @tc.desc   testTextStyle013
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextStyle013', Level.LEVEL1, async () => {
       console.info('[testTextStyle013] START');
       try {
@@ -227,6 +291,14 @@ export default function textStyleJsunit() {
 
     });
 
+    /**
+     * @tc.name   testTextStyle014
+     * @tc.number testTextStyle014
+     * @tc.desc   testTextStyle014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextStyle014', Level.LEVEL1, async () => {
       console.info('[testTextStyle014] START');
       try {
@@ -253,6 +325,14 @@ export default function textStyleJsunit() {
 
     });
 
+    /**
+     * @tc.name   testTextStyle015
+     * @tc.number testTextStyle015
+     * @tc.desc   testTextStyle015
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextStyle015', Level.LEVEL1, async () => {
       console.info('[testTextStyle015] START');
       try {
@@ -279,6 +359,14 @@ export default function textStyleJsunit() {
 
     });
 
+    /**
+     * @tc.name   testTextStyle016
+     * @tc.number testTextStyle016
+     * @tc.desc   testTextStyle016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextStyle016', Level.LEVEL1, async () => {
       console.info('[testTextStyle016] START');
       await CommonFunc.sleep(1000);
@@ -290,6 +378,14 @@ export default function textStyleJsunit() {
 
     });
 
+    /**
+     * @tc.name   testTextStyle017
+     * @tc.number testTextStyle017
+     * @tc.desc   testTextStyle017
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextStyle017', Level.LEVEL1, async () => {
       console.info('[testTextStyle017] START');
       try {
@@ -316,6 +412,14 @@ export default function textStyleJsunit() {
 
     });
 
+    /**
+     * @tc.name   testTextStyle018
+     * @tc.number testTextStyle018
+     * @tc.desc   testTextStyle018
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextStyle018', Level.LEVEL1, async () => {
       console.info('[testTextStyle018] START');
       try {
@@ -342,6 +446,14 @@ export default function textStyleJsunit() {
 
     });
 
+    /**
+     * @tc.name   testTextStyle019
+     * @tc.number testTextStyle019
+     * @tc.desc   testTextStyle019
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextStyle019', Level.LEVEL1, async () => {
       console.info('[testTextStyle019] START');
       try {
@@ -368,6 +480,14 @@ export default function textStyleJsunit() {
 
     });
 
+    /**
+     * @tc.name   testTextStyle020
+     * @tc.number testTextStyle020
+     * @tc.desc   testTextStyle020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextStyle020', Level.LEVEL1, async () => {
       console.info('[testTextStyle020] START');
       try {
@@ -394,6 +514,14 @@ export default function textStyleJsunit() {
 
     });
 
+    /**
+     * @tc.name   testTextStyle021
+     * @tc.number testTextStyle021
+     * @tc.desc   testTextStyle021
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextStyle021', Level.LEVEL1, async () => {
       console.info('[testTextStyle021] START');
       await CommonFunc.sleep(1000);
@@ -405,6 +533,14 @@ export default function textStyleJsunit() {
 
     });
 
+    /**
+     * @tc.name   testTextStyle022
+     * @tc.number testTextStyle022
+     * @tc.desc   testTextStyle022
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextStyle022', Level.LEVEL1, async () => {
       console.info('[testTextStyle022] START');
       try {
@@ -431,6 +567,14 @@ export default function textStyleJsunit() {
 
     });
 
+    /**
+     * @tc.name   testTextStyle023
+     * @tc.number testTextStyle023
+     * @tc.desc   testTextStyle023
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextStyle023', Level.LEVEL1, async () => {
       console.info('[testTextStyle023] START');
       try {

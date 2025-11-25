@@ -18,6 +18,14 @@ import {Sleep} from './Util'
 
 export default function pageImport() {
   describe("PageImportTest", () => {
+    /**
+     * @tc.name   pageImportHar
+     * @tc.number pageImportHar
+     * @tc.desc   pageImportHar
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('pageImportHar', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await Sleep(1000)
       router.clear()
@@ -26,6 +34,14 @@ export default function pageImport() {
       router.back()
       await Sleep(1000)
     })
+    /**
+     * @tc.name   pageImportRelative
+     * @tc.number pageImportRelative
+     * @tc.desc   pageImportRelative
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('pageImportRelative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await Sleep(1000)
       router.clear()
@@ -34,6 +50,14 @@ export default function pageImport() {
       router.back()
       await Sleep(1000)
     })
+    /**
+     * @tc.name   pageImportAppNapi
+     * @tc.number pageImportAppNapi
+     * @tc.desc   pageImportAppNapi
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('pageImportAppNapi', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await Sleep(1000)
       router.clear()
@@ -42,6 +66,14 @@ export default function pageImport() {
       router.back()
       await Sleep(1000)
     })
+    /**
+     * @tc.name   pageImportSystemNapi
+     * @tc.number pageImportSystemNapi
+     * @tc.desc   pageImportSystemNapi
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('pageImportSystemNapi', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       await Sleep(1000)
       router.clear()

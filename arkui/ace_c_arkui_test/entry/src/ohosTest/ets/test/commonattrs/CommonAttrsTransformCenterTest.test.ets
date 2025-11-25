@@ -26,91 +26,91 @@ export default function commonAttrsTransformCenterTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSFORMCENTER_0100
-     * @tc.name       : testCommonAttrsTransformCenter001
-     * @tc.desc       : testing transformCenter for commonAttrs with valid value 
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTransformCenter001
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSFORMCENTER_0100
+     * @tc.desc   testing transformCenter for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTransformCenter001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTransformCenter001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSFORMCENTER_0200
-     * @tc.name       : testCommonAttrsTransformCenter002
-     * @tc.desc       : testing transformCenter for commonAttrs with valid value 
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTransformCenter002
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSFORMCENTER_0200
+     * @tc.desc   testing transformCenter for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTransformCenter002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTransformCenter002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSFORMCENTER_0300
-     * @tc.name       : testCommonAttrsTransformCenter003
-     * @tc.desc       : testing transformCenter for commonAttrs with valid value 
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTransformCenter003
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSFORMCENTER_0300
+     * @tc.desc   testing transformCenter for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTransformCenter003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTransformCenter003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSFORMCENTER_0400
-     * @tc.name       : testCommonAttrsTransformCenter004
-     * @tc.desc       : testing transformCenter for commonAttrs with valid value 
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTransformCenter004
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSFORMCENTER_0400
+     * @tc.desc   testing transformCenter for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTransformCenter004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTransformCenter004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSFORMCENTER_0500
-     * @tc.name       : testCommonAttrsTransformCenter005
-     * @tc.desc       : testing transformCenter for commonAttrs with valid value 
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTransformCenter005
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSFORMCENTER_0500
+     * @tc.desc   testing transformCenter for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTransformCenter005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTransformCenter005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSFORMCENTER_0600
-     * @tc.name       : testCommonAttrsTransformCenter006
-     * @tc.desc       : testing transformCenter for commonAttrs with valid value 
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTransformCenter006
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSFORMCENTER_0600
+     * @tc.desc   testing transformCenter for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTransformCenter006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTransformCenter006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_TRANSFORMCENTER_0700
-     * @tc.name       : testCommonAttrsTransformCenter007
-     * @tc.desc       : testing resetAttribute transformCenter for commonAttrs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTransformCenter007
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_TRANSFORMCENTER_0700
+     * @tc.desc   testing resetAttribute transformCenter for commonAttrs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTransformCenter007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTransformCenter007()).assertEqual(0)

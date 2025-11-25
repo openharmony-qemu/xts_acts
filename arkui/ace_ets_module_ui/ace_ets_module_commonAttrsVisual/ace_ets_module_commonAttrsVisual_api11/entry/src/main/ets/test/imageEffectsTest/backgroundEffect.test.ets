@@ -56,12 +56,12 @@ export default function backgroundEffectJsunit() {
     });
 
     /**
+     * @tc.name   backgroundEffectJsunit_0100
      * @tc.number backgroundEffectJsunit_0100
-     * @tc.name backgroundEffectJsunit_0100
-     * @tc.desc set api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('backgroundEffectJsunit_0100', Level.LEVEL2, async (done: Function) => {
       // Get the information of the backgroundEffect component
@@ -79,12 +79,12 @@ export default function backgroundEffectJsunit() {
     });
 
     /**
+     * @tc.name   backgroundEffectJsunit_0200
      * @tc.number backgroundEffectJsunit_0200
-     * @tc.name backgroundEffectJsunit_0200
-     * @tc.desc set api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('backgroundEffectJsunit_0200', Level.LEVEL2, async (done: Function) => {
       // Get the information of the backgroundEffect component
@@ -101,12 +101,12 @@ export default function backgroundEffectJsunit() {
     });
 
     /**
+     * @tc.name   backgroundEffectJsunit_0300
      * @tc.number backgroundEffectJsunit_0300
-     * @tc.name backgroundEffectJsunit_0300
-     * @tc.desc set api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('backgroundEffectJsunit_0300', Level.LEVEL2, async (done: Function) => {
       // Get the information of the backgroundEffect component
@@ -123,12 +123,12 @@ export default function backgroundEffectJsunit() {
     });
 
     /**
+     * @tc.name   backgroundEffectJsunit_0400
      * @tc.number backgroundEffectJsunit_0400
-     * @tc.name backgroundEffectJsunit_0400
-     * @tc.desc set api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('backgroundEffectJsunit_0400', Level.LEVEL2, async (done: Function) => {
       // Get the information of the backgroundEffect component
@@ -145,12 +145,12 @@ export default function backgroundEffectJsunit() {
     });
 
     /**
+     * @tc.name   backgroundEffectJsunit_0500
      * @tc.number backgroundEffectJsunit_0500
-     * @tc.name backgroundEffectJsunit_0500
-     * @tc.desc set api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('backgroundEffectJsunit_0500', Level.LEVEL2, async (done: Function) => {
       // Get the information of the backgroundEffect component

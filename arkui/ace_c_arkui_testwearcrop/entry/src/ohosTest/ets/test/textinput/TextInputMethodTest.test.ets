@@ -27,14 +27,14 @@ export default function textInputMethodTest() {
       await Utils.pushPage(`textinput/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_METHOD_0100
-    * @tc.name       : textInputMethodTest001
-    * @tc.desc       : test onCut event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   textInputMethodTest001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_METHOD_0100
+     * @tc.desc   test onCut event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textInputMethodTest001', Level.LEVEL1, async (done: Function) => {
       let driver = await Driver.create();
       await Utils.sleep(500);

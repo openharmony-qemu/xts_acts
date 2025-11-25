@@ -43,11 +43,12 @@ export default function RelativeGuideLine5() {
     });
 
     /**
-     * @tc.number    RelativeGuideLine5_001
-     * @tc.desc      direction and position test
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   RelativeGuideLine5_001
+     * @tc.number RelativeGuideLine5_001
+     * @tc.desc   direction and position test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RelativeGuideLine5_001', Level.LEVEL3, async (done: Function) => {
       console.info('[RelativeGuideLine5_001] START');

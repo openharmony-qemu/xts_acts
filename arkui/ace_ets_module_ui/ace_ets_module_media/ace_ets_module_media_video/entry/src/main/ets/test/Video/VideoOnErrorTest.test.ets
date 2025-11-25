@@ -47,12 +47,12 @@ export default function VideoOnErrorTest() {
       console.info("VideoOnErrorTest after each called");
     });
     /**
-     * @tc.number: SUB_ARKUI_API_VideoOnErrorTest_0100
-     * @tc.name: VideoOnErrorTest_0100
-     * @tc.desc: VideoAPI 
-     * @tc.level: Level 1
-     * @tc.type : Video
-     * @tc.size : VideoTest
+     * @tc.name   VideoOnErrorTest_0100
+     * @tc.number SUB_ARKUI_API_VideoOnErrorTest_0100
+     * @tc.desc   VideoAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('VideoOnErrorTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[VideoOnErrorTest_0100] START');

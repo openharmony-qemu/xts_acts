@@ -42,12 +42,12 @@ export default function textpickerJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_textpicker_002
      * @tc.number ArkUI_textpicker_002
-     * @tc.name Test the properties of components
-     * @tc.desc Set textStyle values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set textStyle values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_textpicker_002', Level.LEVEL0, async (done: Function) => {
       console.info('[ArkUI_textpicker_002] START');
@@ -61,12 +61,12 @@ export default function textpickerJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_textpicker_003
      * @tc.number ArkUI_textpicker_003
-     * @tc.name Test the properties of components
-     * @tc.desc Set selectedTextStyle values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set selectedTextStyle values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_textpicker_003', Level.LEVEL0, async (done: Function) => {
       console.info('[ArkUI_textpicker_003] START');
@@ -81,12 +81,12 @@ export default function textpickerJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_textpicker_004
      * @tc.number ArkUI_textpicker_004
-     * @tc.name Test the properties of components
-     * @tc.desc Set disappearTextStyle values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set disappearTextStyle values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_textpicker_004', Level.LEVEL0, async (done: Function) => {
       console.info('[ArkUI_textpicker_004] START');
@@ -101,12 +101,12 @@ export default function textpickerJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_textpicker_005
      * @tc.number ArkUI_textpicker_005
-     * @tc.name Test the properties of components
-     * @tc.desc Set canLoop values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set canLoop values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_textpicker_005', Level.LEVEL0, async (done: Function) => {
       console.info('[ArkUI_textpicker_005] START');
@@ -118,12 +118,12 @@ export default function textpickerJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_textpicker_006
      * @tc.number ArkUI_textpicker_006
-     * @tc.name Test the properties of components
-     * @tc.desc Set defaultPickerItemHeight values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set defaultPickerItemHeight values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_textpicker_006', Level.LEVEL0, async (done: Function) => {
       console.info('[ArkUI_textpicker_006] START');
@@ -135,12 +135,12 @@ export default function textpickerJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_textpicker_001
      * @tc.number ArkUI_textpicker_001
-     * @tc.name Test the properties of components
-     * @tc.desc Set selectedIndex values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set selectedIndex values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_textpicker_001', Level.LEVEL0, async (done: Function) => {
       console.info('[ArkUI_textpicker_001] START');
@@ -156,12 +156,12 @@ export default function textpickerJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_textpicker_011
      * @tc.number ArkUI_textpicker_011
-     * @tc.name Test the properties of components
-     * @tc.desc change canLoop values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   change canLoop values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_textpicker_011', Level.LEVEL0, async (done: Function) => {
       console.info('[ArkUI_textpicker_011] START');

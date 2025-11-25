@@ -69,7 +69,8 @@
     "MainAbility/pages/Repeat/RepeatLazy0150",
 
     "MainAbility/pages/Repeat/repeatReusableFalse",
-    "MainAbility/pages/Repeat/repeatReusableTrue"
+    "MainAbility/pages/Repeat/repeatReusableTrue",
+    "MainAbility/pages/LazyForEach/RELOAD"
 
     
   ]

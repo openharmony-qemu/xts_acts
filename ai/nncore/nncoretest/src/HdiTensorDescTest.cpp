@@ -24,9 +24,12 @@ class TensorDescTest : public testing::Test {};
 
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_TensorDescCreate_0100
- * @tc.desc: 创建TensorDesc
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_TensorDescCreate_0100
+ * @tc.number SUB_AI_NNRt_Core_Func_North_TensorDescCreate_0100
+ * @tc.desc   创建TensorDesc
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescCreate_0100, Function | MediumTest | Level1)
 {
@@ -36,9 +39,12 @@ HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescCreate_0100, Func
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_TensorDescDestroy_0100
- * @tc.desc: 销毁TensorDesc，TensorDesc为空
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_TensorDescDestroy_0100
+ * @tc.number SUB_AI_NNRt_Core_Func_North_TensorDescDestroy_0100
+ * @tc.desc   销毁TensorDesc，TensorDesc为空
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescDestroy_0100, Function | MediumTest | Level1)
 {
@@ -46,9 +52,12 @@ HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescDestroy_0100, Fun
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_TensorDescDestroy_0200
- * @tc.desc: 销毁TensorDesc，*TensorDesc为空
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_TensorDescDestroy_0200
+ * @tc.number SUB_AI_NNRt_Core_Func_North_TensorDescDestroy_0200
+ * @tc.desc   销毁TensorDesc，*TensorDesc为空
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescDestroy_0200, Function | MediumTest | Level1)
 {
@@ -57,9 +66,12 @@ HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescDestroy_0200, Fun
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_TensorDescDestroy_0300
- * @tc.desc: 销毁TensorDesc
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_TensorDescDestroy_0300
+ * @tc.number SUB_AI_NNRt_Core_Func_North_TensorDescDestroy_0300
+ * @tc.desc   销毁TensorDesc
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescDestroy_0300, Function | MediumTest | Level1)
 {
@@ -69,9 +81,12 @@ HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescDestroy_0300, Fun
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_TensorDescSetDataType_0100
- * @tc.desc: 设置TensorDesc数据类型，TensorDesc为空
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_TensorDescSetDataType_0100
+ * @tc.number SUB_AI_NNRt_Core_Func_North_TensorDescSetDataType_0100
+ * @tc.desc   设置TensorDesc数据类型，TensorDesc为空
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescSetDataType_0100, Function | MediumTest | Level1)
 {
@@ -79,9 +94,12 @@ HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescSetDataType_0100,
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_TensorDescSetDataType_0200
- * @tc.desc: 设置TensorDesc数据类型，遍历DataType
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_TensorDescSetDataType_0200
+ * @tc.number SUB_AI_NNRt_Core_Func_North_TensorDescSetDataType_0200
+ * @tc.desc   设置TensorDesc数据类型，遍历DataType
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescSetDataType_0200, Function | MediumTest | Level1)
 {
@@ -94,9 +112,12 @@ HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescSetDataType_0200,
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_TensorDescSetDataType_0300
- * @tc.desc: 设置TensorDesc数据类型，DataType不合法
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_TensorDescSetDataType_0300
+ * @tc.number SUB_AI_NNRt_Core_Func_North_TensorDescSetDataType_0300
+ * @tc.desc   设置TensorDesc数据类型，DataType不合法
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescSetDataType_0300, Function | MediumTest | Level1)
 {
@@ -110,9 +131,12 @@ HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescSetDataType_0300,
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_TensorDescGetDataType_0100
- * @tc.desc: 获取TensorDesc数据类型，TensorDesc为空
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_TensorDescGetDataType_0100
+ * @tc.number SUB_AI_NNRt_Core_Func_North_TensorDescGetDataType_0100
+ * @tc.desc   获取TensorDesc数据类型，TensorDesc为空
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescGetDataType_0100, Function | MediumTest | Level1)
 {
@@ -121,9 +145,12 @@ HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescGetDataType_0100,
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_TensorDescGetDataType_0200
- * @tc.desc: 获取TensorDesc数据类型，未设置DataType
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_TensorDescGetDataType_0200
+ * @tc.number SUB_AI_NNRt_Core_Func_North_TensorDescGetDataType_0200
+ * @tc.desc   获取TensorDesc数据类型，未设置DataType
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescGetDataType_0200, Function | MediumTest | Level1)
 {
@@ -136,9 +163,12 @@ HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescGetDataType_0200,
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_TensorDescSetShape_0100
- * @tc.desc: 设置TensorDescShape，TensorDesc为空
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_TensorDescSetShape_0100
+ * @tc.number SUB_AI_NNRt_Core_Func_North_TensorDescSetShape_0100
+ * @tc.desc   设置TensorDescShape，TensorDesc为空
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescSetShape_0100, Function | MediumTest | Level1)
 {
@@ -147,9 +177,12 @@ HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescSetShape_0100, Fu
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_TensorDescSetShape_0200
- * @tc.desc: 设置TensorDescShape，shape为空
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_TensorDescSetShape_0200
+ * @tc.number SUB_AI_NNRt_Core_Func_North_TensorDescSetShape_0200
+ * @tc.desc   设置TensorDescShape，shape为空
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescSetShape_0200, Function | MediumTest | Level1)
 {
@@ -160,9 +193,12 @@ HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescSetShape_0200, Fu
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_TensorDescGetShape_0100
- * @tc.desc: 获取TensorDescShape，TensorDesc为空
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_TensorDescGetShape_0100
+ * @tc.number SUB_AI_NNRt_Core_Func_North_TensorDescGetShape_0100
+ * @tc.desc   获取TensorDescShape，TensorDesc为空
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescGetShape_0100, Function | MediumTest | Level1)
 {
@@ -172,9 +208,12 @@ HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescGetShape_0100, Fu
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_TensorDescGetShape_0200
- * @tc.desc: 获取TensorDescShape，未设置shape
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_TensorDescGetShape_0200
+ * @tc.number SUB_AI_NNRt_Core_Func_North_TensorDescGetShape_0200
+ * @tc.desc   获取TensorDescShape，未设置shape
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescGetShape_0200, Function | MediumTest | Level1)
 {
@@ -188,9 +227,12 @@ HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescGetShape_0200, Fu
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_TensorDescGetShape_0300
- * @tc.desc: 获取TensorDescShape，合法设置返回成功
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_TensorDescGetShape_0300
+ * @tc.number SUB_AI_NNRt_Core_Func_North_TensorDescGetShape_0300
+ * @tc.desc   获取TensorDescShape，合法设置返回成功
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescGetShape_0300, Function | MediumTest | Level1)
 {
@@ -206,9 +248,12 @@ HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescGetShape_0300, Fu
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_TensorDescSetFormat_0100
- * @tc.desc: 设置TensorDescFormat，TensorDesc为空
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_TensorDescSetFormat_0100
+ * @tc.number SUB_AI_NNRt_Core_Func_North_TensorDescSetFormat_0100
+ * @tc.desc   设置TensorDescFormat，TensorDesc为空
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescSetFormat_0100, Function | MediumTest | Level1)
 {
@@ -216,9 +261,12 @@ HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescSetFormat_0100, F
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_TensorDescSetFormat_0200
- * @tc.desc: 设置TensorDescFormat，遍历设置format
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_TensorDescSetFormat_0200
+ * @tc.number SUB_AI_NNRt_Core_Func_North_TensorDescSetFormat_0200
+ * @tc.desc   设置TensorDescFormat，遍历设置format
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescSetFormat_0200, Function | MediumTest | Level1)
 {
@@ -232,9 +280,12 @@ HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescSetFormat_0200, F
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_TensorDescGetFormat_0100
- * @tc.desc: 获取TensorDescFormat，TensorDesc为空
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_TensorDescGetFormat_0100
+ * @tc.number SUB_AI_NNRt_Core_Func_North_TensorDescGetFormat_0100
+ * @tc.desc   获取TensorDescFormat，TensorDesc为空
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescGetFormat_0100, Function | MediumTest | Level1)
 {
@@ -243,9 +294,12 @@ HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescGetFormat_0100, F
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_TensorDescGetFormat_0200
- * @tc.desc: 获取TensorDescFormat，未设置Format
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_TensorDescGetFormat_0200
+ * @tc.number SUB_AI_NNRt_Core_Func_North_TensorDescGetFormat_0200
+ * @tc.desc   获取TensorDescFormat，未设置Format
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescGetFormat_0200, Function | MediumTest | Level1)
 {
@@ -258,9 +312,12 @@ HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescGetFormat_0200, F
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_TensorDescGetFormat_0300
- * @tc.desc: 获取TensorDescFormat，合法获取，返回成功
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_TensorDescGetFormat_0300
+ * @tc.number SUB_AI_NNRt_Core_Func_North_TensorDescGetFormat_0300
+ * @tc.desc   获取TensorDescFormat，合法获取，返回成功
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescGetFormat_0300, Function | MediumTest | Level1)
 {
@@ -274,9 +331,12 @@ HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescGetFormat_0300, F
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_TensorDescGetElementCount_0100
- * @tc.desc: 获取TensorDescElementCount，TensorDesc为空
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_TensorDescGetElementCount_0100
+ * @tc.number SUB_AI_NNRt_Core_Func_North_TensorDescGetElementCount_0100
+ * @tc.desc   获取TensorDescElementCount，TensorDesc为空
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescGetElementCount_0100, Function | MediumTest | Level1)
 {
@@ -285,9 +345,12 @@ HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescGetElementCount_0
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_TensorDescGetElementCount_0200
- * @tc.desc: 获取TensorDescElementCount，合理设置返回正确
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_TensorDescGetElementCount_0200
+ * @tc.number SUB_AI_NNRt_Core_Func_North_TensorDescGetElementCount_0200
+ * @tc.desc   获取TensorDescElementCount，合理设置返回正确
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescGetElementCount_0200, Function | MediumTest | Level1)
 {
@@ -301,9 +364,12 @@ HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescGetElementCount_0
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_TensorDescGetElementCount_0300
- * @tc.desc: 获取TensorDescElementCount，不设置，返回错误
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_TensorDescGetElementCount_0300
+ * @tc.number SUB_AI_NNRt_Core_Func_North_TensorDescGetElementCount_0300
+ * @tc.desc   获取TensorDescElementCount，不设置，返回错误
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescGetElementCount_0300, Function | MediumTest | Level1)
 {
@@ -315,9 +381,12 @@ HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescGetElementCount_0
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_TensorDescGetByteSize_0100
- * @tc.desc: 获取TensorDescByteSize，TensorDesc为空
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_TensorDescGetByteSize_0100
+ * @tc.number SUB_AI_NNRt_Core_Func_North_TensorDescGetByteSize_0100
+ * @tc.desc   获取TensorDescByteSize，TensorDesc为空
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescGetByteSize_0100, Function | MediumTest | Level1)
 {
@@ -326,9 +395,12 @@ HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescGetByteSize_0100,
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_TensorDescGetByteSize_0200
- * @tc.desc: 获取TensorDescByteSize，合理设置返回正确
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_TensorDescGetByteSize_0200
+ * @tc.number SUB_AI_NNRt_Core_Func_North_TensorDescGetByteSize_0200
+ * @tc.desc   获取TensorDescByteSize，合理设置返回正确
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescGetByteSize_0200, Function | MediumTest | Level1)
 {
@@ -343,9 +415,12 @@ HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescGetByteSize_0200,
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_TensorDescGetByteSize_0300
- * @tc.desc: 获取TensorDescByteSize，不设置，返回错误
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_TensorDescGetByteSize_0300
+ * @tc.number SUB_AI_NNRt_Core_Func_North_TensorDescGetByteSize_0300
+ * @tc.desc   获取TensorDescByteSize，不设置，返回错误
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescGetByteSize_0300, Function | MediumTest | Level1)
 {
@@ -357,9 +432,12 @@ HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescGetByteSize_0300,
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_TensorDescSetName_0100
- * @tc.desc: 设置TensorDescName，TensorDesc为空
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_TensorDescSetName_0100
+ * @tc.number SUB_AI_NNRt_Core_Func_North_TensorDescSetName_0100
+ * @tc.desc   设置TensorDescName，TensorDesc为空
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescSetName_0100, Function | MediumTest | Level1)
 {
@@ -368,9 +446,12 @@ HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescSetName_0100, Fun
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_TensorDescSetName_0200
- * @tc.desc: 设置TensorDescName，name为空
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_TensorDescSetName_0200
+ * @tc.number SUB_AI_NNRt_Core_Func_North_TensorDescSetName_0200
+ * @tc.desc   设置TensorDescName，name为空
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescSetName_0200, Function | MediumTest | Level1)
 {
@@ -381,9 +462,12 @@ HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescSetName_0200, Fun
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_TensorDescGetName_0100
- * @tc.desc: 获取TensorDescName，TensorDesc为空
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_TensorDescGetName_0100
+ * @tc.number SUB_AI_NNRt_Core_Func_North_TensorDescGetName_0100
+ * @tc.desc   获取TensorDescName，TensorDesc为空
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescGetName_0100, Function | MediumTest | Level1)
 {
@@ -392,9 +476,12 @@ HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescGetName_0100, Fun
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_TensorDescGetName_0200
- * @tc.desc: 获取TensorDescName，合理设置返回正确
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_TensorDescGetName_0200
+ * @tc.number SUB_AI_NNRt_Core_Func_North_TensorDescGetName_0200
+ * @tc.desc   获取TensorDescName，合理设置返回正确
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescGetName_0200, Function | MediumTest | Level1)
 {
@@ -409,9 +496,12 @@ HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescGetName_0200, Fun
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_TensorDescGetName_0300
- * @tc.desc: 获取TensorDescName，不设置，返回错误
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_TensorDescGetName_0300
+ * @tc.number SUB_AI_NNRt_Core_Func_North_TensorDescGetName_0300
+ * @tc.desc   获取TensorDescName，不设置，返回错误
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(TensorDescTest, SUB_AI_NNRt_Core_Func_North_TensorDescGetName_0300, Function | MediumTest | Level1)
 {

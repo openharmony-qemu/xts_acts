@@ -58,6 +58,14 @@ export default function provide2() {
       await CommonFunc.sleep(1000);
       router.back()
     });
+    /**
+     * @tc.name   provide2_0100
+     * @tc.number provide2_0100
+     * @tc.desc   provide2_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('provide2_0100', Level.LEVEL0, async (done: Function) => {
       console.info('provide2_0100 START');
       let driver = await UiDriver.create()
@@ -74,6 +82,14 @@ export default function provide2() {
 
     });
 
+    /**
+     * @tc.name   provide2_0200
+     * @tc.number provide2_0200
+     * @tc.desc   provide2_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('provide2_0200', Level.LEVEL0, async (done: Function) => {
       console.info('provide2_0200 START');
       let driver = await UiDriver.create()
@@ -91,6 +107,14 @@ export default function provide2() {
     });
 
 
+    /**
+     * @tc.name   provide2_0300
+     * @tc.number provide2_0300
+     * @tc.desc   provide2_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('provide2_0300', Level.LEVEL0, async (done: Function) => {
       console.info('provide2_0300 START');
       let driver = await UiDriver.create()
@@ -111,6 +135,14 @@ export default function provide2() {
 
     });
 
+    /**
+     * @tc.name   provide2_0400
+     * @tc.number provide2_0400
+     * @tc.desc   provide2_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('provide2_0400', Level.LEVEL0, async (done: Function) => {
       console.info('provide2_0400 START');
       let driver = await UiDriver.create()
@@ -132,6 +164,14 @@ export default function provide2() {
     });
 
 
+    /**
+     * @tc.name   provide2_0500
+     * @tc.number provide2_0500
+     * @tc.desc   provide2_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('provide2_0500', Level.LEVEL0, async (done: Function) => {
       console.info('provide2_0500 START');
       let driver = await UiDriver.create()
@@ -148,6 +188,14 @@ export default function provide2() {
 
     });
 
+    /**
+     * @tc.name   provide2_0600
+     * @tc.number provide2_0600
+     * @tc.desc   provide2_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('provide2_0600', Level.LEVEL0, async (done: Function) => {
       console.info('provide2_0600 START');
       let driver = await UiDriver.create()
@@ -167,6 +215,14 @@ export default function provide2() {
     });
 
 
+    /**
+     * @tc.name   provide2_0700
+     * @tc.number provide2_0700
+     * @tc.desc   provide2_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('provide2_0700', Level.LEVEL0, async (done: Function) => {
       console.info('provide2_0700 START');
       let driver = await UiDriver.create()
@@ -189,6 +245,14 @@ export default function provide2() {
 
     });
 
+    /**
+     * @tc.name   provide2_0800
+     * @tc.number provide2_0800
+     * @tc.desc   provide2_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('provide2_0800', Level.LEVEL0, async (done: Function) => {
       console.info('provide2_0800 START');
       let driver = await UiDriver.create()

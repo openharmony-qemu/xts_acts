@@ -47,12 +47,12 @@ export default function SegmentButtonTest003() {
     });
 
     /**
-     * @tc.number    SegmentButtonTest003_001
-     * @tc.name      SegmentButtonTest003_001
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   SegmentButtonTest003_001
+     * @tc.number SegmentButtonTest003_001
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SegmentButtonTest003_001', Level.LEVEL1, async (done: Function) => {
       console.info('[SegmentButtonTest003_001] START');
@@ -71,12 +71,12 @@ export default function SegmentButtonTest003() {
     });
 
     /**
-     * @tc.number    SegmentButtonTest003_002
-     * @tc.name      SegmentButtonTest003_002
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   SegmentButtonTest003_002
+     * @tc.number SegmentButtonTest003_002
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SegmentButtonTest003_002', Level.LEVEL1, async (done: Function) => {
       console.info('[SegmentButtonTest003_002] START');

@@ -54,12 +54,12 @@ done();
     });
 
     /**
-     * @tc.number    SUB_ACE_touchPoint_0100
-     * @tc.name      touchPoint_0100
-     * @tc.desc      touchPoint api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   touchPoint_0100
+     * @tc.number SUB_ACE_touchPoint_0100
+     * @tc.desc   touchPoint api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('touchPoint_0100', Level.LEVEL0, async (done: Function) => {
       console.info('touchPoint_0100 START');
@@ -78,12 +78,12 @@ done();
     });
 
     /**
-     * @tc.number    SUB_ACE_touchPoint_0200
-     * @tc.name      touchPoint_0200
-     * @tc.desc      previewOptions:{mode:	DragPreviewMode.AUTO} api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   touchPoint_0200
+     * @tc.number SUB_ACE_touchPoint_0200
+     * @tc.desc   previewOptions:{mode:	DragPreviewMode.AUTO} api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('touchPoint_0200', Level.LEVEL0, async (done: Function) => {
       console.info('touchPoint_0200 START');

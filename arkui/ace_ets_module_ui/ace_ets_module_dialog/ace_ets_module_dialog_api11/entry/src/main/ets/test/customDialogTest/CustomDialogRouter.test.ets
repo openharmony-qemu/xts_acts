@@ -42,12 +42,12 @@ export default function CustomDialogRouter() {
     });
 
     /**
-     * @tc.number    SUB_ACE_CustomDialogRouter_0100
-     * @tc.name      CustomDialogRouter_0100
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   CustomDialogRouter_0100
+     * @tc.number SUB_ACE_CustomDialogRouter_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('CustomDialogRouter_0100', Level.LEVEL2, async (done: Function) => {
       console.info('CustomDialogRouter_0100 START');

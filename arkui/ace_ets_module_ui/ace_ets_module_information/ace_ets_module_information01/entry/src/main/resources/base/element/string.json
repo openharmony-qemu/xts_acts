@@ -73,10 +73,6 @@
       "value": "apple"
     },
     {
-      "name": "fontSize_10",
-      "value": "10vp"
-    },
-    {
       "name": "text_string",
       "value": "text"
     },
@@ -87,6 +83,22 @@
     {
       "name": "size_30",
       "value": "30px"
+    },
+    {
+      "name": "badge_Size_test",
+      "value": "7vp"
+    },
+    {
+      "name": "fontSize_10",
+      "value": "10vp"
+    },
+    {
+      "name": "DataPanel_StrokeWidth",
+      "value": "30.00vp"
+    },
+    {
+      "name": "num",
+      "value": "10"
     }
   ]
 }

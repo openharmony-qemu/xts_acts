@@ -56,12 +56,12 @@ export default function parentX_parentY_strategy_Test() {
       console.info("parentX_parentY_strategy_Test after each called");
     });
     /**
-     * @tc.number    SUB_ACE_RICHEDITOR_parentX_parentY_strategy_Test_0100
-     * @tc.name      parentX_parentY_strategy_Test
-     * @tc.desc      set api
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   parentX_parentY_strategy_Test_0100
+     * @tc.number SUB_ACE_RICHEDITOR_parentX_parentY_strategy_Test_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('parentX_parentY_strategy_Test_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[parentX_parentY_strategy_Test_0100] START');
@@ -82,12 +82,12 @@ export default function parentX_parentY_strategy_Test() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_RICHEDITOR_parentX_parentY_strategy_Test_0200
-     * @tc.name      parentX_parentY_strategy_Test
-     * @tc.desc      set api
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   parentX_parentY_strategy_Test_0200
+     * @tc.number SUB_ACE_RICHEDITOR_parentX_parentY_strategy_Test_0200
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('parentX_parentY_strategy_Test_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[parentX_parentY_strategy_Test_0200] START');
@@ -107,12 +107,12 @@ export default function parentX_parentY_strategy_Test() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_RICHEDITOR_parentX_parentY_strategy_Test_0300
-     * @tc.name      parentX_parentY_strategy_Test
-     * @tc.desc      set api
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   parentX_parentY_strategy_Test_0300
+     * @tc.number SUB_ACE_RICHEDITOR_parentX_parentY_strategy_Test_0300
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('parentX_parentY_strategy_Test_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[parentX_parentY_strategy_Test_0300] START');
@@ -133,12 +133,12 @@ export default function parentX_parentY_strategy_Test() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_RICHEDITOR_parentX_parentY_strategy_Test_0400
-     * @tc.name      parentX_parentY_strategy_Test
-     * @tc.desc      set api
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   parentX_parentY_strategy_Test_0400
+     * @tc.number SUB_ACE_RICHEDITOR_parentX_parentY_strategy_Test_0400
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('parentX_parentY_strategy_Test_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[parentX_parentY_strategy_Test_0400] START');
@@ -159,12 +159,12 @@ export default function parentX_parentY_strategy_Test() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_RICHEDITOR_parentX_parentY_strategy_Test_0500
-     * @tc.name      parentX_parentY_strategy_Test
-     * @tc.desc      set api
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   parentX_parentY_strategy_Test_0500
+     * @tc.number SUB_ACE_RICHEDITOR_parentX_parentY_strategy_Test_0500
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('parentX_parentY_strategy_Test_0500', Level.LEVEL0, async (done: Function) => {
       console.info('[parentX_parentY_strategy_Test_0500] START');

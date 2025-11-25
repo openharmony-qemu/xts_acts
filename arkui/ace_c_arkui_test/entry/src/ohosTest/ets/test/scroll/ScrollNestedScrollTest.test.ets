@@ -49,112 +49,112 @@ export default function scrollNestedScrollTest() {
       Y = Utils.getRectVerticalCenterY(webRect)
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_SCROLL_NESTEDSCROLL_0100
-    * @tc.name       : testScrollNestedScroll001
-    * @tc.desc       : test nestedScroll scrollForward:ARKUI_SCROLL_NESTED_MODE_SELF_ONLY
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScrollNestedScroll001
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_NESTEDSCROLL_0100
+     * @tc.desc   test nestedScroll scrollForward:ARKUI_SCROLL_NESTED_MODE_SELF_ONLY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollNestedScroll001', Level.LEVEL1, async (done: Function) => {
       await doIt(PAGE_TAG, 1, X, Y)
       expect(Utils.getComponentInfoByKey('compareButton').$attrs.backgroundColor).assertEqual('#FF00FF00')
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_SCROLL_NESTEDSCROLL_0200
-    * @tc.name       : testScrollNestedScroll002
-    * @tc.desc       : test nestedScroll scrollForward:ARKUI_SCROLL_NESTED_MODE_SELF_FIRST
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScrollNestedScroll002
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_NESTEDSCROLL_0200
+     * @tc.desc   test nestedScroll scrollForward:ARKUI_SCROLL_NESTED_MODE_SELF_FIRST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollNestedScroll002', Level.LEVEL1, async (done: Function) => {
       await doIt(PAGE_TAG, 2, X, Y)
       expect(Utils.getComponentInfoByKey('compareButton').$attrs.backgroundColor).assertEqual('#FF00FF00')
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_SCROLL_NESTEDSCROLL_0300
-    * @tc.name       : testScrollNestedScroll003
-    * @tc.desc       : test nestedScroll scrollForward:ARKUI_SCROLL_NESTED_MODE_PARENT_FIRST
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScrollNestedScroll003
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_NESTEDSCROLL_0300
+     * @tc.desc   test nestedScroll scrollForward:ARKUI_SCROLL_NESTED_MODE_PARENT_FIRST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollNestedScroll003', Level.LEVEL1, async (done: Function) => {
       await doIt(PAGE_TAG, 3, X, Y)
       expect(Utils.getComponentInfoByKey('compareButton').$attrs.backgroundColor).assertEqual('#FF00FF00')
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_SCROLL_NESTEDSCROLL_0400
-    * @tc.name       : testScrollNestedScroll004
-    * @tc.desc       : test nestedScroll scrollBackward:ARKUI_SCROLL_NESTED_MODE_PARALLEL
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScrollNestedScroll004
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_NESTEDSCROLL_0400
+     * @tc.desc   test nestedScroll scrollBackward:ARKUI_SCROLL_NESTED_MODE_PARALLEL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollNestedScroll004', Level.LEVEL1, async (done: Function) => {
       await doIt(PAGE_TAG, 4, X, Y)
       expect(Utils.getComponentInfoByKey('compareButton').$attrs.backgroundColor).assertEqual('#FF00FF00')
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_SCROLL_NESTEDSCROLL_0500
-    * @tc.name       : testScrollNestedScroll005
-    * @tc.desc       : test nestedScroll scrollBackward:ARKUI_SCROLL_NESTED_MODE_SELF_ONLY
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScrollNestedScroll005
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_NESTEDSCROLL_0500
+     * @tc.desc   test nestedScroll scrollBackward:ARKUI_SCROLL_NESTED_MODE_SELF_ONLY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollNestedScroll005', Level.LEVEL1, async (done: Function) => {
       await doIt(PAGE_TAG, 5, X, Y)
       expect(Utils.getComponentInfoByKey('compareButton').$attrs.backgroundColor).assertEqual('#FF00FF00')
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_SCROLL_NESTEDSCROLL_0600
-    * @tc.name       : testScrollNestedScroll006
-    * @tc.desc       : test nestedScroll scrollBackward:ARKUI_SCROLL_NESTED_MODE_SELF_FIRST
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScrollNestedScroll006
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_NESTEDSCROLL_0600
+     * @tc.desc   test nestedScroll scrollBackward:ARKUI_SCROLL_NESTED_MODE_SELF_FIRST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollNestedScroll006', Level.LEVEL1, async (done: Function) => {
       await doIt(PAGE_TAG, 6, X, Y)
       expect(Utils.getComponentInfoByKey('compareButton').$attrs.backgroundColor).assertEqual('#FF00FF00')
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_SCROLL_NESTEDSCROLL_0700
-    * @tc.name       : testScrollNestedScroll007
-    * @tc.desc       : test nestedScroll scrollBackward:ARKUI_SCROLL_NESTED_MODE_PARENT_FIRST
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScrollNestedScroll007
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_NESTEDSCROLL_0700
+     * @tc.desc   test nestedScroll scrollBackward:ARKUI_SCROLL_NESTED_MODE_PARENT_FIRST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollNestedScroll007', Level.LEVEL1, async (done: Function) => {
       await doIt(PAGE_TAG, 7, X, Y)
       expect(Utils.getComponentInfoByKey('compareButton').$attrs.backgroundColor).assertEqual('#FF00FF00')
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_SCROLL_NESTEDSCROLL_0800
-    * @tc.name       : testScrollNestedScroll008
-    * @tc.desc       : test nestedScroll scrollForward:ARKUI_SCROLL_NESTED_MODE_PARALLEL
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScrollNestedScroll008
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_NESTEDSCROLL_0800
+     * @tc.desc   test nestedScroll scrollForward:ARKUI_SCROLL_NESTED_MODE_PARALLEL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollNestedScroll008', Level.LEVEL1, async (done: Function) => {
       await doIt(PAGE_TAG, 8, X, Y)
       expect(Utils.getComponentInfoByKey('compareButton').$attrs.backgroundColor).assertEqual('#FF00FF00')

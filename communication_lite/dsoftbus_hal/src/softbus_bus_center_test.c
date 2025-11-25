@@ -185,9 +185,12 @@ static SubscribeInfo g_sInfo1 = {
 };
 
 /**
- * @tc.number    : testJoinLNN0001
- * @tc.name      : parameter is NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testJoinLNN0001
+ * @tc.number testJoinLNN0001
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(BusCenterTestSuite, testJoinLNN0001, Function | MediumTest | Level0)
 {
@@ -208,9 +211,12 @@ LITE_TEST_CASE(BusCenterTestSuite, testJoinLNN0001, Function | MediumTest | Leve
 }
 
 /**
- * @tc.number    : testLeaveLNN001
- * @tc.name      : bus center LeaveLNN interface exception test
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testLeaveLNN001
+ * @tc.number testLeaveLNN001
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(BusCenterTestSuite, testLeaveLNN001, Function | MediumTest | Level0)
 {
@@ -229,11 +235,13 @@ LITE_TEST_CASE(BusCenterTestSuite, testLeaveLNN001, Function | MediumTest | Leve
     printf("------end testLeaveLNN001------\n");
 }
 
-/*
- * @tc.name: testRegNodeDeviceStateCb001
- * @tc.desc: get all node info interface test
- * @tc.type: FUNC
- * @tc.require: AR000FK6J4
+/**
+ * @tc.name   testRegNodeDeviceStateCb001
+ * @tc.number testRegNodeDeviceStateCb001
+ * @tc.desc   get all node info interface test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(BusCenterTestSuite, testRegNodeDeviceStateCb001, Function | MediumTest | Level0)
 {
@@ -243,11 +251,13 @@ LITE_TEST_CASE(BusCenterTestSuite, testRegNodeDeviceStateCb001, Function | Mediu
     TEST_ASSERT_TRUE(ret == SOFTBUS_OK);
 }
 
-/*
- * @tc.name: testRegNodeDeviceStateCb002
- * @tc.desc: get all node info interface test
- * @tc.type: FUNC
- * @tc.require: AR000FK6J4
+/**
+ * @tc.name   testRegNodeDeviceStateCb002
+ * @tc.number testRegNodeDeviceStateCb002
+ * @tc.desc   get all node info interface test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(BusCenterTestSuite, testRegNodeDeviceStateCb002, Function | MediumTest | Level0)
 {
@@ -264,11 +274,13 @@ LITE_TEST_CASE(BusCenterTestSuite, testRegNodeDeviceStateCb002, Function | Mediu
     }
 }
 
-/*
- * @tc.name: testGetAllNodeDeviceInfo001
- * @tc.desc: get all node info interface test
- * @tc.type: FUNC
- * @tc.require: AR000FK6J4
+/**
+ * @tc.name   testGetAllNodeDeviceInfo001
+ * @tc.number testGetAllNodeDeviceInfo001
+ * @tc.desc   get all node info interface test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(BusCenterTestSuite, testGetAllNodeDeviceInfo001, Function | MediumTest | Level0)
 {
@@ -285,11 +297,13 @@ LITE_TEST_CASE(BusCenterTestSuite, testGetAllNodeDeviceInfo001, Function | Mediu
     printf("------end testGetAllNodeDeviceInfo001------\n");
 }
 
-/*
- * @tc.name: testGetLocalNodeDeviceInfo001
- * @tc.desc: get local info interface test
- * @tc.type: FUNC
- * @tc.require: AR000FK6J4
+/**
+ * @tc.name   testGetLocalNodeDeviceInfo001
+ * @tc.number testGetLocalNodeDeviceInfo001
+ * @tc.desc   get local info interface test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(BusCenterTestSuite, testGetLocalNodeDeviceInfo001, Function | MediumTest | Level0)
 {
@@ -303,11 +317,13 @@ LITE_TEST_CASE(BusCenterTestSuite, testGetLocalNodeDeviceInfo001, Function | Med
     printf("------end testGetLocalNodeDeviceInfo------\n");
 }
 
-/*
- * @tc.name: testGetNodeKeyInfo001
- * @tc.desc: get node key info interface test
- * @tc.type: FUNC
- * @tc.require: AR000FK6J4
+/**
+ * @tc.name   testGetNodeKeyInfo001
+ * @tc.number testGetNodeKeyInfo001
+ * @tc.desc   get node key info interface test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(BusCenterTestSuite, testGetNodeKeyInfo001, Function | MediumTest | Level0)
 {
@@ -323,11 +339,13 @@ LITE_TEST_CASE(BusCenterTestSuite, testGetNodeKeyInfo001, Function | MediumTest 
 }
 
 
-/*
- * @tc.name: testStartTimeSync001
- * @tc.desc: start time sync interface test
- * @tc.type: FUNC
- * @tc.require: AR000FN60G
+/**
+ * @tc.name   testStartTimeSync001
+ * @tc.number testStartTimeSync001
+ * @tc.desc   start time sync interface test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(BusCenterTestSuite, testStartTimeSync001, Function | MediumTest | Level0)
 {
@@ -338,11 +356,13 @@ LITE_TEST_CASE(BusCenterTestSuite, testStartTimeSync001, Function | MediumTest |
     TEST_ASSERT_TRUE(StartTimeSync(TEST_PKG_NAME, networkId, LOW_ACCURACY, SHORT_PERIOD, NULL) != SOFTBUS_OK);
 }
 
-/*
- * @tc.name: testStartTimeSync002
- * @tc.desc: start time sync interface test
- * @tc.type: FUNC
- * @tc.require: AR000FN60G
+/**
+ * @tc.name   testStartTimeSync002
+ * @tc.number testStartTimeSync002
+ * @tc.desc   start time sync interface test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(BusCenterTestSuite, testStartTimeSync002, Function | MediumTest | Level0)
 {
@@ -353,10 +373,12 @@ LITE_TEST_CASE(BusCenterTestSuite, testStartTimeSync002, Function | MediumTest |
 }
 
 /**
- * @tc.name: testPublishLNN001
- * @tc.desc: Verify wrong parameter
- * @tc.type: FUNC
- * @tc.require:
+ * @tc.name   testPublishLNN001
+ * @tc.number testPublishLNN001
+ * @tc.desc   Verify wrong parameter
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(BusCenterTestSuite, testPublishLNN001, Function | MediumTest | Level0)
 {
@@ -396,10 +418,12 @@ LITE_TEST_CASE(BusCenterTestSuite, testPublishLNN001, Function | MediumTest | Le
 }
 
 /**
- * @tc.name: testRefreshLNN001
- * @tc.desc: Verify wrong parameter
- * @tc.type: FUNC
- * @tc.require:
+ * @tc.name   testRefreshLNN001
+ * @tc.number testRefreshLNN001
+ * @tc.desc   Verify wrong parameter
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(BusCenterTestSuite, testRefreshLNN001, Function | MediumTest | Level0)
 {
@@ -440,11 +464,13 @@ LITE_TEST_CASE(BusCenterTestSuite, testRefreshLNN001, Function | MediumTest | Le
     g_sInfo.dataLen = sizeof("capdata1");
 }
 
-/*
- * @tc.name: testActiveMetaNode001
- * @tc.desc: meta node interface test
- * @tc.type: FUNC
- * @tc.require:
+/**
+ * @tc.name   testActiveMetaNode001
+ * @tc.number testActiveMetaNode001
+ * @tc.desc   meta node interface test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(BusCenterTestSuite, testActiveMetaNode001, Function | MediumTest | Level0)
 {
@@ -471,11 +497,13 @@ LITE_TEST_CASE(BusCenterTestSuite, testActiveMetaNode001, Function | MediumTest 
     TEST_ASSERT_TRUE(infoNum != 0);
 }
 
-/*
- * @tc.name: testGetAllMetaNodeInfo001
- * @tc.desc: meta node interface test
- * @tc.type: FUNC
- * @tc.require:
+/**
+ * @tc.name   testGetAllMetaNodeInfo001
+ * @tc.number testGetAllMetaNodeInfo001
+ * @tc.desc   meta node interface test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(BusCenterTestSuite, testGetAllMetaNodeInfo001, Function | MediumTest | Level0)
 {

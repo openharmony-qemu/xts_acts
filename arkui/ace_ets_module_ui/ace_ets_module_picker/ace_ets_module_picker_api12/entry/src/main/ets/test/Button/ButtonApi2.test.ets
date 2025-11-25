@@ -45,9 +45,12 @@ export default function ButtonApi2() {
     });
 
     /**
+     * @tc.name   ButtonApi2_0100
      * @tc.number ButtonApi2_0100
-     * @tc.name testButton
-     * @tc.desc
+     * @tc.desc   ButtonApi2_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ButtonApi2_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ButtonApi2_0100 START');

@@ -54,12 +54,12 @@ export default function ScrollAJsunit() {
       console.info("Scroll after each called");
     });
     /**
-     * @tc.number testScrollGetInspectorByKey010
      * @tc.name   testScrollGetInspectorByKey010
+     * @tc.number testScrollGetInspectorByKey010
      * @tc.desc   aceEtsTest
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testScrollGetInspectorByKey010', Level.LEVEL0, async (done: Function) => {
       console.info('testGetInspectorByKey START');
@@ -80,12 +80,12 @@ export default function ScrollAJsunit() {
     });
 
     /**
-     * @tc.number testScrollGetInspectorByKey020
      * @tc.name   testScrollGetInspectorByKey020
+     * @tc.number testScrollGetInspectorByKey020
      * @tc.desc   aceEtsTest
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testScrollGetInspectorByKey020', Level.LEVEL0, async (done: Function) => {
       let strJson = getInspectorByKey('scroll1');
@@ -100,12 +100,12 @@ export default function ScrollAJsunit() {
     });
 
     /**
-     * @tc.number testScrollGetInspectorByKey030
      * @tc.name   testScrollGetInspectorByKey030
+     * @tc.number testScrollGetInspectorByKey030
      * @tc.desc   aceEtsTest
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testScrollGetInspectorByKey030', Level.LEVEL0, async (done: Function) => {
       let strJson: ESObject = getInspectorByKey('scroll2');
@@ -120,12 +120,12 @@ export default function ScrollAJsunit() {
     });
 
     /**
-     * @tc.number testScrollGetInspectorByKey040
      * @tc.name   testScrollGetInspectorByKey040
+     * @tc.number testScrollGetInspectorByKey040
      * @tc.desc   aceEtsTest
-     * @tc.level  Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testScrollGetInspectorByKey040', Level.LEVEL0, async (done: Function) => {
       let strJson = getInspectorByKey('scroll3');

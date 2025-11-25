@@ -40,12 +40,12 @@ export default function createNodeStack() {
       done();
     });
     /**
-     * @tc.number    createNodeStack_0100
-     * @tc.name      createNodeStack_0100
-     * @tc.desc      frameNode: createNodeStackToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   createNodeStack_0100
+     * @tc.number createNodeStack_0100
+     * @tc.desc   frameNode: createNodeStackToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createNodeStack_0100', Level.LEVEL0, async (done: Function) => {
       console.info('createNodeStack_0100 START');

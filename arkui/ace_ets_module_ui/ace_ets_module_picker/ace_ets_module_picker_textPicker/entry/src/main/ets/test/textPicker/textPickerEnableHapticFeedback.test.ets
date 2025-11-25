@@ -41,13 +41,13 @@ export default function EnableHapticFeedbackTest() {
       done();
     });
 
-    /* *
-     * @tc.number: TextPickerEnableHapticFeedback_001
-     * @tc.name  : TextPickerEnableHapticFeedback_001
-     * @tc.desc  : To test the enableHapticFeedback interface true
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   TextPickerEnableHapticFeedback_001
+     * @tc.number TextPickerEnableHapticFeedback_001
+     * @tc.desc   To test the enableHapticFeedback interface true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TextPickerEnableHapticFeedback_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let strJson = getInspectorByKey('textPicker1');
@@ -59,13 +59,13 @@ export default function EnableHapticFeedbackTest() {
       done();
     });
 
-    /* *
-     * @tc.number: TextPickerEnableHapticFeedback_002
-     * @tc.name  : TextPickerEnableHapticFeedback_002
-     * @tc.desc  : To test the enableHapticFeedback interface false
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   TextPickerEnableHapticFeedback_002
+     * @tc.number TextPickerEnableHapticFeedback_002
+     * @tc.desc   To test the enableHapticFeedback interface false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TextPickerEnableHapticFeedback_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let strJson = getInspectorByKey('textPicker2');
@@ -77,13 +77,13 @@ export default function EnableHapticFeedbackTest() {
       done();
     });
 
-    /* *
-     * @tc.number: TextPickerEnableHapticFeedback_003
-     * @tc.name  : TextPickerEnableHapticFeedback_003
-     * @tc.desc  : To test the enableHapticFeedback interface undefined
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   TextPickerEnableHapticFeedback_003
+     * @tc.number TextPickerEnableHapticFeedback_003
+     * @tc.desc   To test the enableHapticFeedback interface undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TextPickerEnableHapticFeedback_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let strJson = getInspectorByKey('textPicker3');
@@ -95,13 +95,13 @@ export default function EnableHapticFeedbackTest() {
       done();
     });
 
-    /* *
-     * @tc.number: TextPickerEnableHapticFeedback_004
-     * @tc.name  : TextPickerEnableHapticFeedback_004
-     * @tc.desc  : To test the enableHapticFeedback interface null
-     * @tc.level : Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   TextPickerEnableHapticFeedback_004
+     * @tc.number TextPickerEnableHapticFeedback_004
+     * @tc.desc   To test the enableHapticFeedback interface null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TextPickerEnableHapticFeedback_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let strJson = getInspectorByKey('textPicker4');

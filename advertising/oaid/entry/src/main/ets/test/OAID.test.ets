@@ -55,12 +55,12 @@ export default function OAIDTest(abilityContext) {
     });
 
     /**
-     * @tc.number: SUB_CLOUD_OAID_GETOAID_0100
-     * @tc.name: testGetOAIDByPromise
-     * @tc.desc: Get oaid by promise is not null.
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testGetOAIDByPromise
+     * @tc.number SUB_CLOUD_OAID_GETOAID_0100
+     * @tc.desc   Get oaid by promise is not null.
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testGetOAIDByPromise", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async () => {
       let oaidResult: string = '';
@@ -75,12 +75,12 @@ export default function OAIDTest(abilityContext) {
     })
 
     /**
-     * @tc.number: SUB_CLOUD_OAID_GETOAID_0200
-     * @tc.name: testGetOAIDByCallback
-     * @tc.desc: Get oaid by callback is not null.
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testGetOAIDByCallback
+     * @tc.number SUB_CLOUD_OAID_GETOAID_0200
+     * @tc.desc   Get oaid by callback is not null.
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testGetOAIDByCallback", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -96,12 +96,12 @@ export default function OAIDTest(abilityContext) {
     })
 
     /**
-     * @tc.number: SUB_CLOUD_OAID_GETOAID_0300
-     * @tc.name: testRepeatGetOAID
-     * @tc.desc: Repeat get oaid, result is equal.
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level1
+     * @tc.name   testRepeatGetOAID
+     * @tc.number SUB_CLOUD_OAID_GETOAID_0300
+     * @tc.desc   Repeat get oaid, result is equal.
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL1
      */
     it("testRepeatGetOAID", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, async () => {
       try {
@@ -115,12 +115,12 @@ export default function OAIDTest(abilityContext) {
     })
 
     /**
-     * @tc.number: SUB_CLOUD_OAID_RESETOAID_0400
-     * @tc.name: testResetOAID
-     * @tc.desc: Reset OAID.
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level1
+     * @tc.name   testResetOAID
+     * @tc.number SUB_CLOUD_OAID_RESETOAID_0400
+     * @tc.desc   Reset OAID.
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL1
      */
     it("testResetOAID", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL1, () => {
       try {

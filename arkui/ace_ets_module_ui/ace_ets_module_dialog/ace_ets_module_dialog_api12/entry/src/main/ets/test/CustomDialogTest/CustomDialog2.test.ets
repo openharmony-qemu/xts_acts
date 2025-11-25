@@ -43,12 +43,14 @@ export default function CustomDialog2() {
       }
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0350
-    * @tc.name  : CustomDialog2_0100
-    * @tc.desc  : To test that the Provide decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   CustomDialog2_0100
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0350
+     * @tc.desc   To test that the Provide decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('CustomDialog2_0100', Level.LEVEL2, async (done: Function) => {
       console.info('CustomDialog2_0100 START');
       let driver = await Driver.create()

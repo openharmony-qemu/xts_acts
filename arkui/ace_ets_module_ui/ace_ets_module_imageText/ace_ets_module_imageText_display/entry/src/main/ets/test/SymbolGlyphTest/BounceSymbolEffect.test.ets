@@ -46,11 +46,12 @@ export default function BounceSymbolEffectTest() {
     });
 
     /**
-     * @tc.number    BounceSymbolEffectTest_001
-     * @tc.desc      symbolEffect test of SymbolGlyph
-     * @tc.name      BounceSymbolEffectTest_001
-     * @tc.level     Level 1
-     * @tc.type
+     * @tc.name   BounceSymbolEffectTest_001
+     * @tc.number BounceSymbolEffectTest_001
+     * @tc.desc   symbolEffect test of SymbolGlyph
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BounceSymbolEffectTest_001', Level.LEVEL1, async (done: Function) => {
       console.info('[BounceSymbolEffectTest_001] START');
@@ -65,12 +66,12 @@ export default function BounceSymbolEffectTest() {
     });
 
     /**
-     * @tc.number    BounceSymbolEffectTest_002
-     * @tc.desc      symbolEffect test of SymbolGlyph
-     * @tc.name      BounceSymbolEffectTest_002
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   BounceSymbolEffectTest_002
+     * @tc.number BounceSymbolEffectTest_002
+     * @tc.desc   symbolEffect test of SymbolGlyph
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BounceSymbolEffectTest_002', Level.LEVEL1, async (done: Function) => {
       console.info('[BounceSymbolEffectTest_002] START');
@@ -87,12 +88,12 @@ export default function BounceSymbolEffectTest() {
     });
 
     /**
-     * @tc.number    BounceSymbolEffectTest_003
-     * @tc.desc      symbolEffect test of SymbolGlyph
-     * @tc.name      BounceSymbolEffectTest_003
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   BounceSymbolEffectTest_003
+     * @tc.number BounceSymbolEffectTest_003
+     * @tc.desc   symbolEffect test of SymbolGlyph
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BounceSymbolEffectTest_003', Level.LEVEL1, async (done: Function) => {
       console.info('[BounceSymbolEffectTest_003] START');
@@ -107,12 +108,12 @@ export default function BounceSymbolEffectTest() {
     });
 
     /**
-     * @tc.number    BounceSymbolEffectTest_004
-     * @tc.desc      symbolEffect test of SymbolGlyph
-     * @tc.name      BounceSymbolEffectTest_004
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   BounceSymbolEffectTest_004
+     * @tc.number BounceSymbolEffectTest_004
+     * @tc.desc   symbolEffect test of SymbolGlyph
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BounceSymbolEffectTest_004', Level.LEVEL1, async (done: Function) => {
       console.info('[BounceSymbolEffectTest_004] START');
@@ -128,12 +129,12 @@ export default function BounceSymbolEffectTest() {
     });
 
     /**
-     * @tc.number    BounceSymbolEffectTest_005
-     * @tc.desc      symbolEffect test of SymbolGlyph
-     * @tc.name      BounceSymbolEffectTest_005
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   BounceSymbolEffectTest_005
+     * @tc.number BounceSymbolEffectTest_005
+     * @tc.desc   symbolEffect test of SymbolGlyph
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BounceSymbolEffectTest_005', Level.LEVEL1, async (done: Function) => {
       console.info('[BounceSymbolEffectTest_005] START');

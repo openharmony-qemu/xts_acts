@@ -47,12 +47,12 @@ export default function FrameNodeIsDisposedTest() {
     });
 
     /**
-     * @tc.number    FrameNodeIsDisposedTest_0100
-     * @tc.name      FrameNodeIsDisposedTest_0100
-     * @tc.desc      frameNode: frameNode isDisposed Test
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   FrameNodeIsDisposedTest_0100
+     * @tc.number FrameNodeIsDisposedTest_0100
+     * @tc.desc   frameNode: frameNode isDisposed Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FrameNodeIsDisposedTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('FrameNodeIsDisposedTest_0100 START');

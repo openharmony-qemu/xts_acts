@@ -42,6 +42,14 @@ export default function textTwoJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   textTwoJsunit_0100
+     * @tc.number textTwoJsunit_0100
+     * @tc.desc   textTwoJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textTwoJsunit_0100', Level.LEVEL1, async (done: Function) => {
       console.info('textTwoJsunit_0200 START');
       // test the illegal value of decoration
@@ -59,6 +67,14 @@ export default function textTwoJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   textTwoJsunit_0200
+     * @tc.number textTwoJsunit_0200
+     * @tc.desc   textTwoJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textTwoJsunit_0200', Level.LEVEL1, async (done: Function) => {
       console.info('imageOneJsunit_0200 START');
       await CommonFunc.sleep(500);
@@ -107,6 +123,14 @@ export default function textTwoJsunit() {
 
    
 
+    /**
+     * @tc.name   textTwoJsunit_0300
+     * @tc.number textTwoJsunit_0300
+     * @tc.desc   textTwoJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textTwoJsunit_0300', Level.LEVEL1, async (done: Function) => {
       console.info('textTwoJsunit_0300 START');
       // test the baselineOffset
@@ -120,6 +144,14 @@ export default function textTwoJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   textTwoJsunit_0400
+     * @tc.number textTwoJsunit_0400
+     * @tc.desc   textTwoJsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textTwoJsunit_0400', Level.LEVEL1, async (done: Function) => {
       console.info('textTwoJsunit_0400 START');
       // test the baselineOffset of negative value
@@ -133,6 +165,14 @@ export default function textTwoJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   textTwoJsunit_0500
+     * @tc.number textTwoJsunit_0500
+     * @tc.desc   textTwoJsunit_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textTwoJsunit_0500', Level.LEVEL1, async (done: Function) => {
       console.info('textTwoJsunit_0500 START');
       // test the letterSpacing
@@ -146,6 +186,14 @@ export default function textTwoJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   textTwoJsunit_0600
+     * @tc.number textTwoJsunit_0600
+     * @tc.desc   textTwoJsunit_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textTwoJsunit_0600', Level.LEVEL1, async (done: Function) => {
       console.info('textTwoJsunit_0600 START');
       // test the baselineOffset of negative value
@@ -159,6 +207,14 @@ export default function textTwoJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   textTwoJsunit_0700
+     * @tc.number textTwoJsunit_0700
+     * @tc.desc   textTwoJsunit_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textTwoJsunit_0700', Level.LEVEL1, async (done: Function) => {
       console.info('textTwoJsunit_0700 START');
       // test the testcase
@@ -186,6 +242,14 @@ export default function textTwoJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   textTwoJsunit_0800
+     * @tc.number textTwoJsunit_0800
+     * @tc.desc   textTwoJsunit_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textTwoJsunit_0800', Level.LEVEL1, async (done: Function) => {
       console.info('textTwoJsunit_0800 START');
       // test the testcase of illegal value

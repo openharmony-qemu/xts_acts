@@ -36,13 +36,13 @@ export default function transfercontextinworkertest() {
       }, 1000);
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_TransferContextInWorker_0100
-     * @tc.name: SUB_Ability_AbilityRuntime_TransferContextInWorker_0100
-     * @tc.desc: Create a Context transfer in worker
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_TransferContextInWorker_0100
+     * @tc.number SUB_Ability_AbilityRuntime_TransferContextInWorker_0100
+     * @tc.desc   Create a Context transfer in worker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_TransferContextInWorker_0100', Level.LEVEL3, async (done: Function) => {
       console.log('[SUB_Ability_AbilityRuntime_TransferContextInWorker_0100]: start');

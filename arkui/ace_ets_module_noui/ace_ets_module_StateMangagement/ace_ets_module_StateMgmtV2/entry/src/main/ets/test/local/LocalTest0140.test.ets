@@ -46,12 +46,12 @@ export default function LocalTest0140() {
     });
 
     /**
-     * @tc.number    LocalTest0140_001
-     * @tc.name      LocalTest0140_001
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   LocalTest0140_001
+     * @tc.number LocalTest0140_001
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LocalTest0140_001', Level.LEVEL0, async (done: Function) => {
       console.info('[LocalTest0140_001] START');

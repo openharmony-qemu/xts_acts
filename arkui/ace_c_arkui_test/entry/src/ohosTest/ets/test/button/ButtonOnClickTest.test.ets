@@ -26,14 +26,14 @@ export default function buttonOnClickTest() {
       await Utils.pushPage(`button/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_BUTTON_ONCLICK_0100
-    * @tc.name       : testButtonOnClick001
-    * @tc.desc       : test onClick event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testButtonOnClick001
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_ONCLICK_0100
+     * @tc.desc   test onClick event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testButtonOnClick001', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnClickTestButton')
       await Utils.sleep(2000)
@@ -41,14 +41,14 @@ export default function buttonOnClickTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_BUTTON_ONCLICK_0200
-    * @tc.name       : testButtonOnClick002
-    * @tc.desc       : test onClick event not callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testButtonOnClick002
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_ONCLICK_0200
+     * @tc.desc   test onClick event not callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testButtonOnClick002', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnClickTestButtonDisable')
       await Utils.sleep(2000)

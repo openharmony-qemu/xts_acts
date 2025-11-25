@@ -46,11 +46,13 @@ export default function XComponentHDRBrightnessTest() {
       await CommonFunc.sleep(1000);
       console.info("XComponentHDRBrightness after each called");
     });
-/**
-     * @tc.number    XComponentHDRBrightness_0100
-     * @tc.name      XComponentHDRBrightness_0100
-     * @tc.desc      Test XComponentHDRBrightness
-     * @tc.level     Level 2
+    /**
+     * @tc.name   XComponentHDRBrightness_0100
+     * @tc.number XComponentHDRBrightness_0100
+     * @tc.desc   Test XComponentHDRBrightness
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('XComponentHDRBrightness_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[XComponentHDRBrightness_0100] START');

@@ -26,13 +26,13 @@ export default function customComponentLayoutConstraintCreateTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_LAYOUTCONSTRAINT_CREATE_0001
-     * @tc.name       : testCustomComponentLayoutConstraintCreate001
-     * @tc.desc       : testing height for layoutposition with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentLayoutConstraintCreate001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_LAYOUTCONSTRAINT_CREATE_0001
+     * @tc.desc   testing height for layoutposition with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentLayoutConstraintCreate001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentLayoutConstraintCreate001()).assertEqual(0)

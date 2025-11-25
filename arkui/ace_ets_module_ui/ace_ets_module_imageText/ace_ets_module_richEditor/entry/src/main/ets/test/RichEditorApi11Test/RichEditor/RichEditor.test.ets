@@ -41,12 +41,14 @@ export default function RichEditorTest() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_ArkUI_RichEditorTest_001
-    * @tc.name  : RichEditorTest_001
-    * @tc.desc  : set TextAlign to Start
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   RichEditorTest_001
+     * @tc.number SUB_ACE_ArkUI_RichEditorTest_001
+     * @tc.desc   set TextAlign to Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RichEditorTest_001', Level.LEVEL2, async (done: Function) => {
 
       console.info('[RichEditorTest_001] START');
@@ -70,12 +72,14 @@ export default function RichEditorTest() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_ArkUI_RichEditorTest_002
-    * @tc.name  : RichEditorTest_002
-    * @tc.desc  : set TextAlign to End
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   RichEditorTest_002
+     * @tc.number SUB_ACE_ArkUI_RichEditorTest_002
+     * @tc.desc   set TextAlign to End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RichEditorTest_002', Level.LEVEL2, async (done: Function) => {
 
       console.info('[RichEditorTest_002] START');
@@ -99,11 +103,13 @@ export default function RichEditorTest() {
       done();
     });
 
-    /* *
-     * @tc.number: SUB_ACE_ArkUI_RichEditorTest_003
-     * @tc.name  : RichEditorTest_003
-     * @tc.desc  : set TextAlign to Center
-     * @tc.level : Level 2
+    /**
+     * @tc.name   RichEditorTest_003
+     * @tc.number SUB_ACE_ArkUI_RichEditorTest_003
+     * @tc.desc   set TextAlign to Center
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditorTest_003', Level.LEVEL2, async (done: Function) => {
 

@@ -40,12 +40,12 @@ export default function BackgroundPromise() {
     });
 
     /**
+     * @tc.name   ACTS_DO_ABILITY_BACKGROUND_PROMISE_0001
      * @tc.number ACTS_DO_ABILITY_BACKGROUND_PROMISE_0001
-     * @tc.name actsDoAbilityBackgroundPromise0001
-     * @tc.desc Test the api: doAbilityBackground, swith the ability to background.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api: doAbilityBackground, swith the ability to background.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_DO_ABILITY_BACKGROUND_PROMISE_0001", Level.LEVEL0, async (done: Function) => {
       abilityDelegator.printSync(
@@ -116,12 +116,12 @@ export default function BackgroundPromise() {
     });
 
     /**
+     * @tc.name   ACTS_DO_ABILITY_BACKGROUND_PROMISE_ERROR_0002
      * @tc.number ACTS_DO_ABILITY_BACKGROUND_PROMISE_ERROR_0002
-     * @tc.name actsDoAbilityBackgroundPromise0002
-     * @tc.desc Test the api: doAbilityBackground, swith the wrong ability to background.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api: doAbilityBackground, swith the wrong ability to background.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(
       "ACTS_DO_ABILITY_BACKGROUND_PROMISE_ERROR_0002",
@@ -201,12 +201,12 @@ export default function BackgroundPromise() {
     );
 
     /**
+     * @tc.name   ACTS_DO_ABILITY_BACKGROUND_PROMISE_0004
      * @tc.number ACTS_DO_ABILITY_BACKGROUND_PROMISE_0004
-     * @tc.name actsDoAbilityBackgroundPromise0004
-     * @tc.desc Test the api: doAbilityBackground, swith the ability which is background to background.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api: doAbilityBackground, swith the ability which is background to background.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_DO_ABILITY_BACKGROUND_PROMISE_0004", Level.LEVEL0, async (done: Function) => {
 
@@ -288,12 +288,12 @@ export default function BackgroundPromise() {
     });
 
     /**
+     * @tc.name   ACTS_DO_ABILITY_BACKGROUND_PROMISE_ERROR_0005
      * @tc.number ACTS_DO_ABILITY_BACKGROUND_PROMISE_ERROR_0005
-     * @tc.name actsDoAbilityBackgroundPromise0005
-     * @tc.desc Test the api: doAbilityBackground, swith the wrong ability to background.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api: doAbilityBackground, swith the wrong ability to background.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(
       "ACTS_DO_ABILITY_BACKGROUND_PROMISE_ERROR_0005",

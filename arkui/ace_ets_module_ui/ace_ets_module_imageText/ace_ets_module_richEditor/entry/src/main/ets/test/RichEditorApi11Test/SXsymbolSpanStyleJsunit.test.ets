@@ -41,14 +41,14 @@ export default function SXsymbolSpanStyleJsunit() {
       done();
     });
 
-    /*
-    * @tc.number  SXsymbolSpanStyleJsunit_0100
-    * @tc.name    SXsymbolSpanStyleJsunit_0100
-    * @tc.desc    test RichEditor
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   1
-    */
+    /**
+     * @tc.name   SXsymbolSpanStyleJsunit_0100
+     * @tc.number SXsymbolSpanStyleJsunit_0100
+     * @tc.desc   test RichEditor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SXsymbolSpanStyleJsunit_0100', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(1000);
       console.info('SXsymbolSpanStyleJsunit_0100 START');

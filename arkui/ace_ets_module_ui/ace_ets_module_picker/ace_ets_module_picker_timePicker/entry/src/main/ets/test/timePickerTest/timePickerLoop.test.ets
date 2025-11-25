@@ -40,14 +40,14 @@ export default function timePickerLoopTest() {
       console.info('timePickerLoopTest beforeEach end');
       done();
     });
-    /* *
-    * @tc.number: timePickerLoopTest_001
-    * @tc.name  : timePickerLoopTest_001
-    * @tc.desc  : To test the loop true
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   timePickerLoopTest_001
+     * @tc.number timePickerLoopTest_001
+     * @tc.desc   To test the loop true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timePickerLoopTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('timePickerLoopTest_001 START');
       let driver: Driver = Driver.create();
@@ -64,14 +64,14 @@ export default function timePickerLoopTest() {
       console.info('[timePickerLoopTest_001] END');
       done();
     });
-    /* *
-    * @tc.number: timePickerLoopTest_002
-    * @tc.name  : timePickerLoopTest_002
-    * @tc.desc  : To test the loop false
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   timePickerLoopTest_002
+     * @tc.number timePickerLoopTest_002
+     * @tc.desc   To test the loop false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timePickerLoopTest_002', Level.LEVEL0, async (done: Function) => {
       console.info('timePickerLoopTest_002 START');
       let driver: Driver = Driver.create();
@@ -88,14 +88,14 @@ export default function timePickerLoopTest() {
       console.info('[timePickerLoopTest_002] END');
       done();
     });
-    /* *
-    * @tc.number: timePickerLoopTest_003
-    * @tc.name  : timePickerLoopTest_003
-    * @tc.desc  : To test the loop undefined
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   timePickerLoopTest_003
+     * @tc.number timePickerLoopTest_003
+     * @tc.desc   To test the loop undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timePickerLoopTest_003', Level.LEVEL0, async (done: Function) => {
       console.info('timePickerLoopTest_003 START');
       let driver: Driver = Driver.create();

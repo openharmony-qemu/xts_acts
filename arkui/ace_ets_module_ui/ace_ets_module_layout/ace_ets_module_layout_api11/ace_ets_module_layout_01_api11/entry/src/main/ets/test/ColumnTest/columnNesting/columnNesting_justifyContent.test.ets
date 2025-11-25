@@ -48,9 +48,12 @@ export default function columnNesting_justifyContent() {
     });
 
     /**
+     * @tc.name   SUB_ACE_columnNesting_justifyContent_TEST_0100
      * @tc.number SUB_ACE_columnNesting_justifyContent_TEST_0100
-     * @tc.name testColumnSpace
-     * @tc.desc column_1 and column_01, column_02 settings justifyContent do not affect each other
+     * @tc.desc   column_1 and column_01, column_02 settings justifyContent do not affect each other
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_columnNesting_justifyContent_TEST_0100',  Level.LEVEL0, async () => {
       console.info('[SUB_ACE_columnNesting_justifyContent_TEST_0100] START');

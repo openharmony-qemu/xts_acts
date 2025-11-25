@@ -46,12 +46,15 @@ export default function menuDividerTest() {
       done()
     });
 
-    /**
-     * @tc.number    ArkUX_Stage_Menu_menuItemDivider_0001
-     * @tc.name      menuItemDivider test
-     * @tc.desc      menuItemDivider test
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_Menu_menuItemDivider_0001
+     * @tc.number ArkUX_Stage_Menu_menuItemDivider_0001
+     * @tc.desc   ArkUX_Stage_Menu_menuItemDivider_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemDivider_0001', Level.LEVEL2, async (done: Function) => {
       console.info('[ArkUX_Stage_Menu_menuItemDivider_0001] START');
 
@@ -67,12 +70,15 @@ export default function menuDividerTest() {
       done();
     });
 
-    /**
-     * @tc.number    ArkUX_Stage_Menu_menuItemDivider_0002
-     * @tc.name      menuItemDivider test
-     * @tc.desc      menuItemDivider test
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_Menu_menuItemDivider_0002
+     * @tc.number ArkUX_Stage_Menu_menuItemDivider_0002
+     * @tc.desc   ArkUX_Stage_Menu_menuItemDivider_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemDivider_0002', Level.LEVEL2, async (done: Function) => {
       console.info('[ArkUX_Stage_Menu_menuItemDivider_0200] START');
 
@@ -87,12 +93,15 @@ export default function menuDividerTest() {
       done();
     });
 
-    /**
-     * @tc.number    ArkUX_Stage_Menu_menuItemDivider_0003
-     * @tc.name      menuItemDivider test
-     * @tc.desc      menuItemDivider test
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_Menu_menuItemDivider_0003
+     * @tc.number ArkUX_Stage_Menu_menuItemDivider_0003
+     * @tc.desc   ArkUX_Stage_Menu_menuItemDivider_0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemDivider_0003', Level.LEVEL2, async (done: Function) => {
       console.info('[ArkUX_Stage_Menu_menuItemDivider_0003] START');
 
@@ -108,9 +117,12 @@ export default function menuDividerTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Menu_menuItemDivider_0004
-     * @tc.name      menuItemDivider test
-     * @tc.desc      menuItemDivider test
+     * @tc.name   ArkUX_Stage_Menu_menuItemDivider_0004
+     * @tc.number ArkUX_Stage_Menu_menuItemDivider_0004
+     * @tc.desc   menuItemDivider test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUX_Stage_Menu_menuItemDivider_0004', Level.LEVEL2, async (done: Function) => {
       console.info('[ArkUX_Stage_Menu_menuItemDivider_0004] START');
@@ -126,12 +138,15 @@ export default function menuDividerTest() {
       done();
     });
 
-    /**
-     * @tc.number    ArkUX_Stage_Menu_menuItemDivider_0005
-     * @tc.name      menuItemDivider test
-     * @tc.desc      menuItemDivider test
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_Menu_menuItemDivider_0005
+     * @tc.number ArkUX_Stage_Menu_menuItemDivider_0005
+     * @tc.desc   ArkUX_Stage_Menu_menuItemDivider_0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemDivider_0005', Level.LEVEL2, async (done: Function) => {
       console.info('[ArkUX_Stage_Menu_menuItemDivider_0005] START');
 
@@ -147,12 +162,15 @@ export default function menuDividerTest() {
       done();
     });
 
-    /**
-     * @tc.number    ArkUX_Stage_Menu_menuItemDivider_0006
-     * @tc.name      menuItemDivider test
-     * @tc.desc      menuItemDivider test
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_Menu_menuItemDivider_0006
+     * @tc.number ArkUX_Stage_Menu_menuItemDivider_0006
+     * @tc.desc   ArkUX_Stage_Menu_menuItemDivider_0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemDivider_0006', Level.LEVEL2, async (done: Function) => {
       console.info('[ArkUX_Stage_Menu_menuItemDivider_0006] START');
 
@@ -167,12 +185,15 @@ export default function menuDividerTest() {
       done();
     });
 
-    /**
-     * @tc.number    ArkUX_Stage_Menu_menuItemDivider_0007
-     * @tc.name      menuItemDivider test
-     * @tc.desc      menuItemDivider test
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_Menu_menuItemDivider_0007
+     * @tc.number ArkUX_Stage_Menu_menuItemDivider_0007
+     * @tc.desc   ArkUX_Stage_Menu_menuItemDivider_0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemDivider_0007', Level.LEVEL2, async (done: Function) => {
       console.info('[ArkUX_Stage_Menu_menuItemDivider_0007] START');
 
@@ -188,9 +209,12 @@ export default function menuDividerTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Menu_menuItemDivider_0008
-     * @tc.name      menuItemDivider test
-     * @tc.desc      menuItemDivider test
+     * @tc.name   ArkUX_Stage_Menu_menuItemDivider_0008
+     * @tc.number ArkUX_Stage_Menu_menuItemDivider_0008
+     * @tc.desc   menuItemDivider test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUX_Stage_Menu_menuItemDivider_0008', Level.LEVEL2, async (done: Function) => {
       console.info('[ArkUX_Stage_Menu_menuItemDivider_0012] START');
@@ -206,12 +230,15 @@ export default function menuDividerTest() {
       done();
     });
 
-    /**
-     * @tc.number    ArkUX_Stage_Menu_menuItemDivider_0009
-     * @tc.name      menuItemDivider test
-     * @tc.desc      menuItemDivider test
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_Menu_menuItemDivider_0009
+     * @tc.number ArkUX_Stage_Menu_menuItemDivider_0009
+     * @tc.desc   ArkUX_Stage_Menu_menuItemDivider_0009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemDivider_0009', Level.LEVEL2, async (done: Function) => {
       console.info('[menuItemDivider_0100] START');
 
@@ -227,12 +254,15 @@ export default function menuDividerTest() {
       done();
     });
 
-    /**
-     * @tc.number    ArkUX_Stage_Menu_menuItemDivider_0010
-     * @tc.name      menuItemDivider test
-     * @tc.desc      menuItemDivider test
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_Menu_menuItemDivider_0010
+     * @tc.number ArkUX_Stage_Menu_menuItemDivider_0010
+     * @tc.desc   ArkUX_Stage_Menu_menuItemDivider_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemDivider_0010', Level.LEVEL2, async (done: Function) => {
       console.info('[ArkUX_Stage_Menu_menuItemDivider_0010] START');
 
@@ -247,12 +277,15 @@ export default function menuDividerTest() {
       done();
     });
 
-    /**
-     * @tc.number    ArkUX_Stage_Menu_menuItemDivider_0011
-     * @tc.name      menuItemDivider test
-     * @tc.desc      menuItemDivider test
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_Menu_menuItemDivider_0011
+     * @tc.number ArkUX_Stage_Menu_menuItemDivider_0011
+     * @tc.desc   ArkUX_Stage_Menu_menuItemDivider_0011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemDivider_0011', Level.LEVEL2, async (done: Function) => {
       console.info('[ArkUX_Stage_Menu_menuItemDivider_0011] START');
 
@@ -268,9 +301,12 @@ export default function menuDividerTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Menu_menuItemDivider_0012
-     * @tc.name      menuItemDivider test
-     * @tc.desc      menuItemDivider test
+     * @tc.name   ArkUX_Stage_Menu_menuItemDivider_0012
+     * @tc.number ArkUX_Stage_Menu_menuItemDivider_0012
+     * @tc.desc   menuItemDivider test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUX_Stage_Menu_menuItemDivider_0012', Level.LEVEL2, async (done: Function) => {
       console.info('[ArkUX_Stage_Menu_menuItemDivider_0012] START');
@@ -286,12 +322,15 @@ export default function menuDividerTest() {
       done();
     });
 
-    /**
-     * @tc.number    ArkUX_Stage_Menu_menuItemDivider_0013
-     * @tc.name      menuItemDivider test
-     * @tc.desc      menuItemDivider test
-     */
 
+      /**
+       * @tc.name   ArkUX_Stage_Menu_menuItemDivider_0013
+       * @tc.number ArkUX_Stage_Menu_menuItemDivider_0013
+       * @tc.desc   ArkUX_Stage_Menu_menuItemDivider_0013
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
       it('ArkUX_Stage_Menu_menuItemDivider_0013', Level.LEVEL2, async (done: Function) => {
         console.info('[ArkUX_Stage_Menu_menuItemDivider_0013] START');
   
@@ -306,12 +345,15 @@ export default function menuDividerTest() {
         done();
       });
 
-    /**
-     * @tc.number    ArkUX_Stage_Menu_menuItemGroupDivider_001
-     * @tc.name      menuItemGroupDivider test
-     * @tc.desc      menuItemGroupDivider test
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_Menu_menuItemGroupDivider_001
+     * @tc.number ArkUX_Stage_Menu_menuItemGroupDivider_001
+     * @tc.desc   ArkUX_Stage_Menu_menuItemGroupDivider_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemGroupDivider_001', Level.LEVEL2, async (done: Function) => {
       console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_001] START');
 
@@ -326,12 +368,15 @@ export default function menuDividerTest() {
       done();
     });
 
-    /**
-     * @tc.number    ArkUX_Stage_Menu_menuItemGroupDivider_0002
-     * @tc.name      menuItemGroupDivider test
-     * @tc.desc      menuItemGroupDivider test
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_Menu_menuItemGroupDivider_0002
+     * @tc.number ArkUX_Stage_Menu_menuItemGroupDivider_0002
+     * @tc.desc   ArkUX_Stage_Menu_menuItemGroupDivider_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemGroupDivider_0002', Level.LEVEL2, async (done: Function) => {
       console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_0002] START');
 
@@ -346,12 +391,15 @@ export default function menuDividerTest() {
       done();
     })
   
-    /**
-     * @tc.number    ArkUX_Stage_Menu_menuItemGroupDivider_0003
-     * @tc.name      menuItemGroupDivider test
-     * @tc.desc      menuItemGroupDivider test
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_Menu_menuItemGroupDivider_0003
+     * @tc.number ArkUX_Stage_Menu_menuItemGroupDivider_0003
+     * @tc.desc   ArkUX_Stage_Menu_menuItemGroupDivider_0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemGroupDivider_0003', Level.LEVEL2, async (done: Function) => {
       console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_0003] START');
 
@@ -367,9 +415,12 @@ export default function menuDividerTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Menu_menuItemGroupDivider_0004
-     * @tc.name      menuItemDivider test
-     * @tc.desc      menuItemDivider test
+     * @tc.name   ArkUX_Stage_Menu_menuItemGroupDivider_0004
+     * @tc.number ArkUX_Stage_Menu_menuItemGroupDivider_0004
+     * @tc.desc   menuItemDivider test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUX_Stage_Menu_menuItemGroupDivider_0004', Level.LEVEL2, async (done: Function) => {
       console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_0004] START');
@@ -385,12 +436,15 @@ export default function menuDividerTest() {
       done();
     });
 
-    /**
-     * @tc.number    ArkUX_Stage_Menu_menuItemGroupDivider_0005
-     * @tc.name      menuItemGroupDivider test
-     * @tc.desc      menuItemGroupDivider test
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_Menu_menuItemGroupDivider_0005
+     * @tc.number ArkUX_Stage_Menu_menuItemGroupDivider_0005
+     * @tc.desc   ArkUX_Stage_Menu_menuItemGroupDivider_0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemGroupDivider_0005', Level.LEVEL2, async (done: Function) => {
       console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_0005] START');
 
@@ -405,12 +459,15 @@ export default function menuDividerTest() {
       done();
     });
 
-    /**
-     * @tc.number    ArkUX_Stage_Menu_menuItemGroupDivider_0006
-     * @tc.name      menuItemGroupDivider test
-     * @tc.desc      menuItemGroupDivider test
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_Menu_menuItemGroupDivider_0006
+     * @tc.number ArkUX_Stage_Menu_menuItemGroupDivider_0006
+     * @tc.desc   ArkUX_Stage_Menu_menuItemGroupDivider_0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemGroupDivider_0006', Level.LEVEL2, async (done: Function) => {
       console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_0006] START');
 
@@ -425,12 +482,15 @@ export default function menuDividerTest() {
       done();
     })
 
-    /**
-     * @tc.number    ArkUX_Stage_Menu_menuItemGroupDivider_0007
-     * @tc.name      menuItemGroupDivider test
-     * @tc.desc      menuItemGroupDivider test
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_Menu_menuItemGroupDivider_0007
+     * @tc.number ArkUX_Stage_Menu_menuItemGroupDivider_0007
+     * @tc.desc   ArkUX_Stage_Menu_menuItemGroupDivider_0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemGroupDivider_0007', Level.LEVEL2, async (done: Function) => {
       console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_006] START');
 
@@ -446,9 +506,12 @@ export default function menuDividerTest() {
     });
   
     /**
-     * @tc.number    ArkUX_Stage_Menu_menuItemGroupDivider_0008
-     * @tc.name      menuItemDivider test
-     * @tc.desc      menuItemDivider test
+     * @tc.name   ArkUX_Stage_Menu_menuItemGroupDivider_0008
+     * @tc.number ArkUX_Stage_Menu_menuItemGroupDivider_0008
+     * @tc.desc   menuItemDivider test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUX_Stage_Menu_menuItemGroupDivider_0008', Level.LEVEL2, async (done: Function) => {
       console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_007] START');
@@ -464,12 +527,15 @@ export default function menuDividerTest() {
       done();
     });
 
-    /**
-     * @tc.number    ArkUX_Stage_Menu_menuItemGroupDivider_0009
-     * @tc.name      menuItemGroupDivider test
-     * @tc.desc      menuItemGroupDivider test
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_Menu_menuItemGroupDivider_0009
+     * @tc.number ArkUX_Stage_Menu_menuItemGroupDivider_0009
+     * @tc.desc   ArkUX_Stage_Menu_menuItemGroupDivider_0009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemGroupDivider_0009', Level.LEVEL2, async (done: Function) => {
       console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_0009] START');
 
@@ -484,12 +550,15 @@ export default function menuDividerTest() {
       done();
     });
 
-    /**
-     * @tc.number    ArkUX_Stage_Menu_menuItemGroupDivider_0010
-     * @tc.name      menuItemGroupDivider test
-     * @tc.desc      menuItemGroupDivider test
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_Menu_menuItemGroupDivider_0010
+     * @tc.number ArkUX_Stage_Menu_menuItemGroupDivider_0010
+     * @tc.desc   ArkUX_Stage_Menu_menuItemGroupDivider_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemGroupDivider_0010', Level.LEVEL2, async (done: Function) => {
       console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_0010] START');
 
@@ -504,12 +573,15 @@ export default function menuDividerTest() {
       done();
     })
 
-    /**
-     * @tc.number    ArkUX_Stage_Menu_menuItemGroupDivider_0011
-     * @tc.name      menuItemGroupDivider test
-     * @tc.desc      menuItemGroupDivider test
-     */
 
+    /**
+     * @tc.name   ArkUX_Stage_Menu_menuItemGroupDivider_0011
+     * @tc.number ArkUX_Stage_Menu_menuItemGroupDivider_0011
+     * @tc.desc   ArkUX_Stage_Menu_menuItemGroupDivider_0011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ArkUX_Stage_Menu_menuItemGroupDivider_0011', Level.LEVEL2, async (done: Function) => {
       console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_0011] START');
 
@@ -525,9 +597,12 @@ export default function menuDividerTest() {
     });
 
     /**
-     * @tc.number    ArkUX_Stage_Menu_menuItemGroupDivider_0012
-     * @tc.name      menuItemDivider test
-     * @tc.desc      menuItemDivider test
+     * @tc.name   ArkUX_Stage_Menu_menuItemGroupDivider_0012
+     * @tc.number ArkUX_Stage_Menu_menuItemGroupDivider_0012
+     * @tc.desc   menuItemDivider test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUX_Stage_Menu_menuItemGroupDivider_0012', Level.LEVEL2, async (done: Function) => {
       console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_0013] START');
@@ -543,12 +618,15 @@ export default function menuDividerTest() {
       done();
     });
  
-    /**
-       * @tc.number    ArkUX_Stage_Menu_menuItemGroupDivider_0013
-       * @tc.name      menuItemGroupDivider test
-       * @tc.desc      menuItemGroupDivider test
-       */
 
+      /**
+       * @tc.name   ArkUX_Stage_Menu_menuItemGroupDivider_0013
+       * @tc.number ArkUX_Stage_Menu_menuItemGroupDivider_0013
+       * @tc.desc   ArkUX_Stage_Menu_menuItemGroupDivider_0013
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
       it('ArkUX_Stage_Menu_menuItemGroupDivider_0013', Level.LEVEL2, async (done: Function) => {
         console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_0013] START');
   
@@ -564,9 +642,12 @@ export default function menuDividerTest() {
       })
 
     /**
-     * @tc.number    ArkUX_Stage_Menu_menuItemGroupDivider_0014
-     * @tc.name      menuItemGroupDivider test
-     * @tc.desc      subMenuExpandingMode test
+     * @tc.name   ArkUX_Stage_Menu_menuItemGroupDivider_0014
+     * @tc.number ArkUX_Stage_Menu_menuItemGroupDivider_0014
+     * @tc.desc   subMenuExpandingMode test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUX_Stage_Menu_menuItemGroupDivider_0014', Level.LEVEL2, async (done: Function) => {
         console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_0014] START');
@@ -583,9 +664,12 @@ export default function menuDividerTest() {
       });
       
     /**
-     * @tc.number    ArkUX_Stage_Menu_menuItemGroupDivider_0015
-     * @tc.name      menuItemGroupDivider test
-     * @tc.desc      subMenuExpandingMode test
+     * @tc.name   ArkUX_Stage_Menu_menuItemGroupDivider_0015
+     * @tc.number ArkUX_Stage_Menu_menuItemGroupDivider_0015
+     * @tc.desc   subMenuExpandingMode test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUX_Stage_Menu_menuItemGroupDivider_0015', Level.LEVEL2, async (done: Function) => {
       console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_0015] START');
@@ -602,9 +686,12 @@ export default function menuDividerTest() {
     });
       
     /**
-     * @tc.number    ArkUX_Stage_Menu_menuItemGroupDivider_0016
-     * @tc.name      menuItemGroupDivider test
-     * @tc.desc      subMenuExpandingMode test
+     * @tc.name   ArkUX_Stage_Menu_menuItemGroupDivider_0016
+     * @tc.number ArkUX_Stage_Menu_menuItemGroupDivider_0016
+     * @tc.desc   subMenuExpandingMode test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUX_Stage_Menu_menuItemGroupDivider_0016', Level.LEVEL2, async (done: Function) => {
       console.info('[ArkUX_Stage_Menu_menuItemGroupDivider_0016] START');

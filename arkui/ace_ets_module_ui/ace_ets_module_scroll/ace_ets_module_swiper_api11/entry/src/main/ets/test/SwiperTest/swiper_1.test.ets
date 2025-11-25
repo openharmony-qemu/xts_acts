@@ -83,9 +83,12 @@ export default function swiperTest_1() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedDigitFont_0100
      * @tc.number ArkUX_Stage_Swiper_SelectedDigitFont_0100
-     * @tc.name Tests the selectedDigitFont property of the swiper component
-     * @tc.desc Set the selectedDigitFont property parameter to {size:34,weight:"800"}
+     * @tc.desc   Set the selectedDigitFont property parameter to {size:34,weight:"800"}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedDigitFont_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_0100 START');
@@ -113,9 +116,12 @@ export default function swiperTest_1() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedDigitFont_0200
      * @tc.number ArkUX_Stage_Swiper_SelectedDigitFont_0200
-     * @tc.name Tests the selectedDigitFont property of the swiper component
-     * @tc.desc Set the selectedDigitFont property parameter to {size:"20px",weight:200}
+     * @tc.desc   Set the selectedDigitFont property parameter to {size:"20px",weight:200}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedDigitFont_0200', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_0200 START');
@@ -143,9 +149,12 @@ export default function swiperTest_1() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedDigitFont_0300
      * @tc.number ArkUX_Stage_Swiper_SelectedDigitFont_0300
-     * @tc.name Tests the selectedDigitFont property of the swiper component
-     * @tc.desc Set the selectedDigitFont property parameter to {size:"48%",weight:900}
+     * @tc.desc   Set the selectedDigitFont property parameter to {size:"48%",weight:900}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedDigitFont_0300', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_0300 START');
@@ -173,9 +182,12 @@ export default function swiperTest_1() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedDigitFont_0400
      * @tc.number ArkUX_Stage_Swiper_SelectedDigitFont_0400
-     * @tc.name Tests the selectedDigitFont property of the swiper component
-     * @tc.desc Set the selectedDigitFont property parameter to {size:"",weight:FontWeight.Bolder}
+     * @tc.desc   Set the selectedDigitFont property parameter to {size:"",weight:FontWeight.Bolder}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedDigitFont_0400', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_0400 START');
@@ -203,9 +215,12 @@ export default function swiperTest_1() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedDigitFont_0500
      * @tc.number ArkUX_Stage_Swiper_SelectedDigitFont_0500
-     * @tc.name Tests the selectedDigitFont property of the swiper component
-     * @tc.desc Set the selectedDigitFont property parameter to {size:-2,weight:1000}
+     * @tc.desc   Set the selectedDigitFont property parameter to {size:-2,weight:1000}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedDigitFont_0500', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_0500 START');
@@ -233,9 +248,12 @@ export default function swiperTest_1() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedDigitFont_0600
      * @tc.number ArkUX_Stage_Swiper_SelectedDigitFont_0600
-     * @tc.name Tests the selectedDigitFont property of the swiper component
-     * @tc.desc Set the selectedDigitFont property parameter to {size:"abc",weight:null}
+     * @tc.desc   Set the selectedDigitFont property parameter to {size:"abc",weight:null}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedDigitFont_0600', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_0600 START');
@@ -263,9 +281,12 @@ export default function swiperTest_1() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedDigitFont_0700
      * @tc.number ArkUX_Stage_Swiper_SelectedDigitFont_0700
-     * @tc.name Tests the selectedDigitFont property of the swiper component
-     * @tc.desc Set the selectedDigitFont property parameter to {size:"1000%",weight:""}
+     * @tc.desc   Set the selectedDigitFont property parameter to {size:"1000%",weight:""}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedDigitFont_0700', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_0700 START');
@@ -293,9 +314,12 @@ export default function swiperTest_1() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedDigitFont_0800
      * @tc.number ArkUX_Stage_Swiper_SelectedDigitFont_0800
-     * @tc.name Tests the selectedDigitFont property of the swiper component
-     * @tc.desc Set the selectedDigitFont property parameter to {size:"100vp",weight:"adf@$5"}
+     * @tc.desc   Set the selectedDigitFont property parameter to {size:"100vp",weight:"adf@$5"}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedDigitFont_0800', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_0800 START');
@@ -323,10 +347,12 @@ export default function swiperTest_1() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedDigitFont_0900
      * @tc.number ArkUX_Stage_Swiper_SelectedDigitFont_0900
-     * @tc.name Tests the selectedDigitFont property of the swiper component
-     * @tc.desc Set the selectedDigitFont property parameter to {size:10,weight:200},
-     *               and set the selectedDigitFont property parameter to {size:"40lpx",weight:500} again
+     * @tc.desc   Set the selectedDigitFont property parameter to {size:10,weight:200},
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedDigitFont_0900', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_0900 START');
@@ -354,10 +380,12 @@ export default function swiperTest_1() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedDigitFont_1000
      * @tc.number ArkUX_Stage_Swiper_SelectedDigitFont_1000
-     * @tc.name Tests the selectedDigitFont property of the swiper component
-     * @tc.desc Set the selectedDigitFont property parameter to {size:10,weight:500},
-     *               and set the selectedDigitFont property parameter to the exception value {size:"abc",weight:null} again
+     * @tc.desc   Set the selectedDigitFont property parameter to {size:10,weight:500},
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedDigitFont_1000', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_1000 START');
@@ -385,10 +413,12 @@ export default function swiperTest_1() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_SelectedDigitFont_1100
      * @tc.number ArkUX_Stage_Swiper_SelectedDigitFont_1100
-     * @tc.name Tests the selectedDigitFont property of the swiper component
-     * @tc.desc Set the selectedDigitFont property parameter to {size:10,weight:600},
-     *               and set the general property size and layoutWeight property value to null
+     * @tc.desc   Set the selectedDigitFont property parameter to {size:10,weight:600},
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_SelectedDigitFont_1100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_SelectedDigitFont_1100 START');
@@ -416,9 +446,12 @@ export default function swiperTest_1() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_DigitFont_0100
      * @tc.number ArkUX_Stage_Swiper_DigitFont_0100
-     * @tc.name Tests the digitFont property of the swiper component
-     * @tc.desc Set the digitFont property parameter to {size:34,weight:"800"}
+     * @tc.desc   Set the digitFont property parameter to {size:34,weight:"800"}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_DigitFont_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_DigitFont_0100 START');
@@ -446,9 +479,12 @@ export default function swiperTest_1() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_DigitFont_0200
      * @tc.number ArkUX_Stage_Swiper_DigitFont_0200
-     * @tc.name Tests the digitFont property of the swiper component
-     * @tc.desc Set the digitFont property parameter to {size:"20px",weight:200}
+     * @tc.desc   Set the digitFont property parameter to {size:"20px",weight:200}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_DigitFont_0200', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_DigitFont_0200 START');
@@ -476,9 +512,12 @@ export default function swiperTest_1() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_DigitFont_0300
      * @tc.number ArkUX_Stage_Swiper_DigitFont_0300
-     * @tc.name Tests the digitFont property of the swiper component
-     * @tc.desc Set the digitFont property parameter to {size:"48%",weight:900}
+     * @tc.desc   Set the digitFont property parameter to {size:"48%",weight:900}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_DigitFont_0300', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_DigitFont_0300 START');
@@ -506,9 +545,12 @@ export default function swiperTest_1() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_DigitFont_0400
      * @tc.number ArkUX_Stage_Swiper_DigitFont_0400
-     * @tc.name Tests the digitFont property of the swiper component
-     * @tc.desc Set the digitFont property parameter to {size:"",weight:FontWeight.Bolder}
+     * @tc.desc   Set the digitFont property parameter to {size:"",weight:FontWeight.Bolder}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_DigitFont_0400', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_DigitFont_0400 START');
@@ -536,9 +578,12 @@ export default function swiperTest_1() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_DigitFont_0500
      * @tc.number ArkUX_Stage_Swiper_DigitFont_0500
-     * @tc.name Tests the digitFont property of the swiper component
-     * @tc.desc Set the digitFont property parameter to {size:-2,weight:1000}
+     * @tc.desc   Set the digitFont property parameter to {size:-2,weight:1000}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_DigitFont_0500', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_DigitFont_0500 START');
@@ -566,9 +611,12 @@ export default function swiperTest_1() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_DigitFont_0600
      * @tc.number ArkUX_Stage_Swiper_DigitFont_0600
-     * @tc.name Tests the digitFont property of the swiper component
-     * @tc.desc Set the digitFont property parameter to {size:"abc",weight:null}
+     * @tc.desc   Set the digitFont property parameter to {size:"abc",weight:null}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_DigitFont_0600', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_DigitFont_0600 START');
@@ -596,9 +644,12 @@ export default function swiperTest_1() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_DigitFont_0700
      * @tc.number ArkUX_Stage_Swiper_DigitFont_0700
-     * @tc.name Tests the digitFont property of the swiper component
-     * @tc.desc Set the digitFont property parameter to {size:"1000%",weight:""}
+     * @tc.desc   Set the digitFont property parameter to {size:"1000%",weight:""}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_DigitFont_0700', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_DigitFont_0700 START');
@@ -626,9 +677,12 @@ export default function swiperTest_1() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_DigitFont_0800
      * @tc.number ArkUX_Stage_Swiper_DigitFont_0800
-     * @tc.name Tests the digitFont property of the swiper component
-     * @tc.desc Set the digitFont property parameter to {size:"100vp",weight:"adf@$5"}
+     * @tc.desc   Set the digitFont property parameter to {size:"100vp",weight:"adf@$5"}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_DigitFont_0800', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_DigitFont_0800 START');
@@ -656,10 +710,12 @@ export default function swiperTest_1() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_DigitFont_0900
      * @tc.number ArkUX_Stage_Swiper_DigitFont_0900
-     * @tc.name Tests the digitFont property of the swiper component
-     * @tc.desc Set the digitFont property parameter to {size:10,weight:200},
-     *               and set the digitFont property parameter to {size:"40lpx",weight:500} again
+     * @tc.desc   Set the digitFont property parameter to {size:10,weight:200},
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_DigitFont_0900', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_DigitFont_0900 START');
@@ -687,10 +743,12 @@ export default function swiperTest_1() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_DigitFont_1000
      * @tc.number ArkUX_Stage_Swiper_DigitFont_1000
-     * @tc.name Tests the digitFont property of the swiper component
-     * @tc.desc Set the digitFont property parameter to {size:10,weight:500},
-     *               and set the digitFont property parameter to the exception value {size:"abc",weight:null} again
+     * @tc.desc   Set the digitFont property parameter to {size:10,weight:500},
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_DigitFont_1000', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_DigitFont_1000 START');
@@ -718,10 +776,12 @@ export default function swiperTest_1() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_DigitFont_1100
      * @tc.number ArkUX_Stage_Swiper_DigitFont_1100
-     * @tc.name Tests the digitFont property of the swiper component
-     * @tc.desc Set the digitFont property parameter to {size:10,weight:600},
-     *               and set the general property size and layoutWeight property value to null
+     * @tc.desc   Set the digitFont property parameter to {size:10,weight:600},
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_DigitFont_1100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_DigitFont_1100 START');
@@ -749,9 +809,12 @@ export default function swiperTest_1() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_Indicator_0100
      * @tc.number ArkUX_Stage_Swiper_Indicator_0100
-     * @tc.name Tests the digitFont property of the swiper component
-     * @tc.desc Set the Indicator property parameter to top(1)
+     * @tc.desc   Set the Indicator property parameter to top(1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_Indicator_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_Indicator_0100 START');
@@ -779,9 +842,12 @@ export default function swiperTest_1() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_Indicator_0200
      * @tc.number ArkUX_Stage_Swiper_Indicator_0200
-     * @tc.name Tests the digitFont property of the swiper component
-     * @tc.desc Set the Indicator property parameter to bottom(1)
+     * @tc.desc   Set the Indicator property parameter to bottom(1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_Indicator_0200', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_Indicator_0200 START');
@@ -807,9 +873,12 @@ export default function swiperTest_1() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_Indicator_0300
      * @tc.number ArkUX_Stage_Swiper_Indicator_0300
-     * @tc.name Tests the digitFont property of the swiper component
-     * @tc.desc Set the Indicator property parameter to left(1)
+     * @tc.desc   Set the Indicator property parameter to left(1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_Indicator_0300', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_Indicator_0300 START');
@@ -835,9 +904,12 @@ export default function swiperTest_1() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Swiper_Indicator_0400
      * @tc.number ArkUX_Stage_Swiper_Indicator_0400
-     * @tc.name Tests the digitFont property of the swiper component
-     * @tc.desc Set the Indicator property parameter to right(1)
+     * @tc.desc   Set the Indicator property parameter to right(1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Stage_Swiper_Indicator_0400', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Stage_Swiper_Indicator_0400 START');

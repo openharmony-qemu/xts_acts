@@ -69,13 +69,13 @@ export default function swiperThemeTest() {
     });
 
     /**
-      * @tc.number    : ActsSwiperThemeColors_0100 
-      * @tc.name      : ActsSwiperThemeColors_0100
-      * @tc.desc      : Check system colors values of Swiper component
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsSwiperThemeColors_0100
+     * @tc.number ActsSwiperThemeColors_0100
+     * @tc.desc   Check system colors values of Swiper component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it(`ActsSwiperThemeColors_0100`, Level.LEVEL2, () => {
       const CASE: string = `ActsSwiperThemeColors_0100`;
       console.info(`${SUITE} ${CASE} START`);
@@ -121,13 +121,13 @@ export default function swiperThemeTest() {
     });
 
     /**
-      * @tc.number    : ActsSwiperThemeColors_0200 
-      * @tc.name      : ActsSwiperThemeColors_0200
-      * @tc.desc      : Check custom colors values of Swiper component
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsSwiperThemeColors_0200
+     * @tc.number ActsSwiperThemeColors_0200
+     * @tc.desc   Check custom colors values of Swiper component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it(`ActsSwiperThemeColors_0200`, Level.LEVEL2, () => {
       let CASE: string = `ActsSwiperThemeColors_0200`;
       console.info(`${SUITE} ${CASE} START`);
@@ -175,14 +175,13 @@ export default function swiperThemeTest() {
     });
 
     /**
-      * @tc.number    : ActsSwiperThemeColors_0300 
-      * @tc.name      : ActsSwiperThemeColors_0300
-      * @tc.desc      : Check custom colors values of Swiper component
-      *                 after changing the theme
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsSwiperThemeColors_0300
+     * @tc.number ActsSwiperThemeColors_0300
+     * @tc.desc   Check custom colors values of Swiper component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it(`ActsSwiperThemeColors_0300`, Level.LEVEL0, async () => {
       const CASE: string = `ActsSwiperThemeColors_0300`;
       console.info(`${SUITE} ${CASE} START`);

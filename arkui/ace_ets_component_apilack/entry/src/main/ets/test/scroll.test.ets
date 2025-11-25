@@ -45,10 +45,13 @@ export default function scrollOnScrollBeginJsunit() {
       console.info("scrollOnScrollBegin after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testscrollOnScrollBegin0001
-     * @tc.desic         acescrollOnScrollBeginEtsTest0001
+    /**
+     * @tc.name   testscrollOnScrollBegin0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testscrollOnScrollBegin0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testscrollOnScrollBegin0001', Level.LEVEL0, async () => {
       console.info('scrollOnScrollBegin testscrollOnScrollBegin0001 START');
@@ -62,10 +65,13 @@ export default function scrollOnScrollBeginJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testscrollOnScrollBegin0002
-     * @tc.desic         acescrollOnScrollBeginEtsTest0002
+    /**
+     * @tc.name   testscrollOnScrollBegin0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   testscrollOnScrollBegin0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testscrollOnScrollBegin0002', Level.LEVEL0, async () => {
       console.info('scrollOnScrollBegin testscrollOnScrollBegin0002 START');
@@ -79,10 +85,13 @@ export default function scrollOnScrollBeginJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-     * @tc.name         testscrollOnScrollBegin0003
-     * @tc.desic         acescrollOnScrollBeginEtsTest0003
+    /**
+     * @tc.name   testscrollOnScrollBegin0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   testscrollOnScrollBegin0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testscrollOnScrollBegin0003', Level.LEVEL0, async () => {
       console.info('scrollOnScrollBegin testscrollOnScrollBegin0003 START');
@@ -96,10 +105,13 @@ export default function scrollOnScrollBeginJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0004
-     * @tc.name         testscrollOnScrollBegin0004
-     * @tc.desic         acescrollOnScrollBeginEtsTest0004
+    /**
+     * @tc.name   testscrollOnScrollBegin0004
+     * @tc.number SUB_ACE_BASIC_ETS_API_0004
+     * @tc.desc   testscrollOnScrollBegin0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testscrollOnScrollBegin0004', Level.LEVEL0, async () => {
       console.info('scrollOnScrollBegin testscrollOnScrollBegin0004 START');
@@ -113,10 +125,13 @@ export default function scrollOnScrollBeginJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0005
-     * @tc.name         testscrollOnScrollBegin0005
-     * @tc.desic         acescrollOnScrollBeginEtsTest0005
+    /**
+     * @tc.name   testscrollOnScrollBegin0005
+     * @tc.number SUB_ACE_BASIC_ETS_API_0005
+     * @tc.desc   testscrollOnScrollBegin0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testscrollOnScrollBegin0005', Level.LEVEL0, async () => {
       console.info('scrollOnScrollBegin testscrollOnScrollBegin0005 START');
@@ -130,10 +145,13 @@ export default function scrollOnScrollBeginJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0012
-     * @tc.name         testscrollOnScrollBegin0005
-     * @tc.desic         acescrollOnScrollBeginEtsTest0006
+    /**
+     * @tc.name   testscrollOnScrollBegin0006
+     * @tc.number SUB_ACE_BASIC_ETS_API_0012
+     * @tc.desc   testscrollOnScrollBegin0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testscrollOnScrollBegin0006', Level.LEVEL0, async () => {
       console.info('scrollOnScrollBegin testscrollOnScrollBegin0006 START');
@@ -158,12 +176,12 @@ export default function scrollOnScrollBeginJsunit() {
     });
 
     /**
-     * @tc.number    : testscrollOnScrollBegin0007
-     * @tc.name      : test edgeEffectOptions default
-     * @tc.desc      : expect edgeEffectOptions.alwaysEnabled false
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testscrollOnScrollBegin0007
+     * @tc.number testscrollOnScrollBegin0007
+     * @tc.desc   expect edgeEffectOptions.alwaysEnabled false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testscrollOnScrollBegin0007', Level.LEVEL0, async () => {
       console.info('scrollOnScrollBegin testscrollOnScrollBegin0007 START');
@@ -177,12 +195,12 @@ export default function scrollOnScrollBeginJsunit() {
     });
 
     /**
-     * @tc.number    : testscrollOnScrollBegin0008
-     * @tc.name      : test edgeEffectOptions set true
-     * @tc.desc      : expect edgeEffectOptions.alwaysEnabled true
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testscrollOnScrollBegin0008
+     * @tc.number testscrollOnScrollBegin0008
+     * @tc.desc   expect edgeEffectOptions.alwaysEnabled true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testscrollOnScrollBegin0008', Level.LEVEL0, async () => {
       console.info('testEdgeEffectOptions testscrollOnScrollBegin0008 START');

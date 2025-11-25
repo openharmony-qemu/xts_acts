@@ -18,11 +18,14 @@ export default function ActsAmsTestFirstScene() {
     describe('ActsAmsTestFirstScene', function () {
         console.info('----ActsAmsTestFirstScene----');
 
-        /*
-        * @tc.number    : Acts_Ams_test_0100
-        * @tc.name      : getProcessRunningInfos : Get All Running Processes Info
-        * @tc.desc      : Get All Running Processes Info(by Promise)
-        */
+        /**
+         * @tc.name   Acts_Ams_test_0100
+         * @tc.number Acts_Ams_test_0100
+         * @tc.desc   Get All Running Processes Info(by Promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('Acts_Ams_test_0100', Level.LEVEL0, async function (done) {
             var info = await appManager.getProcessRunningInfos();
             expect(Array.isArray(info)).assertEqual(true);

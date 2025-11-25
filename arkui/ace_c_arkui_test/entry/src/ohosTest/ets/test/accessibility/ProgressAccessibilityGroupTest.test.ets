@@ -26,52 +26,52 @@ export default function progressAccessibilityGroupTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_PROGRESS_ACCESSIBILITYGROUP_0100
-     * @tc.name       : testProgressAccessibilityGroup001
-     * @tc.desc       : testing accessibilityGroup for Progress with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testProgressAccessibilityGroup001
+     * @tc.number SUB_ARKUI_CAPI_PROGRESS_ACCESSIBILITYGROUP_0100
+     * @tc.desc   testing accessibilityGroup for Progress with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgressAccessibilityGroup001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testProgressAccessibilityGroup001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_PROGRESS_ACCESSIBILITYGROUP_0200
-     * @tc.name       : testProgressAccessibilityGroup002
-     * @tc.desc       : testing accessibilityGroup for Progress with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testProgressAccessibilityGroup002
+     * @tc.number SUB_ARKUI_CAPI_PROGRESS_ACCESSIBILITYGROUP_0200
+     * @tc.desc   testing accessibilityGroup for Progress with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgressAccessibilityGroup002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testProgressAccessibilityGroup002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_PROGRESS_ACCESSIBILITYGROUP_0300
-     * @tc.name       : testProgressAccessibilityGroup003
-     * @tc.desc       : testing accessibilityGroup for Progress with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testProgressAccessibilityGroup003
+     * @tc.number SUB_ARKUI_CAPI_PROGRESS_ACCESSIBILITYGROUP_0300
+     * @tc.desc   testing accessibilityGroup for Progress with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgressAccessibilityGroup003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testProgressAccessibilityGroup003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_PROGRESS_ACCESSIBILITYGROUP_0400
-     * @tc.name       : testProgressAccessibilityGroup004
-     * @tc.desc       : testing accessibilityGroup for Progress with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testProgressAccessibilityGroup004
+     * @tc.number SUB_ARKUI_CAPI_PROGRESS_ACCESSIBILITYGROUP_0400
+     * @tc.desc   testing accessibilityGroup for Progress with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgressAccessibilityGroup004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testProgressAccessibilityGroup004()).assertEqual(0)

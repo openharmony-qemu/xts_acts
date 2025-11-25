@@ -66,9 +66,12 @@ export default function List_ListSize() {
     });
 
     /**
+     * @tc.name   testListListSizeMeet
      * @tc.number SUB_ACE_LIST_LISTSIZE_TEST_0100
-     * @tc.name testListListSizeMeet
-     * @tc.desc The List parent component sets the width and height to meet the layout of the child component
+     * @tc.desc   The List parent component sets the width and height to meet the layout of the child component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListListSizeMeet',  Level.LEVEL0, async (done: Function) => {
       console.info('testListListSizeMeet START');

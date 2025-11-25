@@ -56,12 +56,12 @@ export default function APIParticleEmitter() {
       console.info("APIParticleEmitter after each called");
     });
     /**
+     * @tc.name   APIParticleEmitter_0100
      * @tc.number api
-     * @tc.name APIParticleEmitter_0100
-     * @tc.desc APIParticleEmitter_0100
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   APIParticleEmitter_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APIParticleEmitter_0100', Level.LEVEL0, async (done: Function) => {
       console.info('APIParticleEmitter_0100 START');

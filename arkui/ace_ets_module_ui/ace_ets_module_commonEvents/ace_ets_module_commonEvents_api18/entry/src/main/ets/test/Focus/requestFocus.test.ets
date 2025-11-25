@@ -59,10 +59,12 @@ export default function RequestFocusTest() {
     });
 
     /**
-     * @tc.number
-     * @tc.name  : RequestFocus_0100
-     * @tc.desc  : To test whether RequestFocus is TRUE.
-     * @tc.level : Level 0
+     * @tc.name   RequestFocus_0100
+     * @tc.number RequestFocus_0100
+     * @tc.desc   To test whether RequestFocus is TRUE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RequestFocus_0100', Level.LEVEL0, async (done: Function) => {
       console.info('RequestFocus_0100 START');
@@ -77,10 +79,12 @@ export default function RequestFocusTest() {
     });
 
     /**
-     * @tc.number : RequestFocus_0200
-     * @tc.name  : RequestFocus_0200
-     * @tc.desc  : To test whether RequestFocus is False.
-     * @tc.level : Level 0
+     * @tc.name   RequestFocus_0200
+     * @tc.number RequestFocus_0200
+     * @tc.desc   To test whether RequestFocus is False.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RequestFocus_0200', Level.LEVEL0, async (done: Function) => {
       console.info('RequestFocus_0200 START');

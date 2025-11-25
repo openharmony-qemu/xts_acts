@@ -46,12 +46,12 @@ export default function Link0100TestJsunit() {
     });
 
     /**
-     * @tc.number    Link0100TestJsunit_001
-     * @tc.name      Link0100TestJsunit_001
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   Link0100TestJsunit_001
+     * @tc.number Link0100TestJsunit_001
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Link0100TestJsunit_001', Level.LEVEL0, async (done: Function) => {
       console.info('[Link0100TestJsunit_001] START');

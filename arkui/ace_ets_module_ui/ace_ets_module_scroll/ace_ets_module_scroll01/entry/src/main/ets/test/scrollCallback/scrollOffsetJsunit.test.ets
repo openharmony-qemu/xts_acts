@@ -42,14 +42,14 @@ export default function scrollOffsetJsunit() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_SCROLL_scrollOffsetJsunit_0100
-    * @tc.name: scrollOffsetJsunit_0100
-    * @tc.desc: Set initial rolling offset.
-    * @tc.level: Level 2
-    * @tc.type:
-    * @tc.size:
-    */
+    /**
+     * @tc.name   scrollOffsetJsunit_0100
+     * @tc.number SUB_ACE_SCROLL_scrollOffsetJsunit_0100
+     * @tc.desc   Set initial rolling offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('scrollOffsetJsunit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('scrollOffsetJsunit_0100 START');
 
@@ -63,12 +63,12 @@ export default function scrollOffsetJsunit() {
       done();
     });
     /**
-     * @tc.number: SUB_ACE_SCROLL_scrollOffsetJsunit_0200
-     * @tc.name: scrollOffsetJsunit_0200
-     * @tc.desc: Trigger onWillScroll and onDidScroll callbacks
-     * @tc.level: Level 2
-     * @tc.type:
-     * @tc.size:
+     * @tc.name   scrollOffsetJsunit_0200
+     * @tc.number SUB_ACE_SCROLL_scrollOffsetJsunit_0200
+     * @tc.desc   Trigger onWillScroll and onDidScroll callbacks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('scrollOffsetJsunit_0200', Level.LEVEL2, async (done: Function) => {
       console.info('scrollOffsetJsunit_0200 START');

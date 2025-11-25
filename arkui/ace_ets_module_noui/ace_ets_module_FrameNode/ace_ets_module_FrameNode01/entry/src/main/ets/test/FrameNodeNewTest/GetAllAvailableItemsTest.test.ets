@@ -47,12 +47,12 @@ export default function GetAllAvailableItemsTest() {
     });
 
     /**
-     * @tc.number    GetAllAvailableItemsTest_0100
-     * @tc.name      GetAllAvailableItemsTest_0100
-     * @tc.desc      getAllAvailableItems return test
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   GetAllAvailableItemsTest_0100
+     * @tc.number GetAllAvailableItemsTest_0100
+     * @tc.desc   getAllAvailableItems return test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GetAllAvailableItemsTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('GetAllAvailableItemsTest_0100 START');

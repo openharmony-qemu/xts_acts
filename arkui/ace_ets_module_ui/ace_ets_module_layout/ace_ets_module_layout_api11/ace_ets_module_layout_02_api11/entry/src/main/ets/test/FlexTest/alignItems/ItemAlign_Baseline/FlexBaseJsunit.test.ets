@@ -47,9 +47,12 @@ export default function flexBase_BaselineJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignBaseline
      * @tc.number SUB_ACE_FLEXALIGNITEMS_BASELINE_0100
-     * @tc.name testFlexItemAlignBaseline
-     * @tc.desc The subcomponent is inside the parent component.
+     * @tc.desc   The subcomponent is inside the parent component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignBaseline',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignBaseline START');
@@ -87,9 +90,12 @@ export default function flexBase_BaselineJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignBaselineExceed
      * @tc.number SUB_ACE_FLEXALIGNITEMS_BASELINE_0200
-     * @tc.name testFlexItemAlignBaselineExceed
-     * @tc.desc The subcomponent exceeds the parent component.
+     * @tc.desc   The subcomponent exceeds the parent component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignBaselineExceed',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignBaselineExceed START');

@@ -46,12 +46,12 @@ export default function animationCallback() {
     });
 
     /**
-     * @tc.number    animationCallback_001
-     * @tc.name      animationCallback_0100
-     * @tc.desc      When the animation parameter is true, trigger the callback.
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   animationCallback_0100
+     * @tc.number animationCallback_001
+     * @tc.desc   When the animation parameter is true, trigger the callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('animationCallback_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[animationCallback_0100] START');

@@ -45,11 +45,14 @@ describe('ActsBmsMetaDataTest', function () {
           })
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_8500
-    * @tc.name: test to get meta data for an application.
-    * @tc.desc: get an ability's meta data when update.
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_8500
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_8500
+     * @tc.desc   get an ability's meta data when update.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_8500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
         await bundle.queryAbilityByWant(
             {
@@ -76,11 +79,14 @@ describe('ActsBmsMetaDataTest', function () {
         });
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_8520
-    * @tc.name: test to get meta data for an application.
-    * @tc.desc: get an ability's meta data which contains two HAP packages.
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_8520
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_8520
+     * @tc.desc   get an ability's meta data which contains two HAP packages.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_8520', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
         await bundle.queryAbilityByWant(
             {
@@ -107,11 +113,14 @@ describe('ActsBmsMetaDataTest', function () {
         });
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_0080
-    * @tc.name: test to get meta data for an application.
-    * @tc.desc: get an ability's meta data which has two ability.
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_0080
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_0080
+     * @tc.desc   get an ability's meta data which has two ability.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_0080', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async function (done) {
         await bundle.queryAbilityByWant(
             {
@@ -138,11 +147,14 @@ describe('ActsBmsMetaDataTest', function () {
         });
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_0100
-    * @tc.name: test to get meta data for an application that does not exist.
-    * @tc.desc: get an ability's meta data which does not exist.
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_0100
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_0100
+     * @tc.desc   get an ability's meta data which does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
         await bundle.queryAbilityByWant(
             {
@@ -164,11 +176,14 @@ describe('ActsBmsMetaDataTest', function () {
         });
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_0120
-    * @tc.name: test to get meta data for a system application.
-    * @tc.desc: get a system ability's meta data.
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_0120
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_0120
+     * @tc.desc   get a system ability's meta data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_0120', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
         await bundle.queryAbilityByWant(
             {
@@ -195,11 +210,14 @@ describe('ActsBmsMetaDataTest', function () {
         });
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_0140
-    * @tc.name: test to get meta data for a vendor application.
-    * @tc.desc: get a vendor ability's meta data.
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_0140
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_0140
+     * @tc.desc   get a vendor ability's meta data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('Sub_Bms_Framework_Query_AbilityInfo_0140', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
         await bundle.queryAbilityByWant(
             {

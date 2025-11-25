@@ -47,9 +47,12 @@ export default function Row_layoutWeight_flexGrow() {
     });
 
     /**
+     * @tc.name   SUB_ACE_Row_layoutWeight_flexGrow_TEST_0100
      * @tc.number SUB_ACE_Row_layoutWeight_flexGrow_TEST_0100
-     * @tc.name testLayoutWeight
-     * @tc.desc row1, row2 and row3 set  layoutWeight(1),the layoutWeight property takes precedence over flexGrow
+     * @tc.desc   row1, row2 and row3 set  layoutWeight(1),the layoutWeight property takes precedence over flexGrow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Row_layoutWeight_flexGrow_TEST_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Row_layoutWeight_flexGrow_TEST_0100] START');
@@ -100,9 +103,12 @@ export default function Row_layoutWeight_flexGrow() {
     });
 
     /**
+     * @tc.name   SUB_ACE_Row_layoutWeight_flexGrow_TEST_0200
      * @tc.number SUB_ACE_Row_layoutWeight_flexGrow_TEST_0200
-     * @tc.name testLayoutWeight
-     * @tc.desc row1, row2 and row3 set  layoutWeight(2),the layoutWeight property takes precedence over flexGrow
+     * @tc.desc   row1, row2 and row3 set  layoutWeight(2),the layoutWeight property takes precedence over flexGrow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Row_layoutWeight_flexGrow_TEST_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Row_layoutWeight_flexGrow_TEST_0200] START');
@@ -153,9 +159,12 @@ export default function Row_layoutWeight_flexGrow() {
     });
 
     /**
+     * @tc.name   SUB_ACE_Row_layoutWeight_flexGrow_TEST_0300
      * @tc.number SUB_ACE_Row_layoutWeight_flexGrow_TEST_0300
-     * @tc.name testLayoutWeight
-     * @tc.desc row1, row2 and row3 set  layoutWeight(3),the layoutWeight property takes precedence over flexGrow
+     * @tc.desc   row1, row2 and row3 set  layoutWeight(3),the layoutWeight property takes precedence over flexGrow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Row_layoutWeight_flexGrow_TEST_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Row_layoutWeight_flexGrow_TEST_0300] START');

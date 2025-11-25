@@ -41,14 +41,14 @@ export default function calendarPickerStartEndTest() {
       done();
     });
 
-    /* *
-    * @tc.number: CalendarPickerStartEndTest_001
-    * @tc.name  : CalendarPickerStartEndTest_001
-    * @tc.desc  : To test the start < end 
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   CalendarPickerStartEndTest_001
+     * @tc.number CalendarPickerStartEndTest_001
+     * @tc.desc   To test the start < end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('CalendarPickerStartEndTest_001', Level.LEVEL1, async (done: Function) => {
       console.info('CalendarPickerStartEndTest_001 START');
       await Utils.sleep(1000);
@@ -62,14 +62,14 @@ export default function calendarPickerStartEndTest() {
       done();
     });
 
-    /* *
-    * @tc.number: CalendarPickerStartEndTest_002
-    * @tc.name  : CalendarPickerStartEndTest_002
-    * @tc.desc  : To test the start > end
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   CalendarPickerStartEndTest_002
+     * @tc.number CalendarPickerStartEndTest_002
+     * @tc.desc   To test the start > end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('CalendarPickerStartEndTest_002', Level.LEVEL1, async (done: Function) => {
       console.info('CalendarPickerStartEndTest_002 START');
       await Utils.sleep(1000);
@@ -83,14 +83,14 @@ export default function calendarPickerStartEndTest() {
       done();
     });
 
-    /* *
-    * @tc.number: CalendarPickerStartEndTest_003
-    * @tc.name  : CalendarPickerStartEndTest_003
-    * @tc.desc  : To test the start and end is null
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   CalendarPickerStartEndTest_003
+     * @tc.number CalendarPickerStartEndTest_003
+     * @tc.desc   To test the start and end is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('CalendarPickerStartEndTest_003', Level.LEVEL1, async (done: Function) => {
       console.info('CalendarPickerStartEndTest_002 START');
       await Utils.sleep(1000);
@@ -104,14 +104,14 @@ export default function calendarPickerStartEndTest() {
       done();
     });
 
-    /* *
-    * @tc.number: CalendarPickerStartEndTest_004
-    * @tc.name  : CalendarPickerStartEndTest_004
-    * @tc.desc  : To test the start and end is undefined
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   CalendarPickerStartEndTest_004
+     * @tc.number CalendarPickerStartEndTest_004
+     * @tc.desc   To test the start and end is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('CalendarPickerStartEndTest_004', Level.LEVEL1, async (done: Function) => {
       console.info('CalendarPickerStartEndTest_004 START');
       await Utils.sleep(1000);
@@ -125,14 +125,14 @@ export default function calendarPickerStartEndTest() {
       done();
     });
 
-    /* *
-    * @tc.number: CalendarPickerStartEndTest_005
-    * @tc.name  : CalendarPickerStartEndTest_005
-    * @tc.desc  : To test the start = end
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   CalendarPickerStartEndTest_005
+     * @tc.number CalendarPickerStartEndTest_005
+     * @tc.desc   To test the start = end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('CalendarPickerStartEndTest_005', Level.LEVEL1, async (done: Function) => {
       console.info('CalendarPickerStartEndTest_005 START');
       await Utils.sleep(1000);

@@ -42,12 +42,12 @@ export default function AboutToAppearTest() {
     });
     
     /**
-     * @tc.number    AboutToAppearTest_0010
-     * @tc.name      AboutToAppearTest_0010
-     * @tc.desc      The aboutToAppear method is added to the property string
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+     * @tc.name   AboutToAppearTest_0010
+     * @tc.number AboutToAppearTest_0010
+     * @tc.desc   The aboutToAppear method is added to the property string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AboutToAppearTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('[AboutToAppearTest_0010] START');

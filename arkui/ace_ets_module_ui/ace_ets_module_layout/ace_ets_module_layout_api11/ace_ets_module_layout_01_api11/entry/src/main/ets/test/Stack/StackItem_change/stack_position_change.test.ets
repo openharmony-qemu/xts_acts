@@ -46,10 +46,12 @@ export default function Stack_Position_Change() {
       console.info("Stack_Position_Change after each called")
     });
     /**
+     * @tc.name   testStackPositionChangeWithAlignmentTopStart
      * @tc.number SUB_ACE_STACK_POSITION_CHANGE_TEST_0100
-     * @tc.name testStackPositionChangeWithAlignmentTopStart
-     * @tc.desc The stack component sets alignContent to Alignment.TopStart and sets the position of
-     *               the first subcomponent
+     * @tc.desc   The stack component sets alignContent to Alignment.TopStart and sets the position of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackPositionChangeWithAlignmentTopStart',  Level.LEVEL0, async (done: Function) => {
       console.info('[testStackPositionChangeWithAlignmentTopStart] START');
@@ -79,10 +81,12 @@ export default function Stack_Position_Change() {
       done();
     });
     /**
+     * @tc.name   testStackPositionChangeWithAlignmentTop
      * @tc.number SUB_ACE_STACK_POSITION_CHANGE_TEST_0200
-     * @tc.name testStackPositionChangeWithAlignmentTop
-     * @tc.desc The stack component sets alignContent to Alignment.Top and sets the position of
-     *               the first subcomponent
+     * @tc.desc   The stack component sets alignContent to Alignment.Top and sets the position of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackPositionChangeWithAlignmentTop',  Level.LEVEL0, async (done: Function) => {
       console.info('[testStackPositionChangeWithAlignmentTop] START');
@@ -116,10 +120,12 @@ export default function Stack_Position_Change() {
       done();
     });
     /**
+     * @tc.name   testStackPositionChangeWithAlignmentTopEnd
      * @tc.number SUB_ACE_STACK_POSITION_CHANGE_TEST_0300
-     * @tc.name testStackPositionChangeWithAlignmentTopEnd
-     * @tc.desc The stack component sets alignContent to Alignment.TopEnd and sets the position of
-     *               the first subcomponent
+     * @tc.desc   The stack component sets alignContent to Alignment.TopEnd and sets the position of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackPositionChangeWithAlignmentTopEnd',  Level.LEVEL0, async (done: Function) => {
       console.info('[testStackPositionChangeWithAlignmentTopEnd] START');
@@ -152,10 +158,12 @@ export default function Stack_Position_Change() {
       done();
     });
     /**
+     * @tc.name   testStackPositionChangeWithAlignmentStart
      * @tc.number SUB_ACE_STACK_POSITION_CHANGE_TEST_0400
-     * @tc.name testStackPositionChangeWithAlignmentStart
-     * @tc.desc The stack component sets alignContent to Alignment.Start and sets the position of
-     *               the first subcomponent
+     * @tc.desc   The stack component sets alignContent to Alignment.Start and sets the position of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackPositionChangeWithAlignmentStart',  Level.LEVEL0, async (done: Function) => {
       console.info('[testStackPositionChangeWithAlignmentStart] START');
@@ -189,10 +197,12 @@ export default function Stack_Position_Change() {
       done();
     });
     /**
+     * @tc.name   testStackPositionChangeWithAlignmentCenter
      * @tc.number SUB_ACE_STACK_POSITION_CHANGE_TEST_0500
-     * @tc.name testStackPositionChangeWithAlignmentCenter
-     * @tc.desc The stack component sets alignContent to Alignment.Center and sets the position of
-     *               the first subcomponent
+     * @tc.desc   The stack component sets alignContent to Alignment.Center and sets the position of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackPositionChangeWithAlignmentCenter',  Level.LEVEL0, async (done: Function) => {
       console.info('[testStackPositionChangeWithAlignmentCenter] START');
@@ -227,10 +237,12 @@ export default function Stack_Position_Change() {
       done();
     });
     /**
+     * @tc.name   testStackPositionChangeWithAlignmentEnd
      * @tc.number SUB_ACE_STACK_POSITION_CHANGE_TEST_0600
-     * @tc.name testStackPositionChangeWithAlignmentEnd
-     * @tc.desc The stack component sets alignContent to Alignment.End and sets the position of
-     *               the first subcomponent
+     * @tc.desc   The stack component sets alignContent to Alignment.End and sets the position of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackPositionChangeWithAlignmentEnd',  Level.LEVEL0, async (done: Function) => {
       console.info('[testStackPositionChangeWithAlignmentEnd] START');
@@ -264,10 +276,12 @@ export default function Stack_Position_Change() {
       done();
     });
     /**
+     * @tc.name   testStackPositionChangeWithAlignmentBottomStart
      * @tc.number SUB_ACE_STACK_POSITION_CHANGE_TEST_0700
-     * @tc.name testStackPositionChangeWithAlignmentBottomStart
-     * @tc.desc The stack component sets alignContent to Alignment.BottomStart and sets the position of
-     *               the first subcomponent
+     * @tc.desc   The stack component sets alignContent to Alignment.BottomStart and sets the position of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackPositionChangeWithAlignmentBottomStart',  Level.LEVEL0, async (done: Function) => {
       console.info('[testStackPositionChangeWithAlignmentBottomStart] START');
@@ -300,10 +314,12 @@ export default function Stack_Position_Change() {
       done();
     });
     /**
+     * @tc.name   testStackPositionChangeWithAlignmentBottom
      * @tc.number SUB_ACE_STACK_POSITION_CHANGE_TEST_0800
-     * @tc.name testStackPositionChangeWithAlignmentBottom
-     * @tc.desc The stack component sets alignContent to Alignment.Bottom and sets the position of
-     *               the first subcomponent
+     * @tc.desc   The stack component sets alignContent to Alignment.Bottom and sets the position of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackPositionChangeWithAlignmentBottom',  Level.LEVEL0, async (done: Function) => {
       console.info('[testStackPositionChangeWithAlignmentBottom] START');
@@ -337,10 +353,12 @@ export default function Stack_Position_Change() {
       done();
     });
     /**
+     * @tc.name   testStackPositionChangeWithAlignmentBottomEnd
      * @tc.number SUB_ACE_STACK_POSITION_CHANGE_TEST_0900
-     * @tc.name testStackPositionChangeWithAlignmentBottomEnd
-     * @tc.desc The stack component sets alignContent to Alignment.BottomEnd and sets the position of
-     *               the first subcomponent
+     * @tc.desc   The stack component sets alignContent to Alignment.BottomEnd and sets the position of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackPositionChangeWithAlignmentBottomEnd',  Level.LEVEL0, async (done: Function) => {
       console.info('[testStackPositionChangeWithAlignmentBottomEnd] START');

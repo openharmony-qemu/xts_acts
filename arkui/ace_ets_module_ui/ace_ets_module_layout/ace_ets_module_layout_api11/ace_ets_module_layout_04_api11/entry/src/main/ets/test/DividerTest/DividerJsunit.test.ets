@@ -57,9 +57,12 @@ export default function dividerJsunit() {
       console.info("Divider after each called");
     });
     /**
+     * @tc.name   testDividerGetInspectorByKey010
      * @tc.number SUB_ACE_BASIC_ETS_API_0750
-     * @tc.name testDividerGetInspectorByKey010
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDividerGetInspectorByKey010',  Level.LEVEL0, async (done: Function) => {
       console.info('testGetInspectorByKey START');
@@ -82,9 +85,12 @@ export default function dividerJsunit() {
     });
 
     /**
+     * @tc.name   testDividerGetInspectorByKey020
      * @tc.number SUB_ACE_BASIC_ETS_API_0760
-     * @tc.name testDividerGetInspectorByKey020
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDividerGetInspectorByKey020',  Level.LEVEL0, async (done: Function) => {
       let strJson = getInspectorByKey('divider1');
@@ -98,9 +104,12 @@ export default function dividerJsunit() {
       done();
     });
     /**
+     * @tc.name   testDividerGetInspectorByKey030
      * @tc.number SUB_ACE_BASIC_ETS_API_0770
-     * @tc.name testDividerGetInspectorByKey030
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDividerGetInspectorByKey030',  Level.LEVEL0, async (done: Function) => {
       let strJson = getInspectorByKey('divider2');

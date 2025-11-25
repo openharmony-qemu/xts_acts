@@ -46,14 +46,14 @@ export default function HapticFeedbackModeTest() {
       console.info("HapticFeedbackModeTest after each called");
     });
 
-    /*
-    * @tc.number       HapticFeedbackModeTest0001
-    * @tc.name         HapticFeedbackModeTest0001
-    * @tc.desc        Test HapticFeedbackMode: ENABLED
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        0
-    */
+    /**
+     * @tc.name   HapticFeedbackModeTest0001
+     * @tc.number HapticFeedbackModeTest0001
+     * @tc.desc   Test HapticFeedbackMode: ENABLED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('HapticFeedbackModeTest0001', Level.LEVEL0, async (done: Function) => {
         let driver = Driver.create();
         console.info('[HapticFeedbackModeTest0001] START');
@@ -80,14 +80,14 @@ export default function HapticFeedbackModeTest() {
         done();
     });
 
-    /*
-    * @tc.number       HapticFeedbackModeTest0002
-    * @tc.name         HapticFeedbackModeTest0002
-    * @tc.desc        Test HapticFeedbackMode: DISABLED
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        0
-    */
+    /**
+     * @tc.name   HapticFeedbackModeTest0002
+     * @tc.number HapticFeedbackModeTest0002
+     * @tc.desc   Test HapticFeedbackMode: DISABLED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('HapticFeedbackModeTest0002', Level.LEVEL0, async (done: Function) => {
         let driver = Driver.create();
         console.info('HapticFeedbackModeTest0002 START');
@@ -112,14 +112,14 @@ export default function HapticFeedbackModeTest() {
         done();
     });
 
-    /*
-    * @tc.number       HapticFeedbackModeTest0003
-    * @tc.name         HapticFeedbackModeTest0003
-    * @tc.desc        Test HapticFeedbackMode: AUTO
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        0
-    */
+    /**
+     * @tc.name   HapticFeedbackModeTest0003
+     * @tc.number HapticFeedbackModeTest0003
+     * @tc.desc   Test HapticFeedbackMode: AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('HapticFeedbackModeTest0003', Level.LEVEL0, async (done: Function) => {
         let driver = Driver.create();
         console.info('[HapticFeedbackModeTest0003] START');

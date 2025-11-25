@@ -43,12 +43,12 @@ export default function textPickerDialogTextStyleTest() {
     });
 
     /**
-     * @tc.number: textPickerDialogTextStyleTest_0100
-     * @tc.name  : textPickerDialogTextStyleTest_0100
-     * @tc.desc  : To test the textStyle minFontSize:18 maxFontSize:28 TextOverflow.MARQUEE
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   textPickerDialogTextStyleTest_0100
+     * @tc.number textPickerDialogTextStyleTest_0100
+     * @tc.desc   To test the textStyle minFontSize:18 maxFontSize:28 TextOverflow.MARQUEE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textPickerDialogTextStyleTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('textPickerDialogTextStyleTest_0100 START');
@@ -77,12 +77,12 @@ export default function textPickerDialogTextStyleTest() {
     });
 
     /**
-     * @tc.number: textPickerDialogTextStyleTest_0200
-     * @tc.name  : textPickerDialogTextStyleTest_0200
-     * @tc.desc  : To test the textStyle minFontSize:28 maxFontSize:18 TextOverflow.MARQUEE
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   textPickerDialogTextStyleTest_0200
+     * @tc.number textPickerDialogTextStyleTest_0200
+     * @tc.desc   To test the textStyle minFontSize:28 maxFontSize:18 TextOverflow.MARQUEE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textPickerDialogTextStyleTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('textPickerDialogTextStyleTest_0200 START');
@@ -108,12 +108,12 @@ export default function textPickerDialogTextStyleTest() {
     });
 
     /**
-     * @tc.number: textPickerDialogTextStyleTest_0300
-     * @tc.name  : textPickerDialogTextStyleTest_0300
-     * @tc.desc  : To test the textStyle minFontSize:28 maxFontSize:28 TextOverflow.MARQUEE
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   textPickerDialogTextStyleTest_0300
+     * @tc.number textPickerDialogTextStyleTest_0300
+     * @tc.desc   To test the textStyle minFontSize:28 maxFontSize:28 TextOverflow.MARQUEE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textPickerDialogTextStyleTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('textPickerDialogTextStyleTest_0300 START');
@@ -139,12 +139,12 @@ export default function textPickerDialogTextStyleTest() {
     });
 
     /**
-     * @tc.number: textPickerDialogTextStyleTest_0400
-     * @tc.name  : textPickerDialogTextStyleTest_0400
-     * @tc.desc  : To test the textStyle minFontSize:undefined maxFontSize:undefined TextOverflow.MARQUEE
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   textPickerDialogTextStyleTest_0400
+     * @tc.number textPickerDialogTextStyleTest_0400
+     * @tc.desc   To test the textStyle minFontSize:undefined maxFontSize:undefined TextOverflow.MARQUEE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textPickerDialogTextStyleTest_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('textPickerDialogTextStyleTest_0400 START');
@@ -170,12 +170,12 @@ export default function textPickerDialogTextStyleTest() {
     });
 
     /**
-     * @tc.number: textPickerDialogTextStyleTest_0500
-     * @tc.name  : textPickerDialogTextStyleTest_0500
-     * @tc.desc  : To test the textStyle minFontSize:null maxFontSize:null TextOverflow.MARQUEE
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   textPickerDialogTextStyleTest_0500
+     * @tc.number textPickerDialogTextStyleTest_0500
+     * @tc.desc   To test the textStyle minFontSize:null maxFontSize:null TextOverflow.MARQUEE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textPickerDialogTextStyleTest_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('textPickerDialogTextStyleTest_0500 START');

@@ -37,12 +37,12 @@ export default function showActionSheetBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    showActionSheetBlurStyleOptionsTest_0100
-     * @tc.name      showActionSheetBlurStyleOptionsTest_0100
-     * @tc.desc      createShowActionSheetModeToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showActionSheetBlurStyleOptionsTest_0100
+     * @tc.number showActionSheetBlurStyleOptionsTest_0100
+     * @tc.desc   createShowActionSheetModeToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('showActionSheetBlurStyleOptionsTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'showActionSheetBlurStyleOptionsTest_0100';
@@ -79,12 +79,12 @@ export default function showActionSheetBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    showActionSheetBlurStyleOptionsTest_0200
-     * @tc.name      showActionSheetBlurStyleOptionsTest_0200
-     * @tc.desc      createShowActionSheetModeToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showActionSheetBlurStyleOptionsTest_0200
+     * @tc.number showActionSheetBlurStyleOptionsTest_0200
+     * @tc.desc   createShowActionSheetModeToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('showActionSheetBlurStyleOptionsTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'showActionSheetBlurStyleOptionsTest_0200';
@@ -111,12 +111,12 @@ export default function showActionSheetBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    showActionSheetBlurStyleOptionsTest_0300
-     * @tc.name      showActionSheetBlurStyleOptionsTest_0300
-     * @tc.desc      createShowActionSheetModeToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showActionSheetBlurStyleOptionsTest_0300
+     * @tc.number showActionSheetBlurStyleOptionsTest_0300
+     * @tc.desc   createShowActionSheetModeToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('showActionSheetBlurStyleOptionsTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'showActionSheetBlurStyleOptionsTest_0300';

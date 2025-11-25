@@ -50,13 +50,13 @@ export default function gesturecancelTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GESTURCANCEL_GESTURE001
-     * @tc.name       : testGestureCancelTest001
-     * @tc.desc       : testing Gesture test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGestureCancelTest001
+     * @tc.number SUB_ARKUI_CAPI_GESTURCANCEL_GESTURE001
+     * @tc.desc   testing Gesture test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGestureCancelTest001', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();

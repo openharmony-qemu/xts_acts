@@ -48,12 +48,12 @@ export default function TextDecorationStyle() {
     });
 
     /**
-     * @tc.number    TextDecorationStyleTest_0100
-     * @tc.name      TextDecorationStyleTest_0100
-     * @tc.desc      TypedFrameNode: TextDecorationStyleTest
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextDecorationStyleTest_0100
+     * @tc.number TextDecorationStyleTest_0100
+     * @tc.desc   TypedFrameNode: TextDecorationStyleTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextDecorationStyleTest_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('TextDecorationStyleTest_0100 START');

@@ -45,6 +45,14 @@ export default function aboutToDisappearJsunit() {
       console.info("aboutToDisappear after each called");
     });
 
+    /**
+     * @tc.name   aboutToDisappearTest_0100
+     * @tc.number aboutToDisappearTest_0100
+     * @tc.desc   aboutToDisappearTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('aboutToDisappearTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('aboutToDisappearTest_0100 START');
       await Utils.sleep(1500);

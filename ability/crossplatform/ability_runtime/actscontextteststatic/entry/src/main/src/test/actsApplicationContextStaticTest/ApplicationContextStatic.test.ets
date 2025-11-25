@@ -39,12 +39,12 @@ export default function ApplicationContextStatic() {
     })
 
     /**
-     * @tc.number     ABILITY_TEST_GETRUNNINGPROCESSINFORMATION_PROMISE_0100
-     * @tc.name       testGetRunningProcessInformationStaticPromise001
-     * @tc.desc       test getRunningProcessInformation(promise)
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   testGetRunningProcessInformationStaticPromise001
+     * @tc.number ABILITY_TEST_GETRUNNINGPROCESSINFORMATION_PROMISE_0100
+     * @tc.desc   test getRunningProcessInformation(promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetRunningProcessInformationStaticPromise001', Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -75,12 +75,12 @@ export default function ApplicationContextStatic() {
 
 
     /**
-     * @tc.number     ABILITY_TEST_GETRUNNINGPROCESSINFORMATION_CALLBACK_0100
-     * @tc.name       testGetRunningProcessInformationStaticCb001
-     * @tc.desc       test getRunningProcessInformation(callback)
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   testGetRunningProcessInformationStaticCb001
+     * @tc.number ABILITY_TEST_GETRUNNINGPROCESSINFORMATION_CALLBACK_0100
+     * @tc.desc   test getRunningProcessInformation(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetRunningProcessInformationStaticCb001', Level.LEVEL2,async (done: () => void): Promise<void> => {
       try {

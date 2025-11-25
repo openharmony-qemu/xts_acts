@@ -54,12 +54,12 @@ export default function backgroundImageResizableTest() {
       done();
     });
     /**
+     * @tc.name   backgroundImageResizableTest_0100
      * @tc.number backgroundImageResizableTest_0100
-     * @tc.name backgroundImageResizableTest_0100
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('backgroundImageResizableTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('backgroundImageResizableTest_0100 START');

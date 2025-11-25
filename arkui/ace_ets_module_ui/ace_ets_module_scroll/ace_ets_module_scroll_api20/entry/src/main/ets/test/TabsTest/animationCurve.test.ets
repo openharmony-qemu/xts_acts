@@ -44,13 +44,13 @@ export default function animationCurve() {
       done();
     });
 
-     /**
-     * @tc.number: curves_ori_value_0001
-     * @tc.name  : curves_ori_value_0001
-     * @tc.desc  : set linear,The return value is 'linear' and passes
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   curves_ori_value_0001
+     * @tc.number curves_ori_value_0001
+     * @tc.desc   set linear,The return value is 'linear' and passes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('curves_ori_value_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('curves_ori_value_0001 START');
@@ -66,12 +66,12 @@ export default function animationCurve() {
     });
 
     /**
-     * @tc.number: curves_ori_value_0002
-     * @tc.name  : curves_ori_value_0002
-     * @tc.desc  : set undefined,The return value is 'cubic-bezier(0.200000,0.000000,0.100000,1.000000)' and passes
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   curves_ori_value_0002
+     * @tc.number curves_ori_value_0002
+     * @tc.desc   set undefined,The return value is 'cubic-bezier(0.200000,0.000000,0.100000,1.000000)' and passes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('curves_ori_value_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('curves_ori_value_0002 START');
@@ -90,12 +90,12 @@ export default function animationCurve() {
     });
 
     /**
-     * @tc.number: curves_ori_value_0003
-     * @tc.name  : curves_ori_value_0003
-     * @tc.desc  : set null,The return value is 'cubic-bezier(0.200000,0.000000,0.100000,1.000000)' and passes
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   curves_ori_value_0003
+     * @tc.number curves_ori_value_0003
+     * @tc.desc   set null,The return value is 'cubic-bezier(0.200000,0.000000,0.100000,1.000000)' and passes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('curves_ori_value_0003',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function)=> {
       console.info('curves_ori_value_0003 START');
@@ -114,12 +114,12 @@ export default function animationCurve() {
     });
 
     /**
-     * @tc.number: curves_ori_value_0004
-     * @tc.name  : curves_ori_value_0004
-     * @tc.desc  : set -9,The return value is 'cubic-bezier(0.200000,0.000000,0.100000,1.000000)' and passes
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   curves_ori_value_0004
+     * @tc.number curves_ori_value_0004
+     * @tc.desc   set -9,The return value is 'cubic-bezier(0.200000,0.000000,0.100000,1.000000)' and passes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('curves_ori_value_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('curves_ori_value_0004 START');
@@ -138,12 +138,12 @@ export default function animationCurve() {
     });
 
     /**
-     * @tc.number: curves_ori_value_0005.0
-     * @tc.name  : curves_ori_value_0005
-     * @tc.desc  : set  ICurve:cubicBezierCurve(0.1, 0.0, 0.1, 0.5),The return value is 'cubic-bezier(0.100000,0.000000,0.100000,0.500000)' and passes
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   curves_ori_value_0005
+     * @tc.number curves_ori_value_0005.0
+     * @tc.desc   set  ICurve:cubicBezierCurve(0.1, 0.0, 0.1, 0.5),The return value is 'cubic-bezier(0.100000,0.000000,0.100000,0.500000)' and passes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('curves_ori_value_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
     console.info('curves_ori_value_0005 START');

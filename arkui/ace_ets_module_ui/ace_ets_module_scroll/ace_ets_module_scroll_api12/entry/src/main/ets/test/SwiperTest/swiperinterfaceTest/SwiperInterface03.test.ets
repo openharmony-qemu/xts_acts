@@ -45,12 +45,12 @@ export default function SwiperInterface03() {
     });
 
     /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_0190
      * @tc.number SWIPER_DRAG_0190
-     * @tc.name step
-     * @tc.desc curve
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   curve
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_0190', Level.LEVEL1, async (done: Function) => {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_0190 START");
@@ -67,12 +67,12 @@ export default function SwiperInterface03() {
 
 
     /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_0200
      * @tc.number SWIPER_DRAG_0200
-     * @tc.name step
-     * @tc.desc curve
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   curve
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_0200', Level.LEVEL1, async (done: Function) => {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_0200 START");
@@ -88,12 +88,12 @@ export default function SwiperInterface03() {
     });
 
     /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_0210
      * @tc.number SWIPER_DRAG_0210
-     * @tc.name step
-     * @tc.desc curve
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   curve
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_0210', Level.LEVEL1, async (done: Function) => {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_0210 START");
@@ -109,12 +109,12 @@ export default function SwiperInterface03() {
     });
 
     /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_0220
      * @tc.number SWIPER_DRAG_0220
-     * @tc.name step
-     * @tc.desc curve
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   curve
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_0220', Level.LEVEL1, async (done: Function) => {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_DRAG_0220 START");

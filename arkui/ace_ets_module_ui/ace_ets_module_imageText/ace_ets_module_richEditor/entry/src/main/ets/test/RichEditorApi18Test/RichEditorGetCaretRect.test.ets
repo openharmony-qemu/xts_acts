@@ -46,14 +46,14 @@ export default function RichEditorGetCaretRectTest() {
       console.info("RichEditorGetCaretRectTest after each called");
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_RichEditor_GetCaretRect_0010
-    * @tc.name         RichEditorGetCaretRectTest_0010
-    * @tc.desc        test return value of getCaretRect: undefined
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
-    */
+    /**
+     * @tc.name   RichEditorGetCaretRectTest_0010
+     * @tc.number SUB_ACE_BASIC_ETS_API_RichEditor_GetCaretRect_0010
+     * @tc.desc   test return value of getCaretRect: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('RichEditorGetCaretRectTest_0010', Level.LEVEL1, async (done: Function) => {
       console.info('RichEditorGetCaretRectTest_0010 START');
       let driver = Driver.create();

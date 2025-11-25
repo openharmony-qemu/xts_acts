@@ -55,9 +55,12 @@ export default function FreezeV2Test03() {
     });
 
     /**
+     * @tc.name   FreezeTest001
      * @tc.number SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name FreezeTest001
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FreezeTest001', Level.LEVEL0, async () => {
       console.info('FreezeTest001 START');
@@ -84,9 +87,12 @@ export default function FreezeV2Test03() {
     });
 
     /**
+     * @tc.name   FreezeTest002
      * @tc.number SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name FreezeTest002
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FreezeTest002', Level.LEVEL0, async () => {
       console.info('FreezeTest002 START');
@@ -117,9 +123,12 @@ export default function FreezeV2Test03() {
     });
 
     /**
+     * @tc.name   FreezeTest003
      * @tc.number SUB_ACE_BASIC_ETS_API_0003
-     * @tc.name FreezeTest003
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FreezeTest003', Level.LEVEL0, async () => {
       console.info('FreezeTest003 START');
@@ -154,9 +163,12 @@ export default function FreezeV2Test03() {
     });
 
     /**
+     * @tc.name   FreezeTest004
      * @tc.number SUB_ACE_BASIC_ETS_API_0004
-     * @tc.name FreezeTest004
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FreezeTest004', Level.LEVEL0, async () => {
       console.info('FreezeTest004 START');
@@ -194,9 +206,12 @@ export default function FreezeV2Test03() {
     });
 
     /**
+     * @tc.name   FreezeTest005
      * @tc.number SUB_ACE_BASIC_ETS_API_0005
-     * @tc.name FreezeTest005
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FreezeTest005', Level.LEVEL0, async () => {
       console.info('FreezeTest005 START');

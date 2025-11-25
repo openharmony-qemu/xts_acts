@@ -42,12 +42,12 @@ export default function setListEvent() {
     });
 
     /**
-     * @tc.number    setListEvent_001
-     * @tc.name      setListEvent_0100
-     * @tc.desc      Set scrolling events for the List component.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   setListEvent_0100
+     * @tc.number setListEvent_001
+     * @tc.desc   Set scrolling events for the List component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setListEvent_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[setListEvent_0100] START');

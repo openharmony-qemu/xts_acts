@@ -56,12 +56,12 @@ export default function TimePickerJsunit() {
     });
 
     /**
-     * @tc.number: TimePickerJsunit_0100
-     * @tc.name  : TimePickerJsunit_0100
-     * @tc.desc  : Tests the property of the picker component
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   TimePickerJsunit_0100
+     * @tc.number TimePickerJsunit_0100
+     * @tc.desc   Tests the property of the picker component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimePickerJsunit_0100', Level.LEVEL1, async (done: Function) => {
       // Verify 12-hour function of TimePicker component
@@ -116,12 +116,12 @@ export default function TimePickerJsunit() {
     });
 
     /**
-     * @tc.number: TimePickerJsunit_0200
-     * @tc.name  : TimePickerJsunit_0200
-     * @tc.desc  : Tests the property of the picker component
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   TimePickerJsunit_0200
+     * @tc.number TimePickerJsunit_0200
+     * @tc.desc   Tests the property of the picker component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimePickerJsunit_0200', Level.LEVEL1, async (done: Function) => {
       // Verify switch 12-hour/24-hour system of TimePicker component
@@ -148,12 +148,12 @@ export default function TimePickerJsunit() {
     });
 
     /**
-     * @tc.number: TimePickerJsunit_0300
-     * @tc.name  : TimePickerJsunit_0300
-     * @tc.desc  : Tests the property of the picker component
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   TimePickerJsunit_0300
+     * @tc.number TimePickerJsunit_0300
+     * @tc.desc   Tests the property of the picker component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimePickerJsunit_0300', Level.LEVEL1, async (done: Function) => {
       // Verify 24-hour function of TimePicker component

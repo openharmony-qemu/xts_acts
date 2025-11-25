@@ -43,11 +43,14 @@ export default function abilityTest() {
       done()
     })
 
-    /*
-    *tc.number Advanced_ui_SegmentButton_0100
-    *tc.name   single select SegmentButton UI test
-    *tc.desc   Test single select SegmentButton UI
-    */
+    /**
+     * @tc.name   Advanced_ui_SegmentButton_0100
+     * @tc.number Advanced_ui_SegmentButton_0100
+     * @tc.desc   Test single select SegmentButton UI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Advanced_ui_SegmentButton_0100', Level.LEVEL0, async (done: Function) => {
       let driver = Driver.create()
       let singleTextSegmentButton = await driver.findComponent(ON.text('单选文字1'))
@@ -77,11 +80,14 @@ export default function abilityTest() {
       done()
     })
 
-    /*
-    *tc.number Advanced_ui_SegmentButton_0200
-    *tc.name   multiple select SegmentButton UI test
-    *tc.desc   Test multiple SegmentButton UI
-    */
+    /**
+     * @tc.name   Advanced_ui_SegmentButton_0200
+     * @tc.number Advanced_ui_SegmentButton_0200
+     * @tc.desc   Test multiple SegmentButton UI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Advanced_ui_SegmentButton_0200', Level.LEVEL0, async (done: Function) => {
       let driver = Driver.create()
       let multipleTextSegmentButton = await driver.findComponent(ON.text('多选文字1'))
@@ -103,11 +109,14 @@ export default function abilityTest() {
       done()
     })
 
-    /*
-    *tc.number Advanced_ui_SegmentButton_0300
-    *tc.name   tab SegmentButton UI test
-    *tc.desc   Test tab SegmentButton UI
-    */
+    /**
+     * @tc.name   Advanced_ui_SegmentButton_0300
+     * @tc.number Advanced_ui_SegmentButton_0300
+     * @tc.desc   Test tab SegmentButton UI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Advanced_ui_SegmentButton_0300', Level.LEVEL0, async (done: Function) => {
       let driver = Driver.create()
       let tabSegmentButton = await driver.findComponent(ON.text('页签1'))

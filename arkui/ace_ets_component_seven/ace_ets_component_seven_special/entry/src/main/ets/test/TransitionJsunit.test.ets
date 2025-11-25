@@ -46,12 +46,12 @@ export default function transitionJsunit() {
     });
 
     /**
+     * @tc.name   transitionTest_0200
      * @tc.number transitionTest_0200
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('transitionTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('transitionTest_0200 START');

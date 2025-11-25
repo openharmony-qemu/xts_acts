@@ -40,12 +40,12 @@ export default function rowJsunit() {
     });
 
     /**
+     * @tc.name   rowTest_0001
      * @tc.number rowTest_0001
-     * @tc.name Test the properties of components
-     * @tc.desc set alignItems values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set alignItems values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('rowTest_0001', Level.LEVEL0, async (done: Function) => {
       console.info('rowTest_0001 START');
@@ -58,12 +58,12 @@ export default function rowJsunit() {
     });
 
     /**
+     * @tc.name   rowTest_0002
      * @tc.number rowTest_0002
-     * @tc.name Test the properties of components
-     * @tc.desc set justifyContent values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   set justifyContent values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('rowTest_0002', Level.LEVEL0, async (done: Function) => {
       console.info('rowTest_0002 START');
@@ -76,12 +76,12 @@ export default function rowJsunit() {
     });
 
     /**
+     * @tc.name   rowTest_0003
      * @tc.number rowTest_0003
-     * @tc.name Test the properties of components
-     * @tc.desc Change alignItems values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change alignItems values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('rowTest_0003', Level.LEVEL0, async (done: Function) => {
       console.info('rowTest_0003 START');

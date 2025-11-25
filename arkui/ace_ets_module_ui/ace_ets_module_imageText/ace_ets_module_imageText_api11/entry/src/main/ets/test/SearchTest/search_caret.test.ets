@@ -43,12 +43,14 @@ export default function search_caret() {
       done();
     });
 
-    /* *
-      * @tc.number: SUB_ACE_UI_TEXT_NEWINTERFACE_0270
-      * @tc.name  : search_caret_001
-      * @tc.desc  : set caretPosition to 1
-      * @tc.level : Level 3
-      */
+    /**
+     * @tc.name   search_caret_001
+     * @tc.number SUB_ACE_UI_TEXT_NEWINTERFACE_0270
+     * @tc.desc   set caretPosition to 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('search_caret_001', Level.LEVEL3, async (done: Function) => {
 
       console.info('[search_caret_001] START');
@@ -65,12 +67,14 @@ export default function search_caret() {
       done();
     });
 
-    /* *
-      * @tc.number: SUB_ACE_UI_TEXT_NEWINTERFACE_0290
-      * @tc.name  : search_caret_002
-      * @tc.desc  : set caretPosition to 5
-      * @tc.level : Level 3
-      */
+    /**
+     * @tc.name   search_caret_002
+     * @tc.number SUB_ACE_UI_TEXT_NEWINTERFACE_0290
+     * @tc.desc   set caretPosition to 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('search_caret_002', Level.LEVEL3, async (done: Function) => {
 
       console.info('[search_caret_002] START');
@@ -87,12 +91,14 @@ export default function search_caret() {
       done();
     });
 
-    /* *
-      * @tc.number: SUB_ACE_UI_TEXT_NEWINTERFACE_0310
-      * @tc.name  : search_caret_003
-      * @tc.desc  : set caretPosition to 3
-      * @tc.level : Level 3
-      */
+    /**
+     * @tc.name   search_caret_003
+     * @tc.number SUB_ACE_UI_TEXT_NEWINTERFACE_0310
+     * @tc.desc   set caretPosition to 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('search_caret_003', Level.LEVEL3, async (done: Function) => {
 
       console.info('[search_caret_003] START');
@@ -109,12 +115,14 @@ export default function search_caret() {
       done();
     });
 
-    /* *
-      * @tc.number: SUB_ACE_UI_TEXT_NEWINTERFACE_0280
-      * @tc.name  : search_caret_004
-      * @tc.desc  : set caretPosition to 20
-      * @tc.level : Level 3
-      */
+    /**
+     * @tc.name   search_caret_004
+     * @tc.number SUB_ACE_UI_TEXT_NEWINTERFACE_0280
+     * @tc.desc   set caretPosition to 20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('search_caret_004', Level.LEVEL3, async (done: Function) => {
 
       console.info('[search_caret_004] START');
@@ -131,12 +139,14 @@ export default function search_caret() {
       done();
     });
 
-    /* *
-      * @tc.number: SUB_ACE_UI_TEXT_NEWINTERFACE_0300
-      * @tc.name  : search_caret_005
-      * @tc.desc  : set caretPosition to -1
-      * @tc.level : Level 3
-      */
+    /**
+     * @tc.name   search_caret_005
+     * @tc.number SUB_ACE_UI_TEXT_NEWINTERFACE_0300
+     * @tc.desc   set caretPosition to -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('search_caret_005', Level.LEVEL3, async (done: Function) => {
 
       console.info('[search_caret_005] START');

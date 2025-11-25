@@ -46,12 +46,12 @@ export default function ActsGzipDecompressionTest() {
     })
 
     /**
-     * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4000
-     * @tc.name       : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4000
-     * @tc.desc       : test gzsetparams correct return value
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4000
+     * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4000
+     * @tc.desc   test gzsetparams correct return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "==================SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4000 start==================");
@@ -85,12 +85,12 @@ export default function ActsGzipDecompressionTest() {
     })
 
     /**
-     * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4010
-     * @tc.name       : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4010
-     * @tc.desc       : test gzsetparams correct return value
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4010
+     * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4010
+     * @tc.desc   test gzsetparams correct return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4010', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "==================SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4010 start==================");
@@ -124,12 +124,12 @@ export default function ActsGzipDecompressionTest() {
     })
 
     /**
-     * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4020
-     * @tc.name       : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4020
-     * @tc.desc       : test gzsetparams correct return value
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4020
+     * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4020
+     * @tc.desc   test gzsetparams correct return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4020', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "==================SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4020 start==================");
@@ -163,12 +163,12 @@ export default function ActsGzipDecompressionTest() {
     })
 
     /**
-     * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4030
-     * @tc.name       : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4030
-     * @tc.desc       : test gzsetparams correct return value
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4030
+     * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4030
+     * @tc.desc   test gzsetparams correct return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4030', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "==================SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4030 start==================");
@@ -202,12 +202,12 @@ export default function ActsGzipDecompressionTest() {
     })
 
     /**
-     * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4040
-     * @tc.name       : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4040
-     * @tc.desc       : test gzsetparams correct return value
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4040
+     * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4040
+     * @tc.desc   test gzsetparams correct return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4040', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "==================SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4040 start==================");
@@ -241,12 +241,12 @@ export default function ActsGzipDecompressionTest() {
     })
 
     /**
-     * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4050
-     * @tc.name       : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4050
-     * @tc.desc       : test gzsetparams correct return value
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4050
+     * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4050
+     * @tc.desc   test gzsetparams correct return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4050', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "==================SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4050 start==================");
@@ -280,12 +280,12 @@ export default function ActsGzipDecompressionTest() {
     })
 
     /**
-     * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4060
-     * @tc.name       : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4060
-     * @tc.desc       : test gzsetparams correct return value
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4060
+     * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4060
+     * @tc.desc   test gzsetparams correct return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4060', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "==================SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4060 start==================");
@@ -319,16 +319,12 @@ export default function ActsGzipDecompressionTest() {
     })
 
     /**
-     *
-     *
-     *
-     *
-     * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4070
-     * @tc.name       : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4070
-     * @tc.desc       : test gzsetparams correct return value
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4070
+     * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4070
+     * @tc.desc   test gzsetparams correct return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4070', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "==================SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4070 start==================");
@@ -362,12 +358,12 @@ export default function ActsGzipDecompressionTest() {
     })
 
     /**
-     * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4080
-     * @tc.name       : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4080
-     * @tc.desc       : test gzsetparams correct return value
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4080
+     * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4080
+     * @tc.desc   test gzsetparams correct return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4080', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "==================SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4080 start==================");
@@ -401,12 +397,12 @@ export default function ActsGzipDecompressionTest() {
     })
 
     /**
-     * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4090
-     * @tc.name       : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4090
-     * @tc.desc       : test gzsetparams correct return value
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4090
+     * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4090
+     * @tc.desc   test gzsetparams correct return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4090', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "==================SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4090 start==================");
@@ -440,12 +436,12 @@ export default function ActsGzipDecompressionTest() {
     })
 
     /**
-     * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4100
-     * @tc.name       : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4100
-     * @tc.desc       : test gzsetparams correct return value
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4100
+     * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4100
+     * @tc.desc   test gzsetparams correct return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "==================SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4100 start==================");
@@ -479,12 +475,12 @@ export default function ActsGzipDecompressionTest() {
     })
 
     /**
-     * @tc.number     : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4110
-     * @tc.name       : SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4110
-     * @tc.desc       : test gzsetparams correct return value
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4110
+     * @tc.number SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4110
+     * @tc.desc   test gzsetparams correct return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4110', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "==================SUB_Bundlemanager_Bundle_Framework_GzipDecompressionAbilityTest_static_4110 start==================");

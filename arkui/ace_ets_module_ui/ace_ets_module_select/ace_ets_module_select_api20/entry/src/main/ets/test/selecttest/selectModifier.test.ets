@@ -44,14 +44,12 @@
      });
  
     /**
-     * @tc.number: testSelectModifier001
-     * @tc.name  : testSelectModifier001
-     * @tc.desc  : To test the textModifier interface fontSize value is '50vp'
-     *             To test the textModifier interface fontColor value is '#FFFF1235'
-     *             To test the textModifier interface maxLines value is '2'
-     * @tc.level : Level 0
-     * @tc.type  : TestType.FUNCTION
-     * @tc.size  : Size.MEDIUMTEST
+     * @tc.name   testSelectModifier001
+     * @tc.number testSelectModifier001
+     * @tc.desc   To test the textModifier interface fontSize value is '50vp'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSelectModifier001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[testSelectModifier001] START');
@@ -74,14 +72,12 @@
     })
 
     /**
-     * @tc.number: testSelectModifier002
-     * @tc.name  : testSelectModifier002
-     * @tc.desc  : To test the selectedOptionTextModifier interface selectedOptionFont value is '51.00vp'
-     *             To test the selectedOptionTextModifier interface selectedOptionFontColor value is '#FFFF1236'
-     *             To test the selectedOptionTextModifier interface selectedOptionMaxLines value is '3'
-     * @tc.level : Level 0
-     * @tc.type  : TestType.FUNCTION
-     * @tc.size  : Size.MEDIUMTEST
+     * @tc.name   testSelectModifier002
+     * @tc.number testSelectModifier002
+     * @tc.desc   To test the selectedOptionTextModifier interface selectedOptionFont value is '51.00vp'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSelectModifier002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[testSelectModifier002] START');
@@ -103,14 +99,12 @@
     })
 
     /**
-     * @tc.number: testSelectModifier003
-     * @tc.name  : testSelectModifier003
-     * @tc.desc  : To test the optionTextModifier interface optionFont value is '52.00vp'
-     *             To test the optionTextModifier interface optionFontColor value is '#FFFF1237'
-     *             To test the optionTextModifier interface optionMaxLines value is '4'
-     * @tc.level : Level 0
-     * @tc.type  : TestType.FUNCTION
-     * @tc.size  : Size.MEDIUMTEST
+     * @tc.name   testSelectModifier003
+     * @tc.number testSelectModifier003
+     * @tc.desc   To test the optionTextModifier interface optionFont value is '52.00vp'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSelectModifier003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[testSelectModifier003] START');
@@ -132,13 +126,12 @@
     })
 
     /**
-     * @tc.number: testSelectModifier004
-     * @tc.name  : testSelectModifier004
-     * @tc.desc  : To test the SymbolGlyphModifier interface symbolColorList value is '#FFFF1238, #FFFF1238, #FFFF1238'
-     *             To test the SymbolGlyphModifier interface symbolFontSize value is '53.00vp'
-     * @tc.level : Level 0
-     * @tc.type  : TestType.FUNCTION
-     * @tc.size  : Size.MEDIUMTEST
+     * @tc.name   testSelectModifier004
+     * @tc.number testSelectModifier004
+     * @tc.desc   To test the SymbolGlyphModifier interface symbolColorList value is '#FFFF1238, #FFFF1238, #FFFF1238'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSelectModifier004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[testSelectModifier004] START');
@@ -156,12 +149,12 @@
     })
 
     /**
-     * @tc.number: testSelectModifier005
-     * @tc.name  : testSelectModifier005
-     * @tc.desc  : To test the textModifier interface font value is undefined
-     * @tc.level : Level 2
-     * @tc.type  : TestType.FUNCTION
-     * @tc.size  : Size.MEDIUMTEST
+     * @tc.name   testSelectModifier005
+     * @tc.number testSelectModifier005
+     * @tc.desc   To test the textModifier interface font value is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSelectModifier005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('[testSelectModifier005] START');
@@ -175,12 +168,12 @@
     })
 
     /**
-     * @tc.number: testSelectModifier006
-     * @tc.name  : testSelectModifier006
-     * @tc.desc  : To test the selectedOptionTextModifier interface selectedOptionFont value is undefined
-     * @tc.level : Level 2
-     * @tc.type  : TestType.FUNCTION
-     * @tc.size  : Size.MEDIUMTEST
+     * @tc.name   testSelectModifier006
+     * @tc.number testSelectModifier006
+     * @tc.desc   To test the selectedOptionTextModifier interface selectedOptionFont value is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSelectModifier006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('[testSelectModifier006] START');
@@ -194,12 +187,12 @@
     })
 
     /**
-     * @tc.number: testSelectModifier007
-     * @tc.name  : testSelectModifier007
-     * @tc.desc  : To test the optionTextModifier interface optionFont value is undefined
-     * @tc.level : Level 2
-     * @tc.type  : TestType.FUNCTION
-     * @tc.size  : Size.MEDIUMTEST
+     * @tc.name   testSelectModifier007
+     * @tc.number testSelectModifier007
+     * @tc.desc   To test the optionTextModifier interface optionFont value is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSelectModifier007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('[testSelectModifier007] START');
@@ -213,12 +206,12 @@
     })
 
     /**
-     * @tc.number: testSelectModifier008
-     * @tc.name  : testSelectModifier008
-     * @tc.desc  : To test the arrowModifier interface font symbolFontSize is undefined
-     * @tc.level : Level 2
-     * @tc.type  : TestType.FUNCTION
-     * @tc.size  : Size.MEDIUMTEST
+     * @tc.name   testSelectModifier008
+     * @tc.number testSelectModifier008
+     * @tc.desc   To test the arrowModifier interface font symbolFontSize is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSelectModifier008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('[testSelectModifier008] START');

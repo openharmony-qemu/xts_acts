@@ -1774,5 +1774,200 @@ export default function nativeWindowTest() {
         expect(result).assertEqual(0);
         done();
       });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2200
+     * @tc.name       : testNativeWindowCleanBufferUsage
+     * @tc.desc       : testNativeWindowCleanBufferUsage
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testNativeWindowCleanBufferUsage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowCleanBufferUsage();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2300
+     * @tc.name       : testNativeWindowLockBufferNormal
+     * @tc.desc       : testNativeWindowLockBufferNormal
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 0
+     */
+    it('testNativeWindowLockBufferNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowLockBufferNormal();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2301
+     * @tc.name       : testNativeWindowUnlockAndFlushBufferAbnormal01
+     * @tc.desc       : testNativeWindowUnlockAndFlushBufferAbnormal01
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeWindowUnlockAndFlushBufferAbnormal01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowUnlockAndFlushBufferAbnormal01();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2302
+     * @tc.name       : testNativeWindowUnlockAndFlushBufferAbnormal02
+     * @tc.desc       : testNativeWindowUnlockAndFlushBufferAbnormal02
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeWindowUnlockAndFlushBufferAbnormal02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowUnlockAndFlushBufferAbnormal02();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2303
+     * @tc.name       : testNativeWindowUnlockAndFlushBufferAbnormal03
+     * @tc.desc       : testNativeWindowUnlockAndFlushBufferAbnormal03
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeWindowUnlockAndFlushBufferAbnormal03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowUnlockAndFlushBufferAbnormal03();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2304
+     * @tc.name       : testNativeWindowUnlockAndFlushBufferAbnormal04
+     * @tc.desc       : testNativeWindowUnlockAndFlushBufferAbnormal04
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeWindowUnlockAndFlushBufferAbnormal04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowUnlockAndFlushBufferAbnormal04();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2305
+     * @tc.name       : testNativeWindowLockBufferNull
+     * @tc.desc       : testNativeWindowLockBufferNull
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeWindowLockBufferNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowLockBufferNull();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2306
+     * @tc.name       : testNativeWindowUnLockAndFlushBufferNull
+     * @tc.desc       : testNativeWindowUnLockAndFlushBufferNull
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeWindowUnLockAndFlushBufferNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowUnLockAndFlushBufferNull();
+        expect(result).assertEqual(40001000);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2307
+     * @tc.name       : testNativeWindowLockBufferUpdateArea
+     * @tc.desc       : testNativeWindowLockBufferUpdateArea
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeWindowLockBufferUpdateArea', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowLockBufferUpdateArea();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2308
+     * @tc.name       : testNativeWindowLockBufferUpperLimit
+     * @tc.desc       : testNativeWindowLockBufferUpperLimit
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeWindowLockBufferUpperLimit', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowLockBufferUpperLimit();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2309
+     * @tc.name       : testNativeWindowLockBufferMultipleCalls
+     * @tc.desc       : testNativeWindowLockBufferMultipleCalls
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeWindowLockBufferMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowLockBufferMultipleCalls();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2310
+     * @tc.name       : testNativeWindowUnLockAndFlushBufferMultipleCalls
+     * @tc.desc       : testNativeWindowUnLockAndFlushBufferMultipleCalls
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeWindowUnLockAndFlushBufferMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowUnLockAndFlushBufferMultipleCalls();
+        expect(result).assertEqual(0);
+        done();
+      });
+
+    /**
+     * @tc.number     : SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_WINDOW_2311
+     * @tc.name       : testNativeWindowLockAndUnLockAndRequest
+     * @tc.desc       : testNativeWindowLockAndUnLockAndRequest
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 3
+     */
+    it('testNativeWindowLockAndUnLockAndRequest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let result: number = nativeWindow.testNativeWindowLockAndUnLockAndRequest();
+        expect(result).assertEqual(0);
+        done();
+      });
   })
 }

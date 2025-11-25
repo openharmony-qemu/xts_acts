@@ -41,12 +41,12 @@ export default function PolygonResourceTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_PolygonResourceTest_0100
-     * @tc.name: PolygonResourceTest_0100
-     * @tc.desc: PolygonAPI 
-     * @tc.level: Level 2
-     * @tc.type : Polygon
-     * @tc.size : PolygonTest
+     * @tc.name   PolygonResourceTest_0100
+     * @tc.number SUB_ARKUI_API_PolygonResourceTest_0100
+     * @tc.desc   PolygonAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PolygonResourceTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[PolygonResourceTest_0100] START');

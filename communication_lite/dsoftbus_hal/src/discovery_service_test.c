@@ -165,10 +165,12 @@ static BOOL DiscoveryServiceTestSuiteTearDown(void)
 }
 
 /**
- * @tc.name: PublishServiceTest001
- * @tc.desc: Verify wrong parameter
- * @tc.type: FUNC
- * @tc.require:
+ * @tc.name   PublishServiceTest001
+ * @tc.number PublishServiceTest001
+ * @tc.desc   Verify wrong parameter
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(DiscoveryServiceTestSuite, PublishServiceTest001, Function | MediumTest | Level0)
 {
@@ -223,10 +225,12 @@ LITE_TEST_CASE(DiscoveryServiceTestSuite, PublishServiceTest001, Function | Medi
 }
 
 /**
- * @tc.name: UnPublishServiceTest001
- * @tc.desc: Verify wrong parameter
- * @tc.type: FUNC
- * @tc.require:
+ * @tc.name   UnPublishServiceTest001
+ * @tc.number UnPublishServiceTest001
+ * @tc.desc   Verify wrong parameter
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(DiscoveryServiceTestSuite, UnPublishServiceTest001, Function | MediumTest | Level0)
 {
@@ -237,10 +241,12 @@ LITE_TEST_CASE(DiscoveryServiceTestSuite, UnPublishServiceTest001, Function | Me
 }
 
 /**
- * @tc.name: StartDiscoveryTest001
- * @tc.desc: Verify wrong parameter
- * @tc.type: FUNC
- * @tc.require:
+ * @tc.name   StartDiscoveryTest001
+ * @tc.number StartDiscoveryTest001
+ * @tc.desc   Verify wrong parameter
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(DiscoveryServiceTestSuite, StartDiscoveryTest001, Function | MediumTest | Level0)
 {
@@ -293,10 +299,12 @@ LITE_TEST_CASE(DiscoveryServiceTestSuite, StartDiscoveryTest001, Function | Medi
 }
 
 /**
- * @tc.name: StopDiscoveryTest001
- * @tc.desc: Verify wrong parameter
- * @tc.type: FUNC
- * @tc.require:
+ * @tc.name   StopDiscoveryTest001
+ * @tc.number StopDiscoveryTest001
+ * @tc.desc   Verify wrong parameter
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 LITE_TEST_CASE(DiscoveryServiceTestSuite, StopDiscoveryTest001, Function | MediumTest | Level0)
 {

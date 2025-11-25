@@ -46,12 +46,12 @@ export default function waterFlowStart2() {
     });
 
     /**
-     * @tc.number    WATERFLOWL_waterFlowStart2_0100
-     * @tc.name      waterFlowStart2_001
-     * @tc.desc      Slide the mouse wheel to slide to trigger the event
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   waterFlowStart2_0100
+     * @tc.number WATERFLOWL_waterFlowStart2_0100
+     * @tc.desc   Slide the mouse wheel to slide to trigger the event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('waterFlowStart2_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[waterFlowStart2_0100] START');

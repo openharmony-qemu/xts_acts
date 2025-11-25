@@ -43,12 +43,12 @@ export default function onTabUpdate() {
     });
 
     /**
-     * @tc.number    onTabUpdate_001
-     * @tc.name      onTabUpdate_0100
-     * @tc.desc      Listen for switchover events on the TabContent page.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   onTabUpdate_0100
+     * @tc.number onTabUpdate_001
+     * @tc.desc   Listen for switchover events on the TabContent page.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onTabUpdate_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[onTabUpdate_0100] START');

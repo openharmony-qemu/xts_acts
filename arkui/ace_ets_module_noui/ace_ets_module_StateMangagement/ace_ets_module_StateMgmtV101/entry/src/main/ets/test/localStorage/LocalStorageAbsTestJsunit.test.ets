@@ -46,12 +46,12 @@ export default function LocalStorageAbsTestJsunit() {
     });
 
     /**
-     * @tc.number    LocalStorageAbsTestJsunit_001
-     * @tc.name      LocalStorageAbsTestJsunit_001
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   LocalStorageAbsTestJsunit_001
+     * @tc.number LocalStorageAbsTestJsunit_001
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LocalStorageAbsTestJsunit_001', Level.LEVEL0, async (done: Function) => {
       console.info('[LocalStorageAbsTestJsunit_001] START');
@@ -108,12 +108,12 @@ export default function LocalStorageAbsTestJsunit() {
     });
 
     /**
-     * @tc.number    LocalStorageAbsTestJsunit_002
-     * @tc.name      LocalStorageAbsTestJsunit_002
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   LocalStorageAbsTestJsunit_002
+     * @tc.number LocalStorageAbsTestJsunit_002
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LocalStorageAbsTestJsunit_002', Level.LEVEL0, async (done: Function) => {
       console.info('[LocalStorageAbsTestJsunit_002] START');
@@ -126,12 +126,12 @@ export default function LocalStorageAbsTestJsunit() {
     });
 
     /**
-     * @tc.number    LocalStorageAbsTestJsunit_003
-     * @tc.name      LocalStorageAbsTestJsunit_003
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   LocalStorageAbsTestJsunit_003
+     * @tc.number LocalStorageAbsTestJsunit_003
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LocalStorageAbsTestJsunit_003', Level.LEVEL0, async (done: Function) => {
       console.info('[LocalStorageAbsTestJsunit_003] START');
@@ -144,12 +144,12 @@ export default function LocalStorageAbsTestJsunit() {
     });
 
     /**
-     * @tc.number    LocalStorageAbsTestJsunit_004
-     * @tc.name      LocalStorageAbsTestJsunit_004
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   LocalStorageAbsTestJsunit_004
+     * @tc.number LocalStorageAbsTestJsunit_004
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LocalStorageAbsTestJsunit_004', Level.LEVEL0, async (done: Function) => {
       console.info('[LocalStorageAbsTestJsunit_004] START');
@@ -162,12 +162,12 @@ export default function LocalStorageAbsTestJsunit() {
     });
 
     /**
-     * @tc.number    LocalStorageAbsTestJsunit_005
-     * @tc.name      LocalStorageAbsTestJsunit_005
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   LocalStorageAbsTestJsunit_005
+     * @tc.number LocalStorageAbsTestJsunit_005
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LocalStorageAbsTestJsunit_005', Level.LEVEL0, async (done: Function) => {
       console.info('[LocalStorageAbsTestJsunit_005] START');
@@ -180,12 +180,12 @@ export default function LocalStorageAbsTestJsunit() {
     });
 
     /**
-     * @tc.number    LocalStorageAbsTestJsunit_006
-     * @tc.name      LocalStorageAbsTestJsunit_006
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   LocalStorageAbsTestJsunit_006
+     * @tc.number LocalStorageAbsTestJsunit_006
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LocalStorageAbsTestJsunit_006', Level.LEVEL0, async (done: Function) => {
       console.info('[LocalStorageAbsTestJsunit_006] START');

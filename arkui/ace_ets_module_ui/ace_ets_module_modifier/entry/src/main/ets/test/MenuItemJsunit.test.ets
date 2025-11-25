@@ -42,12 +42,12 @@ export default function menuItemJsunit() {
 
 
     /**
+     * @tc.name   menuItemJsunit01
      * @tc.number menuItemJsunit01
-     * @tc.name Test the properties of components
-     * @tc.desc Set size values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set size values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('menuItemJsunit01', Level.LEVEL0, async (done: Function) => {
       console.info('[menuItemJsunit01] START');
@@ -60,12 +60,12 @@ export default function menuItemJsunit() {
     });
 
     /**
+     * @tc.name   menuItemJsunit02
      * @tc.number menuItemJsunit02
-     * @tc.name Test the properties of components
-     * @tc.desc Set contentFontColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set contentFontColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('menuItemJsunit02', Level.LEVEL0, async (done: Function) => {
       console.info('[menuItemJsunit02] START');
@@ -78,12 +78,12 @@ export default function menuItemJsunit() {
     });
 
     /**
+     * @tc.name   menuItemJsunit03
      * @tc.number menuItemJsunit03
-     * @tc.name Test the properties of components
-     * @tc.desc Set labelFont values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set labelFont values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('menuItemJsunit03', Level.LEVEL0, async (done: Function) => {
       console.info('[menuItemJsunit03] START');
@@ -96,12 +96,12 @@ export default function menuItemJsunit() {
     });
 
     /**
+     * @tc.name   menuItemJsunit04
      * @tc.number menuItemJsunit04
-     * @tc.name Test the properties of components
-     * @tc.desc Set labelFontColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set labelFontColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('menuItemJsunit04', Level.LEVEL0, async (done: Function) => {
       console.info('[menuItemJsunit04] START');
@@ -114,12 +114,12 @@ export default function menuItemJsunit() {
     });
 
     /**
+     * @tc.name   menuItemJsunit05
      * @tc.number menuItemJsunit05
-     * @tc.name Test the properties of components
-     * @tc.desc Set attribute values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set attribute values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('menuItemJsunit05', Level.LEVEL0, async (done: Function) => {
       console.info('[menuItemJsunit05] START');
@@ -132,12 +132,12 @@ export default function menuItemJsunit() {
     });
 
     /**
+     * @tc.name   menuItemJsunit06
      * @tc.number menuItemJsunit06
-     * @tc.name Test the properties of components
-     * @tc.desc Set attribute values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set attribute values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('menuItemJsunit06', Level.LEVEL0, async (done: Function) => {
       console.info('[menuItemJsunit06] START');
@@ -150,12 +150,12 @@ export default function menuItemJsunit() {
     });
 
     /**
+     * @tc.name   menuItemJsunit07
      * @tc.number menuItemJsunit07
-     * @tc.name Test the properties of components
-     * @tc.desc Change labelFontColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change labelFontColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('menuItemJsunit07', Level.LEVEL0, async (done: Function) => {
 

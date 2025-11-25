@@ -119,9 +119,12 @@ static int32_t TestValue()
 }
 
 /**
- * @tc.name: HksBnExpModTest.HksBnExpModTest001
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @tc.name   HksBnExpModTest001
+ * @tc.number HksBnExpModTest001
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(HksBnExpModTest, HksBnExpModTest001, Level1)
 {

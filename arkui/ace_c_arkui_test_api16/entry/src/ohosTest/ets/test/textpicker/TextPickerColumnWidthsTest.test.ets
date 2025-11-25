@@ -30,14 +30,14 @@ export default function textPickerTest(){
       done();
     })
 
-    /*
-     * @tc.number: TestTextPickerColumnWidths001
-     * @tc.name: TestTextPickerColumnWidths001
-     * @tc.desc: testing width for textPicker with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-      */
+    /**
+     * @tc.name   TestTextPickerColumnWidths001
+     * @tc.number TestTextPickerColumnWidths001
+     * @tc.desc   testing width for textPicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestTextPickerColumnWidths001', Level.LEVEL1, async (done: Function) => {
       console.info('TestTextPickerColumnWidths001 START');
       let PAGE_TAG = 'TextPickerColumnWidthsTest';
@@ -59,13 +59,13 @@ export default function textPickerTest(){
       done();
     })
 
-    /*
-       * @tc.number: TestTextPickerColumnWidths002
-       * @tc.name: TestTextPickerColumnWidths002
-       * @tc.desc: testing width for textPicker with outlier value
-       * @tc.size: MediumTest
-       * @tc.type: Function
-       * @tc.level: Level 1
+    /**
+     * @tc.name   TestTextPickerColumnWidths002
+     * @tc.number TestTextPickerColumnWidths002
+     * @tc.desc   testing width for textPicker with outlier value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestTextPickerColumnWidths002', Level.LEVEL1, async (done: Function) => {
       console.info('TestTextPickerColumnWidths002 START');
@@ -87,14 +87,14 @@ export default function textPickerTest(){
       done();
     })
 
-    /*
-      * @tc.number: TestTextPickerColumnWidths003
-      * @tc.name: TestTextPickerColumnWidths003
-      * @tc.desc: testing width for textPicker with normal value
-      * @tc.size: MediumTest
-      * @tc.type: Function
-      * @tc.level: Level 1
-      */
+    /**
+     * @tc.name   TestTextPickerColumnWidths003
+     * @tc.number TestTextPickerColumnWidths003
+     * @tc.desc   testing width for textPicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestTextPickerColumnWidths003', Level.LEVEL1, async (done: Function) => {
       console.info('TestTextPickerColumnWidths003 START');
       let PAGE_TAG = 'TextPickerColumnWidthsTest';

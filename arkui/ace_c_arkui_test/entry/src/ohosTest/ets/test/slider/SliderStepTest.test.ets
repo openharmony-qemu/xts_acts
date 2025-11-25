@@ -26,66 +26,66 @@ export default function sliderStepTest() {
       done();
     });
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_SLIDER_STEP_0100
-    * @tc.name: testSliderStep001
-    * @tc.desc: testing step for slider with default value
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+    /**
+     * @tc.name   testSliderStep001
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_STEP_0100
+     * @tc.desc   testing step for slider with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSliderStep001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderStep001()).assertEqual(0)
       done()
     })
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_SLIDER_STEP_0200
-    * @tc.name: testSliderStep002
-    * @tc.desc: testing step for slider with normal value
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+    /**
+     * @tc.name   testSliderStep002
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_STEP_0200
+     * @tc.desc   testing step for slider with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSliderStep002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderStep002()).assertEqual(0)
       done()
     })
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_SLIDER_STEP_0300
-    * @tc.name: testSliderStep003
-    * @tc.desc: testing step for slider with negative value
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 2
-    */
+    /**
+     * @tc.name   testSliderStep003
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_STEP_0300
+     * @tc.desc   testing step for slider with negative value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSliderStep003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderStep003()).assertEqual(0)
       done()
     })
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_SLIDER_STEP_0400
-    * @tc.name: testSliderStep004
-    * @tc.desc: testing step for slider with abnormal value
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 2
-    */
+    /**
+     * @tc.name   testSliderStep004
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_STEP_0400
+     * @tc.desc   testing step for slider with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSliderStep004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderStep004()).assertEqual(0)
       done()
     })
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_SLIDER_STEP_0500
-    * @tc.name: testSliderStep005
-    * @tc.desc: testing step for slider with value greater than 100
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 2
-    */
+    /**
+     * @tc.name   testSliderStep005
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_STEP_0500
+     * @tc.desc   testing step for slider with value greater than 100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSliderStep005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderStep005()).assertEqual(0)
       done()

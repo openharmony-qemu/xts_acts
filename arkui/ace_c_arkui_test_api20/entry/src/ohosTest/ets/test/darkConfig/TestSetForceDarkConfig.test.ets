@@ -25,13 +25,13 @@ export default function TestSetForceDarkConfig(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TestSetForceDarkConfig_0100
-     * @tc.name       : TestSetForceDarkConfig_001
-     * @tc.desc       : Test Sets the inverse color algorithm for components and instances.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   TestSetForceDarkConfig_001
+     * @tc.number SUB_ARKUI_CAPI_TestSetForceDarkConfig_0100
+     * @tc.desc   Test Sets the inverse color algorithm for components and instances.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestSetForceDarkConfig_001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.TestSetForceDarkConfig()).assertEqual(0)

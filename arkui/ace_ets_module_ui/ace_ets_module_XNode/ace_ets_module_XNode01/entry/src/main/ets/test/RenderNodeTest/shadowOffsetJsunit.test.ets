@@ -42,12 +42,12 @@ export default function shadowOffsetJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ACE_RENDERNODE_SHADOWOFFSET_0100
-     * @tc.name : shadowOffsetJsunit_0100
-     * @tc.desc : get shadowOffset
-     * @tc.level : Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   shadowOffsetJsunit_0100
+     * @tc.number SUB_ACE_RENDERNODE_SHADOWOFFSET_0100
+     * @tc.desc   get shadowOffset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('shadowOffsetJsunit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[shadowOffsetJsunit_0100] START');

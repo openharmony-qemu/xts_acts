@@ -25,14 +25,14 @@ export default function datePickerEnableHapticFeedbackTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_DATEPICKER_ENABLEHAPTICFEEDBACK_0100
-    * @tc.name       : testDatePickerEnableHapticFeedback001
-    * @tc.desc       : testing Date Picker EnableHapticFeedback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   TestDatePickerEnableHapticFeedback001
+     * @tc.number SUB_ARKUI_CAPI_DATEPICKER_ENABLEHAPTICFEEDBACK_0100
+     * @tc.desc   testing Date Picker EnableHapticFeedback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestDatePickerEnableHapticFeedback001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('TestDatePickerEnableHapticFeedback001 START');
       let PAGE_TAG = 'TextPickerColumnWidthsTest';
@@ -47,14 +47,14 @@ export default function datePickerEnableHapticFeedbackTest() {
       done();
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_DATEPICKER_ENABLEHAPTICFEEDBACK_0200
-    * @tc.name       : testDatePickerEnableHapticFeedback002
-    * @tc.desc       : testing Date Picker EnableHapticFeedback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   TestDatePickerEnableHapticFeedback002
+     * @tc.number SUB_ARKUI_CAPI_DATEPICKER_ENABLEHAPTICFEEDBACK_0200
+     * @tc.desc   testing Date Picker EnableHapticFeedback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestDatePickerEnableHapticFeedback002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('TestDatePickerEnableHapticFeedback002 START');
       let PAGE_TAG = 'DatePickerEnableHapticFeedback';
@@ -69,14 +69,14 @@ export default function datePickerEnableHapticFeedbackTest() {
       done();
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_DATEPICKER_ENABLEHAPTICFEEDBACK_0300
-    * @tc.name       : testDatePickerEnableHapticFeedback003
-    * @tc.desc       : testing Date Picker EnableHapticFeedback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   TestDatePickerEnableHapticFeedback003
+     * @tc.number SUB_ARKUI_CAPI_DATEPICKER_ENABLEHAPTICFEEDBACK_0300
+     * @tc.desc   testing Date Picker EnableHapticFeedback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TestDatePickerEnableHapticFeedback003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('TestDatePickerEnableHapticFeedback003 START');
       let PAGE_TAG = 'DatePickerEnableHapticFeedback';

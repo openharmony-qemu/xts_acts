@@ -40,12 +40,12 @@ export default function graphicGetInterfaceTest() {
       done();
     });
     /**
-     * @tc.number    graphicTestInterface
-     * @tc.name      graphicTestInterfaceTest_0100
-     * @tc.desc      setOvalShape
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   graphicTestInterfaceTest_0100
+     * @tc.number graphicTestInterface
+     * @tc.desc   setOvalShape
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('graphicTestInterfaceTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('graphicTestInterfaceTest_0100 START');

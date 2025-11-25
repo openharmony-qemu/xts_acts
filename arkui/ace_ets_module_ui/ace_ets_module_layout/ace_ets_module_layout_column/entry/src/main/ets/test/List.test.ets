@@ -54,6 +54,7 @@ import ColumnSetFlexShinkNone_SubChange from './ColumnTest/subComponentChanged/C
 import ColumnSetVisibility_SubChange from './ColumnTest/subComponentChanged/ColumnSetVisibility_SubChange.test.ets';
 import enmusHorizontalAlignJsunit from './ColumnTest/EnmusHorizontalAlignJsunit.test';
 import columnJsunit from './ColumnTest/ColumnJsunit.test';
+import ColumnJsunitTest2 from './ColumnTest/ColumnJsunitTest2.test';
 import ColumnReverseTest from './Column/ColumnReverseTest.test.ets'
 import APIremoveGestureByTag from './Column/APIremoveGestureByTag.test'
 import APIaccessibilityTextHint from './Column/APIaccessibilityTextHint.test'
@@ -106,6 +107,7 @@ export default function testsuite() {
   ColumnSetVisibility_SubChange()
   enmusHorizontalAlignJsunit()
   columnJsunit()
+  ColumnJsunitTest2();
   ColumnReverseTest();
   APIremoveGestureByTag();
   APIaccessibilityTextHint();

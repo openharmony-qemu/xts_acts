@@ -65,12 +65,12 @@ export default function alphabetIndexerThemeTest() {
       }
     })
     /**
-     * @tc.number    : ActsAlphabetIndexerThemeColors_0100
-     * @tc.name      : ActsAlphabetIndexerThemeColors_0100
-     * @tc.desc      : Check system colors values of the AlphabetIndexer component
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsAlphabetIndexerThemeColors_0100
+     * @tc.number ActsAlphabetIndexerThemeColors_0100
+     * @tc.desc   Check system colors values of the AlphabetIndexer component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it(`ActsAlphabetIndexerThemeColors_0100`, Level.LEVEL2, () => {
       const CASE: string = `ActsAlphabetIndexerThemeColors_0100`;
@@ -91,13 +91,13 @@ export default function alphabetIndexerThemeTest() {
       expect(selectedBackgroundColor).assertEqual(colorValues?.get(`compEmphasizeSecondary`));
       console.info(`${SUITE} ${CASE} END`);
     })
-    /** 
-     * @tc.number    : ActsAlphabetIndexerThemeColors_0200
-     * @tc.name      : ActsAlphabetIndexerThemeColors_0200
-     * @tc.desc      : Check custom colors values of the AlphabetIndexer component
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+    /**
+     * @tc.name   ActsAlphabetIndexerThemeColors_0200
+     * @tc.number ActsAlphabetIndexerThemeColors_0200
+     * @tc.desc   Check custom colors values of the AlphabetIndexer component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it(`ActsAlphabetIndexerThemeColors_0200`, Level.LEVEL2, () => {
       const CASE: string = `ActsAlphabetIndexerThemeColors_0200`;
@@ -119,14 +119,13 @@ export default function alphabetIndexerThemeTest() {
       changeTheme = true;
       console.info(`${SUITE} ${CASE} END`);
     })
-     /** 
-     * @tc.number    : ActsAlphabetIndexerThemeColors_0300
-     * @tc.name      : ActsAlphabetIndexerThemeColors_0300
-     * @tc.desc      : Check system colors values of the AlphabetIndexer component
-     *                 after change theme
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+    /**
+     * @tc.name   ActsAlphabetIndexerThemeColors_0300
+     * @tc.number ActsAlphabetIndexerThemeColors_0300
+     * @tc.desc   Check system colors values of the AlphabetIndexer component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it(`ActsAlphabetIndexerThemeColors_0300`, Level.LEVEL0, async () => {
       const CASE: string = `ActsAlphabetIndexerThemeColors_0300`;

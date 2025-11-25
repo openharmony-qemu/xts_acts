@@ -26,39 +26,39 @@ export default function textFontStyleTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_FONTSTYLE_0100
-     * @tc.name       : testTextFontStyle001
-     * @tc.desc       : testing fontStyle for text with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextFontStyle001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_FONTSTYLE_0100
+     * @tc.desc   testing fontStyle for text with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextFontStyle001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextFontStyle001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_FONTSTYLE_0200
-     * @tc.name       : testTextFontStyle002
-     * @tc.desc       : testing fontStyle for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextFontStyle002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_FONTSTYLE_0200
+     * @tc.desc   testing fontStyle for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextFontStyle002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextFontStyle002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_FONTSTYLE_0300
-     * @tc.name       : testTextFontStyle003
-     * @tc.desc       : testing fontStyle for text with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testTextFontStyle003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_FONTSTYLE_0300
+     * @tc.desc   testing fontStyle for text with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextFontStyle003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextFontStyle003()).assertEqual(0)

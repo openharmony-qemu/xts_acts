@@ -45,9 +45,12 @@ export default function pushNamedRoute8() {
     });
 
     /**
+     * @tc.name   pushNamedRoute8_0100
      * @tc.number pushNamedRoute8_0100
-     * @tc.name testButton
-     * @tc.desc
+     * @tc.desc   pushNamedRoute8_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('pushNamedRoute8_0100', Level.LEVEL2, async (done: Function) => {
       console.info('pushNamedRoute8_0100 START');

@@ -41,12 +41,12 @@ export default function postFrameCallbackTest() {
     });
 
     /**
-     * @tc.number    postFrameCallbackTest_0100
-     * @tc.name      postFrameCallbackTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   postFrameCallbackTest_0100
+     * @tc.number postFrameCallbackTest_0100
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('postFrameCallbackTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('postFrameCallbackTest_0100 START');
@@ -64,12 +64,12 @@ export default function postFrameCallbackTest() {
       done();
     });
     /**
-     * @tc.number    postFrameCallbackTest_0200
-     * @tc.name      postFrameCallbackTest_0200
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   postFrameCallbackTest_0200
+     * @tc.number postFrameCallbackTest_0200
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('postFrameCallbackTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('postFrameCallbackTest_0200 START');

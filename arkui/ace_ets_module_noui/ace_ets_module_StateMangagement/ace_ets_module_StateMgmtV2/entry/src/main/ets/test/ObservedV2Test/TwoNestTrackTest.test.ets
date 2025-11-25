@@ -42,12 +42,12 @@ export default function TwoNestTrackTest() {
       done();
     });
     /**
-     * @tc.number    TwoNestTrack
-     * @tc.name      TwoNestTrackTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TwoNestTrackTest_0100
+     * @tc.number TwoNestTrack
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TwoNestTrackTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('TwoNestTrackTest_0100 START');

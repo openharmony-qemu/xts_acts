@@ -26,91 +26,91 @@ export default function textWorkBreakTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_WORD_BREAK_0001
-     * @tc.name       : testTextWordBreak001
-     * @tc.desc       : testing wordBreak for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextWordBreak001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_WORD_BREAK_0001
+     * @tc.desc   testing wordBreak for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextWordBreak001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextWordBreak001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_WORD_BREAK_0002
-     * @tc.name       : testTextWordBreak002
-     * @tc.desc       : testing wordBreak for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextWordBreak002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_WORD_BREAK_0002
+     * @tc.desc   testing wordBreak for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextWordBreak002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextWordBreak002()).assertEqual(0)
       done()
     })
     
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_WORD_BREAK_0003
-     * @tc.name       : testTextWordBreak003
-     * @tc.desc       : testing wordBreak for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextWordBreak003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_WORD_BREAK_0003
+     * @tc.desc   testing wordBreak for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextWordBreak003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextWordBreak003()).assertEqual(0)
       done()
     })
     
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_WORD_BREAK_0004
-     * @tc.name       : testTextWordBreak004
-     * @tc.desc       : testing wordBreak for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextWordBreak004
+     * @tc.number SUB_ARKUI_CAPI_TEXT_WORD_BREAK_0004
+     * @tc.desc   testing wordBreak for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextWordBreak004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextWordBreak004()).assertEqual(0)
       done()
     })
     
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_WORD_BREAK_0005
-     * @tc.name       : testTextWordBreak005
-     * @tc.desc       : testing wordBreak for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextWordBreak005
+     * @tc.number SUB_ARKUI_CAPI_TEXT_WORD_BREAK_0005
+     * @tc.desc   testing wordBreak for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextWordBreak005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextWordBreak005()).assertEqual(0)
       done()
     })
     
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_WORD_BREAK_0006
-     * @tc.name       : testTextWordBreak006
-     * @tc.desc       : testing wordBreak for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextWordBreak006
+     * @tc.number SUB_ARKUI_CAPI_TEXT_WORD_BREAK_0006
+     * @tc.desc   testing wordBreak for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextWordBreak006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextWordBreak006()).assertEqual(0)
       done()
     })
     
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_WORD_BREAK_0007
-     * @tc.name       : testTextWordBreak007
-     * @tc.desc       : testing wordBreak for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextWordBreak007
+     * @tc.number SUB_ARKUI_CAPI_TEXT_WORD_BREAK_0007
+     * @tc.desc   testing wordBreak for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextWordBreak007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextWordBreak007()).assertEqual(0)

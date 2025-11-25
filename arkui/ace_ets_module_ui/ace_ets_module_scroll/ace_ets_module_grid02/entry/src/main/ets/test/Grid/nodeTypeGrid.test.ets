@@ -46,14 +46,14 @@ export default function nodeTypeGrid() {
       console.info(" nodeTypeGrid after each called");
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TYPENODE_GRID_0100
-    * @tc.name  : nodeTypeGrid_0100
-    * @tc.desc  : Grid type FrameNode node
-    * @tc.level : Level 1
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   nodeTypeGrid_0100
+     * @tc.number SUB_ACE_TYPENODE_GRID_0100
+     * @tc.desc   Grid type FrameNode node
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('nodeTypeGrid_0100', Level.LEVEL1, async (done: Function) => {
       console.info('nodeTypeGrid_0100 START');
       await CommonFunc.sleep(1000);
@@ -68,14 +68,14 @@ export default function nodeTypeGrid() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TYPENODE_LISTITEM_0100
-    * @tc.name  : nodeTypeGrid_0200
-    * @tc.desc  : GridItem type FrameNode node
-    * @tc.level : Level 1
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   nodeTypeGrid_0200
+     * @tc.number SUB_ACE_TYPENODE_LISTITEM_0100
+     * @tc.desc   GridItem type FrameNode node
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('nodeTypeGrid_0200', Level.LEVEL1, async (done: Function) => {
       console.info('nodeTypeGrid_0200 START');
       await CommonFunc.sleep(1000);

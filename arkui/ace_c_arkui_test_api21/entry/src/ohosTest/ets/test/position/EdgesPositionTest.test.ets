@@ -48,12 +48,12 @@ export default function EdgesPositionTest() {
     });
 
     /**
-     * @tc.number     EdgesPositionTest_0100
-     * @tc.name       EdgesPositionTest_0100
-     * @tc.desc       Test EdgesPosition: set single value.
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   EdgesPositionTest_0100
+     * @tc.number EdgesPositionTest_0100
+     * @tc.desc   Test EdgesPosition: set single value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('EdgesPositionTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[EdgesPositionTest_0100] START');
@@ -173,12 +173,12 @@ export default function EdgesPositionTest() {
     });
 
     /**
-     * @tc.number     EdgesPositionTest_0200
-     * @tc.name       EdgesPositionTest_0200
-     * @tc.desc       Test EdgesPosition: set single value, the value is negative.
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   EdgesPositionTest_0200
+     * @tc.number EdgesPositionTest_0200
+     * @tc.desc   Test EdgesPosition: set single value, the value is negative.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('EdgesPositionTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[EdgesPositionTest_0200] START');

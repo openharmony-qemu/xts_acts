@@ -43,12 +43,12 @@ export default function ObjectFitTest() {
     });
     
     /**
-     * @tc.number    ObjectFitTest_0010
-     * @tc.name      ObjectFitTest_0010
-     * @tc.desc      set ImageAttachment ObjectFit: ImageFit.Auto
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+     * @tc.name   ObjectFitTest_0010
+     * @tc.number ObjectFitTest_0010
+     * @tc.desc   set ImageAttachment ObjectFit: ImageFit.Auto
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ObjectFitTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('[ObjectFitTest_0010] START');
@@ -69,12 +69,12 @@ export default function ObjectFitTest() {
     });
 
     /**
-     * @tc.number    ObjectFitTest_0020
-     * @tc.name      ObjectFitTest_0020
-     * @tc.desc      set ImageAttachment ObjectFit: ImageFit.Contain
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ObjectFitTest_0020
+     * @tc.number ObjectFitTest_0020
+     * @tc.desc   set ImageAttachment ObjectFit: ImageFit.Contain
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ObjectFitTest_0020', Level.LEVEL2, async (done: Function) => {
       console.info('[ObjectFitTest_0020] START');
@@ -98,12 +98,12 @@ export default function ObjectFitTest() {
     });
 
     /**
-     * @tc.number    ObjectFitTest_0030
-     * @tc.name      ObjectFitTest_0030
-     * @tc.desc      test ImageAttachment ObjectFit: ImageFit.Cover
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ObjectFitTest_0030
+     * @tc.number ObjectFitTest_0030
+     * @tc.desc   test ImageAttachment ObjectFit: ImageFit.Cover
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ObjectFitTest_0030', Level.LEVEL2, async (done: Function) => {
       console.info('[ObjectFitTest_0030] START');
@@ -127,12 +127,12 @@ export default function ObjectFitTest() {
     });
 
     /**
-     * @tc.number    ObjectFitTest_0040
-     * @tc.name      ObjectFitTest_0040
-     * @tc.desc      test ImageAttachment ObjectFit: ImageFit.Fill
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ObjectFitTest_0040
+     * @tc.number ObjectFitTest_0040
+     * @tc.desc   test ImageAttachment ObjectFit: ImageFit.Fill
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ObjectFitTest_0040', Level.LEVEL2, async (done: Function) => {
       console.info('[ObjectFitTest_0040] START');
@@ -156,12 +156,12 @@ export default function ObjectFitTest() {
     });
 
     /**
-     * @tc.number    ObjectFitTest_0050
-     * @tc.name      ObjectFitTest_0050
-     * @tc.desc      test ImageAttachment ObjectFit: ImageFit.ScaleDown
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ObjectFitTest_0050
+     * @tc.number ObjectFitTest_0050
+     * @tc.desc   test ImageAttachment ObjectFit: ImageFit.ScaleDown
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ObjectFitTest_0050', Level.LEVEL2, async (done: Function) => {
       console.info('[ObjectFitTest_0050] START');
@@ -185,12 +185,12 @@ export default function ObjectFitTest() {
     });
 
     /**
-     * @tc.number    ObjectFitTest_0060
-     * @tc.name      ObjectFitTest_0060
-     * @tc.desc      test ImageAttachment ObjectFit: ImageFit.None
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ObjectFitTest_0060
+     * @tc.number ObjectFitTest_0060
+     * @tc.desc   test ImageAttachment ObjectFit: ImageFit.None
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ObjectFitTest_0060', Level.LEVEL2, async (done: Function) => {
       console.info('[ObjectFitTest_0060] START');
@@ -214,12 +214,12 @@ export default function ObjectFitTest() {
     });
 
     /**
-     * @tc.number    ObjectFitTest_0070
-     * @tc.name      ObjectFitTest_0070
-     * @tc.desc      test ImageAttachment ObjectFit: ImageFit.TOP_START
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ObjectFitTest_0070
+     * @tc.number ObjectFitTest_0070
+     * @tc.desc   test ImageAttachment ObjectFit: ImageFit.TOP_START
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ObjectFitTest_0070', Level.LEVEL2, async (done: Function) => {
       console.info('[ObjectFitTest_0070] START');
@@ -243,12 +243,12 @@ export default function ObjectFitTest() {
     });
 
     /**
-     * @tc.number    ObjectFitTest_0080
-     * @tc.name      ObjectFitTest_0080
-     * @tc.desc      test ImageAttachment ObjectFit: ImageFit.Fill
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ObjectFitTest_0080
+     * @tc.number ObjectFitTest_0080
+     * @tc.desc   test ImageAttachment ObjectFit: ImageFit.Fill
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ObjectFitTest_0080', Level.LEVEL2, async (done: Function) => {
       console.info('[ObjectFitTest_0080] START');
@@ -272,12 +272,12 @@ export default function ObjectFitTest() {
     });
 
     /**
-     * @tc.number    ObjectFitTest_0090
-     * @tc.name      ObjectFitTest_0090
-     * @tc.desc      test ImageAttachment ObjectFit: ImageFit.TOP_END
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ObjectFitTest_0090
+     * @tc.number ObjectFitTest_0090
+     * @tc.desc   test ImageAttachment ObjectFit: ImageFit.TOP_END
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ObjectFitTest_0090', Level.LEVEL2, async (done: Function) => {
       console.info('[ObjectFitTest_0090] START');
@@ -301,12 +301,12 @@ export default function ObjectFitTest() {
     });
 
     /**
-     * @tc.number    ObjectFitTest_0100
-     * @tc.name      ObjectFitTest_0100
-     * @tc.desc      test ImageAttachment ObjectFit: ImageFit.START
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ObjectFitTest_0100
+     * @tc.number ObjectFitTest_0100
+     * @tc.desc   test ImageAttachment ObjectFit: ImageFit.START
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ObjectFitTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[ObjectFitTest_0100] START');
@@ -330,12 +330,12 @@ export default function ObjectFitTest() {
     });
 
     /**
-     * @tc.number    ObjectFitTest_0110
-     * @tc.name      ObjectFitTest_0110
-     * @tc.desc      test ImageAttachment ObjectFit: ImageFit.CENTER
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ObjectFitTest_0110
+     * @tc.number ObjectFitTest_0110
+     * @tc.desc   test ImageAttachment ObjectFit: ImageFit.CENTER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ObjectFitTest_0110', Level.LEVEL2, async (done: Function) => {
       console.info('[ObjectFitTest_0110] START');
@@ -359,12 +359,12 @@ export default function ObjectFitTest() {
     });
 
     /**
-     * @tc.number    ObjectFitTest_0120
-     * @tc.name      ObjectFitTest_0120
-     * @tc.desc      test ImageAttachment ObjectFit: ImageFit.END
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ObjectFitTest_0120
+     * @tc.number ObjectFitTest_0120
+     * @tc.desc   test ImageAttachment ObjectFit: ImageFit.END
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ObjectFitTest_0120', Level.LEVEL2, async (done: Function) => {
       console.info('[ObjectFitTest_0120] START');
@@ -388,12 +388,12 @@ export default function ObjectFitTest() {
     });
 
     /**
-     * @tc.number    ObjectFitTest_0130
-     * @tc.name      ObjectFitTest_0130
-     * @tc.desc      test ImageAttachment ObjectFit: ImageFit.BOTTOM_START
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ObjectFitTest_0130
+     * @tc.number ObjectFitTest_0130
+     * @tc.desc   test ImageAttachment ObjectFit: ImageFit.BOTTOM_START
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ObjectFitTest_0130', Level.LEVEL2, async (done: Function) => {
       console.info('[ObjectFitTest_0130] START');
@@ -417,12 +417,12 @@ export default function ObjectFitTest() {
     });
 
     /**
-     * @tc.number    ObjectFitTest_0140
-     * @tc.name      ObjectFitTest_0140
-     * @tc.desc      test ImageAttachment ObjectFit: ImageFit.BOTTOM
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ObjectFitTest_0140
+     * @tc.number ObjectFitTest_0140
+     * @tc.desc   test ImageAttachment ObjectFit: ImageFit.BOTTOM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ObjectFitTest_0140', Level.LEVEL2, async (done: Function) => {
       console.info('[ObjectFitTest_0140] START');
@@ -446,12 +446,12 @@ export default function ObjectFitTest() {
     });
 
     /**
-     * @tc.number    ObjectFitTest_0150
-     * @tc.name      ObjectFitTest_0150
-     * @tc.desc      test ImageAttachment ObjectFit: ImageFit.BOTTOM_END
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ObjectFitTest_0150
+     * @tc.number ObjectFitTest_0150
+     * @tc.desc   test ImageAttachment ObjectFit: ImageFit.BOTTOM_END
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ObjectFitTest_0150', Level.LEVEL2, async (done: Function) => {
       console.info('[ObjectFitTest_0150] START');

@@ -60,12 +60,14 @@ export default function scrollByJsunit() {
       router.clear()
       console.info("Grid_scrollToIndex1 after each called");
     });
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_SR000IFDKV_0001
-    * @tc.name  : scrollToJsunit_0001
-    * @tc.desc  : Y-axis slide 90
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   scrollToJsunit_0001
+     * @tc.number SUB_ACE_TS_COMPONENT_SR000IFDKV_0001
+     * @tc.desc   Y-axis slide 90
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('scrollToJsunit_0001',  Level.LEVEL0, async (done: Function) => {
       console.info('[scrollToJsunit_0001] START');
       await CommonFunc.sleep(1000);
@@ -90,12 +92,14 @@ export default function scrollByJsunit() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_SR000IFDKV_0002
-    * @tc.name  : scrollToJsunit_0002
-    * @tc.desc  : The Y-axis and the X-axis slide to 0
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   scrollToJsunit_0002
+     * @tc.number SUB_ACE_TS_COMPONENT_SR000IFDKV_0002
+     * @tc.desc   The Y-axis and the X-axis slide to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('scrollToJsunit_0002',  Level.LEVEL0, async (done: Function) => {
       console.info('[scrollToJsunit_0002] START');
       await CommonFunc.sleep(1000);
@@ -119,13 +123,15 @@ export default function scrollByJsunit() {
       done();
     });
 
-    /* *
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000IFDKV_0003
-   * @tc.name  : scrollToJsunit_0003
-   * @tc.desc  : Neither the Y-axis nor the X-axis is sliding
-   * @tc.level : Level 2
-   */
 
+    /**
+     * @tc.name   scrollToJsunit_0003
+     * @tc.number scrollToJsunit_0003
+     * @tc.desc   scrollToJsunit_0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('scrollToJsunit_0003',  Level.LEVEL0, async (done: Function) => {
       console.info('[scrollToJsunit_0003] START');
       await CommonFunc.sleep(1000);
@@ -149,13 +155,15 @@ export default function scrollByJsunit() {
       done();
     });
 
-    /* *
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000IFDKV_0004
-   * @tc.name  : scrollToJsunit_0004
-   * @tc.desc  : Y-axis slip 100%
-   * @tc.level : Level 2
-   */
 
+    /**
+     * @tc.name   scrollToJsunit_0004
+     * @tc.number scrollToJsunit_0004
+     * @tc.desc   scrollToJsunit_0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('scrollToJsunit_0004',  Level.LEVEL0, async (done: Function) => {
       console.info('[scrollToJsunit_0004] START');
       await CommonFunc.sleep(1000);
@@ -180,13 +188,15 @@ export default function scrollByJsunit() {
       done();
     });
 
-    /* *
-     * @tc.number: SUB_ACE_TS_COMPONENT_SR000IFDKV_0005
-     * @tc.name  : scrollToJsunit_0005
-     * @tc.desc  : Y-axis slide 900
-     * @tc.level : Level 2
-     */
 
+    /**
+     * @tc.name   scrollToJsunit_0005
+     * @tc.number scrollToJsunit_0005
+     * @tc.desc   scrollToJsunit_0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('scrollToJsunit_0005',  Level.LEVEL0, async (done: Function) => {
       console.info('[scrollToJsunit_0005] START');
       await CommonFunc.sleep(1000);
@@ -208,13 +218,15 @@ export default function scrollByJsunit() {
       console.info('[scrollToJsunit_0005] END');
       done();
     });
-    /* *
-     * @tc.number: SUB_ACE_TS_COMPONENT_SR000IFDKV_0006
-     * @tc.name  : scrollToJsunit_0006
-     * @tc.desc  : Slide 270 on the Y-axis
-     * @tc.level : Level 2
-     */
 
+    /**
+     * @tc.name   scrollToJsunit_0006
+     * @tc.number scrollToJsunit_0006
+     * @tc.desc   scrollToJsunit_0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('scrollToJsunit_0006',  Level.LEVEL0, async (done: Function) => {
       console.info('[scrollToJsunit_0006] START');
       await CommonFunc.sleep(1000);
@@ -238,13 +250,15 @@ export default function scrollByJsunit() {
       done();
     });
 
-    /* *
-      * @tc.number: SUB_ACE_TS_COMPONENT_SR000IFDKV_0007
-      * @tc.name  : scrollToJsunit_0007
-      * @tc.desc  : Y-axis slide 'aa100%'
-      * @tc.level : Level 2
-      */
 
+    /**
+     * @tc.name   scrollToJsunit_0007
+     * @tc.number scrollToJsunit_0007
+     * @tc.desc   scrollToJsunit_0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('scrollToJsunit_0007',  Level.LEVEL0, async (done: Function) => {
       console.info('[scrollToJsunit_0007] START');
       await CommonFunc.sleep(1000);
@@ -267,14 +281,16 @@ export default function scrollByJsunit() {
       console.info('[scrollToJsunit_0007] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_SR000IFDKV_0008
-    * @tc.name  : scrollToJsunit_0008
-    * @tc.desc  : Y-axis slide 'aa'
-    * @tc.level : Level 2
-    */
 
 
+    /**
+     * @tc.name   scrollToJsunit_0008
+     * @tc.number scrollToJsunit_0008
+     * @tc.desc   scrollToJsunit_0008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('scrollToJsunit_0008',  Level.LEVEL0, async (done: Function) => {
       console.info('[scrollToJsunit_0008] START');
       await CommonFunc.sleep(1000);
@@ -297,14 +313,16 @@ export default function scrollByJsunit() {
       console.info('[scrollToJsunit_0008] END');
       done();
     });
-    /* *
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000IFDKV_0009
-   * @tc.name  : scrollToJsunit_0009
-   * @tc.desc  : The Y-axis slides undefined
-   * @tc.level : Level 2
-   */
 
 
+    /**
+     * @tc.name   scrollToJsunit_0009
+     * @tc.number scrollToJsunit_0009
+     * @tc.desc   scrollToJsunit_0009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('scrollToJsunit_0009',  Level.LEVEL0, async (done: Function) => {
       console.info('[scrollToJsunit_0009] START');
       await CommonFunc.sleep(1000);

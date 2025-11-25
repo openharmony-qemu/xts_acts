@@ -48,12 +48,12 @@ export default function TextClockNodeTest() {
     })
 
     /**
-     * @tc.number    TextClockNode0100
-     * @tc.name      TextClockNode0100
-     * @tc.desc      frameNode: createNodeTextClockToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextClockNode0100
+     * @tc.number TextClockNode0100
+     * @tc.desc   frameNode: createNodeTextClockToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TextClockNode0100', Level.LEVEL2, async (done: Function) => {
 

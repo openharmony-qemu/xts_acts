@@ -46,12 +46,14 @@ export default function RichEditorApi222() {
       console.info("RichEditorApi222 after each called");
     });
 
-    /*
-    * @tc.number      RichEditorApi222_002
-    * @tc.name        RichEditorApi222_002
-    * @tc.desc        RichEditorApi222 RichEditorSymbolSpanStyle test
-    * @tc.level       Level 2
-    */
+    /**
+     * @tc.name   RichEditorApi222_002
+     * @tc.number RichEditorApi222_002
+     * @tc.desc   RichEditorApi222 RichEditorSymbolSpanStyle test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RichEditorApi222_002', Level.LEVEL2, async (done: Function) => {
       console.info('[RichEditorApi222_002] START');
       await CommonFunc.sleep(1000);
@@ -70,12 +72,14 @@ export default function RichEditorApi222() {
       done();
     });
 
-    /*
-    * @tc.number      RichEditorApi222_001
-    * @tc.name        RichEditorApi222_001
-    * @tc.desc        RichEditorApi222 RichEditorResponseType test
-    * @tc.level       Level 2
-    */
+    /**
+     * @tc.name   RichEditorApi222_001
+     * @tc.number RichEditorApi222_001
+     * @tc.desc   RichEditorApi222 RichEditorResponseType test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RichEditorApi222_001', Level.LEVEL2, async (done: Function) => {
       console.info('[RichEditorApi222_001] START');
       await CommonFunc.sleep(1000);

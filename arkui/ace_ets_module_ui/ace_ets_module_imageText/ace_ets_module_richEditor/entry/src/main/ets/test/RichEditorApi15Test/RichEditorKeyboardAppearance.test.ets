@@ -42,12 +42,12 @@ export default function RichEditorKeyboardAppearanceTest() {
     });
     
     /**
-     * @tc.number    SUB_ACE_RichEditor_KeyboardAppearanceTest_0010
-     * @tc.name      RichEditorKeyboardAppearanceTest_0010
-     * @tc.desc      set RichEditor keyboardAppearance: NONE_IMMERSIVE
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+     * @tc.name   RichEditorKeyboardAppearanceTest_0010
+     * @tc.number SUB_ACE_RichEditor_KeyboardAppearanceTest_0010
+     * @tc.desc   set RichEditor keyboardAppearance: NONE_IMMERSIVE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditorKeyboardAppearanceTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('[RichEditorKeyboardAppearanceTest_0010] START');
@@ -61,12 +61,12 @@ export default function RichEditorKeyboardAppearanceTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RichEditor_KeyboardAppearanceTest_0020
-     * @tc.name      RichEditorKeyboardAppearanceTest_0020
-     * @tc.desc      set RichEditor keyboardAppearance: IMMERSIVE
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RichEditorKeyboardAppearanceTest_0020
+     * @tc.number SUB_ACE_RichEditor_KeyboardAppearanceTest_0020
+     * @tc.desc   set RichEditor keyboardAppearance: IMMERSIVE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditorKeyboardAppearanceTest_0020', Level.LEVEL2, async (done: Function) => {
       console.info('[RichEditorKeyboardAppearanceTest_0020] START');
@@ -80,12 +80,12 @@ export default function RichEditorKeyboardAppearanceTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RichEditor_KeyboardAppearanceTest_0030
-     * @tc.name      RichEditorKeyboardAppearanceTest_0030
-     * @tc.desc      set RichEditor keyboardAppearance: LIGHT_IMMERSIVE
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RichEditorKeyboardAppearanceTest_0030
+     * @tc.number SUB_ACE_RichEditor_KeyboardAppearanceTest_0030
+     * @tc.desc   set RichEditor keyboardAppearance: LIGHT_IMMERSIVE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditorKeyboardAppearanceTest_0030', Level.LEVEL2, async (done: Function) => {
       console.info('[RichEditorKeyboardAppearanceTest_0030] START');
@@ -99,12 +99,12 @@ export default function RichEditorKeyboardAppearanceTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RichEditor_KeyboardAppearanceTest_0040
-     * @tc.name      RichEditorKeyboardAppearanceTest_0040
-     * @tc.desc      set RichEditor keyboardAppearance: DARK_IMMERSIVE
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RichEditorKeyboardAppearanceTest_0040
+     * @tc.number SUB_ACE_RichEditor_KeyboardAppearanceTest_0040
+     * @tc.desc   set RichEditor keyboardAppearance: DARK_IMMERSIVE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditorKeyboardAppearanceTest_0040', Level.LEVEL2, async (done: Function) => {
       console.info('[RichEditorKeyboardAppearanceTest_0040] START');
@@ -118,12 +118,12 @@ export default function RichEditorKeyboardAppearanceTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RichEditor_KeyboardAppearanceTest_0050
-     * @tc.name      RichEditorKeyboardAppearanceTest_0050
-     * @tc.desc      test default value about RichEditor keyboardAppearance: NONE_IMMERSIVE
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RichEditorKeyboardAppearanceTest_0050
+     * @tc.number SUB_ACE_RichEditor_KeyboardAppearanceTest_0050
+     * @tc.desc   test default value about RichEditor keyboardAppearance: NONE_IMMERSIVE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditorKeyboardAppearanceTest_0050', Level.LEVEL2, async (done: Function) => {
       console.info('[RichEditorKeyboardAppearanceTest_0050] START');
@@ -137,12 +137,12 @@ export default function RichEditorKeyboardAppearanceTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_RichEditor_KeyboardAppearanceTest_0060
-     * @tc.name      RichEditorKeyboardAppearanceTest_0060
-     * @tc.desc      test Illegal value about RichEditor keyboardAppearance: UNDEFINED
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RichEditorKeyboardAppearanceTest_0060
+     * @tc.number SUB_ACE_RichEditor_KeyboardAppearanceTest_0060
+     * @tc.desc   test Illegal value about RichEditor keyboardAppearance: UNDEFINED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RichEditorKeyboardAppearanceTest_0060', Level.LEVEL2, async (done: Function) => {
       console.info('[RichEditorKeyboardAppearanceTest_0060] START');

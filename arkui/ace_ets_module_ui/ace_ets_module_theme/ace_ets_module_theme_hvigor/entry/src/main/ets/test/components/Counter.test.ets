@@ -79,13 +79,13 @@ export default function counterThemeTest() {
       }
     })
     /**
-      * @tc.number    : ActsCounterThemeColors_0100
-      * @tc.name      : ActsCounterThemeColors_0100
-      * @tc.desc      : Check counter system colors
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsCounterThemeColors_0100
+     * @tc.number ActsCounterThemeColors_0100
+     * @tc.desc   Check counter system colors
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it(`ActsCounterThemeColors_0100`, Level.LEVEL2, () => {
       const CASE: string = `ActsCounterThemeColors_0100`;
       console.info(`${SUITE} ${CASE} START`);
@@ -96,13 +96,13 @@ export default function counterThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     })
     /**
-      * @tc.number    : ActsCounterThemeColors_0200
-      * @tc.name      : ActsCounterThemeColors_0200
-      * @tc.desc      : Check counter theme colors
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsCounterThemeColors_0200
+     * @tc.number ActsCounterThemeColors_0200
+     * @tc.desc   Check counter theme colors
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it(`ActsCounterThemeColors_0200`, Level.LEVEL0, async () => {
       const CASE: string = `ActsCounterThemeColors_0200`;
       console.info(`${SUITE} ${CASE} START`);
@@ -114,13 +114,13 @@ export default function counterThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     })
     /**
-      * @tc.number    : ActsCounterThemeColors_0300
-      * @tc.name      : ActsCounterThemeColors_0300
-      * @tc.desc      : Check counter theme colors after change theme
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsCounterThemeColors_0300
+     * @tc.number ActsCounterThemeColors_0300
+     * @tc.desc   Check counter theme colors after change theme
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it(`ActsCounterThemeColors_0300`, Level.LEVEL0, async () => {
       const CASE: string = `ActsCounterThemeColors_0300`;
       console.info(`${SUITE} ${CASE} START`);
@@ -134,13 +134,13 @@ export default function counterThemeTest() {
     })
 
     /**
-      * @tc.number    : ActsCounterThemeColors_0400
-      * @tc.name      : ActsCounterThemeColors_0400
-      * @tc.desc      : Check counter system colors after reset theme
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsCounterThemeColors_0400
+     * @tc.number ActsCounterThemeColors_0400
+     * @tc.desc   Check counter system colors after reset theme
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it(`ActsCounterThemeColors_0400`, Level.LEVEL0, async () => {
       const CASE: string = `ActsCounterThemeColors_0400`;
       console.info(`${SUITE} ${CASE} START`);

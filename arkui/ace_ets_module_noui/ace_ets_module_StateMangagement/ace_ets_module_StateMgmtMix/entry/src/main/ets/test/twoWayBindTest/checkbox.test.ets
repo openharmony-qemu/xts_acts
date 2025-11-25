@@ -41,12 +41,12 @@ export default function checkboxTest() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_STATUSMANAGER_$$CAPABILITY_0030
-     * @tc.name      checkboxTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 1
-     * @tc.type :    FUNC
-     * @tc.size :    MEDIUM
+     * @tc.name   checkboxTest_0100
+     * @tc.number SUB_ACE_STATUSMANAGER_$$CAPABILITY_0030
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('checkboxTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('checkboxTest_0100 START');

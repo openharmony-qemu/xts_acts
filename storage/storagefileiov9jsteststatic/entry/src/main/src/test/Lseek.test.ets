@@ -369,10 +369,12 @@ export default function fileIOLseek() {
       let offsetnum = 5;
       try {
         expect(await Utils.isIntNum(file.fd)).assertTrue();
+        let fd = file.fd;
         fs.closeSync(file);
-        fs.lseek(file.fd, offsetnum, fs.WhenceType.SEEK_CUR);
+        fs.lseek(fd, offsetnum, fs.WhenceType.SEEK_CUR);
         expect(false).assertTrue();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         fs.unlinkSync(fpath);
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_lseek_static_012 has failed for' + JSON.stringify(e));
         expect(e.code == 13900008 && e.message == 'Bad file descriptor').assertTrue();

@@ -22,9 +22,12 @@
 using namespace testing::ext;
 
 /**
+ * @tc.name   testSetGetuid
  * @tc.number SUB_KERNEL_DAC_SetGetUID_0100
- * @tc.name   setuid and getuid basic test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(UidGidTest, testSetGetuid, Function | MediumTest | Level1)
 {
@@ -59,9 +62,12 @@ HWTEST_F(UidGidTest, testSetGetuid, Function | MediumTest | Level1)
     ASSERT_EQ(uid, 0);
 }
 /**
+ * @tc.name   testSetuidFail
  * @tc.number SUB_KERNEL_DAC_SetGetUID_0200
- * @tc.name   test setuid fail if input uid is negative
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(UidGidTest, testSetuidFail, Function | MediumTest | Level3)
 {
@@ -79,9 +85,12 @@ HWTEST_F(UidGidTest, testSetuidFail, Function | MediumTest | Level3)
 }
 
 /**
+ * @tc.name   testSetGetgid
  * @tc.number SUB_KERNEL_DAC_SetGetGID_0100
- * @tc.name   setgid and getgid basic test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(UidGidTest, testSetGetgid, Function | MediumTest | Level1)
 {
@@ -116,9 +125,12 @@ HWTEST_F(UidGidTest, testSetGetgid, Function | MediumTest | Level1)
     ASSERT_EQ(gid, 0);
 }
 /**
+ * @tc.name   testSetgidFail
  * @tc.number SUB_KERNEL_DAC_SetGetGID_0200
- * @tc.name   test setgid fail if input gid is negative
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(UidGidTest, testSetgidFail, Function | MediumTest | Level3)
 {
@@ -137,9 +149,12 @@ HWTEST_F(UidGidTest, testSetgidFail, Function | MediumTest | Level3)
 
 
 /**
+ * @tc.name   testSetGeteuid
  * @tc.number SUB_KERNEL_DAC_SetGetEUID_0100
- * @tc.name   seteuid and geteuid basic test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(UidGidTest, testSetGeteuid, Function | MediumTest | Level1)
 {
@@ -175,9 +190,12 @@ HWTEST_F(UidGidTest, testSetGeteuid, Function | MediumTest | Level1)
     AssertAllUid(SHELL_UID);
 }
 /**
+ * @tc.name   testSeteuidFail
  * @tc.number SUB_KERNEL_DAC_SetGetEUID_0200
- * @tc.name   test seteuid fail if input uid is negative
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(UidGidTest, testSeteuidFail, Function | MediumTest | Level3)
 {
@@ -197,9 +215,12 @@ HWTEST_F(UidGidTest, testSeteuidFail, Function | MediumTest | Level3)
 }
 
 /**
+ * @tc.name   testSetGetegid
  * @tc.number SUB_KERNEL_DAC_SetGetEGID_0100
- * @tc.name   setegid and getegid basic test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(UidGidTest, testSetGetegid, Function | MediumTest | Level1)
 {
@@ -235,9 +256,12 @@ HWTEST_F(UidGidTest, testSetGetegid, Function | MediumTest | Level1)
     AssertAllGid(SHELL_GID);
 }
 /**
+ * @tc.name   testSetegidFail
  * @tc.number SUB_KERNEL_DAC_SetGetEGID_0200
- * @tc.name   test setegid fail if input gid is negative
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(UidGidTest, testSetegidFail, Function | MediumTest | Level3)
 {
@@ -258,9 +282,12 @@ HWTEST_F(UidGidTest, testSetegidFail, Function | MediumTest | Level3)
 
 
 /**
+ * @tc.name   testSetreuid
  * @tc.number SUB_KERNEL_DAC_SetREUID_0100
- * @tc.name   setreuid basic test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(UidGidTest, testSetreuid, Function | MediumTest | Level1)
 {
@@ -295,9 +322,12 @@ HWTEST_F(UidGidTest, testSetreuid, Function | MediumTest | Level1)
     AssertAllUid(SHELL_UID);
 }
 /**
+ * @tc.name   testSetreuidFail
  * @tc.number SUB_KERNEL_DAC_SetREUID_0200
- * @tc.name   test setreuid fail if input uid is negative, or ruid and euid is not equal
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(UidGidTest, testSetreuidFail, Function | MediumTest | Level2)
 {
@@ -337,9 +367,12 @@ HWTEST_F(UidGidTest, testSetreuidFail, Function | MediumTest | Level2)
 }
 
 /**
+ * @tc.name   testSetregid
  * @tc.number SUB_KERNEL_DAC_SetREGID_0100
- * @tc.name   setregid basic test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(UidGidTest, testSetregid, Function | MediumTest | Level1)
 {
@@ -374,9 +407,12 @@ HWTEST_F(UidGidTest, testSetregid, Function | MediumTest | Level1)
     AssertAllGid(SHELL_GID);
 }
 /**
+ * @tc.name   testSetregidFail
  * @tc.number SUB_KERNEL_DAC_SetREGID_0200
- * @tc.name   test setregid fail if input gid is negative, or rgid and egid is not equal
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(UidGidTest, testSetregidFail, Function | MediumTest | Level2)
 {
@@ -417,9 +453,12 @@ HWTEST_F(UidGidTest, testSetregidFail, Function | MediumTest | Level2)
 
 // ================================== res ===========================================
 /**
+ * @tc.name   testSetGetresuid
  * @tc.number SUB_KERNEL_DAC_SetGetRESUID_0100
- * @tc.name   setresuid and getresuid basic test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(UidGidTest, testSetGetresuid, Function | MediumTest | Level1)
 {
@@ -480,9 +519,12 @@ HWTEST_F(UidGidTest, testSetGetresuid, Function | MediumTest | Level1)
     AssertAllUid(SHELL_UID);
 }
 /**
+ * @tc.name   testSetresuidFail
  * @tc.number SUB_KERNEL_DAC_SetGetRESUID_0200
- * @tc.name   test setresuid fail if input uid is negative, or ruid,euid,suid is not equal to each other.
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(UidGidTest, testSetresuidFail, Function | MediumTest | Level2)
 {
@@ -524,9 +566,12 @@ HWTEST_F(UidGidTest, testSetresuidFail, Function | MediumTest | Level2)
 }
 
 /**
+ * @tc.name   testSetGetresgid
  * @tc.number SUB_KERNEL_DAC_SetGetRESGID_0100
- * @tc.name   setresgid and getresgid basic test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(UidGidTest, testSetGetresgid, Function | MediumTest | Level1)
 {
@@ -587,9 +632,12 @@ HWTEST_F(UidGidTest, testSetGetresgid, Function | MediumTest | Level1)
     AssertAllGid(SHELL_GID);
 }
 /**
+ * @tc.name   testSetresgidFail
  * @tc.number SUB_KERNEL_DAC_SetGetRESGID_0200
- * @tc.name   test setresgid fail if input ids is negative, or rgid,egid,sgid is not equal to each other.
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(UidGidTest, testSetresgidFail, Function | MediumTest | Level2)
 {
@@ -631,9 +679,12 @@ HWTEST_F(UidGidTest, testSetresgidFail, Function | MediumTest | Level2)
 }
 
 /**
+ * @tc.name   testGetgroups
  * @tc.number SUB_KERNEL_DAC_GetGroups_0100
- * @tc.name   getgroups basic test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(UidGidTest, testGetgroups, Function | MediumTest | Level1)
 {
@@ -651,9 +702,12 @@ HWTEST_F(UidGidTest, testGetgroups, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testSetgroups1
  * @tc.number SUB_KERNEL_DAC_SetGroups_0100
- * @tc.name   setgroups function test. also test invalid size of getroups, and clear groups function.
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(UidGidTest, testSetgroups1, Function | MediumTest | Level1)
 {
@@ -699,9 +753,12 @@ HWTEST_F(UidGidTest, testSetgroups1, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testSetgroups2
  * @tc.number SUB_KERNEL_DAC_SetGroups_0200
- * @tc.name   setgroups function test: gid not in groups will automaticlly add by kernel
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(UidGidTest, testSetgroups2, Function | MediumTest | Level1)
 {
@@ -735,9 +792,12 @@ HWTEST_F(UidGidTest, testSetgroups2, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testSetgroupsFail
  * @tc.number SUB_KERNEL_DAC_SetGroups_0300
- * @tc.name   setgroups function test: input size is grater than 'MAX_PROCESS_GROUPS'
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(UidGidTest, testSetgroupsFail, Function | MediumTest | Level3)
 {

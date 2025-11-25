@@ -75,13 +75,13 @@ export default function contextMonitoringTest() {
     afterAll(() => {
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5100
-     * @tc.name   : SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5100
-     * @tc.desc   : Testing AbilityStage scenario
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5100
+     * @tc.number SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5100
+     * @tc.desc   Testing AbilityStage scenario
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5100', Level.LEVEL0,(done: Function) => {
       let tag = `ContextMonitoring_5100`;
@@ -91,13 +91,13 @@ export default function contextMonitoringTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5200
-     * @tc.name   : SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5200
-     * @tc.desc   : Testing emit with different number of callback arguments
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5200
+     * @tc.number SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5200
+     * @tc.desc   Testing emit with different number of callback arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5200', Level.LEVEL0,(done: Function) => {
       let tag = `ContextMonitoring_5200`;
@@ -165,13 +165,13 @@ export default function contextMonitoringTest() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5300
-     * @tc.name   : SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5300
-     * @tc.desc   : Testing off to unregister a single callback
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5300
+     * @tc.number SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5300
+     * @tc.desc   Testing off to unregister a single callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5300', Level.LEVEL0,(done: Function) => {
       let tag = `ContextMonitoring_5300`;
@@ -233,13 +233,13 @@ export default function contextMonitoringTest() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5400
-     * @tc.name   : SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5400
-     * @tc.desc   : Testing off to unregister all callbacks under a specific event
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5400
+     * @tc.number SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5400
+     * @tc.desc   Testing off to unregister all callbacks under a specific event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5400', Level.LEVEL0,(done: Function) => {
       let tag = `ContextMonitoring_5400`;
@@ -299,13 +299,13 @@ export default function contextMonitoringTest() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5500
-     * @tc.name   : SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5500
-     * @tc.desc   : Testing on to register an anonymous function
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5500
+     * @tc.number SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5500
+     * @tc.desc   Testing on to register an anonymous function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5500', Level.LEVEL0,(done: Function) => {
       let tag = `ContextMonitoring_5500`;
@@ -367,13 +367,13 @@ export default function contextMonitoringTest() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5600
-     * @tc.name   : SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5600
-     * @tc.desc   : Testing on to register a member function
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5600
+     * @tc.number SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5600
+     * @tc.desc   Testing on to register a member function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5600', Level.LEVEL0,(done: Function) => {
       let tag = `ContextMonitoring_5600`;
@@ -433,13 +433,13 @@ export default function contextMonitoringTest() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5800
-     * @tc.name   : SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5800
-     * @tc.desc   : Testing on, off, and emit for a single event
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5800
+     * @tc.number SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5800
+     * @tc.desc   Testing on, off, and emit for a single event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5800', Level.LEVEL0,(done: Function) => {
       let tag = `ContextMonitoring_5800`;
@@ -503,13 +503,13 @@ export default function contextMonitoringTest() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5900
-     * @tc.name   : SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5900
-     * @tc.desc   : Testing scenarios with multiple context instances
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5900
+     * @tc.number SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5900
+     * @tc.desc   Testing scenarios with multiple context instances
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_5900', Level.LEVEL0,(done: Function) => {
       let tag = `ContextMonitoring_5900`;
@@ -589,13 +589,13 @@ export default function contextMonitoringTest() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_6000
-     * @tc.name   : SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_6000
-     * @tc.desc   : Testing on, off, and emit for multiple events
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_6000
+     * @tc.number SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_6000
+     * @tc.desc   Testing on, off, and emit for multiple events
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_6000', Level.LEVEL0,(done: Function) => {
       let tag = `ContextMonitoring_6000`;
@@ -671,13 +671,13 @@ export default function contextMonitoringTest() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_6200
-     * @tc.name   : SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_6200
-     * @tc.desc   : Testing exception scenario of registering the same callback multiple times
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_6200
+     * @tc.number SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_6200
+     * @tc.desc   Testing exception scenario of registering the same callback multiple times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AMS_Context_ContextMonitoring_6200', Level.LEVEL0,(done: Function) => {
       let tag = `ContextMonitoring_6200`;

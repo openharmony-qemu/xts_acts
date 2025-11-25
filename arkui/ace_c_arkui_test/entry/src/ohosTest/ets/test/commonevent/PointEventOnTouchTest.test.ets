@@ -26,14 +26,14 @@ export default function PointEventOnTouchTest() {
       await Utils.pushPage(`commonevent/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_POINTEVENT_ONTOUCH_0100
-    * @tc.name       : testPointEventOnTouch001
-    * @tc.desc       : test onTouch event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testPointEventOnTouch001
+     * @tc.number SUB_ARKUI_CAPI_POINTEVENT_ONTOUCH_0100
+     * @tc.desc   test onTouch event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testPointEventOnTouch001', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnTouchTest')
       await Utils.sleep(2000)
@@ -41,14 +41,14 @@ export default function PointEventOnTouchTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_POINTEVENT_ONTOUCH_0200
-    * @tc.name       : testPointEventOnTouch002
-    * @tc.desc       : test onTouch event not callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testPointEventOnTouch002
+     * @tc.number SUB_ARKUI_CAPI_POINTEVENT_ONTOUCH_0200
+     * @tc.desc   test onTouch event not callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testPointEventOnTouch002', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnTouchTestDisable')
       await Utils.sleep(2000)

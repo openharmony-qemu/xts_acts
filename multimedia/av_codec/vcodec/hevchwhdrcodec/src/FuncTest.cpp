@@ -60,26 +60,44 @@ namespace {
 void HDRFuncNdkTest::SetUpTestCase()
 {
     cap_h263 = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_H263, false, SOFTWARE);
+    if (cap_h263 == nullptr) {
+        return;
+    }
     g_codecName263 = OH_AVCapability_GetName(cap_h263);
     cout << "g_codecName263: " << g_codecName263 << endl;
 
     cap_h264 = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_AVC, false, SOFTWARE);
+    if (cap_h264 == nullptr) {
+        return;
+    }
     g_codecName264 = OH_AVCapability_GetName(cap_h264);
     cout << "g_codecName264: " << g_codecName264 << endl;
 
     cap_mpeg2 = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_MPEG2, false, SOFTWARE);
+    if (cap_mpeg2 == nullptr) {
+        return;
+    }
     g_codecNameMpeg2 = OH_AVCapability_GetName(cap_mpeg2);
     cout << "g_codecNameMpeg2: " << g_codecNameMpeg2 << endl;
 
     cap_mpeg4 = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_MPEG4_PART2, false, SOFTWARE);
+    if (cap_mpeg4 == nullptr) {
+        return;
+    }
     g_codecNameMpeg4 = OH_AVCapability_GetName(cap_mpeg4);
     cout << "g_codecNameMpeg4: " << g_codecNameMpeg4 << endl;
 
     cap_sw265 = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, false, SOFTWARE);
+    if (cap_sw265 == nullptr) {
+        return;
+    }
     g_codecNameSw265 = OH_AVCapability_GetName(cap_sw265);
     cout << "g_codecNameSw265: " << g_codecNameSw265 << endl;
 
     cap_h265 = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_HEVC, true, HARDWARE);
+    if (cap_h265 == nullptr) {
+        return;
+    }
     g_codecNameHw265 = OH_AVCapability_GetName(cap_h265);
     cout << "g_codecNameHw265: " << g_codecNameHw265 << endl;
 }
@@ -96,7 +114,7 @@ namespace {
  */
 HWTEST_F(HDRFuncNdkTest, DEMUXER_DEC_ENC_MUXER_FUNC_009, TestSize.Level1)
 {
-    if (!access("/system/lib64/media/", 0) && (cap_h265)) {
+    if (!access("/system/lib64/media/", 0) && (cap_h265) && (cap_h263)) {
         shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
         sample->DEFAULT_PROFILE = HEVC_PROFILE_MAIN;
         const char *file = "/data/test/media/h263_aac.mp4";
@@ -118,7 +136,7 @@ HWTEST_F(HDRFuncNdkTest, DEMUXER_DEC_ENC_MUXER_FUNC_009, TestSize.Level1)
  */
 HWTEST_F(HDRFuncNdkTest, DEMUXER_DEC_ENC_MUXER_FUNC_010, TestSize.Level1)
 {
-    if (!access("/system/lib64/media/", 0) && (cap_h265)) {
+    if (!access("/system/lib64/media/", 0) && (cap_h265) && (cap_mpeg2)) {
         shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
         sample->DEFAULT_PROFILE = HEVC_PROFILE_MAIN;
         const char *file = "/data/test/media/mpeg2.mp4";
@@ -140,7 +158,7 @@ HWTEST_F(HDRFuncNdkTest, DEMUXER_DEC_ENC_MUXER_FUNC_010, TestSize.Level1)
  */
 HWTEST_F(HDRFuncNdkTest, DEMUXER_DEC_ENC_MUXER_FUNC_011, TestSize.Level1)
 {
-    if (!access("/system/lib64/media/", 0) && (cap_h265)) {
+    if (!access("/system/lib64/media/", 0) && (cap_h265) && (cap_mpeg4)) {
         shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
         sample->DEFAULT_PROFILE = HEVC_PROFILE_MAIN;
         const char *file = "/data/test/media/mpeg4_1280x720_30.mp4";
@@ -162,7 +180,7 @@ HWTEST_F(HDRFuncNdkTest, DEMUXER_DEC_ENC_MUXER_FUNC_011, TestSize.Level1)
  */
 HWTEST_F(HDRFuncNdkTest, DEMUXER_DEC_ENC_MUXER_FUNC_012, TestSize.Level1)
 {
-    if (!access("/system/lib64/media/", 0) && (cap_h265)) {
+    if (!access("/system/lib64/media/", 0) && (cap_h265) && (cap_h264)) {
         shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
         sample->DEFAULT_PROFILE = HEVC_PROFILE_MAIN;
         const char *file = "/data/test/media/h264_mp3_960x544_30r.mp4";
@@ -184,7 +202,7 @@ HWTEST_F(HDRFuncNdkTest, DEMUXER_DEC_ENC_MUXER_FUNC_012, TestSize.Level1)
  */
 HWTEST_F(HDRFuncNdkTest, DEMUXER_DEC_ENC_MUXER_FUNC_013, TestSize.Level1)
 {
-    if (!access("/system/lib64/media/", 0) && (cap_h265)) {
+    if (!access("/system/lib64/media/", 0) && (cap_h265) && (cap_sw265)) {
         shared_ptr<HDRCodecNdkSample> sample = make_shared<HDRCodecNdkSample>();
         sample->DEFAULT_PROFILE = HEVC_PROFILE_MAIN;
         const char *file = "/data/test/media/VID_720.mp4";

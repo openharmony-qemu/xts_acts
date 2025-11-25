@@ -41,12 +41,12 @@ export default function BaseDialogTest() {
     });
 
     /**
-     * @tc.number    BaseDialogTest_0100
-     * @tc.name      BaseDialogTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   BaseDialogTest_0100
+     * @tc.number BaseDialogTest_0100
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('BaseDialogTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('BaseDialogTest_0100 START');
@@ -68,12 +68,12 @@ export default function BaseDialogTest() {
     });
 
     /**
-     * @tc.number    BaseDialogTest_0200
-     * @tc.name      BaseDialogTest_0200
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   BaseDialogTest_0200
+     * @tc.number BaseDialogTest_0200
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('BaseDialogTest_0200', Level.LEVEL2, async (done: Function) => {
       console.info('BaseDialogTest_0200 START');

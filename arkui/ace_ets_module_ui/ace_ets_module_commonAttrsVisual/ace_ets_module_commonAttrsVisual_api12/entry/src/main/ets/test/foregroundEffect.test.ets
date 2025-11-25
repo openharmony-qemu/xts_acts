@@ -60,16 +60,16 @@ export default function foregroundEffect() {
       console.info("foregroundEffect after each called");
     });
 
+
+
     /**
-     * @tc.number SUB_ACE_BASIC_ETS_API_0100
-     * @tc.name testGetImageAttr010
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   foregroundEffect_0100
+     * @tc.number foregroundEffect_0100
+     * @tc.desc   foregroundEffect_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
-
-
     it('foregroundEffect_0100', Level.LEVEL2, async (done: Function) => {
       console.info('foregroundEffect_0100 START');
       let driver = await Driver.create()

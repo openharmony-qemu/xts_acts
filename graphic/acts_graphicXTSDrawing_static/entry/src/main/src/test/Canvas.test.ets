@@ -59,12 +59,13 @@ export default function drawingTsCanvasTest() {
      * @tc.type      : Function
      * @tc.level     : Level0
      */
-    it('testCanvasConstructorNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, (): void => {
+    it('testCanvasConstructorNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasConstructorNormalStatic';
       try {
         new drawing.Canvas(pixel);
         console.info(msg + 'canvasConstructor successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `canvasConstructor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -78,14 +79,15 @@ export default function drawingTsCanvasTest() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testCanvasConstructorMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, (): void => {
+    it('testCanvasConstructorMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasConstructorMultipleCallsStatic';
       try {
         for (let index = 0; index < 20; index++) {
           new drawing.Canvas(pixel);
         }
         console.info(msg + 'canvasConstructor successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `canvasConstructor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -98,16 +100,16 @@ export default function drawingTsCanvasTest() {
      * @tc.type      : Function
      * @tc.level     : Level0
      */
-    it('testCanvasDrawRectNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, (): void => {
+    it('testCanvasDrawRectNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasDrawRectNormalStatic';
       try {
         let canvas = new drawing.Canvas(pixel);
         const pen = new drawing.Pen();
-        // pen.setStrokeWidth(5);
-        // pen.setColor({
-        //   alpha: 255, red: 255, green: 0, blue: 0
-        // });
-        // canvas.attachPen(pen);
+        pen.setStrokeWidth(5);
+        pen.setColor({
+          alpha: 255, red: 255, green: 0, blue: 0
+        });
+        canvas.attachPen(pen);
         canvas.drawRect({
           left: 0, right: 0, top: 10, bottom: 10
         });
@@ -132,37 +134,406 @@ export default function drawingTsCanvasTest() {
         canvas.drawRect({
           left: 200, right: 100, top: 200, bottom: 100
         });
-        // canvas.detachPen();
+        canvas.detachPen();
         console.info(msg + 'drawRect successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_0201
-     * @tc.name      : testCanvasDrawRect2NormalStatic
-     * @tc.desc      : testCanvasDrawRect2NormalStatic
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_0203
+     * @tc.name      : testCanvasDrawRectMultipleCallsStatic
+     * @tc.desc      : testCanvasDrawRectMultipleCalls
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('testCanvasDrawRectMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawRectMultipleCallsStatic';
+      try {
+        let canvas = new drawing.Canvas(pixel);
+        const pen = new drawing.Pen();
+        pen.setStrokeWidth(5);
+        pen.setColor({
+          alpha: 255, red: 255, green: 0, blue: 0
+        });
+        canvas.attachPen(pen);
+        for (let index = 0; index < 20; index++) {
+          canvas.drawRect({
+            left: Math.random() * Number.MAX_VALUE, right: Math.random() * Number.MAX_VALUE, top: Math.random() * Number.MAX_VALUE, bottom: Math.random() * Number.MAX_VALUE
+          });
+        }
+        canvas.detachPen();
+        console.info(msg + 'drawRect successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    })
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_0300
+     * @tc.name      : testCanvasDrawCircleNormalStatic
+     * @tc.desc      : testCanvasDrawCircleNormal
      * @tc.size      : SmallTest
      * @tc.type      : Function
      * @tc.level     : Level0
      */
-    it('testCanvasDrawRect2NormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, (): void => {
-      const msg = 'testCanvasDrawRect2NormalStatic';
+    it('testCanvasDrawCircleNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
+      const msg = 'testCanvasDrawCircleNormalStatic';
+      let canvas = new drawing.Canvas(pixel);
+      try {
+        const pen = new drawing.Pen();
+        pen.setStrokeWidth(5);
+        pen.setColor({
+          alpha: 255, red: 255, green: 0, blue: 0
+        });
+        canvas.attachPen(pen);
+        canvas.drawCircle(10, 10, 100);
+        canvas.drawCircle(10.1, 10.1, 100.1);
+        canvas.detachPen();
+        console.info(msg + 'drawCircle successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawCircle errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    })
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_0303
+     * @tc.name      : testCanvasDrawCircleMultipleCallsStatic
+     * @tc.desc      : testCanvasDrawCircleMultipleCalls
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('testCanvasDrawCircleMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawCircleMultipleCallsStatic';
       try {
         let canvas = new drawing.Canvas(pixel);
         const pen = new drawing.Pen();
-        // pen.setStrokeWidth(5);
-        // pen.setColor({
-        //   alpha: 255, red: 255, green: 0, blue: 0
-        // });
-        // canvas.attachPen(pen);
-        canvas.drawRect(0, 0, 10, 10);
-        // canvas.detachPen();
-        console.info(msg + '2 drawRect successed');
-      } catch (e: BusinessError) {
-        console.info(msg + `2 drawRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        pen.setStrokeWidth(5);
+        pen.setColor({
+          alpha: 255, red: 255, green: 0, blue: 0
+        });
+        canvas.attachPen(pen);
+        for (let index = 0; index < 20; index++) {
+          canvas.drawCircle(Math.random() * Number.MAX_VALUE, Math.random() * Number.MAX_VALUE, Math.random() * Number.MAX_VALUE);
+        }
+        canvas.detachPen();
+        console.info(msg + 'drawCircle successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawCircle errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
+      }
+    })
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_0400
+     * @tc.name      : testCanvasDrawImageNormalStatic
+     * @tc.desc      : testCanvasDrawImageNormal
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level0
+     */
+    it('testCanvasDrawImageNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
+      const msg = 'testCanvasDrawImageNormalStatic';
+      try {
+        let canvas = new drawing.Canvas(pixel);
+        canvas.drawImage(pixel, 100, 100);
+        canvas.drawImage(pixel, 100.2, 100.2);
+        canvas.drawImage(pixel, 100, 100, new drawing.SamplingOptions(drawing.FilterMode.FILTER_MODE_NEAREST));
+        canvas.drawImage(pixel, 100.2, 100.2, new drawing.SamplingOptions(drawing.FilterMode.FILTER_MODE_LINEAR));
+        canvas.drawImage(pixel, -100.2, -100, new drawing.SamplingOptions(drawing.FilterMode.FILTER_MODE_LINEAR));
+        console.info(msg + 'drawImage successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawImage errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    })
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_0401
+     * @tc.name      : testCanvasDrawImageNullStatic
+     * @tc.desc      : testCanvasDrawImageNull
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('testCanvasDrawImageNullStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawImageNullStatic';
+      let canvas = new drawing.Canvas(pixel);
+      try {
+        canvas.drawImage(pixel, 100, 100, undefined);
+        console.info(msg + 'drawImage successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawImage errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    })
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_0403
+     * @tc.name      : testCanvasDrawImageMultipleCallsStatic
+     * @tc.desc      : testCanvasDrawImageMultipleCalls
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('testCanvasDrawImageMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawImageMultipleCallsStatic';
+      try {
+        let canvas = new drawing.Canvas(pixel);
+        for (let index = 0; index < 20; index++) {
+          const randomEnum = Math.floor(Math.random() * 20);
+          canvas.drawImage(pixel, Math.random() * 200, Math.random() * 200,
+            new drawing.SamplingOptions(drawing.FilterMode.FILTER_MODE_NEAREST));
+          console.info(msg + 'drawImage successed');
+        }
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawImage errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    })
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_0500
+     * @tc.name      : testCanvasDrawColorNormalStatic
+     * @tc.desc      : testCanvasDrawColorNormal
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level0
+     */
+    it('testCanvasDrawColorNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
+      const msg = 'testCanvasDrawColorNormalStatic';
+      let canvas = new drawing.Canvas(pixel);
+      try {
+        canvas.drawColor({ alpha: 0xFF, red: 0xFF, green: 0xFF, blue: 0xFF}, drawing.BlendMode.CLEAR);
+        canvas.drawColor({ alpha: 0x00, red: 0x00, green: 0x00, blue: 0x00}, drawing.BlendMode.CLEAR);
+        canvas.drawColor({ alpha: 0xFF, red: 0xE0, green: 0x10, blue: 0xFF}, drawing.BlendMode.CLEAR);
+        canvas.drawColor({ alpha: 0xFF, red: 0xE0, green: 0x10, blue: 0xFF}, drawing.BlendMode.SRC);
+        canvas.drawColor({ alpha: 0xFF, red: 0xE0, green: 0x10, blue: 0xFF}, drawing.BlendMode.DST);
+        canvas.drawColor({ alpha: 0xFF, red: 0xE0, green: 0x10, blue: 0xFF}, drawing.BlendMode.SRC_OVER);
+        canvas.drawColor({ alpha: 0xFF, red: 0xE0, green: 0x10, blue: 0xFF}, drawing.BlendMode.DST_OVER);
+        canvas.drawColor({ alpha: 0xFF, red: 0xE0, green: 0x10, blue: 0xFF}, drawing.BlendMode.SRC_IN);
+        canvas.drawColor({ alpha: 0xFF, red: 0xE0, green: 0x10, blue: 0xFF}, drawing.BlendMode.DST_IN);
+        canvas.drawColor({ alpha: 0xFF, red: 0xE0, green: 0x10, blue: 0xFF}, drawing.BlendMode.SRC_OUT);
+        canvas.drawColor({ alpha: 0xFF, red: 0xE0, green: 0x10, blue: 0xFF}, drawing.BlendMode.DST_OUT);
+        canvas.drawColor({ alpha: 0xFF, red: 0xE0, green: 0x10, blue: 0xFF}, drawing.BlendMode.SRC_ATOP);
+        canvas.drawColor({ alpha: 0xFF, red: 0xE0, green: 0x10, blue: 0xFF}, drawing.BlendMode.DST_ATOP);
+        canvas.drawColor({ alpha: 0xFF, red: 0xE0, green: 0x10, blue: 0xFF}, drawing.BlendMode.XOR);
+        canvas.drawColor({ alpha: 0xFF, red: 0xE0, green: 0x10, blue: 0xFF}, drawing.BlendMode.PLUS);
+        canvas.drawColor({ alpha: 0xFF, red: 0xE0, green: 0x10, blue: 0xFF}, drawing.BlendMode.MODULATE);
+        canvas.drawColor({ alpha: 0xFF, red: 0xE0, green: 0x10, blue: 0xFF}, drawing.BlendMode.SCREEN);
+        canvas.drawColor({ alpha: 0xFF, red: 0xE0, green: 0x10, blue: 0xFF}, drawing.BlendMode.OVERLAY);
+        canvas.drawColor({ alpha: 0xFF, red: 0xE0, green: 0x10, blue: 0xFF}, drawing.BlendMode.DARKEN);
+        canvas.drawColor({ alpha: 0xFF, red: 0xE0, green: 0x10, blue: 0xFF}, drawing.BlendMode.LIGHTEN);
+        canvas.drawColor({ alpha: 0xFF, red: 0xE0, green: 0x10, blue: 0xFF}, drawing.BlendMode.COLOR_DODGE);
+        canvas.drawColor({ alpha: 0xFF, red: 0xE0, green: 0x10, blue: 0xFF}, drawing.BlendMode.COLOR_BURN);
+        canvas.drawColor({ alpha: 0xFF, red: 0xE0, green: 0x10, blue: 0xFF}, drawing.BlendMode.HARD_LIGHT);
+        canvas.drawColor({ alpha: 0xFF, red: 0xE0, green: 0x10, blue: 0xFF}, drawing.BlendMode.SOFT_LIGHT);
+        canvas.drawColor({ alpha: 0xFF, red: 0xE0, green: 0x10, blue: 0xFF}, drawing.BlendMode.DIFFERENCE);
+        canvas.drawColor({ alpha: 0xFF, red: 0xE0, green: 0x10, blue: 0xFF}, drawing.BlendMode.EXCLUSION);
+        canvas.drawColor({ alpha: 0xFF, red: 0xE0, green: 0x10, blue: 0xFF}, drawing.BlendMode.MULTIPLY);
+        canvas.drawColor({ alpha: 0xFF, red: 0xE0, green: 0x10, blue: 0xFF}, drawing.BlendMode.HUE);
+        canvas.drawColor({ alpha: 0xFF, red: 0xE0, green: 0x10, blue: 0xFF}, drawing.BlendMode.SATURATION);
+        canvas.drawColor({ alpha: 0xFF, red: 0xE0, green: 0x10, blue: 0xFF}, drawing.BlendMode.COLOR);
+        canvas.drawColor({ alpha: 0xFF, red: 0xE0, green: 0x10, blue: 0xFF}, drawing.BlendMode.LUMINOSITY);
+        console.info(msg + 'drawColor successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try{
+        canvas.drawColor(100, drawing.BlendMode.CLEAR);
+        console.info(msg + 'drawColor 2 successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawColor 2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try{
+        canvas.drawColor(2, drawing.BlendMode.CLEAR);
+        console.info(msg + 'drawColor 3 successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawColor 3 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try{
+        canvas.drawColor(60000, drawing.BlendMode.CLEAR);
+        console.info(msg + 'drawColor 4 successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawColor 4 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try{
+        canvas.drawColor(100);
+        console.info(msg + 'drawColor 5 successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawColor 5 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try{
+        canvas.drawColor({ alpha: 0xFF, red: 0xE0, green: 0x10, blue: 0xFF});
+        console.info(msg + 'drawColor 6 successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawColor 6 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try{
+        canvas.drawColor(255, 0, 10, 10);
+        console.info(msg + 'drawColor 7 successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawColor 7 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try{
+        canvas.drawColor(255, 0, 10, 10, drawing.BlendMode.CLEAR);
+        console.info(msg + 'drawColor 8 successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawColor 8 is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    })
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_0501
+     * @tc.name      : testCanvasDrawColorNullStatic
+     * @tc.desc      : testCanvasDrawColorNull
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('testCanvasDrawColorNullStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawColorNullStatic';
+      let canvas = new drawing.Canvas(pixel);
+      try {
+        canvas.drawColor({ alpha: 0x00, red: 0x00, green: 0x00, blue: 0x00}, undefined);
+        console.info(msg + 'drawColor successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    })
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_0503
+     * @tc.name      : testCanvasDrawColorMultipleCallsStatic
+     * @tc.desc      : testCanvasDrawColorMultipleCalls
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('testCanvasDrawColorMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawColorMultipleCallsStatic';
+      try {
+        let canvas = new drawing.Canvas(pixel);
+        for (let index = 0; index < 20; index++) {
+          let color: common2D.Color = {
+            alpha: Math.floor(Math.random() * 255).toInt(),
+            red: Math.floor(Math.random() * 255).toInt(),
+            green: Math.floor(Math.random() * 255).toInt(),
+            blue: Math.floor(Math.random() * 255).toInt()
+          }
+          canvas.drawColor(color, drawing.BlendMode.EXCLUSION);
+        }
+        console.info(msg + 'drawColor successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    })
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_0504
+     * @tc.name      : testCanvasDrawColorBoundaryValueStatic
+     * @tc.desc      : testCanvasDrawColorBoundaryValue
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('testCanvasDrawColorBoundaryValueStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawColorBoundaryValueStatic';
+      let canvas = new drawing.Canvas(pixel);
+      try {
+        canvas.drawColor({ alpha: -1, red: 0xFF, green: 0xFF, blue: 0xFF}, drawing.BlendMode.CLEAR);
+        console.info(msg + 'drawColor successed');
+        expect().assertFail();
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        canvas.drawColor({ alpha: 0xFF, red: -1, green: 0xFF, blue: 0xFF}, drawing.BlendMode.CLEAR);
+        console.info(msg + 'drawColor successed');
+        expect().assertFail();
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        canvas.drawColor({ alpha: 0xFF, red: 0xFF, green: -1, blue: 0xFF}, drawing.BlendMode.CLEAR);
+        console.info(msg + 'drawColor successed');
+        expect().assertFail();
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        canvas.drawColor({ alpha: 0xFF, red: 0xFF, green: 0xFF, blue: -1}, drawing.BlendMode.CLEAR);
+        console.info(msg + 'drawColor successed');
+        expect().assertFail();
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        canvas.drawColor({ alpha: 256, red: 0xFF, green: 0xFF, blue: 0xFF}, drawing.BlendMode.CLEAR);
+        console.info(msg + 'drawColor successed');
+        expect().assertFail();
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        canvas.drawColor({ alpha: 0xFF, red: 256, green: 0xFF, blue: 0xFF}, drawing.BlendMode.CLEAR);
+        console.info(msg + 'drawColor successed');
+        expect().assertFail();
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        canvas.drawColor({ alpha: 0xFF, red: 0xFF, green: 256, blue: 0xFF}, drawing.BlendMode.CLEAR);
+        console.info(msg + 'drawColor successed');
+        expect().assertFail();
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        canvas.drawColor({ alpha: 0xFF, red: 0xFF, green: 0xFF, blue: 256}, drawing.BlendMode.CLEAR);
+        console.info(msg + 'drawColor successed');
+        expect().assertFail();
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
       }
     })
     /**
@@ -173,7 +544,7 @@ export default function drawingTsCanvasTest() {
      * @tc.type      : Function
      * @tc.level     : Level0
      */
-    it('testCanvasDrawPixelMapMeshNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, (): void => {
+    it('testCanvasDrawPixelMapMeshNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasDrawPixelMapMeshNormalStatic';
       try {
         const canvas = new drawing.Canvas(pixel);
@@ -186,8 +557,239 @@ export default function drawingTsCanvasTest() {
         canvas.drawPixelMapMesh(pixel, 1, 1, [0, 0, 50, 0, 410, 0, 0, 180, 50, 180], 1 , [0xFFFFFFFF,0xFFEFFFFF,0xFFFFEFFF,0xFFFFFFEF,0xFFFFFF00], 1);
         canvas.detachBrush();
         console.info(msg + 'drawPixelMapMesh successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `drawPixelMapMesh errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    })
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_0601
+     * @tc.name      : testCanvasDrawPixelMapMeshNullStatic
+     * @tc.desc      : testCanvasDrawPixelMapMeshNull
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('testCanvasDrawPixelMapMeshNullStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawPixelMapMeshNullStatic';
+      const canvas = new drawing.Canvas(pixel);
+      try {
+        const brush = new drawing.Brush();
+        canvas.attachBrush(brush);
+        let verts : Array<number> = [0, 0, 50, 0, 410, 0, 0, 180, 50, 180, 410, 180, 0, 360, 50, 360, 410, 360];
+        canvas.drawPixelMapMesh(pixel, 2, 2, verts, 0, [0xFFFFFFFF,0xFFEFFFFF,0xFFFFEFFF,0xFFFFFFEF,0xFFFFFF00,0xFFEFFFF,0xFFEFFFF,0xFFEFFFF,0xFFEFFFF], 0);
+        canvas.detachBrush();
+        console.info(msg + 'drawPixelMapMesh 1 successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawPixelMapMesh 1 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        const brush = new drawing.Brush();
+        canvas.attachBrush(brush);
+        canvas.drawPixelMapMesh(pixel, 2, 2, [0, 0, 50, 0, 410, 0, 0, 180, 50, 180, 410, 180, 0, 360, 50, 360, 410, 360], 0, [], 0);
+        canvas.detachBrush();
+        console.info(msg + 'drawPixelMapMesh 2 successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawPixelMapMesh 2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    })
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_0603
+     * @tc.name      : testCanvasDrawPixelMapMeshMultipleCallsStatic
+     * @tc.desc      : testCanvasDrawPixelMapMeshMultipleCalls
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('testCanvasDrawPixelMapMeshMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawPixelMapMeshMultipleCallsStatic';
+      try {
+        const canvas = new drawing.Canvas(pixel);
+        const brush = new drawing.Brush();
+        canvas.attachBrush(brush);
+        for (let index = 0; index < 20; index++) {
+          // 待确认
+          // canvas.drawPixelMapMesh(pixel, 2, 2, [0, 0, 50, 0, 410, 0, 0, 180, 50, 180, 410, 180, 0, 360, 50, 360, 410, 360], 0, null, 0);
+        }
+        canvas.detachBrush();
+        console.info(msg + 'drawPixelMapMesh successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawPixelMapMesh errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    })
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_0700
+     * @tc.name      : testCanvasDrawPointNormalStatic
+     * @tc.desc      : testCanvasDrawPointNormal
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level0
+     */
+    it('testCanvasDrawPointNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
+      const msg = 'testCanvasDrawPointNormalStatic';
+      try {
+        const canvas = new drawing.Canvas(pixel);
+        const pen = new drawing.Pen();
+        pen.setStrokeWidth(5);
+        pen.setColor({alpha: 255, red: 255, green: 0, blue: 0});
+        canvas.attachPen(pen);
+        canvas.drawPoint(10, 10);
+        canvas.drawPoint(10.1, 10.1);
+        canvas.drawPoint(-10, -10);
+        canvas.detachPen();
+        console.info(msg + 'drawPoint successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawPoint errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    })
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_0703
+     * @tc.name      : testCanvasDrawPointMultipleCallsStatic
+     * @tc.desc      : testCanvasDrawPointMultipleCalls
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('testCanvasDrawPointMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawPointMultipleCallsStatic';
+      try {
+        const canvas = new drawing.Canvas(pixel);
+        const pen = new drawing.Pen();
+        pen.setStrokeWidth(5);
+        pen.setColor({alpha: 255, red: 255, green: 0, blue: 0});
+        canvas.attachPen(pen);
+        for (let index = 0; index < 20; index++) {
+          canvas.drawPoint(Math.random() * Number.MAX_VALUE, Math.random() * Number.MAX_VALUE);
+        }
+        canvas.detachPen();
+        console.info(msg + 'drawPoint successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawPoint errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    })
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_0800
+     * @tc.name      : testCanvasDrawPathNormalStatic
+     * @tc.desc      : testCanvasDrawPathNormal
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level0
+     */
+    it('testCanvasDrawPathNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
+      const msg = 'testCanvasDrawPathNormalStatic';
+      try {
+        const canvas = new drawing.Canvas(pixel);
+        const pen = new drawing.Pen();
+        pen.setStrokeWidth(5);
+        pen.setColor({alpha: 255, red: 255, green: 0, blue: 0});
+        let path = new drawing.Path();
+        path.moveTo(10,10);
+        path.cubicTo(10, 10, 10, 10, 15, 15);
+        path.close();
+        canvas.attachPen(pen);
+        canvas.drawPath(path);
+        canvas.detachPen();
+        console.info(msg + 'drawPath successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawPath errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    })
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_0803
+     * @tc.name      : testCanvasDrawPathMultipleCallsStatic
+     * @tc.desc      : testCanvasDrawPathMultipleCalls
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('testCanvasDrawPathMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawPathMultipleCallsStatic';
+      try {
+        const canvas = new drawing.Canvas(pixel);
+        const pen = new drawing.Pen();
+        pen.setStrokeWidth(5);
+        pen.setColor({alpha: 255, red: 255, green: 0, blue: 0});
+        let path = new drawing.Path();
+        path.moveTo(10,10);
+        path.cubicTo(10, 10, 10, 10, 15, 15);
+        path.close();
+        canvas.attachPen(pen);
+        for (let index = 0; index < 20; index++) {
+          canvas.drawPath(path);
+        }
+        canvas.detachPen();
+        console.info(msg + 'drawPath successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawPath errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    })
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_0900
+     * @tc.name      : testCanvasDrawLineNormalStatic
+     * @tc.desc      : testCanvasDrawLineNormal
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level0
+     */
+    it('testCanvasDrawLineNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
+      const msg = 'testCanvasDrawLineNormalStatic';
+      try {
+        const canvas = new drawing.Canvas(pixel);
+        const pen = new drawing.Pen();
+        pen.setStrokeWidth(5);
+        pen.setColor({alpha: 255, red: 255, green: 0, blue: 0});
+        canvas.attachPen(pen);
+        canvas.drawLine(10, 15, 10, 10);
+        canvas.drawLine(10.2, 15.3, 10.4, 10.5);
+        canvas.drawLine(-10, -15, 10, 10);
+        canvas.drawLine(10, 15, -10, -10);
+        canvas.detachPen();
+        console.info(msg + 'drawLine successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawLine errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    })
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_0903
+     * @tc.name      : testCanvasDrawLineMultipleCallsStatic
+     * @tc.desc      : testCanvasDrawLineMultipleCalls
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('testCanvasDrawLineMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawLineMultipleCallsStatic';
+      try {
+        const canvas = new drawing.Canvas(pixel);
+        const pen = new drawing.Pen();
+        pen.setStrokeWidth(5);
+        pen.setColor({alpha: 255, red: 255, green: 0, blue: 0});
+        canvas.attachPen(pen);
+        for (let index = 0; index < 20; index++) {
+          canvas.drawLine(Math.random() * Number.MAX_VALUE, Math.random() * Number.MAX_VALUE, Math.random() * Number.MAX_VALUE, Math.random() * Number.MAX_VALUE);
+        }
+        canvas.detachPen();
+        console.info(msg + 'drawLine successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `drawLine errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
     })

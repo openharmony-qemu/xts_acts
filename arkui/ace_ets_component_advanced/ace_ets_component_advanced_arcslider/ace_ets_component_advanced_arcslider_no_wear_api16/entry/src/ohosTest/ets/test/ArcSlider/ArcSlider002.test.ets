@@ -56,6 +56,14 @@ export default function ArcSlider002() {
             console.info("afterAll case");
         });
 
+        /**
+         * @tc.name   arcSliderTest002
+         * @tc.number arcSliderTest002
+         * @tc.desc   arcSliderTest002
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('arcSliderTest002',  Level.LEVEL0, async (done: Function) => {
             console.info('arcSliderTest002 START');
             let driver = await UiDriver.create();

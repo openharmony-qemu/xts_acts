@@ -47,12 +47,12 @@ export default function GridFlingCallbackJsunit() {
     });
 
     /**
+     * @tc.name   GridFlingCallbackTest_0100
      * @tc.number GridFlingCallbackTest_0100
-     * @tc.name Test the properties of components
-     * @tc.desc Set attribute values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Set attribute values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('GridFlingCallbackTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('GridFlingCallbackTest_0100 START');
@@ -68,12 +68,12 @@ export default function GridFlingCallbackJsunit() {
     });
 
     /**
+     * @tc.name   GridFlingCallbackTest_0200
      * @tc.number GridFlingCallbackTest_0200
-     * @tc.name Test the properties of components
-     * @tc.desc Set attribute values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Set attribute values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('GridFlingCallbackTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('GridFlingCallbackTest_0200 START');

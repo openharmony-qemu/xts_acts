@@ -49,11 +49,14 @@ export default function ActsSetCheckSyncEnable() {
             };
         });
 
-        /*
-        * @tc.number    : ActsSetCheckSyncEnable_0100
-        * @tc.name      : Check sync flag callback form
-        * @tc.desc      : Get the synchronization flag of the account that has not set the synchronization flag
-        */
+        /**
+         * @tc.name   ActsSetCheckSyncEnable_0100
+         * @tc.number ActsSetCheckSyncEnable_0100
+         * @tc.desc   Get the synchronization flag of the account that has not set the synchronization flag
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsSetCheckSyncEnable_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsSetCheckSyncEnable_0100 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -89,13 +92,13 @@ export default function ActsSetCheckSyncEnable() {
         });
 
         /**
-        * @tc.number    ActsSetCheckSyncEnable_0200
-        * @tc.name      ActsSetCheckSyncEnable_0200
-        * @tc.desc      Get the synchronization flag of the account that has not set the synchronization flag
-        * @tc.level     Level2
-        * @tc.size      MediumTest
-        * @tc.type      Function
-        */
+         * @tc.name   ActsSetCheckSyncEnable_0200
+         * @tc.number ActsSetCheckSyncEnable_0200
+         * @tc.desc   Get the synchronization flag of the account that has not set the synchronization flag
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsSetCheckSyncEnable_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsSetCheckSyncEnable_0200 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -132,11 +135,14 @@ export default function ActsSetCheckSyncEnable() {
             done();
         });
 
-        /*
-        * @tc.number    : ActsSetCheckSyncEnable_0300
-        * @tc.name      : Check the set synchronization flag callback form
-        * @tc.desc      : Check the synchronization flag after setting the synchronization flag to true for the account
-        */
+        /**
+         * @tc.name   ActsSetCheckSyncEnable_0300
+         * @tc.number ActsSetCheckSyncEnable_0300
+         * @tc.desc   Check the synchronization flag after setting the synchronization flag to true for the account
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ActsSetCheckSyncEnable_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("====>ActsSetCheckSyncEnable_0300 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -180,13 +186,13 @@ export default function ActsSetCheckSyncEnable() {
         });
 
         /**
-        * @tc.number    ActsSetCheckSyncEnable_0400
-        * @tc.name      Check the set synchronization flag promise form
-        * @tc.desc      Check the synchronization flag after setting the synchronization flag to true for the account
-        * @tc.level     Level2
-        * @tc.size      MediumTest
-        * @tc.type      Function
-        */
+         * @tc.name   ActsSetCheckSyncEnable_0400
+         * @tc.number ActsSetCheckSyncEnable_0400
+         * @tc.desc   Check the synchronization flag after setting the synchronization flag to true for the account
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ActsSetCheckSyncEnable_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("====>ActsSetCheckSyncEnable_0400 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -225,11 +231,14 @@ export default function ActsSetCheckSyncEnable() {
             done();
         });
 
-        /*
-        * @tc.number    : ActsSetCheckSyncEnable_0500
-        * @tc.name      : Check the set synchronization flag callback form
-        * @tc.desc      : Check the synchronization flag after setting the synchronization flag to false for the account
-        */
+        /**
+         * @tc.name   ActsSetCheckSyncEnable_0500
+         * @tc.number ActsSetCheckSyncEnable_0500
+         * @tc.desc   Check the synchronization flag after setting the synchronization flag to false for the account
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsSetCheckSyncEnable_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsSetCheckSyncEnable_0500 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -272,11 +281,14 @@ export default function ActsSetCheckSyncEnable() {
             });
         });
 
-        /*
-        * @tc.number    : ActsSetCheckSyncEnable_0600
-        * @tc.name      : Check the set synchronization flag promise form
-        * @tc.desc      : Check the synchronization flag after setting the synchronization flag to false for the account
-        */
+        /**
+         * @tc.name   ActsSetCheckSyncEnable_0600
+         * @tc.number ActsSetCheckSyncEnable_0600
+         * @tc.desc   Check the synchronization flag after setting the synchronization flag to false for the account
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsSetCheckSyncEnable_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsSetCheckSyncEnable_0600 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -316,12 +328,14 @@ export default function ActsSetCheckSyncEnable() {
             done();
         });
 
-        /*
-        * @tc.number    : ActsSetCheckSyncEnable_0700
-        * @tc.name      : Check the set synchronization flag callback form
-        * @tc.desc      : Check the synchronization flag after setting the synchronization flag for the account to false
-        *                 for the first time and true for the second time
-        */
+        /**
+         * @tc.name   ActsSetCheckSyncEnable_0700
+         * @tc.number ActsSetCheckSyncEnable_0700
+         * @tc.desc   Check the synchronization flag after setting the synchronization flag for the account to false
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsSetCheckSyncEnable_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsSetCheckSyncEnable_0700 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -372,12 +386,14 @@ export default function ActsSetCheckSyncEnable() {
             });
         });
 
-        /*
-        * @tc.number    : ActsSetCheckSyncEnable_0800
-        * @tc.name      : Check the set synchronization flag promise form
-        * @tc.desc      : Check the synchronization flag after setting the synchronization flag for the account to false
-        *                 for the first time and true for the second time
-        */
+        /**
+         * @tc.name   ActsSetCheckSyncEnable_0800
+         * @tc.number ActsSetCheckSyncEnable_0800
+         * @tc.desc   Check the synchronization flag after setting the synchronization flag for the account to false
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsSetCheckSyncEnable_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsSetCheckSyncEnable_0800 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -412,12 +428,14 @@ export default function ActsSetCheckSyncEnable() {
             done();
         });
 
-        /*
-        * @tc.number    : ActsSetCheckSyncEnable_0900
-        * @tc.name      : Check the set synchronization flag callback form
-        * @tc.desc      : Check the synchronization flag after setting the synchronization flag for the account to true
-        *                 for the first time and false for the second time
-        */
+        /**
+         * @tc.name   ActsSetCheckSyncEnable_0900
+         * @tc.number ActsSetCheckSyncEnable_0900
+         * @tc.desc   Check the synchronization flag after setting the synchronization flag for the account to true
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsSetCheckSyncEnable_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsSetCheckSyncEnable_0900 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -468,12 +486,14 @@ export default function ActsSetCheckSyncEnable() {
             });
         });
 
-        /*
-        * @tc.number    : ActsSetCheckSyncEnable_1000
-        * @tc.name      : Check the set synchronization flag promise form
-        * @tc.desc      : Check the synchronization flag after setting the synchronization flag for the account to true
-        *                 for the first time and false for the second time
-        */
+        /**
+         * @tc.name   ActsSetCheckSyncEnable_1000
+         * @tc.number ActsSetCheckSyncEnable_1000
+         * @tc.desc   Check the synchronization flag after setting the synchronization flag for the account to true
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsSetCheckSyncEnable_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsSetCheckSyncEnable_1000 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -508,12 +528,14 @@ export default function ActsSetCheckSyncEnable() {
             done();
         });
 
-        /*
-        * @tc.number    : ActsSetCheckSyncEnable_1100
-        * @tc.name      : Check the set synchronization flag callback form
-        * @tc.desc      : Check the synchronization flag after setting the synchronization flag for the account to true
-        *                 for the first time and true for the second time
-        */
+        /**
+         * @tc.name   ActsSetCheckSyncEnable_1100
+         * @tc.number ActsSetCheckSyncEnable_1100
+         * @tc.desc   Check the synchronization flag after setting the synchronization flag for the account to true
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsSetCheckSyncEnable_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsSetCheckSyncEnable_1100 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -564,12 +586,14 @@ export default function ActsSetCheckSyncEnable() {
             });
         });
 
-        /*
-        * @tc.number    : ActsSetCheckSyncEnable_1200
-        * @tc.name      : Check the set synchronization flag promise form
-        * @tc.desc      : Check the synchronization flag after setting the synchronization flag for the account to true
-        *                 for the true time and true for the second time
-        */
+        /**
+         * @tc.name   ActsSetCheckSyncEnable_1200
+         * @tc.number ActsSetCheckSyncEnable_1200
+         * @tc.desc   Check the synchronization flag after setting the synchronization flag for the account to true
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsSetCheckSyncEnable_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsSetCheckSyncEnable_1200 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -604,11 +628,14 @@ export default function ActsSetCheckSyncEnable() {
             done();
         });
 
-        /*
-        * @tc.number    : ActsSetCheckSyncEnable_1300
-        * @tc.name      : setAppAccountSyncEnable callback form
-        * @tc.desc      : Set synchronization flag for non-existent account
-        */
+        /**
+         * @tc.name   ActsSetCheckSyncEnable_1300
+         * @tc.number ActsSetCheckSyncEnable_1300
+         * @tc.desc   Set synchronization flag for non-existent account
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsSetCheckSyncEnable_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsSetCheckSyncEnable_1300 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -627,11 +654,14 @@ export default function ActsSetCheckSyncEnable() {
             });
         });
 
-        /*
-        * @tc.number    : ActsSetCheckSyncEnable_1400
-        * @tc.name      : setAppAccountSyncEnable promise form
-        * @tc.desc      : Set synchronization flag for non-existent account
-        */
+        /**
+         * @tc.name   ActsSetCheckSyncEnable_1400
+         * @tc.number ActsSetCheckSyncEnable_1400
+         * @tc.desc   Set synchronization flag for non-existent account
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsSetCheckSyncEnable_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsSetCheckSyncEnable_1400 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -649,11 +679,14 @@ export default function ActsSetCheckSyncEnable() {
             }
         });
 
-        /*
-        * @tc.number    : ActsSetCheckSyncEnable_1500
-        * @tc.name      : checkAppAccountSyncEnable callback form
-        * @tc.desc      : Check synchronization flag for non-existent account
-        */
+        /**
+         * @tc.name   ActsSetCheckSyncEnable_1500
+         * @tc.number ActsSetCheckSyncEnable_1500
+         * @tc.desc   Check synchronization flag for non-existent account
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsSetCheckSyncEnable_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsSetCheckSyncEnable_1500 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -672,11 +705,14 @@ export default function ActsSetCheckSyncEnable() {
             });
         });
 
-        /*
-        * @tc.number    : ActsSetCheckSyncEnable_1600
-        * @tc.name      : checkAppAccountSyncEnable promise form
-        * @tc.desc      : Check synchronization flag for non-existent account
-        */
+        /**
+         * @tc.name   ActsSetCheckSyncEnable_1600
+         * @tc.number ActsSetCheckSyncEnable_1600
+         * @tc.desc   Check synchronization flag for non-existent account
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsSetCheckSyncEnable_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsSetCheckSyncEnable_1600 start====");
             var appAccountManager = account.createAppAccountManager();

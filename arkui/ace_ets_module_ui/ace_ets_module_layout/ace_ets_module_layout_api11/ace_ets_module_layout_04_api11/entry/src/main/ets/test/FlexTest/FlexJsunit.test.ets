@@ -54,9 +54,12 @@ export default function flexJsunit() {
       console.info("Flex after each called");
     });
     /**
+     * @tc.name   testFlex010
      * @tc.number SUB_ACE_BASIC_ETS_API_0770
-     * @tc.name testFlex010
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlex010',  Level.LEVEL0, async (done: Function) => {
       console.info('new Flex0 START');
@@ -79,9 +82,12 @@ export default function flexJsunit() {
     });
 
     /**
+     * @tc.name   testFlex020
      * @tc.number SUB_ACE_BASIC_ETS_API_0780
-     * @tc.name testFlex020
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlex020',  Level.LEVEL0, async (done: Function) => {
       console.info('new Flex1 START');
@@ -102,9 +108,12 @@ export default function flexJsunit() {
     });
 
     /**
+     * @tc.name   testFlex030
      * @tc.number SUB_ACE_BASIC_ETS_API_0790
-     * @tc.name testFlex030
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlex030',  Level.LEVEL0, async (done: Function) => {
       console.info('new Flex2 START');
@@ -123,9 +132,12 @@ export default function flexJsunit() {
     });
 
     /**
+     * @tc.name   testFlex040
      * @tc.number SUB_ACE_BASIC_ETS_API_0800
-     * @tc.name testFlex040
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlex040',  Level.LEVEL0, async (done: Function) => {
       console.info('new Flex3 START');
@@ -140,9 +152,12 @@ export default function flexJsunit() {
     });
 
     /**
+     * @tc.name   testFlex050
      * @tc.number SUB_ACE_BASIC_ETS_API_0810
-     * @tc.name testFlex050
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlex050',  Level.LEVEL0, async (done: Function) => {
       console.info('new Flex4 START');
@@ -158,9 +173,12 @@ export default function flexJsunit() {
     });
 
     /**
+     * @tc.name   testFlex060
      * @tc.number SUB_ACE_BASIC_ETS_API_0820
-     * @tc.name testFlex060
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlex060',  Level.LEVEL0, async (done: Function) => {
       console.info('new Flex5 START');

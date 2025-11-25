@@ -40,10 +40,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number  : ACTS_GetAbilityState_0200
-     * @tc.name    : The test framework needs to provide the following query-related functions
-     * @tc.desc    : Get the status of the Ability in the BACKGROUND state
+    /**
+     * @tc.name   ACTS_GetAbilityState_0200
+     * @tc.number ACTS_GetAbilityState_0200
+     * @tc.desc   Get the status of the Ability in the BACKGROUND state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_GetAbilityState_0200', Level.LEVEL0, async (done: Function) => {
       console.log('====>start ACTS_GetAbilityState_0200====');
@@ -108,10 +111,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number  : ACTS_GetAbilityState_0300
-     * @tc.name    : The test framework needs to provide the following query-related functions
-     * @tc.desc    : Get the status of the Ability in the FOREGROUND state
+    /**
+     * @tc.name   ACTS_GetAbilityState_0300
+     * @tc.number ACTS_GetAbilityState_0300
+     * @tc.desc   Get the status of the Ability in the FOREGROUND state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_GetAbilityState_0300', Level.LEVEL0, async (done: Function) => {
       console.log('====>start ACTS_GetAbilityState_0300====');
@@ -173,10 +179,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number  : ACTS_GetAbilityState_0500
-     * @tc.name    : The test framework needs to provide the following query-related functions
-     * @tc.desc    : Get the status of an inactive or nonexistent Ability
+    /**
+     * @tc.name   ACTS_GetAbilityState_0500
+     * @tc.number ACTS_GetAbilityState_0500
+     * @tc.desc   Get the status of an inactive or nonexistent Ability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_GetAbilityState_0500', Level.LEVEL0, async (done: Function) => {
       console.log('====>start ACTS_GetAbilityState_0500====');
@@ -189,10 +198,13 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-     * @tc.number  : ACTS_GetAbilityState_0600
-     * @tc.name    : The test framework needs to provide the following query-related functions
-     * @tc.desc    : Get the status of the Ability in the uninitialized state
+    /**
+     * @tc.name   ACTS_GetAbilityState_0600
+     * @tc.number ACTS_GetAbilityState_0600
+     * @tc.desc   Get the status of the Ability in the uninitialized state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_GetAbilityState_0600', Level.LEVEL0, async (done: Function) => {
       console.log('====>start ACTS_GetAbilityState_0600====');

@@ -40,12 +40,12 @@ export default function ComponentContentAPIRecycleTest() {
       done();
     });
     /**
-     * @tc.number    ComponentContentAPIRecycleTest_0100
-     * @tc.name      ComponentContentAPIRecycleTest_0100
-     * @tc.desc      frameNode: ComponentContentAPIRecycle
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ComponentContentAPIRecycleTest_0100
+     * @tc.number ComponentContentAPIRecycleTest_0100
+     * @tc.desc   frameNode: ComponentContentAPIRecycle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ComponentContentAPIRecycleTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ComponentContentAPIRecycleTest_0100 START');

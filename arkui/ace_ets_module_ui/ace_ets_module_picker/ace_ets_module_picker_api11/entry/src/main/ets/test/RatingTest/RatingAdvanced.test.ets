@@ -47,11 +47,13 @@ export default function RatingAdvancedTest() {
       console.info("RatingAdvancedTest after each called");
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_0040
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_0040
-     * @tc.desc        indicator = false, dont set focusable
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_0040
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_0040
+     * @tc.desc   indicator = false, dont set focusable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_0040', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_0040] START');
@@ -68,11 +70,13 @@ export default function RatingAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_0050
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_0050
-     * @tc.desc        indicator = true, don't set focusable
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_0050
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_0050
+     * @tc.desc   indicator = true, don't set focusable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_0050', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_0050] START');
@@ -89,11 +93,13 @@ export default function RatingAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_0060
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_0060
-     * @tc.desc        indicator = false , focusable = true
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_0060
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_0060
+     * @tc.desc   indicator = false , focusable = true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_0060', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_0060] START');
@@ -110,11 +116,13 @@ export default function RatingAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_0070
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_0070
-     * @tc.desc        indicator = false , focusable = false
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_0070
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_0070
+     * @tc.desc   indicator = false , focusable = false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_0070', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_0070] START');
@@ -131,11 +139,13 @@ export default function RatingAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_0080
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_0080
-     * @tc.desc        indicator = true , focusable = true
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_0080
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_0080
+     * @tc.desc   indicator = true , focusable = true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_0080', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_0080] START');
@@ -152,11 +162,13 @@ export default function RatingAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_0090
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_0090
-     * @tc.desc        indicator = true , focusable = false
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_0090
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_0090
+     * @tc.desc   indicator = true , focusable = false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_0090', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_HOVERKEYBOARD_0090] START');
@@ -173,11 +185,13 @@ export default function RatingAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_0010
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_0010
-     * @tc.desc        indicator = false , observe onChange
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_0010
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_0010
+     * @tc.desc   indicator = false , observe onChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_0010', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_0010] START');
@@ -196,11 +210,13 @@ export default function RatingAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_0020
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_0020
-     * @tc.desc        indicator = true , observe onChange
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_0020
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_0020
+     * @tc.desc   indicator = true , observe onChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_0020', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_0020] START');
@@ -219,11 +235,13 @@ export default function RatingAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_0170
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_0170
-     * @tc.desc        stepSize = 0.05
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_0170
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_0170
+     * @tc.desc   stepSize = 0.05
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_0170', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_INTERFACE_0170] START');
@@ -247,11 +265,13 @@ export default function RatingAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_RATING_LAYOUT_0010
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_RATING_LAYOUT_0010
-     * @tc.desc        width 300 , height 300
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_RATING_LAYOUT_0010
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_RATING_LAYOUT_0010
+     * @tc.desc   width 300 , height 300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_LAYOUT_0010', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_LAYOUT_0010] START');
@@ -269,11 +289,13 @@ export default function RatingAdvancedTest() {
       done();
     });
 
-    /*
-     * @tc.number      SUB_ACE_UI_COMPONENT_BUTTON_RATING_LAYOUT_0040
-     * @tc.name        SUB_ACE_UI_COMPONENT_BUTTON_RATING_LAYOUT_0040
-     * @tc.desc        set height , observe width
-     * @tc.level       Level 3
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_BUTTON_RATING_LAYOUT_0040
+     * @tc.number SUB_ACE_UI_COMPONENT_BUTTON_RATING_LAYOUT_0040
+     * @tc.desc   set height , observe width
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_ACE_UI_COMPONENT_BUTTON_RATING_LAYOUT_0040', Level.LEVEL3, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_BUTTON_RATING_LAYOUT_0040] START');

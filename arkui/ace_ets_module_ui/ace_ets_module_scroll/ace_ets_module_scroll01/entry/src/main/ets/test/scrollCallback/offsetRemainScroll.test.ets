@@ -47,12 +47,12 @@ export default function offsetRemainScroll() {
     });
 
     /**
-     * @tc.number    offsetRemainScroll_001
-     * @tc.name      offsetRemainScroll_0100
-     * @tc.desc      Actual sliding amount of the Scroll, unit vp.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   offsetRemainScroll_0100
+     * @tc.number offsetRemainScroll_001
+     * @tc.desc   Actual sliding amount of the Scroll, unit vp.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('offsetRemainScroll_0100', Level.LEVEL3, async (done: Function) => {
       console.info('[offsetRemainScroll_0100] START');

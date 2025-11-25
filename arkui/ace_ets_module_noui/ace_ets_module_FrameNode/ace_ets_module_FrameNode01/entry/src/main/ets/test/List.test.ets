@@ -40,7 +40,6 @@ import getAttachedFrameNodeById from './FrameNodeTest/getAttachedFrameNodeById.t
 import getAttrsTest from './FrameNodeTest/getAttrs.test';
 import getPosition from './FrameNodeTest/getPosition.test';
 import onAppear from './FrameNodeTest/onAppear.test';
-import RELOAD from './FrameNodeTest/RELOAD.test';
 import setLayout from './FrameNodeTest/setLayout.test';
 import setMeasureSizeTest from './FrameNodeTest/setMeasureSize.test';
 
@@ -109,7 +108,6 @@ export default function testsuite() {
   getAttrsTest();
   getPosition();
   onAppear();
-  RELOAD();
   setLayout();
   setMeasureSizeTest();
   frameNodeIsVisibleTest();

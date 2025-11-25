@@ -20,6 +20,7 @@ import WebGestureFocusMode from './WebGestureFocusMode.test'
 import WebGestureTapAndLongPress from './WebGestureTapAndLongPress.test'
 import WebForceEnableZoom from './WebForceEnableZoom.test'
 import WebSetSoftKeyboardBehaviorMode from './WebSetSoftKeyboardBehaviorMode.test'
+import WebKeyBoardAvoidMode from './WebKeyBoardAvoidMode.test'
 
 export default function testsuite() {
   webInitTest()
@@ -30,4 +31,5 @@ export default function testsuite() {
   WebGestureTapAndLongPress()
   WebForceEnableZoom()
   WebSetSoftKeyboardBehaviorMode()
+  WebKeyBoardAvoidMode()
 }

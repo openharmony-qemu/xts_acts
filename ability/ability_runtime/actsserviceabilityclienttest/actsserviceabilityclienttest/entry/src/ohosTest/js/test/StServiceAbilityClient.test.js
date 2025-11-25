@@ -103,11 +103,14 @@ export default function ActsStServiceAbilityTest() {
             }, gSetTimeout);
         })
 
-        /*
-        * @tc.number: ACTS_JsServiceAbility_0100
-        * @tc.name: featureAbility.startAbility : Use page to test startAbiltiy service.
-        * @tc.desc: Check the return value of the interface (by Promise)
-        */
+        /**
+         * @tc.name   ACTS_JsServiceAbility_0100
+         * @tc.number ACTS_JsServiceAbility_0100
+         * @tc.desc   Check the return value of the interface (by Promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ACTS_JsServiceAbility_0100', Level.LEVEL0, async function (done) {
             console.info('ACTS_JsServiceAbility_0100====<begin');
             try {
@@ -153,11 +156,14 @@ export default function ActsStServiceAbilityTest() {
             }
         })
 
-        /*
-        * @tc.number: ACTS_JsServiceAbility_0200
-        * @tc.name: featureAbility.startAbility : Use page to test startAbiltiy service.
-        * @tc.desc: Check the return value of the interface (by AsyncCallback)
-        */
+        /**
+         * @tc.name   ACTS_JsServiceAbility_0200
+         * @tc.number ACTS_JsServiceAbility_0200
+         * @tc.desc   Check the return value of the interface (by AsyncCallback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ACTS_JsServiceAbility_0200', Level.LEVEL0, async function (done) {
             console.info('ACTS_JsServiceAbility_0200====<begin');
             try {
@@ -200,11 +206,14 @@ export default function ActsStServiceAbilityTest() {
             }
         })
 
-        /*
-        * @tc.number: ACTS_JsServiceAbility_0300
-        * @tc.name: featureAbility.startAbility : Use page to test startAbiltiy service.
-        * @tc.desc: Check the return value of the interface (by Promise)
-        */
+        /**
+         * @tc.name   ACTS_JsServiceAbility_0300
+         * @tc.number ACTS_JsServiceAbility_0300
+         * @tc.desc   Check the return value of the interface (by Promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ACTS_JsServiceAbility_0300', Level.LEVEL0, async function (done) {
             console.info('ACTS_JsServiceAbility_0300====<begin');
             try {
@@ -273,11 +282,14 @@ export default function ActsStServiceAbilityTest() {
             }
         })
 
-        /*
-        * @tc.number: ACTS_JsServiceAbility_0400
-        * @tc.name: featureAbility.startAbility : Use page to test startAbiltiy service.
-        * @tc.desc: Check the return value of the interface (by AsyncCallback)
-        */
+        /**
+         * @tc.name   ACTS_JsServiceAbility_0400
+         * @tc.number ACTS_JsServiceAbility_0400
+         * @tc.desc   Check the return value of the interface (by AsyncCallback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ACTS_JsServiceAbility_0400', Level.LEVEL0, async function (done) {
             console.info('ACTS_JsServiceAbility_0400====<begin');
             try {
@@ -340,11 +352,14 @@ export default function ActsStServiceAbilityTest() {
             }
         })
 
-        /*
-        * @tc.number: ACTS_JsServiceAbility_0500
-        * @tc.name: featureAbility.ConnectAbility : Connects an ability to a Service ability.
-        * @tc.desc: Check the return value of the interface (by Promise)
-        */
+        /**
+         * @tc.name   ACTS_JsServiceAbility_0500
+         * @tc.number ACTS_JsServiceAbility_0500
+         * @tc.desc   Check the return value of the interface (by Promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ACTS_JsServiceAbility_0500', Level.LEVEL0, async function (done) {
             console.log('ACTS_JsServiceAbility_0500====<begin');
             try {
@@ -419,11 +434,14 @@ export default function ActsStServiceAbilityTest() {
             }
         })
 
-        /*
-        * @tc.number: ACTS_JsServiceAbility_0600
-        * @tc.name: featureAbility.ConnectAbility : Connects an ability to a Service ability.
-        * @tc.desc: Check the return value of the interface (by AsyncCallback)
-        */
+        /**
+         * @tc.name   ACTS_JsServiceAbility_0600
+         * @tc.number ACTS_JsServiceAbility_0600
+         * @tc.desc   Check the return value of the interface (by AsyncCallback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ACTS_JsServiceAbility_0600', Level.LEVEL0, async function (done) {
             console.log('ACTS_JsServiceAbility_0600====<begin');
             try {
@@ -497,10 +515,13 @@ export default function ActsStServiceAbilityTest() {
             }
         })
 
-        /*
-         * @tc.number: ACTS_JsServiceAbility_0900
-         * @tc.name: particleability.startAbility : Use page to test startAbiltiy service.
-         * @tc.desc: Check the return value of the interface (by Promise)
+        /**
+         * @tc.name   ACTS_JsServiceAbility_0900
+         * @tc.number ACTS_JsServiceAbility_0900
+         * @tc.desc   Check the return value of the interface (by Promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_JsServiceAbility_0900', Level.LEVEL0, async function (done) {
             console.info('ACTS_JsServiceAbility_0900====<begin');
@@ -548,11 +569,14 @@ export default function ActsStServiceAbilityTest() {
             }
         })
 
-        /*
-        * @tc.number: ACTS_JsServiceAbility_1000
-        * @tc.name: particleability.startAbility : Use page to test startAbiltiy service.
-        * @tc.desc: Check the return value of the interface (by AsyncCallback)
-        */
+        /**
+         * @tc.name   ACTS_JsServiceAbility_1000
+         * @tc.number ACTS_JsServiceAbility_1000
+         * @tc.desc   Check the return value of the interface (by AsyncCallback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ACTS_JsServiceAbility_1000', Level.LEVEL0, async function (done) {
             console.info('ACTS_JsServiceAbility_1000====<begin');
             await sleep(2000)
@@ -597,10 +621,13 @@ export default function ActsStServiceAbilityTest() {
             }
         })
 
-        /*
-         * @tc.number: ACTS_JsServiceAbility_1300
-         * @tc.name: particleability.ConnectAbility : Connects an ability to a Service ability.
-         * @tc.desc: Check the return value of the interface (by Promise)
+        /**
+         * @tc.name   ACTS_JsServiceAbility_1300
+         * @tc.number ACTS_JsServiceAbility_1300
+         * @tc.desc   Check the return value of the interface (by Promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_JsServiceAbility_1300', Level.LEVEL0, async function (done) {
             console.log('ACTS_JsServiceAbility_1300====<begin');
@@ -674,11 +701,14 @@ export default function ActsStServiceAbilityTest() {
             }
         })
 
-        /*
-        * @tc.number: ACTS_JsServiceAbility_1400
-        * @tc.name: particleability.ConnectAbility : Connects an ability to a Service ability.
-        * @tc.desc: Check the return value of the interface (by AsyncCallback)
-        */
+        /**
+         * @tc.name   ACTS_JsServiceAbility_1400
+         * @tc.number ACTS_JsServiceAbility_1400
+         * @tc.desc   Check the return value of the interface (by AsyncCallback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ACTS_JsServiceAbility_1400', Level.LEVEL0, async function (done) {
             console.log('ACTS_JsServiceAbility_1400====<begin');
             try {
@@ -747,10 +777,13 @@ export default function ActsStServiceAbilityTest() {
             }
         })
 
-        /*
-         * @tc.number: ACTS_JsServiceAbility_1500
-         * @tc.name: particleability.ConnectAbility : Connects an ability to a Service ability.
-         * @tc.desc: Check the return value of the interface (by Promise)
+        /**
+         * @tc.name   ACTS_JsServiceAbility_1500
+         * @tc.number ACTS_JsServiceAbility_1500
+         * @tc.desc   Check the return value of the interface (by Promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_JsServiceAbility_1500', Level.LEVEL0, async function (done) {
             console.log('ACTS_JsServiceAbility_1500====<begin');
@@ -825,10 +858,13 @@ export default function ActsStServiceAbilityTest() {
             }
         })
 
-        /*
-         * @tc.number: ACTS_JsServiceAbility_1600
-         * @tc.name: particleability.ConnectAbility : Connects an ability to a Service ability.
-         * @tc.desc: Check the return value of the interface (by Promise)
+        /**
+         * @tc.name   ACTS_JsServiceAbility_1600
+         * @tc.number ACTS_JsServiceAbility_1600
+         * @tc.desc   Check the return value of the interface (by Promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_JsServiceAbility_1600', Level.LEVEL0, async function (done) {
           console.log('ACTS_JsServiceAbility_1600====<begin');
@@ -865,10 +901,13 @@ export default function ActsStServiceAbilityTest() {
           }
       })
 
-        /*
-         * @tc.number: ACTS_JsServiceAbility_1700
-         * @tc.name: particleability.ConnectAbility : Connects an ability to a Service ability.
-         * @tc.desc: Check the return value of the interface (by Promise)
+        /**
+         * @tc.name   ACTS_JsServiceAbility_1700
+         * @tc.number ACTS_JsServiceAbility_1700
+         * @tc.desc   Check the return value of the interface (by Promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_JsServiceAbility_1700', Level.LEVEL0, async function (done) {
           console.log('ACTS_JsServiceAbility_1700====<begin');

@@ -58,15 +58,15 @@ done();
       console.info("overlay after each called");
     });
 
-    /**
-     * @tc.number	 SUB_ACE_TS_COMPONENT_dragPreviewOptions_01
-     * @tc.name  	 dragPreviewOptionsJsSuit_0100
-     * @tc.desc  	 Confirm if there is a callback
-	 * @tc.level     Level 2
-     * @tc.type :
-     * @tc.size :
-     */
 
+    /**
+     * @tc.name   dragPreviewOptionsJsSuit_0100
+     * @tc.number dragPreviewOptionsJsSuit_0100
+     * @tc.desc   dragPreviewOptionsJsSuit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('dragPreviewOptionsJsSuit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[dragPreviewOptionsJsSuit_0100] START');
       await CommonFunc.sleep(1000);

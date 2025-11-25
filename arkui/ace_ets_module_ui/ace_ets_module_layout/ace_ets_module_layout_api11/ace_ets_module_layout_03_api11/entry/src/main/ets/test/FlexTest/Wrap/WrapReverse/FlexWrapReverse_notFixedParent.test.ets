@@ -49,10 +49,12 @@ export default function flexWrapReverse_notFixedParent() {
     });
 
     /**
+     * @tc.name   testWrapReverseChildfixedChangeParentInRange
      * @tc.number SUB_ACE_FLEX_WRAPREVERSE_CHILDFIXED_TEST_0100
-     * @tc.name testWrapReverseChildfixedChangeParentInRange
-     * @tc.desc The parent component changes the location and space of the layout, affecting the layout of child
-     *               components, the width and height of parent component meets the requirements of the child components
+     * @tc.desc   The parent component changes the location and space of the layout, affecting the layout of child
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapReverseChildfixedChangeParentInRange',  Level.LEVEL0, async () => {
       console.info('new testWrapReverseChildfixedChangeParentInRange START');
@@ -91,10 +93,12 @@ export default function flexWrapReverse_notFixedParent() {
     });
 
     /**
+     * @tc.name   testWrapReverseChildfixedChangeParentChildWidthOutRange
      * @tc.number SUB_ACE_FLEX_WRAPREVERSE_CHILDFIXED_TEST_0200
-     * @tc.name testWrapReverseChildfixedChangeParentChildWidthOutRange
-     * @tc.desc The parent component changes location and space of layout, affecting layout of child components,
-     *               the width of parent component does not meet the requirements of child components, but height meets
+     * @tc.desc   The parent component changes location and space of layout, affecting layout of child components,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapReverseChildfixedChangeParentChildWidthOutRange',  Level.LEVEL0, async () => {
       console.info('new testWrapReverseChildfixedChangeParentChildWidthOutRange START');
@@ -134,10 +138,12 @@ export default function flexWrapReverse_notFixedParent() {
     });
 
     /**
+     * @tc.name   testWrapReverseChildfixedChangeParentChildAllOutRange
      * @tc.number SUB_ACE_FLEX_WRAPREVERSE_CHILDFIXED_TEST_0300
-     * @tc.name testWrapReverseChildfixedChangeParentChildAllOutRange
-     * @tc.desc The parent component changes location and space of layout, affecting layout of child components,
-     *               the width and height of parent component does not meet the requirements of the child components
+     * @tc.desc   The parent component changes location and space of layout, affecting layout of child components,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapReverseChildfixedChangeParentChildAllOutRange',  Level.LEVEL0, async () => {
       console.info('new testWrapReverseChildfixedChangeParentChildAllOutRange START');

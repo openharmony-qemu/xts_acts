@@ -43,6 +43,14 @@ export default function TextClockJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   TextClock_0100
+     * @tc.number TextClock_0100
+     * @tc.desc   TextClock_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('TextClock_0100', Level.LEVEL2, async (done: Function) => {
       // Get the information of TextClock component
       console.info('[TextClock_0100] START');
@@ -65,6 +73,14 @@ export default function TextClockJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   TextClock_0200
+     * @tc.number TextClock_0200
+     * @tc.desc   TextClock_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('TextClock_0200', Level.LEVEL2, async (done: Function) => {
       // Modify the attribute of TextClock component
       console.info('[TextClock_0200] START');
@@ -83,6 +99,14 @@ export default function TextClockJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   TextClock_0300
+     * @tc.number TextClock_0300
+     * @tc.desc   TextClock_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('TextClock_0300', Level.LEVEL2, async (done: Function) => {
       // Verify the functions of the button of start
       console.info('[TextClock_0300] START');

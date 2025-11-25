@@ -47,6 +47,14 @@ export default function ColumnFixAtiDealSizeTest() {
       console.info("ColumnFixAtiDealSize after each called");
     });
 
+    /**
+     * @tc.name   ColumnFixAtiDealSizeTest_0100
+     * @tc.number ColumnFixAtiDealSizeTest_0100
+     * @tc.desc   ColumnFixAtiDealSizeTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ColumnFixAtiDealSizeTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[ColumnFixAtiDealSizeTest_0100] START');
       await Utils.sleep(2000);

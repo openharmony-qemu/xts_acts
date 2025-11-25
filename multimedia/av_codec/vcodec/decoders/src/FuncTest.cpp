@@ -66,15 +66,27 @@ constexpr uint32_t FRAMESIZE98 = 98;
 void DecFuncNdkTest::SetUpTestCase()
 {
     g_capVc1 = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_VC1, false, SOFTWARE);
+    if (g_capVc1 == nullptr) {
+        return;
+    }
     g_codecNameVc1 = OH_AVCapability_GetName(g_capVc1);
     cout << "g_codecNameVc1: " << g_codecNameVc1 << endl;
     g_capMjpeg = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_MJPEG, false, SOFTWARE);
+    if (g_capMjpeg == nullptr) {
+        return;
+    }
     g_codecNameMjpeg = OH_AVCapability_GetName(g_capMjpeg);
     cout << "g_codecNameMjpeg: " << g_codecNameMjpeg << endl;
     g_capMsvideo1 = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_MSVIDEO1, false, SOFTWARE);
+    if (g_capMsvideo1 == nullptr) {
+        return;
+    }
     g_codecNameMsvideo1 = OH_AVCapability_GetName(g_capMsvideo1);
     cout << "g_codecNameMsvideo1: " << g_codecNameMsvideo1 << endl;
     g_capWmv3 = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_WMV3, false, SOFTWARE);
+    if (g_capWmv3 == nullptr) {
+        return;
+    }
     g_codecNameWmv3 = OH_AVCapability_GetName(g_capWmv3);
     cout << "g_codecNameWmv3: " << g_codecNameWmv3 << endl;
 }

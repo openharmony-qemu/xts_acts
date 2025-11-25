@@ -26,14 +26,14 @@ export default function commonEventOnFocusTest() {
       await Utils.pushPage(`commonevent/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_COMMONEVENT_ONFOCUS_0100
-    * @tc.name       : testCommonEventOnFocus001
-    * @tc.desc       : test onFocus event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCommonEventOnFocus001
+     * @tc.number SUB_ARKUI_CAPI_COMMONEVENT_ONFOCUS_0100
+     * @tc.desc   test onFocus event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCommonEventOnFocus001', Level.LEVEL1, async (done: Function) => {
       focusControl.requestFocus('OnFocusTestButtonCompare')
       await Utils.sleep(2000)
@@ -43,14 +43,14 @@ export default function commonEventOnFocusTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_COMMONEVENT_ONFOCUS_0200
-    * @tc.name       : testCommonEventOnFocus002
-    * @tc.desc       : test onFocus event not callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCommonEventOnFocus002
+     * @tc.number SUB_ARKUI_CAPI_COMMONEVENT_ONFOCUS_0200
+     * @tc.desc   test onFocus event not callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCommonEventOnFocus002', Level.LEVEL1, async (done: Function) => {
       focusControl.requestFocus('OnFocusTestButton')
       await Utils.sleep(2000)

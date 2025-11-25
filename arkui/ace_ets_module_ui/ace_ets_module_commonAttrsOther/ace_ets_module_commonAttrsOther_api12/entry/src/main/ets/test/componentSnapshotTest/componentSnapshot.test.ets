@@ -43,12 +43,12 @@ export default function componentSnapshotTest() {
     });
 
     /**
-     * @tc.number    componentSnapshotTest_0010
-     * @tc.name      componentSnapshotTest_0010
-     * @tc.desc      componentSnapshot: waitUntilRenderFinished
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   componentSnapshotTest_0010
+     * @tc.number componentSnapshotTest_0010
+     * @tc.desc   componentSnapshot: waitUntilRenderFinished
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('componentSnapshotTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('componentSnapshotTest_0010 START');

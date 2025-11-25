@@ -35,9 +35,12 @@ class MprotectApiTest : public testing::Test {
 };
 
 /**
+ * @tc.name   testMprotectAnonAddReadPerm
  * @tc.number SUB_KERNEL_MEM_MPROTECT_0100
- * @tc.name   mprotect function add read permission to the anonymous map area test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(MprotectApiTest, testMprotectAnonAddReadPerm, Function | MediumTest | Level1)
 {
@@ -68,9 +71,12 @@ HWTEST_F(MprotectApiTest, testMprotectAnonAddReadPerm, Function | MediumTest | L
 }
 
 /**
+ * @tc.name   testMprotectAnonAddWritePerm
  * @tc.number SUB_KERNEL_MEM_MPROTECT_0200
- * @tc.name   mprotect function add write permission to the anonymous map area test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(MprotectApiTest, testMprotectAnonAddWritePerm, Function | MediumTest | Level2)
 {
@@ -101,9 +107,12 @@ HWTEST_F(MprotectApiTest, testMprotectAnonAddWritePerm, Function | MediumTest | 
 }
 
 /**
+ * @tc.name   testMprotectAnonAddExecutePerm
  * @tc.number SUB_KERNEL_MEM_MPROTECT_0300
- * @tc.name   mprotect function add execute permission to the anonymous map area test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MprotectApiTest, testMprotectAnonAddExecutePerm, Function | MediumTest | Level3)
 {
@@ -138,9 +147,12 @@ HWTEST_F(MprotectApiTest, testMprotectAnonAddExecutePerm, Function | MediumTest 
 }
 
 /**
+ * @tc.name   testMprotectAnonDelWritePerm
  * @tc.number SUB_KERNEL_MEM_MPROTECT_0500
- * @tc.name   mprotect function delete write permission to the anonymous map area test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MprotectApiTest, testMprotectAnonDelWritePerm, Function | MediumTest | Level3)
 {
@@ -170,9 +182,12 @@ HWTEST_F(MprotectApiTest, testMprotectAnonDelWritePerm, Function | MediumTest | 
 }
 
 /**
+ * @tc.name   testMprotectAnonDelExecutePerm
  * @tc.number SUB_KERNEL_MEM_MPROTECT_0600
- * @tc.name   mprotect function delete execute permission to the anonymous map area test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MprotectApiTest, testMprotectAnonDelExecutePerm, Function | MediumTest | Level3)
 {
@@ -208,9 +223,12 @@ HWTEST_F(MprotectApiTest, testMprotectAnonDelExecutePerm, Function | MediumTest 
 }
 
 /**
+ * @tc.name   testMprotectFileAddReadPerm
  * @tc.number SUB_KERNEL_MEM_MPROTECT_0700
- * @tc.name   mprotect function add read permission to the file map area test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(MprotectApiTest, testMprotectFileAddReadPerm, Function | MediumTest | Level2)
 {
@@ -258,9 +276,12 @@ HWTEST_F(MprotectApiTest, testMprotectFileAddReadPerm, Function | MediumTest | L
 }
 
 /**
+ * @tc.name   testMprotectFileAddWritePerm
  * @tc.number SUB_KERNEL_MEM_MPROTECT_0800
- * @tc.name   mprotect function add write permission to the file map area test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MprotectApiTest, testMprotectFileAddWritePerm, Function | MediumTest | Level3)
 {
@@ -315,9 +336,12 @@ HWTEST_F(MprotectApiTest, testMprotectFileAddWritePerm, Function | MediumTest | 
 }
 
 /**
+ * @tc.name   testMprotectFileAddExecutePerm
  * @tc.number SUB_KERNEL_MEM_MPROTECT_0900
- * @tc.name   mprotect function add execute permission to the file map area test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MprotectApiTest, testMprotectFileAddExecutePerm, Function | MediumTest | Level3)
 {
@@ -358,9 +382,12 @@ HWTEST_F(MprotectApiTest, testMprotectFileAddExecutePerm, Function | MediumTest 
 }
 
 /**
+ * @tc.name   testMprotectFileDelWritePerm
  * @tc.number SUB_KERNEL_MEM_MPROTECT_1100
- * @tc.name   mprotect function delete write permission to the file map area test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MprotectApiTest, testMprotectFileDelWritePerm, Function | MediumTest | Level3)
 {
@@ -403,9 +430,12 @@ HWTEST_F(MprotectApiTest, testMprotectFileDelWritePerm, Function | MediumTest | 
 }
 
 /**
+ * @tc.name   testMprotectFileDelExecutePerm
  * @tc.number SUB_KERNEL_MEM_MPROTECT_1200
- * @tc.name   mprotect function delete execute permission to the file map area test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MprotectApiTest, testMprotectFileDelExecutePerm, Function | MediumTest | Level3)
 {
@@ -447,9 +477,12 @@ HWTEST_F(MprotectApiTest, testMprotectFileDelExecutePerm, Function | MediumTest 
 }
 
 /**
+ * @tc.name   testMprotectEACCES
  * @tc.number SUB_KERNEL_MEM_MPROTECT_1300
- * @tc.name   mprotect function errno for EACCES test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL4
  */
 HWTEST_F(MprotectApiTest, testMprotectEACCES, Function | MediumTest | Level4)
 {
@@ -475,9 +508,12 @@ HWTEST_F(MprotectApiTest, testMprotectEACCES, Function | MediumTest | Level4)
 }
 
 /**
+ * @tc.name   testMprotectEINVAL
  * @tc.number SUB_KERNEL_MEM_MPROTECT_1400
- * @tc.name   mprotect function errno for EINVAL test
  * @tc.desc   [C-L*-311] MUST NOT alter NDK API behavior.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL4
  */
 HWTEST_F(MprotectApiTest, testMprotectEINVAL, Function | MediumTest | Level4)
 {

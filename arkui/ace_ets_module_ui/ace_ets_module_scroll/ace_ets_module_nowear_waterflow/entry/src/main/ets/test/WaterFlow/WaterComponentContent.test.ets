@@ -42,10 +42,12 @@ export default function WaterComponentContent() {
     });
 
     /**
-     * @tc.number    WaterComponentContent_0100
-     * @tc.name      Test footerContent supports ComponentContent
-     * @tc.desc      Test whether ComponentContent is effective on footerContent
-     * @tc.level     Level 2
+     * @tc.name   WaterComponentContent_0100
+     * @tc.number WaterComponentContent_0100
+     * @tc.desc   Test whether ComponentContent is effective on footerContent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WaterComponentContent_0100', Level.LEVEL2, async (done: Function) => {
       let driver = Driver.create();
@@ -64,10 +66,12 @@ export default function WaterComponentContent() {
     });
 
     /**
-     * @tc.number    WaterComponentContent_0200
-     * @tc.name      Test footerContent supports undefined
-     * @tc.desc      Test whether undefined is effective on footerContent
-     * @tc.level     Level 2
+     * @tc.name   WaterComponentContent_0200
+     * @tc.number WaterComponentContent_0200
+     * @tc.desc   Test whether undefined is effective on footerContent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WaterComponentContent_0200', Level.LEVEL2, async (done: Function) => {
       let driver = Driver.create();
@@ -82,10 +86,12 @@ export default function WaterComponentContent() {
     });
 
     /**
-     * @tc.number    WaterComponentContent_0300
-     * @tc.name      Test footerContent supports null
-     * @tc.desc      Test whether null is effective on footerContent
-     * @tc.level     Level 2
+     * @tc.name   WaterComponentContent_0300
+     * @tc.number WaterComponentContent_0300
+     * @tc.desc   Test whether null is effective on footerContent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('WaterComponentContent_0300', Level.LEVEL2, async (done: Function) => {
       let driver = Driver.create();

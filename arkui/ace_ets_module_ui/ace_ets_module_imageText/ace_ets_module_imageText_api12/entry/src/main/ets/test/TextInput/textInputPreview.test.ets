@@ -42,14 +42,14 @@ export default function textInputPreview() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TextInput_Preview_0100
-    * @tc.name  : textInputPreview_0100
-    * @tc.desc  : Define the preview text mode of the text input.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   textInputPreview_0100
+     * @tc.number SUB_ACE_TextInput_Preview_0100
+     * @tc.desc   Define the preview text mode of the text input.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('textInputPreview_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('textInputPreview_0100 START');
       await CommonFunc.sleep(1000);

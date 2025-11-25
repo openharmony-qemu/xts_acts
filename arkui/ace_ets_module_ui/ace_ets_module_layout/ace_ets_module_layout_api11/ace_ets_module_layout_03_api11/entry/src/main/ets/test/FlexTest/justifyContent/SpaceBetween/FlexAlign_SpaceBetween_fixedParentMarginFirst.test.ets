@@ -49,10 +49,12 @@ export default function flexAlign_SpaceBetween_fixedParentMarginFirst() {
     });
 
     /**
+     * @tc.name   testAlignSpaceBetweenRowNoWrapMarginFirstInRange
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_SPACEBETWEEN_TEST_1400
-     * @tc.name testAlignSpaceBetweenRowNoWrapMarginFirstInRange
-     * @tc.desc Parent component fixed, child component binding margin properties, the layout space of the parent
-     *               component meets the spindle layout requirements of the child component
+     * @tc.desc   Parent component fixed, child component binding margin properties, the layout space of the parent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAlignSpaceBetweenRowNoWrapMarginFirstInRange',  Level.LEVEL0, async () => {
       console.info('new testAlignSpaceBetweenRowNoWrapMarginFirstInRange START');
@@ -99,10 +101,12 @@ export default function flexAlign_SpaceBetween_fixedParentMarginFirst() {
     });
 
     /**
+     * @tc.name   testAlignSpaceBetweenRowNoWrapMarginFirstOutRange
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_SPACEBETWEEN_TEST_1500
-     * @tc.name testAlignSpaceBetweenRowNoWrapMarginFirstOutRange
-     * @tc.desc Parent component fixed, child component binding margin properties, the layout space of the parent
-     *               component is insufficient to meet the spindle layout requirements of the child component
+     * @tc.desc   Parent component fixed, child component binding margin properties, the layout space of the parent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAlignSpaceBetweenRowNoWrapMarginFirstOutRange',  Level.LEVEL0, async () => {
       console.info('new testAlignSpaceBetweenRowNoWrapMarginFirstOutRange START');

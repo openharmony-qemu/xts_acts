@@ -45,9 +45,12 @@ export default function Stack_AlignContent() {
       console.info("stack_alignContent after each called")
     });
     /**
-     * @tc.number    SUB_ACE_STACK_ALIGNCONTENT_TEST_0100
-     * @tc.name      testStackAlignContentNotConfig
-     * @tc.desc      The stack component does not set alignContent
+     * @tc.name   testStackAlignContentCenter
+     * @tc.number SUB_ACE_STACK_ALIGNCONTENT_TEST_0100
+     * @tc.desc   The stack component does not set alignContent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackAlignContentCenter',  Level.LEVEL0, async  (done: Function)=> {
       console.info('[testStackAlignContentCenter] START');
@@ -76,9 +79,12 @@ export default function Stack_AlignContent() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_stack_alignContent_TEST_0200
-     * @tc.name      testStackAlignContentTopStart
-     * @tc.desc      The stack component sets alignContent to Alignment.TopStart
+     * @tc.name   testStackAlignContentTopStart
+     * @tc.number SUB_ACE_stack_alignContent_TEST_0200
+     * @tc.desc   The stack component sets alignContent to Alignment.TopStart
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackAlignContentTopStart',  Level.LEVEL0, async  (done: Function)=> {
       console.info('[testStackAlignContentTopStart] START');
@@ -108,9 +114,12 @@ export default function Stack_AlignContent() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_stack_alignContent_TEST_0300
-     * @tc.name      testStackAlignContentTop
-     * @tc.desc      The stack component sets alignContent to Alignment.Top
+     * @tc.name   testStackAlignContentTop
+     * @tc.number SUB_ACE_stack_alignContent_TEST_0300
+     * @tc.desc   The stack component sets alignContent to Alignment.Top
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackAlignContentTop',  Level.LEVEL0, async  (done: Function)=> {
       console.info('[testStackAlignContentTop] START');
@@ -140,9 +149,12 @@ export default function Stack_AlignContent() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_STACK_ALIGNCONTENT_TEST_0400
-     * @tc.name      testStackAlignContentTopEnd
-     * @tc.desc      The stack component sets alignContent to Alignment.TopEnd
+     * @tc.name   testStackAlignContentTopEnd
+     * @tc.number SUB_ACE_STACK_ALIGNCONTENT_TEST_0400
+     * @tc.desc   The stack component sets alignContent to Alignment.TopEnd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackAlignContentTopEnd',  Level.LEVEL0, async  (done: Function)=> {
       console.info('[testStackAlignContentTopEnd] START');
@@ -172,9 +184,12 @@ export default function Stack_AlignContent() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_STACK_ALIGNCONTENT_TEST_0500
-     * @tc.name      testStackAlignContentStart
-     * @tc.desc      The stack component sets alignContent to Alignment.Start
+     * @tc.name   testStackAlignContentStart
+     * @tc.number SUB_ACE_STACK_ALIGNCONTENT_TEST_0500
+     * @tc.desc   The stack component sets alignContent to Alignment.Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackAlignContentStart',  Level.LEVEL0, async  (done: Function)=> {
       console.info('[testStackAlignContentStart] START');
@@ -204,9 +219,12 @@ export default function Stack_AlignContent() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_STACK_ALIGNCONTENT_TEST_0600
-     * @tc.name      testStackAlignContentCenter
-     * @tc.desc      The stack component sets alignContent to Alignment.Center
+     * @tc.name   testStackAlignContentCenter
+     * @tc.number SUB_ACE_STACK_ALIGNCONTENT_TEST_0600
+     * @tc.desc   The stack component sets alignContent to Alignment.Center
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackAlignContentCenter',  Level.LEVEL0, async  (done: Function)=> {
       console.info('[testStackAlignContentCenter] START');
@@ -236,9 +254,12 @@ export default function Stack_AlignContent() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_STACK_ALIGNCONTENT_TEST_0700
-     * @tc.name      testStackAlignContentEnd
-     * @tc.desc      The stack component sets alignContent to Alignment.End
+     * @tc.name   testStackAlignContentEnd
+     * @tc.number SUB_ACE_STACK_ALIGNCONTENT_TEST_0700
+     * @tc.desc   The stack component sets alignContent to Alignment.End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackAlignContentEnd',  Level.LEVEL0, async  (done: Function)=> {
       console.info('[testStackAlignContentEnd] START');
@@ -268,9 +289,12 @@ export default function Stack_AlignContent() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_STACK_ALIGNCONTENT_TEST_0800
-     * @tc.name      testStackAlignContentBottomStart
-     * @tc.desc      The stack component sets alignContent to Alignment.BottomStart
+     * @tc.name   testStackAlignContentBottomStart
+     * @tc.number SUB_ACE_STACK_ALIGNCONTENT_TEST_0800
+     * @tc.desc   The stack component sets alignContent to Alignment.BottomStart
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackAlignContentBottomStart',  Level.LEVEL0, async  (done: Function)=> {
       console.info('[testStackAlignContentBottomStart] START');
@@ -300,9 +324,12 @@ export default function Stack_AlignContent() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_STACK_ALIGNCONTENT_TEST_0900
-     * @tc.name      testStackAlignContentBottom
-     * @tc.desc      The stack component sets alignContent to Alignment.Bottom
+     * @tc.name   testStackAlignContentBottom
+     * @tc.number SUB_ACE_STACK_ALIGNCONTENT_TEST_0900
+     * @tc.desc   The stack component sets alignContent to Alignment.Bottom
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackAlignContentBottom',  Level.LEVEL0, async  (done: Function)=> {
       console.info('[testStackAlignContentBottom] START');
@@ -332,9 +359,12 @@ export default function Stack_AlignContent() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_STACK_ALIGNCONTENT_TEST_1000
-     * @tc.name      testStackAlignContentBottomEnd
-     * @tc.desc      The stack component sets alignContent to Alignment.BottomEnd
+     * @tc.name   testStackAlignContentBottomEnd
+     * @tc.number SUB_ACE_STACK_ALIGNCONTENT_TEST_1000
+     * @tc.desc   The stack component sets alignContent to Alignment.BottomEnd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackAlignContentBottomEnd',  Level.LEVEL0, async  (done: Function)=> {
       console.info('[testStackAlignContentBottomEnd] START');

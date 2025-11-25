@@ -31,12 +31,12 @@ export default function enumOperationsTest() {
     }
 
     /**
-     * @tc.number      SUB_ANI_ENUM_GETENUMITEMBYNAME_0100
-     * @tc.name        test_Enum_GetEnumItemByName0001
-     * @tc.desc        get enumItem by name
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_Enum_GetEnumItemByName0001
+     * @tc.number SUB_ANI_ENUM_GETENUMITEMBYNAME_0100
+     * @tc.desc   get enumItem by name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Enum_GetEnumItemByName0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -50,12 +50,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUM_GETENUMITEMBYINDEX_0100
-     * @tc.name        test_Enum_GetEnumItemByIndex
-     * @tc.desc        get enumitem by index
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_Enum_GetEnumItemByIndex
+     * @tc.number SUB_ANI_ENUM_GETENUMITEMBYINDEX_0100
+     * @tc.desc   get enumitem by index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Enum_GetEnumItemByIndex", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -69,12 +69,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUM_GETENUMITEMBYINDEX_0200
-     * @tc.name        test_Enum_GetEnumItemByIndex_0001
-     * @tc.desc        get enumitem by index
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_Enum_GetEnumItemByIndex_0001
+     * @tc.number SUB_ANI_ENUM_GETENUMITEMBYINDEX_0200
+     * @tc.desc   get enumitem by index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Enum_GetEnumItemByIndex_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -88,12 +88,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUM_GETENUMITEMBYINDEX_0300
-     * @tc.name        test_Enum_GetEnumItemByIndex_0002
-     * @tc.desc        invalid arg enum
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_Enum_GetEnumItemByIndex_0002
+     * @tc.number SUB_ANI_ENUM_GETENUMITEMBYINDEX_0300
+     * @tc.desc   invalid arg enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Enum_GetEnumItemByIndex_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -107,12 +107,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUM_GETENUMITEMBYINDEX_0400
-     * @tc.name        test_Enum_GetEnumItemByIndex_0003
-     * @tc.desc        enum get item by index
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_Enum_GetEnumItemByIndex_0003
+     * @tc.number SUB_ANI_ENUM_GETENUMITEMBYINDEX_0400
+     * @tc.desc   enum get item by index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Enum_GetEnumItemByIndex_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -126,12 +126,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUM_GETENUMITEMBYINDEX_0500
-     * @tc.name        test_Enum_GetEnumItemByIndex_0004
-     * @tc.desc        enum get item by index
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_Enum_GetEnumItemByIndex_0004
+     * @tc.number SUB_ANI_ENUM_GETENUMITEMBYINDEX_0500
+     * @tc.desc   enum get item by index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Enum_GetEnumItemByIndex_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -145,12 +145,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUM_GETENUMITEMBYINDEX_0600
-     * @tc.name        test_Enum_GetEnumItemByIndex_0005
-     * @tc.desc        enum get item by index
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_Enum_GetEnumItemByIndex_0005
+     * @tc.number SUB_ANI_ENUM_GETENUMITEMBYINDEX_0600
+     * @tc.desc   enum get item by index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Enum_GetEnumItemByIndex_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -164,12 +164,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUM_GETENUMITEMBYINDEX_0700
-     * @tc.name        test_Enum_GetEnumItemByIndex_0006
-     * @tc.desc        enum get item by index one item
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   Enum_GetEnumItemByIndex_0700
+     * @tc.number SUB_ANI_ENUM_GETENUMITEMBYINDEX_0700
+     * @tc.desc   enum get item by index one item
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Enum_GetEnumItemByIndex_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -183,12 +183,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUM_GETENUMITEMBYINDEX_0800
-     * @tc.name        test_Enum_GetEnumItemByIndex_0007
-     * @tc.desc        enum get index test one item
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_Enum_GetEnumItemByIndex_0007
+     * @tc.number SUB_ANI_ENUM_GETENUMITEMBYINDEX_0800
+     * @tc.desc   enum get index test one item
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Enum_GetEnumItemByIndex_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -202,12 +202,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUM_GETENUMITEMBYINDEX_0900
-     * @tc.name        test_Enum_GetEnumItemByIndex_0008
-     * @tc.desc        enum get item by index combine scenes
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_Enum_GetEnumItemByIndex_0008
+     * @tc.number SUB_ANI_ENUM_GETENUMITEMBYINDEX_0900
+     * @tc.desc   enum get item by index combine scenes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Enum_GetEnumItemByIndex_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -221,12 +221,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUM_GETENUMITEMBYINDEX_1000
-     * @tc.name        test_Enum_GetEnumItemByIndex_0009
-     * @tc.desc        check initialization
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_Enum_GetEnumItemByIndex_0009
+     * @tc.number SUB_ANI_ENUM_GETENUMITEMBYINDEX_1000
+     * @tc.desc   check initialization
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Enum_GetEnumItemByIndex_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -240,12 +240,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUMITEM_GETENUM_0100
-     * @tc.name        test_EnumItem_GetEnum
-     * @tc.desc        get enum from item
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_EnumItem_GetEnum
+     * @tc.number SUB_ANI_ENUMITEM_GETENUM_0100
+     * @tc.desc   get enum from item
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_EnumItem_GetEnum", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -259,12 +259,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUMITEM_GETENUM_0200
-     * @tc.name        test_EnumItem_GetEnum_0002
-     * @tc.desc        get enum from item
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_EnumItem_GetEnum_0002
+     * @tc.number SUB_ANI_ENUMITEM_GETENUM_0200
+     * @tc.desc   get enum from item
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_EnumItem_GetEnum_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -278,12 +278,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUMITEM_GETENUM_0300
-     * @tc.name        test_EnumItem_GetEnum_0003
-     * @tc.desc        invalid arg enum
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_EnumItem_GetEnum_0003
+     * @tc.number SUB_ANI_ENUMITEM_GETENUM_0300
+     * @tc.desc   invalid arg enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_EnumItem_GetEnum_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -297,12 +297,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUMITEM_GETENUM_0400
-     * @tc.name        test_EnumItem_GetEnum_0004
-     * @tc.desc        enum get value test one item
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_EnumItem_GetEnum_0004
+     * @tc.number SUB_ANI_ENUMITEM_GETENUM_0400
+     * @tc.desc   enum get value test one item
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_EnumItem_GetEnum_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -316,12 +316,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUMITEM_GETENUM_0500
-     * @tc.name        test_EnumItem_GetEnum_0005
-     * @tc.desc        enum item combination test
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_EnumItem_GetEnum_0005
+     * @tc.number SUB_ANI_ENUMITEM_GETENUM_0500
+     * @tc.desc   enum item combination test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_EnumItem_GetEnum_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -335,12 +335,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUMITEM_GETENUM_0600
-     * @tc.name        test_EnumItem_GetEnum_0006
-     * @tc.desc        get enum from object
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_EnumItem_GetEnum_0006
+     * @tc.number SUB_ANI_ENUMITEM_GETENUM_0600
+     * @tc.desc   get enum from object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_EnumItem_GetEnum_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -354,12 +354,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUMITEM_GETENUM_0700
-     * @tc.name        test_EnumItem_GetEnum_0007
-     * @tc.desc        get enum item by name
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_EnumItem_GetEnum_0007
+     * @tc.number SUB_ANI_ENUMITEM_GETENUM_0700
+     * @tc.desc   get enum item by name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_EnumItem_GetEnum_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -373,12 +373,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUMITEM_GETENUM_0800
-     * @tc.name        test_EnumItem_GetEnum_0008
-     * @tc.desc        get wrong enum item by name
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_EnumItem_GetEnum_0008
+     * @tc.number SUB_ANI_ENUMITEM_GETENUM_0800
+     * @tc.desc   get wrong enum item by name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_EnumItem_GetEnum_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -392,12 +392,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUMITEM_GETENUM_0900
-     * @tc.name        test_EnumItem_GetEnum_0009
-     * @tc.desc        get enum item by index
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_EnumItem_GetEnum_0009
+     * @tc.number SUB_ANI_ENUMITEM_GETENUM_0900
+     * @tc.desc   get enum item by index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_EnumItem_GetEnum_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -411,12 +411,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUMITEM_GETENUM_1000
-     * @tc.name        test_EnumItem_GetEnum_0010
-     * @tc.desc        get wrong enum item by index
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_EnumItem_GetEnum_0010
+     * @tc.number SUB_ANI_ENUMITEM_GETENUM_1000
+     * @tc.desc   get wrong enum item by index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_EnumItem_GetEnum_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -430,12 +430,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUMITEM_GETENUM_1100
-     * @tc.name        test_EnumItem_GetEnum_0011
-     * @tc.desc        get item name index equal
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_EnumItem_GetEnum_0011
+     * @tc.number SUB_ANI_ENUMITEM_GETENUM_1100
+     * @tc.desc   get item name index equal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_EnumItem_GetEnum_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -449,12 +449,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUMITEM_GETENUM_1200
-     * @tc.name        test_EnumItem_GetEnum_0012
-     * @tc.desc        invalid arg enum
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_EnumItem_GetEnum_0012
+     * @tc.number SUB_ANI_ENUMITEM_GETENUM_1200
+     * @tc.desc   invalid arg enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_EnumItem_GetEnum_0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -468,12 +468,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUMITEM_GETVALUE_INT_0100
-     * @tc.name        test_EnumItem_GetValue_Int
-     * @tc.desc        enum get value 1nt
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_EnumItem_GetValue_Int
+     * @tc.number SUB_ANI_ENUMITEM_GETVALUE_INT_0100
+     * @tc.desc   enum get value 1nt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_EnumItem_GetValue_Int", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -487,12 +487,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUMITEM_GETVALUE_STR_0100
-     * @tc.name        test_EnumItem_GetValue_String_0001
-     * @tc.desc        enum get value str
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_EnumItem_GetValue_String_0001
+     * @tc.number SUB_ANI_ENUMITEM_GETVALUE_STR_0100
+     * @tc.desc   enum get value str
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_EnumItem_GetValue_String_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -506,12 +506,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUMITEM_GETNAME_0100
-     * @tc.name        test_EnumItem_GetName_0001
-     * @tc.desc        MediumTest
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_EnumItem_GetName_0001
+     * @tc.number SUB_ANI_ENUMITEM_GETNAME_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_EnumItem_GetName_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -525,12 +525,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUMITEM_GETITEM_NAME_0100
-     * @tc.name        test_EnumItem_GetEnum_Item_Name_0001
-     * @tc.desc        get enum item name
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_EnumItem_GetEnum_Item_Name_0001
+     * @tc.number SUB_ANI_ENUMITEM_GETITEM_NAME_0100
+     * @tc.desc   get enum item name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_EnumItem_GetEnum_Item_Name_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -544,12 +544,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUMITEM_GETITEM_NAME_0200
-     * @tc.name        test_EnumItem_GetEnum_Item_Name_0002
-     * @tc.desc        get enum item name
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_EnumItem_GetEnum_Item_Name_0002
+     * @tc.number SUB_ANI_ENUMITEM_GETITEM_NAME_0200
+     * @tc.desc   get enum item name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_EnumItem_GetEnum_Item_Name_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -563,12 +563,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUMITEM_INVALID_ARG_ENUM_0100
-     * @tc.name        test_EnumItem_Invalid_Arg_Enum_0001
-     * @tc.desc        MediumTest
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_EnumItem_Invalid_Arg_Enum_0001
+     * @tc.number SUB_ANI_ENUMITEM_INVALID_ARG_ENUM_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_EnumItem_Invalid_Arg_Enum_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -582,12 +582,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUMITEM_NAME_COMBINE_SCENES_0100
-     * @tc.name        test_EnumItem_Name_Combine_Scenes_0001
-     * @tc.desc        enumItem name combine scenes
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_EnumItem_Name_Combine_Scenes_0001
+     * @tc.number SUB_ANI_ENUMITEM_NAME_COMBINE_SCENES_0100
+     * @tc.desc   enumItem name combine scenes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_EnumItem_Name_Combine_Scenes_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -601,12 +601,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUMITEM_NAME_TEST_ONE_ITEM_0100
-     * @tc.name        test_EnumItem_Name_Test_One_Item_0001
-     * @tc.desc        test one item
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_EnumItem_Name_Test_One_Item_0001
+     * @tc.number SUB_ANI_ENUMITEM_NAME_TEST_ONE_ITEM_0100
+     * @tc.desc   test one item
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_EnumItem_Name_Test_One_Item_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -620,12 +620,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUMITEM_NAME_GET_VALUE_INT_0100
-     * @tc.name        test_EnumItem_Name_Get_Value_Int_0001
-     * @tc.desc        get value int
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_EnumItem_Name_Get_Value_Int_0001
+     * @tc.number SUB_ANI_ENUMITEM_NAME_GET_VALUE_INT_0100
+     * @tc.desc   get value int
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_EnumItem_Name_Get_Value_Int_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -639,12 +639,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUMITEM_NAME_GET_WRONG_VALUE_INT_0100
-     * @tc.name        test_EnumItem_Get_Wrong_Value_Int_0001
-     * @tc.desc        get wrong value int
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_EnumItem_Get_Wrong_Value_Int_0001
+     * @tc.number SUB_ANI_ENUMITEM_NAME_GET_WRONG_VALUE_INT_0100
+     * @tc.desc   get wrong value int
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_EnumItem_Get_Wrong_Value_Int_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -658,12 +658,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUMITEM_GET_STRING_0100
-     * @tc.name        test_EnumItem_Get_Value_String_0001
-     * @tc.desc        get value string
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_EnumItem_Get_Value_String_0001
+     * @tc.number SUB_ANI_ENUMITEM_GET_STRING_0100
+     * @tc.desc   get value string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_EnumItem_Get_Value_String_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -677,12 +677,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUMITEM_GET_STRING_0200
-     * @tc.name        test_EnumItem_Get_Value_String_0002
-     * @tc.desc        get value string
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_EnumItem_Get_Value_String_0002
+     * @tc.number SUB_ANI_ENUMITEM_GET_STRING_0200
+     * @tc.desc   get value string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_EnumItem_Get_Value_String_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -696,12 +696,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUMITEM_GET_INVALID_ARG_ENUM_0100
-     * @tc.name        test_EnumItem_Get_Invalid_Arg_Enum_0001
-     * @tc.desc        get invalid arg enum
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_EnumItem_Get_Invalid_Arg_Enum_0001
+     * @tc.number SUB_ANI_ENUMITEM_GET_INVALID_ARG_ENUM_0100
+     * @tc.desc   get invalid arg enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_EnumItem_Get_Invalid_Arg_Enum_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -715,12 +715,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUMITEM_GET_VALUE_ONE_ITEM_0100
-     * @tc.name        test_EnumItem_Get_Value_One_Item_0001
-     * @tc.desc        get value one item
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_EnumItem_Get_Value_One_Item_0001
+     * @tc.number SUB_ANI_ENUMITEM_GET_VALUE_ONE_ITEM_0100
+     * @tc.desc   get value one item
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_EnumItem_Get_Value_One_Item_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -734,12 +734,12 @@ export default function enumOperationsTest() {
       })
 
     /**
-     * @tc.number      SUB_ANI_ENUMITEM_GETINDEX_0100
-     * @tc.name        test_EnumItem_GetIndex_0001
-     * @tc.desc        get enum index
-     * @tc.size        Function
-     * @tc.type        Function test
-     * @tc.level       Level 0
+     * @tc.name   test_EnumItem_GetIndex_0001
+     * @tc.number SUB_ANI_ENUMITEM_GETINDEX_0100
+     * @tc.desc   get enum index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_EnumItem_GetIndex_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

@@ -26,52 +26,52 @@ export default function commonAttrsAspectRatioTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_ASPECTRATIO_0100
-     * @tc.name       : testCommonAttrsAspectRatioTest001
-     * @tc.desc       : testing aspectratio for commonAttrs with valid value 
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsAspectRatioTest001
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_ASPECTRATIO_0100
+     * @tc.desc   testing aspectratio for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAspectRatioTest001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAspectRatioTest001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_ASPECTRATIO_0200
-     * @tc.name       : testCommonAttrsAspectRatioTest002
-     * @tc.desc       : testing aspectratio for commonAttrs with valid value 
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsAspectRatioTest002
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_ASPECTRATIO_0200
+     * @tc.desc   testing aspectratio for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAspectRatioTest002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAspectRatioTest002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_ASPECTRATIO_0300
-     * @tc.name       : testCommonAttrsAspectRatioTest003
-     * @tc.desc       : testing aspectratio for commonAttrs with valid value 
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsAspectRatioTest003
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_ASPECTRATIO_0300
+     * @tc.desc   testing aspectratio for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAspectRatioTest003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAspectRatioTest003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_ASPECTRATIO_0400
-     * @tc.name       : testCommonAttrsAspectRatioTest004
-     * @tc.desc       : testing aspectratio for commonAttrs with invalid value 
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsAspectRatioTest004
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_ASPECTRATIO_0400
+     * @tc.desc   testing aspectratio for commonAttrs with invalid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAspectRatioTest004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAspectRatioTest004()).assertEqual(0)

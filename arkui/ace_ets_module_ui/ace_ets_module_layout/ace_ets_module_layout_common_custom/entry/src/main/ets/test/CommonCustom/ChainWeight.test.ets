@@ -46,12 +46,12 @@ export default function ChainWeight() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ChainWeight_0100
-     * @tc.name: ChainWeight_0100
-     * @tc.desc: CommonCustomAPI 
-     * @tc.level: Level 0
-     * @tc.type : CommonCustom
-     * @tc.size : CommonCustomTest
+     * @tc.name   ChainWeight_0100
+     * @tc.number SUB_ARKUI_API_ChainWeight_0100
+     * @tc.desc   CommonCustomAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ChainWeight_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('ChainWeight_0100 START');

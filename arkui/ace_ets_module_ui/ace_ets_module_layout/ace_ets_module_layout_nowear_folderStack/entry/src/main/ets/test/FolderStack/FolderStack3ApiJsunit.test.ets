@@ -42,12 +42,12 @@ export default function FolderStack3ApiJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_FolderStack3ApiJsunit_0100
-     * @tc.name: FolderStack3ApiJsunit_0100
-     * @tc.desc: FolderStackAPI 
-     * @tc.level: Level 0
-     * @tc.type : FolderStack
-     * @tc.size : FolderStackTest
+     * @tc.name   FolderStack3ApiJsunit_0100
+     * @tc.number SUB_ARKUI_API_FolderStack3ApiJsunit_0100
+     * @tc.desc   FolderStackAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FolderStack3ApiJsunit_0100',  Level.LEVEL0, async (done: Function) => {
         await CommonFunc.sleep(1000);
@@ -61,14 +61,14 @@ export default function FolderStack3ApiJsunit() {
         done();
       });
 
-     /**
-     * @tc.number: SUB_ARKUI_API_FolderStack3ApiJsunit_0200
-     * @tc.name: FolderStack3ApiJsunit_0200
-     * @tc.desc: FolderStackAPI 
-     * @tc.level: Level 0
-     * @tc.type : FolderStack
-     * @tc.size : FolderStackTest
-     */ 
+    /**
+     * @tc.name   FolderStack3ApiJsunit_0200
+     * @tc.number SUB_ARKUI_API_FolderStack3ApiJsunit_0200
+     * @tc.desc   FolderStackAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('FolderStack3ApiJsunit_0200',  Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000);
       console.info('FolderStack3ApiJsunit_0200 START');
@@ -82,12 +82,12 @@ export default function FolderStack3ApiJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_FolderStack3ApiJsunit_0300
-     * @tc.name: FolderStack3ApiJsunit_0300
-     * @tc.desc: FolderStackAPI 
-     * @tc.level: Level 0
-     * @tc.type : FolderStack
-     * @tc.size : FolderStackTest
+     * @tc.name   FolderStack3ApiJsunit_0300
+     * @tc.number SUB_ARKUI_API_FolderStack3ApiJsunit_0300
+     * @tc.desc   FolderStackAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FolderStack3ApiJsunit_0300',  Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000);

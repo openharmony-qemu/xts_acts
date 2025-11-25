@@ -44,12 +44,12 @@ export default function showAtAnchorTest() {
 
 
     /**
-     * @tc.number: showAtAnchor_value_0001
-     * @tc.name  : showAtAnchor_value_0001
-     * @tc.desc  : set undefined,The center position of the two pop-up tips is the same,Perform a reset operation after the end of the case
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   showAtAnchor_value_0001
+     * @tc.number showAtAnchor_value_0001
+     * @tc.desc   set undefined,The center position of the two pop-up tips is the same,Perform a reset operation after the end of the case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('showAtAnchor_value_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('showAtAnchor_value_0001 START');
@@ -87,12 +87,12 @@ export default function showAtAnchorTest() {
     });
 
     /**
-     * @tc.number: showAtAnchor_value_0002
-     * @tc.name  : showAtAnchor_value_0002
-     * @tc.desc  : set null,The center position of the two pop-up tips is the same,Perform a reset operation after the end of the case
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   showAtAnchor_value_0002
+     * @tc.number showAtAnchor_value_0002
+     * @tc.desc   set null,The center position of the two pop-up tips is the same,Perform a reset operation after the end of the case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('showAtAnchor_value_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('showAtAnchor_value_0002 START');
@@ -133,12 +133,12 @@ export default function showAtAnchorTest() {
     });
 
     /**
-     * @tc.number: showAtAnchor_value_0003
-     * @tc.name  : showAtAnchor_value_0003
-     * @tc.desc  : set TARGET,The center position of the two pop-up tips is the same,Perform a reset operation after the end of the case
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   showAtAnchor_value_0003
+     * @tc.number showAtAnchor_value_0003
+     * @tc.desc   set TARGET,The center position of the two pop-up tips is the same,Perform a reset operation after the end of the case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('showAtAnchor_value_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('showAtAnchor_value_0003 START');
@@ -179,12 +179,12 @@ export default function showAtAnchorTest() {
     });
 
     /**
-     * @tc.number: showAtAnchor_value_0004
-     * @tc.name  : showAtAnchor_value_0004
-     * @tc.desc  : set CURSOR,The center position of the two pop-up tips is inconsistent,Perform a reset operation after the end of the case
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   showAtAnchor_value_0004
+     * @tc.number showAtAnchor_value_0004
+     * @tc.desc   set CURSOR,The center position of the two pop-up tips is inconsistent,Perform a reset operation after the end of the case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('showAtAnchor_value_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('showAtAnchor_value_0004 START');
@@ -224,12 +224,12 @@ export default function showAtAnchorTest() {
     });
 
     /**
-     * @tc.number: showAtAnchor_value_0005
-     * @tc.name  : showAtAnchor_value_0005
-     * @tc.desc  : set -9,The center position of the two pop-up tips is the same,Perform a reset operation after the end of the case
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   showAtAnchor_value_0005
+     * @tc.number showAtAnchor_value_0005
+     * @tc.desc   set -9,The center position of the two pop-up tips is the same,Perform a reset operation after the end of the case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('showAtAnchor_value_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info('showAtAnchor_value_0005 START');

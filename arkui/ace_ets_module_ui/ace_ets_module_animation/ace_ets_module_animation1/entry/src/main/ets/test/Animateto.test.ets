@@ -46,9 +46,12 @@ export default function animateToJunits() {
     });
 
     /**
+     * @tc.name   animateToJunits_0100
      * @tc.number animateToJunits_0100
-     * @tc.desc animateToJunits_0100
-     * @tc.level Level 0
+     * @tc.desc   animateToJunits_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('animateToJunits_0100', Level.LEVEL0, async (done: Function) => {
       console.info('animateToJunits_0100 START');
@@ -75,9 +78,12 @@ export default function animateToJunits() {
     });
 
     /**
+     * @tc.name   animateToJunits_0200
      * @tc.number animateToJunits_0200
-     * @tc.desc animateToJunits_0200
-     * @tc.level Level 0
+     * @tc.desc   animateToJunits_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('animateToJunits_0200', Level.LEVEL0, async (done: Function) => {
       console.info('animateToJunits_0200 START');
@@ -100,9 +106,12 @@ export default function animateToJunits() {
     });
 
     /**
+     * @tc.name   animateToJunits_0300
      * @tc.number animateToJunits_0300
-     * @tc.desc animateToJunits_0300
-     * @tc.level Level 0
+     * @tc.desc   animateToJunits_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('animateToJunits_0300', Level.LEVEL0, async (done: Function) => {
       console.info('animateToJunits_0300 START');
@@ -129,9 +138,12 @@ export default function animateToJunits() {
     });
 
     /**
+     * @tc.name   animateToJunits_0400
      * @tc.number animateToJunits_0400
-     * @tc.desc animateToJunits_0400
-     * @tc.level Level 0
+     * @tc.desc   animateToJunits_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('animateToJunits_0400', Level.LEVEL0, async (done: Function) => {
       console.info('animateToJunits_0400 START');
@@ -154,9 +166,12 @@ export default function animateToJunits() {
     });
 
     /**
+     * @tc.name   animateToJunits_0500
      * @tc.number animateToJunits_0500
-     * @tc.desc animateToJunits_0500
-     * @tc.level Level 0
+     * @tc.desc   animateToJunits_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('animateToJunits_0500', Level.LEVEL0, async (done: Function) => {
       console.info('animateToJunits_0500 START');
@@ -179,9 +194,12 @@ export default function animateToJunits() {
     });
 
     /**
+     * @tc.name   animateToJunits_0600
      * @tc.number animateToJunits_0600
-     * @tc.desc animateToJunits_0600
-     * @tc.level Level 0
+     * @tc.desc   animateToJunits_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('animateToJunits_0600', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(10);
@@ -212,9 +230,12 @@ export default function animateToJunits() {
     });
 
     /**
+     * @tc.name   animateToJunits_0700
      * @tc.number animateToJunits_0700
-     * @tc.desc animateToJunits_0700
-     * @tc.level Level 0
+     * @tc.desc   animateToJunits_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('animateToJunits_0700', Level.LEVEL0, async (done: Function) => {
       console.info('animateToJunits_0700 START');
@@ -245,9 +266,12 @@ export default function animateToJunits() {
     });
 
     /**
+     * @tc.name   animateToJunits_0800
      * @tc.number animateToJunits_0800
-     * @tc.desc animateToJunits_0800
-     * @tc.level Level 0
+     * @tc.desc   animateToJunits_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('animateToJunits_0800', Level.LEVEL0, async (done: Function) => {
       console.info('animateToJunits_0800 START');
@@ -278,9 +302,12 @@ export default function animateToJunits() {
     });
 
     /**
+     * @tc.name   animateToJunits_0900
      * @tc.number animateToJunits_0900
-     * @tc.desc animateToJunits_0900
-     * @tc.level Level 0
+     * @tc.desc   animateToJunits_0900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('animateToJunits_0900', Level.LEVEL0, async (done: Function) => {
       console.info('animateToJunits_0900 START');
@@ -311,9 +338,12 @@ export default function animateToJunits() {
     });
 
     /**
+     * @tc.name   animateToJunits_1000
      * @tc.number animateToJunits_1000
-     * @tc.desc animateToJunits_1000
-     * @tc.level Level 0
+     * @tc.desc   animateToJunits_1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('animateToJunits_1000', Level.LEVEL0, async (done: Function) => {
       console.info('animateToJunits_1000 START');
@@ -344,9 +374,12 @@ export default function animateToJunits() {
     });
 
     /**
+     * @tc.name   animateToJunits_1100
      * @tc.number animateToJunits_1100
-     * @tc.desc animateToJunits_1100
-     * @tc.level Level 0
+     * @tc.desc   animateToJunits_1100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('animateToJunits_1100', Level.LEVEL0, async (done: Function) => {
       console.info('animateToJunits_1100 START');
@@ -377,9 +410,12 @@ export default function animateToJunits() {
     });
 
     /**
+     * @tc.name   animateToJunits_1200
      * @tc.number animateToJunits_1200
-     * @tc.desc animateToJunits_1200
-     * @tc.level Level 0
+     * @tc.desc   animateToJunits_1200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('animateToJunits_1200', Level.LEVEL0, async (done: Function) => {
       console.info('animateToJunits_1200 START');
@@ -410,9 +446,12 @@ export default function animateToJunits() {
     });
 
     /**
+     * @tc.name   animateToJunits_1300
      * @tc.number animateToJunits_1300
-     * @tc.desc animateToJunits_1300
-     * @tc.level Level 0
+     * @tc.desc   animateToJunits_1300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('animateToJunits_1300', Level.LEVEL0, async (done: Function) => {
       console.info('animateToJunits_1300 START');
@@ -443,9 +482,12 @@ export default function animateToJunits() {
     });
 
     /**
+     * @tc.name   animateToJunits_1400
      * @tc.number animateToJunits_1400
-     * @tc.desc animateToJunits_1400
-     * @tc.level Level 0
+     * @tc.desc   animateToJunits_1400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('animateToJunits_1400', Level.LEVEL0, async (done: Function) => {
       console.info('animateToJunits_1400 START');
@@ -476,9 +518,12 @@ export default function animateToJunits() {
     });
 
     /**
+     * @tc.name   animateToJunits_1500
      * @tc.number animateToJunits_1500
-     * @tc.desc animateToJunits_1500
-     * @tc.level Level 0
+     * @tc.desc   animateToJunits_1500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('animateToJunits_1500', Level.LEVEL0, async (done: Function) => {
       console.info('animateToJunits_1500 START');
@@ -509,9 +554,12 @@ export default function animateToJunits() {
     });
 
     /**
+     * @tc.name   animateToJunits_1600
      * @tc.number animateToJunits_1600
-     * @tc.desc animateToJunits_1600
-     * @tc.level Level 0
+     * @tc.desc   animateToJunits_1600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('animateToJunits_1600', Level.LEVEL0, async (done: Function) => {
       console.info('animateToJunits_1600 START');
@@ -542,9 +590,12 @@ export default function animateToJunits() {
     });
 
     /**
+     * @tc.name   animateToJunits_1700
      * @tc.number animateToJunits_1700
-     * @tc.desc animateToJunits_1700
-     * @tc.level Level 0
+     * @tc.desc   animateToJunits_1700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('animateToJunits_1700', Level.LEVEL0, async (done: Function) => {
       console.info('animateToJunits_1700 START');
@@ -575,9 +626,12 @@ export default function animateToJunits() {
     });
 
     /**
+     * @tc.name   animateToJunits_1800
      * @tc.number animateToJunits_1800
-     * @tc.desc animateToJunits_1800
-     * @tc.level Level 0
+     * @tc.desc   animateToJunits_1800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('animateToJunits_1800', Level.LEVEL0, async (done: Function) => {
       console.info('animateToJunits_1800 START');
@@ -608,9 +662,12 @@ export default function animateToJunits() {
     });
 
     /**
+     * @tc.name   animateToJunits_1900
      * @tc.number animateToJunits_1900
-     * @tc.desc animateToJunits_1900
-     * @tc.level Level 0
+     * @tc.desc   animateToJunits_1900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('animateToJunits_1900', Level.LEVEL0, async (done: Function) => {
       console.info('animateToJunits_1900 START');
@@ -641,9 +698,12 @@ export default function animateToJunits() {
     });
 
     /**
+     * @tc.name   animateToJunits_2000
      * @tc.number animateToJunits_2000
-     * @tc.desc animateToJunits_2000
-     * @tc.level Level 0
+     * @tc.desc   animateToJunits_2000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('animateToJunits_2000', Level.LEVEL0, async (done: Function) => {
       console.info('animateToJunits_2000 START');
@@ -674,9 +734,12 @@ export default function animateToJunits() {
     });
 
     /**
+     * @tc.name   animateToJunits_2100
      * @tc.number animateToJunits_2100
-     * @tc.desc animateToJunits_2100
-     * @tc.level Level 0
+     * @tc.desc   animateToJunits_2100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('animateToJunits_2100', Level.LEVEL0, async (done: Function) => {
       console.info('animateToJunits_2100 START');
@@ -704,9 +767,12 @@ export default function animateToJunits() {
     });
 
     /**
+     * @tc.name   animateToJunits_2200
      * @tc.number animateToJunits_2200
-     * @tc.desc animateToJunits_2200
-     * @tc.level Level 0
+     * @tc.desc   animateToJunits_2200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('animateToJunits_2200', Level.LEVEL0, async (done: Function) => {
       console.info('animateToJunits_2200 START');
@@ -729,9 +795,12 @@ export default function animateToJunits() {
     });
 
     /**
+     * @tc.name   animateToJunits_2300
      * @tc.number animateToJunits_2300
-     * @tc.desc animateToJunits_2300
-     * @tc.level Level 0
+     * @tc.desc   animateToJunits_2300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('animateToJunits_2300', Level.LEVEL0, async (done: Function) => {
       console.info('animateToJunits_2300 START');

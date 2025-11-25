@@ -42,12 +42,12 @@ export default function listItemGroupNone() {
     });
 
     /**
-     * @tc.number    listItemGroupNone_001
-     * @tc.name      listItemGroupNone_0100
-     * @tc.desc      The enumeration value of itemGroupArea is NONE.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   listItemGroupNone_0100
+     * @tc.number listItemGroupNone_001
+     * @tc.desc   The enumeration value of itemGroupArea is NONE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('listItemGroupNone_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[listItemGroupNone_0100] START');

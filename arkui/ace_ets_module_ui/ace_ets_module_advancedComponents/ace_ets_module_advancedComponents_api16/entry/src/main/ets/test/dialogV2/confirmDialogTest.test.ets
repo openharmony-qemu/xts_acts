@@ -50,12 +50,12 @@ export default function confirmDialogTest() {
     })
 
     /**
+     * @tc.name   confirmDialogTest_0100
      * @tc.number confirmDialogTest
-     * @tc.name   confirmDialogTest
      * @tc.desc   Test confirmDialog
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('confirmDialogTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[confirmDialogTest_0100] START');

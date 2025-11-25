@@ -57,22 +57,23 @@ export default function DeviceInfoTest() {
          * @tc.type      : Function
          * @tc.level     : Level 0
          */
-        it('device_info_test_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+        it('device_info_test_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('testGetSerial01 start');
-
             let serialInfo = deviceinfo.serial;
-            console.info('the value of the deviceinfo serial is :' + serialInfo);
-
-            expect(serialInfo).assertInstanceOf('String');
+            
             if (serialInfo != "" && serialInfo != null && serialInfo != undefined) {
+                console.info('the value of the deviceinfo serial is :' + serialInfo);
+                expect(serialInfo).assertInstanceOf('String');
                 let str = /[\w-\.\(\)]/g;
                 let arr = serialInfo.match(str);
                 let bufferstr = arr.join('');
                 console.info('the value of the bufferstr is :' + bufferstr);
                 expect(serialInfo).assertEqual(bufferstr);
+                done();
             } else {
                 console.info('the return value is null or incorrect.');
-                expect(false).assertTrue();
+                expect().assertFail();
+                done();
             }
 
             console.info('testGetSerial01 ：end');
@@ -159,18 +160,15 @@ export default function DeviceInfoTest() {
          */
         it('device_info_test_063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info('device_info_test_063 start');
-            let ret = false;
             let udid = deviceinfo.udid;
-            console.info('the value of the deviceinfo udid is :' + udid);
-
-            expect(udid).assertInstanceOf('String');
+            
             if (udid != "" && udid != null && udid != undefined) {
-                ret = true;
-                expect(ret).assertTrue();
+                console.info('the value of the deviceinfo udid is :' + udid);
+                expect(udid).assertInstanceOf('String');
 				done();
             } else {
                 console.info('the return value GetManufacture01 is null or incorrect.');
-                expect(false).assertTrue();
+                expect().assertFail();
 				done();
             }
 

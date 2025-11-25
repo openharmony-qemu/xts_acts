@@ -26,78 +26,78 @@ export default function customComponentContrastTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_CONTRAST_0100
-     * @tc.name       : testCustomComponentContrast001
-     * @tc.desc       : testing contrast for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentContrast001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_CONTRAST_0100
+     * @tc.desc   testing contrast for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentContrast001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentContrast001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_CONTRAST_0200
-     * @tc.name       : testCustomComponentContrast002
-     * @tc.desc       : testing contrast for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentContrast002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_CONTRAST_0200
+     * @tc.desc   testing contrast for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentContrast002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentContrast002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_CONTRAST_0300
-     * @tc.name       : testCustomComponentContrast003
-     * @tc.desc       : testing contrast for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentContrast003
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_CONTRAST_0300
+     * @tc.desc   testing contrast for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentContrast003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentContrast003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_CONTRAST_0400
-     * @tc.name       : testCustomComponentContrast004
-     * @tc.desc       : testing contrast for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentContrast004
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_CONTRAST_0400
+     * @tc.desc   testing contrast for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentContrast004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentContrast004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_CONTRAST_0500
-     * @tc.name       : testCustomComponentContrast005
-     * @tc.desc       : testing contrast for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCustomComponentContrast005
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_CONTRAST_0500
+     * @tc.desc   testing contrast for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentContrast005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentContrast005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_CONTRAST_0600
-     * @tc.name       : testCustomComponentContrast006
-     * @tc.desc       : testing contrast for stack with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCustomComponentContrast006
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_CONTRAST_0600
+     * @tc.desc   testing contrast for stack with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentContrast006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentContrast006()).assertEqual(0)

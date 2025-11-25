@@ -20,11 +20,14 @@ const EACHTIMEOUT = 500;
 export default function ActsAccountSetGetExtraInfo() {
     describe('ActsAccountSetGetExtraInfo', function () {
 
-        /*
-        * @tc.number    : ActsAccountSetGetExtraInfo_0100
-        * @tc.name      : getAccountExtraInfo callback form
-        * @tc.desc      : Get additional information about an existing account
-        */
+        /**
+         * @tc.name   ActsAccountSetGetExtraInfo_0100
+         * @tc.number ActsAccountSetGetExtraInfo_0100
+         * @tc.desc   Get additional information about an existing account
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ActsAccountSetGetExtraInfo_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("====>ActsAccountSetGetExtraInfo_0100 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -48,11 +51,14 @@ export default function ActsAccountSetGetExtraInfo() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountSetGetExtraInfo_0200
-        * @tc.name      : getAccountExtraInfo promise form
-        * @tc.desc      : Get additional information about an existing account
-        */
+        /**
+         * @tc.name   ActsAccountSetGetExtraInfo_0200
+         * @tc.number ActsAccountSetGetExtraInfo_0200
+         * @tc.desc   Get additional information about an existing account
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ActsAccountSetGetExtraInfo_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("====>ActsAccountSetGetExtraInfo_0200 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -76,11 +82,14 @@ export default function ActsAccountSetGetExtraInfo() {
             done();
         });
 
-        /*
-        * @tc.number    : ActsAccountSetGetExtraInfo_0300
-        * @tc.name      : getAccountExtraInfo callback form
-        * @tc.desc      : Get additional information about a non-existent account
-        */
+        /**
+         * @tc.name   ActsAccountSetGetExtraInfo_0300
+         * @tc.number ActsAccountSetGetExtraInfo_0300
+         * @tc.desc   Get additional information about a non-existent account
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountSetGetExtraInfo_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountSetGetExtraInfo_0300 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -94,11 +103,14 @@ export default function ActsAccountSetGetExtraInfo() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountSetGetExtraInfo_0400
-        * @tc.name      : getAccountExtraInfo promise form
-        * @tc.desc      : Get additional information about a non-existent account
-        */
+        /**
+         * @tc.name   ActsAccountSetGetExtraInfo_0400
+         * @tc.number ActsAccountSetGetExtraInfo_0400
+         * @tc.desc   Get additional information about a non-existent account
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountSetGetExtraInfo_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountSetGetExtraInfo_0400 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -118,11 +130,14 @@ export default function ActsAccountSetGetExtraInfo() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountSetGetExtraInfo_0500
-        * @tc.name      : getAccountExtraInfo callback form
-        * @tc.desc      : Get additional information about deleted account
-        */
+        /**
+         * @tc.name   ActsAccountSetGetExtraInfo_0500
+         * @tc.number ActsAccountSetGetExtraInfo_0500
+         * @tc.desc   Get additional information about deleted account
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountSetGetExtraInfo_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountSetGetExtraInfo_0500 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -144,11 +159,14 @@ export default function ActsAccountSetGetExtraInfo() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountSetGetExtraInfo_0600
-        * @tc.name      : getAccountExtraInfo promise form
-        * @tc.desc      : Get additional information about deleted account
-        */
+        /**
+         * @tc.name   ActsAccountSetGetExtraInfo_0600
+         * @tc.number ActsAccountSetGetExtraInfo_0600
+         * @tc.desc   Get additional information about deleted account
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountSetGetExtraInfo_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountSetGetExtraInfo_0600 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -171,11 +189,14 @@ export default function ActsAccountSetGetExtraInfo() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountSetGetExtraInfo_0700
-        * @tc.name      : getAccountExtraInfo callback form
-        * @tc.desc      : Get additional information that is not set
-        */
+        /**
+         * @tc.name   ActsAccountSetGetExtraInfo_0700
+         * @tc.number ActsAccountSetGetExtraInfo_0700
+         * @tc.desc   Get additional information that is not set
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountSetGetExtraInfo_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountSetGetExtraInfo_0700 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -198,11 +219,14 @@ export default function ActsAccountSetGetExtraInfo() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountSetGetExtraInfo_0800
-        * @tc.name      : getAccountExtraInfo promise form
-        * @tc.desc      : Get additional information that is not set
-        */
+        /**
+         * @tc.name   ActsAccountSetGetExtraInfo_0800
+         * @tc.number ActsAccountSetGetExtraInfo_0800
+         * @tc.desc   Get additional information that is not set
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountSetGetExtraInfo_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountSetGetExtraInfo_0800 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -226,11 +250,14 @@ export default function ActsAccountSetGetExtraInfo() {
             done();
         });
 
-        /*
-        * @tc.number    : ActsAccountSetGetExtraInfo_0900
-        * @tc.name      : setAccountExtraInfo callback form
-        * @tc.desc      : Set account extension information that does not exist
-        */
+        /**
+         * @tc.name   ActsAccountSetGetExtraInfo_0900
+         * @tc.number ActsAccountSetGetExtraInfo_0900
+         * @tc.desc   Set account extension information that does not exist
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsAccountSetGetExtraInfo_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsAccountSetGetExtraInfo_0900 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -244,11 +271,14 @@ export default function ActsAccountSetGetExtraInfo() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountSetGetExtraInfo_1000
-        * @tc.name      : setAccountExtraInfo promise form
-        * @tc.desc      : Set account extension information that does not exist
-        */
+        /**
+         * @tc.name   ActsAccountSetGetExtraInfo_1000
+         * @tc.number ActsAccountSetGetExtraInfo_1000
+         * @tc.desc   Set account extension information that does not exist
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsAccountSetGetExtraInfo_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsAccountSetGetExtraInfo_1000 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -268,11 +298,14 @@ export default function ActsAccountSetGetExtraInfo() {
             }
         });
 
-        /*
-        * @tc.number    : ActsAccountSetGetExtraInfo_1100
-        * @tc.name      : setAccountExtraInfo getAccountExtraInfo callback form
-        * @tc.desc      : Get additional information that has been set
-        */
+        /**
+         * @tc.name   ActsAccountSetGetExtraInfo_1100
+         * @tc.number ActsAccountSetGetExtraInfo_1100
+         * @tc.desc   Get additional information that has been set
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsAccountSetGetExtraInfo_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsAccountSetGetExtraInfo_1100 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -299,11 +332,14 @@ export default function ActsAccountSetGetExtraInfo() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountSetGetExtraInfo_1200
-        * @tc.name      : setAccountExtraInfo getAccountExtraInfo promise form
-        * @tc.desc      : Get additional information that has been set
-        */
+        /**
+         * @tc.name   ActsAccountSetGetExtraInfo_1200
+         * @tc.number ActsAccountSetGetExtraInfo_1200
+         * @tc.desc   Get additional information that has been set
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ActsAccountSetGetExtraInfo_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.info("====>ActsAccountSetGetExtraInfo_1200 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -328,11 +364,14 @@ export default function ActsAccountSetGetExtraInfo() {
             done();
         });
 
-        /*
-        * @tc.number    : ActsAccountSetGetExtraInfo_1300
-        * @tc.name      : setAccountExtraInfo getAccountExtraInfo callback form
-        * @tc.desc      : Get repeated setting of different additional information
-        */
+        /**
+         * @tc.name   ActsAccountSetGetExtraInfo_1300
+         * @tc.number ActsAccountSetGetExtraInfo_1300
+         * @tc.desc   Get repeated setting of different additional information
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountSetGetExtraInfo_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountSetGetExtraInfo_1300 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -362,11 +401,14 @@ export default function ActsAccountSetGetExtraInfo() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountSetGetExtraInfo_1400
-        * @tc.name      : setAccountExtraInfo getAccountExtraInfo promise form
-        * @tc.desc      : Get repeated setting of different additional information
-        */
+        /**
+         * @tc.name   ActsAccountSetGetExtraInfo_1400
+         * @tc.number ActsAccountSetGetExtraInfo_1400
+         * @tc.desc   Get repeated setting of different additional information
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountSetGetExtraInfo_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountSetGetExtraInfo_1400 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -404,11 +446,14 @@ export default function ActsAccountSetGetExtraInfo() {
         });
 
 
-        /*
-        * @tc.number    : ActsAccountSetGetExtraInfo_1500
-        * @tc.name      : setAccountExtraInfo getAccountExtraInfo callback form
-        * @tc.desc      : Get repeated setting of same additional information
-        */
+        /**
+         * @tc.name   ActsAccountSetGetExtraInfo_1500
+         * @tc.number ActsAccountSetGetExtraInfo_1500
+         * @tc.desc   Get repeated setting of same additional information
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountSetGetExtraInfo_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountSetGetExtraInfo_1500 start====");
             var appAccountManager = account.createAppAccountManager();
@@ -438,11 +483,14 @@ export default function ActsAccountSetGetExtraInfo() {
             });
         });
 
-        /*
-        * @tc.number    : ActsAccountSetGetExtraInfo_1600
-        * @tc.name      : setAccountExtraInfo getAccountExtraInfo promise form
-        * @tc.desc      : Get repeated setting of same additional information
-        */
+        /**
+         * @tc.name   ActsAccountSetGetExtraInfo_1600
+         * @tc.number ActsAccountSetGetExtraInfo_1600
+         * @tc.desc   Get repeated setting of same additional information
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsAccountSetGetExtraInfo_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>ActsAccountSetGetExtraInfo_1600 start====");
             var appAccountManager = account.createAppAccountManager();

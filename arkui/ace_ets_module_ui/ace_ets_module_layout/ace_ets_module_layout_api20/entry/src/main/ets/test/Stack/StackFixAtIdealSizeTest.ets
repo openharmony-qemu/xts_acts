@@ -45,6 +45,14 @@ export default function StackFixAtIdealSizeTest() {
     afterEach(async () => {
     });
     
+    /**
+     * @tc.name   StackFixAtIdealSizeTest_0100
+     * @tc.number StackFixAtIdealSizeTest_0100
+     * @tc.desc   StackFixAtIdealSizeTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('StackFixAtIdealSizeTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[StackFixAtIdealSizeTest_0100] START');
       let driver = await Driver.create()

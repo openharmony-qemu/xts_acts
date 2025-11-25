@@ -80,9 +80,12 @@ export default function pickerViewPropsJsTest32() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewDataProp
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewDataProp', Level.LEVEL0, async function(done) {
             console.info('testPickerViewDataProp START');
@@ -100,9 +103,12 @@ export default function pickerViewPropsJsTest32() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testPickerViewDataPropNone START');
@@ -120,9 +126,12 @@ export default function pickerViewPropsJsTest32() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewClickEffectPropSmall
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewClickEffectPropSmall
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewClickEffectPropSmall', Level.LEVEL0, async function(done) {
             console.info('testPickerViewClickEffectPropSmall START');
@@ -139,9 +148,12 @@ export default function pickerViewPropsJsTest32() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewClickEffectPropMedium
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewClickEffectPropMedium
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewClickEffectPropMedium', Level.LEVEL0, async function(done) {
             console.info('testPickerViewClickEffectPropMedium START');
@@ -158,9 +170,12 @@ export default function pickerViewPropsJsTest32() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewClickEffectPropLarge
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewClickEffectPropLarge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewClickEffectPropLarge', Level.LEVEL0, async function(done) {
             console.info('testPickerViewClickEffectPropLarge START');
@@ -177,9 +192,12 @@ export default function pickerViewPropsJsTest32() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewClickEffectPropNone
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewClickEffectPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewClickEffectPropNone', Level.LEVEL0, async function(done) {
             console.info('testPickerViewClickEffectPropNone START');

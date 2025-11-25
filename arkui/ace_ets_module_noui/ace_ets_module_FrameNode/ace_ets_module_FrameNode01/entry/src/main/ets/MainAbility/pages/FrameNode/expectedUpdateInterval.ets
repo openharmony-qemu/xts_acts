@@ -1,3 +1,17 @@
+/**
+ * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 import { NodeController, FrameNode } from '@ohos.arkui.node';
 import { UIContext } from '@ohos.arkui.UIContext';
 
@@ -42,13 +56,14 @@ struct FrameNodeTypeTest {
 
   build() {
     Column() {
-      Text(`expectedUpdateInterval : ${this.expectedUpdateInterval ? this.expectedUpdateInterval : "undefined"}`).id("expectedUpdateIntervalValue")
+      Text(`expectedUpdateInterval : ${this.expectedUpdateInterval ? this.expectedUpdateInterval : 'undefined'}`).id('expectedUpdateIntervalValue')
+        .height('3%')
       Scroll(this.scroller) {
         Column() {
-          Text("This is A TextNode")
+          Text('This is A TextNode')
             .borderWidth(1)
             .width(300)
-            .height(100)
+            .height('5%')
             .fontSize(20)
             .backgroundColor(0x70FF0000)
             .onVisibleAreaChange([0, 0.5, 1], (isVisible: boolean, currentRatio: number) => {
@@ -62,10 +77,11 @@ struct FrameNodeTypeTest {
           NodeContainer(this.myNodeController)
             .borderWidth(1)
             .width(300)
-            .height(100)
+            .height('30%')
 
           Button("ADD commonEvent to FrameNode change expectedUpdateInterval")
-            .id("expectedUpdateInterval")
+            .id('expectedUpdateInterval')
+            .height('5%')
             .fontSize(16)
             .borderWidth(1)
             .onClick(() => {
@@ -73,17 +89,19 @@ struct FrameNodeTypeTest {
               this.expectedUpdateInterval = 2000;
               this.myNodeController.addCommonEvent(this.myNodeController.rootNode!, [0, 0.6, 0.8, 1.0], 2000);
             })
-          Button("Reset commonEvent to FrameNode")
+          Button('Reset commonEvent to FrameNode')
+            .height('5%')
             .onClick(() => {
               this.myNodeController.resetCommonEvent(this.myNodeController.rootNode!)
             })
-        }.height("200%")
+        }.height('100%')
       }
       .backgroundColor(0x70317aff)
       .scrollable(ScrollDirection.Vertical)
       .scrollBar(BarState.On)
       .scrollBarColor(Color.Gray)
       .scrollBarWidth(10)
-    }.width("100%")
+      .height('97%')
+    }.width('100%')
   }
 }

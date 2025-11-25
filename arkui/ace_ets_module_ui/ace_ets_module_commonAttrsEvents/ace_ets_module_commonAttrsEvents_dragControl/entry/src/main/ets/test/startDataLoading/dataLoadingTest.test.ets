@@ -49,12 +49,12 @@ export default function cancelDataLoadingTest() {
     });
 
     /**
-     * @tc.number    cancelDataLoading_0010
-     * @tc.name      cancelDataLoading_0010
-     * @tc.desc      api: UIContext DragController cancelDataLoading 
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   cancelDataLoading_0010
+     * @tc.number cancelDataLoading_0010
+     * @tc.desc   api: UIContext DragController cancelDataLoading
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('cancelDataLoading_0010', Level.LEVEL0, async (done: Function) => {
       console.info('cancelDataLoading_0010 START');
@@ -71,16 +71,16 @@ export default function cancelDataLoadingTest() {
     });
 
 
+
+
     /**
-     * @tc.number    startDataLoading_0010
-     * @tc.name      startDataLoading_0010
-     * @tc.desc      api: UIContext DragController startDataLoading
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   startDataLoading_0010
+     * @tc.number startDataLoading_0010
+     * @tc.desc   startDataLoading_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('startDataLoading_0010', Level.LEVEL0, async (done: Function) => {
       console.info('startDataLoading_0010 START');
       let driver = await Driver.create()
@@ -96,15 +96,15 @@ export default function cancelDataLoadingTest() {
       done();
     }); 
 
-    /**
-     * @tc.number    disableDataPrefetch_0010
-     * @tc.name      cancelDataLoading_0010
-     * @tc.desc      property: UIContext DragController  disableDataPrefetch
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
-     */
 
+    /**
+     * @tc.name   disableDataPrefetch_0010
+     * @tc.number disableDataPrefetch_0010
+     * @tc.desc   disableDataPrefetch_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('disableDataPrefetch_0010', Level.LEVEL0, async (done: Function) => {
       console.info('disableDataPrefetch_0010 START');
       let driver = await Driver.create()

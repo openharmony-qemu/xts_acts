@@ -235,6 +235,9 @@ struct webViewOnScroll {
             }
             case "emitpageDownAgain": {
               try {
+                this.isPageEnd = -1
+                this.controller.loadUrl($rawfile('indexFive.html'))
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 this.controller.pageDown(true);
                 setTimeout(() => {
                   if (this.isWebBottom) {

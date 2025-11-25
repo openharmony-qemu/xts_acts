@@ -42,12 +42,12 @@ export default function showDotIndicator() {
     });
 
     /**
-     * @tc.number    showDotIndicator_001
-     * @tc.name      showDotIndicator_0100
-     * @tc.desc      Flip to the specified page.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   showDotIndicator_0100
+     * @tc.number showDotIndicator_001
+     * @tc.desc   Flip to the specified page.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('showDotIndicator_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[showDotIndicator_0100] START');

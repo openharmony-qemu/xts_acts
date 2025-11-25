@@ -18,13 +18,14 @@ import { describe, it, Level } from '@ohos/hypium'
 
 export default function abilityTest() {
     describe('AACommandPrintOneTest', () => {
-        /**
-         * @tc.number: ACTS_AACommand_print_01_0100
-         * @tc.name: The -b, -p, -s, -w and other parameters of the test command are valid, and the print interface is
-         *           called in AsyncCallback mode. The print information includes Chinese, special characters, etc.
-         * @tc.desc: Verify that the test framework can be started normally and the logs can be output normally through
-         *           the test command.
-         */
+         /**
+          * @tc.name   ACTS_AACommand_print_01_0100
+          * @tc.number ACTS_AACommand_print_01_0100
+          * @tc.desc   Verify that the test framework can be started normally and the logs can be output normally through
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL0
+          */
          it('ACTS_AACommand_print_01_0100', Level.LEVEL0, async (done: Function) => {
             console.log("ACTS_AACommand_print_01_0100 start ====> " )
             done()
@@ -42,11 +43,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_AACommand_print_01_0200
-         * @tc.name: The -b, -p, -s, -w and other parameters of the test command are valid, and the print interface is
-         *           called in AsyncCallback mode. The length of the print message is 1000 characters.
-         * @tc.desc: Verify that the test framework can be started normally and the logs can be output normally through
-         *           the test command.
+         * @tc.name   ACTS_AACommand_print_01_0200
+         * @tc.number ACTS_AACommand_print_01_0200
+         * @tc.desc   Verify that the test framework can be started normally and the logs can be output normally through
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_AACommand_print_01_0200', Level.LEVEL0, async (done: Function) => {
             done()
@@ -71,11 +73,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_AACommand_print_01_0300
-         * @tc.name: The -b, -p, -s, -w and other parameters of the test command are valid, and the print interface is
-         *           called in AsyncCallback mode. The length of the print message is greater than 1000 characters.
-         * @tc.desc: Verify that the test framework can be started normally and the logs can be output normally through
-         *           the test command.
+         * @tc.name   ACTS_AACommand_print_01_0300
+         * @tc.number ACTS_AACommand_print_01_0300
+         * @tc.desc   Verify that the test framework can be started normally and the logs can be output normally through
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_AACommand_print_01_0300', Level.LEVEL0, async (done: Function) => {
             done()
@@ -106,11 +109,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_AACommand_print_01_0400
-         * @tc.name: The -b, -p, -s, -w and other parameters of the test command are valid, and the print interface is
-         *           called in AsyncCallback mode. print information is null.
-         * @tc.desc: Verify that the test framework can be started normally and the logs can be output normally through
-         *           the test command.
+         * @tc.name   ACTS_AACommand_print_01_0400
+         * @tc.number ACTS_AACommand_print_01_0400
+         * @tc.desc   Verify that the test framework can be started normally and the logs can be output normally through
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_AACommand_print_01_0400', Level.LEVEL0, async (done: Function) => {
             done()
@@ -124,11 +128,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_AACommand_print_01_0500
-         * @tc.name: The -b, -p, -s, -w and other parameters of the test command are valid, and the print interface is
-         *           called in Promise mode. The print information includes Chinese, special characters, etc.
-         * @tc.desc: Verify that the test framework can be started normally and the logs can be output normally through
-         *           the test command.
+         * @tc.name   ACTS_AACommand_print_01_0500
+         * @tc.number ACTS_AACommand_print_01_0500
+         * @tc.desc   Verify that the test framework can be started normally and the logs can be output normally through
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_AACommand_print_01_0500', Level.LEVEL0, async (done: Function) => {
             done()
@@ -143,11 +148,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_AACommand_print_01_0600
-         * @tc.name: The -b, -p, -s, -w and other parameters of the test command are valid, and the print interface is
-         *           called in Promise mode. The length of the print message is 1000 characters.
-         * @tc.desc: Verify that the test framework can be started normally and the logs can be output normally
-         *           through the test command.
+         * @tc.name   ACTS_AACommand_print_01_0600
+         * @tc.number ACTS_AACommand_print_01_0600
+         * @tc.desc   Verify that the test framework can be started normally and the logs can be output normally
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_AACommand_print_01_0600', Level.LEVEL0, async (done: Function) => {
             done()
@@ -171,11 +177,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_AACommand_print_01_0700
-         * @tc.name: The -b, -p, -s, -w and other parameters of the test command are valid, and the print interface is
-         *           called in Promise mode. The length of the print message is greater than 1000 characters.
-         * @tc.desc: Verify that the test framework can be started normally and the logs can be output normally through
-         *           the test command.
+         * @tc.name   ACTS_AACommand_print_01_0700
+         * @tc.number ACTS_AACommand_print_01_0700
+         * @tc.desc   Verify that the test framework can be started normally and the logs can be output normally through
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_AACommand_print_01_0700', Level.LEVEL0, async (done: Function) => {
             done()
@@ -206,11 +213,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_AACommand_print_01_0800
-         * @tc.name: The -b, -p, -s, -w and other parameters of the test command are valid, and the print interface is
-         *           called in Promise mode. print information is null.
-         * @tc.desc: Verify that the test framework can be started normally and the logs can be output normally
-         *           through the test command.
+         * @tc.name   ACTS_AACommand_print_01_0800
+         * @tc.number ACTS_AACommand_print_01_0800
+         * @tc.desc   Verify that the test framework can be started normally and the logs can be output normally
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_AACommand_print_01_0800', Level.LEVEL0, async (done: Function) => {
             done()

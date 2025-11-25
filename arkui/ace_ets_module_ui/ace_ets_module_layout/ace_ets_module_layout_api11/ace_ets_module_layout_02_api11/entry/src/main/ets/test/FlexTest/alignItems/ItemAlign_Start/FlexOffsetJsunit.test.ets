@@ -45,9 +45,12 @@ export default function flexOffset_StartJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignStartSetOffset
      * @tc.number SUB_ACE_FLEXALIGNITEMS_START_1100
-     * @tc.name testFlexItemAlignStartSetOffset
-     * @tc.desc First subcomponent set offset attribute.
+     * @tc.desc   First subcomponent set offset attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignStartSetOffset',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignStartSetOffset START');

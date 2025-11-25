@@ -43,12 +43,12 @@ export default function UIContextTestCase() {
     });
 
     /**
-     * @tc.number    UIContextTestCase_0100
-     * @tc.name      UIContextTestCase_0100
-     * @tc.desc      test getHostContext object
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   UIContextTestCase_0100
+     * @tc.number UIContextTestCase_0100
+     * @tc.desc   test getHostContext object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('UIContextTestCase_0100', Level.LEVEL2, async (done: Function) => {
       console.info('UIContextTestCase_0100');
@@ -63,12 +63,12 @@ export default function UIContextTestCase() {
     });
 
     /**
-     * @tc.number    UIContextTestCase_0200
-     * @tc.name      UIContextTestCase_0200
-     * @tc.desc      test getWindowName
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   UIContextTestCase_0200
+     * @tc.number UIContextTestCase_0200
+     * @tc.desc   test getWindowName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('UIContextTestCase_0200', Level.LEVEL2, async (done: Function) => {
       console.info('UIContextTestCase_0200');

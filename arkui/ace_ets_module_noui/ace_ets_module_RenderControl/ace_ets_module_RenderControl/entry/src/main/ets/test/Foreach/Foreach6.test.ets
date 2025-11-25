@@ -59,12 +59,12 @@ export default function Foreach6() {
     });
 
     /**
+     * @tc.name   foreach6_001
      * @tc.number foreach6_001
-     * @tc.name foreach6_001
-     * @tc.desc Display data in foreach component.
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Display data in foreach component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('foreach6_001', Level.LEVEL0, async (done: Function) => {
       console.info('[foreach6_001] START');
@@ -79,12 +79,12 @@ export default function Foreach6() {
     });
 
     /**
+     * @tc.name   foreach6_002
      * @tc.number foreach6_002
-     * @tc.name foreach6_002
-     * @tc.desc Display data in foreach component.
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Display data in foreach component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('foreach6_002', Level.LEVEL0, async (done: Function) => {
       console.info('[foreach6_002] START');

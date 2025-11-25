@@ -32,14 +32,14 @@ export default function SupportWindowModeStaticTest() {
       })
     });
 
-    /*
-     * @tc.number: SUB_BMS_SupportWindowMode_Static_0100
-     * @tc.name: SUB_BMS_SupportWindowMode_Static_0100
-     * @tc.desc: Test supportWindowModes as a parameter
-     * @tc.level: LEVEL1
-     * @tc.size: MEDIUMTEST
-     * @tc.type: FUNCTION
-    */
+    /**
+     * @tc.name   SUB_BMS_SupportWindowMode_Static_0100
+     * @tc.number SUB_BMS_SupportWindowMode_Static_0100
+     * @tc.desc   Test supportWindowModes as a parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("SUB_BMS_SupportWindowMode_Static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
         const subTag: string = 'SUB_BMS_SupportWindowMode_Static_0100';

@@ -46,12 +46,12 @@ export default function scrollAniTrue() {
     });
 
     /**
-     * @tc.number    scrollAniTrue_001
-     * @tc.name      scrollAniTrue_0100
-     * @tc.desc      Set the animation parameter of ScrollPage to true.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   scrollAniTrue_0100
+     * @tc.number scrollAniTrue_001
+     * @tc.desc   Set the animation parameter of ScrollPage to true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('scrollAniTrue_0100', Level.LEVEL3, async (done: Function) => {
       console.info('[scrollAniTrue_0100] START');

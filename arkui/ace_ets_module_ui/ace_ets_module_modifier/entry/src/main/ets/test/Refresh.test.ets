@@ -42,12 +42,12 @@ export default function refreshJsunit() {
     });
 
     /**
+     * @tc.name   refreshTest_001
      * @tc.number testRefresh_001
-     * @tc.name refreshTest_001
-     * @tc.desc Set pullToRefresh values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set pullToRefresh values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('refreshTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('refresh refreshTest_001 START');
@@ -61,12 +61,12 @@ export default function refreshJsunit() {
     });
 
     /**
+     * @tc.name   refreshTest_002
      * @tc.number testRefresh_002
-     * @tc.name refreshTest_002
-     * @tc.desc Set refreshOffset values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set refreshOffset values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('refreshTest_002', Level.LEVEL0, async (done: Function) => {
       console.info('refresh refreshTest_002 START');
@@ -80,12 +80,12 @@ export default function refreshJsunit() {
     });
 
     /**
+     * @tc.name   refreshTest_003
      * @tc.number testRefresh_003
-     * @tc.name refreshTest_003
-     * @tc.desc Set pullDownRatio values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set pullDownRatio values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('refreshTest_003', Level.LEVEL0, async (done: Function) => {
       console.info('refresh refreshTest_003 START');

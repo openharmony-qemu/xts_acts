@@ -26,26 +26,26 @@ export default function textAreaResponseRegionTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTAREA_RESPONSEREGION_0100
-     * @tc.name       : testTextAreaResponseRegion001
-     * @tc.desc       : testing responseRegion for TextArea
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextAreaResponseRegion001
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_RESPONSEREGION_0100
+     * @tc.desc   testing responseRegion for TextArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaResponseRegion001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaResponseRegion001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTAREA_RESPONSEREGION_0200
-     * @tc.name       : testTextAreaResponseRegion002
-     * @tc.desc       : testing responseRegion for TextArea
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextAreaResponseRegion002
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_RESPONSEREGION_0200
+     * @tc.desc   testing responseRegion for TextArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaResponseRegion002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaResponseRegion002()).assertEqual(0)

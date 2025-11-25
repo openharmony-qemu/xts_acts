@@ -20,9 +20,12 @@ export default function GetSecondModuleTest() {
   describe('getSecondModuleTest', () =>  {
 
     /**
+     * @tc.name   GetSecondModuleTest
      * @tc.number Sub_Bms_Framework_Query_AppInfo_5920
-     * @tc.name GetSecondModuleTest
-     * @tc.desc Test the bundleManager secondary module
+     * @tc.desc   Test the bundleManager secondary module
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GetSecondModuleTest', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) =>  {
       let bundleInfo = await bundle.getBundleInfoForSelf(

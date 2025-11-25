@@ -12,12 +12,12 @@ const ARKUI_ERROR_CODE_NOT_CLONED_POINTER_EVENT = 180003;
 export default function ErrorCodeTest2() {
   describe('ErrorCodeTest2', () => {
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ErrorCode_0400
-     * @tc.name    : testArkUIACEErrorCode0400
-     * @tc.desc    : testing ARKUI_ERROR_CODE_NODE_EVENT_PARAM_INVALID ErrorCode.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIACEErrorCode0400
+     * @tc.number SUB_ArkUI_ACE_ErrorCode_0400
+     * @tc.desc   testing ARKUI_ERROR_CODE_NODE_EVENT_PARAM_INVALID ErrorCode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIACEErrorCode0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -34,12 +34,12 @@ export default function ErrorCodeTest2() {
       }
     })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ErrorCode_1300
-     * @tc.name    : testArkUIACEErrorCode1300
-     * @tc.desc    : testing ARKUI_ERROR_CODE_NOT_CLONED_POINTER_EVENT ErrorCode.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIACEErrorCode1300
+     * @tc.number SUB_ArkUI_ACE_ErrorCode_1300
+     * @tc.desc   testing ARKUI_ERROR_CODE_NOT_CLONED_POINTER_EVENT ErrorCode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIACEErrorCode1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {

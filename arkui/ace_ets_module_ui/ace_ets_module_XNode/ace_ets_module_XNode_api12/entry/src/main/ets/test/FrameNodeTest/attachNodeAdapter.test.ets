@@ -40,12 +40,12 @@ export default function attachNodeAdapterTest() {
       done();
     });
     /**
-     * @tc.number    onCreateChildTest_0010
-     * @tc.name      onCreateChildTest_0010
-     * @tc.desc      frameNode: onCreateChild
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   onCreateChildTest_0010
+     * @tc.number onCreateChildTest_0010
+     * @tc.desc   frameNode: onCreateChild
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onCreateChildTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('onCreateChildTest_0010 START');
@@ -62,12 +62,12 @@ export default function attachNodeAdapterTest() {
       done();
     });
     /**
-     * @tc.number    onDisposeChildTest_0020
-     * @tc.name      onDisposeChildTest_0020
-     * @tc.desc      frameNode: onDisposeChild
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   onDisposeChildTest_0020
+     * @tc.number onDisposeChildTest_0020
+     * @tc.desc   frameNode: onDisposeChild
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onDisposeChildTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('onDisposeChildTest_0020 START');
@@ -87,12 +87,12 @@ export default function attachNodeAdapterTest() {
       done();
     });
     /**
-     * @tc.number    onUpdateChildTest_0030
-     * @tc.name      onUpdateChildTest_0030
-     * @tc.desc      frameNode: onUpdateChild
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   onUpdateChildTest_0030
+     * @tc.number onUpdateChildTest_0030
+     * @tc.desc   frameNode: onUpdateChild
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onUpdateChildTest_0030', Level.LEVEL0, async (done: Function) => {
       console.info('onUpdateChildTest_0030 START');
@@ -112,12 +112,12 @@ export default function attachNodeAdapterTest() {
       done();
     });
     /**
-     * @tc.number    attachNodeAdapterTest_0040
-     * @tc.name      attachNodeAdapterTest_0040
-     * @tc.desc      frameNode: attachNodeAdapter
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   attachNodeAdapterTest_0040
+     * @tc.number attachNodeAdapterTest_0040
+     * @tc.desc   frameNode: attachNodeAdapter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('attachNodeAdapterTest_0040', Level.LEVEL0, async (done: Function) => {
       console.info('attachNodeAdapterTest_0040 START');
@@ -134,12 +134,12 @@ export default function attachNodeAdapterTest() {
       done();
     });
     /**
-     * @tc.number    detachNodeAdapterTest_0050
-     * @tc.name      detachNodeAdapterTest_0050
-     * @tc.desc      frameNode: detachNodeAdapter
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   detachNodeAdapterTest_0050
+     * @tc.number detachNodeAdapterTest_0050
+     * @tc.desc   frameNode: detachNodeAdapter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('detachNodeAdapterTest_0050', Level.LEVEL0, async (done: Function) => {
       console.info('detachNodeAdapterTest_0050 START');

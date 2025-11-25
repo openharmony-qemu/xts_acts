@@ -41,12 +41,12 @@ export default function getSharedLocalStorageTest() {
       done();
     });
     /**
-     * @tc.number    getSharedLocalStorage
-     * @tc.name      getSharedLocalStorageTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getSharedLocalStorageTest_0100
+     * @tc.number getSharedLocalStorage
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getSharedLocalStorageTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('getSharedLocalStorageTest_0100 START');

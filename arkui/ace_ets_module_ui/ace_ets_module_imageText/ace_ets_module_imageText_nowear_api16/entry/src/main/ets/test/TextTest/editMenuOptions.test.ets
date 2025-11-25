@@ -43,10 +43,13 @@ export default function editMenuOptions() {
     });
     
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         editMenuOptions0001
-     * @tc.desic        The labelinfo property is added to the customized menu of the text component
+    /**
+     * @tc.name   editMenuOptions0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   editMenuOptions0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('editMenuOptions0001', Level.LEVEL0, async (done: Function) => {
         let driver = Driver.create();
@@ -75,10 +78,13 @@ export default function editMenuOptions() {
         done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         editMenuOptions0002
-     * @tc.desic        The labelinfo property is added to the customized menu of the textArea component
+    /**
+     * @tc.name   editMenuOptions0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   editMenuOptions0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('editMenuOptions0002', Level.LEVEL0, async (done: Function) => {
         let driver = Driver.create();
@@ -108,10 +114,13 @@ export default function editMenuOptions() {
         done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-     * @tc.name         editMenuOptions0003
-     * @tc.desic        The labelinfo property is added to the customized menu of the textInput component
+    /**
+     * @tc.name   editMenuOptions0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   editMenuOptions0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('editMenuOptions0003', Level.LEVEL0, async (done: Function) => {
         let driver = Driver.create();
@@ -140,10 +149,13 @@ export default function editMenuOptions() {
         done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0004
-     * @tc.name         editMenuOptions0004
-     * @tc.desic        The labelinfo property is added to the customized menu of the richEditor component
+    /**
+     * @tc.name   editMenuOptions0004
+     * @tc.number SUB_ACE_BASIC_ETS_API_0004
+     * @tc.desc   editMenuOptions0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('editMenuOptions0004', Level.LEVEL0, async (done: Function) => {
         let driver = Driver.create();
@@ -173,10 +185,13 @@ export default function editMenuOptions() {
         done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0005
-     * @tc.name         editMenuOptions0005
-     * @tc.desic        The labelinfo property is added to the customized menu of the search component
+    /**
+     * @tc.name   editMenuOptions0005
+     * @tc.number SUB_ACE_BASIC_ETS_API_0005
+     * @tc.desc   editMenuOptions0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('editMenuOptions0005', Level.LEVEL0, async (done: Function) => {
         let driver = Driver.create();

@@ -50,12 +50,12 @@ export default function tabsPageMode() {
     });
 
     /**
-     * @tc.number    tabsPageMode_001
-     * @tc.name      tabsPageMode_0100
-     * @tc.desc      Set mouse scroll wheel single page flipping mode.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   tabsPageMode_0100
+     * @tc.number tabsPageMode_001
+     * @tc.desc   Set mouse scroll wheel single page flipping mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('tabsPageMode_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[tabsPageMode_0100] START');
@@ -91,12 +91,12 @@ export default function tabsPageMode() {
     });
 
     /**
-     * @tc.number    tabsPageMode_002
-     * @tc.name      tabsPageMode_0200
-     * @tc.desc      Set mouse scroll wheel continuous page flipping mode.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   tabsPageMode_0200
+     * @tc.number tabsPageMode_002
+     * @tc.desc   Set mouse scroll wheel continuous page flipping mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('tabsPageMode_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[tabsPageMode_0200] START');

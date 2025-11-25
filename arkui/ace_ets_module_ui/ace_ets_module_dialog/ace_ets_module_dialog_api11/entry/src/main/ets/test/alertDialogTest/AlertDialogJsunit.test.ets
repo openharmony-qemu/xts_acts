@@ -43,15 +43,15 @@ export default function AlertDialogJsunit() {
       done()
     });
 
-    /**
-     * @tc.number    AlertDialogJsunit_0100
-     * @tc.name      AlertDialogJsunit_0100
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
-     */
 
+    /**
+     * @tc.name   AlertDialogJsunit_0100
+     * @tc.number AlertDialogJsunit_0100
+     * @tc.desc   AlertDialogJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('AlertDialogJsunit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('AlertDialogJsunit_0100 START');
 	    let driver = await Driver.create()

@@ -43,13 +43,13 @@ export default function TextPickerJsunitTest() {
       done();
     });
 
-    /*
-     * @tc.number TextPickerJsunit_0100
+    /**
      * @tc.name   TextPickerJsunit_0100
+     * @tc.number TextPickerJsunit_0100
      * @tc.desc   textPicker Property
-     * @tc.size   MediumTest
-     * @tc.type   Property
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TextPickerJsunit_0100', Level.LEVEL1, async (done: Function) => {
       // Get the information of TextPicker component
@@ -78,13 +78,13 @@ export default function TextPickerJsunitTest() {
       done();
     });
 
-    /*
-     * @tc.number TextPickerJsunit_0200
+    /**
      * @tc.name   TextPickerJsunit_0200
+     * @tc.number TextPickerJsunit_0200
      * @tc.desc   textPicker Property
-     * @tc.size   MediumTest
-     * @tc.type   Property
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TextPickerJsunit_0200', Level.LEVEL1, async (done: Function) => {
       // Modify the attribute of TextPicker component
@@ -124,13 +124,13 @@ export default function TextPickerJsunitTest() {
       done();
     });
 
-    /*
-     * @tc.number TextPickerJsunit_0300
+    /**
      * @tc.name   TextPickerJsunit_0300
+     * @tc.number TextPickerJsunit_0300
      * @tc.desc   textPicker Property
-     * @tc.size   MediumTest
-     * @tc.type   Property
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TextPickerJsunit_0300', Level.LEVEL1, async (done: Function) => {
       // Verify the functions of TextPicker component
@@ -154,13 +154,13 @@ export default function TextPickerJsunitTest() {
       done();
     });
 
-    /*
-     * @tc.number TextPickerJsunit_0400
+    /**
      * @tc.name   TextPickerJsunit_0400
+     * @tc.number TextPickerJsunit_0400
      * @tc.desc   textPicker Property
-     * @tc.size   MediumTest
-     * @tc.type   Property
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TextPickerJsunit_0400', Level.LEVEL1, async (done: Function) => {
       // Illegal modification of properties of TextPicker component

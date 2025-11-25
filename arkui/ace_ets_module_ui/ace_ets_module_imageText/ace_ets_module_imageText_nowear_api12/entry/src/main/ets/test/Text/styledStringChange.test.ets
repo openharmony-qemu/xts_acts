@@ -43,15 +43,15 @@ export default function styledStringChange() {
       console.info("styledStringChange after each called");
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_StyledString_0010
-     * @tc.name       : styledStringChange_001
-     * @tc.desc       : onChange Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   styledStringChange_001
+     * @tc.number styledStringChange_001
+     * @tc.desc   styledStringChange_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('styledStringChange_001', Level.LEVEL3, async (done: Function) => {
       console.info('[styledStringChange_001] START');
       await CommonFunc.sleep(200);
@@ -78,15 +78,15 @@ export default function styledStringChange() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_StyledString_0020
-     * @tc.name       : styledStringChange_002
-     * @tc.desc       : onPaste Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   styledStringChange_002
+     * @tc.number styledStringChange_002
+     * @tc.desc   styledStringChange_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('styledStringChange_002', Level.LEVEL3, async (done: Function) => {
       console.info('[styledStringChange_002] START');
       await CommonFunc.sleep(200);

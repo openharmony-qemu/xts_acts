@@ -45,12 +45,12 @@ export default function shapeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_shapeTest_0100
-     * @tc.name: shapeTest_0100
-     * @tc.desc: ShapeAPI 
-     * @tc.level: Level 0
-     * @tc.type : Shape
-     * @tc.size : ShapeTest
+     * @tc.name   shapeTest_0100
+     * @tc.number SUB_ARKUI_API_shapeTest_0100
+     * @tc.desc   ShapeAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('shapeTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('shapeTest_0100 START');
@@ -64,12 +64,12 @@ export default function shapeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_shapeTest_0200
-     * @tc.name: shapeTest_0200
-     * @tc.desc: ShapeAPI 
-     * @tc.level: Level 0
-     * @tc.type : Shape
-     * @tc.size : ShapeTest
+     * @tc.name   shapeTest_0200
+     * @tc.number SUB_ARKUI_API_shapeTest_0200
+     * @tc.desc   ShapeAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('shapeTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('shapeTest_0200 START');
@@ -83,12 +83,12 @@ export default function shapeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_shapeTest_0300
-     * @tc.name: shapeTest_0300
-     * @tc.desc: ShapeAPI 
-     * @tc.level: Level 0
-     * @tc.type : Shape
-     * @tc.size : ShapeTest
+     * @tc.name   shapeTest_0300
+     * @tc.number SUB_ARKUI_API_shapeTest_0300
+     * @tc.desc   ShapeAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('shapeTest_0300', Level.LEVEL0, async (done: Function) => {
       console.info('shapeTest_0300 START');
@@ -102,12 +102,12 @@ export default function shapeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_shapeTest_0400
-     * @tc.name: shapeTest_0400
-     * @tc.desc: ShapeAPI 
-     * @tc.level: Level 0
-     * @tc.type : Shape
-     * @tc.size : ShapeTest
+     * @tc.name   shapeTest_0400
+     * @tc.number SUB_ARKUI_API_shapeTest_0400
+     * @tc.desc   ShapeAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('shapeTest_0400', Level.LEVEL0, async (done: Function) => {
       console.info('shapeTest_0400 START');
@@ -121,12 +121,12 @@ export default function shapeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_shapeTest_0500
-     * @tc.name: shapeTest_0500
-     * @tc.desc: ShapeAPI 
-     * @tc.level: Level 0
-     * @tc.type : Shape
-     * @tc.size : ShapeTest
+     * @tc.name   shapeTest_0500
+     * @tc.number SUB_ARKUI_API_shapeTest_0500
+     * @tc.desc   ShapeAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('shapeTest_0500', Level.LEVEL0, async (done: Function) => {
       console.info('shapeTest_0500 START');
@@ -140,12 +140,12 @@ export default function shapeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_shapeTest_0600
-     * @tc.name: shapeTest_0600
-     * @tc.desc: ShapeAPI 
-     * @tc.level: Level 0
-     * @tc.type : Shape
-     * @tc.size : ShapeTest
+     * @tc.name   shapeTest_0600
+     * @tc.number SUB_ARKUI_API_shapeTest_0600
+     * @tc.desc   ShapeAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('shapeTest_0600', Level.LEVEL0, async (done: Function) => {
       console.info('shapeTest_0600 START');
@@ -159,12 +159,12 @@ export default function shapeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_shapeTest_0700
-     * @tc.name: shapeTest_0700
-     * @tc.desc: ShapeAPI 
-     * @tc.level: Level 0
-     * @tc.type : Shape
-     * @tc.size : ShapeTest
+     * @tc.name   shapeTest_0700
+     * @tc.number SUB_ARKUI_API_shapeTest_0700
+     * @tc.desc   ShapeAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('shapeTest_0700', Level.LEVEL0, async (done: Function) => {
       console.info('shapeTest_0700 START');
@@ -178,12 +178,12 @@ export default function shapeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_shapeTest_0800
-     * @tc.name: shapeTest_0800
-     * @tc.desc: ShapeAPI 
-     * @tc.level: Level 0
-     * @tc.type : Shape
-     * @tc.size : ShapeTest
+     * @tc.name   shapeTest_0800
+     * @tc.number SUB_ARKUI_API_shapeTest_0800
+     * @tc.desc   ShapeAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('shapeTest_0800', Level.LEVEL0, async (done: Function) => {
       console.info('shapeTest_0800 START');
@@ -197,12 +197,12 @@ export default function shapeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_shapeTest_0900
-     * @tc.name: shapeTest_0900
-     * @tc.desc: ShapeAPI 
-     * @tc.level: Level 0
-     * @tc.type : Shape
-     * @tc.size : ShapeTest
+     * @tc.name   shapeTest_0900
+     * @tc.number SUB_ARKUI_API_shapeTest_0900
+     * @tc.desc   ShapeAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('shapeTest_0900', Level.LEVEL0, async (done: Function) => {
       console.info('shapeTest_0900 START');
@@ -216,12 +216,12 @@ export default function shapeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_shapeTest_1000
-     * @tc.name: shapeTest_1000
-     * @tc.desc: ShapeAPI 
-     * @tc.level: Level 0
-     * @tc.type : Shape
-     * @tc.size : ShapeTest
+     * @tc.name   shapeTest_1000
+     * @tc.number SUB_ARKUI_API_shapeTest_1000
+     * @tc.desc   ShapeAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('shapeTest_1000', Level.LEVEL0, async (done: Function) => {
       console.info('shapeTest_1000 START');
@@ -252,12 +252,12 @@ export default function shapeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_shapeTest_1100
-     * @tc.name: shapeTest_1100
-     * @tc.desc: ShapeAPI 
-     * @tc.level: Level 0
-     * @tc.type : Shape
-     * @tc.size : ShapeTest
+     * @tc.name   shapeTest_1100
+     * @tc.number SUB_ARKUI_API_shapeTest_1100
+     * @tc.desc   ShapeAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('shapeTest_1100', Level.LEVEL0, async (done: Function) => {
       console.info('shapeTest_1100 START');
@@ -287,12 +287,12 @@ export default function shapeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_shapeTest_1200
-     * @tc.name: shapeTest_1200
-     * @tc.desc: ShapeAPI 
-     * @tc.level: Level 0
-     * @tc.type : Shape
-     * @tc.size : ShapeTest
+     * @tc.name   shapeTest_1200
+     * @tc.number SUB_ARKUI_API_shapeTest_1200
+     * @tc.desc   ShapeAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('shapeTest_1200', Level.LEVEL0, async (done: Function) => {
       console.info('shapeTest_1200 START');
@@ -322,12 +322,12 @@ export default function shapeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_shapeTest_1300
-     * @tc.name: shapeTest_1300
-     * @tc.desc: ShapeAPI 
-     * @tc.level: Level 0
-     * @tc.type : Shape
-     * @tc.size : ShapeTest
+     * @tc.name   shapeTest_1300
+     * @tc.number SUB_ARKUI_API_shapeTest_1300
+     * @tc.desc   ShapeAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('shapeTest_1300', Level.LEVEL0, async (done: Function) => {
       console.info('shapeTest_1300 START');
@@ -358,12 +358,12 @@ export default function shapeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_shapeTest_1400
-     * @tc.name: shapeTest_1400
-     * @tc.desc: ShapeAPI 
-     * @tc.level: Level 0
-     * @tc.type : Shape
-     * @tc.size : ShapeTest
+     * @tc.name   shapeTest_1400
+     * @tc.number SUB_ARKUI_API_shapeTest_1400
+     * @tc.desc   ShapeAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('shapeTest_1400', Level.LEVEL0, async (done: Function) => {
       console.info('shapeTest_1400 START');
@@ -394,12 +394,12 @@ export default function shapeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_shapeTest_1500
-     * @tc.name: shapeTest_1500
-     * @tc.desc: ShapeAPI 
-     * @tc.level: Level 0
-     * @tc.type : Shape
-     * @tc.size : ShapeTest
+     * @tc.name   shapeTest_1500
+     * @tc.number SUB_ARKUI_API_shapeTest_1500
+     * @tc.desc   ShapeAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('shapeTest_1500', Level.LEVEL0, async (done: Function) => {
       console.info('shapeTest_1500 START');
@@ -430,12 +430,12 @@ export default function shapeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_shapeTest_1600
-     * @tc.name: shapeTest_1600
-     * @tc.desc: ShapeAPI 
-     * @tc.level: Level 0
-     * @tc.type : Shape
-     * @tc.size : ShapeTest
+     * @tc.name   shapeTest_1600
+     * @tc.number SUB_ARKUI_API_shapeTest_1600
+     * @tc.desc   ShapeAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('shapeTest_1600', Level.LEVEL0, async (done: Function) => {
       console.info('shapeTest_1600 START');
@@ -466,12 +466,12 @@ export default function shapeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_shapeTest_1700
-     * @tc.name: shapeTest_1700
-     * @tc.desc: ShapeAPI 
-     * @tc.level: Level 0
-     * @tc.type : Shape
-     * @tc.size : ShapeTest
+     * @tc.name   shapeTest_1700
+     * @tc.number SUB_ARKUI_API_shapeTest_1700
+     * @tc.desc   ShapeAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('shapeTest_1700', Level.LEVEL0, async (done: Function) => {
       console.info('shapeTest_1700 START');
@@ -502,12 +502,12 @@ export default function shapeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_shapeTest_1800
-     * @tc.name: shapeTest_1800
-     * @tc.desc: ShapeAPI 
-     * @tc.level: Level 0
-     * @tc.type : Shape
-     * @tc.size : ShapeTest
+     * @tc.name   shapeTest_1800
+     * @tc.number SUB_ARKUI_API_shapeTest_1800
+     * @tc.desc   ShapeAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('shapeTest_1800', Level.LEVEL0, async (done: Function) => {
       console.info('shapeTest_1800 START');
@@ -538,12 +538,12 @@ export default function shapeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_shapeTest_2100
-     * @tc.name: shapeTest_2100
-     * @tc.desc: ShapeAPI 
-     * @tc.level: Level 0
-     * @tc.type : Shape
-     * @tc.size : ShapeTest
+     * @tc.name   shapeTest_2100
+     * @tc.number SUB_ARKUI_API_shapeTest_2100
+     * @tc.desc   ShapeAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('shapeTest_2100', Level.LEVEL0, async (done: Function) => {
       console.info('shapeTest_2100 START');
@@ -574,12 +574,12 @@ export default function shapeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_shapeTest_3200
-     * @tc.name: shapeTest_3200
-     * @tc.desc: ShapeAPI 
-     * @tc.level: Level 0
-     * @tc.type : Shape
-     * @tc.size : ShapeTest
+     * @tc.name   shapeTest_3200
+     * @tc.number SUB_ARKUI_API_shapeTest_3200
+     * @tc.desc   ShapeAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('shapeTest_3200', Level.LEVEL0, async (done: Function) => {
       console.info('shapeTest_3200 START');
@@ -610,12 +610,12 @@ export default function shapeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_shapeTest_3300
-     * @tc.name: shapeTest_3300
-     * @tc.desc: ShapeAPI 
-     * @tc.level: Level 0
-     * @tc.type : Shape
-     * @tc.size : ShapeTest
+     * @tc.name   shapeTest_3300
+     * @tc.number SUB_ARKUI_API_shapeTest_3300
+     * @tc.desc   ShapeAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('shapeTest_3300', Level.LEVEL0, async (done: Function) => {
       console.info('shapeTest_3300 START');
@@ -646,12 +646,12 @@ export default function shapeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_shapeTest_2200
-     * @tc.name: shapeTest_2200
-     * @tc.desc: ShapeAPI 
-     * @tc.level: Level 0
-     * @tc.type : Shape
-     * @tc.size : ShapeTest
+     * @tc.name   shapeTest_2200
+     * @tc.number SUB_ARKUI_API_shapeTest_2200
+     * @tc.desc   ShapeAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('shapeTest_2200', Level.LEVEL0, async (done: Function) => {
       console.info('shapeTest_1300 START');
@@ -682,12 +682,12 @@ export default function shapeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_shapeTest_1900
-     * @tc.name: shapeTest_1900
-     * @tc.desc: ShapeAPI 
-     * @tc.level: Level 0
-     * @tc.type : Shape
-     * @tc.size : ShapeTest
+     * @tc.name   shapeTest_1900
+     * @tc.number SUB_ARKUI_API_shapeTest_1900
+     * @tc.desc   ShapeAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('shapeTest_1900', Level.LEVEL0, async (done: Function) => {
       console.info('shapeTest_1900 START');
@@ -718,12 +718,12 @@ export default function shapeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_shapeTest_2000
-     * @tc.name: shapeTest_2000
-     * @tc.desc: ShapeAPI 
-     * @tc.level: Level 0
-     * @tc.type : Shape
-     * @tc.size : ShapeTest
+     * @tc.name   shapeTest_2000
+     * @tc.number SUB_ARKUI_API_shapeTest_2000
+     * @tc.desc   ShapeAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('shapeTest_2000', Level.LEVEL0, async (done: Function) => {
       console.info('shapeTest_2000 START');
@@ -754,12 +754,12 @@ export default function shapeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_shapeTest_2300
-     * @tc.name: shapeTest_2300
-     * @tc.desc: ShapeAPI 
-     * @tc.level: Level 0
-     * @tc.type : Shape
-     * @tc.size : ShapeTest
+     * @tc.name   shapeTest_2300
+     * @tc.number SUB_ARKUI_API_shapeTest_2300
+     * @tc.desc   ShapeAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('shapeTest_2300', Level.LEVEL0, async (done: Function) => {
       console.info('shapeTest_2300 START');
@@ -790,12 +790,12 @@ export default function shapeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_shapeTest_2400
-     * @tc.name: shapeTest_2400
-     * @tc.desc: ShapeAPI 
-     * @tc.level: Level 0
-     * @tc.type : Shape
-     * @tc.size : ShapeTest
+     * @tc.name   shapeTest_2400
+     * @tc.number SUB_ARKUI_API_shapeTest_2400
+     * @tc.desc   ShapeAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('shapeTest_2400', Level.LEVEL0, async (done: Function) => {
       console.info('shapeTest_2400 START');
@@ -826,12 +826,12 @@ export default function shapeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_shapeTest_2500
-     * @tc.name: shapeTest_2500
-     * @tc.desc: ShapeAPI 
-     * @tc.level: Level 0
-     * @tc.type : Shape
-     * @tc.size : ShapeTest
+     * @tc.name   shapeTest_2500
+     * @tc.number SUB_ARKUI_API_shapeTest_2500
+     * @tc.desc   ShapeAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('shapeTest_2500', Level.LEVEL0, async (done: Function) => {
       console.info('shapeTest_2500 START');
@@ -862,12 +862,12 @@ export default function shapeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_shapeTest_2600
-     * @tc.name: shapeTest_2600
-     * @tc.desc: ShapeAPI 
-     * @tc.level: Level 0
-     * @tc.type : Shape
-     * @tc.size : ShapeTest
+     * @tc.name   shapeTest_2600
+     * @tc.number SUB_ARKUI_API_shapeTest_2600
+     * @tc.desc   ShapeAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('shapeTest_2600', Level.LEVEL0, async (done: Function) => {
       console.info('shapeTest_2600 START');
@@ -898,12 +898,12 @@ export default function shapeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_shapeTest_2700
-     * @tc.name: shapeTest_2700
-     * @tc.desc: ShapeAPI 
-     * @tc.level: Level 0
-     * @tc.type : Shape
-     * @tc.size : ShapeTest
+     * @tc.name   shapeTest_2700
+     * @tc.number SUB_ARKUI_API_shapeTest_2700
+     * @tc.desc   ShapeAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('shapeTest_2700', Level.LEVEL0, async (done: Function) => {
       console.info('shapeTest_2700 START');
@@ -934,12 +934,12 @@ export default function shapeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_shapeTest_2800
-     * @tc.name: shapeTest_2800
-     * @tc.desc: ShapeAPI 
-     * @tc.level: Level 0
-     * @tc.type : Shape
-     * @tc.size : ShapeTest
+     * @tc.name   shapeTest_2800
+     * @tc.number SUB_ARKUI_API_shapeTest_2800
+     * @tc.desc   ShapeAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('shapeTest_2800', Level.LEVEL0, async (done: Function) => {
       console.info('shapeTest_2800 START');
@@ -970,12 +970,12 @@ export default function shapeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_shapeTest_2900
-     * @tc.name: shapeTest_2900
-     * @tc.desc: ShapeAPI 
-     * @tc.level: Level 0
-     * @tc.type : Shape
-     * @tc.size : ShapeTest
+     * @tc.name   shapeTest_2900
+     * @tc.number SUB_ARKUI_API_shapeTest_2900
+     * @tc.desc   ShapeAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('shapeTest_2900', Level.LEVEL0, async (done: Function) => {
       console.info('shapeTest_2900 START');
@@ -1006,12 +1006,12 @@ export default function shapeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_shapeTest_3000
-     * @tc.name: shapeTest_3000
-     * @tc.desc: ShapeAPI 
-     * @tc.level: Level 0
-     * @tc.type : Shape
-     * @tc.size : ShapeTest
+     * @tc.name   shapeTest_3000
+     * @tc.number SUB_ARKUI_API_shapeTest_3000
+     * @tc.desc   ShapeAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('shapeTest_3000', Level.LEVEL0, async (done: Function) => {
       console.info('shapeTest_3000 START');
@@ -1025,12 +1025,12 @@ export default function shapeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_shapeTest_3100
-     * @tc.name: shapeTest_3100
-     * @tc.desc: ShapeAPI 
-     * @tc.level: Level 0
-     * @tc.type : Shape
-     * @tc.size : ShapeTest
+     * @tc.name   shapeTest_3100
+     * @tc.number SUB_ARKUI_API_shapeTest_3100
+     * @tc.desc   ShapeAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('shapeTest_3100', Level.LEVEL0, async (done: Function) => {
       console.info('shapeTest_3100 START');

@@ -43,12 +43,12 @@ export default function getPageInfoByUniqueIdTest() {
     });
 
     /**
-     * @tc.number    getPageInfoByUniqueIdTest_0010
-     * @tc.name      getPageInfoByUniqueIdTest_0010
-     * @tc.desc      UIContext: getPageInfoByUniqueId
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getPageInfoByUniqueIdTest_0010
+     * @tc.number getPageInfoByUniqueIdTest_0010
+     * @tc.desc   UIContext: getPageInfoByUniqueId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getPageInfoByUniqueIdTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('getPageInfoByUniqueIdTest_0010 START');
@@ -66,12 +66,12 @@ export default function getPageInfoByUniqueIdTest() {
     });
 
     /**
-     * @tc.number    getNavigationInfoByUniqueIdTest_0020
-     * @tc.name      getNavigationInfoByUniqueIdTest_0020
-     * @tc.desc      UIContext: getNavigationInfoByUniqueId
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getNavigationInfoByUniqueIdTest_0020
+     * @tc.number getNavigationInfoByUniqueIdTest_0020
+     * @tc.desc   UIContext: getNavigationInfoByUniqueId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getNavigationInfoByUniqueIdTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('getNavigationInfoByUniqueIdTest_0020 START');

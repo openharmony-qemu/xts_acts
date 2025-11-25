@@ -26,51 +26,51 @@ export default function commonAttrsConstraintSizeTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_CONSTRAINTSIZE_0100
-     * @tc.name       : testCommonAttrsConstraintSize001
-     * @tc.desc       : testing constraintSize for column with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsConstraintSize001
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_CONSTRAINTSIZE_0100
+     * @tc.desc   testing constraintSize for column with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsConstraintSize001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsConstraintSize001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_CONSTRAINTSIZE_0200
-     * @tc.name       : testCommonAttrsConstraintSize002
-     * @tc.desc       : testing constraintSize for column with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsConstraintSize002
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_CONSTRAINTSIZE_0200
+     * @tc.desc   testing constraintSize for column with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsConstraintSize002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsConstraintSize002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_CONSTRAINTSIZE_0300
-     * @tc.name       : testCommonAttrsConstraintSize003
-     * @tc.desc       : testing constraintSize for column with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCommonAttrsConstraintSize003
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_CONSTRAINTSIZE_0300
+     * @tc.desc   testing constraintSize for column with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsConstraintSize003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsConstraintSize003()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_CONSTRAINTSIZE_0400
-     * @tc.name       : testCommonAttrsConstraintSize004
-     * @tc.desc       : testing constraintSize for column with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCommonAttrsConstraintSize004
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_CONSTRAINTSIZE_0400
+     * @tc.desc   testing constraintSize for column with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsConstraintSize004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsConstraintSize004()).assertEqual(0)

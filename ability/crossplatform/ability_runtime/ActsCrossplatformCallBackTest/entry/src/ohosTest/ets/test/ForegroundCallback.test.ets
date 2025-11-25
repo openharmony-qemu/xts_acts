@@ -26,12 +26,12 @@ const START_ABILITY_TIMEOUT_FIVE_HUNDRED = 500;
 export default function ForegroundCallback() {
   describe("ForegroundCallback", () => {
     /**
+     * @tc.name   ACTS_DO_ABILITY_FOREGROUND_CALLBACK_0001
      * @tc.number ACTS_DO_ABILITY_FOREGROUND_CALLBACK_0001
-     * @tc.name actsDoAbilityForegroundCallback0001
-     * @tc.desc Test the api: doAbilityForeground, swith the ability forground.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api: doAbilityForeground, swith the ability forground.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_DO_ABILITY_FOREGROUND_CALLBACK_0001", Level.LEVEL0, async (done: Function) => {
 
@@ -108,13 +108,13 @@ export default function ForegroundCallback() {
       });
     });
 
-   /**
+    /**
+     * @tc.name   ACTS_DO_ABILITY_FOREGROUND_CALLBACK_ERROR_0002
      * @tc.number ACTS_DO_ABILITY_FOREGROUND_CALLBACK_ERROR_0002
-     * @tc.name actsDoAbilityForegroundCallbackError0002
-     * @tc.desc Test the api: doAbilityForeground, swith the wrong ability forground.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api: doAbilityForeground, swith the wrong ability forground.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     /* it(
      "ACTS_DO_ABILITY_FOREGROUND_CALLBACK_ERROR_0002",
@@ -185,12 +185,12 @@ export default function ForegroundCallback() {
    );*/
 
     /**
+     * @tc.name   ACTS_DO_ABILITY_FOREGROUND_CALLBACK_ERROR_0003
      * @tc.number ACTS_DO_ABILITY_FOREGROUND_CALLBACK_ERROR_0003
-     * @tc.name actsDoAbilityForegroundCallbackError0003
-     * @tc.desc Test the api: doAbilityForeground, swith the empty ability forground.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api: doAbilityForeground, swith the empty ability forground.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     /*it(
       "ACTS_DO_ABILITY_FOREGROUND_CALLBACK_ERROR_0003",
@@ -257,15 +257,15 @@ export default function ForegroundCallback() {
       }
     );*/
 
-    /**
-     * @tc.number ACTS_DO_ABILITY_FOREGROUND_CALLBACK_0004
-     * @tc.name actsDoAbilityForegroundCallback0004
-     * @tc.desc Test the api: doAbilityForeground, swith the ability which is foregrond to foreground.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   ACTS_DO_ABILITY_FOREGROUND_CALLBACK_0004
+     * @tc.number ACTS_DO_ABILITY_FOREGROUND_CALLBACK_0004
+     * @tc.desc   ACTS_DO_ABILITY_FOREGROUND_CALLBACK_0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("ACTS_DO_ABILITY_FOREGROUND_CALLBACK_0004", Level.LEVEL0, async (done: Function) => {
       abilityDelegator.printSync(
         "ACTS_DO_ABILITY_FOREGROUND_CALLBACK_0004 start"
@@ -342,12 +342,12 @@ export default function ForegroundCallback() {
     });
 
     /**
+     * @tc.name   ACTS_DO_ABILITY_FOREGROUND_CALLBACK_ERROR_0005
      * @tc.number ACTS_DO_ABILITY_FOREGROUND_CALLBACK_ERROR_0005
-     * @tc.name actsDoAbilityForegroundCallbackError0005
-     * @tc.desc Test the api: doAbilityForeground, swith the wrong ability forground.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api: doAbilityForeground, swith the wrong ability forground.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(
       "ACTS_DO_ABILITY_FOREGROUND_CALLBACK_ERROR_0005",

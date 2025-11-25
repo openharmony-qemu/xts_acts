@@ -19,6 +19,18 @@
     {
       "name": "Margin_Test",
       "value": "20"
+    },
+    {
+      "name": "strokeWidth",
+      "value": "20"
+    },
+    {
+        "name": "gutter_10",
+        "value": "10"
+    },
+    {
+      "name": "actionAreaDistance1",
+      "value": "50vp"
     }
   ]
 }

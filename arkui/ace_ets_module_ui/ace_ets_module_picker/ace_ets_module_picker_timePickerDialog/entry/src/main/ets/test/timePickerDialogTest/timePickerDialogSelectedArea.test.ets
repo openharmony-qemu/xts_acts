@@ -40,14 +40,14 @@ export default function timePickerDialogSelectedAreaTest() {
       console.info('timePickerDialogSelectedAreaTest beforeEach end');
       done();
     });
-    /* *
-    * @tc.number: timePickerDialogSelectedAreaTest_001
-    * @tc.name  : timePickerDialogSelectedAreaTest_001
-    * @tc.desc  : To test the onEnterSelectedArea event
-    * @tc.level : Level 0
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   timePickerDialogSelectedAreaTest_001
+     * @tc.number timePickerDialogSelectedAreaTest_001
+     * @tc.desc   To test the onEnterSelectedArea event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('timePickerDialogSelectedAreaTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('timePickerDialogSelectedAreaTest_001 START');
       let driver = Driver.create();

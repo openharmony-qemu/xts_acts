@@ -49,12 +49,12 @@ export default function UIContextOnIdle() {
         done()
       });
     /**
+     * @tc.name   onIdleTest_0100
      * @tc.number UIContextApi1_0100
-     * @tc.name UIContextApi1_0100
-     * @tc.desc test onIdle
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   test onIdle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onIdleTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('UIContextApi1_0100 START');

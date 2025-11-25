@@ -47,14 +47,14 @@ export default function textSelectableJsunit() {
       console.info(" textSelectableJsunit after each called");
     });
 
-    /* *
-    * @tc.number: SUB_ACE_Text_TEXTSELECTABLE_0100
-    * @tc.name  : textSelectableJsunit_0100
-    * @tc.desc  : set text selectable and focusable
-    * @tc.level : Level 1
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   textSelectableJsunit_0100
+     * @tc.number SUB_ACE_Text_TEXTSELECTABLE_0100
+     * @tc.desc   set text selectable and focusable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('textSelectableJsunit_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('textSelectableJsunit_0100 START');
       await CommonFunc.sleep(1000);

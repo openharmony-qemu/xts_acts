@@ -35,9 +35,12 @@
 using namespace testing::ext;
 
 /**
- * @tc.number   SUB_KERNEL_FS_DIRENT_0100
- * @tc.name     basic function test : readdir read directory
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testReaddir
+ * @tc.number SUB_KERNEL_FS_DIRENT_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FileSystemTest, testReaddir, Function | MediumTest | Level3)
 {
@@ -72,9 +75,12 @@ HWTEST_F(FileSystemTest, testReaddir, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number   SUB_KERNEL_FS_DIRENT_0110
- * @tc.name     basic function test : test readdir with error number EBADF
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testReaddirEbadf
+ * @tc.number SUB_KERNEL_FS_DIRENT_0110
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FileSystemTest, testReaddirEbadf, Function | MediumTest | Level3)
 {
@@ -92,9 +98,12 @@ HWTEST_F(FileSystemTest, testReaddirEbadf, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number   SUB_KERNEL_FS_DIRENT_0200
- * @tc.name     basic function test : readdir_r read directory
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testReaddirR
+ * @tc.number SUB_KERNEL_FS_DIRENT_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FileSystemTest, testReaddirR, Function | MediumTest | Level3)
 {
@@ -132,9 +141,12 @@ HWTEST_F(FileSystemTest, testReaddirR, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number   SUB_KERNEL_FS_DIRENT_0300
- * @tc.name     basic function test : scandir: scans a directory.
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testScandir
+ * @tc.number SUB_KERNEL_FS_DIRENT_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FileSystemTest, testScandir, Function | MediumTest | Level3)
 {
@@ -163,9 +175,12 @@ HWTEST_F(FileSystemTest, testScandir, Function | MediumTest | Level3)
 
 #ifndef COMMERCIAL
 /**
- * @tc.number   SUB_KERNEL_FS_DIRENT_0400
- * @tc.name     basic function test : Sets the location of the next {readdir} in the directory stream.
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testSeekdir
+ * @tc.number SUB_KERNEL_FS_DIRENT_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FileSystemTest, testSeekdir, Function | MediumTest | Level3)
 {
@@ -220,9 +235,12 @@ HWTEST_F(FileSystemTest, testSeekdir, Function | MediumTest | Level3)
 #endif
 
 /**
- * @tc.number   SUB_KERNEL_FS_DIRENT_0500
- * @tc.name     basic function test : test opendir return normal
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testOpendir
+ * @tc.number SUB_KERNEL_FS_DIRENT_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(FileSystemTest, testOpendir, Function | MediumTest | Level2)
 {
@@ -240,9 +258,12 @@ HWTEST_F(FileSystemTest, testOpendir, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number   SUB_KERNEL_FS_DIRENT_0510
- * @tc.name     basic function test : test opendir with error number EINVAL
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testOpendirEinval
+ * @tc.number SUB_KERNEL_FS_DIRENT_0510
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FileSystemTest, testOpendirEinval, Function | MediumTest | Level3)
 {
@@ -258,9 +279,12 @@ HWTEST_F(FileSystemTest, testOpendirEinval, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number   SUB_KERNEL_FS_DIRENT_0520
- * @tc.name     basic function test : test opendir with error number ENAMETOOLONG
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testOpendirEnametoolong
+ * @tc.number SUB_KERNEL_FS_DIRENT_0520
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FileSystemTest, testOpendirEnametoolong, Function | MediumTest | Level3)
 {
@@ -283,9 +307,12 @@ HWTEST_F(FileSystemTest, testOpendirEnametoolong, Function | MediumTest | Level3
 }
 
 /**
- * @tc.number   SUB_KERNEL_FS_DIRENT_0530
- * @tc.name     basic function test : test opendir with error number ENOENT
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testOpendirENOENT
+ * @tc.number SUB_KERNEL_FS_DIRENT_0530
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FileSystemTest, testOpendirENOENT, Function | MediumTest | Level3)
 {
@@ -301,9 +328,12 @@ HWTEST_F(FileSystemTest, testOpendirENOENT, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number   SUB_KERNEL_FS_DIRENT_0540
- * @tc.name     basic function test : test opendir with error number ENOTDIR
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testOpendirEnotdir
+ * @tc.number SUB_KERNEL_FS_DIRENT_0540
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FileSystemTest, testOpendirEnotdir, Function | MediumTest | Level3)
 {
@@ -319,9 +349,12 @@ HWTEST_F(FileSystemTest, testOpendirEnotdir, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number   SUB_KERNEL_FS_DIRENT_0600
- * @tc.name     basic function test : test closedir
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testClosedir
+ * @tc.number SUB_KERNEL_FS_DIRENT_0600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(FileSystemTest, testClosedir, Function | MediumTest | Level3)
 {

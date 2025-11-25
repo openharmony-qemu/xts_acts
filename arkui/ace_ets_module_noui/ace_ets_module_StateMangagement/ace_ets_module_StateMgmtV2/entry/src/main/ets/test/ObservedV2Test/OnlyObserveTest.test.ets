@@ -42,12 +42,12 @@ export default function OnlyObserveTest() {
       done();
     });
     /**
-     * @tc.number    OnlyObserve
-     * @tc.name      OnlyObserveTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   OnlyObserveTest_0100
+     * @tc.number OnlyObserve
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OnlyObserveTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('OnlyObserveTest_0100 START');

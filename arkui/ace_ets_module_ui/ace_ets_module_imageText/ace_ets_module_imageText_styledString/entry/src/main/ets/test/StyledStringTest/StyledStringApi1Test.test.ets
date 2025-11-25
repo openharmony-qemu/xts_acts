@@ -45,12 +45,12 @@ export default function StyledStringApi1Test() {
     });
 
     /**
-     * @tc.number   StyledStringApi1_0100
-     * @tc.name     StyledStringApi1_0100
-     * @tc.desc
-     * @tc.level     Level 0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
+     * @tc.name   StyledStringApi1_0100
+     * @tc.number StyledStringApi1_0100
+     * @tc.desc   StyledStringApi1_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('StyledStringApi1_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('StyledStringApi1_0100 START');

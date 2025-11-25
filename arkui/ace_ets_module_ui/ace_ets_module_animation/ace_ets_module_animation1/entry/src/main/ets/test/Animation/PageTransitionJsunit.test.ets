@@ -43,11 +43,14 @@ export default function pageTransitionJsunit() {
       console.info("pageTransition after each called");
     });
 
-    /*
-    * @tc.number       pageTransitionTest_0100
-    * @tc.name         pageTransitionTest_0100
-    * @tc.desc         pageTransitionTest_0100
-    */
+    /**
+     * @tc.name   pageTransitionTest_0100
+     * @tc.number pageTransitionTest_0100
+     * @tc.desc   pageTransitionTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('pageTransitionTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('pageTransitionTest_0100 START');
       let strJson = getInspectorByKey('Navigator');
@@ -58,11 +61,14 @@ export default function pageTransitionJsunit() {
       done();
     });
 
-    /*
-    * @tc.number       pageTransitionTest_0200
-    * @tc.name         pageTransitionTest_0200
-    * @tc.desc         pageTransitionTest_0200
-    */
+    /**
+     * @tc.name   pageTransitionTest_0200
+     * @tc.number pageTransitionTest_0200
+     * @tc.desc   pageTransitionTest_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('pageTransitionTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('pageTransitionTest_0200 START');
       let strJson = getInspectorByKey('Navigator');
@@ -73,11 +79,14 @@ export default function pageTransitionJsunit() {
       done();
     });
 
-    /*
-    * @tc.number       pageTransitionTest_0300
-    * @tc.name         pageTransitionTest_0300
-    * @tc.desc         pageTransitionTest_0300
-    */
+    /**
+     * @tc.name   pageTransitionTest_0300
+     * @tc.number pageTransitionTest_0300
+     * @tc.desc   pageTransitionTest_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('pageTransitionTest_0300', Level.LEVEL0, async (done: Function) => {
       console.info('pageTransitionTest_0300 START');
       let strJson = getInspectorByKey('Navigator');
@@ -88,11 +97,14 @@ export default function pageTransitionJsunit() {
       done();
     });
 
-    /*
-    * @tc.number       pageTransitionTest_0400
-    * @tc.name         pageTransitionTest_0400
-    * @tc.desc         pageTransitionTest_0400
-    */
+    /**
+     * @tc.name   pageTransitionTest_0400
+     * @tc.number pageTransitionTest_0400
+     * @tc.desc   pageTransitionTest_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('pageTransitionTest_0400', Level.LEVEL0, async (done: Function) => {
       console.info('pageTransitionTest_0400 START');
       try {

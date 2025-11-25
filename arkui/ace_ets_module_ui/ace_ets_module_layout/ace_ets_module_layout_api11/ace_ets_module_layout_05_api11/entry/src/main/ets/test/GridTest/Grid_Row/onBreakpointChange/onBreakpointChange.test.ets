@@ -47,9 +47,12 @@ export default function GridRow_onBreakpoint() {
     });
 
     /**
+     * @tc.name   SUB_ACE_GridRow_onBreakPointChange_0100
      * @tc.number SUB_ACE_GRIDROWONBREAKPOINTCHANGE_0100
-     * @tc.name testOnBreakChange
-     * @tc.desc Trigger event printing xxl
+     * @tc.desc   Trigger event printing xxl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GridRow_onBreakPointChange_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_GridRow_onBreakPointChange_0100 START');

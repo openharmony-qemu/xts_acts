@@ -26,26 +26,26 @@ export default function sliderAccessibilityDescriptionTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SLIDER_ACCESSIBILITYDESCRIPTION_0100
-     * @tc.name       : testSliderAccessibilityDescription001
-     * @tc.desc       : testing accessibilityDescription for Slider with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSliderAccessibilityDescription001
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_ACCESSIBILITYDESCRIPTION_0100
+     * @tc.desc   testing accessibilityDescription for Slider with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSliderAccessibilityDescription001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderAccessibilityDescription001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SLIDER_ACCESSIBILITYDESCRIPTION_0200
-     * @tc.name       : testSliderAccessibilityDescription002
-     * @tc.desc       : testing accessibilityDescription for Slider with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSliderAccessibilityDescription002
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_ACCESSIBILITYDESCRIPTION_0200
+     * @tc.desc   testing accessibilityDescription for Slider with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSliderAccessibilityDescription002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderAccessibilityDescription002()).assertEqual(0)

@@ -43,12 +43,12 @@ export default function SymbolGlyphNodeTest() {
     });
     
     /**
-     * @tc.number    SUB_ACE_SymbolGlyphNodeTest_0010
-     * @tc.name      SymbolGlyphNodeTest_0010
-     * @tc.desc      set api FrameNode: SymbolGlyph
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+     * @tc.name   SymbolGlyphNodeTest_0010
+     * @tc.number SUB_ACE_SymbolGlyphNodeTest_0010
+     * @tc.desc   set api FrameNode: SymbolGlyph
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SymbolGlyphNodeTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('SymbolGlyphNodeTest_0010 START');

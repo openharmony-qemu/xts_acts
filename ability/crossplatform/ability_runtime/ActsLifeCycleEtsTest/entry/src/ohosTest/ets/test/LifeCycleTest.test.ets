@@ -122,13 +122,13 @@ export default function lifecycleTest() {
     });
 
 
-    /*
-     * @tc.number  Crossplatform_Singlehap_LifeCycleTest_0100
-     * @tc.name    Register in abilitystage,listen to the lifecycle of abilityA,deregister after listening
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   0
+    /**
+     * @tc.name   Crossplatform_Singlehap_LifeCycleTest_0100
+     * @tc.number Crossplatform_Singlehap_LifeCycleTest_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Crossplatform_Singlehap_LifeCycleTest_0100", Level.LEVEL0, async (done: Function) => {
       console.log("------------Crossplatform_Singlehap_LifeCycleTest_0100 START-------------");
@@ -177,13 +177,13 @@ export default function lifecycleTest() {
         });
     });
 
-    /*
-     * @tc.number  Crossplatform_Singlehap_LifeCycleTest_0200
-     * @tc.name    Register in abilityA,listen to the lifecycle of abilityB,deregister after listening
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   0
+    /**
+     * @tc.name   Crossplatform_Singlehap_LifeCycleTest_0200
+     * @tc.number Crossplatform_Singlehap_LifeCycleTest_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Crossplatform_Singlehap_LifeCycleTest_0200", Level.LEVEL0, async (done: Function) => {
       console.log("------------Crossplatform_Singlehap_LifeCycleTest_0200 START-------------");
@@ -254,13 +254,13 @@ export default function lifecycleTest() {
       handlerMessageDelayed('StartMainAbility1', 0);
     });
 
-    /*
-     * @tc.number  Crossplatform_Singlehap_LifeCycleTest_0300
-     * @tc.name    Register in abilityA,listening the lifecycle of abilityB,deregister,repeat the unregister
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   0
+    /**
+     * @tc.name   Crossplatform_Singlehap_LifeCycleTest_0300
+     * @tc.number Crossplatform_Singlehap_LifeCycleTest_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Crossplatform_Singlehap_LifeCycleTest_0300", Level.LEVEL0, async (done: Function) => {
       console.log("------------Crossplatform_Singlehap_LifeCycleTest_0300 START-------------");
@@ -337,13 +337,13 @@ export default function lifecycleTest() {
       handlerMessageDelayed('StartMainAbility1', 0);
     });
 
-    /*
-     * @tc.number  Crossplatform_Singlehap_LifeCycleTest_0400
-     * @tc.name    Register in abilityA,listening the lifecycle of abilityB,terminate abilityA,unregister
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   0
+    /**
+     * @tc.name   Crossplatform_Singlehap_LifeCycleTest_0400
+     * @tc.number Crossplatform_Singlehap_LifeCycleTest_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Crossplatform_Singlehap_LifeCycleTest_0400", Level.LEVEL0, async (done: Function) => {
       console.log("------------Crossplatform_Singlehap_LifeCycleTest_0400 START-------------");
@@ -421,13 +421,13 @@ export default function lifecycleTest() {
       handlerMessageDelayed('StartMainAbility3', 0);
     });
 
-    /*
-     * @tc.number  Crossplatform_Singlehap_LifeCycleTest_0500
-     * @tc.name    Register in abilityA and abilityB,unregister MainabilityB,then Register in ManinabilityC
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   0
+    /**
+     * @tc.name   Crossplatform_Singlehap_LifeCycleTest_0500
+     * @tc.number Crossplatform_Singlehap_LifeCycleTest_0500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Crossplatform_Singlehap_LifeCycleTest_0500", Level.LEVEL0, async (done: Function) => {
       console.log("------------Crossplatform_Singlehap_LifeCycleTest_0500 START-------------");
@@ -506,13 +506,13 @@ export default function lifecycleTest() {
       handlerMessageDelayed('StartMainAbility1', 2000);
     });
 
-    /*
-     * @tc.number  Crossplatform_Singlehap_LifeCycleTest_0600
-     * @tc.name    Register in abilityA,start abilityB、abilityC,terminate abilityB 、abilityC
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   0
+    /**
+     * @tc.name   Crossplatform_Singlehap_LifeCycleTest_0600
+     * @tc.number Crossplatform_Singlehap_LifeCycleTest_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Crossplatform_Singlehap_LifeCycleTest_0600", Level.LEVEL0, async (done: Function) => {
       console.log("------------Crossplatform_Singlehap_LifeCycleTest_0600 START-------------");
@@ -594,13 +594,13 @@ export default function lifecycleTest() {
       handlerMessageDelayed('StartMainAbility1', 1000);
     });
 
-    /*
-     * @tc.number  Crossplatform_Singlehap_LifeCycleTest_0700
-     * @tc.name    Multiple registration/unregistration
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   0
+    /**
+     * @tc.name   Crossplatform_Singlehap_LifeCycleTest_0700
+     * @tc.number Crossplatform_Singlehap_LifeCycleTest_0700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Crossplatform_Singlehap_LifeCycleTest_0700", Level.LEVEL0, async (done: Function) => {
       console.log("------------Crossplatform_Singlehap_LifeCycleTest_0700 START-------------");
@@ -705,13 +705,13 @@ export default function lifecycleTest() {
       });
     });
 
-    /*
-     * @tc.number  Crossplatform_Singlehap_LifeCycleTest_0800
-     * @tc.name    Maninability1 Register listening, Repeat starting and termination Ability2
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   0
+    /**
+     * @tc.name   Crossplatform_Singlehap_LifeCycleTest_0800
+     * @tc.number Crossplatform_Singlehap_LifeCycleTest_0800
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Crossplatform_Singlehap_LifeCycleTest_0800", Level.LEVEL0, async (done: Function) => {
       console.log("------------Crossplatform_Singlehap_LifeCycleTest_0800 START-------------");
@@ -790,13 +790,13 @@ export default function lifecycleTest() {
       handlerMessageDelayed('StartMainAbility1', 0);
     });
 
-    /*
-     * @tc.number  Crossplatform_Singlehap_LifeCycleTest_0900
-     * @tc.name    Repeat switching Ability1 between front and back
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   0
+    /**
+     * @tc.name   Crossplatform_Singlehap_LifeCycleTest_0900
+     * @tc.number Crossplatform_Singlehap_LifeCycleTest_0900
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Crossplatform_Singlehap_LifeCycleTest_0900", Level.LEVEL0, async (done: Function) => {
       console.log("------------Crossplatform_Singlehap_LifeCycleTest_0900 START-------------");
@@ -870,13 +870,13 @@ export default function lifecycleTest() {
       handlerMessageDelayed('StartMainAbility1', 0);
     });
 
-    /*
-     * @tc.number  Crossplatform_Singlehap_LifeCycleTest_1000
-     * @tc.name    Register listening in abilityA foreground,repeat the registration (standard)
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   0
+    /**
+     * @tc.name   Crossplatform_Singlehap_LifeCycleTest_1000
+     * @tc.number Crossplatform_Singlehap_LifeCycleTest_1000
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Crossplatform_Singlehap_LifeCycleTest_1000", Level.LEVEL0, async (done: Function) => {
       console.log("------------Singlehap_LifeCycleTest_1200 START-------------");
@@ -933,13 +933,13 @@ export default function lifecycleTest() {
       handlerMessageDelayed('StartMainAbility8', 0);
     });
 
-    /*
-     * @tc.number  Crossplatform_Singlehap_LifeCycleTest_1100
-     * @tc.name    The ability of HAP A listens to the ability lifecycle callback of HAP B (standard)
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   0
+    /**
+     * @tc.name   Crossplatform_Singlehap_LifeCycleTest_1100
+     * @tc.number Crossplatform_Singlehap_LifeCycleTest_1100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Crossplatform_Singlehap_LifeCycleTest_1100", Level.LEVEL0, async (done: Function) => {
       console.log("------------Crossplatform_Singlehap_LifeCycleTest_1100 start-------------");
@@ -1004,13 +1004,13 @@ export default function lifecycleTest() {
     let callbackid_NA = 100;
     let callbackid_errorNum = -1;
 
-    /*
-     * @tc.number  Crossplatform_Singlehap_LifeCycleTest_1200
-     * @tc.name    input Nonexistent callbackid for unregisterAbilityLifecycleCallback parameter
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   1
+    /**
+     * @tc.name   Crossplatform_Singlehap_LifeCycleTest_1200
+     * @tc.number Crossplatform_Singlehap_LifeCycleTest_1200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Crossplatform_Singlehap_LifeCycleTest_1200", Level.LEVEL0, async (done: Function) => {
       console.log("------------Singlehap_LifeCycleTest_1600 START-------------");
@@ -1027,13 +1027,13 @@ export default function lifecycleTest() {
         });
     });
 
-    /*
-     * @tc.number  Crossplatform_Singlehap_LifeCycleTest_1300
-     * @tc.name    input error callbackid for unregisterAbilityLifecycleCallback parameter
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   1
+    /**
+     * @tc.name   Crossplatform_Singlehap_LifeCycleTest_1300
+     * @tc.number Crossplatform_Singlehap_LifeCycleTest_1300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Crossplatform_Singlehap_LifeCycleTest_1300", Level.LEVEL0, async (done: Function) => {
       console.log("------------Singlehap_LifeCycleTest_1700 START-------------");
@@ -1050,15 +1050,14 @@ export default function lifecycleTest() {
         });
     });
 
-    /*
-    * @tc.number  Crossplatform_Singlehap_LifeCycleTest_1400
-    * @tc.name    Register in abilityA,register in abilityB, starting and termination abilityC,
-                  termination abilityB、abilityA, Re-register in abilityA、abilityB
-    * @tc.desc    Function test
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   0
-    */
+    /**
+     * @tc.name   Crossplatform_Singlehap_LifeCycleTest_1400
+     * @tc.number Crossplatform_Singlehap_LifeCycleTest_1400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("Crossplatform_Singlehap_LifeCycleTest_1400", Level.LEVEL0, async (done: Function) => {
       console.log("------------Crossplatform_Singlehap_LifeCycleTest_1400 START-------------");
       TAG = "Crossplatform_Singlehap_LifeCycleTest_1400";
@@ -1112,13 +1111,13 @@ export default function lifecycleTest() {
       handlerMessageDelayed('StartMainAbility2', 1000);
     });
 
-    /*
-     * @tc.number  Crossplatform_AbilityStage_onCreate_Test_0100
-     * @tc.name    Crossplatform_AbilityStage_onCreate_Test_0100
-     * @tc.desc    Start mainability2, test stage ability onCreate
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   0
+    /**
+     * @tc.name   Crossplatform_AbilityStage_onCreate_Test_0100
+     * @tc.number Crossplatform_AbilityStage_onCreate_Test_0100
+     * @tc.desc   Start mainability2, test stage ability onCreate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Crossplatform_AbilityStage_onCreate_Test_0100", Level.LEVEL0, async (done: Function) => {
       console.log("------------Crossplatform_AbilityStage_onCreate_Test_0100 START-------------");
@@ -1130,13 +1129,13 @@ export default function lifecycleTest() {
       console.log("------------Crossplatform_AbilityStage_onCreate_Test_0100 END-------------");
     });
 
-    /*
-     * @tc.number  Crossplatform_AbilityStage_Context_Test_0100
-     * @tc.name    Crossplatform_AbilityStage_Context_Test_0100
-     * @tc.desc    Start mainability2, test stage ability context
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   0
+    /**
+     * @tc.name   Crossplatform_AbilityStage_Context_Test_0100
+     * @tc.number Crossplatform_AbilityStage_Context_Test_0100
+     * @tc.desc   Start mainability2, test stage ability context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Crossplatform_AbilityStage_Context_Test_0100", Level.LEVEL0, async (done: Function) => {
       console.log("------------Crossplatform_AbilityStage_Context_Test_0100 START-------------");
@@ -1166,13 +1165,13 @@ export default function lifecycleTest() {
       });
     });
 
-    /*
-     * @tc.number  Crossplatform_Multi_LifeCycleTest_0200
-     * @tc.name    Crossplatform_Multi_LifeCycleTest_0200
-     * @tc.desc    start multi ability1, then start multi ability1, check life cycle
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   0
+    /**
+     * @tc.name   Crossplatform_Multi_LifeCycleTest_0200
+     * @tc.number Crossplatform_Multi_LifeCycleTest_0200
+     * @tc.desc   start multi ability1, then start multi ability1, check life cycle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Crossplatform_Multi_LifeCycleTest_0200", Level.LEVEL0, async (done: Function) => {
       console.log("------------Crossplatform_Multi_LifeCycleTest_0200 START-------------");
@@ -1221,13 +1220,13 @@ export default function lifecycleTest() {
       done();
     });
 
-    /*
-     * @tc.number  Crossplatform_LifeCycleTest_on_0100
-     * @tc.name    Crossplatform_LifeCycleTest_on_0100
-     * @tc.desc    on abilityLifecycle twice in mainability13
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   0
+    /**
+     * @tc.name   Crossplatform_LifeCycleTest_on_0100
+     * @tc.number Crossplatform_LifeCycleTest_on_0100
+     * @tc.desc   on abilityLifecycle twice in mainability13
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Crossplatform_LifeCycleTest_on_0100", Level.LEVEL0, async (done: Function) => {
       console.log("------------Crossplatform_LifeCycleTest_on_0100 START-------------");
@@ -1260,13 +1259,13 @@ export default function lifecycleTest() {
       done();
     });
 
-    /*
-     * @tc.number  Crossplatform_LifeCycleTest_on_0200
-     * @tc.name    Crossplatform_LifeCycleTest_on_0200
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   0
+    /**
+     * @tc.name   Crossplatform_LifeCycleTest_on_0200
+     * @tc.number Crossplatform_LifeCycleTest_on_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Crossplatform_LifeCycleTest_on_0200", Level.LEVEL0, async (done: Function) => {
       console.log("------------Crossplatform_LifeCycleTest_on_0200 START-------------");
@@ -1374,13 +1373,13 @@ export default function lifecycleTest() {
       done();
     });
 
-    /*
-     * @tc.number  Crossplatform_LifeCycleTest_on_0300
-     * @tc.name    Crossplatform_LifeCycleTest_on_0300
-     * @tc.desc    unregister callback id which is not exists.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   0
+    /**
+     * @tc.name   Crossplatform_LifeCycleTest_on_0300
+     * @tc.number Crossplatform_LifeCycleTest_on_0300
+     * @tc.desc   unregister callback id which is not exists.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Crossplatform_LifeCycleTest_on_0300", Level.LEVEL0, async (done: Function) => {
       console.log("------------Crossplatform_LifeCycleTest_on_0300 START-------------");
@@ -1394,13 +1393,13 @@ export default function lifecycleTest() {
       });
     });
 
-    /*
-     * @tc.number  Crossplatform_LifeCycleTest_on_0400
-     * @tc.name    Crossplatform_LifeCycleTest_on_0400
-     * @tc.desc    unregister callback twice.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   0
+    /**
+     * @tc.name   Crossplatform_LifeCycleTest_on_0400
+     * @tc.number Crossplatform_LifeCycleTest_on_0400
+     * @tc.desc   unregister callback twice.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Crossplatform_LifeCycleTest_on_0400", Level.LEVEL0, async (done: Function) => {
       console.log("------------LifeCycleTest_on_0400 START-------------");
@@ -1435,13 +1434,13 @@ export default function lifecycleTest() {
       });
     });
 
-    /*
-     * @tc.number  Crossplatform_LifeCycleTest_on_0500
-     * @tc.name    Crossplatform_LifeCycleTest_on_0500
-     * @tc.desc    start other hap's ability in the same app, and register this lifecycle.
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   0
+    /**
+     * @tc.name   Crossplatform_LifeCycleTest_on_0500
+     * @tc.number Crossplatform_LifeCycleTest_on_0500
+     * @tc.desc   start other hap's ability in the same app, and register this lifecycle.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Crossplatform_LifeCycleTest_on_0500", Level.LEVEL0, async (done: Function) => {
       console.log("------------Crossplatform_LifeCycleTest_on_0500 START-------------");
@@ -1474,13 +1473,13 @@ export default function lifecycleTest() {
       done();
     });
 
-    /*
-     * @tc.number  Crossplatform_Multi_LifeCycleTest_0100
-     * @tc.name    Register in abilitystage,listen to the lifecycle of abilityA, then start other bundle's ablilty
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   0
+    /**
+     * @tc.name   Crossplatform_Multi_LifeCycleTest_0100
+     * @tc.number Crossplatform_Multi_LifeCycleTest_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Crossplatform_Multi_LifeCycleTest_0100", Level.LEVEL0, async (done: Function) => {
       console.log("------------Crossplatform_Multi_LifeCycleTest_0100 START-------------");

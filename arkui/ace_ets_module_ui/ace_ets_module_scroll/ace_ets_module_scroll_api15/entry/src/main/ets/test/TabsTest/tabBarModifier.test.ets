@@ -46,12 +46,12 @@ export default function tabBarModifier() {
     });
 
     /**
-     * @tc.number    tabBarModifier_001
-     * @tc.name      tabBarModifier_0100
-     * @tc.desc      Using barModifier to set align to achieve tab alignment layout effect.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   tabBarModifier_0100
+     * @tc.number tabBarModifier_001
+     * @tc.desc   Using barModifier to set align to achieve tab alignment layout effect.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('tabBarModifier_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[tabBarModifier_0100] START');
@@ -78,12 +78,12 @@ export default function tabBarModifier() {
     });
 
     /**
-     * @tc.number    tabBarModifier_002
-     * @tc.name      tabBarModifier_0200
-     * @tc.desc      Using barModifier to set align to achieve tab alignment layout effect.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   tabBarModifier_0200
+     * @tc.number tabBarModifier_002
+     * @tc.desc   Using barModifier to set align to achieve tab alignment layout effect.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('tabBarModifier_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[tabBarModifier_0200] START');
@@ -104,12 +104,12 @@ export default function tabBarModifier() {
     });
 
     /**
-     * @tc.number    tabBarModifier_003
-     * @tc.name      tabBarModifier_0300
-     * @tc.desc      Using barModifier to set align to achieve tab alignment layout effect.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   tabBarModifier_0300
+     * @tc.number tabBarModifier_003
+     * @tc.desc   Using barModifier to set align to achieve tab alignment layout effect.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('tabBarModifier_0300', Level.LEVEL1, async (done: Function) => {
       console.info('[tabBarModifier_0300] START');

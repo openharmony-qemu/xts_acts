@@ -26,78 +26,78 @@ export default function imageAnimatorIterationsTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_ITERATION_0100
-     * @tc.name: testImageAnimatorIterations001
-     * @tc.desc: testing iterations for imageAnimator with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageAnimatorIterations001
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_ITERATION_0100
+     * @tc.desc   testing iterations for imageAnimator with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageAnimatorIterations001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageAnimatorIterations001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_ITERATION_0200
-     * @tc.name: testImageAnimatorIterations002
-     * @tc.desc: testing iterations for imageAnimator with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageAnimatorIterations002
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_ITERATION_0200
+     * @tc.desc   testing iterations for imageAnimator with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageAnimatorIterations002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageAnimatorIterations002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_ITERATION_0300
-     * @tc.name: testImageAnimatorIterations003
-     * @tc.desc: testing iterations for imageAnimator with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageAnimatorIterations003
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_ITERATION_0300
+     * @tc.desc   testing iterations for imageAnimator with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageAnimatorIterations003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageAnimatorIterations003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_ITERATION_0400
-     * @tc.name: testImageAnimatorIterations004
-     * @tc.desc: testing iterations for imageAnimator with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageAnimatorIterations004
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_ITERATION_0400
+     * @tc.desc   testing iterations for imageAnimator with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageAnimatorIterations004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageAnimatorIterations004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_ITERATION_0500
-     * @tc.name: testImageAnimatorIterations005
-     * @tc.desc: testing iterations for imageAnimator with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageAnimatorIterations005
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_ITERATION_0500
+     * @tc.desc   testing iterations for imageAnimator with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageAnimatorIterations005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageAnimatorIterations005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_ITERATION_0600
-     * @tc.name: testImageAnimatorIterations006
-     * @tc.desc: testing iterations for imageAnimator with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageAnimatorIterations006
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_ITERATION_0600
+     * @tc.desc   testing iterations for imageAnimator with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageAnimatorIterations006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageAnimatorIterations006()).assertEqual(0)
