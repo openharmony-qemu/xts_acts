@@ -2115,9 +2115,9 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
     })
 
     /**
-     * @tc.number SUB_Security_HUKS_ErrorCode_API22_Interface_0400
-     * @tc.name   SUB_Security_HUKS_ErrorCode_API22_Interface_0400
-     * @tc.desc   test abnormal authUkeyPin , error code 12000012
+     * @tc.number SUB_Security_HUKS_ErrorCode_API22_Interface_0300
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API22_Interface_0300
+     * @tc.desc   test abnormal authUkeyPin , error code 202
      * @tc.type   Safety
      * @tc.size   SmallTest
      * @tc.level  Level3
