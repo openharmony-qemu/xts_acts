@@ -79,6 +79,12 @@ import ImageSourceCreatePictureJpg from './image/ImageSourceCreatePictureJpg.tes
 import ImageSourceCreatePictureOrf from './image/ImageSourceCreatePictureOrf.test';
 import createImageSourceTest from './image/ImageCreateImageSource.test';
 import sendableCreatePixelMap from './sendableImage/SendAbleCreatePixelMap.test';
+import imagePackerPackToDataFromPixelmapSequenceTest from './image/ImagePackerPackToDataFromPixelmapSequenceTest.test';
+import imagePackerPackToDataTest from './image/ImagePackerPackToDataTest.test';
+import PictureMarshallingTest from './image/ImagePictureMarshallingTest.test';
+import PixelMapReadPixelsToBufferTest from './image/ImagePixelMapReadPixelsToBufferTest.test';
+import ReadPixelsWritePixelsTest from './image/ImagePixelMapReadPixelsWritePixelsTest.test';
+import PixelMapWriteBufferToPixelsTest from './image/ImagePixelMapWriteBufferToPixelsTest.test';
 import CreateAuxiliaryPictureTest from './image/CreateAuxiliaryPicture.test';
 import ImageAuxiliaryPictureGetMetadataTest from './image/ImageAuxiliaryPictureGetMetadata.Test.test';
 import ImageAuxiliaryPictureWritePixelIsFromBufferTest
@@ -90,6 +96,7 @@ import ImagePixelMapConvertPixelFormatTest from './image/ImagePixelMapConvertPix
 import ImagePixelMapCropSyncTest from './image/ImagePixelMapCropSync.Test.test';
 import ImagePixelMapMarshallingTest from './image/ImagePixelMapMarshalling.Test.test';
 import ImagePixelMapUnmarshallingTest from './image/ImagePixelMapUnMarshalling.Test.test';
+
 
 
 export default function testsuite() {
@@ -159,6 +166,12 @@ export default function testsuite() {
   ImageSourceCreatePictureOrf();
   createImageSourceTest();
   sendableCreatePixelMap();
+  imagePackerPackToDataFromPixelmapSequenceTest();
+  imagePackerPackToDataTest();
+  PictureMarshallingTest();
+  PixelMapReadPixelsToBufferTest();
+  ReadPixelsWritePixelsTest();
+  PixelMapWriteBufferToPixelsTest();
   CreateAuxiliaryPictureTest();
   ImageAuxiliaryPictureGetMetadataTest();
   ImageAuxiliaryPictureWritePixelIsFromBufferTest();
@@ -169,5 +182,4 @@ export default function testsuite() {
   ImagePixelMapCropSyncTest();
   ImagePixelMapMarshallingTest();
   ImagePixelMapUnmarshallingTest();
-
 }
