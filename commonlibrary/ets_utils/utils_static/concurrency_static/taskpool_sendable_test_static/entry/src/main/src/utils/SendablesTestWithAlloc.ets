@@ -29,7 +29,7 @@ export function testSendableSimpleDate(): Promise<string> {
 
 async function testSendableSimpleDateImpl(): Promise<string> {
   let input: Date = new Date();
-  let job: BypassFunctionType<Date> = allocateAndBypassFunction;
+  let job: BypassFunctionType<Date> = allocateAndBypassFunction<Date>;
 
   let p: Promise<Any> = taskpool.execute(new taskpool.Task(job, input));
   let temp: Any = await (p);
@@ -47,7 +47,7 @@ export function testSendableSimpleString(): Promise<string> {
 
 async function testSendableSimpleStringImpl(): Promise<string> {
   let input: String = 'Hello World';
-  let job: BypassFunctionType<String> = allocateAndBypassFunction;
+  let job: BypassFunctionType<String> = allocateAndBypassFunction<String>;
 
   let p: Promise<Any> = taskpool.execute(new taskpool.Task(job, input));
   let temp: Any = await (p);
@@ -66,7 +66,7 @@ export function testSendableSimpleNumber(): Promise<string> {
 
 async function testSendableSimpleNumberImpl(): Promise<string> {
   let input: Number = 12345678;
-  let job: BypassFunctionType<Number> = allocateAndBypassFunction;
+  let job: BypassFunctionType<Number> = allocateAndBypassFunction<Number>;
 
   let p: Promise<Any> = taskpool.execute(new taskpool.Task(job, input));
   let temp: Any = await (p);
@@ -85,7 +85,7 @@ export function testSendableSimpleBoolean(): Promise<string> {
 
 async function testSendableSimpleBooleanImpl(): Promise<string> {
   let input: Boolean = true;
-  let job: BypassFunctionType<Boolean> = allocateAndBypassFunction;
+  let job: BypassFunctionType<Boolean> = allocateAndBypassFunction<Boolean>;
 
   let p: Promise<Any> = taskpool.execute(new taskpool.Task(job, input));
   let temp: Any = await (p);
@@ -109,7 +109,7 @@ async function testSendableSimpleSharedArrayBufferImpl(): Promise<string> {
     srcView.setInt8(i, i);
   }
 
-  let job: BypassFunctionType<ArrayBuffer> = allocateAndBypassFunction;
+  let job: BypassFunctionType<ArrayBuffer> = allocateAndBypassFunction<ArrayBuffer>;
 
   let p: Promise<Any> = taskpool.execute(new taskpool.Task(job, input));
   let temp: Any = await (p);
@@ -128,7 +128,7 @@ export function testSendableSimpleSharedArrayBufferAndUndefined(): Promise<strin
 
 async function testSendableSimpleSharedArrayBufferAndUndefinedImpl(): Promise<string> {
   let input: ArrayBuffer = new ArrayBuffer(5);
-  let job: BypassFunctionType<ArrayBuffer|undefined> = allocateAndBypassFunction;
+  let job: BypassFunctionType<ArrayBuffer|undefined> = allocateAndBypassFunction<ArrayBuffer|undefined>;
 
   let p: Promise<Any> = taskpool.execute(new taskpool.Task(job, input));
   let temp: Any = await (p);
@@ -147,7 +147,7 @@ export function testSendableSimpleSharedArrayBufferAndNull(): Promise<string> {
 
 async function testSendableSimpleSharedArrayBufferAndNullImpl(): Promise<string> {
   let input: ArrayBuffer = new ArrayBuffer(5);
-  let job: BypassFunctionType<ArrayBuffer|null> = allocateAndBypassFunction;
+  let job: BypassFunctionType<ArrayBuffer|null> = allocateAndBypassFunction<ArrayBuffer|null>;
 
   let p: Promise<Any> = taskpool.execute(new taskpool.Task(job, input));
   let temp: Any = await (p);
@@ -166,7 +166,7 @@ export function testSendableSimpleCombined0(): Promise<string> {
 
 async function testSendableSimpleCombined0Impl(): Promise<string> {
   let input: ArrayBuffer = new ArrayBuffer(5);
-  let job: BypassFunctionType<ArrayBuffer|null|undefined> = allocateAndBypassFunction;
+  let job: BypassFunctionType<ArrayBuffer|null|undefined> = allocateAndBypassFunction<ArrayBuffer|null|undefined>;
 
   let p: Promise<Any> = taskpool.execute(new taskpool.Task(job, input));
   let temp: Any = await (p);
@@ -185,7 +185,7 @@ export function testSendableSimpleCombined1(): Promise<string> {
 
 async function testSendableSimpleCombined1Impl(): Promise<string> {
   let input: ArrayBuffer = new ArrayBuffer(5);
-  let job: BypassFunctionType<ArrayBuffer|String> = allocateAndBypassFunction;
+  let job: BypassFunctionType<ArrayBuffer|String> = allocateAndBypassFunction<ArrayBuffer|String>;
 
   let p: Promise<Any> = taskpool.execute(new taskpool.Task(job, input));
   let temp: Any = await (p);
@@ -204,7 +204,7 @@ export function testSendableSimpleCombined2(): Promise<string> {
 
 async function testSendableSimpleCombined2Impl(): Promise<string> {
   let input: String = 'Hello World'
-  let job: BypassFunctionType<ArrayBuffer|String> = allocateAndBypassFunction;
+  let job: BypassFunctionType<ArrayBuffer|String> = allocateAndBypassFunction<ArrayBuffer|String>;
 
   let p: Promise<Any> = taskpool.execute(new taskpool.Task(job, input));
   let temp: Any = await (p);
@@ -223,7 +223,7 @@ export function testSendableSimpleCombinedAsType1(): Promise<string> {
 
 async function testSendableSimpleCombinedAsType1Impl(): Promise<string> {
   let input: CombinedType = 'Hello World'
-  let job: BypassFunctionType<CombinedType> = allocateAndBypassFunction;
+  let job: BypassFunctionType<CombinedType> = allocateAndBypassFunction<CombinedType>;
 
   let p: Promise<Any> = taskpool.execute(new taskpool.Task(job, input));
   let temp: Any = await (p);
@@ -242,7 +242,7 @@ export function testSendableSimpleCombinedAsType2(): Promise<string> {
 
 async function testSendableSimpleCombinedAsType2Impl(): Promise<string> {
   let input: CombinedType = new ArrayBuffer(5);
-  let job: BypassFunctionType<CombinedType> = allocateAndBypassFunction;
+  let job: BypassFunctionType<CombinedType> = allocateAndBypassFunction<CombinedType>;
 
   let p: Promise<Any> = taskpool.execute(new taskpool.Task(job, input));
   let temp: Any = await (p);
@@ -267,7 +267,7 @@ export function testSendableSharedArrayBufferInContainer(): Promise<string> {
 
 async function testSendableSharedArrayBufferInContainerImpl(): Promise<string> {
   let input: SharedArrayBufferContainer = new SharedArrayBufferContainer();
-  let job: BypassFunctionType<SharedArrayBufferContainer> = allocateAndBypassFunction;
+  let job: BypassFunctionType<SharedArrayBufferContainer> = allocateAndBypassFunction<SharedArrayBufferContainer>;
 
   let p: Promise<Any> = taskpool.execute(new taskpool.Task(job, input));
   let temp: Any = await (p);
@@ -288,7 +288,7 @@ export function testSendableContainerWithString(): Promise<string> {
 
 async function testSendableContainerWithStringImpl(): Promise<string> {
   let input: StringContainer = new StringContainer();
-  let job: BypassFunctionType<StringContainer> = allocateAndBypassFunction;
+  let job: BypassFunctionType<StringContainer> = allocateAndBypassFunction<StringContainer>;
 
   let p: Promise<Any> = taskpool.execute(new taskpool.Task(job, input));
   let temp: Any = await (p);
@@ -307,7 +307,7 @@ export function testSendableContainerWithNumber(): Promise<string> {
 
 async function testSendableContainerWithNumberImpl(): Promise<string> {
   let input: NumberContainer = new NumberContainer();
-  let job: BypassFunctionType<NumberContainer> = allocateAndBypassFunction;
+  let job: BypassFunctionType<NumberContainer> = allocateAndBypassFunction<NumberContainer>;
 
   let p: Promise<Any> = taskpool.execute(new taskpool.Task(job, input));
   let temp: Any = await (p);
@@ -326,7 +326,7 @@ export function testSendableContainerWithNested(): Promise<string> {
 
 async function testSendableContainerWithNestedImpl(): Promise<string> {
   let input: NestedSendableContainer = new NestedSendableContainer();
-  let job: BypassFunctionType<NestedSendableContainer> = allocateAndBypassFunction;
+  let job: BypassFunctionType<NestedSendableContainer> = allocateAndBypassFunction<NestedSendableContainer>;
 
   let p: Promise<Any> = taskpool.execute(new taskpool.Task(job, input));
   let temp: Any = await (p);
@@ -345,7 +345,8 @@ export function testSendableContainerWithNullableNested(): Promise<string> {
 
 async function testSendableContainerWithNullableNestedImpl(): Promise<string> {
   let input: NullableNestedSendableContainer = new NullableNestedSendableContainer();
-  let job: BypassFunctionType<NullableNestedSendableContainer> = allocateAndBypassFunction;
+  let job: BypassFunctionType<NullableNestedSendableContainer> = 
+    allocateAndBypassFunction<NullableNestedSendableContainer>;
 
   let p: Promise<Any> = taskpool.execute(new taskpool.Task(job, input));
   let temp: Any = await (p);
@@ -365,7 +366,7 @@ export function testSendableContainerWithStringType(): Promise<string> {
 
 async function testSendableContainerWithStringTypeImpl(): Promise<string> {
   let input: StringDefContainer = new StringDefContainer();
-  let job: BypassFunctionType<sc.StringDefContainer> = allocateAndBypassFunction;
+  let job: BypassFunctionType<sc.StringDefContainer> = allocateAndBypassFunction<sc.StringDefContainer>;
 
   let p = taskpool.execute(new taskpool.Task(job, input)).then((promised) =>  {
     if (promised == input) {
@@ -386,7 +387,7 @@ export function testSendableContainerWithNullableString(): Promise<string> {
 
 async function testSendableContainerWithNullableStringImpl(): Promise<string> {
   let input: NullAndStringContainer = new NullAndStringContainer();
-  let job: BypassFunctionType<NullAndStringContainer> = allocateAndBypassFunction;
+  let job: BypassFunctionType<NullAndStringContainer> = allocateAndBypassFunction<NullAndStringContainer>;
 
   let p: Promise<Any> = taskpool.execute(new taskpool.Task(job, input));
   let temp: Any = await (p);
@@ -405,7 +406,7 @@ export function testSendableContainerWithUndefinedString(): Promise<string> {
 
 async function testSendableContainerWithUndefinedStringImpl(): Promise<string> {
   let input: UndefinedAndStringContainer = new UndefinedAndStringContainer();
-  let job: BypassFunctionType<UndefinedAndStringContainer> = allocateAndBypassFunction;
+  let job: BypassFunctionType<UndefinedAndStringContainer> = allocateAndBypassFunction<UndefinedAndStringContainer>;
 
   let p: Promise<Any> = taskpool.execute(new taskpool.Task(job, input));
   let temp: Any = await (p);
@@ -424,7 +425,7 @@ export function testSendableWithGenericSendableField(): Promise<string> {
 
 async function testSendableWithGenericSendableFieldImpl(): Promise<string> {
   let input: GenericSendable<Nested> = new GenericSendable<Nested>();
-  let job: BypassFunctionType<GenericSendable<Nested>> = allocateAndBypassFunction;
+  let job: BypassFunctionType<GenericSendable<Nested>> = allocateAndBypassFunction<GenericSendable<Nested>>;
 
   let p: Promise<Any> = taskpool.execute(new taskpool.Task(job, input));
   let temp: Any = await (p);
@@ -444,7 +445,7 @@ export function testSendableWithSendableCollectionHolder(): Promise<string> {
 
 async function testSendableWithSendableCollectionHolderImpl(): Promise<string> {
   let input: CollectionHolder = new CollectionHolder();
-  let job: BypassFunctionType<CollectionHolder> = allocateAndBypassFunction;
+  let job: BypassFunctionType<CollectionHolder> = allocateAndBypassFunction<CollectionHolder>;
 
   let p = taskpool.execute(new taskpool.Task(job, input)) as  as Promise<Object>;
   let temp: Any = await (p);
@@ -465,7 +466,7 @@ export function testSendableImportedInitializer(): Promise<string> {
 
 async function testSendableImportedInitializerImpl(): Promise<string> {
   let input: OuterInitializerContainer = new OuterInitializerContainer();
-  let job: BypassFunctionType<OuterInitializerContainer> = allocateAndBypassFunction;
+  let job: BypassFunctionType<OuterInitializerContainer> = allocateAndBypassFunction<OuterInitializerContainer>;
   let p: Promise<Any> = taskpool.execute(new taskpool.Task(job, input));
   let temp: Any = await (p);
  let res: OuterInitializerContainer = temp as OuterInitializerContainer;
