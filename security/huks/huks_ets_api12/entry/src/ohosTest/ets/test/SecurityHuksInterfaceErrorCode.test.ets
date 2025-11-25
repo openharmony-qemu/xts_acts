@@ -26,6 +26,7 @@ import { GetGenWrapKeyOptions, GetWrapKeyOptions } from './utils/huks/WrapKeyUti
 import { GetCbcNoPaddingOptions, GetCbcPkcs7Options, GetCtrNoPaddingOptions, GetSm3NoPaddingOptions } from './utils/huks/CipherUtils.ets';
 import { GetDeriveAgreeFinishOptions, GetHkdfDeriveOptions, GetSha256Options } from './utils/huks/DeriveAgreeUtils.ets';
 import { Logger } from './utils/common/Logger.ets';
+import huksExternalCrypto from '@ohos.security.huksExternalCrypto';
 
 
 export default function SecurityHuksInterfaceErrorCodeTest() {
@@ -2054,6 +2055,118 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
       } catch (err) {
         Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
         expect(err.code).assertEqual(huks.HuksExceptionErrCode.HUKS_ERR_CODE_KEY_ALREADY_EXIST);
+      }
+    })
+
+    /**
+     * @tc.number SUB_Security_HUKS_ErrorCode_API22_Interface_0100
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API22_Interface_0100
+     * @tc.desc   test registerProvider when no permission, error code 201
+     * @tc.type   Safety
+     * @tc.size   SmallTest
+     * @tc.level  Level3
+     */
+    it('SUB_Security_HUKS_ErrorCode_API22_Interface_0100', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
+      let testNumber: string = "SUB_Security_HUKS_ErrorCode_API22_Interface_0100";
+      try {
+        const providerName = "testHap";
+        const extProperties: Array<huksExternalCrypto.HuksExternalCryptoParam> = [
+          {
+            tag: huksExternalCrypto.HuksExternalCryptoTag.HUKS_EXT_CRYPTO_TAG_ABILITY_NAME,
+            value: new Uint8Array([1, 1, 1, 1])
+          }
+        ];
+        await huksExternalCrypto.registerProvider(providerName, extProperties);
+        expect(null).assertFail();
+      } catch (err) {
+        if (err.code != 801){
+          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          expect(err.code).assertEqual(201);
+        }
+      }
+    })
+
+    /**
+     * @tc.number SUB_Security_HUKS_ErrorCode_API22_Interface_0200
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API22_Interface_0200
+     * @tc.desc   test unregisterProvider when no permission, error code 201
+     * @tc.type   Safety
+     * @tc.size   SmallTest
+     * @tc.level  Level3
+     */
+    it('SUB_Security_HUKS_ErrorCode_API22_Interface_0200', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
+      let testNumber: string = "SUB_Security_HUKS_ErrorCode_API22_Interface_0200";
+      try {
+        const providerName = "testHap";
+        const extProperties: Array<huksExternalCrypto.HuksExternalCryptoParam> = [
+          {
+            tag: huksExternalCrypto.HuksExternalCryptoTag.HUKS_EXT_CRYPTO_TAG_ABILITY_NAME,
+            value: new Uint8Array([1, 1, 1, 1])
+          }
+        ];
+        await huksExternalCrypto.unregisterProvider(providerName, extProperties);
+        expect(null).assertFail();
+      } catch (err) {
+        if (err.code != 801){
+          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          expect(err.code).assertEqual(201);
+        }
+      }
+    })
+
+    /**
+     * @tc.number SUB_Security_HUKS_ErrorCode_API22_Interface_0300
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API22_Interface_0300
+     * @tc.desc   test abnormal authUkeyPin , error code 202
+     * @tc.type   Safety
+     * @tc.size   SmallTest
+     * @tc.level  Level3
+     */
+    it('SUB_Security_HUKS_ErrorCode_API22_Interface_0300', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
+      let testNumber: string = "SUB_Security_HUKS_ErrorCode_API22_Interface_0400";
+      try {
+        const resourceId = "SUB_Security_HUKS_ErrorCode_API22_Interface_0400";
+        const extProperties: Array<huksExternalCrypto.HuksExternalCryptoParam> = [
+          {
+            tag: huksExternalCrypto.HuksExternalCryptoTag.HUKS_EXT_CRYPTO_TAG_UKEY_PIN,
+            value: new Uint8Array([1, 1, 1, 1, 1])
+          }
+        ];
+        await huksExternalCrypto.authUkeyPin(resourceId, extProperties);
+        expect(null).assertFail();
+      } catch (err) {
+        if (err.code != 801){
+          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          expect(err.code).assertEqual(202);
+        }
+      }
+    })
+
+    /**
+     * @tc.number SUB_Security_HUKS_ErrorCode_API22_Interface_0500
+     * @tc.name   SUB_Security_HUKS_ErrorCode_API22_Interface_0500
+     * @tc.desc   test abnormal getUkeyPinAuthState, error code 12000012
+     * @tc.type   Safety
+     * @tc.size   SmallTest
+     * @tc.level  Level3
+     */
+    it('SUB_Security_HUKS_ErrorCode_API22_Interface_0500', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
+      let testNumber: string = "SUB_Security_HUKS_ErrorCode_API22_Interface_0500";
+      try {
+        const resourceId = "SUB_Security_HUKS_ErrorCode_API22_Interface_0500";
+        const extProperties: Array<huksExternalCrypto.HuksExternalCryptoParam> = [
+          {
+            tag: huksExternalCrypto.HuksExternalCryptoTag.HUKS_EXT_CRYPTO_TAG_ABILITY_NAME,
+            value: new Uint8Array([1, 1, 1, 1, 1])
+          }
+        ];
+        await huksExternalCrypto.getUkeyPinAuthState(resourceId, extProperties);
+        expect(null).assertFail();
+      } catch (err) {
+        if (err.code != 801){
+          Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
+          expect(err.code).assertEqual(12000012);
+        }
       }
     })
   }
