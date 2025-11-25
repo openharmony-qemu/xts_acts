@@ -22,27 +22,27 @@ import { waitForComponent } from './WaitTest';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
-export default function ActsWebRunJavaScriptOnDocumentEndSetNullTest() {
+export default function ActsWebRunJavaScriptOnDocumentEndSetUndefinedOrNullTest() {
 
-  describe('RunJavaScriptOnDocumentEndSetNullTest', () => {
+  describe('RunJavaScriptOnDocumentEndSetUndefinedOrNullTest', () => {
 
     beforeAll(async (done: Function) => {
       let options: router.RouterOptions = {
-        url: 'testability/pages/WebRunJavaScriptOnDocumentEndSetNull',
+        url: 'testability/pages/WebRunJavaScriptOnDocumentEndSetUndefinedOrNull',
       }
       try {
         router.clear();
         let pages = router.getState();
-        console.info('get WebRunJavaScriptOnDocumentEndSetNull state success ' + JSON.stringify(pages));
-        if (!("WebRunJavaScriptOnDocumentEndSetNull" == pages.name)) {
-          console.info('get WebRunJavaScriptOnDocumentEndSetNull state success ' + JSON.stringify(pages.name));
+        console.info('get WebRunJavaScriptOnDocumentEndSetUndefinedOrNull state success ' + JSON.stringify(pages));
+        if (!("WebRunJavaScriptOnDocumentEndSetUndefinedOrNull" == pages.name)) {
+          console.info('get WebRunJavaScriptOnDocumentEndSetUndefinedOrNull state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          console.info('push WebRunJavaScriptOnDocumentEndSetNull page success ' + JSON.stringify(result));
+          console.info('push WebRunJavaScriptOnDocumentEndSetUndefinedOrNull page success ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error('push WebRunJavaScriptOnDocumentEndSetNull page error: ' + err);
+        console.error('push WebRunJavaScriptOnDocumentEndSetUndefinedOrNull page error: ' + err);
       }
-      await waitForComponent("RunJavaScriptOnDocumentEndSetNull");
+      await waitForComponent("RunJavaScriptOnDocumentEndSetUndefinedOrNull");
       done()
     });
 
@@ -52,10 +52,26 @@ export default function ActsWebRunJavaScriptOnDocumentEndSetNullTest() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      console.info('WebRunJavaScriptOnDocumentEndSetNull beforeEach start');
+      console.info('WebRunJavaScriptOnDocumentEndSetUndefinedOrNull beforeEach start');
       done();
     })
 
+
+    /*
+    * @tc.number     : SUB_ACE_WEB_RUNJAVASCRIPTONDOCUMENTEND_SetUndefined
+    * @tc.name       : testRunJavaScriptOnDocumentEndSetUndefined
+    * @tc.desc       : test runJavaScriptOnDocumentEnd set undefined
+    * @tc.size       : MediumTest
+    * @tc.type       : Function
+    * @tc.level      : Level 2
+    */
+    it('testRunJavaScriptOnDocumentEndSetUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("testRunJavaScriptOnDocumentEndSetUndefined", 2511251)
+      Utils.registerBaseEvent('testRunJavaScriptOnDocumentEndSetUndefined', '"test msg"', 25112511, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      sendEventByKey('RunJavaScriptOnDocumentEndSetUndefinedOrNull', 10, '');
+    })
 
     /*
     * @tc.number     : SUB_ACE_WEB_RUNJAVASCRIPTONDOCUMENTEND_SetNull
@@ -66,11 +82,12 @@ export default function ActsWebRunJavaScriptOnDocumentEndSetNullTest() {
     * @tc.level      : Level 2
     */
     it('testRunJavaScriptOnDocumentEndSetNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testRunJavaScriptOnDocumentEndSetNull", 2511226)
-      Utils.registerBaseEvent('testRunJavaScriptOnDocumentEndSetNull', '"test msg"', 25112410, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("testRunJavaScriptOnDocumentEndSetNull", 2511251)
+      Utils.registerBaseEvent('testRunJavaScriptOnDocumentEndSetNull', '"test msg"', 25112512, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('RunJavaScriptOnDocumentEndSetNull', 10, '');
+      sendEventByKey('RunJavaScriptOnDocumentEndSetUndefinedOrNull', 10, '');
     })
+
   })
 }

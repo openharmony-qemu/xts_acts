@@ -21,38 +21,54 @@ import { accessibility, config } from '@kit.AccessibilityKit';
 import { waitForComponent } from './WaitTest';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-export default function ActsWebRunJavaScriptHeadEndSetNullTest() {
+export default function ActsWebRunJavaScriptHeadEndSetUndefinedOrNullTest() {
 
-  describe('RunJavaScriptOnHeadEndSetNullTest', () => {
+  describe('RunJavaScriptOnHeadEndSetUndefinedOrNullTest', () => {
 
     beforeAll(async (done: Function) => {
       let options: router.RouterOptions = {
-        url: 'testability/pages/WebRunJavaScriptOnHeadEndSetNull',
+        url: 'testability/pages/WebRunJavaScriptOnHeadEndSetUndefinedOrNull',
       }
       try {
         router.clear();
         let pages = router.getState();
-        console.info('get WebRunJavaScriptOnHeadEndSetNull state success ' + JSON.stringify(pages));
-        if (!("WebRunJavaScriptOnHeadEndSetNull" == pages.name)) {
-          console.info('get WebRunJavaScriptOnHeadEndSetNull state success ' + JSON.stringify(pages.name));
+        console.info('get WebRunJavaScriptOnHeadEndSetUndefinedOrNull state success ' + JSON.stringify(pages));
+        if (!("WebRunJavaScriptOnHeadEndSetUndefinedOrNull" == pages.name)) {
+          console.info('get WebRunJavaScriptOnHeadEndSetUndefinedOrNull state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          console.info('push WebRunJavaScriptOnHeadEndSetNull page success ' + JSON.stringify(result));
+          console.info('push WebRunJavaScriptOnHeadEndSetUndefinedOrNull page success ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error('push WebRunJavaScriptOnHeadEndSetNull page error: ' + err);
+        console.error('push WebRunJavaScriptOnHeadEndSetUndefinedOrNull page error: ' + err);
       }
-      await waitForComponent("RunJavaScriptOnHeadEndSetNull");
+      await waitForComponent("RunJavaScriptOnHeadEndSetUndefinedOrNull");
       done()
     });
 
     beforeEach(async (done: Function) => {
       config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
         console.info(`enable success`);
-        }).catch((err: object) => {
+      }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      console.info('WebRunJavaScriptOnHeadEndSetNull beforeEach start');
+      console.info('WebRunJavaScriptOnHeadEndSetUndefinedOrNull beforeEach start');
       done();
+    })
+
+    /*
+    * @tc.number     : SUB_ACE_WEB_RUNJAVASCRIPTONHEADEND_SetUndefined
+    * @tc.name       : testRunJavaScriptOnHeadEndSetUndefined
+    * @tc.desc       : test runJavaScriptOnHeadEnd set undefined
+    * @tc.size       : MediumTest
+    * @tc.type       : Function
+    * @tc.level      : Level 2
+    */
+    it('testRunJavaScriptOnHeadEndSetUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("testRunJavaScriptOnHeadEndSetUndefined", 2511253)
+      Utils.registerBaseEvent('testRunJavaScriptOnHeadEndSetUndefined', '"msg"', 25112531, done, (backData: events_emitter.EventData, expected: Object) => {
+          expect(backData?.data?.ACTION).assertEqual(expected);
+        });
+      sendEventByKey('RunJavaScriptOnHeadEndSetUndefinedOrNull', 10, '');
     })
 
     /*
@@ -64,11 +80,11 @@ export default function ActsWebRunJavaScriptHeadEndSetNullTest() {
     * @tc.level      : Level 2
     */
     it('testRunJavaScriptOnHeadEndSetNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testRunJavaScriptOnHeadEndSetNull", 2511222)
-      Utils.registerBaseEvent('testRunJavaScriptOnHeadEndSetNull', '"msg"', 25112406, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("testRunJavaScriptOnHeadEndSetNull", 2511253)
+      Utils.registerBaseEvent('testRunJavaScriptOnHeadEndSetNull', '"msg"', 25112532, done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      sendEventByKey('RunJavaScriptOnHeadEndSetNull', 10, '');
+      sendEventByKey('RunJavaScriptOnHeadEndSetUndefinedOrNull', 10, '');
     })
 
 

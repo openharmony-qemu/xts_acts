@@ -22,27 +22,27 @@ import { waitForComponent } from './WaitTest';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
 
-export default function ActsWebRunJavaScriptOnDocumentStartSetNullTest() {
+export default function ActsWebRunJavaScriptOnDocumentStartSetUndefinedOrNullTest() {
 
-  describe('RunJavaScriptOnDocumentStartSetNullTest', () => {
+  describe('RunJavaScriptOnDocumentStartSetUndefinedOrNullTest', () => {
 
     beforeAll(async (done: Function) => {
       let options: router.RouterOptions = {
-        url: 'testability/pages/WebRunJavaScriptOnDocumentStartSetNull',
+        url: 'testability/pages/WebRunJavaScriptOnDocumentStartSetUndefinedOrNull',
       }
       try {
         router.clear();
         let pages = router.getState();
-        console.info('get WebRunJavaScriptOnDocumentStartSetNull state success ' + JSON.stringify(pages));
-        if (!("WebRunJavaScriptOnDocumentStartSetNull" == pages.name)) {
-          console.info('get WebRunJavaScriptOnDocumentStartSetNull state success ' + JSON.stringify(pages.name));
+        console.info('get WebRunJavaScriptOnDocumentStartSetUndefinedOrNull state success ' + JSON.stringify(pages));
+        if (!("WebRunJavaScriptOnDocumentStartSetUndefinedOrNull" == pages.name)) {
+          console.info('get WebRunJavaScriptOnDocumentStartSetUndefined state success ' + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
-          console.info('push WebRunJavaScriptOnDocumentStartSetNull page success ' + JSON.stringify(result));
+          console.info('push WebRunJavaScriptOnDocumentStartSetUndefinedOrNull page success ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error('push WebRunJavaScriptOnDocumentStartSetNull page error: ' + err);
+        console.error('push WebRunJavaScriptOnDocumentStartSetUndefinedOrNull page error: ' + err);
       }
-      await waitForComponent("RunJavaScriptOnDocumentStartSetNull");
+      await waitForComponent("RunJavaScriptOnDocumentStartSetUndefinedOrNull");
       done()
     });
 
@@ -52,11 +52,27 @@ export default function ActsWebRunJavaScriptOnDocumentStartSetNullTest() {
         }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-      console.info('WebRunJavaScriptOnDocumentStartSetNull beforeEach start');
+      console.info('WebRunJavaScriptOnDocumentStartSetUndefinedOrNull beforeEach start');
       done();
     })
 
 
+
+    /*
+    * @tc.number     : SUB_ACE_WEB_RUNJAVASCRIPTONDOCUMENTSTART_SetUndefined
+    * @tc.name       : testRunJavaScriptOnDocumentStartSetUndefined
+    * @tc.desc       : test runJavaScriptOnDocumentStart set undefined
+    * @tc.size       : MediumTest
+    * @tc.type       : Function
+    * @tc.level      : Level 2
+    */
+    it('testRunJavaScriptOnDocumentStartSetUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("testRunJavaScriptOnDocumentStartSetUndefined", 2511252)
+      Utils.registerBaseEvent('testRunJavaScriptOnDocumentStartSetUndefined', '""', 25112521, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(expected);
+      });
+      sendEventByKey('RunJavaScriptOnDocumentStartSetUndefinedOrNull', 10, '');
+    })
 
     /*
     * @tc.number     : SUB_ACE_WEB_RUNJAVASCRIPTONDOCUMENTSTART_SetNull
@@ -67,12 +83,13 @@ export default function ActsWebRunJavaScriptOnDocumentStartSetNullTest() {
     * @tc.level      : Level 2
     */
     it('testRunJavaScriptOnDocumentStartSetNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      Utils.emitEvent("testRunJavaScriptOnDocumentStartSetNull", 2511224)
-      Utils.registerBaseEvent('testRunJavaScriptOnDocumentStartSetNull', '""', 25112408, done, (backData: events_emitter.EventData, expected: Object) => {
+      Utils.emitEvent("testRunJavaScriptOnDocumentStartSetNull", 2511252)
+      Utils.registerBaseEvent('testRunJavaScriptOnDocumentStartSetNull', '""', 25112522, done, (backData: events_emitter.EventData, expected: Object) => {
         expect(backData?.data?.ACTION).assertEqual(expected);
       });
-      sendEventByKey('RunJavaScriptOnDocumentStartSetNull', 10, '');
+      sendEventByKey('RunJavaScriptOnDocumentStartSetUndefinedOrNull', 10, '');
     })
+
 
   })
 }
