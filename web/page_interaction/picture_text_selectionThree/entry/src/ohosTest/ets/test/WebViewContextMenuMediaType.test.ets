@@ -93,7 +93,7 @@ export default function WebViewContextMenuMediaType() {
       * @tc.level      : Level 1
       */
     it('testContextMenuMediaTypeText', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      emitKey = 'emitGetHitTest002';
+      emitKey = 'emitContextMenuMediaTypeText';
       tcName = 'testContextMenuMediaTypeText'
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
