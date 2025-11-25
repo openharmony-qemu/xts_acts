@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-#include "gl_utils.h"
+#include "GlUtilsTest.h"
 
 #include <cmath>
 #include <string>
