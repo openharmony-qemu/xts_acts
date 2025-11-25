@@ -138,20 +138,20 @@ struct httpAuthHandler {
               }
               break;
             }
-            case "testIsHttpAuthInfoSavedReturnTrue": {
+            case 'testIsHttpAuthInfoSavedReturnTrue': {
               try {
                 this.isHttpAuthInfoSavedReturnTrueStr = 'false'
                 this.isHttpAuthInfoSavedReturnTrue = false
                 this.HttpAuthHandlerCallBack = 'isHttpAuthInfoSavedReturnTrue'
                 this.isSave = -1;
                 this.controller.loadUrl(URL4)
-                await Utils.waitForExist(()=>this.isSave, "testIsHttpAuthInfoSavedReturnTrue_01", 1);
+                await Utils.waitForExist(()=>this.isSave, 'testIsHttpAuthInfoSavedReturnTrue_01', 1);
                 this.isSave = -1;
                 this.HttpAuthHandlerCallBack = 'isHttpAuthInfoSavedReturnTrue'
                 this.controller.loadUrl(URL4)
-                await Utils.waitForExist(()=>this.isSave, "testIsHttpAuthInfoSavedReturnTrue_02", 1);
+                await Utils.waitForExist(()=>this.isSave, 'testIsHttpAuthInfoSavedReturnTrue_02', 1);
                 this.isSave = -1;
-                await Utils.waitForExist(()=>this.isHttpAuthInfoSavedReturnTrueStr, "testIsHttpAuthInfoSavedReturnTrue_03", "true");
+                await Utils.waitForExist(()=>this.isHttpAuthInfoSavedReturnTrueStr, 'testIsHttpAuthInfoSavedReturnTrue_03', 'true');
                 webView.WebDataBase.deleteHttpAuthCredentials()
                 this.isSave = -1;
                 Utils.emitEvent(this.isHttpAuthInfoSavedReturnTrue, 142055)
@@ -196,13 +196,13 @@ struct httpAuthHandler {
             if (this.HttpAuthHandlerCallBack === 'isHttpAuthInfoSavedReturnTrue') {
                 let isHttpAuthInfoSaved = event.handler.isHttpAuthInfoSaved()
                 console.info('[HttpAuthHandler] isHttpAuthInfoSaved:' + isHttpAuthInfoSaved)
-                this.isSave = -1
+                this.isSave = 1
                 if (isHttpAuthInfoSaved === false) {
                     webView.WebDataBase.saveHttpAuthCredentials(event.host, event.realm, '2222', '2222')
                     event.handler.cancel()
                 } else if (isHttpAuthInfoSaved === true) {
                     this.isHttpAuthInfoSavedReturnTrue = true
-                    this.isHttpAuthInfoSavedReturnTrueStr = "true"
+                    this.isHttpAuthInfoSavedReturnTrueStr = 'true'
                 }
             }
           }
