@@ -1191,7 +1191,7 @@ export default function preferenceTest() {
 
         await mPreferences.put("object_key", company);
         let compJson = await mPreferences.get("object_key", {});
-        let compJsonElement = JSON.parseJsonElement(compJson?.toString());
+        let compJsonElement = JSON.parseJsonElement(compJson!.toString());
         expect("我的公司").assertEqual(compJsonElement.getElement("cName").asString());
         expect("myCompany").assertEqual(compJsonElement.getElement("enName").asString());
         expect(1998).assertEqual(compJsonElement.getElement("year").asInteger());
