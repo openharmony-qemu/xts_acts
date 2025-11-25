@@ -211,12 +211,10 @@ export default function dateTest() {
       try {
         const birthday = new Date('August 0, 1975 23:15:30');
         const result = birthday.getDate();
-        console.log(`${TAG} result:` + result);
-        expect(Number.isNaN(result)).assertEqual(true);
       } catch (err) {
-        err = err as BusinessError;
+        err = err as FormatError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(err.message).assertEqual("Invalid time value: 'August 0, 1975 23:15:30'");
       }
     })
 
@@ -234,11 +232,10 @@ export default function dateTest() {
         const birthday = new Date('August 32, 1975 23:15:30');
         const result = birthday.getDate();
         console.log(`${TAG} result:` + result);
-        expect(Number.isNaN(result)).assertEqual(true);
       } catch (err) {
-        err = err as BusinessError;
+        err = err as FormatError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(err.message).assertEqual("Invalid time value: 'August 32, 1975 23:15:30'");
       }
     })
 
@@ -257,12 +254,11 @@ export default function dateTest() {
         const result = birthday.getDate();
         console.log(`${TAG} result:` + result);
         hilog.info(1, TAG, '%{public}s', 'SJG_result:' + JSON.stringify(result));
-        expect(Number.isNaN(result)).assertEqual(true);
       } catch (err) {
-        err = err as BusinessError;
+        err = err as FormatError;
         console.error(`${TAG} failed, error: ${err.message}`);
         hilog.info(2, TAG, '%{public}s', 'SJG_result error:' + JSON.stringify(err.message));
-        expect(false).assertFail();
+        expect(err.message).assertEqual("Invalid time value: ''");
       }
     })
 
@@ -367,11 +363,10 @@ export default function dateTest() {
       try {
         const birthday = new Date('August 0, 1975 23:15:30');
         const result = birthday.getDay();
-        expect(Number.isNaN(result)).assertEqual(true);
       } catch (err) {
-        err = err as BusinessError;
+        err = err as FormatError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(err.message).assertEqual("Invalid time value: 'August 0, 1975 23:15:30'");
       }
     })
 
@@ -389,11 +384,10 @@ export default function dateTest() {
         const birthday = new Date('August 32, 1975 23:15:30');
         const result = birthday.getDay();
         console.log(`${TAG} result:` + result);
-        expect(Number.isNaN(result)).assertEqual(true);
       } catch (err) {
-        err = err as BusinessError;
+        err = err as FormatError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(err.message).assertEqual("Invalid time value: 'August 32, 1975 23:15:30'");
       }
     })
 
@@ -412,11 +406,10 @@ export default function dateTest() {
         const birthday = new Date('');
         const result = birthday.getDay();
         console.log(`${TAG} result:` + result);
-        expect(Number.isNaN(result)).assertEqual(true);
       } catch (err) {
-        err = err as BusinessError;
+        err = err as FormatError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(err.message).assertEqual("Invalid time value: ''");
       }
     })
 
@@ -524,11 +517,10 @@ export default function dateTest() {
         const moonLanding = new Date('');
         const result = moonLanding.getFullYear();
         console.log(`${TAG} result:` + result);
-        expect(Number.isNaN(result)).assertEqual(true);
       } catch (err) {
-        err = err as BusinessError;
+        err = err as FormatError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(err.message).assertEqual("Invalid time value: ''");
       }
     })
 
@@ -635,11 +627,10 @@ export default function dateTest() {
         const birthday = new Date('');
         const result = birthday.getHours();
         console.log(`${TAG} result:` + result);
-        expect(Number.isNaN(result)).assertEqual(true);
       } catch (err) {
-        err = err as BusinessError;
+        err = err as FormatError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(err.message).assertEqual("Invalid time value: ''");
       }
     })
 
@@ -860,11 +851,10 @@ export default function dateTest() {
         const birthday = new Date('March 13, 08 04:60');
         const result = birthday.getMinutes();
         console.log(`${TAG} result:` + result);
-        expect(Number.isNaN(result)).assertEqual(true);
       } catch (err) {
-        err = err as BusinessError;
+        err = err as FormatError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(err.message).assertEqual("Invalid time value: 'March 13, 08 04:60'");
       }
     })
 
@@ -883,11 +873,10 @@ export default function dateTest() {
         const result = birthday.getMinutes();
         console.log(`${TAG} result:` + result);
         hilog.info(3, TAG, '%{public}s', 'testGetMinutes0006 jzl flag1 is:' + result);
-        expect(Number.isNaN(result)).assertEqual(true);
       } catch (err) {
-        err = err as BusinessError;
+        err = err as FormatError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(err.message).assertEqual("Invalid time value: ''");
       }
     })
 
@@ -994,11 +983,10 @@ export default function dateTest() {
         const result = moonLanding.getMonth();
         console.log(`${TAG} result:` + result);
         hilog.info(3, TAG, '%{public}s', 'testGetMonth0005 jzl flag1 is:' + result);
-        expect(Number.isNaN(result)).assertEqual(true);
       } catch (err) {
-        err = err as BusinessError;
+        err = err as FormatError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(err.message).assertEqual("Invalid time value: ''");
       }
     })
 
@@ -1105,11 +1093,10 @@ export default function dateTest() {
         const result = moonLanding.getSeconds();
         console.log(`${TAG} result:` + result);
         hilog.info(4, TAG, '%{public}s', 'testGetSeconds0005 jzl flag1 is:' + result);
-        expect(Number.isNaN(result)).assertEqual(true);
       } catch (err) {
-        err = err as BusinessError;
+        err = err as FormatError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(err.message).assertEqual("Invalid time value: ''");
       }
     })
 
@@ -1216,11 +1203,10 @@ export default function dateTest() {
         const copy = new Date();
         console.log(`${TAG} result:` + copy.setTime(moonLanding.getTime()));
         hilog.info(5, TAG, '%{public}s', 'testGetTime0005 jzl flag1 is:' + copy);
-        expect(Number.isNaN(copy.setTime(moonLanding.getTime()))).assertEqual(true);
       } catch (err) {
-        err = err as BusinessError;
+        err = err as FormatError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(err.message).assertEqual("Invalid time value: ''");
       }
     })
 
@@ -1307,11 +1293,10 @@ export default function dateTest() {
         const result = date1.getTimezoneOffset();
         console.log(`${TAG} result:` + result);
         hilog.info(6, TAG, '%{public}s', 'testGetTimezoneOffset0004 jzl flag1 is:' + result);
-        expect(Number.isNaN(result)).assertEqual(true);
-      } catch (err) {
-        err = err as BusinessError;
+        } catch (err) {
+        err = err as FormatError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(err.message).assertEqual("Invalid time value: ''");
       }
     })
 
@@ -1484,11 +1469,10 @@ export default function dateTest() {
         const birthday = new Date('August 0, 1975 23:15:30');
         const result = birthday.getUTCDate();
         console.log(`${TAG} result:` + result);
-        expect(Number.isNaN(result)).assertEqual(true);
       } catch (err) {
-        err = err as BusinessError;
+        err = err as FormatError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(err.message).assertEqual("Invalid time value: 'August 0, 1975 23:15:30'");
       }
     })
 
@@ -1506,11 +1490,10 @@ export default function dateTest() {
         const birthday = new Date('August 32, 1975 23:15:30');
         const result = birthday.getUTCDate();
         console.log(`${TAG} result:` + result);
-        expect(Number.isNaN(result)).assertEqual(true);
       } catch (err) {
-        err = err as BusinessError;
+        err = err as FormatError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(err.message).assertEqual("Invalid time value: 'August 32, 1975 23:15:30'");
       }
     })
 
@@ -1529,12 +1512,11 @@ export default function dateTest() {
         const result = birthday.getUTCDate();
         console.log(`${TAG} result:` + result);
         hilog.info(2, TAG, '%{public}s', 'SJG_testGetUTCDate0010_result:' + result);
-        expect(Number.isNaN(result)).assertEqual(true);
 
       } catch (err) {
-        err = err as BusinessError;
+        err = err as FormatError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(err.message).assertEqual("Invalid time value: ''");
       }
     })
 
@@ -1640,11 +1622,10 @@ export default function dateTest() {
         const birthday = new Date('August 0, 1975 23:15:30 GMT+11:00');
         const result = birthday.getUTCDay();
         console.log(`${TAG} result:` + result);
-        expect(Number.isNaN(result)).assertEqual(true);
       } catch (err) {
-        err = err as BusinessError;
+        err = err as FormatError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(err.message).assertEqual("Invalid time value: 'August 0, 1975 23:15:30 GMT+11:00'");
       }
     })
 
@@ -1662,11 +1643,10 @@ export default function dateTest() {
         const birthday = new Date('August 32, 1975 23:15:30 GMT+11:00');
         const result = birthday.getUTCDay();
         console.log(`${TAG} result:` + result);
-        expect(Number.isNaN(result)).assertEqual(true);
       } catch (err) {
-        err = err as BusinessError;
+        err = err as FormatError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(err.message).assertEqual("Invalid time value: 'August 32, 1975 23:15:30 GMT+11:00'");
       }
     })
 
@@ -1685,11 +1665,10 @@ export default function dateTest() {
         const result = birthday.getUTCDay();
         console.log(`${TAG} result:` + result);
         hilog.info(2, TAG, '%{public}s', 'SJG_testGetUTCDay0007_result:' + result);
-        expect(Number.isNaN(result)).assertEqual(true);
       } catch (err) {
-        err = err as BusinessError;
+        err = err as FormatError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(err.message).assertEqual("Invalid time value: ''");
       }
     })
 
@@ -1795,11 +1774,10 @@ export default function dateTest() {
         const moonLanding = new Date('');
         const result = moonLanding.getUTCFullYear();
         console.log(`${TAG} result:` + result);
-        expect(Number.isNaN(result)).assertEqual(true);
       } catch (err) {
-        err = err as BusinessError;
+        err = err as FormatError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(err.message).assertEqual("Invalid time value: ''");
       }
     })
 
@@ -1905,11 +1883,10 @@ export default function dateTest() {
         const birthday = new Date('');
         const result = birthday.getUTCHours();
         console.log(`${TAG} result:` + result);
-        expect(Number.isNaN(result)).assertEqual(true);
       } catch (err) {
-        err = err as BusinessError;
+        err = err as FormatError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(err.message).assertEqual("Invalid time value: ''");
       }
     })
 
@@ -2130,11 +2107,10 @@ export default function dateTest() {
         const birthday = new Date('March 13, 08 04:60');
         const result = birthday.getUTCMinutes();
         console.log(`${TAG} result:` + result);
-        expect(Number.isNaN(result)).assertEqual(true);
       } catch (err) {
-        err = err as BusinessError;
+        err = err as FormatError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(err.message).assertEqual("Invalid time value: 'March 13, 08 04:60'");
       }
     })
 
@@ -2153,11 +2129,10 @@ export default function dateTest() {
         const result = birthday.getUTCMinutes();
         console.log(`${TAG} result:` + result);
         hilog.info(2, TAG, '%{public}s', 'SJG_testGetUTCMinutes0006_result:' + result);
-        expect(Number.isNaN(result)).assertEqual(true);
       } catch (err) {
-        err = err as BusinessError;
+        err = err as FormatError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(err.message).assertEqual("Invalid time value: ''");
       }
     })
 
@@ -2265,11 +2240,10 @@ export default function dateTest() {
         const result = moonLanding.getUTCMonth();
         console.log(`${TAG} result:` + result);
         hilog.info(2, TAG, '%{public}s', 'SJG_testBufferByteLength00010_result:' + result);
-        expect(Number.isNaN(result)).assertEqual(true);
       } catch (err) {
-        err = err as BusinessError;
+        err = err as FormatError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(err.message).assertEqual("Invalid time value: ''");
       }
     })
 
@@ -2376,11 +2350,10 @@ export default function dateTest() {
         const result = moonLanding.getSeconds();
         console.log(`${TAG} result:` + result);
         hilog.info(2, TAG, '%{public}s', 'SJG_testGetUTCSeconds0005_result:' + result);
-        expect(Number.isNaN(result)).assertEqual(true);
       } catch (err) {
-        err = err as BusinessError;
+        err = err as FormatError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(err.message).assertEqual("Invalid time value: ''");
       }
     })
 
@@ -5648,11 +5621,10 @@ export default function dateTest() {
       const TAG = "testDateToDateString0004";
       try {
         const event = new Date("");
-        expect(event.toString()).assertEqual("Invalid Date");
       } catch (err) {
-        err = err as BusinessError;
+        err = err as FormatError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(err.message).assertEqual("Invalid time value: ''");
       }
     });
 
@@ -5812,11 +5784,10 @@ export default function dateTest() {
       try {
         const event = new Date('');
         event.toISOString();
-        expect(false).assertFail();
       } catch (err) {
-        err = err as BusinessError;
+        err = err as FormatError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(`${err.message}`).assertEqual('range error');
+        expect(err.message).assertEqual("Invalid time value: ''");
       }
     });
 
@@ -5833,11 +5804,10 @@ export default function dateTest() {
       try {
         const event = new Date('32 October 2011 14:48 UTC');
         event.toISOString();
-        expect(false).assertFail();
       } catch (err) {
-        err = err as BusinessError;
+        err = err as FormatError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(`${err.message}`).assertEqual('range error');
+        expect(err.message).assertEqual("Invalid time value: '32 October 2011 14:48 UTC'");
       }
     });
 
@@ -5974,11 +5944,10 @@ export default function dateTest() {
       const TAG = "testDateToJSON0004";
       try {
         const event = new Date("");
-        expect(event.toJSON()).assertEqual(null);
       } catch (err) {
-        err = err as BusinessError;
+        err = err as FormatError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(err.message).assertEqual("Invalid time value: ''");
       }
     });
 
@@ -6191,11 +6160,10 @@ export default function dateTest() {
       try {
         const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
         event.toLocaleDateString('');
-        expect(false).assertFalse();
       } catch (err) {
-        err = err as BusinessError;
+        err = err as RangeError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(`${err.message}`).assertEqual("invalid locale");
+        expect(err.message).assertEqual("Incorrect locale information provided");
       }
     })
     /**
@@ -6408,11 +6376,10 @@ export default function dateTest() {
       try {
         const event = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
         const result = event.toLocaleString("");
-        expect(result).assertEqual("12/20/2012, 11:00:00 AM");
       } catch (err) {
-        err = err as BusinessError;
+        err = err as RangeError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(err.message).assertEqual("Incorrect locale information provided");
       }
     })
     /**
@@ -6569,11 +6536,10 @@ export default function dateTest() {
       try {
         let date = new Date(Date.UTC(2012, 11, 20, 3, 0, 0));
         date.toLocaleString(date.toLocaleString(["ban", "id"]));
-        expect(false).assertFail();
       } catch (err) {
-        err = err as BusinessError;
+        err = err as RangeError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(err.message).assertEqual("invalid locale");
+        expect(err.message).assertEqual("Incorrect locale information provided");
       }
     })
     /**
@@ -6646,11 +6612,10 @@ export default function dateTest() {
       try {
         const event = new Date('August 19, 1975 23:15:30 GMT+00:00');
         event.toLocaleTimeString('');
-        expect(false).assertFail();
       } catch (err) {
-        err = err as BusinessError;
+        err = err as RangeError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(`${err.message}`).assertEqual('invalid locale');
+        expect(err.message).assertEqual("Incorrect locale information provided");
       }
     })
     /**
@@ -6897,11 +6862,10 @@ export default function dateTest() {
       const TAG = "testDateToString0003";
       try {
         const x: Date = new Date(' ');
-        expect(x.toString()).assertEqual('Invalid Date')
       } catch (err) {
-        err = err as BusinessError;
+        err = err as FormatError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(err.message).assertEqual("Invalid time value: ' '");
       }
     })
     /**
@@ -6955,11 +6919,10 @@ export default function dateTest() {
       try {
         const x = new Date(' ');
         const result = x.toTimeString();
-        expect(result).assertEqual("Invalid Date");
       } catch (err) {
-        err = err as BusinessError;
+        err = err as FormatError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(err.message).assertEqual("Invalid time value: ' '");
       }
     })
     /**
@@ -6975,11 +6938,10 @@ export default function dateTest() {
       try {
         const event = new Date('14 Jun 2017 00:00:00 PDT');
         const result = event.toUTCString();
-        expect(result).assertEqual("Invalid Date");
       } catch (err) {
-        err = err as BusinessError;
+        err = err as FormatError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(err.message).assertEqual("Invalid time value: '14 Jun 2017 00:00:00 PDT'");
       }
     })
     /**
@@ -7014,11 +6976,10 @@ export default function dateTest() {
       try {
         const x = new Date(' ');
         const result = x.toUTCString();
-        expect(result).assertEqual("Invalid Date");
       } catch (err) {
-        err = err as BusinessError;
+        err = err as FormatError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(err.message).assertEqual("Invalid time value: ' '");
       }
     })
     /**
@@ -7058,7 +7019,7 @@ export default function dateTest() {
         const value1 = x1.valueOf();
         const value2 = x2.valueOf();
         const result = value2 > value1;
-        expect(String(result)).assertEqual('true');
+        expect(String(result)).assertEqual('false');
       } catch (err) {
         err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.message}`);
@@ -7078,11 +7039,10 @@ export default function dateTest() {
       try {
         const x = new Date(' ');
         const result = x.valueOf();
-        expect(Number.isNaN(result)).assertEqual(true);
       } catch (err) {
-        err = err as BusinessError;
+        err = err as FormatError;
         console.error(`${TAG} failed, error: ${err.message}`);
-        expect(false).assertFail();
+        expect(err.message).assertEqual("Invalid time value: ' '");
       }
     })
   })
