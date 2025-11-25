@@ -13,17 +13,29 @@
  * limitations under the License.
  */
 
+import AVImageFetchFrameByTime from './media/AVImageFetchFrameByTimeTest.test';
+import AVMetaFetchFrameByTime from './media/AVMetadataFetchFrameByTimeTest.test';
 import AVPlayerLocalDeprecatedTest from './media/AVPlayerLocalDeprecatedTest.test';
 import AVPlayerLocalSuppTest from './media/AVPlayerLocalTest.test';
+import SetUrISourceTest from './media/MediaSetUrlSourceTest.test';
+import RespondDataTest from './media/RespondDataTest.test';
 import AVPlayerSetMediaSourceSuppTest from './media/AVPlayerMediaSourceSupp.test';
 import AVPlayerSetMediaMutedSuppTest from './media/AVPlayerSetMediaMutedSupp.test';
 import AVPlayerSetPlaybackRangeSuppTest from './media/AVPlayerSetPlaybackRangeSupp.test';
+import StateChangeTest from './media/StateChangeTest.test';
+import OnTrackChangeTest from './media/AVPlayerOnTrackChangeTest.test';
 
 export default function testsuite() {
   AVPlayerLocalDeprecatedTest();
   AVPlayerLocalSuppTest();
+  AVImageFetchFrameByTime();
+  AVMetaFetchFrameByTime();
+  SetUrISourceTest();
+  RespondDataTest();
   AVPlayerSetPlaybackRangeSuppTest();
   AVPlayerSetMediaMutedSuppTest();
   AVPlayerSetMediaSourceSuppTest();
+  StateChangeTest();
+  OnTrackChangeTest();
 }
 
