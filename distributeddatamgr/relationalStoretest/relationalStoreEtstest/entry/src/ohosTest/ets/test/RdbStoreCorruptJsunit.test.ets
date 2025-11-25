@@ -71,9 +71,11 @@ export default function rdbStoreCorruptJSunitTest() {
       rdbStore = null;
       await data_relationalStore.deleteRdbStore(context, "Resultset.db");
     })
+
     afterAll(async function () {
       console.log(TAG + 'afterAll');
     })
+
     async function Generate() {
       let dir = await context.filesDir;
       dbPath = context.databaseDir + "/rdb/" + dbName;
@@ -114,7 +116,6 @@ export default function rdbStoreCorruptJSunitTest() {
         console.info(TAG + "openSync")
         fs.truncateSync(file_.fd, 4);
         fs.fsyncSync(file_.fd);
-        // fs.closeSync(file);
       } catch (err) {
         console.log(TAG, `CreateCorruptDb err.code ${err.code}, err.message ${err.message}`);
         expect().assertFail();
