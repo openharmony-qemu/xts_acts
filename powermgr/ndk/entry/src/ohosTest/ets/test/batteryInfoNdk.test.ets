@@ -256,5 +256,28 @@ export default function batteryInfoNdkTest() {
           done();
         }
       });
+
+    /**
+     * @tc.name   SUB_PowerSystem_BatteryInfo_NdkTest_1000
+     * @tc.number SUB_PowerSystem_BatteryInfo_NdkTest_1000
+     * @tc.desc   Test testNapi BatteryInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_PowerSystem_BatteryInfo_NdkTest_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let TAG = 'SUB_PowerSystem_BatteryInfo_NdkTest_1000';
+        try {
+          let butt = batteryInfoNdk.BatteryInfo_BatteryPluggedType.BUTT;
+          console.info(`${TAG} butt:${butt}`);
+          expect(butt).assertEqual(4);
+          done();
+        } catch (error) {
+          console.info(TAG + ` error: ${error.code}  ${error.message}`);
+          expect().assertFail();
+          done();
+        }
+      });
   })
 }
