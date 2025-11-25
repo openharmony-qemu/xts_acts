@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,12 +34,13 @@ export default class EntryAbility extends UIAbility {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
   }
 
-  // onDestroy(): void {
-  //   hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
-  // }
+  onDestroy(): Promise<void> | undefined {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
+    return undefined;
+  }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {
-    // Main window is created, set main page for this ability
+    
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
     windowStage.loadContent('pages/Index', (err: BusinessError<void> | null): void => {
@@ -61,7 +63,7 @@ export default class EntryAbility extends UIAbility {
       dialogUIContext = windowClass!.getUIContext();
     })
 
-    //获取窗口
+    
     windowStage.getMainWindow((err: BusinessError<void> | null, data): void => {
       if (err!.code) {
         console.error('Failed to obtain the main window. Cause: ' + JSON.stringify(err));
@@ -69,23 +71,23 @@ export default class EntryAbility extends UIAbility {
       }
       windowClass = data;
       console.info('Succeeded in obtaining the main window. Data: ' + JSON.stringify(data));
-      //设置窗口全屏
+      
       windowClass!.setWindowLayoutFullScreen(false)
     })
   }
 
   onWindowStageDestroy(): void {
-    // Main window is destroyed, release UI related resources
+    
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageDestroy');
   }
 
   onForeground(): void {
-    // Ability has brought to foreground
+    
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onForeground');
   }
 
   onBackground(): void {
-    // Ability has back to background
+    
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onBackground');
   }
 }

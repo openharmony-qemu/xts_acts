@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,12 +16,8 @@
 
 import UIContextTestCase from './UIContext/UIContextTestCase.test'
 import UIContextComponentSnapshot from './UIContext/UIContextComponentSnapshot.test'
-import ComponentSnapshotSync from './componentSnapshot/componentSnapshotSync.test'
-import UIContextApi1 from './UIContext/UIContextApi1.test'
 
 export default function testsuite() {
-  // UIContextTestCase(); //getHostContext
-  // UIContextComponentSnapshot(); //getComponentSnapshot().getSync
-  ComponentSnapshotSync();//componentSnapshot.getSync
-  // UIContextApi1();//getFocusController().clearFocus()
+  UIContextTestCase();
+  UIContextComponentSnapshot()
 }

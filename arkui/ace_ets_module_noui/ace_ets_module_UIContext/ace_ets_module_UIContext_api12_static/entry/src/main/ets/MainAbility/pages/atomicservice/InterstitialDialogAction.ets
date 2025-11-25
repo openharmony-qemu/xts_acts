@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,7 +19,7 @@ import {
   Entry, Component,
   Column, ColumnOptions, Row, RowOptions, Color,
   Text, Button, FontWeight, ClickEvent, Margin,
-// InterstitialDialogAction, IconStyle, TitlePosition, BottomOffset,
+
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -33,21 +34,21 @@ struct Index {
           .fontWeight(FontWeight.Bold)
           .onClick((e:ClickEvent) => {
             let ctx: UIContext | null = getDialogUIContext();
-            // let interstitialDialogAction: InterstitialDialogAction = new InterstitialDialogAction({
-            //   uiContext: ctx as UIContext,
-            //   title: '主标题',
-            //   subtitle: '副标题',
-            //   titleColor: 'rgb(255, 192, 0)',
-            //   subtitleColor: Color.Red,
-            //   backgroundImage: $r('app.media.testBackgroundImg'),
-            //   foregroundImage: $r('app.media.testForegroundImg'),
-            //   iconStyle: IconStyle.DARK,
-            //   titlePosition: TitlePosition.TOP,
-            //   bottomOffsetType: BottomOffset.OFFSET_FOR_BAR,
-            //   onDialogClick: () => { console.log('outer dialog click action') },
-            //   onDialogClose: () => { console.log('outer close action') }
-            // });
-            // interstitialDialogAction.openDialog();
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
           })
       }
       .width('100%')

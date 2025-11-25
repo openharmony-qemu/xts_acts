@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -42,10 +43,10 @@ export interface CurrentRatio{
   isVisible: boolean
 };
 export interface SetValue {
-  colorBlend: string;
+  colorBlend: Color;
 }
 export interface ExpectValue {
-  colorBlend: string;
+  colorBlend: Color;
 }
 export class RouterParams {
   view: PageConfig = new PageConfig()

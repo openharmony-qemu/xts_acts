@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +18,7 @@ import {
   Entry, Component,
   Column, ColumnOptions, Row, RowOptions, Color, TabBarOptions, NavPathInfo,
   Text, Button, FontWeight, ClickEvent, Margin, Builder, NavPathStack, NavDestination, NavDestinationContext,
-  // AtomicServiceNavigation, AtomicServiceTabs, TabBarPosition,
+  
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -30,7 +31,7 @@ struct Index {
   tabContent1() {
     Text('first page')
       .onClick((e:ClickEvent) => {
-        // this.childNavStack.pushPath({ name: 'page one' })
+        
         this.childNavStack.pushPath(new NavPathInfo( 'page one' , ''));
       })
   }
@@ -47,35 +48,35 @@ struct Index {
 
   @Builder
   navigationContent() {
-    // AtomicServiceTabs({
-    //   tabContents: [
-    //     () => {
-    //       this.tabContent1()
-    //     },
-    //     () => {
-    //       this.tabContent2()
-    //     },
-    //     () => {
-    //       this.tabContent3()
-    //     }
-    //   ],
-    //   tabBarOptionsArray: [
-    //     new TabBarOptions($r('sys.media.ohos_ic_public_phone'), '功能1'),
-    //     new TabBarOptions($r('sys.media.ohos_ic_public_location'), '功能2', Color.Green, Color.Red),
-    //     new TabBarOptions($r('sys.media.ohos_ic_public_more'), '功能3')
-    //   ],
-    //   tabBarPosition: TabBarPosition.BOTTOM,
-    //   barBackgroundColor: $r('sys.color.ohos_id_color_bottom_tab_bg'),
-    //   onTabBarClick: (index: Number) => {
-    //     if (index == 0) {
-    //       this.message = '功能1';
-    //     } else if (index == 1) {
-    //       this.message = '功能2';
-    //     } else {
-    //       this.message = '功能3';
-    //     }
-    //   }
-    // })
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
   }
 
   @Builder
@@ -90,19 +91,19 @@ struct Index {
   build() {
     Row() {
       Column() {
-        // AtomicServiceNavigation({
-        //   navigationContent: () => {
-        //     this.navigationContent()
-        //   },
-        //   title: this.message,
-        //   titleOptions: {
-        //     backgroundColor: 'rgb(61, 157, 180)',
-        //     isBlurEnabled: false
-        //   },
-        //   navDestinationBuilder: this.pageMap,
-        //   navPathStack: this.childNavStack,
-        //   mode: NavigationMode.Stack
-        // })
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
       }
       .width('100%')
     }
@@ -118,7 +119,7 @@ export struct PageOne {
     NavDestination() {
       Button('Next')
         .onClick((e:ClickEvent) => {
-          // this.pageInfo.pushPath({ name: 'page two'})
+          
           this.pageInfo.pushPath(new NavPathInfo( 'page two', ''));
         })
     }

@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,14 +14,14 @@
  * limitations under the License.
  */
 
+import getUIObserver from './UIContext/getUIObserver.test';
+import getDragController from './UIContext/getDragController.test';
 import atomicServiceBarTest from "./UIContext/autoservice/atomicServiceBar.test";
-import getDragController from './UIContext/getDragController.test'
-import getUIObserver from './UIContext/getUIObserver.test'
-import mediaQueryOffJsunit from './mediaqueryTest/mediaQuery.test'
+import mediaQueryOffJsunit from './mediaqueryTest/mediaQuery.test';
 
 export default function testsuite() {
-  // getDragController(); //  uiContext.getDragController().getDragPreview()
-  // atomicServiceBarTest();  // getAtomicServiceBar
-  // getUIObserver(); // getUIObserver.on 导致白屏
-  mediaQueryOffJsunit(); // mediaquery.MediaQueryListener  导致页面白屏
+  getUIObserver()
+  getDragController()
+  mediaQueryOffJsunit()
+  atomicServiceBarTest()
 }

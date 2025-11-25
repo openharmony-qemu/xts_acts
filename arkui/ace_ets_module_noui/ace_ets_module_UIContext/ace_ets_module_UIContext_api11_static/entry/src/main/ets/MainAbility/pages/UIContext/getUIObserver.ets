@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,17 +16,17 @@
 import observer from '@ohos.arkui.observer';
 import { UIContext } from '@ohos.arkui.UIContext';
 import {
-  Entry, Component, Flex, FlexDirection,Padding, TextAlign, NavigationTitleMode, NavigationMode,
-  Column, ColumnOptions, Row, Builder, TouchEvent,Color, WrappedBuilder, NodeContainer, ResourceStr,NavDestination,
-  Text, Button, FontWeight, ClickEvent, Margin, WidthBreakpoint, HeightBreakpoint, CustomBuilderT, Navigation,NavDestinationActiveReason
+  Entry, Component, Flex, FlexDirection,Padding, TextAlign, NavigationTitleMode,  NavigationMode,
+  Column, ColumnOptions, Row, Builder, TouchEvent,Color, WrappedBuilder, NodeContainer, ResourceStr,
+  Text, Button, FontWeight, ClickEvent, Margin, WidthBreakpoint, HeightBreakpoint, CustomBuilderT, Navigation,
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component
 struct NavRouterExample {
-  aboutToAppear(){  //导致白屏
-    let context:UIContext | undefined = this.getUIContext()
+  aboutToAppear(){
+    let context:UIContext | undefined = this.getUIContext?.()
     if(context!=undefined){
       let contextObserver = context.getUIObserver();
       contextObserver.onNavDestinationUpdate((e)=>{
@@ -39,59 +40,7 @@ struct NavRouterExample {
   build() {
     Column() {
       Navigation() {
-        NavDestination() {
-          Row() {
-            Row().width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 } as Margin).backgroundColor(Color.Pink)
-            Text(`WLAN`)
-              .fontSize(22)
-              .fontWeight(500)
-              .textAlign(TextAlign.Center)
-          }
-          .width('90%')
-          .height(72)
-          NavDestination() {
-            Flex({ direction: FlexDirection.Row }) {
-              Text('wifi').fontSize(30).padding({ left: 35 } as Padding)
-            }
-          }.hideTitleBar(false).backgroundColor('#0c182431')
-        }.backgroundColor(this.isActiveWLAN ? '#ccc' : '#fff')
-        .borderRadius(24)
-        // .onStateChange((isActivated: boolean) => {
-        //   this.isActiveWLAN = isActivated
-        // })
-        .onActive((reason: NavDestinationActiveReason) => {
-          this.isActiveWLAN = true
-        })
-        .onInactive((reason: NavDestinationActiveReason) => {
-          this.isActiveWLAN = false
-        })
-        NavDestination() {
-          Row() {
-            Row().width(30).height(30).borderRadius(30).margin({ left: 3, right: 10 } as Margin).backgroundColor(Color.Pink)
-            Text(`蓝牙`)
-              .fontSize(22)
-              .fontWeight(500)
-              .textAlign(TextAlign.Center)
-          }
-          .id('lanYa_id')
-          .width('90%')
-          .height(72)
-          NavDestination() {
-            Flex({ direction: FlexDirection.Row }) {
-              Text(this.showFlag.toString()).fontSize(30).padding({ left: 35 } as Padding).key('showFlag_id')
-            }
-          }.hideTitleBar(false).backgroundColor('#0c182431')
-        }.backgroundColor(this.isActiveBluetooth ? '#ccc' : '#fff')
-        .borderRadius(24)
-        // .onStateChange((isActivated: boolean) => {
-        //   this.isActiveBluetooth = isActivated
-        // })
-        .onActive((reason: NavDestinationActiveReason) => {
-          this.isActiveWLAN = true
-        })
-        .onInactive((reason: NavDestinationActiveReason) => {
-          this.isActiveWLAN = false
-        })
+
       }
       .title('设置')
       .titleMode(NavigationTitleMode.Free)

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,14 +34,10 @@ class Tmp{
   event:DragEvent|undefined = undefined
   extraParams:string = ''
 }
-// let storages = LocalStorage.getShared();
+let DragController1 = new DragController()
 
 
-let storage: LocalStorage = new LocalStorage()
-let _get_local_storage_ = ():LocalStorage => storage
-
-@Entry({ storage:'_get_local_storage_' })
-// @Entry
+@Entry
 @Component
 struct DragControllerPage {
   @State pixmap: image.PixelMap|null = null
@@ -62,9 +59,6 @@ struct DragControllerPage {
     .height(100)
     .backgroundColor(Color.Blue)
   }
-  @State DragController1:DragController = this.getUIContext().getDragController()
-
-
   build() {
     Column() {
       Text(this.flag.toString()).id('Do_id')
@@ -93,8 +87,7 @@ struct DragControllerPage {
       })
         .onDrop((event: DragEvent, extraParams?: string) => {
         })
-      Button('拖起')
-        .onTouch((event?:TouchEvent) => {
+      Button('拖起').onTouch((event?:TouchEvent) => {
         if(event){
           if (event.type == TouchType.Down) {
             let text = new UDC.Text()
@@ -106,7 +99,7 @@ struct DragControllerPage {
             }
 
             let eve:Tmp = new Tmp()
-            this.DragController1!.executeDrag(() => {
+            DragController1.executeDrag(() => {
               this.DraggingBuilder()
             }, dragInfo, (err , eve) => {
               hilog.info(0x0000, `ljx ${JSON.stringify(err)}`, '')
@@ -120,8 +113,7 @@ struct DragControllerPage {
             })
           }
         }
-      })
-        .margin({top:100} as Margin)
+      }).margin({top:100} as Margin)
     }
     .width('100%')
     .height('100%')

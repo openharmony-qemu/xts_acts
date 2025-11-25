@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,7 +20,7 @@ import {
   Entry, Component,
   Column, ColumnOptions, Row, RowOptions, Color, ButtonType,
   Text, Button, FontWeight, ClickEvent, Margin, Navigation, NavPathStack,
-  // NavPushPathHelper,
+  
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
@@ -27,7 +28,7 @@ import { State } from '@ohos.arkui.stateManagement';
 @Component
 struct NavigationExample {
   pageInfo: NavPathStack = new NavPathStack()
-  // helper: NavPushPathHelper = new NavPushPathHelper(this.pageInfo)
+  
 
   build() {
     Navigation(this.pageInfo) {
@@ -37,12 +38,12 @@ struct NavigationExample {
           .height(40)
           .margin(20)
           .onClick((e:ClickEvent) => {
-            // this.helper.pushPath('hsptest1', { name: 'pageOne' }, false)
-            //   .catch((error: BusinessError) => {
-            //     console.error(`[pushPath]failed, error code = ${error.code}, error.message = ${error.message}.`);
-            //   }).then(() => {
-            //   console.error('[pushPath]success.');
-            // }); // 将name指定的NavDestination页面信息入栈。
+            
+            
+            
+            
+            
+            
           })
       }
     }.title('NavIndex')
