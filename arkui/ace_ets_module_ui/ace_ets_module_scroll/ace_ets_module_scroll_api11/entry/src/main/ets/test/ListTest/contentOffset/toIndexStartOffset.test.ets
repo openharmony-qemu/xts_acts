@@ -46,12 +46,12 @@ export default function toIndexStartOffset() {
     });
 
     /**
-     * @tc.number    toIndexStartOffset_001
-     * @tc.name      toIndexStartOffset_0100
-     * @tc.desc      The alignment method of scrollToIndex is AUTO.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   toIndexStartOffset_0100
+     * @tc.number toIndexStartOffset_001
+     * @tc.desc   The alignment method of scrollToIndex is AUTO.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('toIndexStartOffset_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[toIndexStartOffset_0100] START');

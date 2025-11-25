@@ -37,12 +37,12 @@ export default function timePickerDialogBackgroundEffectTest() {
     });
 
     /**
-     * @tc.number    timePickerDialogBackgroundEffectTest_0100
-     * @tc.name      timePickerDialogBackgroundEffectTest_0100
-     * @tc.desc      createTimePickerDialogModeToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   timePickerDialogBackgroundEffectTest_0100
+     * @tc.number timePickerDialogBackgroundEffectTest_0100
+     * @tc.desc   createTimePickerDialogModeToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('timePickerDialogBackgroundEffectTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'timePickerDialogBackgroundEffectTest_0100';
@@ -85,12 +85,12 @@ export default function timePickerDialogBackgroundEffectTest() {
     });
 
     /**
-     * @tc.number    timePickerDialogBackgroundEffectTest_0200
-     * @tc.name      timePickerDialogBackgroundEffectTest_0200
-     * @tc.desc      createTimePickerDialogModeToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   timePickerDialogBackgroundEffectTest_0200
+     * @tc.number timePickerDialogBackgroundEffectTest_0200
+     * @tc.desc   createTimePickerDialogModeToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('timePickerDialogBackgroundEffectTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'timePickerDialogDialogBackgroundEffectTest_0200';
@@ -120,12 +120,12 @@ export default function timePickerDialogBackgroundEffectTest() {
     });
 
     /**
-     * @tc.number    timePickerDialogBackgroundEffectTest_0300
-     * @tc.name      timePickerDialogBackgroundEffectTest_0300
-     * @tc.desc      createTimePickerDialogModeToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   timePickerDialogBackgroundEffectTest_0300
+     * @tc.number timePickerDialogBackgroundEffectTest_0300
+     * @tc.desc   createTimePickerDialogModeToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('timePickerDialogBackgroundEffectTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'timePickerDialogBackgroundEffectTest_0300';

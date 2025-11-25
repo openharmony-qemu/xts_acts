@@ -42,12 +42,12 @@ export default function tabsCallBack6() {
     });
 
     /**
-     * @tc.number    tabsCallBack6_001
-     * @tc.name      tabsCallBack6_0100
-     * @tc.desc      Dragging with fingers triggers onGestureSwipe callback.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   tabsCallBack6_0100
+     * @tc.number tabsCallBack6_001
+     * @tc.desc   Dragging with fingers triggers onGestureSwipe callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('tabsCallBack6_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[tabsCallBack6_0100] START');

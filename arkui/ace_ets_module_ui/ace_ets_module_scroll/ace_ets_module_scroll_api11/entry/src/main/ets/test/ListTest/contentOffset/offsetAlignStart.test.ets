@@ -46,12 +46,12 @@ export default function offsetAlignStart() {
     });
 
     /**
-     * @tc.number    offsetAlignStart_001
-     * @tc.name      offsetAlignStart_0100
-     * @tc.desc      Limit scrolling, ScrollSnapAlign.START Testing.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   offsetAlignStart_0100
+     * @tc.number offsetAlignStart_001
+     * @tc.desc   Limit scrolling, ScrollSnapAlign.START Testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('offsetAlignStart_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[offsetAlignStart_0100] START');

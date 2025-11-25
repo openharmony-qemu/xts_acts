@@ -59,9 +59,12 @@ const struct HksTestGenRandomParams g_testGenRandomParams[] = {
     { 0, HKS_SUCCESS, { true, HKS_MAX_RANDOM_LEN, true, HKS_MAX_RANDOM_LEN } },
 };
 /**
- * @tc.name: HksGenerateRandomTest.HksGenerateRandomTest001
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @tc.name   HksGenerateRandomTest001
+ * @tc.number HksGenerateRandomTest001
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HksGenerateRandomTest, HksGenerateRandomTest001, TestSize.Level1)
 {

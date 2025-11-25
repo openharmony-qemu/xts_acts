@@ -83,12 +83,12 @@ export default function withThemeTest() {
       }
     });
     /**
-     * @tc.number    ：ActsWithThemeColors_0100
-     * @tc.name      ：ActsWithThemeColors_0100
-     * @tc.desc      : Check initial theme values using WithTheme
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsWithThemeColors_0100
+     * @tc.number ：ActsWithThemeColors_0100
+     * @tc.desc   Check initial theme values using WithTheme
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ActsWithThemeColors_0100', Level.LEVEL2, () => {
       const CASE: string = 'ActsWithThemeColors_0100';
@@ -113,13 +113,13 @@ export default function withThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-    * @tc.number    ：ActsWithThemeColors_0200
-    * @tc.name      ：ActsWithThemeColors_0200
-    * @tc.desc      : Check initial theme values using WithTheme into the nested CustomComponent
-    * @tc.level     : Level 2
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+     * @tc.name   ActsWithThemeColors_0200
+     * @tc.number ：ActsWithThemeColors_0200
+     * @tc.desc   Check initial theme values using WithTheme into the nested CustomComponent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ActsWithThemeColors_0200', Level.LEVEL2, () => {
       const CASE: string = 'ActsWithThemeColors_0200';
       console.info(`${SUITE} ${CASE} START`);
@@ -144,12 +144,12 @@ export default function withThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.number    ：ActsWithThemeColors_0300
-     * @tc.name      ：ActsWithThemeColors_0300
-     * @tc.desc      : Check initial theme values in WithTheme
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsWithThemeColors_0300
+     * @tc.number ：ActsWithThemeColors_0300
+     * @tc.desc   Check initial theme values in WithTheme
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ActsWithThemeColors_0300', Level.LEVEL2, async () => {
       const CASE: string = 'ActsWithThemeColors_0300';
@@ -176,12 +176,12 @@ export default function withThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.number    ：ActsWithThemeColors_0400
-     * @tc.name      ：ActsWithThemeColors_0400
-     * @tc.desc      : Check changed theme values using WithTheme into the nested CustomComponent
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsWithThemeColors_0400
+     * @tc.number ：ActsWithThemeColors_0400
+     * @tc.desc   Check changed theme values using WithTheme into the nested CustomComponent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ActsWithThemeColors_0400', Level.LEVEL2, () => {
       const CASE: string = 'ActsWithThemeColors_0400';
@@ -206,13 +206,13 @@ export default function withThemeTest() {
       changeTheme = true;
       console.info(`${SUITE} ${CASE} END`);
     });
-     /**
-     * @tc.number    ：ActsWithThemeColors_0500
-     * @tc.name      ：ActsWithThemeColors_0500
-     * @tc.desc      : Check tokens for WithTheme({ colorMode: ThemeColorMode.SYSTEM }) interface
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+    /**
+     * @tc.name   ActsWithThemeColors_0500
+     * @tc.number ：ActsWithThemeColors_0500
+     * @tc.desc   Check tokens for WithTheme({ colorMode: ThemeColorMode.SYSTEM }) interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ActsWithThemeColors_0500', Level.LEVEL2, () => {
       let CASE: string = 'ActsWithThemeColors_0500';
@@ -236,13 +236,13 @@ export default function withThemeTest() {
       }));
       console.info(`${SUITE} ${CASE} END`);
     });
-     /**
-     * @tc.number    ：ActsWithThemeColors_0600
-     * @tc.name      ：ActsWithThemeColors_0600
-     * @tc.desc      : Check tokens for WithTheme({ colorMode: ThemeColorMode.LIGHT }) interface
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+    /**
+     * @tc.name   ActsWithThemeColors_0600
+     * @tc.number ：ActsWithThemeColors_0600
+     * @tc.desc   Check tokens for WithTheme({ colorMode: ThemeColorMode.LIGHT }) interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ActsWithThemeColors_0600', Level.LEVEL2, () => {
       let CASE: string = 'ActsWithThemeColors_0600';
@@ -267,12 +267,12 @@ export default function withThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.number    ：ActsWithThemeColors_0700
-     * @tc.name      ：ActsWithThemeColors_0700
-     * @tc.desc      : Check tokens for WithTheme({ colorMode: ThemeColorMode.DARK }) interface
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsWithThemeColors_0700
+     * @tc.number ：ActsWithThemeColors_0700
+     * @tc.desc   Check tokens for WithTheme({ colorMode: ThemeColorMode.DARK }) interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ActsWithThemeColors_0700', Level.LEVEL2, () => {
       let CASE: string = 'ActsWithThemeColors_0700';
@@ -297,13 +297,12 @@ export default function withThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.number    ：ActsWithThemeColors_0800
-     * @tc.name      ：ActsWithThemeColors_0800
-     * @tc.desc      : Check tokens for WithTheme({ colorMode: ThemeColorMode.SYSTEM }) interface
-     *                 with ThemeControl.setDefaultTheme(undefined) interface
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsWithThemeColors_0800
+     * @tc.number ：ActsWithThemeColors_0800
+     * @tc.desc   Check tokens for WithTheme({ colorMode: ThemeColorMode.SYSTEM }) interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ActsWithThemeColors_0800', Level.LEVEL2, () => {
       let CASE: string = 'ActsWithThemeColors_0800'
@@ -330,13 +329,12 @@ export default function withThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.number    ：ActsWithThemeColors_0900
-     * @tc.name      ：ActsWithThemeColors_0900
-     * @tc.desc      : Check tokens for WithTheme({ colorMode: ThemeColorMode.LIGHT }) interface
-     *                 with ThemeControl.setDefaultTheme(undefined) interface
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsWithThemeColors_0900
+     * @tc.number ：ActsWithThemeColors_0900
+     * @tc.desc   Check tokens for WithTheme({ colorMode: ThemeColorMode.LIGHT }) interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ActsWithThemeColors_0900', Level.LEVEL2, () => {
       let CASE: string = 'ActsWithThemeColors_0900';
@@ -363,13 +361,12 @@ export default function withThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.number    ：ActsWithThemeColors_1000
-     * @tc.name      ：ActsWithThemeColors_1000
-     * @tc.desc      : check tokens for WithTheme({ colorMode: ThemeColorMode.DARK }) interface
-     *                 with ThemeControl.setDefaultTheme(undefined) interface
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsWithThemeColors_1000
+     * @tc.number ：ActsWithThemeColors_1000
+     * @tc.desc   check tokens for WithTheme({ colorMode: ThemeColorMode.DARK }) interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ActsWithThemeColors_1000', Level.LEVEL2, () => {
       let CASE: string = 'ActsWithThemeColors_1000';
@@ -395,13 +392,13 @@ export default function withThemeTest() {
       }));
       console.info(`${SUITE} ${CASE} END`);
     });
-     /**
-     * @tc.number    ：ActsWithThemeColors_1100
-     * @tc.name      ：ActsWithThemeColors_1100
-     * @tc.desc      : Check color values for WithTheme({ colorMode: ThemeColorMode.LIGHT }) interface
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+    /**
+     * @tc.name   ActsWithThemeColors_1100
+     * @tc.number ：ActsWithThemeColors_1100
+     * @tc.desc   Check color values for WithTheme({ colorMode: ThemeColorMode.LIGHT }) interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ActsWithThemeColors_1100', Level.LEVEL2, () => {
       const CASE: string = 'ActsWithThemeColors_1100';
@@ -417,13 +414,13 @@ export default function withThemeTest() {
       })
       console.info(`${SUITE} ${CASE} END`);
     });
-     /**
-     * @tc.number    ：ActsWithThemeColors_1200
-     * @tc.name      ：ActsWithThemeColors_1200
-     * @tc.desc      : Check color values for WithTheme({ colorMode: ThemeColorMode.DARK }) interface
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+    /**
+     * @tc.name   ActsWithThemeColors_1200
+     * @tc.number ：ActsWithThemeColors_1200
+     * @tc.desc   Check color values for WithTheme({ colorMode: ThemeColorMode.DARK }) interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ActsWithThemeColors_1200', Level.LEVEL0, async () => {
       const CASE: string = 'ActsWithThemeColors_1200';

@@ -260,7 +260,7 @@ export default function InputDeviceTest() {
         hilog.info(domain, tag, `${caseName} enter`);
         let isPhysicalKeyboardExist = 0;
         try {
-          inputDevice.on("change", (data): void => {
+          inputDevice.onChange((data): void => {
             hilog.info(domain, tag, `InputDevice type: ${data.type}, deviceId: ${data.deviceId}`);
             isPhysicalKeyboardExist++;
             ExpectTrue(isPhysicalKeyboardExist == 1);
@@ -290,14 +290,14 @@ export default function InputDeviceTest() {
         };
         let ifInputDeviceOffSuccess = 0;
         try {
-          inputDevice.on("change", (data: inputDevice.DeviceListener) => {
+          inputDevice.onChange((data: inputDevice.DeviceListener) => {
             console.info(`${caseName} Device event info: ${JSON.stringify(data)}`);
           });
         } catch (error) {
           console.info(`${caseName} Get device info failed, error: ${JSON.stringify(error, [`code`, `message`])}`);
         }
         try {
-          inputDevice.off("change", callback);
+          inputDevice.offChange(callback);
           console.info(`${caseName} Cancel listening device event success, ifInputDeviceOffSuccess: ${JSON.stringify(ifInputDeviceOffSuccess)}`);
           ifInputDeviceOffSuccess++;
           ExpectTrue(ifInputDeviceOffSuccess == 1);
@@ -327,7 +327,7 @@ export default function InputDeviceTest() {
           console.info(`${caseName} Report device event info: ${JSON.stringify(data, [`type`, `deviceId`])}`);
         };
         try {
-          inputDevice.off("change");
+          inputDevice.offChange();
           ifInputDeviceOffSuccess++;
           ExpectTrue(ifInputDeviceOffSuccess == 1);
           done();

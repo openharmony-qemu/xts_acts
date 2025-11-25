@@ -43,13 +43,13 @@ export default function badgeTest() {
     });
 
     /**
-    * @tc.number: badgeResourceTest_001
-    * @tc.name  : badgeResourceTest_001
-    * @tc.desc  : FrameNode Badge Input Normal FontSize: $r('app.string.fontSize_10'),return value: 10.00vp
-    * @tc.level : Level 1
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   badgeResourceTest_001
+     * @tc.number badgeResourceTest_001
+     * @tc.desc   FrameNode Badge Input Normal FontSize: $r('app.string.fontSize_10'),return value: 10.00vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('badgeResourceTest_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('badgeResourceTest_001 START');
       let strJson = getInspectorByKey('key_ badge_001');
@@ -62,13 +62,13 @@ export default function badgeTest() {
     });
 
     /**
-    * @tc.number: badgeResourceTest_002
-    * @tc.name  : badgeResourceTest_002
-    * @tc.desc  : FrameNode Badge Input Normal FontWeight: $r('app.string.fontWeight_normal'),return value: FontWeight.Normal
-    * @tc.level : Level 1
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   badgeResourceTest_002
+     * @tc.number badgeResourceTest_002
+     * @tc.desc   FrameNode Badge Input Normal FontWeight: $r('app.string.fontWeight_normal'),return value: FontWeight.Normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('badgeResourceTest_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('badgeResourceTest_002 START');
       let strJson = getInspectorByKey('key_ badge_002');
@@ -81,13 +81,13 @@ export default function badgeTest() {
     });
 
     /**
-    * @tc.number: badgeResourceTest_003
-    * @tc.name  : badgeResourceTest_003
-    * @tc.desc  : FrameNode Badge Input Normal value: $r('app.string.text_string'),return value: text
-    * @tc.level : Level 1
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   badgeResourceTest_003
+     * @tc.number badgeResourceTest_003
+     * @tc.desc   FrameNode Badge Input Normal value: $r('app.string.text_string'),return value: text
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('badgeResourceTest_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('badgeResourceTest_003 START');
       let strJson = getInspectorByKey('key_ badge_003');
@@ -99,13 +99,13 @@ export default function badgeTest() {
     });
     
     /**
-    * @tc.number: badgeResourceTest_004
-    * @tc.name  : badgeResourceTest_004
-    * @tc.desc  : FrameNode Badge Input Normal badgeSize: $r('app.string.size_30'),return value: 30.00px
-    * @tc.level : Level 1
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   badgeResourceTest_004
+     * @tc.number badgeResourceTest_004
+     * @tc.desc   FrameNode Badge Input Normal badgeSize: $r('app.string.size_30'),return value: 30.00px
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('badgeResourceTest_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('badgeResourceTest_004 START');
       let strJson = getInspectorByKey('key_ badge_004');
@@ -118,13 +118,13 @@ export default function badgeTest() {
     });
 
     /**
-    * @tc.number: badgeResourceTest_005
-    * @tc.name  : badgeResourceTest_005
-    * @tc.desc  : FrameNode Badge Input Abnormal fontSize: $r('app.media.icon'),return value: 10.00vp
-    * @tc.level : Level 1
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   badgeResourceTest_005
+     * @tc.number badgeResourceTest_005
+     * @tc.desc   FrameNode Badge Input Abnormal fontSize: $r('app.media.icon'),return value: 10.00vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('badgeResourceTest_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('badgeResourceTest_005 START');
       let strJson = getInspectorByKey('key_ badge_005');
@@ -137,13 +137,13 @@ export default function badgeTest() {
     });
 
     /**
-    * @tc.number: badgeResourceTest_006
-    * @tc.name  : badgeResourceTest_006
-    * @tc.desc  : FrameNode Badge Input Abnormal fontWeight: $r('app.media.icon'),return value: FontWeight.Normal
-    * @tc.level : Level 1
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   badgeResourceTest_006
+     * @tc.number badgeResourceTest_006
+     * @tc.desc   FrameNode Badge Input Abnormal fontWeight: $r('app.media.icon'),return value: FontWeight.Normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('badgeResourceTest_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('badgeResourceTest_006 START');
       let strJson = getInspectorByKey('key_ badge_006');
@@ -156,13 +156,13 @@ export default function badgeTest() {
     });
 
     /**
-    * @tc.number: badgeResourceTest_007
-    * @tc.name  : badgeResourceTest_007
-    * @tc.desc  : FrameNode Badge Input Abnormal value: $r('app.media.icon'),return value: ''
-    * @tc.level : Level 1
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   badgeResourceTest_007
+     * @tc.number badgeResourceTest_007
+     * @tc.desc   FrameNode Badge Input Abnormal value: $r('app.media.icon'),return value: ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('badgeResourceTest_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('badgeResourceTest_007 START');
       let strJson = getInspectorByKey('key_ badge_007');
@@ -174,13 +174,13 @@ export default function badgeTest() {
     });
     
     /**
-    * @tc.number: badgeResourceTest_008
-    * @tc.name  : badgeResourceTest_008
-    * @tc.desc  : FrameNode Badge Input Abnormal badgeSize: $r('app.media.icon'),return value: 16.00vp
-    * @tc.level : Level 1
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   badgeResourceTest_008
+     * @tc.number badgeResourceTest_008
+     * @tc.desc   FrameNode Badge Input Abnormal badgeSize: $r('app.media.icon'),return value: 16.00vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('badgeResourceTest_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('badgeResourceTest_008 START');
       let strJson = getInspectorByKey('key_ badge_008');
@@ -195,13 +195,13 @@ export default function badgeTest() {
     
 
     /**
-    * @tc.number: badgeResourceTest_011
-    * @tc.name  : badgeResourceTest_011
-    * @tc.desc  : Badge Input Normal FontSize: $r('app.string.fontSize_10'),return value: 10.00vp
-    * @tc.level : Level 1
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   badgeResourceTest_011
+     * @tc.number badgeResourceTest_011
+     * @tc.desc   Badge Input Normal FontSize: $r('app.string.fontSize_10'),return value: 10.00vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('badgeResourceTest_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('badgeResourceTest_011 START');
       let strJson = getInspectorByKey('key_ badge_011');
@@ -214,13 +214,13 @@ export default function badgeTest() {
     });
 
     /**
-    * @tc.number: badgeResourceTest_012
-    * @tc.name  : badgeResourceTest_012
-    * @tc.desc  : Badge Input Normal FontWeight: $r('app.string.fontWeight_normal'),return value: FontWeight.Normal
-    * @tc.level : Level 1
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   badgeResourceTest_012
+     * @tc.number badgeResourceTest_012
+     * @tc.desc   Badge Input Normal FontWeight: $r('app.string.fontWeight_normal'),return value: FontWeight.Normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('badgeResourceTest_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('badgeResourceTest_012 START');
       let strJson = getInspectorByKey('key_ badge_012');
@@ -233,13 +233,13 @@ export default function badgeTest() {
     });
 
     /**
-    * @tc.number: badgeResourceTest_013
-    * @tc.name  : badgeResourceTest_013
-    * @tc.desc  : Badge Input Normal value: $r('app.string.text_string'),return value: text
-    * @tc.level : Level 1
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   badgeResourceTest_013
+     * @tc.number badgeResourceTest_013
+     * @tc.desc   Badge Input Normal value: $r('app.string.text_string'),return value: text
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('badgeResourceTest_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('badgeResourceTest_013 START');
       let strJson = getInspectorByKey('key_ badge_013');
@@ -251,13 +251,13 @@ export default function badgeTest() {
     });
     
     /**
-    * @tc.number: badgeResourceTest_014
-    * @tc.name  : badgeResourceTest_014
-    * @tc.desc  : Badge Input Normal badgeSize: $r('app.string.size_30'),return value: 30.00px
-    * @tc.level : Level 1
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   badgeResourceTest_014
+     * @tc.number badgeResourceTest_014
+     * @tc.desc   Badge Input Normal badgeSize: $r('app.string.size_30'),return value: 30.00px
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('badgeResourceTest_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('badgeResourceTest_014 START');
       let strJson = getInspectorByKey('key_ badge_014');
@@ -270,13 +270,13 @@ export default function badgeTest() {
     });
 
     /**
-    * @tc.number: badgeResourceTest_015
-    * @tc.name  : badgeResourceTest_015
-    * @tc.desc  : Badge Input Abnormal fontSize: $r('app.media.icon'),return value: 10.00vp
-    * @tc.level : Level 1
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   badgeResourceTest_015
+     * @tc.number badgeResourceTest_015
+     * @tc.desc   Badge Input Abnormal fontSize: $r('app.media.icon'),return value: 10.00vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('badgeResourceTest_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('badgeResourceTest_015 START');
       let strJson = getInspectorByKey('key_ badge_015');
@@ -289,13 +289,13 @@ export default function badgeTest() {
     });
 
     /**
-    * @tc.number: badgeResourceTest_016
-    * @tc.name  : badgeResourceTest_016
-    * @tc.desc  : Badge Input Abnormal fontWeight: $r('app.media.icon'),return value: FontWeight.Normal
-    * @tc.level : Level 1
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   badgeResourceTest_016
+     * @tc.number badgeResourceTest_016
+     * @tc.desc   Badge Input Abnormal fontWeight: $r('app.media.icon'),return value: FontWeight.Normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('badgeResourceTest_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('badgeResourceTest_016 START');
       let strJson = getInspectorByKey('key_ badge_016');
@@ -308,13 +308,13 @@ export default function badgeTest() {
     });
 
     /**
-    * @tc.number: badgeResourceTest_017
-    * @tc.name  : badgeResourceTest_017
-    * @tc.desc  : Badge Input Abnormal value: $r('app.media.icon'),return value: ''
-    * @tc.level : Level 1
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   badgeResourceTest_017
+     * @tc.number badgeResourceTest_017
+     * @tc.desc   Badge Input Abnormal value: $r('app.media.icon'),return value: ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('badgeResourceTest_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('badgeResourceTest_017 START');
       let strJson = getInspectorByKey('key_ badge_017');
@@ -326,13 +326,13 @@ export default function badgeTest() {
     });
     
     /**
-    * @tc.number: badgeResourceTest_018
-    * @tc.name  : badgeResourceTest_018
-    * @tc.desc  : Badge Input Abnormal badgeSize: $r('app.media.icon'),return value: 16.00vp
-    * @tc.level : Level 1
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   badgeResourceTest_018
+     * @tc.number badgeResourceTest_018
+     * @tc.desc   Badge Input Abnormal badgeSize: $r('app.media.icon'),return value: 16.00vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('badgeResourceTest_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('badgeResourceTest_018 START');
       let strJson = getInspectorByKey('key_ badge_018');

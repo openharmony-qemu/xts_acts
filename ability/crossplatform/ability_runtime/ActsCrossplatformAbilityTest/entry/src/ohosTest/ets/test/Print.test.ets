@@ -22,12 +22,12 @@ let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegat
 export default function PrintTest() {
   describe("PrintTest", () => {
     /**
+     * @tc.name   ACTS_PRINT_CALLBACK_0001
      * @tc.number ACTS_PRINT_CALLBACK_0001
-     * @tc.name actsPrintCallback0001
-     * @tc.desc Test the api "abilityDelegator.print", return the result with callback function.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api "abilityDelegator.print", return the result with callback function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_PRINT_CALLBACK_0001", Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_PRINT_CALLBACK_0001 :start");
@@ -41,13 +41,12 @@ export default function PrintTest() {
     });
 
     /**
+     * @tc.name   ACTS_PRINT_CALLBACK_0003
      * @tc.number ACTS_PRINT_CALLBACK_0003
-     * @tc.name actsPrintCallback0003
-     * @tc.desc Test the api "abilityDelegator.print", return the result with callback function.
-     *               The print information includes escape character.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api "abilityDelegator.print", return the result with callback function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_PRINT_CALLBACK_0003", Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_PRINT_CALLBACK_0003 :start");
@@ -60,13 +59,12 @@ export default function PrintTest() {
     });
 
     /**
+     * @tc.name   ACTS_PRINT_CALLBACK_0004
      * @tc.number ACTS_PRINT_CALLBACK_0004
-     * @tc.name actsPrintCallback0004
-     * @tc.desc Test the api "abilityDelegator.print", return the result with callback function.
-     *               The print information includes special characters, etc.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api "abilityDelegator.print", return the result with callback function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_PRINT_CALLBACK_0004", Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_PRINT_CALLBACK_0004 :start");
@@ -79,13 +77,12 @@ export default function PrintTest() {
     });
 
     /**
+     * @tc.name   ACTS_PRINT_CALLBACK_0005
      * @tc.number ACTS_PRINT_CALLBACK_0005
-     * @tc.name actsPrintCallback0005
-     * @tc.desc Test the api "abilityDelegator.print", return the result with callback function.
-     *               The print information includes Chinese etc.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api "abilityDelegator.print", return the result with callback function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_PRINT_CALLBACK_0005", Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_PRINT_CALLBACK_0005 :start");
@@ -98,13 +95,12 @@ export default function PrintTest() {
     });
 
     /**
+     * @tc.name   ACTS_PRINT_CALLBACK_0006
      * @tc.number ACTS_PRINT_CALLBACK_0006
-     * @tc.name actsPrintCallback0006
-     * @tc.desc Test the api "abilityDelegator.print", return the result with callback function.
-     *               the length of the printSync message is greater than 1000 characters.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api "abilityDelegator.print", return the result with callback function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_PRINT_CALLBACK_0006", Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_PRINT_CALLBACK_0006 :start");
@@ -131,12 +127,12 @@ export default function PrintTest() {
     });
 
     /**
+     * @tc.name   ACTS_PRINT_PROMISE_0001
      * @tc.number ACTS_PRINT_PROMISE_0001
-     * @tc.name actsPrintPromise0001
-     * @tc.desc Test the api "abilityDelegator.print", return the result with promise function.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api "abilityDelegator.print", return the result with promise function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_PRINT_PROMISE_0001", Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_PRINT_PROMISE_0001 :start");
@@ -157,13 +153,12 @@ export default function PrintTest() {
     });
 
     /**
+     * @tc.name   ACTS_PRINT_PROMISE_0003
      * @tc.number ACTS_PRINT_PROMISE_0003
-     * @tc.name actsPrintPromise0003
-     * @tc.desc Test the api "abilityDelegator.print", return the result with promise function.
-     *               The print information includes escape character.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api "abilityDelegator.print", return the result with promise function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_PRINT_PROMISE_0003", Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_PRINT_PROMISE_0003 :start");
@@ -184,13 +179,12 @@ export default function PrintTest() {
     });
 
     /**
+     * @tc.name   ACTS_PRINT_PROMISE_0004
      * @tc.number ACTS_PRINT_PROMISE_0004
-     * @tc.name actsPrintPromise0004
-     * @tc.desc Test the api "abilityDelegator.print", return the result with promise function.
-     *               The print information includes special characters, etc.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api "abilityDelegator.print", return the result with promise function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_PRINT_PROMISE_0004", Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_PRINT_PROMISE_0004 :start");
@@ -211,13 +205,12 @@ export default function PrintTest() {
     });
 
     /**
+     * @tc.name   ACTS_PRINT_PROMISE_0005
      * @tc.number ACTS_PRINT_PROMISE_0005
-     * @tc.name actsPrintPromise0005
-     * @tc.desc Test the api "abilityDelegator.print", return the result with promise function.
-     *               The print information includes Chinese etc.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api "abilityDelegator.print", return the result with promise function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_PRINT_PROMISE_0005", Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_PRINT_PROMISE_0005 :start");
@@ -238,13 +231,12 @@ export default function PrintTest() {
     });
 
     /**
+     * @tc.name   ACTS_PRINT_PROMISE_0006
      * @tc.number ACTS_PRINT_PROMISE_0006
-     * @tc.name actsPrintPromise0006
-     * @tc.desc Test the api "abilityDelegator.print", return the result with promise function.
-     *               the length of the printSync message is greater than 1000 characters.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api "abilityDelegator.print", return the result with promise function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_PRINT_PROMISE_0006", Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_PRINT_PROMISE_0006 :start");
@@ -275,12 +267,12 @@ export default function PrintTest() {
     });
 
     /**
+     * @tc.name   ACTS_PRINT_SYNC_0001
      * @tc.number ACTS_PRINT_SYNC_0001
-     * @tc.name actsPrintSync0001
-     * @tc.desc Test the api "abilityDelegator.printSync", return the result.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api "abilityDelegator.printSync", return the result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_PRINT_SYNC_0001", Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_PRINT_SYNC_0001 :start");
@@ -293,13 +285,12 @@ export default function PrintTest() {
     });
 
     /**
+     * @tc.name   ACTS_PRINT_SYNC_0003
      * @tc.number ACTS_PRINT_SYNC_0003
-     * @tc.name actsPrintSync0003
-     * @tc.desc Test the api "abilityDelegator.print", return the result.
-     *               The printSync information includes escape character.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api "abilityDelegator.print", return the result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_PRINT_SYNC_0003", Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_PRINT_SYNC_0003 :start");
@@ -310,13 +301,12 @@ export default function PrintTest() {
     });
 
     /**
+     * @tc.name   ACTS_PRINT_SYNC_0004
      * @tc.number ACTS_PRINT_SYNC_0004
-     * @tc.name actsPrintSync0004
-     * @tc.desc Test the api "abilityDelegator.print", return the result.
-     *               The printSync information includes special characters, etc.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api "abilityDelegator.print", return the result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_PRINT_SYNC_0004", Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_PRINT_SYNC_0004 :start");
@@ -327,13 +317,12 @@ export default function PrintTest() {
     });
 
     /**
+     * @tc.name   ACTS_PRINT_SYNC_0005
      * @tc.number ACTS_PRINT_SYNC_0005
-     * @tc.name actsPrintSync0005
-     * @tc.desc Test the api "abilityDelegator.print", return the result.
-     *               The printSync information includes Chinese etc.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api "abilityDelegator.print", return the result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_PRINT_SYNC_0005", Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_PRINT_SYNC_0005 :start");
@@ -344,13 +333,12 @@ export default function PrintTest() {
     });
 
     /**
+     * @tc.name   ACTS_PRINT_SYNC_0006
      * @tc.number ACTS_PRINT_SYNC_0006
-     * @tc.name actsPrintSync0006
-     * @tc.desc Test the api "abilityDelegator.print", return the result.
-     *               the length of the printSync message is greater than 1000 characters.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api "abilityDelegator.print", return the result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_PRINT_SYNC_0006", Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_PRINT_SYNC_0006 :start");

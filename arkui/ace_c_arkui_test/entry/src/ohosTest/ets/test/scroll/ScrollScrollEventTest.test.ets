@@ -31,14 +31,14 @@ export default function scrollScrollEventTest() {
 
   describe('ScrollScrollEventTest', () => {
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_SCROLL_SCROLL_EVENT_0100
-    * @tc.name       : testScrollScrollEvent001
-    * @tc.desc       : testing OnWillScroll
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScrollScrollEvent001
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_SCROLL_EVENT_0100
+     * @tc.desc   testing OnWillScroll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollScrollEvent001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ScrollScrollEventOnWillScrollTest';
       await Utils.pushPage(`scroll/${PAGE_TAG}`);
@@ -48,14 +48,14 @@ export default function scrollScrollEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_SCROLL_SCROLL_EVENT_0200
-    * @tc.name       : testScrollScrollEvent002
-    * @tc.desc       : testing OnDidScroll
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScrollScrollEvent002
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_SCROLL_EVENT_0200
+     * @tc.desc   testing OnDidScroll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollScrollEvent002', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ScrollScrollEventOnDidScrollTest';
       await Utils.pushPage(`scroll/${PAGE_TAG}`);
@@ -65,14 +65,14 @@ export default function scrollScrollEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_SCROLL_SCROLL_EVENT_0300
-    * @tc.name       : testScrollScrollEvent003
-    * @tc.desc       : testing OnReachStart
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScrollScrollEvent003
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_SCROLL_EVENT_0300
+     * @tc.desc   testing OnReachStart
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollScrollEvent003', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ScrollScrollEventOnReachStartTest';
       await Utils.pushPage(`scroll/${PAGE_TAG}`);
@@ -81,14 +81,14 @@ export default function scrollScrollEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_SCROLL_SCROLL_EVENT_0400
-    * @tc.name       : testScrollScrollEvent004
-    * @tc.desc       : testing OnReachEnd
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScrollScrollEvent004
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_SCROLL_EVENT_0400
+     * @tc.desc   testing OnReachEnd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollScrollEvent004', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ScrollScrollEventOnReachEndTest';
       await Utils.pushPage(`scroll/${PAGE_TAG}`);
@@ -98,14 +98,14 @@ export default function scrollScrollEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_SCROLL_SCROLL_EVENT_0500
-    * @tc.name       : testScrollScrollEvent005
-    * @tc.desc       : testing ScrollBy
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScrollScrollEvent005
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_SCROLL_EVENT_0500
+     * @tc.desc   testing ScrollBy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollScrollEvent005', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ScrollScrollEventScrollBy001Test';
       await Utils.pushPage(`scroll/${PAGE_TAG}`);
@@ -113,14 +113,14 @@ export default function scrollScrollEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_SCROLL_SCROLL_EVENT_0600
-    * @tc.name       : testScrollScrollEvent006
-    * @tc.desc       : testing ScrollBy
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScrollScrollEvent006
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_SCROLL_EVENT_0600
+     * @tc.desc   testing ScrollBy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollScrollEvent006', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ScrollScrollEventScrollBy002Test';
       await Utils.pushPage(`scroll/${PAGE_TAG}`);
@@ -128,14 +128,14 @@ export default function scrollScrollEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_SCROLL_SCROLL_EVENT_0700
-    * @tc.name       : testScrollScrollEvent007
-    * @tc.desc       : testing ScrollBy
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScrollScrollEvent007
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_SCROLL_EVENT_0700
+     * @tc.desc   testing ScrollBy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollScrollEvent007', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ScrollScrollEventScrollBy003Test';
       await Utils.pushPage(`scroll/${PAGE_TAG}`);
@@ -143,14 +143,14 @@ export default function scrollScrollEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_SCROLL_SCROLL_EVENT_0800
-    * @tc.name       : testScrollScrollEvent008
-    * @tc.desc       : testing ScrollBy
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScrollScrollEvent008
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_SCROLL_EVENT_0800
+     * @tc.desc   testing ScrollBy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollScrollEvent008', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ScrollScrollEventScrollBy004Test';
       await Utils.pushPage(`scroll/${PAGE_TAG}`);
@@ -158,14 +158,14 @@ export default function scrollScrollEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_SCROLL_SCROLL_EVENT_0900
-    * @tc.name       : testScrollScrollEvent009
-    * @tc.desc       : testing ScrollBy
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScrollScrollEvent009
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_SCROLL_EVENT_0900
+     * @tc.desc   testing ScrollBy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollScrollEvent009', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ScrollScrollEventScrollBy005Test';
       await Utils.pushPage(`scroll/${PAGE_TAG}`);
@@ -173,14 +173,14 @@ export default function scrollScrollEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_SCROLL_SCROLL_EVENT_1000
-    * @tc.name       : testScrollScrollEvent010
-    * @tc.desc       : testing ScrollBy
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScrollScrollEvent010
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_SCROLL_EVENT_1000
+     * @tc.desc   testing ScrollBy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollScrollEvent010', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ScrollScrollEventScrollBy006Test';
       await Utils.pushPage(`scroll/${PAGE_TAG}`);
@@ -188,14 +188,14 @@ export default function scrollScrollEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_SCROLL_SCROLL_EVENT_1100
-    * @tc.name       : testScrollScrollEvent011
-    * @tc.desc       : testing OnWillDidScroll
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScrollScrollEvent011
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_SCROLL_EVENT_1100
+     * @tc.desc   testing OnWillDidScroll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollScrollEvent011', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ScrollScrollEventOnWillDidScrollTest';
       await Utils.pushPage(`scroll/${PAGE_TAG}`);

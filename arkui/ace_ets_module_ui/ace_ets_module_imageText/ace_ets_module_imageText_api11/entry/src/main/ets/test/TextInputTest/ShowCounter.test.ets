@@ -42,12 +42,12 @@ export default function showCounterTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_showCounterTest_0010
-     * @tc.name      showCounterTest_0010
-     * @tc.desc      test textInput showCounter value: true
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showCounterTest_0010
+     * @tc.number SUB_ACE_showCounterTest_0010
+     * @tc.desc   test textInput showCounter value: true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('showCounterTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('[showCounterTest_0010] START');
@@ -62,12 +62,12 @@ export default function showCounterTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_showCounterTest_0020
-     * @tc.name      showCounterTest_0020
-     * @tc.desc      test textInput showCounter value: false
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showCounterTest_0020
+     * @tc.number SUB_ACE_showCounterTest_0020
+     * @tc.desc   test textInput showCounter value: false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('showCounterTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('[showCounterTest_0020] START');
@@ -82,12 +82,12 @@ export default function showCounterTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_showCounterTest_0030
-     * @tc.name      showCounterTest_0030
-     * @tc.desc      test textInput showCounter value: undefined
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showCounterTest_0030
+     * @tc.number SUB_ACE_showCounterTest_0030
+     * @tc.desc   test textInput showCounter value: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('showCounterTest_0030', Level.LEVEL0, async (done: Function) => {
       console.info('[showCounterTest_0030] START');
@@ -102,12 +102,12 @@ export default function showCounterTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_showCounterTest_0040
-     * @tc.name      showCounterTest_0040
-     * @tc.desc      test textInput showCounter value: default
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showCounterTest_0040
+     * @tc.number SUB_ACE_showCounterTest_0040
+     * @tc.desc   test textInput showCounter value: default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('showCounterTest_0040', Level.LEVEL0, async (done: Function) => {
       console.info('[showCounterTest_0040] START');
@@ -122,12 +122,12 @@ export default function showCounterTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_showCounterTest_0050
-     * @tc.name      showCounterTest_0050
-     * @tc.desc      test textInput showCounter highlightBorder: false
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showCounterTest_0050
+     * @tc.number SUB_ACE_showCounterTest_0050
+     * @tc.desc   test textInput showCounter highlightBorder: false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('showCounterTest_0050', Level.LEVEL0, async (done: Function) => {
       console.info('[showCounterTest_0050] START');
@@ -142,12 +142,12 @@ export default function showCounterTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_showCounterTest_0060
-     * @tc.name      showCounterTest_0060
-     * @tc.desc      test textInput showCounter highlightBorder: undefined
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showCounterTest_0060
+     * @tc.number SUB_ACE_showCounterTest_0060
+     * @tc.desc   test textInput showCounter highlightBorder: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('showCounterTest_0060', Level.LEVEL0, async (done: Function) => {
       console.info('[showCounterTest_0060] START');

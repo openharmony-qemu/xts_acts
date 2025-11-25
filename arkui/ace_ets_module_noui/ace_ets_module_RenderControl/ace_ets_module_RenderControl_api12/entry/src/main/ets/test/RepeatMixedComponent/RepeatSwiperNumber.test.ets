@@ -59,12 +59,12 @@ export default function RepeatSwiperNumber() {
     });
 
     /**
+     * @tc.name   RepeatSwiperNumber_001
      * @tc.number RepeatSwiperNumber_001
-     * @tc.name RepeatSwiperNumber_001
-     * @tc.desc Test RepeatSwiperNumber component
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Test RepeatSwiperNumber component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RepeatSwiperNumber_001', Level.LEVEL0, async (done: Function) => {
       console.info('[RepeatSwiperNumber_001] START');

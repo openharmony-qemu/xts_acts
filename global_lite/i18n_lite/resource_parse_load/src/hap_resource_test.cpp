@@ -62,11 +62,13 @@ void HapResourceTest::TearDown()
     // step 4: input testcase teardown step
 }
 
-/*
- * this test shows how to load a hap, defaultConfig set to null
- * @tc.name: HapResourceFuncTest001
- * @tc.desc: Test Load & GetIdValues & GetIdValuesByName function, file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   HapResourceFuncTest001
+ * @tc.number HapResourceFuncTest001
+ * @tc.desc   Test Load & GetIdValues & GetIdValuesByName function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HapResourceTest, HapResourceFuncTest001, TestSize.Level1)
 {
@@ -136,11 +138,13 @@ HWTEST_F(HapResourceTest, HapResourceFuncTest001, TestSize.Level1)
     delete (pResource);
 }
 
-/*
- * load a hap, set config en_US
- * @tc.name: HapResourceFuncTest002
- * @tc.desc: Test Load & GetIdValues & GetIdValuesByName function, file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   HapResourceFuncTest002
+ * @tc.number HapResourceFuncTest002
+ * @tc.desc   Test Load & GetIdValues & GetIdValuesByName function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HapResourceTest, HapResourceFuncTest002, TestSize.Level1)
 {
@@ -209,11 +213,13 @@ HWTEST_F(HapResourceTest, HapResourceFuncTest002, TestSize.Level1)
     delete rc;
 }
 
-/*
- * load a hap, get a value which is ref
- * @tc.name: HapResourceFuncTest003
- * @tc.desc: Test GetIdValuesByName function, file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   HapResourceFuncTest003
+ * @tc.number HapResourceFuncTest003
+ * @tc.desc   Test GetIdValuesByName function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HapResourceTest, HapResourceFuncTest003, TestSize.Level1)
 {
@@ -283,10 +289,13 @@ ResDesc *LoadFromHap(const char *hapPath, const ResConfigImpl *defaultConfig)
     return resDesc;
 }
 
-/*
- * @tc.name: HapResourceFuncTest004
- * @tc.desc: Test HapParser::ReadIndexFromFile function, file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   HapResourceFuncTest004
+ * @tc.number HapResourceFuncTest004
+ * @tc.desc   Test HapParser::ReadIndexFromFile function, file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HapResourceTest, HapResourceFuncTest004, TestSize.Level1)
 {

@@ -64,7 +64,7 @@
      改成
 
      ~~~
-       "modelVersion": "5.0.0",
+       "modelVersion": "6.0.0",
        "dependencies": {
        },
      ~~~

@@ -53,9 +53,12 @@ export default function AbilityStaticTest() {
     })
 
     /**
+     * @tc.name   ACTS_CommonComponent_Call_Static_0100
      * @tc.number ACTS_CommonComponent_Call_Static_0100
-     * @tc.name ACTS_CommonComponent_Call_Static_0100
-     * @tc.desc test release
+     * @tc.desc   test release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_CommonComponent_Call_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const itName = 'ACTS_CommonComponent_Call_Static_0100';
@@ -73,9 +76,12 @@ export default function AbilityStaticTest() {
     })
 
     /**
+     * @tc.name   ACTS_CommonComponent_Call_Static_0200
      * @tc.number ACTS_CommonComponent_Call_Static_0200
-     * @tc.name ACTS_CommonComponent_Call_Static_0200
-     * @tc.desc test call 16200001
+     * @tc.desc   test call 16200001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_CommonComponent_Call_Static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const itName = 'ACTS_CommonComponent_Call_Static_0200';
@@ -94,9 +100,12 @@ export default function AbilityStaticTest() {
     })
 
     /**
+     * @tc.name   ACTS_CommonComponent_Call_Static_0300
      * @tc.number ACTS_CommonComponent_Call_Static_0300
-     * @tc.name ACTS_CommonComponent_Call_Static_0300
-     * @tc.desc test callWithResult 16200001
+     * @tc.desc   test callWithResult 16200001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_CommonComponent_Call_Static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const itName = 'ACTS_CommonComponent_Call_Static_0300';
@@ -116,9 +125,12 @@ export default function AbilityStaticTest() {
 
 
     /**
+     * @tc.name   ACTS_CommonComponent_Call_Static_0400
      * @tc.number ACTS_CommonComponent_Call_Static_0400
-     * @tc.name ACTS_CommonComponent_Call_Static_0400
-     * @tc.desc test onRelease 16200001
+     * @tc.desc   test onRelease 16200001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_CommonComponent_Call_Static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const itName = 'ACTS_CommonComponent_Call_Static_0400';
@@ -137,9 +149,12 @@ export default function AbilityStaticTest() {
     })
 
     /**
+     * @tc.name   ACTS_CommonComponent_Call_Static_0500
      * @tc.number ACTS_CommonComponent_Call_Static_0500
-     * @tc.name ACTS_CommonComponent_Call_Static_0500
-     * @tc.desc test onRemoteStateChange 16200001
+     * @tc.desc   test onRemoteStateChange 16200001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_CommonComponent_Call_Static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const itName = 'ACTS_CommonComponent_Call_Static_0500';
@@ -158,9 +173,12 @@ export default function AbilityStaticTest() {
     })
 
     /**
+     * @tc.name   ACTS_CommonComponent_Call_Static_0600
      * @tc.number ACTS_CommonComponent_Call_Static_0600
-     * @tc.name ACTS_CommonComponent_Call_Static_0600
-     * @tc.desc test on release 16200001
+     * @tc.desc   test on release 16200001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_CommonComponent_Call_Static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const itName = 'ACTS_CommonComponent_Call_Static_0600';
@@ -179,9 +197,12 @@ export default function AbilityStaticTest() {
     })
 
     /**
+     * @tc.name   ACTS_CommonComponent_Call_Static_0700
      * @tc.number ACTS_CommonComponent_Call_Static_0700
-     * @tc.name ACTS_CommonComponent_Call_Static_0700
-     * @tc.desc test off release with callback
+     * @tc.desc   test off release with callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_CommonComponent_Call_Static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const itName = 'ACTS_CommonComponent_Call_Static_0700';
@@ -199,9 +220,12 @@ export default function AbilityStaticTest() {
     })
 
     /**
+     * @tc.name   ACTS_CommonComponent_Call_Static_0800
      * @tc.number ACTS_CommonComponent_Call_Static_0800
-     * @tc.name ACTS_CommonComponent_Call_Static_0800
-     * @tc.desc test off release
+     * @tc.desc   test off release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_CommonComponent_Call_Static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const itName = 'ACTS_CommonComponent_Call_Static_0800';

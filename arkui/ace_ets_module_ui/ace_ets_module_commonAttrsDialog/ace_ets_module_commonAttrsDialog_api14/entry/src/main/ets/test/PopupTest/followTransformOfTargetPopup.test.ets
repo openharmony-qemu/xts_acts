@@ -43,12 +43,12 @@ export default function followTransformOfTargetPopup() {
     });
 
     /**
-     * @tc.number    followTransformOfTargetPopup_0010
-     * @tc.name      followTransformOfTargetPopup_0010
-     * @tc.desc      popup: followTransformOfTargetPopup: false
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   followTransformOfTargetPopup_0010
+     * @tc.number followTransformOfTargetPopup_0010
+     * @tc.desc   popup: followTransformOfTargetPopup: false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('followTransformOfTargetPopup_0010', Level.LEVEL0, async (done: Function) => {
       console.info('followTransformOfTargetPopup_0010 START');
@@ -72,12 +72,12 @@ export default function followTransformOfTargetPopup() {
     });
 
     /**
-     * @tc.number    followTransformOfTargetPopup_0020
-     * @tc.name      followTransformOfTargetPopup_0020
-     * @tc.desc      popup: followTransformOfTargetPopup: true
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   followTransformOfTargetPopup_0020
+     * @tc.number followTransformOfTargetPopup_0020
+     * @tc.desc   popup: followTransformOfTargetPopup: true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('followTransformOfTargetPopup_0020', Level.LEVEL0, async (done: Function) => {
       console.info('followTransformOfTargetPopup_0020 START');

@@ -42,15 +42,15 @@ export default function calendarPickerDialogStartEndTest() {
       done();
     });
 
-    /**
-     * @tc.number: CalendarPickerDialog_StartEnd_001
-     * @tc.name  : CalendarPickerDialog_StartEnd_001
-     * @tc.desc  : Test the feedback of the enableHaptic interface of the CalendarPickerDialog component when a custom normal value is passed in
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
-    */
 
+    /**
+     * @tc.name   CalendarPickerDialog_StartEnd_001
+     * @tc.number CalendarPickerDialog_StartEnd_001
+     * @tc.desc   CalendarPickerDialog_StartEnd_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('CalendarPickerDialog_StartEnd_001', Level.LEVEL1, async (done: Function) => {
       let tagName = 'CalendarPickerDialog_StartEnd_001';
       console.info('[' + tagName + '] START============================');
@@ -74,13 +74,13 @@ export default function calendarPickerDialogStartEndTest() {
     });
 
     /**
-     * @tc.number: CalendarPickerDialog_StartEnd_002
-     * @tc.name  : CalendarPickerDialog_StartEnd_002
-     * @tc.desc  : To test the start > end
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
-    */
+     * @tc.name   CalendarPickerDialog_StartEnd_002
+     * @tc.number CalendarPickerDialog_StartEnd_002
+     * @tc.desc   To test the start > end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('CalendarPickerDialog_StartEnd_002', Level.LEVEL1, async (done: Function) => {
       let tagName = 'CalendarPickerDialog_StartEnd_002';
       console.info('[' + tagName + '] START============================');
@@ -103,13 +103,13 @@ export default function calendarPickerDialogStartEndTest() {
     });
 
     /**
-     * @tc.number: CalendarPickerDialog_StartEnd_003
-     * @tc.name  : CalendarPickerDialog_StartEnd_003
-     * @tc.desc  : To test the start and end is null
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
-    */
+     * @tc.name   CalendarPickerDialog_StartEnd_003
+     * @tc.number CalendarPickerDialog_StartEnd_003
+     * @tc.desc   To test the start and end is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('CalendarPickerDialog_StartEnd_003', Level.LEVEL1, async (done: Function) => {
       let tagName = 'CalendarPickerDialog_StartEnd_003';
       console.info('[' + tagName + '] START============================');
@@ -133,13 +133,13 @@ export default function calendarPickerDialogStartEndTest() {
     });
 
     /**
-     * @tc.number: CalendarPickerDialog_StartEnd_004
-     * @tc.name  : CalendarPickerDialog_StartEnd_004
-     * @tc.desc  : To test the start and end is undefined
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
-    */
+     * @tc.name   CalendarPickerDialog_StartEnd_004
+     * @tc.number CalendarPickerDialog_StartEnd_004
+     * @tc.desc   To test the start and end is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('CalendarPickerDialog_StartEnd_004', Level.LEVEL1, async (done: Function) => {
       let tagName = 'CalendarPickerDialog_StartEnd_004';
       console.info('[' + tagName + '] START============================');
@@ -163,13 +163,13 @@ export default function calendarPickerDialogStartEndTest() {
     });
 
     /**
-     * @tc.number: CalendarPickerDialog_StartEnd_005
-     * @tc.name  : CalendarPickerDialog_StartEnd_005
-     * @tc.desc  : To test the start = end
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
-    */
+     * @tc.name   CalendarPickerDialog_StartEnd_005
+     * @tc.number CalendarPickerDialog_StartEnd_005
+     * @tc.desc   To test the start = end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('CalendarPickerDialog_StartEnd_005', Level.LEVEL1, async (done: Function) => {
       let tagName = 'CalendarPickerDialog_StartEnd_005';
       console.info('[' + tagName + '] START============================');

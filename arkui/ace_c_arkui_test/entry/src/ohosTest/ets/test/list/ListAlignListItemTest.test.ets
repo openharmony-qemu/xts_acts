@@ -21,73 +21,73 @@ export default function listAlignListItemTest() {
 
   describe('ListAlignListItemTest', () => {
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ALIGN_LIST_ITEM_0001
-     * @tc.name       : testListAlignListItem001
-     * @tc.desc       : testing align list item for list with ARKUI_LIST_ITEM_ALIGNMENT_START value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListAlignListItem001
+     * @tc.number SUB_ARKUI_CAPI_LIST_ALIGN_LIST_ITEM_0001
+     * @tc.desc   testing align list item for list with ARKUI_LIST_ITEM_ALIGNMENT_START value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListAlignListItem001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListAlignListItem001()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ALIGN_LIST_ITEM_0002
-     * @tc.name       : testListAlignListItem002
-     * @tc.desc       : testing align list item for list with ARKUI_LIST_ITEM_ALIGNMENT_CENTER value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListAlignListItem002
+     * @tc.number SUB_ARKUI_CAPI_LIST_ALIGN_LIST_ITEM_0002
+     * @tc.desc   testing align list item for list with ARKUI_LIST_ITEM_ALIGNMENT_CENTER value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListAlignListItem002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListAlignListItem002()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ALIGN_LIST_ITEM_0003
-     * @tc.name       : testListAlignListItem003
-     * @tc.desc       : testing align list item for list with ARKUI_LIST_ITEM_ALIGNMENT_END value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListAlignListItem003
+     * @tc.number SUB_ARKUI_CAPI_LIST_ALIGN_LIST_ITEM_0003
+     * @tc.desc   testing align list item for list with ARKUI_LIST_ITEM_ALIGNMENT_END value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListAlignListItem003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListAlignListItem003()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ALIGN_LIST_ITEM_0004
-     * @tc.name       : testListAlignListItem004
-     * @tc.desc       : testing align list item for list with -1 value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListAlignListItem004
+     * @tc.number SUB_ARKUI_CAPI_LIST_ALIGN_LIST_ITEM_0004
+     * @tc.desc   testing align list item for list with -1 value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListAlignListItem004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListAlignListItem004()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ALIGN_LIST_ITEM_0005
-     * @tc.name       : testListAlignListItem005
-     * @tc.desc       : testing align list item for list with 3 value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListAlignListItem005
+     * @tc.number SUB_ARKUI_CAPI_LIST_ALIGN_LIST_ITEM_0005
+     * @tc.desc   testing align list item for list with 3 value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListAlignListItem005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListAlignListItem005()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ALIGN_LIST_ITEM_0006
-     * @tc.name       : testListAlignListItem006
-     * @tc.desc       : testing align list item for list with resetAttribute
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListAlignListItem006
+     * @tc.number SUB_ARKUI_CAPI_LIST_ALIGN_LIST_ITEM_0006
+     * @tc.desc   testing align list item for list with resetAttribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListAlignListItem006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListAlignListItem006()).assertEqual(0)

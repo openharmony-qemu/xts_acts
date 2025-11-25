@@ -23,13 +23,12 @@ const ABILITY_NAME = 'AbilityOne';
 export default function bundlenativegetmainelementnameTest() {
   describe('bundlenativegetmainelementnameTest', () => {
     /**
-     * @tc.number: SUB_BMS_OH_NativeBundle_GetMainElementName_0300
-     * @tc.name: SUB_BMS_OH_NativeBundle_GetMainElementName_0300
-     * @tc.desc: Configure the mainElement in module. json5 within the project, where a single module has an
-     *           entryModule, but has an Ability but not an EntryAbility scenario call interface
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+     * @tc.name   SUB_BMS_OH_NativeBundle_GetMainElementName_0300
+     * @tc.number SUB_BMS_OH_NativeBundle_GetMainElementName_0300
+     * @tc.desc   Configure the mainElement in module. json5 within the project, where a single module has an
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_BMS_OH_NativeBundle_GetMainElementName_0300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       expect(bundlendk.getMainElementName().bundleName).assertEqual(BUNDLE_NAME);

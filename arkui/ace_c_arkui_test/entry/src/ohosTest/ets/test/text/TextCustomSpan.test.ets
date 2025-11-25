@@ -25,117 +25,117 @@ export default function textCustomSpanTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_CUSTOM_SPAN_0100
-     * @tc.name       : textCustomSpanTest001
-     * @tc.desc       : testing customSpan for text
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   textCustomSpanTest001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_CUSTOM_SPAN_0100
+     * @tc.desc   testing customSpan for text
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textCustomSpanTest001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.textCustomSpanTest001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_CUSTOM_SPAN_0200
-     * @tc.name       : textCustomSpanTest002
-     * @tc.desc       : testing customSpan for text
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   textCustomSpanTest002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_CUSTOM_SPAN_0200
+     * @tc.desc   testing customSpan for text
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textCustomSpanTest002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.textCustomSpanTest002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_CUSTOM_SPAN_0300
-     * @tc.name       : textCustomSpanTest003
-     * @tc.desc       : testing customSpan for text
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   textCustomSpanTest003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_CUSTOM_SPAN_0300
+     * @tc.desc   testing customSpan for text
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textCustomSpanTest003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.textCustomSpanTest003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_CUSTOM_SPAN_0400
-     * @tc.name       : textCustomSpanTest004
-     * @tc.desc       : testing customSpan for text
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   textCustomSpanTest004
+     * @tc.number SUB_ARKUI_CAPI_TEXT_CUSTOM_SPAN_0400
+     * @tc.desc   testing customSpan for text
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textCustomSpanTest004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.textCustomSpanTest004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_CUSTOM_SPAN_0500
-     * @tc.name       : textCustomSpanTest005
-     * @tc.desc       : testing customSpan for text
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   textCustomSpanTest005
+     * @tc.number SUB_ARKUI_CAPI_TEXT_CUSTOM_SPAN_0500
+     * @tc.desc   testing customSpan for text
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textCustomSpanTest005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.textCustomSpanTest005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_CUSTOM_SPAN_0600
-     * @tc.name       : textCustomSpanTest006
-     * @tc.desc       : testing customSpan for text
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   textCustomSpanTest006
+     * @tc.number SUB_ARKUI_CAPI_TEXT_CUSTOM_SPAN_0600
+     * @tc.desc   testing customSpan for text
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textCustomSpanTest006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.textCustomSpanTest006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_CUSTOM_SPAN_0700
-     * @tc.name       : textCustomSpanTest007
-     * @tc.desc       : testing customSpan for text
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   textCustomSpanTest007
+     * @tc.number SUB_ARKUI_CAPI_TEXT_CUSTOM_SPAN_0700
+     * @tc.desc   testing customSpan for text
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textCustomSpanTest007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.textCustomSpanTest007()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_CUSTOM_SPAN_0800
-     * @tc.name       : textCustomSpanTest008
-     * @tc.desc       : testing customSpan for text
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   textCustomSpanTest008
+     * @tc.number SUB_ARKUI_CAPI_TEXT_CUSTOM_SPAN_0800
+     * @tc.desc   testing customSpan for text
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textCustomSpanTest008', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.textCustomSpanTest008()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_CUSTOM_SPAN_0900
-     * @tc.name       : textCustomSpanTest009
-     * @tc.desc       : testing customSpan for text
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   textCustomSpanTest009
+     * @tc.number SUB_ARKUI_CAPI_TEXT_CUSTOM_SPAN_0900
+     * @tc.desc   testing customSpan for text
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textCustomSpanTest009', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.textCustomSpanTest009()).assertEqual(0)

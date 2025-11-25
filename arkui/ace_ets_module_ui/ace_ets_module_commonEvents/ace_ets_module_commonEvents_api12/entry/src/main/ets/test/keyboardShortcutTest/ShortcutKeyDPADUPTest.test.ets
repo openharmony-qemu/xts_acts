@@ -44,11 +44,14 @@ export default function ShortcutKeyDPADUPTest() {
       await CommonFunc.sleep(2000);
     });
 
-    /*
-     *tc.number api
-     *tc.name   ShortcutKeyDPADUPTest_0100
-     *tc.desc   Custom keyboard shortcuts TAB
-    */
+    /**
+     * @tc.name   ShortcutKeyDPADUPTest_0100
+     * @tc.number api
+     * @tc.desc   Custom keyboard shortcuts TAB
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ShortcutKeyDPADUPTest_0100', Level.LEVEL0, async () => {
       let CASE = 'ShortcutKeyDPADUPTest_0100'
       console.info(`ShortcutKeyDPADUPTest_0100 START`);

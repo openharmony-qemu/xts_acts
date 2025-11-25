@@ -47,10 +47,12 @@ export default function BlockHierarchyTest() {
     });
 
     /**
-     * @tc.number    BlockHierarchyTest_0010
-     * @tc.name      BlockHierarchyTest_0010
-     * @tc.desc      HitTestMode: BLOCK_HIERARCHY
-     * @tc.level:    Level 0
+     * @tc.name   BlockHierarchyTest_0010
+     * @tc.number BlockHierarchyTest_0010
+     * @tc.desc   HitTestMode: BLOCK_HIERARCHY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BlockHierarchyTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('BlockHierarchyTest_0010 START');

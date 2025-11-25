@@ -48,9 +48,12 @@ export default function SideBarContainerTypeTest() {
     });
 
     /**
+     * @tc.name   SUB_ACE_SideBarContainerType_0100
      * @tc.number SUB_ACE_SideBarContainerType_0100
-     * @tc.name testSideBarContainerAttribute
-     * @tc.desc SideBarContainerType.Embed， width > minSideBarWidth + minContentWidth
+     * @tc.desc   SideBarContainerType.Embed， width > minSideBarWidth + minContentWidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_SideBarContainerType_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_SideBarContainerType_0100] START');
@@ -75,9 +78,12 @@ export default function SideBarContainerTypeTest() {
     });
 
     /**
+     * @tc.name   SUB_ACE_SideBarContainerType_0200
      * @tc.number SUB_ACE_SideBarContainerType_0200
-     * @tc.name testSideBarContainerAttribute
-     * @tc.desc SideBarContainerType.Embed， width < minSideBarWidth + minContentWidth
+     * @tc.desc   SideBarContainerType.Embed， width < minSideBarWidth + minContentWidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_SideBarContainerType_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_SideBarContainerType_0200] START');
@@ -104,9 +110,12 @@ export default function SideBarContainerTypeTest() {
     });
 
     /**
+     * @tc.name   SUB_ACE_SideBarContainerType_0300
      * @tc.number SUB_ACE_SideBarContainerType_0300
-     * @tc.name testSideBarContainerAttribute
-     * @tc.desc SideBarContainerType.Overlay， width > minSideBarWidth + minContentWidth
+     * @tc.desc   SideBarContainerType.Overlay， width > minSideBarWidth + minContentWidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_SideBarContainerType_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_SideBarContainerType_0300] START');
@@ -143,9 +152,12 @@ export default function SideBarContainerTypeTest() {
     });
 
     /**
+     * @tc.name   SUB_ACE_SideBarContainerType_0400
      * @tc.number SUB_ACE_SideBarContainerType_0400
-     * @tc.name testSideBarContainerAttribute
-     * @tc.desc SideBarContainerType.Overlay， width < minSideBarWidth + minContentWidth
+     * @tc.desc   SideBarContainerType.Overlay， width < minSideBarWidth + minContentWidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_SideBarContainerType_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_SideBarContainerType_0400] START');
@@ -185,9 +197,12 @@ export default function SideBarContainerTypeTest() {
     });
 
     /**
+     * @tc.name   SUB_ACE_SideBarContainerType_0500
      * @tc.number SUB_ACE_SideBarContainerType_0500
-     * @tc.name testSideBarContainerAttribute
-     * @tc.desc SideBarContainerType.Overlay， width < minSideBarWidth + minContentWidth ,minContentWidth set 100,minSideBarWidth set 400
+     * @tc.desc   SideBarContainerType.Overlay， width < minSideBarWidth + minContentWidth ,minContentWidth set 100,minSideBarWidth set 400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_SideBarContainerType_0500',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_SideBarContainerType_0500] START');
@@ -234,9 +249,12 @@ export default function SideBarContainerTypeTest() {
     });
 
     /**
+     * @tc.name   SUB_ACE_SideBarContainerType_0600
      * @tc.number SUB_ACE_SideBarContainerType_0600
-     * @tc.name testSideBarContainerAttribute
-     * @tc.desc SideBarContainerType.AUTO， width >= minSideBarWidth + minContentWidth ,minContentWidth set 300,minSideBarWidth set 200
+     * @tc.desc   SideBarContainerType.AUTO， width >= minSideBarWidth + minContentWidth ,minContentWidth set 300,minSideBarWidth set 200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_SideBarContainerType_0600',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_SideBarContainerType_0600] START');
@@ -274,9 +292,12 @@ export default function SideBarContainerTypeTest() {
     });
 
     /**
+     * @tc.name   SUB_ACE_SideBarContainerType_0700
      * @tc.number SUB_ACE_SideBarContainerType_0700
-     * @tc.name testSideBarContainerAttribute
-     * @tc.desc SideBarContainerType.AUTO， width < minSideBarWidth + minContentWidth ,minContentWidth set 300,minSideBarWidth set 200
+     * @tc.desc   SideBarContainerType.AUTO， width < minSideBarWidth + minContentWidth ,minContentWidth set 300,minSideBarWidth set 200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_SideBarContainerType_0700',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_SideBarContainerType_0700] START');
@@ -326,6 +347,14 @@ export default function SideBarContainerTypeTest() {
     //  * @tc.name      testSideBarContainerAttribute
     //  * @tc.desc      SSet the property minContentWidth value to 100fp
     //  */
+    /**
+     * @tc.name   SUB_ACE_SideBarContainerType_0800
+     * @tc.number SUB_ACE_SideBarContainerType_0800
+     * @tc.desc   SUB_ACE_SideBarContainerType_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     // it('SUB_ACE_SideBarContainerType_0800',  Level.LEVEL0, async  (done: Function)=> {
     //   console.info('[SUB_ACE_SideBarContainerType_0800] START');
     //   globalThis.value.message.notify({name:'SideBarContainerType', value:SideBarContainerType.AUTO})
@@ -361,6 +390,14 @@ export default function SideBarContainerTypeTest() {
     //  * @tc.name      testSideBarContainerAttribute
     //  * @tc.desc      SSet the property minContentWidth value to 100lpx
     //  */
+    /**
+     * @tc.name   SUB_ACE_SideBarContainerType_0900
+     * @tc.number SUB_ACE_SideBarContainerType_0900
+     * @tc.desc   SUB_ACE_SideBarContainerType_0900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     // it('SUB_ACE_SideBarContainerType_0900',  Level.LEVEL0, async  (done: Function)=> {
     //   console.info('[SUB_ACE_SideBarContainerType_0900] START');
     //   globalThis.value.message.notify({name:'SideBarContainerType', value:SideBarContainerType.AUTO})
@@ -392,9 +429,12 @@ export default function SideBarContainerTypeTest() {
     // });
 
     /**
+     * @tc.name   SUB_ACE_SideBarContainerType_1000
      * @tc.number SUB_ACE_SideBarContainerType_1000
-     * @tc.name testSideBarContainerAttribute
-     * @tc.desc SSet the property minContentWidth value to 100px
+     * @tc.desc   SSet the property minContentWidth value to 100px
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_SideBarContainerType_1000',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_SideBarContainerType_1000] START');
@@ -431,9 +471,12 @@ export default function SideBarContainerTypeTest() {
     });
 
     /**
+     * @tc.name   SUB_ACE_SideBarContainerType_1100
      * @tc.number SUB_ACE_SideBarContainerType_1100
-     * @tc.name testSideBarContainerAttribute
-     * @tc.desc SSet the property minContentWidth value to 100vp
+     * @tc.desc   SSet the property minContentWidth value to 100vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_SideBarContainerType_1100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_SideBarContainerType_1100] START');
@@ -470,9 +513,12 @@ export default function SideBarContainerTypeTest() {
 
 
     /**
+     * @tc.name   SUB_ACE_SideBarContainerType_1200
      * @tc.number SUB_ACE_SideBarContainerType_1200
-     * @tc.name testSideBarContainerAttribute
-     * @tc.desc SSet the property minContentWidth value to 0vp
+     * @tc.desc   SSet the property minContentWidth value to 0vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_SideBarContainerType_1200',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_SideBarContainerType_1200] START');
@@ -509,9 +555,12 @@ export default function SideBarContainerTypeTest() {
 
 
     /**
+     * @tc.name   SUB_ACE_SideBarContainerType_1300
      * @tc.number SUB_ACE_SideBarContainerType_1300
-     * @tc.name testSideBarContainerAttribute
-     * @tc.desc SSet the property minContentWidth value to 10%
+     * @tc.desc   SSet the property minContentWidth value to 10%
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_SideBarContainerType_1300',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_SideBarContainerType_1300] START');
@@ -552,6 +601,14 @@ export default function SideBarContainerTypeTest() {
     //  * @tc.name      testSideBarContainerAttribute
     //  * @tc.desc      SSet the property minContentWidth value to 120%
     //  */
+    /**
+     * @tc.name   SUB_ACE_SideBarContainerType_1400
+     * @tc.number SUB_ACE_SideBarContainerType_1400
+     * @tc.desc   SUB_ACE_SideBarContainerType_1400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     // it('SUB_ACE_SideBarContainerType_1400',  Level.LEVEL0, async  (done: Function)=> {
     //   console.info('[SUB_ACE_SideBarContainerType_1400] START');
     //   globalThis.value.message.notify({name:'SideBarContainerType', value:SideBarContainerType.AUTO})
@@ -577,9 +634,12 @@ export default function SideBarContainerTypeTest() {
     // });
 
     /**
+     * @tc.name   SUB_ACE_SideBarContainerType_1500
      * @tc.number SUB_ACE_SideBarContainerType_1500
-     * @tc.name testSideBarContainerAttribute
-     * @tc.desc SSet the property minContentWidth value to -10vp
+     * @tc.desc   SSet the property minContentWidth value to -10vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_SideBarContainerType_1500',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_SideBarContainerType_1500] START');

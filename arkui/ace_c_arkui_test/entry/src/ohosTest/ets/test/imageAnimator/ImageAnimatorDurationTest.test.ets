@@ -26,65 +26,65 @@ export default function imageAnimatorDurationTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_DURATION_0100
-     * @tc.name: testImageAnimatorDuration001
-     * @tc.desc: testing duration for imageAnimator with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageAnimatorDuration001
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_DURATION_0100
+     * @tc.desc   testing duration for imageAnimator with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageAnimatorDuration001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageAnimatorDuration001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_DURATION_0200
-     * @tc.name: testImageAnimatorDuration002
-     * @tc.desc: testing duration for imageAnimator with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageAnimatorDuration002
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_DURATION_0200
+     * @tc.desc   testing duration for imageAnimator with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageAnimatorDuration002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageAnimatorDuration002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_DURATION_0300
-     * @tc.name: testImageAnimatorDuration003
-     * @tc.desc: testing duration for imageAnimator with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageAnimatorDuration003
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_DURATION_0300
+     * @tc.desc   testing duration for imageAnimator with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageAnimatorDuration003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageAnimatorDuration003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_DURATION_0400
-     * @tc.name: testImageAnimatorDuration004
-     * @tc.desc: testing duration for imageAnimator with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageAnimatorDuration004
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_DURATION_0400
+     * @tc.desc   testing duration for imageAnimator with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageAnimatorDuration004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageAnimatorDuration004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_DURATION_0500
-     * @tc.name: testImageAnimatorDuration005
-     * @tc.desc: testing duration for imageAnimator with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageAnimatorDuration005
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_DURATION_0500
+     * @tc.desc   testing duration for imageAnimator with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageAnimatorDuration005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageAnimatorDuration005()).assertEqual(0)

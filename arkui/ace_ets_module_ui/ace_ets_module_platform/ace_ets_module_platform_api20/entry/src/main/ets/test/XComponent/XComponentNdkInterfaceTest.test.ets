@@ -48,10 +48,12 @@ export default function XComponentNdkInterfaceTest() {
     });
 
     /**
-     * @tc.number    XComponentNdkInterfaceTest_0100
-     * @tc.name      XComponentNdkInterfaceTest_0100
-     * @tc.desc      Test XComponentNdkInterface
-     * @tc.level     Level 1
+     * @tc.name   XComponentNdkInterfaceTest_0100
+     * @tc.number XComponentNdkInterfaceTest_0100
+     * @tc.desc   Test XComponentNdkInterface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('XComponentNdkInterfaceTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[XComponentNdkInterfaceTest_0100] START');
@@ -80,10 +82,12 @@ export default function XComponentNdkInterfaceTest() {
     });
 
     /**
-     * @tc.number    XComponentNdkInterfaceTest_0200
-     * @tc.name      XComponentNdkInterfaceTest_0200
-     * @tc.desc      Test XComponentNdkInterface
-     * @tc.level     Level 1
+     * @tc.name   XComponentNdkInterfaceTest_0200
+     * @tc.number XComponentNdkInterfaceTest_0200
+     * @tc.desc   Test XComponentNdkInterface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('XComponentNdkInterfaceTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[XComponentNdkInterfaceTest_0200] START');
@@ -105,10 +109,12 @@ export default function XComponentNdkInterfaceTest() {
     });
 
     /**
-     * @tc.number    XComponentNdkInterfaceTest_0300
-     * @tc.name      XComponentNdkInterfaceTest_0300
-     * @tc.desc      Test XComponentNdkInterface
-     * @tc.level     Level 1
+     * @tc.name   XComponentNdkInterfaceTest_0300
+     * @tc.number XComponentNdkInterfaceTest_0300
+     * @tc.desc   Test XComponentNdkInterface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('XComponentNdkInterfaceTest_0300', Level.LEVEL1, async (done: Function) => {
       console.info('[XComponentNdkInterfaceTest_0300] START');
@@ -130,10 +136,12 @@ export default function XComponentNdkInterfaceTest() {
     });
 
     /**
-     * @tc.number    XComponentNdkInterfaceTest_0400
-     * @tc.name      XComponentNdkInterfaceTest_0400
-     * @tc.desc      Test XComponentNdkInterface
-     * @tc.level     Level 1
+     * @tc.name   XComponentNdkInterfaceTest_0400
+     * @tc.number XComponentNdkInterfaceTest_0400
+     * @tc.desc   Test XComponentNdkInterface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('XComponentNdkInterfaceTest_0400', Level.LEVEL1, async (done: Function) => {
       console.info('[XComponentNdkInterfaceTest_0400] START');
@@ -155,10 +163,12 @@ export default function XComponentNdkInterfaceTest() {
     });
 
     /**
-     * @tc.number    XComponentNdkInterfaceTest_0500
-     * @tc.name      XComponentNdkInterfaceTest_0500
-     * @tc.desc      Test XComponentNdkInterface
-     * @tc.level     Level 1
+     * @tc.name   XComponentNdkInterfaceTest_0500
+     * @tc.number XComponentNdkInterfaceTest_0500
+     * @tc.desc   Test XComponentNdkInterface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('XComponentNdkInterfaceTest_0500', Level.LEVEL1, async (done: Function) => {
       console.info('[XComponentNdkInterfaceTest_0500] START');

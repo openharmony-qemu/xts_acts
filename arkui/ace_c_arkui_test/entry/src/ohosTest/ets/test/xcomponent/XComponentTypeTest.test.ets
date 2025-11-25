@@ -26,52 +26,52 @@ export default function xComponentTypeTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_XCOMPONENT_TYPE_0100
-     * @tc.name       : testXComponentType001
-     * @tc.desc       : testing type for XComponent with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testXComponentType001
+     * @tc.number SUB_ARKUI_CAPI_XCOMPONENT_TYPE_0100
+     * @tc.desc   testing type for XComponent with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXComponentType001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testXComponentType001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_XCOMPONENT_TYPE_0200
-     * @tc.name       : testXComponentType002
-     * @tc.desc       : testing type for XComponent with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testXComponentType002
+     * @tc.number SUB_ARKUI_CAPI_XCOMPONENT_TYPE_0200
+     * @tc.desc   testing type for XComponent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXComponentType002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testXComponentType002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_XCOMPONENT_TYPE_0300
-     * @tc.name       : testXComponentType003
-     * @tc.desc       : testing type for XComponent with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testXComponentType003
+     * @tc.number SUB_ARKUI_CAPI_XCOMPONENT_TYPE_0300
+     * @tc.desc   testing type for XComponent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXComponentType003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testXComponentType003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_XCOMPONENT_TYPE_0400
-     * @tc.name       : testXComponentType004
-     * @tc.desc       : testing type for XComponent with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testXComponentType004
+     * @tc.number SUB_ARKUI_CAPI_XCOMPONENT_TYPE_0400
+     * @tc.desc   testing type for XComponent with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXComponentType004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testXComponentType004()).assertEqual(0)

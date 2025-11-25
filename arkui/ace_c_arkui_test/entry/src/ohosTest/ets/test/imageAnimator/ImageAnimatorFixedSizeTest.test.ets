@@ -26,52 +26,52 @@ export default function imageAnimatorFixedSizeTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_FIXED_SIZE_0100
-     * @tc.name: testImageAnimatorFixedSize001
-     * @tc.desc: testing fixedSize for imageAnimator with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageAnimatorFixedSize001
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_FIXED_SIZE_0100
+     * @tc.desc   testing fixedSize for imageAnimator with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageAnimatorFixedSize001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageAnimatorFixedSize001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_FIXED_SIZE_0200
-     * @tc.name: testImageAnimatorFixedSize002
-     * @tc.desc: testing fixedSize for imageAnimator with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageAnimatorFixedSize002
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_FIXED_SIZE_0200
+     * @tc.desc   testing fixedSize for imageAnimator with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageAnimatorFixedSize002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageAnimatorFixedSize002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_FIXED_SIZE_0300
-     * @tc.name: testImageAnimatorFixedSize003
-     * @tc.desc: testing fixedSize for imageAnimator with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageAnimatorFixedSize003
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_FIXED_SIZE_0300
+     * @tc.desc   testing fixedSize for imageAnimator with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageAnimatorFixedSize003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageAnimatorFixedSize003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_FIXED_SIZE_0400
-     * @tc.name: testImageAnimatorFixedSize004
-     * @tc.desc: testing fixedSize for imageAnimator with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageAnimatorFixedSize004
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ANIMATOR_FIXED_SIZE_0400
+     * @tc.desc   testing fixedSize for imageAnimator with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageAnimatorFixedSize004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageAnimatorFixedSize004()).assertEqual(0)

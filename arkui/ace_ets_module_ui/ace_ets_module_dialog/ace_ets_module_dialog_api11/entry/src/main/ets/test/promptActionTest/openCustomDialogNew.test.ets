@@ -48,12 +48,12 @@ export default function openCustomDialogNew() {
     });
 
     /**
-     * @tc.number    SUB_ACE_openCustomDialogNew_0100
-     * @tc.name      openCustomDialogNew_0100
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   openCustomDialogNew_0100
+     * @tc.number SUB_ACE_openCustomDialogNew_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('openCustomDialogNew_0100', Level.LEVEL2, async (done: Function) => {
       console.info('openCustomDialogNew_0100 START');

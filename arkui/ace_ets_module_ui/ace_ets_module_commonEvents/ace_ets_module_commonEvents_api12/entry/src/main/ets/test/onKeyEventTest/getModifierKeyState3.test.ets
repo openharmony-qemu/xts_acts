@@ -59,12 +59,12 @@ export default function getModifierKeyState3Test() {
     });
 
     /**
-     * @tc.number    getModifierKeyState3Test_0030
-     * @tc.name      getModifierKeyState3Test_0030
-     * @tc.desc      DragEvent: getModifierKeyState true and false
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getModifierKeyState3Test_0030
+     * @tc.number getModifierKeyState3Test_0030
+     * @tc.desc   DragEvent: getModifierKeyState true and false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getModifierKeyState3Test_0030', Level.LEVEL0, async (done: Function) => {
       console.info('getModifierKeyState3Test_0030 START');

@@ -29,10 +29,13 @@ export default function getAbilityLabel() {
     describe('getAbilityLabel_test', function () {
 
 
-        /*
-         * @tc.number: Sub_Bms_Framework_Query_Label_4000
-         * @tc.name: Test getAbilityLabel : Gets the specified ability label
-         * @tc.desc: Check the return value of the interface
+        /**
+         * @tc.name   Sub_Bms_Framework_Query_Label_4000
+         * @tc.number Sub_Bms_Framework_Query_Label_4000
+         * @tc.desc   Check the return value of the interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Sub_Bms_Framework_Query_Label_4000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
             await Bundle.getAbilityLabel(BUNDLE_NAME, ABILITY_NAME).then((data) => {
@@ -47,10 +50,13 @@ export default function getAbilityLabel() {
             });
         });
 
-        /*
-         * @tc.number: Sub_Bms_Framework_Query_Label_4100
-         * @tc.name: getAbilityLabel : Gets the specified ability label
-         * @tc.desc: Check the return value of the interface
+        /**
+         * @tc.name   Sub_Bms_Framework_Query_Label_4100
+         * @tc.number Sub_Bms_Framework_Query_Label_4100
+         * @tc.desc   Check the return value of the interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Sub_Bms_Framework_Query_Label_4100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
             let timeOldStamp = await Utils.getNowTime();
@@ -71,10 +77,13 @@ export default function getAbilityLabel() {
             });
         });
 
-        /*
-         * @tc.number: Sub_Bms_Framework_Query_Label_4200
-         * @tc.name: getAbilityLabel : Gets the specified ability label
-         * @tc.desc: Check the return value of the interface
+        /**
+         * @tc.name   Sub_Bms_Framework_Query_Label_4200
+         * @tc.number Sub_Bms_Framework_Query_Label_4200
+         * @tc.desc   Check the return value of the interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Sub_Bms_Framework_Query_Label_4200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
             await Bundle.getAbilityLabel(BUNDLE_NAME, SERVICE_ABILITY_NAME).then((data) => {
@@ -89,10 +98,13 @@ export default function getAbilityLabel() {
             });
         });
 
-        /*
-         * @tc.number: Sub_Bms_Framework_Query_Label_4500
-         * @tc.name: getAbilityLabel : Gets the specified ability label
-         * @tc.desc: Check the return value of the interface
+        /**
+         * @tc.name   Sub_Bms_Framework_Query_Label_4500
+         * @tc.number Sub_Bms_Framework_Query_Label_4500
+         * @tc.desc   Check the return value of the interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Sub_Bms_Framework_Query_Label_4500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
             let timeOldStamp = await Utils.getNowTime();
@@ -122,10 +134,13 @@ export default function getAbilityLabel() {
             });
         });
 
-        /*
-         * @tc.number: Sub_Bms_Framework_Query_Label_4300
-         * @tc.name: getAbilityLabel : Gets the specified ability label
-         * @tc.desc: Check the return value of the interface
+        /**
+         * @tc.name   Sub_Bms_Framework_Query_Label_4300
+         * @tc.number Sub_Bms_Framework_Query_Label_4300
+         * @tc.desc   Check the return value of the interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Sub_Bms_Framework_Query_Label_4300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
             await Bundle.getAbilityLabel(undefined, OTHER_ABILITY_NAME).then((data) => {

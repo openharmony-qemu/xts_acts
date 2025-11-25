@@ -48,13 +48,13 @@ export default function startAbilityByCallTest(){
     })
 
 
-    /*
-     * @tc.number    : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_5500
-     * @tc.name      : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_5500
-     * @tc.desc      : Test CreateModuleContext function when context is null
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_5500
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_5500
+     * @tc.desc   Test CreateModuleContext function when context is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_5500', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_5500';
@@ -103,13 +103,13 @@ export default function startAbilityByCallTest(){
       })
     })
 
-    /*
-     * @tc.number    : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_0200
-     * @tc.name      : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_0200
-     * @tc.desc      : Test CreateModuleContext function when context is null
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_0200
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_0200
+     * @tc.desc   Test CreateModuleContext function when context is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_0200', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_0200';
@@ -220,13 +220,13 @@ export default function startAbilityByCallTest(){
       })
     })
 
-    /*
-     * @tc.number    : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_4700
-     * @tc.name      : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_4700
-     * @tc.desc      : Test CreateModuleContext function when context is null
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_4700
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_4700
+     * @tc.desc   Test CreateModuleContext function when context is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_4700', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_4700';
@@ -276,13 +276,13 @@ export default function startAbilityByCallTest(){
       })
     })
 
-    /*
-     * @tc.number    : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_1900
-     * @tc.name      : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_1900
-     * @tc.desc      : Test CreateModuleContext function when context is null
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_1900
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_1900
+     * @tc.desc   Test CreateModuleContext function when context is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_1900', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_1900';
@@ -389,13 +389,13 @@ export default function startAbilityByCallTest(){
       })
     })
 
-    /*
-     * @tc.number    : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_4900
-     * @tc.name      : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_4900
-     * @tc.desc      : Test CreateModuleContext function when context is null
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_4900
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_4900
+     * @tc.desc   Test CreateModuleContext function when context is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_4900', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_CommonComponent_Call_4900';

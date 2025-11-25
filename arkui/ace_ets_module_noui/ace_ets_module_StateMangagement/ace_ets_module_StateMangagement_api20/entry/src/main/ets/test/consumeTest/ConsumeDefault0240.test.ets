@@ -46,12 +46,12 @@ export default function ConsumeDefault0240() {
     });
 
     /**
-     * @tc.number    ConsumeDefault0240_001
-     * @tc.name      ConsumeDefault0240_001
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ConsumeDefault0240_001
+     * @tc.number ConsumeDefault0240_001
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ConsumeDefault0240_001', Level.LEVEL0, async (done: Function) => {
       console.info('[ConsumeDefault0240_001] START');
@@ -82,12 +82,12 @@ export default function ConsumeDefault0240() {
       done();
     });
     /**
-     * @tc.number    ConsumeDefault0240_002
-     * @tc.name      ConsumeDefault0240_002
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ConsumeDefault0240_002
+     * @tc.number ConsumeDefault0240_002
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ConsumeDefault0240_002', Level.LEVEL0, async (done: Function) => {
       console.info('[ConsumeDefault0240_002] START');
@@ -135,12 +135,12 @@ export default function ConsumeDefault0240() {
     });
 
     /**
-     * @tc.number    ConsumeDefault0240_003
-     * @tc.name      ConsumeDefault0240_003
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ConsumeDefault0240_003
+     * @tc.number ConsumeDefault0240_003
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ConsumeDefault0240_003', Level.LEVEL0, async (done: Function) => {
       console.info('[ConsumeDefault0240_003] START');

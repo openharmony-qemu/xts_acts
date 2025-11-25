@@ -48,14 +48,14 @@ export default function SwiperMargin_4() {
       console.info("SwiperMargin_4 after each called");
     });
 
-    /*
-      * @tc.number     : SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_PREMARIGN_0100
-      * @tc.name       : testSwiperPrevMargin_0100
-      * @tc.desc       : Increase the front margin of the swiper
-      * @tc.level      : Level 0
-      * @tc.type       : Function
-      * @tc.size       : MediumTest
-      */
+    /**
+     * @tc.name   testSwiperPrevMargin_0100
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_PREMARIGN_0100
+     * @tc.desc   Increase the front margin of the swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSwiperPrevMargin_0100', Level.LEVEL1, async (done: Function) => {
       console.info("[testSwiperPrevMargin_0100] START");
       const driver = await Driver.create();
@@ -81,14 +81,14 @@ export default function SwiperMargin_4() {
       console.info("[testChipDirection_0100] END");
       done();
     });
-    /*
-      * @tc.number     : SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_PREMARIGN_0200
-      * @tc.name       : testSwiperPrevMargin_0200
-      * @tc.desc       : Increase the front margin of the swiper
-      * @tc.level      : Level 0
-      * @tc.type       : Function
-      * @tc.size       : MediumTest
-      */
+    /**
+     * @tc.name   testSwiperPrevMargin_0200
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_PREMARIGN_0200
+     * @tc.desc   Increase the front margin of the swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSwiperPrevMargin_0200', Level.LEVEL1, async (done: Function) => {
       console.info("[testSwiperPrevMargin_0200] START");
       const driver = await Driver.create();
@@ -112,14 +112,14 @@ export default function SwiperMargin_4() {
       console.info("[testSwiperPrevMargin_0200] END");
       done();
     });
-    /*
-      * @tc.number     : SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_NEXTMARIGN_0100
-      * @tc.name       : testSwiperNextMargin_0100
-      * @tc.desc       : Increase the front margin of the swiper
-      * @tc.level      : Level 0
-      * @tc.type       : Function
-      * @tc.size       : MediumTest
-      */
+    /**
+     * @tc.name   testSwiperNextMargin_0100
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_NEXTMARIGN_0100
+     * @tc.desc   Increase the front margin of the swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSwiperNextMargin_0100', Level.LEVEL1, async (done: Function) => {
       console.info("[testSwiperNextMargin_0100] START");
       const driver = await Driver.create();
@@ -143,14 +143,14 @@ export default function SwiperMargin_4() {
       console.info("[testSwiperNextMargin_0100] END");
       done();
     });
-    /*
-      * @tc.number     : SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_NEXTMARIGN_0200
-      * @tc.name       : testSwiperNextMargin_0200
-      * @tc.desc       : Increase the front margin of the swiper
-      * @tc.level      : Level 0
-      * @tc.type       : Function
-      * @tc.size       : MediumTest
-      */
+    /**
+     * @tc.name   testSwiperNextMargin_0200
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_NEXTMARIGN_0200
+     * @tc.desc   Increase the front margin of the swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSwiperNextMargin_0200', Level.LEVEL1, async (done: Function) => {
       console.info("[testSwiperNextMargin_0200] START");
       const driver = await Driver.create();
@@ -176,13 +176,13 @@ export default function SwiperMargin_4() {
       console.info("[testSwiperNextMargin_0200] END");
       done();
     });
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_SHOWNEXT_0100
-     * @tc.name       : testSwiperShowNext_0100
-     * @tc.desc       : showNext of the swiper
-     * @tc.level      : Level 0
-     * @tc.type       : Function
-     * @tc.size       : MediumTest
+    /**
+     * @tc.name   testSwiperShowNext_0100
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_SHOWNEXT_0100
+     * @tc.desc   showNext of the swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperShowNext_0100', Level.LEVEL1, async (done: Function) => {
       console.info("[testSwiperShowNext_0100] START");
@@ -203,13 +203,13 @@ export default function SwiperMargin_4() {
       console.info("[testSwiperShowNext_0100] END");
       done();
     });
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_SHOWPREVIOUS_0100
-     * @tc.name       : testSwiperShowPrevious_0100
-     * @tc.desc       : showPrevious of the swiper
-     * @tc.level      : Level 0
-     * @tc.type       : Function
-     * @tc.size       : MediumTest
+    /**
+     * @tc.name   testSwiperShowPrevious_0100
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_SHOWPREVIOUS_0100
+     * @tc.desc   showPrevious of the swiper
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperShowPrevious_0100', Level.LEVEL1, async (done: Function) => {
       console.info("[testSwiperShowPrevious_0100] START");

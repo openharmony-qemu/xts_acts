@@ -45,6 +45,14 @@ export default function focusControlJsunit() {
       console.info("focus after each called");
     })
 
+    /**
+     * @tc.name   testFocusOnTouch01
+     * @tc.number testFocusOnTouch01
+     * @tc.desc   testFocusOnTouch01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testFocusOnTouch01', Level.LEVEL0, async () => {
       console.info('[testFocusOnTouch01] START');
       await Utils.sleep(1000);
@@ -67,6 +75,14 @@ export default function focusControlJsunit() {
       console.info('[testFocusOnTouch01] testSendTouchEvent END');
     });
 
+    /**
+     * @tc.name   testFocusOnTouch02
+     * @tc.number testFocusOnTouch02
+     * @tc.desc   testFocusOnTouch02
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testFocusOnTouch02', Level.LEVEL0, async () => {
       console.info('[testFocusOnTouch02] START');
       await Utils.sleep(1000);
@@ -89,6 +105,14 @@ export default function focusControlJsunit() {
       console.info('[testFocusOnTouch02] testSendTouchEvent END');
     });
 
+    /**
+     * @tc.name   testFocusOnTouch03
+     * @tc.number testFocusOnTouch03
+     * @tc.desc   testFocusOnTouch03
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testFocusOnTouch03', Level.LEVEL0, async () => {
       console.info('[testFocusOnTouch03] START');
       await Utils.sleep(1000);
@@ -111,6 +135,14 @@ export default function focusControlJsunit() {
       console.info('[testFocusOnTouch03] testSendTouchEvent END');
     });
 
+    /**
+     * @tc.name   testFocusOnTouch04
+     * @tc.number testFocusOnTouch04
+     * @tc.desc   testFocusOnTouch04
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testFocusOnTouch04', Level.LEVEL0, async () => {
       console.info('[testFocusOnTouch04] START');
       await Utils.sleep(1000);
@@ -133,6 +165,14 @@ export default function focusControlJsunit() {
       console.info('[testFocusOnTouch04] testSendTouchEvent END');
     });
 
+    /**
+     * @tc.name   testFocusOnTouch05
+     * @tc.number testFocusOnTouch05
+     * @tc.desc   testFocusOnTouch05
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testFocusOnTouch05', Level.LEVEL0, async () => {
       console.info('[testFocusOnTouch05] START');
       await Utils.sleep(1000);
@@ -155,6 +195,14 @@ export default function focusControlJsunit() {
       console.info('[testFocusOnTouch05] testSendTouchEvent END');
     });
 
+    /**
+     * @tc.name   testDefaultFocus06
+     * @tc.number testDefaultFocus06
+     * @tc.desc   testDefaultFocus06
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testDefaultFocus06', Level.LEVEL0, async () => {
       console.info('[testDefaultFocus06] START');
       await Utils.sleep(1000);

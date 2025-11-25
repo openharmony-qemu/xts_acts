@@ -46,13 +46,13 @@ export default function SpanOnHoverTest() {
       console.info("SpanOnHoverTest after each called");
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_SPAN_ON_HOVER_ETS_API_0001
-    * @tc.name         SpanOnHoverTest0001
-    * @tc.desc         test span OnHover callback
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   SpanOnHoverTest0001
+     * @tc.number SUB_ACE_BASIC_SPAN_ON_HOVER_ETS_API_0001
+     * @tc.desc   test span OnHover callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SpanOnHoverTest0001', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();

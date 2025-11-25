@@ -46,10 +46,12 @@ export default function back11() {
     });
 
     /**
-     * @tc.number    back11_0100
-     * @tc.name      back11_0100
-     * @tc.desc      Test back
-     * @tc.level     Level 2
+     * @tc.name   back11_0100
+     * @tc.number back11_0100
+     * @tc.desc   Test back
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('back11_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[back11_0100] START');

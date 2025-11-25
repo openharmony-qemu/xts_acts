@@ -26,26 +26,26 @@ export default function mouseEventTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_MOUSE_EVENT_0100
-     * @tc.name       : testMouseEvent001
-     * @tc.desc       : testing align for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testMouseEvent001
+     * @tc.number SUB_ARKUI_CAPI_MOUSE_EVENT_0100
+     * @tc.desc   testing align for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMouseEvent001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testMouseEvent001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_MOUSE_EVENT_0200
-     * @tc.name       : testMouseEvent002
-     * @tc.desc       : testing align for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testMouseEvent002
+     * @tc.number SUB_ARKUI_CAPI_MOUSE_EVENT_0200
+     * @tc.desc   testing align for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMouseEvent002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testMouseEvent002()).assertEqual(0)

@@ -59,12 +59,12 @@ export default function RepeatV1Boolean() {
     });
 
     /**
+     * @tc.name   RepeatV1Boolean_001
      * @tc.number RepeatV1Boolean_001
-     * @tc.name RepeatV1Boolean_001
-     * @tc.desc Test RepeatV1Boolean component
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Test RepeatV1Boolean component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RepeatV1Boolean_001', Level.LEVEL0, async (done: Function) => {
       console.info('[RepeatV1Boolean_001] START');

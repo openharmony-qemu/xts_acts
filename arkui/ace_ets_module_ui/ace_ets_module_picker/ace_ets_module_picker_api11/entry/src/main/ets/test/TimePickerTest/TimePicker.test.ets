@@ -41,12 +41,14 @@ export default function TimePickerTest() {
       done();
     });
 
-    /* *
-       * @tc.number: SUB_ACE_ArkUI_TimePicker_001
-       * @tc.name  : TimePicker_001
-       * @tc.desc  : font fontDir test
-       * @tc.level : Level 2
-       */
+    /**
+     * @tc.name   TimePicker_001
+     * @tc.number SUB_ACE_ArkUI_TimePicker_001
+     * @tc.desc   font fontDir test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TimePicker_001', Level.LEVEL1, async (done: Function) => {
 
       console.info('[TimePicker_001] START');

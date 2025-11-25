@@ -44,6 +44,14 @@ export default function rating3Jsunit() {
       console.info("rating after each called");
     });
 
+    /**
+     * @tc.name   testRating_100
+     * @tc.number testRating_100
+     * @tc.desc   testRating_100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRating_100', Level.LEVEL1, async (done: Function) => {
       console.info('testRating_100 START');
       await Utils.sleep(1000);
@@ -71,6 +79,14 @@ export default function rating3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testRating_200
+     * @tc.number testRating_200
+     * @tc.desc   testRating_200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRating_200', Level.LEVEL1, async (done: Function) => {
       console.info('[testRating_200] START');
       await Utils.sleep(1000);
@@ -82,6 +98,14 @@ export default function rating3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testRating_300
+     * @tc.number testRating_300
+     * @tc.desc   testRating_300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRating_300', Level.LEVEL1, async (done: Function) => {
       console.info('testRating_300 START');
       await Utils.sleep(1000);
@@ -110,6 +134,14 @@ export default function rating3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testRating_400
+     * @tc.number testRating_400
+     * @tc.desc   testRating_400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRating_400', Level.LEVEL1, async (done: Function) => {
       console.info('testRating_400 START');
       await Utils.sleep(1000);
@@ -137,6 +169,14 @@ export default function rating3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testRating_500
+     * @tc.number testRating_500
+     * @tc.desc   testRating_500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRating_500', Level.LEVEL1, async (done: Function) => {
       console.info('testRating_500 START');
       await Utils.sleep(1000);
@@ -164,6 +204,14 @@ export default function rating3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testRating_600
+     * @tc.number testRating_600
+     * @tc.desc   testRating_600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRating_600', Level.LEVEL1, async (done: Function) => {
       console.info('testRating_600 START');
       await Utils.sleep(1000);
@@ -191,6 +239,14 @@ export default function rating3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testRating_700
+     * @tc.number testRating_700
+     * @tc.desc   testRating_700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRating_700', Level.LEVEL1, async (done: Function) => {
       console.info('testRating_700 START');
       await Utils.sleep(1000);
@@ -218,6 +274,14 @@ export default function rating3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testRating_800
+     * @tc.number testRating_800
+     * @tc.desc   testRating_800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRating_800', Level.LEVEL1, async (done: Function) => {
       console.info('testRating_800 START');
       await Utils.sleep(1000);
@@ -245,6 +309,14 @@ export default function rating3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testRating_900
+     * @tc.number testRating_900
+     * @tc.desc   testRating_900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRating_900', Level.LEVEL1, async (done: Function) => {
       console.info('testRating_900 START');
       await Utils.sleep(1000);

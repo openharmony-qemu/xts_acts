@@ -399,7 +399,7 @@ export default function imagePixelMapErrorCodeTest() {
      * @tc.type :
      * @tc.size :
      */
-    it("ImagePixelMapErrorCode_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it("ImagePixelMapErrorCode_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let region: image.Region = { x: 0, y: 0, size: { height: 100, width: 100 } };
       try {
         image.createPixelMapFromSurfaceSync('11111111', region);
@@ -421,7 +421,7 @@ export default function imagePixelMapErrorCodeTest() {
      * @tc.type :
      * @tc.size :
      */
-    it("ImagePixelMapErrorCode_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it("ImagePixelMapErrorCode_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       try {
         image.createPixelMapFromSurfaceSync('11111111', null);
         console.info('www data Succeeded in creating createPixelMapFromSurfaceSync');
@@ -442,7 +442,7 @@ export default function imagePixelMapErrorCodeTest() {
      * @tc.type :
      * @tc.size :
      */
-    it("ImagePixelMapErrorCode_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it("ImagePixelMapErrorCode_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       try {
         image.createPixelMapFromSurfaceSync('11111111');
         console.info('www data Succeeded in creating createPixelMapFromSurfaceSync');
@@ -463,7 +463,7 @@ export default function imagePixelMapErrorCodeTest() {
      * @tc.type :
      * @tc.size :
      */
-    it("ImagePixelMapErrorCode_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it("ImagePixelMapErrorCode_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let img = getContext().resourceManager.getMediaContentSync($r('app.media.app_icon'));
       let imageSource = image.createImageSource(img.buffer.slice(0));
       let decodingOptions: image.DecodingOptions = {
@@ -496,7 +496,7 @@ export default function imagePixelMapErrorCodeTest() {
      * @tc.type :
      * @tc.size :
      */
-    it("ImagePixelMapErrorCode_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it("ImagePixelMapErrorCode_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       const color: ArrayBuffer = new ArrayBuffer(96);
       let opts: image.InitializationOptions = { 
         editable: true, pixelFormat: image.PixelMapFormat.NV12, size: { height: 4, width: 6 } 
@@ -523,7 +523,7 @@ export default function imagePixelMapErrorCodeTest() {
      * @tc.type :
      * @tc.size :
      */
-    it("ImagePixelMapErrorCode_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it("ImagePixelMapErrorCode_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       
       const color: ArrayBuffer = new ArrayBuffer(96);
       let bufferArr: Uint8Array = new Uint8Array(color);
@@ -568,7 +568,7 @@ export default function imagePixelMapErrorCodeTest() {
      * @tc.type :
      * @tc.size :
      */
-    it("ImagePixelMapErrorCode_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it("ImagePixelMapErrorCode_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       const color: ArrayBuffer = new ArrayBuffer(96);
       let opts: image.InitializationOptions = { 
         editable: true, pixelFormat: image.PixelMapFormat.RGB_565, size: { height: 4, width: 6 } 
@@ -598,7 +598,7 @@ export default function imagePixelMapErrorCodeTest() {
      * @tc.type :
      * @tc.size :
      */
-    it("ImagePixelMapErrorCode_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it("ImagePixelMapErrorCode_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       const color: ArrayBuffer = new ArrayBuffer(96);
       let opts: image.InitializationOptions = { 
         editable: true, pixelFormat: image.PixelMapFormat.ALPHA_8, size: { height: 4, width: 6 } 
@@ -627,7 +627,7 @@ export default function imagePixelMapErrorCodeTest() {
      * @tc.type :
      * @tc.size :
      */
-    it("ImagePixelMapErrorCode_2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it("ImagePixelMapErrorCode_2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       const color: ArrayBuffer = new ArrayBuffer(96);
       let opts: image.InitializationOptions = { 
         editable: true, pixelFormat: image.PixelMapFormat.ALPHA_8, size: { height: 4, width: 6 } 
@@ -654,7 +654,7 @@ export default function imagePixelMapErrorCodeTest() {
      * @tc.type :
      * @tc.size :
      */
-    it("ImagePixelMapErrorCode_2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it("ImagePixelMapErrorCode_2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       const color: ArrayBuffer = new ArrayBuffer(96);
       let opts: image.InitializationOptions = { 
         editable: true, pixelFormat: image.PixelMapFormat.ALPHA_8, size: { height: 4, width: 6 } 
@@ -683,7 +683,7 @@ export default function imagePixelMapErrorCodeTest() {
      * @tc.type :
      * @tc.size :
      */
-    it("ImagePixelMapErrorCode_2400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it("ImagePixelMapErrorCode_2400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       const color: ArrayBuffer = new ArrayBuffer(96);
       let opts: image.InitializationOptions = { 
         editable: true, pixelFormat: image.PixelMapFormat.ALPHA_8, size: { height: 4, width: 6 } 
@@ -710,7 +710,7 @@ export default function imagePixelMapErrorCodeTest() {
      * @tc.type :
      * @tc.size :
      */
-    it("ImagePixelMapErrorCode_2500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it("ImagePixelMapErrorCode_2500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       const color: ArrayBuffer = new ArrayBuffer(96);
       let opts: image.InitializationOptions = { 
         editable: true, pixelFormat: image.PixelMapFormat.ALPHA_8, size: { height: 4, width: 6 } 
@@ -748,7 +748,7 @@ export default function imagePixelMapErrorCodeTest() {
      * @tc.type :
      * @tc.size :
      */
-    it("ImagePixelMapErrorCode_2600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it("ImagePixelMapErrorCode_2600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       const color: ArrayBuffer = new ArrayBuffer(96);
       let opts: image.InitializationOptions = { 
         editable: true, pixelFormat: image.PixelMapFormat.ALPHA_8, size: { height: 4, width: 6 } 
@@ -778,7 +778,7 @@ export default function imagePixelMapErrorCodeTest() {
      * @tc.type :
      * @tc.size :
      */
-    it("ImagePixelMapErrorCode_2700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it("ImagePixelMapErrorCode_2700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       const color: ArrayBuffer = new ArrayBuffer(96);
       let opts: image.InitializationOptions = { 
         editable: true, pixelFormat: image.PixelMapFormat.ALPHA_8, size: { height: 4, width: 6 } 
@@ -806,7 +806,7 @@ export default function imagePixelMapErrorCodeTest() {
      * @tc.type :
      * @tc.size :
      */
-    it("ImagePixelMapErrorCode_2800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it("ImagePixelMapErrorCode_2800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       const color: ArrayBuffer = new ArrayBuffer(96);
       let opts: image.InitializationOptions = { 
         editable: true, pixelFormat: image.PixelMapFormat.ALPHA_8, size: { height: 4, width: 6 } 
@@ -835,7 +835,7 @@ export default function imagePixelMapErrorCodeTest() {
      * @tc.type :
      * @tc.size :
      */
-    it("ImagePixelMapErrorCode_2900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it("ImagePixelMapErrorCode_2900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       const color: ArrayBuffer = new ArrayBuffer(96);
       let opts: image.InitializationOptions = { 
         editable: true, pixelFormat: image.PixelMapFormat.ALPHA_8, size: { height: 4, width: 6 } 

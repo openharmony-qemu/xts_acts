@@ -63,13 +63,13 @@ export default function setDefaultThemeTest() {
       }
     });
     /**
-    * @tc.number    : ActsSetDefaultThemeColors_0100
-    * @tc.name      : ActsSetDefaultThemeColors_0100
-    * @tc.desc      : Check initial theme values use API setDefaultTheme
-    * @tc.level     : Level 2
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+     * @tc.name   ActsSetDefaultThemeColors_0100
+     * @tc.number ActsSetDefaultThemeColors_0100
+     * @tc.desc   Check initial theme values use API setDefaultTheme
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ActsSetDefaultThemeColors_0100', Level.LEVEL2, () => {
       const CASE: string = 'ActsSetDefaultThemeColors_0100';
       const checkKeys: string[] = Object.keys(redThemeColors);
@@ -92,12 +92,12 @@ export default function setDefaultThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-     * @tc.number    : ActsSetDefaultThemeColors_0200
-     * @tc.name      : ActsSetDefaultThemeColors_0200
-     * @tc.desc      : Check changed theme values using API setDefaultTheme
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsSetDefaultThemeColors_0200
+     * @tc.number ActsSetDefaultThemeColors_0200
+     * @tc.desc   Check changed theme values using API setDefaultTheme
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ActsSetDefaultThemeColors_0200', Level.LEVEL2, () => {
       const CASE: string = 'ActsSetDefaultThemeColors_0200';

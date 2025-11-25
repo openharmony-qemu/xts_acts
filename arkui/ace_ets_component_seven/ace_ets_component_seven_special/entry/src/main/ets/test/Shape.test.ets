@@ -41,12 +41,12 @@ export default function shape(){
     });
 
     /**
+     * @tc.name   ShapeJsunit_001
      * @tc.number ShapeJsunit_001
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ShapeJsunit_001', Level.LEVEL0, async (done: Function) => {
       console.info('[ShapeJsunit_001] START');
@@ -64,12 +64,12 @@ export default function shape(){
     });
 
     /**
+     * @tc.name   ShapeJsunit_002
      * @tc.number ShapeJsunit_002
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ShapeJsunit_002', Level.LEVEL0, async (done: Function) => {
       console.info('[ShapeJsunit_002] START');
@@ -84,12 +84,12 @@ export default function shape(){
     });
 
     /**
+     * @tc.name   ShapeJsunit_003
      * @tc.number ShapeJsunit_003
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ShapeJsunit_003', Level.LEVEL0, async (done: Function) => {
       console.info('[ShapeJsunit_003] START');
@@ -104,12 +104,12 @@ export default function shape(){
     });
 
     /**
+     * @tc.name   ShapeJsunit_004
      * @tc.number ShapeJsunit_004
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ShapeJsunit_004', Level.LEVEL0, async (done: Function) => {
       console.info('[ShapeJsunit_004] START');
@@ -124,12 +124,12 @@ export default function shape(){
     });
 
     /**
+     * @tc.name   ShapeJsunit_005
      * @tc.number ShapeJsunit_005
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ShapeJsunit_005', Level.LEVEL0, async (done: Function) => {
       console.info('[ShapeJsunit_005] START');
@@ -143,12 +143,12 @@ export default function shape(){
     });
 
     /**
+     * @tc.name   ShapeJsunit_006
      * @tc.number ShapeJsunit_006
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ShapeJsunit_006', Level.LEVEL0, async (done: Function) => {
       console.info('[ShapeJsunit_006] START');
@@ -163,12 +163,12 @@ export default function shape(){
     });
 
     /**
+     * @tc.name   ShapeJsunit_007
      * @tc.number ShapeJsunit_007
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ShapeJsunit_007', Level.LEVEL0, async (done: Function) => {
       console.info('[ShapeJsunit_007] START');
@@ -183,12 +183,12 @@ export default function shape(){
     });
 
     /**
+     * @tc.name   ShapeJsunit_008
      * @tc.number ShapeJsunit_008
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ShapeJsunit_008', Level.LEVEL0, async (done: Function) => {
       console.info('[ShapeJsunit_008] START');
@@ -203,12 +203,12 @@ export default function shape(){
     });
 
     /**
+     * @tc.name   ShapeJsunit_009
      * @tc.number ShapeJsunit_009
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ShapeJsunit_009', Level.LEVEL0, async (done: Function) => {
       console.info('[ShapeJsunit_009] START');
@@ -223,12 +223,12 @@ export default function shape(){
     });
 
     /**
+     * @tc.name   ShapeJsunit_0010
      * @tc.number ShapeJsunit_0010
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ShapeJsunit_0010', Level.LEVEL0, async (done: Function) => {
       console.info('[ShapeJsunit_0010] START');
@@ -245,12 +245,12 @@ export default function shape(){
     });
 
     /**
+     * @tc.name   ShapeJsunit_0011
      * @tc.number ShapeJsunit_0011
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ShapeJsunit_0011', Level.LEVEL0, async (done: Function) => {
       console.info('[ShapeJsunit_0011] START');
@@ -265,12 +265,12 @@ export default function shape(){
     });
 
     /**
+     * @tc.name   ShapeJsunit_0012
      * @tc.number ShapeJsunit_0012
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ShapeJsunit_0012', Level.LEVEL0, async (done: Function) => {
       console.info('[ShapeJsunit_0012] START');
@@ -285,12 +285,12 @@ export default function shape(){
     });
 
     /**
+     * @tc.name   ShapeJsunit_0013
      * @tc.number ShapeJsunit_0013
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ShapeJsunit_0013', Level.LEVEL0, async (done: Function) => {
       console.info('[ShapeJsunit_0013] START');

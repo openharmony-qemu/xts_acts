@@ -54,10 +54,13 @@ export default function StepperJsunit11() {
       console.info("stepper after each called");
     });
 
-    /*
-     * @tc.number       stepperTest_0100
-     * @tc.name         stepperTest_0100
-     * @tc.desc         stepperTest_0100
+    /**
+     * @tc.name   stepperTest_0100
+     * @tc.number stepperTest_0100
+     * @tc.desc   stepperTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stepperTest_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('stepperTest_0100 START');
@@ -70,10 +73,13 @@ export default function StepperJsunit11() {
       done()
     });
 
-    /*
-     * @tc.number       stepperTest_0200
-     * @tc.name         stepperTest_0200
-     * @tc.desc         stepperTest_0200
+    /**
+     * @tc.name   stepperTest_0200
+     * @tc.number stepperTest_0200
+     * @tc.desc   stepperTest_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stepperTest_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('stepperTest_0200 START');
@@ -104,10 +110,13 @@ export default function StepperJsunit11() {
       done()
     });
 
-    /*
-     * @tc.number       stepperTest_0400
-     * @tc.name         stepperTest_0400
-     * @tc.desc         stepperTest_0400
+    /**
+     * @tc.name   stepperTest_0400
+     * @tc.number stepperTest_0400
+     * @tc.desc   stepperTest_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stepperTest_0400',  Level.LEVEL0, async (done: Function) => {
 
@@ -123,10 +132,13 @@ export default function StepperJsunit11() {
       done()
     });
 
-    /*
-     * @tc.number       stepperTest_0500
-     * @tc.name         stepperTest_0500
-     * @tc.desc         stepperTest_0500
+    /**
+     * @tc.name   stepperTest_0500
+     * @tc.number stepperTest_0500
+     * @tc.desc   stepperTest_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stepperTest_0500',  Level.LEVEL0, async (done: Function) => {
       console.info('[stepperTest_0500] START');
@@ -142,10 +154,13 @@ export default function StepperJsunit11() {
       done()
     });
 
-    /*
-     * @tc.number       stepperTest_0300
-     * @tc.name         stepperTest_0300
-     * @tc.desc         stepperTest_0300
+    /**
+     * @tc.name   stepperTest_0300
+     * @tc.number stepperTest_0300
+     * @tc.desc   stepperTest_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stepperTest_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('stepperTest_0300v START');

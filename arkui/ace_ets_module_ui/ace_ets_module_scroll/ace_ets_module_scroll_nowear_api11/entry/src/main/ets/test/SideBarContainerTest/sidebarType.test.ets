@@ -37,6 +37,14 @@ export default function sidebarTypeTest() {
       done()
     });
 
+    /**
+     * @tc.name   ArkUX_SideBarContainer_1000
+     * @tc.number ArkUX_SideBarContainer_1000
+     * @tc.desc   ArkUX_SideBarContainer_1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUX_SideBarContainer_1000', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_SideBarContainer_1000 START');
       setTimeout(() => {
@@ -56,6 +64,14 @@ export default function sidebarTypeTest() {
       }, 500)
     });
 
+    /**
+     * @tc.name   ArkUX_SideBarContainer_1100
+     * @tc.number ArkUX_SideBarContainer_1100
+     * @tc.desc   ArkUX_SideBarContainer_1100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUX_SideBarContainer_1100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_SideBarContainer_1100 START');
       setTimeout(() => {
@@ -76,6 +92,14 @@ export default function sidebarTypeTest() {
       }, 500)
     });
 
+    /**
+     * @tc.name   ArkUX_SideBarContainer_1200
+     * @tc.number ArkUX_SideBarContainer_1200
+     * @tc.desc   ArkUX_SideBarContainer_1200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUX_SideBarContainer_1200', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_SideBarContainer_1200 START');
       setTimeout(() => {
@@ -95,6 +119,14 @@ export default function sidebarTypeTest() {
       }, 500)
     });
 
+    /**
+     * @tc.name   ArkUX_SideBarContainer_1300
+     * @tc.number ArkUX_SideBarContainer_1300
+     * @tc.desc   ArkUX_SideBarContainer_1300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUX_SideBarContainer_1300', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_SideBarContainer_1300 START');
       setTimeout(() => {
@@ -114,6 +146,14 @@ export default function sidebarTypeTest() {
       }, 500)
     });
 
+    /**
+     * @tc.name   ArkUX_SideBarContainer_1400
+     * @tc.number ArkUX_SideBarContainer_1400
+     * @tc.desc   ArkUX_SideBarContainer_1400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUX_SideBarContainer_1400', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_SideBarContainer_1400 START');
       setTimeout(() => {

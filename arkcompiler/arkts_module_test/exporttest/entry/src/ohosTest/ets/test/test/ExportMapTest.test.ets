@@ -41,12 +41,12 @@ export default function ExportMapTest() {
     })
 
     /**
+     * @tc.name   ExportMapTest0100
      * @tc.number SUB_EXPORT_MAP_TEST_0100
-     * @tc.name ExportMapTest0100
-     * @tc.desc test Interface
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ExportMapTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
       await sleep(3000);

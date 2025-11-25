@@ -45,12 +45,12 @@ export default function SwiperMirroring0010() {
       });
 
     /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_MIRRORING_0010
      * @tc.number SWIPER_MIRRORING_0010
-     * @tc.name step
-     * @tc.desc interval
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   interval
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_MIRRORING_0010', Level.LEVEL1, async (done: Function) => {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_MIRRORING_0010 START");
@@ -68,12 +68,12 @@ export default function SwiperMirroring0010() {
 
 
     /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_MIRRORING_0310
      * @tc.number SWIPER_MIRRORING_0310
-     * @tc.name step
-     * @tc.desc interval
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   interval
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_MIRRORING_0310', Level.LEVEL1, async (done: Function) => {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_MIRRORING_0310 START");

@@ -47,12 +47,12 @@ export default function minLines() {
     });
 
     /**
-     * @tc.number   MinLines_0010
-     * @tc.name     MinLines_0010
-     * @tc.desc     minLines is 1
-     * @tc.level:   Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   MinLines_0010
+     * @tc.number MinLines_0010
+     * @tc.desc   minLines is 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('MinLines_0010', Level.LEVEL1, async (done: Function) => {
       console.info('[MinLines_0010] START');
@@ -69,14 +69,14 @@ export default function minLines() {
       done();
     });
 
-    /**
-     * @tc.number   MinLines_0011
-     * @tc.name     MinLines_0011
-     * @tc.desc     minLines is 0
-     * @tc.level:   Level 1
-     * @tc.type :
-     * @tc.size :
-     */
+      /**
+       * @tc.name   MinLines_0011
+       * @tc.number MinLines_0011
+       * @tc.desc   minLines is 0
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
       it('MinLines_0011', Level.LEVEL1, async (done: Function) => {
       let driver: Driver = Driver.create();
       let button = await driver.findComponent(ON.id('Button2'));
@@ -91,14 +91,14 @@ export default function minLines() {
       done();
     });
 
-    /**
-     * @tc.number   MinLines_0012
-     * @tc.name     MinLines_0012
-     * @tc.desc     minLines is 10
-     * @tc.level:   Level 1
-     * @tc.type :
-     * @tc.size :
-     */
+      /**
+       * @tc.name   MinLines_0012
+       * @tc.number MinLines_0012
+       * @tc.desc   minLines is 10
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
       it('MinLines_0012', Level.LEVEL1, async (done: Function) => {
       let driver: Driver = Driver.create();
       let button = await driver.findComponent(ON.id('Button3'));
@@ -113,14 +113,14 @@ export default function minLines() {
       done();
     });
 
-    /**
-     * @tc.number   MinLines_0013
-     * @tc.name     MinLines_0013
-     * @tc.desc     minLines is 5.5
-     * @tc.level:   Level 2
-     * @tc.type :
-     * @tc.size :
-     */
+      /**
+       * @tc.name   MinLines_0013
+       * @tc.number MinLines_0013
+       * @tc.desc   minLines is 5.5
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
       it('MinLines_0013', Level.LEVEL2, async (done: Function) => {
       let driver: Driver = Driver.create();
       let button = await driver.findComponent(ON.id('Button4'));
@@ -135,14 +135,14 @@ export default function minLines() {
       done();
     });
 
-    /**
-     * @tc.number   MinLines_0014
-     * @tc.name     MinLines_0014
-     * @tc.desc     minLines is -2
-     * @tc.level:   Level 1
-     * @tc.type :
-     * @tc.size :
-     */
+      /**
+       * @tc.name   MinLines_0014
+       * @tc.number MinLines_0014
+       * @tc.desc   minLines is -2
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
       it('MinLines_0014', Level.LEVEL1, async (done: Function) => {
       let driver: Driver = Driver.create();
       let button = await driver.findComponent(ON.id('Button5'));
@@ -157,14 +157,14 @@ export default function minLines() {
       done();
     });
 
-    /**
-     * @tc.number   MinLines_0015
-     * @tc.name     MinLines_0015
-     * @tc.desc     minLines is -0.5
-     * @tc.level:   Level 2
-     * @tc.type :
-     * @tc.size :
-     */
+      /**
+       * @tc.name   MinLines_0015
+       * @tc.number MinLines_0015
+       * @tc.desc   minLines is -0.5
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
+       */
       it('MinLines_0015', Level.LEVEL2, async (done: Function) => {
       let driver: Driver = Driver.create();
       let button = await driver.findComponent(ON.id('Button6'));
@@ -179,14 +179,14 @@ export default function minLines() {
       done();
     });
 
-    /**
-     * @tc.number   MinLines_0016
-     * @tc.name     MinLines_0016
-     * @tc.desc     minLines is null
-     * @tc.level:   Level 1
-     * @tc.type :
-     * @tc.size :
-     */
+      /**
+       * @tc.name   MinLines_0016
+       * @tc.number MinLines_0016
+       * @tc.desc   minLines is null
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
       it('MinLines_0016', Level.LEVEL1, async (done: Function) => {
       let driver: Driver = Driver.create();
       let button = await driver.findComponent(ON.id('Button7'));
@@ -201,14 +201,14 @@ export default function minLines() {
       done();
     });
 
-    /**
-     * @tc.number   MinLines_0017
-     * @tc.name     MinLines_0017
-     * @tc.desc     minLines is undefined
-     * @tc.level:   Level 1
-     * @tc.type :
-     * @tc.size :
-     */
+      /**
+       * @tc.name   MinLines_0017
+       * @tc.number MinLines_0017
+       * @tc.desc   minLines is undefined
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
       it('MinLines_0017', Level.LEVEL1, async (done: Function) => {
       let driver: Driver = Driver.create();
       let button = await driver.findComponent(ON.id('Button8'));

@@ -47,16 +47,16 @@ export default function nodeWaterFlow() {
       console.info(" nodeWaterFlow after each called");
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TYPENODE_WATERFLOW_0100
-    * @tc.name  : nodeWaterFlow_0100
-    * @tc.desc  : WaterFlow type FrameNode node
-    * @tc.level : Level 1
-    * @tc.type :
-    * @tc.size :
-    */
 
 
+    /**
+     * @tc.name   nodeWaterFlow_0100
+     * @tc.number nodeWaterFlow_0100
+     * @tc.desc   nodeWaterFlow_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('nodeWaterFlow_0100', Level.LEVEL0, async  (done: Function) => {
       console.info('nodeWaterFlow_0100 START');
       await CommonFunc.sleep(1000);
@@ -75,16 +75,16 @@ export default function nodeWaterFlow() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TYPENODE_FLOWITEM_0200
-    * @tc.name  : nodeWaterFlow_0200
-    * @tc.desc  : FlowItem type FrameNode node
-    * @tc.level : Level 1
-    * @tc.type :
-    * @tc.size :
-    */
 
 
+    /**
+     * @tc.name   nodeWaterFlow_0200
+     * @tc.number nodeWaterFlow_0200
+     * @tc.desc   nodeWaterFlow_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('nodeWaterFlow_0200', Level.LEVEL0, async  (done: Function) => {
       console.info('nodeWaterFlow_0200 START');
       await CommonFunc.sleep(1000);

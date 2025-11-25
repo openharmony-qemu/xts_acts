@@ -26,39 +26,39 @@ export default function timePickerHeightTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TIMEPICKER_HEIGHT_0100
-     * @tc.name       : testTimePickerHeight001
-     * @tc.desc       : testing height for timePicker with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTimePickerHeight001
+     * @tc.number SUB_ARKUI_CAPI_TIMEPICKER_HEIGHT_0100
+     * @tc.desc   testing height for timePicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimePickerHeight001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTimePickerHeight001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TIMEPICKER_HEIGHT_0200
-     * @tc.name       : testTimePickerHeight002
-     * @tc.desc       : testing height for timePicker with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTimePickerHeight002
+     * @tc.number SUB_ARKUI_CAPI_TIMEPICKER_HEIGHT_0200
+     * @tc.desc   testing height for timePicker with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimePickerHeight002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTimePickerHeight002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TIMEPICKER_HEIGHT_0300
-     * @tc.name       : testTimePickerHeight003
-     * @tc.desc       : testing height for timePicker with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testTimePickerHeight003
+     * @tc.number SUB_ARKUI_CAPI_TIMEPICKER_HEIGHT_0300
+     * @tc.desc   testing height for timePicker with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTimePickerHeight003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTimePickerHeight003()).assertEqual(0)

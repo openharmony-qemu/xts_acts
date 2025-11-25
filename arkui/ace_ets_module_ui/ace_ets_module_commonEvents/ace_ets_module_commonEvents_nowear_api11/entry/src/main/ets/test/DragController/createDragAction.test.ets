@@ -42,12 +42,12 @@ export default function createDragAction() {
     });
 
     /**
-     * @tc.number    SUB_ACE_createDragAction_0100
-     * @tc.name      createDragAction_0100
-     * @tc.desc      createDragAction api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   createDragAction_0100
+     * @tc.number SUB_ACE_createDragAction_0100
+     * @tc.desc   createDragAction api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createDragAction_0100', Level.LEVEL0, async (done: Function) => {
       console.info('createDragAction_0100 START');
@@ -66,12 +66,12 @@ export default function createDragAction() {
     });
 
     /**
-     * @tc.number    SUB_ACE_createDragAction_0200
-     * @tc.name      createDragAction_0200
-     * @tc.desc      STARTED api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   createDragAction_0200
+     * @tc.number SUB_ACE_createDragAction_0200
+     * @tc.desc   STARTED api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createDragAction_0200', Level.LEVEL0, async (done: Function) => {
       console.info('createDragAction_0200 START');
@@ -90,12 +90,12 @@ export default function createDragAction() {
     });
 
     /**
-     * @tc.number    SUB_ACE_createDragAction_0300
-     * @tc.name      createDragAction_0300
-     * @tc.desc       ENDED  api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   createDragAction_0300
+     * @tc.number SUB_ACE_createDragAction_0300
+     * @tc.desc   ENDED  api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createDragAction_0300', Level.LEVEL0, async (done: Function) => {
       console.info('createDragAction_0300 START');

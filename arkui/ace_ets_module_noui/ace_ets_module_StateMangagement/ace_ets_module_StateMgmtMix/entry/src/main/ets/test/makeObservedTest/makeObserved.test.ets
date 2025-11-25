@@ -41,12 +41,12 @@ export default function makeObservedTest() {
       done();
     });
     /**
-     * @tc.number    makeObserved
-     * @tc.name      makeObservedTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 0
-     * @tc.type :    FUNC
-     * @tc.size :    MEDIUM
+     * @tc.name   makeObservedTest_0100
+     * @tc.number makeObserved
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('makeObservedTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('makeObservedTest_0100 START');

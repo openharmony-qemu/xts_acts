@@ -62,14 +62,16 @@ export default function scrollByJsunit() {
       console.info("List_scrollToIndex1 after each called");
     });
 
-    /* *
-      * @tc.number: SUB_ACE_TS_COMPONENT_SR000IFDKV_0001
-      * @tc.name  : Slide to the next page
-      * @tc.desc  : Set the scroll direction to portrait
-      * @tc.level : Level 2
-      */
 
 
+    /**
+     * @tc.name   scrollPageJsunit_0001
+     * @tc.number scrollPageJsunit_0001
+     * @tc.desc   scrollPageJsunit_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('scrollPageJsunit_0001',  Level.LEVEL0, async (done: Function) => {
       console.info('[scrollPageJsunit_0010] START');
       await CommonFunc.sleep(1000);
@@ -94,13 +96,15 @@ export default function scrollByJsunit() {
       done();
     });
 
-    /* *
-     * @tc.number: SUB_ACE_TS_COMPONENT_SR000IFDKV_0002
-     * @tc.name  : scrollPageJsunit_0002
-     * @tc.desc  : lide to previous page
-     * @tc.level : Level 2
-     */
 
+    /**
+     * @tc.name   scrollPageJsunit_0002
+     * @tc.number scrollPageJsunit_0002
+     * @tc.desc   scrollPageJsunit_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('scrollPageJsunit_0002',  Level.LEVEL0, async (done: Function) => {
       console.info('[scrollPageJsunit_0020] START');
       await CommonFunc.sleep(1000);

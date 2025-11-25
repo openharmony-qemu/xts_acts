@@ -41,12 +41,12 @@ export default function spanJsunit() {
     });
 
     /**
+     * @tc.name   test_span_001
      * @tc.number test_span_001
-     * @tc.name Test the properties of components
-     * @tc.desc Set lineHeight values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set lineHeight values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_span_001', Level.LEVEL0, async (done: Function) => {
       console.info('[test_span_001] START');
@@ -59,12 +59,12 @@ export default function spanJsunit() {
     });
 
     /**
+     * @tc.name   test_span_002
      * @tc.number test_span_002
-     * @tc.name Test the properties of components
-     * @tc.desc Set textCase values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set textCase values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_span_002', Level.LEVEL0, async (done: Function) => {
       console.info('[test_span_002] START');
@@ -77,12 +77,12 @@ export default function spanJsunit() {
     });
 
     /**
+     * @tc.name   test_span_003
      * @tc.number test_span_003
-     * @tc.name Test the properties of components
-     * @tc.desc Set letterSpacing values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set letterSpacing values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_span_003', Level.LEVEL0, async (done: Function) => {
       console.info('[test_span_003] START');
@@ -95,12 +95,12 @@ export default function spanJsunit() {
     });
 
     /**
+     * @tc.name   test_span_004
      * @tc.number test_span_004
-     * @tc.name Test the properties of components
-     * @tc.desc Set decoration values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set decoration values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_span_004', Level.LEVEL0, async (done: Function) => {
       console.info('[test_span_004] START');
@@ -114,12 +114,12 @@ export default function spanJsunit() {
     });
 
     /**
+     * @tc.name   test_span_005
      * @tc.number test_span_005
-     * @tc.name Test the properties of components
-     * @tc.desc Set fontColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set fontColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_span_005', Level.LEVEL0, async (done: Function) => {
       console.info('[test_span_005] START');
@@ -132,12 +132,12 @@ export default function spanJsunit() {
     });
 
     /**
+     * @tc.name   test_span_006
      * @tc.number test_span_006
-     * @tc.name Test the properties of components
-     * @tc.desc Set font values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set font values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_span_006', Level.LEVEL0, async (done: Function) => {
       console.info('[test_span_006] START');
@@ -151,12 +151,12 @@ export default function spanJsunit() {
     });
 
     /**
+     * @tc.name   test_span_007
      * @tc.number test_span_007
-     * @tc.name Test the properties of components
-     * @tc.desc Set fontFamily values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set fontFamily values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_span_007', Level.LEVEL0, async (done: Function) => {
       console.info('[test_span_007] START');
@@ -169,12 +169,12 @@ export default function spanJsunit() {
     });
 
     /**
+     * @tc.name   test_span_008
      * @tc.number test_span_008
-     * @tc.name Test the properties of components
-     * @tc.desc Set fontWeight values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set fontWeight values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_span_008', Level.LEVEL0, async (done: Function) => {
       console.info('[test_span_008] START');
@@ -189,12 +189,12 @@ export default function spanJsunit() {
     });
 
     /**
+     * @tc.name   test_span_009
      * @tc.number test_span_009
-     * @tc.name Test the properties of components
-     * @tc.desc Set fontStyle values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set fontStyle values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_span_009', Level.LEVEL0, async (done: Function) => {
       console.info('[test_span_009] START');
@@ -207,12 +207,12 @@ export default function spanJsunit() {
     });
 
     /**
+     * @tc.name   test_span_010
      * @tc.number test_span_010
-     * @tc.name Test the properties of components
-     * @tc.desc Set fontSize values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set fontSize values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_span_010', Level.LEVEL0, async (done: Function) => {
       console.info('[test_span_010] START');
@@ -225,12 +225,12 @@ export default function spanJsunit() {
     });
 
     /**
+     * @tc.name   test_span_011
      * @tc.number test_span_011
-     * @tc.name Test the properties of components
-     * @tc.desc Change textCase values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change textCase values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_span_011', Level.LEVEL0, async (done: Function) => {
       console.info('test_span_011 START');

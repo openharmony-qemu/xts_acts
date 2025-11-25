@@ -30,15 +30,15 @@ export default function VisibleAreaEventOptionsTest(){
       done()
     })
 
-    /*
-     * @tc.number: VisibleAreaEventOptionsTest
-     * @tc.name: VisibleAreaEventOptionsTest
-     * @tc.desc:  VisibleAreaEventOption
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
 
+    /**
+     * @tc.name   VisibleAreaEventOptionsTest
+     * @tc.number VisibleAreaEventOptionsTest
+     * @tc.desc   VisibleAreaEventOptionsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('VisibleAreaEventOptionsTest', Level.LEVEL1, async (done: Function) => {
       console.info("push VisibleAreaEventOptionsTest page success: ")
       let ret = nativeRender.DragEndPendingTest_001()
@@ -46,13 +46,13 @@ export default function VisibleAreaEventOptionsTest(){
       expect().assertEqual();
       done()
     })
-    /*
-     * @tc.number: VisibleAreaEventOptionsTest_a
-     * @tc.name: VisibleAreaEventOptionsTest_a
-     * @tc.desc:  VisibleAreaEventOption
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   VisibleAreaEventOptionsTest_a
+     * @tc.number VisibleAreaEventOptionsTest_a
+     * @tc.desc   VisibleAreaEventOption
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('VisibleAreaEventOptionsTest_a', Level.LEVEL1, async (done: Function) => {
       expect(nativeRender.VisibleAreaEventOptionsTest_a()).assertEqual(0)
@@ -60,39 +60,39 @@ export default function VisibleAreaEventOptionsTest(){
       done()
     })
 
-    /*
-     * @tc.number: VisibleAreaEventOptionsTest_b
-     * @tc.name: VisibleAreaEventOptionsTest_b
-     * @tc.desc:  VisibleAreaEventOption
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   VisibleAreaEventOptionsTest_b
+     * @tc.number VisibleAreaEventOptionsTest_b
+     * @tc.desc   VisibleAreaEventOption
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('VisibleAreaEventOptionsTest_b', Level.LEVEL1, async (done: Function) => {
       expect(nativeRender.VisibleAreaEventOptionsTest_b()).assertEqual(0)
       await Utils.sleep(100)
       done()
     })
-    /*
-     * @tc.number: VisibleAreaEventOptionsTest_c
-     * @tc.name: VisibleAreaEventOptionsTest_c
-     * @tc.desc:  VisibleAreaEventOption
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   VisibleAreaEventOptionsTest_c
+     * @tc.number VisibleAreaEventOptionsTest_c
+     * @tc.desc   VisibleAreaEventOption
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('VisibleAreaEventOptionsTest_c', Level.LEVEL1, async (done: Function) => {
       expect(nativeRender.VisibleAreaEventOptionsTest_c()).assertEqual(0)
       await Utils.sleep(100)
       done()
     })
-    /*
-     * @tc.number: VisibleAreaEventOptionsTest_d
-     * @tc.name: VisibleAreaEventOptionsTest_d
-     * @tc.desc:  VisibleAreaEventOption
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   VisibleAreaEventOptionsTest_d
+     * @tc.number VisibleAreaEventOptionsTest_d
+     * @tc.desc   VisibleAreaEventOption
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('VisibleAreaEventOptionsTest_d', Level.LEVEL1, async (done: Function) => {
       expect(nativeRender.VisibleAreaEventOptionsTest_d()).assertEqual(0)

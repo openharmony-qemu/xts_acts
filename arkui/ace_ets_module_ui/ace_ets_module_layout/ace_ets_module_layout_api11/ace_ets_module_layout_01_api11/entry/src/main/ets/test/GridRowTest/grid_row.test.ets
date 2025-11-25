@@ -44,10 +44,13 @@ export default function grid_rowOnBreakpointChangeJsunit() {
       console.info("grid_rowOnBreakpointChange after each called");
     });
 
-    /*
-     * @tc.number    SUB_ACE_BASIC_ETS_API_001
-     * @tc.name      testgrid_rowOnBreakpointChange001
-     * @tc.desic     acegrid_rowOnBreakpointChangeEtsTest001
+    /**
+     * @tc.name   testgrid_rowOnBreakpointChange001
+     * @tc.number SUB_ACE_BASIC_ETS_API_001
+     * @tc.desc   testgrid_rowOnBreakpointChange001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testgrid_rowOnBreakpointChange001',  Level.LEVEL0, async () => {
       console.info('grid_rowOnBreakpointChange testgrid_rowOnBreakpointChange001 START');
@@ -61,10 +64,13 @@ export default function grid_rowOnBreakpointChangeJsunit() {
 
     });
 
-    /*
-     * @tc.number    SUB_ACE_BASIC_ETS_API_002
-     * @tc.name      testgrid_rowOnBreakpointChange002
-     * @tc.desic     acegrid_rowOnBreakpointChangeEtsTest002
+    /**
+     * @tc.name   testgrid_rowOnBreakpointChange002
+     * @tc.number SUB_ACE_BASIC_ETS_API_002
+     * @tc.desc   testgrid_rowOnBreakpointChange002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testgrid_rowOnBreakpointChange002',  Level.LEVEL0, async () => {
       console.info('grid_rowOnBreakpointChange testgrid_rowOnBreakpointChange002 START');
@@ -78,10 +84,13 @@ export default function grid_rowOnBreakpointChangeJsunit() {
 
     });
 
-    /*
-     * @tc.number    SUB_ACE_BASIC_ETS_API_003
-     * @tc.name      testgrid_rowOnBreakpointChange003
-     * @tc.desic     acegrid_rowOnBreakpointChangeEtsTest003
+    /**
+     * @tc.name   testgrid_rowOnBreakpointChange003
+     * @tc.number SUB_ACE_BASIC_ETS_API_003
+     * @tc.desc   testgrid_rowOnBreakpointChange003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testgrid_rowOnBreakpointChange003',  Level.LEVEL0, async () => {
       console.info('grid_rowOnBreakpointChange testgrid_rowOnBreakpointChange003 START');

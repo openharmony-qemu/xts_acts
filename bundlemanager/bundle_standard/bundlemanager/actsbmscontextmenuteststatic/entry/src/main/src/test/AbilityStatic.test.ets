@@ -26,10 +26,13 @@ let tag: string = 'testTag';
 export default function abilityTest() {
   describe('ActsAbilityTest', (): void => {
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo2_Static_2400
-     * @tc.name: getBundleNameByUidSyncUnPermissionApi14
-     * @tc.desc: Test getBundleNameByUidSync unPermission for api14.
+    /**
+     * @tc.name   getBundleNameByUidSyncUnPermissionApi14
+     * @tc.number Sub_Bms_Framework_Query_AppInfo2_Static_2400
+     * @tc.desc   Test getBundleNameByUidSync unPermission for api14.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getBundleNameByUidSyncUnPermissionApi14', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -43,10 +46,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo2_Static_2500
-     * @tc.name: getBundleNameByUidUnPermissionApi14
-     * @tc.desc: Test getBundleNameByUid unPermission for api14.
+    /**
+     * @tc.name   getBundleNameByUidUnPermissionApi14
+     * @tc.number Sub_Bms_Framework_Query_AppInfo2_Static_2500
+     * @tc.desc   Test getBundleNameByUid unPermission for api14.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getBundleNameByUidUnPermissionApi14', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -78,10 +84,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo2_Static_2600
-     * @tc.name: getAppCloneIdentityUnPermissionApi14
-     * @tc.desc: Test getAppCloneIdentity unPermission for api14.
+    /**
+     * @tc.name   getAppCloneIdentityUnPermissionApi14
+     * @tc.number Sub_Bms_Framework_Query_AppInfo2_Static_2600
+     * @tc.desc   Test getAppCloneIdentity unPermission for api14.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getAppCloneIdentityUnPermissionApi14', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -102,12 +111,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number Sub_Bms_Framework_getSignatureInfo_static_04
      * @tc.name   Sub_Bms_Framework_getSignatureInfo_static_04
+     * @tc.number Sub_Bms_Framework_getSignatureInfo_static_04
      * @tc.desc   Test getSignatureInfo with error code
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Bms_Framework_getSignatureInfo_static_04', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       await bundle.getBundleInfoForSelf(bundle.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION |
@@ -123,12 +132,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number Sub_Bms_Framework_getAbilityInfo_static_01
      * @tc.name   Sub_Bms_Framework_getAbilityInfo_static_01
+     * @tc.number Sub_Bms_Framework_getAbilityInfo_static_01
      * @tc.desc   Test getAbilityInfo with error code
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Bms_Framework_getAbilityInfo_static_01', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let uri = "https://www.example.com";

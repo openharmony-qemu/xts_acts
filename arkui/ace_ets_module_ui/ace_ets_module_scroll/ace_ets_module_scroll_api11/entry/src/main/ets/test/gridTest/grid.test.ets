@@ -43,11 +43,12 @@ export default function gridIndexTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_gridIndexTest_0100
-     * @tc.desc      test
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   gridIndexTest_0100
+     * @tc.number SUB_ACE_gridIndexTest_0100
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('gridIndexTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[gridIndexTest_0100] START');

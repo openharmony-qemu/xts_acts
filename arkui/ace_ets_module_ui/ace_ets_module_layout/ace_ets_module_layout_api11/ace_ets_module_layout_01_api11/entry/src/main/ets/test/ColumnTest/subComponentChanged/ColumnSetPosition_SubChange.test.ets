@@ -47,9 +47,12 @@ export default function ColumnSetPosition_SubChange() {
     });
 
     /**
+     * @tc.name   testColumnSubcomponentSetPosition
      * @tc.number SUB_ACE_COLUMN_SUBCOMPONENTCHANGED_1200
-     * @tc.name testColumnSubcomponentSetPosition
-     * @tc.desc The first subcomponent set position attribute.
+     * @tc.desc   The first subcomponent set position attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnSubcomponentSetPosition',  Level.LEVEL0, async () => {
       console.info('new testColumnSubcomponentSetPosition START');

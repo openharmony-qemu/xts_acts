@@ -31,7 +31,7 @@ let mCameraDevicesArray: Array<cameraObj.CameraDevice>;
 let mCameraSession: cameraObj.PhotoSession;
 let mCameraNum: number;
 let mPhotoSurface: string;
-let receiver: image.ImageReceiver;
+let receiver: image.ImageReceiver | undefined;
 let mCameraInput: cameraObj.CameraInput;
 let mPreviewOutput: cameraObj.PreviewOutput;
 let surfaceId: string = '';
@@ -177,7 +177,7 @@ export default function cameraSessionAutoDeviceSwitchTest() {
     console.log(TAG + 'before receiver check')
     if (receiver !== undefined) {
       console.log(TAG + 'Photo receiver is created successfully')
-      mPhotoSurface = await receiver.getReceivingSurfaceId()
+      mPhotoSurface = await receiver!.getReceivingSurfaceId()
       console.log(TAG + 'Photo received id: ' + JSON.stringify(mPhotoSurface))
     } else {
       console.log(TAG + 'Photo receiver is created failed')
@@ -386,7 +386,7 @@ export default function cameraSessionAutoDeviceSwitchTest() {
             } catch (error:BusinessError) {
               expect().assertFail();
             }
-            mCameraSession.on('autoDeviceSwitchStatusChange', (error: BusinessError | null, autoDeviceSwitchStatus: cameraObj.AutoDeviceSwitchStatus | undefined) => {
+            mCameraSession.onAutoDeviceSwitchStatusChange((error: BusinessError | null, autoDeviceSwitchStatus: cameraObj.AutoDeviceSwitchStatus | undefined) => {
               if (error !== undefined && error!.code !== 0) {
                 expect().assertFail();
               }
@@ -460,8 +460,8 @@ export default function cameraSessionAutoDeviceSwitchTest() {
             let callback = (error: BusinessError | null, autoDeviceSwitchStatus: cameraObj.AutoDeviceSwitchStatus | undefined) => {
               expect().assertFail();
             }
-            mCameraSession.on('autoDeviceSwitchStatusChange', callback);
-            mCameraSession.off('autoDeviceSwitchStatusChange', callback);
+            mCameraSession.onAutoDeviceSwitchStatusChange(callback);
+            mCameraSession.offAutoDeviceSwitchStatusChange(callback);
           }
           await mCameraSession.start();
           await mCameraSession.stop();

@@ -54,12 +54,14 @@ export default function ProvideNumber() {
       }
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0240
-    * @tc.name  : ProvideNumber_0100
-    * @tc.desc  : To test that the Provide decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   ProvideNumber_0100
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0240
+     * @tc.desc   To test that the Provide decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ProvideNumber_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ProvideNumber_0100 START');
       let driver = await Driver.create()
@@ -75,12 +77,14 @@ export default function ProvideNumber() {
       console.info('[ProvideNumber_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0250
-    * @tc.name  : ProvideNumber_0200
-    * @tc.desc  : To test that the Provide decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   ProvideNumber_0200
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0250
+     * @tc.desc   To test that the Provide decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ProvideNumber_0200', Level.LEVEL0, async (done: Function) => {
       console.info('ProvideNumber_0100 START');
       let driver = await Driver.create()
@@ -96,12 +100,14 @@ export default function ProvideNumber() {
       console.info('[ProvideNumber_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0260
-    * @tc.name  : ProvideNumber_0300
-    * @tc.desc  : To test that the Provide decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   ProvideNumber_0300
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0260
+     * @tc.desc   To test that the Provide decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ProvideNumber_0300', Level.LEVEL0, async (done: Function) => {
       console.info('ProvideNumber_0100 START');
       let driver = await Driver.create()
@@ -117,12 +123,14 @@ export default function ProvideNumber() {
       console.info('[ProvideNumber_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0270
-    * @tc.name  : ProvideNumber_0400
-    * @tc.desc  : To test that the Provide decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   ProvideNumber_0400
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0270
+     * @tc.desc   To test that the Provide decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ProvideNumber_0400', Level.LEVEL0, async (done: Function) => {
       console.info('ProvideNumber_0100 START');
       let driver = await Driver.create()
@@ -138,12 +146,14 @@ export default function ProvideNumber() {
       console.info('[ProvideNumber_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0280
-    * @tc.name  : ProvideNumber_0500
-    * @tc.desc  : To test that the Provide decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   ProvideNumber_0500
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0280
+     * @tc.desc   To test that the Provide decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ProvideNumber_0500', Level.LEVEL0, async (done: Function) => {
       console.info('ProvideNumber_0100 START');
       let driver = await Driver.create()

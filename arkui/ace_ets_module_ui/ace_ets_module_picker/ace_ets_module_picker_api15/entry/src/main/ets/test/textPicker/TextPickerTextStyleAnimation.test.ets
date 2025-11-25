@@ -52,14 +52,14 @@ export default function TextPickerTextStyleAnimationTest() {
       done()
     });
 
-    /* *
-    * @tc.number: TextStyleAnimationTest_0100
-    * @tc.name  : TextStyleAnimationTest_0100
-    * @tc.desc  : To test the disableTextStyleAnimation is true
-    * @tc.level : Level 1
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   TextStyleAnimationTest_0100
+     * @tc.number TextStyleAnimationTest_0100
+     * @tc.desc   To test the disableTextStyleAnimation is true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TextStyleAnimationTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('TextStyleAnimationTest_0100 start');
       let driver = await Driver.create()
@@ -80,14 +80,14 @@ export default function TextPickerTextStyleAnimationTest() {
       done();
     });
 
-    /* *
-    * @tc.number: TextStyleAnimationTest_0200
-    * @tc.name  : TextStyleAnimationTest_0200
-    * @tc.desc  : To test the disableTextStyleAnimation is false
-    * @tc.level : Level 1
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   TextStyleAnimationTest_0200
+     * @tc.number TextStyleAnimationTest_0200
+     * @tc.desc   To test the disableTextStyleAnimation is false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TextStyleAnimationTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('TextStyleAnimationTest_0200 start');
       let driver = await Driver.create()
@@ -108,14 +108,14 @@ export default function TextPickerTextStyleAnimationTest() {
       done();
     });
 
-    /* *
-    * @tc.number: TextStyleAnimationTest_0300
-    * @tc.name  : TextStyleAnimationTest_0300
-    * @tc.desc  : To test the disableTextStyleAnimation is undefined
-    * @tc.level : Level 1
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   TextStyleAnimationTest_0300
+     * @tc.number TextStyleAnimationTest_0300
+     * @tc.desc   To test the disableTextStyleAnimation is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TextStyleAnimationTest_0300', Level.LEVEL1, async (done: Function) => {
       console.info('TextStyleAnimationTest_0300 start');
       let driver = await Driver.create()
@@ -136,14 +136,14 @@ export default function TextPickerTextStyleAnimationTest() {
       done();
     });
 
-    /* *
-    * @tc.number: TextStyleAnimationTest_0400
-    * @tc.name  : TextStyleAnimationTest_0400
-    * @tc.desc  : To test the disableTextStyleAnimation is null
-    * @tc.level : Level 1
-    * @tc.type
-    * @tc.size
-    */
+    /**
+     * @tc.name   TextStyleAnimationTest_0400
+     * @tc.number TextStyleAnimationTest_0400
+     * @tc.desc   To test the disableTextStyleAnimation is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TextStyleAnimationTest_0400', Level.LEVEL1, async (done: Function) => {
       console.info('TextStyleAnimationTest_0400 start');
       let driver = await Driver.create()

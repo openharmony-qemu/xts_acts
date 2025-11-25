@@ -48,11 +48,14 @@ let netConnOnEvent6 =async  (caseName: string,netConn: connection.NetConnection)
     ListenTimes+=1000;
     console.info(caseName +" ===on netUnavailable " + JSON.stringify(value));
   });
-  netConn.on('netBlockStatusChange', (value) => {
+  netConn.on('netBlockStatusChange', (value:connection.NetBlockStatusInfo) => {
     ListenTimes+=10000;
     console.info(caseName +" ===on netBlockStatusChange " + JSON.stringify(value));
+    let netHandle = value.netHandle;
+    let blocked = value.blocked;
+    console.info("netBlockStatusChange netHandle: " + JSON.stringify(netHandle) + " ,netBlockStatusChange blocked: " + JSON.stringify(blocked));
   });
-  console.info(caseName + ": ==  Subscribing to Events end  === ")
+  console.info(caseName + ": ==  Subscribing to Events end  === ");
 }
 let netConnOnEvent4 =async  (caseName: string,netConn: connection.NetConnection) =>{
   console.info(caseName + ": ==  Subscribing to Events start  === ")

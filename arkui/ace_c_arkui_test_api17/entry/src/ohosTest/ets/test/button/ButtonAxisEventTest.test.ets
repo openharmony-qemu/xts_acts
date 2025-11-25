@@ -36,14 +36,14 @@ export default function buttonAxisEventTest() {
       await Utils.pushPage(`button/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_BUTTON_Axis_EVENT_0100
-    * @tc.name       : testButtonOnAxisEvent001
-    * @tc.desc       : test Axis event not callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testButtonAxis001
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_Axis_EVENT_0100
+     * @tc.desc   test Axis event not callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testButtonAxis001', Level.LEVEL1, async (done: Function) => {
       await mouseScrollCommonEvent('OnAxisTestButton')
       await Utils.sleep(2000)

@@ -48,11 +48,13 @@ export default function XComponentKeyMouseTest() {
       console.info("XComponentKeyMouse after each called");
     });
 
-    /*
-     * @tc.number    XComponentKeyMouseTest_0100
-     * @tc.name      XComponentKeyMouseTest_0100
-     * @tc.desc      Test XComponentKeyMouse
-     * @tc.level     Level 1
+    /**
+     * @tc.name   XComponentKeyMouseTest_0100
+     * @tc.number XComponentKeyMouseTest_0100
+     * @tc.desc   Test XComponentKeyMouse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('XComponentKeyMouseTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[XComponentKeyMouseTest_0100] START');
@@ -93,11 +95,13 @@ export default function XComponentKeyMouseTest() {
       done();
     });
 
-    /*
-     * @tc.number    XComponentKeyMouseTest_0200
-     * @tc.name      XComponentKeyMouseTest_0200
-     * @tc.desc      Test XComponentKeyMouse
-     * @tc.level     Level 1
+    /**
+     * @tc.name   XComponentKeyMouseTest_0200
+     * @tc.number XComponentKeyMouseTest_0200
+     * @tc.desc   Test XComponentKeyMouse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('XComponentKeyMouseTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[XComponentKeyMouseTest_0200] START');

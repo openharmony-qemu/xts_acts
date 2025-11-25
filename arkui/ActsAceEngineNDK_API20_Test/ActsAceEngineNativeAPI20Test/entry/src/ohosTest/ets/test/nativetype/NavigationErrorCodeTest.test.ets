@@ -27,12 +27,12 @@ export default function NavigationErrorCodeTest() {
       await Utils.pushPage(`NativeType/NavigationTest`, done);
     });
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ErrorCode_1600
-     * @tc.name    : testArkUIACEErrorCode1600
-     * @tc.desc    : testing ARKUI_ERROR_CODE_NON_SCROLLABLE_CONTAINER ErrorCode.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIACEErrorCode1600
+     * @tc.number SUB_ArkUI_ACE_ErrorCode_1600
+     * @tc.desc   testing ARKUI_ERROR_CODE_NON_SCROLLABLE_CONTAINER ErrorCode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIACEErrorCode1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -50,12 +50,12 @@ export default function NavigationErrorCodeTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ErrorCode_1700
-     * @tc.name    : testArkUIACEErrorCode1700
-     * @tc.desc    : testing ARKUI_ERROR_CODE_NON_SCROLLABLE_CONTAINER ErrorCode.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIACEErrorCode1700
+     * @tc.number SUB_ArkUI_ACE_ErrorCode_1700
+     * @tc.desc   testing ARKUI_ERROR_CODE_NON_SCROLLABLE_CONTAINER ErrorCode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIACEErrorCode1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {

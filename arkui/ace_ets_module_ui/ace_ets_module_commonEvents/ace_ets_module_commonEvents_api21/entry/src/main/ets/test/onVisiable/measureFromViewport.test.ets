@@ -48,12 +48,12 @@ export default function measureFromViewportTest() {
     });
 
     /**
-     * @tc.number    measureFromViewport_0010
-     * @tc.name      Test the api of measureFromViewport is true
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   measureFromViewport_0010
+     * @tc.number measureFromViewport_0010
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('measureFromViewport_0010', Level.LEVEL0, async (done: Function) => {
       console.info('measureFromViewport_0010 START');
@@ -64,12 +64,12 @@ export default function measureFromViewportTest() {
     });
 
     /**
-     * @tc.number    measureFromViewport_0020
-     * @tc.name      Test the api of measureFromViewport is false
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   measureFromViewport_0020
+     * @tc.number measureFromViewport_0020
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('measureFromViewport_0020', Level.LEVEL0, async (done: Function) => {
       console.info('measureFromViewport_0020 START');

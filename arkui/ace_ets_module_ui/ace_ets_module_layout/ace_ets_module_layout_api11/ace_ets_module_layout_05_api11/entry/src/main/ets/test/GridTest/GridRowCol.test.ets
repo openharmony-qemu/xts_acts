@@ -44,12 +44,14 @@ export default function GridRowCol() {
       done();
     });
 
-    /* *
-       * @tc.number: SUB_ACE_FUNCTION_JICHU_SR000HQ76H_059
-       * @tc.name  : GridRowCol_001
-       * @tc.desc  : set columnsTemplate and rowsTemplate
-       * @tc.level : Level 3
-       */
+    /**
+     * @tc.name   GridRowCol_001
+     * @tc.number SUB_ACE_FUNCTION_JICHU_SR000HQ76H_059
+     * @tc.desc   set columnsTemplate and rowsTemplate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GridRowCol_001',  Level.LEVEL0, async (done: Function) => {
 
       console.info('[GridRowCol_001] START');
@@ -72,12 +74,14 @@ export default function GridRowCol() {
       done();
     });
 
-    /* *
-       * @tc.number: SUB_ACE_FUNCTION_JICHU_SR000HQ76H_002
-       * @tc.name  : GridRowCol_002
-       * @tc.desc  : set columnsTemplate to 'repeat(auto-fit,10%)'
-       * @tc.level : Level 3
-       */
+    /**
+     * @tc.name   GridRowCol_002
+     * @tc.number SUB_ACE_FUNCTION_JICHU_SR000HQ76H_002
+     * @tc.desc   set columnsTemplate to 'repeat(auto-fit,10%)'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GridRowCol_002',  Level.LEVEL0, async (done: Function) => {
 
       console.info('[GridRowCol_002] START');
@@ -94,12 +98,14 @@ export default function GridRowCol() {
       done();
     });
 
-    /* *
-       * @tc.number: SUB_ACE_FUNCTION_JICHU_SR000HQ76H_012
-       * @tc.name  : GridRowCol_003
-       * @tc.desc  : set columnsTemplate to 'repeat(auto-fit,10%)'
-       * @tc.level : Level 3
-       */
+    /**
+     * @tc.name   GridRowCol_003
+     * @tc.number SUB_ACE_FUNCTION_JICHU_SR000HQ76H_012
+     * @tc.desc   set columnsTemplate to 'repeat(auto-fit,10%)'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GridRowCol_003',  Level.LEVEL0, async (done: Function) => {
 
       console.info('[GridRowCol_002] START');
@@ -116,12 +122,14 @@ export default function GridRowCol() {
       done();
     });
 
-    /* *
-       * @tc.number: SUB_ACE_FUNCTION_JICHU_SR000HQ76H_011
-       * @tc.name  : GridRowCol_004
-       * @tc.desc  : set columnsTemplate to 'repeat(auto-fit,-1)'
-       * @tc.level : Level 3
-       */
+    /**
+     * @tc.name   GridRowCol_004
+     * @tc.number SUB_ACE_FUNCTION_JICHU_SR000HQ76H_011
+     * @tc.desc   set columnsTemplate to 'repeat(auto-fit,-1)'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GridRowCol_004',  Level.LEVEL0, async (done: Function) => {
 
       console.info('[GridRowCol_004] START');
@@ -137,12 +145,14 @@ export default function GridRowCol() {
       done();
     });
 
-   /* *
-      * @tc.number: SUB_ACE_FUNCTION_JICHU_SR000HQ76H_011
-      * @tc.name  : GridRowCol_005
-      * @tc.desc  : set columnsTemplate to '1fr 1fr 1fr'
-      * @tc.level : Level 3
-      */
+    /**
+     * @tc.name   GridRowCol_005
+     * @tc.number SUB_ACE_FUNCTION_JICHU_SR000HQ76H_011
+     * @tc.desc   set columnsTemplate to '1fr 1fr 1fr'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GridRowCol_005',  Level.LEVEL0, async (done: Function) => {
 
       console.info('[GridRowCol_005] START');

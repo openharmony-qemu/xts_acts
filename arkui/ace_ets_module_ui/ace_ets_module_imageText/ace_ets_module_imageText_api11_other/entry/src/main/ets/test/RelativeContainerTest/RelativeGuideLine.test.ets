@@ -43,11 +43,12 @@ export default function RelativeGuideLine() {
     });
 
     /**
-     * @tc.number    SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0010
-     * @tc.desc      set direction to Axis.Horizontal and set start to 50
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   RelativeGuideLine_001
+     * @tc.number SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0010
+     * @tc.desc   set direction to Axis.Horizontal and set start to 50
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RelativeGuideLine_001', Level.LEVEL3, async (done: Function) => {
       console.info('[RelativeGuideLine_001] START');
@@ -65,11 +66,12 @@ export default function RelativeGuideLine() {
     });
 
     /**
-     * @tc.number    SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0020
-     * @tc.desc      set direction to Axis.Vertical and set start to 50
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   RelativeGuideLine_002
+     * @tc.number SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0020
+     * @tc.desc   set direction to Axis.Vertical and set start to 50
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RelativeGuideLine_002', Level.LEVEL3, async (done: Function) => {
       console.info('[RelativeGuideLine_002] START');
@@ -91,11 +93,12 @@ export default function RelativeGuideLine() {
     });
 
     /**
-     * @tc.number    SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0030
-     * @tc.desc      direction and position test
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   RelativeGuideLine_003
+     * @tc.number SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0030
+     * @tc.desc   direction and position test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RelativeGuideLine_003', Level.LEVEL3, async (done: Function) => {
       console.info('[RelativeGuideLine_003] START');
@@ -119,11 +122,12 @@ export default function RelativeGuideLine() {
     });
 
     /**
-     * @tc.number    SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0150
-     * @tc.desc      direction and position test
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
+     * @tc.name   RelativeGuideLine_004
+     * @tc.number SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0150
+     * @tc.desc   direction and position test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RelativeGuideLine_004', Level.LEVEL3, async (done: Function) => {
       console.info('[RelativeGuideLine_004] START');
@@ -145,11 +149,12 @@ export default function RelativeGuideLine() {
     });
 
     /**
-     * @tc.number    SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0160
-     * @tc.desc      direction and position test
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
+     * @tc.name   RelativeGuideLine_005
+     * @tc.number SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0160
+     * @tc.desc   direction and position test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RelativeGuideLine_005', Level.LEVEL3, async (done: Function) => {
       console.info('[RelativeGuideLine_005] START');
@@ -171,11 +176,12 @@ export default function RelativeGuideLine() {
     });
 
     /**
-     * @tc.number    SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0170
-     * @tc.desc      direction and position test
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   RelativeGuideLine_006
+     * @tc.number SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0170
+     * @tc.desc   direction and position test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RelativeGuideLine_006', Level.LEVEL3, async (done: Function) => {
       console.info('[RelativeGuideLine_006] START');
@@ -196,14 +202,15 @@ export default function RelativeGuideLine() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0180
-     * @tc.desc      direction and position test
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   RelativeGuideLine_007
+     * @tc.number RelativeGuideLine_007
+     * @tc.desc   RelativeGuideLine_007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('RelativeGuideLine_007', Level.LEVEL3, async (done: Function) => {
       console.info('[RelativeGuideLine_007] START');
       await CommonFunc.sleep(1000);
@@ -224,14 +231,15 @@ export default function RelativeGuideLine() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0190
-     * @tc.desc      direction and position test
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   RelativeGuideLine_008
+     * @tc.number RelativeGuideLine_008
+     * @tc.desc   RelativeGuideLine_008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('RelativeGuideLine_008', Level.LEVEL3, async (done: Function) => {
       console.info('[RelativeGuideLine_008] START');
       await CommonFunc.sleep(1000);
@@ -251,14 +259,15 @@ export default function RelativeGuideLine() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0200
-     * @tc.desc      direction and position test
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   RelativeGuideLine_009
+     * @tc.number RelativeGuideLine_009
+     * @tc.desc   RelativeGuideLine_009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('RelativeGuideLine_009', Level.LEVEL3, async (done: Function) => {
       console.info('[RelativeGuideLine_009] START');
       await CommonFunc.sleep(1000);
@@ -279,14 +288,15 @@ export default function RelativeGuideLine() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0210
-     * @tc.desc      direction and position test
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
-     */
 
+    /**
+     * @tc.name   RelativeGuideLine_010
+     * @tc.number RelativeGuideLine_010
+     * @tc.desc   RelativeGuideLine_010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('RelativeGuideLine_010', Level.LEVEL3, async (done: Function) => {
       console.info('[RelativeGuideLine_010] START');
       await CommonFunc.sleep(1000);
@@ -307,14 +317,15 @@ export default function RelativeGuideLine() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0220
-     * @tc.desc      direction and position test
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
-     */
 
+    /**
+     * @tc.name   RelativeGuideLine_011
+     * @tc.number RelativeGuideLine_011
+     * @tc.desc   RelativeGuideLine_011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('RelativeGuideLine_011', Level.LEVEL3, async (done: Function) => {
       console.info('[RelativeGuideLine_011] START');
       await CommonFunc.sleep(1000);
@@ -335,14 +346,15 @@ export default function RelativeGuideLine() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0270
-     * @tc.desc      direction and position test
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
-     */
 
+    /**
+     * @tc.name   RelativeGuideLine_012
+     * @tc.number RelativeGuideLine_012
+     * @tc.desc   RelativeGuideLine_012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('RelativeGuideLine_012', Level.LEVEL3, async (done: Function) => {
       console.info('[RelativeGuideLine_012] START');
       await CommonFunc.sleep(1000);

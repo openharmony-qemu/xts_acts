@@ -42,12 +42,12 @@ export default function ModifierTextVerticalAlignTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ModifierTextVerticalAlignTest_0010
-     * @tc.name      ModifierTextVerticalAlignTest_0010
-     * @tc.desc      test the textVerticalAlign of TextModifier: TextVerticalAlign.BASELINE
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ModifierTextVerticalAlignTest_0010
+     * @tc.number SUB_ACE_ModifierTextVerticalAlignTest_0010
+     * @tc.desc   test the textVerticalAlign of TextModifier: TextVerticalAlign.BASELINE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ModifierTextVerticalAlignTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('[ModifierTextVerticalAlignTest_0010] START');
@@ -60,12 +60,12 @@ export default function ModifierTextVerticalAlignTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ModifierTextVerticalAlignTest_0020
-     * @tc.name      ModifierTextVerticalAlignTest_0020
-     * @tc.desc      test the textVerticalAlign of TextModifier: TextVerticalAlign.BOTTOM
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ModifierTextVerticalAlignTest_0020
+     * @tc.number SUB_ACE_ModifierTextVerticalAlignTest_0020
+     * @tc.desc   test the textVerticalAlign of TextModifier: TextVerticalAlign.BOTTOM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ModifierTextVerticalAlignTest_0020', Level.LEVEL2, async (done: Function) => {
       console.info('[ModifierTextVerticalAlignTest_0020] START');
@@ -78,12 +78,12 @@ export default function ModifierTextVerticalAlignTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ModifierTextVerticalAlignTest_0030
-     * @tc.name      ModifierTextVerticalAlignTest_0030
-     * @tc.desc      test the textVerticalAlign of TextModifier: TextVerticalAlign.CENTER
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ModifierTextVerticalAlignTest_0030
+     * @tc.number SUB_ACE_ModifierTextVerticalAlignTest_0030
+     * @tc.desc   test the textVerticalAlign of TextModifier: TextVerticalAlign.CENTER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ModifierTextVerticalAlignTest_0030', Level.LEVEL2, async (done: Function) => {
       console.info('[ModifierTextVerticalAlignTest_0030] START');
@@ -96,12 +96,12 @@ export default function ModifierTextVerticalAlignTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ModifierTextVerticalAlignTest_0040
-     * @tc.name      ModifierTextVerticalAlignTest_0040
-     * @tc.desc      test the textVerticalAlign of TextModifier: TextVerticalAlign.TOP
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ModifierTextVerticalAlignTest_0040
+     * @tc.number SUB_ACE_ModifierTextVerticalAlignTest_0040
+     * @tc.desc   test the textVerticalAlign of TextModifier: TextVerticalAlign.TOP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ModifierTextVerticalAlignTest_0040', Level.LEVEL2, async (done: Function) => {
       console.info('[ModifierTextVerticalAlignTest_0040] START');
@@ -114,12 +114,12 @@ export default function ModifierTextVerticalAlignTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ModifierTextVerticalAlignTest_0050
-     * @tc.name      ModifierTextVerticalAlignTest_0050
-     * @tc.desc      test the textVerticalAlign of TextModifier: undefined
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ModifierTextVerticalAlignTest_0050
+     * @tc.number SUB_ACE_ModifierTextVerticalAlignTest_0050
+     * @tc.desc   test the textVerticalAlign of TextModifier: undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ModifierTextVerticalAlignTest_0050', Level.LEVEL2, async (done: Function) => {
       console.info('[ModifierTextVerticalAlignTest_0050] START');

@@ -60,12 +60,12 @@ export default function stateArr() {
     });
 
     /**
+     * @tc.name   StateArr0010TestJsunit_001
      * @tc.number StateArr0010TestJsunit_001
-     * @tc.name StateArr0010TestJsunit_001
-     * @tc.desc Test state array
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Test state array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('StateArr0010TestJsunit_001', Level.LEVEL0, async (done: Function) => {
       console.info('[StateArr0010TestJsunit_001] START');

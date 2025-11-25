@@ -58,12 +58,12 @@ export default function CustomPopupOptionsTrue() {
     });
 
     /**
+     * @tc.name   CustomPopupOptionsTrue_0100
      * @tc.number SUB_ACE_CustomPopupOptionsTrue_0100
-     * @tc.name CustomPopupOptionsTrue_0100
-     * @tc.desc set api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CustomPopupOptionsTrue_0100', Level.LEVEL0, async (done: Function) => {
       console.info('CustomPopupOptionsTrue_0100 START');

@@ -26,14 +26,14 @@ export default function customComponentEnabledTest() {
       await Utils.pushPage(`customcomponent/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ENABLED_0100
-    * @tc.name       : testCustomComponentEnabled001
-    * @tc.desc       : test onClick event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCustomComponentEnabled001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ENABLED_0100
+     * @tc.desc   test onClick event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCustomComponentEnabled001', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('EnabledTestCustomComponent')
       await Utils.sleep(2000)
@@ -53,14 +53,14 @@ export default function customComponentEnabledTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ENABLED_0200
-    * @tc.name       : testCustomComponentEnabled002
-    * @tc.desc       : test onClick event not callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCustomComponentEnabled002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_ENABLED_0200
+     * @tc.desc   test onClick event not callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCustomComponentEnabled002', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('EnabledTestCustomComponentDisable')
       await Utils.sleep(2000)

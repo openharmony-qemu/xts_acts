@@ -56,12 +56,12 @@ export default function stopImageAnalyzerJsunit() {
     });
 
     /**
+     * @tc.name   startImageAnalyzerTest_0010
      * @tc.number startImageAnalyzerTest_0010
-     * @tc.name startImageAnalyzerTest_0010
-     * @tc.desc Xcomponent: get the api of startImageAnalyzer
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   Xcomponent: get the api of startImageAnalyzer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('startImageAnalyzerTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('startImageAnalyzerTest_0010 START');
@@ -78,12 +78,12 @@ export default function stopImageAnalyzerJsunit() {
     });
 
     /**
+     * @tc.name   stopImageAnalyzerTest_0020
      * @tc.number stopImageAnalyzerTest_0020
-     * @tc.name stopImageAnalyzerTest_0020
-     * @tc.desc Xcomponent: get the api of stopImageAnalyzer
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   Xcomponent: get the api of stopImageAnalyzer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('stopImageAnalyzerTest_0020', Level.LEVEL2, async (done: Function) => {
       console.info('stopImageAnalyzerTest_0020 START');

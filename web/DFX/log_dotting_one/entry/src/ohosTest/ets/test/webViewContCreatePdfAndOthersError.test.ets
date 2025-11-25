@@ -286,11 +286,11 @@ export default function webViewContCreatePdfAndOthersError() {
       Utils.registerEvent("testGetLastHitTestInitErr", "Init error. The WebviewController must be associated with a Web component", 111110, done);
       await Utils.waitAndClickComponent(driver, "webViewContCreatePdfAndOthersError");
     })
-     /*
-    * @tc.number      : SUB_ACE_WEBVIEW_DEINSTITUTIONALIZATION_API_0001
-    * @tc.name        : testSetSiteIsolationModeErr
-    * @tc.desc        : test SetSiteIsolationMode
-    * @tc.size        : MediumTest
+       /*	
+    * @tc.number      : SUB_ACE_WEBVIEW_DEINSTITUTIONALIZATION_API_0001	
+    * @tc.name        : testSetSiteIsolationModeErr	
+    * @tc.desc        : test SetSiteIsolationMode	
+    * @tc.size        : MediumTest	
     * @tc.type        : Function
     * @tc.level       : Level 0
     */

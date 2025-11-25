@@ -41,6 +41,14 @@ export default function geometryTransitionJsunit() {
       await Utils.sleep(1000);
       console.info("geometryTransition after each called");
     });
+    /**
+     * @tc.name   geometryTransitionTest_0100
+     * @tc.number geometryTransitionTest_0100
+     * @tc.desc   geometryTransitionTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('geometryTransitionTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('geometryTransitionTest_0100 START');
       let indexEvent: events_emitter.InnerEvent = {

@@ -27,10 +27,13 @@ const VENDOR = "example";
 export default function getBundleInfo() {
   describe('getBundleInfo', (): void => {
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_static_1100
-     * @tc.name: getBundleInfoCallbackDefault
-     * @tc.desc: Test getBundleInfo with default flag(by callback).
+    /**
+     * @tc.name   getBundleInfoCallbackDefault
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_static_1100
+     * @tc.desc   Test getBundleInfo with default flag(by callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getBundleInfoCallbackDefault', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -67,10 +70,13 @@ export default function getBundleInfo() {
           })
       })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_static_1200
-     * @tc.name: getBundleInfoCallbackDefaultUserID
-     * @tc.desc: Test getBundleInfo with default flag and userID(by callback).
+    /**
+     * @tc.name   getBundleInfoCallbackDefaultUserID
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_static_1200
+     * @tc.desc   Test getBundleInfo with default flag and userID(by callback).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getBundleInfoCallbackDefaultUserID', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -107,10 +113,13 @@ export default function getBundleInfo() {
           })
       })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_static_1300
-     * @tc.name: getBundleInfoPromiseDefault
-     * @tc.desc: Test getBundleInfo with default flag(by promise).
+    /**
+     * @tc.name   getBundleInfoPromiseDefault
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_static_1300
+     * @tc.desc   Test getBundleInfo with default flag(by promise).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getBundleInfoPromiseDefault', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -140,10 +149,13 @@ export default function getBundleInfo() {
           })
       })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_static_1400
-     * @tc.name: getBundleInfoSyncDefault
-     * @tc.desc: Test getBundleInfo with default flag(by sync).
+    /**
+     * @tc.name   getBundleInfoSyncDefault
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_static_1400
+     * @tc.desc   Test getBundleInfo with default flag(by sync).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getBundleInfoSyncDefault', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -168,10 +180,13 @@ export default function getBundleInfo() {
         done();
       })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_static_1500
-     * @tc.name: getBundleInfoSyncDefaultUserID
-     * @tc.desc: Test getBundleInfo with default flag and userID(by sync).
+    /**
+     * @tc.name   getBundleInfoSyncDefaultUserID
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_static_1500
+     * @tc.desc   Test getBundleInfo with default flag and userID(by sync).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getBundleInfoSyncDefaultUserID', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {

@@ -47,9 +47,12 @@ export default function flexPadding_StartJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignStartParentSetPadding
      * @tc.number SUB_ACE_FLEXALIGNITEMS_START_0300
-     * @tc.name testFlexItemAlignStartParentSetPadding
-     * @tc.desc Parent component set paddding,subcomponent does not exceed the parent component.
+     * @tc.desc   Parent component set paddding,subcomponent does not exceed the parent component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignStartParentSetPadding',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignStartParentSetPadding START');
@@ -89,9 +92,12 @@ export default function flexPadding_StartJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignStartParentSetPaddingExceed
      * @tc.number SUB_ACE_FLEXALIGNITEMS_START_0400
-     * @tc.name testFlexItemAlignStartParentSetPaddingExceed
-     * @tc.desc Parent component set paddding,subcomponent exceeds the parent component.
+     * @tc.desc   Parent component set paddding,subcomponent exceeds the parent component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignStartParentSetPaddingExceed',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignStartParentSetPaddingExceed START');

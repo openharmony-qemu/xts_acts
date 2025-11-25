@@ -50,12 +50,12 @@ export default function abilityTest() {
     afterAll(() => {
     })
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_deeplink_1100
      * @tc.number SUB_Ability_AbilityRuntime_deeplink_1100
-     * @tc.name SUB_Ability_AbilityRuntime_deeplink_1100
-     * @tc.desc The three-party app calls UIAbilityContext.startAbility to implicitly start the three-party app, only configuring the action, and the action contains special characters.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   The three-party app calls UIAbilityContext.startAbility to implicitly start the three-party app, only configuring the action, and the action contains special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_deeplink_1100', Level.LEVEL0, async (done:Function) => {
       const  TAG = 'SUB_Ability_AbilityRuntime_deeplink_1100';

@@ -48,12 +48,12 @@ export default function DragInteractionOptionsTest() {
     });
 
     /**
-     * @tc.number    DragInteractionOptions_0010
-     * @tc.name      DragInteractionOptions
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   DragInteractionOptions_0010
+     * @tc.number DragInteractionOptions_0010
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DragInteractionOptions_0010', Level.LEVEL0, async (done: Function) => {
       console.info('DragInteractionOptions_0010 START');
@@ -75,12 +75,12 @@ export default function DragInteractionOptionsTest() {
     });
 
     /**
-     * @tc.number    DragInteractionOptions_0020
-     * @tc.name      DragInteractionOptions
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   DragInteractionOptions_0020
+     * @tc.number DragInteractionOptions_0020
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DragInteractionOptions_0020', Level.LEVEL0, async (done: Function) => {
       console.info('DragInteractionOptions_0020 START');

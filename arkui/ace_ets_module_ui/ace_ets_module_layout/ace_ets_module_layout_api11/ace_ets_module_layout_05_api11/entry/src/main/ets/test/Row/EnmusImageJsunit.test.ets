@@ -44,6 +44,14 @@ export default function enumsImageJsunit() {
       console.info('[ afterEach ] ===================enumsImageTest test after each called===================');
     });
 
+    /**
+     * @tc.name   enumsImageTest_0100
+     * @tc.number enumsImageTest_0100
+     * @tc.desc   enumsImageTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('enumsImageTest_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('enumsImageTest_0100 START');
       let strJson: string = getInspectorByKey('Image');
@@ -54,6 +62,14 @@ export default function enumsImageJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   enumsImageTest_0200
+     * @tc.number enumsImageTest_0200
+     * @tc.desc   enumsImageTest_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('enumsImageTest_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('enumsImageTest_0200 START');
       let strJson: string = getInspectorByKey('Image');

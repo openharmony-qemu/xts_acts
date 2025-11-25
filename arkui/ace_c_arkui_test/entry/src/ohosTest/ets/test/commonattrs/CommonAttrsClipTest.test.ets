@@ -26,91 +26,91 @@ export default function commonAttrsClipTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_CLIP_0100
-     * @tc.name       : testCommonAttrsClip001
-     * @tc.desc       : testing clip for imageSpan with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsClip001
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_CLIP_0100
+     * @tc.desc   testing clip for imageSpan with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsClip001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsClip001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_CLIP_0200
-     * @tc.name       : testCommonAttrsClip002
-     * @tc.desc       : testing clip for imageSpan with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsClip002
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_CLIP_0200
+     * @tc.desc   testing clip for imageSpan with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsClip002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsClip002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_CLIP_0300
-     * @tc.name       : testCommonAttrsClip003
-     * @tc.desc       : testing clip for imageSpan with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCommonAttrsClip003
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_CLIP_0300
+     * @tc.desc   testing clip for imageSpan with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsClip003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsClip003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_CLIP_0400
-     * @tc.name       : testCommonAttrsClip004
-     * @tc.desc       : testing clip for imageSpan with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsClip004
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_CLIP_0400
+     * @tc.desc   testing clip for imageSpan with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsClip004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsClip004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_CLIP_0500
-     * @tc.name       : testCommonAttrsClip005
-     * @tc.desc       : testing clip for imageSpan with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsClip005
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_CLIP_0500
+     * @tc.desc   testing clip for imageSpan with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsClip005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsClip005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_CLIP_0600
-     * @tc.name       : testCommonAttrsClip006
-     * @tc.desc       : testing clip for imageSpan with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsClip006
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_CLIP_0600
+     * @tc.desc   testing clip for imageSpan with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsClip006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsClip006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_CLIP_0700
-     * @tc.name       : testCommonAttrsClip007
-     * @tc.desc       : testing clip for imageSpan with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsClip007
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_CLIP_0700
+     * @tc.desc   testing clip for imageSpan with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsClip007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsClip007()).assertEqual(0)

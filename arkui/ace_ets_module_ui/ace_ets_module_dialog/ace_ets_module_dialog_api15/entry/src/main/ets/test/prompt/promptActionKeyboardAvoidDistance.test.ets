@@ -43,12 +43,12 @@ export default function promptActionKeyboardAvoidDistance() {
     });
 
     /**
-     * @tc.number    promptActionKeyboardAvoidDistance_0100
-     * @tc.name      promptActionKeyboardAvoidDistance_0100
-     * @tc.desc      set keyboardAvoidDistance:20vp,levelUniqueId: Normal value
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   PromptActionKeyboardAvoidDistance_0100
+     * @tc.number promptActionKeyboardAvoidDistance_0100
+     * @tc.desc   set keyboardAvoidDistance:20vp,levelUniqueId: Normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromptActionKeyboardAvoidDistance_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('PromptActionKeyboardAvoidDistance_0100 START');
@@ -88,12 +88,12 @@ export default function promptActionKeyboardAvoidDistance() {
     });
 
     /**
-     * @tc.number    promptActionKeyboardAvoidDistance_0200
-     * @tc.name      promptActionKeyboardAvoidDistance_0200
-     * @tc.desc      set keyboardAvoidDistance:undefined,levelUniqueId: Abnormal value
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   PromptActionKeyboardAvoidDistance_0200
+     * @tc.number promptActionKeyboardAvoidDistance_0200
+     * @tc.desc   set keyboardAvoidDistance:undefined,levelUniqueId: Abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromptActionKeyboardAvoidDistance_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('PromptActionKeyboardAvoidDistance_0200 START');
@@ -132,14 +132,14 @@ export default function promptActionKeyboardAvoidDistance() {
       done();
     });
 
-    /**
-     * @tc.number    promptActionKeyboardAvoidDistance_0300
-     * @tc.name      promptActionKeyboardAvoidDistance_0300
-     * @tc.desc      set keyboardAvoidDistance:null,levelUniqueId: Abnormal value
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
-     */
+     /**
+      * @tc.name   PromptActionKeyboardAvoidDistance_0300
+      * @tc.number promptActionKeyboardAvoidDistance_0300
+      * @tc.desc   set keyboardAvoidDistance:null,levelUniqueId: Abnormal value
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
+      */
      it('PromptActionKeyboardAvoidDistance_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('PromptActionKeyboardAvoidDistance_0300 START');
       await CommonFunc.sleep(1000);

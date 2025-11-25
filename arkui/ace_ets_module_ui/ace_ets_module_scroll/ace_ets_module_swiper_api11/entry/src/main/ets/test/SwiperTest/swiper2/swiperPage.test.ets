@@ -42,14 +42,15 @@ export default function swiperPageTest() {
       console.info("swiperPageTest after each called");
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0030
-     * @tc.desc      test the swipe to next page
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0030
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0030
+     * @tc.desc   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0030
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0030', Level.LEVEL1, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0030] START');
       await CommonFunc.sleep(2000);

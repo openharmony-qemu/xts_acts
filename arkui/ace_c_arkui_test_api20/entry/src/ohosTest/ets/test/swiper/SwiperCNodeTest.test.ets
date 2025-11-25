@@ -46,11 +46,13 @@ export default function SwiperCNodeTest() {
       console.info("SwiperCNode after each called");
     });
 
-    /*
-     * @tc.number    SwiperCNodeTest_0100
-     * @tc.name      SwiperCNodeTest_0100
-     * @tc.desc      Test SwiperCNode
-     * @tc.level     Level 1
+    /**
+     * @tc.name   SwiperCNodeTest_0100
+     * @tc.number SwiperCNodeTest_0100
+     * @tc.desc   Test SwiperCNode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SwiperCNodeTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[SwiperCNodeTest_0100] START');

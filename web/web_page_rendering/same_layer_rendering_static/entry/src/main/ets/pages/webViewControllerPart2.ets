@@ -22,7 +22,7 @@ import Utils from '../../src/test/Util.test';
 import events_emitter from '@ohos.events.emitter';
 import { Callback } from '@ohos.base'
 import image from '@ohos.multimedia.image';
-import  { BusinessError } from '@ohos.base';
+import  { BusinessError, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 @Entry
@@ -43,8 +43,8 @@ struct webViewControllerPart2 {
     console.info('web page valueChangeCallBack');
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      if (eventData.data != null && (eventData.data as Record<string , object>)?.['ACTION'] != null) {
-        this.str = '' + (eventData.data as Record<string , object>)?.['ACTION'];
+      if (eventData.data != null && (eventData.data as Record<string , RecordData>)?.['ACTION'] != null) {
+        this.str = '' + (eventData.data as Record<string , RecordData>)?.['ACTION'];
       }
     }
   }

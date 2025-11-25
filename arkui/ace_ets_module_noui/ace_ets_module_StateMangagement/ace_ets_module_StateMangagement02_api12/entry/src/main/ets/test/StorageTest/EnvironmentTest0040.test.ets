@@ -42,12 +42,12 @@ export default function EnvironmentTest0040() {
       done();
     });
     /**
-     * @tc.number: EnvironmentTest0040_0100
-     * @tc.name: EnvironmentTest0040_0100
-     * @tc.desc: aceEtsTest_ref
-     * @tc.level: Level 2
-     * @tc.type:
-     * @tc.size:
+     * @tc.name   EnvironmentTest0040_0100
+     * @tc.number EnvironmentTest0040_0100
+     * @tc.desc   aceEtsTest_ref
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('EnvironmentTest0040_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info('EnvironmentTest0040001 START');

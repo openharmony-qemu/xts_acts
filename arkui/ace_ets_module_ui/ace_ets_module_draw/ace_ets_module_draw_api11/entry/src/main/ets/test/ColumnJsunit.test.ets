@@ -46,6 +46,14 @@ export default function columnJsunit() {
       console.info("column after each called");
     });
 
+    /**
+     * @tc.name   testColumn01
+     * @tc.number testColumn01
+     * @tc.desc   testColumn01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testColumn01', Level.LEVEL0, async (done: Function) => {
       console.info('[testColumn01] START');
       await Utils.sleep(1000);
@@ -56,6 +64,14 @@ export default function columnJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testColumn02
+     * @tc.number testColumn02
+     * @tc.desc   testColumn02
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testColumn02', Level.LEVEL0, async (done: Function) => {
       console.info('[testColumn02] START');
       try {

@@ -39,15 +39,15 @@ export default function ModelSheetTest() {
       done();
     });
 
-    /*
-     *@tc.number ArkUX_Model_Visual_0150
-     *@tc.name   Support modifying the modelsheet bindSheet change of modelsheet component
-     *@tc.desc   Sets the bindSheet property parameter to different value
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 0 
-     */
 
+    /**
+     * @tc.name   ArkUX_Model_Visual_0150
+     * @tc.number ArkUX_Model_Visual_0150
+     * @tc.desc   ArkUX_Model_Visual_0150
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Model_Visual_0150', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Model_Visual_0150 START');
       try {
@@ -83,15 +83,15 @@ export default function ModelSheetTest() {
       done();
     });
 
-    /*
-     *@tc.number ArkUX_Model_Visual_0160
-     *@tc.name   Support modifying the modelsheet bindSheet change of modelsheet component
-     *@tc.desc   Sets the bindSheet property parameter to different value
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 0 
-     */
 
+    /**
+     * @tc.name   ArkUX_Model_Visual_0160
+     * @tc.number ArkUX_Model_Visual_0160
+     * @tc.desc   ArkUX_Model_Visual_0160
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Model_Visual_0160', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Model_Visual_0160 START');
       try {
@@ -127,15 +127,15 @@ export default function ModelSheetTest() {
       done();
     });
 
-    /*
-     *@tc.number ArkUX_Model_Visual_0170
-     *@tc.name   Support modifying the modelsheet bindSheet change of modelsheet component
-     *@tc.desc   Sets the bindSheet property parameter to different value
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 0 
-     */
 
+    /**
+     * @tc.name   ArkUX_Model_Visual_0170
+     * @tc.number ArkUX_Model_Visual_0170
+     * @tc.desc   ArkUX_Model_Visual_0170
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Model_Visual_0170', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Model_Visual_0170 START');
       try {
@@ -171,15 +171,15 @@ export default function ModelSheetTest() {
       done();
     });
 
-    /*
-     *@tc.number ArkUX_Model_Visual_0180
-     *@tc.name   Support modifying the modelsheet bindSheet change of modelsheet component
-     *@tc.desc   Sets the bindSheet property parameter to different value
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 0 
-     */
 
+    /**
+     * @tc.name   ArkUX_Model_Visual_0180
+     * @tc.number ArkUX_Model_Visual_0180
+     * @tc.desc   ArkUX_Model_Visual_0180
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Model_Visual_0180', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Model_Visual_0180 START');
       try {
@@ -214,15 +214,15 @@ export default function ModelSheetTest() {
       done();
     });
 
-    /*
-     *@tc.number ArkUX_Model_Visual_0190
-     *@tc.name   Support modifying the modelsheet bindSheet change of modelsheet component
-     *@tc.desc   Sets the bindSheet property parameter to different value
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 0 
-     */
 
+    /**
+     * @tc.name   ArkUX_Model_Visual_0190
+     * @tc.number ArkUX_Model_Visual_0190
+     * @tc.desc   ArkUX_Model_Visual_0190
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Model_Visual_0190', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Model_Visual_0190 START');
       try {
@@ -257,15 +257,15 @@ export default function ModelSheetTest() {
       done();
     });
 
-    /*
-     *@tc.number ArkUX_Model_Visual_0200
-     *@tc.name   Support modifying the modelsheet bindSheet change of modelsheet component
-     *@tc.desc   Sets the bindSheet property parameter to different value
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 0 
-     */
 
+    /**
+     * @tc.name   ArkUX_Model_Visual_0200
+     * @tc.number ArkUX_Model_Visual_0200
+     * @tc.desc   ArkUX_Model_Visual_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Model_Visual_0200', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Model_Visual_0200 START');
       try {
@@ -300,15 +300,15 @@ export default function ModelSheetTest() {
       done();
     });
 
-    /*
-     *@tc.number ArkUX_Model_Visual_0210
-     *@tc.name   Support modifying the modelsheet bindSheet change of modelsheet component
-     *@tc.desc   Sets the bindSheet property parameter to different value
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 0 
-     */
 
+    /**
+     * @tc.name   ArkUX_Model_Visual_0210
+     * @tc.number ArkUX_Model_Visual_0210
+     * @tc.desc   ArkUX_Model_Visual_0210
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Model_Visual_0210', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Model_Visual_0210 START');
       try {
@@ -343,15 +343,15 @@ export default function ModelSheetTest() {
       done();
     });
 
-    /*
-     *@tc.number ArkUX_Model_Visual_0220
-     *@tc.name   Support modifying the modelsheet bindSheet change of modelsheet component
-     *@tc.desc   Sets the bindSheet property parameter to different value
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 0 
-     */
 
+    /**
+     * @tc.name   ArkUX_Model_Visual_0220
+     * @tc.number ArkUX_Model_Visual_0220
+     * @tc.desc   ArkUX_Model_Visual_0220
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ArkUX_Model_Visual_0220', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Model_Visual_0220 START');
       try {

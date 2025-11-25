@@ -41,13 +41,13 @@ export default function UIContextWindowStageTest() {
       done();
     })
 
-    /*
-     * @tc.number  ACTS_GetWindowStage_0100
-     * @tc.name    Test windosStage state in ability lifecycle.
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   3
+    /**
+     * @tc.name   ACTS_GetWindowStage_0100
+     * @tc.number ACTS_GetWindowStage_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_GetWindowStage_0100', Level.LEVEL0, (done: Function) => {
       TAG = 'ACTS_GetWindowStage_0100';
@@ -81,13 +81,13 @@ export default function UIContextWindowStageTest() {
       })
     })
 
-    /*
-     * @tc.number  ACTS_GetWindowStage_0200
-     * @tc.name    Test windosStage state in ability lifecycle.
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   3
+    /**
+     * @tc.name   ACTS_GetWindowStage_0200
+     * @tc.number ACTS_GetWindowStage_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_GetWindowStage_0200', Level.LEVEL0, (done: Function) => {
       TAG = 'ACTS_GetWindowStage_0200';
@@ -133,13 +133,13 @@ export default function UIContextWindowStageTest() {
       })
     })
 
-    /*
-     * @tc.number  ACTS_GetWindowStage_onForeground_0100
-     * @tc.name    Test windosStage state in ability onForeground lifecycle.
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   3
+    /**
+     * @tc.name   ACTS_GetWindowStage_onForeground_0100
+     * @tc.number ACTS_GetWindowStage_onForeground_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_GetWindowStage_onForeground_0100', Level.LEVEL0, (done: Function) => {
       TAG = 'ACTS_GetWindowStage_onForeground_0100';
@@ -197,13 +197,13 @@ export default function UIContextWindowStageTest() {
       })
     })
 
-    /*
-     * @tc.number  ACTS_GetWindowStage_onNewWant_0100
-     * @tc.name    Test windosStage state in ability onNewWant lifecycle.
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   3
+    /**
+     * @tc.name   ACTS_GetWindowStage_onNewWant_0100
+     * @tc.number ACTS_GetWindowStage_onNewWant_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_GetWindowStage_onNewWant_0100', Level.LEVEL0, (done: Function) => {
       TAG = 'ACTS_GetWindowStage_onNewWant_0100';
@@ -262,13 +262,13 @@ export default function UIContextWindowStageTest() {
       })
     })
 
-    /*
-     * @tc.number  ACTS_GetWindowStage_onWindowStageRestore_0100
-     * @tc.name    Test windosStage state in ability onWindowStageRestore lifecycle.
-     * @tc.desc    Function test
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   3
+    /**
+     * @tc.name   ACTS_GetWindowStage_onWindowStageRestore_0100
+     * @tc.number ACTS_GetWindowStage_onWindowStageRestore_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_GetWindowStage_onWindowStageRestore_0100', Level.LEVEL0, (done: Function) => {
       TAG = 'ACTS_GetWindowStage_onWindowStageRestore_0100';

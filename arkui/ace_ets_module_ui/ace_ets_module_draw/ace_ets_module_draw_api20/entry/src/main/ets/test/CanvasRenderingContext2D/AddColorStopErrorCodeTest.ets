@@ -42,12 +42,12 @@ export default function AddColorStopErrorCodeTest() {
       done();
     });
     /**
-     * @tc.number
-     * @tc.name      AddColorStopErrorCodeTest_0100
-     * @tc.desc      Error Code 103701
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   AddColorStopErrorCodeTest_0100
+     * @tc.number AddColorStopErrorCodeTest_0100
+     * @tc.desc   Error Code 103701
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AddColorStopErrorCodeTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[AddColorStopErrorCodeTest_0100] START');

@@ -59,9 +59,12 @@ export default function LazyForEachVisibleAreaChange() {
     });
 
     /**
+     * @tc.name   LazyForEachVisibleAreaChange_001
      * @tc.number LazyForEachVisibleAreaChange_001
-     * @tc.name LazyForEachVisibleAreaChange_001
-     * @tc.desc Test LazyForEachVisibleAreaChange
+     * @tc.desc   Test LazyForEachVisibleAreaChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LazyForEachVisibleAreaChange_001', Level.LEVEL0, async (done: Function) => {
       console.info('[LazyForEachVisibleAreaChange_001] START');      

@@ -26,39 +26,39 @@ export default function buttonBackgroundColorTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_BUTTON_BACKGROUNDCOLOR_0100
-     * @tc.name       : testButtonBackgroundColor001
-     * @tc.desc       : testing backgroundColor for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testButtonBackgroundColor001
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_BACKGROUNDCOLOR_0100
+     * @tc.desc   testing backgroundColor for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButtonBackgroundColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testButtonBackgroundColor001()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_BUTTON_BACKGROUNDCOLOR_0200
-     * @tc.name       : testButtonBackgroundColor002
-     * @tc.desc       : testing backgroundColor for button with boundary value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testButtonBackgroundColor002
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_BACKGROUNDCOLOR_0200
+     * @tc.desc   testing backgroundColor for button with boundary value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButtonBackgroundColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testButtonBackgroundColor002()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_BUTTON_BACKGROUNDCOLOR_0300
-     * @tc.name       : testButtonBackgroundColor003
-     * @tc.desc       : testing backgroundColor for button with boundary value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testButtonBackgroundColor003
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_BACKGROUNDCOLOR_0300
+     * @tc.desc   testing backgroundColor for button with boundary value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButtonBackgroundColor003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testButtonBackgroundColor003()).assertEqual(0)

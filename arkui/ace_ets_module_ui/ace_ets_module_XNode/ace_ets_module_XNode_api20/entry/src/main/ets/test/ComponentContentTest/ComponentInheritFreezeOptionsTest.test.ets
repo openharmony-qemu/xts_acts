@@ -47,12 +47,12 @@ export default function ComponentInheritFreezeOptionsTest() {
     });
 
     /**
-     * @tc.number    ComponentInheritFreezeOptionsTest_0100
-     * @tc.name      ComponentInheritFreezeOptionsTest_0100
-     * @tc.desc      ComponentContent InheritFreezeOptions Test
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ComponentInheritFreezeOptionsTest_0100
+     * @tc.number ComponentInheritFreezeOptionsTest_0100
+     * @tc.desc   ComponentContent InheritFreezeOptions Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ComponentInheritFreezeOptionsTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ComponentInheritFreezeOptionsTest_0100 START');

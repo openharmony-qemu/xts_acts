@@ -49,10 +49,12 @@ export default function NavigationCustomTitlePage() {
 
 
     /**
-     * @tc.number    NavigationCustomTitlePage_0100
-     * @tc.name      NavigationCustomTitlePage_0100
-     * @tc.desc      Test NavigationCustomTitlePage
-     * @tc.level     Level 0
+     * @tc.name   NavigationCustomTitlePage_0100
+     * @tc.number NavigationCustomTitlePage_0100
+     * @tc.desc   Test NavigationCustomTitlePage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationCustomTitlePage_0100', Level.LEVEL0, async (done: Function) => {
       console.info('NavigationCustomTitlePage_0100 START');
@@ -75,10 +77,12 @@ export default function NavigationCustomTitlePage() {
     });
 
     /**
-     * @tc.number    NavigationCustomTitlePage_0200
-     * @tc.name      NavigationCustomTitlePage_0200
-     * @tc.desc      Test NavDestinationCustomTitle
-     * @tc.level     Level 0
+     * @tc.name   NavigationCustomTitlePage_0200
+     * @tc.number NavigationCustomTitlePage_0200
+     * @tc.desc   Test NavDestinationCustomTitle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationCustomTitlePage_0200', Level.LEVEL0, async (done: Function) => {
       console.info('NavigationCustomTitlePage_0200 START');

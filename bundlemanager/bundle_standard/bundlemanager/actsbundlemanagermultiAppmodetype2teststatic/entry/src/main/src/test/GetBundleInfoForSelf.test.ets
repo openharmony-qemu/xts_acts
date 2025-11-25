@@ -27,9 +27,12 @@ export default function getBundleInfoForSelf() {
   describe('getBundleInfoForSelf', (): void => {
 
     /**
-     * @tc.number  Test_MultiAppModeType_0100
-     * @tc.name    Test_MultiAppModeType_0100
-     * @tc.desc    Test MultiAppModeType
+     * @tc.name   Test_MultiAppModeType_0100
+     * @tc.number Test_MultiAppModeType_0100
+     * @tc.desc   Test MultiAppModeType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Test_MultiAppModeType_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {

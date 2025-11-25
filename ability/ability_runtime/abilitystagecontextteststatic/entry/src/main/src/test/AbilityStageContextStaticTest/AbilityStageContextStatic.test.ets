@@ -42,12 +42,12 @@ export default function AbilityStageContextStatic() {
     })
 
     /**
-     * @tc.number    ABILITY_TEST_COLORMODE_Static_0100
-     * @tc.name      AbilityStageContextStatic001
-     * @tc.desc      test filed of AbilityStageContext.currentHapModuleInfo and AbilityStageContext.config
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   AbilityStageContextStatic001
+     * @tc.number ABILITY_TEST_COLORMODE_Static_0100
+     * @tc.desc   test filed of AbilityStageContext.currentHapModuleInfo and AbilityStageContext.config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('AbilityStageContextStatic001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       AbilityStageContext = AppStorage.get<common.AbilityStageContext>("AbilityStageContext") as common.AbilityStageContext
@@ -125,10 +125,12 @@ export default function AbilityStageContextStatic() {
     })
 
     /**
-     * @tc.number SUB_AA_AbilityStageMonitor_Static_0100
      * @tc.name   SUB_AA_AbilityStageMonitor_Static_0100
+     * @tc.number SUB_AA_AbilityStageMonitor_Static_0100
      * @tc.desc   Verify that the callback form of waitAbilityStageMonitor can get the abilityStage instance
-     * @tc.level  1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_AA_AbilityStageMonitor_Static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -146,10 +148,12 @@ export default function AbilityStageContextStatic() {
       })
 
     /**
-     * @tc.number SUB_AA_AbilityStageMonitor_Static_0200
      * @tc.name   SUB_AA_AbilityStageMonitor_Static_0200
+     * @tc.number SUB_AA_AbilityStageMonitor_Static_0200
      * @tc.desc   Verify that the callback form of waitAbilityStageMonitor can get the abilityStage instance
-     * @tc.level  1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_AA_AbilityStageMonitor_Static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -167,10 +171,12 @@ export default function AbilityStageContextStatic() {
       })
 
     /**
-     * @tc.number SUB_AA_AbilityStageMonitor_Static_0300
      * @tc.name   SUB_AA_AbilityStageMonitor_Static_0300
+     * @tc.number SUB_AA_AbilityStageMonitor_Static_0300
      * @tc.desc   Verify that the promise form of waitAbilityStageMonitor can get the abilityStage instance
-     * @tc.level  1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_AA_AbilityStageMonitor_Static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       const itName = 'waitAbilityStageMonitor_promise';
@@ -195,10 +201,12 @@ export default function AbilityStageContextStatic() {
     })
 
     /**
-     * @tc.number SUB_AA_AbilityStageMonitor_Static_0400
      * @tc.name   SUB_AA_AbilityStageMonitor_Static_0400
+     * @tc.number SUB_AA_AbilityStageMonitor_Static_0400
      * @tc.desc   Verify that the callback form of waitAbilityStageMonitor can get the abilityStage instance
-     * @tc.level  1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_AA_AbilityStageMonitor_Static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       const itName = 'waitAbilityStageMonitor_promise';
@@ -223,13 +231,12 @@ export default function AbilityStageContextStatic() {
     })
 
     /**
+     * @tc.name   SUB_AA_AbilityStageMonitor_Static_0700
      * @tc.number SUB_AA_AbilityStageMonitor_Static_0700
-     * @tc.name SUB_AA_AbilityStageMonitor_Static_0700
-     * @tc.desc Call the promise form of addAbilityStageMonitor to add monitoring,
-     * and call the promise form of removeAbilityStageMonitor to cancel monitoring
-     * Verify that addAbilityStageMonitor can add monitoring,
-     * verify that removeAbilityStageMonitor can cancel monitoring
-     * @tc.level 3
+     * @tc.desc   Call the promise form of addAbilityStageMonitor to add monitoring,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_AA_AbilityStageMonitor_Static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       addMonitor = false;
@@ -263,13 +270,12 @@ export default function AbilityStageContextStatic() {
     })
 
     /**
+     * @tc.name   SUB_AA_AbilityStageMonitor_Static_0800
      * @tc.number SUB_AA_AbilityStageMonitor_Static_0800
-     * @tc.name SUB_AA_AbilityStageMonitor_Static_0800
-     * @tc.desc Call the callback form of addAbilityStageMonitor to add monitoring,
-     * and call the callback form of removeAbilityStageMonitor to cancel monitoring
-     * Verify that addAbilityStageMonitor can add monitoring,
-     * verify that removeAbilityStageMonitor can cancel monitoring
-     * @tc.level 3
+     * @tc.desc   Call the callback form of addAbilityStageMonitor to add monitoring,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_AA_AbilityStageMonitor_Static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       addMonitor = false;
@@ -308,13 +314,12 @@ export default function AbilityStageContextStatic() {
     })
 
     /**
+     * @tc.name   addAbilityStageMonitorSyncStatic001
      * @tc.number SUB_AA_AbilityStageMonitorSync_0100
-     * @tc.name addAbilityStageMonitorSyncStatic001
-     * @tc.desc Call the synchronous method of addAbilityStageMonitorSync to add monitoring,
-     * call the ynchronous method of removeAbilityStageMonitorSync to cancel monitoring
-     * Verify that addAbilityStageMonitorSync can add monitoring,
-     * verify that removeAbilityStageMonitorSync can cancel monitoring
-     * @tc.level 3
+     * @tc.desc   Call the synchronous method of addAbilityStageMonitorSync to add monitoring,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('addAbilityStageMonitorSyncStatic001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       addMonitor = false;

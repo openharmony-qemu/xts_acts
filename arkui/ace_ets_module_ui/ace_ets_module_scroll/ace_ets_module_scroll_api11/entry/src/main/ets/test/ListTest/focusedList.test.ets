@@ -46,12 +46,12 @@ export default function focusedList() {
     });
 
     /**
-     * @tc.number    focusedList_001
-     * @tc.name      focusedList_0100
-     * @tc.desc      List Component Focus Test.
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   focusedList_0100
+     * @tc.number focusedList_001
+     * @tc.desc   List Component Focus Test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('focusedList_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[focusedList_0100] START');

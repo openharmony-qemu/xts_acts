@@ -45,12 +45,14 @@ export default function TextSelectionMenu() {
       console.info("TextSelectionMenu after each called");
     });
 
-    /*
-       * @tc.number      TextSelectionMenu_001
-       * @tc.name        TextSelectionMenu_001
-       * @tc.desc        TextSelectionMenu RichEditorResponseType test
-       * @tc.level       Level 2
-       */
+    /**
+     * @tc.name   TextSelectionMenu_001
+     * @tc.number TextSelectionMenu_001
+     * @tc.desc   TextSelectionMenu RichEditorResponseType test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('TextSelectionMenu_001', Level.LEVEL2, async (done: Function) => {
       console.info('[TextSelectionMenu_001] START');
       await CommonFunc.sleep(1000);
@@ -74,12 +76,14 @@ export default function TextSelectionMenu() {
     });
 
 
-    /*
-    * @tc.number      TextSelectionMenu_002
-    * @tc.name        TextSelectionMenu_002
-    * @tc.desc        TextSelectionMenu RichEditorResponseType test
-    * @tc.level       Level 2
-    */
+    /**
+     * @tc.name   TextSelectionMenu_002
+     * @tc.number TextSelectionMenu_002
+     * @tc.desc   TextSelectionMenu RichEditorResponseType test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('TextSelectionMenu_002', Level.LEVEL2, async (done: Function) => {
       console.info('[TextSelectionMenu_002] START');
       await CommonFunc.sleep(1000);

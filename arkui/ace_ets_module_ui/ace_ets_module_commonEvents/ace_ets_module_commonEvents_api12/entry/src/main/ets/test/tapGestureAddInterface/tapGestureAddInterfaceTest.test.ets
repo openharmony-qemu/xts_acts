@@ -47,12 +47,12 @@ export default function tapGestureAddInterfaceTest() {
     });
 
     /**
-     * @tc.number
-     * @tc.name      tapGestureAddInterfaceTest_0010
-     * @tc.desc      api test response  double click in the distanceThreshold value
-     * @tc.level:    Level
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   tapGestureAddInterfaceTest_0010
+     * @tc.number tapGestureAddInterfaceTest_0010
+     * @tc.desc   api test response  double click in the distanceThreshold value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('tapGestureAddInterfaceTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('tapGestureAddInterfaceTest_0010 START');
@@ -89,12 +89,12 @@ export default function tapGestureAddInterfaceTest() {
     });
 
     /**
-     * @tc.number
-     * @tc.name      tapGestureAddInterfaceTest_0020
-     * @tc.desc      api test response  double click out of the distanceThreshold value
-     * @tc.level:    Level
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   tapGestureAddInterfaceTest_0020
+     * @tc.number tapGestureAddInterfaceTest_0020
+     * @tc.desc   api test response  double click out of the distanceThreshold value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('tapGestureAddInterfaceTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('tapGestureAddInterfaceTest_0020 START');
@@ -144,12 +144,12 @@ export default function tapGestureAddInterfaceTest() {
     });
 
     /**
-     * @tc.number
-     * @tc.name      tapGestureAddInterfaceTest_0030
-     * @tc.desc      api test response single click in the distanceThreshold value
-     * @tc.level:    Level
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   tapGestureAddInterfaceTest_0030
+     * @tc.number tapGestureAddInterfaceTest_0030
+     * @tc.desc   api test response single click in the distanceThreshold value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('tapGestureAddInterfaceTest_0030', Level.LEVEL0, async (done: Function) => {
       console.info('tapGestureAddInterfaceTest_0010 START');
@@ -186,12 +186,12 @@ export default function tapGestureAddInterfaceTest() {
     });
 
     /**
-     * @tc.number
-     * @tc.name      tapGestureAddInterfaceTest_0040
-     * @tc.desc      api test response single click out of the distanceThreshold value
-     * @tc.level:    Level
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   tapGestureAddInterfaceTest_0040
+     * @tc.number tapGestureAddInterfaceTest_0040
+     * @tc.desc   api test response single click out of the distanceThreshold value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('tapGestureAddInterfaceTest_0040', Level.LEVEL0, async (done: Function) => {
       console.info('tapGestureAddInterfaceTest_0020 START');

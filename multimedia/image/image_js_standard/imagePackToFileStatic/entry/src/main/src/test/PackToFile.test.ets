@@ -116,8 +116,18 @@ export default function imagePackToFile() {
             fileio.closeSync(fd)
             console.info(`${testNum} file size ${fileio.statSync(fPath).size}`);
             let imgSource = image.createImageSource(fPath);
+            if (imgSource == undefined) {
+              expect().assertFail();
+              done();
+              return undefined;
+            }
             let info = await imgSource.getImageInfo();
             await imgSource.release();
+            if (info == undefined) {
+              expect().assertFail();
+              done();
+              return undefined;
+            }
             console.log(`${testNum} file size ${info.size.width}`);
             console.log(`${testNum} file size ${info.size.height}`);
             checkSize(info.size.width, info.size.height)
@@ -168,11 +178,19 @@ export default function imagePackToFile() {
                   done();
                 } else {
                   let imgSource = image.createImageSource(fPath);
-                  let info = await imgSource.getImageInfo();
-                  await imgSource.release();
-                  console.log(`${testNum} file size ${info.size.width}`);
-                  console.log(`${testNum} file size ${info.size.height}`);
-                  checkSize(info.size.width, info.size.height)
+                  if (imgSource == undefined) {
+                    expect().assertFail();
+                  } else {
+                    let info = await imgSource.getImageInfo();
+                    if (info == undefined) {
+                      expect().assertFail();
+                    } else {
+                      await imgSource.release();
+                      console.log(`${testNum} file size ${info.size.width}`);
+                      console.log(`${testNum} file size ${info.size.height}`);
+                      checkSize(info.size.width, info.size.height)
+                    }
+                  }
                   done();
                 }
               } catch (e1) {
@@ -194,11 +212,19 @@ export default function imagePackToFile() {
                   done();
                 } else {
                   let imgSource = image.createImageSource(fPath);
-                  let info = await imgSource.getImageInfo();
-                  await imgSource.release();
-                  console.log(`${testNum} file size ${info.size.width}`);
-                  console.log(`${testNum} file size ${info.size.height}`);
-                  checkSize(info.size.width, info.size.height)
+                  if(imgSource == undefined) {
+                    expect().assertFail();
+                  } else {
+                    let info = await imgSource.getImageInfo();
+                    await imgSource.release();
+                    if(info != undefined) {
+                      console.log(`${testNum} file size ${info.size.width}`);
+                      console.log(`${testNum} file size ${info.size.height}`);
+                      checkSize(info.size.width, info.size.height)
+                    } else {
+                      expect().assertFail();
+                    }
+                  }
                   done();
                 }
               } catch (e1) {
@@ -313,10 +339,19 @@ export default function imagePackToFile() {
      */
     it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let imageSource = getImageSourceData("test.png")
-      expect(imageSource!= undefined).assertTrue();
+      if (imageSource == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let fileInfo = getWriteFd("promise_image_source.jpg")
       let ops: image.PackingOption = { format: "image/jpeg", quality: 100 };
       let imageInfo = await imageSource.getImageInfo();
+      if (imageInfo == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let checkSize = (width: int, height: int) => {
         expect(width == imageInfo!.size.width).assertTrue();
         expect(height == imageInfo!.size.height).assertTrue();
@@ -339,10 +374,19 @@ export default function imagePackToFile() {
      */
     it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let imageSource = getImageSourceData("test.png")
-      expect(imageSource!= undefined).assertTrue();
+      if (imageSource == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let fileInfo = getWriteFd("webp_image_source.webp")
       let ops: image.PackingOption = { format: "image/webp", quality: 98 };
       let imageInfo = await imageSource.getImageInfo();
+      if (imageInfo == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let checkSize = (width: int, height: int) => {
         expect(width == imageInfo!.size.width).assertTrue();
         expect(height == imageInfo!.size.height).assertTrue();
@@ -365,10 +409,19 @@ export default function imagePackToFile() {
      */
     it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let imageSource = getImageSourceData("test.png")
-      expect(imageSource!= undefined).assertTrue();
+      if (imageSource == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let fileInfo = getWriteFd("png_image_source.png")
       let ops: image.PackingOption = { format: "image/png", quality: 100 };
       let imageInfo = await imageSource.getImageInfo();
+      if (imageInfo == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let checkSize = (width: int, height: int) => {
         expect(width == imageInfo!.size.width).assertTrue();
         expect(height == imageInfo!.size.height).assertTrue();
@@ -391,10 +444,19 @@ export default function imagePackToFile() {
      */
     it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let imageSource = getImageSourceData("test.png")
-      expect(imageSource!= undefined).assertTrue();
+      if (imageSource == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let fileInfo = getWriteFd("callback_image_source.jpg")
       let ops: image.PackingOption = { format: "image/jpeg", quality: 100 };
       let imageInfo = await imageSource.getImageInfo();
+      if (imageInfo == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let checkSize = (width: int, height: int) => {
         expect(width == imageInfo!.size.width).assertTrue();
         expect(height == imageInfo!.size.height).assertTrue();
@@ -417,10 +479,19 @@ export default function imagePackToFile() {
      */
     it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let imageSource = getImageSourceData("test.png")
-      expect(imageSource!= undefined).assertTrue();
+      if (imageSource == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let fileInfo = getWriteFd("callback_image_source.webp")
       let ops: image.PackingOption = { format: "image/webp", quality: 98 };
       let imageInfo = await imageSource.getImageInfo();
+      if (imageInfo == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let checkSize = (width: int, height: int) => {
         expect(width == imageInfo!.size.width).assertTrue();
         expect(height == imageInfo!.size.height).assertTrue();
@@ -443,10 +514,19 @@ export default function imagePackToFile() {
      */
     it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let imageSource = getImageSourceData("test.png")
-      expect(imageSource!= undefined).assertTrue();
+      if (imageSource == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let fileInfo = getWriteFd("callback_image_source.png")
       let ops: image.PackingOption = { format: "image/png", quality: 100 };
       let imageInfo = await imageSource.getImageInfo();
+      if (imageInfo == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let checkSize = (width: int, height: int) => {
         expect(width == imageInfo!.size.width).assertTrue();
         expect(height == imageInfo!.size.height).assertTrue();
@@ -469,7 +549,11 @@ export default function imagePackToFile() {
      */
     it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_PIXEL_MAP_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let pixelmap = getPixelMapData()
-      expect(pixelmap!= undefined).assertTrue();
+      if (pixelmap == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let fileInfo = getWriteFd("promise_pixel_map.jpg")
       let ops: image.PackingOption = { format: "image/jpeg", quality: 100 };
 
@@ -495,7 +579,11 @@ export default function imagePackToFile() {
      */
     it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_PIXEL_MAP_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let pixelmap = getPixelMapData()
-      expect(pixelmap!= undefined).assertTrue();
+      if (pixelmap == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let fileInfo = getWriteFd("promise_pixel_map.webp")
       let ops: image.PackingOption = { format: "image/webp", quality: 98 };
 
@@ -521,7 +609,11 @@ export default function imagePackToFile() {
      */
     it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_PIXEL_MAP_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let pixelmap = getPixelMapData()
-      expect(pixelmap!= undefined).assertTrue();
+      if (pixelmap == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let fileInfo = getWriteFd("promise_pixel_map.png")
       let ops: image.PackingOption = { format: "image/png", quality: 100 };
 
@@ -547,7 +639,11 @@ export default function imagePackToFile() {
      */
     it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_PIXEL_MAP_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let pixelmap = getPixelMapData()
-      expect(pixelmap!= undefined).assertTrue();
+      if (pixelmap == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let fileInfo = getWriteFd("callback_pixel_map.jpg")
       let ops: image.PackingOption = { format: "image/jpeg", quality: 100 };
 
@@ -573,7 +669,11 @@ export default function imagePackToFile() {
      */
     it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_PIXEL_MAP_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let pixelmap = getPixelMapData()
-      expect(pixelmap!= undefined).assertTrue();
+      if (pixelmap == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let fileInfo = getWriteFd("callback_pixel_map.webp")
       let ops: image.PackingOption = { format: "image/webp", quality: 98 };
 
@@ -599,7 +699,11 @@ export default function imagePackToFile() {
      */
     it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_PIXEL_MAP_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let pixelmap = getPixelMapData()
-      expect(pixelmap!= undefined).assertTrue();
+      if (pixelmap == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let fileInfo = getWriteFd("callback_pixel_map.png")
       let ops: image.PackingOption = { format: "image/png", quality: 100 };
 
@@ -625,7 +729,11 @@ export default function imagePackToFile() {
      */
     it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let pixelmap = getPixelMapData()
-      expect(pixelmap!= undefined).assertTrue();
+      if (pixelmap == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let fileInfo = getWriteFd("callback_pixel_map_errb.jpg");
       let ops: image.PackingOption = { format: "image/jpeg", quality: 101 };
       await packToFileCbErr(done, "SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_STATIC_0200",
@@ -646,7 +754,11 @@ export default function imagePackToFile() {
      */
     it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let pixelmap = getPixelMapData()
-      expect(pixelmap!= undefined).assertTrue();
+      if (pixelmap == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let fileInfo = getWriteFd("callback_pixel_map_errc.jpg");
       let ops: image.PackingOption = { format: "image/txt", quality: 100 };
       await packToFileCbErr(done, "SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_STATIC_0300",
@@ -667,7 +779,11 @@ export default function imagePackToFile() {
      */
     it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let pixelmap = getPixelMapData()
-      expect(pixelmap!= undefined).assertTrue();
+      if (pixelmap == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let fileInfo = getWriteFd("promise_pixel_map_errb.jpg");
       let ops: image.PackingOption = { format: "image/jpeg", quality: 101 };
       await packToFilePromiseErr(done, "SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_STATIC_0200",
@@ -689,7 +805,11 @@ export default function imagePackToFile() {
      */
     it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let pixelmap = getPixelMapData()
-      expect(pixelmap!= undefined).assertTrue();
+      if (pixelmap == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let fileInfo = getWriteFd("promise_pixel_map_errc.jpg");
       let ops: image.PackingOption = { format: "image/txt", quality: 100 };
       await packToFilePromiseErr(done, "SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_STATIC_0300",

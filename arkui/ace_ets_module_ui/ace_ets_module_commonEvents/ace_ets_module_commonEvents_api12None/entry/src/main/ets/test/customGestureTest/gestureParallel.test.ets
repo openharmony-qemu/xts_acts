@@ -58,13 +58,15 @@ export default function gestureParallelTest() {
       console.info("gestureParallelTest after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_ACTION_GESTURE_JUDGE_0250_gestureParallelTest_001
-     * @tc.desc gesture Parallel test
-     * @tc.level Level 0
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   gestureParallelTest_001
+     * @tc.number gestureParallelTest_001
+     * @tc.desc   gestureParallelTest_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('gestureParallelTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('[gestureParallelTest_001] START');
       let str1 = getInspectorByKey("parallelGestureKey");

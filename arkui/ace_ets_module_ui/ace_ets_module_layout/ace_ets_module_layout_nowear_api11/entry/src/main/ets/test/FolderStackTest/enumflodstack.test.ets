@@ -42,14 +42,15 @@ export default function enumFolderTest() {
       console.info("enumFolderTest after each called");
     });
 
-    /**
-     * @tc.number    SUB_ACE_relativeCTest_0100
-     * @tc.desc      test basis
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   enumFolderTest_0100
+     * @tc.number enumFolderTest_0100
+     * @tc.desc   enumFolderTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('enumFolderTest_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[enumFolderTest_0100] START');
       await CommonFunc.sleep(2000);

@@ -44,12 +44,12 @@ export default function upDownTreeEventTest() {
       console.info("upDownTreeEventTest after each called");
     });
     /**
-     * @tc.number    nodeOnWillUnbindTest_0100
-     * @tc.name      nodeOnWillUnbindTest_0100
-     * @tc.desc      frameNode: nodeOnWillUnbindTest_0100
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   nodeOnWillUnbindTest_0100
+     * @tc.number nodeOnWillUnbindTest_0100
+     * @tc.desc   frameNode: nodeOnWillUnbindTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('nodeOnWillUnbindTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('nodeOnWillUnbindTest_0100 START');
@@ -70,12 +70,12 @@ export default function upDownTreeEventTest() {
       done();
     });
     /**
-     * @tc.number    nodeOnUnBindTest_0200
-     * @tc.name      nodeOnUnBindTest_0200
-     * @tc.desc      frameNode: nodeOnUnBindTest_0200
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   nodeOnUnBindTest_0200
+     * @tc.number nodeOnUnBindTest_0200
+     * @tc.desc   frameNode: nodeOnUnBindTest_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('nodeOnUnBindTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('nodeOnUnBindTest_0200 START');
@@ -96,12 +96,12 @@ export default function upDownTreeEventTest() {
       done();
     });
     /**
-     * @tc.number    nodeOnDetachTest_0300
-     * @tc.name      nodeOnDetachTest_0300
-     * @tc.desc      frameNode: nodeOnDetachTest_0300
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   nodeOnDetachTest_0300
+     * @tc.number nodeOnDetachTest_0300
+     * @tc.desc   frameNode: nodeOnDetachTest_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('nodeOnDetachTest_0300', Level.LEVEL0, async (done: Function) => {
       console.info('nodeOnDetachTest_0300 START');
@@ -122,12 +122,12 @@ export default function upDownTreeEventTest() {
       done();
     });
     /**
-     * @tc.number    nodeOnAttachTest_0400
-     * @tc.name      nodeOnAttachTest_0400
-     * @tc.desc      frameNode: nodeOnAttachTest_0400
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   nodeOnAttachTest_0400
+     * @tc.number nodeOnAttachTest_0400
+     * @tc.desc   frameNode: nodeOnAttachTest_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('nodeOnAttachTest_0400', Level.LEVEL0, async (done: Function) => {
       console.info('nodeOnAttachTest_0400 START');
@@ -145,12 +145,12 @@ export default function upDownTreeEventTest() {
       done();
     });
     /**
-     * @tc.number    nodeOnBindTest_0500
-     * @tc.name      nodeOnBindTest_0500
-     * @tc.desc      frameNode: nodeOnBindTest_0500
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   nodeOnBindTest_0500
+     * @tc.number nodeOnBindTest_0500
+     * @tc.desc   frameNode: nodeOnBindTest_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('nodeOnBindTest_0500', Level.LEVEL0, async (done: Function) => {
       console.info('nodeOnBindTest_0500 START');
@@ -168,12 +168,12 @@ export default function upDownTreeEventTest() {
       done();
     });
     /**
-     * @tc.number    nodeOnWillBindTest_0600
-     * @tc.name      nodeOnWillBindTest_0600
-     * @tc.desc      frameNode: nodeOnWillBindTest_0600
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   nodeOnWillBindTest_0600
+     * @tc.number nodeOnWillBindTest_0600
+     * @tc.desc   frameNode: nodeOnWillBindTest_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('nodeOnWillBindTest_0600', Level.LEVEL0, async (done: Function) => {
       console.info('nodeOnWillBindTest_0600 START');

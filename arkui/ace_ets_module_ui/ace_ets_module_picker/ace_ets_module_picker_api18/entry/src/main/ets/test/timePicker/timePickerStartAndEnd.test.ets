@@ -42,12 +42,12 @@ export default function TimePickerStartAndEnd() {
     });
 
     /**
-     * @tc.number: TimePickerStartAndEnd_001
-     * @tc.name  : TimePickerStartAndEnd_001
-     * @tc.desc  : To test the timepicker interface start and end
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   TimePickerStartAndEnd_001
+     * @tc.number TimePickerStartAndEnd_001
+     * @tc.desc   To test the timepicker interface start and end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimePickerStartAndEnd_001', Level.LEVEL1, async (done: Function) => {
       let strJson = getInspectorByKey('TimePicker');
@@ -60,12 +60,12 @@ export default function TimePickerStartAndEnd() {
     });
 
     /**
-     * @tc.number: TimePickerStartAndEnd_002
-     * @tc.name  : TimePickerStartAndEnd_002
-     * @tc.desc  : To test the timepicker interface start and end
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   TimePickerStartAndEnd_002
+     * @tc.number TimePickerStartAndEnd_002
+     * @tc.desc   To test the timepicker interface start and end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimePickerStartAndEnd_002', Level.LEVEL1, async (done: Function) => {
       let strJson = getInspectorByKey('TimePicker');
@@ -78,12 +78,12 @@ export default function TimePickerStartAndEnd() {
     });
 
     /**
-     * @tc.number: TimePickerStartAndEnd_003
-     * @tc.name  : TimePickerStartAndEnd_003
-     * @tc.desc  : To test the timepicker interface start and end
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   TimePickerStartAndEnd_003
+     * @tc.number TimePickerStartAndEnd_003
+     * @tc.desc   To test the timepicker interface start and end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimePickerStartAndEnd_003', Level.LEVEL1, async (done: Function) => {
       let strJson = getInspectorByKey('TimePicker2');
@@ -96,12 +96,12 @@ export default function TimePickerStartAndEnd() {
     });
 
     /**
-     * @tc.number: TimePickerStartAndEnd_004
-     * @tc.name  : TimePickerStartAndEnd_004
-     * @tc.desc  : To test the timepicker interface start and end
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   TimePickerStartAndEnd_004
+     * @tc.number TimePickerStartAndEnd_004
+     * @tc.desc   To test the timepicker interface start and end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimePickerStartAndEnd_004', Level.LEVEL1, async (done: Function) => {
       let strJson = getInspectorByKey('TimePicker2');
@@ -114,12 +114,12 @@ export default function TimePickerStartAndEnd() {
     });
 
     /**
-     * @tc.number: TimePickerStartAndEnd_005
-     * @tc.name  : TimePickerStartAndEnd_005
-     * @tc.desc  : To test the timepicker interface start and end
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   TimePickerStartAndEnd_005
+     * @tc.number TimePickerStartAndEnd_005
+     * @tc.desc   To test the timepicker interface start and end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimePickerStartAndEnd_005', Level.LEVEL1, async (done: Function) => {
       let strJson = getInspectorByKey('TimePicker3');
@@ -132,12 +132,12 @@ export default function TimePickerStartAndEnd() {
     });
 
     /**
-     * @tc.number: TimePickerStartAndEnd_006
-     * @tc.name  : TimePickerStartAndEnd_006
-     * @tc.desc  : To test the timepicker interface start and end
-     * @tc.level : Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   TimePickerStartAndEnd_006
+     * @tc.number TimePickerStartAndEnd_006
+     * @tc.desc   To test the timepicker interface start and end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TimePickerStartAndEnd_006', Level.LEVEL1, async (done: Function) => {
       let strJson = getInspectorByKey('TimePicker3');

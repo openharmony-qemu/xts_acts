@@ -29,14 +29,14 @@ export default function NavigationTest() {
     beforeAll(async (done: Function) => {
       await Utils.pushPage(`nodenapitest/navigationTest`, done);
     });
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavigationId_0100
-       * @tc.name       : testOHArkUIGetNavigationId0100
-       * @tc.desc       : testing OH_ArkUI_GetNavigationId interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetNavigationId0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavigationId_0100
+     * @tc.desc   testing OH_ArkUI_GetNavigationId interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNavigationId0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -51,14 +51,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavigationId_0200
-       * @tc.name       : testOHArkUIGetNavigationId0200
-       * @tc.desc       : testing OH_ArkUI_GetNavigationId interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetNavigationId0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavigationId_0200
+     * @tc.desc   testing OH_ArkUI_GetNavigationId interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNavigationId0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -73,14 +73,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavigationId_0300
-       * @tc.name       : testOHArkUIGetNavigationId0300
-       * @tc.desc       : testing OH_ArkUI_GetNavigationId interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetNavigationId0300
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavigationId_0300
+     * @tc.desc   testing OH_ArkUI_GetNavigationId interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNavigationId0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -95,14 +95,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-     * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavigationId_0400
-     * @tc.name       : testOHArkUIGetNavigationId0400
-     * @tc.desc       : testing OH_ArkUI_GetNavigationId interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-   */
+    /**
+     * @tc.name   testOHArkUIGetNavigationId0400
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavigationId_0400
+     * @tc.desc   testing OH_ArkUI_GetNavigationId interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNavigationId0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -118,14 +118,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavigationId_0500
-       * @tc.name       : testOHArkUIGetNavigationId0500
-       * @tc.desc       : testing OH_ArkUI_GetNavigationId interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetNavigationId0500
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavigationId_0500
+     * @tc.desc   testing OH_ArkUI_GetNavigationId interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNavigationId0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -140,14 +140,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavigationId_0600
-       * @tc.name       : testOHArkUIGetNavigationId0600
-       * @tc.desc       : testing OH_ArkUI_GetNavigationId interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetNavigationId0600
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavigationId_0600
+     * @tc.desc   testing OH_ArkUI_GetNavigationId interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNavigationId0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -161,14 +161,14 @@ export default function NavigationTest() {
           expect(false).assertEqual(ARKUI_ERROR_CODE_ERROR);
         }
       })
-    /*
-   * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationName_0100
-   * @tc.name       : testOHArkUIGetNavDestinationName0100
-   * @tc.desc       : testing OH_ArkUI_GetNavDestinationName interface
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 1
-   */
+    /**
+     * @tc.name   testOHArkUIGetNavDestinationName0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationName_0100
+     * @tc.desc   testing OH_ArkUI_GetNavDestinationName interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNavDestinationName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -184,14 +184,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationName_0200
-       * @tc.name       : testOHArkUIGetNavDestinationName0200
-       * @tc.desc       : testing OH_ArkUI_GetNavDestinationName interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetNavDestinationName0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationName_0200
+     * @tc.desc   testing OH_ArkUI_GetNavDestinationName interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNavDestinationName0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -207,14 +207,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationName_0300
-       * @tc.name       : testOHArkUIGetNavDestinationName0300
-       * @tc.desc       : testing OH_ArkUI_GetNavDestinationName interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetNavDestinationName0300
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationName_0300
+     * @tc.desc   testing OH_ArkUI_GetNavDestinationName interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNavDestinationName0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -230,14 +230,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationName_0400
-       * @tc.name       : testOHArkUIGetNavDestinationName0400
-       * @tc.desc       : testing OH_ArkUI_GetNavDestinationName interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetNavDestinationName0400
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationName_0400
+     * @tc.desc   testing OH_ArkUI_GetNavDestinationName interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNavDestinationName0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -253,14 +253,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationName_0500
-       * @tc.name       : testOHArkUIGetNavDestinationName0500
-       * @tc.desc       : testing OH_ArkUI_GetNavDestinationName interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetNavDestinationName0500
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationName_0500
+     * @tc.desc   testing OH_ArkUI_GetNavDestinationName interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNavDestinationName0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -276,14 +276,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationName_0600
-       * @tc.name       : testOHArkUIGetNavDestinationName0600
-       * @tc.desc       : testing OH_ArkUI_GetNavDestinationName interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetNavDestinationName0600
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationName_0600
+     * @tc.desc   testing OH_ArkUI_GetNavDestinationName interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNavDestinationName0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -299,14 +299,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-    * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavStackLength_0100
-    * @tc.name       : testOHArkUIGetNavStackLength0100
-    * @tc.desc       : testing OH_ArkUI_GetNavStackLength interface
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testOHArkUIGetNavStackLength0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavStackLength_0100
+     * @tc.desc   testing OH_ArkUI_GetNavStackLength interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNavStackLength0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -322,14 +322,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavStackLength_0200
-       * @tc.name       : testOHArkUIGetNavStackLength0200
-       * @tc.desc       : testing OH_ArkUI_GetNavStackLength interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetNavStackLength0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavStackLength_0200
+     * @tc.desc   testing OH_ArkUI_GetNavStackLength interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNavStackLength0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -345,14 +345,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavStackLength_0300
-       * @tc.name       : testOHArkUIGetNavStackLength0300
-       * @tc.desc       : testing OH_ArkUI_GetNavStackLength interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetNavStackLength0300
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavStackLength_0300
+     * @tc.desc   testing OH_ArkUI_GetNavStackLength interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNavStackLength0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -368,14 +368,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationNameByIndex_0100
-       * @tc.name       : testOHArkUIGetNavDestinationNameByIndex0100
-       * @tc.desc       : testing OH_ArkUI_GetNavDestinationNameByIndex interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetNavDestinationNameByIndex0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationNameByIndex_0100
+     * @tc.desc   testing OH_ArkUI_GetNavDestinationNameByIndex interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNavDestinationNameByIndex0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -391,14 +391,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationNameByIndex_0200
-       * @tc.name       : testOHArkUIGetNavDestinationNameByIndex0200
-       * @tc.desc       : testing OH_ArkUI_GetNavDestinationNameByIndex interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetNavDestinationNameByIndex0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationNameByIndex_0200
+     * @tc.desc   testing OH_ArkUI_GetNavDestinationNameByIndex interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNavDestinationNameByIndex0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -414,14 +414,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationNameByIndex_0300
-       * @tc.name       : testOHArkUIGetNavDestinationNameByIndex0300
-       * @tc.desc       : testing OH_ArkUI_GetNavDestinationNameByIndex interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetNavDestinationNameByIndex0300
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationNameByIndex_0300
+     * @tc.desc   testing OH_ArkUI_GetNavDestinationNameByIndex interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNavDestinationNameByIndex0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -437,14 +437,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationNameByIndex_0400
-       * @tc.name       : testOHArkUIGetNavDestinationNameByIndex0400
-       * @tc.desc       : testing OH_ArkUI_GetNavDestinationNameByIndex interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetNavDestinationNameByIndex0400
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationNameByIndex_0400
+     * @tc.desc   testing OH_ArkUI_GetNavDestinationNameByIndex interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNavDestinationNameByIndex0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -460,14 +460,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationNameByIndex_0500
-       * @tc.name       : testOHArkUIGetNavDestinationNameByIndex0500
-       * @tc.desc       : testing OH_ArkUI_GetNavDestinationNameByIndex interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetNavDestinationNameByIndex0500
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationNameByIndex_0500
+     * @tc.desc   testing OH_ArkUI_GetNavDestinationNameByIndex interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNavDestinationNameByIndex0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -483,14 +483,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationNameByIndex_0600
-       * @tc.name       : testOHArkUIGetNavDestinationNameByIndex0600
-       * @tc.desc       : testing OH_ArkUI_GetNavDestinationNameByIndex interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetNavDestinationNameByIndex0600
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationNameByIndex_0600
+     * @tc.desc   testing OH_ArkUI_GetNavDestinationNameByIndex interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNavDestinationNameByIndex0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -506,14 +506,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationNameByIndex_0700
-       * @tc.name       : testOHArkUIGetNavDestinationNameByIndex0700
-       * @tc.desc       : testing OH_ArkUI_GetNavDestinationNameByIndex interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetNavDestinationNameByIndex0700
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationNameByIndex_0700
+     * @tc.desc   testing OH_ArkUI_GetNavDestinationNameByIndex interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNavDestinationNameByIndex0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -529,14 +529,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-   * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationId_0100
-   * @tc.name       : testOHArkUIGetNavDestinationId0100
-   * @tc.desc       : testing OH_ArkUI_GetNavDestinationId interface
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 1
-   */
+    /**
+     * @tc.name   testOHArkUIGetNavDestinationId0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationId_0100
+     * @tc.desc   testing OH_ArkUI_GetNavDestinationId interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNavDestinationId0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -552,14 +552,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationId_0200
-       * @tc.name       : testOHArkUIGetNavDestinationId0200
-       * @tc.desc       : testing OH_ArkUI_GetNavDestinationId interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetNavDestinationId0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationId_0200
+     * @tc.desc   testing OH_ArkUI_GetNavDestinationId interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNavDestinationId0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -575,14 +575,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationId_0300
-       * @tc.name       : testOHArkUIGetNavDestinationId0300
-       * @tc.desc       : testing OH_ArkUI_GetNavDestinationId interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetNavDestinationId0300
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationId_0300
+     * @tc.desc   testing OH_ArkUI_GetNavDestinationId interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNavDestinationId0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -598,14 +598,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationId_0400
-       * @tc.name       : testOHArkUIGetNavDestinationId0400
-       * @tc.desc       : testing OH_ArkUI_GetNavDestinationId interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetNavDestinationId0400
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationId_0400
+     * @tc.desc   testing OH_ArkUI_GetNavDestinationId interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNavDestinationId0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -621,14 +621,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationId_0500
-       * @tc.name       : testOHArkUIGetNavDestinationId0500
-       * @tc.desc       : testing OH_ArkUI_GetNavDestinationId interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetNavDestinationId0500
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationId_0500
+     * @tc.desc   testing OH_ArkUI_GetNavDestinationId interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNavDestinationId0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -644,14 +644,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationId_0600
-       * @tc.name       : testOHArkUIGetNavDestinationId0600
-       * @tc.desc       : testing OH_ArkUI_GetNavDestinationId interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetNavDestinationId0600
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationId_0600
+     * @tc.desc   testing OH_ArkUI_GetNavDestinationId interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNavDestinationId0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -667,14 +667,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationState_0100
-       * @tc.name       : testOHArkUIGetNavDestinationState0100
-       * @tc.desc       : testing OH_ArkUI_GetNavDestinationState interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetNavDestinationState0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationState_0100
+     * @tc.desc   testing OH_ArkUI_GetNavDestinationState interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNavDestinationState0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -690,14 +690,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationState_0200
-       * @tc.name       : testOHArkUIGetNavDestinationState0200
-       * @tc.desc       : testing OH_ArkUI_GetNavDestinationState interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetNavDestinationState0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationState_0200
+     * @tc.desc   testing OH_ArkUI_GetNavDestinationState interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNavDestinationState0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -713,14 +713,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-        * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationState_0300
-        * @tc.name       : testOHArkUIGetNavDestinationState0300
-        * @tc.desc       : testing OH_ArkUI_GetNavDestinationState interface
-        * @tc.size       : MediumTest
-        * @tc.type       : Function
-        * @tc.level      : Level 1
-        */
+    /**
+     * @tc.name   testOHArkUIGetNavDestinationState0300
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationState_0300
+     * @tc.desc   testing OH_ArkUI_GetNavDestinationState interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNavDestinationState0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -736,14 +736,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-        * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationState_0400
-        * @tc.name       : testOHArkUIGetNavDestinationState0400
-        * @tc.desc       : testing OH_ArkUI_GetNavDestinationState interface
-        * @tc.size       : MediumTest
-        * @tc.type       : Function
-        * @tc.level      : Level 1
-        */
+    /**
+     * @tc.name   testOHArkUIGetNavDestinationState0400
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationState_0400
+     * @tc.desc   testing OH_ArkUI_GetNavDestinationState interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNavDestinationState0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -759,14 +759,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-         * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationIndex_0100
-         * @tc.name       : testOHArkUIGetNavDestinationIndex0100
-         * @tc.desc       : testing OH_ArkUI_GetNavDestinationIndex interface
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 1
-         */
+    /**
+     * @tc.name   testOHArkUIGetNavDestinationIndex0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationIndex_0100
+     * @tc.desc   testing OH_ArkUI_GetNavDestinationIndex interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNavDestinationIndex0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -782,14 +782,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationIndex_0200
-       * @tc.name       : testOHArkUIGetNavDestinationIndex0200
-       * @tc.desc       : testing OH_ArkUI_GetNavDestinationIndex interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetNavDestinationIndex0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationIndex_0200
+     * @tc.desc   testing OH_ArkUI_GetNavDestinationIndex interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNavDestinationIndex0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -805,14 +805,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-        * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationIndex_0300
-        * @tc.name       : testOHArkUIGetNavDestinationIndex0300
-        * @tc.desc       : testing OH_ArkUI_GetNavDestinationIndex interface
-        * @tc.size       : MediumTest
-        * @tc.type       : Function
-        * @tc.level      : Level 1
-        */
+    /**
+     * @tc.name   testOHArkUIGetNavDestinationIndex0300
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationIndex_0300
+     * @tc.desc   testing OH_ArkUI_GetNavDestinationIndex interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNavDestinationIndex0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -828,14 +828,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-        * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationIndex_0400
-        * @tc.name       : testOHArkUIGetNavDestinationIndex0400
-        * @tc.desc       : testing OH_ArkUI_GetNavDestinationIndex interface
-        * @tc.size       : MediumTest
-        * @tc.type       : Function
-        * @tc.level      : Level 1
-        */
+    /**
+     * @tc.name   testOHArkUIGetNavDestinationIndex0400
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetNavDestinationIndex_0400
+     * @tc.desc   testing OH_ArkUI_GetNavDestinationIndex interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetNavDestinationIndex0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -850,14 +850,14 @@ export default function NavigationTest() {
           done();
         }
       })
-    /*
-      * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageIndex_0100
-      * @tc.name       : testOHArkUIGetRouterPageIndex0100
-      * @tc.desc       : testing OH_ArkUI_GetRouterPageIndex interface
-      * @tc.size       : MediumTest
-      * @tc.type       : Function
-      * @tc.level      : Level 1
-      */
+    /**
+     * @tc.name   testOHArkUIGetRouterPageIndex0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageIndex_0100
+     * @tc.desc   testing OH_ArkUI_GetRouterPageIndex interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetRouterPageIndex0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -873,14 +873,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageIndex_0200
-       * @tc.name       : testOHArkUIGetRouterPageIndex0200
-       * @tc.desc       : testing OH_ArkUI_GetRouterPageIndex interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetRouterPageIndex0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageIndex_0200
+     * @tc.desc   testing OH_ArkUI_GetRouterPageIndex interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetRouterPageIndex0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -896,14 +896,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageIndex_0300
-       * @tc.name       : testOHArkUIGetRouterPageIndex0300
-       * @tc.desc       : testing OH_ArkUI_GetRouterPageIndex interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetRouterPageIndex0300
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageIndex_0300
+     * @tc.desc   testing OH_ArkUI_GetRouterPageIndex interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetRouterPageIndex0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -919,14 +919,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageIndex_0400
-       * @tc.name       : testOHArkUIGetRouterPageIndex0400
-       * @tc.desc       : testing OH_ArkUI_GetRouterPageIndex interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetRouterPageIndex0400
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageIndex_0400
+     * @tc.desc   testing OH_ArkUI_GetRouterPageIndex interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetRouterPageIndex0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -942,14 +942,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-    * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageName_0100
-    * @tc.name       : testOHArkUIGetRouterPageName0100
-    * @tc.desc       : testing OH_ArkUI_GetRouterPageName interface
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testOHArkUIGetRouterPageName0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageName_0100
+     * @tc.desc   testing OH_ArkUI_GetRouterPageName interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetRouterPageName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -965,14 +965,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageName_0200
-       * @tc.name       : testOHArkUIGetRouterPageName0200
-       * @tc.desc       : testing OH_ArkUI_GetRouterPageName interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetRouterPageName0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageName_0200
+     * @tc.desc   testing OH_ArkUI_GetRouterPageName interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetRouterPageName0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -988,14 +988,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageName_0300
-       * @tc.name       : testOHArkUIGetRouterPageName0300
-       * @tc.desc       : testing OH_ArkUI_GetRouterPageName interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetRouterPageName0300
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageName_0300
+     * @tc.desc   testing OH_ArkUI_GetRouterPageName interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetRouterPageName0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -1011,14 +1011,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-    * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageName_0400
-    * @tc.name       : testOHArkUIGetRouterPageName0400
-    * @tc.desc       : testing OH_ArkUI_GetRouterPageName interface
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testOHArkUIGetRouterPageName0400
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageName_0400
+     * @tc.desc   testing OH_ArkUI_GetRouterPageName interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetRouterPageName0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -1034,14 +1034,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageName_0500
-       * @tc.name       : testOHArkUIGetRouterPageName0500
-       * @tc.desc       : testing OH_ArkUI_GetRouterPageName interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetRouterPageName0500
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageName_0500
+     * @tc.desc   testing OH_ArkUI_GetRouterPageName interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetRouterPageName0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -1057,14 +1057,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageName_0600
-       * @tc.name       : testOHArkUIGetRouterPageName0600
-       * @tc.desc       : testing OH_ArkUI_GetRouterPageName interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetRouterPageName0600
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageName_0600
+     * @tc.desc   testing OH_ArkUI_GetRouterPageName interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetRouterPageName0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -1080,14 +1080,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPagePath_0100
-       * @tc.name       : testOHArkUIGetRouterPagePath0100
-       * @tc.desc       : testing OH_ArkUI_GetRouterPagePath interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetRouterPagePath0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPagePath_0100
+     * @tc.desc   testing OH_ArkUI_GetRouterPagePath interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetRouterPagePath0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -1103,14 +1103,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPagePath_0200
-       * @tc.name       : testOHArkUIGetRouterPagePath0200
-       * @tc.desc       : testing OH_ArkUI_GetRouterPagePath interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetRouterPagePath0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPagePath_0200
+     * @tc.desc   testing OH_ArkUI_GetRouterPagePath interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetRouterPagePath0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -1126,14 +1126,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPagePath_0300
-       * @tc.name       : testOHArkUIGetRouterPagePath0300
-       * @tc.desc       : testing OH_ArkUI_GetRouterPagePath interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetRouterPagePath0300
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPagePath_0300
+     * @tc.desc   testing OH_ArkUI_GetRouterPagePath interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetRouterPagePath0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -1149,14 +1149,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPagePath_0400
-       * @tc.name       : testOHArkUIGetRouterPagePath0400
-       * @tc.desc       : testing OH_ArkUI_GetRouterPagePath interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetRouterPagePath0400
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPagePath_0400
+     * @tc.desc   testing OH_ArkUI_GetRouterPagePath interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetRouterPagePath0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -1172,14 +1172,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPagePath_0500
-       * @tc.name       : testOHArkUIGetRouterPagePath0500
-       * @tc.desc       : testing OH_ArkUI_GetRouterPagePath interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetRouterPagePath0500
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPagePath_0500
+     * @tc.desc   testing OH_ArkUI_GetRouterPagePath interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetRouterPagePath0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -1195,14 +1195,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPagePath_0600
-       * @tc.name       : testOHArkUIGetRouterPagePath0600
-       * @tc.desc       : testing OH_ArkUI_GetRouterPagePath interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetRouterPagePath0600
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPagePath_0600
+     * @tc.desc   testing OH_ArkUI_GetRouterPagePath interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetRouterPagePath0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -1218,14 +1218,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-   * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageState_0100
-   * @tc.name       : testOHArkUIGetRouterPageState0100
-   * @tc.desc       : testing OH_ArkUI_GetRouterPageState interface
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 1
-   */
+    /**
+     * @tc.name   testOHArkUIGetRouterPageState0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageState_0100
+     * @tc.desc   testing OH_ArkUI_GetRouterPageState interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetRouterPageState0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -1241,14 +1241,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageState_0200
-       * @tc.name       : testOHArkUIGetRouterPageState0200
-       * @tc.desc       : testing OH_ArkUI_GetRouterPageState interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetRouterPageState0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageState_0200
+     * @tc.desc   testing OH_ArkUI_GetRouterPageState interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetRouterPageState0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -1264,14 +1264,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageState_0300
-       * @tc.name       : testOHArkUIGetRouterPageState0300
-       * @tc.desc       : testing OH_ArkUI_GetRouterPageState interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetRouterPageState0300
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageState_0300
+     * @tc.desc   testing OH_ArkUI_GetRouterPageState interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetRouterPageState0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -1287,14 +1287,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageState_0400
-       * @tc.name       : testOHArkUIGetRouterPageState0400
-       * @tc.desc       : testing OH_ArkUI_GetRouterPageState interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetRouterPageState0400
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageState_0400
+     * @tc.desc   testing OH_ArkUI_GetRouterPageState interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetRouterPageState0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -1310,14 +1310,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageId_0100
-       * @tc.name       : testOHArkUIGetRouterPageId0100
-       * @tc.desc       : testing OH_ArkUI_GetRouterPageId interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetRouterPageId0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageId_0100
+     * @tc.desc   testing OH_ArkUI_GetRouterPageId interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetRouterPageId0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -1333,14 +1333,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageId_0200
-       * @tc.name       : testOHArkUIGetRouterPageId0200
-       * @tc.desc       : testing OH_ArkUI_GetRouterPageId interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetRouterPageId0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageId_0200
+     * @tc.desc   testing OH_ArkUI_GetRouterPageId interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetRouterPageId0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -1356,14 +1356,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-        * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageId_0300
-        * @tc.name       : testOHArkUIGetRouterPageId0300
-        * @tc.desc       : testing OH_ArkUI_GetRouterPageId interface
-        * @tc.size       : MediumTest
-        * @tc.type       : Function
-        * @tc.level      : Level 1
-        */
+    /**
+     * @tc.name   testOHArkUIGetRouterPageId0300
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageId_0300
+     * @tc.desc   testing OH_ArkUI_GetRouterPageId interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetRouterPageId0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -1379,14 +1379,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-        * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageId_0400
-        * @tc.name       : testOHArkUIGetRouterPageId0400
-        * @tc.desc       : testing OH_ArkUI_GetRouterPageId interface
-        * @tc.size       : MediumTest
-        * @tc.type       : Function
-        * @tc.level      : Level 1
-        */
+    /**
+     * @tc.name   testOHArkUIGetRouterPageId0400
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageId_0400
+     * @tc.desc   testing OH_ArkUI_GetRouterPageId interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetRouterPageId0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -1402,14 +1402,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-        * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageId_0500
-        * @tc.name       : testOHArkUIGetRouterPageId0500
-        * @tc.desc       : testing OH_ArkUI_GetRouterPageId interface
-        * @tc.size       : MediumTest
-        * @tc.type       : Function
-        * @tc.level      : Level 1
-        */
+    /**
+     * @tc.name   testOHArkUIGetRouterPageId0500
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageId_0500
+     * @tc.desc   testing OH_ArkUI_GetRouterPageId interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetRouterPageId0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -1425,14 +1425,14 @@ export default function NavigationTest() {
         }
       })
 
-    /*
-        * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageId_0600
-        * @tc.name       : testOHArkUIGetRouterPageId0600
-        * @tc.desc       : testing OH_ArkUI_GetRouterPageId interface
-        * @tc.size       : MediumTest
-        * @tc.type       : Function
-        * @tc.level      : Level 1
-        */
+    /**
+     * @tc.name   testOHArkUIGetRouterPageId0600
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetRouterPageId_0600
+     * @tc.desc   testing OH_ArkUI_GetRouterPageId interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetRouterPageId0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {

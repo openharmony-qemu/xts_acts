@@ -40,12 +40,12 @@ export default function setMarkNodeGroupTest() {
       done();
     });
     /**
-     * @tc.number    setMarkNodeGroupTest_0010
-     * @tc.name      setMarkNodeGroupTest_0010
-     * @tc.desc      renderNode: setMarkNodeGroup
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   setMarkNodeGroupTest_0010
+     * @tc.number setMarkNodeGroupTest_0010
+     * @tc.desc   renderNode: setMarkNodeGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setMarkNodeGroupTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('setMarkNodeGroupTest_0010 START');

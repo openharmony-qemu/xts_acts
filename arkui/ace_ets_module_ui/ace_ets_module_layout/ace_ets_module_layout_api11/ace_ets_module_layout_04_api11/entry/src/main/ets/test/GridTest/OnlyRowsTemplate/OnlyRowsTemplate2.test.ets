@@ -46,9 +46,12 @@ export default function OnlyRowsTemplate2() {
       console.info("OnlyRowsTemplate2 after each called");
     });
     /**
+     * @tc.name   SUB_ACE_GRID_OnlyRowsTemplate2_0100
      * @tc.number SUB_ACE_GRID_OnlyRowsTemplate2_0100
-     * @tc.name testGrid
-     * @tc.desc GridItem only sets rowStart
+     * @tc.desc   GridItem only sets rowStart
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GRID_OnlyRowsTemplate2_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_GRID_OnlyRowsTemplate2_0100] START');

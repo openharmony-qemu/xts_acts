@@ -46,12 +46,12 @@ export default function swiperModeTest() {
     });
 
     /**
-     * @tc.number    swiperModeTest_001
-     * @tc.name      swiperModeTest_0100
-     * @tc.desc      Set the SwiperAnimationMode to 'SwiperAnimationMode.NO_ANIMATION'.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   swiperModeTest_0100
+     * @tc.number swiperModeTest_001
+     * @tc.desc   Set the SwiperAnimationMode to 'SwiperAnimationMode.NO_ANIMATION'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('swiperModeTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[swiperModeTest_0100] START');
@@ -73,12 +73,12 @@ export default function swiperModeTest() {
     });
 
     /**
-     * @tc.number    swiperModeTest_002
-     * @tc.name      swiperModeTest_0200
-     * @tc.desc      Set the SwiperAnimationMode to 'SwiperAnimationMode.DEFAULT_ANIMATION'.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   swiperModeTest_0200
+     * @tc.number swiperModeTest_002
+     * @tc.desc   Set the SwiperAnimationMode to 'SwiperAnimationMode.DEFAULT_ANIMATION'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('swiperModeTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[swiperModeTest_0200] START');
@@ -100,12 +100,12 @@ export default function swiperModeTest() {
     });
 
     /**
-     * @tc.number    swiperModeTest_003
-     * @tc.name      swiperModeTest_0300
-     * @tc.desc      Set the SwiperAnimationMode to 'SwiperAnimationMode.FAST_ANIMATION'.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   swiperModeTest_0300
+     * @tc.number swiperModeTest_003
+     * @tc.desc   Set the SwiperAnimationMode to 'SwiperAnimationMode.FAST_ANIMATION'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('swiperModeTest_0300', Level.LEVEL1, async (done: Function) => {
       console.info('[swiperModeTest_0300] START');

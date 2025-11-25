@@ -26,104 +26,104 @@ export default function commonAttrsChainModeTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_RELATIVECONTAINER_CHAINMODE_0100
-     * @tc.name       : testCommonAttrsChainMode001
-     * @tc.desc       : testing chainmode for commonAttrs with valid value 
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsChainMode001
+     * @tc.number SUB_ARKUI_CAPI_RELATIVECONTAINER_CHAINMODE_0100
+     * @tc.desc   testing chainmode for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsChainMode001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsChainMode001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_RELATIVECONTAINER_CHAINMODE_0200
-     * @tc.name       : testCommonAttrsChainMode002
-     * @tc.desc       : testing chainmode for commonAttrs with valid value 
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsChainMode002
+     * @tc.number SUB_ARKUI_CAPI_RELATIVECONTAINER_CHAINMODE_0200
+     * @tc.desc   testing chainmode for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsChainMode002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsChainMode002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_RELATIVECONTAINER_CHAINMODE_0300
-     * @tc.name       : testCommonAttrsChainMode003
-     * @tc.desc       : testing chainmode for commonAttrs with valid value 
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsChainMode003
+     * @tc.number SUB_ARKUI_CAPI_RELATIVECONTAINER_CHAINMODE_0300
+     * @tc.desc   testing chainmode for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsChainMode003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsChainMode003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_RELATIVECONTAINER_CHAINMODE_0400
-     * @tc.name       : testCommonAttrsChainMode004
-     * @tc.desc       : testing chainmode for commonAttrs with valid value 
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsChainMode004
+     * @tc.number SUB_ARKUI_CAPI_RELATIVECONTAINER_CHAINMODE_0400
+     * @tc.desc   testing chainmode for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsChainMode004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsChainMode004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_RELATIVECONTAINER_CHAINMODE_0500
-     * @tc.name       : testCommonAttrsChainMode005
-     * @tc.desc       : testing chainmode for commonAttrs with valid value 
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsChainMode005
+     * @tc.number SUB_ARKUI_CAPI_RELATIVECONTAINER_CHAINMODE_0500
+     * @tc.desc   testing chainmode for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsChainMode005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsChainMode005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_RELATIVECONTAINER_CHAINMODE_0600
-     * @tc.name       : testCommonAttrsChainMode006
-     * @tc.desc       : testing chainmode for commonAttrs with valid value 
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsChainMode006
+     * @tc.number SUB_ARKUI_CAPI_RELATIVECONTAINER_CHAINMODE_0600
+     * @tc.desc   testing chainmode for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsChainMode006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsChainMode006()).assertEqual(0)
       done()
     })
    
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_RELATIVECONTAINER_CHAINMODE_0700
-     * @tc.name       : testCommonAttrsChainMode007
-     * @tc.desc       : testing chainmode for commonAttrs with valid value 
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsChainMode007
+     * @tc.number SUB_ARKUI_CAPI_RELATIVECONTAINER_CHAINMODE_0700
+     * @tc.desc   testing chainmode for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsChainMode007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsChainMode007()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_RELATIVECONTAINER_CHAINMODE_0800
-     * @tc.name       : testCommonAttrsChainMode008
-     * @tc.desc       : testing resetAttribute chainmode for commonAttrs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsChainMode008
+     * @tc.number SUB_ARKUI_CAPI_RELATIVECONTAINER_CHAINMODE_0800
+     * @tc.desc   testing resetAttribute chainmode for commonAttrs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsChainMode008', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsChainMode008()).assertEqual(0)

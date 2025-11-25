@@ -48,12 +48,12 @@ export default function InheritFreezeOptionsContentTrueTest() {
     });
 
     /**
-     * @tc.number    InheritFreezeOptionsContentTrueTest_0100
-     * @tc.name      InheritFreezeOptionsContentTrueTest_0100
-     * @tc.desc      ReactiveComponentContent InheritFreezeOptionsContentTrueTest
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   InheritFreezeOptionsContentTrueTest_0100
+     * @tc.number InheritFreezeOptionsContentTrueTest_0100
+     * @tc.desc   ReactiveComponentContent InheritFreezeOptionsContentTrueTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('InheritFreezeOptionsContentTrueTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('InheritFreezeOptionsContentTrueTest_0100 START');

@@ -22,14 +22,14 @@ export default function textInputSelectionMenuHiddenTest() {
   describe('TextInputSelectionMenuHiddenTest', () => {
 
     let PAGE_TAG = 'TextInputSelectionMenuHiddenTest';
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_SELECTION_MENU_HIDDEN_0001
-    * @tc.name       : testTextInputSelectionMenuHidden001
-    * @tc.desc       : test onInsert event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testTextInputSelectionMenuHidden001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_SELECTION_MENU_HIDDEN_0001
+     * @tc.desc   test onInsert event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextInputSelectionMenuHidden001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`textinput/${PAGE_TAG}`);
       focusControl.requestFocus('textInput1')

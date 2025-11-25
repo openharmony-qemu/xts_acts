@@ -44,12 +44,12 @@ export default function scrollStopDrag() {
     });
 
     /**
-     * @tc.number    scrollStopDrag_001
-     * @tc.name      scrollStopDrag_0100
-     * @tc.desc      Triggering onWillStopDragging when the Scroll component moves horizontally and leaves the hand.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   scrollStopDrag_0100
+     * @tc.number scrollStopDrag_001
+     * @tc.desc   Triggering onWillStopDragging when the Scroll component moves horizontally and leaves the hand.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('scrollStopDrag_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[scrollStopDrag_0100] START');
@@ -81,12 +81,12 @@ export default function scrollStopDrag() {
     });
 
     /**
-     * @tc.number    scrollStopDrag_002
-     * @tc.name      scrollStopDrag_0200
-     * @tc.desc      Triggering onWillStopDragging when Scroll component moves vertically away from hand.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   scrollStopDrag_0200
+     * @tc.number scrollStopDrag_002
+     * @tc.desc   Triggering onWillStopDragging when Scroll component moves vertically away from hand.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('scrollStopDrag_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[scrollStopDrag_0200] START');

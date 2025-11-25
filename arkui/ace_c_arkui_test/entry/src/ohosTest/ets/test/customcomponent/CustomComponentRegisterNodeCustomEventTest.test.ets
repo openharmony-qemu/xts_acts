@@ -26,15 +26,14 @@ export default function customComponentRegisterNodeCustomEventTest() {
       await Utils.pushPage(`customcomponent/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_REGISTER_NODE_CUSTOM_EVENT_001
-    * @tc.name       : testCustomComponentRegisterNodeCustomEvent001
-    * @tc.desc       : test custom event callback
-    * @tc.size       : MediumTest
-    
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCustomComponentRegisterNodeCustomEvent001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_REGISTER_NODE_CUSTOM_EVENT_001
+     * @tc.desc   test custom event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCustomComponentRegisterNodeCustomEvent001', Level.LEVEL1, async (done: Function) => {
       expect(Utils.getComponentInfoByKey('customNode1').$attrs.backgroundColor).assertEqual('#FF0000FF')
       expect(Utils.getComponentInfoByKey('customNode2').$attrs.backgroundColor).assertEqual('#FFFF0000')

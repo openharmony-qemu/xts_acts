@@ -37,12 +37,12 @@ export default function UIShowDialogCallbackBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    UIShowDialogCallbackBlurStyleOptions_0100
-     * @tc.name      UIShowDialogCallbackBlurStyleOptions_0100
-     * @tc.desc      createShowDialogModeToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   UIShowDialogCallbackBlurStyleOptions_0100
+     * @tc.number UIShowDialogCallbackBlurStyleOptions_0100
+     * @tc.desc   createShowDialogModeToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('UIShowDialogCallbackBlurStyleOptions_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tagName = 'UIShowDialogCallbackBlurStyleOptions';
@@ -79,12 +79,12 @@ export default function UIShowDialogCallbackBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    UIShowDialogCallbackBlurStyleOptions_0200
-     * @tc.name      UIShowDialogCallbackBlurStyleOptions_0200
-     * @tc.desc      createShowDialogModeToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   UIShowDialogCallbackBlurStyleOptions_0200
+     * @tc.number UIShowDialogCallbackBlurStyleOptions_0200
+     * @tc.desc   createShowDialogModeToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('UIShowDialogCallbackBlurStyleOptions_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tagName = 'UIShowDialogCallbackBlurStyleOptions_0200';
@@ -111,12 +111,12 @@ export default function UIShowDialogCallbackBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    UIShowDialogCallbackBlurStyleOptions_0300
-     * @tc.name      UIShowDialogCallbackBlurStyleOptions_0300
-     * @tc.desc      createShowDialogModeToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   UIShowDialogCallbackBlurStyleOptions_0300
+     * @tc.number UIShowDialogCallbackBlurStyleOptions_0300
+     * @tc.desc   createShowDialogModeToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('UIShowDialogCallbackBlurStyleOptions_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tagName = 'UIShowDialogCallbackBlurStyleOptions_0300';

@@ -26,78 +26,78 @@ export default function imageShadowTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_SHADOW_0100
-     * @tc.name       : testImageShadow001
-     * @tc.desc       : testing shadow for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageShadow001
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_SHADOW_0100
+     * @tc.desc   testing shadow for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageShadow001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageShadow001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_SHADOW_0200
-     * @tc.name       : testImageShadow002
-     * @tc.desc       : testing shadow for image with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageShadow002
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_SHADOW_0200
+     * @tc.desc   testing shadow for image with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageShadow002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageShadow002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_SHADOW_0300
-     * @tc.name       : testImageShadow003
-     * @tc.desc       : testing shadow for image with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageShadow003
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_SHADOW_0300
+     * @tc.desc   testing shadow for image with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageShadow003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageShadow003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_SHADOW_0400
-     * @tc.name       : testImageShadow004
-     * @tc.desc       : testing shadow for image with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageShadow004
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_SHADOW_0400
+     * @tc.desc   testing shadow for image with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageShadow004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageShadow004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_SHADOW_0500
-     * @tc.name       : testImageShadow005
-     * @tc.desc       : testing shadow for image with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageShadow005
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_SHADOW_0500
+     * @tc.desc   testing shadow for image with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageShadow005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageShadow005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_SHADOW_0600
-     * @tc.name       : testImageShadow006
-     * @tc.desc       : testing shadow for image with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageShadow006
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_SHADOW_0600
+     * @tc.desc   testing shadow for image with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageShadow006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageShadow006()).assertEqual(0)

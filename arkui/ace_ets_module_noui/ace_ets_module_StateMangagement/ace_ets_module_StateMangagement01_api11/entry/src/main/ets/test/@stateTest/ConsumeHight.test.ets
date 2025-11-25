@@ -53,12 +53,14 @@ export default function ConsumeHight() {
       }
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_1040
-    * @tc.name  : ConsumeHight_0100
-    * @tc.desc  : To test that the Consume decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   ConsumeHight_0100
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_1040
+     * @tc.desc   To test that the Consume decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ConsumeHight_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ConsumeHight_0100 START');
       let driver = await Driver.create()
@@ -74,12 +76,14 @@ export default function ConsumeHight() {
       console.info('[ConsumeHight_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_1050
-    * @tc.name  : ConsumeHight_0200
-    * @tc.desc  : To test that the Consume decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   ConsumeHight_0200
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_1050
+     * @tc.desc   To test that the Consume decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ConsumeHight_0200', Level.LEVEL0, async (done: Function) => {
       console.info('ConsumeHight_0100 START');
       let driver = await Driver.create()
@@ -95,12 +99,14 @@ export default function ConsumeHight() {
       console.info('[ConsumeHight_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_1060
-    * @tc.name  : ConsumeHight_0300
-    * @tc.desc  : To test that the Consume decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   ConsumeHight_0300
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_1060
+     * @tc.desc   To test that the Consume decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ConsumeHight_0300', Level.LEVEL0, async (done: Function) => {
       console.info('ConsumeHight_0100 START');
       let driver = await Driver.create()

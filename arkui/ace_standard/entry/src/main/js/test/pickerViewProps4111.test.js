@@ -80,9 +80,12 @@ export default function pickerViewPropsJsTest4111() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewPickerViewDate
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewPickerViewDate
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewPickerViewDate', Level.LEVEL0, async function(done) {
             console.info('testPickerViewPickerViewDate START');

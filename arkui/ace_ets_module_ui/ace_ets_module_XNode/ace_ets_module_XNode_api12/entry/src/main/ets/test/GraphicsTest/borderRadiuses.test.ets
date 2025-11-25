@@ -41,13 +41,13 @@ export default function borderRadiuses() {
       done();
     });
     
-     /**
-     * @tc.number    SUB_ACE_borderRadiuses_0100
-     * @tc.name      borderRadiuses_0100
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+    /**
+     * @tc.name   borderRadiuses_0100
+     * @tc.number SUB_ACE_borderRadiuses_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('borderRadiuses_0100', Level.LEVEL0, async (done: Function) => {
       console.info('borderRadiuses_0100 START');

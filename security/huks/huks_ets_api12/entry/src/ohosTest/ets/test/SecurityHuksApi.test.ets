@@ -563,6 +563,7 @@ export default function SecurityHuksApiTest() {
       expect(huks.HuksTag.HUKS_TAG_ATTESTATION_ID_SEC_LEVEL_INFO).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 514);
       expect(huks.HuksTag.HUKS_TAG_ATTESTATION_ID_VERSION_INFO).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 515);
       expect(huks.HuksTag.HUKS_TAG_KEY_OVERRIDE).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BOOL | 520);
+      expect(huks.HuksTag.HUKS_TAG_AE_TAG_LEN).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 521);
       expect(huks.HuksTag.HUKS_TAG_IS_KEY_ALIAS).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BOOL | 1001);
       expect(huks.HuksTag.HUKS_TAG_KEY_STORAGE_FLAG).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 1002);
       expect(huks.HuksTag.HUKS_TAG_IS_ALLOWED_WRAP).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BOOL | 1003);

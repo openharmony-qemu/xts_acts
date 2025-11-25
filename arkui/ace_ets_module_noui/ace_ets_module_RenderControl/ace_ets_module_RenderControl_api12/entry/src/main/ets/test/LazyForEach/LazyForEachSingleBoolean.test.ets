@@ -59,9 +59,12 @@ export default function LazyForEachSingleBoolean() {
     });
 
     /**
+     * @tc.name   LazyForEachSingleBoolean_001
      * @tc.number LazyForEachSingleBoolean_001
-     * @tc.name LazyForEachSingleBoolean_001
-     * @tc.desc Test LazyForEachSingleBoolean
+     * @tc.desc   Test LazyForEachSingleBoolean
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LazyForEachSingleBoolean_001', Level.LEVEL0, async (done: Function) => {
       console.info('[LazyForEachSingleBoolean_001] START');

@@ -27,14 +27,14 @@ export default function NapiEnvTest() {
       await Utils.pushPage(`nodenapitest/napienvTest`, done);
     });
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_InitModuleForArkTSEnv_0200
-       * @tc.name       : testOH_ArkUI_InitModuleForArkTSEnv0200
-       * @tc.desc       : testing OH_ArkUI_InitModuleForArkTSEnv interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_ArkUI_InitModuleForArkTSEnv0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_InitModuleForArkTSEnv_0200
+     * @tc.desc   testing OH_ArkUI_InitModuleForArkTSEnv interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_ArkUI_InitModuleForArkTSEnv0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -49,14 +49,14 @@ export default function NapiEnvTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_NotifyArkTSEnvDestroy_0100
-       * @tc.name       : testOH_ArkUI_NotifyArkTSEnvDestroy0100
-       * @tc.desc       : testing OH_ArkUI_NotifyArkTSEnvDestroy interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOH_ArkUI_NotifyArkTSEnvDestroy0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_NotifyArkTSEnvDestroy_0100
+     * @tc.desc   testing OH_ArkUI_NotifyArkTSEnvDestroy interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_ArkUI_NotifyArkTSEnvDestroy0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {

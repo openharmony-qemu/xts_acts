@@ -39,13 +39,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_StartAbilityError_0100
-     * @tc.name   : To verify StartAbility ErrorCode.
-     * @tc.desc   : Expect: 16000073
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_StartAbilityError_0100
+     * @tc.number SUB_Ability_AbilityBase_StartAbilityError_0100
+     * @tc.desc   Expect: 16000073
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_StartAbilityError_0100', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_StartAbilityError_0100 start');
@@ -73,13 +73,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_StartAbilityError_0300
-     * @tc.name   : To verify StartAbility ErrorCode.
-     * @tc.desc   : Expect: 16000078
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_StartAbilityError_0300
+     * @tc.number SUB_Ability_AbilityBase_StartAbilityError_0300
+     * @tc.desc   Expect: 16000078
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_StartAbilityError_0300', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_StartAbilityError_0200 start');
@@ -107,13 +107,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_StartAbilityError_0500
-     * @tc.name   : To verify StartAbility ErrorCode.
-     * @tc.desc   : Expect: 16000080
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_StartAbilityError_0500
+     * @tc.number SUB_Ability_AbilityBase_StartAbilityError_0500
+     * @tc.desc   Expect: 16000080
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_StartAbilityError_0500', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_StartAbilityError_0500 start');
@@ -141,13 +141,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_StartAbilityError_0600
-     * @tc.name   : To verify StartAbility with option ErrorCode.
-     * @tc.desc   : Expect: 16000073
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_StartAbilityError_0600
+     * @tc.number SUB_Ability_AbilityBase_StartAbilityError_0600
+     * @tc.desc   Expect: 16000073
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_StartAbilityError_0600', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_StartAbilityError_0600 start');
@@ -178,13 +178,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_StartAbilityError_0800
-     * @tc.name   : To verify StartAbility with option ErrorCode.
-     * @tc.desc   : Expect: 16000078
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_StartAbilityError_0800
+     * @tc.number SUB_Ability_AbilityBase_StartAbilityError_0800
+     * @tc.desc   Expect: 16000078
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_StartAbilityError_0800', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_StartAbilityError_0800 start');
@@ -215,13 +215,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_StartAbilityError_1000
-     * @tc.name   : To verify StartAbility with option ErrorCode.
-     * @tc.desc   : Expect: 16000080
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_StartAbilityError_1000
+     * @tc.number SUB_Ability_AbilityBase_StartAbilityError_1000
+     * @tc.desc   Expect: 16000080
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_StartAbilityError_1000', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_StartAbilityError_1000 start');
@@ -253,13 +253,13 @@ export default function openLinkTest() {
 
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_StartAbilityError_1100
-     * @tc.name   : To verify StartAbility with option ErrorCode.
-     * @tc.desc   : Expect: 16000001
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_StartAbilityError_1100
+     * @tc.number SUB_Ability_AbilityBase_StartAbilityError_1100
+     * @tc.desc   Expect: 16000001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_StartAbilityError_1100', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_StartAbilityError_1100 start');
@@ -283,13 +283,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_StartAbilityError_1200
-     * @tc.name   : To verify StartAbility with option ErrorCode.
-     * @tc.desc   : Expect: 16000050
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_StartAbilityError_1200
+     * @tc.number SUB_Ability_AbilityBase_StartAbilityError_1200
+     * @tc.desc   Expect: 16000050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_StartAbilityError_1200', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_StartAbilityError_1200 start');
@@ -316,13 +316,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_StartAbilityError_1300
-     * @tc.name   : To verify StartAbility with option ErrorCode.
-     * @tc.desc   : Expect: 16000067
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_StartAbilityError_1300
+     * @tc.number SUB_Ability_AbilityBase_StartAbilityError_1300
+     * @tc.desc   Expect: 16000067
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_StartAbilityError_1300', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_StartAbilityError_1300 start');
@@ -350,13 +350,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_StartAbilityError_1500
-     * @tc.name   : To verify StartAbility ErrorCode.
-     * @tc.desc   : Expect: 16000072
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_StartAbilityError_1500
+     * @tc.number SUB_Ability_AbilityBase_StartAbilityError_1500
+     * @tc.desc   Expect: 16000072
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_StartAbilityError_1500', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_StartAbilityError_1500 start');
@@ -384,13 +384,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_StartAbilityError_1600
-     * @tc.name   : To verify StartAbility with option ErrorCode.
-     * @tc.desc   : Expect: 16000072
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_StartAbilityError_1600
+     * @tc.number SUB_Ability_AbilityBase_StartAbilityError_1600
+     * @tc.desc   Expect: 16000072
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_StartAbilityError_1600', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_StartAbilityError_1600 start');
@@ -421,13 +421,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_StartAbilityError_1700
-     * @tc.name   : To verify StartAbility with option ErrorCode.
-     * @tc.desc   : Expect: 16000004
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_StartAbilityError_1700
+     * @tc.number SUB_Ability_AbilityBase_StartAbilityError_1700
+     * @tc.desc   Expect: 16000004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_StartAbilityError_1700', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_StartAbilityError_1700 start');

@@ -47,12 +47,12 @@ export default function SwiperOnSelectedTest() {
     })
 
     /**
-     * @tc.number SwiperOnSelectedTest0010
      * @tc.name   SwiperOnSelectedTest0010
+     * @tc.number SwiperOnSelectedTest0010
      * @tc.desc   onSelected
-     * @tc.level  Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SwiperOnSelectedTest0010', Level.LEVEL1, async (done: Function) => {
         let tagName = 'SwiperOnSelectedTest0010';
@@ -68,12 +68,12 @@ export default function SwiperOnSelectedTest() {
   
   
       /**
+       * @tc.name   SwiperOnSelectedTest0020
        * @tc.number SwiperOnSelected0020
-       * @tc.name   SwiperOnSelected0020
        * @tc.desc   onSelected
-       * @tc.level  Level 1
-       * @tc.type
-       * @tc.size
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
        */
       it('SwiperOnSelectedTest0020', Level.LEVEL1, async (done: Function) => {
         let tagName = 'SwiperOnSelectedTest0020';

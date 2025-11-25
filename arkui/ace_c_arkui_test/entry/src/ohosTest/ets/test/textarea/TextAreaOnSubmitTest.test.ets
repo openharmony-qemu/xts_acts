@@ -27,14 +27,14 @@ export default function textAreaOnSubmitTest() {
       await Utils.pushPage(`textarea/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_TEXTAREA_ONSUBMIT_0100
-    * @tc.name       : testTextAreaOnSubmit001
-    * @tc.desc       : test onSubmit event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testTextAreaOnSubmit001
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_ONSUBMIT_0100
+     * @tc.desc   test onSubmit event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextAreaOnSubmit001', Level.LEVEL1, async (done: Function) => {
       focusControl.requestFocus('OnSubmitTestTextArea')
       await Utils.sleep(1000)

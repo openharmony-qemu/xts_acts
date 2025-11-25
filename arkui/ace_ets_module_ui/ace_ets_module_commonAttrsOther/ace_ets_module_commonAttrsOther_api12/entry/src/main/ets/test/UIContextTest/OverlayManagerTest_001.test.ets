@@ -46,12 +46,12 @@ export default function OverlayManagerTest_001() {
     });
 
     /**
-     * @tc.number    hideAllComponentContents_002
-     * @tc.name      testBack
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
+     * @tc.name   addComponentContent_001
+     * @tc.number hideAllComponentContents_002
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('addComponentContent_001', Level.LEVEL0, async (done: Function) => {
       console.info('[addComponentContent_001] START');

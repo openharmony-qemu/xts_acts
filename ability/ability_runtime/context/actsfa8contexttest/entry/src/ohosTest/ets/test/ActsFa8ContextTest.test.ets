@@ -19,11 +19,14 @@ import { BusinessError } from '@ohos.base';
 
 export default function actsFa8ContextTest() {
     describe('ActsFa8ContextTest', () => {
-        /*
-        * @tc.number    : ACTS_FA8Context_0100
-        * @tc.name      : get resource by $r
-        * @tc.desc      : get resource by $r
-        */
+        /**
+         * @tc.name   ACTS_FA8Context_0100
+         * @tc.number ACTS_FA8Context_0100
+         * @tc.desc   get resource by $r
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ACTS_FA8Context_0100', Level.LEVEL0, async (done: Function) => {
             await resourceManager.getResourceManager().then(rm => {
                 return rm.getString($r("app.string.fa").id)

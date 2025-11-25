@@ -42,12 +42,14 @@ export default function CalendarPickerDialogShadowTest() {
       console.info('CalendarPickerDialogShadowTest after each called');
     });
 
-    /* *
-    * @tc.number: CalendarPickerDialogShadowTest_001
-    * @tc.name  : CalendarPickerDialogShadowTest_001
-    * @tc.desc  : To test the CalendarPickerDialog shadow color: Color.Red
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   CalendarPickerDialogShadowTest_001
+     * @tc.number CalendarPickerDialogShadowTest_001
+     * @tc.desc   To test the CalendarPickerDialog shadow color: Color.Red
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('CalendarPickerDialogShadowTest_001',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('shadowOptionID'));
@@ -62,12 +64,14 @@ export default function CalendarPickerDialogShadowTest() {
       await btn1?.click();
       done();
     })
-    /* *
-    * @tc.number: CalendarPickerDialogShadowTest_002
-    * @tc.name  : CalendarPickerDialogShadowTest_002
-    * @tc.desc  : To test the CalendarPickerDialog shadow ShadowStyle.OUTER_DEFAULT_XS
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   CalendarPickerDialogShadowTest_002
+     * @tc.number CalendarPickerDialogShadowTest_002
+     * @tc.desc   To test the CalendarPickerDialog shadow ShadowStyle.OUTER_DEFAULT_XS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('CalendarPickerDialogShadowTest_002',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('OUTER_DEFAULT_XS_ID'));
@@ -82,12 +86,14 @@ export default function CalendarPickerDialogShadowTest() {
       await btn1?.click();
       done();
     })
-    /* *
-    * @tc.number: CalendarPickerDialogShadowTest_003
-    * @tc.name  : CalendarPickerDialogShadowTest_003
-    * @tc.desc  : To test the CalendarPickerDialog shadow ShadowStyle.OUTER_DEFAULT_SM
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   CalendarPickerDialogShadowTest_003
+     * @tc.number CalendarPickerDialogShadowTest_003
+     * @tc.desc   To test the CalendarPickerDialog shadow ShadowStyle.OUTER_DEFAULT_SM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('CalendarPickerDialogShadowTest_003',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('OUTER_DEFAULT_SM_ID'));
@@ -102,12 +108,14 @@ export default function CalendarPickerDialogShadowTest() {
       await btn1?.click();
       done();
     })
-    /* *
-    * @tc.number: CalendarPickerDialogShadowTest_004
-    * @tc.name  : CalendarPickerDialogShadowTest_004
-    * @tc.desc  : To test the CalendarPickerDialog shadow ShadowStyle.OUTER_DEFAULT_MD
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   CalendarPickerDialogShadowTest_004
+     * @tc.number CalendarPickerDialogShadowTest_004
+     * @tc.desc   To test the CalendarPickerDialog shadow ShadowStyle.OUTER_DEFAULT_MD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('CalendarPickerDialogShadowTest_004',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('OUTER_DEFAULT_MD_ID'));
@@ -122,12 +130,14 @@ export default function CalendarPickerDialogShadowTest() {
       await btn1?.click();
       done();
     })
-    /* *
-    * @tc.number: CalendarPickerDialogShadowTest_005
-    * @tc.name  : CalendarPickerDialogShadowTest_005
-    * @tc.desc  : To test the CalendarPickerDialog shadow ShadowStyle.OUTER_DEFAULT_LG
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   CalendarPickerDialogShadowTest_005
+     * @tc.number CalendarPickerDialogShadowTest_005
+     * @tc.desc   To test the CalendarPickerDialog shadow ShadowStyle.OUTER_DEFAULT_LG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('CalendarPickerDialogShadowTest_005',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('OUTER_DEFAULT_LG_ID'));
@@ -142,12 +152,14 @@ export default function CalendarPickerDialogShadowTest() {
       await btn1?.click();
       done();
     })
-    /* *
-    * @tc.number: CalendarPickerDialogShadowTest_006
-    * @tc.name  : CalendarPickerDialogShadowTest_006
-    * @tc.desc  : To test the CalendarPickerDialog shadow ShadowStyle.OUTER_FLOATING_SM
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   CalendarPickerDialogShadowTest_006
+     * @tc.number CalendarPickerDialogShadowTest_006
+     * @tc.desc   To test the CalendarPickerDialog shadow ShadowStyle.OUTER_FLOATING_SM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('CalendarPickerDialogShadowTest_006',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('OUTER_FLOATING_SM_ID'));
@@ -162,12 +174,14 @@ export default function CalendarPickerDialogShadowTest() {
       await btn1?.click();
       done();
     })
-    /* *
-    * @tc.number: CalendarPickerDialogShadowTest_007
-    * @tc.name  : CalendarPickerDialogShadowTest_007
-    * @tc.desc  : To test the CalendarPickerDialog shadow ShadowStyle.OUTER_FLOATING_MD
-    * @tc.level : Level 0
-    */
+    /**
+     * @tc.name   CalendarPickerDialogShadowTest_007
+     * @tc.number CalendarPickerDialogShadowTest_007
+     * @tc.desc   To test the CalendarPickerDialog shadow ShadowStyle.OUTER_FLOATING_MD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('CalendarPickerDialogShadowTest_007',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('OUTER_FLOATING_MD_ID'));

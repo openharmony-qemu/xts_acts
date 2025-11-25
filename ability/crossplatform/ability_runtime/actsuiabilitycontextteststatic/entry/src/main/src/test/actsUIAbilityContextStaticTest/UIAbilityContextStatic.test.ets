@@ -44,12 +44,12 @@ export default function UIAbilityContextStatic() {
     })
 
     /**
-     * @tc.number     ABILITY_TEST_ABILITYINFO_0100
-     * @tc.name       testAbilityInfoStatic001
-     * @tc.desc       test AbilityInfo
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   testAbilityInfoStatic001
+     * @tc.number ABILITY_TEST_ABILITYINFO_0100
+     * @tc.desc   test AbilityInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testAbilityInfoStatic001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'testAbilityInfoStatic001 start');
@@ -93,12 +93,12 @@ export default function UIAbilityContextStatic() {
     })
 
     /**
-     * @tc.number     ABILITY_TEST_UIABILITYCONTEXT_CURRENTHAPMODULEINFO_0100
-     * @tc.name       testUIAbilityContextCurrentHapModuleInfoStatic001
-     * @tc.desc       test filed of currentHapModuleInfo
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   testUIAbilityContextCurrentHapModuleInfoStatic001
+     * @tc.number ABILITY_TEST_UIABILITYCONTEXT_CURRENTHAPMODULEINFO_0100
+     * @tc.desc   test filed of currentHapModuleInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUIAbilityContextCurrentHapModuleInfoStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "testUIAbilityContextCurrentHapModuleInfoStatic001 begin");
@@ -139,12 +139,12 @@ export default function UIAbilityContextStatic() {
     })
 
     /**
-     * @tc.number     ABILITY_TEST_RESOURCEMANAGER_0100
-     * @tc.name       testResourceManagerStatic001
-     * @tc.desc       test filed of resourceManager
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   testResourceManagerStatic001
+     * @tc.number ABILITY_TEST_RESOURCEMANAGER_0100
+     * @tc.desc   test filed of resourceManager
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testResourceManagerStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
@@ -166,12 +166,12 @@ export default function UIAbilityContextStatic() {
     })
 
     /**
-     * @tc.number     ABILITY_TEST_CREATEAREAMODECONTEXT_0100
-     * @tc.name       testCreateAreaModeContextStatic001
-     * @tc.desc       test createAreaModeContext
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   testCreateAreaModeContextStatic001
+     * @tc.number ABILITY_TEST_CREATEAREAMODECONTEXT_0100
+     * @tc.desc   test createAreaModeContext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCreateAreaModeContextStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
@@ -193,12 +193,12 @@ export default function UIAbilityContextStatic() {
     })
 
     /**
-     * @tc.number     ABILITY_TEST_CREATEDISPLAYCONTEXT_0100
-     * @tc.name       testCreateDisplayContextStatic001
-     * @tc.desc       test createDisplayContext
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   testCreateDisplayContextStatic001
+     * @tc.number ABILITY_TEST_CREATEDISPLAYCONTEXT_0100
+     * @tc.desc   test createDisplayContext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCreateDisplayContextStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
@@ -220,12 +220,12 @@ export default function UIAbilityContextStatic() {
     })
 
     /**
-     * @tc.number     ABILITY_TEST_OPENATOMICSERVICE_0100
-     * @tc.name       testOpenAtomicServiceStatic001
-     * @tc.desc       test Method of OpenAtomicService
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   testOpenAtomicServiceStatic001
+     * @tc.number ABILITY_TEST_OPENATOMICSERVICE_0100
+     * @tc.desc   test Method of OpenAtomicService
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOpenAtomicServiceStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
@@ -254,12 +254,12 @@ export default function UIAbilityContextStatic() {
     })
 
     /**
-     * @tc.number     ABILITY_TEST_OPENATOMICSERVICE_0200
-     * @tc.name       testOpenAtomicServiceStatic002
-     * @tc.desc       test Method of OpenAtomicService
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   testOpenAtomicServiceStatic002
+     * @tc.number ABILITY_TEST_OPENATOMICSERVICE_0200
+     * @tc.desc   test Method of OpenAtomicService
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOpenAtomicServiceStatic002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
@@ -282,12 +282,12 @@ export default function UIAbilityContextStatic() {
     })
 
     /**
-     * @tc.number     ABILITY_TEST_REPORTDRAWNCOMPLETED_0100
-     * @tc.name       testReportDrawnCompletedStatic001
-     * @tc.desc       test Method of reportDrawnCompleted
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   testReportDrawnCompletedStatic001
+     * @tc.number ABILITY_TEST_REPORTDRAWNCOMPLETED_0100
+     * @tc.desc   test Method of reportDrawnCompleted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testReportDrawnCompletedStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let temp = false;
@@ -311,12 +311,12 @@ export default function UIAbilityContextStatic() {
     })
 
     /**
-     * @tc.number     ABILITY_TEST_SETCOLORMODE_0100
-     * @tc.name       testsetColorModeStatic001
-     * @tc.desc       test Method of setColorMode
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   testsetColorModeStatic001
+     * @tc.number ABILITY_TEST_SETCOLORMODE_0100
+     * @tc.desc   test Method of setColorMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testsetColorModeStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
@@ -331,12 +331,12 @@ export default function UIAbilityContextStatic() {
     })
 
     /**
-     * @tc.number     ABILITY_TEST_TERMINATESELF_CALLBACK_0100
-     * @tc.name       ABILITY_TEST_TERMINATESELF_CALLBACK_0100
-     * @tc.desc       test terminateSelf(Callback)
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   ABILITY_TEST_TERMINATESELF_CALLBACK_0100
+     * @tc.number ABILITY_TEST_TERMINATESELF_CALLBACK_0100
+     * @tc.desc   test terminateSelf(Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ABILITY_TEST_TERMINATESELF_CALLBACK_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG = "ABILITY_TEST_TERMINATESELF_CALLBACK_0100";

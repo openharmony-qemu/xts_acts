@@ -48,10 +48,12 @@ export default function ColumnTypeNodeTest() {
     });
 
     /**
-     * @tc.number    ColumnTypeNodeTest_0100
-     * @tc.name      ColumnTypeNodeTest_0100
-     * @tc.desc      Test ColumnTypeNode
-     * @tc.level     Level 1
+     * @tc.name   ColumnTypeNodeTest_0100
+     * @tc.number ColumnTypeNodeTest_0100
+     * @tc.desc   Test ColumnTypeNode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ColumnTypeNodeTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[ColumnTypeNodeTest_0100] START');
@@ -87,12 +89,12 @@ export default function ColumnTypeNodeTest() {
       done();
     });
     /**
-     * @tc.number    ColumnTypeNodeTest_0200
-     * @tc.name      ColumnTypeNodeTest_0200
-     * @tc.desc      Test ColumnTypeNodePage undefined.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   ColumnTypeNodeTest_0200
+     * @tc.number ColumnTypeNodeTest_0200
+     * @tc.desc   Test ColumnTypeNodePage undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ColumnTypeNodeTest_0200', Level.LEVEL3, async (done: Function) => {
       console.info('[ColumnTypeNodeTest_0200] START');

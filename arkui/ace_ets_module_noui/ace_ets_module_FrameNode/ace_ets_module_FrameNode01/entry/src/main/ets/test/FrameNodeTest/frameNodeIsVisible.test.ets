@@ -44,12 +44,12 @@ export default function frameNodeIsVisibleTest() {
       console.info("frameNodeIsVisibleTest after each called");
     });
     /**
-     * @tc.number    frameNodeIsVisibleTest_0100
-     * @tc.name      frameNodeIsVisibleTest_0100
-     * @tc.desc      frameNode: UINode isVisible is true
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   frameNodeIsVisibleTest_0100
+     * @tc.number frameNodeIsVisibleTest_0100
+     * @tc.desc   frameNode: UINode isVisible is true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('frameNodeIsVisibleTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('frameNodeIsVisibleTest_0100 START');

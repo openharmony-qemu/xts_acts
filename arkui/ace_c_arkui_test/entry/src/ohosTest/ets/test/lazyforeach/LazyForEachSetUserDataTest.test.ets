@@ -26,39 +26,39 @@ export default function lazyForEachSetUserDataTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_SETUSERDATA_0100
-     * @tc.name       : testLazyForEachSetUserData001
-     * @tc.desc       : testing setUserData for lazyForEach with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachSetUserData001
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_SETUSERDATA_0100
+     * @tc.desc   testing setUserData for lazyForEach with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachSetUserData001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testLazyForEachSetUserData001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_SETUSERDATA_0200
-     * @tc.name       : testLazyForEachSetUserData002
-     * @tc.desc       : testing setUserData for lazyForEach with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachSetUserData002
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_SETUSERDATA_0200
+     * @tc.desc   testing setUserData for lazyForEach with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachSetUserData002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testLazyForEachSetUserData002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_SETUSERDATA_0300
-     * @tc.name       : testLazyForEachSetUserData003
-     * @tc.desc       : testing setUserData for lazyForEach with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachSetUserData003
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_SETUSERDATA_0300
+     * @tc.desc   testing setUserData for lazyForEach with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachSetUserData003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testLazyForEachSetUserData003()).assertEqual(0)

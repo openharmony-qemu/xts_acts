@@ -28,13 +28,13 @@ const TEST_SUITE_NAME: string = 'CreateModuleContextTest';
 
 export default function abilityTest() {
   describe('ACTS_CreateModuleContext_Test', () => {
-    /*
-     * @tc.number    : SUB_Ability_AbilityRuntime_AMS_Context_CreateModuleContext_1300
-     * @tc.name      : Test_CreateModuleContext_NullContext
-     * @tc.desc      : Test CreateModuleContext function when context is null
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AMS_Context_CreateModuleContext_1300
+     * @tc.number SUB_Ability_AbilityRuntime_AMS_Context_CreateModuleContext_1300
+     * @tc.desc   Test CreateModuleContext function when context is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AMS_Context_CreateModuleContext_1300', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'CreateModuleContext_1300';
@@ -57,13 +57,13 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-     * @tc.number    : SUB_Ability_AbilityRuntime_AMS_Context_CreateModuleContext_1400
-     * @tc.name      : Test_CreateModuleContext_UndefinedContext
-     * @tc.desc      : Test CreateModuleContext function when context is undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AMS_Context_CreateModuleContext_1400
+     * @tc.number SUB_Ability_AbilityRuntime_AMS_Context_CreateModuleContext_1400
+     * @tc.desc   Test CreateModuleContext function when context is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AMS_Context_CreateModuleContext_1400', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'CreateModuleContext_1400';
@@ -86,13 +86,13 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-     * @tc.number    : SUB_Ability_AbilityRuntime_AMS_Context_CreateModuleContext_1500
-     * @tc.name      : Test_CreateModuleContext_NullModuleName
-     * @tc.desc      : Test CreateModuleContext function when moduleName is null
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AMS_Context_CreateModuleContext_1500
+     * @tc.number SUB_Ability_AbilityRuntime_AMS_Context_CreateModuleContext_1500
+     * @tc.desc   Test CreateModuleContext function when moduleName is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AMS_Context_CreateModuleContext_1500', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'CreateModuleContext_1500';
@@ -115,13 +115,13 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-     * @tc.number    : SUB_Ability_AbilityRuntime_AMS_Context_CreateModuleContext_1600
-     * @tc.name      : Test_CreateModuleContext_UndefinedModuleName
-     * @tc.desc      : Test CreateModuleContext function when moduleName is undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AMS_Context_CreateModuleContext_1600
+     * @tc.number SUB_Ability_AbilityRuntime_AMS_Context_CreateModuleContext_1600
+     * @tc.desc   Test CreateModuleContext function when moduleName is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AMS_Context_CreateModuleContext_1600', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'CreateModuleContext_1600';
@@ -144,13 +144,13 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-     * @tc.number    : SUB_Ability_AbilityRuntime_AMS_Context_CreateModuleContext_1700
-     * @tc.name      : Test_CreateModuleContext_WrongModuleName
-     * @tc.desc      : Test CreateModuleContext function when moduleName is wrong
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AMS_Context_CreateModuleContext_1700
+     * @tc.number SUB_Ability_AbilityRuntime_AMS_Context_CreateModuleContext_1700
+     * @tc.desc   Test CreateModuleContext function when moduleName is wrong
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AMS_Context_CreateModuleContext_1700', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'CreateModuleContext_1700';
@@ -173,13 +173,13 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-     * @tc.number    : SUB_Ability_AbilityRuntime_AMS_Context_CreateModuleContext_1800
-     * @tc.name      : Test_CreateModuleContext_EmptyModuleName
-     * @tc.desc      : Test CreateModuleContext function when moduleName is empty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AMS_Context_CreateModuleContext_1800
+     * @tc.number SUB_Ability_AbilityRuntime_AMS_Context_CreateModuleContext_1800
+     * @tc.desc   Test CreateModuleContext function when moduleName is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AMS_Context_CreateModuleContext_1800', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'CreateModuleContext_1800';

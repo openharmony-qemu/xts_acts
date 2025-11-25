@@ -39,12 +39,14 @@ export default function ActsGetMultipleAccounts() {
       );
     });
 
-    /*
-    * @tc.number    : ActsgetAllAccounts_0100
-    * @tc.name      : getAllAccounts promise
-    * @tc.desc      : This application adds multiple account, other applications authorizes multiple accounts to this
-    *                 application and this application obtains authorization
-    */
+    /**
+     * @tc.name   ActsgetAllAccounts_0100
+     * @tc.number ActsgetAllAccounts_0100
+     * @tc.desc   This application adds multiple account, other applications authorizes multiple accounts to this
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ActsgetAllAccounts_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info("====>ActsGetMultipleAccounts_0100 start====");
       let dataMap = new Map();
@@ -120,12 +122,14 @@ export default function ActsGetMultipleAccounts() {
       done();
     });
 
-    /*
-    * @tc.number    : ActsgetAllAccounts_0200
-    * @tc.name      : getAllAccounts callback
-    * @tc.desc      : This application adds multiple account, other applications authorizes multiple accounts to this
-    *                 application and this application obtains authorization
-    */
+    /**
+     * @tc.name   ActsgetAllAccounts_0200
+     * @tc.number ActsgetAllAccounts_0200
+     * @tc.desc   This application adds multiple account, other applications authorizes multiple accounts to this
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ActsgetAllAccounts_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info("====>ActsgetAllAccounts_0200 start====");
       let dataMap = new Map();
@@ -203,13 +207,13 @@ export default function ActsGetMultipleAccounts() {
     });
 
     /**
-    * @tc.number   ActsGetAllAccessibleAccounts_0100
-    * @tc.name     ActsGetAllAccessibleAccounts_0100
-    * @tc.desc     add null user in current app, then getAllAccessibleAccounts
-    * @tc.level    Level3
-    * @tc.size     MediumTest
-    * @tc.type     Function
-    */
+     * @tc.name   ActsGetAllAccessibleAccounts_0100
+     * @tc.number ActsGetAllAccessibleAccounts_0100
+     * @tc.desc   add null user in current app, then getAllAccessibleAccounts
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsGetAllAccessibleAccounts_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsGetAllAccessibleAccounts_0100 start====");
       let dataMap = new Map();
@@ -233,13 +237,13 @@ export default function ActsGetMultipleAccounts() {
     });
 
     /**
-    * @tc.number   ActsGetAllAccessibleAccounts_0200
-    * @tc.name     ActsGetAllAccessibleAccounts_0200
-    * @tc.desc     add null user in current app, then getAllAccessibleAccounts
-    * @tc.level    Level3
-    * @tc.size     MediumTest
-    * @tc.type     Function
-    */
+     * @tc.name   ActsGetAllAccessibleAccounts_0200
+     * @tc.number ActsGetAllAccessibleAccounts_0200
+     * @tc.desc   add null user in current app, then getAllAccessibleAccounts
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsGetAllAccessibleAccounts_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsGetAllAccessibleAccounts_0100 start====");
       let dataMap = new Map();
@@ -257,11 +261,14 @@ export default function ActsGetMultipleAccounts() {
       done()
     });
 
-    /*
-    * @tc.number    : ActsGetAllAccessibleAccounts_0300
-    * @tc.name      : getAllAccessibleAccounts callback
-    * @tc.desc      : add one user in current app, then getAllAccessibleAccounts
-    */
+    /**
+     * @tc.name   ActsGetAllAccessibleAccounts_0300
+     * @tc.number ActsGetAllAccessibleAccounts_0300
+     * @tc.desc   add one user in current app, then getAllAccessibleAccounts
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsGetAllAccessibleAccounts_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsGetAllAccessibleAccounts_0300 start====");
       let dataMap = new Map();
@@ -296,11 +303,14 @@ export default function ActsGetMultipleAccounts() {
       }
     });
 
-    /*
-    * @tc.number    : ActsGetAllAccessibleAccounts_0400
-    * @tc.name      : getAllAccessibleAccounts promise
-    * @tc.desc      : add one user in current app, then getAllAccessibleAccounts
-    */
+    /**
+     * @tc.name   ActsGetAllAccessibleAccounts_0400
+     * @tc.number ActsGetAllAccessibleAccounts_0400
+     * @tc.desc   add one user in current app, then getAllAccessibleAccounts
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsGetAllAccessibleAccounts_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsGetAllAccessibleAccounts_0400 start====");
       let dataMap = new Map();
@@ -334,11 +344,14 @@ export default function ActsGetMultipleAccounts() {
       done();
     });
 
-    /*
-    * @tc.number    : ActsGetAllAccessibleAccounts_0500
-    * @tc.name      : getAllAccessibleAccounts callback
-    * @tc.desc      : add three user in current app, then getAllAccessibleAccounts
-    */
+    /**
+     * @tc.name   ActsGetAllAccessibleAccounts_0500
+     * @tc.number ActsGetAllAccessibleAccounts_0500
+     * @tc.desc   add three user in current app, then getAllAccessibleAccounts
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsGetAllAccessibleAccounts_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsGetAllAccessibleAccounts_0500 start====");
       let dataMap = new Map();
@@ -391,11 +404,14 @@ export default function ActsGetMultipleAccounts() {
       }
     });
 
-    /*
-    * @tc.number    : ActsGetAllAccessibleAccounts_0600
-    * @tc.name      : getAllAccessibleAccounts promise
-    * @tc.desc      : add three user in current app, then getAllAccessibleAccounts
-    */
+    /**
+     * @tc.name   ActsGetAllAccessibleAccounts_0600
+     * @tc.number ActsGetAllAccessibleAccounts_0600
+     * @tc.desc   add three user in current app, then getAllAccessibleAccounts
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsGetAllAccessibleAccounts_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsGetAllAccessibleAccounts_0600 start====");
       let dataMap = new Map();
@@ -447,11 +463,14 @@ export default function ActsGetMultipleAccounts() {
       done();
     });
 
-    /*
-    * @tc.number    : ActsGetAllAccessibleAccounts_0700
-    * @tc.name      : getAllAccessibleAccounts callback
-    * @tc.desc      : add three user in current app and delete second user, then getAllAccessibleAccounts
-    */
+    /**
+     * @tc.name   ActsGetAllAccessibleAccounts_0700
+     * @tc.number ActsGetAllAccessibleAccounts_0700
+     * @tc.desc   add three user in current app and delete second user, then getAllAccessibleAccounts
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsGetAllAccessibleAccounts_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsGetAllAccessibleAccounts_0700 start====");
       let dataMap = new Map();
@@ -500,11 +519,14 @@ export default function ActsGetMultipleAccounts() {
       }
     });
 
-    /*
-    * @tc.number    : ActsGetAllAccessibleAccounts_0800
-    * @tc.name      : getAllAccessibleAccounts promise
-    * @tc.desc      : add three user in current app and delete second user, then getAllAccessibleAccounts
-    */
+    /**
+     * @tc.name   ActsGetAllAccessibleAccounts_0800
+     * @tc.number ActsGetAllAccessibleAccounts_0800
+     * @tc.desc   add three user in current app and delete second user, then getAllAccessibleAccounts
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsGetAllAccessibleAccounts_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsGetAllAccessibleAccounts_0800 start====");
       let dataMap = new Map();
@@ -552,11 +574,14 @@ export default function ActsGetMultipleAccounts() {
       done();
     });
 
-    /*
-    * @tc.number    : ActsGetAllAccessibleAccounts_0900
-    * @tc.name      : getAllAccessibleAccounts callback
-    * @tc.desc      : twice getAllAccessibleAccounts with two user of current app
-    */
+    /**
+     * @tc.name   ActsGetAllAccessibleAccounts_0900
+     * @tc.number ActsGetAllAccessibleAccounts_0900
+     * @tc.desc   twice getAllAccessibleAccounts with two user of current app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsGetAllAccessibleAccounts_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsGetAllAccessibleAccounts_0900 start====");
       let dataMap = new Map();
@@ -620,11 +645,14 @@ export default function ActsGetMultipleAccounts() {
       }
     });
 
-    /*
-    * @tc.number    : ActsGetAllAccessibleAccounts_1000
-    * @tc.name      : getAllAccessibleAccounts promise
-    * @tc.desc      : twice getAllAccessibleAccounts with two user of current app
-    */
+    /**
+     * @tc.name   ActsGetAllAccessibleAccounts_1000
+     * @tc.number ActsGetAllAccessibleAccounts_1000
+     * @tc.desc   twice getAllAccessibleAccounts with two user of current app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsGetAllAccessibleAccounts_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsGetAllAccessibleAccounts_1000 start====");
       let dataMap = new Map();
@@ -690,11 +718,14 @@ export default function ActsGetMultipleAccounts() {
       done();
     });
 
-    /*
-    * @tc.number    : ActsGetAllAccessibleAccounts_1100
-    * @tc.name      : getAllAccessibleAccounts callback
-    * @tc.desc      : one user of current app and two users of other app
-    */
+    /**
+     * @tc.name   ActsGetAllAccessibleAccounts_1100
+     * @tc.number ActsGetAllAccessibleAccounts_1100
+     * @tc.desc   one user of current app and two users of other app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsGetAllAccessibleAccounts_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsGetAllAccessibleAccounts_1100 start====");
       let dataMap = new Map();
@@ -753,11 +784,14 @@ export default function ActsGetMultipleAccounts() {
       }
     });
 
-    /*
-    * @tc.number    : ActsGetAllAccessibleAccounts_1200
-    * @tc.name      : getAllAccessibleAccounts promise
-    * @tc.desc      : one user of current app and two users of other app
-    */
+    /**
+     * @tc.name   ActsGetAllAccessibleAccounts_1200
+     * @tc.number ActsGetAllAccessibleAccounts_1200
+     * @tc.desc   one user of current app and two users of other app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsGetAllAccessibleAccounts_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsGetAllAccessibleAccounts_1200 start====");
       let dataMap = new Map();

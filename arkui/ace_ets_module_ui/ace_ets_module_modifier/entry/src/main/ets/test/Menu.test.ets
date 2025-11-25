@@ -42,12 +42,12 @@ export default function MenuJsunit() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Menu_attrs_0100
      * @tc.number ArkUX_Stage_Menu_attrs_0100
-     * @tc.name Test the properties of components
-     * @tc.desc Set fontColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set fontColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Menu_attrs_0100', Level.LEVEL0, async (done: Function) => {
       try {
@@ -64,12 +64,12 @@ export default function MenuJsunit() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Menu_attrs_0101
      * @tc.number ArkUX_Stage_Menu_attrs_0101
-     * @tc.name Test the properties of components
-     * @tc.desc Set font values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set font values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Menu_attrs_0101', Level.LEVEL0, async (done: Function) => {
       try {
@@ -89,12 +89,12 @@ export default function MenuJsunit() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Menu_attrs_0102
      * @tc.number ArkUX_Stage_Menu_attrs_0102
-     * @tc.name Test the properties of components
-     * @tc.desc Set borderRadius values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set borderRadius values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Menu_attrs_0102', Level.LEVEL0, async (done: Function) => {
       try {
@@ -114,12 +114,12 @@ export default function MenuJsunit() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Menu_attrs_0103
      * @tc.number ArkUX_Stage_Menu_attrs_0103
-     * @tc.name Test the properties of components
-     * @tc.desc Change borderRadius values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change borderRadius values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Menu_attrs_0103', Level.LEVEL0, async (done: Function) => {
 

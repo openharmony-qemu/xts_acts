@@ -43,15 +43,15 @@ export default function ActionSheetJsunit() {
       done()
     });
 
-    /**
-     * @tc.number    ActionSheetJsunit_0100
-     * @tc.name      ActionSheetJsunit_0100
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
-     */
 
+    /**
+     * @tc.name   ActionSheetJsunit_0100
+     * @tc.number ActionSheetJsunit_0100
+     * @tc.desc   ActionSheetJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ActionSheetJsunit_0100', Level.LEVEL2, async (done: Function) => {
 
      

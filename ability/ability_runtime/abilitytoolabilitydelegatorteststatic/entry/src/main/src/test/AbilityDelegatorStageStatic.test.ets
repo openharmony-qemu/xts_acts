@@ -32,12 +32,12 @@ export default function AbilityDelegatorStageStaticTest() {
 
 
     /**
-     * @tc.number     SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0100
-     * @tc.name       SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0100
-     * @tc.desc       test addAbilityMonitorSync
-     * @tc.size       MediumTest
-     * @tc.level      Level 3
-     * @tc.type       Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0100
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0100
+     * @tc.desc   test addAbilityMonitorSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -74,12 +74,12 @@ export default function AbilityDelegatorStageStaticTest() {
       })
 
     /**
-     * @tc.number     SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0200
-     * @tc.name       SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0200
-     * @tc.desc       test removeAbilityMonitor(callback)
-     * @tc.size       MediumTest
-     * @tc.level      Level 3
-     * @tc.type       Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0200
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0200
+     * @tc.desc   test removeAbilityMonitor(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -135,12 +135,12 @@ export default function AbilityDelegatorStageStaticTest() {
       })
 
     /**
-     * @tc.number     SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0300
-     * @tc.name       SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0300
-     * @tc.desc       test removeAbilityMonitor(promise)
-     * @tc.size       MediumTest
-     * @tc.level      Level 3
-     * @tc.type       Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0300
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0300
+     * @tc.desc   test removeAbilityMonitor(promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -196,12 +196,12 @@ export default function AbilityDelegatorStageStaticTest() {
       })
 
     /**
-     * @tc.number     SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0400
-     * @tc.name       SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0400
-     * @tc.desc       test removeAbilityMonitorSync
-     * @tc.size       MediumTest
-     * @tc.level      Level 3
-     * @tc.type       Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0400
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0400
+     * @tc.desc   test removeAbilityMonitorSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -248,12 +248,12 @@ export default function AbilityDelegatorStageStaticTest() {
       })
 
     /**
-     * @tc.number     SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0500
-     * @tc.name       SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0500
-     * @tc.desc       test waitAbilityMonitor(callback)
-     * @tc.size       MediumTest
-     * @tc.level      Level 3
-     * @tc.type       Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0500
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0500
+     * @tc.desc   test waitAbilityMonitor(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -306,12 +306,12 @@ export default function AbilityDelegatorStageStaticTest() {
       })
 
     /**
-     * @tc.number     SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0600
-     * @tc.name       SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0600
-     * @tc.desc       test waitAbilityMonitor(callback) with timeout
-     * @tc.size       MediumTest
-     * @tc.level      Level 3
-     * @tc.type       Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0600
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0600
+     * @tc.desc   test waitAbilityMonitor(callback) with timeout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -363,12 +363,12 @@ export default function AbilityDelegatorStageStaticTest() {
       })
 
     /**
-     * @tc.number     SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0700
-     * @tc.name       SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0700
-     * @tc.desc       test waitAbilityMonitor(promise) with timeout
-     * @tc.size       MediumTest
-     * @tc.level      Level 3
-     * @tc.type       Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0700
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0700
+     * @tc.desc   test waitAbilityMonitor(promise) with timeout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -420,12 +420,12 @@ export default function AbilityDelegatorStageStaticTest() {
       })
 
     /**
-     * @tc.number     SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0701
-     * @tc.name       SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0701
-     * @tc.desc       test waitAbilityMonitor(promise)
-     * @tc.size       MediumTest
-     * @tc.level      Level 3
-     * @tc.type       Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0701
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0701
+     * @tc.desc   test waitAbilityMonitor(promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0701',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -476,12 +476,12 @@ export default function AbilityDelegatorStageStaticTest() {
       })
 
     /**
-     * @tc.number     SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0800
-     * @tc.name       SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0800
-     * @tc.desc       test getCurrentTopAbility(callback) and getAbilityState
-     * @tc.size       MediumTest
-     * @tc.level      Level 3
-     * @tc.type       Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0800
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0800
+     * @tc.desc   test getCurrentTopAbility(callback) and getAbilityState
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -520,12 +520,12 @@ export default function AbilityDelegatorStageStaticTest() {
       })
 
     /**
-     * @tc.number     SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0900
-     * @tc.name       SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0900
-     * @tc.desc       test doAbilityForeground(callback)
-     * @tc.size       MediumTest
-     * @tc.level      Level 3
-     * @tc.type       Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0900
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0900
+     * @tc.desc   test doAbilityForeground(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_0900',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -575,12 +575,12 @@ export default function AbilityDelegatorStageStaticTest() {
       })
 
     /**
-     * @tc.number     SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1000
-     * @tc.name       SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1000
-     * @tc.desc       test doAbilityForeground(promise)
-     * @tc.size       MediumTest
-     * @tc.level      Level 3
-     * @tc.type       Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1000
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1000
+     * @tc.desc   test doAbilityForeground(promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -629,12 +629,12 @@ export default function AbilityDelegatorStageStaticTest() {
       })
 
     /**
-     * @tc.number     SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_23500
-     * @tc.name       SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_23500
-     * @tc.desc       testing doAbilityBackground by promise
-     * @tc.size       MediumTest
-     * @tc.level      Level 3
-     * @tc.type       Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_23500
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_23500
+     * @tc.desc   testing doAbilityBackground by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_23500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -679,12 +679,12 @@ export default function AbilityDelegatorStageStaticTest() {
       })
 
     /**
-     * @tc.number     SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_23600
-     * @tc.name       SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_23600
-     * @tc.desc       testing doAbilityBackground by AsyncCallback
-     * @tc.size       MediumTest
-     * @tc.level      Level 3
-     * @tc.type       Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_23600
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_23600
+     * @tc.desc   testing doAbilityBackground by AsyncCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_23600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -730,12 +730,12 @@ export default function AbilityDelegatorStageStaticTest() {
       })
 
     /**
-     * @tc.number     SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19400
-     * @tc.name       SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19400
-     * @tc.desc       for testing command -b -s -w are valid and call print by promise
-     * @tc.size       MediumTest
-     * @tc.level      Level 3
-     * @tc.type       Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19400
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19400
+     * @tc.desc   for testing command -b -s -w are valid and call print by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -765,12 +765,12 @@ export default function AbilityDelegatorStageStaticTest() {
       })
 
     /**
-     * @tc.number     SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19500
-     * @tc.name       SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19500
-     * @tc.desc       for testing command is valid and call print by promise
-     * @tc.size       MediumTest
-     * @tc.level      Level 3
-     * @tc.type       Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19500
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19500
+     * @tc.desc   for testing command is valid and call print by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -810,12 +810,12 @@ export default function AbilityDelegatorStageStaticTest() {
       })
 
     /**
-     * @tc.number     SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19600
-     * @tc.name       SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19600
-     * @tc.desc       for testing command is valid and call print by promise
-     * @tc.size       MediumTest
-     * @tc.level      Level 3
-     * @tc.type       Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19600
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19600
+     * @tc.desc   for testing command is valid and call print by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_19600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -856,12 +856,12 @@ export default function AbilityDelegatorStageStaticTest() {
       })
 
     /**
-     * @tc.number     SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1300
-     * @tc.name       SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1300
-     * @tc.desc       test print(callback)
-     * @tc.size       MediumTest
-     * @tc.level      Level 3
-     * @tc.type       Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1300
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1300
+     * @tc.desc   test print(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_Static_1300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,

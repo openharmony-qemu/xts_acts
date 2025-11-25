@@ -81,9 +81,12 @@ export default function textPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTextIdProp
-         * @tc.desc      ACE
+         * @tc.name   testTextIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTextIdProp', Level.LEVEL0, async function(done) {
             console.info('testTextIdProp START');
@@ -99,9 +102,12 @@ export default function textPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTextClassProp
-         * @tc.desc      ACE
+         * @tc.name   testTextClassProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTextClassProp', Level.LEVEL0, async function(done) {
             console.info('testTextClassProp START');
@@ -118,9 +124,12 @@ export default function textPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTextClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testTextClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTextClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testTextClassPropNone START');
@@ -139,9 +148,12 @@ export default function textPropsJsTest() {
 
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTextRefProp
-         * @tc.desc      ACE
+         * @tc.name   testTextRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTextRefProp', Level.LEVEL0, async function(done) {
             console.info('testTextRefProp START');
@@ -158,9 +170,12 @@ export default function textPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTextRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testTextRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTextRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testTextRefPropNone START');
@@ -178,9 +193,12 @@ export default function textPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTextDisabledPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testTextDisabledPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTextDisabledPropTrue', Level.LEVEL0, async function(done) {
             console.info('testTextDisabledPropTrue START');
@@ -197,9 +215,12 @@ export default function textPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTextDisabledPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testTextDisabledPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTextDisabledPropFalse', Level.LEVEL0, async function(done) {
             console.info('testTextDisabledPropFalse START');
@@ -216,9 +237,12 @@ export default function textPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTextDisabledPropNone
-         * @tc.desc      ACE
+         * @tc.name   testTextDisabledPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTextDisabledPropNone', Level.LEVEL0, async function(done) {
             console.info('testTextDisabledPropNone START');
@@ -235,9 +259,12 @@ export default function textPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTextFocusablePropTrue
-         * @tc.desc      ACE
+         * @tc.name   testTextFocusablePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTextFocusablePropTrue', Level.LEVEL0, async function(done) {
             console.info('testTextFocusablePropTrue START');
@@ -254,9 +281,12 @@ export default function textPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTextFocusablePropFalse
-         * @tc.desc      ACE
+         * @tc.name   testTextFocusablePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTextFocusablePropFalse', Level.LEVEL0, async function(done) {
             console.info('testTextFocusablePropFalse START');
@@ -273,9 +303,12 @@ export default function textPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTextFocusablePropNone
-         * @tc.desc      ACE
+         * @tc.name   testTextFocusablePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTextFocusablePropNone', Level.LEVEL0, async function(done) {
             console.info('testTextFocusablePropNone START');
@@ -292,9 +325,12 @@ export default function textPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTextDataProp
-         * @tc.desc      ACE
+         * @tc.name   testTextDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTextDataProp', Level.LEVEL0, async function(done) {
             console.info('testTextDataProp START');
@@ -312,9 +348,12 @@ export default function textPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTextDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testTextDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTextDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testTextDataPropNone START');
@@ -332,9 +371,12 @@ export default function textPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTextClickEffectPropSmall
-         * @tc.desc      ACE
+         * @tc.name   testTextClickEffectPropSmall
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTextClickEffectPropSmall', Level.LEVEL0, async function(done) {
             console.info('testTextClickEffectPropSmall START');
@@ -351,9 +393,12 @@ export default function textPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTextClickEffectPropMedium
-         * @tc.desc      ACE
+         * @tc.name   testTextClickEffectPropMedium
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTextClickEffectPropMedium', Level.LEVEL0, async function(done) {
             console.info('testTextClickEffectPropMedium START');
@@ -370,9 +415,12 @@ export default function textPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTextClickEffectPropLarge
-         * @tc.desc      ACE
+         * @tc.name   testTextClickEffectPropLarge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTextClickEffectPropLarge', Level.LEVEL0, async function(done) {
             console.info('testTextClickEffectPropLarge START');
@@ -389,9 +437,12 @@ export default function textPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTextClickEffectPropNone
-         * @tc.desc      ACE
+         * @tc.name   testTextClickEffectPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTextClickEffectPropNone', Level.LEVEL0, async function(done) {
             console.info('testTextClickEffectPropNone START');
@@ -409,9 +460,12 @@ export default function textPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTextDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testTextDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTextDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testTextDirPropRtl START');
@@ -428,9 +482,12 @@ export default function textPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTextDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testTextDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTextDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testTextDirPropLtr START');
@@ -447,9 +504,12 @@ export default function textPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTextDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testTextDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTextDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testTextDirPropAuto START');
@@ -466,9 +526,12 @@ export default function textPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTextDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testTextDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTextDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testTextDirPropNone START');
@@ -485,9 +548,12 @@ export default function textPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTextForPropNull
-         * @tc.desc      ACE
+         * @tc.name   testTextForPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTextForPropNull', Level.LEVEL0, async function(done) {
             console.info('testTextForPropNull START');
@@ -505,9 +571,12 @@ export default function textPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTextForPropOne
-         * @tc.desc      ACE
+         * @tc.name   testTextForPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTextForPropOne', Level.LEVEL0, async function(done) {
             console.info('testTextForPropOne START');
@@ -525,9 +594,12 @@ export default function textPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTextForPropThree
-         * @tc.desc      ACE
+         * @tc.name   testTextForPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTextForPropThree', Level.LEVEL0, async function(done) {
             console.info('testTextForPropThree START');
@@ -545,9 +617,12 @@ export default function textPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTextIfPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testTextIfPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTextIfPropTrue', Level.LEVEL0, async function(done) {
             console.info('testTextIfPropTrue START');
@@ -565,9 +640,12 @@ export default function textPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTextPropsShowPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testTextPropsShowPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTextPropsShowPropTrue', Level.LEVEL0, async function(done) {
             console.info('testTextPropsShowPropTrue START');
@@ -585,9 +663,12 @@ export default function textPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTextShowPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testTextShowPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTextShowPropFalse', Level.LEVEL0, async function(done) {
             console.info('testTextShowPropFalse START');
@@ -605,9 +686,12 @@ export default function textPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTextShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testTextShowPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTextShowPropNone', Level.LEVEL0, async function(done) {
             console.info('testTextShowPropNone START');

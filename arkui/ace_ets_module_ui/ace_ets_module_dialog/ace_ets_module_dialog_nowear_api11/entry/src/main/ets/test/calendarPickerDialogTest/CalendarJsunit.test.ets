@@ -44,6 +44,14 @@ export default function calendarJsunit() {
       console.info("calendar after each called");
     })
 
+    /**
+     * @tc.name   ACE_calendar_CurrentDayStyle_colSpace
+     * @tc.number ACE_calendar_CurrentDayStyle_colSpace
+     * @tc.desc   ACE_calendar_CurrentDayStyle_colSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ACE_calendar_CurrentDayStyle_colSpace', Level.LEVEL2, async (done: Function) => {
       console.info('[ACE_calendar_CurrentDayStyle_colSpace] START');
       await Utils.sleep(1000);
@@ -65,6 +73,14 @@ export default function calendarJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   ACE_calendar_CurrentDayStyle_dailyFiveRowSpace
+     * @tc.number ACE_calendar_CurrentDayStyle_dailyFiveRowSpace
+     * @tc.desc   ACE_calendar_CurrentDayStyle_dailyFiveRowSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ACE_calendar_CurrentDayStyle_dailyFiveRowSpace', Level.LEVEL2, async (done: Function) => {
       console.info('[ACE_calendar_CurrentDayStyle_dailyFiveRowSpace] START');
       await Utils.sleep(1000);
@@ -87,6 +103,14 @@ export default function calendarJsunit() {
     });
 
 
+    /**
+     * @tc.name   ACE_calendar_CurrentDayStyle_dailySixRowSpace
+     * @tc.number ACE_calendar_CurrentDayStyle_dailySixRowSpace
+     * @tc.desc   ACE_calendar_CurrentDayStyle_dailySixRowSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ACE_calendar_CurrentDayStyle_dailySixRowSpace', Level.LEVEL2, async (done: Function) => {
       console.info('[ACE_calendar_CurrentDayStyle_dailySixRowSpace] START');
       await Utils.sleep(1000);
@@ -109,6 +133,14 @@ export default function calendarJsunit() {
     });
 
 
+    /**
+     * @tc.name   ACE_calendar_CurrentDayStyle_lunarHeight
+     * @tc.number ACE_calendar_CurrentDayStyle_lunarHeight
+     * @tc.desc   ACE_calendar_CurrentDayStyle_lunarHeight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ACE_calendar_CurrentDayStyle_lunarHeight', Level.LEVEL2, async (done: Function) => {
       console.info('[ACE_calendar_CurrentDayStyle_lunarHeight] START');
       await Utils.sleep(1000);
@@ -131,6 +163,14 @@ export default function calendarJsunit() {
     });
 
 
+    /**
+     * @tc.name   ACE_calendar_CurrentDayStyle_underscoreWidth
+     * @tc.number ACE_calendar_CurrentDayStyle_underscoreWidth
+     * @tc.desc   ACE_calendar_CurrentDayStyle_underscoreWidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ACE_calendar_CurrentDayStyle_underscoreWidth', Level.LEVEL2, async (done: Function) => {
       console.info('[ACE_calendar_CurrentDayStyle_underscoreWidth] START');
       await Utils.sleep(1000);
@@ -153,6 +193,14 @@ export default function calendarJsunit() {
     });
 
 
+    /**
+     * @tc.name   ACE_calendar_CurrentDayStyle_underscoreLength
+     * @tc.number ACE_calendar_CurrentDayStyle_underscoreLength
+     * @tc.desc   ACE_calendar_CurrentDayStyle_underscoreLength
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ACE_calendar_CurrentDayStyle_underscoreLength', Level.LEVEL2, async (done: Function) => {
       console.info('[ACE_calendar_CurrentDayStyle_underscoreLength] START');
       await Utils.sleep(1000);
@@ -175,6 +223,14 @@ export default function calendarJsunit() {
     });
 
 
+    /**
+     * @tc.name   ACE_calendar_CurrentDayStyle_scheduleMarkerRadius
+     * @tc.number ACE_calendar_CurrentDayStyle_scheduleMarkerRadius
+     * @tc.desc   ACE_calendar_CurrentDayStyle_scheduleMarkerRadius
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ACE_calendar_CurrentDayStyle_scheduleMarkerRadius', Level.LEVEL2, async (done: Function) => {
       console.info('[ACE_calendar_CurrentDayStyle_scheduleMarkerRadius] START');
       await Utils.sleep(1000);
@@ -197,6 +253,14 @@ export default function calendarJsunit() {
     });
 
 
+    /**
+     * @tc.name   ACE_calendar_CurrentDayStyle_boundaryRowOffset
+     * @tc.number ACE_calendar_CurrentDayStyle_boundaryRowOffset
+     * @tc.desc   ACE_calendar_CurrentDayStyle_boundaryRowOffset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ACE_calendar_CurrentDayStyle_boundaryRowOffset', Level.LEVEL2, async (done: Function) => {
       console.info('[ACE_calendar_CurrentDayStyle_boundaryRowOffset] START');
       await Utils.sleep(1000);
@@ -218,6 +282,14 @@ export default function calendarJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   ACE_calendar_WeekStyle_weekAndDayRowSpace
+     * @tc.number ACE_calendar_WeekStyle_weekAndDayRowSpace
+     * @tc.desc   ACE_calendar_WeekStyle_weekAndDayRowSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ACE_calendar_WeekStyle_weekAndDayRowSpace', Level.LEVEL2, async (done: Function) => {
       console.info('[ACE_calendar_WeekStyle_weekAndDayRowSpace] START');
       await Utils.sleep(1000);
@@ -240,6 +312,14 @@ export default function calendarJsunit() {
     });
 
 
+    /**
+     * @tc.name   ACE_calendar_CalendarAttribute_direction
+     * @tc.number ACE_calendar_CalendarAttribute_direction
+     * @tc.desc   ACE_calendar_CalendarAttribute_direction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ACE_calendar_CalendarAttribute_direction', Level.LEVEL2, async (done: Function) => {
       console.info('[ACE_calendar_CalendarAttribute_direction] START');
       await Utils.sleep(1000);

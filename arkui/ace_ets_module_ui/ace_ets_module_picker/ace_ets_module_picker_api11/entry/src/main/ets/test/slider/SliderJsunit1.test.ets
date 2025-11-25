@@ -44,6 +44,14 @@ export default function sliderJsunit1() {
       console.info("slider after each called");
     });
 
+    /**
+     * @tc.name   testSlider001
+     * @tc.number testSlider001
+     * @tc.desc   testSlider001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSlider001', Level.LEVEL1, async (done: Function) => {
       console.info('[testSlider001] START');
       await Utils.sleep(2000);
@@ -54,6 +62,14 @@ export default function sliderJsunit1() {
       done();
     });
 
+    /**
+     * @tc.name   testSlider002
+     * @tc.number testSlider002
+     * @tc.desc   testSlider002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSlider002', Level.LEVEL1, async (done: Function) => {
       console.info('[testSlider002] START');
       try {
@@ -79,6 +95,14 @@ export default function sliderJsunit1() {
       done();
     });
 
+    /**
+     * @tc.name   testSlider003
+     * @tc.number testSlider003
+     * @tc.desc   testSlider003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSlider003', Level.LEVEL1, async (done: Function) => {
       console.info('[testSlider003] START');
       await Utils.sleep(2000);
@@ -88,6 +112,14 @@ export default function sliderJsunit1() {
       done();
     });
 
+    /**
+     * @tc.name   testSlider004
+     * @tc.number testSlider004
+     * @tc.desc   testSlider004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSlider004', Level.LEVEL1, async (done: Function) => {
       console.info('[testSlider004] START');
       await Utils.sleep(1000);
@@ -113,6 +145,14 @@ export default function sliderJsunit1() {
       done();
     });
 
+    /**
+     * @tc.name   testSlider005
+     * @tc.number testSlider005
+     * @tc.desc   testSlider005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSlider005', Level.LEVEL1, async (done: Function) => {
       console.info('testSlider005 START');
       let strJson: string = getInspectorByKey('slider');
@@ -123,6 +163,14 @@ export default function sliderJsunit1() {
       done();
     });
 
+    /**
+     * @tc.name   testSlider006
+     * @tc.number testSlider006
+     * @tc.desc   testSlider006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSlider006', Level.LEVEL1, async (done: Function) => {
       console.info('testSlider006 START');
       try {

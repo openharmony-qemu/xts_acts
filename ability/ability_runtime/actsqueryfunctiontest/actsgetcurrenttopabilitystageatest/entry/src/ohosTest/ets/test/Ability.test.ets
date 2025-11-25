@@ -28,9 +28,12 @@ export default function abilityTest() {
     describe('ActsParticleAbilityTest', () => {
 
         /**
-         * @tc.number: ACTS_GetCurrentTopAbility_0100
-         * @tc.name: Verify the interface for obtaining the Ability of the foreground
-         * @tc.desc:Start PageAbility1,Ability2 to be tested in turn, and get the current foreground Ability (AsyncCallback)
+         * @tc.name   ACTS_GetCurrentTopAbility_0100
+         * @tc.number ACTS_GetCurrentTopAbility_0100
+         * @tc.desc   Start PageAbility1,Ability2 to be tested in turn, and get the current foreground Ability (AsyncCallback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_GetCurrentTopAbility_0100', Level.LEVEL0, async (done:Function) => {
             console.log("ACTS_GetCurrentTopAbility_0100 --- start");

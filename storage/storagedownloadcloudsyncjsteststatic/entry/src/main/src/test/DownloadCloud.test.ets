@@ -44,7 +44,7 @@ export default function cloudFileDownloadTest() {
         let cloudSyncDownload = new cloudSync.Download();
         hilog.info(domain, tag, '%{public}s', 'test_Download_State_static_001 new download success.');
         let RUNNING = 0;
-        cloudSyncDownload.on("progress",(pg: cloudSync.DownloadProgress): void => {
+        cloudSyncDownload.onProgress((pg: cloudSync.DownloadProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'download_on: callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.state = " + pg.state);
@@ -77,7 +77,7 @@ export default function cloudFileDownloadTest() {
         let cloudSyncDownload = new cloudSync.Download();
         hilog.info(domain, tag, '%{public}s', 'test_Download_State_static_002 new download success.');
         let FAILED = 2;
-        cloudSyncDownload.on("progress",(pg: cloudSync.DownloadProgress): void => {
+        cloudSyncDownload.onProgress((pg: cloudSync.DownloadProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'download_on: callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.state = " + pg.state);
@@ -110,7 +110,7 @@ export default function cloudFileDownloadTest() {
         let cloudSyncDownload = new cloudSync.Download();
         hilog.info(domain, tag, '%{public}s', 'test_Uploading_State_static_003 new download success.');
         let UPLOADING = 0;
-        cloudSyncDownload.on("progress",(pg: cloudSync.DownloadProgress): void => {
+        cloudSyncDownload.onProgress((pg: cloudSync.DownloadProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'download_on: callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.state = " + pg.state);
@@ -143,7 +143,7 @@ export default function cloudFileDownloadTest() {
         let cloudSyncDownload = new cloudSync.Download();
         hilog.info(domain, tag, '%{public}s', 'test_Uploading_Failed_State_static_004 new download success.');
         let UPLOAD_FAILED = 1;
-        cloudSyncDownload.on("progress",(pg: cloudSync.DownloadProgress): void => {
+        cloudSyncDownload.onProgress((pg: cloudSync.DownloadProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'download_on: callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.state = " + pg.state);
@@ -176,7 +176,7 @@ export default function cloudFileDownloadTest() {
         let gallerySync = new cloudSync.GallerySync();
         hilog.info(domain, tag, '%{public}s', 'test_CloudSync_SyncState_static_005 new gallerySync success.');
         let DOWNLOAD_FAILED = 3;
-        gallerySync.on("progress",(pg: cloudSync.SyncProgress): void => {
+        gallerySync.onProgress((pg: cloudSync.SyncProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'gallerySync_on:callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.state = " + pg.state);
@@ -209,7 +209,7 @@ export default function cloudFileDownloadTest() {
         let cloudSyncDownload = new cloudSync.Download();
         hilog.info(domain, tag, '%{public}s', 'test_Downloading_State_static_006 new download success.');
         let DOWNLOADING = 2;
-        cloudSyncDownload.on("progress",(pg: cloudSync.DownloadProgress): void => {
+        cloudSyncDownload.onProgress((pg: cloudSync.DownloadProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'download_on: callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.state = " + pg.state);
@@ -242,7 +242,7 @@ export default function cloudFileDownloadTest() {
         let cloudSyncDownload = new cloudSync.Download();
         hilog.info(domain, tag, '%{public}s', 'test_Download_Processed_static_001 new download success.');
         let FAILED = 2;
-        cloudSyncDownload.on("progress",(pg: cloudSync.DownloadProgress): void => {
+        cloudSyncDownload.onProgress((pg: cloudSync.DownloadProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'download_on: callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.state = " + pg.state);
@@ -275,7 +275,7 @@ export default function cloudFileDownloadTest() {
         let cloudSyncDownload = new cloudSync.Download();
         hilog.info(domain, tag, '%{public}s', 'test_Download_Error_static_001 new download success.');
         let NO_ERROR = 0;
-        cloudSyncDownload.on("progress",(pg: cloudSync.DownloadProgress): void => {
+        cloudSyncDownload.onProgress((pg: cloudSync.DownloadProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'download_on: callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.state = " + pg.state);
@@ -308,7 +308,7 @@ export default function cloudFileDownloadTest() {
         let cloudSyncDownload = new cloudSync.Download();
         hilog.info(domain, tag, '%{public}s', 'test_Download_Error_static_002 new download success.');
         let UNKNOWN_ERROR = 1;
-        cloudSyncDownload.on("progress",(pg: cloudSync.DownloadProgress): void => {
+        cloudSyncDownload.onProgress((pg: cloudSync.DownloadProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'download_on: callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.state = " + pg.state);
@@ -341,7 +341,7 @@ export default function cloudFileDownloadTest() {
         let cloudSyncDownload = new cloudSync.Download();
         hilog.info(domain, tag, '%{public}s', 'test_Download_Error_static_003 new download success.');
         let NETWORK_UNAVAILABLE = 2;
-        cloudSyncDownload.on("progress",(pg: cloudSync.DownloadProgress): void => {
+        cloudSyncDownload.onProgress((pg: cloudSync.DownloadProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'download_on: callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.state = " + pg.state);
@@ -374,7 +374,7 @@ export default function cloudFileDownloadTest() {
         let cloudSyncDownload = new cloudSync.Download();
         hilog.info(domain, tag, '%{public}s', 'test_Download_Error_static_004 new download success.');
         let LOCAL_STORAGE_FULL = 3;
-        cloudSyncDownload.on("progress",(pg: cloudSync.DownloadProgress): void => {
+        cloudSyncDownload.onProgress((pg: cloudSync.DownloadProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'download_on: callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.state = " + pg.state);
@@ -407,7 +407,7 @@ export default function cloudFileDownloadTest() {
         let cloudSyncDownload = new cloudSync.Download();
         hilog.info(domain, tag, '%{public}s', 'test_Download_Error_static_005 new download success.');
         let CONTENT_NOT_FOUND = 4;
-        cloudSyncDownload.on("progress",(pg: cloudSync.DownloadProgress): void => {
+        cloudSyncDownload.onProgress((pg: cloudSync.DownloadProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'download_on: callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.state = " + pg.state);
@@ -440,7 +440,7 @@ export default function cloudFileDownloadTest() {
         let cloudSyncDownload = new cloudSync.Download();
         hilog.info(domain, tag, '%{public}s', 'test_Download_Error_static_006 new download success.');
         let FREQUENT_USER_REQUESTS = 5;
-        cloudSyncDownload.on("progress",(pg: cloudSync.DownloadProgress): void => {
+        cloudSyncDownload.onProgress((pg: cloudSync.DownloadProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'download_on: callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.state = " + pg.state);
@@ -472,7 +472,7 @@ export default function cloudFileDownloadTest() {
       try {
         let cloudSyncDownload = new cloudSync.Download();
         hilog.info(domain, tag, '%{public}s', 'test_Download_Error_static_007 new download success.');
-        cloudSyncDownload.on("progress",(pg: cloudSync.DownloadProgress): void => {
+        cloudSyncDownload.onProgress((pg: cloudSync.DownloadProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'download_on: callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.state = " + pg.state);
@@ -502,7 +502,7 @@ export default function cloudFileDownloadTest() {
         let gallerySync = new cloudSync.GallerySync();
         hilog.info(domain, tag, '%{public}s', 'test_CloudSync_ErrorType_static_008 new gallerySync success.');
         let WIFI_UNAVAILABLE = 2;
-        gallerySync.on("progress",(pg: cloudSync.SyncProgress): void => {
+        gallerySync.onProgress((pg: cloudSync.SyncProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'gallerySync_on: callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.error = " + pg.error);
@@ -535,7 +535,7 @@ export default function cloudFileDownloadTest() {
         let gallerySync = new cloudSync.GallerySync();
         hilog.info(domain, tag, '%{public}s', 'test_CloudSync_ErrorType_static_009 new gallerySync success.');
         let BATTERY_LEVEL_LOW = 3;
-        gallerySync.on("progress",(pg: cloudSync.SyncProgress): void => {
+        gallerySync.onProgress((pg: cloudSync.SyncProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'download_on: callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.error = " + pg.error);
@@ -568,7 +568,7 @@ export default function cloudFileDownloadTest() {
         let gallerySync = new cloudSync.GallerySync();
         hilog.info(domain, tag, '%{public}s', 'test_CloudSync_ErrorType_static_010 new gallerySync success.');
         let BATTERY_LEVEL_WARNING = 4;
-        gallerySync.on("progress",(pg: cloudSync.SyncProgress): void => {
+        gallerySync.onProgress((pg: cloudSync.SyncProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'download_on: callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.error = " + pg.error);
@@ -601,7 +601,7 @@ export default function cloudFileDownloadTest() {
         let gallerySync = new cloudSync.GallerySync();
         hilog.info(domain, tag, '%{public}s', 'test_CloudSync_ErrorType_static_011 new gallerySync success.');
         let CLOUD_STORAGE_FULL = 5;
-        gallerySync.on("progress",(pg: cloudSync.SyncProgress): void => {
+        gallerySync.onProgress((pg: cloudSync.SyncProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'download_on: callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.error = " + pg.error);
@@ -634,7 +634,7 @@ export default function cloudFileDownloadTest() {
         let gallerySync = new cloudSync.GallerySync();
         hilog.info(domain, tag, '%{public}s', 'test_CloudSync_ErrorType_static_012 new gallerySync success.');
         let DEVICE_TEMPERATURE_TOO_HIGH = 7;
-        gallerySync.on("progress",(pg: cloudSync.SyncProgress): void => {
+        gallerySync.onProgress((pg: cloudSync.SyncProgress): void => {
           hilog.info(domain, tag, '%{public}s', 'download_on: callback succeed.');
           if(pg != undefined){
             hilog.info(domain, tag, '%{public}s', "on:callback succeed. pg.error = " + pg.error);

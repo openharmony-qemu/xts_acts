@@ -54,10 +54,13 @@ export default function progressScaleCountJsunit() {
       console.info("progressScaleCount after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testprogressScaleCount0001
-     * @tc.desic         aceprogressScaleCountEtsTest0001
+    /**
+     * @tc.name   testprogressScaleCount0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testprogressScaleCount0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testprogressScaleCount0001', Level.LEVEL0, async (done: Function) => {
       console.info('progressScaleCount testprogressScaleCount0001 START');
@@ -70,10 +73,13 @@ export default function progressScaleCountJsunit() {
       done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testprogressScaleCount0002
-     * @tc.desic         aceprogressScaleCountEtsTest0002
+    /**
+     * @tc.name   testprogressScaleCount0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   testprogressScaleCount0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testprogressScaleCount0002', Level.LEVEL0, async (done: Function) => {
       console.info('progressScaleCount testprogressScaleCount0002 START');

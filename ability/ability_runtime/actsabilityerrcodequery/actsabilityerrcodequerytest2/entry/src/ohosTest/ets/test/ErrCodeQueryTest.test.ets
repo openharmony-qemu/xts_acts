@@ -70,11 +70,13 @@ export default function errCodeQueryTest() {
     afterAll(() => {
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_setColorMode_0100
-     * @tc.name    SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_setColorMode_0100
-     * @tc.desc    Pass the parameter wrongly as undefined
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_setColorMode_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_setColorMode_0100
+     * @tc.desc   Pass the parameter wrongly as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_setColorMode_0100', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_UIAbilityContext_setColorMode_0100';
@@ -89,11 +91,13 @@ export default function errCodeQueryTest() {
       }
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_ErrorCode_RequestCallback_setRequestResult_0100
-     * @tc.name    SUB_Ability_AbilityRuntime_ErrorCode_RequestCallback_setRequestResult_0100
-     * @tc.desc    Pass the parameter wrongly as undefined
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_RequestCallback_setRequestResult_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_RequestCallback_setRequestResult_0100
+     * @tc.desc   Pass the parameter wrongly as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_RequestCallback_setRequestResult_0100', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_RequestCallback_setRequestResult_0100';
@@ -117,11 +121,13 @@ export default function errCodeQueryTest() {
       }
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_ErrorCode_dialogRequest_getRequestInfo_0100
-     * @tc.name    SUB_Ability_AbilityRuntime_ErrorCode_dialogRequest_getRequestInfo_0100
-     * @tc.desc    Pass the parameter wrongly as undefined
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_dialogRequest_getRequestInfo_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_dialogRequest_getRequestInfo_0100
+     * @tc.desc   Pass the parameter wrongly as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_dialogRequest_getRequestInfo_0100', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_dialogRequest_getRequestInfo_0100';
@@ -137,11 +143,13 @@ export default function errCodeQueryTest() {
       }
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_ErrorCode_dialogRequest_getRequestCallback_0100
-     * @tc.name    SUB_Ability_AbilityRuntime_ErrorCode_dialogRequest_getRequestCallback_0100
-     * @tc.desc    Pass the parameter wrongly as undefined
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_dialogRequest_getRequestCallback_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_dialogRequest_getRequestCallback_0100
+     * @tc.desc   Pass the parameter wrongly as undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_dialogRequest_getRequestCallback_0100', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_dialogRequest_getRequestCallback_0100';
@@ -157,11 +165,13 @@ export default function errCodeQueryTest() {
       }
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_ErrorCode_AbilityDelegator_startAbility_0100
-     * @tc.name    SUB_Ability_AbilityRuntime_ErrorCode_AbilityDelegator_startAbility_0100
-     * @tc.desc    startAbility(want: Want, callback: AsyncCallback<void>): void. Errcode 16000004, configure exported as false in the target ability
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_AbilityDelegator_startAbility_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_AbilityDelegator_startAbility_0100
+     * @tc.desc   startAbility(want: Want, callback: AsyncCallback<void>): void. Errcode 16000004, configure exported as false in the target ability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_AbilityDelegator_startAbility_0100', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_AbilityDelegator_startAbility_0100';
@@ -196,11 +206,13 @@ export default function errCodeQueryTest() {
       }
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_ErrorCode_AbilityDelegator_startAbility_0200
-     * @tc.name    SUB_Ability_AbilityRuntime_ErrorCode_AbilityDelegator_startAbility_0200
-     * @tc.desc    startAbility(want: Want, callback: AsyncCallback<void>): void. Errcode 16000005, Configure permission in the target ability
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_AbilityDelegator_startAbility_0200
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_AbilityDelegator_startAbility_0200
+     * @tc.desc   startAbility(want: Want, callback: AsyncCallback<void>): void. Errcode 16000005, Configure permission in the target ability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_AbilityDelegator_startAbility_0200', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_AbilityDelegator_startAbility_0200';
@@ -235,11 +247,13 @@ export default function errCodeQueryTest() {
       }
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_ErrorCode_AbilityDelegator_startAbility_0300
-     * @tc.name    SUB_Ability_AbilityRuntime_ErrorCode_AbilityDelegator_startAbility_0300
-     * @tc.desc    startAbility(want: Want): Promise<void>; Errcode 16000004, configure exported as false in the target ability
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_AbilityDelegator_startAbility_0300
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_AbilityDelegator_startAbility_0300
+     * @tc.desc   startAbility(want: Want): Promise<void>; Errcode 16000004, configure exported as false in the target ability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_AbilityDelegator_startAbility_0300', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_AbilityDelegator_startAbility_0300';
@@ -274,11 +288,13 @@ export default function errCodeQueryTest() {
       }
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_ErrorCode_AbilityDelegator_startAbility_0400
-     * @tc.name    SUB_Ability_AbilityRuntime_ErrorCode_AbilityDelegator_startAbility_0400
-     * @tc.desc    startAbility(want: Want): Promise<void>; Errcode 16000005, configure permission in the target ability
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_AbilityDelegator_startAbility_0400
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_AbilityDelegator_startAbility_0400
+     * @tc.desc   startAbility(want: Want): Promise<void>; Errcode 16000005, configure permission in the target ability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_AbilityDelegator_startAbility_0400', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_AbilityDelegator_startAbility_0400';
@@ -313,11 +329,13 @@ export default function errCodeQueryTest() {
       }
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0200
-     * @tc.name    SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0200
-     * @tc.desc    startAbility(want: Want, callback: AsyncCallback<void>): void. Errcode 16000005, Configure permission in the target ability
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0200
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0200
+     * @tc.desc   startAbility(want: Want, callback: AsyncCallback<void>): void. Errcode 16000005, Configure permission in the target ability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0200', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0200';
@@ -375,11 +393,13 @@ export default function errCodeQueryTest() {
       }
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0300
-     * @tc.name    SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0300
-     * @tc.desc    startAbility(want: Want, callback: AsyncCallback<void>): void. Errcode 16000010, set flags to -1
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0300
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0300
+     * @tc.desc   startAbility(want: Want, callback: AsyncCallback<void>): void. Errcode 16000010, set flags to -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0300', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0300';
@@ -436,11 +456,13 @@ export default function errCodeQueryTest() {
       }
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0500
-     * @tc.name    SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0500
-     * @tc.desc    startAbility(want: Want, options: StartOptions, callback: AsyncCallback<void>): void; Errcode 16000005, Configure permission in the target ability
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0500
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0500
+     * @tc.desc   startAbility(want: Want, options: StartOptions, callback: AsyncCallback<void>): void; Errcode 16000005, Configure permission in the target ability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0500', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0500';
@@ -497,11 +519,13 @@ export default function errCodeQueryTest() {
       }
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0700
-     * @tc.name    SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0700
-     * @tc.desc    startAbility(want: Want, options?: StartOptions): Promise<void>; Errcode 16000005, Configure permission in the target ability
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0700
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0700
+     * @tc.desc   startAbility(want: Want, options?: StartOptions): Promise<void>; Errcode 16000005, Configure permission in the target ability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0700', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0700';
@@ -558,11 +582,13 @@ export default function errCodeQueryTest() {
       }
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0800
-     * @tc.name    SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0800
-     * @tc.desc    startAbility(want: Want, options?: StartOptions): Promise<void>; Errcode 16000010, set flags to -1
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0800
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0800
+     * @tc.desc   startAbility(want: Want, options?: StartOptions): Promise<void>; Errcode 16000010, set flags to -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0800', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbility_0800';
@@ -619,11 +645,13 @@ export default function errCodeQueryTest() {
       }
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0200
-     * @tc.name    SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0200
-     * @tc.desc    startAbilityForResult(want: Want, callback: AsyncCallback<AbilityResult>): void; Errcode 16000005, Configure permission in the target ability
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0200
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0200
+     * @tc.desc   startAbilityForResult(want: Want, callback: AsyncCallback<AbilityResult>): void; Errcode 16000005, Configure permission in the target ability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0200', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0200';
@@ -680,11 +708,13 @@ export default function errCodeQueryTest() {
       }
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0300
-     * @tc.name    SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0300
-     * @tc.desc    startAbility(want: Want, callback: AsyncCallback<void>): void. Errcode 16000010, set flags to -1
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0300
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0300
+     * @tc.desc   startAbility(want: Want, callback: AsyncCallback<void>): void. Errcode 16000010, set flags to -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0300', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0300';
@@ -741,11 +771,13 @@ export default function errCodeQueryTest() {
       }
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0500
-     * @tc.name    SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0500
-     * @tc.desc    startAbilityForResult(want: Want, options: StartOptions, callback: AsyncCallback<AbilityResult>): void; Errcode 16000005, Configure permission in the target ability
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0500
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0500
+     * @tc.desc   startAbilityForResult(want: Want, options: StartOptions, callback: AsyncCallback<AbilityResult>): void; Errcode 16000005, Configure permission in the target ability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0500', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0500';
@@ -802,11 +834,13 @@ export default function errCodeQueryTest() {
       }
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0700
-     * @tc.name    SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0700
-     * @tc.desc    startAbilityForResult(want: Want, options?: StartOptions): Promise<AbilityResult>; Errcode 16000005, Configure permission in the target ability
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0700
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0700
+     * @tc.desc   startAbilityForResult(want: Want, options?: StartOptions): Promise<AbilityResult>; Errcode 16000005, Configure permission in the target ability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0700', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0700';
@@ -863,11 +897,13 @@ export default function errCodeQueryTest() {
       }
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0800
-     * @tc.name    SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0800
-     * @tc.desc    startAbilityForResult(want: Want, options?: StartOptions): Promise<AbilityResult>; Errcode 16000010, set flags to -1
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0800
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0800
+     * @tc.desc   startAbilityForResult(want: Want, options?: StartOptions): Promise<AbilityResult>; Errcode 16000010, set flags to -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0800', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_UIExtensionContext_startAbilityForResult_0800';
@@ -924,11 +960,13 @@ export default function errCodeQueryTest() {
       }
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_ErrorCode_InsightIntentContext_startAbility_0200
-     * @tc.name    SUB_Ability_AbilityRuntime_ErrorCode_InsightIntentContext_startAbility_0200
-     * @tc.desc    startAbility(want: Want, callback: AsyncCallback<void>): void; Errcode 16000001, set the ability name wrongly
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_InsightIntentContext_startAbility_0200
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_InsightIntentContext_startAbility_0200
+     * @tc.desc   startAbility(want: Want, callback: AsyncCallback<void>): void; Errcode 16000001, set the ability name wrongly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_InsightIntentContext_startAbility_0200', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_InsightIntentContext_startAbility_0200';
@@ -955,11 +993,13 @@ export default function errCodeQueryTest() {
       }
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_ErrorCode_InsightIntentContext_startAbility_0300
-     * @tc.name    SUB_Ability_AbilityRuntime_ErrorCode_InsightIntentContext_startAbility_0300
-     * @tc.desc    startAbility(want: Want, callback: AsyncCallback<void>): void; Errcode 16000004, configure exported as false in the target ability
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_InsightIntentContext_startAbility_0300
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_InsightIntentContext_startAbility_0300
+     * @tc.desc   startAbility(want: Want, callback: AsyncCallback<void>): void; Errcode 16000004, configure exported as false in the target ability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_InsightIntentContext_startAbility_0300', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_InsightIntentContext_startAbility_0300';
@@ -986,11 +1026,13 @@ export default function errCodeQueryTest() {
       }
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_ErrorCode_InsightIntentContext_startAbility_0500
-     * @tc.name    SUB_Ability_AbilityRuntime_ErrorCode_InsightIntentContext_startAbility_0500
-     * @tc.desc    startAbility(want: Want): Promise<void>; Errcode 16000001, set the ability name wrongly
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_InsightIntentContext_startAbility_0500
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_InsightIntentContext_startAbility_0500
+     * @tc.desc   startAbility(want: Want): Promise<void>; Errcode 16000001, set the ability name wrongly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_InsightIntentContext_startAbility_0500', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_InsightIntentContext_startAbility_0500';
@@ -1018,11 +1060,13 @@ export default function errCodeQueryTest() {
       }
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_ErrorCode_InsightIntentContext_startAbility_0600
-     * @tc.name    SUB_Ability_AbilityRuntime_ErrorCode_InsightIntentContext_startAbility_0600
-     * @tc.desc    startAbility(want: Want): Promise<void>; Errcode 16000004, configure exported as false in the target ability
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ErrorCode_InsightIntentContext_startAbility_0600
+     * @tc.number SUB_Ability_AbilityRuntime_ErrorCode_InsightIntentContext_startAbility_0600
+     * @tc.desc   startAbility(want: Want): Promise<void>; Errcode 16000004, configure exported as false in the target ability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ErrorCode_InsightIntentContext_startAbility_0600', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_ErrorCode_InsightIntentContext_startAbility_0600';

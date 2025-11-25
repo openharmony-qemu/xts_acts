@@ -45,9 +45,12 @@ export default function row_TextVisibilityTest() {
       console.info("Row_TextVisibilityTest after each called");
     });
     /**
+     * @tc.name   testRowTextVisibilityNone
      * @tc.number SUB_ACE_ROW_SUBCOMPONENTCHANGED_1800
-     * @tc.name testRowTextVisibilityNone
-     * @tc.desc The visibility of second subcomponent set to 'None'
+     * @tc.desc   The visibility of second subcomponent set to 'None'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRowTextVisibilityNone',  Level.LEVEL0, async (done: Function) => {
       console.info('[testRowTextVisibilityNone] START');
@@ -92,9 +95,12 @@ export default function row_TextVisibilityTest() {
       done();
     });
     /**
+     * @tc.name   testRowTextVisibilityHidden
      * @tc.number SUB_ACE_ROW_SUBCOMPONENTCHANGED_1900
-     * @tc.name testRowTextVisibilityHidden
-     * @tc.desc The visibility of second subcomponent set to 'Hidden'
+     * @tc.desc   The visibility of second subcomponent set to 'Hidden'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRowTextVisibilityHidden',  Level.LEVEL0, async (done: Function) => {
       console.info('[testRowTextVisibilityHidden] START');
@@ -137,9 +143,12 @@ export default function row_TextVisibilityTest() {
       done();
     });
     /**
+     * @tc.name   testRowTextVisibilityVisible
      * @tc.number SUB_ACE_ROW_SUBCOMPONENTCHANGED_2000
-     * @tc.name testRowTextVisibilityVisible
-     * @tc.desc The visibility of second subcomponent set to 'visible'
+     * @tc.desc   The visibility of second subcomponent set to 'visible'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRowTextVisibilityVisible',  Level.LEVEL0, async (done: Function) => {
       console.info('[testRowTextVisibilityVisible] START');

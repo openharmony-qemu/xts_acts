@@ -48,12 +48,12 @@ export default function GridNodeTest() {
     })
 
     /**
-     * @tc.number    gridNode0100
-     * @tc.name      gridNode0100
-     * @tc.desc      frameNode: createNodegridToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   gridNode0100
+     * @tc.number gridNode0100
+     * @tc.desc   frameNode: createNodegridToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('gridNode0100', Level.LEVEL1, async (done: Function) => {
 

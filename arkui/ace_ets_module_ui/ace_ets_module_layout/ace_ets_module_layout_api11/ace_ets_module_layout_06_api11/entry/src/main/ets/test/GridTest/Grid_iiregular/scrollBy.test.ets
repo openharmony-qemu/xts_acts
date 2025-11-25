@@ -63,13 +63,15 @@ export default function scrollByJsunit() {
       console.info("scrollBy after each called");
     });
 
-    /* *
- * @tc.number: SUB_ACE_TS_COMPONENT_SR000IFDKV_0001
- * @tc.name  : scrollByJsunit_0001
- * @tc.desc  :  Clicking on the scrollBy(0) component does not slide
- * @tc.level : Level 2
- */
 
+    /**
+     * @tc.name   scrollByJsunit_0001
+     * @tc.number scrollByJsunit_0001
+     * @tc.desc   scrollByJsunit_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('scrollByJsunit_0001',  Level.LEVEL0, async (done: Function) => {
       console.info('[scrollByJsunit_0000] START');
       await CommonFunc.sleep(1000);
@@ -102,14 +104,16 @@ export default function scrollByJsunit() {
       console.info('[scrollByJsunit_0000] END');
       done();
     });
-    /* *
-     * @tc.number: SUB_ACE_TS_COMPONENT_SR000IFDKV_0002
-     * @tc.name  : scrollByJsunit_0002
-     * @tc.desc  : Click scrollBy(1500) and slide down 1500vp
-     * @tc.level : Level 2
+
+
+    /**
+     * @tc.name   scrollByJsunit_0002
+     * @tc.number scrollByJsunit_0002
+     * @tc.desc   scrollByJsunit_0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('scrollByJsunit_0002',  Level.LEVEL0, async (done: Function) => {
       console.info('[scrollByJsunit_0002] START');
       await CommonFunc.sleep(1000);
@@ -139,14 +143,16 @@ export default function scrollByJsunit() {
     });
 
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_SR000IFDKV_0003
-    * @tc.name  : scrollByJsunit_0003
-    * @tc.desc  : Click scrollBy(-150) and swipe up 150vp
-    * @tc.level : Level 2
-    */
 
 
+    /**
+     * @tc.name   scrollByJsunit_0003
+     * @tc.number scrollByJsunit_0003
+     * @tc.desc   scrollByJsunit_0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('scrollByJsunit_0003',  Level.LEVEL0, async (done: Function) => {
       console.info('[scrollByJsunit_0003] START');
       await CommonFunc.sleep(1000);
@@ -172,12 +178,14 @@ export default function scrollByJsunit() {
       console.info('[scrollByJsunit_0003] END');
       done();
     });
-    /* *
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000IFDKV_0004
-   * @tc.name  :  scrollByJsunit_0004
-   * @tc.desc  : Click scrollBy(150px) and slide down 150px
-   * @tc.level : Level 2
-   */
+    /**
+     * @tc.name   scrollByJsunit_0004
+     * @tc.number SUB_ACE_TS_COMPONENT_SR000IFDKV_0004
+     * @tc.desc   Click scrollBy(150px) and slide down 150px
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('scrollByJsunit_0004',  Level.LEVEL0, async (done: Function) => {
       console.info('[scrollByJsunit_0004] START');
       await CommonFunc.sleep(1000);
@@ -203,12 +211,14 @@ export default function scrollByJsunit() {
       console.info('[scrollByJsunit_0004] END');
       done();
     });
-    /* *
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000IFDKV_0005
-   * @tc.name  : scrollByJsunit_0005
-   * @tc.desc  : Click scrollBy(150) and slide down 150
-   * @tc.level : Level 2
-   */
+    /**
+     * @tc.name   scrollByJsunit_0005
+     * @tc.number SUB_ACE_TS_COMPONENT_SR000IFDKV_0005
+     * @tc.desc   Click scrollBy(150) and slide down 150
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('scrollByJsunit_0005',  Level.LEVEL0, async (done: Function) => {
       console.info('[scrollByJsunit_0005] START');
       await CommonFunc.sleep(1000);
@@ -237,13 +247,15 @@ export default function scrollByJsunit() {
     });
 
 
-    /* *
-   * @tc.number: SUB_ACE_TS_COMPONENT_SR000IFDKV_0006
-   * @tc.name  : scrollByJsunit_0006
-   * @tc.desc  : Click on the scrollBy(50%) component without sliding
-   * @tc.level : Level 2
-   */
 
+    /**
+     * @tc.name   scrollByJsunit_0006
+     * @tc.number scrollByJsunit_0006
+     * @tc.desc   scrollByJsunit_0006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('scrollByJsunit_0006',  Level.LEVEL0, async (done: Function) => {
       console.info('[scrollByJsunit_0060] START');
       await CommonFunc.sleep(1000);
@@ -270,13 +282,15 @@ export default function scrollByJsunit() {
       done();
     });
 
-    /* *
-     * @tc.number: SUB_ACE_TS_COMPONENT_SR000IFDKV_0007
-     * @tc.name  : scrollByJsunit_0007
-     * @tc.desc  : Click on the scrollBy('aa50%') component without sliding
-     * @tc.level : Level 2
-     */
 
+    /**
+     * @tc.name   scrollByJsunit_0007
+     * @tc.number scrollByJsunit_0007
+     * @tc.desc   scrollByJsunit_0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('scrollByJsunit_0007',  Level.LEVEL0, async (done: Function) => {
       console.info('[scrollByJsunit_0070] START');
       await CommonFunc.sleep(1000);
@@ -303,11 +317,13 @@ export default function scrollByJsunit() {
       console.info('[scrollByJsunit_0070] END');
       done();
     });
-    /* *
-     * @tc.number: SUB_ACE_TS_COMPONENT_SR000IFDKV_0008
-     * @tc.name  : scrollByJsunit_0008
-     * @tc.desc  : Clicking on the scrollBy('aa') component does not slide
-     * @tc.level : Level 2
+    /**
+     * @tc.name   scrollByJsunit_0008
+     * @tc.number SUB_ACE_TS_COMPONENT_SR000IFDKV_0008
+     * @tc.desc   Clicking on the scrollBy('aa') component does not slide
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('scrollByJsunit_0008',  Level.LEVEL0, async (done: Function) => {
       console.info('[scrollByJsunit_0080] START');
@@ -338,11 +354,13 @@ export default function scrollByJsunit() {
       console.info('[scrollByJsunit_0080] END');
       done();
     });
-    /* *
-     * @tc.number: SUB_ACE_TS_COMPONENT_SR000IFDKV_0009
-     * @tc.name  : scrollByJsunit_0009
-     * @tc.desc  : Clicking on the scrollBy(undefined) component does not slide
-     * @tc.level : Level 2
+    /**
+     * @tc.name   scrollByJsunit_0009
+     * @tc.number SUB_ACE_TS_COMPONENT_SR000IFDKV_0009
+     * @tc.desc   Clicking on the scrollBy(undefined) component does not slide
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('scrollByJsunit_0009',  Level.LEVEL0, async (done: Function) => {
       console.info('[scrollByJsunit_0090] START');

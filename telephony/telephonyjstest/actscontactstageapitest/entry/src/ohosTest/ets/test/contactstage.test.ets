@@ -19,6 +19,7 @@ import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
 import { bundleManager } from '@kit.AbilityKit';
 import account from '@ohos.account.osAccount';
 import { BusinessError } from '@ohos.base';
+import { SavePhoto, GetUri } from './ContactTestUtil.test';
 
 function sleep (time:number):Promise<string>{
   return new Promise<string>((resolve)=>{
@@ -96,6 +97,10 @@ export default function ContactInterfaceStageTest() {
         done();
       }
     });
+
+    let fileName = 'contactstageTest.jpg';
+    SavePhoto(fileName);
+    let uri = GetUri(fileName);
     let contactData:contact.Contact = {
       id: 0,
       key: "0",
@@ -127,7 +132,7 @@ export default function ContactInterfaceStageTest() {
         phoneNumber: "13800000000", labelName: "自定义phoneNumbers", labelId: 4
       }],
       portrait: {
-        uri: "content://head/0"
+        uri: uri
       } ,
       postalAddresses: [{
         city: "南京",

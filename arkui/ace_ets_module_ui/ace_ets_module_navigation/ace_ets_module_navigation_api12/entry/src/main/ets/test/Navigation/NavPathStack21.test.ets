@@ -45,9 +45,12 @@ export default function NavPathStack21() {
     });
 
     /**
+     * @tc.name   NavPathStack21_0100
      * @tc.number NavPathStack21_0100
-     * @tc.name testNavigation
-     * @tc.desc
+     * @tc.desc   NavPathStack21_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavPathStack21_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('NavPathStack21_0100 START');

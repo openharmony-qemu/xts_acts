@@ -50,13 +50,15 @@ export default function AlignContent_Start_FlexP_fixed() {
       console.info("AlignContent_Start_FlexP_fixed after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_START_0800
-     * @tc.name testAlignContentStartFlexFixedSatisfy
-     * @tc.desc Change the height of the child component of the flex component to meet the height requirements of
-     *               the flex component.
-     */
 
+    /**
+     * @tc.name   testAlignContentStartFlexFixedSatisfy
+     * @tc.number testAlignContentStartFlexFixedSatisfy
+     * @tc.desc   testAlignContentStartFlexFixedSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentStartFlexFixedSatisfy',  Level.LEVEL0, async () => {
       console.info('testAlignContentStartFlexFixedSatisfy START');
       GlobalContext.getContext().getObject<number>('value').message.notify({
@@ -105,12 +107,15 @@ export default function AlignContent_Start_FlexP_fixed() {
 
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_START_0900
-     * @tc.name testAlignContentStartFlexFixedNoSatisfy
-     * @tc.desc Change the height of the child component of the flex component to overflow the flex component.
-     */
 
+    /**
+     * @tc.name   testAlignContentStartFlexFixedNoSatisfy
+     * @tc.number testAlignContentStartFlexFixedNoSatisfy
+     * @tc.desc   testAlignContentStartFlexFixedNoSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentStartFlexFixedNoSatisfy',  Level.LEVEL0, async () => {
       console.info('testAlignContentStartFlexFixedNoSatisfy START');
       GlobalContext.getContext().getObject<number>('value').message.notify({

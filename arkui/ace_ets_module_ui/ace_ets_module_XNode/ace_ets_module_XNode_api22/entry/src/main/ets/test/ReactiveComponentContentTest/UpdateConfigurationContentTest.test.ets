@@ -48,12 +48,12 @@ export default function UpdateConfigurationContentTest() {
     });
 
     /**
-     * @tc.number    UpdateConfigurationContentTest_0100
-     * @tc.name      UpdateConfigurationContentTest_0100
-     * @tc.desc      ReactiveComponentContent UpdateConfigurationContentTest
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   UpdateConfigurationContentTest_0100
+     * @tc.number UpdateConfigurationContentTest_0100
+     * @tc.desc   ReactiveComponentContent UpdateConfigurationContentTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('UpdateConfigurationContentTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('UpdateConfigurationContentTest_0100 START');

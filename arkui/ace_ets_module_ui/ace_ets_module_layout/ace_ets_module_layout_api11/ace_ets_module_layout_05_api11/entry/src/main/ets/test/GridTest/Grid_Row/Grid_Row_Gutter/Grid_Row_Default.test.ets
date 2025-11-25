@@ -47,9 +47,12 @@ export default function Gutter_Length_Default() {
     });
 
     /**
+     * @tc.name   SUB_ACE_GridRowGutterLength_Default_0100
      * @tc.number SUB_ACE_GRIDROWGUTTERLENGTH_DEFAULT_0100
-     * @tc.name testGutterLengthDefault
-     * @tc.desc Set the gutterLength of GridRow to 0
+     * @tc.desc   Set the gutterLength of GridRow to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GridRowGutterLength_Default_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_GridRowGutterLength_Default_0100 START');

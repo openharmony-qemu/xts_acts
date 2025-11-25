@@ -49,12 +49,12 @@ export default function abilityTest() {
     afterAll(() => {
     })
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_EmbeddableUIAbility_3100
      * @tc.number SUB_Ability_AbilityRuntime_EmbeddableUIAbility_3100
-     * @tc.name SUB_Ability_AbilityRuntime_EmbeddableUIAbility_3100
-     * @tc.desc Verify the jump start EmbeddableUIAbility invoking isTerminating.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify the jump start EmbeddableUIAbility invoking isTerminating.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_EmbeddableUIAbility_3100', Level.LEVEL0, async (done:Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_EmbeddableUIAbility_3100';
@@ -99,12 +99,12 @@ export default function abilityTest() {
 
     })
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_EmbeddableUIAbility_3200
      * @tc.number SUB_Ability_AbilityRuntime_EmbeddableUIAbility_3200.
-     * @tc.name SUB_Ability_AbilityRuntime_EmbeddableUIAbility_3200.
-     * @tc.desc Verify the jump start EmbeddableUIAbility invoking moveAbilityToBackground.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify the jump start EmbeddableUIAbility invoking moveAbilityToBackground.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_EmbeddableUIAbility_3200', Level.LEVEL0, async (done:Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_EmbeddableUIAbility_3200';
@@ -150,12 +150,12 @@ export default function abilityTest() {
       })
     })
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2600
      * @tc.number SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2600.
-     * @tc.name SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2600.
-     * @tc.desc Verify the jump start EmbeddableUIAbility invoking reportDrawnCompleted.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify the jump start EmbeddableUIAbility invoking reportDrawnCompleted.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2600', Level.LEVEL0, async (done:Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2600';
@@ -197,12 +197,12 @@ export default function abilityTest() {
 
     })
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_EmbeddableUIAbility_3000
      * @tc.number SUB_Ability_AbilityRuntime_EmbeddableUIAbility_3000.
-     * @tc.name SUB_Ability_AbilityRuntime_EmbeddableUIAbility_3000.
-     * @tc.desc Verify the jump start EmbeddableUIAbility invoking restoreWindowStage.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify the jump start EmbeddableUIAbility invoking restoreWindowStage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_EmbeddableUIAbility_3000', Level.LEVEL0, async (done:Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_EmbeddableUIAbility_3000';
@@ -244,12 +244,12 @@ export default function abilityTest() {
 
     })
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2900
      * @tc.number SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2900
-     * @tc.name SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2900
-     * @tc.desc Verify the jump start EmbeddableUIAbility invoking setMissionContinueState.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify the jump start EmbeddableUIAbility invoking setMissionContinueState.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2900', Level.LEVEL0, async (done:Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2900';
@@ -292,12 +292,12 @@ export default function abilityTest() {
 
     })
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2800
      * @tc.number SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2800
-     * @tc.name SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2800
-     * @tc.desc Verify the jump start EmbeddableUIAbility invoking setMissionLabel.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify the jump start EmbeddableUIAbility invoking setMissionLabel.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2800', Level.LEVEL0, async (done:Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2800';
@@ -338,12 +338,12 @@ export default function abilityTest() {
 
     })
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2300
      * @tc.number SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2300
-     * @tc.name SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2300
-     * @tc.desc Verify the jump start EmbeddableUIAbility invoking startability.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify the jump start EmbeddableUIAbility invoking startability.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2300', Level.LEVEL0, async (done:Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2300';
@@ -385,12 +385,12 @@ export default function abilityTest() {
 
     })
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2400
      * @tc.number SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2400
-     * @tc.name SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2400
-     * @tc.desc Verify the jump start EmbeddableUIAbility invoking startAbilityForResult.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify the jump start EmbeddableUIAbility invoking startAbilityForResult.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2400', Level.LEVEL0, async (done:Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2400';
@@ -432,12 +432,12 @@ export default function abilityTest() {
 
     })
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2700
      * @tc.number SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2700
-     * @tc.name SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2700
-     * @tc.desc Verify the jump start EmbeddableUIAbility invoking terminateSelfWithResult.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify the jump start EmbeddableUIAbility invoking terminateSelfWithResult.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2700', Level.LEVEL0, async (done:Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2700';
@@ -471,12 +471,12 @@ export default function abilityTest() {
 
     })
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_EmbeddableUIAbility_1800
      * @tc.number SUB_Ability_AbilityRuntime_EmbeddableUIAbility_1800
-     * @tc.name SUB_Ability_AbilityRuntime_EmbeddableUIAbility_1800
-     * @tc.desc Verify the jump start EmbeddableUIAbility invoking isTerminating.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify the jump start EmbeddableUIAbility invoking isTerminating.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_EmbeddableUIAbility_1800', Level.LEVEL0, async (done:Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_EmbeddableUIAbility_1800';
@@ -521,12 +521,12 @@ export default function abilityTest() {
 
     })
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_EmbeddableUIAbility_1900
      * @tc.number SUB_Ability_AbilityRuntime_EmbeddableUIAbility_1900
-     * @tc.name SUB_Ability_AbilityRuntime_EmbeddableUIAbility_1900
-     * @tc.desc Verify the jump start EmbeddableUIAbility invoking isTerminating.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify the jump start EmbeddableUIAbility invoking isTerminating.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_EmbeddableUIAbility_1900', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_EmbeddableUIAbility_1900';
@@ -571,12 +571,12 @@ export default function abilityTest() {
 
     })
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2200
      * @tc.number SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2200
-     * @tc.name SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2200
-     * @tc.desc Verify the jump start EmbeddableUIAbility invoking isTerminating.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify the jump start EmbeddableUIAbility invoking isTerminating.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2200', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_EmbeddableUIAbility_2200';

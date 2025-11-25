@@ -26,169 +26,169 @@ export default function datePickerSelectedTextStyleTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DATEPICKER_SELECTEDTEXTSTYLE_0100
-     * @tc.name       : testDatePickerSelectedTextStyle001
-     * @tc.desc       : testing selectedTextStyle for DatePicker with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testDatePickerSelectedTextStyle001
+     * @tc.number SUB_ARKUI_CAPI_DATEPICKER_SELECTEDTEXTSTYLE_0100
+     * @tc.desc   testing selectedTextStyle for DatePicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDatePickerSelectedTextStyle001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testDatePickerSelectedTextStyle001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DATEPICKER_SELECTEDTEXTSTYLE_0200
-     * @tc.name       : testDatePickerSelectedTextStyle002
-     * @tc.desc       : testing selectedTextStyle for DatePicker with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testDatePickerSelectedTextStyle002
+     * @tc.number SUB_ARKUI_CAPI_DATEPICKER_SELECTEDTEXTSTYLE_0200
+     * @tc.desc   testing selectedTextStyle for DatePicker with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDatePickerSelectedTextStyle002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testDatePickerSelectedTextStyle002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DATEPICKER_SELECTEDTEXTSTYLE_0300
-     * @tc.name       : testDatePickerSelectedTextStyle003
-     * @tc.desc       : testing selectedTextStyle for DatePicker with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testDatePickerSelectedTextStyle003
+     * @tc.number SUB_ARKUI_CAPI_DATEPICKER_SELECTEDTEXTSTYLE_0300
+     * @tc.desc   testing selectedTextStyle for DatePicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDatePickerSelectedTextStyle003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testDatePickerSelectedTextStyle003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DATEPICKER_SELECTEDTEXTSTYLE_0400
-     * @tc.name       : testDatePickerSelectedTextStyle004
-     * @tc.desc       : testing selectedTextStyle for DatePicker with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testDatePickerSelectedTextStyle004
+     * @tc.number SUB_ARKUI_CAPI_DATEPICKER_SELECTEDTEXTSTYLE_0400
+     * @tc.desc   testing selectedTextStyle for DatePicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDatePickerSelectedTextStyle004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testDatePickerSelectedTextStyle004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DATEPICKER_SELECTEDTEXTSTYLE_0500
-     * @tc.name       : testDatePickerSelectedTextStyle005
-     * @tc.desc       : testing selectedTextStyle for DatePicker with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testDatePickerSelectedTextStyle005
+     * @tc.number SUB_ARKUI_CAPI_DATEPICKER_SELECTEDTEXTSTYLE_0500
+     * @tc.desc   testing selectedTextStyle for DatePicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDatePickerSelectedTextStyle005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testDatePickerSelectedTextStyle005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DATEPICKER_SELECTEDTEXTSTYLE_0600
-     * @tc.name       : testDatePickerSelectedTextStyle006
-     * @tc.desc       : testing selectedTextStyle for DatePicker with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testDatePickerSelectedTextStyle006
+     * @tc.number SUB_ARKUI_CAPI_DATEPICKER_SELECTEDTEXTSTYLE_0600
+     * @tc.desc   testing selectedTextStyle for DatePicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDatePickerSelectedTextStyle006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testDatePickerSelectedTextStyle006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DATEPICKER_SELECTEDTEXTSTYLE_0700
-     * @tc.name       : testDatePickerSelectedTextStyle007
-     * @tc.desc       : testing selectedTextStyle for DatePicker with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testDatePickerSelectedTextStyle007
+     * @tc.number SUB_ARKUI_CAPI_DATEPICKER_SELECTEDTEXTSTYLE_0700
+     * @tc.desc   testing selectedTextStyle for DatePicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDatePickerSelectedTextStyle007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testDatePickerSelectedTextStyle007()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DATEPICKER_SELECTEDTEXTSTYLE_0800
-     * @tc.name       : testDatePickerSelectedTextStyle008
-     * @tc.desc       : testing selectedTextStyle for DatePicker with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testDatePickerSelectedTextStyle008
+     * @tc.number SUB_ARKUI_CAPI_DATEPICKER_SELECTEDTEXTSTYLE_0800
+     * @tc.desc   testing selectedTextStyle for DatePicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDatePickerSelectedTextStyle008', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testDatePickerSelectedTextStyle008()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DATEPICKER_SELECTEDTEXTSTYLE_0900
-     * @tc.name       : testDatePickerSelectedTextStyle009
-     * @tc.desc       : testing selectedTextStyle for DatePicker with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testDatePickerSelectedTextStyle009
+     * @tc.number SUB_ARKUI_CAPI_DATEPICKER_SELECTEDTEXTSTYLE_0900
+     * @tc.desc   testing selectedTextStyle for DatePicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDatePickerSelectedTextStyle009', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testDatePickerSelectedTextStyle009()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DATEPICKER_SELECTEDTEXTSTYLE_1000
-     * @tc.name       : testDatePickerSelectedTextStyle010
-     * @tc.desc       : testing selectedTextStyle for DatePicker with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testDatePickerSelectedTextStyle010
+     * @tc.number SUB_ARKUI_CAPI_DATEPICKER_SELECTEDTEXTSTYLE_1000
+     * @tc.desc   testing selectedTextStyle for DatePicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDatePickerSelectedTextStyle010', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testDatePickerSelectedTextStyle010()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DATEPICKER_SELECTEDTEXTSTYLE_1100
-     * @tc.name       : testDatePickerSelectedTextStyle011
-     * @tc.desc       : testing selectedTextStyle for DatePicker with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testDatePickerSelectedTextStyle011
+     * @tc.number SUB_ARKUI_CAPI_DATEPICKER_SELECTEDTEXTSTYLE_1100
+     * @tc.desc   testing selectedTextStyle for DatePicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDatePickerSelectedTextStyle011', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testDatePickerSelectedTextStyle011()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DATEPICKER_SELECTEDTEXTSTYLE_1200
-     * @tc.name       : testDatePickerSelectedTextStyle012
-     * @tc.desc       : testing selectedTextStyle for DatePicker with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testDatePickerSelectedTextStyle012
+     * @tc.number SUB_ARKUI_CAPI_DATEPICKER_SELECTEDTEXTSTYLE_1200
+     * @tc.desc   testing selectedTextStyle for DatePicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDatePickerSelectedTextStyle012', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testDatePickerSelectedTextStyle012()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DATEPICKER_SELECTEDTEXTSTYLE_1300
-     * @tc.name       : testDatePickerSelectedTextStyle013
-     * @tc.desc       : testing selectedTextStyle for DatePicker with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testDatePickerSelectedTextStyle013
+     * @tc.number SUB_ARKUI_CAPI_DATEPICKER_SELECTEDTEXTSTYLE_1300
+     * @tc.desc   testing selectedTextStyle for DatePicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDatePickerSelectedTextStyle013', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testDatePickerSelectedTextStyle013()).assertEqual(0)

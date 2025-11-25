@@ -26,37 +26,37 @@ export default function textInputEnableAutoFillTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_ENABLE_AUTO_FILL_0001
-     * @tc.name: testTextInputEnableAutoFill001
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputEnableAutoFill001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_ENABLE_AUTO_FILL_0001
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputEnableAutoFill001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputEnableAutoFill001()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_ENABLE_AUTO_FILL_0002
-     * @tc.name: testTextInputEnableAutoFill002
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputEnableAutoFill002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_ENABLE_AUTO_FILL_0002
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputEnableAutoFill002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputEnableAutoFill002()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_ENABLE_AUTO_FILL_0003
-     * @tc.name: testTextInputEnableAutoFill003
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputEnableAutoFill003
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_ENABLE_AUTO_FILL_0003
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputEnableAutoFill003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputEnableAutoFill003()).assertEqual(0)

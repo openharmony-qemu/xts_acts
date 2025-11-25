@@ -59,14 +59,14 @@ export default function CustomDialogBorderColor() {
       console.info("CustomDialogBorderColor after each called");
     });
 
-/**
+    /**
+     * @tc.name   CustomDialogBorderColor_0100
      * @tc.number SUB_ACE_CustomDialogBorderColor_0100
-     * @tc.name CustomDialogBorderColor_0100
-     * @tc.desc To test the CustomDialogBorderColor:Color.blue
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test the CustomDialogBorderColor:Color.blue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('CustomDialogBorderColor_0100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('CustomDialogBorderColor_0100 START');
       let driver = await Driver.create()
@@ -92,13 +92,13 @@ export default function CustomDialogBorderColor() {
 
 
     /**
+     * @tc.name   CustomDialogBorderColor_0200
      * @tc.number SUB_ACE_CustomDialogBorderColor_0200
-     * @tc.name CustomDialogBorderColor_0200
-     * @tc.desc To test the CustomDialogBorderColor:#FF6582F8
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test the CustomDialogBorderColor:#FF6582F8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('CustomDialogBorderColor_0200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('CustomDialogBorderColor_0200 START');
       let driver = await Driver.create()

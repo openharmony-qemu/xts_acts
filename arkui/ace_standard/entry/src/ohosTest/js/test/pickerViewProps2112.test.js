@@ -80,9 +80,12 @@ export default function pickerViewPropsJsTest2112() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerViewClassProp
-         * @tc.desc      ACE
+         * @tc.name   testPickerViewClassProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerViewClassProp', Level.LEVEL0, async function(done) {
             console.info('testPickerViewClassProp START');

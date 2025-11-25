@@ -47,10 +47,13 @@ export default function nativeApiStringJsunit() {
     });
 
     /**
-    * @tc.number    SUB_ACE_BASIC_ETS_NAPI_0038
-    * @tc.name      aceNapiTest038
-    * @tc.desc      aceNapiEtsTest
-    */
+     * @tc.name   aceNapiTest038
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_0038
+     * @tc.desc   aceNapiEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('aceNapiTest038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('aceNapiTest038 START');
       value = napitest.getPrototype();
@@ -65,9 +68,12 @@ export default function nativeApiStringJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_0121
-     * @tc.name      aceNapiTest0121
-     * @tc.desc      aceNapiEtsTest
+     * @tc.name   aceNapiTest0121
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_0121
+     * @tc.desc   aceNapiEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('aceNapiTest0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('aceNapiTest0121 START');
@@ -78,9 +84,12 @@ export default function nativeApiStringJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_NAPI_0121
-     * @tc.name      aceNapiTest0122
-     * @tc.desc      aceNapiEtsTest
+     * @tc.name   aceNapiTest0122
+     * @tc.number SUB_ACE_BASIC_ETS_NAPI_0121
+     * @tc.desc   aceNapiEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('aceNapiTest0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('aceNapiTest0122 START');
@@ -91,9 +100,12 @@ export default function nativeApiStringJsunit() {
     });
 
     /**
+     * @tc.name   aceNapiTest0137
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_0137
-     * @tc.name aceNapiTest0137
-     * @tc.desc aceNapiEtsTest
+     * @tc.desc   aceNapiEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('aceNapiTest0137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('aceNapiTest0137 START');
@@ -104,9 +116,12 @@ export default function nativeApiStringJsunit() {
     });
 
     /**
+     * @tc.name   aceNapiTest0138
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_0138
-     * @tc.name aceNapiTest0138
-     * @tc.desc aceNapiEtsTest
+     * @tc.desc   aceNapiEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('aceNapiTest0138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('aceNapiTest0138 START');
@@ -117,9 +132,12 @@ export default function nativeApiStringJsunit() {
     });
 
     /**
+     * @tc.name   aceNapiTest0139
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_0139
-     * @tc.name aceNapiTest0139
-     * @tc.desc aceNapiEtsTest
+     * @tc.desc   aceNapiEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('aceNapiTest0139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('aceNapiTest0139 START');
@@ -144,9 +162,12 @@ export default function nativeApiStringJsunit() {
     });
 
     /**
+     * @tc.name   aceNapiTest0140
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_0140
-     * @tc.name aceNapiTest0140
-     * @tc.desc aceNapiEtsTest
+     * @tc.desc   aceNapiEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('aceNapiTest0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('aceNapiTest0140 START');
@@ -171,9 +192,12 @@ export default function nativeApiStringJsunit() {
     });
 
     /**
+     * @tc.name   aceNapiTest0141
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_0141
-     * @tc.name aceNapiTest0141
-     * @tc.desc aceNapiEtsTest
+     * @tc.desc   aceNapiEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('aceNapiTest0141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('aceNapiTest0141 START');
@@ -184,9 +208,12 @@ export default function nativeApiStringJsunit() {
     });
 
     /**
+     * @tc.name   aceNapiTest0142
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_0142
-     * @tc.name aceNapiTest0142
-     * @tc.desc aceNapiEtsTest
+     * @tc.desc   aceNapiEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('aceNapiTest0142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('aceNapiTest0142 START');
@@ -197,9 +224,12 @@ export default function nativeApiStringJsunit() {
     });
 
     /**
+     * @tc.name   aceNapiTest0143
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_0143
-     * @tc.name aceNapiTest0143
-     * @tc.desc aceNapiEtsTest
+     * @tc.desc   aceNapiEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('aceNapiTest0143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('aceNapiTest0143 START');
@@ -210,9 +240,12 @@ export default function nativeApiStringJsunit() {
     });
 
     /**
+     * @tc.name   aceNapiTest0144
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_0144
-     * @tc.name aceNapiTest0144
-     * @tc.desc aceNapiEtsTest
+     * @tc.desc   aceNapiEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('aceNapiTest0144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('aceNapiTest0144 START');
@@ -223,15 +256,62 @@ export default function nativeApiStringJsunit() {
     });
 
     /**
+     * @tc.name   aceNapiTest0148
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_0148
-     * @tc.name aceNapiTest0148
-     * @tc.desc aceNapiEtsTest
+     * @tc.desc   aceNapiEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('aceNapiTest0148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('aceNapiTest0148 START');
       let value: number = napitest.stopEventLoop(4);
       console.info('aceNapiTest0148 testString result is: ' + value);
       expect(value).assertEqual(0);
+      done();
+    });
+
+    /**
+     * @tc.name   testExternString0100
+     * @tc.number SUB_NAPI_EXTERNSTRING_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testExternString0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "testExternString0100";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitest.NapiCreateExternalStringUtf16();
+        console.info('testExternString0100 value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   testExternString0200
+     * @tc.number SUB_NAPI_EXTERNSTRING_0200
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testExternString0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "testExternString0200";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitest.NapiCreateExternalStringAscii();
+        console.info('testExternString0200 value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
       done();
     });
   })

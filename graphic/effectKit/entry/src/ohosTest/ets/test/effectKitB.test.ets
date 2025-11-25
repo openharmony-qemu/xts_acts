@@ -239,14 +239,14 @@ export default function effectKitBTest() {
     })
     
     /**
-     * @tc.number    : testGetEffectPixelMap_useCpuRender1
-     * @tc.name      : testGetEffectPixelMap_useCpuRender1
-     * @tc.desc      : test getEffectPixelMap useCpuRender
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.number     testGetEffectPixelMap_useCpuRender1
+     * @tc.name       testGetEffectPixelMap_useCpuRender1
+     * @tc.desc       test getEffectPixelMap useCpuRender
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
      */
-    it('testGetEffectPixelMap_useCpuRender1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('testGetEffectPixelMap_useCpuRender1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       const color = new ArrayBuffer(96);
       let opts : image.InitializationOptions = {
         editable: true,
@@ -268,14 +268,14 @@ export default function effectKitBTest() {
     })
     
     /**
-     * @tc.number    : testGetEffectPixelMap_useCpuRender2
-     * @tc.name      : testGetEffectPixelMap_useCpuRender2
-     * @tc.desc      : test getEffectPixelMap useCpuRender
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.number     testGetEffectPixelMap_useCpuRender2
+     * @tc.name       testGetEffectPixelMap_useCpuRender2
+     * @tc.desc       test getEffectPixelMap useCpuRender
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level0
      */
-    it('testGetEffectPixelMap_useCpuRender2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('testGetEffectPixelMap_useCpuRender2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       const color = new ArrayBuffer(96);
       let opts : image.InitializationOptions = {
         editable: true,
@@ -302,9 +302,9 @@ export default function effectKitBTest() {
      * @tc.desc       test getTopProportionColors
      * @tc.size       MediumTest
      * @tc.type       Function
-     * @tc.level      Level1
+     * @tc.level      Level0
      */
-    it('testGetTopProportionColors_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('testGetTopProportionColors_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let msgStr = 'testGetTopProportionColors_2'
       let imageSource = image.createImageSource(testPng.buffer);
       console.info(msgStr + "promise create pixmap.start");
@@ -337,9 +337,9 @@ export default function effectKitBTest() {
      * @tc.desc       test isBlackOrWhiteOrGrayColor
      * @tc.size       MediumTest
      * @tc.type       Function
-     * @tc.level      Level1
+     * @tc.level      Level0
      */
-    it('isBlackOrWhiteOrGrayColor_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('isBlackOrWhiteOrGrayColor_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let msgStr = 'isBlackOrWhiteOrGrayColor_2'
       let imageSource = image.createImageSource(testPng.buffer);
       console.info(msgStr + "promise create pixmap.start");
@@ -365,9 +365,9 @@ export default function effectKitBTest() {
      * @tc.desc       test createColorPicker callback
      * @tc.size       MediumTest
      * @tc.type       Function
-     * @tc.level      Level1
+     * @tc.level      Level0
      */
-    it('createColorPicker_callback_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('createColorPicker_callback_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       const color = new ArrayBuffer(96);
       let opts : image.InitializationOptions = {
         editable: true,
@@ -400,9 +400,9 @@ export default function effectKitBTest() {
      * @tc.desc       test createColorPicker callback
      * @tc.size       MediumTest
      * @tc.type       Function
-     * @tc.level      Level1
+     * @tc.level      Level0
      */
-    it('createColorPicker_callback_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+    it('createColorPicker_callback_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'createColorPicker_callback_0200';
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log("effectKitTest" + msgStr + 'begin');
@@ -423,8 +423,6 @@ export default function effectKitBTest() {
         expect().assertFail();
         done();
       })
-
-
     })
 
   })

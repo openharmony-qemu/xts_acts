@@ -67,9 +67,12 @@ export default function tabsSec() {
     })
 
     /**
-     * @tc.number    ArkUI_Tabs_BarOverlap_0100
-     * @tc.name      Tests the barOverlap property of the tabs component.
-     * @tc.desc      Gets the default values of barOverlap.
+     * @tc.name   ArkUI_Tabs_BarOverlap_0100
+     * @tc.number ArkUI_Tabs_BarOverlap_0100
+     * @tc.desc   Gets the default values of barOverlap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarOverlap_0100', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_BarOverlap_0100 start");
@@ -82,9 +85,12 @@ export default function tabsSec() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarOverlap_0200
-     * @tc.name      Tests the barOverlap property of the tabs component.
-     * @tc.desc      Gets the values of barOverlap, when the value of the barOverlap is true.
+     * @tc.name   ArkUI_Tabs_BarOverlap_0200
+     * @tc.number ArkUI_Tabs_BarOverlap_0200
+     * @tc.desc   Gets the values of barOverlap, when the value of the barOverlap is true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarOverlap_0200', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_BarOverlap_0200 start");
@@ -115,9 +121,12 @@ export default function tabsSec() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarOverlap_0300
-     * @tc.name      Tests the barOverlap property of the tabs component.
-     * @tc.desc      Gets the values of barOverlap, when the value of the barOverlap is false.
+     * @tc.name   ArkUI_Tabs_BarOverlap_0300
+     * @tc.number ArkUI_Tabs_BarOverlap_0300
+     * @tc.desc   Gets the values of barOverlap, when the value of the barOverlap is false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarOverlap_0300', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_BarOverlap_0300 start");
@@ -148,9 +157,12 @@ export default function tabsSec() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarOverlap_0400
-     * @tc.name      Tests the barOverlap property of the tabs component.
-     * @tc.desc      Gets the values of barOverlap, when the value of the barOverlap is null.
+     * @tc.name   ArkUI_Tabs_BarOverlap_0400
+     * @tc.number ArkUI_Tabs_BarOverlap_0400
+     * @tc.desc   Gets the values of barOverlap, when the value of the barOverlap is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarOverlap_0400', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_BarOverlap_0400 start");
@@ -181,9 +193,12 @@ export default function tabsSec() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarOverlap_0500
-     * @tc.name      Tests the barOverlap property of the tabs component.
-     * @tc.desc      Gets the values of barOverlap, when the value of the barOverlap is undefined.
+     * @tc.name   ArkUI_Tabs_BarOverlap_0500
+     * @tc.number ArkUI_Tabs_BarOverlap_0500
+     * @tc.desc   Gets the values of barOverlap, when the value of the barOverlap is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarOverlap_0500', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_BarOverlap_0500 start");
@@ -214,10 +229,12 @@ export default function tabsSec() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarOverlap_0600
-     * @tc.name      Tests the barOverlap property of the tabs component.
-     * @tc.desc      Step1: Gets the values of barOverlap, when the value of the barOverlap is true.
-     *               Step2: Gets the values of barOverlap, when the value of the barOverlap is false.
+     * @tc.name   ArkUI_Tabs_BarOverlap_0600
+     * @tc.number ArkUI_Tabs_BarOverlap_0600
+     * @tc.desc   Step1: Gets the values of barOverlap, when the value of the barOverlap is true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarOverlap_0600', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_BarOverlap_0600 start");
@@ -269,11 +286,13 @@ export default function tabsSec() {
       done();
     });
     
-     /**
-     * @tc.number    ArkUI_Tabs_BarOverlap_0700
-     * @tc.name      Tests the barOverlap property of the tabs component.
-     * @tc.desc      Step1: Gets the values of barOverlap, when the value of the barOverlap is true.
-     *               Step2: Gets the values of barOverlap, when the value of the barOverlap is null.
+    /**
+     * @tc.name   ArkUI_Tabs_BarOverlap_0700
+     * @tc.number ArkUI_Tabs_BarOverlap_0700
+     * @tc.desc   Step1: Gets the values of barOverlap, when the value of the barOverlap is true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarOverlap_0700', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_BarOverlap_0700 start");
@@ -326,10 +345,12 @@ export default function tabsSec() {
     });
     
     /**
-     * @tc.number    ArkUI_Tabs_BarOverlap_0800
-     * @tc.name      Tests the barOverlap property of the tabs component.
-     * @tc.desc      Step1: Gets the values of barOverlap, when the value of the barOverlap is true.
-     *               Step2: Gets the values of barOverlap, when the value of the barOverlap is undefined.
+     * @tc.name   ArkUI_Tabs_BarOverlap_0800
+     * @tc.number ArkUI_Tabs_BarOverlap_0800
+     * @tc.desc   Step1: Gets the values of barOverlap, when the value of the barOverlap is true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarOverlap_0800', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_BarOverlap_0800 start");
@@ -382,9 +403,12 @@ export default function tabsSec() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarBackgroundColor_0100
-     * @tc.name      Tests the BarBackgroundColor property of the tabs component.
-     * @tc.desc      Gets the default values of barBackgroundColor.
+     * @tc.name   ArkUI_Tabs_BarBackgroundColor_0100
+     * @tc.number ArkUI_Tabs_BarBackgroundColor_0100
+     * @tc.desc   Gets the default values of barBackgroundColor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarBackgroundColor_0100', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_BarBackgroundColor start");
@@ -398,9 +422,12 @@ export default function tabsSec() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarBackgroundColor_0200
-     * @tc.name      Tests the BarBackgroundColor property of the tabs component.
-     * @tc.desc      Gets the values of BarBackgroundColor, when the value of the barBackgroundColor is Color.Blue.
+     * @tc.name   ArkUI_Tabs_BarBackgroundColor_0200
+     * @tc.number ArkUI_Tabs_BarBackgroundColor_0200
+     * @tc.desc   Gets the values of BarBackgroundColor, when the value of the barBackgroundColor is Color.Blue.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarBackgroundColor_0200', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_BarBackgroundColor start");
@@ -431,9 +458,12 @@ export default function tabsSec() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarBackgroundColor_0300
-     * @tc.name      Tests the BarBackgroundColor property of the tabs component.
-     * @tc.desc      Gets the values of BarBackgroundColor, when the value of the barBackgroundColor is 123.
+     * @tc.name   ArkUI_Tabs_BarBackgroundColor_0300
+     * @tc.number ArkUI_Tabs_BarBackgroundColor_0300
+     * @tc.desc   Gets the values of BarBackgroundColor, when the value of the barBackgroundColor is 123.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarBackgroundColor_0300', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_BarBackgroundColor start");
@@ -464,9 +494,12 @@ export default function tabsSec() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarBackgroundColor_0400
-     * @tc.name      Tests the BarBackgroundColor property of the tabs component.
-     * @tc.desc      Gets the values of BarBackgroundColor, when the value of the barBackgroundColor is #0000FF.
+     * @tc.name   ArkUI_Tabs_BarBackgroundColor_0400
+     * @tc.number ArkUI_Tabs_BarBackgroundColor_0400
+     * @tc.desc   Gets the values of BarBackgroundColor, when the value of the barBackgroundColor is #0000FF.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarBackgroundColor_0400', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_BarBackgroundColor start");
@@ -497,9 +530,12 @@ export default function tabsSec() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarBackgroundColor_0500
-     * @tc.name      Tests the BarBackgroundColor property of the tabs component.
-     * @tc.desc      Gets the values of BarBackgroundColor, when the value of the barBackgroundColor is sys.color.ohos_toggle_bg.
+     * @tc.name   ArkUI_Tabs_BarBackgroundColor_0500
+     * @tc.number ArkUI_Tabs_BarBackgroundColor_0500
+     * @tc.desc   Gets the values of BarBackgroundColor, when the value of the barBackgroundColor is sys.color.ohos_toggle_bg.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarBackgroundColor_0500', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_BarBackgroundColor start");
@@ -533,9 +569,12 @@ export default function tabsSec() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarBackgroundColor_0600
-     * @tc.name      Tests the BarBackgroundColor property of the tabs component.
-     * @tc.desc      Gets the values of BarBackgroundColor, when the value of the barBackgroundColor is null.
+     * @tc.name   ArkUI_Tabs_BarBackgroundColor_0600
+     * @tc.number ArkUI_Tabs_BarBackgroundColor_0600
+     * @tc.desc   Gets the values of BarBackgroundColor, when the value of the barBackgroundColor is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarBackgroundColor_0600', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_BarBackgroundColor start");
@@ -566,9 +605,12 @@ export default function tabsSec() {
     });
 
     /**
-     * @tc.number    ArkUI_Tabs_BarBackgroundColor_0700
-     * @tc.name      Tests the BarBackgroundColor property of the tabs component.
-     * @tc.desc      Gets the values of BarBackgroundColor, when the value of the barBackgroundColor is undefined.
+     * @tc.name   ArkUI_Tabs_BarBackgroundColor_0700
+     * @tc.number ArkUI_Tabs_BarBackgroundColor_0700
+     * @tc.desc   Gets the values of BarBackgroundColor, when the value of the barBackgroundColor is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Tabs_BarBackgroundColor_0700', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_Tabs_BarBackgroundColor start");

@@ -49,12 +49,12 @@ export default function buttonJsunit() {
     })
 
     /**
+     * @tc.name   testButton1601
      * @tc.number testButton1601
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testButton1601', Level.LEVEL0, async (done: Function) => {
       console.info('[testButton1601] START');
@@ -67,12 +67,12 @@ export default function buttonJsunit() {
     });
 
     /**
+     * @tc.name   testButton1602
      * @tc.number testButton1602
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testButton1602', Level.LEVEL0, async (done: Function) => {
       console.info('[testButton1602] START');
@@ -85,12 +85,12 @@ export default function buttonJsunit() {
     });
 
     /**
+     * @tc.name   testButton1603
      * @tc.number testButton1603
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testButton1603', Level.LEVEL0, async (done: Function) => {
       console.info('[testButton1603] START');
@@ -103,12 +103,12 @@ export default function buttonJsunit() {
     });
 
     /**
+     * @tc.name   testButton1604
      * @tc.number testButton1604
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testButton1604', Level.LEVEL0, async (done: Function) => {
       console.info('[testButton1604] START');
@@ -121,12 +121,12 @@ export default function buttonJsunit() {
     });
 
     /**
+     * @tc.name   testButton1605
      * @tc.number testButton1605
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testButton1605', Level.LEVEL0, async (done: Function) => {
       console.info('[testButton1605] START');
@@ -139,12 +139,12 @@ export default function buttonJsunit() {
     });
 
     /**
+     * @tc.name   testButton1606
      * @tc.number testButton1606
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testButton1606', Level.LEVEL0, async (done: Function) => {
       console.info('[testButton1606] START');
@@ -157,12 +157,12 @@ export default function buttonJsunit() {
     });
 
     /**
+     * @tc.name   testButton1607
      * @tc.number testButton1607
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testButton1607', Level.LEVEL0, async (done: Function) => {
       console.info('[testButton1607] START');
@@ -175,12 +175,12 @@ export default function buttonJsunit() {
     });
 
     /**
+     * @tc.name   testButton1608
      * @tc.number testButton1608
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testButton1608', Level.LEVEL0, async (done: Function) => {
       console.info('[testButton1608] START');

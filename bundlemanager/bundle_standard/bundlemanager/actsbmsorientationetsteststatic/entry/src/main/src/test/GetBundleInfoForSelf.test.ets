@@ -27,12 +27,12 @@ export default function getSignatureAInfo() {
   describe('getSignatureAInfo', () => {
 
     /**
-     * @tc.number  Sub_Bms_Framework_getSignatureInfo_static_02
-     * @tc.name    Sub_Bms_Framework_getSignatureInfo_static_02
-     * @tc.desc    Test getSignatureInfo with error code
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level1
+     * @tc.name   Sub_Bms_Framework_getSignatureInfo_static_02
+     * @tc.number Sub_Bms_Framework_getSignatureInfo_static_02
+     * @tc.desc   Test getSignatureInfo with error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Bms_Framework_getSignatureInfo_static_02', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       await bundleManager.getBundleInfoForSelf(bundleManager.BundleFlag.GET_BUNDLE_INFO_WITH_APPLICATION |

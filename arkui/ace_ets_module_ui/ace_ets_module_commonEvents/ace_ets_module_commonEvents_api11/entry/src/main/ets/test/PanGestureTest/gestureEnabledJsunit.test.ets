@@ -60,12 +60,15 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       await button.click();
     });
 	
-	  /**
-     * @tc.number: SUB_ACE_TS_COMPONENT_TAPGESTURE_01
-     * @tc.name : gestureEnabledJsunit_0100
-     * @tc.desc : Does the TapGesture click trigger
-     */
 
+    /**
+     * @tc.name   gestureEnabledJsunit_0100
+     * @tc.number gestureEnabledJsunit_0100
+     * @tc.desc   gestureEnabledJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('gestureEnabledJsunit_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('gestureEnabledJsunit_0100 START');
@@ -82,12 +85,15 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       done();
     });
 	
-	/**
-     * @tc.number: SUB_ACE_TS_COMPONENT_TAPGESTURE_02
-     * @tc.name : gestureEnabledJsunit_0200
-     * @tc.desc : Does the TapGesture click trigger
-     */
 
+    /**
+     * @tc.name   gestureEnabledJsunit_0200
+     * @tc.number gestureEnabledJsunit_0200
+     * @tc.desc   gestureEnabledJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('gestureEnabledJsunit_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('gestureEnabledJsunit_0200 START');
@@ -104,12 +110,15 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       done();
     });
 	
-	/**
-     * @tc.number: SUB_ACE_TS_COMPONENT_TAPGESTURE_03
-     * @tc.name : gestureEnabledJsunit_0300
-     * @tc.desc : Does the TapGesture doubleClick trigger
-     */
 
+    /**
+     * @tc.name   gestureEnabledJsunit_0300
+     * @tc.number gestureEnabledJsunit_0300
+     * @tc.desc   gestureEnabledJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('gestureEnabledJsunit_0300', Level.LEVEL0, async (done: Function) => {
 
       console.info('gestureEnabledJsunit_0300 START');
@@ -126,12 +135,15 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       done();
     });
 	
-	/**
-     * @tc.number: SUB_ACE_TS_COMPONENT_TAPGESTURE_04
-     * @tc.name : gestureEnabledJsunit_0400
-     * @tc.desc : Does the TapGesture longClick trigger
-     */
 
+    /**
+     * @tc.name   gestureEnabledJsunit_0400
+     * @tc.number gestureEnabledJsunit_0400
+     * @tc.desc   gestureEnabledJsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('gestureEnabledJsunit_0400', Level.LEVEL0, async (done: Function) => {
 
       console.info('gestureEnabledJsunit_0400 START');

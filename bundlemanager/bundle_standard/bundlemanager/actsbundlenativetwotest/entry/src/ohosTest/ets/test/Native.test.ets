@@ -32,10 +32,13 @@ export default function nativeTest() {
   describe('ActsNativeTest', () => {
 
     /**
-      * @tc.number    : SUB_BMS_BASIC_ETS_NATIVE_0100
-      * @tc.name      : BundleNdkTest001
-      * @tc.desc      : budnleNdkNativeTest
-    */
+     * @tc.name   BundleNdkTest001
+     * @tc.number SUB_BMS_BASIC_ETS_NATIVE_0100
+     * @tc.desc   budnleNdkNativeTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('BundleNdkTest001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, (done: Function) => {
         let data = entry_add.getCurrentApplicationInfo();
         console.info("Test NAPI data= " + JSON.stringify(data));
@@ -45,10 +48,13 @@ export default function nativeTest() {
     });
 
     /**
-      * @tc.number    : SUB_BMS_BASIC_ETS_NATIVE_0200
-      * @tc.name      : BundleNdkTest002
-      * @tc.desc      : budnleNdkNativeTest_IsDebugMode
-    */
+     * @tc.name   BundleNdkTest002
+     * @tc.number SUB_BMS_BASIC_ETS_NATIVE_0200
+     * @tc.desc   budnleNdkNativeTest_IsDebugMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('BundleNdkTest002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, (done: Function) => {
       try{
         let data = entry_add.IsDebugMode();
@@ -61,11 +67,14 @@ export default function nativeTest() {
       done();
     })
 
-    /**
-      * @tc.number    : SUB_BMS_BASIC_ETS_NATIVE_0300
-      * @tc.name      : BundleNdkTest003
-      * @tc.desc      : budnleNdkNativeTest_IsDebugMode
-    */
+  /**
+   * @tc.name   BundleNdkTest003
+   * @tc.number SUB_BMS_BASIC_ETS_NATIVE_0300
+   * @tc.desc   budnleNdkNativeTest_IsDebugMode
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
   it('BundleNdkTest003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, (done: Function) => {
       try{
         let data  = entry_add.GetModuleMetadata();
@@ -85,10 +94,13 @@ export default function nativeTest() {
     })
 
     /**
-      * @tc.number    SUB_BMS_BASIC_ETS_NATIVE_0400
-      * @tc.name      budnleNdkNativeTest004
-      * @tc.desc      budnleNdkNativeTest
-    */
+     * @tc.name   BundleNdkTest004
+     * @tc.number SUB_BMS_BASIC_ETS_NATIVE_0400
+     * @tc.desc   budnleNdkNativeTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('BundleNdkTest004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, (done: Function) => {
       try{
         let data = entry_add.IsDebugMode();
@@ -102,10 +114,13 @@ export default function nativeTest() {
     })
 
     /**
-      * @tc.number    SUB_BMS_BASIC_ETS_NATIVE_0500
-      * @tc.name      budnleNdkNativeTest005
-      * @tc.desc      budnleNdkNativeTest
-    */
+     * @tc.name   BundleNdkTest005
+     * @tc.number SUB_BMS_BASIC_ETS_NATIVE_0500
+     * @tc.desc   budnleNdkNativeTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('BundleNdkTest005', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, () => {
       try{
         let data  = entry_add.GetModuleMetadata();
