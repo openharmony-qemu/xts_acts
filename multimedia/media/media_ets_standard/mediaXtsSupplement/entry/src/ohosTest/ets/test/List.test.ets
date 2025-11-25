@@ -22,6 +22,8 @@ import RespondDataTest from './media/RespondDataTest.test';
 import AVPlayerSetMediaSourceSuppTest from './media/AVPlayerMediaSourceSupp.test';
 import AVPlayerSetMediaMutedSuppTest from './media/AVPlayerSetMediaMutedSupp.test';
 import AVPlayerSetPlaybackRangeSuppTest from './media/AVPlayerSetPlaybackRangeSupp.test';
+import StateChangeTest from './media/StateChangeTest.test';
+import OnTrackChangeTest from './media/AVPlayerOnTrackChangeTest.test';
 
 export default function testsuite() {
   AVPlayerLocalDeprecatedTest();
@@ -33,5 +35,7 @@ export default function testsuite() {
   AVPlayerSetPlaybackRangeSuppTest();
   AVPlayerSetMediaMutedSuppTest();
   AVPlayerSetMediaSourceSuppTest();
+  StateChangeTest();
+  OnTrackChangeTest();
 }
 
