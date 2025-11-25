@@ -12,10 +12,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import sceneTest from './scene.test'
-import sceneNodeTest from './sceneNode.test'
-import scenePostProcessSettingTest from './scenePostProcessSettings.test'
-import sceneResourcesTest from './sceneResources.test'
+import sceneTest from './Scene.test'
+import sceneNodeTest from './SceneNode.test'
+import scenePostProcessSettingTest from './ScenePostProcessSettings.test'
+import sceneResourcesTest from './SceneResources.test'
 
 
 export default function testsuite() {
