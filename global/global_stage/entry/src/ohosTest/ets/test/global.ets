@@ -26,7 +26,7 @@ export class GlobalContext {
 
 export function openMediaWithBase64(path:string): string {
   try {
-    let path = resContext.resourceDir + '/';
+    let file = fs.openSync(path, fs.OpenMode.READ_ONLY);
     let length = fs.statSync(path).size;
     let buf = new ArrayBuffer(length);
     fs.readSync(file.fd, buf);
