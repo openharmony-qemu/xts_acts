@@ -80,14 +80,24 @@ import ImageSourceCreatePictureOrf from './image/ImageSourceCreatePictureOrf.tes
 import createImageSourceTest from './image/ImageCreateImageSource.test';
 import sendableCreatePixelMap from './sendableImage/SendAbleCreatePixelMap.test';
 import sendableCreatePixelMapSyncTest from './sendableImage/SendAbleCreatePixelMapSync.test';
-import ImageAuxiliaryPictureWritePixelIsFromBufferTest
-  from './image/ImageAuxiliaryPictureWritePixeIsFromBuffer.Test.test';
 import imagePackerPackToDataFromPixelmapSequenceTest from './image/ImagePackerPackToDataFromPixelmapSequenceTest.test';
 import imagePackerPackToDataTest from './image/ImagePackerPackToDataTest.test';
 import PictureMarshallingTest from './image/ImagePictureMarshallingTest.test';
 import PixelMapReadPixelsToBufferTest from './image/ImagePixelMapReadPixelsToBufferTest.test';
 import ReadPixelsWritePixelsTest from './image/ImagePixelMapReadPixelsWritePixelsTest.test';
 import PixelMapWriteBufferToPixelsTest from './image/ImagePixelMapWriteBufferToPixelsTest.test';
+import CreateAuxiliaryPictureTest from './image/CreateAuxiliaryPicture.test';
+import ImageAuxiliaryPictureGetMetadataTest from './image/ImageAuxiliaryPictureGetMetadata.Test.test';
+import ImageAuxiliaryPictureWritePixelIsFromBufferTest
+  from './image/ImageAuxiliaryPictureWritePixeIsFromBuffer.Test.test';
+import ImageCreatePictureTest from './image/ImageCreatePicture.test';
+import ImageCreatePictureFromParcelTest from './image/ImageCreatePictureFromParcel.Test.test';
+import ImageCreateUnpremultipliedPixelMapTest from './image/ImageCreateUnpremultipliedPixelMap.Test.test';
+import ImagePixelMapConvertPixelFormatTest from './image/ImagePixelMapConvertPixelFormat.Test.test';
+import ImagePixelMapCropSyncTest from './image/ImagePixelMapCropSync.Test.test';
+import ImagePixelMapMarshallingTest from './image/ImagePixelMapMarshalling.Test.test';
+import ImagePixelMapUnmarshallingTest from './image/ImagePixelMapUnMarshalling.Test.test';
+
 
 
 export default function testsuite() {
@@ -158,12 +168,20 @@ export default function testsuite() {
   createImageSourceTest();
   sendableCreatePixelMap();
   sendableCreatePixelMapSyncTest();
-  ImageAuxiliaryPictureWritePixelIsFromBufferTest();
-
   imagePackerPackToDataFromPixelmapSequenceTest();
   imagePackerPackToDataTest();
   PictureMarshallingTest();
   PixelMapReadPixelsToBufferTest();
   ReadPixelsWritePixelsTest();
   PixelMapWriteBufferToPixelsTest();
+  CreateAuxiliaryPictureTest();
+  ImageAuxiliaryPictureGetMetadataTest();
+  ImageAuxiliaryPictureWritePixelIsFromBufferTest();
+  ImageCreatePictureTest();
+  ImageCreatePictureFromParcelTest();
+  ImageCreateUnpremultipliedPixelMapTest();
+  ImagePixelMapConvertPixelFormatTest();
+  ImagePixelMapCropSyncTest();
+  ImagePixelMapMarshallingTest();
+  ImagePixelMapUnmarshallingTest();
 }
