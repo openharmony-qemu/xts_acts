@@ -14,6 +14,7 @@
  */
 import sceneTest from './scene.test'
 import sceneNodeTest from './sceneNode.test'
+import scenePostProcessSettingTest from './scenePostProcessSettings.test'
 import sceneResourcesTest from './sceneResources.test'
 
 
@@ -21,4 +22,5 @@ export default function testsuite() {
   sceneTest()
   sceneNodeTest()
   sceneResourcesTest()
+  scenePostProcessSettingTest()
 }

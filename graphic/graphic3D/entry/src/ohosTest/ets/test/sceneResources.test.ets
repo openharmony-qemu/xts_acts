@@ -13,13 +13,14 @@
  * limitations under the License.
  */
 import { Vec4, Aabb, SceneResourceType, SceneResource, Shader, MaterialType, Material, ShaderMaterial, SubMesh, Mesh,
-  Animation, EnvironmentBackgroundType, Environment, Node, Geometry, SceneResourceFactory, Scene } from '@ohos.graphics.scene'
+  Animation, EnvironmentBackgroundType, Environment, Node, Geometry, SceneResourceFactory, Scene, PolygonMode } from '@ohos.graphics.scene'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
 import * as scene3d from '@ohos.graphics.scene'
 import { GenRandom, sleep } from '../common/utils';
 
 export default function sceneResourcesTest() {
   describe('sceneResourcesTest', ()=> {
+    let scene: Scene | null = null;
     let scene0: Scene | null = null;
     let scene1: Scene | null = null;
     let scene2: Scene | null = null;
@@ -1277,6 +1278,304 @@ export default function sceneResourcesTest() {
         done();
       } catch (err) {
         console.info(msg + " Failed in testAnimation_speed  " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1004
+     * @tc.name      : testSceneResourcesMaterialTypeUNLIT
+     * @tc.desc      : Verify the MaterialType.UNLIT enum value behaves as expected
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('testSceneResourcesMaterialTypeUNLIT', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testSceneResourcesMaterialTypeUNLIT";
+      console.info(msg + ' begin ');
+      try {
+        scene = await Scene.load();
+        expect(scene != null).assertTrue();
+        rf = scene.getResourceFactory();
+
+        // 验证UNLIT枚举值
+        expect(MaterialType.UNLIT).assertEqual(3);
+        console.info(msg + " MaterialType.UNLIT enum value is 3");
+
+        // 创建UNLIT材质
+        let unlitMaterial: scene3d.Material = await rf.createMaterial({ name: "UnlitMaterial" }, MaterialType.UNLIT);
+        expect(unlitMaterial != null).assertTrue();
+        expect(unlitMaterial.materialType).assertEqual(MaterialType.UNLIT);
+        console.info(msg + " UNLIT material created successfully");
+
+        // 验证材质类型比较
+        expect(unlitMaterial.materialType).assertEqual(3);
+        console.info(msg + " Material materialType is UNLIT");
+
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testSceneResourcesMaterialTypeUNLIT " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1005
+     * @tc.name      : testSceneResourcesPolygonModeFILL
+     * @tc.desc      : Verify the PolygonMode.FILL enum value behaves as expected
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('testSceneResourcesPolygonModeFILL', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testSceneResourcesPolygonModeFILL";
+      console.info(msg + ' begin ');
+      try {
+        // 验证FILL枚举值
+        expect(PolygonMode.FILL).assertEqual(0);
+        console.info(msg + " PolygonMode.FILL enum value is 0");
+
+        // 创建材质并设置polygonMode为FILL
+        scene = await Scene.load();
+        expect(scene != null).assertTrue();
+        rf = scene.getResourceFactory();
+
+        let material: scene3d.Material = await rf.createMaterial({ name: "TestMaterial" }, MaterialType.METALLIC_ROUGHNESS);
+        expect(material != null).assertTrue();
+
+        material.polygonMode = PolygonMode.FILL;
+        expect(material.polygonMode).assertEqual(PolygonMode.FILL);
+        expect(material.polygonMode).assertEqual(0);
+        console.info(msg + " Material polygonMode set to FILL successfully");
+
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testSceneResourcesPolygonModeFILL " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1006
+     * @tc.name      : testSceneResourcesPolygonModeLINE
+     * @tc.desc      : Verify the PolygonMode.LINE enum value behaves as expected
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('testSceneResourcesPolygonModeLINE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testSceneResourcesPolygonModeLINE";
+      console.info(msg + ' begin ');
+      try {
+        // 验证LINE枚举值
+        expect(PolygonMode.LINE).assertEqual(1);
+        console.info(msg + " PolygonMode.LINE enum value is 1");
+
+        // 创建材质并设置polygonMode为LINE
+        scene = await Scene.load();
+        expect(scene != null).assertTrue();
+        rf = scene.getResourceFactory();
+
+        let material: scene3d.Material = await rf.createMaterial({ name: "TestMaterial" }, MaterialType.METALLIC_ROUGHNESS);
+        expect(material != null).assertTrue();
+
+        material.polygonMode = PolygonMode.LINE;
+        expect(material.polygonMode).assertEqual(PolygonMode.LINE);
+        expect(material.polygonMode).assertEqual(1);
+        console.info(msg + " Material polygonMode set to LINE successfully");
+
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testSceneResourcesPolygonModeLINE " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1007
+     * @tc.name      : testSceneResourcesPolygonModePOINT
+     * @tc.desc      : Verify the PolygonMode.POINT enum value behaves as expected
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('testSceneResourcesPolygonModePOINT', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testSceneResourcesPolygonModePOINT";
+      console.info(msg + ' begin ');
+      try {
+        // 验证POINT枚举值
+        expect(PolygonMode.POINT).assertEqual(2);
+        console.info(msg + " PolygonMode.POINT enum value is 2");
+
+        // 创建材质并设置polygonMode为POINT
+        scene = await Scene.load();
+        expect(scene != null).assertTrue();
+        rf = scene.getResourceFactory();
+
+        let material: scene3d.Material = await rf.createMaterial({ name: "TestMaterial" }, MaterialType.METALLIC_ROUGHNESS);
+        expect(material != null).assertTrue();
+
+        material.polygonMode = PolygonMode.POINT;
+        expect(material.polygonMode).assertEqual(PolygonMode.POINT);
+        expect(material.polygonMode).assertEqual(2);
+        console.info(msg + " Material polygonMode set to POINT successfully");
+
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testSceneResourcesPolygonModePOINT " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
+     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1008
+     * @tc.name      : testSceneResourcesMaterialPolygonMode
+     * @tc.desc      : Verify the Material polygonMode property supports set and get
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('testSceneResourcesMaterialPolygonMode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testSceneResourcesMaterialPolygonMode";
+      console.info(msg + ' begin ');
+      try {
+        scene = await Scene.load();
+        expect(scene != null).assertTrue();
+        rf = scene.getResourceFactory();
+
+        let material: scene3d.Material = await rf.createMaterial({ name: "TestMaterial" }, MaterialType.METALLIC_ROUGHNESS);
+        expect(material != null).assertTrue();
+
+        // 测试默认值
+        expect(material.polygonMode).assertEqual(PolygonMode.FILL);
+        console.info(msg + " Material polygonMode default value is FILL");
+
+        // 测试所有polygonMode值
+        material.polygonMode = PolygonMode.FILL;
+        expect(material.polygonMode).assertEqual(PolygonMode.FILL);
+        console.info(msg + " Material polygonMode set to FILL successfully");
+
+        material.polygonMode = PolygonMode.LINE;
+        expect(material.polygonMode).assertEqual(PolygonMode.LINE);
+        console.info(msg + " Material polygonMode set to LINE successfully");
+
+        material.polygonMode = PolygonMode.POINT;
+        expect(material.polygonMode).assertEqual(PolygonMode.POINT);
+        console.info(msg + " Material polygonMode set to POINT successfully");
+
+        // 测试返回FILL
+        material.polygonMode = PolygonMode.FILL;
+        expect(material.polygonMode).assertEqual(PolygonMode.FILL);
+        console.info(msg + " Material polygonMode set back to FILL successfully");
+
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testSceneResourcesMaterialPolygonMode " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1009
+     * @tc.name      : testSceneResourcesUnlitMaterialBaseColor
+     * @tc.desc      : Verify the UnlitMaterial baseColor property supports set and get
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('testSceneResourcesUnlitMaterialBaseColor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testSceneResourcesUnlitMaterialBaseColor";
+      console.info(msg + ' begin ');
+      try {
+        scene = await Scene.load();
+        expect(scene != null).assertTrue();
+        rf = scene.getResourceFactory();
+
+        // 创建UnlitMaterial
+        let unlitMaterial: scene3d.UnlitMaterial = await rf.createMaterial({ name: "UnlitMaterial" }, MaterialType.UNLIT) as scene3d.UnlitMaterial;
+        expect(unlitMaterial != null).assertTrue();
+        expect(unlitMaterial.materialType).assertEqual(MaterialType.UNLIT);
+
+        // 验证baseColor属性存在
+        expect(unlitMaterial.baseColor != null).assertTrue();
+        console.info(msg + " UnlitMaterial baseColor property exists");
+
+        // 测试baseColor的factor属性
+        let baseColorFactor: Vec4 = {x: 1.0, y: 0.5, z: 0.2, w: 1.0};
+        unlitMaterial.baseColor.factor = baseColorFactor;
+        expect(Math.abs(unlitMaterial.baseColor.factor.x - 1.0)).assertLess(1e-6);
+        expect(Math.abs(unlitMaterial.baseColor.factor.y - 0.5)).assertLess(1e-6);
+        expect(Math.abs(unlitMaterial.baseColor.factor.z - 0.2)).assertLess(1e-6);
+        expect(Math.abs(unlitMaterial.baseColor.factor.w - 1.0)).assertLess(1e-6);
+        console.info(msg + " UnlitMaterial baseColor factor set successfully");
+
+        // 测试不同的baseColor值
+        unlitMaterial.baseColor.factor = {x: 0.0, y: 0.0, z: 0.0, w: 1.0};
+        expect(Math.abs(unlitMaterial.baseColor.factor.x - 0.0)).assertLess(1e-6);
+        console.info(msg + " UnlitMaterial baseColor factor set to black successfully");
+
+        unlitMaterial.baseColor.factor = {x: 1.0, y: 1.0, z: 1.0, w: 1.0};
+        expect(Math.abs(unlitMaterial.baseColor.factor.x - 1.0)).assertLess(1e-6);
+        console.info(msg + " UnlitMaterial baseColor factor set to white successfully");
+
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testSceneResourcesUnlitMaterialBaseColor " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1010
+     * @tc.name      : testSceneResourcesEnvironmentEnvironmentRotation
+     * @tc.desc      : Verify the Environment environmentRotation property supports set and get
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('testSceneResourcesEnvironmentEnvironmentRotation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testSceneResourcesEnvironmentEnvironmentRotation";
+      console.info(msg + ' begin ');
+      try {
+        scene = await Scene.load();
+        expect(scene != null).assertTrue();
+
+        let env: scene3d.Environment = scene.environment;
+        expect(env != null).assertTrue();
+
+        // 验证默认旋转值
+        expect(env.environmentRotation != null).assertTrue();
+        expect(Math.abs(env.environmentRotation?.x! - 0.0)).assertLess(1e-6);
+        expect(Math.abs(env.environmentRotation?.y! - 0.0)).assertLess(1e-6);
+        expect(Math.abs(env.environmentRotation?.z! - 0.0)).assertLess(1e-6);
+        expect(Math.abs(env.environmentRotation?.w! - 1.0)).assertLess(1e-6);
+        console.info(msg + " Environment environmentRotation default value verified");
+
+        // 设置environmentRotation
+        let rotation: scene3d.Quaternion = {x: 0.0, y: 0.0, z: 0.0, w: 1.0};
+        env.environmentRotation = rotation;
+        expect(env.environmentRotation != null).assertTrue();
+        expect(Math.abs(env.environmentRotation?.x! - 0.0)).assertLess(1e-6);
+        expect(Math.abs(env.environmentRotation?.y! - 0.0)).assertLess(1e-6);
+        expect(Math.abs(env.environmentRotation?.z! - 0.0)).assertLess(1e-6);
+        expect(Math.abs(env.environmentRotation?.w! - 1.0)).assertLess(1e-6);
+        console.info(msg + " Environment environmentRotation set successfully");
+
+        // 测试不同的旋转值
+        let rotation2: scene3d.Quaternion = {x: 0.707, y: 0.0, z: 0.0, w: 0.707};
+        env.environmentRotation = rotation2;
+        expect(Math.abs(env.environmentRotation?.x! - 0.707)).assertLess(1e-6);
+        expect(Math.abs(env.environmentRotation?.w! - 0.707)).assertLess(1e-6);
+        console.info(msg + " Environment environmentRotation modified successfully");
+
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testSceneResourcesEnvironmentEnvironmentRotation " + JSON.stringify(err));
         expect().assertFail();
         done();
       }
