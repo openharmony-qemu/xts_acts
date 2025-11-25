@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,10 +16,10 @@
 
 import { AttrsManager } from '../../../ets/MainAbility/common/AttrsManager';
 import Utils, { BasePageConfig, PageConfig, TestValue, SetValue } from '../../../ets/MainAbility/common/Utils';
-import { expect, it, Level, Size, TestType } from '../../../../hypium';
+import { expect, it, Level, Size, TestType } from '../../../../hypium/index';
 import inspector from '@ohos.arkui.inspector';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import events_emitter from '@ohos.events.emitter'
+
 export type CallbackWithReturn = (data: BasePageConfig) => Promise<void>;
 
 export default class CommonTest {
@@ -33,7 +34,7 @@ export default class CommonTest {
     supportView.forEach(targetView => {
 
       //Obtain the last index of cases that need to be executed.
-      let lastIndex: Int= 0;
+      let lastIndex: number = 0;
       testValues.forEach((temp: TestValue, index: int) => {
         if (temp.exceptView.indexOf(targetView) < 0) {
           lastIndex = index;
@@ -60,12 +61,7 @@ export default class CommonTest {
             caseTag = pageConfig.testName + containerView + targetView + testValue.describe;
           }
 
-          /**
-           * @tc.number SUB_ACE_ETS_COMPONENT_COMMON_ATTRS_0100
-           * @tc.name caseTag, like:testPositionAlphabetIndexerSetNumber
-           * @tc.desc Test whether the state of different components
-           *            after modifying their properties meets expectations
-           */
+          
           it(caseTag, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             console.info('[' + caseTag + '] START');
             //Push page.
@@ -75,7 +71,7 @@ export default class CommonTest {
             pageConfig.containerView = containerView;
             pageConfig.testValue = testValue;
             await Utils.pushPage(pageConfig);
-            try {
+            //try {
               //If there is no call back functions, do nothing.
               if (functions.length === 0) {
                 done();
@@ -95,34 +91,23 @@ export default class CommonTest {
                 testValue: testValue,
               }
 
-              console.info('[' + caseTag + '] setValue : ' + data.testValue.setValue.colorBlend + pageConfig.componentKey);
-              let eventData: events_emitter.EventData = {
-                data: {
-                  "colorBlend": data.testValue.setValue.colorBlend
-                } as Record<string, Object | null | undefined>
-              }
-              let innerEvent: events_emitter.InnerEvent = {
-                eventId: 184,
-                priority: events_emitter.EventPriority.LOW
-              }
-              events_emitter.emit(innerEvent, eventData);
-              await Utils.sleep(2000);
+              console.info('[' + caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
+              AppStorage.setOrCreate<SetValue>('_zIndexButtonModifier', data.testValue.setValue);
+              await Utils.sleep(1000);
               //Check test result
               let strJson = inspector.getInspectorByKey(pageConfig.componentKey ?? '');
-              console.info('strJsonstrJsonstrJson' + strJson);
-              await Utils.sleep(2000);
               data.viewObj = JSON.parseJsonElement(strJson);
               await (functions[functions.length - 1] as CallbackWithReturn)(data);
 
-            } catch (err: Error) {
-              let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
-              console.error(msg);
-              console.error(err.stack);
-              if (err.name != 'AssertException') {
-                await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
-                expect(msg).assertTrue();
-              }
-            }
+            // } catch (err) {
+            //   let msg = 'CommonTest.initTest execute ' + caseTag + ' error:' + err
+            //   console.error(msg);
+            //   console.error(err.stack);
+            //   if (err.name != 'AssertException') {
+            //     await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
+            //     expect(msg).assertTrue();
+            //   }
+            // }
 
             await CommonTest.back(caseTag, sharePage, currentIndex, lastIndex);
 

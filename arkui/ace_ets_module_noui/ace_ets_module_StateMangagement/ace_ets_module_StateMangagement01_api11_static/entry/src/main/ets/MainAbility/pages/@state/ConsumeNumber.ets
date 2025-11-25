@@ -12,3 +12,114 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import CommonFunc from '../../../MainAbility/common/Common';
+import {
+  Entry,
+  Column,
+  Component,
+  Button,
+  ClickEvent,
+  Text,
+  Row,
+  Scroll,
+  ButtonType,
+  Flex,
+  FlexDirection,
+  ItemAlign,
+  FlexAlign,
+  Alignment,
+  TextAlign,
+  TextOverflow,
+  FontWeight,
+  Profiler,
+  setAppBgColor,
+  FlexWrap,$r
+} from '@ohos.arkui.component'
+import {
+  State,
+  Link,
+  Prop,Consume,Provide
+} from '@ohos.arkui.stateManagement'
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import inspector from '@ohos.arkui.inspector';
+import CommonFunc from '../../../MainAbility/common/Common';
+import common from '@ohos.app.ability.common';
+
+class Num5 {
+  public pages:number;
+  constructor(pages: number) {
+    this.pages = pages;
+  }
+}
+
+@Component
+struct Child_CN {
+  // @Consume装饰的变量通过相同的属性名绑定其祖先组件Ancestors内的@Provide装饰的变量
+  @Consume count: number | Object | String | Date | Boolean;
+
+  build() {
+    Column() {
+
+      Text("变量赋值number类型").height('5%')
+      Button('change')
+        .onClick(():void => {
+          this.count = 10;
+        })
+        .key('state1')
+        .height('5%')
+
+      Text("切换变量赋值Object").height('5%')
+      Button('change')
+        .onClick(():void => {
+          this.count = new Num5(20);
+        })
+        .key('state2')
+        .height('5%')
+
+      Text("切换变量赋值string").height('5%')
+      Button('change')
+        .onClick(():void => {
+          this.count = '30';
+        })
+        .key('state3')
+        .height('5%')
+
+      Text("切换变量赋值Date").height('5%')
+      Button('change')
+        .onClick(():void => {
+          this.count = new Date('2021-08-08');
+        })
+        .key('state4')
+        .height('5%')
+
+      Text("切换变量赋值Boolean").height('5%')
+      Button('change')
+        .onClick(():void => {
+          this.count = true;
+        })
+        .key('state5')
+        .height('5%')
+
+    }
+  }
+}
+
+
+
+@Entry
+@Component
+struct Ancestors_CN {
+  // @Provide装饰的联合类型count由入口组件Ancestors提供其后代组件
+  @Provide count: number | Object | String | Date | Boolean = 0;
+
+  build() {
+    Column() {
+      Text("count type of " + JSON.stringify(CommonFunc.getType(this.count)) + " number is " + JSON.stringify(this.count))
+        .fontSize(9).key('ConsumeNumber').height('5%')
+
+      Child_CN()
+
+    }.width('100%')
+  }
+}

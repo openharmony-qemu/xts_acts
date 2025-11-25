@@ -39,7 +39,7 @@ import {
 import {
   State,
   Link,
-  PropRef,Provide,Consume
+  Prop,Provide,Consume
 } from '@ohos.arkui.stateManagement'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -47,10 +47,14 @@ import inspector from '@ohos.arkui.inspector';
 import CommonFunc from '../../../MainAbility/common/Common';
 import common from '@ohos.app.ability.common';
 import resourceManager from '@ohos.resourceManager';
+import common from '@ohos.app.ability.common';
+
+
+
 
 @Component
 struct Child_CA {
-
+  // @Consume装饰的变量通过相同的属性名绑定其祖先组件Ancestors内的@Provide装饰的变量
   @Consume Array: Array<Number> | Array<boolean> | Boolean | Array<Resource>| Array<Int> ;
 
   build() {
@@ -96,7 +100,7 @@ struct Child_CA {
 @Entry
 @Component
 struct Ancestors_CA {
-
+  // @Provide装饰的联合类型count由入口组件Ancestors提供其后代组件
   @Provide Array: Array<Number> | Array<boolean> | Boolean | Array<Resource> | Array<Int>= [1];
 
   build() {
@@ -104,10 +108,11 @@ struct Ancestors_CA {
       Text("count type of " + JSON.stringify(CommonFunc.getType(this.Array)) + " number is " + JSON.stringify(this.Array))
         .fontSize(9).key('ConsumeArray').height('5%')
 
-
+      Text("count type of " + JSON.stringify(CommonFunc.getType(this.Array)) + " number is " + AppStorage.get<common.UIAbilityContext>('UIAbilityContext')?.resourceManager.getStringSync($r('app.string.number').id) ??'')
+      .fontSize(9).key('ConsumeArrayNew').height('5%')
 
       Child_CA()
 
-    }.width('100%')
-  }
+  }.width('100%')
+}
 }

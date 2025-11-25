@@ -69,22 +69,22 @@ export default function LinkNumber() {
         console.info("get LinkNumber state pages:" + JSON.stringify(pages));
         if (!("LinkNumber" == pages.name)) {
           console.info("get LinkNumber pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          //let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push LinkNumber page result:" + JSON.stringify(result));
+          // console.info("push LinkNumber page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push LinkNumber page error:" + err);
       }
       console.info("LinkNumber beforeEach end");
     });
-
+    
     /*
      * @tc.number   LinkNumber_static_0100
      * @tc.name     LinkNumber_static_0100
      * @tc.desc     LinkNumber_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkNumber_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('LinkNumber_static_0100 START');
@@ -101,12 +101,12 @@ it('LinkNumber_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info('[LinkNumber_static_0100] END');
       done();
     });
-
+    
     /*
      * @tc.number   LinkNumber_static_0200
      * @tc.name     LinkNumber_static_0200
      * @tc.desc     LinkNumber_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('LinkNumber_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('LinkNumber_static_0100 START');
@@ -123,7 +123,7 @@ it('LinkNumber_static_0200', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info('[LinkNumber_static_0100] END');
       done();
     });
-
+    
     /*
      * @tc.number   LinkNumber_static_0300
      * @tc.name     LinkNumber_static_0300
@@ -145,7 +145,7 @@ it('LinkNumber_static_0300', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info('[LinkNumber_static_0100] END');
       done();
     });
-
+    
     /*
      * @tc.number   LinkNumber_static_0400
      * @tc.name     LinkNumber_static_0400
@@ -167,7 +167,7 @@ it('LinkNumber_static_0400', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info('[LinkNumber_static_0100] END');
       done();
     });
-
+    
     /*
      * @tc.number   LinkNumber_static_0500
      * @tc.name     LinkNumber_static_0500

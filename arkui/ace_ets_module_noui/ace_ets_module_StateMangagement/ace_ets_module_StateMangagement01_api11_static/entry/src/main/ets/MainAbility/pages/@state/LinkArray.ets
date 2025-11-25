@@ -40,7 +40,7 @@ import {
 import {
   State,
   Link,
-  PropRef,
+  Prop,
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -48,7 +48,47 @@ import inspector from '@ohos.arkui.inspector';
 import CommonFunc from '../../../MainAbility/common/Common';
 import common from '@ohos.app.ability.common';
 
+@Component
+struct Child_CM {
+  @Link Array: Array<Number> | Array<boolean> | Boolean | Array<Resource> = [1.0]
 
+
+  build() {
+    Column() {
+      Button('change')
+        .onClick((e: ClickEvent) => {
+          this.Array = [10.0];
+        })
+        .key('state1')
+        .height('5%')
+
+      Text("切换变量Array<boolean>类型[1]-->[true]").height('5%')
+      Button('change')
+        .onClick((e: ClickEvent) => {
+          this.Array = [true];
+        })
+        .key('state2')
+        .height('5%')
+
+      Text("切换变量boolean类型[1]-->true").height('5%')
+      Button('change')
+        .onClick((e: ClickEvent) => {
+          this.Array = true;
+        })
+        .key('state3')
+        .height('5%')
+
+      Text("切换变量Array<Resource>类型[1]-->Array<Resource>").height('5%')
+      Button('change')
+        .onClick((e: ClickEvent) => {
+          this.Array = [$r('app.string.number')];
+        })
+        .key('state4')
+        .height('5%')
+
+    }.width('100%')
+  }
+}
 
 @Entry
 @Component
@@ -69,7 +109,7 @@ struct Index_CM {
       Text("count type of " + JSON.stringify(CommonFunc.getType(this.Array)) + " number is " )
         .fontSize(9).key('LinkArrayNew').height('5%')
 
-
+      Child_CM({Array: this.Array})
 
     }
   }

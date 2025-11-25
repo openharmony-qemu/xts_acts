@@ -1,5 +1,6 @@
+'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,11 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Component, Column, $r, $rawfile,AlertDialogParamWithConfirm, WebviewController, WebResourceResponse, Text,OnResourceLoadEvent, Progress, Web, Visibility,OnPromptEvent } from '@ohos.arkui.component'
+import { Entry, Component, Column, $r, $rawfile, WebviewController, WebResourceResponse, Text, Progress, Web, Visibility } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import Log from '../../common/Log';
 import web_webview from '@ohos.web.webview';
-import {BusinessError} from '@ohos.base'
+
 @Entry
 @Component
 struct WebComponent {
@@ -43,17 +44,8 @@ struct WebComponent {
         .height(500)
         .padding(20)
         .blur(2)
-        .onControllerAttached(() => {
-          console.log("onControllerAttached");
-          try {
-            let userAgent = this.controller.getUserAgent() + "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36";
-            this.controller.setCustomUserAgent(userAgent);
-          } catch (error) {
-            console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
-          }
-        })
         .initialScale(2)
-        .onPrompt((event: OnPromptEvent): boolean => {
+        .onPrompt((event) => {
           console.info('onPrompt url: ', event.url);
           console.info('onPrompt message: ', event.message);
           console.info('onPrompt result: ', event.result);
@@ -78,12 +70,12 @@ struct WebComponent {
             this.hideProgress = false;
           }
         })
-        .onResourceLoad((event: OnResourceLoadEvent) => {
+        .onResourceLoad((event) => {
           console.info('onResourceLoad url: ', event.url);
+          // return true;
         })
         .onPageEnd(e => {
           // test()在index.html中定义
-          this.controller.runJavaScript('test()');
           console.info('url: ', e.url);
         })
         .onHttpAuthRequest((event) => {
@@ -105,28 +97,6 @@ struct WebComponent {
           }
           return this.webResourceResponse;
         })
-               .onContextMenuShow((event) => {
-                 console.info("event.param = " + JSON.stringify(event.param));
-                   console.info("event.result = " + JSON.stringify(event.result));
-                 return true;
-                 })
-                 .onPermissionRequest((event) => {
-                   this.getUIContext().showAlertDialog({
-                     title: 'title',
-                     message: 'text',
-                     confirm: {
-                       value: 'onConfirm',
-                       action: () => {
-                         event.request.grant(event.request.getAccessibleResource());
-                         console.info('onPermissionRequest getAccessibleResource: ', event.request.getAccessibleResource());
-                         console.info('onPermissionRequest getOrigin: ', event.request.getOrigin());
-                       }
-                     },
-                     cancel: () => {
-                       event.request.deny();
-                     }
-                   } as AlertDialogParamWithConfirm)
-                 })
         .onScaleChange((event) => {
           console.info('onScaleChange oldScale: ', event.oldScale);
           console.info('onScaleChange newScale: ', event.newScale);
@@ -142,15 +112,11 @@ struct WebComponent {
             console.log('getResponseMimeType:' + event.response.getResponseMimeType());
             console.log('getResponseCode:' + event.response.getResponseCode());
             console.log('getReasonMessage:' + event.response.getReasonMessage());
-
             console.log('web existCookie:' + web_webview.WebCookieManager.existCookie());
             console.log('web isCookieAllowed:' + web_webview.WebCookieManager.isCookieAllowed());
             console.log('web isThirdPartyCookieAllowed:' + web_webview.WebCookieManager
               .isThirdPartyCookieAllowed());
-
             console.log('web getWebId:' + this.controllerTwo.getWebId());
-            console.log('web getTitle:' + this.controller.getTitle());
-            console.log('web getPageHeight:' + this.controller.getPageHeight());
           } catch (error) {
             console.info('the error is ' + JSON.stringify(error));
           }

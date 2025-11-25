@@ -1,5 +1,6 @@
 
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component,Builder,Text,ColumnOptions,WrappedBuilder,Flex,CustomBuilderT,
+import { Entry, Column, Component,Builder,Text,ColumnOptions,WrappedBuilder,Flex,
   FontWeight,Color,Padding,FlexDirection,ItemAlign,Row,Button,NodeContainer,FlexAlign,
   TextAlign
 } from '@ohos.arkui.component'
@@ -24,12 +25,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { BusinessError } from '@ohos.base';
 const TEST_TAG : string = "FrameNode"
-class Params{
-  text:string=''
-  constructor(text:string) {
-    this.text=text
-  }
-}
+
 
 @Component
 struct TestComponent {
@@ -53,13 +49,7 @@ struct TestComponent {
 }
 @Builder
 function buildComponent() {
-  Column() {
-    Text('This is a BuilderNode.')
-      .fontSize(16)
-      .fontWeight(FontWeight.Bold)
-  }
-  .width('100%')
-  .backgroundColor(Color.Gray)
+  TestComponent()
 }
 
 class MyNodeController extends NodeController {
@@ -80,8 +70,10 @@ class MyNodeController extends NodeController {
       const rootRenderNode = this.rootNode?.getRenderNode();
       let childNode = new FrameNode(uiContext);
       this.builderNode = new BuilderNode<[]>(uiContext, { selfIdealSize: { width: 200, height: 100 } })!;
+      
+
       this.childList.push(childNode);
-      rootRenderNode!.appendChild(childNode!.getRenderNode()!);
+      rootRenderNode!.appendChild(this.builderNode!.getFrameNode()!.getRenderNode()!);
     }
     return this.rootNode;
   }
@@ -91,19 +83,20 @@ class MyNodeController extends NodeController {
 
     const rootRenderNode = cNode.getRenderNode();
     this.builderNode = new BuilderNode<[]>(this.uiContext!, { selfIdealSize: { width: 200, height: 100 } })!;
+    
     rootRenderNode!.appendChild(this.builderNode!.getFrameNode()!.getRenderNode()!);
     this.childrenCount = this.childrenCount + 1;
   }
-  insertChildAfter(index : int)
+  insertChildAfter(index : number)
   {
     let insertNode = new FrameNode(this.uiContext!);
-    let childNode = this.rootNode!.getChild(index);
+    let childNode = this.rootNode!.getChild(Double.toInt(index));
     this.rootNode!.insertChildAfter(insertNode,childNode);
     this.childrenCount = this.childrenCount + 1;
   }
-  removeChild(index : int)
+  removeChild(index : number)
   {
-    let childNode = this.rootNode!.getChild(index);
+    let childNode = this.rootNode!.getChild(Double.toInt(index));
     if(childNode == null)
     {
       console.log(`${TEST_TAG} getchild at index {${index}} : fail`);
@@ -265,7 +258,7 @@ class MyNodeController extends NodeController {
 @Component
 struct FrameNodeTest {
   private myNodeController: MyNodeController = new MyNodeController();
-  @State index : int = 0;
+  @State index : number = 0;
 
   @State textS: string = "";
 
@@ -273,7 +266,7 @@ struct FrameNodeTest {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.SpaceBetween }) {
       Column(){
         Text("result " + this.textS)
-          .textAlign(TextAlign.Center).borderRadius(10).backgroundColor(Color.Red).key("resultKey")
+          .textAlign(TextAlign.Center).borderRadius(10).backgroundColor(0xFFFFFF).key("resultKey")
           .width('100%').fontSize(16)
         Row()
         {
@@ -283,7 +276,7 @@ struct FrameNodeTest {
             .onClick((e:ClickEvent)=>{this.index--;})
         }
         Text("Current index is " + this.index)
-          .textAlign(TextAlign.Center).borderRadius(10).backgroundColor(Color.Red)
+          .textAlign(TextAlign.Center).borderRadius(10).backgroundColor(0xFFFFFF)
           .width('100%').fontSize(16)
       }
       Button("appendChild")
@@ -361,7 +354,7 @@ struct FrameNodeTest {
         })
       Column(){
         Text("This is a NodeContainer.")
-          .textAlign(TextAlign.Center).borderRadius(10).backgroundColor(Color.Red)
+          .textAlign(TextAlign.Center).borderRadius(10).backgroundColor(0xFFFFFF)
           .width('100%').fontSize(16)
         NodeContainer(this.myNodeController)
           .borderWidth(1)

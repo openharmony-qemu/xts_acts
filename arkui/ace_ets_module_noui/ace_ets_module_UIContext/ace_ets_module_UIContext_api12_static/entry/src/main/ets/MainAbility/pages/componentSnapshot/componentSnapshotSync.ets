@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -32,7 +33,7 @@ struct componentSnapshotSync{
   @State code3:string =''
   @State code4:string =''
   build() {
-      Column({space:5} as ColumnOptions){
+    Column({space:5} as ColumnOptions){
       Text(''+this.code).key('ERRORcODE')
       Text(''+this.code1).key('ERRORcODE1')
       Text(''+this.code2).key('ERRORcODE2')
@@ -50,16 +51,10 @@ struct componentSnapshotSync{
             .id('gPromise')
             .onClick((e:ClickEvent)=>{
               try {
-                console.log('++++++++++++++++++++1')
                 let pixelmap = componentSnapshot.getSync('image2',{scale:1,waitUntilRenderFinished:true});
-                if (pixelmap) {
-                  console.log('++++++++++++++++++++1pixelmap'+pixelmap)
-                  this.pixmap = pixelmap as PixelMap
-                }
+                this.pixmap = pixelmap as PixelMap
               } catch (error:Error) {
-                console.log('++++++++++++++++++++1Error')
                 this.code = error.code.toString()
-                console.log('++++++++++++++++++++1Error'+error.code.toString()) //错误码不对 0
               }
             }).height('5%')
           Button('getSync-0.1')
@@ -67,9 +62,7 @@ struct componentSnapshotSync{
             .onClick((e:ClickEvent)=>{
               try {
                 let pixelmap =componentSnapshot.getSync('-0.1',{scale:4,waitUntilRenderFinished:true});
-                if (pixelmap) {
-                  this.pixmap = pixelmap as PixelMap
-                }
+                this.pixmap = pixelmap as PixelMap
               } catch (error:Error) {
                 this.code1 = error.code.toString()
               }
@@ -79,9 +72,7 @@ struct componentSnapshotSync{
             .onClick((e:ClickEvent)=>{
               try {
                 let pixelmap = componentSnapshot.getSync('-2',{scale:4,waitUntilRenderFinished:false});
-                if (pixelmap) {
-                  this.pixmap = pixelmap as PixelMap
-                }
+                this.pixmap = pixelmap as PixelMap
               } catch (error:Error) {
                 this.code2 = error.code.toString()
               }
@@ -91,9 +82,7 @@ struct componentSnapshotSync{
             .onClick((e:ClickEvent)=>{
               try {
                 let pixelmap = componentSnapshot.getSync('ab',{scale:0.5,waitUntilRenderFinished:true});
-                if (pixelmap) {
-                  this.pixmap = pixelmap as PixelMap
-                }
+                this.pixmap = pixelmap as PixelMap
               } catch (error:Error) {
                 this.code3 = error.code.toString()
               }
@@ -103,9 +92,7 @@ struct componentSnapshotSync{
             .onClick((e:ClickEvent)=>{
               try {
                 let pixelmap = componentSnapshot.getSync('1',{scale:1,waitUntilRenderFinished:true});
-                if (pixelmap) {
-                  this.pixmap = pixelmap as PixelMap
-                }
+                this.pixmap = pixelmap as PixelMap
               } catch (error:Error) {
                 this.code4 = error.code.toString()
               }
@@ -114,5 +101,5 @@ struct componentSnapshotSync{
       }
     }.width('100%').height('100%')
   }
-  
+
 }

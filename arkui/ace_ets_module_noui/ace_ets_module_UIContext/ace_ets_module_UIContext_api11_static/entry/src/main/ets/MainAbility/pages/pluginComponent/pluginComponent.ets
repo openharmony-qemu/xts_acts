@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,14 +14,15 @@
  * limitations under the License.
  */
 
-// import onListener from "../../common/plugin_component.js"
+
 import {
   Entry, Component, Flex, FlexDirection, ItemAlign, FlexAlign,
   Alignment, TextAlign, TextOverflow, PluginErrorData,
   Column, ColumnOptions, Row, Builder, TouchEvent,Color,
-  WrappedBuilder, NodeContainer, ForEach, PluginComponent, PluginComponentTemplate, RecordData, PluginComponentOptions,
+  WrappedBuilder, NodeContainer, ForEach, PluginComponent, PluginComponentTemplate, PluginComponentOptions,
   Text, Button, FontWeight, ClickEvent, Margin, WidthBreakpoint, HeightBreakpoint, CustomBuilderT
 } from '@ohos.arkui.component'
+import { RecordData } from '@ohos.base';
 import { StorageLink } from '@ohos.arkui.stateManagement';
 
 interface plugincountObj {
@@ -47,7 +49,7 @@ struct PluginUserExample {
         .height(100)
         .margin({ top: 20 } as Margin)
         .onClick((e:ClickEvent) => {
-          // plugin.onListener()
+
           console.log("Button('Register Request Listener')")
         })
       Button('Request')
@@ -56,7 +58,7 @@ struct PluginUserExample {
         .height(100)
         .margin({ top: 20 } as Margin)
         .onClick((e:ClickEvent) => {
-          // plugin.Request()
+
           console.log("Button('Request')")
         })
       ForEach(this.plugincount, (item: plugincountObj) => {

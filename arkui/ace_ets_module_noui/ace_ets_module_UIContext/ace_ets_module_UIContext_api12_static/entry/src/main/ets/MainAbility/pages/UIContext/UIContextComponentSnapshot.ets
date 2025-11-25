@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,7 +17,7 @@ import image from '@ohos.multimedia.image';
 import {
   Entry, Component,
   Column, ColumnOptions, Row, RowOptions, $r,
-  Text, Button, FontWeight, ClickEvent, Margin,  Image, ImageFit, Color,PixelMap
+  Text, Button, FontWeight, ClickEvent, Margin,  Image, ImageFit, Color,
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 @Entry
@@ -47,8 +48,10 @@ struct UIContextComponentSnapshot{
             .onClick((e:ClickEvent)=>{
               try {
                 let pixelmap = this.getUIContext().getComponentSnapshot().getSync('-0.1',{scale:4,waitUntilRenderFinished:true});
-                this.pixmap = pixelmap as PixelMap
-              } catch (error:Error) {
+                if(pixelmap) {
+                    this.pixmap = pixelmap
+                }
+              } catch (error) {
                 this.code = error!.code.toString()
               }
             }).height('5%')
@@ -57,8 +60,10 @@ struct UIContextComponentSnapshot{
             .onClick((e:ClickEvent)=>{
               try {
                 let pixelmap = this.getUIContext().getComponentSnapshot().getSync('1',{scale:1,waitUntilRenderFinished:true});
-                this.pixmap = pixelmap as PixelMap
-              } catch (error:Error) {
+                if(pixelmap) {
+                    this.pixmap = pixelmap
+                }
+              } catch (error) {
                 this.code1 = error!.code.toString()
               }
             }).height('5%')
@@ -67,8 +72,10 @@ struct UIContextComponentSnapshot{
             .onClick((e:ClickEvent)=>{
               try {
                 let pixelmap = this.getUIContext().getComponentSnapshot().getSync('-2',{scale:4,waitUntilRenderFinished:false});
-                this.pixmap = pixelmap as PixelMap
-              } catch (error:Error) {
+                if(pixelmap) {
+                    this.pixmap = pixelmap
+                }
+              } catch (error) {
                 this.code2 = error!.code.toString()
               }
             }).height('5%')
@@ -77,8 +84,10 @@ struct UIContextComponentSnapshot{
             .onClick((e:ClickEvent)=>{
               try {
                 let pixelmap = this.getUIContext().getComponentSnapshot().getSync('ab',{scale:0.5,waitUntilRenderFinished:true});
-                this.pixmap = pixelmap as PixelMap
-              } catch (error:Error) {
+                if(pixelmap) {
+                    this.pixmap = pixelmap
+                }
+              } catch (error) {
                 this.code3 = error!.code.toString()
               }
             }).height('5%')

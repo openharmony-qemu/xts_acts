@@ -67,6 +67,9 @@ export default class CommonFunc {
     }
   }
 
+  // Instead of CommonFunc.getType
+  // Function.call is not supported (arkts-no-func-apply-call)
+  // Prototype assignment is not supported (arkts-no-prototype-assignment)
   static getType<T>( value: T ):string{
     let result: string;
     if ( value === undefined ) {
@@ -74,11 +77,37 @@ export default class CommonFunc {
     } else if ( value === null ) {
       result = '[object Null]';
     } else {
-      result = '';
+      if (value instanceof Array) {
+        console.log('this.Array 是数组类型');
+        result = '[object Array]';
+      }else if(value instanceof Boolean){
+        console.log('this.Array 是布尔类型');
+        result = '[object Boolean]';
+      }else{
+        result = '';
+      }
+      // const o: ObjectWithToString = Object(value);
+      // const origin = o.toObjectString;
+      // o.toObjectString = (new BaseObject()).toString;
+      // result = o.toObjectString() ?? '';
+      // o.toObjectString = origin;
+      // result = '';
     }
     return result;
   }
 
+  // static setScreenOrientation(orientation: screen.Orientation) {
+  //   screen.getAllScreens().then((data: Array<screen.Screen>) => {
+  //     console.log('Succeeded in getting all screens. Data:'+ JSON.stringify(data));
+  //     return data[0] as screen.Screen;
+  //   }).then((screenClass: screen.Screen) => {
+  //     return screenClass.setOrientation(orientation);
+  //   }).then(() => {
+  //     console.log('Succeeded in setting the vertical orientation.');
+  //   }).catch((err: Error) => {
+  //     console.error('Failed to set the vertical orientation. Cause: ' + err.toString());
+  //   });
+  // }
 }
 
 interface ObjectWithToString {

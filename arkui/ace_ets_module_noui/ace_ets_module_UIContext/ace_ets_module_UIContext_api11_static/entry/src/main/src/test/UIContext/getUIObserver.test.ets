@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,7 +15,7 @@
  */
 import router from '@ohos.router';
 import { UIContext, AtomicServiceBar, Router, KeyboardAvoidMode } from '@ohos.arkui.UIContext';
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -27,12 +28,6 @@ interface optionsObj {
 
 export default function getUIObserver() {
   describe('getUIObserver', () => {
-    beforeAll(() => {
-      console.info("getUIObserver beforeEach start");
-
-      await UtilsTest.startAbility("com.arkui.ace.UIContext.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
-    });
     beforeEach(async (): Promise<void> => {
       console.info("getUIObserver beforeEach start");
       let options: router.RouterOptions = {
@@ -45,11 +40,11 @@ export default function getUIObserver() {
         console.info("get getUIObserver state pages:" + JSON.stringify(pages));
         if (!("getUIObserver" == pages.name)) {
           console.info("get getUIObserver pages.name:" + '');
-          // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
-          // let result = await routerInstance.pushUrl(options);
+          
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push getUIObserver page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push getUIObserver page error:" + err);
@@ -58,17 +53,16 @@ export default function getUIObserver() {
     }); 
 
 
-    /**
-     * @tc.number    SUB_ACE_getUIObserver_0100
-     * @tc.name      getUIObserver_0100
-     * @tc.desc      getUIObserver api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+    
+
+
+    /*
+     * @tc.number   getUIObserver_static_0100
+     * @tc.name     getUIObserver_static_0100
+     * @tc.desc     getUIObserver_static_0100
+     * @tc.level    Level.LEVEL0
      */
-
-
-    it('getUIObserver_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('getUIObserver_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('getUIObserver_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(500);

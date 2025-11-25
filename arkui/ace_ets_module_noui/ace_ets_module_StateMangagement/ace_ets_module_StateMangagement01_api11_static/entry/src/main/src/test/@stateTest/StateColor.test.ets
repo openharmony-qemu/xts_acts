@@ -69,10 +69,10 @@ export default function StateColor() {
         console.info("get StateColor state pages:" + JSON.stringify(pages));
         if (!("StateColor" == pages.name)) {
           console.info("get StateColor pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          //let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push StateColor page result:" + JSON.stringify(result));
+          // console.info("push StateColor page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push StateColor page error:" + err);
@@ -80,11 +80,13 @@ export default function StateColor() {
       console.info("StateColor beforeEach end");
     });
 
+
+    
     /*
      * @tc.number   StateColor_static_0100
      * @tc.name     StateColor_static_0100
      * @tc.desc     StateColor_static_0100
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StateColor_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StateColor_static_0100 START');
@@ -101,12 +103,12 @@ it('StateColor_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info('[StateColor_static_0100] END');
       done();
     });
-
+    
     /*
      * @tc.number   StateColor_static_0200
      * @tc.name     StateColor_static_0200
      * @tc.desc     StateColor_static_0200
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StateColor_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StateColor_static_0100 START');
@@ -123,12 +125,12 @@ it('StateColor_static_0200', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info('[StateColor_static_0100] END');
       done();
     });
-
+    
     /*
      * @tc.number   StateColor_static_0300
      * @tc.name     StateColor_static_0300
      * @tc.desc     StateColor_static_0300
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StateColor_static_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StateColor_static_0100 START');
@@ -145,12 +147,12 @@ it('StateColor_static_0300', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info('[StateColor_static_0100] END');
       done();
     });
-
+    
     /*
      * @tc.number   StateColor_static_0400
      * @tc.name     StateColor_static_0400
      * @tc.desc     StateColor_static_0400
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StateColor_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StateColor_static_0100 START');
@@ -167,12 +169,12 @@ it('StateColor_static_0400', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info('[StateColor_static_0100] END');
       done();
     });
-
+    
     /*
      * @tc.number   StateColor_static_0500
      * @tc.name     StateColor_static_0500
      * @tc.desc     StateColor_static_0500
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StateColor_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StateColor_static_0100 START');
@@ -190,11 +192,13 @@ it('StateColor_static_0500', Level.LEVEL0, async (done: () => void): Promise<voi
       done();
     });
 
+
+    
     /*
      * @tc.number   StateColor_static_0600
      * @tc.name     StateColor_static_0600
      * @tc.desc     StateColor_static_0600
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StateColor_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StateColor_static_0100 START');
