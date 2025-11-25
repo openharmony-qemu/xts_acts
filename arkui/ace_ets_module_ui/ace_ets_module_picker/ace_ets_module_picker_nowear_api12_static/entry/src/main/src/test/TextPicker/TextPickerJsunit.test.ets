@@ -1,5 +1,6 @@
+'use static';
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -57,8 +58,7 @@ export default function textpickerJsunit() {
     });
 
     
-    
-/*
+    /*
      * @tc.number   ArkUI_textpicker_static_001
      * @tc.name     ArkUI_textpicker_static_001
      * @tc.desc     ArkUI_textpicker_static_001
@@ -74,13 +74,12 @@ it('ArkUI_textpicker_static_001', Level.LEVEL1, async (done: () => void): Promis
       let obj1 = JSON.parseJsonElement(strJson1);
       console.info("[ArkUI_textpicker_static_001] obj1:" + JSON.stringify(obj1.getElement('$attrs')));
       //得到json值与 设置不一致，与原生json返回做对比验证
-      expect(JSON.stringify(obj.getElement('$attrs').getElement('selectedIndex'))).assertEqual(JSON.stringify(obj1.getElement('$attrs').getElement('selectedIndex')));
+      expect(JSON.stringify(obj.getElement('$attrs').getString('selectedIndex'))).assertEqual(JSON.stringify(obj1.getElement('$attrs').getString('selectedIndex')));
       done();
     });
 
     
-    
-/*
+    /*
      * @tc.number   ArkUI_textpicker_static_002
      * @tc.name     ArkUI_textpicker_static_002
      * @tc.desc     ArkUI_textpicker_static_002
@@ -102,8 +101,7 @@ it('ArkUI_textpicker_static_002', Level.LEVEL1, async (done: () => void): Promis
     });
 
     
-    
-/*
+    /*
      * @tc.number   ArkUI_textpicker_static_003
      * @tc.name     ArkUI_textpicker_static_003
      * @tc.desc     ArkUI_textpicker_static_003
@@ -125,8 +123,7 @@ it('ArkUI_textpicker_static_003', Level.LEVEL1, async (done: () => void): Promis
     });
 
     
-    
-/*
+    /*
      * @tc.number   ArkUI_textpicker_static_004
      * @tc.name     ArkUI_textpicker_static_004
      * @tc.desc     ArkUI_textpicker_static_004
@@ -148,8 +145,7 @@ it('ArkUI_textpicker_static_004', Level.LEVEL1, async (done: () => void): Promis
     });
 
     
-    
-/*
+    /*
      * @tc.number   ArkUI_textpicker_static_005
      * @tc.name     ArkUI_textpicker_static_005
      * @tc.desc     ArkUI_textpicker_static_005
@@ -167,8 +163,7 @@ it('ArkUI_textpicker_static_005', Level.LEVEL1, async (done: () => void): Promis
     });
 
     
-    
-/*
+    /*
      * @tc.number   ArkUI_textpicker_static_006
      * @tc.name     ArkUI_textpicker_static_006
      * @tc.desc     ArkUI_textpicker_static_006

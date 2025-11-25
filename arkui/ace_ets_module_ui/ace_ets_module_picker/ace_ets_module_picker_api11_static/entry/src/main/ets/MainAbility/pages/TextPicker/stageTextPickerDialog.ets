@@ -1,5 +1,6 @@
+'use static';
 /*
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,7 +14,7 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { Entry, Component, Column, Text, Rating, Margin, Row, TextPickerResult, ClickEvent, Alignment, TextAlign, TextOverflow } from '@ohos.arkui.component';
 import { UIContext } from '@ohos.arkui.UIContext';
 import { State, AppStorage } from '@ohos.arkui.stateManagement'
@@ -57,7 +58,7 @@ struct stageTextPickerDialog {
               let backData: events_emitter.EventData = {
                 data: {
                   "STATUS": true
-                } as Record<string, Object | null | undefined>
+                } as Record<String, RecordData>
               }
               let backEvent: events_emitter.InnerEvent = {
                 eventId: 60220,
@@ -102,7 +103,7 @@ struct stageTextPickerDialog {
               let backData1: events_emitter.EventData = {
                 data: {
                   "STATUS": 10
-                } as Record<string, Object | null | undefined>
+                } as Record<String, RecordData>
               }
               let backEvent1: events_emitter.InnerEvent = {
                 eventId: 60221,
@@ -148,7 +149,7 @@ struct stageTextPickerDialog {
               let backData2: events_emitter.EventData = {
                 data: {
                   "STATUS": "STATUS"
-                } as Record<string, Object | null | undefined>
+                } as Record<String, RecordData>
               }
               let backEvent2: events_emitter.InnerEvent = {
                 eventId: 60222,

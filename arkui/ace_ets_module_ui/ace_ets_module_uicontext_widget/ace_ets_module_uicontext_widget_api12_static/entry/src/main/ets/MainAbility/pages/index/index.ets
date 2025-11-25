@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,10 +26,8 @@ struct Index {
   aboutToAppear(){
     try {
       let router1 = this.getUIContext().getRouter();
-      let uiContext = this.getUIContext();
       AppStorage.setOrCreate<Router>('router', router1 );
-      AppStorage.setOrCreate<UIContext>('uiContext', uiContext);
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }

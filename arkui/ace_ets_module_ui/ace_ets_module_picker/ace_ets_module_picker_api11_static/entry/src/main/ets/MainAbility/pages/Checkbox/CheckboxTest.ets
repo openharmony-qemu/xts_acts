@@ -1,5 +1,6 @@
+'use static';
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -80,13 +81,6 @@ struct Index {
         }
 
         Flex({ justifyContent: FlexAlign.Center, alignItems: ItemAlign.Center }) {
-          Checkbox({ name: 'checkbox3', group: 'checkboxGroup' })
-            .key("ArkUX_CheckBox_Visual_0130")
-            .width(30)
-            .height(30)
-            .enabled(false)
-            .select(true)
-            .shape(undefined)
           Text('Checkbox3').fontSize(20)
         }
       }

@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,11 +14,11 @@
  * limitations under the License.
  */
 
-import { TextCase, TextDecorationType, Resource, DatePickerOptions } from '@ohos.arkui.component';
+import { TextCase, TextDecorationType, Resource } from '@ohos.arkui.component';
 
 export class Message {
   name: string = ''
-  value: string | number | TextCase | TextDecorationType | boolean | Resource | Array<string> | DatePickerOptions | double = ''
+  value: string | number | TextCase | TextDecorationType | boolean | Resource | Array<string> = ''
 }
 
 export type Callback = (message: Message) => void

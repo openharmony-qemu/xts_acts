@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,7 +17,7 @@ import { Entry,Column,Component,Button,Video,VideoController,FlexDirection,Flex,
 import { State } from '@ohos.arkui.stateManagement';
 import events_emitter from '@ohos.events.emitter';
 import Log from '../../common/Log';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 
 const TAG = 'ets_apiLack_add';
 
@@ -60,7 +61,7 @@ struct VideoOnFullscreenChange {
             let backData: events_emitter.EventData = {
               data: {
                 "result": "success"
-              } as Record<String,undefined|null|Object>
+              } as Record<String, RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 60227,
@@ -68,7 +69,8 @@ struct VideoOnFullscreenChange {
             }
             console.info("video_101 onClick start to emit action state")
             events_emitter.emit(backEvent, backData)
-          } catch (err: BusinessError) {
+          } catch (err) {
+            err = err as BusinessError;
             console.info("video_101 onClick emit action state err: " + JSON.stringify((err as BusinessError)?.message))
           }
         })

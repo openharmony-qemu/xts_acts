@@ -1,5 +1,6 @@
-/**
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+'use static';
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { MessageManager, Callback, Message } from '../../common/MessageManager';
 import {
   Entry,
   Component,
@@ -25,42 +27,50 @@ import {
   ColumnOptions,
   SliderChangeMode,
   Slider,
-  Padding,ResourceColor, LinearGradient,Length,
+  Padding,
   SliderStyle,
   FlexAlign
 } from '@ohos.arkui.component';
-import { State, AppStorage,StoragePropRef } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct SliderExample {
-  @State outSetValueOne: number = 40
-  @StoragePropRef('style') style: SliderStyle = SliderStyle.InSet
-  @StoragePropRef('directionT') directionT: Axis = Axis.Vertical
-  @StoragePropRef('reverse') reverse: boolean = true
-  @StoragePropRef('min') min: number = 2
-  @StoragePropRef('max') max: number = 1000
-  @StoragePropRef('step') step: number = 0.7
-  @State inSetValueOne: number = 40
-  @State outSetValueTwo: number = 40
-  @State inSetValueTwo: number = 40
-  @State vOutSetValueOne: number = 40
-  @StoragePropRef('vInSetValueOne') vInSetValueOne: number = 40
-  @State vInSetValueOne1: number = 40
-  @State vOutSetValueTwo: number = 40
-  @State vInSetValueTwo: number = 40
-  @StoragePropRef('blockColor') blockColor: ResourceColor = "#191970"
-  @StoragePropRef('trackColor') trackColor: ResourceColor | LinearGradient = "#ADD8E6"
-  @StoragePropRef('selectedColor') selectedColor: ResourceColor = "#191970"
+  @State outSetValueOne: double = 40
+  @State style: SliderStyle = SliderStyle.InSet
+  @State directionT: Axis = Axis.Vertical
+  @State reverse: boolean = true
+  @State min: double = 2
+  @State max: double = 1000
+  @State step: double = 0.7
+  @State inSetValueOne: double = 40
+  @State outSetValueTwo: double = 40
+  @State inSetValueTwo: double = 40
+  @State vOutSetValueOne: double = 40
+  @State vInSetValueOne: double = 40
+  @State vInSetValueOne1: double = 40
+  @State vOutSetValueTwo: double = 40
+  @State vInSetValueTwo: double = 40
+  @State blockColor: string = "#191970"
+  @State trackColor: string = "#ADD8E6"
+  @State selectedColor: string = "#191970"
   @State showSteps: boolean = true
   @State showTips: boolean = true
-  @StoragePropRef('trackThickness') trackThickness: Length = '10px'
+  @State trackThickness: string = '10px'
   @State modeT: string = 'mode'
+  messageManager: MessageManager = new MessageManager()
+
+  onPageShow() {
+    console.info('slider onPageShow')
+
+    AppStorage.setOrCreate('messageManager', this.messageManager)
+
+  }
 
   build() {
     Column() {
       Row(){
-        Text(this.vInSetValueOne + "").fontSize(9).fontColor(0xCCCCCC).key('tex').id('tex')
-        Text(this.modeT).fontSize(9).fontColor(0xCCCCCC).key('modeT').id('modeT')
+        Text(this.vInSetValueOne + "").fontSize(9).fontColor(0xCCCCCC).key('tex')
+        Text(this.modeT).fontSize(9).fontColor(0xCCCCCC).key('modeT')
         Slider({
           value: this.vOutSetValueOne,
           style: SliderStyle.OutSet,
@@ -72,12 +82,11 @@ struct SliderExample {
           .showTips(this.showTips)
           .trackThickness(this.trackThickness)
           .showSteps(this.showSteps)
-          .onChange((value: number, mode: SliderChangeMode) => {
+          .onChange((value: double, mode: SliderChangeMode) => {
             this.vOutSetValueOne = value
             console.info('value:' + value + 'mode:' + mode.toString())
           })
           .key('sliderA')
-          .id('sliderA')
 
       }
       .justifyContent(FlexAlign.Start)
@@ -92,16 +101,16 @@ struct SliderExample {
           max: this.max,
           step: this.step
         }).showTips(true)
-          .onChange((value: number, mode: SliderChangeMode) => {
-            AppStorage.setOrCreate<number>("vInSetValueOne",value)
+          .onChange((value: double, mode: SliderChangeMode) => {
+            this.vInSetValueOne = value
             console.info('value:' + value + 'm`ode:' + mode.toString())
-          }).key('sliderConstructor').id('sliderConstructor')
+          }).key('sliderConstructor')
         Slider().showTips(true)
-          .onChange((value: number, mode: SliderChangeMode) => {
+          .onChange((value: double, mode: SliderChangeMode) => {
             this.vInSetValueOne1 = value
             this.modeT = mode.toString()
-            console.info('11111value:' + value + 'm`ode:' + mode.toString())
-          }).key('sliderConstructor2').id('sliderConstructor2')
+            console.info('value:' + value + 'm`ode:' + mode.toString())
+          }).key('sliderConstructor2')
       }
       .height('40%')
       .width('90%')

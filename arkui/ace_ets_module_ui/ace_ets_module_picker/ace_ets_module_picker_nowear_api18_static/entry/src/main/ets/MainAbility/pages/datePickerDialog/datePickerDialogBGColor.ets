@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,17 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, $r, ResourceColor, Flex, FlexWrap, Button, Color, BlurStyle, ShadowStyle, ClickEvent, Margin, Resource } from '@ohos.arkui.component'
+import { Entry, Column, Component, $r, ResourceColor, Flex, FlexWrap, Button, Color, BlurStyle, ShadowStyle, ClickEvent, Margin } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
 struct DatePickerDialogBGColor {
-  showDialog(color: null|undefined|Color|Double|String|Resource) {
+  showDialog(color: ResourceColor | null | undefined) {
   this.getUIContext().showDatePickerDialog({
     start: new Date('2000-1-1'),
     end: new Date('2100-12-31'),
-    backgroundColor: (color as undefined|Color|Int|String|Resource),
     backgroundBlurStyle: BlurStyle.NONE,
     dateTimeOptions: { hour: 'numeric', minute: '2-digit' },
   })

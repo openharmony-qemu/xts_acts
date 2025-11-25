@@ -1,5 +1,6 @@
+'use static';
 /*
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -77,21 +78,19 @@ export default function buttonJsunit() {
 
 
 
-    
     /*
      * @tc.number   buttonGetInspectorByKey010_static
      * @tc.name     buttonGetInspectorByKey010_static
      * @tc.desc     buttonGetInspectorByKey010_static
      * @tc.level    Level.LEVEL1
      */
-it('buttonGetInspectorByKey010_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('buttonGetInspectorByKey010_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testGetInspectorByKey START');
       let strJson = inspector.getInspectorByKey('button');
       let obj = JSON.parseJsonElement(strJson);
       console.info("buttonGetInspectorByKey010 obj is: " + JSON.stringify(obj));
       console.info("buttonGetInspectorByKey010 obj is: " + JSON.stringify(obj.getElement('$attrs')));
-      console.info("buttonGetInspectorByKey010 obj type is: " + JSON.stringify(obj.getElement('$type')));
-      expect(obj.getElement('$type').asString()).assertEqual('Button');
+      expect(obj.getElement('$type')).assertEqual('Button');
       expect(obj.getElement('$attrs').getString('type')).assertEqual('ButtonType.Circle');
       expect(obj.getElement('$attrs').getString('stateEffect')).assertEqual('true');
       expect(obj.getElement('$attrs').getString('label')).assertEqual('1.value');
@@ -101,14 +100,13 @@ it('buttonGetInspectorByKey010_static', Level.LEVEL1, async (done: () => void): 
     });
 
 
-    
     /*
      * @tc.number   ButtonGetInspectorByKey020_static
      * @tc.name     ButtonGetInspectorByKey020_static
      * @tc.desc     ButtonGetInspectorByKey020_static
      * @tc.level    Level.LEVEL1
      */
-it('ButtonGetInspectorByKey020_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('ButtonGetInspectorByKey020_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('button1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("cd button1 component obj is: " + JSON.stringify(obj));
@@ -120,14 +118,13 @@ it('ButtonGetInspectorByKey020_static', Level.LEVEL1, async (done: () => void): 
 
 
 
-    
     /*
      * @tc.number   ButtonGetInspectorByKey030_static
      * @tc.name     ButtonGetInspectorByKey030_static
      * @tc.desc     ButtonGetInspectorByKey030_static
      * @tc.level    Level.LEVEL1
      */
-it('ButtonGetInspectorByKey030_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('ButtonGetInspectorByKey030_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('button2');
       let obj = JSON.parseJsonElement(strJson);
       console.info("cd button2 component obj is: " + JSON.stringify(obj));

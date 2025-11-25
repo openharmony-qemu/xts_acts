@@ -1,5 +1,6 @@
+'use static';
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -57,6 +58,8 @@ export default function textpickermultiTest() {
         console.info("get TextPickerMulti state pages:" + JSON.stringify(pages));
         if (!("TextPickerMulti" == pages.name)) {
           console.info("get TextPickerMulti pages.name:" + JSON.stringify(pages.name));
+
+
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -67,14 +70,13 @@ export default function textpickermultiTest() {
 
 
 
-    
     /*
      * @tc.number   ArkUXII_Stage_TextPicker_Options_static_0100
      * @tc.name     ArkUXII_Stage_TextPicker_Options_static_0100
      * @tc.desc     ArkUXII_Stage_TextPicker_Options_static_0100
      * @tc.level    Level.LEVEL1
      */
-it('ArkUXII_Stage_TextPicker_Options_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('ArkUXII_Stage_TextPicker_Options_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_TextPicker_Options_static_0100 start");
       setTimeout(() => {
         try {
@@ -94,14 +96,13 @@ it('ArkUXII_Stage_TextPicker_Options_static_0100', Level.LEVEL1, async (done: ()
 
 
 
-    
     /*
      * @tc.number   ArkUXII_Stage_TextPicker_Options_static_0200
      * @tc.name     ArkUXII_Stage_TextPicker_Options_static_0200
      * @tc.desc     ArkUXII_Stage_TextPicker_Options_static_0200
      * @tc.level    Level.LEVEL1
      */
-it('ArkUXII_Stage_TextPicker_Options_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('ArkUXII_Stage_TextPicker_Options_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_TextPicker_Options_static_0200 start");
       setTimeout(() => {
         try {
@@ -126,23 +127,22 @@ it('ArkUXII_Stage_TextPicker_Options_static_0200', Level.LEVEL1, async (done: ()
 
 
 
-    
     /*
      * @tc.number   ArkUXII_Stage_TextPicker_Options_static_0300
      * @tc.name     ArkUXII_Stage_TextPicker_Options_static_0300
      * @tc.desc     ArkUXII_Stage_TextPicker_Options_static_0300
      * @tc.level    Level.LEVEL1
      */
-it('ArkUXII_Stage_TextPicker_Options_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('ArkUXII_Stage_TextPicker_Options_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_TextPicker_Options_static_0300 start");
       setTimeout(() => {
         try {
           let strJson = inspector.getInspectorByKey('textpicker_3');
           let obj = JSON.parseJsonElement(strJson);
           console.info("[ArkUXII_Stage_TextPicker_Options_static_0300]:" + JSON.stringify(obj.getElement('$attrs').getArray('selecteds')));
-          expect(obj.getElement('$attrs').getArray('selecteds')[0].asString()).assertEqual('1');
-          expect(obj.getElement('$attrs').getArray('selecteds')[1].asString()).assertEqual('1');
-          expect(obj.getElement('$attrs').getArray('selecteds')[2].asString()).assertEqual('2');
+          expect(obj.getElement('$attrs').getArray('selecteds')[0]).assertEqual('1');
+          expect(obj.getElement('$attrs').getArray('selecteds')[1]).assertEqual('1');
+          expect(obj.getElement('$attrs').getArray('selecteds')[2]).assertEqual('2');
           done();
         } catch (err) {
           expect().assertFail();
@@ -154,23 +154,22 @@ it('ArkUXII_Stage_TextPicker_Options_static_0300', Level.LEVEL1, async (done: ()
 
 
 
-    
     /*
      * @tc.number   ArkUXII_Stage_TextPicker_Options_static_0400
      * @tc.name     ArkUXII_Stage_TextPicker_Options_static_0400
      * @tc.desc     ArkUXII_Stage_TextPicker_Options_static_0400
      * @tc.level    Level.LEVEL1
      */
-it('ArkUXII_Stage_TextPicker_Options_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('ArkUXII_Stage_TextPicker_Options_static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_TextPicker_Options_static_0400 start");
       setTimeout(() => {
         try {
           let strJson = inspector.getInspectorByKey('textpicker_4');
           let obj = JSON.parseJsonElement(strJson);
           console.info("[ArkUXII_Stage_TextPicker_Options_static_0400]:" + JSON.stringify(obj.getElement('$attrs').getArray('values')));
-          expect(obj.getElement('$attrs').getArray('values')[0].asString()).assertEqual('辽宁省');
-          expect(obj.getElement('$attrs').getArray('values')[1].asString()).assertEqual('大连市');
-          expect(obj.getElement('$attrs').getArray('values')[2].asString()).assertEqual('中山区');
+          expect(obj.getElement('$attrs').getArray('values')[0]).assertEqual('辽宁省');
+          expect(obj.getElement('$attrs').getArray('values')[1]).assertEqual('大连市');
+          expect(obj.getElement('$attrs').getArray('values')[2]).assertEqual('中山区');
           done();
         } catch (err) {
           expect().assertFail();
@@ -182,23 +181,22 @@ it('ArkUXII_Stage_TextPicker_Options_static_0400', Level.LEVEL1, async (done: ()
 
 
 
-    
     /*
      * @tc.number   ArkUXII_Stage_TextPicker_Options_static_0500
      * @tc.name     ArkUXII_Stage_TextPicker_Options_static_0500
      * @tc.desc     ArkUXII_Stage_TextPicker_Options_static_0500
      * @tc.level    Level.LEVEL1
      */
-it('ArkUXII_Stage_TextPicker_Options_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('ArkUXII_Stage_TextPicker_Options_static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_TextPicker_Options_static_0500 start");
       setTimeout(() => {
         try {
           let strJson = inspector.getInspectorByKey('textpicker_5');
           let obj = JSON.parseJsonElement(strJson);
           console.info("[ArkUXII_Stage_TextPicker_Options_static_0500]:" + JSON.stringify(obj.getElement('$attrs').getArray('selectedIndex')));
-          expect(obj.getElement('$attrs').getArray('selectedIndex')[0].asString()).assertEqual('2');
-          expect(obj.getElement('$attrs').getArray('selectedIndex')[1].asString()).assertEqual('1');
-          expect(obj.getElement('$attrs').getArray('selectedIndex')[2].asString()).assertEqual('2');
+          expect(obj.getElement('$attrs').getArray('selectedIndex')[0]).assertEqual('2');
+          expect(obj.getElement('$attrs').getArray('selectedIndex')[1]).assertEqual('1');
+          expect(obj.getElement('$attrs').getArray('selectedIndex')[2]).assertEqual('2');
           done();
         } catch (err) {
           expect().assertFail();
@@ -210,23 +208,22 @@ it('ArkUXII_Stage_TextPicker_Options_static_0500', Level.LEVEL1, async (done: ()
 
 
 
-    
     /*
      * @tc.number   ArkUXII_Stage_TextPicker_Options_static_0600
      * @tc.name     ArkUXII_Stage_TextPicker_Options_static_0600
      * @tc.desc     ArkUXII_Stage_TextPicker_Options_static_0600
      * @tc.level    Level.LEVEL1
      */
-it('ArkUXII_Stage_TextPicker_Options_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('ArkUXII_Stage_TextPicker_Options_static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_TextPicker_Options_static_0600 start");
       setTimeout(() => {
         try {
           let strJson = inspector.getInspectorByKey('textpicker_6');
           let obj = JSON.parseJsonElement(strJson);
           console.info("[ArkUXII_Stage_TextPicker_Options_static_0600]:" + JSON.stringify(obj.getElement('$attrs').getArray('selectedIndex')));
-          expect(obj.getElement('$attrs').getArray('selectedIndex')[0].asString()).assertEqual('0');
-          expect(obj.getElement('$attrs').getArray('selectedIndex')[1].asString()).assertEqual('1');
-          expect(obj.getElement('$attrs').getArray('selectedIndex')[2].asString()).assertEqual('2');
+          expect(obj.getElement('$attrs').getArray('selectedIndex')[0]).assertEqual('0');
+          expect(obj.getElement('$attrs').getArray('selectedIndex')[1]).assertEqual('1');
+          expect(obj.getElement('$attrs').getArray('selectedIndex')[2]).assertEqual('2');
           done();
         } catch (err) {
           expect().assertFail();
@@ -235,23 +232,25 @@ it('ArkUXII_Stage_TextPicker_Options_static_0600', Level.LEVEL1, async (done: ()
         }
       }, 500)
     });
-    
+
+
+
     /*
      * @tc.number   ArkUXII_Stage_TextPicker_Options_static_0700
      * @tc.name     ArkUXII_Stage_TextPicker_Options_static_0700
      * @tc.desc     ArkUXII_Stage_TextPicker_Options_static_0700
      * @tc.level    Level.LEVEL1
      */
-it('ArkUXII_Stage_TextPicker_Options_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('ArkUXII_Stage_TextPicker_Options_static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_TextPicker_Options_static_0700 start");
       setTimeout(() => {
         try {
           let strJson = inspector.getInspectorByKey('textpicker_7');
           let obj = JSON.parseJsonElement(strJson);
           console.info("[ArkUXII_Stage_TextPicker_Options_static_0700]:" + JSON.stringify(obj.getElement('$attrs').getArray('selectedIndex')));
-          expect(obj.getElement('$attrs').getArray('selectedIndex')[0].asString()).assertEqual('0');
-          expect(obj.getElement('$attrs').getArray('selectedIndex')[1].asString()).assertEqual('0');
-          expect(obj.getElement('$attrs').getArray('selectedIndex')[2].asString()).assertEqual('0');
+          expect(obj.getElement('$attrs').getArray('selectedIndex')[0]).assertEqual('0');
+          expect(obj.getElement('$attrs').getArray('selectedIndex')[1]).assertEqual('0');
+          expect(obj.getElement('$attrs').getArray('selectedIndex')[2]).assertEqual('0');
           done();
         } catch (err) {
           expect().assertFail();
@@ -263,23 +262,22 @@ it('ArkUXII_Stage_TextPicker_Options_static_0700', Level.LEVEL1, async (done: ()
 
 
 
-    
     /*
      * @tc.number   ArkUXII_Stage_TextPicker_Options_static_0800
      * @tc.name     ArkUXII_Stage_TextPicker_Options_static_0800
      * @tc.desc     ArkUXII_Stage_TextPicker_Options_static_0800
      * @tc.level    Level.LEVEL1
      */
-it('ArkUXII_Stage_TextPicker_Options_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('ArkUXII_Stage_TextPicker_Options_static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_TextPicker_Options_static_0800 start");
       setTimeout(() => {
         try {
           let strJson = inspector.getInspectorByKey('textpicker_8');
           let obj = JSON.parseJsonElement(strJson);
           console.info("[ArkUXII_Stage_TextPicker_Options_static_0800]:" + JSON.stringify(obj.getElement('$attrs').getArray('selectedIndex')));
-          expect(obj.getElement('$attrs').getArray('selectedIndex')[0].asString()).assertEqual('0');
-          expect(obj.getElement('$attrs').getArray('selectedIndex')[1].asString()).assertEqual('0');
-          expect(obj.getElement('$attrs').getArray('selectedIndex')[2].asString()).assertEqual('0');
+          expect(obj.getElement('$attrs').getArray('selectedIndex')[0]).assertEqual('0');
+          expect(obj.getElement('$attrs').getArray('selectedIndex')[1]).assertEqual('0');
+          expect(obj.getElement('$attrs').getArray('selectedIndex')[2]).assertEqual('0');
           done();
         } catch (err) {
           expect().assertFail();
@@ -291,23 +289,22 @@ it('ArkUXII_Stage_TextPicker_Options_static_0800', Level.LEVEL1, async (done: ()
 
 
 
-    
     /*
      * @tc.number   ArkUXII_Stage_TextPicker_Options_static_0900
      * @tc.name     ArkUXII_Stage_TextPicker_Options_static_0900
      * @tc.desc     ArkUXII_Stage_TextPicker_Options_static_0900
      * @tc.level    Level.LEVEL1
      */
-it('ArkUXII_Stage_TextPicker_Options_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('ArkUXII_Stage_TextPicker_Options_static_0900', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_TextPicker_Options_static_0900 start");
       setTimeout(() => {
         try {
           let strJson = inspector.getInspectorByKey('textpicker_9');
           let obj = JSON.parseJsonElement(strJson);
           console.info("[ArkUXII_Stage_TextPicker_Options_static_0900]:" + JSON.stringify(obj.getElement('$attrs').getArray('selectedIndex')));
-          expect(obj.getElement('$attrs').getArray('selectedIndex')[0].asString()).assertEqual('0');
-          expect(obj.getElement('$attrs').getArray('selectedIndex')[1].asString()).assertEqual('0');
-          expect(obj.getElement('$attrs').getArray('selectedIndex')[2].asString()).assertEqual('0');
+          expect(obj.getElement('$attrs').getArray('selectedIndex')[0]).assertEqual('0');
+          expect(obj.getElement('$attrs').getArray('selectedIndex')[1]).assertEqual('0');
+          expect(obj.getElement('$attrs').getArray('selectedIndex')[2]).assertEqual('0');
           done();
         } catch (err) {
           expect().assertFail();
@@ -319,23 +316,22 @@ it('ArkUXII_Stage_TextPicker_Options_static_0900', Level.LEVEL1, async (done: ()
 
 
 
-    
     /*
      * @tc.number   ArkUXII_Stage_TextPicker_Options_static_1000
      * @tc.name     ArkUXII_Stage_TextPicker_Options_static_1000
      * @tc.desc     ArkUXII_Stage_TextPicker_Options_static_1000
      * @tc.level    Level.LEVEL1
      */
-it('ArkUXII_Stage_TextPicker_Options_static_1000', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('ArkUXII_Stage_TextPicker_Options_static_1000', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_TextPicker_Options_static_1000 start");
       setTimeout(() => {
         try {
           let strJson = inspector.getInspectorByKey('textpicker_10');
           let obj = JSON.parseJsonElement(strJson);
           console.info("[ArkUXII_Stage_TextPicker_Options_static_1000]:" + JSON.stringify(obj.getElement('$attrs').getArray('selecteds')));
-          expect(obj.getElement('$attrs').getArray('selecteds')[0].asString()).assertEqual('1');
-          expect(obj.getElement('$attrs').getArray('selecteds')[1].asString()).assertEqual('0');
-          expect(obj.getElement('$attrs').getArray('selecteds')[2].asString()).assertEqual('0');
+          expect(obj.getElement('$attrs').getArray('selecteds')[0]).assertEqual('1');
+          expect(obj.getElement('$attrs').getArray('selecteds')[1]).assertEqual('0');
+          expect(obj.getElement('$attrs').getArray('selecteds')[2]).assertEqual('0');
           done();
         } catch (err) {
           expect().assertFail();
@@ -347,23 +343,22 @@ it('ArkUXII_Stage_TextPicker_Options_static_1000', Level.LEVEL1, async (done: ()
 
 
 
-    
     /*
      * @tc.number   ArkUXII_Stage_TextPicker_Options_static_1100
      * @tc.name     ArkUXII_Stage_TextPicker_Options_static_1100
      * @tc.desc     ArkUXII_Stage_TextPicker_Options_static_1100
      * @tc.level    Level.LEVEL1
      */
-it('ArkUXII_Stage_TextPicker_Options_static_1100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('ArkUXII_Stage_TextPicker_Options_static_1100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ArkUXII_Stage_TextPicker_Options_static_1100 start");
       setTimeout(() => {
         try {
           let strJson = inspector.getInspectorByKey('textpicker_11');
           let obj = JSON.parseJsonElement(strJson);
           console.info("[ArkUXII_Stage_TextPicker_Options_static_1100]:" + JSON.stringify(obj.getElement('$attrs').getArray('values')));
-          expect(obj.getElement('$attrs').getArray('values')[0].asString()).assertEqual('辽宁省');
-          expect(obj.getElement('$attrs').getArray('values')[1].asString()).assertEqual('大连市');
-          expect(obj.getElement('$attrs').getArray('values')[2].asString()).assertEqual('中山区');
+          expect(obj.getElement('$attrs').getArray('values')[0]).assertEqual('辽宁省');
+          expect(obj.getElement('$attrs').getArray('values')[1]).assertEqual('大连市');
+          expect(obj.getElement('$attrs').getArray('values')[2]).assertEqual('中山区');
           done();
         } catch (err) {
           expect().assertFail();

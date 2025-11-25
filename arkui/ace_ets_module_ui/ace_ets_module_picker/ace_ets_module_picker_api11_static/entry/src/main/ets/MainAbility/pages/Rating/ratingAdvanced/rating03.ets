@@ -1,5 +1,6 @@
-/**
- * Copyright (c) 2024 Shenzhen Kaihong Digital Industry Development Co., Ltd.
+'use static';
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,7 +18,7 @@ import { State } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct rating03 {
-  @State rating: number = 1
+  @State rating: double = 1
   @State ratingSet:string = 'failed rating'
 
   build() {
@@ -27,13 +28,12 @@ struct rating03 {
         .fontColor('rgba(24,36,49,0.60)')
         .margin({ top: 50 } as Margin)
         .id('ratingText03')
-        .key('ratingText03')
 
       Rating({ rating:this.rating,indicator: false })
         .stars(8)
         .stepSize(0.05)
         .margin({ top: 24 } as Margin)
-        .onChange((value: number):void => {
+        .onChange((value: double):void => {
           this.rating = value
           this.ratingSet = 'success rating'
         })

@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,32 +13,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium"
-import { Driver, ON,Component } from '@ohos.UiTest';
-import events_emitter from '@ohos.events.emitter';
+
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
-import { UtilsTest } from '../Util.test';
-import Utils from '../../../ets/MainAbility/common/Utils';
-import { Router,UIContext } from '@ohos.arkui.UIContext';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import inspector from '@ohos.arkui.inspector';
-import common from '@ohos.app.ability.common';
+import { Component, Driver, Component,  ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-let testAbilityContext: common.UIAbilityContext;
-const uiContext = new UIContext();
+import { Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import inspector from '@ohos.arkui.inspector'
+import hilog from '@ohos.hilog'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import UIAbility from '@ohos.app.ability.UIAbility';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
+import { UtilsTest, startAbility } from '../Util.test';
+
 export default function counterApi() {
   describe('counterApi', () => {
     beforeAll(() => {
-
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.platform.api14.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      await UtilsTest.msSleep(4000);
+      await startAbility("com.arkui.ace.platform.nowear.api12.static", "EntryAbility");
+      await UtilsTest.msSleep(4000);
     });
-    beforeEach(async (): Promise<void> => {
+
+    beforeEach(async () => {
       console.info("counterApi beforeEach start");
-      let options: router.RouterOptions = {
-        url: 'MainAbility/pages/SafeAreaPadding/SafeAreaPadding',
-      }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
@@ -45,7 +45,9 @@ export default function counterApi() {
         console.info("get counterApi state pages:" + JSON.stringify(pages));
         if (!("counterApi" == pages.name)) {
           console.info("get Context pages.name:" + JSON.stringify(pages.name));
-          routerInstance.pushUrl(options)
+          routerInstance.pushUrl({
+            url: "MainAbility/pages/Counter/counterApi"
+          })
           await CommonFunc.sleep(2000);
         }
       } catch (err) {
@@ -59,8 +61,9 @@ export default function counterApi() {
     });
 
     /**
-     * @tc.number counterApi_static_001
-     * @tc.desc counterApi_static_001
+     * @tc.number SUB_ACE_UI_COMPONENT_CounterComponent_001
+     * @tc.name counterApi_static_001
+     * @tc.desc onFocusIncrease test of CounterComponent
      * @tc.level Level 3
      * @tc.type
      */
@@ -68,7 +71,7 @@ export default function counterApi() {
     it('counterApi_static_001', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[counterApi_static_001] START');
       await CommonFunc.sleep(1000);
-      // press tab
+      
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       await driver.triggerKey(2049);
@@ -85,8 +88,9 @@ export default function counterApi() {
     });
 
     /**
-     * @tc.number counterApi_static_002
-     * @tc.desc counterApi_static_002
+     * @tc.number SUB_ACE_UI_COMPONENT_CounterComponent_002
+     * @tc.name counterApi_static_002
+     * @tc.desc onBlurIncrease and onFocusDecrease test of CounterComponent
      * @tc.level Level 3
      * @tc.type
      */
@@ -94,8 +98,8 @@ export default function counterApi() {
     it('counterApi_static_002', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[counterApi_static_002] START');
       await CommonFunc.sleep(1000);
-      // press tab
-      let driver =  Driver.create();
+      
+      let driver = Driver.create();
       await CommonFunc.sleep(1000);
       await driver.triggerKey(2049);
       await CommonFunc.sleep(1000);
@@ -113,8 +117,9 @@ export default function counterApi() {
     });
 
     /**
-     * @tc.number counterApi_static_003
-     * @tc.desc counterApi_static_003
+     * @tc.number SUB_ACE_UI_COMPONENT_CounterComponent_003
+     * @tc.name counterApi_static_003
+     * @tc.desc onBlurDecrease test of CounterComponent
      * @tc.level Level 3
      * @tc.type
      */
@@ -122,8 +127,8 @@ export default function counterApi() {
     it('counterApi_static_003', Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info('[counterApi_static_003] START');
       await CommonFunc.sleep(1000);
-      // press tab
-      let driver =  Driver.create();
+      
+      let driver = Driver.create();
       await CommonFunc.sleep(1000);
       await driver.triggerKey(2049);
       await CommonFunc.sleep(1000);

@@ -1,5 +1,6 @@
-/**
- * Copyright (c) 2022 Shenzhen Kaihong Digital Industry Development Co., Ltd.
+'use static';
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -56,15 +57,16 @@ import {
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base';
 
 const TAG = 'ets_apiLack_add';
 
 @Entry
 @Component
 struct SliderMoving {
-  @State outSetValue: number = 40;
+  @State outSetValue: double = 40;
   @State move: SliderChangeMode = SliderChangeMode.Moving;
 
   slide() {
@@ -110,13 +112,14 @@ struct SliderMoving {
         .selectedColor(Color.Blue)
         .showSteps(true)
         .showTips(true)
-        .onChange((value: number, mode: SliderChangeMode) => {
-          console.info("Slider emit action state err11: ")
+        .onChange((value: double, mode: SliderChangeMode) => {
+          Log.showInfo(TAG, 'SliderChangeMode.Moving: ' + SliderChangeMode.Moving.toString())
+          Log.showInfo(TAG, 'value:' + value + 'mode:' + mode.toString())
           try {
             let backData: events_emitter.EventData = {
               data: {
-                "Mode": 0 as double
-              } as Record<string, Object | null | undefined>
+                "Mode": 0
+              } as Record<String, RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 60307,

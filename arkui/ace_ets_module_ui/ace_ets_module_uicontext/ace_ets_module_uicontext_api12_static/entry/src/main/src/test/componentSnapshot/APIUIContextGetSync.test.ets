@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium"
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -58,13 +59,14 @@ export default function APIUIContextGetSync() {
       await CommonFunc.sleep(1000);
       console.info("APIUIContextGetSync after each called");
     });
-    /**
-     * @tc.number    APIUIContextGetSync_static_0100
-     * @tc.name      APIUIContextGetSync_static_0100
-     * @tc.desc      Test api getSync of componentSnapshot
-     * @tc.level     Level 2
+    
+    /*
+     * @tc.number   APIUIContextGetSync_static_0100
+     * @tc.name     APIUIContextGetSync_static_0100
+     * @tc.desc     APIUIContextGetSync_static_0100
+     * @tc.level    Level.LEVEL0
      */
-    it('APIUIContextGetSync_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+it('APIUIContextGetSync_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[APIUIContextGetSync_static_0100] START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();

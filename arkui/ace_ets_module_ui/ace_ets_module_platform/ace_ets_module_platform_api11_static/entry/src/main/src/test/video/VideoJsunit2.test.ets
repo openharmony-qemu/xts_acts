@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,7 +24,7 @@ import {
   it,
   expect,
   Level
-} from '../../../../hypium';
+} from '../../../../hypium/index';
 import router from '@ohos.router';
 import { UtilsTest } from '../Util.test';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -34,7 +35,7 @@ import { Driver, ON,Component } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import events_emitter from '@ohos.events.emitter'
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { PlaybackSpeed } from '@ohos.arkui.component';
 
 export default function videoJsunit2() {
@@ -84,8 +85,8 @@ export default function videoJsunit2() {
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            'progressRates': PlaybackSpeed.Speed_Forward_2_00_X,
-          } as Record<String,undefined|null|Object>
+            "progressRates": PlaybackSpeed.Speed_Forward_2_00_X,
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 235,
@@ -109,7 +110,7 @@ export default function videoJsunit2() {
         let eventData: events_emitter.EventData = {
           data: {
             "progressRates": PlaybackSpeed.Speed_Forward_1_75_X,
-          } as Record<String,undefined|null|Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 235,
@@ -133,7 +134,7 @@ export default function videoJsunit2() {
         let eventData: events_emitter.EventData = {
           data: {
             "progressRates": PlaybackSpeed.Speed_Forward_1_25_X,
-          } as Record<String,undefined|null|Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 235,
@@ -157,7 +158,7 @@ export default function videoJsunit2() {
         let eventData: events_emitter.EventData = {
           data: {
             "progressRates": PlaybackSpeed.Speed_Forward_1_00_X,
-          } as Record<String,undefined|null|Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 235,
@@ -182,7 +183,7 @@ export default function videoJsunit2() {
         let eventData: events_emitter.EventData = {
           data: {
             "progressRates": PlaybackSpeed.Speed_Forward_0_75_X,
-          } as Record<String,undefined|null|Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 235,
@@ -207,7 +208,7 @@ export default function videoJsunit2() {
         let eventData: events_emitter.EventData = {
           data: {
             "isStopped": true,
-          } as Record<String,undefined|null|Object>
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 235,

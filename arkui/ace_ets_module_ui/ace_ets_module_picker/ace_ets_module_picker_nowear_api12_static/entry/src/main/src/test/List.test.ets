@@ -1,5 +1,6 @@
-/**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+'use static';
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -22,11 +23,11 @@ import calendarPickerJsunit from './CalendarPicker/CalendarPicker.test';
 import datePickerJsunit from './DatePicker/DatePicker.test';
 
 export default function testsuite() {
-  selectApi1();  //pass 注释
-  triggerSelect() //configuration.triggerSelect()导致App Died
-  selectJsunit()  //全pass 注释
-  textpickerJsunit() //10.26SDK全pass 注释
-  calendarPickerJsunit() //全pass 注释
-  datePickerJsunit() //全pass 注释
-  timepickerJsunit()  //全pass 注释
+  selectApi1();
+  triggerSelect()
+  selectJsunit()
+  timepickerJsunit()
+  textpickerJsunit()
+  calendarPickerJsunit()
+  datePickerJsunit()
 }

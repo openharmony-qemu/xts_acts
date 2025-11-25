@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -52,11 +53,7 @@ struct Index {
                         console.log('++++++++++++++++++++++++1')
                         let uiContext:UIContext = this.getUIContext();
                         console.log('++++++++++++++++++++++++2')
-                        try{
-                            this.widthBp = uiContext.getWindowWidthBreakpoint();  // SDK11.17 Error: no impl
-                        }catch(err){
-                            console.log('+++++++getWindowWidthBreakpointError',err)
-                        }
+                        this.widthBp = uiContext.getWindowWidthBreakpoint();
                         console.log('++++++++++++++++++++++++3')
                         console.log(`sally----Window getWindowWidthBreakpoint is ${this.widthBp}`)
                     }).margin({top:4} as Margin)

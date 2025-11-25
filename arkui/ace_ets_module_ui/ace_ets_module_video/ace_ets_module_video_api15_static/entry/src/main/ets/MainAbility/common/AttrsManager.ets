@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -36,7 +37,7 @@ export class AttrsManager {
     const eventData: events_emitter.EventData = {
       data: {
         'src': message
-      } as Record<String,undefined|null|Object>
+      } as Record<String, undefined|null|Object>
     };
     AttrsManager.emitEvent(caseName, Constants.EVENT_ID_CHANGE_DATA, eventData);
   }

@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,12 +19,12 @@ import { State } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct TextPickerDialogBgColor {
-  showDialog(color: ResourceColor | undefined | null | int) {
+  showDialog(color: ResourceColor | undefined) {
     this.getUIContext().showTextPickerDialog({
       // 建议使用 this.getUIContext().showTextPickerDialog()接口
       range: ['apple1', 'orange2', 'peach3', 'grape4', 'banana5'],
       defaultPickerItemHeight: 40,
-      backgroundColor: (color as ResourceColor|undefined),
+      backgroundColor: color,
       backgroundBlurStyle: BlurStyle.NONE,
     })
 }
@@ -57,7 +58,6 @@ struct TextPickerDialogBgColor {
 
       Button('null')
         .onClick((e: ClickEvent) => {
-          this.showDialog(null)
         })
         .id('nullID')
       Button('undefined')
@@ -72,7 +72,6 @@ struct TextPickerDialogBgColor {
         .id('xxxID')
       Button('-100')
         .onClick((e: ClickEvent) => {
-          this.showDialog(-100)
         })
         .id('-100ID')
     }.width('100%')

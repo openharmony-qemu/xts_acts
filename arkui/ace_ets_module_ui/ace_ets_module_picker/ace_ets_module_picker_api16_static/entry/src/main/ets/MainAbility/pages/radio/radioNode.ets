@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,10 +28,10 @@ class MyNodeController extends  NodeController {
     let node = new FrameNode(uiContext)
     let col = typeNode.createColumnNode(uiContext)
     col.initialize({ space: 10 } as ColumnOptions).borderColor(Color.Black).alignItems(HorizontalAlign.Center)
-    // let radio = typeNode.createNode(uiContext, 'Radio')
-    // radio.initialize({value:'radio',group:'radioGroup'})
-    // .key('key_Radio_001')
-    // col.appendChild(radio)
+    
+    
+    
+    
     node.appendChild(col)
     return node
   }

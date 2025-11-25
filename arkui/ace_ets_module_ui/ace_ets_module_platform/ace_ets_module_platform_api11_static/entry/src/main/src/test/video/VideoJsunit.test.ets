@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,7 +24,7 @@ import {
   it,
   expect,
   Level
-} from '../../../../hypium';
+} from '../../../../hypium/index';
 import router from '@ohos.router';
 import { UtilsTest } from '../Util.test';
 import Utils from '../../../ets/MainAbility/common/Utils';
@@ -85,23 +86,22 @@ export default function videoJsunit() {
      * @tc.desc aceEtsTest
      */
     it('videoAppInfoStaticTest001', Level.LEVEL1, async () => {
-      console.info('videoAppInfoTest001 START');
-      await sleep(1)
-     try{
-       let strJson = inspector.getInspectorByKey('video');
-       let obj = JSON.parseJsonElement(strJson);
-       console.info("cd video component obj is: " + strJson);
-       console.log("cd video $type" + obj.getString('$type'));
-       console.log("cd video $attrs" + JSON.stringifyJsonElement(obj.getElement('$attrs')));
-       console.log("cd video autoPlay" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('autoPlay'));
-       console.log("cd video muted" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('muted'));
-       console.log("cd video controls" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('controls'));
-       console.log("cd video loop" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('loop'));
-       console.log("cd video objectFit" + JSON.parseJsonElement(strJson).getElement('$attrs').getString('objectFit'));
-     }catch(e){
-        expect().assertFail()
-     }
-      console.info('videoAppInfoTest001 END');
+      try {
+        console.info('videoAppInfoTest001 START');
+          await sleep(1)
+          let strJson = inspector.getInspectorByKey('video');
+          let obj = JSON.parseJsonElement(strJson);
+          console.info("cd video component obj is: " + JSON.stringify(obj));
+          console.log("cd video type" + JSON.stringify(obj.getElement('$type')));
+          console.log("cd video autoPlay" + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$type').getString('autoPlay')));
+          console.log("cd video muted" + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$type').getString('muted')));
+          console.log("cd video controls" + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$type').getString('controls')));
+          console.log("cd video loop" + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$type').getString('loop')));
+          console.log("cd video objectFit" + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$type').getString('objectFit')));
+          console.info('videoAppInfoTest001 END');
+      } catch (error) {
+        expect().assertFail();
+      }
     });
   })
 }

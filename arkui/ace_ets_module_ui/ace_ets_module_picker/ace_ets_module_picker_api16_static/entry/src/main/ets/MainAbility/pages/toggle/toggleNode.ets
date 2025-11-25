@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,10 +33,10 @@ class MyNodeController extends  NodeController {
     col.initialize({ space: 10 } as ColumnOptions).borderColor(Color.Black).alignItems(HorizontalAlign.Center)
     let scroll = typeNode.createScrollNode(uiContext)
     scroll.initialize()
-    // let toggle = typeNode.createNode(uiContext, 'Toggle', toggleOptions)
-    // toggle.initialize( { type: ToggleType.Button, isOn: false }).width(50)
-    //   .key('key_Toggle_001')
-    // col.appendChild(toggle)
+    
+    
+    
+    
     scroll.appendChild(col)
     col1.appendChild(scroll)
     node.appendChild(col1)

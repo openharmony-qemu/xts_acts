@@ -1,5 +1,6 @@
-/**
- * Copyright (c) 2022 Shenzhen Kaihong Digital Industry Development Co., Ltd.
+'use static';
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -76,14 +77,13 @@ export default function datePickerLunarJsunit() {
 
 
 
-    
     /*
      * @tc.number   testdatePickerLunar001_static
      * @tc.name     testdatePickerLunar001_static
      * @tc.desc     testdatePickerLunar001_static
      * @tc.level    Level.LEVEL1
      */
-it('testdatePickerLunar001_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('testdatePickerLunar001_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('datePickerLunar testdatePickerLunar001 START');
       await Utils.sleep(2000);
       let strJson: string = inspector.getInspectorByKey('DatePicker');

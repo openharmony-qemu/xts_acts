@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,12 +19,12 @@ import { State } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct TimePickerDialogBGBlurStyle {
-  showDialog(style: BlurStyle | undefined | null | int) {
+  showDialog(style: BlurStyle | undefined) {
     this.getUIContext().showTimePickerDialog({
       format: TimePickerFormat.HOUR_MINUTE,
       useMilitaryTime: false,
       dateTimeOptions: { hour: 'numeric', minute: '2-digit' },
-      backgroundBlurStyle: (style as BlurStyle|undefined),
+      backgroundBlurStyle: style,
     })
   }
   build() {
@@ -96,7 +97,6 @@ struct TimePickerDialogBGBlurStyle {
         .id('COMPONENT_ULTRA_THICK_ID')
       Button('null')
         .onClick((e: ClickEvent) => {
-          this.showDialog(null)
         })
         .id('nullID')
       Button('undefined')
@@ -106,12 +106,10 @@ struct TimePickerDialogBGBlurStyle {
         .id('undefinedID')
       Button('100')
         .onClick((e: ClickEvent) => {
-          this.showDialog(100)
         })
         .id('100ID')
       Button('-100')
         .onClick((e: ClickEvent) => {
-          this.showDialog(-100)
         })
         .id('-100ID')
     }.width('100%')

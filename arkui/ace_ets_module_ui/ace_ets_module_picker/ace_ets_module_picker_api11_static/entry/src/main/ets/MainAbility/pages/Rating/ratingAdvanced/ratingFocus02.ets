@@ -1,5 +1,6 @@
-/**
- * Copyright (c) 2024 Shenzhen Kaihong Digital Industry Development Co., Ltd.
+'use static';
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,7 +18,7 @@ import { State } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct ratingFocus02 {
-  @State rating: number = 1
+  @State rating: double = 1
   @State stars: int = 5
   @State focusResult:string = 'Rating is not focusAble'
 
@@ -33,7 +34,7 @@ struct ratingFocus02 {
         .stars(this.stars)
         .stepSize(1)
         .margin({ top: 24 } as Margin)
-        .onChange((value: number):void => {
+        .onChange((value: double):void => {
           this.rating = value
         })
         .onFocus(() => {

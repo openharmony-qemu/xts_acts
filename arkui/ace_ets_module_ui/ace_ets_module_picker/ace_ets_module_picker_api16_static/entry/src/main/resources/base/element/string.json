@@ -99,14 +99,6 @@
     {
       "name": "BottomTabBarStyleLabelStyle_family_Test",
       "value": "HarmonyOS Sans"
-    },
-    {
-      "name": "EntryAbility_desc",
-      "value": "description"
-    },
-    {
-      "name": "EntryAbility_label",
-      "value": "label"
     }
   ]
 }

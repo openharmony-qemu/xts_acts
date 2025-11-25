@@ -1,5 +1,6 @@
+'use static';
 /*
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -45,35 +46,33 @@ struct DatePickerExample {
     
     private selectedDate: Date = new Date('2021-08-08')
 
-    @State disappearTextStyle: PickerTextStyle = {color:Color.Black,font:{size:8,weight:FontWeight.Lighter}} as PickerTextStyle
-    @State textStyle: PickerTextStyle = {color:Color.Red,font:{size:'10px',weight:FontWeight.Normal}} as PickerTextStyle
-    @State selectedTextStyle: PickerTextStyle = {color:Color.Blue,font:{size:'20px',weight:FontWeight.Bold}} as PickerTextStyle
+    @State disappearTextStyle: PickerTextStyle = {color:Color.Black,font:{size:8,weight:FontWeight.Lighter} as Font} as PickerTextStyle
+    @State textStyle: PickerTextStyle = {color:Color.Red,font:{size:'10px',weight:FontWeight.Normal} as Font} as PickerTextStyle
+    @State selectedTextStyle: PickerTextStyle = {color:Color.Blue,font:{size:'20px',weight:FontWeight.Bold} as Font} as PickerTextStyle
 
-    @State disappearTextStyleDefault: PickerTextStyle = {color:$r("sys.color.ohos_id_color_text_primary"),font:{size:$r("sys.float.ohos_id_text_size_sub_title3"),weight:FontWeight.Lighter}} as PickerTextStyle
-    @State textStyleDefault: PickerTextStyle = {color:$r("sys.color.ohos_id_color_text_primary"),font:{size:$r("sys.float.ohos_id_text_size_sub_title2"),weight:FontWeight.Normal}} as PickerTextStyle
-    @State selectedTextStyleDefault: PickerTextStyle ={color:$r("sys.color.ohos_id_color_text_primary_activated"),font:{size:$r("sys.float.ohos_id_text_size_dialog_tittle"),weight:FontWeight.Bold}} as PickerTextStyle
+    @State disappearTextStyleDefault: PickerTextStyle = {color:$r("sys.color.ohos_id_color_text_primary"),font:{size:$r("sys.float.ohos_id_text_size_sub_title3"),weight:FontWeight.Lighter} as Font} as PickerTextStyle
+    @State textStyleDefault: PickerTextStyle = {color:$r("sys.color.ohos_id_color_text_primary"),font:{size:$r("sys.float.ohos_id_text_size_sub_title2"),weight:FontWeight.Normal} as Font} as PickerTextStyle
+    @State selectedTextStyleDefault: PickerTextStyle ={color:$r("sys.color.ohos_id_color_text_primary_activated"),font:{size:$r("sys.float.ohos_id_text_size_dialog_tittle"),weight:FontWeight.Bold} as Font} as PickerTextStyle
 
     private stateChangCallBack:(eventData:events_emitter.EventData) => void = (eventData:events_emitter.EventData) => {
         console.info("select page state change called:" + JSON.stringify(eventData));
         if (eventData != null && eventData.data != null) {
-            const data = eventData.data as Record<string, Object | null | undefined>                            //需要先获取并声明类型之后  再访问成员属性
-            if (data!['disappearTextStyle'] != null) {
-                console.log('disappearTextStyledisappearTextStyle',data!['disappearTextStyle'] as PickerTextStyle)
-                this.disappearTextStyle = data!['disappearTextStyle'] as PickerTextStyle
-                console.log('disappearTextStyledisappearTextStyle2222',this.disappearTextStyle)
+            const data = eventData.data as ESObject                        //需要先获取并声明类型之后  再访问成员属性
+            if (data.getProperty('disappearTextStyle') != null) {
+                this.disappearTextStyle = data.getProperty('disappearTextStyle').toStaticObject() as PickerTextStyle
             }
-            if (data!['textStyle'] != null) {
-                this.textStyle = data!['textStyle'] as PickerTextStyle;
+            if (data.getProperty('textStyle') != null) {
+                this.textStyle = data.getProperty('textStyle').toStaticObject() as PickerTextStyle;
             }
-            if (data!['selectedTextStyle'] != null) {
-                this.selectedTextStyle = data!['selectedTextStyle'] as PickerTextStyle;
+            if (data.getProperty('selectedTextStyle') != null) {
+                this.selectedTextStyle = data.getProperty('selectedTextStyle').toStaticObject() as PickerTextStyle;
             }
         }
     }
 
     aboutToAppear(){        
         let stateChangeEvent: events_emitter.InnerEvent = {
-            eventId: 183,
+            eventId: 185,
             priority: events_emitter.EventPriority.LOW
         }
         events_emitter.on(stateChangeEvent, this.stateChangCallBack);
@@ -94,10 +93,7 @@ struct DatePickerExample {
                 .textStyle(this.textStyle)
                 .selectedTextStyle(this.selectedTextStyle)
                 .key('datePicker')
-                .id('datePicker')
-                .onDateChange((date: Date) => {
-                     console.info( 'select current date is: ' + JSON.stringify(date))
-                })
+
             
              DatePicker({
                 start: new Date('1970-1-1'),
@@ -109,10 +105,7 @@ struct DatePickerExample {
                 .textStyle(this.textStyleDefault)
                 .selectedTextStyle(this.selectedTextStyleDefault)
                 .key('datePickerDefault')
-                .id('datePickerDefault')
-                .onDateChange((date: Date) => {
-                     console.info( 'select current date is: ' + JSON.stringify(date))
-                })
+
             
             Button('Dialog')
             .fontColor('black')
@@ -124,16 +117,7 @@ struct DatePickerExample {
             .height(40)
             .key("Dialog")
             .onClick((e:ClickEvent) => {
-                this.getUIContext().showDatePickerDialog({
-                start: new Date('1970-1-1'),
-                end: new Date('2100-1-1'),
-                selected: this.selectedDate,
-                lunar:true,
-                showTime:true,
-                disappearTextStyle:this.disappearTextStyle,
-                textStyle: this.textStyle,
-                selectedTextStyle: this.selectedTextStyle,
-              })
+
             })          
         }
     }

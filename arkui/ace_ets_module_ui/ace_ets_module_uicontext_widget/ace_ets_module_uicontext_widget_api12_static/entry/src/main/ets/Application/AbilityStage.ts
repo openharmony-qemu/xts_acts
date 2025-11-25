@@ -12,14 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import AbilityStage from "@ohos.app.ability.AbilityStage";
-import common from "@ohos.app.ability.common";
-import { AppStorage } from '@ohos.arkui.stateManagement';
+import AbilityStage from "@ohos.app.ability.AbilityStage"
 
 export default class MyAbilityStage extends AbilityStage {
-  onCreate() {
-    console.log("[Demo] MyAbilityStage onCreate")
-    AppStorage.setOrCreate<number>('stageOnCreateRun', 1);
-    AppStorage.setOrCreate<common.AbilityStageContext>('stageContext', this.context);
-  }
+    onCreate() {
+        console.log("[Demo] MyAbilityStage onCreate")
+        globalThis.stageOnCreateRun = 1;
+        globalThis.stageContext = this.context;
+    }
 }

@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,13 +63,14 @@ class EntryAbility extends UIAbility {
         })
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent ok');
       });
-    } catch (e: Error) {
-      hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent catch error：-----------' + e.message);
+    } catch (e) {
+      hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent catch error：-----------' + (e as Error).message);
     }
   }
 
-  onDestroy(): Promise<void> {
+  onDestroy(): Promise<void> | undefined {
     hilog.info(0x0000, 'testTag sjd EntryAbility', '%{public}s', 'TestAbility onDestroy');
+    return undefined;
   }
 
   onWindowStageDestroy() {

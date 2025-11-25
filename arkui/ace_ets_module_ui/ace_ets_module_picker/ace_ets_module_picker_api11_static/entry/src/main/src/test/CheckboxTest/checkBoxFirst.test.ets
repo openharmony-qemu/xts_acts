@@ -1,5 +1,6 @@
-/**
- * Copyright (c) 2022 Shenzhen Kaihong Digital Industry Development Co., Ltd.
+'use static';
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -59,6 +60,8 @@ export default function checkBoxGroupJsunit2() {
         console.info("get checkBox state pages:" + JSON.stringify(pages));
         if (!("checkBox2" == pages.name)) {
           console.info("get checkBox pages.name:" + JSON.stringify(pages.name));
+
+
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -73,14 +76,13 @@ export default function checkBoxGroupJsunit2() {
     });
 
 
-    
     /*
      * @tc.number   testcheckBoxGroup001_static
      * @tc.name     testcheckBoxGroup001_static
      * @tc.desc     testcheckBoxGroup001_static
      * @tc.level    Level.LEVEL1
      */
-it('testcheckBoxGroup001_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('testcheckBoxGroup001_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('checkBoxGroup testcheckBoxGroup001 START');
       await Utils.sleep(2000);
       try {

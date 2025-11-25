@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,5 +17,5 @@
 import counterApi from './Counter/counterApi.test';
 
 export default function testsuite() {
-  counterApi(); //组件3组 CounterComponent组件 失败3个用例 TypeError: Cannot find imported element 'CounterType'
+  counterApi();
 }

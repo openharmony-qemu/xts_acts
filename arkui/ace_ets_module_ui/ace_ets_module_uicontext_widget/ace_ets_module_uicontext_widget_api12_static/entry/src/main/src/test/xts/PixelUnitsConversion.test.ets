@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,7 +37,7 @@ export default function PixelUnitsConversionJsunit() {
     beforeAll(() => {
       console.info("PixelUnitsConversionTest beforeEach start");
       await UtilsTest.msSleep(4000)
-      await startAbility("com.example.myapplication.static", "EntryAbility")
+      await startAbility("com.arkui.ace.uicontext_widget_api12_static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
     beforeEach(async () => {
@@ -51,7 +52,7 @@ export default function PixelUnitsConversionJsunit() {
         console.info('get PixelUnitsConversion state pages:' + JSON.stringify(pages));
         if (!('PixelUnitsConversion' == pages.name)) {
           console.info('get PixelUnitsConversion state pages.name:' + JSON.stringify(pages.name));
-          // let result = await router.pushUrl(options);
+          
           router.pushUrl(options);
           await Utils.sleep(2000);
         }

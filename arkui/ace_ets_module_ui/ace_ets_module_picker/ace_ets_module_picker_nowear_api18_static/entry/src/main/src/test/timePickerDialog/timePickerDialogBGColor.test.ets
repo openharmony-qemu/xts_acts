@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -54,8 +55,7 @@ export default function TimePickerDialogBGColorTest() {
       console.info("TimePickerDialogBGColor after each called");
     });
     
-    
-/*
+    /*
      * @tc.number   TimePickerDialogBGColorTest_static_001
      * @tc.name     TimePickerDialogBGColorTest_static_001
      * @tc.desc     TimePickerDialogBGColorTest_static_001
@@ -76,8 +76,7 @@ it('TimePickerDialogBGColorTest_static_001', Level.LEVEL0, async (done: () => vo
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   TimePickerDialogBGColorTest_static_002
      * @tc.name     TimePickerDialogBGColorTest_static_002
      * @tc.desc     TimePickerDialogBGColorTest_static_002
@@ -98,8 +97,7 @@ it('TimePickerDialogBGColorTest_static_002', Level.LEVEL0, async (done: () => vo
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   TimePickerDialogBGColorTest_static_003
      * @tc.name     TimePickerDialogBGColorTest_static_003
      * @tc.desc     TimePickerDialogBGColorTest_static_003
@@ -120,8 +118,7 @@ it('TimePickerDialogBGColorTest_static_003', Level.LEVEL0, async (done: () => vo
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   TimePickerDialogBGColorTest_static_004
      * @tc.name     TimePickerDialogBGColorTest_static_004
      * @tc.desc     TimePickerDialogBGColorTest_static_004
@@ -142,8 +139,7 @@ it('TimePickerDialogBGColorTest_static_004', Level.LEVEL0, async (done: () => vo
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   TimePickerDialogBGColorTest_static_005
      * @tc.name     TimePickerDialogBGColorTest_static_005
      * @tc.desc     TimePickerDialogBGColorTest_static_005
@@ -164,8 +160,7 @@ it('TimePickerDialogBGColorTest_static_005', Level.LEVEL0, async (done: () => vo
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   TimePickerDialogBGColorTest_static_006
      * @tc.name     TimePickerDialogBGColorTest_static_006
      * @tc.desc     TimePickerDialogBGColorTest_static_006
@@ -191,8 +186,7 @@ it('TimePickerDialogBGColorTest_static_006', Level.LEVEL0, async (done: () => vo
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   TimePickerDialogBGColorTest_static_007
      * @tc.name     TimePickerDialogBGColorTest_static_007
      * @tc.desc     TimePickerDialogBGColorTest_static_007
@@ -218,8 +212,7 @@ it('TimePickerDialogBGColorTest_static_007', Level.LEVEL0, async (done: () => vo
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   TimePickerDialogBGColorTest_static_008
      * @tc.name     TimePickerDialogBGColorTest_static_008
      * @tc.desc     TimePickerDialogBGColorTest_static_008
@@ -245,8 +238,7 @@ it('TimePickerDialogBGColorTest_static_008', Level.LEVEL0, async (done: () => vo
       done();
     })
     
-    
-/*
+    /*
      * @tc.number   TimePickerDialogBGColorTest_static_009
      * @tc.name     TimePickerDialogBGColorTest_static_009
      * @tc.desc     TimePickerDialogBGColorTest_static_009

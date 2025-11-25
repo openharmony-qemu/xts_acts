@@ -1,5 +1,6 @@
+'use static';
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,7 +20,7 @@ import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
-struct TextPickerSec {
+struct Index {
   onPageShow() {
     let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: 10,
@@ -32,34 +33,34 @@ struct TextPickerSec {
   private valueChangeCallBack:(eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     console.info("key==> page valueChangeCallBack");
     if (eventData != null && eventData.data != null) {
-      const data = eventData.data as Record<string, Object | null | undefined> //需要先获取并声明类型之后  再访问成员属性
-      if (data!['type'] == "TextPicker" && data!['text'] == "true") {
+      const data = eventData.data as ESObject //需要先获取并声明类型之后  再访问成员属性
+      if (data.getProperty('type').toString() == "TextPicker" && data.getProperty('text').toString() == "true") {
         this.flag = true
         this.canLoop = true
         console.info("valueChangeCallBack this.flag:" + JSON.stringify(this.flag));
         console.info("valueChangeCallBack this.canLoop:" + JSON.stringify(this.canLoop));
         console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       }
-      if (data!['type'] == "TextPicker" && data!['text'] == "false") {
+      if (data.getProperty('type').toString() == "TextPicker" && data.getProperty('text').toString() == "false") {
         this.canLoop = false
         this.flag = true
         console.info("valueChangeCallBack this.flag:" + JSON.stringify(this.flag));
         console.info("valueChangeCallBack this.canLoop:" + JSON.stringify(this.canLoop));
         console.info("valueChangeCallBack:" + JSON.stringify(eventData));
       }
-      if (data!['type'] == "TextPicker" && data!['text'] == "") {
+      if (data.getProperty('type').toString() == "TextPicker" && data.getProperty('text').toString() == "") {
         this.flag = true
       }
-      if (data!['type'] == "TextPicker" && data!['text'] == "0") {
+      if (data.getProperty('type').toString() == "TextPicker" && data.getProperty('text').toString() == "0") {
         this.flag = false
       }
-      if (data!['type'] == "TextPickerErr" && data!['text'] == "null") {
+      if (data.getProperty('type').toString() == "TextPickerErr" && data.getProperty('text').toString() == "null") {
         console.info("valueChangeCallBack:" + JSON.stringify(eventData));
         console.info("valueChangeCallBack this.canLoop:" + JSON.stringify(this.canLoop));
         this.flag = false
         this.errFlag = true
       }
-      if (data!['type'] == "TextPickerErr" && data!['text'] == "undefined") {
+      if (data.getProperty('type').toString() == "TextPickerErr" && data.getProperty('text').toString() == "undefined") {
         console.info("valueChangeCallBack:" + JSON.stringify(eventData));
         console.info("valueChangeCallBack this.canLoop:" + JSON.stringify(this.canLoop));
         this.flag = false
@@ -76,10 +77,8 @@ struct TextPickerSec {
   @State canLoop: boolean = true
   @State flag: boolean = true
   @State errFlag: boolean = true
-  private select: int = 1
-  private select2: int = 1
-  private select3: int = 1
-  private select4: int | Array<int> = 1
+  private select2: int = 1;
+  private select3: int = 1;
   private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4']
   private fruits2: string[] = ['apple1', 'orange2', 'peach3', 'grape4']
 
@@ -88,22 +87,14 @@ struct TextPickerSec {
       Column() {
         Image("../../../resources/base/media/icon.png")
           .height(50)
-        TextPicker({ range: this.fruits, selected: this.select })
-          .key("TextPicker")
-          .margin({ bottom: 10 } as Margin)
-          .canLoop(this.flag ? this.canLoop : (this.errFlag ? undefined : undefined))
-          .onChange((value: string|string[], index: int|int[]):void => {
-            console.info('Picker item changed, value: ' + value + ', index: ' + index)
-          })
         TextPicker({ range: this.fruits, selected: this.select2 })
           .key("TextPickerErr")
-          .canLoop(this.flag ? true : true)
-          .onChange((value: string|string[], index: int|int[]):void => {
+          .onChange((value: string | string[], index: int | int[]):void => {
             console.info('Picker item changed, value: ' + value + ', index: ' + index)
           })
         TextPicker({ range: this.fruits, selected: this.select3 })
           .key("TextPickerNoCanLoop")
-          .onChange((value: string|string[], index: int|int[]):void => {
+          .onChange((value: string | string[], index: int | int[]):void => {
             console.info('Picker item changed, value: ' + value + ', index: ' + index)
           })
 
@@ -112,24 +103,14 @@ struct TextPickerSec {
           .backgroundColor("#ff5e7a80")
           .margin(20)
           .onClick((e:ClickEvent) => {
-            this.getUIContext().showTextPickerDialog({
-              range: this.fruits2,
-              selected: this.select4,
-              canLoop: true,
-              onAccept: (value: TextPickerResult) => {
-                this.select4 = value.index
-                console.info("TextPickerDialog:onAccept()" + JSON.stringify(value))
-              },
-              onCancel: () => {
-                console.info("TextPickerDialog:onCancel()")
-              },
-              onChange: (value: TextPickerResult) => {
-                console.info("TextPickerDialog:onChange()" + JSON.stringify(value))
-              }
-            })
+
           })
       }
       .width('100%')
     }.height('100%')
   }
+}
+
+function fakeBoolean(val: string|number|boolean) {
+  return val as boolean;
 }

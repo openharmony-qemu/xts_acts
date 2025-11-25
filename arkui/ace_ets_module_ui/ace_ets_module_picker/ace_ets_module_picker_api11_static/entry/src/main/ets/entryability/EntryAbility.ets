@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -28,9 +29,9 @@ export default class EntryAbility extends UIAbility {
     AppStorage.setOrCreate<Want>('abilityWant', want);
   }
 
-  onDestroy(): Promise<void>|undefined {
+  onDestroy(): Promise<void> | undefined {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
-    return undefined
+    return undefined;
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {

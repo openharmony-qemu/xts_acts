@@ -1,5 +1,6 @@
-/**
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+'use static';
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,7 +14,7 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -24,7 +25,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import Utils  from "../../../ets/MainAbility/common/Utils";
 let domain: int = 0x0000;
@@ -58,6 +59,8 @@ export default function rating3Jsunit() {
         console.info("get rating state pages:" + JSON.stringify(pages));
         if (!("rating3" == pages.name)) {
           console.info("get rating pages.name:" + JSON.stringify(pages.name));
+
+
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -67,11 +70,10 @@ export default function rating3Jsunit() {
     });
 
     afterEach(async (): Promise<void> => {
-      const routerInstance = AppStorage.get<Router>("router") as Router
-      routerInstance.pushUrl({url:'MainAbility/pages/index/index'});
       await Utils.sleep(1000);
       console.info("rating after each called");
     });
+
 
     /*
      * @tc.number   testRating_static_100
@@ -79,14 +81,14 @@ export default function rating3Jsunit() {
      * @tc.desc     testRating_static_100
      * @tc.level    Level.LEVEL1
      */
-it('testRating_static_100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('testRating_static_100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testRating_static_100 START');
       await Utils.sleep(1000);
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "rating": 2 as double
-          } as Record<string, Object | null | undefined>
+            "rating": 2
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 173,
@@ -105,14 +107,15 @@ it('testRating_static_100', Level.LEVEL1, async (done: () => void): Promise<void
       console.info('testRating_static_100 END');
       done();
     });
-    
+
+
     /*
      * @tc.number   testRating_static_200
      * @tc.name     testRating_static_200
      * @tc.desc     testRating_static_200
      * @tc.level    Level.LEVEL1
      */
-it('testRating_static_200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('testRating_static_200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testRating_static_200] START');
       await Utils.sleep(1000);
       let strJson = inspector.getInspectorByKey('Rating');
@@ -123,26 +126,29 @@ it('testRating_static_200', Level.LEVEL1, async (done: () => void): Promise<void
       done();
     });
 
+
     /*
      * @tc.number   testRating_static_300
      * @tc.name     testRating_static_300
      * @tc.desc     testRating_static_300
      * @tc.level    Level.LEVEL1
      */
-it('testRating_static_300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('testRating_static_300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testRating_static_300 START');
       await Utils.sleep(1000);
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "rating": 3 as double
-          } as Record<string, Object | null | undefined>
+            "rating": 3
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
-          eventId: 173,
+          eventId: 174,
           priority: events_emitter.EventPriority.LOW
         }
         console.info("testRating_static_300 start to publish emit");
+        const data = eventData.data as ESObject                        //需要先获取并声明类型之后  再访问成员属性
+        console.info("eventData.data.rating value" + data.getProperty('rating'));
         events_emitter.emit(innerEvent, eventData);
       } catch (err) {
         console.log("testRating_static_300 change component data error: " + (err as Error).message);
@@ -156,23 +162,24 @@ it('testRating_static_300', Level.LEVEL1, async (done: () => void): Promise<void
       done();
     });
 
+
     /*
      * @tc.number   testRating_static_400
      * @tc.name     testRating_static_400
      * @tc.desc     testRating_static_400
      * @tc.level    Level.LEVEL1
      */
-it('testRating_static_400', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('testRating_static_400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testRating_static_400 START');
       await Utils.sleep(1000);
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "rating": 4 as double
-          } as Record<string, Object | null | undefined>
+            "rating": 4
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
-          eventId: 173,
+          eventId: 175,
           priority: events_emitter.EventPriority.LOW
         }
         console.info("testRating_static_400 start to publish emit");
@@ -189,23 +196,24 @@ it('testRating_static_400', Level.LEVEL1, async (done: () => void): Promise<void
       done();
     });
 
+
     /*
      * @tc.number   testRating_static_500
      * @tc.name     testRating_static_500
      * @tc.desc     testRating_static_500
      * @tc.level    Level.LEVEL1
      */
-it('testRating_static_500', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('testRating_static_500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testRating_static_500 START');
       await Utils.sleep(1000);
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "rating": 5 as double
-          } as Record<string, Object | null | undefined>
+            "rating": 5
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
-          eventId: 173,
+          eventId: 176,
           priority: events_emitter.EventPriority.LOW
         }
         console.info("testRating_static_500 start to publish emit");
@@ -222,23 +230,24 @@ it('testRating_static_500', Level.LEVEL1, async (done: () => void): Promise<void
       done();
     });
 
+
     /*
      * @tc.number   testRating_static_600
      * @tc.name     testRating_static_600
      * @tc.desc     testRating_static_600
      * @tc.level    Level.LEVEL1
      */
-it('testRating_static_600', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('testRating_static_600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testRating_static_600 START');
       await Utils.sleep(1000);
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "rating": 0 as double
-          } as Record<string, Object | null | undefined>
+            "rating": 0
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
-          eventId: 173,
+          eventId: 177,
           priority: events_emitter.EventPriority.LOW
         }
         console.info("testRating_static_600 start to publish emit");
@@ -255,24 +264,24 @@ it('testRating_static_600', Level.LEVEL1, async (done: () => void): Promise<void
       done();
     });
 
-    
+
     /*
      * @tc.number   testRating_static_700
      * @tc.name     testRating_static_700
      * @tc.desc     testRating_static_700
      * @tc.level    Level.LEVEL1
      */
-it('testRating_static_700', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('testRating_static_700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testRating_static_700 START');
       await Utils.sleep(1000);
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "rating": 1 as double
-          } as Record<string, Object | null | undefined>
+            "rating": 1
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
-          eventId: 173,
+          eventId: 178,
           priority: events_emitter.EventPriority.LOW
         }
         console.info("testRating_static_700 start to publish emit");
@@ -290,24 +299,23 @@ it('testRating_static_700', Level.LEVEL1, async (done: () => void): Promise<void
     });
 
 
-    
     /*
      * @tc.number   testRating_static_800
      * @tc.name     testRating_static_800
      * @tc.desc     testRating_static_800
      * @tc.level    Level.LEVEL1
      */
-it('testRating_static_800', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('testRating_static_800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testRating_static_800 START');
       await Utils.sleep(1000);
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "rating": -1 as double
-          } as Record<string, Object | null | undefined>
+            "rating": -1
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
-          eventId: 173,
+          eventId: 1027,
           priority: events_emitter.EventPriority.LOW
         }
         console.info("testRating_static_800 start to publish emit");
@@ -325,24 +333,23 @@ it('testRating_static_800', Level.LEVEL1, async (done: () => void): Promise<void
     });
 
 
-    
     /*
      * @tc.number   testRating_static_900
      * @tc.name     testRating_static_900
      * @tc.desc     testRating_static_900
      * @tc.level    Level.LEVEL1
      */
-it('testRating_static_900', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('testRating_static_900', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testRating_static_900 START');
       await Utils.sleep(1000);
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "rating": 0 as double
-          } as Record<string, Object | null | undefined>
+            "rating": 'a'
+          } as Record<String, RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
-          eventId: 173,
+          eventId: 1028,
           priority: events_emitter.EventPriority.LOW
         }
         console.info("testRating_static_900 start to publish emit");

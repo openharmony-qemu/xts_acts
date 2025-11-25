@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,11 +23,11 @@ import {
   Text, Button, FontWeight, ClickEvent, Margin, Color,ButtonType,
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
-// 自定义主题颜色
-// class BlueColors implements CustomColors {
-//   fontPrimary = Color.White;
-//   backgroundPrimary = Color.Blue;
-// }
+
+
+
+
+
 
 class PageCustomTheme implements CustomTheme {
   colors?: CustomColors;
@@ -36,10 +37,10 @@ class PageCustomTheme implements CustomTheme {
   }
 }
 
-// // 创建实例
-// const BlueColorsTheme = new PageCustomTheme(new BlueColors());
-// // 在页面build之前执行ThemeControl.setDefaultTheme，设置App默认样式风格为BlueColorsTheme。
-// ThemeControl.setDefaultTheme(BlueColorsTheme);
+
+
+
+
 
 @Entry
 @Component
@@ -54,8 +55,8 @@ struct setDefaultTheme1 {
   }
 
   build() {
-    Row(undefined) {
-      Column(undefined) {
+    Row() {
+      Column() {
         Text(this.message)
           .fontSize(50)
           .fontWeight(FontWeight.Bold)

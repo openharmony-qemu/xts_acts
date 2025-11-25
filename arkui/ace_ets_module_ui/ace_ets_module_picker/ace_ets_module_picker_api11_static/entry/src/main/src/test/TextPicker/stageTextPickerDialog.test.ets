@@ -1,5 +1,6 @@
+'use static';
 /*
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,7 +14,7 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level, afterAll } from "../../../../hypium"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level, afterAll } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -58,6 +59,8 @@ export default function stageTextPickerDialog() {
         console.info("get stageTextPickerDialog state pages:" + JSON.stringify(pages));
         if (!("stageTextPickerDialog" == pages.name)) {
           console.info("get stageTextPickerDialog pages.name:" + JSON.stringify(pages.name));
+
+
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -65,17 +68,24 @@ export default function stageTextPickerDialog() {
         console.error("push stageTextPickerDialog page error: " + err);
       }
     });
+    afterEach(() => {
+      // Presets a clear action, which is performed after each unit test case ends.
+      // The number of execution times is the same as the number of test cases defined by **it**.
+      // This API supports only one parameter: clear action function.
+    })
+    afterAll(() => {
+      // Presets a clear action, which is performed after all test cases of the test suite end.
+      // This API supports only one parameter: clear action function.
+    })
 
 
-
-    
     /*
      * @tc.number   testTextPickerDialog001_static
      * @tc.name     testTextPickerDialog001_static
      * @tc.desc     testTextPickerDialog001_static
      * @tc.level    Level.LEVEL1
      */
-it('testTextPickerDialog001_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('testTextPickerDialog001_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testTextPickerDialog001_static START');
       setTimeout(() => {
         try {
@@ -109,14 +119,13 @@ it('testTextPickerDialog001_static', Level.LEVEL1, async (done: () => void): Pro
     });
 
 
-    
     /*
      * @tc.number   testTextPickerDialog002_static
      * @tc.name     testTextPickerDialog002_static
      * @tc.desc     testTextPickerDialog002_static
      * @tc.level    Level.LEVEL1
      */
-it('testTextPickerDialog002_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('testTextPickerDialog002_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testTextPickerDialog002_static START');
       setTimeout(() => {
         try {
@@ -149,14 +158,13 @@ it('testTextPickerDialog002_static', Level.LEVEL1, async (done: () => void): Pro
       }, 500)
     });
 
-    
     /*
      * @tc.number   testTextPickerDialog003_static
      * @tc.name     testTextPickerDialog003_static
      * @tc.desc     testTextPickerDialog003_static
      * @tc.level    Level.LEVEL1
      */
-it('testTextPickerDialog003_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('testTextPickerDialog003_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testTextPickerDialog003_static START');
       setTimeout(() => {
         try {

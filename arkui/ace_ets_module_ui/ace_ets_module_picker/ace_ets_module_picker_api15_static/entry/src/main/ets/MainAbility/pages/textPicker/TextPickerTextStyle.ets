@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +14,8 @@
  * limitations under the License.
  */
 import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,
-  Row, ClickEvent, Margin, ButtonType,Resource, TextPickerAttribute, TextPicker, HorizontalAlign, TextOverflow, AttributeModifier,
+  Row, ClickEvent, Margin, ButtonType,Resource, TextPickerAttribute, TextPicker, HorizontalAlign, 
+  TextOverflow, AttributeModifier,
   HorizontalAlign, ColumnOptions} from '@ohos.arkui.component'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -23,17 +25,17 @@ import { LengthMetrics } from '@kit.ArkUI'
 @Entry
 @Component
 struct TextPickerTextStyleExample {
-  private select: number = 1
-  private fruits: string[] = ['AAAAA', 'BBBBBBBBBBBBB', 'CCCC', 'DDDDDDDD', 'EEE']
-  @State minFontSize: undefined|number|string|Resource = 18.0
-  @State maxFontSize: undefined|number|string|Resource = 28.0
+  private select: int = 1;
+  private fruits: string[] = ['AAAAA', 'BBBBBBBBBBBBB', 'CCCC', 'DDDDDDDD', 'EEE'];
+  @State minFontSize: undefined | double | string | Resource = 18 as undefined | double | string | Resource;
+  @State maxFontSize: undefined | double | string | Resource = 28 as undefined | double | string | Resource;
   @State overflow: TextOverflow | undefined = TextOverflow.Ellipsis
 
   build() {
     Column({ space: 3 } as ColumnOptions) {
       TextPicker({
         range: this.fruits,
-        selected: this.select as int,
+        selected: this.select,
       })
         .height('50%')
         .key('TextPickerTextStyle')
@@ -86,9 +88,6 @@ struct TextPickerTextStyleExample {
           .height('8%')
           .key('TextPickerTextStyle_Null')
           .onClick((e:ClickEvent) => {
-            // this.minFontSize = null
-            // this.maxFontSize = null
-            // this.overflow = null
           })
       }
 

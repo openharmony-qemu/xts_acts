@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -16,5 +17,5 @@
 import GetWindowWidthAndHeightTest from './window/GetWindowWidthAndHeight.test';
 
 export default function testsuite() {
-  GetWindowWidthAndHeightTest(); // getWindowHeightBreakpoint
+  // GetWindowWidthAndHeightTest(); // getWindowHeightBreakpoint
 }

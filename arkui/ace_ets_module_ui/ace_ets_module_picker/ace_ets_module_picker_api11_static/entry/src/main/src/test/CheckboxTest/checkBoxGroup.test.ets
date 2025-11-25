@@ -1,5 +1,6 @@
-/**
- * Copyright (c) 2022 Shenzhen Kaihong Digital Industry Development Co., Ltd.
+'use static';
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,7 +14,7 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter'
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -60,8 +61,10 @@ export default function checkBoxGroupPartJsunit() {
         console.info("get checkBoxGroup state pages:" + JSON.stringify(pages));
         if (!("checkBoxGroup" == pages.name)) {
           console.info("get checkBoxGroup pages.name:" + JSON.stringify(pages.name));
+
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+
         }
       } catch (err) {
         console.error("push checkBoxGroup page error: " + err);
@@ -74,14 +77,13 @@ export default function checkBoxGroupPartJsunit() {
     });
 
 
-    
     /*
      * @tc.number   testcheckBoxGroupPart0011_static
      * @tc.name     testcheckBoxGroupPart0011_static
      * @tc.desc     testcheckBoxGroupPart0011_static
      * @tc.level    Level.LEVEL1
      */
-it('testcheckBoxGroupPart0011_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('testcheckBoxGroupPart0011_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('checkBoxGroupPart testcheckBoxGroupPart0011 START');
       await Utils.sleep(2000);
       try {
@@ -90,7 +92,7 @@ it('testcheckBoxGroupPart0011_static', Level.LEVEL1, async (done: () => void): P
         let strJson: string = inspector.getInspectorByKey('Checkbox2');
         console.info("[testcheckBoxGroupPart0011] component select strJson:" + strJson);
         let obj = JSON.parseJsonElement(strJson);
-        expect(obj.getElement('$type').asString()).assertEqual('Checkbox');
+        expect(obj.getElement('$type')).assertEqual('Checkbox');
         expect(obj.getElement('$attrs').getString('select')).assertEqual("false");
       } catch (err) {
         console.info("testcheckBoxGroupPart_0011 on click err : " + JSON.stringify(err));
@@ -101,14 +103,13 @@ it('testcheckBoxGroupPart0011_static', Level.LEVEL1, async (done: () => void): P
     });
 
 
-    
     /*
      * @tc.number   testcheckBoxGroup0001_static
      * @tc.name     testcheckBoxGroup0001_static
      * @tc.desc     testcheckBoxGroup0001_static
      * @tc.level    Level.LEVEL1
      */
-it('testcheckBoxGroup0001_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('testcheckBoxGroup0001_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('checkBoxGroup testcheckBoxGroup0001 START');
       await Utils.sleep(2000);
       try {

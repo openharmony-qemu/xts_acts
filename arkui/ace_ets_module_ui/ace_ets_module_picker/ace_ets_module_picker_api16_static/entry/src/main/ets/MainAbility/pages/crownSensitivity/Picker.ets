@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,8 +33,7 @@ struct DatePickerExample {
         end: new Date('1980-1-1'),
       })
         .key('picker01')
-
-        .digitalCrownSensitivity(CrownSensitivity.HIGH)  //取值不对，得到的是1,期望是2
+        .digitalCrownSensitivity(CrownSensitivity.HIGH)
         .focusable(true)
         .focusOnTouch(true)
         .disappearTextStyle({ color: Color.Green, font: { size: '16fp', weight: FontWeight.Bold } })

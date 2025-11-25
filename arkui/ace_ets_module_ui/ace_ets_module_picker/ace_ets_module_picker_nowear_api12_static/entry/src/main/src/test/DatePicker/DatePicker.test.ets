@@ -1,5 +1,6 @@
-/**
- * Copyright (c) 2022 Shenzhen Kaihong Digital Industry Development Co., Ltd.
+'use static';
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -57,8 +58,7 @@ export default function datePickerJsunit() {
     });
 
     
-    
-/*
+    /*
      * @tc.number   testDatePicker_static_0021
      * @tc.name     testDatePicker_static_0021
      * @tc.desc     testDatePicker_static_0021
@@ -76,8 +76,7 @@ it('testDatePicker_static_0021', Level.LEVEL1, async (done: () => void): Promise
     });
 
     
-    
-/*
+    /*
      * @tc.number   testDatePicker_static_0022
      * @tc.name     testDatePicker_static_0022
      * @tc.desc     testDatePicker_static_0022
@@ -98,8 +97,7 @@ it('testDatePicker_static_0022', Level.LEVEL1, async (done: () => void): Promise
     });
 
     
-    
-/*
+    /*
      * @tc.number   testDatePicker_static_0023
      * @tc.name     testDatePicker_static_0023
      * @tc.desc     testDatePicker_static_0023
@@ -120,8 +118,7 @@ it('testDatePicker_static_0023', Level.LEVEL1, async (done: () => void): Promise
     });
 
     
-    
-/*
+    /*
      * @tc.number   testDatePicker_static_0024
      * @tc.name     testDatePicker_static_0024
      * @tc.desc     testDatePicker_static_0024

@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +29,7 @@ export default function UIContextCreateFromBuilderJsunit() {
     beforeAll(() => {
       console.info("UIContextCreateFromBuilderTest beforeEach start");
       await UtilsTest.msSleep(4000)
-      await startAbility("com.example.myapplication.static", "EntryAbility")
+      await startAbility("com.arkui.ace.uicontext_widget_api12_static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
     beforeEach(async () => {
@@ -43,7 +44,7 @@ export default function UIContextCreateFromBuilderJsunit() {
         console.info('get UIContextCreateFromBuilder state pages:' + JSON.stringify(pages));
         if (!('UIContextCreateFromBuilder' == pages.name)) {
           console.info('get UIContextCreateFromBuilder state pages.name:' + JSON.stringify(pages.name));
-          // let result = await router.pushUrl(options);
+          
           router.pushUrl(options);
           await Utils.sleep(2000);
         }
@@ -64,19 +65,18 @@ export default function UIContextCreateFromBuilderJsunit() {
      * @tc.desc     UIContextCreateFromBuilderTest_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('UIContextCreateFromBuilderTest_static_0100', Level.LEVEL0, async (done: ()=>void) => {  // App died
+it('UIContextCreateFromBuilderTest_static_0100', Level.LEVEL0, async (done: ()=>void) => {
       console.info('UIContextCreateFromBuilderTest_0100 START');
       let driver1 = Driver.create();
       let button = await driver1.findComponent(ON.id('getComponentSnapshot_03'));
       await (button?.click() as Promise<void>);
       await Utils.sleep(1000);
       let text =  inspector.getInspectorByKey('key_getComponentSnapshot_text_03');
-      console.info('snapshot++++++++++++++++++++'+JSON.stringifyJsonElement(JSON.parseJsonElement(text).getElement('$attrs')));
       expect(JSON.parseJsonElement(text).getElement('$attrs').getString('content')).assertEqual('snapshot');
       console.info('UIContextCreateFromBuilderTest_0100 END');
       done();
     });
-
+    
     
 
 /*

@@ -1,5 +1,6 @@
-/**
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+'use static';
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -13,7 +14,7 @@
  * limitations under the License.
  */
 import events_emitter from '@ohos.events.emitter';
-import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium"
+import { describe,beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
 import { Component, Driver, Component, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix } from '@ohos.UiTest';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
@@ -24,7 +25,7 @@ import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
 import Utils  from "../../../ets/MainAbility/common/Utils";
 let domain: int = 0x0000;
@@ -57,6 +58,8 @@ export default function Toggle3Jsunit() {
         console.info("get toggle state pages:" + JSON.stringify(pages));
         if (!("toggle3" == pages.name)) {
           console.info("get toggle pages.name:" + JSON.stringify(pages.name));
+
+
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
         }
@@ -70,14 +73,14 @@ export default function Toggle3Jsunit() {
       console.info("toggle after each called");
     });
 
-    
+
     /*
      * @tc.number   testToggle01_static
      * @tc.name     testToggle01_static
      * @tc.desc     testToggle01_static
      * @tc.level    Level.LEVEL1
      */
-it('testToggle01_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('testToggle01_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testToggle01] START');
       await Utils.sleep(1000);
       let strJson = inspector.getInspectorByKey('toggle');
@@ -89,14 +92,13 @@ it('testToggle01_static', Level.LEVEL1, async (done: () => void): Promise<void> 
     });
 
 
-    
     /*
      * @tc.number   testToggle02_static
      * @tc.name     testToggle02_static
      * @tc.desc     testToggle02_static
      * @tc.level    Level.LEVEL1
      */
-it('testToggle02_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('testToggle02_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testToggle02] START');
       await Utils.sleep(1000);
       let strJson = inspector.getInspectorByKey('toggle');
@@ -106,14 +108,14 @@ it('testToggle02_static', Level.LEVEL1, async (done: () => void): Promise<void> 
       done();
     });
 
-    
+
     /*
      * @tc.number   testToggle03_static
      * @tc.name     testToggle03_static
      * @tc.desc     testToggle03_static
      * @tc.level    Level.LEVEL1
      */
-it('testToggle03_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('testToggle03_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[testToggle03] START');
       await Utils.sleep(1000);
       let strJson = inspector.getInspectorByKey('toggle');
@@ -124,20 +126,19 @@ it('testToggle03_static', Level.LEVEL1, async (done: () => void): Promise<void> 
     });
 
 
-    
     /*
      * @tc.number   testToggle04_static
      * @tc.name     testToggle04_static
      * @tc.desc     testToggle04_static
      * @tc.level    Level.LEVEL1
      */
-it('testToggle04_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('testToggle04_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testToggle04 START');
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "isOn": true,
-          } as Record<string, Object | null | undefined>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 231,
@@ -157,23 +158,22 @@ it('testToggle04_static', Level.LEVEL1, async (done: () => void): Promise<void> 
     });
 
 
-    
     /*
      * @tc.number   testToggle05_static
      * @tc.name     testToggle05_static
      * @tc.desc     testToggle05_static
      * @tc.level    Level.LEVEL1
      */
-it('testToggle05_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('testToggle05_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testToggle05 START');
       try {
         let eventData: events_emitter.EventData = {
           data: {
             "selectedColor": '#330A59F8',
-          } as Record<string, Object | null | undefined>
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
-          eventId: 231,
+          eventId: 232,
           priority: events_emitter.EventPriority.LOW
         }
         console.info("testToggle05 start to publish emit");
@@ -189,23 +189,23 @@ it('testToggle05_static', Level.LEVEL1, async (done: () => void): Promise<void> 
       done();
     });
 
-    
+
     /*
      * @tc.number   testToggle08_static
      * @tc.name     testToggle08_static
      * @tc.desc     testToggle08_static
      * @tc.level    Level.LEVEL1
      */
-it('testToggle08_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('testToggle08_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testToggle04 START');
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "isOn": false,
-          } as Record<string, Object | null | undefined>
+            "isOn": 'aaa',
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
-          eventId: 231,
+          eventId: 1035,
           priority: events_emitter.EventPriority.LOW
         }
         console.info("testToggle04 start to publish emit");
@@ -222,23 +222,22 @@ it('testToggle08_static', Level.LEVEL1, async (done: () => void): Promise<void> 
     });
 
 
-    
     /*
      * @tc.number   testToggle09_static
      * @tc.name     testToggle09_static
      * @tc.desc     testToggle09_static
      * @tc.level    Level.LEVEL1
      */
-it('testToggle09_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('testToggle09_static', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('testToggle04 START');
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "isOn": false,
-          } as Record<string, Object | null | undefined>
+            "isOn": -1,
+          } as Record<String, RecordData>
         }
         let indexEvent: events_emitter.InnerEvent = {
-          eventId: 231,
+          eventId: 1036,
           priority: events_emitter.EventPriority.LOW
         }
         console.info("testToggle04 start to publish emit");

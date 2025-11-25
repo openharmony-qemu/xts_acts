@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -52,8 +53,7 @@ export default function textPickerDialogSelectedAreaTest() {
       console.info('textPickerDialogSelectedAreaTest beforeEach end');
     });
     
-    
-/*
+    /*
      * @tc.number   textPickerDialogSelectedAreaTest_static_001
      * @tc.name     textPickerDialogSelectedAreaTest_static_001
      * @tc.desc     textPickerDialogSelectedAreaTest_static_001
@@ -62,11 +62,11 @@ export default function textPickerDialogSelectedAreaTest() {
 it('textPickerDialogSelectedAreaTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('textPickerDialogSelectedAreaTest_static_001 START');
       let driver = Driver.create();
-      let btn = await driver.findComponent(ON.id('showTextPickerDialog'));
+      let btn = await driver.findComponent(ON.id('showTextPickerDialog')) as Component;
       btn?.click()
       await Utils.sleep(2000);
 
-      let textPickerDialog = await driver.findComponent(ON.id('colComponent'));
+      let textPickerDialog = await driver.findComponent(ON.id('colComponent')) as Component;
       let rect = await textPickerDialog!.getBounds();
       let top = rect.top;
       let left = rect.left;
@@ -82,7 +82,7 @@ it('textPickerDialogSelectedAreaTest_static_001', Level.LEVEL0, async (done: () 
       );
       await Utils.sleep(6000);
 
-      let btn1 = await driver.findComponent(ON.text('确定'));
+      let btn1 = await driver.findComponent(ON.text('确定')) as Component;
       await Utils.sleep(500);
       btn1?.click();
       await Utils.sleep(500);

@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
  * you may not use this file except in compliance with the License.
@@ -18,9 +19,8 @@ import { State } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct CalendarPickerDialogBGBlurStyle {
-  showDialog(style: BlurStyle | null | undefined | int) {
+  showDialog(style: BlurStyle | null | undefined) {
     CalendarPickerDialog.show({
-      backgroundBlurStyle: (style as BlurStyle|undefined),
     })
   }
   build() {
@@ -103,12 +103,10 @@ struct CalendarPickerDialogBGBlurStyle {
         .id('undefinedID')
       Button('100')
         .onClick((e: ClickEvent) => {
-          this.showDialog(100)
         })
         .id('100ID')
       Button('-100')
         .onClick((e: ClickEvent) => {
-          this.showDialog(-100)
         })
         .id('-100ID')
     }.width('100%')

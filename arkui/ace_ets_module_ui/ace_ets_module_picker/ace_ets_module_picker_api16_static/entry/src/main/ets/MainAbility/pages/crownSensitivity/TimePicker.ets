@@ -1,4 +1,5 @@
-/**
+'use static';
+/*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +39,7 @@ struct TimePickerExample {
         .useMilitaryTime(false)
         .onChange((value: TimePickerResult) => {
           if (value.hour) {
-            this.selectedTime1.setHours(value.hour, value.minute)
+            this.selectedTime1.setHours(value.hour.toInt(), value.minute.toInt())
             console.info('select current date is: ' + JSON.stringify(value))
           }
         })

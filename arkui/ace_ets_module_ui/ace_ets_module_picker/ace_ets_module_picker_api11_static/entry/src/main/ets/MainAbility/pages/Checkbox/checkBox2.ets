@@ -1,5 +1,6 @@
-/**
- * Copyright (c) 2022 Shenzhen Kaihong Digital Industry Development Co., Ltd.
+'use static';
+/*
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -70,7 +71,7 @@ struct CheckBoxGroup {
 
       Row() {
         CheckboxGroup({ group: 'checkboxGroup' })
-          .selectedColor('0xed6f21')
+          .selectedColor(0xed6f21)
           .key('CheckboxGroup')
           .onChange((itemName: CheckboxGroupResult):void => {
             console.info("TextPicker::dialogResult is" + JSON.stringify(itemName))
@@ -79,7 +80,7 @@ struct CheckBoxGroup {
         Checkbox({ name: 'checkbox1', group: 'checkboxGroup' })
           .key('Checkbox1')
           .select(true)
-          .selectedColor('0xed6f21')
+          .selectedColor(0xed6f21)
           .onChange((value: boolean):void => {
             console.info('Checkbox1 change is' + value)
           })

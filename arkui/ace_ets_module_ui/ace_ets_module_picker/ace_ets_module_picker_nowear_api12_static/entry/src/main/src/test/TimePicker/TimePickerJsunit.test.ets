@@ -1,5 +1,6 @@
+'use static';
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -37,7 +38,7 @@ export default function timepickerJsunit() {
       await UtilsTest.msSleep(4000)
     });
 
-    beforeEach(async () => {
+    beforeEach(async (done: () => void): Promise<void> => {
       console.info("timepickerJsunit beforeEach start");
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/TimePicker/timePicker',
@@ -58,8 +59,7 @@ export default function timepickerJsunit() {
     });
 
     
-    
-/*
+    /*
      * @tc.number   ArkUI_Stage_timepicker_static_1000
      * @tc.name     ArkUI_Stage_timepicker_static_1000
      * @tc.desc     ArkUI_Stage_timepicker_static_1000
@@ -80,8 +80,7 @@ it('ArkUI_Stage_timepicker_static_1000', Level.LEVEL1, async (done: () => void):
     });
 
     
-    
-/*
+    /*
      * @tc.number   ArkUI_Stage_timepicker_static_2000
      * @tc.name     ArkUI_Stage_timepicker_static_2000
      * @tc.desc     ArkUI_Stage_timepicker_static_2000
@@ -101,8 +100,7 @@ it('ArkUI_Stage_timepicker_static_2000', Level.LEVEL1, async (done: () => void):
     });
 
     
-    
-/*
+    /*
      * @tc.number   ArkUI_Stage_timepicker_static_3000
      * @tc.name     ArkUI_Stage_timepicker_static_3000
      * @tc.desc     ArkUI_Stage_timepicker_static_3000
