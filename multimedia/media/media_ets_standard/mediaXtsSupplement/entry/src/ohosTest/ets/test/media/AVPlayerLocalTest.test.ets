@@ -793,17 +793,7 @@ export default function AVPlayerLocalSuppTest() {
       getSelectedTracksTestPromisePaused(done, testName, FileName, (arrList) => {
         expect(arrList.length > 0).assertTrue();
       });
-
-
     })
-
-
-
-
-
-
-
-
 
     /**
      * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_MP3_0100
@@ -2385,6 +2375,150 @@ export default function AVPlayerLocalSuppTest() {
     it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0900', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_ARM_0900';
       let FileName: string = 'amrnb_4.75k_8000.amr';
+      getSelectedTracksTestPromisePaused(done, testName, FileName, (arrList) => {
+        expect(arrList.length > 0).assertTrue();
+      });
+    });
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_F4V_0100
+     * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_F4V_0100
+     * @tc.desc   AudioPlayer_getTrackDescription
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_F4V_0100', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_F4V_0100';
+      let FileName: string = 'h264_720x480_60.f4v';
+      getTrackDescriptionTestPrepared(done, testName, FileName, (arrList) => {
+        expect(arrList.length > 0).assertTrue();
+      });
+    });
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_F4V_0200
+     * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_F4V_0200
+     * @tc.desc   AudioPlayer_getTrackDescription
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_F4V_0200', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_F4V_0200';
+      let FileName: string = 'h264_720x480_60.f4v';
+      getTrackDescriptionTestPromisePrepared(done, testName, FileName, (arrList) => {
+        expect(arrList.length > 0).assertTrue();
+      });
+    });
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_F4V_0300
+     * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_F4V_0300
+     * @tc.desc   AudioPlayer_getTrackDescription
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_F4V_0300', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_F4V_0300';
+      let FileName: string = 'h264_720x480_60.f4v';
+      getSelectedTracksTestPromisePrepared(done, testName, FileName, (arrList) => {
+        expect(arrList.length > 0).assertTrue();
+      });
+    });
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_F4V_0400
+     * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_F4V_0400
+     * @tc.desc   AudioPlayer_getTrackDescription
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_F4V_0400', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_F4V_0400';
+      let FileName: string = 'h264_720x480_60.f4v';
+      getTrackDescriptionTestPlaying(done, testName, FileName, (arrList) => {
+        expect(arrList.length > 0).assertTrue();
+      });
+    });
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_F4V_0500
+     * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_F4V_0500
+     * @tc.desc   AudioPlayer_getTrackDescription
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_F4V_0500', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_F4V_0500';
+      let FileName: string = 'h264_720x480_60.f4v';
+      getTrackDescriptionTestPromisePlaying(done, testName, FileName, (arrList) => {
+        expect(arrList.length > 0).assertTrue();
+      });
+    });
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_F4V_0600
+     * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_F4V_0600
+     * @tc.desc   AudioPlayer_getTrackDescription
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_F4V_0600', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_F4V_0600';
+      let FileName: string = 'h264_720x480_60.f4v';
+      getSelectedTracksTestPromisePlaying(done, testName, FileName, (arrList) => {
+        expect(arrList.length > 0).assertTrue();
+      });
+    });
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_F4V_0700
+     * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_F4V_0700
+     * @tc.desc   AudioPlayer_getTrackDescription
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_F4V_0700', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_F4V_0700';
+      let FileName: string = 'h264_720x480_60.f4v';
+      getTrackDescriptionTestPaused(done, testName, FileName, (arrList) => {
+        expect(arrList.length > 0).assertTrue();
+      });
+    });
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_F4V_0800
+     * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_F4V_0800
+     * @tc.desc   AudioPlayer_getTrackDescription
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_F4V_0800', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_F4V_0800';
+      let FileName: string = 'h264_720x480_60.f4v';
+      getTrackDescriptionTestPromisePaused(done, testName, FileName, (arrList) => {
+        expect(arrList.length > 0).assertTrue();
+      });
+    });
+
+    /**
+     * @tc.number SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_F4V_0900
+     * @tc.name   SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_F4V_0900
+     * @tc.desc   AudioPlayer_getTrackDescription
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 2
+     */
+    it('SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_F4V_0900', Level.LEVEL0, async (done: Function) => {
+      const testName = 'SUB_MULTIMEDIA_AV_PLAYER_GET_TRACK_DESCRIPTION_F4V_0900';
+      let FileName: string = 'h264_720x480_60.f4v';
       getSelectedTracksTestPromisePaused(done, testName, FileName, (arrList) => {
         expect(arrList.length > 0).assertTrue();
       });

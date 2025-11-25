@@ -19,6 +19,9 @@ import AVPlayerLocalDeprecatedTest from './media/AVPlayerLocalDeprecatedTest.tes
 import AVPlayerLocalSuppTest from './media/AVPlayerLocalTest.test';
 import SetUrISourceTest from './media/MediaSetUrlSourceTest.test';
 import RespondDataTest from './media/RespondDataTest.test';
+import AVPlayerSetMediaSourceSuppTest from './media/AVPlayerMediaSourceSupp.test';
+import AVPlayerSetMediaMutedSuppTest from './media/AVPlayerSetMediaMutedSupp.test';
+import AVPlayerSetPlaybackRangeSuppTest from './media/AVPlayerSetPlaybackRangeSupp.test';
 
 export default function testsuite() {
   AVPlayerLocalDeprecatedTest();
@@ -27,6 +30,8 @@ export default function testsuite() {
   AVMetaFetchFrameByTime();
   SetUrISourceTest();
   RespondDataTest();
-
+  AVPlayerSetPlaybackRangeSuppTest();
+  AVPlayerSetMediaMutedSuppTest();
+  AVPlayerSetMediaSourceSuppTest();
 }
 
