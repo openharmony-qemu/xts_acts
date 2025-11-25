@@ -42,10 +42,8 @@ export default function pushNamedRoute6() {
         console.info("get pushNamedRoute6 state pages:" + JSON.stringify(pages));
         if (!("pushNamedRoute6" == pages.name)) {
           console.info("get pushNamedRoute6 pages.name:" + JSON.stringify(pages.name));
-          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push pushNamedRoute6 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push pushNamedRoute6 page error:" + err);
@@ -55,12 +53,14 @@ export default function pushNamedRoute6() {
     afterEach(async () => {
     });
 
-    /**
-     * @tc.number pushNamedRoute6_static_0100
-     * @tc.name testRouter
-     * @tc.desc
+    
+    /*
+     * @tc.number   pushNamedRoute6_static_0100
+     * @tc.name     pushNamedRoute6_static_0100
+     * @tc.desc     pushNamedRoute6_static_0100
+     * @tc.level    Level.LEVEL2
      */
-    it('pushNamedRoute6_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('pushNamedRoute6_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('pushNamedRoute6_static_0100 START');
       await CommonFunc.sleep(1000);
 

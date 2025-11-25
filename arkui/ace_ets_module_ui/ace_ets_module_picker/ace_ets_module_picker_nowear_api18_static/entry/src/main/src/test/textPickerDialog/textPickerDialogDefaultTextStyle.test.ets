@@ -52,7 +52,8 @@ export default function textPickerDialogDefaultTextStyleTest() {
       console.info('textPickerDialogDefaultTextStyleTest beforeEach end');
     });
     
-    /*
+    
+/*
      * @tc.number   textPickerDialogDefaultTextStyleTest_static_001
      * @tc.name     textPickerDialogDefaultTextStyleTest_static_001
      * @tc.desc     textPickerDialogDefaultTextStyleTest_static_001
@@ -83,7 +84,8 @@ it('textPickerDialogDefaultTextStyleTest_static_001', Level.LEVEL0, async (done:
     });
 
     
-    /*
+    
+/*
      * @tc.number   textPickerDialogDefaultTextStyleTest_static_002
      * @tc.name     textPickerDialogDefaultTextStyleTest_static_002
      * @tc.desc     textPickerDialogDefaultTextStyleTest_static_002
@@ -114,7 +116,8 @@ it('textPickerDialogDefaultTextStyleTest_static_002', Level.LEVEL0, async (done:
     });
 
     
-    /*
+    
+/*
      * @tc.number   textPickerDialogDefaultTextStyleTest_static_003
      * @tc.name     textPickerDialogDefaultTextStyleTest_static_003
      * @tc.desc     textPickerDialogDefaultTextStyleTest_static_003
@@ -145,7 +148,8 @@ it('textPickerDialogDefaultTextStyleTest_static_003', Level.LEVEL0, async (done:
     });
 
     
-    /*
+    
+/*
      * @tc.number   textPickerDialogDefaultTextStyleTest_static_004
      * @tc.name     textPickerDialogDefaultTextStyleTest_static_004
      * @tc.desc     textPickerDialogDefaultTextStyleTest_static_004

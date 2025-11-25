@@ -46,13 +46,15 @@ export default function triggerSelect() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        routerInstance.clear();
+        // routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get triggerSelect state pages: " + JSON.stringify(pages));
         if (!("triggerSelect" == pages.name)) {
           console.info("get triggerSelect state pages.name: " + JSON.stringify(pages.name));
+          //let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          //console.info("push triggerSelect success: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push triggerSelect page error: " + err);
@@ -61,7 +63,8 @@ export default function triggerSelect() {
     });
     
      
-    /*
+    
+/*
      * @tc.number   triggerSelect_static_0100
      * @tc.name     triggerSelect_static_0100
      * @tc.desc     triggerSelect_static_0100
@@ -71,11 +74,11 @@ it('triggerSelect_static_0100', Level.LEVEL1, async (done: () => void): Promise<
       console.info('triggerSelect_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('SelectClick')) as Component;
+      let button = await driver.findComponent(ON.id('SelectClick'));
       await button!.click();
       await CommonFunc.sleep(1000);
 
-      let value = await driver.findComponent(ON.id('RowValue')) as Component;
+      let value = await driver.findComponent(ON.id('RowValue'));
       await value!.click();
       await CommonFunc.sleep(1000);
 

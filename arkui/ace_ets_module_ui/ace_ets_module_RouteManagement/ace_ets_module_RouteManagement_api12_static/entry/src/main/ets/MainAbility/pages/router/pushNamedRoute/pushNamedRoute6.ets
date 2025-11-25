@@ -28,9 +28,8 @@ import {
   ClickEvent
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
-//import ('./pageOne')
-
-@Entry//({ routeName: 'pushNamedRoute6' })
+initModule ('./pageOne')
+@Entry
 @Component
 struct pushNamedRoute6 {
   @State text1:string = ''
@@ -40,6 +39,7 @@ struct pushNamedRoute6 {
       Text('pushNamedRoute6').id('pushNamedRoute6_text1')
       Text(this.text1).id('pushNamedRoute6_text2')
       Button('pushNamedRoute').onClick((event: ClickEvent) => {
+        initModule ('./pageOne')
         this.getUIContext().getRouter().pushNamedRoute({
           name: 'pageOne'
         }, (err) => {

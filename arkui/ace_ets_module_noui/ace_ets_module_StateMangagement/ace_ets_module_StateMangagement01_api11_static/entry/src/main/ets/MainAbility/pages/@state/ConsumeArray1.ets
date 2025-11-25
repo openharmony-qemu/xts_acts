@@ -38,7 +38,7 @@ import {
 import {
   State,
   Link,
-  PropRef,Consume,Provide
+  Prop,Consume,Provide
 } from '@ohos.arkui.stateManagement'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -53,7 +53,7 @@ interface Num{
 
 @Component
 struct Child_CA1 {
-
+  // @Consume装饰的变量通过相同的属性名绑定其祖先组件Ancestors内的@Provide装饰的变量
   @Consume Array1: Date | Array<Length> | Array<Num>| Array<Int>| Array<Record<string,number>> | Array<String> | Array<Resource>
   build() {
     Column() {
@@ -108,7 +108,7 @@ struct Child_CA1 {
 @Entry
 @Component
 struct Ancestors_CA1 {
-
+  // @Provide装饰的联合类型count由入口组件Ancestors提供其后代组件
   @Provide Array1: Date | Array<Length> | Array<Object>| Array<Int>| Array<Int> = [1];
 
   build() {
@@ -116,7 +116,8 @@ struct Ancestors_CA1 {
       Text("count type of " + JSON.stringify(CommonFunc.getType(this.Array1)) + " number is " + JSON.stringify(this.Array1))
         .fontSize(9).key('ConsumeArray1').height('5%')
 
-
+      Text("count type of " + JSON.stringify(CommonFunc.getType(this.Array1)) + " number is " + AppStorage.get<common.UIAbilityContext>('UIAbilityContext')?.resourceManager.getStringSync($r('app.string.number').id)??'')
+        .fontSize(9).key('ConsumeArray1New').height('5%')
 
       Child_CA1()
     }.width('100%')

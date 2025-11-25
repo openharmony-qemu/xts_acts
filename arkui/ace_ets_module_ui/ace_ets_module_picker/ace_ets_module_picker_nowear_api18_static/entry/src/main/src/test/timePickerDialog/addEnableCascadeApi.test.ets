@@ -52,7 +52,8 @@ export default function enableCascadeTest() {
       console.info('TimePickerDialogApienableCascade beforeEach end');
     });
 
-    /*
+    
+/*
      * @tc.number   TimePickerDialog_EnableCascade_static_001
      * @tc.name     TimePickerDialog_EnableCascade_static_001
      * @tc.desc     TimePickerDialog_EnableCascade_static_001
@@ -79,7 +80,8 @@ it('TimePickerDialog_EnableCascade_static_001', Level.LEVEL1, async (done: () =>
 
     
 
-    /*
+    
+/*
      * @tc.number   TimePickerDialog_EnableCascade_static_002
      * @tc.name     TimePickerDialog_EnableCascade_static_002
      * @tc.desc     TimePickerDialog_EnableCascade_static_002
@@ -104,8 +106,9 @@ it('TimePickerDialog_EnableCascade_static_002', Level.LEVEL1, async (done: () =>
       done();
     });
 
+
     
-    /*
+/*
      * @tc.number   TimePickerDialog_EnableCascade_static_003
      * @tc.name     TimePickerDialog_EnableCascade_static_003
      * @tc.desc     TimePickerDialog_EnableCascade_static_003
@@ -130,9 +133,10 @@ it('TimePickerDialog_EnableCascade_static_003', Level.LEVEL1, async (done: () =>
       done();
     });
 
-    
 
-    /*
+
+    
+/*
      * @tc.number   TimePickerDialog_EnableCascade_static_004
      * @tc.name     TimePickerDialog_EnableCascade_static_004
      * @tc.desc     TimePickerDialog_EnableCascade_static_004

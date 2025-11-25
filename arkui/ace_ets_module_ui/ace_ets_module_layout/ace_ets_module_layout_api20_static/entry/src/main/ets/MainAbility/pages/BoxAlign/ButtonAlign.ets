@@ -19,13 +19,13 @@ import { ClickEvent } from '@ohos.arkui.component';
 @Entry
 @Component
 struct ButtonAlign {
-  
-  
-  
-  
+  // @State isLocalizedAlignment: LocalizedAlignment[] =
+  //   [LocalizedAlignment.TOP_START, LocalizedAlignment.TOP, LocalizedAlignment.TOP_END, LocalizedAlignment.START,
+  //     LocalizedAlignment.CENTER, LocalizedAlignment.END, LocalizedAlignment.BOTTOM_START, LocalizedAlignment.BOTTOM,
+  //     LocalizedAlignment.BOTTOM_END]
   @State isLocalizedAlignmentIndex: number = 0
   @State isDirection: Direction[] = [Direction.Ltr, Direction.Rtl, Direction.Auto]
-  @State isDirectionIndex: number = 0
+  @State isDirectionIndex: int = 0
 
   build() {
     Row() {
@@ -125,7 +125,7 @@ struct ButtonAlign {
 
         Button('OVER')
           .id('GetAlignButton1')
-          .direction(this.isDirection[this.isDirectionIndex.toInt()])
+          .direction(this.isDirection[this.isDirectionIndex])// .align(this.isLocalizedAlignment[this.isLocalizedAlignmentIndex])
           .width(120)
           .height(90)
           .backgroundColor(0x317aff)

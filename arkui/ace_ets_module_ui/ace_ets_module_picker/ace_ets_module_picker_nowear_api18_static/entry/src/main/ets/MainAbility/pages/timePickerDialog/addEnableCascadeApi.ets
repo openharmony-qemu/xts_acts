@@ -15,8 +15,12 @@
  */
 import { MessageManager, Callback, Message } from '../../common/MessageManager';
 import { Entry, Column, ColumnOptions, Component, Button, ClickEvent, Color, FontWeight, TimePickerResult } from '@ohos.arkui.component'
-import { State } from '@ohos.arkui.stateManagement'
+import { State, AppStorage } from '@ohos.arkui.stateManagement'
 
+export interface GlobalMessage {
+  name: string,
+  message: MessageManager
+}
 @Entry
 @Component
 struct TimePickerPage {
@@ -30,15 +34,23 @@ struct TimePickerPage {
 
   onPageShow() {
     console.info('TimePicker onPageShow')
+    const globalMessage: GlobalMessage = {
+      name: 'messageManager', message: this.messageManager
+    } as GlobalMessage;
+    AppStorage.setOrCreate<GlobalMessage>('TimePickerPage', globalMessage);
     let callback: Callback = (message: Message): void => {
       console.error('message = ' + message.name + '--' + message.value)
       if (message.name == 'isMilitaryTime') {
+        this.isMilitaryTime = message.value as boolean
       }
       if (message.name == 'selectedTime') {
+        this.selectedTime = message.value as Date
       }
       if (message.name == 'hour') {
+        // this.hour = message.value
       }
       if (message.name == 'minute') {
+        // this.minute = message.value
       }
     }
     this.messageManager.registerCallback(callback)
@@ -58,7 +70,7 @@ struct TimePickerPage {
             selectedTextStyle: { color: Color.Blue, font: { size: 30, weight: FontWeight.Bolder } },
             onAccept: (value: TimePickerResult) => {
               if (value.hour != undefined && value.minute != undefined) {
-                this.selectedTime.setHours(value.hour.toInt(), value.minute.toInt())
+                this.selectedTime.setHours(value.hour, value.minute)
                 console.info('TimePickerDialog:onAccept()' + JSON.stringify(value))
               }
             },
@@ -95,7 +107,7 @@ struct TimePickerPage {
             selectedTextStyle: { color: Color.Blue, font: { size: 30, weight: FontWeight.Bolder } },
             onAccept: (value: TimePickerResult) => {
               if (value.hour != undefined && value.minute != undefined) {
-                this.selectedTime.setHours(value.hour.toInt(), value.minute.toInt())
+                this.selectedTime.setHours(value.hour, value.minute)
                 console.info('TimePickerDialog:onAccept()' + JSON.stringify(value))
               }
             },
@@ -132,10 +144,11 @@ struct TimePickerPage {
             selectedTextStyle: { color: Color.Blue, font: { size: 30, weight: FontWeight.Bolder } },
             onAccept: (value: TimePickerResult) => {
               if (value.hour != undefined && value.minute != undefined) {
-                this.selectedTime.setHours(value.hour.toInt(), value.minute.toInt())
+                this.selectedTime.setHours(value.hour, value.minute)
                 console.info('TimePickerDialog:onAccept()' + JSON.stringify(value))
               }
             },
+            // enableCascade: null,
             onCancel: () => {
               console.info('TimePickerDialog:onCancel()')
             },
@@ -168,7 +181,7 @@ struct TimePickerPage {
             selectedTextStyle: { color: Color.Blue, font: { size: 30, weight: FontWeight.Bolder } },
             onAccept: (value: TimePickerResult) => {
               if (value.hour != undefined && value.minute != undefined) {
-                this.selectedTime.setHours(value.hour.toInt(), value.minute.toInt())
+                this.selectedTime.setHours(value.hour, value.minute)
                 console.info('TimePickerDialog:onAccept()' + JSON.stringify(value))
               }
             },

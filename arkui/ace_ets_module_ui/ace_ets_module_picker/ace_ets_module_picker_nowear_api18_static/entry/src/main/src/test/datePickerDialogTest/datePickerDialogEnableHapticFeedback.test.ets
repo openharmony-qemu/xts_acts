@@ -56,7 +56,8 @@ export default function EnableHapticFeedback() {
       console.info('EnableHapticFeedback after each called');
     });
     
-    /*
+    
+/*
      * @tc.number   DatePickerDialog_EnableHapticFeedback_static_001
      * @tc.name     DatePickerDialog_EnableHapticFeedback_static_001
      * @tc.desc     DatePickerDialog_EnableHapticFeedback_static_001
@@ -81,7 +82,8 @@ it('DatePickerDialog_EnableHapticFeedback_static_001', Level.LEVEL1, async (done
     });
 
     
-    /*
+    
+/*
      * @tc.number   DatePickerDialog_EnableHapticFeedback_static_002
      * @tc.name     DatePickerDialog_EnableHapticFeedback_static_002
      * @tc.desc     DatePickerDialog_EnableHapticFeedback_static_002
@@ -106,7 +108,8 @@ it('DatePickerDialog_EnableHapticFeedback_static_002', Level.LEVEL1, async (done
     });
 
     
-    /*
+    
+/*
      * @tc.number   DatePickerDialog_EnableHapticFeedback_static_003
      * @tc.name     DatePickerDialog_EnableHapticFeedback_static_003
      * @tc.desc     DatePickerDialog_EnableHapticFeedback_static_003
@@ -131,7 +134,8 @@ it('DatePickerDialog_EnableHapticFeedback_static_003', Level.LEVEL1, async (done
     });
     
     
-    /*
+    
+/*
      * @tc.number   DatePickerDialog_EnableHapticFeedback_static_004
      * @tc.name     DatePickerDialog_EnableHapticFeedback_static_004
      * @tc.desc     DatePickerDialog_EnableHapticFeedback_static_004

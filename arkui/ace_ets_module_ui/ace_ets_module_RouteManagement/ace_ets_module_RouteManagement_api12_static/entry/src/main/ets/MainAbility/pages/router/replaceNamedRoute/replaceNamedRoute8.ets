@@ -43,7 +43,7 @@ struct replaceNamedRoute8 {
 
 
   aboutToAppear(): void {
-    AppStorage.setOrCreate('replaceNamedRoute8_mes', AppStorage.get('replaceNamedRoute8_mes') + ';replaceNamedRoute8_aboutToAppear')
+    AppStorage.setOrCreate<string>('replaceNamedRoute8_mes', AppStorage.get<string>('replaceNamedRoute8_mes') + ';replaceNamedRoute8_aboutToAppear')
   }
 
   build() {
@@ -57,7 +57,7 @@ struct replaceNamedRoute8 {
         .id('replaceNamedRoute8_get')
         .fontSize(14)
         .onClick((e:ClickEvent) => {
-          this.text = AppStorage.get('replaceNamedRoute8_mes') + ''
+          this.text = AppStorage.get<string>('replaceNamedRoute8_mes') + ''
         })
 
       Button('replaceNamedRoute8')
@@ -66,7 +66,7 @@ struct replaceNamedRoute8 {
           this.getUIContext().getRouter().replaceNamedRoute({
             name: 'replaceNamedRoute8',
             params: new routerParams22('message')
-          }, router.RouterMode.Standard)
+          })
             .then(() => {
               console.log('replaceNamedRoute success');
             })

@@ -14,7 +14,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../../hypium/index"
 import router from '@ohos.router';
-
+// import { vp2px } from '@ohos.arkui.component';
 import {
   Driver,
   Component,
@@ -63,26 +63,27 @@ export default function CustomLayoutUniqueidTest() {
         console.info("get CustomLayoutUniqueidTest state pages:" + JSON.stringify(pages));
         if (!("CustomLayoutUniqueidTest" == pages.name)) {
           console.info("get CustomLayoutUniqueidTest pages.name:" + JSON.stringify(pages.name));
-          
+          //let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push CustomLayoutUniqueidTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push CustomLayoutUniqueidTest page error: " + err);
         expect().assertFail();
       }
-      
+      // done();
     });
 
 
+    
     /*
      * @tc.number   CustomLayoutUniqueidTest_static_0100
      * @tc.name     CustomLayoutUniqueidTest_static_0100
      * @tc.desc     CustomLayoutUniqueidTest_static_0100
      * @tc.level    Level.LEVEL1
      */
-    it('CustomLayoutUniqueidTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('CustomLayoutUniqueidTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[CustomLayoutUniqueidTest_static_0100] START');
       await CommonFunc.sleep(2000);
 
@@ -118,13 +119,14 @@ export default function CustomLayoutUniqueidTest() {
     });
 
 
+    
     /*
      * @tc.number   CustomLayoutUniqueidTest_static_0200
      * @tc.name     CustomLayoutUniqueidTest_static_0200
      * @tc.desc     CustomLayoutUniqueidTest_static_0200
      * @tc.level    Level.LEVEL1
      */
-    it('CustomLayoutUniqueidTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('CustomLayoutUniqueidTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('CustomLayoutUniqueidTest_static_0200 START');
       await CommonFunc.sleep(1000);
 

@@ -22,7 +22,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import Utils from '../../../ets/MainAbility/common/Utils'
-
+// import { vp2px } from '@ohos.arkui.component'
 
 export default function columnWidthsTest() {
   describe('columnWidthsTest', () => {
@@ -58,7 +58,8 @@ export default function columnWidthsTest() {
       console.info('columnWidthTest after each called');
     })
     
-    /*
+    
+/*
      * @tc.number   columnWidthsText_static_0100
      * @tc.name     columnWidthsText_static_0100
      * @tc.desc     columnWidthsText_static_0100
@@ -77,7 +78,8 @@ it('columnWidthsText_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
       });
   
       
-      /*
+      
+/*
      * @tc.number   columnWidthsText_static_0101
      * @tc.name     columnWidthsText_static_0101
      * @tc.desc     columnWidthsText_static_0101
@@ -97,9 +99,10 @@ it('columnWidthsText_static_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
         console.info('columnWidthsText_static_0101 END');
         done();
       })
-  
+
+
       
-      /*
+/*
      * @tc.number   columnWidthsText_static_0102
      * @tc.name     columnWidthsText_static_0102
      * @tc.desc     columnWidthsText_static_0102
@@ -119,9 +122,10 @@ it('columnWidthsText_static_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
         console.info('columnWidthsText_static_0102 END');
         done();
       })
-  
+
+
       
-      /*
+/*
      * @tc.number   columnWidthsText_static_0103
      * @tc.name     columnWidthsText_static_0103
      * @tc.desc     columnWidthsText_static_0103
@@ -130,7 +134,9 @@ it('columnWidthsText_static_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
 it('columnWidthsText_static_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
         console.info("columnWidthsText_static_0103 start");
         await Utils.sleep(1000);
+  console.info("columnWidthsText_static_0103 getInspectorByKey:" + JSON.stringify(inspector.getInspectorByKey('columnWidths_004')));
         let strJson = inspector.getInspectorByKey('columnWidths_004');
+  console.info("columnWidthsText_static_0103 strJson" + JSON.stringify(strJson));
         let obj = JSON.parseJsonElement(strJson);
         console.info("[columnWitchTest_static_0103]:" + JSON.stringify(obj.getElement('$attrs').getString('columnWidths')));
         let str = UIContext.getFocusedUIContext()!.vp2px(112).toFixed(2).toString() + 'px,' + UIContext.getFocusedUIContext()!.vp2px(112).toFixed(2).toString() + 'px,'

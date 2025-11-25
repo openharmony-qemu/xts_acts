@@ -10,6 +10,7 @@
     "MainAbility/pages/@state/LinkNumber",
     "MainAbility/pages/@state/LinkColor",
     "MainAbility/pages/@state/LinkArray",
-    "MainAbility/pages/@state/PropArray1"
+    "MainAbility/pages/@state/PropArray1",
+    "MainAbility/pages/@state/ConsumeArray"
   ]
 }

@@ -42,10 +42,8 @@ export default function replaceNamedRoute8() {
         console.info("get replaceNamedRoute8 state success " + JSON.stringify(pages));
         if (!("replaceNamedRoute8" == pages.name)) {
           console.info("get replaceNamedRoute8 state success " + JSON.stringify(pages.name));
-          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push replaceNamedRoute8 page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push replaceNamedRoute8 page error: " + err);
@@ -57,13 +55,14 @@ export default function replaceNamedRoute8() {
       console.info("replaceNamedRoute8 after each called");
     });
 
-    /**
-     * @tc.number    replaceNamedRoute8_static_0100
-     * @tc.name      replaceNamedRoute8_static_0100
-     * @tc.desc      Test replaceNamedRoute
-     * @tc.level     Level 2
+    
+    /*
+     * @tc.number   replaceNamedRoute8_static_0100
+     * @tc.name     replaceNamedRoute8_static_0100
+     * @tc.desc     replaceNamedRoute8_static_0100
+     * @tc.level    Level.LEVEL2
      */
-    it('replaceNamedRoute8_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('replaceNamedRoute8_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[replaceNamedRoute8_static_0100] START');
       await CommonFunc.sleep(1000);
 
@@ -71,12 +70,12 @@ export default function replaceNamedRoute8() {
       await CommonFunc.sleep(1000);
 
       let btn = await driver.findComponent(ON.id('replaceNamedRoute8_btn'));
-      await (btn?.click() as Promise<void>)
+      await btn!.click()
       await CommonFunc.sleep(2000);
       console.info('[replaceNamedRoute8_static_0100] btn click');
 
       let btn2 = await driver.findComponent(ON.id('replaceNamedRoute8_get'));
-      await (btn2?.click() as Promise<void>)
+      await btn2!.click()
       await CommonFunc.sleep(1000);
       console.info('[replaceNamedRoute8_static_0100] btn2 click');
       let str =  AppStorage.get<string>('replaceNamedRoute8_mes') + '';

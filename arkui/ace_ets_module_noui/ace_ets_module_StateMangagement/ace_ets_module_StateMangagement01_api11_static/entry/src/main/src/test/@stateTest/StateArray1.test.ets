@@ -69,10 +69,10 @@ export default function StateArray1() {
         console.info("get StateArray1 state pages:" + JSON.stringify(pages));
         if (!("StateArray1" == pages.name)) {
           console.info("get StateArray1 pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
+          //let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push StateArray1 page result:" + JSON.stringify(result));
+          // console.info("push StateArray1 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push StateArray1 page error:" + err);
@@ -81,12 +81,12 @@ export default function StateArray1() {
     });
 
 
-
+    
     /*
      * @tc.number   StateArray_static_0500
      * @tc.name     StateArray_static_0500
      * @tc.desc     StateArray_static_0500
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StateArray_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StateArray_static_0100 START');
@@ -103,12 +103,12 @@ it('StateArray_static_0500', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info('[StateArray_static_0100] END');
       done();
     });
-
+    
     /*
      * @tc.number   StateArray_static_0600
      * @tc.name     StateArray_static_0600
      * @tc.desc     StateArray_static_0600
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StateArray_static_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StateArray_static_0100 START');
@@ -125,12 +125,12 @@ it('StateArray_static_0600', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info('[StateArray_static_0100] END');
       done();
     });
-
+    
     /*
      * @tc.number   StateArray_static_0700
      * @tc.name     StateArray_static_0700
      * @tc.desc     StateArray_static_0700
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StateArray_static_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StateArray_static_0100 START');
@@ -147,12 +147,12 @@ it('StateArray_static_0700', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info('[StateArray_static_0100] END');
       done();
     });
-
+    
     /*
      * @tc.number   StateArray_static_0800
      * @tc.name     StateArray_static_0800
      * @tc.desc     StateArray_static_0800
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StateArray_static_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StateArray_static_0100 START');
@@ -169,12 +169,12 @@ it('StateArray_static_0800', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info('[StateArray_static_0100] END');
       done();
     });
-
+    
     /*
      * @tc.number   StateArray_static_0900
      * @tc.name     StateArray_static_0900
      * @tc.desc     StateArray_static_0900
-     * @tc.level    0
+     * @tc.level    Level.LEVEL0
      */
 it('StateArray_static_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('StateArray_static_0100 START');

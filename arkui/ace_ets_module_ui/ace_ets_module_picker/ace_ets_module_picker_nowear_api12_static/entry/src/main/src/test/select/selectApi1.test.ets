@@ -51,8 +51,10 @@ export default function selectApi1() {
         console.info("get selectApi1 state pages:" + JSON.stringify(pages));
         if (!("selectApi1" == pages.name)) {
           console.info("get selectApi1 pages.name:" + JSON.stringify(pages.name));
+          //let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
+          //console.info("push selectApi1 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push selectApi1 page error:" + err);
@@ -64,7 +66,8 @@ export default function selectApi1() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   selectApi1_static_0100
      * @tc.name     selectApi1_static_0100
      * @tc.desc     selectApi1_static_0100

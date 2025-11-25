@@ -12,51 +12,55 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 import RectValue from './Rect';
+import {
+  Button,
+  ButtonAttribute,
+  ClickEvent,
+  Column,
+  Component,
+  Entry,
+  Text,
+  TextAttribute,
+  TouchObject,
+  TouchType
+} from '@ohos.arkui.component' // TextAttribute should be insert by ui-plugins
 import inspector from '@ohos.arkui.inspector';
-import { AppStorage } from '@ohos.arkui.stateManagement';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { TouchObject, TouchType } from '@ohos.arkui.component';
-import { sendTouchEvent } from "@kit.ArkUI";
+import { sendTouchEvent } from '@ohos.arkui.Test';
 import common from '@ohos.app.ability.common';
 
 export default class Utils {
-  static rect_left: number;
-  static rect_top: number;
-  static rect_right: number;
-  static rect_bottom: number;
+  static rect_left: number = 0;
+  static rect_top: number = 0;
+  static rect_right: number = 0;
+  static rect_bottom: number = 0;
   static rect_value: RectValue = new RectValue();
 
   static getComponentRect(key: string) {
-    let strJson = inspector.getInspectorByKey(key);
-    let obj: Record<string, Object> =
-      JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
+    let strJson: string = inspector.getInspectorByKey(key);
+    let obj: Record<string, Object> = JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
     console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
-    let rectInfo: Array<Array<number>> =
-      JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
+    let rectInfo: Array<Array<number>> = JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
     console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
-    console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' + "windowRect Top: " +
-    AppStorage.get<number>("winTop"));
-    CommonFunc.rect_left = Number(rectInfo[0][0] ?? 0);
-    CommonFunc.rect_top = Number(rectInfo[0][1] ?? 0);
-    CommonFunc.rect_right = Number(rectInfo[1][0] ?? 0);
-    CommonFunc.rect_bottom = Number(rectInfo[1][1] ?? 0);
-    return CommonFunc.rect_value = {
-      "left": CommonFunc.rect_left,
-      "top": CommonFunc.rect_top,
-      "right": CommonFunc.rect_right,
-      "bottom": CommonFunc.rect_bottom
+    Utils.rect_left = Number(rectInfo[0][0] ?? 0);
+    Utils.rect_top = Number(rectInfo[0][1] ?? 0);
+    Utils.rect_right = Number(rectInfo[1][0] ?? 0);
+    Utils.rect_bottom = Number(rectInfo[1][1] ?? 0);
+    return Utils.rect_value = {
+      left: Utils.rect_left, top: Utils.rect_top, right: Utils.rect_right, bottom: Utils.rect_bottom
     }
   }
 
-  static async sleep(time: int) : Promise<int>  {
-    return new Promise<int>((resolve, reject) => {
+  static sleep(time: Int) {
+    return new Promise<string>((resolve: (value: string) => void) => {
       setTimeout(() => {
-        resolve(0)
+        resolve("ok")
       }, time)
+    }).then(() => {
+      console.info(`sleep ${time} over...`)
     })
   }
+
 
   static async drag(downX: number, downY: number, upX: number, upY: number, steps: number) {
     console.info('start to drag')
@@ -127,3 +131,7 @@ export default class Utils {
     Utils.sleep(500)
   }
 }
+
+
+
+

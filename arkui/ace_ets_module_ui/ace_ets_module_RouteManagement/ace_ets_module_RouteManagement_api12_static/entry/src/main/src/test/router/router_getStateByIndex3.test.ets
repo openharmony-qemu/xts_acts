@@ -12,20 +12,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
-import CommonFunc from '../../../ets/MainAbility/common/Common';
-import {
-  Component,
-  Driver,
-  UiWindow,
-  ON,
-  MatchPattern,
-  DisplayRotation,
-  ResizeDirection,
-  WindowMode,
-  PointerMatrix
-} from '@ohos.UiTest';
+import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector'
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -51,10 +41,8 @@ export default function router_getStateByIndex3() {
         console.info("get router_getStateByIndex3 state pages:" + JSON.stringify(pages));
         if (!("router_getStateByIndex3" == pages.name)) {
           console.info("get router_getStateByIndex3 pages.name:" + JSON.stringify(pages.name));
-          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push router_getStateByIndex3 page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push router_getStateByIndex3 page error:" + err);
@@ -66,15 +54,14 @@ export default function router_getStateByIndex3() {
       console.info("router_getStateByIndex3 after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_UI_ABILITY_ROUTER_0030
-     * @tc.name testGetStateByIndex
-     * @tc.desc Retrieve the status information of the corresponding page through index values.
-     * @tc.level Level 3
-     * @tc.type
-     * @tc.size
+    
+    /*
+     * @tc.number   router_getStateByIndex3_static_0100
+     * @tc.name     router_getStateByIndex3_static_0100
+     * @tc.desc     router_getStateByIndex3_static_0100
+     * @tc.level    Level.LEVEL2
      */
-    it('router_getStateByIndex3_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('router_getStateByIndex3_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[router_getStateByIndex3_static_0100] START');
       await CommonFunc.sleep(1000);
 
@@ -82,7 +69,7 @@ export default function router_getStateByIndex3() {
       await CommonFunc.sleep(1000);
 
       let btn1 = await driver.findComponent(ON.id('router_getStateByIndex3_btn'));
-      await (btn1?.click() as Promise<void>);
+      await btn1!.click()
       await CommonFunc.sleep(2000);
 
       let text1 = inspector.getInspectorByKey('router_getStateByIndex3_text');

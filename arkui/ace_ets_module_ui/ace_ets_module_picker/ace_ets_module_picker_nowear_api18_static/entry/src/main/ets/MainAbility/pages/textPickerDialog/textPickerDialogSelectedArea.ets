@@ -16,25 +16,24 @@ import { Entry, Column, ColumnOptions, RowOptions, Component, Row, Button, Click
 import { State } from '@ohos.arkui.stateManagement'
 
 class SelectedValue{
-  private select: int = 2
-  set(val: int){
+  private select: number = 2
+  set(val:number){
     this.select = val
   }
 }
 class SelectedArray{
-  private select: int[] = []
-  set(val: int[]){
+  private select: number[] = []
+  set(val:number[]){
     this.select = val
   }
 }
-
 @Entry
 @Component
 struct TextPickerDialogSelectedAreaExample {
   @State selectTime: Date = new Date('2023-12-25T08:30:00');
-  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5'];
-  private select: int = 0;
-  @State selectedFlag: string = '';
+  private fruits: string[] = ['apple1', 'orange2', 'peach3', 'grape4', 'banana5']
+  private select: Int  = 0;
+  @State selectedFlag: string = ''
   build() {
     Column() {
       Button('showTextPickerDialog ' + this.selectedFlag)
@@ -50,6 +49,7 @@ struct TextPickerDialogSelectedAreaExample {
               let selectedVal = new SelectedValue()
               let selectedArr = new SelectedArray()
               if(value.index){
+                // value.index instanceof Array?selectedArr.set(value.index) : selectedVal.set(value.index)
               }
               console.info('TextPickerDialog:onAccept()' + JSON.stringify(value))
             },

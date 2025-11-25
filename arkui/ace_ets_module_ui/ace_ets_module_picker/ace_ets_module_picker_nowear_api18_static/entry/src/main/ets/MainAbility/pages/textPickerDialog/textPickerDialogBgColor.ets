@@ -18,12 +18,12 @@ import { State } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct TextPickerDialogBgColor {
-  showDialog(color: ResourceColor | undefined) {
+  showDialog(color: ResourceColor | undefined | null | int) {
     this.getUIContext().showTextPickerDialog({
       // 建议使用 this.getUIContext().showTextPickerDialog()接口
       range: ['apple1', 'orange2', 'peach3', 'grape4', 'banana5'],
       defaultPickerItemHeight: 40,
-      backgroundColor: color,
+      backgroundColor: (color as ResourceColor|undefined),
       backgroundBlurStyle: BlurStyle.NONE,
     })
 }
@@ -57,6 +57,7 @@ struct TextPickerDialogBgColor {
 
       Button('null')
         .onClick((e: ClickEvent) => {
+          this.showDialog(null)
         })
         .id('nullID')
       Button('undefined')
@@ -71,6 +72,7 @@ struct TextPickerDialogBgColor {
         .id('xxxID')
       Button('-100')
         .onClick((e: ClickEvent) => {
+          this.showDialog(-100)
         })
         .id('-100ID')
     }.width('100%')

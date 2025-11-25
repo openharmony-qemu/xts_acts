@@ -12,14 +12,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, $r, ResourceColor, CalendarPickerDialog, Flex, FlexWrap, Button, Color, BlurStyle, ShadowStyle, ClickEvent } from '@ohos.arkui.component'
+import { Entry, Column, Component, $r, ResourceColor, CalendarPickerDialog, Flex, FlexWrap, Button, Color, BlurStyle, ShadowStyle, ClickEvent, Resource } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
 @Component
 struct CalendarPickerDialogBGColor {
-  showDialog(color: ResourceColor | null | undefined) {
+  showDialog(color: null|undefined|Color|Double|String|Resource) {
     CalendarPickerDialog.show({
+      backgroundColor: (color as undefined|Color|Int|String|Resource),
       backgroundBlurStyle: BlurStyle.NONE,
       shadow: ShadowStyle.OUTER_FLOATING_SM,
     })

@@ -39,15 +39,17 @@ import enableCascadeTest from './timePickerDialog/addEnableCascadeApi.test'
 import columnWidths from './textPicker/columnWidths.test';
 
 export default function testsuite() {
-    calendarPickerDialogStartEndTest()
-    calendarPickerStartEndTest()
+    columnWidths();//11.17SDK pass:4
+    calendarPickerStartEndTest()//11.17SDK pass:2  failed:3  The key 'start' was not found in the JSON object
+    SliderEnableHapticFeedbackTest();//11.17SDK pass:3  failed:1  expect true equals false
+    textPickerDialogSelectedAreaTest();//11.17SDK pass:1
+    timePickerDialogSelectedAreaTest();//11.17SDK pass:1
+
+    calendarPickerDialogStartEndTest();//11.17SDK pass:1 failed:1  app died:1
     datePickerDialogMode()
-    timePickerDialogEnableHapticFeedback();
+    timePickerDialogEnableHapticFeedback(); //pass：2
     EnableHapticFeedback();
-    textPickerDialogSelectedAreaTest();
-    timePickerDialogSelectedAreaTest();
     textPickerDialogEnableHapticFeedback();
-    SliderEnableHapticFeedbackTest();
     textPickerDialogDefaultTextStyleTest();
     textPickerDialogDisableTextStyleAnimationTest();
     calendarPickerDialogBackgroundBlurStyleTest();
@@ -63,5 +65,4 @@ export default function testsuite() {
     timePickerDialogBGColorTest();
     timePickerDialogShadowTest();
     enableCascadeTest();
-    columnWidths();
 }

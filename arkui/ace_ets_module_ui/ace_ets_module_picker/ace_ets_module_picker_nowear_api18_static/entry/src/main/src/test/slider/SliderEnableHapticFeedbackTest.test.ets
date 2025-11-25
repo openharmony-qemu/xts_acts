@@ -23,6 +23,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import Utils from '../../../ets/MainAbility/common/Utils'
+import { BusinessError } from '@ohos.base';
 
 export default function SliderEnableHapticFeedbackTest() {
   describe('SliderAddEnableHapticFeedbackApi', () => {
@@ -54,7 +55,8 @@ export default function SliderEnableHapticFeedbackTest() {
     });
 
     
-    /*
+    
+/*
      * @tc.number   SliderAddEnableHapticFeedbackApi_static_001
      * @tc.name     SliderAddEnableHapticFeedbackApi_static_001
      * @tc.desc     SliderAddEnableHapticFeedbackApi_static_001
@@ -64,7 +66,7 @@ it('SliderAddEnableHapticFeedbackApi_static_001', Level.LEVEL1, async (done: () 
       console.info('[SliderAddEnableHapticFeedbackApi_static_001] START');
       await Utils.sleep(1000);
       let driver: Driver = Driver.create();
-      let trueBtn: Component = await driver.findComponent(ON.id('enableHapticFeedback_true')) as Component;
+      let trueBtn: Component | null = await driver.findComponent(ON.id('enableHapticFeedback_true'));
       trueBtn?.click();
       await Utils.sleep(1000);
       let slider = inspector.getInspectorByKey('slider');
@@ -77,7 +79,8 @@ it('SliderAddEnableHapticFeedbackApi_static_001', Level.LEVEL1, async (done: () 
     });
 
     
-    /*
+    
+/*
      * @tc.number   SliderAddEnableHapticFeedbackApi_static_002
      * @tc.name     SliderAddEnableHapticFeedbackApi_static_002
      * @tc.desc     SliderAddEnableHapticFeedbackApi_static_002
@@ -87,20 +90,21 @@ it('SliderAddEnableHapticFeedbackApi_static_002', Level.LEVEL1, async (done: () 
       console.info('[SliderAddEnableHapticFeedbackApi_static_002] START');
       await Utils.sleep(1000);
       let driver: Driver = Driver.create();
-      let trueBtn: Component = await driver.findComponent(ON.id('enableHapticFeedback_false')) as Component;
+      let trueBtn = await driver.findComponent(ON.id('enableHapticFeedback_false'));
       trueBtn?.click();
-      await Utils.sleep(1000);
+      await Utils.sleep(2000);
       let slider = inspector.getInspectorByKey('slider');
+      await Utils.sleep(2000);
       console.info("[SliderAddEnableHapticFeedbackApi_static_002] attrs is: " +
       JSON.parseJsonElement(slider).getElement('$attrs').getString('enableHapticFeedback'));
-      await Utils.sleep(1000);
       expect(JSON.parseJsonElement(slider).getElement('$attrs').getString('enableHapticFeedback')).assertEqual('false');
       console.info('[SliderAddEnableHapticFeedbackApi_static_002] END');
       done();
     });
 
+
     
-    /*
+/*
      * @tc.number   SliderAddEnableHapticFeedbackApi_static_003
      * @tc.name     SliderAddEnableHapticFeedbackApi_static_003
      * @tc.desc     SliderAddEnableHapticFeedbackApi_static_003
@@ -110,7 +114,7 @@ it('SliderAddEnableHapticFeedbackApi_static_003', Level.LEVEL1, async (done: () 
       console.info('[SliderAddEnableHapticFeedbackApi_static_003] START');
       await Utils.sleep(1000);
       let driver: Driver = Driver.create();
-      let trueBtn: Component = await driver.findComponent(ON.id('enableHapticFeedback_undefied')) as Component;
+      let trueBtn = await driver.findComponent(ON.id('enableHapticFeedback_undefied'));
       trueBtn?.click();
       await Utils.sleep(1000);
       let slider = inspector.getInspectorByKey('slider');
@@ -122,8 +126,9 @@ it('SliderAddEnableHapticFeedbackApi_static_003', Level.LEVEL1, async (done: () 
       done();
     });
 
+
     
-    /*
+/*
      * @tc.number   SliderAddEnableHapticFeedbackApi_static_004
      * @tc.name     SliderAddEnableHapticFeedbackApi_static_004
      * @tc.desc     SliderAddEnableHapticFeedbackApi_static_004
@@ -133,7 +138,7 @@ it('SliderAddEnableHapticFeedbackApi_static_004', Level.LEVEL1, async (done: () 
       console.info('[SliderAddEnableHapticFeedbackApi_static_004] START');
       await Utils.sleep(1000);
       let driver: Driver = Driver.create();
-      let trueBtn: Component = await driver.findComponent(ON.id('enableHapticFeedback_null')) as Component;
+      let trueBtn = await driver.findComponent(ON.id('enableHapticFeedback_null'));
       trueBtn?.click();
       await Utils.sleep(1000);
       let slider = inspector.getInspectorByKey('slider');

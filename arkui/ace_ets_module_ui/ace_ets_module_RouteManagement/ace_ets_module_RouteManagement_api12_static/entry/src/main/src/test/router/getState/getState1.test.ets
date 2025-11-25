@@ -42,10 +42,8 @@ export default function getState1() {
         console.info("get getState1 state success " + JSON.stringify(pages));
         if (!("getState1" == pages.name)) {
           console.info("get getState1 state success " + JSON.stringify(pages.name));
-          // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push getState1 page success " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push getState1 page error: " + err);
@@ -57,13 +55,14 @@ export default function getState1() {
       console.info("getState1 after each called");
     });
 
-    /**
-     * @tc.number    getState1_static_0100
-     * @tc.name      getState1_static_0100
-     * @tc.desc      Test back
-     * @tc.level     Level 2
+    
+    /*
+     * @tc.number   getState1_static_0100
+     * @tc.name     getState1_static_0100
+     * @tc.desc     getState1_static_0100
+     * @tc.level    Level.LEVEL2
      */
-    it('getState1_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
+it('getState1_static_0100', Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info('[getState1_static_0100] START');
       await CommonFunc.sleep(1000);
 
@@ -71,12 +70,12 @@ export default function getState1() {
       await CommonFunc.sleep(1000);
 
       let btn = await driver.findComponent(ON.id('getState1_btn'));
-      await (btn?.click() as Promise<void>)
+      await btn!.click()
       await CommonFunc.sleep(2000);
       console.info('[getState1_static_0100] btn click');
 
       let btn2 = await driver.findComponent(ON.id('getState01_btn'));
-      await (btn2?.click() as Promise<void>)
+      await btn2!.click()
       await CommonFunc.sleep(2000);
       console.info('[getState1_static_0100] btn2 click');
 

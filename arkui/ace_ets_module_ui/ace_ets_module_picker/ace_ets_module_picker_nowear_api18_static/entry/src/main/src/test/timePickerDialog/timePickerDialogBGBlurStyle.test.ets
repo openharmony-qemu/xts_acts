@@ -54,7 +54,8 @@ export default function TimePickerDialogBGBlurStyleTest() {
       console.info("TimePickerDialogBGBlurStyle after each called");
     });
     
-    /*
+    
+/*
      * @tc.number   TimePickerDialogBGBlurStyleTest_static_001
      * @tc.name     TimePickerDialogBGBlurStyleTest_static_001
      * @tc.desc     TimePickerDialogBGBlurStyleTest_static_001
@@ -80,7 +81,8 @@ it('TimePickerDialogBGBlurStyleTest_static_001', Level.LEVEL0, async (done: () =
       done();
     })
     
-    /*
+    
+/*
      * @tc.number   TimePickerDialogBGBlurStyleTest_static_002
      * @tc.name     TimePickerDialogBGBlurStyleTest_static_002
      * @tc.desc     TimePickerDialogBGBlurStyleTest_static_002
@@ -106,7 +108,8 @@ it('TimePickerDialogBGBlurStyleTest_static_002', Level.LEVEL0, async (done: () =
       done();
     })
     
-    /*
+    
+/*
      * @tc.number   TimePickerDialogBGBlurStyleTest_static_003
      * @tc.name     TimePickerDialogBGBlurStyleTest_static_003
      * @tc.desc     TimePickerDialogBGBlurStyleTest_static_003
@@ -132,7 +135,8 @@ it('TimePickerDialogBGBlurStyleTest_static_003', Level.LEVEL0, async (done: () =
       done();
     })
     
-    /*
+    
+/*
      * @tc.number   TimePickerDialogBGBlurStyleTest_static_004
      * @tc.name     TimePickerDialogBGBlurStyleTest_static_004
      * @tc.desc     TimePickerDialogBGBlurStyleTest_static_004
@@ -158,7 +162,8 @@ it('TimePickerDialogBGBlurStyleTest_static_004', Level.LEVEL0, async (done: () =
       done();
     })
     
-    /*
+    
+/*
      * @tc.number   TimePickerDialogBGBlurStyleTest_static_005
      * @tc.name     TimePickerDialogBGBlurStyleTest_static_005
      * @tc.desc     TimePickerDialogBGBlurStyleTest_static_005
@@ -184,7 +189,8 @@ it('TimePickerDialogBGBlurStyleTest_static_005', Level.LEVEL0, async (done: () =
       done();
     })
     
-    /*
+    
+/*
      * @tc.number   TimePickerDialogBGBlurStyleTest_static_006
      * @tc.name     TimePickerDialogBGBlurStyleTest_static_006
      * @tc.desc     TimePickerDialogBGBlurStyleTest_static_006
@@ -210,7 +216,8 @@ it('TimePickerDialogBGBlurStyleTest_static_006', Level.LEVEL0, async (done: () =
       done();
     })
     
-    /*
+    
+/*
      * @tc.number   TimePickerDialogBGBlurStyleTest_static_007
      * @tc.name     TimePickerDialogBGBlurStyleTest_static_007
      * @tc.desc     TimePickerDialogBGBlurStyleTest_static_007
@@ -236,7 +243,8 @@ it('TimePickerDialogBGBlurStyleTest_static_007', Level.LEVEL0, async (done: () =
       done();
     })
     
-    /*
+    
+/*
      * @tc.number   TimePickerDialogBGBlurStyleTest_static_008
      * @tc.name     TimePickerDialogBGBlurStyleTest_static_008
      * @tc.desc     TimePickerDialogBGBlurStyleTest_static_008
@@ -257,7 +265,8 @@ it('TimePickerDialogBGBlurStyleTest_static_008', Level.LEVEL0, async (done: () =
       done();
     })
     
-    /*
+    
+/*
      * @tc.number   TimePickerDialogBGBlurStyleTest_static_009
      * @tc.name     TimePickerDialogBGBlurStyleTest_static_009
      * @tc.desc     TimePickerDialogBGBlurStyleTest_static_009
@@ -283,7 +292,8 @@ it('TimePickerDialogBGBlurStyleTest_static_009', Level.LEVEL0, async (done: () =
       done();
     })
     
-    /*
+    
+/*
      * @tc.number   TimePickerDialogBGBlurStyleTest_static_0010
      * @tc.name     TimePickerDialogBGBlurStyleTest_static_0010
      * @tc.desc     TimePickerDialogBGBlurStyleTest_static_0010
@@ -309,7 +319,8 @@ it('TimePickerDialogBGBlurStyleTest_static_0010', Level.LEVEL0, async (done: () 
       done();
     })
     
-    /*
+    
+/*
      * @tc.number   TimePickerDialogBGBlurStyleTest_static_0011
      * @tc.name     TimePickerDialogBGBlurStyleTest_static_0011
      * @tc.desc     TimePickerDialogBGBlurStyleTest_static_0011
@@ -335,7 +346,8 @@ it('TimePickerDialogBGBlurStyleTest_static_0011', Level.LEVEL0, async (done: () 
       done();
     })
     
-    /*
+    
+/*
      * @tc.number   TimePickerDialogBGBlurStyleTest_static_0012
      * @tc.name     TimePickerDialogBGBlurStyleTest_static_0012
      * @tc.desc     TimePickerDialogBGBlurStyleTest_static_0012
@@ -361,7 +373,8 @@ it('TimePickerDialogBGBlurStyleTest_static_0012', Level.LEVEL0, async (done: () 
       done();
     })
     
-    /*
+    
+/*
      * @tc.number   TimePickerDialogBGBlurStyleTest_static_0013
      * @tc.name     TimePickerDialogBGBlurStyleTest_static_0013
      * @tc.desc     TimePickerDialogBGBlurStyleTest_static_0013
@@ -387,7 +400,8 @@ it('TimePickerDialogBGBlurStyleTest_static_0013', Level.LEVEL0, async (done: () 
       done();
     })
     
-    /*
+    
+/*
      * @tc.number   TimePickerDialogBGBlurStyleTest_static_0014
      * @tc.name     TimePickerDialogBGBlurStyleTest_static_0014
      * @tc.desc     TimePickerDialogBGBlurStyleTest_static_0014
@@ -413,7 +427,8 @@ it('TimePickerDialogBGBlurStyleTest_static_0014', Level.LEVEL0, async (done: () 
       done();
     })
     
-    /*
+    
+/*
      * @tc.number   TimePickerDialogBGBlurStyleTest_static_0015
      * @tc.name     TimePickerDialogBGBlurStyleTest_static_0015
      * @tc.desc     TimePickerDialogBGBlurStyleTest_static_0015
@@ -439,7 +454,8 @@ it('TimePickerDialogBGBlurStyleTest_static_0015', Level.LEVEL0, async (done: () 
       done();
     })
     
-    /*
+    
+/*
      * @tc.number   TimePickerDialogBGBlurStyleTest_static_0016
      * @tc.name     TimePickerDialogBGBlurStyleTest_static_0016
      * @tc.desc     TimePickerDialogBGBlurStyleTest_static_0016
@@ -465,7 +481,8 @@ it('TimePickerDialogBGBlurStyleTest_static_0016', Level.LEVEL0, async (done: () 
       done();
     })
     
-    /*
+    
+/*
      * @tc.number   TimePickerDialogBGBlurStyleTest_static_0017
      * @tc.name     TimePickerDialogBGBlurStyleTest_static_0017
      * @tc.desc     TimePickerDialogBGBlurStyleTest_static_0017

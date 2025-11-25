@@ -22,11 +22,11 @@ import calendarPickerJsunit from './CalendarPicker/CalendarPicker.test';
 import datePickerJsunit from './DatePicker/DatePicker.test';
 
 export default function testsuite() {
-  selectApi1();
-  triggerSelect()
-  selectJsunit()
-  timepickerJsunit()
-  textpickerJsunit()
-  calendarPickerJsunit()
-  datePickerJsunit()
+  selectApi1();  //pass 注释
+  triggerSelect() //configuration.triggerSelect()导致App Died
+  selectJsunit()  //全pass 注释
+  textpickerJsunit() //10.26SDK全pass 注释
+  calendarPickerJsunit() //全pass 注释
+  datePickerJsunit() //全pass 注释
+  timepickerJsunit()  //全pass 注释
 }

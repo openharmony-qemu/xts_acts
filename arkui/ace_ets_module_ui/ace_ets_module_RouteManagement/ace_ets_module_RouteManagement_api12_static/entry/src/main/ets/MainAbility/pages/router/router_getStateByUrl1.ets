@@ -30,7 +30,7 @@ struct router_getStateByUrl1 {
         .id('router_getStateByUrl1_btn')
         .onClick((e: ClickEvent) => {
           let options: Array<router.RouterState> = this.getUIContext().getRouter().getStateByUrl('MainAbility/pages/router/router_getStateByUrl1')
-          for (let i = 0; i < options.length; i++) {
+          for (let i: int = 0; i < options.length; i++) {
             let index = 'index=' + options[i].index
             let name = 'name=' + options[i].name
             let path = 'path=' + options[i].path

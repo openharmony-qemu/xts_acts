@@ -36,8 +36,6 @@ import {
   PointerMatrix
 } from '@ohos.UiTest';
 import inspector from '@ohos.arkui.inspector'
-import hilog from '@ohos.hilog'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
@@ -49,16 +47,19 @@ import { UtilsTest } from '../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
-const uiContext = new UIContext();
+// const uiContext = new UIContext();
 
 export default function ColumnSpaceResourceTest() {
   describe('ColumnSpaceResourceTest', () => {
+    await UtilsTest.msSleep(4000)
+    await UtilsTest.startAbility("com.arkui.ace.layout.api18.static", "EntryAbility")
+    await UtilsTest.msSleep(4000)
+    const uiContext = AppStorage.get<UIContext>('uiContext')!;
+
     beforeAll(() => {
       console.info("ColumnSpaceResourceTest beforeAll start");
 
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.layout.api18.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
     });
 
     beforeEach(async (): Promise<void> => {
@@ -73,28 +74,29 @@ export default function ColumnSpaceResourceTest() {
         console.info("get ColumnSpaceResourceTest state pages:" + JSON.stringify(pages));
         if (!("ColumnSpaceResourcePage" == pages.name)) {
           console.info("get ColumnSpaceResourceTest pages.name:" + JSON.stringify(pages.name));
-          
+          //let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          
+          //console.info("push ColumnSpaceResourceTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push ColumnSpaceResourceTest page error:" + err);
       }
       console.info("ColumnSpaceResourceTest beforeEach end");
-      
+      //done();
     });
     afterEach(async () => {
     });
 
 
+    
     /*
      * @tc.number   ColumnSpaceResourceTest_static_0100
      * @tc.name     ColumnSpaceResourceTest_static_0100
      * @tc.desc     ColumnSpaceResourceTest_static_0100
      * @tc.level    Level.LEVEL1
      */
-    it('ColumnSpaceResourceTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ColumnSpaceResourceTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ColumnSpaceResourceTest_0100] START');
       await CommonFunc.sleep(1000);
 
@@ -108,24 +110,26 @@ export default function ColumnSpaceResourceTest() {
       let Column1_03 = CommonFunc.getComponentRect('ColumnSpaceResource_Column1_03');
 
       console.info('[ColumnSpaceResourceTest_0100] Column1.top - Column1_01.top');
-      console.info('[ColumnSpaceResourceTest_0100] Column1_02.top - Column1_01.bottom - UIContext.getFocusedUIContext()!.vp2px(10)');
-      console.info('[ColumnSpaceResourceTest_0100] Column1_03.top - Column1_02.bottom - UIContext.getFocusedUIContext()!.vp2px(10)');
+      console.info('[ColumnSpaceResourceTest_0100] Column1_02.top - Column1_01.bottom - vp2px(10)');
+      console.info('[ColumnSpaceResourceTest_0100] Column1_03.top - Column1_02.bottom - vp2px(10)');
+      console.info('Column1_03Column1_03',Column1_03,'111',uiContext.vp2px(10))
       expect(Math.floor(Math.abs(Column1.top - Column1_01.top)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Column1_02.top - Column1_01.bottom - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Column1_03.top - Column1_02.bottom - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Column1_02.top - Column1_01.bottom - uiContext.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Column1_03.top - Column1_02.bottom - uiContext.vp2px(10))) <= 1).assertTrue();
 
       console.info('[ColumnSpaceResourceTest_0100] END');
       done();
     });
 
 
+    
     /*
      * @tc.number   ColumnSpaceResourceTest_static_0200
      * @tc.name     ColumnSpaceResourceTest_static_0200
      * @tc.desc     ColumnSpaceResourceTest_static_0200
      * @tc.level    Level.LEVEL1
      */
-    it('ColumnSpaceResourceTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ColumnSpaceResourceTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ColumnSpaceResourceTest_0200] START');
       await CommonFunc.sleep(1000);
 
@@ -139,24 +143,25 @@ export default function ColumnSpaceResourceTest() {
       let Column2_03 = CommonFunc.getComponentRect('ColumnSpaceResource_Column2_03');
 
       console.info('[ColumnSpaceResourceTest_0200] Column2.top - Column2_01.top');
-      console.info('[ColumnSpaceResourceTest_0200] Column2_02.top - Column2_01.bottom - UIContext.getFocusedUIContext()!.vp2px(10)');
-      console.info('[ColumnSpaceResourceTest_0200] Column2_03.top - Column2_02.bottom - UIContext.getFocusedUIContext()!.vp2px(10)');
+      console.info('[ColumnSpaceResourceTest_0200] Column2_02.top - Column2_01.bottom - vp2px(10)');
+      console.info('[ColumnSpaceResourceTest_0200] Column2_03.top - Column2_02.bottom - vp2px(10)');
       expect(Math.floor(Math.abs(Column2.top - Column2_01.top)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Column2_02.top - Column2_01.bottom - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Column2_03.top - Column2_02.bottom - UIContext.getFocusedUIContext()!.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Column2_02.top - Column2_01.bottom - uiContext.vp2px(10))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Column2_03.top - Column2_02.bottom - uiContext.vp2px(10))) <= 1).assertTrue();
 
       console.info('[ColumnSpaceResourceTest_0200] END');
       done();
     });
 
 
+    
     /*
      * @tc.number   ColumnSpaceResourceTest_static_0300
      * @tc.name     ColumnSpaceResourceTest_static_0300
      * @tc.desc     ColumnSpaceResourceTest_static_0300
      * @tc.level    Level.LEVEL1
      */
-    it('ColumnSpaceResourceTest_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+it('ColumnSpaceResourceTest_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[ColumnSpaceResourceTest_0300] START');
       await CommonFunc.sleep(1000);
 
@@ -170,11 +175,11 @@ export default function ColumnSpaceResourceTest() {
       let Column3_03 = CommonFunc.getComponentRect('ColumnSpaceResource_Column3_03');
 
       console.info('[ColumnSpaceResourceTest_0300] Column3.top - Column3_01.top');
-      console.info('[ColumnSpaceResourceTest_0300] Column3_02.top - Column3_01.bottom - UIContext.getFocusedUIContext()!.vp2px(10.9)');
-      console.info('[ColumnSpaceResourceTest_0300] Column3_03.top - Column3_02.bottom - UIContext.getFocusedUIContext()!.vp2px(10.9)');
+      console.info('[ColumnSpaceResourceTest_0300] Column3_02.top - Column3_01.bottom - vp2px(10.9)');
+      console.info('[ColumnSpaceResourceTest_0300] Column3_03.top - Column3_02.bottom - vp2px(10.9)');
       expect(Math.floor(Math.abs(Column3.top - Column3_01.top)) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Column3_02.top - Column3_01.bottom - UIContext.getFocusedUIContext()!.vp2px(10.9))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(Column3_03.top - Column3_02.bottom - UIContext.getFocusedUIContext()!.vp2px(10.9))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Column3_02.top - Column3_01.bottom - uiContext.vp2px(10.9))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(Column3_03.top - Column3_02.bottom - uiContext.vp2px(10.9))) <= 1).assertTrue();
 
       console.info('[ColumnSpaceResourceTest_0300] END');
       done();
