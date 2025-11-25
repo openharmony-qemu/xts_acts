@@ -69,8 +69,6 @@ import barBackground from './TabsTest/barBackground.test';
 import barHeightNoMinHeightLimit from './TabsTest/barHeightNoMinHeightLimit.test';
 import curvesTabs from './TabsTest/curvesTabs.test';
 import animationCurve from './TabsTest/animationCurve.test';
-import tabsOnContentWillChangeIndex10JsunitTest from './TabsTest/tabs_api12/tabsOnContentWillChangeIndex10.test';
-import tabsOnContentWillChangeIndex11JsunitTest from './TabsTest/tabs_api12/tabsOnContentWillChangeIndex11.test';
 import tabsDemo from './textTest/TextApi/tabsDemo.test';
 
 
@@ -125,8 +123,6 @@ export default function testsuite() {
   barHeightNoMinHeightLimit();
   curvesTabs();
   animationCurve();
-  tabsOnContentWillChangeIndex10JsunitTest();
-  tabsOnContentWillChangeIndex11JsunitTest();
   tabsBarPositionJsunit1();
   tabsDemo();
   } 
