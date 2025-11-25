@@ -601,8 +601,8 @@ export default function SecurityHuksApiTest() {
     })
 
         /**
-     * @tc.number SUB_Security_HUKS_Api_API20_Interface_2600
-     * @tc.name   SUB_Security_HUKS_Api_API20_Interface_2600
+     * @tc.number SUB_Security_HUKS_Api_API22_Interface_2600
+     * @tc.name   SUB_Security_HUKS_Api_API22_Interface_2600
      * @tc.desc   test huks.HuksKeyClassType api
      * @tc.type   Compatibility
      * @tc.size   SmallTest
