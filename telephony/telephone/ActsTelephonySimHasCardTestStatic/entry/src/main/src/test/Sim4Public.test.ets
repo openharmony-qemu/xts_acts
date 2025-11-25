@@ -545,17 +545,10 @@ export default function Sim4Public() {
             done();
           }
         } catch (err) {
-          if (err?.code == 801) {
-            console.info(`${caseName} successfully: Parameter error and return 801`);
-            ExpectTrue(true);
-            console.info(`${caseName} 01 test end`);
-            done();
-          } else {
-            console.info(`${caseName} failed, err->` + err);
-            ExpectFail();
-            console.info(`${caseName} test end`);
-            done();
-          }
+          console.info(`${caseName} failed, err ->` + err);
+          ExpectFail();
+          console.info(`${caseName} test end`);
+          done();
         }
       }
 
