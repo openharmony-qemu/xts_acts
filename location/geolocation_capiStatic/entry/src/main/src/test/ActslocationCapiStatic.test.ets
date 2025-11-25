@@ -1258,14 +1258,14 @@ export default function actslocationTest() {
         }) 
         
         /*
-         * @tc.number: Sub_Location_getCurrentLocation_0200
-         * @tc.name: Sub_Location_getCurrentLocation_0200
+         * @tc.number: Sub_Location_getCurrentLocation_090010
+         * @tc.name: Sub_Location_getCurrentLocation_090010
          * @tc.desc: getCurrentLocation(request: CurrentLocationRequest | SingleLocationRequest, callback: AsyncCallback<Location>): void
          * @tc.level: Level 0
          * @tc.type: Function
          * @tc.size: MEDIUMTEST
          */
-        it('Sub_Location_getCurrentLocation_0200',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
+        it('Sub_Location_getCurrentLocation_090010',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             let requestInfo: geoLocationManager.CurrentLocationRequest = {
                 'priority': geoLocationManager.LocationRequestPriority.FIRST_FIX,
                 'scenario': geoLocationManager.LocationRequestScenario.UNSET,
