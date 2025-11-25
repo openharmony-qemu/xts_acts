@@ -196,11 +196,11 @@ ArkUI_NodeHandle  dispatchTest(ArkUI_NativeNodeAPI_1 * nodeAPI) {
          auto userData = OH_ArkUI_NodeEvent_GetUserData(event);
          auto realData = static_cast<CallData*>(userData);
          if (realData) {
-            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "KeyEventPatchTest", "get userData == %{public}d", 
-            realData->a);
+             OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "KeyEventPatchTest", "get userData == %{public}d", 
+             realData->a);
          } else {
-            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "KeyEventPatchTest", "realData is null");
-            return;
+             OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "KeyEventPatchTest", "realData is null");
+             return;
          }
         
          auto targetID = OH_ArkUI_NodeEvent_GetTargetId(event);
