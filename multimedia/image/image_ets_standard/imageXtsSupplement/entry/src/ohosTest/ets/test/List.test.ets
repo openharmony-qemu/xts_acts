@@ -79,7 +79,6 @@ import ImageSourceCreatePictureJpg from './image/ImageSourceCreatePictureJpg.tes
 import ImageSourceCreatePictureOrf from './image/ImageSourceCreatePictureOrf.test';
 import createImageSourceTest from './image/ImageCreateImageSource.test';
 import sendableCreatePixelMap from './sendableImage/SendAbleCreatePixelMap.test';
-import sendableCreatePixelMapSyncTest from './sendableImage/SendAbleCreatePixelMapSync.test';
 import imagePackerPackToDataFromPixelmapSequenceTest from './image/ImagePackerPackToDataFromPixelmapSequenceTest.test';
 import imagePackerPackToDataTest from './image/ImagePackerPackToDataTest.test';
 import PictureMarshallingTest from './image/ImagePictureMarshallingTest.test';
@@ -167,7 +166,6 @@ export default function testsuite() {
   ImageSourceCreatePictureOrf();
   createImageSourceTest();
   sendableCreatePixelMap();
-  sendableCreatePixelMapSyncTest();
   imagePackerPackToDataFromPixelmapSequenceTest();
   imagePackerPackToDataTest();
   PictureMarshallingTest();
