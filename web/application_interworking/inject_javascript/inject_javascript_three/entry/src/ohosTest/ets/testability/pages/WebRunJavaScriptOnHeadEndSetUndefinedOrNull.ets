@@ -56,8 +56,8 @@ struct WebRunJavaScriptOnHeadEndSetUndefinedOrNull {
         Button('RunJavaScriptOnHeadEndSetUndefinedOrNull')
           .key('RunJavaScriptOnHeadEndSetUndefinedOrNull')
           .onClick(async () => {
-            await waitForExist(() => this.isReceive, "RunJavaScriptOnHeadEndSetUndefinedOrNull_isReceive", 0);
-            await waitForExist(() => this.isPageEnd, "RunJavaScriptOnHeadEndSetUndefinedOrNull_isPageEnd", 0);
+            await waitForExist(() => this.isReceive, 'RunJavaScriptOnHeadEndSetUndefinedOrNull_isReceive', 0);
+            await waitForExist(() => this.isPageEnd, 'RunJavaScriptOnHeadEndSetUndefinedOrNull_isPageEnd', 0);
             this.isReceive = -1;
             console.info('key==>' + this.emitKey)
             switch (this.emitKey) {
