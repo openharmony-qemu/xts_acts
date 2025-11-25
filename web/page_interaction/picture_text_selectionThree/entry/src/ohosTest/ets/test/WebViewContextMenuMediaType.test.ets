@@ -21,7 +21,8 @@ import { Driver, ON } from '@kit.TestKit';
 import { waitForExist} from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-
+let emitKey = "";
+let tcName = ''
 const EVENT_ID_SET_SUITE_KEY = 183111;
 const driver = Driver.create();
 
