@@ -15,8 +15,6 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import testNapi from 'libimageEffect.so'
-import { ImageUtils } from './ImageUtils.test';
-import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { JSON } from '@kit.ArkTS';
 
 const EFFECT_SUCCESS = 0;
@@ -28,16 +26,7 @@ const TAG = 'imageEffectSuppXts';
 
 export default function ImageEffectSuppTest() {
   describe('ImageEffectSuppTest', () => {
-    beforeAll(async (done: Function) => {
-      let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
-      let context = abilityDelegator.getAppContext();
-      let filePath = context.filesDir + "/test.jpg";
-      await ImageUtils.getInstance().savePixelMap(filePath, $r('app.media.original'));
-      testNapi.savePixelMapForPath(filePath);
-      let outFilePath = context.filesDir + "/outtest.jpg";
-      await ImageUtils.getInstance().savePixelMap(outFilePath, $r('app.media.d23116'));
-      testNapi.creatOutPixeMapForPath(outFilePath);
-      done();
+    beforeAll(() => {
     });
     beforeEach(() => {
     });
