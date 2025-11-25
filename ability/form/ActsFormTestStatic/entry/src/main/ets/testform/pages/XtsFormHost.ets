@@ -1882,14 +1882,14 @@ struct XtsFormHost {
           })
           Button('OnFormUninstallWithoutString').fontSize(10).onClick((e: ClickEvent) => {
             this.runOnFormUninstallWithoutString((formId: string) => {
-              hilog.info(DOMAIN, TAG, 'Form runOnFormUninstallWithoutString:', formId);
+            hilog.info(DOMAIN, TAG, `Form onFormUninstallWithoutString: ${formId}` );
             });
-          })
-          Button('OffFormUninstallWithoutString').fontSize(10).onClick((e: ClickEvent) => {
+           })
+           Button('OffFormUninstallWithoutString').fontSize(10).onClick((e: ClickEvent) => {
             this.runOffFormUninstallWithoutString((formId: string) => {
-              hilog.info(DOMAIN, TAG, 'Form OffFormUninstallWithoutString:', formId);
+            hilog.info(DOMAIN, TAG, `Form OffFormUninstallWithoutString: ${formId}` );
             });
-          })
+           })
           Button('NotifyFormsVisibleWithCallback').fontSize(10).onClick((e: ClickEvent) => {
             const formIds = [this.getFormComponentId()];
             this.runNotifyFormsVisibleWithCallback(formIds, true);
