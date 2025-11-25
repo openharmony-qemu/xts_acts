@@ -21,8 +21,7 @@ import { Driver, ON } from '@kit.TestKit';
 import { waitForExist} from './WaitTest.test';
 const CAPACITY: accessibility.Capability[] = ['retrieve', 'gesture'];
 const BUNDLE_NAME = 'com.example.myaccessibilityapp/AccessibilityExtAbility';
-let emitKey = "";
-let tcName = ''
+
 const EVENT_ID_SET_SUITE_KEY = 183111;
 const driver = Driver.create();
 
@@ -42,7 +41,6 @@ export default function WebViewContextMenuMediaType() {
           console.info("get WebViewContextMenuMediaType state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           console.info("push WebViewContextMenuMediaType page success " + JSON.stringify(result));
-          // await driver.waitForComponent(ON.id("WebViewgContextMenuMediaTypeButton"), 10000)
         }
       } catch (err) {
         console.error("push WebViewContextMenuMediaType page error: " + err);
@@ -63,70 +61,46 @@ export default function WebViewContextMenuMediaType() {
 
 
     /*
-* @tc.number     : SUB_WEB_GETCONTEXTMENUMEDIATYPE_0100
-* @tc.name       : testContextMenuMediaTypeVideo
-* @tc.desc       : test getContextMenuMediaType
-* @tc.size       : MediumTest
-* @tc.type       : Function
-* @tc.level      : Level 1
-*/
-    it('testContextMenuMediaTypeVideo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: Function) => {
-        emitKey = 'emitContextMenuMediaTypeVideo';
-        tcName = 'testContextMenuMediaTypeVideo'
-        Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
-        let isReturn = false;
-        Utils.registerEvent(tcName, 2, 20251103, () => {
-          isReturn = true
-        });
-        Utils.waitAndClickComponent(driver, "WebViewgContextMenuMediaTypeButton", tcName);
-        await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
-        done();
-      })
-
+    * @tc.number     : SUB_WEB_GETCONTEXTMENUMEDIATYPE_0100
+    * @tc.name       : testContextMenuMediaTypeVideo
+    * @tc.desc       : test getContextMenuMediaType
+    * @tc.size       : MediumTest
+    * @tc.type       : Function
+    * @tc.level      : Level 1
+    */
+    it('testContextMenuMediaTypeVideo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitContextMenuMediaTypeText", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testContextMenuMediaTypeVideo", ContextMenuDataMediaType.VIDEO, 20251103, done);
+      await Utils.waitAndClickComponent(driver, "WebViewgContextMenuMediaTypeButton","testContextMenuMediaTypeVideo");
+    })
 
     /*
-      * @tc.number     : SUB_WEB_GETCONTEXTMENUMEDIATYPE_0200
-      * @tc.name       : testContextMenuMediaTypeText
+    * @tc.number     : SUB_WEB_GETCONTEXTMENUMEDIATYPE_0200
+    * @tc.name       : testContextMenuMediaTypeText
+    * @tc.desc       : test getContextMenuMediaType
+    * @tc.size       : MediumTest
+    * @tc.type       : Function
+    * @tc.level      : Level 1
+    */
+    it('testContextMenuMediaTypeText', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitContextMenuMediaTypeImage", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testContextMenuMediaTypeText", ContextMenuDataMediaType.NONE, 20251104, done);
+      await Utils.waitAndClickComponent(driver, "WebViewgContextMenuMediaTypeButton","testContextMenuMediaTypeText");
+    })
+
+    /*
+      * @tc.number     : SUB_WEB_GETCONTEXTMENUMEDIATYPE_0300
+      * @tc.name       : testContextMenuMediaTypeImage
       * @tc.desc       : test getContextMenuMediaType
       * @tc.size       : MediumTest
       * @tc.type       : Function
       * @tc.level      : Level 1
       */
-    it('testContextMenuMediaTypeText', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      emitKey = 'emitContextMenuMediaTypeText';
-      tcName = 'testContextMenuMediaTypeText'
-      Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
-      let isReturn = false;
-      Utils.registerEvent(tcName, 0, 20251104, () => {
-        isReturn = true
-      });
-      Utils.waitAndClickComponent(driver, "WebViewgContextMenuMediaTypeButton", tcName);
-      await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
-      done();
+    it('testContextMenuMediaTypeImage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitContextMenuMediaTypeAudio", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testContextMenuMediaTypeImage", ContextMenuDataMediaType.IMAGE, 20251105, done);
+      await Utils.waitAndClickComponent(driver, "WebViewgContextMenuMediaTypeButton","testContextMenuMediaTypeImage");
     })
-
-    /*
-   * @tc.number     : SUB_WEB_GETCONTEXTMENUMEDIATYPE_0300
-   * @tc.name       : testContextMenuMediaTypeImage
-   * @tc.desc       : test getContextMenuMediaType
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 1
-   */
-    it('testContextMenuMediaTypeImage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: Function) => {
-        emitKey = 'emitContextMenuMediaTypeImage';
-        tcName = 'testContextMenuMediaTypeImage'
-        Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
-        let isReturn = false;
-        Utils.registerEvent(tcName, 1, 20251105, () => {
-          isReturn = true
-        });
-        Utils.waitAndClickComponent(driver, "WebViewgContextMenuMediaTypeButton", tcName);
-        await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
-        done();
-      })
 
     /*
       * @tc.number     : SUB_WEB_GETCONTEXTMENUMEDIATYPE_0400
@@ -136,19 +110,12 @@ export default function WebViewContextMenuMediaType() {
       * @tc.type       : Function
       * @tc.level      : Level 1
       */
-    it('testContextMenuMediaTypeAudio', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: Function) => {
-        emitKey = 'emitContextMenuMediaTypeAudio';
-        tcName = 'testContextMenuMediaTypeAudio'
-        Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
-        let isReturn = false;
-        Utils.registerEvent(tcName, 3, 20251106, () => {
-          isReturn = true
-        });
-        Utils.waitAndClickComponent(driver, "WebViewgContextMenuMediaTypeButton", tcName);
-        await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
-        done();
-      })
+    it('testContextMenuMediaTypeAudio', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitContextMenuMediaTypeCanvas", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testContextMenuMediaTypeAudio", ContextMenuDataMediaType.AUDIO, 20251106, done);
+      await Utils.waitAndClickComponent(driver, "WebViewgContextMenuMediaTypeButton","testContextMenuMediaTypeAudio");
+    })
+
     /*
     * @tc.number     : SUB_WEB_GETCONTEXTMENUMEDIATYPE_0500
     * @tc.name       : testContextMenuMediaTypeCanvas
@@ -157,21 +124,10 @@ export default function WebViewContextMenuMediaType() {
     * @tc.type       : Function
     * @tc.level      : Level 1
     */
-    it('testContextMenuMediaTypeCanvas', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
-      async (done: Function) => {
-        emitKey = 'emitContextMenuMediaTypeCanvas';
-        tcName = 'testContextMenuMediaTypeCanvas'
-        Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY)
-        let isReturn = false;
-        Utils.registerEvent(tcName, 4, 20251107, () => {
-          isReturn = true
-        });
-        Utils.waitAndClickComponent(driver, "WebViewgContextMenuMediaTypeButton", tcName);
-        await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
-        done();
-      })
+    it('testContextMenuMediaTypeCanvas', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      Utils.emitEvent("emitContextMenuMediaTypeCanvas", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testContextMenuMediaTypeCanvas", ContextMenuDataMediaType.CANVAS, 20251107, done);
+      await Utils.waitAndClickComponent(driver, "WebViewgContextMenuMediaTypeButton","testContextMenuMediaTypeCanvas");
+    })
   })
 }
-
-
-
