@@ -192,7 +192,7 @@ export default function storageStatistics_test() {
         hilog.info(domain, tag, '%{public}s', 'storage_statistics_test_get_user_storage_stats_async_002 START');
  
         try {
-          const userId : int = 100;
+          const userId = 100;
           const userStat = await storageStatistics.getUserStorageStats(userId);
           hilog.info(domain, tag, 'userStat.total : %{public}s', String(userStat.total));
           done();
