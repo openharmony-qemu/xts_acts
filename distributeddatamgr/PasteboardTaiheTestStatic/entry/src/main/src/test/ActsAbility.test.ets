@@ -3280,7 +3280,6 @@ export default function abilityTest() {
                 // mimeType为空字符串
                 let invalidRecord = pasteboard.createRecord("", "");
                 expect().assertFail();
-                done();
             } catch (err) {
                 err = err as BusinessError;
                 expect(err.code).assertEqual(401);
@@ -3353,7 +3352,7 @@ export default function abilityTest() {
             } catch (err) {
                 err = err as BusinessError;
                 console.error("Error in complex additions test: " + err.message + "; " + err.code);
-                expect(err).assertEqual(null);
+                expect(null).assertFail();
             }
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_Additions_Static_0010----------");
         });
@@ -3521,7 +3520,7 @@ export default function abilityTest() {
             } catch (err) {
                 err = err as BusinessError;
                 console.error("SUB_PasteBoard_ETS_Data_Static_0010 error is: " + err.message + "; " + err.code);
-                expect(err).assertEqual(null);
+                expect(null).assertFail();
             }
             hilog.info(domain, tag, "----------SUB_PasteBoard_ETS_Data_Static_0010----------");
         })
@@ -3546,7 +3545,6 @@ export default function abilityTest() {
                 err = err as BusinessError;
                 expect(err.code).assertEqual(401);
                 hilog.info(domain, tag, `Failed to addEntry. Cause: ${err.message + err.code}`);
-                done();
             }
             hilog.info(domain, tag, '************ SUB_PasteBoard_ETS_AddEntry_Static_0040 end ************');
             done();
@@ -3789,16 +3787,9 @@ export default function abilityTest() {
             try {
                 let signal = new pasteboard.ProgressSignal;
                 hilog.info(domain, tag, 'success, progress:' + signal);
-                try {
-                    signal.cancel();
-                    hilog.info(domain, tag, 'Test pasteBoard cancel success');
-                } catch (err) {
-                    err = err as BusinessError;
-                    hilog.info(domain, tag, "Test pasteBoard cancel fail" + err.message);
-                    hilog.info(domain, tag, "err.code " + err.code);
-                    expect().assertFail();
-                    done();
-                }
+                signal.cancel();
+                hilog.info(domain, tag, 'Test pasteBoard cancel success');
+                done();
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag, "pasteboard.ProgressSignal constructor fail" + err.message);
@@ -3806,7 +3797,6 @@ export default function abilityTest() {
                 expect().assertFail();
                 done();
             }
-            done();
             hilog.info(domain, tag, "------SUB_PasteBoard_ETS_ProgressSignal_Static_0010 end------");
         })
 
