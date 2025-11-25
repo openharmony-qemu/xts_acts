@@ -16,7 +16,7 @@
 import resourceManager from '@ohos.resourceManager';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
 import { BusinessError } from '@ohos.base';
-import { GlobalContext, openMediaWithBase64 } from '../test/global';
+import { GlobalContext, openPNGWithBase64 } from '../test/global';
 import application from '@ohos.app.ability.application';
 
 
@@ -44,7 +44,7 @@ export default function GlobalResMgrTest() {
     /**
      * @generated.time 2025-11-24
      * @tc.name   GlobalResMgrTest_getMediaContentBase64Sync_0100
-     * @tc.number SUB_GLOBAL_ResourceManager_Plural_0310
+     * @tc.number SUB_GLOBAL_ResourceManager_BASE64_0100
      * @tc.desc   get with id
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -54,14 +54,21 @@ export default function GlobalResMgrTest() {
       try {
         let value = res.getMediaContentBase64Sync($r('app.media.foreground').id);
         let path:string = resContext.resourceDir + '/' + "foreground.png";
-        let base64 = `data:image/png;base64,${openMediaWithBase64(path)}`
+        let base64 = openPNGWithBase64(path);
         expect(value).assertEqual(base64);
 
-      } catch(error) {
+        value = res.getMediaContentBase64Sync($r('app.media.foreground1').id);
+        path:string = resContext.resourceDir + '/' + "foreground1.png";
+        base64 = openPNGWithBase64(path);
+        expect(value).assertEqual(base64);
 
+        value = res.getMediaContentBase64Sync($r('app.media.foreground2').id);
+        path:string = resContext.resourceDir + '/' + "foreground2.png";
+        base64 = openPNGWithBase64(path);
+        expect(value).assertEqual(base64);
+      } catch(error) {
+        except(JSON.stringify(error)).assertFail();
       }
-      console.log('resourceManager_test_getIntPluralStringValueSync_0100:' + value);
-      expect(value).assertEqual('2 apples');
     })
   })
 }

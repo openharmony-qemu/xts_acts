@@ -24,13 +24,14 @@ export class GlobalContext {
   }
 }
 
-export function openMediaWithBase64(path:string): string {
+export function openPNGWithBase64(path:string): string {
   try {
     let file = fs.openSync(path, fs.OpenMode.READ_ONLY);
     let length = fs.statSync(path).size;
     let buf = new ArrayBuffer(length);
     fs.readSync(file.fd, buf);
-    return String.fromCharCode(...new util.Base64Helper().encodeSync(new Uint8Array(buf)));
+    let base64buf = new util.Base64Helper().encodeSync(new Uint8Array(buf));
+    return `data:image/png;base64,${String.fromCharCode(...base64buf)}`;
   } catch(error) {
     console.error(error);
   }
