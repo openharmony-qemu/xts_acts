@@ -12,6 +12,7 @@
     "MainAbility/pages/image/imageErrorTest",
     "MainAbility/pages/textLineHeight/TextLineHeightTest",
     "MainAbility/pages/textArea/TextAreaBarStateTest",
-    "MainAbility/pages/scrollbarTest/scrollbarTest"
+    "MainAbility/pages/scrollbarTest/scrollbarTest",
+    "MainAbility/pages/showCounterTest/showCounterTest"
   ]
 }

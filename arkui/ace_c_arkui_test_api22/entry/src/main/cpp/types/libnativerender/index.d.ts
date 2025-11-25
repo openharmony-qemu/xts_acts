@@ -35,3 +35,5 @@ export const textLineHeightTest: (a: string) => void;
 export const textAreaBarStateTest: (a: string) => void;
 
 export const scrollBarTest: (a: string) => void;
+
+export const showCounterTest: (a: string) => void;
