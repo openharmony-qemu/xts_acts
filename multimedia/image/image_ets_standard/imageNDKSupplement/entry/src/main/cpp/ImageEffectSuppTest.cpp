@@ -16,31 +16,22 @@
 #include "napi/native_api.h"
 #include "utils/common_utils.h"
 #include "utils/pixelmap_helper.h"
-#include <bits/alltypes.h>
-#include <hilog/log.h>
 #include <multimedia/image_effect/image_effect.h>
-#include <multimedia/image_effect/image_effect_errors.h>
 #include <multimedia/image_effect/image_effect_filter.h>
 #include <multimedia/image_framework/image_pixel_map_mdk.h>
 #include <multimedia/image_framework/image/picture_native.h>
-#include <native_color_space_manager/native_color_space_manager.h>
-#include <native_window/external_window.h>
 #include <string>
-#include "gl_utils.h"
-#include "render_texture.h"
-#include "imageEffectSupp.h"
+#include "ImageEffectSuppTest.h"
 #define MY_LOG_DOMAIN 0x0000
 #define MY_LOG_TAG "ImageEffectNDK"
 #define LOG(fmt, ...) (void)OH_LOG_Print(LOG_APP, LOG_DEBUG, MY_LOG_DOMAIN, MY_LOG_TAG, fmt, ##__VA_ARGS__)
-
 #define OH_EFFECT_BRIGHTNESS_FILTER "Brightness"
 #define OH_EFFECT_CONTRAST_FILTER "Contrast"
 #define OH_EFFECT_CROP_FILTER "Crop"
 #define KEY_FILTER_INTENSITY "FilterIntensity"
 #define IMAGE_EFFECT_NAME "imageEdit"
 #define CUSTOM_FILTER "CustomCrop"
-#define IMAGE_NullString ""
-
+#define IMAGE_NULL_STRING ""
 #define CASE_INDEX_1 1
 #define CASE_INDEX_2 2
 #define CASE_INDEX_3 3
@@ -52,7 +43,6 @@
 #define CASE_INDEX_9 9
 #define CASE_INDEX_10 10
 #define CASE_INDEX_11 11
-
 #define IMAGE_EFFECT_2 2
 #define IMAGE_EFFECT_100 100
 #define IMAGE_EFFECT_100F 100.f
@@ -69,9 +59,8 @@
 #define IMAGE_EFFECT_CODE_401 401
 #define IMAGE_EFFECT_1722514390000 1722514390000
 
-const std::string g_jpgUri = std::string("file:///data/test/resource/image_effect_1k_test1.jpg");
-static std::string imagePath;
-static std::string outImagePath;
+static std::string ImagePath;
+static std::string OutImagePath;
 
 napi_value savePixelMapForPath(napi_env env, napi_callback_info info)
 {
@@ -80,10 +69,10 @@ napi_value savePixelMapForPath(napi_env env, napi_callback_info info)
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    imagePath = CommonUtils::GetStringArgument(env, args[0]);
+    ImagePath = CommonUtils::GetStringArgument(env, args[0]);
     napi_value ret;
     int status = -1;
-    if (imagePath.length() > 0) {
+    if (ImagePath.length() > 0) {
         status = 0;
     }
     napi_create_int32(env, status, &ret);
@@ -97,23 +86,23 @@ napi_value creatOutPixeMapForPath(napi_env env, napi_callback_info info)
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    outImagePath = CommonUtils::GetStringArgument(env, args[0]);
+    OutImagePath = CommonUtils::GetStringArgument(env, args[0]);
     napi_value ret;
     int status = -1;
-    if (outImagePath.length() > 0) {
+    if (OutImagePath.length() > 0) {
         status = 0;
     }
     napi_create_int32(env, status, &ret);
     return ret;
 }
 
-napi_value OHImageEffectCreateSupp(napi_env env, napi_callback_info info) {
+napi_value OHImageEffectCreateSupp(napi_env env, napi_callback_info info) 
+{
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     int32_t index;
     napi_get_value_int32(env, args[0], &index);
-
     OH_ImageEffect *imageEffect = nullptr;
     switch (index) {
     case CASE_INDEX_1:
@@ -123,11 +112,10 @@ napi_value OHImageEffectCreateSupp(napi_env env, napi_callback_info info) {
         imageEffect = OH_ImageEffect_Create(nullptr);
         break;
     case CASE_INDEX_3:
-        imageEffect = OH_ImageEffect_Create(IMAGE_NullString);
+        imageEffect = OH_ImageEffect_Create(IMAGE_NULL_STRING);
     default:
         break;
     }
-
     int code = IMAGE_EFFECT_CODE_401;
     if (imageEffect != nullptr) {
         OH_ImageEffect_Release(imageEffect);
@@ -138,13 +126,13 @@ napi_value OHImageEffectCreateSupp(napi_env env, napi_callback_info info) {
     return ret;
 }
 
-napi_value OHImageEffectAddFilterSupp(napi_env env, napi_callback_info info) {
+napi_value OHImageEffectAddFilterSupp(napi_env env, napi_callback_info info) 
+{
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     int32_t index;
     napi_get_value_int32(env, args[0], &index);
-
     OH_ImageEffect *imageEffect = OH_ImageEffect_Create(IMAGE_EFFECT_NAME);
     OH_EffectFilter *filter = nullptr;
     switch (index) {
@@ -158,13 +146,12 @@ napi_value OHImageEffectAddFilterSupp(napi_env env, napi_callback_info info) {
         filter = OH_ImageEffect_AddFilter(imageEffect, nullptr);
         break;
     case CASE_INDEX_4:
-        filter = OH_ImageEffect_AddFilter(imageEffect, IMAGE_NullString);
+        filter = OH_ImageEffect_AddFilter(imageEffect, IMAGE_NULL_STRING);
         break;
     default:
         break;
     }
     OH_ImageEffect_Release(imageEffect);
-
     int code = IMAGE_EFFECT_CODE_401;
     if (filter != nullptr) {
         code = 0;
@@ -174,13 +161,13 @@ napi_value OHImageEffectAddFilterSupp(napi_env env, napi_callback_info info) {
     return ret;
 }
 
-napi_value OHImageEffectInsertFilterSupp(napi_env env, napi_callback_info info) {
+napi_value OHImageEffectInsertFilterSupp(napi_env env, napi_callback_info info) 
+{
     size_t argc = 1;
     napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     int32_t index;
     napi_get_value_int32(env, args[0], &index);
-
     OH_EffectFilter *insertFilter = nullptr;
     OH_ImageEffect *imageEffect = OH_ImageEffect_Create(IMAGE_EFFECT_NAME);
     switch (index) {
@@ -197,13 +184,12 @@ napi_value OHImageEffectInsertFilterSupp(napi_env env, napi_callback_info info) 
         insertFilter = OH_ImageEffect_InsertFilter(imageEffect, 0, nullptr);
         break;
     case CASE_INDEX_5:
-        insertFilter = OH_ImageEffect_InsertFilter(imageEffect, 1, IMAGE_NullString);
+        insertFilter = OH_ImageEffect_InsertFilter(imageEffect, 1, IMAGE_NULL_STRING);
         break;
     default:
         break;
     }
     OH_ImageEffect_Release(imageEffect);
-
     int status = IMAGE_EFFECT_CODE_401;
     if (insertFilter != nullptr) {
         status = 0;
@@ -213,7 +199,6 @@ napi_value OHImageEffectInsertFilterSupp(napi_env env, napi_callback_info info) 
     return ret;
 }
 
-
 napi_value OHImageEffectRemoveFilterSupp(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -221,9 +206,7 @@ napi_value OHImageEffectRemoveFilterSupp(napi_env env, napi_callback_info info)
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     int32_t index;
     napi_get_value_int32(env, args[0], &index);
-
     OH_ImageEffect *imageEffect = OH_ImageEffect_Create(IMAGE_EFFECT_NAME);
-    
     int32_t result;
     switch (index) {
     case CASE_INDEX_1:
@@ -239,16 +222,15 @@ napi_value OHImageEffectRemoveFilterSupp(napi_env env, napi_callback_info info)
         result = OH_ImageEffect_RemoveFilter(imageEffect, OH_EFFECT_BRIGHTNESS_FILTER);
         break;
     case CASE_INDEX_4:
-        result = OH_ImageEffect_RemoveFilter(imageEffect,IMAGE_NullString );
+        result = OH_ImageEffect_RemoveFilter(imageEffect, IMAGE_NULL_STRING );
         break;
     case CASE_INDEX_5:
-        result = OH_ImageEffect_RemoveFilter(imageEffect,nullptr );
+        result = OH_ImageEffect_RemoveFilter(imageEffect, nullptr );
         break;
     default:
         break;
     }
     OH_ImageEffect_Release(imageEffect);
-    
     napi_value ret;
     int32_t status = IMAGE_EFFECT_CODE_401;
     if (result > 0) {
@@ -265,7 +247,6 @@ napi_value OHImageEffectReplaceFilterSupp(napi_env env, napi_callback_info info)
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     int32_t index;
     napi_get_value_int32(env, args[0], &index);
-
     OH_EffectFilter *replaceFilter = nullptr;
     OH_ImageEffect *imageEffect = OH_ImageEffect_Create(IMAGE_EFFECT_NAME);
     OH_ImageEffect_AddFilter(imageEffect, OH_EFFECT_CONTRAST_FILTER);
@@ -283,12 +264,11 @@ napi_value OHImageEffectReplaceFilterSupp(napi_env env, napi_callback_info info)
         replaceFilter = OH_ImageEffect_ReplaceFilter(imageEffect, 0, nullptr);
         break;
     case CASE_INDEX_5:
-        replaceFilter = OH_ImageEffect_ReplaceFilter(imageEffect, 0, IMAGE_NullString);
+        replaceFilter = OH_ImageEffect_ReplaceFilter(imageEffect, 0, IMAGE_NULL_STRING);
     default:
         break;
     }
     OH_ImageEffect_Release(imageEffect);
-
     int status = IMAGE_EFFECT_CODE_401;
     if (replaceFilter != nullptr) {
         status = 0;
@@ -297,6 +277,3 @@ napi_value OHImageEffectReplaceFilterSupp(napi_env env, napi_callback_info info)
     napi_create_int32(env, status, &ret);
     return ret;
 }
-
-
-
