@@ -42,24 +42,24 @@ struct XtsFormProvider {
     try {
       formProvider.setFormNextRefreshTime(this.formId, 2, (error: BusinessError<void> | null) => {
         if (error?.code) {
-          hilog.info(DOMAIN, TAG, `XtsFormProvider callback error, code:${error?.code}`);
+          hilog.info(DOMAIN, TAG, `XtsFormProvider callback code: ${error?.code}, message: ${error?.message}`);
         }
         hilog.info(DOMAIN, TAG, 'XtsFormProvider setFormNextRefreshTime callback success');
       });
       hilog.info(DOMAIN, TAG, 'XtsFormProvider setFormNextRefreshTime register success');
-    } catch (error) {
-      hilog.error(DOMAIN, TAG, 'XtsFormProvider catch error');
+    } catch (error: Error) {
+      hilog.error(DOMAIN, TAG, `XtsFormProvider catch error, code: ${error?.code}, message: ${error?.message}`);
     }
 
     try {
       formProvider.setFormNextRefreshTime(this.formId2, 3).then(() => {
         hilog.info(DOMAIN, TAG, `XtsFormProvider setFormNextRefreshTime success`);
-      }).catch((error) => {
-        hilog.error(DOMAIN, TAG, `XtsFormProvider promise error, code:`);
+      }).catch((error: Error) => {
+        hilog.error(DOMAIN, TAG, `XtsFormProvider promise error, code: ${error?.code}, message: ${error?.message}`);
       });
       hilog.info(DOMAIN, TAG, 'XtsFormProvider setFormNextRefreshTime register success');
-    } catch (error) {
-      hilog.error(DOMAIN, TAG, `XtsFormProvider catch error, code: `);
+    } catch (error: Error) {
+      hilog.error(DOMAIN, TAG, `XtsFormProvider catch error, code: ${error?.code}, message: ${error?.message}`);
     }
   }
 
