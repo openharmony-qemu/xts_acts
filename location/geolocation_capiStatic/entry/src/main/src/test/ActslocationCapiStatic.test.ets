@@ -703,7 +703,7 @@ export default function actslocationTest() {
                         geofence: geofence,
                         monitorTransitionEvents: transitionStatusList,
                         notifications: notificationRequestList,
-                        geofenceTransitionCallback: (err: BusinessError, transition: geoLocationManager.GeofenceTransition) => {
+                        geofenceTransitionCallback: (err: BusinessError<void>|null, transition: geoLocationManager.GeofenceTransition|undefined) => {
                         if (err) {
                             console.error('geofenceTransitionCallback: err=' + JSON.stringify(err));
                         }
@@ -716,13 +716,12 @@ export default function actslocationTest() {
                         geoLocationManager.addGnssGeofence(gnssGeofenceRequest).then((id) => {
                         console.info("addGnssGeofence_0100 success, fence id: " + id);
                         expect(true).assertEqual(id!=null);
-                        }).catch((err: BusinessError) => {
+                        }).catch((err:Object|null|undefined) => {
                         console.error("addGnssGeofence_0100 failed, promise errCode:" + (err as BusinessError).code +",errMessage:" + (err as BusinessError).message);
                         });
-                    } catch (error) {
+                    } catch (error:BusinessError) {
                         console.error("addGnssGeofence_0100 failed, err:" + JSON.stringify(error));
                     } 
-
                 }
                 }
             )     
@@ -784,7 +783,7 @@ export default function actslocationTest() {
                         geofence: geofence,
                         monitorTransitionEvents: transitionStatusList,
                         notifications: notificationRequestList,
-                        geofenceTransitionCallback: (err: BusinessError, transition: geoLocationManager.GeofenceTransition) => {
+                        geofenceTransitionCallback: (err: BusinessError<void>|null, transition: geoLocationManager.GeofenceTransition|undefined) => {
                         if (err) {
                             console.error('geofenceTransitionCallback: err=' + JSON.stringify(err));
                         }
@@ -797,14 +796,13 @@ export default function actslocationTest() {
                         geoLocationManager.addGnssGeofence(gnssGeofenceRequest).then((id) => {
                         console.info("addGnssGeofence_0200 success, fence id: " + id);
                         expect(true).assertEqual(id!=null);
-                        }).catch((err: BusinessError) => {
+                        }).catch((err:Object|null|undefined) => {
                         console.error("addGnssGeofence_0200 failed, promise errCode:" + (err as BusinessError).code +",errMessage:" + (err as BusinessError).message);
                         expect((err as BusinessError).code).assertEqual(201);
                         });
-                    } catch (error) {
+                    } catch (error:BusinessError) {
                         console.error("addGnssGeofence_0200 failed, err:" + JSON.stringify(error));
                     } 
-
                 }
                 }
             )              
@@ -863,10 +861,10 @@ export default function actslocationTest() {
                         [notificationRequest1, notificationRequest2];
                     
                     let gnssGeofenceRequest: geoLocationManager.GnssGeofenceRequest = {
-                        // geofence: geofence,
+                        geofence: geofence,
                         monitorTransitionEvents: transitionStatusList,
                         notifications: notificationRequestList,
-                        geofenceTransitionCallback: (err: BusinessError, transition: geoLocationManager.GeofenceTransition) => {
+                        geofenceTransitionCallback: (err: BusinessError<void>|null, transition: geoLocationManager.GeofenceTransition|undefined) => {
                         if (err) {
                             console.error('geofenceTransitionCallback: err=' + JSON.stringify(err));
                         }
@@ -879,11 +877,11 @@ export default function actslocationTest() {
                         geoLocationManager.addGnssGeofence(gnssGeofenceRequest).then((id) => {
                         console.info("addGnssGeofence_0300 success, fence id: " + id);
                         expect(true).assertEqual(id!=null);
-                        }).catch((err: BusinessError) => {
+                        }).catch((err:Object|null|undefined) => {
                         console.error("addGnssGeofence_0300 failed, promise errCode:" + (err as BusinessError).code +",errMessage:" + (err as BusinessError).message);
                         expect((err as BusinessError).code).assertEqual(401);
                         });
-                    } catch (error) {
+                    } catch (error:BusinessError) {
                         console.error("addGnssGeofence_0300 failed, err:" + JSON.stringify(error));
                     } 
 
@@ -948,7 +946,7 @@ export default function actslocationTest() {
                         geofence: geofence,
                         monitorTransitionEvents: transitionStatusList,
                         notifications: notificationRequestList,
-                        geofenceTransitionCallback: (err: BusinessError, transition: geoLocationManager.GeofenceTransition) => {
+                        geofenceTransitionCallback: (err: BusinessError<void>|null, transition: geoLocationManager.GeofenceTransition|undefined) => {
                         if (err) {
                             console.error('geofenceTransitionCallback: err=' + JSON.stringify(err));
                         }
@@ -961,11 +959,11 @@ export default function actslocationTest() {
                         geoLocationManager.addGnssGeofence(gnssGeofenceRequest).then((id) => {
                         console.info("addGnssGeofence_0400 success, fence id: " + id);
                         expect(true).assertEqual(id!=null);
-                        }).catch((err: BusinessError) => {
+                        }).catch((err:Object|null|undefined) => {
                         console.error("addGnssGeofence_0400 failed, promise errCode:" + (err as BusinessError).code +",errMessage:" + (err as BusinessError).message);
                         expect((err as BusinessError).code).assertEqual(801);
                         });
-                    } catch (error) {
+                    } catch (error:BusinessError) {
                         console.error("addGnssGeofence_0400 failed, err:" + JSON.stringify(error));
                     } 
 
@@ -1030,7 +1028,7 @@ export default function actslocationTest() {
                         geofence: geofence,
                         monitorTransitionEvents: transitionStatusList,
                         notifications: notificationRequestList,
-                        geofenceTransitionCallback: (err: BusinessError, transition: geoLocationManager.GeofenceTransition) => {
+                        geofenceTransitionCallback: (err: BusinessError<void>|null, transition: geoLocationManager.GeofenceTransition|undefined) => {
                         if (err) {
                             console.error('geofenceTransitionCallback: err=' + JSON.stringify(err));
                         }
@@ -1043,11 +1041,11 @@ export default function actslocationTest() {
                         geoLocationManager.addGnssGeofence(gnssGeofenceRequest).then((id) => {
                         console.info("addGnssGeofence_0500 success, fence id: " + id);
                         expect(true).assertEqual(id!=null);
-                        }).catch((err: BusinessError) => {
+                        }).catch((err:Object|null|undefined) => {
                         console.error("addGnssGeofence_0500 failed, promise errCode:" + (err as BusinessError).code +",errMessage:" + (err as BusinessError).message);
                         expect((err as BusinessError).code).assertEqual(3301100);
                         });
-                    } catch (error) {
+                    } catch (error:BusinessError) {
                         console.error("addGnssGeofence_0500 failed, err:" + JSON.stringify(error));
                     } 
 
@@ -1112,7 +1110,7 @@ export default function actslocationTest() {
                         geofence: geofence,
                         monitorTransitionEvents: transitionStatusList,
                         notifications: notificationRequestList,
-                        geofenceTransitionCallback: (err: BusinessError, transition: geoLocationManager.GeofenceTransition) => {
+                        geofenceTransitionCallback: (err: BusinessError<void>|null, transition: geoLocationManager.GeofenceTransition|undefined) => {
                         if (err) {
                             console.error('geofenceTransitionCallback: err=' + JSON.stringify(err));
                         }
@@ -1125,11 +1123,11 @@ export default function actslocationTest() {
                         geoLocationManager.addGnssGeofence(gnssGeofenceRequest).then((id) => {
                         console.info("addGnssGeofence_0600 success, fence id: " + id);
                         expect(true).assertEqual(id!=null);
-                        }).catch((err: BusinessError) => {
+                        }).catch((err:Object|null|undefined) => {
                         console.error("addGnssGeofence_0600 failed, promise errCode:" + (err as BusinessError).code +",errMessage:" + (err as BusinessError).message);
                         expect((err as BusinessError).code).assertEqual(3301601);
                         });
-                    } catch (error) {
+                    } catch (error:BusinessError) {
                         console.error("addGnssGeofence_0600 failed, err:" + JSON.stringify(error));
                     } 
 
@@ -1151,11 +1149,11 @@ export default function actslocationTest() {
               geoLocationManager.removeGnssGeofence(fenceId).then(() => {
                 console.info("removeGnssGeofence success fenceId:" + fenceId);
                 expect(true).assertEqual(fenceId!=null);
-              }).catch((error: BusinessError) => {
-                console.error("removeGnssGeofence: error=" + JSON.stringify(error));
+              }).catch((err:Object|null|undefined) => {
+                console.error("removeGnssGeofence: error=" + JSON.stringify(err));
                 expect((err as BusinessError).code).assertEqual(201);
               });
-            } catch (error) {
+            } catch (error:BusinessError) {
               console.error("removeGnssGeofence: error=" + JSON.stringify(error));
             }
             await Utils.msSleep(1000)
@@ -1176,11 +1174,11 @@ export default function actslocationTest() {
               geoLocationManager.removeGnssGeofence(fenceId).then(() => {
                 console.info("removeGnssGeofence success fenceId:" + fenceId);
                 expect(true).assertEqual(fenceId!=null);
-              }).catch((error: BusinessError) => {
-                console.error("removeGnssGeofence: error=" + JSON.stringify(error));
+              }).catch((err:Object|null|undefined) => {
+                console.error("removeGnssGeofence: error=" + JSON.stringify(err));
                 expect((err as BusinessError).code).assertEqual(401);
               });
-            } catch (error) {
+            } catch (error:BusinessError) {
               console.error("removeGnssGeofence: error=" + JSON.stringify(error));
             }
             await Utils.msSleep(1000)
@@ -1201,11 +1199,11 @@ export default function actslocationTest() {
               geoLocationManager.removeGnssGeofence(fenceId).then(() => {
                 console.info("removeGnssGeofence success fenceId:" + fenceId);
                 expect(true).assertEqual(fenceId!=null);
-              }).catch((error: BusinessError) => {
-                console.error("removeGnssGeofence: error=" + JSON.stringify(error));
+              }).catch((err:Object|null|undefined) => {
+                console.error("removeGnssGeofence: error=" + JSON.stringify(err));
                 expect((err as BusinessError).code).assertEqual(3301602);
               });
-            } catch (error) {
+            } catch (error: BusinessError) {
               console.error("removeGnssGeofence: error=" + JSON.stringify(error));
             }
             await Utils.msSleep(1000)
@@ -1222,12 +1220,11 @@ export default function actslocationTest() {
          * @tc.size: MEDIUMTEST
          */
         it('Sub_Location_getCurrentLocation_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
-            let requestInfo: geoLocationManager.CurrentLocationRequest = {
-                'priority': geoLocationManager.LocationRequestPriority.FIRST_FIX,
-                'scenario': geoLocationManager.LocationRequestScenario.UNSET,
-                'maxAccuracy': 0
+              let request: geoLocationManager.SingleLocationRequest = {
+                'locatingTimeoutMs': 10000,
+                'locatingPriority': geoLocationManager.LocatingPriority.PRIORITY_ACCURACY
               };
-              let locationChange = (err: BusinessError, location: geoLocationManager.Location): void => {
+              let locationChange = (err:BusinessError<void>|null,location:geoLocationManager.Location|undefined): void => {
                 if (err) {
                   console.error('locationChange: err=' + JSON.stringify(err));
                 }
@@ -1241,18 +1238,17 @@ export default function actslocationTest() {
                   expect(typeof location.timeStamp).assertEqual("number");
                   expect(typeof location.direction).assertEqual("number");
                   expect(typeof location.timeSinceBoot).assertEqual("number");
-                  console.info("[lbs]location.additions:"+(type of location.additions ));
-                  expect(typeof location.additions).assertEqual("Array<string>");
+                  expect(location.additions instanceof Array<string>);
                   expect(typeof location.additionSize).assertEqual("number");
-                  console.info("[lbs]location.additions:"+(type of location.additionsMap ));
                   expect(typeof location.additionsMap).assertEqual("Map<string, string>");
+                  expect(location.additionsMap instanceof Map<string, string>);
                   expect(typeof location.altitudeAccuracy).assertEqual("number");
                   expect(typeof location.speedAccuracy).assertEqual("number");
                   expect(typeof location.uncertaintyOfTimeSinceBoot).assertEqual("number");
                 }
               };
               try {
-                geoLocationManager.getCurrentLocation(requestInfo, locationChange);
+                geoLocationManager.getCurrentLocation(request, locationChange);
                 expect(true).assertEqual(locationChange!=null);
               } catch (err) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
@@ -1423,7 +1419,7 @@ export default function actslocationTest() {
             try {
               geoLocationManager.getCurrentLocation((err:BusinessError<void>|null,location:geoLocationManager.Location|undefined)=>{
                     if (location) {
-                      expect(true).assertEqual(location!=null);
+                      expect(true).assertEqual(JSON.stringify(location)!=null);
                       console.info('locationChange: location=' + JSON.stringify(location));
                     }
                     if (err) {
@@ -1453,13 +1449,12 @@ export default function actslocationTest() {
               };
               try {
                 geoLocationManager.getCurrentLocation(request).then((location) => {
-                  console.info('current location: ' + JSON.stringify(location));
                   expect(true).assertEqual(location!=null);
-                }).catch((error: BusinessError) => {
-                    console.error('promise, getCurrentLocation: error=' + JSON.stringify(error));
-                    expect((error as BusinessError).code).assertEqual(401);
+                }).catch((err:Object|null|undefined) => {
+                    console.error('promise, getCurrentLocation: error=' + JSON.stringify(err));
+                    expect((err as BusinessError).code).assertEqual(401);
                   });
-              } catch (err) {
+              } catch (err: BusinessError) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
               }
           await Utils.msSleep(1000)
@@ -1481,13 +1476,12 @@ export default function actslocationTest() {
               };
               try {
                 geoLocationManager.getCurrentLocation(request).then((location) => {
-                  console.info('current location: ' + JSON.stringify(location));
                   expect(true).assertEqual(location!=null);
-                }).catch((error: BusinessError) => {
-                    console.error('promise, getCurrentLocation: error=' + JSON.stringify(error));
-                    expect((error as BusinessError).code).assertEqual(3301100);
+                }).catch((err:Object|null|undefined) => {
+                    console.error('promise, getCurrentLocation: error=' + JSON.stringify(err));
+                    expect((err as BusinessError).code).assertEqual(3301100);
                   });
-              } catch (err) {
+              } catch (err: BusinessError) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
               }
           await Utils.msSleep(1000)
@@ -1509,13 +1503,12 @@ export default function actslocationTest() {
               };
               try {
                 geoLocationManager.getCurrentLocation(request).then((location) => {
-                  console.info('current location: ' + JSON.stringify(location));
                   expect(true).assertEqual(location!=null);
-                }).catch((error: BusinessError) => {
-                    console.error('promise, getCurrentLocation: error=' + JSON.stringify(error));
-                    expect((error as BusinessError).code).assertEqual(3301200);
+                }).catch((err:Object|null|undefined) => {
+                    console.error('promise, getCurrentLocation: error=' + JSON.stringify(err));
+                    expect((err as BusinessError).code).assertEqual(3301200);
                   });
-              } catch (err) {
+              } catch (err:BusinessError) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
               }
           await Utils.msSleep(1000)
@@ -1533,13 +1526,12 @@ export default function actslocationTest() {
         it('Sub_Location_isLocationEnabled_0100',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,(): void => {
               try {
                 let locationEnabled = geoLocationManager.isLocationEnabled();
-                expect(true).assertEqual(locationEnabled=null);
-              } catch (err) {
+                expect(true).assertEqual(locationEnabled);
+              } catch (err:BusinessError) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(3301300);
               }
           await Utils.msSleep(1000)
-          done();
       })   
 
         /*
@@ -1577,9 +1569,8 @@ export default function actslocationTest() {
                     expect(typeof data[0].postalCode).assertEqual("string");
                     expect(typeof data[0].phoneNumber).assertEqual("string");
                     expect(typeof data[0].addressUrl).assertEqual("string");
-                    expect(typeof data[0].descriptionsSize).assertEqual("Array<string>");
+                    expect(data[0].descriptionsSize instanceof Array<string>);
                     expect(typeof data[0].descriptions).assertEqual("string");
-                    console.info('locationChange: location=' + JSON.stringify(location));
                     expect(data.length>0).assertTrue();
                 }
                 if (err) {
@@ -1613,13 +1604,12 @@ export default function actslocationTest() {
             };
             try {
                 geoLocationManager.getAddressesFromLocation(reverseGeocodeRequest).then((data) => {
-                  console.info('getAddressesFromLocation: ' + JSON.stringify(data));
                   expect(true).assertEqual(data!=null);
-                }).catch((error: BusinessError) => {
-                    console.error('promise, getAddressesFromLocation: error=' + JSON.stringify(error));
+                }).catch((err:Object|null|undefined) => {
+                    console.error('promise, getAddressesFromLocation: error=' + JSON.stringify(err));
                     expect((err as BusinessError).code).assertEqual(401);
                   });
-              } catch (err) {
+              } catch (err:BusinessError) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
               }
           await Utils.msSleep(1000)
@@ -1644,13 +1634,12 @@ export default function actslocationTest() {
             };
             try {
                 geoLocationManager.getAddressesFromLocation(reverseGeocodeRequest).then((data) => {
-                  console.info('getAddressesFromLocation: ' + JSON.stringify(data));
                   expect(true).assertEqual(data!=null);
-                }).catch((error: BusinessError) => {
-                    console.error('promise, getAddressesFromLocation: error=' + JSON.stringify(error));
+                }).catch((err:Object|null|undefined) => {
+                    console.error('promise, getAddressesFromLocation: error=' + JSON.stringify(err));
                     expect((err as BusinessError).code).assertEqual(3301300);
                   });
-              } catch (err) {
+              } catch (err:BusinessError) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
               }
           await Utils.msSleep(1000)
@@ -1698,13 +1687,13 @@ export default function actslocationTest() {
             let geocodeRequest: geoLocationManager.GeoCodeRequest = { "description": "上海市浦东新区xx路xx号", "maxItems": 1 };
             try {
               geoLocationManager.getAddressesFromLocationName(geocodeRequest).then((data) => {
-                console.info('getAddressesFromLocationName: ' + JSON.stringify(data));
+                console.info('getAddressesFromLocationName: ' + data);
                 expect(true).assertEqual(data!=null);
-              }).catch((error: BusinessError) => {
-                  console.error('promise, getAddressesFromLocationName: error=' + JSON.stringify(error));
+              }).catch((err:Object|null|undefined) => {
+                  console.error('promise, getAddressesFromLocationName: error=' + JSON.stringify(err));
                   expect((err as BusinessError).code).assertEqual(401);
                 });
-            } catch (err) {
+            } catch (err:BusinessError) {
               console.error("errCode:" + err.code + ", message:" + err.message);
             }
           await Utils.msSleep(1000)
@@ -1749,14 +1738,14 @@ export default function actslocationTest() {
         it('Sub_Location_getCountryCode_0400',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
             try {
                 geoLocationManager.getCountryCode().then((result) => {
-                    console.info('promise, getCountryCode: result=' + JSON.stringify(result));
+                    console.info('promise, getCountryCode: result=' + result);
                     expect(true).assertEqual(result!=null);
-                  }).catch((error: BusinessError) => {
-                    console.error('promise, getCountryCode: error=' + JSON.stringify(error));
-                    expect(err.code).assertEqual(3301500);
+                  }).catch((err:Object|null|undefined) => {
+                    console.error('promise, getCountryCode: error=' + JSON.stringify(err));
+                    expect((err as BusinessError).code).assertEqual(3301500);
                   });
               } catch (err) {
-                console.error("errCode:" + err.code + ", message:" + err.message);
+                console.error("errCode:Sub_Location_getCountryCode_0400");
               }
           await Utils.msSleep(1000)
           done();
@@ -1773,7 +1762,7 @@ export default function actslocationTest() {
         it('SUB_Location_getLastLocation_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             try {
                 let location = geoLocationManager.getLastLocation();
-                expect(true).assertEqual(JSON.stringify(location)!=null);
+                expect(true).assertEqual(location!=null);
               } catch (err) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(201);
@@ -1791,7 +1780,7 @@ export default function actslocationTest() {
         it('SUB_Location_getLastLocation_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             try {
                 let location = geoLocationManager.getLastLocation();
-                expect(true).assertEqual(JSON.stringify(location)!=null);
+                expect(true).assertEqual(location!=null);
               } catch (err) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(801);
@@ -1809,7 +1798,7 @@ export default function actslocationTest() {
         it('SUB_Location_getLastLocation_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             try {
                 let location = geoLocationManager.getLastLocation();
-                expect(true).assertEqual(JSON.stringify(location)!=null);
+                expect(true).assertEqual(location!=null);
               } catch (err) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(3301100);
@@ -1827,7 +1816,7 @@ export default function actslocationTest() {
         it('SUB_Location_getLastLocation_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
             try {
                 let location = geoLocationManager.getLastLocation();
-                expect(true).assertEqual(JSON.stringify(location)!=null);
+                expect(true).assertEqual(location!=null);
               } catch (err) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(3301200);
@@ -1870,8 +1859,9 @@ export default function actslocationTest() {
          * @tc.size: MEDIUMTEST
          */
         it('Sub_Location_onLocationChange_0200',TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,async(done:()=>void):Promise<void>=>{
-            let request: geoLocationManager.ContinuousLocationRequest = {
+              let request: geoLocationManager.ContinuousLocationRequest = {
                 'interval': 1,
+                'locationScenario': geoLocationManager.UserActivityScenario.NAVIGATION
               };
               let locationCallback = (location: geoLocationManager.Location): void => {
                 console.info('locationCallback: data: ' + JSON.stringify(location));
@@ -1965,11 +1955,10 @@ export default function actslocationTest() {
                 console.info('locationChange: data: ' + JSON.stringify(location));
               };
               try {
-                geoLocationManager.on('locationChange', requestInfo, locationChange);
+                geoLocationManager.onLocationChange(requestInfo, locationChange);
               } catch (err) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
               }
-              
               let locationErrorChange = (errcode: geoLocationManager.LocationError): void => {
                 console.info('locationErrorChange: data: ' + JSON.stringify(errcode));
               };
@@ -1998,7 +1987,7 @@ export default function actslocationTest() {
               };
               try {
                 geoLocationManager.offLocationError(locationErrorChange);
-                expect(true).assertEqual(JSON.stringify(id)!=null);
+                expect(true).assertEqual(locationErrorChange!=null);
               } catch (err) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
                 expect(err.code).assertEqual(201);
@@ -2020,7 +2009,7 @@ export default function actslocationTest() {
                 console.info('locationEnabledChange: ' + JSON.stringify(state));
             }
             try {
-                geoLocationManager.on('locationEnabledChange', state);
+                geoLocationManager.onLocationEnabledChange(state);
                 expect(state).assertTrue();
             } catch (err) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
@@ -2043,7 +2032,7 @@ export default function actslocationTest() {
                 console.info('locationEnabledChange: ' + JSON.stringify(state));
             }
             try {
-                geoLocationManager.on('locationEnabledChange', state);
+                geoLocationManager.offLocationEnabledChange(state);
                 expect(state).assertTrue();
             } catch (err) {
                 console.error("errCode:" + err.code + ", message:" + err.message);
@@ -2067,13 +2056,13 @@ export default function actslocationTest() {
                 console.info('satelliteStatusChange: ' + JSON.stringify(satelliteStatusInfo));
                 // 表示卫星个数
                 let totalNumber: number = satelliteStatusInfo.satellitesNumber;
-                let satelliteIds: Array<number> = satelliteStatusInfo.satelliteIds;
+                let satelliteIds: Array<Int> = satelliteStatusInfo.satelliteIds;
                 let carrierToNoiseDensitys: Array<number> = satelliteStatusInfo.carrierToNoiseDensitys;
                 let altitudes: Array<number> = satelliteStatusInfo.altitudes;
                 let azimuths: Array<number> = satelliteStatusInfo.azimuths;
                 let carrierFrequencies: Array<number> = satelliteStatusInfo.carrierFrequencies;
                 let satelliteConstellations: Array<geoLocationManager.SatelliteConstellationCategory> | undefined = satelliteStatusInfo.satelliteConstellation;
-                let satelliteAdditionalInfos: Array<number> | undefined = satelliteStatusInfo.satelliteAdditionalInfo;
+                let satelliteAdditionalInfos: Array<Int> | undefined = satelliteStatusInfo.satelliteAdditionalInfo;
                 for (let i = 0;i < totalNumber; i++) {
                   // 卫星的ID
                   let satelliteId: number = satelliteIds[i];
@@ -2119,13 +2108,13 @@ export default function actslocationTest() {
                 console.info('satelliteStatusChange: ' + JSON.stringify(satelliteStatusInfo));
                 // 表示卫星个数
                 let totalNumber: number = satelliteStatusInfo.satellitesNumber;
-                let satelliteIds: Array<number> = satelliteStatusInfo.satelliteIds;
+                let satelliteIds: Array<Int> = satelliteStatusInfo.satelliteIds;
                 let carrierToNoiseDensitys: Array<number> = satelliteStatusInfo.carrierToNoiseDensitys;
                 let altitudes: Array<number> = satelliteStatusInfo.altitudes;
                 let azimuths: Array<number> = satelliteStatusInfo.azimuths;
                 let carrierFrequencies: Array<number> = satelliteStatusInfo.carrierFrequencies;
                 let satelliteConstellations: Array<geoLocationManager.SatelliteConstellationCategory> | undefined = satelliteStatusInfo.satelliteConstellation;
-                let satelliteAdditionalInfos: Array<number> | undefined = satelliteStatusInfo.satelliteAdditionalInfo;
+                let satelliteAdditionalInfos: Array<Int> | undefined = satelliteStatusInfo.satelliteAdditionalInfo;
                 for (let i = 0;i < totalNumber; i++) {
                   // 卫星的ID
                   let satelliteId: number = satelliteIds[i];
