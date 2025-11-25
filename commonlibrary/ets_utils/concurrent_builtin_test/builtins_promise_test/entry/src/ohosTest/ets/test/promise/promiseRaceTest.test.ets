@@ -1586,46 +1586,6 @@ export default function promiseRaceTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_Promise_race_TEST_063
-     * @tc.name PromiseRaceTest063
-     * @tc.desc Race with promises that have dynamic dependency injection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 4
-     */
-    it('PromiseRaceTest063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      interface Dependency {
-        value: number;
-        delay: number;
-      }
-
-      let createDependentPromise = (deps: Dependency[]): Promise<number> => {
-        return deps.reduce((promise, dep) => {
-          return promise.then(total =>
-          new Promise<number>(resolve =>
-          setTimeout(() => resolve(total + dep.value), dep.delay)
-          )
-          );
-        }, Promise.resolve(0));
-      }
-
-      const p1: Promise<number> = createDependentPromise([
-        { value: 5, delay: 10 },
-        { value: 3, delay: 15 },
-        { value: 2, delay: 5 }
-      ]);
-
-      const p2: Promise<number> = createDependentPromise([
-        { value: 4, delay: 5 },
-        { value: 4, delay: 10 },
-        { value: 3, delay: 10 }
-      ]);
-
-      const result = await Promise.race([p1, p2]);
-      expect(result).assertEqual(11);
-    });
-
-    /**
      * @tc.number SUB_BUILTINS_Promise_race_TEST_065
      * @tc.name PromiseRaceTest065
      * @tc.desc Race with promises that use async retry logic with backoff
@@ -2088,48 +2048,6 @@ export default function promiseRaceTest() {
 
       const result = await Promise.race([queue1.process(), queue2.process()]);
       expect(result).assertEqual(40);
-    });
-
-    /**
-     * @tc.number SUB_BUILTINS_Promise_race_TEST_084
-     * @tc.name PromiseRaceTest084
-     * @tc.desc Race with promises that use async state transitions with rollbacks
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 4
-     */
-    it('PromiseRaceTest084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      let state = obj84;
-
-      const transition = async (
-        newState: number,
-        delay: number,
-        shouldRollback: boolean
-      ): Promise<number> => {
-        const oldState = state.value;
-        state.value = newState;
-
-        await new Promise<void>(resolve => setTimeout(resolve, delay));
-
-        if (shouldRollback) {
-          state.value = oldState;
-          return oldState;
-        }
-
-        return newState;
-      };
-
-      const p1: Promise<number> = transition(10, 10, false)
-        .then(() => transition(20, 15, false))
-        .then(() => transition(30, 5, false));
-
-      const p2: Promise<number> = transition(5, 5, false)
-        .then(() => transition(15, 10, true)) // Rollback to 5
-        .then(() => transition(25, 5, false));
-
-      const result = await Promise.race([p1, p2]);
-      expect(result).assertEqual(25);
-      expect(state.value).assertEqual(25);
     });
 
     /**

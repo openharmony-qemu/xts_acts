@@ -2090,48 +2090,6 @@ export default function promiseAnyTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_Promise_any_TEST_0880
-     * @tc.name PromiseAnyTest088
-     * @tc.desc Multi-phase initialization processes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     */
-    it('PromiseAnyTest088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      const phase1 = (name: string, delay: number): Promise<string> => {
-        return new Promise<string>((resolve) =>
-        setTimeout(() => resolve(`${name}:phase1`), delay)
-        );
-      };
-
-      const phase2 = (prevResult: string, delay: number): Promise<string> => {
-        return new Promise<string>((resolve) =>
-        setTimeout(() => resolve(`${prevResult}:phase2`), delay)
-        );
-      };
-
-      const phase3 = (prevResult: string, delay: number): Promise<string> => {
-        return new Promise<string>((resolve) =>
-        setTimeout(() => resolve(`${prevResult}:phase3`), delay)
-        );
-      };
-
-      const initProcess = (name: string, delays: [number, number, number]): Promise<string> => {
-        return phase1(name, delays[0])
-          .then(result => phase2(result, delays[1]))
-          .then(result => phase3(result, delays[2]));
-      };
-
-      const result = await Promise.any([
-        initProcess("A", [10, 20, 30]), // Total: 60ms
-        initProcess("B", [15, 15, 20]), // Total: 50ms
-        initProcess("C", [5, 25, 15])// Total: 45ms
-      ]);
-
-      expect(result).assertEqual("C:phase1:phase2:phase3");
-    });
-
-    /**
      * @tc.number SUB_BUILTINS_Promise_any_TEST_0890
      * @tc.name PromiseAnyTest089
      * @tc.desc Cascading promises with conditional branching

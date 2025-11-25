@@ -12,16 +12,16 @@ import promiseThenTest from './promise/promiseThenTest.test';
 //import promiseWithResolversTest from './promise/promiseWithResolversTest.test';
 
 export default function testsuite() {
+  promiseAnyTest()
+  promiseRaceTest()
+  promiseResolveTest()
   promiseTest()
   promiseThenTest()
   promiseCatchTest()
   promiseFinallyTest()
   promiseAllTest()
-  promiseAnyTest()
-  promiseRaceTest()
   promiseAllSettledTest()
   promiseRejectTest()
-  promiseResolveTest()
   //promiseWithResolversTest()
   promiseCombTest()
 }

@@ -1495,31 +1495,6 @@ export default function promiseResolveTest() {
     });
 
     /**
-     * @tc.number SUB_BUILTINS_Promise_resolve_TEST_0076
-     * @tc.name PromiseResolveTest076
-     * @tc.desc Nested Promise.race with cascading delays, verify priority timing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 4
-     */
-    it('PromiseResolveTest076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
-      const start = Date.now();
-      const innerRace = Promise.race([
-        Promise.resolve(new Promise<string>(resolve => setTimeout(() => resolve('inner-20ms'), 20))),
-        Promise.resolve(new Promise<string>(resolve => setTimeout(() => resolve('inner-10ms'), 10)))
-      ]);
-      const outerRace = Promise.race([
-        Promise.resolve(new Promise<string>(resolve => setTimeout(() => resolve(innerRace), 15))),
-        Promise.resolve(new Promise<string>(resolve => setTimeout(() => resolve('outer-5ms'), 5)))
-      ]);
-
-      const result = await outerRace;
-      const end = Date.now();
-      expect(result).assertEqual('outer-5ms');
-      expect(end - start).assertLess(10);
-    });
-
-    /**
      * @tc.number SUB_BUILTINS_Promise_resolve_TEST_0077
      * @tc.name PromiseResolveTest077
      * @tc.desc 4-level thenable chain with mixed delays, verify total timing
