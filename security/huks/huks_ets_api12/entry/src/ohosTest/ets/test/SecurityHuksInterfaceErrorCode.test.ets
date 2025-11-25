@@ -2122,7 +2122,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
      * @tc.size   SmallTest
      * @tc.level  Level3
      */
-    it('SUB_Security_HUKS_ErrorCode_API22_Interface_0400', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
+    it('SUB_Security_HUKS_ErrorCode_API22_Interface_0300', TestType.SAFETY | Size.SMALLTEST | Level.LEVEL3, async () => {
       let testNumber: string = "SUB_Security_HUKS_ErrorCode_API22_Interface_0400";
       try {
         const resourceId = "SUB_Security_HUKS_ErrorCode_API22_Interface_0400";
@@ -2137,7 +2137,7 @@ export default function SecurityHuksInterfaceErrorCodeTest() {
       } catch (err) {
         if (err.code != 801){
           Logger.error(testNumber + `: catch error ${JSON.stringify(err)}`);
-          expect(err.code).assertEqual(12000012);
+          expect(err.code).assertEqual(202);
         }
       }
     })
