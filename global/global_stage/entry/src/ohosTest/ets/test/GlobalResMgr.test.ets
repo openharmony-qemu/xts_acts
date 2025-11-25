@@ -58,16 +58,16 @@ export default function GlobalResMgrTest() {
         expect(value).assertEqual(base64);
 
         value = res.getMediaContentBase64Sync($r('app.media.foreground1').id);
-        path:string = resContext.resourceDir + '/' + "foreground1.png";
+        path = resContext.resourceDir + '/' + "foreground1.png";
         base64 = openPNGWithBase64(path);
         expect(value).assertEqual(base64);
 
         value = res.getMediaContentBase64Sync($r('app.media.foreground2').id);
-        path:string = resContext.resourceDir + '/' + "foreground2.png";
+        path = resContext.resourceDir + '/' + "foreground2.png";
         base64 = openPNGWithBase64(path);
         expect(value).assertEqual(base64);
       } catch(error) {
-        except(JSON.stringify(error)).assertFail();
+        expect(JSON.stringify(error)).assertFail();
       }
     })
   })
