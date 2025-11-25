@@ -45,6 +45,7 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3_2() {
       } catch (err) {
         console.error("push webViewSdkSchemeHandlerDidFail3 page error:" + err);
       }
+	  
       await driver.waitForComponent(ON.id("webViewSdkSchemeHandlerDidFail3Button"), 10000);
       console.log("waitForComponent webViewSdkSchemeHandlerDidFail3Button");
       done()
