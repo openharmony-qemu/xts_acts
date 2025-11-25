@@ -41,11 +41,11 @@ export default function WebViewContextMenuMediaType() {
           console.info("get WebViewContextMenuMediaType state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
           console.info("push WebViewContextMenuMediaType page success " + JSON.stringify(result));
+          await driver.waitForComponent(ON.id("WebViewgContextMenuMediaTypeButton"), 10000)
         }
       } catch (err) {
         console.error("push WebViewContextMenuMediaType page error: " + err);
       }
-      await driver.waitForComponent(ON.id("WebViewgContextMenuMediaTypeButton"), 10000)
       done()
     });
 
@@ -69,8 +69,8 @@ export default function WebViewContextMenuMediaType() {
     * @tc.level      : Level 1
     */
     it('testContextMenuMediaTypeVideo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitContextMenuMediaTypeText", EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent("testContextMenuMediaTypeVideo", ContextMenuDataMediaType.VIDEO, 20251103, done);
+      Utils.emitEvent("emitContextMenuMediaTypeVideo", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testContextMenuMediaTypeVideo", 2, 20251103, done);
       await Utils.waitAndClickComponent(driver, "WebViewgContextMenuMediaTypeButton","testContextMenuMediaTypeVideo");
     })
 
@@ -83,8 +83,8 @@ export default function WebViewContextMenuMediaType() {
     * @tc.level      : Level 1
     */
     it('testContextMenuMediaTypeText', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitContextMenuMediaTypeImage", EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent("testContextMenuMediaTypeText", ContextMenuDataMediaType.NONE, 20251104, done);
+      Utils.emitEvent("emitContextMenuMediaTypeText", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testContextMenuMediaTypeText", 0, 20251104, done);
       await Utils.waitAndClickComponent(driver, "WebViewgContextMenuMediaTypeButton","testContextMenuMediaTypeText");
     })
 
@@ -97,8 +97,8 @@ export default function WebViewContextMenuMediaType() {
       * @tc.level      : Level 1
       */
     it('testContextMenuMediaTypeImage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitContextMenuMediaTypeAudio", EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent("testContextMenuMediaTypeImage", ContextMenuDataMediaType.IMAGE, 20251105, done);
+      Utils.emitEvent("emitContextMenuMediaTypeImage", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testContextMenuMediaTypeImage", 1, 20251105, done);
       await Utils.waitAndClickComponent(driver, "WebViewgContextMenuMediaTypeButton","testContextMenuMediaTypeImage");
     })
 
@@ -111,8 +111,8 @@ export default function WebViewContextMenuMediaType() {
       * @tc.level      : Level 1
       */
     it('testContextMenuMediaTypeAudio', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-      Utils.emitEvent("emitContextMenuMediaTypeCanvas", EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent("testContextMenuMediaTypeAudio", ContextMenuDataMediaType.AUDIO, 20251106, done);
+      Utils.emitEvent("emitContextMenuMediaTypeAudio", EVENT_ID_SET_SUITE_KEY);
+      Utils.registerEvent("testContextMenuMediaTypeAudio", 3, 20251106, done);
       await Utils.waitAndClickComponent(driver, "WebViewgContextMenuMediaTypeButton","testContextMenuMediaTypeAudio");
     })
 
@@ -126,7 +126,7 @@ export default function WebViewContextMenuMediaType() {
     */
     it('testContextMenuMediaTypeCanvas', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitContextMenuMediaTypeCanvas", EVENT_ID_SET_SUITE_KEY);
-      Utils.registerEvent("testContextMenuMediaTypeCanvas", ContextMenuDataMediaType.CANVAS, 20251107, done);
+      Utils.registerEvent("testContextMenuMediaTypeCanvas", 4, 20251107, done);
       await Utils.waitAndClickComponent(driver, "WebViewgContextMenuMediaTypeButton","testContextMenuMediaTypeCanvas");
     })
   })
