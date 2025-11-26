@@ -96,7 +96,14 @@ import ImagePixelMapConvertPixelFormatTest from './image/ImagePixelMapConvertPix
 import ImagePixelMapCropSyncTest from './image/ImagePixelMapCropSync.Test.test';
 import ImagePixelMapMarshallingTest from './image/ImagePixelMapMarshalling.Test.test';
 import ImagePixelMapUnmarshallingTest from './image/ImagePixelMapUnMarshalling.Test.test';
-
+import ImageAuxiliaryPictureSetMetadataTest from './image/ImageAuxiliaryPictureSetMetadata.Test.test';
+import imagePackerPackingTest from './image/ImagePackerPacking.Test.test';
+import SendableImagePixelMapApplyColorSpaceTest from './sendableImage/SendableImagePixelMapApplyColorSpace.Test.test';
+import SendableImagePixelMapCropTest from './sendableImage/SendableImagePixelMapCrop.Test.test';
+import SendableImagePixelMapCropSyncTest from './sendableImage/SendableImagePixelMapCropSync.Test.test';
+import SendableImagePixelMapSetColorSpaceTest from './sendableImage/SendableImagePixelMapSetColorSpace.Test.test';
+import SendableImagePixelMapUnMarshallingTest from './sendableImage/SendableImagePixelMapUnMarshalling.Test.test';
+import SendableImageSourceCreatePixelMapTest from './sendableImage/SendableImageSourceCreatePixelMap.Test.test';
 
 
 export default function testsuite() {
@@ -182,4 +189,12 @@ export default function testsuite() {
   ImagePixelMapCropSyncTest();
   ImagePixelMapMarshallingTest();
   ImagePixelMapUnmarshallingTest();
+  ImageAuxiliaryPictureSetMetadataTest();
+  imagePackerPackingTest();
+  SendableImagePixelMapApplyColorSpaceTest();
+  SendableImagePixelMapCropTest();
+  SendableImagePixelMapCropSyncTest();
+  SendableImagePixelMapSetColorSpaceTest();
+  SendableImagePixelMapUnMarshallingTest();
+  SendableImageSourceCreatePixelMapTest();
 }
