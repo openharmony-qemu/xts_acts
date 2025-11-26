@@ -74,6 +74,10 @@ export default function Env001() {
       console.info("[Env001_001] component text_1: " + text_1);
       expect(text_1).assertEqual('1')
       await CommonFunc.sleep(1000);
+      let btn3: Component = await driver.findComponent(ON.id('subWindowBtn003'));
+      await CommonFunc.sleep(1000);
+      await btn3.click();
+      await CommonFunc.sleep(1000);
       console.info('[Env001_001] END');
       done();
     });

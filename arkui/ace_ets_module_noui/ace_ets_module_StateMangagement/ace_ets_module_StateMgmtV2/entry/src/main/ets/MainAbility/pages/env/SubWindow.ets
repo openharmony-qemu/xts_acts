@@ -14,7 +14,7 @@
  */
 import { uiObserver, window,UIUtils,display } from '@kit.ArkUI';
 import { common } from '@kit.AbilityKit';
-
+let subWindowClass: window.Window | undefined = undefined;
 let envNum: number = 0;
 @Entry
 @ComponentV2
@@ -31,6 +31,22 @@ struct SubWindow {
       lastWindow.resize(width,height)
     });
   }
+  private destroySubWindow(){
+    subWindowClass = AppStorage.get('subWindowClass');
+    if (!subWindowClass) {
+      console.error('sub_windowClass is null');
+      return;
+    }
+    subWindowClass.destroyWindow((err: BusinessError) => {
+      let errCode: number = err.code;
+      if (errCode) {
+        console.error('Failed to destroy the window. Cause: ' + JSON.stringify(err));
+        return;
+      }
+      console.info('Succeeded in destroying the window.');
+    });
+  }
+
   orientationChange(mon: IMonitor) {
     envNum++;
     mon.dirty.forEach((path: string) => {
@@ -62,7 +78,11 @@ struct SubWindow {
 
       Text(`Sub height ${this.bp.heightBreakpoint}`)
         .height('5%')
-
+      Button('destroySubWindow')
+        .id('subWindowBtn003')
+        .onClick(() => {
+        this.destroySubWindow()
+      })
       Button('resize').height('20%').id('subWindowBtn002').onClick(() => {
         console.log('ww subwindows resize')
         let newSizeX: number = this.minLen;

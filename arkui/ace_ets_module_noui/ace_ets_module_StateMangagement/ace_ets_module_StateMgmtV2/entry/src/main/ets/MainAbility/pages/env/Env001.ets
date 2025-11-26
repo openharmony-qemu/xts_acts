@@ -51,6 +51,7 @@ struct MultiInstance {
           console.error('subWindowClass is null');
           return;
         }
+        AppStorage.setOrCreate('subWindowClass', subWindowClass);
         console.info('Succeeded in creating the subwindow. Data: ' + JSON.stringify(data));
         let newX: number = this.minLen * 0.1;
         subWindowClass.moveWindowTo(newX, newX, (err: BusinessError) => {
