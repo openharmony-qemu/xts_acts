@@ -80,6 +80,7 @@ export const GetString0200: (id: number) => number;
 export const GetString0300: (id: number) => number;
 export const GetString0400: (id: number) => number;
 export const GetString0500: (id: number) => number;
+export const GetString0600: (id: number) => number;
 export const GetStringByName0100: () => number;
 export const GetStringByName0200: () => number;
 export const GetStringByName0300: () => number;

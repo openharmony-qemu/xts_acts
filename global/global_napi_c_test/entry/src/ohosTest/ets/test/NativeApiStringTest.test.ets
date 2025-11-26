@@ -1464,6 +1464,28 @@ export default function abilityTest() {
     })
 
     /**
+     * @generated.time 2025-11-26 15:59:23
+     * @tc.name   TestGetString0600
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRING_0600
+     * @tc.desc   capi getstring format args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TestGetString0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info("====>TestGetString0600 start====");
+        let result: number = nativeTest.GetString0600($r('app.string.test-format').id);
+        console.info(`====>TestGetString0600 result====${result}`);
+        expect(result).assertEqual(ERROR_CODE_RES_REF_TOO_MUCH);
+        done()
+      } catch (err) {
+        console.error("====>TestGetString0600 catch err: " + err);
+        expect(false).assertEqual(0);
+      }
+    })
+
+    /**
      * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetStringByName0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGBYNAME_0100

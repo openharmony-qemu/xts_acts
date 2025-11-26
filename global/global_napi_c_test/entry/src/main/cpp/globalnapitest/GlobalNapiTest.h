@@ -106,6 +106,7 @@ napi_value GetString0200(napi_env env, napi_callback_info info);
 napi_value GetString0300(napi_env env, napi_callback_info info);
 napi_value GetString0400(napi_env env, napi_callback_info info);
 napi_value GetString0500(napi_env env, napi_callback_info info);
+napi_value GetString0600(napi_env env, napi_callback_info info);
 napi_value GetStringByName0100(napi_env env, napi_callback_info info);
 napi_value GetStringByName0200(napi_env env, napi_callback_info info);
 napi_value GetStringByName0300(napi_env env, napi_callback_info info);
