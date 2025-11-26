@@ -37,7 +37,7 @@ let g_context: common.UIAbilityContext;
 
 export default function audioRendererTest() {
   describe('getUnderflowCount', () => {
-    let audioRen: audio.AudioRenderer;
+    let audioRen: audio.AudioRenderer | null;
     let TagFrmwkRender = "audioRendererEnhanceTest";
 
     beforeAll(async (): Promise<void> => {
@@ -86,7 +86,7 @@ export default function audioRendererTest() {
           let data = await audio.createAudioRenderer(AudioRendererOptions);
           audioRen = data;
           console.info('audioRendererEnhanceTest: AudioRender Created : Success : Stream Type: SUCCESS data state: ' +
-          Object.keys(data));
+          Object.keys(data!));
           console.info('audioRendererEnhanceTest: AudioRender Created : Success : Stream Type: SUCCESS data value: ' +
           JSON.stringify(data));
         } catch (err: BusinessError) {
@@ -100,7 +100,7 @@ export default function audioRendererTest() {
       console.info(`${TagFrmwkRender}: afterEach: Test case-level clearance conditions`);
       Utils.msSleep(2000);
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -114,9 +114,9 @@ export default function audioRendererTest() {
     let renderPlay = async () => {
       let bufferSize: long;
       try {
-        bufferSize = await audioRen.getBufferSize()
+        bufferSize = await audioRen!.getBufferSize()
         console.info(`${TagFrmwkRender}: audioRenderer getBufferSize success,bufferSize:${bufferSize} \n`);
-        await audioRen.start();
+        await audioRen!.start();
         console.info(`${TagFrmwkRender}: audioRenderer start success\n`);
       } catch (err) {
         console.info(`${TagFrmwkRender}: audioRenderer start : Error: ${JSON.stringify(err)}\n`);
@@ -190,7 +190,7 @@ export default function audioRendererTest() {
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNTSYNC_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        let value: number = audioRen.getUnderflowCountSync();
+        let value: number = audioRen!.getUnderflowCountSync();
         console.info(`${TagFrmwkRender}: getUnderflowCount :SUCCESS ${value}`);
         expect(value).assertEqual(testConst.OUTPUT_NUMBER_0);
         done();
@@ -214,13 +214,13 @@ export default function audioRendererTest() {
 
       try {
         await renderPlay();
-        let value: number = audioRen.getUnderflowCountSync();
+        let value: number = audioRen!.getUnderflowCountSync();
         console.info(`${TagFrmwkRender}: getUnderflowCount :SUCCESS ${value}`);
         expect(value as number).assertLargerOrEqual(testConst.OUTPUT_NUMBER_0 as number);
         try {
-          await audioRen.drain();
+          await audioRen!.drain();
           try {
-            await audioRen.stop();
+            await audioRen!.stop();
             expect(true).assertTrue();
             done();
           } catch (err: BusinessError) {
@@ -251,7 +251,7 @@ export default function audioRendererTest() {
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         try {
-          let data = await audioRen.getUnderflowCount();
+          let data = await audioRen!.getUnderflowCount();
           console.info(`${TagFrmwkRender}: getUnderflowCount :SUCCESS ${data}`);
           expect(data).assertEqual(testConst.OUTPUT_NUMBER_0);
           done();
@@ -280,13 +280,13 @@ export default function audioRendererTest() {
       try {
         await renderPlay();
         try {
-          let data = await audioRen.getUnderflowCount();
+          let data = await audioRen!.getUnderflowCount();
           console.info(`${TagFrmwkRender}: getUnderflowCount :SUCCESS ${data}`);
           expect(data as number).assertLargerOrEqual(testConst.OUTPUT_NUMBER_0 as number);
           try {
-            await audioRen.drain();
+            await audioRen!.drain();
             try {
-              await audioRen.stop();
+              await audioRen!.stop();
               expect(true).assertTrue();
               done();
             } catch (err: BusinessError) {
@@ -322,7 +322,7 @@ export default function audioRendererTest() {
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_PROMISE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         for (let index = 0; index < testConst.StreamUsage.length; index++) {
-          let audioRender: audio.AudioRenderer;
+          let audioRender: audio.AudioRenderer | null;
           let AudioStreamInfo: audio.AudioStreamInfo = {
             samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
             channels: audio.AudioChannel.CHANNEL_2,
@@ -349,7 +349,7 @@ export default function audioRendererTest() {
             console.info(`${TagFrmwkRender}:  AudioRender Created : catch ERROR : ` + error.code + error.message);
           }
           try {
-            let data = await audioRender.getUnderflowCount();
+            let data = await audioRender!.getUnderflowCount();
             console.info(`${TagFrmwkRender}:  getUnderflowCount SUCCESS! ${testConst.StreamUsage[index]}  data ${data}:, now release audiorender`);
             expect(data).assertEqual(testConst.OUTPUT_NUMBER_0);
           } catch (error: BusinessError) {
@@ -359,7 +359,7 @@ export default function audioRendererTest() {
           }
           Utils.msSleep(1000);
           try {
-            await audioRender.release()
+            await audioRender!.release()
             console.info(`${TagFrmwkRender}:  Renderer ${testConst.StreamUsage[index]} release  SUCCESS! `);
           } catch (err: BusinessError) {
             console.info(`${TagFrmwkRender}:  Renderer release ERROR: ${err.message}`);
@@ -381,7 +381,7 @@ export default function audioRendererTest() {
      * @tc.level       Level 0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      audioRen.getUnderflowCount((err: BusinessError<void> | null, data: long | undefined) => {
+      audioRen!.getUnderflowCount((err: BusinessError<void> | null, data: long | undefined) => {
         if (err) {
           console.info(`${TagFrmwkRender}:  getUnderflowCount ERROR! code: ${err?.code}, mesage: ${err?.message}`);
           expect(false).assertTrue();
@@ -405,7 +405,7 @@ export default function audioRendererTest() {
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_CALLBACK_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await renderPlay();
-        audioRen.getUnderflowCount((error: BusinessError<void> | null, data: long | undefined) => {
+        audioRen!.getUnderflowCount((error: BusinessError<void> | null, data: long | undefined) => {
           if (error?.code) {
             console.info(`${TagFrmwkRender}:  getUnderflowCount execution fail,error: [${error?.code}, ${error?.message}]`);
             expect(false).assertTrue();
@@ -416,9 +416,9 @@ export default function audioRendererTest() {
           }
         });
         try {
-          await audioRen.drain();
+          await audioRen!.drain();
           try {
-            await audioRen.stop();
+            await audioRen!.stop();
             done();
           } catch (err: BusinessError) {
             console.info(`${TagFrmwkRender}:  Renderer stop:ERROR : ${err.message}`);
@@ -448,7 +448,7 @@ export default function audioRendererTest() {
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_GETUNDERFLOWCOUNT_CALLBACK_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         for (let index = 0; index < testConst.StreamUsage.length; index++) {
-          let audioRender: audio.AudioRenderer;
+          let audioRender: audio.AudioRenderer | null;
           let AudioStreamInfo: audio.AudioStreamInfo = {
             samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
             channels: audio.AudioChannel.CHANNEL_2,
@@ -468,14 +468,14 @@ export default function audioRendererTest() {
               let data = await audio.createAudioRenderer(AudioRendererOptions);
               audioRender = data;
               console.info(`${TagFrmwkRender}:  AudioRender Created : Stream Type: ${testConst.StreamUsage[index]} SUCCESS data state: ` +
-              Object.keys(data));
+              Object.keys(data!));
             } catch (err: BusinessError) {
               console.info(`${TagFrmwkRender}:  AudioRender Created : ERROR : ` + err.message);
             }
           } catch (error: BusinessError) {
             console.info(`${TagFrmwkRender}:  AudioRender Created : catch ERROR : ` + error.code + error.message);
           }
-          audioRen.getUnderflowCount((error: BusinessError<void> | null, data: long | undefined) => {
+          audioRen!.getUnderflowCount((error: BusinessError<void> | null, data: long | undefined) => {
             if (error?.code) {
               expect(false).assertTrue();
               done();
@@ -486,7 +486,7 @@ export default function audioRendererTest() {
           });
           Utils.msSleep(1000);
           try {
-            await audioRender.release();
+            await audioRender!.release();
             console.info(`${TagFrmwkRender}:  Renderer ${testConst.StreamUsage[index]} release : SUCCESS`);
           } catch (err: BusinessError) {
             console.info(`${TagFrmwkRender}:  Renderer release :ERROR : ${err.message}`);

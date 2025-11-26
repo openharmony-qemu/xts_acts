@@ -357,7 +357,7 @@ export default function audioFramework() {
       audio.createAudioCapturer(audioCapturerOptions).then((data) => {
         audioCapturer = data;
         console.info('AudioCapturer Created : SUCCESS');
-        data.getCapturerInfo().then((audioParamsGet: audio.AudioCapturerInfo) => {
+        data!.getCapturerInfo().then((audioParamsGet: audio.AudioCapturerInfo) => {
           if (audioParamsGet != undefined) {
             console.info('AudioFrameworkRecLog: Capturer CapturerInfo:');
             if (audioParamsGet.source == audio.SourceType.SOURCE_TYPE_CAMCORDER) {
@@ -377,8 +377,8 @@ export default function audioFramework() {
             console.info('ON Triggered successfully');
           }
         };
-        data.onPeriodReach(1000, periodReachCallback);
-        data.offPeriodReach(periodReachCallback);
+        data!.onPeriodReach(1000, periodReachCallback);
+        data!.offPeriodReach(periodReachCallback);
         let stateChangeCallback = (state: audio.AudioState) => {
           if (state == 1) {
             console.info('audio renderer state is: STATE_PREPARED');
@@ -387,16 +387,16 @@ export default function audioFramework() {
             console.info('audio renderer state is: STATE_RUNNING');
           }
         };
-        data.onStateChange(stateChangeCallback);
-        data.offStateChange(stateChangeCallback);
+        data!.onStateChange(stateChangeCallback);
+        data!.offStateChange(stateChangeCallback);
         let readDataCallback = (value: ArrayBuffer) => {
           console.info(`read valus: ${value}`);
         };
-        data.onReadData(readDataCallback);
+        data!.onReadData(readDataCallback);
         console.info('Capturer readData on success.');
-        data.offReadData(readDataCallback);
+        data!.offReadData(readDataCallback);
         console.info('Capturer readData of success.');
-        data.release().then(() => {
+        data!.release().then(() => {
           console.info('AudioFrameworkRecLog: ---------RELEASE RECORD---------');
           console.info('AudioFrameworkRecLog: Capturer release : SUCCESS');
           console.info(`AudioFrameworkRecLog: AudioCapturer : STATE : ${audioCapturer.state}`);

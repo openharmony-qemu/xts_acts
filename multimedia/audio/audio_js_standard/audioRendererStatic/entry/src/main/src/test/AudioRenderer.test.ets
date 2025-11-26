@@ -89,11 +89,11 @@ export default function audioRendererTest() {
 
     let play = async (AudioRendererOptions: audio.AudioRendererOptions, pathName: string, done: ()=>void)=> {
       console.info(`${TagFrmwkRender}: Promise : Audio Play Function`);
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let speed: number = 0;
-      await audio.createAudioRenderer(AudioRendererOptions).then((data: audio.AudioRenderer)=> {
+      await audio.createAudioRenderer(AudioRendererOptions).then((data: audio.AudioRenderer | null)=> {
         audioRen = data;
-        console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data state: ${Object.keys(data)}`);
+        console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data state: ${Object.keys(data!)}`);
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data value: ${JSON.stringify(data)}`);
         expect(true).assertTrue();
       }).catch((err: Error) => {
@@ -102,10 +102,10 @@ export default function audioRendererTest() {
         done();
       });
       console.info(`${TagFrmwkRender}: AudioRenderer : Path : ${pathName}`);
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
-      await audioRen.start().then(async () => {
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
+      await audioRen!.start().then(async () => {
         console.info(`${TagFrmwkRender}: renderInstant started :SUCCESS`);
-        speed = audioRen.getSpeed();
+        speed = audioRen!.getSpeed();
         console.info(`${TagFrmwkRender}: Renderer getSpeed:${speed}`);
         expect(speed).assertEqual(1);
       }).catch((err: Error) => {
@@ -114,10 +114,10 @@ export default function audioRendererTest() {
         done();
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
       let bufferSize: long;
-      await audioRen.getBufferSize().then((data: long) => {
+      await audioRen!.getBufferSize().then((data: long) => {
         console.info(`${TagFrmwkRender}: getBufferSize :SUCCESS ${data}`);
         bufferSize = data;
         expect(true).assertTrue();
@@ -137,25 +137,25 @@ export default function audioRendererTest() {
       console.info(`${TagFrmwkRender}: File size : Removing header: ${totalSize}`);
       // let rlen = 0;
 
-      audioRen.setSpeed(0.25);
-      speed = audioRen.getSpeed();
+      audioRen!.setSpeed(0.25);
+      speed = audioRen!.getSpeed();
       console.info(`${TagFrmwkRender}: Renderer getSpeed:${speed}`);
       expect(speed).assertEqual(0.25);
 
       console.info(`${TagFrmwkRender}: Renderer after read`);
 
-      await audioRen.drain().then(() => {
+      await audioRen!.drain().then(() => {
         console.info(`${TagFrmwkRender}: Renderer drained : SUCCESS`);
       }).catch((err:Error) => {
         console.error(`${TagFrmwkRender}: Renderer drain: ERROR : ${err.message}`);
       });
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
       await Utils.msSleep(100);
-      audioRen.setSpeed(4);
-      speed = audioRen.getSpeed();
+      audioRen!.setSpeed(4);
+      speed = audioRen!.getSpeed();
       console.info(`${TagFrmwkRender}: Renderer getSpeed:${speed}`);
       expect(speed).assertEqual(4);
-      await audioRen.release().then(() => {
+      await audioRen!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
         expect(true).assertTrue();
       }).catch((err: Error) => {
@@ -163,16 +163,16 @@ export default function audioRendererTest() {
         expect(false).assertTrue();
         done();
       });
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
       done();
     }
 
     let playWithVideoStream = async (AudioRendererOptions: audio.AudioRendererOptions, pathName: string, done: ()=>void)=> {
       console.info(`${TagFrmwkRender}: Play with Video Stream Function`);
-      let audioRen: audio.AudioRenderer;
-      await audio.createAudioRenderer(AudioRendererOptions).then((data: audio.AudioRenderer) => {
+      let audioRen: audio.AudioRenderer | null;
+      await audio.createAudioRenderer(AudioRendererOptions).then((data: audio.AudioRenderer | null) => {
         audioRen = data;
-        console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data state: ${Object.keys(data)}`);
+        console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data state: ${Object.keys(data!)}`);
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data value: ${JSON.stringify(data)}`);
         expect(true).assertTrue();
       }).catch((err: Error) => {
@@ -180,7 +180,7 @@ export default function audioRendererTest() {
         expect(false).assertTrue();
         done();
       });
-      await audioRen.getRendererInfo().then((data: audio.AudioRendererInfo)=> {
+      await audioRen!.getRendererInfo().then((data: audio.AudioRendererInfo)=> {
         if (data.usage == audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION) {
           console.info(`${TagFrmwkRender}: AudioRender's streamUsage is equal to STREAM_USAGE_VIDEO_COMMUNICATION: ${audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION}`);
           expect(true).assertTrue();
@@ -191,10 +191,10 @@ export default function audioRendererTest() {
         }
       });
       console.info(`${TagFrmwkRender}: AudioRenderer : Path : ${pathName}`);
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
       let bufferSize: long;
-      await audioRen.getBufferSize().then((data: long) => {
+      await audioRen!.getBufferSize().then((data: long) => {
         console.info(`${TagFrmwkRender}: getBufferSize :SUCCESS ${data}`);
         bufferSize = data;
         expect(true).assertTrue();
@@ -218,7 +218,7 @@ export default function audioRendererTest() {
         while (rlen < totalSize / 4) {
           rlen += ss.readSync(buf);
           console.info(`${TagFrmwkRender}: BufferAudioFramework: bytes read from file: ${rlen}`);
-          await audioRen.getCurrentOutputDevices().then((outputDeviceDescription: audio.AudioDeviceDescriptors) => {
+          await audioRen!.getCurrentOutputDevices().then((outputDeviceDescription: audio.AudioDeviceDescriptors) => {
             console.info(`${TagFrmwkRender}: outputDeviceDescription is ${JSON.stringify(outputDeviceDescription)}`);
             if (outputDeviceDescription[0].deviceType == audio.DeviceType.SPEAKER) {
               console.info(`${TagFrmwkRender}: outputDeviceDescription[0].deviceType is SPEAKER`);
@@ -236,31 +236,31 @@ export default function audioRendererTest() {
         }
         return audio.AudioDataCallbackResult.VALID;
       };
-      audioRen.onWriteData(writeDataCallback);
+      audioRen!.onWriteData(writeDataCallback);
 
       console.info(`${TagFrmwkRender}: Renderer after read`);
 
-      await audioRen.start().then(async () => {
+      await audioRen!.start().then(async () => {
         console.info(`${TagFrmwkRender}: renderInstant started : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: renderInstant start : ERROR : ${err.message}`);
         expect(false).assertTrue();
         done();
       });
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.drain().then(() => {
+      await audioRen!.drain().then(() => {
         console.info(`${TagFrmwkRender}: Renderer drained : SUCCESS`);
       }).catch((err: Error) => {
         console.error(`${TagFrmwkRender}: Renderer drain: ERROR : ${err.message}`);
         expect(false).assertTrue();
         done();
       });
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
-      audioRen.offWriteData(writeDataCallback);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
+      audioRen!.offWriteData(writeDataCallback);
       await Utils.msSleep(2000);
 
-      await audioRen.release().then(() => {
+      await audioRen!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
         expect(true).assertTrue();
       }).catch((err: Error) => {
@@ -268,18 +268,18 @@ export default function audioRendererTest() {
         expect(false).assertTrue();
         done();
       });
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
       done();
     }
 
     let playbackPromise_92 = async (AudioRendererOptions: audio.AudioRendererOptions, pathName: string, done: ()=>void)=> {
       console.info(`${TagFrmwkRender}: Promise : Audio Playback Function`);
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
-        console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data state: ${Object.keys(data)}`);
+        console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data state: ${Object.keys(data!)}`);
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data value: ${JSON.stringify(data)}`);
       } catch (err: BusinessError) {
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
@@ -294,9 +294,9 @@ export default function audioRendererTest() {
         done();
       }
       console.info(`${TagFrmwkRender}: AudioRenderer : Path : ${pathName}`);
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.getStreamInfo().then( (audioParamsGet: audio.AudioStreamInfo)=> {
+      await audioRen!.getStreamInfo().then( (audioParamsGet: audio.AudioStreamInfo)=> {
         console.info(`${TagFrmwkRender}: Renderer getStreamInfo: ${JSON.stringify(audioParamsGet)}`);
       }).catch((err: Error) => {
         console.log(`${TagFrmwkRender}: getStreamInfo :ERROR:  ${err.message}`);
@@ -304,7 +304,7 @@ export default function audioRendererTest() {
         done();
       });
 
-      await audioRen.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
+      await audioRen!.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
         console.info(`${TagFrmwkRender}: Renderer RendererInfo: ${JSON.stringify(audioParamsGet)}`);
         if (audioParamsGet.usage == audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION) {
           console.info(`${TagFrmwkRender}: AudioRender's streamUsage is equal to STREAM_USAGE_VIDEO_COMMUNICATION: ${audio.StreamUsage.STREAM_USAGE_VIDEO_COMMUNICATION}`);
@@ -319,17 +319,17 @@ export default function audioRendererTest() {
         done();
       });
 
-      await audioRen.start().then(() => {
+      await audioRen!.start().then(() => {
         console.info(`${TagFrmwkRender}: renderInstant started :SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: renderInstant start :ERROR : ${err.message}`);
         expect(false).assertTrue();
         done();
       });
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
       let bufferSize: long;
-      await audioRen.getBufferSize().then((data: long) => {
+      await audioRen!.getBufferSize().then((data: long) => {
         console.info(`${TagFrmwkRender}: getBufferSize :SUCCESS ${data}`);
         bufferSize = data;
       }).catch((err: Error) => {
@@ -363,32 +363,32 @@ export default function audioRendererTest() {
       }
       console.info(`${TagFrmwkRender}: Renderer after read`);
 
-      await audioRen.drain().then(() => {
+      await audioRen!.drain().then(() => {
         console.info(`${TagFrmwkRender}: Renderer drained : SUCCESS`);
       }).catch((err: Error) => {
         console.error(`${TagFrmwkRender}: Renderer drain: ERROR : ${err.message}`);
         expect(false).assertTrue();
         done();
       });
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.stop().then(() => {
+      await audioRen!.stop().then(() => {
         console.info(`${TagFrmwkRender}: Renderer stopped : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer stop:ERROR : ${err.message}`);
         expect(false).assertTrue();
         done();
       });
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.release().then(() => {
+      await audioRen!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
         expect(false).assertTrue();
         done();
       });
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
       done();
     }
 
@@ -396,12 +396,12 @@ export default function audioRendererTest() {
       let resultFlag = false;
       console.info(`${TagFrmwkRender}: Promise : Audio Playback Function`);
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
-        console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data state: ${Object.keys(data)}`);
+        console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data state: ${Object.keys(data!)}`);
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data value: ${JSON.stringify(data)}`);
       } catch (err: BusinessError) {
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
@@ -422,10 +422,10 @@ export default function audioRendererTest() {
 
       console.info(`${TagFrmwkRender}: AudioRenderer : Path : ${pathName}`);
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
       try {
-        let audioParamsGet = audioRen.getStreamInfoSync();
+        let audioParamsGet = audioRen!.getStreamInfoSync();
         console.info(`${TagFrmwkRender}: Renderer getStreamInfo: ${JSON.stringify(audioParamsGet)}`);
       } catch (err: BusinessError) {
         console.log(`${TagFrmwkRender}: getStreamInfo :ERROR:  ${err.message}`);
@@ -438,7 +438,7 @@ export default function audioRendererTest() {
       }
 
       try {
-        let audioParamsGet = audioRen.getRendererInfoSync();
+        let audioParamsGet = audioRen!.getRendererInfoSync();
         console.info(`${TagFrmwkRender}: Renderer RendererInfo: ${JSON.stringify(audioParamsGet)}`);
       } catch (err: BusinessError) {
         console.log(`${TagFrmwkRender}: RendererInfo :ERROR: ${err.message}`);
@@ -451,7 +451,7 @@ export default function audioRendererTest() {
       }
 
       try {
-        let renderRate = audioRen.getSpeed();
+        let renderRate = audioRen!.getSpeed();
         if (renderRate == audio.AudioRendererRate.RENDER_RATE_NORMAL) {
           console.info(`${TagFrmwkRender}: getRenderRate : RENDER_RATE_NORMAL : PASS : ${renderRate}`);
         }
@@ -464,7 +464,7 @@ export default function audioRendererTest() {
         resultFlag = false;
       }
 
-      await audioRen.start().then(() => {
+      await audioRen!.start().then(() => {
         console.info(`${TagFrmwkRender}: renderInstant started :SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: renderInstant start :ERROR : ${err.message}`);
@@ -475,10 +475,10 @@ export default function audioRendererTest() {
         return resultFlag;
       }
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
       let bufferSize: long;
-      await audioRen.getBufferSize().then((data: long) => {
+      await audioRen!.getBufferSize().then((data: long) => {
         console.info(`${TagFrmwkRender}: getBufferSize :SUCCESS ${data}`);
         bufferSize = data;
       }).catch((err: Error) => {
@@ -515,7 +515,7 @@ export default function audioRendererTest() {
       }
       console.info(`${TagFrmwkRender}: Renderer after read`);
 
-      await audioRen.drain().then(() => {
+      await audioRen!.drain().then(() => {
         console.info(`${TagFrmwkRender}: Renderer drained : SUCCESS`);
       }).catch((err: Error) => {
         console.error(`${TagFrmwkRender}: Renderer drain: ERROR : ${err.message}`);
@@ -526,9 +526,9 @@ export default function audioRendererTest() {
         return resultFlag;
       }
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.stop().then(() => {
+      await audioRen!.stop().then(() => {
         console.info(`${TagFrmwkRender}: Renderer stopped : SUCCESS`);
         resultFlag = true;
         console.info(`${TagFrmwkRender}: resultFlagRen : ${resultFlag}`);
@@ -537,16 +537,16 @@ export default function audioRendererTest() {
         resultFlag = false;
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.release().then(() => {
+      await audioRen!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
         resultFlag = false;
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
 
@@ -557,7 +557,7 @@ export default function audioRendererTest() {
       let resultFlag = true;
       console.info(`${TagFrmwkRender}: Promise : Audio Playback Function`);
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -580,23 +580,23 @@ export default function audioRendererTest() {
         return resultFlag;
       }
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.getStreamInfo().then((audioParamsGet: audio.AudioStreamInfo) => {
+      await audioRen!.getStreamInfo().then((audioParamsGet: audio.AudioStreamInfo) => {
         console.info(`${TagFrmwkRender}: Renderer getStreamInfo: ${JSON.stringify(audioParamsGet)}`);
       }).catch((err: Error) => {
         console.log(`${TagFrmwkRender}: getStreamInfo :ERROR:  ${err.message}`);
         resultFlag = false;
       });
 
-      await audioRen.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
+      await audioRen!.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
         console.info(`${TagFrmwkRender}: Renderer RendererInfo: ${JSON.stringify(audioParamsGet)}`);
       }).catch((err: Error) => {
         console.log(`${TagFrmwkRender}: RendererInfo :ERROR: ${err.message}`);
         resultFlag = false;
       });
 
-      await audioRen.start().then(() => {
+      await audioRen!.start().then(() => {
         console.info(`${TagFrmwkRender}: renderInstant started :SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: renderInstant start :ERROR : ${err.message}`);
@@ -604,9 +604,9 @@ export default function audioRendererTest() {
       });
 
       let audioTimeStart: long;
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      let bufferSize = audioRen.getBufferSizeSync();
+      let bufferSize = audioRen!.getBufferSizeSync();
       console.info(`${TagFrmwkRender}: buffer size: ${bufferSize}`);
 
       let ss = fileIo.fdopenStreamSync(fdRead, 'r');
@@ -625,7 +625,7 @@ export default function audioRendererTest() {
         console.info(`${TagFrmwkRender}:BufferAudioFramework: bytes read from file: ${rlen}`);
 
         try {
-          let data = audioRen.getAudioTimeSync();
+          let data = audioRen!.getAudioTimeSync();
           audioTimeStart = data / 1000000000;
           console.info(`${TagFrmwkRender}: getAudioTime : After Start : Converted: ${audioTimeStart}`);
         } catch (err: BusinessError) {
@@ -636,15 +636,15 @@ export default function audioRendererTest() {
       }
       console.info(`${TagFrmwkRender}: Renderer after read`);
 
-      await audioRen.drain().then(() => {
+      await audioRen!.drain().then(() => {
         console.info(`${TagFrmwkRender}: Renderer drained : SUCCESS`);
       }).catch((err: Error) => {
         console.error(`${TagFrmwkRender}: Renderer drain: ERROR : ${err.message}`);
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.stop().then(() => {
+      await audioRen!.stop().then(() => {
         console.info(`${TagFrmwkRender}: Renderer stopped : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer stop:ERROR : ${err.message}`);
@@ -658,15 +658,15 @@ export default function audioRendererTest() {
         resultFlag = false;
       }
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.release().then(() => {
+      await audioRen!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       return resultFlag;
@@ -676,12 +676,12 @@ export default function audioRendererTest() {
       let resultFlag = false;
       console.info(`${TagFrmwkRender}: Promise : Audio Playback Function`);
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
         audioRen = data;
-        console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data state: ${Object.keys(data)}`);
+        console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data state: ${Object.keys(data!)}`);
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data value: ${JSON.stringify(data)}`);
       } catch (err: BusinessError) {
         console.info(`${TagFrmwkRender}: AudioRender Created : ERROR : ${err.message}`);
@@ -702,9 +702,9 @@ export default function audioRendererTest() {
 
       console.info(`${TagFrmwkRender}: AudioRenderer : Path : ${pathName}`);
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.getStreamInfo().then( (audioParamsGet: audio.AudioStreamInfo)=> {
+      await audioRen!.getStreamInfo().then( (audioParamsGet: audio.AudioStreamInfo)=> {
         console.info(`${TagFrmwkRender}: Renderer getStreamInfo: ${JSON.stringify(audioParamsGet)}`);
       }).catch((err: Error) => {
         console.log(`${TagFrmwkRender}: getStreamInfo :ERROR:  ${err.message}`);
@@ -715,7 +715,7 @@ export default function audioRendererTest() {
         return resultFlag;
       }
 
-      await audioRen.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
+      await audioRen!.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
         console.info(`${TagFrmwkRender}: Renderer RendererInfo: ${JSON.stringify(audioParamsGet)}`);
       }).catch((err: Error) => {
         console.log(`${TagFrmwkRender}: RendererInfo :ERROR: ${err.message}`);
@@ -726,7 +726,7 @@ export default function audioRendererTest() {
         return resultFlag;
       }
 
-      await audioRen.start().then(() => {
+      await audioRen!.start().then(() => {
         console.info(`${TagFrmwkRender}: renderInstant started :SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: renderInstant start :ERROR : ${err.message}`);
@@ -737,10 +737,10 @@ export default function audioRendererTest() {
         return resultFlag;
       }
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
       let bufferSize: long;
-      await audioRen.getBufferSize().then((data: long) => {
+      await audioRen!.getBufferSize().then((data: long) => {
         console.info(`${TagFrmwkRender}: getBufferSize :SUCCESS ${data}`);
         bufferSize = data;
       }).catch((err: Error) => {
@@ -776,7 +776,7 @@ export default function audioRendererTest() {
       }
       console.info(`${TagFrmwkRender}: Renderer after read`);
 
-      await audioRen.drain().then(() => {
+      await audioRen!.drain().then(() => {
         console.info(`${TagFrmwkRender}: Renderer drained : SUCCESS`);
       }).catch((err: Error) => {
         console.error(`${TagFrmwkRender}: Renderer drain: ERROR : ${err.message}`);
@@ -787,9 +787,9 @@ export default function audioRendererTest() {
         return resultFlag;
       }
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.stop().then(() => {
+      await audioRen!.stop().then(() => {
         console.info(`${TagFrmwkRender}: Renderer stopped : SUCCESS`);
         resultFlag = true;
         console.info(`${TagFrmwkRender}: resultFlagRen : ${resultFlag}`);
@@ -798,16 +798,16 @@ export default function audioRendererTest() {
         resultFlag = false;
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.release().then(() => {
+      await audioRen!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
         resultFlag = false;
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
 
@@ -818,7 +818,7 @@ export default function audioRendererTest() {
       let resultFlag = true;
       console.info(`${TagFrmwkRender}: Promise : Audio Playback Function`);
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions)
@@ -841,23 +841,23 @@ export default function audioRendererTest() {
         return resultFlag;
       }
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.getStreamInfo().then((audioParamsGet: audio.AudioStreamInfo) => {
+      await audioRen!.getStreamInfo().then((audioParamsGet: audio.AudioStreamInfo) => {
         console.info(`${TagFrmwkRender}: Renderer getStreamInfo: ${JSON.stringify(audioParamsGet)}`);
       }).catch((err: Error) => {
         console.log(`${TagFrmwkRender}: getStreamInfo :ERROR:  ${err.message}`);
         resultFlag = false;
       });
 
-      await audioRen.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
+      await audioRen!.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
         console.info(`${TagFrmwkRender}: Renderer RendererInfo: ${JSON.stringify(audioParamsGet)}`);
       }).catch((err: Error) => {
         console.log(`${TagFrmwkRender}: RendererInfo :ERROR: ${err.message}`);
         resultFlag = false;
       });
 
-      await audioRen.start().then(() => {
+      await audioRen!.start().then(() => {
         console.info(`${TagFrmwkRender}: renderInstant started :SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: renderInstant start :ERROR : ${err.message}`);
@@ -866,7 +866,7 @@ export default function audioRendererTest() {
 
       let audioTimeStart: long;
 
-      await audioRen.getAudioTime().then((data: long) => {
+      await audioRen!.getAudioTime().then((data: long) => {
         audioTimeStart = data / 1000000000;
         console.info(`${TagFrmwkRender}: getAudioTime : After Start : Converted: ${audioTimeStart}`);
       }).catch((err: Error) => {
@@ -874,9 +874,9 @@ export default function audioRendererTest() {
         resultFlag = false;
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      let bufferSize = await audioRen.getBufferSize();
+      let bufferSize = await audioRen!.getBufferSize();
       console.info(`${TagFrmwkRender}: buffer size: ${bufferSize}`);
 
       let ss = fileIo.fdopenStreamSync(fdRead, 'r');
@@ -903,29 +903,29 @@ export default function audioRendererTest() {
         resultFlag = false;
       }
 
-      await audioRen.drain().then(() => {
+      await audioRen!.drain().then(() => {
         console.info(`${TagFrmwkRender}: Renderer drained : SUCCESS`);
       }).catch((err: Error) => {
         console.error(`${TagFrmwkRender}: Renderer drain: ERROR : ${err.message}`);
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.stop().then(() => {
+      await audioRen!.stop().then(() => {
         console.info(`${TagFrmwkRender}: Renderer stopped : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer stop:ERROR : ${err.message}`);
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.release().then(() => {
+      await audioRen!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
       }).catch((err:Error) => {
         console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       return resultFlag;
@@ -935,7 +935,7 @@ export default function audioRendererTest() {
       let resultFlag = true;
       console.info(`${TagFrmwkRender}: Promise : Audio Playback Function`);
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -958,23 +958,23 @@ export default function audioRendererTest() {
         return resultFlag;
       }
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.getStreamInfo().then((audioParamsGet: audio.AudioStreamInfo) => {
+      await audioRen!.getStreamInfo().then((audioParamsGet: audio.AudioStreamInfo) => {
         console.info(`${TagFrmwkRender}: Renderer getStreamInfo: ${JSON.stringify(audioParamsGet)}`);
       }).catch((err: Error) => {
         console.log(`${TagFrmwkRender}: getStreamInfo :ERROR:  ${err.message}`);
         resultFlag = false;
       });
 
-      await audioRen.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
+      await audioRen!.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
         console.info(`${TagFrmwkRender}: Renderer RendererInfo: ${JSON.stringify(audioParamsGet)}`);
       }).catch((err: Error) => {
         console.log(`${TagFrmwkRender}: RendererInfo :ERROR: ${err.message}`);
         resultFlag = false;
       });
 
-      await audioRen.start().then(() => {
+      await audioRen!.start().then(() => {
         console.info(`${TagFrmwkRender}: renderInstant started :SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: renderInstant start :ERROR : ${err.message}`);
@@ -982,9 +982,9 @@ export default function audioRendererTest() {
       });
 
       let audioTimeStart: long;
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      let bufferSize = await audioRen.getBufferSize();
+      let bufferSize = await audioRen!.getBufferSize();
       console.info(`${TagFrmwkRender}: buffer size: ${bufferSize}`);
 
       let ss = fileIo.fdopenStreamSync(fdRead, 'r');
@@ -1001,7 +1001,7 @@ export default function audioRendererTest() {
         let buf = new ArrayBuffer(bufferSize);
         rlen += ss.readSync(buf);
         console.info(`${TagFrmwkRender}:BufferAudioFramework: bytes read from file: ${rlen}`);
-        await audioRen.getAudioTime().then((data: long) => {
+        await audioRen!.getAudioTime().then((data: long) => {
           audioTimeStart = data / 1000000000;
           console.info(`${TagFrmwkRender}: getAudioTime : After Start : Converted: ${audioTimeStart}`);
         }).catch((err: Error) => {
@@ -1011,15 +1011,15 @@ export default function audioRendererTest() {
       }
       console.info(`${TagFrmwkRender}: Renderer after read`);
 
-      await audioRen.drain().then(() => {
+      await audioRen!.drain().then(() => {
         console.info(`${TagFrmwkRender}: Renderer drained : SUCCESS`);
       }).catch((err: Error) => {
         console.error(`${TagFrmwkRender}: Renderer drain: ERROR : ${err.message}`);
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.stop().then(() => {
+      await audioRen!.stop().then(() => {
         console.info(`${TagFrmwkRender}: Renderer stopped : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer stop:ERROR : ${err.message}`);
@@ -1033,15 +1033,15 @@ export default function audioRendererTest() {
         resultFlag = false;
       }
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.release().then(() => {
+      await audioRen!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       return resultFlag;
@@ -1051,7 +1051,7 @@ export default function audioRendererTest() {
       let resultFlag = true;
       console.info(`${TagFrmwkRender}: Promise : Audio Playback Function`);
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -1074,23 +1074,23 @@ export default function audioRendererTest() {
         return resultFlag;
       }
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.getStreamInfo().then((audioParamsGet: audio.AudioStreamInfo) => {
+      await audioRen!.getStreamInfo().then((audioParamsGet: audio.AudioStreamInfo) => {
         console.info(`${TagFrmwkRender}: Renderer getStreamInfo: ${JSON.stringify(audioParamsGet)}`);
       }).catch((err: Error) => {
         console.log(`${TagFrmwkRender}: getStreamInfo :ERROR:  ${err.message}`);
         resultFlag = false;
       });
 
-      await audioRen.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
+      await audioRen!.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
         console.info(`${TagFrmwkRender}: Renderer RendererInfo: ${JSON.stringify(audioParamsGet)}`);
       }).catch((err: Error) => {
         console.log(`${TagFrmwkRender}: RendererInfo :ERROR: ${err.message}`);
         resultFlag = false;
       });
 
-      await audioRen.start().then(() => {
+      await audioRen!.start().then(() => {
         console.info(`${TagFrmwkRender}: renderInstant started :SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: renderInstant start :ERROR : ${err.message}`);
@@ -1099,9 +1099,9 @@ export default function audioRendererTest() {
 
       let audioTimeStart: long = -1;
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      let bufferSize = await audioRen.getBufferSize();
+      let bufferSize = await audioRen!.getBufferSize();
       console.info(`${TagFrmwkRender}: buffer size: ${bufferSize}`);
 
       let ss = fileIo.fdopenStreamSync(fdRead, 'r');
@@ -1122,32 +1122,32 @@ export default function audioRendererTest() {
         }
         return audio.AudioDataCallbackResult.VALID;
       };
-      audioRen.onWriteData(writeDataCallback);
+      audioRen!.onWriteData(writeDataCallback);
 
       console.info(`${TagFrmwkRender}: Renderer after read`);
 
-      await audioRen.start().then(() => {
+      await audioRen!.start().then(() => {
         console.info(`${TagFrmwkRender}: renderInstant started :SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: renderInstant start :ERROR : ${err.message}`);
         resultFlag = false;
       });
 
-      await audioRen.drain().then(() => {
+      await audioRen!.drain().then(() => {
         console.info(`${TagFrmwkRender}: Renderer drained : SUCCESS`);
       }).catch((err: Error) => {
         console.error(`${TagFrmwkRender}: Renderer drain: ERROR : ${err.message}`);
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.stop().then(() => {
+      await audioRen!.stop().then(() => {
         console.info(`${TagFrmwkRender}: Renderer stopped : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer stop:ERROR : ${err.message}`);
       });
 
-      await audioRen.getAudioTime().then((data: long) => {
+      await audioRen!.getAudioTime().then((data: long) => {
         audioTimeStart = data / 1000000000;
         console.info(`${TagFrmwkRender}: getAudioTime : After Start : Converted: ${audioTimeStart}`);
       }).catch((err: Error) => {
@@ -1163,13 +1163,13 @@ export default function audioRendererTest() {
         resultFlag = false;
       }
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
       return resultFlag;
     }
 
     let playbackPromise_102 = async (AudioRendererOptions: audio.AudioRendererOptions, pathName: string):Promise<boolean> => {
       let resultFlag = false;
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -1191,15 +1191,15 @@ export default function audioRendererTest() {
         resultFlag = true;
         return resultFlag;
       }
-      audioRen.onMarkReach(55, (position: long) => {
+      audioRen!.onMarkReach(55, (position: long) => {
         console.log(`${TagFrmwk}: markReach Event is called :  ${position}`);
         resultFlag = true;
       })
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
       let bufferSize: long;
-      await audioRen.getBufferSize().then((data: long) => {
+      await audioRen!.getBufferSize().then((data: long) => {
         console.info(`${TagFrmwkRender}: getBufferSize :SUCCESS ${data}`);
         bufferSize = data;
       }).catch((err: Error) => {
@@ -1227,48 +1227,48 @@ export default function audioRendererTest() {
         }
         return audio.AudioDataCallbackResult.VALID;
       };
-      audioRen.onWriteData(writeDataCallback);
+      audioRen!.onWriteData(writeDataCallback);
 
       console.info(`${TagFrmwkRender}: Renderer after read`);
 
-      await audioRen.start().then(() => {
+      await audioRen!.start().then(() => {
         console.info(`${TagFrmwkRender}: renderInstant started :SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: renderInstant start :ERROR : ${err.message}`);
         resultFlag = false;
       });
       await Utils.msSleep(100);
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.drain().then(() => {
+      await audioRen!.drain().then(() => {
         console.info(`${TagFrmwkRender}: Renderer drained : SUCCESS`);
       }).catch((err: Error) => {
         console.error(`${TagFrmwkRender}: Renderer drain: ERROR : ${err.message}`);
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.stop().then(() => {
+      await audioRen!.stop().then(() => {
         console.info(`${TagFrmwkRender}: Renderer stopped : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer stop:ERROR : ${err.message}`);
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.release().then(() => {
+      await audioRen!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
       return resultFlag;
     }
 
     let playbackPromise_103 = async (AudioRendererOptions: audio.AudioRendererOptions, pathName: string):Promise<boolean> => {
       let resultFlag = false;
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       let rlen = 0;
       try {
@@ -1291,20 +1291,20 @@ export default function audioRendererTest() {
         resultFlag = true;
         return resultFlag;
       }
-      audioRen.onMarkReach(55, (position: long) => {
+      audioRen!.onMarkReach(55, (position: long) => {
         console.log(`${TagFrmwk}: markReach Event is called :  ${position}`);
-        audioRen.offMarkReach();
+        audioRen!.offMarkReach();
         expect(true).assertTrue();
       });
-      audioRen.onMarkReach(100, (position: long) => {
+      audioRen!.onMarkReach(100, (position: long) => {
         console.log(`${TagFrmwk}: markReach Event is called :  ${position}`);
         resultFlag = true;
-        audioRen.offMarkReach();
+        audioRen!.offMarkReach();
       });
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
       let bufferSize: long;
-      await audioRen.getBufferSize().then((data: long) => {
+      await audioRen!.getBufferSize().then((data: long) => {
         console.info(`${TagFrmwkRender}: getBufferSize :SUCCESS ${data}`);
         bufferSize = data;
       }).catch((err: Error) => {
@@ -1328,47 +1328,47 @@ export default function audioRendererTest() {
         }
         return audio.AudioDataCallbackResult.VALID;
       };
-      audioRen.onWriteData(writeDataCallback);
+      audioRen!.onWriteData(writeDataCallback);
       console.info(`${TagFrmwkRender}: Renderer after read`);
 
-      await audioRen.start().then(() => {
+      await audioRen!.start().then(() => {
         console.info(`${TagFrmwkRender}: renderInstant started :SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: renderInstant start :ERROR : ${err.message}`);
         resultFlag = false;
       });
       await Utils.msSleep(100);
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.drain().then(() => {
+      await audioRen!.drain().then(() => {
         console.info(`${TagFrmwkRender}: Renderer drained : SUCCESS`);
       }).catch((err: Error) => {
         console.error(`${TagFrmwkRender}: Renderer drain: ERROR : ${err.message}`);
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.stop().then(() => {
+      await audioRen!.stop().then(() => {
         console.info(`${TagFrmwkRender}: Renderer stopped : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer stop:ERROR : ${err.message}`);
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.release().then(() => {
+      await audioRen!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
       return resultFlag;
     }
 
     let playbackPromise_104 = async (AudioRendererOptions: audio.AudioRendererOptions, pathName: string):Promise<boolean> => {
       let resultFlag = false;
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -1390,19 +1390,19 @@ export default function audioRendererTest() {
         resultFlag = true;
         return resultFlag;
       }
-      audioRen.onMarkReach(55, (position: long) => {
+      audioRen!.onMarkReach(55, (position: long) => {
         console.log(`${TagFrmwk}: markReach Event is called :  ${position}`);
         resultFlag = true;
-        audioRen.onMarkReach(73, (position: long) => {
+        audioRen!.onMarkReach(73, (position: long) => {
           console.log(`${TagFrmwk}: markReach Event is called :  ${position}`);
           resultFlag = true;
         });
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
       let bufferSize: long;
-      await audioRen.getBufferSize().then((data: long) => {
+      await audioRen!.getBufferSize().then((data: long) => {
         console.info(`${TagFrmwkRender}: getBufferSize :SUCCESS ${data}`);
         bufferSize = data;
       }).catch((err: Error) => {
@@ -1427,48 +1427,48 @@ export default function audioRendererTest() {
         }
         return audio.AudioDataCallbackResult.VALID;
       };
-      audioRen.onWriteData(writeDataCallback);
+      audioRen!.onWriteData(writeDataCallback);
       console.info(`${TagFrmwkRender}: Renderer after read`);
 
-      await audioRen.start().then(() => {
+      await audioRen!.start().then(() => {
         console.info(`${TagFrmwkRender}: renderInstant started :SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: renderInstant start :ERROR : ${err.message}`);
         resultFlag = false;
       });
       await Utils.msSleep(100);
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.drain().then(() => {
+      await audioRen!.drain().then(() => {
         console.info(`${TagFrmwkRender}: Renderer drained : SUCCESS`);
       }).catch((err: Error) => {
         console.error(`${TagFrmwkRender}: Renderer drain: ERROR : ${err.message}`);
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.stop().then(() => {
+      await audioRen!.stop().then(() => {
         console.info(`${TagFrmwkRender}: Renderer stopped : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer stop:ERROR : ${err.message}`);
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.release().then(() => {
+      await audioRen!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
       return resultFlag;
     }
 
 
     let playbackPromise_105 = async (AudioRendererOptions: audio.AudioRendererOptions, pathName: string):Promise<boolean> => {
       let resultFlag = false;
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -1490,16 +1490,16 @@ export default function audioRendererTest() {
         resultFlag = true;
         return resultFlag;
       }
-      audioRen.onPeriodReach(55, (position: long) => {
+      audioRen!.onPeriodReach(55, (position: long) => {
         console.log(`${TagFrmwk}: periodReach Event is called : ${position}`);
         resultFlag = true;
-        audioRen.offPeriodReach();
+        audioRen!.offPeriodReach();
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
       let bufferSize: long;
-      await audioRen.getBufferSize().then((data: long) => {
+      await audioRen!.getBufferSize().then((data: long) => {
         console.info(`${TagFrmwkRender}: getBufferSize :SUCCESS ${data}`);
         bufferSize = data;
       }).catch((err: Error) => {
@@ -1524,47 +1524,47 @@ export default function audioRendererTest() {
         }
         return audio.AudioDataCallbackResult.VALID;
       };
-      audioRen.onWriteData(writeDataCallback);
+      audioRen!.onWriteData(writeDataCallback);
 
       console.info(`${TagFrmwkRender}: Renderer after read`);
 
-      await audioRen.start().then(() => {
+      await audioRen!.start().then(() => {
         console.info(`${TagFrmwkRender}: renderInstant started :SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: renderInstant start :ERROR : ${err.message}`);
         resultFlag = false;
       });
       await Utils.msSleep(100);
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.drain().then(() => {
+      await audioRen!.drain().then(() => {
         console.info(`${TagFrmwkRender}: Renderer drained : SUCCESS`);
       }).catch((err: Error) => {
         console.error(`${TagFrmwkRender}: Renderer drain: ERROR : ${err.message}`);
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.stop().then(() => {
+      await audioRen!.stop().then(() => {
         console.info(`${TagFrmwkRender}: Renderer stopped : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer stop:ERROR : ${err.message}`);
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.release().then(() => {
+      await audioRen!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       });
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
       return resultFlag;
     }
 
     let playbackPromise_106 = async (AudioRendererOptions: audio.AudioRendererOptions, pathName: string):Promise<boolean> => {
       let resultFlag = false;
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -1586,24 +1586,24 @@ export default function audioRendererTest() {
         resultFlag = true;
         return resultFlag;
       }
-      audioRen.onPeriodReach(55, (position: long) => {
+      audioRen!.onPeriodReach(55, (position: long) => {
         console.log(`${TagFrmwk}: periodReach Event is called : ${position}`);
         resultFlag = true;
         expect(true).assertTrue();
-        audioRen.offPeriodReach();
+        audioRen!.offPeriodReach();
 
       });
-      audioRen.onPeriodReach(100, (position: long) => {
+      audioRen!.onPeriodReach(100, (position: long) => {
         console.log(`${TagFrmwk}: periodReach Event is called : ${position}`);
         resultFlag = true;
         expect(true).assertTrue();
-        audioRen.offPeriodReach();
+        audioRen!.offPeriodReach();
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
       let bufferSize: long;
-      await audioRen.getBufferSize().then((data: long) => {
+      await audioRen!.getBufferSize().then((data: long) => {
         console.info(`${TagFrmwkRender}: getBufferSize :SUCCESS ${data}`);
         bufferSize = data;
       }).catch((err: Error) => {
@@ -1628,47 +1628,47 @@ export default function audioRendererTest() {
         }
         return audio.AudioDataCallbackResult.VALID;
       };
-      audioRen.onWriteData(writeDataCallback);
+      audioRen!.onWriteData(writeDataCallback);
       console.info(`${TagFrmwkRender}: Renderer after read`);
 
-      await audioRen.start().then(() => {
+      await audioRen!.start().then(() => {
         console.info(`${TagFrmwkRender}: renderInstant started :SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: renderInstant start :ERROR : ${err.message}`);
         resultFlag = false;
       });
       await Utils.msSleep(100);
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.drain().then(() => {
+      await audioRen!.drain().then(() => {
         console.info(`${TagFrmwkRender}: Renderer drained : SUCCESS`);
       }).catch((err: Error) => {
         console.error(`${TagFrmwkRender}: Renderer drain: ERROR : ${err.message}`);
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.stop().then(() => {
+      await audioRen!.stop().then(() => {
         console.info(`${TagFrmwkRender}: Renderer stopped : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer stop:ERROR : ${err.message}`);
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.release().then(() => {
+      await audioRen!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
       return resultFlag;
     }
 
     let playbackPromise_107 = async (AudioRendererOptions: audio.AudioRendererOptions, pathName: string):Promise<boolean> => {
       let resultFlag = false;
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -1690,11 +1690,11 @@ export default function audioRendererTest() {
         resultFlag = true;
         return resultFlag;
       }
-      audioRen.onPeriodReach(55, (position: long) => {
+      audioRen!.onPeriodReach(55, (position: long) => {
         console.log(`${TagFrmwk}: periodReach Event is called : ${position}`);
         resultFlag = true;
         try {
-          audioRen.onPeriodReach(73, (position: long) => {
+          audioRen!.onPeriodReach(73, (position: long) => {
             console.log(`${TagFrmwk}: periodReach Event is called : ${position}`);
             resultFlag = false;
           });
@@ -1704,10 +1704,10 @@ export default function audioRendererTest() {
         }
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
       let bufferSize: long;
-      await audioRen.getBufferSize().then((data: long) => {
+      await audioRen!.getBufferSize().then((data: long) => {
         console.info(`${TagFrmwkRender}: getBufferSize :SUCCESS ${data}`);
         bufferSize = data;
       }).catch((err: Error) => {
@@ -1732,41 +1732,41 @@ export default function audioRendererTest() {
         }
         return audio.AudioDataCallbackResult.VALID;
       };
-      audioRen.onWriteData(writeDataCallback);
+      audioRen!.onWriteData(writeDataCallback);
       console.info(`${TagFrmwkRender}: Renderer after read`);
 
-      await audioRen.start().then(() => {
+      await audioRen!.start().then(() => {
         console.info(`${TagFrmwkRender}: renderInstant started :SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: renderInstant start :ERROR : ${err.message}`);
         resultFlag = false;
       });
       await Utils.msSleep(100);
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.drain().then(() => {
+      await audioRen!.drain().then(() => {
         console.info(`${TagFrmwkRender}: Renderer drained : SUCCESS`);
       }).catch((err: Error) => {
         console.error(`${TagFrmwkRender}: Renderer drain: ERROR : ${err.message}`);
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.stop().then(() => {
+      await audioRen!.stop().then(() => {
         console.info(`${TagFrmwkRender}: Renderer stopped : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer stop:ERROR : ${err.message}`);
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.release().then(() => {
+      await audioRen!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
       return resultFlag;
     }
 
@@ -1776,7 +1776,7 @@ export default function audioRendererTest() {
 
       console.info(`${TagFrmwkRender}: CALLBACK : Audio Playback Function`);
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
 
       audio.createAudioRenderer(AudioRendererOptions, (err, data) => {
         if (err) {
@@ -1797,11 +1797,11 @@ export default function audioRendererTest() {
 
       console.info(`${TagFrmwkRender}: AudioRenderer : Path : ${pathName}`);
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
       console.info(`${TagFrmwkRender}: CALLBACK : Audio Playback Function`);
 
-      audioRen.start((err) => {
+      audioRen!.start((err) => {
         if (err) {
           console.error(`${TagFrmwkRender}: Renderer start failed: Error: ${err.message}`);
           resultFlag = false;
@@ -1815,10 +1815,10 @@ export default function audioRendererTest() {
         console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
         return resultFlag;
       }
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
       let samplingRate: audio.AudioSamplingRate;
-      audioRen.getStreamInfo((err, audioParamsGet) => {
+      audioRen!.getStreamInfo((err, audioParamsGet) => {
         await Utils.msSleep(100);
         if (err) {
           console.log(`${TagFrmwkRender}: getStreamInfo :ERROR:  ${err.message}`);
@@ -1834,7 +1834,7 @@ export default function audioRendererTest() {
         return resultFlag;
       }
 
-      audioRen.getRendererInfo((err, audioParamsGet) => {
+      audioRen!.getRendererInfo((err, audioParamsGet) => {
         await Utils.msSleep(100);
         if (err) {
           console.log(`${TagFrmwkRender}: RendererInfo :ERROR: ${err.message}`);
@@ -1851,7 +1851,7 @@ export default function audioRendererTest() {
       }
 
       let bufferSize: long;
-      audioRen.getBufferSize((err, data) => {
+      audioRen!.getBufferSize((err, data) => {
         if (err) {
           console.info(`${TagFrmwkRender}: getBufferSize :ERROR : ${err.message}`);
           resultFlag = false;
@@ -1931,7 +1931,7 @@ export default function audioRendererTest() {
         return audio.AudioDataCallbackResult.VALID;
       };
       try {
-        audioRen.onWriteData(writeDataCallback);
+        audioRen!.onWriteData(writeDataCallback);
         console.info(`${TagFrmwkRender}:BufferAudioFramework: Buff write successful`);
         resultFlag = true;
       } catch (err: BusinessError) {
@@ -1944,7 +1944,7 @@ export default function audioRendererTest() {
         return resultFlag;
       }
       ss.closeSync();
-      audioRen.drain((err, state) => {
+      audioRen!.drain((err, state) => {
         if (err) {
           console.error(`${TagFrmwkRender}: Renderer drain failed: Error: ${err.message}`);
           resultFlag = false;
@@ -1958,7 +1958,7 @@ export default function audioRendererTest() {
         console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
         return resultFlag;
       }
-      audioRen.stop((err, state) => {
+      audioRen!.stop((err, state) => {
         if (err) {
           console.error(`${TagFrmwkRender}: Renderer stop failed: Error: ${err.message}`);
           resultFlag = false;
@@ -1970,13 +1970,13 @@ export default function audioRendererTest() {
         }
       });
       await Utils.msSleep(100);
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
       if (resultFlag) {
         console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
         return resultFlag;
       }
-      audioRen.release((err, state) => {
+      audioRen!.release((err, state) => {
         if (err) {
           console.error(`${TagFrmwkRender}: Renderer release failed: Error: ${err.message}`);
           resultFlag = false;
@@ -1986,17 +1986,17 @@ export default function audioRendererTest() {
         }
       });
       await Utils.msSleep(100);
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
       return resultFlag;
     }
 
      let playbackWriteDataCallback_001 = async (AudioRendererOptions: audio.AudioRendererOptions, pathName: string, done: ()=>void) => {
       console.info(`${TagFrmwkRender}: Callback : Audio Play Function`);
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let speed: number = 0;
-      await audio.createAudioRenderer(AudioRendererOptions).then((data: audio.AudioRenderer)=> {
+      await audio.createAudioRenderer(AudioRendererOptions).then((data: audio.AudioRenderer | null)=> {
         audioRen = data;
-        console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data state: ${Object.keys(data)}`);
+        console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data state: ${Object.keys(data!)}`);
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data value: ${JSON.stringify(data)}`);
         expect(true).assertTrue();
       }).catch((err: Error) => {
@@ -2005,10 +2005,10 @@ export default function audioRendererTest() {
         done();
       });
       console.info(`${TagFrmwkRender}: AudioRenderer : Path : ${pathName}`);
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
       let bufferSize: long;
-      await audioRen.getBufferSize().then((data: long) => {
+      await audioRen!.getBufferSize().then((data: long) => {
         console.info(`${TagFrmwkRender}: getBufferSize :SUCCESS ${data}`);
         bufferSize = data;
         expect(true).assertTrue();
@@ -2018,14 +2018,14 @@ export default function audioRendererTest() {
         done();
       });
 
-      audioRen.onWriteData((buffer: ArrayBuffer): audio.AudioDataCallbackResult => {
+      audioRen!.onWriteData((buffer: ArrayBuffer): audio.AudioDataCallbackResult => {
         console.info(`${TagFrmwkRender}: writeDataCallback : ${buffer.byteLength}`);
         return audio.AudioDataCallbackResult.VALID;
       });
 
-      await audioRen.start().then(async () => {
+      await audioRen!.start().then(async () => {
         console.info(`${TagFrmwkRender}: renderInstant started :SUCCESS`);
-        speed = audioRen.getSpeed();
+        speed = audioRen!.getSpeed();
         console.info(`${TagFrmwkRender}: Renderer getSpeed:${speed}`);
         expect(speed).assertEqual(1);
       }).catch((err: Error) => {
@@ -2035,9 +2035,9 @@ export default function audioRendererTest() {
       });
       await Utils.msSleep(1000);
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.stop().then(() => {
+      await audioRen!.stop().then(() => {
         console.info(`${TagFrmwkRender}: Renderer stopped : SUCCESS`);
         expect(true).assertTrue();
       }).catch((err: Error) => {
@@ -2046,9 +2046,9 @@ export default function audioRendererTest() {
         done();
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.release().then(() => {
+      await audioRen!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
         expect(true).assertTrue();
       }).catch((err: Error) => {
@@ -2056,17 +2056,17 @@ export default function audioRendererTest() {
         expect(false).assertTrue();
         done();
       });
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
       done();
     }
 
     let playbackWriteDataCallback_002 = async (AudioRendererOptions: audio.AudioRendererOptions, pathName: string, done: ()=>void) => {
       console.info(`${TagFrmwkRender}: Callback : Audio Play Function`);
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let speed: number = 0;
-      await audio.createAudioRenderer(AudioRendererOptions).then((data: audio.AudioRenderer)=> {
+      await audio.createAudioRenderer(AudioRendererOptions).then((data: audio.AudioRenderer | null)=> {
         audioRen = data;
-        console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data state: ${Object.keys(data)}`);
+        console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data state: ${Object.keys(data!)}`);
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data value: ${JSON.stringify(data)}`);
         expect(true).assertTrue();
       }).catch((err: Error) => {
@@ -2075,10 +2075,10 @@ export default function audioRendererTest() {
         done();
       });
       console.info(`${TagFrmwkRender}: AudioRenderer : Path : ${pathName}`);
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
       let bufferSize: long;
-      await audioRen.getBufferSize().then((data: long) => {
+      await audioRen!.getBufferSize().then((data: long) => {
         console.info(`${TagFrmwkRender}: getBufferSize :SUCCESS ${data}`);
         bufferSize = data;
         expect(true).assertTrue();
@@ -2088,14 +2088,14 @@ export default function audioRendererTest() {
         done();
       });
 
-      audioRen.onWriteData((buffer: ArrayBuffer): audio.AudioDataCallbackResult => {
+      audioRen!.onWriteData((buffer: ArrayBuffer): audio.AudioDataCallbackResult => {
         console.info(`${TagFrmwkRender}: writeDataCallback : ${buffer.byteLength}`);
         return audio.AudioDataCallbackResult.VALID;
       });
 
-      await audioRen.start().then(async () => {
+      await audioRen!.start().then(async () => {
         console.info(`${TagFrmwkRender}: renderInstant started :SUCCESS`);
-        speed = audioRen.getSpeed();
+        speed = audioRen!.getSpeed();
         console.info(`${TagFrmwkRender}: Renderer getSpeed:${speed}`);
         expect(speed).assertEqual(1);
       }).catch((err: Error) => {
@@ -2105,9 +2105,9 @@ export default function audioRendererTest() {
       });
       await Utils.msSleep(1000);
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.stop().then(() => {
+      await audioRen!.stop().then(() => {
         console.info(`${TagFrmwkRender}: Renderer stopped : SUCCESS`);
         expect(true).assertTrue();
       }).catch((err: Error) => {
@@ -2116,9 +2116,9 @@ export default function audioRendererTest() {
         done();
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.release().then(() => {
+      await audioRen!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
         expect(true).assertTrue();
       }).catch((err: Error) => {
@@ -2126,17 +2126,17 @@ export default function audioRendererTest() {
         expect(false).assertTrue();
         done();
       });
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
       done();
     }
 
     let playbackWriteDataCallback_003 = async (AudioRendererOptions: audio.AudioRendererOptions, pathName: string, done: ()=>void) => {
       console.info(`${TagFrmwkRender}: Callback : Audio Play Function`);
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let speed: number = 0;
-      await audio.createAudioRenderer(AudioRendererOptions).then( (data: audio.AudioRenderer)=> {
+      await audio.createAudioRenderer(AudioRendererOptions).then( (data: audio.AudioRenderer | null)=> {
         audioRen = data;
-        console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data state: ${Object.keys(data)}`);
+        console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data state: ${Object.keys(data!)}`);
         console.info(`${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS data value: ${JSON.stringify(data)}`);
         expect(true).assertTrue();
       }).catch((err: Error) => {
@@ -2145,10 +2145,10 @@ export default function audioRendererTest() {
         done();
       });
       console.info(`${TagFrmwkRender}: AudioRenderer : Path : ${pathName}`);
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
       let bufferSize: long;
-      await audioRen.getBufferSize().then((data: long) => {
+      await audioRen!.getBufferSize().then((data: long) => {
         console.info(`${TagFrmwkRender}: getBufferSize :SUCCESS ${data}`);
         bufferSize = data;
         expect(true).assertTrue();
@@ -2158,14 +2158,14 @@ export default function audioRendererTest() {
         done();
       });
 
-      audioRen.onWriteData((buffer: ArrayBuffer): audio.AudioDataCallbackResult => {
+      audioRen!.onWriteData((buffer: ArrayBuffer): audio.AudioDataCallbackResult => {
         console.info(`${TagFrmwkRender}: writeDataCallback : ${buffer.byteLength}`);
         return audio.AudioDataCallbackResult.INVALID;
       });
 
-      await audioRen.start().then(async () => {
+      await audioRen!.start().then(async () => {
         console.info(`${TagFrmwkRender}: renderInstant started :SUCCESS`);
-        speed = audioRen.getSpeed();
+        speed = audioRen!.getSpeed();
         console.info(`${TagFrmwkRender}: Renderer getSpeed:${speed}`);
         expect(speed).assertEqual(1);
       }).catch((err: Error) => {
@@ -2175,9 +2175,9 @@ export default function audioRendererTest() {
       });
       await Utils.msSleep(1000);
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.stop().then(() => {
+      await audioRen!.stop().then(() => {
         console.info(`${TagFrmwkRender}: Renderer stopped : SUCCESS`);
         expect(true).assertTrue();
       }).catch((err: Error) => {
@@ -2186,9 +2186,9 @@ export default function audioRendererTest() {
         done();
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
-      await audioRen.release().then(() => {
+      await audioRen!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
         expect(true).assertTrue();
       }).catch((err: Error) => {
@@ -2196,7 +2196,7 @@ export default function audioRendererTest() {
         expect(false).assertTrue();
         done();
       });
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
       done();
     }
 
@@ -2225,11 +2225,11 @@ export default function audioRendererTest() {
         rendererInfo: audioRendererInfo
       }
       let audioRender = await audio.createAudioRenderer(audioRendererOptions);
-      audioRender.onOutputDeviceChangeWithInfo((deviceChangeInfo: audio.AudioStreamDeviceChangeInfo) => {
+      audioRender!.onOutputDeviceChangeWithInfo((deviceChangeInfo: audio.AudioStreamDeviceChangeInfo) => {
         console.info(`${TagFrmwkRender}: devices: ${JSON.stringify(deviceChangeInfo.devices)}`);
         console.info(`${TagFrmwkRender}: changeReason: ${JSON.stringify(deviceChangeInfo.changeReason)}`);
       });
-      await audioRender.release();
+      await audioRender!.release();
       expect(true).assertTrue();
       done();
     })
@@ -2656,12 +2656,12 @@ export default function audioRendererTest() {
         rendererInfo: audioRendererInfo
       }
       let audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
-      audioRenderer.setSpeed(3);
-      let speed = audioRenderer.getSpeed();
+      audioRenderer!.setSpeed(3);
+      let speed = audioRenderer!.getSpeed();
       console.info(`${TagFrmwkRender}: get Speed success: ` + JSON.stringify(speed));
       expect(speed).assertEqual(3);
       await Utils.msSleep(100);
-      await audioRenderer.release();
+      await audioRenderer!.release();
       done();
     })
     /**
@@ -2691,7 +2691,7 @@ export default function audioRendererTest() {
       }
       let audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       try {
-        audioRenderer.setSpeed(0.1);
+        audioRenderer!.setSpeed(0.1);
       } catch (error: BusinessError) {
         console.info(`${TagFrmwkRender}: get Speed error: ` + JSON.stringify(error.code));
         expect(Number(error.code)).assertEqual(6800101)
@@ -2875,7 +2875,7 @@ export default function audioRendererTest() {
 
       let audioRen = await audio.createAudioRenderer(AudioRendererOptions);
       try {
-        let streamInfo = await audioRen.getStreamInfo();
+        let streamInfo = await audioRen!.getStreamInfo();
         console.info('Renderer GetStreamInfo:');
         console.info(`${TagFrmwkRender}: Renderer sampling rate: ${streamInfo.samplingRate}`);
         expect(streamInfo.samplingRate).assertEqual(audio.AudioSamplingRate.SAMPLE_RATE_44100);
@@ -2887,7 +2887,7 @@ export default function audioRendererTest() {
         expect(streamInfo.encodingType).assertEqual(audio.AudioEncodingType.ENCODING_TYPE_RAW);
         console.info(`${TagFrmwkRender}: Renderer channelLayout type: ${streamInfo.channelLayout}`);
         expect(streamInfo.channelLayout).assertEqual(audio.AudioChannelLayout.CH_LAYOUT_UNKNOWN);
-        audioRen.release();
+        audioRen!.release();
         done();
       } catch (err: BusinessError) {
         console.error(`ERROR: ${err}`);
@@ -2997,11 +2997,11 @@ export default function audioRendererTest() {
 
       let audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       try {
-        let data = audioRenderer.getAudioStreamIdSync();
+        let data = audioRenderer!.getAudioStreamIdSync();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: SUB_MULTIMEDIA_AUDIO_GET_AUDIO_STREAM_ID_SYNC_0200 OUT OF BORDER PROMISE: SUCCESS ${data}`);
         expect(true).assertTrue();
         try {
-          await audioRenderer.release();
+          await audioRenderer!.release();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
         } catch (err: BusinessError) {
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -3011,7 +3011,7 @@ export default function audioRendererTest() {
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: SUB_MULTIMEDIA_AUDIO_GET_AUDIO_STREAM_ID_SYNC_0200 OUT OF BORDER PROMISE: ERROR: ${err.message}`);
         expect(false).assertTrue();
         try {
-          await audioRenderer.release();
+          await audioRenderer!.release();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
         } catch (err: BusinessError) {
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -3048,16 +3048,16 @@ export default function audioRendererTest() {
       }
 
       try {
-        let audioRen: audio.AudioRenderer;
-        await audio.createAudioRenderer(AudioRendererOptions).then(async (data: audio.AudioRenderer)=> {
+        let audioRen: audio.AudioRenderer | null;
+        await audio.createAudioRenderer(AudioRendererOptions).then(async (data: audio.AudioRenderer | null)=> {
           audioRen = data;
-          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data));
+          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data!));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(data));
         }).catch((err: Error) => {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         });
 
-        audioRen.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
+        audioRen!.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
           console.info("AudioFrameworkRenderLog: InterruptType : " + interruptEvent.eventType);
           console.info("AudioFrameworkRenderLog: InterruptForceType : " + interruptEvent.forceType);
           console.info("AudioFrameworkRenderLog: InterruptHint : " + interruptEvent.hintType);
@@ -3069,10 +3069,10 @@ export default function audioRendererTest() {
         });
 
         // @ts-ignore
-        audioRen.setInterruptModeSync(audio.InterruptMode.INDEPENDENT_MODE);
+        audioRen!.setInterruptModeSync(audio.InterruptMode.INDEPENDENT_MODE);
         console.info("AudioFrameworkRenderLog audioRen setInterruptMode(INDEPENDENT_MODE) success");
 
-        await audioRen.start().then(async ()=> {
+        await audioRen!.start().then(async ()=> {
           console.info('AudioFrameworkRenderLog: renderInstant started :SUCCESS ');
         }).catch((err: Error) => {
           console.info('AudioFrameworkRenderLog: renderInstant start :ERROR : ' + err.message);
@@ -3089,27 +3089,27 @@ export default function audioRendererTest() {
           rendererInfo: AudioRendererInfo_interrupt
         }
 
-        let audioRen_interrupt: audio.AudioRenderer;
-        await audio.createAudioRenderer(AudioRendererOptions_interrupt).then(async (data: audio.AudioRenderer)=> {
+        let audioRen_interrupt: audio.AudioRenderer | null;
+        await audio.createAudioRenderer(AudioRendererOptions_interrupt).then(async (data: audio.AudioRenderer | null)=> {
           audioRen_interrupt = data;
-          console.info('AudioFrameworkRenderLog: AudioRender2 Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data));
+          console.info('AudioFrameworkRenderLog: AudioRender2 Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data!));
           console.info('AudioFrameworkRenderLog: AudioRender2 Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(data));
         }).catch((err: Error) => {
           console.info('AudioFrameworkRenderLog: AudioRender2 Created : ERROR : ' + err.message);
         });
 
         // @ts-ignore
-        let b = await audioRen_interrupt.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE);
+        let b = await audioRen_interrupt!.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE);
         console.info("AudioFrameworkRenderLog audioRen_interrupt setInterruptMode(INDEPENDENT_MODE) success");
 
-        await audioRen_interrupt.start().then(async ()=> {
+        await audioRen_interrupt!.start().then(async ()=> {
           console.info('AudioFrameworkRenderLog: renderInstant2 started :SUCCESS ');
         }).catch((err: Error) => {
           console.info('AudioFrameworkRenderLog: renderInstant2 start :ERROR : ' + err.message);
         });
         await Utils.msSleep(2000);
-        await audioRen.release();
-        await audioRen_interrupt.release();
+        await audioRen!.release();
+        await audioRen_interrupt!.release();
       }
       catch (error: BusinessError) {
         console.log("SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_AUDIO_0100 : error = " + error);
@@ -3146,16 +3146,16 @@ export default function audioRendererTest() {
       }
 
       try {
-        let audioRen: audio.AudioRenderer;
-        await audio.createAudioRenderer(AudioRendererOptions).then(async (data: audio.AudioRenderer)=> {
+        let audioRen: audio.AudioRenderer | null;
+        await audio.createAudioRenderer(AudioRendererOptions).then(async (data: audio.AudioRenderer | null)=> {
           audioRen = data;
-          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data));
+          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data!));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(data));
         }).catch((err: Error) => {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         });
 
-        audioRen.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
+        audioRen!.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
           console.info("AudioFrameworkRenderLog: InterruptType : " + interruptEvent.eventType);
           console.info("AudioFrameworkRenderLog: InterruptForceType : " + interruptEvent.forceType);
           console.info("AudioFrameworkRenderLog: InterruptHint : " + interruptEvent.hintType);
@@ -3166,10 +3166,10 @@ export default function audioRendererTest() {
           expect(interrput_flag).assertTrue();
         });
 
-        let a = await audioRen.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE);
+        let a = await audioRen!.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE);
         console.info("AudioFrameworkRenderLog audioRen setInterruptMode(INDEPENDENT_MODE) success");
 
-        await audioRen.start().then(async ()=> {
+        await audioRen!.start().then(async ()=> {
           console.info('AudioFrameworkRenderLog: renderInstant started :SUCCESS ');
         }).catch((err: Error) => {
           console.info('AudioFrameworkRenderLog: renderInstant start :ERROR : ' + err.message);
@@ -3186,26 +3186,26 @@ export default function audioRendererTest() {
           rendererInfo: AudioRendererInfo_interrupt
         }
 
-        let audioRen_interrupt: audio.AudioRenderer;
-        await audio.createAudioRenderer(AudioRendererOptions_interrupt).then(async (data: audio.AudioRenderer)=> {
+        let audioRen_interrupt: audio.AudioRenderer | null;
+        await audio.createAudioRenderer(AudioRendererOptions_interrupt).then(async (data: audio.AudioRenderer | null)=> {
           audioRen_interrupt = data;
-          console.info('AudioFrameworkRenderLog: AudioRender2 Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data));
+          console.info('AudioFrameworkRenderLog: AudioRender2 Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data!));
           console.info('AudioFrameworkRenderLog: AudioRender2 Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(data));
         }).catch((err: Error) => {
           console.info('AudioFrameworkRenderLog: AudioRender2 Created : ERROR : ' + err.message);
         });
 
-        let b = await audioRen_interrupt.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE);
+        let b = await audioRen_interrupt!.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE);
         console.info("AudioFrameworkRenderLog audioRen_interrupt setInterruptMode(INDEPENDENT_MODE) success");
 
-        await audioRen_interrupt.start().then(async ()=> {
+        await audioRen_interrupt!.start().then(async ()=> {
           console.info('AudioFrameworkRenderLog: renderInstant2 started :SUCCESS ');
         }).catch((err: Error) => {
           console.info('AudioFrameworkRenderLog: renderInstant2 start :ERROR : ' + err.message);
         });
         await Utils.msSleep(2000);
-        await audioRen.release();
-        await audioRen_interrupt.release();
+        await audioRen!.release();
+        await audioRen_interrupt!.release();
       }
       catch (error: BusinessError) {
         console.log("SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_AUDIO_0100 : error = " + error);
@@ -3242,16 +3242,16 @@ export default function audioRendererTest() {
       }
 
       try {
-        let audioRen: audio.AudioRenderer;
-        await audio.createAudioRenderer(AudioRendererOptions).then(async (data: audio.AudioRenderer)=> {
+        let audioRen: audio.AudioRenderer | null;
+        await audio.createAudioRenderer(AudioRendererOptions).then(async (data: audio.AudioRenderer | null)=> {
           audioRen = data;
-          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data));
+          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data!));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(data));
         }).catch((err: Error) => {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         });
 
-        audioRen.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
+        audioRen!.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
           console.info("AudioFrameworkRenderLog: InterruptType : " + interruptEvent.eventType);
           console.info("AudioFrameworkRenderLog: InterruptForceType : " + interruptEvent.forceType);
           console.info("AudioFrameworkRenderLog: InterruptHint : " + interruptEvent.hintType);
@@ -3262,10 +3262,10 @@ export default function audioRendererTest() {
           expect(interrput_flag).assertTrue();
         });
 
-        let a = await audioRen.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE);
+        let a = await audioRen!.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE);
         console.info("AudioFrameworkRenderLog audioRen setInterruptMode(INDEPENDENT_MODE) success");
 
-        await audioRen.start().then(async ()=> {
+        await audioRen!.start().then(async ()=> {
           console.info('AudioFrameworkRenderLog: renderInstant started :SUCCESS ');
         }).catch((err: Error) => {
           console.info('AudioFrameworkRenderLog: renderInstant start :ERROR : ' + err.message);
@@ -3282,26 +3282,26 @@ export default function audioRendererTest() {
           rendererInfo: AudioRendererInfo_interrupt
         }
 
-        let audioRen_interrupt: audio.AudioRenderer;
-        await audio.createAudioRenderer(AudioRendererOptions_interrupt).then(async (data: audio.AudioRenderer)=> {
+        let audioRen_interrupt: audio.AudioRenderer | null;
+        await audio.createAudioRenderer(AudioRendererOptions_interrupt).then(async (data: audio.AudioRenderer | null)=> {
           audioRen_interrupt = data;
-          console.info('AudioFrameworkRenderLog: AudioRender2 Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data));
+          console.info('AudioFrameworkRenderLog: AudioRender2 Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data!));
           console.info('AudioFrameworkRenderLog: AudioRender2 Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(data));
         }).catch((err: Error) => {
           console.info('AudioFrameworkRenderLog: AudioRender2 Created : ERROR : ' + err.message);
         });
 
-        let b = await audioRen_interrupt.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE);
+        let b = await audioRen_interrupt!.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE);
         console.info("AudioFrameworkRenderLog audioRen_interrupt setInterruptMode(INDEPENDENT_MODE) success");
 
-        await audioRen_interrupt.start().then(async ()=> {
+        await audioRen_interrupt!.start().then(async ()=> {
           console.info('AudioFrameworkRenderLog: renderInstant2 started :SUCCESS ');
         }).catch((err: Error) => {
           console.info('AudioFrameworkRenderLog: renderInstant2 start :ERROR : ' + err.message);
         });
         await Utils.msSleep(2000);
-        await audioRen.release();
-        await audioRen_interrupt.release();
+        await audioRen!.release();
+        await audioRen_interrupt!.release();
       }
       catch (error: BusinessError) {
         console.log("SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_AUDIO_0200 : error = " + error);
@@ -3338,16 +3338,16 @@ export default function audioRendererTest() {
       }
 
       try {
-        let audioRen: audio.AudioRenderer;
-        await audio.createAudioRenderer(AudioRendererOptions).then(async (data: audio.AudioRenderer)=> {
+        let audioRen: audio.AudioRenderer | null;
+        await audio.createAudioRenderer(AudioRendererOptions).then(async (data: audio.AudioRenderer | null)=> {
           audioRen = data;
-          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data));
+          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data!));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(data));
         }).catch((err: Error) => {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         });
 
-        audioRen.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
+        audioRen!.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
           console.info("AudioFrameworkRenderLog: InterruptType : " + interruptEvent.eventType);
           console.info("AudioFrameworkRenderLog: InterruptForceType : " + interruptEvent.forceType);
           console.info("AudioFrameworkRenderLog: InterruptHint : " + interruptEvent.hintType);
@@ -3358,10 +3358,10 @@ export default function audioRendererTest() {
           expect(interrput_flag).assertTrue();
         });
 
-        let a = await audioRen.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE);
+        let a = await audioRen!.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE);
         console.info("AudioFrameworkRenderLog audioRen setInterruptMode(INDEPENDENT_MODE) success");
 
-        await audioRen.start().then(async ()=> {
+        await audioRen!.start().then(async ()=> {
           console.info('AudioFrameworkRenderLog: renderInstant started :SUCCESS ');
         }).catch((err: Error) => {
           console.info('AudioFrameworkRenderLog: renderInstant start :ERROR : ' + err.message);
@@ -3378,26 +3378,26 @@ export default function audioRendererTest() {
           rendererInfo: AudioRendererInfo_interrupt
         }
 
-        let audioRen_interrupt: audio.AudioRenderer;
-        await audio.createAudioRenderer(AudioRendererOptions_interrupt).then(async (data: audio.AudioRenderer)=> {
+        let audioRen_interrupt: audio.AudioRenderer | null;
+        await audio.createAudioRenderer(AudioRendererOptions_interrupt).then(async (data: audio.AudioRenderer | null)=> {
           audioRen_interrupt = data;
-          console.info('AudioFrameworkRenderLog: AudioRender2 Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data));
+          console.info('AudioFrameworkRenderLog: AudioRender2 Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data!));
           console.info('AudioFrameworkRenderLog: AudioRender2 Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(data));
         }).catch((err: Error) => {
           console.info('AudioFrameworkRenderLog: AudioRender2 Created : ERROR : ' + err.message);
         });
 
-        let b = await audioRen_interrupt.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE);
+        let b = await audioRen_interrupt!.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE);
         console.info("AudioFrameworkRenderLog audioRen_interrupt setInterruptMode(INDEPENDENT_MODE) success");
 
-        await audioRen_interrupt.start().then(async ()=> {
+        await audioRen_interrupt!.start().then(async ()=> {
           console.info('AudioFrameworkRenderLog: renderInstant2 started :SUCCESS ');
         }).catch((err: Error) => {
           console.info('AudioFrameworkRenderLog: renderInstant2 start :ERROR : ' + err.message);
         });
         await Utils.msSleep(2000);
-        await audioRen.release();
-        await audioRen_interrupt.release();
+        await audioRen!.release();
+        await audioRen_interrupt!.release();
       }
       catch (error: BusinessError) {
         console.log("SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_AUDIO_0300 : error = " + error);
@@ -3434,16 +3434,16 @@ export default function audioRendererTest() {
       }
 
       try {
-        let audioRen: audio.AudioRenderer;
-        await audio.createAudioRenderer(AudioRendererOptions).then(async (data: audio.AudioRenderer)=> {
+        let audioRen: audio.AudioRenderer | null;
+        await audio.createAudioRenderer(AudioRendererOptions).then(async (data: audio.AudioRenderer | null)=> {
           audioRen = data;
-          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data));
+          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data!));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(data));
         }).catch((err: Error) => {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         });
 
-        audioRen.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
+        audioRen!.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
           console.info("AudioFrameworkRenderLog: InterruptType : " + interruptEvent.eventType);
           console.info("AudioFrameworkRenderLog: InterruptForceType : " + interruptEvent.forceType);
           console.info("AudioFrameworkRenderLog: InterruptHint : " + interruptEvent.hintType);
@@ -3454,10 +3454,10 @@ export default function audioRendererTest() {
           expect(interrput_flag).assertTrue();
         });
 
-        let a = await audioRen.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE);
+        let a = await audioRen!.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE);
         console.info("AudioFrameworkRenderLog audioRen setInterruptMode(INDEPENDENT_MODE) success");
 
-        await audioRen.start().then(async ()=> {
+        await audioRen!.start().then(async ()=> {
           console.info('AudioFrameworkRenderLog: renderInstant started :SUCCESS ');
         }).catch((err: Error) => {
           console.info('AudioFrameworkRenderLog: renderInstant start :ERROR : ' + err.message);
@@ -3474,26 +3474,26 @@ export default function audioRendererTest() {
           rendererInfo: AudioRendererInfo_interrupt
         }
 
-        let audioRen_interrupt: audio.AudioRenderer;
-        await audio.createAudioRenderer(AudioRendererOptions_interrupt).then(async (data: audio.AudioRenderer) => {
+        let audioRen_interrupt: audio.AudioRenderer | null;
+        await audio.createAudioRenderer(AudioRendererOptions_interrupt).then(async (data: audio.AudioRenderer | null) => {
           audioRen_interrupt = data;
-          console.info('AudioFrameworkRenderLog: AudioRender2 Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data));
+          console.info('AudioFrameworkRenderLog: AudioRender2 Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data!));
           console.info('AudioFrameworkRenderLog: AudioRender2 Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(data));
         }).catch((err: Error) => {
           console.info('AudioFrameworkRenderLog: AudioRender2 Created : ERROR : ' + err.message);
         });
 
-        let b = await audioRen_interrupt.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE);
+        let b = await audioRen_interrupt!.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE);
         console.info("AudioFrameworkRenderLog audioRen_interrupt setInterruptMode(INDEPENDENT_MODE) success");
 
-        await audioRen_interrupt.start().then(async ()=> {
+        await audioRen_interrupt!.start().then(async ()=> {
           console.info('AudioFrameworkRenderLog: renderInstant2 started :SUCCESS ');
         }).catch((err: Error) => {
           console.info('AudioFrameworkRenderLog: renderInstant2 start :ERROR : ' + err.message);
         });
         await Utils.msSleep(2000);
-        await audioRen.release();
-        await audioRen_interrupt.release();
+        await audioRen!.release();
+        await audioRen_interrupt!.release();
       }
       catch (error: BusinessError) {
         console.log("SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_TEST_0400 : error = " + error);
@@ -3530,16 +3530,16 @@ export default function audioRendererTest() {
       }
 
       try {
-        let audioRen: audio.AudioRenderer;
-        await audio.createAudioRenderer(AudioRendererOptions).then(async (data: audio.AudioRenderer)=> {
+        let audioRen: audio.AudioRenderer | null;
+        await audio.createAudioRenderer(AudioRendererOptions).then(async (data: audio.AudioRenderer | null)=> {
           audioRen = data;
-          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data));
+          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data!));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(data));
         }).catch((err: Error) => {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         });
 
-        audioRen.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
+        audioRen!.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
           console.info("AudioFrameworkRenderLog: InterruptType : " + interruptEvent.eventType);
           console.info("AudioFrameworkRenderLog: InterruptForceType : " + interruptEvent.forceType);
           console.info("AudioFrameworkRenderLog: InterruptHint : " + interruptEvent.hintType);
@@ -3548,10 +3548,10 @@ export default function audioRendererTest() {
           }
         });
 
-        let a = await audioRen.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE);
+        let a = await audioRen!.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE);
         console.info("AudioFrameworkRenderLog audioRen setInterruptMode(INDEPENDENT_MODE) success");
 
-        await audioRen.start().then(async ()=> {
+        await audioRen!.start().then(async ()=> {
           console.info('AudioFrameworkRenderLog: renderInstant started :SUCCESS ');
         }).catch((err: Error) => {
           console.info('AudioFrameworkRenderLog: renderInstant start :ERROR : ' + err.message);
@@ -3568,26 +3568,26 @@ export default function audioRendererTest() {
           rendererInfo: AudioRendererInfo_interrupt
         }
 
-        let audioRen_interrupt: audio.AudioRenderer;
-        await audio.createAudioRenderer(AudioRendererOptions_interrupt).then(async (data: audio.AudioRenderer)=> {
+        let audioRen_interrupt: audio.AudioRenderer | null;
+        await audio.createAudioRenderer(AudioRendererOptions_interrupt).then(async (data: audio.AudioRenderer | null)=> {
           audioRen_interrupt = data;
-          console.info('AudioFrameworkRenderLog: AudioRender2 Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data));
+          console.info('AudioFrameworkRenderLog: AudioRender2 Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data!));
           console.info('AudioFrameworkRenderLog: AudioRender2 Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(data));
         }).catch((err: Error) => {
           console.info('AudioFrameworkRenderLog: AudioRender2 Created : ERROR : ' + err.message);
         });
 
-        let b = await audioRen_interrupt.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE);
+        let b = await audioRen_interrupt!.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE);
         console.info("AudioFrameworkRenderLog audioRen_interrupt setInterruptMode(INDEPENDENT_MODE) success");
 
-        await audioRen_interrupt.start().then(async ()=> {
+        await audioRen_interrupt!.start().then(async ()=> {
           console.info('AudioFrameworkRenderLog: renderInstant2 started :SUCCESS ');
         }).catch((err: Error) => {
           console.info('AudioFrameworkRenderLog: renderInstant2 start :ERROR : ' + err.message);
         });
         await Utils.msSleep(2000);
-        await audioRen.release();
-        await audioRen_interrupt.release();
+        await audioRen!.release();
+        await audioRen_interrupt!.release();
         expect(interrput_flag).assertFalse();
       }
       catch (error: BusinessError) {
@@ -3625,16 +3625,16 @@ export default function audioRendererTest() {
       }
 
       try {
-        let audioRen: audio.AudioRenderer;
-        await audio.createAudioRenderer(AudioRendererOptions).then(async (data: audio.AudioRenderer)=> {
+        let audioRen: audio.AudioRenderer | null;
+        await audio.createAudioRenderer(AudioRendererOptions).then(async (data: audio.AudioRenderer | null)=> {
           audioRen = data;
-          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data));
+          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data!));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(data));
         }).catch((err: Error) => {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         });
 
-        audioRen.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
+        audioRen!.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
           console.info("AudioFrameworkRenderLog: InterruptType : " + interruptEvent.eventType);
           console.info("AudioFrameworkRenderLog: InterruptForceType : " + interruptEvent.forceType);
           console.info("AudioFrameworkRenderLog: InterruptHint : " + interruptEvent.hintType);
@@ -3643,10 +3643,10 @@ export default function audioRendererTest() {
           }
         });
 
-        let a = await audioRen.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE);
+        let a = await audioRen!.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE);
         console.info("AudioFrameworkRenderLog audioRen setInterruptMode(INDEPENDENT_MODE) success");
 
-        await audioRen.start().then(async ()=> {
+        await audioRen!.start().then(async ()=> {
           console.info('AudioFrameworkRenderLog: renderInstant started :SUCCESS ');
         }).catch((err: Error) => {
           console.info('AudioFrameworkRenderLog: renderInstant start :ERROR : ' + err.message);
@@ -3663,26 +3663,26 @@ export default function audioRendererTest() {
           rendererInfo: AudioRendererInfo_interrupt
         }
 
-        let audioRen_interrupt: audio.AudioRenderer;
-        await audio.createAudioRenderer(AudioRendererOptions_interrupt).then(async (data: audio.AudioRenderer)=> {
+        let audioRen_interrupt: audio.AudioRenderer | null;
+        await audio.createAudioRenderer(AudioRendererOptions_interrupt).then(async (data: audio.AudioRenderer | null)=> {
           audioRen_interrupt = data;
-          console.info('AudioFrameworkRenderLog: AudioRender2 Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data));
+          console.info('AudioFrameworkRenderLog: AudioRender2 Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data!));
           console.info('AudioFrameworkRenderLog: AudioRender2 Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(data));
         }).catch((err: Error) => {
           console.info('AudioFrameworkRenderLog: AudioRender2 Created : ERROR : ' + err.message);
         });
 
-        let b = await audioRen_interrupt.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE);
+        let b = await audioRen_interrupt!.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE);
         console.info("AudioFrameworkRenderLog audioRen_interrupt setInterruptMode(INDEPENDENT_MODE) success");
 
-        await audioRen_interrupt.start().then(async ()=> {
+        await audioRen_interrupt!.start().then(async ()=> {
           console.info('AudioFrameworkRenderLog: renderInstant2 started :SUCCESS ');
         }).catch((err: Error) => {
           console.info('AudioFrameworkRenderLog: renderInstant2 start :ERROR : ' + err.message);
         });
         await Utils.msSleep(2000);
-        await audioRen.release();
-        await audioRen_interrupt.release();
+        await audioRen!.release();
+        await audioRen_interrupt!.release();
         expect(interrput_flag).assertFalse();
       }
       catch (error: BusinessError) {
@@ -3720,16 +3720,16 @@ export default function audioRendererTest() {
       }
 
       try {
-        let audioRen: audio.AudioRenderer;
-        await audio.createAudioRenderer(AudioRendererOptions).then(async (data: audio.AudioRenderer)=> {
+        let audioRen: audio.AudioRenderer | null;
+        await audio.createAudioRenderer(AudioRendererOptions).then(async (data: audio.AudioRenderer | null)=> {
           audioRen = data;
-          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data));
+          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data!));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(data));
         }).catch((err: Error) => {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         });
 
-        audioRen.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
+        audioRen!.onAudioInterrupt((interruptEvent: audio.InterruptEvent) => {
           console.info("AudioFrameworkRenderLog: InterruptType : " + interruptEvent.eventType);
           console.info("AudioFrameworkRenderLog: InterruptForceType : " + interruptEvent.forceType);
           console.info("AudioFrameworkRenderLog: InterruptHint : " + interruptEvent.hintType);
@@ -3740,10 +3740,10 @@ export default function audioRendererTest() {
           expect(interrput_flag).assertTrue();
         });
 
-        let a = await audioRen.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE);
+        let a = await audioRen!.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE);
         console.info("AudioFrameworkRenderLog audioRen setInterruptMode(INDEPENDENT_MODE) success");
 
-        await audioRen.start().then(async ()=> {
+        await audioRen!.start().then(async ()=> {
           console.info('AudioFrameworkRenderLog: renderInstant started :SUCCESS ');
         }).catch((err: Error) => {
           console.info('AudioFrameworkRenderLog: renderInstant start :ERROR : ' + err.message);
@@ -3760,26 +3760,26 @@ export default function audioRendererTest() {
           rendererInfo: AudioRendererInfo_interrupt
         }
 
-        let audioRen_interrupt: audio.AudioRenderer;
-        await audio.createAudioRenderer(AudioRendererOptions_interrupt).then(async (data: audio.AudioRenderer)=> {
+        let audioRen_interrupt: audio.AudioRenderer | null;
+        await audio.createAudioRenderer(AudioRendererOptions_interrupt).then(async (data: audio.AudioRenderer | null)=> {
           audioRen_interrupt = data;
-          console.info('AudioFrameworkRenderLog: AudioRender2 Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data));
+          console.info('AudioFrameworkRenderLog: AudioRender2 Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(data!));
           console.info('AudioFrameworkRenderLog: AudioRender2 Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(data));
         }).catch((err: Error) => {
           console.info('AudioFrameworkRenderLog: AudioRender2 Created : ERROR : ' + err.message);
         });
 
-        let b = await audioRen_interrupt.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE);
+        let b = await audioRen_interrupt!.setInterruptMode(audio.InterruptMode.INDEPENDENT_MODE);
         console.info("AudioFrameworkRenderLog audioRen_interrupt setInterruptMode(INDEPENDENT_MODE) success");
 
-        await audioRen_interrupt.start().then(async ()=> {
+        await audioRen_interrupt!.start().then(async ()=> {
           console.info('AudioFrameworkRenderLog: renderInstant2 started :SUCCESS ');
         }).catch((err: Error) => {
           console.info('AudioFrameworkRenderLog: renderInstant2 start :ERROR : ' + err.message);
         });
         await Utils.msSleep(2000);
-        await audioRen.release();
-        await audioRen_interrupt.release();
+        await audioRen!.release();
+        await audioRen_interrupt!.release();
       }
       catch (error: BusinessError) {
         console.log("SUB_MULTIMEDIA_AUDIO_RENDERER_INTERUPT_AUDIO_0700 : error = " + error);
@@ -3813,16 +3813,16 @@ export default function audioRendererTest() {
       }
       let audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       let mode = audio.InterruptMode.SHARE_MODE;
-      audioRenderer.setInterruptMode(mode, (err: BusinessError<void> | null) => {
+      audioRenderer!.setInterruptMode(mode, (err: BusinessError<void> | null) => {
         if (err) {
           console.info(`${TagFrmwkRender}: SetInterruptMode SHARE_MODE CALLBACK: error: ${err?.message}`);
           expect(false).assertTrue();
-          await audioRenderer.release();
+          await audioRenderer!.release();
           done();
         }
         console.info(`${TagFrmwkRender}: SetInterruptMode SHARE_MODE CALLBACK: SUCCESS`);
         expect(true).assertTrue();
-        await audioRenderer.release();
+        await audioRenderer!.release();
         done();
       })
     })
@@ -3852,16 +3852,16 @@ export default function audioRendererTest() {
       }
       let audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       let mode = audio.InterruptMode.INDEPENDENT_MODE;
-      audioRenderer.setInterruptMode(mode, (err: BusinessError<void> | null) => {
+      audioRenderer!.setInterruptMode(mode, (err: BusinessError<void> | null) => {
         if (err) {
           console.info(`${TagFrmwkRender}: SetInterruptMode INDEPENDENT_MODE CALLBACK: error: ${err?.message}`);
           expect(false).assertTrue();
-          await audioRenderer.release();
+          await audioRenderer!.release();
           done();
         }
         console.info(`${TagFrmwkRender}: SetInterruptMode INDEPENDENT_MODE CALLBACK: SUCCESS`);
         expect(true).assertTrue();
-        await audioRenderer.release();
+        await audioRenderer!.release();
         done();
       })
     })
@@ -3891,14 +3891,14 @@ export default function audioRendererTest() {
       }
       let audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       let mode = audio.InterruptMode.SHARE_MODE;
-      await audioRenderer.setInterruptMode(mode).then(() => {
+      await audioRenderer!.setInterruptMode(mode).then(() => {
         console.info(`${TagFrmwkRender}: SetInterruptMode SHARE_MODE PROMISE: SUCCESS`);
         expect(true).assertTrue();
       }).catch((err: Error)=> {
         console.info(`${TagFrmwkRender}: SetInterruptMode SHARE_MODE PROMISE: error: ${err.message}`);
         expect(false).assertTrue();
       });
-      await audioRenderer.release();
+      await audioRenderer!.release();
       done();
     })
 
@@ -3927,14 +3927,14 @@ export default function audioRendererTest() {
       }
       let audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       let mode = audio.InterruptMode.INDEPENDENT_MODE;
-      await audioRenderer.setInterruptMode(mode).then(() => {
+      await audioRenderer!.setInterruptMode(mode).then(() => {
         console.info(`${TagFrmwkRender}: SetInterruptMode INDEPENDENT_MODE PROMISE: SUCCESS`);
         expect(true).assertTrue();
       }).catch((err: Error)=> {
         console.info(`${TagFrmwkRender}: SetInterruptMode INDEPENDENT_MODE PROMISE: error: ${err.message}`);
         expect(false).assertTrue();
       })
-      await audioRenderer.release();
+      await audioRenderer!.release();
       done();
     })
 
@@ -3963,10 +3963,10 @@ export default function audioRendererTest() {
       }
       let audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       try {
-        let data = await audioRenderer.getAudioStreamId();
+        let data = await audioRenderer!.getAudioStreamId();
         console.info(`${TagFrmwkRender}: SUB_MULTIMEDIA_AUDIO_getAudioStreamId_0100 OUT OF BORDER PROMISE: SUCCESS ${data}`);
         expect(true).assertTrue();
-        await audioRenderer.release().then(() => {
+        await audioRenderer!.release().then(() => {
           console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
         }).catch((err: Error) => {
           console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -3975,7 +3975,7 @@ export default function audioRendererTest() {
       } catch (err: Error) {
         console.info(`${TagFrmwkRender}: SUB_MULTIMEDIA_AUDIO_getAudioStreamId_0100 OUT OF BORDER PROMISE: ERROR: ${err.message}`);
         expect(false).assertTrue();
-        await audioRenderer.release().then(() => {
+        await audioRenderer!.release().then(() => {
           console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
         }).catch((err: Error) => {
           console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -4008,11 +4008,11 @@ export default function audioRendererTest() {
         rendererInfo: audioRendererInfo
       }
       let audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
-      audioRenderer.getAudioStreamId((err: BusinessError<void> | null, data: long | undefined) => {
+      audioRenderer!.getAudioStreamId((err: BusinessError<void> | null, data: long | undefined) => {
         if (err) {
           console.info(`${TagFrmwkRender}: SetInterruptMode INDEPENDENT_MODE CALLBACK: error: ${err?.message}`);
           expect(false).assertTrue();
-          await audioRenderer.release().then(() => {
+          await audioRenderer!.release().then(() => {
             console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
           }).catch((err: Error) => {
             console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -4021,7 +4021,7 @@ export default function audioRendererTest() {
         }
         console.info(`${TagFrmwkRender}: SetInterruptMode INDEPENDENT_MODE CALLBACK: SUCCESS ${data}`);
         expect(true).assertTrue();
-        await audioRenderer.release().then(() => {
+        await audioRenderer!.release().then(() => {
           console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
         }).catch((err: Error) => {
           console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -4054,12 +4054,12 @@ export default function audioRendererTest() {
         rendererInfo: audioRendererInfo
       }
       let audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
-      await audioRenderer.release().then(() => {
+      await audioRenderer!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       });
-      audioRenderer.getAudioStreamId((err: BusinessError<void> | null, data: long | undefined) => {
+      audioRenderer!.getAudioStreamId((err: BusinessError<void> | null, data: long | undefined) => {
         if (err) {
           console.info(`${TagFrmwkRender}: SetInterruptMode INDEPENDENT_MODE CALLBACK : ${err?.message}`);
           if (err?.code == 6800103) {
@@ -4101,11 +4101,11 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
-          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
+          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen!));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
         } catch (err: BusinessError) {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
@@ -4113,7 +4113,7 @@ export default function audioRendererTest() {
 
         let inputVolume = 0;
         try {
-          await audioRen.setVolume(inputVolume);
+          await audioRen!.setVolume(inputVolume);
           expect(true).assertTrue();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 0 : Success`);
         } catch (err: BusinessError) {
@@ -4127,7 +4127,7 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(2000);
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -4159,11 +4159,11 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
-          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
+          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen!));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
         } catch (err: BusinessError) {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
@@ -4171,7 +4171,7 @@ export default function audioRendererTest() {
 
         let inputVolume = 0.5;
         try {
-          await audioRen.setVolume(inputVolume);
+          await audioRen!.setVolume(inputVolume);
           expect(true).assertTrue();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 0.5 : Success`);
         } catch (err: BusinessError) {
@@ -4185,7 +4185,7 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(2000);
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -4217,11 +4217,11 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
-          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
+          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen!));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
         } catch (err: BusinessError) {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
@@ -4229,7 +4229,7 @@ export default function audioRendererTest() {
 
         let inputVolume = 1.1;
         try {
-          await audioRen.setVolume(inputVolume);
+          await audioRen!.setVolume(inputVolume);
           expect(false).assertTrue();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 5 TEST: ERROR`);
         } catch (err: BusinessError) {
@@ -4248,7 +4248,7 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(2000);
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -4280,18 +4280,18 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
-          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
+          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen!));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
         } catch (err: BusinessError) {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
         let inputVolume = 0;
-        audioRen.setVolume(inputVolume, (err: BusinessError<void> | null) => {
+        audioRen!.setVolume(inputVolume, (err: BusinessError<void> | null) => {
           if (err) {
             console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume : ERROR : code: ${err?.code}, mesage: ${err?.message}`);
             expect(false).assertTrue();
@@ -4307,7 +4307,7 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(2000);
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -4339,18 +4339,18 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
-          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
+          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen!));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
         } catch (err: BusinessError) {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
         let inputVolume = 0.5;
-        audioRen.setVolume(inputVolume, (err: BusinessError<void> | null) => {
+        audioRen!.setVolume(inputVolume, (err: BusinessError<void> | null) => {
           if (err) {
             console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume : ERROR : code: ${err?.code}, mesage: ${err?.message}`);
             expect(false).assertTrue();
@@ -4366,7 +4366,7 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(2000);
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -4398,18 +4398,18 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
-          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
+          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen!));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
         } catch (err: BusinessError) {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
         let inputVolume = 1.1;
-        audioRen.setVolume(inputVolume, (err: BusinessError<void> | null) => {
+        audioRen!.setVolume(inputVolume, (err: BusinessError<void> | null) => {
           if (err) {
             if (err?.code == 6800104) {
               console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 1.1 : OK`);
@@ -4430,7 +4430,7 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(2000);
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -6195,7 +6195,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -6222,7 +6222,7 @@ export default function audioRendererTest() {
         });
       }
 
-      await audioRen.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
+      await audioRen!.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
         console.info(`${TagFrmwkRender}: Renderer RendererInfo: ${JSON.stringify(audioParamsGet)}`);
         if (audioParamsGet.usage == AudioRendererInfo.usage) {
           console.info(`${TagFrmwkRender}: Renderer usage type: PASS: ${audioParamsGet.usage}`);
@@ -6242,7 +6242,7 @@ export default function audioRendererTest() {
         console.log(`${TagFrmwkRender}: RendererInfo :ERROR: ${err.message}`);
         resultFlag = false;
       });
-      await audioRen.release();
+      await audioRen!.release();
       done();
 
     })
@@ -6275,7 +6275,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -6302,7 +6302,7 @@ export default function audioRendererTest() {
         });
       }
 
-      await audioRen.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
+      await audioRen!.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
         console.info(`${TagFrmwkRender}: Renderer RendererInfo: ${JSON.stringify(audioParamsGet)}`);
         if (audioParamsGet.usage == AudioRendererInfo.usage) {
           console.info(`${TagFrmwkRender}: Renderer usage type: PASS: ${audioParamsGet.usage}`);
@@ -6357,7 +6357,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -6384,7 +6384,7 @@ export default function audioRendererTest() {
         });
       }
 
-      await audioRen.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
+      await audioRen!.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
         console.info(`${TagFrmwkRender}: Renderer RendererInfo: ${JSON.stringify(audioParamsGet)}`);
         if (audioParamsGet.usage == AudioRendererInfo.usage) {
           console.info(`${TagFrmwkRender}: Renderer usage type: PASS: ${audioParamsGet.usage}`);
@@ -6404,7 +6404,7 @@ export default function audioRendererTest() {
         console.log(`${TagFrmwkRender}: RendererInfo :ERROR: ${err.message}`);
         resultFlag = false;
       });
-      await audioRen.release();
+      await audioRen!.release();
       expect(resultFlag).assertTrue();
 
       done();
@@ -6439,7 +6439,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -6466,7 +6466,7 @@ export default function audioRendererTest() {
         });
       }
 
-      await audioRen.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
+      await audioRen!.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
         console.info(`${TagFrmwkRender}: Renderer RendererInfo: ${JSON.stringify(audioParamsGet)}`);
         if (audioParamsGet.usage == AudioRendererInfo.usage) {
           console.info(`${TagFrmwkRender}: Renderer usage type: PASS: ${audioParamsGet.usage}`);
@@ -6488,7 +6488,7 @@ export default function audioRendererTest() {
       });
 
       expect(resultFlag).assertTrue();
-      await audioRen.release();
+      await audioRen!.release();
       done();
 
     })
@@ -6521,7 +6521,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -6548,7 +6548,7 @@ export default function audioRendererTest() {
         });
       }
 
-      await audioRen.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
+      await audioRen!.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
         console.info(`${TagFrmwkRender}: Renderer RendererInfo: ${JSON.stringify(audioParamsGet)}`);
         if (audioParamsGet.usage == AudioRendererInfo.usage) {
           console.info(`${TagFrmwkRender}: Renderer usage type: PASS: ${audioParamsGet.usage}`);
@@ -6570,7 +6570,7 @@ export default function audioRendererTest() {
       });
 
       expect(resultFlag).assertTrue();
-      await audioRen.release();
+      await audioRen!.release();
       done();
 
     })
@@ -6603,7 +6603,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -6630,7 +6630,7 @@ export default function audioRendererTest() {
         });
       }
 
-      await audioRen.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
+      await audioRen!.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
         console.info(`${TagFrmwkRender}: Renderer RendererInfo: ${JSON.stringify(audioParamsGet)}`);
         if (audioParamsGet.usage == AudioRendererInfo.usage) {
           console.info(`${TagFrmwkRender}: Renderer usage type: PASS: ${audioParamsGet.usage}`);
@@ -6652,7 +6652,7 @@ export default function audioRendererTest() {
       });
 
       expect(resultFlag).assertTrue();
-      await audioRen.release();
+      await audioRen!.release();
       done();
 
     })
@@ -6685,7 +6685,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -6712,7 +6712,7 @@ export default function audioRendererTest() {
         });
       }
 
-      await audioRen.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
+      await audioRen!.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
         console.info(`${TagFrmwkRender}: Renderer RendererInfo: ${JSON.stringify(audioParamsGet)}`);
         if (audioParamsGet.usage == AudioRendererInfo.usage) {
           console.info(`${TagFrmwkRender}: Renderer usage type: PASS: ${audioParamsGet.usage}`);
@@ -6734,7 +6734,7 @@ export default function audioRendererTest() {
       });
 
       expect(resultFlag).assertTrue();
-      await audioRen.release();
+      await audioRen!.release();
       done();
 
     })
@@ -6767,7 +6767,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -6794,7 +6794,7 @@ export default function audioRendererTest() {
         });
       }
 
-      await audioRen.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
+      await audioRen!.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
         console.info(`${TagFrmwkRender}: Renderer RendererInfo: ${JSON.stringify(audioParamsGet)}`);
         if (audioParamsGet.usage == AudioRendererInfo.usage) {
           console.info(`${TagFrmwkRender}: Renderer usage type: PASS: ${audioParamsGet.usage}`);
@@ -6814,7 +6814,7 @@ export default function audioRendererTest() {
         console.log(`${TagFrmwkRender}: RendererInfo :ERROR: ${err.message}`);
         resultFlag = false;
       });
-      await audioRen.release();
+      await audioRen!.release();
       expect(resultFlag).assertTrue();
 
       done();
@@ -6849,7 +6849,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -6876,7 +6876,7 @@ export default function audioRendererTest() {
         });
       }
 
-      await audioRen.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
+      await audioRen!.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
         console.info(`${TagFrmwkRender}: Renderer RendererInfo: ${JSON.stringify(audioParamsGet)}`);
         if (audioParamsGet.usage == AudioRendererInfo.usage) {
           console.info(`${TagFrmwkRender}: Renderer usage type: PASS: ${audioParamsGet.usage}`);
@@ -6896,7 +6896,7 @@ export default function audioRendererTest() {
         console.log(`${TagFrmwkRender}: RendererInfo :ERROR: ${err.message}`);
         resultFlag = false;
       });
-      await audioRen.release();
+      await audioRen!.release();
       expect(resultFlag).assertTrue();
 
       done();
@@ -6931,7 +6931,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -6958,7 +6958,7 @@ export default function audioRendererTest() {
         });
       }
 
-      await audioRen.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
+      await audioRen!.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
         console.info(`${TagFrmwkRender}: Renderer RendererInfo: ${JSON.stringify(audioParamsGet)}`);
         if (audioParamsGet.usage == AudioRendererInfo.usage) {
           console.info(`${TagFrmwkRender}: Renderer usage type: PASS: ${audioParamsGet.usage}`);
@@ -6978,7 +6978,7 @@ export default function audioRendererTest() {
         console.log(`${TagFrmwkRender}: RendererInfo :ERROR: ${err.message}`);
         resultFlag = false;
       });
-      await audioRen.release();
+      await audioRen!.release();
       expect(resultFlag).assertTrue();
 
       done();
@@ -7013,7 +7013,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -7040,7 +7040,7 @@ export default function audioRendererTest() {
         });
       }
 
-      await audioRen.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
+      await audioRen!.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
         console.info(`${TagFrmwkRender}: Renderer RendererInfo: ${JSON.stringify(audioParamsGet)}`);
         if (audioParamsGet.usage == AudioRendererInfo.usage) {
           console.info(`${TagFrmwkRender}: Renderer usage type: PASS: ${audioParamsGet.usage}`);
@@ -7060,7 +7060,7 @@ export default function audioRendererTest() {
         console.log(`${TagFrmwkRender}: RendererInfo :ERROR: ${err.message}`);
         resultFlag = false;
       });
-      await audioRen.release();
+      await audioRen!.release();
       expect(resultFlag).assertTrue();
 
       done();
@@ -7095,7 +7095,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -7122,7 +7122,7 @@ export default function audioRendererTest() {
         });
       }
 
-      await audioRen.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
+      await audioRen!.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
         console.info(`${TagFrmwkRender}: Renderer RendererInfo: ${JSON.stringify(audioParamsGet)}`);
         if (audioParamsGet.usage == AudioRendererInfo.usage) {
           console.info(`${TagFrmwkRender}: Renderer usage type: PASS: ${audioParamsGet.usage}`);
@@ -7142,7 +7142,7 @@ export default function audioRendererTest() {
         console.log(`${TagFrmwkRender}: RendererInfo :ERROR: ${err.message}`);
         resultFlag = false;
       });
-      await audioRen.release();
+      await audioRen!.release();
       expect(resultFlag).assertTrue();
 
       done();
@@ -7177,7 +7177,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -7204,7 +7204,7 @@ export default function audioRendererTest() {
         });
       }
 
-      await audioRen.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
+      await audioRen!.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
         console.info(`${TagFrmwkRender}: Renderer RendererInfo: ${JSON.stringify(audioParamsGet)}`);
         if (audioParamsGet.usage == AudioRendererInfo.usage) {
           console.info(`${TagFrmwkRender}: Renderer usage type: PASS: ${audioParamsGet.usage}`);
@@ -7224,7 +7224,7 @@ export default function audioRendererTest() {
         console.log(`${TagFrmwkRender}: RendererInfo :ERROR: ${err.message}`);
         resultFlag = false;
       });
-      await audioRen.release();
+      await audioRen!.release();
       expect(resultFlag).assertTrue();
 
       done();
@@ -7259,7 +7259,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -7286,7 +7286,7 @@ export default function audioRendererTest() {
         });
       }
 
-      await audioRen.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
+      await audioRen!.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
         console.info(`${TagFrmwkRender}: Renderer RendererInfo: ${JSON.stringify(audioParamsGet)}`);
         if (audioParamsGet.usage == AudioRendererInfo.usage) {
           console.info(`${TagFrmwkRender}: Renderer usage type: PASS: ${audioParamsGet.usage}`);
@@ -7306,7 +7306,7 @@ export default function audioRendererTest() {
         console.log(`${TagFrmwkRender}: RendererInfo :ERROR: ${err.message}`);
         resultFlag = false;
       });
-      await audioRen.release();
+      await audioRen!.release();
       expect(resultFlag).assertTrue();
 
       done();
@@ -7341,7 +7341,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -7368,7 +7368,7 @@ export default function audioRendererTest() {
         });
       }
 
-      await audioRen.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
+      await audioRen!.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
         console.info(`${TagFrmwkRender}: Renderer RendererInfo: ${JSON.stringify(audioParamsGet)}`);
         if (audioParamsGet.usage == AudioRendererInfo.usage) {
           console.info(`${TagFrmwkRender}: Renderer usage type: PASS: ${audioParamsGet.usage}`);
@@ -7388,7 +7388,7 @@ export default function audioRendererTest() {
         console.log(`${TagFrmwkRender}: RendererInfo :ERROR: ${err.message}`);
         resultFlag = false;
       });
-      await audioRen.release();
+      await audioRen!.release();
       expect(resultFlag).assertTrue();
 
       done();
@@ -7423,7 +7423,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -7450,7 +7450,7 @@ export default function audioRendererTest() {
         });
       }
 
-      await audioRen.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
+      await audioRen!.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
         console.info(`${TagFrmwkRender}: Renderer RendererInfo: ${JSON.stringify(audioParamsGet)}`);
         if (audioParamsGet.usage == AudioRendererInfo.usage) {
           console.info(`${TagFrmwkRender}: Renderer usage type: PASS: ${audioParamsGet.usage}`);
@@ -7470,7 +7470,7 @@ export default function audioRendererTest() {
         console.log(`${TagFrmwkRender}: RendererInfo :ERROR: ${err.message}`);
         resultFlag = false;
       });
-      await audioRen.release();
+      await audioRen!.release();
       expect(resultFlag).assertTrue();
 
       done();
@@ -7505,7 +7505,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -7532,7 +7532,7 @@ export default function audioRendererTest() {
         });
       }
 
-      await audioRen.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
+      await audioRen!.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
         console.info(`${TagFrmwkRender}: Renderer RendererInfo: ${JSON.stringify(audioParamsGet)}`);
         if (audioParamsGet.usage == AudioRendererInfo.usage) {
           console.info(`${TagFrmwkRender}: Renderer usage type: PASS: ${audioParamsGet.usage}`);
@@ -7552,7 +7552,7 @@ export default function audioRendererTest() {
         console.log(`${TagFrmwkRender}: RendererInfo :ERROR: ${err.message}`);
         resultFlag = false;
       });
-      await audioRen.release();
+      await audioRen!.release();
       expect(resultFlag).assertTrue();
 
       done();
@@ -7587,7 +7587,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -7614,7 +7614,7 @@ export default function audioRendererTest() {
         });
       }
 
-      await audioRen.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
+      await audioRen!.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
         console.info(`${TagFrmwkRender}: Renderer RendererInfo: ${JSON.stringify(audioParamsGet)}`);
         if (audioParamsGet.usage == AudioRendererInfo.usage) {
           console.info(`${TagFrmwkRender}: Renderer usage type: PASS: ${audioParamsGet.usage}`);
@@ -7634,7 +7634,7 @@ export default function audioRendererTest() {
         console.log(`${TagFrmwkRender}: RendererInfo :ERROR: ${err.message}`);
         resultFlag = false;
       });
-      await audioRen.release();
+      await audioRen!.release();
       expect(resultFlag).assertTrue();
 
       done();
@@ -7669,7 +7669,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -7696,7 +7696,7 @@ export default function audioRendererTest() {
         });
       }
 
-      await audioRen.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
+      await audioRen!.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
         console.info(`${TagFrmwkRender}: Renderer RendererInfo: ${JSON.stringify(audioParamsGet)}`);
         if (audioParamsGet.usage == AudioRendererInfo.usage) {
           console.info(`${TagFrmwkRender}: Renderer usage type: PASS: ${audioParamsGet.usage}`);
@@ -7716,7 +7716,7 @@ export default function audioRendererTest() {
         console.log(`${TagFrmwkRender}: RendererInfo :ERROR: ${err.message}`);
         resultFlag = false;
       });
-      await audioRen.release();
+      await audioRen!.release();
       expect(resultFlag).assertTrue();
 
       done();
@@ -7751,7 +7751,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -7778,7 +7778,7 @@ export default function audioRendererTest() {
         });
       }
 
-      await audioRen.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
+      await audioRen!.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
         console.info(`${TagFrmwkRender}: Renderer RendererInfo: ${JSON.stringify(audioParamsGet)}`);
         if (audioParamsGet.usage == AudioRendererInfo.usage) {
           console.info(`${TagFrmwkRender}: Renderer usage type: PASS: ${audioParamsGet.usage}`);
@@ -7798,7 +7798,7 @@ export default function audioRendererTest() {
         console.log(`${TagFrmwkRender}: RendererInfo :ERROR: ${err.message}`);
         resultFlag = false;
       });
-      await audioRen.release();
+      await audioRen!.release();
       expect(resultFlag).assertTrue();
 
       done();
@@ -7833,7 +7833,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -7860,7 +7860,7 @@ export default function audioRendererTest() {
         });
       }
 
-      await audioRen.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
+      await audioRen!.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
         console.info(`${TagFrmwkRender}: Renderer RendererInfo: ${JSON.stringify(audioParamsGet)}`);
         if (audioParamsGet.usage == AudioRendererInfo.usage) {
           console.info(`${TagFrmwkRender}: Renderer usage type: PASS: ${audioParamsGet.usage}`);
@@ -7880,7 +7880,7 @@ export default function audioRendererTest() {
         console.log(`${TagFrmwkRender}: RendererInfo :ERROR: ${err.message}`);
         resultFlag = false;
       });
-      await audioRen.release();
+      await audioRen!.release();
       expect(resultFlag).assertTrue();
 
       done();
@@ -7915,7 +7915,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -7942,7 +7942,7 @@ export default function audioRendererTest() {
         });
       }
 
-      await audioRen.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
+      await audioRen!.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
         console.info(`${TagFrmwkRender}: Renderer RendererInfo: ${JSON.stringify(audioParamsGet)}`);
         if (audioParamsGet.usage == AudioRendererInfo.usage) {
           console.info(`${TagFrmwkRender}: Renderer usage type: PASS: ${audioParamsGet.usage}`);
@@ -7962,7 +7962,7 @@ export default function audioRendererTest() {
         console.log(`${TagFrmwkRender}: RendererInfo :ERROR: ${err.message}`);
         resultFlag = false;
       });
-      await audioRen.release();
+      await audioRen!.release();
       expect(resultFlag).assertTrue();
 
       done();
@@ -7997,7 +7997,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -8024,7 +8024,7 @@ export default function audioRendererTest() {
         });
       }
 
-      await audioRen.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
+      await audioRen!.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
         console.info(`${TagFrmwkRender}: Renderer RendererInfo: ${JSON.stringify(audioParamsGet)}`);
         if (audioParamsGet.usage == AudioRendererInfo.usage) {
           console.info(`${TagFrmwkRender}: Renderer usage type: PASS: ${audioParamsGet.usage}`);
@@ -8044,7 +8044,7 @@ export default function audioRendererTest() {
         console.log(`${TagFrmwkRender}: RendererInfo :ERROR: ${err.message}`);
         resultFlag = false;
       });
-      await audioRen.release();
+      await audioRen!.release();
       expect(resultFlag).assertTrue();
 
       done();
@@ -8079,7 +8079,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -8106,7 +8106,7 @@ export default function audioRendererTest() {
         });
       }
 
-      await audioRen.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
+      await audioRen!.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
         console.info(`${TagFrmwkRender}: Renderer RendererInfo: ${JSON.stringify(audioParamsGet)}`);
         if (audioParamsGet.usage == AudioRendererInfo.usage) {
           console.info(`${TagFrmwkRender}: Renderer usage type: PASS: ${audioParamsGet.usage}`);
@@ -8126,7 +8126,7 @@ export default function audioRendererTest() {
         console.log(`${TagFrmwkRender}: RendererInfo :ERROR: ${err.message}`);
         resultFlag = false;
       });
-      await audioRen.release();
+      await audioRen!.release();
       expect(resultFlag).assertTrue();
 
       done();
@@ -8160,7 +8160,7 @@ export default function audioRendererTest() {
       }
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -8187,15 +8187,15 @@ export default function audioRendererTest() {
         });
       }
 
-      if (audioRen.state == audio.AudioState.STATE_PREPARED) {
-        console.info(`${TagFrmwkRender}: Audio State : STATE_PREPARED : PASS : ${audioRen.state}`);
+      if (audioRen!.state == audio.AudioState.STATE_PREPARED) {
+        console.info(`${TagFrmwkRender}: Audio State : STATE_PREPARED : PASS : ${audioRen!.state}`);
       }
       else {
-        console.info(`${TagFrmwkRender}: Audio State : STATE_PREPARED : FAIL : ${audioRen.state}`);
+        console.info(`${TagFrmwkRender}: Audio State : STATE_PREPARED : FAIL : ${audioRen!.state}`);
         resultFlag = false;
       }
 
-      await audioRen.release().then(() => {
+      await audioRen!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -8234,7 +8234,7 @@ export default function audioRendererTest() {
       }
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -8261,7 +8261,7 @@ export default function audioRendererTest() {
         });
       }
 
-      await audioRen.start().then(() => {
+      await audioRen!.start().then(() => {
         console.info(`${TagFrmwkRender}: renderInstant started :SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: renderInstant start :ERROR : ${err.message}`);
@@ -8270,21 +8270,21 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(500);
 
-      if (audioRen.state == audio.AudioState.STATE_RUNNING) {
-        console.info(`${TagFrmwkRender}: Audio State : STATE_RUNNING : PASS : ${audioRen.state}`);
+      if (audioRen!.state == audio.AudioState.STATE_RUNNING) {
+        console.info(`${TagFrmwkRender}: Audio State : STATE_RUNNING : PASS : ${audioRen!.state}`);
       }
       else {
-        console.info(`${TagFrmwkRender}: Audio State : STATE_RUNNING : FAIL : ${audioRen.state}`);
+        console.info(`${TagFrmwkRender}: Audio State : STATE_RUNNING : FAIL : ${audioRen!.state}`);
         resultFlag = false;
       }
 
-      await audioRen.stop().then(() => {
+      await audioRen!.stop().then(() => {
         console.info(`${TagFrmwkRender}: Renderer stopped : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer stop:ERROR : ${err.message}`);
       });
 
-      await audioRen.release().then(() => {
+      await audioRen!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -8323,7 +8323,7 @@ export default function audioRendererTest() {
       }
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -8350,7 +8350,7 @@ export default function audioRendererTest() {
         });
       }
 
-      await audioRen.start().then(() => {
+      await audioRen!.start().then(() => {
         console.info(`${TagFrmwkRender}: renderInstant started :SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: renderInstant start :ERROR : ${err.message}`);
@@ -8359,7 +8359,7 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(500);
 
-      await audioRen.stop().then(() => {
+      await audioRen!.stop().then(() => {
         console.info(`${TagFrmwkRender}: Renderer stopped : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer stop:ERROR : ${err.message}`);
@@ -8367,15 +8367,15 @@ export default function audioRendererTest() {
       });
       await Utils.msSleep(500);
 
-      if (audioRen.state == audio.AudioState.STATE_STOPPED) {
-        console.info(`${TagFrmwkRender}: Audio State : STATE_STOPPED : PASS : ${audioRen.state}`);
+      if (audioRen!.state == audio.AudioState.STATE_STOPPED) {
+        console.info(`${TagFrmwkRender}: Audio State : STATE_STOPPED : PASS : ${audioRen!.state}`);
       }
       else {
-        console.info(`${TagFrmwkRender}: Audio State : STATE_STOPPED : FAIL : ${audioRen.state}`);
+        console.info(`${TagFrmwkRender}: Audio State : STATE_STOPPED : FAIL : ${audioRen!.state}`);
         resultFlag = false;
       }
 
-      await audioRen.release().then(() => {
+      await audioRen!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -8414,7 +8414,7 @@ export default function audioRendererTest() {
       }
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -8441,7 +8441,7 @@ export default function audioRendererTest() {
         });
       }
 
-      await audioRen.start().then(() => {
+      await audioRen!.start().then(() => {
         console.info(`${TagFrmwkRender}: renderInstant started :SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: renderInstant start :ERROR : ${err.message}`);
@@ -8450,7 +8450,7 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(500);
 
-      await audioRen.stop().then(() => {
+      await audioRen!.stop().then(() => {
         console.info(`${TagFrmwkRender}: Renderer stopped : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer stop:ERROR : ${err.message}`);
@@ -8458,18 +8458,18 @@ export default function audioRendererTest() {
       });
       await Utils.msSleep(500);
 
-      await audioRen.release().then(() => {
+      await audioRen!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       });
       await Utils.msSleep(500);
 
-      if (audioRen.state == audio.AudioState.STATE_RELEASED) {
-        console.info(`${TagFrmwkRender}: Audio State : STATE_RELEASED : PASS : ${audioRen.state}`);
+      if (audioRen!.state == audio.AudioState.STATE_RELEASED) {
+        console.info(`${TagFrmwkRender}: Audio State : STATE_RELEASED : PASS : ${audioRen!.state}`);
       }
       else {
-        console.info(`${TagFrmwkRender}: Audio State : STATE_RELEASED : FAIL : ${audioRen.state}`);
+        console.info(`${TagFrmwkRender}: Audio State : STATE_RELEASED : FAIL : ${audioRen!.state}`);
         resultFlag = false;
       }
 
@@ -8506,7 +8506,7 @@ export default function audioRendererTest() {
       }
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -8533,7 +8533,7 @@ export default function audioRendererTest() {
         });
       }
 
-      await audioRen.start().then(() => {
+      await audioRen!.start().then(() => {
         console.info(`${TagFrmwkRender}: renderInstant started :SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: renderInstant start :ERROR : ${err.message}`);
@@ -8542,7 +8542,7 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(500);
 
-      await audioRen.pause().then(() => {
+      await audioRen!.pause().then(() => {
         console.info(`${TagFrmwkRender}: renderInstant Pause :SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: renderInstant Pause :ERROR : ${err.message}`);
@@ -8551,22 +8551,22 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(500);
 
-      if (audioRen.state == audio.AudioState.STATE_PAUSED) {
-        console.info(`${TagFrmwkRender}: Audio State : STATE_PAUSED : PASS : ${audioRen.state}`);
+      if (audioRen!.state == audio.AudioState.STATE_PAUSED) {
+        console.info(`${TagFrmwkRender}: Audio State : STATE_PAUSED : PASS : ${audioRen!.state}`);
       }
       else {
-        console.info(`${TagFrmwkRender}: Audio State : STATE_PAUSED : FAIL : ${audioRen.state}`);
+        console.info(`${TagFrmwkRender}: Audio State : STATE_PAUSED : FAIL : ${audioRen!.state}`);
         resultFlag = false;
       }
 
-      await audioRen.stop().then(() => {
+      await audioRen!.stop().then(() => {
         console.info(`${TagFrmwkRender}: Renderer stopped : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer stop:ERROR : ${err.message}`);
       });
       await Utils.msSleep(500);
 
-      await audioRen.release().then(() => {
+      await audioRen!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -8613,7 +8613,7 @@ export default function audioRendererTest() {
 
       console.info(`${TagFrmwkRender}: Promise : Audio Playback Function`);
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -8640,7 +8640,7 @@ export default function audioRendererTest() {
         });
       }
 
-      await audioRen.getAudioTime().then((data: long) => {
+      await audioRen!.getAudioTime().then((data: long) => {
         console.info(`${TagFrmwkRender}: getAudioTime : Value : ${data}`);
         resultFlag = true;
         if (data > 0) {
@@ -8653,13 +8653,13 @@ export default function audioRendererTest() {
         console.info(`${TagFrmwkRender}: getAudioTime : ERROR : ${err.message}`);
       });
 
-      await audioRen.release().then(() => {
+      await audioRen!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
       });
 
-      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen.state}`);
+      console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
 
@@ -8697,7 +8697,7 @@ export default function audioRendererTest() {
       }
       let resultFlag = false;
       let isPass = false;
-      let audioRenderer: audio.AudioRenderer;
+      let audioRenderer: audio.AudioRenderer | null;
       try {
         audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: AudioRender Created : Success : Stream Type: SUCCESS`);
@@ -8722,7 +8722,7 @@ export default function audioRendererTest() {
         });
       }
 
-      audioRenderer.onStateChange((state: audio.AudioState) => {
+      audioRenderer!.onStateChange((state: audio.AudioState) => {
         console.info(`${TagFrmwkRender}: ${TagFrmwk}: Volume Change Event is called`);
         switch (state) {
           case audio.AudioState.STATE_RELEASED:
@@ -8736,7 +8736,7 @@ export default function audioRendererTest() {
       });
       await Utils.msSleep(1000);
       try {
-        await audioRenderer.release()
+        await audioRenderer!.release()
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -8774,7 +8774,7 @@ export default function audioRendererTest() {
       }
       let resultFlag = false;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -8801,7 +8801,7 @@ export default function audioRendererTest() {
         });
       }
 
-      audioRen.onStateChange((AudioState: audio.AudioState) => {
+      audioRen!.onStateChange((AudioState: audio.AudioState) => {
 
         console.log(`${TagFrmwk}: Volume Change Event is called`);
 
@@ -8816,7 +8816,7 @@ export default function audioRendererTest() {
         }
       });
 
-      await audioRen.start().then(() => {
+      await audioRen!.start().then(() => {
         console.info(`${TagFrmwkRender}: renderInstant started :SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: renderInstant start :ERROR : ${err.message}`);
@@ -8825,13 +8825,13 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(500);
 
-      await audioRen.stop().then(() => {
+      await audioRen!.stop().then(() => {
         console.info(`${TagFrmwkRender}: Renderer stopped : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer stop:ERROR : ${err.message}`);
       });
 
-      await audioRen.release().then(() => {
+      await audioRen!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -8871,7 +8871,7 @@ export default function audioRendererTest() {
       }
       let resultFlag = false;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -8898,7 +8898,7 @@ export default function audioRendererTest() {
         });
       }
 
-      audioRen.onStateChange((AudioState: audio.AudioState) => {
+      audioRen!.onStateChange((AudioState: audio.AudioState) => {
 
         console.log(`${TagFrmwk}: Volume Change Event is called`);
 
@@ -8913,7 +8913,7 @@ export default function audioRendererTest() {
         }
       });
 
-      await audioRen.start().then(() => {
+      await audioRen!.start().then(() => {
         console.info(`${TagFrmwkRender}: renderInstant started :SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: renderInstant start :ERROR : ${err.message}`);
@@ -8922,7 +8922,7 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(500);
 
-      await audioRen.stop().then(() => {
+      await audioRen!.stop().then(() => {
         console.info(`${TagFrmwkRender}: Renderer stopped : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer stop:ERROR : ${err.message}`);
@@ -8930,7 +8930,7 @@ export default function audioRendererTest() {
       });
       await Utils.msSleep(500);
 
-      await audioRen.release().then(() => {
+      await audioRen!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -8970,7 +8970,7 @@ export default function audioRendererTest() {
       }
       let resultFlag = false;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -8997,7 +8997,7 @@ export default function audioRendererTest() {
         });
       }
 
-      audioRen.onStateChange((AudioState: audio.AudioState) => {
+      audioRen!.onStateChange((AudioState: audio.AudioState) => {
 
         console.log(`${TagFrmwk}: Volume Change Event is called`);
 
@@ -9012,7 +9012,7 @@ export default function audioRendererTest() {
         }
       });
 
-      await audioRen.start().then(() => {
+      await audioRen!.start().then(() => {
         console.info(`${TagFrmwkRender}: renderInstant started :SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: renderInstant start :ERROR : ${err.message}`);
@@ -9021,7 +9021,7 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(500);
 
-      await audioRen.stop().then(() => {
+      await audioRen!.stop().then(() => {
         console.info(`${TagFrmwkRender}: Renderer stopped : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer stop:ERROR : ${err.message}`);
@@ -9029,7 +9029,7 @@ export default function audioRendererTest() {
       });
       await Utils.msSleep(500);
 
-      await audioRen.release().then(() => {
+      await audioRen!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -9069,7 +9069,7 @@ export default function audioRendererTest() {
       }
       let resultFlag = false;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -9095,7 +9095,7 @@ export default function audioRendererTest() {
           resolve(undefined);
         });
       }
-      audioRen.onStateChange((AudioState: audio.AudioState) => {
+      audioRen!.onStateChange((AudioState: audio.AudioState) => {
 
         console.log(`${TagFrmwk}: Volume Change Event is called`);
 
@@ -9109,7 +9109,7 @@ export default function audioRendererTest() {
             break;
         }
       });
-      await audioRen.start().then(() => {
+      await audioRen!.start().then(() => {
         console.info(`${TagFrmwkRender}: renderInstant started :SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: renderInstant start :ERROR : ${err.message}`);
@@ -9118,7 +9118,7 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(500);
 
-      await audioRen.pause().then(() => {
+      await audioRen!.pause().then(() => {
         console.info(`${TagFrmwkRender}: renderInstant Pause :SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: renderInstant Pause :ERROR : ${err.message}`);
@@ -9126,14 +9126,14 @@ export default function audioRendererTest() {
       });
 
       await Utils.msSleep(500);
-      await audioRen.stop().then(() => {
+      await audioRen!.stop().then(() => {
         console.info(`${TagFrmwkRender}: Renderer stopped : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer stop:ERROR : ${err.message}`);
       });
       await Utils.msSleep(500);
 
-      await audioRen.release().then(() => {
+      await audioRen!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -9228,7 +9228,7 @@ export default function audioRendererTest() {
       }
       let resultFlag = false;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -9254,7 +9254,7 @@ export default function audioRendererTest() {
           resolve(undefined);
         });
       }
-      audioRen.onStateChange((AudioState: audio.AudioState) => {
+      audioRen!.onStateChange((AudioState: audio.AudioState) => {
 
         console.log(`${TagFrmwk}: Volume Change Event is called`);
 
@@ -9268,7 +9268,7 @@ export default function audioRendererTest() {
             break;
         }
       });
-      await audioRen.start().then(() => {
+      await audioRen!.start().then(() => {
         console.info(`${TagFrmwkRender}: renderInstant started :SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: renderInstant start :ERROR : ${err.message}`);
@@ -9277,7 +9277,7 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(2000);
 
-      audioRen.pause((err: BusinessError<void> | null) => {
+      audioRen!.pause((err: BusinessError<void> | null) => {
         if (err) {
           console.info(`${TagFrmwkRender}: renderInstant Pause :ERROR : ${err?.message}`);
           resultFlag = false;
@@ -9288,14 +9288,14 @@ export default function audioRendererTest() {
       });
       await Utils.msSleep(500);
 
-      await audioRen.stop().then(() => {
+      await audioRen!.stop().then(() => {
         console.info(`${TagFrmwkRender}: Renderer stopped : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer stop:ERROR : ${err.message}`);
       });
       await Utils.msSleep(500);
 
-      await audioRen.release().then(() => {
+      await audioRen!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -9391,7 +9391,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -9418,7 +9418,7 @@ export default function audioRendererTest() {
         });
       }
 
-      await audioRen.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
+      await audioRen!.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
         console.info(`${TagFrmwkRender}: Renderer RendererInfo: ${JSON.stringify(audioParamsGet)}`);
         if (audioParamsGet.usage == AudioRendererInfo.usage) {
           console.info(`${TagFrmwkRender}: Renderer usage type: PASS: ${audioParamsGet.usage}`);
@@ -9438,7 +9438,7 @@ export default function audioRendererTest() {
         console.log(`${TagFrmwkRender}: RendererInfo :ERROR: ${err.message}`);
         resultFlag = false;
       });
-      await audioRen.release();
+      await audioRen!.release();
       expect(resultFlag).assertTrue();
 
       done();
@@ -9473,7 +9473,7 @@ export default function audioRendererTest() {
 
       let resultFlag = true;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -9500,7 +9500,7 @@ export default function audioRendererTest() {
         });
       }
 
-      await audioRen.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
+      await audioRen!.getRendererInfo().then((audioParamsGet: audio.AudioRendererInfo) => {
         console.info(`${TagFrmwkRender}: Renderer RendererInfo: ${JSON.stringify(audioParamsGet)}`);
         if (audioParamsGet.usage == AudioRendererInfo.usage) {
           console.info(`${TagFrmwkRender}: Renderer usage type: PASS: ${audioParamsGet.usage}`);
@@ -9520,7 +9520,7 @@ export default function audioRendererTest() {
         console.log(`${TagFrmwkRender}: RendererInfo :ERROR: ${err.message}`);
         resultFlag = false;
       });
-      await audioRen.release();
+      await audioRen!.release();
       expect(resultFlag).assertTrue();
 
       done();
@@ -9645,11 +9645,11 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
-          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
+          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen!));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
         } catch (err: BusinessError) {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
@@ -9657,7 +9657,7 @@ export default function audioRendererTest() {
 
         let inputVolume = 0;
         try {
-          await audioRen.setVolume(inputVolume);
+          await audioRen!.setVolume(inputVolume);
           expect(true).assertTrue();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 0 : Success`);
         } catch (err: BusinessError) {
@@ -9671,7 +9671,7 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(2000);
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -9703,11 +9703,11 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
-          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
+          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen!));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
         } catch (err: BusinessError) {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
@@ -9715,7 +9715,7 @@ export default function audioRendererTest() {
 
         let inputVolume = 1;
         try {
-          await audioRen.setVolume(inputVolume);
+          await audioRen!.setVolume(inputVolume);
           expect(true).assertTrue();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 1 : Success`);
         } catch (err: BusinessError) {
@@ -9729,7 +9729,7 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(2000);
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -9761,11 +9761,11 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
-          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
+          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen!));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
         } catch (err: BusinessError) {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
@@ -9773,7 +9773,7 @@ export default function audioRendererTest() {
 
         let inputVolume = 1.1;
         try {
-          await audioRen.setVolume(inputVolume);
+          await audioRen!.setVolume(inputVolume);
           expect(false).assertTrue();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 1.1 TEST: ERROR`);
         } catch (err: BusinessError) {
@@ -9792,7 +9792,7 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(2000);
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -9824,18 +9824,18 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
-          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
+          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen!));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
         } catch (err: BusinessError) {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
         let inputVolume = 0;
-        audioRen.setVolume(inputVolume, (err: BusinessError<void> | null) => {
+        audioRen!.setVolume(inputVolume, (err: BusinessError<void> | null) => {
           if (err) {
             console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume : ERROR : code: ${err?.code}, mesage: ${err?.message}`);
             expect(false).assertTrue();
@@ -9851,7 +9851,7 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(2000);
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -9883,18 +9883,18 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
-          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
+          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen!));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
         } catch (err: BusinessError) {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
         let inputVolume = 1;
-        audioRen.setVolume(inputVolume, (err: BusinessError<void> | null) => {
+        audioRen!.setVolume(inputVolume, (err: BusinessError<void> | null) => {
           if (err) {
             console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume : ERROR : code: ${err?.code}, mesage: ${err?.message}`);
             expect(false).assertTrue();
@@ -9910,7 +9910,7 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(2000);
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -9942,18 +9942,18 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
-          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
+          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen!));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
         } catch (err: BusinessError) {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
         let inputVolume = 1.1;
-        audioRen.setVolume(inputVolume, (err: BusinessError<void> | null) => {
+        audioRen!.setVolume(inputVolume, (err: BusinessError<void> | null) => {
           if (err) {
             if (err?.code == 6800104) {
               console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 16 : OK`);
@@ -9974,7 +9974,7 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(2000);
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -10006,11 +10006,11 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
-          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
+          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen!));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
         } catch (err: BusinessError) {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
@@ -10018,7 +10018,7 @@ export default function audioRendererTest() {
 
         let inputVolume = 0;
         try {
-          await audioRen.setVolume(inputVolume);
+          await audioRen!.setVolume(inputVolume);
           expect(true).assertTrue();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 0 : Success`);
         } catch (err: BusinessError) {
@@ -10032,7 +10032,7 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(2000);
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -10064,11 +10064,11 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
-          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
+          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen!));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
         } catch (err: BusinessError) {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
@@ -10076,7 +10076,7 @@ export default function audioRendererTest() {
 
         let inputVolume = -1;
         try {
-          await audioRen.setVolume(inputVolume);
+          await audioRen!.setVolume(inputVolume);
           expect(false).assertTrue();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to -1 TEST: ERROR`);
         } catch (err: BusinessError) {
@@ -10095,7 +10095,7 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(2000);
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -10127,11 +10127,11 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
-          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
+          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen!));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
         } catch (err: BusinessError) {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
@@ -10139,7 +10139,7 @@ export default function audioRendererTest() {
 
         let inputVolume = 1;
         try {
-          await audioRen.setVolume(inputVolume);
+          await audioRen!.setVolume(inputVolume);
           expect(true).assertTrue();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 1 : Success`);
         } catch (err: BusinessError) {
@@ -10153,7 +10153,7 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(2000);
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -10185,11 +10185,11 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
-          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
+          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen!));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
         } catch (err: BusinessError) {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
@@ -10197,7 +10197,7 @@ export default function audioRendererTest() {
 
         let inputVolume = 1.1;
         try {
-          await audioRen.setVolume(inputVolume);
+          await audioRen!.setVolume(inputVolume);
           expect(false).assertTrue();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 16 TEST: ERROR`);
         } catch (err: BusinessError) {
@@ -10216,7 +10216,7 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(2000);
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -10248,18 +10248,18 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
-          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
+          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen!));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
         } catch (err: BusinessError) {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
         let inputVolume = 0;
-        audioRen.setVolume(inputVolume, (err: BusinessError<void> | null) => {
+        audioRen!.setVolume(inputVolume, (err: BusinessError<void> | null) => {
           if (err) {
             console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume : ERROR : code: ${err?.code}, mesage: ${err?.message}`);
             expect(false).assertTrue();
@@ -10275,7 +10275,7 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(2000);
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -10307,18 +10307,18 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
-          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
+          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen!));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
         } catch (err: BusinessError) {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
         let inputVolume = -1;
-        audioRen.setVolume(inputVolume, (err: BusinessError<void> | null) => {
+        audioRen!.setVolume(inputVolume, (err: BusinessError<void> | null) => {
           if (err) {
             if (err?.code == 6800104) {
               console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to -1 : OK`);
@@ -10339,7 +10339,7 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(2000);
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -10371,18 +10371,18 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
-          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
+          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen!));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
         } catch (err: BusinessError) {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
         let inputVolume = 1;
-        audioRen.setVolume(inputVolume, (err: BusinessError<void> | null) => {
+        audioRen!.setVolume(inputVolume, (err: BusinessError<void> | null) => {
           if (err) {
             console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume : ERROR : code: ${err?.code}, mesage: ${err?.message}`);
             expect(false).assertTrue();
@@ -10398,7 +10398,7 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(2000);
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -10430,18 +10430,18 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
-          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
+          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen!));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
         } catch (err: BusinessError) {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
         let inputVolume = 1.1;
-        audioRen.setVolume(inputVolume, (err: BusinessError<void> | null) => {
+        audioRen!.setVolume(inputVolume, (err: BusinessError<void> | null) => {
           if (err) {
             if (err?.code == 6800104) {
               console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 16 : OK`);
@@ -10462,7 +10462,7 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(2000);
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -10562,11 +10562,11 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
-          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
+          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen!));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
         } catch (err: BusinessError) {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
@@ -10574,10 +10574,10 @@ export default function audioRendererTest() {
 
         let inputVolume = 0;
         try {
-          await audioRen.setVolume(inputVolume);
+          await audioRen!.setVolume(inputVolume);
           expect(true).assertTrue();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 0 : Success`);
-          let data = audioRen.getVolume();
+          let data = audioRen!.getVolume();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: SUB_MULTIMEDIA_AUDIO_GET_VOLUME_0100 SUCCESS: ${data}`);
           expect(data).assertEqual(0);
         } catch (err: BusinessError) {
@@ -10591,7 +10591,7 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(2000);
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -10623,11 +10623,11 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
-          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
+          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen!));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
         } catch (err: BusinessError) {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
@@ -10635,10 +10635,10 @@ export default function audioRendererTest() {
 
         let inputVolume = 0.5;
         try {
-          await audioRen.setVolume(inputVolume);
+          await audioRen!.setVolume(inputVolume);
           expect(true).assertTrue();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 0.5 : Success`);
-          let data = audioRen.getVolume();
+          let data = audioRen!.getVolume();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: SUB_MULTIMEDIA_AUDIO_GET_VOLUME_0200 SUCCESS: ${data}`);
           expect(data).assertEqual(0.5);
         } catch (err: BusinessError) {
@@ -10652,7 +10652,7 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(2000);
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -10684,11 +10684,11 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
-          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
+          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen!));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
         } catch (err: BusinessError) {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
@@ -10696,10 +10696,10 @@ export default function audioRendererTest() {
 
         let inputVolume = 1;
         try {
-          await audioRen.setVolume(inputVolume);
+          await audioRen!.setVolume(inputVolume);
           expect(true).assertTrue();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: setVolume to 1 : Success`);
-          let data = audioRen.getVolume();
+          let data = audioRen!.getVolume();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: SUB_MULTIMEDIA_AUDIO_GET_VOLUME_0300 SUCCESS: ${data}`);
           expect(data).assertEqual(1);
         } catch (err: BusinessError) {
@@ -10713,7 +10713,7 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(2000);
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -10745,17 +10745,17 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
-          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
+          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen!));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
         } catch (err: BusinessError) {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
-        let data = audioRen.getVolume();
+        let data = audioRen!.getVolume();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: SUB_MULTIMEDIA_AUDIO_GET_VOLUME_0400 SUCCESS: ${data}`);
         expect(data).assertEqual(1);
       } catch (error: BusinessError) {
@@ -10765,7 +10765,7 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(2000);
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -10797,19 +10797,19 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
-          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
+          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen!));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
         } catch (err: BusinessError) {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
         let inputVolume = 0;
-        audioRen.setVolume(inputVolume, (err: BusinessError<void> | null) => {
-          let data = audioRen.getVolume();
+        audioRen!.setVolume(inputVolume, (err: BusinessError<void> | null) => {
+          let data = audioRen!.getVolume();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: SUB_MULTIMEDIA_AUDIO_GET_VOLUME_0500 SUCCESS: ${data}`);
           expect(data).assertEqual(0);
           if (err) {
@@ -10827,7 +10827,7 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(2000);
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -10859,19 +10859,19 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
-          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
+          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen!));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
         } catch (err: BusinessError) {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
         let inputVolume = 0.5;
-        audioRen.setVolume(inputVolume, (err: BusinessError<void> | null) => {
-          let data = audioRen.getVolume();
+        audioRen!.setVolume(inputVolume, (err: BusinessError<void> | null) => {
+          let data = audioRen!.getVolume();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: SUB_MULTIMEDIA_AUDIO_GET_VOLUME_0600 SUCCESS: ${data}`);
           expect(data).assertEqual(0.5);
           if (err) {
@@ -10889,7 +10889,7 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(2000);
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -10921,19 +10921,19 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       try {
         try {
           audioRen = await audio.createAudioRenderer(audioRendererOptions);
-          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen));
+          console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' + Object.keys(audioRen!));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' + JSON.stringify(audioRen));
         } catch (err: BusinessError) {
           console.info('AudioFrameworkRenderLog: AudioRender Created : ERROR : ' + err.message);
         }
 
         let inputVolume = 1;
-        audioRen.setVolume(inputVolume, (err: BusinessError<void> | null) => {
-          let data = audioRen.getVolume();
+        audioRen!.setVolume(inputVolume, (err: BusinessError<void> | null) => {
+          let data = audioRen!.getVolume();
           console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: SUB_MULTIMEDIA_AUDIO_GET_VOLUME_0700 SUCCESS: ${data}`);
           expect(data).assertEqual(1);
           if (err) {
@@ -10951,7 +10951,7 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(2000);
       try {
-        await audioRen.release();
+        await audioRen!.release();
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${TagFrmwkRender}: ${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -10986,7 +10986,7 @@ export default function audioRendererTest() {
       }
       let resultFlag = false;
 
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       let isPass = false;
       try {
         let data = await audio.createAudioRenderer(AudioRendererOptions);
@@ -11013,14 +11013,14 @@ export default function audioRendererTest() {
         });
       }
 
-      audioRen.onStateChange((AudioState: audio.AudioState) => {
+      audioRen!.onStateChange((AudioState: audio.AudioState) => {
 
         console.log(`${TagFrmwk}: Volume Change Event is called`);
 
         switch (AudioState) {
           case audio.AudioState.STATE_RUNNING:
             console.info(`${TagFrmwk}: state : STATE_RUNNING`);
-            audioRen.flush().then(() => {
+            audioRen!.flush().then(() => {
               console.info('Renderer flushed successfully');
             }).catch((err: Error) => {
               console.error(`ERROR: ${err}`);
@@ -11033,7 +11033,7 @@ export default function audioRendererTest() {
         }
       });
 
-      await audioRen.start().then(() => {
+      await audioRen!.start().then(() => {
         console.info(`${TagFrmwkRender}: renderInstant started :SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: renderInstant start :ERROR : ${err.message}`);
@@ -11042,13 +11042,13 @@ export default function audioRendererTest() {
 
       await Utils.msSleep(500);
 
-      await audioRen.stop().then(() => {
+      await audioRen!.stop().then(() => {
         console.info(`${TagFrmwkRender}: Renderer stopped : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer stop:ERROR : ${err.message}`);
       });
 
-      await audioRen.release().then(() => {
+      await audioRen!.release().then(() => {
         console.info(`${TagFrmwkRender}: Renderer release : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${TagFrmwkRender}: Renderer release :ERROR : ${err.message}`);
@@ -11190,7 +11190,7 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRenderer: audio.AudioRenderer;
+      let audioRenderer: audio.AudioRenderer | null;
       try {
         audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       } catch (err: BusinessError) {
@@ -11198,14 +11198,14 @@ export default function audioRendererTest() {
         expect(false).assertTrue();
       }
       try {
-        audioRenderer.setSilentModeAndMixWithOthers(true);
-        let data = audioRenderer.getSilentModeAndMixWithOthers();
+        audioRenderer!.setSilentModeAndMixWithOthers(true);
+        let data = audioRenderer!.getSilentModeAndMixWithOthers();
         expect(data).assertEqual(true);
       } catch (err: BusinessError) {
         console.info(`AudioRenderer setSilentModeAndMixWithOthers or getSilentModeAndMixWithOthers : ERROR: ${err.code}`);
         expect(false).assertTrue();
       }
-      audioRenderer.release().then(() => {
+      audioRenderer!.release().then(() => {
         console.info(`AudioRenderer release : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`AudioRenderer release :ERROR : ${err.message}`);
@@ -11237,7 +11237,7 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRenderer: audio.AudioRenderer;
+      let audioRenderer: audio.AudioRenderer | null;
       try {
         audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
       } catch (err: BusinessError) {
@@ -11245,14 +11245,14 @@ export default function audioRendererTest() {
         expect(false).assertTrue();
       }
       try {
-        audioRenderer.setSilentModeAndMixWithOthers(false);
-        let data = audioRenderer.getSilentModeAndMixWithOthers();
+        audioRenderer!.setSilentModeAndMixWithOthers(false);
+        let data = audioRenderer!.getSilentModeAndMixWithOthers();
         expect(data).assertEqual(false);
       } catch (err: BusinessError) {
         console.info(`AudioRenderer setSilentModeAndMixWithOthers or getSilentModeAndMixWithOthers : ERROR: ${err.code}`);
         expect(false).assertTrue();
       }
-      audioRenderer.release().then(() => {
+      audioRenderer!.release().then(() => {
         console.info(`AudioRenderer release : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`AudioRenderer release :ERROR : ${err.message}`);
@@ -11284,7 +11284,7 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRenderer: audio.AudioRenderer;
+      let audioRenderer: audio.AudioRenderer | null;
       try {
         audioRenderer = await audio.createAudioRenderer(audioRendererOptions);
         console.info(`AudioRenderer create : SUCCESS`);
@@ -11293,14 +11293,14 @@ export default function audioRendererTest() {
         expect(false).assertTrue();
       }
       try {
-        await audioRenderer.start();
+        await audioRenderer!.start();
         console.info(`AudioRenderer start : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`AudioRenderer start : ERROR`);
         expect(false).assertTrue();
       }
       try {
-        await audioRenderer.setDefaultOutputDevice(audio.DeviceType.EARPIECE);
+        await audioRenderer!.setDefaultOutputDevice(audio.DeviceType.EARPIECE);
       } catch (err: BusinessError) {
         if (err.code == 6800103) {
           console.info(`AudioRenderer setDefaultOutputDevice : SUCCESS`);
@@ -11309,7 +11309,7 @@ export default function audioRendererTest() {
           expect(false).assertTrue();
         }
       };
-      await audioRenderer.release().then(() => {
+      await audioRenderer!.release().then(() => {
         console.info(`AudioRenderer release : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`AudioRenderer release :ERROR : ${err.message}`);
@@ -11349,9 +11349,9 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRenderer:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      let audioRenderer:audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
       console.info(`${TAG},createAudioRenderer SUCCESS`);
-      let minStreamVolumeValue:number = audioRenderer.getMinStreamVolumeSync();
+      let minStreamVolumeValue:number = audioRenderer!.getMinStreamVolumeSync();
       console.info(`${TAG},getMinStreamVolumeSync SUCCESS,minStreamVolumeValue : ${minStreamVolumeValue}`);
       try{
         let streamVolumeChangeCB = (data:audio.StreamVolumeEvent) =>{
@@ -11366,7 +11366,7 @@ export default function audioRendererTest() {
 
         audioVolumeManager.onStreamVolumeChange(StreamUsage,streamVolumeChangeCB)
         console.info(`${TAG},audioVolumeManager_on SUCCESS`);
-        await audioRenderer.setVolume(minStreamVolumeValue).then(() =>{
+        await audioRenderer!.setVolume(minStreamVolumeValue).then(() =>{
           console.info(`${TAG},setVolume SUCCESS`);
         }).catch(async(err: BusinessError) =>{
           console.info(`${TAG},setVolume FAILED : ${err}`);
@@ -11379,7 +11379,7 @@ export default function audioRendererTest() {
         expect(false).assertTrue();
         done();
       }
-      await audioRenderer.release().then(() => {
+      await audioRenderer!.release().then(() => {
         console.info(`AudioRenderer release : SUCCESS`);
       }).catch(async (err: BusinessError) => {
         console.info(`AudioRenderer release :ERROR : ${err.message}`);
@@ -11483,12 +11483,12 @@ export default function audioRendererTest() {
         streamInfo: audioStreamInfo,
         rendererInfo: audioRendererInfo
       }
-      let audioRenderer:audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      let audioRenderer:audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
       console.info(`${TAG},createAudioRenderer SUCCESS`);
       let StreamVolumeValue:int = audioVolumeManager.getVolumeByStream(StreamUsage);
       console.info(`${TAG},getStreamVolume SUCCESS,StreamVolumeValue : ${StreamVolumeValue}`);
 
-      await audioRenderer.release().then(() => {
+      await audioRenderer!.release().then(() => {
         console.info(`AudioRenderer release : SUCCESS`);
       }).catch(async(err:BusinessError) => {
         console.info(`AudioRenderer release :ERROR : ${err.message}`);
@@ -11525,11 +11525,11 @@ export default function audioRendererTest() {
         rendererInfo: audioRendererInfo
       };
 
-      let audioRenderer: audio.AudioRenderer | undefined;
+      let audioRenderer: audio.AudioRenderer | null | undefined;
 
       let bufferSize: long | undefined;
 
-      audio.createAudioRenderer(audioRendererOptions,(err: BusinessError | null, data: audio.AudioRenderer | undefined) => {
+      audio.createAudioRenderer(audioRendererOptions,(err: BusinessError | null, data: audio.AudioRenderer | null | undefined) => {
         if (err) {
           console.error(`AudioRenderer Created: Error: ${err}`);
           expect(true).assertFalse();
@@ -11630,11 +11630,11 @@ export default function audioRendererTest() {
         rendererInfo: audioRendererInfo
       };
 
-      let audioRenderer: audio.AudioRenderer | undefined;
+      let audioRenderer: audio.AudioRenderer | null | undefined;
       let audioManager = audio.getAudioManager();
       let audioVolumeManager: audio.AudioVolumeManager = audioManager.getVolumeManager();
 
-      audio.createAudioRenderer(audioRendererOptions,(err: BusinessError | null, data: audio.AudioRenderer | undefined) => {
+      audio.createAudioRenderer(audioRendererOptions,(err: BusinessError | null, data: audio.AudioRenderer | null | undefined) => {
         if (err) {
           console.error(`AudioRenderer Created: Error: ${err}`);
           expect(true).assertFail();
