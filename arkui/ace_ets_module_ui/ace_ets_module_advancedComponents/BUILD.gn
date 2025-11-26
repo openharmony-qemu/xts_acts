@@ -15,8 +15,8 @@ import("//foundation/arkui/ace_engine/ace_config.gni")
 group("ActsAceEtsModuleAdvancedComponentsTest") {
   testonly = true
   if (ace_engine_feature_wearable) {
-    deps = [ 
-	    "ace_ets_module_advancedComponents_api12:ActsAceEtsModuleAdvancedComponentsApi12Test",
+    deps = [
+      "ace_ets_module_advancedComponents_api12:ActsAceEtsModuleAdvancedComponentsApi12Test",
       "ace_ets_module_advanceDialog:ActsAceEtsModuleAdvancedDialogTest"
 	  ]
   } else {
