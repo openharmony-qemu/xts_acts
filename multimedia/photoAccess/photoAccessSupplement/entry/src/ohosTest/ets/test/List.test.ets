@@ -37,6 +37,11 @@ import PhotoAccessHelperGetRecentPhotoInfo
   from './photoAccess/PhotoAccessHelperGetRecentPhotoInfo.test';
 import PhotoAccessHelperGetPhotoAccessHelper
   from './photoAccess/PhotoAccessHelperGetPhotoAccessHelper.test';
+import PhotoAssetImageGetThumbnail from './photoAccess/PhotoAssetImageGetThumbnail.test';
+import PhotoAccessHelperPhotoAlbumChange from './photoAccess/PhotoAccessHelperPhotoAlbumChange.test';
+import MediaAlbumChangeRequestSetAlbumName from './photoAccess/MediaAlbumChangeRequestSetAlbumName.test';
+import MediaAssetChangeRequestSaveCameraPhoto from './photoAccess/MediaAssetChangeRequestSaveCameraPhoto.test';
+
 export default function testsuite() {
   PhotoAccessMediaAssetChangeRequestSuppTest();
   MediaAssetManagerRequestImageTest();
@@ -73,4 +78,8 @@ export default function testsuite() {
   getThumbnailTestSupp();
   PhotoAccessHelperGetPhotoAccessHelper();
   PhotoAccessHelperGetRecentPhotoInfo();
+  PhotoAssetImageGetThumbnail();
+  PhotoAccessHelperPhotoAlbumChange();
+  MediaAlbumChangeRequestSetAlbumName();
+  MediaAssetChangeRequestSaveCameraPhoto();
 }
