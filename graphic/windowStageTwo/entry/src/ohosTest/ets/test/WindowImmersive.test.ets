@@ -3477,6 +3477,614 @@ export default function windowImmersiveTest() {
       }
     });
 
+    /**
+     * @tc.number    : SUB_BASIC_WMS_GET_WINDOW_AVOID_AREA_IGNORING_VISIBILITY_0100
+     * @tc.name      : testFreeMultWindowFullScreenGetWindowAvoidAreaIgnoringVisibility
+     * @tc.desc      : 横验证在自由多窗模式下全屏窗口调用getWindowAvoidAreaIgnoringVisibility接口
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level0
+     */
+    it('testFreeMultWindowFullScreenGetWindowAvoidAreaIgnoringVisibility', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testFreeMultWindowFullScreenGetWindowAvoidAreaIgnoringVisibility';
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      let windowStageStart = await startAbility7(caseName, context);
+      let windowClass = windowStageStart.getMainWindowSync();
+      let isInFreeWindowMode = windowClass.isInFreeWindowMode();
+      console.info(caseName + ' isInFreeWindowMode: ' + JSON.stringify(isInFreeWindowMode));
+      try {
+        if (isInFreeWindowMode) {
+          await windowClass.maximize();
+          const mainWindowProperties = windowClass.getWindowProperties();
+          const mainWindowRect = mainWindowProperties.windowRect;
+          console.info(caseName + ' Main window rect: ' + JSON.stringify(mainWindowRect));
+          let subWindow = await windowStageStart.createSubWindow(caseName);
+          await subWindow.resize(mainWindowRect.width, mainWindowRect.height);
+          await subWindow.moveWindowTo(mainWindowRect.left, mainWindowRect.top);
+          console.info(caseName + ' Sub window resized and moved to match main window');
+          await subWindow.setUIContent("testability/pages/First/index2");
+          await subWindow.showWindow();
+          let avoidArea = subWindow.getWindowAvoidAreaIgnoringVisibility(window.AvoidAreaType.TYPE_SYSTEM);
+          console.info(caseName + ' avoidArea: ' + JSON.stringify(avoidArea));
+          expect(avoidArea.leftRect.width).assertEqual(0);
+          expect(avoidArea.leftRect.height).assertEqual(0);
+          expect(avoidArea.rightRect.width).assertEqual(0);
+          expect(avoidArea.rightRect.height).assertEqual(0);
+          expect(avoidArea.topRect.width).assertEqual(0);
+          expect(avoidArea.topRect.height).assertEqual(0);
+          expect(avoidArea.bottomRect.width).assertEqual(0);
+          expect(avoidArea.bottomRect.height).assertEqual(0);
+          await subWindow.destroyWindow();
+          await terminateAbility7(caseName);
+          done()
+        } else {
+          await terminateAbility7(caseName);
+          done();
+        }
+      } catch (err) {
+        console.error(caseName + ' failed, err: ' + JSON.stringify(err));
+        expect().assertFail();
+        await terminateAbility7(caseName);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_BASIC_WMS_GET_WINDOW_AVOID_AREA_IGNORING_VISIBILITY_0200
+     * @tc.name      : testFreeMultWindowNotFullScreenGetWindowAvoidAreaIgnoringVisibility
+     * @tc.desc      : 验证在自由多窗模式下非全屏窗口调用getWindowAvoidAreaIgnoringVisibility接口
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level0
+     */
+    it('testFreeMultWindowNotFullScreenGetWindowAvoidAreaIgnoringVisibility', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testFreeMultWindowNotFullScreenGetWindowAvoidAreaIgnoringVisibility';
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      let windowStageStart = await startAbility7(caseName, context);
+      let windowClass = windowStageStart.getMainWindowSync();
+      let isInFreeWindowMode = windowClass.isInFreeWindowMode();
+      console.info(caseName + ' isInFreeWindowMode: ' + JSON.stringify(isInFreeWindowMode));
+      try {
+        if (isInFreeWindowMode) {
+          const mainWindowProperties = windowClass.getWindowProperties();
+          const mainWindowRect = mainWindowProperties.windowRect;
+          console.info(caseName + ' Main window rect: ' + JSON.stringify(mainWindowRect));
+          let subWindow = await windowStageStart.createSubWindow(caseName);
+          await subWindow.resize(mainWindowRect.width, mainWindowRect.height);
+          await subWindow.moveWindowTo(mainWindowRect.left, mainWindowRect.top);
+          console.info(caseName + ' Sub window resized and moved to match main window');
+          await subWindow.setUIContent("testability/pages/First/index2");
+          await subWindow.showWindow();
+          let avoidArea = subWindow.getWindowAvoidAreaIgnoringVisibility(window.AvoidAreaType.TYPE_SYSTEM);
+          console.info(caseName + ' avoidArea: ' + JSON.stringify(avoidArea));
+          expect(avoidArea.leftRect.width).assertEqual(0);
+          expect(avoidArea.leftRect.height).assertEqual(0);
+          expect(avoidArea.rightRect.width).assertEqual(0);
+          expect(avoidArea.rightRect.height).assertEqual(0);
+          expect(avoidArea.topRect.width).assertEqual(0);
+          expect(avoidArea.topRect.height).assertEqual(0);
+          expect(avoidArea.bottomRect.width).assertEqual(0);
+          expect(avoidArea.bottomRect.height).assertEqual(0);
+          await subWindow.destroyWindow();
+          await terminateAbility7(caseName);
+          done()
+        } else {
+          await terminateAbility7(caseName);
+          done();
+        }
+      } catch (err) {
+        console.error(caseName + ' failed, err: ' + JSON.stringify(err));
+        expect().assertFail();
+        await terminateAbility7(caseName);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_BASIC_WMS_GET_WINDOW_AVOID_AREA_IGNORING_VISIBILITY_0300
+     * @tc.name      : testNotFreeMultWindowMainWindowGetWindowAvoidAreaIgnoringVisibility
+     * @tc.desc      : 验证在非自由多窗模式下状态栏、导航条未隐藏时主窗口调用getWindowAvoidAreaIgnoringVisibility接口
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level0
+     */
+    it('testNotFreeMultWindowMainWindowGetWindowAvoidAreaIgnoringVisibility', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testNotFreeMultWindowMainWindowGetWindowAvoidAreaIgnoringVisibility';
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      let windowStageStart = await startAbility7(caseName, context);
+      let windowClass = windowStageStart.getMainWindowSync();
+      let isInFreeWindowMode = windowClass.isInFreeWindowMode();
+      console.info(caseName + ' isInFreeWindowMode: ' + JSON.stringify(isInFreeWindowMode));
+      try {
+        if (!isInFreeWindowMode) {
+          // 主窗setWindowSystemBarEnable为true 这啥意思？？？
+          await windowClass.setWindowSystemBarEnable(['status']);
+          try {
+            let avoidArea1 = windowClass.getWindowAvoidAreaIgnoringVisibility(window.AvoidAreaType.TYPE_SYSTEM);
+            console.info(caseName + ' avoidArea1: ' + JSON.stringify(avoidArea1));
+            let avoidArea2 = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM)
+            console.info(caseName + ' avoidArea2: ' + JSON.stringify(avoidArea2));
+            expect(avoidArea1.leftRect.left).assertEqual(avoidArea2.leftRect.left);
+            expect(avoidArea1.leftRect.top).assertEqual(avoidArea2.leftRect.top);
+            expect(avoidArea1.leftRect.width).assertEqual(avoidArea2.leftRect.width);
+            expect(avoidArea1.leftRect.height).assertEqual(avoidArea2.leftRect.height);
+
+            expect(avoidArea1.rightRect.left).assertEqual(avoidArea2.rightRect.left);
+            expect(avoidArea1.rightRect.top).assertEqual(avoidArea2.rightRect.top);
+            expect(avoidArea1.rightRect.width).assertEqual(avoidArea2.rightRect.width);
+            expect(avoidArea1.rightRect.height).assertEqual(avoidArea2.rightRect.height);
+
+            expect(avoidArea1.topRect.left).assertEqual(avoidArea2.topRect.left);
+            expect(avoidArea1.topRect.top).assertEqual(avoidArea2.topRect.top);
+            expect(avoidArea1.topRect.width).assertEqual(avoidArea2.topRect.width);
+            expect(avoidArea1.topRect.height).assertEqual(avoidArea2.topRect.height);
+
+            expect(avoidArea1.bottomRect.left).assertEqual(avoidArea2.bottomRect.left);
+            expect(avoidArea1.bottomRect.top).assertEqual(avoidArea2.bottomRect.top);
+            expect(avoidArea1.bottomRect.width).assertEqual(avoidArea2.bottomRect.width);
+            expect(avoidArea1.bottomRect.height).assertEqual(avoidArea2.bottomRect.height);
+          } catch (error) {
+            console.error(caseName + ' failed1, error: ' + JSON.stringify(error));
+            await terminateAbility7(caseName);
+            if (error.code == 801) {
+              done()
+            } else {
+              expect().assertFail();
+              done()
+            }
+          }
+
+          try {
+            let avoidArea3 = windowClass.getWindowAvoidAreaIgnoringVisibility(window.AvoidAreaType.TYPE_CUTOUT);
+            console.info(caseName + ' avoidArea3: ' + JSON.stringify(avoidArea3));
+            let avoidArea4 = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_CUTOUT)
+            console.info(caseName + ' avoidArea4: ' + JSON.stringify(avoidArea4));
+            expect(avoidArea3.leftRect.left).assertEqual(avoidArea4.leftRect.left);
+            expect(avoidArea3.leftRect.top).assertEqual(avoidArea4.leftRect.top);
+            expect(avoidArea3.leftRect.width).assertEqual(avoidArea4.leftRect.width);
+            expect(avoidArea3.leftRect.height).assertEqual(avoidArea4.leftRect.height);
+
+            expect(avoidArea3.rightRect.left).assertEqual(avoidArea4.rightRect.left);
+            expect(avoidArea3.rightRect.top).assertEqual(avoidArea4.rightRect.top);
+            expect(avoidArea3.rightRect.width).assertEqual(avoidArea4.rightRect.width);
+            expect(avoidArea3.rightRect.height).assertEqual(avoidArea4.rightRect.height);
+
+            expect(avoidArea3.topRect.left).assertEqual(avoidArea4.topRect.left);
+            expect(avoidArea3.topRect.top).assertEqual(avoidArea4.topRect.top);
+            expect(avoidArea3.topRect.width).assertEqual(avoidArea4.topRect.width);
+            expect(avoidArea3.topRect.height).assertEqual(avoidArea4.topRect.height);
+
+            expect(avoidArea3.bottomRect.left).assertEqual(avoidArea4.bottomRect.left);
+            expect(avoidArea3.bottomRect.top).assertEqual(avoidArea4.bottomRect.top);
+            expect(avoidArea3.bottomRect.width).assertEqual(avoidArea4.bottomRect.width);
+            expect(avoidArea3.bottomRect.height).assertEqual(avoidArea4.bottomRect.height);
+          } catch (error) {
+            console.error(caseName + ' failed2, error: ' + JSON.stringify(error));
+            await terminateAbility7(caseName);
+            if (error.code == 801) {
+              done()
+            } else {
+              expect().assertFail();
+              done()
+            }
+          }
+
+          try {
+            let avoidArea5 = windowClass.getWindowAvoidAreaIgnoringVisibility(window.AvoidAreaType.TYPE_KEYBOARD);
+            console.info(caseName + ' avoidArea5: ' + JSON.stringify(avoidArea5));
+            let avoidArea6 = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_KEYBOARD)
+            console.info(caseName + ' avoidArea6: ' + JSON.stringify(avoidArea6));
+            await terminateAbility7(caseName);
+            expect().assertFail();
+            done()
+          } catch (error) {
+            console.error(caseName + ' failed3, error: ' + JSON.stringify(error));
+            expect(error.code).assertEqual(1300016)
+          }
+
+          try {
+            let avoidArea7 = windowClass.getWindowAvoidAreaIgnoringVisibility(window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR);
+            console.info(caseName + ' avoidArea7: ' + JSON.stringify(avoidArea7));
+            let avoidArea8 = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR)
+            console.info(caseName + ' avoidArea8: ' + JSON.stringify(avoidArea8));
+            expect(avoidArea7.leftRect.left).assertEqual(avoidArea8.leftRect.left);
+            expect(avoidArea7.leftRect.top).assertEqual(avoidArea8.leftRect.top);
+            expect(avoidArea7.leftRect.width).assertEqual(avoidArea8.leftRect.width);
+            expect(avoidArea7.leftRect.height).assertEqual(avoidArea8.leftRect.height);
+
+            expect(avoidArea7.rightRect.left).assertEqual(avoidArea8.rightRect.left);
+            expect(avoidArea7.rightRect.top).assertEqual(avoidArea8.rightRect.top);
+            expect(avoidArea7.rightRect.width).assertEqual(avoidArea8.rightRect.width);
+            expect(avoidArea7.rightRect.height).assertEqual(avoidArea8.rightRect.height);
+
+            expect(avoidArea7.topRect.left).assertEqual(avoidArea8.topRect.left);
+            expect(avoidArea7.topRect.top).assertEqual(avoidArea8.topRect.top);
+            expect(avoidArea7.topRect.width).assertEqual(avoidArea8.topRect.width);
+            expect(avoidArea7.topRect.height).assertEqual(avoidArea8.topRect.height);
+
+            expect(avoidArea7.bottomRect.left).assertEqual(avoidArea8.bottomRect.left);
+            expect(avoidArea7.bottomRect.top).assertEqual(avoidArea8.bottomRect.top);
+            expect(avoidArea7.bottomRect.width).assertEqual(avoidArea8.bottomRect.width);
+            expect(avoidArea7.bottomRect.height).assertEqual(avoidArea8.bottomRect.height);
+            await terminateAbility7(caseName);
+            done()
+          } catch (error) {
+            console.error(caseName + ' failed4, error: ' + JSON.stringify(error));
+            await terminateAbility7(caseName);
+            if (error.code == 801) {
+              done()
+            } else {
+              expect().assertFail();
+              done()
+            }
+          }
+        } else {
+          await terminateAbility7(caseName);
+          done();
+        }
+      } catch (err) {
+        console.error(caseName + ' failed, err: ' + JSON.stringify(err));
+        expect().assertFail();
+        await terminateAbility7(caseName);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_BASIC_WMS_GET_WINDOW_AVOID_AREA_IGNORING_VISIBILITY_0400
+     * @tc.name      : testNotFreeMultWindowMainWindowHideGetWindowAvoidAreaIgnoringVisibility
+     * @tc.desc      : 验证在非自由多窗模式下状态栏、导航条隐藏时主窗口调用getWindowAvoidAreaIgnoringVisibility接口
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level0
+     */
+    it('testNotFreeMultWindowMainWindowHideGetWindowAvoidAreaIgnoringVisibility', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testNotFreeMultWindowMainWindowHideGetWindowAvoidAreaIgnoringVisibility';
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      let windowStageStart = await startAbility7(caseName, context);
+      let windowClass = windowStageStart.getMainWindowSync();
+      let isInFreeWindowMode = windowClass.isInFreeWindowMode();
+      console.info(caseName + ' isInFreeWindowMode: ' + JSON.stringify(isInFreeWindowMode));
+      try {
+        if (!isInFreeWindowMode) {
+          await windowClass.setWindowSystemBarEnable([]);
+          try {
+            let avoidArea1 = windowClass.getWindowAvoidAreaIgnoringVisibility(window.AvoidAreaType.TYPE_SYSTEM);
+            console.info(caseName + ' avoidArea1: ' + JSON.stringify(avoidArea1));
+            let avoidArea2 = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM)
+            console.info(caseName + ' avoidArea2: ' + JSON.stringify(avoidArea2));
+            // expect(avoidArea1.leftRect.left).assertEqual(avoidArea2.leftRect.left);
+            // expect(avoidArea1.leftRect.top).assertEqual(avoidArea2.leftRect.top);
+            expect(avoidArea1.leftRect.width).assertEqual(0);
+            expect(avoidArea1.leftRect.height).assertEqual(0);
+
+            // expect(avoidArea1.rightRect.left).assertEqual(avoidArea2.rightRect.left);
+            // expect(avoidArea1.rightRect.top).assertEqual(avoidArea2.rightRect.top);
+            expect(avoidArea1.rightRect.width).assertEqual(0);
+            expect(avoidArea1.rightRect.height).assertEqual(0);
+
+            // expect(avoidArea1.topRect.left).assertEqual(avoidArea2.topRect.left);
+            // expect(avoidArea1.topRect.top).assertEqual(avoidArea2.topRect.top);
+            expect(avoidArea1.topRect.width).assertEqual(0);
+            expect(avoidArea1.topRect.height).assertEqual(0);
+
+            // expect(avoidArea1.bottomRect.left).assertEqual(avoidArea2.bottomRect.left);
+            // expect(avoidArea1.bottomRect.top).assertEqual(avoidArea2.bottomRect.top);
+            expect(avoidArea1.bottomRect.width).assertEqual(0);
+            expect(avoidArea1.bottomRect.height).assertEqual(0);
+          } catch (error) {
+            console.error(caseName + ' failed1, error: ' + JSON.stringify(error));
+            await terminateAbility7(caseName);
+            if (error.code == 801) {
+              done()
+            } else {
+              expect().assertFail();
+              done()
+            }
+          }
+
+          try {
+            let avoidArea3 = windowClass.getWindowAvoidAreaIgnoringVisibility(window.AvoidAreaType.TYPE_CUTOUT);
+            console.info(caseName + ' avoidArea3: ' + JSON.stringify(avoidArea3));
+            let avoidArea4 = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_CUTOUT)
+            console.info(caseName + ' avoidArea4: ' + JSON.stringify(avoidArea4));
+            expect(avoidArea3.leftRect.left).assertEqual(avoidArea4.leftRect.left);
+            expect(avoidArea3.leftRect.top).assertEqual(avoidArea4.leftRect.top);
+            expect(avoidArea3.leftRect.width).assertEqual(avoidArea4.leftRect.width);
+            expect(avoidArea3.leftRect.height).assertEqual(avoidArea4.leftRect.height);
+
+            expect(avoidArea3.rightRect.left).assertEqual(avoidArea4.rightRect.left);
+            expect(avoidArea3.rightRect.top).assertEqual(avoidArea4.rightRect.top);
+            expect(avoidArea3.rightRect.width).assertEqual(avoidArea4.rightRect.width);
+            expect(avoidArea3.rightRect.height).assertEqual(avoidArea4.rightRect.height);
+
+            expect(avoidArea3.topRect.left).assertEqual(avoidArea4.topRect.left);
+            expect(avoidArea3.topRect.top).assertEqual(avoidArea4.topRect.top);
+            expect(avoidArea3.topRect.width).assertEqual(avoidArea4.topRect.width);
+            expect(avoidArea3.topRect.height).assertEqual(avoidArea4.topRect.height);
+
+            expect(avoidArea3.bottomRect.left).assertEqual(avoidArea4.bottomRect.left);
+            expect(avoidArea3.bottomRect.top).assertEqual(avoidArea4.bottomRect.top);
+            expect(avoidArea3.bottomRect.width).assertEqual(avoidArea4.bottomRect.width);
+            expect(avoidArea3.bottomRect.height).assertEqual(avoidArea4.bottomRect.height);
+          } catch (error) {
+            console.error(caseName + ' failed2, error: ' + JSON.stringify(error));
+            await terminateAbility7(caseName);
+            if (error.code == 801) {
+              done()
+            } else {
+              expect().assertFail();
+              done()
+            }
+          }
+
+          try {
+            let avoidArea5 = windowClass.getWindowAvoidAreaIgnoringVisibility(window.AvoidAreaType.TYPE_KEYBOARD);
+            console.info(caseName + ' avoidArea5: ' + JSON.stringify(avoidArea5));
+            let avoidArea6 = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_KEYBOARD)
+            console.info(caseName + ' avoidArea6: ' + JSON.stringify(avoidArea6));
+            await terminateAbility7(caseName);
+            expect().assertFail();
+            done()
+          } catch (error) {
+            console.error(caseName + ' failed3, error: ' + JSON.stringify(error));
+            expect(error.code).assertEqual(1300016)
+          }
+
+          try {
+            let avoidArea7 = windowClass.getWindowAvoidAreaIgnoringVisibility(window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR);
+            console.info(caseName + ' avoidArea7: ' + JSON.stringify(avoidArea7));
+            let avoidArea8 = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR)
+            console.info(caseName + ' avoidArea8: ' + JSON.stringify(avoidArea8));
+            // expect(avoidArea7.leftRect.left).assertEqual(avoidArea8.leftRect.left);
+            // expect(avoidArea7.leftRect.top).assertEqual(avoidArea8.leftRect.top);
+            expect(avoidArea7.leftRect.width).assertEqual(0);
+            expect(avoidArea7.leftRect.height).assertEqual(0);
+
+            // expect(avoidArea7.rightRect.left).assertEqual(avoidArea8.rightRect.left);
+            // expect(avoidArea7.rightRect.top).assertEqual(avoidArea8.rightRect.top);
+            expect(avoidArea7.rightRect.width).assertEqual(0);
+            expect(avoidArea7.rightRect.height).assertEqual(0);
+
+            // expect(avoidArea7.topRect.left).assertEqual(avoidArea8.topRect.left);
+            // expect(avoidArea7.topRect.top).assertEqual(avoidArea8.topRect.top);
+            expect(avoidArea7.topRect.width).assertEqual(0);
+            expect(avoidArea7.topRect.height).assertEqual(0);
+
+            // expect(avoidArea7.bottomRect.left).assertEqual(avoidArea8.bottomRect.left);
+            // expect(avoidArea7.bottomRect.top).assertEqual(avoidArea8.bottomRect.top);
+            expect(avoidArea7.bottomRect.width).assertEqual(0);
+            expect(avoidArea7.bottomRect.height).assertEqual(0);
+            await terminateAbility7(caseName);
+            done()
+          } catch (error) {
+            console.error(caseName + ' failed4, error: ' + JSON.stringify(error));
+            await terminateAbility7(caseName);
+            if (error.code == 801) {
+              done()
+            } else {
+              expect().assertFail();
+              done()
+            }
+          }
+        } else {
+          await terminateAbility7(caseName);
+          done();
+        }
+      } catch (err) {
+        console.error(caseName + ' failed, err: ' + JSON.stringify(err));
+        expect().assertFail();
+        await terminateAbility7(caseName);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number    : SUB_BASIC_WMS_GET_WINDOW_AVOID_AREA_IGNORING_VISIBILITY_0500
+     * @tc.name      : testNotFreeMultWindowMainWindowDestroyGetWindowAvoidAreaIgnoringVisibilityCutout
+     * @tc.desc      : 销毁窗口后调用getWindowAvoidAreaIgnoringVisibility接口
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level2
+     */
+    it('testNotFreeMultWindowMainWindowDestroyGetWindowAvoidAreaIgnoringVisibilityCutout', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName = 'testNotFreeMultWindowMainWindowDestroyGetWindowAvoidAreaIgnoringVisibilityCutout';
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      let subWindowClass = await windowStage.createSubWindow(caseName);
+      await subWindowClass.destroyWindow();
+      try {
+        let avoidArea1 = subWindowClass.getWindowAvoidAreaIgnoringVisibility(window.AvoidAreaType.TYPE_SYSTEM);
+        console.info(caseName + ' avoidArea1: ' + JSON.stringify(avoidArea1));
+        let avoidArea2 = subWindowClass.getWindowAvoidAreaIgnoringVisibility(window.AvoidAreaType.TYPE_CUTOUT);
+        console.info(caseName + ' avoidArea2: ' + JSON.stringify(avoidArea2));
+        let avoidArea3 = subWindowClass.getWindowAvoidAreaIgnoringVisibility(window.AvoidAreaType.TYPE_KEYBOARD);
+        console.info(caseName + ' avoidArea3: ' + JSON.stringify(avoidArea3));
+        let avoidArea4 = subWindowClass.getWindowAvoidAreaIgnoringVisibility(window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR);
+        console.info(caseName + ' avoidArea4: ' + JSON.stringify(avoidArea4));
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.error(caseName + ' failed, err: ' + JSON.stringify(err));
+        if (canIUseRes) {
+          expect(err.code).assertEqual(1300002)
+          done();
+        } else {
+          expect(err.code).assertEqual(801)
+          done();
+        }
+      }
+    });
+
+
+
+    /**
+     * @tc.number    : SUB_BASIC_WMS_GET_WINDOW_AVOID_AREA_IGNORING_VISIBILITY_0600
+     * @tc.name      : testNotFreeMultWindowMainWindowSubwindowGetWindowAvoidAreaIgnoringVisibilityKeyboard
+     * @tc.desc      : 验证在非自由多窗模式下状态栏、导航条隐藏时子窗与主窗位置大小一致时调用getWindowAvoidAreaIgnoringVisibility接口
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level0
+     */
+    it('testNotFreeMultWindowMainWindowSubwindowGetWindowAvoidAreaIgnoringVisibilityKeyboard', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testNotFreeMultWindowMainWindowSubwindowGetWindowAvoidAreaIgnoringVisibilityKeyboard';
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      let windowStageStart = await startAbility7(caseName, context);
+      let windowClass = windowStageStart.getMainWindowSync();
+      let isInFreeWindowMode = windowClass.isInFreeWindowMode();
+      console.info(caseName + ' isInFreeWindowMode: ' + JSON.stringify(isInFreeWindowMode));
+      try {
+        if (!isInFreeWindowMode) {
+          await windowClass.maximize();
+          const mainWindowProperties = windowClass.getWindowProperties();
+          const mainWindowRect = mainWindowProperties.windowRect;
+          console.info(caseName + ' Main window rect: ' + JSON.stringify(mainWindowRect));
+          let subWindow = await windowStageStart.createSubWindow(caseName);
+          await subWindow.resize(mainWindowRect.width, mainWindowRect.height);
+          await subWindow.moveWindowTo(mainWindowRect.left, mainWindowRect.top);
+          console.info(caseName + ' Sub window resized and moved to match main window');
+          await subWindow.setUIContent("testability/pages/First/index2");
+          await subWindow.showWindow();
+          try {
+            let avoidArea1 = windowClass.getWindowAvoidAreaIgnoringVisibility(window.AvoidAreaType.TYPE_SYSTEM);
+            console.info(caseName + ' avoidArea1: ' + JSON.stringify(avoidArea1));
+            let avoidArea2 = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM)
+            console.info(caseName + ' avoidArea2: ' + JSON.stringify(avoidArea2));
+            expect(avoidArea1.leftRect.left).assertEqual(avoidArea2.leftRect.left);
+            expect(avoidArea1.leftRect.top).assertEqual(avoidArea2.leftRect.top);
+            expect(avoidArea1.leftRect.width).assertEqual(avoidArea2.leftRect.width);
+            expect(avoidArea1.leftRect.height).assertEqual(avoidArea2.leftRect.height);
+
+            expect(avoidArea1.rightRect.left).assertEqual(avoidArea2.rightRect.left);
+            expect(avoidArea1.rightRect.top).assertEqual(avoidArea2.rightRect.top);
+            expect(avoidArea1.rightRect.width).assertEqual(avoidArea2.rightRect.width);
+            expect(avoidArea1.rightRect.height).assertEqual(avoidArea2.rightRect.height);
+
+            expect(avoidArea1.topRect.left).assertEqual(avoidArea2.topRect.left);
+            expect(avoidArea1.topRect.top).assertEqual(avoidArea2.topRect.top);
+            expect(avoidArea1.topRect.width).assertEqual(avoidArea2.topRect.width);
+            expect(avoidArea1.topRect.height).assertEqual(avoidArea2.topRect.height);
+
+            expect(avoidArea1.bottomRect.left).assertEqual(avoidArea2.bottomRect.left);
+            expect(avoidArea1.bottomRect.top).assertEqual(avoidArea2.bottomRect.top);
+            expect(avoidArea1.bottomRect.width).assertEqual(avoidArea2.bottomRect.width);
+            expect(avoidArea1.bottomRect.height).assertEqual(avoidArea2.bottomRect.height);
+          } catch (error) {
+            console.error(caseName + ' failed1, error: ' + JSON.stringify(error));
+            await terminateAbility7(caseName);
+            if (error.code == 801) {
+              done()
+            } else {
+              expect().assertFail();
+              done()
+            }
+          }
+
+          try {
+            let avoidArea3 = windowClass.getWindowAvoidAreaIgnoringVisibility(window.AvoidAreaType.TYPE_CUTOUT);
+            console.info(caseName + ' avoidArea3: ' + JSON.stringify(avoidArea3));
+            let avoidArea4 = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_CUTOUT)
+            console.info(caseName + ' avoidArea4: ' + JSON.stringify(avoidArea4));
+            expect(avoidArea3.leftRect.left).assertEqual(avoidArea4.leftRect.left);
+            expect(avoidArea3.leftRect.top).assertEqual(avoidArea4.leftRect.top);
+            expect(avoidArea3.leftRect.width).assertEqual(avoidArea4.leftRect.width);
+            expect(avoidArea3.leftRect.height).assertEqual(avoidArea4.leftRect.height);
+
+            expect(avoidArea3.rightRect.left).assertEqual(avoidArea4.rightRect.left);
+            expect(avoidArea3.rightRect.top).assertEqual(avoidArea4.rightRect.top);
+            expect(avoidArea3.rightRect.width).assertEqual(avoidArea4.rightRect.width);
+            expect(avoidArea3.rightRect.height).assertEqual(avoidArea4.rightRect.height);
+
+            expect(avoidArea3.topRect.left).assertEqual(avoidArea4.topRect.left);
+            expect(avoidArea3.topRect.top).assertEqual(avoidArea4.topRect.top);
+            expect(avoidArea3.topRect.width).assertEqual(avoidArea4.topRect.width);
+            expect(avoidArea3.topRect.height).assertEqual(avoidArea4.topRect.height);
+
+            expect(avoidArea3.bottomRect.left).assertEqual(avoidArea4.bottomRect.left);
+            expect(avoidArea3.bottomRect.top).assertEqual(avoidArea4.bottomRect.top);
+            expect(avoidArea3.bottomRect.width).assertEqual(avoidArea4.bottomRect.width);
+            expect(avoidArea3.bottomRect.height).assertEqual(avoidArea4.bottomRect.height);
+          } catch (error) {
+            console.error(caseName + ' failed2, error: ' + JSON.stringify(error));
+            await terminateAbility7(caseName);
+            if (error.code == 801) {
+              done()
+            } else {
+              expect().assertFail();
+              done()
+            }
+          }
+
+          try {
+            let avoidArea5 = windowClass.getWindowAvoidAreaIgnoringVisibility(window.AvoidAreaType.TYPE_KEYBOARD);
+            console.info(caseName + ' avoidArea5: ' + JSON.stringify(avoidArea5));
+            let avoidArea6 = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_KEYBOARD)
+            console.info(caseName + ' avoidArea6: ' + JSON.stringify(avoidArea6));
+            await terminateAbility7(caseName);
+            expect().assertFail();
+            done()
+          } catch (error) {
+            console.error(caseName + ' failed3, error: ' + JSON.stringify(error));
+            expect(error.code).assertEqual(1300016)
+          }
+
+          try {
+            let avoidArea7 = windowClass.getWindowAvoidAreaIgnoringVisibility(window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR);
+            console.info(caseName + ' avoidArea7: ' + JSON.stringify(avoidArea7));
+            let avoidArea8 = windowClass.getWindowAvoidArea(window.AvoidAreaType.TYPE_NAVIGATION_INDICATOR)
+            console.info(caseName + ' avoidArea8: ' + JSON.stringify(avoidArea8));
+            expect(avoidArea7.leftRect.left).assertEqual(avoidArea8.leftRect.left);
+            expect(avoidArea7.leftRect.top).assertEqual(avoidArea8.leftRect.top);
+            expect(avoidArea7.leftRect.width).assertEqual(avoidArea8.leftRect.width);
+            expect(avoidArea7.leftRect.height).assertEqual(avoidArea8.leftRect.height);
+
+            expect(avoidArea7.rightRect.left).assertEqual(avoidArea8.rightRect.left);
+            expect(avoidArea7.rightRect.top).assertEqual(avoidArea8.rightRect.top);
+            expect(avoidArea7.rightRect.width).assertEqual(avoidArea8.rightRect.width);
+            expect(avoidArea7.rightRect.height).assertEqual(avoidArea8.rightRect.height);
+
+            expect(avoidArea7.topRect.left).assertEqual(avoidArea8.topRect.left);
+            expect(avoidArea7.topRect.top).assertEqual(avoidArea8.topRect.top);
+            expect(avoidArea7.topRect.width).assertEqual(avoidArea8.topRect.width);
+            expect(avoidArea7.topRect.height).assertEqual(avoidArea8.topRect.height);
+
+            expect(avoidArea7.bottomRect.left).assertEqual(avoidArea8.bottomRect.left);
+            expect(avoidArea7.bottomRect.top).assertEqual(avoidArea8.bottomRect.top);
+            expect(avoidArea7.bottomRect.width).assertEqual(avoidArea8.bottomRect.width);
+            expect(avoidArea7.bottomRect.height).assertEqual(avoidArea8.bottomRect.height);
+            await terminateAbility7(caseName);
+            done()
+          } catch (error) {
+            console.error(caseName + ' failed4, error: ' + JSON.stringify(error));
+            await terminateAbility7(caseName);
+            if (error.code == 801) {
+              done()
+            } else {
+              expect().assertFail();
+              done()
+            }
+          }
+        } else {
+          await terminateAbility7(caseName);
+          done();
+        }
+      } catch (err) {
+        console.error(caseName + ' failed, err: ' + JSON.stringify(err));
+        await terminateAbility7(caseName);
+        if (err.code == 801) {
+          done()
+        } else {
+          expect().assertFail();
+          done()
+        }
+      }
+    });
+
   })
 }
 
