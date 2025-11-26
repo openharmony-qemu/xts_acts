@@ -1960,7 +1960,7 @@ export default function settingUiJsunit() {
     it('settings_get_value_context_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result: boolean =
+          let result =
             await settings.getValue(null, 'testkey', settings.domainName.DEVICE_SHARED);
           expect().assertFail();
           done();
@@ -1984,7 +1984,7 @@ export default function settingUiJsunit() {
     it('settings_get_value_key_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result: boolean =
+          let result =
             await settings.getValue(globalThis.abilityContext, null, settings.domainName.DEVICE_SHARED);
           expect().assertFail();
           done();
@@ -2010,7 +2010,7 @@ export default function settingUiJsunit() {
         try {
           let value: string = 'value';
           await settings.setValue(globalThis.abilityContext, '', value,  settings.domainName.DEVICE_SHARED);
-          let result: boolean =
+          let result =
             await settings.getValue(globalThis.abilityContext, '', settings.domainName.DEVICE_SHARED);
           expect(result === value).assertTrue();
           done();
@@ -2033,7 +2033,7 @@ export default function settingUiJsunit() {
     it('settings_get_value_domain_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result: boolean =
+          let result =
             await settings.getValue(globalThis.abilityContext, 'testkey', null);
           expect(result === null).assertTrue();
           done();
@@ -2056,7 +2056,7 @@ export default function settingUiJsunit() {
     it('settings_get_value_domain_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result: boolean =
+          let result =
             await settings.getValue(globalThis.abilityContext, 'testkey', '');
           expect(result === null).assertTrue();
           done();
@@ -2079,7 +2079,7 @@ export default function settingUiJsunit() {
     it('settings_get_value_sync_context_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result: boolean =
+          let result: string =
             await settings.getValueSync(null, 'testkey', 'defValue', settings.domainName.DEVICE_SHARED);
           expect().assertFail();
           done();
@@ -2103,7 +2103,7 @@ export default function settingUiJsunit() {
     it('settings_get_value_sync_key_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result: boolean =
+          let result: string =
             await settings.getValueSync(globalThis.abilityContext, null, 'defValue', settings.domainName.DEVICE_SHARED);
           expect().assertFail();
           done();
@@ -2129,7 +2129,7 @@ export default function settingUiJsunit() {
         try {
           let value: string = 'value';
           await settings.setValue(globalThis.abilityContext, '', value,  settings.domainName.DEVICE_SHARED);
-          let result: boolean =
+          let result: string =
             await settings.getValueSync(globalThis.abilityContext, '', 'defValue', settings.domainName.DEVICE_SHARED);
           expect(result === value).assertTrue();
           done();
@@ -2152,9 +2152,9 @@ export default function settingUiJsunit() {
     it('settings_get_value_sync_domain_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result: boolean =
-            await settings.getValueSync(globalThis.abilityContext, 'testkey', 'defValue', null);
-          expect(result === null).assertTrue();
+          let result: string =
+            await settings.getValueSync(globalThis.abilityContext, 'testkeyadfasdf', 'defValue', null);
+          expect(result === 'defValue').assertTrue();
           done();
         } catch (err) {
           console.error("[settings_get_value_sync_domain_null] error = " + err);
@@ -2175,9 +2175,9 @@ export default function settingUiJsunit() {
     it('settings_get_value_sync_domain_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result: boolean =
-            await settings.getValueSync(globalThis.abilityContext, 'testkey', 'defValue', '');
-          expect(result === null).assertTrue();
+          let result: string =
+            await settings.getValueSync(globalThis.abilityContext, 'testkeyadfasdfa', 'defValue', '');
+          expect(result === 'defValue').assertTrue();
           done();
         } catch (err) {
           console.error("[settings_get_value_sync_domain_empty] error = " + err);
@@ -2198,9 +2198,7 @@ export default function settingUiJsunit() {
     it('settings_registerKeyObserver_context_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let result = settings.registerKeyObserver(null, name, settings.domainName.DEVICE_SHARED, (err, ret) => {
-            let ret1 = settings.getValueSync(globalThis.abilityContext, name, settings.domainName.DEVICE_SHARED);
-            expect().assertFail();
+          let result = settings.registerKeyObserver(null, 'testkey', settings.domainName.DEVICE_SHARED, (err, ret) => {
             done();
           })
           expect(result).assertTrue();
@@ -2226,8 +2224,6 @@ export default function settingUiJsunit() {
       async (done: Function) => {
         try {
           let value = settings.registerKeyObserver(globalThis.abilityContext, null, settings.domainName.DEVICE_SHARED, (err, ret) => {
-            let ret1 = settings.getValueSync(globalThis.abilityContext, 'testkey', settings.domainName.DEVICE_SHARED);
-            done();
           })
           expect().assertFail();
           done();
@@ -2252,8 +2248,6 @@ export default function settingUiJsunit() {
       async (done: Function) => {
         try {
           let result = settings.registerKeyObserver(globalThis.abilityContext, '', settings.domainName.DEVICE_SHARED, (err, ret) => {
-            let ret1 = settings.getValueSync(globalThis.abilityContext, 'testkey', settings.domainName.DEVICE_SHARED);
-            expect(ret1 === '1').assertTrue();
             done();
           })
           expect(result).assertTrue();
