@@ -62,7 +62,11 @@ function dataEnd_on_callback() {
 
 function dataReceiveProgress_on_callback(data: http.DataReceiveProgressInfo) {
   isONEventDataReceiveProgress +=1;
-  console.log(" dataReceiveProgress_on_callback receive datProgress:" + JSON.stringify(data));
+  console.log("dataReceiveProgress_on_callback receive data: " + JSON.stringify(data));
+  let receiveSize = data.receiveSize;
+  let totalSize = data.totalSize;
+  console.log("dataReceiveProgress_on_callback receiveSize: " + JSON.stringify(receiveSize) +
+    " , dataReceiveProgress_on_callback totalSize: " + JSON.stringify(totalSize));
 }
 
 export default function HttpRequestInStreamTest() {
