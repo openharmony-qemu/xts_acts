@@ -104,11 +104,8 @@ import SendableImagePixelMapCropSyncTest from './sendableImage/SendableImagePixe
 import SendableImagePixelMapSetColorSpaceTest from './sendableImage/SendableImagePixelMapSetColorSpace.Test.test';
 import SendableImagePixelMapUnMarshallingTest from './sendableImage/SendableImagePixelMapUnMarshalling.Test.test';
 import SendableImageSourceCreatePixelMapTest from './sendableImage/SendableImageSourceCreatePixelMap.Test.test';
-import ImageCreateImageReceiverCreator from './image/ImageCreateImageReceiverCreator.test';
-import PictureGetMetadataFirstParameters from './Picture/PictureGetMetadataFirParameters.test';
-import CreatePixelMapUsingAllocatorAndSync from './image/ImageCreatePixelMapUsingAllocatorSuppAb.test';
-import ImageCreateIncrementalSourceSupp from './image/ImageCreateIncrementalSourceSupp.test';
-import modifyImagePropertyValueTest from './image/ModifyImagePropertyValue.test';
+import ImagePictureSetAuxiliaryPictureTest from './image/ImagePictureSetAuxiliaryPicture.Test.test';
+
 
 export default function testsuite() {
   ImagePropertyKeyTest();
@@ -201,9 +198,5 @@ export default function testsuite() {
   SendableImagePixelMapSetColorSpaceTest();
   SendableImagePixelMapUnMarshallingTest();
   SendableImageSourceCreatePixelMapTest();
-  ImageCreateImageReceiverCreator();
-  PictureGetMetadataFirstParameters();
-  CreatePixelMapUsingAllocatorAndSync();
-  ImageCreateIncrementalSourceSupp();
-  modifyImagePropertyValueTest();
+  ImagePictureSetAuxiliaryPictureTest();
 }
