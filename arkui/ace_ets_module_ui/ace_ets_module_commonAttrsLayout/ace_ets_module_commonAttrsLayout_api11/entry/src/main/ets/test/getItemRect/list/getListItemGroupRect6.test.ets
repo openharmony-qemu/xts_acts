@@ -63,12 +63,14 @@ export default function getListItemGroupRect6() {
       console.info("BadgeFocus after each called");
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getListItemGroupRect6_0100
-    * @tc.name  : testGetItemRectInGroup
-    * @tc.desc  : set index to 0,set index to 3,Delete listItem3
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getListItemGroupRect6_0100
+     * @tc.number SUB_ACE_TS_COMPONENT_getListItemGroupRect6_0100
+     * @tc.desc   set index to 0,set index to 3,Delete listItem3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getListItemGroupRect6_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getListItemGroupRect6_0100] START');

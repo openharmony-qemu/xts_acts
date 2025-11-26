@@ -29,13 +29,13 @@ export default function KeyEventGetKeyCodeTest() {
     });
 
    
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_KeyEvent_GetKeyCode_0100
-     * @tc.name       : KeyEventGetKeyCodeTest_001
-     * @tc.desc       : testing KeyEvent GetType
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   KeyEventGetKeyCodeTest_001
+     * @tc.number SUB_ARKUI_CAPI_KeyEvent_GetKeyCode_0100
+     * @tc.desc   testing KeyEvent GetType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('KeyEventGetKeyCodeTest_001', Level.LEVEL1, async (done: Function) => {
       console.info('KeyEventGetKeyCodeTest_001 START');

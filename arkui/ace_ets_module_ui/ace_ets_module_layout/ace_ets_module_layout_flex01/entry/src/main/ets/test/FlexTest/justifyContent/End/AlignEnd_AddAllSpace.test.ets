@@ -47,9 +47,12 @@ export default function AlignEnd_AddAllSpace() {
     });
 
     /**
+     * @tc.name   testFlexAlignEndFlexSpaceOverflow
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_END_TEST_0600
-     * @tc.name testFlexAlignEndFlexSpaceOverflow
-     * @tc.desc the space of parent component set to 30
+     * @tc.desc   the space of parent component set to 30
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignEndFlexSpaceOverflow',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignEndFlexSpaceOverflow] START');
@@ -97,9 +100,12 @@ export default function AlignEnd_AddAllSpace() {
 
     });
     /**
+     * @tc.name   testFlexAlignEndFlexSpaceMeet
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_END_TEST_0700
-     * @tc.name testFlexAlignEndFlexSpaceMeet
-     * @tc.desc the space of parent component set to 20
+     * @tc.desc   the space of parent component set to 20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignEndFlexSpaceMeet',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignEndFlexSpaceMeet] START');

@@ -37,7 +37,7 @@ struct MyStateSample {
             max: 120
           }
           this.ds.setExpectedFrameRateRange(range);
-          this.ds.on('frame', (info: displaySync.IntervalInfo) => {
+          this.ds.onFrame((info: displaySync.IntervalInfo) => {
             this.timestamp = info.timestamp;
             this.targetTimestamp = info.targetTimestamp;
           })
@@ -46,7 +46,7 @@ struct MyStateSample {
       Button('stop').backgroundColor('#FFFF00FF')
         .onClick((e: ClickEvent) => {
           hilog.info(0x0000, 'testTag', 'Stop');
-          this.ds.off('frame')
+          this.ds.offFrame();
           this.ds.stop();
         }).id('stop')
     }

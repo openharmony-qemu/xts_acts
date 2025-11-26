@@ -45,6 +45,14 @@ export default function fillModeJsunit() {
       console.info('fillMode test after each called');
     });
 
+    /**
+     * @tc.name   fillModeTest_0100
+     * @tc.number fillModeTest_0100
+     * @tc.desc   fillModeTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('fillModeTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('fillModeTest_0100 START');
       await CommonFunc.sleep(1500);
@@ -67,6 +75,14 @@ export default function fillModeJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   fillModeTest_0200
+     * @tc.number fillModeTest_0200
+     * @tc.desc   fillModeTest_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('fillModeTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('fillModeTest_0200 START');
       await CommonFunc.sleep(1500);
@@ -89,6 +105,14 @@ export default function fillModeJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   fillModeTest_0300
+     * @tc.number fillModeTest_0300
+     * @tc.desc   fillModeTest_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('fillModeTest_0300', Level.LEVEL1, async (done: Function) => {
       console.info('fillModeTest_0300 START');
       await CommonFunc.sleep(1500);

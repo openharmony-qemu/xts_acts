@@ -24,12 +24,6 @@
 osThreadId_t g_priTaskID01;
 osPriority_t g_setPriority;
 
-/**
- * @tc.desc      : register a test suite, this suite is used to test basic flow and interface dependency
- * @param        : subsystem name is utils
- * @param        : module name is utilsFile
- * @param        : test suit name is CmsisTaskPriFuncTestSuite
- */
 LITE_TEST_SUIT(Cmsis, Cmsistask, CmsisTaskPriFuncTestSuite);
 
 /**
@@ -85,9 +79,12 @@ static void CmsisThreadSetPriorityFunc002(void const *argument)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_5120
- * @tc.name      : thread operation for get priority when Priority = osPriorityLow1
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetPriority001
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5120
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadGetPriority001, Function | MediumTest | Level1)
 {
@@ -107,9 +104,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadGetPriority001, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_5160
- * @tc.name      : thread operation for get priority input exception
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetPriority002
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5160
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadGetPriority002, Function | MediumTest | Level1)
 {
@@ -119,9 +119,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadGetPriority002, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_5200
- * @tc.name      : thread operation for get current priority
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetPriority003
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadGetPriority003, Function | MediumTest | Level1)
 {
@@ -132,9 +135,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadGetPriority003, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_5240
- * @tc.name      : thread operation for get priority when Priority = osPriorityLow7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetPriority004
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5240
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadGetPriority004, Function | MediumTest | Level1)
 {
@@ -154,9 +160,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadGetPriority004, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_5280
- * @tc.name      : thread operation for get priority when Priority = osPriorityBelowNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetPriority005
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5280
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadGetPriority005, Function | MediumTest | Level1)
 {
@@ -176,9 +185,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadGetPriority005, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_5320
- * @tc.name      : thread operation for get priority when Priority = osPriorityBelowNormal7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetPriority006
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5320
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadGetPriority006, Function | MediumTest | Level1)
 {
@@ -198,9 +210,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadGetPriority006, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_5360
- * @tc.name      : thread operation for get priority when Priority = osPriorityNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetPriority007
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5360
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadGetPriority007, Function | MediumTest | Level1)
 {
@@ -220,9 +235,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadGetPriority007, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_5400
- * @tc.name      : thread operation for get priority when Priority = osPriorityNormal7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetPriority008
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadGetPriority008, Function | MediumTest | Level1)
 {
@@ -241,9 +259,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadGetPriority008, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_5440
- * @tc.name      : thread operation for get priority when Priority = osPriorityAboveNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetPriority009
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5440
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadGetPriority009, Function | MediumTest | Level1)
 {
@@ -262,9 +283,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadGetPriority009, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_5480
- * @tc.name      : thread operation for get priority when Priority = osPriorityAboveNormal6
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetPriority010
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5480
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadGetPriority010, Function | MediumTest | Level1)
 {
@@ -283,9 +307,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadGetPriority010, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_5520
- * @tc.name      : thread operation for set priority input1 exception
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority001
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5520
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority001, Function | MediumTest | Level1)
 {
@@ -295,9 +322,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority001, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_5560
- * @tc.name      : thread operation for set priority input2 exception
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority002
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5560
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority002, Function | MediumTest | Level1)
 {
@@ -308,9 +338,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority002, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_5600
- * @tc.name      : set invalid priority when curPriority = osPriorityLow1 and setPriority = osPriorityNone
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority003
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority003, Function | MediumTest | Level1)
 {
@@ -330,9 +363,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority003, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_5640
- * @tc.name      : set invalid priority when curPriority = osPriorityLow1 and setPriority = osPriorityIdle
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority004
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5640
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority004, Function | MediumTest | Level1)
 {
@@ -352,9 +388,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority004, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_5680
- * @tc.name      : set invalid priority when curPriority = osPriorityLow1 and setPriority = osPriorityLow
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority005
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5680
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority005, Function | MediumTest | Level1)
 {
@@ -374,9 +413,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority005, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_5720
- * @tc.name      : set priority when curPriority = osPriorityLow1 and setPriority = osPriorityLow1
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority006
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5720
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority006, Function | MediumTest | Level1)
 {
@@ -396,9 +438,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority006, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_5760
- * @tc.name      : set priority when curPriority = osPriorityLow1 and setPriority = osPriorityLow7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority007
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5760
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority007, Function | MediumTest | Level1)
 {
@@ -418,9 +463,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority007, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_5800
- * @tc.name      : set priority when curPriority = osPriorityLow1 and setPriority = osPriorityBelowNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority008
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority008, Function | MediumTest | Level1)
 {
@@ -440,9 +488,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority008, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_5840
- * @tc.name      : set priority when curPriority = osPriorityLow1 and setPriority = osPriorityBelowNormal7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority009
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5840
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority009, Function | MediumTest | Level1)
 {
@@ -462,9 +513,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority009, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_5880
- * @tc.name      : set priority when curPriority = osPriorityLow1 and setPriority = osPriorityNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority010
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5880
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority010, Function | MediumTest | Level1)
 {
@@ -484,9 +538,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority010, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_5920
- * @tc.name      : set priority when curPriority = osPriorityLow1 and setPriority = osPriorityNormal7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority011
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5920
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority011, Function | MediumTest | Level1)
 {
@@ -506,9 +563,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority011, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_5960
- * @tc.name      : set priority when curPriority = osPriorityLow1 and setPriority = osPriorityAboveNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority012
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5960
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority012, Function | MediumTest | Level1)
 {
@@ -528,9 +588,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority012, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_6000
- * @tc.name      : set priority when curPriority = osPriorityLow1 and setPriority = osPriorityAboveNormal6
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority013
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority013, Function | MediumTest | Level1)
 {
@@ -550,9 +613,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority013, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_6040
- * @tc.name      : set invalid priority when curPriority = osPriorityLow1 and setPriority = osPriorityAboveNormal7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority014
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority014, Function | MediumTest | Level1)
 {
@@ -572,9 +638,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority014, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_6080
- * @tc.name      : set invalid priority when curPriority = osPriorityLow1 and setPriority = osPriorityHigh
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority015
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6080
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority015, Function | MediumTest | Level1)
 {
@@ -594,9 +663,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority015, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_6120
- * @tc.name      : set invalid priority when curPriority = osPriorityLow1 and setPriority = osPriorityHigh7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority016
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6120
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority016, Function | MediumTest | Level1)
 {
@@ -616,9 +688,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority016, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_6160
- * @tc.name      : set invalid priority when curPriority = osPriorityLow1 and setPriority = osPriorityRealtime
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority017
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6160
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority017, Function | MediumTest | Level1)
 {
@@ -638,9 +713,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority017, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_6200
- * @tc.name      : set invalid priority when curPriority = osPriorityLow1 and setPriority = osPriorityRealtime7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority018
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority018, Function | MediumTest | Level1)
 {
@@ -660,9 +738,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority018, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_6240
- * @tc.name      : set invalid priority when curPriority = osPriorityLow1 and setPriority = osPriorityISR
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority019
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6240
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority019, Function | MediumTest | Level1)
 {
@@ -682,9 +763,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority019, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_6280
- * @tc.name      : set invalid priority when curPriority = osPriorityLow1 and setPriority = osPriorityError
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority020
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6280
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority020, Function | MediumTest | Level1)
 {
@@ -704,9 +788,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority020, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_6320
- * @tc.name      : set invalid priority when curPriority = osPriorityLow1 and setPriority = osPriorityReserved
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority021
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6320
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority021, Function | MediumTest | Level1)
 {
@@ -726,9 +813,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority021, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_6360
- * @tc.name      : set invalid priority when curPriority = osPriorityNormal and setPriority = osPriorityNone
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority022
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6360
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority022, Function | MediumTest | Level1)
 {
@@ -748,9 +838,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority022, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_6400
- * @tc.name      : set invalid priority when curPriority = osPriorityNormal and setPriority = osPriorityIdle
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority023
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority023, Function | MediumTest | Level1)
 {
@@ -770,9 +863,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority023, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_6440
- * @tc.name      : set invalid priority when curPriority = osPriorityNormal and setPriority = osPriorityLow
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority024
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6440
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority024, Function | MediumTest | Level1)
 {
@@ -792,9 +888,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority024, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_6480
- * @tc.name      : set priority when curPriority = osPriorityNormal and setPriority = osPriorityLow1
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority025
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6480
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority025, Function | MediumTest | Level1)
 {
@@ -814,9 +913,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority025, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_6520
- * @tc.name      : set priority when curPriority = osPriorityNormal and setPriority = osPriorityLow7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority026
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6520
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority026, Function | MediumTest | Level1)
 {
@@ -836,9 +938,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority026, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_6560
- * @tc.name      : set priority when curPriority = osPriorityNormal and setPriority = osPriorityBelowNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority027
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6560
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority027, Function | MediumTest | Level1)
 {
@@ -858,9 +963,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority027, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_6600
- * @tc.name      : set priority when curPriority = osPriorityNormal and setPriority = osPriorityBelowNormal7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority028
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority028, Function | MediumTest | Level1)
 {
@@ -880,9 +988,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority028, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_6640
- * @tc.name      : set priority when curPriority = osPriorityNormal and setPriority = osPriorityNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority029
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6640
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority029, Function | MediumTest | Level1)
 {
@@ -902,9 +1013,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority029, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_6680
- * @tc.name      : set priority when curPriority = osPriorityNormal and setPriority = osPriorityNormal7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority030
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6680
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority030, Function | MediumTest | Level1)
 {
@@ -924,9 +1038,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority030, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_6720
- * @tc.name      : set priority when curPriority = osPriorityNormal and setPriority = osPriorityAboveNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority031
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6720
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority031, Function | MediumTest | Level1)
 {
@@ -946,9 +1063,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority031, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_6760
- * @tc.name      : set priority when curPriority = osPriorityNormal and setPriority = osPriorityAboveNormal6
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority032
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6760
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority032, Function | MediumTest | Level1)
 {
@@ -968,9 +1088,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority032, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_6800
- * @tc.name      : set invalid priority when curPriority = osPriorityNormal and setPriority = osPriorityAboveNormal7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority033
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority033, Function | MediumTest | Level1)
 {
@@ -990,9 +1113,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority033, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_6840
- * @tc.name      : set invalid priority when curPriority = osPriorityNormal and setPriority = osPriorityHigh
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority034
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6840
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority034, Function | MediumTest | Level1)
 {
@@ -1012,9 +1138,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority034, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_6880
- * @tc.name      : set invalid priority when curPriority = osPriorityNormal and setPriority = osPriorityHigh7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority035
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6880
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority035, Function | MediumTest | Level1)
 {
@@ -1034,9 +1163,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority035, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_6920
- * @tc.name      : set invalid priority when curPriority = osPriorityNormal and setPriority = osPriorityRealtime
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority036
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6920
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority036, Function | MediumTest | Level1)
 {
@@ -1056,9 +1188,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority036, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_6960
- * @tc.name      : set invalid priority when curPriority = osPriorityNormal and setPriority = osPriorityRealtime7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority037
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_6960
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority037, Function | MediumTest | Level1)
 {
@@ -1078,9 +1213,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority037, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_7000
- * @tc.name      : set invalid priority when curPriority = osPriorityNormal and setPriority = osPriorityISR
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority038
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority038, Function | MediumTest | Level1)
 {
@@ -1100,9 +1238,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority038, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_7040
- * @tc.name      : set invalid priority when curPriority = osPriorityNormal and setPriority = osPriorityError
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority039
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority039, Function | MediumTest | Level1)
 {
@@ -1122,9 +1263,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority039, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_7080
- * @tc.name      : set invalid priority when curPriority = osPriorityNormal and setPriority = osPriorityReserved
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority040
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7080
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority040, Function | MediumTest | Level1)
 {
@@ -1144,9 +1288,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority040, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_7120
- * @tc.name      : set invalid priority when curPriority = osPriorityAboveNormal6 and setPriority = osPriorityNone
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority041
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7120
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority041, Function | MediumTest | Level1)
 {
@@ -1166,9 +1313,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority041, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_7160
- * @tc.name      : set invalid priority when curPriority = osPriorityAboveNormal6 and setPriority = osPriorityIdle
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority042
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7160
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority042, Function | MediumTest | Level1)
 {
@@ -1188,9 +1338,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority042, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_7200
- * @tc.name      : set invalid priority when curPriority = osPriorityAboveNormal6 and setPriority = osPriorityLow
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority043
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority043, Function | MediumTest | Level1)
 {
@@ -1210,9 +1363,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority043, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_7240
- * @tc.name      : set priority when curPriority = osPriorityAboveNormal6 and setPriority = osPriorityLow1
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority044
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7240
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority044, Function | MediumTest | Level1)
 {
@@ -1232,9 +1388,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority044, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_7280
- * @tc.name      : set priority when curPriority = osPriorityAboveNormal6 and setPriority = osPriorityLow7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority045
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7280
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority045, Function | MediumTest | Level1)
 {
@@ -1254,9 +1413,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority045, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_7320
- * @tc.name      : set priority when curPriority = osPriorityAboveNormal6 and setPriority = osPriorityBelowNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority046
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7320
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority046, Function | MediumTest | Level1)
 {
@@ -1276,9 +1438,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority046, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_7360
- * @tc.name      : set priority when curPriority = osPriorityAboveNormal6 and setPriority = osPriorityBelowNormal7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority047
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7360
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority047, Function | MediumTest | Level1)
 {
@@ -1298,9 +1463,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority047, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_7400
- * @tc.name      : set priority when curPriority = osPriorityAboveNormal6 and setPriority = osPriorityNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority048
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority048, Function | MediumTest | Level1)
 {
@@ -1320,9 +1488,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority048, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_7440
- * @tc.name      : set priority when curPriority = osPriorityAboveNormal6 and setPriority = osPriorityNormal7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority049
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7440
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority049, Function | MediumTest | Level1)
 {
@@ -1342,9 +1513,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority049, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_7480
- * @tc.name      : set priority when curPriority = osPriorityAboveNormal6 and setPriority = osPriorityAboveNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority050
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7480
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority050, Function | MediumTest | Level1)
 {
@@ -1364,9 +1538,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority050, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_7520
- * @tc.name      : set priority when curPriority = osPriorityAboveNormal6 and setPriority = osPriorityAboveNormal6
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority051
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7520
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority051, Function | MediumTest | Level1)
 {
@@ -1386,9 +1563,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority051, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_7560
- * @tc.name      : set invalid priority when curPriority = PriorityAboveNormal6 and setPriority = PriorityAboveNormal7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority052
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7560
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority052, Function | MediumTest | Level1)
 {
@@ -1408,9 +1588,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority052, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_7600
- * @tc.name      : set invalid priority when curPriority = osPriorityAboveNormal6 and setPriority = osPriorityHigh
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority053
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority053, Function | MediumTest | Level1)
 {
@@ -1430,9 +1613,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority053, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_7640
- * @tc.name      : set invalid priority when curPriority = osPriorityAboveNormal6 and setPriority = osPriorityHigh7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority054
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7640
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority054, Function | MediumTest | Level1)
 {
@@ -1452,9 +1638,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority054, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_7680
- * @tc.name      : set invalid priority when curPriority = osPriorityAboveNormal6 and setPriority = osPriorityRealtime
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority055
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7680
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority055, Function | MediumTest | Level1)
 {
@@ -1474,9 +1663,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority055, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_7720
- * @tc.name      : set invalid priority when curPriority = osPriorityAboveNormal6 and setPriority = osPriorityRealtime7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority056
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7720
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority056, Function | MediumTest | Level1)
 {
@@ -1496,9 +1688,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority056, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_7760
- * @tc.name      : set invalid priority when curPriority = osPriorityAboveNormal6 and setPriority = osPriorityISR
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority057
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7760
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority057, Function | MediumTest | Level1)
 {
@@ -1518,9 +1713,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority057, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_7800
- * @tc.name      : set invalid priority when curPriority = osPriorityAboveNormal6 and setPriority = osPriorityError
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority058
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority058, Function | MediumTest | Level1)
 {
@@ -1540,9 +1738,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority058, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_7840
- * @tc.name      : set invalid priority when curPriority = osPriorityAboveNormal6 and setPriority = osPriorityReserved
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSetPriority059
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7840
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority059, Function | MediumTest | Level1)
 {
@@ -1562,10 +1763,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsThreadSetPriority059, Function |
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_7880
- * @tc.name      : delay operation for 5 ticks
- * @tc.desc      : [C- SOFTWARE -0200]
-
+ * @tc.name   testOsDelay001
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7880
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsDelay001, Function | MediumTest | Level1)
 {
@@ -1575,10 +1778,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsDelay001, Function | MediumTest 
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_7920
- * @tc.name      : delay operation
- * @tc.desc      : [C- SOFTWARE -0200]
-
+ * @tc.name   testOsDelay002
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7920
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsDelay002, Function | MediumTest | Level1)
 {
@@ -1588,10 +1793,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsDelay002, Function | MediumTest 
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_7960
- * @tc.name      : delay until operation
- * @tc.desc      : [C- SOFTWARE -0200]
-
+ * @tc.name   testOsDelayUntil001
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_7960
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsDelayUntil001, Function | MediumTest | Level1)
 {
@@ -1605,9 +1812,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsDelayUntil001, Function | Medium
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_8000
- * @tc.name      : delay until operation input exception for 1 tick
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsDelayUntil002
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_8000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsDelayUntil002, Function | MediumTest | Level1)
 {
@@ -1617,9 +1827,12 @@ LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsDelayUntil002, Function | Medium
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_8040
- * @tc.name      : delay until operation input exception
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsDelayUntil003
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_8040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskPriFuncTestSuite, testOsDelayUntil003, Function | MediumTest | Level1)
 {

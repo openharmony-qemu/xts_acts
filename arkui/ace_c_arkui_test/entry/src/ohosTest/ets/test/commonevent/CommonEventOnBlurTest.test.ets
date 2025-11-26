@@ -26,14 +26,14 @@ export default function commonEventOnBlurTest() {
       await Utils.pushPage(`commonevent/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_COMMONEVENT_ONBLUR_0100
-    * @tc.name       : testCommonEventOnBlur001
-    * @tc.desc       : test onBlur event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCommonEventOnBlur001
+     * @tc.number SUB_ARKUI_CAPI_COMMONEVENT_ONBLUR_0100
+     * @tc.desc   test onBlur event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCommonEventOnBlur001', Level.LEVEL1, async (done: Function) => {
       focusControl.requestFocus('OnBlurTestButtonCompare')
       await Utils.sleep(2000)
@@ -44,14 +44,14 @@ export default function commonEventOnBlurTest() {
     })
 
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_COMMONEVENT_ONBLUR_0200
-    * @tc.name       : testCommonEventOnBlur002
-    * @tc.desc       : test onBlur event not callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCommonEventOnBlur002
+     * @tc.number SUB_ARKUI_CAPI_COMMONEVENT_ONBLUR_0200
+     * @tc.desc   test onBlur event not callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCommonEventOnBlur002', Level.LEVEL1, async (done: Function) => {
       focusControl.requestFocus('OnBlurTestButtonDisable')
       await Utils.sleep(2000)

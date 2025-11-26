@@ -26,39 +26,39 @@ export default function stackBackgroundImageSizeTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_BACKGROUNDIMAGESIZE_0100
-     * @tc.name       : testStackBackgroundImageSize001
-     * @tc.desc       : testing backgroundImageSize for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackBackgroundImageSize001
+     * @tc.number SUB_ARKUI_CAPI_STACK_BACKGROUNDIMAGESIZE_0100
+     * @tc.desc   testing backgroundImageSize for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackBackgroundImageSize001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackBackgroundImageSize001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_BACKGROUNDIMAGESIZE_0200
-     * @tc.name       : testStackBackgroundImageSize002
-     * @tc.desc       : testing backgroundImageSize for stack with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testStackBackgroundImageSize002
+     * @tc.number SUB_ARKUI_CAPI_STACK_BACKGROUNDIMAGESIZE_0200
+     * @tc.desc   testing backgroundImageSize for stack with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackBackgroundImageSize002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackBackgroundImageSize002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_STACK_BACKGROUNDIMAGESIZE_0300
-     * @tc.name       : testStackBackgroundImageSize003
-     * @tc.desc       : testing backgroundImageSize for stack with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testStackBackgroundImageSize003
+     * @tc.number SUB_ARKUI_CAPI_STACK_BACKGROUNDIMAGESIZE_0300
+     * @tc.desc   testing backgroundImageSize for stack with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testStackBackgroundImageSize003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testStackBackgroundImageSize003()).assertEqual(0)

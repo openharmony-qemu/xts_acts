@@ -51,6 +51,75 @@ export default function drawingTsCanvasPart3Test() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_2000
+     * @tc.name      : testCanvasRestoreToCountNormalStatic
+     * @tc.desc      : testCanvasRestoreToCountNormalStatic
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level0
+     */
+    it('testCanvasRestoreToCountNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
+      const msg = 'testCanvasRestoreToCountNormalStatic';
+      try {
+        const canvas = new drawing.Canvas(pixel);
+        canvas.drawRect({left: 10, right: 200, top: 100, bottom: 300});
+        for (let index = 0; index < 20; index++) {
+          canvas.save();
+        }
+        canvas.restoreToCount(2);
+        canvas.getSaveCount();
+        canvas.restoreToCount(5);
+        canvas.getSaveCount();
+        canvas.restoreToCount(1);
+        canvas.getSaveCount();
+        canvas.restoreToCount(0);
+        canvas.getSaveCount();
+        canvas.restoreToCount(15);
+        canvas.getSaveCount();
+        console.info(msg + 'restoreToCount successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `restoreToCount errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        const canvas = new drawing.Canvas(pixel);
+        canvas.drawRect({left: 10, right: 200, top: 100, bottom: 300});
+        for (let index = 0; index < 20; index++) {
+          canvas.save();
+        }
+        canvas.restoreToCount(-1);
+        canvas.getSaveCount();
+        console.info(msg + 'restoreToCount successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `restoreToCount errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+    })
+    /**
+     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_2003
+     * @tc.name      : testCanvasRestoreToCountMultipleCallsStatic
+     * @tc.desc      : testCanvasRestoreToCountMultipleCallsStatic
+     * @tc.size      : SmallTest
+     * @tc.type      : Function
+     * @tc.level     : Level3
+     */
+    it('testCanvasRestoreToCountMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasRestoreToCountMultipleCallsStatic';
+      try {
+        const canvas = new drawing.Canvas(pixel);
+        for (let index = 0; index < 20; index++) {
+          canvas.restoreToCount((Math.random() * Number.MAX_VALUE).toInt());
+        }
+        console.info(msg + 'restoreToCount successed');
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `restoreToCount errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    })
+    /**
      * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_2100
      * @tc.name      : testCanvasRestoreNormalStatic
      * @tc.desc      : testCanvasRestoreNormal
@@ -58,15 +127,16 @@ export default function drawingTsCanvasPart3Test() {
      * @tc.type      : Function
      * @tc.level     : Level0
      */
-    it('testCanvasRestoreNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
+    it('testCanvasRestoreNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testCanvasRestoreNormalStatic';
       try {
         const canvas = new drawing.Canvas(pixel);
-        // canvas.save();
+        canvas.save();
         canvas.restore();
-        // canvas.getSaveCount();
+        canvas.getSaveCount();
         console.info(msg + 'restore successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `restore errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -79,24 +149,25 @@ export default function drawingTsCanvasPart3Test() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testCanvasRestoreMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+    it('testCanvasRestoreMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testCanvasRestoreMultipleCallsStatic';
       try {
         const canvas = new drawing.Canvas(pixel);
-        // for (let index = 0; index < 20; index++) {
-        //   canvas.save();
-        // }
+        for (let index = 0; index < 20; index++) {
+          canvas.save();
+        }
         for (let index = 0; index < 20; index++) {
           canvas.restore();
         }
-        // canvas.getSaveCount();
+        canvas.getSaveCount();
         for (let index = 0; index < 20; index++) {
-          // canvas.save();
+          canvas.save();
           canvas.restore();
-          // canvas.getSaveCount();
+          canvas.getSaveCount();
         }
         console.info(msg + 'restore successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `restore errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
@@ -109,14 +180,15 @@ export default function drawingTsCanvasPart3Test() {
      * @tc.type      : Function
      * @tc.level     : Level3
      */
-    it('testCanvasRestoreWhenNoSaveStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+    it('testCanvasRestoreWhenNoSaveStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testCanvasRestoreWhenNoSaveStatic';
       try {
         const canvas = new drawing.Canvas(pixel);
         canvas.restore();
-        // canvas.getSaveCount();
+        canvas.getSaveCount();
         console.info(msg + 'restore successed');
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         console.info(msg + `restore errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }

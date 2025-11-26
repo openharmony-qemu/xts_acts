@@ -41,13 +41,13 @@
        done();
      });
  
-     /* *
-      * @tc.number: selecttest_001
-      * @tc.name  : selecttest_001
-      * @tc.desc  : To test the avoidance interface AVOID_AROUND_TARGET
-      * @tc.level : Level 3
-      * @tc.type
-      * @tc.size
+     /**
+      * @tc.name   selecttest_001
+      * @tc.number selecttest_001
+      * @tc.desc   To test the avoidance interface AVOID_AROUND_TARGET
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
       */
      it('selecttest_001', Level.LEVEL3, async (done: Function) => {
        let Key: string = 'select01'

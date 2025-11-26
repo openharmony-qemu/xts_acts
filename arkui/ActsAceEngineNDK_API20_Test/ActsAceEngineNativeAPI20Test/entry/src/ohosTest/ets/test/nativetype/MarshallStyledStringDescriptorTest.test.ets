@@ -22,12 +22,12 @@ const OS_ACCOUNT_ERR_INVALID_PARAMETER = 12300002;
 export default function MarshallStyledStringDescriptorTest() {
   describe('MarshallStyledStringDescriptorTest', () => {
     /**
-     * @tc.number  : SUB_ArkUI_ACE_MarshallStyledStringDescriptorTest_0100
-     * @tc.name    : testArkUIACEMarshallStyledStringDescriptorTest0100
-     * @tc.desc    : testing OH_ArkUI_MarshallStyledStringDescriptor interface.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIACEMarshallStyledStringDescriptorTest0100
+     * @tc.number SUB_ArkUI_ACE_MarshallStyledStringDescriptorTest_0100
+     * @tc.desc   testing OH_ArkUI_MarshallStyledStringDescriptor interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIACEMarshallStyledStringDescriptorTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {

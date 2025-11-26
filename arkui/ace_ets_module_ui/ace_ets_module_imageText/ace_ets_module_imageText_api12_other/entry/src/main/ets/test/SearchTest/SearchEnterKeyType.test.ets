@@ -49,12 +49,12 @@ export default function searchEnterKeyTypeTest() {
     }) 
 
     /**
-     * @tc.number  searchEnterKeyType0100
-     * @tc.name    Test the EnterKeyType property of the search component
-     * @tc.desc    set the EnterKeyType property value is EnterKeyType.Go
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   1
+     * @tc.name   searchEnterKeyType0100
+     * @tc.number searchEnterKeyType0100
+     * @tc.desc   set the EnterKeyType property value is EnterKeyType.Go
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('searchEnterKeyType0100', Level.LEVEL1, async (done: Function) => {
       let tagName = 'searchEnterKeyType0100';
@@ -89,12 +89,12 @@ export default function searchEnterKeyTypeTest() {
     });
 
     /**
-     * @tc.number  searchEnterKeyType0200
-     * @tc.name    Test the EnterKeyType property of the search component
-     * @tc.desc    set the EnterKeyType property value is EnterKeyType.Search
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   1
+     * @tc.name   searchEnterKeyType0200
+     * @tc.number searchEnterKeyType0200
+     * @tc.desc   set the EnterKeyType property value is EnterKeyType.Search
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('searchEnterKeyType0200', Level.LEVEL1, async (done: Function) => {
       let tagName = 'searchEnterKeyType0200';
@@ -129,12 +129,12 @@ export default function searchEnterKeyTypeTest() {
     });
 
     /**
-     * @tc.number  searchEnterKeyType0300
-     * @tc.name    Test the EnterKeyType property of the search component
-     * @tc.desc    set the EnterKeyType property value is EnterKeyType.Send
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   1
+     * @tc.name   searchEnterKeyType0300
+     * @tc.number searchEnterKeyType0300
+     * @tc.desc   set the EnterKeyType property value is EnterKeyType.Send
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('searchEnterKeyType0300', Level.LEVEL1, async (done: Function) => {
       let tagName = 'searchEnterKeyType0300';
@@ -169,12 +169,12 @@ export default function searchEnterKeyTypeTest() {
     });
 
     /**
-     * @tc.number  searchEnterKeyType0400
-     * @tc.name    Test the EnterKeyType property of the search component
-     * @tc.desc    set the EnterKeyType property value is EnterKeyType.Next
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   1
+     * @tc.name   searchEnterKeyType0400
+     * @tc.number searchEnterKeyType0400
+     * @tc.desc   set the EnterKeyType property value is EnterKeyType.Next
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('searchEnterKeyType0400', Level.LEVEL1, async (done: Function) => {
       let tagName = 'searchEnterKeyType0400';
@@ -209,12 +209,12 @@ export default function searchEnterKeyTypeTest() {
     });
 
     /**
-     * @tc.number  searchEnterKeyType0500
-     * @tc.name    Test the EnterKeyType property of the search component
-     * @tc.desc    set the EnterKeyType property value is EnterKeyType.Done
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   1
+     * @tc.name   searchEnterKeyType0500
+     * @tc.number searchEnterKeyType0500
+     * @tc.desc   set the EnterKeyType property value is EnterKeyType.Done
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('searchEnterKeyType0500', Level.LEVEL1, async (done: Function) => {
       let tagName = 'searchEnterKeyType0500';
@@ -250,12 +250,12 @@ export default function searchEnterKeyTypeTest() {
     
 
     /**
-     * @tc.number  searchEnterKeyType0600
-     * @tc.name    Test the EnterKeyType property of the search component
-     * @tc.desc    set the EnterKeyType property value is EnterKeyType.Done
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   1
+     * @tc.name   searchEnterKeyType0600
+     * @tc.number searchEnterKeyType0600
+     * @tc.desc   set the EnterKeyType property value is EnterKeyType.Done
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('searchEnterKeyType0600', Level.LEVEL1, async (done: Function) => {
       let tagName = 'searchEnterKeyType0600';
@@ -290,12 +290,12 @@ export default function searchEnterKeyTypeTest() {
     }); 
 
     /**
-     * @tc.number  searchEnterKeyType0700
-     * @tc.name    Test the EnterKeyType property of the search component
-     * @tc.desc    set the EnterKeyType property value is EnterKeyType.Done
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   1
+     * @tc.name   searchEnterKeyType0700
+     * @tc.number searchEnterKeyType0700
+     * @tc.desc   set the EnterKeyType property value is EnterKeyType.Done
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('searchEnterKeyType0700', Level.LEVEL1, async (done: Function) => {
       let tagName = 'searchEnterKeyType0700';
@@ -329,13 +329,13 @@ export default function searchEnterKeyTypeTest() {
       done();
     });
 
-            /**
-     * @tc.number  searchEnterKeyType0800
-     * @tc.name    Test the EnterKeyType property of the search component
-     * @tc.desc    set the EnterKeyType property value is undefined
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   1
+    /**
+     * @tc.name   searchEnterKeyType0800
+     * @tc.number searchEnterKeyType0800
+     * @tc.desc   set the EnterKeyType property value is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('searchEnterKeyType0800', Level.LEVEL1, async (done: Function) => {
       let tagName = 'searchEnterKeyType0800';
@@ -368,12 +368,12 @@ export default function searchEnterKeyTypeTest() {
     });
 
     /**
-     * @tc.number  searchEnterKeyType0900
-     * @tc.name    Test the EnterKeyType property of the search component
-     * @tc.desc    set the EnterKeyType property value is default
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   1
+     * @tc.name   searchEnterKeyType0900
+     * @tc.number searchEnterKeyType0900
+     * @tc.desc   set the EnterKeyType property value is default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('searchEnterKeyType0900', Level.LEVEL1, async (done: Function) => {
       let tagName = 'searchEnterKeyType0900';

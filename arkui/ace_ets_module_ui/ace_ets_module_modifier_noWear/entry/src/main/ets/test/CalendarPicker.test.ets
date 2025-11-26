@@ -43,12 +43,12 @@ export default function calendarPickerJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_CalendarPicker_0100
      * @tc.number ArkUI_Stage_CalendarPicker_attributeModifier_0100
-     * @tc.name Test the properties of components
-     * @tc.desc Set edgeAlign values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set edgeAlign values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_CalendarPicker_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[ArkUI_Stage_CalendarPicker_0100] START');
@@ -64,12 +64,12 @@ export default function calendarPickerJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_CalendarPicker_attributeModifier_0101
      * @tc.number ArkUI_Stage_CalendarPicker_attributeModifier_0101
-     * @tc.name Test the properties of components
-     * @tc.desc Set textStyle values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set textStyle values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_CalendarPicker_attributeModifier_0101', Level.LEVEL0, async (done: Function) => {
       console.info('[ArkUI_Stage_CalendarPicker_attributeModifier_0101] START');
@@ -85,12 +85,12 @@ export default function calendarPickerJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_CalendarPicker_attributeModifier_0102
      * @tc.number ArkUI_Stage_CalendarPicker_attributeModifier_0102
-     * @tc.name Test the properties of components
-     * @tc.desc Change edgeAlign values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change edgeAlign values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_CalendarPicker_attributeModifier_0102', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUI_Stage_CalendarPicker_attributeModifier_0102 START');

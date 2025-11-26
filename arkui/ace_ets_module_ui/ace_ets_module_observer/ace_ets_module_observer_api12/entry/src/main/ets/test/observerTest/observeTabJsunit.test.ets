@@ -46,12 +46,12 @@ export default function observeTabJsunit() {
     });
 
     /**
-     * @tc.number    observeTabJsunit_001
-     * @tc.name      observeTabJsunit_001
-     * @tc.desc      Switching information of TabContent page.
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   observeTabJsunit_0100
+     * @tc.number observeTabJsunit_001
+     * @tc.desc   Switching information of TabContent page.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('observeTabJsunit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[observeTabJsunit_0100] START');

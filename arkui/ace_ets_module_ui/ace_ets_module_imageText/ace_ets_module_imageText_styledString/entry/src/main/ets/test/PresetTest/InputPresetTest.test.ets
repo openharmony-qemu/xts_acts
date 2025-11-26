@@ -45,13 +45,13 @@ export default function InputPresetTest() {
       console.info("InputPresetTest after each called");
     });
 
-    /*
-     * @tc.number:      SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name:        InputPresetTest0001
-     * @tc.desc:        Adapt to Xiaoyi input method pop-up window
-     * @tc.level:       Level 0
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   InputPresetTest0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   Adapt to Xiaoyi input method pop-up window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('InputPresetTest0001', Level.LEVEL0, async () => {
       let driver = Driver.create();

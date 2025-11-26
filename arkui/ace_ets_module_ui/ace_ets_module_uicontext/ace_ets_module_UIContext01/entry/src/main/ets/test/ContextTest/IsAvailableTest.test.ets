@@ -47,12 +47,12 @@ export default function IsAvailableTest() {
     });
 
     /**
-     * @tc.number    IsAvailableTest_0100
-     * @tc.name      IsAvailableTest_0100
-     * @tc.desc      frameNode: UIContext isAvailable Test
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   IsAvailableTest_0100
+     * @tc.number IsAvailableTest_0100
+     * @tc.desc   frameNode: UIContext isAvailable Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IsAvailableTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('IsAvailableTest_0100 START');

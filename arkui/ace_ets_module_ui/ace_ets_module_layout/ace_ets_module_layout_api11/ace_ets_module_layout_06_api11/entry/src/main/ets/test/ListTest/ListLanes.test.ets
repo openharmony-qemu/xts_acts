@@ -44,12 +44,14 @@ export default function ListLanes() {
       done();
     });
 
-    /* *
-       * @tc.number: SUB_ACE_TS_COMPONENT_SR000I46QG_039
-       * @tc.name  : ListLanes_001
-       * @tc.desc  : set gutter to -1vp and listDirection to Axis.Vertical
-       * @tc.level : Level 3
-       */
+    /**
+     * @tc.name   ListLanes_001
+     * @tc.number SUB_ACE_TS_COMPONENT_SR000I46QG_039
+     * @tc.desc   set gutter to -1vp and listDirection to Axis.Vertical
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ListLanes_001',  Level.LEVEL0, async (done: Function) => {
 
       console.info('[ListLanes_001] START');
@@ -66,12 +68,14 @@ export default function ListLanes() {
       done();
     });
 
-    /* *
-       * @tc.number: SUB_ACE_TS_COMPONENT_SR000I46QG_055
-       * @tc.name  : ListLanes_002
-       * @tc.desc  : set gutter to 10% and space to 20
-       * @tc.level : Level 3
-       */
+    /**
+     * @tc.name   ListLanes_002
+     * @tc.number SUB_ACE_TS_COMPONENT_SR000I46QG_055
+     * @tc.desc   set gutter to 10% and space to 20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ListLanes_002',  Level.LEVEL0, async (done: Function) => {
 
       console.info('[ListLanes_002] START');
@@ -88,12 +92,14 @@ export default function ListLanes() {
       done();
     });
 
-    /* *
-       * @tc.number: SUB_ACE_TS_COMPONENT_SR000I46QG_032
-       * @tc.name  : ListLanes_007
-       * @tc.desc  : set gutter to 10px and space to 10px
-       * @tc.level : Level 3
-       */
+    /**
+     * @tc.name   ListLanes_007
+     * @tc.number SUB_ACE_TS_COMPONENT_SR000I46QG_032
+     * @tc.desc   set gutter to 10px and space to 10px
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ListLanes_007',  Level.LEVEL0, async (done: Function) => {
 
       console.info('[ListLanes_007] START');
@@ -113,12 +119,14 @@ export default function ListLanes() {
       done();
     });
 
-    /* *
-      * @tc.number: SUB_ACE_TS_COMPONENT_SR000I46QG_032
-      * @tc.name  : ListLanes_008
-      * @tc.desc  : set gutter to 10px and initialIndex to 8
-      * @tc.level : Level 3
-      */
+    /**
+     * @tc.name   ListLanes_008
+     * @tc.number SUB_ACE_TS_COMPONENT_SR000I46QG_032
+     * @tc.desc   set gutter to 10px and initialIndex to 8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ListLanes_008',  Level.LEVEL0, async (done: Function) => {
 
       console.info('[ListLanes_008] START');
@@ -136,12 +144,14 @@ export default function ListLanes() {
       done();
     });
 
-    /* *
-       * @tc.number: SUB_ACE_FUNCTION_JICHU_SR000HQ76H_059
-       * @tc.name  : ListLanes_009
-       * @tc.desc  : set padding to 20 and gutter to 10
-       * @tc.level : Level 2
-       */
+    /**
+     * @tc.name   ListLanes_009
+     * @tc.number SUB_ACE_FUNCTION_JICHU_SR000HQ76H_059
+     * @tc.desc   set padding to 20 and gutter to 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ListLanes_009',  Level.LEVEL0, async (done: Function) => {
 
       console.info('[ListLanes_008] START');
@@ -157,12 +167,14 @@ export default function ListLanes() {
       done();
     });
 
-    /* *
-       * @tc.number: SUB_ACE_FUNCTION_JICHU_SR000HQ76H_059
-       * @tc.name  : ListLanes_010
-       * @tc.desc  : set margin to 10 and gutter to 10
-       * @tc.level : Level 2
-       */
+    /**
+     * @tc.name   ListLanes_010
+     * @tc.number SUB_ACE_FUNCTION_JICHU_SR000HQ76H_059
+     * @tc.desc   set margin to 10 and gutter to 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ListLanes_010',  Level.LEVEL0, async (done: Function) => {
 
       console.info('[ListLanes_010] START');

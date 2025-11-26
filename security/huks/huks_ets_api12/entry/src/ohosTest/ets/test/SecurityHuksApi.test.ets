@@ -14,6 +14,7 @@
  */
 import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 import { huks } from '@kit.UniversalKeystoreKit';
+import huksExternalCrypto from '@ohos.security.huksExternalCrypto';
 
 export default function SecurityHuksApiTest() {
 
@@ -50,6 +51,13 @@ export default function SecurityHuksApiTest() {
       expect(huks.HuksExceptionErrCode.HUKS_ERR_CODE_DEVICE_PASSWORD_UNSET).assertEqual(12000016);
       expect(huks.HuksExceptionErrCode.HUKS_ERR_CODE_KEY_ALREADY_EXIST).assertEqual(12000017);
       expect(huks.HuksExceptionErrCode.HUKS_ERR_CODE_INVALID_ARGUMENT).assertEqual(12000018);
+      expect(huks.HuksExceptionErrCode.HUKS_ERR_CODE_ITEM_EXISTS).assertEqual(12000019);
+      expect(huks.HuksExceptionErrCode.HUKS_ERR_CODE_EXTERNAL_MODULE).assertEqual(12000020);
+      expect(huks.HuksExceptionErrCode.HUKS_ERR_CODE_PIN_LOCKED).assertEqual(12000021);
+      expect(huks.HuksExceptionErrCode.HUKS_ERR_CODE_PIN_INCORRECT).assertEqual(12000022);
+      expect(huks.HuksExceptionErrCode.HUKS_ERR_CODE_PIN_NO_AUTH).assertEqual(12000023);
+      expect(huks.HuksExceptionErrCode.HUKS_ERR_CODE_BUSY).assertEqual(12000024);
+      expect(huks.HuksExceptionErrCode.HUKS_ERR_CODE_EXCEED_LIMIT).assertEqual(12000025);
     })
 
     /**
@@ -563,6 +571,7 @@ export default function SecurityHuksApiTest() {
       expect(huks.HuksTag.HUKS_TAG_ATTESTATION_ID_SEC_LEVEL_INFO).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 514);
       expect(huks.HuksTag.HUKS_TAG_ATTESTATION_ID_VERSION_INFO).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 515);
       expect(huks.HuksTag.HUKS_TAG_KEY_OVERRIDE).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BOOL | 520);
+      expect(huks.HuksTag.HUKS_TAG_AE_TAG_LEN).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 521);
       expect(huks.HuksTag.HUKS_TAG_IS_KEY_ALIAS).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BOOL | 1001);
       expect(huks.HuksTag.HUKS_TAG_KEY_STORAGE_FLAG).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_UINT | 1002);
       expect(huks.HuksTag.HUKS_TAG_IS_ALLOWED_WRAP).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BOOL | 1003);
@@ -590,6 +599,48 @@ export default function SecurityHuksApiTest() {
       expect(huks.HuksTag.HUKS_TAG_SYMMETRIC_KEY_DATA).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 20001);
       expect(huks.HuksTag.HUKS_TAG_ASYMMETRIC_PUBLIC_KEY_DATA).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 20002);
       expect(huks.HuksTag.HUKS_TAG_ASYMMETRIC_PRIVATE_KEY_DATA).assertEqual(huks.HuksTagType.HUKS_TAG_TYPE_BYTES | 20003);
+    })
+
+        /**
+     * @tc.number SUB_Security_HUKS_Api_API22_Interface_2600
+     * @tc.name   SUB_Security_HUKS_Api_API22_Interface_2600
+     * @tc.desc   test huks.HuksKeyClassType api
+     * @tc.type   Compatibility
+     * @tc.size   SmallTest
+     * @tc.level  Level3
+     */
+    it('SUB_Security_HUKS_Api_API22_Interface_2600', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
+      expect(huks.HuksKeyClassType.HUKS_KEY_CLASS_DEFAULT).assertEqual(0);
+      expect(huks.HuksKeyClassType.HUKS_KEY_CLASS_EXTENSION).assertEqual(1);
+    })
+
+    /**
+     * @tc.number SUB_Security_HUKS_Api_API22_Interface_0100
+     * @tc.name   SUB_Security_HUKS_Api_API22_Interface_0100
+     * @tc.desc   test huksExternalCrypto.HuksExternalCryptoTagType api
+     * @tc.type   Compatibility
+     * @tc.size   SmallTest
+     * @tc.level  Level3
+     */
+    it('SUB_Security_HUKS_Api_API22_Interface_0100', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
+      expect(huksExternalCrypto.HuksExternalCryptoTagType.HUKS_EXT_CRYPTO_TAG_TYPE_INT).assertEqual(1 << 28);
+      expect(huksExternalCrypto.HuksExternalCryptoTagType.HUKS_EXT_CRYPTO_TAG_TYPE_BYTES).assertEqual(5 << 28);
+    })
+
+    /**
+     * @tc.number SUB_Security_HUKS_Api_API22_Interface_0200
+     * @tc.name   SUB_Security_HUKS_Api_API22_Interface_0200
+     * @tc.desc   test huksExternalCrypto.HuksExternalCryptoTagType api
+     * @tc.type   Compatibility
+     * @tc.size   SmallTest
+     * @tc.level  Level3
+     */
+    it('SUB_Security_HUKS_Api_API22_Interface_0200', TestType.COMPATIBILITY | Size.SMALLTEST | Level.LEVEL0, async () => {
+      expect(huksExternalCrypto.HuksExternalCryptoTag.HUKS_EXT_CRYPTO_TAG_UKEY_PIN).assertEqual(huksExternalCrypto.HuksExternalCryptoTagType.HUKS_EXT_CRYPTO_TAG_TYPE_BYTES | 200001);
+      expect(huksExternalCrypto.HuksExternalCryptoTag.HUKS_EXT_CRYPTO_TAG_ABILITY_NAME).assertEqual(huksExternalCrypto.HuksExternalCryptoTagType.HUKS_EXT_CRYPTO_TAG_TYPE_BYTES | 200002);
+      expect(huksExternalCrypto.HuksExternalCryptoTag.HUKS_EXT_CRYPTO_TAG_EXTRA_DATA).assertEqual(huksExternalCrypto.HuksExternalCryptoTagType.HUKS_EXT_CRYPTO_TAG_TYPE_BYTES | 200003);
+      expect(huksExternalCrypto.HuksExternalCryptoTag.HUKS_EXT_CRYPTO_TAG_UID).assertEqual(huksExternalCrypto.HuksExternalCryptoTagType.HUKS_EXT_CRYPTO_TAG_TYPE_INT | 200004);
+      expect(huksExternalCrypto.HuksExternalCryptoTag.HUKS_EXT_CRYPTO_TAG_PURPOSE).assertEqual(huksExternalCrypto.HuksExternalCryptoTagType.HUKS_EXT_CRYPTO_TAG_TYPE_INT | 200005);
     })
 
   }

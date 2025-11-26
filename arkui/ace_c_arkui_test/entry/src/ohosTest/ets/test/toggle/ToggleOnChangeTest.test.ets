@@ -28,14 +28,14 @@ export default function toggleOnChangeTest() {
       await Utils.pushPage(`toggle/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_TOGGLE_ONCHANGE_0100
-    * @tc.name       : testToggleOnchange001
-    * @tc.desc       : testing onChange event callback for toggle with normal value (IsOn is false)
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testToggleOnchange001
+     * @tc.number SUB_ARKUI_CAPI_TOGGLE_ONCHANGE_0100
+     * @tc.desc   testing onChange event callback for toggle with normal value (IsOn is false)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testToggleOnchange001', Level.LEVEL1, async (done: Function) => {
      let driver = Driver.create();
       await Utils.sleep(500)
@@ -47,14 +47,14 @@ export default function toggleOnChangeTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_TOGGLE_ONCHANGE_0200
-    * @tc.name       : testToggleOnchange002
-    * @tc.desc       : testing onChange event callback for toggle with normal value (IsOn is true)
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testToggleOnchange002
+     * @tc.number SUB_ARKUI_CAPI_TOGGLE_ONCHANGE_0200
+     * @tc.desc   testing onChange event callback for toggle with normal value (IsOn is true)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testToggleOnchange002', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
       await Utils.sleep(500)

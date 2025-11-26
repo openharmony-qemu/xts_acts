@@ -48,9 +48,12 @@ export default function ColumnsTemplateAndRowsTemplateNoSet() {
     });
 
     /**
+     * @tc.name   SUB_ACE_GRID_ColumnsTemplateAndRowsTemplateNoSet_0100
      * @tc.number SUB_ACE_GRID_ColumnsTemplateAndRowsTemplateNoSet_0100
-     * @tc.name testGrid
-     * @tc.desc GridItem set columnStart、columnEnd、rowStart、rowEnd
+     * @tc.desc   GridItem set columnStart、columnEnd、rowStart、rowEnd
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GRID_ColumnsTemplateAndRowsTemplateNoSet_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplateNoSet_0100] START');

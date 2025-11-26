@@ -25,12 +25,12 @@ export default function abilitystaticTest() {
   describe('ActsAbilityStaticTest', (): void => {
 
     /**
-     * @tc.number: SUB_Ability_Ability_Runtime_onCollaborate_static_2900
-     * @tc.name  : SUB_Ability_Ability_Runtime_onCollaborate_static_2900
-     * @tc.desc  : AbilityConstant.CollaborateResult.ACCEPT equal 0
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 1
+     * @tc.name   SUB_Ability_Ability_Runtime_onCollaborate_static_2900
+     * @tc.number SUB_Ability_Ability_Runtime_onCollaborate_static_2900
+     * @tc.desc   AbilityConstant.CollaborateResult.ACCEPT equal 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_Ability_Runtime_onCollaborate_static_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'SUB_Ability_Ability_Runtime_onCollaborate_static_2900';
@@ -47,12 +47,12 @@ export default function abilitystaticTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_Ability_Runtime_onCollaborate_static_3000
-     * @tc.name  : SUB_Ability_Ability_Runtime_onCollaborate_static_3000
-     * @tc.desc  : AbilityConstant.CollaborateResult.REJECT equal 1
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 1
+     * @tc.name   SUB_Ability_Ability_Runtime_onCollaborate_static_3000
+     * @tc.number SUB_Ability_Ability_Runtime_onCollaborate_static_3000
+     * @tc.desc   AbilityConstant.CollaborateResult.REJECT equal 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_Ability_Runtime_onCollaborate_static_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'SUB_Ability_Ability_Runtime_onCollaborate_static_3000';
@@ -69,12 +69,12 @@ export default function abilitystaticTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_Ability_Runtime_onCollaborate_static_3100
-     * @tc.name  : SUB_Ability_Ability_Runtime_onCollaborate_static_3100
-     * @tc.desc  : wantConstant.Flags.FLAG_ABILITY_ON_COLLABORATE equal 0x00002000
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 1
+     * @tc.name   SUB_Ability_Ability_Runtime_onCollaborate_static_3100
+     * @tc.number SUB_Ability_Ability_Runtime_onCollaborate_static_3100
+     * @tc.desc   wantConstant.Flags.FLAG_ABILITY_ON_COLLABORATE equal 0x00002000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_Ability_Runtime_onCollaborate_static_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'SUB_Ability_Ability_Runtime_onCollaborate_static_3100';

@@ -26,39 +26,39 @@ export default function spanLetterSpacingTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SPAN_LETTERSPACING_0100
-     * @tc.name       : testSpanLetterSpacing001
-     * @tc.desc       : testing letterSpacing for span with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSpanLetterSpacing001
+     * @tc.number SUB_ARKUI_CAPI_SPAN_LETTERSPACING_0100
+     * @tc.desc   testing letterSpacing for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanLetterSpacing001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanLetterSpacing001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SPAN_LETTERSPACING_0200
-     * @tc.name       : testSpanLetterSpacing002
-     * @tc.desc       : testing letterSpacing for span with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSpanLetterSpacing002
+     * @tc.number SUB_ARKUI_CAPI_SPAN_LETTERSPACING_0200
+     * @tc.desc   testing letterSpacing for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanLetterSpacing002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanLetterSpacing002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SPAN_LETTERSPACING_0300
-     * @tc.name       : testSpanLetterSpacing003
-     * @tc.desc       : testing letterSpacing for span with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSpanLetterSpacing003
+     * @tc.number SUB_ARKUI_CAPI_SPAN_LETTERSPACING_0300
+     * @tc.desc   testing letterSpacing for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanLetterSpacing003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanLetterSpacing003()).assertEqual(0)

@@ -47,12 +47,12 @@ export default function mouseEventTest() {
     });
 
     /**
-     * @tc.number    mouseEventTest_0010
-     * @tc.name      mouseEventTest_0010
-     * @tc.desc      mouseEvent get globalDisplay coordinates
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   mouseEventTest_0010
+     * @tc.number mouseEventTest_0010
+     * @tc.desc   mouseEvent get globalDisplay coordinates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('mouseEventTest_0010', Level.LEVEL1, async (done: Function) => {
       console.info('[mouseEventTest_0010] START');

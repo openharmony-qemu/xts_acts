@@ -46,12 +46,12 @@ export default function RepeatTest0040() {
     });
 
     /**
-     * @tc.number    RepeatTest0040_001
-     * @tc.name      RepeatTest0040_001
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   RepeatTest0040_001
+     * @tc.number RepeatTest0040_001
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RepeatTest0040_001', Level.LEVEL0, async (done: Function) => {
       console.info('[RepeatTest0040_001] START');
@@ -76,12 +76,12 @@ export default function RepeatTest0040() {
     });
 
     /**
-     * @tc.number    RepeatTest0040_002
-     * @tc.name      RepeatTest0040_002
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   RepeatTest0040_002
+     * @tc.number RepeatTest0040_002
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RepeatTest0040_002', Level.LEVEL0, async (done: Function) => {
       console.info('[RepeatTest0040_002] START');
@@ -103,12 +103,12 @@ export default function RepeatTest0040() {
     });
 
     /**
-     * @tc.number    RepeatTest0040_003
-     * @tc.name      RepeatTest0040_003
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   RepeatTest0040_003
+     * @tc.number RepeatTest0040_003
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RepeatTest0040_003', Level.LEVEL0, async (done: Function) => {
       console.info('[RepeatTest0040_003] START');
@@ -130,12 +130,12 @@ export default function RepeatTest0040() {
     });
 
     /**
-     * @tc.number    RepeatTest0040_004
-     * @tc.name      RepeatTest0040_004
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   RepeatTest0040_004
+     * @tc.number RepeatTest0040_004
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RepeatTest0040_004', Level.LEVEL0, async (done: Function) => {
       console.info('[RepeatTest0040_004] START');
@@ -157,12 +157,12 @@ export default function RepeatTest0040() {
     });
 
     /**
-     * @tc.number    RepeatTest0040_005
-     * @tc.name      RepeatTest0040_005
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   RepeatTest0040_005
+     * @tc.number RepeatTest0040_005
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RepeatTest0040_005', Level.LEVEL0, async (done: Function) => {
       console.info('[RepeatTest0040_005] START');

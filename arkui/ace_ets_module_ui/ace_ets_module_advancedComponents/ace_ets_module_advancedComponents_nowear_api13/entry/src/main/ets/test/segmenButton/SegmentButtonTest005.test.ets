@@ -47,12 +47,12 @@ export default function SegmentButtonTest005() {
     });
 
     /**
-     * @tc.number    SegmentButtonTest005_001
-     * @tc.name      SegmentButtonTest005_001
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   SegmentButtonTest005_001
+     * @tc.number SegmentButtonTest005_001
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SegmentButtonTest005_001', Level.LEVEL1, async (done: Function) => {
       console.info('[SegmentButtonTest005_001] START');
@@ -74,12 +74,12 @@ export default function SegmentButtonTest005() {
     });
 
     /**
-     * @tc.number    SegmentButtonTest005_002
-     * @tc.name      SegmentButtonTest005_002
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   SegmentButtonTest005_002
+     * @tc.number SegmentButtonTest005_002
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SegmentButtonTest005_002', Level.LEVEL1, async (done: Function) => {
       console.info('[SegmentButtonTest005_002] START');
@@ -100,12 +100,12 @@ export default function SegmentButtonTest005() {
       done();
     });
     /**
-     * @tc.number    SegmentButtonTest005_003
-     * @tc.name      SegmentButtonTest005_003
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   SegmentButtonTest005_003
+     * @tc.number SegmentButtonTest005_003
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SegmentButtonTest005_003', Level.LEVEL1, async (done: Function) => {
       console.info('[SegmentButtonTest005_003] START');
@@ -123,12 +123,12 @@ export default function SegmentButtonTest005() {
       done();
     });
     /**
-     * @tc.number    SegmentButtonTest005_004
-     * @tc.name      SegmentButtonTest005_004
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   SegmentButtonTest005_004
+     * @tc.number SegmentButtonTest005_004
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SegmentButtonTest005_004', Level.LEVEL1, async (done: Function) => {
       console.info('[SegmentButtonTest005_004] START');

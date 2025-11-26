@@ -44,24 +44,24 @@ export default function exportStringTest() {
     })
 
     /**
+     * @tc.name   exportStringTestTest1001
      * @tc.number SUB_EXPORT_STRING_TEST_0100
-     * @tc.name exportStringTestTest1001
-     * @tc.desc Test default let string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Test default let string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('exportStringTestTest1001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       expect(str).assertEqual("test");
     });
 
     /**
+     * @tc.name   exportStringTestTest1002
      * @tc.number SUB_EXPORT_STRING_TEST_0200
-     * @tc.name exportStringTestTest1002
-     * @tc.desc Test type string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test type string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportStringTestTest1002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let str: typeStr = 'typeStrTest';
@@ -69,48 +69,48 @@ export default function exportStringTest() {
     });
 
     /**
+     * @tc.name   exportStringTestTest1003
      * @tc.number SUB_EXPORT_STRING_TEST_0300
-     * @tc.name exportStringTestTest1003
-     * @tc.desc Test let inline string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test let inline string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportStringTestTest1003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(str1).assertEqual("test1");
     });
 
     /**
+     * @tc.name   exportStringTestTest1004
      * @tc.number SUB_EXPORT_STRING_TEST_0400
-     * @tc.name exportStringTestTest1004
-     * @tc.desc Test let string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test let string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportStringTestTest1004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(str2).assertEqual("test2");
     })
 
     /**
+     * @tc.name   exportStringTestTest1005
      * @tc.number SUB_EXPORT_STRING_TEST_0500
-     * @tc.name exportStringTestTest1005
-     * @tc.desc Test name string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test name string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportStringTestTest1005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(str3).assertEqual("test2");
     })
 
     /**
+     * @tc.name   exportStringTestTest1006
      * @tc.number SUB_EXPORT_STRING_TEST_0600
-     * @tc.name exportStringTestTest1006
-     * @tc.desc Test *
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test *
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportStringTestTest1006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(str5.str1).assertEqual("test1");
@@ -119,12 +119,12 @@ export default function exportStringTest() {
     })
 
     /**
+     * @tc.name   exportStringTestTest1007
      * @tc.number SUB_EXPORT_STRING_TEST_0700
-     * @tc.name exportStringTestTest1007
-     * @tc.desc Test name *
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test name *
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportStringTestTest1007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(str4.default).assertEqual("test");
@@ -134,24 +134,24 @@ export default function exportStringTest() {
     })
 
     /**
+     * @tc.name   exportArrayTestTest1008
      * @tc.number SUB_EXPORT_ARRAY_TEST_0800
-     * @tc.name exportArrayTestTest1008
-     * @tc.desc Test default string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test default string
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportArrayTestTest1008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(defaultStr).assertEqual('TestDefault');
     })
 
     /**
+     * @tc.name   exportArrayTestTest1009
      * @tc.number SUB_EXPORT_ARRAY_TEST_0900
-     * @tc.name exportArrayTestTest1009
-     * @tc.desc Test default type array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test default type array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportArrayTestTest1009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let arr: defaultTypeStr = "TestTypeDefault";

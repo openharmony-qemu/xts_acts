@@ -26,52 +26,52 @@ export default function commonAttrsLayoutWeightTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_LAYOUTWEIGHT_0100
-     * @tc.name       : testCommonAttrsLayoutWeight001
-     * @tc.desc       : testing layoutweight for commonAttrs with valid value 
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsLayoutWeight001
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_LAYOUTWEIGHT_0100
+     * @tc.desc   testing layoutweight for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsLayoutWeight001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsLayoutWeight001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_LAYOUTWEIGHT_0200
-     * @tc.name       : testCommonAttrsLayoutWeight002
-     * @tc.desc       : testing layoutweight for commonAttrs with valid value 
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsLayoutWeight002
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_LAYOUTWEIGHT_0200
+     * @tc.desc   testing layoutweight for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsLayoutWeight002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsLayoutWeight002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_LAYOUTWEIGHT_0300
-     * @tc.name       : testCommonAttrsLayoutWeight003
-     * @tc.desc       : testing layoutweight for commonAttrs with valid value 
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsLayoutWeight003
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_LAYOUTWEIGHT_0300
+     * @tc.desc   testing layoutweight for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsLayoutWeight003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsLayoutWeight003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_LAYOUTWEIGHT_0400
-     * @tc.name       : testCommonAttrsLayoutWeight004
-     * @tc.desc       : testing resetAttribute layoutweight for commonAttrs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsLayoutWeight004
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_LAYOUTWEIGHT_0400
+     * @tc.desc   testing resetAttribute layoutweight for commonAttrs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsLayoutWeight004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsLayoutWeight004()).assertEqual(0)

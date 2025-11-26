@@ -55,12 +55,12 @@ export default function RichEditorLayoutStyle002() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LAYOUTSTYLE_0130
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LAYOUTSTYLE_0130
-     * @tc.desc  : Set the margin to -1 for left, top, right, and bottom to test RichEditor LayoutStyle
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 4
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LAYOUTSTYLE_0130
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LAYOUTSTYLE_0130
+     * @tc.desc   Set the margin to -1 for left, top, right, and bottom to test RichEditor LayoutStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LAYOUTSTYLE_0130',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_LAYOUTSTYLE_0130 START');

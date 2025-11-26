@@ -39,6 +39,7 @@ let driver = Driver.create();
 @Component
 struct WebViewEnumAndFontLibrary {
   @State listData: number[] = [0, 0, 0]
+  @State onlineImageAccessAttr: boolean = false;
 
   @Builder
   MenuBuilder() {
@@ -192,6 +193,7 @@ struct WebViewEnumAndFontLibrary {
             }
 
             case "emitWebContextMenuParamExistsImageTrueContents": {
+              this.onlineImageAccessAttr = true;
               this.isPageEnd = -1
               this.controller.loadUrl("resource://rawfile/ParamExistsImageTrue.html")
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
@@ -203,6 +205,7 @@ struct WebViewEnumAndFontLibrary {
             }
 
             case "emitWebContextMenuParamGetMediaType": {
+              this.onlineImageAccessAttr = false;
               this.isPageEnd = -1
               this.controller.loadUrl("resource://rawfile/indexJru.html")
               await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
@@ -453,7 +456,7 @@ struct WebViewEnumAndFontLibrary {
         .fileAccess(true)
         .imageAccess(true)
         .domStorageAccess(false)
-        .onlineImageAccess(true)
+        .onlineImageAccess(this.onlineImageAccessAttr)
         .databaseAccess(this.databaseAccess)
         .onPageEnd((event) => {
           console.log('onPageEnd url:' + event.url);

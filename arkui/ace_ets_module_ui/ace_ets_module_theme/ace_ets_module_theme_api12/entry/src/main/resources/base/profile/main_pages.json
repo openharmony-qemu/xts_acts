@@ -5,6 +5,7 @@
     "MainAbility/pages/theme/themePageMgmtColorsTest",
     "MainAbility/pages/theme/themePageSliderTest",
     "MainAbility/pages/theme/APIFontPrimary",
-    "MainAbility/pages/theme/themePageListTest"
+    "MainAbility/pages/theme/themePageListTest",
+    "MainAbility/pages/theme/DarkColorsTest"
   ]
 }

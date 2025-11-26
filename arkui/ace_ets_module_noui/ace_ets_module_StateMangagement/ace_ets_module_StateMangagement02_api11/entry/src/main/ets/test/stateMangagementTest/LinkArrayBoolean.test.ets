@@ -54,14 +54,14 @@ export default function LinkArrayBoolean() {
       }
       done();
     });
-    /* *
-    * @tc.number: LinkArrayBoolean_0010
-    * @tc.name  : LinkArrayBoolean_0100
-    * @tc.desc  : Test if the state decorator supports LinkArrayBoolean types.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   LinkArrayBoolean_0100
+     * @tc.number LinkArrayBoolean_0010
+     * @tc.desc   Test if the state decorator supports LinkArrayBoolean types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LinkArrayBoolean_0100', Level.LEVEL0, async (done: Function) => {
       console.info('LinkArrayBoolean_0100 START');
       let driver: Driver = Driver.create();
@@ -80,14 +80,14 @@ export default function LinkArrayBoolean() {
       console.info('[LinkArrayBoolean_0100] END');
       done();
     });
-    /* *
-    * @tc.number: LinkArrayBoolean_0200
-    * @tc.name  : LinkArrayBoolean_0200
-    * @tc.desc  : Test if the state decorator supports LinkArrayBoolean types.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   LinkArrayBoolean_0200
+     * @tc.number LinkArrayBoolean_0200
+     * @tc.desc   Test if the state decorator supports LinkArrayBoolean types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LinkArrayBoolean_0200', Level.LEVEL0, async (done: Function) => {
       console.info('LinkArrayBoolean_0200 START');
       let driver: Driver = await Driver.create()
@@ -105,14 +105,14 @@ export default function LinkArrayBoolean() {
       console.info('[LinkArrayBoolean_0200] END');
       done();
     });
-    /* *
-    * @tc.number: LinkArrayBoolean_0300
-    * @tc.name  : LinkArrayBoolean_0300
-    * @tc.desc  : Test if the state decorator supports LinkArrayBoolean types.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   LinkArrayBoolean_0300
+     * @tc.number LinkArrayBoolean_0300
+     * @tc.desc   Test if the state decorator supports LinkArrayBoolean types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LinkArrayBoolean_0300', Level.LEVEL0, async (done: Function) => {
       console.info('LinkArrayBoolean_0300 START');
       let driver: Driver = await Driver.create()
@@ -130,14 +130,14 @@ export default function LinkArrayBoolean() {
       console.info('[LinkArrayBoolean_0300] END');
       done();
     });
-    /* *
-    * @tc.number: LinkArrayBoolean_0400
-    * @tc.name  : LinkArrayBoolean_0400
-    * @tc.desc  : Test if the state decorator supports LinkArrayBoolean types.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   LinkArrayBoolean_0400
+     * @tc.number LinkArrayBoolean_0400
+     * @tc.desc   Test if the state decorator supports LinkArrayBoolean types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LinkArrayBoolean_0400', Level.LEVEL0, async (done: Function) => {
       console.info('LinkArrayBoolean_0400 START');
       let driver: Driver = await Driver.create()

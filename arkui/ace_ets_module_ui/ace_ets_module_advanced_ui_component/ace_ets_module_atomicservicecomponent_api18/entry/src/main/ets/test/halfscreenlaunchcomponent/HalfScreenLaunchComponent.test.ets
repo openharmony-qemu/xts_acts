@@ -53,12 +53,12 @@ export default function halfscreenlaunchcomponentTest() {
     });
 
     /**
+     * @tc.name   halfscreenlaunchcomponenTest_0100
      * @tc.number halfscreenlaunchcomponen
-     * @tc.name halfscreenlaunchcomponenTest_0100
-     * @tc.desc Test halfscreenlaunchcomponen
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test halfscreenlaunchcomponen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('halfscreenlaunchcomponenTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[halfscreenlaunchcomponenTest_0100] START');

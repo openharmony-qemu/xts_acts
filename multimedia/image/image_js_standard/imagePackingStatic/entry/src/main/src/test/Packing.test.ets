@@ -73,7 +73,7 @@ export default function imagePacking() {
     });
 
     let getImageSourceData = (fileName: string) => {
-      let globalImagesource: image.ImageSource;
+      let globalImagesource: image.ImageSource | undefined;
       try {
         const path: string = filesDir + "/" + fileName;
         globalImagesource = image.createImageSource(path);
@@ -88,7 +88,7 @@ export default function imagePacking() {
     let isSupportImageFormat = (fileName: string, format: string) => {
       let filePath = ""
       let isSupportFormat = false;
-      let globalImagesource: image.ImageSource;
+      let globalImagesource: image.ImageSource | undefined;
       try {
         filePath = filesDir + "/" + fileName;
         globalImagesource = image.createImageSource(filePath);
@@ -147,15 +147,19 @@ export default function imagePacking() {
         expect(loopcount[image.PropertyKey.GIF_LOOP_COUNT] != null).assertTrue();
         let GIFloopCount = loopcount[image.PropertyKey.GIF_LOOP_COUNT] as string;
         let imageInfo = imgSource.getImageInfoSync();
-        console.info(`checkPackingForSequenceResult delayTimes ${delayTimes}`);
-        console.info(`checkPackingForSequenceResult disposalTypes ${disposalTypes}`);
-        console.info(`checkPackingForSequenceResult loopcount ${loopcount}`);
-        console.info(`checkPackingForSequenceResult height ${imageInfo.size.height}`);
-        console.info(`checkPackingForSequenceResult width ${imageInfo.size.width}`);
-        console.info(`checkPackingForSequenceResult mimeType ${imageInfo.mimeType}`);
-        expect(imageInfo.size.width == pictureSize.width).assertTrue();
-        expect(imageInfo.size.height == pictureSize.height).assertTrue();
-        expect(imageInfo.mimeType == "image/gif").assertTrue();
+        if (imageInfo == undefined) {
+          expect(false).assertTrue();
+        } else {
+          console.info(`checkPackingForSequenceResult delayTimes ${delayTimes}`);
+          console.info(`checkPackingForSequenceResult disposalTypes ${disposalTypes}`);
+          console.info(`checkPackingForSequenceResult loopcount ${loopcount}`);
+          console.info(`checkPackingForSequenceResult height ${imageInfo.size.height}`);
+          console.info(`checkPackingForSequenceResult width ${imageInfo.size.width}`);
+          console.info(`checkPackingForSequenceResult mimeType ${imageInfo.mimeType}`);
+          expect(imageInfo.size.width == pictureSize.width).assertTrue();
+          expect(imageInfo.size.height == pictureSize.height).assertTrue();
+          expect(imageInfo.mimeType == "image/gif").assertTrue();
+        }
         console.info(`checkPackingForSequenceResult loopcount1 ${GIFloopCount}`);
         console.info(`checkPackingForSequenceResult loopcount2 ${packingOptions.loopCount}`);
         //对比编码前后的 loopCount
@@ -193,7 +197,9 @@ export default function imagePacking() {
           }
         }
       }
-      await imgSource.release();
+      if (imgSource != undefined) {
+        await imgSource.release();
+      }
     }
 
     let testPackingForSequencePromise = (done: () => void, testNum: string, pictureSize: image.Size,

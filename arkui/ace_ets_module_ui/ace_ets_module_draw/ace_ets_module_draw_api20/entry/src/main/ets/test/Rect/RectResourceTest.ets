@@ -41,6 +41,14 @@ export default function RectResourceTest() {
       done();
     });
     
+    /**
+     * @tc.name   RectResourceTest_0100
+     * @tc.number RectResourceTest_0100
+     * @tc.desc   RectResourceTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RectResourceTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[RectResourceTest_0100] START');
       await CommonFunc.sleep(1000);

@@ -42,12 +42,12 @@ export default function bindControllerGrid() {
     });
 
     /**
-     * @tc.number    bindControllerGrid_0100
-     * @tc.name      bindControllerGrid_0100
-     * @tc.desc      frameNode: test bindController error code for Grid
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   bindControllerGrid_0100
+     * @tc.number bindControllerGrid_0100
+     * @tc.desc   frameNode: test bindController error code for Grid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindControllerGrid_0100', Level.LEVEL2, async (done: Function) => {
       console.info('bindControllerGrid_0100 START');
@@ -65,12 +65,12 @@ export default function bindControllerGrid() {
     });
 
     /**
-     * @tc.number    bindControllerGrid_0200
-     * @tc.name      bindControllerGrid_0200
-     * @tc.desc      frameNode: test bindController error code for Grid
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   bindControllerGrid_0200
+     * @tc.number bindControllerGrid_0200
+     * @tc.desc   frameNode: test bindController error code for Grid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindControllerGrid_0200', Level.LEVEL2, async (done: Function) => {
       console.info('bindControllerGrid_0200 START');

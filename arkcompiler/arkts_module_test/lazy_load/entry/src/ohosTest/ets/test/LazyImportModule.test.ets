@@ -29,78 +29,78 @@ import {
 export default function lazyImportModuleTest() {
   describe('LazyImportModuleTest', () => {
     /**
-     * @tc.number: SUB_Runtime_Language_Lazy_Import_0001
-     * @tc.name: testLazyImportSupportHap
-     * @tc.desc: lazy import loading-local project hap-supported variable/func/class/so
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testLazyImportSupportHap
+     * @tc.number SUB_Runtime_Language_Lazy_Import_0001
+     * @tc.desc   lazy import loading-local project hap-supported variable/func/class/so
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLazyImportSupportHap', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       expect(lazyImportSupportHap()).assertEqual("success");
     })
     /**
-     * @tc.number: SUB_Runtime_Language_Lazy_Import_0002
-     * @tc.name: testLazyImportSupportHar
-     * @tc.desc: lazy import har variable/func/class/so
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testLazyImportSupportHar
+     * @tc.number SUB_Runtime_Language_Lazy_Import_0002
+     * @tc.desc   lazy import har variable/func/class/so
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLazyImportSupportHar', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       expect(lazyImportSupportHar()).assertEqual("success");
     })
     /**
-     * @tc.number: SUB_Runtime_Language_Lazy_Import_0003
-     * @tc.name: testLazyImportSupportHsp
-     * @tc.desc: lazy import hsp variable/func/class/so
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testLazyImportSupportHsp
+     * @tc.number SUB_Runtime_Language_Lazy_Import_0003
+     * @tc.desc   lazy import hsp variable/func/class/so
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLazyImportSupportHsp', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       expect(lazyImportSupportHsp()).assertEqual("success");
     })
     /**
-     * @tc.number: SUB_Runtime_Language_Lazy_Import_0004
-     * @tc.name: testLazyImportSupportWorker
-     * @tc.desc: lazy import worker syntax
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testLazyImportSupportWorker
+     * @tc.number SUB_Runtime_Language_Lazy_Import_0004
+     * @tc.desc   lazy import worker syntax
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLazyImportSupportWorker', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       expect(lazyImportSupportWorker()).assertEqual("success");
     })
     /**
-     * @tc.number: SUB_Runtime_Language_Lazy_Import_0005
-     * @tc.name: testLazyImportSupportSendable
-     * @tc.desc: lazy import sendable func/class
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testLazyImportSupportSendable
+     * @tc.number SUB_Runtime_Language_Lazy_Import_0005
+     * @tc.desc   lazy import sendable func/class
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLazyImportSupportSendable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       expect(lazyImportSupportSendable()).assertEqual("success");
     })
     /**
-     * @tc.number: SUB_Runtime_Language_Lazy_Import_0006
-     * @tc.name: testLazyImportSupportSharedModule
-     * @tc.desc: lazy import sharedModule variable/func/class
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testLazyImportSupportSharedModule
+     * @tc.number SUB_Runtime_Language_Lazy_Import_0006
+     * @tc.desc   lazy import sharedModule variable/func/class
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLazyImportSupportSharedModule', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       expect(lazyImportSupportSharedModule()).assertEqual("success");
     })
     /**
-     * @tc.number: SUB_Runtime_Language_Lazy_Import_0007
-     * @tc.name: testLazyImportSupportDynamicImport
-     * @tc.desc: lazy import in dynamic import
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testLazyImportSupportDynamicImport
+     * @tc.number SUB_Runtime_Language_Lazy_Import_0007
+     * @tc.desc   lazy import in dynamic import
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLazyImportSupportDynamicImport', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       expect(await lazyImportSupportDynamicImport()).assertEqual("success");

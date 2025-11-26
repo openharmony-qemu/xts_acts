@@ -41,15 +41,15 @@ export default function UIContextComponentSnapshot() {
     });
     afterEach(async () => {
     });
-    /**
-     * @tc.number SUB_ACE_UI_SNAPSHOT_GETSYNC_0390
-     * @tc.name testButton
-     * @tc.desc UIContextComponentSnapshot_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     */
 
+    /**
+     * @tc.name   UIContextComponentSnapshot_0100
+     * @tc.number UIContextComponentSnapshot_0100
+     * @tc.desc   UIContextComponentSnapshot_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('UIContextComponentSnapshot_0100', Level.LEVEL0, async (done: Function) => {
       console.info('UIContextComponentSnapshot_0100 START');
       await CommonFunc.sleep(1000);
@@ -65,15 +65,15 @@ export default function UIContextComponentSnapshot() {
       console.info('UIContextComponentSnapshot_0100 END')
       done();
     });
-    /**
-     * @tc.number SUB_ACE_UI_SNAPSHOT_GETSYNC_0370
-     * @tc.name testButton
-     * @tc.desc UIContextComponentSnapshot_0200
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     */
 
+    /**
+     * @tc.name   UIContextComponentSnapshot_0200
+     * @tc.number UIContextComponentSnapshot_0200
+     * @tc.desc   UIContextComponentSnapshot_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('UIContextComponentSnapshot_0200', Level.LEVEL0, async (done: Function) => {
       console.info('UIContextComponentSnapshot_0200 START');
       await CommonFunc.sleep(1000);
@@ -89,15 +89,15 @@ export default function UIContextComponentSnapshot() {
       console.info('UIContextComponentSnapshot_0200 END')
       done();
     });
-    /**
-     * @tc.number SUB_ACE_UI_SNAPSHOT_GETSYNC_0410
-     * @tc.name testButton
-     * @tc.desc UIContextComponentSnapshot_0300
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     */
 
+    /**
+     * @tc.name   UIContextComponentSnapshot_0300
+     * @tc.number UIContextComponentSnapshot_0300
+     * @tc.desc   UIContextComponentSnapshot_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('UIContextComponentSnapshot_0300', Level.LEVEL0, async (done: Function) => {
       console.info('UIContextComponentSnapshot_0300 START');
       await CommonFunc.sleep(1000);
@@ -113,15 +113,15 @@ export default function UIContextComponentSnapshot() {
       console.info('UIContextComponentSnapshot_0300 END')
       done();
     });
-    /**
-     * @tc.number SUB_ACE_UI_SNAPSHOT_GETSYNC_0380
-     * @tc.name testButton
-     * @tc.desc UIContextComponentSnapshot_0400
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     */
 
+    /**
+     * @tc.name   UIContextComponentSnapshot_0400
+     * @tc.number UIContextComponentSnapshot_0400
+     * @tc.desc   UIContextComponentSnapshot_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('UIContextComponentSnapshot_0400', Level.LEVEL0, async (done: Function) => {
       console.info('UIContextComponentSnapshot_0400 START');
       await CommonFunc.sleep(1000);

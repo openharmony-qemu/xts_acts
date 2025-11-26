@@ -46,12 +46,12 @@ export default function Param3Jsunit() {
     });
 
     /**
-     * @tc.number    Param3Jsunit_001
-     * @tc.name      Param3Jsunit_001
-     * @tc.desc      The @ Param variable passed from the parent component to the child component
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   Param3Jsunit_001
+     * @tc.number Param3Jsunit_001
+     * @tc.desc   The @ Param variable passed from the parent component to the child component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Param3Jsunit_001', Level.LEVEL0, async (done: Function) => {
       console.info('[Param3Jsunit_001] START');

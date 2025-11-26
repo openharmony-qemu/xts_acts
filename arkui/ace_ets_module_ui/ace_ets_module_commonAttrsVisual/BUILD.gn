@@ -18,5 +18,6 @@ group("ActsAceEtsModuleCommonAttrsVisualTest") {
     "ace_ets_module_commonAttrsVisual_api12:ActsAceEtsModuleCommonAttrsVisualApi12Test",
     "ace_ets_module_commonAttrsVisual_api14:ActsAceEtsModuleCommonAttrsVisualApi14Test",
     "ace_ets_module_commonAttrsVisual_api20:ActsAceEtsModuleCommonAttrsVisualApi20Test",
+    "ace_ets_module_commonAttrsVisual1:ActsAceEtsModuleCommonAttrsVisual1Test",
   ]
 }

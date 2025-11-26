@@ -42,12 +42,12 @@ export default function IsAtEndScroll() {
     });
 
     /**
-     * @tc.number    IsAtEndScroll_001
-     * @tc.name      IsAtEndScroll_0100
-     * @tc.desc      False,The component hasn't scrolled to the bottom yet.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   IsAtEndScroll_0100
+     * @tc.number IsAtEndScroll_001
+     * @tc.desc   False,The component hasn't scrolled to the bottom yet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('IsAtEndScroll_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[IsAtEndScroll_0100] START');
@@ -64,12 +64,12 @@ export default function IsAtEndScroll() {
     });
 
     /**
-     * @tc.number    IsAtEndScroll_002
-     * @tc.name      IsAtEndScroll_0200
-     * @tc.desc      True,The component has scrolled to the bottom.
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   IsAtEndScroll_0200
+     * @tc.number IsAtEndScroll_002
+     * @tc.desc   True,The component has scrolled to the bottom.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('IsAtEndScroll_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[IsAtEndScroll_0200] START');

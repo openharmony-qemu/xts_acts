@@ -50,9 +50,12 @@ export default function column_JustifyContent_ChangeParent() {
     });
 
     /**
+     * @tc.name   testColumnJustifyContentChangeParentFlexAlignCenter
      * @tc.number SUB_ACE_COLUMN_JUSTIFYCONTENT_CHANGEPARENT_TEST_0100
-     * @tc.name testColumnJustifyContentChangeParentFlexAlignCenter
-     * @tc.desc The parent component is bound to justifyContent property FlexAlign.Center. Other parameters are default
+     * @tc.desc   The parent component is bound to justifyContent property FlexAlign.Center. Other parameters are default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnJustifyContentChangeParentFlexAlignCenter',  Level.LEVEL0, async () => {
       console.info('new testColumnJustifyContentChangeParentFlexAlignCenter START');
@@ -101,9 +104,12 @@ export default function column_JustifyContent_ChangeParent() {
     });
 
     /**
+     * @tc.name   testColumnJustifyContentChangeParentFlexAlignEnd
      * @tc.number SUB_ACE_COLUMN_JUSTIFYCONTENT_CHANGEPARENT_TEST_0200
-     * @tc.name testColumnJustifyContentChangeParentFlexAlignEnd
-     * @tc.desc The parent component is bound to justifyContent property FlexAlign.End. Other parameters are default
+     * @tc.desc   The parent component is bound to justifyContent property FlexAlign.End. Other parameters are default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnJustifyContentChangeParentFlexAlignEnd',  Level.LEVEL0, async () => {
       console.info('new testColumnJustifyContentChangeParentFlexAlignEnd START');
@@ -151,9 +157,12 @@ export default function column_JustifyContent_ChangeParent() {
     });
 
     /**
+     * @tc.name   testColumnJustifyContentChangeParentFlexAlignSpaceBetween
      * @tc.number SUB_ACE_COLUMN_JUSTIFYCONTENT_CHANGEPARENT_TEST_0300
-     * @tc.name testColumnJustifyContentChangeParentFlexAlignSpaceBetween
-     * @tc.desc The parent component is bound to justifyContent property FlexAlign.SpaceBetween. Other parameters are default
+     * @tc.desc   The parent component is bound to justifyContent property FlexAlign.SpaceBetween. Other parameters are default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnJustifyContentChangeParentFlexAlignSpaceBetween',  Level.LEVEL0, async () => {
       console.info('new testColumnJustifyContentChangeParentFlexAlignSpaceBetween START');
@@ -201,9 +210,12 @@ export default function column_JustifyContent_ChangeParent() {
     });
 
     /**
+     * @tc.name   testColumnJustifyContentChangeParentFlexAlignSpaceAround
      * @tc.number SUB_ACE_COLUMN_JUSTIFYCONTENT_CHANGEPARENT_TEST_0400
-     * @tc.name testColumnJustifyContentChangeParentFlexAlignSpaceAround
-     * @tc.desc The parent component is bound to justifyContent property FlexAlign.SpaceAround. Other parameters are default
+     * @tc.desc   The parent component is bound to justifyContent property FlexAlign.SpaceAround. Other parameters are default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnJustifyContentChangeParentFlexAlignSpaceAround',  Level.LEVEL0, async () => {
       console.info('new testColumnJustifyContentChangeParentFlexAlignSpaceAround START');
@@ -252,9 +264,12 @@ export default function column_JustifyContent_ChangeParent() {
     });
 
     /**
+     * @tc.name   testColumnJustifyContentChangeParentFlexAlignSpaceEvenly
      * @tc.number SUB_ACE_COLUMN_JUSTIFYCONTENT_CHANGEPARENT_TEST_0500
-     * @tc.name testColumnJustifyContentChangeParentFlexAlignSpaceEvenly
-     * @tc.desc The parent component is bound to justifyContent property FlexAlign.SpaceEvenly. Other parameters are default
+     * @tc.desc   The parent component is bound to justifyContent property FlexAlign.SpaceEvenly. Other parameters are default
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnJustifyContentChangeParentFlexAlignSpaceEvenly',  Level.LEVEL0, async () => {
       console.info('new testColumnJustifyContentChangeParentFlexAlignSpaceEvenly START');

@@ -55,12 +55,12 @@ export default function blendModeTest() {
       done();
     });
     /**
+     * @tc.name   blendModeTest_0100
      * @tc.number blendMode
-     * @tc.name blendModeTest_0100
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('blendModeTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('blendModeTest_0100 START');
@@ -75,12 +75,12 @@ export default function blendModeTest() {
       done();
     });
     /**
+     * @tc.name   blendModeTest_0200
      * @tc.number blendMode
-     * @tc.name blendModeTest_0200
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('blendModeTest_0200', Level.LEVEL2, async (done: Function) => {
       console.info('blendModeTest_0100 START');
@@ -95,12 +95,12 @@ export default function blendModeTest() {
       done();
     });
     /**
+     * @tc.name   blendModeTest_0300
      * @tc.number blendMode
-     * @tc.name blendModeTest_0300
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('blendModeTest_0300', Level.LEVEL2, async (done: Function) => {
       console.info('blendModeTest_0100 START');
@@ -115,12 +115,12 @@ export default function blendModeTest() {
       done();
     });
     /**
+     * @tc.name   blendModeTest_0400
      * @tc.number blendMode
-     * @tc.name blendModeTest_0400
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('blendModeTest_0400', Level.LEVEL2, async (done: Function) => {
       console.info('blendModeTest_0100 START');
@@ -135,12 +135,12 @@ export default function blendModeTest() {
       done();
     });
     /**
+     * @tc.name   blendModeTest_0500
      * @tc.number blendMode
-     * @tc.name blendModeTest_0500
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('blendModeTest_0500', Level.LEVEL2, async (done: Function) => {
       console.info('blendModeTest_0100 START');
@@ -155,12 +155,12 @@ export default function blendModeTest() {
       done();
     });
     /**
+     * @tc.name   blendModeTest_0600
      * @tc.number blendMode
-     * @tc.name blendModeTest_0600
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('blendModeTest_0600', Level.LEVEL2, async (done: Function) => {
       console.info('blendModeTest_0100 START');
@@ -175,12 +175,12 @@ export default function blendModeTest() {
       done();
     });
     /**
+     * @tc.name   blendModeTest_0700
      * @tc.number blendMode
-     * @tc.name blendModeTest_0700
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('blendModeTest_0700', Level.LEVEL2, async (done: Function) => {
       console.info('blendModeTest_0100 START');
@@ -195,12 +195,12 @@ export default function blendModeTest() {
       done();
     });
     /**
+     * @tc.name   blendModeTest_0800
      * @tc.number blendMode
-     * @tc.name blendModeTest_0800
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('blendModeTest_0800', Level.LEVEL2, async (done: Function) => {
       console.info('blendModeTest_0100 START');
@@ -215,12 +215,12 @@ export default function blendModeTest() {
       done();
     });
     /**
+     * @tc.name   blendModeTest_0900
      * @tc.number blendMode
-     * @tc.name blendModeTest_0900
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('blendModeTest_0900', Level.LEVEL2, async (done: Function) => {
       console.info('blendModeTest_0100 START');
@@ -235,12 +235,12 @@ export default function blendModeTest() {
       done();
     });
     /**
+     * @tc.name   blendModeTest_0110
      * @tc.number blendMode
-     * @tc.name blendModeTest_0100
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('blendModeTest_0110', Level.LEVEL2, async (done: Function) => {
       console.info('blendModeTest_0100 START');
@@ -255,12 +255,12 @@ export default function blendModeTest() {
       done();
     });
     /**
+     * @tc.name   blendModeTest_0110
      * @tc.number blendMode
-     * @tc.name blendModeTest_0110
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('blendModeTest_0110', Level.LEVEL2, async (done: Function) => {
       console.info('blendModeTest_0100 START');
@@ -275,12 +275,12 @@ export default function blendModeTest() {
       done();
     });
     /**
+     * @tc.name   blendModeTest_0120
      * @tc.number blendMode
-     * @tc.name blendModeTest_0120
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('blendModeTest_0120', Level.LEVEL2, async (done: Function) => {
       console.info('blendModeTest_0100 START');
@@ -295,12 +295,12 @@ export default function blendModeTest() {
       done();
     });
     /**
+     * @tc.name   blendModeTest_0130
      * @tc.number blendMode
-     * @tc.name blendModeTest_0130
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('blendModeTest_0130', Level.LEVEL2, async (done: Function) => {
       console.info('blendModeTest_0100 START');
@@ -315,12 +315,12 @@ export default function blendModeTest() {
       done();
     });
     /**
+     * @tc.name   blendModeTest_0140
      * @tc.number blendMode
-     * @tc.name blendModeTest_0140
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('blendModeTest_0140', Level.LEVEL2, async (done: Function) => {
       console.info('blendModeTest_0100 START');
@@ -335,12 +335,12 @@ export default function blendModeTest() {
       done();
     });
     /**
+     * @tc.name   blendModeTest_0150
      * @tc.number blendMode
-     * @tc.name blendModeTest_0150
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('blendModeTest_0150', Level.LEVEL2, async (done: Function) => {
       console.info('blendModeTest_0100 START');
@@ -355,12 +355,12 @@ export default function blendModeTest() {
       done();
     });
     /**
+     * @tc.name   blendModeTest_0160
      * @tc.number blendMode
-     * @tc.name blendModeTest_0160
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('blendModeTest_0160', Level.LEVEL2, async (done: Function) => {
       console.info('blendModeTest_0100 START');
@@ -376,12 +376,12 @@ export default function blendModeTest() {
       done();
     });
     /**
+     * @tc.name   blendModeTest_0170
      * @tc.number blendMode
-     * @tc.name blendModeTest_0170
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('blendModeTest_0170', Level.LEVEL2, async (done: Function) => {
       console.info('blendModeTest_0100 START');
@@ -397,12 +397,12 @@ export default function blendModeTest() {
       done();
     });
     /**
+     * @tc.name   blendModeTest_0180
      * @tc.number blendMode
-     * @tc.name blendModeTest_0180
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('blendModeTest_0180', Level.LEVEL2, async (done: Function) => {
       console.info('blendModeTest_0100 START');
@@ -418,12 +418,12 @@ export default function blendModeTest() {
       done();
     });
     /**
+     * @tc.name   blendModeTest_0190
      * @tc.number blendMode
-     * @tc.name blendModeTest_0190
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('blendModeTest_0190', Level.LEVEL2, async (done: Function) => {
       console.info('blendModeTest_0100 START');
@@ -439,12 +439,12 @@ export default function blendModeTest() {
       done();
     });
     /**
+     * @tc.name   blendModeTest_0200
      * @tc.number blendMode
-     * @tc.name blendModeTest_0200
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('blendModeTest_0200', Level.LEVEL2, async (done: Function) => {
       console.info('blendModeTest_0100 START');
@@ -460,12 +460,12 @@ export default function blendModeTest() {
       done();
     });
     /**
+     * @tc.name   blendModeTest_0210
      * @tc.number blendMode
-     * @tc.name blendModeTest_0210
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('blendModeTest_0210', Level.LEVEL2, async (done: Function) => {
       console.info('blendModeTest_0100 START');
@@ -481,12 +481,12 @@ export default function blendModeTest() {
       done();
     });
     /**
+     * @tc.name   blendModeTest_0220
      * @tc.number blendMode
-     * @tc.name blendModeTest_0220
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('blendModeTest_0220', Level.LEVEL2, async (done: Function) => {
       console.info('blendModeTest_0100 START');
@@ -502,12 +502,12 @@ export default function blendModeTest() {
       done();
     });
     /**
+     * @tc.name   blendModeTest_0230
      * @tc.number blendMode
-     * @tc.name blendModeTest_0230
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('blendModeTest_0230', Level.LEVEL2, async (done: Function) => {
       console.info('blendModeTest_0100 START');
@@ -523,12 +523,12 @@ export default function blendModeTest() {
       done();
     });
     /**
+     * @tc.name   blendModeTest_0240
      * @tc.number blendMode
-     * @tc.name blendModeTest_0240
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('blendModeTest_0240', Level.LEVEL2, async (done: Function) => {
       console.info('blendModeTest_0100 START');
@@ -544,12 +544,12 @@ export default function blendModeTest() {
       done();
     });
     /**
+     * @tc.name   blendModeTest_0250
      * @tc.number blendMode
-     * @tc.name blendModeTest_0250
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('blendModeTest_0250', Level.LEVEL2, async (done: Function) => {
       console.info('blendModeTest_0100 START');
@@ -565,12 +565,12 @@ export default function blendModeTest() {
       done();
     });
     /**
+     * @tc.name   blendModeTest_0260
      * @tc.number blendMode
-     * @tc.name blendModeTest_0260
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('blendModeTest_0260', Level.LEVEL2, async (done: Function) => {
       console.info('blendModeTest_0100 START');
@@ -586,12 +586,12 @@ export default function blendModeTest() {
       done();
     });
     /**
+     * @tc.name   blendModeTest_0270
      * @tc.number blendMode
-     * @tc.name blendModeTest_0270
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('blendModeTest_0270', Level.LEVEL2, async (done: Function) => {
       console.info('blendModeTest_0100 START');
@@ -607,12 +607,12 @@ export default function blendModeTest() {
       done();
     });
     /**
+     * @tc.name   blendModeTest_0280
      * @tc.number blendMode
-     * @tc.name blendModeTest_0280
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('blendModeTest_0280', Level.LEVEL2, async (done: Function) => {
       console.info('blendModeTest_0100 START');
@@ -628,12 +628,12 @@ export default function blendModeTest() {
       done();
     });
     /**
+     * @tc.name   blendModeTest_0290
      * @tc.number blendMode
-     * @tc.name blendModeTest_0290
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('blendModeTest_0290', Level.LEVEL2, async (done: Function) => {
       console.info('blendModeTest_0100 START');
@@ -649,12 +649,12 @@ export default function blendModeTest() {
       done();
     });
     /**
+     * @tc.name   blendModeTest_0300
      * @tc.number blendMode
-     * @tc.name blendModeTest_0300
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('blendModeTest_0300', Level.LEVEL2, async (done: Function) => {
       console.info('blendModeTest_0100 START');

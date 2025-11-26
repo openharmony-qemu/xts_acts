@@ -1,0 +1,8 @@
+{
+  "src": [
+    "MainAbility/pages/index/Index",
+    "MainAbility/pages/counter/CounterDirection",
+    "MainAbility/pages/counter/counterApi"
+
+  ]
+}

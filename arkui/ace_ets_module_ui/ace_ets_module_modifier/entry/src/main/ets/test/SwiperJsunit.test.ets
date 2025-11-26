@@ -40,12 +40,12 @@ export default function swiperJsunit() {
     });
 
     /**
+     * @tc.name   swiperTest_0001
      * @tc.number swiperTest_0001
-     * @tc.name Test the properties of components
-     * @tc.desc Set nextMargin values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set nextMargin values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('swiperTest_0001', Level.LEVEL0, async (done: Function) => {
       console.info('swiperTest_0001 START');
@@ -58,12 +58,12 @@ export default function swiperJsunit() {
     });
 
     /**
+     * @tc.name   swiperTest_0002
      * @tc.number swiperTest_0002
-     * @tc.name Test the properties of components
-     * @tc.desc Set prevMargin values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set prevMargin values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('swiperTest_0002', Level.LEVEL0, async (done: Function) => {
       console.info('swiperTest_0002 START');
@@ -76,12 +76,12 @@ export default function swiperJsunit() {
     });
 
     /**
+     * @tc.name   swiperTest_0003
      * @tc.number swiperTest_0003
-     * @tc.name Test the properties of components
-     * @tc.desc Set displayCount values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set displayCount values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('swiperTest_0003', Level.LEVEL0, async (done: Function) => {
       console.info('swiperTest_0003 START');
@@ -94,12 +94,12 @@ export default function swiperJsunit() {
     });
 
     /**
+     * @tc.name   swiperTest_0004
      * @tc.number swiperTest_0004
-     * @tc.name Test the properties of components
-     * @tc.desc Set disableSwipe values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set disableSwipe values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('swiperTest_0004', Level.LEVEL0, async (done: Function) => {
       console.info('swiperTest_0004 START');
@@ -112,12 +112,12 @@ export default function swiperJsunit() {
     });
 
     /**
+     * @tc.name   swiperTest_0005
      * @tc.number swiperTest_0005
-     * @tc.name Test the properties of components
-     * @tc.desc Set effectMode values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set effectMode values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('swiperTest_0005', Level.LEVEL0, async (done: Function) => {
       console.info('swiperTest_0005 START');
@@ -130,12 +130,12 @@ export default function swiperJsunit() {
     });
 
     /**
+     * @tc.name   swiperTest_0006
      * @tc.number swiperTest_0000
-     * @tc.name Test the properties of components
-     * @tc.desc Set cachedCount values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set cachedCount values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('swiperTest_0006', Level.LEVEL0, async (done: Function) => {
       console.info('swiperTest_0006 START');
@@ -148,12 +148,12 @@ export default function swiperJsunit() {
     });
 
     /**
+     * @tc.name   swiperTest_0007
      * @tc.number swiperTest_0007
-     * @tc.name Test the properties of components
-     * @tc.desc Set displayMode values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set displayMode values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('swiperTest_0007', Level.LEVEL0, async (done: Function) => {
       console.info('swiperTest_0007 START');
@@ -166,12 +166,12 @@ export default function swiperJsunit() {
     });
 
     /**
+     * @tc.name   swiperTest_0008
      * @tc.number swiperTest_0008
-     * @tc.name Test the properties of components
-     * @tc.desc Set itemSpace values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set itemSpace values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('swiperTest_0008', Level.LEVEL0, async (done: Function) => {
       console.info('swiperTest_0008 START');
@@ -184,12 +184,12 @@ export default function swiperJsunit() {
     });
 
     /**
+     * @tc.name   swiperTest_0009
      * @tc.number swiperTest_0009
-     * @tc.name Test the properties of components
-     * @tc.desc Set loop values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set loop values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('swiperTest_0009', Level.LEVEL0, async (done: Function) => {
       console.info('swiperTest_0009 START');
@@ -202,12 +202,12 @@ export default function swiperJsunit() {
     });
 
     /**
+     * @tc.name   swiperTest_0010
      * @tc.number swiperTest_0010
-     * @tc.name Test the properties of components
-     * @tc.desc Set interval values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set interval values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('swiperTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('swiperTest_0010 START');
@@ -220,12 +220,12 @@ export default function swiperJsunit() {
     });
 
     /**
+     * @tc.name   swiperTest_0011
      * @tc.number swiperTest_0011
-     * @tc.name Test the properties of components
-     * @tc.desc Set vertical values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set vertical values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('swiperTest_0011', Level.LEVEL0, async (done: Function) => {
       console.info('swiperTest_0011 START');
@@ -238,12 +238,12 @@ export default function swiperJsunit() {
     });
 
     /**
+     * @tc.name   swiperTest_0012
      * @tc.number swiperTest_0012
-     * @tc.name Test the properties of components
-     * @tc.desc Set autoPlay values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set autoPlay values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('swiperTest_0012', Level.LEVEL0, async (done: Function) => {
       console.info('swiperTest_0012 START');
@@ -256,12 +256,12 @@ export default function swiperJsunit() {
     });
 
     /**
+     * @tc.name   swiperTest_0013
      * @tc.number swiperTest_0013
-     * @tc.name Test the properties of components
-     * @tc.desc Set index values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set index values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('swiperTest_0013', Level.LEVEL0, async (done: Function) => {
       console.info('swiperTest_0013 START');
@@ -274,12 +274,12 @@ export default function swiperJsunit() {
     });
 
     /**
+     * @tc.name   swiperTest_0014
      * @tc.number swiperTest_0014
-     * @tc.name Test the properties of components
-     * @tc.desc Set indicator values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set indicator values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('swiperTest_0014', Level.LEVEL0, async (done: Function) => {
       console.info('swiperTest_0014 START');
@@ -293,12 +293,12 @@ export default function swiperJsunit() {
     });
 
     /**
+     * @tc.name   swiperTest_015
      * @tc.number swiperTest_015
-     * @tc.name Test the properties of components
-     * @tc.desc Set curve values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set curve values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('swiperTest_015', Level.LEVEL0, async (done: Function) => {
       console.info('swiperTest_015 START');
@@ -311,12 +311,12 @@ export default function swiperJsunit() {
     });
 
     /**
+     * @tc.name   swiperTest_016
      * @tc.number swiperTest_016
-     * @tc.name Test the properties of components
-     * @tc.desc Set duration values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set duration values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('swiperTest_016', Level.LEVEL0, async (done: Function) => {
       console.info('swiperTest_016 START');
@@ -329,12 +329,12 @@ export default function swiperJsunit() {
     });
 
     /**
+     * @tc.name   swiperTest_017
      * @tc.number swiperTest_017
-     * @tc.name Test the properties of components
-     * @tc.desc Set displayArrow values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set displayArrow values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('swiperTest_017', Level.LEVEL0, async (done: Function) => {
       console.info('swiperTest_017 START');
@@ -347,12 +347,12 @@ export default function swiperJsunit() {
     });
 
     /**
+     * @tc.name   swiperTest_018
      * @tc.number swiperTest_018
-     * @tc.name Test the properties of components
-     * @tc.desc Change index values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change index values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('swiperTest_018', Level.LEVEL0, async (done: Function) => {
       console.info('swiperTest_018 START');

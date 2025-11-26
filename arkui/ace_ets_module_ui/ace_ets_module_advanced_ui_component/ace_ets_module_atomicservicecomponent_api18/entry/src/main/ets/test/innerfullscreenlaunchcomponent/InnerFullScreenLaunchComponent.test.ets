@@ -53,12 +53,12 @@ export default function innerfullscreenlaunchcomponentTest() {
     });
 
     /**
+     * @tc.name   innerfullscreenlaunchcomponentTest_0100
      * @tc.number innerfullscreenlaunchcomponent
-     * @tc.name innerfullscreenlaunchcomponentTest_0100
-     * @tc.desc Test innerfullscreenlaunchcomponent
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test innerfullscreenlaunchcomponent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('innerfullscreenlaunchcomponentTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[innerfullscreenlaunchcomponentTest_0100] START');

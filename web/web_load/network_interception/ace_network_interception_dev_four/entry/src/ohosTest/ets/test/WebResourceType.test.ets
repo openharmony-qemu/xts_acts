@@ -203,6 +203,23 @@ export default function WebResourceTypeTest() {
       sendEventByKey('WebResourceTypeButton', 10, '');
     })
 
+   /*
+    *@tc.number  : SUB_WEBVIEW_WebResourceType_OBJECT
+    *@tc.name    : testWebResourceTypeObject
+    *@tc.desc    : test WebResourceType OBJECT
+    *@tc.size    : MediumTest
+    *@tc.type    : Function
+    *@tc.level   : Level 2
+    */
+    it('testWebResourceTypeObject', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+     Utils.emitEvent("testWebResourceTypeObject", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerBaseEvent("testWebResourceTypeObject", 0, 25110707, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(webview.WebResourceType.OBJECT);
+      });
+      sendEventByKey('WebResourceTypeButton', 10, '');
+    })
+
+
     /*
     * @tc.number     : SUB_WEBVIEW_WebResourceType_MEDIA
     * @tc.name       : testWebResourceTypeMedia
@@ -233,6 +250,165 @@ export default function WebResourceTypeTest() {
         expect(backData?.data?.ACTION).assertEqual(webview.WebResourceType.PING);
       });
       sendEventByKey('WebResourceTypeButton', 10, '');
+    })
+
+    /*
+    * @tc.number     : SUB_WEBVIEW_WebResourceType_PREFETCH
+    * @tc.name       : testWebResourceTypePrefetch
+    * @tc.desc       : test WebResourceType PREFETCH
+    * @tc.size       : MediumTest
+    * @tc.type       : Function
+    * @tc.level      : Level 2
+    */
+    it('testWebResourceTypePrefetch', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("testWebResourceTypePrefetch", EVENT_ID_SET_EMIT_KEY);
+      Utils.registerBaseEvent("testWebResourceTypePrefetch", 0, 25110711, done, (backData: events_emitter.EventData, expected: Object) => {
+        expect(backData?.data?.ACTION).assertEqual(webview.WebResourceType.PREFETCH);
+      });
+      sendEventByKey('WebResourceTypeButton', 10, '');
+    })
+
+
+   /*
+    *@tc.number  : SUB_WEBVIEW_WebResourceType_SUB_RESOURCE
+    *@tc.name    : testWebResourceTypeSubResource
+    *@tc.desc    : test WebResourceType SUB_RESOURCE
+    *@tc.size    : MediumTest
+    *@tc.type    : Function
+    *@tc.level   : Level 2
+    */
+    it('testWebResourceTypeSubResource', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        console.log('testWebResourceTypeSubResource start')
+        try {
+            expect(webview.WebResourceType.SUB_RESOURCE).assertEqual(6)
+        } catch(error) {
+            console.error('testWebResourceTypeSubResource error: ' + JSON.stringify(error))
+            expect(0).assertEqual(1)
+        }
+        console.log('testWebResourceTypeSubResource end')
+        done()
+    })
+
+
+
+   /*
+    *@tc.number  : SUB_WEBVIEW_WebResourceType_WORKER
+    *@tc.name    : testWebResourceTypeWorker
+    *@tc.desc    : test WebResourceType WORKER
+    *@tc.size    : MediumTest
+    *@tc.type    : Function
+    *@tc.level   : Level 2
+    */
+    it('testWebResourceTypeWorker', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        console.log('testWebResourceTypeWorker start')
+        try {
+            expect(webview.WebResourceType.WORKER).assertEqual(9)
+        } catch(error) {
+            console.error('testWebResourceTypeWorker error: ' + JSON.stringify(error))
+            expect(0).assertEqual(1)
+        }
+        console.log('testWebResourceTypeWorker end')
+        done()
+    })
+
+   /*
+    *@tc.number  : SUB_WEBVIEW_WebResourceType_SHARED_WORKER
+    *@tc.name    : testWebResourceTypeSharedWorker
+    *@tc.desc    : test WebResourceType SHARED_WORKER
+    *@tc.size    : MediumTest
+    *@tc.type    : Function
+    *@tc.level   : Level 2
+    */
+    it('testWebResourceTypeSharedWorker', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        console.log('testWebResourceTypeSharedWorker start')
+        try {
+            expect(webview.WebResourceType.SHARED_WORKER).assertEqual(10)
+        } catch(error) {
+            console.error('testWebResourceTypeSharedWorker error: ' + JSON.stringify(error))
+            expect(0).assertEqual(1)
+        }
+        console.log('testWebResourceTypeSharedWorker end')
+        done()
+    })
+
+   /*
+    *@tc.number  : SUB_WEBVIEW_WebResourceType_CSP_REPORT
+    *@tc.name    : testWebResourceTypeCspReport
+    *@tc.desc    : test WebResourceType CSP_REPORT
+    *@tc.size    : MediumTest
+    *@tc.type    : Function
+    *@tc.level   : Level 2
+    */
+    it('testWebResourceTypeCspReport', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        console.log('testWebResourceTypeCspReport start')
+        try {
+            expect(webview.WebResourceType.CSP_REPORT).assertEqual(16)
+        } catch(error) {
+            console.error('testWebResourceTypeCspReport error: ' + JSON.stringify(error))
+            expect(0).assertEqual(1)
+        }
+        console.log('testWebResourceTypeCspReport end')
+        done()
+    })
+
+   /*
+    *@tc.number  : SUB_WEBVIEW_WebResourceType_PLUGIN_RESOURCE
+    *@tc.name    : testWebResourceTypePluginResource
+    *@tc.desc    : test WebResourceType PLUGIN_RESOURCE
+    *@tc.size    : MediumTest
+    *@tc.type    : Function
+    *@tc.level   : Level 2
+    */
+    it('testWebResourceTypePluginResource', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        console.log('testWebResourceTypePluginResource start')
+        try {
+            expect(webview.WebResourceType.PLUGIN_RESOURCE).assertEqual(17)
+        } catch(error) {
+            console.error('testWebResourceTypePluginResource error: ' + JSON.stringify(error))
+            expect(0).assertEqual(1)
+        }
+        console.log('testWebResourceTypePluginResource end')
+        done()
+    })
+
+   /*
+    *@tc.number  : SUB_WEBVIEW_WebResourceType_NAVIGATION_PRELOAD_MAIN_FRAME
+    *@tc.name    : testWebResourceTypeNavigationPreloadMainFrame
+    *@tc.desc    : test WebResourceType NAVIGATION_PRELOAD_MAIN_FRAME
+    *@tc.size    : MediumTest
+    *@tc.type    : Function
+    *@tc.level   : Level 2
+    */
+    it('testWebResourceTypeNavigationPreloadMainFrame', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        console.log('testWebResourceTypeNavigationPreloadMainFrame start')
+        try {
+            expect(webview.WebResourceType.NAVIGATION_PRELOAD_MAIN_FRAME).assertEqual(19)
+        } catch(error) {
+            console.error('testWebResourceTypeNavigationPreloadMainFrame error: ' + JSON.stringify(error))
+            expect(0).assertEqual(1)
+        }
+        console.log('testWebResourceTypeNavigationPreloadMainFrame end')
+        done()
+    })
+
+   /*
+    *@tc.number  : SUB_WEBVIEW_WebResourceType_NAVIGATION_PRELOAD_SUB_FRAME
+    *@tc.name    : testWebResourceTypeNavigationPreloadSubFrame
+    *@tc.desc    : test WebResourceType NAVIGATION_PRELOAD_SUB_FRAME
+    *@tc.size    : MediumTest
+    *@tc.type    : Function
+    *@tc.level   : Level 2
+    */
+    it('testWebResourceTypeNavigationPreloadSubFrame', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        console.log('testWebResourceTypeNavigationPreloadSubFrame start')
+        try {
+            expect(webview.WebResourceType.NAVIGATION_PRELOAD_SUB_FRAME).assertEqual(20)
+        } catch(error) {
+            console.error('testWebResourceTypeNavigationPreloadSubFrame error: ' + JSON.stringify(error))
+            expect(0).assertEqual(1)
+        }
+        console.log('testWebResourceTypeNavigationPreloadSubFrame end')
+        done()
     })
 
   })

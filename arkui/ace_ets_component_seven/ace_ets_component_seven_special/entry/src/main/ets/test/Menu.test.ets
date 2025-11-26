@@ -42,12 +42,12 @@ export default function MenuJsunit() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Menu_attrs_0100
      * @tc.number ArkUX_Stage_Menu_attrs_0100
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Menu_attrs_0100', Level.LEVEL0, async (done: Function) => {
       try {
@@ -64,12 +64,12 @@ export default function MenuJsunit() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Menu_attrs_0101
      * @tc.number ArkUX_Stage_Menu_attrs_0101
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Menu_attrs_0101', Level.LEVEL0, async (done: Function) => {
       try {
@@ -89,12 +89,12 @@ export default function MenuJsunit() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_Menu_attrs_0102
      * @tc.number ArkUX_Stage_Menu_attrs_0102
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_Menu_attrs_0102', Level.LEVEL0, async (done: Function) => {
       try {

@@ -25,130 +25,130 @@ export default function listItemLinearGradientTest() {
       await Utils.sleep(100);
       done();
     });
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_LINEARGRADIENT_0100
-     * @tc.name       : testListItemLinearGradient001
-     * @tc.desc       : testing linearGradient for listItem with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemLinearGradient001
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_LINEARGRADIENT_0100
+     * @tc.desc   testing linearGradient for listItem with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemLinearGradient001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemLinearGradient001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_LINEARGRADIENT_0200
-     * @tc.name       : testListItemLinearGradient002
-     * @tc.desc       : testing linearGradient for listItem with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemLinearGradient002
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_LINEARGRADIENT_0200
+     * @tc.desc   testing linearGradient for listItem with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemLinearGradient002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemLinearGradient002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_LINEARGRADIENT_0300
-     * @tc.name       : testListItemLinearGradient003
-     * @tc.desc       : testing linearGradient for listItem with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemLinearGradient003
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_LINEARGRADIENT_0300
+     * @tc.desc   testing linearGradient for listItem with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemLinearGradient003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemLinearGradient003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_LINEARGRADIENT_0400
-     * @tc.name       : testListItemLinearGradient004
-     * @tc.desc       : testing linearGradient for listItem with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemLinearGradient004
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_LINEARGRADIENT_0400
+     * @tc.desc   testing linearGradient for listItem with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemLinearGradient004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemLinearGradient004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_LINEARGRADIENT_0500
-     * @tc.name       : testListItemLinearGradient005
-     * @tc.desc       : testing linearGradient for listItem with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemLinearGradient005
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_LINEARGRADIENT_0500
+     * @tc.desc   testing linearGradient for listItem with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemLinearGradient005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemLinearGradient005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_LINEARGRADIENT_0600
-     * @tc.name       : testListItemLinearGradient006
-     * @tc.desc       : testing linearGradient for listItem with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemLinearGradient006
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_LINEARGRADIENT_0600
+     * @tc.desc   testing linearGradient for listItem with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemLinearGradient006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemLinearGradient006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_LINEARGRADIENT_0700
-     * @tc.name       : testListItemLinearGradient007
-     * @tc.desc       : testing linearGradient for listItem with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemLinearGradient007
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_LINEARGRADIENT_0700
+     * @tc.desc   testing linearGradient for listItem with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemLinearGradient007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemLinearGradient007()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_LINEARGRADIENT_0800
-     * @tc.name       : testListItemLinearGradient008
-     * @tc.desc       : testing linearGradient for listItem with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemLinearGradient008
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_LINEARGRADIENT_0800
+     * @tc.desc   testing linearGradient for listItem with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemLinearGradient008', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemLinearGradient008()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_LINEARGRADIENT_0900
-     * @tc.name       : testListItemLinearGradient009
-     * @tc.desc       : testing linearGradient for listItem with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemLinearGradient009
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_LINEARGRADIENT_0900
+     * @tc.desc   testing linearGradient for listItem with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemLinearGradient009', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemLinearGradient009()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_LINEARGRADIENT_1000
-     * @tc.name       : testListItemLinearGradient010
-     * @tc.desc       : testing linearGradient for listItem with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemLinearGradient010
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_LINEARGRADIENT_1000
+     * @tc.desc   testing linearGradient for listItem with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemLinearGradient010', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemLinearGradient010()).assertEqual(0)

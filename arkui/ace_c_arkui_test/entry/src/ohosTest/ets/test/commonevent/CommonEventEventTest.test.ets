@@ -42,14 +42,14 @@ export default function commonEventEventTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_COMMONEVENT_0100
-    * @tc.name       : testCommonEventO001
-    * @tc.desc       : test onHover event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCommonEvent001
+     * @tc.number SUB_ARKUI_CAPI_COMMONEVENT_0100
+     * @tc.desc   test onHover event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCommonEvent001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'CommonEventOnHoverTest';
       await Utils.pushPage(`commonevent/${PAGE_TAG}`);
@@ -59,14 +59,14 @@ export default function commonEventEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_COMMONEVENT_0200
-    * @tc.name       : testCommonEvent002
-    * @tc.desc       : test onMouse event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCommonEvent002
+     * @tc.number SUB_ARKUI_CAPI_COMMONEVENT_0200
+     * @tc.desc   test onMouse event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCommonEvent002', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'CommonEventOnMouseTest';
       await Utils.pushPage(`commonevent/${PAGE_TAG}`);
@@ -82,14 +82,14 @@ export default function commonEventEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_COMMONEVENT_0300
-    * @tc.name       : testCommonEvent003
-    * @tc.desc       : test onDisappear event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCommonEvent003
+     * @tc.number SUB_ARKUI_CAPI_COMMONEVENT_0300
+     * @tc.desc   test onDisappear event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCommonEvent003', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'CommonEventOnDisappearTest';
       await Utils.pushPage(`commonevent/${PAGE_TAG}`);
@@ -99,14 +99,14 @@ export default function commonEventEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_COMMONEVENT_0400
-    * @tc.name       : testCommonEvent004
-    * @tc.desc       : test onVisibleAreaChange event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCommonEvent004
+     * @tc.number SUB_ARKUI_CAPI_COMMONEVENT_0400
+     * @tc.desc   test onVisibleAreaChange event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCommonEvent004', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'CommonEventOnVisibleAreaChangeTest';
       await Utils.pushPage(`commonevent/${PAGE_TAG}`);
@@ -116,14 +116,14 @@ export default function commonEventEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_COMMONEVENT_0500
-    * @tc.name       : testCommonEvent005
-    * @tc.desc       : test onTouchPropagation event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCommonEvent005
+     * @tc.number SUB_ARKUI_CAPI_COMMONEVENT_0500
+     * @tc.desc   test onTouchPropagation event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCommonEvent005', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'CommonEventOnTouchPropagationTest';
       await Utils.pushPage(`commonevent/${PAGE_TAG}`);
@@ -135,14 +135,14 @@ export default function commonEventEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_COMMONEVENT_0600
-    * @tc.name       : testCommonEvent006
-    * @tc.desc       : test onTouchInterceptDefault event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCommonEvent006
+     * @tc.number SUB_ARKUI_CAPI_COMMONEVENT_0600
+     * @tc.desc   test onTouchInterceptDefault event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCommonEvent006', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'CommonEventOnTouchInterceptDefaultTest';
       await Utils.pushPage(`commonevent/${PAGE_TAG}`);
@@ -155,14 +155,14 @@ export default function commonEventEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_COMMONEVENT_0700
-    * @tc.name       : testCommonEvent007
-    * @tc.desc       : test onTouchInterceptBlock event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCommonEvent007
+     * @tc.number SUB_ARKUI_CAPI_COMMONEVENT_0700
+     * @tc.desc   test onTouchInterceptBlock event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCommonEvent007', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'CommonEventOnTouchInterceptBlockTest';
       await Utils.pushPage(`commonevent/${PAGE_TAG}`);
@@ -175,14 +175,14 @@ export default function commonEventEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_COMMONEVENT_0800
-    * @tc.name       : testCommonEvent008
-    * @tc.desc       : test onTouchInterceptTransparent event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCommonEvent008
+     * @tc.number SUB_ARKUI_CAPI_COMMONEVENT_0800
+     * @tc.desc   test onTouchInterceptTransparent event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCommonEvent008', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'CommonEventOnTouchInterceptTransparentTest';
       await Utils.pushPage(`commonevent/${PAGE_TAG}`);
@@ -195,14 +195,14 @@ export default function commonEventEventTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_COMMONEVENT_0900
-    * @tc.name       : testCommonEvent009
-    * @tc.desc       : test onTouchInterceptNone event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCommonEvent009
+     * @tc.number SUB_ARKUI_CAPI_COMMONEVENT_0900
+     * @tc.desc   test onTouchInterceptNone event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCommonEvent009', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'CommonEventOnTouchInterceptNoneTest';
       await Utils.pushPage(`commonevent/${PAGE_TAG}`);

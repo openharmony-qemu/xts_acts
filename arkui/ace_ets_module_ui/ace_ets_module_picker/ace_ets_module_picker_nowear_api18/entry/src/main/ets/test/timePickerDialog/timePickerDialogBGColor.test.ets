@@ -41,11 +41,13 @@ export default function TimePickerDialogBGColorTest() {
       await CommonFunc.sleep(1000);
       console.info("TimePickerDialogBGColor after each called");
     });
-    /* *
-     * @tc.number: TimePickerDialogBGColorTest_001
-     * @tc.name  : TimePickerDialogBGColorTest_001
-     * @tc.desc  : To test the TimePickerDialog BackgroundColor Color.White
-     * @tc.level : Level 0
+    /**
+     * @tc.name   TimePickerDialogBGColorTest_001
+     * @tc.number TimePickerDialogBGColorTest_001
+     * @tc.desc   To test the TimePickerDialog BackgroundColor Color.White
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimePickerDialogBGColorTest_001',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -61,11 +63,13 @@ export default function TimePickerDialogBGColorTest() {
       await btn1?.click();
       done();
     })
-    /* *
-     * @tc.number: TimePickerDialogBGColorTest_002
-     * @tc.name  : TimePickerDialogBGColorTest_002
-     * @tc.desc  : To test the TimePickerDialog BackgroundColor
-     * @tc.level : Level 0
+    /**
+     * @tc.name   TimePickerDialogBGColorTest_002
+     * @tc.number TimePickerDialogBGColorTest_002
+     * @tc.desc   To test the TimePickerDialog BackgroundColor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimePickerDialogBGColorTest_002',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -81,11 +85,13 @@ export default function TimePickerDialogBGColorTest() {
       await btn1?.click();
       done();
     })
-    /* *
-     * @tc.number: TimePickerDialogBGColorTest_003
-     * @tc.name  : TimePickerDialogBGColorTest_003
-     * @tc.desc  : To test the TimePickerDialog BackgroundColor
-     * @tc.level : Level 0
+    /**
+     * @tc.name   TimePickerDialogBGColorTest_003
+     * @tc.number TimePickerDialogBGColorTest_003
+     * @tc.desc   To test the TimePickerDialog BackgroundColor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimePickerDialogBGColorTest_003',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -101,11 +107,13 @@ export default function TimePickerDialogBGColorTest() {
       await btn1?.click();
       done();
     })
-    /* *
-     * @tc.number: TimePickerDialogBGColorTest_004
-     * @tc.name  : TimePickerDialogBGColorTest_004
-     * @tc.desc  : To test the TimePickerDialog BackgroundColor
-     * @tc.level : Level 0
+    /**
+     * @tc.name   TimePickerDialogBGColorTest_004
+     * @tc.number TimePickerDialogBGColorTest_004
+     * @tc.desc   To test the TimePickerDialog BackgroundColor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimePickerDialogBGColorTest_004',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -121,11 +129,13 @@ export default function TimePickerDialogBGColorTest() {
       await btn1?.click();
       done();
     })
-    /* *
-     * @tc.number: TimePickerDialogBGColorTest_005
-     * @tc.name  : TimePickerDialogBGColorTest_005
-     * @tc.desc  : To test the TimePickerDialog BackgroundColor
-     * @tc.level : Level 0
+    /**
+     * @tc.name   TimePickerDialogBGColorTest_005
+     * @tc.number TimePickerDialogBGColorTest_005
+     * @tc.desc   To test the TimePickerDialog BackgroundColor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimePickerDialogBGColorTest_005',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -141,11 +151,13 @@ export default function TimePickerDialogBGColorTest() {
       await btn1?.click();
       done();
     })
-    /* *
-     * @tc.number: TimePickerDialogBGColorTest_006
-     * @tc.name  : TimePickerDialogBGColorTest_006
-     * @tc.desc  : To test the TimePickerDialog BackgroundColor
-     * @tc.level : Level 0
+    /**
+     * @tc.name   TimePickerDialogBGColorTest_006
+     * @tc.number TimePickerDialogBGColorTest_006
+     * @tc.desc   To test the TimePickerDialog BackgroundColor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimePickerDialogBGColorTest_006',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -161,11 +173,13 @@ export default function TimePickerDialogBGColorTest() {
       await btn1?.click();
       done();
     })
-    /* *
-     * @tc.number: TimePickerDialogBGColorTest_007
-     * @tc.name  : TimePickerDialogBGColorTest_007
-     * @tc.desc  : To test the TimePickerDialog BackgroundColor
-     * @tc.level : Level 0
+    /**
+     * @tc.name   TimePickerDialogBGColorTest_007
+     * @tc.number TimePickerDialogBGColorTest_007
+     * @tc.desc   To test the TimePickerDialog BackgroundColor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimePickerDialogBGColorTest_007',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -181,11 +195,13 @@ export default function TimePickerDialogBGColorTest() {
       await btn1?.click();
       done();
     })
-    /* *
-     * @tc.number: TimePickerDialogBGColorTest_008
-     * @tc.name  : TimePickerDialogBGColorTest_008
-     * @tc.desc  : To test the TimePickerDialog BackgroundColor
-     * @tc.level : Level 0
+    /**
+     * @tc.name   TimePickerDialogBGColorTest_008
+     * @tc.number TimePickerDialogBGColorTest_008
+     * @tc.desc   To test the TimePickerDialog BackgroundColor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimePickerDialogBGColorTest_008',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -201,11 +217,13 @@ export default function TimePickerDialogBGColorTest() {
       await btn1?.click();
       done();
     })
-    /* *
-     * @tc.number: TimePickerDialogBGColorTest_009
-     * @tc.name  : TimePickerDialogBGColorTest_009
-     * @tc.desc  : To test the TimePickerDialog BackgroundColor
-     * @tc.level : Level 0
+    /**
+     * @tc.name   TimePickerDialogBGColorTest_009
+     * @tc.number TimePickerDialogBGColorTest_009
+     * @tc.desc   To test the TimePickerDialog BackgroundColor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimePickerDialogBGColorTest_009',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();

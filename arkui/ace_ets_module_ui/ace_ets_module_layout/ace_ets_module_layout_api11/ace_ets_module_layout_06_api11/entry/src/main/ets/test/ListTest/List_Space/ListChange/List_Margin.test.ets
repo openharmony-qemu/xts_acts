@@ -65,9 +65,12 @@ export default function List_Margin() {
     });
 
     /**
+     * @tc.name   testListMargin
      * @tc.number SUB_ACE_LIST_List_Margin_TEST_0100
-     * @tc.name testListMargin
-     * @tc.desc List parent component binding margin property
+     * @tc.desc   List parent component binding margin property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListMargin',  Level.LEVEL0, async (done: Function) => {
       console.info('testListMargin START');

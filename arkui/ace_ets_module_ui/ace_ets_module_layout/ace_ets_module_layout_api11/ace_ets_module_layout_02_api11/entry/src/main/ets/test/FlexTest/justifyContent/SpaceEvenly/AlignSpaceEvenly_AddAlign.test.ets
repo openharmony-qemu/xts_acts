@@ -47,9 +47,12 @@ export default function AlignSpaceEvenly_AddAlign() {
     });
 
     /**
+     * @tc.name   testFlexAlignSpaceEvenlyAlignBottomEnd
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_SPACEEVENLY_TEST_0800
-     * @tc.name testFlexAlignSpaceEvenlyAlignBottomEnd
-     * @tc.desc Setting generic properties does not take effect, and owned properties take precedence
+     * @tc.desc   Setting generic properties does not take effect, and owned properties take precedence
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignSpaceEvenlyAlignBottomEnd',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignSpaceEvenlyAlignBottomEnd] START');

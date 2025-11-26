@@ -482,6 +482,49 @@ export default function btBleNopUiJsunit() {
       }
       done();
     })
+
+    /**
+     * @tc.number testGATTSERVER_GETCONNECTEDSTATE_NOP
+     * @tc.name testGATTSERVER_GETCONNECTEDSTATE_NOP
+     * @tc.desc 20251113API22用例覆盖GattServer-getConnectedState 201 .
+     * @tc.type Method
+     * @tc.size MEDIUMTEST
+     * @tc.level Level 0
+     */
+    it('testGATTSERVER_GETCONNECTEDSTATE_NOP', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+      try {
+        let gattServer: ble.GattServer = ble.createGattServer();
+        let return_status: ble.ProfileConnectionState = gattServer.getConnectedState('01:02:00:02:03:01');
+        console.info('[bt_arkts]get status is' + JSON.stringify(return_status))
+        expect(return_status).assertEqual(0);
+      } catch (error) {
+        console.error(`[bt_arkts]server ProfileConnectionState 0100 is failed, code is ${error.code},message is ${error.message}`);
+        expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number testGATTCLIENTDEVICE_GETCONNECTEDSTATE_NOP
+     * @tc.name testGATTCLIENTDEVICE_GETCONNECTEDSTATE_NOP
+     * @tc.desc 20251113API22用例覆盖GattClientDevice-getConnectedState 201.
+     * @tc.type Method
+     * @tc.size MEDIUMTEST
+     * @tc.level Level 0
+     */
+    it('testGATTCLIENTDEVICE_GETCONNECTEDSTATE_NOP', TestType.Method | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) =>  {
+      try {
+        let device:ble.GattClientDevice = ble.createGattClientDevice('00:11:22:33:44:55');
+        let return_status=device.getConnectedState();
+        console.info('[bt_arkts] client ProfileConnectionState 0100 is' + JSON.stringify(return_status))
+        expect(return_status).assertEqual(0);
+      } catch (error) {
+        console.error(`[bt_arkts]getConnectedState status is failed, code is ${error.code},message is ${error.message}`);
+        expect(Number(error.code)).assertEqual(PERMISSION_DENIED_CODE);
+      }
+      done();
+    })
+
   })
 }
 

@@ -57,10 +57,13 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       console.info("uiAppearanceALWAYS_DARK after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testuiAppearanceALWAYS_DARK0001
-     * @tc.desic         aceuiAppearanceALWAYS_DARKEtsTest0001
+    /**
+     * @tc.name   testuiAppearanceALWAYS_DARK0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testuiAppearanceALWAYS_DARK0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testuiAppearanceALWAYS_DARK0001', Level.LEVEL0, async (done: Function) => {
       console.info('uiAppearanceALWAYS_DARK testuiAppearanceALWAYS_DARK0001 START');
@@ -83,10 +86,13 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       }
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testuiAppearanceALWAYS_LIGHT0001
-     * @tc.desic         aceuiAppearanceALWAYS_LIGHTEtsTest0001
+    /**
+     * @tc.name   testuiAppearanceALWAYS_LIGHT0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   testuiAppearanceALWAYS_LIGHT0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testuiAppearanceALWAYS_LIGHT0001', Level.LEVEL0, async (done: Function) => {
       console.info('uiAppearanceALWAYS_LIGHT testuiAppearanceALWAYS_LIGHT0001 START');

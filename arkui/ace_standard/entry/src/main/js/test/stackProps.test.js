@@ -79,9 +79,12 @@ export default function stackPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      teststackIdProp
-         * @tc.desc      ACE
+         * @tc.name   testStackIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStackIdProp', Level.LEVEL0, async function(done) {
             console.info('testStackIdProp START');
@@ -97,9 +100,12 @@ export default function stackPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testStackClassProp
-         * @tc.desc      ACE
+         * @tc.name   testStackClassProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStackClassProp', Level.LEVEL0, async function(done) {
             console.info('testStackClassProp START');
@@ -116,9 +122,12 @@ export default function stackPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testStackClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testStackClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStackClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testStackClassPropNone START');
@@ -136,9 +145,12 @@ export default function stackPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testStackRefProp
-         * @tc.desc      ACE
+         * @tc.name   testStackRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStackRefProp', Level.LEVEL0, async function(done) {
             console.info('testStackRefProp START');
@@ -155,9 +167,12 @@ export default function stackPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testStackRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testStackRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStackRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testStackRefPropNone START');
@@ -175,9 +190,12 @@ export default function stackPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testStackDisabledPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testStackDisabledPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStackDisabledPropTrue', Level.LEVEL0, async function(done) {
             console.info('testStackDisabledPropTrue START');
@@ -194,9 +212,12 @@ export default function stackPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testStackDisabledPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testStackDisabledPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStackDisabledPropFalse', Level.LEVEL0, async function(done) {
             console.info('testStackDisabledPropFalse START');
@@ -213,9 +234,12 @@ export default function stackPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testStackDisabledPropNone
-         * @tc.desc      ACE
+         * @tc.name   testStackDisabledPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStackDisabledPropNone', Level.LEVEL0, async function(done) {
             console.info('testStackDisabledPropNone START');
@@ -232,9 +256,12 @@ export default function stackPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testStackFocusablePropTrue
-         * @tc.desc      ACE
+         * @tc.name   testStackFocusablePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStackFocusablePropTrue', Level.LEVEL0, async function(done) {
             console.info('testStackFocusablePropTrue START');
@@ -251,9 +278,12 @@ export default function stackPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testStackFocusablePropFalse
-         * @tc.desc      ACE
+         * @tc.name   testStackFocusablePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStackFocusablePropFalse', Level.LEVEL0, async function(done) {
             console.info('testStackFocusablePropFalse START');
@@ -270,9 +300,12 @@ export default function stackPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testStackFocusablePropNone
-         * @tc.desc      ACE
+         * @tc.name   testStackFocusablePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStackFocusablePropNone', Level.LEVEL0, async function(done) {
             console.info('testStackFocusablePropNone START');
@@ -289,9 +322,12 @@ export default function stackPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testStackDataProp
-         * @tc.desc      ACE
+         * @tc.name   testStackDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStackDataProp', Level.LEVEL0, async function(done) {
             console.info('testStackDataProp START');
@@ -309,9 +345,12 @@ export default function stackPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testStackDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testStackDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStackDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testStackDataPropNone START');
@@ -329,9 +368,12 @@ export default function stackPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testStackClickEffectPropSmall
-         * @tc.desc      ACE
+         * @tc.name   testStackClickEffectPropSmall
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStackClickEffectPropSmall', Level.LEVEL0, async function(done) {
             console.info('testStackClickEffectPropSmall START');
@@ -348,9 +390,12 @@ export default function stackPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testStackClickEffectPropMedium
-         * @tc.desc      ACE
+         * @tc.name   testStackClickEffectPropMedium
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStackClickEffectPropMedium', Level.LEVEL0, async function(done) {
             console.info('testStackClickEffectPropMedium START');
@@ -367,9 +412,12 @@ export default function stackPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testStackClickEffectPropLarge
-         * @tc.desc      ACE
+         * @tc.name   testStackClickEffectPropLarge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStackClickEffectPropLarge', Level.LEVEL0, async function(done) {
             console.info('testStackClickEffectPropLarge START');
@@ -386,9 +434,12 @@ export default function stackPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testStackClickEffectPropNone
-         * @tc.desc      ACE
+         * @tc.name   testStackClickEffectPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStackClickEffectPropNone', Level.LEVEL0, async function(done) {
             console.info('testStackClickEffectPropNone START');
@@ -406,9 +457,12 @@ export default function stackPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testStackDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testStackDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStackDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testStackDirPropRtl START');
@@ -425,9 +479,12 @@ export default function stackPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testStackDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testStackDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStackDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testStackDirPropLtr START');
@@ -444,9 +501,12 @@ export default function stackPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testStackDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testStackDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStackDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testStackDirPropAuto START');
@@ -463,9 +523,12 @@ export default function stackPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testStackDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testStackDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStackDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testStackDirPropNone START');
@@ -482,9 +545,12 @@ export default function stackPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testStackForPropNull
-         * @tc.desc      ACE
+         * @tc.name   testStackForPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStackForPropNull', Level.LEVEL0, async function(done) {
             console.info('testStackForPropNull START');
@@ -502,9 +568,12 @@ export default function stackPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testStackForPropOne
-         * @tc.desc      ACE
+         * @tc.name   testStackForPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStackForPropOne', Level.LEVEL0, async function(done) {
             console.info('testStackForPropOne START');
@@ -522,9 +591,12 @@ export default function stackPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testStackForPropThree
-         * @tc.desc      ACE
+         * @tc.name   testStackForPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStackForPropThree', Level.LEVEL0, async function(done) {
             console.info('testStackForPropThree START');
@@ -542,9 +614,12 @@ export default function stackPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testStackIfPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testStackIfPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStackIfPropTrue', Level.LEVEL0, async function(done) {
             console.info('testStackIfPropTrue START');
@@ -562,9 +637,12 @@ export default function stackPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testStackShowPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testStackShowPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStackShowPropTrue', Level.LEVEL0, async function(done) {
             console.info('testStackShowPropTrue START');
@@ -582,9 +660,12 @@ export default function stackPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testStackShowPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testStackShowPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStackShowPropFalse', Level.LEVEL0, async function(done) {
             console.info('testStackShowPropFalse START');
@@ -602,9 +683,12 @@ export default function stackPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testStackShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testStackShowPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStackShowPropNone', Level.LEVEL0, async function(done) {
             console.info('testStackShowPropNone START');

@@ -26,13 +26,13 @@ export default function ScrollSizeTest(){
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_SCROLL_SIZE_0100
-     * @tc.name       : testGetScrollSizeTest001
-     * @tc.desc       : testing NODE_SCROLL_SIZE
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testGetScrollSizeTest001
+     * @tc.number SUB_ARKUI_CAPI_NODE_SCROLL_SIZE_0100
+     * @tc.desc   testing NODE_SCROLL_SIZE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetScrollSizeTest001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ScrollSizeTest';

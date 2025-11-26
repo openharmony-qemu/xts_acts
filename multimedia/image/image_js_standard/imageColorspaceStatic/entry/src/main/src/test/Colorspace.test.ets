@@ -303,6 +303,7 @@ export default function imageColorSpace() {
         it('SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_CALLBACK_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
             if (isSupportGifEncode) {
                 console.info("SUB_MULTIMEDIA_IMAGE_COLORSPACE_ENCODE_CALLBACK_STATIC_0200: The device support gif encode")
+		expect(isSupportGifEncode).assertTrue();
                 done();
             } else {
                 let packOpts: image.PackingOption = { format: "image/gif", quality: 90 }

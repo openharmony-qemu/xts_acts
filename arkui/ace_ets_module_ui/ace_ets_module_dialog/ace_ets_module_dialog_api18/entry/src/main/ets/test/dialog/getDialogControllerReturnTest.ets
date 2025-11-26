@@ -41,6 +41,14 @@ export default function getDialogControllerReturnTest() {
       done();
     });
  
+    /**
+     * @tc.name   getDialogControllerReturnTest_0100
+     * @tc.number getDialogControllerReturnTest_0100
+     * @tc.desc   getDialogControllerReturnTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('getDialogControllerReturnTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[getDialogControllerReturnTest_0100] START');
       await CommonFunc.sleep(1000);

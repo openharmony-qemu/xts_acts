@@ -41,10 +41,13 @@ static int GetLocaleIndex(LocaleInfo locale, vector<LocaleInfo> locales)
     return -1;
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_NUMBER_FORMAT_LOCALE_0100
- * @tc.name     test NumberFormat Recall,locale is LocaleInfo en,ZZ
- * @tc.desc     [C- SOFTWARE -0200]
+/**
+ * @tc.name   GLOBAL_NumberFormat_LocaleRecall_0100
+ * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_NUMBER_FORMAT_LOCALE_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(UnitNumberRecallTest, GLOBAL_NumberFormat_LocaleRecall_0100, Function | MediumTest | Level0)
 {
@@ -63,10 +66,13 @@ HWTEST_F(UnitNumberRecallTest, GLOBAL_NumberFormat_LocaleRecall_0100, Function |
     free(localeInfo);
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_NUMBER_FORMAT_LOCALE_0200
- * @tc.name     test NumberFormat Recall,locale is LocaleInfo zh,ZZ
- * @tc.desc     [C- SOFTWARE -0200]
+/**
+ * @tc.name   GLOBAL_NumberFormat_LocaleRecall_0200
+ * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_NUMBER_FORMAT_LOCALE_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(UnitNumberRecallTest, GLOBAL_NumberFormat_LocaleRecall_0200, Function | MediumTest | Level0)
 {
@@ -85,10 +91,13 @@ HWTEST_F(UnitNumberRecallTest, GLOBAL_NumberFormat_LocaleRecall_0200, Function |
     free(localeInfo);
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_NUMBER_FORMAT_LOCALE_0300
- * @tc.name     test NumberFormat Recall,locale is LocaleInfo zh,Hans,ZZ
- * @tc.desc     [C- SOFTWARE -0200]
+/**
+ * @tc.name   GLOBAL_NumberFormat_LocaleRecall_0300
+ * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_NUMBER_FORMAT_LOCALE_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(UnitNumberRecallTest, GLOBAL_NumberFormat_LocaleRecall_0300, Function | MediumTest | Level0)
 {
@@ -107,10 +116,13 @@ HWTEST_F(UnitNumberRecallTest, GLOBAL_NumberFormat_LocaleRecall_0300, Function |
     free(localeInfo);
 }
 
-/* *
- * @tc.number   SUB_GLOBAL_GLOBALIZATIONBUSINESS_NUMBER_FORMAT_LOCALE_0400
- * @tc.name     test NumberFormat Recall,locale is LocaleInfo zz
- * @tc.desc     [C- SOFTWARE -0200]
+/**
+ * @tc.name   GLOBAL_NumberFormat_LocaleRecall_0400
+ * @tc.number SUB_GLOBAL_GLOBALIZATIONBUSINESS_NUMBER_FORMAT_LOCALE_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(UnitNumberRecallTest, GLOBAL_NumberFormat_LocaleRecall_0400, Function | MediumTest | Level0)
 {

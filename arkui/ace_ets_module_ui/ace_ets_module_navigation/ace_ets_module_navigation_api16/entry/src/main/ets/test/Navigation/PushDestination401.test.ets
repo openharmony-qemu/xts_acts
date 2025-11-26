@@ -49,10 +49,12 @@ export default function PushDestination401() {
 
 
     /**
-     * @tc.number    PushDestination401_0100
-     * @tc.name      PushDestination401_0100
-     * @tc.desc      Test pushDestination error code 401
-     * @tc.level     Level 2
+     * @tc.name   PushDestination401_0100
+     * @tc.number PushDestination401_0100
+     * @tc.desc   Test pushDestination error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PushDestination401_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('PushDestination401_0100 START');
@@ -76,11 +78,13 @@ export default function PushDestination401() {
       done();
     });
 
-        /**
-     * @tc.number    PushDestination401_0200
-     * @tc.name      PushDestination401_0200
-     * @tc.desc      Test pushDestination error code 401 with NavigationOptions
-     * @tc.level     Level 2
+    /**
+     * @tc.name   PushDestination401_0200
+     * @tc.number PushDestination401_0200
+     * @tc.desc   Test pushDestination error code 401 with NavigationOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PushDestination401_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('PushDestination401_0200 START');

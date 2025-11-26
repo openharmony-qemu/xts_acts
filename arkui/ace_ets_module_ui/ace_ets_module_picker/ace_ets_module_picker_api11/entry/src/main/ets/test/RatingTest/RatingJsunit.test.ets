@@ -59,9 +59,12 @@ export default function ratingJsunit() {
     });
 
     /**
+     * @tc.name   testGetRatingAttr010
      * @tc.number SUB_ACE_BASIC_ETS_API_0990
-     * @tc.name testGetRatingAttr010
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetRatingAttr010', Level.LEVEL1, async (done: Function) => {
       console.info('testGetRatingAttr1 START');
@@ -84,9 +87,12 @@ export default function ratingJsunit() {
     });
 
     /**
+     * @tc.name   testGetRatingAttr020
      * @tc.number SUB_ACE_BASIC_ETS_API_1000
-     * @tc.name testGetRatingAttr020
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetRatingAttr020', Level.LEVEL1, async (done: Function) => {
       console.info('testGetRatingAttr2 START');

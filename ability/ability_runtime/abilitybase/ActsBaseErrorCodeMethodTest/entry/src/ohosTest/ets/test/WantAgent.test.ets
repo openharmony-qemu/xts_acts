@@ -80,13 +80,13 @@ export default function openLinkTest() {
       }
     }
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_WantAgentError_0100
-     * @tc.name   : To verify that the input parameter of getBundleName is undefined(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantAgentError_0100
+     * @tc.number SUB_Ability_AbilityBase_WantAgentError_0100
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_WantAgentError_0100', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_WantAgentError_0100 start');
@@ -102,13 +102,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_WantAgentError_0200
-     * @tc.name   : To verify that the input parameter of getBundleName is undefined(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantAgentError_0200
+     * @tc.number SUB_Ability_AbilityBase_WantAgentError_0200
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_WantAgentError_0200', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_WantAgentError_0200 start');
@@ -127,13 +127,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_WantAgentError_0300
-     * @tc.name   : To verify that the input parameter of getUid is undefined(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantAgentError_0300
+     * @tc.number SUB_Ability_AbilityBase_WantAgentError_0300
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_WantAgentError_0300', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_WantAgentError_0300 start');
@@ -149,13 +149,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_WantAgentError_0400
-     * @tc.name   : To verify that the input parameter of getUid is undefined(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantAgentError_0400
+     * @tc.number SUB_Ability_AbilityBase_WantAgentError_0400
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_WantAgentError_0400', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_WantAgentError_0400 start');
@@ -174,13 +174,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_WantAgentError_0500
-     * @tc.name   : To verify that the input parameter of cancel is undefined(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantAgentError_0500
+     * @tc.number SUB_Ability_AbilityBase_WantAgentError_0500
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_WantAgentError_0500', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_WantAgentError_0500 start');
@@ -196,13 +196,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_WantAgentError_0600
-     * @tc.name   : To verify that the input parameter of cancel is undefined(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantAgentError_0600
+     * @tc.number SUB_Ability_AbilityBase_WantAgentError_0600
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_WantAgentError_0600', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_WantAgentError_0600 start');
@@ -221,13 +221,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_WantAgentError_0700
-     * @tc.name   : To verify that the input parameter of trigger is undefined(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantAgentError_0700
+     * @tc.number SUB_Ability_AbilityBase_WantAgentError_0700
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_WantAgentError_0700', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_WantAgentError_0700 start');
@@ -260,13 +260,13 @@ export default function openLinkTest() {
 
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_WantAgentError_0800
-     * @tc.name   : To verify that the input parameter of trigger is undefined(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantAgentError_0800
+     * @tc.number SUB_Ability_AbilityBase_WantAgentError_0800
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_WantAgentError_0800', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_WantAgentError_0800 start');
@@ -282,13 +282,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_WantAgentError_0900
-     * @tc.name   : To verify that the input parameter of equal is undefined(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantAgentError_0900
+     * @tc.number SUB_Ability_AbilityBase_WantAgentError_0900
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_WantAgentError_0900', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_WantAgentError_0900 start');
@@ -304,13 +304,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_WantAgentError_1000
-     * @tc.name   : To verify that the input parameter of equal is undefined(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantAgentError_1000
+     * @tc.number SUB_Ability_AbilityBase_WantAgentError_1000
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_WantAgentError_1000', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_WantAgentError_1000 start');
@@ -329,13 +329,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_WantAgentError_1100
-     * @tc.name   : To verify that the input parameter of equal is undefined(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantAgentError_1100
+     * @tc.number SUB_Ability_AbilityBase_WantAgentError_1100
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_WantAgentError_1100', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_WantAgentError_1100 start');
@@ -351,13 +351,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_WantAgentError_1200
-     * @tc.name   : To verify that the input parameter of equal is undefined(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantAgentError_1200
+     * @tc.number SUB_Ability_AbilityBase_WantAgentError_1200
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_WantAgentError_1200', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_WantAgentError_1200 start');
@@ -376,13 +376,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_WantAgentError_1300
-     * @tc.name   : To verify that the input parameter of getWantAgent is undefined(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantAgentError_1300
+     * @tc.number SUB_Ability_AbilityBase_WantAgentError_1300
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_WantAgentError_1300', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_WantAgentError_1300 start');
@@ -399,13 +399,13 @@ export default function openLinkTest() {
 
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_WantAgentError_1400
-     * @tc.name   : To verify that the input parameter of getWantAgent is undefined(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantAgentError_1400
+     * @tc.number SUB_Ability_AbilityBase_WantAgentError_1400
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_WantAgentError_1400', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_WantAgentError_1400 start');
@@ -424,13 +424,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_WantAgentError_1500
-     * @tc.name   : To verify that the input parameter of getOperationType is undefined(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantAgentError_1500
+     * @tc.number SUB_Ability_AbilityBase_WantAgentError_1500
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_WantAgentError_1500', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_WantAgentError_1500 start');
@@ -447,13 +447,13 @@ export default function openLinkTest() {
 
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_WantAgentError_1600
-     * @tc.name   : To verify that the input parameter of getOperationType is null(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantAgentError_1600
+     * @tc.number SUB_Ability_AbilityBase_WantAgentError_1600
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_WantAgentError_1600', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_WantAgentError_1600 start');
@@ -472,13 +472,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_WantAgentError_1700
-     * @tc.name   : To verify that the input parameter of getBundleName is null(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantAgentError_1700
+     * @tc.number SUB_Ability_AbilityBase_WantAgentError_1700
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_WantAgentError_1700', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_WantAgentError_0100 start');
@@ -494,13 +494,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_WantAgentError_1800
-     * @tc.name   : To verify that the input parameter of getBundleName is null(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantAgentError_1800
+     * @tc.number SUB_Ability_AbilityBase_WantAgentError_1800
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_WantAgentError_1800', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_WantAgentError_1800 start');
@@ -519,13 +519,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_WantAgentError_1900
-     * @tc.name   : To verify that the input parameter of getUid is null(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantAgentError_1900
+     * @tc.number SUB_Ability_AbilityBase_WantAgentError_1900
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_WantAgentError_1900', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_WantAgentError_1900 start');
@@ -542,13 +542,13 @@ export default function openLinkTest() {
 
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_WantAgentError_2000
-     * @tc.name   : To verify that the input parameter of getUid is null(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantAgentError_2000
+     * @tc.number SUB_Ability_AbilityBase_WantAgentError_2000
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_WantAgentError_2000', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_WantAgentError_2000 start');
@@ -567,13 +567,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_WantAgentError_2100
-     * @tc.name   : To verify that the input parameter of cancel is null(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantAgentError_2100
+     * @tc.number SUB_Ability_AbilityBase_WantAgentError_2100
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_WantAgentError_2100', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_WantAgentError_2100 start');
@@ -590,13 +590,13 @@ export default function openLinkTest() {
 
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_WantAgentError_2200
-     * @tc.name   : To verify that the input parameter of cancel is null(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantAgentError_2200
+     * @tc.number SUB_Ability_AbilityBase_WantAgentError_2200
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_WantAgentError_2200', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_WantAgentError_2200 start');
@@ -615,13 +615,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_WantAgentError_2300
-     * @tc.name   : To verify that the input parameter of trigger is null(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantAgentError_2300
+     * @tc.number SUB_Ability_AbilityBase_WantAgentError_2300
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_WantAgentError_2300', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_WantAgentError_2300 start');
@@ -653,13 +653,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_WantAgentError_2400
-     * @tc.name   : To verify that the input parameter of trigger is null(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantAgentError_2400
+     * @tc.number SUB_Ability_AbilityBase_WantAgentError_2400
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_WantAgentError_2400', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_WantAgentError_2400 start');
@@ -675,13 +675,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_WantAgentError_2500
-     * @tc.name   : To verify that the input parameter of equal is null(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantAgentError_2500
+     * @tc.number SUB_Ability_AbilityBase_WantAgentError_2500
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_WantAgentError_2500', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_WantAgentError_2500 start');
@@ -698,13 +698,13 @@ export default function openLinkTest() {
 
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_WantAgentError_2600
-     * @tc.name   : To verify that the input parameter of equal is null(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantAgentError_2600
+     * @tc.number SUB_Ability_AbilityBase_WantAgentError_2600
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_WantAgentError_2600', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_WantAgentError_2600 start');
@@ -723,13 +723,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_WantAgentError_2700
-     * @tc.name   : To verify that the input parameter of equal is null(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantAgentError_2700
+     * @tc.number SUB_Ability_AbilityBase_WantAgentError_2700
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_WantAgentError_2700', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_WantAgentError_2700 start');
@@ -745,13 +745,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_WantAgentError_2800
-     * @tc.name   : To verify that the input parameter of equal is null(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantAgentError_2800
+     * @tc.number SUB_Ability_AbilityBase_WantAgentError_2800
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_WantAgentError_2800', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_WantAgentError_2800 start');
@@ -770,13 +770,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_WantAgentError_2900
-     * @tc.name   : To verify that the input parameter of getWantAgent is null(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantAgentError_2900
+     * @tc.number SUB_Ability_AbilityBase_WantAgentError_2900
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_WantAgentError_2900', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_WantAgentError_2900 start');
@@ -792,13 +792,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_WantAgentError_3000
-     * @tc.name   : To verify that the input parameter of getWantAgent is null(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantAgentError_3000
+     * @tc.number SUB_Ability_AbilityBase_WantAgentError_3000
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_WantAgentError_3000', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_WantAgentError_3000 start');
@@ -817,13 +817,13 @@ export default function openLinkTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_WantAgentError_3100
-     * @tc.name   : To verify that the input parameter of getOperationType is null(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantAgentError_3100
+     * @tc.number SUB_Ability_AbilityBase_WantAgentError_3100
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_WantAgentError_3100', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_WantAgentError_3100 start');
@@ -840,13 +840,13 @@ export default function openLinkTest() {
 
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_WantAgentError_3200
-     * @tc.name   : To verify that the input parameter of getOperationType is null(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_WantAgentError_3200
+     * @tc.number SUB_Ability_AbilityBase_WantAgentError_3200
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_WantAgentError_3200', Level.LEVEL0, async (done: Function)=> {
       hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_WantAgentError_3200 start');
@@ -865,14 +865,14 @@ export default function openLinkTest() {
       }
     })
 
-   /*
-     * @tc.number : SUB_Ability_AbilityBase_WantAgentError_3300
-     * @tc.name   : To verify that the input parameter of trigger is undefined(promise).
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
-     */
+   /**
+    * @tc.name   SUB_Ability_AbilityBase_WantAgentError_3300
+    * @tc.number SUB_Ability_AbilityBase_WantAgentError_3300
+    * @tc.desc   Expect: call failed
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('SUB_Ability_AbilityBase_WantAgentError_3300', Level.LEVEL0, async (done: Function) => {
     hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_WantAgentError_3300 start');
     let triggerInfo: wantAgent.TriggerInfo = {
@@ -900,14 +900,14 @@ export default function openLinkTest() {
     }
   })
 
-  /*
-  * @tc.number : SUB_Ability_AbilityBase_WantAgentError_3400
-  * @tc.name   : To verify that the input parameter of trigger is undefined(promise).
-  * @tc.desc   : Expect: call failed
-  * @tc.type   : Function
-  * @tc.size   : MediumTest
-  * @tc.level  : 3
-  */
+  /**
+   * @tc.name   SUB_Ability_AbilityBase_WantAgentError_3400
+   * @tc.number SUB_Ability_AbilityBase_WantAgentError_3400
+   * @tc.desc   Expect: call failed
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
   it('SUB_Ability_AbilityBase_WantAgentError_3400', Level.LEVEL0, async (done: Function) => {
     hilog.info(0x0000, `${TAG}`, '%{public}s', 'SUB_Ability_AbilityBase_WantAgentError_3400 start');
     let triggerInfo: wantAgent.TriggerInfo = {

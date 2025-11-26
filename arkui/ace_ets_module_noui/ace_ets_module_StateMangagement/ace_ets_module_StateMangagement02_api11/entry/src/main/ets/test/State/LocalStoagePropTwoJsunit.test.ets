@@ -56,6 +56,14 @@ export default function LocalStoagePropTwoJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   LocalStoagePropTwoJsunit_0100
+     * @tc.number LocalStoagePropTwoJsunit_0100
+     * @tc.desc   LocalStoagePropTwoJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LocalStoagePropTwoJsunit_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('[LocalStoagePropTwoJsunit_0100] START');

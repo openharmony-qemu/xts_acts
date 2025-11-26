@@ -41,6 +41,14 @@ export default function Matrix2DMultiplyTest() {
       done();
     });
    
+    /**
+     * @tc.name   Matrix2DMultiplyTest_0100
+     * @tc.number Matrix2DMultiplyTest_0100
+     * @tc.desc   Matrix2DMultiplyTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Matrix2DMultiplyTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[Matrix2DMultiplyTest_0100] START');
       let driver = await Driver.create()

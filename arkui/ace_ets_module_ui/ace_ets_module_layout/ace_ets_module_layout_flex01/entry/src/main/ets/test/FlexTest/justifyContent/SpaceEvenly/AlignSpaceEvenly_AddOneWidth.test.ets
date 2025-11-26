@@ -47,9 +47,12 @@ export default function AlignSpaceEvenly_AddOneWidth() {
     });
 
     /**
+     * @tc.name   testFlexAlignSpaceEvenlyTextWidth
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_SPACEEVENLY_TEST_1400
-     * @tc.name testFlexAlignSpaceEvenlyTextWidth
-     * @tc.desc The interface is displayed when you change the spindle length (width) of the first subassembly
+     * @tc.desc   The interface is displayed when you change the spindle length (width) of the first subassembly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignSpaceEvenlyTextWidth',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignSpaceEvenlyTextWidth] START');

@@ -53,13 +53,13 @@ export default function splitLayoutTest() {
     })
     
     /**
-    * @tc.number splitLayoutTest
-    * @tc.name   testSplitLayout_0100
-    * @tc.desc   Test splitLayout page
-    * @tc.size   MediumTest
-    * @tc.type   Function
-    * @tc.level  0
-    */
+     * @tc.name   testSplitLayout_0100
+     * @tc.number splitLayoutTest
+     * @tc.desc   Test splitLayout page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSplitLayout_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[testSplitLayout_0100] START');
       let driver = await Driver.create();
@@ -78,13 +78,13 @@ export default function splitLayoutTest() {
     });
     
     /**
-    * @tc.number splitLayoutTest
-    * @tc.name   testSplitLayout_0200
-    * @tc.desc   Test splitLayout page
-    * @tc.size   MediumTest
-    * @tc.type   Function
-    * @tc.level  0
-    */
+     * @tc.name   testSplitLayout_0200
+     * @tc.number splitLayoutTest
+     * @tc.desc   Test splitLayout page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSplitLayout_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[testSplitLayout_0200] START');
       let driver = await Driver.create();

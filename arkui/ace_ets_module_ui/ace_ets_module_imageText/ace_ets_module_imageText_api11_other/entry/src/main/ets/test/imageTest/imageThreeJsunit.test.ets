@@ -42,6 +42,14 @@ export default function imageThreeJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   imageThreeJsunit_0100
+     * @tc.number imageThreeJsunit_0100
+     * @tc.desc   imageThreeJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('imageThreeJsunit_0100', Level.LEVEL1, async (done: Function) => {
       console.info('imageThreeJsunit_0100 START');
       await CommonFunc.sleep(1000);
@@ -54,6 +62,14 @@ export default function imageThreeJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   imageThreeJsunit_0200
+     * @tc.number imageThreeJsunit_0200
+     * @tc.desc   imageThreeJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('imageThreeJsunit_0200', Level.LEVEL1, async (done: Function) => {
       console.info('imageThreeJsunit_0100 START');
       await CommonFunc.sleep(1000);
@@ -65,6 +81,14 @@ export default function imageThreeJsunit() {
       done();
     });  
     
+    /**
+     * @tc.name   imageThreeJsunit_0300
+     * @tc.number imageThreeJsunit_0300
+     * @tc.desc   imageThreeJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('imageThreeJsunit_0300', Level.LEVEL1, async (done: Function) => {
       console.info('imageThreeJsunit_0300 START');
       await CommonFunc.sleep(1000);
@@ -80,6 +104,14 @@ export default function imageThreeJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   imageThreeJsunit_0400
+     * @tc.number imageThreeJsunit_0400
+     * @tc.desc   imageThreeJsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('imageThreeJsunit_0400', Level.LEVEL1, async (done: Function) => {
       console.info('imageThreeJsunit_0200 START');
       await CommonFunc.sleep(1000);

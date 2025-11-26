@@ -61,9 +61,12 @@ export default function swiperItemSize() {
     });
 
     /**
+     * @tc.name   testSwiperItemSize
      * @tc.number SUB_ACE_SWIPER_ITEMCHANGED_0100
-     * @tc.name testSwiperItemSize
-     * @tc.desc Set item's  height and width   values '150*150'.
+     * @tc.desc   Set item's  height and width   values '150*150'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperItemSize', Level.LEVEL1, async (done: Function) => {
       console.info('new testSwiperItemSize START');

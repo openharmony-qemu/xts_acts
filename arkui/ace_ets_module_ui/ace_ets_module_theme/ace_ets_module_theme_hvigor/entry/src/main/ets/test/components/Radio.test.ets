@@ -80,13 +80,13 @@ export default function RadioThemeTest() {
       }
     });
     /**
-      * @tc.number    : ActsRadioThemeColors_0100
-      * @tc.name      : ActsRadioThemeColors_0100
-      * @tc.desc      : Сheck system colors values of the Radio
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsRadioThemeColors_0100
+     * @tc.number ActsRadioThemeColors_0100
+     * @tc.desc   Сheck system colors values of the Radio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it(`ActsRadioThemeColors_0100`, Level.LEVEL2, () => {
       const CASE: string = `ActsRadioThemeColors_0100`;
       console.info(`${SUITE} ${CASE} START`);
@@ -97,13 +97,13 @@ export default function RadioThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-      * @tc.number    : ActsRadioThemeColors_0200
-      * @tc.name      : ActsRadioThemeColors_0200
-      * @tc.desc      : Сheck custom colors values of the Radio
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsRadioThemeColors_0200
+     * @tc.number ActsRadioThemeColors_0200
+     * @tc.desc   Сheck custom colors values of the Radio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it(`ActsRadioThemeColors_0200`, Level.LEVEL2, () => {
       const CASE: string = `ActsRadioThemeColors_0200`;
       console.info(`${SUITE} ${CASE} START`);
@@ -115,14 +115,13 @@ export default function RadioThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-      * @tc.number    : ActsRadioThemeColors_0300
-      * @tc.name      : ActsRadioThemeColors_0300
-      * @tc.desc      : Сheck custom colors values of the Radio
-      *                 after change theme
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsRadioThemeColors_0300
+     * @tc.number ActsRadioThemeColors_0300
+     * @tc.desc   Сheck custom colors values of the Radio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it(`ActsRadioThemeColors_0300`, Level.LEVEL0, async () => {
       const CASE: string = `ActsRadioThemeColors_0300`;
       console.info(`${SUITE} ${CASE} START`);
@@ -135,14 +134,13 @@ export default function RadioThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-      * @tc.number    : ActsRadioThemeColors_0400
-      * @tc.name      : ActsRadioThemeColors_0400
-      * @tc.desc      : Сheck system colors values of the Radio
-      *                 after reset theme
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsRadioThemeColors_0400
+     * @tc.number ActsRadioThemeColors_0400
+     * @tc.desc   Сheck system colors values of the Radio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it(`ActsRadioThemeColors_0400`, Level.LEVEL0, async () => {
       const CASE: string = `ActsRadioThemeColors_0400`;
       console.info(`${SUITE} ${CASE} START`);

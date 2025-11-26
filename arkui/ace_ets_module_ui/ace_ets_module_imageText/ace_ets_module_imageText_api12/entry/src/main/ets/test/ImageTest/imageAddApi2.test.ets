@@ -42,15 +42,15 @@ export default function imageAddApi2() {
       console.info("imageAddApi2 after each called");
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_Image_0020
-     * @tc.name       : imageAddApi2_001
-     * @tc.desc       : image Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   imageAddApi2_001
+     * @tc.number imageAddApi2_001
+     * @tc.desc   imageAddApi2_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('imageAddApi2_001',  Level.LEVEL0, async (done: Function) => {
       console.info('[imageAddApi2_001] START');
 

@@ -45,14 +45,14 @@ export default function listVisibleContent() {
       console.info("listVisibleContent after each called");
     });
 
-    /* *
-    * @tc.number: SUB_ACE_LIST_listVisibleContent_0100
-    * @tc.name  : listVisibleContent_0100
-    * @tc.desc  : Set the property value of mainVisibleContentPosition to false.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   listVisibleContent_0100
+     * @tc.number SUB_ACE_LIST_listVisibleContent_0100
+     * @tc.desc   Set the property value of mainVisibleContentPosition to false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('listVisibleContent_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[listVisibleContent_0100] START');
       await CommonFunc.sleep(1000);
@@ -65,14 +65,14 @@ export default function listVisibleContent() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_LIST_listVisibleContent_0200
-    * @tc.name  : listVisibleContent_0200
-    * @tc.desc  : When inserting data above the display area, the visible content position will change accordingly.
-    * @tc.level : Level 2
-    * @tc.type :
-    * @tc.size :
-    */
+    /**
+     * @tc.name   listVisibleContent_0200
+     * @tc.number SUB_ACE_LIST_listVisibleContent_0200
+     * @tc.desc   When inserting data above the display area, the visible content position will change accordingly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('listVisibleContent_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[listVisibleContent_0200] START');
       await CommonFunc.sleep(1000);

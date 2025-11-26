@@ -33,6 +33,8 @@ import arrayListTest from './arraylist/ArrayList.test';
 import xmlTest from './xml/Xml.test';
 import dynamicXmlTest from './xml/DynamicXml';
 import convertXmlTest from './convertxml/ConvertXml.test';
+import ConvertXml2Test from './convertxml/ConvertXml2.test';
+import ConvertXml3Test from './convertxml/ConvertXml3.test';
 import queueTest from './queue/Queue.test';
 import stackTest from './stack/Stack.test';
 import dequeTest from './deque/Deque.test';
@@ -65,23 +67,25 @@ export default function testsuite() {
   timerTest();
   jsonTest();
   tresMapTest();
-  treeSetTest()
-  hashSetTest()
-  hashMapTest()
-  arkListTest()
-  arrayListTest()
-  xmlTest()
-  dynamicXmlTest()
-  convertXmlTest()
-  queueTest()
-  stackTest()
-  dequeTest()
-  lightWeightSetTest()
-  lightWeightMapTest()
-  linkedListTest()
-  plainArrayTest()
-  stringDecoderTest()
-  streamTest()
+  treeSetTest();
+  hashSetTest();
+  hashMapTest();
+  arkListTest();
+  arrayListTest();
+  xmlTest();
+  dynamicXmlTest();
+  convertXmlTest();
+  ConvertXml2Test();
+  ConvertXml3Test();
+  queueTest();
+  stackTest();
+  dequeTest();
+  lightWeightSetTest();
+  lightWeightMapTest();
+  linkedListTest();
+  plainArrayTest();
+  stringDecoderTest();
+  streamTest();
   specialChar();
   consoleTest();
   LRUCacheTest();

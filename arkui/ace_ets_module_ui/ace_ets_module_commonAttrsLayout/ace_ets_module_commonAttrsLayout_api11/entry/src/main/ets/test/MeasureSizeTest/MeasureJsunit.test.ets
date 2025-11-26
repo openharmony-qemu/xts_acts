@@ -57,9 +57,12 @@ export default function MeasureJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_MEASURE_JSAPI_001
-     * @tc.name  : Test measureJsunit_0100
-     * @tc.desc  : Test measureTextSize function
+     * @tc.name   measureJsunit_0100
+     * @tc.number SUB_ARKUI_MEASURE_JSAPI_001
+     * @tc.desc   Test measureTextSize function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('measureJsunit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('measureJsunit_0100 START');
@@ -77,9 +80,12 @@ export default function MeasureJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_MEASURE_JSAPI_002
-     * @tc.name  : Test measureJsunit_0200
-     * @tc.desc  : Test measureTextSize function
+     * @tc.name   measureJsunit_0200
+     * @tc.number SUB_ARKUI_MEASURE_JSAPI_002
+     * @tc.desc   Test measureTextSize function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('measureJsunit_0200', Level.LEVEL0, async (done: Function) => {
       console.info('measureJsunit_0200 START');
@@ -104,9 +110,12 @@ export default function MeasureJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_MEASURE_JSAPI_003
-     * @tc.name  : Test measureJsunit_0300
-     * @tc.desc  : Test measureTextSize function
+     * @tc.name   measureJsunit_0300
+     * @tc.number SUB_ARKUI_MEASURE_JSAPI_003
+     * @tc.desc   Test measureTextSize function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('measureJsunit_0300', Level.LEVEL0, async (done: Function) => {
       console.info('measureJsunit_0300 START');
@@ -144,9 +153,12 @@ export default function MeasureJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_MEASURE_JSAPI_004
-     * @tc.name  : Test measureJsunit_0400
-     * @tc.desc  : Test measureTextSize function
+     * @tc.name   measureJsunit_0400
+     * @tc.number SUB_ARKUI_MEASURE_JSAPI_004
+     * @tc.desc   Test measureTextSize function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('measureJsunit_0400', Level.LEVEL0, async (done: Function) => {
       console.info('measureJsunit_0400 START');
@@ -170,9 +182,12 @@ export default function MeasureJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_MEASURE_JSAPI_005
-     * @tc.name  : Test measureJsunit_0500
-     * @tc.desc  : Test measureTextSize function
+     * @tc.name   measureJsunit_0500
+     * @tc.number SUB_ARKUI_MEASURE_JSAPI_005
+     * @tc.desc   Test measureTextSize function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('measureJsunit_0500', Level.LEVEL0, async (done: Function) => {
       console.info('measureJsunit_0500 START');

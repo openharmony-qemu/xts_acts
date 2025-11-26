@@ -41,12 +41,12 @@ export default function TextCommonTextComputing2() {
       done();
     });
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0050
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0050
-     * @tc.desc  : Test MeasureTextSize when ConstraintWidth is not set and check the return width/size results
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0050
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0050
+     * @tc.desc   Test MeasureTextSize when ConstraintWidth is not set and check the return width/size results
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0050',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0050 START');
@@ -71,12 +71,12 @@ export default function TextCommonTextComputing2() {
       done();
     });
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0060
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0060
-     * @tc.desc  : Test MeasureTextSize when convertWidth passes the value for Resource, Resource, and check the return width/size result when it is tested.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0060
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0060
+     * @tc.desc   Test MeasureTextSize when convertWidth passes the value for Resource, Resource, and check the return width/size result when it is tested.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0060',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0060 START');
@@ -104,12 +104,12 @@ export default function TextCommonTextComputing2() {
       done();
     });
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0080
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0080
-     * @tc.desc  : Test MeasureTextSize when ConstraintWidth passes to CALC (20%-50px), view the return width/size result result
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0080
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0080
+     * @tc.desc   Test MeasureTextSize when ConstraintWidth passes to CALC (20%-50px), view the return width/size result result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0080',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0080 START');
@@ -137,12 +137,12 @@ export default function TextCommonTextComputing2() {
       done();
     });
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0090
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0090
-     * @tc.desc  : Test MeasureTextSize when ConstraintWidth passes to 90abc, view the return width/size result result
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0090
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0090
+     * @tc.desc   Test MeasureTextSize when ConstraintWidth passes to 90abc, view the return width/size result result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0090',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0090 START');
@@ -171,12 +171,12 @@ export default function TextCommonTextComputing2() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0100
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0100
-     * @tc.desc  : Test MeasureTextSize when ConstraintWidth passes to 50%, view the return width/size result result
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0100
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0100
+     * @tc.desc   Test MeasureTextSize when ConstraintWidth passes to 50%, view the return width/size result result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_COMMON_TEXT_COMPUTING_0100 START');

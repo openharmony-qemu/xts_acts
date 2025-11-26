@@ -46,6 +46,14 @@ export default function girdContainerJsunit() {
       console.info("girdContainer after each called");
     });
 
+    /**
+     * @tc.name   testGirdContainer01
+     * @tc.number testGirdContainer01
+     * @tc.desc   testGirdContainer01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGirdContainer01', Level.LEVEL0, async (done:Function) => {
       console.info('[testGirdContainer01] START');
       await Utils.sleep(1000);
@@ -61,6 +69,14 @@ export default function girdContainerJsunit() {
     });
 
 
+    /**
+     * @tc.name   testGirdContainer02
+     * @tc.number testGirdContainer02
+     * @tc.desc   testGirdContainer02
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGirdContainer02', Level.LEVEL0, async (done:Function) => {
       console.info('[testEllipse02] START');
       try {

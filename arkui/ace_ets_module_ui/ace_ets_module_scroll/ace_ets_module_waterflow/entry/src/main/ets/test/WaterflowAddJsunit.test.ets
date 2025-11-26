@@ -50,13 +50,13 @@ export default function WaterflowAddJsunit() {
       }
     });
 
-    /*
-     * @tc.number    apiCommponentAdd02Jsunit_0900
-     * @tc.name      WaterflowAddJsunit_0900
-     * @tc.desc     Test Waterflow enableScrollInteraction
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   WaterflowAddJsunit_0900
+     * @tc.number apiCommponentAdd02Jsunit_0900
+     * @tc.desc   Test Waterflow enableScrollInteraction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('WaterflowAddJsunit_0900', Level.LEVEL1, async (done: Function) => {
       console.info('WaterflowAddJsunit_0900 START');

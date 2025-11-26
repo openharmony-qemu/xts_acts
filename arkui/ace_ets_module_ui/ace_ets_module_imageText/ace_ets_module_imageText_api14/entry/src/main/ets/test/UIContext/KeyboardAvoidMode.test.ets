@@ -43,12 +43,12 @@ export default function KeyboardAvoidModeTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_KeyboardAvoidModeTest_0100
-     * @tc.name      KeyboardAvoidModeTest_0100
-     * @tc.desc      set KeyboardAvoidMode OFFSET_WITH_CARET
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   KeyboardAvoidModeTest_0100
+     * @tc.number SUB_ACE_KeyboardAvoidModeTest_0100
+     * @tc.desc   set KeyboardAvoidMode OFFSET_WITH_CARET
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('KeyboardAvoidModeTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('KeyboardAvoidModeTest_0100 START');
@@ -68,13 +68,13 @@ export default function KeyboardAvoidModeTest() {
       console.info('[KeyboardAvoidModeTest_0100] END');
       done();
     });
-	/**
-     * @tc.number    SUB_ACE_KeyboardAvoidModeTest_0200
-     * @tc.name      KeyboardAvoidModeTest_0200
-     * @tc.desc      set KeyboardAvoidMode RESIZE_WITH_CARET
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   KeyboardAvoidModeTest_0200
+     * @tc.number SUB_ACE_KeyboardAvoidModeTest_0200
+     * @tc.desc   set KeyboardAvoidMode RESIZE_WITH_CARET
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('KeyboardAvoidModeTest_0200', Level.LEVEL2, async (done: Function) => {
       console.info('KeyboardAvoidModeTest_0200 START');
@@ -96,12 +96,12 @@ export default function KeyboardAvoidModeTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_KeyboardAvoidModeTest_0300
-     * @tc.name      KeyboardAvoidModeTest_0300
-     * @tc.desc      set KeyboardAvoidMode RESIZE_WITH_CARET
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   KeyboardAvoidModeTest_0300
+     * @tc.number SUB_ACE_KeyboardAvoidModeTest_0300
+     * @tc.desc   set KeyboardAvoidMode RESIZE_WITH_CARET
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('KeyboardAvoidModeTest_0300', Level.LEVEL2, async (done: Function) => {
       console.info('KeyboardAvoidModeTest_0300 START');
@@ -123,12 +123,12 @@ export default function KeyboardAvoidModeTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_KeyboardAvoidModeTest_0400
-     * @tc.name      KeyboardAvoidModeTest_0400
-     * @tc.desc      set KeyboardAvoidMode RESIZE_WITH_CARET
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   KeyboardAvoidModeTest_0400
+     * @tc.number SUB_ACE_KeyboardAvoidModeTest_0400
+     * @tc.desc   set KeyboardAvoidMode RESIZE_WITH_CARET
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('KeyboardAvoidModeTest_0400', Level.LEVEL2, async (done: Function) => {
       console.info('KeyboardAvoidModeTest_0400 START');
@@ -150,12 +150,12 @@ export default function KeyboardAvoidModeTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_KeyboardAvoidModeTest_0500
-     * @tc.name      KeyboardAvoidModeTest_0500
-     * @tc.desc      set KeyboardAvoidMode RESIZE_WITH_CARET
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   KeyboardAvoidModeTest_0500
+     * @tc.number SUB_ACE_KeyboardAvoidModeTest_0500
+     * @tc.desc   set KeyboardAvoidMode RESIZE_WITH_CARET
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('KeyboardAvoidModeTest_0500', Level.LEVEL2, async (done: Function) => {
       console.info('KeyboardAvoidModeTest_0500 START');

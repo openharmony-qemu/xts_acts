@@ -21,18 +21,58 @@ import testNapi from "libentry.so"
 
 export default function staticImport() {
   describe("StaticImportTest", () => {
+    /**
+     * @tc.name   importHar
+     * @tc.number importHar
+     * @tc.desc   importHar
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('importHar', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(add1(2, 3)).assertEqual(5)
     })
+    /**
+     * @tc.name   importRelative
+     * @tc.number importRelative
+     * @tc.desc   importRelative
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('importRelative', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(add2(2, 3)).assertEqual(5)
     })
+    /**
+     * @tc.name   importSystemInternal
+     * @tc.number importSystemInternal
+     * @tc.desc   importSystemInternal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('importSystemInternal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       hilog.info(0x0000, "testTag", 'dexter log: call ohos.hilog')
     })
+    /**
+     * @tc.name   importSystemBuiltin
+     * @tc.number importSystemBuiltin
+     * @tc.desc   importSystemBuiltin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('importSystemBuiltin', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       app.getInfo()
     })
+    /**
+     * @tc.name   ImportAppNapi
+     * @tc.number ImportAppNapi
+     * @tc.desc   ImportAppNapi
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("ImportAppNapi", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       expect(testNapi.add(2, 3)).assertEqual(5)
     })

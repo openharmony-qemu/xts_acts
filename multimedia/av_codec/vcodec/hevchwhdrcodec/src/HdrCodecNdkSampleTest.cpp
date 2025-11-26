@@ -310,14 +310,29 @@ void HDRCodecNdkSample::GetBufferSize()
     mpegUnit_->resize(bufferSize);
 }
 
+void HDRCodecNdkSample::SendDataEnd(OH_AVCodec *codec, uint32_t index, OH_AVCodecBufferAttr attr, uint32_t bufferSize)
+{
+    attr.pts = GetSystemTimeUs();
+    attr.size = bufferSize;
+    attr.offset = 0;
+    int32_t result = OH_VideoDecoder_PushInputData(codec, index, attr);
+    if (result != AV_ERR_OK) {
+        cout << "push input data failed,error:" << result << endl;
+    } else {
+        inputNum++;
+    }
+}
+
 int32_t HDRCodecNdkSample::SendDataHdr(OH_AVCodec *codec, uint32_t index, OH_AVMemory *data)
 {
     uint32_t bufferSize = 0;
-    int32_t result = 0;
     OH_AVCodecBufferAttr attr;
     static bool isFirstFrame = true;
+    std::lock_guard<std::mutex> lock01(fileMutex);
     (void)inFile_->read(reinterpret_cast<char *>(&bufferSize), sizeof(uint32_t));
-    if (inFile_->eof()) {
+    if (!inFile_->good()) {
+        return 0;
+    } else if (inFile_->eof()) {
         attr.flags = AVCODEC_BUFFER_FLAGS_EOS;
         attr.offset = 0;
         OH_VideoDecoder_PushInputData(codec, index, attr);
@@ -331,34 +346,28 @@ int32_t HDRCodecNdkSample::SendDataHdr(OH_AVCodec *codec, uint32_t index, OH_AVM
     }
     int32_t size = OH_AVMemory_GetSize(data);
     uint8_t *avBuffer = OH_AVMemory_GetAddr(data);
+    uint8_t *fileBuffer = new uint8_t[bufferSize];
     if (avBuffer == nullptr) {
         return 0;
-    }
-    uint8_t *fileBuffer = new uint8_t[bufferSize];
-    if (fileBuffer == nullptr) {
-        cout << "Fatal: no memory" << endl;
+    } else if (fileBuffer == nullptr) {
         delete[] fileBuffer;
         fileBuffer = nullptr;
         return 0;
     }
+    std::lock_guard<std::mutex> lock02(fileMutex);
     (void)inFile_->read(reinterpret_cast<char *>(fileBuffer), bufferSize);
-    if (memcpy_s(avBuffer, size, fileBuffer, bufferSize) != EOK) {
+    if (!inFile_->good()) {
+        return 0;
+    } else if (bufferSize > size) {
+        return 0;
+    } else if (memcpy_s(avBuffer, size, fileBuffer, bufferSize) != EOK) {
         delete[] fileBuffer;
         fileBuffer = nullptr;
-        cout << "Fatal: memcpy fail" << endl;
         return 0;
     }
     delete[] fileBuffer;
     fileBuffer = nullptr;
-    attr.pts = GetSystemTimeUs();
-    attr.size = bufferSize;
-    attr.offset = 0;
-    result = OH_VideoDecoder_PushInputData(codec, index, attr);
-    if (result != AV_ERR_OK) {
-        cout << "push input data failed,error:" << result << endl;
-    } else {
-        inputNum++;
-    }
+    SendDataEnd(codec, index, attr, bufferSize);
     return 0;
 }
 
@@ -366,8 +375,11 @@ int32_t HDRCodecNdkSample::SendDataH263(OH_AVCodec *codec, uint32_t index, OH_AV
 {
     OH_AVCodecBufferAttr attr;
     char ch[4] = {};
+    std::lock_guard<std::mutex> lock03(fileMutex);
     (void)inFile_->read(ch, START_CODE_SIZE);
-    if (inFile_->eof()) {
+    if (!inFile_->good()) {
+        return 0;
+    } else if (inFile_->eof()) {
         attr.flags = AVCODEC_BUFFER_FLAGS_EOS;
         attr.offset = 0;
         OH_VideoDecoder_PushInputData(codec, index, attr);
@@ -384,11 +396,8 @@ int32_t HDRCodecNdkSample::SendDataH263(OH_AVCodec *codec, uint32_t index, OH_AV
         return 1;
     }
     int32_t size = OH_AVMemory_GetSize(data);
-    if (size < bufferSize) {
-        return 0;
-    }
     uint8_t *avBuffer = OH_AVMemory_GetAddr(data);
-    if (avBuffer == nullptr) {
+    if (size < bufferSize || avBuffer == nullptr) {
         return 0;
     }
     uint8_t *fileBuffer = new uint8_t[bufferSize];
@@ -396,21 +405,17 @@ int32_t HDRCodecNdkSample::SendDataH263(OH_AVCodec *codec, uint32_t index, OH_AV
         delete[] fileBuffer;
         return 0;
     }
+    std::lock_guard<std::mutex> lock04(fileMutex);
     (void)inFile_->read(reinterpret_cast<char *>(fileBuffer), bufferSize);
+    if (!inFile_->good()) {
+        return 0;
+    }
     if (memcpy_s(avBuffer, size, fileBuffer, bufferSize) != EOK) {
         delete[] fileBuffer;
         return 0;
     }
     delete[] fileBuffer;
-    attr.pts = GetSystemTimeUs();
-    attr.size = bufferSize;
-    attr.offset = 0;
-    int32_t result = OH_VideoDecoder_PushInputData(codec, index, attr);
-    if (result != AV_ERR_OK) {
-        cout << "push input data failed,error:" << result << endl;
-    } else {
-        inputNum++;
-    }
+    SendDataEnd(codec, index, attr, bufferSize);
     return 0;
 }
 

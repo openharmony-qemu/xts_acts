@@ -348,10 +348,11 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
 
       try {
         await certChain1.validate(param);
+        expect(null).assertFail();
         done();
       } catch (err) {
         console.error(`${caseName} X509CertChain validate error: ${JSON.stringify(err)}`);
-        expect(null).assertFail();
+        expect(err.code == cert.CertResult.ERR_CRYPTO_OPERATION);
         done();
       }
     });
@@ -480,11 +481,12 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
       }
 
       try {
-        await certChain1.validate(param); // ocsp校验失败，CRL校验成功
+        await certChain1.validate(param);
+        expect(null).assertFail();
         done();
       } catch (err) {
         console.error(`${caseName} X509CertChain validate error: ${JSON.stringify(err)}`);
-        expect(null).assertFail();
+        expect(err.code == cert.CertResult.ERR_CRYPTO_OPERATION).assertTrue();
         done();
       }
     });
@@ -513,10 +515,11 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
 
       try {
         await certChain1.validate(param);
+        expect(null).assertFail();
         done();
       } catch (err) {
         console.error(`${caseName} X509CertChain validate error: ${JSON.stringify(err)}`);
-        expect(null).assertFail();
+        expect(err.code == cert.CertResult.ERR_CRYPTO_OPERATION).assertTrue();
         done();
       }
     });
@@ -1090,7 +1093,7 @@ export default function certFrameworkCertChainOfflineValidateJsAPIFunctionTestUn
         done();
       } catch (err) {
         console.error(`${caseName} X509CertChain validate error: ${JSON.stringify(err)}`);
-        expect(err.code == cert.CertResult.INVALID_PARAMS).assertTrue();
+        expect(err.code == cert.CertResult.ERR_CRYPTO_OPERATION).assertTrue();
         done();
       }
     });

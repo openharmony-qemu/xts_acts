@@ -46,12 +46,12 @@ export default function StateMap0010TestJsunit() {
     });
 
     /**
-     * @tc.number    StateMap0010TestJsunit_001
-     * @tc.name      StateMap0010TestJsunit_001
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   StateMap0010TestJsunit_001
+     * @tc.number StateMap0010TestJsunit_001
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('StateMap0010TestJsunit_001', Level.LEVEL0, async (done: Function) => {
       console.info('[StateMap0010TestJsunit_001] START');

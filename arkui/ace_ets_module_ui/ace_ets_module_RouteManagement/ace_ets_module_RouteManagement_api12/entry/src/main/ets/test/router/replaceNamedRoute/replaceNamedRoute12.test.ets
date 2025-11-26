@@ -48,10 +48,12 @@ export default function replaceNamedRoute12() {
     });
 
     /**
-     * @tc.number    replaceNamedRoute12_0100
-     * @tc.name      replaceNamedRoute12_0100
-     * @tc.desc      Test replaceNamedRoute
-     * @tc.level     Level 2
+     * @tc.name   replaceNamedRoute12_0100
+     * @tc.number replaceNamedRoute12_0100
+     * @tc.desc   Test replaceNamedRoute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('replaceNamedRoute12_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[replaceNamedRoute12_0100] START');

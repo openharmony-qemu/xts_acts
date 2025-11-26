@@ -55,6 +55,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PropDate2Jsunit_0010
+     * @tc.number PropDate2Jsunit_0010
+     * @tc.desc   PropDate2Jsunit_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropDate2Jsunit_0010', Level.LEVEL0, async (done: Function) => {
       console.info('PropDate2Jsunit_0010 START');
       let strJson = getInspectorByKey('setTime1');
@@ -66,6 +74,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PropDate2Jsunit_0020
+     * @tc.number PropDate2Jsunit_0020
+     * @tc.desc   PropDate2Jsunit_0020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropDate2Jsunit_0020', Level.LEVEL0, async (done: Function) => {
       console.info('PropDate2Jsunit_0020 START');
       let driver = Driver.create();
@@ -82,6 +98,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PropDate2Jsunit_0030
+     * @tc.number PropDate2Jsunit_0030
+     * @tc.desc   PropDate2Jsunit_0030
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropDate2Jsunit_0030', Level.LEVEL0, async (done: Function) => {
 
       let strJson = getInspectorByKey('setUTCFullYear1');
@@ -93,6 +117,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PropDate2Jsunit_0040
+     * @tc.number PropDate2Jsunit_0040
+     * @tc.desc   PropDate2Jsunit_0040
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropDate2Jsunit_0040', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0040 START');
@@ -109,6 +141,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PropDate2Jsunit_0050
+     * @tc.number PropDate2Jsunit_0050
+     * @tc.desc   PropDate2Jsunit_0050
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropDate2Jsunit_0050', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0050 START');
@@ -121,6 +161,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PropDate2Jsunit_0060
+     * @tc.number PropDate2Jsunit_0060
+     * @tc.desc   PropDate2Jsunit_0060
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropDate2Jsunit_0060', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0060 START');
@@ -137,6 +185,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PropDate2Jsunit_0070
+     * @tc.number PropDate2Jsunit_0070
+     * @tc.desc   PropDate2Jsunit_0070
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropDate2Jsunit_0070', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0070 START');
@@ -149,6 +205,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PropDate2Jsunit_0080
+     * @tc.number PropDate2Jsunit_0080
+     * @tc.desc   PropDate2Jsunit_0080
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropDate2Jsunit_0080', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0080 START');
@@ -164,6 +228,14 @@ export default function PropDate2Jsunit() {
       console.info('[PropDate2Jsunit_0080] END');
       done();
     });
+    /**
+     * @tc.name   PropDate2Jsunit_0090
+     * @tc.number PropDate2Jsunit_0090
+     * @tc.desc   PropDate2Jsunit_0090
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropDate2Jsunit_0090', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0090 START');
@@ -175,6 +247,14 @@ export default function PropDate2Jsunit() {
       console.info('[PropDate2Jsunit_0090] END');
       done();
     });
+    /**
+     * @tc.name   PropDate2Jsunit_0100
+     * @tc.number PropDate2Jsunit_0100
+     * @tc.desc   PropDate2Jsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropDate2Jsunit_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0100 START');
@@ -191,6 +271,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PropDate2Jsunit_0110
+     * @tc.number PropDate2Jsunit_0110
+     * @tc.desc   PropDate2Jsunit_0110
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropDate2Jsunit_0110', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0110 START');
@@ -203,6 +291,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PropDate2Jsunit_0120
+     * @tc.number PropDate2Jsunit_0120
+     * @tc.desc   PropDate2Jsunit_0120
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropDate2Jsunit_0120', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0120 START');
@@ -219,6 +315,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PropDate2Jsunit_0130
+     * @tc.number PropDate2Jsunit_0130
+     * @tc.desc   PropDate2Jsunit_0130
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropDate2Jsunit_0130', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_01430 START');
@@ -231,6 +335,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PropDate2Jsunit_0140
+     * @tc.number PropDate2Jsunit_0140
+     * @tc.desc   PropDate2Jsunit_0140
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropDate2Jsunit_0140', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0140 START');
@@ -246,6 +358,14 @@ export default function PropDate2Jsunit() {
       console.info('[PropDate2Jsunit_0140] END');
       done();
     });
+    /**
+     * @tc.name   PropDate2Jsunit_0150
+     * @tc.number PropDate2Jsunit_0150
+     * @tc.desc   PropDate2Jsunit_0150
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropDate2Jsunit_0150', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0150 START');
@@ -262,6 +382,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PropDate2Jsunit_0160
+     * @tc.number PropDate2Jsunit_0160
+     * @tc.desc   PropDate2Jsunit_0160
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropDate2Jsunit_0160', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0160 START');
@@ -278,6 +406,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PropDate2Jsunit_0170
+     * @tc.number PropDate2Jsunit_0170
+     * @tc.desc   PropDate2Jsunit_0170
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropDate2Jsunit_0170', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0170 START');
@@ -290,6 +426,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PropDate2Jsunit_0180
+     * @tc.number PropDate2Jsunit_0180
+     * @tc.desc   PropDate2Jsunit_0180
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropDate2Jsunit_0180', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0180 START');
@@ -306,6 +450,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PropDate2Jsunit_0190
+     * @tc.number PropDate2Jsunit_0190
+     * @tc.desc   PropDate2Jsunit_0190
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropDate2Jsunit_0190', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0190 START');
@@ -318,6 +470,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PropDate2Jsunit_0200
+     * @tc.number PropDate2Jsunit_0200
+     * @tc.desc   PropDate2Jsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropDate2Jsunit_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0200 START');
@@ -334,6 +494,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PropDate2Jsunit_0210
+     * @tc.number PropDate2Jsunit_0210
+     * @tc.desc   PropDate2Jsunit_0210
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropDate2Jsunit_0210', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0210 START');
@@ -346,6 +514,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PropDate2Jsunit_0220
+     * @tc.number PropDate2Jsunit_0220
+     * @tc.desc   PropDate2Jsunit_0220
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropDate2Jsunit_0220', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0220 START');
@@ -362,6 +538,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PropDate2Jsunit_0230
+     * @tc.number PropDate2Jsunit_0230
+     * @tc.desc   PropDate2Jsunit_0230
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropDate2Jsunit_0230', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0230 START');
@@ -374,6 +558,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PropDate2Jsunit_0240
+     * @tc.number PropDate2Jsunit_0240
+     * @tc.desc   PropDate2Jsunit_0240
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropDate2Jsunit_0240', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0240 START');
@@ -390,6 +582,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PropDate2Jsunit_0250
+     * @tc.number PropDate2Jsunit_0250
+     * @tc.desc   PropDate2Jsunit_0250
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropDate2Jsunit_0250', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0250 START');
@@ -401,6 +601,14 @@ export default function PropDate2Jsunit() {
       console.info('[PropDate2Jsunit_0250] END');
       done();
     });
+    /**
+     * @tc.name   PropDate2Jsunit_0260
+     * @tc.number PropDate2Jsunit_0260
+     * @tc.desc   PropDate2Jsunit_0260
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropDate2Jsunit_0260', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0260 START');
@@ -417,6 +625,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PropDate2Jsunit_0270
+     * @tc.number PropDate2Jsunit_0270
+     * @tc.desc   PropDate2Jsunit_0270
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropDate2Jsunit_0270', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0270 START');
@@ -429,6 +645,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PropDate2Jsunit_0280
+     * @tc.number PropDate2Jsunit_0280
+     * @tc.desc   PropDate2Jsunit_0280
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropDate2Jsunit_0280', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0280 START');
@@ -445,6 +669,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PropDate2Jsunit_0290
+     * @tc.number PropDate2Jsunit_0290
+     * @tc.desc   PropDate2Jsunit_0290
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropDate2Jsunit_0290', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0290 START');
@@ -457,6 +689,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PropDate2Jsunit_0300
+     * @tc.number PropDate2Jsunit_0300
+     * @tc.desc   PropDate2Jsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropDate2Jsunit_0300', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0300 START');
@@ -473,6 +713,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PropDate2Jsunit_0310
+     * @tc.number PropDate2Jsunit_0310
+     * @tc.desc   PropDate2Jsunit_0310
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropDate2Jsunit_0310', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0310 START');
@@ -489,6 +737,14 @@ export default function PropDate2Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   PropDate2Jsunit_0320
+     * @tc.number PropDate2Jsunit_0320
+     * @tc.desc   PropDate2Jsunit_0320
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PropDate2Jsunit_0320', Level.LEVEL0, async (done: Function) => {
 
       console.info('PropDate2Jsunit_0320 START');

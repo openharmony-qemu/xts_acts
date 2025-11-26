@@ -32,9 +32,12 @@ class PipeTest : public::testing::Test {
 };
 
 /**
- * @tc.number   SUB_KERNEL_IPC_PIPE_0100
- * @tc.name     basic function test
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testHelloWorld
+ * @tc.number SUB_KERNEL_IPC_PIPE_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(PipeTest, testHelloWorld, Function | MediumTest | Level0)
 {
@@ -72,9 +75,12 @@ HWTEST_F(PipeTest, testHelloWorld, Function | MediumTest | Level0)
 }
 
 /**
- * @tc.number   SUB_KERNEL_IPC_PIPE_0200
- * @tc.name     O_NONBLOCK read test
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   tesPipeNonblack
+ * @tc.number SUB_KERNEL_IPC_PIPE_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(PipeTest, tesPipeNonblack, Function | MediumTest | Level1)
 {
@@ -112,9 +118,12 @@ HWTEST_F(PipeTest, tesPipeNonblack, Function | MediumTest | Level1)
 }
 
 /**
- * @tc.number   SUB_KERNEL_IPC_PIPE_0300
- * @tc.name     pipe buffer teset
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPipeBuf
+ * @tc.number SUB_KERNEL_IPC_PIPE_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PipeTest, testPipeBuf, Function | MediumTest | Level3)
 {
@@ -175,9 +184,12 @@ HWTEST_F(PipeTest, testPipeBuf, Function | MediumTest | Level3)
 }
 
 /**
- * @tc.number   SUB_KERNEL_IPC_PIPE_0400
- * @tc.name     block pipe teset: MAX_PIPE_BUFFER
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testPipeBlock
+ * @tc.number SUB_KERNEL_IPC_PIPE_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(PipeTest, testPipeBlock, Function | MediumTest | Level2)
 {
@@ -231,9 +243,12 @@ HWTEST_F(PipeTest, testPipeBlock, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number   SUB_KERNEL_IPC_PIPE_0600
- * @tc.name     test pipe-ipc between brother
- * @tc.desc     [C- SOFTWARE -0200]
+ * @tc.name   testBrotherHelloWorld
+ * @tc.number SUB_KERNEL_IPC_PIPE_0600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(PipeTest, testBrotherHelloWorld, Function | MediumTest | Level1)
 {

@@ -49,12 +49,12 @@ export default function scrollSnapAnimationSpeedModifier() {
     });
 
     /**
+     * @tc.name   testListSpeed001
      * @tc.number testListSpeed001
-     * @tc.name   Test the properties of components
      * @tc.desc   input ScrollSnapAnimationSpeed.SLOW ,return ScrollSnapAnimationSpeed.SLOW
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListSpeed001', Level.LEVEL0, async (done: Function) => {
       console.info('[testListSpeed001] START');
@@ -69,12 +69,12 @@ export default function scrollSnapAnimationSpeedModifier() {
     });
 
     /**
+     * @tc.name   testListSpeed002
      * @tc.number testListSpeed002
-     * @tc.name   Test the properties of components
      * @tc.desc   input ScrollSnapAnimationSpeed.NORMAL ,return ScrollSnapAnimationSpeed.NORMAL
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListSpeed002', Level.LEVEL0, async (done: Function) => {
       console.info('[testListSpeed002] START');
@@ -92,12 +92,12 @@ export default function scrollSnapAnimationSpeedModifier() {
     });
 
     /**
+     * @tc.name   testListSpeed003
      * @tc.number testListSpeed003
-     * @tc.name   Test the properties of components
      * @tc.desc   input 1 ,return ScrollSnapAnimationSpeed.SLOW
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListSpeed003', Level.LEVEL0, async (done: Function) => {
       console.info('[testListSpeed003] START');
@@ -115,12 +115,12 @@ export default function scrollSnapAnimationSpeedModifier() {
     });
 
     /**
+     * @tc.name   testListSpeed004
      * @tc.number testListSpeed004
-     * @tc.name   Test the properties of components
      * @tc.desc   input undefined ,return ScrollSnapAnimationSpeed.NORMAL
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListSpeed004', Level.LEVEL0, async (done: Function) => {
       console.info('[testListSpeed004] START');
@@ -138,12 +138,12 @@ export default function scrollSnapAnimationSpeedModifier() {
     });
 
     /**
+     * @tc.name   testListSpeed005
      * @tc.number testListSpeed005
-     * @tc.name   Test the properties of components
      * @tc.desc   input -1 ,return ScrollSnapAnimationSpeed.NORMAL
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListSpeed005', Level.LEVEL0, async (done: Function) => {
       console.info('[testListSpeed005] START');

@@ -49,12 +49,12 @@ export default function scrollScrollbarColor() {
     });
 
     /**
-     * @tc.number: test_scroll_scrollBarColor_001
-     * @tc.name   Test the properties of components
+     * @tc.name   test_scroll_scrollBarColor_001
+     * @tc.number test_scroll_scrollBarColor_001
      * @tc.desc   input type resource[#FFFFFF00] ,return #FFFFFF00
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_scroll_scrollBarColor_001', Level.LEVEL0, async (done: Function) => {
       console.info('test_scroll_scrollBarColor_001 START');

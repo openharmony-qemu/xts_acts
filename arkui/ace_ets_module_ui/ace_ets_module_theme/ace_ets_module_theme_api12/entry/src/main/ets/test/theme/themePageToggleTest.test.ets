@@ -53,12 +53,12 @@ export default function themePageToggleTest() {
       done();
     });
     /**
+     * @tc.name   themeInterfaceIsValidTest_0100
      * @tc.number themeColorTest
-     * @tc.name themeInterfaceIsValidTest_0100
-     * @tc.desc theme Test
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   theme Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('themeInterfaceIsValidTest_0100', Level.LEVEL0, async (done:Function) =>{
       console.info('themeInterfaceIsValidTest_0100 START');

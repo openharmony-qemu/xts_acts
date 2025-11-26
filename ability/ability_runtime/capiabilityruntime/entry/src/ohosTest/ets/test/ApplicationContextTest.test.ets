@@ -35,6 +35,14 @@ export default function applicationContextTest() {
     afterAll(() => {
     })
 
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ApplicationContextGetBundleName_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ApplicationContextGetBundleName_0100
+     * @tc.desc   SUB_Ability_AbilityRuntime_ApplicationContextGetBundleName_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_ApplicationContextGetBundleName_0100', Level.LEVEL0, () => {
       let tag = 'SUB_Ability_AbilityRuntime_ApplicationContextGetBundleName_0100';
       hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
@@ -42,6 +50,14 @@ export default function applicationContextTest() {
       expect(bundleName).assertEqual(applicationContext.applicationInfo.name);
     })
 
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ApplicationContextGetBundleName_0200
+     * @tc.number SUB_Ability_AbilityRuntime_ApplicationContextGetBundleName_0200
+     * @tc.desc   SUB_Ability_AbilityRuntime_ApplicationContextGetBundleName_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_ApplicationContextGetBundleName_0200', Level.LEVEL0, () => {
       let tag = 'SUB_Ability_AbilityRuntime_ApplicationContextGetBundleName_0200';
       hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
@@ -49,6 +65,14 @@ export default function applicationContextTest() {
       expect(result).assertEqual(0);
     })
 
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ApplicationContextGetCacheDir_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ApplicationContextGetCacheDir_0100
+     * @tc.desc   SUB_Ability_AbilityRuntime_ApplicationContextGetCacheDir_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_ApplicationContextGetCacheDir_0100', Level.LEVEL0, () => {
       let tag = 'SUB_Ability_AbilityRuntime_ApplicationContextGetCacheDir_0100';
       hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
@@ -73,6 +97,14 @@ export default function applicationContextTest() {
       applicationContext.area = contextConstant.AreaMode.EL2;
     })
 
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ApplicationContextGetCacheDir_0200
+     * @tc.number SUB_Ability_AbilityRuntime_ApplicationContextGetCacheDir_0200
+     * @tc.desc   SUB_Ability_AbilityRuntime_ApplicationContextGetCacheDir_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_ApplicationContextGetCacheDir_0200', Level.LEVEL0, () => {
       let tag = 'SUB_Ability_AbilityRuntime_ApplicationContextGetCacheDir_0200';
       hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
@@ -103,6 +135,14 @@ export default function applicationContextTest() {
       applicationContext.area = contextConstant.AreaMode.EL2;
     })
 
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ApplicationContextGetAreaMode_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ApplicationContextGetAreaMode_0100
+     * @tc.desc   SUB_Ability_AbilityRuntime_ApplicationContextGetAreaMode_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_ApplicationContextGetAreaMode_0100', Level.LEVEL0, () => {
       let tag = 'SUB_Ability_AbilityRuntime_ApplicationContextGetAreaMode_0100';
       hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
@@ -127,6 +167,14 @@ export default function applicationContextTest() {
       applicationContext.area = contextConstant.AreaMode.EL2;
     })
 
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ApplicationContextGetAreaMode_0200
+     * @tc.number SUB_Ability_AbilityRuntime_ApplicationContextGetAreaMode_0200
+     * @tc.desc   SUB_Ability_AbilityRuntime_ApplicationContextGetAreaMode_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_ApplicationContextGetAreaMode_0200', Level.LEVEL0, () => {
       let tag = 'SUB_Ability_AbilityRuntime_ApplicationContextGetAreaMode_0200';
       hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
@@ -157,13 +205,13 @@ export default function applicationContextTest() {
       applicationContext.area = contextConstant.AreaMode.EL2;
     })
 	
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0100
-     * @tc.name: SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0100
-     * @tc.desc: The sandbox path is correct
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0100
+     * @tc.desc   The sandbox path is correct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0100', Level.LEVEL0, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0100';
@@ -218,13 +266,13 @@ export default function applicationContextTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0200
-     * @tc.name: SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0200
-     * @tc.desc: The Error Code is correct
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0200
+     * @tc.number SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0200
+     * @tc.desc   The Error Code is correct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0200', Level.LEVEL0, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0200';
@@ -266,13 +314,13 @@ export default function applicationContextTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0300
-     * @tc.name: SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0300
-     * @tc.desc: The sandbox path is correct
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0300
+     * @tc.number SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0300
+     * @tc.desc   The sandbox path is correct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0300', Level.LEVEL0, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0300';
@@ -328,13 +376,13 @@ export default function applicationContextTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0400
-     * @tc.name: SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0400
-     * @tc.desc: The Error Code is correct
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0400
+     * @tc.number SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0400
+     * @tc.desc   The Error Code is correct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0400', Level.LEVEL0, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0400';
@@ -377,13 +425,13 @@ export default function applicationContextTest() {
     })
 
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0500
-     * @tc.name: SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0500
-     * @tc.desc: The sandbox path is correct
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0500
+     * @tc.number SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0500
+     * @tc.desc   The sandbox path is correct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0500', Level.LEVEL0, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0500';
@@ -439,13 +487,13 @@ export default function applicationContextTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0600
-     * @tc.name: SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0600
-     * @tc.desc: The Error Code is correct
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0600
+     * @tc.number SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0600
+     * @tc.desc   The Error Code is correct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0600', Level.LEVEL0, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0600';
@@ -487,13 +535,13 @@ export default function applicationContextTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0700
-     * @tc.name: SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0700
-     * @tc.desc: The sandbox path is correct
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0700
+     * @tc.number SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0700
+     * @tc.desc   The sandbox path is correct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0700', Level.LEVEL0, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0700';
@@ -549,13 +597,13 @@ export default function applicationContextTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0800
-     * @tc.name: SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0800
-     * @tc.desc: The Error Code is correct
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0800
+     * @tc.number SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0800
+     * @tc.desc   The Error Code is correct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0800', Level.LEVEL0, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0800';
@@ -597,13 +645,13 @@ export default function applicationContextTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0900
-     * @tc.name: SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0900
-     * @tc.desc: The sandbox path is correct
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0900
+     * @tc.number SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0900
+     * @tc.desc   The sandbox path is correct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0900', Level.LEVEL0, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_0900';
@@ -659,13 +707,13 @@ export default function applicationContextTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1000
-     * @tc.name: SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1000
-     * @tc.desc: The Error Code is correct
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1000
+     * @tc.number SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1000
+     * @tc.desc   The Error Code is correct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1000', Level.LEVEL0, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1000';
@@ -707,13 +755,13 @@ export default function applicationContextTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1100
-     * @tc.name: SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1100
-     * @tc.desc: The sandbox path is correct
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1100
+     * @tc.number SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1100
+     * @tc.desc   The sandbox path is correct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1100', Level.LEVEL0, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1100';
@@ -769,13 +817,13 @@ export default function applicationContextTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1200
-     * @tc.name: SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1200
-     * @tc.desc: The Error Code is correct
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1200
+     * @tc.number SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1200
+     * @tc.desc   The Error Code is correct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1200', Level.LEVEL0, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1200';
@@ -817,13 +865,13 @@ export default function applicationContextTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1300
-     * @tc.name: SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1300
-     * @tc.desc: The sandbox path is correct
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1300
+     * @tc.number SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1300
+     * @tc.desc   The sandbox path is correct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1300', Level.LEVEL0, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1300';
@@ -879,13 +927,13 @@ export default function applicationContextTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1400
-     * @tc.name: SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1400
-     * @tc.desc: The Error Code is correct
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1400
+     * @tc.number SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1400
+     * @tc.desc   The Error Code is correct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1400', Level.LEVEL0, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1400';
@@ -926,13 +974,13 @@ export default function applicationContextTest() {
 
       done();
     })
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1500
-     * @tc.name: SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1500
-     * @tc.desc: Pref test 2000 times
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1500
+     * @tc.number SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1500
+     * @tc.desc   Pref test 2000 times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1500', Level.LEVEL0, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1500';
@@ -955,13 +1003,13 @@ export default function applicationContextTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1600
-     * @tc.name: SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1600
-     * @tc.desc: FileIO test
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1600
+     * @tc.number SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1600
+     * @tc.desc   FileIO test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1600', Level.LEVEL0, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_ApplicationContextGetNdkDir_1600';

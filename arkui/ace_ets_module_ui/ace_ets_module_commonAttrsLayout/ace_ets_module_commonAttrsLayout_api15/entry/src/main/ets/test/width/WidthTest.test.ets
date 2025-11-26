@@ -54,12 +54,14 @@ export default function WidthTest() {
       }
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_UI_COMPONENT_COLUMN_MATCHPARENT_0030
-    * @tc.name  : WidthTest_0100
-    * @tc.desc  : To test that the width supports LayoutPolicy.MATCH_PARENT. 
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   WidthTest_0100
+     * @tc.number SUB_ACE_UI_COMPONENT_COLUMN_MATCHPARENT_0030
+     * @tc.desc   To test that the width supports LayoutPolicy.MATCH_PARENT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('WidthTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('WidthTest_0100 START');
       await CommonFunc.sleep(1000);

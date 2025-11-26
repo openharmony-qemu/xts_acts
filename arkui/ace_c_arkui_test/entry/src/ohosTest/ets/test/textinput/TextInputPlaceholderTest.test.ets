@@ -26,13 +26,13 @@ export default function textInputPlaceholderTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_PLACEHOLDER_0100
-     * @tc.name: testTextInputPlaceholder001
-     * @tc.desc: testing PlaceHolder for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputPlaceholder001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_PLACEHOLDER_0100
+     * @tc.desc   testing PlaceHolder for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputPlaceholder001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputPlaceholder001()).assertEqual(0)

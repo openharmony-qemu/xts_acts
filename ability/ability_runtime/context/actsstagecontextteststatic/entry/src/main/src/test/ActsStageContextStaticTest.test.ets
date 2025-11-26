@@ -65,9 +65,12 @@ export default function actsStageContextTestStatic() {
 
 
     /**
-     * @tc.number     ACTS_StageContext_Static_1500
-     * @tc.name       ACTS_StageContext_Static_1500
-     * @tc.desc       test CreateModuleContext
+     * @tc.name   ACTS_StageContext_Static_1500
+     * @tc.number ACTS_StageContext_Static_1500
+     * @tc.desc   test CreateModuleContext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_StageContext_Static_1500", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'ACTS_StageContext_Static_1500 begin');
@@ -104,9 +107,12 @@ export default function actsStageContextTestStatic() {
     });
 
     /**
-     * @tc.number     ACTS_StageContext_Static_1600
-     * @tc.name       ACTS_StageContext_Static_1600
-     * @tc.desc       test CreateModuleContext
+     * @tc.name   ACTS_StageContext_Static_1600
+     * @tc.number ACTS_StageContext_Static_1600
+     * @tc.desc   test CreateModuleContext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_StageContext_Static_1600", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ACTS_StageContext_Static_1600 begin");
@@ -129,9 +135,12 @@ export default function actsStageContextTestStatic() {
     });
 
     /**
-     * @tc.number     ACTS_StageContext_Static_1700
-     * @tc.name       ACTS_StageContext_Static_1700
-     * @tc.desc       test CreateModuleContext with invalid param to verify the errcode 401
+     * @tc.name   ACTS_StageContext_Static_1700
+     * @tc.number ACTS_StageContext_Static_1700
+     * @tc.desc   test CreateModuleContext with invalid param to verify the errcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_StageContext_Static_1700", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'ACTS_StageContext_Static_1700 begin');
@@ -156,9 +165,12 @@ export default function actsStageContextTestStatic() {
     });
     
     /**
-     * @tc.number     ACTS_StageContext_Static_0900
-     * @tc.name       ACTS_StageContext_Static_0900
-     * @tc.desc       test EventHub test multiple callbacks
+     * @tc.name   ACTS_StageContext_Static_0900
+     * @tc.number ACTS_StageContext_Static_0900
+     * @tc.desc   test EventHub test multiple callbacks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_StageContext_Static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void): Promise<void> => {
       const itName = 'ACTS_StageContext_Static_0900';
@@ -190,9 +202,12 @@ export default function actsStageContextTestStatic() {
     })
 
     /**
-     * @tc.number     ACTS_StageContext_Static_1000
-     * @tc.name       ACTS_StageContext_Static_1000
-     * @tc.desc       test EventHub test different events
+     * @tc.name   ACTS_StageContext_Static_1000
+     * @tc.number ACTS_StageContext_Static_1000
+     * @tc.desc   test EventHub test different events
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_StageContext_Static_1000', TestType.FUNCTION | Size.MEDIUMTEST| Level.LEVEL0, async (done: () => void): Promise<void> => {
       const itName = 'ACTS_StageContext_Static_1000';
@@ -221,9 +236,12 @@ export default function actsStageContextTestStatic() {
     })
 
     /**
-     * @tc.number     ACTS_StageContext_Static_1100
-     * @tc.name       ACTS_StageContext_Static_1100
-     * @tc.desc       test EventHub test repeat on/off
+     * @tc.name   ACTS_StageContext_Static_1100
+     * @tc.number ACTS_StageContext_Static_1100
+     * @tc.desc   test EventHub test repeat on/off
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_StageContext_Static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const itName = 'ACTS_StageContext_Static_1100';
@@ -244,9 +262,12 @@ export default function actsStageContextTestStatic() {
     })
 
     /**
-     * @tc.number     ACTS_StageContext_Static_1200
-     * @tc.name       ACTS_StageContext_Static_1200
-     * @tc.desc       test EventHub test call off() in callback
+     * @tc.name   ACTS_StageContext_Static_1200
+     * @tc.number ACTS_StageContext_Static_1200
+     * @tc.desc   test EventHub test call off() in callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_StageContext_Static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const itName = 'ACTS_StageContext_Static_1200';
@@ -275,9 +296,12 @@ export default function actsStageContextTestStatic() {
     })
 
     /**
-     * @tc.number     ACTS_StageContext_Static_1300
-     * @tc.name       ACTS_StageContext_Static_1300
-     * @tc.desc       test EventHub test call off() in callback
+     * @tc.name   ACTS_StageContext_Static_1300
+     * @tc.number ACTS_StageContext_Static_1300
+     * @tc.desc   test EventHub test call off() in callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_StageContext_Static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const itName = 'ACTS_StageContext_Static_1300';
@@ -304,9 +328,12 @@ export default function actsStageContextTestStatic() {
     })
 
     /**
-     * @tc.number     ACTS_StageContext_Static_1400
-     * @tc.name       ACTS_StageContext_Static_1400
-     * @tc.desc       test EventHub test call on/off in callback
+     * @tc.name   ACTS_StageContext_Static_1400
+     * @tc.number ACTS_StageContext_Static_1400
+     * @tc.desc   test EventHub test call on/off in callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_StageContext_Static_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const itName = 'ACTS_StageContext_Static_1400';

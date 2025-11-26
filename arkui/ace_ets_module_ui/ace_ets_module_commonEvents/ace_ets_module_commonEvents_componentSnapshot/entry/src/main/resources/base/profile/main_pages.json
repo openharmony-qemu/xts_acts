@@ -1,0 +1,12 @@
+{
+    "src": [
+        "MainAbility/pages/index/index",
+        "MainAbility/pages/componentSnapshot/APIcomponentSnapshotGetSync",
+        "MainAbility/pages/componentSnapshot/APIUIContextGetSync",
+        "MainAbility/pages/UIContext/UIContextComponentSnapshot",
+        "MainAbility/pages/componentSnapshot/componentSnapshotSync",
+        "MainAbility/pages/ComponentSnapshotByUniqueId/getWithUniqueId",
+        "MainAbility/pages/componentSnapshot/componentSnapshot",
+        "MainAbility/pages/SnapshotOptions_region/SnapshotOptions_region"
+    ]
+}

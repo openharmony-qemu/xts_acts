@@ -27,13 +27,13 @@ export default function keyDispatchTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_KEYDISPATCH_TEST001
-     * @tc.name       : SUB_ARKUI_CAPI_KEYDISPATCH_TEST001
-     * @tc.desc       : testing the parent and child response when parent commpnent dispatch event to child component 
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testkeyDisPatchTest001
+     * @tc.number SUB_ARKUI_CAPI_KEYDISPATCH_TEST001
+     * @tc.desc   testing the parent and child response when parent commpnent dispatch event to child component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testkeyDisPatchTest001',  Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'KeydispatchTest';

@@ -26,13 +26,13 @@ export default function commonAttrsTransitionEffectAsymmetricTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_ASYMMETRIC_0100
-     * @tc.name       : testCommonAttrsTransitionEffectAsymmetric001
-     * @tc.desc       : testing transitioneffect asymmetric for commonAttrs with valid value 
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsTransitionEffectAsymmetric001
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_ASYMMETRIC_0100
+     * @tc.desc   testing transitioneffect asymmetric for commonAttrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsTransitionEffectAsymmetric001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsTransitionEffectAsymmetric001()).assertEqual(0)

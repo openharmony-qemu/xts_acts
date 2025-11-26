@@ -26,10 +26,12 @@ export default function contextTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Context_0100
-     * @tc.name: callback form createBundleContext system interface interception test
-     * @tc.desc: Test the third-party application call createBundleContext will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_Context_0100
+     * @tc.number System_API_Test_Context_0100
+     * @tc.desc   Test the third-party application call createBundleContext will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Context_0100', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Context_0100';
@@ -45,10 +47,12 @@ export default function contextTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Context_0200
-     * @tc.name: promise form createBundleContext system interface interception test
-     * @tc.desc: Test the third-party application call createBundleContext will be blocked
-     * @tc.level 3
+     * @tc.name   System_API_Test_Context_0200
+     * @tc.number System_API_Test_Context_0200
+     * @tc.desc   Test the third-party application call createBundleContext will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Context_0200', Level.LEVEL0, (done: Function) => {
       let TAG = 'System_API_Test_Context_0200';

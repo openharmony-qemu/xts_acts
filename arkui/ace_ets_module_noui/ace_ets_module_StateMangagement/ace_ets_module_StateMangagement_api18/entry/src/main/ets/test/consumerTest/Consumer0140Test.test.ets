@@ -46,12 +46,12 @@ export default function Consumer0140Test() {
     });
 
     /**
+     * @tc.name   Consumer0140Test_001
      * @tc.number Consumer0140Test
-     * @tc.name Consumer0140Test_001
-     * @tc.desc Persistently store UI related data
-     * @tc.level Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Persistently store UI related data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Consumer0140Test_001', Level.LEVEL3, async (done: Function) => {
       console.info('[Consumer0140Test_001] START');

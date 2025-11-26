@@ -45,6 +45,14 @@ export default function StackBackgroundTest() {
     afterEach(async () => {
     });
 
+     /**
+      * @tc.name   StackBackgroundTest_0100
+      * @tc.number StackBackgroundTest_0100
+      * @tc.desc   StackBackgroundTest_0100
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
+      */
      it('StackBackgroundTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[StackBackgroundTest_0100] START');
       let driver = await Driver.create()

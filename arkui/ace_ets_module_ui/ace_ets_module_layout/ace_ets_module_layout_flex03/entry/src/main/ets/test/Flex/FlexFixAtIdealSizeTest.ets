@@ -45,6 +45,14 @@ export default function FlexFixAtIdealSizeTest() {
     afterEach(async () => {
     });
     
+    /**
+     * @tc.name   FlexFixAtIdealSizeTest_0100
+     * @tc.number FlexFixAtIdealSizeTest_0100
+     * @tc.desc   FlexFixAtIdealSizeTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('FlexFixAtIdealSizeTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[FlexFixAtIdealSizeTest_0100] START');
       let driver = await Driver.create()

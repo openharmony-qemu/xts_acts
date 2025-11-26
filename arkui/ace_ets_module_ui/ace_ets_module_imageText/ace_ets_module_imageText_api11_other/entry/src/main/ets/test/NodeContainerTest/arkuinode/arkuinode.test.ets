@@ -43,12 +43,12 @@ export default function arkuiNodeTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ARKUINODE_0100
-     * @tc.name      testarkuinode
-     * @tc.desc      set api
-     * @tc.level     Level 2
-     * @tc.type
-    * @tc.size
+     * @tc.name   arkuinode_0100
+     * @tc.number SUB_ACE_ARKUINODE_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('arkuinode_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[arkuinode_0100] START');

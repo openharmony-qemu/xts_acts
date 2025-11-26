@@ -43,6 +43,14 @@ export default function NavRouterJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   NavRouterJsunit_0100
+     * @tc.number NavRouterJsunit_0100
+     * @tc.desc   NavRouterJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NavRouterJsunit_0100',  Level.LEVEL0, async  (done:Function) =>{
       // Verify onStateChange function of the main title
       console.info('[NavRouterJsunit_0100] START');

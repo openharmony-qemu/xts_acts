@@ -43,12 +43,12 @@ export default function onkeyEventDispatchTest6() {
     });
 
     /**
-     * @tc.number SUB_ACE_ACTION_EVEVENT_COMMEVENT_KEYEVENT_DISPATCH_0270
      * @tc.name   SUB_ACE_ACTION_EVEVENT_COMMEVENT_KEYEVENT_DISPATCH_0270
+     * @tc.number SUB_ACE_ACTION_EVEVENT_COMMEVENT_KEYEVENT_DISPATCH_0270
      * @tc.desc   test the onkeyEventDispatch tab key focus when parent component set onKeyEventDispatch event and undefined
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_ACTION_EVEVENT_COMMEVENT_KEYEVENT_DISPATCH_0270', Level.LEVEL0, async (done: Function) => {
       console.info('[onkeyEventDispatchTest6_0100] START');

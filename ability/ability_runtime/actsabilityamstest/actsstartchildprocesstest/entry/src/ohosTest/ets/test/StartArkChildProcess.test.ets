@@ -36,12 +36,12 @@ export default function startArkChildProcess() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AMS_JSChildProcess_0600
      * @tc.number SUB_Ability_AbilityRuntime_AMS_JSChildProcess_0600
-     * @tc.name The parameter passed to the child process is null
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AMS_JSChildProcess_0600', Level.LEVEL0, async (done: Function) => {
       let args: ChildProcessArgs | null = null;
@@ -64,12 +64,12 @@ export default function startArkChildProcess() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AMS_JSChildProcess_0700
      * @tc.number SUB_Ability_AbilityRuntime_AMS_JSChildProcess_0700
-     * @tc.name The parameter passed to the child process is undefined
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AMS_JSChildProcess_0700', Level.LEVEL0, async (done: Function) => {
       let args: ChildProcessArgs | undefined = undefined;
@@ -93,12 +93,12 @@ export default function startArkChildProcess() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AMS_JSChildProcess_0900
      * @tc.number SUB_Ability_AbilityRuntime_AMS_JSChildProcess_0900
-     * @tc.name The startup configuration option for the child process is null
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AMS_JSChildProcess_0900', Level.LEVEL0, async (done: Function) => {
       let path = context.filesDir + '/test.txt';
@@ -126,12 +126,12 @@ export default function startArkChildProcess() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AMS_JSChildProcess_1000
      * @tc.number SUB_Ability_AbilityRuntime_AMS_JSChildProcess_1000
-     * @tc.name The startup configuration option for the child process is undefined
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AMS_JSChildProcess_1000', Level.LEVEL0, async (done: Function) => {
       let path = context.filesDir + '/test.txt';
@@ -158,12 +158,12 @@ export default function startArkChildProcess() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AMS_JSChildProcess_0100
      * @tc.number SUB_Ability_AbilityRuntime_AMS_JSChildProcess_0100
-     * @tc.name Child process source file path is null
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AMS_JSChildProcess_0100', Level.LEVEL0, async (done: Function) => {
       let path = context.filesDir + '/test.txt';
@@ -192,12 +192,12 @@ export default function startArkChildProcess() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AMS_JSChildProcess_0200
      * @tc.number SUB_Ability_AbilityRuntime_AMS_JSChildProcess_0200
-     * @tc.name Child process source file path is undefined
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AMS_JSChildProcess_0200', Level.LEVEL0, async (done: Function) => {
       let path = context.filesDir + '/test.txt';
@@ -226,12 +226,12 @@ export default function startArkChildProcess() {
     });
     
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AMS_JSChildProcess_0300
      * @tc.number SUB_Ability_AbilityRuntime_AMS_JSChildProcess_0300
-     * @tc.name Child process source file path is empty
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AMS_JSChildProcess_0300', Level.LEVEL0, async (done: Function) => {
       let path = context.filesDir + '/test.txt';

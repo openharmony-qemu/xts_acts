@@ -23,13 +23,13 @@ export default function imageOnfinishTest() {
 
     let PAGE_TAG = 'ImageOnfinishTest';
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_ON_SVG_PLAY_FINISH_0100
-     * @tc.name       : testImageOnFinish001
-     * @tc.desc       : test image onFinish with event callback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageOnFinish001
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_ON_SVG_PLAY_FINISH_0100
+     * @tc.desc   test image onFinish with event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageOnFinish001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`image/${PAGE_TAG}`);

@@ -44,12 +44,12 @@ export default function IMonitorTest() {
     });
 
     /**
-     * @tc.number    IMonitorTest_0100
-     * @tc.name      IMonitorTest_0100
-     * @tc.desc      test the api of IMonitor: before and now
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   IMonitorTest_0100
+     * @tc.number IMonitorTest_0100
+     * @tc.desc   test the api of IMonitor: before and now
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IMonitorTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('IMonitorTest_0100 START');

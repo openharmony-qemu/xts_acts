@@ -31,12 +31,12 @@ export default function promiseTest() {
     }
 
     /**
-     * @tc.number    SUB_ANI_PROMISE_NEW_0100
-     * @tc.name      test_Promise_New_0001
-     * @tc.desc      resolve promise
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Promise_New_0001
+     * @tc.number SUB_ANI_PROMISE_NEW_0100
+     * @tc.desc   resolve promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Promise_New_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -50,12 +50,12 @@ export default function promiseTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_PROMISE_NEW_0200
-     * @tc.name      test_Promise_New_0002
-     * @tc.desc      invalid argument
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Promise_New_0002
+     * @tc.number SUB_ANI_PROMISE_NEW_0200
+     * @tc.desc   invalid argument
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Promise_New_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -69,12 +69,12 @@ export default function promiseTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_PROMISE_NEW_0300
-     * @tc.name      test_Promise_New_0003
-     * @tc.desc      invalid argument 2
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Promise_New_0003
+     * @tc.number SUB_ANI_PROMISE_NEW_0300
+     * @tc.desc   invalid argument 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Promise_New_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -88,12 +88,12 @@ export default function promiseTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_PROMISE_NEW_0400
-     * @tc.name      test_Promise_New_0004
-     * @tc.desc      invalid argument 3
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Promise_New_0004
+     * @tc.number SUB_ANI_PROMISE_NEW_0400
+     * @tc.desc   invalid argument 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Promise_New_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -107,12 +107,12 @@ export default function promiseTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_PROMISE_NEW_0500
-     * @tc.name      test_Promise_New_0005
-     * @tc.desc      continuous calls
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_Promise_New_0005
+     * @tc.number SUB_ANI_PROMISE_NEW_0500
+     * @tc.desc   continuous calls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_Promise_New_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -126,12 +126,12 @@ export default function promiseTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_PROMISERESOLVER_REJECT_0100
-     * @tc.name      test_PromiseResolver_Reject_0001
-     * @tc.desc      resolve promise
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_PromiseResolver_Reject_0001
+     * @tc.number SUB_ANI_PROMISERESOLVER_REJECT_0100
+     * @tc.desc   resolve promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_PromiseResolver_Reject_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -145,12 +145,12 @@ export default function promiseTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_PROMISERESOLVER_REJECT_0200
-     * @tc.name      test_PromiseResolver_Reject_0002
-     * @tc.desc      invalid argument 1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_PromiseResolver_Reject_0002
+     * @tc.number SUB_ANI_PROMISERESOLVER_REJECT_0200
+     * @tc.desc   invalid argument 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_PromiseResolver_Reject_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -164,12 +164,12 @@ export default function promiseTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_PROMISERESOLVER_REJECT_0300
-     * @tc.name      test_PromiseResolver_Reject_0003
-     * @tc.desc      invalid argument 2
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_PromiseResolver_Reject_0003
+     * @tc.number SUB_ANI_PROMISERESOLVER_REJECT_0300
+     * @tc.desc   invalid argument 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_PromiseResolver_Reject_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -183,12 +183,12 @@ export default function promiseTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_PROMISERESOLVER_RESOLVE_0100
-     * @tc.name      test_PromiseResolver_Resolve_0001
-     * @tc.desc      resolve promise
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_PromiseResolver_Resolve_0001
+     * @tc.number SUB_ANI_PROMISERESOLVER_RESOLVE_0100
+     * @tc.desc   resolve promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_PromiseResolver_Resolve_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -202,12 +202,12 @@ export default function promiseTest() {
       })
 
     /**
-     * @tc.number    SUB_ANI_PROMISERESOLVER_RESOLVE_0200
-     * @tc.name      test_PromiseResolver_Resolve_0002
-     * @tc.desc      invalid argument
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_PromiseResolver_Resolve_0002
+     * @tc.number SUB_ANI_PROMISERESOLVER_RESOLVE_0200
+     * @tc.desc   invalid argument
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_PromiseResolver_Resolve_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -221,12 +221,12 @@ export default function promiseTest() {
     })
 
     /**
-     * @tc.number    SUB_ANI_PROMISERESOLVER_RESOLVE_0300
-     * @tc.name      test_PromiseResolver_Resolve_0003
-     * @tc.desc      invalid argument 2
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_PromiseResolver_Resolve_0003
+     * @tc.number SUB_ANI_PROMISERESOLVER_RESOLVE_0300
+     * @tc.desc   invalid argument 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_PromiseResolver_Resolve_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

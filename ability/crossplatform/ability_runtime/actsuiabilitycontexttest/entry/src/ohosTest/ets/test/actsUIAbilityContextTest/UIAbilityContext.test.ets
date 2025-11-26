@@ -60,12 +60,12 @@ export default function UIAbilityContext() {
     });
 
     /**
-     * @tc.number    : ABILITY_TEST_ABILITYINFO_0100
-     * @tc.name      : testAbilityInfo001
-     * @tc.desc      : test AbilityInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testAbilityInfo001
+     * @tc.number ABILITY_TEST_ABILITYINFO_0100
+     * @tc.desc   test AbilityInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAbilityInfo001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -107,12 +107,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_UIABILITYCONTEXT_CURRENTHAPMODULEINFO_0100
-     * @tc.name      : testUIAbilityContextCurrentHapModuleInfo001
-     * @tc.desc      : test filed of currentHapModuleInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testUIAbilityContextCurrentHapModuleInfo001
+     * @tc.number ABILITY_TEST_UIABILITYCONTEXT_CURRENTHAPMODULEINFO_0100
+     * @tc.desc   test filed of currentHapModuleInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUIAbilityContextCurrentHapModuleInfo001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -150,12 +150,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_UIABILITYCONTEXT_CONFIG_0100
-     * @tc.name      : testUIAbilityContextConfig001
-     * @tc.desc      : test filed of config
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testUIAbilityContextConfig001
+     * @tc.number ABILITY_TEST_UIABILITYCONTEXT_CONFIG_0100
+     * @tc.desc   test filed of config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUIAbilityContextConfig001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -179,12 +179,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_STARTABILITY_PROMISE_0100
-     * @tc.name      : testStartAbilityPromise001
-     * @tc.desc      : test startAbility right
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testStartAbilityPromise001
+     * @tc.number ABILITY_TEST_STARTABILITY_PROMISE_0100
+     * @tc.desc   test startAbility right
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStartAbilityPromise001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -220,12 +220,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_STARTABILITY_PROMISE_0200
-     * @tc.name      : testStartAbilityPromise002
-     * @tc.desc      : test startAbility wrong want
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testStartAbilityPromise002
+     * @tc.number ABILITY_TEST_STARTABILITY_PROMISE_0200
+     * @tc.desc   test startAbility wrong want
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStartAbilityPromise002', Level.LEVEL0, async (done: Function) => {
       try {
@@ -252,12 +252,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_STARTABILITY_PROMISE_0300
-     * @tc.name      : testStartAbilityPromise003
-     * @tc.desc      : test startAbility wrong want
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testStartAbilityPromise003
+     * @tc.number ABILITY_TEST_STARTABILITY_PROMISE_0300
+     * @tc.desc   test startAbility wrong want
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStartAbilityPromise003', Level.LEVEL0, async (done: Function) => {
       try {
@@ -284,12 +284,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_STARTABILITY_PROMISE_0400
-     * @tc.name      : testStartAbilityPromise004
-     * @tc.desc      : test startAbility wrong want
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testStartAbilityPromise004
+     * @tc.number ABILITY_TEST_STARTABILITY_PROMISE_0400
+     * @tc.desc   test startAbility wrong want
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStartAbilityPromise004', Level.LEVEL0, async (done: Function) => {
       try {
@@ -315,12 +315,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_STARTABILITY_PROMISE_0500
-     * @tc.name      : testStartAbilityPromise005
-     * @tc.desc      : test startAbility wrong want
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testStartAbilityPromise005
+     * @tc.number ABILITY_TEST_STARTABILITY_PROMISE_0500
+     * @tc.desc   test startAbility wrong want
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStartAbilityPromise005', Level.LEVEL0, async (done: Function) => {
       try {
@@ -347,12 +347,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_STARTABILITY_PROMISE_0600
-     * @tc.name      : testStartAbilityPromise006
-     * @tc.desc      : test startAbility wrong want
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testStartAbilityPromise006
+     * @tc.number ABILITY_TEST_STARTABILITY_PROMISE_0600
+     * @tc.desc   test startAbility wrong want
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStartAbilityPromise006', Level.LEVEL0, async (done: Function) => {
       try {
@@ -379,12 +379,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_STARTABILITY_PROMISE_0700
-     * @tc.name      : testStartAbilityPromise007
-     * @tc.desc      : test startAbility right want
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testStartAbilityPromise007
+     * @tc.number ABILITY_TEST_STARTABILITY_PROMISE_0700
+     * @tc.desc   test startAbility right want
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStartAbilityPromise007', Level.LEVEL0, async (done: Function) => {
       try {
@@ -419,12 +419,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_STARTABILITY_PROMISE_0800
-     * @tc.name      : testStartAbilityPromise008
-     * @tc.desc      : test startAbility wrong want
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testStartAbilityPromise008
+     * @tc.number ABILITY_TEST_STARTABILITY_PROMISE_0800
+     * @tc.desc   test startAbility wrong want
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStartAbilityPromise008', Level.LEVEL0, async (done: Function) => {
       try {
@@ -451,12 +451,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_STARTABILITY_PROMISE_0900
-     * @tc.name      : testStartAbilityPromise009
-     * @tc.desc      : test startAbility wrong want
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testStartAbilityPromise009
+     * @tc.number ABILITY_TEST_STARTABILITY_PROMISE_0900
+     * @tc.desc   test startAbility wrong want
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStartAbilityPromise009', Level.LEVEL0, async (done: Function) => {
       try {
@@ -483,12 +483,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_STARTABILITY_PROMISE_1000
-     * @tc.name      : testStartAbilityPromise010
-     * @tc.desc      : test startAbility wrong want
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testStartAbilityPromise010
+     * @tc.number ABILITY_TEST_STARTABILITY_PROMISE_1000
+     * @tc.desc   test startAbility wrong want
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStartAbilityPromise010', Level.LEVEL0, async (done: Function) => {
       try {
@@ -514,12 +514,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_STARTABILITY_PROMISE_1100
-     * @tc.name      : testStartAbilityPromise011
-     * @tc.desc      : test startAbility wrong want
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testStartAbilityPromise011
+     * @tc.number ABILITY_TEST_STARTABILITY_PROMISE_1100
+     * @tc.desc   test startAbility wrong want
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStartAbilityPromise011', Level.LEVEL0, async (done: Function) => {
       try {
@@ -544,12 +544,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_STARTABILITY_PROMISE_1200
-     * @tc.name      : testStartAbilityPromise012
-     * @tc.desc      : test startAbility right
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testStartAbilityPromise012
+     * @tc.number ABILITY_TEST_STARTABILITY_PROMISE_1200
+     * @tc.desc   test startAbility right
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStartAbilityPromise012', Level.LEVEL0, async (done: Function) => {
       try {
@@ -594,12 +594,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_STARTABILITY_PROMISE_1300
-     * @tc.name      : testStartAbilityPromise013
-     * @tc.desc      : test startAbility right
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testStartAbilityPromise013
+     * @tc.number ABILITY_TEST_STARTABILITY_PROMISE_1300
+     * @tc.desc   test startAbility right
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStartAbilityPromise013', Level.LEVEL0, async (done: Function) => {
       try {
@@ -649,12 +649,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_STARTABILITY_CALLBACK_0100
-     * @tc.name      : testStartAbilityCallback001
-     * @tc.desc      : test startAbility right
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testStartAbilityCallback001
+     * @tc.number ABILITY_TEST_STARTABILITY_CALLBACK_0100
+     * @tc.desc   test startAbility right
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStartAbilityCallback001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -693,12 +693,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_STARTABILITY_CALLBACK_0200
-     * @tc.name      : testStartAbilityCallback002
-     * @tc.desc      : test startAbility wrong want
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testStartAbilityCallback002
+     * @tc.number ABILITY_TEST_STARTABILITY_CALLBACK_0200
+     * @tc.desc   test startAbility wrong want
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStartAbilityCallback002', Level.LEVEL0, async (done: Function) => {
       try {
@@ -728,12 +728,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_STARTABILITY_CALLBACK_0300
-     * @tc.name      : testStartAbilityCallback003
-     * @tc.desc      : test startAbility wrong want
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testStartAbilityCallback003
+     * @tc.number ABILITY_TEST_STARTABILITY_CALLBACK_0300
+     * @tc.desc   test startAbility wrong want
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStartAbilityCallback003', Level.LEVEL0, async (done: Function) => {
       try {
@@ -763,12 +763,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_STARTABILITY_CALLBACK_0400
-     * @tc.name      : testStartAbilityCallback004
-     * @tc.desc      : test startAbility wrong want
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testStartAbilityCallback004
+     * @tc.number ABILITY_TEST_STARTABILITY_CALLBACK_0400
+     * @tc.desc   test startAbility wrong want
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStartAbilityCallback004', Level.LEVEL0, async (done: Function) => {
       try {
@@ -797,12 +797,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_STARTABILITY_CALLBACK_0500
-     * @tc.name      : testStartAbilityCallback005
-     * @tc.desc      : test startAbility wrong want
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testStartAbilityCallback005
+     * @tc.number ABILITY_TEST_STARTABILITY_CALLBACK_0500
+     * @tc.desc   test startAbility wrong want
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStartAbilityCallback005', Level.LEVEL0, async (done: Function) => {
       try {
@@ -832,12 +832,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_STARTABILITY_CALLBACK_0600
-     * @tc.name      : testStartAbilityCallback006
-     * @tc.desc      : test startAbility wrong want
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testStartAbilityCallback006
+     * @tc.number ABILITY_TEST_STARTABILITY_CALLBACK_0600
+     * @tc.desc   test startAbility wrong want
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStartAbilityCallback006', Level.LEVEL0, async (done: Function) => {
       try {
@@ -867,12 +867,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_STARTABILITY_CALLBACK_0700
-     * @tc.name      : testStartAbilityCallback007
-     * @tc.desc      : test startAbility right want
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testStartAbilityCallback007
+     * @tc.number ABILITY_TEST_STARTABILITY_CALLBACK_0700
+     * @tc.desc   test startAbility right want
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStartAbilityCallback007', Level.LEVEL0, async (done: Function) => {
       try {
@@ -910,12 +910,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_STARTABILITY_CALLBACK_0800
-     * @tc.name      : testStartAbilityCallback008
-     * @tc.desc      : test startAbility wrong want
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testStartAbilityCallback008
+     * @tc.number ABILITY_TEST_STARTABILITY_CALLBACK_0800
+     * @tc.desc   test startAbility wrong want
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStartAbilityCallback008', Level.LEVEL0, async (done: Function) => {
       try {
@@ -945,12 +945,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_STARTABILITY_CALLBACK_0900
-     * @tc.name      : testStartAbilityCallback009
-     * @tc.desc      : test startAbility wrong want
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testStartAbilityCallback009
+     * @tc.number ABILITY_TEST_STARTABILITY_CALLBACK_0900
+     * @tc.desc   test startAbility wrong want
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStartAbilityCallback009', Level.LEVEL0, async (done: Function) => {
       try {
@@ -980,12 +980,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_STARTABILITY_CALLBACK_1000
-     * @tc.name      : testStartAbilityCallback010
-     * @tc.desc      : test startAbility wrong want
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testStartAbilityCallback010
+     * @tc.number ABILITY_TEST_STARTABILITY_CALLBACK_1000
+     * @tc.desc   test startAbility wrong want
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStartAbilityCallback010', Level.LEVEL0, async (done: Function) => {
       try {
@@ -1014,12 +1014,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_STARTABILITY_CALLBACK_1100
-     * @tc.name      : testStartAbilityCallback011
-     * @tc.desc      : test startAbility wrong want
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testStartAbilityCallback011
+     * @tc.number ABILITY_TEST_STARTABILITY_CALLBACK_1100
+     * @tc.desc   test startAbility wrong want
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStartAbilityCallback011', Level.LEVEL0, async (done: Function) => {
       try {
@@ -1045,12 +1045,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_STARTABILITY_CALLBACK_1200
-     * @tc.name      : testStartAbilityCallback012
-     * @tc.desc      : test startAbility right
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testStartAbilityCallback012
+     * @tc.number ABILITY_TEST_STARTABILITY_CALLBACK_1200
+     * @tc.desc   test startAbility right
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStartAbilityCallback012', Level.LEVEL0, async (done: Function) => {
       try {
@@ -1100,12 +1100,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_STARTABILITY_CALLBACK_1300
-     * @tc.name      : testStartAbilityCallback013
-     * @tc.desc      : test startAbility right
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testStartAbilityCallback013
+     * @tc.number ABILITY_TEST_STARTABILITY_CALLBACK_1300
+     * @tc.desc   test startAbility right
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStartAbilityCallback013', Level.LEVEL0, async (done: Function) => {
       try {
@@ -1164,12 +1164,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_APPLICATIONINFO_PROMISE_0100
-     * @tc.name      : testTerminateSelfPromise001
-     * @tc.desc      : test terminateSelf(Promise)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testTerminateSelfPromise001
+     * @tc.number ABILITY_TEST_APPLICATIONINFO_PROMISE_0100
+     * @tc.desc   test terminateSelf(Promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTerminateSelfPromise001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -1206,12 +1206,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_APPLICATIONINFO_CALLBACK_0100
-     * @tc.name      : testTerminateSelfCallback001
-     * @tc.desc      : test terminateSelf(Callback)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testTerminateSelfCallback001
+     * @tc.number ABILITY_TEST_APPLICATIONINFO_CALLBACK_0100
+     * @tc.desc   test terminateSelf(Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTerminateSelfCallback001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -1254,12 +1254,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_STAGEMODE_0100
-     * @tc.name      : testStageMode001
-     * @tc.desc      : test filed of stageMode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testStageMode001
+     * @tc.number ABILITY_TEST_STAGEMODE_0100
+     * @tc.desc   test filed of stageMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStageMode001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -1275,12 +1275,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_RESOURCEMANAGER_0100
-     * @tc.name      : testResourceManager001
-     * @tc.desc      : test filed of resourceManager
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testResourceManager001
+     * @tc.number ABILITY_TEST_RESOURCEMANAGER_0100
+     * @tc.desc   test filed of resourceManager
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testResourceManager001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -1296,12 +1296,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_APPLICATIONINFO_0100
-     * @tc.name      : testApplicationInfo001
-     * @tc.desc      : test filed of applicationInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testApplicationInfo001
+     * @tc.number ABILITY_TEST_APPLICATIONINFO_0100
+     * @tc.desc   test filed of applicationInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testApplicationInfo001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -1337,12 +1337,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_CACHEDIR_0100
-     * @tc.name      : testCacheDir001
-     * @tc.desc      : test filed of cacheDir
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testCacheDir001
+     * @tc.number ABILITY_TEST_CACHEDIR_0100
+     * @tc.desc   test filed of cacheDir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCacheDir001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -1359,12 +1359,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_TEMPDIR_0100
-     * @tc.name      : testTempDir001
-     * @tc.desc      : test filed of tempDir
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testTempDir001
+     * @tc.number ABILITY_TEST_TEMPDIR_0100
+     * @tc.desc   test filed of tempDir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTempDir001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -1381,12 +1381,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_RESOURCE_DIR_0100
-     * @tc.name      : testTempDir001
-     * @tc.desc      : test filed of tempDir
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testResourceDir001
+     * @tc.number ABILITY_TEST_RESOURCE_DIR_0100
+     * @tc.desc   test filed of tempDir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testResourceDir001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -1403,12 +1403,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_FILESDIR_0100
-     * @tc.name      : testFilesDir001
-     * @tc.desc      : test filed of filesDir
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testFilesDir001
+     * @tc.number ABILITY_TEST_FILESDIR_0100
+     * @tc.desc   test filed of filesDir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFilesDir001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -1425,12 +1425,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_DATABASEDIR_0100
-     * @tc.name      : testDatabaseDir001
-     * @tc.desc      : test filed of databaseDir
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testDatabaseDir001
+     * @tc.number ABILITY_TEST_DATABASEDIR_0100
+     * @tc.desc   test filed of databaseDir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDatabaseDir001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -1447,12 +1447,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_PREFERENCESDIR_0100
-     * @tc.name      : testPreferencesDir001
-     * @tc.desc      : test filed of preferencesDir
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testPreferencesDir001
+     * @tc.number ABILITY_TEST_PREFERENCESDIR_0100
+     * @tc.desc   test filed of preferencesDir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPreferencesDir001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -1469,12 +1469,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_BUNDLECODEDIR_0100
-     * @tc.name      : testBundleCodeDir001
-     * @tc.desc      : test filed of bundleCodeDir
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testBundleCodeDir001
+     * @tc.number ABILITY_TEST_BUNDLECODEDIR_0100
+     * @tc.desc   test filed of bundleCodeDir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBundleCodeDir001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -1491,12 +1491,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_CREATEMODULECONTEXT_0100
-     * @tc.name      : testCreateModuleContext001
-     * @tc.desc      : Context calls createModuleContext, passing in the moduleName of the current application hap1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testCreateModuleContext001
+     * @tc.number ABILITY_TEST_CREATEMODULECONTEXT_0100
+     * @tc.desc   Context calls createModuleContext, passing in the moduleName of the current application hap1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testCreateModuleContext001", Level.LEVEL0, async (done: Function) => {
       try {
@@ -1517,12 +1517,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_CREATEMODULECONTEXT_002
-     * @tc.name      : testCreateModuleContext002
-     * @tc.desc      : Context calls createModuleContext, passing in the moduleName of the current application hap2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testCreateModuleContext002
+     * @tc.number ABILITY_TEST_CREATEMODULECONTEXT_002
+     * @tc.desc   Context calls createModuleContext, passing in the moduleName of the current application hap2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testCreateModuleContext002", Level.LEVEL0, async (done: Function) => {
       try {
@@ -1543,12 +1543,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_CREATEMODULECONTEXT_003
-     * @tc.name      : testCreateModuleContext003
-     * @tc.desc      : Context calls createModuleContext, passing in the moduleName of the cross-application hap1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testCreateModuleContext003
+     * @tc.number ABILITY_TEST_CREATEMODULECONTEXT_003
+     * @tc.desc   Context calls createModuleContext, passing in the moduleName of the cross-application hap1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testCreateModuleContext003", Level.LEVEL0, async (done: Function) => {
       try {
@@ -1566,12 +1566,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_CREATEMODULECONTEXT_004
-     * @tc.name      : testCreateModuleContext004
-     * @tc.desc      : Context calls createModuleContext, passing in a non-existing moduleName
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testCreateModuleContext004
+     * @tc.number ABILITY_TEST_CREATEMODULECONTEXT_004
+     * @tc.desc   Context calls createModuleContext, passing in a non-existing moduleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testCreateModuleContext004", Level.LEVEL0, async (done: Function) => {
       try {
@@ -1589,12 +1589,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_CREATEMODULECONTEXT_005
-     * @tc.name      : testCreateModuleContext005
-     * @tc.desc      : Context calls createModuleContext, and the incoming moduleName is undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testCreateModuleContext005
+     * @tc.number ABILITY_TEST_CREATEMODULECONTEXT_005
+     * @tc.desc   Context calls createModuleContext, and the incoming moduleName is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testCreateModuleContext005", Level.LEVEL0, async (done: Function) => {
       try {
@@ -1612,12 +1612,12 @@ export default function UIAbilityContext() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_GETAPPLICATIONCONTEXT_0100
-     * @tc.name      : testGetApplicationContext001
-     * @tc.desc      : test getApplicationContext return not empty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testGetApplicationContext001
+     * @tc.number ABILITY_TEST_GETAPPLICATIONCONTEXT_0100
+     * @tc.desc   test getApplicationContext return not empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testGetApplicationContext001", Level.LEVEL0, async (done: Function) => {
       try {

@@ -23,16 +23,12 @@ const TEST_SUITE_NAME = 'JSDATAABILITYTest';
 export default function ActsJsDataAbilityTest() {
   describe('ActsJsDataAbilityTest', function () {
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_22500
-     * @tc.name   : Call the call interface, set the method to delete and the arg query condition to "equalTo",
-     *         and verify the return value
-     * @tc.desc   : Call the call interface, with the correct uri,method set to delete,
-     *         and arg query condition set to 'equalTo': 'group'_ Name ',
-     *         extras defined as pacMap={'groupname':'test1 '}
-     *         Check if the return value of calling the call interface is correct
-     * @tc.level  : Level 3
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_22500
+     * @tc.number SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_22500
+     * @tc.desc   Call the call interface, with the correct uri,method set to delete,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_22500", Level.LEVEL3, async function (done) {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_22500';
@@ -65,16 +61,12 @@ export default function ActsJsDataAbilityTest() {
       }
     })
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_22600
-     * @tc.name   : Call the call interface, set the method to delete and the arg query condition to "like",
-     *         and verify the return value
-     * @tc.desc   : Call the call interface, with the correct uri,method set to delete,
-     *         and arg query condition set to 'equalTo': 'group'_ Name ',
-     *         extras defined as pacMap={'group_name':'%test3%'}
-     *         Check if the return value of calling the call interface is correct
-     * @tc.level  : Level 3
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_22600
+     * @tc.number SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_22600
+     * @tc.desc   Call the call interface, with the correct uri,method set to delete,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_22600", Level.LEVEL3, async function (done) {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_22600';
@@ -107,17 +99,12 @@ export default function ActsJsDataAbilityTest() {
       }
     });
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_22700
-     * @tc.name   : Call the call interface, set the method to delete
-     *         and the arg query condition to "greaterThanOrEqualTo",
-     *         and verify the return value
-     * @tc.desc   : Call the call interface, with the correct uri,method set to delete,
-     *         and arg query condition set to 'equalTo': 'group'_ Name ',
-     *         extras defined as pacMap={'ringtone_modify_time':'40'}
-     *         Check if the return value of calling the call interface is correct
-     * @tc.level  : Level 3
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_22700
+     * @tc.number SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_22700
+     * @tc.desc   Call the call interface, with the correct uri,method set to delete,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_22700", Level.LEVEL3, async function (done) {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_22700';
@@ -150,16 +137,12 @@ export default function ActsJsDataAbilityTest() {
       }
     });
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_22800
-     * @tc.name   : Call the call interface, set the method to delete,
-     *         and the arg query condition to "lessThan",and verify the return value,
-     * @tc.desc   : Call the call interface, with the correct uri,method set to delete,
-     *         and arg query condition set to 'equalTo': 'group'_ Name ',
-     *         extras defined as pacMap={'ringtone_modify_time':'32'}
-     *         Check if the return value of calling the call interface is correct
-     * @tc.level  : Level 3
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_22800
+     * @tc.number SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_22800
+     * @tc.desc   Call the call interface, with the correct uri,method set to delete,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_22800", Level.LEVEL3, async function (done) {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_22800';
@@ -193,16 +176,12 @@ export default function ActsJsDataAbilityTest() {
       }
     });
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_22900
-     * @tc.name   : Call the call interface, set the method to delete,
-     *         and Input parameter error uri,and verify the return value,
-     * @tc.desc   : Call the call interface, Input parameter error uri,method set to delete,
-     *         and arg query condition set to 'equalTo': 'group'_ Name ',
-     *         extras defined as pacMap={'ringtone_modify_time':'40'}
-     *         Check if the return value of calling the call interface is correct
-     * @tc.level  : Level 3
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_22900
+     * @tc.number SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_22900
+     * @tc.desc   Call the call interface, Input parameter error uri,method set to delete,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_22900", Level.LEVEL3, async function (done) {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_22900';
@@ -234,16 +213,12 @@ export default function ActsJsDataAbilityTest() {
       }
     });
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23000
-     * @tc.name   : Call the call interface, set the method to delete,
-     *         and the Uri with empty input parameters,and verify the return value,
-     * @tc.desc   : Call the call interface, input a null uri,method as delete,
-     *         and arg query condition set to 'equalTo': 'group'_ Name ',
-     *         arg query condition as empty,and define pacMap as extras{'ringtone_modify_time':'40'}
-     *         Check if the return value of calling the call interface is correct
-     * @tc.level  : Level 3
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23000
+     * @tc.number SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23000
+     * @tc.desc   Call the call interface, input a null uri,method as delete,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23000", Level.LEVEL3, async function (done) {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23000';
@@ -275,14 +250,12 @@ export default function ActsJsDataAbilityTest() {
       }
     });
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23100
-     * @tc.name   : Verify the callback method call of the call interface
-     * @tc.desc   : Call the call interface, with the correct uri, method as insert, arg as empty,
-     *         and extras defined as pacMap={ "group_name":"test1","ringtone_modify_time": 28 }
-     *         Check if the return value of calling the call interface is correct
-     * @tc.level  : Level 3
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23100
+     * @tc.number SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23100
+     * @tc.desc   Call the call interface, with the correct uri, method as insert, arg as empty,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23100", Level.LEVEL3, async function (done) {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23100';
@@ -317,15 +290,12 @@ export default function ActsJsDataAbilityTest() {
       }
     });
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23200
-     * @tc.name   : Verify the Promise method call of the call interface
-     * @tc.desc   : Call the call interface using the Promise method,
-     *         with correct input parameters such as uri, method as insert, arg as empty,
-     *         and extras defined as pacMa ={"group_name": "test2","ringtone_modify_time": 28}
-     *         Check if the return value of calling the call interface is correct
-     * @tc.level  : Level 3
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23200
+     * @tc.number SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23200
+     * @tc.desc   Call the call interface using the Promise method,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23200", Level.LEVEL3, async function (done) {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23200';
@@ -360,16 +330,12 @@ export default function ActsJsDataAbilityTest() {
       }
     });
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23300
-     * @tc.name   : Calling the call interface, inputting incorrect uri parameters,
-     *         and verifying the return value
-     * @tc.desc   : Call the call interface using the callback method,
-     *         with incorrect input parameters uri, method as insert, arg as empty,
-     *         and extras defined as pacMa={"group_name": "test1","ringtone_modify_time": 28}
-     *         Check if the return value of calling the call interface is correct
-     * @tc.level  : Level 3
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23300
+     * @tc.number SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23300
+     * @tc.desc   Call the call interface using the callback method,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23300", Level.LEVEL3, async function (done) {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23300';
@@ -403,15 +369,12 @@ export default function ActsJsDataAbilityTest() {
       }
     });
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23400
-     * @tc.name   : Calling the call interface, input a uri with empty parameters,
-     *         and verifying the return value
-     * @tc.desc   :  Calling the call interface with null uri, method as insert, and arg as empty parameters,
-     *         extras defined as pacMap={"group_name": "test1","ringtone_modify_time": 28}
-     *         Check if the return value of calling the call interface is correct
-     * @tc.level  : Level 3
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23400
+     * @tc.number SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23400
+     * @tc.desc   Calling the call interface with null uri, method as insert, and arg as empty parameters,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23400", Level.LEVEL3, async function (done) {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23400';
@@ -445,16 +408,12 @@ export default function ActsJsDataAbilityTest() {
       }
     });
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23500
-     * @tc.name   : Calling the call interface,input a methold with empty parameters, and verify the return value
-     *         and verify the return value
-     * @tc.desc   : Calling the call interface with null methold, method as insert, and arg as empty parameters,
-     *         and arg as empty parameters,extras
-     *         defined as pacMap={"group_name": "test1","ringtone_modify_time": 28}
-     *         Check if the return value of calling the call interface is correct
-     * @tc.level  : Level 3
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23500
+     * @tc.number SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23500
+     * @tc.desc   Calling the call interface with null methold, method as insert, and arg as empty parameters,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23500", Level.LEVEL0, async function (done) {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23500';
@@ -489,15 +448,12 @@ export default function ActsJsDataAbilityTest() {
       }
     });
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23600
-     * @tc.name   : Calling the call interface,inputting incorrect extras parameters,
-     *         and verify the return value
-     * @tc.desc   : Call the call interface, winputting incorrect extras parameters,
-     *         method set to insert,and arg with empty,extras defined as pacMap={'groupname':'test1 '}
-     *         Check if the return value of calling the call interface is correct
-     * @tc.level  : Level 3
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23600
+     * @tc.number SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23600
+     * @tc.desc   Call the call interface, winputting incorrect extras parameters,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23600", Level.LEVEL3, async function (done) {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23600';
@@ -532,16 +488,12 @@ export default function ActsJsDataAbilityTest() {
       }
     });
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23700
-     * @tc.name   : Calling the call interface,set the method to delete and the arg query condition to "equalTo",
-     *         and verify the return value
-     * @tc.desc   : Call the call interface, with the correct uri,method set to delete,
-     *         and arg query condition set to 'equalTo': 'group'_ Name ',
-     *         extras defined as pacMap={'groupname':'test1 ',"columns": "group_name,ringtone_modify_time"}
-     *         Check if the return value of calling the call interface is correct
-     * @tc.level  : Level 3
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23700
+     * @tc.number SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23700
+     * @tc.desc   Call the call interface, with the correct uri,method set to delete,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23700', Level.LEVEL3, function (done) {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23700';
@@ -574,17 +526,12 @@ export default function ActsJsDataAbilityTest() {
       }
     })
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23800
-     * @tc.name   : Calling the call interface,set the method to query
-     *         and the arg query condition to "between",and verify the return value
-     * @tc.desc   : Call the call interface, with the correct uri,set the method to query,
-     *         set the arg query condition to "between": "ringtone modify_time",
-     *         define pacMap as extras={'ringtone_modify_time': [15, 30],
-     *         "columns": "group_name,ringtone_modify_time"}
-     *         Check if the return value of calling the call interface is correct
-     * @tc.level  : Level 3
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23800
+     * @tc.number SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23800
+     * @tc.desc   Call the call interface, with the correct uri,set the method to query,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23800', Level.LEVEL3, function (done) {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23800';
@@ -617,17 +564,12 @@ export default function ActsJsDataAbilityTest() {
       }
     });
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23900
-     * @tc.name   : Calling the call interface,set the method to query and the arg query condition to "like",
-     *         and verify the return value
-     * @tc.desc   : Call the call interface, with the correct uri,set the method to query,
-     *         and arg query condition set to 'like': 'group'_ Name ',
-     *         extras defined as pacMap={'groupname':'test1 ''group_name': '%test3%',
-     *         'columns': 'group_name,ringtone_modify_time'}
-     *         Check if the return value of calling the call interface is correct
-     * @tc.level  : Level 3
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23900
+     * @tc.number SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23900
+     * @tc.desc   Call the call interface, with the correct uri,set the method to query,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23900', Level.LEVEL3, function (done) {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_23900';
@@ -660,17 +602,12 @@ export default function ActsJsDataAbilityTest() {
       }
     })
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24000
-     * @tc.name   : Calling the call interface,set the method to query and the arg query condition to "equalTo",
-     *         and verify the return value
-     * @tc.desc   : Call the call interface, with the correct uri,set the method to query,
-     *         set the arg query condition to "between": "ringtone modify_time",
-     *         define pacMap as extras={"group_name": "test1",
-     *         'columns': 'group_name,ringtone_modify_time'}
-     *         Check if the return value of calling the call interface is correct
-     * @tc.level  : Level 3
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24000
+     * @tc.number SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24000
+     * @tc.desc   Call the call interface, with the correct uri,set the method to query,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24000', Level.LEVEL3, function (done) {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24000';
@@ -703,16 +640,12 @@ export default function ActsJsDataAbilityTest() {
       }
     });
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24100
-     * @tc.name   : Calling the call interface,set the method to query and Input parameter error uri,
-     *         and verify the return value
-     * @tc.desc   : Call the call interface,with input parameter error uri,
-     *         method set to query, arg query condition set to empty,
-     *         extras defined as pacMap={'groupname':'test1 '}
-     *         Check if the return value of calling the call interface is correct
-     * @tc.level  : Level 3
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24100
+     * @tc.number SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24100
+     * @tc.desc   Call the call interface,with input parameter error uri,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24100', Level.LEVEL3, function (done) {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24100';
@@ -744,17 +677,12 @@ export default function ActsJsDataAbilityTest() {
       }
     });
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24200
-     * @tc.name   : Calling the call interface,set the method to query and uri with empty input parameters,
-     *         and verify the return value
-     * @tc.desc   : Call the call interface, Uri with empty input parameters, method as query,
-     *         arg query condition set as empty,
-     *         extras defined as pacMap={'ringtone_modify_time': 20,
-     *         'columns': 'group_name,ringtone_modify_time'}
-     *         Check if the return value of calling the call interface is correct
-     * @tc.level  : Level 3
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24200
+     * @tc.number SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24200
+     * @tc.desc   Call the call interface, Uri with empty input parameters, method as query,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24200', Level.LEVEL3, function (done) {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24200';
@@ -786,17 +714,12 @@ export default function ActsJsDataAbilityTest() {
       }
     });
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24300
-     * @tc.name   : Calling the call interface,set the method to update
-     *         and the arg query condition to "between",and verify the return value
-     * @tc.desc   : Call the call interface,with the correct uri,
-     *         arg query condition set as empty,method set to update,
-     *         and arg query condition set to 'between': "ringtone_modify_time",
-     *         extras defined as pacMap={'ringtone_modify_time': [15, 30],'group_name': 'testupdata'}
-     *         Check if the return value of calling the call interface is correct
-     * @tc.level  : Level 3
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24300
+     * @tc.number SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24300
+     * @tc.desc   Call the call interface,with the correct uri,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24300", Level.LEVEL3, async function (done) {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24300';
@@ -831,16 +754,12 @@ export default function ActsJsDataAbilityTest() {
       }
     });
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24400
-     * @tc.name   : Calling the call interface, set the method to update and the arg query condition to "equalTo",
-     *         and the arg query condition to "equalTo",and verify the return value.
-     * @tc.desc   : Call the call interface, with the correct uri,method set to update,
-     *         and arg query condition set to 'equalTo': 'ringtone_modify_time',
-     *         extras defined as pacMap={'ringtone_modify_time': 28,'group_name': 'testupdata1'}
-     *         Check if the return value of calling the call interface is correct
-     * @tc.level  : Level 3
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24400
+     * @tc.number SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24400
+     * @tc.desc   Call the call interface, with the correct uri,method set to update,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24400", Level.LEVEL3, async function (done) {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24400';
@@ -875,16 +794,12 @@ export default function ActsJsDataAbilityTest() {
       }
     });
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24500
-     * @tc.name   : Calling the call interface,set the method to update
-     *         and the arg query condition to "contains",and verify the return value.
-     * @tc.desc   : Call the call interface, with the correct uri,method set to update,
-     *         and arg query condition set to 'contains': 'group'_ Name ',
-     *         extras defined as pacMap={'group_name': 'ata2','ringtone_modify_time': 100}
-     *         Check if the return value of calling the call interface is correct
-     * @tc.level  : Level 3
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24500
+     * @tc.number SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24500
+     * @tc.desc   Call the call interface, with the correct uri,method set to update,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24500", Level.LEVEL3, async function (done) {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24500';
@@ -918,16 +833,12 @@ export default function ActsJsDataAbilityTest() {
       }
     });
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24600
-     * @tc.name   : Calling the call interface,set the method to update
-     *         and the arg query condition to "lessThan",and verify the return value.
-     * @tc.desc   : Call the call interface, with the correct uri,method set to update,
-     *         and arg query condition set to 'lessThan': 'ringtone_modify_time',
-     *         extras defined as pacMap={'ringtone_modify_time': 32,'group_name': 'testupdata2'}
-     *         Check if the return value of calling the call interface is correct
-     * @tc.level  : Level 3
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24600
+     * @tc.number SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24600
+     * @tc.desc   Call the call interface, with the correct uri,method set to update,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24600", Level.LEVEL3, async function (done) {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24600';
@@ -961,16 +872,12 @@ export default function ActsJsDataAbilityTest() {
       }
     });
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24700
-     * @tc.name   : Calling the call interface with update method
-     *         and incorrect uri for parameter input, verifying the return value
-     * @tc.desc   : Call the call interface,Input parameter error uri,,method set to update,
-     *         and arg query condition set to empty,
-     *         extras defined as pacMap={'ringtone_modify_time': 32,'group_name': 'testupdata2'}
-     *         Check if the return value of calling the call interface is correct
-     * @tc.level  : Level 3
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24700
+     * @tc.number SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24700
+     * @tc.desc   Call the call interface,Input parameter error uri,,method set to update,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24700", Level.LEVEL3, async function (done) {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24700';
@@ -1003,16 +910,12 @@ export default function ActsJsDataAbilityTest() {
       }
     });
     /**
-     * @tc.number : SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24800
-     * @tc.name   : Call the call interface, set the method to update
-     *         and enter a URI with empty parameters, and verify the return value
-     * @tc.desc   : Call the call interface,Uri with empty input parameters,,method set to update,
-     *         and arg query condition set to empty,
-     *         extras defined as pacMap={'ringtone_modify_time': 32,'group_name': 'testupdata2'}
-     *         Check if the return value of calling the call interface is correct
-     * @tc.level  : Level 3
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24800
+     * @tc.number SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24800
+     * @tc.desc   Call the call interface,Uri with empty input parameters,,method set to update,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24800", Level.LEVEL3, async function (done) {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_DataAbility_JSDATAABILITY_24800';

@@ -56,6 +56,14 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       console.info('[ afterEach ] ===================enumsImageTest test after each called===================');
     });
 
+    /**
+     * @tc.name   enumsLineCapStyleTest_0100
+     * @tc.number enumsLineCapStyleTest_0100
+     * @tc.desc   enumsLineCapStyleTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('enumsLineCapStyleTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('enumsLineCapStyleTest_0100 START');
       let strJson: string = getInspectorByKey('Butt');

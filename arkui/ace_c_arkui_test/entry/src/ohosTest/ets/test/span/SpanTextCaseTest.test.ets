@@ -26,52 +26,52 @@ export default function spanTextCaseTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SPAN_TEXTCASE_0100
-     * @tc.name       : testSpanTextCase001
-     * @tc.desc       : testing textcase for span with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSpanTextCase001
+     * @tc.number SUB_ARKUI_CAPI_SPAN_TEXTCASE_0100
+     * @tc.desc   testing textcase for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanTextCase001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanTextCase001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SPAN_TEXTCASE_0200
-     * @tc.name       : testSpanTextCase002
-     * @tc.desc       : testing textcase for span with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSpanTextCase002
+     * @tc.number SUB_ARKUI_CAPI_SPAN_TEXTCASE_0200
+     * @tc.desc   testing textcase for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanTextCase002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanTextCase002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SPAN_TEXTCASE_0300
-     * @tc.name       : testSpanTextCase003
-     * @tc.desc       : testing textcase for span with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSpanTextCase003
+     * @tc.number SUB_ARKUI_CAPI_SPAN_TEXTCASE_0300
+     * @tc.desc   testing textcase for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanTextCase003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanTextCase003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SPAN_TEXTCASE_0400
-     * @tc.name       : testSpanTextCase004
-     * @tc.desc       : testing textcase for span with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testSpanTextCase004
+     * @tc.number SUB_ARKUI_CAPI_SPAN_TEXTCASE_0400
+     * @tc.desc   testing textcase for span with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanTextCase004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanTextCase004()).assertEqual(0)

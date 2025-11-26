@@ -46,10 +46,13 @@ export default function navigation_add4_1() {
     });
     
     /**
-    * @tc.number navigation_add4_1_0100
-    * @tc.name testNavigation
-    * @tc.desc
-    */
+     * @tc.name   navigation_add4_1_0100
+     * @tc.number navigation_add4_1_0100
+     * @tc.desc   navigation_add4_1_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('navigation_add4_1_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('navigation_add4_1_0100 START');
       await CommonFunc.sleep(1000);

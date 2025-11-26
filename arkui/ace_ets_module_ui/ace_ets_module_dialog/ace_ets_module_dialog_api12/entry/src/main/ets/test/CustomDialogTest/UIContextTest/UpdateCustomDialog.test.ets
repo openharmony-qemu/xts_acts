@@ -46,12 +46,12 @@ export default function UpdateCustomDialogTest() {
     });
 
     /**
-     * @tc.number    UpdateCustomDialogTest
-     * @tc.name      testBack
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
+     * @tc.name   UpdateCustomDialogTest_001
+     * @tc.number UpdateCustomDialogTest
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('UpdateCustomDialogTest_001', Level.LEVEL2, async (done: Function) => {
       console.info('[UpdateCustomDialogTest_001] START');

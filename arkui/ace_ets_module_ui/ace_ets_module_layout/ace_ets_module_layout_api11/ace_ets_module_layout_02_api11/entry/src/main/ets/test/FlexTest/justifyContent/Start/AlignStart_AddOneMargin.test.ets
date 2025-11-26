@@ -47,10 +47,12 @@ export default function AlignStart_AddOneMargin() {
     });
 
     /**
+     * @tc.name   testFlexAlignStartTextMarginMeet
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_START_TEST_1400
-     * @tc.name testFlexAlignStartTextMarginMeet
-     * @tc.desc After setting margin for the first subcomponent, the layout of the parent component's spindle
-     * meets the interface display of the subcomponent's layout
+     * @tc.desc   After setting margin for the first subcomponent, the layout of the parent component's spindle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignStartTextMarginMeet',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignStartTextMarginMeet] START');
@@ -92,10 +94,12 @@ export default function AlignStart_AddOneMargin() {
 
     })
     /**
+     * @tc.name   testFlexAlignStartTextMarginOverflow
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_START_TEST_1500
-     * @tc.name testFlexAlignStartTextMarginOverflow
-     * @tc.desc After setting margin for the first subcomponent, the layout of the parent component's spindle does
-     * not meet the interface display of the subcomponent's layout
+     * @tc.desc   After setting margin for the first subcomponent, the layout of the parent component's spindle does
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignStartTextMarginOverflow',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignStartTextMarginOverflow] START');

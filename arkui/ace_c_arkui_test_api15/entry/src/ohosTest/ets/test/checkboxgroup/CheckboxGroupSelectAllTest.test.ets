@@ -43,13 +43,13 @@ export default function checkboxGroupSelectAllTest() {
       done();
     })
 
-    /*
-     * @tc.number     : checkboxGroupSelectAllTest
-     * @tc.name       : checkboxGroupSelectAllTest001
-     * @tc.desc       : testing checkboxGroup
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   checkboxGroupSelectAllTest001
+     * @tc.number checkboxGroupSelectAllTest
+     * @tc.desc   testing checkboxGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('checkboxGroupSelectAllTest001', Level.LEVEL1, async (done: Function) => {
       let  strJson = getInspectorByKey('checkboxgroupTrue')
@@ -63,13 +63,13 @@ export default function checkboxGroupSelectAllTest() {
       done();
     })
 
-    /*
-     * @tc.number     : checkboxGroupSelectAllTest
-     * @tc.name       : checkboxGroupSelectAllTest002
-     * @tc.desc       : testing checkboxGroup
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   checkboxGroupSelectAllTest002
+     * @tc.number checkboxGroupSelectAllTest
+     * @tc.desc   testing checkboxGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('checkboxGroupSelectAllTest002', Level.LEVEL1, async (done: Function) => {
       let  strJson = getInspectorByKey('checkboxgroupFalse')

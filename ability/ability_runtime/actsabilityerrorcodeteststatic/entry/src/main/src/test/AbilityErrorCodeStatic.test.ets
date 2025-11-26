@@ -19,9 +19,12 @@ import { ErrorCode as errorCode } from '@ohos.ability.errorCode';
 export default function AbilityErrorCodeStaticTest() {
   describe('AbilityErrorCodeStaticTest', () => {
     /**
-     * @tc.number  SUB_Ability_AbilityBase_errorCode_Static_0100
-     * @tc.name    SUB_Ability_AbilityBase_errorCode_Static_0100
-     * @tc.desc    Test errorCode errorCode.NO_ERROR.
+     * @tc.name   SUB_Ability_AbilityBase_errorCode_Static_0100
+     * @tc.number SUB_Ability_AbilityBase_errorCode_Static_0100
+     * @tc.desc   Test errorCode errorCode.NO_ERROR.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_errorCode_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       expect('0').assertEqual(errorCode.NO_ERROR + '');
@@ -29,9 +32,12 @@ export default function AbilityErrorCodeStaticTest() {
     })
 
     /**
-     * @tc.number  SUB_Ability_AbilityBase_errorCode_Static_0200
-     * @tc.name    SUB_Ability_AbilityBase_errorCode_Static_0200
-     * @tc.desc    Test errorCode errorCode.INVALID_PARAMETER.
+     * @tc.name   SUB_Ability_AbilityBase_errorCode_Static_0200
+     * @tc.number SUB_Ability_AbilityBase_errorCode_Static_0200
+     * @tc.desc   Test errorCode errorCode.INVALID_PARAMETER.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_errorCode_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       expect('-1').assertEqual(errorCode.INVALID_PARAMETER + '');
@@ -39,20 +45,26 @@ export default function AbilityErrorCodeStaticTest() {
     })
 
     /**
-    * @tc.number  SUB_Ability_AbilityBase_errorCode_Static_0300
-    * @tc.name    SUB_Ability_AbilityBase_errorCode_Static_0300
-    * @tc.desc    Test errorCode errorCode.ABILITY_NOT_FOUND.
-    */
+     * @tc.name   SUB_Ability_AbilityBase_errorCode_Static_0300
+     * @tc.number SUB_Ability_AbilityBase_errorCode_Static_0300
+     * @tc.desc   Test errorCode errorCode.ABILITY_NOT_FOUND.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityBase_errorCode_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       expect('-2').assertEqual(errorCode.ABILITY_NOT_FOUND + '');
       done();
     })
 
     /**
-    * @tc.number  SUB_Ability_AbilityBase_errorCode_Static_0400
-    * @tc.name    SUB_Ability_AbilityBase_errorCode_Static_0400
-    * @tc.desc    Test errorCode errorCode.PERMISSION_DENY.
-    */
+     * @tc.name   SUB_Ability_AbilityBase_errorCode_Static_0400
+     * @tc.number SUB_Ability_AbilityBase_errorCode_Static_0400
+     * @tc.desc   Test errorCode errorCode.PERMISSION_DENY.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityBase_errorCode_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       expect('-3').assertEqual(errorCode.PERMISSION_DENY + '');
       done();

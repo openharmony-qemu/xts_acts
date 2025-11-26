@@ -26,26 +26,26 @@ export default function imageColorFilterTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_COLORFILTER_0100
-     * @tc.name       : testImageColorFilter001
-     * @tc.desc       : testing colorfilter for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageColorFilter001
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_COLORFILTER_0100
+     * @tc.desc   testing colorfilter for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageColorFilter001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageColorFilter001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_COLORFILTER_0200
-     * @tc.name       : testImageColorFilter002
-     * @tc.desc       : testing colorfilter for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageColorFilter002
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_COLORFILTER_0200
+     * @tc.desc   testing colorfilter for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageColorFilter002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageColorFilter002()).assertEqual(0)

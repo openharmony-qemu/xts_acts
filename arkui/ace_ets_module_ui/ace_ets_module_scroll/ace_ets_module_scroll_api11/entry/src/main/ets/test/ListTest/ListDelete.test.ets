@@ -52,10 +52,13 @@ export default function ListDeleteTest() {
       done()
     });
 
-    /*
-     *tc.number ArkUI_List_Delete_0100
-     *tc.name   Set swipeAction.end by CustomBuilder
-     *tc.desc   Set swipeAction.end by CustomBuilder and edgeEffect is SwipeEdgeEffect.None
+    /**
+     * @tc.name   ArkUI_List_Delete_0100
+     * @tc.number ArkUI_List_Delete_0100
+     * @tc.desc   Set swipeAction.end by CustomBuilder and edgeEffect is SwipeEdgeEffect.None
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_List_Delete_0100', Level.LEVEL1, async (done: Function) => {
       let CASE: string = 'ArkUI_List_Delete_0100'
@@ -84,10 +87,13 @@ export default function ListDeleteTest() {
       done();
     });
 
-    /*
-     *tc.number ArkUI_List_Delete_0200
-     *tc.name   Set swipeAction.start by CustomBuilder
-     *tc.desc   Set swipeAction.start by CustomBuilder and edgeEffect is SwipeEdgeEffect.None
+    /**
+     * @tc.name   ArkUI_List_Delete_0200
+     * @tc.number ArkUI_List_Delete_0200
+     * @tc.desc   Set swipeAction.start by CustomBuilder and edgeEffect is SwipeEdgeEffect.None
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_List_Delete_0200', Level.LEVEL1, async (done: Function) => {
       let CASE: string = 'ArkUI_List_Delete_0200'
@@ -120,10 +126,13 @@ export default function ListDeleteTest() {
       done();
     });
 
-    /*
-     *tc.number ArkUI_List_Delete_0500
-     *tc.name   Set swipeAction.end by SwipeActionItem
-     *tc.desc   Set swipeAction.end by SwipeActionItem and edgeEffect is SwipeEdgeEffect.Spring
+    /**
+     * @tc.name   ArkUI_List_Delete_0500
+     * @tc.number ArkUI_List_Delete_0500
+     * @tc.desc   Set swipeAction.end by SwipeActionItem and edgeEffect is SwipeEdgeEffect.Spring
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_List_Delete_0500', Level.LEVEL1, async (done: Function) => {
       let CASE: string = 'ArkUI_List_Delete_0500'

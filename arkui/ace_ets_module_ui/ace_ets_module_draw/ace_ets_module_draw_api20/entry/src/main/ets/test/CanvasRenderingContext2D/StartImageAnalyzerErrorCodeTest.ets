@@ -41,12 +41,12 @@ export default function StartImageAnalyzerErrorCodeTest() {
       done();
     });
     /**
-     * @tc.number
-     * @tc.name      StartImageAnalyzerErrorCodeTest_0100
-     * @tc.desc      Error Code
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   StartImageAnalyzerErrorCodeTest_0100
+     * @tc.number StartImageAnalyzerErrorCodeTest_0100
+     * @tc.desc   Error Code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('StartImageAnalyzerErrorCodeTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[StartImageAnalyzerErrorCodeTest_0100] START');

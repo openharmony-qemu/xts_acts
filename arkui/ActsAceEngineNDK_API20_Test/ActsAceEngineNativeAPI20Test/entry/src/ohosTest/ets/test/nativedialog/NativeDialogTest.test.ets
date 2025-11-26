@@ -22,12 +22,12 @@ export default function NativeDialogTest() {
   describe('NativeDialogTest', () => {
 
     /**
-     * @tc.number  : SUB_ARKUI_LEVELMODEEMBEDDED_0100
-     * @tc.name    : ArkUiLevelModeEmbedded001
-     * @tc.desc    : test ARKUI_LEVEL_MODE_EMBEDDED
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   ArkUiLevelModeEmbedded001
+     * @tc.number SUB_ARKUI_LEVELMODEEMBEDDED_0100
+     * @tc.desc   test ARKUI_LEVEL_MODE_EMBEDDED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUiLevelModeEmbedded001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -42,12 +42,12 @@ export default function NativeDialogTest() {
     })
 
     /**
-     * @tc.number  : SUB_ARKUI_IMMERSIVEMODEEXTEND_0100
-     * @tc.name    : ArkUIImmersiveModeExtend001
-     * @tc.desc    : test ARKUI_IMMERSIVE_MODE_EXTEND
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   ArkUIImmersiveModeExtend001
+     * @tc.number SUB_ARKUI_IMMERSIVEMODEEXTEND_0100
+     * @tc.desc   test ARKUI_IMMERSIVE_MODE_EXTEND
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUIImmersiveModeExtend001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -62,12 +62,12 @@ export default function NativeDialogTest() {
     })
 
     /**
-     * @tc.number  : SUB_ARKUI_REGISTERONWILLDISMISSWITHUSERDATA_0100
-     * @tc.name    : ArkUIRegisterOnWillDismissWithUserData001
-     * @tc.desc    : test registerOnWillDismissWithUserData
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   ArkUIRegisterOnWillDismissWithUserData001
+     * @tc.number SUB_ARKUI_REGISTERONWILLDISMISSWITHUSERDATA_0100
+     * @tc.desc   test registerOnWillDismissWithUserData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUIRegisterOnWillDismissWithUserData001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -83,12 +83,12 @@ export default function NativeDialogTest() {
     })
 
     /**
-     * @tc.number  : SUB_ARKUI_NATIVEDIALOGAPI1_0100
-     * @tc.name    : ArkUINativeDialogAPI1001
-     * @tc.desc    : test nativeDialogAPI1
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   ArkUINativeDialogAPI1001
+     * @tc.number SUB_ARKUI_NATIVEDIALOGAPI1_0100
+     * @tc.desc   test nativeDialogAPI1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUINativeDialogAPI1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -103,12 +103,12 @@ export default function NativeDialogTest() {
     })
 
     /**
-     * @tc.number  : SUB_ARKUI_SETKEYBOARDAVOIDDISTANCE_0100
-     * @tc.name    : ArkUISetKeyboardAvoidDistance001
-     * @tc.desc    : test setKeyboardAvoidDistance
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   ArkUISetKeyboardAvoidDistance001
+     * @tc.number SUB_ARKUI_SETKEYBOARDAVOIDDISTANCE_0100
+     * @tc.desc   test setKeyboardAvoidDistance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUISetKeyboardAvoidDistance001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -124,12 +124,12 @@ export default function NativeDialogTest() {
     })
 
     /**
-     * @tc.number  : SUB_ARKUI_NATIVEDIALOGAPI2_0100
-     * @tc.name    : ArkUINativeDialogAPI2001
-     * @tc.desc    : test nativeDialogAPI2
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   ArkUINativeDialogAPI2001
+     * @tc.number SUB_ARKUI_NATIVEDIALOGAPI2_0100
+     * @tc.desc   test nativeDialogAPI2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUINativeDialogAPI2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -144,12 +144,12 @@ export default function NativeDialogTest() {
     })
 
     /**
-     * @tc.number  : SUB_ARKUI_SETLEVELORDER_0100
-     * @tc.name    : ArkUISetLevelOrder001
-     * @tc.desc    : test setLevelOrder
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   ArkUISetLevelOrder001
+     * @tc.number SUB_ARKUI_SETLEVELORDER_0100
+     * @tc.desc   test setLevelOrder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUISetLevelOrder001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -164,12 +164,12 @@ export default function NativeDialogTest() {
     })
 
     /**
-     * @tc.number  : SUB_ARKUI_REGISTERONWILLAPPEAR_0100
-     * @tc.name    : ArkUIRegisterOnWillAppear001
-     * @tc.desc    : test registerOnWillAppear
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   ArkUIRegisterOnWillAppear001
+     * @tc.number SUB_ARKUI_REGISTERONWILLAPPEAR_0100
+     * @tc.desc   test registerOnWillAppear
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUIRegisterOnWillAppear001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -184,12 +184,12 @@ export default function NativeDialogTest() {
     })
 
     /**
-     * @tc.number  : SUB_ARKUI_REGISTERONDIDAPPEAR_0100
-     * @tc.name    : ArkUIRegisterOnDidAppear001
-     * @tc.desc    : test registerOnDidAppear
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   ArkUIRegisterOnDidAppear001
+     * @tc.number SUB_ARKUI_REGISTERONDIDAPPEAR_0100
+     * @tc.desc   test registerOnDidAppear
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUIRegisterOnDidAppear001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -204,12 +204,12 @@ export default function NativeDialogTest() {
     })
 
     /**
-     * @tc.number  : SUB_ARKUI_REGISTERONWILLDISAPPEAR_0100
-     * @tc.name    : ArkUIRegisterOnWillDisappear001
-     * @tc.desc    : test registerOnWillDisappear
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   ArkUIRegisterOnWillDisappear001
+     * @tc.number SUB_ARKUI_REGISTERONWILLDISAPPEAR_0100
+     * @tc.desc   test registerOnWillDisappear
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUIRegisterOnWillDisappear001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -225,12 +225,12 @@ export default function NativeDialogTest() {
     })
 
     /**
-     * @tc.number  : SUB_ARKUI_REGISTERONDIDDISAPPEAR_0100
-     * @tc.name    : ArkUIRegisterOnDidDisappear001
-     * @tc.desc    : test registerOnDidDisappear
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   ArkUIRegisterOnDidDisappear001
+     * @tc.number SUB_ARKUI_REGISTERONDIDDISAPPEAR_0100
+     * @tc.desc   test registerOnDidDisappear
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUIRegisterOnDidDisappear001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         try {
@@ -245,12 +245,12 @@ export default function NativeDialogTest() {
     })
 
     /**
-     * @tc.number  : SUB_ARKUI_SETFOCUSABLE_0100
-     * @tc.name    : ArkUISetFocusable001
-     * @tc.desc    : test setFocusable
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   ArkUISetFocusable001
+     * @tc.number SUB_ARKUI_SETFOCUSABLE_0100
+     * @tc.desc   test setFocusable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUISetFocusable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {

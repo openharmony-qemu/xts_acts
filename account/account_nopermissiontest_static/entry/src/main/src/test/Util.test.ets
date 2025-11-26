@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,11 +22,12 @@ let tag: string = 'utilsTestTag'; //日志标识字符串,作为tag标识当前r
 export default class Utils {
 
   static async msSleep(count: int): Promise<int> {
+    hilog.info(0x0000, tag, `====>msSleep start, sleep ${count} ms`);
     return new Promise<int>((resolve, reject) => {
       setTimeout(() => {
-        resolve(0)
-      }, count)
-    })
+        resolve(0);
+      }, count);
+    });
   }
 
   static async clickRequestPermission(mess: string): Promise<void> {
@@ -38,7 +39,8 @@ export default class Utils {
         await permissionButton.click();
         hilog.info(0x0000, tag, "====>clickRequestPermission end");
       }
-    } catch (err: BusinessError<void>) {
+    } catch (err) {
+      err = err as BusinessError;
       hilog.info(0x0000, tag, "====>clickRequestPermission get err:" + err);
     }
   }

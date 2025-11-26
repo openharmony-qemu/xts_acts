@@ -30,14 +30,14 @@ export default function ScrollStateTest() {
       await Utils.pushPage(`scrollstateTest/ScrollStateTest`, done);
     });
 
-    /*
-      * @tc.number     : SUB_ArkUI_ACE_ENGINE_ARKUI_SCROLL_STATE_IDLE_0100
-      * @tc.name       : testARKUI_SCROLL_STATE_IDLE0100
-      * @tc.desc       : testing ARKUI_SCROLL_STATE_IDLE interface
-      * @tc.size       : MediumTest
-      * @tc.type       : Function
-      * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testARKUI_SCROLL_STATE_IDLE0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_SCROLL_STATE_IDLE_0100
+     * @tc.desc   testing ARKUI_SCROLL_STATE_IDLE interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testARKUI_SCROLL_STATE_IDLE0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -54,14 +54,14 @@ export default function ScrollStateTest() {
         }
       })
 
-    /*
-      * @tc.number     : SUB_ArkUI_ACE_ENGINE_ARKUI_SCROLL_STATE_SCROLL_0100
-      * @tc.name       : testARKUI_SCROLL_STATE_SCROLL0100
-      * @tc.desc       : testing ARKUI_SCROLL_STATE_SCROLL interface
-      * @tc.size       : MediumTest
-      * @tc.type       : Function
-      * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testARKUI_SCROLL_STATE_SCROLL0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_SCROLL_STATE_SCROLL_0100
+     * @tc.desc   testing ARKUI_SCROLL_STATE_SCROLL interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testARKUI_SCROLL_STATE_SCROLL0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -78,14 +78,14 @@ export default function ScrollStateTest() {
         }
       })
 
-    /*
-      * @tc.number     : SUB_ArkUI_ACE_ENGINE_ARKUI_SCROLL_STATE_FLING_0100
-      * @tc.name       : testARKUI_SCROLL_STATE_FLING0100
-      * @tc.desc       : testing ARKUI_SCROLL_STATE_FLING interface
-      * @tc.size       : MediumTest
-      * @tc.type       : Function
-      * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testARKUI_SCROLL_STATE_FLING0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_ARKUI_SCROLL_STATE_FLING_0100
+     * @tc.desc   testing ARKUI_SCROLL_STATE_FLING interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testARKUI_SCROLL_STATE_FLING0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {

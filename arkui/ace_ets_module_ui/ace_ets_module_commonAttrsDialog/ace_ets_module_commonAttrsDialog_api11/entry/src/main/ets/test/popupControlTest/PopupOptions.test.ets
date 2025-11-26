@@ -58,12 +58,12 @@ export default function PopupOptions() {
     });
 
     /**
+     * @tc.name   PopupOptions_0100
      * @tc.number SUB_ACE_PopupOptions_0100
-     * @tc.name PopupOptions_0100
-     * @tc.desc set api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PopupOptions_0100', Level.LEVEL0, async (done: Function) => {
       console.info('PopupOptions_0100 START');

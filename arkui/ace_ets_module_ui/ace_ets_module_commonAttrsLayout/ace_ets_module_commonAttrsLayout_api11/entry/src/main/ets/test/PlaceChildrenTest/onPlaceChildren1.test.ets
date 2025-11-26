@@ -56,12 +56,14 @@ export default function onPlaceChildren1() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_onPlaceChildren1_001
-    * @tc.name  : onMeasureSize
-    * @tc.desc  : Get minHeight,maxHeight,minWidth,maxWidth from onPlaceChildren
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   onPlaceChildren1_001
+     * @tc.number SUB_ACE_TS_COMPONENT_onPlaceChildren1_001
+     * @tc.desc   Get minHeight,maxHeight,minWidth,maxWidth from onPlaceChildren
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('onPlaceChildren1_001', Level.LEVEL0, async (done: Function) => {
       console.info('[onPlaceChildren1_001] START');
       await CommonFunc.sleep(500);

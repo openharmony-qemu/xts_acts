@@ -26,52 +26,52 @@ export default function listItemBrightnessTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_BRIGHTNESS_0100
-     * @tc.name       : testListItemBrightness001
-     * @tc.desc       : testing brightness for listItem with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemBrightness001
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_BRIGHTNESS_0100
+     * @tc.desc   testing brightness for listItem with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemBrightness001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemBrightness001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_BRIGHTNESS_0200
-     * @tc.name       : testListItemBrightness002
-     * @tc.desc       : testing brightness for listItem with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemBrightness002
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_BRIGHTNESS_0200
+     * @tc.desc   testing brightness for listItem with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemBrightness002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemBrightness002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_BRIGHTNESS_0300
-     * @tc.name       : testListItemBrightness003
-     * @tc.desc       : testing brightness for listItem with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemBrightness003
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_BRIGHTNESS_0300
+     * @tc.desc   testing brightness for listItem with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemBrightness003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemBrightness003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LISTITEM_BRIGHTNESS_0400
-     * @tc.name       : testListItemBrightness004
-     * @tc.desc       : testing brightness for listItem with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemBrightness004
+     * @tc.number SUB_ARKUI_CAPI_LISTITEM_BRIGHTNESS_0400
+     * @tc.desc   testing brightness for listItem with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemBrightness004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemBrightness004()).assertEqual(0)

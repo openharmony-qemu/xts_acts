@@ -38,15 +38,15 @@ export default function IndexTest() {
       done()
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_POST_FRAME_0100
-     * @tc.name       : testSwiperIndicatorDistance001
-     * @tc.desc       : testing Swiper
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
 
+    /**
+     * @tc.name   SwiperIndicatorDistance_0100
+     * @tc.number SwiperIndicatorDistance_0100
+     * @tc.desc   SwiperIndicatorDistance_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SwiperIndicatorDistance_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async () => {
       console.info('Swiper_DigitIndicator START');
       await sleep(1500)

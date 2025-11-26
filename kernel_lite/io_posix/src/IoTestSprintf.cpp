@@ -20,10 +20,13 @@
 
 using namespace testing::ext;
 
- /**
+/**
+ * @tc.name   testSprintfIntBoundary
  * @tc.number SUB_KERNEL_IO_SPRINTF_0100
- * @tc.name   sprintf basic function test of int with boundary value
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSprintfIntBoundary, Function | MediumTest | Level1)
 {
@@ -53,10 +56,13 @@ HWTEST_F(IoTest, testSprintfIntBoundary, Function | MediumTest | Level1)
     EXPECT_STREQ(str, "4294967295");
 }
 
- /**
+/**
+ * @tc.name   testSprintfIntLdBoundary
  * @tc.number SUB_KERNEL_IO_SPRINTF_0200
- * @tc.name   sprintf basic function test of long int with boundary value
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSprintfIntLdBoundary, Function | MediumTest | Level1)
 {
@@ -86,10 +92,13 @@ HWTEST_F(IoTest, testSprintfIntLdBoundary, Function | MediumTest | Level1)
     EXPECT_STREQ(str, "4294967295");
 }
 
- /**
+/**
+ * @tc.name   testSprintfIntLldBoundary
  * @tc.number SUB_KERNEL_IO_SPRINTF_0300
- * @tc.name   sprintf basic function test of long long int with boundary value
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSprintfIntLldBoundary, Function | MediumTest | Level1)
 {
@@ -119,10 +128,13 @@ HWTEST_F(IoTest, testSprintfIntLldBoundary, Function | MediumTest | Level1)
     EXPECT_STREQ(str, "18446744073709551615");
 }
 
- /**
+/**
+ * @tc.name   testSprintfIntMaxTBoundary
  * @tc.number SUB_KERNEL_IO_SPRINTF_0400
- * @tc.name   sprintf basic function test of intmax_t and uintmax_t with boundary value
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSprintfIntMaxTBoundary, Function | MediumTest | Level1)
 {
@@ -144,10 +156,13 @@ HWTEST_F(IoTest, testSprintfIntMaxTBoundary, Function | MediumTest | Level1)
     EXPECT_STREQ(str, "-1");
 }
 
- /**
+/**
+ * @tc.name   testSprintfPtrdiffTBoundary
  * @tc.number SUB_KERNEL_IO_SPRINTF_0500
- * @tc.name   sprintf basic function test of ptrdiff_t with boundary value
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSprintfPtrdiffTBoundary, Function | MediumTest | Level1)
 {
@@ -161,10 +176,13 @@ HWTEST_F(IoTest, testSprintfPtrdiffTBoundary, Function | MediumTest | Level1)
     EXPECT_STREQ(str, "-2147483648");
 }
 
- /**
+/**
+ * @tc.name   testSprintfSizeTBoundary
  * @tc.number SUB_KERNEL_IO_SPRINTF_0600
- * @tc.name   sprintf basic function test of size_t with boundary value
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSprintfSizeTBoundary, Function | MediumTest | Level1)
 {
@@ -178,10 +196,13 @@ HWTEST_F(IoTest, testSprintfSizeTBoundary, Function | MediumTest | Level1)
     EXPECT_STREQ(str, "-2147483648");
 }
 
- /**
+/**
+ * @tc.name   testSprintfIntHhdBoundary
  * @tc.number SUB_KERNEL_IO_SPRINTF_0700
- * @tc.name   sprintf basic function test of signed char and short int with boundary value
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSprintfIntHhdBoundary, Function | MediumTest | Level1)
 {
@@ -195,10 +216,13 @@ HWTEST_F(IoTest, testSprintfIntHhdBoundary, Function | MediumTest | Level1)
     EXPECT_STREQ(str, "-32768 -128 0 0");
 }
 
- /**
+/**
+ * @tc.name   testSprintfAlighRight
  * @tc.number SUB_KERNEL_IO_SPRINTF_0800
- * @tc.name   sprintf basic function test of align right
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSprintfAlighRight, Function | MediumTest | Level1)
 {
@@ -240,10 +264,13 @@ HWTEST_F(IoTest, testSprintfAlighRight, Function | MediumTest | Level1)
     EXPECT_STREQ(str, "    1     0");
 }
 
- /**
+/**
+ * @tc.name   testSprintfAlighLeft
  * @tc.number SUB_KERNEL_IO_SPRINTF_0900
- * @tc.name   sprintf basic function test of align left
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSprintfAlighLeft, Function | MediumTest | Level1)
 {
@@ -273,10 +300,13 @@ HWTEST_F(IoTest, testSprintfAlighLeft, Function | MediumTest | Level1)
     EXPECT_STREQ(str, "1     0    ");
 }
 
- /**
+/**
+ * @tc.name   testSprintfOtherFormat
  * @tc.number SUB_KERNEL_IO_SPRINTF_1000
- * @tc.name   sprintf basic function test of other format
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSprintfOtherFormat, Function | MediumTest | Level1)
 {
@@ -330,10 +360,13 @@ HWTEST_F(IoTest, testSprintfOtherFormat, Function | MediumTest | Level1)
     EXPECT_STREQ(str, "   00001    00000");
 }
 
- /**
+/**
+ * @tc.name   testSprintfOctal
  * @tc.number SUB_KERNEL_IO_SPRINTF_1100
- * @tc.name   sprintf basic function test of octal
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSprintfOctal, Function | MediumTest | Level1)
 {
@@ -363,10 +396,13 @@ HWTEST_F(IoTest, testSprintfOctal, Function | MediumTest | Level1)
     EXPECT_STREQ(str, "    177777");
 }
 
- /**
+/**
+ * @tc.name   testSprintfOctalWidth
  * @tc.number SUB_KERNEL_IO_SPRINTF_1200
- * @tc.name   sprintf basic function test of octal with width
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSprintfOctalWidth, Function | MediumTest | Level1)
 {
@@ -412,10 +448,13 @@ HWTEST_F(IoTest, testSprintfOctalWidth, Function | MediumTest | Level1)
     EXPECT_STREQ(str, "  00177777");
 }
 
- /**
+/**
+ * @tc.name   testSprintfLowercaseHex
  * @tc.number SUB_KERNEL_IO_SPRINTF_1300
- * @tc.name   sprintf basic function test of lowercase hex with boundary value
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSprintfLowercaseHex, Function | MediumTest | Level1)
 {
@@ -445,10 +484,13 @@ HWTEST_F(IoTest, testSprintfLowercaseHex, Function | MediumTest | Level1)
     EXPECT_STREQ(str, "      ffff");
 }
 
- /**
+/**
+ * @tc.name   testSprintfLowercaseHexWidth
  * @tc.number SUB_KERNEL_IO_SPRINTF_1400
- * @tc.name   sprintf basic function test of lowercase hex with width
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSprintfLowercaseHexWidth, Function | MediumTest | Level1)
 {
@@ -494,10 +536,13 @@ HWTEST_F(IoTest, testSprintfLowercaseHexWidth, Function | MediumTest | Level1)
     EXPECT_STREQ(str, "  0000ffff");
 }
 
- /**
+/**
+ * @tc.name   testSprintfUppercaseHex
  * @tc.number SUB_KERNEL_IO_SPRINTF_1500
- * @tc.name   sprintf basic function test of uppercase hex with boundary value
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSprintfUppercaseHex, Function | MediumTest | Level1)
 {
@@ -527,10 +572,13 @@ HWTEST_F(IoTest, testSprintfUppercaseHex, Function | MediumTest | Level1)
     EXPECT_STREQ(str, "      FFFF");
 }
 
- /**
+/**
+ * @tc.name   testSprintfUppercaseHexWidth
  * @tc.number SUB_KERNEL_IO_SPRINTF_1600
- * @tc.name   sprintf basic function test of uppercase hex with width
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSprintfUppercaseHexWidth, Function | MediumTest | Level1)
 {
@@ -580,10 +628,13 @@ HWTEST_F(IoTest, testSprintfUppercaseHexWidth, Function | MediumTest | Level1)
     EXPECT_STREQ(str, "  0000FFFF");
 }
 
- /**
+/**
+ * @tc.name   testSprintfFloat
  * @tc.number SUB_KERNEL_IO_SPRINTF_1700
- * @tc.name   sprintf basic function test of float
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSprintfFloat, Function | MediumTest | Level1)
 {
@@ -633,10 +684,13 @@ HWTEST_F(IoTest, testSprintfFloat, Function | MediumTest | Level1)
     EXPECT_STREQ(str, "1.667");
 }
 
- /**
+/**
+ * @tc.name   testSprintfLowercaseA
  * @tc.number SUB_KERNEL_IO_SPRINTF_1800
- * @tc.name   sprintf basic function test of float with format a
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSprintfLowercaseA, Function | MediumTest | Level1)
 {
@@ -682,10 +736,13 @@ HWTEST_F(IoTest, testSprintfLowercaseA, Function | MediumTest | Level1)
     EXPECT_STREQ(str, "hello +0x1.1ap+0 world");
 }
 
- /**
+/**
+ * @tc.name   testSprintfUppercaseA
  * @tc.number SUB_KERNEL_IO_SPRINTF_1900
- * @tc.name   sprintf basic function test of float with format A
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSprintfUppercaseA, Function | MediumTest | Level1)
 {
@@ -731,10 +788,13 @@ HWTEST_F(IoTest, testSprintfUppercaseA, Function | MediumTest | Level1)
     EXPECT_STREQ(str, "hello +0X1.1AP+0 world");
 }
 
- /**
+/**
+ * @tc.name   testSprintfLowercaseE
  * @tc.number SUB_KERNEL_IO_SPRINTF_2000
- * @tc.name   sprintf basic function test of float with format E,lowercase
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSprintfLowercaseE, Function | MediumTest | Level1)
 {
@@ -780,10 +840,13 @@ HWTEST_F(IoTest, testSprintfLowercaseE, Function | MediumTest | Level1)
     EXPECT_STREQ(str, "hello +1.10e+00 world");
 }
 
- /**
+/**
+ * @tc.name   testSprintfUppercaseE
  * @tc.number SUB_KERNEL_IO_SPRINTF_2100
- * @tc.name   sprintf basic function test of float with format E,uppercase
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSprintfUppercaseE, Function | MediumTest | Level1)
 {
@@ -829,10 +892,13 @@ HWTEST_F(IoTest, testSprintfUppercaseE, Function | MediumTest | Level1)
     EXPECT_STREQ(str, "hello +1.10E+00 world");
 }
 
- /**
+/**
+ * @tc.name   testSprintfLowercaseG
  * @tc.number SUB_KERNEL_IO_SPRINTF_2200
- * @tc.name   sprintf basic function test of float with format G,lowercase
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSprintfLowercaseG, Function | MediumTest | Level1)
 {
@@ -878,10 +944,13 @@ HWTEST_F(IoTest, testSprintfLowercaseG, Function | MediumTest | Level1)
     EXPECT_STREQ(str, "hello +1.1 world");
 }
 
- /**
+/**
+ * @tc.name   testSprintfUppercaseG
  * @tc.number SUB_KERNEL_IO_SPRINTF_2300
- * @tc.name   sprintf basic function test of float with format G,uppercase
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSprintfUppercaseG, Function | MediumTest | Level1)
 {
@@ -927,10 +996,13 @@ HWTEST_F(IoTest, testSprintfUppercaseG, Function | MediumTest | Level1)
     EXPECT_STREQ(str, "hello +1.1 world");
 }
 
- /**
+/**
+ * @tc.name   testSprintfString
  * @tc.number SUB_KERNEL_IO_SPRINTF_2400
- * @tc.name   sprintf basic function test of string
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSprintfString, Function | MediumTest | Level1)
 {
@@ -992,10 +1064,13 @@ HWTEST_F(IoTest, testSprintfString, Function | MediumTest | Level1)
     EXPECT_STREQ(str, "this(a)|string|");
 }
 
- /**
+/**
+ * @tc.name   testSprintfChar
  * @tc.number SUB_KERNEL_IO_SPRINTF_2500
- * @tc.name   sprintf basic function test of char
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSprintfChar, Function | MediumTest | Level1)
 {
@@ -1025,10 +1100,13 @@ HWTEST_F(IoTest, testSprintfChar, Function | MediumTest | Level1)
     EXPECT_STREQ(str, "(a) and |b|");
 }
 
- /**
+/**
+ * @tc.name   testSprintfPointer
  * @tc.number SUB_KERNEL_IO_SPRINTF_2600
- * @tc.name   sprintf basic function test of pointer
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSprintfPointer, Function | MediumTest | Level1)
 {
@@ -1046,10 +1124,13 @@ HWTEST_F(IoTest, testSprintfPointer, Function | MediumTest | Level1)
     EXPECT_STREQ(str, "0xfffff");
 }
 
- /**
+/**
+ * @tc.name   testSprintfPercent
  * @tc.number SUB_KERNEL_IO_SPRINTF_2700
- * @tc.name   sprintf basic function test of percent format
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSprintfPercent, Function | MediumTest | Level1)
 {

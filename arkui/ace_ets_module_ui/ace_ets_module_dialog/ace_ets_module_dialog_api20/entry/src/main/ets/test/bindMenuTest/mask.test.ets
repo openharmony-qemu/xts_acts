@@ -45,13 +45,12 @@ export default function maskTest() {
     });
 
     /**
-     * @tc.number    bindMenu_mask_0001
-     * @tc.name      bindMenu_mask_0001
-     * @tc.desc      set mask value is true, this use case has device differentiation,
-     *               and some devices do not support this feature
-     * @tc.level:    Level 2
-     * @tc.type :    Size.MEDIUMTEST
-     * @tc.size :    TestType.FUNCTION
+     * @tc.name   bindMenu_mask_0001
+     * @tc.number bindMenu_mask_0001
+     * @tc.desc   set mask value is true, this use case has device differentiation,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindMenu_mask_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("bindMenu_mask_0001 START============================");
@@ -79,13 +78,12 @@ export default function maskTest() {
     });
 
     /**
-     * @tc.number    bindMenu_mask_0002
-     * @tc.name      bindMenu_mask_0002
-     * @tc.desc      set mask value is false, this use case has device differentiation,
-     *               and some devices do not support this feature
-     * @tc.level:    Level 2
-     * @tc.type :    TestType.FUNCTION
-     * @tc.size :    Size.MEDIUMTEST
+     * @tc.name   bindMenu_mask_0002
+     * @tc.number bindMenu_mask_0002
+     * @tc.desc   set mask value is false, this use case has device differentiation,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindMenu_mask_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("bindMenu_mask_0002 START============================");
@@ -113,13 +111,12 @@ export default function maskTest() {
     });
 
     /**
-     * @tc.number    bindMenu_mask_0003
-     * @tc.name      bindMenu_mask_0003
-     * @tc.desc      set mask value is undefined, this use case has device differentiation,
-     *               and some devices do not support this feature
-     * @tc.level:    Level 2
-     * @tc.type :    TestType.FUNCTION
-     * @tc.size :    Size.MEDIUMTEST
+     * @tc.name   bindMenu_mask_0003
+     * @tc.number bindMenu_mask_0003
+     * @tc.desc   set mask value is undefined, this use case has device differentiation,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindMenu_mask_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("bindMenu_mask_0003 START============================");
@@ -147,13 +144,12 @@ export default function maskTest() {
     });
 
     /**
-     * @tc.number    bindMenu_mask_0004
-     * @tc.name      bindMenu_mask_0004
-     * @tc.desc      set mask value is null, this use case has device differentiation,
-     *               and some devices do not support this feature
-     * @tc.level:    Level 2
-     * @tc.type :    TestType.FUNCTION
-     * @tc.size :    Size.MEDIUMTEST
+     * @tc.name   bindMenu_mask_0004
+     * @tc.number bindMenu_mask_0004
+     * @tc.desc   set mask value is null, this use case has device differentiation,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindMenu_mask_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("bindMenu_mask_0004 START============================");

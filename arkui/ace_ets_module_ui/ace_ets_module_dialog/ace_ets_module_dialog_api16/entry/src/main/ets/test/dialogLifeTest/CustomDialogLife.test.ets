@@ -43,6 +43,14 @@ export default function CustomDialogLifeTest() {
     });
 
 
+    /**
+     * @tc.name   CustomDialogLife_0001
+     * @tc.number CustomDialogLife_0001
+     * @tc.desc   CustomDialogLife_0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('CustomDialogLife_0001', Level.LEVEL2, async (done: Function) => {
       console.info('CustomDialogLife_0101 START');
       await CommonFunc.sleep(1000);

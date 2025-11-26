@@ -24,6 +24,8 @@ group("certificate_framework") {
       "js_api_test_oh50_static:ActsCertFrameworkExtJSFuncStaticTest",
       "js_api_test_one:ActsCertificateFrameworkJSNormalTest",
       "js_api_test_one_static:ActsCertificateFrameworkJSNormalStaticTest",
+      "js_api_test_oh61:ActsCertFrameworkNetworkFuncTest",
+      "js_api_test_oh61_static:ActsCertFrameworkNetworkFuncStaticTest"
     ]
   }
 }

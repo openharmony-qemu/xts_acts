@@ -26,52 +26,52 @@ export default function textPaddingTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_PADDING_0100
-     * @tc.name       : testTextPadding001
-     * @tc.desc       : testing padding for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextPadding001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_PADDING_0100
+     * @tc.desc   testing padding for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextPadding001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextPadding001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_PADDING_0200
-     * @tc.name       : testTextPadding002
-     * @tc.desc       : testing padding for text with boundary value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextPadding002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_PADDING_0200
+     * @tc.desc   testing padding for text with boundary value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextPadding002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextPadding002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_PADDING_0300
-     * @tc.name       : testTextPadding003
-     * @tc.desc       : testing padding for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextPadding003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_PADDING_0300
+     * @tc.desc   testing padding for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextPadding003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextPadding003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_PADDING_0400
-     * @tc.name       : testTextPadding004
-     * @tc.desc       : testing padding for text with boundary value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextPadding004
+     * @tc.number SUB_ARKUI_CAPI_TEXT_PADDING_0400
+     * @tc.desc   testing padding for text with boundary value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextPadding004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextPadding004()).assertEqual(0)

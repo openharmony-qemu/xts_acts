@@ -134,7 +134,7 @@ export default function imageExifGetModifyTest() {
         await resourceMgr.closeRawFd(fileName);
       }else if(type === "incremental") {
         const picBuffer = getBuffer(fileName)
-        imageSourceApi = image.CreateIncrementalSource(picBuffer)
+        imageSourceApi = image.createIncrementalSource(picBuffer)
       }else{
         let fd = getFd(fileName);
         imageSourceApi = image.createImageSource(fd);
@@ -169,7 +169,6 @@ export default function imageExifGetModifyTest() {
         let imageSourceApiGet = await getImageSource(fileName, type)
         const data = await imageSourceApiGet.getImageProperty(key)
         checkResult = data === compareData
-        console.info(testTag + "checkResult + " + checkResult);
         if (imageSourceApiGet != undefined) {
           await imageSourceApiGet.release();
         }
@@ -20442,9 +20441,13 @@ export default function imageExifGetModifyTest() {
             getFd(writes[i].fileName)
             const imageSourceApiWrite = image.createImageSource(fdNumber);
             fs.closeSync(fdNumber) // getFd open fd，创建ImageSource后，close fd。
-            await imageSourceApiWrite.modifyImageProperty(key, readValue)
-            const reReadValue = await imageSourceApiWrite.getImageProperty(key)
-            checkResult = reReadValue == readValue
+            if (imageSourceApiWrite != undefined) {
+              await imageSourceApiWrite.modifyImageProperty(key, readValue)
+              const reReadValue = await imageSourceApiWrite.getImageProperty(key)
+              checkResult = reReadValue == readValue
+            } else {
+              checkResult = false
+            }
           }
           result = result && checkResult
         }
@@ -20469,6 +20472,7 @@ export default function imageExifGetModifyTest() {
       * @tc.level   Level 1
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTIES_PROMISE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await sleep(1000)
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTIES_PROMISE_STATIC_0100';
       try {
         let valueDng: Record<image.PropertyKey, string | null> = getCompareData("Top-left", "192", "256");
@@ -20520,6 +20524,7 @@ export default function imageExifGetModifyTest() {
       * @tc.level   Level 1
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTIES_PROMISE_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await sleep(1000)
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTIES_PROMISE_STATIC_0200';
       try {
         const filesList:Array<picTypeValue> = [
@@ -20561,6 +20566,7 @@ export default function imageExifGetModifyTest() {
       * @tc.level   Level 1
      */
     it('SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTIES_PROMISE_STATIC_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await sleep(1000)
       const testTag = 'SUB_MULTIMEDIA_EXIF_GETIMAGEPROPERTIES_PROMISE_STATIC_0500';
       try {
         const filesList:Array<picTypeValue> = [
@@ -20603,6 +20609,7 @@ export default function imageExifGetModifyTest() {
       * @tc.level   Level 1
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await sleep(1000)
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0100';
       try {
         let records:Record<image.PropertyKey, string | null> = {};
@@ -20656,6 +20663,7 @@ export default function imageExifGetModifyTest() {
       * @tc.level   Level 1
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await sleep(1000)
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0200';
       try {
         let records: Record<image.PropertyKey, string | null> = {};
@@ -20707,6 +20715,7 @@ export default function imageExifGetModifyTest() {
       * @tc.level   Level 1
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await sleep(1000)
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0300';
       try {
         let records: Record<image.PropertyKey, string | null> = {};
@@ -20750,6 +20759,7 @@ export default function imageExifGetModifyTest() {
       * @tc.level   Level 1
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await sleep(1000)
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0400';
       try {
         let records: Record<image.PropertyKey, string | null> = {};
@@ -20793,6 +20803,7 @@ export default function imageExifGetModifyTest() {
       * @tc.level   Level 1
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await sleep(1000)
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTIES_PROMISE_STATIC_0700';
       try {
         let records: Record<image.PropertyKey, string | null> = {};
@@ -20844,6 +20855,7 @@ export default function imageExifGetModifyTest() {
       * @tc.level   Level 0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014800', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await sleep(1000)
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014800';
       const key = image.PropertyKey.EXPOSURE_TIME
       const modifyData: string = `16/10`;
@@ -20876,6 +20888,7 @@ export default function imageExifGetModifyTest() {
       * @tc.level   Level 0
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014900', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await sleep(1000)
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_EMPTYIMAGE_PROMISE_STATIC_014900';
       const key = image.PropertyKey.EXPOSURE_TIME
       const modifyData: string = `12/2`;
@@ -20908,6 +20921,7 @@ export default function imageExifGetModifyTest() {
       * @tc.level   Level 1
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014600', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await sleep(1000)
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014600';
       const key = image.PropertyKey.EXPOSURE_TIME
       const modifyData: string = `1696000/1000000000`;
@@ -20940,6 +20954,7 @@ export default function imageExifGetModifyTest() {
       * @tc.level   Level 1
      */
     it('SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014700', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      await sleep(1000)
       const testTag = 'SUB_MULTIMEDIA_EXIF_MODIFYIMAGEPROPERTY_IMAGECONTAINSEXIF_PROMISE_STATIC_014700';
       const key = image.PropertyKey.EXPOSURE_TIME
       const modifyData: string = `4000000000/1000000000`;

@@ -60,12 +60,12 @@ export default function menuBlurStyleJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ACE_CONTEXTMENU_backgroundBlurStyle_0100
-     * @tc.name  : menuBlurStyleJsunit_0100
-     * @tc.desc  : Defines menu background blur Style
-     * @tc.level : Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   menuBlurStyleJsunit_0100
+     * @tc.number SUB_ACE_CONTEXTMENU_backgroundBlurStyle_0100
+     * @tc.desc   Defines menu background blur Style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('menuBlurStyleJsunit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[menuBlurStyleJsunit_0100] START');

@@ -52,7 +52,7 @@ async function testSeiMessage(src: string | media.AVFileDescriptor, avPlayer: me
 function setAVPlayerSeiMessageCb(avPlayer: media.AVPlayer | null, payloadTypes: Array<int>, done: () => void) {
   let surfaceID: string = globalThis.value;
 
-  avPlayer?.on('stateChange', (state, reason) => {
+  avPlayer?.onStateChange((state, reason) => {
     switch (state) {
       case INITIALIZED:
         if (!avPlayer) {
@@ -101,7 +101,7 @@ function setAVPlayerSeiMessageCb(avPlayer: media.AVPlayer | null, payloadTypes: 
     }
   });
 
-  avPlayer?.on('seiMessageReceived', payloadTypes, (messages: Array<media.SeiMessage>, playbackPosition?: int) => {
+  avPlayer?.onSeiMessageReceived(payloadTypes, (messages: Array<media.SeiMessage>, playbackPosition?: int) => {
     try {
       console.info(`Received SEI message at playbackPosition: ${playbackPosition}`);
       expect(messages !== null && messages !== undefined).assertTrue();

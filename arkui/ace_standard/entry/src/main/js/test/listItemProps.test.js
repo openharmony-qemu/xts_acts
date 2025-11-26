@@ -82,9 +82,12 @@ export default function listItemPropsJsTest() {
         // 通用属性
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemIdProp
-         * @tc.desc      ACE
+         * @tc.name   testlistItemIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemIdProp', Level.LEVEL0, async function(done) {
             console.info('testlistItemIdProp START');
@@ -100,9 +103,12 @@ export default function listItemPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemClassProp
-         * @tc.desc      ACE
+         * @tc.name   testlistItemClassProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemClassProp', Level.LEVEL0, async function(done) {
             console.info('testlistItemClassProp START');
@@ -119,9 +125,12 @@ export default function listItemPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testlistItemClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testlistItemClassPropNone START');
@@ -139,9 +148,12 @@ export default function listItemPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemRefProp
-         * @tc.desc      ACE
+         * @tc.name   testlistItemRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemRefProp', Level.LEVEL0, async function(done) {
             console.info('testlistItemRefProp START');
@@ -158,9 +170,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testlistItemRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testlistItemRefPropNone START');
@@ -178,9 +193,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemDisabledPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testlistItemDisabledPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemDisabledPropTrue', Level.LEVEL0, async function(done) {
             console.info('testlistItemDisabledPropTrue START');
@@ -197,9 +215,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemDisabledPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testlistItemDisabledPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemDisabledPropFalse', Level.LEVEL0, async function(done) {
             console.info('testlistItemDisabledPropFalse START');
@@ -216,9 +237,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemDisabledPropNone
-         * @tc.desc      ACE
+         * @tc.name   testlistItemDisabledPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemDisabledPropNone', Level.LEVEL0, async function(done) {
             console.info('testlistItemDisabledPropNone START');
@@ -235,9 +259,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemFocusablePropTrue
-         * @tc.desc      ACE
+         * @tc.name   testlistItemFocusablePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemFocusablePropTrue', Level.LEVEL0, async function(done) {
             console.info('testlistItemFocusablePropTrue START');
@@ -254,9 +281,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemFocusablePropFalse
-         * @tc.desc      ACE
+         * @tc.name   testlistItemFocusablePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemFocusablePropFalse', Level.LEVEL0, async function(done) {
             console.info('testlistItemFocusablePropFalse START');
@@ -273,9 +303,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemFocusablePropNone
-         * @tc.desc      ACE
+         * @tc.name   testlistItemFocusablePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemFocusablePropNone', Level.LEVEL0, async function(done) {
             console.info('testlistItemFocusablePropNone START');
@@ -292,9 +325,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemDataProp
-         * @tc.desc      ACE
+         * @tc.name   testlistItemDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemDataProp', Level.LEVEL0, async function(done) {
             console.info('testlistItemDataProp START');
@@ -312,9 +348,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testlistItemDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testlistItemDataPropNone START');
@@ -332,9 +371,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemClickEffectPropSmall
-         * @tc.desc      ACE
+         * @tc.name   testlistItemClickEffectPropSmall
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemClickEffectPropSmall', Level.LEVEL0, async function(done) {
             console.info('testlistItemClickEffectPropSmall START');
@@ -351,9 +393,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemClickEffectPropMedium
-         * @tc.desc      ACE
+         * @tc.name   testlistItemClickEffectPropMedium
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemClickEffectPropMedium', Level.LEVEL0, async function(done) {
             console.info('testlistItemClickEffectPropMedium START');
@@ -370,9 +415,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemClickEffectPropLarge
-         * @tc.desc      ACE
+         * @tc.name   testlistItemClickEffectPropLarge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemClickEffectPropLarge', Level.LEVEL0, async function(done) {
             console.info('testlistItemClickEffectPropLarge START');
@@ -389,9 +437,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemClickEffectPropNone
-         * @tc.desc      ACE
+         * @tc.name   testlistItemClickEffectPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemClickEffectPropNone', Level.LEVEL0, async function(done) {
             console.info('testlistItemClickEffectPropNone START');
@@ -409,9 +460,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testlistItemDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testlistItemDirPropRtl START');
@@ -428,9 +482,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testlistItemDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testlistItemDirPropLtr START');
@@ -447,9 +504,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testlistItemDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testlistItemDirPropAuto START');
@@ -466,9 +526,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testlistItemDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testlistItemDirPropNone START');
@@ -485,9 +548,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemForPropNull
-         * @tc.desc      ACE
+         * @tc.name   testlistItemForPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemForPropNull', Level.LEVEL0, async function(done) {
             console.info('testlistItemForPropNull START');
@@ -505,9 +571,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemForPropOne
-         * @tc.desc      ACE
+         * @tc.name   testlistItemForPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemForPropOne', Level.LEVEL0, async function(done) {
             console.info('testlistItemForPropOne START');
@@ -525,9 +594,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemForPropThree
-         * @tc.desc      ACE
+         * @tc.name   testlistItemForPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemForPropThree', Level.LEVEL0, async function(done) {
             console.info('testlistItemForPropThree START');
@@ -545,9 +617,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemIfPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testlistItemIfPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemIfPropTrue', Level.LEVEL0, async function(done) {
             console.info('testlistItemIfPropTrue START');
@@ -565,9 +640,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemShowPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testlistItemShowPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemShowPropTrue', Level.LEVEL0, async function(done) {
             console.info('testlistItemShowPropTrue START');
@@ -585,9 +663,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemShowPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testlistItemShowPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemShowPropFalse', Level.LEVEL0, async function(done) {
             console.info('testlistItemShowPropFalse START');
@@ -605,9 +686,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testlistItemShowPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemShowPropNone', Level.LEVEL0, async function(done) {
             console.info('testlistItemShowPropNone START');
@@ -627,9 +711,12 @@ export default function listItemPropsJsTest() {
         // 特有属性
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemType
-         * @tc.desc      ACE
+         * @tc.name   testlistItemType
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemType', Level.LEVEL0, async function(done) {
             console.info('testlistItemType START');
@@ -647,9 +734,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemTypeNone
-         * @tc.desc      ACE
+         * @tc.name   testlistItemTypeNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemTypeNone', Level.LEVEL0, async function(done) {
             console.info('testlistItemTypeNone START');
@@ -667,9 +757,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemprimaryFalse
-         * @tc.desc      ACE
+         * @tc.name   testlistItemprimaryFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemprimaryFalse', Level.LEVEL0, async function(done) {
             console.info('testlistItemprimaryFalse START');
@@ -687,9 +780,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemprimaryTrue
-         * @tc.desc      ACE
+         * @tc.name   testlistItemprimaryTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemprimaryTrue', Level.LEVEL0, async function(done) {
             console.info('testlistItemprimaryTrue START');
@@ -707,9 +803,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemprimaryNone
-         * @tc.desc      ACE
+         * @tc.name   testlistItemprimaryNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemprimaryNone', Level.LEVEL0, async function(done) {
             console.info('testlistItemprimaryNone START');
@@ -727,9 +826,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemsection
-         * @tc.desc      ACE
+         * @tc.name   testlistItemsection
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemsection', Level.LEVEL0, async function(done) {
             console.info('testlistItemsection START');
@@ -747,9 +849,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemsectionNone
-         * @tc.desc      ACE
+         * @tc.name   testlistItemsectionNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemsectionNone', Level.LEVEL0, async function(done) {
             console.info('testlistItemsectionNone START');
@@ -767,9 +872,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemstickyNone
-         * @tc.desc      ACE
+         * @tc.name   testlistItemstickyNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemstickyNone', Level.LEVEL0, async function(done) {
             console.info('testlistItemstickyNone START');
@@ -787,9 +895,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemstickyNormal
-         * @tc.desc      ACE
+         * @tc.name   testlistItemstickyNormal
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemstickyNormal', Level.LEVEL0, async function(done) {
             console.info('testlistItemstickyNormal START');
@@ -807,9 +918,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemstickyOpacity
-         * @tc.desc      ACE
+         * @tc.name   testlistItemstickyOpacity
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemstickyOpacity', Level.LEVEL0, async function(done) {
             console.info('testlistItemstickyOpacity START');
@@ -827,9 +941,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemstickyNo
-         * @tc.desc      ACE
+         * @tc.name   testlistItemstickyNo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemstickyNo', Level.LEVEL0, async function(done) {
             console.info('testlistItemstickyNo START');
@@ -847,9 +964,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemclickeffectTrue
-         * @tc.desc      ACE
+         * @tc.name   testlistItemclickeffectTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemclickeffectTrue', Level.LEVEL0, async function(done) {
             console.info('testlistItemclickeffectTrue START');
@@ -867,9 +987,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemclickeffectFalse
-         * @tc.desc      ACE
+         * @tc.name   testlistItemclickeffectFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemclickeffectFalse', Level.LEVEL0, async function(done) {
             console.info('testlistItemclickeffectFalse START');
@@ -887,9 +1010,12 @@ export default function listItemPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testlistItemclickeffectNone
-         * @tc.desc      ACE
+         * @tc.name   testlistItemclickeffectNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testlistItemclickeffectNone', Level.LEVEL0, async function(done) {
             console.info('testlistItemclickeffectNone START');

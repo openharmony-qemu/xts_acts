@@ -50,13 +50,15 @@ export default function AlignContent_Center_FlexP_fixed() {
       console.info("AlignContent_Center_FlexP_fixed after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_CENTER_0800
-     * @tc.name testAlignContentCenterFlexfixedSatisfy
-     * @tc.desc Set the AlignContent property of the Flex component to FlexAlign.Center to change the height of
-     *               the subcomponent so that the flex container meets the height of the subcomponent.
-     */
 
+    /**
+     * @tc.name   testAlignContentCenterFlexfixedSatisfy
+     * @tc.number testAlignContentCenterFlexfixedSatisfy
+     * @tc.desc   testAlignContentCenterFlexfixedSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentCenterFlexfixedSatisfy',  Level.LEVEL0, async () => {
       console.info('testAlignContentCenterFlexfixedSatisfy START');
       GlobalContext.getContext().getObject<number>('value').message.notify({
@@ -104,13 +106,15 @@ export default function AlignContent_Center_FlexP_fixed() {
       console.info('testAlignContentCenterFlexfixedSatisfy END');
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_CENTER_0900
-     * @tc.name testAlignContentCenterFlexfixedNoSatisfy
-     * @tc.desc Set the AlignContent property of the Flex component to FlexAlign.Center, change the height of the
-     *               subcomponent to make the flex container less than the height of the subcomponent.
-     */
 
+    /**
+     * @tc.name   testAlignContentCenterFlexfixedNoSatisfy
+     * @tc.number testAlignContentCenterFlexfixedNoSatisfy
+     * @tc.desc   testAlignContentCenterFlexfixedNoSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentCenterFlexfixedNoSatisfy',  Level.LEVEL0, async () => {
       console.info('testAlignContentCenterFlexfixedNoSatisfy START');
       GlobalContext.getContext().getObject<number>('value').message.notify({

@@ -26,91 +26,91 @@ export default function textBackgroundImageTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_BACKGROUNDIMAGE_0100
-     * @tc.name       : testTextBackgroundImage001
-     * @tc.desc       : testing backgroundimage for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextBackgroundImage001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_BACKGROUNDIMAGE_0100
+     * @tc.desc   testing backgroundimage for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextBackgroundImage001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextBackgroundImage001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_BACKGROUNDIMAGE_0200
-     * @tc.name       : testTextBackgroundImage002
-     * @tc.desc       : testing backgroundimage for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextBackgroundImage002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_BACKGROUNDIMAGE_0200
+     * @tc.desc   testing backgroundimage for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextBackgroundImage002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextBackgroundImage002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_BACKGROUNDIMAGE_0300
-     * @tc.name       : testTextBackgroundImage003
-     * @tc.desc       : testing backgroundimage for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextBackgroundImage003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_BACKGROUNDIMAGE_0300
+     * @tc.desc   testing backgroundimage for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextBackgroundImage003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextBackgroundImage003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_BACKGROUNDIMAGE_0400
-     * @tc.name       : testTextBackgroundImage004
-     * @tc.desc       : testing backgroundimage for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextBackgroundImage004
+     * @tc.number SUB_ARKUI_CAPI_TEXT_BACKGROUNDIMAGE_0400
+     * @tc.desc   testing backgroundimage for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextBackgroundImage004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextBackgroundImage004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_BACKGROUNDIMAGE_0500
-     * @tc.name       : testTextBackgroundImage005
-     * @tc.desc       : testing backgroundimage for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextBackgroundImage005
+     * @tc.number SUB_ARKUI_CAPI_TEXT_BACKGROUNDIMAGE_0500
+     * @tc.desc   testing backgroundimage for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextBackgroundImage005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextBackgroundImage005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_BACKGROUNDIMAGE_0600
-     * @tc.name       : testTextBackgroundImage006
-     * @tc.desc       : testing backgroundimage for text with exception value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testTextBackgroundImage006
+     * @tc.number SUB_ARKUI_CAPI_TEXT_BACKGROUNDIMAGE_0600
+     * @tc.desc   testing backgroundimage for text with exception value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextBackgroundImage006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextBackgroundImage006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_BACKGROUNDIMAGE_0700
-     * @tc.name       : testTextBackgroundImage007
-     * @tc.desc       : testing backgroundimage for text with exception value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testTextBackgroundImage007
+     * @tc.number SUB_ARKUI_CAPI_TEXT_BACKGROUNDIMAGE_0700
+     * @tc.desc   testing backgroundimage for text with exception value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextBackgroundImage007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextBackgroundImage007()).assertEqual(0)

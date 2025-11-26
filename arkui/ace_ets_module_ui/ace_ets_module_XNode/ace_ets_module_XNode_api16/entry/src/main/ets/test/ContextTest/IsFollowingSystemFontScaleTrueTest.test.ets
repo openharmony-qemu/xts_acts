@@ -47,12 +47,12 @@ export default function IsFollowingSystemFontScaleTrueTest() {
     });
 
     /**
-     * @tc.number    IsFollowingSystemFontScaleTrueTest_0100
-     * @tc.name      IsFollowingSystemFontScaleTrueTest_0100
-     * @tc.desc      isFollowingSystemFontScale test
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   IsFollowingSystemFontScaleTrueTest_0100
+     * @tc.number IsFollowingSystemFontScaleTrueTest_0100
+     * @tc.desc   isFollowingSystemFontScale test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IsFollowingSystemFontScaleTrueTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('IsFollowingSystemFontScaleTrueTest_0100 START');

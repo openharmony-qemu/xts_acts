@@ -34,12 +34,14 @@ export default function ActsAceWebViewSdkSchemeHandlerDidFail3_2() {
       }
 
       try {
+        await Utils.sleep(1000)
         router.clear();
         let pages = router.getState();
         console.info("get webViewSdkSchemeHandlerDidFail3 state success " + JSON.stringify(pages));
         if (!("webViewSdkSchemeHandlerDidFail3" == pages.name)) {
           console.info("get webViewSdkSchemeHandlerDidFail3 state success " + JSON.stringify(pages.name));
           let result = await router.pushUrl(options);
+          await Utils.sleep(1000);
           console.info("push webViewSdkSchemeHandlerDidFail3 state success " + JSON.stringify(result));
         }
       } catch (err) {

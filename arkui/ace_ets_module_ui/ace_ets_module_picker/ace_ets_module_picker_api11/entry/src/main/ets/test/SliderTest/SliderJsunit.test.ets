@@ -56,9 +56,12 @@ export default function sliderJsunit() {
       console.info("Slider after each called");
     });
     /**
+     * @tc.name   testGetSliderAttr010
      * @tc.number SUB_ACE_BASIC_ETS_API_1060
-     * @tc.name testGetSliderAttr010
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetSliderAttr010', Level.LEVEL1, async (done: Function) => {
       console.info('testGetSliderAttr1 START');
@@ -78,9 +81,12 @@ export default function sliderJsunit() {
     });
 
     /**
+     * @tc.name   testGetSliderAttr020
      * @tc.number SUB_ACE_BASIC_ETS_API_1070
-     * @tc.name testGetSliderAttr020
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetSliderAttr020', Level.LEVEL1, async (done: Function) => {
       console.info('testGetSliderAttr2 START');

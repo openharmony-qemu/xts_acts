@@ -46,13 +46,13 @@ export default function CustomSpan() {
       console.info("CustomSpan after each called");
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-    * @tc.name         CustomSpan0001
-    * @tc.desic        The CustomSpan Attributes
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   CustomSpan0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   CustomSpan0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('CustomSpan0001', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();

@@ -57,13 +57,13 @@ export default function UIExtensionContentSessionTest() {
     afterAll(() => {
     })
 
-    /*
-     * @tc.number : Sub_UIExtensionContentSession_errorCode_0100
-     * @tc.name   : Sub_UIExtensionContentSession_errorCode_0100
-     * @tc.desc   : session.loadContent
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   Sub_UIExtensionContentSession_errorCode_0100
+     * @tc.number Sub_UIExtensionContentSession_errorCode_0100
+     * @tc.desc   session.loadContent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_UIExtensionContentSession_errorCode_0100', Level.LEVEL0, (done: Function) => {
       let tag: string = `Sub_UIExtensionContentSession_errorCode_0100`;
@@ -103,13 +103,13 @@ export default function UIExtensionContentSessionTest() {
         })
     })
 
-    /*
-     * @tc.number : Sub_UIExtensionContentSession_errorCode_0200
-     * @tc.name   : Sub_UIExtensionContentSession_errorCode_0200
-     * @tc.desc   : session.loadContentByName
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   Sub_UIExtensionContentSession_errorCode_0200
+     * @tc.number Sub_UIExtensionContentSession_errorCode_0200
+     * @tc.desc   session.loadContentByName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_UIExtensionContentSession_errorCode_0200', Level.LEVEL0, (done: Function) => {
       let tag: string = `Sub_UIExtensionContentSession_errorCode_0200`;
@@ -149,13 +149,13 @@ export default function UIExtensionContentSessionTest() {
         })
     })
 
-    /*
-     * @tc.number : Sub_UIExtensionContentSession_errorCode_0300
-     * @tc.name   : Sub_UIExtensionContentSession_errorCode_0300
-     * @tc.desc   : session.terminateSelfWithResult callback
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   Sub_UIExtensionContentSession_errorCode_0300
+     * @tc.number Sub_UIExtensionContentSession_errorCode_0300
+     * @tc.desc   session.terminateSelfWithResult callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_UIExtensionContentSession_errorCode_0300', Level.LEVEL0, (done: Function) => {
       let tag: string = `Sub_UIExtensionContentSession_errorCode_0300`;
@@ -195,13 +195,13 @@ export default function UIExtensionContentSessionTest() {
         })
     })
 
-    /*
-     * @tc.number : Sub_UIExtensionContentSession_errorCode_0400
-     * @tc.name   : Sub_UIExtensionContentSession_errorCode_0400
-     * @tc.desc   : session.terminateSelfWithResult promise
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   Sub_UIExtensionContentSession_errorCode_0400
+     * @tc.number Sub_UIExtensionContentSession_errorCode_0400
+     * @tc.desc   session.terminateSelfWithResult promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_UIExtensionContentSession_errorCode_0400', Level.LEVEL0, (done: Function) => {
       let tag: string = `Sub_UIExtensionContentSession_errorCode_0400`;
@@ -241,13 +241,13 @@ export default function UIExtensionContentSessionTest() {
         })
     })
 
-    /*
-     * @tc.number : Sub_UIExtensionContentSession_errorCode_0500
-     * @tc.name   : Sub_UIExtensionContentSession_errorCode_0500
-     * @tc.desc   : session.setWindowPrivacyMode promise
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   Sub_UIExtensionContentSession_errorCode_0500
+     * @tc.number Sub_UIExtensionContentSession_errorCode_0500
+     * @tc.desc   session.setWindowPrivacyMode promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_UIExtensionContentSession_errorCode_0500', Level.LEVEL0, (done: Function) => {
       let tag: string = `Sub_UIExtensionContentSession_errorCode_0500`;
@@ -287,13 +287,13 @@ export default function UIExtensionContentSessionTest() {
         })
     })
 
-    /*
-     * @tc.number : Sub_UIExtensionContentSession_errorCode_0600
-     * @tc.name   : Sub_UIExtensionContentSession_errorCode_0600
-     * @tc.desc   : session.setWindowPrivacyMode callback
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   Sub_UIExtensionContentSession_errorCode_0600
+     * @tc.number Sub_UIExtensionContentSession_errorCode_0600
+     * @tc.desc   session.setWindowPrivacyMode callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_UIExtensionContentSession_errorCode_0600', Level.LEVEL0, (done: Function) => {
       let tag: string = `Sub_UIExtensionContentSession_errorCode_0600`;
@@ -333,13 +333,13 @@ export default function UIExtensionContentSessionTest() {
         })
     })
 
-    /*
-     * @tc.number : Sub_UIExtensionContentSession_errorCode_0700
-     * @tc.name   : Sub_UIExtensionContentSession_errorCode_0700
-     * @tc.desc   : session.startAbilityByType callback
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   Sub_UIExtensionContentSession_errorCode_0700
+     * @tc.number Sub_UIExtensionContentSession_errorCode_0700
+     * @tc.desc   session.startAbilityByType callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_UIExtensionContentSession_errorCode_0700', Level.LEVEL0, (done: Function) => {
       let tag: string = `Sub_UIExtensionContentSession_errorCode_0700`;
@@ -379,13 +379,13 @@ export default function UIExtensionContentSessionTest() {
         })
     })
 
-    /*
-     * @tc.number : Sub_UIExtensionContentSession_errorCode_0800
-     * @tc.name   : Sub_UIExtensionContentSession_errorCode_0800
-     * @tc.desc   : session.startAbilityByType promise
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   Sub_UIExtensionContentSession_errorCode_0800
+     * @tc.number Sub_UIExtensionContentSession_errorCode_0800
+     * @tc.desc   session.startAbilityByType promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_UIExtensionContentSession_errorCode_0800', Level.LEVEL0, (done: Function) => {
       let tag: string = `Sub_UIExtensionContentSession_errorCode_0800`;

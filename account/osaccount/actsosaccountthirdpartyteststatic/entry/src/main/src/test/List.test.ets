@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,10 +13,12 @@
  * limitations under the License.
  */
 
-import ActsOsAccountThirdPartyTest_third_4_Static from './OsAccountQueryStatic.test'
+import ActsOsAccountTestStatic from './OsAccountStatic.test'
 import ActsOsAccountThirdPartyTest_third_3_Static from './OsAccountCheckStatic.test'
+import ActsOsAccountThirdPartyTest_third_4_Static from './OsAccountQueryStatic.test'
 
 export default function testsuite() {
-  ActsOsAccountThirdPartyTest_third_4_Static();
-  ActsOsAccountThirdPartyTest_third_3_Static();
+  ActsOsAccountTestStatic()
+  ActsOsAccountThirdPartyTest_third_3_Static()
+  ActsOsAccountThirdPartyTest_third_4_Static()
 }

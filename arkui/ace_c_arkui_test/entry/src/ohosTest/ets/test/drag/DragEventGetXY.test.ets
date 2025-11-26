@@ -28,13 +28,13 @@ export default function DragEventGetXYTest() {
       await Utils.pushPage(`drag/${PAGE_TAG}`, done);
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_DragEvent_GetXY_0100
-     * @tc.name       : DragEventGetXYTest001
-     * @tc.desc       : testing DisableDefaultDropAnimation DragEvent
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   DragEventGetXYTest001
+     * @tc.number SUB_ARKUI_CAPI_DragEvent_GetXY_0100
+     * @tc.desc   testing DisableDefaultDropAnimation DragEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DragEventGetXYTest001', Level.LEVEL1, async (done: Function) => {
       console.info('DragEventGetXYTest001 START');

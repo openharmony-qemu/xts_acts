@@ -46,12 +46,12 @@ export default function TimePickerDialog_Cancel_Test() {
     });
 
     /**
-     * @tc.number    TimePickerDialog_Cancel_Test
-     * @tc.name      testBack
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
+     * @tc.name   TimePickerDialog_Cancel_Test_001
+     * @tc.number TimePickerDialog_Cancel_Test
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TimePickerDialog_Cancel_Test_001', Level.LEVEL3, async (done: Function) => {
       console.info('[TimePickerDialog_Cancel_Test_001] START');

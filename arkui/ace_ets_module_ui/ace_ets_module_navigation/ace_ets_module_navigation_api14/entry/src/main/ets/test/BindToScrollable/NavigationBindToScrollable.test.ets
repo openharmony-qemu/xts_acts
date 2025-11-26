@@ -49,10 +49,12 @@ export default function NavigationBindToScrollable() {
 
 
     /**
-     * @tc.number    NavigationBindToScrollable_0100
-     * @tc.name      NavigationBindToScrollable_0100
-     * @tc.desc      Test NavigationBindToScrollable
-     * @tc.level     Level 2
+     * @tc.name   NavigationBindToScrollable_0100
+     * @tc.number NavigationBindToScrollable_0100
+     * @tc.desc   Test NavigationBindToScrollable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationBindToScrollable_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('NavigationBindToScrollable_0100 START');

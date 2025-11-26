@@ -44,12 +44,12 @@ export default function exportArrayTest() {
     })
 
     /**
+     * @tc.name   exportArrayTestTest1001
      * @tc.number SUB_EXPORT_ARRAY_TEST_0100
-     * @tc.name exportArrayTestTest1001
-     * @tc.desc Test name *
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Test name *
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportArrayTestTest1001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(arr4.default).assertDeepEquals([1, 2, 3]);
@@ -59,24 +59,24 @@ export default function exportArrayTest() {
     })
 
     /**
+     * @tc.name   exportArrayTestTest1002
      * @tc.number SUB_EXPORT_ARRAY_TEST_0200
-     * @tc.name exportArrayTestTest1002
-     * @tc.desc Test default let array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test default let array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportArrayTestTest1002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(arr).assertDeepEquals([1, 2, 3]);
     });
 
     /**
+     * @tc.name   exportArrayTestTest1003
      * @tc.number SUB_EXPORT_ARRAY_TEST_0300
-     * @tc.name exportArrayTestTest1003
-     * @tc.desc Test type array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test type array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportArrayTestTest1003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let arr: typeArr<number> = [6, 7, 8];
@@ -84,48 +84,48 @@ export default function exportArrayTest() {
     });
 
     /**
+     * @tc.name   exportArrayTestTest1004
      * @tc.number SUB_EXPORT_ARRAY_TEST_0400
-     * @tc.name exportArrayTestTest1004
-     * @tc.desc Test let inline array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test let inline array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportArrayTestTest1004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(arr1).assertDeepEquals([2, 3, 4]);
     });
 
     /**
+     * @tc.name   exportArrayTestTest1005
      * @tc.number SUB_EXPORT_ARRAY_TEST_0500
-     * @tc.name exportArrayTestTest1005
-     * @tc.desc Test let array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test let array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportArrayTestTest1005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(arr2).assertDeepEquals([3, 4, 5]);
     })
 
     /**
+     * @tc.name   exportArrayTestTest1006
      * @tc.number SUB_EXPORT_ARRAY_TEST_0600
-     * @tc.name exportArrayTestTest1006
-     * @tc.desc Test name array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test name array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportArrayTestTest1006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(arr3).assertDeepEquals([3, 4, 5]);
     })
 
     /**
+     * @tc.name   exportArrayTestTest1007
      * @tc.number SUB_EXPORT_ARRAY_TEST_0700
-     * @tc.name exportArrayTestTest1007
-     * @tc.desc Test *
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test *
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportArrayTestTest1007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(arr5.arr1).assertDeepEquals([2, 3, 4]);
@@ -134,24 +134,24 @@ export default function exportArrayTest() {
     })
 
     /**
+     * @tc.name   exportArrayTestTest1008
      * @tc.number SUB_EXPORT_ARRAY_TEST_0800
-     * @tc.name exportArrayTestTest1008
-     * @tc.desc Test default array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test default array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportArrayTestTest1008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(defaultArr).assertDeepEquals([4, 5, 6]);
     })
 
     /**
+     * @tc.name   exportArrayTestTest1009
      * @tc.number SUB_EXPORT_ARRAY_TEST_0900
-     * @tc.name exportArrayTestTest1009
-     * @tc.desc Test default type array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test default type array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportArrayTestTest1009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let arr: defaultTypeArr<number> = [7, 8, 9];

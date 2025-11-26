@@ -1,6 +1,7 @@
 {
   "src": [
     "MainAbility/pages/index/index",
+    "MainAbility/pages/Preset/InputPreset",
     "MainAbility/pages/TextChangeObserver/search",
     "MainAbility/pages/TextChangeObserver/textArea",
     "MainAbility/pages/TextChangeObserver/textInput",
