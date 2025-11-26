@@ -151,7 +151,7 @@ export default function SimManagerTest() {
         console.info(`${CASE_NAME} ， data ->` + data);
         expect().assertFail();
         done
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         console.info(`${CASE_NAME} expect err: ${err?.message}`);
         console.info(`${CASE_NAME} finish`);
@@ -191,7 +191,7 @@ export default function SimManagerTest() {
         console.info(`${CASE_NAME} fail, data = ${JSON.stringify(data)}`);
         expect().assertFail();
         done();
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         console.info(`${CASE_NAME} expect err: ${err.message}`);
         console.info(`${CASE_NAME} finish`);
@@ -223,12 +223,12 @@ export default function SimManagerTest() {
     it('Telephony_Sim_isSimActive_Promise_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       const CASE_NAME = 'Telephony_Sim_isSimActive_Promise_0700';
       let promise = sim.isSimActive(SLOTID_INVALID);
-      promise.then(data => {
+      promise.then((data: boolean) => {
         console.info(CASE_NAME + `isSimActive success, promise: data->` + data);
         expect(data).assertFalse();
         done();
-      }).catch(err => {
-        console.info(CASE_NAME + "isSimActive promise err info :" + JSON.stringify(err));
+      }).catch((err: Error) => {
+        console.info(CASE_NAME + "isSimActive promise err info :" + err);
         done();
       });
     });
@@ -315,15 +315,15 @@ export default function SimManagerTest() {
      */
     it('Telephony_Sim_getSimAccountInfo_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let promise = sim.getSimAccountInfo(0);
-      promise.then(data => {
-        console.info("Telephony_Sim_getSimAccountInfo_Promise_0100 data = " + JSON.stringify(data));
+      promise.then((data: sim.IccAccountInfo) => {
+        console.info("Telephony_Sim_getSimAccountInfo_Promise_0100 data = " + data);
         sim.hasSimCard(0, (err: BusinessError | null, data: Boolean | undefined) => {
           console.log(`Telephony_Sim_getSimAccountInfo_Promise_0100 hasSimCard callback: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
           expect(data).assertTrue();
           done();
         });
-      }).catch(err => {
-        console.info("Telephony_Sim_getSimAccountInfo_Promise_0100 err = " + JSON.stringify(err));
+      }).catch((err: Error) => {
+        console.info("Telephony_Sim_getSimAccountInfo_Promise_0100 err = " + err);
         expect(true).assertTrue();
         done();
       });
@@ -356,15 +356,15 @@ export default function SimManagerTest() {
      */
     it('Telephony_Sim_getActiveSimAccountInfoList_Promise_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let promise = sim.getActiveSimAccountInfoList();
-      promise.then(data => {
-        console.info("Telephony_Sim_getActiveSimAccountInfoList_Promise_0100 data = " + JSON.stringify(data));
+      promise.then((data: Array<sim.IccAccountInfo>) => {
+        console.info("Telephony_Sim_getActiveSimAccountInfoList_Promise_0100 data = " + data);
         sim.hasSimCard(0, (err: BusinessError | null, data: Boolean | undefined) => {
           console.log(`Telephony_Sim_getActiveSimAccountInfoList_Promise_0100 hasSimCard callback: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
           expect(data).assertTrue();
           done();
         });
-      }).catch(err => {
-        console.info("Telephony_Sim_getActiveSimAccountInfoList_Promise_0100 err = " + JSON.stringify(err));
+      }).catch((err: Error) => {
+        console.info("Telephony_Sim_getActiveSimAccountInfoList_Promise_0100 err = " + err);
         expect(true).assertTrue();
         done();
       });
@@ -392,7 +392,7 @@ export default function SimManagerTest() {
             done();
           }
         });
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag, "Telephony_Sim_getOpName_try_catch_static_0100 err = " + JSON.stringify(err));
         expect().assertFail();
@@ -422,7 +422,7 @@ export default function SimManagerTest() {
           expect(err?.code).assertEqual(-1);
           done();
         });
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag, CASE_NAME + " err = " + JSON.stringify(err));
         expect().assertFail();
@@ -452,7 +452,7 @@ export default function SimManagerTest() {
             done();
           }
         });
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag, "Telephony_Sim_getOpKey_try_catch_0100 err = " + JSON.stringify(err));
         expect().assertFail();
@@ -482,7 +482,7 @@ export default function SimManagerTest() {
           expect(err?.code).assertEqual(-1);
           done();
         });
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag, CASE_NAME + " err = " + JSON.stringify(err));
         expect().assertFail();
@@ -512,7 +512,7 @@ export default function SimManagerTest() {
             done();
           }
         });
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag, "Telephony_Sim_GetCardType_try_catch_static_0400 err = " + JSON.stringify(err));
         expect().assertFail();
@@ -535,7 +535,7 @@ export default function SimManagerTest() {
         hilog.info(domain, tag, CASE_NAME + ' finish');
         expect().assertFail();
         done();
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.error(domain, tag, CASE_NAME + ' GetCardType error: ' + JSON.stringify(err));
         expect(err?.code).assertEqual(8300001);
@@ -565,7 +565,7 @@ export default function SimManagerTest() {
             done();
           }
         });
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.error(domain, tag, CASE_NAME + ' Telephony_Sim_getSimSpn_try_catch_error_0200: ' + JSON.stringify(err));
         expect().assertFail();
@@ -588,7 +588,7 @@ export default function SimManagerTest() {
         hilog.info(domain, tag, CASE_NAME + ' finish' + JSON.stringify(data));
         expect().assertFail();
         done();
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.error(domain, tag, `${CASE_NAME} expect err: ${err?.message}`);
         hilog.error(domain, tag, `${CASE_NAME} finish`);
@@ -618,7 +618,7 @@ export default function SimManagerTest() {
             done();
           }
         });
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag, "Telephony_Sim_getSimOperatorNumeric_try_catch_static_0200 err = " + JSON.stringify(err));
         expect().assertFail();
@@ -641,7 +641,7 @@ export default function SimManagerTest() {
         hilog.info(domain, tag, CASE_NAME + ' finish' + JSON.stringify(data));
         expect().assertFail();
         done();
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.error(domain, tag, `${CASE_NAME} expect err: ${err?.message}`);
         done();
@@ -670,7 +670,7 @@ export default function SimManagerTest() {
             done();
           }
         });
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag, "Telephony_Sim_hasOperatorPrivileges_try_catch_static_0400 err = " + JSON.stringify(err));
         expect().assertFail();
@@ -693,7 +693,7 @@ export default function SimManagerTest() {
         hilog.info(domain, tag, CASE_NAME + ' finish' + JSON.stringify(result));
         expect().assertFail();
         done();
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.error(domain, tag, CASE_NAME + 'hasOperatorPrivileges error: ' + JSON.stringify(err));
         expect(err?.code).assertEqual(8300001);
@@ -732,7 +732,7 @@ export default function SimManagerTest() {
             });
           }
         });
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag, CASE_NAME + " err = " + JSON.stringify(err));
         expect().assertFail();
@@ -766,11 +766,11 @@ export default function SimManagerTest() {
             done();
           });
         }).catch(err => {
-          hilog.info(domain, tag, CASE_NAME + " err = " + JSON.stringify(err));
+          hilog.info(domain, tag, CASE_NAME + " err = " + err);
           expect(false).assertTrue();
           done();
         });
-      } catch (error: Error) {
+      } catch (error) {
         let err = error as BusinessError;
         hilog.info(domain, tag, CASE_NAME + " err = " + JSON.stringify(err));
         expect().assertFail();
