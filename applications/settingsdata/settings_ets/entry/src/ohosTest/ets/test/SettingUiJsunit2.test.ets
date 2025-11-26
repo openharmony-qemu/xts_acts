@@ -2199,7 +2199,7 @@ export default function settingUiJsunit() {
       async (done: Function) => {
         try {
           let result = settings.registerKeyObserver(null, name, settings.domainName.DEVICE_SHARED, (err, ret) => {
-            let ret1 = settings.getValueSync(globalThis.abilityContext, name, domainName);
+            let ret1 = settings.getValueSync(globalThis.abilityContext, name, settings.domainName.DEVICE_SHARED);
             expect().assertFail();
             done();
           })
