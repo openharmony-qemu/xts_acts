@@ -203,8 +203,8 @@ let httpRequestOptions_dnsServers_null: http.HttpRequestOptions = {
   connectTimeout: 60000,
 };
 
-function dataSendProgress_on_callback(data: DataSendProgressInfo) {
-  console.log("dataSendProgress_on_callback receive len: " + JSON.stringify(data));
+function dataSendProgress_on_callback(data: http.DataSendProgressInfo) {
+  console.log("dataSendProgress_on_callback receive data: " + JSON.stringify(data));
   let sendSize = data.sendSize;
   let totalSize = data.totalSize;
   console.log("dataSendProgress_on_callback sendSize: " + JSON.stringify(sendSize) +
