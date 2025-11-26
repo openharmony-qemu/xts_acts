@@ -47,7 +47,6 @@ import PictureGetTypeTestSupp from './Picture/PictureGetType.test';
 import ImagePropertyOptionTest from "./image/ImagePropertyOption.test";
 import ImageEnumSupp from "./image/ImageEnum.test";
 import PictureSetMetadataTestSupp from './Picture/PictureSetGetMetadata.test';
-import ImageCreateIncrementalSourceSupp from './image/ImageCreateIncrementalSourceSupp.test';
 import ImageCreatePixelMapFromSurface from './image/ImageCreatePixelMapFromSurface.test';
 import ImageGetImagePropertySyncEnumFlash from './image/ImageGetImagePropertySyncEnumFlash.test';
 import ImageGetImagePropertySyncEnumFlashEmpty from './image/ImageGetImagePropertySyncEnumFlashEmpty.test';
@@ -65,17 +64,6 @@ import ImageGetImagePropertySyncEnumSensitiveTypeEmpty from './image/ImageGetIma
 import ImageGetImagePropertySyncEnumSoftware from './image/ImageGetImagePropertySyncEnumSoftware.test';
 import ImageGetImagePropertySyncEnumStripOffset from './image/ImageGetImagePropertySyncEnumStripOffset.test';
 import ImageGetImagePropertySyncSUBFILE from './image/ImageGetImagePropertySyncSUBFILE.test';
-import ImagePropertyKeySyncEnumJpgEmpty from './image/ImagePropertyKeySyncEnumJpgEmpty.test';
-import ImageCreatePixelMapSync from './image/ImageCreatePixelMapSyncSupp.test';
-import ImagePropertyKeySyncEnumGPSTIMESTAMP from './image/ImagePropertyKeySyncEnumGpsTimeTamp.test';
-import ImagePropertyKeySyncEnumSoftWare from './image/ImagePropertyKeySyncEnumSoftWare.test';
-import ImagePropertyKeySyncEnumStripOffsets from './image/ImagePropertyKeySyncEnumStripOffsets.test';
-import modifyImagePropertyTest from './image/ModifyImageProperty.test';
-import modifyImagePropertyTests from './image/ModifyImagePropertyKey.test';
-import ImageImagePackerPackingSupp from './image/ImagePackerPackingSupp.test';
-import ImageCreateImageReceiverCreator from './image/ImageCreateImageReceiverCreator.test';
-import PictureGetMetadataFirstParameters from './Picture/PictureGetMetadataFirParameters.test';
-import CreatePixelMapUsingAllocatorAndSync from './image/ImageCreatePixelMapUsingAllocatorSuppAb.test';
 import ImagePropertyKeySyncEnumJpgEmpty from './image/ImagePropertyKeySyncEnumJpgEmpty.test';
 import ImageCreatePixelMapSync from './image/ImageCreatePixelMapSyncSupp.test';
 import ImagePropertyKeySyncEnumGPSTIMESTAMP from './image/ImagePropertyKeySyncEnumGpsTimeTamp.test';
@@ -116,7 +104,10 @@ import SendableImagePixelMapCropSyncTest from './sendableImage/SendableImagePixe
 import SendableImagePixelMapSetColorSpaceTest from './sendableImage/SendableImagePixelMapSetColorSpace.Test.test';
 import SendableImagePixelMapUnMarshallingTest from './sendableImage/SendableImagePixelMapUnMarshalling.Test.test';
 import SendableImageSourceCreatePixelMapTest from './sendableImage/SendableImageSourceCreatePixelMap.Test.test';
-
+import ImageCreateImageReceiverCreator from './image/ImageCreateImageReceiverCreator.test';
+import PictureGetMetadataFirstParameters from './Picture/PictureGetMetadataFirParameters.test';
+import CreatePixelMapUsingAllocatorAndSync from './image/ImageCreatePixelMapUsingAllocatorSuppAb.test';
+import ImageCreateIncrementalSourceSupp from './image/ImageCreateIncrementalSourceSupp.test';
 
 export default function testsuite() {
   ImagePropertyKeyTest();
@@ -165,23 +156,11 @@ export default function testsuite() {
   ImageGetImagePropertySyncEnumSensitiveType();
   ImageEnumSupp();
   PictureSetMetadataTestSupp();
-  ImageCreateIncrementalSourceSupp();
   ImageCreatePixelMapFromSurface();
   ImageGetImagePropertySyncEnumSensitiveTypeEmpty();
   ImageGetImagePropertySyncEnumSoftware();
   ImageGetImagePropertySyncEnumStripOffset();
   ImageGetImagePropertySyncSUBFILE();
-  ImageCreatePixelMapSync();
-  ImagePropertyKeySyncEnumJpgEmpty();
-  ImagePropertyKeySyncEnumGPSTIMESTAMP();
-  ImagePropertyKeySyncEnumStripOffsets();
-  ImagePropertyKeySyncEnumSoftWare();
-  modifyImagePropertyTest();
-  modifyImagePropertyTests();
-  ImageImagePackerPackingSupp();
-  ImageCreateImageReceiverCreator();
-  PictureGetMetadataFirstParameters();
-  CreatePixelMapUsingAllocatorAndSync();
   ImageCreatePixelMapSync();
   ImagePropertyKeySyncEnumJpgEmpty();
   ImagePropertyKeySyncEnumGPSTIMESTAMP();
@@ -221,4 +200,8 @@ export default function testsuite() {
   SendableImagePixelMapSetColorSpaceTest();
   SendableImagePixelMapUnMarshallingTest();
   SendableImageSourceCreatePixelMapTest();
+  ImageCreateImageReceiverCreator();
+  PictureGetMetadataFirstParameters();
+  CreatePixelMapUsingAllocatorAndSync();
+  ImageCreateIncrementalSourceSupp();
 }
