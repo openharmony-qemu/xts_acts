@@ -15,7 +15,6 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from '@ohos/hypium'
 import UTD from '@ohos.data.uniformTypeDescriptor';
 import { BusinessError } from '@ohos.base';
-import uniformTypeDescriptor from '@kit.ArkData';
 
 const REFERENCE_URL =
   "https://gitee.com/openharmony/docs/blob/master/en/application-dev/reference/apis/js-apis-data-uniformTypeDescriptor.md#uniformdatatype";
@@ -7933,7 +7932,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest128 start');
       try {
-        let typeId = uniformTypeDescriptor.getUniformDataTypeByFilenameExtension('.pages');
+        let typeId = UTD.getUniformDataTypeByFilenameExtension('.pages');
         expect(typeId).assertEqual('com.apple.iwork.pages.pages');
         console.log(tag + `getUniformDataTypeByFilenameExtension success. typeId: ${typeId}`);
       } catch (e) {
@@ -7955,7 +7954,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest129 start');
       try {
-        let typeId = uniformTypeDescriptor.getUniformDataTypeByFilenameExtension('.pages', 'general.composite-object');
+        let typeId = UTD.getUniformDataTypeByFilenameExtension('.pages', 'general.composite-object');
         expect(typeId).assertEqual('com.apple.iwork.pages.pages');
         console.log(tag + `getUniformDataTypeByFilenameExtension success. typeId: ${typeId}`);
       } catch (e) {
@@ -7977,7 +7976,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest130 start');
       try {
-        let typeId = uniformTypeDescriptor.getUniformDataTypeByFilenameExtension('.pages', 'com.apple.iwork');
+        let typeId = UTD.getUniformDataTypeByFilenameExtension('.pages', 'com.apple.iwork');
         expect(typeId).assertEqual('com.apple.iwork.pages.pages');
         console.log(tag + `getUniformDataTypeByFilenameExtension success. typeId: ${typeId}`);
       } catch (e) {
@@ -7999,7 +7998,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest131 start');
       try {
-        let typeId = uniformTypeDescriptor.getUniformDataTypeByFilenameExtension('.numbers');
+        let typeId = UTD.getUniformDataTypeByFilenameExtension('.numbers');
         expect(typeId).assertEqual('com.apple.iwork.numbers.numbers');
         console.log(tag + `getUniformDataTypeByFilenameExtension success. typeId: ${typeId}`);
       } catch (e) {
@@ -8021,7 +8020,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest132 start');
       try {
-        let typeId = uniformTypeDescriptor.getUniformDataTypeByFilenameExtension('.numbers', 'general.composite-object');
+        let typeId = UTD.getUniformDataTypeByFilenameExtension('.numbers', 'general.composite-object');
         expect(typeId).assertEqual('com.apple.iwork.numbers.numbers');
         console.log(tag + `getUniformDataTypeByFilenameExtension success. typeId: ${typeId}`);
       } catch (e) {
@@ -8043,7 +8042,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest133 start');
       try {
-        let typeId = uniformTypeDescriptor.getUniformDataTypeByFilenameExtension('.numbers', 'com.apple.iwork');
+        let typeId = UTD.getUniformDataTypeByFilenameExtension('.numbers', 'com.apple.iwork');
         expect(typeId).assertEqual('com.apple.iwork.numbers.numbers');
         console.log(tag + `getUniformDataTypeByFilenameExtension success. typeId: ${typeId}`);
       } catch (e) {
@@ -8065,7 +8064,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest134 start');
       try {
-        let typeId = uniformTypeDescriptor.getUniformDataTypeByFilenameExtension('.key');
+        let typeId = UTD.getUniformDataTypeByFilenameExtension('.key');
         expect(typeId).assertEqual('com.apple.iwork.keynote.key');
         console.log(tag + `getUniformDataTypeByFilenameExtension success. typeId: ${typeId}`);
       } catch (e) {
@@ -8087,7 +8086,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest135 start');
       try {
-        let typeId = uniformTypeDescriptor.getUniformDataTypeByFilenameExtension('.key', 'general.composite-object');
+        let typeId = UTD.getUniformDataTypeByFilenameExtension('.key', 'general.composite-object');
         expect(typeId).assertEqual('com.apple.iwork.keynote.key');
         console.log(tag + `getUniformDataTypeByFilenameExtension success. typeId: ${typeId}`);
       } catch (e) {
@@ -8109,7 +8108,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest136 start');
       try {
-        let typeId = uniformTypeDescriptor.getUniformDataTypeByFilenameExtension('.key', 'com.apple.iwork');
+        let typeId = UTD.getUniformDataTypeByFilenameExtension('.key', 'com.apple.iwork');
         expect(typeId).assertEqual('com.apple.iwork.keynote.key');
         console.log(tag + `getUniformDataTypeByFilenameExtension success. typeId: ${typeId}`);
       } catch (e) {
@@ -8131,7 +8130,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest137 start');
       try {
-        let typeObj:uniformTypeDescriptor.TypeDescriptor = uniformTypeDescriptor.getTypeDescriptor('com.apple.iwork.pages.pages');
+        let typeObj:UTD.TypeDescriptor = UTD.getTypeDescriptor('com.apple.iwork.pages.pages');
         if (typeObj) {
           let typeId = typeObj.typeId;
           let belongingToTypes = typeObj.belongingToTypes;
@@ -8172,7 +8171,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest138 start');
       try {
-        let typeObj:uniformTypeDescriptor.TypeDescriptor = uniformTypeDescriptor.getTypeDescriptor('com.apple.iwork.numbers.numbers');
+        let typeObj:UTD.TypeDescriptor = UTD.getTypeDescriptor('com.apple.iwork.numbers.numbers');
         if (typeObj) {
           let typeId = typeObj.typeId;
           let belongingToTypes = typeObj.belongingToTypes;
@@ -8213,7 +8212,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest139 start');
       try {
-        let typeObj:uniformTypeDescriptor.TypeDescriptor = uniformTypeDescriptor.getTypeDescriptor('com.apple.iwork.keynote.key');
+        let typeObj:UTD.TypeDescriptor = UTD.getTypeDescriptor('com.apple.iwork.keynote.key');
         if (typeObj) {
           let typeId = typeObj.typeId;
           let belongingToTypes = typeObj.belongingToTypes;
@@ -8254,7 +8253,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest140 start');
       try {
-        let typeId = uniformTypeDescriptor.getUniformDataTypeByMIMEType('application/vnd.apple.pages');
+        let typeId = UTD.getUniformDataTypeByMIMEType('application/vnd.apple.pages');
         expect(typeId).assertEqual('com.apple.iwork.pages.pages');
         console.log(tag + `getUniformDataTypeByMIMEType success. typeId: ${typeId}`);
       } catch (e) {
@@ -8276,7 +8275,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest141 start');
       try {
-        let typeId = uniformTypeDescriptor.getUniformDataTypeByMIMEType('application/vnd.apple.pages', 'general.composite-object');
+        let typeId = UTD.getUniformDataTypeByMIMEType('application/vnd.apple.pages', 'general.composite-object');
         expect(typeId).assertEqual('com.apple.iwork.pages.pages');
         console.log(tag + `getUniformDataTypeByMIMEType success. typeId: ${typeId}`);
       } catch (e) {
@@ -8298,7 +8297,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest142 start');
       try {
-        let typeId = uniformTypeDescriptor.getUniformDataTypeByMIMEType('application/vnd.apple.pages', 'com.apple.iwork');
+        let typeId = UTD.getUniformDataTypeByMIMEType('application/vnd.apple.pages', 'com.apple.iwork');
         expect(typeId).assertEqual('com.apple.iwork.pages.pages');
         console.log(tag + `getUniformDataTypeByMIMEType success. typeId: ${typeId}`);
       } catch (e) {
@@ -8320,7 +8319,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest143 start');
       try {
-        let typeId = uniformTypeDescriptor.getUniformDataTypeByMIMEType('application/vnd.apple.numbers');
+        let typeId = UTD.getUniformDataTypeByMIMEType('application/vnd.apple.numbers');
         expect(typeId).assertEqual('com.apple.iwork.numbers.numbers');
         console.log(tag + `getUniformDataTypeByMIMEType success. typeId: ${typeId}`);
       } catch (e) {
@@ -8342,7 +8341,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest144 start');
       try {
-        let typeId = uniformTypeDescriptor.getUniformDataTypeByMIMEType('application/vnd.apple.numbers', 'general.composite-object');
+        let typeId = UTD.getUniformDataTypeByMIMEType('application/vnd.apple.numbers', 'general.composite-object');
         expect(typeId).assertEqual('com.apple.iwork.numbers.numbers');
         console.log(tag + `getUniformDataTypeByMIMEType success. typeId: ${typeId}`);
       } catch (e) {
@@ -8364,7 +8363,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest145 start');
       try {
-        let typeId = uniformTypeDescriptor.getUniformDataTypeByMIMEType('application/vnd.apple.numbers', 'com.apple.iwork');
+        let typeId = UTD.getUniformDataTypeByMIMEType('application/vnd.apple.numbers', 'com.apple.iwork');
         expect(typeId).assertEqual('com.apple.iwork.numbers.numbers');
         console.log(tag + `getUniformDataTypeByMIMEType success. typeId: ${typeId}`);
       } catch (e) {
@@ -8386,7 +8385,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest146 start');
       try {
-        let typeId = uniformTypeDescriptor.getUniformDataTypeByMIMEType('application/vnd.apple.keynote');
+        let typeId = UTD.getUniformDataTypeByMIMEType('application/vnd.apple.keynote');
         expect(typeId).assertEqual('com.apple.iwork.keynote.key');
         console.log(tag + `getUniformDataTypeByMIMEType success. typeId: ${typeId}`);
       } catch (e) {
@@ -8408,7 +8407,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest147 start');
       try {
-        let typeId = uniformTypeDescriptor.getUniformDataTypeByMIMEType('application/vnd.apple.keynote', 'general.composite-object');
+        let typeId = UTD.getUniformDataTypeByMIMEType('application/vnd.apple.keynote', 'general.composite-object');
         expect(typeId).assertEqual('com.apple.iwork.keynote.key');
         console.log(tag + `getUniformDataTypeByMIMEType success. typeId: ${typeId}`);
       } catch (e) {
@@ -8430,7 +8429,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest148 start');
       try {
-        let typeId = uniformTypeDescriptor.getUniformDataTypeByMIMEType('application/vnd.apple.keynote', 'com.apple.iwork');
+        let typeId = UTD.getUniformDataTypeByMIMEType('application/vnd.apple.keynote', 'com.apple.iwork');
         expect(typeId).assertEqual('com.apple.iwork.keynote.key');
         console.log(tag + `getUniformDataTypeByMIMEType success. typeId: ${typeId}`);
       } catch (e) {
@@ -8452,7 +8451,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest149 start');
       try {
-        let typeIds = uniformTypeDescriptor.getUniformDataTypesByFilenameExtension('.pages');
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.pages');
         expect(typeIds[0]).assertEqual('com.apple.iwork.pages.pages');
         console.log(tag + `getUniformDataTypesByFilenameExtension success. typeIds: ${typeIds}`);
       } catch (e) {
@@ -8474,7 +8473,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest150 start');
       try {
-        let typeIds = uniformTypeDescriptor.getUniformDataTypesByFilenameExtension('.pages', 'general.composite-object');
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.pages', 'general.composite-object');
         expect(typeIds[0]).assertEqual('com.apple.iwork.pages.pages');
         console.log(tag + `getUniformDataTypesByFilenameExtension success. typeIds: ${typeIds}`);
       } catch (e) {
@@ -8496,7 +8495,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest151 start');
       try {
-        let typeIds = uniformTypeDescriptor.getUniformDataTypesByFilenameExtension('.pages', 'com.apple.iwork');
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.pages', 'com.apple.iwork');
         expect(typeIds[0]).assertEqual('com.apple.iwork.pages.pages');
         console.log(tag + `getUniformDataTypesByFilenameExtension success. typeIds: ${typeIds}`);
       } catch (e) {
@@ -8518,7 +8517,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest152 start');
       try {
-        let typeIds = uniformTypeDescriptor.getUniformDataTypesByFilenameExtension('.numbers');
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.numbers');
         expect(typeIds[0]).assertEqual('com.apple.iwork.numbers.numbers');
         console.log(tag + `getUniformDataTypesByFilenameExtension success. typeIds: ${typeIds}`);
       } catch (e) {
@@ -8540,7 +8539,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest153 start');
       try {
-        let typeIds = uniformTypeDescriptor.getUniformDataTypesByFilenameExtension('.numbers', 'general.composite-object');
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.numbers', 'general.composite-object');
         expect(typeIds[0]).assertEqual('com.apple.iwork.numbers.numbers');
         console.log(tag + `getUniformDataTypesByFilenameExtension success. typeIds: ${typeIds}`);
       } catch (e) {
@@ -8562,7 +8561,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest154 start');
       try {
-        let typeIds = uniformTypeDescriptor.getUniformDataTypesByFilenameExtension('.numbers', 'com.apple.iwork');
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.numbers', 'com.apple.iwork');
         expect(typeIds[0]).assertEqual('com.apple.iwork.numbers.numbers');
         console.log(tag + `getUniformDataTypesByFilenameExtension success. typeIds: ${typeIds}`);
       } catch (e) {
@@ -8584,7 +8583,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest155 start');
       try {
-        let typeIds = uniformTypeDescriptor.getUniformDataTypesByFilenameExtension('.key');
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.key');
         expect(typeIds[0]).assertEqual('com.apple.iwork.keynote.key');
         console.log(tag + `getUniformDataTypesByFilenameExtension success. typeIds: ${typeIds}`);
       } catch (e) {
@@ -8606,7 +8605,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest156 start');
       try {
-        let typeIds = uniformTypeDescriptor.getUniformDataTypesByFilenameExtension('.key', 'general.composite-object');
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.key', 'general.composite-object');
         expect(typeIds[0]).assertEqual('com.apple.iwork.keynote.key');
         console.log(tag + `getUniformDataTypesByFilenameExtension success. typeIds: ${typeIds}`);
       } catch (e) {
@@ -8628,7 +8627,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest157 start');
       try {
-        let typeIds = uniformTypeDescriptor.getUniformDataTypesByFilenameExtension('.key', 'com.apple.iwork');
+        let typeIds = UTD.getUniformDataTypesByFilenameExtension('.key', 'com.apple.iwork');
         expect(typeIds[0]).assertEqual('com.apple.iwork.keynote.key');
         console.log(tag + `getUniformDataTypesByFilenameExtension success. typeIds: ${typeIds}`);
       } catch (e) {
@@ -8650,7 +8649,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest158 start');
       try {
-        let typeIds = uniformTypeDescriptor.getUniformDataTypesByMIMEType('application/vnd.apple.pages');
+        let typeIds = UTD.getUniformDataTypesByMIMEType('application/vnd.apple.pages');
         expect(typeIds[0]).assertEqual('com.apple.iwork.pages.pages');
         console.log(tag + `getUniformDataTypesByMIMEType success. typeIds: ${typeIds}`);
       } catch (e) {
@@ -8672,7 +8671,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest159 start');
       try {
-        let typeIds = uniformTypeDescriptor.getUniformDataTypesByMIMEType('application/vnd.apple.pages', 'general.composite-object');
+        let typeIds = UTD.getUniformDataTypesByMIMEType('application/vnd.apple.pages', 'general.composite-object');
         expect(typeIds[0]).assertEqual('com.apple.iwork.pages.pages');
         console.log(tag + `getUniformDataTypesByMIMEType success. typeIds: ${typeIds}`);
       } catch (e) {
@@ -8694,7 +8693,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest160 start');
       try {
-        let typeIds = uniformTypeDescriptor.getUniformDataTypesByMIMEType('application/vnd.apple.pages', 'com.apple.iwork');
+        let typeIds = UTD.getUniformDataTypesByMIMEType('application/vnd.apple.pages', 'com.apple.iwork');
         expect(typeIds[0]).assertEqual('com.apple.iwork.pages.pages');
         console.log(tag + `getUniformDataTypesByMIMEType success. typeIds: ${typeIds}`);
       } catch (e) {
@@ -8716,7 +8715,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest161', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest161 start');
       try {
-        let typeIds = uniformTypeDescriptor.getUniformDataTypesByMIMEType('application/vnd.apple.numbers');
+        let typeIds = UTD.getUniformDataTypesByMIMEType('application/vnd.apple.numbers');
         expect(typeIds[0]).assertEqual('com.apple.iwork.numbers.numbers');
         console.log(tag + `getUniformDataTypesByMIMEType success. typeIds: ${typeIds}`);
       } catch (e) {
@@ -8738,7 +8737,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest162', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest162 start');
       try {
-        let typeIds = uniformTypeDescriptor.getUniformDataTypesByMIMEType('application/vnd.apple.numbers', 'general.composite-object');
+        let typeIds = UTD.getUniformDataTypesByMIMEType('application/vnd.apple.numbers', 'general.composite-object');
         expect(typeIds[0]).assertEqual('com.apple.iwork.numbers.numbers');
         console.log(tag + `getUniformDataTypesByMIMEType success. typeIds: ${typeIds}`);
       } catch (e) {
@@ -8760,7 +8759,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest163', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest163 start');
       try {
-        let typeIds = uniformTypeDescriptor.getUniformDataTypesByMIMEType('application/vnd.apple.numbers', 'com.apple.iwork');
+        let typeIds = UTD.getUniformDataTypesByMIMEType('application/vnd.apple.numbers', 'com.apple.iwork');
         expect(typeIds[0]).assertEqual('com.apple.iwork.numbers.numbers');
         console.log(tag + `getUniformDataTypesByMIMEType success. typeIds: ${typeIds}`);
       } catch (e) {
@@ -8782,7 +8781,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest164', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest164 start');
       try {
-        let typeIds = uniformTypeDescriptor.getUniformDataTypesByMIMEType('application/vnd.apple.keynote');
+        let typeIds = UTD.getUniformDataTypesByMIMEType('application/vnd.apple.keynote');
         expect(typeIds[0]).assertEqual('com.apple.iwork.keynote.key');
         console.log(tag + `getUniformDataTypesByMIMEType success. typeIds: ${typeIds}`);
       } catch (e) {
@@ -8804,7 +8803,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest165', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest165 start');
       try {
-        let typeIds = uniformTypeDescriptor.getUniformDataTypesByMIMEType('application/vnd.apple.keynote', 'general.composite-object');
+        let typeIds = UTD.getUniformDataTypesByMIMEType('application/vnd.apple.keynote', 'general.composite-object');
         expect(typeIds[0]).assertEqual('com.apple.iwork.keynote.key');
         console.log(tag + `getUniformDataTypesByMIMEType success. typeIds: ${typeIds}`);
       } catch (e) {
@@ -8826,7 +8825,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest166', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest166 start');
       try {
-        let typeIds = uniformTypeDescriptor.getUniformDataTypesByMIMEType('application/vnd.apple.keynote', 'com.apple.iwork');
+        let typeIds = UTD.getUniformDataTypesByMIMEType('application/vnd.apple.keynote', 'com.apple.iwork');
         expect(typeIds[0]).assertEqual('com.apple.iwork.keynote.key');
         console.log(tag + `getUniformDataTypesByMIMEType success. typeIds: ${typeIds}`);
       } catch (e) {
@@ -8848,7 +8847,7 @@ export default function UDMFApiDescriptorTest() {
     it('UDMFUtdTest167', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       console.log(tag + 'UDMFUtdTest167 start');
       try {
-        let typeObj:uniformTypeDescriptor.TypeDescriptor = uniformTypeDescriptor.getTypeDescriptor('com.apple.iwork');
+        let typeObj:UTD.TypeDescriptor = UTD.getTypeDescriptor('com.apple.iwork');
         if (typeObj) {
           let typeId = typeObj.typeId;
           let belongingToTypes = typeObj.belongingToTypes;
