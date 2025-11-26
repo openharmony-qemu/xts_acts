@@ -7967,7 +7967,7 @@ export default function UDMFApiDescriptorTest() {
 
     /**
      * @tc.name   UDMFUtdTest130
-     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1300
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1305
      * @tc.desc   getUniformDataTypeByFilenameExtension Suffix is .page com.apple.iwork
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8244,7 +8244,7 @@ export default function UDMFApiDescriptorTest() {
 
     /**
      * @tc.name   UDMFUtdTest140
-     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1400
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1405
      * @tc.desc   getUniformDataTypeByMIMEType Test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8464,7 +8464,7 @@ export default function UDMFApiDescriptorTest() {
 
     /**
      * @tc.name   UDMFUtdTest150
-     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1500
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1505
      * @tc.desc   getUniformDataTypesByFilenameExtension with belongingToTypes general.composite-object
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -8684,7 +8684,7 @@ export default function UDMFApiDescriptorTest() {
 
     /**
      * @tc.name   UDMFUtdTest160
-     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1600
+     * @tc.number SUB_DistributedData_UDMF_SDK_UniformTypeDescriptorJsAPITest_1605
      * @tc.desc   getUniformDataTypesByMIMEType with belongingToTypes com.apple.iwork
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
