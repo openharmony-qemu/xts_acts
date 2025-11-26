@@ -54,7 +54,6 @@ export default function AVPlayerOn_BufferingUpdateTest() {
       const testName = 'SUB_AVPLAYER_ON_BUFFERING_UPDATE_TEST_001';
       try {
         let avPlayer = await media.createAVPlayer();
-        console.info(TAG,testName,avPlayer,'1111111111')
         avPlayer.on('bufferingUpdate', null as ESObject)
         expect(avPlayer !== undefined).assertTrue()
         done();
