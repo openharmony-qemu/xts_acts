@@ -38,6 +38,7 @@ export default function MediaSourceSetMediaResourceLoaderDelegateTest() {
       console.info(TAG, 'afterAll case.');
     });
 
+
     /**
      * @tc.number MEDIA_SOURCE_SET_MEDIA_RESOURCE_LOADER_DELEGATE_001
      * @tc.name   MEDIA_SOURCE_SET_MEDIA_RESOURCE_LOADER_DELEGATE_001

@@ -38,6 +38,7 @@ export default function MediaVideoPlayerOn_audioInterruptTest() {
       console.info(TAG, 'afterAll case.');
     });
 
+
     /**
      * @tc.number MEDIA_VIDEO_PLAYER_ON_AUDIO_INTERRUPT_001
      * @tc.name   MEDIA_VIDEO_PLAYER_ON_AUDIO_INTERRUPT_001

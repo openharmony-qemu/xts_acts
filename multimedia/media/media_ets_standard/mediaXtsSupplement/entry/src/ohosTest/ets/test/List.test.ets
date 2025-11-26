@@ -43,7 +43,6 @@ export default function testsuite() {
   AVPlayerSetMediaSourceSuppTest();
   StateChangeTest();
   OnTrackChangeTest();
-
   AVPlayerOn_BufferingUpdateTest();
   AVPlayerOnMessageReceivedTest();
   MediaAVPlayerOff_trackChangeTest();
