@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,7 @@
 
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
-// import Utils from '../../../ets/MainAbility/common/Utils';
+
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index';
 import router from '@ohos.router';
 import {
@@ -63,23 +64,22 @@ export default function LayoutInspectorTest() {
         console.info("get LayoutInspectorTest state pages:" + JSON.stringify(pages));
         if (!("layoutInspector" == pages.name)) {
           console.info("get LayoutInspectorTest pages.name:" + JSON.stringify(pages.name));
-          //let result = await routerInstance.pushUrl(options);
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          //console.info("push LayoutInspectorTest page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push LayoutInspectorTest page error:" + err);
       }
       console.info("LayoutInspectorTest beforeEach end");
-      // done();
+      
     });
     afterEach(async () => {
     });
 
     
-    
-/*
+    /*
      * @tc.number   ISLAYOUT_INSPECTOR_static_0100
      * @tc.name     ISLAYOUT_INSPECTOR_static_0100
      * @tc.desc     ISLAYOUT_INSPECTOR_static_0100
@@ -87,21 +87,20 @@ export default function LayoutInspectorTest() {
      */
 it('ISLAYOUT_INSPECTOR_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ISLAYOUT_INSPECTOR_0100 START');
-      // let testStr: string = globalThis.context.getFilteredInspectorTree(['isLayoutInspector'])
-      let testStr: string = AppStorage.get<UIContext>("uiContext")!.getFilteredInspectorTree(['isLayoutInspector'])
+      
+      let testStr: string = AppStorage.get<UIContext>("UIContext")!.getFilteredInspectorTree(['isLayoutInspector'])
       console.info("ISLAYOUT_INSPECTOR_0100 testStr: " + testStr);
       console.info('ISLAYOUT_INSPECTOR_0100 content' + JSON.parseJsonElement(testStr).getString("content"));
-      // console.info('ISLAYOUT_INSPECTOR_0100 content' + JSON.parseJsonElement(testStr).content);
+      
       let isContainContent: boolean = JSON.parseJsonElement(testStr).getString("content") === undefined ? false : true
-      // let isContainContent: boolean = JSON.parseJsonElement(testStr).content === undefined ? false : true
+      
       expect(isContainContent).assertEqual(true);
       console.info('[ISLAYOUT_INSPECTOR_0100] END');
       done();
     });
 
     
-    
-/*
+    /*
      * @tc.number   ISLAYOUT_INSPECTOR_static_0200
      * @tc.name     ISLAYOUT_INSPECTOR_static_0200
      * @tc.desc     ISLAYOUT_INSPECTOR_static_0200
@@ -109,13 +108,13 @@ it('ISLAYOUT_INSPECTOR_static_0100', Level.LEVEL1, async (done: () => void): Pro
      */
 it('ISLAYOUT_INSPECTOR_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ISLAYOUT_INSPECTOR_0200 start: ");
-      // let testStr: string = globalThis.context.getFilteredInspectorTree(['content'])
-      let testStr: string = AppStorage.get<UIContext>("uiContext")!.getFilteredInspectorTree(['content'])
+      
+      let testStr: string = AppStorage.get<UIContext>("UIContext")!.getFilteredInspectorTree(['content'])
       console.info("ISLAYOUT_INSPECTOR_0200 testStr: " + testStr);
       console.info('ISLAYOUT_INSPECTOR_0200 content' + JSON.parseJsonElement(testStr).getString("content"));
-      // console.info('ISLAYOUT_INSPECTOR_0200 content' + JSON.parseJsonElement(testStr).content);
+      
       let isContainContent: boolean = JSON.parseJsonElement(testStr).getString("content") === undefined ? true : false
-      // let isContainContent: boolean = JSON.parseJsonElement(testStr).content === undefined ? true : false
+      
       expect(isContainContent).assertEqual(true);
       console.info('[ISLAYOUT_INSPECTOR_0200] END');
       done();

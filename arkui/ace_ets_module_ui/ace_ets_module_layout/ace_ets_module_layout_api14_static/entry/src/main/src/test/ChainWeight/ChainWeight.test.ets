@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -76,10 +77,10 @@ export default function ChainWeight() {
         console.info("get ChainWeight state pages:" + JSON.stringify(pages));
         if (!("ChainWeight" == pages.name)) {
           console.info("get ChainWeight pages.name:" + JSON.stringify(pages.name));
-          // let result = routerInstance.pushUrl(options);
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          // console.info("push ChainWeight page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push ChainWeight page error:" + err);
@@ -91,14 +92,13 @@ export default function ChainWeight() {
     });
 
 
-    
     /*
      * @tc.number   ChainWeight_static_0100
      * @tc.name     ChainWeight_static_0100
      * @tc.desc     ChainWeight_static_0100
      * @tc.level    Level.LEVEL0
      */
-it('ChainWeight_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    it('ChainWeight_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('ChainWeight_static_0100 START');
       await CommonFunc.sleep(1000);
 

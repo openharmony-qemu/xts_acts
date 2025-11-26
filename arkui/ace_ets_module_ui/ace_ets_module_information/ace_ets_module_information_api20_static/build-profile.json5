@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,23 +14,21 @@
  */
 {
   "app": {
-    "signingConfigs": [
-
-    ],
+    "signingConfigs": [],
     "products": [
       {
         "name": "default",
         "signingConfig": "default",
-        "arkTSVersion": "1.2",
-        "compatibleSdkVersion": "22",
+        "compatibleSdkVersion": "13",
         "compileSdkVersion": "22",
+        "arkTSVersion": "1.2",
         "runtimeOS": "OpenHarmony",
         "buildOption": {
           "strictMode": {
             "caseSensitiveCheck": true,
             "useNormalizedOHMUrl": true
           }
-        },
+        }
       }
     ],
     "buildModeSet": [

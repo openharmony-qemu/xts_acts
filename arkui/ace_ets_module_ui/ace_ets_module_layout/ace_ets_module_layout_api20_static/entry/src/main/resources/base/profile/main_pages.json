@@ -1,6 +1,6 @@
 {
   "src": [
-    "MainAbility/pages/index/index",
+    "MainAbility/pages/Index/index",
     "MainAbility/pages/Flex/FlexLayoutPolicyPage",
     "MainAbility/pages/GridRow/GridRowNoColumnsPage",
     "MainAbility/pages/BoxAlign/ButtonAlign",

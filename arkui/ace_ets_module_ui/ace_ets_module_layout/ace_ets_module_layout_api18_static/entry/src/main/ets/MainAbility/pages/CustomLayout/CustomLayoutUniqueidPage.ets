@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -60,7 +61,7 @@ class MyNodeController extends NodeController {
 struct CustomLayout {
   @Builder
   childrenBuilder() {
-    ForEach([0, 1], (item: Int, index: Int) => { //暂不支持lazyForEach的写法
+    ForEach([0, 1], (item: Int, index: int) => { 
       NodeContainer(new MyNodeController())
         .id('CustomLayoutUniqueid_NodeContainer_' + index)
     })
@@ -90,14 +91,14 @@ struct CustomLayout {
       const nodeContainerFrameNode = uiContext.getFrameNodeById('CustomLayoutUniqueid_NodeContainer_' + index)
       AppStorage.setOrCreate('CustomLayoutUniqueid_onMeasureSize_FrameNode_UniqueId_' + index, child.uniqueId)
       if (uiContext) {
-        // let node: FrameNode | null =
-        //   uiContext.getFrameNodeByUniqueId(child.uniqueId as Long) // 获取NodeContainer组件的FrameNode
-        // if (node) {
-        //   // node.getChild(0)!.commonAttribute.id('CustomLayoutUniqueid_Child_' + index)
-        //   // node.getChild(0)!.commonAttribute.width(100)
-        //   // node.getChild(0)!.commonAttribute.height(100)
-        //   // node.getChild(0)!.commonAttribute.backgroundColor(Color.Pink) // 修改FrameNode的尺寸与背景颜色
-        // }
+        let node: FrameNode | null =
+           uiContext.getFrameNodeByUniqueId(Long.toInt(child.uniqueId!))
+        if (node) {
+          node.getChild(0)!.commonAttribute.id('CustomLayoutUniqueid_Child_' + index)
+          node.getChild(0)!.commonAttribute.width(100)
+          node.getChild(0)!.commonAttribute.height(100)
+          node.getChild(0)!.commonAttribute.backgroundColor(Color.Pink) 
+        }
       }
       child.measure({
         minHeight: size,

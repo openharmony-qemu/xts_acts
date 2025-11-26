@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -58,7 +59,7 @@ async function ComparisonLGAssert() {
   let GridCol_12: RectValue = CommonFunc.getComponentRect('GridRow_No_Columns_11');
   let GridCol_13: RectValue = CommonFunc.getComponentRect('GridRow_No_Columns_12');
 
-  // first row
+  
   expect(Math.floor(Math.abs(GridCol_1.left - GridRow.left)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_1.top - GridRow.top)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_2.top - GridRow.top)) <= 1).assertTrue();
@@ -73,7 +74,7 @@ async function ComparisonLGAssert() {
   expect(Math.floor(Math.abs(GridCol_11.top - GridRow.top)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_12.top - GridRow.top)) <= 1).assertTrue();
 
-  // second row
+  
   expect(Math.floor(Math.abs(GridCol_13.left - GridRow.left)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_13.top - GridCol_1.bottom)) <= 1).assertTrue();
 }
@@ -94,7 +95,7 @@ async function ComparisonMDAssert() {
   let GridCol_12: RectValue = CommonFunc.getComponentRect('GridRow_No_Columns_11');
   let GridCol_13: RectValue = CommonFunc.getComponentRect('GridRow_No_Columns_12');
 
-  // first row
+  
   expect(Math.floor(Math.abs(GridCol_1.left - GridRow.left)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_1.top - GridRow.top)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_2.top - GridRow.top)) <= 1).assertTrue();
@@ -105,7 +106,7 @@ async function ComparisonMDAssert() {
   expect(Math.floor(Math.abs(GridCol_7.top - GridRow.top)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_8.top - GridRow.top)) <= 1).assertTrue();
 
-  // second row
+  
   expect(Math.floor(Math.abs(GridCol_9.left - GridRow.left)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_9.top - GridCol_1.bottom)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_10.top - GridCol_1.bottom)) <= 1).assertTrue();
@@ -130,28 +131,28 @@ async function ComparisonSMAssert() {
   let GridCol_12: RectValue = CommonFunc.getComponentRect('GridRow_No_Columns_11');
   let GridCol_13: RectValue = CommonFunc.getComponentRect('GridRow_No_Columns_12');
 
-  // first row
+  
   expect(Math.floor(Math.abs(GridCol_1.left - GridRow.left)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_1.top - GridRow.top)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_2.top - GridRow.top)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_3.top - GridRow.top)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_4.top - GridRow.top)) <= 1).assertTrue();
 
-  // second row
+  
   expect(Math.floor(Math.abs(GridCol_5.left - GridRow.left)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_5.top - GridCol_1.bottom)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_6.top - GridCol_1.bottom)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_7.top - GridCol_1.bottom)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_8.top - GridCol_1.bottom)) <= 1).assertTrue();
 
-  // third row
+  
   expect(Math.floor(Math.abs(GridCol_9.left - GridRow.left)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_9.top - GridCol_5.bottom)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_10.top - GridCol_5.bottom)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_11.top - GridCol_5.bottom)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_12.top - GridCol_5.bottom)) <= 1).assertTrue();
 
-  // fourth row
+  
   expect(Math.floor(Math.abs(GridCol_13.left - GridRow.left)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_13.top - GridCol_9.bottom)) <= 1).assertTrue();
 }
@@ -172,37 +173,37 @@ async function ComparisonXSAssert() {
   let GridCol_12: RectValue = CommonFunc.getComponentRect('GridRow_No_Columns_11');
   let GridCol_13: RectValue = CommonFunc.getComponentRect('GridRow_No_Columns_12');
 
-  // first row
+  
   expect(Math.floor(Math.abs(GridCol_1.left - GridRow.left)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_1.top - GridRow.top)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_2.top - GridRow.top)) <= 1).assertTrue();
 
-  // second row
+  
   expect(Math.floor(Math.abs(GridCol_3.left - GridRow.left)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_3.top - GridCol_1.bottom)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_4.top - GridCol_1.bottom)) <= 1).assertTrue();
 
-  // third row
+  
   expect(Math.floor(Math.abs(GridCol_5.left - GridRow.left)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_5.top - GridCol_3.bottom)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_6.top - GridCol_3.bottom)) <= 1).assertTrue();
 
-  // fourth row
+  
   expect(Math.floor(Math.abs(GridCol_7.left - GridRow.left)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_7.top - GridCol_5.bottom)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_8.top - GridCol_5.bottom)) <= 1).assertTrue();
 
-  // fifth row
+  
   expect(Math.floor(Math.abs(GridCol_9.left - GridRow.left)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_9.top - GridCol_7.bottom)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_10.top - GridCol_7.bottom)) <= 1).assertTrue();
 
-  // sixth row
+  
   expect(Math.floor(Math.abs(GridCol_11.left - GridRow.left)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_11.top - GridCol_9.bottom)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_12.top - GridCol_9.bottom)) <= 1).assertTrue();
 
-  // seventh row
+  
   expect(Math.floor(Math.abs(GridCol_13.left - GridRow.left)) <= 1).assertTrue();
   expect(Math.floor(Math.abs(GridCol_13.top - GridCol_11.bottom)) <= 1).assertTrue();
 }
@@ -229,22 +230,22 @@ export default function GridRowNoColumnsTest() {
         console.info("get GridRowNoColumnsTest state pages:" + JSON.stringify(pages));
         if (!("GridRowNoColumnsPage" == pages.name)) {
           console.info("get GridRowNoColumnsTest pages.name:" + JSON.stringify(pages.name));
-          //let result = await routerInstance.pushUrl(options);
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          //console.info("push GridRowNoColumnsTest page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push GridRowNoColumnsTest page error:" + err);
       }
       console.info("GridRowNoColumnsTest beforeEach end");
+      
     });
     afterEach(async () => {
     });
 
     
-    
-/*
+    /*
      * @tc.number   GridRowNoColumnsTest_static_0100
      * @tc.name     GridRowNoColumnsTest_static_0100
      * @tc.desc     GridRowNoColumnsTest_static_0100
@@ -255,9 +256,10 @@ it('GridRowNoColumnsTest_static_0100', Level.LEVEL1, async (done: () => void): P
       let driver: Driver = Driver.create()
       await CommonFunc.sleep(1000);
 
-      // change to xxl
+      
       let button = await driver.findComponent(ON.id('GridRow_No_Columns_001_Btn_1'));
-      button?.click();
+      
+      await (button?.click() as Promise<void>);
       console.info("[GridRowNoColumnsTest_static_0100] click GridRow_No_Columns_001_Btn_1");
       await CommonFunc.sleep(1000);
 
@@ -268,9 +270,9 @@ it('GridRowNoColumnsTest_static_0100', Level.LEVEL1, async (done: () => void): P
       expect(obj.getElement('$attrs').getString('content')).assertEqual('xxl');
       await ComparisonLGAssert();
 
-      // change to xl
+      
       button = await driver.findComponent(ON.id('GridRow_No_Columns_001_Btn_2'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       console.info("[GridRowNoColumnsTest_static_0100] click GridRow_No_Columns_001_Btn_2");
       await CommonFunc.sleep(1000);
 
@@ -281,9 +283,9 @@ it('GridRowNoColumnsTest_static_0100', Level.LEVEL1, async (done: () => void): P
       expect(obj.getElement('$attrs').getString('content')).assertEqual('xl');
       await ComparisonLGAssert();
 
-      // change to lg
+      
       button = await driver.findComponent(ON.id('GridRow_No_Columns_001_Btn_3'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       console.info("[GridRowNoColumnsTest_static_0100] click GridRow_No_Columns_001_Btn_3");
       await CommonFunc.sleep(1000);
 
@@ -294,9 +296,9 @@ it('GridRowNoColumnsTest_static_0100', Level.LEVEL1, async (done: () => void): P
       expect(obj.getElement('$attrs').getString('content')).assertEqual('lg');
       await ComparisonLGAssert();
 
-      // change to md
+      
       button = await driver.findComponent(ON.id('GridRow_No_Columns_001_Btn_4'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       console.info("[GridRowNoColumnsTest_static_0100] click GridRow_No_Columns_001_Btn_4");
       await CommonFunc.sleep(1000);
 
@@ -307,9 +309,9 @@ it('GridRowNoColumnsTest_static_0100', Level.LEVEL1, async (done: () => void): P
       expect(obj.getElement('$attrs').getString('content')).assertEqual('md');
       await ComparisonMDAssert();
 
-      // change to sm
+      
       button = await driver.findComponent(ON.id('GridRow_No_Columns_001_Btn_5'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       console.info("[GridRowNoColumnsTest_static_0100] click GridRow_No_Columns_001_Btn_5");
       await CommonFunc.sleep(1000);
 
@@ -320,9 +322,9 @@ it('GridRowNoColumnsTest_static_0100', Level.LEVEL1, async (done: () => void): P
       expect(obj.getElement('$attrs').getString('content')).assertEqual('sm');
       await ComparisonSMAssert();
 
-      // change to xs
+      
       button = await driver.findComponent(ON.id('GridRow_No_Columns_001_Btn_6'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       console.info("[GridRowNoColumnsTest_static_0100] click GridRow_No_Columns_001_Btn_6");
       await CommonFunc.sleep(1000);
 

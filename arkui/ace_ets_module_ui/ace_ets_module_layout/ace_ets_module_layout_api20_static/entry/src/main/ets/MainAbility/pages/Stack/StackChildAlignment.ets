@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -34,15 +35,15 @@ struct StackChildAlignment {
     Alignment.TopStart, Alignment.Top, Alignment.TopEnd,
     Alignment.Start, Alignment.Center, Alignment.End,
     Alignment.BottomStart, Alignment.Bottom, Alignment.BottomEnd];
-  @State stackAlignIndex: int = 0;
+  @State stackAlignIndex: number = 0;
   private directionArr: Direction[] = [Direction.Ltr, Direction.Rtl, Direction.Auto];
-  @State directionIndex: int = 0;
+  @State directionIndex: number = 0;
 
   build() {
     Row() {
       Column() {
         Stack({
-          alignContent: this.stackAlignArr[this.stackAlignIndex]
+          alignContent: this.stackAlignArr[this.stackAlignIndex.toInt()]
         }) {
           Text('TOP_START')
             .width(60)
@@ -50,21 +51,21 @@ struct StackChildAlignment {
             .fontSize(10)
             .backgroundColor(Color.Yellow)
             .id('AlignmentText1')
-          // .layoutGravity(LocalizedAlignment.TOP_START)
+          
           Text('TOP')
             .width(60)
             .height(60)
             .fontSize(10)
             .backgroundColor(Color.Yellow)
             .id('AlignmentText2')
-          // .layoutGravity(LocalizedAlignment.TOP)
+          
           Text('TOP_END')
             .width(60)
             .height(60)
             .fontSize(10)
             .backgroundColor(Color.Yellow)
             .id('AlignmentText3')
-          // .layoutGravity(LocalizedAlignment.TOP_END)
+          
 
           Text('START')
             .width(60)
@@ -72,41 +73,41 @@ struct StackChildAlignment {
             .backgroundColor(Color.Yellow)
             .fontSize(10)
             .id('AlignmentText4')
-          // .layoutGravity(LocalizedAlignment.START)
+          
           Text('CENTER')
             .width(60)
             .height(60)
             .backgroundColor(Color.Yellow)
             .fontSize(10)
             .id('AlignmentText5')
-          // .layoutGravity(LocalizedAlignment.CENTER)
+          
           Text('END')
             .width(60)
             .height(60)
             .backgroundColor(Color.Yellow)
             .fontSize(10)
             .id('AlignmentText6')
-          // .layoutGravity(LocalizedAlignment.END)
+          
 
           Text('BOTTOM_START').width(60).height(60).backgroundColor(Color.Yellow).id('AlignmentText7')
-          // .layoutGravity(LocalizedAlignment.BOTTOM_START).fontSize(10)
+          
           Text('BOTTOM').width(60).height(60).backgroundColor(Color.Yellow).id('AlignmentText8')
-          // .layoutGravity(LocalizedAlignment.BOTTOM).fontSize(10)
+          
           Text('BOTTOM_END').width(60).height(60).backgroundColor(Color.Yellow).id('AlignmentText9')
-          // .layoutGravity(LocalizedAlignment.BOTTOM_END).fontSize(10)
+          
         }.width(190).height(190).backgroundColor(Color.Grey)
-        // .margin({ top: 5, bottom: 5 })
-        .direction(this.directionArr[this.directionIndex])
+        
+        .direction(this.directionArr[this.directionIndex.toInt()])
 
         Row() {
-          Button('stackAlign: ' + this.stackAlignArr[this.stackAlignIndex])
+          Button('stackAlign: ' + this.stackAlignArr[this.stackAlignIndex.toInt()])
             .width(95)
             .height(25)
             .fontSize(10)
             .onClick((e: ClickEvent) => {
               this.stackAlignIndex = ++this.stackAlignIndex % this.stackAlignArr.length;
             })
-          Button('Direction: ' + this.directionArr[this.directionIndex])
+          Button('Direction: ' + this.directionArr[this.directionIndex.toInt()])
             .width(95)
             .height(25)
             .fontSize(10)

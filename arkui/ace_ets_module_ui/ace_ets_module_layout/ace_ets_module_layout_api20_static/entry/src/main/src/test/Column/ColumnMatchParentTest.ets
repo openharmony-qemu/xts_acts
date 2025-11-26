@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -27,7 +28,6 @@ import {
   WindowMode,
   PointerMatrix
 } from '@ohos.UiTest';
-
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
@@ -46,66 +46,65 @@ let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 
-export default function RowMatchParentTest() {
-  describe('RowMatchParentTest', () => {
+export default function ColumnMatchParentTest() {
+  describe('ColumnMatchParentTest', () => {
     beforeAll(() => {
-      console.info("RowMatchParentTest beforeAll start");
+      console.info("ColumnMatchParentTest beforeAll start");
 
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.api20.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
-      console.info("RowMatchParentTest beforeEach start");
+      console.info("ColumnMatchParentTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/Row/RowMatchParent',
+        url: 'MainAbility/pages/Column/ColumnMatchParent',
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
-        console.info("get RowMatchParentTest state pages:" + JSON.stringify(pages));
-        if (!("RowMatchParent" == pages.name)) {
-          console.info("get RowMatchParentTest pages.name:" + JSON.stringify(pages.name));
-          //let result = await routerInstance.pushUrl(options);
+        console.info("get ColumnMatchParentTest state pages:" + JSON.stringify(pages));
+        if (!("ColumnMatchParent" == pages.name)) {
+          console.info("get ColumnMatchParentTest pages.name:" + JSON.stringify(pages.name));
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          //console.info("push RowMatchParentTest page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
-        console.error("push RowMatchParentTest page error:" + err);
+        console.error("push ColumnMatchParentTest page error:" + err);
       }
-      console.info("RowMatchParentTest beforeEach end");
-      // done();
+      console.info("ColumnMatchParentTest beforeEach end");
+      
     });
     afterEach(async () => {
     });
 
 
-    
-/*
-     * @tc.number   RowMatchParentTest_static_0100
-     * @tc.name     RowMatchParentTest_static_0100
-     * @tc.desc     RowMatchParentTest_static_0100
+    /*
+     * @tc.number   ColumnMatchParentTest_static_0100
+     * @tc.name     ColumnMatchParentTest_static_0100
+     * @tc.desc     ColumnMatchParentTest_static_0100
      * @tc.level    Level.LEVEL1
      */
-it('RowMatchParentTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('[RowMatchParentTest_static_0100] START');
+it('ColumnMatchParentTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('[ColumnMatchParentTest_static_0100] START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
 
-      let strJson = inspector.getInspectorByKey('RowMatchParentTest_0100_child');
+      let strJson = inspector.getInspectorByKey('ColumnMatchParentTest_static_0100_child');
       let obj = JSON.parseJsonElement(strJson);
       let width = parseFloat(obj.getElement("$attrs").getString("width"))
-      let height = parseFloat(obj.getElement("$attrs").getString('height'))
-      console.info("[RowMatchParentTest_static_0100] width is: " + width);
-      console.info("[RowMatchParentTest_static_0100] height is: " + height);
+      let height = parseFloat(obj.getElement("$attrs").getString("height"))
+      console.info("[ColumnMatchParentTest_static_0100] width is: " + width);
+      console.info("[ColumnMatchParentTest_static_0100] height is: " + height);
 
-      // 200 - padding(20)*2 - border(10)*2 - safeAreaPadding(10)*2
+      
       expect(Math.floor(Math.abs(width - 120)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(height - 120)) <= 1).assertTrue();
 
-      console.info('[RowMatchParentTest_static_0100] END');
+      console.info('[ColumnMatchParentTest_static_0100] END');
       done();
     });
   })

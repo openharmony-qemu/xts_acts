@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -31,49 +32,49 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 @Component
 struct RowSpaceResourcePage {
   build() {
-    // Column({ space: 2 } as ColumnOptions) {
-    //   // 通过资源引用方式设置子组件水平方向的间距
-    //   Row({ space: $r("app.string.stringSpace").toString() } as RowOptions) {
-    //     Row() {
-    //       Text('1')
-    //     }.width('20%').height('90%').backgroundColor(0xAFEEEE).id('RowSpaceResource_Row1_01')
-    //
-    //     Row() {
-    //       Text('2')
-    //     }.width('20%').height('90%').backgroundColor(0x00FFFF).id('RowSpaceResource_Row1_02')
-    //
-    //     Row() {
-    //       Text('3')
-    //     }.width('20%').height('90%').backgroundColor(0xAFEEEE).id('RowSpaceResource_Row1_03')
-    //   }.width('90%').height('30%').backgroundColor(Color.Pink).id('RowSpaceResource_Row1')
-    //
-    //   Row({ space: $r("app.integer.integerSpace").toString() } as RowOptions) {
-    //     Row() {
-    //       Text('1')
-    //     }.width('20%').height('90%').backgroundColor(0xAFEEEE).id('RowSpaceResource_Row2_01')
-    //
-    //     Row() {
-    //       Text('2')
-    //     }.width('20%').height('90%').backgroundColor(0x00FFFF).id('RowSpaceResource_Row2_02')
-    //
-    //     Row() {
-    //       Text('3')
-    //     }.width('20%').height('90%').backgroundColor(0xAFEEEE).id('RowSpaceResource_Row2_03')
-    //   }.width('90%').height('30%').backgroundColor(Color.Pink).id('RowSpaceResource_Row2')
-    //
-    //   Row({ space: $r("app.float.floatSpace").toString() } as RowOptions) {
-    //     Row() {
-    //       Text('1')
-    //     }.width('20%').height('90%').backgroundColor(0xAFEEEE).id('RowSpaceResource_Row3_01')
-    //
-    //     Row() {
-    //       Text('2')
-    //     }.width('20%').height('90%').backgroundColor(0x00FFFF).id('RowSpaceResource_Row3_02')
-    //
-    //     Row() {
-    //       Text('3')
-    //     }.width('20%').height('90%').backgroundColor(0xAFEEEE).id('RowSpaceResource_Row3_03')
-    //   }.width('90%').height('30%').backgroundColor(Color.Pink).id('RowSpaceResource_Row3')
-    // }.width('100%').height('100%')
+    Column({ space: 2 } as ColumnOptions) {
+      
+      Row({ space: $r("app.string.stringSpace").toString() } as RowOptions) {
+        Row() {
+          Text('1')
+        }.width('20%').height('90%').backgroundColor(0xAFEEEE).id('RowSpaceResource_Row1_01')
+
+        Row() {
+          Text('2')
+        }.width('20%').height('90%').backgroundColor(0x00FFFF).id('RowSpaceResource_Row1_02')
+
+        Row() {
+          Text('3')
+        }.width('20%').height('90%').backgroundColor(0xAFEEEE).id('RowSpaceResource_Row1_03')
+      }.width('90%').height('30%').backgroundColor(Color.Pink).id('RowSpaceResource_Row1')
+
+      Row({ space: $r("app.integer.integerSpace").toString() } as RowOptions) {
+        Row() {
+          Text('1')
+        }.width('20%').height('90%').backgroundColor(0xAFEEEE).id('RowSpaceResource_Row2_01')
+
+        Row() {
+          Text('2')
+        }.width('20%').height('90%').backgroundColor(0x00FFFF).id('RowSpaceResource_Row2_02')
+
+        Row() {
+          Text('3')
+        }.width('20%').height('90%').backgroundColor(0xAFEEEE).id('RowSpaceResource_Row2_03')
+      }.width('90%').height('30%').backgroundColor(Color.Pink).id('RowSpaceResource_Row2')
+
+      Row({ space: $r("app.float.floatSpace").toString() } as RowOptions) {
+        Row() {
+          Text('1')
+        }.width('20%').height('90%').backgroundColor(0xAFEEEE).id('RowSpaceResource_Row3_01')
+
+        Row() {
+          Text('2')
+        }.width('20%').height('90%').backgroundColor(0x00FFFF).id('RowSpaceResource_Row3_02')
+
+        Row() {
+          Text('3')
+        }.width('20%').height('90%').backgroundColor(0xAFEEEE).id('RowSpaceResource_Row3_03')
+      }.width('90%').height('30%').backgroundColor(Color.Pink).id('RowSpaceResource_Row3')
+    }.width('100%').height('100%')
   }
 }

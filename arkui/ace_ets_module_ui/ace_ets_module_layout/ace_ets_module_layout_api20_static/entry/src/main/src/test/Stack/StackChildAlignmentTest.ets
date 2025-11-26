@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -67,22 +68,21 @@ export default function StackChildAlignmentTest() {
         console.info("get StackChildAlignmentTest state pages:" + JSON.stringify(pages));
         if (!("StackChildAlignmentTest" == pages.name)) {
           console.info("get StackChildAlignmentTest pages.name:" + JSON.stringify(pages.name));
-          //let result = await routerInstance.pushUrl(options);
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          //console.info("push StackChildAlignmentTest page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push StackChildAlignmentTest page error:" + err);
       }
       console.info("StackChildAlignmentTest beforeEach end");
-      // done();
+      
     });
     afterEach(async () => {
     });
 
-    
-/*
+    /*
      * @tc.number   StackChildAlignmentTest_static_0100
      * @tc.name     StackChildAlignmentTest_static_0100
      * @tc.desc     StackChildAlignmentTest_static_0100

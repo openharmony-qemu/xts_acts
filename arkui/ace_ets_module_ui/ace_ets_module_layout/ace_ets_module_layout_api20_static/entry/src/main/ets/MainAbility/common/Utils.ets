@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,24 +15,22 @@
  */
 import RectValue from './Rect';
 import {
-  State,
-} from '@ohos.arkui.stateManagement' // should be insert by ui-plugins // should be insert by ui-plugins
-import {
-  Button,
-  ButtonAttribute,
-  ClickEvent,
-  Column,
-  Component,
   Entry,
   Text,
   TextAttribute,
+  Column,
+  Component,
+  Button,
+  ButtonAttribute,
+  ClickEvent,
   TouchObject,
   TouchType
-} from '@ohos.arkui.component' // TextAttribute should be insert by ui-plugins
-import inspector from '@ohos.arkui.inspector';
-import { sendTouchEvent } from '@ohos.arkui.Test';
-import common from '@ohos.app.ability.common';
-import { AppStorage } from '@ohos.arkui.stateManagement'
+} from '@ohos.arkui.component' 
+import {
+  State,
+} from '@ohos.arkui.stateManagement' 
+import inspector from '@ohos.arkui.inspector'
+import { sendTouchEvent } from "@kit.ArkUI";
 
 export default class Utils {
   static rect_left: number;
@@ -40,23 +39,24 @@ export default class Utils {
   static rect_bottom: number;
   static rect_value: RectValue = new RectValue();
 
-  static getComponentRect(key: string): RectValue {
-    let strJson = inspector.getInspectorByKey(key);
-    let obj1 = JSON.parseJsonElement(strJson)
-    console.info('aaaaaa222222',obj1)
-    const str = obj1.getString("$rect")
-    let parts = str.substring(1, str.length - 1).split("],[");
-    let rectInfo = parts.map((part: string) => {
-      return part.split(",").map((item: string):double => parseFloat(item.trim()));
-    });
-    console.info("windowRect Left: " + AppStorage.get<number>("winLeft") + ',' +
-      "windowRect Top: " + AppStorage.get<number>("winTop"));
-    return {
-      "left": Number(rectInfo[0][0] ?? 0),
-      "top": Number(rectInfo[0][1] ?? 0),
-      "right": Number(rectInfo[1][0] ?? 0),
-      "bottom": Number(rectInfo[1][1] ?? 0)
-    } as RectValue
+  static getComponentRect(key: string) {
+    let strJson: string = inspector.getInspectorByKey(key);
+    let obj: Record<string, Object> =
+      JSON.parse<Object>(strJson, Type.of(new String() as Object)) as Record<string, Object>;
+    console.info("[getInspectorByKey] current component obj is: " + JSON.stringify(obj));
+    let rectInfo: Array<Array<number>> =
+      JSON.parse<Object>('[' + obj["$rect"]! + ']', Type.of(new String() as Object)) as Array<Array<number>>;
+    console.info("[getInspectorByKey] rectInfo is: " + rectInfo);
+    Utils.rect_left = Number(rectInfo[0][0] ?? 0);
+    Utils.rect_top = Number(rectInfo[0][1] ?? 0);
+    Utils.rect_right = Number(rectInfo[1][0] ?? 0);
+    Utils.rect_bottom = Number(rectInfo[1][1] ?? 0);
+    return Utils.rect_value = {
+      left: Utils.rect_left,
+      top: Utils.rect_top,
+      right: Utils.rect_right,
+      bottom: Utils.rect_bottom
+    }
   }
 
   static sleep(time: int) {
@@ -94,8 +94,8 @@ export default class Utils {
       displayY: downY,
       windowX: downX,
       windowY: downY,
-      // screenX: downX,
-      // screenY: downY,
+      
+      
       type: TouchType.Down
     }
     console.info('down touch started: ' + JSON.stringify(downPoint))
@@ -113,8 +113,8 @@ export default class Utils {
         displayY: downY + (yStep * i),
         windowX: downX + (xStep * i),
         windowY: downY + (yStep * i),
-        // screenX: downX + (xStep * i),
-        // screenY: downY + (yStep * i),
+        
+        
         type: TouchType.Move,
       }
       console.info('move touch started: ' + JSON.stringify(movePoint))
@@ -136,8 +136,8 @@ export default class Utils {
       displayY: upY,
       windowX: upX,
       windowY: upY,
-      // screenX: upX,
-      // screenY: upY,
+      
+      
       type: TouchType.Up,
     }
     console.info('up touch started: ' + JSON.stringify(upPoint))

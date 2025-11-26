@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -49,7 +50,7 @@ struct StackSafeArea {
         .height(LayoutPolicy.matchParent)
         .backgroundColor(Color.Orange)
 
-        // .ignoreLayoutSafeArea(this.layoutSafeAreaType, this.layoutSafeAreaEdge)
+        
       }
       .id('StackSafeArea2')
       .width(100)
@@ -57,7 +58,7 @@ struct StackSafeArea {
       .backgroundColor(Color.Pink)
       .align(Alignment.TopStart)
 
-      // .safeAreaPadding(LengthMetrics.vp(25))
+      
 
       Row() {
         Button('SYSTEM')
@@ -97,7 +98,7 @@ struct StackSafeArea {
         Button('START')
           .id('StartButton1')
           .onClick((e: ClickEvent) => {
-            // this.layoutSafeAreaEdge = [LayoutSafeAreaEdge.START]
+            
             this.str = String(this.layoutSafeAreaEdge).toString()
           }).width(55).height(25)
       }
@@ -106,25 +107,25 @@ struct StackSafeArea {
         Button('END')
           .id('EndButton1')
           .onClick((e: ClickEvent) => {
-            // this.layoutSafeAreaEdge = [LayoutSafeAreaEdge.END]
+            
             this.str = String(this.layoutSafeAreaEdge).toString()
           }).width(55).height(25)
         Button('VERTICAL')
           .id('VerticalButton1')
           .onClick((e: ClickEvent) => {
-            // this.layoutSafeAreaEdge = [LayoutSafeAreaEdge.VERTICAL]
+            
             this.str = String(this.layoutSafeAreaEdge).toString()
           }).width(55).height(25)
         Button('HORIZONTAL')
           .id('HorizontalButton1')
           .onClick((e: ClickEvent) => {
-            // this.layoutSafeAreaEdge = [LayoutSafeAreaEdge.HORIZONTAL]
+            
             this.str = String(this.layoutSafeAreaEdge).toString()
           }).width(55).height(25)
         Button('ALL2')
           .id('AllButton2')
           .onClick((e: ClickEvent) => {
-            // this.layoutSafeAreaEdge = [LayoutSafeAreaEdge.ALL]
+            
             this.str = String(this.layoutSafeAreaEdge).toString()
           }).width(55).height(25)
       }
@@ -146,7 +147,7 @@ struct StackSafeArea {
           .id('GetSafeAreaNumber1')
           .width(75)
           .height(25)
-        //0 1 2 null undefined 0 1 2 3 4 5 6 null undefined
+        
       }
 
     }

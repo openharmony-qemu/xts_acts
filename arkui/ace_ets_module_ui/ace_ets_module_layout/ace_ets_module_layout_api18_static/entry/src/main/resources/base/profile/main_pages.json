@@ -1,6 +1,6 @@
 {
   "src": [
-    "MainAbility/pages/index/index",
+    "MainAbility/pages/Index/index",
     "MainAbility/pages/Column/ColumnSpaceResourcePage",
     "MainAbility/pages/Flex/FlexSpaceResourcePage",
     "MainAbility/pages/Row/RowSpaceResourcePage",

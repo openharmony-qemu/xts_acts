@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,8 +19,8 @@ import RowSpaceResourceTest from './Row/RowSpaceResourceTest.test';
 import CustomLayoutUniqueidTest from './CustomLayout/CustomLayoutUniqueidTest.test';
 
 export default function testsuite() {
-  ColumnSpaceResourceTest();//pass:3
+  ColumnSpaceResourceTest();
   FlexSpaceResourceTest();
   RowSpaceResourceTest();
-  CustomLayoutUniqueidTest();
+  CustomLayoutUniqueidTest()
 }

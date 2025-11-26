@@ -1,11 +1,6 @@
 {
-  "src": [
-    "MainAbility/pages/index/index",
-    "MainAbility/pages/badge/badgeResource",
-    "MainAbility/pages/progress/ProgressContent",
-    "MainAbility/pages/qrcode/QRCodeResourceStr",
-    "MainAbility/pages/textClock/TextClockFormat",
-    "MainAbility/pages/textPicker/TextPickerValue",
-    "MainAbility/pages/textTimer/TextTimerFontWeight"
-  ]
+    "src": [
+        "MainAbility/pages/index/index",
+        "MainAbility/pages/textPicker/TextPickerValue"
+    ]
 }

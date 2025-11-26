@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -67,23 +68,22 @@ export default function StackSafeAreaTest() {
         console.info("get StackSafeAreaTest state pages:" + JSON.stringify(pages));
         if (!("StackSafeAreaTest" == pages.name)) {
           console.info("get StackSafeAreaTest pages.name:" + JSON.stringify(pages.name));
-          //let result = await routerInstance.pushUrl(options);
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          //console.info("push StackSafeAreaTest page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push StackSafeAreaTest page error:" + err);
       }
       console.info("StackSafeAreaTest beforeEach end");
-      // done();
+      
     });
     afterEach(async () => {
     });
 
 
-    
-/*
+    /*
      * @tc.number   StackSafeAreaTest_static_0100
      * @tc.name     StackSafeAreaTest_static_0100
      * @tc.desc     StackSafeAreaTest_static_0100
@@ -102,28 +102,28 @@ it('StackSafeAreaTest_static_0100', Level.LEVEL1, async (done: () => void): Prom
       expect(stack_child_actual.right - stack_father_actual.right < 0).assertTrue();
 
       let button1 = await driver.findComponent(ON.id('SystemButton1'));
-      button1?.click();
+      await (button1?.click() as Promise<void>);
       await Utils.sleep(2000)
       let strJson1 = inspector.getInspectorByKey('GetSafeAreaNumber1');
       console.log('[IgnoreStackSafeAreaTest_static_0100] GetSafeAreaNumber1 is:' +
       JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString("content")));
 
       let button4 = await driver.findComponent(ON.id('NullButton1'));
-      button4?.click();
+      await (button4?.click() as Promise<void>);
       await Utils.sleep(2000)
       let strJson4 = inspector.getInspectorByKey('GetSafeAreaNumber1');
       console.log('[IgnoreStackSafeAreaTest_static_0100] GetSafeAreaNumber4 is:' +
       JSON.stringify(JSON.parseJsonElement(strJson4).getElement('$attrs').getString("content")));
 
       let button5 = await driver.findComponent(ON.id('UndefinedButton1'));
-      button5?.click();
+      await (button5?.click() as Promise<void>);
       await Utils.sleep(2000)
       let strJson5 = inspector.getInspectorByKey('GetSafeAreaNumber1');
       console.log('[IgnoreStackSafeAreaTest_static_0100] GetSafeAreaNumber5 is:' +
       JSON.stringify(JSON.parseJsonElement(strJson5).getElement('$attrs').getString("content")));
 
       let button6 = await driver.findComponent(ON.id('TopButton1'));
-      button6?.click();
+      await (button6?.click() as Promise<void>);
       await Utils.sleep(2000)
       let strJson6 = inspector.getInspectorByKey('GetSafeAreaNumber1');
       console.log('[IgnoreStackSafeAreaTest_static_0100] GetSafeAreaNumber6 is:' +
@@ -138,7 +138,7 @@ it('StackSafeAreaTest_static_0100', Level.LEVEL1, async (done: () => void): Prom
       expect(stack_child_actual2.bottom).assertEqual(stack_child_actual.bottom);
 
       let button7 = await driver.findComponent(ON.id('BottomButton1'));
-      button7?.click();
+      await (button7?.click() as Promise<void>);
       await Utils.sleep(2000)
       let strJson7 = inspector.getInspectorByKey('GetSafeAreaNumber1');
       console.log('[IgnoreStackSafeAreaTest_static_0100] GetSafeAreaNumber7 is:' +
@@ -153,7 +153,7 @@ it('StackSafeAreaTest_static_0100', Level.LEVEL1, async (done: () => void): Prom
       expect(stack_child_actual3.right).assertEqual(stack_child_actual.right);
 
       let button8 = await driver.findComponent(ON.id('StartButton1'));
-      button8?.click();
+      await (button8?.click() as Promise<void>);
       await Utils.sleep(2000)
       let strJson8 = inspector.getInspectorByKey('GetSafeAreaNumber1');
       console.log('[IgnoreStackSafeAreaTest_static_0100] GetSafeAreaNumber8 is:' +
@@ -168,7 +168,7 @@ it('StackSafeAreaTest_static_0100', Level.LEVEL1, async (done: () => void): Prom
       expect(stack_child_actual4.right).assertEqual(stack_child_actual.right);
 
       let button9 = await driver.findComponent(ON.id('EndButton1'));
-      button9?.click();
+      await (button9?.click() as Promise<void>);
       await Utils.sleep(2000)
       let strJson9 = inspector.getInspectorByKey('GetSafeAreaNumber1');
       console.log('[IgnoreStackSafeAreaTest_static_0100] GetSafeAreaNumber9 is:' +
@@ -184,7 +184,7 @@ it('StackSafeAreaTest_static_0100', Level.LEVEL1, async (done: () => void): Prom
 
 
       let button10 = await driver.findComponent(ON.id('VerticalButton1'));
-      button10?.click();
+      await (button10?.click() as Promise<void>);
       await Utils.sleep(2000)
       let strJson10 = inspector.getInspectorByKey('GetSafeAreaNumber1');
       console.log('[IgnoreStackSafeAreaTest_static_0100] GetSafeAreaNumber10 is:' +
@@ -198,7 +198,7 @@ it('StackSafeAreaTest_static_0100', Level.LEVEL1, async (done: () => void): Prom
       expect(stack_child_actual6.right).assertEqual(stack_child_actual.right);
 
       let button11 = await driver.findComponent(ON.id('HorizontalButton1'));
-      button11?.click();
+      await (button11?.click() as Promise<void>);
       await Utils.sleep(2000)
       let strJson11 = inspector.getInspectorByKey('GetSafeAreaNumber1');
       console.log('[IgnoreStackSafeAreaTest_static_0100] GetSafeAreaNumber11 is:' +
@@ -212,7 +212,7 @@ it('StackSafeAreaTest_static_0100', Level.LEVEL1, async (done: () => void): Prom
       expect(stack_child_actual7.bottom).assertEqual(stack_child_actual.bottom);
 
       let button12 = await driver.findComponent(ON.id('AllButton2'));
-      button12?.click();
+      await (button12?.click() as Promise<void>);
       await Utils.sleep(2000)
       let strJson12 = inspector.getInspectorByKey('GetSafeAreaNumber1');
       console.log('[IgnoreStackSafeAreaTest_static_0100] GetSafeAreaNumber12 is:' +
@@ -224,7 +224,7 @@ it('StackSafeAreaTest_static_0100', Level.LEVEL1, async (done: () => void): Prom
       expect(stack_child_actual8.right).assertEqual(stack_father_actual.right);
 
       let button13 = await driver.findComponent(ON.id('NullButton2'));
-      button13?.click();
+      await (button13?.click() as Promise<void>);
       await Utils.sleep(2000)
       let strJson13 = inspector.getInspectorByKey('GetSafeAreaNumber1');
       console.log('[IgnoreStackSafeAreaTest_static_0100] GetSafeAreaNumber13 is:' +
@@ -236,7 +236,7 @@ it('StackSafeAreaTest_static_0100', Level.LEVEL1, async (done: () => void): Prom
       expect(stack_child_actual9.right).assertEqual(stack_father_actual.right);
 
       let button14 = await driver.findComponent(ON.id('UndefinedButton2'));
-      button14?.click();
+      await (button14?.click() as Promise<void>);
       await Utils.sleep(2000)
       let strJson14 = inspector.getInspectorByKey('GetSafeAreaNumber1');
       console.log('[IgnoreStackSafeAreaTest_static_0100] GetSafeAreaNumber14 is:' +
