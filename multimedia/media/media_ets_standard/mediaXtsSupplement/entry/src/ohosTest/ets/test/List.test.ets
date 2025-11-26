@@ -26,6 +26,10 @@ import StateChangeTest from './media/StateChangeTest.test';
 import OnTrackChangeTest from './media/AVPlayerOnTrackChangeTest.test';
 import AVPlayerOn_BufferingUpdateTest from './media/AVPlayerOn_BufferingUpdateTest.test';
 import AVPlayerOnMessageReceivedTest from './media/AVPlayerOn_seiMessageReceivedTest.test';
+import MediaAVPlayerOff_trackChangeTest from './media/MediaAVPlayerOff_trackChange.Test.test';
+import MediaSourceSetMediaResourceLoaderDelegateTest from './media/MediaSourceSetMediaResourceLoaderDelegate.Test.test';
+import MediaVideoPlayerOn_audioInterruptTest from './media/MediaVideoPlayerOn_audioInterrupt.Test.test';
+import MediaVideoPlayerSeekTest from './media/MediaVideoPlayerSeek.Test.test';
 
 export default function testsuite() {
   AVPlayerLocalDeprecatedTest();
@@ -42,5 +46,9 @@ export default function testsuite() {
 
   AVPlayerOn_BufferingUpdateTest();
   AVPlayerOnMessageReceivedTest();
+  MediaAVPlayerOff_trackChangeTest();
+  MediaSourceSetMediaResourceLoaderDelegateTest();
+  MediaVideoPlayerOn_audioInterruptTest();
+  MediaVideoPlayerSeekTest();
 }
 
