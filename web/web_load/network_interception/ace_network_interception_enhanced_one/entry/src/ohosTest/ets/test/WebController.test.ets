@@ -69,7 +69,7 @@ export default function webController() {
     it('testStop001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("testStop001", EVENT_ID_SET_EIMIT_KEY)
       Utils.registerEvent("testStop001", true, 142026, done);
-      Utils.waitAndClickComponent(driver, "WebControllerButton");
+      await Utils.waitAndClickComponent(driver, "WebControllerButton");
     })
     /**
     * @tc.number SUB_WEB_LOADURL_HEADER_ERROR_API_0100
@@ -85,7 +85,7 @@ export default function webController() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.waitAndClickComponent(driver, "WebControllerButton");
+      await Utils.waitAndClickComponent(driver, "WebControllerButton");
     })
     /**
      * @tc.number SUB_WEB_LOADURL_HEADER_ERROR_API_0200
@@ -101,7 +101,7 @@ export default function webController() {
         done, (backData: events_emitter.EventData, expected: Object) => {
           expect(backData?.data?.ACTION).assertEqual(expected);
         });
-      Utils.waitAndClickComponent(driver, "WebControllerButton");
+      await Utils.waitAndClickComponent(driver, "WebControllerButton");
     })
 
   })
