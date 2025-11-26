@@ -502,7 +502,7 @@ export default function WindowPropertiesTest() {
                 expect(!!tempWnd).assertTrue();
                 await tempWnd.destroyWindow();
                 hilog.info(domain, tag,msgStr + 'window.destroy success');
-                tempWnd.on('displayIdChange', (id) => {
+                tempWnd.onDisplayIdChange((id) => {
                     console.info(msgStr +  'keyboard show animation completion. keyboardInfo: ' + JSON.stringify(id));
                 });
                 hilog.info(domain, tag,msgStr + 'window.on_keyboardDidHide success');
@@ -542,7 +542,7 @@ export default function WindowPropertiesTest() {
                 expect(!!tempWnd).assertTrue();
                 await tempWnd.destroyWindow();
                 hilog.info(domain, tag,msgStr + 'window.destroy success');
-                tempWnd.off('displayIdChange', (id) => {
+                tempWnd.offDisplayIdChange((id) => {
                     console.info(msgStr +  'keyboard show animation completion. keyboardInfo: ' + JSON.stringify(id));
                 });
                 hilog.info(domain, tag,msgStr + 'window.on_keyboardDidHide success');
@@ -657,7 +657,7 @@ export default function WindowPropertiesTest() {
                         expect(!!win).assertTrue();
                         hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
                         try {
-                            (win as window.Window).off('windowVisibilityChange');
+                            (win as window.Window).offWindowVisibilityChange();
                             await (win as window.Window).destroyWindow();
                             expect(true).assertTrue();
                             done();
@@ -696,7 +696,7 @@ export default function WindowPropertiesTest() {
                     expect(!!win).assertTrue();
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
                     try {
-                        (win as window.Window).on('windowVisibilityChange', (flag:boolean) => {
+                        (win as window.Window).onWindowVisibilityChange((flag:boolean) => {
                             hilog.info(0x0000, '[ANI]', msgStr + 'Window visibility changed, isVisible=' + flag);
                         });
                     } catch (exception:BusinessError) {
@@ -712,7 +712,7 @@ export default function WindowPropertiesTest() {
                         }
                     }
                     try {
-                        (win as window.Window).off('windowVisibilityChange');
+                        (win as window.Window).offWindowVisibilityChange();
                     } catch (exception:BusinessError) {
                         if (exception!.code != 801) {
                             hilog.error(0x0000, '[ANI]','Failed to unregister callback. Cause: ' + JSON.stringify(exception));
@@ -726,7 +726,7 @@ export default function WindowPropertiesTest() {
                         }
                     }
                     try {
-                        (win as window.Window).off('windowVisibilityChange');
+                        (win as window.Window).offWindowVisibilityChange();
                         await (win as window.Window).destroyWindow();
                         done();
                     } catch (exception:BusinessError) {
@@ -758,11 +758,11 @@ export default function WindowPropertiesTest() {
             try {
                 hilog.info(0x0000, '[ANI]', msgStr + 'try begin.');
                 let windowClass:window.Window = await windowStage.getMainWindow();
-                windowClass.on('windowVisibilityChange', (flag:boolean) => {
+                windowClass.onWindowVisibilityChange((flag:boolean) => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Window visibility changed, isVisible=' + flag);
                 });
                 expect(true).assertTrue();
-                windowClass.off('windowVisibilityChange');
+                windowClass.offWindowVisibilityChange();
                 done();
             } catch (error:BusinessError) {
                 hilog.info(0x0000, '[ANI]', msgStr + 'Failed to register callback. Cause: ' + JSON.stringify(error));
@@ -792,7 +792,7 @@ export default function WindowPropertiesTest() {
             try {
                 hilog.info(0x0000, '[ANI]', msgStr + 'try begin.');
                 let windowClass:window.Window = await windowStage.getMainWindow();
-                windowClass.off('windowVisibilityChange');
+                windowClass.offWindowVisibilityChange();
                 hilog.info(0x0000, '[ANI]', msgStr + 'Window visibility changed');
                 expect(true).assertTrue();
                 done();
@@ -830,7 +830,7 @@ export default function WindowPropertiesTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
                     await (subWin! as window.Window).destroyWindow();
                     try {
-                        subWin!.on("systemDensityChange", (res: number) => {
+                        subWin!.onSystemDensityChange((res: number) => {
                         });
                         hilog.error(0x0000, '[ANI]',msgStr +'Succeeded in calling on systemDensityChange.');
                         expect(false).assertTrue();
@@ -868,7 +868,7 @@ export default function WindowPropertiesTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in creating the window. Data:' + JSON.stringify(data));
                     await (subWin! as window.Window).destroyWindow();
                     try {
-                        subWin!.off("systemDensityChange", (res: number) => {
+                        subWin!.offSystemDensityChange((res: number) => {
                         });
                         hilog.error(0x0000, '[ANI]',msgStr +'Succeeded in calling off systemDensityChange.');
                         expect(false).assertTrue();
@@ -912,10 +912,10 @@ export default function WindowPropertiesTest() {
                 expect(density).assertEqual(2);
             }
             try {
-                windowClass.on("systemDensityChange", callback1);
-                windowClass.on("systemDensityChange", callback2);
+                windowClass.onSystemDensityChange(callback1);
+                windowClass.onSystemDensityChange(callback2);
                 hilog.info(0x0000, '[ANI]', msgStr +`Succeeded on systemDensityChange twice.`);
-                windowClass.off("systemDensityChange");
+                windowClass.offSystemDensityChange();
                 hilog.info(0x0000, '[ANI]', msgStr + `off all systemDensityChange success`);
             } catch (exception:BusinessError) {
                 hilog.error(0x0000, '[ANI]', msgStr +`Failed to on systemDensityChange. Cause code: ${exception.code}, message: ${exception.message}`);
