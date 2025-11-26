@@ -23,6 +23,7 @@ import { Driver, ON, Component, MatchPattern } from '@kit.TestKit';
 
 const TAG: string = 'ProcessModel';
 const DOMAIN_NUMBER: number = 0xFF00;
+let driver = Driver.create();
 
 function sleep(time: number){
   return new Promise<void>((resolve) => setTimeout(resolve, time));
@@ -31,10 +32,17 @@ function sleep(time: number){
 export default function abilityTest() {
   describe('SUB_Ability_AbilityRuntime_deeplink', () => {
     let context: common.UIAbilityContext;
-    beforeAll(() => {
+    beforeAll(async () => {
       context = AppStorage.get<Context>('abilityContext') as common.UIAbilityContext;
-    })
-    beforeAll(() => {
+      let allowed: Component | undefined;
+      try {
+        allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+      if (allowed) {
+        await allowed.click();
+      }
     })
     beforeEach(() => {
 
