@@ -1711,7 +1711,7 @@ export default function httpRequestMethodTest() {
                                 done();
                             } else {
                                 hilog.info(domain, tag, '%{public}s', caseName +'  httpRequest success : data ->'+JSON.stringify(data));
-                                ExpectTrue(typeof data?.responseCode == 'int');
+                                ExpectTrue(typeof data?.responseCode == 'number');
                                 httpRequest.destroy();
                                 done();
                             }
@@ -1751,7 +1751,7 @@ export default function httpRequestMethodTest() {
                             usingProtocol: http.HttpProtocol.HTTP1_1
                         }).then((data: http.HttpResponse) => {
                             hilog.info(domain, tag, '%{public}s', caseName +':  httpRequest success ->'+JSON.stringify(data));
-                            ExpectTrue(typeof data?.responseCode == 'int');
+                            ExpectTrue(typeof data?.responseCode == 'number');
                             httpRequest.destroy();
                             done();
                         }).catch((error: Error) => { let err = error as BusinessError;
@@ -1801,7 +1801,7 @@ export default function httpRequestMethodTest() {
                                 done();
                             } else {
                                 hilog.info(domain, tag, '%{public}s', caseName +'  httpRequest success : data ->'+JSON.stringify(data));
-                                ExpectTrue(typeof data?.responseCode == 'int');
+                                ExpectTrue(typeof data?.responseCode == 'number');
                                 httpRequest.destroy();
                                 done();
                             }
@@ -1841,7 +1841,7 @@ export default function httpRequestMethodTest() {
                             usingProtocol: http.HttpProtocol.HTTP2
                         }).then((data: http.HttpResponse) => {
                             hilog.info(domain, tag, '%{public}s', caseName +':  httpRequest success ->'+JSON.stringify(data));
-                            ExpectTrue(typeof data?.responseCode == 'int');
+                            ExpectTrue(typeof data?.responseCode == 'number');
                             httpRequest.destroy();
                             done();
                         }).catch((error: Error) => { let err = error as BusinessError;
@@ -1891,7 +1891,7 @@ export default function httpRequestMethodTest() {
                                 done();
                             } else {
                                 hilog.info(domain, tag, '%{public}s', caseName +'  httpRequest success : data ->'+JSON.stringify(data));
-                                ExpectTrue(typeof data?.responseCode == 'int');
+                                ExpectTrue(typeof data?.responseCode == 'number');
                                 httpRequest.destroy();
                                 done();
                             }
@@ -1931,7 +1931,7 @@ export default function httpRequestMethodTest() {
                             usingProtocol: http.HttpProtocol.HTTP3
                         }).then((data: http.HttpResponse) => {
                             hilog.info(domain, tag, '%{public}s', caseName +':  httpRequest success ->'+JSON.stringify(data));
-                            ExpectTrue(typeof data?.responseCode == 'int');
+                            ExpectTrue(typeof data?.responseCode == 'number');
                             httpRequest.destroy();
                             done();
                         }).catch((error: Error) => {
@@ -1984,7 +1984,7 @@ export default function httpRequestMethodTest() {
                         done();
                     } else {
                         hilog.info(domain, tag, '%{public}s', caseName +'  httpRequest success : data ->'+JSON.stringify(data));
-                        ExpectTrue(typeof data?.responseCode == 'int');
+                        ExpectTrue(typeof data?.responseCode == 'number');
                         httpRequest.destroy();
                         done();
                     }
@@ -2022,7 +2022,7 @@ export default function httpRequestMethodTest() {
                             usingProtocol: http.HttpProtocol.HTTP1_1
                         }).then((data: http.HttpResponse) => {
                             hilog.info(domain, tag, '%{public}s', caseName +':  httpRequest success ->'+JSON.stringify(data));
-                            ExpectTrue(typeof data?.responseCode == 'int');
+                            ExpectTrue(typeof data?.responseCode == 'number');
                             httpRequest.destroy();
                             done();
                         }).catch((error: Error) => {
@@ -2075,7 +2075,7 @@ export default function httpRequestMethodTest() {
                         done();
                     } else {
                         hilog.info(domain, tag, '%{public}s', caseName +'  httpRequest success : data ->'+JSON.stringify(data));
-                        ExpectTrue(typeof data?.responseCode == 'int');
+                        ExpectTrue(typeof data?.responseCode == 'number');
                         httpRequest.destroy();
                         done();
                     }
@@ -2113,7 +2113,7 @@ export default function httpRequestMethodTest() {
                             usingProtocol: http.HttpProtocol.HTTP2
                         }).then((data: http.HttpResponse) => {
                             hilog.info(domain, tag, '%{public}s', caseName +':  httpRequest success ->'+JSON.stringify(data));
-                            ExpectTrue(typeof data?.responseCode == 'int');
+                            ExpectTrue(typeof data?.responseCode == 'number');
                             httpRequest.destroy();
                             done();
                         }).catch((error: Error) => {
@@ -2164,7 +2164,7 @@ export default function httpRequestMethodTest() {
                                 done();
                             } else {
                                 hilog.info(domain, tag, '%{public}s', caseName +'  httpRequest success : data ->'+JSON.stringify(data));
-                                ExpectTrue(typeof data?.responseCode == 'int');
+                                ExpectTrue(typeof data?.responseCode == 'number');
                                 httpRequest.destroy();
                                 done();
                             }
@@ -2204,7 +2204,7 @@ export default function httpRequestMethodTest() {
                             usingProtocol: http.HttpProtocol.HTTP3
                         }).then((data: http.HttpResponse) => {
                             hilog.info(domain, tag, '%{public}s', caseName +':  httpRequest success ->'+JSON.stringify(data));
-                            ExpectTrue(typeof data?.responseCode == 'int');
+                            ExpectTrue(typeof data?.responseCode == 'number');
                             httpRequest.destroy();
                             done();
                         }).catch((error: Error) => {
