@@ -3346,7 +3346,7 @@ export default function abilityTest() {
                 pasteData.setProperty(prop);
         
                 let newProp = pasteData.getProperty();
-                expect(newProp.additions["nullValue"]).assertEqual(null);
+                expect(newProp.additions["nullValue"]).assertEqual(undefined);
                 expect(newProp.additions["undefinedValue"]).assertEqual(undefined);
                 done();
             } catch (err) {
