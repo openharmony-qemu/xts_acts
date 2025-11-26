@@ -1009,7 +1009,7 @@ napi_value GetString0600(napi_env env, napi_callback_info info)
     char *result;
     uint32_t resId = 0;
     napi_get_value_uint32(env, argv[0], &resId);
-    int32_t status = OH_ResourceManager_GetString(g_mNativeResMgr, resId, &result, "world", 12, 12.3);
+    int32_t state = OH_ResourceManager_GetString(g_mNativeResMgr, resId, &result, "world", 12, 12.3);
     napi_value value = nullptr;
     bool res = state == SUCCESS && strcmp("test world 12 12.3", result) == 0;
     napi_create_int32(env, res ? 0 : -1, &value);
