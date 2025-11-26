@@ -50,7 +50,7 @@ export default function selectDialogTest() {
     })
 
     /**
-     * @tc.number selectDialogTest
+     * @tc.number selectDialogTest_0100
      * @tc.name   selectDialogTest
      * @tc.desc   Test selectDialog
      * @tc.size   MediumTest
@@ -80,7 +80,7 @@ export default function selectDialogTest() {
     });
 
     /**
-     * @tc.number selectDialogTest
+     * @tc.number selectDialogTest_0200
      * @tc.name   selectDialogTest
      * @tc.desc   Test selectDialog
      * @tc.size   MediumTest

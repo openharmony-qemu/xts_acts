@@ -67,6 +67,7 @@ export default function loadingDialogTest() {
       await driver.delayMs(1000);
       // 点击打开loadingDialog是否存在以下入口。
       let content = await driver.findComponent(ON.text('text'));
+      expect(content !== null).assertTrue();
       await driver.delayMs(1000);
       console.info('[loadingDialogTest_0100] END');
       done();

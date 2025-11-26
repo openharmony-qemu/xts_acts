@@ -62,6 +62,8 @@ export default function treeViewSymbol() {
       try{
         let driver: Driver = Driver.create();
         await driver.assertComponentExist(ON.text('ClickNodeId='));
+        let addText = await driver.findComponent(ON.text('新增'));
+        expect(addText !== null).assertTrue();
       } finally {
         done();
       }

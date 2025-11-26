@@ -50,7 +50,7 @@ export default function tipsDialogTest() {
     })
 
     /**
-     * @tc.number tipsDialogTest
+     * @tc.number tipsDialogTest_0100
      * @tc.name   tipsDialogTest
      * @tc.desc   Test tipsDialog
      * @tc.size   MediumTest
@@ -80,7 +80,7 @@ export default function tipsDialogTest() {
     });
 
     /**
-     * @tc.number tipsDialogTest
+     * @tc.number tipsDialogTest_0200
      * @tc.name   tipsDialogTest
      * @tc.desc   Test tipsDialog
      * @tc.size   MediumTest

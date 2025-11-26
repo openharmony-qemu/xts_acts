@@ -53,7 +53,7 @@ export default function splitLayoutTest() {
     })
     
     /**
-    * @tc.number splitLayoutTest
+    * @tc.number testSplitLayout_0100
     * @tc.name   testSplitLayout_0100
     * @tc.desc   Test splitLayout page
     * @tc.size   MediumTest
@@ -78,7 +78,7 @@ export default function splitLayoutTest() {
     });
     
     /**
-    * @tc.number splitLayoutTest
+    * @tc.number testSplitLayout_0200
     * @tc.name   testSplitLayout_0200
     * @tc.desc   Test splitLayout page
     * @tc.size   MediumTest

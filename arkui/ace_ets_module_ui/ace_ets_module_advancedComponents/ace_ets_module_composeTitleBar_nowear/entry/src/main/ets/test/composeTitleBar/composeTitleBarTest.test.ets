@@ -53,7 +53,7 @@ export default function composeTitleBarTest() {
     })
 
     /**
-     * @tc.number composeTitleBarTest
+     * @tc.number testComposeTitleBar_0100
      * @tc.name   testComposeTitleBar_0100
      * @tc.desc   Test composeTitleBar page
      * @tc.size   MediumTest
@@ -80,7 +80,7 @@ export default function composeTitleBarTest() {
     });
 
     /**
-     * @tc.number composeTitleBarTest
+     * @tc.number testComposeTitleBar_0200
      * @tc.name   testComposeTitleBar_0200
      * @tc.desc   Test composeTitleBar page
      * @tc.size   MediumTest
