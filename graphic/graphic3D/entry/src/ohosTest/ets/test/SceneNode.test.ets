@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import { ToneMappingType, ToneMappingSettings, PostProcessSettings, Vec3, Vec4, Color, Quaternion, Position3,  Scale3, NodeType, Container, Node, Geometry, LightType, Light, SpotLight, DirectionalLight,
-  SceneResourceFactory, Scene } from '@ohos.graphics.scene'
+  SceneResourceFactory, Scene, CameraParameters } from '@ohos.graphics.scene'
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Level, Size } from '@ohos/hypium'
 import * as scene3d from '@ohos.graphics.scene'
 import { lookAt } from '../common/utils';
@@ -949,5 +949,194 @@ export default function sceneNodeTest() {
         done();
       }
     });
+
+    /**
+     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0940
+     * @tc.name      : testSceneCameraParametersMSAA
+     * @tc.desc      : Test set and get for msaa property of CameraParameters.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('testSceneCameraParametersMSAA', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testSceneCameraParametersMSAA";
+      console.info(msg + ' begin ');
+      try {
+        scene = await Scene.load();
+        expect(scene != null).assertTrue();
+        rf = scene.getResourceFactory();
+
+        // 测试msaa为true的情况
+        let cameraParamsTrue: CameraParameters = {msaa: true};
+        expect(cameraParamsTrue.msaa).assertTrue();
+        console.info(msg + " CameraParameters msaa=true set successfully");
+
+        let camTrue: scene3d.Camera = await rf.createCamera({ name: "CameraMSAA", path:"//CameraMSAA" }, cameraParamsTrue);
+        expect(camTrue != null).assertTrue();
+        expect(camTrue.msaa).assertTrue();
+        console.info(msg + " Camera created with msaa=true successfully");
+
+        // 测试msaa为false的情况
+        let cameraParamsFalse: CameraParameters = {msaa: false};
+        expect(cameraParamsFalse.msaa).assertFalse();
+        console.info(msg + " CameraParameters msaa=false set successfully");
+
+        let camFalse: scene3d.Camera = await rf.createCamera({ name: "CameraNoMSAA", path:"//CameraNoMSAA" }, cameraParamsFalse);
+        expect(camFalse != null).assertTrue();
+        expect(camFalse.msaa).assertFalse();
+        console.info(msg + " Camera created with msaa=false successfully");
+
+        // 测试默认值
+        let cameraParamsDefault: CameraParameters = {};
+        expect(cameraParamsDefault.msaa).assertUndefined();
+        console.info(msg + " CameraParameters default msaa is undefined");
+
+        let camDefault: scene3d.Camera = await rf.createCamera({ name: "CameraDefault", path:"//CameraDefault" });
+        expect(camDefault != null).assertTrue();
+        expect(camDefault.msaa).assertFalse();
+        console.info(msg + " Camera created with default msaa=false");
+
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testSceneCameraParametersMSAA " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0950
+     * @tc.name      : testSceneNodesSpotLightInnerAngle
+     * @tc.desc      : Test set and get for innerAngle property of SpotLight.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('testSceneNodesSpotLightInnerAngle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testSceneNodesSpotLightInnerAngle";
+      console.info(msg + ' begin ');
+      try {
+        scene = await Scene.load();
+        expect(scene != null).assertTrue();
+        rf = scene.getResourceFactory();
+
+        let spotLight: scene3d.SpotLight = await rf.createLight({ name: "SpotLight" }, LightType.SPOT);
+        expect(spotLight != null).assertTrue();
+        expect(spotLight.nodeType).assertEqual(NodeType.LIGHT);
+        expect(spotLight.lightType).assertEqual(LightType.SPOT);
+
+        // 测试默认值
+        expect(spotLight.innerAngle).assertEqual(0);
+        console.info(msg + " SpotLight innerAngle default value is 0");
+
+        // 测试设置有效值
+        spotLight.innerAngle = Math.PI / 6; // 30度
+        expect(Math.abs(spotLight.innerAngle - Math.PI / 6)).assertLess(1e-6);
+        console.info(msg + " SpotLight innerAngle set to PI/6 successfully");
+
+        // 测试边界值
+        spotLight.innerAngle = 0;
+        expect(spotLight.innerAngle).assertEqual(0);
+        console.info(msg + " SpotLight innerAngle set to 0 successfully");
+
+        spotLight.innerAngle = Math.PI / 4; // 45度
+        expect(Math.abs(spotLight.innerAngle - Math.PI / 4)).assertLess(1e-6);
+        console.info(msg + " SpotLight innerAngle set to PI/4 successfully");
+
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testSceneNodesSpotLightInnerAngle " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0960
+     * @tc.name      : testSceneNodesSpotLightOuterAngle
+     * @tc.desc      : Verify the SpotLight outerAngle property can be set and read correctly
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('testSceneNodesSpotLightOuterAngle', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testSceneNodesSpotLightOuterAngle";
+      console.info(msg + ' begin ');
+      try {
+        scene = await Scene.load();
+        expect(scene != null).assertTrue();
+        rf = scene.getResourceFactory();
+
+        let spotLight: scene3d.SpotLight = await rf.createLight({ name: "SpotLight" }, LightType.SPOT);
+        expect(spotLight != null).assertTrue();
+
+        // 测试默认值
+        expect(Math.abs(spotLight.outerAngle! - Math.PI / 4)).assertLess(1e-6);
+        console.info(msg + " SpotLight outerAngle default value is PI/4");
+
+        // 测试设置有效值
+        spotLight.outerAngle = Math.PI / 3; // 60度
+        expect(Math.abs(spotLight.outerAngle - Math.PI / 3)).assertLess(1e-6);
+        console.info(msg + " SpotLight outerAngle set to PI/3 successfully");
+
+        // 测试边界值
+        spotLight.outerAngle = Math.PI / 6; // 30度
+        expect(Math.abs(spotLight.outerAngle - Math.PI / 6)).assertLess(1e-6);
+        console.info(msg + " SpotLight outerAngle set to PI/6 successfully");
+
+        spotLight.outerAngle = Math.PI / 2; // 90度
+        expect(Math.abs(spotLight.outerAngle - Math.PI / 2)).assertLess(1e-6);
+        console.info(msg + " SpotLight outerAngle set to PI/2 successfully");
+
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testSceneNodesSpotLightOuterAngle " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_0970
+     * @tc.name      : testSceneNodesCameraMSAA
+     * @tc.desc      : Verify the Camera msaa property can be set and read correctly
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('testSceneNodesCameraMSAA', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testSceneNodesCameraMSAA";
+      console.info(msg + ' begin ');
+      try {
+        scene = await Scene.load();
+        expect(scene != null).assertTrue();
+        rf = scene.getResourceFactory();
+
+        let cam: scene3d.Camera = await rf.createCamera({ name: "Camera" });
+        expect(cam != null).assertTrue();
+        expect(cam.nodeType).assertEqual(NodeType.CAMERA);
+
+        // 测试默认值
+        expect(typeof cam.msaa).assertEqual('boolean');
+        expect(cam.msaa).assertFalse();
+        console.info(msg + " Camera msaa default value is false");
+
+        // 测试设置msaa为true
+        cam.msaa = true;
+        expect(cam.msaa).assertTrue();
+        console.info(msg + " Camera msaa set to true successfully");
+
+        // 测试设置msaa为false
+        cam.msaa = false;
+        expect(cam.msaa).assertFalse();
+        console.info(msg + " Camera msaa set to false successfully");
+
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testSceneNodesCameraMSAA " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
   })
 }
