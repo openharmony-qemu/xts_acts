@@ -145,24 +145,13 @@ static napi_value MProtect(napi_env env, napi_callback_info info)
     size_t align = getpagesize();
     void *buffer = memalign(align, SIZE_8 * align);
     if (buffer == nullptr) {
-        napi_throw_error(env, "ENOMEM", "Memory allocation failed");
         napi_value result = nullptr;
         napi_create_int32(env, retVal, &result);
         return result;
     }
 
-    int ret = mprotect(buffer, getpagesize(), PROT_READ);
-    if (ret != 0) {
-        perror("mprotect failed");
-        retVal = FAIL;
-    } else {
-        retVal = 0;
-    }
-
-    free(buffer);
-
     napi_value result = nullptr;
-    napi_create_int32(env, retVal, &result);
+    napi_create_int32(env, mprotect(buffer, getpagesize(), PROT_READ), &result);
     return result;
 }
 
