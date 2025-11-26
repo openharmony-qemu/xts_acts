@@ -2,11 +2,11 @@
     "description": "Configuration for hjunit demo Tests",
     "driver": {
         "type": "OHJSUnitTest",
-        "test-timeout": "3000000",
+        "test-timeout": "200000",
         "bundle-name": "com.example.actsaccountoperatetest",
         "package-name": "com.example.actsaccountoperatetest",
-        "shell-timeout": "3000000",
-        "testcase-timeout": 1000000
+        "shell-timeout": "200000",
+        "testcase-timeout": 200000
     },
     "kits": [
         {
@@ -27,7 +27,8 @@
                 "power-shell wakeup",
                 "power-shell setmode 602",
                 "power-shell timeout -o 86400000",
-                "hidumper -s 3301 -a -t"
+                "hidumper -s 3301 -a -t",
+                "param set persist.sys.abilityms.support.ecologicalrulemgrservice false"
             ]
         }
     ]
