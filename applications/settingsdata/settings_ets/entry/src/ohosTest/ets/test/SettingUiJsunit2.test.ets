@@ -2198,7 +2198,7 @@ export default function settingUiJsunit() {
     it('settings_registerKeyObserver_context_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let value = settings.registerKeyObserver(null, name, settings.domainName.DEVICE_SHARED, (err, ret) => {
+          let result = settings.registerKeyObserver(null, name, settings.domainName.DEVICE_SHARED, (err, ret) => {
             let ret1 = settings.getValueSync(globalThis.abilityContext, name, domainName);
             expect().assertFail();
             done();
@@ -2251,7 +2251,7 @@ export default function settingUiJsunit() {
     it('settings_registerKeyObserver_key_empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let value = settings.registerKeyObserver(globalThis.abilityContext, '', settings.domainName.DEVICE_SHARED, (err, ret) => {
+          let result = settings.registerKeyObserver(globalThis.abilityContext, '', settings.domainName.DEVICE_SHARED, (err, ret) => {
             let ret1 = settings.getValueSync(globalThis.abilityContext, 'testkey', settings.domainName.DEVICE_SHARED);
             expect(ret1 === '1').assertTrue();
             done();
@@ -2277,7 +2277,7 @@ export default function settingUiJsunit() {
     it('settings_registerKeyObserver_callback_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         try {
-          let value = settings.registerKeyObserver(globalThis.abilityContext, 'testkey', settings.domainName.DEVICE_SHARED, null)
+          let result = settings.registerKeyObserver(globalThis.abilityContext, 'testkey', settings.domainName.DEVICE_SHARED, null)
           expect(result).assertTrue();
           done();
         } catch (err) {
@@ -2368,6 +2368,7 @@ export default function settingUiJsunit() {
       async (done: Function) => {
         try {
           let result = settings.unregisterKeyObserver(globalThis.abilityContext, 'testkey', null);
+          expect().assertFail();
           done();
         } catch (err) {
           console.error("[settings_unregisterKeyObserver_domain_null] error = " + err);
