@@ -60,7 +60,7 @@ export default function AVPlayerOn_BufferingUpdateTest() {
         done();
       } catch (error) {
         console.info(TAG, testName, 'on_bufferingUpdate  error', error.message, error.code);
-        expect(error).assertEqual('401')
+        expect().assertFail()
         done();
       }
     })
@@ -82,8 +82,7 @@ export default function AVPlayerOn_BufferingUpdateTest() {
         done();
       } catch (error) {
         console.info(TAG, testName, 'on_bufferingUpdate  error', error.message, error.code);
-        expect(error).assertEqual('401')
-
+        expect().assertFail()
         done();
       }
     })
@@ -105,7 +104,7 @@ export default function AVPlayerOn_BufferingUpdateTest() {
         done();
       } catch (error) {
         console.info(TAG, testName, 'on_bufferingUpdate  error', error.message, error.code);
-        expect(error).assertEqual('401')
+        expect().assertFail()
         done();
       }
     })
