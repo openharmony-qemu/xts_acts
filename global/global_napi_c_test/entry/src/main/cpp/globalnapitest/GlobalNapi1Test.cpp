@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 
+#include <cstring>
 #include <globalnapitest/GlobalNapiTest.h>
 
 namespace GlobalNapiTest {
@@ -1034,6 +1035,16 @@ napi_value GetStringByName0400(napi_env env, napi_callback_info info)
     int32_t res = OH_ResourceManager_GetStringByName(g_mNativeResMgr, "symbol_A_ref", &result);
     napi_value value = nullptr;
     napi_create_int32(env, res == ERROR_CODE_RES_REF_TOO_MUCH ? TOO_MUCH : -1, &value);
+    return value;
+}
+
+napi_value GetStringByName0500(napi_env env, napi_callback_info info)
+{
+    char *result;
+    int32_t res = OH_ResourceManager_GetStringByName(g_mNativeResMgr, "test_format", &result, "world", 12, 12.3);
+    napi_value value = nullptr;
+    bool result = res == SUCCESS && strcmp("test world 12 12.3", result) == 0;
+    napi_create_int32(env, result ? 0 : -1, &value);
     return value;
 }
 

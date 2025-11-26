@@ -1552,6 +1552,28 @@ export default function abilityTest() {
     })
 
     /**
+     * @generated.time 2025-11-26 15:33:27
+     * @tc.name   TestGetStringByName0500
+     * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGBYNAME_0500
+     * @tc.desc   overriding getstring format args
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('TestGetStringByName0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      try {
+        console.info("====>TestGetStringByName0400 start====");
+        let result: number = nativeTest.GetStringByName0400();
+        console.info(`====>TestGetStringByName0400 result====${result}`);
+        expect(result).assertEqual(0);
+        done()
+      } catch (err) {
+        console.error("====>TestGetStringByName0400 catch err: " + err);
+        expect(false).assertEqual(0);
+      }
+    })
+
+    /**
      * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetStringArray0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETSTRINGARRAY_0100
