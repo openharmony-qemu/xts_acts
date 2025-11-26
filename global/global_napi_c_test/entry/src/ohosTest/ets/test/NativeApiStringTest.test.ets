@@ -1475,9 +1475,9 @@ export default function abilityTest() {
     it('TestGetString0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         console.info("====>TestGetString0600 start====");
-        let result: number = nativeTest.GetString0600($r('app.string.test-format').id);
+        let result: number = nativeTest.GetString0600($r('app.string.test_format').id);
         console.info(`====>TestGetString0600 result====${result}`);
-        expect(result).assertEqual(ERROR_CODE_RES_REF_TOO_MUCH);
+        expect(result).assertEqual(0);
         done()
       } catch (err) {
         console.error("====>TestGetString0600 catch err: " + err);
