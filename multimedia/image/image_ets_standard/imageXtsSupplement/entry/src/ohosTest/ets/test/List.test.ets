@@ -96,7 +96,8 @@ import ImagePixelMapConvertPixelFormatTest from './image/ImagePixelMapConvertPix
 import ImagePixelMapCropSyncTest from './image/ImagePixelMapCropSync.Test.test';
 import ImagePixelMapMarshallingTest from './image/ImagePixelMapMarshalling.Test.test';
 import ImagePixelMapUnmarshallingTest from './image/ImagePixelMapUnMarshalling.Test.test';
-
+import UpdateDataTest from './image/ImageSourceUpdateDataTest.test';
+import SendableImageTest from './image/SendableImageTest.test';
 
 
 export default function testsuite() {
@@ -182,4 +183,6 @@ export default function testsuite() {
   ImagePixelMapCropSyncTest();
   ImagePixelMapMarshallingTest();
   ImagePixelMapUnmarshallingTest();
+  UpdateDataTest();
+  SendableImageTest();
 }
