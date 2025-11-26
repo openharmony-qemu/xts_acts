@@ -1041,10 +1041,10 @@ napi_value GetStringByName0400(napi_env env, napi_callback_info info)
 napi_value GetStringByName0500(napi_env env, napi_callback_info info)
 {
     char *result;
-    int32_t res = OH_ResourceManager_GetStringByName(g_mNativeResMgr, "test_format", &result, "world", 12, 12.3);
+    int32_t state = OH_ResourceManager_GetStringByName(g_mNativeResMgr, "test_format", &result, "world", 12, 12.3);
     napi_value value = nullptr;
-    bool result = res == SUCCESS && strcmp("test world 12 12.3", result) == 0;
-    napi_create_int32(env, result ? 0 : -1, &value);
+    bool res = state == SUCCESS && strcmp("test world 12 12.3", result) == 0;
+    napi_create_int32(env, res ? 0 : -1, &value);
     return value;
 }
 

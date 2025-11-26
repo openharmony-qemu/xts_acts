@@ -1560,15 +1560,15 @@ export default function abilityTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('TestGetStringByName0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    it('TestGetStringByName0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
-        console.info("====>TestGetStringByName0400 start====");
-        let result: number = nativeTest.GetStringByName0400();
-        console.info(`====>TestGetStringByName0400 result====${result}`);
+        console.info("====>TestGetStringByName0500 start====");
+        let result: number = nativeTest.GetStringByName0500();
+        console.info(`====>TestGetStringByName0500 result====${result}`);
         expect(result).assertEqual(0);
         done()
       } catch (err) {
-        console.error("====>TestGetStringByName0400 catch err: " + err);
+        console.error("====>TestGetStringByName0500 catch err: " + err);
         expect(false).assertEqual(0);
       }
     })
