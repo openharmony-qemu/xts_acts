@@ -60,7 +60,7 @@ export default function AVPlayerOnMessageReceivedTest() {
         done();
       }catch (error){
         console.info(TAG, testName, 'on_seiMessageReceived  error', error.message, error.code);
-        expect(error).assertEqual('401')
+        expect().assertFail()
         done();
       }
     })
@@ -83,6 +83,7 @@ export default function AVPlayerOnMessageReceivedTest() {
         done();
       }catch (error){
         console.info(TAG, testName, 'on_seiMessageReceived  error', error.message, error.code);
+        expect().assertFail()
         done();
       }
     })
@@ -106,6 +107,7 @@ export default function AVPlayerOnMessageReceivedTest() {
         done();
       }catch (error){
         console.info(TAG, testName, 'on_seiMessageReceived  error', error.message, error.code);
+        expect().assertFail()
         done();
       }
     })
@@ -127,6 +129,7 @@ export default function AVPlayerOnMessageReceivedTest() {
         done();
       }catch (error){
         console.info(TAG, testName, 'on_seiMessageReceived  error', error.message, error.code);
+        expect().assertFail()
         done();
       }
     })
@@ -148,12 +151,10 @@ export default function AVPlayerOnMessageReceivedTest() {
         done();
       }catch (error){
         console.info(TAG, testName, 'on_seiMessageReceived  error', error.message, error.code);
+        expect().assertFail()
         done();
       }
     })
-
-
-
 
   })
 }
