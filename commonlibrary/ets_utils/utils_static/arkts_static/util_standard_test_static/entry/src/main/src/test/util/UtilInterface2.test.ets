@@ -1613,7 +1613,7 @@ export default function Util2Test() {
      * @tc.level Level 1
      */
     it('testUtil3_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let lru = new ChildLRUCache();
+      let lru = new ChildLRUCache4();
       lru.put(2, 10);
       lru.get(3);
       lru.get(5);
@@ -1623,7 +1623,7 @@ export default function Util2Test() {
   });
 }
 
-class ChildLRUCache extends util.LRUCache<int, int> {
+class ChildLRUCache4 extends util.LRUCache<int, int> {
   constructor() {
     super();
   }
