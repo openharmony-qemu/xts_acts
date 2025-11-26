@@ -23,6 +23,10 @@
     {
         "name": "description_application",
         "value": "demo for test"
+    },
+    {
+        "name": "download",
+        "value": "下载"
     }
   ]
 }
