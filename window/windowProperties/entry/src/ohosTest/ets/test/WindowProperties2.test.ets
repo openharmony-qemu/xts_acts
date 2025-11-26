@@ -2453,6 +2453,75 @@ export default function windowPropertiesTest2() {
     });
 
     /**
+     * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_GETCOLORSPACE_0100
+     * @tc.name   : testgetColorSpace_default_promise
+     * @tc.desc   : testgetColorSpace_default_promise
+     * @tc.size   : MediumTest
+     * @tc.type   : Function
+     * @tc.level  : Level 3
+     */
+    it('testgetColorSpace_default_promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let caseName = 'testgetColorSpace_default_promise';
+      let windowClass = windowStage.getMainWindowSync();
+      let promise = windowClass.setColorSpace(window.ColorSpace.DEFAULT);
+      promise.then(async () => {
+        console.info(caseName+ ' Succeeded in setting window colorspace.');
+        let ColorSpace = await windowClass.getColorSpace();
+        console.info(caseName+' Succeeded in getting window color space. Cause:' + JSON.stringify(ColorSpace));
+        expect(ColorSpace).assertEqual(window.ColorSpace.DEFAULT);
+        done();
+      }).catch((err: BusinessError) => {
+        if (err.code == 801) {
+          console.info(`${caseName}: The current device type does not support to setWindowSystemBarEnable`);
+          expect(true).assertTrue();
+          done();
+        } else {
+          console.error(`${caseName}: Failed to obtain physical resolution. Code: ${err.code}, message: ${err.message}`);
+          expect().assertFail();
+          done();
+        }
+      });
+    })
+    /**
+     * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_GETCOLORSPACE_0200
+     * @tc.name   : testgetColorSpace_default_Callback
+     * @tc.desc   : testgetColorSpace_default_Callback
+     * @tc.size   : MediumTest
+     * @tc.type   : Function
+     * @tc.level  : Level 3
+     */
+    it('testgetColorSpace_default_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let caseName = 'testgetColorSpace_default_Callback';
+      let windowClass = windowStage.getMainWindowSync();
+      let promise = windowClass.setColorSpace(window.ColorSpace.DEFAULT);
+      promise.then(async () => {
+        console.info(caseName+ ' Succeeded in setting window colorspace.');
+        windowClass.getColorSpace((err: BusinessError, data) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName+` Failed to get window colorspace. Cause code: ${err.code}, message: ${err.message}`);
+            expect(false).assertTrue();
+            done();
+          }else{
+            console.info(caseName+' Succeeded in getting window colorspace. Cause:' + JSON.stringify(data));
+            expect(data).assertEqual(window.ColorSpace.DEFAULT);
+            done();
+          }
+        });
+      }).catch((err: BusinessError) => {
+        if (err.code == 801) {
+          console.info(`${caseName}: The current device type does not support to setWindowSystemBarEnable`);
+          expect(true).assertTrue();
+          done();
+        } else {
+          console.error(`${caseName}: Failed to obtain physical resolution. Code: ${err.code}, message: ${err.message}`);
+          expect().assertFail();
+          done();
+        }
+      });
+    })
+
+    /**
      * @tc.number    : SUB_BASIC_WMS_ON_OCCLUSIONSTATECHANGED_CHANGE_0100
      * @tc.name      : testOnOcclusionStatewithDestoryedSubwindow
      * @tc.desc      : 验证子窗销毁后注册OnOcclusionState返回1300002错误码验证
