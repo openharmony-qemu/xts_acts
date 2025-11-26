@@ -96,10 +96,21 @@ import ImagePixelMapConvertPixelFormatTest from './image/ImagePixelMapConvertPix
 import ImagePixelMapCropSyncTest from './image/ImagePixelMapCropSync.Test.test';
 import ImagePixelMapMarshallingTest from './image/ImagePixelMapMarshalling.Test.test';
 import ImagePixelMapUnmarshallingTest from './image/ImagePixelMapUnMarshalling.Test.test';
+import ImageAuxiliaryPictureSetMetadataTest from './image/ImageAuxiliaryPictureSetMetadata.Test.test';
+import imagePackerPackingTest from './image/ImagePackerPacking.Test.test';
+import SendableImagePixelMapApplyColorSpaceTest from './sendableImage/SendableImagePixelMapApplyColorSpace.Test.test';
+import SendableImagePixelMapCropTest from './sendableImage/SendableImagePixelMapCrop.Test.test';
+import SendableImagePixelMapCropSyncTest from './sendableImage/SendableImagePixelMapCropSync.Test.test';
+import SendableImagePixelMapSetColorSpaceTest from './sendableImage/SendableImagePixelMapSetColorSpace.Test.test';
+import SendableImagePixelMapUnMarshallingTest from './sendableImage/SendableImagePixelMapUnMarshalling.Test.test';
+import SendableImageSourceCreatePixelMapTest from './sendableImage/SendableImageSourceCreatePixelMap.Test.test';
+import ImageCreateImageReceiverCreator from './image/ImageCreateImageReceiverCreator.test';
+import PictureGetMetadataFirstParameters from './Picture/PictureGetMetadataFirParameters.test';
+import CreatePixelMapUsingAllocatorAndSync from './image/ImageCreatePixelMapUsingAllocatorSuppAb.test';
+import ImageCreateIncrementalSourceSupp from './image/ImageCreateIncrementalSourceSupp.test';
+import modifyImagePropertyValueTest from './image/ModifyImagePropertyValue.test';
 import UpdateDataTest from './image/ImageSourceUpdateDataTest.test';
 import SendableImageTest from './image/SendableImageTest.test';
-
-
 export default function testsuite() {
   ImagePropertyKeyTest();
   ImageCreateImageSourceBufTest();
@@ -183,6 +194,19 @@ export default function testsuite() {
   ImagePixelMapCropSyncTest();
   ImagePixelMapMarshallingTest();
   ImagePixelMapUnmarshallingTest();
+  ImageAuxiliaryPictureSetMetadataTest();
+  imagePackerPackingTest();
+  SendableImagePixelMapApplyColorSpaceTest();
+  SendableImagePixelMapCropTest();
+  SendableImagePixelMapCropSyncTest();
+  SendableImagePixelMapSetColorSpaceTest();
+  SendableImagePixelMapUnMarshallingTest();
+  SendableImageSourceCreatePixelMapTest();
+  ImageCreateImageReceiverCreator();
+  PictureGetMetadataFirstParameters();
+  CreatePixelMapUsingAllocatorAndSync();
+  ImageCreateIncrementalSourceSupp();
+  modifyImagePropertyValueTest();
   UpdateDataTest();
   SendableImageTest();
 }
