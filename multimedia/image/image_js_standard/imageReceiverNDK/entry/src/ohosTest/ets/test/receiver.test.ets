@@ -274,6 +274,7 @@ export default function ImageReceiverTest() {
             expect(arriveOnNdkTest.imageArriveOn(receiver, myData1) == IMAGE_SUCCESS).assertTrue();
             expect(arriveOnNdkTest.imageArriveOn(receiver, myData2) == IMAGE_SUCCESS).assertTrue();
             expect(arriveOnNdkTest.imageReceiverTest(receiver) == IMAGE_SUCCESS).assertTrue();
+            await sleep(500);
             checkWaitForResultIsObj(TAG, myData1, 0);
             checkWaitForResultIsNum(TAG, myData2, 1);
             arriveOnNdkTest.imageArriveOff(receiver, CALLBACK_FUC_DE);
