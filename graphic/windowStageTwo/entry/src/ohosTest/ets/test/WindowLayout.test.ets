@@ -91,6 +91,39 @@ async function terminateAbility4(caseName: string) {
   await sleep(1000)
 }
 
+async function startAbility5(caseName: string, context: common.UIAbilityContext, options?: StartOptions) {
+  let want: Want = {
+    bundleName: AppStorage.get('bundleName'),
+    abilityName: 'StartTestAbility5',
+  };
+  if (options) {
+    await context.startAbility(want, options).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause message: ${err.message}`);
+    });
+  } else {
+    await context.startAbility(want).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause message: ${err.message}`);
+    });
+  }
+  await sleep(1000)
+  let windowStageStart = AppStorage.get('windowStageStartTest5') as window.WindowStage;
+  return windowStageStart
+}
+
+async function terminateAbility5(caseName: string) {
+  let pageContext = AppStorage.get('contextTest5') as common.UIAbilityContext
+  await pageContext.terminateSelf().then(() => {
+    console.log(`${caseName} terminateSelf success`);
+  }).catch((err: BusinessError) => {
+    console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
+  });
+  await sleep(1000)
+}
+
 export default function windowLayoutTest() {
   describe('windowLayoutTest', async () => {
     let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
@@ -4420,9 +4453,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
       try {
         windowClass = windowStageStart.getMainWindowSync();
-        await windowClass.setUIContent('testability/pages/Index2');
-        await windowClass.showWindow();
-        let windowLimits = windowClass.getWindowLimitsVP();
+        await windowClass?.setUIContent('testability/pages/Index2');
+        await windowClass?.showWindow();
+        let windowLimits = windowClass?.getWindowLimitsVP();
         console.log(`${caseName} windowLimits: ${JSON.stringify(windowLimits)}`);
         let setWindowLimits: window.WindowLimits = {
           minWidth: windowLimits.minWidth as number + 10,
@@ -4430,8 +4463,8 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           maxWidth: windowLimits.maxWidth as number - 10,
           maxHeight: windowLimits.maxHeight as number - 10
         }
-        await windowClass.setWindowLimits(setWindowLimits);
-        let windowLimits2 = windowClass.getWindowLimitsVP();
+        await windowClass?.setWindowLimits(setWindowLimits);
+        let windowLimits2 = windowClass?.getWindowLimitsVP();
         console.log(`${caseName} windowLimits2: ${JSON.stringify(windowLimits2)}`);
 
         if (canIUseRes) {
@@ -4470,9 +4503,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
       try {
         windowClass = windowStageStart.getMainWindowSync();
-        await windowClass.setUIContent('testability/pages/Index2');
-        await windowClass.showWindow();
-        let windowLimits = windowClass.getWindowLimitsVP();
+        await windowClass?.setUIContent('testability/pages/Index2');
+        await windowClass?.showWindow();
+        let windowLimits = windowClass?.getWindowLimitsVP();
         console.log(`${caseName} windowLimits: ${JSON.stringify(windowLimits)}`);
         let setWindowLimits: window.WindowLimits = {
           minWidth: vp2px(windowLimits.minWidth as number + 10),
@@ -4480,8 +4513,8 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           maxWidth: vp2px(windowLimits.maxWidth as number - 10),
           maxHeight: vp2px(windowLimits.maxHeight as number - 10)
         }
-        await windowClass.setWindowLimits(setWindowLimits);
-        let windowLimits2 = windowClass.getWindowLimitsVP();
+        await windowClass?.setWindowLimits(setWindowLimits);
+        let windowLimits2 = windowClass?.getWindowLimitsVP();
         console.log(`${caseName} windowLimits2: ${JSON.stringify(windowLimits2)}`);
 
         if (canIUseRes) {

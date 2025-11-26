@@ -20,6 +20,7 @@ import common from '@ohos.app.ability.common';
 import settings from '@ohos.settings';
 import { display } from '@kit.ArkUI';
 import { StartOptions } from '@kit.AbilityKit';
+import StartTestAbility7 from '../testability/StartTestAbility7';
 
 let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
 
@@ -48,6 +49,39 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
 
 async function terminateAbility(caseName: string) {
   let pageContext = AppStorage.get('contextTest') as common.UIAbilityContext
+  await pageContext.terminateSelf().then(() => {
+    console.log(`${caseName} terminateSelf success`);
+  }).catch((err: BusinessError) => {
+    console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
+  });
+  await sleep(1000)
+}
+
+async function startAbility7(caseName: string, context: common.UIAbilityContext, options?: StartOptions) {
+  let want: Want = {
+    bundleName: AppStorage.get('bundleName'),
+    abilityName: 'StartTestAbility7'
+  };
+  if (options) {
+    await context.startAbility(want, options).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  } else {
+    await context.startAbility(want).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  }
+  await sleep(1000)
+  let windowStageStart = AppStorage.get('windowStageStartTest7') as window.WindowStage;
+  return windowStageStart
+}
+
+async function terminateAbility7(caseName: string) {
+  let pageContext = AppStorage.get('contextTest7') as common.UIAbilityContext
   await pageContext.terminateSelf().then(() => {
     console.log(`${caseName} terminateSelf success`);
   }).catch((err: BusinessError) => {
