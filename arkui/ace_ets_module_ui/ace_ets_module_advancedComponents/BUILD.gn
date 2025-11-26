@@ -16,9 +16,9 @@ group("ActsAceEtsModuleAdvancedComponentsTest") {
   testonly = true
   if (ace_engine_feature_wearable) {
     deps = [ 
-	  "ace_ets_module_advancedComponents_api12:ActsAceEtsModuleAdvancedComponentsApi12Test",
-	  "ace_ets_module_advanceDialog:ActsAceEtsModuleAdvancedDialogTest"
-	]
+	    "ace_ets_module_advancedComponents_api12:ActsAceEtsModuleAdvancedComponentsApi12Test",
+      "ace_ets_module_advanceDialog:ActsAceEtsModuleAdvancedDialogTest"
+	  ]
   } else {
     deps = [
       "ace_ets_module_advancedComponents_api12:ActsAceEtsModuleAdvancedComponentsApi12Test",
