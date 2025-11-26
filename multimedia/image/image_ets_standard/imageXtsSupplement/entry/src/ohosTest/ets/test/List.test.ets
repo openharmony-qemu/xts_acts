@@ -105,6 +105,7 @@ import SendableImagePixelMapSetColorSpaceTest from './sendableImage/SendableImag
 import SendableImagePixelMapUnMarshallingTest from './sendableImage/SendableImagePixelMapUnMarshalling.Test.test';
 import SendableImageSourceCreatePixelMapTest from './sendableImage/SendableImageSourceCreatePixelMap.Test.test';
 import ImagePictureSetAuxiliaryPictureTest from './image/ImagePictureSetAuxiliaryPicture.Test.test';
+import ImagePixelMapCropTest from './image/ImagePixelMapCrop.Test.test';
 
 
 export default function testsuite() {
@@ -199,4 +200,5 @@ export default function testsuite() {
   SendableImagePixelMapUnMarshallingTest();
   SendableImageSourceCreatePixelMapTest();
   ImagePictureSetAuxiliaryPictureTest();
+  ImagePixelMapCropTest();
 }

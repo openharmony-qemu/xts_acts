@@ -39,7 +39,6 @@ async function auxiliaryPictureTest(done: Function, testName: string, path: stri
   console.info(TAG,testName,'PictureObj')
   callback(PictureObj);
   done()
-
 }
 
 export default function ImagePictureSetAuxiliaryPictureTest() {
