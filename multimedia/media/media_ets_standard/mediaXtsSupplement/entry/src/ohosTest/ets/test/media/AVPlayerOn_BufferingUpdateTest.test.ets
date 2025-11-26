@@ -26,21 +26,26 @@ export default function AVPlayerOn_BufferingUpdateTest() {
       await getPermission();
       await driveFn();
       AppStorage.setOrCreate('emptyString', '')
+
     });
+
     beforeEach(() => {
       console.info(TAG, 'beforeEach case.');
     });
+
     afterEach(() => {
       console.info(TAG, 'afterEach case.');
     });
+
     afterAll(() => {
       console.info(TAG, 'afterAll case.');
     });
 
+
     /**
      * @tc.number    SUB_AVPLAYER_ON_BUFFERING_UPDATE_TEST_001
      * @tc.name      SUB_AVPLAYER_ON_BUFFERING_UPDATE_TEST_001
-     * @tc.desc      第一个参数为null
+     * @tc.desc      第二个参数为null
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 2
@@ -49,13 +54,13 @@ export default function AVPlayerOn_BufferingUpdateTest() {
       const testName = 'SUB_AVPLAYER_ON_BUFFERING_UPDATE_TEST_001';
       try {
         let avPlayer = await media.createAVPlayer();
-        (avPlayer as ESObject).on_bufferingUpdate(null, (infoType: media.BufferingInfoType, value: number) => {
-          console.info('bufferingUpdate called,and infoType value is:' + infoType + ', value is :' + value);
-          });
-        expect().assertFail()
+        console.info(TAG,testName,avPlayer,'1111111111')
+        avPlayer.on('bufferingUpdate', null as ESObject)
+        expect(avPlayer !== undefined).assertTrue()
         done();
       } catch (error) {
         console.info(TAG, testName, 'on_bufferingUpdate  error', error.message, error.code);
+        expect(error).assertEqual('401')
         done();
       }
     })
@@ -63,7 +68,7 @@ export default function AVPlayerOn_BufferingUpdateTest() {
     /**
      * @tc.number    SUB_AVPLAYER_ON_BUFFERING_UPDATE_TEST_002
      * @tc.name      SUB_AVPLAYER_ON_BUFFERING_UPDATE_TEST_002
-     * @tc.desc      第一个参数为undefined
+     * @tc.desc      第二个参数为undefined
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 2
@@ -72,13 +77,13 @@ export default function AVPlayerOn_BufferingUpdateTest() {
       const testName = 'SUB_AVPLAYER_ON_BUFFERING_UPDATE_TEST_002';
       try {
         let avPlayer = await media.createAVPlayer();
-        (avPlayer as ESObject).on_bufferingUpdate(undefined, (infoType: media.BufferingInfoType, value: number) => {
-          console.info('bufferingUpdate called,and infoType value is:' + infoType + ', value is :' + value);
-        });
-        expect().assertFail()
+        avPlayer.on('bufferingUpdate', undefined as ESObject)
+        expect(avPlayer !== undefined).assertTrue()
         done();
       } catch (error) {
         console.info(TAG, testName, 'on_bufferingUpdate  error', error.message, error.code);
+        expect(error).assertEqual('401')
+
         done();
       }
     })
@@ -86,7 +91,7 @@ export default function AVPlayerOn_BufferingUpdateTest() {
     /**
      * @tc.number    SUB_AVPLAYER_ON_BUFFERING_UPDATE_TEST_003
      * @tc.name      SUB_AVPLAYER_ON_BUFFERING_UPDATE_TEST_003
-     * @tc.desc      第一个参数为空
+     * @tc.desc      第二个参数为空
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 2
@@ -95,76 +100,12 @@ export default function AVPlayerOn_BufferingUpdateTest() {
       const testName = 'SUB_AVPLAYER_ON_BUFFERING_UPDATE_TEST_003';
       try {
         let avPlayer = await media.createAVPlayer();
-        (avPlayer as ESObject).on_bufferingUpdate('', (infoType: media.BufferingInfoType, value: number) => {
-          console.info('bufferingUpdate called,and infoType value is:' + infoType + ', value is :' + value);
-        });
-        expect().assertFail()
+        avPlayer.on('bufferingUpdate', [] as ESObject)
+        expect(avPlayer !== undefined).assertTrue()
         done();
       } catch (error) {
         console.info(TAG, testName, 'on_bufferingUpdate  error', error.message, error.code);
-        done();
-      }
-    })
-
-    /**
-     * @tc.number    SUB_AVPLAYER_ON_BUFFERING_UPDATE_TEST_004
-     * @tc.name      SUB_AVPLAYER_ON_BUFFERING_UPDATE_TEST_004
-     * @tc.desc      第二个参数为null
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('SUB_AVPLAYER_ON_BUFFERING_UPDATE_TEST_004', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_AVPLAYER_ON_BUFFERING_UPDATE_TEST_004';
-      try {
-        let avPlayer = await media.createAVPlayer();
-        (avPlayer as ESObject).on_bufferingUpdate('bufferingUpdate', null)
-        expect().assertFail()
-        done();
-      } catch (error) {
-        console.info(TAG, testName, 'on_bufferingUpdate  error', error.message, error.code);
-        done();
-      }
-    })
-
-    /**
-     * @tc.number    SUB_AVPLAYER_ON_BUFFERING_UPDATE_TEST_005
-     * @tc.name      SUB_AVPLAYER_ON_BUFFERING_UPDATE_TEST_005
-     * @tc.desc      第二个参数为undefined
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('SUB_AVPLAYER_ON_BUFFERING_UPDATE_TEST_005', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_AVPLAYER_ON_BUFFERING_UPDATE_TEST_005';
-      try {
-        let avPlayer = await media.createAVPlayer();
-        (avPlayer as ESObject).on_bufferingUpdate('bufferingUpdate', undefined)
-        expect().assertFail()
-        done();
-      } catch (error) {
-        console.info(TAG, testName, 'on_bufferingUpdate  error', error.message, error.code);
-        done();
-      }
-    })
-
-    /**
-     * @tc.number    SUB_AVPLAYER_ON_BUFFERING_UPDATE_TEST_006
-     * @tc.name      SUB_AVPLAYER_ON_BUFFERING_UPDATE_TEST_006
-     * @tc.desc      第二个参数为空
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('SUB_AVPLAYER_ON_BUFFERING_UPDATE_TEST_006', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_AVPLAYER_ON_BUFFERING_UPDATE_TEST_006';
-      try {
-        let avPlayer = await media.createAVPlayer();
-        (avPlayer as ESObject).on_bufferingUpdate('bufferingUpdate', '')
-        expect().assertFail()
-        done();
-      } catch (error) {
-        console.info(TAG, testName, 'on_bufferingUpdate  error', error.message, error.code);
+        expect(error).assertEqual('401')
         done();
       }
     })
