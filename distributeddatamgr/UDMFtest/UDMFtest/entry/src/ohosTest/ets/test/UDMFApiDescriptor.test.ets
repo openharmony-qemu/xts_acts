@@ -13,8 +13,9 @@
  * limitations under the License.
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from '@ohos/hypium'
-import UTD from '@ohos.data.uniformTypeDescriptor'
+import UTD from '@ohos.data.uniformTypeDescriptor';
 import { BusinessError } from '@ohos.base';
+import uniformTypeDescriptor from '@kit.ArkData';
 
 const REFERENCE_URL =
   "https://gitee.com/openharmony/docs/blob/master/en/application-dev/reference/apis/js-apis-data-uniformTypeDescriptor.md#uniformdatatype";
