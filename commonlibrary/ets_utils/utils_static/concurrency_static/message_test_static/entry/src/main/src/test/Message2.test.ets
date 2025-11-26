@@ -88,7 +88,7 @@ export default function MessageTest2() {
         } finally {
           console.info(`${TAG} test end`)
           try {
-            eaw.quitSafely();
+            eaw.quit();
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
@@ -154,7 +154,7 @@ export default function MessageTest2() {
         } finally {
           console.info(`${TAG} test end`)
           try {
-            eaw.quitSafely();
+            eaw.quit();
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
@@ -219,7 +219,7 @@ export default function MessageTest2() {
         } finally {
           console.info(`${TAG} test end`)
           try {
-            eaw.quitSafely();
+            eaw.quit();
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
@@ -260,7 +260,7 @@ export default function MessageTest2() {
         } finally {
           console.info(`${TAG} test end`)
           try {
-            eaw.quitSafely();
+            eaw.quit();
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
@@ -301,7 +301,7 @@ export default function MessageTest2() {
         } finally {
           console.info(`${TAG} test end`)
           try {
-            eaw.quitSafely();
+            eaw.quit();
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
@@ -342,7 +342,7 @@ export default function MessageTest2() {
         } finally {
           console.info(`${TAG} test end`)
           try {
-            eaw.quitSafely();
+            eaw.quit();
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
@@ -386,7 +386,7 @@ export default function MessageTest2() {
         } finally {
           console.info(`${TAG} test end`)
           try {
-            eaw.quitSafely();
+            eaw.quit();
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
@@ -428,7 +428,7 @@ export default function MessageTest2() {
         } finally {
           console.info(`${TAG} test end`)
           try {
-            eaw.quitSafely();
+            eaw.quit();
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
@@ -469,7 +469,7 @@ export default function MessageTest2() {
         } finally {
           console.info(`${TAG} test end`)
           try {
-            eaw.quitSafely();
+            eaw.quit();
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
@@ -510,7 +510,7 @@ export default function MessageTest2() {
         } finally {
           console.info(`${TAG} test end`)
           try {
-            eaw.quitSafely();
+            eaw.quit();
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
@@ -552,7 +552,7 @@ export default function MessageTest2() {
         } finally {
           console.info(`${TAG} test end`)
           try {
-            eaw.quitSafely();
+            eaw.quit();
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
@@ -628,7 +628,7 @@ export default function MessageTest2() {
         } finally {
           console.info(`${TAG} test end`)
           try {
-            eaw.quitSafely();
+            eaw.quit();
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
@@ -688,7 +688,7 @@ export default function MessageTest2() {
         } finally {
           console.info(`${TAG} test end`)
           try {
-            eaw.quitSafely();
+            eaw.quit();
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
@@ -756,7 +756,7 @@ export default function MessageTest2() {
         } finally {
           while (workNum > 0) {
             try {
-              works[--workNum].quitSafely();
+              works[--workNum].quit();
             } catch (error) {
               console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
             }
@@ -895,7 +895,7 @@ export default function MessageTest2() {
         } finally {
           console.info(`${TAG} test end`)
           try {
-            eaw.quitSafely();
+            eaw.quit();
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
@@ -929,8 +929,8 @@ export default function MessageTest2() {
         } finally {
           console.info(`${TAG} test end`)
           try {
-            eaw1.quitSafely();
-            eaw2.quitSafely();
+            eaw1.quit();
+            eaw2.quit();
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }
@@ -1020,7 +1020,7 @@ export default function MessageTest2() {
           expect(false).assertFail();
         } finally {
           try {
-            worker.quitSafely();
+            worker.quit();
             worker.join();
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
@@ -1336,7 +1336,7 @@ export default function MessageTest2() {
           expect(false).assertFail();
         } finally {
           try {
-            worker.quitSafely();
+            worker.quit();
           } catch (error) {
             console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
           }

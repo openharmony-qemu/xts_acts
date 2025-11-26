@@ -27,6 +27,7 @@ import {
   beforeAll
 } from "../../../hypium/index";
 import Utils from './Util.test';
+import {quitErrorMsg} from './Util.test';
 
 class MessageObject {
   id: number
@@ -49,403 +50,6 @@ export default function NewEAWorkerTes2() {
     afterEach(() => {
       await Utils.msSleep(300);
     })
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_EAWorker_NEW_TEST_0164
-     * @tc.name QuitSafelyTest003
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('QuitSafelyTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const TAG: string = 'QuitSafelyTest003';
-        console.info(`${TAG} test start`);
-        let count = 0;
-        const worker = new EAWorker();
-        worker.start();
-        try {
-          const taskCount = 10;
-          let completedTasks = 0;
-          for (let i = 0; i < taskCount; i++) {
-            worker.postTask(() => {
-              count++;
-              completedTasks++;
-              if (completedTasks === 5) {
-                worker.quitSafely();
-              }
-            });
-          }
-          await Utils.msSleep(1000);
-          expect(count <= 10).assertEqual(true);
-        } catch (error) {
-          console.error(`${TAG} catch error: code =>  message => ${error.message}`);
-          expect(false).assertFail();
-        } finally {
-          try {
-            worker.quit();
-          } catch (error) {
-            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
-          }
-          console.info(`${TAG} test end`);
-          done();
-        }
-      });
-
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_EAWorker_NEW_TEST_0165
-     * @tc.name QuitSafelyTest004
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('QuitSafelyTest004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const TAG: string = 'QuitSafelyTest004';
-        console.info(`${TAG} test start`);
-        let doneFlag = false;
-        const worker = new EAWorker(TAG, () => {
-          setTimeout(() => {
-            doneFlag = true;
-          }, 30)
-        });
-        worker.start();
-        try {
-          await Utils.msSleep(200);
-          worker.quitSafely();
-          expect(doneFlag).assertTrue();
-        } catch (error) {
-          console.error(`${TAG} catch error: code =>  message => ${error.message}`);
-          expect(false).assertFail();
-        } finally {
-          try {
-            worker.quit();
-          } catch (error) {
-            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
-          }
-          console.info(`${TAG} test end`);
-          done();
-        }
-      });
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_EAWorker_NEW_TEST_0166
-     * @tc.name QuitSafelyTest005
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('QuitSafelyTest005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const TAG = 'QuitSafelyTest005';
-        console.info(`${TAG} test start`);
-        let doneFlag = false;
-        const worker = new EAWorker(TAG, () => {
-          setTimeout(() => {
-            doneFlag = true;
-          }, 30)
-        });
-        worker.start();
-        try {
-          let doneFlag2: boolean = false;
-          const job = worker.run<void>(() => {
-            doneFlag2 = true;
-          });
-          worker.quitSafely();
-          job.Await();
-          await Utils.msSleep(1000);
-          expect(doneFlag).assertTrue();
-          expect(doneFlag2).assertTrue();
-        } catch (error) {
-          console.error(`${TAG} catch error: code =>  message => ${error.message}`);
-          expect(false).assertFail();
-        } finally {
-          try {
-            worker.quit();
-          } catch (error) {
-            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
-          }
-          console.info(`${TAG} end`);
-          done();
-        }
-      }
-    );
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_EAWorker_NEW_TEST_0167
-     * @tc.name QuitSafelyTest006
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('QuitSafelyTest006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const TAG = 'QuitSafelyTest006';
-        console.info(`${TAG} test start`);
-        let doneFlag = false;
-        let count: number = 0;
-        const worker = new EAWorker(TAG, () => {
-          setTimeout(() => {
-            doneFlag = true;
-          }, 500)
-        });
-        worker.start();
-        try {
-          let doneFlag2: boolean = false;
-          const job1 = worker.run<void>(() => {
-            doneFlag2 = true;
-          });
-          await Utils.msSleep(500);
-          worker.quitSafely();
-          let doneFlag3: boolean = false;
-          try {
-            const job2 = worker.run<void>(() => {
-              doneFlag3 = true;
-            });
-            job1.Await();
-            job2.Await();
-          } catch (error) {
-            console.error(`${TAG} catch run error: code =>  message => ${error.message}`);
-            expect(error.message).assertContain('Can not run task when worker is not started');
-          }
-          expect(doneFlag).assertTrue();
-          expect(doneFlag2).assertTrue();
-          expect(doneFlag3).assertFalse();
-        } catch (error) {
-          console.error(`${TAG} catch error: code =>  message => ${error.message}`);
-          expect(false).assertFail();
-        } finally {
-          try {
-            worker.quit();
-          } catch (error) {
-            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
-          }
-          console.info(`${TAG} end`);
-          done();
-        }
-      }
-    );
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_EAWorker_NEW_TEST_0168
-     * @tc.name QuitSafelyTest007
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('QuitSafelyTest007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const TAG = 'QuitSafelyTest007';
-        console.info(`${TAG} test start`);
-        const worker = new EAWorker();
-        worker.start();
-        try {
-          expect(worker.isAlive()).assertTrue();
-          worker.postTask(() => {
-            setTimeout(() => {
-            }, 100);
-          });
-          await Utils.msSleep(200);
-          worker.quitSafely();
-          while(worker.isAlive()){
-              await Sleep(10);
-          }
-          expect(worker.isAlive()).assertFalse();
-          let secondQuitThrows = false;
-          try {
-            worker.quit();
-          } catch (error) {
-            secondQuitThrows = true;
-          }
-          console.info(`${TAG} isAlive：${worker.isAlive()}`);
-          console.info(`${TAG} secondQuitThrows：${secondQuitThrows}`);
-          if (!worker.isAlive()) {
-            expect(secondQuitThrows).assertFalse();
-          }
-        } catch (error) {
-          console.error(`${TAG} catch error: ${error.message}`);
-          expect(false).assertFail();
-        } finally {
-          try {
-            worker.quit();
-          } catch (error) {
-            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
-          }
-          console.info(`${TAG} test end`);
-          done();
-        }
-      });
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_EAWorker_NEW_TEST_0169
-     * @tc.name QuitSafelyTest008
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('QuitSafelyTest008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const TAG: string = 'QuitSafelyTest008';
-        console.info(`${TAG} test start`);
-        let safelyQuitInside = false;
-        const worker = new EAWorker(TAG, (): void => {
-          EAWorker.current()!.quitSafely();
-          safelyQuitInside = true;
-        });
-        try {
-          worker.start();
-          await Utils.msSleep(1000);
-          expect(safelyQuitInside).assertTrue();
-          expect(worker.isAlive()).assertFalse();
-        } catch (error) {
-          console.error(`${TAG} catch error: code =>  message => ${error.message}`);
-          expect(false).assertFail();
-        } finally {
-          try {
-            worker.quit();
-          } catch (error) {
-            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
-          }
-          console.info(`${TAG} test end`);
-          done();
-        }
-      }
-    );
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_EAWorker_NEW_TEST_0170
-     * @tc.name QuitSafelyTest009
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('QuitSafelyTest009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const TAG: string = 'QuitSafelyTest009';
-        console.info(`${TAG} test start`);
-        let caught: boolean = false;
-        const worker = new EAWorker();
-        worker.start();
-        try {
-          worker.run<void>((): void => {
-            worker.quitSafely();
-            caught = true;
-          }).Await();
-          await Utils.msSleep(1000);
-          console.info(`${TAG} isAlive: ${worker.isAlive()}`);
-          console.info(`${TAG} caught: ${caught}`);
-          expect(caught).assertTrue();
-        } catch (error) {
-          console.info(`${TAG} test28`);
-          console.error(`${TAG} catch error: code =>  message => ${error.message}`);
-          expect(false).assertFail();
-        } finally {
-          console.info(`${TAG} test29`);
-          worker.join();
-          console.info(`${TAG} test end`);
-          done();
-        }
-      });
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_EAWorker_NEW_TEST_0171
-     * @tc.name QuitSafelyTest010
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('QuitSafelyTest010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const TAG: string = 'QuitSafelyTest010';
-        console.info(`${TAG} test start`);
-        let doneFlag: boolean = false;
-        let count: number = 0;
-        const worker = new EAWorker();
-        worker.start();
-        try {
-          expect(worker.isAlive()).assertTrue();
-          worker.run<void>((): void => {
-            doneFlag = true;
-          }).Await();
-          await Utils.msSleep(1000);
-          for (let i = 0; i < 10; i++) {
-            count++;
-            worker.quitSafely()
-          }
-          await Utils.msSleep(1000);
-          console.info(`${TAG} isAlive:${worker.isAlive()}`);
-          console.info(`${TAG} doneFlag: ${doneFlag}`);
-          console.info(`${TAG} count: ${count}`);
-          expect(worker.isAlive()).assertFalse();
-          expect(doneFlag).assertTrue();
-          expect(count).assertEqual(10);
-        } catch (error) {
-          console.error(`${TAG} catch error: code =>  message => ${error.message}`);
-          expect(false).assertFail();
-        } finally {
-          try {
-            worker.quit();
-          } catch (error) {
-            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
-          }
-          console.info(`${TAG} test end`);
-          done();
-        }
-      });
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_EAWorker_NEW_TEST_0172
-     * @tc.name QuitSafelyTest011
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
-    it('QuitSafelyTest011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const TAG: string = 'QuitSafelyTest011';
-        console.info(`${TAG} test start`);
-        let doneFlag: boolean = false;
-        let count: number = 0;
-        const worker = new EAWorker();
-        worker.start();
-        try {
-          worker.run<void>((): void => {
-            doneFlag = true;
-          }).Await();
-          await Utils.msSleep(1000);
-          for (let i = 0; i < 10; i++) {
-            count++;
-            worker.quitSafely();
-            worker.join();
-          }
-          console.info(`${TAG} isAlive：${worker.isAlive()}`);
-          console.info(`${TAG} doneFlag：${doneFlag}`);
-          console.info(`${TAG} count：${count}`);
-          expect(worker.isAlive()).assertFalse();
-          expect(doneFlag).assertTrue();
-          expect(count).assertEqual(10);
-        } catch (error) {
-          console.error(`${TAG} catch error: code =>  message => ${error.message}`);
-          expect(false).assertFail();
-        } finally {
-          try {
-            worker.quit();
-          } catch (error) {
-            console.warn(`${TAG} catch quit error: code =>  message => ${error.message}`);
-          }
-          console.info(`${TAG} test end`);
-          done();
-        }
-      });
 
     /**
      * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCY_EAWorker_NEW_TEST_0173
@@ -513,7 +117,7 @@ export default function NewEAWorkerTes2() {
             });
           }
           await Utils.msSleep(3000);
-          worker.quitSafely();
+          worker.quit();
           while(worker.isAlive()){
               await Sleep(10);
           }
@@ -619,8 +223,7 @@ export default function NewEAWorkerTes2() {
             return worker;
           });
           workers.forEach(worker => {
-            worker.quitSafely()
-            worker.join()
+            worker.quit()
           });
           console.info(`${TAG} workers: ${workers}`);
           console.info(`${TAG} result.length: ${result.length}`);
@@ -628,9 +231,12 @@ export default function NewEAWorkerTes2() {
           while (Date.now() < end) {
           }
           expect(result.length).assertEqual(10);
+          workers.forEach(worker => {
+            worker.join()
+          });
         } catch (error) {
+          expect(error.message).assertContain(quitErrorMsg);
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
-          expect(false).assertFail();
         } finally {
           console.info(`${TAG} test end`);
           done();
@@ -1184,7 +790,7 @@ export default function NewEAWorkerTes2() {
           worker.start();
           await Utils.msSleep(1000);
           let currentId = current!.getWorkerId()
-          expect(typeof currentId).assertEqual('number')
+          expect(typeof currentId).assertEqual('int')
           current!.join();
         } catch (error) {
           expect(false).assertFail();
