@@ -1078,5 +1078,48 @@ export default function ArkListTest() {
         expect(false).assertFail();
       }
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_010
+     * @tc.name testUtil3_010
+     * @tc.desc Test the util
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testUtil3_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let list: List<int> = new List<int>();
+      list.add(2);
+      list.add(4);
+      list.add(5);
+      let obj: List<int> = new List<int>();
+      obj.add(2);
+      obj.add(4);
+      obj.add(5);
+      let result = list.equal(obj);
+      expect(result).assertEqual(true);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_011
+     * @tc.name testUtil3_011
+     * @tc.desc Test the util
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testUtil3_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let list: List<int> = new List<int>();
+      list.add(2);
+      list.add(4);
+      list.add(5);
+      let obj: List<int> = new List<int>();
+      obj.add(2);
+      obj.add(4);
+      obj.add(5);
+      obj.add(6);
+      let result = list.equal(obj);
+      expect(result).assertEqual(false);
+    })
   });
 }

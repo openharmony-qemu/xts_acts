@@ -1276,5 +1276,120 @@ export default function LinkedListTest1() {
         }
       }
     });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_004
+     * @tc.name testUtil3_004
+     * @tc.desc Test the util
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testUtil3_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let linkedList: LinkedList<int> = new LinkedList<int>();
+      linkedList.add(2);
+      linkedList.add(4);
+      linkedList.add(5);
+      linkedList.add(4);
+      let result = linkedList.remove(2);
+      expect(result).assertEqual(true);
+      expect(linkedList.length).assertEqual(3);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_005
+     * @tc.name testUtil3_005
+     * @tc.desc Test the util
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testUtil3_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let linkedList: LinkedList<int> = new LinkedList<int>();
+      linkedList.add(2);
+      linkedList.add(4);
+      linkedList.add(5);
+      linkedList.add(4);
+      let result = linkedList.getFirst();
+      expect(result).assertEqual(2);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_006
+     * @tc.name testUtil3_006
+     * @tc.desc Test the util
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testUtil3_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let linkedList: LinkedList<int> = new LinkedList<int>();
+      linkedList.add(2);
+      linkedList.add(4);
+      linkedList.add(5);
+      linkedList.add(4);
+      let result = linkedList.getLast();
+      expect(result).assertEqual(4);
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_007
+     * @tc.name testUtil3_007
+     * @tc.desc Test the util
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testUtil3_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let linkedList: LinkedList<int> = new LinkedList<int>();
+      try {
+         linkedList.getFirst();
+      } catch (e) {
+        if (e instanceof BusinessError) {
+          expect(e.code).assertEqual(10200010);
+        }else{
+          expect().assertFail();
+        }
+      }
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_008
+     * @tc.name testUtil3_008
+     * @tc.desc Test the util
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testUtil3_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let linkedList: LinkedList<int> = new LinkedList<int>();
+      try {
+        linkedList.getLast();
+      } catch (e) {
+        if (e instanceof BusinessError) {
+          expect(e.code).assertEqual(10200010);
+        }else{
+          expect().assertFail();
+        }
+      }
+    })
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_009
+     * @tc.name testUtil3_009
+     * @tc.desc Test the util
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testUtil3_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let linkedList: LinkedList<int | string> = new LinkedList<int | string>();
+      linkedList.add(2);
+      linkedList.add(4);
+      linkedList.add(5);
+      linkedList.add(4);
+      let result = linkedList.set(2, "b");
+      expect(result).assertEqual("b");
+    })
   });
 }

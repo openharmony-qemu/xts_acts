@@ -532,5 +532,30 @@ export default function DequeTest() {
     //   }
     // });
 
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_003
+     * @tc.name testUtil3_003
+     * @tc.desc Test the util
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testUtil3_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let result = 0;
+      let deque: Deque<int> = new Deque<int>();
+      deque.insertFront(2);
+      deque.insertFront(4);
+      deque.insertFront(5);
+      deque.insertFront(4);
+
+      let iter = deque.$_iterator();
+      let temp: IteratorResult<int> = iter.next();
+      while (!temp.done) {
+        result = result + temp.value!;
+        temp = iter.next();
+      }
+      expect(result).assertEqual(15);
+    })
+
   })
 }
