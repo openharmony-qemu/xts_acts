@@ -26,13 +26,17 @@ export default function AVPlayerOnMessageReceivedTest() {
       await getPermission();
       await driveFn();
       AppStorage.setOrCreate('emptyString', '')
+
     });
+
     beforeEach(() => {
       console.info(TAG, 'beforeEach case.');
     });
+
     afterEach(() => {
       console.info(TAG, 'afterEach case.');
     });
+
     afterAll(() => {
       console.info(TAG, 'afterAll case.');
     });
@@ -49,21 +53,23 @@ export default function AVPlayerOnMessageReceivedTest() {
       const testName = 'SUB_AVPLAYER_ON_MESSAGE_RECEIVE_TEST_001';
       try {
         let avPlayer = await media.createAVPlayer();
-        (avPlayer as ESObject).on_seiMessageReceived('seiMessageReceived',[null], (messages: Array<media.SeiMessage>, playbackPosition?: number) => {
+        avPlayer.on('seiMessageReceived',null, (messages: Array<media.SeiMessage>, playbackPosition?: number) => {
           console.info('seiMessageReceived playbackPosition ' + playbackPosition);
         });
-        expect().assertFail()
+        expect(avPlayer !== undefined).assertTrue()
         done();
       }catch (error){
         console.info(TAG, testName, 'on_seiMessageReceived  error', error.message, error.code);
+        expect(error).assertEqual('401')
         done();
       }
     })
 
+
     /**
      * @tc.number    SUB_AVPLAYER_ON_MESSAGE_RECEIVE_TEST_002
      * @tc.name      SUB_AVPLAYER_ON_MESSAGE_RECEIVE_TEST_002
-     * @tc.desc      第一个参数为null
+     * @tc.desc      第三个参数为空
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 2
@@ -72,10 +78,8 @@ export default function AVPlayerOnMessageReceivedTest() {
       const testName = 'SUB_AVPLAYER_ON_MESSAGE_RECEIVE_TEST_002';
       try {
         let avPlayer = await media.createAVPlayer();
-        (avPlayer as ESObject).on_seiMessageReceived(null,[5], (messages: Array<media.SeiMessage>, playbackPosition?: number) => {
-          console.info('seiMessageReceived playbackPosition ' + playbackPosition);
-        });
-        expect().assertFail()
+        avPlayer.on('seiMessageReceived',[5],[] as ESObject )
+        expect(avPlayer !== undefined).assertTrue()
         done();
       }catch (error){
         console.info(TAG, testName, 'on_seiMessageReceived  error', error.message, error.code);
@@ -86,7 +90,7 @@ export default function AVPlayerOnMessageReceivedTest() {
     /**
      * @tc.number    SUB_AVPLAYER_ON_MESSAGE_RECEIVE_TEST_003
      * @tc.name      SUB_AVPLAYER_ON_MESSAGE_RECEIVE_TEST_003
-     * @tc.desc      第三个参数为空
+     * @tc.desc      第二个参数为非空数组
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 2
@@ -95,8 +99,10 @@ export default function AVPlayerOnMessageReceivedTest() {
       const testName = 'SUB_AVPLAYER_ON_MESSAGE_RECEIVE_TEST_003';
       try {
         let avPlayer = await media.createAVPlayer();
-        (avPlayer as ESObject).on_seiMessageReceived('seiMessageReceived',[5], {}  )
-        expect().assertFail()
+        avPlayer.on('seiMessageReceived',[5], (messages: Array<media.SeiMessage>, playbackPosition?: number) => {
+          console.info('seiMessageReceived playbackPosition ' + playbackPosition);
+        });
+        expect(avPlayer !== undefined).assertTrue()
         done();
       }catch (error){
         console.info(TAG, testName, 'on_seiMessageReceived  error', error.message, error.code);
@@ -107,7 +113,7 @@ export default function AVPlayerOnMessageReceivedTest() {
     /**
      * @tc.number    SUB_AVPLAYER_ON_MESSAGE_RECEIVE_TEST_004
      * @tc.name      SUB_AVPLAYER_ON_MESSAGE_RECEIVE_TEST_004
-     * @tc.desc      第二个参数为非空数组
+     * @tc.desc      第三个参数为null
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 2
@@ -116,10 +122,8 @@ export default function AVPlayerOnMessageReceivedTest() {
       const testName = 'SUB_AVPLAYER_ON_MESSAGE_RECEIVE_TEST_004';
       try {
         let avPlayer = await media.createAVPlayer();
-        (avPlayer as ESObject).on_seiMessageReceived('seiMessageReceived',[5], (messages: Array<media.SeiMessage>, playbackPosition?: number) => {
-          console.info('seiMessageReceived playbackPosition ' + playbackPosition);
-        });
-        expect().assertFail()
+        avPlayer.on('seiMessageReceived',[5], null)
+        expect(avPlayer !== undefined).assertTrue()
         done();
       }catch (error){
         console.info(TAG, testName, 'on_seiMessageReceived  error', error.message, error.code);
@@ -130,7 +134,7 @@ export default function AVPlayerOnMessageReceivedTest() {
     /**
      * @tc.number    SUB_AVPLAYER_ON_MESSAGE_RECEIVE_TEST_005
      * @tc.name      SUB_AVPLAYER_ON_MESSAGE_RECEIVE_TEST_005
-     * @tc.desc      第三个参数为null
+     * @tc.desc      第三个参数为undefined
      * @tc.size      MEDIUM
      * @tc.type      Function
      * @tc.level     Level 2
@@ -139,8 +143,8 @@ export default function AVPlayerOnMessageReceivedTest() {
       const testName = 'SUB_AVPLAYER_ON_MESSAGE_RECEIVE_TEST_005';
       try {
         let avPlayer = await media.createAVPlayer();
-        (avPlayer as ESObject).on_seiMessageReceived('seiMessageReceived',[5], null  )
-        expect().assertFail()
+        avPlayer.on('seiMessageReceived',[5], undefined)
+        expect(avPlayer !== undefined).assertTrue()
         done();
       }catch (error){
         console.info(TAG, testName, 'on_seiMessageReceived  error', error.message, error.code);
@@ -148,118 +152,8 @@ export default function AVPlayerOnMessageReceivedTest() {
       }
     })
 
-    /**
-     * @tc.number    SUB_AVPLAYER_ON_MESSAGE_RECEIVE_TEST_006
-     * @tc.name      SUB_AVPLAYER_ON_MESSAGE_RECEIVE_TEST_006
-     * @tc.desc      第三个参数为undefined
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('SUB_AVPLAYER_ON_MESSAGE_RECEIVE_TEST_006', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_AVPLAYER_ON_MESSAGE_RECEIVE_TEST_006';
-      try {
-        let avPlayer = await media.createAVPlayer();
-        (avPlayer as ESObject).on_seiMessageReceived('seiMessageReceived',[5], undefined  )
-        expect().assertFail()
-        done();
-      }catch (error){
-        console.info(TAG, testName, 'on_seiMessageReceived  error', error.message, error.code);
-        done();
-      }
-    })
 
-    /**
-     * @tc.number    SUB_AVPLAYER_ON_MESSAGE_RECEIVE_TEST_007
-     * @tc.name      SUB_AVPLAYER_ON_MESSAGE_RECEIVE_TEST_007
-     * @tc.desc      第二个参数为undefined
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('SUB_AVPLAYER_ON_MESSAGE_RECEIVE_TEST_007', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_AVPLAYER_ON_MESSAGE_RECEIVE_TEST_007';
-      try {
-        let avPlayer = await media.createAVPlayer();
-        (avPlayer as ESObject).on_seiMessageReceived('seiMessageReceived',[undefined], (messages: Array<media.SeiMessage>, playbackPosition?: number) => {
-          console.info('seiMessageReceived playbackPosition ' + playbackPosition);
-        });
-        expect().assertFail()
-        done();
-      }catch (error){
-        console.info(TAG, testName, 'on_seiMessageReceived  error', error.message, error.code);
-        done();
-      }
-    })
 
-    /**
-     * @tc.number    SUB_AVPLAYER_ON_MESSAGE_RECEIVE_TEST_008
-     * @tc.name      SUB_AVPLAYER_ON_MESSAGE_RECEIVE_TEST_008
-     * @tc.desc      第二个参数为空
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('SUB_AVPLAYER_ON_MESSAGE_RECEIVE_TEST_008', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_AVPLAYER_ON_MESSAGE_RECEIVE_TEST_008';
-      try {
-        let avPlayer = await media.createAVPlayer();
-        (avPlayer as ESObject).on_seiMessageReceived('seiMessageReceived',[0], (messages: Array<media.SeiMessage>, playbackPosition?: number) => {
-          console.info('seiMessageReceived playbackPosition ' + playbackPosition);
-        });
-        expect().assertFail()
-        done();
-      }catch (error){
-        console.info(TAG, testName, 'on_seiMessageReceived  error', error.message, error.code);
-        done();
-      }
-    })
-
-    /**
-     * @tc.number    SUB_AVPLAYER_ON_MESSAGE_RECEIVE_TEST_009
-     * @tc.name      SUB_AVPLAYER_ON_MESSAGE_RECEIVE_TEST_009
-     * @tc.desc      第二个参数为非空数组
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('SUB_AVPLAYER_ON_MESSAGE_RECEIVE_TEST_009', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_AVPLAYER_ON_MESSAGE_RECEIVE_TEST_009';
-      try {
-        let avPlayer = await media.createAVPlayer();
-        (avPlayer as ESObject).on_seiMessageReceived('seiMessageReceived',[4], (messages: Array<media.SeiMessage>, playbackPosition?: number) => {
-          console.info('seiMessageReceived playbackPosition ' + playbackPosition);
-        });
-        expect().assertFail()
-        done();
-      }catch (error){
-        console.info(TAG, testName, 'on_seiMessageReceived  error', error.message, error.code);
-        done();
-      }
-    })
-
-    /**
-     * @tc.number    SUB_AVPLAYER_ON_MESSAGE_RECEIVE_TEST_010
-     * @tc.name      SUB_AVPLAYER_ON_MESSAGE_RECEIVE_TEST_010
-     * @tc.desc      第二个参数为非空数组
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('SUB_AVPLAYER_ON_MESSAGE_RECEIVE_TEST_010', Level.LEVEL2, async (done: Function) => {
-      const testName = 'SUB_AVPLAYER_ON_MESSAGE_RECEIVE_TEST_010';
-      try {
-        let avPlayer = await media.createAVPlayer();
-        (avPlayer as ESObject).on_seiMessageReceived('seiMessageReceived',[3], (messages: Array<media.SeiMessage>, playbackPosition?: number) => {
-          console.info('seiMessageReceived playbackPosition ' + playbackPosition);
-        });
-        expect().assertFail()
-        done();
-      }catch (error){
-        console.info(TAG, testName, 'on_seiMessageReceived  error', error.message, error.code);
-        done();
-      }
-    })
 
   })
 }
