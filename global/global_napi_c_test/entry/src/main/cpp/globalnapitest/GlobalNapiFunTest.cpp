@@ -174,6 +174,8 @@ static void InitPush4(std::vector<napi_property_descriptor>& desc)
                     nullptr, nullptr, nullptr, napi_default, nullptr});
     desc.push_back({"GetStringByName0400", nullptr, GlobalNapiTest::GetStringByName0400,
                     nullptr, nullptr, nullptr, napi_default, nullptr});
+    desc.push_back({"GetStringByName0500", nullptr, GlobalNapiTest::GetStringByName0500,
+                    nullptr, nullptr, nullptr, napi_default, nullptr});
     desc.push_back({"GetStringArray0100", nullptr, GlobalNapiTest::GetStringArray0100,
                     nullptr, nullptr, nullptr, napi_default, nullptr});
     desc.push_back({"GetStringArray0200", nullptr, GlobalNapiTest::GetStringArray0200,
