@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -49,7 +50,7 @@ import { UtilsTest } from '../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
-// const uiContext = new UIContext();
+const uiContext = new UIContext();
 
 export default function RowSpaceResourceTest() {
   describe('RowSpaceResourceTest', () => {
@@ -73,29 +74,28 @@ export default function RowSpaceResourceTest() {
         console.info("get RowSpaceResourceTest state pages:" + JSON.stringify(pages));
         if (!("RowSpaceResourcePage" == pages.name)) {
           console.info("get RowSpaceResourceTest pages.name:" + JSON.stringify(pages.name));
-          //let result = await routerInstance.pushUrl(options);
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          //console.info("push RowSpaceResourceTest page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push RowSpaceResourceTest page error:" + err);
       }
       console.info("RowSpaceResourceTest beforeEach end");
-      //done();
+      
     });
     afterEach(async () => {
     });
 
 
-    
     /*
      * @tc.number   RowSpaceResourceTest_static_0100
      * @tc.name     RowSpaceResourceTest_static_0100
      * @tc.desc     RowSpaceResourceTest_static_0100
      * @tc.level    Level.LEVEL1
      */
-it('RowSpaceResourceTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('RowSpaceResourceTest_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[RowSpaceResourceTest_0100] START');
       await CommonFunc.sleep(1000);
 
@@ -120,14 +120,13 @@ it('RowSpaceResourceTest_static_0100', Level.LEVEL1, async (done: () => void): P
     });
 
 
-    
     /*
      * @tc.number   RowSpaceResourceTest_static_0200
      * @tc.name     RowSpaceResourceTest_static_0200
      * @tc.desc     RowSpaceResourceTest_static_0200
      * @tc.level    Level.LEVEL1
      */
-it('RowSpaceResourceTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('RowSpaceResourceTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[RowSpaceResourceTest_0200] START');
       await CommonFunc.sleep(1000);
 
@@ -152,14 +151,13 @@ it('RowSpaceResourceTest_static_0200', Level.LEVEL1, async (done: () => void): P
     });
 
 
-    
     /*
      * @tc.number   RowSpaceResourceTest_static_0300
      * @tc.name     RowSpaceResourceTest_static_0300
      * @tc.desc     RowSpaceResourceTest_static_0300
      * @tc.level    Level.LEVEL1
      */
-it('RowSpaceResourceTest_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('RowSpaceResourceTest_static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[RowSpaceResourceTest_0300] START');
       await CommonFunc.sleep(1000);
 

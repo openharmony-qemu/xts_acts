@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -51,7 +52,7 @@ struct GridRowNoColumnsPage {
         } as BreakPoints,
         direction: GridRowDirection.Row
       } as GridRowOptions) {
-        ForEach(this.bgColors, (color: Color, index?: number) => {
+        ForEach(this.bgColors, (color: Color, index?: int) => {
           GridCol({ span: 1 }) {
             Row().width("100%").height("20vp")
           }.borderColor(color).borderWidth(2).key('GridRow_No_Columns_' + index)

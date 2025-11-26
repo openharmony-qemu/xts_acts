@@ -1,12 +1,8 @@
 {
-  "string": [
+ "string":[
     {
-      "name": "app_name",
-      "value": "ActsAceEtsComponentCommonAttrsBorderWidthTest"
-    },
-    {
-      "name": "description_application",
-      "value": "ActsAceEtsComponentCommonAttrsBorderWidthTest"
+      "name":"app_name",
+      "value":"ohosProject"
     }
   ]
-}
+}      

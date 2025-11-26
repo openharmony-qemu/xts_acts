@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -49,7 +50,7 @@ import { UtilsTest } from '../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
-// const uiContext = new UIContext();
+const uiContext = new UIContext();
 
 export default function FlexSpaceResourceTest() {
   describe('FlexSpaceResourceTest', () => {
@@ -73,29 +74,28 @@ export default function FlexSpaceResourceTest() {
         console.info("get FlexSpaceResourceTest state pages:" + JSON.stringify(pages));
         if (!("FlexSpaceResourcePage" == pages.name)) {
           console.info("get FlexSpaceResourceTest pages.name:" + JSON.stringify(pages.name));
-          //let result = await routerInstance.pushUrl(options);
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          //console.info("push FlexSpaceResourceTest page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push FlexSpaceResourceTest page error:" + err);
       }
       console.info("FlexSpaceResourceTest beforeEach end");
-      //done();
+      
     });
     afterEach(async () => {
     });
 
 
-    
     /*
      * @tc.number   FlexSpaceResourceTest_static_0010
      * @tc.name     FlexSpaceResourceTest_static_0010
      * @tc.desc     FlexSpaceResourceTest_static_0010
      * @tc.level    Level.LEVEL1
      */
-it('FlexSpaceResourceTest_static_0010', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('FlexSpaceResourceTest_static_0010', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[FlexSpaceResourceTest_0010] START');
       await CommonFunc.sleep(1000);
 
@@ -133,14 +133,13 @@ it('FlexSpaceResourceTest_static_0010', Level.LEVEL1, async (done: () => void): 
     });
 
 
-    
     /*
      * @tc.number   FlexSpaceResourceTest_static_0020
      * @tc.name     FlexSpaceResourceTest_static_0020
      * @tc.desc     FlexSpaceResourceTest_static_0020
      * @tc.level    Level.LEVEL1
      */
-it('FlexSpaceResourceTest_static_0020', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('FlexSpaceResourceTest_static_0020', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[FlexSpaceResourceTest_0020] START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
@@ -180,14 +179,13 @@ it('FlexSpaceResourceTest_static_0020', Level.LEVEL1, async (done: () => void): 
     });
 
 
-    
     /*
      * @tc.number   FlexSpaceResourceTest_static_0030
      * @tc.name     FlexSpaceResourceTest_static_0030
      * @tc.desc     FlexSpaceResourceTest_static_0030
      * @tc.level    Level.LEVEL1
      */
-it('FlexSpaceResourceTest_static_0030', Level.LEVEL1, async (done: () => void): Promise<void> => {
+    it('FlexSpaceResourceTest_static_0030', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('[FlexSpaceResourceTest_0030] START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);

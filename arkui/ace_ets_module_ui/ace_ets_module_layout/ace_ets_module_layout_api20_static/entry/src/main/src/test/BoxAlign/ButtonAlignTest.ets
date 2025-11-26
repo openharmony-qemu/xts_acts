@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -64,23 +65,22 @@ export default function ButtonAlignTest() {
         console.info("get ButtonAlignTest state pages:" + JSON.stringify(pages));
         if (!("ButtonAlignTest" == pages.name)) {
           console.info("get ButtonAlignTest pages.name:" + JSON.stringify(pages.name));
-          //let result = await routerInstance.pushUrl(options);
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          //console.info("push ButtonAlignTest page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push ButtonAlignTest page error:" + err);
       }
       console.info("ButtonAlignTest beforeEach end");
-      // done();
+      
     });
     afterEach(async () => {
     });
 
 
-    
-/*
+    /*
      * @tc.number   ButtonAlignTest_static_0100
      * @tc.name     ButtonAlignTest_static_0100
      * @tc.desc     ButtonAlignTest_static_0100
@@ -98,7 +98,7 @@ it('ButtonAlignTest_static_0100', Level.LEVEL1, async (done: () => void): Promis
       JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs').getString("localizedAlignment")));
 
       let button1 = await driver.findComponent(ON.id('AlignTopStart'));
-      button1?.click();
+      await (button1?.click() as Promise<void>);
       await Utils.sleep(2000)
       let strJson1 = inspector.getInspectorByKey('GetAlignButton1');
       console.log('[ButtonAlignTest_static_0100] LocalizedAlignment1 is:');
@@ -106,56 +106,56 @@ it('ButtonAlignTest_static_0100', Level.LEVEL1, async (done: () => void): Promis
       JSON.stringify(JSON.parseJsonElement(strJson1).getElement('$attrs').getString("localizedAlignment")));
 
       let button2 = await driver.findComponent(ON.id('AlignTop'));
-      button2?.click();
+      await (button2?.click() as Promise<void>);
       await Utils.sleep(2000)
       let strJson2 = inspector.getInspectorByKey('GetAlignButton1');
       console.log('[ButtonAlignTest_static_0100] LocalizedAlignment2 is:' +
       JSON.stringify(JSON.parseJsonElement(strJson2).getElement('$attrs').getString("localizedAlignment")));
 
       let button3 = await driver.findComponent(ON.id('AlignTopEnd'));
-      button3?.click();
+      await (button3?.click() as Promise<void>);
       await Utils.sleep(2000)
       let strJson3 = inspector.getInspectorByKey('GetAlignButton1');
       console.log('[ButtonAlignTest_static_0100] LocalizedAlignment3 is:' +
       JSON.stringify(JSON.parseJsonElement(strJson3).getElement('$attrs').getString("localizedAlignment")));
 
       let button4 = await driver.findComponent(ON.id('AlignStart'));
-      button4?.click();
+      await (button4?.click() as Promise<void>);
       await Utils.sleep(2000)
       let strJson4 = inspector.getInspectorByKey('GetAlignButton1');
       console.log('[ButtonAlignTest_static_0100] LocalizedAlignment4 is:' +
       JSON.stringify(JSON.parseJsonElement(strJson4).getElement('$attrs').getString("localizedAlignment")));
 
       let button5 = await driver.findComponent(ON.id('AlignCenter'));
-      button5?.click();
+      await (button5?.click() as Promise<void>);
       await Utils.sleep(2000)
       let strJson5 = inspector.getInspectorByKey('GetAlignButton1');
       console.log('[ButtonAlignTest_static_0100] LocalizedAlignment5 is:' +
       JSON.stringify(JSON.parseJsonElement(strJson5).getElement('$attrs').getString("localizedAlignment")));
 
       let button6 = await driver.findComponent(ON.id('AlignEnd'));
-      button6?.click();
+      await (button6?.click() as Promise<void>);
       await Utils.sleep(2000)
       let strJson6 = inspector.getInspectorByKey('GetAlignButton1');
       console.log('[ButtonAlignTest_static_0100] LocalizedAlignment6 is:' +
       JSON.stringify(JSON.parseJsonElement(strJson6).getElement('$attrs').getString("localizedAlignment")));
 
       let button7 = await driver.findComponent(ON.id('AlignBottomStart'));
-      button7?.click();
+      await (button7?.click() as Promise<void>);
       await Utils.sleep(2000)
       let strJson7 = inspector.getInspectorByKey('GetAlignButton1');
       console.log('[ButtonAlignTest_static_0100] LocalizedAlignment7 is:' +
       JSON.stringify(JSON.parseJsonElement(strJson7).getElement('$attrs').getString("localizedAlignment")));
 
       let button8 = await driver.findComponent(ON.id('AlignBottom'));
-      button8?.click();
+      await (button8?.click() as Promise<void>);
       await Utils.sleep(2000)
       let strJson8 = inspector.getInspectorByKey('GetAlignButton1');
       console.log('[ButtonAlignTest_static_0100] LocalizedAlignment8 is:' +
       JSON.stringify(JSON.parseJsonElement(strJson8).getElement('$attrs').getString("localizedAlignment")));
 
       let button9 = await driver.findComponent(ON.id('AlignBottomEnd'));
-      button9?.click();
+      await (button9?.click() as Promise<void>);
       await Utils.sleep(2000)
       let strJson9 = inspector.getInspectorByKey('GetAlignButton1');
       console.log('[ButtonAlignTest_static_0100] LocalizedAlignment9 is:' +

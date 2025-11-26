@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -65,23 +66,22 @@ export default function FlexMatchParentTest() {
         console.info("get FlexMatchParentTest state pages:" + JSON.stringify(pages));
         if (!("FlexMatchParentPage" == pages.name)) {
           console.info("get FlexMatchParentTest pages.name:" + JSON.stringify(pages.name));
-          //let result = await routerInstance.pushUrl(options);
+          
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          //console.info("push FlexMatchParentTest page result:" + JSON.stringify(result));
+          
         }
       } catch (err) {
         console.error("push FlexMatchParentTest page error:" + err);
       }
       console.info("FlexMatchParentTest beforeEach end");
-      // done();
+      
     });
     afterEach(async () => {
     });
 
     
-    
-/*
+    /*
      * @tc.number   FlexMatchParentTest_static_0100
      * @tc.name     FlexMatchParentTest_static_0100
      * @tc.desc     FlexMatchParentTest_static_0100
@@ -91,14 +91,14 @@ it('FlexMatchParentTest_static_0100', Level.LEVEL1, async (done: () => void): Pr
       console.info('[FlexMatchParentTest_static_0100] START');
       await CommonFunc.sleep(1000);
 
-      let strJson = inspector.getInspectorByKey('FlexMatchParentTest_0100_child');
+      let strJson = inspector.getInspectorByKey('FlexMatchParentTest_static_0100_child');
       let obj = JSON.parseJsonElement(strJson);
       let width = parseFloat(obj.getElement("$attrs").getString('width'))
       let height = parseFloat(obj.getElement("$attrs").getString('height'))
       console.info("[FlexMatchParentTest_static_0100] width is: " + width);
       console.info("[FlexMatchParentTest_static_0100] height is: " + height);
 
-      // 200 - padding(20)*2 - border(10)*2 - safeAreaPadding(10)*2
+      
       expect(Math.floor(Math.abs(width - 120)) <= 1).assertTrue();
       expect(Math.floor(Math.abs(height - 120)) <= 1).assertTrue();
 

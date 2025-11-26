@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the 'License');
@@ -12,13 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {$r, HorizontalAlign, ColumnOptions, Entry, Component, TextClock, Column, Row, TextPicker, } from '@ohos.arkui.component'
-import { State, AppStorage } from '@ohos.arkui.stateManagement'
-
+import {
+    Entry,
+    Component,
+    $r,
+    Text,
+    Row,
+    Column,
+    ColumnOptions,
+    TextPicker,
+} from '@ohos.arkui.component';
+import {
+    State
+} from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct TextPickerValue {
-    @State fruits: string[] = ['apple', 'null', 'undefined', 'true', 'false', '1', '1abc', '二十六日']
+    @State fruits: string[] = ['apple', 'null', 'undefined', 'true', 'false', '1', '1abc', '二十六日'] as string[]
     build() {
         Column({ space: 8 } as ColumnOptions) {
             TextPicker({ range: this.fruits, value: $r('app.string.apple') }).canLoop(false)

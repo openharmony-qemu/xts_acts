@@ -1,4 +1,5 @@
-/*
+'use static';
+/**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,12 +13,33 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import hilog from '@ohos.hilog';
-import { UIContext, Router } from '@ohos.arkui.UIContext';
+
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import {
+  Entry,
+  Text,
+  TextAttribute,
+  Column,
+  Component,
+  Button,
+  ButtonAttribute,
+  ClickEvent,
+  Image,
+  ImageFit,
+  Scroller,
+  Flex,
+  Margin,
+  FlexDirection,
+  ItemAlign,
+  FlexAlign,
+  FontWeight,
+  ButtonType,
+  ClickEvent,
+  Margin,
+  FontWeight
+} from '@ohos.arkui.component';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { LengthMetrics, LengthUnit } from '@ohos.arkui.node';
-import { Entry, Component, Column, Image, Button, Edges, $r, ClickEvent, LocalizedEdges,
-  Flex, FlexDirection, ItemAlign, FlexAlign, Text, FontWeight, Margin, ButtonType } from '@ohos.arkui.component'
+import { Router } from '@ohos.arkui.UIContext';
 
 @Entry
 @Component
@@ -26,8 +48,7 @@ struct Index {
     try {
       let router = this.getUIContext().getRouter();
       AppStorage.setOrCreate<Router>('router', router);
-      AppStorage.setOrCreate<UIContext>('uiContext', this.getUIContext());
-    } catch (error: Error) {
+    } catch (error) {
       console.log('error ' + error);
     }
   }
@@ -37,7 +58,7 @@ struct Index {
       Text('Hello World')
         .fontSize(50)
         .fontWeight(FontWeight.Bold)
-      Button(' ') {
+      Button('Hello World2') {
         Text('next page')
           .fontSize(25)
           .fontWeight(FontWeight.Bold)
@@ -46,7 +67,7 @@ struct Index {
         top: 20
       } as Margin)
       .backgroundColor('#0D9FFB')
-      .onClick((e:ClickEvent) => {
+      .onClick((e: ClickEvent) => {
 
       })
     }

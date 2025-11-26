@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,16 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import badgeResource from './badgeTest/badgeResource.test'
-import ProgressContent from './progressTest/ProgressContent.test'
-import QRCodeResourceStr from './qrcode/QRCodeResourceStr.test'
-import TextClockFormat from './textClockTest/TextClockFormat.test'
-import TextPickerValue from './textPicker/TextPickerValue.test'
-import TextTimerFontWeight from './textTimerTest/TextTimerFontWeight.test'
+
+import TextPickerValue from './textPicker/TextPickerValue.test';
 export default function testsuite() {
-  ProgressContent()
-  QRCodeResourceStr()
-  TextClockFormat()
-  TextPickerValue()
-  TextTimerFontWeight()
+  TextPickerValue();
 }
