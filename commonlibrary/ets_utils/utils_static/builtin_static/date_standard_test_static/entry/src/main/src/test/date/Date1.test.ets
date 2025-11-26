@@ -926,7 +926,7 @@ export default function Date1Test() {
      */
     it('Date1Test_105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const date112 = new Date("2023-10-01T12:00:00+0800");
-      expect(date112).assertEqual("2023-10-01T04:00:00.000Z");
+      expect(String(date112)).assertEqual("Sun Oct 01 2023 12:00:00 GMT+0800");
     });
     /**
      * @tc.number SUB_BUILTINS_DATE1_TEST_10600
