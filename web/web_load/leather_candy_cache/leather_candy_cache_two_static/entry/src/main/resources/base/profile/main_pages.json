@@ -1,6 +1,7 @@
 {
   "src": [
     "pages/ClearPrefetchedResourceTest",
-    "pages/InjectOfflineResourcesTest"
+    "pages/InjectOfflineResourcesTest",
+    "pages/PrecompileJavaScriptTest"
   ]
 }

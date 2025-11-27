@@ -26,52 +26,52 @@ export default function commonAttrsAnimateTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_ANIMATE_0100
-     * @tc.name       : testCommonAttrsAnimate001
-     * @tc.desc       : testing align for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsAnimate001
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_ANIMATE_0100
+     * @tc.desc   testing align for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAnimate001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAnimate001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_ANIMATE_0200
-     * @tc.name       : testCommonAttrsAnimate002
-     * @tc.desc       : testing align for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsAnimate002
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_ANIMATE_0200
+     * @tc.desc   testing align for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAnimate002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAnimate002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_ANIMATE_0300
-     * @tc.name       : testCommonAttrsAnimate003
-     * @tc.desc       : testing align for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsAnimate003
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_ANIMATE_0300
+     * @tc.desc   testing align for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAnimate003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAnimate003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_ANIMATE_0400
-     * @tc.name       : testCommonAttrsAnimate004
-     * @tc.desc       : testing align for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsAnimate004
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_ANIMATE_0400
+     * @tc.desc   testing align for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsAnimate004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsAnimate004()).assertEqual(0)

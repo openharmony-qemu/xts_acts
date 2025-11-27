@@ -43,12 +43,12 @@ export default function stateChange() {
     });
 
     /**
-     * @tc.number    stateChange_001
-     * @tc.name      stateChange_0100
-     * @tc.desc      Trigger Swiper onScrollStateChanged event callback when following hand sliding changes.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   stateChange_0100
+     * @tc.number stateChange_001
+     * @tc.desc   Trigger Swiper onScrollStateChanged event callback when following hand sliding changes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stateChange_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[stateChange_0100] START');
@@ -79,12 +79,12 @@ export default function stateChange() {
     });
 
     /**
-     * @tc.number    stateChange_002
-     * @tc.name      stateChange_0200
-     * @tc.desc      Flipping to the next page triggers Swiper onScrollStateChanged event callback.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   stateChange_0200
+     * @tc.number stateChange_002
+     * @tc.desc   Flipping to the next page triggers Swiper onScrollStateChanged event callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stateChange_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[stateChange_0200] START');
@@ -107,12 +107,12 @@ export default function stateChange() {
     });
 
     /**
-     * @tc.number    stateChange_003
-     * @tc.name      stateChange_0300
-     * @tc.desc      Flipping to the previous page triggers Swiper onScrollStateChanged event callback.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   stateChange_0300
+     * @tc.number stateChange_003
+     * @tc.desc   Flipping to the previous page triggers Swiper onScrollStateChanged event callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stateChange_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[stateChange_0300] START');
@@ -135,12 +135,12 @@ export default function stateChange() {
     });
 
     /**
-     * @tc.number    stateChange_004
-     * @tc.name      stateChange_0400
-     * @tc.desc      Flipping to a specified page with animation and trigger the Swiper onScrollStateChanged event.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   stateChange_0400
+     * @tc.number stateChange_004
+     * @tc.desc   Flipping to a specified page with animation and trigger the Swiper onScrollStateChanged event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stateChange_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[stateChange_0400] START');
@@ -163,12 +163,12 @@ export default function stateChange() {
     });
 
     /**
-     * @tc.number    stateChange_005
-     * @tc.name      stateChange_0500
-     * @tc.desc      Flip to the specified page without animation and trigger the Swiper onScrollStateChanged event.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   stateChange_0500
+     * @tc.number stateChange_005
+     * @tc.desc   Flip to the specified page without animation and trigger the Swiper onScrollStateChanged event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stateChange_0500', Level.LEVEL0, async (done: Function) => {
       console.info('[stateChange_0500] START');

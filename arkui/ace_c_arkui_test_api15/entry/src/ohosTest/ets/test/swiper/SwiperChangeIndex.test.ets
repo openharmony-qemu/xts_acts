@@ -25,13 +25,13 @@ export default function SwiperChangeIndexTest(){
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_CHANGE_INDEX_0100
-     * @tc.name       : swiperChangeIndexTest001
-     * @tc.desc       : testing Swiper ChangeIndex
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   swiperChangeIndexTest001
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_CHANGE_INDEX_0100
+     * @tc.desc   testing Swiper ChangeIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('swiperChangeIndexTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('swiperChangeIndexTest001 START');
@@ -56,13 +56,13 @@ export default function SwiperChangeIndexTest(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_CHANGE_INDEX_0200
-     * @tc.name       : swiperChangeIndexTest001
-     * @tc.desc       : testing Swiper ChangeIndex
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   swiperChangeIndexTest002
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_CHANGE_INDEX_0200
+     * @tc.desc   testing Swiper ChangeIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('swiperChangeIndexTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('swiperChangeIndexTest002 START');
@@ -87,13 +87,13 @@ export default function SwiperChangeIndexTest(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_CHANGE_INDEX_0300
-     * @tc.name       : swiperChangeIndexTest003
-     * @tc.desc       : testing Swiper ChangeIndex
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   swiperChangeIndexTest003
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_CHANGE_INDEX_0300
+     * @tc.desc   testing Swiper ChangeIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('swiperChangeIndexTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('swiperChangeIndexTest003 START');

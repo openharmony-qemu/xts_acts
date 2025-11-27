@@ -47,15 +47,15 @@ export default function Router3() {
       router.back()
       console.info("Router3 after each called");
     });
-    /**
-     * @tc.number Router3_0100
-     * @tc.name Router3_0100
-     * @tc.desc Repeatedly jump to the page
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
-     */
 
+    /**
+     * @tc.name   Router3_0100
+     * @tc.number Router3_0100
+     * @tc.desc   Router3_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Router3_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[Router3_0100] START');
       await CommonFunc.sleep(1000);

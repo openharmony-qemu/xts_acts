@@ -46,11 +46,13 @@ export default function XComponentDrawingCanvasTestTest() {
       await CommonFunc.sleep(1000);
       console.info("XComponentDrawingCanvasTest after each called");
     });
-/**
-     * @tc.number    XComponentDrawingCanvasTest_0100
-     * @tc.name      XComponentDrawingCanvasTest_0100
-     * @tc.desc      Test XComponentDrawingCanvasTest
-     * @tc.level     Level 2
+    /**
+     * @tc.name   XComponentDrawingCanvasTest_0100
+     * @tc.number XComponentDrawingCanvasTest_0100
+     * @tc.desc   Test XComponentDrawingCanvasTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('XComponentDrawingCanvasTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[XComponentDrawingCanvasTest_0100] START');

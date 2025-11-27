@@ -41,6 +41,14 @@ export default function CanvasGetLineDashTest() {
       done();
     });
  
+    /**
+     * @tc.name   CanvasGetLineDashTest_0100
+     * @tc.number CanvasGetLineDashTest_0100
+     * @tc.desc   CanvasGetLineDashTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('CanvasGetLineDashTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[CanvasGetLineDashTest_0100] START');
       await CommonFunc.sleep(1000);
@@ -55,6 +63,14 @@ export default function CanvasGetLineDashTest() {
       done();
     });
 
+    /**
+     * @tc.name   CanvasGetLineDashTest_0200
+     * @tc.number CanvasGetLineDashTest_0200
+     * @tc.desc   CanvasGetLineDashTest_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('CanvasGetLineDashTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[CanvasGetLineDashTest_0200] START');
       await CommonFunc.sleep(1000);

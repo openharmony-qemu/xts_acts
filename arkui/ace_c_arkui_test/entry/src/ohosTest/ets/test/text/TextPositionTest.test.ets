@@ -26,26 +26,26 @@ export default function textPositionTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_POSITION_0100
-     * @tc.name       : testTextPosition001
-     * @tc.desc       : testing position for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextPosition001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_POSITION_0100
+     * @tc.desc   testing position for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextPosition001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextPosition001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_POSITION_0200
-     * @tc.name       : testTextPosition002
-     * @tc.desc       : testing position for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextPosition002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_POSITION_0200
+     * @tc.desc   testing position for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextPosition002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextPosition002()).assertEqual(0)

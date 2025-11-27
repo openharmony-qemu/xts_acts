@@ -26,13 +26,13 @@ export default function textAreaTextTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_TEXT_0001
-     * @tc.name: testTextAreaText001
-     * @tc.desc: testing text for textArea with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaText001
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_TEXT_0001
+     * @tc.desc   testing text for textArea with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaText001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextAreaText001()).assertEqual(0)

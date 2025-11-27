@@ -82,9 +82,12 @@ export default function sidebar() {
     })
 
     /**
-     * @tc.number    ArkUI_SideBarContainer_Divider_0100
-     * @tc.name      Tests the divider property of the SideBarContainer component
-     * @tc.desc      Gets the default values of divider for the SideBarContainer component
+     * @tc.name   ArkUI_SideBarContainer_Divider_0100
+     * @tc.number ArkUI_SideBarContainer_Divider_0100
+     * @tc.desc   Gets the default values of divider for the SideBarContainer component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_SideBarContainer_Divider_0100',  Level.LEVEL0, async  (done:Function) =>{
       console.info("ArkUI_SideBarContainer_Divider_0100 start");
@@ -101,10 +104,12 @@ export default function sidebar() {
     });
 
     /**
-     * @tc.number    ArkUI_SideBarContainer_Divider_0200
-     * @tc.name      Tests the divider property of the SideBarContainer component
-     * @tc.desc      Gets the values of divider for the SideBarContainer component,
-     *                and the property values of the divider are of type number.
+     * @tc.name   ArkUI_SideBarContainer_Divider_0200
+     * @tc.number ArkUI_SideBarContainer_Divider_0200
+     * @tc.desc   Gets the values of divider for the SideBarContainer component,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_SideBarContainer_Divider_0200',  Level.LEVEL0, async  (done:Function) =>{
       console.info("ArkUI_SideBarContainer_Divider_0200 start");
@@ -121,11 +126,12 @@ export default function sidebar() {
     });
 
     /**
-     * @tc.number    ArkUI_SideBarContainer_Divider_0300
-     * @tc.name      Tests the divider property of the SideBarContainer component
-     * @tc.desc      Gets the values of divider for the SideBarContainer component,
-     *                and the property values of the divider are of type string,
-     *                the units are px.
+     * @tc.name   ArkUI_SideBarContainer_Divider_0300
+     * @tc.number ArkUI_SideBarContainer_Divider_0300
+     * @tc.desc   Gets the values of divider for the SideBarContainer component,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_SideBarContainer_Divider_0300',  Level.LEVEL0, async  (done:Function) =>{
       console.info("ArkUI_SideBarContainer_Divider_0300 start");
@@ -142,11 +148,12 @@ export default function sidebar() {
     });
 
     /**
-     * @tc.number    ArkUI_SideBarContainer_Divider_0400
-     * @tc.name      Tests the divider property of the SideBarContainer component
-     * @tc.desc      Gets the values of divider for the SideBarContainer component,
-     *                and the property values of the divider are of type string,
-     *                the units are vp.
+     * @tc.name   ArkUI_SideBarContainer_Divider_0400
+     * @tc.number ArkUI_SideBarContainer_Divider_0400
+     * @tc.desc   Gets the values of divider for the SideBarContainer component,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_SideBarContainer_Divider_0400',  Level.LEVEL0, async  (done:Function) =>{
       console.info("ArkUI_SideBarContainer_Divider_0400 start");
@@ -188,11 +195,12 @@ export default function sidebar() {
     });
 
     /**
-     * @tc.number    ArkUI_SideBarContainer_Divider_0500
-     * @tc.name      Tests the divider property of the SideBarContainer component
-     * @tc.desc      Gets the values of divider for the SideBarContainer component,
-     *                and the property values of the divider are of type string,
-     *                the units are fp.
+     * @tc.name   ArkUI_SideBarContainer_Divider_0500
+     * @tc.number ArkUI_SideBarContainer_Divider_0500
+     * @tc.desc   Gets the values of divider for the SideBarContainer component,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_SideBarContainer_Divider_0500',  Level.LEVEL0, async  (done:Function) =>{
       console.info("ArkUI_SideBarContainer_Divider_0500 start");
@@ -234,11 +242,12 @@ export default function sidebar() {
     });
 
     /**
-     * @tc.number    ArkUI_SideBarContainer_Divider_0600
-     * @tc.name      Tests the divider property of the SideBarContainer component
-     * @tc.desc      Gets the values of divider for the SideBarContainer component,
-     *                and the property values of the divider are of type string,
-     *                the units are lpx.
+     * @tc.name   ArkUI_SideBarContainer_Divider_0600
+     * @tc.number ArkUI_SideBarContainer_Divider_0600
+     * @tc.desc   Gets the values of divider for the SideBarContainer component,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_SideBarContainer_Divider_0600',  Level.LEVEL0, async  (done:Function) =>{
       console.info("ArkUI_SideBarContainer_Divider_0600 start");
@@ -280,10 +289,12 @@ export default function sidebar() {
     });
 
     /**
-     * @tc.number    ArkUI_SideBarContainer_Divider_0700
-     * @tc.name      Tests the divider property of the SideBarContainer component
-     * @tc.desc      Gets the values of divider for the SideBarContainer component,
-     *                and the property values of the divider are of type Resource.
+     * @tc.name   ArkUI_SideBarContainer_Divider_0700
+     * @tc.number ArkUI_SideBarContainer_Divider_0700
+     * @tc.desc   Gets the values of divider for the SideBarContainer component,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_SideBarContainer_Divider_0700',  Level.LEVEL0, async  (done:Function) =>{
       console.info("ArkUI_SideBarContainer_Divider_0700 start");
@@ -300,10 +311,12 @@ export default function sidebar() {
     });
 
     /**
-     * @tc.number    ArkUI_SideBarContainer_Divider_0800
-     * @tc.name      Tests the divider property of the SideBarContainer component
-     * @tc.desc      Gets the values of divider for the SideBarContainer component,
-     *                and the color value of the divider is of type Color.
+     * @tc.name   ArkUI_SideBarContainer_Divider_0800
+     * @tc.number ArkUI_SideBarContainer_Divider_0800
+     * @tc.desc   Gets the values of divider for the SideBarContainer component,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_SideBarContainer_Divider_0800',  Level.LEVEL0, async  (done:Function) =>{
       console.info("ArkUI_SideBarContainer_Divider_0800 start");
@@ -320,10 +333,12 @@ export default function sidebar() {
     });
 
     /**
-     * @tc.number    ArkUI_SideBarContainer_Divider_0900
-     * @tc.name      Tests the divider property of the SideBarContainer component
-     * @tc.desc      Gets the values of divider for the SideBarContainer component,
-     *                when only the strokeWidth value of the divider is set.
+     * @tc.name   ArkUI_SideBarContainer_Divider_0900
+     * @tc.number ArkUI_SideBarContainer_Divider_0900
+     * @tc.desc   Gets the values of divider for the SideBarContainer component,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_SideBarContainer_Divider_0900',  Level.LEVEL0, async  (done:Function) =>{
       console.info("ArkUI_SideBarContainer_Divider_0900 start");
@@ -340,10 +355,12 @@ export default function sidebar() {
     });
 
     /**
-     * @tc.number    ArkUI_SideBarContainer_Divider_1000
-     * @tc.name      Tests the divider property of the SideBarContainer component
-     * @tc.desc      Gets the strokeWidth of divider for the SideBarContainer component,
-     *                when the value of the divider is null.
+     * @tc.name   ArkUI_SideBarContainer_Divider_1000
+     * @tc.number ArkUI_SideBarContainer_Divider_1000
+     * @tc.desc   Gets the strokeWidth of divider for the SideBarContainer component,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_SideBarContainer_Divider_1000',  Level.LEVEL0, async  (done:Function) =>{
       console.info("ArkUI_SideBarContainer_Divider_1000 start");
@@ -374,10 +391,12 @@ export default function sidebar() {
     });
 
     /**
-     * @tc.number    ArkUI_SideBarContainer_Divider_1100
-     * @tc.name      Tests the divider property of the SideBarContainer component
-     * @tc.desc      Gets the strokeWidth of divider for the SideBarContainer component,
-     *                when the strokeWidth value of the divider is set incorrectly. 
+     * @tc.name   ArkUI_SideBarContainer_Divider_1100
+     * @tc.number ArkUI_SideBarContainer_Divider_1100
+     * @tc.desc   Gets the strokeWidth of divider for the SideBarContainer component,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_SideBarContainer_Divider_1100',  Level.LEVEL0, async  (done:Function) =>{
       console.info("ArkUI_SideBarContainer_Divider_1100 start");
@@ -416,10 +435,12 @@ export default function sidebar() {
     });
 
     /**
-     * @tc.number    ArkUI_SideBarContainer_Divider_1200
-     * @tc.name      Tests the divider property of the SideBarContainer component
-     * @tc.desc      Gets the color of divider for the SideBarContainer component,
-     *                when the color value of the divider is set incorrectly. 
+     * @tc.name   ArkUI_SideBarContainer_Divider_1200
+     * @tc.number ArkUI_SideBarContainer_Divider_1200
+     * @tc.desc   Gets the color of divider for the SideBarContainer component,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_SideBarContainer_Divider_1200',  Level.LEVEL0, async  (done:Function) =>{
       console.info("ArkUI_SideBarContainer_Divider_1200 start");
@@ -458,10 +479,12 @@ export default function sidebar() {
     });
 
     /**
-     * @tc.number    ArkUI_SideBarContainer_Divider_1300
-     * @tc.name      Tests the divider property of the SideBarContainer component
-     * @tc.desc      Gets the startMarginNum of divider for the SideBarContainer component,
-     *                when the startMarginNum value of the divider is set incorrectly. 
+     * @tc.name   ArkUI_SideBarContainer_Divider_1300
+     * @tc.number ArkUI_SideBarContainer_Divider_1300
+     * @tc.desc   Gets the startMarginNum of divider for the SideBarContainer component,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_SideBarContainer_Divider_1300',  Level.LEVEL0, async  (done:Function) =>{
       console.info("ArkUI_SideBarContainer_Divider_1300 start");
@@ -500,10 +523,12 @@ export default function sidebar() {
     });
 
     /**
-     * @tc.number    ArkUI_SideBarContainer_Divider_1400
-     * @tc.name      Tests the divider property of the SideBarContainer component
-     * @tc.desc      Gets the endMarginNum of divider for the SideBarContainer component,
-     *                when the endMarginNum value of the divider is set incorrectly. 
+     * @tc.name   ArkUI_SideBarContainer_Divider_1400
+     * @tc.number ArkUI_SideBarContainer_Divider_1400
+     * @tc.desc   Gets the endMarginNum of divider for the SideBarContainer component,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_SideBarContainer_Divider_1400',  Level.LEVEL0, async  (done:Function) =>{
       console.info("ArkUI_SideBarContainer_Divider_1400 start");

@@ -25,11 +25,12 @@ export default function AutoSaveTestStatic() {
   describe('ActsAutoSaveStaticTest', () => {
 
     /**
-     * @tc.number  SUB_Ability_AbilityRuntime_AutoSave_Static_0100
-     * @tc.name    UB_Ability_AbilityRuntime_AutoSave_Static_0100
-     * @tc.desc    Manually call the RequestAutoSave interface with callback.
-     * @tc.size    MediumTest
-     * @tc.type    Function
+     * @tc.name   SUB_Ability_AbilityRuntime_AutoSave_Static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_AutoSave_Static_0100
+     * @tc.desc   Manually call the RequestAutoSave interface with callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_AutoSave_Static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       const TAG = 'SUB_Ability_AbilityRuntime_AutoSave_Static_0100';
@@ -58,12 +59,13 @@ export default function AutoSaveTestStatic() {
       done();
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_AutoSave_Static_0200
-     * @tc.name   : SUB_Ability_AbilityRuntime_AutoSave_Static_0200
-     * @tc.desc   : Manually call the RequestAutoSave interface no callback.
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AutoSave_Static_0200
+     * @tc.number SUB_Ability_AbilityRuntime_AutoSave_Static_0200
+     * @tc.desc   Manually call the RequestAutoSave interface no callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_AutoSave_Static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       const TAG = 'SUB_Ability_AbilityRuntime_AutoSave_Static_0200';

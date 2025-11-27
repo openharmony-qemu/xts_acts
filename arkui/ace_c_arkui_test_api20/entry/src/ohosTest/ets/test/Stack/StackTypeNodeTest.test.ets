@@ -48,10 +48,12 @@ export default function StackTypeNodeTest() {
     });
 
     /**
-     * @tc.number    StackTypeNodeTest_0100
-     * @tc.name      StackTypeNodeTest_0100
-     * @tc.desc      Test StackTypeNode
-     * @tc.level     Level 1
+     * @tc.name   StackTypeNodeTest_0100
+     * @tc.number StackTypeNodeTest_0100
+     * @tc.desc   Test StackTypeNode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('StackTypeNodeTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[StackTypeNodeTest_0100] START');
@@ -87,12 +89,12 @@ export default function StackTypeNodeTest() {
       done();
     });
     /**
-     * @tc.number    StackTypeNodeTest_0200
-     * @tc.name      StackTypeNodeTest_0200
-     * @tc.desc      Test StackTypeNodePage undefined.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   StackTypeNodeTest_0200
+     * @tc.number StackTypeNodeTest_0200
+     * @tc.desc   Test StackTypeNodePage undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('StackTypeNodeTest_0200', Level.LEVEL3, async (done: Function) => {
       console.info('[StackTypeNodeTest_0200] START');

@@ -44,12 +44,12 @@ export default function ProgressJsunit1() {
       console.info("ProgressJsunit1 after each called");
     });
     /**
-     * @tc.number testProgress_100
      * @tc.name   testProgress_100
-     * @tc.desc     Test Progress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number testProgress_100
+     * @tc.desc   Test Progress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgress_100', Level.LEVEL1, async (done: Function) => {
       console.info('testProgress_100 START');
@@ -81,12 +81,12 @@ export default function ProgressJsunit1() {
       done();
     });
     /**
-     * @tc.number testProgress_200
      * @tc.name   testProgress_200
-     * @tc.desc     Test Progress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number testProgress_200
+     * @tc.desc   Test Progress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgress_200', Level.LEVEL1, async (done: Function) => {
       console.info('[testProgress_200] START');
@@ -98,12 +98,12 @@ export default function ProgressJsunit1() {
       done();
     });
     /**
-     * @tc.number testProgress_300
      * @tc.name   testProgress_300
-     * @tc.desc     Test Progress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number testProgress_300
+     * @tc.desc   Test Progress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgress_300', Level.LEVEL1, async (done: Function) => {
       console.info('testProgress_300 START');
@@ -134,12 +134,12 @@ export default function ProgressJsunit1() {
       done();
     });
     /**
-     * @tc.number testProgress_400
      * @tc.name   testProgress_400
-     * @tc.desc     Test Progress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number testProgress_400
+     * @tc.desc   Test Progress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgress_400', Level.LEVEL1, async (done: Function) => {
       console.info('[testProgress_400] START');
@@ -151,12 +151,12 @@ export default function ProgressJsunit1() {
       done();
     });
     /**
-     * @tc.number testProgress_500
      * @tc.name   testProgress_500
-     * @tc.desc     Test Progress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number testProgress_500
+     * @tc.desc   Test Progress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgress_500', Level.LEVEL1, async (done: Function) => {
       console.info('testProgress_500 START');
@@ -187,12 +187,12 @@ export default function ProgressJsunit1() {
       done();
     });
     /**
-     * @tc.number testProgress_600
      * @tc.name   testProgress_600
-     * @tc.desc     Test Progress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number testProgress_600
+     * @tc.desc   Test Progress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgress_600', Level.LEVEL1, async (done: Function) => {
       console.info('[testProgress_600] START');
@@ -204,12 +204,12 @@ export default function ProgressJsunit1() {
       done();
     });
     /**
-     * @tc.number testProgress_700
      * @tc.name   testProgress_700
-     * @tc.desc     Test Progress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number testProgress_700
+     * @tc.desc   Test Progress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgress_700', Level.LEVEL1, async (done: Function) => {
       console.info('testProgress_700 START');
@@ -240,12 +240,12 @@ export default function ProgressJsunit1() {
       done();
     });
     /**
-     * @tc.number testProgress_800
      * @tc.name   testProgress_800
-     * @tc.desc     Test Progress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number testProgress_800
+     * @tc.desc   Test Progress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgress_800', Level.LEVEL1, async (done: Function) => {
       console.info('testProgress_800 START');
@@ -276,12 +276,12 @@ export default function ProgressJsunit1() {
       done();
     });
     /**
-     * @tc.number testProgress_900
      * @tc.name   testProgress_900
-     * @tc.desc     Test Progress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number testProgress_900
+     * @tc.desc   Test Progress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgress_900', Level.LEVEL1, async (done: Function) => {
       console.info('testProgress_900 START');
@@ -312,12 +312,12 @@ export default function ProgressJsunit1() {
       done();
     });
     /**
-     * @tc.number testProgress_1000
      * @tc.name   testProgress_1000
-     * @tc.desc     Test Progress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number testProgress_1000
+     * @tc.desc   Test Progress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgress_1000', Level.LEVEL1, async (done: Function) => {
       console.info('testProgress_1000 START');
@@ -349,12 +349,12 @@ export default function ProgressJsunit1() {
       done();
     });
     /**
-     * @tc.number testProgress_1100
      * @tc.name   testProgress_1100
-     * @tc.desc     Test Progress
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number testProgress_1100
+     * @tc.desc   Test Progress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgress_1100', Level.LEVEL1, async (done: Function) => {
       console.info('testProgress_1100 START');

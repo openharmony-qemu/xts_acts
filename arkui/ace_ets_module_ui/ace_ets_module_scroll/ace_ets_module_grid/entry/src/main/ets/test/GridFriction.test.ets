@@ -46,12 +46,12 @@ export default function GridFrictionTest() {
       console.info("GridFrictionPage after each called");
     });
     /**
+     * @tc.name   testGridFriction_0100
      * @tc.number testGridFriction_0100
-     * @tc.name testGridFriction_0100
-     * @tc.desc set friction to -1
-     * @tc.level Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   set friction to -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridFriction_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[testGridFriction_0100] START');
@@ -70,12 +70,12 @@ export default function GridFrictionTest() {
     });
 
     /**
+     * @tc.name   testGridFriction_0200
      * @tc.number testGridFriction_0200
-     * @tc.name testGridFriction_0200
-     * @tc.desc set friction to 10
-     * @tc.level Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   set friction to 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridFriction_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[testGridFriction_0200] START');

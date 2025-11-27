@@ -26,10 +26,13 @@ let GetAppContext1: commonEventManager.CommonEventSubscribeInfo = {
 
 export default function appTest() {
   describe('ACTS_GetAppContext_TEST', () => {
-    /*
-     * @tc.number  : ACTS_GetAppContext_0100
-     * @tc.name    : The test framework needs to provide the following query-related functions
-     * @tc.desc    : Get the context of the application, Ability
+    /**
+     * @tc.name   ACTS_GetAppContext_0100
+     * @tc.number ACTS_GetAppContext_0100
+     * @tc.desc   Get the context of the application, Ability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_GetAppContext_0100', Level.LEVEL0, async (done: Function) => {
       let Subscriber: commonEventManager.CommonEventSubscriber;

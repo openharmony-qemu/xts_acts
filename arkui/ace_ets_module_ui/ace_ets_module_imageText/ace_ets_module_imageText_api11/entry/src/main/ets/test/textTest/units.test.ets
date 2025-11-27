@@ -46,10 +46,13 @@ export default function unitsModuleNameJsunit() {
       console.info("unitsModuleName after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testunitsModuleName0001
-     * @tc.desic         aceunitsModuleNameEtsTest0001
+    /**
+     * @tc.name   testunitsModuleName0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testunitsModuleName0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testunitsModuleName0001', Level.LEVEL1, async (done: Function) => {
       console.info('unitsModuleName testunitsModuleName0001 START');
@@ -78,10 +81,13 @@ export default function unitsModuleNameJsunit() {
       done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testunitsGlobalPosition0001
-     * @tc.desic         aceunitsGlobalPositionEtsTest0001
+    /**
+     * @tc.name   testunitsGlobalPosition0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   testunitsGlobalPosition0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testunitsGlobalPosition0001', Level.LEVEL1, async (done: Function) => {
       console.info('unitsModuleName testunitsGlobalPosition0001 START');
@@ -104,10 +110,13 @@ export default function unitsModuleNameJsunit() {
       done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-     * @tc.name         testunitsMinWidth0001
-     * @tc.desic         aceunitsMinWidthEtsTest0001
+    /**
+     * @tc.name   testunitsMinWidth0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   testunitsMinWidth0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testunitsMinWidth0001', Level.LEVEL1, async (done: Function) => {
       console.info('unitsModuleName testunitsMinWidth0001 START');
@@ -121,10 +130,13 @@ export default function unitsModuleNameJsunit() {
       done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testunitsMinWidth0002
-     * @tc.desic         aceunitsMinWidthEtsTest0002
+    /**
+     * @tc.name   testunitsMinWidth0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   testunitsMinWidth0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testunitsMinWidth0002', Level.LEVEL1, async (done: Function) => {
       console.info('unitsModuleName testunitsMinWidth0001 START');

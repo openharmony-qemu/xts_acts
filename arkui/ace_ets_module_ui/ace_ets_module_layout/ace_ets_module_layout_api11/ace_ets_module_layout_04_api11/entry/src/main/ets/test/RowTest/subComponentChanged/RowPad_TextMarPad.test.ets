@@ -54,9 +54,12 @@ export default function rowPad_TextMarPadTest() {
       console.info("rowPad_TextMarPadTest after each called");
     });
     /**
+     * @tc.name   testRowPadTextPad
      * @tc.number SUB_ACE_ROW_SUBCOMPONENTCHANGED_0300
-     * @tc.name testRowPadTextPad
-     * @tc.desc The parent component set padding to 10,and the first subcomponent set padding to 20
+     * @tc.desc   The parent component set padding to 10,and the first subcomponent set padding to 20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRowPadTextPad',  Level.LEVEL0, async (done: Function) => {
       console.info('[testRowPadTextPad] START');
@@ -103,9 +106,12 @@ export default function rowPad_TextMarPadTest() {
       done();
     });
     /**
+     * @tc.name   testRowPadTextMar
      * @tc.number SUB_ACE_ROW_SUBCOMPONENTCHANGED_0400
-     * @tc.name testRowPadTextMar
-     * @tc.desc The parent component set padding to 10,and the first subcomponent set margin to 10
+     * @tc.desc   The parent component set padding to 10,and the first subcomponent set margin to 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRowPadTextMar',  Level.LEVEL0, async (done: Function) => {
       console.info('[testRowPadTextMar] START');
@@ -151,10 +157,12 @@ export default function rowPad_TextMarPadTest() {
       done();
     });
     /**
+     * @tc.name   testRowPadTextMarPad
      * @tc.number SUB_ACE_ROW_SUBCOMPONENTCHANGED_0500
-     * @tc.name testRowPadTextMarPad
-     * @tc.desc The parent component set padding to 10,and the first subcomponent set margin to 10
-     *              ,set padding to 20
+     * @tc.desc   The parent component set padding to 10,and the first subcomponent set margin to 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRowPadTextMarPad',  Level.LEVEL0, async (done: Function) => {
       console.info('[testRowPadTextMarPad] START');

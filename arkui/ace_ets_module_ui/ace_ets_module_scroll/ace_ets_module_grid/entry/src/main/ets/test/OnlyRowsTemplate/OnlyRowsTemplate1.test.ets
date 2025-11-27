@@ -47,12 +47,12 @@ export default function OnlyRowsTemplate1() {
     });
 
     /**
+     * @tc.name   SUB_ACE_GRID_OnlyRowsTemplate1_0100
      * @tc.number SUB_ACE_GRID_OnlyRowsTemplate1_0100
-     * @tc.name testGrid
-     * @tc.desc GridItem1 and GridItem2 have the same rowStart and rowEnd settings
-     * @tc.level Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   GridItem1 and GridItem2 have the same rowStart and rowEnd settings
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GRID_OnlyRowsTemplate1_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_GRID_OnlyRowsTemplate1_0100] START');
@@ -87,12 +87,12 @@ export default function OnlyRowsTemplate1() {
       done();
     });
     /**
+     * @tc.name   SUB_ACE_GRID_OnlyRowsTemplate1_0200
      * @tc.number SUB_ACE_GRID_OnlyRowsTemplate1_0200
-     * @tc.name testGrid
-     * @tc.desc GridItem set rowStart to 0
-     * @tc.level Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   GridItem set rowStart to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GRID_OnlyRowsTemplate1_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_GRID_OnlyRowsTemplate1_0200] START');

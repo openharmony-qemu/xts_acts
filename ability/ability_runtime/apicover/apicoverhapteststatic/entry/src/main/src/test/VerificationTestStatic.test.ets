@@ -39,10 +39,12 @@ export default function verificationStaticTest() {
     })
 
     /**
-     * @tc.number  SUB_AA_OpenHarmony_AbilityConstant_Static_0200
-     * @tc.name    SUB_AA_OpenHarmony_AbilityConstant_Static_0200
-     * @tc.desc    The startAbility interface starts the ability, not the start of call or continue.
-     * @tc.level   3
+     * @tc.name   SUB_AA_OpenHarmony_AbilityConstant_Static_0200
+     * @tc.number SUB_AA_OpenHarmony_AbilityConstant_Static_0200
+     * @tc.desc   The startAbility interface starts the ability, not the start of call or continue.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_AA_OpenHarmony_AbilityConstant_Static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       tag = 'SUB_AA_OpenHarmony_AbilityConstant_Static_0200 ==>';
@@ -57,10 +59,12 @@ export default function verificationStaticTest() {
     })
 
     /**
-     * @tc.number  SUB_AA_OpenHarmony_SetMissionLabel_static_0100
-     * @tc.name    SUB_AA_OpenHarmony_SetMissionLabel_static_0100
-     * @tc.desc    Verify setMissionLabel that the input parameter is string.
-     * @tc.level   3
+     * @tc.name   SUB_AA_OpenHarmony_SetMissionLabel_static_0100
+     * @tc.number SUB_AA_OpenHarmony_SetMissionLabel_static_0100
+     * @tc.desc   Verify setMissionLabel that the input parameter is string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_AA_OpenHarmony_SetMissionLabel_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -83,10 +87,12 @@ export default function verificationStaticTest() {
       })
 
     /**
-     * @tc.number  SUB_AA_OpenHarmony_SetMissionLabel_static_0400
-     * @tc.name    SUB_AA_OpenHarmony_SetMissionLabel_static_0400
-     * @tc.desc    Verify multiple setMissionLabel that the input parameter is string.
-     * @tc.level   3
+     * @tc.name   SUB_AA_OpenHarmony_SetMissionLabel_static_0400
+     * @tc.number SUB_AA_OpenHarmony_SetMissionLabel_static_0400
+     * @tc.desc   Verify multiple setMissionLabel that the input parameter is string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_AA_OpenHarmony_SetMissionLabel_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {

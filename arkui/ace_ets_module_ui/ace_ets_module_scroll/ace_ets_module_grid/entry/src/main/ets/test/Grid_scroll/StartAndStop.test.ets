@@ -50,13 +50,13 @@ export default function StartAndStop() {
     });
 
 
-    /* *
-     * @tc.number: StartAndStop_0300
-     * @tc.name  : StartAndStop_0300
-     * @tc.desc  : Component sliding triggers onScrollStop and onScrollStart
-     * @tc.level : Level 2
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   StartAndStop_0300
+     * @tc.number StartAndStop_0300
+     * @tc.desc   Component sliding triggers onScrollStop and onScrollStart
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('StartAndStop_0300',  Level.LEVEL2, async (done: Function) => {
 

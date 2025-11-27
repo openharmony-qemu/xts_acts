@@ -43,12 +43,12 @@ export default function groupStickyBoth() {
     });
 
     /**
-     * @tc.number    groupStickyBoth_001
-     * @tc.name      groupStickyBoth_0100
-     * @tc.desc      The header is pinned to the top and the footer is pinned to the bottom.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   groupStickyBoth_0100
+     * @tc.number groupStickyBoth_001
+     * @tc.desc   The header is pinned to the top and the footer is pinned to the bottom.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('groupStickyBoth_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[groupStickyBoth_0100] START');

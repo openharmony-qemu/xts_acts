@@ -6,7 +6,8 @@
                 "xts": [
                     "SystemCapability.Security.Huks.Extension",
                     "SystemCapability.Security.Huks.Core",
-                    "SystemCapability.Security.Cipher"
+                    "SystemCapability.Security.Cipher",
+                    "SystemCapability.Security.Huks.CryptoExtension"
                 ]
             }
         ]

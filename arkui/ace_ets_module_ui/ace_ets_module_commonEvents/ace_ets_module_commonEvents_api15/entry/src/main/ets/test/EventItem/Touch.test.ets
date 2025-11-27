@@ -42,12 +42,14 @@ export default function touchEventTest() {
       done();
     });
     
-    /* *
-    * @tc.number
-    * @tc.name  : Touch_0100
-    * @tc.desc  : To test the new item of MouseEvent.
-    * @tc.level : Level 1
-    */
+    /**
+     * @tc.name   Touch_0100
+     * @tc.number Touch_0100
+     * @tc.desc   To test the new item of MouseEvent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Touch_0100', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000);
       console.info('Touch_0100 START');

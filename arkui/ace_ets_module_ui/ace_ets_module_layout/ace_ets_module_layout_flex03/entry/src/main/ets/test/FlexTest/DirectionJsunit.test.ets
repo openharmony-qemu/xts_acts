@@ -45,12 +45,12 @@ export default function directionJsunit(){
     });
 
     /**
-     * @tc.number directionTest_0100
      * @tc.name   directionTest_0100
+     * @tc.number directionTest_0100
      * @tc.desc   test flex Direction
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('directionTest_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('directionTest_0100 START');
@@ -63,12 +63,12 @@ export default function directionJsunit(){
     });
 
     /**
-     * @tc.number directionTest_0200
      * @tc.name   directionTest_0200
+     * @tc.number directionTest_0200
      * @tc.desc   test flex Direction
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('directionTest_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('directionTest_0200 START');
@@ -97,12 +97,12 @@ export default function directionJsunit(){
     });
 
     /**
-     * @tc.number directionTest_0300
      * @tc.name   directionTest_0300
+     * @tc.number directionTest_0300
      * @tc.desc   test flex Direction
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('directionTest_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('directionTest_0300 START');

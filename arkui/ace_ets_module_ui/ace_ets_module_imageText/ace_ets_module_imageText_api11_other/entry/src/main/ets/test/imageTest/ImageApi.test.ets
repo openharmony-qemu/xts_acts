@@ -46,12 +46,12 @@ export default function ImageApi() {
     });
 
     /**
+     * @tc.name   ImageApi_001
      * @tc.number ImageApi_001
-     * @tc.name ImageApi_001
-     * @tc.desc Image test
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Image test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ImageApi_001', Level.LEVEL2, async (done: Function) => {
       console.info('[ImageApi_001] START');

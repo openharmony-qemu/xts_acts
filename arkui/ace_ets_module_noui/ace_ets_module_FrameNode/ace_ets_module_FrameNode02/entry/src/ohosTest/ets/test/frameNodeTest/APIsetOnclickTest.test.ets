@@ -54,12 +54,12 @@ export default function APIsetOnclickTest() {
     });
 
     /**
+     * @tc.name   APIsetOnclickTest_0100
      * @tc.number APIsetOnclickTest_0100
-     * @tc.name APIsetOnclickTest_0100
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APIsetOnclickTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('APIsetOnclickTest_0100 START');

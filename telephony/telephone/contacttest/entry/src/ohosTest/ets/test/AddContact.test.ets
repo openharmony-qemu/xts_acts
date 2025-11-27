@@ -19,7 +19,8 @@ import contact from '@ohos.contact';
 import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
 import bundleManager from '@ohos.bundle.bundleManager';
 import account from '@ohos.account.osAccount';
-import { SavePhoto, GetUri } from './ContactTestUtil.test';
+import { SavePhoto, GetUri, GetPixelMap } from './ContactTestUtil.test';
+import { image } from '@kit.ImageKit';
 
 function sleep (time:number):Promise<string>{
   return new Promise<string>((resolve)=>{
@@ -216,6 +217,93 @@ export default function AddContactTest() {
         console.info("contactsApi_insert_test_100 : raw_contact insert error = " + error);
         done();
       }
+    });
+
+    /**
+     * @tc.number     : SUB_Telephony_Contact_ContactsCount_0100
+     * @tc.name       : testTelephonyContactContactsCount0100
+     * @tc.desc       : Add a contacts and useing the callback method as an asynchronous method 10+
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 2
+     */
+    it('testTelephonyContactContactsCount0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const caseName: string = "testTelephonyContactContactsCount0100";
+      console.info(`${caseName} test start `);
+      try {
+        let context: Context = AppStorage.get('context') as Context;
+        sleep(500);
+        contact.addContact(context, contactData, (err: BusinessError, data: number) => {
+          if (err) {
+            console.log(`${caseName} addContact: err>${JSON.stringify(err)}`);
+            ExpectFail();
+            done();
+          } else {
+            console.log(`${caseName} addContact: success data>${JSON.stringify(data)}`);
+            ExpectTrue(data > 0);
+            contact.queryContactsCount(context).then((CountData) => {
+              console.log(`${caseName} queryContactsCount: success CountData>${JSON.stringify(CountData)}`);
+              expect(CountData >= 1).assertTrue;
+              done();
+            }).catch((err:BusinessError) => {
+              console.log(`${caseName} CountData: err>${JSON.stringify(err)}`);
+              ExpectFail();
+              done();
+            });
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} catch: err->${JSON.stringify(err)}`);
+        ExpectFail();
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.number : SUB_Telephony_Contact_HasName_0100
+     * @tc.name   : testTelephonyContactHasName0100
+     * @tc.desc   : Add a contacts and useing the callback method as an asynchronous method
+     * @tc.size   : MediumTest
+     * @tc.type   : Function
+     * @tc.level  : Level 2
+     */
+    it('testTelephonyContactHasName0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      const caseName: string = "testTelephonyContactHasName0100";
+      console.info(`${caseName} test start `);
+      let context: Context = AppStorage.get('context') as Context;
+      contact.addContact(context, contactData, (addErr: BusinessError, addData: number) => {
+        sleep(500);
+        if (addErr) {
+          console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
+          ExpectFail();
+          done();
+        } else {
+          console.info(`${caseName} addContact: success data->${JSON.stringify(addData)}`);
+          ExpectTrue(addData > 0);
+          contact.queryKey(context, addData, (keyErr: BusinessError, keyData: string) => {
+            if (keyErr) {
+              console.info(`${caseName} queryKey: err->${JSON.stringify(keyErr)}`);
+              ExpectFail();
+              done();
+            } else {
+              console.info(`${caseName} queryKey: success data->${JSON.stringify(keyData)}`);
+              contact.queryContact(context, keyData, (queryErr: BusinessError, queryData: contact.Contact) => {
+                if (queryErr) {
+                  console.info(`${caseName} queryContact: err->${JSON.stringify(queryErr)}`);
+                  ExpectFail();
+                  done();
+                } else {
+                  console.info(`${caseName} queryContact: success data->${JSON.stringify(queryData)}`);
+                  expect(queryData?.name?.hasName === true).assertTrue;
+                  done();
+                }
+              });
+            }
+          });
+        }
+      });
+      console.info(`${caseName} test end `);
     });
 
     /**
@@ -2619,6 +2707,215 @@ export default function AddContactTest() {
       console.info(`${caseName} test end `);
     });
 
+    /**
+     * @tc.number : SUB_Telephony_Contact_AddContact_9000
+     * @tc.name   : testTelephonyContactAddContact9000
+     * @tc.desc   : Add a contacts and useing the callback method as an asynchronous method
+     * @tc.size   : MediumTest
+     * @tc.type   : Function
+     * @tc.level  : Level 3
+     */
+    it('testTelephonyContactAddContact9000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+
+      const caseName: string = "testTelephonyContactAddContact9000";
+      console.info(`${caseName} test start `);
+      let pixelMap: image.PixelMap = await GetPixelMap();
+      let fileName = 'AddContactTest.jpg';
+      let uri = GetUri(fileName);
+      let contactDataByPixelMap: contact.Contact = {
+        name: {
+        fullName: "addContactByPixelMap9000",
+      },
+        phoneNumbers: [{
+          phoneNumber: "13800000000", labelName: "自定义phoneNumbers", labelId: 4
+        }],
+        portrait: {
+          uri: uri,
+          photo: pixelMap
+        },
+      };
+      let context: Context = AppStorage.get('context') as Context;
+      sleep(500);
+      contact.addContact(context, contactDataByPixelMap, (addErr: BusinessError, addData: number) => {
+        sleep(500);
+        if (addErr) {
+          console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
+          expect().assertFail();
+          done();
+        } else {
+          console.info(`${caseName} addContact: success data->${JSON.stringify(addData)}`);
+          expect(addData > 0).assertTrue();
+          contact.queryKey(context, addData, (keyErr: BusinessError, keyData: string) => {
+            if (keyErr) {
+              console.info(`${caseName} queryKey: err->${JSON.stringify(keyErr)}`);
+              expect().assertFail();
+              done();
+            } else {
+              console.info(`${caseName} queryKey: success data->${JSON.stringify(keyData)}`);
+              contact.queryContact(context, keyData, (queryErr: BusinessError, queryData: contact.Contact) => {
+                if (queryErr) {
+                  console.info(`${caseName} queryContact: err->${JSON.stringify(queryErr)}`);
+                  expect().assertFail();
+                  done();
+                } else {
+                  console.info(`${caseName} queryContact: success data->${JSON.stringify(queryData)}`);
+                  let resDate: contact.Contact = queryData;
+                  expect(resDate.id != undefined && resDate.id > 0).assertTrue();
+                  done();
+                }
+              });
+            }
+          });
+        }
+      });
+      console.info(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.number : SUB_Telephony_Contact_AddContact_9100
+     * @tc.name   : testTelephonyContactAddContact9100
+     * @tc.desc   : Add a contacts and useing the callback method as an asynchronous method
+     * @tc.size   : MediumTest
+     * @tc.type   : Function
+     * @tc.level  : Level 3
+     */
+    it('testTelephonyContactAddContact9100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+
+      const caseName: string = "testTelephonyContactAddContact9100";
+      console.info(`${caseName} test start `);
+      let pixelMap: image.PixelMap = await GetPixelMap();
+      let contactDataByPixelMap: contact.Contact = {
+        name: {
+        fullName: "addContactByPixelMap9100",
+      },
+        phoneNumbers: [{
+          phoneNumber: "13800000000", labelName: "自定义phoneNumbers", labelId: 4
+        }],
+        portrait: {
+          uri: '',
+          photo: pixelMap
+        },
+      };
+      let context: Context = AppStorage.get('context') as Context;
+      sleep(500);
+      contact.addContact(context, contactDataByPixelMap, (addErr: BusinessError, addData: number) => {
+        sleep(500);
+        if (addErr) {
+          console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
+          expect().assertFail();
+          done();
+        } else {
+          console.info(`${caseName} addContact: success data->${JSON.stringify(addData)}`);
+          expect(addData > 0).assertTrue();
+          contact.queryKey(context, addData, (keyErr: BusinessError, keyData: string) => {
+            if (keyErr) {
+              console.info(`${caseName} queryKey: err->${JSON.stringify(keyErr)}`);
+              expect().assertFail();
+              done();
+            } else {
+              console.info(`${caseName} queryKey: success data->${JSON.stringify(keyData)}`);
+              contact.queryContact(context, keyData, (queryErr: BusinessError, queryData: contact.Contact) => {
+                if (queryErr) {
+                  console.info(`${caseName} queryContact: err->${JSON.stringify(queryErr)}`);
+                  expect().assertFail();
+                  done();
+                } else {
+                  console.info(`${caseName} queryContact: success data->${JSON.stringify(queryData)}`);
+                  let resDate: contact.Contact = queryData;
+                  expect(resDate.id != undefined && resDate.id > 0).assertTrue();
+                  done();
+                }
+              });
+            }
+          });
+        }
+      });
+      console.info(`${caseName} test end `);
+    });
+
+
+    /**
+     * @tc.number : SUB_Telephony_Contact_AddContact_9200
+     * @tc.name   : testTelephonyContactAddContact9200
+     * @tc.desc   : Add a contacts and useing the callback method as an asynchronous method
+     * @tc.size   : MediumTest
+     * @tc.type   : Function
+     * @tc.level  : Level 3
+     */
+    it('testTelephonyContactAddContact9200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+
+      const caseName: string = "testTelephonyContactAddContact9200";
+      console.info(`${caseName} test start `);
+      let pixelMap: image.PixelMap = await GetPixelMap();
+      let uri = 'test';
+      let contactDataByPixelMap: contact.Contact = {
+        name: {
+        fullName: "addContactByPixelMap9200",
+      },
+        phoneNumbers: [{
+          phoneNumber: "13800000000", labelName: "自定义phoneNumbers", labelId: 4
+        }],
+        portrait: {
+          uri: uri,
+          photo: pixelMap
+        },
+      };
+      let context: Context = AppStorage.get('context') as Context;
+      sleep(500);
+      contact.addContact(context, contactDataByPixelMap, (addErr: BusinessError, addData: number) => {
+        sleep(500);
+        if (addErr) {
+          console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
+          expect(addErr.code === 401).assertTrue();
+          done();
+        } else {
+          console.info(`${caseName} addContact: success data->${JSON.stringify(addData)}`);
+          expect().assertFail();
+        }
+      });
+      console.info(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.number : SUB_Telephony_Contact_AddContact_9300
+     * @tc.name   : testTelephonyContactAddContact9300
+     * @tc.desc   : Add a contacts and useing the callback method as an asynchronous method
+     * @tc.size   : MediumTest
+     * @tc.type   : Function
+     * @tc.level  : Level 3
+     */
+    it('testTelephonyContactAddContact9300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+
+      const caseName: string = "testTelephonyContactAddContact9300";
+      console.info(`${caseName} test start `);
+      let uri = 'test';
+      let contactDataByPixelMap: contact.Contact = {
+        name: {
+        fullName: "addContactByPixelMap9300",
+      },
+        phoneNumbers: [{
+          phoneNumber: "13800000000", labelName: "自定义phoneNumbers", labelId: 4
+        }],
+        portrait: {
+          uri: uri,
+          photo: undefined
+        },
+      };
+      let context: Context = AppStorage.get('context') as Context;
+      sleep(500);
+      contact.addContact(context, contactDataByPixelMap, (addErr: BusinessError, addData: number) => {
+        sleep(500);
+        if (addErr) {
+          console.info(`${caseName} addContact: err->${JSON.stringify(addErr)}`);
+          expect(addErr.code === 401).assertTrue();
+          done();
+        } else {
+          console.info(`${caseName} addContact: success data->${JSON.stringify(addData)}`);
+          expect().assertFail();
+        }
+      });
+      console.info(`${caseName} test end `);
+    });
 
 
 

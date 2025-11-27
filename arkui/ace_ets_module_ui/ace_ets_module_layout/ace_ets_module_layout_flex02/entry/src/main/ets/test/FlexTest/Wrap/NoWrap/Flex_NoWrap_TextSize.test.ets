@@ -47,10 +47,12 @@ export default function flex_NoWrap_TextSizeTest() {
       console.info("Flex_NoWrap_TextSizeTest after each called");
     });
     /**
+     * @tc.name   testWrapNoWrapTextSizeMeet
      * @tc.number SUB_ACE_FLEXWRAP_NOWRAP_2000
-     * @tc.name testWrapNoWrapTextSizeMeet
-     * @tc.desc The size of the parent component in the main axis direction
-     *               meets the layout of the child components when the child component change size
+     * @tc.desc   The size of the parent component in the main axis direction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapNoWrapTextSizeMeet',  Level.LEVEL0, async () => {
       console.info('[testWrapNoWrapTextSizeMeet] START');
@@ -89,10 +91,12 @@ export default function flex_NoWrap_TextSizeTest() {
 
     });
     /**
+     * @tc.name   testWrapNoWrapTextSizeOverflow
      * @tc.number SUB_ACE_FLEXWRAP_NOWRAP_2100
-     * @tc.name testWrapNoWrapTextSizeOverflow
-     * @tc.desc The size of the parent component in the main axis direction is not enough
-     *               for the layout of the child components when the child component change size
+     * @tc.desc   The size of the parent component in the main axis direction is not enough
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapNoWrapTextSizeOverflow',  Level.LEVEL0, async () => {
       console.info('[testWrapNoWrapTextSizeOverflow] START');

@@ -26,37 +26,37 @@ export default function textInputCaretOffsetTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_CARET_OFFSET_0001
-     * @tc.name: testTextInputCaretOffset001
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputCaretOffset001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_CARET_OFFSET_0001
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputCaretOffset001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputCaretOffset001()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_CARET_OFFSET_0002
-     * @tc.name: testTextInputCaretOffset002
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputCaretOffset002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_CARET_OFFSET_0002
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputCaretOffset002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputCaretOffset002()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_CARET_OFFSET_0003
-     * @tc.name: testTextInputCaretOffset003
-     * @tc.desc: testing text for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputCaretOffset003
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_CARET_OFFSET_0003
+     * @tc.desc   testing text for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputCaretOffset003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputCaretOffset003()).assertEqual(0)

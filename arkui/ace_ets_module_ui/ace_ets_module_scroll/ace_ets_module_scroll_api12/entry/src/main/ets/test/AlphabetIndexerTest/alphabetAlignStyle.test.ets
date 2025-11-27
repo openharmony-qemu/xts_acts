@@ -42,12 +42,12 @@ export default function alphabetAlignStyleTest() {
     });
 
     /**
-     * @tc.number :   AlignStyle
-     * @tc.name   :   testAlphabetAlignStyle_001
-     * @tc.desc   :   test alphabet AlignStyle START.
-     * @tc.level  :   Level 1
-     * @tc.type   :   Function
-     * @tc.size   :   MediumTest
+     * @tc.name   testAlphabetAlignStyle_001
+     * @tc.number AlignStyle
+     * @tc.desc   test alphabet AlignStyle START.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAlphabetAlignStyle_001', Level.LEVEL1, async (done: Function) => {
       let testName: string = '[testAlphabetAlignStyle_001]';
@@ -89,12 +89,12 @@ export default function alphabetAlignStyleTest() {
     });
 
     /**
-     * @tc.number :   AlignStyle
-     * @tc.name   :   testAlphabetAlignStyle_002
-     * @tc.desc   :   test alphabet AlignStyle END.
-     * @tc.level  :   Level 1
-     * @tc.type   :   Function
-     * @tc.size   :   MediumTest
+     * @tc.name   testAlphabetAlignStyle_002
+     * @tc.number AlignStyle
+     * @tc.desc   test alphabet AlignStyle END.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAlphabetAlignStyle_002', Level.LEVEL1, async (done: Function) => {
       let testName: string = '[testAlphabetAlignStyle_002]';

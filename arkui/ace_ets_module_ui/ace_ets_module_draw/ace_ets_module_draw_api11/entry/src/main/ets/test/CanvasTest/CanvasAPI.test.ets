@@ -39,10 +39,13 @@ export default function CanvasAPITest() {
       done()
     });
 
-    /*
-     *tc.number ArkUI_Canvas_API_0100
-     *tc.name   Path2D.addPath and CanvasPattern.setTransform support Matrix2D
-     *tc.desc   Path2D.addPath and CanvasPattern.setTransform support Matrix2D
+    /**
+     * @tc.name   ArkUI_Canvas_API_0100
+     * @tc.number ArkUI_Canvas_API_0100
+     * @tc.desc   Path2D.addPath and CanvasPattern.setTransform support Matrix2D
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Canvas_API_0100', Level.LEVEL0, async (done: Function) => {
       let CASE: string = 'ArkUI_Canvas_API_0100'

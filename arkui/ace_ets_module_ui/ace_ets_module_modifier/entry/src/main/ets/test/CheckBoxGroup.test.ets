@@ -42,12 +42,12 @@ export default function checkBoxGroupTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_CheckboxGroup_1000
      * @tc.number ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1000
-     * @tc.name Test the properties of components
-     * @tc.desc Set mark values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set mark values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_CheckboxGroup_1000', Level.LEVEL0, async (done: Function) => {
       try {
@@ -66,12 +66,12 @@ export default function checkBoxGroupTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1001
      * @tc.number ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1001
-     * @tc.name Test the properties of components
-     * @tc.desc Set unselectedColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set unselectedColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1001', Level.LEVEL0, async (done: Function) => {
       try {
@@ -88,12 +88,12 @@ export default function checkBoxGroupTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1002
      * @tc.number ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1002
-     * @tc.name Test the properties of components
-     * @tc.desc Set selectAll values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set selectAll values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1002', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1002 START');
@@ -105,12 +105,12 @@ export default function checkBoxGroupTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1003
      * @tc.number ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1003
-     * @tc.name Test the properties of components
-     * @tc.desc Set selectedColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set selectedColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1003', Level.LEVEL0, async (done: Function) => {
       try {
@@ -127,12 +127,12 @@ export default function checkBoxGroupTest() {
     });
 
     /**
+     * @tc.name   ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1004
      * @tc.number ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1004
-     * @tc.name Test the properties of components
-     * @tc.desc Change unselectedColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change unselectedColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1004', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_CheckboxGroup_CheckMarkWidth_1004 START');

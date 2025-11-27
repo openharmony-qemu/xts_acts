@@ -144,12 +144,17 @@ static napi_value MProtect(napi_env env, napi_callback_info info)
     int retVal = FAIL;
     size_t align = getpagesize();
     void *buffer = memalign(align, SIZE_8 * align);
-    int ret = mprotect(buffer, getpagesize(), PROT_READ);
-    retVal = ret;
+    if (buffer == nullptr) {
+        napi_value result = nullptr;
+        napi_create_int32(env, retVal, &result);
+        return result;
+    }
+
     napi_value result = nullptr;
-    napi_create_int32(env, retVal, &result);
+    napi_create_int32(env, mprotect(buffer, getpagesize(), PROT_READ), &result);
     return result;
 }
+
 static napi_value MreMap(napi_env env, napi_callback_info info)
 {
     int retVal = FAIL;

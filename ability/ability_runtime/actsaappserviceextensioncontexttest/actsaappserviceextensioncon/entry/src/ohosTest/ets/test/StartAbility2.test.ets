@@ -35,9 +35,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: SUB_AA_ABILITY_NewRule_AppServiceExtension_1900
-     * @tc.name: SUB_AA_ABILITY_NewRule_AppServiceExtension_1900
-     * @tc.desc: AppServiceExtensionContext startAbility success.
+     * @tc.name   SUB_AA_ABILITY_NewRule_AppServiceExtension_1900
+     * @tc.number SUB_AA_ABILITY_NewRule_AppServiceExtension_1900
+     * @tc.desc   AppServiceExtensionContext startAbility success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_1900', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_1900`;
@@ -83,9 +86,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: SUB_AA_ABILITY_NewRule_AppServiceExtension_2000
-     * @tc.name: SUB_AA_ABILITY_NewRule_AppServiceExtension_2000
-     * @tc.desc: AppServiceExtensionContext startAbility 16000001.
+     * @tc.name   SUB_AA_ABILITY_NewRule_AppServiceExtension_2000
+     * @tc.number SUB_AA_ABILITY_NewRule_AppServiceExtension_2000
+     * @tc.desc   AppServiceExtensionContext startAbility 16000001.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_2000', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_2000`;
@@ -131,9 +137,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: SUB_AA_ABILITY_NewRule_AppServiceExtension_2100
-     * @tc.name: SUB_AA_ABILITY_NewRule_AppServiceExtension_2100
-     * @tc.desc: AppServiceExtensionContext startAbility 16000019.
+     * @tc.name   SUB_AA_ABILITY_NewRule_AppServiceExtension_2100
+     * @tc.number SUB_AA_ABILITY_NewRule_AppServiceExtension_2100
+     * @tc.desc   AppServiceExtensionContext startAbility 16000019.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_2100', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_2100`;
@@ -181,9 +190,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: SUB_AA_ABILITY_NewRule_AppServiceExtension_2200
-     * @tc.name: SUB_AA_ABILITY_NewRule_AppServiceExtension_2200
-     * @tc.desc: AppServiceExtensionContext startAbility 16000004.
+     * @tc.name   SUB_AA_ABILITY_NewRule_AppServiceExtension_2200
+     * @tc.number SUB_AA_ABILITY_NewRule_AppServiceExtension_2200
+     * @tc.desc   AppServiceExtensionContext startAbility 16000004.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_2200', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_2200`;
@@ -229,9 +241,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: SUB_AA_ABILITY_NewRule_AppServiceExtension_2300
-     * @tc.name: SUB_AA_ABILITY_NewRule_AppServiceExtension_2300
-     * @tc.desc: AppServiceExtensionContext startAbility 16000002.
+     * @tc.name   SUB_AA_ABILITY_NewRule_AppServiceExtension_2300
+     * @tc.number SUB_AA_ABILITY_NewRule_AppServiceExtension_2300
+     * @tc.desc   AppServiceExtensionContext startAbility 16000002.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_2300', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_2300`;
@@ -277,9 +292,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: SUB_AA_ABILITY_NewRule_AppServiceExtension_2400
-     * @tc.name: SUB_AA_ABILITY_NewRule_AppServiceExtension_2400
-     * @tc.desc: AppServiceExtensionContext startAbility 16000050.
+     * @tc.name   SUB_AA_ABILITY_NewRule_AppServiceExtension_2400
+     * @tc.number SUB_AA_ABILITY_NewRule_AppServiceExtension_2400
+     * @tc.desc   AppServiceExtensionContext startAbility 16000050.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_2400', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_2400`;
@@ -325,9 +343,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: SUB_AA_ABILITY_NewRule_AppServiceExtension_2500
-     * @tc.name: SUB_AA_ABILITY_NewRule_AppServiceExtension_2500
-     * @tc.desc: AppServiceExtensionContext startAbility 16000005.
+     * @tc.name   SUB_AA_ABILITY_NewRule_AppServiceExtension_2500
+     * @tc.number SUB_AA_ABILITY_NewRule_AppServiceExtension_2500
+     * @tc.desc   AppServiceExtensionContext startAbility 16000005.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_2500', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_2500`;
@@ -373,9 +394,12 @@ export default function abilityTest() {
     })
     
     /**
-     * @tc.number: SUB_AA_ABILITY_NewRule_AppServiceExtension_2600
-     * @tc.name: SUB_AA_ABILITY_NewRule_AppServiceExtension_2600
-     * @tc.desc: AppServiceExtensionContext startAbility 16000010.
+     * @tc.name   SUB_AA_ABILITY_NewRule_AppServiceExtension_2600
+     * @tc.number SUB_AA_ABILITY_NewRule_AppServiceExtension_2600
+     * @tc.desc   AppServiceExtensionContext startAbility 16000010.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_2600', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_2600`;
@@ -421,9 +445,12 @@ export default function abilityTest() {
     })
     
     /**
-     * @tc.number: SUB_AA_ABILITY_NewRule_AppServiceExtension_3500
-     * @tc.name: SUB_AA_ABILITY_NewRule_AppServiceExtension_3500
-     * @tc.desc: AppServiceExtensionContext startAbility 16000072.
+     * @tc.name   SUB_AA_ABILITY_NewRule_AppServiceExtension_3500
+     * @tc.number SUB_AA_ABILITY_NewRule_AppServiceExtension_3500
+     * @tc.desc   AppServiceExtensionContext startAbility 16000072.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_3500', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_3500`;
@@ -474,9 +501,12 @@ export default function abilityTest() {
     })
     
     /**
-     * @tc.number: SUB_AA_ABILITY_NewRule_AppServiceExtension_3600
-     * @tc.name: SUB_AA_ABILITY_NewRule_AppServiceExtension_3600
-     * @tc.desc: AppServiceExtensionContext startAbility 16000080.
+     * @tc.name   SUB_AA_ABILITY_NewRule_AppServiceExtension_3600
+     * @tc.number SUB_AA_ABILITY_NewRule_AppServiceExtension_3600
+     * @tc.desc   AppServiceExtensionContext startAbility 16000080.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_3600', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_3600`;
@@ -527,9 +557,12 @@ export default function abilityTest() {
     })
     
     /**
-     * @tc.number: SUB_AA_ABILITY_NewRule_AppServiceExtension_3700
-     * @tc.name: SUB_AA_ABILITY_NewRule_AppServiceExtension_3700
-     * @tc.desc: AppServiceExtensionContext startAbility 16000078.
+     * @tc.name   SUB_AA_ABILITY_NewRule_AppServiceExtension_3700
+     * @tc.number SUB_AA_ABILITY_NewRule_AppServiceExtension_3700
+     * @tc.desc   AppServiceExtensionContext startAbility 16000078.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_3700', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_3700`;
@@ -580,9 +613,12 @@ export default function abilityTest() {
     })
     
     /**
-     * @tc.number: SUB_AA_ABILITY_NewRule_AppServiceExtension_3800
-     * @tc.name: SUB_AA_ABILITY_NewRule_AppServiceExtension_3800
-     * @tc.desc: AppServiceExtensionContext startAbility 16000080.
+     * @tc.name   SUB_AA_ABILITY_NewRule_AppServiceExtension_3800
+     * @tc.number SUB_AA_ABILITY_NewRule_AppServiceExtension_3800
+     * @tc.desc   AppServiceExtensionContext startAbility 16000080.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_3800', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_3800`;
@@ -633,9 +669,12 @@ export default function abilityTest() {
     })
     
     /**
-     * @tc.number: SUB_AA_ABILITY_NewRule_AppServiceExtension_3900
-     * @tc.name: SUB_AA_ABILITY_NewRule_AppServiceExtension_3900
-     * @tc.desc: AppServiceExtensionContext startAbility 16000076.
+     * @tc.name   SUB_AA_ABILITY_NewRule_AppServiceExtension_3900
+     * @tc.number SUB_AA_ABILITY_NewRule_AppServiceExtension_3900
+     * @tc.desc   AppServiceExtensionContext startAbility 16000076.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_3900', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_3900`;
@@ -686,9 +725,12 @@ export default function abilityTest() {
     })
     
     /**
-     * @tc.number: SUB_AA_ABILITY_NewRule_AppServiceExtension_4000
-     * @tc.name: SUB_AA_ABILITY_NewRule_AppServiceExtension_4000
-     * @tc.desc: AppServiceExtensionContext startAbility 16000073.
+     * @tc.name   SUB_AA_ABILITY_NewRule_AppServiceExtension_4000
+     * @tc.number SUB_AA_ABILITY_NewRule_AppServiceExtension_4000
+     * @tc.desc   AppServiceExtensionContext startAbility 16000073.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_4000', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_4000`;
@@ -739,9 +781,12 @@ export default function abilityTest() {
     })
     
     /**
-     * @tc.number: SUB_AA_ABILITY_NewRule_AppServiceExtension_4100
-     * @tc.name: SUB_AA_ABILITY_NewRule_AppServiceExtension_4100
-     * @tc.desc: AppServiceExtensionContext startAbility 16000072.
+     * @tc.name   SUB_AA_ABILITY_NewRule_AppServiceExtension_4100
+     * @tc.number SUB_AA_ABILITY_NewRule_AppServiceExtension_4100
+     * @tc.desc   AppServiceExtensionContext startAbility 16000072.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_4100', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_4100`;
@@ -792,9 +837,12 @@ export default function abilityTest() {
     })
     
     /**
-     * @tc.number: SUB_AA_ABILITY_NewRule_AppServiceExtension_4200
-     * @tc.name: SUB_AA_ABILITY_NewRule_AppServiceExtension_4200
-     * @tc.desc: AppServiceExtensionContext startAbility 16000072.
+     * @tc.name   SUB_AA_ABILITY_NewRule_AppServiceExtension_4200
+     * @tc.number SUB_AA_ABILITY_NewRule_AppServiceExtension_4200
+     * @tc.desc   AppServiceExtensionContext startAbility 16000072.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ABILITY_NewRule_AppServiceExtension_4200', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_AA_ABILITY_NewRule_AppServiceExtension_4200`;

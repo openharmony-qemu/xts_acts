@@ -73,6 +73,14 @@ export default function swiperItemMargin() {
     //     * @tc.name      testSwiperItemSetMargin.
     //     * @tc.desc      Set swiper's  first item's  margin value ' 20 '.
     //     */
+    /**
+     * @tc.name   testSwiperItemSetMargin
+     * @tc.number testSwiperItemSetMargin
+     * @tc.desc   testSwiperItemSetMargin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     //    it('testSwiperItemSetMargin', Level.LEVEL1, async  (done:Function)=> {
     //      console.info('new testSwiperItemSetMargin START');
     //      let strJson = getInspectorByKey('swiperItemMargin');

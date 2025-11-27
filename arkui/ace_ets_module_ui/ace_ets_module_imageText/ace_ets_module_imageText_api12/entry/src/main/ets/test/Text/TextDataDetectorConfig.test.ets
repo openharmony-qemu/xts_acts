@@ -43,12 +43,12 @@ export default function TextDataDetectorConfig() {
     });
 
     /**
-     * @tc.number: TextDataDetectorConfig_0010
-     * @tc.name  : TextDataDetectorConfig_0010
-     * @tc.desc  : set Text: TextDataDetectorConfig
-     * @tc.level : Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextDataDetectorConfig_0010
+     * @tc.number TextDataDetectorConfig_0010
+     * @tc.desc   set Text: TextDataDetectorConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextDataDetectorConfig_0010',  Level.LEVEL0, async (done: Function) => {
       console.info('TextDataDetectorConfig_0010 START');
@@ -58,13 +58,13 @@ export default function TextDataDetectorConfig() {
       done();
     });
 	
-	/**
-     * @tc.number: TextDataDetectorConfig_0020
-     * @tc.name  : TextDataDetectorConfig_0020
-     * @tc.desc  : set Text: TextDataDetectorConfig
-     * @tc.level : Level 1
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   TextDataDetectorConfig_0020
+     * @tc.number TextDataDetectorConfig_0020
+     * @tc.desc   set Text: TextDataDetectorConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextDataDetectorConfig_0020',  Level.LEVEL0, async (done: Function) => {
       console.info('TextDataDetectorConfig_0020 START');
@@ -74,13 +74,13 @@ export default function TextDataDetectorConfig() {
       done();
     });
 	
-	/**
-     * @tc.number: TextDataDetectorConfig_0030
-     * @tc.name  : TextDataDetectorConfig_0030
-     * @tc.desc  : set Text: TextDataDetectorConfig
-     * @tc.level : Level 1
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   TextDataDetectorConfig_0030
+     * @tc.number TextDataDetectorConfig_0030
+     * @tc.desc   set Text: TextDataDetectorConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextDataDetectorConfig_0030',  Level.LEVEL0, async (done: Function) => {
       console.info('TextDataDetectorConfig_0030 START');
@@ -90,13 +90,13 @@ export default function TextDataDetectorConfig() {
       done();
     });
 	
-	/**
-     * @tc.number: TextDataDetectorConfig_0040
-     * @tc.name  : TextDataDetectorConfig_0040
-     * @tc.desc  : set Text: TextDataDetectorConfig
-     * @tc.level : Level 1
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   TextDataDetectorConfig_0040
+     * @tc.number TextDataDetectorConfig_0040
+     * @tc.desc   set Text: TextDataDetectorConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextDataDetectorConfig_0040',  Level.LEVEL0, async (done: Function) => {
       console.info('TextDataDetectorConfig_0040 START');

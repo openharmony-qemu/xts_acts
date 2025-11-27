@@ -37,12 +37,12 @@ export default function showTimePickerDialogBackgroundEffectTest() {
     });
 
     /**
-     * @tc.number    showTimePickerDialogBackgroundEffectTest_0100
-     * @tc.name      showTimePickerDialogBackgroundEffectTest_0100
-     * @tc.desc      createShowTimePickerDialogModeToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showTimePickerDialogBackgroundEffectTest_0100
+     * @tc.number showTimePickerDialogBackgroundEffectTest_0100
+     * @tc.desc   createShowTimePickerDialogModeToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('showTimePickerDialogBackgroundEffectTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'showTimePickerDialogBackgroundEffectTest_0100';
@@ -85,12 +85,12 @@ export default function showTimePickerDialogBackgroundEffectTest() {
     });
 
     /**
-     * @tc.number    showTimePickerDialogBackgroundEffectTest_0200
-     * @tc.name      showTimePickerDialogBackgroundEffectTest_0200
-     * @tc.desc      createShowTimePickerDialogModeToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showTimePickerDialogBackgroundEffectTest_0200
+     * @tc.number showTimePickerDialogBackgroundEffectTest_0200
+     * @tc.desc   createShowTimePickerDialogModeToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('showTimePickerDialogBackgroundEffectTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'showTimePickerDialogDialogBackgroundEffectTest_0200';
@@ -120,12 +120,12 @@ export default function showTimePickerDialogBackgroundEffectTest() {
     });
 
     /**
-     * @tc.number    showTimePickerDialogBackgroundEffectTest_0300
-     * @tc.name      showTimePickerDialogBackgroundEffectTest_0300
-     * @tc.desc      C
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showTimePickerDialogBackgroundEffectTest_0300
+     * @tc.number showTimePickerDialogBackgroundEffectTest_0300
+     * @tc.desc   C
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('showTimePickerDialogBackgroundEffectTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'showTimePickerDialogBackgroundEffectTest_0300';

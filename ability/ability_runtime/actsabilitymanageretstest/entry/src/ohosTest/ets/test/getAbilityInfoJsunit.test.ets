@@ -222,10 +222,12 @@ export default function getHapModuleInfoJsunit() {
     })
 
     /**
-     * @tc.number: context_getAbilityInfo_test_0100
-     * @tc.name: getAbilityInfo:Query the current attributionability details.
-     * @tc.desc: Check the return value of the interface (by promise)
-     * @tc.level 0
+     * @tc.name   context_getAbilityInfo_test_0100
+     * @tc.number context_getAbilityInfo_test_0100
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('context_getAbilityInfo_test_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[context_getAbilityInfo_test_0100] START');
@@ -248,10 +250,12 @@ export default function getHapModuleInfoJsunit() {
     })
 
     /**
-     * @tc.number: context_getAbilityInfo_test_0200
-     * @tc.name: getAbilityInfo:Query the current attributionability details.
-     * @tc.desc: Check the return value of the interface (by AsyncCallback)
-     * @tc.level 0
+     * @tc.name   context_getAbilityInfo_test_0200
+     * @tc.number context_getAbilityInfo_test_0200
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('context_getAbilityInfo_test_0200', Level.LEVEL0, async (done: Function) => {
       try {
@@ -275,10 +279,12 @@ export default function getHapModuleInfoJsunit() {
     })
 
     /**
-     * @tc.number: context_getAbilityInfo_test_0400
-     * @tc.name: getAbilityInfo:Query the current attributionability details.
-     * @tc.desc: Check the return value of the interface (by promise)
-     * @tc.level 0
+     * @tc.name   context_getAbilityInfo_test_0400
+     * @tc.number context_getAbilityInfo_test_0400
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('context_getAbilityInfo_test_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[context_getAbilityInfo_test_0400] START');

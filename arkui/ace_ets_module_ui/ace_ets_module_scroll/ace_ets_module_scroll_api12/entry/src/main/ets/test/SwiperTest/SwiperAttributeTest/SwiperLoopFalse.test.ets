@@ -56,13 +56,13 @@ export default function SwiperLoopFalse() {
       console.info("SwiperLoopFalse after each called");
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_3400
-     * @tc.name       : SwiperLoopFalse_3400
-     * @tc.desc       : set autoPlay and loop to true
-     * @tc.level      : Level 1
-     * @tc.type       : Function
-     * @tc.size       :
+    /**
+     * @tc.name   SwiperLoopFalse_3400
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_3400
+     * @tc.desc   set autoPlay and loop to true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SwiperLoopFalse_3400', Level.LEVEL1, async (done: Function) => {
       console.info('[SwiperLoopFalse_3400] START');

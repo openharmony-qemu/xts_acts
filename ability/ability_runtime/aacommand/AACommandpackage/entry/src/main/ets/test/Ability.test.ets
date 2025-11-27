@@ -20,11 +20,12 @@ export default function abilityTest() {
   let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator | undefined = AppStorage.get<AbilityDelegatorRegistry.AbilityDelegator>("abilityDelegator");
   describe('ACTS_AACommand_01_3', () => {
     /**
-     * @tc.number: ACTS_AACommand_test_0300_9
-     * @tc.name: -b, -s unittest, -p, -s class, -s level, -s size, -s testType, -s timeout,
-     *           -s <any-key> <any-value>, -w, etc. of the test command arguments are
-     *           valid ( -s class specifies only test suites).
-     * @tc.desc: Verify that the test framework can start normally through the test command.
+     * @tc.name   ACTS_AACommand_test_0300_9
+     * @tc.number ACTS_AACommand_test_0300_9
+     * @tc.desc   Verify that the test framework can start normally through the test command.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AACommand_test_0300_9', Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_AACommand_test_0300_9 ---------3-------- start");

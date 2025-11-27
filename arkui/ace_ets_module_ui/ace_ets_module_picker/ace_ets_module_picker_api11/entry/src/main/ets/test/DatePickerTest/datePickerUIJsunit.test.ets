@@ -42,6 +42,14 @@ export default function  datePickerUIJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   datePickerUIJsunit_0100
+     * @tc.number datePickerUIJsunit_0100
+     * @tc.desc   datePickerUIJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('datePickerUIJsunit_0100', Level.LEVEL1, async (done: Function) => {
        console.info('datePickerUIJsunit_0100 START');
        await CommonFunc.sleep(1000);
@@ -55,6 +63,14 @@ export default function  datePickerUIJsunit() {
        done();
     });
 
+   /**
+    * @tc.name   datePickerUIJsunit_0200
+    * @tc.number datePickerUIJsunit_0200
+    * @tc.desc   datePickerUIJsunit_0200
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
    it('datePickerUIJsunit_0200', Level.LEVEL1, async (done: Function) => {
       console.info('datePickerUIJsunit_0200 START');
       // modify the type attribute normal value of datePicker dynamically

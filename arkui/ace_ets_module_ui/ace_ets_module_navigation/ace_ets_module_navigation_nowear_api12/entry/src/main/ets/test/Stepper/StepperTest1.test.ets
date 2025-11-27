@@ -48,10 +48,12 @@ export default function StepperTest1() {
     });
 
     /**
-     * @tc.number    StepperTest1_0100
-     * @tc.name      StepperTest1_0100
-     * @tc.desc      Test ItemState.Skip
-     * @tc.level     Level 1
+     * @tc.name   StepperTest1_0100
+     * @tc.number StepperTest1_0100
+     * @tc.desc   Test ItemState.Skip
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('StepperTest1_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[StepperTest1_0100] START');

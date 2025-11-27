@@ -695,7 +695,7 @@ export default function Sim2Public() {
                 ExpectFail();
                 console.info(`${caseName} test end `);
                 done();
-              } catch (error: Error) {
+              } catch (error) {
                 let err = error as BusinessError;
                 hilog.info(domain, tag, `${caseName}  err->${JSON.stringify(err)}`);
                 expect(err?.code).assertEqual(8300001);
@@ -708,7 +708,7 @@ export default function Sim2Public() {
               done();
             }
           });
-        } catch (error: Error) {
+        } catch (error) {
           let err = error as BusinessError;
           hilog.info(domain, tag, `${caseName}  err->${JSON.stringify(err)}`);
           expect(err?.code).assertEqual(8300001);
@@ -756,7 +756,7 @@ export default function Sim2Public() {
               done();
             }
           });
-        } catch (err: Error) {
+        } catch (err) {
           let error = err as BusinessError;
           hilog.info(domain, tag, `${caseName} test failed err: ${JSON.stringify(error)}`);
           ExpectFail();
@@ -814,7 +814,7 @@ export default function Sim2Public() {
               done();
             }
           });
-        } catch (err: Error) {
+        } catch (err) {
           let error = err as BusinessError;
           hilog.info(domain, tag, `${caseName} test failed err: ${JSON.stringify(error)}`);
           if (error?.code === PERMISSION_DENIED_CODE) {
@@ -880,7 +880,7 @@ export default function Sim2Public() {
               done();
             }
           });
-        } catch (err: Error) {
+        } catch (err) {
           let error = err as BusinessError;
           hilog.info(domain, tag, `${caseName} test failed err: ${JSON.stringify(error)}`);
           if (error?.code === PERMISSION_DENIED_CODE) {
@@ -949,7 +949,7 @@ export default function Sim2Public() {
               done();
             }
           });
-        } catch (err: Error) {
+        } catch (err) {
           let error = err as BusinessError;
           hilog.info(domain, tag, `${caseName} test failed err: ${JSON.stringify(error)}`);
           if (error?.code === PERMISSION_DENIED_CODE) {
@@ -1006,7 +1006,7 @@ export default function Sim2Public() {
               done();
             }
           });
-        } catch (err: Error) {
+        } catch (err) {
           let error = err as BusinessError;
           hilog.info(domain, tag, `${caseName} test failed err: ${JSON.stringify(error)}`);
           if (error?.code === PERMISSION_DENIED_CODE) {
@@ -1077,7 +1077,7 @@ export default function Sim2Public() {
               done();
             }
           });
-        } catch (err: Error) {
+        } catch (err) {
           let error = err as BusinessError;
           hilog.info(domain, tag, `${caseName} test failed err: ${JSON.stringify(error)}`);
           if (error?.code === PERMISSION_DENIED_CODE) {
@@ -1124,7 +1124,7 @@ export default function Sim2Public() {
               done();
             }
           });
-        } catch (err: Error) {
+        } catch (err) {
           let error = err as BusinessError;
           hilog.info(domain, tag, `${caseName} test failed err: ${JSON.stringify(error)}`);
           if (error?.code === PERMISSION_DENIED_CODE) {
@@ -1179,7 +1179,7 @@ export default function Sim2Public() {
               done();
             }
           });
-        } catch (err: Error) {
+        } catch (err) {
           let error = err as BusinessError;
           hilog.info(domain, tag, `${caseName} test failed err: ${JSON.stringify(error)}`);
           if (error?.code === PERMISSION_DENIED_CODE) {
@@ -1230,7 +1230,7 @@ export default function Sim2Public() {
               done();
             }
           });
-        } catch (err: Error) {
+        } catch (err) {
           let error = err as BusinessError;
           hilog.info(domain, tag, `${caseName} test failed err: ${JSON.stringify(error)}`);
           if (error?.code === PERMISSION_DENIED_CODE) {
@@ -1281,7 +1281,7 @@ export default function Sim2Public() {
               done();
             }
           });
-        } catch (err: Error) {
+        } catch (err) {
           let error = err as BusinessError;
           hilog.info(domain, tag, `${caseName} test failed err: ${JSON.stringify(error)}`);
           if (error?.code === PERMISSION_DENIED_CODE) {
@@ -1339,7 +1339,7 @@ export default function Sim2Public() {
               done();
             }
           });
-        } catch (err: Error) {
+        } catch (err) {
           let error = err as BusinessError;
           hilog.info(domain, tag, `${caseName} test failed err: ${JSON.stringify(error)}`);
           if (error?.code === PERMISSION_DENIED_CODE) {
@@ -1395,7 +1395,7 @@ export default function Sim2Public() {
               done();
             }
           });
-        } catch (err: Error) {
+        } catch (err) {
           let error = err as BusinessError;
           hilog.info(domain, tag, `${caseName} test failed err: ${JSON.stringify(error)}`);
           if (error?.code === PERMISSION_DENIED_CODE) {
@@ -1442,7 +1442,7 @@ export default function Sim2Public() {
               done();
             }
           });
-        } catch (err: Error) {
+        } catch (err) {
           let error = err as BusinessError;
           hilog.info(domain, tag, `${caseName} test failed err: ${JSON.stringify(error)}`);
           if (error?.code === PERMISSION_DENIED_CODE) {
@@ -1475,7 +1475,7 @@ export default function Sim2Public() {
                 ExpectFail();
                 hilog.info(domain, tag, `${caseName} test end `);
                 done();
-              } catch(error: Error) {
+              } catch (error) {
                 let err = error as BusinessError;
                 hilog.info(domain, tag, `${caseName} test failed err: ${JSON.stringify(err)}`);
                 if (err.code === PERMISSION_DENIED_CODE) {
@@ -1531,7 +1531,7 @@ export default function Sim2Public() {
               done();
             }
           });
-        } catch (err: Error) {
+        } catch (err) {
           let error = err as BusinessError;
           hilog.info(domain, tag, `${caseName} test failed err: ${JSON.stringify(error)}`);
           if (error?.code === PERMISSION_DENIED_CODE) {
@@ -1587,7 +1587,7 @@ export default function Sim2Public() {
               done();
             }
           });
-        } catch (err: Error) {
+        } catch (err) {
           let error = err as BusinessError;
           hilog.info(domain, tag, `${caseName} test failed err: ${JSON.stringify(error)}`);
           if (error?.code === PERMISSION_DENIED_CODE) {
@@ -1717,7 +1717,7 @@ export default function Sim2Public() {
               done();
             }
           });
-        } catch (err: Error) {
+        } catch (err) {
           let error = err as BusinessError;
           hilog.info(domain, tag, `${caseName} test failed err: ${JSON.stringify(error)}`);
           if (error?.code === PERMISSION_DENIED_CODE) {
@@ -1770,7 +1770,7 @@ export default function Sim2Public() {
               done();
             }
           });
-        } catch (err: Error) {
+        } catch (err) {
           let error = err as BusinessError;
           hilog.info(domain, tag, `${caseName} test failed err: ${JSON.stringify(error)}`);
           if (error?.code === PERMISSION_DENIED_CODE) {
@@ -1804,7 +1804,7 @@ export default function Sim2Public() {
                 ExpectFail();
                 hilog.info(domain, tag, `${caseName} test end `);
                 done();
-              } catch (error: Error) {
+              } catch (error) {
                 let err = error as BusinessError;
                 expect(err.code).assertEqual(8300001);
                 hilog.info(domain, tag, `${caseName} test end `);
@@ -1817,7 +1817,7 @@ export default function Sim2Public() {
               done();
             }
           });
-        } catch (err: Error) {
+        } catch (err) {
           let error = err as BusinessError;
           hilog.info(domain, tag, `${caseName} test failed err: ${JSON.stringify(error)}`);
           if (error?.code === PERMISSION_DENIED_CODE) {

@@ -45,12 +45,12 @@ export default function tabsApi1() {
       console.info("tabsApi1 after each called");
     });
     /**
-     * @tc.number    SUB_ACE_RICHEDITOR_tabsApi1_0100
-     * @tc.name      testRichEditor
-     * @tc.desc      set api
-     * @tc.level     Level 2
-     * @tc.type
-    * @tc.sizeace_ets_module_scroll/ace_ets_module_scroll_api11/entry/src/main/ets/test/ScrollTest/Scroll.test.ets:61:11
+     * @tc.name   tabsApi1_0100
+     * @tc.number SUB_ACE_RICHEDITOR_tabsApi1_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('tabsApi1_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[tabsApi1_0100] START');

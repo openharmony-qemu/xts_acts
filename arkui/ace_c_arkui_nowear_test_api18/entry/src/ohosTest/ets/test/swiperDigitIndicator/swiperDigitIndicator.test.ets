@@ -28,6 +28,14 @@ export default function swiperDigitIndicatorTest(){
       done()
     })
 
+    /**
+     * @tc.name   swiperDigitIndicatorTest_a
+     * @tc.number swiperDigitIndicatorTest_a
+     * @tc.desc   swiperDigitIndicatorTest_a
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('swiperDigitIndicatorTest_a',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.swiperDigitIndicatorTest_a()).assertEqual(0)
       console.log('swiperDigitIndicatorTest_a will drag and check:: ')
@@ -36,6 +44,14 @@ export default function swiperDigitIndicatorTest(){
       done()
     })
 
+    /**
+     * @tc.name   swiperDigitIndicatorTest_b
+     * @tc.number swiperDigitIndicatorTest_b
+     * @tc.desc   swiperDigitIndicatorTest_b
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('swiperDigitIndicatorTest_b',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.swiperDigitIndicatorTest_b()).assertEqual(0)
       console.log('swiperDigitIndicatorTest_b will drag and check:: ')
@@ -44,6 +60,14 @@ export default function swiperDigitIndicatorTest(){
       done()
     })
 
+    /**
+     * @tc.name   swiperDigitIndicatorTest_c
+     * @tc.number swiperDigitIndicatorTest_c
+     * @tc.desc   swiperDigitIndicatorTest_c
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('swiperDigitIndicatorTest_c',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.swiperDigitIndicatorTest_c()).assertEqual(0)
       console.log('swiperDigitIndicatorTest_c will drag and check:: ')
@@ -52,6 +76,14 @@ export default function swiperDigitIndicatorTest(){
       done()
     })
 
+    /**
+     * @tc.name   swiperDigitIndicatorTest_d
+     * @tc.number swiperDigitIndicatorTest_d
+     * @tc.desc   swiperDigitIndicatorTest_d
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('swiperDigitIndicatorTest_d',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.swiperDigitIndicatorTest_d()).assertEqual(0)
       console.log('swiperDigitIndicatorTest_d will drag and check:: ')
@@ -60,6 +92,14 @@ export default function swiperDigitIndicatorTest(){
       done()
     })
 
+    /**
+     * @tc.name   swiperDigitIndicatorTest_e
+     * @tc.number swiperDigitIndicatorTest_e
+     * @tc.desc   swiperDigitIndicatorTest_e
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('swiperDigitIndicatorTest_e',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.swiperDigitIndicatorTest_e()).assertEqual(0)
       console.log('swiperDigitIndicatorTest_e will drag and check:: ')
@@ -68,6 +108,14 @@ export default function swiperDigitIndicatorTest(){
       done()
     })
 
+    /**
+     * @tc.name   swiperDigitIndicatorTest_b1
+     * @tc.number swiperDigitIndicatorTest_b1
+     * @tc.desc   swiperDigitIndicatorTest_b1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('swiperDigitIndicatorTest_b1',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.swiperDigitIndicatorTest_b1()).assertEqual(0)
       console.log('swiperDigitIndicatorTest_b1 will drag and check:: ')
@@ -76,6 +124,14 @@ export default function swiperDigitIndicatorTest(){
       done()
     })
 
+    /**
+     * @tc.name   swiperDigitIndicatorTest_c1
+     * @tc.number swiperDigitIndicatorTest_c1
+     * @tc.desc   swiperDigitIndicatorTest_c1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('swiperDigitIndicatorTest_c1',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.swiperDigitIndicatorTest_c1()).assertEqual(0)
       console.log('swiperDigitIndicatorTest_c1 will drag and check:: ')
@@ -84,6 +140,14 @@ export default function swiperDigitIndicatorTest(){
       done()
     })
 
+    /**
+     * @tc.name   swiperDigitIndicatorTest_d1
+     * @tc.number swiperDigitIndicatorTest_d1
+     * @tc.desc   swiperDigitIndicatorTest_d1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('swiperDigitIndicatorTest_d1',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.swiperDigitIndicatorTest_d1()).assertEqual(0)
       console.log('swiperDigitIndicatorTest_d1 will drag and check:: ')
@@ -92,6 +156,14 @@ export default function swiperDigitIndicatorTest(){
       done()
     })
 
+    /**
+     * @tc.name   swiperDigitIndicatorTest_e1
+     * @tc.number swiperDigitIndicatorTest_e1
+     * @tc.desc   swiperDigitIndicatorTest_e1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('swiperDigitIndicatorTest_e1',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.swiperDigitIndicatorTest_e1()).assertEqual(0)
       console.log('swiperDigitIndicatorTest_e1 will drag and check:: ')
@@ -100,6 +172,14 @@ export default function swiperDigitIndicatorTest(){
       done()
     })
 
+    /**
+     * @tc.name   swiperDigitIndicatorTest_f
+     * @tc.number swiperDigitIndicatorTest_f
+     * @tc.desc   swiperDigitIndicatorTest_f
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('swiperDigitIndicatorTest_f',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.swiperDigitIndicatorTest_f()).assertEqual(0)
       console.log('swiperDigitIndicatorTest_f will drag and check:: ')
@@ -108,6 +188,14 @@ export default function swiperDigitIndicatorTest(){
       done()
     })
 
+    /**
+     * @tc.name   swiperDigitIndicatorTest_f1
+     * @tc.number swiperDigitIndicatorTest_f1
+     * @tc.desc   swiperDigitIndicatorTest_f1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('swiperDigitIndicatorTest_f1',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.swiperDigitIndicatorTest_f1()).assertEqual(0)
       console.log('swiperDigitIndicatorTest_f1 will drag and check:: ')
@@ -116,6 +204,14 @@ export default function swiperDigitIndicatorTest(){
       done()
     })
 
+    /**
+     * @tc.name   swiperDigitIndicatorTest_g
+     * @tc.number swiperDigitIndicatorTest_g
+     * @tc.desc   swiperDigitIndicatorTest_g
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('swiperDigitIndicatorTest_g',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.swiperDigitIndicatorTest_g()).assertEqual(0)
       console.log('swiperDigitIndicatorTest_g will drag and check:: ')
@@ -124,6 +220,14 @@ export default function swiperDigitIndicatorTest(){
       done()
     })
 
+    /**
+     * @tc.name   swiperDigitIndicatorTest_g1
+     * @tc.number swiperDigitIndicatorTest_g1
+     * @tc.desc   swiperDigitIndicatorTest_g1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('swiperDigitIndicatorTest_g1',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.swiperDigitIndicatorTest_g1()).assertEqual(0)
       console.log('swiperDigitIndicatorTest_g1 will drag and check:: ')
@@ -132,6 +236,14 @@ export default function swiperDigitIndicatorTest(){
       done()
     })
 
+    /**
+     * @tc.name   swiperDigitIndicatorTest_h
+     * @tc.number swiperDigitIndicatorTest_h
+     * @tc.desc   swiperDigitIndicatorTest_h
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('swiperDigitIndicatorTest_h',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.swiperDigitIndicatorTest_h()).assertEqual(0)
       console.log('swiperDigitIndicatorTest_h will drag and check:: ')
@@ -140,6 +252,14 @@ export default function swiperDigitIndicatorTest(){
       done()
     })
 
+    /**
+     * @tc.name   swiperDigitIndicatorTest_h1
+     * @tc.number swiperDigitIndicatorTest_h1
+     * @tc.desc   swiperDigitIndicatorTest_h1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('swiperDigitIndicatorTest_h1',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.swiperDigitIndicatorTest_h1()).assertEqual(0)
       console.log('swiperDigitIndicatorTest_h1 will drag and check:: ')
@@ -148,6 +268,14 @@ export default function swiperDigitIndicatorTest(){
       done()
     })
 
+    /**
+     * @tc.name   swiperDigitIndicatorTest_i
+     * @tc.number swiperDigitIndicatorTest_i
+     * @tc.desc   swiperDigitIndicatorTest_i
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('swiperDigitIndicatorTest_i',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.swiperDigitIndicatorTest_i()).assertEqual(0)
       console.log('swiperDigitIndicatorTest_i will drag and check:: ')
@@ -156,6 +284,14 @@ export default function swiperDigitIndicatorTest(){
       done()
     })
 
+    /**
+     * @tc.name   swiperDigitIndicatorTest_i1
+     * @tc.number swiperDigitIndicatorTest_i1
+     * @tc.desc   swiperDigitIndicatorTest_i1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('swiperDigitIndicatorTest_i1',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.swiperDigitIndicatorTest_i1()).assertEqual(0)
       console.log('swiperDigitIndicatorTest_i1 will drag and check:: ')
@@ -164,6 +300,14 @@ export default function swiperDigitIndicatorTest(){
       done()
     })
 
+    /**
+     * @tc.name   swiperDigitIndicatorTest_j
+     * @tc.number swiperDigitIndicatorTest_j
+     * @tc.desc   swiperDigitIndicatorTest_j
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('swiperDigitIndicatorTest_j',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.swiperDigitIndicatorTest_j()).assertEqual(0)
       console.log('swiperDigitIndicatorTest_j will drag and check:: ')
@@ -172,6 +316,14 @@ export default function swiperDigitIndicatorTest(){
       done()
     })
 
+    /**
+     * @tc.name   swiperDigitIndicatorTest_j1
+     * @tc.number swiperDigitIndicatorTest_j1
+     * @tc.desc   swiperDigitIndicatorTest_j1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('swiperDigitIndicatorTest_j1',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.swiperDigitIndicatorTest_j1()).assertEqual(0)
       console.log('swiperDigitIndicatorTest_j1 will drag and check:: ')
@@ -180,6 +332,14 @@ export default function swiperDigitIndicatorTest(){
       done()
     })
 
+    /**
+     * @tc.name   swiperDigitIndicatorTest_k
+     * @tc.number swiperDigitIndicatorTest_k
+     * @tc.desc   swiperDigitIndicatorTest_k
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('swiperDigitIndicatorTest_k',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.swiperDigitIndicatorTest_k()).assertEqual(0)
       console.log('swiperDigitIndicatorTest_k will drag and check:: ')
@@ -188,6 +348,14 @@ export default function swiperDigitIndicatorTest(){
       done()
     })
 
+    /**
+     * @tc.name   swiperDigitIndicatorTest_k1
+     * @tc.number swiperDigitIndicatorTest_k1
+     * @tc.desc   swiperDigitIndicatorTest_k1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('swiperDigitIndicatorTest_k1',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.swiperDigitIndicatorTest_k1()).assertEqual(0)
       console.log('swiperDigitIndicatorTest_k1 will drag and check:: ')
@@ -196,6 +364,14 @@ export default function swiperDigitIndicatorTest(){
       done()
     })
 
+    /**
+     * @tc.name   swiperDigitIndicatorTest_l
+     * @tc.number swiperDigitIndicatorTest_l
+     * @tc.desc   swiperDigitIndicatorTest_l
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('swiperDigitIndicatorTest_l',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.swiperDigitIndicatorTest_l()).assertEqual(0)
       console.log('swiperDigitIndicatorTest_l will drag and check:: ')
@@ -205,6 +381,14 @@ export default function swiperDigitIndicatorTest(){
     })
 
 
+    /**
+     * @tc.name   swiperDigitIndicatorTest_l1
+     * @tc.number swiperDigitIndicatorTest_l1
+     * @tc.desc   swiperDigitIndicatorTest_l1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('swiperDigitIndicatorTest_l1',  Level.LEVEL0, async (done: Function) => {
       expect(nativeRender.swiperDigitIndicatorTest_l1()).assertEqual(0)
       console.log('swiperDigitIndicatorTest_l1 will drag and check:: ')

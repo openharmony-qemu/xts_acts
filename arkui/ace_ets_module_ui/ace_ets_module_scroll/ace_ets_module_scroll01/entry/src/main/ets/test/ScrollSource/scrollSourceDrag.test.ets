@@ -42,12 +42,12 @@ export default function scrollSourceDrag() {
     });
 
     /**
-     * @tc.number    scrollSourceDrag_001
-     * @tc.name      scrollSourceDrag_0100
-     * @tc.desc      ScrollSource.DRAG: Drag event
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   scrollSourceDrag_0100
+     * @tc.number scrollSourceDrag_001
+     * @tc.desc   ScrollSource.DRAG: Drag event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('scrollSourceDrag_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[scrollSourceDrag_0100] START');

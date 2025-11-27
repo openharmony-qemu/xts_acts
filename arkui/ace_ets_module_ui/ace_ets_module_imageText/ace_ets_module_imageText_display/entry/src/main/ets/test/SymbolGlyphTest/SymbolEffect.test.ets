@@ -43,13 +43,13 @@ export default function SymbolEffect() {
       done();
     });
     
-     /**
-     * @tc.number    SUB_ACE_symbolEffect_0100
-     * @tc.name      symbolEffect_0100
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+    /**
+     * @tc.name   symbolEffect_0100
+     * @tc.number SUB_ACE_symbolEffect_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('symbolEffect_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('symbolEffect_0100 START');
@@ -63,12 +63,12 @@ export default function SymbolEffect() {
     });
 
     /**
-     * @tc.number    SUB_ACE_symbolEffect_0200
-     * @tc.name      symbolEffect_0200
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+     * @tc.name   symbolEffect_0200
+     * @tc.number SUB_ACE_symbolEffect_0200
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('symbolEffect_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('symbolEffect_0200 START');
@@ -82,12 +82,12 @@ export default function SymbolEffect() {
     });
 
     /**
-     * @tc.number    SUB_ACE_symbolEffect_0300
-     * @tc.name      symbolEffect_0300
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+     * @tc.name   symbolEffect_0300
+     * @tc.number SUB_ACE_symbolEffect_0300
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('symbolEffect_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('symbolEffect_0300 START');

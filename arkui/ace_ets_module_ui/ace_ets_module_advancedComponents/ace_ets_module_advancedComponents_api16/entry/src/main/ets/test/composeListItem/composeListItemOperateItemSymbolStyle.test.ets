@@ -50,12 +50,12 @@ export default function composeListItemOperateItemSymbolStyle() {
     })
 
     /**
-     * @tc.number composeListItemOperateItemSymbolStyle
      * @tc.name   composeListItemOperateItemSymbolStyle_0100
+     * @tc.number composeListItemOperateItemSymbolStyle
      * @tc.desc   Test composeListItemOperateItemSymbolStyle
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('composeListItemOperateItemSymbolStyle_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {

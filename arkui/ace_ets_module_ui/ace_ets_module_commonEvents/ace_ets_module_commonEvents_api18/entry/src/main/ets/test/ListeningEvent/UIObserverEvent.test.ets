@@ -48,12 +48,12 @@ export default function UIObserverEventTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_API_0100
-     * @tc.name      testGetImageAttr010
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   UIObserverEventTest_0100
+     * @tc.number SUB_ACE_BASIC_ETS_API_0100
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('UIObserverEventTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('UIObserverEventTest_0100 START');
@@ -71,12 +71,12 @@ export default function UIObserverEventTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_API_0100
-     * @tc.name      testGetImageAttr010
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   UIObserverEventTest_0200
+     * @tc.number SUB_ACE_BASIC_ETS_API_0100
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('UIObserverEventTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('UIObserverEventTest_0200 START');
@@ -94,12 +94,12 @@ export default function UIObserverEventTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASIC_ETS_API_0100
-     * @tc.name      testGetImageAttr010
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   UIObserverEventTest_0300
+     * @tc.number SUB_ACE_BASIC_ETS_API_0100
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('UIObserverEventTest_0300', Level.LEVEL0, async (done: Function) => {
       console.info('UIObserverEventTest_0300 START');

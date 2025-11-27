@@ -27,7 +27,6 @@
         "MainAbility/pages/FrameNode/createNodeText",
         "MainAbility/pages/FrameNode/setMeasureSize",
         "MainAbility/pages/FrameNode/commonEventTest1",
-        "MainAbility/pages/FrameNode/RELOAD",
         "MainAbility/pages/FrameNode/expectedUpdateInterval",
         "MainAbility/pages/FrameNode/attachNodeAdapter",
         "MainAbility/pages/FrameNode/getAttachedFrameNodeById",
@@ -62,6 +61,9 @@
         "MainAbility/pages/FrameNodeNew/isTransferredTest",
         "MainAbility/pages/FrameNodeNew/GetFrameNodeNullTest",
         "MainAbility/pages/FrameNodeNew/GetFrameNodeMethodNullTest",
-        "MainAbility/pages/FrameNode/frameNodeApi"
+        "MainAbility/pages/FrameNode/frameNodeApi",
+        "MainAbility/pages/FrameNodeNew/convertPoint",
+        "MainAbility/pages/FrameNodeNew/convertPointError24",
+        "MainAbility/pages/FrameNodeNew/convertPointError25"
     ]
 }

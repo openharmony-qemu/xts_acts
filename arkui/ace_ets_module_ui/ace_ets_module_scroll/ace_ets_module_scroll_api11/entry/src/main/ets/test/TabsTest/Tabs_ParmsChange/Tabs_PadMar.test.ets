@@ -77,9 +77,12 @@ export default function tabs_PadMarTest() {
       console.info("Tabs_PadMarTest after each called")
     });
     /**
+     * @tc.name   testTabsPad
      * @tc.number SUB_ACE_TABS_PADMAR_TEST_0100
-     * @tc.name testTabsPad
-     * @tc.desc set padding of tabs to 20
+     * @tc.desc   set padding of tabs to 20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTabsPad', Level.LEVEL1, async (done: Function) => {
       console.info('[testTabsPad] START');
@@ -213,9 +216,12 @@ export default function tabs_PadMarTest() {
       done();
     });
     /**
+     * @tc.name   testTabsMar
      * @tc.number SUB_ACE_TABS_PADMAR_TEST_0200
-     * @tc.name testTabsMar
-     * @tc.desc set margin of tabs to 20
+     * @tc.desc   set margin of tabs to 20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTabsMar', Level.LEVEL1, async (done: Function) => {
       console.info('[testTabsMar] START');
@@ -338,9 +344,12 @@ export default function tabs_PadMarTest() {
       done();
     });
     /**
+     * @tc.name   testTabsPadMar
      * @tc.number SUB_ACE_TABS_PADMAR_TEST_0300
-     * @tc.name testTabsPadMar
-     * @tc.desc set padding of tabs to 20,margin of tabs to 20
+     * @tc.desc   set padding of tabs to 20,margin of tabs to 20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTabsPadMar', Level.LEVEL1, async (done: Function) => {
       console.info('[testTabsPadMar] START');

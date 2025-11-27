@@ -45,10 +45,13 @@ export default function sidebarIconsJsunit() {
       console.info("sidebarIcons after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0011
-     * @tc.name         testsidebarIcons0011
-     * @tc.desic         acesidebarIconsEtsTest0011
+    /**
+     * @tc.name   testsidebarIcons0011
+     * @tc.number SUB_ACE_BASIC_ETS_API_0011
+     * @tc.desc   testsidebarIcons0011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testsidebarIcons0011',  Level.LEVEL0, async (done: Function) => {
       console.info('sidebarIcons testsidebarIcons0011 START');

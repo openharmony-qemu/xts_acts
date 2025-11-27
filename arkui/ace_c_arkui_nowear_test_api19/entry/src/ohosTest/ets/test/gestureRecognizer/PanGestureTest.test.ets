@@ -26,15 +26,15 @@ export default function PanGestureTest(){
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_PAN_GESTURE_CASE_001
-     * @tc.name       : PanGestureTest001
-     * @tc.desc       : testing List lanes
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
 
+    /**
+     * @tc.name   PanGestureTest001
+     * @tc.number PanGestureTest001
+     * @tc.desc   PanGestureTest001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('PanGestureTest001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'PanGestureTest001';
       await Utils.pushPage(`gestureRecognizer/${PAGE_TAG}`);
@@ -64,13 +64,13 @@ export default function PanGestureTest(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_PAN_GESTURE_CASE_002
-     * @tc.name       : PanGestureTest002
-     * @tc.desc       : testing List lanes
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   PanGestureTest002
+     * @tc.number SUB_ARKUI_PAN_GESTURE_CASE_002
+     * @tc.desc   testing List lanes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PanGestureTest002', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'PanGestureTest002';
@@ -101,13 +101,13 @@ export default function PanGestureTest(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_PAN_GESTURE_CASE_003
-     * @tc.name       : PanGestureTest003
-     * @tc.desc       : testing List lanes
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   PanGestureTest003
+     * @tc.number SUB_ARKUI_PAN_GESTURE_CASE_003
+     * @tc.desc   testing List lanes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PanGestureTest003', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'PanGestureTest003';
@@ -138,15 +138,15 @@ export default function PanGestureTest(){
       done();
     });
     
-    /*
-     * @tc.number     : SUB_ARKUI_PAN_GESTURE_CASE_004
-     * @tc.name       : PanGestureTest004
-     * @tc.desc       : testing List lanes
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
 
+    /**
+     * @tc.name   PanGestureTest004
+     * @tc.number PanGestureTest004
+     * @tc.desc   PanGestureTest004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('PanGestureTest004', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'PanGestureTest004';
       await Utils.pushPage(`gestureRecognizer/${PAGE_TAG}`);

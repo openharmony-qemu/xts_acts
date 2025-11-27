@@ -41,12 +41,12 @@ export default function persistStorageATest() {
       done();
     });
     /**
-     * @tc.number    persistStorageATest_0100
-     * @tc.name      persistStorageATest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   persistStorageATest_0100
+     * @tc.number persistStorageATest_0100
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('persistStorageATest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('persistStorageATest_0100 START');

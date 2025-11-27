@@ -41,13 +41,13 @@ export default function setRectShape() {
       done();
     });
     
-     /**
-     * @tc.number    SUB_ACE_setRectShape_0100
-     * @tc.name      setRectShape_0100
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+    /**
+     * @tc.name   setRectShape_0100
+     * @tc.number SUB_ACE_setRectShape_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setRectShape_0100', Level.LEVEL0, async (done: Function) => {
       console.info('setRectShape_0100 START');

@@ -96,7 +96,7 @@ struct webViewOnScroll {
   checkScrollPosition() {
     console.log("y:" + this.controller.getScrollOffset().y + ",webHeight :" + this.webHeight + ",getPageHeight:" +
     this.controller.getPageHeight());
-    if (this.controller.getScrollOffset().y + this.webHeight >= this.controller.getPageHeight()) {
+    if (this.controller.getScrollOffset().y + this.webHeight >= this.controller.getPageHeight()- 2) {
       this.isWebBottom = true;
       console.log("页面已经滑动到底部");
     }
@@ -235,6 +235,9 @@ struct webViewOnScroll {
             }
             case "emitpageDownAgain": {
               try {
+                this.isPageEnd = -1
+                this.controller.loadUrl($rawfile('indexFive.html'))
+                await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                 this.controller.pageDown(true);
                 setTimeout(() => {
                   if (this.isWebBottom) {
@@ -308,7 +311,7 @@ struct webViewOnScroll {
             console.info("y = " + event.yOffset + this.secondId)
             Utils.emitEvent(event.yOffset, this.secondId)
           }
-        })
+        }).height('95%')
     }
   }
 }

@@ -19,12 +19,12 @@ const ARKUI_ERROR_CODE_POST_CLONED_COMPONENT_STATUS_ABNORMAL = 180004;
 export default function ErrorCodeTest() {
   describe('ErrorCodeTest', () => {
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ErrorCode_0100
-     * @tc.name    : testArkUIACEErrorCode0100
-     * @tc.desc    : testing ARKUI_ERROR_CODE_INTERNAL_ERROR ErrorCode.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIACEErrorCode0100
+     * @tc.number SUB_ArkUI_ACE_ErrorCode_0100
+     * @tc.desc   testing ARKUI_ERROR_CODE_INTERNAL_ERROR ErrorCode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIACEErrorCode0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -39,12 +39,12 @@ export default function ErrorCodeTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ErrorCode_0200
-     * @tc.name    : testArkUIACEErrorCode0200
-     * @tc.desc    : testing ARKUI_ERROR_CODE_XCOMPONENT_STATE_INVALID ErrorCode.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIACEErrorCode0200
+     * @tc.number SUB_ArkUI_ACE_ErrorCode_0200
+     * @tc.desc   testing ARKUI_ERROR_CODE_XCOMPONENT_STATE_INVALID ErrorCode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIACEErrorCode0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -59,12 +59,12 @@ export default function ErrorCodeTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ErrorCode_0300
-     * @tc.name    : testArkUIACEErrorCode0300
-     * @tc.desc    : testing ARKUI_ERROR_CODE_ATTRIBUTE_OR_EVENT_NOT_SUPPORTED ErrorCode.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIACEErrorCode0300
+     * @tc.number SUB_ArkUI_ACE_ErrorCode_0300
+     * @tc.desc   testing ARKUI_ERROR_CODE_ATTRIBUTE_OR_EVENT_NOT_SUPPORTED ErrorCode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIACEErrorCode0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -79,12 +79,12 @@ export default function ErrorCodeTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ErrorCode_0600
-     * @tc.name    : testArkUIACEErrorCode0600
-     * @tc.desc    : testing ARKUI_ERROR_CODE_FOCUS_NON_FOCUSABLE ErrorCode.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIACEErrorCode0600
+     * @tc.number SUB_ArkUI_ACE_ErrorCode_0600
+     * @tc.desc   testing ARKUI_ERROR_CODE_FOCUS_NON_FOCUSABLE ErrorCode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIACEErrorCode0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -99,12 +99,12 @@ export default function ErrorCodeTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ErrorCode_0500
-     * @tc.name    : testArkUIACEErrorCode0500
-     * @tc.desc    : testing ARKUI_ERROR_CODE_NODE_EVENT_PARAM_INVALID ErrorCode.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIACEErrorCode0500
+     * @tc.number SUB_ArkUI_ACE_ErrorCode_0500
+     * @tc.desc   testing ARKUI_ERROR_CODE_NODE_EVENT_PARAM_INVALID ErrorCode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIACEErrorCode0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -120,12 +120,12 @@ export default function ErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ErrorCode_0700
-     * @tc.name    : testArkUIACEErrorCode0700
-     * @tc.desc    : testing ARKUI_ERROR_CODE_FOCUS_NON_FOCUSABLE_ANCESTOR ErrorCode.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIACEErrorCode0700
+     * @tc.number SUB_ArkUI_ACE_ErrorCode_0700
+     * @tc.desc   testing ARKUI_ERROR_CODE_FOCUS_NON_FOCUSABLE_ANCESTOR ErrorCode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIACEErrorCode0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -140,12 +140,12 @@ export default function ErrorCodeTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ErrorCode_0800
-     * @tc.name    : testArkUIACEErrorCode0800
-     * @tc.desc    : testing ARKUI_ERROR_CODE_FOCUS_NON_EXISTENT ErrorCode.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIACEErrorCode0800
+     * @tc.number SUB_ArkUI_ACE_ErrorCode_0800
+     * @tc.desc   testing ARKUI_ERROR_CODE_FOCUS_NON_EXISTENT ErrorCode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIACEErrorCode0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -160,12 +160,12 @@ export default function ErrorCodeTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ErrorCode_1200
-     * @tc.name    : testArkUIACEErrorCode1200
-     * @tc.desc    : testing ARKUI_ERROR_CODE_RECOGNIZER_TYPE_NOT_SUPPORTED ErrorCode.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIACEErrorCode1200
+     * @tc.number SUB_ArkUI_ACE_ErrorCode_1200
+     * @tc.desc   testing ARKUI_ERROR_CODE_RECOGNIZER_TYPE_NOT_SUPPORTED ErrorCode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIACEErrorCode1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
@@ -185,12 +185,12 @@ export default function ErrorCodeTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_ErrorCode_1500
-     * @tc.name    : testArkUIACEErrorCode1500
-     * @tc.desc    : testing ARKUI_ERROR_CODE_POST_CLONED_COMPONENT_STATUS_ABNORMAL ErrorCode.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIACEErrorCode1500
+     * @tc.number SUB_ArkUI_ACE_ErrorCode_1500
+     * @tc.desc   testing ARKUI_ERROR_CODE_POST_CLONED_COMPONENT_STATUS_ABNORMAL ErrorCode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIACEErrorCode1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {

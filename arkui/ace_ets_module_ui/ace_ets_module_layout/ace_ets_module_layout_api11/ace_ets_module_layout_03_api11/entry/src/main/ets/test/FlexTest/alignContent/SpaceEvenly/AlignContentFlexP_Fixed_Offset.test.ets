@@ -50,12 +50,15 @@ export default function AlignContentFlexP_Fixed_Offset() {
       console.info("AlignContentFlexP_Fixed_Offset after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_SPACEEVENLY_1000
-     * @tc.name testAlignContentSpaceEvenlyFlexPfixedOffset
-     * @tc.desc Set offsize to the flex child component.
-     */
 
+    /**
+     * @tc.name   testAlignContentSpaceEvenlyFlexPfixedOffset
+     * @tc.number testAlignContentSpaceEvenlyFlexPfixedOffset
+     * @tc.desc   testAlignContentSpaceEvenlyFlexPfixedOffset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentSpaceEvenlyFlexPfixedOffset',  Level.LEVEL0, async () => {
       console.info('testAlignContentSpaceEvenlyFlexPfixedOffset START');
       let strJson = getInspectorByKey('AlignContentFlexP_fixed_Offset_flex');

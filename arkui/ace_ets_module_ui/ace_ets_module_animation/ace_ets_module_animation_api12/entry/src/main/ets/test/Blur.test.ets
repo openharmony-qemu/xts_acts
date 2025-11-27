@@ -49,10 +49,12 @@ export default function Blur() {
 
 
     /**
-     * @tc.number    Blur_0100
-     * @tc.name      Blur_0100
-     * @tc.desc      Test blur 
-     * @tc.level     Level 2
+     * @tc.name   Blur_0100
+     * @tc.number Blur_0100
+     * @tc.desc   Test blur
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Blur_0100', Level.LEVEL0, async (done: Function) => {
       console.info('Blur_0100 START');

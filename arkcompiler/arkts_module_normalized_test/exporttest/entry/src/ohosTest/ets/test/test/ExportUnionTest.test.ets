@@ -50,12 +50,12 @@ export default function exportUnionTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   exportUnionTest0100
      * @tc.number SUB_EXPORT_UNION_TEST_0100
-     * @tc.name exportUnionTest0100
-     * @tc.desc test Default the union type is exported based on the default type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Default the union type is exported based on the default type
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('exportUnionTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, async (Done: Function) => {
       // Defines a test case. This ApI supports three parameters: test case name, filter parameter, and test case function.console.info(0x0000,'testTag''%{public}s','it begin');
@@ -74,12 +74,12 @@ export default function exportUnionTest() {
     })
 
     /**
+     * @tc.name   exportUnionTest0200
      * @tc.number SUB_EXPORT_UNION_TEST_0200
-     * @tc.name exportUnionTest0200
-     * @tc.desc test Default define and export in a single statement
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Default define and export in a single statement
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportUnionTest0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       let a = myDefaultExport;
@@ -93,12 +93,12 @@ export default function exportUnionTest() {
     });
 
     /**
+     * @tc.name   exportUnionTest0300
      * @tc.number SUB_EXPORT_UNION_TEST_0300
-     * @tc.name exportUnionTest0300
-     * @tc.desc test Default define first, then export the object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Default define first, then export the object
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportUnionTest0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       let a = myComplexObject2;
@@ -111,12 +111,12 @@ export default function exportUnionTest() {
       Done();
     })
     /**
+     * @tc.name   exportUnionTest0400
      * @tc.number SUB_EXPORT_UNION_TEST_0400
-     * @tc.name exportUnionTest0400
-     * @tc.desc test Define and export in a single statement
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Define and export in a single statement
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportUnionTest0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       console.info('testTag', '%{public}s', 'it begin');
@@ -131,12 +131,12 @@ export default function exportUnionTest() {
     })
 
     /**
+     * @tc.name   exportUnionTest0500
      * @tc.number SUB_EXPORT_UNION_TEST_0500
-     * @tc.name exportUnionTest0500
-     * @tc.desc test Define first, then export the object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Define first, then export the object
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportUnionTest0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       let a = myComplexObject4;
@@ -150,12 +150,12 @@ export default function exportUnionTest() {
     })
 
     /**
+     * @tc.name   exportUnionTest0600
      * @tc.number SUB_EXPORT_UNION_TEST_0600
-     * @tc.name exportUnionTest0600
-     * @tc.desc test Define and export objects with aliases
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Define and export objects with aliases
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportUnionTest0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       let a = ComplexObject1;
@@ -169,12 +169,12 @@ export default function exportUnionTest() {
     })
 
     /**
+     * @tc.name   exportUnionTest0700
      * @tc.number SUB_EXPORT_UNION_TEST_0700
-     * @tc.name exportUnionTest0700
-     * @tc.desc test Exporting all files is equivalent to passing the export
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Exporting all files is equivalent to passing the export
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportUnionTest0700', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       let a = myExport1;
@@ -188,12 +188,12 @@ export default function exportUnionTest() {
     })
 
     /**
+     * @tc.name   exportUnionTest0800
      * @tc.number SUB_EXPORT_UNION_TEST_0800
-     * @tc.name exportUnionTest0800
-     * @tc.desc test Export file aliases
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Export file aliases
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportUnionTest0800', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       let a = aaExport2;
@@ -206,12 +206,12 @@ export default function exportUnionTest() {
       Done();
     })
     /**
+     * @tc.name   exportUnionTest0900
      * @tc.number SUB_EXPORT_UNION_TEST_0900
-     * @tc.name exportUnionTest0900
-     * @tc.desc test Type export
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Type export
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('exportUnionTest0900', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       let a: myUnionType = Math.random() < 0.5 ? 42 : 'Hello, World!';

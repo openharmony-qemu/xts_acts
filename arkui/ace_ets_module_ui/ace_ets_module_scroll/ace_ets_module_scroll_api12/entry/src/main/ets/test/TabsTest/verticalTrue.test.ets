@@ -42,12 +42,12 @@ export default function verticalTrue() {
     });
 
     /**
-     * @tc.number    verticalTrue_001
-     * @tc.name      verticalTrue_0100
-     * @tc.desc      Vertical sliding of the page triggers a callback.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   verticalTrue_0100
+     * @tc.number verticalTrue_001
+     * @tc.desc   Vertical sliding of the page triggers a callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('verticalTrue_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[verticalTrue_0100] START');

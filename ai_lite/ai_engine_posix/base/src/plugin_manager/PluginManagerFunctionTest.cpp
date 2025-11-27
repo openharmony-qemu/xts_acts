@@ -70,9 +70,12 @@ static void TestPluginManagerUnloadPlugin(std::string aid)
 }
 
 /**
- * @tc.number : SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiSupportPlugin_1100
- * @tc.name   : 011. 系统中已预置算法插件（同步），加载、卸载插件成功
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   testPluginManagerFunction0101
+ * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiSupportPlugin_1100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PluginManagerFunctionTest, testPluginManagerFunction0101, Function | MediumTest | Level3)
 {
@@ -81,9 +84,12 @@ HWTEST_F(PluginManagerFunctionTest, testPluginManagerFunction0101, Function | Me
 }
 
 /**
- * @tc.number : SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiSupportPlugin_1200
- * @tc.name   : 012. 系统中已预置算法插件（异步），加载、卸载插件成功
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   testPluginManagerFunction0102
+ * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiSupportPlugin_1200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PluginManagerFunctionTest, testPluginManagerFunction0102, Function | MediumTest | Level3)
 {
@@ -92,9 +98,12 @@ HWTEST_F(PluginManagerFunctionTest, testPluginManagerFunction0102, Function | Me
 }
 
 /**
- * @tc.number : SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiSupportPlugin_1300
- * @tc.name   : 013. 系统中未预置插件，加载插件失败
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   testPluginManagerFunction0103
+ * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiSupportPlugin_1300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PluginManagerFunctionTest, testPluginManagerFunction0103, Function | MediumTest | Level3)
 {
@@ -103,9 +112,12 @@ HWTEST_F(PluginManagerFunctionTest, testPluginManagerFunction0103, Function | Me
 }
 
 /**
- * @tc.number : SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiSupportPlugin_2100
- * @tc.name   : 021. 系统中已预置算法插件（同步），不加载插件，直接卸载插件，不发生crash
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   testPluginManagerFunction0201
+ * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiSupportPlugin_2100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PluginManagerFunctionTest, testPluginManagerFunction0201, Function | MediumTest | Level3)
 {
@@ -114,9 +126,12 @@ HWTEST_F(PluginManagerFunctionTest, testPluginManagerFunction0201, Function | Me
 }
 
 /**
- * @tc.number : SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiSupportPlugin_2200
- * @tc.name   : 022. 系统中已预置算法插件（异步），不加载插件，直接卸载插件，不发生crash
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   testPluginManagerFunction0202
+ * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiSupportPlugin_2200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PluginManagerFunctionTest, testPluginManagerFunction0202, Function | MediumTest | Level3)
 {
@@ -125,9 +140,12 @@ HWTEST_F(PluginManagerFunctionTest, testPluginManagerFunction0202, Function | Me
 }
 
 /**
- * @tc.number : SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiSupportPlugin_2300
- * @tc.name   : 023. 系统中未预置插件，不加载插件，直接卸载插件，不发生crash
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   testPluginManagerFunction0203
+ * @tc.number SUB_AI_AIDistributedAbility_HiAiEngine_Lite_Function_HiAiSupportPlugin_2300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(PluginManagerFunctionTest, testPluginManagerFunction0203, Function | MediumTest | Level3)
 {

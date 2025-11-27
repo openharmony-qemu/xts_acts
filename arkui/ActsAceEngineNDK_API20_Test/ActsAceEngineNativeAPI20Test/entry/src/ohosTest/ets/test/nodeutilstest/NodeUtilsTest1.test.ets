@@ -23,12 +23,12 @@ const ARKUI_ERROR_CODE_ERROR = 1;
 export default function NodeUtilsTest1() {
   describe('NodeUtilsTest1', () => {
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_0100
-     * @tc.name         testOHArkUINodeUtilsGetNodeType0100
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_0100
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -45,12 +45,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_0200
-     * @tc.name         testOHArkUINodeUtilsGetNodeType0200
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_0200
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -67,12 +67,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_0300
-     * @tc.name         testOHArkUINodeUtilsGetNodeType0300
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType0300
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_0300
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -89,12 +89,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_0400
-     * @tc.name         testOHArkUINodeUtilsGetNodeType0400
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType0400
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_0400
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -111,12 +111,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_0500
-     * @tc.name         testOHArkUINodeUtilsGetNodeType0500
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType0500
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_0500
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -133,12 +133,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_0600
-     * @tc.name         testOHArkUINodeUtilsGetNodeType0600
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType0600
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_0600
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -155,12 +155,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_0700
-     * @tc.name         testOHArkUINodeUtilsGetNodeType0700
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType0700
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_0700
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -177,12 +177,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_0800
-     * @tc.name         testOHArkUINodeUtilsGetNodeType0800
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType0800
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_0800
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -199,12 +199,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_0900
-     * @tc.name         testOHArkUINodeUtilsGetNodeType0900
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType0900
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_0900
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -221,12 +221,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_1000
-     * @tc.name         testOHArkUINodeUtilsGetNodeType1000
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType1000
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_1000
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -243,12 +243,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_1100
-     * @tc.name         testOHArkUINodeUtilsGetNodeType1100
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType1100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_1100
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -265,12 +265,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_1200
-     * @tc.name         testOHArkUINodeUtilsGetNodeType1200
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType1200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_1200
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -287,12 +287,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_1300
-     * @tc.name         testOHArkUINodeUtilsGetNodeType1300
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType1300
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_1300
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -309,12 +309,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_1400
-     * @tc.name         testOHArkUINodeUtilsGetNodeType1400
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType1400
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_1400
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -331,12 +331,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_1500
-     * @tc.name         testOHArkUINodeUtilsGetNodeType1500
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType1500
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_1500
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -353,12 +353,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_1600
-     * @tc.name         testOHArkUINodeUtilsGetNodeType1600
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType1600
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_1600
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -375,12 +375,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_1700
-     * @tc.name         testOHArkUINodeUtilsGetNodeType1700
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType1700
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_1700
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -397,12 +397,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_1800
-     * @tc.name         testOHArkUINodeUtilsGetNodeType1800
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType1800
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_1800
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -419,12 +419,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_1900
-     * @tc.name         testOHArkUINodeUtilsGetNodeType1900
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType1900
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_1900
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -441,12 +441,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_2000
-     * @tc.name         testOHArkUINodeUtilsGetNodeType2000
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType2000
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_2000
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -463,12 +463,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_2100
-     * @tc.name         testOHArkUINodeUtilsGetNodeType2100
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType2100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_2100
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -485,12 +485,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_2200
-     * @tc.name         testOHArkUINodeUtilsGetNodeType2200
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType2200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_2200
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -507,12 +507,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_2300
-     * @tc.name         testOHArkUINodeUtilsGetNodeType2300
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType2300
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_2300
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -529,12 +529,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_2400
-     * @tc.name         testOHArkUINodeUtilsGetNodeType2400
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType2400
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_2400
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -551,12 +551,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_2500
-     * @tc.name         testOHArkUINodeUtilsGetNodeType2500
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType2500
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_2500
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -573,12 +573,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_2600
-     * @tc.name         testOHArkUINodeUtilsGetNodeType2600
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType2600
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_2600
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -595,12 +595,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_2700
-     * @tc.name         testOHArkUINodeUtilsGetNodeType2700
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType2700
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_2700
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -617,12 +617,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_2800
-     * @tc.name         testOHArkUINodeUtilsGetNodeType2800
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType2800
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_2800
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -639,12 +639,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_2900
-     * @tc.name         testOHArkUINodeUtilsGetNodeType2900
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType2900
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_2900
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -661,12 +661,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_3000
-     * @tc.name         testOHArkUINodeUtilsGetNodeType3000
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType3000
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_3000
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -683,12 +683,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_3100
-     * @tc.name         testOHArkUINodeUtilsGetNodeType3100
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType3100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_3100
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -705,12 +705,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_3200
-     * @tc.name         testOHArkUINodeUtilsGetNodeType3200
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType3200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_3200
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -727,12 +727,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_3300
-     * @tc.name         testOHArkUINodeUtilsGetNodeType3300
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType3300
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_3300
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -749,12 +749,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_3400
-     * @tc.name         testOHArkUINodeUtilsGetNodeType3400
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType3400
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_3400
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -771,12 +771,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_3500
-     * @tc.name         testOHArkUINodeUtilsGetNodeType3500
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType3500
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_3500
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -793,12 +793,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       testOHArkUINodeUtilsGetNodeType3600
-     * @tc.name         testOHArkUINodeUtilsGetNodeType3600
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType3600
+     * @tc.number testOHArkUINodeUtilsGetNodeType3600
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -815,12 +815,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_3700
-     * @tc.name         testOHArkUINodeUtilsGetNodeType3700
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType3700
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_3700
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -837,12 +837,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_3800
-     * @tc.name         testOHArkUINodeUtilsGetNodeType3800
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType3800
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_3800
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -859,12 +859,12 @@ export default function NodeUtilsTest1() {
       })
 
     /**
-     * @tc.number       SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_3900
-     * @tc.name         testOHArkUINodeUtilsGetNodeType3900
-     * @tc.desc         testing OH_ArkUI_NodeUtils_GetNodeType interface
-     * @tc.size         MediumTest
-     * @tc.type         Function
-     * @tc.level        Level 1
+     * @tc.name   testOHArkUINodeUtilsGetNodeType3900
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUINodeUtilsGetNodeType_3900
+     * @tc.desc   testing OH_ArkUI_NodeUtils_GetNodeType interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUINodeUtilsGetNodeType3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {

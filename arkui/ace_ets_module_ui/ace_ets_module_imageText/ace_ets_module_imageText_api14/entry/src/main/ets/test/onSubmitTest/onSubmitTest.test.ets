@@ -86,12 +86,12 @@ export default function onSubmitTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_onSubmitTest_0010
-     * @tc.name      SUB_ACE_onSubmitTest_0010
-     * @tc.desc      test TextArea onSubmitTest
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   onSubmitTest_0010
+     * @tc.number SUB_ACE_onSubmitTest_0010
+     * @tc.desc   test TextArea onSubmitTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('onSubmitTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('onSubmitTest_0010 START');
@@ -137,12 +137,12 @@ export default function onSubmitTest() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_onSubmitTest_0020
-     * @tc.name      SUB_ACE_onSubmitTest_0020
-     * @tc.desc      test TextArea onSubmitTest
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   onSubmitTest_0020
+     * @tc.number SUB_ACE_onSubmitTest_0020
+     * @tc.desc   test TextArea onSubmitTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('onSubmitTest_0020', Level.LEVEL2, async (done: Function) => {
       console.info('onSubmitTest_0020 START');
@@ -192,12 +192,12 @@ export default function onSubmitTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_onSubmitTest_0030
-     * @tc.name      SUB_ACE_onSubmitTest_0030
-     * @tc.desc      test Search onSubmitTest
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   onSubmitTest_0030
+     * @tc.number SUB_ACE_onSubmitTest_0030
+     * @tc.desc   test Search onSubmitTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('onSubmitTest_0030', Level.LEVEL2, async (done: Function) => {
       console.info('onSubmitTest_0030 START');
@@ -242,12 +242,12 @@ export default function onSubmitTest() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_onSubmitTest_0040
-     * @tc.name      SUB_ACE_onSubmitTest_0040
-     * @tc.desc      test Search onSubmitTest
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   onSubmitTest_0040
+     * @tc.number SUB_ACE_onSubmitTest_0040
+     * @tc.desc   test Search onSubmitTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('onSubmitTest_0040', Level.LEVEL2, async (done: Function) => {
       console.info('onSubmitTest_0040 START');

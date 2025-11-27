@@ -36,7 +36,8 @@ TEST(MicrotaskPolicyDefault)
 // Test Set Microtask Policy to explicit
 TEST(MicrotaskPolicyExplicit)
 {
-    OH_JSVM_SetMicrotaskPolicy(vm, JSVM_MicrotaskPolicy::JSVM_MICROTASK_EXPLICIT);
+    auto status = OH_JSVM_SetMicrotaskPolicy(vm, JSVM_MicrotaskPolicy::JSVM_MICROTASK_EXPLICIT);
+    CHECK(status == JSVM_OK);
     auto result = jsvm::Run(g_scriptEvalMicrotask.c_str());
     CHECK(jsvm::IsFalse(result));
     result = jsvm::GetProperty(jsvm::Global(), "evaluateMicrotask");
@@ -49,8 +50,10 @@ TEST(MicrotaskPolicyExplicit)
 // Test Set Microtask Policy to auto
 TEST(MicrotaskPolicyAuto)
 {
-    OH_JSVM_SetMicrotaskPolicy(vm, JSVM_MicrotaskPolicy::JSVM_MICROTASK_EXPLICIT);
-    OH_JSVM_SetMicrotaskPolicy(vm, JSVM_MicrotaskPolicy::JSVM_MICROTASK_AUTO);
+    auto status = OH_JSVM_SetMicrotaskPolicy(vm, JSVM_MicrotaskPolicy::JSVM_MICROTASK_EXPLICIT);
+    CHECK(status == JSVM_OK);
+    status = OH_JSVM_SetMicrotaskPolicy(vm, JSVM_MicrotaskPolicy::JSVM_MICROTASK_AUTO);
+    CHECK(status == JSVM_OK);
     auto result = jsvm::Run(g_scriptEvalMicrotask.c_str());
     CHECK(jsvm::IsFalse(result));
     result = jsvm::GetProperty(jsvm::Global(), "evaluateMicrotask");

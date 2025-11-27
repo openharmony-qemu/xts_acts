@@ -65,12 +65,12 @@ export default function scrollerbarJsunit() {
 
 
     /**
+     * @tc.name   testScrollbar010
      * @tc.number testScrollbar010
-     * @tc.name testScrollbar010
-     * @tc.desc aceEtsTest
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollbar010', Level.LEVEL1, async (done: Function) => {
       console.info('testScrollbar010 START');
@@ -86,12 +86,12 @@ export default function scrollerbarJsunit() {
 
 
     /**
+     * @tc.name   testScrollbar020
      * @tc.number testScrollbar020
-     * @tc.name testScrollbar020
-     * @tc.desc aceEtsTest
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollbar020', Level.LEVEL1, async (done: Function) => {
       console.info('testScrollbar020 START');
@@ -107,12 +107,12 @@ export default function scrollerbarJsunit() {
 
 
     /**
+     * @tc.name   testScrollbar030
      * @tc.number testScrollbar030
-     * @tc.name testScrollbar030
-     * @tc.desc aceEtsTest
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollbar030', Level.LEVEL1, async (done: Function) => {
       console.info('testScrollbar030 START');
@@ -127,12 +127,12 @@ export default function scrollerbarJsunit() {
     });
 
     /**
+     * @tc.name   testScrollbar040
      * @tc.number testScrollbar040
-     * @tc.name testScrollbar040
-     * @tc.desc aceEtsTest
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollbar040', Level.LEVEL1, async (done: Function) => {
       console.info('testScrollbar040 START');
@@ -147,12 +147,12 @@ export default function scrollerbarJsunit() {
     });
 
     /**
+     * @tc.name   testScrollbar050
      * @tc.number testScrollbar050
-     * @tc.name testScrollbar050
-     * @tc.desc aceEtsTest
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollbar050', Level.LEVEL1, async (done: Function) => {
       console.info('testScrollbar050 START');
@@ -167,12 +167,12 @@ export default function scrollerbarJsunit() {
     });
 
     /**
+     * @tc.name   testScrollbar060
      * @tc.number testScrollbar060
-     * @tc.name testScrollbar060
-     * @tc.desc aceEtsTest
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollbar060', Level.LEVEL1, async (done: Function) => {
       console.info('testScrollbar060 START');

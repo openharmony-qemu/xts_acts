@@ -28,13 +28,13 @@ export default function focusWrapModeTest() {
       done();
     })
 
-    /*
-     * @tc.number     : FocusWrapMode_001
-     * @tc.name       : FocusWrapMode_001
-     * @tc.desc       : FocusWrapMode: 0, the cross axis directional keys cannot wrap lines.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   FocusWrapMode_001
+     * @tc.number FocusWrapMode_001
+     * @tc.desc   FocusWrapMode: 0, the cross axis directional keys cannot wrap lines.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FocusWrapMode_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[FocusWrapMode_001] start');
@@ -63,13 +63,13 @@ export default function focusWrapModeTest() {
       done();
     });
 
-    /*
-     * @tc.number     : FocusWrapMode_002
-     * @tc.name       : FocusWrapMode_002
-     * @tc.desc       : FocusWrapMode: 1,The cross axis directional keys can wrap lines.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   FocusWrapMode_002
+     * @tc.number FocusWrapMode_002
+     * @tc.desc   FocusWrapMode: 1,The cross axis directional keys can wrap lines.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FocusWrapMode_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[FocusWrapMode_002] start');
@@ -98,13 +98,13 @@ export default function focusWrapModeTest() {
       done();
     });
 
-    /*
-     * @tc.number     : FocusWrapMode_003
-     * @tc.name       : FocusWrapMode_003
-     * @tc.desc       : Test FocusWrapMode -1, return FocusWrapMode.DEFAULT.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   FocusWrapMode_003
+     * @tc.number FocusWrapMode_003
+     * @tc.desc   Test FocusWrapMode -1, return FocusWrapMode.DEFAULT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FocusWrapMode_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[FocusWrapMode_003] start');

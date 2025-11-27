@@ -23,14 +23,14 @@ const ARKUI_ERROR_CODE_FOCUS_NON_EXISTENT = 150003;
 export default function FocusControlTest() {
   describe('FocusControlTest', () => {
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUIFocusRequest_0100
-       * @tc.name       : testOHArkUIFocusRequest0100
-       * @tc.desc       : testing OH_ArkUI_FocusRequest interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIFocusRequest0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUIFocusRequest_0100
+     * @tc.desc   testing OH_ArkUI_FocusRequest interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIFocusRequest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -45,13 +45,13 @@ export default function FocusControlTest() {
         }
       })
 
-    /*
-     * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUIFocusRequest_0200
-     * @tc.name       : testOHArkUIFocusRequest0200
-     * @tc.desc       : testing OH_ArkUI_FocusRequest interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testOHArkUIFocusRequest0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUIFocusRequest_0200
+     * @tc.desc   testing OH_ArkUI_FocusRequest interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIFocusRequest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -67,14 +67,14 @@ export default function FocusControlTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUIFocusRequest_0300
-       * @tc.name       : testOHArkUIFocusRequest0300
-       * @tc.desc       : testing OH_ArkUI_FocusRequest interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testOHArkUIFocusRequest0300
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUIFocusRequest_0300
+     * @tc.desc   testing OH_ArkUI_FocusRequest interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIFocusRequest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -89,14 +89,14 @@ export default function FocusControlTest() {
         }
       })
 
-    /*
-    * @tc.number     : SUB_ArkUI_ACE_ENGINE_OHArkUIFocusRequest_0400
-    * @tc.name       : testOHArkUIFocusRequest0400
-    * @tc.desc       : testing OH_ArkUI_FocusRequest interface
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testOHArkUIFocusRequest0400
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OHArkUIFocusRequest_0400
+     * @tc.desc   testing OH_ArkUI_FocusRequest interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIFocusRequest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {

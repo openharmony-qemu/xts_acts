@@ -45,10 +45,13 @@ export default function radioGroupJsunit() {
       console.info("radioGroup after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_001
-     * @tc.name         testradioGroup001
-     * @tc.desic         aceradioGroupEtsTest001
+    /**
+     * @tc.name   testradioGroup001
+     * @tc.number SUB_ACE_BASIC_ETS_API_001
+     * @tc.desc   testradioGroup001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testradioGroup001', Level.LEVEL1, async (done: Function) => {
       console.info('radioGroup testradioGroup001 START');

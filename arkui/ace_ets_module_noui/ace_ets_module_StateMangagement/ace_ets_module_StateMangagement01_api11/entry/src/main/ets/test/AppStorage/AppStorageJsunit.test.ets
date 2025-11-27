@@ -56,9 +56,12 @@ export default function appStorageJsunit() {
 
 
     /**
+     * @tc.name   appStorageTest001
      * @tc.number SUB_ACE_BASIC_ETS_API_0130
-     * @tc.name appStorageTest001
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('appStorageTest001', Level.LEVEL0, async () => {
       console.info('AppStorageTest001 START');
@@ -75,9 +78,12 @@ export default function appStorageJsunit() {
     });
 
     /**
+     * @tc.name   appStorageTest002
      * @tc.number SUB_ACE_BASIC_ETS_API_0140
-     * @tc.name appStorageTest002
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('appStorageTest002', Level.LEVEL0, async () => {
       console.info('AppStorageTest002 START');
@@ -90,9 +96,12 @@ export default function appStorageJsunit() {
     });
 
     /**
+     * @tc.name   appStorageTest003
      * @tc.number SUB_ACE_BASIC_ETS_API_0150
-     * @tc.name appStorageTest003
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('appStorageTest003', Level.LEVEL0, async () => {
       console.info('AppStorageTest003 START');
@@ -105,9 +114,12 @@ export default function appStorageJsunit() {
     });
 
     /**
+     * @tc.name   appStorageTest004
      * @tc.number SUB_ACE_BASIC_ETS_API_0160
-     * @tc.name appStorageTest004
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('appStorageTest004', Level.LEVEL0, async () => {
       console.info('AppStorageTest004 START');
@@ -120,9 +132,12 @@ export default function appStorageJsunit() {
     });
 
     /**
+     * @tc.name   appStorageTest005
      * @tc.number SUB_ACE_BASIC_ETS_API_0170
-     * @tc.name appStorageTest005
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('appStorageTest005', Level.LEVEL0, async () => {
       console.info('AppStorageTest005 START');
@@ -135,9 +150,12 @@ export default function appStorageJsunit() {
     });
 
     /**
+     * @tc.name   appStorageTest006
      * @tc.number SUB_ACE_BASIC_ETS_API_0180
-     * @tc.name appStorageTest006
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('appStorageTest006', Level.LEVEL0, async () => {
       console.info('AppStorageTest006 START');
@@ -151,9 +169,12 @@ export default function appStorageJsunit() {
 
 
     /**
+     * @tc.name   appStorageTest007
      * @tc.number SUB_ACE_BASIC_ETS_API_0190
-     * @tc.name appStorageTest007
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('appStorageTest007', Level.LEVEL0, async () => {
       console.info('AppStorageTest007 START');
@@ -166,9 +187,12 @@ export default function appStorageJsunit() {
     });
 
     /**
+     * @tc.name   appStorageTest008
      * @tc.number SUB_ACE_BASIC_ETS_API_0100
-     * @tc.name appStorageTest008
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('appStorageTest008', Level.LEVEL0, async () => {
       console.info('AppStorageTest008 START');
@@ -181,9 +205,12 @@ export default function appStorageJsunit() {
     });
 
     /**
+     * @tc.name   appStorageTest009
      * @tc.number SUB_ACE_BASIC_ETS_API_0210
-     * @tc.name appStorageTest009
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('appStorageTest009', Level.LEVEL0, async () => {
       console.info('AppStorageTest009 START');
@@ -196,9 +223,12 @@ export default function appStorageJsunit() {
     });
 
     /**
+     * @tc.name   appStorageTest010
      * @tc.number SUB_ACE_BASIC_ETS_API_0220
-     * @tc.name appStorageTest010
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('appStorageTest010', Level.LEVEL0, async () => {
       console.info('AppStorageTest010 START');
@@ -211,9 +241,12 @@ export default function appStorageJsunit() {
     });
 
     /**
+     * @tc.name   appStorageTest011
      * @tc.number SUB_ACE_BASIC_ETS_API_0230
-     * @tc.name appStorageTest011
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('appStorageTest011', Level.LEVEL0, async () => {
       console.info('AppStorageTest011 START');

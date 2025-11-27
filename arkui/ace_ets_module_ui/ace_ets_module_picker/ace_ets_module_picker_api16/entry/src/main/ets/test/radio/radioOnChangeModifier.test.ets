@@ -49,12 +49,12 @@ export default function radioOnChangeModifierTest() {
     })
    
     /**
+     * @tc.name   ArkUX_Modifier_Radio_OnChange_1001
      * @tc.number ArkUX_Modifier_Radio_OnChange_1001
-     * @tc.name Test the properties of components
-     * @tc.desc OnChange callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   OnChange callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Modifier_Radio_OnChange_1001', Level.LEVEL1, async (done: Function) => {
         console.info('ArkUX_Modifier_CheckboxGroup_OnChange_1001 START');
@@ -72,12 +72,12 @@ export default function radioOnChangeModifierTest() {
       });
   
       /**
+       * @tc.name   ArkUX_Modifier_Radio_OnChange_1002
        * @tc.number ArkUX_Modifier_Radio_OnChange_1002
-       * @tc.name Test the properties of components
-       * @tc.desc OnChange callback
-       * @tc.size MediumTest
-       * @tc.type Function
-       * @tc.level 0
+       * @tc.desc   OnChange callback
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
        */
       it('ArkUX_Modifier_Radio_OnChange_1002', Level.LEVEL1, async (done: Function) => {
         console.info('ArkUX_Modifier_Radio_OnChange_1002 START');

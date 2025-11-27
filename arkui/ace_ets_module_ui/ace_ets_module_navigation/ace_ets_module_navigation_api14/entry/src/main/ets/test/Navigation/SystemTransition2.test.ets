@@ -49,10 +49,12 @@ export default function SystemTransition2() {
 
 
     /**
-     * @tc.number    SystemTransition2_0100
-     * @tc.name      SystemTransition2_0100
-     * @tc.desc      Test SystemTransition2 and NavigationSystemTransitionType.DEFAULT
-     * @tc.level     Level 2
+     * @tc.name   SystemTransition2_0100
+     * @tc.number SystemTransition2_0100
+     * @tc.desc   Test SystemTransition2 and NavigationSystemTransitionType.DEFAULT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SystemTransition2_0100', Level.LEVEL0, async (done: Function) => {
       console.info('SystemTransition2_0100 START');
@@ -82,10 +84,12 @@ export default function SystemTransition2() {
     });
 
     /**
-     * @tc.number    SystemTransition2_0200
-     * @tc.name      SystemTransition2_0200
-     * @tc.desc      Test SystemTransition2 and NavigationSystemTransitionType.NONE
-     * @tc.level     Level 2
+     * @tc.name   SystemTransition2_0200
+     * @tc.number SystemTransition2_0200
+     * @tc.desc   Test SystemTransition2 and NavigationSystemTransitionType.NONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SystemTransition2_0200', Level.LEVEL0, async (done: Function) => {
       console.info('SystemTransition2_0200 START');

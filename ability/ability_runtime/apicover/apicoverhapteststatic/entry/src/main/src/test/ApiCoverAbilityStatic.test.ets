@@ -73,12 +73,12 @@ export default function ApiCoverStaticTest() {
     })
 
     /**
-     * @tc.number  SUB_AA_ABILITY_Extension_API_Static_012
-     * @tc.name    SUB_AA_ABILITY_Extension_API_Static_012
-     * @tc.desc    killProcessesBySelf with invalid param.
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+     * @tc.name   SUB_AA_ABILITY_Extension_API_Static_012
+     * @tc.number SUB_AA_ABILITY_Extension_API_Static_012
+     * @tc.desc   killProcessesBySelf with invalid param.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_AA_ABILITY_Extension_API_Static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -107,12 +107,12 @@ export default function ApiCoverStaticTest() {
     })
 
     /**
-     * @tc.number  SUB_AA_Test_InsightIntent_Static_0100
-     * @tc.name    SUB_AA_Test_InsightIntent_Static_0100
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.desc    Test insightIntent.ExecuteMode
-     * @tc.level   3
+     * @tc.name   SUB_AA_Test_InsightIntent_Static_0100
+     * @tc.number SUB_AA_Test_InsightIntent_Static_0100
+     * @tc.desc   Test insightIntent.ExecuteMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_AA_Test_InsightIntent_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       expect('0').assertEqual(insightIntent.ExecuteMode.UI_ABILITY_FOREGROUND + '');
@@ -122,12 +122,12 @@ export default function ApiCoverStaticTest() {
     })
 
     /**
-     * @tc.number  SUB_AA_AbilityAppManager_Static_0100
-     * @tc.name    SUB_AA_AbilityAppManager_Static_0100
-     * @tc.desc    The form of a promise getRunningProcessInformation
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+     * @tc.name   SUB_AA_AbilityAppManager_Static_0100
+     * @tc.number SUB_AA_AbilityAppManager_Static_0100
+     * @tc.desc   The form of a promise getRunningProcessInformation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_AA_AbilityAppManager_Static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "SUB_AA_AbilityAppManager_Static_0100 begin");
@@ -166,12 +166,12 @@ export default function ApiCoverStaticTest() {
     })
 
     /**
-     * @tc.number  SUB_AA_AbilityAppManager_Static_0200
-     * @tc.name    SUB_AA_AbilityAppManager_Static_0200
-     * @tc.desc    The form of a callback getRunningProcessInformation
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+     * @tc.name   SUB_AA_AbilityAppManager_Static_0200
+     * @tc.number SUB_AA_AbilityAppManager_Static_0200
+     * @tc.desc   The form of a callback getRunningProcessInformation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_AA_AbilityAppManager_Static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "SUB_AA_AbilityAppManager_Static_0200 begin");
@@ -207,12 +207,12 @@ export default function ApiCoverStaticTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_Context_AbilityContext_Static_1700
      * @tc.number SUB_Ability_AbilityRuntime_Context_AbilityContext_Static_1700
-     * @tc.name SUB_Ability_AbilityRuntime_Context_AbilityContext_Static_1700
-     * @tc.desc test want as empty.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   test want as empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_Context_AbilityContext_Static_1700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -239,13 +239,13 @@ export default function ApiCoverStaticTest() {
       });
 
     /**
-     * @tc.number  SUB_Ability_AbilityBase_ErrorCode_Static_0004
-     * @tc.name    SUB_Ability_AbilityBase_ErrorCode_Static_0004
-     * @tc.desc    To verify the errcode 16000001 when The specified ability does not exist.
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   0
-    */
+     * @tc.name   SUB_Ability_AbilityBase_ErrorCode_Static_0004
+     * @tc.number SUB_Ability_AbilityBase_ErrorCode_Static_0004
+     * @tc.desc   To verify the errcode 16000001 when The specified ability does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityBase_ErrorCode_Static_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const itName = 'SUB_Ability_AbilityBase_ErrorCode_Static_0004';
@@ -274,13 +274,13 @@ export default function ApiCoverStaticTest() {
       })
 
     /**
-     * @tc.number  SUB_Ability_AbilityBase_ErrorCode_Static_0005
-     * @tc.name    SUB_Ability_AbilityBase_ErrorCode_Static_0005
-     * @tc.desc    To verify the errcode 16000002 when Incorrect ability type.
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   0
-    */
+     * @tc.name   SUB_Ability_AbilityBase_ErrorCode_Static_0005
+     * @tc.number SUB_Ability_AbilityBase_ErrorCode_Static_0005
+     * @tc.desc   To verify the errcode 16000002 when Incorrect ability type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityBase_ErrorCode_Static_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const itName = 'SUB_Ability_AbilityBase_ErrorCode_Static_0005';
@@ -309,12 +309,12 @@ export default function ApiCoverStaticTest() {
       })
 
     /**
-     * @tc.number  SUB_Ability_AbilityBase_UIAbilityContext_Static_3800
-     * @tc.name    SUB_Ability_AbilityBase_UIAbilityContext_Static_3800
-     * @tc.desc    Call the interface disconnectServiceExtensionAbility through context, return errorcode 16000050.(promise)
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   0
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_Static_3800
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_Static_3800
+     * @tc.desc   Call the interface disconnectServiceExtensionAbility through context, return errorcode 16000050.(promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_Static_3800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -343,12 +343,12 @@ export default function ApiCoverStaticTest() {
       });
 
     /**
-     * @tc.number  SUB_Ability_AbilityBase_UIAbilityContext_Static_3900
-     * @tc.name    SUB_Ability_AbilityBase_UIAbilityContext_Static_3900
-     * @tc.desc    Call the interface disconnectServiceExtensionAbility through context, return errorcode 16000050.(callback)
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   0
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_Static_3900
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_Static_3900
+     * @tc.desc   Call the interface disconnectServiceExtensionAbility through context, return errorcode 16000050.(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_Static_3900',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -371,13 +371,13 @@ export default function ApiCoverStaticTest() {
       });
 
     /**
-    * @tc.number  SUB_Ability_AbilityRuntime_Context_AbilityContext_Static_1800
-    * @tc.name    SUB_Ability_AbilityRuntime_Context_AbilityContext_Static_1800
-    * @tc.desc    connectServiceExtensionAbility is normal.
-    * @tc.size:   MediumTest
-    * @tc.type:   Function
-    * @tc.level   3
-    */
+     * @tc.name   SUB_Ability_AbilityRuntime_Context_AbilityContext_Static_1800
+     * @tc.number SUB_Ability_AbilityRuntime_Context_AbilityContext_Static_1800
+     * @tc.desc   connectServiceExtensionAbility is normal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_Context_AbilityContext_Static_1800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         const itName = 'SUB_Ability_AbilityRuntime_Context_AbilityContext_Static_1800';
@@ -403,12 +403,12 @@ export default function ApiCoverStaticTest() {
       })
 
     /**
-     * @tc.number  SUB_Ability_AbilityBase_UIAbilityContext_Static_4000
-     * @tc.name    SUB_Ability_AbilityBase_UIAbilityContext_Static_4000
-     * @tc.desc    Call the interface disconnectServiceExtensionAbility through context.(promise)
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   0
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_Static_4000
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_Static_4000
+     * @tc.desc   Call the interface disconnectServiceExtensionAbility through context.(promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_Static_4000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -448,12 +448,12 @@ export default function ApiCoverStaticTest() {
       });
 
     /**
-     * @tc.number  SUB_Ability_AbilityBase_UIAbilityContext_Static_4100
-     * @tc.name    SUB_Ability_AbilityBase_UIAbilityContext_Static_4100
-     * @tc.desc    Call the interface disconnectServiceExtensionAbility through context.(callback)
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   0
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_Static_4100
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_Static_4100
+     * @tc.desc   Call the interface disconnectServiceExtensionAbility through context.(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_Static_4100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {

@@ -31,18 +31,15 @@ describe('SystemCapabilityTest', function () {
      */
     it('testSysCaps01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info('testSysCaps01 start');
-        let ret = false;
         try {
             var isAccessToken = canIUse("SystemCapability.Security.AccessToken");
             console.info("testSysCaps01 test.syscap.param.001 : " + isAccessToken);
-            if (isAccessToken) {
-                ret = true;
-            }
-            expect(isAccessToken).assertTrue();
+            expect(isAccessToken == true).assertTrue();            
             done();
         } catch (e) {
-            expect(ret).assertTrue();
+            expect().assertFail();
             console.info("testSysCaps01 canIUse isAccessToken error: " + e);
+            done();
         }
         console.info('testSysCaps01 end');
     })
@@ -55,17 +52,19 @@ describe('SystemCapabilityTest', function () {
      * @tc.type      : Function
      * @tc.level     : Level 0
      */
-    it('device_info_test_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
+    it('device_info_test_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info('testGetMarketName01 start')
-        let ret = false;
         let marketNameInfo = deviceinfo.marketName;
-        console.info('111 the value of the deviceinfo marketName is :' + marketNameInfo);
-
-        expect(marketNameInfo).assertInstanceOf('String');
+        
         if (marketNameInfo != "" && marketNameInfo != null && marketNameInfo != undefined) {
-            ret = true;
+            console.info('111 the value of the deviceinfo marketName is :' + marketNameInfo);
+            expect(marketNameInfo).assertInstanceOf('String');
+            done();
+        } else {
+            console.info('the return value marketName is null or incorrect.');
+            expect().assertFail();
+            done();
         }
-        expect(ret).assertTrue();
         console.info('testGetMarketName01 ：end');
     })
 })}

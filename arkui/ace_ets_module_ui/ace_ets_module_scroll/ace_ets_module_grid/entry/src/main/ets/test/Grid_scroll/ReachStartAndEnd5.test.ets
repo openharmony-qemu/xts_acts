@@ -56,12 +56,12 @@ export default function ReachStartAndEnd5() {
     });
 
     /**
+     * @tc.name   Grid_ReachStartAndEnd5_0300
      * @tc.number SUB_ACE_Grid_ReachStartAndEnd5_0300
-     * @tc.name testGrid
-     * @tc.desc Scroll to the end position to trigger the onReachEnd event, and slide to the start position to trigger the onReachStart event
-     * @tc.level Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Scroll to the end position to trigger the onReachEnd event, and slide to the start position to trigger the onReachStart event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Grid_ReachStartAndEnd5_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('[Grid_ReachStartAndEnd5_0300] START');

@@ -42,12 +42,12 @@ export default function selectJsunit() {
     })
 
     /**
+     * @tc.name   ArkUI_Stage_Select_Layout_0100
      * @tc.number ArkUI_Stage_Select_Layout_0100
-     * @tc.name Test the properties of components
-     * @tc.desc Set attribute values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set attribute values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Select_Layout_0100', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_Stage_Select_Layout_0100 start");
@@ -59,12 +59,12 @@ export default function selectJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Select_Space_0100
      * @tc.number ArkUI_Stage_Select_Space_0100
-     * @tc.name Test the properties of components
-     * @tc.desc Set space values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set space values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Select_Space_0100', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_Stage_Select_Space_0100 start");
@@ -76,12 +76,12 @@ export default function selectJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Select_selected_0100
      * @tc.number ArkUI_Stage_Select_selected_0100
-     * @tc.name Test the properties of components
-     * @tc.desc Set selected values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set selected values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Select_selected_0100', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_Stage_Select_selected_0100 start");
@@ -93,12 +93,12 @@ export default function selectJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Select_value_0100
      * @tc.number ArkUI_Stage_Select_value_0100
-     * @tc.name Test the properties of components
-     * @tc.desc Set value values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set value values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Select_value_0100', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_Stage_Select_value_0100 start");
@@ -110,12 +110,12 @@ export default function selectJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Select_font_0100
      * @tc.number ArkUI_Stage_Select_font_0100
-     * @tc.name Test the properties of components
-     * @tc.desc Set font values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set font values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Select_font_0100', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_Stage_Select_font_0100 start");
@@ -127,12 +127,12 @@ export default function selectJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Select_fontColor_0100
      * @tc.number ArkUI_Stage_Select_fontColor_0100
-     * @tc.name Test the properties of components
-     * @tc.desc Set fontColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set fontColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Select_fontColor_0100', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_Stage_Select_fontColor_0100 start");
@@ -144,12 +144,12 @@ export default function selectJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Select_selectedOptionFont_0100
      * @tc.number ArkUI_Stage_Select_selectedOptionFont_0100
-     * @tc.name Test the properties of components
-     * @tc.desc Set selectedOptionFont values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set selectedOptionFont values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Select_selectedOptionFont_0100', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_Stage_Select_selectedOptionFont_0100 start");
@@ -161,12 +161,12 @@ export default function selectJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Select_selectedOptionFontColor_0100
      * @tc.number ArkUI_Stage_Select_selectedOptionFontColor_0100
-     * @tc.name Test the selectedOptionFontColor of components
-     * @tc.desc Set attribute values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set attribute values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Select_selectedOptionFontColor_0100', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_Stage_Select_selectedOptionFontColor_0100 start");
@@ -177,12 +177,12 @@ export default function selectJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Select_menuAlign_0100
      * @tc.number ArkUI_Stage_Select_menuAlign_0100
-     * @tc.name Test the properties of components
-     * @tc.desc Set menuAlign values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set menuAlign values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Select_menuAlign_0100', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_Stage_Select_menuAlign_0100 start");
@@ -193,12 +193,12 @@ export default function selectJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Select_selectedOptionBgColor_0100
      * @tc.number ArkUI_Stage_Select_selectedOptionBgColor_0100
-     * @tc.name Test the properties of components
-     * @tc.desc Set selectedOptionBgColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set selectedOptionBgColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Select_selectedOptionBgColor_0100', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_Stage_Select_selectedOptionBgColor_0100 start");
@@ -210,12 +210,12 @@ export default function selectJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Select_optionBgColor_0100
      * @tc.number ArkUI_Stage_Select_optionBgColor_0100
-     * @tc.name Test the properties of components
-     * @tc.desc Set optionBgColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set optionBgColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Select_optionBgColor_0100', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_Stage_Select_optionBgColor_0100 start");
@@ -227,12 +227,12 @@ export default function selectJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Select_optionFont_0100
      * @tc.number ArkUI_Stage_Select_optionFont_0100
-     * @tc.name Test the properties of components
-     * @tc.desc Set optionFont values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set optionFont values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Select_optionFont_0100', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_Stage_Select_optionFont_0100 start");
@@ -244,12 +244,12 @@ export default function selectJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Select_optionWidth_0100
      * @tc.number ArkUI_Stage_Select_optionWidth_0100
-     * @tc.name Test the properties of components
-     * @tc.desc Set optionWidth values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set optionWidth values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Select_optionWidth_0100', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_Stage_Select_optionWidth_0100 start");
@@ -261,12 +261,12 @@ export default function selectJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Select_optionHeight_0100
      * @tc.number ArkUI_Stage_Select_optionHeight_0100
-     * @tc.name Test the properties of components
-     * @tc.desc Set optionHeight values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set optionHeight values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Select_optionHeight_0100', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_Stage_Select_optionHeight_0100 start");
@@ -278,12 +278,12 @@ export default function selectJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Select_optionFontColor_0100
      * @tc.number ArkUI_Stage_Select_optionFontColor_0100
-     * @tc.name Test the properties of components
-     * @tc.desc Change fontColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change fontColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Select_optionFontColor_0100', Level.LEVEL0, async (done: Function) => {
       console.info("ArkUI_Stage_Select_optionFontColor_0100 start");
@@ -296,12 +296,12 @@ export default function selectJsunit() {
     });
 
     /**
+     * @tc.name   ArkUI_Stage_Select_change_0101
      * @tc.number ArkUI_Stage_Select_change_0101
-     * @tc.name Test the properties of components
-     * @tc.desc Change fontColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change fontColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Select_change_0101', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUI_Stage_Select_change_0101 START');

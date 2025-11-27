@@ -29,12 +29,12 @@ export default function FileButtonReceiveTest() {
     })
 
     /**
+     * @tc.name   FileButtonReceiveTest_0100
      * @tc.number FileButtonReceiveTest
-     * @tc.name FileButtonReceiveTest_0100
-     * @tc.desc Test FileButtonReceiveTest
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test FileButtonReceiveTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FileButtonReceiveTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[FileButtonReceiveTest] START');

@@ -51,10 +51,12 @@ export default function PreferredOrientation() {
 
 
     /**
-     * @tc.number    PreferredOrientation_0100
-     * @tc.name      PreferredOrientation_0100
-     * @tc.desc      Test 
-     * @tc.level     Level 2
+     * @tc.name   PreferredOrientation_0100
+     * @tc.number PreferredOrientation_0100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PreferredOrientation_0100', Level.LEVEL0, async (done: Function) => {
       console.info('PreferredOrientation_0100 START');
@@ -77,10 +79,12 @@ export default function PreferredOrientation() {
     });
 
     /**
-     * @tc.number    PreferredOrientation_0200
-     * @tc.name      PreferredOrientation_0200
-     * @tc.desc      Test 
-     * @tc.level     Level 2
+     * @tc.name   PreferredOrientation_0200
+     * @tc.number PreferredOrientation_0200
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PreferredOrientation_0200', Level.LEVEL0, async (done: Function) => {
       console.info('PreferredOrientation_0200 START');
@@ -108,10 +112,12 @@ export default function PreferredOrientation() {
     });
 
     /**
-     * @tc.number    PreferredOrientation_0300
-     * @tc.name      PreferredOrientation_0300
-     * @tc.desc      Test 
-     * @tc.level     Level 2
+     * @tc.name   PreferredOrientation_0300
+     * @tc.number PreferredOrientation_0300
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PreferredOrientation_0300', Level.LEVEL0, async (done: Function) => {
       console.info('PreferredOrientation_0300 START');
@@ -145,10 +151,12 @@ export default function PreferredOrientation() {
     });
 
     /**
-     * @tc.number    PreferredOrientation_0400
-     * @tc.name      PreferredOrientation_0400
-     * @tc.desc      Test 
-     * @tc.level     Level 2
+     * @tc.name   PreferredOrientation_0400
+     * @tc.number PreferredOrientation_0400
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PreferredOrientation_0400', Level.LEVEL0, async (done: Function) => {
       console.info('PreferredOrientation_0400 START');
@@ -176,10 +184,12 @@ export default function PreferredOrientation() {
     });
 
     /**
-     * @tc.number    PreferredOrientation_0500
-     * @tc.name      PreferredOrientation_0500
-     * @tc.desc      Test 
-     * @tc.level     Level 2
+     * @tc.name   PreferredOrientation_0500
+     * @tc.number PreferredOrientation_0500
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PreferredOrientation_0500', Level.LEVEL0, async (done: Function) => {
       console.info('PreferredOrientation_0500 START');

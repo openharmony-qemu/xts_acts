@@ -46,12 +46,12 @@ export default function waterFlowScroll() {
     });
 
     /**
-     * @tc.number    waterFlowScroll_001
-     * @tc.name      waterFlowScroll_001
-     * @tc.desc      Describe the default layout mode.
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   waterFlowScroll_001
+     * @tc.number waterFlowScroll_001
+     * @tc.desc   Describe the default layout mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('waterFlowScroll_001', Level.LEVEL2, async (done: Function) => {
       console.info('[waterFlowScroll_001] START');

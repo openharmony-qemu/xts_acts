@@ -48,12 +48,12 @@ export default function PixelRoundTest() {
     });
 
     /**
-     * @tc.number     PixelRoundTest_0100
-     * @tc.name       PixelRoundTest_0100
-     * @tc.desc       Test PixelRound ErrorCode
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   PixelRoundTest_0100
+     * @tc.number PixelRoundTest_0100
+     * @tc.desc   Test PixelRound ErrorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PixelRoundTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[PixelRoundTest_0100] START');
@@ -76,12 +76,12 @@ export default function PixelRoundTest() {
     });
 
     /**
-     * @tc.number     PixelRoundTest_0200
-     * @tc.name       PixelRoundTest_0200
-     * @tc.desc       Test PixelRound
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   PixelRoundTest_0200
+     * @tc.number PixelRoundTest_0200
+     * @tc.desc   Test PixelRound
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PixelRoundTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[PixelRoundTest_0200] START');

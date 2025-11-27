@@ -48,15 +48,15 @@ export default function Router1() {
       router.back()
       console.info("Router1 after each called");
     });
-    /**
-     * @tc.number Router1_0100
-     * @tc.name Router1_0100
-     * @tc.desc Page carrying parameter redirection
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
-     */
 
+    /**
+     * @tc.name   Router1_0100
+     * @tc.number Router1_0100
+     * @tc.desc   Router1_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Router1_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[Router1_0100] START');
       console.info('[scrollToJsunit_0100] START');

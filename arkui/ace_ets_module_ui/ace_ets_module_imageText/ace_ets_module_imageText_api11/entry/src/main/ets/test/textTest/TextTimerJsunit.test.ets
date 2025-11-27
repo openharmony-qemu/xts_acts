@@ -43,6 +43,14 @@ export default function textTimerJsunit() {
       console.info("textPickerDialog after each called");
     })
 
+    /**
+     * @tc.name   textTimer0100
+     * @tc.number textTimer0100
+     * @tc.desc   textTimer0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textTimer0100', Level.LEVEL1, async (done: Function) => {
       console.info('[textTimer0100] START');
       await CommonFunc.sleep(1000);
@@ -58,6 +66,14 @@ export default function textTimerJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   textTimer0200
+     * @tc.number textTimer0200
+     * @tc.desc   textTimer0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textTimer0200', Level.LEVEL1, async (done: Function) => {
       console.info('[textTimer0100] START');
       await CommonFunc.sleep(1000);
@@ -70,6 +86,14 @@ export default function textTimerJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   textTimer0300
+     * @tc.number textTimer0300
+     * @tc.desc   textTimer0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textTimer0300', Level.LEVEL1, async (done: Function) => {
       console.info('[textTimer0300] START');
       await CommonFunc.sleep(1000);

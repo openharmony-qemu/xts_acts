@@ -63,12 +63,12 @@ export default function nestTrackTest() {
       await CommonFunc.sleep(2000);
     });
     /**
+     * @tc.name   nestTrackTest_0100
      * @tc.number SUB_ACE_nestTrackTest_0100
-     * @tc.name nestTrackTest_0100
-     * @tc.desc nestTrack
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   nestTrack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('nestTrackTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('nestTrackTest_0100 START');
@@ -90,12 +90,12 @@ export default function nestTrackTest() {
       done();
     });
     /**
+     * @tc.name   nestTrackTest_0200
      * @tc.number SUB_ACE_nestTrackTest_0200
-     * @tc.name nestTrackTest_0200
-     * @tc.desc nestTrack
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   nestTrack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('nestTrackTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('nestTrackTest_0200 START');
@@ -117,12 +117,12 @@ export default function nestTrackTest() {
       done();
     });
     /**
+     * @tc.name   nestTrackTest_0300
      * @tc.number SUB_ACE_nestTrackTest_0300
-     * @tc.name nestTrackTest_0300
-     * @tc.desc nestTrack
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   nestTrack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('nestTrackTest_0300', Level.LEVEL0, async (done: Function) => {
 
@@ -145,12 +145,12 @@ export default function nestTrackTest() {
       done();
     });
     /**
+     * @tc.name   nestTrackTest_0400
      * @tc.number SUB_ACE_nestTrackTest_0400
-     * @tc.name nestTrackTest_0400
-     * @tc.desc nestTrack
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   nestTrack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('nestTrackTest_0400', Level.LEVEL0, async (done: Function) => {
       console.info('nestTrackTest_0400 START');

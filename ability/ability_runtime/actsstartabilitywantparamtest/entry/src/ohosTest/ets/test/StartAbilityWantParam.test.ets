@@ -89,12 +89,12 @@ export default function startAbilityWantParamTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityBase_WantParam_WantParametersJs_0800
-     * @tc.name      : In the parameters carried by want, the type is FD and the value is -1
-     * @tc.desc      : test startAbility want parameters："keyFd":{"type":"FD", "value":-1}
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_Ability_AbilityBase_WantParam_WantParametersJs_0800
+     * @tc.number SUB_Ability_AbilityBase_WantParam_WantParametersJs_0800
+     * @tc.desc   test startAbility want parameters："keyFd":{"type":"FD", "value":-1}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityBase_WantParam_WantParametersJs_0800", Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityBase_WantParam_WantParametersJs_0800';
@@ -118,15 +118,12 @@ export default function startAbilityWantParamTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityBase_WantParam_WantParametersJs_0700
-     * @tc.name      : In the parameters carried by want, the type is FD and the value is 0
-     * @tc.desc      : test startAbility want parameters："keyFd":{"type":"FD", "value":0}.
-     *                 if api < 20, expecting start ability failure and the error code is 2097167. Actually,
-     *                 if api >= 20, expecting start ability failure and the error code is 16000050. Actually,
-     *                 the ability can be started successful.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_Ability_AbilityBase_WantParam_WantParametersJs_0700
+     * @tc.number SUB_Ability_AbilityBase_WantParam_WantParametersJs_0700
+     * @tc.desc   test startAbility want parameters："keyFd":{"type":"FD", "value":0}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityBase_WantParam_WantParametersJs_0700", Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityBase_WantParam_WantParametersJs_0700';
@@ -145,12 +142,12 @@ export default function startAbilityWantParamTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityBase_WantParam_WantParametersJs_0100
-     * @tc.name      : The type is a RemoteObject and the value is a remoteObj in the parameters carried by want
-     * @tc.desc      : test startAbility want parameters："keyRemoteObj":{"type":"RemoteObject", "value":remoteObj}
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_Ability_AbilityBase_WantParam_WantParametersJs_0100
+     * @tc.number SUB_Ability_AbilityBase_WantParam_WantParametersJs_0100
+     * @tc.desc   test startAbility want parameters："keyRemoteObj":{"type":"RemoteObject", "value":remoteObj}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_Ability_AbilityBase_WantParam_WantParametersJs_0100", Level.LEVEL1, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityBase_WantParam_WantParametersJs_0100';
@@ -189,15 +186,12 @@ export default function startAbilityWantParamTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityBase_WantParam_WantParametersJs_1000
-     * @tc.name      : The type is a RemoteObject and the value is a remoteObj in the parameters carried by want
-     * @tc.desc      : test startAbility want parameters："keyRemoteObj":{"type":"RemoteObject", "value":remoteObj is empty}
-     *                 if api < 20, expecting start ability failure and the error code is 2097167. Actually,
-     *                 if api >= 20, expecting start ability failure and the error code is 16000050. Actually,
-     *                 can be started successfully
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_Ability_AbilityBase_WantParam_WantParametersJs_1000
+     * @tc.number SUB_Ability_AbilityBase_WantParam_WantParametersJs_1000
+     * @tc.desc   test startAbility want parameters："keyRemoteObj":{"type":"RemoteObject", "value":remoteObj is empty}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityBase_WantParam_WantParametersJs_1000", Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityBase_WantParam_WantParametersJs_1000';
@@ -220,12 +214,12 @@ export default function startAbilityWantParamTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityBase_WantParam_WantParametersJs_0500
-     * @tc.name      : The value in the parameters carried by want is JSON data, and the value in JSON data is an array
-     * @tc.desc      : test startAbility want parameters："keyArrayObj":{"data":[1,2,3]}
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_Ability_AbilityBase_WantParam_WantParametersJs_0500
+     * @tc.number SUB_Ability_AbilityBase_WantParam_WantParametersJs_0500
+     * @tc.desc   test startAbility want parameters："keyArrayObj":{"data":[1,2,3]}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityBase_WantParam_WantParametersJs_0500", Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityBase_WantParam_WantParametersJs_0500';
@@ -261,12 +255,12 @@ export default function startAbilityWantParamTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityBase_WantParam_WantParametersJs_0300
-     * @tc.name      : The value in the parameters carried by want is JSON data
-     * @tc.desc      : test startAbility want parameters："keyObj":{"name":"zhangsan", "sex":1}
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_Ability_AbilityBase_WantParam_WantParametersJs_0300
+     * @tc.number SUB_Ability_AbilityBase_WantParam_WantParametersJs_0300
+     * @tc.desc   test startAbility want parameters："keyObj":{"name":"zhangsan", "sex":1}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityBase_WantParam_WantParametersJs_0300", Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityBase_WantParam_WantParametersJs_0300';
@@ -302,12 +296,12 @@ export default function startAbilityWantParamTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityBase_WantParam_WantParametersJs_0400
-     * @tc.name      : The value in the parameters carried by want is the JSON type, and the value in the JSON is the JSON data
-     * @tc.desc      : test startAbility want parameters："keyFlexObj":{"data":{"info":"abcd", "len":4}}
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_Ability_AbilityBase_WantParam_WantParametersJs_0400
+     * @tc.number SUB_Ability_AbilityBase_WantParam_WantParametersJs_0400
+     * @tc.desc   test startAbility want parameters："keyFlexObj":{"data":{"info":"abcd", "len":4}}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityBase_WantParam_WantParametersJs_0400", Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityBase_WantParam_WantParametersJs_0400';
@@ -345,18 +339,12 @@ export default function startAbilityWantParamTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityBase_WantParam_WantParametersJs_1600
-     * @tc.name      : The parameters carried by want carry multiple parameter types
-     * @tc.desc      : test startAbility want parameters：
-     *                 "keyRemoteObj":{"type":"RemoteObject", "value":remoteObj},
-     *                 "keyFd":{"type":"FD", "value":fd},
-     *                 "keyFlexObj":{"data":{"info":"abcd", "len":4}},
-     *                 "key1":[{"data1":"value1","data2":"value2"},{"data3":"value3","data4":"value4"}],
-     *                 "keyObj":{"name":"zhangsan", "sex":1},
-     *                 "keyArrayObj":{"data":[1,2,3]}}
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_Ability_AbilityBase_WantParam_WantParametersJs_1600
+     * @tc.number SUB_Ability_AbilityBase_WantParam_WantParametersJs_1600
+     * @tc.desc   test startAbility want parameters：
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityBase_WantParam_WantParametersJs_1600", Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityBase_WantParam_WantParametersJs_1600';
@@ -421,13 +409,12 @@ export default function startAbilityWantParamTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityBase_WantParam_WantParametersJs_0600
-     * @tc.name      : The value in the parameters carried by want is a JSON array
-     * @tc.desc      : test startAbility want parameters："key1":[{"data1":"value1","data2":"value2"},
-     *                 {"data3":"value3","data4":"value4"}]
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_Ability_AbilityBase_WantParam_WantParametersJs_0600
+     * @tc.number SUB_Ability_AbilityBase_WantParam_WantParametersJs_0600
+     * @tc.desc   test startAbility want parameters："key1":[{"data1":"value1","data2":"value2"},
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityBase_WantParam_WantParametersJs_0600", Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityBase_WantParam_WantParametersJs_0600';
@@ -469,12 +456,12 @@ export default function startAbilityWantParamTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityBase_WantParam_WantParametersJs_0200
-     * @tc.name      : The type is FD and the value is the correct image index value in the parameters carried by want
-     * @tc.desc      : test startAbility want parameters："keyFd":{"type":"FD", "value": fd}
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_Ability_AbilityBase_WantParam_WantParametersJs_0200
+     * @tc.number SUB_Ability_AbilityBase_WantParam_WantParametersJs_0200
+     * @tc.desc   test startAbility want parameters："keyFd":{"type":"FD", "value": fd}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityBase_WantParam_WantParametersJs_0200", Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityBase_WantParam_WantParametersJs_0200';
@@ -518,12 +505,12 @@ export default function startAbilityWantParamTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityBase_WantParam_WantParametersJs_0900
-     * @tc.name      : In the parameters carried by want, the type is FD and the value is the string type
-     * @tc.desc      : test startAbility want parameters："keyFd":{"type":"FD", "value": "err"}
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_Ability_AbilityBase_WantParam_WantParametersJs_0900
+     * @tc.number SUB_Ability_AbilityBase_WantParam_WantParametersJs_0900
+     * @tc.desc   test startAbility want parameters："keyFd":{"type":"FD", "value": "err"}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityBase_WantParam_WantParametersJs_0900", Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityBase_WantParam_WantParametersJs_0900';

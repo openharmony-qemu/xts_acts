@@ -50,13 +50,13 @@ export default function GeneralLayoutOffsetTest() {
       done();
     });
 
-    /*
-     *@tc.number     : ArkUIHDS_General_Layout_1900
-     *@tc.name       : ArkUIHDS_General_Layout_1900
-     *@tc.desc       : test LengthMetrics type of offset
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 1
+    /**
+     * @tc.name   ArkUIHDS_General_Layout_1900
+     * @tc.number ArkUIHDS_General_Layout_1900
+     * @tc.desc   test LengthMetrics type of offset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUIHDS_General_Layout_1900', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUIHDS_General_Layout_1900 START');
@@ -94,13 +94,13 @@ export default function GeneralLayoutOffsetTest() {
       done();
     });
 
-    /*
-     *@tc.number     : ArkUIHDS_General_Layout_2000
-     *@tc.name       : ArkUIHDS_General_Layout_2000
-     *@tc.desc       : test LengthMetrics type of offset
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 1
+    /**
+     * @tc.name   ArkUIHDS_General_Layout_2000
+     * @tc.number ArkUIHDS_General_Layout_2000
+     * @tc.desc   test LengthMetrics type of offset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUIHDS_General_Layout_2000', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUIHDS_General_Layout_2000 START');
@@ -140,13 +140,13 @@ export default function GeneralLayoutOffsetTest() {
       done();
     });
 
-    /*
-     *@tc.number     : ArkUIHDS_General_Layout_2100
-     *@tc.name       : ArkUIHDS_General_Layout_2100
-     *@tc.desc       : test LengthMetrics type of offset
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 1
+    /**
+     * @tc.name   ArkUIHDS_General_Layout_2100
+     * @tc.number ArkUIHDS_General_Layout_2100
+     * @tc.desc   test LengthMetrics type of offset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUIHDS_General_Layout_2100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUIHDS_General_Layout_2100 START');
@@ -186,13 +186,13 @@ export default function GeneralLayoutOffsetTest() {
       done();
     });
 
-    /*
-     *@tc.number     : ArkUIHDS_General_Layout_2200
-     *@tc.name       : ArkUIHDS_General_Layout_2200
-     *@tc.desc       : test LengthMetrics type of offset
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 1
+    /**
+     * @tc.name   ArkUIHDS_General_Layout_2200
+     * @tc.number ArkUIHDS_General_Layout_2200
+     * @tc.desc   test LengthMetrics type of offset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUIHDS_General_Layout_2200', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUIHDS_General_Layout_2200 START');
@@ -239,13 +239,13 @@ export default function GeneralLayoutOffsetTest() {
       done();
     });
 
-    /*
-     *@tc.number     : ArkUIHDS_General_Layout_2300
-     *@tc.name       : ArkUIHDS_General_Layout_2300
-     *@tc.desc       : test LengthMetrics type of offset
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 1
+    /**
+     * @tc.name   ArkUIHDS_General_Layout_2300
+     * @tc.number ArkUIHDS_General_Layout_2300
+     * @tc.desc   test LengthMetrics type of offset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUIHDS_General_Layout_2300', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUIHDS_General_Layout_2300 START');
@@ -283,13 +283,13 @@ export default function GeneralLayoutOffsetTest() {
       done();
     });
 
-    /*
-     *@tc.number     : ArkUIHDS_General_Layout_2400
-     *@tc.name       : ArkUIHDS_General_Layout_2400
-     *@tc.desc       : test LengthMetrics type of offset
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 1
+    /**
+     * @tc.name   ArkUIHDS_General_Layout_2400
+     * @tc.number ArkUIHDS_General_Layout_2400
+     * @tc.desc   test LengthMetrics type of offset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUIHDS_General_Layout_2400', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUIHDS_General_Layout_2400 START');
@@ -337,13 +337,13 @@ export default function GeneralLayoutOffsetTest() {
       done();
     });
 
-    /*
-     *@tc.number     : ArkUIHDS_General_Layout_2500
-     *@tc.name       : ArkUIHDS_General_Layout_2500
-     *@tc.desc       : test LengthMetrics type of offset
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 1
+    /**
+     * @tc.name   ArkUIHDS_General_Layout_2500
+     * @tc.number ArkUIHDS_General_Layout_2500
+     * @tc.desc   test LengthMetrics type of offset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUIHDS_General_Layout_2500', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUIHDS_General_Layout_2500 START');
@@ -375,13 +375,13 @@ export default function GeneralLayoutOffsetTest() {
       done();
     });
 
-    /*
-     *@tc.number     : ArkUIHDS_General_Layout_2600
-     *@tc.name       : ArkUIHDS_General_Layout_2600
-     *@tc.desc       : test LengthMetrics type of offset
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 1
+    /**
+     * @tc.name   ArkUIHDS_General_Layout_2600
+     * @tc.number ArkUIHDS_General_Layout_2600
+     * @tc.desc   test LengthMetrics type of offset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUIHDS_General_Layout_2600', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUIHDS_General_Layout_2600 START');
@@ -412,13 +412,13 @@ export default function GeneralLayoutOffsetTest() {
       done();
     });
 
-    /*
-     *@tc.number     : ArkUIHDS_General_Layout_2700
-     *@tc.name       : ArkUIHDS_General_Layout_2700
-     *@tc.desc       : test LengthMetrics type of offset
-     *@tc.size       : MediumTest
-     *@tc.type       : Function
-     *@tc.level      : Level 1
+    /**
+     * @tc.name   ArkUIHDS_General_Layout_2700
+     * @tc.number ArkUIHDS_General_Layout_2700
+     * @tc.desc   test LengthMetrics type of offset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUIHDS_General_Layout_2700', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUIHDS_General_Layout_2700 START');

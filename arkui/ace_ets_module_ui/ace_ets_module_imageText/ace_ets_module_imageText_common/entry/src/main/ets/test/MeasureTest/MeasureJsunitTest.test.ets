@@ -54,12 +54,12 @@ export default function MeasureJsunitTest() {
       done();
     });
     /**
-     * @tc.number: ArkUI_Stage_Measure_0100
-     * @tc.name  : Test the text computing power of the context
-     * @tc.desc  : Test measureTextSize function
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   ArkUI_Stage_Measure_0100
+     * @tc.number ArkUI_Stage_Measure_0100
+     * @tc.desc   Test measureTextSize function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Measure_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUI_Stage_Measure_0100 START');
@@ -72,12 +72,12 @@ export default function MeasureJsunitTest() {
       done();
     });
     /**
-     * @tc.number: ArkUI_Stage_Measure_0200
-     * @tc.name  : Test the text computing power of the context
-     * @tc.desc  : Test measureTextSize function
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   ArkUI_Stage_Measure_0200
+     * @tc.number ArkUI_Stage_Measure_0200
+     * @tc.desc   Test measureTextSize function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Measure_0200', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUI_Stage_Measure_0200 START');
@@ -97,12 +97,12 @@ export default function MeasureJsunitTest() {
       done();
     });
     /**
-     * @tc.number: ArkUI_Stage_Measure_0300
-     * @tc.name  : Test the text computing power of the context
-     * @tc.desc  : Test measureTextSize function
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   ArkUI_Stage_Measure_0300
+     * @tc.number ArkUI_Stage_Measure_0300
+     * @tc.desc   Test measureTextSize function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Measure_0300', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUI_Stage_Measure_0300 START');
@@ -130,12 +130,12 @@ export default function MeasureJsunitTest() {
       done();
     });
     /**
-     * @tc.number: ArkUI_Stage_Measure_0400
-     * @tc.name  : Test the text computing power of the context
-     * @tc.desc  : Test measureTextSize function
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   ArkUI_Stage_Measure_0400
+     * @tc.number ArkUI_Stage_Measure_0400
+     * @tc.desc   Test measureTextSize function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Measure_0400', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUI_Stage_Measure_0400 START');
@@ -154,12 +154,12 @@ export default function MeasureJsunitTest() {
       done();
     });
     /**
-     * @tc.number: ArkUI_Stage_Measure_0500
-     * @tc.name  : Test the text computing power of the context
-     * @tc.desc  : Test measureTextSize function
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   ArkUI_Stage_Measure_0500
+     * @tc.number ArkUI_Stage_Measure_0500
+     * @tc.desc   Test measureTextSize function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Stage_Measure_0500', Level.LEVEL0, async (done: Function) => {
       console.info('ArkUI_Stage_Measure_0500 START');

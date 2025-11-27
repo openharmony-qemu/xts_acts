@@ -45,12 +45,12 @@ export default function rowJsunit2() {
     });
 
     /**
-     * @tc.number testRow_100
      * @tc.name   testRow_100
+     * @tc.number testRow_100
      * @tc.desc   test Row align
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRow_100',  Level.LEVEL0, async (done: Function) => {
       console.info('[testRow_100] START');
@@ -64,12 +64,12 @@ export default function rowJsunit2() {
     });
 
     /**
-     * @tc.number testRow_200
      * @tc.name   testRow_200
+     * @tc.number testRow_200
      * @tc.desc   test Row direction
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRow_200',  Level.LEVEL0, async (done: Function) => {
       console.info('[testRow_200] START');
@@ -83,12 +83,12 @@ export default function rowJsunit2() {
     });
 
     /**
-     * @tc.number testRow_300
      * @tc.name   testRow_300
+     * @tc.number testRow_300
      * @tc.desc   test Row width
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRow_300',  Level.LEVEL0, async (done: Function) => {
       console.info('[testRow_300] START');
@@ -102,12 +102,12 @@ export default function rowJsunit2() {
     });
 
     /**
-     * @tc.number testRow_400
      * @tc.name   testRow_400
+     * @tc.number testRow_400
      * @tc.desc   test Row alignSelf
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRow_400',  Level.LEVEL0, async (done: Function) => {
       console.info('[testRow_400] START');
@@ -121,12 +121,12 @@ export default function rowJsunit2() {
     });
 
     /**
-     * @tc.number testRow_500
      * @tc.name   testRow_500
+     * @tc.number testRow_500
      * @tc.desc   test Row height
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRow_500',  Level.LEVEL0, async (done: Function) => {
       console.info('[testRow_500] START');
@@ -140,12 +140,12 @@ export default function rowJsunit2() {
     });
 
     /**
-     * @tc.number testRow_600
      * @tc.name   testRow_600
+     * @tc.number testRow_600
      * @tc.desc   test Row borderStyle
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  Level.LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRow_600',  Level.LEVEL0, async (done: Function) => {
       console.info('[testRow_600] START');

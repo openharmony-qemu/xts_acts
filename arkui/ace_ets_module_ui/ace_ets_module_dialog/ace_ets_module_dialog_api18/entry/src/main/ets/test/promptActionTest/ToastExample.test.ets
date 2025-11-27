@@ -59,12 +59,12 @@ export default function ToastExample() {
     });
 
     /**
+     * @tc.name   ToastExample_0100
      * @tc.number SUB_ACE_ToastExample_0100
-     * @tc.name ToastExample_0100
-     * @tc.desc To test that the promptAction.closeToast
-     * @tc.level: Level 1
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
+     * @tc.desc   To test that the promptAction.closeToast
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ToastExample_0100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('ToastExample_0100 START');

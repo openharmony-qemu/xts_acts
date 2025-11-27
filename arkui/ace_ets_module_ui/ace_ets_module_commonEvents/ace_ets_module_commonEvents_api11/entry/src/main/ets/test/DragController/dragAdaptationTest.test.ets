@@ -55,10 +55,13 @@ done();
       console.info("dragAdaptationTest after each called");
     });
 
-    /*
-     * @tc.number       dragAdaptationTest
-     * @tc.name         dragAdaptationTest_001
-     * @tc.desic        dragAdaptationTest_001
+    /**
+     * @tc.name   dragAdaptationTest_001
+     * @tc.number dragAdaptationTest
+     * @tc.desc   dragAdaptationTest_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('dragAdaptationTest_001', Level.LEVEL0, async () => {
       if (globalThis.winLeft == 0) {

@@ -41,13 +41,13 @@ export default function TextDecorationStyleTest() {
       done();
     });
 
-    /*
-    * @tc.number       TextDecorationStyleTest0001
-    * @tc.name         TextDecorationStyleTest0001
-    * @tc.desc        test Text TextDecorationStyle DOTTED
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        0
+    /**
+     * @tc.name   TextDecorationStyleTest0001
+     * @tc.number TextDecorationStyleTest0001
+     * @tc.desc   test Text TextDecorationStyle DOTTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextDecorationStyleTest0001', Level.LEVEL0, async (done: Function) => {
       console.info('TextDecorationStyleTest0001 START');
@@ -60,13 +60,13 @@ export default function TextDecorationStyleTest() {
       console.info("[TextDecorationStyleTest0001] end");
       done();
     });
-    /*
-    * @tc.number       TextDecorationStyleTest0002
-    * @tc.name         TextDecorationStyleTest0002
-    * @tc.desc        test Text TextDecorationStyle DASHED
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        0
+    /**
+     * @tc.name   TextDecorationStyleTest0002
+     * @tc.number TextDecorationStyleTest0002
+     * @tc.desc   test Text TextDecorationStyle DASHED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextDecorationStyleTest0002', Level.LEVEL0, async (done: Function) => {
       console.info('TextDecorationStyleTest0002 START');
@@ -80,13 +80,13 @@ export default function TextDecorationStyleTest() {
       done();
     });
 
-    /*
-    * @tc.number       TextDecorationStyleTest0003
-    * @tc.name         TextDecorationStyleTest0003
-    * @tc.desc        test Search TextDecorationStyle DOTTED
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        0
+    /**
+     * @tc.name   TextDecorationStyleTest0003
+     * @tc.number TextDecorationStyleTest0003
+     * @tc.desc   test Search TextDecorationStyle DOTTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextDecorationStyleTest0003', Level.LEVEL0, async (done: Function) => {
       console.info('TextDecorationStyleTest0003 START');
@@ -100,13 +100,13 @@ export default function TextDecorationStyleTest() {
       done();
     });
 
-    /*
-    * @tc.number       TextDecorationStyleTest0004
-    * @tc.name         TextDecorationStyleTest0004
-    * @tc.desc        test Search TextDecorationStyle DASHED
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        0
+    /**
+     * @tc.name   TextDecorationStyleTest0004
+     * @tc.number TextDecorationStyleTest0004
+     * @tc.desc   test Search TextDecorationStyle DASHED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextDecorationStyleTest0004', Level.LEVEL0, async (done: Function) => {
       console.info('TextDecorationStyleTest0004 START');
@@ -120,13 +120,13 @@ export default function TextDecorationStyleTest() {
       done();
     });
 
-    /*
-    * @tc.number       TextDecorationStyleTest0005
-    * @tc.name         TextDecorationStyleTest0005
-    * @tc.desc        test TextArea TextDecorationStyle DOTTED
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        0
+    /**
+     * @tc.name   TextDecorationStyleTest0005
+     * @tc.number TextDecorationStyleTest0005
+     * @tc.desc   test TextArea TextDecorationStyle DOTTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextDecorationStyleTest0005', Level.LEVEL0, async (done: Function) => {
       console.info('TextDecorationStyleTest0005 START');
@@ -140,13 +140,13 @@ export default function TextDecorationStyleTest() {
       done();
     });
 
-    /*
-    * @tc.number       TextDecorationStyleTest0006
-    * @tc.name         TextDecorationStyleTest0006
-    * @tc.desc        test TextArea TextDecorationStyle DASHED
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        0
+    /**
+     * @tc.name   TextDecorationStyleTest0006
+     * @tc.number TextDecorationStyleTest0006
+     * @tc.desc   test TextArea TextDecorationStyle DASHED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextDecorationStyleTest0006', Level.LEVEL0, async (done: Function) => {
       console.info('TextDecorationStyleTest0006 START');
@@ -160,13 +160,13 @@ export default function TextDecorationStyleTest() {
       done();
     });
 
-    /*
-    * @tc.number       TextDecorationStyleTest0007
-    * @tc.name         TextDecorationStyleTest0007
-    * @tc.desc        test TextInput TextDecorationStyle DOTTED
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        0
+    /**
+     * @tc.name   TextDecorationStyleTest0007
+     * @tc.number TextDecorationStyleTest0007
+     * @tc.desc   test TextInput TextDecorationStyle DOTTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextDecorationStyleTest0007', Level.LEVEL0, async (done: Function) => {
       console.info('TextDecorationStyleTest0007 START');
@@ -180,13 +180,13 @@ export default function TextDecorationStyleTest() {
       done();
     });
 
-    /*
-    * @tc.number       TextDecorationStyleTest0008
-    * @tc.name         TextDecorationStyleTest0008
-    * @tc.desc        test TextInput TextDecorationStyle DASHED
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        0
+    /**
+     * @tc.name   TextDecorationStyleTest0008
+     * @tc.number TextDecorationStyleTest0008
+     * @tc.desc   test TextInput TextDecorationStyle DASHED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextDecorationStyleTest0008', Level.LEVEL0, async (done: Function) => {
       console.info('TextDecorationStyleTest0008 START');

@@ -43,12 +43,12 @@ export default function IfElse002Test() {
       done();
     });
     /**
-     * @tc.number    IfElse002
-     * @tc.name      IfElse002Test_01
-     * @tc.desc      api
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   IfElse002Test_01
+     * @tc.number IfElse002
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IfElse002Test_01', Level.LEVEL0, async (done: Function) => {
       console.info('[IfElse002Test_01] START');
@@ -70,12 +70,12 @@ export default function IfElse002Test() {
       done();
     });
     /**
-     * @tc.number    IfElse002Test_02
-     * @tc.name      IfElse002Test_02
-     * @tc.desc      api
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   IfElse002Test_02
+     * @tc.number IfElse002Test_02
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IfElse002Test_02', Level.LEVEL0, async (done: Function) => {
       console.info('[IfElse002Test_02] START');

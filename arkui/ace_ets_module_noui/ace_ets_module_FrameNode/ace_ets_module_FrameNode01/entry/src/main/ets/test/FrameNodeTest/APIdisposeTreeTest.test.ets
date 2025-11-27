@@ -40,12 +40,12 @@ export default function APIdisposeTreeTest() {
       done();
     });
     /**
-     * @tc.number    APIdisposeTreeTest_0100
-     * @tc.name      APIdisposeTreeTest_0100
-     * @tc.desc      frameNode: APIdisposeTree
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   APIdisposeTreeTest_0100
+     * @tc.number APIdisposeTreeTest_0100
+     * @tc.desc   frameNode: APIdisposeTree
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APIdisposeTreeTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('APIdisposeTreeTest_0100 START');

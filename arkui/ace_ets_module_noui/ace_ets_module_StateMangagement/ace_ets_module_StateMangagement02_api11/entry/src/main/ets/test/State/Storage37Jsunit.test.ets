@@ -55,6 +55,14 @@ export default function Storage37Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   Storage37Jsunit_0100
+     * @tc.number Storage37Jsunit_0100
+     * @tc.desc   Storage37Jsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Storage37Jsunit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('Storage37Jsunit_0100 START');
       let strJson = getInspectorByKey('text37_prop1');
@@ -66,6 +74,14 @@ export default function Storage37Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   Storage37Jsunit_0200
+     * @tc.number Storage37Jsunit_0200
+     * @tc.desc   Storage37Jsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Storage37Jsunit_0200', Level.LEVEL0, async (done: Function) => {
       console.info('Storage37Jsunit_0200 START');
       let strJson = getInspectorByKey('text37_link1Date');
@@ -77,6 +93,14 @@ export default function Storage37Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   Storage37Jsunit_0300
+     * @tc.number Storage37Jsunit_0300
+     * @tc.desc   Storage37Jsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Storage37Jsunit_0300', Level.LEVEL0, async (done: Function) => {
       console.info('Storage37Jsunit_0300 START');
       let strJson = getInspectorByKey('text37_link1Date2');
@@ -88,6 +112,14 @@ export default function Storage37Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   Storage37Jsunit_0400
+     * @tc.number Storage37Jsunit_0400
+     * @tc.desc   Storage37Jsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Storage37Jsunit_0400', Level.LEVEL0, async (done: Function) => {
       console.info('Storage37Jsunit_0400 START');
       let driver = await UiDriver.create()
@@ -103,6 +135,14 @@ export default function Storage37Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   Storage37Jsunit_0500
+     * @tc.number Storage37Jsunit_0500
+     * @tc.desc   Storage37Jsunit_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Storage37Jsunit_0500', Level.LEVEL0, async (done: Function) => {
       console.info('Storage37Jsunit_0500 START');
       let driver = await UiDriver.create()

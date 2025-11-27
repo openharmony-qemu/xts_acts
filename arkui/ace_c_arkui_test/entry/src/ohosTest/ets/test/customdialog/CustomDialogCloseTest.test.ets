@@ -26,26 +26,26 @@ export default function customDialogCloseTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_CLOSE_0100
-     * @tc.name       : testCustomDialogClose001
-     * @tc.desc       : testing close for customDialog with normal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomDialogClose001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_CLOSE_0100
+     * @tc.desc   testing close for customDialog with normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogClose001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogClose001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_CLOSE_0200
-     * @tc.name       : testCustomDialogClose002
-     * @tc.desc       : testing close for customDialog with abnormal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCustomDialogClose002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_CLOSE_0200
+     * @tc.desc   testing close for customDialog with abnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogClose002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogClose002()).assertEqual(0)

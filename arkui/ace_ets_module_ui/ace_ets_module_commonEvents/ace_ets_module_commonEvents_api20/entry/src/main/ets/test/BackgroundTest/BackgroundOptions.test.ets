@@ -45,10 +45,12 @@ export default function BackgroundOptionsTest() {
       console.info('BackgroundOptions after each called');
     });
     /**
-     * @tc.number    BackgroundOptionsTest_0010
-     * @tc.name      BackgroundOptionsTest_0010
-     * @tc.desc      set align test succ
-     * @tc.level:    Level 1
+     * @tc.name   BackgroundOptionsTest_0010
+     * @tc.number BackgroundOptionsTest_0010
+     * @tc.desc   set align test succ
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BackgroundOptionsTest_0010', Level.LEVEL1, async (done: Function) => {
       console.info('BackgroundOptionsTest_0010 START');

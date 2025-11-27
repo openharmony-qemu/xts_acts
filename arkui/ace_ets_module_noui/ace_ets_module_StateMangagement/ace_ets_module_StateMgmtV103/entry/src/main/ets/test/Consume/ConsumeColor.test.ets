@@ -53,12 +53,14 @@ export default function ConsumeColor() {
       }
       done();
     });
-    /* *
-   * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0980
-   * @tc.name  : ConsumeColor_0100
-   * @tc.desc  : To test that the Consume decorator supports union types.
-   * @tc.level : Level 2
-   */
+    /**
+     * @tc.name   ConsumeColor_0100
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0980
+     * @tc.desc   To test that the Consume decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ConsumeColor_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ConsumeColor_0100 START');
       let driver = await Driver.create()
@@ -74,12 +76,14 @@ export default function ConsumeColor() {
       console.info('[ConsumeColor_0100] END');
       done();
     });
-    /* *
-   * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0990
-   * @tc.name  : ConsumeColor_0200
-   * @tc.desc  : To test that the Consume decorator supports union types.
-   * @tc.level : Level 2
-   */
+    /**
+     * @tc.name   ConsumeColor_0200
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_0990
+     * @tc.desc   To test that the Consume decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ConsumeColor_0200', Level.LEVEL0, async (done: Function) => {
       console.info('ConsumeColor_0100 START');
       let driver = await Driver.create()
@@ -95,12 +99,14 @@ export default function ConsumeColor() {
       console.info('[ConsumeColor_0100] END');
       done();
     });
-    /* *
-  * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_1000
-  * @tc.name  : ConsumeColor_0300
-  * @tc.desc  : To test that the Consume decorator supports union types.
-  * @tc.level : Level 2
-  */
+    /**
+     * @tc.name   ConsumeColor_0300
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_1000
+     * @tc.desc   To test that the Consume decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ConsumeColor_0300', Level.LEVEL0, async (done: Function) => {
       console.info('ConsumeColor_0100 START');
       let driver = await Driver.create()
@@ -116,12 +122,14 @@ export default function ConsumeColor() {
       console.info('[ConsumeColor_0100] END');
       done();
     });
-    /* *
-   * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_1010
-   * @tc.name  : ConsumeColor_0400
-   * @tc.desc  : To test that the Consume decorator supports union types.
-   * @tc.level : Level 2
-   */
+    /**
+     * @tc.name   ConsumeColor_0400
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_1010
+     * @tc.desc   To test that the Consume decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ConsumeColor_0400', Level.LEVEL0, async (done: Function) => {
       console.info('ConsumeColor_0100 START');
       let driver = await Driver.create()
@@ -137,12 +145,14 @@ export default function ConsumeColor() {
       console.info('[ConsumeColor_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_1020
-    * @tc.name  : ConsumeColor_0500
-    * @tc.desc  : To test that the Consume decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   ConsumeColor_0500
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_1020
+     * @tc.desc   To test that the Consume decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ConsumeColor_0500', Level.LEVEL0, async (done: Function) => {
       console.info('ConsumeColor_0100 START');
       let driver = await Driver.create()
@@ -158,12 +168,14 @@ export default function ConsumeColor() {
       console.info('[ConsumeColor_0100] END');
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_STATUSMANAGER_SUPPORTUUNION_1030
-    * @tc.name  : ConsumeColor_0600
-    * @tc.desc  : To test that the Consume decorator supports union types.
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   ConsumeColor_0600
+     * @tc.number SUB_ACE_STATUSMANAGER_SUPPORTUUNION_1030
+     * @tc.desc   To test that the Consume decorator supports union types.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ConsumeColor_0600', Level.LEVEL0, async (done: Function) => {
       console.info('ConsumeColor_0100 START');
       let driver = await Driver.create()

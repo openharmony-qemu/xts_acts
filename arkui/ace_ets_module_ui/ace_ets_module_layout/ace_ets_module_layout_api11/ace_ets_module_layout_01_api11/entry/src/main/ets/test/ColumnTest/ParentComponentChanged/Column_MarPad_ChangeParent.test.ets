@@ -50,10 +50,12 @@ export default function column_MarPad_ChangeParent() {
     });
 
     /**
+     * @tc.name   testColumnMarPadChangeParentInRange
      * @tc.number SUB_ACE_COLUMN_MARPAD_CHANGEPARENT_TEST_0100
-     * @tc.name testColumnMarPadChangeParentInRange
-     * @tc.desc The parent component is bound with the margin and padding attributes. Other parameters are default,
-     *               the remaining space of the parent component meets the layout of the child components
+     * @tc.desc   The parent component is bound with the margin and padding attributes. Other parameters are default,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnMarPadChangeParentInRange',  Level.LEVEL0, async () => {
       console.info('new testColumnMarPadChangeParentInRange START');
@@ -105,10 +107,12 @@ export default function column_MarPad_ChangeParent() {
     });
 
     /**
+     * @tc.name   testColumnMarPadChangeParentOutRange
      * @tc.number SUB_ACE_COLUMN_MARPAD_CHANGEPARENT_TEST_0200
-     * @tc.name testColumnMarPadChangeParentOutRange
-     * @tc.desc The parent component is bound with the margin and padding attributes. Other parameters are default,
-     *               the remaining space of the parent component does not meet the layout of the child components
+     * @tc.desc   The parent component is bound with the margin and padding attributes. Other parameters are default,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnMarPadChangeParentOutRange',  Level.LEVEL0, async () => {
       console.info('new testColumnMarPadChangeParentOutRange START');

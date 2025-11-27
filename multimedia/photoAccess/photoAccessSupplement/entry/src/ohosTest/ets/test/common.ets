@@ -21,6 +21,7 @@ import fs from '@ohos.file.fs';
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import { expect } from '@ohos/hypium';
+import { sendablePhotoAccessHelper } from "@kit.MediaLibraryKit";
 
 export const LOG_TAG = '[PhotoAccessXts].';
 const TAG = "photoAccessXtsSupp.common";
@@ -194,6 +195,26 @@ export async function copyImageToSandbox(fileName: string, pathUri: string) {
   await fs.write(fd.fd, rawFileContent.buffer);
   await fs.close(fd);
 }
+export async function getSendableFileAsset(context: common.UIAbilityContext, testName: string,
+  fetchOps: photoAccessHelper.FetchOptions): Promise<sendablePhotoAccessHelper.PhotoAsset> {
+  let asset: sendablePhotoAccessHelper.PhotoAsset;
+  try {
+    const helper = sendablePhotoAccessHelper.getPhotoAccessHelper(context);
+    let fetchResult: sendablePhotoAccessHelper.FetchResult<sendablePhotoAccessHelper.PhotoAsset>;
+    fetchResult = await helper.getAssets(fetchOps);
+    console.info(`${testName} getFileAsset fetchResult: ${fetchResult.getCount()}`);
+    asset = await fetchResult.getFirstObject();
+    fetchResult.close();
+  } catch (error) {
+    console.error(`${testName} getFileAsset error: ${error}`);
+    expect().assertFail();
+  }
+
+  return new Promise((resolve, reject) => {
+    resolve(asset);
+  });
+}
+
 export { COMMON_WAIT_DURATION,
   cameraPosition,
   cameraType,

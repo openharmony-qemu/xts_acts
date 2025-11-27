@@ -45,12 +45,12 @@ export default function polygonNewJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testpolygonNe0001
-     * @tc.name: testpolygonNe0001
-     * @tc.desc: PolygonAPI 
-     * @tc.level: Level 2
-     * @tc.type : Polygon
-     * @tc.size : PolygonTest
+     * @tc.name   testpolygonNe0001
+     * @tc.number SUB_ARKUI_API_testpolygonNe0001
+     * @tc.desc   PolygonAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testpolygonNe0001', Level.LEVEL0, async () => {
       console.info('polygonNe testpolygonNe0001 START');
@@ -65,12 +65,12 @@ export default function polygonNewJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testpolygonNe0002
-     * @tc.name: testpolygonNe0002
-     * @tc.desc: PolygonAPI 
-     * @tc.level: Level 2
-     * @tc.type : Polygon
-     * @tc.size : PolygonTest
+     * @tc.name   testpolygonNe0002
+     * @tc.number SUB_ARKUI_API_testpolygonNe0002
+     * @tc.desc   PolygonAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testpolygonNe0002', Level.LEVEL0, async () => {
       console.info('polygonNe testpolygonNe0002 START');

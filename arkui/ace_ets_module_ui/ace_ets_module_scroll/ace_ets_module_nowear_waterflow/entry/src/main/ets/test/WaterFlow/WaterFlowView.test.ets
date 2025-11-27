@@ -41,12 +41,12 @@ export default function waterFlowView() {
     });
 
     /**
+     * @tc.name   waterFlowViewJsunit_0100
      * @tc.number waterFlowViewJsunit_0100
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('waterFlowViewJsunit_0100',Level.LEVEL0,async (done: Function) => {
       console.info('[waterFlowViewJsunit_0100] START');
@@ -61,12 +61,12 @@ export default function waterFlowView() {
     });
 
     /**
+     * @tc.name   waterFlowViewJsunit_0200
      * @tc.number waterFlowViewJsunit_0200
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('waterFlowViewJsunit_0200',Level.LEVEL0,async (done: Function) => {
       console.info('[waterFlowViewJsunit_0200] START');
@@ -80,12 +80,12 @@ export default function waterFlowView() {
     });
 
     /**
+     * @tc.name   waterFlowViewJsunit_0300
      * @tc.number waterFlowViewJsunit_0300
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('waterFlowViewJsunit_0300',Level.LEVEL0,async (done: Function) => {
       console.info('[waterFlowViewJsunit_0300] START');
@@ -99,12 +99,12 @@ export default function waterFlowView() {
     });
 
     /**
+     * @tc.name   waterFlowViewJsunit_0400
      * @tc.number waterFlowViewJsunit_0400
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('waterFlowViewJsunit_0400',Level.LEVEL0,async (done: Function) => {
       console.info('[waterFlowViewJsunit_0400] START');
@@ -118,12 +118,12 @@ export default function waterFlowView() {
     });
 
     /**
+     * @tc.name   waterFlowViewJsunit_0500
      * @tc.number waterFlowViewJsunit_0500
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('waterFlowViewJsunit_0500',Level.LEVEL0,async (done: Function) => {
       console.info('[waterFlowViewJsunit_0500] START');
@@ -139,12 +139,12 @@ export default function waterFlowView() {
     });
 
     /**
+     * @tc.name   waterFlowViewJsunit_0600
      * @tc.number waterFlowViewJsunit_0600
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('waterFlowViewJsunit_0600',Level.LEVEL0,async (done: Function) => {
       console.info('[waterFlowViewJsunit_0600] START');
@@ -158,12 +158,12 @@ export default function waterFlowView() {
     });
 
     /**
+     * @tc.name   waterFlowViewJsunit_0700
      * @tc.number waterFlowViewJsunit_0700
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('waterFlowViewJsunit_0700',Level.LEVEL0,async (done: Function) => {
       console.info('[waterFlowViewJsunit_0700] START');
@@ -177,12 +177,12 @@ export default function waterFlowView() {
     });
 
     /**
+     * @tc.name   waterFlowViewJsunit_0800
      * @tc.number waterFlowViewJsunit_0800
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('waterFlowViewJsunit_0800',Level.LEVEL0,async (done: Function) => {
       console.info('[waterFlowViewJsunit_0800] START');
@@ -196,12 +196,12 @@ export default function waterFlowView() {
     });
 
     /**
+     * @tc.name   waterFlowViewJsunit_0900
      * @tc.number waterFlowViewJsunit_0900
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('waterFlowViewJsunit_0900',Level.LEVEL0,async (done: Function) => {
       console.info('[waterFlowViewJsunit_0900] START');

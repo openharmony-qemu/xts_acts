@@ -45,10 +45,13 @@ export default function TextConstraintSizeTest() {
       await CommonFunc.sleep(1000);
       console.info("TextConstraintSize after each called");
     });
-    /*
-     * @tc.number       testConstraintSize0001
-     * @tc.name         testConstraintSize0001
-     * @tc.desc         test Text ConstraintSize
+    /**
+     * @tc.name   testConstraintSize0001
+     * @tc.number testConstraintSize0001
+     * @tc.desc   test Text ConstraintSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConstraintSize0001', Level.LEVEL1, async (done: Function) => {
       console.info('TextConstraintSizeTest testConstraintSize0001 START');

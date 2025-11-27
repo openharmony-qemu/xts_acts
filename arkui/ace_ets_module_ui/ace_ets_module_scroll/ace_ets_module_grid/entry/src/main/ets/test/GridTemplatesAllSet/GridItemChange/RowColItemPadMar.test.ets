@@ -51,12 +51,12 @@ export default function RowColItemPadMar() {
       console.info("Grid_RowCol_ItemPadMarTest after each called");
     });
     /**
+     * @tc.name   testGridRowColItemMargin
      * @tc.number SUB_ACE_GRID_GRIDTEMPLATESALLSET_GRIDITEMCHANGE_0100
-     * @tc.name testGridRowColItemMargin
-     * @tc.desc The second griditem set margin to 10
-     * @tc.level Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   The second griditem set margin to 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridRowColItemMargin',  Level.LEVEL0, async (done: Function) => {
       console.info('[testGridRowColItemMargin] START');
@@ -117,12 +117,12 @@ export default function RowColItemPadMar() {
       done();
     });
     /**
+     * @tc.name   testGridRowColItemPadding
      * @tc.number SUB_ACE_GRID_GRIDTEMPLATESALLSET_GRIDITEMCHANGE_0200
-     * @tc.name testGridRowColItemPadding
-     * @tc.desc The second griditem set padding to 10
-     * @tc.level Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   The second griditem set padding to 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridRowColItemPadding',  Level.LEVEL0, async (done: Function) => {
       console.info('[testGridRowColItemPadding] START');
@@ -168,12 +168,12 @@ export default function RowColItemPadMar() {
       done();
     });
     /**
+     * @tc.name   testGridRowColItemMarPad
      * @tc.number SUB_ACE_GRID_GRIDTEMPLATESALLSET_GRIDITEMCHANGE_0300
-     * @tc.name testGridRowColItemMarPad
-     * @tc.desc The second griditem set padding to 10,margin to 10
-     * @tc.level Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   The second griditem set padding to 10,margin to 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridRowColItemMarPad',  Level.LEVEL0, async (done: Function) => {
       console.info('[testGridRowColItemMarPad] START');

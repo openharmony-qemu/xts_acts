@@ -15,24 +15,24 @@
 import account_appAccount from '@ohos.account.appAccount';
 import ServiceExtensionAbility from '@ohos.app.ability.ServiceExtensionAbility';
 
-var TAG = "[AccountTest]"
+var TAG = '[AccountTest]'
 var authenticator
 var accountLabels = {
-    "zhangsan": ["male", "30-40", "level4"],
-    "lisi": ["female"]
+    'zhangsan': ['male', '30-40', 'level4'],
+    'lisi': ['female']
 }
 var accountCredentials = {
-    "zhangsan": {
-        "PIN": "123456",
-        "NUMBER": "12356789"
+    'zhangsan': {
+        'PIN': '123456',
+        'NUMBER': '12356789'
     },
-    "lisi": {
-        "FACE": "X00001"
+    'lisi': {
+        'FACE': 'X00001'
     }
 }
 var accountRemovability = {
-    "zhangsan": false,
-    "lisi": true
+    'zhangsan': false,
+    'lisi': true
 }
 var properties = {}
 
@@ -96,7 +96,7 @@ class MyAuthenticator extends account_appAccount.Authenticator {
             },
             tokenInfo: {
                 authType: "getSocialData",
-                token: "xxxxxxxxx",
+                token: 'xxxxxxxxx',
                 account: {
                     name: name,
                     owner: "com.acts.accountauthenticator"

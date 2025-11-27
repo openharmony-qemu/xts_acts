@@ -46,11 +46,13 @@ export default function GridCNodeTest() {
       console.info("GridCNode after each called");
     });
 
-    /*
-     * @tc.number    GridCNodeTest_0100
-     * @tc.name      GridCNodeTest_0100
-     * @tc.desc      Test GridCNode
-     * @tc.level     Level 1
+    /**
+     * @tc.name   GridCNodeTest_0100
+     * @tc.number GridCNodeTest_0100
+     * @tc.desc   Test GridCNode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('GridCNodeTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[GridCNodeTest_0100] START');

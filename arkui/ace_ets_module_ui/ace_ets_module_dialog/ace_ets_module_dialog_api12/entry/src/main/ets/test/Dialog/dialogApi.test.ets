@@ -42,13 +42,15 @@ export default function dialogApi() {
       console.info("dialogApi after each called");
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_Dialog_001
-     * @tc.desc      background test of Dialog
-     * @tc.level     Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   dialogApi_0100
+     * @tc.number dialogApi_0100
+     * @tc.desc   dialogApi_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('dialogApi_0100', Level.LEVEL2, async (done: Function) => {
 
       console.info('dialogApi_0100 START');

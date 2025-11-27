@@ -42,13 +42,15 @@ export default function getLayout() {
       console.info("getLayout after each called");
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_Common_Layout_001
-     * @tc.desc      getMargin test of Layoutable
-     * @tc.level     Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   getLayout_001
+     * @tc.number getLayout_001
+     * @tc.desc   getLayout_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getLayout_001',  Level.LEVEL0, async (done: Function) => {
       console.info('[getLayout_001] START');
 
@@ -64,13 +66,15 @@ export default function getLayout() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_Common_Layout_003
-     * @tc.desc      getPadding test of Layoutable
-     * @tc.level     Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   getLayout_002
+     * @tc.number getLayout_002
+     * @tc.desc   getLayout_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getLayout_002',  Level.LEVEL0, async (done: Function) => {
       console.info('[getLayout_002] START');
 
@@ -86,13 +90,15 @@ export default function getLayout() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_Common_Layout_003
-     * @tc.desc      getBorderWidth test of Layoutable
-     * @tc.level     Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   getLayout_003
+     * @tc.number getLayout_003
+     * @tc.desc   getLayout_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getLayout_003',  Level.LEVEL0, async (done: Function) => {
       console.info('[getLayout_003] START');
 
@@ -108,13 +114,15 @@ export default function getLayout() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_Common_Layout_004
-     * @tc.desc      getMargin test of Measurable
-     * @tc.level     Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   getLayout_004
+     * @tc.number getLayout_004
+     * @tc.desc   getLayout_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getLayout_004',  Level.LEVEL0, async (done: Function) => {
       console.info('[getLayout_004] START');
 
@@ -130,13 +138,15 @@ export default function getLayout() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_Common_Layout_005
-     * @tc.desc      getPadding test of Measurable
-     * @tc.level     Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   getLayout_005
+     * @tc.number getLayout_005
+     * @tc.desc   getLayout_005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getLayout_005',  Level.LEVEL0, async (done: Function) => {
       console.info('[getLayout_005] START');
 
@@ -152,13 +162,15 @@ export default function getLayout() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_Common_Layout_006
-     * @tc.desc      getBorderWidth test of Measurable
-     * @tc.level     Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   getLayout_006
+     * @tc.number getLayout_006
+     * @tc.desc   getLayout_006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getLayout_006',  Level.LEVEL0, async (done: Function) => {
       console.info('[getLayout_006] START');
 

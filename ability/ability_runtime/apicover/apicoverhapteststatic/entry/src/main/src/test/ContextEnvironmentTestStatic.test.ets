@@ -60,10 +60,12 @@ export default function ContextEnvironmentStaticTest() {
     })
 
     /**
-     * @tc.number  SUB_AA_Context_EnvironmentTest_Static_0400
-     * @tc.name    SUB_AA_Context_EnvironmentTest_Static_0400
-     * @tc.desc    Multiple registrations and deregistration.
-     * @tc.level   3
+     * @tc.name   SUB_AA_Context_EnvironmentTest_Static_0400
+     * @tc.number SUB_AA_Context_EnvironmentTest_Static_0400
+     * @tc.desc   Multiple registrations and deregistration.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_Context_EnvironmentTest_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -102,10 +104,12 @@ export default function ContextEnvironmentStaticTest() {
       })
 
     /**
-     * @tc.number  SUB_AA_Context_EnvironmentTest_Static_0500
-     * @tc.name    SUB_AA_Context_EnvironmentTest_Static_0500
-     * @tc.desc    nregisterEnvironmentCallback interface input parameter is a nonexistent.(callback)
-     * @tc.level   3
+     * @tc.name   SUB_AA_Context_EnvironmentTest_Static_0500
+     * @tc.number SUB_AA_Context_EnvironmentTest_Static_0500
+     * @tc.desc   nregisterEnvironmentCallback interface input parameter is a nonexistent.(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_Context_EnvironmentTest_Static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -128,10 +132,12 @@ export default function ContextEnvironmentStaticTest() {
       })
 
     /**
-     * @tc.number  SUB_AA_Context_EnvironmentTest_Static_0600
-     * @tc.name    SUB_AA_Context_EnvironmentTest_Static_0600
-     * @tc.desc    unregisterEnvironmentCallback interface input parameter is negative.(callback)
-     * @tc.level   3
+     * @tc.name   SUB_AA_Context_EnvironmentTest_Static_0600
+     * @tc.number SUB_AA_Context_EnvironmentTest_Static_0600
+     * @tc.desc   unregisterEnvironmentCallback interface input parameter is negative.(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_Context_EnvironmentTest_Static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -154,10 +160,12 @@ export default function ContextEnvironmentStaticTest() {
       })
 
     /**
-     * @tc.number  SUB_AA_Context_EnvironmentTest_Static_0800
-     * @tc.name    SUB_AA_Context_EnvironmentTest_Static_0800
-     * @tc.desc    nregisterEnvironmentCallback interface input parameter is a nonexistent.(promise)
-     * @tc.level   3
+     * @tc.name   SUB_AA_Context_EnvironmentTest_Static_0800
+     * @tc.number SUB_AA_Context_EnvironmentTest_Static_0800
+     * @tc.desc   nregisterEnvironmentCallback interface input parameter is a nonexistent.(promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_Context_EnvironmentTest_Static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -186,10 +194,12 @@ export default function ContextEnvironmentStaticTest() {
       })
 
     /**
-     * @tc.number  SUB_AA_Context_EnvironmentTest_Static_0900
-     * @tc.name    SUB_AA_Context_EnvironmentTest_Static_0900
-     * @tc.desc    unregisterEnvironmentCallback interface input parameter is negative.(promise)
-     * @tc.level   3
+     * @tc.name   SUB_AA_Context_EnvironmentTest_Static_0900
+     * @tc.number SUB_AA_Context_EnvironmentTest_Static_0900
+     * @tc.desc   unregisterEnvironmentCallback interface input parameter is negative.(promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_Context_EnvironmentTest_Static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -218,10 +228,12 @@ export default function ContextEnvironmentStaticTest() {
       })
 
     /**
-     * @tc.number  SUB_AA_Context_EnvironmentTest_Static_1000
-     * @tc.name    SUB_AA_Context_EnvironmentTest_Static_1000
-     * @tc.desc    EnvironmentCallback triggered normally.
-     * @tc.level   3
+     * @tc.name   SUB_AA_Context_EnvironmentTest_Static_1000
+     * @tc.number SUB_AA_Context_EnvironmentTest_Static_1000
+     * @tc.desc   EnvironmentCallback triggered normally.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_Context_EnvironmentTest_Static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const itName = 'SUB_AA_Context_EnvironmentTest_Static_1000';
@@ -252,10 +264,12 @@ export default function ContextEnvironmentStaticTest() {
     })
 
     /**
-     * @tc.number  SUB_AA_Context_EnvironmentTest_Static_1100
-     * @tc.name    SUB_AA_Context_EnvironmentTest_Static_1100
-     * @tc.desc    EnvironmentCallback triggered normally.
-     * @tc.level   3
+     * @tc.name   SUB_AA_Context_EnvironmentTest_Static_1100
+     * @tc.number SUB_AA_Context_EnvironmentTest_Static_1100
+     * @tc.desc   EnvironmentCallback triggered normally.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_Context_EnvironmentTest_Static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const itName = 'SUB_AA_Context_EnvironmentTest_Static_1100';
@@ -286,10 +300,12 @@ export default function ContextEnvironmentStaticTest() {
     })
 
     /**
-     * @tc.number  SUB_AA_Context_EnvironmentTest_Static_1200
-     * @tc.name    SUB_AA_Context_EnvironmentTest_Static_1200
-     * @tc.desc    EnvironmentCallback triggered normally.
-     * @tc.level   3
+     * @tc.name   SUB_AA_Context_EnvironmentTest_Static_1200
+     * @tc.number SUB_AA_Context_EnvironmentTest_Static_1200
+     * @tc.desc   EnvironmentCallback triggered normally.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_Context_EnvironmentTest_Static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const itName = 'SUB_AA_Context_EnvironmentTest_Static_1200';
@@ -318,10 +334,12 @@ export default function ContextEnvironmentStaticTest() {
     })
 
     /**
-     * @tc.number  SUB_AA_Context_EnvironmentTest_Static_1300
-     * @tc.name    SUB_AA_Context_EnvironmentTest_Static_1300
-     * @tc.desc    unregisterEnvironmentCallback execution is normal.(callback)
-     * @tc.level   3
+     * @tc.name   SUB_AA_Context_EnvironmentTest_Static_1300
+     * @tc.number SUB_AA_Context_EnvironmentTest_Static_1300
+     * @tc.desc   unregisterEnvironmentCallback execution is normal.(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_Context_EnvironmentTest_Static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const itName = 'SUB_AA_Context_EnvironmentTest_Static_1300';
@@ -359,11 +377,13 @@ export default function ContextEnvironmentStaticTest() {
     })
 
     /**
-    * @tc.number  SUB_AA_Context_EnvironmentTest_Static_1400
-    * @tc.name    SUB_AA_Context_EnvironmentTest_Static_1400
-    * @tc.desc    unregisterEnvironmentCallback execution is normal.(promise)
-    * @tc.level   3
-    */
+     * @tc.name   SUB_AA_Context_EnvironmentTest_Static_1400
+     * @tc.number SUB_AA_Context_EnvironmentTest_Static_1400
+     * @tc.desc   unregisterEnvironmentCallback execution is normal.(promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AA_Context_EnvironmentTest_Static_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const itName = 'SUB_AA_Context_EnvironmentTest_Static_1400';
       hilog.info(domain, tag, `${itName} start`);

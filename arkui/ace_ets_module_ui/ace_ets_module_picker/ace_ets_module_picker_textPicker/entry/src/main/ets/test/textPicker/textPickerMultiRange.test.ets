@@ -38,9 +38,12 @@ export default function textpickermultiTest() {
     });
 
     /**
+     * @tc.name   ArkUXII_Stage_TextPicker_Options_0100
      * @tc.number ArkUXII_Stage_TextPicker_Options_0100
-     * @tc.name Test the multi column properties of the textpick component
-     * @tc.desc Set the range parameter to multiple columns
+     * @tc.desc   Set the range parameter to multiple columns
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUXII_Stage_TextPicker_Options_0100', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUXII_Stage_TextPicker_Options_0100 start");
@@ -61,9 +64,12 @@ export default function textpickermultiTest() {
     });
 
     /**
+     * @tc.name   ArkUXII_Stage_TextPicker_Options_0200
      * @tc.number ArkUXII_Stage_TextPicker_Options_0200
-     * @tc.name Test the multi column properties of the textpick component
-     * @tc.desc Set the range parameter to multiple columns linkage
+     * @tc.desc   Set the range parameter to multiple columns linkage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUXII_Stage_TextPicker_Options_0200', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUXII_Stage_TextPicker_Options_0200 start");
@@ -89,9 +95,12 @@ export default function textpickermultiTest() {
     });
 
     /**
+     * @tc.name   ArkUXII_Stage_TextPicker_Options_0300
      * @tc.number ArkUXII_Stage_TextPicker_Options_0300
-     * @tc.name Test the multi column properties of the textpick component
-     * @tc.desc Set the selected parameter to [1, 1, 2]
+     * @tc.desc   Set the selected parameter to [1, 1, 2]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUXII_Stage_TextPicker_Options_0300', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUXII_Stage_TextPicker_Options_0300 start");
@@ -113,9 +122,12 @@ export default function textpickermultiTest() {
     });
 
     /**
+     * @tc.name   ArkUXII_Stage_TextPicker_Options_0400
      * @tc.number ArkUXII_Stage_TextPicker_Options_0400
-     * @tc.name Test the multi column properties of the textpick component
-     * @tc.desc Set the value parameter to  ["辽宁省", "大连市","中山区"]
+     * @tc.desc   Set the value parameter to  ["辽宁省", "大连市","中山区"]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUXII_Stage_TextPicker_Options_0400', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUXII_Stage_TextPicker_Options_0400 start");
@@ -137,9 +149,12 @@ export default function textpickermultiTest() {
     });
 
     /**
+     * @tc.name   ArkUXII_Stage_TextPicker_Options_0500
      * @tc.number ArkUXII_Stage_TextPicker_Options_0500
-     * @tc.name Test the multi column properties of the textpick component
-     * @tc.desc Set the selectedIndex parameter to  [2, 1, 2]
+     * @tc.desc   Set the selectedIndex parameter to  [2, 1, 2]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUXII_Stage_TextPicker_Options_0500', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUXII_Stage_TextPicker_Options_0500 start");
@@ -161,9 +176,12 @@ export default function textpickermultiTest() {
     });
 
     /**
+     * @tc.name   ArkUXII_Stage_TextPicker_Options_0600
      * @tc.number ArkUXII_Stage_TextPicker_Options_0600
-     * @tc.name Test the multi column properties of the textpick component
-     * @tc.desc Simultaneously setting the selectedIndex selected value parameter
+     * @tc.desc   Simultaneously setting the selectedIndex selected value parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUXII_Stage_TextPicker_Options_0600', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUXII_Stage_TextPicker_Options_0600 start");
@@ -185,9 +203,12 @@ export default function textpickermultiTest() {
     });
 
     /**
+     * @tc.name   ArkUXII_Stage_TextPicker_Options_0700
      * @tc.number ArkUXII_Stage_TextPicker_Options_0700
-     * @tc.name Test the multi column properties of the textpick component
-     * @tc.desc Set the selectedIndex parameter to  [null, 1, 1]
+     * @tc.desc   Set the selectedIndex parameter to  [null, 1, 1]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUXII_Stage_TextPicker_Options_0700', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUXII_Stage_TextPicker_Options_0700 start");
@@ -209,9 +230,12 @@ export default function textpickermultiTest() {
     });
 
     /**
+     * @tc.name   ArkUXII_Stage_TextPicker_Options_0800
      * @tc.number ArkUXII_Stage_TextPicker_Options_0800
-     * @tc.name Test the multi column properties of the textpick component
-     * @tc.desc Set the selectedIndex parameter to  [1, undefined, 1]
+     * @tc.desc   Set the selectedIndex parameter to  [1, undefined, 1]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUXII_Stage_TextPicker_Options_0800', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUXII_Stage_TextPicker_Options_0800 start");
@@ -233,9 +257,12 @@ export default function textpickermultiTest() {
     });
 
     /**
+     * @tc.name   ArkUXII_Stage_TextPicker_Options_0900
      * @tc.number ArkUXII_Stage_TextPicker_Options_0900
-     * @tc.name Test the multi column properties of the textpick component
-     * @tc.desc Set the selectedIndex parameter to  [1, 1, '']
+     * @tc.desc   Set the selectedIndex parameter to  [1, 1, '']
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUXII_Stage_TextPicker_Options_0900', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUXII_Stage_TextPicker_Options_0900 start");
@@ -257,9 +284,12 @@ export default function textpickermultiTest() {
     });
 
     /**
+     * @tc.name   ArkUXII_Stage_TextPicker_Options_1000
      * @tc.number ArkUXII_Stage_TextPicker_Options_1000
-     * @tc.name Test the multi column properties of the textpick component
-     * @tc.desc Set the selected parameter to  [1, 0, ]
+     * @tc.desc   Set the selected parameter to  [1, 0, ]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUXII_Stage_TextPicker_Options_1000', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUXII_Stage_TextPicker_Options_1000 start");
@@ -281,9 +311,12 @@ export default function textpickermultiTest() {
     });
 
     /**
+     * @tc.name   ArkUXII_Stage_TextPicker_Options_1100
      * @tc.number ArkUXII_Stage_TextPicker_Options_1100
-     * @tc.name Test the multi column properties of the textpick component
-     * @tc.desc Set the value parameter to  ['辽宁省', '大连市', '']
+     * @tc.desc   Set the value parameter to  ['辽宁省', '大连市', '']
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUXII_Stage_TextPicker_Options_1100', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUXII_Stage_TextPicker_Options_1100 start");

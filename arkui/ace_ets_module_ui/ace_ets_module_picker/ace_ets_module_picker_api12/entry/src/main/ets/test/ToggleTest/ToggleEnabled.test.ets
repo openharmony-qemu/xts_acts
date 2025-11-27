@@ -47,13 +47,13 @@ export default function ToggleContentEnabled() {
     });
 
     /**
-      * @tc.number    ArkUI_Stage_Toggle_Content_0200
-      * @tc.name      Test the builder property of the Toggle component
-      * @tc.desc      set the enabled property value
-      * @tc.size: MediumTest
-      * @tc.type: Function
-      * @tc.level: Level 0
-      */
+     * @tc.name   ArkUI_Stage_Toggle_Content_0200
+     * @tc.number ArkUI_Stage_Toggle_Content_0200
+     * @tc.desc   set the enabled property value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_Stage_Toggle_Content_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUI_Stage_Toggle_Content_0200] START');
       await Utils.sleep(1000);

@@ -23,13 +23,12 @@ const ABILITY_NAME = 'EntryAbility';
 export default function bundlenativegetmainelementnameTest() {
   describe('bundlenativegetmainelementnameTest', () => {
     /**
-     * @tc.number: SUB_BMS_OH_NativeBundle_GetMainElementName_0100
-     * @tc.name: SUB_BMS_OH_NativeBundle_GetMainElementName_0100
-     * @tc.desc: Configure the mainElement in module.json within the project,
-     *           which includes entryModule and EntryAbility scene call interfaces
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+     * @tc.name   SUB_BMS_OH_NativeBundle_GetMainElementName_0100
+     * @tc.number SUB_BMS_OH_NativeBundle_GetMainElementName_0100
+     * @tc.desc   Configure the mainElement in module.json within the project,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_BMS_OH_NativeBundle_GetMainElementName_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       expect(bundlendk.getMainElementName().bundleName).assertEqual(BUNDLE_NAME);

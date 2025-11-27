@@ -50,10 +50,12 @@ export default function RouterBackAlert() {
 
 
     /**
-     * @tc.number    RouterBackAlert_0100
-     * @tc.name      RouterBackAlert_0100
-     * @tc.desc      Test router EnableAlertBeforeBackPageOptions 
-     * @tc.level     Level 0
+     * @tc.name   RouterBackAlert_0100
+     * @tc.number RouterBackAlert_0100
+     * @tc.desc   Test router EnableAlertBeforeBackPageOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RouterBackAlert_0100', Level.LEVEL0, async (done: Function) => {
       console.info('RouterBackAlert_0100 START');
@@ -127,10 +129,12 @@ export default function RouterBackAlert() {
     });
 
     /**
-     * @tc.number    RouterBackAlert_0200
-     * @tc.name      RouterBackAlert_0200
-     * @tc.desc      Test router DisableAlertBeforeBackPageOptions 
-     * @tc.level     Level 2
+     * @tc.name   RouterBackAlert_0200
+     * @tc.number RouterBackAlert_0200
+     * @tc.desc   Test router DisableAlertBeforeBackPageOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RouterBackAlert_0200', Level.LEVEL2, async (done: Function) => {
       console.info('RouterBackAlert_0200 START');

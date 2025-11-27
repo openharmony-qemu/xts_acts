@@ -61,12 +61,12 @@ export default function ParticleEmitter() {
     });
 
     /**
+     * @tc.name   ParticleEmitter_001
      * @tc.number ParticleEmitter_001
-     * @tc.name ParticleEmitter_001
-     * @tc.desc test annulusRegion
-     * @tc.level Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test annulusRegion
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ParticleEmitter_001', Level.LEVEL0, async (done: Function) => {
       console.info('[ParticleEmitter_001] START');

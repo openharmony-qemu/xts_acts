@@ -57,9 +57,12 @@ export default function counterJsunit() {
     });
 
     /**
+     * @tc.name   testCounterGetInspectorByKey010
      * @tc.number SUB_ACE_BASIC_ETS_API_0720
-     * @tc.name testCounterGetInspectorByKey010
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCounterGetInspectorByKey010', Level.LEVEL0, async (done: Function) => {
       console.info('testGetInspectorByKey START');

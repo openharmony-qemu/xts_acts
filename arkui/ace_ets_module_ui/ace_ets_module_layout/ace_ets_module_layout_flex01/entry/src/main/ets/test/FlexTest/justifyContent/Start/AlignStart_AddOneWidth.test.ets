@@ -47,9 +47,12 @@ export default function AlignStart_AddOneWidth() {
     });
 
     /**
+     * @tc.name   testFlexAlignStartTextWidth
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_START_TEST_1300
-     * @tc.name testFlexAlignStartTextWidth
-     * @tc.desc The interface is displayed when you change the width of the first subcomponent
+     * @tc.desc   The interface is displayed when you change the width of the first subcomponent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignStartTextWidth',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignStartTextWidth] START');

@@ -46,12 +46,12 @@ export default function LocalStorageReturnValue() {
     });
 
     /**
-     * @tc.number    LocalStorageReturnValue_001
-     * @tc.name      LocalStorageReturnValue_001
-     * @tc.desc      all keys in LocalStorage.
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   LocalStorageReturnValue_001
+     * @tc.number LocalStorageReturnValue_001
+     * @tc.desc   all keys in LocalStorage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LocalStorageReturnValue_001', Level.LEVEL0, async (done: Function) => {
       console.info('[LocalStorageReturnValue_001] START');
@@ -72,12 +72,12 @@ export default function LocalStorageReturnValue() {
     });
 
     /**
-     * @tc.number    LocalStorageReturnValue_002
-     * @tc.name      LocalStorageReturnValue_002
-     * @tc.desc      all keys in LocalStorage.
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   LocalStorageReturnValue_002
+     * @tc.number LocalStorageReturnValue_002
+     * @tc.desc   all keys in LocalStorage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LocalStorageReturnValue_002', Level.LEVEL0, async (done: Function) => {
       console.info('[LocalStorageReturnValue_002] START');
@@ -99,12 +99,12 @@ export default function LocalStorageReturnValue() {
     });
 
     /**
-     * @tc.number    LocalStorageReturnValue_003
-     * @tc.name      LocalStorageReturnValue_003
-     * @tc.desc      all keys in LocalStorage.
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   LocalStorageReturnValue_003
+     * @tc.number LocalStorageReturnValue_003
+     * @tc.desc   all keys in LocalStorage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LocalStorageReturnValue_003', Level.LEVEL0, async (done: Function) => {
       console.info('[LocalStorageReturnValue_003] START');
@@ -123,12 +123,12 @@ export default function LocalStorageReturnValue() {
     });
 
     /**
-     * @tc.number    LocalStorageReturnValue_004
-     * @tc.name      LocalStorageReturnValue_004
-     * @tc.desc      all keys in LocalStorage.
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   LocalStorageReturnValue_004
+     * @tc.number LocalStorageReturnValue_004
+     * @tc.desc   all keys in LocalStorage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LocalStorageReturnValue_004', Level.LEVEL0, async (done: Function) => {
       console.info('[LocalStorageReturnValue_004] START');
@@ -149,12 +149,12 @@ export default function LocalStorageReturnValue() {
     });
 
     /**
-     * @tc.number    LocalStorageReturnValue_005
-     * @tc.name      LocalStorageReturnValue_005
-     * @tc.desc      all keys in LocalStorage.
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   LocalStorageReturnValue_005
+     * @tc.number LocalStorageReturnValue_005
+     * @tc.desc   all keys in LocalStorage.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LocalStorageReturnValue_005', Level.LEVEL0, async (done: Function) => {
       console.info('[LocalStorageReturnValue_005] START');

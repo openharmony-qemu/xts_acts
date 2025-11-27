@@ -40,12 +40,12 @@ export default function typeNodeProgressTest() {
       done();
     });
     /**
-     * @tc.number    ProgressTest_0100
-     * @tc.name      ProgressTest_0100
-     * @tc.desc      TypedFrameNode: Progress
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ProgressTest_0100
+     * @tc.number ProgressTest_0100
+     * @tc.desc   TypedFrameNode: Progress
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ProgressTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ProgressTest_0100 START');
@@ -62,12 +62,12 @@ export default function typeNodeProgressTest() {
       done();
     });
     /**
-     * @tc.number    initializeTest_0200
-     * @tc.name      initializeTest_0200
-     * @tc.desc      TypedFrameNode: initialize
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   initializeTest_0200
+     * @tc.number initializeTest_0200
+     * @tc.desc   TypedFrameNode: initialize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('initializeTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('initializeTest_0200 START');
@@ -84,12 +84,12 @@ export default function typeNodeProgressTest() {
       done();
     });
     /**
-     * @tc.number    attributeTest_0300
-     * @tc.name      attributeTest_0300
-     * @tc.desc      TypedFrameNode: attribute
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   attributeTest_0300
+     * @tc.number attributeTest_0300
+     * @tc.desc   TypedFrameNode: attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('attributeTest_0300', Level.LEVEL0, async (done: Function) => {
       console.info('attributeTest_0300 START');

@@ -26,10 +26,13 @@
 
 using namespace testing::ext;
 
-/* *
+/**
+ * @tc.name   testMqOpenEEXIST
  * @tc.number SUB_KERNEL_IPC_MQ_OPEN_0100
- * @tc.name   mq_open function errno for EEXIST test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(IpcMqTest, testMqOpenEEXIST, Function | MediumTest | Level2)
 {
@@ -48,10 +51,13 @@ HWTEST_F(IpcMqTest, testMqOpenEEXIST, Function | MediumTest | Level2)
     ASSERT_TRUE(mq_unlink(qName) == 0) << "ERROR: mq_unlink() != 0";
 }
 
-/* *
+/**
+ * @tc.name   testMqOpenEINVAL
  * @tc.number SUB_KERNEL_IPC_MQ_OPEN_0200
- * @tc.name   mq_open function errno for EINVAL test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(IpcMqTest, testMqOpenEINVAL, Function | MediumTest | Level2)
 {
@@ -115,10 +121,13 @@ HWTEST_F(IpcMqTest, testMqOpenEINVAL, Function | MediumTest | Level2)
     EXPECT_TRUE(errno == EINVAL) << "errno != EINVAL, errno = " << errno << " i = " << i << " qName = " << qName;
 }
 
-/* *
+/**
+ * @tc.name   testMqOpenENAMETOOLONG
  * @tc.number SUB_KERNEL_IPC_MQ_OPEN_0300
- * @tc.name   mq_open function errno for ENAMETOOLONG test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(IpcMqTest, testMqOpenENAMETOOLONG, Function | MediumTest | Level2)
 {
@@ -142,10 +151,13 @@ HWTEST_F(IpcMqTest, testMqOpenENAMETOOLONG, Function | MediumTest | Level2)
     ASSERT_TRUE(errno == ENAMETOOLONG) << "errno != ENAMETOOLONG, errno = " << errno;
 }
 
-/* *
+/**
+ * @tc.name   testMqOpenENOENT
  * @tc.number SUB_KERNEL_IPC_MQ_OPEN_0400
- * @tc.name   mq_open function errno for ENOENT test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(IpcMqTest, testMqOpenENOENT, Function | MediumTest | Level3)
 {
@@ -163,10 +175,13 @@ HWTEST_F(IpcMqTest, testMqOpenENOENT, Function | MediumTest | Level3)
     ASSERT_TRUE(errno == ENOENT) << "errno != ENOENT, errno = " << errno;
 }
 
-/* *
+/**
+ * @tc.name   testMqOpenENFILE
  * @tc.number SUB_KERNEL_IPC_MQ_OPEN_0500
- * @tc.name   mq_open function errno for ENFILE test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(IpcMqTest, testMqOpenENFILE, Function | MediumTest | Level3)
 {
@@ -206,10 +221,13 @@ HWTEST_F(IpcMqTest, testMqOpenENFILE, Function | MediumTest | Level3)
     }
 }
 
-/* *
+/**
+ * @tc.name   testMqOpenENOSPC
  * @tc.number SUB_KERNEL_IPC_MQ_OPEN_0600
- * @tc.name   mq_open function errno for ENOSPC test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(IpcMqTest, testMqOpenENOSPC, Function | MediumTest | Level3)
 {
@@ -230,10 +248,13 @@ HWTEST_F(IpcMqTest, testMqOpenENOSPC, Function | MediumTest | Level3)
     ASSERT_TRUE(errno == ENOSPC) << "errno != ENOSPC, errno = " << errno;
 }
 
-/* *
+/**
+ * @tc.name   testMqCloseEBADF
  * @tc.number SUB_KERNEL_IPC_MQ_CLOSE_0100
- * @tc.name   mq_close function errno for EBADF test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(IpcMqTest, testMqCloseEBADF, Function | MediumTest | Level2)
 {
@@ -241,10 +262,13 @@ HWTEST_F(IpcMqTest, testMqCloseEBADF, Function | MediumTest | Level2)
     ASSERT_TRUE(errno == EBADF) << "ERROR: errno != EBADF, errno = " << errno << " EBADF = " << EBADF;
 }
 
-/* *
+/**
+ * @tc.name   testMqSendEAGAIN
  * @tc.number SUB_KERNEL_IPC_MQ_SEND_0100
- * @tc.name   mq_send function errno for EAGAIN test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(IpcMqTest, testMqSendEAGAIN, Function | MediumTest | Level2)
 {
@@ -266,10 +290,13 @@ HWTEST_F(IpcMqTest, testMqSendEAGAIN, Function | MediumTest | Level2)
     ASSERT_TRUE(mq_unlink(qName) == 0) << "ERROR: mq_unlink() != 0";
 }
 
-/* *
+/**
+ * @tc.name   testMqSendEBADFEMSGSIZE
  * @tc.number SUB_KERNEL_IPC_MQ_SEND_0200
- * @tc.name   mq_send function errno for EBADF and EMSGSIZE test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(IpcMqTest, testMqSendEBADFEMSGSIZE, Function | MediumTest | Level2)
 {
@@ -309,10 +336,13 @@ HWTEST_F(IpcMqTest, testMqSendEBADFEMSGSIZE, Function | MediumTest | Level2)
     ASSERT_TRUE(mq_unlink(qName) == 0) << "ERROR: mq_unlink() != 0";
 }
 
-/* *
+/**
+ * @tc.name   testMqSendEINVAL
  * @tc.number SUB_KERNEL_IPC_MQ_SEND_0300
- * @tc.name   mq_send function errno for EINVAL  test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(IpcMqTest, testMqSendEINVAL, Function | MediumTest | Level3)
 {
@@ -333,10 +363,13 @@ HWTEST_F(IpcMqTest, testMqSendEINVAL, Function | MediumTest | Level3)
     ASSERT_TRUE(mq_unlink(qName) == 0) << "ERROR: mq_unlink() != 0";
 }
 
-/* *
+/**
+ * @tc.name   testMqReceiveEAGAIN
  * @tc.number SUB_KERNEL_IPC_MQ_RECEIVE_0100
- * @tc.name   mq_receive function errno for EAGAIN test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(IpcMqTest, testMqReceiveEAGAIN, Function | MediumTest | Level2)
 {
@@ -365,10 +398,13 @@ HWTEST_F(IpcMqTest, testMqReceiveEAGAIN, Function | MediumTest | Level2)
     ASSERT_TRUE(mq_unlink(qName) == 0) << "ERROR: mq_unlink() != 0";
 }
 
-/* *
+/**
+ * @tc.name   testMqReceiveEBADFEMSGSIZE
  * @tc.number SUB_KERNEL_IPC_MQ_RECEIVE_0200
- * @tc.name   mq_receive function errno for EBADF and EMSGSIZE test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(IpcMqTest, testMqReceiveEBADFEMSGSIZE, Function | MediumTest | Level2)
 {
@@ -417,10 +453,13 @@ HWTEST_F(IpcMqTest, testMqReceiveEBADFEMSGSIZE, Function | MediumTest | Level2)
     ASSERT_TRUE(mq_unlink(qName) == 0) << "ERROR: mq_unlink() != 0";
 }
 
-/* *
+/**
+ * @tc.name   testMqReceiveEINVAL
  * @tc.number SUB_KERNEL_IPC_MQ_RECEIVE_0300
- * @tc.name   mq_receive function errno for EINVAL test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(IpcMqTest, testMqReceiveEINVAL, Function | MediumTest | Level3)
 {
@@ -442,10 +481,13 @@ HWTEST_F(IpcMqTest, testMqReceiveEINVAL, Function | MediumTest | Level3)
     ASSERT_TRUE(mq_unlink(qName) == 0) << "ERROR: mq_unlink() != 0";
 }
 
-/* *
+/**
+ * @tc.name   testMqTimedSendEAGAINEBADF
  * @tc.number SUB_KERNEL_IPC_MQ_TIMEDSEND_0100
- * @tc.name   mq_timedsend function errno for EAGAIN and EBADF test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(IpcMqTest, testMqTimedSendEAGAINEBADF, Function | MediumTest | Level2)
 {
@@ -492,10 +534,13 @@ HWTEST_F(IpcMqTest, testMqTimedSendEAGAINEBADF, Function | MediumTest | Level2)
     ASSERT_TRUE(mq_unlink(qName) == 0) << "ERROR: mq_unlink() != 0";
 }
 
-/* *
+/**
+ * @tc.name   testMqTimedSendEINVAL
  * @tc.number SUB_KERNEL_IPC_MQ_TIMEDSEND_0200
- * @tc.name   mq_timedsend function errno for EINVAL test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(IpcMqTest, testMqTimedSendEINVAL, Function | MediumTest | Level2)
 {
@@ -540,10 +585,13 @@ HWTEST_F(IpcMqTest, testMqTimedSendEINVAL, Function | MediumTest | Level2)
     ASSERT_TRUE(mq_unlink(qName) == 0) << "ERROR: mq_unlink() != 0";
 }
 
-/* *
+/**
+ * @tc.name   testMqTimedSendEMSGSIZE
  * @tc.number SUB_KERNEL_IPC_MQ_TIMEDSEND_0300
- * @tc.name   mq_timedsend function errno for EMSGSIZE test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(IpcMqTest, testMqTimedSendEMSGSIZE, Function | MediumTest | Level3)
 {
@@ -567,10 +615,13 @@ HWTEST_F(IpcMqTest, testMqTimedSendEMSGSIZE, Function | MediumTest | Level3)
     ASSERT_TRUE(mq_unlink(qName) == 0) << "ERROR: mq_unlink() != 0";
 }
 
-/* *
+/**
+ * @tc.name   testMqTimedSendETIMEDOUT
  * @tc.number SUB_KERNEL_IPC_MQ_TIMEDSEND_0400
- * @tc.name   mq_timedsend function errno for ETIMEDOUT test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(IpcMqTest, testMqTimedSendETIMEDOUT, Function | MediumTest | Level3)
 {
@@ -598,10 +649,13 @@ HWTEST_F(IpcMqTest, testMqTimedSendETIMEDOUT, Function | MediumTest | Level3)
     ASSERT_TRUE(mq_unlink(qName) == 0) << "ERROR: mq_unlink() != 0";
 }
 
-/* *
+/**
+ * @tc.name   testMqTimedReceiveEAGAINEBADF
  * @tc.number SUB_KERNEL_IPC_MQ_TIMEDRECEIVE_0100
- * @tc.name   mq_timedreceive function errno for EAGAIN and EBADF test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(IpcMqTest, testMqTimedReceiveEAGAINEBADF, Function | MediumTest | Level2)
 {
@@ -647,10 +701,13 @@ HWTEST_F(IpcMqTest, testMqTimedReceiveEAGAINEBADF, Function | MediumTest | Level
     ASSERT_TRUE(mq_unlink(qName) == 0) << "ERROR: mq_unlink() != 0";
 }
 
-/* *
+/**
+ * @tc.name   testMqTimedReceiveEINVAL
  * @tc.number SUB_KERNEL_IPC_MQ_TIMEDRECEIVE_0200
- * @tc.name   mq_timedreceive function errno for EINVAL test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(IpcMqTest, testMqTimedReceiveEINVAL, Function | MediumTest | Level2)
 {
@@ -698,10 +755,13 @@ HWTEST_F(IpcMqTest, testMqTimedReceiveEINVAL, Function | MediumTest | Level2)
     ASSERT_TRUE(mq_unlink(qName) == 0) << "ERROR: mq_unlink() != 0";
 }
 
-/* *
+/**
+ * @tc.name   testMqTimedReceiveETIMEDOUT
  * @tc.number SUB_KERNEL_IPC_MQ_TIMEDRECEIVE_0300
- * @tc.name   mq_timedreceive function errno for ETIMEDOUT test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(IpcMqTest, testMqTimedReceiveETIMEDOUT, Function | MediumTest | Level3)
 {
@@ -728,10 +788,13 @@ HWTEST_F(IpcMqTest, testMqTimedReceiveETIMEDOUT, Function | MediumTest | Level3)
     ASSERT_TRUE(mq_unlink(qName) == 0) << "ERROR: mq_unlink() != 0";
 }
 
-/* *
+/**
+ * @tc.name   testMqTimedReceiveEMSGSIZE
  * @tc.number SUB_KERNEL_IPC_MQ_TIMEDRECEIVE_0400
- * @tc.name   mq_timedreceive function errno for EMSGSIZE test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(IpcMqTest, testMqTimedReceiveEMSGSIZE, Function | MediumTest | Level3)
 {
@@ -757,10 +820,13 @@ HWTEST_F(IpcMqTest, testMqTimedReceiveEMSGSIZE, Function | MediumTest | Level3)
     ASSERT_TRUE(mq_unlink(qName) == 0) << "ERROR: mq_unlink() != 0";
 }
 
-/* *
+/**
+ * @tc.name   testMqUnlinkENAMETOOLONG
  * @tc.number SUB_KERNEL_IPC_MQ_UNLINK_0100
- * @tc.name   mq_unlink function errno for ENAMETOOLONG test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(IpcMqTest, testMqUnlinkENAMETOOLONG, Function | MediumTest | Level2)
 {
@@ -776,10 +842,13 @@ HWTEST_F(IpcMqTest, testMqUnlinkENAMETOOLONG, Function | MediumTest | Level2)
     ASSERT_TRUE(errno == ENAMETOOLONG) << "ERROR: errno != ENAMETOOLONG";
 }
 
-/* *
+/**
+ * @tc.name   testMqUnlinkENOENT
  * @tc.number SUB_KERNEL_IPC_MQ_UNLINK_0200
- * @tc.name   mq_unlink function errno for ENOENT test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(IpcMqTest, testMqUnlinkENOENT, Function | MediumTest | Level2)
 {
@@ -789,10 +858,13 @@ HWTEST_F(IpcMqTest, testMqUnlinkENOENT, Function | MediumTest | Level2)
     ASSERT_TRUE(errno == ENOENT) << "ERROR: errno != ENOENT";
 }
 
-/* *
+/**
+ * @tc.name   testMqUnlinkEINVAL
  * @tc.number SUB_KERNEL_IPC_MQ_UNLINK_0300
- * @tc.name   mq_unlink function errno for EINVAL test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(IpcMqTest, testMqUnlinkEINVAL, Function | MediumTest | Level3)
 {
@@ -800,10 +872,13 @@ HWTEST_F(IpcMqTest, testMqUnlinkEINVAL, Function | MediumTest | Level3)
     ASSERT_TRUE(errno == EINVAL) << "ERROR: errno != ENOENT";
 }
 
-/* *
+/**
+ * @tc.name   testMqGetAttrEBADFEINVAL
  * @tc.number SUB_KERNEL_IPC_MQ_GETATTR_0100
- * @tc.name   mq_getattr function errno for EBAD and EINVALF test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(IpcMqTest, testMqGetAttrEBADFEINVAL, Function | MediumTest | Level2)
 {
@@ -831,10 +906,13 @@ HWTEST_F(IpcMqTest, testMqGetAttrEBADFEINVAL, Function | MediumTest | Level2)
     ASSERT_TRUE(mq_unlink(qName) == 0) << "ERROR: mq_unlink() != 0";
 }
 
-/* *
+/**
+ * @tc.name   testMqSetAttrEBADFEINVAL
  * @tc.number SUB_KERNEL_IPC_MQ_SETATTR_0100
- * @tc.name   mq_receive function errno for EBADF and EINVAL test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(IpcMqTest, testMqSetAttrEBADFEINVAL, Function | MediumTest | Level2)
 {

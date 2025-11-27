@@ -45,13 +45,13 @@ export default function RichEditorEKeyboardTest() {
       console.info("RichEditorEKeyboardTest after each called");
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-    * @tc.name         RichEditorEKeyboardTest0001
-    * @tc.desic        test default
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   RichEditorEKeyboardTest0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   RichEditorEKeyboardTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RichEditorEKeyboardTest0001', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
@@ -63,13 +63,13 @@ export default function RichEditorEKeyboardTest() {
       console.info("[RichEditorEKeyboardTest0001] end");
       done();
     });
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-    * @tc.name         RichEditorEKeyboardTest0002
-    * @tc.desic        test null
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   RichEditorEKeyboardTest0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   RichEditorEKeyboardTest0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RichEditorEKeyboardTest0002', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
@@ -81,14 +81,14 @@ export default function RichEditorEKeyboardTest() {
       console.info("[RichEditorEKeyboardTest0002] end");
       done();
     });
-    /*
-   * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-   * @tc.name         RichEditorEKeyboardTest0003
-   * @tc.desic        test false
-   * @tc.size         MediumTest
-   * @tc.type         Function
-   * @tc.level        1
-    */
+    /**
+     * @tc.name   RichEditorEKeyboardTest0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   RichEditorEKeyboardTest0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('RichEditorEKeyboardTest0003', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
       console.info(' RichEditorEKeyboardTest0003 START');
@@ -99,14 +99,14 @@ export default function RichEditorEKeyboardTest() {
       console.info("[RichEditorEKeyboardTest0003] end");
       done();
     });
-    /*
-   * @tc.number       SUB_ACE_BASIC_ETS_API_0004
-   * @tc.name         RichEditorEKeyboardTest0004
-   * @tc.desic        test true
-   * @tc.size         MediumTest
-   * @tc.type         Function
-   * @tc.level        1
-    */
+    /**
+     * @tc.name   RichEditorEKeyboardTest0004
+     * @tc.number SUB_ACE_BASIC_ETS_API_0004
+     * @tc.desc   RichEditorEKeyboardTest0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('RichEditorEKeyboardTest0004', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
       console.info(' RichEditorEKeyboardTest0004 START');

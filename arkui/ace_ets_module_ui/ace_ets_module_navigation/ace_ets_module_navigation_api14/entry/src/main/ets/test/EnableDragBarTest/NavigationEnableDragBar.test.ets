@@ -49,10 +49,12 @@ export default function NavigationEnableDragBar() {
 
 
     /**
-     * @tc.number    NavigationEnableDragBar_0100
-     * @tc.name      NavigationEnableDragBar_0100
-     * @tc.desc      Test NavigationEnableDragBar
-     * @tc.level     Level 2
+     * @tc.name   NavigationEnableDragBar_0100
+     * @tc.number NavigationEnableDragBar_0100
+     * @tc.desc   Test NavigationEnableDragBar
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationEnableDragBar_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('NavigationEnableDragBar_0100 START');

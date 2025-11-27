@@ -26,67 +26,67 @@ export default function sliderMaxTest() {
       done();
     });
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_SLIDER_MAX_0100
-    * @tc.name: testSliderMax001
-    * @tc.desc: testing max value for slider with default value
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+    /**
+     * @tc.name   testSliderMax001
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_MAX_0100
+     * @tc.desc   testing max value for slider with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSliderMax001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderMax001()).assertEqual(0)
       done()
     })
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_SLIDER_MAX_0200
-    * @tc.name: testSliderMax002
-    * @tc.desc: testing max value for slider with normal value
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+    /**
+     * @tc.name   testSliderMax002
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_MAX_0200
+     * @tc.desc   testing max value for slider with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSliderMax002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderMax002()).assertEqual(0)
       done()
     })
 
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_SLIDER_MAX_0300
-    * @tc.name: testSliderMax003
-    * @tc.desc: testing max value for slider with abnormal value
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 2
-    */
+    /**
+     * @tc.name   testSliderMax003
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_MAX_0300
+     * @tc.desc   testing max value for slider with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSliderMax003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderMax003()).assertEqual(0)
       done()
     })
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_SLIDER_MAX_0400
-    * @tc.name: testSliderMax004
-    * @tc.desc: testing max value for slider with value greater than 100
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+    /**
+     * @tc.name   testSliderMax004
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_MAX_0400
+     * @tc.desc   testing max value for slider with value greater than 100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSliderMax004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderMax004()).assertEqual(0)
       done()
     })
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_SLIDER_MAX_0500
-    * @tc.name: testSliderMax005
-    * @tc.desc: testing max value for slider with zero value
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+    /**
+     * @tc.name   testSliderMax005
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_MAX_0500
+     * @tc.desc   testing max value for slider with zero value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSliderMax005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderMax005()).assertEqual(0)
       done()

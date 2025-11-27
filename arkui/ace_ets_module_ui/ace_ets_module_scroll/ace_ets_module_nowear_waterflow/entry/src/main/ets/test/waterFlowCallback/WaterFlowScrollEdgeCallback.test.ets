@@ -58,12 +58,12 @@ export default function WaterFlowScrollEdgeCallbackJsunit() {
     });
 
     /**
+     * @tc.name   WaterFlowScrollEdgeCallbackTest_0100
      * @tc.number WaterFlowScrollEdgeCallbackTest_0100
-     * @tc.name Test the properties of components
-     * @tc.desc Set attribute values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set attribute values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('WaterFlowScrollEdgeCallbackTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('WaterFlowScrollEdgeCallbackTest_0100 START');

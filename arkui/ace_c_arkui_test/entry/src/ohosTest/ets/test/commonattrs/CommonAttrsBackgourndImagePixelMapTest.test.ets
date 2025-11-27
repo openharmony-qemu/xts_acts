@@ -26,91 +26,91 @@ export default function commonAttrsBackgroundImagePixelMapTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_BACKGROUNDIMAGE_0100
-     * @tc.name       : testCommonAttrsBackgroundImagePixelMap001
-     * @tc.desc       : testing backgroundImagePixelMap for commonAttrs with valid value pixelmap,NoRepeat
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBackgroundImagePixelMap001
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_BACKGROUNDIMAGE_0100
+     * @tc.desc   testing backgroundImagePixelMap for commonAttrs with valid value pixelmap,NoRepeat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBackgroundImagePixelMap001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBackgroundImagePixelMap001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_BACKGROUNDIMAGE_0200
-     * @tc.name       : testCommonAttrsBackgroundImagePixelMap002
-     * @tc.desc       : testing backgroundImagePixelMap for commonAttrs with valid value pixelmap,X
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBackgroundImagePixelMap002
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_BACKGROUNDIMAGE_0200
+     * @tc.desc   testing backgroundImagePixelMap for commonAttrs with valid value pixelmap,X
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBackgroundImagePixelMap002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBackgroundImagePixelMap002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_BACKGROUNDIMAGE_0300
-     * @tc.name       : testCommonAttrsBackgroundImagePixelMap003
-     * @tc.desc       : testing backgroundImagePixelMap for commonAttrs with valid value pixelmap,Y
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBackgroundImagePixelMap003
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_BACKGROUNDIMAGE_0300
+     * @tc.desc   testing backgroundImagePixelMap for commonAttrs with valid value pixelmap,Y
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBackgroundImagePixelMap003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBackgroundImagePixelMap003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_BACKGROUNDIMAGE_0400
-     * @tc.name       : testCommonAttrsBackgroundImagePixelMap004
-     * @tc.desc       : testing backgroundImagePixelMap for commonAttrs with valid value pixelmap,XY
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBackgroundImagePixelMap004
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_BACKGROUNDIMAGE_0400
+     * @tc.desc   testing backgroundImagePixelMap for commonAttrs with valid value pixelmap,XY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBackgroundImagePixelMap004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBackgroundImagePixelMap004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_BACKGROUNDIMAGE_0500
-     * @tc.name       : testCommonAttrsBackgroundImagePixelMap005
-     * @tc.desc       : testing backgroundImagePixelMap for commonAttrs with invalid value pixelmap,-1
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBackgroundImagePixelMap005
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_BACKGROUNDIMAGE_0500
+     * @tc.desc   testing backgroundImagePixelMap for commonAttrs with invalid value pixelmap,-1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBackgroundImagePixelMap005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBackgroundImagePixelMap005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_BACKGROUNDIMAGE_0600
-     * @tc.name       : testCommonAttrsBackgroundImagePixelMap006
-     * @tc.desc       : testing backgroundImagePixelMap for commonAttrs with invalid value pixelmap,4
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBackgroundImagePixelMap006
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_BACKGROUNDIMAGE_0600
+     * @tc.desc   testing backgroundImagePixelMap for commonAttrs with invalid value pixelmap,4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBackgroundImagePixelMap006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBackgroundImagePixelMap006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_BACKGROUNDIMAGE_0700
-     * @tc.name       : testCommonAttrsBackgroundImagePixelMap007
-     * @tc.desc       : testing backgroundImagePixelMap for commonAttrs with invalid value nullptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBackgroundImagePixelMap007
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_BACKGROUNDIMAGE_0700
+     * @tc.desc   testing backgroundImagePixelMap for commonAttrs with invalid value nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBackgroundImagePixelMap007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBackgroundImagePixelMap007()).assertEqual(0)

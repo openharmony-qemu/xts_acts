@@ -80,9 +80,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testEllipseFillProp
-         * @tc.desc      ACE
+         * @tc.name   testEllipseFillProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testEllipseFillProp', Level.LEVEL0, async function(done) {
             console.info('testEllipseFillProp START');
@@ -110,9 +113,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testEllipseFillOpacityPropOne
-         * @tc.desc      ACE
+         * @tc.name   testEllipseFillOpacityPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testEllipseFillOpacityPropOne', Level.LEVEL0, async function(done) {
             console.info('testEllipseFillOpacityPropOne START');
@@ -142,9 +148,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testEllipseFillOpacityPropTwo
-         * @tc.desc      ACE
+         * @tc.name   testEllipseFillOpacityPropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testEllipseFillOpacityPropTwo', Level.LEVEL0, async function(done) {
             console.info('testEllipseFillOpacityPropTwo START');
@@ -174,9 +183,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testEllipseFillOpacityPropThree
-         * @tc.desc      ACE
+         * @tc.name   testEllipseFillOpacityPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testEllipseFillOpacityPropThree', Level.LEVEL0, async function(done) {
             console.info('testEllipseFillOpacityPropThree START');
@@ -206,9 +218,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testEllipseFillRulePropOne
-         * @tc.desc      ACE
+         * @tc.name   testEllipseFillRulePropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testEllipseFillRulePropOne', Level.LEVEL0, async function(done) {
             console.info('testEllipseFillRulePropOne START');
@@ -238,9 +253,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testEllipseFillRulePropTwo
-         * @tc.desc      ACE
+         * @tc.name   testEllipseFillRulePropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testEllipseFillRulePropTwo', Level.LEVEL0, async function(done) {
             console.info('testEllipseFillRulePropTwo START');
@@ -270,9 +288,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testEllipseOpacityPropOne
-         * @tc.desc      ACE
+         * @tc.name   testEllipseOpacityPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testEllipseOpacityPropOne', Level.LEVEL0, async function(done) {
             console.info('testEllipseOpacityPropOne START');
@@ -300,9 +321,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testEllipseOpacityPropTwo
-         * @tc.desc      ACE
+         * @tc.name   testEllipseOpacityPropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testEllipseOpacityPropTwo', Level.LEVEL0, async function(done) {
             console.info('testEllipseOpacityPropTwo START');
@@ -330,9 +354,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testEllipseOpacityPropThree
-         * @tc.desc      ACE
+         * @tc.name   testEllipseOpacityPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testEllipseOpacityPropThree', Level.LEVEL0, async function(done) {
             console.info('testEllipseOpacityPropThree START');
@@ -360,9 +387,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testEllipseStrokeProp
-         * @tc.desc      ACE
+         * @tc.name   testEllipseStrokeProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testEllipseStrokeProp', Level.LEVEL0, async function(done) {
             console.info('testEllipseStrokeProp START');
@@ -390,9 +420,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testEllipseStrokeDashArrayProp
-         * @tc.desc      ACE
+         * @tc.name   testEllipseStrokeDashArrayProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testEllipseStrokeDashArrayProp', Level.LEVEL0, async function(done) {
             console.info('testEllipseStrokeDashArrayProp START');
@@ -422,9 +455,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testEllipseStrokeDashOffsetProp
-         * @tc.desc      ACE
+         * @tc.name   testEllipseStrokeDashOffsetProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testEllipseStrokeDashOffsetProp', Level.LEVEL0, async function(done) {
             console.info('testEllipseStrokeDashOffsetProp START');
@@ -455,9 +491,12 @@ export default function undo() {
 
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testEllipseStrokeLineJoinPropOne
-         * @tc.desc      ACE
+         * @tc.name   testEllipseStrokeLineJoinPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testEllipseStrokeLineJoinPropOne', Level.LEVEL0, async function(done) {
             console.info('testEllipseStrokeLineJoinPropOne START');
@@ -487,9 +526,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testEllipseStrokeLineJoinPropTwo
-         * @tc.desc      ACE
+         * @tc.name   testEllipseStrokeLineJoinPropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testEllipseStrokeLineJoinPropTwo', Level.LEVEL0, async function(done) {
             console.info('testEllipseStrokeLineJoinPropTwo START');
@@ -519,9 +561,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testEllipseStrokeLineJoinPropThree
-         * @tc.desc      ACE
+         * @tc.name   testEllipseStrokeLineJoinPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testEllipseStrokeLineJoinPropThree', Level.LEVEL0, async function(done) {
             console.info('testEllipseStrokeLineJoinPropThree START');
@@ -551,9 +596,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testEllipseStrokeLineJoinPropOne
-         * @tc.desc      ACE
+         * @tc.name   testEllipseStrokeLineCapPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testEllipseStrokeLineCapPropOne', Level.LEVEL0, async function(done) {
             console.info('testEllipseStrokeLineCapPropOne START');
@@ -583,9 +631,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testEllipseStrokeLineCapPropTwo
-         * @tc.desc      ACE
+         * @tc.name   testEllipseStrokeLineCapPropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testEllipseStrokeLineCapPropTwo', Level.LEVEL0, async function(done) {
             console.info('testEllipseStrokeLineCapPropTwo START');
@@ -615,9 +666,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testEllipseStrokeLineCapPropThree
-         * @tc.desc      ACE
+         * @tc.name   testEllipseStrokeLineCapPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testEllipseStrokeLineCapPropThree', Level.LEVEL0, async function(done) {
             console.info('testEllipseStrokeLineCapPropThree START');
@@ -647,9 +701,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testEllipseStrokeMiterLimitProp
-         * @tc.desc      ACE
+         * @tc.name   testEllipseStrokeMiterLimitProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testEllipseStrokeMiterLimitProp', Level.LEVEL0, async function(done) {
             console.info('testEllipseStrokeMiterLimitProp START');
@@ -679,9 +736,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testEllipseStrokeOpacityPropOne
-         * @tc.desc      ACE
+         * @tc.name   testEllipseStrokeOpacityPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testEllipseStrokeOpacityPropOne', Level.LEVEL0, async function(done) {
             console.info('testEllipseStrokeOpacityPropOne START');
@@ -711,9 +771,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testEllipseStrokeOpacityPropTwo
-         * @tc.desc      ACE
+         * @tc.name   testEllipseStrokeOpacityPropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testEllipseStrokeOpacityPropTwo', Level.LEVEL0, async function(done) {
             console.info('testEllipseStrokeOpacityPropTwo START');
@@ -743,9 +806,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testEllipseStrokeOpacityPropThree
-         * @tc.desc      ACE
+         * @tc.name   testEllipseStrokeOpacityPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testEllipseStrokeOpacityPropThree', Level.LEVEL0, async function(done) {
             console.info('testEllipseStrokeOpacityPropThree START');
@@ -775,9 +841,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testEllipseStrokeWidthProp
-         * @tc.desc      ACE
+         * @tc.name   testEllipseStrokeWidthProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testEllipseStrokeWidthProp', Level.LEVEL0, async function(done) {
             console.info('testEllipseStrokeWidthProp START');
@@ -807,9 +876,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testEllipseTransformProp
-         * @tc.desc      ACE
+         * @tc.name   testEllipseTransformProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testEllipseTransformProp', Level.LEVEL0, async function(done) {
             console.info('testEllipseTransformProp START');
@@ -837,9 +909,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testEllipseIdProp
-         * @tc.desc      ACE
+         * @tc.name   testEllipseIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testEllipseIdProp', Level.LEVEL0, async function(done) {
             console.info('testEllipseIdProp START');
@@ -865,9 +940,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testEllipseCxPropOne
-         * @tc.desc      ACE
+         * @tc.name   testEllipseCxPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testEllipseCxPropOne', Level.LEVEL0, async function(done) {
             console.info('testEllipseCxPropOne START');
@@ -895,9 +973,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testEllipseCxPropTwo
-         * @tc.desc      ACE
+         * @tc.name   testEllipseCxPropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testEllipseCxPropTwo', Level.LEVEL0, async function(done) {
             console.info('testEllipseCxPropTwo START');
@@ -925,9 +1006,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testEllipseCyPropOne
-         * @tc.desc      ACE
+         * @tc.name   testEllipseCyPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testEllipseCyPropOne', Level.LEVEL0, async function(done) {
             console.info('testEllipseCyPropOne START');
@@ -955,9 +1039,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testEllipseCyPropTwo
-         * @tc.desc      ACE
+         * @tc.name   testEllipseCyPropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testEllipseCyPropTwo', Level.LEVEL0, async function(done) {
             console.info('testEllipseCyPropTwo START');
@@ -985,9 +1072,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testEllipseRxPropOne
-         * @tc.desc      ACE
+         * @tc.name   testEllipseRxPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testEllipseRxPropOne', Level.LEVEL0, async function(done) {
             console.info('testEllipseRxPropOne START');
@@ -1015,9 +1105,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testEllipseRxPropTwo
-         * @tc.desc      ACE
+         * @tc.name   testEllipseRxPropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testEllipseRxPropTwo', Level.LEVEL0, async function(done) {
             console.info('testEllipseRxPropTwo START');
@@ -1045,9 +1138,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testEllipseRyPropOne
-         * @tc.desc      ACE
+         * @tc.name   testEllipseRyPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testEllipseRyPropOne', Level.LEVEL0, async function(done) {
             console.info('testEllipseRyPropOne START');
@@ -1075,9 +1171,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testEllipseRyPropTwo
-         * @tc.desc      ACE
+         * @tc.name   testEllipseRyPropTwo
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testEllipseRyPropTwo', Level.LEVEL0, async function(done) {
             console.info('testEllipseRyPropTwo START');

@@ -36,12 +36,12 @@ export default function alertDialogBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    alertDialogBlurStyleOptions_0100
-     * @tc.name      alertDialogBlurStyleOptions_0100
-     * @tc.desc      createAlertDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   alertDialogBlurStyleOptions_0100
+     * @tc.number alertDialogBlurStyleOptions_0100
+     * @tc.desc   createAlertDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('alertDialogBlurStyleOptions_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tagName = 'alertDialogBlurStyleOptions';
@@ -78,12 +78,12 @@ export default function alertDialogBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    alertDialogBlurStyleOptions_0200
-     * @tc.name      alertDialogBlurStyleOptions_0200
-     * @tc.desc      createAlertDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   alertDialogBlurStyleOptions_0200
+     * @tc.number alertDialogBlurStyleOptions_0200
+     * @tc.desc   createAlertDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('alertDialogBlurStyleOptions_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tagName = 'alertDialogBlurStyleOptions_0200';
@@ -110,12 +110,12 @@ export default function alertDialogBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    alertDialogBlurStyleOptions_0300
-     * @tc.name      alertDialogBlurStyleOptions_0300
-     * @tc.desc      createAlertDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   alertDialogBlurStyleOptions_0300
+     * @tc.number alertDialogBlurStyleOptions_0300
+     * @tc.desc   createAlertDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('alertDialogBlurStyleOptions_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tagName = 'alertDialogBlurStyleOptions_0300';

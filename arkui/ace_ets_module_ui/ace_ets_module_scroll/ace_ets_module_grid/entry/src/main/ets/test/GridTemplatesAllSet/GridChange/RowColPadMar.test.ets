@@ -46,12 +46,12 @@ export default function RowColPadMar() {
       console.info("Grid_RowCol_PadMar after each called")
     });
     /**
+     * @tc.name   testGridRowColGridPad
      * @tc.number SUB_ACE_GRID_GRIDTEMPLATESALLSET_GRIDCHANGE_0300
-     * @tc.name testGridRowColGridPad
-     * @tc.desc Add padding,Grid is divided into 4 equal parts, 4 components
-     * @tc.level Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Add padding,Grid is divided into 4 equal parts, 4 components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridRowColGridPad',  Level.LEVEL0, async (done: Function) => {
       console.info('[testGridRowColGridPad] START');
@@ -109,12 +109,12 @@ export default function RowColPadMar() {
       done();
     });
     /**
+     * @tc.name   testGridRowColGridMargin
      * @tc.number SUB_ACE_GRID_GRIDTEMPLATESALLSET_GRIDCHANGE_0400
-     * @tc.name testGridRowColGridMargin
-     * @tc.desc Add margin,Grid is divided into 4 equal parts, 4 components
-     * @tc.level Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Add margin,Grid is divided into 4 equal parts, 4 components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridRowColGridMargin',  Level.LEVEL0, async (done: Function) => {
       console.info('[testGridRowColGridMargin] START');
@@ -170,12 +170,12 @@ export default function RowColPadMar() {
       done();
     });
     /**
+     * @tc.name   testGridRowColGridPadMar
      * @tc.number SUB_ACE_GRID_GRIDTEMPLATESALLSET_GRIDCHANGE_0500
-     * @tc.name testGridRowColGridPadMar
-     * @tc.desc Add padding and margin,Grid is divided into 4 equal parts, 4 components
-     * @tc.level Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Add padding and margin,Grid is divided into 4 equal parts, 4 components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridRowColGridPadMar',  Level.LEVEL0, async (done: Function) => {
       console.info('[testGridRowColGridPadMar] START');

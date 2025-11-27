@@ -90,12 +90,12 @@ export default function globalShortcutKeyTest3() {
     });
 
     /**
-     * @tc.number
-     * @tc.name      SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0080
-     * @tc.desc      simulate the keyboard operate “CTRL + C”
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0080
+     * @tc.number SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0080
+     * @tc.desc   simulate the keyboard operate “CTRL + C”
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0080', Level.LEVEL0, async (done: Function) => {
       let keyStrings: (string | FunctionKey)[] = ["C", "A", "Z", "Y", "V",FunctionKey.ESC, FunctionKey.F1, FunctionKey.F2,

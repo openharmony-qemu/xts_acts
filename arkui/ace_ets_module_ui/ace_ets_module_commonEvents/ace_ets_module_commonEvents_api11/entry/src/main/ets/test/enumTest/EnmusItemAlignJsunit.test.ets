@@ -55,6 +55,14 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       console.info('[ afterEach ] ===================enumsFlexItemTest test after each called===================');
     });
 
+    /**
+     * @tc.name   enumsItemAlignTest_0100
+     * @tc.number enumsItemAlignTest_0100
+     * @tc.desc   enumsItemAlignTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('enumsItemAlignTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('enumsItemAlignTest_0100 START');
       await Utils.sleep(1000);

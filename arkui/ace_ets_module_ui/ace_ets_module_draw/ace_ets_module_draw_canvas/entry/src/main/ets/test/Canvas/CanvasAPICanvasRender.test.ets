@@ -41,12 +41,12 @@ export default function CanvasAPICanvasRenderTest() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_ArkUI_Canvas_API_CanvasRender_0100
-     * @tc.name: ArkUI_Canvas_API_CanvasRender_0100
-     * @tc.desc: CanvasAPI 
-     * @tc.level: Level 0
-     * @tc.type : Canvas
-     * @tc.size : CanvasTest
+     * @tc.name   ArkUI_Canvas_API_CanvasRender_0100
+     * @tc.number SUB_ARKUI_API_ArkUI_Canvas_API_CanvasRender_0100
+     * @tc.desc   CanvasAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Canvas_API_CanvasRender_0100', Level.LEVEL0, async (done: Function) => {
       let CASE: string = 'ArkUI_Canvas_API_CanvasRender_0100'

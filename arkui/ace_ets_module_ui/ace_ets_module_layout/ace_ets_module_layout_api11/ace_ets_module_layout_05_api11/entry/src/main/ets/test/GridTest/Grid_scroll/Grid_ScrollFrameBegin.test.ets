@@ -56,9 +56,12 @@ export default function Grid_ScrollFrameBegin() {
 
 
     /**
+     * @tc.name   Grid_ScrollFrameBegin_0100
      * @tc.number SUB_ACE_Grid_ScrollFrameBegin_0100
-     * @tc.name testGrid
-     * @tc.desc Grid using scroller scrolling will not trigger the onScrollFrameBegin event
+     * @tc.desc   Grid using scroller scrolling will not trigger the onScrollFrameBegin event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Grid_ScrollFrameBegin_0100',  Level.LEVEL0, async (done: Function) => {
 
@@ -78,9 +81,12 @@ export default function Grid_ScrollFrameBegin() {
     });
 
     /**
+     * @tc.name   Grid_ScrollFrameBegin_0200
      * @tc.number SUB_ACE_Grid_ScrollFrameBegin_0200
-     * @tc.name testGrid
-     * @tc.desc Grid sliding triggers the onScrollFrameBegin event
+     * @tc.desc   Grid sliding triggers the onScrollFrameBegin event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Grid_ScrollFrameBegin_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[Grid_ScrollFrameBegin_0200] START');
@@ -104,9 +110,12 @@ export default function Grid_ScrollFrameBegin() {
     });
 
     /**
+     * @tc.name   Grid_ScrollFrameBegin_0300
      * @tc.number SUB_ACE_Grid_ScrollFrameBegin_0300
-     * @tc.name testGrid
-     * @tc.desc Grid quick sliding triggers onScrollFrameBegin event
+     * @tc.desc   Grid quick sliding triggers onScrollFrameBegin event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Grid_ScrollFrameBegin_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('[Grid_ScrollFrameBegin_0300] START');

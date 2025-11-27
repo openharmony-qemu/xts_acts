@@ -43,13 +43,13 @@ export default function SelectJsunit01() {
       done();
     });
 
-    /**
-    * @tc.number    SelectJsunit_0010
-    * @tc.name      SelectJsunit_0010
-    * @tc.desc      set SelectJsunit_0010
-    * @tc.level:    Level 0
-    * @tc.type :
-    * @tc.size :
+   /**
+    * @tc.name   SelectJsunit_0010
+    * @tc.number SelectJsunit_0010
+    * @tc.desc   set SelectJsunit_0010
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
     */
    it('SelectJsunit_0010', Level.LEVEL0, async (done: Function) => {
       // Illegal modification of properties of component select

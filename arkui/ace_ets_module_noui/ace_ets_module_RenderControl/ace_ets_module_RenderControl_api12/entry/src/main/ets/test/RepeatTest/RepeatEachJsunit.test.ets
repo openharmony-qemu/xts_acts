@@ -52,13 +52,13 @@ export default function RepeatEachJsunit() {
     });
 
     /**
-    * @tc.number SUB_ACE_SWIPER_RepeatEachJsunit_0100
-    * @tc.name RepeatEachJsunit_0100
-    * @tc.desc The Repeat component modifies the value of the third array item.
-    * @tc.level Level 2
-    * @tc.type
-    * @tc.size 
-    */
+     * @tc.name   RepeatEachJsunit_0100
+     * @tc.number SUB_ACE_SWIPER_RepeatEachJsunit_0100
+     * @tc.desc   The Repeat component modifies the value of the third array item.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('RepeatEachJsunit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('RepeatEachJsunit_0100 START');
       await CommonFunc.sleep(1000);
@@ -79,13 +79,13 @@ export default function RepeatEachJsunit() {
     });
 
     /**
-    * @tc.number SUB_ACE_SWIPER_RepeatEachJsunit_0200
-    * @tc.name RepeatEachJsunit_0200
-    * @tc.desc  Click to add value.
-    * @tc.level Level 2
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   RepeatEachJsunit_0200
+     * @tc.number SUB_ACE_SWIPER_RepeatEachJsunit_0200
+     * @tc.desc   Click to add value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('RepeatEachJsunit_0200', Level.LEVEL0, async (done: Function) => {
       console.info('RepeatEachJsunit_0200 START');
       let driver = await Driver.create()
@@ -104,13 +104,13 @@ export default function RepeatEachJsunit() {
     });
 	
     /**
-    * @tc.number SUB_ACE_SWIPER_RepeatEachJsunit_0300
-    * @tc.name RepeatEachJsunit_0300
-    * @tc.desc Swap array items.
-    * @tc.level Level 2
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   RepeatEachJsunit_0300
+     * @tc.number SUB_ACE_SWIPER_RepeatEachJsunit_0300
+     * @tc.desc   Swap array items.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('RepeatEachJsunit_0300', Level.LEVEL0, async (done: Function) => {
       console.info('RepeatEachJsunit_0300 START');
       let driver = await Driver.create()
@@ -129,13 +129,13 @@ export default function RepeatEachJsunit() {
     });
 	
     /**
-    * @tc.number SUB_ACE_SWIPER_RepeatEachJsunit_0400
-    * @tc.name RepeatEachJsunit_0400
-    * @tc.desc Click to delete the value of the third array item.
-    * @tc.level Level 2
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   RepeatEachJsunit_0400
+     * @tc.number SUB_ACE_SWIPER_RepeatEachJsunit_0400
+     * @tc.desc   Click to delete the value of the third array item.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('RepeatEachJsunit_0400', Level.LEVEL0, async (done: Function) => {
       console.info('RepeatEachJsunit_0400 START');
       let driver = await Driver.create()
@@ -154,13 +154,13 @@ export default function RepeatEachJsunit() {
     });
 	
     /**
-    * @tc.number SUB_ACE_SWIPER_RepeatEachJsunit_0500
-    * @tc.name RepeatEachJsunit_0500
-    * @tc.desc Click to add data and delete values.
-    * @tc.level Level 2
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   RepeatEachJsunit_0500
+     * @tc.number SUB_ACE_SWIPER_RepeatEachJsunit_0500
+     * @tc.desc   Click to add data and delete values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('RepeatEachJsunit_0500', Level.LEVEL0, async (done: Function) => {
       console.info('RepeatEachJsunit_0500 START');
       let driver = await Driver.create()
@@ -186,13 +186,13 @@ export default function RepeatEachJsunit() {
     });
 	
     /**
-    * @tc.number SUB_ACE_SWIPER_RepeatEachJsunit_0600
-    * @tc.name RepeatEachJsunit_0600
-    * @tc.desc Click to add two data items and delete the second value.
-    * @tc.level Level 2
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   RepeatEachJsunit_0600
+     * @tc.number SUB_ACE_SWIPER_RepeatEachJsunit_0600
+     * @tc.desc   Click to add two data items and delete the second value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('RepeatEachJsunit_0600', Level.LEVEL0, async (done: Function) => {
       console.info('RepeatEachJsunit_0600 START');
       let driver = await Driver.create()

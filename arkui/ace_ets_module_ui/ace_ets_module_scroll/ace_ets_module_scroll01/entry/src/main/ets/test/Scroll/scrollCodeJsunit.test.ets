@@ -44,13 +44,13 @@ export default function scrollCodeJsunit() {
       console.info("ScrollCode after each called");
     });
 
-    /* *
-     * @tc.number: test_scrollCode_001
-     * @tc.name  : test_scrollCode_001
-     * @tc.desc  : Test the scrollCode.
-     * @tc.level : Level 1
-     * @tc.type  :
-     * @tc.size  :
+    /**
+     * @tc.name   test_scrollCode_001
+     * @tc.number test_scrollCode_001
+     * @tc.desc   Test the scrollCode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_scrollCode_001', Level.LEVEL1, async (done: Function) => {
       console.info('[test_scrollCode_001] START');
@@ -66,13 +66,13 @@ export default function scrollCodeJsunit() {
       done();
     });
 
-    /* *
-     * @tc.number: test_scrollCode_002
-     * @tc.name  : test_scrollCode_002
-     * @tc.desc  : Test the scrollCode.
-     * @tc.level : Level 1
-     * @tc.type  :
-     * @tc.size  :
+    /**
+     * @tc.name   test_scrollCode_002
+     * @tc.number test_scrollCode_002
+     * @tc.desc   Test the scrollCode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_scrollCode_002', Level.LEVEL1, async (done: Function) => {
       console.info('[test_scrollCode_002] START');
@@ -100,13 +100,13 @@ export default function scrollCodeJsunit() {
       done();
     });
 
-    /* *
-     * @tc.number: test_scrollCode_003
-     * @tc.name  : test_scrollCode_003
-     * @tc.desc  : Test the scrollCode.
-     * @tc.level : Level 1
-     * @tc.type  :
-     * @tc.size  :
+    /**
+     * @tc.name   test_scrollCode_003
+     * @tc.number test_scrollCode_003
+     * @tc.desc   Test the scrollCode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_scrollCode_003', Level.LEVEL1, async (done: Function) => {
       console.info('[test_scrollCode_003] START');
@@ -134,13 +134,13 @@ export default function scrollCodeJsunit() {
       done();
     });
 
-    /* *
-     * @tc.number: test_scrollCode_004
-     * @tc.name  : test_scrollCode_004
-     * @tc.desc  : Test the scrollCode.
-     * @tc.level : Level 1
-     * @tc.type  :
-     * @tc.size  :
+    /**
+     * @tc.name   test_scrollCode_004
+     * @tc.number test_scrollCode_004
+     * @tc.desc   Test the scrollCode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_scrollCode_004', Level.LEVEL1, async (done: Function) => {
       console.info('[test_scrollCode_004] START');
@@ -168,13 +168,13 @@ export default function scrollCodeJsunit() {
       done();
     });
 
-    /* *
-     * @tc.number: test_scrollCode_005
-     * @tc.name  : test_scrollCode_005
-     * @tc.desc  : Test the scrollCode.
-     * @tc.level : Level 1
-     * @tc.type  :
-     * @tc.size  :
+    /**
+     * @tc.name   test_scrollCode_005
+     * @tc.number test_scrollCode_005
+     * @tc.desc   Test the scrollCode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_scrollCode_005', Level.LEVEL1, async (done: Function) => {
       console.info('[test_scrollCode_005] START');
@@ -202,13 +202,13 @@ export default function scrollCodeJsunit() {
       done();
     });
 
-    /* *
-     * @tc.number: test_scrollCode_006
-     * @tc.name  : test_scrollCode_006
-     * @tc.desc  : Test the scrollCode.
-     * @tc.level : Level 1
-     * @tc.type  :
-     * @tc.size  :
+    /**
+     * @tc.name   test_scrollCode_006
+     * @tc.number test_scrollCode_006
+     * @tc.desc   Test the scrollCode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_scrollCode_006', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(1000)

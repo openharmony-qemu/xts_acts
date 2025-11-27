@@ -40,7 +40,6 @@ import getAttachedFrameNodeById from './FrameNodeTest/getAttachedFrameNodeById.t
 import getAttrsTest from './FrameNodeTest/getAttrs.test';
 import getPosition from './FrameNodeTest/getPosition.test';
 import onAppear from './FrameNodeTest/onAppear.test';
-import RELOAD from './FrameNodeTest/RELOAD.test';
 import setLayout from './FrameNodeTest/setLayout.test';
 import setMeasureSizeTest from './FrameNodeTest/setMeasureSize.test';
 
@@ -79,6 +78,9 @@ import GetFrameNodeNullTest from './FrameNodeNewTest/GetFrameNodeNullTest.test';
 import GetFrameNodeMethodNullTest from './FrameNodeNewTest/GetFrameNodeMethodNullTest.test';
 
 import frameNodeApi from './FrameNodeTest/frameNodeApi.test';
+import convertPoint from './FrameNodeNewTest/convertPoint.test';
+import convertPointError24 from './FrameNodeNewTest/convertPointError24.test';
+import convertPointError25 from './FrameNodeNewTest/convertPointError25.test';
 
 export default function testsuite() {
   APIdisposeTreeTest();
@@ -109,7 +111,6 @@ export default function testsuite() {
   getAttrsTest();
   getPosition();
   onAppear();
-  RELOAD();
   setLayout();
   setMeasureSizeTest();
   frameNodeIsVisibleTest();
@@ -147,4 +148,7 @@ export default function testsuite() {
   GetFrameNodeMethodNullTest();
 
   frameNodeApi();
+  convertPoint();
+  convertPointError24();
+  convertPointError25();
 }

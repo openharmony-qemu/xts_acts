@@ -54,10 +54,13 @@ namespace OHOS {
     }
 
 /**
- * @tc.number    : ActsZlibTest_0100
- * @tc.name      : Test uv_version and uv_version_string test
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   TestLibuvTestUVVersion
+ * @tc.number ActsZlibTest_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(ActsLibuvTest, TestLibuvTestUVVersion, Function | MediumTest | Level2)
 {
     int version = uv_version();
@@ -76,10 +79,13 @@ HWTEST_F(ActsLibuvTest, TestLibuvTestUVVersion, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : ActsZlibTest_0200
- * @tc.name      : Test uv_loop_new
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   TestLibuvTestLoop
+ * @tc.number ActsZlibTest_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(ActsLibuvTest, TestLibuvTestLoop, Function | MediumTest | Level2)
 {
     uv_loop_t* newLoop;
@@ -89,12 +95,15 @@ HWTEST_F(ActsLibuvTest, TestLibuvTestLoop, Function | MediumTest | Level2)
     ASSERT_TRUE(true);
 }
 
-/**
- * @tc.number    : ActsZlibTest_0300
- * @tc.name      : Test uv_err_name_r
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
 
+/**
+ * @tc.name   TestLibuvTestErrName
+ * @tc.number TestLibuvTestErrName
+ * @tc.desc   TestLibuvTestErrName
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(ActsLibuvTest, TestLibuvTestErrName, Function | MediumTest | Level2)
 {
     int err = 0;
@@ -106,10 +115,13 @@ HWTEST_F(ActsLibuvTest, TestLibuvTestErrName, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : ActsZlibTest_0400
- * @tc.name      : Test uv_req_get_data and  uv_req_set_data and uv_req_get_type
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   TestLibuvTestReqGetData
+ * @tc.number ActsZlibTest_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(ActsLibuvTest, TestLibuvTestReqGetData, Function | MediumTest | Level2)
 {
     float f = 5.5f;
@@ -128,10 +140,13 @@ HWTEST_F(ActsLibuvTest, TestLibuvTestReqGetData, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : ActsZlibTest_0500
- * @tc.name      : Test uv_print_all_handles and uv_print_active_handles
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   TestLibuvTestPrintHandles
+ * @tc.number ActsZlibTest_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(ActsLibuvTest, TestLibuvTestPrintHandles, Function | MediumTest | Level2)
 {
     uv_loop_t* loop = nullptr;
@@ -142,10 +157,13 @@ HWTEST_F(ActsLibuvTest, TestLibuvTestPrintHandles, Function | MediumTest | Level
 }
 
 /**
- * @tc.number    : ActsZlibTest_0600
- * @tc.name      : Test uv_udp_get_send_queue_size and uv_udp_get_send_queue_count
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   TestLibuvTestUpdSendQueue
+ * @tc.number ActsZlibTest_0600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(ActsLibuvTest, TestLibuvTestUpdSendQueue, Function | MediumTest | Level2)
 {
     size_t size, sizeC;
@@ -160,10 +178,13 @@ HWTEST_F(ActsLibuvTest, TestLibuvTestUpdSendQueue, Function | MediumTest | Level
 }
 
 /**
- * @tc.number    : ActsZlibTest_0700
- * @tc.name      : Test uv_fs_lchown
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   TestLibuvTestFsLchown
+ * @tc.number ActsZlibTest_0700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(ActsLibuvTest, TestLibuvTestFsLchown, Function | MediumTest | Level2)
 {
     int retC;
@@ -177,10 +198,13 @@ HWTEST_F(ActsLibuvTest, TestLibuvTestFsLchown, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : ActsZlibTest_0800
- * @tc.name      : Test uv_disable_stdio_inheritance
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   TestLibuvTestDisableStdioInheritance
+ * @tc.number ActsZlibTest_0800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(ActsLibuvTest, TestLibuvTestDisableStdioInheritance, Function | MediumTest | Level2)
 {
     uv_disable_stdio_inheritance();
@@ -188,9 +212,12 @@ HWTEST_F(ActsLibuvTest, TestLibuvTestDisableStdioInheritance, Function | MediumT
 }
 
 /**
- * @tc.number    : ActsZlibTest_0900
- * @tc.name      : Test uv_dlsym
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   TestLibuvTestDlsym
+ * @tc.number ActsZlibTest_0900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsLibuvTest, TestLibuvTestDlsym, Function | MediumTest | Level2) {
     int argc = 3;
@@ -208,10 +235,13 @@ HWTEST_F(ActsLibuvTest, TestLibuvTestDlsym, Function | MediumTest | Level2) {
 }
 
 /**
- * @tc.number    : ActsZlibTest_1000
- * @tc.name      : Test uv_once
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   TestLibuvTestUvOnce
+ * @tc.number ActsZlibTest_1000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(ActsLibuvTest, TestLibuvTestUvOnce, Function | MediumTest | Level2)
 {
     uv_once(&once_only, Increment);

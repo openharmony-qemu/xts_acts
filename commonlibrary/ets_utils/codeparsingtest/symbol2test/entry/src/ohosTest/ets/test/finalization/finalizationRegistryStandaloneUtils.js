@@ -419,11 +419,12 @@ export const FinalizationRegistryTestUtils = {
         let registerSuccess = false;
 
         try {
-            registry.register(target, "held-value");
+            registry.register(target, "held-value", target);
             registerSuccess = true;
 
             const isUnregisterFunction = typeof registry.unregister === "function";
             if (!isUnregisterFunction) throw new Error("unregister method lost");
+			registry.unregister(target);
         } catch (e) {
             registerSuccess = false;
         }

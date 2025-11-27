@@ -31,12 +31,6 @@ osThreadId_t g_puwTaskID01;
 osThreadId_t g_puwTaskID02;
 osPriority_t g_threadPriority;
 
-/**
- * @tc.desc      : register a test suite, this suite is used to test basic flow and interface dependency
- * @param        : subsystem name is utils
- * @param        : module name is utilsFile
- * @param        : test suit name is CmsisTaskFuncTestSuite
- */
 LITE_TEST_SUIT(Cmsis, Cmsistask, CmsisTaskFuncTestSuite);
 
 /**
@@ -415,9 +409,12 @@ static void CmsisOSKernelLockFunc002(void const *argument)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_0040
- * @tc.name      : thread operation for creat fail with invalid parameter
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadNew001
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_0040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew001, Function | MediumTest | Level1)
 {
@@ -443,9 +440,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew001, Function | MediumTest
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_0080
- * @tc.name      : thread operation for creat success
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadNew002
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_0080
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew002, Function | MediumTest | Level1)
 {
@@ -473,9 +473,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew002, Function | MediumTest
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_0120
- * @tc.name      : thread operation for delay scheduler
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadNew003
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_0120
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew003, Function | MediumTest | Level1)
 {
@@ -508,9 +511,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew003, Function | MediumTest
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_0160
- * @tc.name      : thread operation for nesting schedule
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadNew004
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_0160
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew004, Function | MediumTest | Level1)
 {
@@ -531,9 +537,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew004, Function | MediumTest
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_0200
- * @tc.name      : thread operation for cycle schedule
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadNew005
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew005, Function | MediumTest | Level1)
 {
@@ -560,9 +569,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew005, Function | MediumTest
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_0240
- * @tc.name      : thread operation for creat fail when priority = osPriorityNone
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadNew006
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_0240
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew006, Function | MediumTest | Level1)
 {
@@ -581,9 +593,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew006, Function | MediumTest
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_0280
- * @tc.name      : thread operation for creat fail when priority = osPriorityIdle
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadNew007
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_0280
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew007, Function | MediumTest | Level1)
 {
@@ -602,9 +617,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew007, Function | MediumTest
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_0320
- * @tc.name      : thread operation for creat fail when priority = osPriorityLow
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadNew008
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_0320
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew008, Function | MediumTest | Level1)
 {
@@ -623,9 +641,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew008, Function | MediumTest
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_0360
- * @tc.name      : thread operation for creat success when priority = osPriorityLow1
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadNew009
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_0360
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew009, Function | MediumTest | Level1)
 {
@@ -646,9 +667,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew009, Function | MediumTest
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_0400
- * @tc.name      : thread operation for creat success when priority = osPriorityLow7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadNew010
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew010, Function | MediumTest | Level1)
 {
@@ -669,9 +693,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew010, Function | MediumTest
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_0440
- * @tc.name      : thread operation for creat success when priority = osPriorityBelowNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadNew011
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_0440
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew011, Function | MediumTest | Level1)
 {
@@ -692,9 +719,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew011, Function | MediumTest
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_0480
- * @tc.name      : thread operation for creat success when priority = osPriorityBelowNormal7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadNew012
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_0480
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew012, Function | MediumTest | Level1)
 {
@@ -715,9 +745,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew012, Function | MediumTest
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_0520
- * @tc.name      : thread operation for creat success when priority = osPriorityNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadNew013
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_0520
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew013, Function | MediumTest | Level1)
 {
@@ -738,9 +771,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew013, Function | MediumTest
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_0560
- * @tc.name      : thread operation for creat success when priority = osPriorityNormal7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadNew014
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_0560
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew014, Function | MediumTest | Level1)
 {
@@ -761,9 +797,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew014, Function | MediumTest
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_0600
- * @tc.name      : thread operation for creat success when priority = osPriorityAboveNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadNew015
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_0600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew015, Function | MediumTest | Level1)
 {
@@ -784,9 +823,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew015, Function | MediumTest
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_0640
- * @tc.name      : thread operation for creat success when priority = osPriorityAboveNormal6
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadNew016
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_0640
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew016, Function | MediumTest | Level1)
 {
@@ -807,9 +849,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew016, Function | MediumTest
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_0680
- * @tc.name      : thread operation for creat fail when priority = osPriorityAboveNormal7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadNew017
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_0680
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew017, Function | MediumTest | Level1)
 {
@@ -828,9 +873,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew017, Function | MediumTest
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_0720
- * @tc.name      : thread operation for creat fail when priority = osPriorityHigh
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadNew018
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_0720
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew018, Function | MediumTest | Level1)
 {
@@ -849,9 +897,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew018, Function | MediumTest
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_0760
- * @tc.name      : thread operation for creat fail when priority = osPriorityHigh7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadNew019
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_0760
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew019, Function | MediumTest | Level1)
 {
@@ -870,9 +921,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew019, Function | MediumTest
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_0800
- * @tc.name      : thread operation for creat fail when priority = osPriorityRealtime
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadNew020
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_0800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew020, Function | MediumTest | Level1)
 {
@@ -892,9 +946,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew020, Function | MediumTest
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_0840
- * @tc.name      : thread operation for creat fail when priority = osPriorityRealtime7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadNew021
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_0840
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew021, Function | MediumTest | Level1)
 {
@@ -914,9 +971,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew021, Function | MediumTest
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_0880
- * @tc.name      : thread operation for creat fail when priority = osPriorityISR
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadNew022
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_0880
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew022, Function | MediumTest | Level1)
 {
@@ -936,9 +996,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew022, Function | MediumTest
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_0920
- * @tc.name      : thread operation for creat fail when priority = osPriorityError
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadNew023
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_0920
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew023, Function | MediumTest | Level1)
 {
@@ -958,9 +1021,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew023, Function | MediumTest
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_0960
- * @tc.name      : thread operation for creat fail when priority = osPriorityReserved
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadNew024
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_0960
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew024, Function | MediumTest | Level1)
 {
@@ -980,9 +1046,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew024, Function | MediumTest
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_1000
- * @tc.name      : thread creat operation with func = NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadNew025
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_1000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew025, Function | MediumTest | Level1)
 {
@@ -1002,9 +1071,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew025, Function | MediumTest
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_1040
- * @tc.name      : thread creat operation with attr = NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadNew026
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_1040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew026, Function | MediumTest | Level1)
 {
@@ -1015,9 +1087,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadNew026, Function | MediumTest
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_1080
- * @tc.name      : thread operation for get name when priority = osPriorityNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetName001
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_1080
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetName001, Function | MediumTest | Level1)
 {
@@ -1040,9 +1115,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetName001, Function | Medium
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_1120
- * @tc.name      : thread operation for get state when priority = osPriorityAboveNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetState001
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_1120
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetState001, Function | MediumTest | Level1)
 {
@@ -1062,9 +1140,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetState001, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_1160
- * @tc.name      : thread operation for suspend when priority = osPriorityLow1
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSuspend001
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_1160
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadSuspend001, Function | MediumTest | Level1)
 {
@@ -1090,9 +1171,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadSuspend001, Function | Medium
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_1200
- * @tc.name      : thread operation for get current ID
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetId001
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_1200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetId001, Function | MediumTest | Level1)
 {
@@ -1102,9 +1186,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetId001, Function | MediumTe
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_1240
- * @tc.name      : thread operation for get ID when priority = osPriorityLow1
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetId002
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_1240
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetId002, Function | MediumTest | Level1)
 {
@@ -1126,9 +1213,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetId002, Function | MediumTe
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_1280
- * @tc.name      : thread operation for get ID when priority = osPriorityLow7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetId003
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_1280
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetId003, Function | MediumTest | Level1)
 {
@@ -1150,9 +1240,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetId003, Function | MediumTe
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_1320
- * @tc.name      : thread operation for get ID when priority = osPriorityBelowNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetId004
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_1320
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetId004, Function | MediumTest | Level1)
 {
@@ -1174,9 +1267,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetId004, Function | MediumTe
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_1360
- * @tc.name      : thread operation for get ID when priority = osPriorityBelowNormal7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetId005
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_1360
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetId005, Function | MediumTest | Level1)
 {
@@ -1198,9 +1294,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetId005, Function | MediumTe
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_1400
- * @tc.name      : thread operation for get ID when priority = osPriorityNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetId006
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_1400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetId006, Function | MediumTest | Level1)
 {
@@ -1222,9 +1321,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetId006, Function | MediumTe
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_1440
- * @tc.name      : thread operation for get ID when priority = osPriorityNormal7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetId007
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_1440
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetId007, Function | MediumTest | Level1)
 {
@@ -1245,9 +1347,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetId007, Function | MediumTe
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_1480
- * @tc.name      : thread operation for get ID when priority = osPriorityAboveNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetId008
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_1480
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetId008, Function | MediumTest | Level1)
 {
@@ -1268,9 +1373,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetId008, Function | MediumTe
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_1520
- * @tc.name      : thread operation for get ID when priority = osPriorityAboveNormal6
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetId009
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_1520
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetId009, Function | MediumTest | Level1)
 {
@@ -1291,9 +1399,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetId009, Function | MediumTe
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_1560
- * @tc.name      : thread operation for get ID then exit thread
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetId010
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_1560
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetId010, Function | MediumTest | Level1)
 {
@@ -1302,9 +1413,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetId010, Function | MediumTe
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_1600
- * @tc.name      : thread operation for get stack size when priority = osPriorityAboveNormal6
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetStackSize001
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_1600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSize001, Function | MediumTest | Level1)
 {
@@ -1327,9 +1441,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSize001, Function | M
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_1640
- * @tc.name      : thread operation for get stack space
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetStackSpace001
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_1640
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSpace001, Function | MediumTest | Level1)
 {
@@ -1341,9 +1458,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSpace001, Function | 
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_1680
- * @tc.name      : thread operation for yield when priority = osPriorityLow1
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadYield001
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_1680
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadYield001, Function | MediumTest | Level1)
 {
@@ -1366,9 +1486,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadYield001, Function | MediumTe
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_1720
- * @tc.name      : thread operation for yield when priority = osPriorityLow7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadYield002
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_1720
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadYield002, Function | MediumTest | Level1)
 {
@@ -1391,9 +1514,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadYield002, Function | MediumTe
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_1760
- * @tc.name      : thread operation for yield when priority = osPriorityBelowNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadYield003
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_1760
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadYield003, Function | MediumTest | Level1)
 {
@@ -1416,9 +1542,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadYield003, Function | MediumTe
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_1800
- * @tc.name      : thread operation for yield when priority = osPriorityBelowNormal7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadYield004
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_1800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadYield004, Function | MediumTest | Level1)
 {
@@ -1441,9 +1570,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadYield004, Function | MediumTe
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_1840
- * @tc.name      : thread operation for yield when priority = osPriorityNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadYield005
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_1840
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadYield005, Function | MediumTest | Level1)
 {
@@ -1466,9 +1598,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadYield005, Function | MediumTe
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_1880
- * @tc.name      : thread operation for yield when priority = osPriorityNormal7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadYield006
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_1880
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadYield006, Function | MediumTest | Level1)
 {
@@ -1490,9 +1625,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadYield006, Function | MediumTe
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_1920
- * @tc.name      : thread operation for yield when priority = osPriorityAboveNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadYield007
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_1920
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadYield007, Function | MediumTest | Level1)
 {
@@ -1514,9 +1652,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadYield007, Function | MediumTe
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_1960
- * @tc.name      : thread operation for yield when priority = osPriorityAboveNormal6
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadYield008
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_1960
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadYield008, Function | MediumTest | Level1)
 {
@@ -1538,9 +1679,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadYield008, Function | MediumTe
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_2000
- * @tc.name      : thread yield operation for thread with different priority
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadYield009
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_2000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadYield009, Function | MediumTest | Level1)
 {
@@ -1558,9 +1702,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadYield009, Function | MediumTe
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_2040
- * @tc.name      : thread operation for resume
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadResume001
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_2040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadResume001, Function | MediumTest | Level1)
 {
@@ -1581,9 +1728,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadResume001, Function | MediumT
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_2080
- * @tc.name      : thread operation for terminate when priority = osPriorityLow1
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadTerminate001
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_2080
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadTerminate001, Function | MediumTest | Level1)
 {
@@ -1605,9 +1755,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadTerminate001, Function | Medi
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_2120
- * @tc.name      : get thread count with callback function when priority = osPriorityAboveNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetCount001
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_2120
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetCount001, Function | MediumTest | Level1)
 {
@@ -1625,9 +1778,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetCount001, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_2160
- * @tc.name      : thread operation for current count
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetCount002
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_2160
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetCount002, Function | MediumTest | Level1)
 {
@@ -1637,9 +1793,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetCount002, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_2200
- * @tc.name      : get thread count when priority = osPriorityLow1
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetCount003
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_2200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetCount003, Function | MediumTest | Level1)
 {
@@ -1660,9 +1819,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetCount003, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_2240
- * @tc.name      : get thread count when priority = osPriorityLow7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetCount004
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_2240
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetCount004, Function | MediumTest | Level1)
 {
@@ -1683,9 +1845,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetCount004, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_2280
- * @tc.name      : get thread count when priority = osPriorityBelowNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetCount005
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_2280
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetCount005, Function | MediumTest | Level1)
 {
@@ -1706,9 +1871,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetCount005, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_2320
- * @tc.name      : get thread count when priority = osPriorityBelowNormal7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetCount006
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_2320
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetCount006, Function | MediumTest | Level1)
 {
@@ -1729,9 +1897,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetCount006, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_2360
- * @tc.name      : get thread count when priority = osPriorityNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetCount007
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_2360
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetCount007, Function | MediumTest | Level1)
 {
@@ -1752,9 +1923,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetCount007, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_2400
- * @tc.name      : get thread count when priority = osPriorityNormal7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetCount008
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_2400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetCount008, Function | MediumTest | Level1)
 {
@@ -1774,9 +1948,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetCount008, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_2440
- * @tc.name      : get thread count when priority = osPriorityAboveNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetCount009
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_2440
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetCount009, Function | MediumTest | Level1)
 {
@@ -1796,9 +1973,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetCount009, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_2480
- * @tc.name      : get thread count when priority = osPriorityAboveNormal6
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetCount010
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_2480
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetCount010, Function | MediumTest | Level1)
 {
@@ -1818,9 +1998,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetCount010, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_2520
- * @tc.name      : thread operation for get name input exception
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetName002
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_2520
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetName002, Function | MediumTest | Level1)
 {
@@ -1830,9 +2013,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetName002, Function | Medium
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_2560
- * @tc.name      : thread operation for get name when priority = osPriorityLow1
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetName003
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_2560
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetName003, Function | MediumTest | Level1)
 {
@@ -1854,9 +2040,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetName003, Function | Medium
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_2600
- * @tc.name      : thread operation for get name when priority = osPriorityLow7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetName004
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_2600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetName004, Function | MediumTest | Level1)
 {
@@ -1878,9 +2067,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetName004, Function | Medium
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_2640
- * @tc.name      : thread operation for get name when priority = osPriorityBelowNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetName005
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_2640
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetName005, Function | MediumTest | Level1)
 {
@@ -1902,9 +2094,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetName005, Function | Medium
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_2680
- * @tc.name      : thread operation for get name when priority = osPriorityBelowNormal7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetName006
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_2680
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetName006, Function | MediumTest | Level1)
 {
@@ -1926,9 +2121,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetName006, Function | Medium
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_2720
- * @tc.name      : thread operation for get name when priority = osPriorityNormal7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetName007
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_2720
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetName007, Function | MediumTest | Level1)
 {
@@ -1949,9 +2147,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetName007, Function | Medium
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_2760
- * @tc.name      : thread operation for get name when priority = osPriorityAboveNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetName008
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_2760
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetName008, Function | MediumTest | Level1)
 {
@@ -1972,9 +2173,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetName008, Function | Medium
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_2800
- * @tc.name      : thread operation for get name when priority = osPriorityAboveNormal6
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetName009
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_2800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetName009, Function | MediumTest | Level1)
 {
@@ -1995,9 +2199,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetName009, Function | Medium
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_2840
- * @tc.name      : thread operation for get name
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetName010
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_2840
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetName010, Function | MediumTest | Level1)
 {
@@ -2008,9 +2215,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetName010, Function | Medium
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_2880
- * @tc.name      : thread operation for get state input exception
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetState002
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_2880
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetState002, Function | MediumTest | Level1)
 {
@@ -2020,9 +2230,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetState002, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_2920
- * @tc.name      : thread operation for get state when priority = osPriorityLow1
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetState003
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_2920
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetState003, Function | MediumTest | Level1)
 {
@@ -2044,9 +2257,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetState003, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_2960
- * @tc.name      : thread operation for get state when priority = osPriorityLow7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetState004
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_2960
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetState004, Function | MediumTest | Level1)
 {
@@ -2068,9 +2284,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetState004, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_3000
- * @tc.name      : thread operation for get state when priority = osPriorityBelowNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetState005
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_3000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetState005, Function | MediumTest | Level1)
 {
@@ -2092,9 +2311,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetState005, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_3040
- * @tc.name      : thread operation for get state when priority = osPriorityBelowNormal7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetState006
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_3040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetState006, Function | MediumTest | Level1)
 {
@@ -2116,9 +2338,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetState006, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_3080
- * @tc.name      : thread operation for get state when priority = osPriorityNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetState007
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_3080
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetState007, Function | MediumTest | Level1)
 {
@@ -2140,9 +2365,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetState007, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_3120
- * @tc.name      : thread operation for get state when priority = osPriorityNormal7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetState008
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_3120
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetState008, Function | MediumTest | Level1)
 {
@@ -2164,9 +2392,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetState008, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_3160
- * @tc.name      : thread operation for get state when priority = osPriorityAboveNormal6
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetState009
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_3160
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetState009, Function | MediumTest | Level1)
 {
@@ -2188,9 +2419,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetState009, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_3200
- * @tc.name      : thread operation for get current state
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetState010
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_3200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetState010, Function | MediumTest | Level1)
 {
@@ -2201,9 +2435,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetState010, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_3240
- * @tc.name      : thread operation for suspend input exception
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSuspend002
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_3240
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadSuspend002, Function | MediumTest | Level1)
 {
@@ -2213,9 +2450,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadSuspend002, Function | Medium
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_3280
- * @tc.name      : thread operation for suspend when priority = osPriorityLow7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSuspend003
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_3280
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadSuspend003, Function | MediumTest | Level1)
 {
@@ -2241,9 +2481,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadSuspend003, Function | Medium
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_3320
- * @tc.name      : thread operation for suspend when priority = osPriorityBelowNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSuspend004
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_3320
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadSuspend004, Function | MediumTest | Level1)
 {
@@ -2269,9 +2512,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadSuspend004, Function | Medium
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_3360
- * @tc.name      : thread operation for suspend when priority = osPriorityBelowNormal7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSuspend005
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_3360
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadSuspend005, Function | MediumTest | Level1)
 {
@@ -2297,9 +2543,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadSuspend005, Function | Medium
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_3400
- * @tc.name      : thread operation for suspend when priority = osPriorityNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSuspend006
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_3400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadSuspend006, Function | MediumTest | Level1)
 {
@@ -2325,9 +2574,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadSuspend006, Function | Medium
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_3440
- * @tc.name      : thread operation for suspend when priority = osPriorityNormal7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSuspend007
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_3440
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadSuspend007, Function | MediumTest | Level1)
 {
@@ -2352,9 +2604,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadSuspend007, Function | Medium
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_3480
- * @tc.name      : thread operation for suspend when priority = osPriorityAboveNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSuspend008
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_3480
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadSuspend008, Function | MediumTest | Level1)
 {
@@ -2379,9 +2634,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadSuspend008, Function | Medium
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_3520
- * @tc.name      : thread operation for suspend when priority = osPriorityAboveNormal6
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadSuspend009
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_3520
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadSuspend009, Function | MediumTest | Level1)
 {
@@ -2406,9 +2664,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadSuspend009, Function | Medium
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_3560
- * @tc.name      : thread operation for get stack size input exception
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetStackSize002
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_3560
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSize002, Function | MediumTest | Level1)
 {
@@ -2418,9 +2679,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSize002, Function | M
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_3600
- * @tc.name      : thread operation for get stack size when priority = osPriorityLow1
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetStackSize003
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_3600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSize003, Function | MediumTest | Level1)
 {
@@ -2441,9 +2705,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSize003, Function | M
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_3640
- * @tc.name      : thread operation for get stack size when priority = osPriorityLow7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetStackSize004
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_3640
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSize004, Function | MediumTest | Level1)
 {
@@ -2464,9 +2731,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSize004, Function | M
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_3680
- * @tc.name      : thread operation for get stack size when priority = osPriorityBelowNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetStackSize005
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_3680
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSize005, Function | MediumTest | Level1)
 {
@@ -2487,9 +2757,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSize005, Function | M
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_3720
- * @tc.name      : thread operation for get stack size when priority = osPriorityBelowNormal7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetStackSize006
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_3720
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSize006, Function | MediumTest | Level1)
 {
@@ -2510,9 +2783,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSize006, Function | M
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_3760
- * @tc.name      : thread operation for get stack size when priority = osPriorityNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetStackSize007
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_3760
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSize007, Function | MediumTest | Level1)
 {
@@ -2533,9 +2809,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSize007, Function | M
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_3800
- * @tc.name      : thread operation for get stack size when priority = osPriorityNormal7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetStackSize008
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_3800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSize008, Function | MediumTest | Level1)
 {
@@ -2556,9 +2835,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSize008, Function | M
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_3840
- * @tc.name      : thread operation for get stack size when priority = osPriorityAboveNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetStackSize009
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_3840
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSize009, Function | MediumTest | Level1)
 {
@@ -2579,9 +2861,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSize009, Function | M
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_3880
- * @tc.name      : thread operation for get stack size
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetStackSize010
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_3880
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSize010, Function | MediumTest | Level1)
 {
@@ -2592,9 +2877,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSize010, Function | M
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_3920
- * @tc.name      : thread operation for get stack space input exception
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetStackSpace002
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_3920
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSpace002, Function | MediumTest | Level1)
 {
@@ -2604,9 +2892,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSpace002, Function | 
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_3960
- * @tc.name      : thread operation for get stack space when priority = osPriorityLow1
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetStackSpace003
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_3960
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSpace003, Function | MediumTest | Level1)
 {
@@ -2628,9 +2919,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSpace003, Function | 
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_4000
- * @tc.name      : thread operation for get stack space when priority = osPriorityLow7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetStackSpace004
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_4000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSpace004, Function | MediumTest | Level1)
 {
@@ -2652,9 +2946,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSpace004, Function | 
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_4040
- * @tc.name      : thread operation for get stack space when priority = osPriorityBelowNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetStackSpace005
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_4040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSpace005, Function | MediumTest | Level1)
 {
@@ -2676,9 +2973,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSpace005, Function | 
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_4080
- * @tc.name      : thread operation for get stack space when priority = osPriorityBelowNormal7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetStackSpace006
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_4080
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSpace006, Function | MediumTest | Level1)
 {
@@ -2700,9 +3000,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSpace006, Function | 
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_4120
- * @tc.name      : thread operation for get stack space when priority = osPriorityNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetStackSpace007
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_4120
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSpace007, Function | MediumTest | Level1)
 {
@@ -2724,9 +3027,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSpace007, Function | 
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_4160
- * @tc.name      : thread operation for get stack space when priority = osPriorityNormal7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetStackSpace008
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_4160
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSpace008, Function | MediumTest | Level1)
 {
@@ -2748,9 +3054,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSpace008, Function | 
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_4200
- * @tc.name      : thread operation for get stack space when priority = osPriorityAboveNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetStackSpace009
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_4200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSpace009, Function | MediumTest | Level1)
 {
@@ -2772,9 +3081,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSpace009, Function | 
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_4240
- * @tc.name      : thread operation for get stack space when priority = osPriorityAboveNormal6
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadGetStackSpace010
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_4240
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSpace010, Function | MediumTest | Level1)
 {
@@ -2796,10 +3108,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadGetStackSpace010, Function | 
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_4280
- * @tc.name      : thread operation for resume input exception with NULL parameter
- * @tc.desc      : [C- SOFTWARE -0200]
-
+ * @tc.name   testOsThreadResume002
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_4280
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadResume002, Function | MediumTest | Level1)
 {
@@ -2809,10 +3123,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadResume002, Function | MediumT
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_4320
- * @tc.name      : thread operation for resume input exception
- * @tc.desc      : [C- SOFTWARE -0200]
-
+ * @tc.name   testOsThreadResume003
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_4320
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadResume003, Function | MediumTest | Level1)
 {
@@ -2823,9 +3139,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadResume003, Function | MediumT
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_4360
- * @tc.name      : thread operation for terminate input exception
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadTerminate002
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_4360
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadTerminate002, Function | MediumTest | Level1)
 {
@@ -2835,9 +3154,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadTerminate002, Function | Medi
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_4400
- * @tc.name      : thread operation for terminate when priority = osPriorityLow7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadTerminate003
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_4400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadTerminate003, Function | MediumTest | Level1)
 {
@@ -2859,9 +3181,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadTerminate003, Function | Medi
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_4440
- * @tc.name      : thread operation for terminate when priority = osPriorityBelowNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadTerminate004
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_4440
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadTerminate004, Function | MediumTest | Level1)
 {
@@ -2883,9 +3208,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadTerminate004, Function | Medi
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_4480
- * @tc.name      : thread operation for terminate when priority = osPriorityBelowNormal7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadTerminate005
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_4480
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadTerminate005, Function | MediumTest | Level1)
 {
@@ -2907,9 +3235,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadTerminate005, Function | Medi
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_4520
- * @tc.name      : thread operation for terminate when priority = osPriorityNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadTerminate006
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_4520
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadTerminate006, Function | MediumTest | Level1)
 {
@@ -2931,9 +3262,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadTerminate006, Function | Medi
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_4560
- * @tc.name      : thread operation for terminate when priority = osPriorityNormal7
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadTerminate007
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_4560
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadTerminate007, Function | MediumTest | Level1)
 {
@@ -2954,9 +3288,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadTerminate007, Function | Medi
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_4600
- * @tc.name      : thread operation for terminate when priority = osPriorityAboveNormal
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadTerminate008
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_4600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadTerminate008, Function | MediumTest | Level1)
 {
@@ -2977,9 +3314,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadTerminate008, Function | Medi
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_4640
- * @tc.name      : thread operation for terminate when priority = osPriorityAboveNormal6
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsThreadTerminate009
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_4640
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadTerminate009, Function | MediumTest | Level1)
 {
@@ -3000,9 +3340,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsThreadTerminate009, Function | Medi
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_4680
- * @tc.name      : kernel operation for get info
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsKernelGetInfo001
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_4680
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsKernelGetInfo001, Function | MediumTest | Level1)
 {
@@ -3014,9 +3357,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsKernelGetInfo001, Function | Medium
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_4720
- * @tc.name      : kernel operation for get state
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsKernelGetState001
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_4720
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsKernelGetState001, Function | MediumTest | Level1)
 {
@@ -3026,9 +3372,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsKernelGetState001, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_4760
- * @tc.name      : kernel operation for get state after kernel lock
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsKernelGetState002
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_4760
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsKernelGetState002, Function | MediumTest | Level1)
 {
@@ -3040,9 +3389,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsKernelGetState002, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_4800
- * @tc.name      : kernel lock operation twice
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsKernelLock001
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_4800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsKernelLock001, Function | MediumTest | Level1)
 {
@@ -3055,10 +3407,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsKernelLock001, Function | MediumTes
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_4840
- * @tc.name      : kernel operation for lock
- * @tc.desc      : [C- SOFTWARE -0200]
-
+ * @tc.name   testOsKernelLock002
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_4840
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsKernelLock002, Function | MediumTest | Level1)
 {
@@ -3085,9 +3439,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsKernelLock002, Function | MediumTes
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_4880
- * @tc.name      : kernel operation for unlock
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsKernelUnLock001
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_4880
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsKernelUnLock001, Function | MediumTest | Level1)
 {
@@ -3097,9 +3454,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsKernelUnLock001, Function | MediumT
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_4920
- * @tc.name      : kernel operation for unlock after kernel lock
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsKernelUnLock002
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_4920
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsKernelUnLock002, Function | MediumTest | Level1)
 {
@@ -3112,9 +3472,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsKernelUnLock002, Function | MediumT
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_4960
- * @tc.name      : kernel operation for unlock after kernel lock twice
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsKernelUnLock003
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_4960
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsKernelUnLock003, Function | MediumTest | Level1)
 {
@@ -3128,9 +3491,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsKernelUnLock003, Function | MediumT
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_5000
- * @tc.name      : kernel operation for restore lock after kernel lock
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsKernelRestoreLock001
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsKernelRestoreLock001, Function | MediumTest | Level1)
 {
@@ -3143,9 +3509,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsKernelRestoreLock001, Function | Me
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_5040
- * @tc.name      : kernel operation for restore lock after kernel lock twice
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsKernelRestoreLock002
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsKernelRestoreLock002, Function | MediumTest | Level1)
 {
@@ -3159,9 +3528,12 @@ LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsKernelRestoreLock002, Function | Me
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_TASK_OPERATION_5080
- * @tc.name      : kernel operation for restore lock
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsKernelRestoreLock003
+ * @tc.number SUB_KERNEL_CMSIS_TASK_OPERATION_5080
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisTaskFuncTestSuite, testOsKernelRestoreLock003, Function | MediumTest | Level1)
 {

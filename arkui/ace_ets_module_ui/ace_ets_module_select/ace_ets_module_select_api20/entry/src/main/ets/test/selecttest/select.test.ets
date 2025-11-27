@@ -43,14 +43,14 @@
        done();
      });
  
-     /* *
-      * @tc.number: menuOutline_001
-      * @tc.name  : menuOutline_001
-      * @tc.desc  : To test the menuOutline interface color.White
-      * @tc.level : Level 0
-      * @tc.type
-      * @tc.size
-      */
+    /**
+     * @tc.name   menuOutline_001
+     * @tc.number menuOutline_001
+     * @tc.desc   To test the menuOutline interface color.White
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('menuOutline_001', Level.LEVEL0, async (done: Function) => {
       await Utils.sleep(1000);
       let driver: Driver = Driver.create();

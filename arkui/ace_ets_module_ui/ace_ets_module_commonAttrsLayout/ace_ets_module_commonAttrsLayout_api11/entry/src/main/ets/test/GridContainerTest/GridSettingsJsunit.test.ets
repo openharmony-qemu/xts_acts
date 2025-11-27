@@ -45,6 +45,14 @@ export default function gridSettingsJsunit() {
       console.info("gridSettings after each called");
     });
 
+    /**
+     * @tc.name   testGridSettings000
+     * @tc.number testGridSettings000
+     * @tc.desc   testGridSettings000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGridSettings000', Level.LEVEL0, async (done:Function) => {
       console.info('[testGridSettings000] START');
       await Utils.sleep(1000);
@@ -54,6 +62,14 @@ export default function gridSettingsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testGridSettings001
+     * @tc.number testGridSettings001
+     * @tc.desc   testGridSettings001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGridSettings001', Level.LEVEL0, async (done:Function) => {
       console.info('[testGridSettings001] START');
       await Utils.sleep(4000);
@@ -66,6 +82,14 @@ export default function gridSettingsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testGridSettings002
+     * @tc.number testGridSettings002
+     * @tc.desc   testGridSettings002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGridSettings002', Level.LEVEL0, async (done:Function) => {
       console.info('[testGridSettings002] START');
       try {
@@ -104,6 +128,14 @@ export default function gridSettingsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testGridSettings003
+     * @tc.number testGridSettings003
+     * @tc.desc   testGridSettings003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGridSettings003', Level.LEVEL0, async (done:Function) => {
       console.info('[testGridSettings003] START');
       try {
@@ -132,6 +164,14 @@ export default function gridSettingsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testGridSettings004
+     * @tc.number testGridSettings004
+     * @tc.desc   testGridSettings004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGridSettings004', Level.LEVEL0, async (done:Function) => {
       console.info('[testGridSettings004] START');
       try {
@@ -160,6 +200,14 @@ export default function gridSettingsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testGridSettings005
+     * @tc.number testGridSettings005
+     * @tc.desc   testGridSettings005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGridSettings005', Level.LEVEL0, async (done:Function) => {
       console.info('[testGridSettings005] START');
       try {
@@ -188,6 +236,14 @@ export default function gridSettingsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testGridSettings006
+     * @tc.number testGridSettings006
+     * @tc.desc   testGridSettings006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGridSettings006', Level.LEVEL0, async (done:Function) => {
       console.info('[testGridSettings006] START');
       await Utils.sleep(1000);
@@ -199,6 +255,14 @@ export default function gridSettingsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testGridSettings007
+     * @tc.number testGridSettings007
+     * @tc.desc   testGridSettings007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGridSettings007', Level.LEVEL0, async (done:Function) => {
       console.info('[testGridSettings007] START');
       try {
@@ -225,6 +289,14 @@ export default function gridSettingsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testGridSettings008
+     * @tc.number testGridSettings008
+     * @tc.desc   testGridSettings008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGridSettings008', Level.LEVEL0, async (done:Function) => {
       console.info('[testGridSettings008] START');
       try {
@@ -251,6 +323,14 @@ export default function gridSettingsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testGridSettings009
+     * @tc.number testGridSettings009
+     * @tc.desc   testGridSettings009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGridSettings009', Level.LEVEL0, async (done:Function) => {
       console.info('[testGridSettings009] START');
       try {
@@ -277,6 +357,14 @@ export default function gridSettingsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testGridSettings010
+     * @tc.number testGridSettings010
+     * @tc.desc   testGridSettings010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGridSettings010', Level.LEVEL0, async (done:Function) => {
       console.info('[testGridSettings010] START');
       try {
@@ -302,6 +390,14 @@ export default function gridSettingsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testGridSettings011
+     * @tc.number testGridSettings011
+     * @tc.desc   testGridSettings011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGridSettings011', Level.LEVEL0, async (done:Function) => {
       console.info('[testGridSettings011] START');
       await Utils.sleep(1000);
@@ -312,6 +408,14 @@ export default function gridSettingsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testGridSettings012
+     * @tc.number testGridSettings012
+     * @tc.desc   testGridSettings012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGridSettings012', Level.LEVEL0, async (done:Function) => {
       console.info('[testGridSettings012] START');
       try {
@@ -337,6 +441,14 @@ export default function gridSettingsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testGridSettings013
+     * @tc.number testGridSettings013
+     * @tc.desc   testGridSettings013
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGridSettings013', Level.LEVEL0, async (done:Function) => {
       console.info('[testGridSettings013] START');
       try {
@@ -362,6 +474,14 @@ export default function gridSettingsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testGridSettings014
+     * @tc.number testGridSettings014
+     * @tc.desc   testGridSettings014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGridSettings014', Level.LEVEL0, async (done:Function) => {
       console.info('[testGridSettings014] START');
       try {
@@ -387,6 +507,14 @@ export default function gridSettingsJsunit() {
       done()
     });
 
+    /**
+     * @tc.name   testGridSettings015
+     * @tc.number testGridSettings015
+     * @tc.desc   testGridSettings015
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGridSettings015', Level.LEVEL0, async (done:Function) => {
       console.info('[testGridSettings015] START');
       try {

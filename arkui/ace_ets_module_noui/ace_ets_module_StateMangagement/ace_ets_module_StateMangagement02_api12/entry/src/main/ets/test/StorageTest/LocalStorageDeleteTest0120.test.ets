@@ -42,12 +42,12 @@ export default function LocalStorageDeleteTest0120() {
       done();
     });
     /**
-     * @tc.number: LocalStorageDeleteTest0120_0100
-     * @tc.name: LocalStorageDeleteTest0120_0100
-     * @tc.desc: aceEtsTest_ref
-     * @tc.level: Level 0
-     * @tc.type:
-     * @tc.size:
+     * @tc.name   LocalStorageDeleteTest0120_0100
+     * @tc.number LocalStorageDeleteTest0120_0100
+     * @tc.desc   aceEtsTest_ref
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('LocalStorageDeleteTest0120_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.info('LocalStorageDeleteTest0120001 START');

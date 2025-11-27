@@ -29,9 +29,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_CompletionHandlerForAtomicService_0100
-     * @tc.name: SUB_Ability_AbilityRuntime_CompletionHandlerForAtomicService_0100
-     * @tc.desc: UIAbilityContext openAtomicService.
+     * @tc.name   SUB_Ability_AbilityRuntime_CompletionHandlerForAtomicService_0100
+     * @tc.number SUB_Ability_AbilityRuntime_CompletionHandlerForAtomicService_0100
+     * @tc.desc   UIAbilityContext openAtomicService.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_CompletionHandlerForAtomicService_0100', Level.LEVEL0, (done: Function) => {
       const tcNumber = `SUB_Ability_AbilityRuntime_CompletionHandlerForAtomicService_0100`;

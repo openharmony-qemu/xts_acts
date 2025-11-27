@@ -50,11 +50,13 @@ export default function CustomLayoutGeometryInfoTest() {
       console.info("CustomLayoutLayoutChildTest after each called");
     });
 
-    /*
-     * @tc.number    CustomLayoutGeometryInfoTest_0010
-     * @tc.name      CustomLayoutGeometryInfoTest_0010
-     * @tc.desc      test GeometryInfo margin & padding
-     * @tc.level     Level 2
+    /**
+     * @tc.name   CustomLayoutGeometryInfoTest_0010
+     * @tc.number CustomLayoutGeometryInfoTest_0010
+     * @tc.desc   test GeometryInfo margin & padding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('CustomLayoutGeometryInfoTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('[CustomLayoutGeometryInfoTest_0010] START');

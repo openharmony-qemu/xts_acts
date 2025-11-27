@@ -63,12 +63,12 @@ export default function StateTrackTest() {
       await CommonFunc.sleep(2000);
     });
     /**
+     * @tc.name   StateTrackTest_0100
      * @tc.number SUB_ACE_StateTrackTest_0100
-     * @tc.name StateTrackTest_0100
-     * @tc.desc StateTrack
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   StateTrack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('StateTrackTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('StateTrackTest_0100 START');
@@ -95,12 +95,12 @@ export default function StateTrackTest() {
       done();
     });
     /**
+     * @tc.name   StateTrackTest_0200
      * @tc.number SUB_ACE_StateTrackTest_0200
-     * @tc.name StateTrackTest_0200
-     * @tc.desc StateTrack
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   StateTrack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('StateTrackTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('StateTrackTest_0100 START');

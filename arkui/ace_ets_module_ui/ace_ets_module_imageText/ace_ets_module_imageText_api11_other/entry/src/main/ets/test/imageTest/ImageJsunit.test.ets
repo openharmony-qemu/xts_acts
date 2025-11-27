@@ -55,9 +55,12 @@ export default function imageJsunit() {
     });
 
     /**
+     * @tc.name   testGetImageAttr010
      * @tc.number SUB_ACE_BASIC_ETS_API_0880
-     * @tc.name testGetImageAttr010
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetImageAttr010', Level.LEVEL1, async (done: Function) => {
       console.info('testGetImageAttr1 START');
@@ -87,9 +90,12 @@ export default function imageJsunit() {
     });
 
     /**
+     * @tc.name   testGetImageAttr020
      * @tc.number SUB_ACE_BASIC_ETS_API_0890
-     * @tc.name testGetImageAttr020
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetImageAttr020', Level.LEVEL1, async (done: Function) => {
       console.info('testGetImageAttr2 START');
@@ -107,9 +113,12 @@ export default function imageJsunit() {
       done();
     });
     /**
+     * @tc.name   testGetImageAttr030
      * @tc.number SUB_ACE_BASIC_ETS_API_0900
-     * @tc.name testGetImageAttr030
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetImageAttr030', Level.LEVEL1, async (done: Function) => {
       console.info('testGetImageAttr3 START');
@@ -126,9 +135,12 @@ export default function imageJsunit() {
     });
 
     /**
+     * @tc.name   testGetImageAttr040
      * @tc.number SUB_ACE_BASIC_ETS_API_0910
-     * @tc.name testGetImageAttr040
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetImageAttr040', Level.LEVEL1, async (done: Function) => {
       console.info('testGetImageAttr4 START');
@@ -145,9 +157,12 @@ export default function imageJsunit() {
     });
 
     /**
+     * @tc.name   testGetImageAttr050
      * @tc.number SUB_ACE_BASIC_ETS_API_0920
-     * @tc.name testGetImageAttr050
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetImageAttr050', Level.LEVEL1, async (done: Function) => {
       console.info('testGetImageAttr5 START');

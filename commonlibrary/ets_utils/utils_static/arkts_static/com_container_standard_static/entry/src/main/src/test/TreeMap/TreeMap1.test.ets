@@ -831,5 +831,27 @@ export default function TreeMapTest1() {
     //     expect(err.message).assertEqual(`The type of "map" must be TreeMap. Received value is: 1,2,3`);
     //   }
     // });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_013
+     * @tc.name testUtil3_013
+     * @tc.desc Test the util
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testUtil3_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let res = 0;
+      let treeMap: TreeMap<string, int> = new TreeMap<string, int>();
+      treeMap.set("squirrel", 123);
+      treeMap.set("sparrow", 356);
+      let iter = treeMap.$_iterator();
+      let temp: IteratorResult<[string, int]> = iter.next();
+      while (!temp.done) {
+        res = res + temp.value![1];
+        temp = iter.next();
+      }
+      expect(res).assertEqual(479);
+    })
   });
 }

@@ -55,12 +55,12 @@ export default function toggleJsunit() {
     });
 
     /**
+     * @tc.name   ToggleJsunit001
      * @tc.number ToggleJsunit001
-     * @tc.name Test the properties of components
-     * @tc.desc Set selectedColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set selectedColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ToggleJsunit001', Level.LEVEL0, async (done: Function) => {
       console.info('[ToggleJsunit001] START');
@@ -73,12 +73,12 @@ export default function toggleJsunit() {
     });
 
     /**
+     * @tc.name   ToggleJsunit002
      * @tc.number ToggleJsunit002
-     * @tc.name Test the properties of components
-     * @tc.desc Set switchPointColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set switchPointColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ToggleJsunit002', Level.LEVEL0, async (done: Function) => {
       console.info('[ToggleJsunit002] START');
@@ -91,12 +91,12 @@ export default function toggleJsunit() {
     });
 
     /**
+     * @tc.name   ToggleJsunit003
      * @tc.number ToggleJsunit003
-     * @tc.name Test the properties of components
-     * @tc.desc Change selectedColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change selectedColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ToggleJsunit003', Level.LEVEL0, async (done: Function) => {
       console.info('ToggleJsunit003 START');

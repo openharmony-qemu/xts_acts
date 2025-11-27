@@ -50,13 +50,13 @@ export default function GridAddJsunit() {
       }
     });
 
-    /*
-     * @tc.number    apiCommponentAdd02Jsunit_0300
-     * @tc.name      GridAddJsunit_0300
-     * @tc.desc      Test Grid scrollPage
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+    /**
+     * @tc.name   GridAddJsunit_0300
+     * @tc.number apiCommponentAdd02Jsunit_0300
+     * @tc.desc   Test Grid scrollPage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('GridAddJsunit_0300', Level.LEVEL1, async (done: Function) => {
       console.info('GridAddJsunit_0300 START');

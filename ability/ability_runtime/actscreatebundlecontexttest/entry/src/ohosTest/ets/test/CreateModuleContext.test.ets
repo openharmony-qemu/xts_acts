@@ -42,13 +42,13 @@ export default function createModuleContextTest() {
     afterAll(() => {
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_AMS_Context_CreateModuleContext_2300
-     * @tc.name   : SUB_Ability_AbilityRuntime_AMS_Context_CreateModuleContext_2300
-     * @tc.desc   : createModuleContext,moduleName = feature
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AMS_Context_CreateModuleContext_2300
+     * @tc.number SUB_Ability_AbilityRuntime_AMS_Context_CreateModuleContext_2300
+     * @tc.desc   createModuleContext,moduleName = feature
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_AMS_Context_CreateModuleContext_2300', Level.LEVEL3, (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_AMS_Context_CreateModuleContext_2300`;

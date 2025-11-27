@@ -52,12 +52,12 @@ export default function TextObscuredTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number    ArkUX_Redacted_Text_0090
-     * @tc.name      ArkUX_Redacted_Text_0090
-     * @tc.desc      text api
-     * @tc.level       Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Redacted_Text_0090
+     * @tc.number ArkUX_Redacted_Text_0090
+     * @tc.desc   text api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Redacted_Text_0090', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Redacted_Text_0090 START');
@@ -82,12 +82,12 @@ export default function TextObscuredTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Redacted_Text_0100
-     * @tc.name      ArkUX_Redacted_Text_0100
-     * @tc.desc      text api
-     * @tc.level       Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Redacted_Text_0100
+     * @tc.number ArkUX_Redacted_Text_0100
+     * @tc.desc   text api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Redacted_Text_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Redacted_Text_0100 START');
@@ -112,12 +112,12 @@ export default function TextObscuredTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Redacted_Text_0110
-     * @tc.name      ArkUX_Redacted_Text_0110
-     * @tc.desc      text api
-     * @tc.level       Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Redacted_Text_0110
+     * @tc.number ArkUX_Redacted_Text_0110
+     * @tc.desc   text api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Redacted_Text_0110', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Redacted_Text_0110 START');
@@ -142,12 +142,12 @@ export default function TextObscuredTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Redacted_Text_0120
-     * @tc.name      ArkUX_Redacted_Text_0120
-     * @tc.desc      text api
-     * @tc.level       Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Redacted_Text_0120
+     * @tc.number ArkUX_Redacted_Text_0120
+     * @tc.desc   text api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Redacted_Text_0120', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Redacted_Text_0120 START');
@@ -172,12 +172,12 @@ export default function TextObscuredTest() {
       }, 500)
     });
     /**
-     * @tc.number    ArkUX_Redacted_Text_0130
-     * @tc.name      ArkUX_Redacted_Text_0130
-     * @tc.desc      text api
-     * @tc.level       Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ArkUX_Redacted_Text_0130
+     * @tc.number ArkUX_Redacted_Text_0130
+     * @tc.desc   text api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Redacted_Text_0130', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Redacted_Text_0130 START');

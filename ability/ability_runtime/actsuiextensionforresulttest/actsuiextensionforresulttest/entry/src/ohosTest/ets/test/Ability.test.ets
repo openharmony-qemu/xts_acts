@@ -57,15 +57,13 @@ export default function abilityTest() {
     })
 
 
-    /*
-     * @tc.number:ACTS_UIExtensionAbility_StartAbilityForResult_AsyncCallback_0100
-     * @tc.name:The parameters are valid (want and callback parameters),
-     * and the startAbilityForResult of UIExtensionAbility is called.
-     * @tc.desc:The startAbilityForResult interface of UIExtensionAbility is called in AsyncCallback mode,
-     * and all parameters are valid (want and callback parameters), so the application ability is successfully called.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 1
+    /**
+     * @tc.name   ACTS_UIExtensionAbility_StartAbilityForResult_AsyncCallback_0100
+     * @tc.number ACTS_UIExtensionAbility_StartAbilityForResult_AsyncCallback_0100
+     * @tc.desc   The startAbilityForResult interface of UIExtensionAbility is called in AsyncCallback mode,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_UIExtensionAbility_StartAbilityForResult_AsyncCallback_0100', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEventManager.CommonEventSubscriber;
@@ -95,15 +93,13 @@ export default function abilityTest() {
         })
     })
 
-    /*
-     * @tc.number:ACTS_UIExtensionAbility_StartAbilityForResult_AsyncCallback_0200
-     * @tc.name:The parameters are valid (want and callback parameters),
-     * and the startAbilityForResult of UIExtensionAbility is called.
-     * @tc.desc:Call the startAbilityForResult interface of UIExtensionAbility in AsyncCallback mode, and all
-     * parameters are valid (want and callback parameters), and call other application capabilities successfully.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 1
+    /**
+     * @tc.name   ACTS_UIExtensionAbility_StartAbilityForResult_AsyncCallback_0200
+     * @tc.number ACTS_UIExtensionAbility_StartAbilityForResult_AsyncCallback_0200
+     * @tc.desc   Call the startAbilityForResult interface of UIExtensionAbility in AsyncCallback mode, and all
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_UIExtensionAbility_StartAbilityForResult_AsyncCallback_0200', Level.LEVEL0, async (done: Function) => {
       await sleep(500);
@@ -143,16 +139,13 @@ export default function abilityTest() {
         })
     })
 
-    /*
-     * @tc.number:ACTS_UIExtensionAbility_StartAbilityForResult_AsyncCallback_0300
-     * @tc.name:The parameters are valid (want and callback parameters),
-     * and the startAbilityForResult of UIExtensionAbility is called.
-     * @tc.desc:Call the startAbilityForResult interface of UIExtensionAbility in AsyncCallback mode, and the
-     * parameters are valid (want and callback parameters). After calling for many times, only the normal result is
-     * returned to the last caller, and other callers return abnormal information, in which the resultCode is -1.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 1
+    /**
+     * @tc.name   ACTS_UIExtensionAbility_StartAbilityForResult_AsyncCallback_0300
+     * @tc.number ACTS_UIExtensionAbility_StartAbilityForResult_AsyncCallback_0300
+     * @tc.desc   Call the startAbilityForResult interface of UIExtensionAbility in AsyncCallback mode, and the
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_UIExtensionAbility_StartAbilityForResult_AsyncCallback_0300', Level.LEVEL0, async (done: Function) => {
       await sleep(500);
@@ -214,16 +207,13 @@ export default function abilityTest() {
         })
     })
 
-    /*
-     * @tc.number:ACTS_UIExtensionAbility_StartAbilityForResult_AsyncCallback_0400
-     * @tc.name:The parameters are valid (want and callback parameters),
-     * and the startAbilityForResult of UIExtensionAbility is called.
-     * @tc.desc:Call the startAbilityForResult interface of UIExtensionAbility in AsyncCallback mode, and all
-     * parameters are valid (want and callback parameters). After the call is successful, kill the target Ability and
-     * return an exception message to the caller, in which the resultCode is -1.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 1
+    /**
+     * @tc.name   ACTS_UIExtensionAbility_StartAbilityForResult_AsyncCallback_0400
+     * @tc.number ACTS_UIExtensionAbility_StartAbilityForResult_AsyncCallback_0400
+     * @tc.desc   Call the startAbilityForResult interface of UIExtensionAbility in AsyncCallback mode, and all
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_UIExtensionAbility_StartAbilityForResult_AsyncCallback_0400', Level.LEVEL0, async (done: Function) => {
       await sleep(500);
@@ -266,15 +256,13 @@ export default function abilityTest() {
         })
     })
 
-    /*
-     * @tc.number:ACTS_UIExtensionAbility_StartAbilityForResult_AsyncCallback_0500
-     * @tc.name:The parameters are valid (want and callback parameters),
-     * and the startAbilityForResult of UIExtensionAbility is called.
-     * @tc.desc:Call the startable interface of the extensible result by asynchronous callback, and the call fails if
-     * the parameter is invalid.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 1
+    /**
+     * @tc.name   ACTS_UIExtensionAbility_StartAbilityForResult_AsyncCallback_0500
+     * @tc.number ACTS_UIExtensionAbility_StartAbilityForResult_AsyncCallback_0500
+     * @tc.desc   Call the startable interface of the extensible result by asynchronous callback, and the call fails if
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_UIExtensionAbility_StartAbilityForResult_AsyncCallback_0500', Level.LEVEL0, async (done: Function) => {
       await sleep(500);
@@ -307,15 +295,13 @@ export default function abilityTest() {
         })
     })
 
-    /*
-     * @tc.number:ACTS_UIExtensionAbility_StartAbilityForResult_AsyncCallback_0600
-     * @tc.name:The parameters are valid (want and callback parameters),
-     * and the startAbilityForResult of UIExtensionAbility is called.
-     * @tc.desc:Calling the startAbilityForResult interface of UIExtensionAbility in AsyncCallback mode, all
-     * parameters are valid (want and callback parameters), and the call fails because there is no system authority.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 1
+    /**
+     * @tc.name   ACTS_UIExtensionAbility_StartAbilityForResult_AsyncCallback_0600
+     * @tc.number ACTS_UIExtensionAbility_StartAbilityForResult_AsyncCallback_0600
+     * @tc.desc   Calling the startAbilityForResult interface of UIExtensionAbility in AsyncCallback mode, all
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_UIExtensionAbility_StartAbilityForResult_AsyncCallback_0600', Level.LEVEL0, async (done: Function) => {
       await sleep(500);
@@ -357,16 +343,14 @@ export default function abilityTest() {
     })
 
 
-    /*
- * @tc.number:ACTS_UIExtensionAbility_StartAbilityForResult_Promise_0100
- * @tc.name:The parameters are valid (want and callback parameters),
- * and the startAbilityForResult of UIExtensionAbility is called.
- * @tc.desc:Call the startAbilityForResult interface of UIExtensionAbility in the way of Promise.
- * All parameters are valid (want and callback parameters), and the call is successful.
- * @tc.size: MediumTest
- * @tc.type: Function
- * @tc.level Level 1
- */
+    /**
+     * @tc.name   ACTS_UIExtensionAbility_StartAbilityForResult_Promise_0100
+     * @tc.number ACTS_UIExtensionAbility_StartAbilityForResult_Promise_0100
+     * @tc.desc   Call the startAbilityForResult interface of UIExtensionAbility in the way of Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_UIExtensionAbility_StartAbilityForResult_Promise_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(500);
       let subscriber: commonEventManager.CommonEventSubscriber;
@@ -396,15 +380,13 @@ export default function abilityTest() {
         })
     })
 
-    /*
-     * @tc.number:ACTS_UIExtensionAbility_StartAbilityForResult_Promise_0200
-     * @tc.name:The parameters are valid (want and callback parameters),
-     * and the startAbilityForResult of UIExtensionAbility is called.
-     * @tc.desc:Call the startAbilityForResult interface of UIExtensionAbility in the way of Promise, and all
-     * parameters are valid (want and callback parameters), and call other application ability successfully.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 1
+    /**
+     * @tc.name   ACTS_UIExtensionAbility_StartAbilityForResult_Promise_0200
+     * @tc.number ACTS_UIExtensionAbility_StartAbilityForResult_Promise_0200
+     * @tc.desc   Call the startAbilityForResult interface of UIExtensionAbility in the way of Promise, and all
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_UIExtensionAbility_StartAbilityForResult_Promise_0200', Level.LEVEL0, async (done: Function) => {
       let subscriber: commonEventManager.CommonEventSubscriber;
@@ -437,16 +419,13 @@ export default function abilityTest() {
         })
     })
 
-    /*
-     * @tc.number:ACTS_UIExtensionAbility_StartAbilityForResult_Promise_0300
-     * @tc.name:The parameters are valid (want and callback parameters),
-     * and the startAbilityForResult of UIExtensionAbility is called.
-     * @tc.desc:Call the startAbilityForResult interface of UIExtensionAbility in the way of Promise, and the
-     * parameters are valid (want and callback parameters). After repeated calls, only the normal result is returned
-     * to the last caller, and other callers return abnormal information, in which the resultCode is -1.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 1
+    /**
+     * @tc.name   ACTS_UIExtensionAbility_StartAbilityForResult_Promise_0300
+     * @tc.number ACTS_UIExtensionAbility_StartAbilityForResult_Promise_0300
+     * @tc.desc   Call the startAbilityForResult interface of UIExtensionAbility in the way of Promise, and the
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_UIExtensionAbility_StartAbilityForResult_Promise_0300', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -509,16 +488,13 @@ export default function abilityTest() {
         })
     })
 
-    /*
-     * @tc.number:ACTS_UIExtensionAbility_StartAbilityForResult_Promise_0400
-     * @tc.name:The parameters are valid (want and callback parameters),
-     * and the startAbilityForResult of UIExtensionAbility is called.
-     * @tc.desc:Call the startAbilityForResult interface of UIExtensionAbility in the way of Promise, and all
-     * parameters are valid (want and callback parameters). After the call is successful, kill the target Ability
-     * and return an exception message to the caller, in which the resultCode is -1.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 1
+    /**
+     * @tc.name   ACTS_UIExtensionAbility_StartAbilityForResult_Promise_0400
+     * @tc.number ACTS_UIExtensionAbility_StartAbilityForResult_Promise_0400
+     * @tc.desc   Call the startAbilityForResult interface of UIExtensionAbility in the way of Promise, and all
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_UIExtensionAbility_StartAbilityForResult_Promise_0400', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -561,15 +537,13 @@ export default function abilityTest() {
         })
     })
 
-    /*
-     * @tc.number:ACTS_UIExtensionAbility_StartAbilityForResult_Promise_0500
-     * @tc.name:The parameters are valid (want and callback parameters),
-     * and the startAbilityForResult of UIExtensionAbility is called.
-     * @tc.desc:Call the startAbilityForResult interface of UIAbilityContext in the way of Promise, the want
-     * parameter is invalid, and the call fails.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 1
+    /**
+     * @tc.name   ACTS_UIExtensionAbility_StartAbilityForResult_Promise_0500
+     * @tc.number ACTS_UIExtensionAbility_StartAbilityForResult_Promise_0500
+     * @tc.desc   Call the startAbilityForResult interface of UIAbilityContext in the way of Promise, the want
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_UIExtensionAbility_StartAbilityForResult_Promise_0500', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -602,15 +576,13 @@ export default function abilityTest() {
         })
     })
 
-    /*
-     * @tc.number:ACTS_UIExtensionAbility_StartAbilityForResult_Promise_0600
-     * @tc.name:The parameters are valid (want and callback parameters),
-     * and the startAbilityForResult of UIExtensionAbility is called.
-     * @tc.desc:Call the startAbilityForResult interface of UIExtensionAbility in the way of Promise. The parameters
-     * are valid (want and callback parameters), and the call fails because there is no system authority.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 1
+    /**
+     * @tc.name   ACTS_UIExtensionAbility_StartAbilityForResult_Promise_0600
+     * @tc.number ACTS_UIExtensionAbility_StartAbilityForResult_Promise_0600
+     * @tc.desc   Call the startAbilityForResult interface of UIExtensionAbility in the way of Promise. The parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_UIExtensionAbility_StartAbilityForResult_Promise_0600', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);

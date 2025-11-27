@@ -27,13 +27,6 @@
 
 static const char* g_defSysParam = "data of sys param ***...";
 
-/**
- * @tc.desc      : register a test suite, this suite is used to test basic flow
- * and interface dependency
- * @param        : subsystem name is utils
- * @param        : module name is parameter
- * @param        : test suit name is ParameterFuncTestSuite
- */
 LITE_TEST_SUIT(utils, parameter, ParameterFuncTestSuite);
 
 /**
@@ -56,9 +49,12 @@ static BOOL ParameterFuncTestSuiteTearDown(void)
 }
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_2500
- * @tc.name      : SetParameter parameter legal test
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testSetParameter001
+ * @tc.number SUB_UTILS_PARAMETER_2500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testSetParameter001,
@@ -72,9 +68,12 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_2600
- * @tc.name      : SetParameter parameter legal test with Special characters
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testSetParameter002
+ * @tc.number SUB_UTILS_PARAMETER_2600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testSetParameter002,
@@ -88,10 +87,12 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_2700
- * @tc.name      : SetParameter parameter legal test using key with only
- * lowercase
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testSetParameter003
+ * @tc.number SUB_UTILS_PARAMETER_2700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testSetParameter003,
@@ -105,9 +106,12 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_2800
- * @tc.name      : SetParameter parameter legal test using key with only number
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testSetParameter004
+ * @tc.number SUB_UTILS_PARAMETER_2800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testSetParameter004,
@@ -121,10 +125,12 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_2900
- * @tc.name      : SetParameter parameter legal test using key and value with
- * maximum length
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testSetParameter005
+ * @tc.number SUB_UTILS_PARAMETER_2900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testSetParameter005,
@@ -145,10 +151,12 @@ nopqrstuvwxyz1234567890abcdefghijklmnopqrstuvw";
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_3000
- * @tc.name      : SetParameter parameter illegal test when key is nullptr and
- * value is nullptr
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testSetParameter006
+ * @tc.number SUB_UTILS_PARAMETER_3000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testSetParameter006,
@@ -169,10 +177,12 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_3100
- * @tc.name      : SetParameter parameter illegal test when key is NULL and
- * value is NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testSetParameter007
+ * @tc.number SUB_UTILS_PARAMETER_3100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testSetParameter007,
@@ -193,10 +203,12 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_3200
- * @tc.name      : SetParameter parameter illegal test when key len is 32 or
- * more than 32 bytes
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testSetParameter008
+ * @tc.number SUB_UTILS_PARAMETER_3200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testSetParameter008,
@@ -219,9 +231,12 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_3300
- * @tc.name      : SetParameter parameter illegal test using key with uppercase
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testSetParameter009
+ * @tc.number SUB_UTILS_PARAMETER_3300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testSetParameter009,
@@ -237,9 +252,12 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_3400
- * @tc.name      : SetParameter parameter illegal test using key with blank
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testSetParameter010
+ * @tc.number SUB_UTILS_PARAMETER_3400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testSetParameter010,
@@ -255,10 +273,12 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_3500
- * @tc.name      : SetParameter parameter illegal test using key with invalid
- * special characters
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testSetParameter011
+ * @tc.number SUB_UTILS_PARAMETER_3500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testSetParameter011,
@@ -274,10 +294,12 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_3600
- * @tc.name      : SetParameter parameter illegal test when value length is 128
- * or more than 128 bytes
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testSetParameter012
+ * @tc.number SUB_UTILS_PARAMETER_3600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testSetParameter012,
@@ -304,10 +326,12 @@ abcdefghijklmnopqrstuvwxyz1234567890abcdefghijklmnopqrstuvwxyz1234567890";
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_3700
- * @tc.name      : SetParameter parameter legal test when value contains only
- * blanks
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testSetParameter013
+ * @tc.number SUB_UTILS_PARAMETER_3700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testSetParameter013,
@@ -321,9 +345,12 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_3800
- * @tc.name      : GetParameter parameter legal test
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testGetParameter001
+ * @tc.number SUB_UTILS_PARAMETER_3800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testGetParameter001,
@@ -340,9 +367,12 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_3900
- * @tc.name      : GetParameter parameter legal test with Special characters
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testGetParameter002
+ * @tc.number SUB_UTILS_PARAMETER_3900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testGetParameter002,
@@ -359,10 +389,12 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_4000
- * @tc.name      : GetParameter parameter legal test using key with only
- * lowercase
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testGetParameter003
+ * @tc.number SUB_UTILS_PARAMETER_4000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testGetParameter003,
@@ -379,9 +411,12 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_4100
- * @tc.name      : GetParameter parameter legal test using key with only number
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testGetParameter004
+ * @tc.number SUB_UTILS_PARAMETER_4100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testGetParameter004,
@@ -398,10 +433,12 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_4200
- * @tc.name      : GetParameter parameter legal test when defaut value point is
- * nullptr
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testGetParameter005
+ * @tc.number SUB_UTILS_PARAMETER_4200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testGetParameter005,
@@ -418,9 +455,12 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_4300
- * @tc.name      : GetParameter parameter legal test when the key is not exist
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testGetParameter006
+ * @tc.number SUB_UTILS_PARAMETER_4300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testGetParameter006,
@@ -435,10 +475,12 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_4400
- * @tc.name      : GetParameter parameter legal test using key and value with
- * maximum length
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testGetParameter007
+ * @tc.number SUB_UTILS_PARAMETER_4400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testGetParameter007,
@@ -465,9 +507,12 @@ ijklmnopqrstuvwxyz1234567890abcdefghijklmnopqrstuvw";
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_4500
- * @tc.name      : GetParameter parameter illegal test with invalid value length
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testGetParameter008
+ * @tc.number SUB_UTILS_PARAMETER_4500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testGetParameter008,
@@ -485,10 +530,12 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_4600
- * @tc.name      : GetParameter parameter illegal test when value point is
- * nullptr
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testGetParameter009
+ * @tc.number SUB_UTILS_PARAMETER_4600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testGetParameter009,
@@ -505,10 +552,12 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_4700
- * @tc.name      : GetParameter parameter illegal test when key is not exist and
- * value len is invalid
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testGetParameter010
+ * @tc.number SUB_UTILS_PARAMETER_4700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testGetParameter010,
@@ -522,10 +571,12 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_4800
- * @tc.name      : GetParameter parameter illegal test when key is not exist and
- * defaut value point is nullptr
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testGetParameter011
+ * @tc.number SUB_UTILS_PARAMETER_4800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testGetParameter011,
@@ -539,9 +590,12 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_4900
- * @tc.name      : GetParameter parameter illegal test when key len is 32 bytes
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testGetParameter012
+ * @tc.number SUB_UTILS_PARAMETER_4900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testGetParameter012,
@@ -557,10 +611,12 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_5000
- * @tc.name      : GetParameter parameter illegal test when key len is more than
- * 32 bytes
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testGetParameter013
+ * @tc.number SUB_UTILS_PARAMETER_5000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testGetParameter013,
@@ -576,9 +632,12 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_5100
- * @tc.name      : GetParameter parameter illegal test when key is nullptr
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testGetParameter014
+ * @tc.number SUB_UTILS_PARAMETER_5100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testGetParameter014,
@@ -593,9 +652,12 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_5200
- * @tc.name      : GetParameter parameter illegal test using key with uppercase
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testGetParameter015
+ * @tc.number SUB_UTILS_PARAMETER_5200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testGetParameter015,
@@ -611,9 +673,12 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_5300
- * @tc.name      : GetParameter parameter illegal test using key with blank
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testGetParameter016
+ * @tc.number SUB_UTILS_PARAMETER_5300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testGetParameter016,
@@ -629,10 +694,12 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_5400
- * @tc.name      : GetParameter parameter illegal test using key with invalid
- * special characters
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testGetParameter017
+ * @tc.number SUB_UTILS_PARAMETER_5400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testGetParameter017,
@@ -648,9 +715,12 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_5500
- * @tc.name      : GetParameter parameter illegal test when key is NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testGetParameter018
+ * @tc.number SUB_UTILS_PARAMETER_5500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testGetParameter018,
@@ -665,10 +735,12 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_5600
- * @tc.name      : GetParameter parameter legal test when value contains only
- * blanks
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testGetParameter019
+ * @tc.number SUB_UTILS_PARAMETER_5600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testGetParameter019,
@@ -685,9 +757,12 @@ LITE_TEST_CASE(ParameterFuncTestSuite,
 };
 
 /**
- * @tc.number    : SUB_UTILS_PARAMETER_5700
- * @tc.name      : Update value of parameter legal test
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testGetParameter020
+ * @tc.number SUB_UTILS_PARAMETER_5700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(ParameterFuncTestSuite,
                testGetParameter020,

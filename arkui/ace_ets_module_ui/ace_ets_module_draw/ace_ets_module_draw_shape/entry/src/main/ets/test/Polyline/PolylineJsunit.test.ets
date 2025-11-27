@@ -46,12 +46,12 @@ export default function polylineJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ARKUI_API_testPolyline001
-     * @tc.name: testPolyline001
-     * @tc.desc: PolylineAPI 
-     * @tc.level: Level 0
-     * @tc.type : Polyline
-     * @tc.size : PolylineTest
+     * @tc.name   testPolyline001
+     * @tc.number SUB_ARKUI_API_testPolyline001
+     * @tc.desc   PolylineAPI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPolyline001', Level.LEVEL0, async (done: Function) => {
       console.info('[testPolyline001] START');

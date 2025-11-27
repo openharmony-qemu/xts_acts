@@ -45,12 +45,12 @@ export default function datePickerJsunit() {
     });
 
     /**
-     * @tc.number: datePickerTest_0100
-     * @tc.name  : datePickerTest_0100
-     * @tc.desc  : To test the datePicker type
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   datePickerTest_0100
+     * @tc.number datePickerTest_0100
+     * @tc.desc   To test the datePicker type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('datePickerTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('datePickerText_0100 START');
@@ -64,12 +64,12 @@ export default function datePickerJsunit() {
     });
 
     /**
-     * @tc.number: datePickerTest_0300
-     * @tc.name  : datePickerTest_0300
-     * @tc.desc  : To test the datePicker useMilitaryTime
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   datePickerTest_0300
+     * @tc.number datePickerTest_0300
+     * @tc.desc   To test the datePicker useMilitaryTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('datePickerTest_0300', Level.LEVEL1, async (done: Function) => {
       console.info('datePickerTest_0300 START');

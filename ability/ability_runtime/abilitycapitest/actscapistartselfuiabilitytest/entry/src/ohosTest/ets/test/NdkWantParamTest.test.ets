@@ -26,13 +26,13 @@ export default function ndkTest() {
     afterEach(() => {})
     afterAll(() => {})
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_NdkWantEx_0100
-     * @tc.name   : The input parameter want is null of OH_AbilityBase_SetWantUri.
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NdkWantEx_0100
+     * @tc.number SUB_Ability_AbilityRuntime_NdkWantEx_0100
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_NdkWantEx_0100', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_NdkWantEx_0100';
@@ -43,13 +43,13 @@ export default function ndkTest() {
       done();
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_NdkWantEx_0200
-     * @tc.name   : The input parameter uri is empty of OH_AbilityBase_SetWantUri
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NdkWantEx_0200
+     * @tc.number SUB_Ability_AbilityRuntime_NdkWantEx_0200
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_NdkWantEx_0200', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_NdkWantEx_0200';
@@ -60,13 +60,13 @@ export default function ndkTest() {
       done();
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_NdkWantEx_0300
-     * @tc.name   : The input parameter want is empty of OH_AbilityBase_GetWantUri
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NdkWantEx_0300
+     * @tc.number SUB_Ability_AbilityRuntime_NdkWantEx_0300
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_NdkWantEx_0300', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_NdkWantEx_0300';
@@ -77,13 +77,13 @@ export default function ndkTest() {
       done();
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_NdkWantEx_0400
-     * @tc.name   : The input parameter uri is empty of OH_AbilityBase_GetWantUri
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NdkWantEx_0400
+     * @tc.number SUB_Ability_AbilityRuntime_NdkWantEx_0400
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_NdkWantEx_0400', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_NdkWantEx_0400';
@@ -94,13 +94,13 @@ export default function ndkTest() {
       done();
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_NdkWantEx_0500
-     * @tc.name   : The input parameter size is equal the OH_AbilityBase_GetWantUri return size.
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NdkWantEx_0500
+     * @tc.number SUB_Ability_AbilityRuntime_NdkWantEx_0500
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_NdkWantEx_0500', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_NdkWantEx_0500';
@@ -111,13 +111,13 @@ export default function ndkTest() {
       done();
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_NdkWantEx_0600
-     * @tc.name   : The input parameter size is less the OH_AbilityBase_GetWantUri return size.
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NdkWantEx_0600
+     * @tc.number SUB_Ability_AbilityRuntime_NdkWantEx_0600
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_NdkWantEx_0600', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_NdkWantEx_0600';
@@ -128,13 +128,13 @@ export default function ndkTest() {
       done();
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_NdkWantEx_0700
-     * @tc.name   : The input parameter want is empty of OH_AbilityBase_SetWantInt32Param
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NdkWantEx_0700
+     * @tc.number SUB_Ability_AbilityRuntime_NdkWantEx_0700
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_NdkWantEx_0700', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_NdkWantEx_0700';
@@ -145,13 +145,13 @@ export default function ndkTest() {
       done();
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_NdkWantEx_0800
-     * @tc.name   : The input parameter key is empty of OH_AbilityBase_SetWantInt32Param.
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NdkWantEx_0800
+     * @tc.number SUB_Ability_AbilityRuntime_NdkWantEx_0800
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_NdkWantEx_0800', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_NdkWantEx_0800';
@@ -162,13 +162,13 @@ export default function ndkTest() {
       done();
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_NdkWantEx_0900
-     * @tc.name   : The input parameter want is empty of OH_AbilityBase_GetWantInt32Param
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NdkWantEx_0900
+     * @tc.number SUB_Ability_AbilityRuntime_NdkWantEx_0900
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_NdkWantEx_0900', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_NdkWantEx_0900';
@@ -179,13 +179,13 @@ export default function ndkTest() {
       done();
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_NdkWantEx_1000
-     * @tc.name   : The input parameter key is empty of OH_AbilityBase_GetWantInt32Param
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NdkWantEx_1000
+     * @tc.number SUB_Ability_AbilityRuntime_NdkWantEx_1000
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_NdkWantEx_1000', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_NdkWantEx_1000';
@@ -196,13 +196,13 @@ export default function ndkTest() {
       done();
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_NdkWantEx_1100
-     * @tc.name   : The input parameter value is empty of OH_AbilityBase_GetWantInt32Param.
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NdkWantEx_1100
+     * @tc.number SUB_Ability_AbilityRuntime_NdkWantEx_1100
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_NdkWantEx_1100', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_NdkWantEx_1100';
@@ -213,13 +213,13 @@ export default function ndkTest() {
       done();
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_NdkWantEx_1200
-     * @tc.name   : The input parameter want is empty of OH_AbilityBase_SetWantBoolParam
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NdkWantEx_1200
+     * @tc.number SUB_Ability_AbilityRuntime_NdkWantEx_1200
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_NdkWantEx_1200', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_NdkWantEx_1200';
@@ -230,13 +230,13 @@ export default function ndkTest() {
       done();
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_NdkWantEx_1300
-     * @tc.name   : The input parameter key is empty of OH_AbilityBase_SetWantBoolParam
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NdkWantEx_1300
+     * @tc.number SUB_Ability_AbilityRuntime_NdkWantEx_1300
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_NdkWantEx_1300', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_NdkWantEx_1300';
@@ -247,13 +247,13 @@ export default function ndkTest() {
       done();
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_NdkWantEx_1400
-     * @tc.name   : The input parameter want is empty of OH_AbilityBase_GetWantBoolParam
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NdkWantEx_1400
+     * @tc.number SUB_Ability_AbilityRuntime_NdkWantEx_1400
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_NdkWantEx_1400', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_NdkWantEx_1400';
@@ -264,13 +264,13 @@ export default function ndkTest() {
       done();
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_NdkWantEx_1500
-     * @tc.name   : The input parameter key is empty of OH_AbilityBase_GetWantBoolParam
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NdkWantEx_1500
+     * @tc.number SUB_Ability_AbilityRuntime_NdkWantEx_1500
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_NdkWantEx_1500', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_NdkWantEx_1500';
@@ -281,13 +281,13 @@ export default function ndkTest() {
       done();
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_NdkWantEx_1600
-     * @tc.name   : The input parameter value is empty of OH_AbilityBase_GetWantBoolParam
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NdkWantEx_1600
+     * @tc.number SUB_Ability_AbilityRuntime_NdkWantEx_1600
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_NdkWantEx_1600', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_NdkWantEx_1600';
@@ -298,13 +298,13 @@ export default function ndkTest() {
       done();
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_NdkWantEx_1700
-     * @tc.name   : The input parameter want is empty of OH_AbilityBase_SetWantDoubleParam
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NdkWantEx_1700
+     * @tc.number SUB_Ability_AbilityRuntime_NdkWantEx_1700
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_NdkWantEx_1700', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_NdkWantEx_1700';
@@ -315,13 +315,13 @@ export default function ndkTest() {
       done();
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_NdkWantEx_1800
-     * @tc.name   : The input parameter key is empty of OH_AbilityBase_SetWantDoubleParam
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NdkWantEx_1800
+     * @tc.number SUB_Ability_AbilityRuntime_NdkWantEx_1800
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_NdkWantEx_1800', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_NdkWantEx_1800';
@@ -332,13 +332,13 @@ export default function ndkTest() {
       done();
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_NdkWantEx_1900
-     * @tc.name   : The input parameter want is empty of OH_AbilityBase_GetWantDoubleParam
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NdkWantEx_1900
+     * @tc.number SUB_Ability_AbilityRuntime_NdkWantEx_1900
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_NdkWantEx_1900', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_NdkWantEx_1900';
@@ -349,13 +349,13 @@ export default function ndkTest() {
       done();
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_NdkWantEx_2000
-     * @tc.name   : The input parameter key is empty of OH_AbilityBase_GetWantDoubleParam
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NdkWantEx_2000
+     * @tc.number SUB_Ability_AbilityRuntime_NdkWantEx_2000
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_NdkWantEx_2000', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_NdkWantEx_2000';
@@ -366,13 +366,13 @@ export default function ndkTest() {
       done();
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_NdkWantEx_2100
-     * @tc.name   : The input parameter value is empty of OH_AbilityBase_GetWantDoubleParam
-     * @tc.desc   : Expect: call failed
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NdkWantEx_2100
+     * @tc.number SUB_Ability_AbilityRuntime_NdkWantEx_2100
+     * @tc.desc   Expect: call failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_NdkWantEx_2100', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_NdkWantEx_2100';

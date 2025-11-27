@@ -45,13 +45,13 @@ export default function textPickerDefaultPickerItemHeightTest() {
       console.info("textPickerDefaultPickerItemHeight after each called");
     });
 
-    /*
-     * @tc.number testTextPickerDefaultPickerItemHeight0001
+    /**
      * @tc.name   testTextPickerDefaultPickerItemHeight0001
+     * @tc.number testTextPickerDefaultPickerItemHeight0001
      * @tc.desc   textPickerDefaultPickerItemHeight
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextPickerDefaultPickerItemHeight0001', Level.LEVEL1, async () => {
       console.info('textPickerDefaultPickerItemHeight testTextPickerDefaultPickerItemHeight0001 START');
@@ -67,13 +67,13 @@ export default function textPickerDefaultPickerItemHeightTest() {
       expect(Math.abs(numberValue) <= 0.01).assertTrue();
     });
 
-    /*
-     * @tc.number testTextPickerDefaultPickerItemHeight0002
+    /**
      * @tc.name   testTextPickerDefaultPickerItemHeight0002
+     * @tc.number testTextPickerDefaultPickerItemHeight0002
      * @tc.desc   textPickerDefaultPickerItemHeight
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextPickerDefaultPickerItemHeight0002', Level.LEVEL1, async () => {
       console.info('textPickerDefaultPickerItemHeight testTextPickerDefaultPickerItemHeight0002 START');
@@ -105,13 +105,13 @@ export default function textPickerDefaultPickerItemHeightTest() {
       }
     });
 
-    /*
-     * @tc.number testTextPickerDefaultPickerItemHeight0003
+    /**
      * @tc.name   testTextPickerDefaultPickerItemHeight0003
+     * @tc.number testTextPickerDefaultPickerItemHeight0003
      * @tc.desc   textPickerDefaultPickerItemHeight
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextPickerDefaultPickerItemHeight0003', Level.LEVEL1, async () => {
       console.info('textPickerDefaultPickerItemHeight testTextPickerDefaultPickerItemHeight0003 START');
@@ -124,13 +124,13 @@ export default function textPickerDefaultPickerItemHeightTest() {
       console.info("[testTextPickerDefaultPickerItemHeight0003] fontSize value :" + JSON.parse(strJson).$attrs.fontSize);
     });
 
-    /*
-     * @tc.number testTextPickerDefaultPickerItemHeight0004
+    /**
      * @tc.name   testTextPickerDefaultPickerItemHeight0004
+     * @tc.number testTextPickerDefaultPickerItemHeight0004
      * @tc.desc   textPickerDefaultPickerItemHeight
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextPickerDefaultPickerItemHeight0004', Level.LEVEL1, async () => {
       console.info('textPickerDefaultPickerItemHeight testTextPickerDefaultPickerItemHeight0004 START');
@@ -144,13 +144,13 @@ export default function textPickerDefaultPickerItemHeightTest() {
 
     });
 
-    /*
-     * @tc.number testTextPickerDefaultPickerItemHeight0005
+    /**
      * @tc.name   testTextPickerDefaultPickerItemHeight0005
+     * @tc.number testTextPickerDefaultPickerItemHeight0005
      * @tc.desc   textPickerDefaultPickerItemHeight
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextPickerDefaultPickerItemHeight0005', Level.LEVEL1, async () => {
       console.info('textPickerDefaultPickerItemHeight testTextPickerDefaultPickerItemHeight0005 START');
@@ -163,13 +163,13 @@ export default function textPickerDefaultPickerItemHeightTest() {
       console.info("[testTextPickerDefaultPickerItemHeight0005] align value :" + JSON.parse(strJson).$attrs.align);
     });
 
-    /*
-     * @tc.number testTextPickerDefaultPickerItemHeight0006
+    /**
      * @tc.name   testTextPickerDefaultPickerItemHeight0006
+     * @tc.number testTextPickerDefaultPickerItemHeight0006
      * @tc.desc   textPickerDefaultPickerItemHeight
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextPickerDefaultPickerItemHeight0006', Level.LEVEL1, async () => {
       console.info('textPickerDefaultPickerItemHeight testTextPickerDefaultPickerItemHeight0006 START');
@@ -182,13 +182,13 @@ export default function textPickerDefaultPickerItemHeightTest() {
       console.info("[testTextPickerDefaultPickerItemHeight0006] fontColor value :" + JSON.parse(strJson).$attrs.fontColor);
     });
 
-    /*
-     * @tc.number testTextPickerDefaultPickerItemHeight0007
+    /**
      * @tc.name   testTextPickerDefaultPickerItemHeight0007
+     * @tc.number testTextPickerDefaultPickerItemHeight0007
      * @tc.desc   textPickerDefaultPickerItemHeight
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextPickerDefaultPickerItemHeight0007', Level.LEVEL1, async () => {
       console.info('textPickerDefaultPickerItemHeight testTextPickerDefaultPickerItemHeight0007 START');
@@ -201,13 +201,13 @@ export default function textPickerDefaultPickerItemHeightTest() {
       console.info("[testTextPickerDefaultPickerItemHeight0007] lineHeight value :" + JSON.parse(strJson).$attrs.lineHeight);
     });
 
-    /*
-     * @tc.number testTextPickerDefaultPickerItemHeight0009
+    /**
      * @tc.name   testTextPickerDefaultPickerItemHeight0009
+     * @tc.number testTextPickerDefaultPickerItemHeight0009
      * @tc.desc   textPickerDefaultPickerItemHeight
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextPickerDefaultPickerItemHeight0009', Level.LEVEL1, async () => {
       console.info('textPickerDefaultPickerItemHeight testTextPickerDefaultPickerItemHeight009 START');
@@ -220,13 +220,13 @@ export default function textPickerDefaultPickerItemHeightTest() {
       console.info("[testTextPickerDefaultPickerItemHeight0009] padding value :" + JSON.parse(strJson).$attrs.padding);
     });
 
-    /*
-     * @tc.number testTextPickerDefaultPickerItemHeight0010
+    /**
      * @tc.name   testTextPickerDefaultPickerItemHeight0010
+     * @tc.number testTextPickerDefaultPickerItemHeight0010
      * @tc.desc   textPickerDefaultPickerItemHeight
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextPickerDefaultPickerItemHeight0010', Level.LEVEL1, async () => {
       console.info('textPickerDefaultPickerItemHeight testTextPickerDefaultPickerItemHeight0010 START');
@@ -239,13 +239,13 @@ export default function textPickerDefaultPickerItemHeightTest() {
       console.info("[testTextPickerDefaultPickerItemHeight0010] textAlign value :" + JSON.parse(strJson).$attrs.textAlign);
     });
 
-    /*
-     * @tc.number testTextPickerDefaultPickerItemHeight0011
+    /**
      * @tc.name   testTextPickerDefaultPickerItemHeight0011
+     * @tc.number testTextPickerDefaultPickerItemHeight0011
      * @tc.desc   textPickerDefaultPickerItemHeight
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextPickerDefaultPickerItemHeight0011', Level.LEVEL1, async () => {
       console.info('textPickerDefaultPickerItemHeight testTextPickerDefaultPickerItemHeight0011 START');

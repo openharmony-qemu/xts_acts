@@ -54,6 +54,14 @@ export default function bindPopupOffsetTest() {
       // This API supports only one parameter: clear action function.
     })
 
+    /**
+     * @tc.name   bindPopupOffsetTest_0100
+     * @tc.number bindPopupOffsetTest_0100
+     * @tc.desc   bindPopupOffsetTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('bindPopupOffsetTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('bindPopupOffsetTest_0100 START');
       try {
@@ -83,6 +91,14 @@ export default function bindPopupOffsetTest() {
       done();
     });
 
+    /**
+     * @tc.name   bindPopupOffsetTest_0200
+     * @tc.number bindPopupOffsetTest_0200
+     * @tc.desc   bindPopupOffsetTest_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('bindPopupOffsetTest_0200', Level.LEVEL2, async (done: Function) => {
       console.info('bindPopupOffsetTest_0200 START');
       try {
@@ -112,6 +128,14 @@ export default function bindPopupOffsetTest() {
       done();
     });
 
+    /**
+     * @tc.name   bindPopupOffsetTest_0300
+     * @tc.number bindPopupOffsetTest_0300
+     * @tc.desc   bindPopupOffsetTest_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('bindPopupOffsetTest_0300', Level.LEVEL2, async (done: Function) => {
       console.info('bindPopupOffsetTest_0300 START');
       try {
@@ -141,6 +165,14 @@ export default function bindPopupOffsetTest() {
       done();
     });
 
+    /**
+     * @tc.name   bindPopupOffsetTest_0400
+     * @tc.number bindPopupOffsetTest_0400
+     * @tc.desc   bindPopupOffsetTest_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('bindPopupOffsetTest_0400', Level.LEVEL2, async (done: Function) => {
       console.info('bindPopupOffsetTest_0400 START');
       try {
@@ -170,6 +202,14 @@ export default function bindPopupOffsetTest() {
       done();
     });
 
+    /**
+     * @tc.name   bindPopupOffsetTest_0500
+     * @tc.number bindPopupOffsetTest_0500
+     * @tc.desc   bindPopupOffsetTest_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('bindPopupOffsetTest_0500', Level.LEVEL2, async (done: Function) => {
       console.info('bindPopupOffsetTest_0500 START');
       try {
@@ -196,6 +236,14 @@ export default function bindPopupOffsetTest() {
       }
       done();
     });
+    /**
+     * @tc.name   bindPopupOffsetTest_0600
+     * @tc.number bindPopupOffsetTest_0600
+     * @tc.desc   bindPopupOffsetTest_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('bindPopupOffsetTest_0600', Level.LEVEL2, async (done: Function) => {
       console.info('bindPopupOffsetTest_0600 START');
       try {
@@ -225,6 +273,14 @@ export default function bindPopupOffsetTest() {
       done();
     });
 
+    /**
+     * @tc.name   bindPopupOffsetTest_0700
+     * @tc.number bindPopupOffsetTest_0700
+     * @tc.desc   bindPopupOffsetTest_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('bindPopupOffsetTest_0700', Level.LEVEL2, async (done: Function) => {
       console.info('bindPopupOffsetTest_0700 START');
       try {
@@ -254,6 +310,14 @@ export default function bindPopupOffsetTest() {
       done();
     });
 
+    /**
+     * @tc.name   bindPopupOffsetTest_0800
+     * @tc.number bindPopupOffsetTest_0800
+     * @tc.desc   bindPopupOffsetTest_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('bindPopupOffsetTest_0800', Level.LEVEL2, async (done: Function) => {
       console.info('bindPopupOffsetTest_0800 START');
       try {
@@ -283,6 +347,14 @@ export default function bindPopupOffsetTest() {
       done();
     });
 
+    /**
+     * @tc.name   bbindPopupOffsetTest_0900
+     * @tc.number bbindPopupOffsetTest_0900
+     * @tc.desc   bbindPopupOffsetTest_0900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('bbindPopupOffsetTest_0900', Level.LEVEL2, async (done: Function) => {
       console.info('bindPopupOffsetTest_0900 START');
       try {
@@ -312,6 +384,14 @@ export default function bindPopupOffsetTest() {
       done();
     });
 
+    /**
+     * @tc.name   bindPopupOffsetTest_1000
+     * @tc.number bindPopupOffsetTest_1000
+     * @tc.desc   bindPopupOffsetTest_1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('bindPopupOffsetTest_1000', Level.LEVEL2, async (done: Function) => {
       console.info('bindPopupOffsetTest_1000 START');
       try {

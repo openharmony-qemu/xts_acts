@@ -55,9 +55,12 @@ export default function FreezeV1Test() {
     });
 
     /**
+     * @tc.name   FreezeTest001
      * @tc.number Freeze001_001
-     * @tc.name Freeze001_001
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FreezeTest001', Level.LEVEL0, async () => {
       console.info('FreezeTest001 START');
@@ -85,9 +88,12 @@ export default function FreezeV1Test() {
 
 
     /**
+     * @tc.name   FreezeTest002
      * @tc.number Freeze001_002
-     * @tc.name Freeze001_002
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FreezeTest002', Level.LEVEL0, async () => {
       console.info('FreezeTest002 START');

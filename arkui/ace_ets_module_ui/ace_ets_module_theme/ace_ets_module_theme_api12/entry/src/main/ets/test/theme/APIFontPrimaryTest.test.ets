@@ -56,11 +56,14 @@ export default function APIFontPrimaryTest() {
     afterEach(async () => {
       await Utils.sleep(2000);
     });
-    /*
-     *tc.number api
-     *tc.name   APIFontPrimaryTest_0100
-     *tc.desc   APIFontPrimaryTest_0100
-    */
+    /**
+     * @tc.name   APIFontPrimaryTest_0100
+     * @tc.number api
+     * @tc.desc   APIFontPrimaryTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('APIFontPrimaryTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('APIFontPrimaryTest_0100 START');
       let driver = await Driver.create()
@@ -76,11 +79,14 @@ export default function APIFontPrimaryTest() {
       console.info('[APIFontPrimaryTest_0100] END');
       done();
     });
-    /*
-     *tc.number api
-     *tc.name   APIFontPrimaryTest_0200
-     *tc.desc   APIFontPrimaryTest_0200
-    */
+    /**
+     * @tc.name   APIFontPrimaryTest_0200
+     * @tc.number api
+     * @tc.desc   APIFontPrimaryTest_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('APIFontPrimaryTest_0200', Level.LEVEL0, async (done: Function) => {
       console.info('APIFontPrimaryTest_0200 START');
       let driver = await Driver.create()
@@ -96,11 +102,14 @@ export default function APIFontPrimaryTest() {
       console.info('[APIFontPrimaryTest_0200] END');
       done();
     });
-    /*
-     *tc.number api
-     *tc.name   APIFontPrimaryTest_0300
-     *tc.desc   APIFontPrimaryTest_0300
-    */
+    /**
+     * @tc.name   APIFontPrimaryTest_0300
+     * @tc.number api
+     * @tc.desc   APIFontPrimaryTest_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('APIFontPrimaryTest_0300', Level.LEVEL0, async (done: Function) => {
       console.info('APIFontPrimaryTest_0300 START');
       let driver = await Driver.create()
@@ -116,11 +125,14 @@ export default function APIFontPrimaryTest() {
       console.info('[APIFontPrimaryTest_0300] END');
       done();
     });
-    /*
-     *tc.number api
-     *tc.name   APIFontPrimaryTest_0400
-     *tc.desc   APIFontPrimaryTest_0400
-    */
+    /**
+     * @tc.name   APIFontPrimaryTest_0400
+     * @tc.number api
+     * @tc.desc   APIFontPrimaryTest_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('APIFontPrimaryTest_0400', Level.LEVEL0, async (done: Function) => {
       console.info('APIFontPrimaryTest_0400 START');
       let driver = await Driver.create()
@@ -136,11 +148,14 @@ export default function APIFontPrimaryTest() {
       console.info('[APIFontPrimaryTest_0400] END');
       done();
     });
-    /*
-     *tc.number api
-     *tc.name   APIFontPrimaryTest_0500
-     *tc.desc   APIFontPrimaryTest_0500
-    */
+    /**
+     * @tc.name   APIFontPrimaryTest_0500
+     * @tc.number api
+     * @tc.desc   APIFontPrimaryTest_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('APIFontPrimaryTest_0500', Level.LEVEL0, async (done: Function) => {
       console.info('APIFontPrimaryTest_0500 START');
       let driver = await Driver.create()
@@ -156,11 +171,14 @@ export default function APIFontPrimaryTest() {
       console.info('[APIFontPrimaryTest_0500] END');
       done();
     });
-    /*
-     *tc.number api
-     *tc.name   APIFontPrimaryTest_0600
-     *tc.desc   APIFontPrimaryTest_0600
-    */
+    /**
+     * @tc.name   APIFontPrimaryTest_0600
+     * @tc.number api
+     * @tc.desc   APIFontPrimaryTest_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('APIFontPrimaryTest_0600', Level.LEVEL0, async (done: Function) => {
       console.info('APIFontPrimaryTest_0600 START');
       let driver = await Driver.create()
@@ -176,11 +194,14 @@ export default function APIFontPrimaryTest() {
       console.info('[APIFontPrimaryTest_0600] END');
       done();
     });
-    /*
-     *tc.number api
-     *tc.name   APIFontPrimaryTest_0700
-     *tc.desc   APIFontPrimaryTest_0700
-    */
+    /**
+     * @tc.name   APIFontPrimaryTest_0700
+     * @tc.number api
+     * @tc.desc   APIFontPrimaryTest_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('APIFontPrimaryTest_0700', Level.LEVEL0, async (done: Function) => {
       console.info('APIFontPrimaryTest_0700 START');
       let driver = await Driver.create()
@@ -196,11 +217,14 @@ export default function APIFontPrimaryTest() {
       console.info('[APIFontPrimaryTest_0700] END');
       done();
     });
-    /*
-     *tc.number api
-     *tc.name   APIFontPrimaryTest_0800
-     *tc.desc   APIFontPrimaryTest_0800
-    */
+    /**
+     * @tc.name   APIFontPrimaryTest_0800
+     * @tc.number api
+     * @tc.desc   APIFontPrimaryTest_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('APIFontPrimaryTest_0800', Level.LEVEL0, async (done: Function) => {
       console.info('APIFontPrimaryTest_0800 START');
       let driver = await Driver.create()
@@ -216,11 +240,14 @@ export default function APIFontPrimaryTest() {
       console.info('[APIFontPrimaryTest_0800] END');
       done();
     });
-    /*
-     *tc.number api
-     *tc.name   APIFontPrimaryTest_0900
-     *tc.desc   APIFontPrimaryTest_0900
-    */
+    /**
+     * @tc.name   APIFontPrimaryTest_0900
+     * @tc.number api
+     * @tc.desc   APIFontPrimaryTest_0900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('APIFontPrimaryTest_0900', Level.LEVEL0, async (done: Function) => {
       console.info('APIFontPrimaryTest_0900 START');
       let driver = await Driver.create()
@@ -236,11 +263,14 @@ export default function APIFontPrimaryTest() {
       console.info('[APIFontPrimaryTest_0900] END');
       done();
     });
-    /*
-     *tc.number api
-     *tc.name   APIFontPrimaryTest_1000
-     *tc.desc   APIFontPrimaryTest_1000
-    */
+    /**
+     * @tc.name   APIFontPrimaryTest_1000
+     * @tc.number api
+     * @tc.desc   APIFontPrimaryTest_1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('APIFontPrimaryTest_1000', Level.LEVEL0, async (done: Function) => {
       console.info('APIFontPrimaryTest_1000 START');
       let driver = await Driver.create()
@@ -256,11 +286,14 @@ export default function APIFontPrimaryTest() {
       console.info('[APIFontPrimaryTest_1000] END');
       done();
     });
-    /*
-     *tc.number api
-     *tc.name   APIFontPrimaryTest_1100
-     *tc.desc   APIFontPrimaryTest_1100
-    */
+    /**
+     * @tc.name   APIFontPrimaryTest_1100
+     * @tc.number api
+     * @tc.desc   APIFontPrimaryTest_1100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('APIFontPrimaryTest_1100', Level.LEVEL0, async (done: Function) => {
       console.info('APIFontPrimaryTest_1100 START');
       let driver = await Driver.create()
@@ -276,11 +309,14 @@ export default function APIFontPrimaryTest() {
       console.info('[APIFontPrimaryTest_1100] END');
       done();
     });
-    /*
-     *tc.number api
-     *tc.name   APIFontPrimaryTest_1200
-     *tc.desc   APIFontPrimaryTest_1200
-    */
+    /**
+     * @tc.name   APIFontPrimaryTest_1200
+     * @tc.number api
+     * @tc.desc   APIFontPrimaryTest_1200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('APIFontPrimaryTest_1200', Level.LEVEL0, async (done: Function) => {
       console.info('APIFontPrimaryTest_1200 START');
       let driver = await Driver.create()
@@ -296,11 +332,14 @@ export default function APIFontPrimaryTest() {
       console.info('[APIFontPrimaryTest_1200] END');
       done();
     });
-    /*
-     *tc.number api
-     *tc.name   APIFontPrimaryTest_1300
-     *tc.desc   APIFontPrimaryTest_1300
-    */
+    /**
+     * @tc.name   APIFontPrimaryTest_1300
+     * @tc.number api
+     * @tc.desc   APIFontPrimaryTest_1300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('APIFontPrimaryTest_1300', Level.LEVEL0, async (done: Function) => {
       console.info('APIFontPrimaryTest_1300 START');
       let driver = await Driver.create()
@@ -316,11 +355,14 @@ export default function APIFontPrimaryTest() {
       console.info('[APIFontPrimaryTest_1300] END');
       done();
     });
-    /*
-     *tc.number api
-     *tc.name   APIFontPrimaryTest_1400
-     *tc.desc   APIFontPrimaryTest_1400
-    */
+    /**
+     * @tc.name   APIFontPrimaryTest_1400
+     * @tc.number api
+     * @tc.desc   APIFontPrimaryTest_1400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('APIFontPrimaryTest_1400', Level.LEVEL0, async (done: Function) => {
       console.info('APIFontPrimaryTest_1400 START');
       let driver = await Driver.create()
@@ -336,11 +378,14 @@ export default function APIFontPrimaryTest() {
       console.info('[APIFontPrimaryTest_1400] END');
       done();
     });
-    /*
-     *tc.number api
-     *tc.name   APIFontPrimaryTest_1500
-     *tc.desc   APIFontPrimaryTest_1500
-    */
+    /**
+     * @tc.name   APIFontPrimaryTest_1500
+     * @tc.number api
+     * @tc.desc   APIFontPrimaryTest_1500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('APIFontPrimaryTest_1500', Level.LEVEL0, async (done: Function) => {
       console.info('APIFontPrimaryTest_1500 START');
       let driver = await Driver.create()

@@ -23,10 +23,12 @@ export default function formHostTest() {
   describe('formHostTest', () => {
 
     /**
-     * @tc.number: System_API_Test_Form_Host_0100
-     * @tc.name: callback form deleteForm system interface interception test
-     * @tc.desc:  Test the third-party application call deleteForm will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_0100
+     * @tc.number System_API_Test_Form_Host_0100
+     * @tc.desc   Test the third-party application call deleteForm will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_0100', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_0100';
@@ -50,10 +52,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Host_0200
-     * @tc.name: promise form deleteForm system interface interception test
-     * @tc.desc:  Test the third-party application call deleteForm will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_0200
+     * @tc.number System_API_Test_Form_Host_0200
+     * @tc.desc   Test the third-party application call deleteForm will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_0200', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_0200';
@@ -79,10 +83,12 @@ export default function formHostTest() {
     
 
     /**
-     * @tc.number: System_API_Test_Form_Host_0300
-     * @tc.name: callback form deleteForm system interface interception test
-     * @tc.desc:  Test the third-party application call deleteForm will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_0300
+     * @tc.number System_API_Test_Form_Host_0300
+     * @tc.desc   Test the third-party application call deleteForm will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_0300', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_0300';
@@ -105,10 +111,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Host_0400
-     * @tc.name: Multi-parameter releaseForm system interface interception test in the form of callback
-     * @tc.desc:  Test the third-party application call releaseForm will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_0400
+     * @tc.number System_API_Test_Form_Host_0400
+     * @tc.desc   Test the third-party application call releaseForm will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_0400', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_0400';
@@ -131,10 +139,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Host_0500
-     * @tc.name: promise form releaseForm system interface interception test
-     * @tc.desc:  Test the third-party application call releaseForm will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_0500
+     * @tc.number System_API_Test_Form_Host_0500
+     * @tc.desc   Test the third-party application call releaseForm will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_0500', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_0500';
@@ -158,10 +168,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Host_0600
-     * @tc.name: callback form requestForm system interface interception test
-     * @tc.desc:  Test the third-party application call requestForm will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_0600
+     * @tc.number System_API_Test_Form_Host_0600
+     * @tc.desc   Test the third-party application call requestForm will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_0600', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_0600';
@@ -184,10 +196,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Host_0700
-     * @tc.name: promise form requestForm system interface interception test
-     * @tc.desc:  Test the third-party application call requestForm will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_0700
+     * @tc.number System_API_Test_Form_Host_0700
+     * @tc.desc   Test the third-party application call requestForm will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_0700', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_0700';
@@ -211,10 +225,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Host_0800
-     * @tc.name: callback form castToNormalForm system interface interception test
-     * @tc.desc:  Test the third-party application call castToNormalForm will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_0800
+     * @tc.number System_API_Test_Form_Host_0800
+     * @tc.desc   Test the third-party application call castToNormalForm will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_0800', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_0800';
@@ -237,10 +253,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Host_0900
-     * @tc.name: promise form castToNormalForm system interface interception test
-     * @tc.desc:  Test the third-party application call castToNormalForm will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_0900
+     * @tc.number System_API_Test_Form_Host_0900
+     * @tc.desc   Test the third-party application call castToNormalForm will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_0900', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_0900';
@@ -264,10 +282,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Host_1000
-     * @tc.name: callback form notifyVisibleForms system interface interception test
-     * @tc.desc:  Test the third-party application call notifyVisibleForms will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_1000
+     * @tc.number System_API_Test_Form_Host_1000
+     * @tc.desc   Test the third-party application call notifyVisibleForms will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_1000', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_1000';
@@ -290,10 +310,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Host_1100
-     * @tc.name: promise form notifyVisibleForms system interface interception test
-     * @tc.desc:  Test the third-party application call notifyVisibleForms will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_1100
+     * @tc.number System_API_Test_Form_Host_1100
+     * @tc.desc   Test the third-party application call notifyVisibleForms will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_1100', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_1100';
@@ -317,10 +339,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Host_1200
-     * @tc.name: callback form notifyInvisibleForms system interface interception test
-     * @tc.desc:  Test the third-party application call notifyInvisibleForms will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_1200
+     * @tc.number System_API_Test_Form_Host_1200
+     * @tc.desc   Test the third-party application call notifyInvisibleForms will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_1200', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_1200';
@@ -343,10 +367,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Host_1300
-     * @tc.name: promise form notifyInvisibleForms system interface interception test
-     * @tc.desc:  Test the third-party application call notifyInvisibleForms will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_1300
+     * @tc.number System_API_Test_Form_Host_1300
+     * @tc.desc   Test the third-party application call notifyInvisibleForms will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_1300', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_1300';
@@ -370,10 +396,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Host_1400
-     * @tc.name: callback form enableFormsUpdate system interface interception test
-     * @tc.desc:  Test the third-party application call enableFormsUpdate will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_1400
+     * @tc.number System_API_Test_Form_Host_1400
+     * @tc.desc   Test the third-party application call enableFormsUpdate will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_1400', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_1400';
@@ -396,10 +424,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Host_1500
-     * @tc.name: promise form enableFormsUpdate system interface interception test
-     * @tc.desc:  Test the third-party application call enableFormsUpdate will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_1500
+     * @tc.number System_API_Test_Form_Host_1500
+     * @tc.desc   Test the third-party application call enableFormsUpdate will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_1500', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_1500';
@@ -423,10 +453,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Host_1600
-     * @tc.name: callback form disableFormsUpdate system interface interception test
-     * @tc.desc:  Test the third-party application call disableFormsUpdate will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_1600
+     * @tc.number System_API_Test_Form_Host_1600
+     * @tc.desc   Test the third-party application call disableFormsUpdate will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_1600', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_1600';
@@ -449,10 +481,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Host_1700
-     * @tc.name: promise form disableFormsUpdate system interface interception test
-     * @tc.desc:  Test the third-party application call disableFormsUpdate will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_1700
+     * @tc.number System_API_Test_Form_Host_1700
+     * @tc.desc   Test the third-party application call disableFormsUpdate will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_1700', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_1700';
@@ -476,10 +510,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Host_1800
-     * @tc.name: callback form isSystemReady system interface interception test
-     * @tc.desc:  Test the third-party application call isSystemReady will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_1800
+     * @tc.number System_API_Test_Form_Host_1800
+     * @tc.desc   Test the third-party application call isSystemReady will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_1800', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_1800';
@@ -495,10 +531,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Host_1900
-     * @tc.name: promise form isSystemReady system interface interception test
-     * @tc.desc:  Test the third-party application call isSystemReady will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_1900
+     * @tc.number System_API_Test_Form_Host_1900
+     * @tc.desc   Test the third-party application call isSystemReady will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_1900', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_1900';
@@ -519,10 +557,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Host_2000
-     * @tc.name: callback form getAllFormsInfo system interface interception test
-     * @tc.desc:  Test the third-party application call getAllFormsInfo will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_2000
+     * @tc.number System_API_Test_Form_Host_2000
+     * @tc.desc   Test the third-party application call getAllFormsInfo will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_2000', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_2000';
@@ -540,10 +580,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Host_2100
-     * @tc.name: promise form getAllFormsInfo system interface interception test
-     * @tc.desc:  Test the third-party application call getAllFormsInfo will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_2100
+     * @tc.number System_API_Test_Form_Host_2100
+     * @tc.desc   Test the third-party application call getAllFormsInfo will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_2100', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_2100';
@@ -567,10 +609,12 @@ export default function formHostTest() {
 
     
     /**
-     * @tc.number: System_API_Test_Form_Host_2200
-     * @tc.name: callback form getFormsInfo system interface interception test
-     * @tc.desc:  Test the third-party application call getFormsInfo will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_2200
+     * @tc.number System_API_Test_Form_Host_2200
+     * @tc.desc   Test the third-party application call getFormsInfo will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_2200', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_2200';
@@ -593,10 +637,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Host_2300
-     * @tc.name: Multiple input in the form of callback getFormsInfo system interface interception test
-     * @tc.desc:  Test the third-party application call getFormsInfo will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_2300
+     * @tc.number System_API_Test_Form_Host_2300
+     * @tc.desc   Test the third-party application call getFormsInfo will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_2300', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_2300';
@@ -620,10 +666,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Host_2400
-     * @tc.name: promise form getFormsInfo system interface interception test
-     * @tc.desc:  Test the third-party application call getFormsInfo will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_2400
+     * @tc.number System_API_Test_Form_Host_2400
+     * @tc.desc   Test the third-party application call getFormsInfo will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_2400', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_2400';
@@ -647,10 +695,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Host_2500
-     * @tc.name: callback form deleteInvalidForms system interface interception test
-     * @tc.desc:  Test the third-party application call deleteInvalidForms will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_2500
+     * @tc.number System_API_Test_Form_Host_2500
+     * @tc.desc   Test the third-party application call deleteInvalidForms will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_2500', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_2500';
@@ -673,10 +723,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Host_2600
-     * @tc.name: promise form deleteInvalidForms system interface interception test
-     * @tc.desc:  Test the third-party application call deleteInvalidForms will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_2600
+     * @tc.number System_API_Test_Form_Host_2600
+     * @tc.desc   Test the third-party application call deleteInvalidForms will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_2600', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_2600';
@@ -700,10 +752,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Host_2700
-     * @tc.name: callback form acquireFormState system interface interception test
-     * @tc.desc:  Test the third-party application call acquireFormState will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_2700
+     * @tc.number System_API_Test_Form_Host_2700
+     * @tc.desc   Test the third-party application call acquireFormState will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_2700', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_2700';
@@ -729,10 +783,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Host_2800
-     * @tc.name: promise form acquireFormState system interface interception test
-     * @tc.desc:  Test the third-party application call deleteForm will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_2800
+     * @tc.number System_API_Test_Form_Host_2800
+     * @tc.desc   Test the third-party application call deleteForm will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_2800', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_2800';
@@ -759,10 +815,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Host_2900
-     * @tc.name: callback form on system interface interception test
-     * @tc.desc:  Test the third-party application call on will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_2900
+     * @tc.number System_API_Test_Form_Host_2900
+     * @tc.desc   Test the third-party application call on will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_2900', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_2900';
@@ -780,10 +838,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Host_3000
-     * @tc.name: callback form off system interface interception test
-     * @tc.desc:  Test the third-party application call off will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_3000
+     * @tc.number System_API_Test_Form_Host_3000
+     * @tc.desc   Test the third-party application call off will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_3000', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_3000';
@@ -801,10 +861,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Host_3100
-     * @tc.name: callback form notifyFormsVisible system interface interception test
-     * @tc.desc:  Test the third-party application call notifyFormsVisible will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_3100
+     * @tc.number System_API_Test_Form_Host_3100
+     * @tc.desc   Test the third-party application call notifyFormsVisible will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_3100', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_3100';
@@ -827,10 +889,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Host_3200
-     * @tc.name: promise form notifyFormsVisible system interface interception test
-     * @tc.desc:  Test the third-party application call notifyFormsVisible will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_3200
+     * @tc.number System_API_Test_Form_Host_3200
+     * @tc.desc   Test the third-party application call notifyFormsVisible will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_3200', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_3200';
@@ -853,10 +917,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Host_3300
-     * @tc.name: callback form notifyFormsEnableUpdate system interface interception test
-     * @tc.desc:  Test the third-party application call notifyFormsEnableUpdate will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_3300
+     * @tc.number System_API_Test_Form_Host_3300
+     * @tc.desc   Test the third-party application call notifyFormsEnableUpdate will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_3300', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_3300';
@@ -879,10 +945,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Host_3400
-     * @tc.name: promise form notifyFormsEnableUpdate system interface interception test
-     * @tc.desc:  Test the third-party application call notifyFormsEnableUpdate will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_3400
+     * @tc.number System_API_Test_Form_Host_3400
+     * @tc.desc   Test the third-party application call notifyFormsEnableUpdate will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_3400', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_3400';
@@ -898,10 +966,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Host_3500
-     * @tc.name: callback form shareForm system interface interception test
-     * @tc.desc:  Test the third-party application call shareForm will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_3500
+     * @tc.number System_API_Test_Form_Host_3500
+     * @tc.desc   Test the third-party application call shareForm will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_3500', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_3500';
@@ -925,10 +995,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Host_3600
-     * @tc.name: promise form shareForm system interface interception test
-     * @tc.desc:  Test the third-party application call shareForm will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_3600
+     * @tc.number System_API_Test_Form_Host_3600
+     * @tc.desc   Test the third-party application call shareForm will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_3600', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_3600';
@@ -947,10 +1019,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Host_3700
-     * @tc.name: callback form notifyFormsPrivacyProtected system interface interception test
-     * @tc.desc:  Test the third-party application call notifyFormsPrivacyProtected will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_3700
+     * @tc.number System_API_Test_Form_Host_3700
+     * @tc.desc   Test the third-party application call notifyFormsPrivacyProtected will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_3700', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_3700';
@@ -973,10 +1047,12 @@ export default function formHostTest() {
     })
 
     /**
-     * @tc.number: System_API_Test_Form_Host_3800
-     * @tc.name: promise form notifyFormsPrivacyProtected system interface interception test
-     * @tc.desc:  Test the third-party application call notifyFormsPrivacyProtected will be blocked
-     * @tc.level   3
+     * @tc.name   System_API_Test_Form_Host_3800
+     * @tc.number System_API_Test_Form_Host_3800
+     * @tc.desc   Test the third-party application call notifyFormsPrivacyProtected will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('System_API_Test_Form_Host_3800', Level.LEVEL0, async (done: Function) => {
       let TAG = 'System_API_Test_Form_Host_3800';

@@ -52,6 +52,14 @@ export default function gridScrollbarUpdateTest() {
       // This API supports only one parameter: clear action function.
     })
 
+    /**
+     * @tc.name   Grid_scrollbarUpdate_0801
+     * @tc.number Grid_scrollbarUpdate_0801
+     * @tc.desc   Grid_scrollbarUpdate_0801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('Grid_scrollbarUpdate_0801', Level.LEVEL1, async (done: Function) => {
       console.info('Grid_scrollbarUpdate_0801 START');
       setTimeout(() => {
@@ -74,6 +82,14 @@ export default function gridScrollbarUpdateTest() {
       }, 500)
     })
 
+    /**
+     * @tc.name   Grid_scrollbarUpdate_0802
+     * @tc.number Grid_scrollbarUpdate_0802
+     * @tc.desc   Grid_scrollbarUpdate_0802
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('Grid_scrollbarUpdate_0802', Level.LEVEL1, async (done: Function) => {
       console.info('Grid_scrollbarUpdate_0802 START');
       setTimeout(() => {

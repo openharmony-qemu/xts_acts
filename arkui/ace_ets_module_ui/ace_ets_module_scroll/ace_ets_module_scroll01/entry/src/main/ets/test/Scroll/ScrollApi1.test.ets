@@ -45,12 +45,12 @@ export default function ScrollApi1() {
     });
 
     /**
-     * @tc.number ScrollApi1_0100
      * @tc.name   ScrollApi1_0100
+     * @tc.number ScrollApi1_0100
      * @tc.desc   testScroll
-     * @tc.level  Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ScrollApi1_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ScrollApi1_0100 START');

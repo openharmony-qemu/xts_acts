@@ -43,6 +43,14 @@ export default function TimePickerDialogAJsunit() {
     });
 
 
+    /**
+     * @tc.name   TimePickerDialogAJsunit_0100
+     * @tc.number TimePickerDialogAJsunit_0100
+     * @tc.desc   TimePickerDialogAJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('TimePickerDialogAJsunit_0100', Level.LEVEL2, async (done: Function) => {
 
       console.info('TimePickerDialogAJsunit_0100 START');

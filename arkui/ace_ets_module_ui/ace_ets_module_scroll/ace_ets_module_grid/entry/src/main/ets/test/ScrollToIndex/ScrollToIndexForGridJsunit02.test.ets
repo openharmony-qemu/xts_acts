@@ -41,12 +41,12 @@ export default function ScrollToIndexForGridJsunit02() {
       done();
     });
     /**
+     * @tc.name   ScrollToIndexForGridJsunit02_0100
      * @tc.number ScrollToIndexForGridJsunit02_0100
-     * @tc.name scenario testing
-     * @tc.desc set index to 66,set the smooth to True,set the align of Grid to ScrollAlign.START.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 2
+     * @tc.desc   set index to 66,set the smooth to True,set the align of Grid to ScrollAlign.START.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ScrollToIndexForGridJsunit02_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[ScrollToIndexForGridJsunit02_0100] START');
@@ -82,12 +82,12 @@ export default function ScrollToIndexForGridJsunit02() {
     });
 
     /**
+     * @tc.name   ScrollToIndexForGridJsunit02_0200
      * @tc.number ScrollToIndexForGridJsunit02_0200
-     * @tc.name scenario testing
-     * @tc.desc set index to 108,set the smooth to false,set the align of Grid to ScrollAlign.END
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 2
+     * @tc.desc   set index to 108,set the smooth to false,set the align of Grid to ScrollAlign.END
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ScrollToIndexForGridJsunit02_0200', Level.LEVEL2, async (done: Function) => {
       console.info('[ScrollToIndexForGridJsunit02_0200] START');
@@ -115,12 +115,12 @@ export default function ScrollToIndexForGridJsunit02() {
     });
 
     /**
+     * @tc.name   ScrollToIndexForGridJsunit02_0300
      * @tc.number ScrollToIndexForGridJsunit02_0300
-     * @tc.name scenario testing
-     * @tc.desc set index to 100,set the smooth to True,set the align of Grid to ScrollAlign.CENTER
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 2
+     * @tc.desc   set index to 100,set the smooth to True,set the align of Grid to ScrollAlign.CENTER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ScrollToIndexForGridJsunit02_0300', Level.LEVEL2, async (done: Function) => {
       console.info('[ScrollToIndexForGridJsunit02_0300] START');
@@ -151,12 +151,12 @@ export default function ScrollToIndexForGridJsunit02() {
     });
 
     /**
+     * @tc.name   ScrollToIndexForGridJsunit02_0400
      * @tc.number ScrollToIndexForGridJsunit02_0400
-     * @tc.name scenario testing
-     * @tc.desc set index to 178,set the smooth to True,set the align of Grid to ScrollAlign.START
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 2
+     * @tc.desc   set index to 178,set the smooth to True,set the align of Grid to ScrollAlign.START
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ScrollToIndexForGridJsunit02_0400', Level.LEVEL2, async (done: Function) => {
       console.info('[ScrollToIndexForGridJsunit02_0400] START');

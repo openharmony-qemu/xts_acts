@@ -45,11 +45,12 @@ export default function row_TextDisplayPriorityTest() {
       console.info("Row_TextDisplayPriorityTest after each called");
     });
     /**
+     * @tc.name   testRowTextDisplayPriority01
      * @tc.number SUB_ACE_ROW_SUBCOMPONENTCHANGED_1400
-     * @tc.name testRowTextDisplayPriority01
-     * @tc.desc The size of the parent component in the main axis direction is not enough for the layout
-     *               of the child components when the first subcomponent set dsplay_priority to 1,
-     *               the second subcomponent set dsplay_priority to 2,the third subcomponent set dsplay_priority to 3
+     * @tc.desc   The size of the parent component in the main axis direction is not enough for the layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRowTextDisplayPriority01',  Level.LEVEL0, async (done: Function) => {
       console.info('[testRowTextDisplayPriority01] START');
@@ -81,11 +82,12 @@ export default function row_TextDisplayPriorityTest() {
       done();
     });
     /**
+     * @tc.name   testRowTextDisplayPriority02
      * @tc.number SUB_ACE_ROW_SUBCOMPONENTCHANGED_1500
-     * @tc.name testRowTextDisplayPriority02
-     * @tc.desc The size of the parent component in the main axis direction is not enough for the layout
-     *               of the child components when the first subcomponent set dsplay_priority to 2,
-     *               the second subcomponent set dsplay_priority to 1,the third subcomponent set dsplay_priority to 3
+     * @tc.desc   The size of the parent component in the main axis direction is not enough for the layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRowTextDisplayPriority02',  Level.LEVEL0, async (done: Function) => {
       console.info('[testRowTextDisplayPriority02] START');

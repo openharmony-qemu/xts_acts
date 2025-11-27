@@ -904,5 +904,28 @@ describe("TreeSetTest1", (): void => {
       expect(key).assertEqual("sparrow");
     });
   });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL3_014
+     * @tc.name testUtil3_014
+     * @tc.desc Test the util
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testUtil3_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let res = "";
+      let treeSet: TreeSet<string> = new TreeSet<string>();
+      treeSet.add("squirrel");
+      treeSet.add("sparrow");
+
+      let iter = treeSet.$_iterator();
+      let temp = iter.next().value;
+      while (temp != undefined) {
+        res = res + temp;
+        temp = iter.next().value;
+      }
+      expect(res).assertEqual("sparrowsquirrel");
+    })
 });
 }

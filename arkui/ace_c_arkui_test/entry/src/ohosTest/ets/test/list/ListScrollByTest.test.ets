@@ -22,13 +22,13 @@ export default function listScrollByTest() {
 
   describe('ListScrollByTest', () => {
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SCROLL_BY_0001
-     * @tc.name       : testListScrollBy001
-     * @tc.desc       : testing scroll by for list with {0 0} value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListScrollBy001
+     * @tc.number SUB_ARKUI_CAPI_LIST_SCROLL_BY_0001
+     * @tc.desc   testing scroll by for list with {0 0} value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListScrollBy001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`list/ListScrollBy001Test`);
@@ -46,13 +46,13 @@ export default function listScrollByTest() {
       expect(state3Data.length-1 == 0).assertEqual(true)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SCROLL_BY_0002
-     * @tc.name       : testListScrollBy002
-     * @tc.desc       : testing scroll by for list with {100 100} value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListScrollBy002
+     * @tc.number SUB_ARKUI_CAPI_LIST_SCROLL_BY_0002
+     * @tc.desc   testing scroll by for list with {100 100} value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListScrollBy002', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`list/ListScrollBy002Test`);
@@ -70,13 +70,13 @@ export default function listScrollByTest() {
       expect(state3Data[state3Data.length-1] == 4).assertEqual(true)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SCROLL_BY_0003
-     * @tc.name       : testListScrollBy003
-     * @tc.desc       : testing scroll by for list with {100000 100000} value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListScrollBy003
+     * @tc.number SUB_ARKUI_CAPI_LIST_SCROLL_BY_0003
+     * @tc.desc   testing scroll by for list with {100000 100000} value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListScrollBy003', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`list/ListScrollBy003Test`);
@@ -94,13 +94,13 @@ export default function listScrollByTest() {
       expect(state3Data[state3Data.length-1] == 37).assertEqual(true)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SCROLL_BY_0004
-     * @tc.name       : testListScrollBy004
-     * @tc.desc       : testing scroll by for list with {-100 -100} value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListScrollBy004
+     * @tc.number SUB_ARKUI_CAPI_LIST_SCROLL_BY_0004
+     * @tc.desc   testing scroll by for list with {-100 -100} value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListScrollBy004', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`list/ListScrollBy004Test`);

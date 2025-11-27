@@ -47,12 +47,14 @@ export default function slideRange() {
     });
 
 
-    /*
-    * @tc.number      slideRange_001
-    * @tc.name        slideRange_001
-    * @tc.desc        Test slideRange, minResponsiveDistance
-    * @tc.level       Level 2
-    */
+    /**
+     * @tc.name   slideRange_001
+     * @tc.number slideRange_001
+     * @tc.desc   Test slideRange, minResponsiveDistance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('slideRange_001', Level.LEVEL1, async (done: Function) => {
       console.info('[slideRange_001] START');
       let strJson = getInspectorByKey('slideRangeValue');

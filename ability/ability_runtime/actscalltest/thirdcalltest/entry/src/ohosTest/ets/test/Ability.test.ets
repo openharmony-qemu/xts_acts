@@ -89,9 +89,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_CommonComponent_Call_1100
-     * @tc.name: The thirdApp is not allowed to startAbilityByCall.
-     * @tc.desc: Verify that the thirdApp is not allowed to startAbilityByCall.
+     * @tc.name   ACTS_CommonComponent_Call_1100
+     * @tc.number ACTS_CommonComponent_Call_1100
+     * @tc.desc   Verify that the thirdApp is not allowed to startAbilityByCall.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_CommonComponent_Call_1100', Level.LEVEL0, async (done: Function) => {
       console.log('ACTS_CommonComponent_Call_1100 begin');
@@ -112,9 +115,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_CommonComponent_Call_1500
-     * @tc.name: The thirdApp is not allowed to startAbilityByCall.
-     * @tc.desc: Verify that the thirdApp is not allowed to startAbilityByCall.
+     * @tc.name   ACTS_CommonComponent_Call_1500
+     * @tc.number ACTS_CommonComponent_Call_1500
+     * @tc.desc   Verify that the thirdApp is not allowed to startAbilityByCall.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_CommonComponent_Call_1500', Level.LEVEL0, async (done: Function) => {
       console.log('ACTS_CommonComponent_Call_1500 begin');
@@ -135,9 +141,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_CommonComponent_Call_1600
-     * @tc.name: The thirdApp is not allowed to startAbilityByCall.
-     * @tc.desc: Verify that the thirdApp is not allowed to startAbilityByCall.
+     * @tc.name   ACTS_CommonComponent_Call_1600
+     * @tc.number ACTS_CommonComponent_Call_1600
+     * @tc.desc   Verify that the thirdApp is not allowed to startAbilityByCall.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_CommonComponent_Call_1600', Level.LEVEL0, async (done: Function) => {
       console.log('ACTS_CommonComponent_Call_1600 begin');

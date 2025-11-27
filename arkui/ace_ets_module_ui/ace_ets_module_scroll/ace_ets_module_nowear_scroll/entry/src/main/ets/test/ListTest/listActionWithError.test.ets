@@ -48,13 +48,12 @@ export default function listActionWithErrorTest() {
     });
 
     /**
-     * @tc.number    test_list_swiper_001
-     * @tc.name      test_list_swiper_001
-     * @tc.desc      test listItem0 expand is not on the Component tree,
-     *               return errorCode 106203
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   test_list_swiper_001
+     * @tc.number test_list_swiper_001
+     * @tc.desc   test listItem0 expand is not on the Component tree,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_list_swiper_001', Level.LEVEL1, async (done: Function) => {
       console.info('test_list_swiper_001 START');
@@ -87,13 +86,12 @@ export default function listActionWithErrorTest() {
     });
 
     /**
-     * @tc.number    test_list_swiper_002
-     * @tc.name      test_list_swiper_002
-     * @tc.desc      test ListItemSwipeActionManager collapse node is inCorrect node,
-     *               return error code is 100023
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   test_list_swiper_002
+     * @tc.number test_list_swiper_002
+     * @tc.desc   test ListItemSwipeActionManager collapse node is inCorrect node,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_list_swiper_002', Level.LEVEL1, async (done: Function) => {
       console.info('test_list_swiper_002 START');
@@ -113,13 +111,12 @@ export default function listActionWithErrorTest() {
     });
 
     /**
-     * @tc.number    test_list_swiper_003
-     * @tc.name      test_list_swiper_003
-     * @tc.desc      test ListItemSwipeActionManager expand node is undefined,
-     *               return error code is 401
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   test_list_swiper_003
+     * @tc.number test_list_swiper_003
+     * @tc.desc   test ListItemSwipeActionManager expand node is undefined,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_list_swiper_003', Level.LEVEL1, async (done: Function) => {
       console.info('test_list_swiper_003 START');
@@ -139,13 +136,12 @@ export default function listActionWithErrorTest() {
     });
 
     /**
-     * @tc.number    test_list_swiper_004
-     * @tc.name      test_list_swiper_004
-     * @tc.desc      test ListItemSwipeActionManager expand node is collapse,
-     *               return error code is 401
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   test_list_swiper_004
+     * @tc.number test_list_swiper_004
+     * @tc.desc   test ListItemSwipeActionManager expand node is collapse,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_list_swiper_004', Level.LEVEL1, async (done: Function) => {
       console.info('test_list_swiper_004 START');
@@ -165,13 +161,12 @@ export default function listActionWithErrorTest() {
     });
 
     /**
-     * @tc.number    test_list_swiper_005
-     * @tc.name      test_list_swiper_005
-     * @tc.desc      test listItem0 collapse is not on the Component tree,
-     *               return errorCode 106203
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   test_list_swiper_005
+     * @tc.number test_list_swiper_005
+     * @tc.desc   test listItem0 collapse is not on the Component tree,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_list_swiper_005', Level.LEVEL1, async (done: Function) => {
       console.info('test_list_swiper_005 START');
@@ -204,13 +199,12 @@ export default function listActionWithErrorTest() {
     });
 
     /**
-     * @tc.number    test_list_swiper_006
-     * @tc.name      test_list_swiper_006
-     * @tc.desc      test ListItemSwipeActionManager expand is inCorrect node,
-     *               return error code is 100023
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   test_list_swiper_006
+     * @tc.number test_list_swiper_006
+     * @tc.desc   test ListItemSwipeActionManager expand is inCorrect node,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_list_swiper_006', Level.LEVEL1, async (done: Function) => {
       console.info('test_list_swiper_006 START');

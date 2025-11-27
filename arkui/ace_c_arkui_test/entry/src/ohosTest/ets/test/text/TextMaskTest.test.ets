@@ -26,91 +26,91 @@ export default function textMaskTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_MASK_0100
-     * @tc.name       : testTextMask001
-     * @tc.desc       : testing mask for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextMask001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_MASK_0100
+     * @tc.desc   testing mask for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextMask001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextMask001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_MASK_0200
-     * @tc.name       : testTextMask002
-     * @tc.desc       : testing mask for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextMask002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_MASK_0200
+     * @tc.desc   testing mask for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextMask002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextMask002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_MASK_0300
-     * @tc.name       : testTextMask003
-     * @tc.desc       : testing mask for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextMask003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_MASK_0300
+     * @tc.desc   testing mask for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextMask003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextMask003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_MASK_0400
-     * @tc.name       : testTextMask004
-     * @tc.desc       : testing mask for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextMask004
+     * @tc.number SUB_ARKUI_CAPI_TEXT_MASK_0400
+     * @tc.desc   testing mask for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextMask004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextMask004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_MASK_0500
-     * @tc.name       : testTextMask005
-     * @tc.desc       : testing mask for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextMask005
+     * @tc.number SUB_ARKUI_CAPI_TEXT_MASK_0500
+     * @tc.desc   testing mask for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextMask005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextMask005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_MASK_0600
-     * @tc.name       : testTextMask006
-     * @tc.desc       : testing mask for text with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextMask006
+     * @tc.number SUB_ARKUI_CAPI_TEXT_MASK_0600
+     * @tc.desc   testing mask for text with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextMask006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextMask006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_MASK_0700
-     * @tc.name       : testTextMask007
-     * @tc.desc       : testing mask for text with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testTextMask007
+     * @tc.number SUB_ARKUI_CAPI_TEXT_MASK_0700
+     * @tc.desc   testing mask for text with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextMask007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextMask007()).assertEqual(0)

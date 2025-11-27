@@ -26,39 +26,39 @@ export default function customComponentHeightTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_HEIGHT_0100
-     * @tc.name       : testCustomComponentHeight001
-     * @tc.desc       : testing height for customComponent with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentHeight001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_HEIGHT_0100
+     * @tc.desc   testing height for customComponent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentHeight001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentHeight001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_HEIGHT_0200
-     * @tc.name       : testCustomComponentHeight002
-     * @tc.desc       : testing height for customComponent with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentHeight002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_HEIGHT_0200
+     * @tc.desc   testing height for customComponent with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentHeight002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentHeight002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_HEIGHT_0300
-     * @tc.name       : testCustomComponentHeight003
-     * @tc.desc       : testing height for customComponent with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level2
+    /**
+     * @tc.name   testCustomComponentHeight003
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_HEIGHT_0300
+     * @tc.desc   testing height for customComponent with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentHeight003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentHeight003()).assertEqual(0)

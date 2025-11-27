@@ -56,6 +56,14 @@ export default function StateArrayNewJsunit() {
     });
 
 
+    /**
+     * @tc.name   StateArrayNewJsunit_0200
+     * @tc.number StateArrayNewJsunit_0200
+     * @tc.desc   StateArrayNewJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StateArrayNewJsunit_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('StateArrayNewJsunit_0200 START');
@@ -72,6 +80,14 @@ export default function StateArrayNewJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   StateArrayNewJsunit_0400
+     * @tc.number StateArrayNewJsunit_0400
+     * @tc.desc   StateArrayNewJsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StateArrayNewJsunit_0400', Level.LEVEL0, async (done: Function) => {
 
       console.info('StateArrayNewJsunit_0400 START');
@@ -89,6 +105,14 @@ export default function StateArrayNewJsunit() {
     });
 
 
+    /**
+     * @tc.name   StateArrayNewJsunit_0600
+     * @tc.number StateArrayNewJsunit_0600
+     * @tc.desc   StateArrayNewJsunit_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StateArrayNewJsunit_0600', Level.LEVEL0, async (done: Function) => {
 
       console.info('StateArrayNewJsunit_0600 START');
@@ -106,6 +130,14 @@ export default function StateArrayNewJsunit() {
     });
 
 
+    /**
+     * @tc.name   StateArrayNewJsunit_0800
+     * @tc.number StateArrayNewJsunit_0800
+     * @tc.desc   StateArrayNewJsunit_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StateArrayNewJsunit_0800', Level.LEVEL0, async (done: Function) => {
 
       console.info('StateArrayNewJsunit_0800 START');
@@ -122,6 +154,14 @@ export default function StateArrayNewJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   StateArrayNewJsunit_1000
+     * @tc.number StateArrayNewJsunit_1000
+     * @tc.desc   StateArrayNewJsunit_1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('StateArrayNewJsunit_1000', Level.LEVEL0, async (done: Function) => {
 
       console.info('StateArrayNewJsunit_1000 START');

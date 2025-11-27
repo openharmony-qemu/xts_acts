@@ -56,12 +56,12 @@ export default function onTerminatedJsunit() {
     });
 
     /**
+     * @tc.name   onTerminatedTest_0010
      * @tc.number onTerminatedTest_0010
-     * @tc.name onTerminatedTest_0010
-     * @tc.desc EmbeddedComponent: get the api of onTerminated
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   EmbeddedComponent: get the api of onTerminated
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('onTerminatedTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('onTerminatedTest_0010 START');

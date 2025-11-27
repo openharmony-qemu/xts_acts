@@ -45,12 +45,12 @@ export default function RepeatCloseReuseTest0110() {
     });
 
     /**
-     * @tc.number    RepeatCloseReuseTest0110
-     * @tc.name      RepeatCloseReuseTest0110_001
-     * @tc.desc      Persistently store UI related data
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   RepeatCloseReuseTest0110_001
+     * @tc.number RepeatCloseReuseTest0110
+     * @tc.desc   Persistently store UI related data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RepeatCloseReuseTest0110_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[RepeatCloseReuseTest0110_001] START');

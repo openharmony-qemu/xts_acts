@@ -46,13 +46,13 @@ export default function RichEditorMaxLinesTest() {
       console.info("RichEditorMaxLinesTest after each called");
     });
 
-    /*
-    * @tc.number       RichEditorMaxLinesTest0001
-    * @tc.name         RichEditorMaxLinesTest0001
-    * @tc.desc         The MaxLines  set -1
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   RichEditorMaxLinesTest0001
+     * @tc.number RichEditorMaxLinesTest0001
+     * @tc.desc   The MaxLines  set -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RichEditorMaxLinesTest0001', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
@@ -65,13 +65,13 @@ export default function RichEditorMaxLinesTest() {
       done();
     });
 
-    /*
-    * @tc.number       RichEditorMaxLinesTest0002
-    * @tc.name         RichEditorMaxLinesTest0002
-    * @tc.desc         The MaxLines  set 2.5
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   RichEditorMaxLinesTest0002
+     * @tc.number RichEditorMaxLinesTest0002
+     * @tc.desc   The MaxLines  set 2.5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RichEditorMaxLinesTest0002', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
@@ -89,14 +89,14 @@ export default function RichEditorMaxLinesTest() {
       done();
     });
 
-    /*
-    * @tc.number       RichEditorMaxLinesTest0003
-    * @tc.name         RichEditorMaxLinesTest0003
-    * @tc.desc         The MaxLines  set 6
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
-    */
+    /**
+     * @tc.name   RichEditorMaxLinesTest0003
+     * @tc.number RichEditorMaxLinesTest0003
+     * @tc.desc   The MaxLines  set 6
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('RichEditorMaxLinesTest0003', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
       console.info(' RichEditorMaxLinesTest0003 START');
@@ -113,14 +113,14 @@ export default function RichEditorMaxLinesTest() {
       done();
     });
 
-    /*
-    * @tc.number       RichEditorMaxLinesTest0004
-    * @tc.name         RichEditorMaxLinesTest0004
-    * @tc.desc         The MaxLines  set undefined
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
-    */
+    /**
+     * @tc.name   RichEditorMaxLinesTest0004
+     * @tc.number RichEditorMaxLinesTest0004
+     * @tc.desc   The MaxLines  set undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('RichEditorMaxLinesTest0004', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
       console.info(' RichEditorMaxLinesTest0004 START');

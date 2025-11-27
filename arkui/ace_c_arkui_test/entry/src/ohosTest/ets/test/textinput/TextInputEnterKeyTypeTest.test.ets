@@ -26,104 +26,104 @@ export default function textInputEnterKeyTypeTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_ENTERKEYTYPE_0100
-     * @tc.name: testTextInputEnterKeyType001
-     * @tc.desc: testing enterKeyType for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputEnterKeyType001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_ENTERKEYTYPE_0100
+     * @tc.desc   testing enterKeyType for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputEnterKeyType001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputEnterKeyType001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_ENTERKEYTYPE_0200
-     * @tc.name: testTextInputEnterKeyType002
-     * @tc.desc: testing enterKeyType for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputEnterKeyType002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_ENTERKEYTYPE_0200
+     * @tc.desc   testing enterKeyType for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputEnterKeyType002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputEnterKeyType002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_ENTERKEYTYPE_0300
-     * @tc.name: testTextInputEnterKeyType003
-     * @tc.desc: testing enterKeyType for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputEnterKeyType003
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_ENTERKEYTYPE_0300
+     * @tc.desc   testing enterKeyType for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputEnterKeyType003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputEnterKeyType003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_ENTERKEYTYPE_0400
-     * @tc.name: testTextInputEnterKeyType004
-     * @tc.desc: testing enterKeyType for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputEnterKeyType004
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_ENTERKEYTYPE_0400
+     * @tc.desc   testing enterKeyType for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputEnterKeyType004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputEnterKeyType004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_ENTERKEYTYPE_0500
-     * @tc.name: testTextInputEnterKeyType005
-     * @tc.desc: testing enterKeyType for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputEnterKeyType005
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_ENTERKEYTYPE_0500
+     * @tc.desc   testing enterKeyType for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputEnterKeyType005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputEnterKeyType005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_ENTERKEYTYPE_0600
-     * @tc.name: testTextInputEnterKeyType006
-     * @tc.desc: testing enterKeyType for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputEnterKeyType006
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_ENTERKEYTYPE_0600
+     * @tc.desc   testing enterKeyType for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputEnterKeyType006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputEnterKeyType006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_ENTERKEYTYPE_0700
-     * @tc.name: testTextInputEnterKeyType007
-     * @tc.desc: testing enterKeyType for textInput with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextInputEnterKeyType007
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_ENTERKEYTYPE_0700
+     * @tc.desc   testing enterKeyType for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputEnterKeyType007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputEnterKeyType007()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTINPUT_ENTERKEYTYPE_0800
-     * @tc.name: testTextInputEnterKeyType008
-     * @tc.desc: testing enterKeyType for textInput with abnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   testTextInputEnterKeyType008
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_ENTERKEYTYPE_0800
+     * @tc.desc   testing enterKeyType for textInput with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputEnterKeyType008', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputEnterKeyType008()).assertEqual(0)
