@@ -96,9 +96,12 @@ export default function webgl1_common() {
         }
 
         /**
+         * @tc.name   webgl_test_finish
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0001
-         * @tc.name webgl_test_finish
-         * @tc.desc Test finish.
+         * @tc.desc   Test finish.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_finish', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_finish] finish");
@@ -109,9 +112,12 @@ export default function webgl1_common() {
         });
 
         /**
+         * @tc.name   webgl_test_flush
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0002
-         * @tc.name webgl_test_flush
-         * @tc.desc Test flush.
+         * @tc.desc   Test flush.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_flush', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_flush] flush");
@@ -122,9 +128,12 @@ export default function webgl1_common() {
         });
 
         /**
+         * @tc.name   webgl_test_getError
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0003
-         * @tc.name webgl_test_getError
-         * @tc.desc Test getError.
+         * @tc.desc   Test getError.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_getError] getError");
@@ -137,9 +146,12 @@ export default function webgl1_common() {
         })
 
         /**
+         * @tc.name   webgl_test_isContextLost
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0004
-         * @tc.name webgl_test_isContextLost
-         * @tc.desc Test isContextLost.
+         * @tc.desc   Test isContextLost.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_isContextLost', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_isContextLost] isContextLost");
@@ -151,9 +163,12 @@ export default function webgl1_common() {
         })
 
         /**
+         * @tc.name   webgl_test_isEnabled
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0005
-         * @tc.name webgl_test_isEnabled
-         * @tc.desc Test isEnabled.
+         * @tc.desc   Test isEnabled.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_isEnabled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let srcEnable = gl.isEnabled(gl.DEPTH_TEST);
@@ -177,9 +192,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_isEnabled_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0006
-         * @tc.name webgl_test_isEnabled_1
-         * @tc.desc Test isEnabled.
+         * @tc.desc   Test isEnabled.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_isEnabled_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_isEnabled] isEnabled1");
@@ -200,9 +218,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_isEnabled_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0007
-         * @tc.name webgl_test_isEnabled_2
-         * @tc.desc Test isEnabled.
+         * @tc.desc   Test isEnabled.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_isEnabled_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_isEnabled] isEnabled2");
@@ -223,9 +244,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_isEnabled_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0008
-         * @tc.name webgl_test_isEnabled_3
-         * @tc.desc Test isEnabled.
+         * @tc.desc   Test isEnabled.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_isEnabled_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_isEnabled] isEnabled3");
@@ -246,9 +270,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_isEnabled_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0009
-         * @tc.name webgl_test_isEnabled_4
-         * @tc.desc Test isEnabled.
+         * @tc.desc   Test isEnabled.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_isEnabled_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_isEnabled] isEnabled4");
@@ -270,9 +297,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_isEnabled_5
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0010
-         * @tc.name webgl_test_isEnabled_5
-         * @tc.desc Test isEnabled.
+         * @tc.desc   Test isEnabled.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_isEnabled_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_isEnabled] isEnabled5");
@@ -293,9 +323,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_isEnabled_6
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0011
-         * @tc.name webgl_test_isEnabled_6
-         * @tc.desc Test isEnabled.
+         * @tc.desc   Test isEnabled.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_isEnabled_6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_isEnabled] isEnabled6");
@@ -316,9 +349,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_isEnabled_7
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0012
-         * @tc.name webgl_test_isEnabled_7
-         * @tc.desc Test isEnabled.
+         * @tc.desc   Test isEnabled.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_isEnabled_7', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_isEnabled] isEnabled7");
@@ -338,9 +374,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_isEnabled_8
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0013
-         * @tc.name webgl_test_isEnabled_8
-         * @tc.desc Test isEnabled.
+         * @tc.desc   Test isEnabled.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_isEnabled_8', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_isEnabled] isEnabled8");
@@ -360,9 +399,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_isEnabled_9
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0014
-         * @tc.name webgl_test_isEnabled_9
-         * @tc.desc Test isEnabled.
+         * @tc.desc   Test isEnabled.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_isEnabled_9', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_isEnabled] isEnabled9");
@@ -382,9 +424,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_isEnabled_Error
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0015
-         * @tc.name webgl_test_isEnabled_Error
-         * @tc.desc Test isEnabled.
+         * @tc.desc   Test isEnabled.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_isEnabled_Error', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_isEnabled] isEnabled Error");
@@ -411,9 +456,12 @@ export default function webgl1_common() {
         }
 
         /**
+         * @tc.name   webgl_test_enable
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0016
-         * @tc.name webgl_test_enable
-         * @tc.desc Test enable.
+         * @tc.desc   Test enable.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_enable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_enable] enable");
@@ -433,9 +481,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_enable_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0017
-         * @tc.name webgl_test_enable_1
-         * @tc.desc Test enable.
+         * @tc.desc   Test enable.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_enable_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkEnable(gl.BLEND)
@@ -444,9 +495,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_enable_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0018
-         * @tc.name webgl_test_enable_2
-         * @tc.desc Test enable.
+         * @tc.desc   Test enable.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_enable_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkEnable(gl.CULL_FACE)
@@ -455,9 +509,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_enable_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0019
-         * @tc.name webgl_test_enable_3
-         * @tc.desc Test enable.
+         * @tc.desc   Test enable.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_enable_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkEnable(gl.DITHER)
@@ -466,9 +523,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_enable_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0020
-         * @tc.name webgl_test_enable_4
-         * @tc.desc Test enable.
+         * @tc.desc   Test enable.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_enable_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkEnable(gl.POLYGON_OFFSET_FILL)
@@ -477,9 +537,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_enable_5
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0021
-         * @tc.name webgl_test_enable_5
-         * @tc.desc Test enable.
+         * @tc.desc   Test enable.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_enable_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkEnable(gl.SAMPLE_ALPHA_TO_COVERAGE)
@@ -488,9 +551,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_enable_6
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0022
-         * @tc.name webgl_test_enable_6
-         * @tc.desc Test enable.
+         * @tc.desc   Test enable.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_enable_6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkEnable(gl.SAMPLE_COVERAGE)
@@ -499,9 +565,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_enable_7
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0023
-         * @tc.name webgl_test_enable_7
-         * @tc.desc Test enable.
+         * @tc.desc   Test enable.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_enable_7', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkEnable(gl.SCISSOR_TEST)
@@ -510,9 +579,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_enable_8
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0024
-         * @tc.name webgl_test_enable_8
-         * @tc.desc Test enable.
+         * @tc.desc   Test enable.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_enable_8', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkEnable(gl.STENCIL_TEST)
@@ -521,9 +593,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_enable_Error
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0025
-         * @tc.name webgl_test_enable_Error
-         * @tc.desc Test enable.
+         * @tc.desc   Test enable.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_enable_Error', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_enable] enable Error");
@@ -554,9 +629,12 @@ export default function webgl1_common() {
         }
 
         /**
+         * @tc.name   webgl_test_disable
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0026
-         * @tc.name webgl_test_disable
-         * @tc.desc Test disable.
+         * @tc.desc   Test disable.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_disable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_disable] disable");
@@ -575,9 +653,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_disable_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0027
-         * @tc.name webgl_test_disable_1
-         * @tc.desc Test disable.
+         * @tc.desc   Test disable.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_disable_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkDisable(gl.BLEND)
@@ -586,9 +667,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_disable_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0028
-         * @tc.name webgl_test_disable_2
-         * @tc.desc Test disable.
+         * @tc.desc   Test disable.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_disable_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkDisable(gl.CULL_FACE)
@@ -597,9 +681,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_disable_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0029
-         * @tc.name webgl_test_disable_3
-         * @tc.desc Test disable.
+         * @tc.desc   Test disable.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_disable_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkDisable(gl.DITHER)
@@ -608,9 +695,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_disable_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0030
-         * @tc.name webgl_test_disable_4
-         * @tc.desc Test disable.
+         * @tc.desc   Test disable.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_disable_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkDisable(gl.POLYGON_OFFSET_FILL)
@@ -619,9 +709,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_disable_5
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0031
-         * @tc.name webgl_test_disable_5
-         * @tc.desc Test disable.
+         * @tc.desc   Test disable.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_disable_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkDisable(gl.SAMPLE_ALPHA_TO_COVERAGE)
@@ -630,9 +723,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_disable_6
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0032
-         * @tc.name webgl_test_disable_6
-         * @tc.desc Test disable.
+         * @tc.desc   Test disable.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_disable_6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkDisable(gl.SAMPLE_COVERAGE)
@@ -641,9 +737,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_disable_7
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0033
-         * @tc.name webgl_test_disable_7
-         * @tc.desc Test disable.
+         * @tc.desc   Test disable.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_disable_7', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkDisable(gl.SCISSOR_TEST)
@@ -652,9 +751,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_disable_8
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0034
-         * @tc.name webgl_test_disable_8
-         * @tc.desc Test disable.
+         * @tc.desc   Test disable.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_disable_8', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkDisable(gl.STENCIL_TEST)
@@ -663,9 +765,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_disable_Error
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0035
-         * @tc.name webgl_test_disable_Error
-         * @tc.desc Test disable.
+         * @tc.desc   Test disable.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_disable_Error', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_enable] disable Error");
@@ -685,9 +790,12 @@ export default function webgl1_common() {
         })
 
         /**
+         * @tc.name   webgl_test_getContextAttributes
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0036
-         * @tc.name webgl_test_getContextAttributes
-         * @tc.desc Test getContextAttributes.
+         * @tc.desc   Test getContextAttributes.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getContextAttributes', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -713,9 +821,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getContextAttributes_Error
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0037
-         * @tc.name webgl_test_getContextAttributes_Error
-         * @tc.desc Test getContextAttributes.
+         * @tc.desc   Test getContextAttributes.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getContextAttributes_Error', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -728,9 +839,12 @@ export default function webgl1_common() {
         })
 
         /**
+         * @tc.name   webgl_test_isContextLost
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0038
-         * @tc.name webgl_test_isContextLost
-         * @tc.desc Test isContextLost.
+         * @tc.desc   Test isContextLost.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_isContextLost', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_isContextLost] isContextLost");
@@ -741,9 +855,12 @@ export default function webgl1_common() {
         })
 
         /**
+         * @tc.name   webgl_test_clearColor
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0039
-         * @tc.name webgl_test_clearColor
-         * @tc.desc Test clearColor.
+         * @tc.desc   Test clearColor.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_clearColor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_clearColor] clearColor");
@@ -761,9 +878,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_clearColor_Error
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0040
-         * @tc.name webgl_test_clearColor_Error
-         * @tc.desc Test clearColor.
+         * @tc.desc   Test clearColor.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_clearColor_Error', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_clearColor] clearColor error");
@@ -780,9 +900,12 @@ export default function webgl1_common() {
         })
 
         /**
+         * @tc.name   webgl_test_clearDepth
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0041
-         * @tc.name webgl_test_clearDepth
-         * @tc.desc Test clearDepth.
+         * @tc.desc   Test clearDepth.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_clearDepth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_clearDepth] clearDepth");
@@ -797,9 +920,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_clearDepth_Error
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0042
-         * @tc.name webgl_test_clearDepth_Error
-         * @tc.desc Test clearDepth.
+         * @tc.desc   Test clearDepth.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_clearDepth_Error', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_clearDepth] clearDepth Error");
@@ -822,9 +948,12 @@ export default function webgl1_common() {
         })
 
         /**
+         * @tc.name   webgl_test_clear
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0043
-         * @tc.name webgl_test_clear
-         * @tc.desc Test clear.
+         * @tc.desc   Test clear.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_clear', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_clear] clear");
@@ -851,9 +980,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0044
-         * @tc.name webgl_test_getParameter
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_getParameter] getParameter");
@@ -870,9 +1002,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0045
-         * @tc.name webgl_test_getParameter_1
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.ALIASED_LINE_WIDTH_RANGE, 'Float32Array', 2)
@@ -881,9 +1016,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0046
-         * @tc.name webgl_test_getParameter_2
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.ALIASED_POINT_SIZE_RANGE, 'Float32Array', 2)
@@ -892,9 +1030,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0047
-         * @tc.name webgl_test_getParameter_3
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.ALPHA_BITS, 'Number')
@@ -903,9 +1044,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0048
-         * @tc.name webgl_test_getParameter_4
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let webGLBuffer = gl.createBuffer();
@@ -917,9 +1061,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_5
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0049
-         * @tc.name webgl_test_getParameter_5
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.BLEND, 'Boolean')
@@ -928,9 +1075,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_6
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0050
-         * @tc.name webgl_test_getParameter_6
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.BLEND_COLOR, 'Float32Array', 4)
@@ -939,9 +1089,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_7
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0051
-         * @tc.name webgl_test_getParameter_7
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_7', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.BLEND_DST_ALPHA, 'Number')
@@ -950,9 +1103,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_8
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0052
-         * @tc.name webgl_test_getParameter_8
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_8', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.BLEND_DST_RGB, 'Number')
@@ -961,9 +1117,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_9
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0053
-         * @tc.name webgl_test_getParameter_9
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_9', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.BLEND_EQUATION, 'Number')
@@ -972,9 +1131,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_10
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0054
-         * @tc.name webgl_test_getParameter_10
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.BLEND_EQUATION_ALPHA, 'Number')
@@ -983,9 +1145,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_11
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0055
-         * @tc.name webgl_test_getParameter_11
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_11', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.BLEND_EQUATION_RGB, 'Number')
@@ -994,9 +1159,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_12
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0056
-         * @tc.name webgl_test_getParameter_12
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_12', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.BLEND_SRC_ALPHA, 'Number')
@@ -1005,9 +1173,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_13
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0057
-         * @tc.name webgl_test_getParameter_13
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.BLEND_SRC_RGB, 'Number')
@@ -1016,9 +1187,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_14
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0058
-         * @tc.name webgl_test_getParameter_14
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_14', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.BLUE_BITS, 'Number')
@@ -1027,9 +1201,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_15
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0059
-         * @tc.name webgl_test_getParameter_15
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_15', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.COLOR_CLEAR_VALUE, 'Float32Array', 4)
@@ -1038,9 +1215,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_16
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0060
-         * @tc.name webgl_test_getParameter_16
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_16', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.COLOR_WRITEMASK, 'Array', 4)
@@ -1049,9 +1229,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_17
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0061
-         * @tc.name webgl_test_getParameter_17
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_17', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.COMPRESSED_TEXTURE_FORMATS, 'Uint32Array')
@@ -1060,9 +1243,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_18
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0062
-         * @tc.name webgl_test_getParameter_18
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_18', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.CULL_FACE, 'Boolean')
@@ -1071,9 +1257,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_19
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0063
-         * @tc.name webgl_test_getParameter_19
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_19', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.CULL_FACE_MODE, 'Number')
@@ -1082,9 +1271,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_20
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0064
-         * @tc.name webgl_test_getParameter_20
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_20', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let {program} = createProgram(gl, `
@@ -1111,9 +1303,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_21
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0065
-         * @tc.name webgl_test_getParameter_21
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_21', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.DEPTH_BITS, 'Number')
@@ -1122,9 +1317,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_22
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0066
-         * @tc.name webgl_test_getParameter_22
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_22', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.DEPTH_CLEAR_VALUE, 'Number')
@@ -1133,9 +1331,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_23
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0067
-         * @tc.name webgl_test_getParameter_23
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_23', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.DEPTH_FUNC, 'Number')
@@ -1144,9 +1345,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_24
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0068
-         * @tc.name webgl_test_getParameter_24
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_24', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.DEPTH_RANGE, 'Float32Array', 2)
@@ -1155,9 +1359,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_25
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0069
-         * @tc.name webgl_test_getParameter_25
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_25', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.DEPTH_TEST, 'Boolean')
@@ -1166,9 +1373,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_26
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0070
-         * @tc.name webgl_test_getParameter_26
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_26', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.DEPTH_WRITEMASK, 'Boolean')
@@ -1177,9 +1387,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_27
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0071
-         * @tc.name webgl_test_getParameter_27
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_27', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.DITHER, 'Boolean')
@@ -1188,9 +1401,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_28
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0072
-         * @tc.name webgl_test_getParameter_28
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_28', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let webGLBuffer = gl.createBuffer();
@@ -1202,9 +1418,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_30
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0073
-         * @tc.name webgl_test_getParameter_30
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_30', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.FRONT_FACE, 'Number')
@@ -1213,9 +1432,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_31
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0074
-         * @tc.name webgl_test_getParameter_31
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_31', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.GENERATE_MIPMAP_HINT, 'Number')
@@ -1224,9 +1446,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_32
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0075
-         * @tc.name webgl_test_getParameter_32
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_32', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.GREEN_BITS, 'Number')
@@ -1235,9 +1460,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_33
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0076
-         * @tc.name webgl_test_getParameter_33
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_33', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.IMPLEMENTATION_COLOR_READ_FORMAT, 'Number')
@@ -1246,9 +1474,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_34
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0077
-         * @tc.name webgl_test_getParameter_34
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_34', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.IMPLEMENTATION_COLOR_READ_TYPE, 'Number')
@@ -1257,9 +1488,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_35
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0078
-         * @tc.name webgl_test_getParameter_35
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_35', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.LINE_WIDTH, 'Number')
@@ -1268,9 +1502,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_36
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0079
-         * @tc.name webgl_test_getParameter_36
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_36', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.MAX_COMBINED_TEXTURE_IMAGE_UNITS, 'Number')
@@ -1279,9 +1516,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_37
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0080
-         * @tc.name webgl_test_getParameter_37
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_37', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.MAX_TEXTURE_SIZE, 'Number')
@@ -1290,9 +1530,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_38
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0081
-         * @tc.name webgl_test_getParameter_38
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_38', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.MAX_VARYING_VECTORS, 'Number')
@@ -1301,9 +1544,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_39
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0082
-         * @tc.name webgl_test_getParameter_39
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_39', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.MAX_VERTEX_ATTRIBS, 'Number')
@@ -1312,9 +1558,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_40
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0083
-         * @tc.name webgl_test_getParameter_40
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_40', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.MAX_VERTEX_TEXTURE_IMAGE_UNITS, 'Number')
@@ -1323,9 +1572,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_41
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0084
-         * @tc.name webgl_test_getParameter_41
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_41', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.MAX_VERTEX_UNIFORM_VECTORS, 'Number')
@@ -1334,9 +1586,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_42
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0085
-         * @tc.name webgl_test_getParameter_42
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_42', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.MAX_VIEWPORT_DIMS, 'Int32Array', 2)
@@ -1345,9 +1600,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_43
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0086
-         * @tc.name webgl_test_getParameter_43
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_43', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.PACK_ALIGNMENT, 'Number')
@@ -1356,9 +1614,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_44
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0087
-         * @tc.name webgl_test_getParameter_44
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_44', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.POLYGON_OFFSET_FACTOR, 'Number')
@@ -1367,9 +1628,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_45
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0088
-         * @tc.name webgl_test_getParameter_45
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_45', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.POLYGON_OFFSET_FILL, 'Boolean')
@@ -1378,9 +1642,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_46
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0089
-         * @tc.name webgl_test_getParameter_46
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_46', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.POLYGON_OFFSET_UNITS, 'Number')
@@ -1389,9 +1656,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_47
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0090
-         * @tc.name webgl_test_getParameter_47
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_47', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.RED_BITS, 'Number')
@@ -1400,9 +1670,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_49
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0091
-         * @tc.name webgl_test_getParameter_49
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_49', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.RENDERER, 'String')
@@ -1411,9 +1684,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_50
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0092
-         * @tc.name webgl_test_getParameter_50
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_50', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.SAMPLE_BUFFERS, 'Number')
@@ -1422,9 +1698,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_51
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0093
-         * @tc.name webgl_test_getParameter_51
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_51', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.SAMPLE_COVERAGE_INVERT, 'Boolean')
@@ -1433,9 +1712,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_52
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0094
-         * @tc.name webgl_test_getParameter_52
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_52', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.SAMPLE_COVERAGE_VALUE, 'Number')
@@ -1444,9 +1726,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_53
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0095
-         * @tc.name webgl_test_getParameter_53
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_53', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.SAMPLES, 'Number')
@@ -1455,9 +1740,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_54
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0096
-         * @tc.name webgl_test_getParameter_54
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_54', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.SCISSOR_BOX, 'Int32Array', 4)
@@ -1466,9 +1754,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_55
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0097
-         * @tc.name webgl_test_getParameter_55
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_55', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.SCISSOR_TEST, 'Boolean')
@@ -1477,9 +1768,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_56
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0098
-         * @tc.name webgl_test_getParameter_56
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_56', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.SHADING_LANGUAGE_VERSION, 'String')
@@ -1488,9 +1782,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_57
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0099
-         * @tc.name webgl_test_getParameter_57
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_57', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.STENCIL_BACK_FAIL, 'Number')
@@ -1499,9 +1796,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_58
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0100
-         * @tc.name webgl_test_getParameter_58
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_58', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.STENCIL_BACK_FUNC, 'Number')
@@ -1510,9 +1810,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_59
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0101
-         * @tc.name webgl_test_getParameter_59
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_59', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.STENCIL_BACK_PASS_DEPTH_FAIL, 'Number')
@@ -1521,9 +1824,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_60
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0102
-         * @tc.name webgl_test_getParameter_60
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_60', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.STENCIL_BACK_PASS_DEPTH_PASS, 'Number')
@@ -1532,9 +1838,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_61
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0103
-         * @tc.name webgl_test_getParameter_61
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_61', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.STENCIL_BACK_REF, 'Number')
@@ -1543,9 +1852,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_62
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0104
-         * @tc.name webgl_test_getParameter_62
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_62', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.STENCIL_BACK_VALUE_MASK, 'Number')
@@ -1554,9 +1866,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_63
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0105
-         * @tc.name webgl_test_getParameter_63
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_63', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.STENCIL_BACK_WRITEMASK, 'Number')
@@ -1565,9 +1880,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_64
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0106
-         * @tc.name webgl_test_getParameter_64
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_64', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.STENCIL_BITS, 'Number')
@@ -1576,9 +1894,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_65
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0107
-         * @tc.name webgl_test_getParameter_65
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_65', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.STENCIL_CLEAR_VALUE, 'Number')
@@ -1587,9 +1908,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_66
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0108
-         * @tc.name webgl_test_getParameter_66
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_66', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.STENCIL_FAIL, 'Number')
@@ -1598,9 +1922,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_67
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0109
-         * @tc.name webgl_test_getParameter_67
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_67', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.STENCIL_FUNC, 'Number')
@@ -1609,9 +1936,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_68
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0110
-         * @tc.name webgl_test_getParameter_68
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_68', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.STENCIL_PASS_DEPTH_FAIL, 'Number')
@@ -1620,9 +1950,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_69
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0111
-         * @tc.name webgl_test_getParameter_69
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_69', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.STENCIL_PASS_DEPTH_PASS, 'Number')
@@ -1631,9 +1964,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_70
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0112
-         * @tc.name webgl_test_getParameter_70
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_70', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.STENCIL_REF, 'Number')
@@ -1642,9 +1978,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_71
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0113
-         * @tc.name webgl_test_getParameter_71
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_71', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.STENCIL_TEST, 'Boolean')
@@ -1653,9 +1992,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_72
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0114
-         * @tc.name webgl_test_getParameter_72
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_72', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.STENCIL_VALUE_MASK, 'Number')
@@ -1664,9 +2006,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_73
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0115
-         * @tc.name webgl_test_getParameter_73
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_73', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.STENCIL_WRITEMASK, 'Number')
@@ -1675,9 +2020,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_74
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0116
-         * @tc.name webgl_test_getParameter_74
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_74', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.SUBPIXEL_BITS, 'Number')
@@ -1686,9 +2034,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_75
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0117
-         * @tc.name webgl_test_getParameter_75
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_75', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let texture = gl.createTexture();
@@ -1700,9 +2051,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_76
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0118
-         * @tc.name webgl_test_getParameter_76
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_76', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let texture = gl.createTexture();
@@ -1714,9 +2068,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_77
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0119
-         * @tc.name webgl_test_getParameter_77
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_77', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.UNPACK_ALIGNMENT, 'Number')
@@ -1725,9 +2082,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_78
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0120
-         * @tc.name webgl_test_getParameter_78
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_78', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.UNPACK_COLORSPACE_CONVERSION_WEBGL, 'Number')
@@ -1736,9 +2096,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_79
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0121
-         * @tc.name webgl_test_getParameter_79
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_79', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.UNPACK_FLIP_Y_WEBGL, 'Boolean')
@@ -1747,9 +2110,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_80
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0122
-         * @tc.name webgl_test_getParameter_80
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_80', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, 'Boolean')
@@ -1758,9 +2124,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_81
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0123
-         * @tc.name webgl_test_getParameter_81
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_81', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.VENDOR, 'String')
@@ -1769,9 +2138,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_82
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0124
-         * @tc.name webgl_test_getParameter_82
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_82', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.VERSION, 'String')
@@ -1780,9 +2152,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_83
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0125
-         * @tc.name webgl_test_getParameter_83
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_83', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             checkGetParameter(gl.VIEWPORT, 'Int32Array', 4)
@@ -1791,9 +2166,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getParameter_Error
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0126
-         * @tc.name webgl_test_getParameter_Error
-         * @tc.desc Test getParameter.
+         * @tc.desc   Test getParameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getParameter_Error', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_getParameterError] getParameter");
@@ -1810,9 +2188,12 @@ export default function webgl1_common() {
          */
 
         /**
+         * @tc.name   webgl_test_getExtension
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0127
-         * @tc.name webgl_test_getExtension
-         * @tc.desc Test getExtension.
+         * @tc.desc   Test getExtension.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getExtension', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_getExtension] getExtension");
@@ -1828,9 +2209,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_getExtension_Error
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0128
-         * @tc.name webgl_test_getExtension_Error
-         * @tc.desc Test getExtension.
+         * @tc.desc   Test getExtension.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getExtension_Error', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_getExtensionError] getExtensionError");
@@ -1849,9 +2233,12 @@ export default function webgl1_common() {
          */
 
         /**
+         * @tc.name   webgl_test_getSupportedExtensions
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0129
-         * @tc.name webgl_test_getSupportedExtensions
-         * @tc.desc Test getSupportedExtensions.
+         * @tc.desc   Test getSupportedExtensions.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getSupportedExtensions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -1868,9 +2255,12 @@ export default function webgl1_common() {
          */
 
         /**
+         * @tc.name   webgl_test_viewport
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0130
-         * @tc.name webgl_test_viewport
-         * @tc.desc Test viewport.
+         * @tc.desc   Test viewport.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_viewport', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_viewport] viewport");
@@ -1890,9 +2280,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_viewport_Error
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0131
-         * @tc.name webgl_test_viewport_Error
-         * @tc.desc Test viewport.
+         * @tc.desc   Test viewport.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_viewport_Error', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_viewportError] viewportError");
@@ -1921,9 +2314,12 @@ export default function webgl1_common() {
          */
 
         /**
+         * @tc.name   webgl_test_hint
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0132
-         * @tc.name webgl_test_hint
-         * @tc.desc Test hint.
+         * @tc.desc   Test hint.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_hint', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_hint] hint");
@@ -1955,9 +2351,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_hint_Error
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0133
-         * @tc.name webgl_test_hint_Error
-         * @tc.desc Test hint.
+         * @tc.desc   Test hint.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_hint_Error', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_hintError] webgl_test_hint");
@@ -1987,9 +2386,12 @@ export default function webgl1_common() {
          */
 
         /**
+         * @tc.name   webgl_test_lineWidth
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0134
-         * @tc.name webgl_test_lineWidth
-         * @tc.desc Test lineWidth.
+         * @tc.desc   Test lineWidth.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_lineWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_lineWidth] lineWidth");
@@ -2008,9 +2410,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_lineWidth_Error
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0135
-         * @tc.name webgl_test_lineWidth_Error
-         * @tc.desc Test lineWidth.
+         * @tc.desc   Test lineWidth.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_lineWidth_Error', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let defaultLineWidth = gl.getParameter(gl.LINE_WIDTH);
@@ -2029,9 +2434,12 @@ export default function webgl1_common() {
         })
 
         /**
+         * @tc.name   webgl_test_readPixels
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0136
-         * @tc.name webgl_test_readPixels
-         * @tc.desc Test readPixels.
+         * @tc.desc   Test readPixels.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_readPixels', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_readPixels] readPixels");
@@ -2053,9 +2461,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_readPixels_Error
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0137
-         * @tc.name webgl_test_readPixels_Error
-         * @tc.desc Test readPixels.
+         * @tc.desc   Test readPixels.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_readPixels_Error', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             const pixels = new Uint8Array(gl.drawingBufferWidth * gl.drawingBufferHeight * 4);
@@ -2090,9 +2501,12 @@ export default function webgl1_common() {
          */
 
         /**
+         * @tc.name   webgl_test_blendColor
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0138
-         * @tc.name webgl_test_blendColor
-         * @tc.desc Test blendColor.
+         * @tc.desc   Test blendColor.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_blendColor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_blendColor] blendColor");
@@ -2111,9 +2525,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_blendColor_Error
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0139
-         * @tc.name webgl_test_blendColor_Error
-         * @tc.desc Test blendColor.
+         * @tc.desc   Test blendColor.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_blendColor_Error', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_blendColorError] blendColorError");
@@ -2145,9 +2562,12 @@ export default function webgl1_common() {
          */
 
         /**
+         * @tc.name   webgl_test_blendEquation
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0140
-         * @tc.name webgl_test_blendEquation
-         * @tc.desc Test blendEquation.
+         * @tc.desc   Test blendEquation.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_blendEquation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_blendEquation] blendEquation");
@@ -2180,9 +2600,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_blendEquation_Error
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0141
-         * @tc.name webgl_test_blendEquation_Error
-         * @tc.desc Test blendEquation.
+         * @tc.desc   Test blendEquation.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_blendEquation_Error', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -2207,9 +2630,12 @@ export default function webgl1_common() {
          */
 
         /**
+         * @tc.name   webgl_test_blendEquationSeparate
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0142
-         * @tc.name webgl_test_blendEquationSeparate
-         * @tc.desc Test blendEquationSeparate.
+         * @tc.desc   Test blendEquationSeparate.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_blendEquationSeparate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -2239,9 +2665,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_blendEquationSeparate_Error
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0143
-         * @tc.name webgl_test_blendEquationSeparate_Error
-         * @tc.desc Test blendEquationSeparate.
+         * @tc.desc   Test blendEquationSeparate.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_blendEquationSeparate_Error', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -2264,9 +2693,12 @@ export default function webgl1_common() {
          */
 
         /**
+         * @tc.name   webgl_test_blendFunc
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0144
-         * @tc.name webgl_test_blendFunc
-         * @tc.desc Test blendFunc.
+         * @tc.desc   Test blendFunc.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_blendFunc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_blendFunc] blendFunc");
@@ -2297,9 +2729,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_blendFunc_Error
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0145
-         * @tc.name webgl_test_blendFunc_Error
-         * @tc.desc Test blendFunc.
+         * @tc.desc   Test blendFunc.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_blendFunc_Error', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_blendFuncError] blendFunc");
@@ -2332,9 +2767,12 @@ export default function webgl1_common() {
          */
 
         /**
+         * @tc.name   webgl_test_blendFuncSeparate
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0146
-         * @tc.name webgl_test_blendFuncSeparate
-         * @tc.desc Test blendFuncSeparate.
+         * @tc.desc   Test blendFuncSeparate.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_blendFuncSeparate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_blendFuncSeparate] blendFuncSeparate");
@@ -2371,9 +2809,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_blendFuncSeparate_Error
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0147
-         * @tc.name webgl_test_blendFuncSeparate_Error
-         * @tc.desc Test blendFuncSeparate.
+         * @tc.desc   Test blendFuncSeparate.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_blendFuncSeparate_Error', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -2410,9 +2851,12 @@ export default function webgl1_common() {
          */
 
         /**
+         * @tc.name   webgl_test_clearStencil
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0148
-         * @tc.name webgl_test_clearStencil
-         * @tc.desc Test clearStencil.
+         * @tc.desc   Test clearStencil.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_clearStencil', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_clearStencil] clearStencil");
@@ -2432,9 +2876,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_clearStencil_Error
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0149
-         * @tc.name webgl_test_clearStencil_Error
-         * @tc.desc Test clearStencil.
+         * @tc.desc   Test clearStencil.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_clearStencil_Error', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_clearStencilError] clearStencil");
@@ -2457,9 +2904,12 @@ export default function webgl1_common() {
          */
 
         /**
+         * @tc.name   webgl_test_colorMask
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0150
-         * @tc.name webgl_test_colorMask
-         * @tc.desc Test colorMask.
+         * @tc.desc   Test colorMask.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_colorMask', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_colorMask] colorMask");
@@ -2486,9 +2936,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_colorMask_Error
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0151
-         * @tc.name webgl_test_colorMask_Error
-         * @tc.desc Test colorMask.
+         * @tc.desc   Test colorMask.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_colorMask_Error', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_colorMaskError] colorMask");
@@ -2514,9 +2967,12 @@ export default function webgl1_common() {
          */
 
         /**
+         * @tc.name   webgl_test_cullFace
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0152
-         * @tc.name webgl_test_cullFace
-         * @tc.desc Test cullFace.
+         * @tc.desc   Test cullFace.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_cullFace', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_cullFace] cullFace");
@@ -2535,9 +2991,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_cullFace_Error
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0153
-         * @tc.name webgl_test_cullFace_Error
-         * @tc.desc Test cullFace.
+         * @tc.desc   Test cullFace.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_cullFace_Error', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_cullFaceError] cullFace");
@@ -2562,9 +3021,12 @@ export default function webgl1_common() {
          */
 
         /**
+         * @tc.name   webgl_test_depthFunc
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0154
-         * @tc.name webgl_test_depthFunc
-         * @tc.desc Test depthFunc.
+         * @tc.desc   Test depthFunc.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_depthFunc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_depthFunc] depthFunc");
@@ -2588,9 +3050,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_depthFunc_Error
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0155
-         * @tc.name webgl_test_depthFunc_Error
-         * @tc.desc Test depthFunc.
+         * @tc.desc   Test depthFunc.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_depthFunc_Error', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_depthFuncError] depthFunc");
@@ -2618,9 +3083,12 @@ export default function webgl1_common() {
          */
 
         /**
+         * @tc.name   webgl_test_depthMask
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0156
-         * @tc.name webgl_test_depthMask
-         * @tc.desc Test depthMask.
+         * @tc.desc   Test depthMask.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_depthMask', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_depthMask] depthMask");
@@ -2639,9 +3107,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_depthMask_Error
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0157
-         * @tc.name webgl_test_depthMask_Error
-         * @tc.desc Test depthMask.
+         * @tc.desc   Test depthMask.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_depthMask_Error', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_depthMaskError] depthMask");
@@ -2670,9 +3141,12 @@ export default function webgl1_common() {
          */
 
         /**
+         * @tc.name   webgl_test_depthRange
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0158
-         * @tc.name webgl_test_depthRange
-         * @tc.desc Test depthRange.
+         * @tc.desc   Test depthRange.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_depthRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_depthRange] depthRange");
@@ -2690,9 +3164,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_depthRange_Error
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0159
-         * @tc.name webgl_test_depthRange_Error
-         * @tc.desc Test depthRange.
+         * @tc.desc   Test depthRange.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_depthRange_Error', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_depthRangeError] depthRange");
@@ -2717,9 +3194,12 @@ export default function webgl1_common() {
          */
 
         /**
+         * @tc.name   webgl_test_frontFace
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0160
-         * @tc.name webgl_test_frontFace
-         * @tc.desc Test frontFace.
+         * @tc.desc   Test frontFace.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_frontFace', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_frontFace] frontFace");
@@ -2738,9 +3218,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_frontFace_Error
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0161
-         * @tc.name webgl_test_frontFace_Error
-         * @tc.desc Test frontFace.
+         * @tc.desc   Test frontFace.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_frontFace_Error', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_frontFaceError] frontFace");
@@ -2763,9 +3246,12 @@ export default function webgl1_common() {
          */
 
         /**
+         * @tc.name   webgl_test_stencilFunc
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0162
-         * @tc.name webgl_test_stencilFunc
-         * @tc.desc Test stencilFunc.
+         * @tc.desc   Test stencilFunc.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_stencilFunc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_stencilFunc] stencilFunc");
@@ -2800,9 +3286,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_stencilFunc_Error
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0163
-         * @tc.name webgl_test_stencilFunc_Error
-         * @tc.desc Test stencilFunc.
+         * @tc.desc   Test stencilFunc.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_stencilFunc_Error', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let isEnable = gl.isEnabled(gl.STENCIL_TEST);
@@ -2829,9 +3318,12 @@ export default function webgl1_common() {
          */
 
         /**
+         * @tc.name   webgl_test_stencilFuncSeparate
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0164
-         * @tc.name webgl_test_stencilFuncSeparate
-         * @tc.desc Test stencilFuncSeparate.
+         * @tc.desc   Test stencilFuncSeparate.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_stencilFuncSeparate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -2871,9 +3363,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_stencilFuncSeparate_Error
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0165
-         * @tc.name webgl_test_stencilFuncSeparate_Error
-         * @tc.desc Test stencilFuncSeparate.
+         * @tc.desc   Test stencilFuncSeparate.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_stencilFuncSeparate_Error', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -2905,9 +3400,12 @@ export default function webgl1_common() {
          */
 
         /**
+         * @tc.name   webgl_test_stencilMask
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0166
-         * @tc.name webgl_test_stencilMask
-         * @tc.desc Test stencilMask.
+         * @tc.desc   Test stencilMask.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_stencilMask', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_stencilMask] stencilMask");
@@ -2926,9 +3424,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_stencilMask_Error
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0167
-         * @tc.name webgl_test_stencilMask_Error
-         * @tc.desc Test stencilMask.
+         * @tc.desc   Test stencilMask.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_stencilMask_Error', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_stencilMaskError] stencilMask");
@@ -2951,9 +3452,12 @@ export default function webgl1_common() {
          */
 
         /**
+         * @tc.name   webgl_test_stencilMaskSeparate
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0168
-         * @tc.name webgl_test_stencilMaskSeparate
-         * @tc.desc Test stencilMaskSeparate.
+         * @tc.desc   Test stencilMaskSeparate.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_stencilMaskSeparate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -2979,9 +3483,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_stencilMaskSeparate_Error
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0169
-         * @tc.name webgl_test_stencilMaskSeparate_Error
-         * @tc.desc Test stencilMaskSeparate.
+         * @tc.desc   Test stencilMaskSeparate.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_stencilMaskSeparate_Error', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -3007,9 +3514,12 @@ export default function webgl1_common() {
          */
 
         /**
+         * @tc.name   webgl_test_stencilOp
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0170
-         * @tc.name webgl_test_stencilOp
-         * @tc.desc Test stencilOp.
+         * @tc.desc   Test stencilOp.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_stencilOp', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_stencilOp] stencilOp");
@@ -3055,9 +3565,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_stencilOp_Error
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0171
-         * @tc.name webgl_test_stencilOp_Error
-         * @tc.desc Test stencilOp.
+         * @tc.desc   Test stencilOp.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_stencilOp_Error', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_stencilOpError] stencilOp");
@@ -3084,9 +3597,12 @@ export default function webgl1_common() {
          */
 
         /**
+         * @tc.name   webgl_test_stencilOpSeparate
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0172
-         * @tc.name webgl_test_stencilOpSeparate
-         * @tc.desc Test stencilOpSeparate.
+         * @tc.desc   Test stencilOpSeparate.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_stencilOpSeparate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_stencilOpSeparate] stencilOpSeparate");
@@ -3142,9 +3658,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_stencilOpSeparate_Error
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0173
-         * @tc.name webgl_test_stencilOpSeparate_Error
-         * @tc.desc Test stencilOpSeparate.
+         * @tc.desc   Test stencilOpSeparate.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_stencilOpSeparate_Error', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -3175,9 +3694,12 @@ export default function webgl1_common() {
          */
 
         /**
+         * @tc.name   webgl_test_scissor
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0174
-         * @tc.name webgl_test_scissor
-         * @tc.desc Test scissor.
+         * @tc.desc   Test scissor.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_scissor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_scissor] scissor");
@@ -3202,9 +3724,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_scissor_Error
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0175
-         * @tc.name webgl_test_scissor_Error
-         * @tc.desc Test scissor.
+         * @tc.desc   Test scissor.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_scissor_Error', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_scissorError] scissor");
@@ -3236,9 +3761,12 @@ export default function webgl1_common() {
          */
 
         /**
+         * @tc.name   webgl_test_polygonOffset
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0176
-         * @tc.name webgl_test_polygonOffset
-         * @tc.desc Test polygonOffset.
+         * @tc.desc   Test polygonOffset.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_polygonOffset', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [polygonOffset] polygonOffset");
@@ -3267,9 +3795,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_polygonOffset_Error
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0177
-         * @tc.name webgl_test_polygonOffset_Error
-         * @tc.desc Test polygonOffset.
+         * @tc.desc   Test polygonOffset.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_polygonOffset_Error', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -3293,9 +3824,12 @@ export default function webgl1_common() {
         })
 
         /**
+         * @tc.name   webgl_test_sampleCoverage
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0178
-         * @tc.name webgl_test_sampleCoverage
-         * @tc.desc Test sampleCoverage.
+         * @tc.desc   Test sampleCoverage.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_sampleCoverage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [sampleCoverage] sampleCoverage");
@@ -3323,9 +3857,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_sampleCoverage_Error
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0179
-         * @tc.name webgl_test_sampleCoverage_Error
-         * @tc.desc Test sampleCoverage.
+         * @tc.desc   Test sampleCoverage.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_sampleCoverage_Error', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -3354,9 +3891,12 @@ export default function webgl1_common() {
         })
 
         /**
+         * @tc.name   webgl_test_pixelStorei
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0180
-         * @tc.name webgl_test_pixelStorei
-         * @tc.desc Test pixelStorei.
+         * @tc.desc   Test pixelStorei.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_pixelStorei', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [pixelStorei] pixelStorei");
@@ -3380,9 +3920,12 @@ export default function webgl1_common() {
 
 
         /**
+         * @tc.name   webgl_test_pixelStorei_Error
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_COMMON_0181
-         * @tc.name webgl_test_pixelStorei_Error
-         * @tc.desc Test pixelStorei.
+         * @tc.desc   Test pixelStorei.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_pixelStorei_Error', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_pixelStoreiError] pixelStorei");

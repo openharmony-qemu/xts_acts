@@ -200,12 +200,12 @@ export default function TextLineParagraphTest() {
     })
 
     /**
-     * @tc.number     testCreateLineParagraphStatic
-     * @tc.name       testCreateLineParagraphStatic
-     * @tc.desc       To test metchod create line paragraph for paragraph.
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      LEVEL1
+     * @tc.name   testCreateLineParagraphStatic
+     * @tc.number testCreateLineParagraphStatic
+     * @tc.desc   To test metchod create line paragraph for paragraph.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCreateLineParagraphStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {

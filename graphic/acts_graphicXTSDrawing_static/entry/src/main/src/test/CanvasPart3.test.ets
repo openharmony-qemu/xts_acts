@@ -51,12 +51,12 @@ export default function drawingTsCanvasPart3Test() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_2000
-     * @tc.name      : testCanvasRestoreToCountNormalStatic
-     * @tc.desc      : testCanvasRestoreToCountNormalStatic
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testCanvasRestoreToCountNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_2000
+     * @tc.desc   testCanvasRestoreToCountNormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCanvasRestoreToCountNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasRestoreToCountNormalStatic';
@@ -98,12 +98,12 @@ export default function drawingTsCanvasPart3Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_2003
-     * @tc.name      : testCanvasRestoreToCountMultipleCallsStatic
-     * @tc.desc      : testCanvasRestoreToCountMultipleCallsStatic
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCanvasRestoreToCountMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_2003
+     * @tc.desc   testCanvasRestoreToCountMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCanvasRestoreToCountMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasRestoreToCountMultipleCallsStatic';
@@ -120,12 +120,12 @@ export default function drawingTsCanvasPart3Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_2100
-     * @tc.name      : testCanvasRestoreNormalStatic
-     * @tc.desc      : testCanvasRestoreNormal
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testCanvasRestoreNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_2100
+     * @tc.desc   testCanvasRestoreNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCanvasRestoreNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const msg = 'testCanvasRestoreNormalStatic';
@@ -142,12 +142,12 @@ export default function drawingTsCanvasPart3Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_2102
-     * @tc.name      : testCanvasRestoreMultipleCallsStatic
-     * @tc.desc      : testCanvasRestoreMultipleCalls
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCanvasRestoreMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_2102
+     * @tc.desc   testCanvasRestoreMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCanvasRestoreMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testCanvasRestoreMultipleCallsStatic';
@@ -173,12 +173,12 @@ export default function drawingTsCanvasPart3Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_2103
-     * @tc.name      : testCanvasRestoreWhenNoSaveStatic
-     * @tc.desc      : testCanvasRestoreWhenNoSave
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCanvasRestoreWhenNoSaveStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_2103
+     * @tc.desc   testCanvasRestoreWhenNoSave
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCanvasRestoreWhenNoSaveStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testCanvasRestoreWhenNoSaveStatic';

@@ -24,12 +24,12 @@ export default function sendableColorSpaceManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICCOLORSPACE_JS_API_0090
-     * @tc.name      : testSendableColorSpaceManagerCreate_Standard
-     * @tc.desc      : Create standard sharable color management.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSendableColorSpaceManagerCreate_Standard
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICCOLORSPACE_JS_API_0090
+     * @tc.desc   Create standard sharable color management.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSendableColorSpaceManagerCreate_Standard', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -48,12 +48,12 @@ export default function sendableColorSpaceManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICCOLORSPACE_JS_API_0100
-     * @tc.name      : testSendableColorSpaceManagerCreate_UserDefined
-     * @tc.desc      : Creates user-defined sharable color management instances.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSendableColorSpaceManagerCreate_UserDefined
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICCOLORSPACE_JS_API_0100
+     * @tc.desc   Creates user-defined sharable color management instances.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSendableColorSpaceManagerCreate_UserDefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -83,12 +83,12 @@ export default function sendableColorSpaceManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICCOLORSPACE_JS_API_0110
-     * @tc.name      : testGetColorSpaceName_Standard
-     * @tc.desc      : Create standard sharable color management, Obtains the color gamut gamma value.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetColorSpaceName_Standard
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICCOLORSPACE_JS_API_0110
+     * @tc.desc   Create standard sharable color management, Obtains the color gamut gamma value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetColorSpaceName_Standard', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -110,12 +110,12 @@ export default function sendableColorSpaceManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICCOLORSPACE_JS_API_0120
-     * @tc.name      : testGetWhitePoint_Standard
-     * @tc.desc      : Create standard sharable color management, Obtains the color gamut white point value.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetWhitePoint_Standard
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICCOLORSPACE_JS_API_0120
+     * @tc.desc   Create standard sharable color management, Obtains the color gamut white point value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetWhitePoint_Standard', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let msg = "====testGetWhitePoint_Standard===="
@@ -136,12 +136,12 @@ export default function sendableColorSpaceManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICCOLORSPACE_JS_API_0130
-     * @tc.name      : testGetGamma_Standard
-     * @tc.desc      : Create standard sharable color management, Obtains the color gamut type.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetGamma_Standard
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICCOLORSPACE_JS_API_0130
+     * @tc.desc   Create standard sharable color management, Obtains the color gamut type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetGamma_Standard', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let msg = "====testGetGamma_Standard===="
@@ -162,12 +162,12 @@ export default function sendableColorSpaceManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICCOLORSPACE_JS_API_0140
-     * @tc.name      : testGetColorSpaceName_UserDefined
-     * @tc.desc      : Creates user-defined sharable color management instances, Obtains the color gamut gamma value.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetColorSpaceName_UserDefined
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICCOLORSPACE_JS_API_0140
+     * @tc.desc   Creates user-defined sharable color management instances, Obtains the color gamut gamma value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetColorSpaceName_UserDefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -200,12 +200,12 @@ export default function sendableColorSpaceManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICCOLORSPACE_JS_API_0150
-     * @tc.name      : testGetWhitePoint_UserDefined
-     * @tc.desc      : Creates user-defined sharable color management instances, Obtains the color gamut white point value.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetWhitePoint_UserDefined
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICCOLORSPACE_JS_API_0150
+     * @tc.desc   Creates user-defined sharable color management instances, Obtains the color gamut white point value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetWhitePoint_UserDefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let msg = "====testGetWhitePoint_UserDefined===="
@@ -237,12 +237,12 @@ export default function sendableColorSpaceManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICCOLORSPACE_JS_API_0160
-     * @tc.name      : testGetGamma_UserDefined
-     * @tc.desc      : Creates user-defined sharable color management instances, Obtains the color gamut type.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetGamma_UserDefined
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICCOLORSPACE_JS_API_0160
+     * @tc.desc   Creates user-defined sharable color management instances, Obtains the color gamut type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetGamma_UserDefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let msg = "====testGetGamma_UserDefined===="
@@ -274,12 +274,12 @@ export default function sendableColorSpaceManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICCOLORSPACE_JS_API_0170
-     * @tc.name      : testCreateErrorCode
-     * @tc.desc      : test sendableColorSpaceManager.create ErrorCode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testCreateErrorCode
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICCOLORSPACE_JS_API_0170
+     * @tc.desc   test sendableColorSpaceManager.create ErrorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCreateErrorCode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let msg = "====testCreateErrorCode===="

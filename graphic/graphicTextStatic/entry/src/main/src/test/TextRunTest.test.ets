@@ -325,12 +325,12 @@ export default function TextRunTest() {
     })
 
     /**
-     * @tc.number     testGetGlyphRunsStatic
-     * @tc.name       testGetGlyphRunsStatic
-     * @tc.desc       To test method getGlyphRuns desc.
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      LEVEL1
+     * @tc.name   testGetGlyphRunsStatic
+     * @tc.number testGetGlyphRunsStatic
+     * @tc.desc   To test method getGlyphRuns desc.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetGlyphRunsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {

@@ -41,12 +41,12 @@ export default function GraphicTextEnum() {
     })
 
     /**
-     * @tc.number    : testTextAlignStatic
-     * @tc.name      : testTextAlignStatic
-     * @tc.desc      : To test the enum value of TextAlign.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextAlignStatic
+     * @tc.number testTextAlignStatic
+     * @tc.desc   To test the enum value of TextAlign.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTextAlignStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -67,12 +67,12 @@ export default function GraphicTextEnum() {
       }
     })
     /**
-     * @tc.number    : testTextDirectionStatic
-     * @tc.name      : testTextDirectionStatic
-     * @tc.desc      : To test the enum value of TextDirection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextDirectionStatic
+     * @tc.number testTextDirectionStatic
+     * @tc.desc   To test the enum value of TextDirection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTextDirectionStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -89,12 +89,12 @@ export default function GraphicTextEnum() {
       }
     })
     /**
-     * @tc.number    : testBreakStrategyStatic
-     * @tc.name      : testBreakStrategyStatic
-     * @tc.desc      : To test the enum value of BreakStrategy.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testBreakStrategyStatic
+     * @tc.number testBreakStrategyStatic
+     * @tc.desc   To test the enum value of BreakStrategy.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBreakStrategyStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -112,12 +112,12 @@ export default function GraphicTextEnum() {
       }
     })
     /**
-     * @tc.number    : testWordBreakStatic
-     * @tc.name      : testWordBreakStatic
-     * @tc.desc      : To test the enum value of WordBreak.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testWordBreakStatic
+     * @tc.number testWordBreakStatic
+     * @tc.desc   To test the enum value of WordBreak.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWordBreakStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -136,12 +136,12 @@ export default function GraphicTextEnum() {
       }
     })
     /**
-     * @tc.number    : testTextDecorationTypeStatic
-     * @tc.name      : testTextDecorationTypeStatic
-     * @tc.desc      : To test the enum value of TextDecorationType.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextDecorationTypeStatic
+     * @tc.number testTextDecorationTypeStatic
+     * @tc.desc   To test the enum value of TextDecorationType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTextDecorationTypeStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -160,12 +160,12 @@ export default function GraphicTextEnum() {
       }
     })
     /**
-     * @tc.number    : testTextDecorationStyleStatic
-     * @tc.name      : testTextDecorationStyleStatic
-     * @tc.desc      : To test the enum value of TextDecorationStyle.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextDecorationStyleStatic
+     * @tc.number testTextDecorationStyleStatic
+     * @tc.desc   To test the enum value of TextDecorationStyle.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTextDecorationStyleStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -185,12 +185,12 @@ export default function GraphicTextEnum() {
       }
     })
     /**
-     * @tc.number    : testFontWeightStatic
-     * @tc.name      : testFontWeightStatic
-     * @tc.desc      : To test the enum value of FontWeight.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testFontWeightStatic
+     * @tc.number testFontWeightStatic
+     * @tc.desc   To test the enum value of FontWeight.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFontWeightStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -214,12 +214,12 @@ export default function GraphicTextEnum() {
       }
     })
     /**
-     * @tc.number    : testFontStyleStatic
-     * @tc.name      : testFontStyleStatic
-     * @tc.desc      : To test the enum value of FontStyle.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testFontStyleStatic
+     * @tc.number testFontStyleStatic
+     * @tc.desc   To test the enum value of FontStyle.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFontStyleStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -237,12 +237,12 @@ export default function GraphicTextEnum() {
       }
     })
     /**
-     * @tc.number    : testTextBaselineStatic
-     * @tc.name      : testTextBaselineStatic
-     * @tc.desc      : To test the enum value of TextBaseline.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextBaselineStatic
+     * @tc.number testTextBaselineStatic
+     * @tc.desc   To test the enum value of TextBaseline.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTextBaselineStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -259,12 +259,12 @@ export default function GraphicTextEnum() {
       }
     })
     /**
-     * @tc.number    : testEllipsisModeStatic
-     * @tc.name      : testEllipsisModeStatic
-     * @tc.desc      : To test the enum value of EllipsisMode.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testEllipsisModeStatic
+     * @tc.number testEllipsisModeStatic
+     * @tc.desc   To test the enum value of EllipsisMode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEllipsisModeStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -283,12 +283,12 @@ export default function GraphicTextEnum() {
     })
 
     /**
-     * @tc.number    : testFontWidthStatic_01
-     * @tc.name      : testFontWidthStatic_01
-     * @tc.desc      : To test the enum value of EllipsisMode.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testFontWidthStatic_01
+     * @tc.number testFontWidthStatic_01
+     * @tc.desc   To test the enum value of EllipsisMode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFontWidthStatic_01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -313,12 +313,12 @@ export default function GraphicTextEnum() {
       })
 
     /**
-     * @tc.number    : testHeightBehaviorStatic
-     * @tc.name      : testHeightBehaviorStatic
-     * @tc.desc      : To test the enum value of EllipsisMode.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testHeightBehaviorStatic
+     * @tc.number testHeightBehaviorStatic
+     * @tc.desc   To test the enum value of EllipsisMode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHeightBehaviorStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -338,12 +338,12 @@ export default function GraphicTextEnum() {
       })
 
     /**
-     * @tc.number     testPlaceholderAlignmentStatic
-     * @tc.name       testPlaceholderAlignmentStatic
-     * @tc.desc       To test the enum value of PlaceholderAlignment.
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level3
+     * @tc.name   testPlaceholderAlignmentStatic
+     * @tc.number testPlaceholderAlignmentStatic
+     * @tc.desc   To test the enum value of PlaceholderAlignment.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPlaceholderAlignmentStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -365,12 +365,12 @@ export default function GraphicTextEnum() {
       })
 
     /**
-     * @tc.number     testRectWidthStyleStatic
-     * @tc.name       testRectWidthStyleStatic
-     * @tc.desc       To test the enum value of RectWidthStyle.
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level3
+     * @tc.name   testRectWidthStyleStatic
+     * @tc.number testRectWidthStyleStatic
+     * @tc.desc   To test the enum value of RectWidthStyle.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRectWidthStyleStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -388,12 +388,12 @@ export default function GraphicTextEnum() {
       })
 
     /**
-     * @tc.number     testRectHeightStyleStatic
-     * @tc.name       testRectHeightStyleStatic
-     * @tc.desc       To test the enum value of RectHeightStyle.
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level3
+     * @tc.name   testRectHeightStyleStatic
+     * @tc.number testRectHeightStyleStatic
+     * @tc.desc   To test the enum value of RectHeightStyle.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRectHeightStyleStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -415,12 +415,12 @@ export default function GraphicTextEnum() {
       })
 
     /**
-     * @tc.number     testAffinityStatic
-     * @tc.name       testAffinityStatic
-     * @tc.desc       To test the enum value of Affinity.
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level3
+     * @tc.name   testAffinityStatic
+     * @tc.number testAffinityStatic
+     * @tc.desc   To test the enum value of Affinity.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAffinityStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

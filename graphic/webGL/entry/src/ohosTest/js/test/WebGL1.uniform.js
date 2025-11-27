@@ -69,9 +69,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_getActiveUniform
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0001
-         * @tc.name webgl_test_getActiveUniform
-         * @tc.desc Test getActiveUniform.
+         * @tc.desc   Test getActiveUniform.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getActiveUniform', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_getActiveUniform] getActiveUniform");
@@ -107,9 +110,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_getActiveUniforms_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0002
-         * @tc.name webgl_test_getActiveUniforms_1
-         * @tc.desc Test getActiveUniforms.
+         * @tc.desc   Test getActiveUniforms.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getActiveUniforms_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -125,9 +131,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_getActiveUniforms_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0003
-         * @tc.name webgl_test_getActiveUniforms_2
-         * @tc.desc Test getActiveUniforms.
+         * @tc.desc   Test getActiveUniforms.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getActiveUniforms_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -142,9 +151,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_getActiveUniforms_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0004
-         * @tc.name webgl_test_getActiveUniforms_3
-         * @tc.desc Test getActiveUniforms.
+         * @tc.desc   Test getActiveUniforms.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getActiveUniforms_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -160,9 +172,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_getUniformLocation
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0005
-         * @tc.name webgl_test_getUniformLocation
-         * @tc.desc Test getUniformLocation.
+         * @tc.desc   Test getUniformLocation.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getUniformLocation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_getUniformLocation] getUniformLocation");
@@ -215,9 +230,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_getUniformLocation_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0006
-         * @tc.name webgl_test_getUniformLocation_1
-         * @tc.desc Test getUniformLocation.
+         * @tc.desc   Test getUniformLocation.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getUniformLocation_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -232,9 +250,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_getUniformLocation_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0007
-         * @tc.name webgl_test_getUniformLocation_2
-         * @tc.desc Test getUniformLocation.
+         * @tc.desc   Test getUniformLocation.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getUniformLocation_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -249,9 +270,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_getUniformLocation_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0008
-         * @tc.name webgl_test_getUniformLocation_3
-         * @tc.desc Test getUniformLocation.
+         * @tc.desc   Test getUniformLocation.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getUniformLocation_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -290,9 +314,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform1f
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0009
-         * @tc.name webgl_test_uniform1f
-         * @tc.desc Test uniform1f.
+         * @tc.desc   Test uniform1f.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform1f', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform1f] uniform1f");
@@ -326,9 +353,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform1f_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0010
-         * @tc.name webgl_test_uniform1f_1
-         * @tc.desc Test uniform1f.
+         * @tc.desc   Test uniform1f.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform1f_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform1f_1] uniform1f");
@@ -344,9 +374,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform1f_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0011
-         * @tc.name webgl_test_uniform1f_2
-         * @tc.desc Test uniform1f.
+         * @tc.desc   Test uniform1f.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform1f_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform1f_2] uniform1f");
@@ -362,9 +395,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform1f_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0012
-         * @tc.name webgl_test_uniform1f_3
-         * @tc.desc Test uniform1f.
+         * @tc.desc   Test uniform1f.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform1f_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform1f_3] uniform1f");
@@ -380,9 +416,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform1f_4
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0013
-         * @tc.name webgl_test_uniform1f_4
-         * @tc.desc Test uniform1f.
+         * @tc.desc   Test uniform1f.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform1f_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform1f_4] uniform1f");
@@ -423,9 +462,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform2f
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0014
-         * @tc.name webgl_test_uniform2f
-         * @tc.desc Test uniform2f.
+         * @tc.desc   Test uniform2f.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform2f', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform2f] uniform2f");
@@ -462,9 +504,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform2f_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0015
-         * @tc.name webgl_test_uniform2f_1
-         * @tc.desc Test uniform2f.
+         * @tc.desc   Test uniform2f.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform2f_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform2f_1] uniform2f");
@@ -481,9 +526,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform2f_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0016
-         * @tc.name webgl_test_uniform2f_2
-         * @tc.desc Test uniform2f.
+         * @tc.desc   Test uniform2f.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform2f_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform2f_2] uniform2f");
@@ -500,9 +548,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform2f_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0017
-         * @tc.name webgl_test_uniform2f_3
-         * @tc.desc Test uniform2f.
+         * @tc.desc   Test uniform2f.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform2f_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform2f_3] uniform2f");
@@ -545,9 +596,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform3f
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0018
-         * @tc.name webgl_test_uniform3f
-         * @tc.desc Test uniform3f.
+         * @tc.desc   Test uniform3f.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform3f', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform3f] uniform3f");
@@ -586,9 +640,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform3f_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0019
-         * @tc.name webgl_test_uniform3f_1
-         * @tc.desc Test uniform3f.
+         * @tc.desc   Test uniform3f.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform3f_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform3f_1] uniform3f");
@@ -606,9 +663,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform3f_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0020
-         * @tc.name webgl_test_uniform3f_2
-         * @tc.desc Test uniform3f.
+         * @tc.desc   Test uniform3f.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform3f_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform3f_2] uniform3f");
@@ -626,9 +686,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform3f_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0021
-         * @tc.name webgl_test_uniform3f_3
-         * @tc.desc Test uniform3f.
+         * @tc.desc   Test uniform3f.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform3f_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform3f_3] uniform3f");
@@ -673,9 +736,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform4f
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0022
-         * @tc.name webgl_test_uniform4f
-         * @tc.desc Test uniform4f.
+         * @tc.desc   Test uniform4f.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform4f', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform4f] uniform4f");
@@ -716,9 +782,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform4f_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0023
-         * @tc.name webgl_test_uniform4f_1
-         * @tc.desc Test uniform4f.
+         * @tc.desc   Test uniform4f.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform4f_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform4f_1] uniform4f");
@@ -737,9 +806,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform4f_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0024
-         * @tc.name webgl_test_uniform4f_2
-         * @tc.desc Test uniform4f.
+         * @tc.desc   Test uniform4f.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform4f_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform4f_2] uniform4f");
@@ -758,9 +830,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform4f_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0025
-         * @tc.name webgl_test_uniform4f_3
-         * @tc.desc Test uniform4f.
+         * @tc.desc   Test uniform4f.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform4f_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform4f_3] uniform4f");
@@ -803,9 +878,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform1fv
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0026
-         * @tc.name webgl_test_uniform1fv
-         * @tc.desc Test uniform1fv.
+         * @tc.desc   Test uniform1fv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform1fv', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform1fv] uniform1fv");
@@ -840,9 +918,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform1fv_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0027
-         * @tc.name webgl_test_uniform1fv_1
-         * @tc.desc Test uniform1fv.
+         * @tc.desc   Test uniform1fv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform1fv_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform1fv_1] uniform1fv");
@@ -858,9 +939,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform1fv_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0028
-         * @tc.name webgl_test_uniform1fv_2
-         * @tc.desc Test uniform1fv.
+         * @tc.desc   Test uniform1fv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform1fv_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform1fv_2] uniform1fv");
@@ -876,9 +960,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform1fv_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0029
-         * @tc.name webgl_test_uniform1fv_3
-         * @tc.desc Test uniform1fv.
+         * @tc.desc   Test uniform1fv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform1fv_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform1fv_3] uniform1fv");
@@ -919,9 +1006,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform2fv
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0030
-         * @tc.name webgl_test_uniform2fv
-         * @tc.desc Test uniform2fv.
+         * @tc.desc   Test uniform2fv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform2fv', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform2fv] uniform2fv");
@@ -958,9 +1048,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform2fv_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0031
-         * @tc.name webgl_test_uniform2fv_1
-         * @tc.desc Test uniform2fv.
+         * @tc.desc   Test uniform2fv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform2fv_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform2fv_1] uniform2fv");
@@ -977,9 +1070,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform2fv_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0032
-         * @tc.name webgl_test_uniform2fv_2
-         * @tc.desc Test uniform2fv.
+         * @tc.desc   Test uniform2fv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform2fv_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform2fv_2] uniform2fv");
@@ -996,9 +1092,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform2fv_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0033
-         * @tc.name webgl_test_uniform2fv_3
-         * @tc.desc Test uniform2fv.
+         * @tc.desc   Test uniform2fv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform2fv_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform2fv_3] uniform2fv");
@@ -1041,9 +1140,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform3fv
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0034
-         * @tc.name webgl_test_uniform3fv
-         * @tc.desc Test uniform3fv.
+         * @tc.desc   Test uniform3fv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform3fv', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform3fv] uniform3fv");
@@ -1082,9 +1184,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform3fv_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0035
-         * @tc.name webgl_test_uniform3fv_1
-         * @tc.desc Test uniform3fv.
+         * @tc.desc   Test uniform3fv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform3fv_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform3fv_1] uniform3fv");
@@ -1102,9 +1207,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform3fv_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0036
-         * @tc.name webgl_test_uniform3fv_2
-         * @tc.desc Test uniform3fv.
+         * @tc.desc   Test uniform3fv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform3fv_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform3fv_2] uniform3fv");
@@ -1122,9 +1230,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform3fv_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0037
-         * @tc.name webgl_test_uniform3fv_3
-         * @tc.desc Test uniform3fv.
+         * @tc.desc   Test uniform3fv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform3fv_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform3fv_3] uniform3fv");
@@ -1169,9 +1280,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform4fv
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0038
-         * @tc.name webgl_test_uniform4fv
-         * @tc.desc Test uniform4fv.
+         * @tc.desc   Test uniform4fv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform4fv', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform4fv] uniform4fv");
@@ -1212,9 +1326,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform4fv_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0039
-         * @tc.name webgl_test_uniform4fv_1
-         * @tc.desc Test uniform4fv.
+         * @tc.desc   Test uniform4fv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform4fv_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform4fv_1] uniform4fv");
@@ -1233,9 +1350,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform4fv_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0040
-         * @tc.name webgl_test_uniform4fv_2
-         * @tc.desc Test uniform4fv.
+         * @tc.desc   Test uniform4fv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform4fv_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform4fv_2] uniform4fv");
@@ -1254,9 +1374,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform4fv_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0041
-         * @tc.name webgl_test_uniform4fv_3
-         * @tc.desc Test uniform4fv.
+         * @tc.desc   Test uniform4fv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform4fv_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform4fv_3] uniform4fv");
@@ -1299,9 +1422,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform1i
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0042
-         * @tc.name webgl_test_uniform1i
-         * @tc.desc Test uniform1i.
+         * @tc.desc   Test uniform1i.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform1i', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform1i] uniform1i");
@@ -1341,9 +1467,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform1i_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0043
-         * @tc.name webgl_test_uniform1i_1
-         * @tc.desc Test uniform1i.
+         * @tc.desc   Test uniform1i.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform1i_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform1i_1] uniform1i");
@@ -1359,9 +1488,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform1i_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0044
-         * @tc.name webgl_test_uniform1i_2
-         * @tc.desc Test uniform1i.
+         * @tc.desc   Test uniform1i.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform1i_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform1i_2] uniform1i");
@@ -1377,9 +1509,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform1i_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0045
-         * @tc.name webgl_test_uniform1i_3
-         * @tc.desc Test uniform1i.
+         * @tc.desc   Test uniform1i.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform1i_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform1i_3] uniform1i");
@@ -1425,9 +1560,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform1iv
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0046
-         * @tc.name webgl_test_uniform1iv
-         * @tc.desc Test uniform1iv.
+         * @tc.desc   Test uniform1iv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform1iv', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform1iv] uniform1iv");
@@ -1467,9 +1605,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform1iv_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0047
-         * @tc.name webgl_test_uniform1iv_1
-         * @tc.desc Test uniform1iv.
+         * @tc.desc   Test uniform1iv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform1iv_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform1iv_1] uniform1iv");
@@ -1485,9 +1626,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform1iv_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0048
-         * @tc.name webgl_test_uniform1iv_2
-         * @tc.desc Test uniform1iv.
+         * @tc.desc   Test uniform1iv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform1iv_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform1iv_2] uniform1iv");
@@ -1503,9 +1647,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform1iv_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0049
-         * @tc.name webgl_test_uniform1iv_3
-         * @tc.desc Test uniform1iv.
+         * @tc.desc   Test uniform1iv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform1iv_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform1iv_3] uniform1iv");
@@ -1546,9 +1693,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform2iv
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0050
-         * @tc.name webgl_test_uniform2iv
-         * @tc.desc Test uniform2iv.
+         * @tc.desc   Test uniform2iv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform2iv', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform2iv] uniform2iv");
@@ -1585,9 +1735,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform2iv_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0051
-         * @tc.name webgl_test_uniform2iv_1
-         * @tc.desc Test uniform2iv.
+         * @tc.desc   Test uniform2iv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform2iv_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform2iv_1] uniform2iv");
@@ -1604,9 +1757,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform2iv_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0052
-         * @tc.name webgl_test_uniform2iv_2
-         * @tc.desc Test uniform2iv.
+         * @tc.desc   Test uniform2iv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform2iv_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform2iv_2] uniform2iv");
@@ -1623,9 +1779,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform2iv_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0053
-         * @tc.name webgl_test_uniform2iv_3
-         * @tc.desc Test uniform2iv.
+         * @tc.desc   Test uniform2iv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform2iv_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform2iv_3] uniform2iv");
@@ -1668,9 +1827,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform3iv
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0054
-         * @tc.name webgl_test_uniform3iv
-         * @tc.desc Test uniform3iv.
+         * @tc.desc   Test uniform3iv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform3iv', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform3iv] uniform3iv");
@@ -1718,9 +1880,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform3iv_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0055
-         * @tc.name webgl_test_uniform3iv_1
-         * @tc.desc Test uniform3iv.
+         * @tc.desc   Test uniform3iv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform3iv_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform3iv_1] uniform3iv");
@@ -1738,9 +1903,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform3iv_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0056
-         * @tc.name webgl_test_uniform3iv_2
-         * @tc.desc Test uniform3iv.
+         * @tc.desc   Test uniform3iv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform3iv_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform3iv_2] uniform3iv");
@@ -1758,9 +1926,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform3iv_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0057
-         * @tc.name webgl_test_uniform3iv_3
-         * @tc.desc Test uniform3iv.
+         * @tc.desc   Test uniform3iv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform3iv_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform3iv_3] uniform3iv");
@@ -1805,9 +1976,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform4iv
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0058
-         * @tc.name webgl_test_uniform4iv
-         * @tc.desc Test uniform4iv.
+         * @tc.desc   Test uniform4iv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform4iv', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform4iv] uniform4iv");
@@ -1848,9 +2022,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform4iv_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0059
-         * @tc.name webgl_test_uniform4iv_1
-         * @tc.desc Test uniform4iv.
+         * @tc.desc   Test uniform4iv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform4iv_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform4iv_1] uniform4iv");
@@ -1869,9 +2046,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform4iv_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0060
-         * @tc.name webgl_test_uniform4iv_2
-         * @tc.desc Test uniform4iv.
+         * @tc.desc   Test uniform4iv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform4iv_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform4iv_2] uniform4iv");
@@ -1890,9 +2070,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform4iv_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0061
-         * @tc.name webgl_test_uniform4iv_3
-         * @tc.desc Test uniform4iv.
+         * @tc.desc   Test uniform4iv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform4iv_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform4iv_3] uniform4iv");
@@ -1936,9 +2119,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform2i
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0062
-         * @tc.name webgl_test_uniform2i
-         * @tc.desc Test uniform2i.
+         * @tc.desc   Test uniform2i.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform2i', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform2i] uniform2i");
@@ -1975,9 +2161,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform2i_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0063
-         * @tc.name webgl_test_uniform2i_1
-         * @tc.desc Test uniform2i.
+         * @tc.desc   Test uniform2i.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform2i_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform2i_1] uniform2i");
@@ -1994,9 +2183,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform2i_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0064
-         * @tc.name webgl_test_uniform2i_2
-         * @tc.desc Test uniform2i.
+         * @tc.desc   Test uniform2i.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform2i_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform2i_2] uniform2i");
@@ -2013,9 +2205,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform2i_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0065
-         * @tc.name webgl_test_uniform2i_3
-         * @tc.desc Test uniform2i.
+         * @tc.desc   Test uniform2i.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform2i_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform2i_3] uniform2i");
@@ -2058,9 +2253,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform3i
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0066
-         * @tc.name webgl_test_uniform3i
-         * @tc.desc Test uniform3i.
+         * @tc.desc   Test uniform3i.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform3i', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform3i] uniform3i");
@@ -2099,9 +2297,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform3i_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0067
-         * @tc.name webgl_test_uniform3i_1
-         * @tc.desc Test uniform3i.
+         * @tc.desc   Test uniform3i.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform3i_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform3i_1] uniform3i");
@@ -2119,9 +2320,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform3i_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0068
-         * @tc.name webgl_test_uniform3i_2
-         * @tc.desc Test uniform3i.
+         * @tc.desc   Test uniform3i.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform3i_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform3i_2] uniform3i");
@@ -2139,9 +2343,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform3i_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0069
-         * @tc.name webgl_test_uniform3i_3
-         * @tc.desc Test uniform3i.
+         * @tc.desc   Test uniform3i.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform3i_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform3i_3] uniform3i");
@@ -2186,9 +2393,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform4i
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0070
-         * @tc.name webgl_test_uniform4i
-         * @tc.desc Test uniform4i.
+         * @tc.desc   Test uniform4i.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform4i', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform4i] uniform4i");
@@ -2229,9 +2439,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform4i_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0071
-         * @tc.name webgl_test_uniform4i_1
-         * @tc.desc Test uniform4i.
+         * @tc.desc   Test uniform4i.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform4i_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform4i_1] uniform4i");
@@ -2250,9 +2463,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform4i_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0072
-         * @tc.name webgl_test_uniform4i_2
-         * @tc.desc Test uniform4i.
+         * @tc.desc   Test uniform4i.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform4i_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform4i_2] uniform4i");
@@ -2271,9 +2487,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniform4i_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0073
-         * @tc.name webgl_test_uniform4i_3
-         * @tc.desc Test uniform4i.
+         * @tc.desc   Test uniform4i.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniform4i_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniform4i_3] uniform4i");
@@ -2292,9 +2511,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_getUniform
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0074
-         * @tc.name webgl_test_getUniform
-         * @tc.desc Test getUniform.
+         * @tc.desc   Test getUniform.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_getUniform', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_getUniform] getUniform");
@@ -2356,9 +2578,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniformMatrix4fv
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0075
-         * @tc.name webgl_test_uniformMatrix4fv
-         * @tc.desc Test uniformMatrix4fv.
+         * @tc.desc   Test uniformMatrix4fv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniformMatrix4fv', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniformMatrix4fv] uniformMatrix4fv");
@@ -2412,9 +2637,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniformMatrix4fv_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0076
-         * @tc.name webgl_test_uniformMatrix4fv_1
-         * @tc.desc Test uniformMatrix4fv.
+         * @tc.desc   Test uniformMatrix4fv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniformMatrix4fv_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniformMatrix4fv_1] uniformMatrix4fv");
@@ -2437,9 +2665,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniformMatrix4fv_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0077
-         * @tc.name webgl_test_uniformMatrix4fv_2
-         * @tc.desc Test uniformMatrix4fv.
+         * @tc.desc   Test uniformMatrix4fv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniformMatrix4fv_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniformMatrix4fv_2] uniformMatrix4fv");
@@ -2458,9 +2689,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniformMatrix4fv_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0078
-         * @tc.name webgl_test_uniformMatrix4fv_3
-         * @tc.desc Test uniformMatrix4fv.
+         * @tc.desc   Test uniformMatrix4fv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniformMatrix4fv_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniformMatrix4fv_3] uniformMatrix4fv");
@@ -2509,9 +2743,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniformMatrix3fv
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0079
-         * @tc.name webgl_test_uniformMatrix3fv
-         * @tc.desc Test uniformMatrix3fv.
+         * @tc.desc   Test uniformMatrix3fv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniformMatrix3fv', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniformMatrix3fv] uniformMatrix3fv");
@@ -2557,9 +2794,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniformMatrix3fv_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0080
-         * @tc.name webgl_test_uniformMatrix3fv_1
-         * @tc.desc Test uniformMatrix3fv.
+         * @tc.desc   Test uniformMatrix3fv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniformMatrix3fv_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniformMatrix3fv_1] uniformMatrix3fv");
@@ -2581,9 +2821,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniformMatrix3fv_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0081
-         * @tc.name webgl_test_uniformMatrix3fv_2
-         * @tc.desc Test uniformMatrix3fv.
+         * @tc.desc   Test uniformMatrix3fv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniformMatrix3fv_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniformMatrix3fv_2] uniformMatrix3fv");
@@ -2601,9 +2844,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniformMatrix3fv_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0082
-         * @tc.name webgl_test_uniformMatrix3fv_3
-         * @tc.desc Test uniformMatrix3fv.
+         * @tc.desc   Test uniformMatrix3fv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniformMatrix3fv_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniformMatrix3fv_3] uniformMatrix3fv");
@@ -2651,9 +2897,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniformMatrix2fv
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0083
-         * @tc.name webgl_test_uniformMatrix2fv
-         * @tc.desc Test uniformMatrix2fv.
+         * @tc.desc   Test uniformMatrix2fv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniformMatrix2fv', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniformMatrix2fv] uniformMatrix2fv");
@@ -2693,9 +2942,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniformMatrix2fv_1
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0084
-         * @tc.name webgl_test_uniformMatrix2fv_1
-         * @tc.desc Test uniformMatrix2fv.
+         * @tc.desc   Test uniformMatrix2fv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniformMatrix2fv_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniformMatrix2fv_1] uniformMatrix2fv");
@@ -2716,9 +2968,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniformMatrix2fv_2
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0085
-         * @tc.name webgl_test_uniformMatrix2fv_2
-         * @tc.desc Test uniformMatrix2fv.
+         * @tc.desc   Test uniformMatrix2fv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniformMatrix2fv_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniformMatrix2fv_2] uniformMatrix2fv");
@@ -2736,9 +2991,12 @@ export default function webgl1_uniform() {
 
 
         /**
+         * @tc.name   webgl_test_uniformMatrix2fv_3
          * @tc.number GRAPHIC_FUNCTION_JS_WEBGL_UNIFORM_0086
-         * @tc.name webgl_test_uniformMatrix2fv_3
-         * @tc.desc Test uniformMatrix2fv.
+         * @tc.desc   Test uniformMatrix2fv.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('webgl_test_uniformMatrix2fv_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             console.info("webgltest [webgl_test_uniformMatrix2fv_3] uniformMatrix2fv");

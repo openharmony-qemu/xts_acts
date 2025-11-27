@@ -39,6 +39,14 @@ namespace OHOS {
     {
     }
 
+    /**
+     * @tc.name   TestVulkanDrm_format_modifiersTestCase
+     * @tc.number TestVulkanDrm_format_modifiersTestCase
+     * @tc.desc   TestVulkanDrm_format_modifiersTestCase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     HWTEST_F(ActsVulkanDrmformatmodifiersTest, TestVulkanDrm_format_modifiersTestCase, Function | MediumTest | Level2)
     {
         printf("------start ActsVulkanDrmformatmodifiersTest------\n");

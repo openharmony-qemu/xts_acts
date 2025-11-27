@@ -52,12 +52,12 @@ export default function drawingTsCanvasPart2Test() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1000
-     * @tc.name      : testCanvasDrawTextBlobNormalStatic
-     * @tc.desc      : testCanvasDrawTextBlobNormalStatic
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testCanvasDrawTextBlobNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1000
+     * @tc.desc   testCanvasDrawTextBlobNormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCanvasDrawTextBlobNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasDrawTextBlobNormalStatic';
@@ -81,12 +81,12 @@ export default function drawingTsCanvasPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1003
-     * @tc.name      : testCanvasDrawTextBlobMultipleCallsStatic
-     * @tc.desc      : testCanvasDrawTextBlobMultipleCallsStatic
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCanvasDrawTextBlobMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1003
+     * @tc.desc   testCanvasDrawTextBlobMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCanvasDrawTextBlobMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasDrawTextBlobMultipleCallsStatic';
@@ -110,12 +110,12 @@ export default function drawingTsCanvasPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1100
-     * @tc.name      : testCanvasAttachPenDetachPenNormalStatic
-     * @tc.desc      : testCanvasAttachPenDetachPenNormalStatic
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testCanvasAttachPenDetachPenNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1100
+     * @tc.desc   testCanvasAttachPenDetachPenNormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCanvasAttachPenDetachPenNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasAttachPenDetachPenNormalStatic';
@@ -135,12 +135,12 @@ export default function drawingTsCanvasPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1103
-     * @tc.name      : testCanvasAttachPenDetachPenMultipleCallsStatic
-     * @tc.desc      : testCanvasAttachPenDetachPenMultipleCallsStatic
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCanvasAttachPenDetachPenMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1103
+     * @tc.desc   testCanvasAttachPenDetachPenMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCanvasAttachPenDetachPenMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasAttachPenDetachPenMultipleCallsStatic';
@@ -169,12 +169,12 @@ export default function drawingTsCanvasPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1104
-     * @tc.name      : testCanvasAttachPenOlyStatic
-     * @tc.desc      : testCanvasAttachPenOlyStatic
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCanvasAttachPenOlyStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1104
+     * @tc.desc   testCanvasAttachPenOlyStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCanvasAttachPenOlyStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasAttachPenOlyStatic';
@@ -193,12 +193,12 @@ export default function drawingTsCanvasPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1105
-     * @tc.name      : testCanvasDttachPenOlyStatic
-     * @tc.desc      : testCanvasDttachPenOlyStatic
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCanvasDttachPenOlyStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1105
+     * @tc.desc   testCanvasDttachPenOlyStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCanvasDttachPenOlyStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasDttachPenOlyStatic';
@@ -213,12 +213,12 @@ export default function drawingTsCanvasPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1200
-     * @tc.name      : testCanvasAttachBrushDetachBrushNormalStatic
-     * @tc.desc      : testCanvasAttachBrushDetachBrushNormalStatic
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testCanvasAttachBrushDetachBrushNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1200
+     * @tc.desc   testCanvasAttachBrushDetachBrushNormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCanvasAttachBrushDetachBrushNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasAttachBrushDetachBrushNormalStatic';
@@ -237,12 +237,12 @@ export default function drawingTsCanvasPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1203
-     * @tc.name      : testCanvasAttachBrushDetachBrushMultipleCallsStatic
-     * @tc.desc      : testCanvasAttachBrushDetachBrushMultipleCallsStatic
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCanvasAttachBrushDetachBrushMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1203
+     * @tc.desc   testCanvasAttachBrushDetachBrushMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCanvasAttachBrushDetachBrushMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasAttachBrushDetachBrushMultipleCallsStatic';
@@ -270,12 +270,12 @@ export default function drawingTsCanvasPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1204
-     * @tc.name      : testCanvasAttachBrushOlyStatic
-     * @tc.desc      : testCanvasAttachBrushOlyStatic
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCanvasAttachBrushOlyStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1204
+     * @tc.desc   testCanvasAttachBrushOlyStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCanvasAttachBrushOlyStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasAttachBrushOlyStatic';
@@ -293,12 +293,12 @@ export default function drawingTsCanvasPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1205
-     * @tc.name      : testCanvasDttachBrushOlyStatic
-     * @tc.desc      : testCanvasDttachBrushOlyStatic
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCanvasDttachBrushOlyStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1205
+     * @tc.desc   testCanvasDttachBrushOlyStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCanvasDttachBrushOlyStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasDttachBrushOlyStatic';
@@ -313,12 +313,12 @@ export default function drawingTsCanvasPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1300
-     * @tc.name      : testCanvasClipPathNormalStatic
-     * @tc.desc      : testCanvasClipPathNormalStatic
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testCanvasClipPathNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1300
+     * @tc.desc   testCanvasClipPathNormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCanvasClipPathNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasClipPathNormalStatic';
@@ -347,12 +347,12 @@ export default function drawingTsCanvasPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1301
-     * @tc.name      : testCanvasClipPathNullStatic
-     * @tc.desc      : testCanvasClipPathNullStatic
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCanvasClipPathNullStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1301
+     * @tc.desc   testCanvasClipPathNullStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCanvasClipPathNullStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasClipPathNullStatic';
@@ -403,12 +403,12 @@ export default function drawingTsCanvasPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1303
-     * @tc.name      : testCanvasClipPathMultipleCallsStatic
-     * @tc.desc      : testCanvasClipPathMultipleCallsStatic
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCanvasClipPathMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1303
+     * @tc.desc   testCanvasClipPathMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCanvasClipPathMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasClipPathMultipleCallsStatic';
@@ -435,12 +435,12 @@ export default function drawingTsCanvasPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1400
-     * @tc.name      : testCanvasClipRectNormalStatic
-     * @tc.desc      : testCanvasClipRectNormalStatic
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testCanvasClipRectNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1400
+     * @tc.desc   testCanvasClipRectNormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCanvasClipRectNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasClipRectNormalStatic';
@@ -468,12 +468,12 @@ export default function drawingTsCanvasPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1401
-     * @tc.name      : testCanvasClipRectNullStatic
-     * @tc.desc      : testCanvasClipRectNullStatic
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCanvasClipRectNullStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1401
+     * @tc.desc   testCanvasClipRectNullStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCanvasClipRectNullStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasClipRectNullStatic';
@@ -506,12 +506,12 @@ export default function drawingTsCanvasPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1403
-     * @tc.name      : testCanvasClipRectMultipleCallsStatic
-     * @tc.desc      : testCanvasClipRectMultipleCallsStatic
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCanvasClipRectMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1403
+     * @tc.desc   testCanvasClipRectMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCanvasClipRectMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasClipRectMultipleCallsStatic';
@@ -534,12 +534,12 @@ export default function drawingTsCanvasPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1500
-     * @tc.name      : testCanvasSaveGetSaveCountNormalStatic
-     * @tc.desc      : testCanvasSaveGetSaveCountNormalStatic
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testCanvasSaveGetSaveCountNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1500
+     * @tc.desc   testCanvasSaveGetSaveCountNormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCanvasSaveGetSaveCountNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasSaveGetSaveCountNormalStatic';
@@ -567,12 +567,12 @@ export default function drawingTsCanvasPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1502
-     * @tc.name      : testCanvasSaveGetSaveCountMultipleCallsStatic
-     * @tc.desc      : testCanvasSaveGetSaveCountMultipleCallsStatic
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCanvasSaveGetSaveCountMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1502
+     * @tc.desc   testCanvasSaveGetSaveCountMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCanvasSaveGetSaveCountMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasSaveGetSaveCountMultipleCallsStatic';
@@ -599,12 +599,12 @@ export default function drawingTsCanvasPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1503
-     * @tc.name      : testCanvasGetSaveCountWhenNoSaveStatic
-     * @tc.desc      : testCanvasGetSaveCountWhenNoSaveStatic
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCanvasGetSaveCountWhenNoSaveStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1503
+     * @tc.desc   testCanvasGetSaveCountWhenNoSaveStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCanvasGetSaveCountWhenNoSaveStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasGetSaveCountWhenNoSaveStatic';
@@ -620,12 +620,12 @@ export default function drawingTsCanvasPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1600
-     * @tc.name      : testCanvasScaleNormalStatic
-     * @tc.desc      : testCanvasScaleNormalStatic
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testCanvasScaleNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1600
+     * @tc.desc   testCanvasScaleNormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCanvasScaleNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasScaleNormalStatic';
@@ -648,12 +648,12 @@ export default function drawingTsCanvasPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1603
-     * @tc.name      : testCanvasScaleMultipleCallsStatic
-     * @tc.desc      : testCanvasScaleMultipleCallsStatic
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCanvasScaleMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1603
+     * @tc.desc   testCanvasScaleMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCanvasScaleMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasScaleMultipleCallsStatic';
@@ -676,12 +676,12 @@ export default function drawingTsCanvasPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1700
-     * @tc.name      : testCanvasSkewNormalStatic
-     * @tc.desc      : testCanvasSkewNormalStatic
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testCanvasSkewNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1700
+     * @tc.desc   testCanvasSkewNormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCanvasSkewNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasSkewNormalStatic';
@@ -704,12 +704,12 @@ export default function drawingTsCanvasPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1703
-     * @tc.name      : testCanvasSkewMultipleCallsStatic
-     * @tc.desc      : testCanvasSkewMultipleCallsStatic
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCanvasSkewMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1703
+     * @tc.desc   testCanvasSkewMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCanvasSkewMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasSkewMultipleCallsStatic';
@@ -732,12 +732,12 @@ export default function drawingTsCanvasPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1800
-     * @tc.name      : testCanvasRotateNormalStatic
-     * @tc.desc      : testCanvasRotateNormal
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testCanvasRotateNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1800
+     * @tc.desc   testCanvasRotateNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCanvasRotateNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasRotateNormalStatic';
@@ -764,12 +764,12 @@ export default function drawingTsCanvasPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1803
-     * @tc.name      : testCanvasRotateMultipleCallsStatic
-     * @tc.desc      : testCanvasRotateMultipleCalls
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCanvasRotateMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1803
+     * @tc.desc   testCanvasRotateMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCanvasRotateMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasRotateMultipleCallsStatic';
@@ -792,12 +792,12 @@ export default function drawingTsCanvasPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1900
-     * @tc.name      : testCanvasTranlateNormalStatic
-     * @tc.desc      : testCanvasTranlateNormalStatic
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testCanvasTranlateNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1900
+     * @tc.desc   testCanvasTranlateNormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCanvasTranlateNormalStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testCanvasTranlateNormalStatic';
@@ -820,12 +820,12 @@ export default function drawingTsCanvasPart2Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1903
-     * @tc.name      : testCanvasTranlateMultipleCallsStatic
-     * @tc.desc      : testCanvasTranlateMultipleCallsStatic
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCanvasTranlateMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_1903
+     * @tc.desc   testCanvasTranlateMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCanvasTranlateMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testCanvasTranlateMultipleCallsStatic';

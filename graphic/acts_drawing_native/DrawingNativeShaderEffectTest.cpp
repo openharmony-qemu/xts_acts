@@ -53,13 +53,13 @@ class DrawingNativeShaderEffectTest : public testing::Test {
     }
 };
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0100
- * @tc.name: testShaderEffectCreateColorShaderNormal
- * @tc.desc: test for testShaderEffectCreateColorShaderNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testShaderEffectCreateColorShaderNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0100
+ * @tc.desc   test for testShaderEffectCreateColorShaderNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateColorShaderNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_ShaderEffectCreateColorShader
@@ -71,13 +71,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateColorShaderNormal,
     OH_Drawing_ShaderEffectDestroy(colorShaderEffect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0101
- * @tc.name: testShaderEffectCreateColorShaderNull
- * @tc.desc: test for testShaderEffectCreateColorShaderNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreateColorShaderNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0101
+ * @tc.desc   test for testShaderEffectCreateColorShaderNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateColorShaderNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_ShaderEffectCreateColorShader with empty parameter
@@ -88,13 +88,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateColorShaderNull, F
     OH_Drawing_ShaderEffectDestroy(colorShaderEffect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0102
- * @tc.name: testShaderEffectCreateColorShaderAbnormal
- * @tc.desc: test for testShaderEffectCreateColorShaderAbnormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreateColorShaderAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0102
+ * @tc.desc   test for testShaderEffectCreateColorShaderAbnormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateColorShaderAbnormal, Function | SmallTest | Level3) {
     // 1. OH_Drawing_ShaderEffectCreateColorShader with a negative parameter
@@ -105,13 +105,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateColorShaderAbnorma
     OH_Drawing_ShaderEffectDestroy(colorShaderEffect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0103
- * @tc.name: testShaderEffectCreateColorShaderMaximum
- * @tc.desc: test for testShaderEffectCreateColorShaderMaximum.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreateColorShaderMaximum
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0103
+ * @tc.desc   test for testShaderEffectCreateColorShaderMaximum.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateColorShaderMaximum, Function | SmallTest | Level3) {
     // 1. OH_Drawing_ShaderEffectCreateColorShader with maximum value as parameter
@@ -122,13 +122,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateColorShaderMaximum
     OH_Drawing_ShaderEffectDestroy(colorShaderEffect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0104
- * @tc.name: testShaderEffectCreateColorShaderMultipleCalls
- * @tc.desc: test for testShaderEffectCreateColorShaderMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreateColorShaderMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0104
+ * @tc.desc   test for testShaderEffectCreateColorShaderMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateColorShaderMultipleCalls, Function | SmallTest | Level3) {
     // 1. Call OH_Drawing_ShaderEffectCreateColorShader 10 times with different colors
@@ -141,13 +141,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateColorShaderMultipl
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0200
- * @tc.name: testShaderEffectCreateLinearGradientWithLocalMatrixNormal
- * @tc.desc: test for testShaderEffectCreateLinearGradientWithLocalMatrixNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testShaderEffectCreateLinearGradientWithLocalMatrixNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0200
+ * @tc.desc   test for testShaderEffectCreateLinearGradientWithLocalMatrixNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateLinearGradientWithLocalMatrixNormal, Function | SmallTest | Level0) {
     OH_Drawing_Point2D start = {0, 0};
@@ -192,13 +192,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateLinearGradientWith
     OH_Drawing_ShaderEffectDestroy(linearGradientEffect2);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0201
- * @tc.name: testShaderEffectCreateLinearGradientWithLocalMatrixNull
- * @tc.desc: test for testShaderEffectCreateLinearGradientWithLocalMatrixNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreateLinearGradientWithLocalMatrixNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0201
+ * @tc.desc   test for testShaderEffectCreateLinearGradientWithLocalMatrixNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateLinearGradientWithLocalMatrixNull, Function | SmallTest | Level3) {
     OH_Drawing_Point2D start = {0, 0};
@@ -238,13 +238,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateLinearGradientWith
     OH_Drawing_ShaderEffectDestroy(effect3);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0202
- * @tc.name: testShaderEffectCreateLinearGradientWithLocalMatrixAbnormal
- * @tc.desc: test for testShaderEffectCreateLinearGradientWithLocalMatrixAbnormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreateLinearGradientWithLocalMatrixAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0202
+ * @tc.desc   test for testShaderEffectCreateLinearGradientWithLocalMatrixAbnormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateLinearGradientWithLocalMatrixAbnormal, Function | SmallTest | Level3) {
     OH_Drawing_Point2D start = {0, 0};
@@ -302,13 +302,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateLinearGradientWith
     OH_Drawing_ShaderEffectDestroy(linearGradientEffect4);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0203
- * @tc.name: testShaderEffectCreateLinearGradientWithLocalMatrixMaximum
- * @tc.desc: test for testShaderEffectCreateLinearGradientWithLocalMatrixMaximum.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreateLinearGradientWithLocalMatrixMaximum
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0203
+ * @tc.desc   test for testShaderEffectCreateLinearGradientWithLocalMatrixMaximum.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateLinearGradientWithLocalMatrixMaximum, Function | SmallTest | Level3) {
     OH_Drawing_Point2D start = {0, 0};
@@ -366,13 +366,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateLinearGradientWith
     OH_Drawing_ShaderEffectDestroy(linearGradientEffect4);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0204
- * @tc.name: testShaderEffectCreateLinearGradientWithLocalMatrixMultipleCalls
- * @tc.desc: test for testShaderEffectCreateLinearGradientWithLocalMatrixMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreateLinearGradientWithLocalMatrixMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0204
+ * @tc.desc   test for testShaderEffectCreateLinearGradientWithLocalMatrixMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateLinearGradientWithLocalMatrixMultipleCalls,
          Function | SmallTest | Level3) {
@@ -394,13 +394,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateLinearGradientWith
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0300
- * @tc.name: testShaderEffectCreateLinearGradienNormal
- * @tc.desc: test for testShaderEffectCreateLinearGradienNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testShaderEffectCreateLinearGradienNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0300
+ * @tc.desc   test for testShaderEffectCreateLinearGradienNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateLinearGradienNormal, Function | SmallTest | Level0) {
     // 1. Enumerate OH_Drawing_TileMode values in OH_Drawing_ShaderEffectCreateLinearGradient
@@ -436,13 +436,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateLinearGradienNorma
     OH_Drawing_ShaderEffectDestroy(linearGradientEffect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0301
- * @tc.name: testShaderEffectCreateLinearGradienNull
- * @tc.desc: test for testShaderEffectCreateLinearGradienNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreateLinearGradienNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0301
+ * @tc.desc   test for testShaderEffectCreateLinearGradienNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateLinearGradienNull, Function | SmallTest | Level3) {
     OH_Drawing_Point *startPt = OH_Drawing_PointCreate(0, 0);
@@ -474,13 +474,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateLinearGradienNull,
     OH_Drawing_ShaderEffectDestroy(linearGradientEffect3);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0302
- * @tc.name: testShaderEffectCreateLinearGradienAbnormal
- * @tc.desc: test for testShaderEffectCreateLinearGradienAbnormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreateLinearGradienAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0302
+ * @tc.desc   test for testShaderEffectCreateLinearGradienAbnormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateLinearGradienAbnormal, Function | SmallTest | Level3) {
     OH_Drawing_Point *startPt = OH_Drawing_PointCreate(0, 0);
@@ -531,13 +531,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateLinearGradienAbnor
     OH_Drawing_ShaderEffectDestroy(linearGradientEffect4);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0303
- * @tc.name: testShaderEffectCreateLinearGradienMaximum
- * @tc.desc: test for testShaderEffectCreateLinearGradienMaximum.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreateLinearGradienMaximum
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0303
+ * @tc.desc   test for testShaderEffectCreateLinearGradienMaximum.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateLinearGradienMaximum, Function | SmallTest | Level3) {
     OH_Drawing_Point *startPt = OH_Drawing_PointCreate(0, 0);
@@ -588,13 +588,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateLinearGradienMaxim
     OH_Drawing_ShaderEffectDestroy(linearGradientEffect4);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0304
- * @tc.name: testShaderEffectCreateLinearGradienMultipleCalls
- * @tc.desc: test for testShaderEffectCreateLinearGradienMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreateLinearGradienMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0304
+ * @tc.desc   test for testShaderEffectCreateLinearGradienMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateLinearGradienMultipleCalls, Function | SmallTest | Level3) {
     OH_Drawing_Point *startPt = OH_Drawing_PointCreate(0, 0);
@@ -614,13 +614,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateLinearGradienMulti
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0400
- * @tc.name: testShaderEffectCreateRadialGradientNormal
- * @tc.desc: test for testShaderEffectCreateRadialGradientNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testShaderEffectCreateRadialGradientNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0400
+ * @tc.desc   test for testShaderEffectCreateRadialGradientNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateRadialGradientNormal, Function | SmallTest | Level0) {
     // 1. Enumerate OH_Drawing_TileMode values in OH_Drawing_ShaderEffectCreateRadialGradient
@@ -652,13 +652,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateRadialGradientNorm
     OH_Drawing_ShaderEffectDestroy(effect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0401
- * @tc.name: testShaderEffectCreateRadialGradientNull
- * @tc.desc: test for testShaderEffectCreateRadialGradientNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreateRadialGradientNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0401
+ * @tc.desc   test for testShaderEffectCreateRadialGradientNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateRadialGradientNull, Function | SmallTest | Level3) {
     OH_Drawing_Point *point = OH_Drawing_PointCreate(100, 100);
@@ -682,13 +682,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateRadialGradientNull
     OH_Drawing_ShaderEffectDestroy(effect3);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0402
- * @tc.name: testShaderEffectCreateRadialGradientAbnormal
- * @tc.desc: test for testShaderEffectCreateRadialGradientAbnormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreateRadialGradientAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0402
+ * @tc.desc   test for testShaderEffectCreateRadialGradientAbnormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateRadialGradientAbnormal, Function | SmallTest | Level3) {
     OH_Drawing_Point *point = OH_Drawing_PointCreate(100, 100);
@@ -731,13 +731,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateRadialGradientAbno
     OH_Drawing_ShaderEffectDestroy(effect4);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0403
- * @tc.name: testShaderEffectCreateRadialGradientMaximum
- * @tc.desc: test for testShaderEffectCreateRadialGradientMaximum.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreateRadialGradientMaximum
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0403
+ * @tc.desc   test for testShaderEffectCreateRadialGradientMaximum.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateRadialGradientMaximum, Function | SmallTest | Level3) {
     OH_Drawing_Point *point = OH_Drawing_PointCreate(100, 100);
@@ -780,13 +780,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateRadialGradientMaxi
     OH_Drawing_ShaderEffectDestroy(effect4);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0404
- * @tc.name: testShaderEffectCreateRadialGradientMultipleCalls
- * @tc.desc: test for testShaderEffectCreateRadialGradientMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreateRadialGradientMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0404
+ * @tc.desc   test for testShaderEffectCreateRadialGradientMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateRadialGradientMultipleCalls, Function | SmallTest | Level3) {
     OH_Drawing_Point *point = OH_Drawing_PointCreate(100, 100);
@@ -805,13 +805,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateRadialGradientMult
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0500
- * @tc.name: testShaderEffectCreateRadialGradientWithLocalMatrixNormal
- * @tc.desc: test for testShaderEffectCreateRadialGradientWithLocalMatrixNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testShaderEffectCreateRadialGradientWithLocalMatrixNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0500
+ * @tc.desc   test for testShaderEffectCreateRadialGradientWithLocalMatrixNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateRadialGradientWithLocalMatrixNormal, Function | SmallTest | Level0) {
     float pos[] = {0.0f, 0.5f, 1.0f};      // 0.5f: gradient color points, 1.0f: gradient color points
@@ -855,13 +855,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateRadialGradientWith
     OH_Drawing_ShaderEffectDestroy(effect3);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0501
- * @tc.name: testShaderEffectCreateRadialGradientWithLocalMatrixNull
- * @tc.desc: test for testShaderEffectCreateRadialGradientWithLocalMatrixNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreateRadialGradientWithLocalMatrixNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0501
+ * @tc.desc   test for testShaderEffectCreateRadialGradientWithLocalMatrixNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateRadialGradientWithLocalMatrixNull, Function | SmallTest | Level3) {
     float pos[] = {0.0f, 0.5f, 1.0f};      // 0.5f: gradient color points, 1.0f: gradient color points
@@ -892,13 +892,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateRadialGradientWith
     OH_Drawing_ShaderEffectDestroy(effect3);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0502
- * @tc.name: testShaderEffectCreateRadialGradientWithLocalMatrixAbnormal
- * @tc.desc: test for testShaderEffectCreateRadialGradientWithLocalMatrixAbnormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreateRadialGradientWithLocalMatrixAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0502
+ * @tc.desc   test for testShaderEffectCreateRadialGradientWithLocalMatrixAbnormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateRadialGradientWithLocalMatrixAbnormal, Function | SmallTest | Level3) {
     // 1. Call OH_Drawing_ShaderEffectCreateRadialGradientWithLocalMatrix with centerPt set to negative values
@@ -947,13 +947,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateRadialGradientWith
     OH_Drawing_ShaderEffectDestroy(effect4);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0503
- * @tc.name: testShaderEffectCreateRadialGradientWithLocalMatrixMaximum
- * @tc.desc: test for testShaderEffectCreateRadialGradientWithLocalMatrixMaximum.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreateRadialGradientWithLocalMatrixMaximum
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0503
+ * @tc.desc   test for testShaderEffectCreateRadialGradientWithLocalMatrixMaximum.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateRadialGradientWithLocalMatrixMaximum, Function | SmallTest | Level3) {
     // 1. Call OH_Drawing_ShaderEffectCreateRadialGradientWithLocalMatrix with centerPt set to a large number
@@ -1002,13 +1002,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateRadialGradientWith
     OH_Drawing_ShaderEffectDestroy(effect4);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0504
- * @tc.name: testShaderEffectCreateRadialGradientWithLocalMatrixMultipleCalls
- * @tc.desc: test for testShaderEffectCreateRadialGradientWithLocalMatrixMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreateRadialGradientWithLocalMatrixMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0504
+ * @tc.desc   test for testShaderEffectCreateRadialGradientWithLocalMatrixMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateRadialGradientWithLocalMatrixMultipleCalls,
          Function | SmallTest | Level3) {
@@ -1030,13 +1030,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateRadialGradientWith
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0600
- * @tc.name: testShaderEffectCreateSweepGradientNormal
- * @tc.desc: test for testShaderEffectCreateSweepGradientNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testShaderEffectCreateSweepGradientNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0600
+ * @tc.desc   test for testShaderEffectCreateSweepGradientNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateSweepGradientNormal, Function | SmallTest | Level0) {
     // 1. Enumerate OH_Drawing_TileMode values in OH_Drawing_ShaderEffectCreateSweepGradient
@@ -1066,13 +1066,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateSweepGradientNorma
     OH_Drawing_ShaderEffectDestroy(effect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0601
- * @tc.name: testShaderEffectCreateSweepGradientNull
- * @tc.desc: test for testShaderEffectCreateSweepGradientNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreateSweepGradientNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0601
+ * @tc.desc   test for testShaderEffectCreateSweepGradientNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateSweepGradientNull, Function | SmallTest | Level3) {
     OH_Drawing_Point *centerPt = OH_Drawing_PointCreate(100, 100);
@@ -1093,13 +1093,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateSweepGradientNull,
     OH_Drawing_ShaderEffectDestroy(effect2);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0602
- * @tc.name: testShaderEffectCreateSweepGradientAbnormal
- * @tc.desc: test for testShaderEffectCreateSweepGradientAbnormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreateSweepGradientAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0602
+ * @tc.desc   test for testShaderEffectCreateSweepGradientAbnormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateSweepGradientAbnormal, Function | SmallTest | Level3) {
     OH_Drawing_Point *centerPt = OH_Drawing_PointCreate(100, 100);
@@ -1138,13 +1138,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateSweepGradientAbnor
     OH_Drawing_ShaderEffectDestroy(sweepGradientEffect3);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0603
- * @tc.name: testShaderEffectCreateSweepGradientMaximum
- * @tc.desc: test for testShaderEffectCreateSweepGradientMaximum.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreateSweepGradientMaximum
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0603
+ * @tc.desc   test for testShaderEffectCreateSweepGradientMaximum.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateSweepGradientMaximum, Function | SmallTest | Level3) {
     OH_Drawing_Point *centerPt = OH_Drawing_PointCreate(100, 100);
@@ -1183,13 +1183,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateSweepGradientMaxim
     OH_Drawing_ShaderEffectDestroy(sweepGradientEffect3);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0604
- * @tc.name: testShaderEffectCreateSweepGradientMultipleCalls
- * @tc.desc: test for testShaderEffectCreateSweepGradientMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreateSweepGradientMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0604
+ * @tc.desc   test for testShaderEffectCreateSweepGradientMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateSweepGradientMultipleCalls, Function | SmallTest | Level3) {
     OH_Drawing_Point *centerPt = OH_Drawing_PointCreate(100, 100);
@@ -1208,13 +1208,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateSweepGradientMulti
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0700
- * @tc.name: testShaderEffectCreateImageShaderNormal
- * @tc.desc: test for testShaderEffectCreateImageShaderNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testShaderEffectCreateImageShaderNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0700
+ * @tc.desc   test for testShaderEffectCreateImageShaderNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateImageShaderNormal, Function | SmallTest | Level0) {
     // 1. Call OH_Drawing_ImageCreate
@@ -1257,13 +1257,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateImageShaderNormal,
     OH_Drawing_ShaderEffectDestroy(effect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0701
- * @tc.name: testShaderEffectCreateImageShaderNull
- * @tc.desc: test for testShaderEffectCreateImageShaderNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreateImageShaderNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0701
+ * @tc.desc   test for testShaderEffectCreateImageShaderNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateImageShaderNull, Function | SmallTest | Level3) {
     // 1. Call OH_Drawing_ShaderEffectCreateImageShader with the first parameter set to nullptr and check the error
@@ -1288,13 +1288,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateImageShaderNull, F
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0704
- * @tc.name: testShaderEffectCreateImageShaderMultipleCalls
- * @tc.desc: test for testShaderEffectCreateImageShaderMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreateImageShaderMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0704
+ * @tc.desc   test for testShaderEffectCreateImageShaderMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateImageShaderMultipleCalls, Function | SmallTest | Level3) {
     OH_Drawing_SamplingOptions *options = OH_Drawing_SamplingOptionsCreate(FILTER_MODE_LINEAR, MIPMAP_MODE_LINEAR);
@@ -1319,13 +1319,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateImageShaderMultipl
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0800
- * @tc.name: testShaderEffectCreateTwoPointConicalGradientNormal
- * @tc.desc: test for testShaderEffectCreateTwoPointConicalGradientNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testShaderEffectCreateTwoPointConicalGradientNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0800
+ * @tc.desc   test for testShaderEffectCreateTwoPointConicalGradientNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateTwoPointConicalGradientNormal, Function | SmallTest | Level0) {
     OH_Drawing_Point2D startPt = {0, 0};
@@ -1374,13 +1374,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateTwoPointConicalGra
     OH_Drawing_ShaderEffectDestroy(effect2);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0801
- * @tc.name: testShaderEffectCreateTwoPointConicalGradientNull
- * @tc.desc: test for testShaderEffectCreateTwoPointConicalGradientNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreateTwoPointConicalGradientNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0801
+ * @tc.desc   test for testShaderEffectCreateTwoPointConicalGradientNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateTwoPointConicalGradientNull, Function | SmallTest | Level3) {
     OH_Drawing_Point2D startPt = {0, 0};
@@ -1425,13 +1425,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateTwoPointConicalGra
     OH_Drawing_ShaderEffectDestroy(effect6);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0802
- * @tc.name: testShaderEffectCreateTwoPointConicalGradientAbnormal
- * @tc.desc: test for testShaderEffectCreateTwoPointConicalGradientAbnormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreateTwoPointConicalGradientAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0802
+ * @tc.desc   test for testShaderEffectCreateTwoPointConicalGradientAbnormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateTwoPointConicalGradientAbnormal, Function | SmallTest | Level3) {
     OH_Drawing_Point2D startPt = {0, 0};
@@ -1499,13 +1499,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateTwoPointConicalGra
     OH_Drawing_ShaderEffectDestroy(effect6);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0803
- * @tc.name: testShaderEffectCreateTwoPointConicalGradientMaximum
- * @tc.desc: test for testShaderEffectCreateTwoPointConicalGradientMaximum.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreateTwoPointConicalGradientMaximum
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0803
+ * @tc.desc   test for testShaderEffectCreateTwoPointConicalGradientMaximum.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateTwoPointConicalGradientMaximum, Function | SmallTest | Level3) {
     OH_Drawing_Point2D startPt = {0, 0};
@@ -1571,13 +1571,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateTwoPointConicalGra
     OH_Drawing_ShaderEffectDestroy(effect6);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0804
- * @tc.name: testShaderEffectCreateTwoPointConicalGradientMultipleCalls
- * @tc.desc: test for testShaderEffectCreateTwoPointConicalGradientMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreateTwoPointConicalGradientMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0804
+ * @tc.desc   test for testShaderEffectCreateTwoPointConicalGradientMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateTwoPointConicalGradientMultipleCalls, Function | SmallTest | Level3) {
     OH_Drawing_Point2D startPt = {0, 0};
@@ -1601,13 +1601,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateTwoPointConicalGra
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0900
- * @tc.name: testShaderEffectDestroyNormal
- * @tc.desc: test for testShaderEffectDestroyNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testShaderEffectDestroyNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0900
+ * @tc.desc   test for testShaderEffectDestroyNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectDestroyNormal, Function | SmallTest | Level0) {
     OH_Drawing_Point2D startPt = {0, 0};
@@ -1628,13 +1628,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectDestroyNormal, Function 
     OH_Drawing_ShaderEffectDestroy(effect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0901
- * @tc.name: testShaderEffectDestroyNull
- * @tc.desc: test for testShaderEffectDestroyNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectDestroyNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_0901
+ * @tc.desc   test for testShaderEffectDestroyNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectDestroyNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_ShaderEffectDestroy parameter is null
@@ -1643,13 +1643,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectDestroyNull, Function | 
     EXPECT_TRUE(true);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1000
- * @tc.name: testShaderEffectCreateSweepGradientWithLocalMatrixNormal
- * @tc.desc: test for testShaderEffectCreateSweepGradientWithLocalMatrixNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testShaderEffectCreateSweepGradientWithLocalMatrixNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1000
+ * @tc.desc   test for testShaderEffectCreateSweepGradientWithLocalMatrixNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateSweepGradientWithLocalMatrixNormal,
     Function | SmallTest | Level0) {
@@ -1693,13 +1693,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateSweepGradientWithL
     OH_Drawing_ShaderEffectDestroy(shaderEffect6);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1001
- * @tc.name: testShaderEffectCreateSweepGradientWithLocalMatrixNull
- * @tc.desc: test for testShaderEffectCreateSweepGradientWithLocalMatrixNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreateSweepGradientWithLocalMatrixNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1001
+ * @tc.desc   test for testShaderEffectCreateSweepGradientWithLocalMatrixNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateSweepGradientWithLocalMatrixNull,
     Function | SmallTest | Level3) {
@@ -1747,13 +1747,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateSweepGradientWithL
     OH_Drawing_ShaderEffectDestroy(shaderEffect6);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1002
- * @tc.name: testShaderEffectCreateSweepGradientWithLocalMatrixAbnormal
- * @tc.desc: test for testShaderEffectCreateSweepGradientWithLocalMatrixAbnormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreateSweepGradientWithLocalMatrixAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1002
+ * @tc.desc   test for testShaderEffectCreateSweepGradientWithLocalMatrixAbnormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateSweepGradientWithLocalMatrixAbnormal,
     Function | SmallTest | Level3) {
@@ -1792,13 +1792,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateSweepGradientWithL
     OH_Drawing_ShaderEffectDestroy(shaderEffect4);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1003
- * @tc.name: testShaderEffectCreateSweepGradientWithLocalMatrixMultipleCalls
- * @tc.desc: test for testShaderEffectCreateSweepGradientWithLocalMatrixMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreateSweepGradientWithLocalMatrixMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1003
+ * @tc.desc   test for testShaderEffectCreateSweepGradientWithLocalMatrixMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateSweepGradientWithLocalMatrixMultipleCalls,
     Function | SmallTest | Level3) {
@@ -1821,13 +1821,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateSweepGradientWithL
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1100
- * @tc.name: testShaderEffectCreateComposeEnumTraversal
- * @tc.desc: test for testShaderEffectCreateComposeEnumTraversal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testShaderEffectCreateComposeEnumTraversal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1100
+ * @tc.desc   test for testShaderEffectCreateComposeEnumTraversal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateComposeEnumTraversal,
     Function | SmallTest | Level0) {
@@ -1875,13 +1875,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateComposeEnumTravers
     OH_Drawing_ShaderEffectDestroy(dst);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1101
- * @tc.name: testShaderEffectCreateComposeNull
- * @tc.desc: test for testShaderEffectCreateComposeNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreateComposeNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1101
+ * @tc.desc   test for testShaderEffectCreateComposeNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateComposeNull,
     Function | SmallTest | Level3) {
@@ -1902,13 +1902,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateComposeNull,
     OH_Drawing_ShaderEffectDestroy(shaderEffect2);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1102
- * @tc.name: testShaderEffectCreateComposeMultipleCalls
- * @tc.desc: test for testShaderEffectCreateComposeMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreateComposeMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1102
+ * @tc.desc   test for testShaderEffectCreateComposeMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateComposeMultipleCalls,
     Function | SmallTest | Level3) {
@@ -1926,13 +1926,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateComposeMultipleCal
     OH_Drawing_ShaderEffectDestroy(dst);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1200
- * @tc.name: testShaderEffectCreatePixelMapShaderNormal
- * @tc.desc: test for testShaderEffectCreatePixelMapShaderNormal
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testShaderEffectCreatePixelMapShaderNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1200
+ * @tc.desc   test for testShaderEffectCreatePixelMapShaderNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreatePixelMapShaderNormal, Function | SmallTest | Level0) {
     uint32_t imageWidth = 200;
@@ -1972,13 +1972,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreatePixelMapShaderNorm
     free(buffer);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1201
- * @tc.name: testShaderEffectCreatePixelMapShaderNull
- * @tc.desc: test for testShaderEffectCreatePixelMapShaderNull
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreatePixelMapShaderNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1201
+ * @tc.desc   test for testShaderEffectCreatePixelMapShaderNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreatePixelMapShaderNull, Function | SmallTest | Level3) {
     uint32_t imageWidth = 200;
@@ -2024,13 +2024,13 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreatePixelMapShaderNull
     free(buffer);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1202
- * @tc.name: testShaderEffectCreatePixelMapShaderMultiCalls
- * @tc.desc: test for testShaderEffectCreatePixelMapShaderMultiCalls
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testShaderEffectCreatePixelMapShaderMultiCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SHADOW_EFFECT_1202
+ * @tc.desc   test for testShaderEffectCreatePixelMapShaderMultiCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreatePixelMapShaderMultiCalls, Function | SmallTest | Level3) {
     uint32_t imageWidth = 200;

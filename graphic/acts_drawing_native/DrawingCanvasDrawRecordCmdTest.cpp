@@ -104,13 +104,13 @@ OH_Drawing_RecordCmd *threadFunctionTest6()
     return recordCmd;
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0500
- * @tc.name: testCanvasDrawRecordCmdNormal
- * @tc.desc: test for testCanvasDrawRecordCmdNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testCanvasDrawRecordCmdNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0500
+ * @tc.desc   test for testCanvasDrawRecordCmdNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingCanvasDrawRecordCmdTest, testCanvasDrawRecordCmdNormal, Function | SmallTest | Level0) {
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -125,13 +125,13 @@ HWTEST_F(DrawingCanvasDrawRecordCmdTest, testCanvasDrawRecordCmdNormal, Function
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0500
- * @tc.name: testCanvasDrawRecordCmdABNormal
- * @tc.desc: test for testCanvasDrawRecordCmdABNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testCanvasDrawRecordCmdABNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0500
+ * @tc.desc   test for testCanvasDrawRecordCmdABNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingCanvasDrawRecordCmdTest, testCanvasDrawRecordCmdABNormal, Function | SmallTest | Level0) {
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -150,13 +150,13 @@ HWTEST_F(DrawingCanvasDrawRecordCmdTest, testCanvasDrawRecordCmdABNormal, Functi
 }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0600
- * @tc.name: testCanvasDrawRecordCmdNestingNormal
- * @tc.desc: test for testCanvasDrawRecordCmdNestingNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testCanvasDrawRecordCmdNestingNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0600
+ * @tc.desc   test for testCanvasDrawRecordCmdNestingNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingCanvasDrawRecordCmdTest, testCanvasDrawRecordCmdNestingNormal, Function | SmallTest | Level0) {
     OH_Drawing_Canvas *canvas0 = OH_Drawing_CanvasCreate();
@@ -209,13 +209,13 @@ HWTEST_F(DrawingCanvasDrawRecordCmdTest, testCanvasDrawRecordCmdNestingNormal, F
     OH_Drawing_RecordCmdDestroy(recordCmd3);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0601
- * @tc.name: testCanvasDrawRecordCmdNestingAbNormal
- * @tc.desc: test for testCanvasDrawRecordCmdNestingAbNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testCanvasDrawRecordCmdNestingAbNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0601
+ * @tc.desc   test for testCanvasDrawRecordCmdNestingAbNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingCanvasDrawRecordCmdTest, testCanvasDrawRecordCmdNestingAbNormal, Function | SmallTest | Level3) {
     OH_Drawing_Canvas *canvas0 = OH_Drawing_CanvasCreate();
@@ -238,13 +238,13 @@ HWTEST_F(DrawingCanvasDrawRecordCmdTest, testCanvasDrawRecordCmdNestingAbNormal,
     OH_Drawing_RecordCmdDestroy(recordCmd);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0602
- * @tc.name: testCanvasDrawRecordCmdNestingAbNormal1
- * @tc.desc: test for testCanvasDrawRecordCmdNestingAbNormal1.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testCanvasDrawRecordCmdNestingAbNormal1
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0602
+ * @tc.desc   test for testCanvasDrawRecordCmdNestingAbNormal1.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingCanvasDrawRecordCmdTest, testCanvasDrawRecordCmdNestingAbNormal1, Function | SmallTest | Level3) {
     OH_Drawing_Canvas *canvas0 = OH_Drawing_CanvasCreate();

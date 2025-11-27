@@ -22,12 +22,12 @@ export default function windowDialogTest(context: common.UIAbilityContext, windo
     console.log('describe window_dialog_test start!!!')
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4520
-     * @tc.name      : testSetDialogBackGestureEnabled_Dialog_True
-     * @tc.desc      : Sets whether the modal window responds to gesture return events
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testSetDialogBackGestureEnabled_Dialog_True
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4520
+     * @tc.desc   Sets whether the modal window responds to gesture return events
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetDialogBackGestureEnabled_Dialog_True', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async () => {
       let caseName = 'testSetDialogBackGestureEnabled_Dialog_True';
@@ -65,12 +65,12 @@ export default function windowDialogTest(context: common.UIAbilityContext, windo
       await tempWnd!.destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4530
-     * @tc.name      : testSetDialogBackGestureEnabled_Dialog_False
-     * @tc.desc      : Sets whether the modal window responds to gesture return events
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testSetDialogBackGestureEnabled_Dialog_False
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4530
+     * @tc.desc   Sets whether the modal window responds to gesture return events
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetDialogBackGestureEnabled_Dialog_False', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async () => {
       let caseName = 'testSetDialogBackGestureEnabled_Dialog_False';
@@ -109,12 +109,12 @@ export default function windowDialogTest(context: common.UIAbilityContext, windo
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4540
-     * @tc.name      : testSetDialogBackGestureEnabled_Dialog_WindowAbnormal
-     * @tc.desc      : Sets whether the modal window responds to gesture return events
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testSetDialogBackGestureEnabled_Dialog_WindowAbnormal
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4540
+     * @tc.desc   Sets whether the modal window responds to gesture return events
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetDialogBackGestureEnabled_Dialog_WindowAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async () => {
       let caseName = 'testSetDialogBackGestureEnabled_Dialog_WindowAbnormal';
@@ -152,12 +152,12 @@ export default function windowDialogTest(context: common.UIAbilityContext, windo
       });
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4550
-     * @tc.name      : testSetDialogBackGestureEnabled_MainWindow
-     * @tc.desc      : Sets whether the modal window responds to gesture return events
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testSetDialogBackGestureEnabled_MainWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4550
+     * @tc.desc   Sets whether the modal window responds to gesture return events
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetDialogBackGestureEnabled_MainWindow', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async () => {
       let caseName = 'testSetDialogBackGestureEnabled_MainWindow';
@@ -182,12 +182,12 @@ export default function windowDialogTest(context: common.UIAbilityContext, windo
       });
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4560
-     * @tc.name      : testSetDialogBackGestureEnabled_SubWindow
-     * @tc.desc      : Sets whether the modal window responds to gesture return events
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testSetDialogBackGestureEnabled_SubWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4560
+     * @tc.desc   Sets whether the modal window responds to gesture return events
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetDialogBackGestureEnabled_SubWindow', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async () => {
       let caseName = 'testSetDialogBackGestureEnabled_SubWindow';
@@ -220,12 +220,12 @@ export default function windowDialogTest(context: common.UIAbilityContext, windo
       await subWin!.destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4590
-     * @tc.name      : testSetDialogBackGestureEnabled_Null
-     * @tc.desc      : Sets whether the modal window responds to gesture return events
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testSetDialogBackGestureEnabled_Null
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4590
+     * @tc.desc   Sets whether the modal window responds to gesture return events
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetDialogBackGestureEnabled_Null', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async () => {
       let caseName = 'testSetDialogBackGestureEnabled_Null';
@@ -268,12 +268,12 @@ export default function windowDialogTest(context: common.UIAbilityContext, windo
       await tempWnd!.destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4600
-     * @tc.name      : testSetDialogBackGestureEnabled_Undefined
-     * @tc.desc      : Sets whether the modal window responds to gesture return events
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testSetDialogBackGestureEnabled_Undefined
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4600
+     * @tc.desc   Sets whether the modal window responds to gesture return events
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetDialogBackGestureEnabled_Undefined', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async () => {
       let caseName = 'testSetDialogBackGestureEnabled_Undefined';
