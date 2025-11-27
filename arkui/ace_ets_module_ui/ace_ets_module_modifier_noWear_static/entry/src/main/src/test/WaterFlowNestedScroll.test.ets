@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium/index"
+import { describe, beforeAll, beforeEach, afterEach, it, expect, Level } from "../../../hypium"
 import router from '@ohos.router';
 import {
   Component,
@@ -29,7 +29,8 @@ import {
   PointerMatrix,
   Rect
 } from '@ohos.UiTest';
-import CommonFunc, { RectValue } from '../../ets/MainAbility/common/Common';
+import RectValue from '../../ets/MainAbility/common/Rect'
+import CommonFunc from '../../ets/MainAbility/common/Common';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
@@ -48,7 +49,6 @@ import { UIContext } from '@ohos.arkui.UIContext';
 export default function waterFlowNestedScrollJsunit() {
   describe('waterFlow_NestedScrollTest', () => {
     beforeAll(() => {
-
       await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.open.harmony.modifiernowear.static", "EntryAbility")
       await UtilsTest.msSleep(4000)
@@ -58,7 +58,6 @@ export default function waterFlowNestedScrollJsunit() {
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/waterFlowNestedScroll',
       }
-
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
@@ -84,12 +83,12 @@ export default function waterFlowNestedScrollJsunit() {
     it('ArkUI_Stage_waterFlowNestedScroll01_static', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[ArkUI_Stage_waterFlowNestedScroll01] START');
       await Utils.sleep(2000)
-      let webRect: RectValue = CommonFunc.getComponentRect('ColumnSize');
+      let webRect: RectValue = Utils.getComponentRect('ColumnSize') as RectValue;
       console.info(`ArkUI_Stage_waterFlowNestedScroll01 get webRect is:` + JSON.stringify(webRect));
-      // let x = Math.floor(Utils.getRectHorizontalCenterX(webRect))
-      // let y = Math.floor(Utils.getRectVerticalCenterY(webRect))
-      // let driver = Driver.create();
-      // await driver.swipe(Math.round(x).toInt(), Math.round(y + UIContext.getFocusedUIContext()!.vp2px(60)).toInt(), Math.round(x).toInt(), Math.round(y - UIContext.getFocusedUIContext()!.vp2px(60)).toInt());
+      let x = Math.floor(Utils.getRectHorizontalCenterX(webRect))
+      let y = Math.floor(Utils.getRectVerticalCenterY(webRect))
+      let driver = Driver.create();
+      await driver.swipe(Math.round(x).toInt(), Math.round(y + UIContext.getFocusedUIContext()!.vp2px(60)).toInt(), Math.round(x).toInt(), Math.round(y - UIContext.getFocusedUIContext()!.vp2px(60)).toInt());
       console.info('[ArkUI_Stage_waterFlowNestedScroll01] driver.swipe end');
       try {
         let callBack: (backData: events_emitter.EventData) => void = (backData: events_emitter.EventData) => {

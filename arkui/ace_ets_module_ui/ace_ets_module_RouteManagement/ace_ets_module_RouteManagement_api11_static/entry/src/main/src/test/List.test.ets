@@ -47,13 +47,13 @@ export default function testsuite() {
   aboutToAppearRouterTest();
   aboutToAppearRouterTest2();
   goWithParams();
-  RouterPushUrlJsunit(); // Failure: 4, Error: 1
-  RouterWithParamJsunit(); // failure:1,3,7
+  RouterPushUrlJsunit();
+  RouterWithParamJsunit();
   RouterUrlErrorJsunit();
-  stageRouterTest();// router调用函数问题:23
-  routerReplaceJsunit();// failure:1
-  systemRouterJsunit()
+  stageRouterTest();
+  routerReplaceJsunit();
+  systemRouterJsunit();
   routerStandardJsunit()
   OhosRouterJsunit();
-  RouterBackAlert();// error:2
+  RouterBackAlert();
 }

@@ -115,6 +115,7 @@ it('ohosRouterTest002_static', Level.LEVEL2, async (done: () => void): Promise<v
       }
       console.info("[ohosRouterTest002_static] click push button result is: "
         + JSON.stringify(inspector.sendEventByKey('pushButtonA', 10, "")));
+      await CommonFunc.sleep(1000);
       routerInstance.back();
       await CommonFunc.sleep(1000);
       done();

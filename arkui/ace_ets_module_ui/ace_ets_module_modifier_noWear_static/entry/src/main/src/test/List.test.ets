@@ -19,7 +19,7 @@ import rowSplitJsunit from './RowSplitJsunit.test';
 import selectJsunit from './SelectJsunit.test';
 import sideBarContainerJsunit from './SideBarContainerJsunit.test';
 import waterFlowViewJsunit from './WaterFlowView.test';
-import waterflowNestedScrollJsunit from './WaterFlowNestedScroll.test';
+import waterFlowNestedScrollJsunit from './WaterFlowNestedScroll.test';
 
 export default function testsuite() {
   calendarPickerJsunit();
@@ -27,6 +27,6 @@ export default function testsuite() {
   rowSplitJsunit();
   selectJsunit();
   sideBarContainerJsunit();
-  waterflowNestedScrollJsunit();
+  waterFlowNestedScrollJsunit();
   waterFlowViewJsunit();
 }

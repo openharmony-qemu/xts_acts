@@ -30,17 +30,8 @@ struct CalendarPickerDialogExample {
   @State startDate: Date = new Date('2025-01-01')
   @State endDate: Date = new Date('2025-02-28')
   @State directions: Direction = Direction.Ltr
-  // 1.1源码
-  // @State markToday: boolean | undefined | null = true;
   @State markToday: boolean | undefined = true;
   @State count1: number = 0
-  // 1.1源码
-  // @State disableDateRange: DateRange[] | null | undefined = [
-  //   { start: new Date('1970-01-01'), end: new Date('2024-11-10') },
-  //   { start: new Date('2025-01-16'), end: new Date('2025-01-01') },
-  //   { start: new Date('2025-01-03'), end: new Date('2025-01-06') },
-  //   { start: new Date('2025-01-09'), end: new Date('2025-01-10') },
-  // ]
   @State disableDateRange: DateRange[] | undefined = [
     { start: new Date('1970-01-01'), end: new Date('2024-11-10') } as DateRange,
     { start: new Date('2025-01-16'), end: new Date('2025-01-01') } as DateRange,

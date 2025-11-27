@@ -37,16 +37,6 @@ import {
 import { State } from '@ohos.arkui.stateManagement';
 import testsuite from '../../../../src/test/List.test';
 
-
-interface EventDataContent {
-  font?: Font;
-  fontColor?: int;
-  spaceValue?: number;
-  spaceValueString?: string;
-  arrowPosition?: ArrowPosition;
-  spaceValueResource?: Resource;
-}
-
 @Entry
 @Component
 struct SelectExample {

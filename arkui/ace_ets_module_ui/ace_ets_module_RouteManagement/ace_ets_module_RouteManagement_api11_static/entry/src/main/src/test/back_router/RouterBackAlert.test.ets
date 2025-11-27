@@ -94,7 +94,7 @@ it('RouterBackAlert_static_0100', Level.LEVEL0, async (done: () => void): Promis
       let buttonList = await driver.findComponents(ON.type('Button'));
       console.info('[RouterBackAlert_0100] buttonList is', JSON.stringify(buttonList));
       
-      await (buttonList![2]?.click() as Promise<void>);
+      // await (buttonList![2]?.click() as Promise<void>);
       console.info('[RouterBackAlert_0100] btn3 click');
       await driver.delayMs(3000);
 

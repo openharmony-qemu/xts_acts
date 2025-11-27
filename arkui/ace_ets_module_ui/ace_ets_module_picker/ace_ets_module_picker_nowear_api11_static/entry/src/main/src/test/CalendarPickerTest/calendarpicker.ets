@@ -83,11 +83,9 @@ export default function calendarpicker() {
 
       expect(obj.getElement('$attrs').getElement('textStyle').getString("color")).assertEqual('#FF000000');
 
-      expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('size'))
-        .assertEqual('8.00fp');
+      expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('size')).assertEqual('8.00fp');
 
-      expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('weight'))
-        .assertEqual('FontWeight.Lighter');
+      expect(obj.getElement('$attrs').getElement('textStyle').getElement('font').getString('weight')).assertEqual('FontWeight.Lighter');
       done();
     });
 
@@ -439,8 +437,7 @@ export default function calendarpicker() {
       let obj = JSON.parseJsonElement(strJson);
       console.info("[ArkUI_Stage_CalendarPicker_EdgeAlign_static_0300] edgeAlign.alignType:" +
       obj.getElement('$attrs').getElement('edgeAlign').getString("alignType"));
-      console.info("[ArkUI_Stage_CalendarPicker_EdgeAlign_static_0300] edgeAlign.offset.dx:" +
-      obj.getElement('$attrs').getElement('edgeAlign').getElement('offset').getString('dx'));
+      console.info("[ArkUI_Stage_CalendarPicker_EdgeAlign_static_0300] edgeAlign.offset.dx:" + obj.getElement('$attrs').getElement('edgeAlign').getElement('offset').getString('dx'));
       expect(obj.getElement('$attrs').getElement('edgeAlign').getString("alignType"))
         .assertEqual('CalendarAlign.START');
       done();
@@ -503,8 +500,7 @@ export default function calendarpicker() {
         console.info("[ArkUI_Stage_CalendarPicker_EdgeAlign_static_0500] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
       } catch (err) {
-        console.log("[ArkUI_Stage_CalendarPicker_EdgeAlign_static_0500] change component data error: " +
-        (err as Error).message);
+        console.log("[ArkUI_Stage_CalendarPicker_EdgeAlign_static_0500] change component data error: " + (err as Error).message);
       }
       await Utils.sleep(3000);
       let strJson = inspector.getInspectorByKey('CalendarPicker');
@@ -592,8 +588,7 @@ export default function calendarpicker() {
     it('ArkUI_Stage_CalendarPicker_hintRadius_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let strJson = inspector.getInspectorByKey('CalendarPicker');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[ArkUI_Stage_CalendarPicker_hintRadius_static_0100] hintRadius:" +
-      obj.getElement('$attrs').tryGetElement('hintRadius'));
+      console.info("[ArkUI_Stage_CalendarPicker_hintRadius_static_0100] hintRadius:" + obj.getElement('$attrs').tryGetElement('hintRadius'));
       expect(obj.getElement('$attrs').tryGetElement("hintRadius")).assertEqual(undefined);
       done();
     });

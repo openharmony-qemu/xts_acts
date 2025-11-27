@@ -21,10 +21,6 @@ import { State } from '@ohos.arkui.stateManagement';
 struct routerParams_1 {
   @State str: string = '1'
 
-  // aboutToAppear() {
-  //   this.str = JSON.parseJsonElement(JSON.stringify(this.getUIContext().getRouter().getParams()))
-  // }
-
   onPageShow() {
     this.str = JSON.stringify(this.getUIContext().getRouter().getParams())
   }

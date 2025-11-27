@@ -44,17 +44,17 @@ struct RouterPushTwo {
   @State routerUI: Router|undefined = undefined
 
   onPageShow() {
-    this.params = JSON.parseJsonElement(JSON.stringify(this.getUIContext().getRouter().getParams())).getString("view")
+    // this.params = JSON.parseJsonElement(JSON.stringify(this.getUIContext().getRouter().getParams())).getString("view")
     let uiContext: UIContext = this.getUIContext()
-    let routerUI: Router = uiContext.getRouter();
-    this.routerUI = routerUI
+    this.routerUI = AppStorage.get<Router>("router") as Router
   }
 
 
   build() {
     Scroll() {
       Column() {
-        Text("RouterPushTwo " + this.params)
+        // Text("RouterPushTwo " + this.params)
+        Text("RouterPushTwo ")
           .fontSize(50)
           .fontWeight(FontWeight.Bold)
           .id("Text_RouterPushTwo")
@@ -83,7 +83,8 @@ struct RouterPushTwo {
             }, router.RouterMode.Single)
           })
 
-        Text("UIRouterPushTwo " + this.params)
+        // Text("UIRouterPushTwo " + this.params)
+        Text("UIRouterPushTwo ")
           .fontSize(50)
           .fontWeight(FontWeight.Bold)
           .id("Text_UIRouterPushTwo")

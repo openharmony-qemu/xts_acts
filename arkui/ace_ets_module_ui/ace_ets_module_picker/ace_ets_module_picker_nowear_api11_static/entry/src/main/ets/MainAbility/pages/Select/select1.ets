@@ -25,7 +25,7 @@ import {
   Font,
   FontStyle,
   Select,
-  OnSelectCallback
+  OnSelectCallback, ResourceColor, Margin, ArrowPosition
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import  emitter  from '@ohos.events.emitter';
@@ -41,25 +41,31 @@ struct select1 {
     family: 'serif',
     style: FontStyle.Normal
   } as Font
-  @State fontColor: int = 0xCCCCCC as int
+  @State fontColor: ResourceColor = 0xCCCCCC
 
   private stateChangCallBack: (eventData: emitter.EventData) => void = (eventData: emitter.EventData) => {
     console.info("select page state change called:" + JSON.stringify(eventData));
     if (eventData != null) {
       const data = eventData.data as Record<String,undefined|null|Object>
       if (data['value'] != null) {
+        console.log('-----this.value = ' + this.value)
         this.value = data['value'] as string;
+        console.log('-----this.value = ' + this.value)
       }
       if (data['font'] != null) {
+        console.log('-----data[font] = ' + data['font'])
         this.font = data['font'] as Font;
+        console.log('-----this.font = ' + this.font.family)
       }
       if (data['fontColor'] != null) {
-        this.fontColor = data['fontColor'] as int;
+        console.log('-----data[fontColor] = ' + data['fontColor'])
+        this.fontColor = data['fontColor'] as ResourceColor;
+        console.log('-----this.fontColor = ' + this.fontColor)
       }
     }
   };
 
-  onPageShow() {
+  aboutToAppear() {
     console.info('select page show called');
     let stateChangeEvent: emitter.InnerEvent = {
       eventId: 191,

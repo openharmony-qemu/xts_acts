@@ -84,7 +84,7 @@ export default function waterFlowView() {
       let strJson = inspector.getInspectorByKey('WaterFlowKey1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[waterFlowViewJsunit_0200] obj is: " + JSON.stringify(obj.getElement('$attrs')));
-      expect(obj.getElement('$attrs').getString('friction')).assertEqual(1);
+      expect(obj.getElement('$attrs').getDouble('friction')).assertEqual(1);
       console.info('[waterFlowViewJsunit_0200] END');
       done();
     });
@@ -101,7 +101,7 @@ export default function waterFlowView() {
       let strJson = inspector.getInspectorByKey('WaterFlowKey1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[waterFlowViewJsunit_0300] obj is: " + JSON.stringify(obj.getElement('$attrs')));
-      expect(obj.getElement('$attrs').getString('enableScrollInteraction')).assertEqual(true);
+      expect(obj.getElement('$attrs').getBoolean('enableScrollInteraction')).assertEqual(true);
       console.info('[waterFlowViewJsunit_0300] END');
       done();
     });
@@ -204,8 +204,7 @@ export default function waterFlowView() {
       let strJson = inspector.getInspectorByKey('WaterFlowKey1');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[waterFlowViewJsunit_0900] obj is: " + JSON.stringify(obj.getElement('$attrs')));
-      console.info("[waterFlowViewJsunit_0900] ['layoutDirection']: " +
-      JSON.stringify(obj.getElement('$attrs')['layoutDirection']));
+      console.info("[waterFlowViewJsunit_0900] ['layoutDirection']: " + JSON.stringify(obj.getElement('$attrs')['layoutDirection']));
       expect(obj.getElement('$attrs').getString('layoutDirection')).assertEqual("FlexDirection.Column");
       console.info('[waterFlowViewJsunit_0900] END');
       done();

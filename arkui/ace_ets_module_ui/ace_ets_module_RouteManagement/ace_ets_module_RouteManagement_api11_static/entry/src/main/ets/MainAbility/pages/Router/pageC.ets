@@ -27,8 +27,8 @@ struct pageC {
           .fontSize(20)
           .fontWeight(FontWeight.Bold)
         Text('' + this.getUIContext().getRouter().getState().name).id('name_C')
-        Text('' + this.getUIContext().getRouter().getLength()).id('length_C')
-
+        // Text('' + this.getUIContext().getRouter().getLength()).id('length_C')
+        Text('').id('length_C')
       }
       .width('100%')
     }

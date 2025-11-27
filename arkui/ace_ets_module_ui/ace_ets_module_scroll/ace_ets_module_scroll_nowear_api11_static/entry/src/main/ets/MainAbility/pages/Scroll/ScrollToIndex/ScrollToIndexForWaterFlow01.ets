@@ -133,13 +133,13 @@ struct ScrollToIndexForWaterFlow01 {
         Button('66-true', { type: ButtonType.Normal, stateEffect: true })
           .fontSize(25)
           .buttonStyles()
-          .onClick((e:ClickEvent) => {
+          .onClick((e:ClickEvent): void => {
             this.isSmooth = false
             console.log('跳转到66，有动画')
-            const yOffsetStart: number = this.scrollerForWaterFlow!.currentOffset()!.yOffset!;
+            const yOffsetStart: number = this.scrollerForWaterFlow.currentOffset()!.yOffset;
             this.scrollerForWaterFlow.scrollToIndex(66, true)
             setTimeout(()=>{
-              const yOffsetEnd: number = this.scrollerForWaterFlow!.currentOffset()!.yOffset;
+              const yOffsetEnd: number = this.scrollerForWaterFlow.currentOffset()!.yOffset;
               console.info('yOffsetStart==>' + yOffsetStart + 'yOffsetEnd==>'+ yOffsetEnd)
               this.isSmooth = (yOffsetStart == yOffsetEnd) ? false : true;
               console.info(this.isSmooth + 'isSmooth')

@@ -28,7 +28,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
-import { Font, FontStyle } from '@ohos.arkui.component';
+import { Font, FontStyle,ResourceColor } from '@ohos.arkui.component';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -48,18 +48,14 @@ export default function selectJsunit() {
         url: 'MainAbility/pages/Select/select1',
       }
       try {
-
-
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get select state pages:" + JSON.stringify(pages));
-        if (!("select" == pages.name)) {
+        if (!("select1" == pages.name)) {
           console.info("get select pages.name:" + JSON.stringify(pages.name));
-          let result = routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);
-          console.info("push select page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push select page error " + JSON.stringify(err));
@@ -104,12 +100,12 @@ it('selectTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<voi
         let eventData: events_emitter.EventData = {
           data: {
             "value": "5"
-          } as Record<string, undefined | null | Object>
-        }
+          } as Record<string, undefined|null|Object>
+        } as events_emitter.EventData
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 191,
           priority: events_emitter.EventPriority.LOW
-        }
+        } as events_emitter.InnerEvent
         console.info("[selectTest_static_0200] start to publish emit");
         events_emitter.emit(innerEvent, eventData);
       } catch (err) {
@@ -117,9 +113,10 @@ it('selectTest_static_0200', Level.LEVEL1, async (done: () => void): Promise<voi
       }
       await Utils.sleep(2000);
       let strJsonNew = inspector.getInspectorByKey('select');
-      console.info("[selectTest_static_0200] component objNew is: " +
-      JSON.stringify(JSON.parseJsonElement(strJsonNew)));
-      expect(JSON.parseJsonElement(strJsonNew).getElement('$attrs').getString("value")).assertEqual('5');
+      let objNew = JSON.parseJsonElement(strJsonNew);
+      console.info("[selectTest_static_0200] component objNew is: " + objNew.getElement('$attrs').getString('value'));
+      expect(objNew.getElement('$attrs').getString('value')).assertEqual('5');
+      await Utils.sleep(1000);
       done();
     });
 
@@ -225,8 +222,8 @@ it('selectTest_static_0600', Level.LEVEL1, async (done: () => void): Promise<voi
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "fontColor": '#FF000990'
-          } as Record<string, undefined | null | Object>
+            "fontColor": '#FF000990' as ResourceColor
+          } as Record<string, undefined|null|Object>
         }
         let indexEvent: events_emitter.InnerEvent = {
           eventId: 191,
