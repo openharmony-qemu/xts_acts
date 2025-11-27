@@ -50,16 +50,19 @@ import { UtilsTest } from '../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
-const uiContext = new UIContext();
+// const uiContext = new UIContext();
 
 export default function ColumnSpaceResourceTest() {
   describe('ColumnSpaceResourceTest', () => {
+    await UtilsTest.msSleep(4000)
+    await UtilsTest.startAbility("com.arkui.ace.layout.api18.static", "EntryAbility")
+    await UtilsTest.msSleep(4000)
+    const uiContext = AppStorage.get<UIContext>('uiContext')!;
+
     beforeAll(() => {
       console.info("ColumnSpaceResourceTest beforeAll start");
 
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.layout.api18.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
     });
 
     beforeEach(async (): Promise<void> => {

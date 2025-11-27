@@ -81,8 +81,8 @@ export default function MarqueeDynamicSyncSceneTest() {
         Button?.click();
         await CommonFunc.sleep(1000);
         console.info("[MarqueeDynamicSyncSceneTest_0010] MarqueeDynamicSyncSceneType:"
-          + String(AppStorage.get('MarqueeDynamicSyncSceneType')));
-        expect(AppStorage.get('MarqueeDynamicSyncSceneType')).assertEqual('ANIMATION');
+          + String(AppStorage.get<string>('MarqueeDynamicSyncSceneType')));
+        expect(AppStorage.get<string>('MarqueeDynamicSyncSceneType')).assertEqual('ANIMATION');
         AppStorage.delete('MarqueeDynamicSyncSceneType')
         console.info('[MarqueeDynamicSyncSceneTest_0010] END');
       }

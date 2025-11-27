@@ -40,11 +40,7 @@ struct router_back08 {
             let code = (err as BusinessError).code
             console.error(`Invoke showAlertBeforeBackPage failed, code is ${code}, message is ${message}`);
           }
-          // this.getUIContext().getRouter().back(2, { age: 18 } as AgeObj)
-          this.getUIContext().getRouter().back({url:'MainAbility/pages/router/router_back8',params:{
-            age:18
-          }  as AgeObj
-          })
+          this.getUIContext().getRouter().back(2, { age: 18 } as AgeObj)
 
           console.info('backBtn1111111')
         })

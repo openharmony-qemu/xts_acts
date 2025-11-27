@@ -64,15 +64,15 @@ class MyNodeController extends NodeController {
       .fontSize(20).textAlign(TextAlign.Center)
     col.appendChild(title)
 
-    // let scrollButton = typeNode.createNode(uiContext, 'Button')
-    // scrollButton.initialize('scroller')
-    //   .width(100)
-    //   .height(30)
-    //   .backgroundColor('#FFFF0000')
-    //   .onClick(() => { // 点击后滑到下边缘，速度值是700vp/s
-    //     this.scroller.scrollEdge(Edge.Bottom, { velocity: 700 })
-    //   })
-    // col.appendChild(scrollButton)
+    let scrollButton = typeNode.createButtonNode(uiContext)
+    scrollButton.initialize('scroller')
+      .width(100)
+      .height(30)
+      .backgroundColor('#FFFF0000')
+      .onClick(() => { // 点击后滑到下边缘，速度值是700vp/s
+        // this.scroller.scrollEdge(Edge.Bottom, { velocity: 700 })
+      })
+    col.appendChild(scrollButton)
 
     let waterFlow = typeNode.createWaterFlowNode(uiContext)
     waterFlow.initialize({ scroller: this.scroller, layoutMode: WaterFlowLayoutMode.ALWAYS_TOP_DOWN })
@@ -80,7 +80,7 @@ class MyNodeController extends NodeController {
       .columnsTemplate('1fr 1fr')
       .columnsGap(10)
       .rowsGap(5)
-      // .backgroundColor(0xFAEEE0)
+      .backgroundColor(0xFAEEE0)
       .width('100%')
       .height('70%')
       .layoutWeight(1)
@@ -94,7 +94,7 @@ class MyNodeController extends NodeController {
       flowItem.initialize().id('flowItem_node')
         .width('100%')
         .height(this.itemHeightArray[i % 100])
-        // .backgroundColor(this.colors[i % 5] as Int)
+        .backgroundColor(this.colors[i % 5] as Int)
 
       flowItem.appendChild(text)
       waterFlow.appendChild(flowItem)
@@ -116,7 +116,7 @@ struct nodeWaterFlow {
     }
     .width('100%')
     .height('100%')
-    // .backgroundColor(0xDCDCDC)
+    .backgroundColor(0xDCDCDC)
     .padding({ top: 5 } as Padding)
   }
 }

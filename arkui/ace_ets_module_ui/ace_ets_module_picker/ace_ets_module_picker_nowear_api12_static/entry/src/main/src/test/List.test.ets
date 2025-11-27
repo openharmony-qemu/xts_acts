@@ -26,8 +26,8 @@ export default function testsuite() {
   selectApi1();
   triggerSelect()
   selectJsunit()
-  timepickerJsunit()
   textpickerJsunit()
   calendarPickerJsunit()
   datePickerJsunit()
+  timepickerJsunit()
 }

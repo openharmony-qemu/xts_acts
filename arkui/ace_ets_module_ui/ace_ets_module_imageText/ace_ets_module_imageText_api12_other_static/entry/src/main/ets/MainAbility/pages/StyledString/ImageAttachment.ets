@@ -41,7 +41,10 @@ import {
   TextDecorationType,
   CopyOptions,
   TextDecorationStyle,
-  Image
+  Image,
+  ImageSpanAlignment,
+  ImageFit,
+  AttachmentType
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
@@ -70,22 +73,19 @@ struct styled_string_imageAttachment {
 
   aboutToAppear() {
     console.info('aboutToAppear initial imagePixelMap')
-    // this.imagePixelMap = await this.getPixmapFromMedia($r('app.media.app_icon'))
+    this.imagePixelMap = this.getPixmapFromMedia($r('app.media.app_icon'))
   }
 
-  // private async getPixmapFromMedia(resource: Resource) {
-  // let unit8Array = await this.uiContext.getHostContext()?.resourceManager?.getMediaContent({
-  //   bundleName: resource.bundleName,
-  //   moduleName: resource.moduleName,
-  //   id: resource.id
-  // } )
-  // let imageSource = image.createImageSource(unit8Array?.buffer.slice(0, unit8Array.buffer.byteLength))
-  // let createPixelMap: image.PixelMap = await imageSource.createPixelMap({
-  //   desiredPixelFormat: image.PixelMapFormat.RGBA_8888
-  // } )
-  //  await imageSource.release()
-  //   return createPixelMap
-  // }
+  private getPixmapFromMedia(resource: Resource) {
+    let unit8Array = this.getUIContext().getHostContext()?.resourceManager?.getMediaContent(resource.id)
+    let data: ArrayBuffer =  (await unit8Array!).buffer.slice(0, (await unit8Array!).buffer.byteLength);
+    let imageSource = image.createImageSource(data)!
+    let createPixelMap: image.PixelMap =( await imageSource.createPixelMap({
+      desiredPixelFormat: image.PixelMapFormat.RGBA_8888
+    }))!
+    await imageSource.release()
+    return createPixelMap
+  }
 
   build() {
     Row() {
@@ -100,30 +100,30 @@ struct styled_string_imageAttachment {
             .id('setImage1')
             .onClick((e: ClickEvent) => {
               if (this.imagePixelMap !== undefined) {
-                // this.mutableStr = new MutableStyledString(new ImageAttachment({
-                //   resourceValue: $r('app.media.icon'), //建议使用自定义的本地图片
-                //   size: { width: 50, height: 50 },
-                //   layoutStyle: { borderRadius: LengthMetrics.vp(10), margin: LengthMetrics.vp(10), padding: LengthMetrics.vp(10) },
-                //   verticalAlign: ImageSpanAlignment.BASELINE,
-                //   objectFit: ImageFit.Contain,
-                //   syncLoad: true
-                // } ))
-                // this.controller.setStyledString(this.mutableStr)
+                this.mutableStr = new MutableStyledString(new ImageAttachment({
+                  resourceValue: $r('app.media.icon'), //建议使用自定义的本地图片
+                  size: { width: 50, height: 50 },
+                  layoutStyle: { borderRadius: LengthMetrics.vp(10), margin: LengthMetrics.vp(10), padding: LengthMetrics.vp(10) },
+                  verticalAlign: ImageSpanAlignment.BASELINE,
+                  objectFit: ImageFit.Contain,
+                  syncLoad: true
+                } as AttachmentType))
+                this.controller.setStyledString(this.mutableStr)
               }
             })
           Button('setImage2')
             .id('setImage2')
             .onClick((e: ClickEvent) => {
               if (this.imagePixelMap !== undefined) {
-                // this.mutableStr = new MutableStyledString(new ImageAttachment({
-                //   resourceValue: $r('app.media.icon'), //建议使用自定义的本地图片
-                //   size: { width: 50, height: 50 },
-                //   layoutStyle: { borderRadius: LengthMetrics.vp(10), margin: LengthMetrics.vp(-10), padding: LengthMetrics.vp(-10) },
-                //   verticalAlign: ImageSpanAlignment.BASELINE,
-                //   objectFit: ImageFit.Contain,
-                //   syncLoad: true
-                // } ))
-                // this.controller.setStyledString(this.mutableStr)
+                this.mutableStr = new MutableStyledString(new ImageAttachment({
+                  resourceValue: $r('app.media.icon'), //建议使用自定义的本地图片
+                  size: { width: 50, height: 50 },
+                  layoutStyle: { borderRadius: LengthMetrics.vp(10), margin: LengthMetrics.vp(-10), padding: LengthMetrics.vp(-10) },
+                  verticalAlign: ImageSpanAlignment.BASELINE,
+                  objectFit: ImageFit.Contain,
+                  syncLoad: true
+                }  as AttachmentType ))
+                this.controller.setStyledString(this.mutableStr)
               }
             })
         }.height('5%')
@@ -133,30 +133,30 @@ struct styled_string_imageAttachment {
             .id('setImage3')
             .onClick((e: ClickEvent) => {
               if (this.imagePixelMap !== undefined) {
-                // this.mutableStr = new MutableStyledString(new ImageAttachment({
-                //   resourceValue: $r('app.media.icon'), //建议使用自定义的本地图片
-                //   size: { width: 50, height: 50 },
-                //   layoutStyle: { borderRadius: LengthMetrics.vp(10), margin: undefined, padding: undefined },
-                //   verticalAlign: ImageSpanAlignment.BASELINE,
-                //   objectFit: ImageFit.Contain,
-                //   syncLoad: true
-                // }  ))
-                // this.controller.setStyledString(this.mutableStr)
+                this.mutableStr = new MutableStyledString(new ImageAttachment({
+                  resourceValue: $r('app.media.icon'), //建议使用自定义的本地图片
+                  size: { width: 50, height: 50 },
+                  layoutStyle: { borderRadius: LengthMetrics.vp(10), margin: undefined, padding: undefined },
+                  verticalAlign: ImageSpanAlignment.BASELINE,
+                  objectFit: ImageFit.Contain,
+                  syncLoad: true
+                }  as AttachmentType ))
+                this.controller.setStyledString(this.mutableStr)
               }
             })
           Button('setImage4')
             .id('setImage4')
             .onClick((e: ClickEvent) => {
               if (this.imagePixelMap !== undefined) {
-                // this.mutableStr = new MutableStyledString(new ImageAttachment({
-                //   resourceValue: $r('app.media.icon'), //建议使用自定义的本地图片
-                //   size: { width: 50, height: 50 },
-                //   layoutStyle: { borderRadius: LengthMetrics.vp(10), margin: {top: 10, right: 10, bottom: 10, left: 10}, padding: {top: 10, right: 10, bottom: 10, left: 10} },
-                //   verticalAlign: ImageSpanAlignment.BASELINE,
-                //   objectFit: ImageFit.Contain,
-                //   syncLoad: true
-                // } ))
-                // this.controller.setStyledString(this.mutableStr)
+                this.mutableStr = new MutableStyledString(new ImageAttachment({
+                  resourceValue: $r('app.media.icon'), //建议使用自定义的本地图片
+                  size: { width: 50, height: 50 },
+                  layoutStyle: { borderRadius: LengthMetrics.vp(10), margin: {top: 10, right: 10, bottom: 10, left: 10}, padding: {top: 10, right: 10, bottom: 10, left: 10} },
+                  verticalAlign: ImageSpanAlignment.BASELINE,
+                  objectFit: ImageFit.Contain,
+                  syncLoad: true
+                }  as AttachmentType))
+                this.controller.setStyledString(this.mutableStr)
               }
             })
         }.height('5%')
@@ -166,32 +166,32 @@ struct styled_string_imageAttachment {
             .id('setImage5')
             .onClick((e: ClickEvent) => {
               if (this.imagePixelMap !== undefined) {
-                // this.mutableStr = new MutableStyledString(new ImageAttachment({
-                //   resourceValue: $r('app.media.icon'), //建议使用自定义的本地图片
-                //   size: { width: 50, height: 50 },
-                //   layoutStyle: { borderRadius: LengthMetrics.vp(10), margin: {top: -10, right: -10, bottom: -10, left: -10}, padding: {top: -10, right: -10, bottom: -10, left: -10} },
-                //   verticalAlign: ImageSpanAlignment.BASELINE,
-                //   objectFit: ImageFit.Contain,
-                //   syncLoad: true
-                // } ))
-                // this.controller.setStyledString(this.mutableStr)
+                this.mutableStr = new MutableStyledString(new ImageAttachment({
+                  resourceValue: $r('app.media.icon'), //建议使用自定义的本地图片
+                  size: { width: 50, height: 50 },
+                  layoutStyle: { borderRadius: LengthMetrics.vp(10), margin: {top: -10, right: -10, bottom: -10, left: -10}, padding: {top: -10, right: -10, bottom: -10, left: -10} },
+                  verticalAlign: ImageSpanAlignment.BASELINE,
+                  objectFit: ImageFit.Contain,
+                  syncLoad: true
+                } ))
+                this.controller.setStyledString(this.mutableStr)
               }
             })
           Button('setImage6')
             .id('setImage6')
             .onClick((e: ClickEvent) => {
               if (this.imagePixelMap !== undefined) {
-                //       this.mutableStr = new MutableStyledString(new ImageAttachment({
-                //         resourceValue: $r('app.media.icon'), //建议使用自定义的本地图片
-                //         size: { width: 50, height: 50 },
-                //         layoutStyle: { borderRadius: LengthMetrics.vp(10), margin: {top: undefined, right: undefined, bottom: undefined, left: undefined}, padding:
-                //   {top: undefined, right: undefined, bottom: undefined, left: undefined}
-                // },
-                //         verticalAlign: ImageSpanAlignment.BASELINE,
-                //         objectFit: ImageFit.Contain,
-                //         syncLoad: true
-                //       } ))
-                //       this.controller.setStyledString(this.mutableStr)
+                      this.mutableStr = new MutableStyledString(new ImageAttachment({
+                        resourceValue: $r('app.media.icon'), //建议使用自定义的本地图片
+                        size: { width: 50, height: 50 },
+                        layoutStyle: { borderRadius: LengthMetrics.vp(10), margin: {top: undefined, right: undefined, bottom: undefined, left: undefined}, padding:
+                  {top: undefined, right: undefined, bottom: undefined, left: undefined}
+                },
+                        verticalAlign: ImageSpanAlignment.BASELINE,
+                        objectFit: ImageFit.Contain,
+                        syncLoad: true
+                      } ))
+                      this.controller.setStyledString(this.mutableStr)
               }
             })
         }.height('5%')

@@ -88,7 +88,7 @@ export default function LayoutInspectorTest() {
 it('ISLAYOUT_INSPECTOR_static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('ISLAYOUT_INSPECTOR_0100 START');
       
-      let testStr: string = AppStorage.get<UIContext>("UIContext")!.getFilteredInspectorTree(['isLayoutInspector'])
+      let testStr: string = AppStorage.get<UIContext>("uiContext")!.getFilteredInspectorTree(['isLayoutInspector'])
       console.info("ISLAYOUT_INSPECTOR_0100 testStr: " + testStr);
       console.info('ISLAYOUT_INSPECTOR_0100 content' + JSON.parseJsonElement(testStr).getString("content"));
       
@@ -109,7 +109,7 @@ it('ISLAYOUT_INSPECTOR_static_0100', Level.LEVEL1, async (done: () => void): Pro
 it('ISLAYOUT_INSPECTOR_static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("ISLAYOUT_INSPECTOR_0200 start: ");
       
-      let testStr: string = AppStorage.get<UIContext>("UIContext")!.getFilteredInspectorTree(['content'])
+      let testStr: string = AppStorage.get<UIContext>("uiContext")!.getFilteredInspectorTree(['content'])
       console.info("ISLAYOUT_INSPECTOR_0200 testStr: " + testStr);
       console.info('ISLAYOUT_INSPECTOR_0200 content' + JSON.parseJsonElement(testStr).getString("content"));
       

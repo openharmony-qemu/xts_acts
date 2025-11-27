@@ -15,11 +15,20 @@
  */
 import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight,VerticalAlign,
   Row, ClickEvent, Margin, Builder, PixelMap, Blank, ImageContent,Resource,
-  Image,ButtonType, WrappedBuilder, ContentModifier, MenuItemConfiguration,
-  Color, Select, Path, $r} from '@ohos.arkui.component'
+  Image,ButtonType, WrappedBuilder, ContentModifier, MenuItemConfiguration,wrapBuilder,
+  Color, Select, Path, $r,CustomBuilderT} from '@ohos.arkui.component'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { State } from '@ohos.arkui.stateManagement'
 
+class MyMenuItemContentModifier implements ContentModifier<MenuItemConfiguration> {
+  modifierText: string = ""
+  constructor(text: string) {
+    this.modifierText = text;
+  }
+  applyContent(): WrappedBuilder<CustomBuilderT<MenuItemConfiguration>> {
+    return wrapBuilder<CustomBuilderT<MenuItemConfiguration>>(MenuItemBuilder)
+  }
+}
 
 @Builder
 function MenuItemBuilder(configuration: MenuItemConfiguration) {
@@ -28,9 +37,11 @@ function MenuItemBuilder(configuration: MenuItemConfiguration) {
     Blank()
     Image(configuration.icon as PixelMap|ImageContent|String|Resource).size({ width: 40, height: 40 })
     Blank(30)
+    Text((configuration.contentModifier as MyMenuItemContentModifier).modifierText)
     Path()
       .width('100px')
       .height('150px')
+      .commands('M40 0 L80 100 L0 100 Z')
       .fillOpacity(0)
       .stroke(Color.Black)
       .strokeWidth(3)
@@ -58,6 +69,7 @@ struct triggerSelectExample {
             console.info('Select index:' + index)
             console.info('Select text:' + text)
           })
+          .menuItemContentModifier(new MyMenuItemContentModifier("我来自Modifier"))
           .id("SelectClick")
 
       }.alignItems(VerticalAlign.Center).height("50%")

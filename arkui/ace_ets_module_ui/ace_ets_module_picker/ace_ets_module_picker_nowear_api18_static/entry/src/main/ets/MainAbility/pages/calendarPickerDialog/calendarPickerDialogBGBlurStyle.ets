@@ -19,8 +19,9 @@ import { State } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct CalendarPickerDialogBGBlurStyle {
-  showDialog(style: BlurStyle | null | undefined) {
+  showDialog(style: BlurStyle | null | undefined | int) {
     CalendarPickerDialog.show({
+      backgroundBlurStyle: (style as BlurStyle|undefined),
     })
   }
   build() {
@@ -103,10 +104,12 @@ struct CalendarPickerDialogBGBlurStyle {
         .id('undefinedID')
       Button('100')
         .onClick((e: ClickEvent) => {
+          this.showDialog(100)
         })
         .id('100ID')
       Button('-100')
         .onClick((e: ClickEvent) => {
+          this.showDialog(-100)
         })
         .id('-100ID')
     }.width('100%')

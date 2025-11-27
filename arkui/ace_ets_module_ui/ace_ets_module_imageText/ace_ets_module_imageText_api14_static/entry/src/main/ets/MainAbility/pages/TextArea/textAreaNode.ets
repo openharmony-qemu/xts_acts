@@ -42,7 +42,7 @@ class MyNodeController extends NodeController {
   makeNode(uiContext: UIContext): FrameNode | null {
     let node = new FrameNode(uiContext)
     let col = typeNode.createColumnNode(uiContext)
-    // col.initialize({ space: 10 } as ColumnOptions).borderColor(Color.Black).alignItems(HorizontalAlign.Center)
+    col.initialize({ space: 10 } as ColumnOptions).borderColor(Color.Black).alignItems(HorizontalAlign.Center)
 
     let textArea = typeNode.createTextAreaNode(uiContext)
     textArea.initialize(undefined)
@@ -71,7 +71,7 @@ class MyNodeController extends NodeController {
       controller2.stopEditing();
     })
     let row = typeNode.createRowNode(uiContext)
-    // row.initialize().width('100%')
+    row.initialize().width('100%')
     row.appendChild(bt1);
     row.appendChild(bt2);
     row.appendChild(bt3);

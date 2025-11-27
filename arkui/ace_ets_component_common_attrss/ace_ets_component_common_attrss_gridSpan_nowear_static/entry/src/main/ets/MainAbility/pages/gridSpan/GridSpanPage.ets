@@ -15,7 +15,7 @@
  */
 
 import { MessageManager, Callback, Message } from '../../common/MessageManager';
-import animator, { AnimatorResult, AnimatorOptions, PlayMode } from '@ohos.animator';
+import animator, { AnimatorResult, AnimatorOptions } from '@ohos.animator';
 import {ListItemGroup,BreakpointsReference,BreakPoints,GridRowOptions,GutterOption,TextTimerController,TabContent,FlowItem,ColumnOptions,SideBarContainerType,HorizontalAlign,VerticalAlign,AlignRuleOption,
   BadgeParam,BadgeStyle,GridColColumnOption,GridColOptions,GridItem,GridCol,GridRowDirection,MenuItemGroup,
   ToggleType,TimePicker,StepperItem,SliderStyle,FlexDirection,ProgressType,Divider,ScrollBar,BadgeParamWithNumber,CommonMethod,applyStyles,
@@ -27,13 +27,13 @@ import {ListItemGroup,BreakpointsReference,BreakPoints,GridRowOptions,GutterOpti
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage, StorageProp } from '@ohos.arkui.stateManagement';
+import { AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router';
 import { RouterParams } from '../../common/Utils';
 @Entry
 @Component
 struct GridSpanPage {
-  @StorageProp('_gridSpan') _gridSpan: number = 1
+  @StoragePropRef('_gridSpan') _gridSpan: number = 1
   @State targetView: string = '';
   @State componentKey: string ='';
   @State parentWidth: number = 0;
@@ -43,7 +43,6 @@ struct GridSpanPage {
 
   onPageShow() {
     console.info('gridSpan page show called ')
-    AppStorage.setOrCreate<number>('_gridSpan', 1)
     try {
       let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       console.log('routerParamOptions==========' + JSON.stringify(routerParamOptions))
@@ -62,9 +61,9 @@ struct GridSpanPage {
 
   }
   commonStyle(instance: CommonMethod){
-    //instance.gridSpan(this._gridSpan)
+    // instance.gridSpan(this._gridSpan)
     instance.height('100%')
-    //instance.key(this.componentKey)
+    instance.key(this.componentKey)
   }
 
   build() {
@@ -255,16 +254,7 @@ struct GridSpanPage {
               .applyStyles(this.commonStyle)
 
             } else if (this.targetView == 'NavRouter') {
-              // NavRouter() {
-              //   Row() {
-              //     Image($r('app.media.icon'))
-              //   }
-              //
-              //   NavDestination() {
-              //     Text('NavDestination').fontSize(10)
-              //   }
-              // }
-              //.applyStyles(this.commonStyle)
+
 
             } else if (this.targetView == 'Progress') {
               Progress({ value: 10, type: ProgressType.Eclipse })
@@ -471,16 +461,8 @@ struct GridSpanPage {
               .applyStyles(this.commonStyle)
               .width("100%").height("100%")
             } else if (this.targetView == 'Navigator') {
-              // Navigator() {
-              //   Text('Go to back page').width('100%').height(20)
-              // }
-              //.applyStyles(this.commonStyle)
-              // .backgroundColor(Color.Red)
+
             } else if (this.targetView == 'Panel') {
-              // Panel(true) {
-              //   Text('Text')
-              // }.backgroundColor(Color.Yellow)
-              //.applyStyles(this.commonStyle)
 
             } else if (this.targetView == 'Refresh') {
               Refresh({ refreshing: true }) {

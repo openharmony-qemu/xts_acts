@@ -92,29 +92,29 @@ export default function ImageAttachment() {
       await CommonFunc.sleep(500);
       get!.click();
       await CommonFunc.sleep(500);
-      console.info('StyledString ImageAttachment_static_0001_static marginTop ' + AppStorage.get<number>('marginTop'));
-      expect('' + AppStorage.get<number>('marginTop')).assertEqual('10');
+      console.info('StyledString ImageAttachment_static_0001_static marginTop ' + AppStorage.get<string>('marginTop'));
+      expect('' + AppStorage.get<string>('marginTop')).assertEqual('10');
       console.info('StyledString ImageAttachment_static_0001_static marginRight ' +
-      AppStorage.get<number>('marginRight'));
-      expect('' + AppStorage.get<number>('marginRight')).assertEqual('10');
+      AppStorage.get<string>('marginRight'));
+      expect('' + AppStorage.get<string>('marginRight')).assertEqual('10');
       console.info('StyledString ImageAttachment_static_0001_static marginBottom ' +
-      AppStorage.get<number>('marginBottom'));
-      expect('' + AppStorage.get<number>('marginBottom')).assertEqual('10');
+      AppStorage.get<string>('marginBottom'));
+      expect('' + AppStorage.get<string>('marginBottom')).assertEqual('10');
       console.info('StyledString ImageAttachment_static_0001_static marginLeft ' +
-      AppStorage.get<number>('marginLeft'));
-      expect('' + AppStorage.get<number>('marginLeft')).assertEqual('10');
+      AppStorage.get<string>('marginLeft'));
+      expect('' + AppStorage.get<string>('marginLeft')).assertEqual('10');
       console.info('StyledString ImageAttachment_static_0001_static paddingTop ' +
-      AppStorage.get<number>('paddingTop'));
-      expect('' + AppStorage.get<number>('paddingTop')).assertEqual('10');
+      AppStorage.get<string>('paddingTop'));
+      expect('' + AppStorage.get<string>('paddingTop')).assertEqual('10');
       console.info('StyledString ImageAttachment_static_0001_static paddingRight ' +
-      AppStorage.get<number>('paddingRight'));
-      expect('' + AppStorage.get<number>('paddingRight')).assertEqual('10');
+      AppStorage.get<string>('paddingRight'));
+      expect('' + AppStorage.get<string>('paddingRight')).assertEqual('10');
       console.info('StyledString ImageAttachment_static_0001_static paddingBottom ' +
-      AppStorage.get<number>('paddingBottom'));
-      expect('' + AppStorage.get<number>('paddingBottom')).assertEqual('10');
+      AppStorage.get<string>('paddingBottom'));
+      expect('' + AppStorage.get<string>('paddingBottom')).assertEqual('10');
       console.info('StyledString ImageAttachment_static_0001_static paddingLeft ' +
-      AppStorage.get<number>('paddingLeft'));
-      expect('' + AppStorage.get<number>('paddingLeft')).assertEqual('10');
+      AppStorage.get<string>('paddingLeft'));
+      expect('' + AppStorage.get<string>('paddingLeft')).assertEqual('10');
       AppStorage.delete('marginTop')
       AppStorage.delete('marginRight')
       AppStorage.delete('marginBottom')
@@ -147,29 +147,29 @@ export default function ImageAttachment() {
       await CommonFunc.sleep(500);
       get!.click()
       await CommonFunc.sleep(500);
-      console.info('StyledString ImageAttachment_static_0002_static marginTop ' + AppStorage.get<number>('marginTop'));
-      expect('' + AppStorage.get<number>('marginTop')).assertEqual('0');
+      console.info('StyledString ImageAttachment_static_0002_static marginTop ' + AppStorage.get<string>('marginTop'));
+      expect('' + AppStorage.get<string>('marginTop')).assertEqual('0');
       console.info('StyledString ImageAttachment_static_0002_static marginRight ' +
-      AppStorage.get<number>('marginRight'));
-      expect('' + AppStorage.get<number>('marginRight')).assertEqual('0');
+      AppStorage.get<string>('marginRight'));
+      expect('' + AppStorage.get<string>('marginRight')).assertEqual('0');
       console.info('StyledString ImageAttachment_static_0002_static marginBottom ' +
-      AppStorage.get<number>('marginBottom'));
-      expect('' + AppStorage.get<number>('marginBottom')).assertEqual('0');
+      AppStorage.get<string>('marginBottom'));
+      expect('' + AppStorage.get<string>('marginBottom')).assertEqual('0');
       console.info('StyledString ImageAttachment_static_0002_static marginLeft ' +
-      AppStorage.get<number>('marginLeft'));
-      expect('' + AppStorage.get<number>('marginLeft')).assertEqual('0');
+      AppStorage.get<string>('marginLeft'));
+      expect('' + AppStorage.get<string>('marginLeft')).assertEqual('0');
       console.info('StyledString ImageAttachment_static_0002_static paddingTop ' +
-      AppStorage.get<number>('paddingTop'));
-      expect('' + AppStorage.get<number>('paddingTop')).assertEqual('0');
+      AppStorage.get<string>('paddingTop'));
+      expect('' + AppStorage.get<string>('paddingTop')).assertEqual('0');
       console.info('StyledString ImageAttachment_static_0002_static paddingRight ' +
-      AppStorage.get<number>('paddingRight'));
-      expect('' + AppStorage.get<number>('paddingRight')).assertEqual('0');
+      AppStorage.get<string>('paddingRight'));
+      expect('' + AppStorage.get<string>('paddingRight')).assertEqual('0');
       console.info('StyledString ImageAttachment_static_0002_static paddingBottom ' +
-      AppStorage.get<number>('paddingBottom'));
-      expect('' + AppStorage.get<number>('paddingBottom')).assertEqual('0');
+      AppStorage.get<string>('paddingBottom'));
+      expect('' + AppStorage.get<string>('paddingBottom')).assertEqual('0');
       console.info('StyledString ImageAttachment_static_0002_static paddingLeft ' +
-      AppStorage.get<number>('paddingLeft'));
-      expect('' + AppStorage.get<number>('paddingLeft')).assertEqual('0');
+      AppStorage.get<string>('paddingLeft'));
+      expect('' + AppStorage.get<string>('paddingLeft')).assertEqual('0');
       AppStorage.delete('marginTop')
       AppStorage.delete('marginRight')
       AppStorage.delete('marginBottom')
@@ -202,29 +202,29 @@ export default function ImageAttachment() {
       await CommonFunc.sleep(500);
       get!.click()
       await CommonFunc.sleep(500);
-      console.info('StyledString ImageAttachment_static_0003_static marginTop ' + AppStorage.get<number>('marginTop'));
-      expect('' + AppStorage.get<number>('marginTop')).assertEqual('0');
+      console.info('StyledString ImageAttachment_static_0003_static marginTop ' + AppStorage.get<string>('marginTop'));
+      expect('' + AppStorage.get<string>('marginTop')).assertEqual('0');
       console.info('StyledString ImageAttachment_static_0003_static marginRight ' +
-      AppStorage.get<number>('marginRight'));
-      expect('' + AppStorage.get<number>('marginRight')).assertEqual('0');
+      AppStorage.get<string>('marginRight'));
+      expect('' + AppStorage.get<string>('marginRight')).assertEqual('0');
       console.info('StyledString ImageAttachment_static_0003_static marginBottom ' +
-      AppStorage.get<number>('marginBottom'));
-      expect('' + AppStorage.get<number>('marginBottom')).assertEqual('0');
+      AppStorage.get<string>('marginBottom'));
+      expect('' + AppStorage.get<string>('marginBottom')).assertEqual('0');
       console.info('StyledString ImageAttachment_static_0003_static marginLeft ' +
-      AppStorage.get<number>('marginLeft'));
-      expect('' + AppStorage.get<number>('marginLeft')).assertEqual('0');
+      AppStorage.get<string>('marginLeft'));
+      expect('' + AppStorage.get<string>('marginLeft')).assertEqual('0');
       console.info('StyledString ImageAttachment_static_0003_static paddingTop ' +
-      AppStorage.get<number>('paddingTop'));
-      expect('' + AppStorage.get<number>('paddingTop')).assertEqual('0');
+      AppStorage.get<string>('paddingTop'));
+      expect('' + AppStorage.get<string>('paddingTop')).assertEqual('0');
       console.info('StyledString ImageAttachment_static_0003_static paddingRight ' +
-      AppStorage.get<number>('paddingRight'));
-      expect('' + AppStorage.get<number>('paddingRight')).assertEqual('0');
+      AppStorage.get<string>('paddingRight'));
+      expect('' + AppStorage.get<string>('paddingRight')).assertEqual('0');
       console.info('StyledString ImageAttachment_static_0003_static paddingBottom ' +
-      AppStorage.get<number>('paddingBottom'));
-      expect('' + AppStorage.get<number>('paddingBottom')).assertEqual('0');
+      AppStorage.get<string>('paddingBottom'));
+      expect('' + AppStorage.get<string>('paddingBottom')).assertEqual('0');
       console.info('StyledString ImageAttachment_static_0003_static paddingLeft ' +
-      AppStorage.get<number>('paddingLeft'));
-      expect('' + AppStorage.get<number>('paddingLeft')).assertEqual('0');
+      AppStorage.get<string>('paddingLeft'));
+      expect('' + AppStorage.get<string>('paddingLeft')).assertEqual('0');
       AppStorage.delete('marginTop')
       AppStorage.delete('marginRight')
       AppStorage.delete('marginBottom')
@@ -257,29 +257,29 @@ export default function ImageAttachment() {
       await CommonFunc.sleep(500);
       get!.click()
       await CommonFunc.sleep(500);
-      console.info('StyledString ImageAttachment_static_0004_static marginTop ' + AppStorage.get<number>('marginTop'));
-      expect('' + AppStorage.get<number>('marginTop')).assertEqual('10');
+      console.info('StyledString ImageAttachment_static_0004_static marginTop ' + AppStorage.get<string>('marginTop'));
+      expect('' + AppStorage.get<string>('marginTop')).assertEqual('10');
       console.info('StyledString ImageAttachment_static_0004_static marginRight ' +
-      AppStorage.get<number>('marginRight'));
-      expect('' + AppStorage.get<number>('marginRight')).assertEqual('10');
+      AppStorage.get<string>('marginRight'));
+      expect('' + AppStorage.get<string>('marginRight')).assertEqual('10');
       console.info('StyledString ImageAttachment_static_0004_static marginBottom ' +
-      AppStorage.get<number>('marginBottom'));
-      expect('' + AppStorage.get<number>('marginBottom')).assertEqual('10');
+      AppStorage.get<string>('marginBottom'));
+      expect('' + AppStorage.get<string>('marginBottom')).assertEqual('10');
       console.info('StyledString ImageAttachment_static_0004_static marginLeft ' +
-      AppStorage.get<number>('marginLeft'));
-      expect('' + AppStorage.get<number>('marginLeft')).assertEqual('10');
+      AppStorage.get<string>('marginLeft'));
+      expect('' + AppStorage.get<string>('marginLeft')).assertEqual('10');
       console.info('StyledString ImageAttachment_static_0004_static paddingTop ' +
-      AppStorage.get<number>('paddingTop'));
-      expect('' + AppStorage.get<number>('paddingTop')).assertEqual('10');
+      AppStorage.get<string>('paddingTop'));
+      expect('' + AppStorage.get<string>('paddingTop')).assertEqual('10');
       console.info('StyledString ImageAttachment_static_0004_static paddingRight ' +
-      AppStorage.get<number>('paddingRight'));
-      expect('' + AppStorage.get<number>('paddingRight')).assertEqual('10');
+      AppStorage.get<string>('paddingRight'));
+      expect('' + AppStorage.get<string>('paddingRight')).assertEqual('10');
       console.info('StyledString ImageAttachment_static_0004_static paddingBottom ' +
-      AppStorage.get<number>('paddingBottom'));
-      expect('' + AppStorage.get<number>('paddingBottom')).assertEqual('10');
+      AppStorage.get<string>('paddingBottom'));
+      expect('' + AppStorage.get<string>('paddingBottom')).assertEqual('10');
       console.info('StyledString ImageAttachment_static_0004_static paddingLeft ' +
-      AppStorage.get<number>('paddingLeft'));
-      expect('' + AppStorage.get<number>('paddingLeft')).assertEqual('10');
+      AppStorage.get<string>('paddingLeft'));
+      expect('' + AppStorage.get<string>('paddingLeft')).assertEqual('10');
       AppStorage.delete('marginTop')
       AppStorage.delete('marginRight')
       AppStorage.delete('marginBottom')
@@ -312,29 +312,29 @@ export default function ImageAttachment() {
       await CommonFunc.sleep(500);
       get!.click()
       await CommonFunc.sleep(500);
-      console.info('StyledString ImageAttachment_static_0005_static marginTop ' + AppStorage.get<number>('marginTop'));
-      expect('' + AppStorage.get<number>('marginTop')).assertEqual('0');
+      console.info('StyledString ImageAttachment_static_0005_static marginTop ' + AppStorage.get<string>('marginTop'));
+      expect('' + AppStorage.get<string>('marginTop')).assertEqual('0');
       console.info('StyledString ImageAttachment_static_0005_static marginRight ' +
-      AppStorage.get<number>('marginRight'));
-      expect('' + AppStorage.get<number>('marginRight')).assertEqual('0');
+      AppStorage.get<string>('marginRight'));
+      expect('' + AppStorage.get<string>('marginRight')).assertEqual('0');
       console.info('StyledString ImageAttachment_static_0005_static marginBottom ' +
-      AppStorage.get<number>('marginBottom'));
-      expect('' + AppStorage.get<number>('marginBottom')).assertEqual('0');
+      AppStorage.get<string>('marginBottom'));
+      expect('' + AppStorage.get<string>('marginBottom')).assertEqual('0');
       console.info('StyledString ImageAttachment_static_0005_static marginLeft ' +
-      AppStorage.get<number>('marginLeft'));
-      expect('' + AppStorage.get<number>('marginLeft')).assertEqual('0');
+      AppStorage.get<string>('marginLeft'));
+      expect('' + AppStorage.get<string>('marginLeft')).assertEqual('0');
       console.info('StyledString ImageAttachment_static_0005_static paddingTop ' +
-      AppStorage.get<number>('paddingTop'));
-      expect('' + AppStorage.get<number>('paddingTop')).assertEqual('0');
+      AppStorage.get<string>('paddingTop'));
+      expect('' + AppStorage.get<string>('paddingTop')).assertEqual('0');
       console.info('StyledString ImageAttachment_static_0005_static paddingRight ' +
-      AppStorage.get<number>('paddingRight'));
-      expect('' + AppStorage.get<number>('paddingRight')).assertEqual('0');
+      AppStorage.get<string>('paddingRight'));
+      expect('' + AppStorage.get<string>('paddingRight')).assertEqual('0');
       console.info('StyledString ImageAttachment_static_0005_static paddingBottom ' +
-      AppStorage.get<number>('paddingBottom'));
-      expect('' + AppStorage.get<number>('paddingBottom')).assertEqual('0');
+      AppStorage.get<string>('paddingBottom'));
+      expect('' + AppStorage.get<string>('paddingBottom')).assertEqual('0');
       console.info('StyledString ImageAttachment_static_0005_static paddingLeft ' +
-      AppStorage.get<number>('paddingLeft'));
-      expect('' + AppStorage.get<number>('paddingLeft')).assertEqual('0');
+      AppStorage.get<string>('paddingLeft'));
+      expect('' + AppStorage.get<string>('paddingLeft')).assertEqual('0');
       AppStorage.delete('marginTop')
       AppStorage.delete('marginRight')
       AppStorage.delete('marginBottom')
@@ -367,29 +367,29 @@ export default function ImageAttachment() {
       await CommonFunc.sleep(500);
       get!.click()
       await CommonFunc.sleep(500);
-      console.info('StyledString ImageAttachment_static_0006_static marginTop ' + AppStorage.get<number>('marginTop'));
-      expect('' + AppStorage.get<number>('marginTop')).assertEqual('undefined');
+      console.info('StyledString ImageAttachment_static_0006_static marginTop ' + AppStorage.get<string>('marginTop'));
+      expect('' + AppStorage.get<string>('marginTop')).assertEqual('undefined');
       console.info('StyledString ImageAttachment_static_0006_static marginRight ' +
-      AppStorage.get<number>('marginRight'));
-      expect('' + AppStorage.get<number>('marginRight')).assertEqual('undefined');
+      AppStorage.get<string>('marginRight'));
+      expect('' + AppStorage.get<string>('marginRight')).assertEqual('undefined');
       console.info('StyledString ImageAttachment_static_0006_static marginBottom ' +
-      AppStorage.get<number>('marginBottom'));
-      expect('' + AppStorage.get<number>('marginBottom')).assertEqual('undefined');
+      AppStorage.get<string>('marginBottom'));
+      expect('' + AppStorage.get<string>('marginBottom')).assertEqual('undefined');
       console.info('StyledString ImageAttachment_static_0006_static marginLeft ' +
-      AppStorage.get<number>('marginLeft'));
-      expect('' + AppStorage.get<number>('marginLeft')).assertEqual('undefined');
+      AppStorage.get<string>('marginLeft'));
+      expect('' + AppStorage.get<string>('marginLeft')).assertEqual('undefined');
       console.info('StyledString ImageAttachment_static_0006_static paddingTop ' +
-      AppStorage.get<number>('paddingTop'));
-      expect('' + AppStorage.get<number>('paddingTop')).assertEqual('undefined');
+      AppStorage.get<string>('paddingTop'));
+      expect('' + AppStorage.get<string>('paddingTop')).assertEqual('undefined');
       console.info('StyledString ImageAttachment_static_0006_static paddingRight ' +
-      AppStorage.get<number>('paddingRight'));
-      expect('' + AppStorage.get<number>('paddingRight')).assertEqual('undefined');
+      AppStorage.get<string>('paddingRight'));
+      expect('' + AppStorage.get<string>('paddingRight')).assertEqual('undefined');
       console.info('StyledString ImageAttachment_static_0006_static paddingBottom ' +
-      AppStorage.get<number>('paddingBottom'));
-      expect('' + AppStorage.get<number>('paddingBottom')).assertEqual('undefined');
+      AppStorage.get<string>('paddingBottom'));
+      expect('' + AppStorage.get<string>('paddingBottom')).assertEqual('undefined');
       console.info('StyledString ImageAttachment_static_0006_static paddingLeft ' +
-      AppStorage.get<number>('paddingLeft'));
-      expect('' + AppStorage.get<number>('paddingLeft')).assertEqual('undefined');
+      AppStorage.get<string>('paddingLeft'));
+      expect('' + AppStorage.get<string>('paddingLeft')).assertEqual('undefined');
       AppStorage.delete('marginTop')
       AppStorage.delete('marginRight')
       AppStorage.delete('marginBottom')

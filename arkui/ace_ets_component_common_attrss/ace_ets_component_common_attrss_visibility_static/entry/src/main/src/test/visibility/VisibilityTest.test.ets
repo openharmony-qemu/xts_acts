@@ -74,7 +74,6 @@ export default function visibilityTest() {
     'ColumnSplit',
     'Counter',
     'Flex',
-    //'FlowItem',
     'GridCol',
     'GridRow',
     'Grid',
@@ -119,15 +118,6 @@ export default function visibilityTest() {
 
 
   let testValues: TestValue[] = [
-    // {
-    //    describe: 'SetNone',
-    //    setValue: Visibility.None,
-    //    expectValue: {
-    //      visibility: 'Visibility.None',
-    //      width: 0,
-    //      height: 0
-    //    }
-    //  },
    {
     describe: 'SetHidden',
     setValue: Visibility.Hidden,

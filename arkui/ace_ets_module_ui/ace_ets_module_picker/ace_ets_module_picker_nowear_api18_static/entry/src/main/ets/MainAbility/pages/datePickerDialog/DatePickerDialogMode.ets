@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, DatePickerMode, Flex, FlexWrap, Button, Color, BlurStyle, ShadowStyle, ClickEvent, Margin } from '@ohos.arkui.component'
+import { Entry, Column, Component, AdaptiveColor, DatePickerMode, BlurStyleActivePolicy, Flex, FlexWrap, Button, Color, BlurStyle, ShadowStyle, ClickEvent, Margin } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
@@ -35,7 +35,7 @@ struct DatePickerDialogExample {
               this.selectedDate = value
             },
           })
-        }).id('DatePickerDialog_001')
+        }).id('DatePickerDialog_static_001')
       Button('2')
         .onClick((e: ClickEvent) => {
           this.getUIContext().showDatePickerDialog({
@@ -48,7 +48,7 @@ struct DatePickerDialogExample {
               this.selectedDate = value
             },
           })
-        }).id('DatePickerDialog_002')
+        }).id('DatePickerDialog_static_002')
       Button('3')
         .onClick((e: ClickEvent) => {
           this.getUIContext().showDatePickerDialog({
@@ -61,7 +61,7 @@ struct DatePickerDialogExample {
               this.selectedDate = value
             },
           })
-        }).id('DatePickerDialog_003')
+        }).id('DatePickerDialog_static_003')
       Button('4')
         .onClick((e: ClickEvent) => {
           this.getUIContext().showDatePickerDialog({
@@ -74,7 +74,7 @@ struct DatePickerDialogExample {
               this.selectedDate = value
             },
           })
-        }).id('DatePickerDialog_004')
+        }).id('DatePickerDialog_static_004')
       Button('5')
         .onClick((e: ClickEvent) => {
           this.getUIContext().showDatePickerDialog({
@@ -86,7 +86,7 @@ struct DatePickerDialogExample {
               this.selectedDate = value
             },
           })
-        }).id('DatePickerDialog_005')
+        }).id('DatePickerDialog_static_005')
       Button('6')
         .onClick((e: ClickEvent) => {
           this.getUIContext().showDatePickerDialog({
@@ -98,7 +98,7 @@ struct DatePickerDialogExample {
               this.selectedDate = value
             },
           })
-        }).id('DatePickerDialog_006')
+        }).id('DatePickerDialog_static_006')
       Button('7')
         .onClick((e: ClickEvent) => {
           this.getUIContext().showDatePickerDialog({
@@ -110,7 +110,7 @@ struct DatePickerDialogExample {
               this.selectedDate = value
             },
           })
-        }).id('DatePickerDialog_007')
+        }).id('DatePickerDialog_static_007')
     }.width('100%')
   }
 }

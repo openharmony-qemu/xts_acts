@@ -50,7 +50,7 @@ export default function testsuite() {
   ImageSpanModifierTest()//11.17SDK pass:2
   MarqueeModifierTest()//11.17SDK pass:2
   RichEditorModifierTest()//11.17SDK pass:2
-  RichTextModifierTest()//11.17SDK pass:1 failed:1  RichText默认width480，断言200
+  RichTextModifierTest()//11.17SDK pass:1 failed:1  RichText默认width480，断言200 外领域
   SymbolSpanModifierTest()//11.17SDK pass:2
   TextInputModifierTest()//11.17SDK pass:2
   ImageAttachment()//11.17SDK pass:1 failed:5  ImageAttachment接口编译报错

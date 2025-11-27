@@ -22,47 +22,46 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 struct ColumnSpaceResourcePage {
   build() {
     Column({ space: 2 } as ColumnOptions) {
-      
-      Column({ space: $r("app.string.stringSpace").toString() } as ColumnOptions) {
+      Column({ space: '10' } as ColumnOptions) {
         Column() {
           Text('1')
-        }.width('90%').height('20%').backgroundColor(0xAFEEEE).id('ColumnSpaceResource_Column1_01')
+        }.width('90%').height('20%').id('ColumnSpaceResource_Column1_01')
 
         Column() {
           Text('2')
-        }.width('90%').height('20%').backgroundColor(0x00FFFF).id('ColumnSpaceResource_Column1_02')
+        }.width('90%').height('20%').id('ColumnSpaceResource_Column1_02')
 
         Column() {
           Text('3')
-        }.width('90%').height('20%').backgroundColor(0xAFEEEE).id('ColumnSpaceResource_Column1_03')
+        }.width('90%').height('20%').id('ColumnSpaceResource_Column1_03')
       }.width('90%').height('30%').backgroundColor(Color.Pink).id('ColumnSpaceResource_Column1')
 
-      Column({ space: $r("app.integer.integerSpace").toString() } as ColumnOptions) {
+      Column({ space: 10 } as ColumnOptions) {
         Column() {
           Text('1')
-        }.width('90%').height('20%').backgroundColor(0xAFEEEE).id('ColumnSpaceResource_Column2_01')
+        }.width('90%').height('20%').id('ColumnSpaceResource_Column2_01')
 
         Column() {
           Text('2')
-        }.width('90%').height('20%').backgroundColor(0x00FFFF).id('ColumnSpaceResource_Column2_02')
+        }.width('90%').height('20%').id('ColumnSpaceResource_Column2_02')
 
         Column() {
           Text('3')
-        }.width('90%').height('20%').backgroundColor(0xAFEEEE).id('ColumnSpaceResource_Column2_03')
+        }.width('90%').height('20%').id('ColumnSpaceResource_Column2_03')
       }.width('90%').height('30%').backgroundColor(Color.Pink).id('ColumnSpaceResource_Column2')
 
-      Column({ space: $r("app.float.floatSpace").toString() } as ColumnOptions) {
+      Column({ space: '10.9' } as ColumnOptions) {
         Column() {
           Text('1')
-        }.width('90%').height('20%').backgroundColor(0xAFEEEE).id('ColumnSpaceResource_Column3_01')
+        }.width('90%').height('20%').id('ColumnSpaceResource_Column3_01')
 
         Column() {
           Text('2')
-        }.width('90%').height('20%').backgroundColor(0x00FFFF).id('ColumnSpaceResource_Column3_02')
+        }.width('90%').height('20%').id('ColumnSpaceResource_Column3_02')
 
         Column() {
           Text('3')
-        }.width('90%').height('20%').backgroundColor(0xAFEEEE).id('ColumnSpaceResource_Column3_03')
+        }.width('90%').height('20%').id('ColumnSpaceResource_Column3_03')
       }.width('90%').height('30%').backgroundColor(Color.Pink).id('ColumnSpaceResource_Column3')
     }.width('100%').height('100%')
   }

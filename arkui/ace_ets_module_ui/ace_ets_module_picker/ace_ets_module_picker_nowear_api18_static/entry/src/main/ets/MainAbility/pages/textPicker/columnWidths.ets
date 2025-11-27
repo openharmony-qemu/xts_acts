@@ -20,6 +20,14 @@ import { State } from '@ohos.arkui.stateManagement'
 @Entry
 @Component
 struct TextPickerExample {
+  @State columnWidths1: (LengthMetrics)[] | undefined = [
+    LengthMetrics.vp(100)
+  ] as (LengthMetrics)[] | undefined
+  @State columnWidths2: (LengthMetrics)[] | undefined = [
+    LengthMetrics.vp(20),
+    LengthMetrics.vp(40),
+    LengthMetrics.vp(60)
+  ] as (LengthMetrics)[] | undefined
   @State message: string = 'mess'
   private apfruits: string[] = ['apple123456789', 'apple2', 'apple3', 'apple4']
   private orfruits: string[] = ['orange123456789', 'orange2', 'orange3', 'orange4']
@@ -28,12 +36,12 @@ struct TextPickerExample {
 
   build() {
           Column({ space: 10 } as ColumnOptions) {
-            TextPicker({ range: this.apfruits })
+            TextPicker({ range: this.apfruits, columnWidths: this.columnWidths1 })
               .id('columnWidths_001')
               .onChange((value: string | string[], index: int | int[]) => {
                 console.info('Picker item changed, value: ' + value + ', index: ' + index)
               })
-            TextPicker({ range: this.multi })
+            TextPicker({ range: this.multi, columnWidths: this.columnWidths2 })
               .id('columnWidths_002')
               .onChange((value: string | string[], index: int | int[]) => {
                 console.info('Picker item changed, value: ' + value + ', index: ' + index)

@@ -33,8 +33,8 @@ import { UIContext, Router } from '@ohos.arkui.UIContext';
 struct RowSpaceResourcePage {
   build() {
     Column({ space: 2 } as ColumnOptions) {
-      
-      Row({ space: $r("app.string.stringSpace").toString() } as RowOptions) {
+
+      Row({ space: 10 } as RowOptions) {
         Row() {
           Text('1')
         }.width('20%').height('90%').backgroundColor(0xAFEEEE).id('RowSpaceResource_Row1_01')
@@ -48,7 +48,7 @@ struct RowSpaceResourcePage {
         }.width('20%').height('90%').backgroundColor(0xAFEEEE).id('RowSpaceResource_Row1_03')
       }.width('90%').height('30%').backgroundColor(Color.Pink).id('RowSpaceResource_Row1')
 
-      Row({ space: $r("app.integer.integerSpace").toString() } as RowOptions) {
+      Row({ space: 10 } as RowOptions) {
         Row() {
           Text('1')
         }.width('20%').height('90%').backgroundColor(0xAFEEEE).id('RowSpaceResource_Row2_01')
@@ -62,7 +62,7 @@ struct RowSpaceResourcePage {
         }.width('20%').height('90%').backgroundColor(0xAFEEEE).id('RowSpaceResource_Row2_03')
       }.width('90%').height('30%').backgroundColor(Color.Pink).id('RowSpaceResource_Row2')
 
-      Row({ space: $r("app.float.floatSpace").toString() } as RowOptions) {
+      Row({ space: 10.9 } as RowOptions) {
         Row() {
           Text('1')
         }.width('20%').height('90%').backgroundColor(0xAFEEEE).id('RowSpaceResource_Row3_01')

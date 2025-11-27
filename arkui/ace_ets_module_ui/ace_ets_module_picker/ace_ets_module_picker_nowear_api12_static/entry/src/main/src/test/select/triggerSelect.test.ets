@@ -72,11 +72,11 @@ it('triggerSelect_static_0100', Level.LEVEL1, async (done: () => void): Promise<
       console.info('triggerSelect_static_0100 START');
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
-      let button = await driver.findComponent(ON.id('SelectClick')) as Component;
+      let button = await driver.findComponent(ON.id('SelectClick'));
       await button!.click();
       await CommonFunc.sleep(1000);
 
-      let value = await driver.findComponent(ON.id('RowValue')) as Component;
+      let value = await driver.findComponent(ON.id('RowValue'));
       await value!.click();
       await CommonFunc.sleep(1000);
 

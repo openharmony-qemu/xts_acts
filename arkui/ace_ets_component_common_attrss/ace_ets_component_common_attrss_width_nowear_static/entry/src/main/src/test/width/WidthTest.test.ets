@@ -36,15 +36,22 @@ let testAbilityContext:common.UIAbilityContext;
  * Test of common attribute: width
  */
 export default function widthTest() {
+  console.info("WidthTest beforeEach start");
+  await UtilsTest.msSleep(4000)
+  await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.width.nowear.test.static", "EntryAbility")
+  await UtilsTest.msSleep(4000)
+  console.info("WidthTest beforeEach start 111111111111");
+  const uiContext = AppStorage.get<UIContext>('uiContext')!
+
   //A list of components that support width attributes is required.
   let supportView = new Array<string>(
-    // 'Select',
-    //'Web',//外部组件不关注  备注Web领域用例，周硕结论暂不关注
-    // 'ColumnSplit',
-    // 'RowSplit',
-    // 'WaterFlow',
-    // 'Stepper',
-    // 'FlowItem'
+    'Select',
+   //'Web',//外部组件不关注  备注Web领域用例，周硕结论暂不关注
+    'ColumnSplit',
+    'RowSplit',
+    'WaterFlow',
+    'Stepper',
+    'FlowItem'
   )
   //The size of the parent component, when set as a percentage, serves as the calculation.
   let parentWidth = 300;
@@ -73,7 +80,7 @@ export default function widthTest() {
     },
     expectValue: {
       widthCompare: '400.00vp',
-      width: UIContext.getFocusedUIContext()!.vp2px(400), ExceedParent: true
+      width: uiContext.vp2px(400), ExceedParent: true
     }
   }, {
     describe: 'StringPercent',
@@ -82,7 +89,7 @@ export default function widthTest() {
     },
     expectValue: {
       widthCompare: '50.00%',
-      width: UIContext.getFocusedUIContext()!.vp2px(parentWidth) * 0.5
+      width: uiContext.vp2px(parentWidth) * 0.5
     }
   }, {
     describe: 'Resource',
@@ -91,7 +98,7 @@ export default function widthTest() {
     },
     expectValue: {
       widthCompare: '200.00vp',
-      width: UIContext.getFocusedUIContext()!.vp2px(200)
+      width: uiContext.vp2px(200)
     }
   }, {
     describe: 'StringPx',

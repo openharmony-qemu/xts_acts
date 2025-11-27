@@ -29,9 +29,9 @@ export default function testsuite() {
   RichEditorStyledStringTest();//11.17SDK  pass:1
   BarStateTest();//11.17SDK  pass:5
   EnableHapticFeedbackTest();//11.17SDK  pass:20
-  StyledStringUrl();
-  textAreaInputTest();
-  TextMenuType();
-  CustomSpan();
-  UnmarshallingErrorCodeTest();
+  StyledStringUrl();//11.17SDK  pass:1
+  textAreaInputTest();//11.17SDK  pass:1
+  TextMenuType();//11.17SDK  pass:2
+  CustomSpan();//11.17SDK  pass:1
+  UnmarshallingErrorCodeTest();//11.17SDK  failed:1 StyledString.unmarshalling(undefined)
 }

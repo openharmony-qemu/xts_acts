@@ -126,7 +126,7 @@ import {
 import {
   State,
   Link,
-  Prop,StorageProp
+  Prop,StoragePropRef
 } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router'
 import { AppStorage } from '@ohos.arkui.stateManagement'
@@ -137,7 +137,7 @@ import {RouterParams} from '../../common/Utils'
 @Entry
 @Component
 struct ZIndexPage {
-  @StorageProp("_zIndex") _zIndex: number = 0
+  @StoragePropRef("_zIndex") _zIndex: number = 0
   @State targetView: string = ''
   @State componentKey: string = ''
   @State targetComponentWidth: number = 0

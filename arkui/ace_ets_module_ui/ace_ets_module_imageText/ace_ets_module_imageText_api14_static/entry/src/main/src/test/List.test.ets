@@ -38,7 +38,7 @@ export default function testsuite() {
   getRectsForRangeTest();
 
   imageSpanJsunit();
-  MarqueeDynamicSyncSceneTest();
+  MarqueeDynamicSyncSceneTest();//11.17SDK failed:1
   SetFrameRateRangeTest();
   marqueeNode();
   SymbolGlyphNodeTest();
@@ -50,7 +50,7 @@ export default function testsuite() {
 
   ImageOrientation();
   onSubmitTest();
-  StyledString();
+  StyledString();//11.17SDK pass:1 failed:1
   StyledStringURL();
   KeyboardAvoidMode();
 }

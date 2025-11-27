@@ -50,7 +50,7 @@ export default function testsuite() {
   RichEditorTextStyle(); //11.13SDK:pass:6
   marqueeOptionsTest1(); //11.13SDK：pass：2
   marqueeOptionsTest2(); //11.13SDK：pass:1
-  addOrDelText(); //11.13SDK：pass:4 failed：4 004，005，006，007 4个用例涉及异常值
+  addOrDelText(); //11.13SDK：pass:4 failed：4 004，005，006，007 4个用例涉及异常值 删掉
   searchButton(); //11.13SDK：pass:1
   SearchStopBackPressTest(); //11.13SDK：pass:4
   TextAreaStopBackPressTest(); //11.13SDK：pass:4

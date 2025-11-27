@@ -126,15 +126,7 @@ export default function touchableTest() {
     describe: 'SetBlock',
     setValue: HitTestMode.Block,
     expectValue: 'HitTestMode.Block'
-  }/*,{
-    describe: 'SetTransparent',
-    setValue: HitTestMode.Transparent,
-    expectValue: 'HitTestMode.Transparent'
-  },{
-    describe: 'SetNone',
-    setValue: HitTestMode.None,
-    expectValue: 'HitTestMode.None'
-  }*/]
+  }]
 
   /**
    * Create test suite.

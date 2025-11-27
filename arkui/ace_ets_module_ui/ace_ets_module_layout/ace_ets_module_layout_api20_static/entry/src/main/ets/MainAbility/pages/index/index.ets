@@ -13,38 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import router from '@ohos.router';
-import {
-  Entry,
-  Column,
-  Component,
-  Flex,
-  FlexDirection,
-  ItemAlign,
-  FlexAlign,
-  Text,
-  Button,
-  FontWeight,
-  ButtonType,
-  ClickEvent,
-  Margin
-} from '@ohos.arkui.component'
-import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import { Hypium } from '../../../../../hypium/index'
-import testsuite from '../../../../src/test/List.test'
+import hilog from '@ohos.hilog';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-
+import { LengthMetrics, LengthUnit } from '@ohos.arkui.node';
+import { Entry, Component, Column, Image, Button, Edges, $r, ClickEvent, LocalizedEdges,
+  Flex, FlexDirection, ItemAlign, FlexAlign, Text, FontWeight, Margin, ButtonType } from '@ohos.arkui.component'
 
 @Entry
 @Component
 struct Index {
   aboutToAppear() {
-    console.info("start run testcase!!!!")
-    let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-    let abilityDelegatorArguments = abilityDelegatorRegistry.getArguments()
-    console.info('start run testcase!!!')
-    Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
+    try {
+      let router = this.getUIContext().getRouter();
+      AppStorage.setOrCreate<Router>('router', router);
+      AppStorage.setOrCreate<UIContext>('uiContext', this.getUIContext());
+    } catch (error: Error) {
+      console.log('error ' + error);
+    }
   }
 
   build() {

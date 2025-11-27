@@ -25,6 +25,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
+import inspector from '@ohos.arkui.inspector';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -80,9 +81,12 @@ export default function RichEditorOnWillChangeTest() {
       await driver.click(point.x, point.y);
       await CommonFunc.sleep(1000);
       await driver.triggerKey(2054);
-      let onWillChangeRange = await driver.findComponent(ON.id('onWillChange_range'));
-      let range = onWillChangeRange?.getText();
-      expect(range).assertEqual('[0, 0]');
+      // let onWillChangeRange = await driver.findComponent(ON.id('onWillChange_range'));
+      // let range = onWillChangeRange?.getText();
+      let range = inspector.getInspectorByKey('onWillChange_range');
+      let range1 = JSON.parseJsonElement(range)
+      console.info('[SUB_ACE_RichEditorOnWillChange_static_0010]11', range1.getElement('$attrs').getString('content'))
+      expect(range1.getElement('$attrs').getString('content')).assertEqual('[0, 0]');
       console.info('[SUB_ACE_RichEditorOnWillChange_0010] END');
       done();
     });

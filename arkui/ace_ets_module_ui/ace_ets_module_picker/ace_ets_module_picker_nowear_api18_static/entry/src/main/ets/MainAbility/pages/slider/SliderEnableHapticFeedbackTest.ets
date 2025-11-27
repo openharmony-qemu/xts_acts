@@ -23,7 +23,7 @@ struct SliderExample4 {
   @State showSteps: boolean = true
   @State flag: number = 1
   @State flag1: number = 1
-  @State outSetValueOne: double = 40
+  @State outSetValueOne: number = 40
 
   build() {
     Column({ space: 8 } as ColumnOptions) {
@@ -39,7 +39,7 @@ struct SliderExample4 {
           .showSteps(this.showSteps)
           .showTips(true)
           .enableHapticFeedback(this.enableHapticFeedback)
-          .onChange((value: double, mode: SliderChangeMode) => {
+          .onChange((value: number, mode: SliderChangeMode) => {
             this.outSetValueOne = value
             console.info('value:' + value + 'mode:' + mode.toString())
           })
