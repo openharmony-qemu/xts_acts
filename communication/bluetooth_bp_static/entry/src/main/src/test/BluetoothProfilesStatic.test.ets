@@ -33,15 +33,10 @@ let g_context: common.UIAbilityContext;
 
 function onReceiveEvent(data: baseProfile.StateChangeParam) {
     hilog.info(domain, tag, 'a2dp state = '+ JSON.stringify(data));
-}
-
-function onReceiveEvent1(data: baseProfile.StateChangeParam) {
-    hilog.info(domain, tag, 'connection StateChangeParam:'+ JSON.stringify(data));
     hilog.info(domain, tag, 'connection StateChangeParam deviceId:'+ data.deviceId);
     hilog.info(domain, tag, 'connection StateChangeParam state:'+ data.state);
     hilog.info(domain, tag, 'connection StateChangeParam cause:'+ data.cause);
 }
-
 export default function bluetoothProfilesTest() {
 
     describe("bluetoothProfilesTest", (): void => {
@@ -334,5 +329,155 @@ export default function bluetoothProfilesTest() {
             }
             done();
         })
+        /**
+         * @tc.number  onConnectionStateChangeTest_001
+         * @tc.name    onConnectionStateChangeTest_001
+         * @tc.desc    onConnectionStateChange_A2dpSourceProfile
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size:   MEDIUMTEST
+         */
+        it("onConnectionStateChangeTest_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let a2dpProfile: a2dp.A2dpSourceProfile = a2dp.createA2dpSrcProfile();
+                a2dpProfile.onConnectionStateChange(onReceiveEvent);
+                hilog.info(domain, tag, "a2dpProfile on connection state change success");
+                a2dpProfile.offConnectionStateChange(onReceiveEvent);
+                hilog.info(domain, tag, "a2dpProfile off connection state change success");
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag, "a2dpProfile on/off connection state change is failed, errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  onConnectionStateChangeTest_002
+         * @tc.name    onConnectionStateChangeTest_002
+         * @tc.desc    onConnectionStateChange_A2dpSourceProfile
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size:   MEDIUMTEST
+         */
+        it("onConnectionStateChangeTest_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let a2dpProfile: a2dp.A2dpSourceProfile = a2dp.createA2dpSrcProfile();
+                a2dpProfile.onConnectionStateChange(onReceiveEvent);
+                hilog.info(domain, tag, "a2dpProfile on connection state change success");
+                a2dpProfile.offConnectionStateChange();
+                hilog.info(domain, tag, "a2dpProfile off connection state change success");
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag, "a2dpProfile on/off connection state change is failed, errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  onConnectionStateChangeTest_003
+         * @tc.name    onConnectionStateChangeTest_003
+         * @tc.desc    onConnectionStateChange_HandsFreeAudioGatewayProfile
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size:   MEDIUMTEST
+         */
+        it("onConnectionStateChangeTest_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let hfpProfile: hfp.HandsFreeAudioGatewayProfile = hfp.createHfpAgProfile();
+                hfpProfile.onConnectionStateChange(onReceiveEvent);
+                hilog.info(domain, tag, "hfpProfile on connection state change success");
+                hfpProfile.offConnectionStateChange(onReceiveEvent);
+                hilog.info(domain, tag, "hfpProfile off connection state change success");
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag, "hfpProfile on/off connection state change is failed, errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  onConnectionStateChangeTest_004
+         * @tc.name    onConnectionStateChangeTest_004
+         * @tc.desc    onConnectionStateChange_HandsFreeAudioGatewayProfile
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size:   MEDIUMTEST
+         */
+        it("onConnectionStateChangeTest_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let hfpProfile: hfp.HandsFreeAudioGatewayProfile = hfp.createHfpAgProfile();
+                hfpProfile.onConnectionStateChange(onReceiveEvent);
+                hilog.info(domain, tag, "hfpProfile on connection state change success");
+                hfpProfile.offConnectionStateChange();
+                hilog.info(domain, tag, "hfpProfile off connection state change success");
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag, "hfpProfile on/off connection state change is failed, errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  onConnectionStateChangeTest_005
+         * @tc.name    onConnectionStateChangeTest_005
+         * @tc.desc    onConnectionStateChange_HidHostProfile
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size:   MEDIUMTEST
+         */
+        it("onConnectionStateChangeTest_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let hidProfile: hid.HidHostProfile = hid.createHidHostProfile();
+                hidProfile.onConnectionStateChange(onReceiveEvent);
+                hilog.info(domain, tag, "hidProfile on connection state change success");
+                hidProfile.offConnectionStateChange(onReceiveEvent);
+                hilog.info(domain, tag, "hidProfile off connection state change success");
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag, "hidProfile on/off connection state change is failed, errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                }
+            }
+            done();
+        })
+
+        /**
+         * @tc.number  onConnectionStateChangeTest_006
+         * @tc.name    onConnectionStateChangeTest_006
+         * @tc.desc    onConnectionStateChange_HidHostProfile
+         * @tc.level   Level 0
+         * @tc.type    Function
+         * @tc.size:   MEDIUMTEST
+         */
+        it("onConnectionStateChangeTest_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                let hidProfile: hid.HidHostProfile = hid.createHidHostProfile();
+                hidProfile.onConnectionStateChange(onReceiveEvent);
+                hilog.info(domain, tag, "hidProfile on connection state change success");
+                hidProfile.offConnectionStateChange();
+                hilog.info(domain, tag, "hidProfile off connection state change success");
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag, "hidProfile on/off connection state change is failed, errCode:" + err.code + ",errMessage:" + err.message);
+                if (err.code == 801) {
+                    hilog.info(domain, tag, 'api is not support');
+                    expect(true).assertEqual(err.code == 801);
+                }
+            }
+            done();
+        })
+
     })
 }
