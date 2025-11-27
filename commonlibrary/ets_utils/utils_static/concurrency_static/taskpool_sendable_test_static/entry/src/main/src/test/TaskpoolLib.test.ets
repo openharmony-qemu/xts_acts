@@ -3674,7 +3674,7 @@ export default function TaskPoolLibTest() {
           task.addDependency(task1);
         } catch (e) {
           e = e as Error;
-          expect(e.message).assertContain('cannot addDependency');
+          expect(e.message).assertContain('the periodic task cannot have a dependency');
         }
         taskpool.cancel(task);
         done();
@@ -3697,7 +3697,7 @@ export default function TaskPoolLibTest() {
           task1.addDependency(task);
         } catch (e) {
           e = e as Error;
-          expect(e.message).assertContain('cannot be relied on');
+          expect(e.message).assertContain('the periodic task cannot have a dependency');
         }
         taskpool.cancel(task);
         done();
