@@ -55,12 +55,12 @@ export default function CondVariableTest() {
     })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_CONDITION_VARIABLE_TEST_0100
-     * @tc.name      : test_concurrent_condition_variable_001
-     * @tc.desc      : test_concurrent_condition_variable_001 - test ConditionVariable constructor
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_condition_variable_001
+     * @tc.number SUB_CONCURRENT_CONDITION_VARIABLE_TEST_0100
+     * @tc.desc   test_concurrent_condition_variable_001 - test ConditionVariable constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_condition_variable_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -87,12 +87,12 @@ export default function CondVariableTest() {
       });
 
     /**
-     * @tc.number    : SUB_CONCURRENT_CONDITION_VARIABLE_TEST_0200
-     * @tc.name      : test_concurrent_condition_variable_002
-     * @tc.desc      : test_concurrent_condition_variable_002 - test ConditionVariable request method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_condition_variable_002
+     * @tc.number SUB_CONCURRENT_CONDITION_VARIABLE_TEST_0200
+     * @tc.desc   test_concurrent_condition_variable_002 - test ConditionVariable request method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_condition_variable_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -119,12 +119,12 @@ export default function CondVariableTest() {
       });
 
     /**
-     * @tc.number    : SUB_CONCURRENT_CONDITION_VARIABLE_TEST_0300
-     * @tc.name      : test_concurrent_condition_variable_003
-     * @tc.desc      : test_concurrent_condition_variable_003 - test ConditionVariable wait method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_condition_variable_003
+     * @tc.number SUB_CONCURRENT_CONDITION_VARIABLE_TEST_0300
+     * @tc.desc   test_concurrent_condition_variable_003 - test ConditionVariable wait method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_condition_variable_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -151,12 +151,12 @@ export default function CondVariableTest() {
       });
 
     /**
-     * @tc.number    : SUB_CONCURRENT_CONDITION_VARIABLE_TEST_0400
-     * @tc.name      : test_concurrent_condition_variable_004
-     * @tc.desc      : test_concurrent_condition_variable_004 - test ConditionVariable waitFor method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_condition_variable_004
+     * @tc.number SUB_CONCURRENT_CONDITION_VARIABLE_TEST_0400
+     * @tc.desc   test_concurrent_condition_variable_004 - test ConditionVariable waitFor method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_condition_variable_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -183,12 +183,12 @@ export default function CondVariableTest() {
       });
 
     /**
-     * @tc.number    : SUB_CONCURRENT_CONDITION_VARIABLE_TEST_0500
-     * @tc.name      : test_concurrent_condition_variable_005
-     * @tc.desc      : test_concurrent_condition_variable_005 - test ConditionVariable notifyAll method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_condition_variable_005
+     * @tc.number SUB_CONCURRENT_CONDITION_VARIABLE_TEST_0500
+     * @tc.desc   test_concurrent_condition_variable_005 - test ConditionVariable notifyAll method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_condition_variable_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -215,12 +215,12 @@ export default function CondVariableTest() {
       });
 
     /**
-     * @tc.number    : SUB_CONCURRENT_CONDITION_VARIABLE_TEST_0600
-     * @tc.name      : test_concurrent_condition_variable_006
-     * @tc.desc      : test_concurrent_condition_variable_006 - test ConditionVariable notifyOne method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_condition_variable_006
+     * @tc.number SUB_CONCURRENT_CONDITION_VARIABLE_TEST_0600
+     * @tc.desc   test_concurrent_condition_variable_006 - test ConditionVariable notifyOne method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_condition_variable_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -247,12 +247,12 @@ export default function CondVariableTest() {
       });
 
     /**
-     * @tc.number    : SUB_CONCURRENT_CONDITION_VARIABLE_TEST_0700
-     * @tc.name      : test_concurrent_condition_variable_007
-     * @tc.desc      : test_concurrent_condition_variable_007 - test ConditionVariable wait and notifyAll combination
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_condition_variable_007
+     * @tc.number SUB_CONCURRENT_CONDITION_VARIABLE_TEST_0700
+     * @tc.desc   test_concurrent_condition_variable_007 - test ConditionVariable wait and notifyAll combination
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_condition_variable_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -279,12 +279,12 @@ export default function CondVariableTest() {
       });
 
     /**
-     * @tc.number    : SUB_CONCURRENT_CONDITION_VARIABLE_TEST_0800
-     * @tc.name      : test_concurrent_condition_variable_008
-     * @tc.desc      : test_concurrent_condition_variable_008 - test ConditionVariable waitFor timeout
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_condition_variable_008
+     * @tc.number SUB_CONCURRENT_CONDITION_VARIABLE_TEST_0800
+     * @tc.desc   test_concurrent_condition_variable_008 - test ConditionVariable waitFor timeout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_condition_variable_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

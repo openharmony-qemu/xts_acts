@@ -42,12 +42,12 @@ export default function builtinsArrayConstructorTest() {
 
 
     /**
+     * @tc.name   buildinsArrayConstructorTest1001
      * @tc.number SUB_BUILDINS_ARRAY_CONSTRUCTOR_TEST_0100
-     * @tc.name buildinsArrayConstructorTest1001
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('buildinsArrayConstructorTest1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
       const array: Array<string> = new Array();
@@ -57,12 +57,12 @@ export default function builtinsArrayConstructorTest() {
 
 
     /**
+     * @tc.name   buildinsArrayConstructorTest1002
      * @tc.number SUB_BUILDINS_ARRAY_CONSTRUCTOR_TEST_0200
-     * @tc.name buildinsArrayConstructorTest1002
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('buildinsArrayConstructorTest1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
       const array: Array<string> = new Array(1);
@@ -72,12 +72,12 @@ export default function builtinsArrayConstructorTest() {
 
 
     /**
+     * @tc.name   buildinsArrayConstructorTest1003
      * @tc.number SUB_BUILDINS_ARRAY_CONSTRUCTOR_TEST_0300
-     * @tc.name buildinsArrayConstructorTest1003
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('buildinsArrayConstructorTest1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
       try {
@@ -93,12 +93,12 @@ export default function builtinsArrayConstructorTest() {
 
 
     /**
+     * @tc.name   buildinsArrayConstructorTest1004
      * @tc.number SUB_BUILDINS_ARRAY_CONSTRUCTOR_TEST_0400
-     * @tc.name buildinsArrayConstructorTest1004
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsArrayConstructorTest1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       try {
@@ -113,12 +113,12 @@ export default function builtinsArrayConstructorTest() {
     })
 
     /**
+     * @tc.name   buildinsArrayConstructorTest1005
      * @tc.number SUB_BUILDINS_ARRAY_CONSTRUCTOR_TEST_0500
-     * @tc.name buildinsArrayConstructorTest1005
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsArrayConstructorTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let array = [];
@@ -128,12 +128,12 @@ export default function builtinsArrayConstructorTest() {
     })
 
     /**
+     * @tc.name   buildinsArrayConstructorTest1006
      * @tc.number SUB_BUILDINS_ARRAY_CONSTRUCTOR_TEST_0600
-     * @tc.name buildinsArrayConstructorTest1006
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsArrayConstructorTest1006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const array = ["", 1];
@@ -142,12 +142,12 @@ export default function builtinsArrayConstructorTest() {
     })
 
     /**
+     * @tc.name   buildinsArrayConstructorTest1007
      * @tc.number SUB_BUILDINS_ARRAY_CONSTRUCTOR_TEST_0700
-     * @tc.name buildinsArrayConstructorTest1007
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsArrayConstructorTest1007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const array = [undefined, "", null];
@@ -157,12 +157,12 @@ export default function builtinsArrayConstructorTest() {
 
 
     /**
+     * @tc.name   buildinsArrayConstructorTest1008
      * @tc.number SUB_BUILDINS_ARRAY_CONSTRUCTOR_TEST_0800
-     * @tc.name buildinsArrayConstructorTest1008
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsArrayConstructorTest1008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let str = "!\"#$%&'()* +,-./:;<=>?@[\\]^_`{|}~";
@@ -172,12 +172,12 @@ export default function builtinsArrayConstructorTest() {
     })
 
     /**
+     * @tc.name   buildinsArrayConstructorTest1009
      * @tc.number SUB_BUILDINS_ARRAY_CONSTRUCTOR_TEST_0900
-     * @tc.name buildinsArrayConstructorTest1009
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsArrayConstructorTest1009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let str = "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
@@ -188,12 +188,12 @@ export default function builtinsArrayConstructorTest() {
 
 
     /**
+     * @tc.name   buildinsArrayConstructorTest1010
      * @tc.number SUB_BUILDINS_ARRAY_CONSTRUCTOR_TEST_1000
-     * @tc.name buildinsArrayConstructorTest1010
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsArrayConstructorTest1010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let str = "!!\"\"##$$%%&&''(())**++,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||}}~~";
@@ -204,12 +204,12 @@ export default function builtinsArrayConstructorTest() {
 
 
     /**
+     * @tc.name   buildinsArrayConstructorTest1011
      * @tc.number SUB_BUILDINS_ARRAY_CONSTRUCTOR_TEST_1100
-     * @tc.name buildinsArrayConstructorTest1011
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsArrayConstructorTest1011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let array = ["\a", "\b", "\f", "\n", "\r", "\t", "\v", "\\", "\'", "\?", "\0", "\d12", "\x1d"];
@@ -219,12 +219,12 @@ export default function builtinsArrayConstructorTest() {
 
 
     /**
+     * @tc.name   buildinsArrayConstructorTest1012
      * @tc.number SUB_BUILDINS_ARRAY_CONSTRUCTOR_TEST_1200
-     * @tc.name buildinsArrayConstructorTest1012
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsArrayConstructorTest1012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let array = ["", "\ud83d\udc46", "\ud83d"];
@@ -234,12 +234,12 @@ export default function builtinsArrayConstructorTest() {
     })
 
     /**
+     * @tc.name   buildinsArrayConstructorTest1013
      * @tc.number SUB_BUILDINS_ARRAY_CONSTRUCTOR_TEST_1300
-     * @tc.name buildinsArrayConstructorTest1013
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsArrayConstructorTest1013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let array = [Math.floor(1.5)];
@@ -248,12 +248,12 @@ export default function builtinsArrayConstructorTest() {
     })
 
     /**
+     * @tc.name   buildinsArrayConstructorTest1014
      * @tc.number SUB_BUILDINS_ARRAY_CONSTRUCTOR_TEST_1400
-     * @tc.name buildinsArrayConstructorTest1014
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsArrayConstructorTest1014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let array = [Number.EPSILON, Number.MIN_VALUE, Number.MAX_VALUE, -Infinity, Infinity];
@@ -262,12 +262,12 @@ export default function builtinsArrayConstructorTest() {
     })
 
     /**
+     * @tc.name   buildinsArrayConstructorTest1015
      * @tc.number SUB_BUILDINS_ARRAY_CONSTRUCTOR_TEST_1500
-     * @tc.name buildinsArrayConstructorTest1015
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsArrayConstructorTest1015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let x = Math.PI;
@@ -279,12 +279,12 @@ export default function builtinsArrayConstructorTest() {
     })
 
     /**
+     * @tc.name   buildinsArrayConstructorTest1016
      * @tc.number SUB_BUILDINS_ARRAY_CONSTRUCTOR_TEST_1600
-     * @tc.name buildinsArrayConstructorTest1015
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsArrayConstructorTest1016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let array = [123.456, 0xcafebabe, 0x0102, 0x01020304, 0x3];

@@ -26,12 +26,12 @@ export default function muslIfaddrsNdk1Test() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_IFADDRS_FREEIFADDRS_0100
-     * @tc.name       : testMuslIfAddrsFreeIfAddrs001
-     * @tc.desc       : test freeifaddrs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslIfAddrsFreeIfAddrs001
+     * @tc.number SUB_THIRDPARTY_MUSL_IFADDRS_FREEIFADDRS_0100
+     * @tc.desc   test freeifaddrs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslIfAddrsFreeIfAddrs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(ifAddrs.freeIfAddrs()).assertEqual(0);

@@ -48,12 +48,12 @@ export default function SharedArrayBufferTest() {
     })
 
     /**
+     * @tc.name   SharedArrayBufferTest0100
      * @tc.number SUB_MODULE_SHAREDARRAYBUFFER_TEST_0100
-     * @tc.name SharedArrayBufferTest0100
-     * @tc.desc Test accessing SharedArrayBuffer with Int32Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test accessing SharedArrayBuffer with Int32Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SharedArrayBufferTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'SharedArrayBufferTest0100';
@@ -97,12 +97,12 @@ export default function SharedArrayBufferTest() {
     });
 
     /**
+     * @tc.name   SharedArrayBufferTest0200
      * @tc.number SUB_MODULE_SHAREDARRAYBUFFER_TEST_0200
-     * @tc.name SharedArrayBufferTest0200
-     * @tc.desc Test accessing SharedArrayBuffer with Float64Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test accessing SharedArrayBuffer with Float64Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SharedArrayBufferTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'SharedArrayBufferTest0200';
@@ -152,12 +152,12 @@ export default function SharedArrayBufferTest() {
     });
 
     /**
+     * @tc.name   SharedArrayBufferTest0300
      * @tc.number SUB_MODULE_SHAREDARRAYBUFFER_TEST_0300
-     * @tc.name SharedArrayBufferTest0300
-     * @tc.desc Test accessing SharedArrayBuffer with Uint8Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test accessing SharedArrayBuffer with Uint8Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SharedArrayBufferTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'SharedArrayBufferTest0300';
@@ -229,12 +229,12 @@ export default function SharedArrayBufferTest() {
 
 
     /**
+     * @tc.name   SharedArrayBufferTest0400
      * @tc.number SUB_MODULE_SHAREDARRAYBUFFER_TEST_0400
-     * @tc.name SharedArrayBufferTest0400
-     * @tc.desc Test inheritance of SharedArrayBuffer and method overriding
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test inheritance of SharedArrayBuffer and method overriding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SharedArrayBufferTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'SharedArrayBufferTest0400';
@@ -346,12 +346,12 @@ export default function SharedArrayBufferTest() {
     });
 
     /**
+     * @tc.name   SharedArrayBufferTest0500
      * @tc.number SUB_MODULE_SHAREDARRAYBUFFER_TEST_0500
-     * @tc.name SharedArrayBufferTest0500
-     * @tc.desc Test SharedArrayBuffer with multiple threads using taskpool where main thread creates buffer and workers slice it
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test SharedArrayBuffer with multiple threads using taskpool where main thread creates buffer and workers slice it
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SharedArrayBufferTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'SharedArrayBufferTest0500';
@@ -423,12 +423,12 @@ export default function SharedArrayBufferTest() {
     });
 
     /**
+     * @tc.name   SharedArrayBufferTest0600
      * @tc.number SUB_MODULE_SHAREDARRAYBUFFER_TEST_0600
-     * @tc.name SharedArrayBufferTest0600
-     * @tc.desc Test passing SharedArrayBuffer as a class property between threads
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test passing SharedArrayBuffer as a class property between threads
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SharedArrayBufferTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'SharedArrayBufferTest0600';
@@ -483,12 +483,12 @@ export default function SharedArrayBufferTest() {
     });
 
     /**
+     * @tc.name   SharedArrayBufferTest0700
      * @tc.number SUB_MODULE_SHAREDARRAYBUFFER_TEST_0700
-     * @tc.name SharedArrayBufferTest0700
-     * @tc.desc Test for memory leaks by repeatedly creating and disposing SharedArrayBuffer instances
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test for memory leaks by repeatedly creating and disposing SharedArrayBuffer instances
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SharedArrayBufferTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'SharedArrayBufferTest0700';
@@ -529,12 +529,12 @@ export default function SharedArrayBufferTest() {
     });
 
     /**
+     * @tc.name   SharedArrayBufferTest0800
      * @tc.number SUB_MODULE_SHAREDARRAYBUFFER_TEST_0800
-     * @tc.name SharedArrayBufferTest0800
-     * @tc.desc Single thread iterating 1000 times through combined API operations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Single thread iterating 1000 times through combined API operations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SharedArrayBufferTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'SharedArrayBufferTest0800';
@@ -576,12 +576,12 @@ export default function SharedArrayBufferTest() {
     });
 
     /**
+     * @tc.name   SharedArrayBufferTest0900
      * @tc.number SUB_MODULE_SHAREDARRAYBUFFER_TEST_0900
-     * @tc.name SharedArrayBufferTest0900
-     * @tc.desc SharedArrayBuffer Performance Test 2100 - Multi-thread (10 threads) competing through 1000 iterations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   SharedArrayBuffer Performance Test 2100 - Multi-thread (10 threads) competing through 1000 iterations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SharedArrayBufferTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'SharedArrayBufferTest0900';
@@ -611,12 +611,12 @@ export default function SharedArrayBufferTest() {
     });
 
     /**
+     * @tc.name   SharedArrayBufferTest1000
      * @tc.number SUB_MODULE_SHAREDARRAYBUFFER_TEST_1000
-     * @tc.name SharedArrayBufferTest1000
-     * @tc.desc SharedArrayBuffer Lifecycle Test 2200 - Single thread iterating 1000 times with GC pressure while maintaining correct calculations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   SharedArrayBuffer Lifecycle Test 2200 - Single thread iterating 1000 times with GC pressure while maintaining correct calculations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SharedArrayBufferTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'SharedArrayBufferTest1000';

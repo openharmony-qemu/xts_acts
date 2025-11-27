@@ -43,12 +43,12 @@ export default function PromiseErrorTest() {
     });
 
     /**
+     * @tc.name   PromiseErrorTest0100
      * @tc.number SUB_PROMISE_ERROR_TEST_0100
-     * @tc.name PromiseErrorTest0100
-     * @tc.desc async lazy import taskPool three nest
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   async lazy import taskPool three nest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseErrorTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const asyncFunction = async () => {
@@ -65,12 +65,12 @@ export default function PromiseErrorTest() {
     })
 
     /**
+     * @tc.name   PromiseErrorTest0200
      * @tc.number SUB_PROMISE_ERROR_TEST_0200
-     * @tc.name PromiseErrorTest0200
-     * @tc.desc async lazy import taskPool three nest
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   async lazy import taskPool three nest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseErrorTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const asyncFunction = async () => {
@@ -94,12 +94,12 @@ export default function PromiseErrorTest() {
 
 
     /**
+     * @tc.name   PromiseErrorTest0300
      * @tc.number SUB_PROMISE_ERROR_TEST_0300
-     * @tc.name PromiseErrorTest0300
-     * @tc.desc async lazy import taskPool three nest
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   async lazy import taskPool three nest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseErrorTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const asyncFunction1 = async () => {
@@ -136,12 +136,12 @@ export default function PromiseErrorTest() {
     })
 
     /**
+     * @tc.name   PromiseErrorTest0400
      * @tc.number SUB_PROMISE_ERROR_TEST_0400
-     * @tc.name PromiseErrorTest0400
-     * @tc.desc async lazy import taskPool three nest
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   async lazy import taskPool three nest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseErrorTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const asyncFunction = async () => {
@@ -162,12 +162,12 @@ export default function PromiseErrorTest() {
 
 
     /**
+     * @tc.name   PromiseErrorTest0500
      * @tc.number SUB_PROMISE_ERROR_TEST_0500
-     * @tc.name PromiseErrorTest0500
-     * @tc.desc async lazy import taskPool three nest
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   async lazy import taskPool three nest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseErrorTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let result = 40;
@@ -191,12 +191,12 @@ export default function PromiseErrorTest() {
 
 
     /**
+     * @tc.name   PromiseErrorTest0600
      * @tc.number SUB_PROMISE_ERROR_TEST_0600
-     * @tc.name PromiseErrorTest0600
-     * @tc.desc async lazy import taskPool three nest
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   async lazy import taskPool three nest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseErrorTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let task =  new taskpool.Task(taskFunction1);
@@ -208,12 +208,12 @@ export default function PromiseErrorTest() {
 
 
     /**
+     * @tc.name   PromiseErrorTest0700
      * @tc.number SUB_PROMISE_ERROR_TEST_0700
-     * @tc.name PromiseErrorTest0700
-     * @tc.desc async lazy import taskPool three nest
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   async lazy import taskPool three nest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseErrorTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const asyncLock: ArkTSUtils.locks.AsyncLock = ArkTSUtils.locks.AsyncLock.request('Lock');

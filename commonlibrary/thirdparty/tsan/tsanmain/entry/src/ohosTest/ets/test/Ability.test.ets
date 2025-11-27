@@ -33,12 +33,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_TSAN_DATARACE_0100
-     * @tc.name       : testTsanDataRace001
-     * @tc.desc       : test dataRace
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTsanDataRace001
+     * @tc.number SUB_THIRDPARTY_TSAN_DATARACE_0100
+     * @tc.desc   test dataRace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTsanDataRace001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let result: number = tsan.dataRace();
@@ -46,12 +46,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_TSAN_DATARACEONVPTR_0100
-     * @tc.name       : testTsanDataRaceOnVptr001
-     * @tc.desc       : test dataRace on vptr
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTsanDataRaceOnVptr001
+     * @tc.number SUB_THIRDPARTY_TSAN_DATARACEONVPTR_0100
+     * @tc.desc   test dataRace on vptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTsanDataRaceOnVptr001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let result: number = tsan.dataRaceOnVptr();
@@ -59,12 +59,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_TSAN_USEAFTERFREE_0100
-     * @tc.name       : testTsanUseAfterFree001
-     * @tc.desc       : test useAfterFree
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTsanUseAfterFree001
+     * @tc.number SUB_THIRDPARTY_TSAN_USEAFTERFREE_0100
+     * @tc.desc   test useAfterFree
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTsanUseAfterFree001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let result: number = tsan.heapUseAfterFree();
@@ -72,12 +72,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_TSAN_USEAFTERFREE_0200
-     * @tc.name       : testTsanUseAfterFree002
-     * @tc.desc       : test useAfterFree virtual call
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTsanUseAfterFree002
+     * @tc.number SUB_THIRDPARTY_TSAN_USEAFTERFREE_0200
+     * @tc.desc   test useAfterFree virtual call
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTsanUseAfterFree002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let result: number = tsan.virtualCallVSFree();
@@ -85,12 +85,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_TSAN_SIGNALCHECK_0100
-     * @tc.name       : testTsanSignalCheck001
-     * @tc.desc       : test signalCheck unsafe call inside of asignal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTsanSignalCheck001
+     * @tc.number SUB_THIRDPARTY_TSAN_SIGNALCHECK_0100
+     * @tc.desc   test signalCheck unsafe call inside of asignal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTsanSignalCheck001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let result: number = tsan.signalHandlerUnsafe();
@@ -98,12 +98,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_TSAN_SIGNALCHECK_0200
-     * @tc.name       : testTsanSignalCheck002
-     * @tc.desc       : test signalCheck handler spoils errno
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTsanSignalCheck002
+     * @tc.number SUB_THIRDPARTY_TSAN_SIGNALCHECK_0200
+     * @tc.desc   test signalCheck handler spoils errno
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTsanSignalCheck002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let result: number = tsan.signalHandlerError();

@@ -41,12 +41,12 @@ export default function builtinsArrayFilterTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayFilterTest0100
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_0100
-     * @tc.name builtinsArrayFilterTest0100
-     * @tc.desc Test filter method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Test filter method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsArrayFilterTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const inputArray = [1, 2, 3, 4, 5];
@@ -58,12 +58,12 @@ export default function builtinsArrayFilterTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayFilterTest0101
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_0101
-     * @tc.name builtinsArrayFilterTest0101
-     * @tc.desc Test filter method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Test filter method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsArrayFilterTest0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const inputArray: number[] = [1, 2, 3, 4, 5];
@@ -75,12 +75,12 @@ export default function builtinsArrayFilterTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayFilterTest0102
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_0102
-     * @tc.name builtinsArrayFilterTest0102
-     * @tc.desc Test filter method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test filter method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayFilterTest0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const inputArray = [1, 2, 3, 4, 5];
@@ -95,12 +95,12 @@ export default function builtinsArrayFilterTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayFilterTest0103
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_0103
-     * @tc.name builtinsArrayFilterTest0103
-     * @tc.desc Test filter method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test filter method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayFilterTest0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const inputArray = [1, , 3];
@@ -112,12 +112,12 @@ export default function builtinsArrayFilterTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayFilterTest0104
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_0104
-     * @tc.name builtinsArrayFilterTest0104
-     * @tc.desc Test filter method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test filter method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayFilterTest0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const inputArray = [];
@@ -129,12 +129,12 @@ export default function builtinsArrayFilterTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayFilterTest0105
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_0105
-     * @tc.name builtinsArrayFilterTest0105
-     * @tc.desc Test filter method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test filter method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayFilterTest0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const inputArray = [5];
@@ -146,12 +146,12 @@ export default function builtinsArrayFilterTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayFilterTest0106
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_0106
-     * @tc.name builtinsArrayFilterTest0106
-     * @tc.desc Test filter method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test filter method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayFilterTest0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const inputArray = [1, 2, 3, 4, 5];
@@ -163,12 +163,12 @@ export default function builtinsArrayFilterTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayFilterTest0107
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_0107
-     * @tc.name builtinsArrayFilterTest0107
-     * @tc.desc Test filter method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test filter method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayFilterTest0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const inputArray = [1, 2, 3, 4, 5];
@@ -183,12 +183,12 @@ export default function builtinsArrayFilterTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayFilterTest0108
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_0108
-     * @tc.name builtinsArrayFilterTest0108
-     * @tc.desc Test filter method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test filter method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayFilterTest0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const inputArray = [1, 2, 3];
@@ -205,12 +205,12 @@ export default function builtinsArrayFilterTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayFilterTest0109
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_0109
-     * @tc.name builtinsArrayFilterTest0109
-     * @tc.desc Test filter method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test filter method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayFilterTest0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const inputArray = ['a', 'b', 'c'];
@@ -222,12 +222,12 @@ export default function builtinsArrayFilterTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayFilterTest0110
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_0110
-     * @tc.name builtinsArrayFilterTest0110
-     * @tc.desc Test filter method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test filter method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayFilterTest0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface Item {
@@ -252,12 +252,12 @@ export default function builtinsArrayFilterTest() {
     });
 
     /**
+     * @tc.name   builtinsArrayFilterTest0111
      * @tc.number SUB_BUILTINS_ARRAY_FILTER_TEST_0111
-     * @tc.name builtinsArrayFilterTest0111
-     * @tc.desc Test filter method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test filter method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayFilterTest0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const inputArray = [null, undefined, 3]

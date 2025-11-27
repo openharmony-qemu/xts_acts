@@ -44,12 +44,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0001
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0001
-     * @tc.name testArrayFind0001
-     * @tc.desc Should find the first element greater than 10
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find the first element greater than 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [5, 12, 8, 130, 44];
@@ -58,12 +58,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0002
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0002
-     * @tc.name testArrayFind0002
-     * @tc.desc Should return undefined when no element matches
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return undefined when no element matches
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 3, 5, 7];
@@ -72,12 +72,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0003
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0003
-     * @tc.name testArrayFind0003
-     * @tc.desc Should work with an empty array and return undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should work with an empty array and return undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [];
@@ -86,12 +86,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0004
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0004
-     * @tc.name testArrayFind0004
-     * @tc.desc Should pass element, index and array to callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should pass element, index and array to callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [4, 6, 8];
@@ -104,12 +104,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0005
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0005
-     * @tc.name testArrayFind0005
-     * @tc.desc Should find first even number
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find first even number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 3, 4, 6];
@@ -118,12 +118,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0006
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0006
-     * @tc.name testArrayFind0006
-     * @tc.desc Should return first string starting with 'b'
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return first string starting with 'b'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ["apple", "banana", "cherry"];
@@ -132,12 +132,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0007
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0007
-     * @tc.name testArrayFind0007
-     * @tc.desc Should find first negative number
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find first negative number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, -2, -3, 4];
@@ -146,12 +146,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0008
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0008
-     * @tc.name testArrayFind0008
-     * @tc.desc Should skip empty slots in sparse arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should skip empty slots in sparse arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | undefined)[] = [1, , 3]; // sparse
@@ -160,12 +160,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0009
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0009
-     * @tc.name testArrayFind0009
-     * @tc.desc Should stop searching after finding first match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should stop searching after finding first match
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [10, 20, 30];
@@ -178,12 +178,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0010
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0010
-     * @tc.name testArrayFind0010
-     * @tc.desc Should return undefined if condition never true
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return undefined if condition never true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [2, 4, 6];
@@ -192,20 +192,12 @@ export default function ArrayFindTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_00110
-     * @tc.name testArrayFind0011
-     * @tc.desc Should use thisArg to bind callback context
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    /**
+     * @tc.name   testArrayFind0011
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0011
-     * @tc.name testArrayFind0011
-     * @tc.desc Should use external context object instead of thisArg
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should use external context object instead of thisArg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface ThresholdContext {
@@ -219,12 +211,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0012
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0012
-     * @tc.name testArrayFind0012
-     * @tc.desc Should return first boolean true
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return first boolean true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: boolean[] = [false, false, true, false];
@@ -233,12 +225,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0013
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0013
-     * @tc.name testArrayFind0013
-     * @tc.desc Should find first object with property x > 2
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find first object with property x > 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Obj { x: number };
@@ -248,12 +240,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0014
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0014
-     * @tc.name testArrayFind0014
-     * @tc.desc Should find NaN value correctly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find NaN value correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = [1, 2, NaN];
@@ -262,12 +254,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0015
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0015
-     * @tc.name testArrayFind0015
-     * @tc.desc Should return first element equal to zero
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return first element equal to zero
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = [-1, 0, 1];
@@ -276,12 +268,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0016
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0016
-     * @tc.name testArrayFind0016
-     * @tc.desc Should return undefined for all falsy values when condition expects truthy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return undefined for all falsy values when condition expects truthy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = [0, "", null, undefined, false];
@@ -290,12 +282,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0017
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0017
-     * @tc.name testArrayFind0017
-     * @tc.desc Should find first string with length > 5
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find first string with length > 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = ["a", "abc", "abcdef", "xyz"];
@@ -304,12 +296,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0018
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0018
-     * @tc.name testArrayFind0018
-     * @tc.desc Should return undefined when predicate always false
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return undefined when predicate always false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = [1, 2, 3];
@@ -318,12 +310,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0019
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0019
-     * @tc.name testArrayFind0019
-     * @tc.desc Should return first element divisible by 5
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return first element divisible by 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = [2, 4, 5, 10];
@@ -332,12 +324,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0020
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0020
-     * @tc.name testArrayFind0020
-     * @tc.desc Should return undefined if array has only undefined values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return undefined if array has only undefined values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = [undefined, undefined];
@@ -347,12 +339,12 @@ export default function ArrayFindTest() {
 
 
     /**
+     * @tc.name   testArrayFind0021
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0021
-     * @tc.name testArrayFind0021
-     * @tc.desc Should return undefined when all elements are negative
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return undefined when all elements are negative
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [-5, -10, -15];
@@ -361,12 +353,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0022
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0022
-     * @tc.name testArrayFind0022
-     * @tc.desc Should return first even number
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return first even number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 3, 4, 6];
@@ -375,12 +367,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0023
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0023
-     * @tc.name testArrayFind0023
-     * @tc.desc Should find element by index comparison
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find element by index comparison
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [5, 10, 15];
@@ -389,12 +381,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0024
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0024
-     * @tc.name testArrayFind0024
-     * @tc.desc Should return first element greater than or equal to 100
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return first element greater than or equal to 100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [20, 50, 100, 200];
@@ -403,12 +395,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0025
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0025
-     * @tc.name testArrayFind0025
-     * @tc.desc Should return first truthy string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return first truthy string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ["", "", "hello", "world"];
@@ -417,12 +409,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0026
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0026
-     * @tc.name testArrayFind0026
-     * @tc.desc Should skip empty slots in sparse array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should skip empty slots in sparse array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | undefined)[] = [, , 3, 4];
@@ -431,12 +423,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0027
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0027
-     * @tc.name testArrayFind0027
-     * @tc.desc Should return first object with property match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return first object with property match
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface User {
@@ -450,12 +442,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0028
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0028
-     * @tc.name testArrayFind0028
-     * @tc.desc Should return undefined for empty array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return undefined for empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [];
@@ -464,12 +456,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0029
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0029
-     * @tc.name testArrayFind0029
-     * @tc.desc Should return element from array of booleans
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return element from array of booleans
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: boolean[] = [false, false, true];
@@ -478,12 +470,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0030
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0030
-     * @tc.name testArrayFind0030
-     * @tc.desc Should return first NaN from array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return first NaN from array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, NaN, 3];
@@ -492,12 +484,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0031
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0031
-     * @tc.name testArrayFind0031
-     * @tc.desc Should return first Infinity from array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return first Infinity from array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, Infinity];
@@ -506,24 +498,24 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0032
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0032
-     * @tc.name testArrayFind0032
-     * @tc.desc Should find negative zero specifically
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find negative zero specifically
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayFindJs0032()).assertTrue();
     });
 
     /**
+     * @tc.name   testArrayFind0033
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0033
-     * @tc.name testArrayFind0033
-     * @tc.desc Should return first element greater than its index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return first element greater than its index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [0, 1, 5];
@@ -532,12 +524,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0034
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0034
-     * @tc.name testArrayFind0034
-     * @tc.desc Should return undefined when predicate always false
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return undefined when predicate always false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -546,12 +538,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0035
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0035
-     * @tc.name testArrayFind0035
-     * @tc.desc Should return first matching string ignoring case
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return first matching string ignoring case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ["Apple", "banana", "Cherry"];
@@ -560,12 +552,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0036
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0036
-     * @tc.name testArrayFind0036
-     * @tc.desc Should return first object with nested property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return first object with nested property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class Data {
@@ -590,12 +582,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0037
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0037
-     * @tc.name testArrayFind0037
-     * @tc.desc Should return first element from reversed array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return first element from reversed array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [3, 2, 1].reverse();
@@ -604,12 +596,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0038
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0038
-     * @tc.name testArrayFind0038
-     * @tc.desc Should return undefined if array filled with same value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return undefined if array filled with same value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = new Array(3).fill(7);
@@ -618,12 +610,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0039
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0039
-     * @tc.name testArrayFind0039
-     * @tc.desc Should find element after map transformation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find element after map transformation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3].map((v: number) => v * 2);
@@ -632,12 +624,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0040
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0040
-     * @tc.name testArrayFind0040
-     * @tc.desc Should return first falsy value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return first falsy value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | undefined)[] = [1, undefined, 2];
@@ -646,12 +638,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0041
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0041
-     * @tc.name testArrayFind0041
-     * @tc.desc Should return first element larger than previous
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return first element larger than previous
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [5, 4, 10];
@@ -665,12 +657,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0042
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0042
-     * @tc.name testArrayFind0042
-     * @tc.desc Should find string element in tuple using typeof check
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find string element in tuple using typeof check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | string | boolean)[] = [1, "a", true];
@@ -680,12 +672,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0043
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0043
-     * @tc.name testArrayFind0043
-     * @tc.desc Should return element greater than threshold using context object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return element greater than threshold using context object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Ctx { limit: number; }
@@ -697,12 +689,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0044
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0044
-     * @tc.name testArrayFind0044
-     * @tc.desc Should return first matching element after concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return first matching element after concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1].concat([2, 3]);
@@ -711,12 +703,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0045
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0045
-     * @tc.name testArrayFind0045
-     * @tc.desc Should return first value not equal to specific number
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return first value not equal to specific number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [7, 7, 8];
@@ -725,12 +717,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0046
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0046
-     * @tc.name testArrayFind0046
-     * @tc.desc Should return undefined if no element matches condition
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return undefined if no element matches condition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ["a", "b", "c"];
@@ -739,12 +731,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0047
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0047
-     * @tc.name testArrayFind0047
-     * @tc.desc Should return element after filter chain
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return element after filter chain
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [5, 10, 15].filter((v: number) => v > 5);
@@ -753,12 +745,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0048
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0048
-     * @tc.name testArrayFind0048
-     * @tc.desc Should return element from slice of array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return element from slice of array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -768,12 +760,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0049
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0049
-     * @tc.name testArrayFind0049
-     * @tc.desc Should return first element after sort
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return first element after sort
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [5, 1, 3].sort();
@@ -782,12 +774,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0050
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0050
-     * @tc.name testArrayFind0050
-     * @tc.desc Should find first matching element in large array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find first matching element in large array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = new Array(10000).fill(0);
@@ -797,12 +789,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0051
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0051
-     * @tc.name testArrayFind0051
-     * @tc.desc Should return first element even if multiple match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return first element even if multiple match
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 2, 3];
@@ -811,12 +803,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0052
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0052
-     * @tc.name testArrayFind0052
-     * @tc.desc Should not mutate original array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should not mutate original array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -825,12 +817,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0053
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0053
-     * @tc.name testArrayFind0053
-     * @tc.desc Should skip empty slots in sparse array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should skip empty slots in sparse array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = new Array<number>(5);
@@ -840,12 +832,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0054
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0054
-     * @tc.name testArrayFind0054
-     * @tc.desc Should handle array with all undefined values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should handle array with all undefined values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | undefined)[] = [undefined, undefined];
@@ -854,12 +846,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0055
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0055
-     * @tc.name testArrayFind0055
-     * @tc.desc Should find in array of objects using class-based match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find in array of objects using class-based match
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class Item {
@@ -876,12 +868,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0056
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0056
-     * @tc.name testArrayFind0056
-     * @tc.desc Should find NaN when using Number.isNaN
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find NaN when using Number.isNaN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, NaN, 2];
@@ -890,12 +882,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0057
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0057
-     * @tc.name testArrayFind0057
-     * @tc.desc Should return undefined when predicate never matches
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return undefined when predicate never matches
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -904,12 +896,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0058
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0058
-     * @tc.name testArrayFind0058
-     * @tc.desc Should find first even number
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find first even number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 3, 4, 6];
@@ -918,12 +910,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0059
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0059
-     * @tc.name testArrayFind0059
-     * @tc.desc Should work with readonly array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should work with readonly array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: ReadonlyArray<number> = [1, 2, 3];
@@ -932,12 +924,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0060
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0060
-     * @tc.name testArrayFind0060
-     * @tc.desc Should handle negative numbers correctly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should handle negative numbers correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [-5, -3, -1];
@@ -946,12 +938,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0061
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0061
-     * @tc.name testArrayFind0061
-     * @tc.desc Should find string in array of mixed types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find string in array of mixed types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | string | boolean)[] = [1, true, "hello"];
@@ -961,12 +953,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0062
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0062
-     * @tc.name testArrayFind0062
-     * @tc.desc Should stop iterating after match found
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should stop iterating after match found
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let count = 0;
@@ -979,12 +971,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0063
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0063
-     * @tc.name testArrayFind0063
-     * @tc.desc Should handle array with Infinity
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should handle array with Infinity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, Infinity, 5];
@@ -993,12 +985,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0064
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0064
-     * @tc.name testArrayFind0064
-     * @tc.desc Should work with array of booleans
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should work with array of booleans
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: boolean[] = [false, false, true];
@@ -1007,12 +999,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0065
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0065
-     * @tc.name testArrayFind0065
-     * @tc.desc Should return first element when predicate always true
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return first element when predicate always true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [7, 8, 9];
@@ -1021,12 +1013,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0066
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0066
-     * @tc.name testArrayFind0066
-     * @tc.desc Should return undefined for all-false predicate
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return undefined for all-false predicate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -1035,12 +1027,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0067
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0067
-     * @tc.name testArrayFind0067
-     * @tc.desc Should find element in array with holes and undefined explicitly assigned
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find element in array with holes and undefined explicitly assigned
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | undefined)[] = [];
@@ -1051,12 +1043,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0068
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0068
-     * @tc.name testArrayFind0068
-     * @tc.desc Should work with array created by Array.from and filled
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should work with array created by Array.from and filled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [];
@@ -1068,12 +1060,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0069
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0069
-     * @tc.name testArrayFind0069
-     * @tc.desc Should work with very large indices but small array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should work with very large indices but small array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [100];
@@ -1082,24 +1074,24 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0070
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0070
-     * @tc.name testArrayFind0070
-     * @tc.desc Should return undefined when searching in frozen array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return undefined when searching in frozen array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayFindJs0070()).assertUndefined();
     });
 
     /**
+     * @tc.name   testArrayFind0071
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0071
-     * @tc.name testArrayFind0071
-     * @tc.desc Should handle array containing empty strings
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should handle array containing empty strings
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ["", "a", "b"];
@@ -1108,24 +1100,24 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0072
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0072
-     * @tc.name testArrayFind0072
-     * @tc.desc Should return undefined if searching for symbol in string array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return undefined if searching for symbol in string array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayFindJs0072()).assertUndefined();
     });
 
     /**
+     * @tc.name   testArrayFind0073
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0073
-     * @tc.name testArrayFind0073
-     * @tc.desc Should find boolean false explicitly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find boolean false explicitly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: boolean[] = [true, false, true];
@@ -1134,12 +1126,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0074
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0074
-     * @tc.name testArrayFind0074
-     * @tc.desc Should handle nested arrays and find by reference
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should handle nested arrays and find by reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const inner: number[] = [1, 2];
@@ -1149,12 +1141,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0075
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0075
-     * @tc.name testArrayFind0075
-     * @tc.desc Should not crash when predicate always throws
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should not crash when predicate always throws
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0075", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -1170,12 +1162,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0076
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0076
-     * @tc.name testArrayFind0076
-     * @tc.desc Should handle array with duplicated object references
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should handle array with duplicated object references
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0076", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class Box {
@@ -1193,12 +1185,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0077
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0077
-     * @tc.name testArrayFind0077
-     * @tc.desc Should work with array containing null values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should work with array containing null values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0077", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | null)[] = [null, 2, 3];
@@ -1207,12 +1199,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0078
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0078
-     * @tc.name testArrayFind0078
-     * @tc.desc Should find last element if only it matches
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find last element if only it matches
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0078", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 9];
@@ -1221,12 +1213,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0079
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0079
-     * @tc.name testArrayFind0079
-     * @tc.desc Should find first positive number in mixed array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find first positive number in mixed array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0079", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [-10, -5, 0, 5, 10];
@@ -1235,12 +1227,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0080
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0080
-     * @tc.name testArrayFind0080
-     * @tc.desc Should find object by property in object array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find object by property in object array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class Person {
@@ -1259,12 +1251,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0081
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0081
-     * @tc.name testArrayFind0081
-     * @tc.desc Should return undefined for empty array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return undefined for empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [];
@@ -1273,12 +1265,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0082
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0082
-     * @tc.name testArrayFind0082
-     * @tc.desc Should find NaN in array using Number.isNaN
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find NaN in array using Number.isNaN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, NaN, 3];
@@ -1287,12 +1279,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0083
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0083
-     * @tc.name testArrayFind0083
-     * @tc.desc Should find Infinity in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find Infinity in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, Infinity, 5];
@@ -1301,12 +1293,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0084
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0084
-     * @tc.name testArrayFind0084
-     * @tc.desc Should find last occurrence value in array with duplicates
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find last occurrence value in array with duplicates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 2, 1];
@@ -1315,12 +1307,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0085
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0085
-     * @tc.name testArrayFind0085
-     * @tc.desc Should find element in array of booleans
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find element in array of booleans
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: boolean[] = [false, false, true, false];
@@ -1329,12 +1321,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0086
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0086
-     * @tc.name testArrayFind0086
-     * @tc.desc Should find string with length > 3
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find string with length > 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ["a", "abcd", "xyz"];
@@ -1343,12 +1335,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0087
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0087
-     * @tc.name testArrayFind0087
-     * @tc.desc Should find nested array by reference
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find nested array by reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const inner: number[] = [1, 2];
@@ -1359,12 +1351,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0088
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0088
-     * @tc.name testArrayFind0088
-     * @tc.desc Should return undefined if no object matches
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return undefined if no object matches
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class User {
@@ -1381,12 +1373,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0089
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0089
-     * @tc.name testArrayFind0089
-     * @tc.desc Should find object with nested property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find object with nested property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class Item {
@@ -1403,12 +1395,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0090
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0090
-     * @tc.name testArrayFind0090
-     * @tc.desc Should handle large array efficiently
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should handle large array efficiently
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [];
@@ -1420,12 +1412,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0091
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0091
-     * @tc.name testArrayFind0091
-     * @tc.desc Should find first element in array of objects with boolean property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find first element in array of objects with boolean property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class Flag {
@@ -1442,12 +1434,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0092
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0092
-     * @tc.name testArrayFind0092
-     * @tc.desc Should find first falsy value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find first falsy value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | undefined | null)[] = [1, 0, undefined, null];
@@ -1456,12 +1448,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0093
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0093
-     * @tc.name testArrayFind0093
-     * @tc.desc Should find first truthy value in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find first truthy value in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | null)[] = [0, null, 5, 10];
@@ -1470,12 +1462,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0094
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0094
-     * @tc.name testArrayFind0094
-     * @tc.desc Should return undefined when predicate always false
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return undefined when predicate always false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ["a", "b", "c"];
@@ -1484,12 +1476,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0095
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0095
-     * @tc.name testArrayFind0095
-     * @tc.desc Should handle array of arrays and find by first element value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should handle array of arrays and find by first element value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[][] = [[1, 2], [3, 4], [5, 6]];
@@ -1498,12 +1490,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0096
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0096
-     * @tc.name testArrayFind0096
-     * @tc.desc Should find first even number
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find first even number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 3, 5, 6, 7];
@@ -1512,12 +1504,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0097
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0097
-     * @tc.name testArrayFind0097
-     * @tc.desc Should find first string starting with "x"
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find first string starting with "x"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ["a", "xenon", "b"];
@@ -1526,12 +1518,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0098
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0098
-     * @tc.name testArrayFind0098
-     * @tc.desc Should find object with specific boolean property false
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find object with specific boolean property false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class Item {
@@ -1548,12 +1540,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0099
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0099
-     * @tc.name testArrayFind0099
-     * @tc.desc Should find first number greater than 50 in large array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find first number greater than 50 in large array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [];
@@ -1565,12 +1557,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0100
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0100
-     * @tc.name testArrayFind0100
-     * @tc.desc Should return undefined when array contains only null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return undefined when array contains only null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: null[] = [null, null];
@@ -1579,12 +1571,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0101
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0101
-     * @tc.name testArrayFind0101
-     * @tc.desc Should find object with nested array property containing specific number
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find object with nested array property containing specific number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0101", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class Obj {
@@ -1601,12 +1593,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0102
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0102
-     * @tc.name testArrayFind0102
-     * @tc.desc Should find first element satisfying multiple conditions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find first element satisfying multiple conditions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0102", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [5, 10, 15, 20];
@@ -1615,12 +1607,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0103
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0103
-     * @tc.name testArrayFind0103
-     * @tc.desc Should find first element in sparse array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find first element in sparse array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0103", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | undefined)[] = [];
@@ -1631,24 +1623,24 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0104
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0104
-     * @tc.name testArrayFind0104
-     * @tc.desc Should find symbol in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find symbol in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0104", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayFindJs0104()).assertEqual(true);
     });
 
     /**
+     * @tc.name   testArrayFind0105
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0105
-     * @tc.name testArrayFind0105
-     * @tc.desc Should find undefined in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find undefined in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0105", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | undefined)[] = [1, undefined, 3];
@@ -1657,12 +1649,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0106
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0106
-     * @tc.name testArrayFind0106
-     * @tc.desc Should find null in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find null in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0106", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (string | null)[] = ["a", null, "b"];
@@ -1671,12 +1663,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0107
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0107
-     * @tc.name testArrayFind0107
-     * @tc.desc Should find first non-zero number
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find first non-zero number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0107", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [0, 0, 3, 4];
@@ -1685,12 +1677,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0108
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0108
-     * @tc.name testArrayFind0108
-     * @tc.desc Should find object by reference equality
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find object by reference equality
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0108", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class Obj {
@@ -1709,12 +1701,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0109
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0109
-     * @tc.name testArrayFind0109
-     * @tc.desc Should find number in multidimensional array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find number in multidimensional array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0109", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[][] = [[1, 2], [3, 4], [5, 6]];
@@ -1723,12 +1715,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0110
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0110
-     * @tc.name testArrayFind0110
-     * @tc.desc Should find string containing substring
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find string containing substring
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0110", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ["abc", "def", "xyz"];
@@ -1737,12 +1729,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0111
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0111
-     * @tc.name testArrayFind0111
-     * @tc.desc Should find boolean false in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find boolean false in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0111", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: boolean[] = [true, true, false];
@@ -1751,12 +1743,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0112
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0112
-     * @tc.name testArrayFind0112
-     * @tc.desc Should find number divisible by 7
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find number divisible by 7
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0112", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [5, 14, 21];
@@ -1765,12 +1757,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0113
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0113
-     * @tc.name testArrayFind0113
-     * @tc.desc Should find first non-empty string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find first non-empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0113", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ["", "", "found"];
@@ -1779,12 +1771,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0114
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0114
-     * @tc.name testArrayFind0114
-     * @tc.desc Should find number in array containing NaN
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find number in array containing NaN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0114", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [NaN, 0, 1];
@@ -1793,12 +1785,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0115
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0115
-     * @tc.name testArrayFind0115
-     * @tc.desc Should find object in array by property equality
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find object in array by property equality
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0115", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class Obj {
@@ -1815,12 +1807,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0116
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0116
-     * @tc.name testArrayFind0116
-     * @tc.desc Should find string with exact match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find string with exact match
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0116", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ["a", "b", "c"];
@@ -1829,12 +1821,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0117
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0117
-     * @tc.name testArrayFind0117
-     * @tc.desc Should find first element greater than average
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find first element greater than average
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0117", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4, 5];
@@ -1844,12 +1836,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0118
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0118
-     * @tc.name testArrayFind0118
-     * @tc.desc Should find object in array where multiple properties match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find object in array where multiple properties match
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0118", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class Obj {
@@ -1869,12 +1861,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0119
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0119
-     * @tc.name testArrayFind0119
-     * @tc.desc Should find first truthy string in array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find first truthy string in array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0119", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ["", "", "ok"];
@@ -1883,12 +1875,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0120
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0120
-     * @tc.name testArrayFind0120
-     * @tc.desc Should find first number not divisible by 2
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should find first number not divisible by 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0120", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [2, 4, 6, 7, 8];
@@ -1897,12 +1889,12 @@ export default function ArrayFindTest() {
     });
 
     /**
+     * @tc.name   testArrayFind0121
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FIND_0121
-     * @tc.name testArrayFind0121
-     * @tc.desc Should return first matching element from Set converted to array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Should return first matching element from Set converted to array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayFind0121", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = Array.from(new Set([1, 2, 3]));

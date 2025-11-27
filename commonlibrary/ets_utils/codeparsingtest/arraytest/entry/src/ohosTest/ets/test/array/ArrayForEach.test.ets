@@ -79,12 +79,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0001
      * @tc.number SUB_COMMONLIBRARY_ARRAY_ForEach_0001
-     * @tc.name testArrayForEach0001
-     * @tc.desc Verify forEach iterates over all elements in a numeric array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach iterates over all elements in a numeric array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -96,12 +96,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0002
      * @tc.number SUB_COMMONLIBRARY_ARRAY_ForEach_0002
-     * @tc.name testArrayForEach0002
-     * @tc.desc Verify forEach provides correct index argument
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach provides correct index argument
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ['a', 'b', 'c'];
@@ -113,12 +113,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0003
      * @tc.number SUB_COMMONLIBRARY_ARRAY_ForEach_0003
-     * @tc.name testArrayForEach0003
-     * @tc.desc Verify forEach provides correct array argument reference
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach provides correct array argument reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: boolean[] = [true, false];
@@ -132,24 +132,24 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0004
      * @tc.number SUB_COMMONLIBRARY_ARRAY_ForEach_0004
-     * @tc.name testArrayForEach0004
-     * @tc.desc Verify forEach does not return a value (undefined)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach does not return a value (undefined)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayForEachJs0004()).assertEqual(true);
     });
 
     /**
+     * @tc.name   testArrayForEach0005
      * @tc.number SUB_COMMONLIBRARY_ARRAY_ForEach_0005
-     * @tc.name testArrayForEach0005
-     * @tc.desc Verify forEach skips empty slots in sparse array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach skips empty slots in sparse array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       // ArkTS requires defined array values, so simulate sparse with undefined
@@ -164,12 +164,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0006
      * @tc.number SUB_COMMONLIBRARY_ARRAY_ForEach_0006
-     * @tc.name testArrayForEach0006
-     * @tc.desc Verify forEach with empty array executes no callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach with empty array executes no callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = [];
@@ -181,12 +181,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0007
      * @tc.number SUB_COMMONLIBRARY_ARRAY_ForEach_0007
-     * @tc.name testArrayForEach0007
-     * @tc.desc Verify forEach processes string array elements in order
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach processes string array elements in order
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ['x', 'y', 'z'];
@@ -198,12 +198,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0008
      * @tc.number SUB_COMMONLIBRARY_ARRAY_ForEach_0008
-     * @tc.name testArrayForEach0008
-     * @tc.desc Verify forEach with object elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach with object elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Person { name: string; }
@@ -217,12 +217,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0009
      * @tc.number SUB_COMMONLIBRARY_ARRAY_ForEach_0009
-     * @tc.name testArrayForEach0009
-     * @tc.desc Verify forEach thisArg binding with object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach thisArg binding with object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2];
@@ -243,24 +243,24 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0010
      * @tc.number SUB_COMMONLIBRARY_ARRAY_ForEach_0010
-     * @tc.name testArrayForEach0010
-     * @tc.desc Verify forEach without thisArg defaults to undefined this in strict mode
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach without thisArg defaults to undefined this in strict mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayForEachJs0010()).assertEqual(true);
     });
 
     /**
+     * @tc.name   testArrayForEach0011
      * @tc.number SUB_COMMONLIBRARY_ARRAY_ForEach_0011
-     * @tc.name testArrayForEach0011
-     * @tc.desc Verify forEach ignores added elements after iteration start
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach ignores added elements after iteration start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1];
@@ -273,12 +273,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0012
      * @tc.number SUB_COMMONLIBRARY_ARRAY_ForEach_0012
-     * @tc.name testArrayForEach0012
-     * @tc.desc Verify forEach processes existing elements only once even if modified
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach processes existing elements only once even if modified
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2];
@@ -291,12 +291,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0013
      * @tc.number SUB_COMMONLIBRARY_ARRAY_ForEach_0013
-     * @tc.name testArrayForEach0013
-     * @tc.desc Verify forEach does not visit deleted elements after iteration start
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach does not visit deleted elements after iteration start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -311,12 +311,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0014
      * @tc.number SUB_COMMONLIBRARY_ARRAY_ForEach_0014
-     * @tc.name testArrayForEach0014
-     * @tc.desc Verify forEach callback executes correct number of times for array length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach callback executes correct number of times for array length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [5, 6, 7, 8];
@@ -328,12 +328,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0015
      * @tc.number SUB_COMMONLIBRARY_ARRAY_ForEach_0015
-     * @tc.name testArrayForEach0015
-     * @tc.desc Verify forEach on array of booleans accumulates correct result
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach on array of booleans accumulates correct result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: boolean[] = [true, false, true];
@@ -347,12 +347,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0016
      * @tc.number SUB_COMMONLIBRARY_ARRAY_ForEach_0016
-     * @tc.name testArrayForEach0016
-     * @tc.desc Verify forEach can handle array of objects with numeric property sum
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach can handle array of objects with numeric property sum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Item { value: number; }
@@ -366,12 +366,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0017
      * @tc.number SUB_COMMONLIBRARY_ARRAY_ForEach_0017
-     * @tc.name testArrayForEach0017
-     * @tc.desc Verify forEach works with array of strings to build uppercase list
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach works with array of strings to build uppercase list
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ['a', 'b'];
@@ -383,12 +383,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0018
      * @tc.number SUB_COMMONLIBRARY_ARRAY_ForEach_0018
-     * @tc.name testArrayForEach0018
-     * @tc.desc Verify forEach with nested arrays flattens manually
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach with nested arrays flattens manually
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[][] = [[1, 2], [3, 4]];
@@ -402,12 +402,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0019
      * @tc.number SUB_COMMONLIBRARY_ARRAY_ForEach_0019
-     * @tc.name testArrayForEach0019
-     * @tc.desc Verify forEach handles mutation by setting undefined to values during iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach handles mutation by setting undefined to values during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | undefined)[] = [1, 2];
@@ -420,12 +420,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0020
      * @tc.number SUB_COMMONLIBRARY_ARRAY_ForEach_0020
-     * @tc.name testArrayForEach0020
-     * @tc.desc Verify forEach with string concatenation preserves order
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach with string concatenation preserves order
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ['h', 'e', 'l', 'l', 'o'];
@@ -437,24 +437,24 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0021
      * @tc.number SUB_COMMONLIBRARY_ARRAY_ForEach_0021
-     * @tc.name testArrayForEach0021
-     * @tc.desc Verify forEach on large array executes callback for each element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach on large array executes callback for each element
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayForEachJs0021()).assertEqual(true);
     });
 
     /**
+     * @tc.name   testArrayForEach0022
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0022
-     * @tc.name testArrayForEach0022
-     * @tc.desc Verify forEach stops executing when array length is reduced to 0 during iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach stops executing when array length is reduced to 0 during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -469,24 +469,24 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0023
      * @tc.number SUB_COMMONLIBRARY_ARRAY_ForEach_0023
-     * @tc.name testArrayForEach0023
-     * @tc.desc Verify forEach ignores prototype chain properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach ignores prototype chain properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayForEachJs0023()).assertDeepEquals([1, 2, 3]);
     });
 
     /**
+     * @tc.name   testArrayForEach0024
      * @tc.number SUB_COMMONLIBRARY_ARRAY_ForEach_0024
-     * @tc.name testArrayForEach0024
-     * @tc.desc Verify forEach with callback capturing outer variable scope
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach with callback capturing outer variable scope
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2];
@@ -499,12 +499,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0025
      * @tc.number SUB_COMMONLIBRARY_ARRAY_ForEach_0025
-     * @tc.name testArrayForEach0025
-     * @tc.desc Verify forEach does not break early on return in callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach does not break early on return in callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -517,12 +517,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0026
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0026
-     * @tc.name testArrayForEach0026
-     * @tc.desc Verify forEach with empty typed array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach with empty typed array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: Int32Array = new Int32Array([]);
@@ -534,24 +534,24 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0027
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0027
-     * @tc.name testArrayForEach0027
-     * @tc.desc Verify forEach skips deleted elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach skips deleted elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayForEachJs0027()).assertDeepEquals([1, 3]);
     });
 
     /**
+     * @tc.name   testArrayForEach0028
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0028
-     * @tc.name testArrayForEach0028
-     * @tc.desc Verify forEach receives undefined explicitly stored
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach receives undefined explicitly stored
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | undefined)[] = [undefined];
@@ -561,12 +561,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0029
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0029
-     * @tc.name testArrayForEach0029
-     * @tc.desc Verify forEach on array with boolean elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach on array with boolean elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: boolean[] = [true, false, true];
@@ -580,12 +580,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0030
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0030
-     * @tc.name testArrayForEach0030
-     * @tc.desc Verify forEach with callback accessing outer variable
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach with callback accessing outer variable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -597,12 +597,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0031
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0031
-     * @tc.name testArrayForEach0031
-     * @tc.desc Verify forEach with nested arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach with nested arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[][] = [[1, 2], [3, 4]];
@@ -612,12 +612,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0032
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0032
-     * @tc.name testArrayForEach0032
-     * @tc.desc Verify forEach does not mutate array length automatically
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach does not mutate array length automatically
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -628,12 +628,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0033
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0033
-     * @tc.name testArrayForEach0033
-     * @tc.desc Verify forEach on object array with interface
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach on object array with interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface User {
@@ -648,12 +648,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0034
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0034
-     * @tc.name testArrayForEach0034
-     * @tc.desc Verify forEach with thisArg binding correctly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach with thisArg binding correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class Collector {
@@ -673,12 +673,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0035
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0035
-     * @tc.name testArrayForEach0035
-     * @tc.desc Verify forEach ignores array holes in sparse array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach ignores array holes in sparse array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [];
@@ -689,12 +689,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0036
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0036
-     * @tc.name testArrayForEach0036
-     * @tc.desc Verify forEach can mutate array elements during iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach can mutate array elements during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -705,12 +705,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0037
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0037
-     * @tc.name testArrayForEach0037
-     * @tc.desc Verify forEach on string array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach on string array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ["a", "b", "c"];
@@ -720,12 +720,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0038
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0038
-     * @tc.name testArrayForEach0038
-     * @tc.desc Verify forEach callback receives correct index values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach callback receives correct index values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [10, 20, 30];
@@ -735,12 +735,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0039
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0039
-     * @tc.name testArrayForEach0039
-     * @tc.desc Verify forEach on nested empty arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach on nested empty arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[][] = [[], [1]];
@@ -750,12 +750,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0040
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0040
-     * @tc.name testArrayForEach0040
-     * @tc.desc Verify forEach with object having method
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach with object having method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class Accumulator {
@@ -773,12 +773,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0041
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0041
-     * @tc.name testArrayForEach0041
-     * @tc.desc Verify forEach handles NaN values correctly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach handles NaN values correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [NaN, 1];
@@ -788,36 +788,36 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0042
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0042
-     * @tc.name testArrayForEach0042
-     * @tc.desc Verify forEach on frozen array still executes callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach on frozen array still executes callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayForEachJs0042()).assertDeepEquals([1, 2, 3]);
     });
 
     /**
+     * @tc.name   testArrayForEach0043
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0043
-     * @tc.name testArrayForEach0043
-     * @tc.desc Verify forEach ignores non-integer property keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach ignores non-integer property keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayForEachJs0043()).assertDeepEquals([1, 2]);
     });
 
     /**
+     * @tc.name   testArrayForEach0044
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0044
-     * @tc.name testArrayForEach0044
-     * @tc.desc Verify forEach with Map values inside array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach with Map values inside array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: Map<string, number> = new Map([["a", 1]]);
@@ -828,12 +828,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0045
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0045
-     * @tc.name testArrayForEach0045
-     * @tc.desc Verify forEach does not execute callback when array is empty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach does not execute callback when array is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [];
@@ -845,24 +845,24 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0046
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0046
-     * @tc.name testArrayForEach0046
-     * @tc.desc Verify forEach with symbol elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach with symbol elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayForEachJs0046()).assertDeepEquals(["Symbol(a)"]);
     });
 
     /**
+     * @tc.name   testArrayForEach0047
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0047
-     * @tc.name testArrayForEach0047
-     * @tc.desc Verify forEach with bigint elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach with bigint elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: bigint[] = [1n, 2n];
@@ -874,12 +874,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0048
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0048
-     * @tc.name testArrayForEach0048
-     * @tc.desc Verify forEach with mixed type union elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach with mixed type union elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       type Mix = string | number;
@@ -890,12 +890,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0049
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0049
-     * @tc.name testArrayForEach0049
-     * @tc.desc Verify forEach with Date objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach with Date objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: Date[] = [new Date(0), new Date(1)];
@@ -905,12 +905,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0050
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0050
-     * @tc.name testArrayForEach0050
-     * @tc.desc Verify forEach with nested forEach inside callback
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach with nested forEach inside callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[][] = [[1], [2]];
@@ -920,12 +920,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0051
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0051
-     * @tc.name testArrayForEach0051
-     * @tc.desc Verify forEach with Uint8Array typed array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach with Uint8Array typed array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: Uint8Array = new Uint8Array([1, 2]);
@@ -937,12 +937,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0052
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0052
-     * @tc.name testArrayForEach0052
-     * @tc.desc Verify forEach does not execute on empty array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach does not execute on empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [];
@@ -952,12 +952,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0053
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0053
-     * @tc.name testArrayForEach0053
-     * @tc.desc Verify forEach processes single element array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach processes single element array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ["hello"];
@@ -967,12 +967,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0054
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0054
-     * @tc.name testArrayForEach0054
-     * @tc.desc Verify forEach passes correct index argument
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach passes correct index argument
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [10, 20, 30];
@@ -982,12 +982,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0055
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0055
-     * @tc.name testArrayForEach0055
-     * @tc.desc Verify forEach third argument is the array itself
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach third argument is the array itself
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [7, 8];
@@ -999,24 +999,24 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0056
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0056
-     * @tc.name testArrayForEach0056
-     * @tc.desc Verify forEach skips inherited properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach skips inherited properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayForEachJs0056()).assertDeepEquals([1, 2, 3]);
     });
 
     /**
+     * @tc.name   testArrayForEach0057
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0057
-     * @tc.name testArrayForEach0057
-     * @tc.desc Verify forEach callback not called on empty slots
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach callback not called on empty slots
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | undefined)[] = [1, , 3];
@@ -1026,12 +1026,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0058
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0058
-     * @tc.name testArrayForEach0058
-     * @tc.desc Verify forEach respects sparse array with explicit undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach respects sparse array with explicit undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | undefined)[] = [undefined, 2];
@@ -1041,12 +1041,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0059
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0059
-     * @tc.name testArrayForEach0059
-     * @tc.desc Verify forEach receives index correctly with sparse array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach receives index correctly with sparse array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | undefined)[] = [];
@@ -1059,12 +1059,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0060
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0060
-     * @tc.name testArrayForEach0060
-     * @tc.desc Verify forEach does not change array length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach does not change array length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -1075,12 +1075,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0061
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0061
-     * @tc.name testArrayForEach0061
-     * @tc.desc Verify forEach callback never receives values added after start
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach callback never receives values added after start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1];
@@ -1093,12 +1093,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0062
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0062
-     * @tc.name testArrayForEach0062
-     * @tc.desc Verify forEach can read modified values during iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach can read modified values during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -1113,36 +1113,36 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0063
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0063
-     * @tc.name testArrayForEach0063
-     * @tc.desc Verify forEach ignores deleted elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach ignores deleted elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayForEachJs0063()).assertDeepEquals([1, 2]);
     });
 
     /**
+     * @tc.name   testArrayForEach0064
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0064
-     * @tc.name testArrayForEach0064
-     * @tc.desc Verify forEach respects frozen array elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach respects frozen array elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayForEachJs0064()).assertDeepEquals([1, 2, 3]);
     });
 
     /**
+     * @tc.name   testArrayForEach0065
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0065
-     * @tc.name testArrayForEach0065
-     * @tc.desc Verify forEach works on array with holes at beginning
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach works on array with holes at beginning
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | undefined)[] = [];
@@ -1153,24 +1153,24 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0066
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0066
-     * @tc.name testArrayForEach0066
-     * @tc.desc Verify forEach ignores non-numeric properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach ignores non-numeric properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayForEachJs0066()).assertDeepEquals([1, 2]);
     });
 
     /**
+     * @tc.name   testArrayForEach0067
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0067
-     * @tc.name testArrayForEach0067
-     * @tc.desc Verify forEach works with Uint8Array typed array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach works with Uint8Array typed array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const typed: Uint8Array = new Uint8Array([1, 2, 3]);
@@ -1180,12 +1180,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0068
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0068
-     * @tc.name testArrayForEach0068
-     * @tc.desc Verify forEach ignores elements appended beyond original length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach ignores elements appended beyond original length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2];
@@ -1200,12 +1200,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0069
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0069
-     * @tc.name testArrayForEach0069
-     * @tc.desc Verify forEach on Object.keys result array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach on Object.keys result array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Person {
@@ -1221,12 +1221,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0070
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0070
-     * @tc.name testArrayForEach0070
-     * @tc.desc Verify forEach callback never mutates source reference
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach callback never mutates source reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2];
@@ -1237,12 +1237,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0071
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0071
-     * @tc.name testArrayForEach0071
-     * @tc.desc Verify forEach preserves NaN values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach preserves NaN values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [NaN];
@@ -1252,12 +1252,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0072
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0072
-     * @tc.name testArrayForEach0072
-     * @tc.desc Verify forEach works with Boolean values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach works with Boolean values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: boolean[] = [true, false];
@@ -1267,12 +1267,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0073
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0073
-     * @tc.name testArrayForEach0073
-     * @tc.desc Verify forEach works with string values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach works with string values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ["a", "b"];
@@ -1282,12 +1282,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0074
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0074
-     * @tc.name testArrayForEach0074
-     * @tc.desc Verify forEach callback order is ascending index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach callback order is ascending index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [3, 2, 1];
@@ -1297,12 +1297,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0075
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0075
-     * @tc.name testArrayForEach0075
-     * @tc.desc Verify forEach callback sees updated array length when truncated
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach callback sees updated array length when truncated
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -1317,24 +1317,24 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0076
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0076
-     * @tc.name testArrayForEach0076
-     * @tc.desc Verify forEach on frozen array length cannot add elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach on frozen array length cannot add elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayForEachJs0076()).assertEqual(1);
     });
 
     /**
+     * @tc.name   testArrayForEach0077
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0077
-     * @tc.name testArrayForEach0077
-     * @tc.desc Verify forEach preserves empty string values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach preserves empty string values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ["", "a"];
@@ -1344,12 +1344,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0078
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0078
-     * @tc.name testArrayForEach0078
-     * @tc.desc Verify forEach works with nested arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach works with nested arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[][] = [[1], [2]];
@@ -1359,12 +1359,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0079
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0079
-     * @tc.name testArrayForEach0079
-     * @tc.desc Verify forEach does not mutate original primitive elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach does not mutate original primitive elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ["a", "b"];
@@ -1375,12 +1375,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0080
      * @tc.number SUB_COMMONLIBRARY_ARRAY_FOREACH_0080
-     * @tc.name testArrayForEach0080
-     * @tc.desc Verify forEach callback receives current value not snapshot
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify forEach callback receives current value not snapshot
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayForEach0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2];
@@ -1393,12 +1393,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0081
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0081
-     * @tc.name testArrayForEach0081
-     * @tc.desc forEach skips holes in sparse array
-     * @tc.type Function
-     * @tc.size MEDIUM
-     * @tc.level Level 1
+     * @tc.desc   forEach skips holes in sparse array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = [1, , 3, , 5];
@@ -1408,24 +1408,24 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0082
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0082
-     * @tc.name testArrayForEach0082
-     * @tc.desc forEach with thisArg binding
-     * @tc.type Function
-     * @tc.size MEDIUM
-     * @tc.level Level 1
+     * @tc.desc   forEach with thisArg binding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayForEachJs0082()).assertEqual(6);
     });
 
     /**
+     * @tc.name   testArrayForEach0083
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0083
-     * @tc.name testArrayForEach0083
-     * @tc.desc new elements pushed during iteration are not visited
-     * @tc.type Function
-     * @tc.size MEDIUM
-     * @tc.level Level 1
+     * @tc.desc   new elements pushed during iteration are not visited
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0083", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = [1, 2, 3];
@@ -1440,12 +1440,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0084
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0084
-     * @tc.name testArrayForEach0084
-     * @tc.desc removed elements during iteration are skipped
-     * @tc.type Function
-     * @tc.size MEDIUM
-     * @tc.level Level 1
+     * @tc.desc   removed elements during iteration are skipped
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0084", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = [10, 20, 30];
@@ -1460,12 +1460,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0085
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0085
-     * @tc.name testArrayForEach0085
-     * @tc.desc element modification during iteration affects later values
-     * @tc.type Function
-     * @tc.size MEDIUM
-     * @tc.level Level 1
+     * @tc.desc   element modification during iteration affects later values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0085", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = [1, 2, 3];
@@ -1480,36 +1480,36 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0086
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0086
-     * @tc.name testArrayForEach0086
-     * @tc.desc use forEach to copy array of objects
-     * @tc.type Function
-     * @tc.size MEDIUM
-     * @tc.level Level 1
+     * @tc.desc   use forEach to copy array of objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0086", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayForEachJs0086()).assertFalse();
     });
 
     /**
+     * @tc.name   testArrayForEach0087
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0087
-     * @tc.name testArrayForEach0087
-     * @tc.desc call forEach on array-like object
-     * @tc.type Function
-     * @tc.size MEDIUM
-     * @tc.level Level 1
+     * @tc.desc   call forEach on array-like object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0087", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayForEachJs0087()).assertEqual("ab");
     });
 
     /**
+     * @tc.name   testArrayForEach0088
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0088
-     * @tc.name testArrayForEach0088
-     * @tc.desc flatten nested array using forEach
-     * @tc.type Function
-     * @tc.size MEDIUM
-     * @tc.level Level 1
+     * @tc.desc   flatten nested array using forEach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0088", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = [[1, 2], [3, 4]];
@@ -1519,12 +1519,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0089
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0089
-     * @tc.name testArrayForEach0089
-     * @tc.desc forEach does not execute on empty array
-     * @tc.type Function
-     * @tc.size MEDIUM
-     * @tc.level Level 1
+     * @tc.desc   forEach does not execute on empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0089", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [];
@@ -1536,12 +1536,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0090
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0090
-     * @tc.name testArrayForEach0090
-     * @tc.desc callback receives value index and array
-     * @tc.type Function
-     * @tc.size MEDIUM
-     * @tc.level Level 1
+     * @tc.desc   callback receives value index and array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = [10];
@@ -1553,12 +1553,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0091
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0091
-     * @tc.name testArrayForEach0091
-     * @tc.desc callback must be function otherwise throw TypeError
-     * @tc.type Function
-     * @tc.size MEDIUM
-     * @tc.level Level 1
+     * @tc.desc   callback must be function otherwise throw TypeError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let threw = false;
@@ -1571,24 +1571,24 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0092
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0092
-     * @tc.name testArrayForEach0092
-     * @tc.desc forEach ignores deleted index after iteration started
-     * @tc.type Function
-     * @tc.size MEDIUM
-     * @tc.level Level 1
+     * @tc.desc   forEach ignores deleted index after iteration started
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayForEachJs0092()).assertDeepEquals([1, 3]);
     });
 
     /**
+     * @tc.name   testArrayForEach0093
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0093
-     * @tc.name testArrayForEach0093
-     * @tc.desc forEach with string elements
-     * @tc.type Function
-     * @tc.size MEDIUM
-     * @tc.level Level 1
+     * @tc.desc   forEach with string elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0093", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = ["a", "b"];
@@ -1598,12 +1598,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0094
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0094
-     * @tc.name testArrayForEach0094
-     * @tc.desc forEach works on array of booleans
-     * @tc.type Function
-     * @tc.size MEDIUM
-     * @tc.level Level 1
+     * @tc.desc   forEach works on array of booleans
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0094", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = [true, false, true];
@@ -1617,12 +1617,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0095
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0095
-     * @tc.name testArrayForEach0095
-     * @tc.desc forEach handles array with undefined elements
-     * @tc.type Function
-     * @tc.size MEDIUM
-     * @tc.level Level 1
+     * @tc.desc   forEach handles array with undefined elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0095", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = [1, undefined, 3];
@@ -1632,12 +1632,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0096
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0096
-     * @tc.name testArrayForEach0096
-     * @tc.desc forEach with object array modifies properties
-     * @tc.type Function
-     * @tc.size MEDIUM
-     * @tc.level Level 1
+     * @tc.desc   forEach with object array modifies properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0096", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Item { count: number }
@@ -1649,12 +1649,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0097
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0097
-     * @tc.name testArrayForEach0097
-     * @tc.desc forEach callback called in ascending index order
-     * @tc.type Function
-     * @tc.size MEDIUM
-     * @tc.level Level 1
+     * @tc.desc   forEach callback called in ascending index order
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0097", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = [3, 2, 1];
@@ -1664,36 +1664,36 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0098
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0098
-     * @tc.name testArrayForEach0098
-     * @tc.desc forEach does not return new array
-     * @tc.type Function
-     * @tc.size MEDIUM
-     * @tc.level Level 1
+     * @tc.desc   forEach does not return new array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0098", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayForEachJs0098()).assertEqual(true);
     });
 
     /**
+     * @tc.name   testArrayForEach0099
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0099
-     * @tc.name testArrayForEach0099
-     * @tc.desc forEach on frozen array still calls callback
-     * @tc.type Function
-     * @tc.size MEDIUM
-     * @tc.level Level 1
+     * @tc.desc   forEach on frozen array still calls callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0099", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayForEachJs0099()).assertEqual(3);
     });
 
     /**
+     * @tc.name   testArrayForEach0100
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0100
-     * @tc.name testArrayForEach0100
-     * @tc.desc forEach cannot break early with return statement
-     * @tc.type Function
-     * @tc.size MEDIUM
-     * @tc.level Level 1
+     * @tc.desc   forEach cannot break early with return statement
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = [1, 2, 3];
@@ -1706,24 +1706,24 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0101
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0101
-     * @tc.name testArrayForEach0101
-     * @tc.desc forEach on large array executes all elements
-     * @tc.type Function
-     * @tc.size MEDIUM
-     * @tc.level Level 1
+     * @tc.desc   forEach on large array executes all elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0101", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayForEachJs0101()).assertEqual(4950);
     });
 
     /**
+     * @tc.name   testArrayForEach0102
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0102
-     * @tc.name testArrayForEach0102
-     * @tc.desc forEach with NaN values
-     * @tc.type Function
-     * @tc.size MEDIUM
-     * @tc.level Level 1
+     * @tc.desc   forEach with NaN values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0102", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = [NaN, 1];
@@ -1733,12 +1733,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0103
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0103
-     * @tc.name testArrayForEach0103
-     * @tc.desc forEach called with empty callback has no effect
-     * @tc.type Function
-     * @tc.size MEDIUM
-     * @tc.level Level 1
+     * @tc.desc   forEach called with empty callback has no effect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0103", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = [1, 2, 3];
@@ -1748,12 +1748,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0104
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0104
-     * @tc.name testArrayForEach0104
-     * @tc.desc forEach called on subclass of Array
-     * @tc.type Function
-     * @tc.size MEDIUM
-     * @tc.level Level 1
+     * @tc.desc   forEach called on subclass of Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0104", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class MyArray extends Array<number> {
@@ -1766,36 +1766,36 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0105
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0105
-     * @tc.name testArrayForEach0105
-     * @tc.desc forEach on array with Symbol.toStringTag
-     * @tc.type Function
-     * @tc.size MEDIUM
-     * @tc.level Level 1
+     * @tc.desc   forEach on array with Symbol.toStringTag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0105", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayForEachJs0105()).assertEqual(3);
     });
 
     /**
+     * @tc.name   testArrayForEach0106
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0106
-     * @tc.name testArrayForEach0106
-     * @tc.desc forEach ignores prototype properties
-     * @tc.type Function
-     * @tc.size MEDIUM
-     * @tc.level Level 1
+     * @tc.desc   forEach ignores prototype properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0106", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayForEachJs0106()).assertEqual(true);
     });
 
     /**
+     * @tc.name   testArrayForEach0107
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0107
-     * @tc.name testArrayForEach0107
-     * @tc.desc forEach callback receives correct array reference
-     * @tc.type Function
-     * @tc.size MEDIUM
-     * @tc.level Level 1
+     * @tc.desc   forEach callback receives correct array reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0107", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = [1, 2];
@@ -1809,12 +1809,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0108
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0108
-     * @tc.name testArrayForEach0108
-     * @tc.desc forEach executes synchronously
-     * @tc.type Function
-     * @tc.size MEDIUM
-     * @tc.level Level 1
+     * @tc.desc   forEach executes synchronously
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0108", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = [1, 2, 3];
@@ -1824,12 +1824,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0109
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0109
-     * @tc.name testArrayForEach0109
-     * @tc.desc forEach with nested forEach inside callback
-     * @tc.type Function
-     * @tc.size MEDIUM
-     * @tc.level Level 1
+     * @tc.desc   forEach with nested forEach inside callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0109", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = [[1, 2], [3]];
@@ -1839,12 +1839,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0110
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0110
-     * @tc.name testArrayForEach0110
-     * @tc.desc forEach does not skip undefined explicitly set
-     * @tc.type Function
-     * @tc.size MEDIUM
-     * @tc.level Level 1
+     * @tc.desc   forEach does not skip undefined explicitly set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0110", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = [undefined];
@@ -1854,12 +1854,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0111
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0111
-     * @tc.name testArrayForEach0111
-     * @tc.desc forEach with numeric string array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach with numeric string array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0111", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = ["1", "2", "3"];
@@ -1869,12 +1869,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0112
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0112
-     * @tc.name testArrayForEach0112
-     * @tc.desc forEach called on array with null values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach called on array with null values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0112", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | null)[] = [1, null, 3];
@@ -1884,12 +1884,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0113
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0113
-     * @tc.name testArrayForEach0113
-     * @tc.desc forEach with callback modifying the array length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach with callback modifying the array length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0113", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = [1, 2, 3];
@@ -1904,12 +1904,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0114
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0114
-     * @tc.name testArrayForEach0114
-     * @tc.desc forEach on array of objects with nested updates
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach on array of objects with nested updates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0114", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Item { val: number }
@@ -1921,24 +1921,24 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0115
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0115
-     * @tc.name testArrayForEach0115
-     * @tc.desc forEach called on array-like object with length > actual keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach called on array-like object with length > actual keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0115", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayForEachJs0115()).assertEqual("x");
     });
 
     /**
+     * @tc.name   testArrayForEach0116
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0116
-     * @tc.name testArrayForEach0116
-     * @tc.desc forEach with array containing boolean and undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach with array containing boolean and undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0116", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (boolean | undefined)[] = [true, undefined, false];
@@ -1948,12 +1948,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0117
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0117
-     * @tc.name testArrayForEach0117
-     * @tc.desc forEach with nested objects inside array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach with nested objects inside array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0117", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Inner { val: number }
@@ -1965,12 +1965,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0118
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0118
-     * @tc.name testArrayForEach0118
-     * @tc.desc forEach on array with mixed types
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach on array with mixed types
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0118", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | string | boolean)[] = [1, "a", true];
@@ -1980,12 +1980,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0119
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0119
-     * @tc.name testArrayForEach0119
-     * @tc.desc forEach on array with negative numbers
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach on array with negative numbers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0119", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = [-1, -2, -3];
@@ -1995,12 +1995,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0120
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0120
-     * @tc.name testArrayForEach0120
-     * @tc.desc forEach called on array with empty string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach called on array with empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0120", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = ["", "a"];
@@ -2010,12 +2010,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0121
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0121
-     * @tc.name testArrayForEach0121
-     * @tc.desc forEach on array with objects containing array property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach on array with objects containing array property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0121", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Obj { arr: number[] }
@@ -2027,24 +2027,24 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0122
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0122
-     * @tc.name testArrayForEach0122
-     * @tc.desc forEach with callback mutating array prototype
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach with callback mutating array prototype
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0122", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayForEachJs0122()).assertEqual(3);
     });
 
     /**
+     * @tc.name   testArrayForEach0123
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0123
-     * @tc.name testArrayForEach0123
-     * @tc.desc forEach on array of strings with spaces
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach on array of strings with spaces
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0123", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = ["a ", " b"];
@@ -2054,12 +2054,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0124
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0124
-     * @tc.name testArrayForEach0124
-     * @tc.desc forEach called on array with repeated elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach called on array with repeated elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0124", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = [1, 1, 1];
@@ -2069,12 +2069,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0125
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0125
-     * @tc.name testArrayForEach0125
-     * @tc.desc forEach on array with nested undefined values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach on array with nested undefined values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0125", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | undefined)[][] = [[1, undefined], [undefined, 2]];
@@ -2084,12 +2084,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0126
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0126
-     * @tc.name testArrayForEach0126
-     * @tc.desc forEach on array with function elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach on array with function elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0126", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (() => number)[] = [() => 1, () => 2];
@@ -2099,12 +2099,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0127
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0127
-     * @tc.name testArrayForEach0127
-     * @tc.desc forEach called on array containing Infinity
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach called on array containing Infinity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0127", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = [1, Infinity, 2];
@@ -2114,12 +2114,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0128
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0128
-     * @tc.name testArrayForEach0128
-     * @tc.desc forEach on array of empty objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach on array of empty objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0128", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Obj {};
@@ -2130,12 +2130,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0129
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0129
-     * @tc.name testArrayForEach0129
-     * @tc.desc forEach called on array with Boolean object wrappers
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach called on array with Boolean object wrappers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0129", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = [new Boolean(true), new Boolean(false)];
@@ -2145,24 +2145,24 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0130
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0130
-     * @tc.name testArrayForEach0130
-     * @tc.desc forEach with callback deleting another index
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach with callback deleting another index
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0130", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayForEachJs0130()).assertDeepEquals([1, 3]);
     });
 
     /**
+     * @tc.name   testArrayForEach0131
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0131
-     * @tc.name testArrayForEach0131
-     * @tc.desc forEach on sparse array skips empty slots
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach on sparse array skips empty slots
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0131", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = [1, , 3]; // sparse array
@@ -2172,12 +2172,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0132
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0132
-     * @tc.name testArrayForEach0132
-     * @tc.desc forEach with thisArg provided
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach with thisArg provided
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0132", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class Counter {
@@ -2195,24 +2195,24 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0133
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0133
-     * @tc.name testArrayForEach0133
-     * @tc.desc forEach called on array-like object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach called on array-like object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0133", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayForEachJs0133()).assertDeepEquals(["a", "b"]);
     });
 
     /**
+     * @tc.name   testArrayForEach0134
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0134
-     * @tc.name testArrayForEach0134
-     * @tc.desc forEach on array with objects to simulate copy by reference
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach on array with objects to simulate copy by reference
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0134", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Obj { val: number }
@@ -2226,12 +2226,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0135
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0135
-     * @tc.name testArrayForEach0135
-     * @tc.desc forEach modifies array during iteration
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach modifies array during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0135", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = [1, 2, 3];
@@ -2246,12 +2246,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0136
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0136
-     * @tc.name testArrayForEach0136
-     * @tc.desc forEach on 2D array to flatten
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach on 2D array to flatten
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0136", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = [[1, 2], [3, 4]];
@@ -2261,36 +2261,36 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0137
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0137
-     * @tc.name testArrayForEach0137
-     * @tc.desc forEach called on object with numeric keys
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach called on object with numeric keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0137", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayForEachJs0137()).assertEqual(30);
     });
 
     /**
+     * @tc.name   testArrayForEach0138
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0138
-     * @tc.name testArrayForEach0138
-     * @tc.desc forEach on array with deleted prototype properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach on array with deleted prototype properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0138", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayForEachJs0138()).assertEqual(true);
     });
 
     /**
+     * @tc.name   testArrayForEach0139
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0139
-     * @tc.name testArrayForEach0139
-     * @tc.desc forEach with callback throwing error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach with callback throwing error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0139", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = [1, 2];
@@ -2308,60 +2308,60 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0140
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0140
-     * @tc.name testArrayForEach0140
-     * @tc.desc forEach on array with Symbol elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach on array with Symbol elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0140", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayForEachJs0140()).assertDeepEquals([true, true]);
     });
 
     /**
+     * @tc.name   testArrayForEach0141
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0141
-     * @tc.name testArrayForEach0141
-     * @tc.desc forEach on array with getters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach on array with getters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0141", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayForEachJs0141()).assertDeepEquals([10]);
     });
 
     /**
+     * @tc.name   testArrayForEach0142
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0142
-     * @tc.name testArrayForEach0142
-     * @tc.desc forEach on array with setter modifies external variable
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach on array with setter modifies external variable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0142", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayForEachJs0142()).assertEqual(0);
     });
 
     /**
+     * @tc.name   testArrayForEach0143
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0143
-     * @tc.name testArrayForEach0143
-     * @tc.desc forEach on array of objects using thisArg for context
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach on array of objects using thisArg for context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0143", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayForEachJs0143()).assertEqual(3);
     });
 
     /**
+     * @tc.name   testArrayForEach0144
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0144
-     * @tc.name testArrayForEach0144
-     * @tc.desc forEach on array with negative and positive numbers
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach on array with negative and positive numbers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0144", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = [-1, 0, 1];
@@ -2371,12 +2371,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0145
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0145
-     * @tc.name testArrayForEach0145
-     * @tc.desc forEach called on array with nested arrays modifying inner arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach called on array with nested arrays modifying inner arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0145", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[][] = [[1], [2]];
@@ -2386,12 +2386,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0146
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0146
-     * @tc.name testArrayForEach0146
-     * @tc.desc forEach on array of BigInt values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach on array of BigInt values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0146", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = [1n, 2n, 3n];
@@ -2401,12 +2401,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0147
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0147
-     * @tc.name testArrayForEach0147
-     * @tc.desc forEach on array of functions modifying external array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach on array of functions modifying external array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0147", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (() => number)[] = [() => 1, () => 2];
@@ -2416,12 +2416,12 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0148
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0148
-     * @tc.name testArrayForEach0148
-     * @tc.desc forEach called on array with NaN and Infinity
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach called on array with NaN and Infinity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0148", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr = [NaN, Infinity];
@@ -2431,24 +2431,24 @@ export default function ArrayForEachTest() {
     });
 
     /**
+     * @tc.name   testArrayForEach0149
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0149
-     * @tc.name testArrayForEach0149
-     * @tc.desc forEach on array-like object with holes
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach on array-like object with holes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0149", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       expect(testArrayForEachJs0149()).assertDeepEquals(["x"]);
     });
 
     /**
+     * @tc.name   testArrayForEach0150
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_FOREACH_0150
-     * @tc.name testArrayForEach0150
-     * @tc.desc forEach with callback mutating both array and thisArg
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   forEach with callback mutating both array and thisArg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testArrayForEach0150", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class Counter {

@@ -60,12 +60,12 @@ export default function BuiltinsAsIntNTest() {
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_BOOLEAN_SECOND_0100
-     * @tc.name      : BuiltinsAsIntNTest2600
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BuiltinsAsIntNTest2600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BOOLEAN_SECOND_0100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('BuiltinsAsIntNTest2600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -94,12 +94,12 @@ export default function BuiltinsAsIntNTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_BOOLEAN_SECOND_0200
-     * @tc.name      : BuiltinsAsUintNTest0100
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BuiltinsAsUintNTest0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BOOLEAN_SECOND_0200
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('BuiltinsAsUintNTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -128,12 +128,12 @@ export default function BuiltinsAsIntNTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_BOOLEAN_SECOND_0300
-     * @tc.name      : BuiltinsBigIntLiteralTest0100
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   BuiltinsBigIntLiteralTest0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BOOLEAN_SECOND_0300
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('BuiltinsBigIntLiteralTest0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -162,12 +162,12 @@ export default function BuiltinsAsIntNTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_BOOLEAN_SECOND_0400
-     * @tc.name      : testBigIntDiv
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBigIntDiv
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BOOLEAN_SECOND_0400
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBigIntDiv', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -196,12 +196,12 @@ export default function BuiltinsAsIntNTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_BOOLEAN_SECOND_0500
-     * @tc.name      : testBigIntAdd
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBigIntAdd
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BOOLEAN_SECOND_0500
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBigIntAdd', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -230,12 +230,12 @@ export default function BuiltinsAsIntNTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_BOOLEAN_SECOND_0600
-     * @tc.name      : testBigIntSub
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBigIntSub
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BOOLEAN_SECOND_0600
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBigIntSub', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -264,12 +264,12 @@ export default function BuiltinsAsIntNTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_BOOLEAN_SECOND_0700
-     * @tc.name      : testBigIntMod
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBigIntMod
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BOOLEAN_SECOND_0700
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBigIntMod', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -298,12 +298,12 @@ export default function BuiltinsAsIntNTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_BOOLEAN_SECOND_0800
-     * @tc.name      : testBigIntPow
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBigIntPow
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BOOLEAN_SECOND_0800
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBigIntPow', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -332,12 +332,12 @@ export default function BuiltinsAsIntNTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_BOOLEAN_SECOND_0900
-     * @tc.name      : testBigIntLessThan
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBigIntLessThan
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BOOLEAN_SECOND_0900
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBigIntLessThan', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -366,12 +366,12 @@ export default function BuiltinsAsIntNTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_BOOLEAN_SECOND_0901
-     * @tc.name      : testBigIntIsEven
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testBigIntIsEven
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BOOLEAN_SECOND_0901
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testBigIntIsEven', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

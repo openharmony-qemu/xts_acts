@@ -31,12 +31,12 @@ import {
 export default function ArrayBufferTaskPoolTest() {
   describe('ArrayBufferTaskPoolTest', () => {
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_ARRAYBUFFER_0100
-     * @tc.name       : testCollectionsArrayBuffer0001
-     * @tc.desc       : Testing Collections of ArrayBuffer, constructor -1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsArrayBuffer0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_ARRAYBUFFER_0100
+     * @tc.desc   Testing Collections of ArrayBuffer, constructor -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsArrayBuffer0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsArrayBuffer0001';
@@ -60,12 +60,12 @@ export default function ArrayBufferTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_ARRAYBUFFER_0200
-     * @tc.name       : testCollectionsArrayBuffer0002
-     * @tc.desc       : Testing Collections of ArrayBuffer, constructor 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsArrayBuffer0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_ARRAYBUFFER_0200
+     * @tc.desc   Testing Collections of ArrayBuffer, constructor 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsArrayBuffer0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsArrayBuffer0002';
@@ -89,12 +89,12 @@ export default function ArrayBufferTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_ARRAYBUFFER_0300
-     * @tc.name       : testCollectionsArrayBuffer0003
-     * @tc.desc       : Testing Collections of ArrayBuffer, constructor 1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsArrayBuffer0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_ARRAYBUFFER_0300
+     * @tc.desc   Testing Collections of ArrayBuffer, constructor 1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsArrayBuffer0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsArrayBuffer0003';
@@ -118,12 +118,12 @@ export default function ArrayBufferTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_ARRAYBUFFER_0400
-     * @tc.name       : testCollectionsArrayBuffer0004
-     * @tc.desc       : Testing Collections of ArrayBuffer, slice(0).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsArrayBuffer0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_ARRAYBUFFER_0400
+     * @tc.desc   Testing Collections of ArrayBuffer, slice(0).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsArrayBuffer0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsArrayBuffer0004';
@@ -147,12 +147,12 @@ export default function ArrayBufferTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_ARRAYBUFFER_0500
-     * @tc.name       : testCollectionsArrayBuffer0005
-     * @tc.desc       : Testing Collections of ArrayBuffer, slice(-1).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsArrayBuffer0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_ARRAYBUFFER_0500
+     * @tc.desc   Testing Collections of ArrayBuffer, slice(-1).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsArrayBuffer0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsArrayBuffer0005';
@@ -176,12 +176,12 @@ export default function ArrayBufferTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_ARRAYBUFFER_0600
-     * @tc.name       : testCollectionsArrayBuffer0006
-     * @tc.desc       : Testing Collections of ArrayBuffer, slice(2).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsArrayBuffer0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_ARRAYBUFFER_0600
+     * @tc.desc   Testing Collections of ArrayBuffer, slice(2).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsArrayBuffer0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = "testCollectionsArrayBuffer0006";
@@ -205,12 +205,12 @@ export default function ArrayBufferTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_ARRAYBUFFER_0700
-     * @tc.name       : testCollectionsArrayBuffer0007
-     * @tc.desc       : Testing Collections of ArrayBuffer, slice(10).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsArrayBuffer0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_ARRAYBUFFER_0700
+     * @tc.desc   Testing Collections of ArrayBuffer, slice(10).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsArrayBuffer0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = "testCollectionsArrayBuffer0007";
@@ -234,12 +234,12 @@ export default function ArrayBufferTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_ARRAYBUFFER_0800
-     * @tc.name       : testCollectionsArrayBuffer0008
-     * @tc.desc       : Testing Collections of ArrayBuffer, slice(2,4).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsArrayBuffer0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_ARRAYBUFFER_0800
+     * @tc.desc   Testing Collections of ArrayBuffer, slice(2,4).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsArrayBuffer0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = "testCollectionsArrayBuffer0008";
@@ -263,12 +263,12 @@ export default function ArrayBufferTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_ARRAYBUFFER_0900
-     * @tc.name       : testCollectionsArrayBuffer0009
-     * @tc.desc       : Testing Collections of ArrayBuffer, slice(2,2).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsArrayBuffer0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_ARRAYBUFFER_0900
+     * @tc.desc   Testing Collections of ArrayBuffer, slice(2,2).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsArrayBuffer0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = "testCollectionsArrayBuffer0009";
@@ -292,12 +292,12 @@ export default function ArrayBufferTaskPoolTest() {
       done()
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_ARRAYBUFFER_1000
-     * @tc.name       : testCollectionsArrayBuffer0010
-     * @tc.desc       : Testing Collections of ArrayBuffer, slice(2,0).
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsArrayBuffer0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_ARRAYBUFFER_1000
+     * @tc.desc   Testing Collections of ArrayBuffer, slice(2,0).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsArrayBuffer0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testCollectionsArrayBuffer0010';

@@ -43,12 +43,12 @@ export default function Decimal2Test() {
     })
 
     /**
+     * @tc.name   testComparedTo0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20100
-     * @tc.name testComparedTo0001
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = new Decimal(1);
@@ -56,12 +56,12 @@ export default function Decimal2Test() {
       expect(data1).assertEqual(true);
     });
     /**
+     * @tc.name   testComparedTo0002
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20101
-     * @tc.name testComparedTo0002
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = new Decimal(Infinity);
@@ -70,12 +70,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0003
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20102
-     * @tc.name testComparedTo0003
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = new Decimal(123.456);
@@ -84,12 +84,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0004
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20103
-     * @tc.name testComparedTo0004
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = new Decimal(123);
@@ -98,12 +98,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0005
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20104
-     * @tc.name testComparedTo0005
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = new Decimal(NaN);
@@ -112,12 +112,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20105
-     * @tc.name testComparedTo0006
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = new Decimal(Number.NEGATIVE_INFINITY);
@@ -126,12 +126,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0007
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20106
-     * @tc.name testComparedTo0007
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = new Decimal(-0);
@@ -140,12 +140,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0008
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20107
-     * @tc.name testComparedTo0008
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = new Decimal(0);
@@ -154,12 +154,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0009
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20108
-     * @tc.name testComparedTo0009
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = new Decimal(-0);
@@ -168,12 +168,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0010
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20109
-     * @tc.name testComparedTo0010
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = new Decimal(0);
@@ -182,12 +182,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0011
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20110
-     * @tc.name testComparedTo0011
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = new Decimal(0);
@@ -196,12 +196,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0012
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20111
-     * @tc.name testComparedTo0012
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = new Decimal(-0);
@@ -210,12 +210,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0013
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20112
-     * @tc.name testComparedTo0013
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = new Decimal(-110);
@@ -224,12 +224,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0014
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20113
-     * @tc.name testComparedTo0014
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = new Decimal(256);
@@ -238,12 +238,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0015
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20114
-     * @tc.name testComparedTo0015
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = new Decimal(256);
@@ -252,12 +252,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0016
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20115
-     * @tc.name testComparedTo0016
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = new Decimal(256);
@@ -266,12 +266,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0017
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20116
-     * @tc.name testComparedTo0017
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = new Decimal(256);
@@ -280,12 +280,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0018
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20117
-     * @tc.name testComparedTo0018
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = new Decimal(256);
@@ -294,12 +294,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0019
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20118
-     * @tc.name testComparedTo0019
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = new Decimal(256);
@@ -308,12 +308,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0020
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20119
-     * @tc.name testComparedTo0020
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -325,12 +325,12 @@ export default function Decimal2Test() {
       }
     });
     /**
+     * @tc.name   testComparedTo0021
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20120
-     * @tc.name testComparedTo0021
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -344,12 +344,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0022
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20121
-     * @tc.name testComparedTo0022
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -362,12 +362,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0023
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20122
-     * @tc.name testComparedTo0023
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -380,12 +380,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0024
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20123
-     * @tc.name testComparedTo0024
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = new Decimal(3.456);
@@ -394,12 +394,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0025
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20124
-     * @tc.name testComparedTo0025
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = new Decimal(3.456);
@@ -413,12 +413,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0026
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20125
-     * @tc.name testComparedTo0026
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -431,12 +431,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0027
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20126
-     * @tc.name testComparedTo0027
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = new Decimal(3.456);
@@ -445,12 +445,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0028
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20127
-     * @tc.name testComparedTo0028
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -463,12 +463,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20128
-     * @tc.name testComparedTo0029
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = new Decimal(1.75);
@@ -477,12 +477,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20129
-     * @tc.name testComparedTo0030
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = new Decimal(0);
@@ -491,12 +491,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0031
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20130
-     * @tc.name testComparedTo0031
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = new Decimal(Number.EPSILON);
@@ -505,12 +505,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0032
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20131
-     * @tc.name testComparedTo0032
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let pi: Decimal = new Decimal('3.14159265358');
@@ -529,12 +529,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0033
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20132
-     * @tc.name testComparedTo0033
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -547,12 +547,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0034
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20133
-     * @tc.name testComparedTo0034
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = new Decimal(1.39);
@@ -561,12 +561,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0035
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20134
-     * @tc.name testComparedTo0035
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = new Decimal(1.39);
@@ -575,12 +575,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0036
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20135
-     * @tc.name testComparedTo0036
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = new Decimal(9.499);
@@ -591,12 +591,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0037
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20136
-     * @tc.name testComparedTo0037
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = new Decimal(45.6);
@@ -605,12 +605,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0038
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20137
-     * @tc.name testComparedTo0038
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = new Decimal(45.6);
@@ -619,12 +619,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0039
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20138
-     * @tc.name testComparedTo0039
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -637,24 +637,24 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0040
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20139
-     * @tc.name testComparedTo0040
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = Decimal.abs(-0.5);
       expect(data.toString()).assertEqual("0.5");
     });
     /**
+     * @tc.name   testComparedTo0041
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20140
-     * @tc.name testComparedTo0041
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = Decimal.abs(Number.POSITIVE_INFINITY);
@@ -662,12 +662,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0042
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20141
-     * @tc.name testComparedTo0042
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = Decimal.floor(1.8);
@@ -675,12 +675,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0043
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20142
-     * @tc.name testComparedTo0043
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = Decimal.ceil(1.8);
@@ -688,12 +688,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0044
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20143
-     * @tc.name testComparedTo0044
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = Decimal.trunc(2.5);
@@ -701,12 +701,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0045
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20144
-     * @tc.name testComparedTo0045
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = Decimal.clamp(10.1, 0, 10);
@@ -714,12 +714,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0046
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20145
-     * @tc.name testComparedTo0046
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = Decimal.add(0.5, 0.5);
@@ -727,12 +727,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0047
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20146
-     * @tc.name testComparedTo0047
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = Decimal.sum(0.5, 0.5);
@@ -740,12 +740,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0048
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20147
-     * @tc.name testComparedTo0048
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = Decimal.sub(1, 0.5);
@@ -753,12 +753,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0049
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20148
-     * @tc.name testComparedTo0049
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = Decimal.mul(1, 0.5);
@@ -766,12 +766,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0050
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20149
-     * @tc.name testComparedTo0050
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = Decimal.div(1, 0.5);
@@ -779,12 +779,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0051
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20150
-     * @tc.name testComparedTo0051
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = Decimal.mod(2, 1);
@@ -792,12 +792,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0052
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20151
-     * @tc.name testComparedTo0052
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = Decimal.sqrt(3);
@@ -805,12 +805,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0053
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20152
-     * @tc.name testComparedTo0053
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = Decimal.cbrt(3);
@@ -818,12 +818,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0054
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20153
-     * @tc.name testComparedTo0054
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = Decimal.pow(3, -2);
@@ -831,12 +831,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0055
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20154
-     * @tc.name testComparedTo0055
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = Decimal.exp(2);
@@ -844,12 +844,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0056
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20155
-     * @tc.name testComparedTo0056
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = Decimal.log(2, 256);
@@ -857,12 +857,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0057
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20156
-     * @tc.name testComparedTo0057
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = Decimal.ln(1.23e+30);
@@ -870,12 +870,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0058
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20157
-     * @tc.name testComparedTo0058
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = Decimal.log2(4);
@@ -883,12 +883,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0059
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20158
-     * @tc.name testComparedTo0059
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = Decimal.log10(10000);
@@ -896,12 +896,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0060
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20159
-     * @tc.name testComparedTo0060
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = Decimal.cos(-0.25);
@@ -909,12 +909,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0061
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20160
-     * @tc.name testComparedTo0061
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = Decimal.sin(0.75);
@@ -922,12 +922,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0062
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20161
-     * @tc.name testComparedTo0062
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = Decimal.tan(0.75);
@@ -935,12 +935,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0063
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20162
-     * @tc.name testComparedTo0063
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = Decimal.cosh(0.5);
@@ -948,12 +948,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0064
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20163
-     * @tc.name testComparedTo0064
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = Decimal.sinh(0.5);
@@ -961,12 +961,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0065
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20164
-     * @tc.name testComparedTo0065
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = Decimal.tanh(0.5);
@@ -974,12 +974,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0066
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20165
-     * @tc.name testComparedTo0066
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = Decimal.acos(0.5);
@@ -987,12 +987,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0067
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20166
-     * @tc.name testComparedTo0067
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = Decimal.asin(0.75);
@@ -1000,12 +1000,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0068
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20167
-     * @tc.name testComparedTo0068
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = Decimal.atan(0.75);
@@ -1016,12 +1016,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0069
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20168
-     * @tc.name testComparedTo0069
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = Decimal.acosh(50);
@@ -1029,12 +1029,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0070
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20169
-     * @tc.name testComparedTo0070
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = Decimal.asinh(50);
@@ -1042,12 +1042,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0071
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20170
-     * @tc.name testComparedTo0071
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = Decimal.atanh(0.75);
@@ -1055,12 +1055,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0072
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20171
-     * @tc.name testComparedTo0072
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = Decimal.atan2(2, 3);
@@ -1068,12 +1068,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0073
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20172
-     * @tc.name testComparedTo0073
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = Decimal.hypot(2, 3, 4);
@@ -1081,12 +1081,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0074
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20173
-     * @tc.name testComparedTo0074
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = Decimal.max(2, 3, 4);
@@ -1094,12 +1094,12 @@ export default function Decimal2Test() {
     });
 
     /**
+     * @tc.name   testComparedTo0075
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_DECIMAL20174
-     * @tc.name testComparedTo0075
-     * @tc.desc Testing the decimal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing the decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testComparedTo0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let data: Decimal = Decimal.min(2, 3, 4);

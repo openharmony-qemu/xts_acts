@@ -54,12 +54,12 @@ export default function builtinsReadonlyArrayToLocaleStringTest() {
     })
 
     /**
+     * @tc.name   builtinsReadonlyArrayToLocaleStringTest1001
      * @tc.number SUB_BUILTINS_ReadonlyArray_TOLOCALESTRING_TEST_0100
-     * @tc.name builtinsReadonlyArrayToLocaleStringTest1001
-     * @tc.desc Test number ReadonlyArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Test number ReadonlyArray
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsReadonlyArrayToLocaleStringTest1001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, () => {
       let arr: readonly number[] = [1, 2, 3];
@@ -67,12 +67,12 @@ export default function builtinsReadonlyArrayToLocaleStringTest() {
     });
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayToLocaleStringTest1002
      * @tc.number SUB_BUILTINS_ReadonlyArray_TOLOCALESTRING_TEST_0200
-     * @tc.name BuiltinsReadonlyArrayToLocaleStringTest1002
-     * @tc.desc Test string ReadonlyArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test string ReadonlyArray
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayToLocaleStringTest1002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let arr: readonly string[] = ['apple', 'banana', 'cherry'];
@@ -80,12 +80,12 @@ export default function builtinsReadonlyArrayToLocaleStringTest() {
     });
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayToLocaleStringTest1003
      * @tc.number SUB_BUILTINS_ReadonlyArray_TOLOCALESTRING_TEST_0300
-     * @tc.name BuiltinsReadonlyArrayToLocaleStringTest1003
-     * @tc.desc Test empty ReadonlyArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test empty ReadonlyArray
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayToLocaleStringTest1003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let arr: readonly number[] = [];
@@ -93,12 +93,12 @@ export default function builtinsReadonlyArrayToLocaleStringTest() {
     });
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayToLocaleStringTest1004
      * @tc.number SUB_BUILTINS_ReadonlyArray_TOLOCALESTRING_TEST_0400
-     * @tc.name BuiltinsReadonlyArrayToLocaleStringTest1004
-     * @tc.desc Test null/undefined elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test null/undefined elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayToLocaleStringTest1004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let arr: readonly (number | undefined | null)[] = [1, null, undefined, 3];
@@ -106,12 +106,12 @@ export default function builtinsReadonlyArrayToLocaleStringTest() {
     });
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayToLocaleStringTest1005
      * @tc.number SUB_BUILTINS_ReadonlyArray_TOLOCALESTRING_TEST_0500
-     * @tc.name BuiltinsReadonlyArrayToLocaleStringTest1005
-     * @tc.desc Test sparse ReadonlyArray
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test sparse ReadonlyArray
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayToLocaleStringTest1005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let arr: readonly (number | undefined)[] = [1, , 3];
@@ -119,12 +119,12 @@ export default function builtinsReadonlyArrayToLocaleStringTest() {
     });
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayToLocaleStringTest1006
      * @tc.number SUB_BUILTINS_ReadonlyArray_TOLOCALESTRING_TEST_0600
-     * @tc.name BuiltinsReadonlyArrayToLocaleStringTest1006
-     * @tc.desc Test object elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test object elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayToLocaleStringTest1006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const obj: Empty = {};
@@ -136,12 +136,12 @@ export default function builtinsReadonlyArrayToLocaleStringTest() {
     });
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayToLocaleStringTest1007
      * @tc.number SUB_BUILTINS_ReadonlyArray_TOLOCALESTRING_TEST_0700
-     * @tc.name BuiltinsReadonlyArrayToLocaleStringTest1007
-     * @tc.desc Test nested ReadonlyArrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test nested ReadonlyArrays
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayToLocaleStringTest1007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let arr: readonly (number[])[] = [[1, 2], [3, 4]];
@@ -149,36 +149,36 @@ export default function builtinsReadonlyArrayToLocaleStringTest() {
     });
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayToLocaleStringTest1008
      * @tc.number SUB_BUILTINS_ReadonlyArray_TOLOCALESTRING_TEST_0800
-     * @tc.name BuiltinsReadonlyArrayToLocaleStringTest1008
-     * @tc.desc Test NaN
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test NaN
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayToLocaleStringTest1008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(NaN.toLocaleString()).assertEqual("NaN");
     });
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayToLocaleStringTest1009
      * @tc.number SUB_BUILTINS_ReadonlyArray_TOLOCALESTRING_TEST_0900
-     * @tc.name BuiltinsReadonlyArrayToLocaleStringTest1009
-     * @tc.desc Test NaN equal
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test NaN equal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayToLocaleStringTest1009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       expect(NaN.toLocaleString('en')).assertEqual("NaN");
     });
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayToLocaleStringTest1010
      * @tc.number SUB_BUILTINS_ReadonlyArray_TOLOCALESTRING_TEST_1000
-     * @tc.name BuiltinsReadonlyArrayToLocaleStringTest1010
-     * @tc.desc Test number cases
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test number cases
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayToLocaleStringTest1010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let arr: readonly number[] = [Math.floor(1.5), 0, -0];
@@ -204,12 +204,12 @@ export default function builtinsReadonlyArrayToLocaleStringTest() {
     });
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayToLocaleStringTest1011
      * @tc.number SUB_BUILTINS_ReadonlyArray_TOLOCALESTRING_TEST_1100
-     * @tc.name BuiltinsReadonlyArrayToLocaleStringTest1011
-     * @tc.desc Test special characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test special characters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayToLocaleStringTest1011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let arr1: readonly (string | undefined | null)[]
@@ -252,12 +252,12 @@ export default function builtinsReadonlyArrayToLocaleStringTest() {
     });
 
     /**
+     * @tc.name   BuiltinsReadonlyArrayToLocaleStringTest1012
      * @tc.number SUB_BUILTINS_ReadonlyArray_TOLOCALESTRING_TEST_1200
-     * @tc.name BuiltinsReadonlyArrayToLocaleStringTest1012
-     * @tc.desc Test boolean conversion
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test boolean conversion
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsReadonlyArrayToLocaleStringTest1012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let arr: readonly boolean[] = [true, false, !0, !'s'];

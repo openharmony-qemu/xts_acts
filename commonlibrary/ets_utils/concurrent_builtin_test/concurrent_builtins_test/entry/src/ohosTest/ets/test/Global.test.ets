@@ -57,12 +57,12 @@ export default function globalTest() {
     })
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_0100
-     * @tc.name      : testGlobalEncodeURI
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testGlobalEncodeURI
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_0100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testGlobalEncodeURI', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -91,12 +91,12 @@ export default function globalTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_0200
-     * @tc.name      : testGlobalDecodeURI
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testGlobalDecodeURI
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_0200
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testGlobalDecodeURI', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -126,12 +126,12 @@ export default function globalTest() {
 
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_0300
-     * @tc.name      : testGlobalEncodeURIComponent
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testGlobalEncodeURIComponent
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_0300
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testGlobalEncodeURIComponent', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -160,12 +160,12 @@ export default function globalTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_0301
-     * @tc.name      : testGlobalDecodeURIComponent
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testGlobalDecodeURIComponent
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_0301
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testGlobalDecodeURIComponent', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -194,12 +194,12 @@ export default function globalTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_0303
-     * @tc.name      : testGlobalEscape
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testGlobalEscape
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_0303
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testGlobalEscape', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -228,12 +228,12 @@ export default function globalTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_0400
-     * @tc.name      : testGlobalUnescape
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testGlobalUnescape
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_0400
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testGlobalUnescape', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -262,12 +262,12 @@ export default function globalTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_0500
-     * @tc.name      : testGlobalIsFinite
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testGlobalIsFinite
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_0500
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testGlobalIsFinite', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -296,12 +296,12 @@ export default function globalTest() {
       });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_0600
-     * @tc.name      : testGlobalIsNaN
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testGlobalIsNaN
+     * @tc.number SUB_COMMONLIBRARY_GLOBAL_BASE_TEST_0600
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testGlobalIsNaN', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

@@ -54,12 +54,12 @@ export default function DecimalTest004() {
     });
     console.info("start################################start");
     /**
-     * @tc.number    : DECIMAL_TEST4_001
-     * @tc.name      : Decimal_tanh_Func_001
-     * @tc.desc      : Test tanh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_tanh_Func_001
+     * @tc.number DECIMAL_TEST4_001
+     * @tc.desc   Test tanh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_tanh_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -84,12 +84,12 @@ export default function DecimalTest004() {
       test_tanh_001('0.5301167511', 10, 0, '0.4854703307');
     });
     /**
-     * @tc.number    : DECIMAL_TEST4_002
-     * @tc.name      : Decimal_tanh_Func_002
-     * @tc.desc      : Test tanh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_tanh_Func_002
+     * @tc.number DECIMAL_TEST4_002
+     * @tc.desc   Test tanh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_tanh_Func_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -119,12 +119,12 @@ export default function DecimalTest004() {
       test_tanh_001('-0.1', 5, 4, '-0.099668');
     });
     /**
-     * @tc.number    : DECIMAL_TEST4_003
-     * @tc.name      : Decimal_tanh_Func_003
-     * @tc.desc      : Test tanh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_tanh_Func_003
+     * @tc.number DECIMAL_TEST4_003
+     * @tc.desc   Test tanh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_tanh_Func_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -159,12 +159,12 @@ export default function DecimalTest004() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST4_004
-     * @tc.name      : Decimal_tanh_Func_004
-     * @tc.desc      : Test tanh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_tanh_Func_004
+     * @tc.number DECIMAL_TEST4_004
+     * @tc.desc   Test tanh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_tanh_Func_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -200,12 +200,12 @@ export default function DecimalTest004() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST4_005
-     * @tc.name      : Decimal_tanh_Func_005
-     * @tc.desc      : Test tanh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_tanh_Func_005
+     * @tc.number DECIMAL_TEST4_005
+     * @tc.desc   Test tanh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_tanh_Func_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -243,12 +243,12 @@ export default function DecimalTest004() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST4_006
-     * @tc.name      : Decimal_tanh_Func_006
-     * @tc.desc      : Test tanh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_tanh_Func_006
+     * @tc.number DECIMAL_TEST4_006
+     * @tc.desc   Test tanh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_tanh_Func_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -287,12 +287,12 @@ export default function DecimalTest004() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST4_007
-     * @tc.name      : Decimal_tanh_Func_007
-     * @tc.desc      : Test tanh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_tanh_Func_007
+     * @tc.number DECIMAL_TEST4_007
+     * @tc.desc   Test tanh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_tanh_Func_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({

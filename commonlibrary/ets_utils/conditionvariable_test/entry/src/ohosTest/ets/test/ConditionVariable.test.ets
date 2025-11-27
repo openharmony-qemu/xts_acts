@@ -92,12 +92,12 @@ export default function conditionVariableTest() {
     })
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableWait001
-     * @tc.name      : ActsLocksTestConditionVariableWait001
-     * @tc.desc      : check wait use
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableWait001
+     * @tc.number ActsLocksTestConditionVariableWait001
+     * @tc.desc   check wait use
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ActsLocksTestConditionVariableWait001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableWait001';
@@ -114,12 +114,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableWait002
-     * @tc.name      : ActsLocksTestConditionVariableWait002
-     * @tc.desc      : check create wait thread
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableWait002
+     * @tc.number ActsLocksTestConditionVariableWait002
+     * @tc.desc   check create wait thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ActsLocksTestConditionVariableWait002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableWait002';
@@ -140,12 +140,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableWait003
-     * @tc.name      : ActsLocksTestConditionVariableWait003
-     * @tc.desc      : check wait use
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableWait003
+     * @tc.number ActsLocksTestConditionVariableWait003
+     * @tc.desc   check wait use
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ActsLocksTestConditionVariableWait003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableWait003';
@@ -162,12 +162,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableWait004
-     * @tc.name      : ActsLocksTestConditionVariableWait004
-     * @tc.desc      : check create wait thread
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableWait004
+     * @tc.number ActsLocksTestConditionVariableWait004
+     * @tc.desc   check create wait thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ActsLocksTestConditionVariableWait004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableWait004';
@@ -188,12 +188,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableWaitFor001
-     * @tc.name      : ActsLocksTestConditionVariableWaitFor001
-     * @tc.desc      : check waitFor use
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableWaitFor001
+     * @tc.number ActsLocksTestConditionVariableWaitFor001
+     * @tc.desc   check waitFor use
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ActsLocksTestConditionVariableWaitFor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableWaitFor001';
@@ -212,12 +212,12 @@ export default function conditionVariableTest() {
 
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableWaitFor002
-     * @tc.name      : ActsLocksTestConditionVariableWaitFor002
-     * @tc.desc      : check create waitFor greater than 0 thread
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableWaitFor002
+     * @tc.number ActsLocksTestConditionVariableWaitFor002
+     * @tc.desc   check create waitFor greater than 0 thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ActsLocksTestConditionVariableWaitFor002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableWaitFor002';
@@ -243,12 +243,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableWaitFor003
-     * @tc.name      : ActsLocksTestConditionVariableWaitFor003
-     * @tc.desc      : check create waitFor equal to 0 thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableWaitFor003
+     * @tc.number ActsLocksTestConditionVariableWaitFor003
+     * @tc.desc   check create waitFor equal to 0 thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableWaitFor003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableWaitFor003';
@@ -270,12 +270,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableWaitFor004
-     * @tc.name      : ActsLocksTestConditionVariableWaitFor004
-     * @tc.desc      : check create waitFor less than 0 thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableWaitFor004
+     * @tc.number ActsLocksTestConditionVariableWaitFor004
+     * @tc.desc   check create waitFor less than 0 thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableWaitFor004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableWaitFor004';
@@ -297,12 +297,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableWaitFor005
-     * @tc.name      : ActsLocksTestConditionVariableWaitFor005
-     * @tc.desc      : check create waitFor
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableWaitFor005
+     * @tc.number ActsLocksTestConditionVariableWaitFor005
+     * @tc.desc   check create waitFor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ActsLocksTestConditionVariableWaitFor005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableWaitFor005';
@@ -332,12 +332,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableWaitFor006
-     * @tc.name      : ActsLocksTestConditionVariableWaitFor006
-     * @tc.desc      : check waitFor use
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableWaitFor006
+     * @tc.number ActsLocksTestConditionVariableWaitFor006
+     * @tc.desc   check waitFor use
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ActsLocksTestConditionVariableWaitFor006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableWaitFor006';
@@ -356,12 +356,12 @@ export default function conditionVariableTest() {
 
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableWaitFor007
-     * @tc.name      : ActsLocksTestConditionVariableWaitFor007
-     * @tc.desc      : check create waitFor greater than 0 thread
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableWaitFor007
+     * @tc.number ActsLocksTestConditionVariableWaitFor007
+     * @tc.desc   check create waitFor greater than 0 thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ActsLocksTestConditionVariableWaitFor007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableWaitFor007';
@@ -387,12 +387,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableWaitFor008
-     * @tc.name      : ActsLocksTestConditionVariableWaitFor008
-     * @tc.desc      : check create waitFor equal to 0 thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableWaitFor008
+     * @tc.number ActsLocksTestConditionVariableWaitFor008
+     * @tc.desc   check create waitFor equal to 0 thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableWaitFor008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableWaitFor008';
@@ -414,12 +414,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableWaitFor009
-     * @tc.name      : ActsLocksTestConditionVariableWaitFor009
-     * @tc.desc      : check create waitFor less than 0 thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableWaitFor009
+     * @tc.number ActsLocksTestConditionVariableWaitFor009
+     * @tc.desc   check create waitFor less than 0 thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableWaitFor009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableWaitFor009';
@@ -441,12 +441,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableWaitFor010
-     * @tc.name      : ActsLocksTestConditionVariableWaitFor010
-     * @tc.desc      : check create waitFor
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableWaitFor010
+     * @tc.number ActsLocksTestConditionVariableWaitFor010
+     * @tc.desc   check create waitFor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ActsLocksTestConditionVariableWaitFor010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableWaitFor010';
@@ -476,12 +476,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotify001
-     * @tc.name      : ActsLocksTestConditionVariableNotify001
-     * @tc.desc      : check notify use
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotify001
+     * @tc.number ActsLocksTestConditionVariableNotify001
+     * @tc.desc   check notify use
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ActsLocksTestConditionVariableNotify001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotify001';
@@ -498,12 +498,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotify002
-     * @tc.name      : ActsLocksTestConditionVariableNotify002
-     * @tc.desc      : check create notify thread
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotify002
+     * @tc.number ActsLocksTestConditionVariableNotify002
+     * @tc.desc   check create notify thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ActsLocksTestConditionVariableNotify002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotify002';
@@ -525,12 +525,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotify003
-     * @tc.name      : ActsLocksTestConditionVariableNotify003
-     * @tc.desc      : check create wait notify thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotify003
+     * @tc.number ActsLocksTestConditionVariableNotify003
+     * @tc.desc   check create wait notify thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotify003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotify003';
@@ -559,12 +559,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotify004
-     * @tc.name      : ActsLocksTestConditionVariableNotify004
-     * @tc.desc      : check create more wait one notify thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotify004
+     * @tc.number ActsLocksTestConditionVariableNotify004
+     * @tc.desc   check create more wait one notify thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotify004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotify004';
@@ -600,12 +600,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotify005
-     * @tc.name      : ActsLocksTestConditionVariableNotify005
-     * @tc.desc      : check create waitFor notify operationTime less than waitTime thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotify005
+     * @tc.number ActsLocksTestConditionVariableNotify005
+     * @tc.desc   check create waitFor notify operationTime less than waitTime thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotify005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotify005';
@@ -630,12 +630,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotify006
-     * @tc.name      : ActsLocksTestConditionVariableNotify006
-     * @tc.desc      : check create waitFor notify operationTime greater than waitTime thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotify006
+     * @tc.number ActsLocksTestConditionVariableNotify006
+     * @tc.desc   check create waitFor notify operationTime greater than waitTime thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotify006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotify006';
@@ -665,12 +665,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotify007
-     * @tc.name      : ActsLocksTestConditionVariableNotify007
-     * @tc.desc      : check create waitFor operationTime greater than waitTime 0 thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotify007
+     * @tc.number ActsLocksTestConditionVariableNotify007
+     * @tc.desc   check create waitFor operationTime greater than waitTime 0 thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotify007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotify007';
@@ -701,12 +701,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotify008
-     * @tc.name      : ActsLocksTestConditionVariableNotify008
-     * @tc.desc      : check create wait waitFor notify thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotify008
+     * @tc.number ActsLocksTestConditionVariableNotify008
+     * @tc.desc   check create wait waitFor notify thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotify008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotify008';
@@ -742,12 +742,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotify009
-     * @tc.name      : ActsLocksTestConditionVariableNotify009
-     * @tc.desc      : check create more wait more notify thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotify009
+     * @tc.number ActsLocksTestConditionVariableNotify009
+     * @tc.desc   check create more wait more notify thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotify009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotify009';
@@ -777,12 +777,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotify010
-     * @tc.name      : ActsLocksTestConditionVariableNotify010
-     * @tc.desc      : check create overlapping wait notify thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotify010
+     * @tc.number ActsLocksTestConditionVariableNotify010
+     * @tc.desc   check create overlapping wait notify thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotify010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotify010';
@@ -823,12 +823,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotify011
-     * @tc.name      : ActsLocksTestConditionVariableNotify011
-     * @tc.desc      : check create wait waitFor notify thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotify011
+     * @tc.number ActsLocksTestConditionVariableNotify011
+     * @tc.desc   check create wait waitFor notify thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotify011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotify011';
@@ -877,12 +877,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotify012
-     * @tc.name      : ActsLocksTestConditionVariableNotify012
-     * @tc.desc      : check notify use
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotify012
+     * @tc.number ActsLocksTestConditionVariableNotify012
+     * @tc.desc   check notify use
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ActsLocksTestConditionVariableNotify012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotify012';
@@ -899,12 +899,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotify013
-     * @tc.name      : ActsLocksTestConditionVariableNotify013
-     * @tc.desc      : check create notify thread
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotify013
+     * @tc.number ActsLocksTestConditionVariableNotify013
+     * @tc.desc   check create notify thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ActsLocksTestConditionVariableNotify013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotify013';
@@ -926,12 +926,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotify014
-     * @tc.name      : ActsLocksTestConditionVariableNotify014
-     * @tc.desc      : check create wait notify thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotify014
+     * @tc.number ActsLocksTestConditionVariableNotify014
+     * @tc.desc   check create wait notify thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotify014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotify014';
@@ -960,12 +960,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotify015
-     * @tc.name      : ActsLocksTestConditionVariableNotify015
-     * @tc.desc      : check create more wait one notify thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotify015
+     * @tc.number ActsLocksTestConditionVariableNotify015
+     * @tc.desc   check create more wait one notify thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotify015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotify015';
@@ -1001,12 +1001,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotify016
-     * @tc.name      : ActsLocksTestConditionVariableNotify016
-     * @tc.desc      : check create waitFor notify operationTime less than waitTime thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotify016
+     * @tc.number ActsLocksTestConditionVariableNotify016
+     * @tc.desc   check create waitFor notify operationTime less than waitTime thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotify016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotify016';
@@ -1031,12 +1031,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotify017
-     * @tc.name      : ActsLocksTestConditionVariableNotify017
-     * @tc.desc      : check create waitFor notify operationTime greater than waitTime thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotify017
+     * @tc.number ActsLocksTestConditionVariableNotify017
+     * @tc.desc   check create waitFor notify operationTime greater than waitTime thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotify017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotify017';
@@ -1066,12 +1066,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotify018
-     * @tc.name      : ActsLocksTestConditionVariableNotify018
-     * @tc.desc      : check create waitFor operationTime greater than waitTime 0 thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotify018
+     * @tc.number ActsLocksTestConditionVariableNotify018
+     * @tc.desc   check create waitFor operationTime greater than waitTime 0 thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotify018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotify018';
@@ -1102,12 +1102,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotify019
-     * @tc.name      : ActsLocksTestConditionVariableNotify019
-     * @tc.desc      : check create wait waitFor notify thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotify019
+     * @tc.number ActsLocksTestConditionVariableNotify019
+     * @tc.desc   check create wait waitFor notify thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotify019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotify019';
@@ -1143,12 +1143,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotify020
-     * @tc.name      : ActsLocksTestConditionVariableNotify020
-     * @tc.desc      : check create more wait more notify thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotify020
+     * @tc.number ActsLocksTestConditionVariableNotify020
+     * @tc.desc   check create more wait more notify thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotify020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotify020';
@@ -1178,12 +1178,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotify021
-     * @tc.name      : ActsLocksTestConditionVariableNotify021
-     * @tc.desc      : check create overlapping wait notify thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotify021
+     * @tc.number ActsLocksTestConditionVariableNotify021
+     * @tc.desc   check create overlapping wait notify thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotify021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotify021';
@@ -1224,12 +1224,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotify022
-     * @tc.name      : ActsLocksTestConditionVariableNotify022
-     * @tc.desc      : check create wait waitFor notify thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotify022
+     * @tc.number ActsLocksTestConditionVariableNotify022
+     * @tc.desc   check create wait waitFor notify thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotify022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotify022';
@@ -1278,12 +1278,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotifyOne001
-     * @tc.name      : ActsLocksTestConditionVariableNotifyOne001
-     * @tc.desc      : check use notifyOne
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotifyOne001
+     * @tc.number ActsLocksTestConditionVariableNotifyOne001
+     * @tc.desc   check use notifyOne
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ActsLocksTestConditionVariableNotifyOne001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotifyOne001';
@@ -1300,12 +1300,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotifyOne002
-     * @tc.name      : ActsLocksTestConditionVariableNotifyOne002
-     * @tc.desc      : check create notifyOne thread
-     * @tc.level     : Level 0
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotifyOne002
+     * @tc.number ActsLocksTestConditionVariableNotifyOne002
+     * @tc.desc   check create notifyOne thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ActsLocksTestConditionVariableNotifyOne002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotifyOne002';
@@ -1323,12 +1323,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotifyOne003
-     * @tc.name      : ActsLocksTestConditionVariableNotifyOne003
-     * @tc.desc      : check create wait notifyOne thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotifyOne003
+     * @tc.number ActsLocksTestConditionVariableNotifyOne003
+     * @tc.desc   check create wait notifyOne thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotifyOne003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotifyOne003';
@@ -1357,12 +1357,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotifyOne004
-     * @tc.name      : ActsLocksTestConditionVariableNotifyOne004
-     * @tc.desc      : check create more wait one notifyOne thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotifyOne004
+     * @tc.number ActsLocksTestConditionVariableNotifyOne004
+     * @tc.desc   check create more wait one notifyOne thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotifyOne004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotifyOne004';
@@ -1399,12 +1399,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotifyOne005
-     * @tc.name      : ActsLocksTestConditionVariableNotifyOne005
-     * @tc.desc      : check create waitFor notify operationTime less than waitTime thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotifyOne005
+     * @tc.number ActsLocksTestConditionVariableNotifyOne005
+     * @tc.desc   check create waitFor notify operationTime less than waitTime thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotifyOne005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotifyOne005';
@@ -1429,12 +1429,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotifyOne006
-     * @tc.name      : ActsLocksTestConditionVariableNotifyOne006
-     * @tc.desc      : check create waitFor notifyOne operationTime greater than waitTime thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotifyOne006
+     * @tc.number ActsLocksTestConditionVariableNotifyOne006
+     * @tc.desc   check create waitFor notifyOne operationTime greater than waitTime thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotifyOne006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotifyOne006';
@@ -1461,12 +1461,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotifyOne007
-     * @tc.name      : ActsLocksTestConditionVariableNotifyOne007
-     * @tc.desc      : check create waitFor operationTime greater than waitTime 0 thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotifyOne007
+     * @tc.number ActsLocksTestConditionVariableNotifyOne007
+     * @tc.desc   check create waitFor operationTime greater than waitTime 0 thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotifyOne007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotifyOne007';
@@ -1493,12 +1493,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotifyOne008
-     * @tc.name      : ActsLocksTestConditionVariableNotifyOne008
-     * @tc.desc      : check create wait waitFor notify thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotifyOne008
+     * @tc.number ActsLocksTestConditionVariableNotifyOne008
+     * @tc.desc   check create wait waitFor notify thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotifyOne008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotifyOne008';
@@ -1535,12 +1535,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotifyOne009
-     * @tc.name      : ActsLocksTestConditionVariableNotifyOne009
-     * @tc.desc      : check create wait waitFor more notifyOne thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotifyOne009
+     * @tc.number ActsLocksTestConditionVariableNotifyOne009
+     * @tc.desc   check create wait waitFor more notifyOne thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotifyOne009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotifyOne009';
@@ -1569,12 +1569,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotifyOne010
-     * @tc.name      : ActsLocksTestConditionVariableNotifyOne010
-     * @tc.desc      : check create overlapping wait notifyOne thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotifyOne010
+     * @tc.number ActsLocksTestConditionVariableNotifyOne010
+     * @tc.desc   check create overlapping wait notifyOne thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotifyOne010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotifyOne010';
@@ -1614,12 +1614,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotifyOne011
-     * @tc.name      : ActsLocksTestConditionVariableNotifyOne011
-     * @tc.desc      : check create wait waitFor notify thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotifyOne011
+     * @tc.number ActsLocksTestConditionVariableNotifyOne011
+     * @tc.desc   check create wait waitFor notify thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotifyOne011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotifyOne011';
@@ -1656,12 +1656,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotifyOne012
-     * @tc.name      : ActsLocksTestConditionVariableNotifyOne012
-     * @tc.desc      : check create wait waitFor notify thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotifyOne012
+     * @tc.number ActsLocksTestConditionVariableNotifyOne012
+     * @tc.desc   check create wait waitFor notify thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotifyOne012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotifyOne012';
@@ -1713,12 +1713,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotifyOne013
-     * @tc.name      : ActsLocksTestConditionVariableNotifyOne013
-     * @tc.desc      : check create wait waitFor notify thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotifyOne013
+     * @tc.number ActsLocksTestConditionVariableNotifyOne013
+     * @tc.desc   check create wait waitFor notify thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotifyOne013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotifyOne013';
@@ -1784,12 +1784,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotifyOne014
-     * @tc.name      : ActsLocksTestConditionVariableNotifyOne014
-     * @tc.desc      : check use notifyOne
-     * @tc.level     : Level 2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotifyOne014
+     * @tc.number ActsLocksTestConditionVariableNotifyOne014
+     * @tc.desc   check use notifyOne
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ActsLocksTestConditionVariableNotifyOne014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotifyOne014';
@@ -1806,12 +1806,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotifyOne015
-     * @tc.name      : ActsLocksTestConditionVariableNotifyOne015
-     * @tc.desc      : check create notifyOne thread
-     * @tc.level     : Level 0
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotifyOne015
+     * @tc.number ActsLocksTestConditionVariableNotifyOne015
+     * @tc.desc   check create notifyOne thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ActsLocksTestConditionVariableNotifyOne015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotifyOne015';
@@ -1829,12 +1829,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotifyOne016
-     * @tc.name      : ActsLocksTestConditionVariableNotifyOne016
-     * @tc.desc      : check create wait notifyOne thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotifyOne016
+     * @tc.number ActsLocksTestConditionVariableNotifyOne016
+     * @tc.desc   check create wait notifyOne thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotifyOne016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotifyOne016';
@@ -1861,12 +1861,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotifyOne017
-     * @tc.name      : ActsLocksTestConditionVariableNotifyOne017
-     * @tc.desc      : check create more wait one notifyOne thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotifyOne017
+     * @tc.number ActsLocksTestConditionVariableNotifyOne017
+     * @tc.desc   check create more wait one notifyOne thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotifyOne017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotifyOne017';
@@ -1903,12 +1903,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotifyOne018
-     * @tc.name      : ActsLocksTestConditionVariableNotifyOne018
-     * @tc.desc      : check create waitFor notify operationTime less than waitTime thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotifyOne018
+     * @tc.number ActsLocksTestConditionVariableNotifyOne018
+     * @tc.desc   check create waitFor notify operationTime less than waitTime thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotifyOne018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotifyOne018';
@@ -1933,12 +1933,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotifyOne019
-     * @tc.name      : ActsLocksTestConditionVariableNotifyOne019
-     * @tc.desc      : check create waitFor notifyOne operationTime greater than waitTime thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotifyOne019
+     * @tc.number ActsLocksTestConditionVariableNotifyOne019
+     * @tc.desc   check create waitFor notifyOne operationTime greater than waitTime thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotifyOne019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotifyOne019';
@@ -1965,12 +1965,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotifyOne020
-     * @tc.name      : ActsLocksTestConditionVariableNotifyOne020
-     * @tc.desc      : check create waitFor operationTime greater than waitTime 0 thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotifyOne020
+     * @tc.number ActsLocksTestConditionVariableNotifyOne020
+     * @tc.desc   check create waitFor operationTime greater than waitTime 0 thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotifyOne020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotifyOne020';
@@ -1997,12 +1997,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotifyOne021
-     * @tc.name      : ActsLocksTestConditionVariableNotifyOne021
-     * @tc.desc      : check create wait waitFor notify thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotifyOne021
+     * @tc.number ActsLocksTestConditionVariableNotifyOne021
+     * @tc.desc   check create wait waitFor notify thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotifyOne021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotifyOne021';
@@ -2053,12 +2053,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotifyOne022
-     * @tc.name      : ActsLocksTestConditionVariableNotifyOne022
-     * @tc.desc      : check create wait waitFor more notifyOne thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotifyOne022
+     * @tc.number ActsLocksTestConditionVariableNotifyOne022
+     * @tc.desc   check create wait waitFor more notifyOne thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotifyOne022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotifyOne022';
@@ -2087,12 +2087,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotifyOne023
-     * @tc.name      : ActsLocksTestConditionVariableNotifyOne023
-     * @tc.desc      : check create overlapping wait notifyOne thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotifyOne023
+     * @tc.number ActsLocksTestConditionVariableNotifyOne023
+     * @tc.desc   check create overlapping wait notifyOne thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotifyOne023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotifyOne023';
@@ -2132,12 +2132,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotifyOne024
-     * @tc.name      : ActsLocksTestConditionVariableNotifyOne024
-     * @tc.desc      : check create wait waitFor notify thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotifyOne024
+     * @tc.number ActsLocksTestConditionVariableNotifyOne024
+     * @tc.desc   check create wait waitFor notify thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotifyOne024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotifyOne024';
@@ -2174,12 +2174,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotifyOne025
-     * @tc.name      : ActsLocksTestConditionVariableNotifyOne025
-     * @tc.desc      : check create wait waitFor notify thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotifyOne025
+     * @tc.number ActsLocksTestConditionVariableNotifyOne025
+     * @tc.desc   check create wait waitFor notify thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotifyOne025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotifyOne025';
@@ -2231,12 +2231,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableNotifyOne026
-     * @tc.name      : ActsLocksTestConditionVariableNotifyOne026
-     * @tc.desc      : check create wait waitFor notify thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableNotifyOne026
+     * @tc.number ActsLocksTestConditionVariableNotifyOne026
+     * @tc.desc   check create wait waitFor notify thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableNotifyOne026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableNotifyOne026';
@@ -2302,12 +2302,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableTaskPool001
-     * @tc.name      : ActsLocksTestConditionVariableTaskPool001
-     * @tc.desc      : check create taskPool wait thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableTaskPool001
+     * @tc.number ActsLocksTestConditionVariableTaskPool001
+     * @tc.desc   check create taskPool wait thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableTaskPool001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableTaskPool001';
@@ -2339,12 +2339,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableTaskPool002
-     * @tc.name      : ActsLocksTestConditionVariableTaskPool002
-     * @tc.desc      : check create taskPool notify thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableTaskPool002
+     * @tc.number ActsLocksTestConditionVariableTaskPool002
+     * @tc.desc   check create taskPool notify thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableTaskPool002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableTaskPool002';
@@ -2377,12 +2377,12 @@ export default function conditionVariableTest() {
 
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableTaskPool003
-     * @tc.name      : ActsLocksTestConditionVariableTaskPool003
-     * @tc.desc      : check create taskPool wait thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableTaskPool003
+     * @tc.number ActsLocksTestConditionVariableTaskPool003
+     * @tc.desc   check create taskPool wait thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableTaskPool003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableTaskPool003';
@@ -2414,12 +2414,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableTaskPool004
-     * @tc.name      : ActsLocksTestConditionVariableTaskPool004
-     * @tc.desc      : check create taskPool notify thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableTaskPool004
+     * @tc.number ActsLocksTestConditionVariableTaskPool004
+     * @tc.desc   check create taskPool notify thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableTaskPool004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableTaskPool004';
@@ -2451,12 +2451,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableThreadWorker001
-     * @tc.name      : ActsLocksTestConditionVariableThreadWorker001
-     * @tc.desc      : check create worker notify thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableThreadWorker001
+     * @tc.number ActsLocksTestConditionVariableThreadWorker001
+     * @tc.desc   check create worker notify thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableThreadWorker001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableThreadWorker001';
@@ -2489,12 +2489,12 @@ export default function conditionVariableTest() {
     })
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableThreadWorker002
-     * @tc.name      : ActsLocksTestConditionVariableThreadWorker002
-     * @tc.desc      : check create worker wait thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableThreadWorker002
+     * @tc.number ActsLocksTestConditionVariableThreadWorker002
+     * @tc.desc   check create worker wait thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableThreadWorker002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableThreadWorker002';
@@ -2528,12 +2528,12 @@ export default function conditionVariableTest() {
     })
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableThreadWorker003
-     * @tc.name      : ActsLocksTestConditionVariableThreadWorker003
-     * @tc.desc      : check create worker notify thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableThreadWorker003
+     * @tc.number ActsLocksTestConditionVariableThreadWorker003
+     * @tc.desc   check create worker notify thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableThreadWorker003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableThreadWorker003';
@@ -2566,12 +2566,12 @@ export default function conditionVariableTest() {
     })
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableThreadWorker004
-     * @tc.name      : ActsLocksTestConditionVariableThreadWorker004
-     * @tc.desc      : check create worker wait thread
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableThreadWorker004
+     * @tc.number ActsLocksTestConditionVariableThreadWorker004
+     * @tc.desc   check create worker wait thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableThreadWorker004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableThreadWorker004';
@@ -2604,12 +2604,12 @@ export default function conditionVariableTest() {
     })
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableThreadWorkerTerminate001
-     * @tc.name      : ActsLocksTestConditionVariableThreadWorkerTerminate001
-     * @tc.desc      : check create worker wait notify thread use terminate
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableThreadWorkerTerminate001
+     * @tc.number ActsLocksTestConditionVariableThreadWorkerTerminate001
+     * @tc.desc   check create worker wait notify thread use terminate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableThreadWorkerTerminate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableThreadWorkerTerminate001';
@@ -2643,12 +2643,12 @@ export default function conditionVariableTest() {
     })
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableThreadWorkerTerminate002
-     * @tc.name      : ActsLocksTestConditionVariableThreadWorkerTerminate002
-     * @tc.desc      : check create worker wait notify thread use terminate
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableThreadWorkerTerminate002
+     * @tc.number ActsLocksTestConditionVariableThreadWorkerTerminate002
+     * @tc.desc   check create worker wait notify thread use terminate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableThreadWorkerTerminate002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableThreadWorkerTerminate002';
@@ -2682,12 +2682,12 @@ export default function conditionVariableTest() {
     })
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableGCFull001
-     * @tc.name      : ActsLocksTestConditionVariableGCFull001
-     * @tc.desc      : check create wait notify thread use GCFull
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableGCFull001
+     * @tc.number ActsLocksTestConditionVariableGCFull001
+     * @tc.desc   check create wait notify thread use GCFull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableGCFull001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableGCFull001';
@@ -2712,12 +2712,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableGCFull002
-     * @tc.name      : ActsLocksTestConditionVariableGCFull002
-     * @tc.desc      : check create wait notify thread use GCFull
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableGCFull002
+     * @tc.number ActsLocksTestConditionVariableGCFull002
+     * @tc.desc   check create wait notify thread use GCFull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableGCFull002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableGCFull002';
@@ -2740,12 +2740,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableGCFull003
-     * @tc.name      : ActsLocksTestConditionVariableGCFull003
-     * @tc.desc      : check create wait notify thread use GCFull
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableGCFull003
+     * @tc.number ActsLocksTestConditionVariableGCFull003
+     * @tc.desc   check create wait notify thread use GCFull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableGCFull003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableGCFull003';
@@ -2770,12 +2770,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableGCFull004
-     * @tc.name      : ActsLocksTestConditionVariableGCFull004
-     * @tc.desc      : check create wait notify thread use GCFull
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableGCFull004
+     * @tc.number ActsLocksTestConditionVariableGCFull004
+     * @tc.desc   check create wait notify thread use GCFull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsLocksTestConditionVariableGCFull004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableGCFull004';
@@ -2798,12 +2798,12 @@ export default function conditionVariableTest() {
     });
 
     /**
-     * @tc.number    : ActsLocksTestConditionVariableRecursive001
-     * @tc.name      : ActsLocksTestConditionVariableRecursive001
-     * @tc.desc      : check recursive wait()
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   ActsLocksTestConditionVariableRecursive001
+     * @tc.number ActsLocksTestConditionVariableRecursive001
+     * @tc.desc   check recursive wait()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ActsLocksTestConditionVariableRecursive001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const CASE: string = 'ActsLocksTestConditionVariableRecursive001';

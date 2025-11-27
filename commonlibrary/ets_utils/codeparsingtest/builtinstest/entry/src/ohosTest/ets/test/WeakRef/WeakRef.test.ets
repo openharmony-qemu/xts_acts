@@ -17,12 +17,12 @@ import { describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
 export default function WeakRefTest() {
   describe('weakRefTest', () => {
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAK_REF_0100
-     * @tc.name       : testWeakRef0001
-     * @tc.desc       : A WeakRef object lets you hold a weak reference to another object, without preventing that object from getting garbage-collected.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testWeakRef0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAK_REF_0100
+     * @tc.desc   A WeakRef object lets you hold a weak reference to another object, without preventing that object from getting garbage-collected.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWeakRef0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testWeakRef0001";
@@ -35,12 +35,12 @@ export default function WeakRefTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAK_REF_0200
-     * @tc.name       : testWeakRef0002
-     * @tc.desc       : A WeakRef object lets you hold a weak reference to another object, without preventing that object from getting garbage-collected.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWeakRef0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAK_REF_0200
+     * @tc.desc   A WeakRef object lets you hold a weak reference to another object, without preventing that object from getting garbage-collected.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWeakRef0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testWeakRef0002";
@@ -54,12 +54,12 @@ export default function WeakRefTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAK_REF_0300
-     * @tc.name       : testWeakRef0003
-     * @tc.desc       : A WeakRef object lets you hold a weak reference to another object, without preventing that object from getting garbage-collected.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWeakRef0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAK_REF_0300
+     * @tc.desc   A WeakRef object lets you hold a weak reference to another object, without preventing that object from getting garbage-collected.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWeakRef0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testWeakRef0003";
@@ -82,12 +82,12 @@ export default function WeakRefTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAK_REF_0400
-     * @tc.name       : testWeakRef0004
-     * @tc.desc       : A WeakRef object lets you hold a weak reference to another object, without preventing that object from getting garbage-collected.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWeakRef0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAK_REF_0400
+     * @tc.desc   A WeakRef object lets you hold a weak reference to another object, without preventing that object from getting garbage-collected.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWeakRef0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testWeakRef0004";
@@ -111,12 +111,12 @@ export default function WeakRefTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAK_REF_0500
-     * @tc.name       : testWeakRef0005
-     * @tc.desc       : A WeakRef object lets you hold a weak reference to another object, without preventing that object from getting garbage-collected.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWeakRef0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAK_REF_0500
+     * @tc.desc   A WeakRef object lets you hold a weak reference to another object, without preventing that object from getting garbage-collected.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWeakRef0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testWeakRef0005";
@@ -141,12 +141,12 @@ export default function WeakRefTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WEAK_REF_0600
-     * @tc.name       : testWeakRef0006
-     * @tc.desc       : The deref() method of WeakRef instances returns this WeakRef's target value, or undefined if the target value has been garbage-collected.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testWeakRef0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WEAK_REF_0600
+     * @tc.desc   The deref() method of WeakRef instances returns this WeakRef's target value, or undefined if the target value has been garbage-collected.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWeakRef0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testWeakRef0006";

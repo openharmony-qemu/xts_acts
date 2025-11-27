@@ -59,12 +59,12 @@ export default function DecimalTest020() {
     });
     console.info("start################################start");
     /**
-     * @tc.number    : DECIMAL_TEST20_001
-     * @tc.name      : Decimal_sign_Func_001
-     * @tc.desc      : Test sign
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_sign_Func_001
+     * @tc.number DECIMAL_TEST20_001
+     * @tc.desc   Test sign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_sign_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_sign_002(NaN, Double.toInt(NaN));
@@ -81,12 +81,12 @@ export default function DecimalTest020() {
       test_sign_001('-9.99', -1);
     });
     /**
-     * @tc.number    : DECIMAL_TEST20_002
-     * @tc.name      : Decimal_sign_Func_002
-     * @tc.desc      : Test sign
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_sign_Func_002
+     * @tc.number DECIMAL_TEST20_002
+     * @tc.desc   Test sign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_sign_Func_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {

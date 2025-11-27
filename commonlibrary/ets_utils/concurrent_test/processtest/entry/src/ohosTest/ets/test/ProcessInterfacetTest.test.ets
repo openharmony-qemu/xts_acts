@@ -54,12 +54,12 @@ export default function ProcessInterfacetTest() {
     })
 
     /**
+     * @tc.name   ProcessInterfacetTest0100
      * @tc.number SUB_PROCESS_INTERFACE_TEST_0100
-     * @tc.name ProcessInterfacetTest0100
-     * @tc.desc test The isIsolatedProcess() is tested in the main thread
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test The isIsolatedProcess() is tested in the main thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ProcessInterfacetTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'ProcessInterfacetTest0100'
@@ -78,12 +78,12 @@ export default function ProcessInterfacetTest() {
     })
 
     /**
+     * @tc.name   ProcessInterfacetTest0200
      * @tc.number SUB_PROCESS_INTERFACE_TEST_0200
-     * @tc.name ProcessInterfacetTest0200
-     * @tc.desc test The isIsolatedProcess() is tested in the taskpool
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test The isIsolatedProcess() is tested in the taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ProcessInterfacetTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'ProcessInterfacetTest0200'
@@ -108,12 +108,12 @@ export default function ProcessInterfacetTest() {
     })
 
     /**
+     * @tc.name   ProcessInterfacetTest0300
      * @tc.number SUB_PROCESS_INTERFACE_TEST_0300
-     * @tc.name ProcessInterfacetTest0300
-     * @tc.desc testThe isIsolatedProcess() is tested in the Worker
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   testThe isIsolatedProcess() is tested in the Worker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ProcessInterfacetTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'ProcessInterfacetTest0300';
@@ -146,12 +146,12 @@ export default function ProcessInterfacetTest() {
     })
 
     /**
+     * @tc.name   ProcessInterfacetTest0400
      * @tc.number SUB_PROCESS_INTERFACE_TEST_0400
-     * @tc.name ProcessInterfacetTest0400
-     * @tc.desc test The is64Bit() is tested in the main thread
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test The is64Bit() is tested in the main thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ProcessInterfacetTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'ProcessInterfacetTest0400'
@@ -171,12 +171,12 @@ export default function ProcessInterfacetTest() {
     })
 
     /**
+     * @tc.name   ProcessInterfacetTest0500
      * @tc.number SUB_PROCESS_INTERFACE_TEST_0500
-     * @tc.name ProcessInterfacetTest0500
-     * @tc.desc test The is64Bit() is tested in the taskpool
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test The is64Bit() is tested in the taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ProcessInterfacetTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'ProcessInterfacetTest0500'
@@ -201,12 +201,12 @@ export default function ProcessInterfacetTest() {
     })
 
     /**
+     * @tc.name   ProcessInterfacetTest0600
      * @tc.number SUB_PROCESS_INTERFACE_TEST_0600
-     * @tc.name ProcessInterfacetTest0600
-     * @tc.desc test The is64Bit() is tested in the Worker
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test The is64Bit() is tested in the Worker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ProcessInterfacetTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'ProcessInterfacetTest0600';
@@ -238,12 +238,12 @@ export default function ProcessInterfacetTest() {
     })
 
     /**
+     * @tc.name   ProcessInterfacetTest0700
      * @tc.number SUB_PROCESS_INTERFACE_TEST_0700
-     * @tc.name ProcessInterfacetTest0700
-     * @tc.desc test The getPastCpuTime() is tested in the main thread
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test The getPastCpuTime() is tested in the main thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ProcessInterfacetTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'ProcessInterfacetTest0700';
@@ -266,12 +266,12 @@ export default function ProcessInterfacetTest() {
     })
 
     /**
+     * @tc.name   ProcessInterfacetTest0800
      * @tc.number SUB_PROCESS_INTERFACE_TEST_0800
-     * @tc.name ProcessInterfacetTest0800
-     * @tc.desc test The getStartRealtime is tested in the taskpool
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test The getStartRealtime is tested in the taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ProcessInterfacetTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'ProcessInterfacetTest0800'
@@ -300,12 +300,12 @@ export default function ProcessInterfacetTest() {
     })
 
     /**
+     * @tc.name   ProcessInterfacetTest0900
      * @tc.number SUB_PROCESS_INTERFACE_TEST_0900
-     * @tc.name ProcessInterfacetTest0900
-     * @tc.desc test The getStartRealtime is tested in the Worker
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test The getStartRealtime is tested in the Worker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ProcessInterfacetTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'ProcessInterfacetTest0900';
@@ -336,12 +336,12 @@ export default function ProcessInterfacetTest() {
     })
 
     /**
+     * @tc.name   ProcessInterfacetTest1000
      * @tc.number SUB_PROCESS_INTERFACE_TEST_1000
-     * @tc.name ProcessInterfacetTest1000
-     * @tc.desc test The getPastCpuTime() is tested in the main thread
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test The getPastCpuTime() is tested in the main thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ProcessInterfacetTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'ProcessInterfacetTest1000';
@@ -367,12 +367,12 @@ export default function ProcessInterfacetTest() {
     })
 
     /**
+     * @tc.name   ProcessInterfacetTest1100
      * @tc.number SUB_PROCESS_INTERFACE_TEST_1100
-     * @tc.name ProcessInterfacetTest1100
-     * @tc.desc test The getPastCpuTime() is tested in the taskpool
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test The getPastCpuTime() is tested in the taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ProcessInterfacetTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'ProcessInterfacetTest1100'
@@ -405,12 +405,12 @@ export default function ProcessInterfacetTest() {
     })
 
     /**
+     * @tc.name   ProcessInterfacetTest1200
      * @tc.number SUB_PROCESS_INTERFACE_TEST_1200
-     * @tc.name ProcessInterfacetTest1200
-     * @tc.desc test The getPastCpuTime() is tested in the Worker
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test The getPastCpuTime() is tested in the Worker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ProcessInterfacetTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'ProcessInterfacetTest1200';
@@ -442,12 +442,12 @@ export default function ProcessInterfacetTest() {
     })
 
     /**
+     * @tc.name   ProcessInterfacetTest1300
      * @tc.number SUB_PROCESS_INTERFACE_TEST_1300
-     * @tc.name ProcessInterfacetTest1300
-     * @tc.desc test The uptime() is tested in the main thread
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test The uptime() is tested in the main thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ProcessInterfacetTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'ProcessInterfacetTest1300';
@@ -473,12 +473,12 @@ export default function ProcessInterfacetTest() {
     })
 
     /**
+     * @tc.name   ProcessInterfacetTest1400
      * @tc.number SUB_PROCESS_INTERFACE_TEST_1400
-     * @tc.name ProcessInterfacetTest1400
-     * @tc.desc test The uptime() is tested in the taskpool
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test The uptime() is tested in the taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ProcessInterfacetTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'ProcessInterfacetTest1400'
@@ -511,12 +511,12 @@ export default function ProcessInterfacetTest() {
     })
 
     /**
+     * @tc.name   ProcessInterfacetTest1500
      * @tc.number SUB_PROCESS_INTERFACE_TEST_1500
-     * @tc.name ProcessInterfacetTest1500
-     * @tc.desc test The getPastCpuTime() is tested in the Worker
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test The getPastCpuTime() is tested in the Worker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ProcessInterfacetTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'ProcessInterfacetTest1500';

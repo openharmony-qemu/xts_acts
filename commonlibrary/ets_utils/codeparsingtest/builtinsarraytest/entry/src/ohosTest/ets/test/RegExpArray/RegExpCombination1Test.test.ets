@@ -48,12 +48,12 @@ export default function RegExpCombination1Test() {
     })
 
     /**
+     * @tc.name   RegExpCombination1Test001
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST0100
-     * @tc.name RegExpCombination1Test001
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re1 = /a/g;
@@ -70,12 +70,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test002
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST0200
-     * @tc.name RegExpCombination1Test002
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re2 = /b/;
@@ -89,12 +89,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test003
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST0300
-     * @tc.name RegExpCombination1Test003
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re3 = /c/g;
@@ -110,12 +110,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test004
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST0400
-     * @tc.name RegExpCombination1Test004
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re4 = /d/g;
@@ -129,12 +129,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test005
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST0500
-     * @tc.name RegExpCombination1Test005
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re5 = /e/g;
@@ -148,12 +148,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test006
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST0600
-     * @tc.name RegExpCombination1Test006
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re6 = /,/g;
@@ -166,12 +166,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test007
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST0700
-     * @tc.name RegExpCombination1Test007
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re7 = /f/g;
@@ -191,12 +191,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test008
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST0800
-     * @tc.name RegExpCombination1Test008
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re8 = /g/g;
@@ -213,12 +213,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test009
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST0900
-     * @tc.name RegExpCombination1Test009
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re9 = /(\d)/g;
@@ -241,12 +241,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test010
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST1000
-     * @tc.name RegExpCombination1Test010
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re10 = /h/g;
@@ -266,12 +266,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test011
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST1100
-     * @tc.name RegExpCombination1Test011
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re11 = /(x)(y)/g;
@@ -290,12 +290,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test012
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST1200
-     * @tc.name RegExpCombination1Test012
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re12 = /(\d)(\w)/;
@@ -310,12 +310,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test013
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST1300
-     * @tc.name RegExpCombination1Test013
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re13 = /z/g;
@@ -330,12 +330,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test014
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST1400
-     * @tc.name RegExpCombination1Test014
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re14 = /p/;
@@ -348,12 +348,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test015
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST1500
-     * @tc.name RegExpCombination1Test015
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re15 = /r/g;
@@ -370,12 +370,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test016
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST1600
-     * @tc.name RegExpCombination1Test016
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re16 = /^a/g;
@@ -389,12 +389,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test017
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST1700
-     * @tc.name RegExpCombination1Test017
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re17 = /b$/g;
@@ -408,12 +408,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test018
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST1800
-     * @tc.name RegExpCombination1Test018
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re18 = /,/;
@@ -426,12 +426,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test019
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST1900
-     * @tc.name RegExpCombination1Test019
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re19 = /c/g;
@@ -446,12 +446,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test020
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST2000
-     * @tc.name RegExpCombination1Test020
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re20a = /d/g;
@@ -466,12 +466,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test021
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST2100
-     * @tc.name RegExpCombination1Test021
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re21 = /e/g;
@@ -483,12 +483,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test022
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST2200
-     * @tc.name RegExpCombination1Test022
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re22 = /f+/g;
@@ -503,12 +503,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test023
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST2300
-     * @tc.name RegExpCombination1Test023
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re23 = /\d/g;
@@ -522,12 +522,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test024
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST2400
-     * @tc.name RegExpCombination1Test024
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re24 = /h/g;
@@ -540,12 +540,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test025
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST2500
-     * @tc.name RegExpCombination1Test025
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re25 = /(?:)/g;
@@ -559,12 +559,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test026
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST2600
-     * @tc.name RegExpCombination1Test026
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re26 = /A/gi;
@@ -578,12 +578,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test027
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST2700
-     * @tc.name RegExpCombination1Test027
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re27 = /B/g;
@@ -596,12 +596,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test028
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST2800
-     * @tc.name RegExpCombination1Test028
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re28 = /\bw/g;
@@ -616,12 +616,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test029
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST2900
-     * @tc.name RegExpCombination1Test029
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re29 = /(\-)/g;
@@ -634,12 +634,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test030
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST3000
-     * @tc.name RegExpCombination1Test030
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re30 = /k/g;
@@ -656,12 +656,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test031
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST3100
-     * @tc.name RegExpCombination1Test031
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re31 = /^l/gm;
@@ -675,12 +675,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test032
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST3200
-     * @tc.name RegExpCombination1Test032
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re32 = /m/g;
@@ -692,12 +692,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test033
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST3300
-     * @tc.name RegExpCombination1Test033
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re33 = /(a)\1/g;
@@ -711,12 +711,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test034
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST3400
-     * @tc.name RegExpCombination1Test034
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re34 = /n/g;
@@ -728,12 +728,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test035
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST3500
-     * @tc.name RegExpCombination1Test035
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re35 = /o/g;
@@ -747,12 +747,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test036
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST3600
-     * @tc.name RegExpCombination1Test036
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re36 = /\u{1F600}/gu;
@@ -765,12 +765,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test037
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST3700
-     * @tc.name RegExpCombination1Test037
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re37 = /(?:,)/g;
@@ -782,12 +782,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test038
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST3800
-     * @tc.name RegExpCombination1Test038
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re38 = /p/g;
@@ -802,12 +802,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test039
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST3900
-     * @tc.name RegExpCombination1Test039
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re39 = /./g;
@@ -821,12 +821,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test040
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST4000
-     * @tc.name RegExpCombination1Test040
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re40 = /q/g;
@@ -842,12 +842,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test041
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST4100
-     * @tc.name RegExpCombination1Test041
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re41 = /a/y;
@@ -865,12 +865,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test042
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST4200
-     * @tc.name RegExpCombination1Test042
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re42g = /b/g;
@@ -888,12 +888,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test043
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST4300
-     * @tc.name RegExpCombination1Test043
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re43 = /[xyz]/g;
@@ -910,12 +910,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test044
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST4400
-     * @tc.name RegExpCombination1Test044
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re44 = /[^0-9]/;
@@ -929,12 +929,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test045
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST4500
-     * @tc.name RegExpCombination1Test045
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re45 = /c*/g;
@@ -951,12 +951,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test046
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST4600
-     * @tc.name RegExpCombination1Test046
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re46 = /d.?/g;
@@ -972,12 +972,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test047
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST4700
-     * @tc.name RegExpCombination1Test047
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re47 = /e(?=f)/g;
@@ -991,12 +991,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test048
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST4800
-     * @tc.name RegExpCombination1Test048
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re48 = /(?<=g)h/g;
@@ -1009,12 +1009,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test049
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST4900
-     * @tc.name RegExpCombination1Test049
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re49 = /^j/igm;
@@ -1028,12 +1028,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test050
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST5000
-     * @tc.name RegExpCombination1Test050
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re50 = / /;
@@ -1046,12 +1046,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test051
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST5100
-     * @tc.name RegExpCombination1Test051
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re51 = /k$/gm;
@@ -1066,12 +1066,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test052
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST5200
-     * @tc.name RegExpCombination1Test052
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re52 = /l+?/g;
@@ -1086,24 +1086,24 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test053
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST5300
-     * @tc.name RegExpCombination1Test053
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(RegExpCombination1.RegExpCombination1Test053()).assertDeepEquals([[" ", "\t", "\n"], 0, 3]);
     });
 
     /**
+     * @tc.name   RegExpCombination1Test054
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST5400
-     * @tc.name RegExpCombination1Test054
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re54d = /\d/g;
@@ -1116,12 +1116,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test055
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST5500
-     * @tc.name RegExpCombination1Test055
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re55 = /(m)(n)/g;
@@ -1134,12 +1134,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test056
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST5600
-     * @tc.name RegExpCombination1Test056
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re56 = /o/g;
@@ -1152,12 +1152,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test057
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST5700
-     * @tc.name RegExpCombination1Test057
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re57 = /p/g;
@@ -1173,12 +1173,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test058
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST5800
-     * @tc.name RegExpCombination1Test058
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re58 = /q/y;
@@ -1192,12 +1192,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test059
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST5900
-     * @tc.name RegExpCombination1Test059
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re59 = /r{1,2}s*/g;
@@ -1211,12 +1211,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test060
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST6000
-     * @tc.name RegExpCombination1Test060
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re60 = /https?:\/\/(\w+\.)+\w+/g;
@@ -1230,12 +1230,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test061
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST6100
-     * @tc.name RegExpCombination1Test061
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re61 = /\p{Emoji}/gu;
@@ -1249,12 +1249,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test062
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST6200
-     * @tc.name RegExpCombination1Test062
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re62 = /,/g;
@@ -1267,12 +1267,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test063
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST6300
-     * @tc.name RegExpCombination1Test063
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re63 = /t/g;
@@ -1286,12 +1286,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test064
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST6400
-     * @tc.name RegExpCombination1Test064
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re64 = /(?<name>u+)/g;
@@ -1305,12 +1305,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test065
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST6500
-     * @tc.name RegExpCombination1Test065
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re65b = /\bv\b/g;
@@ -1321,12 +1321,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test066
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST6600
-     * @tc.name RegExpCombination1Test066
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re66 = /w/g;
@@ -1346,12 +1346,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test067
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST6700
-     * @tc.name RegExpCombination1Test067
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re67 = /x/g;
@@ -1368,12 +1368,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test068
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST6800
-     * @tc.name RegExpCombination1Test068
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re68 = /(\$|\^)/g;
@@ -1385,12 +1385,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test069
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST6900
-     * @tc.name RegExpCombination1Test069
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re69 = /y/g;
@@ -1402,12 +1402,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test070
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST7000
-     * @tc.name RegExpCombination1Test070
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re70 = /(z(a(b)))/g;
@@ -1424,12 +1424,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test071
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST7100
-     * @tc.name RegExpCombination1Test071
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re71 = /a(?=b)/g;
@@ -1447,12 +1447,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test072
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST7200
-     * @tc.name RegExpCombination1Test072
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re72 = /(?<!c)d/g;
@@ -1467,12 +1467,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test073
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST7300
-     * @tc.name RegExpCombination1Test073
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re73 = /\f/g;
@@ -1487,12 +1487,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test074
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST7400
-     * @tc.name RegExpCombination1Test074
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re74 = /e/g;
@@ -1510,12 +1510,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test075
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST7500
-     * @tc.name RegExpCombination1Test075
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re75 = /f/y;
@@ -1529,12 +1529,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test076
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST7600
-     * @tc.name RegExpCombination1Test076
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re76 = /(g)(?:h)/g;
@@ -1549,12 +1549,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test077
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST7700
-     * @tc.name RegExpCombination1Test077
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re77 = /,/g;
@@ -1568,12 +1568,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test078
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST7800
-     * @tc.name RegExpCombination1Test078
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re78 = /\r/g;
@@ -1585,12 +1585,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test079
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST7900
-     * @tc.name RegExpCombination1Test079
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re79g = /i+/g;
@@ -1605,24 +1605,24 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test080
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST8000
-     * @tc.name RegExpCombination1Test080
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(RegExpCombination1.RegExpCombination1Test080()).assertDeepEquals(["[123] [456]", "{123} {456}"]);
     });
 
     /**
+     * @tc.name   RegExpCombination1Test081
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST8100
-     * @tc.name RegExpCombination1Test081
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re81s = /a.b/sg;
@@ -1637,12 +1637,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test082
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST8200
-     * @tc.name RegExpCombination1Test082
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re82 = /j/g;
@@ -1658,12 +1658,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test083
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST8300
-     * @tc.name RegExpCombination1Test083
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re83 = / /g;
@@ -1680,12 +1680,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test084
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST8400
-     * @tc.name RegExpCombination1Test084
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re84 = /k/;
@@ -1698,12 +1698,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test085
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST8500
-     * @tc.name RegExpCombination1Test085
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re85 = /l/g;
@@ -1718,12 +1718,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test086
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST8600
-     * @tc.name RegExpCombination1Test086
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re86 = /[\u4e00-\u9fa5]/g;
@@ -1739,12 +1739,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test087
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST8700
-     * @tc.name RegExpCombination1Test087
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re87 = /m/g;
@@ -1756,12 +1756,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test088
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST8800
-     * @tc.name RegExpCombination1Test088
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re88 = /n+(?=o)/g;
@@ -1776,12 +1776,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test089
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST8900
-     * @tc.name RegExpCombination1Test089
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re89 = /p/;
@@ -1794,12 +1794,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test090
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST9000
-     * @tc.name RegExpCombination1Test090
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re90 = /q/g;
@@ -1814,12 +1814,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test091
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST9100
-     * @tc.name RegExpCombination1Test091
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re91 = /R/ig;
@@ -1833,12 +1833,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test092
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST9200
-     * @tc.name RegExpCombination1Test092
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re92 = /(?=[A-Z])[a-z]/g;
@@ -1853,12 +1853,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test093
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST9300
-     * @tc.name RegExpCombination1Test093
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re93 = /,/g;
@@ -1870,12 +1870,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test094
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST9400
-     * @tc.name RegExpCombination1Test094
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re94 = /\./g;
@@ -1888,12 +1888,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test095
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST9500
-     * @tc.name RegExpCombination1Test095
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re95 = /(s)(t)(r)/g;
@@ -1909,12 +1909,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test096
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST9600
-     * @tc.name RegExpCombination1Test096
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re96 = /t/g;
@@ -1927,12 +1927,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test097
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST9700
-     * @tc.name RegExpCombination1Test097
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re97 = /^u|v$/gm;
@@ -1946,12 +1946,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test098
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST9800
-     * @tc.name RegExpCombination1Test098
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re98 = /w/g;
@@ -1969,12 +1969,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test099
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST9900
-     * @tc.name RegExpCombination1Test099
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re99w = /\w/g;
@@ -1987,12 +1987,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test100
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST10000
-     * @tc.name RegExpCombination1Test100
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re100 = /x/g;
@@ -2006,12 +2006,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test101
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST10100
-     * @tc.name RegExpCombination1Test101
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re101 = / /y;
@@ -2027,12 +2027,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test102
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST10200
-     * @tc.name RegExpCombination1Test102
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re102 = /😀/g;
@@ -2046,12 +2046,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test103
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST10300
-     * @tc.name RegExpCombination1Test103
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re103 = /a(?!b)/g;
@@ -2067,12 +2067,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test104
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST10400
-     * @tc.name RegExpCombination1Test104
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re104 = /b/g;
@@ -2086,12 +2086,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test105
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST10500
-     * @tc.name RegExpCombination1Test105
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re105 = /c.d/sg;
@@ -2105,12 +2105,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test106
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST10600
-     * @tc.name RegExpCombination1Test106
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re106 = /(\d)/g;
@@ -2122,12 +2122,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test107
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST10700
-     * @tc.name RegExpCombination1Test107
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re107 = /(?<user>\w+)@(?<domain>\w+\.\w+)/g;
@@ -2141,12 +2141,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test108
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST10800
-     * @tc.name RegExpCombination1Test108
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re108 = /d/g;
@@ -2160,12 +2160,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test109
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST10900
-     * @tc.name RegExpCombination1Test109
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re109 = /e/g;
@@ -2179,12 +2179,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test110
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST11000
-     * @tc.name RegExpCombination1Test110
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re110 = /f*?/g;
@@ -2198,12 +2198,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test111
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST11100
-     * @tc.name RegExpCombination1Test111
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re111 = /G/ig;
@@ -2216,12 +2216,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test112
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST11200
-     * @tc.name RegExpCombination1Test112
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re112 = /h/g;
@@ -2234,12 +2234,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test113
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST11300
-     * @tc.name RegExpCombination1Test113
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re113 = /\t/g;
@@ -2254,12 +2254,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test114
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST11400
-     * @tc.name RegExpCombination1Test114
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re114 = /i{2}/y;
@@ -2273,12 +2273,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test115
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST11500
-     * @tc.name RegExpCombination1Test115
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re115c = /(j)k/g;
@@ -2291,12 +2291,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test116
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST11600
-     * @tc.name RegExpCombination1Test116
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re116a = /l/g;
@@ -2310,12 +2310,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test118
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST11800
-     * @tc.name RegExpCombination1Test118
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re118 = /m/g;
@@ -2327,12 +2327,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test119
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST11900
-     * @tc.name RegExpCombination1Test119
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re119 = /^n|p$/gm;
@@ -2346,24 +2346,24 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test120
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST12000
-     * @tc.name RegExpCombination1Test120
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(RegExpCombination1.RegExpCombination1Test120()).assertDeepEquals(["qr:q:r:0", "qr:q:r:2"]);
     });
 
     /**
+     * @tc.name   RegExpCombination1Test121
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST12100
-     * @tc.name RegExpCombination1Test121
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re121 = /\u{263A}/gu;
@@ -2376,12 +2376,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test122
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST12200
-     * @tc.name RegExpCombination1Test122
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re122 = /s+/g;
@@ -2395,12 +2395,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test123
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST12300
-     * @tc.name RegExpCombination1Test123
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re123 = /,/g;
@@ -2412,12 +2412,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test124
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST12400
-     * @tc.name RegExpCombination1Test124
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re124 = /(?<=t{2})u/g;
@@ -2430,12 +2430,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test125
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST12500
-     * @tc.name RegExpCombination1Test125
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re125 = /(?<a>v)(?<b>w)/;
@@ -2450,12 +2450,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test126
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST12600
-     * @tc.name RegExpCombination1Test126
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re126 = /x/g;
@@ -2469,12 +2469,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test127
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST12700
-     * @tc.name RegExpCombination1Test127
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re127s = /y.z/sg;
@@ -2486,12 +2486,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test128
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST12800
-     * @tc.name RegExpCombination1Test128
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re128 = /z/g;
@@ -2503,12 +2503,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test129
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST12900
-     * @tc.name RegExpCombination1Test129
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re129 = /(?=a)b/g;
@@ -2522,12 +2522,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test130
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST13000
-     * @tc.name RegExpCombination1Test130
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re130 = /A./igm;
@@ -2540,12 +2540,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test131
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST13100
-     * @tc.name RegExpCombination1Test131
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re131 = /\u{1F601}/yu;
@@ -2561,12 +2561,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test132
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST13200
-     * @tc.name RegExpCombination1Test132
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re132 = /\v/g;
@@ -2580,12 +2580,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test133
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST13300
-     * @tc.name RegExpCombination1Test133
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re133 = /b/g;
@@ -2600,12 +2600,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test134
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST13400
-     * @tc.name RegExpCombination1Test134
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re134 = /c.*?d/gs;
@@ -2617,12 +2617,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test135
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST13500
-     * @tc.name RegExpCombination1Test135
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re135 = /(?<=[0-9])e/g;
@@ -2635,12 +2635,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test136
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST13600
-     * @tc.name RegExpCombination1Test136
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re136 = /f/g;
@@ -2652,12 +2652,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test137
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST13700
-     * @tc.name RegExpCombination1Test137
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re137 = /g/g;
@@ -2672,12 +2672,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test138
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST13800
-     * @tc.name RegExpCombination1Test138
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re138 = /h/g;
@@ -2689,12 +2689,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test139
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST13900
-     * @tc.name RegExpCombination1Test139
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re139 = /(?<key>\w+)=(?<value>\w+)/g;
@@ -2707,12 +2707,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test140
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST14000
-     * @tc.name RegExpCombination1Test140
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re140 = / /g;
@@ -2724,12 +2724,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test141
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST14100
-     * @tc.name RegExpCombination1Test141
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re141s = /^a.*c$/sg;
@@ -2740,12 +2740,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test142
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST14200
-     * @tc.name RegExpCombination1Test142
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re142 = /i/g;
@@ -2759,12 +2759,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test143
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST14300
-     * @tc.name RegExpCombination1Test143
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re143 = /中{2}/g;
@@ -2778,12 +2778,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test144
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST14400
-     * @tc.name RegExpCombination1Test144
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re144 = /j/g;
@@ -2796,12 +2796,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test145
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST14500
-     * @tc.name RegExpCombination1Test145
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re145 = /^k/y;
@@ -2814,12 +2814,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test146
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST14600
-     * @tc.name RegExpCombination1Test146
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re146g = /l/g;
@@ -2830,12 +2830,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test147
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST14700
-     * @tc.name RegExpCombination1Test147
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re147 = /(?<=m)n/g;
@@ -2847,12 +2847,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test148
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST14800
-     * @tc.name RegExpCombination1Test148
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re148 = /p/;
@@ -2864,12 +2864,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test149
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST14900
-     * @tc.name RegExpCombination1Test149
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re149 = /q/g;
@@ -2885,12 +2885,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test150
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST15000
-     * @tc.name RegExpCombination1Test150
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re150 = /(?:r+s?)/g;
@@ -2903,12 +2903,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test151
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST15100
-     * @tc.name RegExpCombination1Test151
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test151', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re151 = /\p{Letter}/gu;
@@ -2922,12 +2922,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test152
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST15200
-     * @tc.name RegExpCombination1Test152
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test152', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re152 = /,/g;
@@ -2939,12 +2939,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test153
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST15300
-     * @tc.name RegExpCombination1Test153
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test153', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re153 = /t+(?=u)/g;
@@ -2957,12 +2957,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test154
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST15400
-     * @tc.name RegExpCombination1Test154
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test154', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re154 = /v/g;
@@ -2974,12 +2974,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test155
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST15500
-     * @tc.name RegExpCombination1Test155
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test155', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re155 = /^w/gm;
@@ -2993,12 +2993,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test156
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST15600
-     * @tc.name RegExpCombination1Test156
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test156', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re156 = /x/g;
@@ -3013,12 +3013,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test157
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST15700
-     * @tc.name RegExpCombination1Test157
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test157', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re157d = /\d+/g;
@@ -3031,12 +3031,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test158
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST15800
-     * @tc.name RegExpCombination1Test158
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test158', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re158 = /z*/y;
@@ -3049,12 +3049,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test159
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST15900
-     * @tc.name RegExpCombination1Test159
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test159', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re159 = /a/g;
@@ -3067,12 +3067,12 @@ export default function RegExpCombination1Test() {
     });
 
     /**
+     * @tc.name   RegExpCombination1Test160
      * @tc.number BUILTINS_REGEXP_COMBINATION_TEST16000
-     * @tc.name RegExpCombination1Test160
-     * @tc.desc Test Method Combination in RegExp
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Test Method Combination in RegExp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('RegExpCombination1Test160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const re160 = /b/g;

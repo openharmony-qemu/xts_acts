@@ -64,12 +64,12 @@ export default function TaskGroupAbilityTest3() {
     })
 
     /**
+     * @tc.name   taskPoolTaskGroupTask5300
      * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_5300
-     * @tc.name taskPoolTaskGroupTask5300
-     * @tc.desc Create two tasks with ISendable interface parameters and ISendable interface return values, and execute them 10 times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Create two tasks with ISendable interface parameters and ISendable interface return values, and execute them 10 times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('taskPoolTaskGroupTask5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -103,12 +103,12 @@ export default function TaskGroupAbilityTest3() {
     })
 
     /**
+     * @tc.name   taskPoolTaskGroupTask5400
      * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_5400
-     * @tc.name taskPoolTaskGroupTask5400
-     * @tc.desc Create two tasks with ISendable interface parameters and ISendable interface return values, and execute them 10 times,error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create two tasks with ISendable interface parameters and ISendable interface return values, and execute them 10 times,error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupTask5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -153,12 +153,12 @@ export default function TaskGroupAbilityTest3() {
     })
 
     /**
+     * @tc.name   taskPoolTaskGroupTask5500
      * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_5500
-     * @tc.name taskPoolTaskGroupTask5500
-     * @tc.desc Create two tasks with SendableFunction parameters and SendableFunction return values, and execute them 10 times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create two tasks with SendableFunction parameters and SendableFunction return values, and execute them 10 times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupTask5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
@@ -193,12 +193,12 @@ export default function TaskGroupAbilityTest3() {
     })
 
     /**
+     * @tc.name   taskPoolTaskGroupTask5600
      * @tc.number SUB_TASKPOOL_TASKGROUP_TASK_TEST_5600
-     * @tc.name taskPoolTaskGroupTask5600
-     * @tc.desc Create two tasks with SendableClass parameters and SendableClass return values, and execute them 10 times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Create two tasks with SendableClass parameters and SendableClass return values, and execute them 10 times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskGroupTask5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.

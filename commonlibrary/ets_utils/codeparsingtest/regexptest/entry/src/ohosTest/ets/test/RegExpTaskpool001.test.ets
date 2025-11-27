@@ -88,12 +88,12 @@ export default function RegExpTaskpoolTest001() {
     })
 
     /**
+     * @tc.name   testRegCtr0001
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TASKPOOL_0001
-     * @tc.name testRegCtr0001
-     * @tc.desc Verify RegExp can be created from a string pattern with flags
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp can be created from a string pattern with flags
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const re: RegExp = new RegExp('abc', 'i');
@@ -105,12 +105,12 @@ export default function RegExpTaskpoolTest001() {
     });
 
     /**
+     * @tc.name   testRegCtr0002
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TASKPOOL_0002
-     * @tc.name testRegCtr0002
-     * @tc.desc Verify RegExp constructed from another RegExp copies source and flags
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify RegExp constructed from another RegExp copies source and flags
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegCtr0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const re1: RegExp = /foo/gi;
@@ -124,12 +124,12 @@ export default function RegExpTaskpoolTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0001
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_TASKPOOL_0001
-     * @tc.name testRegTest0001
-     * @tc.desc Basic match: check if a pattern exists in the string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Basic match: check if a pattern exists in the string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const regex = /foo/;
@@ -139,12 +139,12 @@ export default function RegExpTaskpoolTest001() {
     });
 
     /**
+     * @tc.name   testRegTest0002
      * @tc.number SUB_COMMONLIBRARY_REGEXP_TEST_TASKPOOL_0003
-     * @tc.name testRegTest0002
-     * @tc.desc Sticky flag: test behavior of test() with /y flag
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Sticky flag: test behavior of test() with /y flag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegTest0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const regex = /foo/y;
@@ -154,11 +154,12 @@ export default function RegExpTaskpoolTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0001
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_TASKPOOL_0001
-     * @tc.name testRegExec0001
-     * @tc.desc Verify exec() returns full match, capture groups, index, input and groups properties
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() returns full match, capture groups, index, input and groups properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const regex = /(\w+)\s(\w+)/;
@@ -174,12 +175,12 @@ export default function RegExpTaskpoolTest001() {
     });
 
     /**
+     * @tc.name   testRegExec0002
      * @tc.number SUB_COMMONLIBRARY_REGEXP_EXEC_TASKPOOL_0003
-     * @tc.name testRegExec0002
-     * @tc.desc Verify exec() iterates through all matches with global flag and updates lastIndex
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify exec() iterates through all matches with global flag and updates lastIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegExec0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const regex = /foo/g;
