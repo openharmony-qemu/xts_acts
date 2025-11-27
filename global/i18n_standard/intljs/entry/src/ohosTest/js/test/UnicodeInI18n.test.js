@@ -57,7 +57,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0100
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0100
      * @tc.desc   check the isDigit interface
@@ -73,7 +72,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0120
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0120
      * @tc.desc   check the isDigit interface
@@ -89,7 +87,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0140
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0140
      * @tc.desc   check the isDigit interface
@@ -105,7 +102,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0150
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0150
      * @tc.desc   check the isDigit interface
@@ -121,7 +117,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0160
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0160
      * @tc.desc   check the isDigit interface
@@ -137,7 +132,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0200
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0200
      * @tc.desc   check the isSpaceChar interface
@@ -153,7 +147,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0220
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0220
      * @tc.desc   check the isSpaceChar interface
@@ -169,7 +162,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0240
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0240
      * @tc.desc   check the isSpaceChar interface
@@ -185,7 +177,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0300
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0300
      * @tc.desc   check the isWhitespace interface
@@ -201,7 +192,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0320
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0320
      * @tc.desc   check the isWhitespace interface
@@ -217,7 +207,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0400
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0400
      * @tc.desc   check the isRTL interface
@@ -233,7 +222,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0420
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0420
      * @tc.desc   check the isRTL interface
@@ -249,7 +237,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0440
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0440
      * @tc.desc   check the isRTL interface
@@ -265,7 +252,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0460
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0460
      * @tc.desc   check the isRTL interface
@@ -281,7 +267,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0500
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0500
      * @tc.desc   check the isIdeograph interface
@@ -297,7 +282,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0520
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0520
      * @tc.desc   check the isIdeograph interface
@@ -313,7 +297,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0540
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0540
      * @tc.desc   check the isIdeograph interface
@@ -329,7 +312,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0560
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0560
      * @tc.desc   check the isIdeograph interface
@@ -345,7 +327,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0600
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0600
      * @tc.desc   check the isLetter interface
@@ -361,7 +342,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0620
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0620
      * @tc.desc   check the isLetter interface
@@ -377,7 +357,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0640
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0640
      * @tc.desc   check the isLetter interface
@@ -393,7 +372,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0660
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0660
      * @tc.desc   check the isLetter interface
@@ -409,7 +387,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0700
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0700
      * @tc.desc   check the isLowerCase interface
@@ -425,7 +402,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0720
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0720
      * @tc.desc   check the isLowerCase interface
@@ -441,7 +417,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0740
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0740
      * @tc.desc   check the isLowerCase interface
@@ -457,7 +432,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0760
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0760
      * @tc.desc   check the isLowerCase interface
@@ -473,7 +447,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0800
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0800
      * @tc.desc   check the isUpperCase interface
@@ -489,7 +462,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0820
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0820
      * @tc.desc   check the isUpperCase interface
@@ -505,7 +477,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0840
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0840
      * @tc.desc   check the isUpperCase interface
@@ -521,7 +492,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0860
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0860
      * @tc.desc   check the isUpperCase interface
@@ -537,7 +507,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0900
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0900
      * @tc.desc   check the getType interface
@@ -553,7 +522,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0920
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0920
      * @tc.desc   check the getType interface
@@ -569,7 +537,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0940
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0940
      * @tc.desc   check the getType interface
@@ -585,7 +552,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0960
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0960
      * @tc.desc   check the getType interface
@@ -601,7 +567,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0970
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0970
      * @tc.desc   check the getType interface
@@ -617,7 +582,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0980
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0980
      * @tc.desc   check the getType interface
@@ -633,7 +597,6 @@ describe('UnicodeInI18nTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_character_0990
      * @tc.number SUB_GLOBAL_I18N_JS_CHARACTER_0990
      * @tc.desc   check the getType interface

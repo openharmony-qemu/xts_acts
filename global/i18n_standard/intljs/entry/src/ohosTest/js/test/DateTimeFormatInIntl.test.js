@@ -59,7 +59,6 @@ describe('DateTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_0100
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_0100
      * @tc.desc   check the datetime is not null
@@ -73,7 +72,6 @@ describe('DateTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_0120
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_0120
      * @tc.desc   check the datetime is not null
@@ -87,7 +85,6 @@ describe('DateTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_0200
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_0200
      * @tc.desc   check the date
@@ -103,7 +100,6 @@ describe('DateTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_0220
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_0220
      * @tc.desc   check the date
@@ -119,7 +115,6 @@ describe('DateTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_0240
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_0240
      * @tc.desc   check the date
@@ -135,7 +130,6 @@ describe('DateTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_0300
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_0300
      * @tc.desc   check the date
@@ -151,7 +145,6 @@ describe('DateTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_0310
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_0310
      * @tc.desc   check the date
@@ -167,7 +160,6 @@ describe('DateTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_0320
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_0320
      * @tc.desc   check the date
@@ -183,7 +175,6 @@ describe('DateTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_0400
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_0400
      * @tc.desc   check the date
@@ -200,7 +191,6 @@ describe('DateTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_0500
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_0500
      * @tc.desc   check the hour with ban and zh locale
@@ -217,7 +207,6 @@ describe('DateTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_0600
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_0600
      * @tc.desc   check the hour with en and zh locale
@@ -234,7 +223,6 @@ describe('DateTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_0700
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_0700
      * @tc.desc   check the hour with en and ban locale
@@ -251,7 +239,6 @@ describe('DateTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_0800
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_0800
      * @tc.desc   check the hour without correct locale
@@ -268,7 +255,6 @@ describe('DateTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_0900
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_0900
      * @tc.desc   check the date with full datestyle and mediu timestyle
@@ -285,7 +271,6 @@ describe('DateTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_1000
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_1000
      * @tc.desc   check the dateStyle with long style
@@ -303,7 +288,6 @@ describe('DateTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_1100
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_1100
      * @tc.desc   check the dateStyle with medium style
@@ -321,7 +305,6 @@ describe('DateTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_1200
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_1200
      * @tc.desc   check the dateStyle with short style
@@ -339,7 +322,6 @@ describe('DateTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_1300
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_1300
      * @tc.desc   check the daterange
@@ -358,7 +340,6 @@ describe('DateTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_1400
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_1400
      * @tc.desc   check the daterange when the start and end date is equal.
@@ -377,7 +358,6 @@ describe('DateTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_1500
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_1500
      * @tc.desc   check the year、month、day、weekday
@@ -394,7 +374,6 @@ describe('DateTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_1600
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_1600
      * @tc.desc   check the timerange with year、month、day、weekday
@@ -412,7 +391,6 @@ describe('DateTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_1700
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_1700
      * @tc.desc   check the hour&minute&second
@@ -430,7 +408,6 @@ describe('DateTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_1800
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_1800
      * @tc.desc   check the timeZone
@@ -447,7 +424,6 @@ describe('DateTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_1900
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_1900
      * @tc.desc   check the America/Los_Angeles timeZone
@@ -463,7 +439,6 @@ describe('DateTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_2000
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_2000
      * @tc.desc   check the America/Los_Angeles timeZoneName
@@ -479,7 +454,6 @@ describe('DateTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_2100
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_2100
      * @tc.desc   check the year
@@ -496,7 +470,6 @@ describe('DateTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_2200
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_2200
      * @tc.desc   check the weekday
@@ -513,7 +486,6 @@ describe('DateTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_2300
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_2300
      * @tc.desc   check the hour in zh-CN-u-hc-h12
@@ -530,7 +502,6 @@ describe('DateTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_2400
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_2400
      * @tc.desc   check the hour in fr-Latn-FR-u-nu-mong
@@ -547,7 +518,6 @@ describe('DateTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   dateTimeFormat_test_2500
      * @tc.number SUB_GLOBAL_INTL_JS_DATETIME_2500
      * @tc.desc   check the hour in zh-CN-u-hc-h12 with matcher

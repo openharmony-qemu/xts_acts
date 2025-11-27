@@ -25,7 +25,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   testi18n_getMilliseconds_0100
      * @tc.number SUB_GLOBAL_Intl_testDaylightSavingTime_0100
      * @tc.desc   getMilliseconds with Africa/Cairo
@@ -54,7 +53,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   testi18n_getMilliseconds_0200
      * @tc.number SUB_GLOBAL_Intl_testDaylightSavingTime_0200
      * @tc.desc   getMilliseconds with America/Tijuana
@@ -83,7 +81,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   testi18n_getMilliseconds_0300
      * @tc.number SUB_GLOBAL_Intl_testDaylightSavingTime_0300
      * @tc.desc   getMilliseconds with NULL
@@ -113,7 +110,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   testi18n_getMilliseconds_0400
      * @tc.number SUB_GLOBAL_Intl_testDaylightSavingTime_0400
      * @tc.desc   getMilliseconds with abcd
@@ -143,7 +139,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   testi18n_getMilliseconds_0500
      * @tc.number SUB_GLOBAL_Intl_testDaylightSavingTime_0500
      * @tc.desc   nextTransition with null
@@ -172,7 +167,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_getUnicodeWrappedFilePath_0100
      * @tc.number SUB_GLOBAL_Intl_testgetUnicodeWrappedFilePath_0100
      * @tc.desc   Locale with en
@@ -189,7 +183,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_getUnicodeWrappedFilePath_0200
      * @tc.number SUB_GLOBAL_Intl_testgetUnicodeWrappedFilePath_0200
      * @tc.desc   Locale with zh
@@ -206,7 +199,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_getUnicodeWrappedFilePath_0400
      * @tc.number SUB_GLOBAL_Intl_testgetUnicodeWrappedFilePath_0400
      * @tc.desc   Locale with error
@@ -226,7 +218,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_getSimpleDateTimeFormatByPattern_0100
      * @tc.number SUB_GLOBAL_Intl_testgetSimpleDateTimeFormatByPattern_0100
      * @tc.desc   Locale with ar
@@ -243,7 +234,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_getSimpleDateTimeFormatByPattern_0200
      * @tc.number SUB_GLOBAL_Intl_testgetSimpleDateTimeFormatByPattern_0200
      * @tc.desc   Locale with zh-Hans-CN
@@ -260,7 +250,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_getSimpleDateTimeFormatByPattern_0400
      * @tc.number SUB_GLOBAL_Intl_testgetSimpleDateTimeFormatByPattern_0400
      * @tc.desc   Locale with error
@@ -279,7 +268,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_getSimpleDateTimeFormatBySkeleton_0100
      * @tc.number SUB_GLOBAL_Intl_testgetSimpleDateTimeFormatBySkeleton_0100
      * @tc.desc   Locale with ar
@@ -296,7 +284,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_getSimpleDateTimeFormatBySkeleton_0200
      * @tc.number SUB_GLOBAL_Intl_testgetSimpleDateTimeFormatBySkeleton_0200
      * @tc.desc   Locale with zh-Hans-CN
@@ -313,7 +300,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_getSimpleDateTimeFormatBySkeleton_0400
      * @tc.number SUB_GLOBAL_Intl_testgetSimpleDateTimeFormatBySkeleton_0400
      * @tc.desc   Locale with error
@@ -332,7 +318,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_getSimpleNumberFormatBySkeleton_0100
      * @tc.number SUB_GLOBAL_Intl_testgetSimpleNumberFormatBySkeleton_0100
      * @tc.desc   Locale with ar
@@ -348,7 +333,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_getSimpleNumberFormatBySkeleton_0200
      * @tc.number SUB_GLOBAL_Intl_testgetSimpleNumberFormatBySkeleton_0200
      * @tc.desc   Locale with zh-Hans-CN
@@ -364,7 +348,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_getSimpleNumberFormatBySkeleton_0400
      * @tc.number SUB_GLOBAL_Intl_testgetSimpleNumberFormatBySkeleton_0400
      * @tc.desc   Locale with error
@@ -383,7 +366,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   testGetSystemLocaleInstance_0100
      * @tc.number SUB_GLOBAL_I18N_getSystemLocaleInstance_0100
      * @tc.desc   obtain the locale of current system
@@ -400,7 +382,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_0100
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_0100
      * @tc.desc   DisplayNames  with th & standard & th-TH
@@ -415,7 +396,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_0200
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_0200
      * @tc.desc   DisplayNames  with th & dialect & th-TH
@@ -430,7 +410,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_0300
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_0300
      * @tc.desc   DisplayNames  with ar & standard & ar-EG
@@ -445,7 +424,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_0400
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_0400
      * @tc.desc   DisplayNames  with ar & dialect & ar-EG
@@ -460,7 +438,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_0500
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_0500
      * @tc.desc   DisplayNames  with zh & standard & zh-Hans-CN
@@ -475,7 +452,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_0600
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_0600
      * @tc.desc   DisplayNames  with zh & dialect & zh-Hans-CN
@@ -490,7 +466,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_0700
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_0700
      * @tc.desc   DisplayNames  with en & standard & en-GB
@@ -505,7 +480,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_0800
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_0800
      * @tc.desc   DisplayNames  with en & dialect & en-GB
@@ -520,7 +494,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_0900
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_0900
      * @tc.desc   DisplayNames  with th & region & CN
@@ -535,7 +508,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_1000
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_1000
      * @tc.desc   DisplayNames  with th & region & TW
@@ -550,7 +522,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_1100
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_1100
      * @tc.desc   DisplayNames  with th & region & SA
@@ -565,7 +536,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_1200
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_1200
      * @tc.desc   DisplayNames  with th & region & MM
@@ -580,7 +550,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_1300
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_1300
      * @tc.desc   DisplayNames  with th & region & TH
@@ -595,7 +564,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_1400
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_1400
      * @tc.desc   DisplayNames  with th & region & US
@@ -610,7 +578,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_1500
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_1500
      * @tc.desc   DisplayNames  with th & region & JP
@@ -625,7 +592,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_1600
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_1600
      * @tc.desc   DisplayNames  with my & region & CN
@@ -640,7 +606,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_1700
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_1700
      * @tc.desc   DisplayNames  with my & region & TW
@@ -655,7 +620,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_1800
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_1800
      * @tc.desc   DisplayNames  with my & region & SA
@@ -670,7 +634,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_1900
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_1900
      * @tc.desc   DisplayNames  with my & region & MM
@@ -685,7 +648,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_2000
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_2000
      * @tc.desc   DisplayNames  with my & region & TH
@@ -700,7 +662,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_2100
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_2100
      * @tc.desc   DisplayNames  with my & region & US
@@ -715,7 +676,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_2200
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_2200
      * @tc.desc   DisplayNames  with my & region & JP
@@ -730,7 +690,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_2300
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_2300
      * @tc.desc   DisplayNames  with ar & region & CN
@@ -745,7 +704,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_2400
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_2400
      * @tc.desc   DisplayNames  with ar & region & TW
@@ -760,7 +718,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_2500
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_2500
      * @tc.desc   DisplayNames  with ar & region & SA
@@ -775,7 +732,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_2600
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_2600
      * @tc.desc   DisplayNames  with ar & region & MM
@@ -791,7 +747,6 @@ export default function SixPointZeroI18nStageTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_2700
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_2700
      * @tc.desc   DisplayNames  with ar & region & TH
@@ -806,7 +761,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_2800
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_2800
      * @tc.desc   DisplayNames  with ar & region & US
@@ -821,7 +775,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_2900
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_2900
      * @tc.desc   DisplayNames  with ar & region & JP
@@ -836,7 +789,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_3000
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_3000
      * @tc.desc   DisplayNames  with zh & region & CN
@@ -851,7 +803,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_3100
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_3100
      * @tc.desc   DisplayNames  with zh & region & TW
@@ -866,7 +817,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_3200
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_3200
      * @tc.desc   DisplayNames  with zh & region & SA
@@ -881,7 +831,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_3300
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_3300
      * @tc.desc   DisplayNames  with zh & region & MM
@@ -896,7 +845,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_3400
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_3400
      * @tc.desc   DisplayNames  with zh & region & TH
@@ -911,7 +859,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_3500
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_3500
      * @tc.desc   DisplayNames  with zh & region & US
@@ -926,7 +873,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_3600
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_3600
      * @tc.desc   DisplayNames  with zh & region & JP
@@ -941,7 +887,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_3700
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_3700
      * @tc.desc   DisplayNames  with en & region & CN
@@ -957,7 +902,6 @@ export default function SixPointZeroI18nStageTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_3800
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_3800
      * @tc.desc   DisplayNames  with en & region & TW
@@ -972,7 +916,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_3900
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_3900
      * @tc.desc   DisplayNames  with en & region & SA
@@ -987,7 +930,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_4000
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_4000
      * @tc.desc   DisplayNames  with en & region & MM
@@ -1002,7 +944,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_4100
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_4100
      * @tc.desc   DisplayNames  with en & region & TH
@@ -1017,7 +958,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_4200
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_4200
      * @tc.desc   DisplayNames  with en & region & US
@@ -1032,7 +972,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_4300
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_4300
      * @tc.desc   DisplayNames  with en & region & JP
@@ -1047,7 +986,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_4400
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_4400
      * @tc.desc   DisplayNames  with th & script & Latn
@@ -1062,7 +1000,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_4500
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_4500
      * @tc.desc   DisplayNames  with th & script & Arab
@@ -1077,7 +1014,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_4600
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_4600
      * @tc.desc   DisplayNames  with th & script & Kana
@@ -1092,7 +1028,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_4700
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_4700
      * @tc.desc   DisplayNames  with my & script & Latn
@@ -1107,7 +1042,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_4800
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_4800
      * @tc.desc   DisplayNames  with my & script & Kana
@@ -1122,7 +1056,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_4900
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_4900
      * @tc.desc   DisplayNames  with my & script & Arab
@@ -1137,7 +1070,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_5000
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_5000
      * @tc.desc   DisplayNames  with ar & script & Latn
@@ -1152,7 +1084,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_5100
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_5100
      * @tc.desc   DisplayNames  with ar & script & Kana
@@ -1167,7 +1098,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_5200
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_5200
      * @tc.desc   DisplayNames  with ar & script & Arab
@@ -1182,7 +1112,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_5300
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_5300
      * @tc.desc   DisplayNames  with zh & script & Latn
@@ -1197,7 +1126,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_5400
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_5400
      * @tc.desc   DisplayNames  with zh & script & Kana
@@ -1212,7 +1140,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_5500
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_5500
      * @tc.desc   DisplayNames  with zh & script & Arab
@@ -1227,7 +1154,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_5600
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_5600
      * @tc.desc   DisplayNames  with en & script & Latn
@@ -1242,7 +1168,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_5700
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_5700
      * @tc.desc   DisplayNames  with en & script & Kana
@@ -1257,7 +1182,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_5800
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_5800
      * @tc.desc   DisplayNames  with en & script & Arab
@@ -1272,7 +1196,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_5900
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_5900
      * @tc.desc   DisplayNames  with th & currency & USD
@@ -1287,7 +1210,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_6000
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_6000
      * @tc.desc   DisplayNames  with th & currency & EUR
@@ -1302,7 +1224,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_6100
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_6100
      * @tc.desc   DisplayNames  with th & currency & CNY
@@ -1317,7 +1238,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_6200
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_6200
      * @tc.desc   DisplayNames  with th & currency & TWD
@@ -1332,7 +1252,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_6300
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_6300
      * @tc.desc   DisplayNames  with my & currency & USD
@@ -1347,7 +1266,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_6400
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_6400
      * @tc.desc   DisplayNames  with my & currency & EUR
@@ -1362,7 +1280,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_6500
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_6500
      * @tc.desc   DisplayNames  with my & currency & CNY
@@ -1377,7 +1294,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_6600
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_6600
      * @tc.desc   DisplayNames  with my & currency & TWD
@@ -1392,7 +1308,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_6700
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_6700
      * @tc.desc   DisplayNames  with ar & currency & USD
@@ -1407,7 +1322,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_6800
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_6800
      * @tc.desc   DisplayNames  with ar & currency & EUR
@@ -1422,7 +1336,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_6900
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_6900
      * @tc.desc   DisplayNames  with ar & currency & CNY
@@ -1437,7 +1350,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_7000
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_7000
      * @tc.desc   DisplayNames  with ar & currency & TWD
@@ -1452,7 +1364,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_7100
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_7100
      * @tc.desc   DisplayNames  with zh & currency & USD
@@ -1467,7 +1378,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_7200
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_7200
      * @tc.desc   DisplayNames  with zh & currency & EUR
@@ -1482,7 +1392,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_7300
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_7300
      * @tc.desc   DisplayNames  with zh & currency & CNY
@@ -1497,7 +1406,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_7400
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_7400
      * @tc.desc   DisplayNames  with zh & currency & TWD
@@ -1512,7 +1420,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_7500
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_7500
      * @tc.desc   DisplayNames  with en & currency & USD
@@ -1527,7 +1434,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_7600
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_7600
      * @tc.desc   DisplayNames  with en & currency & EUR
@@ -1542,7 +1448,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_7700
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_7700
      * @tc.desc   DisplayNames  with en & currency & CNY
@@ -1557,7 +1462,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name    SUB_GLOBAL_testDisplayNames_7800
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_7800
      * @tc.desc   DisplayNames  with en & currency & TWD
@@ -1573,7 +1477,6 @@ export default function SixPointZeroI18nStageTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_7900
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_7900
      * @tc.desc   DisplayNames  with th & roc
@@ -1590,7 +1493,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_8000
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_8000
      * @tc.desc   DisplayNames  with th & gregory
@@ -1607,7 +1509,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_8100
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_8100
      * @tc.desc   DisplayNames  with th & chinese
@@ -1624,7 +1525,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_8200
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_8200
      * @tc.desc   DisplayNames  with ar & roc
@@ -1641,7 +1541,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_8300
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_8300
      * @tc.desc   DisplayNames  with ar & gregory
@@ -1658,7 +1557,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_8400
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_8400
      * @tc.desc   DisplayNames  with ar & chinese
@@ -1675,7 +1573,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_8500
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_8500
      * @tc.desc   DisplayNames  with zh & roc
@@ -1692,7 +1589,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_8600
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_8600
      * @tc.desc   DisplayNames  with zh & gregory
@@ -1709,7 +1605,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_8700
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_8700
      * @tc.desc   DisplayNames  with zh & chinese
@@ -1726,7 +1621,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_8800
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_8800
      * @tc.desc   DisplayNames  with en & roc
@@ -1743,7 +1637,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_8900
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_8900
      * @tc.desc   DisplayNames  with en & gregory
@@ -1760,7 +1653,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_9000
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_9000
      * @tc.desc   DisplayNames  with en & chinese
@@ -1777,7 +1669,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_9100
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_9100
      * @tc.desc   DisplayNames  with th & era
@@ -1794,7 +1685,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_9200
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_9200
      * @tc.desc   DisplayNames  with th & year
@@ -1811,7 +1701,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_9300
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_9300
      * @tc.desc   DisplayNames  with th & month
@@ -1828,7 +1717,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_9400
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_9400
      * @tc.desc   DisplayNames  with th & day
@@ -1845,7 +1733,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_9500
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_9500
      * @tc.desc   DisplayNames  with th & second
@@ -1862,7 +1749,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_9600
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_9600
      * @tc.desc   DisplayNames  with th & quarter
@@ -1879,7 +1765,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_9700
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_9700
      * @tc.desc   DisplayNames  with th & weekOfYear
@@ -1896,7 +1781,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_9800
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_9800
      * @tc.desc   DisplayNames  with th & weekday
@@ -1913,7 +1797,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_9900
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_9900
      * @tc.desc   DisplayNames  with th & hour
@@ -1930,7 +1813,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_10000
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_10000
      * @tc.desc   DisplayNames  with th & minute
@@ -1947,7 +1829,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_10100
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_10100
      * @tc.desc   DisplayNames  with th & dayPeriod
@@ -1964,7 +1845,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_10200
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_10200
      * @tc.desc   DisplayNames  with ar & era
@@ -1981,7 +1861,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_10300
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_10300
      * @tc.desc   DisplayNames  with ar & year
@@ -1998,7 +1877,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_10400
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_10400
      * @tc.desc   DisplayNames  with ar & month
@@ -2015,7 +1893,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_10500
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_10500
      * @tc.desc   DisplayNames  with ar & day
@@ -2032,7 +1909,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_10600
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_10600
      * @tc.desc   DisplayNames  with ar & second
@@ -2049,7 +1925,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_10700
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_10700
      * @tc.desc   DisplayNames  with ar & quarter
@@ -2066,7 +1941,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_10800
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_10800
      * @tc.desc   DisplayNames  with ar & weekOfYear
@@ -2083,7 +1957,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_10900
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_10900
      * @tc.desc   DisplayNames  with ar & weekday
@@ -2100,7 +1973,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_11000
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_11000
      * @tc.desc   DisplayNames  with ar & hour
@@ -2117,7 +1989,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_11100
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_11100
      * @tc.desc   DisplayNames  with ar & minute
@@ -2134,7 +2005,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_11200
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_11200
      * @tc.desc   DisplayNames  with ar & dayPeriod
@@ -2151,7 +2021,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_11300
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_11300
      * @tc.desc   DisplayNames  with zh & era
@@ -2168,7 +2037,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_11400
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_11400
      * @tc.desc   DisplayNames  with zh & year
@@ -2185,7 +2053,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_11500
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_11500
      * @tc.desc   DisplayNames  with zh & month
@@ -2202,7 +2069,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_11600
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_11600
      * @tc.desc   DisplayNames  with zh & day
@@ -2219,7 +2085,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_11700
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_11700
      * @tc.desc   DisplayNames  with zh & second
@@ -2236,7 +2101,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_11800
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_11800
      * @tc.desc   DisplayNames  with zh & quarter
@@ -2253,7 +2117,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_11900
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_11900
      * @tc.desc   DisplayNames  with zh & weekOfYear
@@ -2270,7 +2133,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_12000
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_12000
      * @tc.desc   DisplayNames  with zh & weekday
@@ -2287,7 +2149,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_12100
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_12100
      * @tc.desc   DisplayNames  with zh & hour
@@ -2304,7 +2165,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_12200
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_12200
      * @tc.desc   DisplayNames  with zh & hour
@@ -2321,7 +2181,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_12300
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_12300
      * @tc.desc   DisplayNames  with zh & dayPeriod
@@ -2338,7 +2197,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_12400
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_12400
      * @tc.desc   DisplayNames  with en & era
@@ -2355,7 +2213,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_12500
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_12500
      * @tc.desc   DisplayNames  with en & year
@@ -2372,7 +2229,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_12600
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_12600
      * @tc.desc   DisplayNames  with en & month
@@ -2389,7 +2245,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_12700
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_12700
      * @tc.desc   DisplayNames  with en & day
@@ -2406,7 +2261,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_12800
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_12800
      * @tc.desc   DisplayNames  with en & second
@@ -2423,7 +2277,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_12900
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_12900
      * @tc.desc   DisplayNames  with en & quarter
@@ -2440,7 +2293,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_13000
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_13000
      * @tc.desc   DisplayNames  with en & weekOfYear
@@ -2457,7 +2309,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_13100
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_13100
      * @tc.desc   DisplayNames  with en & weekday
@@ -2474,7 +2325,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_13200
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_13200
      * @tc.desc   DisplayNames  with en & hour
@@ -2491,7 +2341,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_13300
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_13300
      * @tc.desc   DisplayNames  with en & minute
@@ -2508,7 +2357,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testDisplayNames_13400
      * @tc.number SUB_GLOBAL_Intl_testDisplayNames_13400
      * @tc.desc   DisplayNames  with en & dayPeriod
@@ -2525,7 +2373,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_NumberFormatRange_0100
      * @tc.number SUB_GLOBAL_intl_SupplementNumberFormat_0100
      * @tc.desc   formatRange  with zh & 0,3
@@ -2541,7 +2388,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_NumberFormatRange_0200
      * @tc.number SUB_GLOBAL_intl_SupplementNumberFormat_0200
      * @tc.desc   formatRange  with th & 0,3
@@ -2557,7 +2403,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_NumberFormatRange_0300
      * @tc.number SUB_GLOBAL_intl_SupplementNumberFormat_0300
      * @tc.desc   formatRange  with ja & 0,3
@@ -2573,7 +2418,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_NumberFormatRange_0400
      * @tc.number SUB_GLOBAL_intl_SupplementNumberFormat_0400
      * @tc.desc   formatRange  with ar & 0,3
@@ -2589,7 +2433,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_NumberFormatRange_0500
      * @tc.number SUB_GLOBAL_intl_SupplementNumberFormat_0500
      * @tc.desc   formatRange  with zh & 0,3
@@ -2605,7 +2448,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_NumberFormatRange_0600
      * @tc.number SUB_GLOBAL_intl_SupplementNumberFormat_0600
      * @tc.desc   formatRange  with th & 0,3
@@ -2621,7 +2463,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_NumberFormatRange_0700
      * @tc.number SUB_GLOBAL_intl_SupplementNumberFormat_0700
      * @tc.desc   formatRange  with en & 0,3
@@ -2637,7 +2478,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_NumberFormatRange_0800
      * @tc.number SUB_GLOBAL_intl_SupplementNumberFormat_0800
      * @tc.desc   formatRange  with ja & 0,3
@@ -2653,7 +2493,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_NumberFormatRange_0900
      * @tc.number SUB_GLOBAL_intl_SupplementNumberFormat_0900
      * @tc.desc   formatRange  with ar & 0,3
@@ -2669,7 +2508,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_NumberFormatRange_1000
      * @tc.number SUB_GLOBAL_intl_SupplementNumberFormat_1000
      * @tc.desc   formatRange  with zh & 0,3
@@ -2685,7 +2523,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_NumberFormatRange_1100
      * @tc.number SUB_GLOBAL_intl_SupplementNumberFormat_1100
      * @tc.desc   formatRange  with th & 0,3
@@ -2701,7 +2538,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_NumberFormatRange_1200
      * @tc.number SUB_GLOBAL_intl_SupplementNumberFormat_1200
      * @tc.desc   formatRange  with ja & 0,3
@@ -2717,7 +2553,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_NumberFormatRange_1300
      * @tc.number SUB_GLOBAL_intl_SupplementNumberFormat_1300
      * @tc.desc   formatRange  with ja & 0,3
@@ -2734,7 +2569,6 @@ export default function SixPointZeroI18nStageTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_NumberFormatRange_1400
      * @tc.number SUB_GLOBAL_Intl_SupplementNumberFormat_1400
      * @tc.desc   formatRange  with 0,3 & ar
@@ -2751,7 +2585,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_NumberFormatRange_1500
      * @tc.number SUB_GLOBAL_Intl_SupplementNumberFormat_1500
      * @tc.desc   formatRange  with 3500,9500 & zh-CN
@@ -2768,7 +2601,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_NumberFormatRange_1600
      * @tc.number SUB_GLOBAL_Intl_SupplementNumberFormat_1600
      * @tc.desc   formatRange  with 3500,9500 & de-DE
@@ -2785,7 +2617,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_NumberFormatRange_1700
      * @tc.number SUB_GLOBAL_Intl_SupplementNumberFormat_1700
      * @tc.desc   formatRange  with 3500,9500 & en
@@ -2802,7 +2633,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_NumberFormatRange_1800
      * @tc.number SUB_GLOBAL_Intl_SupplementNumberFormat_1800
      * @tc.desc   formatRange  with 3500,9500 & ja-JP
@@ -2819,7 +2649,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_NumberFormatRange_1900
      * @tc.number SUB_GLOBAL_Intl_SupplementNumberFormat_1900
      * @tc.desc   formatRange  with 0,3 & ar
@@ -2836,7 +2665,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_NumberFormatRange_2000
      * @tc.number SUB_GLOBAL_Intl_SupplementNumberFormat_2000
      * @tc.desc   formatRange  with 0,3 & zh
@@ -2853,7 +2681,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_NumberFormatRange_2100
      * @tc.number SUB_GLOBAL_Intl_SupplementNumberFormat_2100
      * @tc.desc   formatRange  with 0,3 & ja
@@ -2870,7 +2697,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_NumberFormatRange_2200
      * @tc.number SUB_GLOBAL_Intl_SupplementNumberFormat_2200
      * @tc.desc   formatRange  with 0,3 & ar
@@ -2885,7 +2711,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_NumberFormatRange_2300
      * @tc.number SUB_GLOBAL_Intl_SupplementNumberFormat_2300
      * @tc.desc   formatRange  with 0,3 & zh
@@ -2902,7 +2727,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_NumberFormatRangeToParts_0100
      * @tc.number SUB_GLOBAL_intl_SupplementNumberFormat_2500
      * @tc.desc   formatRange  with 0,3
@@ -2921,7 +2745,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_NumberFormatRangeToParts_0200
      * @tc.number SUB_GLOBAL_intl_SupplementNumberFormat_2600
      * @tc.desc   formatRange  with 3500,9500
@@ -2944,7 +2767,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_NumberFormatRangeToParts_0300
      * @tc.number SUB_GLOBAL_intl_SupplementNumberFormat_2700
      * @tc.desc   formatRange  with 0,3
@@ -2964,7 +2786,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_NumberFormatRangeToParts_0400
      * @tc.number SUB_GLOBAL_intl_SupplementNumberFormat_2800
      * @tc.desc   formatRange  with -30000.2,-10000.2
@@ -3008,7 +2829,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlPluralRules_0100
      * @tc.number SUB_GLOBAL_Intl_SupplementPluralRules_0100
      * @tc.desc   PluralRules  with en-US
@@ -3025,7 +2845,6 @@ export default function SixPointZeroI18nStageTest() {
       expect(enCardinalRules.select(3)).assertEqual('other');
     })
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlPluralRules_0200
      * @tc.number SUB_GLOBAL_Intl_SupplementPluralRules_0200
      * @tc.desc   PluralRules  with ar
@@ -3049,7 +2868,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlPluralRules_0300
      * @tc.number SUB_GLOBAL_Intl_SupplementPluralRules_0300
      * @tc.desc   PluralRules  with zh-CN
@@ -3066,7 +2884,6 @@ export default function SixPointZeroI18nStageTest() {
       expect(enCardinalRules.select(100)).assertEqual('other');
     })
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlPluralRules_0400
      * @tc.number SUB_GLOBAL_Intl_SupplementPluralRules_0400
      * @tc.desc   PluralRules  with en-US
@@ -3090,7 +2907,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlPluralRules_0500
      * @tc.number SUB_GLOBAL_Intl_SupplementPluralRules_0500
      * @tc.desc   PluralRules  with NULL
@@ -3106,7 +2922,6 @@ export default function SixPointZeroI18nStageTest() {
       }
     })
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlPluralRules_0600
      * @tc.number SUB_GLOBAL_Intl_SupplementPluralRules_0600
      * @tc.desc   PluralRules  with abcd
@@ -3123,7 +2938,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlPluralRules_0700
      * @tc.number SUB_GLOBAL_Intl_SupplementPluralRules_0700
      * @tc.desc   PluralRules  with abcd
@@ -3143,7 +2957,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlPluralRules_0800
      * @tc.number SUB_GLOBAL_Intl_SupplementPluralRules_0800
      * @tc.desc   PluralRules  with ar-AE
@@ -3163,7 +2976,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlPluralRules_0900
      * @tc.number SUB_GLOBAL_Intl_SupplementPluralRules_0900
      * @tc.desc   PluralRules  with ar-AE && type: 'ordinal', minimumIntegerDigits:1, maximumFractionDigits:0
@@ -3180,7 +2992,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlPluralRulesResolvedOptions_0100
      * @tc.number SUB_GLOBAL_Intl_SupplementPluralRules_1000
      * @tc.desc   PluralRules  with zh-CN
@@ -3203,7 +3014,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlPluralRulesResolvedOptions_0200
      * @tc.number SUB_GLOBAL_Intl_SupplementPluralRules_1100
      * @tc.desc   PluralRules  with ar-AE
@@ -3223,7 +3033,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlPluralRulesResolvedOptions_0300
      * @tc.number SUB_GLOBAL_Intl_SupplementPluralRules_1200
      * @tc.desc   PluralRules  with ar-AE && type: 'ordinal', minimumIntegerDigits: 3, minimumFractionDigits: 3, maximumFractionDigits: 5
@@ -3248,7 +3057,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlPluralRulesResolvedOptions_0400
      * @tc.number SUB_GLOBAL_Intl_SupplementPluralRules_1300
      * @tc.desc   PluralRules  with NULL
@@ -3266,7 +3074,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlPluralRulesSupportedLocalesOf_0100
      * @tc.number SUB_GLOBAL_Intl_SupplementPluralRules_1400
      * @tc.desc   supportedLocalesOf  with zh-CN
@@ -3280,7 +3087,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlPluralRulesSupportedLocalesOf_0200
      * @tc.number SUB_GLOBAL_Intl_SupplementPluralRules_1500
      * @tc.desc   supportedLocalesOf  with 'en-US', 'ban', 'ar-OM', 'de-DE', 'abc', 'sss'
@@ -3295,7 +3101,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlPluralRulesSupportedLocalesOf_0300
      * @tc.number SUB_GLOBAL_Intl_SupplementPluralRules_1600
      * @tc.desc   supportedLocalesOf  with zh-CN
@@ -3312,7 +3117,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlPluralRulesSupportedLocalesOf_0400
      * @tc.number SUB_GLOBAL_Intl_SupplementPluralRules_1700
      * @tc.desc   supportedLocalesOf  with zh-CN
@@ -3329,7 +3133,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlPluralRulesSupportedLocalesOf_0500
      * @tc.number SUB_GLOBAL_Intl_SupplementPluralRules_1800
      * @tc.desc   supportedLocalesOf  with 'en-US', 'en-US', 'ar-OM', 'de-DE', 'zh', 'zh'
@@ -3344,7 +3147,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlPluralRulesSupportedLocalesOf_0600
      * @tc.number SUB_GLOBAL_Intl_SupplementPluralRules_1900
      * @tc.desc   supportedLocalesOf  with 'null', '1', '@', '#', '_', '*', '/', '&'
@@ -3362,7 +3164,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlRelativeTimeFormat_0100
      * @tc.number SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_0100
      * @tc.desc   RelativeTimeFormat  with zh-Hans-AF & day
@@ -3384,7 +3185,6 @@ export default function SixPointZeroI18nStageTest() {
       expect(expected(100)).assertEqual('100天后');
     })
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlRelativeTimeFormat_0200
      * @tc.number SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_0200
      * @tc.desc   RelativeTimeFormat  with zh-Hans-AF & numeric: "always" & day
@@ -3407,7 +3207,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlRelativeTimeFormat_0300
      * @tc.number SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_0300
      * @tc.desc   RelativeTimeFormat  with ar-AE & numeric: "auto" & day
@@ -3430,7 +3229,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlRelativeTimeFormat_0400
      * @tc.number SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_0400
      * @tc.desc   RelativeTimeFormat  with ar-AE & numeric: "always" & day
@@ -3453,7 +3251,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlRelativeTimeFormat_0500
      * @tc.number SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_0500
      * @tc.desc   RelativeTimeFormat  with en-US & numeric: "auto" & day
@@ -3476,7 +3273,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlRelativeTimeFormat_0600
      * @tc.number SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_0600
      * @tc.desc   RelativeTimeFormat  with en-US & numeric: "always" & day
@@ -3499,7 +3295,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlRelativeTimeFormat_0700
      * @tc.number SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_0700
      * @tc.desc   RelativeTimeFormat  with en-AE-u-nu-hanidec & numeric: "auto" & day
@@ -3522,7 +3317,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlRelativeTimeFormat_0800
      * @tc.number SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_0800
      * @tc.desc   RelativeTimeFormat  with en-AE-u-nu-hanidec & numeric: "always" & day
@@ -3546,7 +3340,6 @@ export default function SixPointZeroI18nStageTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlRelativeTimeFormat_1000
      * @tc.number SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_1000
      * @tc.desc   RelativeTimeFormat  with null & numeric: "always",style: 'narrow' & day
@@ -3563,7 +3356,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlRelativeTimeFormat_1100
      * @tc.number SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_1100
      * @tc.desc   RelativeTimeFormat  with abcd & numeric: "always",style: 'narrow' & day
@@ -3580,7 +3372,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlRelativeTimeFormatToParts_0100
      * @tc.number SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_1200
      * @tc.desc   RelativeTimeFormat  with zh-hans-AF & numeric: "always" & day
@@ -3599,7 +3390,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlRelativeTimeFormatToParts_0200
      * @tc.number SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_1300
      * @tc.desc   RelativeTimeFormat  with en-US & numeric: "auto" & day
@@ -3615,7 +3405,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlRelativeTimeFormatResolvedOptions_0100
      * @tc.number SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_1400
      * @tc.desc   resolvedOptions  with en-US
@@ -3636,7 +3425,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlRelativeTimeFormatResolvedOptions_0200
      * @tc.number SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_1500
      * @tc.desc   resolvedOptions  with en-US-u-nu-hanidec & numeric: 'auto', localeMatcher: 'best fit'
@@ -3657,7 +3445,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlRelativeTimeFormatResolvedOptions_0300
      * @tc.number SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_1600
      * @tc.desc   resolvedOptions  with ar & numeric: 'auto', localeMatcher: 'best fit'
@@ -3678,7 +3465,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlRelativeTimeFormatResolvedOptions_0400
      * @tc.number SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_1700
      * @tc.desc   resolvedOptions  with null
@@ -3695,7 +3481,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlRelativeTimeFormatSupportedLocalesOf_0100
      * @tc.number SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_1800
      * @tc.desc   supportedLocalesOf  with zh-Hans-CN
@@ -3711,7 +3496,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlRelativeTimeFormatSupportedLocalesOf_0200
      * @tc.number SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_1900
      * @tc.desc   resolvedOptions  with 'en-US','ban', 'ar-OM', 'de-DE', 'abc', 'sss'
@@ -3726,7 +3510,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlRelativeTimeFormatSupportedLocalesOf_0300
      * @tc.number SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_2000
      * @tc.desc   resolvedOptions  with null
@@ -3743,7 +3526,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlRelativeTimeFormatSupportedLocalesOf_0400
      * @tc.number SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_2100
      * @tc.desc   resolvedOptions  with abcd
@@ -3760,7 +3542,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlRelativeTimeFormatSupportedLocalesOf_0500
      * @tc.number SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_2200
      * @tc.desc   resolvedOptions  with 'en-US','ban', 'ar-OM', 'de-DE', 'abc', 'sss'
@@ -3775,7 +3556,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlRelativeTimeFormatSupportedLocalesOf_0600
      * @tc.number SUB_GLOBAL_Intl_SupplementRelativeTimeFormat_2300
      * @tc.desc   resolvedOptions  with 'en-US','ban', 'ar-OM', 'de-DE', 'abc', 'sss'
@@ -3793,7 +3573,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testsupportedLocalesOf_0100
      * @tc.number SUB_GLOBAL_Intl_testsupportedLocalesOf_0100
      * @tc.desc   supportedLocalesOf  with 'zh-Hans-TW'
@@ -3808,7 +3587,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testsupportedLocalesOf_0200
      * @tc.number SUB_GLOBAL_Intl_testsupportedLocalesOf_0200
      * @tc.desc   supportedLocalesOf  with 'ar','my','tr','zh','sk','ja','zh-Hans-TW-u-um-arab','en-Latn-CN', 'id-u-co-pinyin','de-ID'
@@ -3824,7 +3602,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testsupportedLocalesOf_0300
      * @tc.number SUB_GLOBAL_Intl_testsupportedLocalesOf_0300
      * @tc.desc   supportedLocalesOf  with 'ban', 'id-u-co-pinyin', 'de-Id'
@@ -3839,7 +3616,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testsupportedLocalesOf_0400
      * @tc.number SUB_GLOBAL_Intl_testsupportedLocalesOf_0400
      * @tc.desc   supportedLocalesOf  with 'zh-Hans-TW', '123', 'aaa','%'
@@ -3857,7 +3633,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testsupportedLocalesOf_0500
      * @tc.number SUB_GLOBAL_Intl_testsupportedLocalesOf_0500
      * @tc.desc   supportedLocalesOf  with []
@@ -3872,7 +3647,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testsupportedLocalesOf_0600
      * @tc.number SUB_GLOBAL_Intl_testsupportedLocalesOf_0600
      * @tc.desc   supportedLocalesOf  with 'null', '1', '@','#','-','*','/','&'
@@ -3890,7 +3664,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testsupportedLocalesOf_0700
      * @tc.number SUB_GLOBAL_Intl_testsupportedLocalesOf_0700
      * @tc.desc   supportedLocalesOf  with 'abcd'
@@ -3908,7 +3681,6 @@ export default function SixPointZeroI18nStageTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testresolvedOptions_0100
      * @tc.number SUB_GLOBAL_Intl_testresolvedOptions_0100
      * @tc.desc   supportedLocalesOf  with 'ar'
@@ -3923,7 +3695,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testresolvedOptions_0200
      * @tc.number SUB_GLOBAL_Intl_testresolvedOptions_0200
      * @tc.desc   supportedLocalesOf  with "de",{sensitivity: 'base'}
@@ -3938,7 +3709,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testresolvedOptions_0300
      * @tc.number SUB_GLOBAL_Intl_testresolvedOptions_0300
      * @tc.desc   supportedLocalesOf  with "abcd",{sensitivity: 'base'}
@@ -3955,7 +3725,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_testresolvedOptions_0400
      * @tc.number SUB_GLOBAL_Intl_testresolvedOptions_0400
      * @tc.desc   supportedLocalesOf  with null
@@ -3970,7 +3739,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlDateTimeFormat_0100
      * @tc.number SUB_GLOBAL_Intl_SupplementDateTimeFormat_0100
      * @tc.desc   DateTimeFormat  with fractionalSecondDigits: 1
@@ -3988,7 +3756,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlDateTimeFormat_0200
      * @tc.number SUB_GLOBAL_Intl_SupplementDateTimeFormat_0200
      * @tc.desc   DateTimeFormat  with fractionalSecondDigits: 2
@@ -4007,7 +3774,6 @@ export default function SixPointZeroI18nStageTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlDateTimeFormat_0300
      * @tc.number SUB_GLOBAL_Intl_SupplementDateTimeFormat_0300
      * @tc.desc   DateTimeFormat  with fractionalSecondDigits: 3
@@ -4024,7 +3790,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlDateTimeFormat_0400
      * @tc.number SUB_GLOBAL_Intl_SupplementDateTimeFormat_0400
      * @tc.desc   DateTimeFormat  with fractionalSecondDigits: 3
@@ -4041,7 +3806,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlDateTimeFormat_0500
      * @tc.number SUB_GLOBAL_Intl_SupplementDateTimeFormat_0500
      * @tc.desc   DateTimeFormat  with null
@@ -4057,7 +3821,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlDateTimeFormat_0600
      * @tc.number SUB_GLOBAL_Intl_SupplementDateTimeFormat_0600
      * @tc.desc   DateTimeFormat  with 'aaaa'
@@ -4075,7 +3838,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlDateTimeFormatToParts_0100
      * @tc.number SUB_GLOBAL_Intl_SupplementDateTimeFormat_0700
      * @tc.desc   DateTimeFormat  with 'zh-CN', calendar: 'chinese', fractionalSecondDigits: 1
@@ -4096,7 +3858,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlDateTimeFormatToParts_0200
      * @tc.number SUB_GLOBAL_Intl_SupplementDateTimeFormat_0800
      * @tc.desc   DateTimeFormat  with 'en-US', { calendar: 'gregory', fractionalSecondDigits: 3 }
@@ -4117,7 +3878,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlDateTimeFormatToParts_0300
      * @tc.number SUB_GLOBAL_Intl_SupplementDateTimeFormat_0900
      * @tc.desc   DateTimeFormat  with 'en-US', { calendar: 'gregory', fractionalSecondDigits: 3 }
@@ -4137,7 +3897,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlDateTimeFormatRange_0100
      * @tc.number SUB_GLOBAL_Intl_SupplementDateTimeFormat_1000
      * @tc.desc   DateTimeFormat  with "zh_CN",{calendar:"chinese", fractionalSecondDigits: 3}
@@ -4155,7 +3914,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlDateTimeFormatRange_0200
      * @tc.number SUB_GLOBAL_Intl_SupplementDateTimeFormat_1100
      * @tc.desc   DateTimeFormat  with "ug-CN",{calendar:"buddhist", fractionalSecondDigits: 2}
@@ -4173,7 +3931,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlDateTimeFormatRange_0300
      * @tc.number SUB_GLOBAL_Intl_SupplementDateTimeFormat_1200
      * @tc.desc   DateTimeFormat  with "ru",{calendar:"gregory", fractionalSecondDigits: 1}
@@ -4191,7 +3948,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlDateTimeFormatRange_0400
      * @tc.number SUB_GLOBAL_Intl_SupplementDateTimeFormat_1300
      * @tc.desc   DateTimeFormat  with "ru",{calendar:"gregory", fractionalSecondDigits: 1}
@@ -4209,7 +3965,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlDateTimeFormatRange_0500
      * @tc.number SUB_GLOBAL_Intl_SupplementDateTimeFormat_1400
      * @tc.desc   DateTimeFormat  with null
@@ -4226,7 +3981,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlDateTimeFormatRange_0600
      * @tc.number SUB_GLOBAL_Intl_SupplementDateTimeFormat_1500
      * @tc.desc   DateTimeFormat  with aaaa
@@ -4245,7 +3999,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlDateTimeFormatRangeToParts_0100
      * @tc.number SUB_GLOBAL_Intl_SupplementDateTimeFormat_1600
      * @tc.desc   DateTimeFormat  with 'zh-CN', { calendar: 'chinese', fractionalSecondDigits: 1 }
@@ -4270,7 +4023,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlDateTimeFormatRangeToParts_0200
      * @tc.number SUB_GLOBAL_Intl_SupplementDateTimeFormat_1700
      * @tc.desc   DateTimeFormat  with 'ru', { calendar: 'gregory', fractionalSecondDigits: 1 }
@@ -4295,7 +4047,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlDateTimeFormatRangeToParts_0300
      * @tc.number SUB_GLOBAL_Intl_SupplementDateTimeFormat_1800
      * @tc.desc   DateTimeFormat  with null
@@ -4318,7 +4069,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlDateTimeFormatResolvedOptions_0100
      * @tc.number SUB_GLOBAL_Intl_SupplementDateTimeFormat_1900
      * @tc.desc   DateTimeFormat  with "zh-CN", {calendar: "chinese", fractionalSecondDigits: 1}
@@ -4337,7 +4087,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlDateTimeFormatResolvedOptions_0200
      * @tc.number SUB_GLOBAL_Intl_SupplementDateTimeFormat_2000
      * @tc.desc   DateTimeFormat  with null
@@ -4357,7 +4106,6 @@ export default function SixPointZeroI18nStageTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlDateTimeFormatSupportedLocalesOf_0100
      * @tc.number SUB_GLOBAL_Intl_SupplementDateTimeFormat_2100
      * @tc.desc   DateTimeFormat  with "zh-CN"
@@ -4372,7 +4120,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlDateTimeFormatSupportedLocalesOf_0200
      * @tc.number SUB_GLOBAL_Intl_SupplementDateTimeFormat_2200
      * @tc.desc   DateTimeFormat  with ["th-TH","zh-CN", "ja", "en-GB", "zh-TW", "zh-u-hc-h24", "ar"]
@@ -4387,7 +4134,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlDateTimeFormatSupportedLocalesOf_0300
      * @tc.number SUB_GLOBAL_Intl_SupplementDateTimeFormat_2300
      * @tc.desc   DateTimeFormat  with null
@@ -4405,7 +4151,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlDateTimeFormatSupportedLocalesOf_0400
      * @tc.number SUB_GLOBAL_Intl_SupplementDateTimeFormat_2400
      * @tc.desc   DateTimeFormat  with 123
@@ -4423,7 +4168,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlDateTimeFormatSupportedLocalesOf_0500
      * @tc.number SUB_GLOBAL_Intl_SupplementDateTimeFormat_2500
      * @tc.desc   DateTimeFormat  with ["zh-CN", "ar", "zh-CN", "ar", "zh-CN", "ar","zh-CN"]
@@ -4438,7 +4182,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_IntlDateTimeFormatSupportedLocalesOf_0600
      * @tc.number SUB_GLOBAL_Intl_SupplementDateTimeFormat_2600
      * @tc.desc   DateTimeFormat  with ["\\", "...", "----"]
@@ -4456,7 +4199,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   i18n_test_removePreferredLanguage_0100
      * @tc.number SUB_GLOBAL_i18n_test_removePreferredLanguage_0100
      * @tc.desc   removePreferredLanguage  with 1
@@ -4471,7 +4213,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   timezone_i18n_test_getTimezonesByLocation_0100
      * @tc.number SUB_GLOBAL_timezone_i18n_test_getTimezonesByLocation_0100
      * @tc.desc   getTimezonesByLocation  with -74, 40
@@ -4485,7 +4226,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   i18n_test_findEntityInfo_0100
      * @tc.number SUB_GLOBAL_i18n_test_findEntityInfo_0100_0100
      * @tc.desc   findEntityInfo  with '今天下午3点到5点有一个会议'
@@ -4501,7 +4241,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_addPreferredLanguage_0100
      * @tc.number SUB_GLOBAL_I18n_addPreferredLanguage_0100
      * @tc.desc   addPreferredLanguage  with "zh-Hans-CN"
@@ -4515,7 +4254,6 @@ export default function SixPointZeroI18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   test_formatToParts_0100
      * @tc.number SUB_GLOBAL_I18n_formatToParts_0100
      * @tc.desc   formatToParts  with 100, 'second'

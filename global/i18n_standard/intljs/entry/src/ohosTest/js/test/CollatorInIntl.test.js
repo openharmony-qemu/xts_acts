@@ -58,7 +58,6 @@ describe('CollatorInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   collator_test_3500
      * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_3500
      * @tc.desc   check the compare result
@@ -74,7 +73,6 @@ describe('CollatorInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   collator_test_3510
      * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_3510
      * @tc.desc   check the compare result
@@ -90,7 +88,6 @@ describe('CollatorInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   collator_test_3520
      * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_3520
      * @tc.desc   check the compare result
@@ -106,7 +103,6 @@ describe('CollatorInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   collator_test_3600
      * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_3600
      * @tc.desc   check the compare result
@@ -122,7 +118,6 @@ describe('CollatorInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   collator_test_3620
      * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_3620
      * @tc.desc   check the compare result
@@ -138,7 +133,6 @@ describe('CollatorInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   collator_test_3640
      * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_3640
      * @tc.desc   check the compare result
@@ -154,7 +148,6 @@ describe('CollatorInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   collator_test_3700
      * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_3700
      * @tc.desc   check the compare result
@@ -171,7 +164,6 @@ describe('CollatorInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   collator_test_3800
      * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_3800
      * @tc.desc   check the compare result
@@ -188,7 +180,6 @@ describe('CollatorInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   collator_test_3900
      * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_3900
      * @tc.desc   check the compare result
@@ -205,7 +196,6 @@ describe('CollatorInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   collator_test_4000
      * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_4000
      * @tc.desc   check the compare result
@@ -222,7 +212,6 @@ describe('CollatorInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   collator_test_4100
      * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_4100
      * @tc.desc   check the compare result
@@ -239,7 +228,6 @@ describe('CollatorInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   collator_test_4200
      * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_4200
      * @tc.desc   check the compare result
@@ -256,7 +244,6 @@ describe('CollatorInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   collator_test_4300
      * @tc.number SUB_GLOBAL_INTL_JS_COLLATOR_4300
      * @tc.desc   check the compare result

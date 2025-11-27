@@ -58,7 +58,6 @@ describe('PluralRulesInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   pluralrules_test_2600
      * @tc.number SUB_GLOBAL_INTL_JS_PLURAL_2600
      * @tc.desc   check the select result
@@ -74,7 +73,6 @@ describe('PluralRulesInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   pluralrules_test_2700
      * @tc.number SUB_GLOBAL_INTL_JS_PLURAL_2700
      * @tc.desc   check the select result
@@ -90,7 +88,6 @@ describe('PluralRulesInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   pluralrules_test_2720
      * @tc.number SUB_GLOBAL_INTL_JS_PLURAL_2720
      * @tc.desc   check the select result
@@ -106,7 +103,6 @@ describe('PluralRulesInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   pluralrules_test_2740
      * @tc.number SUB_GLOBAL_INTL_JS_PLURAL_2740
      * @tc.desc   check the select result
@@ -122,7 +118,6 @@ describe('PluralRulesInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   pluralrules_test_2800
      * @tc.number SUB_GLOBAL_INTL_JS_PLURAL_2800
      * @tc.desc   check the select result
@@ -138,7 +133,6 @@ describe('PluralRulesInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   pluralrules_test_2900
      * @tc.number SUB_GLOBAL_INTL_JS_PLURAL_2900
      * @tc.desc   check the select result
@@ -154,7 +148,6 @@ describe('PluralRulesInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   pluralrules_test_3000
      * @tc.number SUB_GLOBAL_INTL_JS_PLURAL_3000
      * @tc.desc   check the select result
@@ -170,7 +163,6 @@ describe('PluralRulesInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   pluralrules_test_3100
      * @tc.number SUB_GLOBAL_INTL_JS_PLURAL_3100
      * @tc.desc   check the select result
@@ -186,7 +178,6 @@ describe('PluralRulesInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   pluralrules_test_3200
      * @tc.number SUB_GLOBAL_INTL_JS_PLURAL_3200
      * @tc.desc   check the select result
@@ -202,7 +193,6 @@ describe('PluralRulesInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   pluralrules_test_3300
      * @tc.number SUB_GLOBAL_INTL_JS_PLURAL_3300
      * @tc.desc   check the select result
@@ -218,7 +208,6 @@ describe('PluralRulesInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   pluralrules_test_3400
      * @tc.number SUB_GLOBAL_INTL_JS_PLURAL_3400
      * @tc.desc   check the select result
