@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -77,7 +77,7 @@ export default function SwiperContentUpdateOne() {
       let point = await swiperComponent.getBoundsCenter();
       let x = point.x;
       let y = point.y;
-      await driver.swipe(Math.round(x), Math.round(y), Math.round(x + 10), Math.round(y));
+      await driver.swipe(Math.round(x), Math.round(y), Math.round(x + 30), Math.round(y));
       await CommonFunc.sleep(2000);
       let value: SwiperContentInfo = AppStorage.get('swiperContentInfo') as SwiperContentInfo
       expect(Object.keys(value).includes('id') && Object.keys(value).includes('uniqueId') && Object.keys(value).includes('swiperItemInfos')).assertTrue();
