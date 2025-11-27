@@ -34,14 +34,12 @@ class Temperature implements util.ScopeType<Temperature> {
   constructor(n: number) {
     this.n = n
   }
-  compareTo(other: Object): boolean {
-    return this.compareTo(other as Temperature)
-  }
-
   compareTo(other: Temperature): boolean {
     return this.n >= other.n
   }
-
+  compareTo(other: Object): boolean {
+    return this.compareTo(other as Temperature)
+  }
   toString(): string {
     return `${this.n}`
   }
