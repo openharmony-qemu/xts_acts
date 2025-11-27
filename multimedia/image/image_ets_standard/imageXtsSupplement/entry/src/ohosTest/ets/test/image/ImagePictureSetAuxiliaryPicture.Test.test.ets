@@ -5,6 +5,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 import fileio from '@ohos.fileio'
 let fdNumber: number;
 
+
 const TAG = 'ImagePictureSetAuxiliaryPictureTestSupp';
 
 

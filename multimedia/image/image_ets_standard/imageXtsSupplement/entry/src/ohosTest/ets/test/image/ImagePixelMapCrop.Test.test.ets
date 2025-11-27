@@ -18,7 +18,6 @@ import { describe, it, expect, Level, beforeAll, beforeEach, afterEach, afterAll
 import { LOG_TAG } from '../common';
 import { BusinessError } from '@kit.BasicServicesKit';
 
-
 const TAG = LOG_TAG + 'ImagePixelMapCropTestSupp';
 
 
