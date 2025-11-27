@@ -137,7 +137,7 @@ struct WaterflowNestedScroll {
                 }
               }
               .width('100%')
-            }, (item: double) => item.toString())
+            }, (item: number) => item.toString())
           }.columnsTemplate('1fr 1fr')
           .attributeModifier(this.customModifier as CustomModifier)
           .height('90%')

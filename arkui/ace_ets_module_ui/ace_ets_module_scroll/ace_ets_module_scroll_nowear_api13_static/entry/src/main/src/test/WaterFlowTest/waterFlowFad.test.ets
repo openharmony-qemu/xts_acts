@@ -48,7 +48,7 @@ export default function waterFlowFad() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get MarqueeDynamicSyncSceneTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("waterFlowFad" == pages.name)) {
           console.info("get MarqueeDynamicSyncSceneTest pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

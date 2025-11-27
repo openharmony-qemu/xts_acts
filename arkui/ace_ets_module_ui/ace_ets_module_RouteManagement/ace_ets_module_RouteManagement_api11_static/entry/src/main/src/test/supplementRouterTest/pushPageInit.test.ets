@@ -91,24 +91,24 @@ it('pushPageInit_static_0100', Level.LEVEL2, async (done: () => void): Promise<v
 
       let strJson3 = inspector.getInspectorByKey('pushPageB_amount');
       let strJson4 = inspector.getInspectorByKey('pushPageB_page');
-      // expect(JSON.parseJsonElement(strJson3)!.getElement('$attrs').getString('content')).assertEqual('4');
-      // expect(JSON.parseJsonElement(strJson4)!.getElement('$attrs').getString('content')).assertEqual('4');
+      expect(JSON.parseJsonElement(strJson3)!.getElement('$attrs').getString('content')).assertEqual('4');
+      expect(JSON.parseJsonElement(strJson4)!.getElement('$attrs').getString('content')).assertEqual('4');
       let button3 = await driver.findComponent(ON.id('pushPageB'));
       await (button3?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       let strJson5 = inspector.getInspectorByKey('pushPageC_amount');
       let strJson6 = inspector.getInspectorByKey('pushPageC_page');
-      // expect(JSON.parseJsonElement(strJson5)!.getElement('$attrs').getString('content')).assertEqual('5');
-      // expect(JSON.parseJsonElement(strJson6)!.getElement('$attrs').getString('content')).assertEqual('5');
+      expect(JSON.parseJsonElement(strJson5)!.getElement('$attrs').getString('content')).assertEqual('5');
+      expect(JSON.parseJsonElement(strJson6)!.getElement('$attrs').getString('content')).assertEqual('5');
       let button4 = await driver.findComponent(ON.id('pushPageC'));
       await (button4?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       let strJson7 = inspector.getInspectorByKey('pushPageA_amount');
       let strJson8 = inspector.getInspectorByKey('pushPageA_page');
-      // expect(JSON.parseJsonElement(strJson7)!.getElement('$attrs').getString('content')).assertEqual('3');
-      // expect(JSON.parseJsonElement(strJson8)!.getElement('$attrs').getString('content')).assertEqual('3');
+      expect(JSON.parseJsonElement(strJson7)!.getElement('$attrs').getString('content')).assertEqual('3');
+      expect(JSON.parseJsonElement(strJson8)!.getElement('$attrs').getString('content')).assertEqual('3');
       await CommonFunc.sleep(1000);
       console.info('[pushPageInit_static_0100] END');
       done();

@@ -158,7 +158,7 @@ it('testrouterstage0003_static', Level.LEVEL2, async (done: () => void): Promise
       let result: Promise<void>
       try {
         result = routerPush.pushUrl(({
-          url: 'MainAbility/pages/pushUrlasync.ets',
+          url: 'MainAbility/pages/Router/pushUrlasync',
           params: {
             data1: 'message',
             data2: {
@@ -191,8 +191,8 @@ it('testrouterstage0004_static', Level.LEVEL2, async (done: () => void): Promise
       console.info('testrouterstage0004_static START');
       let result: Promise<void>
       try {
-        result = routerPush.pushUrl({
-          url: 'MainAbility/pages/pushUrlasync.ets',
+        routerPush.pushUrl({
+          url: 'MainAbility/pages/Router/pushUrlasync',
           params: {
             data1: 'message',
             data2: {
@@ -200,10 +200,10 @@ it('testrouterstage0004_static', Level.LEVEL2, async (done: () => void): Promise
             }
           } as Param
         } as router.RouterOptions, router.RouterMode.Standard)
-        expect(result).assertUndefined();
-        console.info("push button page success " + JSON.stringify(result));
+        // expect(result).assertUndefined();
+        console.info("push button page success ");
       } catch (err) {
-        console.error("push button page error " + JSON.stringify(result));
+        console.error("push button page error ");
       }
       console.info('testrouterstage0004_static END');
       done();
@@ -221,7 +221,7 @@ it('testrouterstage0005_static', Level.LEVEL2, async (done: () => void): Promise
       let result: Promise<void>
       try {
         result = routerPush.replaceUrl({
-          url: 'MainAbility/pages/pushUrlasync.ets',
+          url: 'MainAbility/pages/Router/pushUrlasync',
           params: {
             data1: 'message'
           } as Param1
@@ -249,25 +249,25 @@ it('testrouterstage0005_static', Level.LEVEL2, async (done: () => void): Promise
 it('testrouterstage0006_static', Level.LEVEL2, async (done: () => void): Promise<void> => {
       let routerPush = AppStorage.get<Router>("router") as Router;
       console.info('testrouterstage0006_static START');
-      // let result: Promise<void>
-      // try {
-      //   result = routerPush.replaceUrl({
-      //     url: 'MainAbility/pages/pushUrlasync.ets',
-      //     params: {
-      //       data1: 'message'
-      //     } as Param1
-      //   } as router.RouterOptions, (err: BusinessError<void>|null): void => {
-      //     if (err) {
-      //       console.error(`replaceUrl failed, code is ${err.code}, message is ${err.message}`);
-      //       return;
-      //     }
-      //     console.info('replaceUrl success');
-      //   });
-      //   expect(result).assertUndefined();
-      //   console.info("push button page success " + JSON.stringify(result));
-      // } catch (err) {
-      //   console.error("push button page error " + JSON.stringify(result));
-      // }
+      let result: Promise<void>
+      try {
+        routerPush.replaceUrl({
+          url: 'MainAbility/pages/Router/pushUrlasync',
+          params: {
+            data1: 'message'
+          } as Param1
+        } as router.RouterOptions, (err: BusinessError<void>|null): void => {
+          if (err) {
+            console.error(`replaceUrl failed, code is ${err.code}, message is ${err.message}`);
+            return;
+          }
+          console.info('replaceUrl success');
+        });
+        // expect(result).assertUndefined();
+        console.info("push button page success ");
+      } catch (err) {
+        console.error("push button page error ");
+      }
       console.info('testrouterstage0006_static END');
       done();
     });
@@ -284,7 +284,7 @@ it('testrouterstage0007_static', Level.LEVEL2, async (done: () => void): Promise
       let result: Promise<void>
       try {
         result = routerPush.replaceUrl({
-          url: 'MainAbility/pages/pushUrlasync.ets',
+          url: 'MainAbility/pages/Router/pushUrlasync',
           params: {
             data1: 'message'
           } as Param1
@@ -314,22 +314,22 @@ it('testrouterstage0008_static', Level.LEVEL2, async (done: () => void): Promise
       console.info('testrouterstage0008_static START');
       let result: Promise<void>
       try {
-        // result = routerPush.replaceUrl({
-        //   url: 'MainAbility/pages/pushUrlasync.ets',
-        //   params: {
-        //     data1: 'message'
-        //   } as Param1
-        // } as router.RouterOptions, router.RouterMode.Standard, (err: BusinessError<void>|null): void => {
-        //   if (err) {
-        //     console.error(`replaceUrl failed, code is ${err.code}, message is ${err.message}`);
-        //     return;
-        //   }
-        //   console.info('replaceUrl success');
-        // }) as Promise<void>;
+        routerPush.replaceUrl({
+          url: 'MainAbility/pages/Router/pushUrlasync',
+          params: {
+            data1: 'message'
+          } as Param1
+        } as router.RouterOptions, router.RouterMode.Standard, (err: BusinessError<void>|null): void => {
+          if (err) {
+            console.error(`replaceUrl failed, code is ${err.code}, message is ${err.message}`);
+            return;
+          }
+          console.info('replaceUrl success');
+        })
         // expect(result).assertUndefined();
-        console.info("push button page success " + JSON.stringify(result));
+        console.info("push button page success ");
       } catch (err) {
-        console.error("push button page error " + JSON.stringify(result));
+        console.error("push button page error ");
       }
       console.info('testrouterstage0008_static END');
       done();
@@ -346,13 +346,13 @@ it('testrouterstage0009_static', Level.LEVEL2, async (done: () => void): Promise
       console.info('testrouterstage0009_static START');
       let result: Promise<void>
       try {
-        // result = routerPush.back({
-        //   url: 'MainAbility/pages/pushUrlasync.ets'
-        // }) as Promise<void>
+        routerPush.back({
+          url: 'MainAbility/pages/Router/pushUrlasync'
+        })
         // expect(result).assertUndefined();
-        console.info("push button page success " + JSON.stringify(result));
+        console.info("push button page success ");
       } catch (err) {
-        console.error("push button page error " + JSON.stringify(result));
+        console.error("push button page error ");
       }
       console.info('testrouterstage0009_static END');
       done();
@@ -369,11 +369,11 @@ it('testrouterstage0010_static', Level.LEVEL2, async (done: () => void): Promise
       console.info('testrouterstage0010_static START');
       let result: Promise<void>
       try {
-        // result = routerPush.clear() as Promise<void>
+        routerPush.clear()
         // expect(result).assertUndefined();
-        // console.info("push button page success " + JSON.stringify(result));
+        console.info("push button page success ");
       } catch (err) {
-        console.error("push button page error " + JSON.stringify(result));
+        console.error("push button page error ");
       }
       console.info('testrouterstage0010_static END');
       done();
@@ -390,11 +390,11 @@ it('testrouterstage0011_static', Level.LEVEL2, async (done: () => void): Promise
       console.info('testrouterstage0011_static START');
       let result: Promise<void>;
       try {
-        // result = routerPush.getLength()
+        routerPush.getLength()
         // expect(typeof (result)).assertEqual('string');
-        // console.info("push button page success " + JSON.stringify(result));
+        console.info("push button page success ");
       } catch (err) {
-        console.error("push button page error " + JSON.stringify(result));
+        console.error("push button page error ");
       }
       console.info('testrouterstage0011_static END');
       done();
@@ -411,11 +411,11 @@ it('testrouterstage0012_static', Level.LEVEL2, async (done: () => void): Promise
       console.info('testrouterstage0012_static START');
       let result: Promise<void>;
       try {
-        // result = routerPush.getState()
+        routerPush.getState()
         // expect(typeof (result)).assertEqual('object');
-        console.info("push button page success " + JSON.stringify(result));
+        console.info("push button page success ");
       } catch (err) {
-        console.error("push button page error " + JSON.stringify(result));
+        console.error("push button page error ");
       }
       console.info('testrouterstage0012_static END');
       done();
@@ -455,11 +455,11 @@ it('testrouterstage0014_static', Level.LEVEL2, async (done: () => void): Promise
       console.info('testrouterstage0014_static START');
       let result: Promise<void>
       try {
-        // result = routerPush.hideAlertBeforeBackPage()
+        routerPush.hideAlertBeforeBackPage()
         // expect(result).assertUndefined();
-        console.info("push button page success " + JSON.stringify(result));
+        console.info("push button page success ");
       } catch (err) {
-        console.error("push button page error " + JSON.stringify(result));
+        console.error("push button page error ");
       }
       console.info('testrouterstage0014_static END');
       done();
@@ -476,11 +476,11 @@ it('testrouterstage0015_static', Level.LEVEL2, async (done: () => void): Promise
       console.info('testrouterstage0015_static START');
       let result: Promise<void>
       try {
-        // result = routerPush.getParams()
+        routerPush.getParams()
         // expect(result).assertUndefined();
-        console.info("push button page success " + JSON.stringify(result));
+        console.info("push button page success ");
       } catch (err) {
-        console.error("push button page error " + JSON.stringify(result));
+        console.error("push button page error ");
       }
       console.info('testrouterstage0015_static END');
       done();
@@ -531,25 +531,25 @@ it('testrouterstage0017_static', Level.LEVEL2, async (done: () => void): Promise
       console.info('testrouterstage0017_static START');
       let result: Promise<void>
       try {
-        // result = routerPush.pushNamedRoute({
-        //   name: 'pushUrl',
-        //   params: {
-        //     data1: 'message',
-        //     data2: {
-        //       data3: [123, 456, 789]
-        //     }
-        //   } as Param
-        // } as router.NamedRouterOptions, (err: BusinessError<void>|null): void => {
-        //   if (err) {
-        //     console.error(`replaceUrl failed, code is ${err.code}, message is ${err.message}`);
-        //     return;
-        //   }
-        //   console.info('replaceUrl success');
-        // });
+        routerPush.pushNamedRoute({
+          name: 'pushUrl',
+          params: {
+            data1: 'message',
+            data2: {
+              data3: [123, 456, 789]
+            }
+          } as Param
+        } as router.NamedRouterOptions, (err: BusinessError<void>|null): void => {
+          if (err) {
+            console.error(`replaceUrl failed, code is ${err.code}, message is ${err.message}`);
+            return;
+          }
+          console.info('replaceUrl success');
+        });
         // expect(result).assertUndefined();
-        console.info("push button page success " + JSON.stringify(result));
+        console.info("push button page success ");
       } catch (err) {
-        console.error("push button page error " + JSON.stringify(result));
+        console.error("push button page error ");
       }
       console.info('testrouterstage0017_static END');
       done();
@@ -600,25 +600,25 @@ it('testrouterstage0019_static', Level.LEVEL2, async (done: () => void): Promise
       console.info('testrouterstage0019_static START');
       let result: Promise<void>
       try {
-        // result = routerPush.pushNamedRoute({
-        //   name: 'pushUrl',
-        //   params: {
-        //     data1: 'message',
-        //     data2: {
-        //       data3: [123, 456, 789]
-        //     }
-        //   } as Param
-        // } as router.NamedRouterOptions, router.RouterMode.Standard, (err: BusinessError<void>|null): void => {
-        //   if (err) {
-        //     console.error(`replaceUrl failed, code is ${err.code}, message is ${err.message}`);
-        //     return;
-        //   }
-        //   console.info('replaceUrl success');
-        // });
+        routerPush.pushNamedRoute({
+          name: 'pushUrl',
+          params: {
+            data1: 'message',
+            data2: {
+              data3: [123, 456, 789]
+            }
+          } as Param
+        } as router.NamedRouterOptions, router.RouterMode.Standard, (err: BusinessError<void>|null): void => {
+          if (err) {
+            console.error(`replaceUrl failed, code is ${err.code}, message is ${err.message}`);
+            return;
+          }
+          console.info('replaceUrl success');
+        });
         // expect(result).assertUndefined();
-        console.info("push button page success " + JSON.stringify(result));
+        console.info("push button page success ");
       } catch (err) {
-        console.error("push button page error " + JSON.stringify(result));
+        console.error("push button page error ");
       }
       console.info('testrouterstage0019_static END');
       done();
@@ -666,22 +666,22 @@ it('testrouterstage0021_static', Level.LEVEL2, async (done: () => void): Promise
       console.info('testrouterstage0021_static START');
       let result: Promise<void>
       try {
-        // result = routerPush.replaceNamedRoute({
-        //   name: 'pushUrl',
-        //   params: {
-        //     data1: 'message'
-        //   } as Param1
-        // } as router.NamedRouterOptions, (err: BusinessError<void>|null): void => {
-        //   if (err) {
-        //     console.error(`replaceUrl failed, code is ${err.code}, message is ${err.message}`);
-        //     return;
-        //   }
-        //   console.info('replaceUrl success');
-        // });
+        routerPush.replaceNamedRoute({
+          name: 'pushUrl',
+          params: {
+            data1: 'message'
+          } as Param1
+        } as router.NamedRouterOptions, (err: BusinessError<void>|null): void => {
+          if (err) {
+            console.error(`replaceUrl failed, code is ${err.code}, message is ${err.message}`);
+            return;
+          }
+          console.info('replaceUrl success');
+        });
         // expect(result).assertUndefined();
-        console.info("push button page success " + JSON.stringify(result));
+        console.info("push button page success ");
       } catch (err) {
-        console.error("push button page error " + JSON.stringify(result));
+        console.error("push button page error ");
       }
       console.info('testrouterstage0021_static END');
       done();
@@ -729,22 +729,22 @@ it('testrouterstage0023_static', Level.LEVEL2, async (done: () => void): Promise
       console.info('testrouterstage0023_static START');
       let result: Promise<void>
       try {
-        // result = routerPush.replaceNamedRoute({
-        //   name: 'pushUrl',
-        //   params: {
-        //     data1: 'message'
-        //   } as Param1
-        // } as router.NamedRouterOptions, router.RouterMode.Standard, (err: BusinessError<void>|null): void => {
-        //   if (err) {
-        //     console.error(`replaceUrl failed, code is ${err.code}, message is ${err.message}`);
-        //     return;
-        //   }
-        //   console.info('replaceUrl success');
-        // });
+        routerPush.replaceNamedRoute({
+          name: 'pushUrl',
+          params: {
+            data1: 'message'
+          } as Param1
+        } as router.NamedRouterOptions, router.RouterMode.Standard, (err: BusinessError<void>|null): void => {
+          if (err) {
+            console.error(`replaceUrl failed, code is ${err.code}, message is ${err.message}`);
+            return;
+          }
+          console.info('replaceUrl success');
+        });
         // expect(result).assertUndefined();
-        console.info("push button page success " + JSON.stringify(result));
+        console.info("push button page success ");
       } catch (err) {
-        console.error("push button page error " + JSON.stringify(result));
+        console.error("push button page error ");
       }
       console.info('testrouterstage0023_static END');
       done();

@@ -17,11 +17,13 @@
 import router from '@ohos.router';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { Entry,Component,Column,Margin,Text, Button, ButtonType, ClickEvent, Scroll, FontWeight } from '@ohos.arkui.component';
-import { State } from '@ohos.arkui.stateManagement';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
 
 @Entry
 @Component
 struct RouterPushThree {
+  routerInstance: Router = AppStorage.get<Router>("router") as Router
+
   build() {
     Scroll() {
       Column() {
@@ -36,9 +38,9 @@ struct RouterPushThree {
           } as Margin)
           .id("turn_RouterPushUrlOne_null")
           .onClick((e: ClickEvent) => {
-            this.getUIContext().getRouter().replaceUrl({
+            this.routerInstance.replaceUrl({
               url: 'MainAbility/pages/State/RouterPushOne',
-              params: undefined
+              // params: null
             })
           })
 
@@ -49,7 +51,7 @@ struct RouterPushThree {
           } as Margin)
           .id("turn_RouterPushUrlOne_string_number")
           .onClick((e: ClickEvent) => {
-            this.getUIContext().getRouter().replaceUrl({
+            this.routerInstance.replaceUrl({
               url: 'MainAbility/pages/State/RouterPushOne',
               params: {
                 data1: {
@@ -67,7 +69,7 @@ struct RouterPushThree {
           } as Margin)
           .id("turn_RouterPushThree_stringArray")
           .onClick((e: ClickEvent) => {
-            this.getUIContext().getRouter().replaceUrl({
+            this.routerInstance.replaceUrl({
               url: 'MainAbility/pages/State/RouterPushOne',
               params: {
                 data1: {
@@ -84,7 +86,7 @@ struct RouterPushThree {
           } as Margin)
           .id("turn_RouterPushUrlOne_string_number1")
           .onClick((e: ClickEvent) => {
-            this.getUIContext().getRouter().replaceUrl({
+            this.routerInstance.replaceUrl({
               url: 'MainAbility/pages/State/RouterPushOne',
               params: {
                 data1: "message",
@@ -100,7 +102,7 @@ struct RouterPushThree {
           } as Margin)
           .id("turn_RouterPushUrlOne_string_numArray")
           .onClick((e: ClickEvent) => {
-            this.getUIContext().getRouter().replaceUrl({
+            this.routerInstance.replaceUrl({
               url: 'MainAbility/pages/State/RouterPushOne',
               params: {
                 data1: "message",
@@ -116,7 +118,7 @@ struct RouterPushThree {
           } as Margin)
           .id("turn_RouterPushUrlOne_string_number_push")
           .onClick((e: ClickEvent) => {
-            this.getUIContext().getRouter().pushUrl({
+            this.routerInstance.pushUrl({
               url: 'MainAbility/pages/State/RouterPushOne',
               params: {
                 data1: {
@@ -134,9 +136,9 @@ struct RouterPushThree {
           } as Margin)
           .id("turn_RouterPushUrlOne_null_push")
           .onClick((e: ClickEvent) => {
-            this.getUIContext().getRouter().pushUrl({
+            this.routerInstance.pushUrl({
               url: 'MainAbility/pages/State/RouterPushOne',
-              params: undefined
+              // params: null
             })
           })
       }

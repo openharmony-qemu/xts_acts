@@ -13,15 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import SelectTest from './SelectTest/Select.test';
+import SelectTest from './SelectTest/Select2.test';
 import calendarpicker from './CalendarPickerTest/calendarpicker';
-import select from './SelectTest/Select';
+import select from './SelectTest/Select1.test';
 import SelectAttr from './SelectTest/SelectAttr.test';
 import selectJsunit from './SelectTest/SelectJsunit1.test';
 import menuBackgroundBlurStyle from './SelectTest/menuBackgroundBlurStyle.test';
 import menuBackgroundColor from './SelectTest/menuBackgroundColor.test';
 import selectOnSelectJsunit from './SelectTest/select3.test';
-import selectmenuTest from './SelectTest/SelectMenu';
+import selectmenuTest from './SelectTest/SelectMenu.test';
 
 export default function testsuite() {
   SelectTest(); //全pass

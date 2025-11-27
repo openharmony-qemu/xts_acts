@@ -81,8 +81,8 @@ export default function sideBarContainerJsunit() {
       console.info('sideBarContainerTest_0002 START');
       let strJsonNew = inspector.getInspectorByKey('sideBarContainer');
       let objNew = JSON.parseJsonElement(strJsonNew);
-      let objDivider = JSON.parseJsonElement(objNew.getString('divider'));
-      console.info("sideBarContainerTest_0002 component is: " + JSON.stringify(objNew.getElement('$attrs')));
+      console.info("sideBarContainerTest_0002 component is: " + objNew.getElement('$attrs').getString('divider'));
+      let objDivider = JSON.parseJsonElement(objNew.getElement('$attrs').getString('divider'));
       expect(objDivider?.getString('strokeWidth')).assertEqual("100.00vp");
       expect(objDivider?.getString('color')).assertEqual("#FFFF0000");
       expect(objDivider?.getString('startMargin')).assertEqual("100.00vp");
@@ -187,11 +187,12 @@ export default function sideBarContainerJsunit() {
       console.info('sideBarContainerTest_0008 START');
       let strJsonNew = inspector.getInspectorByKey('sideBarContainer');
       let objNew = JSON.parseJsonElement(strJsonNew);
-      console.info("sideBarContainerTest_0008 component is: " + JSON.stringify(objNew.getElement('$attrs')));
-      expect(objNew.getElement('$attrs').getElement('controlButton').getString('left')).assertEqual("10.000000");
-      expect(objNew.getElement('$attrs').getElement('controlButton').getString('top')).assertEqual("10.000000");
-      expect(objNew.getElement('$attrs').getElement('controlButton').getString('width')).assertEqual("10.000000");
-      expect(objNew.getElement('$attrs').getElement('controlButton').getString('height')).assertEqual("10.000000");
+      console.info("sideBarContainerTest_0008 component is: " + objNew.getElement('$attrs').getString('controlButton'));
+      let controlButtonObj = JSON.parseJsonElement(objNew.getElement('$attrs').getString('controlButton'));
+      expect(controlButtonObj.getString('left')).assertEqual("10.000000");
+      expect(controlButtonObj.getString('top')).assertEqual("10.000000");
+      expect(controlButtonObj.getString('width')).assertEqual("10.000000");
+      expect(controlButtonObj.getString('height')).assertEqual("10.000000");
       console.info('sideBarContainerTest_0008 END');
       done();
     });

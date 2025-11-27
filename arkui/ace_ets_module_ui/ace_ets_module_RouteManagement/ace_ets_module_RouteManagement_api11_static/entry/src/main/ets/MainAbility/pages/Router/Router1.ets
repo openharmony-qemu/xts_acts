@@ -28,14 +28,13 @@ struct Index {
           .fontSize(20)
           .fontWeight(FontWeight.Bold)
         Button('跳转路由').onClick((e: ClickEvent) => {
-          const options: router.RouterOptions = {
+          this.getUIContext().getRouter().pushUrl({
             url: 'MainAbility/pages/Router/Router2',
             params: {
               data1: 'message',
               data2: 12345
             } as JsonObj
-          }
-          this.getUIContext().getRouter().pushUrl(options);
+          })
         }).id('router1Button')
       }
       .width('100%')
